@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-04-29T14:39:45.458Z",
+  "model": "deepseek-chat",
+  "results": {
+    "test1": {
+      "name": "JSON合规性测试",
+      "passed": 3,
+      "failed": 0,
+      "details": [
+        {
+          "name": "T1.1 - 开局情景",
+          "result": "PASS",
+          "textLen": 309,
+          "choiceCount": 3
+        },
+        {
+          "name": "T1.2 - 选择后推进",
+          "result": "PASS",
+          "textLen": 526,
+          "choiceCount": 3
+        },
+        {
+          "name": "T1.3 - 描述性输入",
+          "result": "PASS",
+          "textLen": 295,
+          "choiceCount": 3
+        }
+      ]
+    },
+    "test2": {
+      "name": "5轮记忆持久性测试",
+      "passed": 5,
+      "failed": 0,
+      "details": []
+    },
+    "test3": {
+      "name": "7轮世界观一致性测试",
+      "passed": 3,
+      "failed": 4,
+      "details": []
+    }
+  },
+  "stats": {
+    "total_api_calls": 15,
+    "total_retries": 1,
+    "total_time_ms": 2031,
+    "total_time_sec": 190.643
+  }
+}

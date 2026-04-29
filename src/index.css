@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ─── 账簿式色彩体系（CSS变量） ─── */
+    --rg-ink: #1a1a2e;
+    --rg-ink-700: #1a1a2e;
+    --rg-ink-500: #4a4a78;
+    --rg-ink-300: #9090b8;
+    --rg-paper: #f5f0e8;
+    --rg-paper-200: #f5f0d6;
+    --rg-paper-50: #fdfcf7;
+    --rg-blood: #8b0000;
+    --rg-blood-600: #8b0000;
+    --rg-blood-400: #e85050;
+    --rg-jade: #2d6a4f;
+    --rg-jade-600: #2d6a4f;
+    --rg-jade-400: #30d080;
+    --rg-gold: #b8860b;
+    --rg-gold-600: #b8860b;
+    --rg-gold-400: #d0a840;
+
+    /* ─── 字体 ─── */
+    --font-narrative: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    --font-panel: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    --font-button: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+
+    /* ─── 间距体系 (4px基准) ─── */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-12: 48px;
+
+    /* ─── 圆角 ─── */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: rgba(144, 144, 184, 0.15);
+  }
+
+  body {
+    background-color: var(--rg-ink);
+    color: var(--rg-paper-100);
+    font-family: var(--font-panel);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 叙事文本使用衬线字体 */
+  .narrative-text {
+    font-family: var(--font-narrative);
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+  }
+
+  /* 禁用纯黑、禁用高饱和、禁用emoji */
+  ::selection {
+    background-color: rgba(184, 134, 11, 0.3);
+    color: var(--rg-paper);
+  }
+
+  /* 平滑滚动 */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* 面板卡片 */
+  .ledger-panel {
+    background-color: rgba(26, 26, 46, 0.8);
+    border: 1px solid rgba(144, 144, 184, 0.12);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+  }
+
+  .ledger-panel-highlight {
+    background-color: rgba(26, 26, 46, 0.9);
+    border: 1px solid rgba(184, 134, 11, 0.25);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
+  }
+
+  /* 按钮变体 */
+  .btn-primary {
+    background-color: var(--rg-gold);
+    color: var(--rg-ink);
+    font-family: var(--font-button);
+    font-weight: 600;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: all 150ms ease-out;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.15);
+    transform: scale(1.02);
+  }
+
+  .btn-danger {
+    background-color: transparent;
+    color: var(--rg-blood);
+    font-family: var(--font-button);
+    border: 1px solid rgba(139, 0, 0, 0.4);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: all 150ms ease-out;
+  }
+  .btn-danger:hover {
+    background-color: rgba(139, 0, 0, 0.15);
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--rg-paper);
+    font-family: var(--font-button);
+    border: 1px solid rgba(144, 144, 184, 0.2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: all 150ms ease-out;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(184, 134, 11, 0.4);
+  }
+
+  /* 输入框 */
+  .ledger-input {
+    background-color: rgba(18, 18, 32, 0.8);
+    border: 1px solid rgba(144, 144, 184, 0.2);
+    color: var(--rg-paper);
+    font-family: var(--font-panel);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    transition: border-color 150ms ease-out;
+  }
+  .ledger-input:focus {
+    outline: none;
+    border-color: var(--rg-gold);
+    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.15);
+  }
+  .ledger-input::placeholder {
+    color: rgba(245, 240, 232, 0.35);
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--rg-gold-400), var(--rg-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 打字机光标闪烁 */
+  .cursor-blink::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--rg-gold);
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

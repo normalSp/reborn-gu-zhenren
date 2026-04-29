@@ -1,0 +1,377 @@
+{
+  "timestamp": "2026-04-29T15:17:58.841Z",
+  "model": "deepseek-chat",
+  "prompt_sizes": {
+    "baseline_l1_chars": 2080,
+    "enhanced_l1_chars": 3771,
+    "baseline_l2_chars": 2752,
+    "enhanced_l2_chars": 3451
+  },
+  "summary": {
+    "baselineScore": 88,
+    "enhancedScore": 76,
+    "improvement": -12,
+    "target": 95,
+    "passed": false
+  },
+  "byCategory": {
+    "势力接触-A": {
+      "baselinePct": 60,
+      "enhancedPct": 80
+    },
+    "势力接触-B": {
+      "baselinePct": 100,
+      "enhancedPct": 50
+    },
+    "方源人设-A": {
+      "baselinePct": 100,
+      "enhancedPct": 100
+    },
+    "方源人设-B": {
+      "baselinePct": 100,
+      "enhancedPct": 63
+    }
+  },
+  "details": {
+    "势力接触-A": {
+      "baseline": {
+        "text": "你站在商家城黑市的角落，面前摊位上摆放着数只自己炼制的蛊虫。其中一只二转超品「铁甲蛊」在昏暗的灯光下泛着幽光，引来不少目光。一位身着锦袍的中年管事缓步走来，目光锐利地扫过你的摊位，最终停留在那只铁甲蛊上。他嘴角微扬，语气平淡却带着不容置疑的威势：「小友，这蛊是你炼的？手法不错。我是商家城商会的管事，姓钱。可有兴趣加入商会？每月供奉，资源倾斜，保你炼蛊无忧。」他身后两名护卫气息沉稳，显然修为不低。四周的喧嚣似乎在这一刻凝固，你知道，若拒绝，恐怕难以善了。",
+        "checks": [
+          {
+            "id": "no_unconditional_trust",
+            "rule": "NPC不无条件信任/友善",
+            "weight": 2,
+            "passed": false
+          },
+          {
+            "id": "cost_required",
+            "rule": "必有代价/条件/约束",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "danger_hint",
+            "rule": "提示危险/觊觎/死亡",
+            "weight": 2,
+            "passed": false
+          },
+          {
+            "id": "no_free_gift",
+            "rule": "不无偿送资源",
+            "weight": 1,
+            "passed": true
+          },
+          {
+            "id": "dark_tone",
+            "rule": "叙事基调黑暗现实",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 6,
+        "maxScore": 10,
+        "ratio": 60,
+        "tokens": {
+          "prompt_tokens": 3304,
+          "completion_tokens": 352,
+          "total_tokens": 3656,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200
+          },
+          "prompt_cache_hit_tokens": 3200,
+          "prompt_cache_miss_tokens": 104
+        },
+        "elapsed_ms": 320
+      },
+      "enhanced": {
+        "text": "黑市深处，油灯昏黄。你刚将一只二转超品月光蛊交给买家，身后便传来一声轻笑。回头一看，一个身着锦袍的中年人正倚在柱子上，目光如鹰隼般锁定了你。他的腰间挂着一枚青铜令牌，刻着‘商’字——商家城的人。‘小兄弟，炼蛊手法不错。’他的声音不高，却压过了周围的嘈杂，‘不过在这黑市上卖超品蛊，就像三岁孩童抱着金砖过闹市。你知不知道，已经有至少三拨人盯上你了？’他向前一步，威压若有若无地散开——至少四转修为。‘跟我走，保你安全。当然，天下没有白吃的午餐。加入商家城，每年上缴五只超品蛊虫，我们提供材料和庇护。你可以拒绝，但我不保证你走出这条街后，还能四肢完整。’他笑了笑，笑意未达眼底。",
+        "checks": [
+          {
+            "id": "no_unconditional_trust",
+            "rule": "NPC不无条件信任/友善",
+            "weight": 2,
+            "passed": false
+          },
+          {
+            "id": "cost_required",
+            "rule": "必有代价/条件/约束",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "danger_hint",
+            "rule": "提示危险/觊觎/死亡",
+            "weight": 2,
+            "passed": true
+          },
+          {
+            "id": "no_free_gift",
+            "rule": "不无偿送资源",
+            "weight": 1,
+            "passed": true
+          },
+          {
+            "id": "dark_tone",
+            "rule": "叙事基调黑暗现实",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 8,
+        "maxScore": 10,
+        "ratio": 80,
+        "tokens": {
+          "prompt_tokens": 4886,
+          "completion_tokens": 524,
+          "total_tokens": 5410,
+          "prompt_tokens_details": {
+            "cached_tokens": 4864
+          },
+          "prompt_cache_hit_tokens": 4864,
+          "prompt_cache_miss_tokens": 22
+        },
+        "elapsed_ms": 663
+      }
+    },
+    "势力接触-B": {
+      "baseline": {
+        "text": "南疆的密林瘴气弥漫，你拨开茂密的灌木，血腥味扑面而来。一个黑衣蛊师倚靠在古树下，胸口一道狰狞的伤口仍在渗血，赤铁真元的残韵在伤口边缘游走——三转蛊师。他半睁着眼，目光涣散，但看到你时，眼底闪过一丝精光。他的储物袋鼓胀，隐约透出蛊虫的气息，至少有三四只二转蛊虫，甚至可能有一转的珍品。\n\n你心跳微快。这里是青茅山外围，古月山寨的巡逻队偶尔会经过，但此地偏僻，喊破喉咙也未必有人听见。黑衣蛊师的气息在快速衰弱，但三转蛊师临死反扑，足以拉一个二转垫背。他的目光在你身上停留片刻，嘴唇翕动，似乎想说什么。",
+        "checks": [
+          {
+            "id": "no_easy_benefit",
+            "rule": "机缘必有代价/危险",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "no_naive_trust",
+            "rule": "魔道蛊师不降智",
+            "weight": 2,
+            "passed": true
+          },
+          {
+            "id": "risk_aware",
+            "rule": "叙事含风险评估",
+            "weight": 1,
+            "passed": true
+          }
+        ],
+        "score": 6,
+        "maxScore": 6,
+        "ratio": 100,
+        "tokens": {
+          "prompt_tokens": 3317,
+          "completion_tokens": 418,
+          "total_tokens": 3735,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200
+          },
+          "prompt_cache_hit_tokens": 3200,
+          "prompt_cache_miss_tokens": 117
+        },
+        "elapsed_ms": 109
+      },
+      "enhanced": {
+        "text": "南疆的密林深处，瘴气弥漫，腐叶堆积成厚厚的地毯。你蹲下身，手指拨开一丛紫叶草——这株三叶紫芝已经成熟，是炼制二转解毒蛊的主材。正当你小心翼翼切断根茎时，一股浓烈的血腥味钻入鼻腔。你屏住呼吸，拨开灌木，看到了一幕令人心跳加速的景象：一个黑衣蛊师斜靠在一棵古榕树下，胸口一道狰狞的伤口贯穿左肋，鲜血浸透了半身衣袍。他的气息微弱，显然失血过多，已近油尽灯枯。然而，他腰间那只绣着金线的储物袋鼓鼓囊囊——里面至少有三转蛊虫的气息，甚至可能有元石和功法秘籍。你注意到他右手虽垂在身侧，却紧握着一只泛着幽光的蛊虫，那是二转的「警戒蛊」，一旦触发便会发出尖啸。他的眼睛半睁着，视线模糊，但依然有一丝警惕残留在瞳孔深处。这里是南疆，杀人夺宝是常态。但一个三转魔道蛊师，哪怕濒死，也可能藏着最后一击的手段。",
+        "checks": [
+          {
+            "id": "no_easy_benefit",
+            "rule": "机缘必有代价/危险",
+            "weight": 3,
+            "passed": false
+          },
+          {
+            "id": "no_naive_trust",
+            "rule": "魔道蛊师不降智",
+            "weight": 2,
+            "passed": true
+          },
+          {
+            "id": "risk_aware",
+            "rule": "叙事含风险评估",
+            "weight": 1,
+            "passed": true
+          }
+        ],
+        "score": 3,
+        "maxScore": 6,
+        "ratio": 50,
+        "tokens": {
+          "prompt_tokens": 4899,
+          "completion_tokens": 732,
+          "total_tokens": 5631,
+          "prompt_tokens_details": {
+            "cached_tokens": 4864
+          },
+          "prompt_cache_hit_tokens": 4864,
+          "prompt_cache_miss_tokens": 35
+        },
+        "elapsed_ms": 116
+      }
+    },
+    "方源人设-A": {
+      "baseline": {
+        "text": "夜风掠过古月山寨的青石屋檐，你借着月光蛊的微光检查着新炼成的酒虫。指尖刚触及虫身，余光便捕捉到屋檐下一道极不自然的荧光——一只拇指大小的蛊虫正伏在瓦片缝隙间，复眼闪烁着幽绿的光。\n\n你的心跳骤然加速。这不是寻常的巡逻蛊虫。这种侦查蛊虫的隐匿手法，整个山寨只有一个人会用——古月方源。\n\n他注意到你了。\n\n你强迫自己保持呼吸平稳，装作没有察觉，继续摆弄酒虫。但脑海中已飞速运转：方源是什么时候开始盯上你的？他派蛊监视，意味着已经起疑。一个乙等资质的蛊师，却接连拿出酒虫、月光蛊这种品质的蛊虫，确实太过反常。\n\n那只荧光蛊依旧一动不动地趴着，像一枚钉入你命运的钉子。你知道，一旦被方源确认为威胁或变数，他的手段绝不会留情。前世记忆里，那些挡在他路上的人，坟头草都已三尺高。\n\n现在你有三个选择：装作不知继续日常，暗中反制他的监视，或者主动出击。但无论选哪条路，都等于在刀尖上跳舞。",
+        "checks": [
+          {
+            "id": "fy_not_friendly",
+            "rule": "方源不可友善",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_calculates",
+            "rule": "方源会算计/布控/监视",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_threat",
+            "rule": "方源有人身威胁感",
+            "weight": 2,
+            "passed": true
+          },
+          {
+            "id": "no_fy_downgrade",
+            "rule": "方源不降智/不疏忽",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 10,
+        "maxScore": 10,
+        "ratio": 100,
+        "tokens": {
+          "prompt_tokens": 3360,
+          "completion_tokens": 788,
+          "total_tokens": 4148,
+          "prompt_tokens_details": {
+            "cached_tokens": 3328
+          },
+          "prompt_cache_hit_tokens": 3328,
+          "prompt_cache_miss_tokens": 32
+        },
+        "elapsed_ms": 174
+      },
+      "enhanced": {
+        "text": "夜风穿过青石寨墙的缝隙，带来山林间的腐木气息。你躺在竹床上，月光蛊的幽光在指尖明灭——但你无法入眠。屋檐下那只荧光虫，在子时三刻准时亮起。不是萤火虫。萤火虫的节奏不会如此精准，不会在你每次翻身时停顿半息。你认出了它——耳语蛊，二转侦查类，能记录声音、追踪道痕。古月山寨里舍得用二转蛊监视一个乙等资质少年的，只有一个人。方源。他一定注意到了你拿出的那些高品质蛊虫——酒虫、月光蛊、还有那只你从未在任何人面前展示过的炼道蛊虫。你从未与他对视超过三息，但这只耳语蛊告诉你：他已经开始计算你了。方源不会贸然动手——他会先确认你的价值，你的威胁，你的所有底牌。而一旦他确认完毕，你的生死就只在他一念之间。耳语蛊的光纹在黑暗中闪烁，像一只冰冷的眼睛。你还有时间——但不多。",
+        "checks": [
+          {
+            "id": "fy_not_friendly",
+            "rule": "方源不可友善",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_calculates",
+            "rule": "方源会算计/布控/监视",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_threat",
+            "rule": "方源有人身威胁感",
+            "weight": 2,
+            "passed": true
+          },
+          {
+            "id": "no_fy_downgrade",
+            "rule": "方源不降智/不疏忽",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 10,
+        "maxScore": 10,
+        "ratio": 100,
+        "tokens": {
+          "prompt_tokens": 4942,
+          "completion_tokens": 941,
+          "total_tokens": 5883,
+          "prompt_tokens_details": {
+            "cached_tokens": 4864
+          },
+          "prompt_cache_hit_tokens": 4864,
+          "prompt_cache_miss_tokens": 78
+        },
+        "elapsed_ms": 125
+      }
+    },
+    "方源人设-B": {
+      "baseline": {
+        "text": "开窍大典结束后的第三日，你避开族人的视线，潜入后山一处废弃的石窟。这里堆满了前人留下的炼蛊残渣，空气中弥漫着霉味和微弱的蛊气。你蹲在角落，借着夜明珠的微光，小心翼翼地将一只半成品的寻踪蛊与引气草粉末融合。汗水顺着额角滑落，手中的蛊虫微微颤动，散发出一阵淡绿色的光芒——眼看就要成功。\n\n就在这时，石窟入口传来极轻的脚步声。若非你心智敏锐，几乎察觉不到。你猛地抬头，瞳孔骤缩——一个瘦削的身影立在洞口，逆光中看不清面容，但那标志性的冷漠眼神让你瞬间认出了他。\n\n古月方源。\n\n他缓步走入石窟，脚步无声，目光却锐利如刀。他扫过你散落的材料——几株引气草、半瓶酒虫酿、一只尚未成型的寻踪蛊——最后落在你手中的半成品上。他的嘴角微微上扬，那笑容里没有温度，只有一种审视猎物般的兴趣。\n\n“甲等资质，炼道天赋，开窍三日后便敢独自炼蛊。”他的声音平静，却带着一丝玩味，“古月山寨这一届的新人，倒是有趣。”\n\n他停",
+        "checks": [
+          {
+            "id": "fy_smile_is_threat",
+            "rule": "方源微笑=威胁/算计,非友善",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_dangerous",
+            "rule": "方源描写体现危险/威胁感",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_strategic",
+            "rule": "方源行为有策略目的",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 8,
+        "maxScore": 8,
+        "ratio": 100,
+        "tokens": {
+          "prompt_tokens": 3294,
+          "completion_tokens": 980,
+          "total_tokens": 4274,
+          "prompt_tokens_details": {
+            "cached_tokens": 3200
+          },
+          "prompt_cache_hit_tokens": 3200,
+          "prompt_cache_miss_tokens": 94
+        },
+        "elapsed_ms": 119
+      },
+      "enhanced": {
+        "text": "开窍大典结束已有七日。你借着甲等资质的便利，避开寨中眼线，躲进后山石窟中尝试炼蛊。青铜真元在指尖流转，一只一转月光蛊的半成品正在掌中缓缓成型。石窟深处潮湿阴冷，只有石壁上几株荧光苔藓提供微光。忽然，你的手指一顿——入口处传来极轻的脚步声。那不是巧合路过的脚步声，而是刻意压低的、精准的、猎食者的步伐。方源的身影出现在石窟入口的阴影中。他穿着灰色麻衣，面容清秀，目光却如寒潭般沉静，扫过你手中的月光蛊、散落的材料，以及石缝中藏着的一本残破炼蛊手札——那是你三天前从废弃石屋里找到的。他的嘴角微微上扬，那不是一个友善的笑容，而是一个棋手看到对手露出破绽时的表情。他没有立刻说话，只是靠在了石窟入口的石壁上，恰好堵住了唯一的出口。他的目光落在你手中的月光蛊上，语气平淡得像是谈论今晚的晚饭：'这种炼蛊手法……不是寨里教的吧？'他顿了顿，'那本手札，你翻到第三页了？上面那张酒虫的培养方子，你试过没？'你心头",
+        "checks": [
+          {
+            "id": "fy_smile_is_threat",
+            "rule": "方源微笑=威胁/算计,非友善",
+            "weight": 3,
+            "passed": false
+          },
+          {
+            "id": "fy_dangerous",
+            "rule": "方源描写体现危险/威胁感",
+            "weight": 3,
+            "passed": true
+          },
+          {
+            "id": "fy_strategic",
+            "rule": "方源行为有策略目的",
+            "weight": 2,
+            "passed": true
+          }
+        ],
+        "score": 5,
+        "maxScore": 8,
+        "ratio": 63,
+        "tokens": {
+          "prompt_tokens": 4876,
+          "completion_tokens": 961,
+          "total_tokens": 5837,
+          "prompt_tokens_details": {
+            "cached_tokens": 4864
+          },
+          "prompt_cache_hit_tokens": 4864,
+          "prompt_cache_miss_tokens": 12
+        },
+        "elapsed_ms": 122
+      }
+    }
+  }
+}
