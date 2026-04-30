@@ -45,7 +45,7 @@ export interface PlayerState {
   };
   attributes: {
     资质: number;
-    根骨: number;
+    体魄: number;
     心智: number;
     气运: number;
   };
@@ -65,6 +65,8 @@ export interface PlayerState {
     scheme: number;
     ambition: number;
   };
+  currency: number;
+  immortalCurrency: number;
   flags: Record<string, any>;
 }
 
@@ -103,6 +105,7 @@ export interface GuInstance {
   currentState: 'optimal' | 'fed' | 'hungry' | 'starving' | 'dying';
   proficiency: number;
   bonded: boolean;
+  active: boolean;
   acquiredAt: { turn: number; narrative: string };
 }
 
@@ -195,7 +198,7 @@ export interface StateUpdate {
     realm?: { action: 'set'; value: string };
     attributes?: {
       资质?: { action: 'add'; value: number };
-      根骨?: { action: 'add'; value: number };
+      体魄?: { action: 'add'; value: number };
       心智?: { action: 'add'; value: number };
       气运?: { action: 'add'; value: number };
     };
@@ -211,6 +214,7 @@ export interface StateUpdate {
     remove?: string[];
   };
   faction?: Record<string, { standing: number }>;
+  wealth?: { delta: number };
   causality?: {
     track?: string;
     butterfly_effects?: string[];

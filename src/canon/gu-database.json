@@ -1,0 +1,212 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "source": "蛊真人原著 + 百度百科 + MC百科 + 贴吧设定整理",
+    "principle": "按需构建，AI叙事涉及新蛊虫时核实原著后追加条目",
+    "total": 22
+  },
+  "月光蛊": {
+    "tier": 1, "path": "光道", "rank": "common",
+    "effect": "发射月刃，远程攻击，攻击范围十米，古月一族镇族蛊虫",
+    "feed": "月光——需在月夜放置于室外，吸收月光精华",
+    "feedFailure": "连续三日未喂→饥饿→虚弱（月刃威力减半）→七日后死亡",
+    "usageFailure": "真元不足→月刃威力减半；意志动摇→月刃可能偏离目标",
+    "refineMaterials": "月光石 + 光道蛊材",
+    "refineDifficulty": 2
+  },
+  "酒虫": {
+    "tier": 1, "path": "食道", "rank": "uncommon",
+    "effect": "精炼真元，提升真元质量。可将低质真元转化为高质真元",
+    "feed": "美酒——品质越高效果越好",
+    "feedFailure": "连续七日无酒→酒虫休眠→真元精炼效果消失",
+    "usageFailure": "喂劣酒→真元精炼效率下降；过量使用→醉真元（真元暂时浑浊）",
+    "refineMaterials": "百年陈酿 + 食道蛊材",
+    "refineDifficulty": 4
+  },
+  "春秋蝉": {
+    "tier": 6, "path": "宙道", "rank": "legendary", "isImmortalGu": true,
+    "effect": "逆转时间，使蛊师重生回到过去。消耗巨大，使用后自身严重受损",
+    "feed": "时间之力——自然时间流逝即为喂养",
+    "feedFailure": "不可喂养失败（宙道仙蛊，时间自养）",
+    "usageFailure": "重生失败→神魂俱灭；成功→春秋蝉受损需大量时间温养恢复",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属，需升炼或天地生成）",
+    "refineDifficulty": 10,
+    "note": "方源核心蛊虫，原著开局即持有残缺春秋蝉"
+  },
+  "书虫": {
+    "tier": 1, "path": "智道", "rank": "common",
+    "effect": "将要记忆的内容喂给书虫吃，只要书虫不失，蛊师就能永远清晰记得",
+    "feed": "文字——写在纸上喂食",
+    "feedFailure": "无文字可食→书虫饥饿→记忆模糊→死亡后记忆全部丢失",
+    "usageFailure": "喂食文字过多→书虫胀死；喂食与已有记忆矛盾的文字→记忆混乱",
+    "refineMaterials": "古籍残卷 + 智道蛊材",
+    "refineDifficulty": 1
+  },
+  "石皮蛊": {
+    "tier": 1, "path": "土道", "rank": "common",
+    "effect": "皮肤顷刻间变为灰白色，膨胀如充气，大幅提升物理防御",
+    "feed": "石粉——研磨细石粉末喂食",
+    "feedFailure": "无石粉→石皮逐渐变脆→防御力下降→龟裂后死亡",
+    "usageFailure": "承受超过极限的冲击→石皮碎裂，蛊师受内伤",
+    "refineMaterials": "花岗岩粉末 + 土道蛊材",
+    "refineDifficulty": 2
+  },
+  "力气蛊": {
+    "tier": 2, "path": "力道", "rank": "common",
+    "effect": "产生无形的力之气，兽力虚影脱离蛊师身体，辅助类蛊虫。由风气蛊逆炼而成",
+    "feed": "肉食——需喂食生肉",
+    "feedFailure": "饥饿→力之气减弱→完全饥饿→力气蛊萎靡",
+    "usageFailure": "力之气超出控制范围→虚影反噬自身",
+    "refineMaterials": "风气蛊（逆炼）+ 力道蛊材",
+    "refineDifficulty": 3
+  },
+  "积德蛊": {
+    "tier": 2, "path": "人道", "rank": "uncommon",
+    "effect": "平时积德行善就能自行炼成。行善积德越大，炼出的积德蛊转数越高。道德真传基础核心",
+    "feed": "善行——蛊师行善积德即自动喂养",
+    "feedFailure": "行恶→积德蛊退化；长期作恶→积德蛊死亡",
+    "usageFailure": "以积德蛊行恶事→蛊虫反噬，道德真元溃散",
+    "refineMaterials": "不需常规蛊材（自行炼成）",
+    "refineDifficulty": 0,
+    "note": "乐土真传之一，无法通过常规炼制获得"
+  },
+  "侦察蛊": {
+    "tier": 1, "path": "智道", "rank": "common",
+    "effect": "释放后在空中飞行侦察，将视野传回蛊师。可用于观察气运",
+    "feed": "晨露——每日清晨收集新鲜露水",
+    "feedFailure": "无露水→侦察范围缩小→视野模糊→死亡",
+    "usageFailure": "被敌方蛊虫拦截→侦察蛊死亡；飞行超出范围→迷路不归",
+    "refineMaterials": "蜻蜓翅膀 + 晨露 + 智道蛊材",
+    "refineDifficulty": 2
+  },
+  "察运蛊": {
+    "tier": 6, "path": "运道", "rank": "rare", "isImmortalGu": true,
+    "effect": "观察目标的运道气运状态，可看到气运颜色和形态",
+    "feed": "气运之力——观察气运的过程即为喂养",
+    "feedFailure": "长期不观察气运→察运蛊眼力退化",
+    "usageFailure": "观察天意强盛者→被天意反噬；观察尊者→察运蛊可能暴毙",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 10,
+    "note": "原著中方源成为仙僵后失去查看自身气运的能力，需此蛊恢复"
+  },
+  "搜魂蛊": {
+    "tier": 7, "path": "魂道", "rank": "epic", "isImmortalGu": true,
+    "effect": "搜索目标魂魄，获取其记忆和知识",
+    "feed": "魂魄碎片——每次搜魂后残留的魂魄碎片即为食物",
+    "feedFailure": "无魂魄碎片可食→搜魂蛊饥饿→搜魂精度下降",
+    "usageFailure": "搜魂对象意志极强→反噬搜魂蛊师；搜魂尊者→蛊师魂魄受损",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 9,
+    "note": "方源从南疆羊家蛊仙羊枯手中获得，以此构建七转魂道杀招"
+  },
+  "招灾蛊": {
+    "tier": 7, "path": "运道", "rank": "epic", "isImmortalGu": true,
+    "effect": "替蛊仙招灾引难，将地灾天劫脱离原来目标勾连到自己身上",
+    "feed": "灾劫——经历灾劫即为喂养",
+    "feedFailure": "长期无灾劫→招灾蛊力量衰减",
+    "usageFailure": "招来的灾劫超出承受范围→蛊仙自身陨落",
+    "refineMaterials": "不可凡蛊炼制",
+    "refineDifficulty": 9
+  },
+  "排难蛊": {
+    "tier": 7, "path": "运道", "rank": "epic", "isImmortalGu": true,
+    "effect": "将福地中的天劫地灾排遣到外界",
+    "feed": "与招灾蛊配合使用，相生相养",
+    "feedFailure": "无灾劫可排→排难蛊休眠",
+    "usageFailure": "强行排遣超越自身能力的灾劫→排难蛊受损",
+    "refineMaterials": "不可凡蛊炼制",
+    "refineDifficulty": 9
+  },
+  "定仙游": {
+    "tier": 6, "path": "宇道", "rank": "legendary", "isImmortalGu": true,
+    "effect": "三息之内带人瞬移至心中想去之地，四大移动仙蛊之一",
+    "composition": "神游蛊 + 碧空蛊 + 定星蛊，借太古的荣耀之光合炼，辅助：两只三更蛊 + 一只百战不殆蛊",
+    "feed": "空间坐标——每次瞬移消耗仙元",
+    "feedFailure": "不使用时自然休眠，不需额外喂养",
+    "usageFailure": "仙元不足→传送偏移或中断；天意封锁区域→无法传送",
+    "refineMaterials": "不可常规炼制（需仙蛊方+仙蛊材料）",
+    "refineDifficulty": 10
+  },
+  "捧杀蛊": {
+    "tier": 2, "path": "人道", "rank": "uncommon",
+    "effect": "捧杀他人，使其迷失在赞誉中。可逆炼为捧荣蛊和荣誉蛊",
+    "feed": "虚情假意——需虚假的赞美和奉承",
+    "feedFailure": "真诚待人→捧杀蛊无法获得食物→力量衰减",
+    "usageFailure": "使用者意志不坚→捧杀蛊反噬，自身迷失",
+    "refineMaterials": "虚言草 + 人道蛊材",
+    "refineDifficulty": 3
+  },
+  "风道加速蛊": {
+    "tier": 2, "path": "风道", "rank": "common",
+    "effect": "加速蛊师移动速度，常用于杀招中作为辅助蛊",
+    "feed": "风——需在风大之处放置吸收风之精华",
+    "feedFailure": "无风环境→加速效果减半→长期饥饿→死亡",
+    "usageFailure": "超限加速→蛊师身体无法承受→内伤",
+    "refineMaterials": "风之结晶 + 风道蛊材",
+    "refineDifficulty": 3
+  },
+  "血颅蛊": {
+    "tier": 5, "path": "血道", "rank": "epic",
+    "effect": "吸收敌人血液转化为自身真元，极强续航能力",
+    "feed": "鲜血——需新鲜血液（人血或兽血均可）",
+    "feedFailure": "无血可食→血颅蛊转为吸收蛊师自身血液→危及生命",
+    "usageFailure": "吸收过多异种血液→血液冲突；正道蛊师使用→名声败坏",
+    "refineMaterials": "百人鲜血 + 血道蛊材",
+    "refineDifficulty": 7
+  },
+  "青丝蛊": {
+    "tier": 1, "path": "木道", "rank": "common",
+    "effect": "操控发丝攻击或束缚敌人，灵活多变",
+    "feed": "草木精华——每日需浸泡草木汁液",
+    "feedFailure": "无草木精华→发丝干枯断裂→失去操控力→死亡",
+    "usageFailure": "发丝超出操控范围→失去控制；被火道蛊虫克制→发丝燃烧",
+    "refineMaterials": "百年青藤 + 木道蛊材",
+    "refineDifficulty": 2
+  },
+  "希冀蛊": {
+    "tier": 1, "path": "智道", "rank": "common",
+    "effect": "开窍时吸收希望蛊炸开空窍。希望蛊越多→空窍越大→资质越高",
+    "feed": "不需要喂养（仅在开窍时使用一次）",
+    "feedFailure": "不适用",
+    "usageFailure": "开窍失败→无法成为蛊师（终身凡人）",
+    "refineMaterials": "不可炼制（天地生成）",
+    "refineDifficulty": 10,
+    "note": "蛊师开窍的必需品，数量决定资质等级"
+  },
+  "水龙蛊": {
+    "tier": 3, "path": "水道", "rank": "uncommon",
+    "effect": "召唤水龙攻击，范围大伤害高，水道标志性攻击蛊",
+    "feed": "水源——需浸泡在纯净水中",
+    "feedFailure": "缺水→水龙缩小→威力下降→干涸死亡",
+    "usageFailure": "在干燥环境使用→水龙无法成形；被土道蛊虫克制",
+    "refineMaterials": "千年寒潭水 + 水道蛊材",
+    "refineDifficulty": 5
+  },
+  "金钟蛊": {
+    "tier": 3, "path": "金道", "rank": "uncommon",
+    "effect": "在蛊师周身形成金色钟形护罩，极高防御力",
+    "feed": "金属——需喂食金粉或金矿石",
+    "feedFailure": "无金属→金钟变薄→防御下降→金钟碎裂",
+    "usageFailure": "承受超限攻击→金钟碎裂，蛊师暴露；金钟破碎后需重新炼制",
+    "refineMaterials": "黄金 + 金道蛊材",
+    "refineDifficulty": 5
+  },
+  "火鸦蛊": {
+    "tier": 3, "path": "炎道", "rank": "uncommon",
+    "effect": "释放火鸦群攻击，群攻伤害，可叠加",
+    "feed": "火焰——需在火源旁喂养",
+    "feedFailure": "无火→火鸦数量减少→威力下降→熄灭死亡",
+    "usageFailure": "在水域环境使用→火鸦威力大减；火鸦过多超出控制→烧伤蛊师",
+    "refineMaterials": "地火之精 + 炎道蛊材",
+    "refineDifficulty": 4
+  },
+  "百战不殆蛊": {
+    "tier": 5, "path": "智道", "rank": "rare",
+    "effect": "战斗中自动分析敌方弱点，提供战术建议，辅助决策",
+    "feed": "战斗经验——每次战斗后自动吸收经验",
+    "feedFailure": "长期无战斗→百战不殆蛊智识退化",
+    "usageFailure": "面对完全未知的敌人→分析失败",
+    "refineMaterials": "百场战斗记录 + 智道蛊材",
+    "refineDifficulty": 7
+  }
+}

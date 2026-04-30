@@ -3,9 +3,9 @@ import type { GameEvent } from '../../types';
 interface EventSlice {
   eventQueue: GameEvent[];
   triggeredEvents: Set<string>;
-  eventHistory: any[];
+  eventHistory: { event: GameEvent; triggeredAt: number }[];
   enqueueEvent: (event: GameEvent) => void;
-  dequeueAndTrigger: () => any;
+  dequeueAndTrigger: () => GameEvent | null;
   markTriggered: (eventId: string) => void;
 }
 
@@ -17,8 +17,15 @@ export const createEventSlice = (set: any, get: any): EventSlice => ({
     eventQueue: [...s.eventQueue, event],
   })),
   dequeueAndTrigger: () => {
-    // 留空，阶段2B实现
-    return null;
+    const state = get() as EventSlice;
+    if (state.eventQueue.length === 0) return null;
+    const [next, ...rest] = state.eventQueue;
+    set({
+      eventQueue: rest,
+      eventHistory: [...state.eventHistory, { event: next, triggeredAt: Date.now() }],
+      triggeredEvents: new Set([...state.triggeredEvents, next.id]),
+    });
+    return next;
   },
   markTriggered: (eventId) => set((s: EventSlice) => ({
     triggeredEvents: new Set([...s.triggeredEvents, eventId]),

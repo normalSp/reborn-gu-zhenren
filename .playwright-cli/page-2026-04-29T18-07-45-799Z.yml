@@ -1,0 +1,14 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - heading "蛊真人世界" [level=1] [ref=e5]
+    - paragraph [ref=e6]: 人生重来模拟器
+  - generic [ref=e7]:
+    - text: 蛊界天道密钥
+    - generic [ref=e8]:
+      - textbox "输入你的 DeepSeek API Key..." [ref=e9]
+      - button "显示" [ref=e10]
+    - button "测试连通" [disabled] [ref=e12]
+    - generic [ref=e13]:
+      - paragraph [ref=e14]: 蛊真人世界 · 人生重来模拟器 · v0.2.0
+      - paragraph [ref=e15]: DeepSeek V4 Pro · React · TypeScript · 账簿式 UI
+  - paragraph [ref=e16]: API Key 仅存储在浏览器本地，不会上传至任何服务器。 你可以随时在设置中更换或清除密钥。

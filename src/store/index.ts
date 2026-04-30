@@ -47,28 +47,24 @@ export const useStore = create<RootStore>()(
         name: 'gu-zhenren-save',
         version: 1,
         partialize: (state) => {
+          const s = state as any;
           const {
             // 排除 uiSlice 的所有字段（不持久化）
-            activeTab: _at,
-            isSettingsOpen: _s,
-            isSaveDialogOpen: _d,
-            isEventLogExpanded: _e,
-            typewriterSpeed: _ts,
-            screenState: _ss,
-            setActiveTab: _sat,
-            toggleSettings: _tgls,
-            toggleSaveDialog: _tgld,
-            toggleEventLog: _tgle,
-            setTypewriterSpeed: _sts,
-            setScreenState: _sss,
+            activeTab, isSettingsOpen, isSaveDialogOpen, isEventLogExpanded,
+            typewriterSpeed, screenState, gameMode,
+            pipelinePhase, pipelineError, l3Warnings,
+            setActiveTab, toggleSettings, toggleSaveDialog, toggleEventLog,
+            setTypewriterSpeed, setScreenState, setGameMode,
+            setPipelinePhase, setPipelineError, setL3Warnings,
             // 排除触发事件 Set（不可序列化）
-            triggeredEvents: _te,
+            triggeredEvents,
             // 排除加载/错误状态
-            isLoading: _il,
-            error: _err,
-            // 排除方法
+            isLoading, error,
+            // 排除当前叙事（每次都重新生成）
+            currentNarrative,
+            // 保留其余可序列化数据
             ...rest
-          } = state as any;
+          } = s;
           return rest;
         },
       }

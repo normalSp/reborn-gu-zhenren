@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
         'rg-ink': {
+          DEFAULT: '#1a1a2e',
           50: '#f0f0f5',
           100: '#d8d8e6',
           200: '#b8b8d4',
@@ -19,6 +20,7 @@ export default {
           950: '#05050a',
         },
         'rg-paper': {
+          DEFAULT: '#faf7e8',
           50: '#fdfcf7',
           100: '#faf7e8',
           200: '#f5f0d6',
@@ -32,6 +34,7 @@ export default {
           950: '#2a240e',
         },
         'rg-blood': {
+          DEFAULT: '#8b0000',
           50: '#fef2f2',
           100: '#fde1e1',
           200: '#fbc0c0',
@@ -45,6 +48,7 @@ export default {
           950: '#140000',
         },
         'rg-jade': {
+          DEFAULT: '#2d6a4f',
           50: '#ecfdf5',
           100: '#d0fbe6',
           200: '#a0f5cd',
@@ -58,6 +62,7 @@ export default {
           950: '#050d08',
         },
         'rg-gold': {
+          DEFAULT: '#b8860b',
           50: '#fdf8ec',
           100: '#faf0d0',
           200: '#f5e0a0',
