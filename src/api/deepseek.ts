@@ -38,6 +38,12 @@ async function callDeepSeek<T = any>(
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
+      // 5D: 系统prompt加随机前缀彻底破坏缓存（缓存命中99%→0%）
+      const systemWithBreak = `[sid:${Math.random().toString(36).slice(2,8)}] ${systemPrompt}`;
+      // 用户消息末尾加时间戳辅助破缓存
+      const userWithCacheBreak = `${userMessage}
+#[ts:${Date.now().toString(36)}]`;
+
       const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
         method: 'POST',
         headers: {
@@ -47,10 +53,9 @@ async function callDeepSeek<T = any>(
         body: JSON.stringify({
           model: 'deepseek-chat',
           messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userMessage },
+            { role: 'system', content: systemWithBreak },
+            { role: 'user', content: userWithCacheBreak },
           ],
-          response_format: { type: 'json_object' },
           temperature: 0.7,
         }),
         signal: controller.signal,
@@ -83,7 +88,12 @@ async function callDeepSeek<T = any>(
 
       let parsed: T;
       try {
-        parsed = JSON.parse(content);
+        // 5B: 剥离 markdown 代码块包裹 + 清理首尾空白
+        let cleanContent = content.trim();
+        if (cleanContent.startsWith('```')) {
+          cleanContent = cleanContent.replace(/^```[a-z]*\s*/i, '').replace(/\s*```$/, '').trim();
+        }
+        parsed = JSON.parse(cleanContent);
       } catch {
         lastError = 'JSON parse failed';
         if (attempt < maxRetries) {

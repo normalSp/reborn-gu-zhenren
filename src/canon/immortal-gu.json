@@ -111,5 +111,165 @@
     "usageCost": "仙元+魂魄负担",
     "limitations": "魂道仙蛊使用过度→魂魄损伤，需鬼道或特殊手段恢复",
     "failureMode": "魂魄受损→仙蛊反噬→蛊师魂魄残缺→疯魔或死亡"
+  },
+  "春秋蝉": {
+    "tier": 6, "path": "宙道", "rank": "legendary",
+    "composition": "天地生成（十大奇蛊第七，红莲魔尊遗留）",
+    "effect": "穿梭时光长河返回过去重生，带记忆回到指定时间点",
+    "usageCost": "气运+仙元——每次使用会损失大量气运",
+    "limitations": "不能回到炼成之前；每次使用后春秋蝉需长期温养恢复",
+    "failureMode": "气运不足→重生失败→神魂俱灭"
+  },
+  "神游蛊": {
+    "tier": 6, "path": "宇道", "rank": "epic",
+    "composition": "喝四种极品美酒凝成",
+    "effect": "酒醉时随机遨游天地，不受空间距离限制",
+    "usageCost": "仙元+极品美酒",
+    "limitations": "传送目的地随机不可控",
+    "failureMode": "酒后意志不清→传送至危险之地"
+  },
+  "第二空窍蛊": {
+    "tier": 6, "path": "特殊", "rank": "legendary",
+    "composition": "需胎盘形态五转蛊虫+寿蛊等炼制",
+    "effect": "开辟第二个空窍，可同时容纳更多蛊虫，修行效率翻倍",
+    "usageCost": "仙元温养",
+    "limitations": "第二空窍初始为空，需重新炼化蛊虫",
+    "failureMode": "炼制失败→材料全损→空窍可能受损"
+  },
+  "招灾蛊": {
+    "tier": 7, "path": "运道", "rank": "legendary",
+    "composition": "不可凡蛊炼制",
+    "effect": "将地灾天劫从原目标引到自己身上，与排难蛊配合形成循环",
+    "usageCost": "仙元+承受灾劫",
+    "limitations": "需排难蛊配合；引来的灾劫必须自己度过",
+    "failureMode": "灾劫超出承受范围→蛊仙陨落"
+  },
+  "排难蛊": {
+    "tier": 7, "path": "运道", "rank": "legendary",
+    "composition": "不可凡蛊炼制",
+    "effect": "将福地中的天劫地灾排遣到外界，与招灾蛊配合使用",
+    "usageCost": "仙元",
+    "limitations": "需招灾蛊配合；不可单方面排遣",
+    "failureMode": "强行排遣→排难蛊受损→灾劫回流"
+  },
+  "天机蛊": {
+    "tier": 7, "path": "智道", "rank": "legendary",
+    "composition": "不可凡蛊炼制（砚石老人本命蛊）",
+    "effect": "无需线索直指真相，推算一切传承线索",
+    "usageCost": "仙元+十次八败→失败反噬失寿",
+    "limitations": "成功率约20-30%；失败后反噬损失寿命",
+    "failureMode": "推算失败→反噬失寿；推算强于自身者→可能暴毙"
+  },
+  "态度蛊": {
+    "tier": 8, "path": "太古", "rank": "legendary",
+    "composition": "不可炼制（太古遗存）",
+    "effect": "态度是心的面具。盗天魔尊杀招「见面曾相识」核心蛊",
+    "usageCost": "态度本身的消耗即为心的伪装",
+    "limitations": "只能伪装态度不能改变本质",
+    "failureMode": "态度与内心完全相反→被人识破"
+  },
+  "遁空蛊": {
+    "tier": 8, "path": "宇道", "rank": "legendary",
+    "composition": "盗天魔尊所炼+长毛老祖改进",
+    "effect": "使人遁入空门，穿越空间壁障，无视绝大多数封锁",
+    "usageCost": "仙元",
+    "limitations": "需空门存在方可使用",
+    "failureMode": "空门关闭→被卡在空间夹缝中"
+  },
+  "鸿运齐天蛊": {
+    "tier": 8, "path": "运道", "rank": "legendary",
+    "composition": "巨阳仙尊所炼无上真传（一次性消耗）",
+    "effect": "赋予使用者一团恢弘气运，奇遇连连、灾劫规避",
+    "usageCost": "一次性消耗",
+    "limitations": "使用后气运随时间衰减",
+    "failureMode": "气运用尽→运势回归正常甚至更差"
+  },
+  "起死回生蛊": {
+    "tier": 8, "path": "生死道", "rank": "legendary",
+    "composition": "需无形容器作为炼蛊之地——此器必须无实就虚不沾五行光暗",
+    "effect": "以死转生，可助仙僵重回人身，擅长延寿",
+    "usageCost": "仙元+特殊条件（无形容器）",
+    "limitations": "需无形容器；不可对非仙僵使用",
+    "failureMode": "无形容器不达标→炼制失败→仙僵魂飞魄散"
+  },
+  "力量蛊": {
+    "tier": 9, "path": "力道", "rank": "divine",
+    "composition": "不可炼制（太古之蛊，天地生成）",
+    "effect": "付出青春代价获得无穷力量，只能被更有力量者炼化",
+    "usageCost": "青春",
+    "limitations": "每次使用消耗青春；力量来源于自身而非外物",
+    "failureMode": "滥用→青春耗尽→衰老死亡"
+  },
+  "智慧蛊": {
+    "tier": 9, "path": "智道", "rank": "divine",
+    "composition": "不可炼制（太古之蛊，人祖持有）",
+    "effect": "付出中年代价获得无穷智慧，只能被更有智慧者炼化",
+    "usageCost": "中年时光",
+    "limitations": "每次使用消耗中年；智慧无限但获取需要代价",
+    "failureMode": "滥用→中年耗尽→思维衰退"
+  },
+  "宿命蛊": {
+    "tier": 9, "path": "律道", "rank": "divine",
+    "composition": "不可炼制（顺天意而存，天庭核心）",
+    "effect": "控制蛊界万物命运轨迹，与运蛊合之可为十转命运蛊",
+    "usageCost": "天意本身",
+    "limitations": "已被方源彻底摧毁——游戏中为宿命破坏后时代",
+    "failureMode": "已不存在→不可获取"
+  },
+  "至尊仙胎蛊": {
+    "tier": 9, "path": "变化道", "rank": "divine",
+    "composition": "不可炼制（需吞噬对应修为的仙窍来喂养）",
+    "effect": "化为至尊仙体，获取被吞噬仙窍的全部道痕",
+    "usageCost": "吞噬仙窍——每次消耗一个对应修为的仙窍",
+    "limitations": "九转版本有吞窍弊端，需不断吞噬仙窍维持",
+    "failureMode": "长期不吞噬仙窍→至尊仙体退化→道痕流失"
+  },
+  "极往仙蛊": {
+    "tier": 8, "path": "宙道", "rank": "legendary",
+    "composition": "不可凡蛊炼制",
+    "effect": "抽离意志俯瞰光阴长河，观察过去一切发生之事",
+    "usageCost": "仙元+意志力",
+    "limitations": "只能观察过去不能改变",
+    "failureMode": "意志不足→无法抽离→被光阴长河吞没"
+  },
+  "变形蛊": {
+    "tier": 6, "path": "变化道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "改变蛊仙容貌和形体，伪装成他人",
+    "usageCost": "仙元",
+    "limitations": "变形有时间限制；被高阶侦查仙蛊可识破",
+    "failureMode": "变形被打断→卡在中间形态"
+  },
+  "冰心蛊": {
+    "tier": 6, "path": "冰道", "rank": "rare",
+    "composition": "凡蛊升炼",
+    "effect": "巨大冰心脏形态，寒气四溢，冰道杀招核心增幅器",
+    "usageCost": "仙元",
+    "limitations": "仅对冰道杀招有效",
+    "failureMode": "寒气失控→冻结自身经脉"
+  },
+  "百无一失蛊": {
+    "tier": 6, "path": "律道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "回收贵重蛊虫，确保战斗中损失的蛊虫可被召回",
+    "usageCost": "仙元",
+    "limitations": "只能在蛊虫未被摧毁前使用",
+    "failureMode": "蛊虫已被销毁→无法回收"
+  },
+  "解谜蛊": {
+    "tier": 6, "path": "智道", "rank": "epic",
+    "composition": "不可凡蛊炼制",
+    "effect": "推算一切传承线索，自动分析阵法和传承的破解方式",
+    "usageCost": "仙元+智道道痕消耗",
+    "limitations": "应对高于自身境界的传承可能失败",
+    "failureMode": "推算超出能力的传承→反噬失智"
+  },
+  "暗箭仙蛊": {
+    "tier": 6, "path": "箭道", "rank": "epic",
+    "composition": "不可凡蛊炼制",
+    "effect": "同时发出三道自动寻敌的穿透箭，无视多数防御",
+    "usageCost": "仙元",
+    "limitations": "高防御仙蛊可挡部分伤害",
+    "failureMode": "目标有反伤类仙蛊→箭矢反弹"
   }
 }

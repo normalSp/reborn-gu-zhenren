@@ -11,59 +11,12 @@ const worldRules = worldRulesRaw as Record<string, any>;
 const terminology = terminologyRaw as Record<string, any>;
 
 // ─── System Prompt Layer 1: 世界观核心 ───
-const SYSTEM_PROMPT_LAYER1 = `你是一个「蛊真人世界·人生重来模拟器」的 AI 游戏主持人。你负责生成所有叙事文本、提供玩家选项、管理游戏状态。
+const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你必须按以下格式输出纯JSON：{"narrative":{"text":"叙事","choices":[{"id":"c1","text":"选项","risk":"high|medium|low","risk_note":"风险说明"}]},"state_update":{...}}。字段名不可自创：choices非options、state_update非stateUpdate。
 
-核心世界观：蛊界是一个残酷的修真世界。弱肉强食是唯一法则，没有正邪，只有强弱。
-境界体系不可逾越。NPC不会降智，不会无条件信任，不会免费送资源。
-机缘必有代价。选择必有后果。
+世界观：蛊界弱肉强食。境界不可逾越。NPC不降智不送资源。机缘必有代价。禁止markdown包裹。`;
 
-你必须严格按照JSON格式输出，不要输出任何JSON以外的文字。`;
-
-// ─── System Prompt Layer 2: 输出格式 + 叙事铁则 ───
-const SYSTEM_PROMPT_LAYER2 = `
-输出格式要求：
-{
-  "narrative": {
-    "text": "叙事文本（200-500字，中文，冷静克制的第二人称）",
-    "choices": [
-      {
-        "id": "choice_1",
-        "text": "选项描述（简洁有力）",
-        "risk": "high|medium|low",
-        "risk_note": "风险提示（必填）"
-      }
-    ]
-  },
-  "state_update": {
-    "player": {
-      "realm": { "action": "set", "value": "二转初阶" },
-      "attributes": {
-        "资质": { "action": "add", "value": 0 },
-        "体魄": { "action": "add", "value": 1 },
-        "心智": { "action": "add", "value": 0 },
-        "气运": { "action": "add", "value": -1 }
-      },
-      "health": { "current": 95, "max": 100 },
-      "essence": { "current": 80, "max": 120 }
-    },
-    "gu_inventory": { "add": [], "remove": [] },
-    "flags": { "set": {}, "remove": [] },
-    "faction": {},
-    "causality": {}
-  }
-}
-
-叙事铁则：
-- 每轮2-4个选项，每个都有明确风险
-- 高境界绝对压制低境界
-- 方源（古月方源）极致利己、算无遗策，不会友善不会信任
-- 机缘必有对等代价
-- 选项必须包含一个保守选项和一个冒险选项
-- risk_note必填
-- 属性中资质使用甲等/乙等/丙等/丁等评价，体魄/心智/气运不使用甲等-丁等
-- 气运默认不可见，蛊师没有运道蛊虫时无法知道自己和他人气运
-
-生成JSON前请完成自检：NPC无无条件信任、叙事不偏正面、核心NPC威慑力充分、机缘有代价、境界差距正确、选项全部含风险提示。`;
+// ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta`;
 
 // ─── Layer S: 风格指南（注入版） ───
 const STYLE_GUIDE_INJECT = `
@@ -277,7 +230,7 @@ export class ContextBuilder {
   // ─── 序列化玩家状态 ───
   buildPlayerStateJSON(store: RootStore): string {
     const s = store;
-    const playerInfo = {
+    const playerInfo: Record<string, any> = {
       name: s.profile.name,
       realm: s.profile.realm.label,
       attributes: s.attributes,
@@ -290,6 +243,12 @@ export class ContextBuilder {
       flags: s.flags,
       factions: (s as any).standings ? Object.entries(s as any).filter(([k]) => k !== 'updateStanding' && k !== 'updateRelation') : [],
     };
+    // ─── 5B: 高资质势力关注 ───
+    if (s.attributes.资质 >= 9) {
+      playerInfo.talentNotice = s.attributes.资质 === 10
+        ? '该蛊师拥有十绝体，资质千古罕见。各方势力已暗中关注——正道欲拉拢培养、魔道欲夺舍炼化、散修欲结交依附。每次社交选择都可能引来势力接触，好坏参半。'
+        : '该蛊师资质甲等，天赋异禀。已引起附近势力注意——可能获得修行资源资助，也可能招来嫉妒和算计。行事需低调谨慎。';
+    }
     return JSON.stringify(playerInfo, null, 2);
   }
 

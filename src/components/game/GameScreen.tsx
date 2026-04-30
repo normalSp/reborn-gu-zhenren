@@ -18,6 +18,7 @@ import { SettingsDialog } from './SettingsDialog';
 import { BattleOverlay } from './BattleOverlay';
 import { TutorialOverlay } from './TutorialOverlay';
 import { MerchantPanel } from './MerchantPanel';
+import { DebugOverlay } from './DebugOverlay';
 import { useGamePipeline } from '../../hooks/useGamePipeline';
 
 type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant';
@@ -72,7 +73,7 @@ const toolbarBtnClass = (active: boolean) =>
   }`;
 
 export function GameScreen() {
-  const { pipeState, validation, startGame, submitChoice } = useGamePipeline();
+  const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
   const screenState = useStore(s => s.screenState);
   const startedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
@@ -97,7 +98,7 @@ export function GameScreen() {
         {/* 叙事主区域 */}
         <div className="flex-1 flex flex-col min-w-0">
           <NarrativePanel validation={validation} />
-          <ChoicePanel onSelect={submitChoice} pipelineState={pipeState} />
+          <ChoicePanel onSelect={submitChoice} onRetry={retry} pipelineState={pipeState} />
         </div>
 
         {/* 桌面端：右侧栏 */}
@@ -155,6 +156,7 @@ export function GameScreen() {
       <SaveLoadDialog />
       <SettingsDialog />
       <TutorialOverlay />
+      <DebugOverlay />
 
       {/* ─── 底部工具栏 ─── */}
       <div className="bg-rg-ink-700/90 px-3 sm:px-6 py-2 border-t border-rg-ink-300/12 flex items-center justify-between backdrop-blur-md gap-2">
@@ -170,7 +172,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0 hidden sm:block">
-          蛊真人世界 · v0.4.0
+          蛊真人世界 · v0.5.0
         </p>
       </div>
 

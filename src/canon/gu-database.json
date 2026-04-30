@@ -208,5 +208,370 @@
     "usageFailure": "面对完全未知的敌人→分析失败",
     "refineMaterials": "百场战斗记录 + 智道蛊材",
     "refineDifficulty": 7
+  },
+  "铜皮蛊": {
+    "tier": 1, "path": "防御", "rank": "common",
+    "effect": "提升皮肤防御力，是一转基础防御蛊虫",
+    "feed": "铜屑——研磨铜粉喂食",
+    "feedFailure": "无铜屑→铜皮变薄→防御下降",
+    "usageFailure": "承受超限攻击→铜皮龟裂",
+    "refineMaterials": "铜粉 + 防御蛊材",
+    "refineDifficulty": 1
+  },
+  "天元宝莲蛊": {
+    "tier": 3, "path": "辅助", "rank": "epic",
+    "effect": "号称移动元泉，日产约50枚元石及大量真元，有升炼潜力",
+    "feed": "元石——需定期放置元石于莲心",
+    "feedFailure": "无元石→莲瓣枯萎→产出停止",
+    "usageFailure": "元石耗尽→天元宝莲休眠",
+    "refineMaterials": "元泉核心 + 木道蛊材",
+    "refineDifficulty": 8
+  },
+  "全力以赴蛊": {
+    "tier": 3, "path": "力道", "rank": "uncommon",
+    "effect": "自由催发兽力虚影攻击，可同时释放多种兽力加成",
+    "feed": "兽血——需各类野兽血液混合喂食",
+    "feedFailure": "无兽血→兽力虚影变淡→攻击力下降",
+    "usageFailure": "兽力冲突→虚影反噬自身",
+    "refineMaterials": "三兽以上鲜血 + 力道蛊材",
+    "refineDifficulty": 5
+  },
+  "剑影蛊": {
+    "tier": 3, "path": "剑道", "rank": "rare",
+    "effect": "三转攻击最强之一，与刀光蛊齐名，出剑如影无形",
+    "feed": "剑意——每次使用后吸收残余剑气",
+    "feedFailure": "无剑意→剑影变钝→威力减半",
+    "usageFailure": "剑意不足→剑气溃散",
+    "refineMaterials": "名剑碎片 + 剑道蛊材",
+    "refineDifficulty": 6
+  },
+  "月影蛊": {
+    "tier": 4, "path": "隐匿", "rank": "uncommon",
+    "effect": "最擅隐藏身形，且能压制蛊师空窍中真元的使用",
+    "feed": "月光——需月夜放置吸收月华",
+    "feedFailure": "无月光→隐影效果减弱",
+    "usageFailure": "被克制隐匿的蛊虫克制→显形",
+    "refineMaterials": "三转幻影月蛊（升炼）+ 暗月石",
+    "refineDifficulty": 6
+  },
+  "竹君子": {
+    "tier": 4, "path": "智道", "rank": "rare",
+    "effect": "以真诚为食，天生测谎。只能由从未说谎的至诚君子炼化喂养",
+    "feed": "真诚——持有者须保持诚实",
+    "feedFailure": "说谎→竹君子枯萎→凋零死亡",
+    "usageFailure": "被测谎者意志极强→测谎失效",
+    "refineMaterials": "百年翠竹 + 智道蛊材",
+    "refineDifficulty": 7,
+    "note": "极其罕见，因炼化者必须从未说过谎话"
+  },
+  "正气蛊": {
+    "tier": 4, "path": "心类", "rank": "rare",
+    "effect": "持有者秉持正义时催动，令宵小胆寒，敌方战意大幅下降",
+    "feed": "正义行为——行正道即为喂养",
+    "feedFailure": "行不正之事→正气蛊力量衰减→反噬",
+    "usageFailure": "以邪道使用→正气蛊溃散",
+    "refineMaterials": "百年浩气石 + 心类蛊材",
+    "refineDifficulty": 6
+  },
+  "金缕衣蛊": {
+    "tier": 4, "path": "防御", "rank": "uncommon",
+    "effect": "形成金色丝缕覆盖全身，防御力极强，可抵御多数同级攻击",
+    "feed": "金丝——需提炼纯金丝线喂食",
+    "feedFailure": "无金丝→金缕衣变薄→防御下降→溃散",
+    "usageFailure": "承受远超防御上限的攻击→金缕碎裂",
+    "refineMaterials": "精炼金丝 + 防御蛊材",
+    "refineDifficulty": 5
+  },
+  "天地宏音蛊": {
+    "tier": 5, "path": "音道", "rank": "epic",
+    "effect": "音浪攻势范围广阔，震荡天地，群攻威力惊人。久用会损声带致哑",
+    "feed": "声音——战斗中的巨大声响即为喂养",
+    "feedFailure": "长期沉默→宏音减弱",
+    "usageFailure": "过度使用→声带永久损伤",
+    "refineMaterials": "雷霆之声 + 音道蛊材",
+    "refineDifficulty": 8
+  },
+  "血幕天华蛊": {
+    "tier": 5, "path": "血道", "rank": "legendary",
+    "effect": "形成血幕防御罩，防御力极强且能出不进，比水幕天华更强",
+    "feed": "鲜血——需定期喂食新鲜血液维持",
+    "feedFailure": "无血→血幕变淡→防御下降",
+    "usageFailure": "正道蛊师使用→名声败坏；血道反噬",
+    "refineMaterials": "百人鲜血 + 血道蛊材 + 防御蛊材",
+    "refineDifficulty": 9,
+    "note": "古月一代原创，血道防御巅峰之作"
+  },
+  "铁皮蛊": {
+    "tier": 1, "path": "防御", "rank": "common",
+    "effect": "皮肤变为铁质光泽，防御力优于铜皮蛊",
+    "feed": "铁屑——研磨铁粉喂食",
+    "feedFailure": "无铁屑→铁皮变脆→防御下降",
+    "usageFailure": "超过防御极限→铁皮龟裂",
+    "refineMaterials": "铁粉 + 铜皮蛊（升炼）",
+    "refineDifficulty": 2
+  },
+  "熊力蛊": {
+    "tier": 1, "path": "力道", "rank": "common",
+    "effect": "赋予蛊师熊的力量，熊家标志蛊虫",
+    "feed": "兽肉——每次使用后需喂食新鲜兽肉",
+    "feedFailure": "无肉→熊力减弱",
+    "usageFailure": "超出自身承受→肌肉拉伤",
+    "refineMaterials": "熊血 + 力道蛊材",
+    "refineDifficulty": 2
+  },
+  "骨枪蛊": {
+    "tier": 1, "path": "骨道", "rank": "common",
+    "effect": "凝结骨枪远程投掷攻击，贯穿力强",
+    "feed": "骨粉——研磨兽骨粉末",
+    "feedFailure": "无骨粉→骨枪变钝→攻击力下降",
+    "usageFailure": "骨枪被格挡→碎裂需重新凝结",
+    "refineMaterials": "兽骨 + 骨道蛊材",
+    "refineDifficulty": 2
+  },
+  "蛮力天牛蛊": {
+    "tier": 1, "path": "力道", "rank": "common",
+    "effect": "临时赋予一牛之力，维持五个呼吸，消耗型蛊虫",
+    "feed": "不需喂养（一次性蛊虫）",
+    "feedFailure": "使用后即消散",
+    "usageFailure": "力量耗尽",
+    "refineMaterials": "天牛甲壳 + 力道蛊材",
+    "refineDifficulty": 1
+  },
+  "净水蛊": {
+    "tier": 1, "path": "水道", "rank": "uncommon",
+    "effect": "洗练空窍窍壁，化去异种气息，辅助修行转换流派",
+    "feed": "清泉——需纯净泉水浸泡",
+    "feedFailure": "无水→净水蛊干涸→失效",
+    "usageFailure": "异种气息过强→净水蛊超负荷",
+    "refineMaterials": "千年寒泉 + 水道蛊材",
+    "refineDifficulty": 3
+  },
+  "幽影随行蛊": {
+    "tier": 2, "path": "暗道", "rank": "uncommon",
+    "effect": "身体化为浓郁黑暗潜行，视线难以追踪",
+    "feed": "阴影——需在黑暗中放置吸收阴气",
+    "feedFailure": "长期暴露光亮→幽影变淡→隐匿下降",
+    "usageFailure": "被光道蛊虫照射→显形",
+    "refineMaterials": "暗影石 + 暗道蛊材",
+    "refineDifficulty": 4
+  },
+  "爱生离": {
+    "tier": 2, "path": "毒道", "rank": "rare",
+    "effect": "号称二转第一毒，需生息草+寡妇蛛+红针蝎+爱人之心炼制",
+    "feed": "毒物——各类毒草毒虫均可喂食",
+    "feedFailure": "无毒物→毒性衰减",
+    "usageFailure": "毒量控制不当→自伤",
+    "refineMaterials": "生息草 + 寡妇蛛 + 红针蝎 + 爱人之心",
+    "refineDifficulty": 6
+  },
+  "电眼蛊": {
+    "tier": 3, "path": "侦查", "rank": "uncommon",
+    "effect": "窥隐破形，能看穿隐匿和伪装",
+    "feed": "雷电——雷雨天放置室外吸收雷电之力",
+    "feedFailure": "无雷电→窥隐能力下降→视野模糊",
+    "usageFailure": "观察强于自身的隐匿→被反噬致盲",
+    "refineMaterials": "雷电精华 + 侦查蛊材",
+    "refineDifficulty": 5
+  },
+  "雷翼蛊": {
+    "tier": 3, "path": "雷道", "rank": "rare",
+    "effect": "凝聚雷光羽翼，短时间内飞翔",
+    "feed": "雷电——雷雨天放置吸收雷电",
+    "feedFailure": "无雷电→雷翼变弱→飞行时间缩短",
+    "usageFailure": "雷翼消耗殆尽→坠落",
+    "refineMaterials": "雷鹰羽 + 雷道蛊材",
+    "refineDifficulty": 6
+  },
+  "金罡蛊": {
+    "tier": 3, "path": "防御", "rank": "uncommon",
+    "effect": "形成金刚罡气护体，防御极强，三转防御核心",
+    "feed": "金属——需高品质金属粉末",
+    "feedFailure": "无金属→罡气变薄→防御下降",
+    "usageFailure": "承受超限攻击→罡气碎裂",
+    "refineMaterials": "金刚石 + 防御蛊材",
+    "refineDifficulty": 5
+  },
+  "金龙蛊": {
+    "tier": 4, "path": "金道", "rank": "rare",
+    "effect": "催动形成金龙虚影攻击，附带电光灼烧效果",
+    "feed": "雷电+金属——雷雨天喂养效果最佳",
+    "feedFailure": "无雷电→金龙变淡→威力下降",
+    "usageFailure": "金龙超出控制范围→反噬蛊师",
+    "refineMaterials": "雷击过的黄金 + 金道蛊材",
+    "refineDifficulty": 7
+  },
+  "金风送爽蛊": {
+    "tier": 4, "path": "风道", "rank": "rare",
+    "effect": "形成金色旋风进行治疗，风道与治疗结合的罕见蛊虫",
+    "feed": "清风——需放置在通风高处",
+    "feedFailure": "长期无风→治疗旋风减弱",
+    "usageFailure": "旋风中混杂杂质→治疗效果下降",
+    "refineMaterials": "金风精华 + 风道蛊材 + 治疗蛊材",
+    "refineDifficulty": 6
+  },
+  "苦力蛊": {
+    "tier": 4, "path": "力道", "rank": "rare",
+    "effect": "受伤越重痛苦越深，发挥力气越大，有上限",
+    "feed": "苦痛——每次承受伤害即为喂养",
+    "feedFailure": "长期不受伤害→苦力蛊力量衰减",
+    "usageFailure": "超出承受极限→苦力蛊力量反噬",
+    "refineMaterials": "苦痛精华 + 力道蛊材",
+    "refineDifficulty": 7
+  },
+  "金缕衣蛊": {
+    "tier": 4, "path": "防御", "rank": "uncommon",
+    "effect": "金色丝缕覆盖全身，防御力极强",
+    "feed": "金丝——提炼纯金丝线",
+    "feedFailure": "无金丝→金缕变薄→溃散",
+    "usageFailure": "超限攻击→金缕碎裂",
+    "refineMaterials": "精炼金丝 + 防御蛊材",
+    "refineDifficulty": 5
+  },
+  "油龙蛊": {
+    "tier": 4, "path": "火道", "rank": "uncommon",
+    "effect": "漆黑火油化为龙形攻击，并非实体但威力惊人",
+    "feed": "火油——需高品质火油浸泡",
+    "feedFailure": "无火油→油龙缩小→威力下降",
+    "usageFailure": "在雨天使用→油龙被浇灭",
+    "refineMaterials": "百年火油 + 火道蛊材",
+    "refineDifficulty": 5
+  },
+  "狼顾蛊": {
+    "tier": 4, "path": "奴道", "rank": "rare",
+    "effect": "寄托左眼，可将狼类野兽视野转移到蛊师眼中，远程侦察",
+    "feed": "狼血——需定期取狼血喂食",
+    "feedFailure": "无狼血→视野模糊→视野中断",
+    "usageFailure": "狼被杀死→视野丢失",
+    "refineMaterials": "狼王之眼 + 奴道蛊材",
+    "refineDifficulty": 6
+  },
+  "狼嚎蛊": {
+    "tier": 4, "path": "奴道", "rank": "rare",
+    "effect": "寄托咽喉，发狼王怒吼令狼群战力暴涨",
+    "feed": "狼血——与狼顾蛊共用狼血喂养",
+    "feedFailure": "无狼血→狼嚎减衰",
+    "usageFailure": "过度使用→声带永久损伤",
+    "refineMaterials": "狼王之喉 + 奴道蛊材",
+    "refineDifficulty": 6
+  },
+  "狼吞蛊": {
+    "tier": 4, "path": "后勤", "rank": "uncommon",
+    "effect": "狼头鱼肚形象，用于大量储存物品",
+    "feed": "食物——任何食物均可喂",
+    "feedFailure": "饥饿→狼吞蛊缩小→储存空间减小",
+    "usageFailure": "储存超出容量→狼吞蛊呕吐",
+    "refineMaterials": "大肚蛙（升炼）+ 空间蛊材",
+    "refineDifficulty": 4
+  },
+  "横冲直撞蛊": {
+    "tier": 4, "path": "移动", "rank": "uncommon",
+    "effect": "横冲+直撞合炼，冲锋距离扩至两百步，间隔缩短",
+    "feed": "气势——每次冲锋后自动滋养",
+    "feedFailure": "长期不冲锋→冲刺距离缩减",
+    "usageFailure": "冲锋被阻→反震伤害",
+    "refineMaterials": "横冲蛊 + 直撞蛊（合炼）",
+    "refineDifficulty": 6
+  },
+  "水幕天华蛊": {
+    "tier": 4, "path": "水道", "rank": "rare",
+    "effect": "形成巨大水罩，防御极强可挡五转攻伐。无法移动，无法出入",
+    "feed": "水——需置于流动水域",
+    "feedFailure": "无水→水幕变薄→防御骤降",
+    "usageFailure": "水流被断→水幕溃散；护城使用时机不对",
+    "refineMaterials": "千年寒潭水 + 水道蛊材 + 防御蛊材",
+    "refineDifficulty": 8,
+    "note": "常用于护城，战略级防御蛊虫"
+  },
+  "点金蛊": {
+    "tier": 5, "path": "金道", "rank": "rare",
+    "effect": "射出金光，生灵被射中化为纯金死亡，攻击与封杀一体",
+    "feed": "金器——需金质物品定期喂食",
+    "feedFailure": "无金器→金光变弱→点化失效",
+    "usageFailure": "被金道抗性蛊克制；误伤友军→无法挽回",
+    "refineMaterials": "纯金 + 金道蛊材",
+    "refineDifficulty": 8
+  },
+  "金汤蛊": {
+    "tier": 5, "path": "金道", "rank": "rare",
+    "effect": "如黄金水液，形状任意变化，打散可重聚，极致防守",
+    "feed": "金液——需液态金属喂食",
+    "feedFailure": "无金液→金汤变稠→流动性下降",
+    "usageFailure": "被固金类蛊虫冻结→无法变形",
+    "refineMaterials": "液态黄金 + 金道蛊材",
+    "refineDifficulty": 7
+  },
+  "松骨蛊": {
+    "tier": 5, "path": "骨道", "rank": "rare",
+    "effect": "方圆五十里内松软一切生命骨骼，群控领域级蛊虫",
+    "feed": "骨粉——需大量骨粉浸养",
+    "feedFailure": "无骨粉→松骨范围缩小→效力减弱",
+    "usageFailure": "对骨道抗性者无效",
+    "refineMaterials": "万年化石 + 骨道蛊材",
+    "refineDifficulty": 8
+  },
+  "功倍蛊": {
+    "tier": 5, "path": "律道", "rank": "rare",
+    "effect": "使其他蛊虫效果加倍，转数越高增幅越大，真元消耗也翻倍",
+    "feed": "能量——喂养其他蛊虫时附带滋养",
+    "feedFailure": "单独喂养→功倍蛊虚弱→增幅衰减",
+    "usageFailure": "真元不足以支撑双倍消耗→功倍失效",
+    "refineMaterials": "倍增石 + 律道蛊材",
+    "refineDifficulty": 7
+  },
+  "人如故": {
+    "tier": 5, "path": "宙道", "rank": "legendary",
+    "effect": "令伤者身体恢复到原来状态，紫山真君传承中的治疗巅峰",
+    "feed": "时光——时间流逝自然喂养",
+    "feedFailure": "不可喂养失败（宙道自养）",
+    "usageFailure": "恢复过度→消耗蛊师寿命；逆天改命→遭天意反噬",
+    "refineMaterials": "不可凡蛊炼制（传承获取）",
+    "refineDifficulty": 10,
+    "note": "太白云生标志性蛊虫，山如故+江如故+人如故天下闻名"
+  },
+  "百战不殆蛊": {
+    "tier": 5, "path": "智道", "rank": "epic",
+    "effect": "使用后一次炼蛊必成，信王传承中的无价之宝",
+    "feed": "不需喂养（一次性消耗）",
+    "feedFailure": "使用后即消散",
+    "usageFailure": "炼蛊对象超出一转→还需辅材",
+    "refineMaterials": "不可炼制（传承获取，天地间极其稀有）",
+    "refineDifficulty": 10,
+    "note": "方源从信王传承获得，价值连城"
+  },
+  "千里地狼蛛": {
+    "tier": 5, "path": "奴道", "rank": "epic",
+    "effect": "全身漆黑，以土为食，可钻地穿行，百战级坐骑+战斗双用",
+    "feed": "土石——吞食泥土岩石自动滋养",
+    "feedFailure": "无土可食→钻地能力下降→体力衰减",
+    "usageFailure": "地面被冰封→无法钻出；被天敌克制",
+    "refineMaterials": "地狼蛛母体 + 土道蛊材 + 奴道蛊材",
+    "refineDifficulty": 9
+  },
+  "岩枪蛊": {
+    "tier": 5, "path": "土道", "rank": "uncommon",
+    "effect": "大地中凝聚岩石长枪突刺，范围攻击",
+    "feed": "岩石——需各类岩石粉末",
+    "feedFailure": "无岩石→岩枪变脆→碎裂",
+    "usageFailure": "在沙地使用→无法凝聚",
+    "refineMaterials": "花岗岩心 + 土道蛊材",
+    "refineDifficulty": 6
+  },
+  "冰封蛊": {
+    "tier": 5, "path": "冰道", "rank": "rare",
+    "effect": "大范围冰封地面和敌人，控场能力极强",
+    "feed": "冰雪——需在极寒环境中滋养",
+    "feedFailure": "温暖环境→冰封范围缩小",
+    "usageFailure": "敌人有火道防御→冰封被克制",
+    "refineMaterials": "千年玄冰 + 冰道蛊材",
+    "refineDifficulty": 7
+  },
+  "九眼酒虫": {
+    "tier": 5, "path": "食道", "rank": "epic",
+    "effect": "两只七香酒虫+九种百兽王眼珠合炼，提纯黄金真元一个小境界（仅五转有效）",
+    "feed": "美酒+百兽王眼珠——不可缺一",
+    "feedFailure": "无美酒→提纯效果减弱；无眼珠→退化为七香酒虫",
+    "usageFailure": "喂劣酒→真元精炼效率下降",
+    "refineMaterials": "两只七香酒虫 + 九种百兽王眼珠（合炼）",
+    "refineDifficulty": 9
   }
 }

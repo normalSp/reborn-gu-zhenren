@@ -60,7 +60,7 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-start justify-start p-8 md:p-12">
+    <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center justify-center p-8 md:p-12">
       {/* ─── 标题 ─── */}
       <div className="mt-12 mb-12">
         <h1 className="text-4xl font-bold text-rg-gold mb-3 font-narrative tracking-wider">
@@ -168,7 +168,7 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
         {/* 底部系统信息 */}
         <div className="mt-8 pt-4 border-t border-rg-ink-400/20">
           <p className="text-rg-ink-300 text-xs font-panel text-center">
-            蛊真人世界 · 人生重来模拟器 · v0.2.0
+            蛊真人世界 · 人生重来模拟器 · v0.5.0
           </p>
           <p className="text-rg-ink-400 text-xs font-panel text-center mt-1">
             DeepSeek V4 Pro · React · TypeScript · 账簿式 UI

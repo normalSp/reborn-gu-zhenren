@@ -117,5 +117,105 @@
     "failureMode": "敌人无血可吸→杀招失效；吸收异种血液→血液冲突；正道环境→名声败坏",
     "path": "血道",
     "level": 5
+  },
+  "万我": {
+    "coreGu": ["分魂蛊"],
+    "supportGu": ["魂道核心蛊", "奴道辅助蛊"],
+    "effect": "分裂多个分魂同时攻击，每个分魂具有独立作战能力",
+    "cost": "魂魄大幅消耗 + 仙元",
+    "activationContext": "需大量魂道蛊虫储备",
+    "failureMode": "分魂失控→攻击本体；被逐个击破→魂魄永久损失",
+    "path": "魂道",
+    "level": 7
+  },
+  "无双偃月斩": {
+    "coreGu": ["偃月仙蛊"],
+    "supportGu": ["六转攻击仙蛊"],
+    "effect": "青色弯月无声斩出，威力惊人，天妒楼招牌杀招",
+    "cost": "仙元大量消耗",
+    "activationContext": "蓄力后发动，弯月轨迹无声",
+    "failureMode": "仙元不足→威力减半；目标空间躲闪→斩空",
+    "path": "刀道",
+    "level": 7
+  },
+  "大而化小": {
+    "coreGu": ["小蛊"],
+    "supportGu": ["宇道辅助蛊"],
+    "effect": "将靠近物体威力减弱缩小，敌方杀招靠近后威力锐减",
+    "cost": "仙元",
+    "activationContext": "需预判敌方攻击方向",
+    "failureMode": "攻击超出缩小上限→防御失效",
+    "path": "律道",
+    "level": 7
+  },
+  "水乳交融": {
+    "coreGu": ["水道融合仙蛊"],
+    "supportGu": ["水行隐匿蛊"],
+    "effect": "与水流彻底融合隐藏，水不灭身不死",
+    "cost": "仙元+持续消耗",
+    "activationContext": "需水域环境",
+    "failureMode": "水域被抽干→显形；被克制水道的仙蛊剥离",
+    "path": "水道",
+    "level": 7
+  },
+  "见面曾相识": {
+    "coreGu": ["态度蛊"],
+    "supportGu": ["智道辅助蛊"],
+    "effect": "盗天魔尊招牌杀招，见面即让人觉得可信，伪装身份无往不利",
+    "cost": "仙元",
+    "activationContext": "首次见面时发动",
+    "failureMode": "高阶侦查仙蛊→识破伪装",
+    "path": "智道",
+    "level": 8
+  },
+  "巨灵变": {
+    "coreGu": ["巨灵意蛊"],
+    "supportGu": ["巨灵身蛊", "巨灵心蛊"],
+    "effect": "身体巨大化，力量暴增",
+    "cost": "仙元+巨灵力",
+    "activationContext": "三蛊齐备方可发动",
+    "failureMode": "核心蛊失效→巨灵溃散",
+    "path": "力道",
+    "level": 5
+  },
+  "血滴子杀阵": {
+    "coreGu": ["血滴子"],
+    "supportGu": ["血道辅助蛊"],
+    "effect": "鲜血养蛊，分化多个血滴子同时攻击",
+    "cost": "鲜血+真元",
+    "activationContext": "需用自身鲜血提前培养",
+    "failureMode": "鲜血不足→血滴子互噬",
+    "path": "血道",
+    "level": 5
+  },
+  "山河如故": {
+    "coreGu": ["山如故", "江如故"],
+    "supportGu": ["人如故"],
+    "effect": "令大地山川、江河和人同时恢复原样，攻防恢复一体",
+    "cost": "真元大量消耗",
+    "activationContext": "需三蛊齐备",
+    "failureMode": "范围过大→真元耗尽",
+    "path": "宙道",
+    "level": 5
+  },
+  "金刚怒目阵": {
+    "coreGu": ["金刚怒目蛊"],
+    "supportGu": ["金道辅助蛊", "魂道辅助蛊"],
+    "effect": "目光所及皆为攻心，对视即攻心魂",
+    "cost": "真元+魂力",
+    "activationContext": "群战面对大量敌人",
+    "failureMode": "敌人有高阶魂防→失效",
+    "path": "金道",
+    "level": 5
+  },
+  "孔升天": {
+    "coreGu": ["气遁蛊"],
+    "supportGu": ["风道辅助蛊"],
+    "effect": "直线飞行速度天下第一",
+    "cost": "仙元消耗",
+    "activationContext": "需直线无阻挡",
+    "failureMode": "空间封锁→无法通过",
+    "path": "风道",
+    "level": 6
   }
 }

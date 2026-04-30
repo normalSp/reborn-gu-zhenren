@@ -73,6 +73,48 @@ function buildSemanticRetryPrompt(semanticResult: SemanticValidationResult, orig
 // ═══════════════════════════════════════════════
 // 响应管道
 // ═══════════════════════════════════════════════
+
+// ─── 5D: AI响应归一化器（Zod校验前运行，覆盖全部AI变体） ───
+function normalizeAIResponse(parsed: any): void {
+  // 0. narrative为纯字符串 → 包裹为对象 { text }
+  if (typeof parsed.narrative === 'string') {
+    parsed.narrative = { text: parsed.narrative };
+  }
+  if (!parsed.narrative || typeof parsed.narrative !== 'object') parsed.narrative = {};
+
+  // 1. 顶层映射: choices/options→narrative.choices, stateUpdate/stateUpdates→state_update
+  if (parsed.choices && !parsed.narrative.choices) parsed.narrative.choices = parsed.choices;
+  if (parsed.options && !parsed.narrative.choices) parsed.narrative.choices = parsed.options;
+  if (!parsed.state_update) {
+    parsed.state_update = parsed.stateUpdate || parsed.stateUpdates || undefined;
+  }
+  if (!parsed.narrative?.choices?.length) return;
+
+  // 2. 选项内部归一化
+  for (const choice of parsed.narrative.choices) {
+    let nested: any = choice.outcomes || choice.consequences || choice.outcome;
+    if (typeof nested === 'string') nested = { description: nested };
+    if (!nested) continue;
+    if (!choice.risk_note && nested.description) choice.risk_note = nested.description;
+    // 5E: choice.risk 可能被AI写入中文描述 → 移到 risk_note 并重新推断
+    if (choice.risk && !['high','medium','low'].includes(choice.risk)) {
+      if (!choice.risk_note) choice.risk_note = choice.risk;
+      choice.risk = undefined;
+    }
+    if (nested.risk && !choice.risk) {
+      const r = nested.risk;
+      choice.risk = r === '高' ? 'high' : r === '低' ? 'low' : r === '中' ? 'medium' : r;
+    }
+    if (!choice.risk) {
+      const d = nested.description || '';
+      if (/危险|反噬|致命|重伤|代价/.test(d)) choice.risk = 'high';
+      else if (/安全|稳妥|返回|退出/.test(d)) choice.risk = 'low';
+      else choice.risk = 'medium';
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════
 export class ResponsePipeline {
   private state: PipeState = 'IDLE';
   private config: PipelineConfig;
@@ -93,6 +135,9 @@ export class ResponsePipeline {
     attemptLabel: string
   ): Promise<{ success: true; parsed: any; tokens?: any } | { success: false; error: string }> {
     this.state = 'FETCHING';
+    console.log(`%c[PIPE] FETCHING %c→ system=${messages.system.length}c user=${messages.user.length}c`,
+      'color:#b8860b', 'color:#999');
+
     const response = await callDeepSeek<any>(
       messages.system,
       messages.user,
@@ -100,8 +145,11 @@ export class ResponsePipeline {
     );
 
     if (!response.success || !response.data) {
+      console.log(`%c[PIPE] API_FAIL %c→ ${response.error}`,'color:#e85050','color:#999');
       return { success: false, error: `AI 响应失败${attemptLabel}: ${response.error || '未知'}` };
     }
+    console.log(`%c[PIPE] API_OK %c→ ${response.elapsedMs}ms tokens=${response.tokens?.total_tokens || '?'}`,
+      'color:#30d080','color:#999');
 
     // 解析JSON
     this.state = 'PARSING';
@@ -129,11 +177,26 @@ export class ResponsePipeline {
       }
     }
 
+    // 5D: 归一化——前移至Zod之前，覆盖所有AI格式变体
+    console.log(`%c[PIPE] NORMALIZE %c→ keys=${Object.keys(parsed).join(',')} choices=${parsed.narrative?.choices?.length || '?'}`,
+      'color:#888','color:#999');
+    normalizeAIResponse(parsed);
+    // normalize后快照第一个选项
+    if (parsed.narrative?.choices?.[0]) {
+      const c = parsed.narrative.choices[0];
+      console.log(`%c[PIPE] NORMALIZED %c→ choice[0].risk=${c.risk} risk_note=${(c.risk_note||'').slice(0,30)}`,
+        'color:#30d080','color:#999');
+    }
+
     // Zod格式验证
+    console.log('%c[PIPE] ZOD_ENTER','color:#888');
     this.state = 'VALIDATING_FORMAT';
     const zodResult = NarrativeJSONSchema.safeParse(parsed);
     if (!zodResult.success) {
-      const errors = zodResult.error.errors.map(e => `${e.path.join('.')}: ${e.message}`).join('; ');
+      const issues = zodResult.error?.issues || [];
+      const errStr = issues.slice(0,3).map((e:any) => `${e.path?.join?.('.')||'?'}: ${e.message}`).join(' | ');
+      console.log(`%c[PIPE] ZOD_FAIL %c→ ${errStr}`,'color:#e85050','color:#f88');
+      const errors = issues.map((e:any) => `${e.path?.join?.('.')||'?'}: ${e.message}`).join('; ');
       if (this.config.maxJsonRetries > 0) {
         const fixRetry = await callDeepSeek<any>(
           messages.system,
@@ -142,6 +205,7 @@ export class ResponsePipeline {
         );
         if (fixRetry.success && fixRetry.data) {
           const retryParsed = typeof fixRetry.data === 'string' ? JSON.parse(fixRetry.data) : fixRetry.data;
+          normalizeAIResponse(retryParsed); // 5D: retry路径也归一化
           const retryZod = NarrativeJSONSchema.safeParse(retryParsed);
           if (!retryZod.success) {
             return { success: false, error: `Zod验证重试后仍失败` };
@@ -155,6 +219,8 @@ export class ResponsePipeline {
       }
     } else {
       parsed = zodResult.data;
+      console.log(`%c[PIPE] ZOD_PASS %c→ choices=${parsed?.narrative?.choices?.length || 0}`,
+        'color:#30d080','color:#999');
     }
 
     return { success: true, parsed };
@@ -178,10 +244,13 @@ export class ResponsePipeline {
       this.state = 'BUILDING_CONTEXT';
       const context = contextBuilder.buildFullContext(store, this.config.mode, isOpening);
       const baseMessages = contextBuilder.buildMessages(context, choiceId || undefined);
+      console.log(`%c[PIPE] PROCESS %c→ isOpening=${isOpening} choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c`,
+        'color:#b8860b;font-weight:bold','color:#999');
 
       // 阶段2-4: 获取+解析+格式验证
       const fetchResult = await this.fetchAndValidate(key, baseMessages, startTime, '');
       if (!fetchResult.success) {
+        console.log(`%c[PIPE] FETCH_FAIL %c→ ${fetchResult.error}`,'color:#e85050','color:#f88');
         return { state: 'ERROR', error: fetchResult.error, elapsedMs: Date.now() - startTime };
       }
 
@@ -189,16 +258,24 @@ export class ResponsePipeline {
 
       // ═══ 阶段5: Layer 4 金丝雀断言（前置过滤） ═══
       this.state = 'VALIDATING_L4';
+      console.log('%c[PIPE] L4_ENTER','color:#888');
       let canaryResult: CanaryValidationResult | undefined;
+      try {
       if (parsed?.narrative?.text) {
         canaryResult = validateCanaryAssertions(parsed as NarrativeJSON, store);
         if (canaryResult.recommendation === 'reject') {
+          const ruleNames = canaryResult.failedCritical.map(r => r.ruleName).join('、');
+          console.log(`%c[PIPE] L4_REJECT %c→ ${ruleNames}`,'color:#e85050','color:#f88');
           return {
             state: 'ERROR',
             error: `Layer 4 金丝雀断言不通过: ${canaryResult.failedCritical.map(r => r.ruleName).join('、')}`,
             elapsedMs: Date.now() - startTime,
           };
         }
+      }
+      } catch (l4Err: any) {
+        console.log(`%c[PIPE] CRASH_L4 %c→ ${l4Err?.message}`,'color:#e85050','color:#f88');
+        throw l4Err;
       }
 
       // ═══ 阶段6: Layer 3 语义验证 + 反馈修正重试 ═══
@@ -250,6 +327,7 @@ export class ResponsePipeline {
 
         // 修正后仍有warning但无critical → warn_only，可接受
         if (semanticResult && semanticResult.recommendation === 'reject') {
+          console.log(`%c[PIPE] L3_REJECT %c→ ${semanticResult.failedRules.map(r=>r.ruleName).join('、')}`,'color:#e85050','color:#f88');
           return {
             state: 'ERROR',
             error: `Layer 3 语义验证不通过: ${semanticResult.failedRules.map(r => r.ruleName).join('、')}`,
@@ -262,6 +340,8 @@ export class ResponsePipeline {
       // ─── 所有验证通过，进入 RESOLVED 阶段 ───
       this.state = 'RESOLVED';
       const narrative = parsed as NarrativeJSON;
+      console.log(`%c[PIPE] RESOLVED %c→ elapsed=${Date.now()-startTime}ms textLen=${narrative.narrative.text.length} choices=${narrative.narrative.choices.length} hasState=${!!narrative.state_update}`,
+        'color:#30d080;font-weight:bold','color:#999');
 
       useStore.getState().setCurrentNarrative(narrative);
       useStore.getState().appendMessage({
@@ -291,6 +371,7 @@ export class ResponsePipeline {
       };
     } catch (err: any) {
       this.state = 'ERROR';
+      console.log(`%c[PIPE] CRASH %c→ ${err?.message}`,'color:#e85050;font-weight:bold','color:#f88');
       return {
         state: 'ERROR',
         error: err?.message || '管道处理异常',

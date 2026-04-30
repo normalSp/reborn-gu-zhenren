@@ -4,6 +4,7 @@ import type { PipeState } from '../../engine/response-pipeline';
 
 interface ChoicePanelProps {
   onSelect: (choiceId: string) => void;
+  onRetry?: () => Promise<void>;
   pipelineState: PipeState;
 }
 
@@ -38,7 +39,7 @@ const RISK_STYLES: Record<Choice['risk'], {
   },
 };
 
-export function ChoicePanel({ onSelect, pipelineState }: ChoicePanelProps) {
+export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelProps) {
   const narrative = useStore(s => s.currentNarrative);
   const phase = useStore(s => s.pipelinePhase);
 
@@ -61,7 +62,7 @@ export function ChoicePanel({ onSelect, pipelineState }: ChoicePanelProps) {
             天机紊乱，感应天道失败
           </p>
           <button
-            onClick={() => onSelect('retry')}
+            onClick={() => onRetry?.()}
             className="bg-rg-gold/80 hover:bg-rg-gold text-rg-ink-900 font-button font-semibold text-sm px-4 py-2 rounded-sm transition-micro"
           >
             重新感应

@@ -37,12 +37,14 @@ export function useGamePipeline(): UseGamePipelineReturn {
 
   // 同步管道状态到 Zustand
   const syncState = useCallback((state: PipeState) => {
+    console.log(`%c[PIPE] SYNC %c→ ${state}`,'color:#888','color:#999');
     setPipeState(state);
     setPipelinePhase(state);
   }, [setPipelinePhase]);
 
   // ─── 开始游戏（开局叙事） ───
   const startGame = useCallback(async () => {
+    console.log('%c[PIPE] START_GAME','color:#b8860b;font-weight:bold');
     const pipeline = getPipeline();
     pipeline.reset();
     syncState('IDLE');
@@ -74,7 +76,13 @@ export function useGamePipeline(): UseGamePipelineReturn {
 
   // ─── 提交选择 ───
   const submitChoice = useCallback(async (choiceId: string) => {
+    // ─── 防御性：retry 不应作为选择ID进入管道 ───
+    if (choiceId === 'retry') {
+      await retry();
+      return;
+    }
     const pipeline = getPipeline();
+    console.log(`%c[PIPE] SUBMIT %c→ id=${choiceId}`,'color:#b8860b','color:#999');
     syncState('IDLE');
     lastChoiceRef.current = choiceId;
 
@@ -111,6 +119,7 @@ export function useGamePipeline(): UseGamePipelineReturn {
 
   // ─── 重试 ───
   const retry = useCallback(async () => {
+    console.log('%c[PIPE] RETRY %c→ resetting pipeline','color:#e85050','color:#999');
     const pipeline = getPipeline();
     pipeline.reset();
 

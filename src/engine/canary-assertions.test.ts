@@ -89,18 +89,19 @@ describe('Layer 4 金丝雀断言', () => {
     expect(c06.passed).toBe(false);
   });
 
-  it('C07: 缺少风险选项→critical reject', () => {
+  it('C07: 选择结构→5E降级为warning(全中风险)', () => {
     const store = makeStore();
     const narrative = makeNarrative({
       text: '你需要做出选择。前方有无数未知的危险和挑战。',
       choices: [
-        { id: 'c1', text: '选项A', risk: 'low', risk_note: '安全' },
-        { id: 'c2', text: '选项B', risk: 'low', risk_note: '也安全' },
+        { id: 'c1', text: '选项A', risk: 'medium', risk_note: '中等' },
+        { id: 'c2', text: '选项B', risk: 'medium', risk_note: '也中等' },
       ],
     });
     const result = validateCanaryAssertions(narrative, store);
     const c07 = result.results.find(r => r.ruleId === 'C07')!;
     expect(c07.passed).toBe(false);
+    expect(c07.level).toBe('warning');
   });
 
   it('C08: 叙事过短→critical reject', () => {

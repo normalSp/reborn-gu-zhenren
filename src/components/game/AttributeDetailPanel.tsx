@@ -13,8 +13,8 @@ function attrGrade(value: number, attrName: string): { label: string; color: str
 
 // ─── 简易雷达图（纯CSS） ───
 function MiniRadar({ values, labels, max }: { values: number[]; labels: string[]; max: number }) {
-  const SIZE = 160;
-  const cx = SIZE / 2; const cy = SIZE / 2; const r = 62;
+  const SIZE = 180;
+  const cx = SIZE / 2; const cy = SIZE / 2; const r = 66;
   const angles = values.map((_, i) => (Math.PI * 2 * i) / values.length - Math.PI / 2);
   const points = values.map((v, i) => {
     const ratio = Math.max(0, v / max);
@@ -25,7 +25,7 @@ function MiniRadar({ values, labels, max }: { values: number[]; labels: string[]
   const gridPath = outerPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ') + ' Z';
 
   return (
-    <svg width={SIZE} height={SIZE} className="mx-auto">
+    <svg width={SIZE} height={SIZE} className="mx-auto" overflow="visible">
       {/* 背景网格 */}
       <path d={gridPath} fill="none" stroke="rgba(144,144,184,0.15)" strokeWidth="1" />
       {[0.5, 1].map(scale => {
@@ -50,10 +50,10 @@ function MiniRadar({ values, labels, max }: { values: number[]; labels: string[]
       {outerPoints.map((p, i) => {
         const dx = p.x - cx; const dy = p.y - cy;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const lx = cx + (dx / dist) * (r + 26); const ly = cy + (dy / dist) * (r + 26);
+        const lx = cx + (dx / dist) * (r + 20); const ly = cy + (dy / dist) * (r + 20);
         return (
           <text key={i} x={lx} y={ly} textAnchor="middle" dominantBaseline="middle"
-            className="fill-rg-paper-200/60" fontSize="10" fontFamily="sans-serif">
+            fill="rgba(245,240,214,0.6)" fontSize="10" fontFamily="sans-serif">
             {labels[i]}
           </text>
         );

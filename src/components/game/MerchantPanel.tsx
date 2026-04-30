@@ -195,7 +195,7 @@ export function MerchantPanel() {
                 const ownCount = inventory.filter(g => g.name === item.name).length;
                 const canBuy = currency >= item.price && inventory.length < capacity;
                 return (
-                  <div key={item.name} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
+                  <div key={item.name + '_' + item.tier} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-rg-paper-200 font-narrative text-sm truncate">{item.name}</span>
                       <span className="text-[10px] font-button text-rg-paper-200/60 bg-rg-ink-800/50 px-1.5 py-0.5 rounded-sm">{item.tier}转</span>
@@ -228,7 +228,7 @@ export function MerchantPanel() {
               return (
                 <div key={gu.id} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex items-center justify-between">
                   <div className="flex flex-col gap-0.5 min-w-0">
-                    <span className="text-rg-paper-200 font-narrative text-sm">{gu.customName || gu.name}</span>
+                    <span className="text-rg-paper-200 font-narrative text-sm truncate">{gu.customName || gu.name}</span>
                     <span className="text-rg-paper-200/40 text-[10px]">{gu.tier}转 · {gu.path}</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">

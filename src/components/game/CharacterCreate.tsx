@@ -25,8 +25,19 @@ function rollAttribute(): number {
 }
 
 function rollAllAttributes(): { 资质: number; 体魄: number; 心智: number; 气运: number } {
+  const 资质 = rollAttribute();
+  // 十绝体：资质=10时，其余属性保底≥8（全属性极致）
+  if (资质 === 10) {
+    const rollHigh = () => {
+      const r = Math.random() * 10;
+      if (r < 8.5) return 8;  // 15%
+      if (r < 9.2) return 9;  // 7%
+      return 10;               // 8%
+    };
+    return { 资质: 10, 体魄: rollHigh(), 心智: rollHigh(), 气运: rollHigh() };
+  }
   return {
-    资质: rollAttribute(),
+    资质,
     体魄: rollAttribute(),
     心智: rollAttribute(),
     气运: rollAttribute(),
@@ -43,17 +54,40 @@ function attrGrade(value: number, attrName: string): { label: string; color: str
   return { label: '丁等', color: 'text-rg-paper-200/50' };
 }
 
+// ─── 确定性伪随机（种子shuffle用） ───
+function seedRand(seed: number): () => number {
+  let s = seed;
+  return () => { s = (s * 1664525 + 1013904223) & 0xFFFFFFFF; return (s >>> 0) / 0xFFFFFFFF; };
+}
+
 export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
   const [name, setName] = useState('');
   const [attributes, setAttributes] = useState(rollAllAttributes());
-  const [selectedTalent, setSelectedTalent] = useState<Talent | null>(null);
+  const [selectedTalents, setSelectedTalents] = useState<Talent[]>([]);
+  // 随机池：每页从52条目中抽取12个展示
+  const [poolIndex, setPoolIndex] = useState(0);
 
-  // ─── 天赋点数计算（4D.3） ───
+  // ─── 天赋点数计算（5B: /5 而非 /6） ───
   const isTenUltimate = attributes.资质 === 10;
   const talentPoints = useMemo(() => {
-    if (isTenUltimate) return 0;
-    return Math.floor((attributes.资质 + attributes.体魄 + attributes.心智 + attributes.气运) / 6);
+    const total = attributes.资质 + attributes.体魄 + attributes.心智 + attributes.气运;
+    const divisor = isTenUltimate ? 8 : 5;
+    return Math.floor(total / divisor);
   }, [attributes, isTenUltimate]);
+
+  // 随机12条天赋池（保留已选天赋在列表中）
+  const shuffledPool = useMemo(() => {
+    const rng = seedRand(attributes.资质 * 100 + attributes.体魄 * 10 + poolIndex);
+    const sorted = [...INITIAL_TALENTS].sort(() => rng() - 0.5);
+    // 确保已选天赋也在展示列表中
+    const needShow = sorted.filter(t => selectedTalents.some(s => s.id === t.id));
+    const rest = sorted.filter(t => !selectedTalents.some(s => s.id === t.id));
+    return [...needShow, ...rest.slice(0, 12)];
+  }, [attributes, poolIndex, selectedTalents]);
+
+  // 已消费点数
+  const spentPoints = selectedTalents.reduce((sum, t) => sum + (TALENT_COST[t.tier] || 1), 0);
+  const remainingPoints = talentPoints - spentPoints;
 
   const background = useStore(s => (s as any).flags?._origin || '南疆') as string;
   const identity = useStore(s => (s as any).flags?._identity || '蛊师学徒') as string;
@@ -70,15 +104,30 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
     });
   };
 
-  // 应用天赋加成
-  const applyTalent = (talent: Talent) => {
-    setSelectedTalent(talent);
-    useStore.getState().selectTalent(talent);
+  // toggle 天赋选中
+  const toggleTalent = (talent: Talent) => {
+    setSelectedTalents(prev => {
+      const exists = prev.find(t => t.id === talent.id);
+      if (exists) return prev.filter(t => t.id !== talent.id);
+      const cost = TALENT_COST[talent.tier] || 1;
+      if (remainingPoints >= cost) return [...prev, talent];
+      return prev;
+    });
   };
 
   const handleConfirm = () => {
     if (!name.trim()) return;
-    setProfile(useStore.getState().profile);
+    useStore.getState().setFlag('_profile_init', true);
+    useStore.setState({
+      profile: {
+        name,
+        realm: { grand: 1, sub: '初阶', label: '一转初阶' },
+        background: `${background} · ${identity}`,
+      },
+      attributes,
+    });
+    // 多天赋写入 store
+    selectedTalents.forEach(t => useStore.getState().selectTalent(t));
     onConfirm();
   };
 
@@ -167,53 +216,46 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
           </div>
         </div>
 
-        {/* ─── 天赋选择（点数制）─── */}
+        {/* ─── 天赋遴选（多选制）─── */}
         <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-6 backdrop-blur-md">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-rg-paper-200 text-sm font-panel font-semibold">
-              选择你的天赋（择一）
+              天赋遴选（可多选至点数用尽）
             </h3>
-            <span className="text-rg-gold/80 text-xs font-panel">
-              可用点数: <span className="font-bold">{talentPoints}</span>
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-rg-paper-200/50 text-xs font-panel">
+                已选<span className="text-rg-gold font-bold">{selectedTalents.length}</span>个 · 剩余<span className="text-rg-gold font-bold">{remainingPoints}</span>点
+              </span>
+              <button onClick={() => setPoolIndex(p => p + 1)}
+                className="text-rg-gold/60 hover:text-rg-gold text-xs font-button px-2 py-0.5 border border-rg-gold/20 rounded-sm transition-micro">
+                换一批
+              </button>
+            </div>
           </div>
           {isTenUltimate && (
-            <p className="text-rg-blood-400 text-xs font-panel mb-4">
-              十绝体资质已耗尽全部天赋余裕，无法再选其他天赋。
+            <p className="text-rg-gold/80 text-xs font-panel mb-4">
+              十绝体！空窍十成真元、全属性极致。天赋余裕所剩无几——仅能选基础天赋。
             </p>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {INITIAL_TALENTS.map(talent => {
-              const isSelected = selectedTalent?.id === talent.id;
-              const cost = TALENT_COST[talent.tier] || 0;
-              const canAfford = isTenUltimate ? false : cost <= talentPoints;
+            {shuffledPool.map(talent => {
+              const isSelected = selectedTalents.some(t => t.id === talent.id);
+              const cost = TALENT_COST[talent.tier] || 1;
+              const canAfford = !isSelected && cost <= remainingPoints;
               return (
                 <button
                   key={talent.id}
-                  onClick={() => canAfford && applyTalent(talent)}
-                  disabled={!canAfford}
-                  className={`text-left p-4 rounded-sm border transition-micro ${
-                    isSelected
-                      ? 'border-rg-gold/60 bg-rg-gold/10'
-                      : canAfford
-                        ? 'border-rg-ink-400/15 bg-rg-ink-800/50 hover:border-rg-gold/30'
-                        : 'border-rg-ink-400/8 bg-rg-ink-800/30 opacity-30 cursor-not-allowed'
-                  }`}
+                  onClick={() => toggleTalent(talent)}
+                  disabled={!isSelected && !canAfford}
+                  className={`text-left p-4 rounded-sm border transition-micro ${isSelected ? 'border-rg-gold/60 bg-rg-gold/10 ring-1 ring-rg-gold/20' : canAfford ? 'border-rg-ink-400/15 bg-rg-ink-800/50 hover:border-rg-gold/30' : 'border-rg-ink-400/8 bg-rg-ink-800/30 opacity-30 cursor-not-allowed'}`}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className={`text-xs font-panel font-semibold ${TIER_COLORS[talent.tier]}`}>
-                      {TIER_LABELS[talent.tier]}
-                    </span>
-                    <span className="text-rg-paper-100 font-panel text-sm font-semibold">
-                      {talent.name}
-                    </span>
-                    <span className={`text-[9px] font-panel ml-auto ${canAfford ? 'text-rg-gold/60' : 'text-rg-paper-200/20'}`}>
-                      {cost}pts
-                    </span>
+                    <span className={`text-xs font-panel font-semibold ${TIER_COLORS[talent.tier]}`}>{TIER_LABELS[talent.tier]}</span>
+                    <span className="text-rg-paper-100 font-panel text-sm font-semibold">{talent.name}</span>
+                    {isSelected && <span className="text-[9px] text-rg-gold ml-auto">已选</span>}
+                    {!isSelected && <span className={`text-[9px] font-panel ml-auto ${canAfford ? 'text-rg-gold/60' : 'text-rg-paper-200/20'}`}>{cost}pts</span>}
                   </div>
-                  <p className="text-rg-paper-200/60 text-xs font-panel leading-relaxed">
-                    {talent.description}
-                  </p>
+                  <p className="text-rg-paper-200/60 text-xs font-panel leading-relaxed">{talent.description}</p>
                 </button>
               );
             })}

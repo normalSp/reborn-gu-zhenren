@@ -206,7 +206,7 @@ function c06_VitalOverflow(narrative: NarrativeJSON, player: PlayerSnapshot): Ca
 }
 
 // ═══════════════════════════════════════════
-// C07: 选择结构完整性 ⚡ Critical
+// C07: 选择结构完整性 ⚡ (5E: downgrade to warning—AI normalization often defaults to medium)
 // ═══════════════════════════════════════════
 function c07_ChoiceStructure(narrative: NarrativeJSON): CanaryResult {
   const choices = narrative.narrative.choices;
@@ -215,10 +215,10 @@ function c07_ChoiceStructure(narrative: NarrativeJSON): CanaryResult {
   }
   const hasHigh = choices.some(c => c.risk === 'high');
   const hasLow = choices.some(c => c.risk === 'low');
-  if (!hasHigh || !hasLow) {
-    return { ruleId: 'C07', ruleName: '选择结构完整性', passed: false, level: 'critical', details: `缺少${!hasHigh ? '高风险' : ''}${!hasLow ? '低风险' : ''}选项` };
+  if (!hasHigh && !hasLow) {
+    return { ruleId: 'C07', ruleName: '选择结构完整性', passed: false, level: 'warning', details: '所有选项均为中风险，建议增加高低风险多样性' };
   }
-  return { ruleId: 'C07', ruleName: '选择结构完整性', passed: true, level: 'critical', details: '' };
+  return { ruleId: 'C07', ruleName: '选择结构完整性', passed: true, level: 'warning', details: '' };
 }
 
 // ═══════════════════════════════════════════

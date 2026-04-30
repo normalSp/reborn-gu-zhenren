@@ -204,6 +204,7 @@ export interface StateUpdate {
     };
     health?: { current: number; max: number };
     essence?: { current: number; max: number };
+    dao_heart?: { kill?: number; mercy?: number; scheme?: number; ambition?: number };
   };
   gu_inventory?: {
     add?: { name: string; tier: number; path: string; rarity: string; description: string }[];

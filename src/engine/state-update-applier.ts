@@ -45,6 +45,7 @@ function calcReputationTier(standing: number): string {
 
 // ─── StateUpdate 应用器 ───
 export function applyStateUpdate(update: StateUpdate): void {
+  if (!update) return; // 5C: 防崩溃守卫——state_update可选时可能为undefined
   const store = useStore.getState();
 
   // ─── Player 更新（直接调用 store 方法） ───
@@ -53,6 +54,19 @@ export function applyStateUpdate(update: StateUpdate): void {
     // 直接调用 playerSlice 的方法
     if (typeof (store as any).applyStateUpdate === 'function') {
       (store as any).applyStateUpdate(p);
+    }
+    // ─── 道心四维变更 ───
+    if (p.dao_heart) {
+      const store2 = useStore.getState();
+      const prev = store2.daoHeart;
+      useStore.setState({
+        daoHeart: {
+          kill: prev.kill + (p.dao_heart.kill ?? 0),
+          mercy: prev.mercy + (p.dao_heart.mercy ?? 0),
+          scheme: prev.scheme + (p.dao_heart.scheme ?? 0),
+          ambition: prev.ambition + (p.dao_heart.ambition ?? 0),
+        },
+      });
     }
   }
 
