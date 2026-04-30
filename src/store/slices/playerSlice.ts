@@ -71,7 +71,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       };
       const realmInfo = realmMap[update.realm.value];
       if (realmInfo) {
-        // Directly use set since we're in the slice
+        set({ profile: { ...state.profile, realm: realmInfo } });
       }
     }
     // ─── 属性更新 ───

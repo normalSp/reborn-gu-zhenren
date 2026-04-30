@@ -34,6 +34,7 @@ export function useGamePipeline(): UseGamePipelineReturn {
   const screenState = useStore(s => s.screenState);
 
   const lastChoiceRef = useRef<string | null>(null);
+  const submittedRef = useRef(false); // 防止重复提交的锁
 
   // 同步管道状态到 Zustand
   const syncState = useCallback((state: PipeState) => {
@@ -47,7 +48,8 @@ export function useGamePipeline(): UseGamePipelineReturn {
     console.log('%c[PIPE] START_GAME','color:#b8860b;font-weight:bold');
     const pipeline = getPipeline();
     pipeline.reset();
-    syncState('IDLE');
+    // 立即进入处理状态，UI 层展示加载
+    syncState('BUILDING_CONTEXT');
 
     try {
       const result = await pipeline.process(null, true); // isOpening = true
@@ -81,9 +83,26 @@ export function useGamePipeline(): UseGamePipelineReturn {
       await retry();
       return;
     }
+
+    // ═══ 运行中守卫：防止重复提交 ═══
+    if (submittedRef.current) {
+      console.log(`%c[PIPE] GUARD %c→ blocked, already submitting`,'color:#e85050','color:#999');
+      return;
+    }
+    // 去重：同一选择ID刚提交过且管道仍在处理中
+    const currentPhase = useStore.getState().pipelinePhase;
+    const isProcessing = currentPhase !== 'IDLE' && currentPhase !== 'RESOLVED' && currentPhase !== 'ERROR';
+    if (isProcessing && lastChoiceRef.current === choiceId) {
+      console.log(`%c[PIPE] GUARD %c→ blocked, duplicate choiceId=${choiceId}`,'color:#e85050','color:#999');
+      return;
+    }
+
+    submittedRef.current = true;
     const pipeline = getPipeline();
     console.log(`%c[PIPE] SUBMIT %c→ id=${choiceId}`,'color:#b8860b','color:#999');
-    syncState('IDLE');
+
+    // 立即进入处理状态，UI 层禁止重复点击
+    syncState('BUILDING_CONTEXT');
     lastChoiceRef.current = choiceId;
 
     // 先记录玩家的选择
@@ -114,6 +133,8 @@ export function useGamePipeline(): UseGamePipelineReturn {
     } catch (err: any) {
       syncState('ERROR');
       setPipelineError(err?.message || '选择处理异常');
+    } finally {
+      submittedRef.current = false;
     }
   }, [syncState, setPipelineError, setL3Warnings]);
 

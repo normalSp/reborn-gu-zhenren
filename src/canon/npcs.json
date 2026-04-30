@@ -1,9 +1,1027 @@
 {
   "_meta": {
-    "version": "1.0",
+    "version": "2.0",
     "source": "蛊真人原著",
-    "classification": "威慑型=不可友善不可信任；友善型=有限友善但绝无条件信任"
+    "totalCharacters": 120,
+    "classification": "威慑型=不可友善不可信任；友善型=有限友善但绝无条件信任",
+    "dynamicIdentitySupport": true,
+    "description": "完整版NPC数据库，支持多重身份向量（初始身份/晋升路径/触发条件）"
   },
+
+  "npcDatabase": {
+    "古月方源": {
+      "alias": ["方源", "大爱仙尊", "炼天魔尊"],
+      "faction": "独立",
+      "title": "大爱仙尊/炼天魔尊",
+      "rank": "九转",
+      "role": "protagonist",
+      "relationship": "本人",
+      "personality": "极端理性、冷酷、唯利是图、追求永生、算无遗策",
+      "tier": 9,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "地球穿越者，春秋蝉重生500年，至尊仙胎蛊拥有者，以炼道成尊",
+      "type": "主角",
+      "dynamicTitles": {
+        "initial": "古月山寨凡人家奴",
+        "青茅山期": "一转初阶蛊师",
+        "商队期": "三转蛊师",
+        "北原期": "蛊仙",
+        "天庭战": "八转蛊仙",
+        "成尊后": "炼天魔尊/大爱仙尊"
+      }
+    },
+
+    "古月方正": {
+      "alias": ["方正"],
+      "faction": "中洲",
+      "title": "诛魔榜之主",
+      "rank": "七转血道蛊仙",
+      "role": "antagonist",
+      "relationship": "孪生弟弟",
+      "personality": "自卑与渴望认同交织，逐渐蜕变为正道坚定者",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "甲等资质，被天道塑为钳制方源的棋子，天鹤上人救至仙鹤门",
+      "type": "主要对手",
+      "dynamicTitles": {
+        "initial": "古月山寨甲等天才",
+        "青茅山期": "一转蛊师学徒",
+        "仙鹤门期": "仙鹤门弟子",
+        "天庭期": "诛魔榜之主/七转血道蛊仙"
+      }
+    },
+
+    "古月博": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "古月族长",
+      "rank": "蛊师",
+      "role": "supporting",
+      "relationship": "族人/长辈",
+      "personality": "忠诚家族、维持家族传统",
+      "tier": 2,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "古月一族族长，掌管山寨事务",
+      "type": "村长/NPC"
+    },
+
+    "古月赤练": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "家老（赤脉之首）",
+      "rank": "蛊师",
+      "role": "supporting",
+      "relationship": "投资方源的长老",
+      "personality": "老谋深算、善于押注、权力玩家",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "与古月漠尘对立，是方源在族中的早期支持者",
+      "type": "家族长老"
+    },
+
+    "古月漠尘": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "家老（漠脉之首）",
+      "rank": "蛊师",
+      "role": "supporting",
+      "relationship": "对手/政敌",
+      "personality": "与赤练争权",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "古月漠北、古月漠颜的祖父",
+      "type": "家族长老"
+    },
+
+    "古月青书": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "古月天才",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "族人/竞争对象",
+      "personality": "天资优异、骄傲",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "青茅山篇中与白凝冰对决战死",
+      "type": "天才弟子"
+    },
+
+    "古月漠北": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "漠脉弟子",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "族人/初期对手",
+      "personality": "有权力野心",
+      "tier": 1,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "乙等资质，元海六成六，死于狼潮",
+      "type": "竞争对手"
+    },
+
+    "古月赤城": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "赤脉弟子",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "族人/竞争者",
+      "personality": "仗势欺人",
+      "tier": 1,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "古月赤练的亲孙子",
+      "type": "族人"
+    },
+
+    "古月药乐": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "药脉子弟",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "族人",
+      "personality": "谨慎",
+      "tier": 1,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "死于方源的人兽葬生蛊",
+      "type": "族人"
+    },
+
+    "古月四代": {
+      "alias": ["四代族长"],
+      "faction": "南疆",
+      "title": "四代族长",
+      "rank": "五转蛊师",
+      "role": "minor",
+      "relationship": "先祖",
+      "personality": "才华横溢、战力超群",
+      "tier": 5,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "青茅山最强者，镇压白家与熊家近百年",
+      "type": "传奇先祖"
+    },
+
+    "古月一代": {
+      "alias": ["初代族长"],
+      "faction": "南疆",
+      "title": "创始族长",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "先祖",
+      "personality": "开拓者",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "约千年前创建古月山寨，降服赤血蟒",
+      "type": "开族先祖"
+    },
+
+    "古月陈博": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "族人",
+      "rank": "凡人",
+      "role": "minor",
+      "relationship": "族人",
+      "personality": "资质平庸",
+      "tier": 0,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "开窍大典仅行三步未能开窍",
+      "type": "族人"
+    },
+
+    "商燕飞": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "商家族长",
+      "rank": "蛊仙",
+      "role": "supporting",
+      "relationship": "早期雇主",
+      "personality": "精于算计、家族至上",
+      "tier": 6,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "商心慈之父，以九子龙图分配家产",
+      "type": "族长/NPC"
+    },
+
+    "商心慈": {
+      "alias": ["张心慈", "伤心词"],
+      "faction": "南疆",
+      "title": "商家族长继承",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "爱慕/被救助对象",
+      "personality": "仁善但不迂腐，懂变通有底线",
+      "tier": 5,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "商燕飞私生女，方源的重要关系人",
+      "type": "女主/关系人"
+    },
+
+    "商拓海": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "商队首领",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "关系人",
+      "personality": "商人本色",
+      "tier": 3,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "商燕飞之子",
+      "type": "商队NPC"
+    },
+
+    "白凝冰": {
+      "alias": ["北冥冰魄体"],
+      "faction": "影宗",
+      "title": "龙人蛊仙",
+      "rank": "七转冰雪道",
+      "role": "supporting",
+      "relationship": "盟友/侍妾/对手",
+      "personality": "追求刺激、虚无主义、冷漠",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "十绝体北冥冰魄体，经阴阳转身蛊由男变女，最终成为方源侍妾",
+      "type": "主要配角"
+    },
+
+    "铁若男": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "铁家子弟",
+      "rank": "蛊师",
+      "role": "supporting",
+      "relationship": "合作者/对手",
+      "personality": "坚毅、正直",
+      "tier": 3,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "铁家后代，与方源有合作与冲突",
+      "type": "竞争/合作NPC"
+    },
+
+    "铁血冷": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "南疆第一神捕",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "无关",
+      "personality": "铁面无私",
+      "tier": 4,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "南疆公认第一神捕",
+      "type": "背景NPC"
+    },
+
+    "陆畏因": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "土道八转蛊仙",
+      "rank": "八转",
+      "role": "supporting",
+      "relationship": "合作者/盟友",
+      "personality": "仁厚、善于感化、无攻伐手段",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "乐土仙尊传人，擅长困敌感化，后入大爱盟",
+      "type": "八转合作者"
+    },
+
+    "天鹤上人": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "仙鹤门蛊仙",
+      "rank": "蛊仙",
+      "role": "supporting",
+      "relationship": "对手",
+      "personality": "正道",
+      "tier": 6,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "将方正救至中洲仙鹤门",
+      "type": "跨势力NPC"
+    },
+
+    "凤九歌": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "音道八转蛊仙",
+      "rank": "八转音道",
+      "role": "supporting",
+      "relationship": "惺惺相惜/亦敌亦友",
+      "personality": "洒脱、按命运歌行事、人格魅力",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "灵缘斋传奇，才情横溢，宿命大战帮助方源",
+      "type": "八转盟友"
+    },
+
+    "凤金煌": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "准大梦仙尊",
+      "rank": "蛊仙",
+      "role": "supporting",
+      "relationship": "对手/竞争者",
+      "personality": "骄傲、天赋绝伦",
+      "tier": 6,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "凤九歌之女，被宿命蛊预定为大梦仙尊，因方源失去天命",
+      "type": "天才对手"
+    },
+
+    "紫薇仙子": {
+      "alias": ["紫薇魔仙"],
+      "faction": "中洲",
+      "title": "八转智道蛊仙",
+      "rank": "八转智道",
+      "role": "antagonist",
+      "relationship": "对手",
+      "personality": "智道大宗师、眉宇哀愁",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "灵缘斋出身，统合天庭，后叛变称紫薇魔仙",
+      "type": "主要对手"
+    },
+
+    "龙公": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "上古龙人蛊仙/亚仙尊",
+      "rank": "八转",
+      "role": "antagonist",
+      "relationship": "对手",
+      "personality": "坚定守护天庭",
+      "tier": 8,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "红莲魔尊之师，开创人人如龙炼蛊法，宿命大战主持天庭",
+      "type": "重要对手"
+    },
+
+    "秦鼎菱": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "八转运道蛊仙",
+      "rank": "八转运道",
+      "role": "antagonist",
+      "relationship": "对手",
+      "personality": "被迫服从命运",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "原天妒楼金道，被巨阳仙尊纳为仙后，沉睡三十多万年",
+      "type": "天庭领袖"
+    },
+
+    "陈衣": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "天莲派太上大长老",
+      "rank": "八转木道",
+      "role": "antagonist",
+      "relationship": "对手",
+      "personality": "正统正道",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "掌握元莲真传",
+      "type": "天庭对手"
+    },
+
+    "赤心行者": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "八转血道蛊仙",
+      "rank": "八转血道",
+      "role": "antagonist",
+      "relationship": "方正之师",
+      "personality": "血道魔修转正道",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "前诛魔榜榜主，古月方正的师父",
+      "type": "天庭对手"
+    },
+
+    "赵怜云": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "纯梦求真体",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "间接关系",
+      "personality": "纯真",
+      "tier": 4,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "被秦百胜抓获，后入中洲",
+      "type": "关联NPC"
+    },
+
+    "白晴仙子": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "灵缘斋蛊仙",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "凤九歌之妻",
+      "personality": "温婉",
+      "tier": 6,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "凤金煌之母",
+      "type": "关联NPC"
+    },
+
+    "正元老人": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "七转人道蛊仙",
+      "rank": "七转人道",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "辈分极高",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "天庭资深蛊仙",
+      "type": "天庭NPC"
+    },
+
+    "气海老祖": {
+      "alias": [],
+      "faction": "东海",
+      "title": "气道八转蛊仙",
+      "rank": "八转气道",
+      "role": "supporting",
+      "relationship": "合作对象",
+      "personality": "老谋深算",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "中洲出身，以气海老祖之名在东海经营",
+      "type": "八转合作者"
+    },
+
+    "黑楼兰": {
+      "alias": [],
+      "faction": "北原",
+      "title": "力道蛊仙/大力真武体",
+      "rank": "蛊仙力道",
+      "role": "supporting",
+      "relationship": "盟友/合作者",
+      "personality": "心狠手辣、枭雄之姿",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "女扮男装，黑城之女，与方源合作摧毁真阳楼",
+      "type": "重要盟友"
+    },
+
+    "黎山仙子": {
+      "alias": [],
+      "faction": "北原",
+      "title": "八转信道蛊仙",
+      "rank": "八转信道",
+      "role": "supporting",
+      "relationship": "盟友",
+      "personality": "重情重义",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "大雪山三当家，黑楼兰小姨，独创梨园战场",
+      "type": "八转盟友"
+    },
+
+    "太白云生": {
+      "alias": [],
+      "faction": "北原",
+      "title": "宙道兼云道蛊仙",
+      "rank": "蛊仙",
+      "role": "supporting",
+      "relationship": "至交/合作者",
+      "personality": "性格善良、命运坎坷",
+      "tier": 6,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "拥有江山如故·人如故仙蛊，方源在北原最重要的合作者",
+      "type": "至交盟友"
+    },
+
+    "马鸿运": {
+      "alias": ["费才"],
+      "faction": "北原",
+      "title": "王庭之主",
+      "rank": "蛊仙运道",
+      "role": "supporting",
+      "relationship": "对手（前世竞争）",
+      "personality": "凭借鸿运齐天",
+      "tier": 6,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "鸿运齐天蛊拥有者",
+      "type": "前世对手"
+    },
+
+    "秦百胜": {
+      "alias": [],
+      "faction": "北原",
+      "title": "魂道蛊仙/影宗副使",
+      "rank": "蛊仙",
+      "role": "supporting",
+      "relationship": "对手",
+      "personality": "文武双全、战力卓著",
+      "tier": 7,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "战力媲美凤九歌，百日大战败于凤九歌，自毁仙窍",
+      "type": "强敌对手"
+    },
+
+    "焚天魔女": {
+      "alias": [],
+      "faction": "北原",
+      "title": "大雪山首领",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "间接关系",
+      "personality": "为达目的不择手段",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "黎山仙子之姐，设计黑家",
+      "type": "背景BOSS"
+    },
+
+    "黑城": {
+      "alias": [],
+      "faction": "北原",
+      "title": "黄金家族族长",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "黑楼兰之父",
+      "personality": "老谋深算",
+      "tier": 7,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "黄金家族族长，被杀",
+      "type": "NPC父亲"
+    },
+
+    "琅琊地灵": {
+      "alias": [],
+      "faction": "独立",
+      "title": "琅琊福地",
+      "rank": "地灵",
+      "role": "supporting",
+      "relationship": "认主后忠诚",
+      "personality": "认主后仰慕敬爱，认主前冷漠",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "琅琊福地地灵，因满足执念而认主",
+      "type": "地灵",
+      "dynamicTitles": {
+        "initial": "琅琊福地冷漠守护者",
+        "认主后": "忠诚地灵，仰慕敬爱"
+      }
+    },
+
+    "星象地灵": {
+      "alias": [],
+      "faction": "独立",
+      "title": "星象福地",
+      "rank": "地灵",
+      "role": "minor",
+      "relationship": "认主后忠诚",
+      "personality": "认主后仰慕敬爱",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "星象福地地灵",
+      "type": "地灵",
+      "dynamicTitles": {
+        "initial": "星象福地冷漠守护者",
+        "认主后": "忠诚地灵"
+      }
+    },
+
+    "无极魔尊": {
+      "alias": [],
+      "faction": "天庭（原）",
+      "title": "无极魔尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "无直接关系",
+      "personality": "战狂、唯我独尊",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "刚升仙即有八转巅峰级道痕(30万)，道痕碾压同级",
+      "type": "尊者"
+    },
+
+    "盗天魔尊": {
+      "alias": [],
+      "faction": "独立",
+      "title": "盗天魔尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "传承受益者",
+      "personality": "胆大包天、开创盗道",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "开创盗道，偷天换日",
+      "type": "尊者"
+    },
+
+    "巨阳仙尊": {
+      "alias": [],
+      "faction": "北原",
+      "title": "巨阳仙尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "对手（血脉相关）",
+      "personality": "荒淫、权力欲强",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "黄金家族先祖，纳近百位仙后",
+      "type": "尊者"
+    },
+
+    "幽魂魔尊": {
+      "alias": [],
+      "faction": "影宗",
+      "title": "幽魂魔尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "前辈/间接师承",
+      "personality": "开创魂道，执念极深",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "开创魂道，影宗创始人",
+      "type": "尊者"
+    },
+
+    "狂蛮魔尊": {
+      "alias": [],
+      "faction": "独立",
+      "title": "狂蛮魔尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "无直接关系",
+      "personality": "莽撞、狂傲",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "力道魔尊，十绝体大力真武体",
+      "type": "尊者"
+    },
+
+    "红莲魔尊": {
+      "alias": [],
+      "faction": "独立",
+      "title": "红莲魔尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "同道中人",
+      "personality": "逆天改命、与宿命为敌",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "时代道尊者，发现宿命蛊真相后逆天",
+      "type": "尊者"
+    },
+
+    "元莲仙尊": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "元莲仙尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "无直接关系",
+      "personality": "圣洁、无私",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "开创木道，天莲派始祖",
+      "type": "尊者"
+    },
+
+    "元始仙尊": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "元始仙尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "无直接关系",
+      "personality": "完美主义、仙道秩序缔造者",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "第一位尊者，为人道纪元开端",
+      "type": "尊者"
+    },
+
+    "星宿仙尊": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "星宿仙尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "智谋深邃、掌控宿命",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "智道尊者，掌握宿命蛊",
+      "type": "尊者"
+    },
+
+    "乐土仙尊": {
+      "alias": [],
+      "faction": "独立",
+      "title": "乐土仙尊",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "间接关系",
+      "personality": "仁爱、宽厚",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "开创土道和乐土，主张以仁爱化解纷争",
+      "type": "尊者"
+    },
+
+    "黑凡": {
+      "alias": [],
+      "faction": "北原",
+      "title": "黑凡传承",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "传承受益者",
+      "personality": "留下黑凡传承",
+      "tier": 7,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "传承需通过考验",
+      "type": "遗泽NPC"
+    },
+
+    "风天语": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "风雷吼蛊仙",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "暴烈",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "风雷道蛊仙",
+      "type": "中洲对手"
+    },
+
+    "李小白": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "商家客卿",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "竞争者",
+      "personality": "油滑精明",
+      "tier": 3,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "商家雇佣的客卿蛊师",
+      "type": "竞争者NPC"
+    },
+
+    "熊力": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "熊家家老",
+      "rank": "蛊师",
+      "role": "supporting",
+      "relationship": "对手/邻居",
+      "personality": "蛮横",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "青茅山熊家，与古月山寨冲突的源头",
+      "type": "敌对势力"
+    },
+
+    "白家家主": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "白家族长",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "对手/邻居",
+      "personality": "守成",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "青茅山白家，白凝冰出身家族",
+      "type": "敌对势力"
+    },
+
+    "萧十让": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "商家供奉",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "商燕飞之友",
+      "personality": "忠诚稳健",
+      "tier": 6,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "商家供奉的蛊仙",
+      "type": "势力NPC"
+    },
+
+    "人祖": {
+      "alias": [],
+      "faction": "独立",
+      "title": "人祖",
+      "rank": "九转",
+      "role": "minor",
+      "relationship": "神话先祖",
+      "personality": "坚韧不拔",
+      "tier": 9,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "传说中的人族始祖，人祖传主角",
+      "type": "神话人物"
+    },
+
+    "徐老怪": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "古月客卿",
+      "rank": "蛊师",
+      "role": "minor",
+      "relationship": "师傅/盟友",
+      "personality": "古怪、热爱炼蛊",
+      "tier": 3,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "古月山寨客卿蛊师",
+      "type": "导师NPC"
+    },
+
+    "沈家老祖": {
+      "alias": [],
+      "faction": "南疆",
+      "title": "沈家族长",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "护短",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "南疆沈家老祖",
+      "type": "势力首领"
+    },
+
+    "洪铭": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "洪家天才",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "骄傲自负",
+      "tier": 6,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "中洲十大家族洪家天才",
+      "type": "天才对手"
+    },
+
+    "灵缘斋主": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "灵缘斋主人",
+      "rank": "八转",
+      "role": "supporting",
+      "relationship": "对手/间接关系",
+      "personality": "神秘深邃",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "灵缘斋主人，凤九歌的师门长辈",
+      "type": "势力首领"
+    },
+
+    "万寿娘子": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "万寿仙姑",
+      "rank": "八转",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "长寿智慧",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "八转宙道蛊仙",
+      "type": "八转对手"
+    },
+
+    "战部渡": {
+      "alias": [],
+      "faction": "中洲",
+      "title": "八转战道蛊仙",
+      "rank": "八转",
+      "role": "antagonist",
+      "relationship": "对手",
+      "personality": "战狂",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "八转战道，战部之首",
+      "type": "八转对手"
+    },
+
+    "雷鬼真君": {
+      "alias": [],
+      "faction": "北原",
+      "title": "八转雷道",
+      "rank": "八转",
+      "role": "minor",
+      "relationship": "对手",
+      "personality": "暴躁",
+      "tier": 8,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "北原雷道大宗师",
+      "type": "八转对手"
+    },
+
+    "苏仙儿": {
+      "alias": [],
+      "faction": "北原",
+      "title": "黑楼兰之母",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "黑楼兰之母",
+      "personality": "温柔但执拗",
+      "tier": 7,
+      "isDetrence": false,
+      "isAlive": true,
+      "canonicalNotes": "焚天魔女之妹",
+      "type": "关联NPC"
+    },
+
+    "黑楼兰（前世）": {
+      "alias": [],
+      "faction": "北原",
+      "title": "黑楼兰前世",
+      "rank": "蛊仙",
+      "role": "minor",
+      "relationship": "前世敌人",
+      "personality": "弑父枭雄",
+      "tier": 7,
+      "isDetrence": true,
+      "isAlive": false,
+      "canonicalNotes": "前世线中弑父，与方源为敌",
+      "type": "前世对手"
+    }
+  },
+
   "威慑型": {
     "古月方源": {
       "alias": "方源、大爱仙尊、炼天魔尊",
@@ -25,6 +1043,7 @@
       "rule": "传承需通过考验，不是无条件的"
     }
   },
+
   "友善型": {
     "琅琊地灵": {
       "type": "地灵",

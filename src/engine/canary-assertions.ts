@@ -5,6 +5,7 @@
 
 import type { NarrativeJSON } from '../types';
 import type { RootStore } from '../store';
+import npcsRaw from '../canon/npcs.json';
 
 // ─── 玩家状态快照（轻量） ───
 interface PlayerSnapshot {
@@ -301,6 +302,86 @@ function c12_ApertureTransform(text: string): CanaryResult {
 }
 
 // ═══════════════════════════════════════════
+// C13: NPC 角色身份一致性守卫 ⚠️ Warning
+// ═══════════════════════════════════════════
+// 检测叙事中NPC被赋予的头衔/身份是否与canon数据一致
+// 高Title错配（如古月方正→大长老）→ critical
+// 一般Title偏差 → warning
+const CRITICAL_TITLE_MISMATCH: Record<string, string[]> = {
+  // 古月山寨成员不可担任山寨高层
+  '古月方正': ['族长', '大长老', '太上长老', '家老', '寨主'],
+  '古月漠北': ['族长', '大长老', '太上长老', '家老'],
+  '古月青书': ['族长', '大长老', '太上长老', '家老'],
+  '古月赤城': ['族长', '大长老', '太上长老', '家老'],
+  '古月药乐': ['族长', '大长老', '太上长老', '家老'],
+};
+
+function c13_NPCRoleConsistency(text: string, store: RootStore): CanaryResult {
+  const npcDb = (npcsRaw as any).npcDatabase as Record<string, any>;
+  if (!npcDb) {
+    return { ruleId: 'C13', ruleName: 'NPC角色一致性', passed: true, level: 'warning', details: '' };
+  }
+
+  const flags: Record<string, any> = (store as any).flags || {};
+
+  // 匹配模式：{人名}（是/作为/担任/成为/当上）{头衔}
+  const rolePattern = /(古月\S{1,3}|[^\s，。、]{2,4})(?:是|作为|担任|成为|当上|已是|已是|身为一?)([^\s，。、]{2,6}(?:长老|族长|寨主|首领|堂主|宗主|仙尊|魔尊|蛊仙|蛊师|强者|高手|天才|傀儡|棋子))/g;
+
+  let match: RegExpExecArray | null;
+  const mismatches: string[] = [];
+
+  while ((match = rolePattern.exec(text)) !== null) {
+    const npcName = match[1];
+    const claimedTitle = match[2];
+    const npcData = npcDb[npcName];
+
+    if (!npcData) continue; // 不在数据库中的NPC跳过
+
+    // 检查flags中是否有身份覆盖
+    const overrideKey = `npc_${npcName}_title_override`;
+    const flagOverride = flags[overrideKey];
+    if (flagOverride && claimedTitle.includes(flagOverride)) {
+      continue; // flags已覆盖，允许
+    }
+
+    // 检查dynamicTitles中是否匹配
+    if (npcData.dynamicTitles) {
+      const allTitles = Object.values(npcData.dynamicTitles) as string[];
+      const anyTitleMatch = allTitles.some((t: string) => t.includes(claimedTitle));
+      if (anyTitleMatch) continue;
+    }
+
+    // 检查canon title/rank是否匹配
+    const canonTitle = npcData.title || '';
+    const canonRank = npcData.rank || '';
+    if (canonTitle.includes(claimedTitle) || canonRank.includes(claimedTitle)) {
+      continue;
+    }
+
+    // 检查关键错配列表
+    const criticalMismatchList = CRITICAL_TITLE_MISMATCH[npcName];
+    if (criticalMismatchList && criticalMismatchList.some(t => claimedTitle.includes(t))) {
+      mismatches.push(`[CRITICAL] ${npcName}被赋予「${claimedTitle}」，但canon中该角色不可担任此职位`);
+    } else {
+      mismatches.push(`${npcName}被赋予「${claimedTitle}」，canon身份为「${canonTitle} ${canonRank}」`);
+    }
+  }
+
+  if (mismatches.length === 0) {
+    return { ruleId: 'C13', ruleName: 'NPC角色一致性', passed: true, level: 'warning', details: '' };
+  }
+
+  const hasCritical = mismatches.some(m => m.startsWith('[CRITICAL]'));
+  return {
+    ruleId: 'C13',
+    ruleName: 'NPC角色一致性',
+    passed: !hasCritical,
+    level: hasCritical ? 'critical' : 'warning',
+    details: mismatches.join('；'),
+  };
+}
+
+// ═══════════════════════════════════════════
 // 主入口
 // ═══════════════════════════════════════════
 export function validateCanaryAssertions(
@@ -330,6 +411,7 @@ export function validateCanaryAssertions(
     c10_NPCDeterrence(text),
     c11_GuDestruction(text),
     c12_ApertureTransform(text),
+    c13_NPCRoleConsistency(text, store),
   ];
 
   const failedCritical = results.filter(r => !r.passed && r.level === 'critical');

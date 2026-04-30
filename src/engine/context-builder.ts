@@ -5,6 +5,7 @@ import type { RootStore } from '../store';
 import guDatabaseRaw from '../canon/gu-database.json';
 import worldRulesRaw from '../canon/world-rules.json';
 import terminologyRaw from '../canon/terminology.json';
+import npcsRaw from '../canon/npcs.json';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -175,6 +176,83 @@ function injectEconomyRules(store: RootStore): string {
 - 凡人与蛊师经济完全脱钩——蛊师不会为几块元石做有辱身份的事`;
 }
 
+// ─── NPC 上下文注入（5C.1 三层过滤） ───
+function injectNPCContext(store: RootStore): string {
+  const npcDb = (npcsRaw as any).npcDatabase as Record<string, any>;
+  if (!npcDb) return '';
+
+  const flags: Record<string, any> = (store as any).flags || {};
+  const currentFaction = flags.current_faction || '南疆';
+  const currentChapter = flags.current_chapter || '青茅山期';
+  const factionStandings: Record<string, number> = (store as any).standings || {};
+  const playerRealm = store.profile?.realm?.grand || 1;
+
+  // === 过滤层1: 根据玩家当前位置和势力关系过滤 ===
+  const relevantNpcs: Array<{ name: string; info: any; relevance: number }> = [];
+
+  for (const [name, npc] of Object.entries(npcDb)) {
+    const n = npc as any;
+    if (!n || n.role === 'minor') continue; // 跳过龙套
+
+    let relevance = 0;
+
+    // 同势力/同地区 +3
+    if (n.faction === currentFaction) relevance += 3;
+    // 主要角色 +2
+    if (n.role === 'protagonist' || n.role === 'antagonist') relevance += 2;
+    if (n.role === 'supporting') relevance += 1;
+    // 与玩家境界相近（±2转） +1
+    if (n.tier > 0 && Math.abs(n.tier - playerRealm) <= 2) relevance += 1;
+    // 有 relationship 定义 +1
+    if (n.relationship && n.relationship !== '无关' && n.relationship !== '无直接关系') relevance += 1;
+
+    if (relevance >= 2) {
+      relevantNpcs.push({ name, info: n, relevance });
+    }
+  }
+
+  // 按相关度排序，取前12个
+  relevantNpcs.sort((a, b) => b.relevance - a.relevance);
+  const topNpcs = relevantNpcs.slice(0, 12);
+
+  if (topNpcs.length === 0) return '';
+
+  // === 过滤层2: 生成身份摘要 ===
+  const lines: string[] = ['', '【当前已知NPC身份】'];
+
+  for (const { name, info } of topNpcs) {
+    // 检查 flags 中是否有身份覆盖
+    const overrideKey = `npc_${name}_title_override`;
+    const dynamicTitle = flags[overrideKey];
+
+    // === 过滤层3: 动态身份选择 ===
+    let displayTitle: string;
+    if (dynamicTitle) {
+      displayTitle = dynamicTitle;
+    } else if (info.dynamicTitles && info.dynamicTitles[currentChapter]) {
+      displayTitle = info.dynamicTitles[currentChapter];
+    } else if (info.dynamicTitles && info.dynamicTitles.initial) {
+      displayTitle = info.dynamicTitles.initial;
+    } else {
+      displayTitle = `${info.faction} · ${info.title || info.rank}`;
+    }
+
+    const extraInfo: string[] = [];
+    if (info.relationship && info.relationship !== '本人') {
+      extraInfo.push(`与你关系：${info.relationship}`);
+    }
+    if (info.personality) {
+      extraInfo.push(`性格：${info.personality}`);
+    }
+
+    const extraStr = extraInfo.length > 0 ? `（${extraInfo.join('；')}）` : '';
+    lines.push(`- ${name}：${displayTitle}。${extraStr}`);
+  }
+
+  lines.push('', '请确保叙事中NPC的身份、性格、关系遵循以上设定。不可随意改变NPC的阵营或身份头衔。');
+  return lines.join('\n');
+}
+
 // ═══════════════════════════════════════════
 export class ContextBuilder {
   private layer1Content: string;
@@ -214,6 +292,11 @@ export class ContextBuilder {
     // 经济规则注入（4D.9）
     if (store) {
       parts.push(injectEconomyRules(store));
+    }
+
+    // NPC上下文注入（5C.1 三层过滤）
+    if (store) {
+      parts.push(injectNPCContext(store));
     }
 
     // 术语速查

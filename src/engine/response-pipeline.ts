@@ -351,6 +351,11 @@ export class ResponsePipeline {
 
       applyStateUpdate(narrative.state_update);
 
+      // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（开局不计入） ═══
+      if (!isOpening) {
+        (useStore.getState() as any).advanceTurn?.();
+      }
+
       // ═══ 死亡检测：叙事导致HP归零 → 触发game_over ═══
       const updatedStore = useStore.getState();
       if ((updatedStore as any).isDead && (updatedStore as any).screenState !== 'game_over') {

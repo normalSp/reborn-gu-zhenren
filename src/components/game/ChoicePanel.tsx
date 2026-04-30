@@ -73,13 +73,59 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
   }
 
   if (isProcessing) {
+    const phaseText =
+      phase === 'FETCHING' ? '天道正在回应...' :
+      phase === 'BUILDING_CONTEXT' ? '凝聚天命...' :
+      phase === 'PARSING' ? '解读天机...' :
+      phase === 'VALIDATING_L4' ? '金丝雀检校...' :
+      phase === 'VALIDATING_L3' ? '天道审核中...' :
+      phase === 'VALIDATING_FORMAT' ? '命数交织...' :
+      '命运正在汇聚...';
+
     return (
-      <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-4 backdrop-blur-md">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-rg-paper-200/40 text-sm font-panel">
-            {phase === 'FETCHING' ? '天道正在回应...' : '命运正在汇聚...'}
-          </p>
+      <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-5 backdrop-blur-md">
+        <div className="max-w-3xl mx-auto">
+          {/* 加载条 */}
+          <div className="mb-3">
+            <div className="h-1 w-full bg-rg-ink-600/50 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(180,140,80,0.3), rgba(180,140,80,0.9), rgba(200,160,100,0.3))',
+                  animation: 'choice-loading-bar 2.5s ease-in-out infinite',
+                }}
+              />
+            </div>
+          </div>
+          {/* 状态文字 + 脉动指示器 */}
+          <div className="flex items-center justify-center gap-3">
+            {/* 三重脉动圆点 */}
+            <div className="flex gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '0ms' }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '200ms' }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '400ms' }} />
+            </div>
+            <p className="text-rg-paper-200/50 text-sm font-panel tracking-[0.05em]">
+              {phaseText}
+            </p>
+            {/* 对称脉动点 */}
+            <div className="flex gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '400ms' }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '200ms' }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-rg-gold/60 animate-pulse" style={{ animationDelay: '0ms' }} />
+            </div>
+          </div>
         </div>
+        {/* 注入 keyframes 动画 */}
+        <style>{`
+          @keyframes choice-loading-bar {
+            0% { width: 0%; margin-left: 0%; }
+            25% { width: 40%; margin-left: 0%; }
+            50% { width: 30%; margin-left: 35%; }
+            75% { width: 40%; margin-left: 60%; }
+            100% { width: 0%; margin-left: 100%; }
+          }
+        `}</style>
       </div>
     );
   }
