@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useStore } from '../../store';
 import guDatabaseRaw from '../../canon/gu-database.json';
 import immortalGuRaw from '../../canon/immortal-gu.json';
+import { GU_IMAGE_MAP } from '../../data/image-maps';
 
 type GuEntry = {
   name: string; tier: number; path: string; rank: string;
@@ -28,9 +29,9 @@ function buildShopList(playerTier: number): GuShopItem[] {
   const db = guDatabaseRaw as Record<string, GuEntry>;
   return Object.entries(db)
     .filter(([_, g]) => !g.isImmortalGu && g.tier <= playerTier && g.rank !== 'legendary')
-    .map(([_, g]) => {
+    .map(([key, g]) => {
       const price = calcPrice(g.tier, g.rank);
-      return { ...g, price, sellPrice: Math.round(price / 2) };
+      return { ...g, name: key, price, sellPrice: Math.round(price / 2) };
     })
     .sort((a, b) => a.tier - b.tier || a.price - b.price);
 }
@@ -118,7 +119,6 @@ export function MerchantPanel() {
   // ─── 宝黄天（4D.10） ───
   if (isImmortal) {
     const imDb = immortalGuRaw as Record<string, any>;
-    const imMeta = imDb._meta || imDb;
     const entries = Object.entries(imDb).filter(([k]) => k !== '_meta');
     return (
       <div className="flex-1 overflow-y-auto">
@@ -132,11 +132,21 @@ export function MerchantPanel() {
           {entries.map(([key, gu]: [string, any]) => {
             const price = IMMORTAL_PRICES[gu.tier] || gu.tier * 10;
             const canAfford = immortalCurrency >= price;
-            const alreadyOwn = inventory.some(g => g.name === (gu.name || key));
+            const guName = gu.name || key;
+            const alreadyOwn = inventory.some(g => g.name === guName);
+            const imgFile = GU_IMAGE_MAP[guName];
             return (
               <div key={key} className="bg-rg-ink-700/90 border border-rg-gold/15 rounded-md p-3 flex flex-col gap-1.5">
+                {imgFile && (
+                  <div className="w-full h-16 bg-rg-ink-900/80 rounded-sm overflow-hidden border border-rg-ink-300/10">
+                    <img src={`/rebrng/gu/s0-qingmao/${imgFile}`}
+                      alt={guName} loading="lazy"
+                      className="w-full h-full object-cover opacity-65"
+                      onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
-                  <span className="text-rg-paper-200 font-narrative text-sm">{gu.name || key}</span>
+                  <span className="text-rg-paper-200 font-narrative text-sm">{guName}</span>
                   <span className="text-[10px] text-rg-gold/70">{gu.tier}转</span>
                 </div>
                 <p className="text-rg-paper-200/40 text-[10px] leading-relaxed line-clamp-2">{gu.effect}</p>
@@ -194,12 +204,25 @@ export function MerchantPanel() {
               {shopList.map(item => {
                 const ownCount = inventory.filter(g => g.name === item.name).length;
                 const canBuy = currency >= item.price && inventory.length < capacity;
+                const imgFile = GU_IMAGE_MAP[item.name];
                 return (
                   <div key={item.name + '_' + item.tier} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
+                    {/* 蛊虫标本图 */}
+                    {imgFile && (
+                      <div className="w-full h-16 bg-rg-ink-900/80 rounded-sm overflow-hidden border border-rg-ink-300/10">
+                        <img src={`/rebrng/gu/s0-qingmao/${imgFile}`}
+                          alt={item.name} loading="lazy"
+                          className="w-full h-full object-cover opacity-65"
+                          onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
+                      </div>
+                    )}
                     <div className="flex items-center justify-between">
                       <span className="text-rg-paper-200 font-narrative text-sm truncate">{item.name}</span>
                       <span className="text-[10px] font-button text-rg-paper-200/60 bg-rg-ink-800/50 px-1.5 py-0.5 rounded-sm">{item.tier}转</span>
                     </div>
+                    {item.effect && (
+                      <p className="text-rg-paper-200/30 text-[9px] leading-relaxed line-clamp-1">{item.effect}</p>
+                    )}
                     <span className="text-[10px] text-rg-gold/70">{item.price}元石</span>
                     <button onClick={() => setConfirming(item)} disabled={!canBuy}
                       className={`mt-1 text-[10px] font-button px-2 py-1 rounded-sm border transition-micro text-center ${
