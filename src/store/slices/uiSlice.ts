@@ -1,6 +1,6 @@
 // ─── 游戏屏幕状态 ───
 // title → character_create → game_play → game_over
-export type ScreenState = 'title' | 'mode_select' | 'origin_select' | 'character_create' | 'game_play' | 'game_over';
+export type ScreenState = 'title' | 'mode_select' | 'origin_select' | 'character_create' | 'tutorial' | 'game_play' | 'game_over';
 export type GameMode = 'canon' | 'if';
 
 export type PipelinePhase = 'IDLE' | 'BUILDING_CONTEXT' | 'FETCHING' | 'PARSING' | 'VALIDATING_L3' | 'VALIDATING_FORMAT' | 'RESOLVED' | 'ERROR';
@@ -16,6 +16,8 @@ interface UiSlice {
   pipelinePhase: PipelinePhase;
   pipelineError: string | null;
   l3Warnings: { ruleName: string; details: string }[];
+  /** 读档版本计数器：读档后递增，触发 GameScreen 重新拉取 AI 叙事 */
+  gameLoadVersion: number;
   setActiveTab: (tab: string) => void;
   toggleSettings: () => void;
   toggleSaveDialog: () => void;
@@ -26,6 +28,7 @@ interface UiSlice {
   setPipelinePhase: (phase: PipelinePhase) => void;
   setPipelineError: (error: string | null) => void;
   setL3Warnings: (warnings: { ruleName: string; details: string }[]) => void;
+  incrementLoadVersion: () => void;
 }
 
 export const createUiSlice = (set: any, get: any): UiSlice => ({
@@ -39,6 +42,7 @@ export const createUiSlice = (set: any, get: any): UiSlice => ({
   pipelinePhase: 'IDLE',
   pipelineError: null,
   l3Warnings: [],
+  gameLoadVersion: 0,
   setActiveTab: (tab) => set({ activeTab: tab }),
   toggleSettings: () => set((s: UiSlice) => ({ isSettingsOpen: !s.isSettingsOpen })),
   toggleSaveDialog: () => set((s: UiSlice) => ({ isSaveDialogOpen: !s.isSaveDialogOpen })),
@@ -49,6 +53,7 @@ export const createUiSlice = (set: any, get: any): UiSlice => ({
   setPipelinePhase: (phase) => set({ pipelinePhase: phase }),
   setPipelineError: (error) => set({ pipelineError: error }),
   setL3Warnings: (warnings) => set({ l3Warnings: warnings }),
+  incrementLoadVersion: () => set((s: UiSlice) => ({ gameLoadVersion: s.gameLoadVersion + 1 })),
 });
 
 export type { UiSlice };

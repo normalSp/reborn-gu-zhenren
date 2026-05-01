@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "total": 10,
+    "note": "P1预留8-10个南疆三章可触发成就。成就条件在P2由 achievementSlice.checkAchievements() 实现"
+  },
+  "初入蛊道": {
+    "description": "完成角色创建，正式踏入蛊界",
+    "hidden": false,
+    "category": "剧情",
+    "condition": "turn >= 1"
+  },
+  "一转蛊师": {
+    "description": "成功晋升一转蛊师",
+    "hidden": false,
+    "category": "成长",
+    "condition": "realm >= 1转初阶"
+  },
+  "二转蛊师": {
+    "description": "成功晋升二转蛊师",
+    "hidden": false,
+    "category": "成长",
+    "condition": "realm >= 2转初阶"
+  },
+  "三转蛊师": {
+    "description": "成功晋升三转蛊师",
+    "hidden": false,
+    "category": "成长",
+    "condition": "realm >= 3转初阶"
+  },
+  "蛊虫收藏家": {
+    "description": "空窍中同时携带3只蛊虫",
+    "hidden": false,
+    "category": "收集",
+    "condition": "guCount >= 3"
+  },
+  "初次炼蛊": {
+    "description": "成功炼制第一只蛊虫",
+    "hidden": false,
+    "category": "系统",
+    "condition": "refinedGuCount >= 1"
+  },
+  "元石小富": {
+    "description": "持有元石达到500块",
+    "hidden": false,
+    "category": "经济",
+    "condition": "currency >= 500"
+  },
+  "初识百家": {
+    "description": "结识3位以上NPC",
+    "hidden": false,
+    "category": "社交",
+    "condition": "knownNpcCount >= 3"
+  },
+  "黑暗抉择": {
+    "description": "做出一次高风险选择",
+    "hidden": true,
+    "category": "剧情",
+    "condition": "madeHighRiskChoice"
+  },
+  "南疆行者": {
+    "description": "在南疆解锁3个以上已知地点",
+    "hidden": false,
+    "category": "探索",
+    "condition": "knownLocations >= 3"
+  }
+}

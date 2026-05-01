@@ -15,6 +15,9 @@ export function StatusBar() {
   const daoHeart = useStore(s => s.daoHeart);
   const toggleSaveDialog = useStore(s => s.toggleSaveDialog);
   const toggleSettings = useStore(s => s.toggleSettings);
+  // P1章节弧光：显示当前章节名
+  const getCurrentChapter = useStore(s => s.getCurrentChapter);
+  const currentChapter = getCurrentChapter?.();
 
   const healthPct = vitals.health.current / vitals.health.max * 100;
   const essencePct = essence.current / essence.max * 100;
@@ -96,6 +99,14 @@ export function StatusBar() {
             <span className="text-rg-paper-200/50 text-xs font-panel">
               第{turn}回
             </span>
+            {currentChapter && (
+              <>
+                <div className="w-[1px] h-4 bg-rg-ink-300/15" />
+                <span className="text-rg-gold/60 text-xs font-panel">
+                  {currentChapter.displayName}
+                </span>
+              </>
+            )}
             <div className="w-[1px] h-4 bg-rg-ink-300/15" />
             <span className="text-rg-paper-200/50 text-xs font-panel">
               {SEASON_LABELS[gameTime.season]} · {PERIOD_LABELS[gameTime.period]}

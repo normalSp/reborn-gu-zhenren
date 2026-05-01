@@ -5,9 +5,10 @@ import type { ScreenState } from '../../store/slices/uiSlice';
 
 interface TitleScreenProps {
   onStart: () => void;
+  onContinue: () => void;
 }
 
-export function TitleScreen({ onStart }: TitleScreenProps) {
+export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
   const [keyInput, setKeyInput] = useState(apiKey.get() || '');
   const [showKey, setShowKey] = useState(false);
   const [screenState, setScreenState] = useState<'input_key' | 'testing' | 'result'>(
@@ -17,7 +18,18 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
   const [resultSuccess, setResultSuccess] = useState(false);
   const [tokenInfo, setTokenInfo] = useState('');
 
+  // ─── M4: 存档检测 — 续档条件: turn>1 且 profile.name 非空 ───
+  const hasSavedGame = useStore(s => s.turn > 1 && (s.profile?.name?.length ?? 0) > 0);
+  const saveTurn = useStore(s => s.turn);
+  const saveRealm = useStore(s => s.profile?.realm?.label ?? '');
+  const saveBackground = useStore(s => s.profile?.background ?? '');
+  const saveLocation = useStore(s => (s as any).playerPosition?.region ?? '');
+
   const storeScreenState = useStore(s => s.screenState);
+
+  const handleContinue = () => {
+    onContinue();
+  };
 
   const handleTestConnection = async () => {
     if (!keyInput.trim()) return;
@@ -167,6 +179,27 @@ export function TitleScreen({ onStart }: TitleScreenProps) {
 
         {/* 底部系统信息 */}
         <div className="mt-8 pt-4 border-t border-rg-ink-400/20">
+          {/* ─── M4: 继续冒险入口 ─── */}
+          {hasSavedGame && (
+            <button
+              onClick={handleContinue}
+              className="w-full mb-3 bg-rg-ink-900/80 border border-rg-gold/25 hover:border-rg-gold/60 
+                         rounded-sm p-3 transition-micro group text-left"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-rg-gold font-narrative text-sm tracking-wider group-hover:brightness-125 transition-micro">
+                  继续冒险
+                </span>
+                <span className="text-rg-gold/40 text-xs group-hover:text-rg-gold/70 transition-micro">
+                  →
+                </span>
+              </div>
+              <p className="text-rg-paper-200/50 text-xs font-panel mt-1">
+                第{saveTurn}回合 · {saveRealm}
+                {saveLocation ? ` · ${saveLocation}` : ` · ${saveBackground}`}
+              </p>
+            </button>
+          )}
           <p className="text-rg-ink-300 text-xs font-panel text-center">
             蛊真人世界 · 人生重来模拟器 · v0.5.0
           </p>

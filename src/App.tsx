@@ -53,6 +53,9 @@ function App() {
               // ═══ 新游戏入口：全量重置旧存档数据 ═══
               (useStore.getState() as any).resetStore?.();
               goTo('mode_select');
+            }} onContinue={() => {
+              // ═══ M4: 续档入口 — 不重置数据，直接进入游戏 ═══
+              goTo('game_play');
             }} />
           </div>
         );

@@ -12,6 +12,10 @@ import { createEventSlice } from './slices/eventSlice';
 import { createNarrativeSlice } from './slices/narrativeSlice';
 import { createMapSlice } from './slices/mapSlice';
 import { createUiSlice } from './slices/uiSlice';
+import { createYuanStoneSlice } from './slices/yuanStoneSlice';
+import { createAchievementSlice } from './slices/achievementSlice';
+import { createTutorialSlice } from './slices/tutorialSlice';
+import { createChapterSlice } from './slices/chapterSlice';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -55,6 +59,10 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createNarrativeSlice> &
   ReturnType<typeof createMapSlice> &
   ReturnType<typeof createUiSlice> &
+  ReturnType<typeof createYuanStoneSlice> &
+  ReturnType<typeof createAchievementSlice> &
+  ReturnType<typeof createTutorialSlice> &
+  ReturnType<typeof createChapterSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -104,6 +112,10 @@ export const useStore = create<RootStore>()(
         ...createNarrativeSlice(...a),
         ...createMapSlice(...a),
         ...createUiSlice(...a),
+        ...createYuanStoneSlice(...a),
+        ...createAchievementSlice(...a),
+        ...createTutorialSlice(...a),
+        ...createChapterSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -111,19 +123,22 @@ export const useStore = create<RootStore>()(
 
         resetStore: () => {
           const set = a[0];
-          const current = a[0]() as any;
+          const get = a[1]; // BugFix: a[0] 是 set，a[1] 才是 get。之前 a[0]() 等于 set() 无参调用，会把整个 store 设为 undefined
+          const current = get() as any;
+          // ═══ BugFix: 先清除 localStorage 持久化缓存，避免 persist 中间件竞态导致旧数据残留 ═══
+          try { localStorage.removeItem('gu-zhenren-save'); } catch {}
           set({
             ...INITIAL_STATE,
             triggeredEvents: new Set<string>(),
             // 保留当前屏幕状态（由 App.tsx 管理，不应被重置）
             screenState: current.screenState ?? 'title',
             gameMode: current.gameMode ?? 'canon',
-          });
+          }); // shallow merge: INITIAL_STATE 覆盖所有数据 key，slice 方法（函数）自动保留
         },
 
         saveToFile: () => {
           try {
-            const state = a[0]() as any;
+            const state = a[1]() as any; // BugFix: a[1] 是 get
             const stateData = serializeState(state);
 
             const meta = {
@@ -177,7 +192,7 @@ export const useStore = create<RootStore>()(
             }
 
             const stateData = deserializeState(rawState);
-            const currentStore = a[0]() as any;
+            const currentStore = a[1]() as any; // BugFix: a[1] 是 get
 
             // 保留现有的函数引用（slice methods 不能从 JSON 恢复）
             const preservedFns: Record<string, any> = {};
@@ -205,6 +220,8 @@ export const useStore = create<RootStore>()(
 
             const set = a[0];
             set(merged);
+            // ═══ BugFix: 读档后递增版本号，触发 GameScreen 拉取 AI 叙事 ═══
+            a[0]((s: any) => ({ gameLoadVersion: (s.gameLoadVersion || 0) + 1 }));
             return { success: true };
           } catch (e) {
             const msg = e instanceof Error ? e.message : '未知错误';
@@ -214,7 +231,7 @@ export const useStore = create<RootStore>()(
         },
 
         getSerializedState: () => {
-          const state = a[0]() as any;
+          const state = a[1]() as any; // BugFix: a[1] 是 get
           const stateData = serializeState(state);
           const meta = {
             playerName: state.profile?.name || '无名蛊师',
@@ -234,10 +251,27 @@ export const useStore = create<RootStore>()(
         name: 'gu-zhenren-save',
         version: SAVE_FORMAT_VERSION,
         migrate: (persistedState: any, version: number) => {
-          // v1 → v2 迁移：兼容旧存档无新增字段的情况
-          if ((version === 0 || version === 1) && persistedState) {
-            // 确保新增字段有默认值（后续迭代按需追加）
-            return persistedState as any;
+          // v1 → v2 → v3 → v4 迁移：兼容旧存档无新增字段的情况
+          if (version < 4 && persistedState) {
+            // v4 新增 chapterSlice 字段默认值
+            if (persistedState.currentChapterId === undefined) persistedState.currentChapterId = null;
+            if (persistedState.currentDomain === undefined) persistedState.currentDomain = '南疆';
+            if (persistedState.chapterHistory === undefined) persistedState.chapterHistory = [];
+            if (persistedState.activeEvents === undefined) persistedState.activeEvents = {};
+            if (persistedState.goals === undefined) persistedState.goals = {};
+            if (persistedState.transitionState === undefined) persistedState.transitionState = 'idle';
+          }
+          if (version < 3 && persistedState) {
+            // v3 新增字段默认值
+            if (persistedState.battleState === undefined) persistedState.battleState = null;
+            if (persistedState.deathRecord === undefined) persistedState.deathRecord = null;
+            if (persistedState.currencyLog === undefined) persistedState.currencyLog = [];
+            if (persistedState.yuanStoneDelta === undefined) persistedState.yuanStoneDelta = 0;
+            if (persistedState.unlockedAchievements === undefined) persistedState.unlockedAchievements = [];
+            if (persistedState.achievementProgress === undefined) persistedState.achievementProgress = {};
+            if (persistedState.tutorialState === undefined) persistedState.tutorialState = 'inactive';
+            if (persistedState.currentStep === undefined) persistedState.currentStep = 0;
+            if (persistedState.tutorialSkippable === undefined) persistedState.tutorialSkippable = true;
           }
           return persistedState as any;
         },
@@ -251,6 +285,7 @@ export const useStore = create<RootStore>()(
             setActiveTab, toggleSettings, toggleSaveDialog, toggleEventLog,
             setTypewriterSpeed, setScreenState, setGameMode,
             setPipelinePhase, setPipelineError, setL3Warnings,
+            incrementLoadVersion,
             // 排除存档系统方法（仅运行时功能）
             resetStore, saveToFile, loadFromFile, getSerializedState,
             // 排除 Set 类型
@@ -258,6 +293,8 @@ export const useStore = create<RootStore>()(
             // 排除临时状态
             isLoading, error,
             currentNarrative,
+            // 排除读档版本计数器（纯UI信号，不持久化）
+            gameLoadVersion,
             // 保留其余可序列化数据
             ...rest
           } = s;

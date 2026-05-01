@@ -7,215 +7,323 @@
     "total": 11
   },
   "月刃连斩": {
-    "coreGu": ["月光蛊"],
-    "supportGu": ["风道加速蛊"],
+    "coreGu": [
+      "月光蛊"
+    ],
+    "supportGu": [
+      "风道加速蛊"
+    ],
     "effect": "连续发射三道月刃，威力叠加，速度递增",
     "cost": "真元消耗×3",
     "activationContext": "需开阔地带，夜间威力+30%",
     "failureMode": "加速蛊失效→月刃发射间隔拉长→敌人可逐个闪避",
     "path": "光道",
-    "level": 1
+    "level": 1,
+    "battleProperties": {}
   },
   "搜魂杀招": {
-    "coreGu": ["搜魂蛊"],
-    "supportGu": ["魂道辅助蛊"],
+    "coreGu": [
+      "搜魂蛊"
+    ],
+    "supportGu": [
+      "魂道辅助蛊"
+    ],
     "effect": "以搜魂仙蛊为核心构建，搜索目标魂魄获取完整记忆，七转魂道杀招",
     "cost": "仙元消耗若干 + 魂魄负担",
     "activationContext": "需近距离接触目标或被搜魂对象意志薄弱时",
     "failureMode": "目标意志极强→反噬蛊师魂魄；搜魂尊者→蛊师魂魄可能受损",
     "path": "魂道",
     "level": 7,
-    "note": "方源从南疆羊家蛊仙羊枯手中获得"
+    "note": "方源从南疆羊家蛊仙羊枯手中获得",
+    "battleProperties": {}
   },
   "石皮护体": {
-    "coreGu": ["石皮蛊"],
-    "supportGu": ["土道辅助蛊"],
+    "coreGu": [
+      "石皮蛊"
+    ],
+    "supportGu": [
+      "土道辅助蛊"
+    ],
     "effect": "全身皮肤石化，物理防御大幅提升，可承受同级蛊师全力一击",
     "cost": "真元消耗中等 + 移动速度降低",
     "activationContext": "需脚踏大地，土道环境加成",
     "failureMode": "移动中石化覆盖不全→留下破绽；被水道克制→石皮软化",
     "path": "土道",
-    "level": 1
+    "level": 1,
+    "battleProperties": {}
   },
   "万我杀招": {
-    "coreGu": ["分魂蛊×多只"],
-    "supportGu": ["魂道核心蛊"],
+    "coreGu": [
+      "分魂蛊×多只"
+    ],
+    "supportGu": [
+      "魂道核心蛊"
+    ],
     "effect": "分裂多个分魂同时攻击，每个分魂具有独立作战能力",
     "cost": "魂魄大幅消耗 + 仙元",
     "activationContext": "需大量魂道蛊虫储备",
     "failureMode": "分魂失控→分魂攻击本体；分魂被逐个击破→魂魄碎片损失",
     "path": "魂道",
     "level": 7,
-    "note": "方源标志性杀招之一"
+    "note": "方源标志性杀招之一",
+    "battleProperties": {}
   },
   "自由残缺变": {
-    "coreGu": ["变化道仙蛊"],
-    "supportGu": ["自由蛊相关"],
+    "coreGu": [
+      "变化道仙蛊"
+    ],
+    "supportGu": [
+      "自由蛊相关"
+    ],
     "effect": "快速变换形态和战斗风格，帅就完了",
     "cost": "仙元 + 形态转换消耗",
     "activationContext": "八转方源专属杀招",
     "failureMode": "形态转换被打断→卡在中间形态→战力锐减",
     "path": "变化道",
     "level": 8,
-    "note": "方源八转杀招"
+    "note": "方源八转杀招",
+    "battleProperties": {}
   },
   "遗毒蚁祸杀招": {
-    "coreGu": ["赤铜仙蚁蛊", "白面仙蚁蛊"],
+    "coreGu": [
+      "赤铜仙蚁蛊",
+      "白面仙蚁蛊"
+    ],
     "effect": "释放毒蚁群攻击，附带持续毒素伤害",
     "cost": "仙元+蚁群消耗",
     "activationContext": "需预先炼制成赤铜/白面仙蚁蛊",
     "failureMode": "蚁群被火焰/冰冻克制→全军覆没",
     "path": "奴道",
-    "level": 6
+    "level": 6,
+    "battleProperties": {}
   },
   "青丝绞杀": {
-    "coreGu": ["青丝蛊"],
-    "supportGu": ["木道增强蛊"],
+    "coreGu": [
+      "青丝蛊"
+    ],
+    "supportGu": [
+      "木道增强蛊"
+    ],
     "effect": "万千发丝同时爆发，形成绞杀网束缚并切割敌人",
     "cost": "真元消耗中等",
     "activationContext": "室内或狭窄空间威力最大",
     "failureMode": "被火道蛊虫克制→发丝全面燃烧；开阔地带→发丝覆盖不足",
     "path": "木道",
-    "level": 2
+    "level": 2,
+    "battleProperties": {}
   },
   "水龙卷": {
-    "coreGu": ["水龙蛊"],
-    "supportGu": ["风道加速蛊"],
+    "coreGu": [
+      "水龙蛊"
+    ],
+    "supportGu": [
+      "风道加速蛊"
+    ],
     "effect": "水龙+风力形成旋转水龙卷，范围伤害大幅提升",
     "cost": "真元消耗高",
     "activationContext": "近水源时威力翻倍",
     "failureMode": "风力和水力不协调→水龙卷溃散；干燥环境→水龙无法成形",
     "path": "水道",
-    "level": 4
+    "level": 4,
+    "battleProperties": {}
   },
   "金钟不破": {
-    "coreGu": ["金钟蛊"],
-    "supportGu": ["石皮蛊"],
+    "coreGu": [
+      "金钟蛊"
+    ],
+    "supportGu": [
+      "石皮蛊"
+    ],
     "effect": "金钟罩+石皮双重防御，可抵御跨级一击",
     "cost": "真元消耗极高",
     "activationContext": "需脚踏大地+足够的金属环境",
     "failureMode": "两蛊协调失败→单向防御留下破绽；超限攻击→金钟碎裂石皮龟裂",
     "path": "金道",
-    "level": 4
+    "level": 4,
+    "battleProperties": {}
   },
   "酒虫精炼阵": {
-    "coreGu": ["酒虫"],
-    "supportGu": ["书虫"],
+    "coreGu": [
+      "酒虫"
+    ],
+    "supportGu": [
+      "书虫"
+    ],
     "effect": "酒虫精炼真元+书虫记忆配方，大幅提升真元利用效率",
     "cost": "真元+美酒",
     "activationContext": "需备好高品质美酒",
     "failureMode": "酒品差→精炼效率下降；书虫记忆出错→配方混乱",
     "path": "食道",
-    "level": 2
+    "level": 2,
+    "battleProperties": {}
   },
   "血颅续航": {
-    "coreGu": ["血颅蛊"],
-    "supportGu": ["力气蛊"],
+    "coreGu": [
+      "血颅蛊"
+    ],
+    "supportGu": [
+      "力气蛊"
+    ],
     "effect": "战斗中吸取敌人血液补充真元，同时力气蛊增强近战输出",
     "cost": "真元+血液",
     "activationContext": "敌人需有鲜血（非亡灵/非傀儡类）",
     "failureMode": "敌人无血可吸→杀招失效；吸收异种血液→血液冲突；正道环境→名声败坏",
     "path": "血道",
-    "level": 5
+    "level": 5,
+    "battleProperties": {}
   },
   "万我": {
-    "coreGu": ["分魂蛊"],
-    "supportGu": ["魂道核心蛊", "奴道辅助蛊"],
+    "coreGu": [
+      "分魂蛊"
+    ],
+    "supportGu": [
+      "魂道核心蛊",
+      "奴道辅助蛊"
+    ],
     "effect": "分裂多个分魂同时攻击，每个分魂具有独立作战能力",
     "cost": "魂魄大幅消耗 + 仙元",
     "activationContext": "需大量魂道蛊虫储备",
     "failureMode": "分魂失控→攻击本体；被逐个击破→魂魄永久损失",
     "path": "魂道",
-    "level": 7
+    "level": 7,
+    "battleProperties": {}
   },
   "无双偃月斩": {
-    "coreGu": ["偃月仙蛊"],
-    "supportGu": ["六转攻击仙蛊"],
+    "coreGu": [
+      "偃月仙蛊"
+    ],
+    "supportGu": [
+      "六转攻击仙蛊"
+    ],
     "effect": "青色弯月无声斩出，威力惊人，天妒楼招牌杀招",
     "cost": "仙元大量消耗",
     "activationContext": "蓄力后发动，弯月轨迹无声",
     "failureMode": "仙元不足→威力减半；目标空间躲闪→斩空",
     "path": "刀道",
-    "level": 7
+    "level": 7,
+    "battleProperties": {}
   },
   "大而化小": {
-    "coreGu": ["小蛊"],
-    "supportGu": ["宇道辅助蛊"],
+    "coreGu": [
+      "小蛊"
+    ],
+    "supportGu": [
+      "宇道辅助蛊"
+    ],
     "effect": "将靠近物体威力减弱缩小，敌方杀招靠近后威力锐减",
     "cost": "仙元",
     "activationContext": "需预判敌方攻击方向",
     "failureMode": "攻击超出缩小上限→防御失效",
     "path": "律道",
-    "level": 7
+    "level": 7,
+    "battleProperties": {}
   },
   "水乳交融": {
-    "coreGu": ["水道融合仙蛊"],
-    "supportGu": ["水行隐匿蛊"],
+    "coreGu": [
+      "水道融合仙蛊"
+    ],
+    "supportGu": [
+      "水行隐匿蛊"
+    ],
     "effect": "与水流彻底融合隐藏，水不灭身不死",
     "cost": "仙元+持续消耗",
     "activationContext": "需水域环境",
     "failureMode": "水域被抽干→显形；被克制水道的仙蛊剥离",
     "path": "水道",
-    "level": 7
+    "level": 7,
+    "battleProperties": {}
   },
   "见面曾相识": {
-    "coreGu": ["态度蛊"],
-    "supportGu": ["智道辅助蛊"],
+    "coreGu": [
+      "态度蛊"
+    ],
+    "supportGu": [
+      "智道辅助蛊"
+    ],
     "effect": "盗天魔尊招牌杀招，见面即让人觉得可信，伪装身份无往不利",
     "cost": "仙元",
     "activationContext": "首次见面时发动",
     "failureMode": "高阶侦查仙蛊→识破伪装",
     "path": "智道",
-    "level": 8
+    "level": 8,
+    "battleProperties": {}
   },
   "巨灵变": {
-    "coreGu": ["巨灵意蛊"],
-    "supportGu": ["巨灵身蛊", "巨灵心蛊"],
+    "coreGu": [
+      "巨灵意蛊"
+    ],
+    "supportGu": [
+      "巨灵身蛊",
+      "巨灵心蛊"
+    ],
     "effect": "身体巨大化，力量暴增",
     "cost": "仙元+巨灵力",
     "activationContext": "三蛊齐备方可发动",
     "failureMode": "核心蛊失效→巨灵溃散",
     "path": "力道",
-    "level": 5
+    "level": 5,
+    "battleProperties": {}
   },
   "血滴子杀阵": {
-    "coreGu": ["血滴子"],
-    "supportGu": ["血道辅助蛊"],
+    "coreGu": [
+      "血滴子"
+    ],
+    "supportGu": [
+      "血道辅助蛊"
+    ],
     "effect": "鲜血养蛊，分化多个血滴子同时攻击",
     "cost": "鲜血+真元",
     "activationContext": "需用自身鲜血提前培养",
     "failureMode": "鲜血不足→血滴子互噬",
     "path": "血道",
-    "level": 5
+    "level": 5,
+    "battleProperties": {}
   },
   "山河如故": {
-    "coreGu": ["山如故", "江如故"],
-    "supportGu": ["人如故"],
+    "coreGu": [
+      "山如故",
+      "江如故"
+    ],
+    "supportGu": [
+      "人如故"
+    ],
     "effect": "令大地山川、江河和人同时恢复原样，攻防恢复一体",
     "cost": "真元大量消耗",
     "activationContext": "需三蛊齐备",
     "failureMode": "范围过大→真元耗尽",
     "path": "宙道",
-    "level": 5
+    "level": 5,
+    "battleProperties": {}
   },
   "金刚怒目阵": {
-    "coreGu": ["金刚怒目蛊"],
-    "supportGu": ["金道辅助蛊", "魂道辅助蛊"],
+    "coreGu": [
+      "金刚怒目蛊"
+    ],
+    "supportGu": [
+      "金道辅助蛊",
+      "魂道辅助蛊"
+    ],
     "effect": "目光所及皆为攻心，对视即攻心魂",
     "cost": "真元+魂力",
     "activationContext": "群战面对大量敌人",
     "failureMode": "敌人有高阶魂防→失效",
     "path": "金道",
-    "level": 5
+    "level": 5,
+    "battleProperties": {}
   },
   "孔升天": {
-    "coreGu": ["气遁蛊"],
-    "supportGu": ["风道辅助蛊"],
+    "coreGu": [
+      "气遁蛊"
+    ],
+    "supportGu": [
+      "风道辅助蛊"
+    ],
     "effect": "直线飞行速度天下第一",
     "cost": "仙元消耗",
     "activationContext": "需直线无阻挡",
     "failureMode": "空间封锁→无法通过",
     "path": "风道",
-    "level": 6
+    "level": 6,
+    "battleProperties": {}
   }
 }

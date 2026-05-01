@@ -90,6 +90,15 @@ function normalizeAIResponse(parsed: any): void {
   }
   if (!parsed.narrative?.choices?.length) return;
 
+  // 1.5 state_update内部归一化 — 修正AI常见的字段格式错误
+  if (parsed.state_update && typeof parsed.state_update === 'object') {
+    const su = parsed.state_update;
+    // player: AI有时返回字符串(如"天资")而非对象 → 清空
+    if (typeof su.player === 'string') delete su.player;
+    // gu_inventory: AI有时返回数组[]而非{add,remove}对象 → 清空（空数组无实际变更）
+    if (Array.isArray(su.gu_inventory)) delete su.gu_inventory;
+  }
+
   // 2. 选项内部归一化
   for (const choice of parsed.narrative.choices) {
     let nested: any = choice.outcomes || choice.consequences || choice.outcome;
@@ -229,7 +238,8 @@ export class ResponsePipeline {
   // ─── 主处理入口 ───
   async process(
     choiceId: string | null,
-    isOpening: boolean = false
+    isOpening: boolean = false,
+    isResume: boolean = false
   ): Promise<PipeResult> {
     const key = apiKey.get();
     if (!key) {
@@ -243,8 +253,10 @@ export class ResponsePipeline {
       // 阶段1: 构建上下文
       this.state = 'BUILDING_CONTEXT';
       const context = contextBuilder.buildFullContext(store, this.config.mode, isOpening);
-      const baseMessages = contextBuilder.buildMessages(context, choiceId || undefined);
-      console.log(`%c[PIPE] PROCESS %c→ isOpening=${isOpening} choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c`,
+      // P1-6.3 动静分离：动态数据（元石余额/NPC关系/蛊虫状态）注入user message
+      const dynamicCtx = contextBuilder.buildDynamicContext(store);
+      const baseMessages = contextBuilder.buildMessages(context, choiceId || undefined, dynamicCtx);
+      console.log(`%c[PIPE] PROCESS %c→ isOpening=${isOpening} choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c dynamic=${dynamicCtx.length}c`,
         'color:#b8860b;font-weight:bold','color:#999');
 
       // 阶段2-4: 获取+解析+格式验证
@@ -351,14 +363,40 @@ export class ResponsePipeline {
 
       applyStateUpdate(narrative.state_update);
 
-      // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（开局不计入） ═══
-      if (!isOpening) {
+      // ═══ P1成就钩子：每轮RESOLVED后检测成就条件（P1空执行） ═══
+      (useStore.getState() as any).checkAchievements?.();
+
+      // ═══ P1章节推进钩子：每轮RESOLVED后检测章节推进条件 ═══
+      const chProgStore = useStore.getState() as any;
+      if (typeof chProgStore.checkProgression === 'function') {
+        const progResult = chProgStore.checkProgression();
+        if (progResult?.shouldTransition) {
+          console.log(`[Chapter] 章节推进触发: ${progResult.reason}`);
+          chProgStore.setTransitionState?.('transitioning');
+        }
+      }
+
+      // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（开局+续档不计入） ═══
+      if (!isOpening && !isResume) {
         (useStore.getState() as any).advanceTurn?.();
       }
 
-      // ═══ 死亡检测：叙事导致HP归零 → 触发game_over ═══
+      // ═══ 死亡检测：叙事导致HP归零 → 生成死亡摘要并触发game_over ═══
       const updatedStore = useStore.getState();
       if ((updatedStore as any).isDead && (updatedStore as any).screenState !== 'game_over') {
+        // 填充 deathRecord（死亡摘要）
+        const s = updatedStore as any;
+        if (!s.deathRecord) {
+          useStore.setState({
+            deathRecord: {
+              cause: s.deathCause || '未知原因',
+              turn: s.turn || 1,
+              chapter: s.flags?.currentChapter || '南疆初探',
+              realm: s.profile?.realm?.label || '一转初阶',
+              achievementCount: (s.unlockedAchievements?.length) || 0,
+            },
+          });
+        }
         (updatedStore as any).setScreenState?.('game_over');
       }
 

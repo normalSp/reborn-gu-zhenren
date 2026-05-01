@@ -18,7 +18,7 @@ interface UseGamePipelineReturn {
   pipeState: PipeState;
   pipeResult: PipeResult | null;
   validation: SemanticValidationResult | null;
-  startGame: () => Promise<void>;
+  startGame: (isResume?: boolean) => Promise<void>;
   submitChoice: (choiceId: string) => Promise<void>;
   retry: () => Promise<void>;
 }
@@ -43,16 +43,18 @@ export function useGamePipeline(): UseGamePipelineReturn {
     setPipelinePhase(state);
   }, [setPipelinePhase]);
 
-  // ─── 开始游戏（开局叙事） ───
-  const startGame = useCallback(async () => {
-    console.log('%c[PIPE] START_GAME','color:#b8860b;font-weight:bold');
+  // ─── 开始游戏（开局叙事/续档叙事） ───
+  const startGame = useCallback(async (isResume: boolean = false) => {
+    console.log(`%c[PIPE] START_GAME %c→ isResume=${isResume}`,'color:#b8860b;font-weight:bold','color:#999');
     const pipeline = getPipeline();
     pipeline.reset();
     // 立即进入处理状态，UI 层展示加载
     syncState('BUILDING_CONTEXT');
 
     try {
-      const result = await pipeline.process(null, true); // isOpening = true
+      // isResume=true → isOpening=false(标准提示词), isResume=true(不推进回合)
+      // isResume=false → isOpening=true(开局提示词), isResume=false(不推进回合,同原逻辑)
+      const result = await pipeline.process(null, !isResume, isResume);
       setPipeResult(result);
 
       if (result.state === 'RESOLVED') {

@@ -75,15 +75,28 @@ const toolbarBtnClass = (active: boolean) =>
 export function GameScreen() {
   const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
   const screenState = useStore(s => s.screenState);
+  const gameLoadVersion = useStore(s => s.gameLoadVersion);
   const startedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
 
   useEffect(() => {
+    // ═══ BugFix: 读档触发 — gameLoadVersion>0 表示存档已被加载，需要重新拉取 AI 叙事 ═══
+    if (screenState === 'game_play' && gameLoadVersion > 0 && startedRef.current) {
+      startedRef.current = false;
+    }
+
     if (screenState === 'game_play' && !startedRef.current) {
       startedRef.current = true;
-      startGame();
+      // ─── M4: 续档检测 — turn>1 表示有存档数据，走续档流程（标准提示词+不推进回合） ───
+      const turn = useStore.getState().turn;
+      const isResume = turn > 1;
+      startGame(isResume);
     }
-  }, [screenState, startGame]);
+    // ═══ BugFix: 离开游戏界面时重置启动标记，确保重入轮回后能重新触发开局 ═══
+    if (screenState !== 'game_play') {
+      startedRef.current = false;
+    }
+  }, [screenState, startGame, gameLoadVersion]);
 
   const closePanel = () => setSidePanel('none');
   const togglePanel = (id: SidePanel) => setSidePanel(sidePanel === id ? 'none' : id);

@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "蛊真人模拟器章节弧光系统 — 五域命名空间结构。P1仅南疆三章，其余四域为P2占位。",
+    "authoringNote": "triggerConditions使用简化表达式语言: realm_gte(3)表示境界≥三转, turn_gte(15)表示回合≥15, flag(foo)表示flag存在, flag_eq(foo,bar)表示flag值等于bar, and(...)表示全部满足, or(...)表示任一满足"
+  },
+
+  "domains": {
+    "南疆": [
+      {
+        "id": "qingmaoshan",
+        "name": "青茅山期",
+        "displayName": "第一章 · 青茅山期",
+        "domain": "南疆",
+        "domainOpeningChapter": true,
+        "position": {
+          "region": "南疆",
+          "area": "古月山寨周边 · 青茅山区",
+          "accessibleLocations": ["古月山寨", "青茅山炼蛊房", "山寨外围山林", "坊市"]
+        },
+        "triggerConditions": "turn_gte(1)",
+        "keyNPCs": ["古月方源", "古月族长", "青茅山炼蛊师"],
+        "keyFactions": ["古月山寨"],
+        "sceneConstraints": {
+          "mustHappen": ["开窍大典", "首次炼蛊", "山寨日常"],
+          "mustNotHappen": ["跨域旅行", "蛊仙出现", "大宗师级战斗"],
+          "narrativeTheme": "弱肉强食的家族丛林法则——山寨资源有限，炼蛊房名额竞争激烈，每个人都在为自己的生存和地位努力"
+        },
+        "goals": [
+          { "id": "qms_first_refine", "description": "完成首次炼蛊", "type": "milestone" },
+          { "id": "qms_reach_2nd", "description": "突破至二转", "type": "realm_gate" }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.0,
+        "rippleLayers": []
+      },
+      {
+        "id": "nanjiang_chutan",
+        "name": "南疆初探",
+        "displayName": "第二章 · 南疆初探",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "南疆诸山寨 · 散修集散地",
+          "accessibleLocations": ["各大山寨", "散修集市", "荒野秘地", "小传承地", "蛊材采集区"]
+        },
+        "triggerConditions": "or(realm_gte(2), and(turn_gte(10), flag(qms_first_refine_completed)))",
+        "keyNPCs": ["太白云生", "南疆散修领袖", "白凝冰"],
+        "keyFactions": ["南疆散修联盟", "白家寨", "古月山寨"],
+        "sceneConstraints": {
+          "mustHappen": ["与其他山寨接触", "散修交易", "发现更大世界"],
+          "mustNotHappen": ["蛊仙现世", "域外势力大规模入侵"],
+          "narrativeTheme": "走出山寨的散修世界——见识南疆的广阔与复杂，门派林立，散修艰辛。机缘与危机并存，每个选择都可能改变命运"
+        },
+        "goals": [
+          { "id": "njct_visit_3_villages", "description": "造访至少三处山寨或集市", "type": "exploration" },
+          { "id": "njct_earn_500", "description": "积累元石至500块", "type": "economy" }
+        ],
+        "globalEventId": "sanwangshan",
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.5,
+        "rippleLayers": ["三王山传闻"]
+      },
+      {
+        "id": "sanwang_yitian",
+        "name": "三王山·义天山",
+        "displayName": "第三章 · 三王山风云",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "三王山周边 · 义天山区域",
+          "accessibleLocations": ["三王山", "义天山", "各方势力驻地", "上古战场遗迹", "蛊仙传承地"]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(25), flag(njct_visit_3_villages_completed)))",
+        "keyNPCs": ["古月方源", "太白云生", "白凝冰", "三王山传人"],
+        "keyFactions": ["三王山势力", "义天山联盟", "南疆正道联盟", "散修自由势力"],
+        "sceneConstraints": {
+          "mustHappen": ["三王山势力接触", "义天山事件波及", "势力立场选择"],
+          "mustNotHappen": ["改变原著核心结局", "蛊仙亲自出手干预凡间"],
+          "narrativeTheme": "南疆的暗流涌动——三王山与义天山的势力博弈，大时代即将来临。玩家作为独立蛊师被卷入旋涡，需要做出立场选择"
+        },
+        "goals": [
+          { "id": "syt_choose_side", "description": "在三王山与义天山之间做出立场选择", "type": "decision" },
+          { "id": "syt_reach_3rd_peak", "description": "达到三转巅峰", "type": "realm_gate" }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "南疆→北原域切换",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 2.0,
+        "rippleLayers": ["三王山决战", "义天山密谋", "白凝冰叛逃", "方源春秋蝉"]
+      }
+    ],
+
+    "北原": [],
+    "东海": [],
+    "西漠": [],
+    "中洲": []
+  },
+
+  "global": [
+    {
+      "eventId": "sanwangshan",
+      "name": "三王山事件",
+      "description": "南疆三王山势力崛起，引发区域势力洗牌。影响范围：南疆全境。",
+      "triggerChapter": "nanjiang_chutan",
+      "rippleStrength": "medium",
+      "affectedDomains": ["南疆"]
+    },
+    {
+      "eventId": "yitianshan",
+      "name": "义天山事件",
+      "description": "义天山成为南疆焦点，多方势力博弈。方源春秋蝉重生于此。影响范围：南疆→波及北原。",
+      "triggerChapter": "sanwang_yitian",
+      "rippleStrength": "high",
+      "affectedDomains": ["南疆", "北原"]
+    }
+  ]
+}

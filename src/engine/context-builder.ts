@@ -6,6 +6,7 @@ import guDatabaseRaw from '../canon/gu-database.json';
 import worldRulesRaw from '../canon/world-rules.json';
 import terminologyRaw from '../canon/terminology.json';
 import npcsRaw from '../canon/npcs.json';
+import chaptersRaw from '../canon/chapters.json';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -27,28 +28,80 @@ const STYLE_GUIDE_INJECT = `
 - 禁用爽文套路：热血沸腾、充满希望、美好未来、前途无量、轻松愉快、皆大欢喜
 - 禁用NPC降智：无条件信任、无偿赠送、欣赏主角、全力栽培
 - 每个机缘必有对等代价，每个选项都有明确风险
+- 蛊虫存放：蛊师可将蛊虫收入体内空窍，无需笼具或腰间携带。仅凡人/未开窍者才需外部容器。不可描述"蛊虫笼""腰间挂着蛊虫"等物理存放方式。十绝体空窍完全充满元海无空腔，需依赖第二空窍蛊或外力携带蛊虫——此为重要叙事设定
 - 描写侧重氛围和后果，不过度描写战斗动作细节
 - 人名规范：古月方源不可称"方源哥哥"等亲昵称呼
 - 地名使用原著正名：南疆、北原、东海、西漠、中州`;
 
-// ─── 开局专用 System Prompt ───
-const SYSTEM_PROMPT_OPENING = `
+// ─── 五域开局配置表 ───
+interface DomainOpeningConfig {
+  location: string;
+  faction: string;
+  options: string;
+}
+
+const DOMAIN_OPENING: Record<string, DomainOpeningConfig> = {
+  '南疆': {
+    location: '南疆，古月山寨附近',
+    faction: '古月山寨为南疆散修聚集之所',
+    options: `- 一个选择炼蛊之路（加入山寨炼蛊房学习）
+   - 一个选择修行之路（独自修行提高境界）
+   - 一个冒险选择（探索山寨外围寻找机缘）`,
+  },
+  '中洲': {
+    location: '中洲大陆，天元皇朝治下的仙门坊市附近',
+    faction: '天元皇朝统领中洲，十大门派坐镇各方，秩序井然',
+    options: `- 一个选择加入正道门派（加入十大古派之一的外门修行）
+   - 一个选择散修之路（独自游历修行，寻找机缘）
+   - 一个冒险选择（探索秘境遗迹寻找传承）`,
+  },
+  '北原': {
+    location: '北原冰原，黄金家族王庭外围的游牧营地',
+    faction: '黄金家族统御北原各部，强者为尊，弱肉强食',
+    options: `- 一个选择加入黄金家族（投入家族麾下为战士）
+   - 一个选择游牧修行（随部落迁徙苦修）
+   - 一个冒险选择（深入冰原寻找远古巢穴）`,
+  },
+  '东海': {
+    location: '东海群岛，散修聚集的岛屿坊市',
+    faction: '东海多散修与海商，势力松散而复杂',
+    options: `- 一个选择加入海商势力（为海商护航赚取灵石）
+   - 一个选择洞府修行（在荒岛开辟洞府独自修炼）
+   - 一个冒险选择（潜水探索海底洞窟）`,
+  },
+  '西漠': {
+    location: '西漠大漠，绿洲城邦的边缘聚落',
+    faction: '西漠绿洲城邦林立，沙匪横行，资源匮乏',
+    options: `- 一个选择加入商队（随商队穿越沙漠修行）
+   - 一个选择绿洲修行（在城邦道场静心修炼）
+   - 一个冒险选择（深入沙海寻找上古遗迹）`,
+  },
+};
+
+// ─── 开局专用 System Prompt（动态根据玩家出身域生成） ───
+function buildOpeningPrompt(store: RootStore): string {
+  const bg = store.profile?.background || '南疆';
+  // 从 "中洲 · 蛊师学徒" 格式中提取域名
+  const domain = Object.keys(DOMAIN_OPENING).find(d => bg.includes(d)) || '南疆';
+  const config = DOMAIN_OPENING[domain];
+
+  return `
 你现在负责生成蛊真人模拟器的开局叙事。玩家刚刚完成了角色创建，即将进入蛊界。
 
 开局背景：
-- 地点：南疆，古月山寨附近
+- 地点：${config.location}
 - 时代：蛊真人原著故事线之初
 - 玩家身份：刚开窍的蛊师学徒（一转初阶），身世普通
+- 所在势力：${config.faction}
 
 第一轮叙事要求：
-1. 简介玩家的背景和开窍过程（约200字）
+1. 简介玩家的背景和开窍过程（约200字），叙事必须严格围绕${domain}展开，不可出现其他域的地理位置和势力
 2. 描述当前的情景——玩家刚成为蛊师学徒，需要做出第一个重要选择
 3. 提供2-3个开局选项：
-   - 一个选择炼蛊之路（加入山寨炼蛊房学习）
-   - 一个选择修行之路（独自修行提高境界）
-   - 一个冒险选择（探索山寨外围寻找机缘）
+${config.options}
 
 角色信息将在用户消息中提供。请生成开局叙事JSON。`;
+}
 
 // ─── Canon / IF 模式分化 ───
 const CANON_MODE_INJECT = `
@@ -136,7 +189,59 @@ function injectGuKnowledge(inventory: Array<{ name: string; tier: number; path: 
   ].join('\n');
 }
 
-// ─── 术语速查注入 ───
+// ─── 章节约束注入（P1新增：基于chapters.json注入域约束/位置锁/场景约束） ───
+function injectChapterConstraints(store: RootStore): string {
+  const flags: Record<string, any> = (store as any).flags || {};
+  const currentChapter = flags.current_chapter || '青茅山期';
+  const currentDomain = flags.current_domain || store.currentDomain || '南疆';
+
+  const chaptersData = chaptersRaw as any;
+  const domainChapters: any[] = chaptersData.domains?.[currentDomain] || [];
+  const chapterDef = domainChapters.find((c: any) => c.name === currentChapter);
+
+  if (!chapterDef) return '';
+
+  const lines: string[] = ['', '【当前章节约束】'];
+
+  // 位置约束
+  if (chapterDef.position) {
+    lines.push(`- 当前位置：${chapterDef.position.region} · ${chapterDef.position.area}`);
+    if (chapterDef.position.accessibleLocations?.length > 0) {
+      lines.push(`- 可前往地点：${chapterDef.position.accessibleLocations.join('、')}`);
+    }
+  }
+
+  // 势力约束
+  if (chapterDef.keyFactions?.length > 0) {
+    lines.push(`- 当前势力存在：${chapterDef.keyFactions.join('、')}`);
+  }
+
+  // 场景约束（AI叙事引导）
+  if (chapterDef.sceneConstraints) {
+    const sc = chapterDef.sceneConstraints;
+    if (sc.mustHappen?.length > 0) {
+      lines.push(`- 叙事应涉及：${sc.mustHappen.join('、')}`);
+    }
+    if (sc.mustNotHappen?.length > 0) {
+      lines.push(`- 叙事禁止：${sc.mustNotHappen.join('、')}`);
+    }
+    if (sc.narrativeTheme) {
+      lines.push(`- 叙事主题：${sc.narrativeTheme}`);
+    }
+  }
+
+  // 经济系数（P1预留，P2由economy系统消费）
+  if (chapterDef.chapterPriceMultiplier && chapterDef.chapterPriceMultiplier !== 1.0) {
+    lines.push(`- 物价系数：${chapterDef.chapterPriceMultiplier}x（基础价格乘以该系数）`);
+  }
+
+  // 涟漪层（P2使用）
+  if (chapterDef.rippleLayers?.length > 0) {
+    lines.push(`- 全局事件涟漪：${chapterDef.rippleLayers.join('、')}`);
+  }
+
+  return lines.join('\n');
+}
 function injectTerminology(): string {
   const core = terminology['核心概念'] as Record<string, string>;
   if (!core) return '';
@@ -152,14 +257,12 @@ function injectTerminology(): string {
 // ContextBuilder 类
 // ═══════════════════════════════════════════
 
-// ─── 经济规则注入（4D.9） ───
-function injectEconomyRules(store: RootStore): string {
-  const currency = (store as any).currency ?? 0;
+// ─── 经济规则注入（4D.9）【P1-6.3动静分离：去除动态${currency}保留静态物价参考】 ───
+function injectEconomyRules(): string {
   return `
 ## 经济与交易规则
 
 蛊界的通用货币是「元石」。元石分布在底层岩石中，可为蛊师补充真元（一转初阶获约100真元，境界越高补充量越少）。
-当前玩家元石余额：${currency}块。
 空窍容量：一转3只/二转5只/三转8只/四转12只/五转15只。
 
 物价参考（境界分段基数：一转150/二转200/三转800/四转5000/五转20000元石）：
@@ -185,9 +288,8 @@ function injectNPCContext(store: RootStore): string {
   const currentFaction = flags.current_faction || '南疆';
   const currentChapter = flags.current_chapter || '青茅山期';
   const factionStandings: Record<string, number> = (store as any).standings || {};
-  const playerRealm = store.profile?.realm?.grand || 1;
 
-  // === 过滤层1: 根据玩家当前位置和势力关系过滤 ===
+  // === 过滤层1: 根据玩家当前位置和势力关系过滤【P1-6.3动静分离：去除playerRealm评分，按角色重要性静态排序】 ===
   const relevantNpcs: Array<{ name: string; info: any; relevance: number }> = [];
 
   for (const [name, npc] of Object.entries(npcDb)) {
@@ -201,8 +303,6 @@ function injectNPCContext(store: RootStore): string {
     // 主要角色 +2
     if (n.role === 'protagonist' || n.role === 'antagonist') relevance += 2;
     if (n.role === 'supporting') relevance += 1;
-    // 与玩家境界相近（±2转） +1
-    if (n.tier > 0 && Math.abs(n.tier - playerRealm) <= 2) relevance += 1;
     // 有 relationship 定义 +1
     if (n.relationship && n.relationship !== '无关' && n.relationship !== '无直接关系') relevance += 1;
 
@@ -270,7 +370,9 @@ export class ContextBuilder {
     store?: RootStore
   ): string {
     if (isOpening) {
-      return SYSTEM_PROMPT_OPENING;
+      // store 理论上总是存在（buildFullContext 传参），安全回退到南疆默认开局
+      if (store) return buildOpeningPrompt(store);
+      return buildOpeningPrompt({ profile: { background: '南疆' } } as RootStore);
     }
 
     const parts: string[] = [
@@ -289,9 +391,12 @@ export class ContextBuilder {
     // 世界规则注入
     parts.push(injectWorldRules());
 
-    // 经济规则注入（4D.9）
+    // 经济规则注入（4D.9）【P1-6.3动静分离：去store参数，完全静态】
+    parts.push(injectEconomyRules());
+
+    // ═══ P1章节约束注入：域约束/位置锁/场景约束（在NPC上下文之前） ═══
     if (store) {
-      parts.push(injectEconomyRules(store));
+      parts.push(injectChapterConstraints(store));
     }
 
     // NPC上下文注入（5C.1 三层过滤）
@@ -302,10 +407,8 @@ export class ContextBuilder {
     // 术语速查
     parts.push(injectTerminology());
 
-    // 蛊虫知识注入（按玩家上下文）
-    if (store?.inventory && store.inventory.length > 0) {
-      parts.push(injectGuKnowledge(store.inventory));
-    }
+    // 蛊虫知识注入【P1-6.3动静分离：从system prompt移除，迁移到buildMessages动态段】
+    // 原 injectGuKnowledge(store.inventory) 调用已移除
 
     return parts.join('\n');
   }
@@ -358,8 +461,50 @@ export class ContextBuilder {
     return { systemPrompt, playerStateJSON, keyEvents, recentMessages, rollingSummary, mode, turnNumber: store.messages.length };
   }
 
+  // ─── P1-6.3 构建动态上下文（注入到user message，不污染system prompt缓存） ───
+  buildDynamicContext(store: RootStore): string {
+    const parts: string[] = [];
+
+    // 段1: 当前元石余额
+    const currency = (store as any).currency;
+    if (currency !== undefined && currency !== null) {
+      parts.push(`【当前元石余额】${currency}块元石`);
+    }
+
+    // 段2: 动态NPC关系（仅在好感度非默认时注入）
+    const standings: Record<string, number> = (store as any).standings || {};
+    const dynamicStandings = Object.entries(standings)
+      .filter(([key, val]) => key !== 'updateStanding' && key !== 'updateRelation' && typeof val === 'number' && val !== 0)
+      .slice(0, 10);
+    if (dynamicStandings.length > 0) {
+      const relLines = dynamicStandings.map(([npc, rel]) =>
+        `  ${npc}: ${rel > 0 ? '+' + rel : rel} （${rel >= 30 ? '友善' : rel >= 10 ? '好感' : rel <= -30 ? '敌对' : rel <= -10 ? '反感' : '中立'}）`
+      );
+      parts.push(`【NPC关系动态】\n${relLines.join('\n')}`);
+    }
+
+    // 段3: 蛊虫当前状态摘要
+    const inventory = store.inventory;
+    if (inventory && inventory.length > 0) {
+      const guLines: string[] = [];
+      for (const gu of inventory.slice(0, 6)) {
+        const data = guDatabase[gu.name];
+        if (data) {
+          guLines.push(`  ${gu.name}(${gu.tier}转${gu.path}): 状态=${gu.currentState || 'normal'}; 喂=${data.feed || '未知'}; 败=${data.usageFailure || data.feedFailure || '未知'}`);
+        } else {
+          guLines.push(`  ${gu.name}(${gu.tier}转${gu.path}): 状态=${gu.currentState || 'normal'}`);
+        }
+      }
+      if (guLines.length > 0) {
+        parts.push(`【当前蛊虫状态】\n${guLines.join('\n')}`);
+      }
+    }
+
+    return parts.length > 0 ? parts.join('\n\n') : '';
+  }
+
   // ─── 构建 API 消息列表 ───
-  buildMessages(context: AIContext, choiceId?: string): { system: string; user: string } {
+  buildMessages(context: AIContext, choiceId?: string, dynamicContext?: string): { system: string; user: string } {
     const userContextParts = [
       '【玩家当前状态】', context.playerStateJSON, '',
       '【近期关键事件】',
@@ -369,6 +514,12 @@ export class ContextBuilder {
       '',
       '【历史摘要】', context.rollingSummary || '（无历史摘要）',
     ];
+
+    // P1-6.3 动态上下文注入：元石余额 + NPC关系 + 蛊虫状态
+    if (dynamicContext) {
+      userContextParts.push('', dynamicContext);
+    }
+
     userContextParts.push('', choiceId ? `【玩家选择】${choiceId}` : '【玩家选择】开始游戏');
     if (context.recentMessages.length > 0) {
       userContextParts.push('', '【最近对话历史】');

@@ -54,6 +54,7 @@ function getCurrentSaveData(): any {
     'setPipelinePhase', 'setPipelineError', 'setL3Warnings',
     'resetStore', 'saveToFile', 'loadFromFile', 'getSerializedState',
     'triggeredEvents', 'isLoading', 'error', 'currentNarrative',
+    'gameLoadVersion', 'incrementLoadVersion',
   ]);
   for (const [key, value] of Object.entries(state)) {
     if (!excludeKeys.has(key) && typeof value !== 'function') {
@@ -103,6 +104,8 @@ export function SaveLoadDialog() {
     }
     const merged = { ...store, ...data, ...uiFns };
     useStore.setState(merged);
+    // ═══ BugFix: 递增版本号，通知 GameScreen 读档完成、拉取 AI 叙事 ═══
+    store.incrementLoadVersion?.();
     toggleSaveDialog();
   };
 

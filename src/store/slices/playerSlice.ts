@@ -9,6 +9,10 @@ interface PlayerSlice extends PlayerState {
   deathTurn: number;
   currency: number;
   immortalCurrency: number;
+  /** P1预留：战斗状态（P2由战斗引擎填充） */
+  battleState: import('../../types').CombatState | null;
+  /** P1预留：死亡记录（死亡时填充摘要） */
+  deathRecord: import('../../types').DeathRecord | null;
   spendCurrency: (amount: number) => boolean;
   addCurrency: (amount: number) => void;
   getApertureCapacity: () => number;
@@ -40,6 +44,8 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   deathTurn: 0,
   currency: 200,
   immortalCurrency: 0,
+  battleState: null,
+  deathRecord: null,
   gameTime: { ap: 3, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' },
 
   applyStateUpdate: (update) => {
@@ -81,6 +87,18 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       if (attrs.体魄) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 体魄: Math.max(0, Math.min(10, s.attributes.体魄 + attrs.体魄!.value)) } }));
       if (attrs.心智) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 心智: Math.max(0, Math.min(10, s.attributes.心智 + attrs.心智!.value)) } }));
       if (attrs.气运) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 气运: Math.max(0, Math.min(10, s.attributes.气运 + attrs.气运!.value)) } }));
+    }
+    // ─── 元石变动（wealth.delta） ───
+    if ((update as any).wealth?.delta) {
+      const delta = (update as any).wealth.delta;
+      set((s: PlayerSlice) => ({ currency: Math.max(0, s.currency + delta) }));
+      // 同步写入 yuanStoneSlice 日志（如果已注册）
+      const fullStore = get() as any;
+      if (delta > 0 && typeof fullStore.addYuanStone === 'function') {
+        fullStore.addYuanStone(delta, '叙事事件-收入', undefined, 'gameplay');
+      } else if (delta < 0 && typeof fullStore.spendYuanStone === 'function') {
+        fullStore.spendYuanStone(Math.abs(delta), '叙事事件-支出', undefined, 'gameplay');
+      }
     }
     // ─── 生命/真元 ───
     if (update.health) {

@@ -3,7 +3,7 @@
     "version": "1.0",
     "source": "蛊真人原著 + 百度百科 + MC百科 + 贴吧设定整理",
     "principle": "按需构建，AI叙事涉及新蛊虫时核实原著后追加条目",
-    "total": 22
+    "total": 56
   },
   "月光蛊": {
     "tier": 1, "path": "光道", "rank": "common",
@@ -12,7 +12,8 @@
     "feedFailure": "连续三日未喂→饥饿→虚弱（月刃威力减半）→七日后死亡",
     "usageFailure": "真元不足→月刃威力减半；意志动摇→月刃可能偏离目标",
     "refineMaterials": "月光石 + 光道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": { "type": "月光", "rarity": "common", "description": "需在月夜放置于室外吸收月光精华，阴雨天可用月光石替代但效果减半" }
   },
   "酒虫": {
     "tier": 1, "path": "食道", "rank": "uncommon",
@@ -21,7 +22,8 @@
     "feedFailure": "连续七日无酒→酒虫休眠→真元精炼效果消失",
     "usageFailure": "喂劣酒→真元精炼效率下降；过量使用→醉真元（真元暂时浑浊）",
     "refineMaterials": "百年陈酿 + 食道蛊材",
-    "refineDifficulty": 4
+    "refineDifficulty": 4,
+    "feedRequirement": { "type": "美酒", "rarity": "uncommon", "description": "需定期喂食品质美酒，酒越好效果越好，劣酒会降低精炼效率" }
   },
   "春秋蝉": {
     "tier": 6, "path": "宙道", "rank": "legendary", "isImmortalGu": true,
@@ -199,15 +201,6 @@
     "usageFailure": "在水域环境使用→火鸦威力大减；火鸦过多超出控制→烧伤蛊师",
     "refineMaterials": "地火之精 + 炎道蛊材",
     "refineDifficulty": 4
-  },
-  "百战不殆蛊": {
-    "tier": 5, "path": "智道", "rank": "rare",
-    "effect": "战斗中自动分析敌方弱点，提供战术建议，辅助决策",
-    "feed": "战斗经验——每次战斗后自动吸收经验",
-    "feedFailure": "长期无战斗→百战不殆蛊智识退化",
-    "usageFailure": "面对完全未知的敌人→分析失败",
-    "refineMaterials": "百场战斗记录 + 智道蛊材",
-    "refineDifficulty": 7
   },
   "铜皮蛊": {
     "tier": 1, "path": "防御", "rank": "common",
@@ -417,15 +410,6 @@
     "usageFailure": "超出承受极限→苦力蛊力量反噬",
     "refineMaterials": "苦痛精华 + 力道蛊材",
     "refineDifficulty": 7
-  },
-  "金缕衣蛊": {
-    "tier": 4, "path": "防御", "rank": "uncommon",
-    "effect": "金色丝缕覆盖全身，防御力极强",
-    "feed": "金丝——提炼纯金丝线",
-    "feedFailure": "无金丝→金缕变薄→溃散",
-    "usageFailure": "超限攻击→金缕碎裂",
-    "refineMaterials": "精炼金丝 + 防御蛊材",
-    "refineDifficulty": 5
   },
   "油龙蛊": {
     "tier": 4, "path": "火道", "rank": "uncommon",

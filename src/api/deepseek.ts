@@ -38,12 +38,6 @@ async function callDeepSeek<T = any>(
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
-      // 5D: 系统prompt加随机前缀彻底破坏缓存（缓存命中99%→0%）
-      const systemWithBreak = `[sid:${Math.random().toString(36).slice(2,8)}] ${systemPrompt}`;
-      // 用户消息末尾加时间戳辅助破缓存
-      const userWithCacheBreak = `${userMessage}
-#[ts:${Date.now().toString(36)}]`;
-
       const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
         method: 'POST',
         headers: {
@@ -53,8 +47,8 @@ async function callDeepSeek<T = any>(
         body: JSON.stringify({
           model: 'deepseek-chat',
           messages: [
-            { role: 'system', content: systemWithBreak },
-            { role: 'user', content: userWithCacheBreak },
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userMessage },
           ],
           temperature: 0.7,
         }),

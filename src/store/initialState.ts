@@ -39,6 +39,8 @@ export const INITIAL_STATE = {
   deathTurn: 0,
   currency: 200,
   immortalCurrency: 0,
+  battleState: null as any,
+  deathRecord: null as any,
   gameTime: {
     ap: 3,
     max_ap: 3,
@@ -108,6 +110,28 @@ export const INITIAL_STATE = {
   pipelinePhase: 'IDLE' as PipelinePhase,
   pipelineError: null as string | null,
   l3Warnings: [] as { ruleName: string; details: string }[],
+  gameLoadVersion: 0,
+
+  // ─── yuanStoneSlice ───
+  currencyLog: [] as any[],
+  yuanStoneDelta: 0,
+
+  // ─── achievementSlice ───
+  unlockedAchievements: [] as string[],
+  achievementProgress: {} as Record<string, number>,
+
+  // ─── tutorialSlice ───
+  tutorialState: 'inactive' as any,
+  currentStep: 0,
+  tutorialSkippable: true,
+
+  // ─── chapterSlice ───
+  currentChapterId: null as string | null,
+  currentDomain: '南疆',
+  chapterHistory: [] as any[],
+  activeEvents: {} as Record<string, any>,
+  goals: {} as Record<string, any>,
+  transitionState: 'idle' as any,
 };
 
 /**
@@ -144,10 +168,12 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'isLoading',
   'error',
   'currentNarrative',
+  // 读档版本计数器（纯UI信号，不持久化）
+  'gameLoadVersion',
 ]);
 
 /**
  * 存档文件版本号
  * 每次状态结构变更时递增，用于 migrate 兼容旧存档
  */
-export const SAVE_FORMAT_VERSION = 2;
+export const SAVE_FORMAT_VERSION = 4;

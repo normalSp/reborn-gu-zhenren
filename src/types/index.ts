@@ -222,6 +222,59 @@ export interface StateUpdate {
   };
 }
 
+// ─── 战斗系统 ───
+export interface CombatState {
+  combatType: 'duel' | 'narrative' | 'group' | null;
+  enemy: EnemyState | null;
+}
+
+export interface EnemyState {
+  name: string;
+  realm: string;
+  hp: number;
+  maxHp: number;
+  attack: number;
+}
+
+export interface CombatConstraint {
+  sceneId: string;
+  combatType: 'narrative';
+  scale: 'skirmish' | 'battle' | 'war';
+  mustHappen: string[];
+  mustNotHappen: string[];
+  keyFactions: string[];
+  keyNPCs: string[];
+  strategicChoiceCount: number;
+  narrativeStyle: string;
+  statBridge: {
+    enabled: boolean;
+    realmWeight: number;
+    guTagInfluence: { tag: string; bonus: number }[];
+  };
+}
+
+export interface GroupCombatState {
+  combatType: 'group';
+  allies: { npcId: string; hp: number; role: 'tank' | 'dps' | 'support' }[];
+  enemies: { id: string; hp: number }[];
+  formation: 'frontline' | 'flanking' | 'defensive';
+}
+
+export interface EscapeCondition {
+  canEscape: boolean;
+  escapePenalty: { type: string; value: number };
+  realmGate: number;
+}
+
+// ─── 死亡记录 ───
+export interface DeathRecord {
+  cause: string;
+  turn: number;
+  chapter: string;
+  realm: string;
+  achievementCount: number;
+}
+
 export interface AIContext {
   systemPrompt: string;
   playerStateJSON: string;
@@ -269,3 +322,59 @@ export interface Talent {
   benefits: string[];
   costs: string[];
 }
+
+// ─── 章节弧光系统 ───
+export interface ChapterDefinition {
+  id: string;
+  name: string;
+  displayName: string;
+  domain: string;
+  domainOpeningChapter: boolean;
+  position: {
+    region: string;
+    area: string;
+    accessibleLocations: string[];
+  };
+  triggerConditions: string;
+  keyNPCs: string[];
+  keyFactions: string[];
+  sceneConstraints: {
+    mustHappen: string[];
+    mustNotHappen: string[];
+    narrativeTheme: string;
+  };
+  goals: ChapterGoal[];
+  globalEventId?: string;
+  exitTriggers?: string;
+  economyTier: number;
+  chapterPriceMultiplier: number;
+  rippleLayers: string[];
+}
+
+export interface ChapterGoal {
+  id: string;
+  description: string;
+  type: 'milestone' | 'realm_gate' | 'exploration' | 'economy' | 'decision';
+}
+
+export interface ChapterRecord {
+  chapterId: string;
+  domain: string;
+  startedAt: { turn: number; timestamp: number };
+  completedAt?: { turn: number; timestamp: number };
+  goalsCompleted: string[];
+  goalsFailed: string[];
+}
+
+export type EventStatus = 'pending' | 'active' | 'resolved' | 'skipped';
+
+export type GoalStatus = 'locked' | 'active' | 'completed' | 'failed';
+
+export interface ChapterProgressionResult {
+  shouldTransition: boolean;
+  nextChapterId?: string;
+  nextDomain?: string;
+  reason: string;
+}
+
+export type ChapterTransitionState = 'idle' | 'transitioning' | 'confirmed';
