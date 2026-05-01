@@ -1,11 +1,13 @@
+import { useRef, useState } from 'react';
 import { useStore } from '../../store';
 import type { SaveMeta } from '../../types';
+import { SAVE_FORMAT_VERSION } from '../../store/initialState';
 
 const SLOT_COUNT = 3;
 const SAVE_PREFIX = 'gu-zhenren-slot-';
 const META_PREFIX = 'gu-zhenren-meta-';
 
-// ─── 槽位读写 ───
+// ─── 槽位读写（localStorage）───────────────
 function readMeta(slot: number): SaveMeta | null {
   try {
     const raw = localStorage.getItem(META_PREFIX + slot);
@@ -39,70 +41,114 @@ function fmtTime(ts: number): string {
   return `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
 }
 
+// ─── 获取当前存档数据（复刻 persist 的 partialize 规则）───────────────
+function getCurrentSaveData(): any {
+  const state = useStore.getState() as any;
+  const data: any = {};
+  const excludeKeys = new Set([
+    'activeTab', 'isSettingsOpen', 'isSaveDialogOpen', 'isEventLogExpanded',
+    'typewriterSpeed', 'screenState', 'gameMode',
+    'pipelinePhase', 'pipelineError', 'l3Warnings',
+    'setActiveTab', 'toggleSettings', 'toggleSaveDialog', 'toggleEventLog',
+    'setTypewriterSpeed', 'setScreenState', 'setGameMode',
+    'setPipelinePhase', 'setPipelineError', 'setL3Warnings',
+    'resetStore', 'saveToFile', 'loadFromFile', 'getSerializedState',
+    'triggeredEvents', 'isLoading', 'error', 'currentNarrative',
+  ]);
+  for (const [key, value] of Object.entries(state)) {
+    if (!excludeKeys.has(key) && typeof value !== 'function') {
+      data[key] = value;
+    }
+  }
+  return data;
+}
+
 export function SaveLoadDialog() {
   const isSaveDialogOpen = useStore(s => s.isSaveDialogOpen);
   const toggleSaveDialog = useStore(s => s.toggleSaveDialog);
   const profile = useStore(s => s.profile);
   const turn = useStore(s => s.turn);
 
+  // ─── 导入状态 ───
+  const [importStatus, setImportStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   if (!isSaveDialogOpen) return null;
 
-  // ─── 存档 ───
+  // ─── 快速存档（localStorage 槽位） ───
   const handleSave = (slot: number) => {
-    const state = useStore.getState();
-    // 手动 partialize（与 store/index.ts 中的 persist partialize 对齐）
-    const data: any = {};
-    const excludeKeys = new Set([
-      'activeTab', 'isSettingsOpen', 'isSaveDialogOpen', 'isEventLogExpanded',
-      'typewriterSpeed', 'screenState', 'pipelinePhase', 'pipelineError', 'l3Warnings',
-      'setActiveTab', 'toggleSettings', 'toggleSaveDialog', 'toggleEventLog',
-      'setTypewriterSpeed', 'setScreenState', 'setPipelinePhase', 'setPipelineError', 'setL3Warnings',
-      'triggeredEvents', 'isLoading', 'error', 'currentNarrative',
-    ]);
-    for (const [key, value] of Object.entries(state)) {
-      if (!excludeKeys.has(key) && typeof value !== 'function') {
-        data[key] = value;
-      }
-    }
-
+    const data = getCurrentSaveData();
+    const state = useStore.getState() as any;
     const meta: SaveMeta = {
       slot,
-      version: '0.4.0',
+      version: `v${SAVE_FORMAT_VERSION}`,
       timestamp: Date.now(),
-      playerName: profile.name || '蛊师',
-      realm: profile.realm.label,
-      turn,
-      mode: 'canon',
+      playerName: state.profile?.name || '蛊师',
+      realm: state.profile?.realm?.label || '一转初阶',
+      turn: state.turn || 1,
+      mode: state.gameMode || 'canon',
     };
-
     writeSave(slot, data);
     writeMeta(slot, meta);
   };
 
-  // ─── 读档 ───
+  // ─── 快速读档（localStorage 槽位） ───
   const handleLoad = (slot: number) => {
     const data = readSave(slot);
     if (!data) return;
     const store = useStore.getState() as any;
-    // 保留 UI 状态函数，只替换数据
     const uiFns: Record<string, any> = {};
     for (const key of Object.keys(store)) {
       if (typeof store[key] === 'function') uiFns[key] = store[key];
     }
-    // 合并数据（保存的数据覆盖当前状态）+ 保留 UI 函数
     const merged = { ...store, ...data, ...uiFns };
     useStore.setState(merged);
     toggleSaveDialog();
   };
 
+  // ─── 删除存档 ───
   const handleDelete = (slot: number) => {
     deleteSave(slot);
-    // 强制刷新——简单 hack：切换状态
     toggleSaveDialog();
     setTimeout(() => toggleSaveDialog(), 50);
   };
 
-  // 强制重新渲染 meta 数据
+  // ─── 导出存档文件 ───
+  const handleExport = () => {
+    (useStore.getState() as any).saveToFile?.();
+  };
+
+  // ─── 导入存档文件 ───
+  const handleImportClick = () => {
+    setImportStatus(null);
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const text = ev.target?.result as string;
+      const result = (useStore.getState() as any).loadFromFile?.(text);
+      if (result?.success) {
+        setImportStatus({ type: 'success', message: '存档加载成功！' });
+        setTimeout(() => toggleSaveDialog(), 800);
+      } else {
+        setImportStatus({ type: 'error', message: result?.error || '读档失败' });
+      }
+    };
+    reader.onerror = () => {
+      setImportStatus({ type: 'error', message: '文件读取失败，请重试。' });
+    };
+    reader.readAsText(file);
+
+    // 重置 input 以便重复选择同一文件
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  // ─── 读取槽位元数据 ───
   const metas: (SaveMeta | null)[] = [];
   for (let i = 0; i < SLOT_COUNT; i++) {
     metas.push(readMeta(i));
@@ -115,7 +161,7 @@ export function SaveLoadDialog() {
 
       {/* 对话框 */}
       <div
-        className="relative z-10 bg-rg-ink-700/95 border border-rg-ink-300/15 rounded-xl p-6 max-w-md w-full mx-4 backdrop-blur-xl shadow-2xl"
+        className="relative z-10 bg-rg-ink-700/95 border border-rg-ink-300/15 rounded-xl p-6 max-w-md w-full mx-4 backdrop-blur-xl shadow-2xl max-h-[85vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* 标题 */}
@@ -129,62 +175,124 @@ export function SaveLoadDialog() {
           </button>
         </div>
 
-        {/* 三个槽位 */}
-        <div className="space-y-3">
-          {metas.map((meta, i) => (
-            <div
-              key={i}
-              className="bg-rg-ink-800/50 border border-rg-ink-300/10 rounded-lg p-4 flex items-center justify-between"
-            >
-              <div className="min-w-0 flex-1">
-                {meta ? (
-                  <div>
-                    <div className="text-rg-paper-200 text-sm font-panel font-semibold truncate">
-                      槽位 {i + 1} · {meta.playerName}
+        {/* ══════════════════════════════════════════
+            快速存档槽位（localStorage）
+           ══════════════════════════════════════════ */}
+        <div className="mb-4">
+          <h3 className="text-rg-paper-200/60 text-xs font-panel mb-3 tracking-[0.1em]">
+            快速存档
+          </h3>
+          <div className="space-y-2">
+            {metas.map((meta, i) => (
+              <div
+                key={i}
+                className="bg-rg-ink-800/50 border border-rg-ink-300/10 rounded-lg p-3 flex items-center justify-between"
+              >
+                <div className="min-w-0 flex-1">
+                  {meta ? (
+                    <div>
+                      <div className="text-rg-paper-200 text-xs font-panel font-semibold truncate">
+                        槽位 {i + 1} · {meta.playerName}
+                      </div>
+                      <div className="flex items-center gap-2 mt-1 text-[10px] font-panel">
+                        <span className="text-rg-gold">{meta.realm}</span>
+                        <span className="text-rg-paper-200/40">第{meta.turn}回</span>
+                        <span className="text-rg-paper-200/30">{fmtTime(meta.timestamp)}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3 mt-1 text-xs font-panel">
-                      <span className="text-rg-gold">{meta.realm}</span>
-                      <span className="text-rg-paper-200/40">第{meta.turn}回</span>
-                      <span className="text-rg-paper-200/30">{fmtTime(meta.timestamp)}</span>
+                  ) : (
+                    <div className="text-rg-paper-200/20 text-xs font-panel">
+                      槽位 {i + 1} · 空
                     </div>
-                  </div>
-                ) : (
-                  <div className="text-rg-paper-200/20 text-sm font-panel">
-                    槽位 {i + 1} · —— 空 ——
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
 
-              <div className="flex items-center gap-2 ml-3 shrink-0">
-                <button
-                  onClick={() => handleSave(i)}
-                  className="text-xs font-button px-3 py-1 rounded-sm border border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10 transition-micro"
-                >
-                  存档
-                </button>
-                {meta && (
-                  <>
-                    <button
-                      onClick={() => handleLoad(i)}
-                      className="text-xs font-button px-3 py-1 rounded-sm border border-rg-jade-400/30 text-rg-jade-400 hover:bg-rg-jade-400/10 transition-micro"
-                    >
-                      读档
-                    </button>
-                    <button
-                      onClick={() => handleDelete(i)}
-                      className="text-xs font-button px-2 py-1 rounded-sm border border-rg-blood-400/30 text-rg-blood-400/60 hover:bg-rg-blood-400/10 transition-micro"
-                    >
-                      删
-                    </button>
-                  </>
-                )}
+                <div className="flex items-center gap-1.5 ml-2 shrink-0">
+                  <button
+                    onClick={() => handleSave(i)}
+                    className="text-[10px] font-button px-2 py-1 rounded-sm border border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10 transition-micro"
+                  >
+                    存
+                  </button>
+                  {meta && (
+                    <>
+                      <button
+                        onClick={() => handleLoad(i)}
+                        className="text-[10px] font-button px-2 py-1 rounded-sm border border-rg-jade-400/30 text-rg-jade-400 hover:bg-rg-jade-400/10 transition-micro"
+                      >
+                        读
+                      </button>
+                      <button
+                        onClick={() => handleDelete(i)}
+                        className="text-[10px] font-button px-1.5 py-1 rounded-sm border border-rg-blood-400/30 text-rg-blood-400/60 hover:bg-rg-blood-400/10 transition-micro"
+                      >
+                        ✕
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <p className="text-rg-paper-200/20 text-[10px] font-panel text-center mt-4">
-          存档保存在浏览器本地，清除数据后丢失
+        {/* 分隔线 */}
+        <div className="border-t border-rg-ink-300/10 my-4" />
+
+        {/* ══════════════════════════════════════════
+            文件导入/导出（本地备份与跨设备迁移）
+           ══════════════════════════════════════════ */}
+        <div>
+          <h3 className="text-rg-paper-200/60 text-xs font-panel mb-3 tracking-[0.1em]">
+            文件管理
+          </h3>
+
+          {/* 导入状态提示 */}
+          {importStatus && (
+            <div className={`mb-3 px-3 py-2 rounded-sm text-xs font-panel ${
+              importStatus.type === 'success'
+                ? 'bg-rg-jade-400/10 border border-rg-jade-400/20 text-rg-jade-400'
+                : 'bg-rg-blood-400/10 border border-rg-blood-400/20 text-rg-blood-400'
+            }`}>
+              {importStatus.message}
+            </div>
+          )}
+
+          <div className="flex gap-2">
+            {/* 导出按钮 */}
+            <button
+              onClick={handleExport}
+              className="flex-1 text-xs font-button px-4 py-2.5 rounded-sm border border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10 transition-micro"
+            >
+              导出存档
+            </button>
+
+            {/* 导入按钮 */}
+            <button
+              onClick={handleImportClick}
+              className="flex-1 text-xs font-button px-4 py-2.5 rounded-sm border border-rg-jade-400/30 text-rg-jade-400 hover:bg-rg-jade-400/10 transition-micro"
+            >
+              导入存档
+            </button>
+          </div>
+
+          {/* 隐藏的文件选择器 */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".json"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+
+          <p className="text-rg-paper-200/25 text-[10px] font-panel text-center mt-3 leading-relaxed">
+            导出存档文件可备份至本地或迁移至其他设备
+          </p>
+        </div>
+
+        {/* 底部提示 */}
+        <p className="text-rg-paper-200/20 text-[10px] font-panel text-center mt-3">
+          快速存档保存在浏览器中，清除缓存后丢失
         </p>
       </div>
     </div>

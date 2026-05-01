@@ -49,7 +49,11 @@ function App() {
       case 'title':
         return (
           <div className={wrapperClass}>
-            <TitleScreen onStart={() => goTo('mode_select')} />
+            <TitleScreen onStart={() => {
+              // ═══ 新游戏入口：全量重置旧存档数据 ═══
+              (useStore.getState() as any).resetStore?.();
+              goTo('mode_select');
+            }} />
           </div>
         );
       case 'mode_select':

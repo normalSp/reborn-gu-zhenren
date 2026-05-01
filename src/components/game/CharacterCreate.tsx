@@ -117,6 +117,11 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
 
   const handleConfirm = () => {
     if (!name.trim()) return;
+    // ═══ 先全量重置旧存档数据（修复新开存档读取旧存档的 bug） ═══
+    (useStore.getState() as any).resetStore?.();
+    // 还原 origin / identity 标志（resetStore 清空了，需要从上下文中重建）
+    useStore.getState().setFlag('_origin', background);
+    useStore.getState().setFlag('_identity', identity);
     useStore.getState().setFlag('_profile_init', true);
     useStore.setState({
       profile: {

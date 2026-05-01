@@ -10,6 +10,17 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
   const deathCause = useStore(s => (s as any).deathCause || '生命耗尽');
   const deathTurn = useStore(s => (s as any).deathTurn || turn);
 
+  const handleRestart = () => {
+    // ═══ 全量重置存档状态，再返回标题 ═══
+    (useStore.getState() as any).resetStore?.();
+    onRestart();
+  };
+
+  const handleSaveDeath = () => {
+    // ═══ 死亡时可导出存档留作纪念 ═══
+    (useStore.getState() as any).saveToFile?.();
+  };
+
   return (
     <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-bold text-rg-blood font-narrative tracking-widest mb-6">
@@ -45,12 +56,23 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
         蛊界从不因一个人的死亡而停止运转
       </p>
 
-      <button
-        onClick={onRestart}
-        className="bg-rg-gold hover:bg-rg-gold/80 text-rg-ink-900 font-button font-semibold px-6 py-3 rounded-sm hover:brightness-115 transition-micro"
-      >
-        重入轮回
-      </button>
+      <div className="flex gap-4">
+        {/* 导出存档（留作纪念） */}
+        <button
+          onClick={handleSaveDeath}
+          className="border border-rg-gold/40 text-rg-gold font-button text-sm px-5 py-2.5 rounded-sm hover:bg-rg-gold/10 transition-micro"
+        >
+          导出此行
+        </button>
+
+        {/* 重入轮回 */}
+        <button
+          onClick={handleRestart}
+          className="bg-rg-gold hover:bg-rg-gold/80 text-rg-ink-900 font-button font-semibold px-6 py-2.5 rounded-sm hover:brightness-115 transition-micro"
+        >
+          重入轮回
+        </button>
+      </div>
     </div>
   );
 }
