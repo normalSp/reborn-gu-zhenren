@@ -1,0 +1,47 @@
+# ═══ 蛊真人模拟器 — 音频素材来源说明 ═══
+# 创建日期：2026-05-03
+# 许可证：CC0 / 公共领域 / 合成音频
+
+## BGM（背景音乐） — 128kbps MP3, 44100Hz, ~60秒
+## 全部由 FFmpeg 合成生成，使用正弦波叠加+噪声基底，模拟暗黑修真氛围
+
+bgm/nanjiang/nanjiang.mp3    — 南疆丝竹风格（C-E-D大三和弦合成）     CC0 / 合成音频
+bgm/beiyuan/beiyuan.mp3     — 北原马头琴风格（C-G五度+回声）         CC0 / 合成音频
+bgm/donghai/donghai.mp3     — 东海海浪风格（C#-G#+粉红噪声底噪）     CC0 / 合成音频
+bgm/ximo/ximo.mp3           — 西漠沙漠风格（F-C+布朗噪声底噪）       CC0 / 合成音频
+bgm/zhongzhou/zhongzhou.mp3 — 中洲交响风格（C-E-G-C大三和弦）       CC0 / 合成音频
+
+## SFX（音效）
+## 全部由 FFmpeg 合成生成，使用正弦波/噪声组合
+
+### 战斗类 (sfx/combat/)
+hit.mp3       — 打击音效（低频+高频叠层）                            CC0 / 合成音频
+critical.mp3  — 暴击音效（440Hz快速衰减）                            CC0 / 合成音频
+explosion.mp3 — 爆炸音效（150Hz+白噪声）                             CC0 / 合成音频
+
+### UI类 (sfx/ui/)
+click.mp3     — 点击音效（660Hz短促正弦）                            CC0 / 合成音频
+hover.mp3     — 悬停音效（880Hz极短正弦）                            CC0 / 合成音频
+confirm.mp3   — 确认音效（C-E双音叠层）                              CC0 / 合成音频
+
+### 环境类 (sfx/env/)
+wind.mp3      — 风声（粉红噪声3秒）                                  CC0 / 合成音频
+cave.mp3      — 洞穴环境音（200Hz+布朗噪声）                         CC0 / 合成音频
+rain.mp3      — 雨声（粉红噪声+350Hz正弦）                           CC0 / 合成音频
+
+### 事件类 (sfx/event/)
+breakthrough.mp3 — 突破音效（C-E-G上行三音）                         CC0 / 合成音频
+death.mp3        — 死亡音效（A-G-D下行三音）                         CC0 / 合成音频
+discovery.mp3    — 发现音效（300Hz持续音）                           CC0 / 合成音频
+alert.mp3        — 警报音效（200Hz+白噪声）                          CC0 / 合成音频
+
+## 生成工具
+所有音频文件使用 FFmpeg 8.1 的 lavfi 虚拟输入设备合成：
+- 音源：sine（正弦波）、anoisesrc（噪声源：pink/white/brown）
+- 滤波器：afade（淡入淡出）、adelay（延迟）、aecho（回声）、amix（混音）、volume（音量）
+- 编码器：libmp3lame
+- 采样率：44100 Hz
+- 比特率：128 kbps
+
+## 免责声明
+所有音频均为算法合成生成，不含任何受版权保护的采样或录音。可自由用于任何用途（包括商业用途）。

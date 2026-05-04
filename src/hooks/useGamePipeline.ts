@@ -2,6 +2,10 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { useStore } from '../store';
 import { ResponsePipeline, type PipeState, type PipeResult } from '../engine/response-pipeline';
 import type { SemanticValidationResult } from '../engine/semantic-validator';
+import chaptersRaw from '../canon/chapters.json';
+import worldRulesRaw from '../canon/world-rules.json';
+
+const chaptersData = chaptersRaw as { domains: Record<string, any[]> };
 
 // ─── 单例管道 ───
 let pipelineInstance: ResponsePipeline | null = null;
@@ -48,6 +52,62 @@ export function useGamePipeline(): UseGamePipelineReturn {
     console.log(`%c[PIPE] START_GAME %c→ isResume=${isResume}`,'color:#b8860b;font-weight:bold','color:#999');
     const pipeline = getPipeline();
     pipeline.reset();
+
+    // P3修复：新游戏时初始化章节系统
+    if (!isResume) {
+      const store = useStore.getState() as any;
+      const bg: string = store.profile?.background || '南疆';
+      // 从 "中洲 · 蛊师学徒" 格式中提取域名
+      const originFlag = store.flags?._origin;
+      const timelineStartFlag = store.flags?._timeline_start; // 时间线起点节点ID
+      const domainCandidates = ['南疆', '北原', '东海', '西漠', '中洲'];
+      let domain = originFlag || '南疆';
+      // 如果flag没有，尝试从background解析
+      if (!originFlag || !domainCandidates.includes(originFlag)) {
+        domain = domainCandidates.find(d => bg.includes(d)) || '南疆';
+      }
+      // ═══ 时间线桥接：如果_timeline_start非空，优先用时间线起点章节 ═══
+      const domainChapters = chaptersData.domains[domain] || [];
+      let chapterId: string | null = null;
+      if (timelineStartFlag) {
+        const timelineChapter = domainChapters.find((c: any) => c.id === timelineStartFlag);
+        if (timelineChapter) {
+          chapterId = timelineChapter.id;
+          console.log(`[Chapter] 时间线起点: ${timelineChapter.displayName} (${domain})`);
+        } else {
+          console.warn(`[Chapter] 时间线节点 "${timelineStartFlag}" 在域 "${domain}" 中未找到，回退到域入口`);
+        }
+      }
+      // fallback: 如果没有时间线起点，使用域入口章节（domainOpeningChapter）
+      if (!chapterId) {
+        const openingChapter = domainChapters.find((c: any) => c.domainOpeningChapter);
+        if (openingChapter) {
+          chapterId = openingChapter.id;
+          console.log(`[Chapter] 域入口章节: ${openingChapter.displayName} (${domain})`);
+        }
+      }
+      if (chapterId) {
+        store.initChapter?.(chapterId, domain);
+      } else {
+        console.warn(`[Chapter] 域 "${domain}" 无入口章节，使用南疆默认`);
+        const nanjiangChapters = chaptersData.domains['南疆'] || [];
+        const fallback = nanjiangChapters.find((c: any) => c.domainOpeningChapter);
+        if (fallback) store.initChapter?.(fallback.id, '南疆');
+      }
+
+      // ═══ P4: 初始化势力声望（基于 world-rules.json 五域势力定义） ═══
+      const factionData = (worldRulesRaw as any)?.['五域势力']?.[domain];
+      if (factionData?.keyFactions && typeof store.updateStanding === 'function') {
+        for (const faction of factionData.keyFactions) {
+          const standing = faction.standing || 0;
+          if (standing !== 0) {
+            store.updateStanding(faction.id, standing);
+            console.log(`[Faction] 初始化 ${faction.name}: ${standing > 0 ? '+' : ''}${standing} (${domain})`);
+          }
+        }
+      }
+    }
+
     // 立即进入处理状态，UI 层展示加载
     syncState('BUILDING_CONTEXT');
 

@@ -4,7 +4,7 @@
     "source": "蛊真人原著 + 百合文库设定整理",
     "principle": "杀招=多只蛊虫搭配组合，产生不同于单独催动的效果",
     "note": "杀招不是蛊虫，是蛊虫的组合使用方式。失败可能是某只核心蛊失效或组合崩溃",
-    "total": 11
+    "total": 47
   },
   "月刃连斩": {
     "coreGu": [
@@ -52,12 +52,13 @@
     "level": 1,
     "battleProperties": {}
   },
-  "万我杀招": {
+  "万我": {
     "coreGu": [
       "分魂蛊×多只"
     ],
     "supportGu": [
-      "魂道核心蛊"
+      "魂道核心蛊",
+      "奴道辅助蛊"
     ],
     "effect": "分裂多个分魂同时攻击，每个分魂具有独立作战能力",
     "cost": "魂魄大幅消耗 + 仙元",
@@ -65,7 +66,9 @@
     "failureMode": "分魂失控→分魂攻击本体；分魂被逐个击破→魂魄碎片损失",
     "path": "魂道",
     "level": 7,
-    "note": "方源标志性杀招之一",
+    "isExclusive": true,
+    "exclusiveOwner": "方源",
+    "note": "方源标志性杀招之一。原名'万我杀招'，合并重复条目（原killer-moves.json中存在双录入，此条目综合了'万我杀招'和另一个'万我'条目的supportGu）",
     "battleProperties": {}
   },
   "自由残缺变": {
@@ -81,6 +84,8 @@
     "failureMode": "形态转换被打断→卡在中间形态→战力锐减",
     "path": "变化道",
     "level": 8,
+    "isExclusive": true,
+    "exclusiveOwner": "方源",
     "note": "方源八转杀招",
     "battleProperties": {}
   },
@@ -172,22 +177,6 @@
     "level": 5,
     "battleProperties": {}
   },
-  "万我": {
-    "coreGu": [
-      "分魂蛊"
-    ],
-    "supportGu": [
-      "魂道核心蛊",
-      "奴道辅助蛊"
-    ],
-    "effect": "分裂多个分魂同时攻击，每个分魂具有独立作战能力",
-    "cost": "魂魄大幅消耗 + 仙元",
-    "activationContext": "需大量魂道蛊虫储备",
-    "failureMode": "分魂失控→攻击本体；被逐个击破→魂魄永久损失",
-    "path": "魂道",
-    "level": 7,
-    "battleProperties": {}
-  },
   "无双偃月斩": {
     "coreGu": [
       "偃月仙蛊"
@@ -246,6 +235,8 @@
     "failureMode": "高阶侦查仙蛊→识破伪装",
     "path": "智道",
     "level": 8,
+    "isExclusive": true,
+    "exclusiveOwner": "盗天魔尊",
     "battleProperties": {}
   },
   "巨灵变": {
@@ -324,6 +315,322 @@
     "failureMode": "空间封锁→无法通过",
     "path": "风道",
     "level": 6,
+    "battleProperties": {}
+  },
+  "逆流护身印": {
+    "coreGu": ["逆流河蛊"],
+    "supportGu": ["水道防御蛊"],
+    "effect": "引逆流河之力形成护身水盾——防御极强且能逆流部分伤害反弹给攻击者",
+    "cost": "仙元中等消耗",
+    "activationContext": "需逆流河蛊催动",
+    "failureMode": "逆流河蛊休眠→护身印失效",
+    "path": "水道",
+    "level": 6,
+    "isExclusive": true,
+    "exclusiveOwner": "方源",
+    "note": "方源从逆流河中领悟的标志性防御杀招",
+    "battleProperties": {}
+  },
+  "五指拳心剑": {
+    "coreGu": ["剑道仙蛊"],
+    "supportGu": ["力道辅助蛊"],
+    "effect": "五指握拳化为无形剑气——五指各蕴一剑，五剑齐发攻击力叠加数倍",
+    "cost": "仙元高消耗",
+    "activationContext": "需近距离锁定目标",
+    "failureMode": "被空间类防御抵挡→剑气四散",
+    "path": "剑道",
+    "level": 7,
+    "isExclusive": true,
+    "exclusiveOwner": "方源",
+    "note": "方源从义天山战场中获得的强力剑道杀招",
+    "battleProperties": {}
+  },
+  "魂爆杀招": {
+    "coreGu": ["魂道仙蛊"],
+    "supportGu": ["魂道辅助蛊×2"],
+    "effect": "引爆收集的魂魄碎片造成大范围魂系伤害——无视物理防御",
+    "cost": "魂魄碎片大量消耗",
+    "activationContext": "需预先收集足够魂魄碎片",
+    "failureMode": "魂魄不足→威力下降；魂防高的敌人→效果减半",
+    "path": "魂道",
+    "level": 6,
+    "battleProperties": {}
+  },
+  "纯梦求真变": {
+    "coreGu": ["梦道仙蛊"],
+    "supportGu": ["变化道辅助蛊"],
+    "effect": "在梦境中保持真我意识——不为梦境所惑，反可利用梦境之力",
+    "cost": "仙元+意志力",
+    "activationContext": "需在梦境环境中发动",
+    "failureMode": "梦境力量过强→真我沦陷",
+    "path": "梦道",
+    "level": 7,
+    "battleProperties": {}
+  },
+  "三气归来": {
+    "coreGu": ["气道仙蛊"],
+    "supportGu": ["恢复类辅助蛊×3"],
+    "effect": "天气地气人气三气共鸣纳体——龙公王牌类全面恢复型杀招，攻防移一体无短板",
+    "cost": "仙元巨量消耗",
+    "activationContext": "需在战斗状态下持续消耗三气",
+    "failureMode": "三气失衡→杀招崩溃",
+    "path": "气道",
+    "level": 8,
+    "isExclusive": true,
+    "exclusiveOwner": "龙公",
+    "note": "龙公标志性杀招，天庭三气无底限供给",
+    "battleProperties": {}
+  },
+  "天网恢恢": {
+    "coreGu": ["律道仙蛊"],
+    "supportGu": ["律道辅助蛊×2"],
+    "effect": "编织因果天网笼罩战场——任何逃脱行为触发因果锁链追踪",
+    "cost": "仙元高消耗",
+    "activationContext": "需预判敌人逃脱方向",
+    "failureMode": "敌人实力远超施放者→天网被强行撕裂",
+    "path": "律道",
+    "level": 8,
+    "battleProperties": {}
+  },
+  "星河烽火": {
+    "coreGu": ["星河蛊"],
+    "supportGu": ["炎道辅助蛊×2"],
+    "effect": "点燃整条星河化为火海——超大规模炎道群攻杀招",
+    "cost": "仙元巨量消耗+炎道蛊材",
+    "activationContext": "需星河蛊+足够可燃物质",
+    "failureMode": "被水道克制→星河熄灭",
+    "path": "炎道",
+    "level": 7,
+    "battleProperties": {}
+  },
+  "乱序杀招": {
+    "coreGu": ["宙道仙蛊"],
+    "supportGu": ["宇道辅助蛊"],
+    "effect": "打乱当前战场的时间顺序——敌人攻击延迟/加速不可预测",
+    "cost": "仙元中等消耗",
+    "activationContext": "需宙道造诣较高",
+    "failureMode": "敌方有高阶宙道防御→乱序被对冲",
+    "path": "宙道",
+    "level": 6,
+    "battleProperties": {}
+  },
+  "斗志昂扬": {
+    "coreGu": ["斗蛊"],
+    "supportGu": ["力道辅助蛊"],
+    "effect": "大幅提升自身战意和力量——身处劣势时效果翻倍",
+    "cost": "仙元消耗+意志力",
+    "activationContext": "身处逆境时威力最大化",
+    "failureMode": "斗志耗尽→杀招自动解除",
+    "path": "律道",
+    "level": 7,
+    "battleProperties": {}
+  },
+  "冰河封禁": {
+    "coreGu": ["水道六转仙蛊"],
+    "supportGu": ["冰道凝冻蛊", "水流操控蛊"],
+    "effect": "将战场百丈水域瞬间冻结为冰河牢笼——范围内敌人移动速度-80%，水道/冰道蛊虫催动消耗翻倍",
+    "cost": "仙元中等消耗",
+    "activationContext": "需水域或降雨环境，冰道道痕越多范围越广",
+    "failureMode": "炎道高阶杀招强行融化→冰河碎裂；敌方有更高阶水道造诣→封禁被反向利用",
+    "path": "水道",
+    "level": 6,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "星辰陨落": {
+    "coreGu": ["光道七转仙蛊"],
+    "supportGu": ["星辉聚拢蛊", "重力操控蛊"],
+    "effect": "凝聚星辰光芒化为陨星砸落——每颗陨星附带光灼+冲击双重伤害，天空越暗威力越强",
+    "cost": "仙元高消耗",
+    "activationContext": "需夜间或星空可见时发动，无星之夜威力减半",
+    "failureMode": "被宇道空间挪移→陨星偏离目标；敌方光道造诣更高→陨星被吸收转化为敌方光道资源",
+    "path": "光道",
+    "level": 7,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "天地同寿": {
+    "coreGu": ["力道八转仙蛊"],
+    "supportGu": ["生命燃烧蛊", "气血增幅蛊", "天地共鸣蛊"],
+    "effect": "燃烧自身寿命换取天地共鸣之力——短时间内力量/防御/速度全面暴增3倍，代价为每息燃烧1年寿元",
+    "cost": "仙元巨量消耗 + 寿元燃烧",
+    "activationContext": "绝境中方可发动——当前生命值越低增幅越高",
+    "failureMode": "寿元燃尽→杀招自动终止→施放者进入濒死状态；被律道因果锁链打断→反噬加倍",
+    "path": "力道",
+    "level": 8,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "万象森罗": {
+    "coreGu": ["木道七转仙蛊"],
+    "supportGu": ["藤蔓狂生蛊", "生命汲取蛊"],
+    "effect": "催生战场植被化为森罗万象——藤蔓缠缚敌人、树墙阻挡攻击、草木汲取敌人真元转化为施放者恢复",
+    "cost": "仙元高消耗 + 持续消耗",
+    "activationContext": "需大地环境（非荒漠/冰原），木道道痕越多植被越强韧",
+    "failureMode": "金道利刃大面积收割→万象被摧毁；炎道焚烧→草木被火克制",
+    "path": "木道",
+    "level": 7,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "炎帝临世": {
+    "coreGu": ["炎道八转仙蛊"],
+    "supportGu": ["火焰化身蛊", "炎阳聚核蛊", "焚天之势蛊"],
+    "effect": "以炎道仙蛊为核心凝聚火焰化身——化身具有施放者80%战力且免疫物理攻击，持续十息",
+    "cost": "仙元巨量消耗 + 炎道蛊材",
+    "activationContext": "需高温环境或积蓄足够火行之力，炎道道痕达标方可发动",
+    "failureMode": "水道高阶杀招浇灭→化身消散；化身被魂道攻击锁定→施放者魂魄连带受损",
+    "path": "炎道",
+    "level": 8,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "心剑合一": {
+    "coreGu": ["剑道六转仙蛊"],
+    "supportGu": ["意志之刃蛊", "心神凝聚蛊"],
+    "effect": "将自身剑意凝聚为无形心剑——攻击无视物理防御，直接斩击对手意志。意志越坚定威力越大",
+    "cost": "仙元中等消耗 + 精神力消耗",
+    "activationContext": "需专注无扰——任何打断都会导致心剑破碎反噬自身魂魄",
+    "failureMode": "敌方意志力远超施放者→心剑被反震→施放者意志受损；被魂道高阶防御阻挡→心剑消散",
+    "path": "剑道",
+    "level": 6,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "魂归来兮": {
+    "coreGu": ["魂道六转仙蛊"],
+    "supportGu": ["魂魄召唤蛊", "灵体凝聚蛊"],
+    "effect": "从亡者残魂中召唤灵体助战——召唤物的战力取决于施放者魂道造诣和召唤的魂魄强度",
+    "cost": "仙元消耗 + 魂魄碎片消耗",
+    "activationContext": "需附近有亡者残魂或战场遗骸，魂魄储备充足时最强",
+    "failureMode": "召唤的灵体反噬→必须消耗额外魂魄碎片压制；光道高阶净化→召唤被打断",
+    "path": "魂道",
+    "level": 6,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "时空裂隙": {
+    "coreGu": ["宙道七转仙蛊"],
+    "supportGu": ["宇道裂缝蛊", "时间胶囊蛊"],
+    "effect": "撕裂当前时空制造裂隙——敌方攻击需穿越裂隙才能抵达，途中时间被无限拉长，实际抵达时威力衰减80%",
+    "cost": "仙元高消耗",
+    "activationContext": "需宙道与宇道兼具的造诣，单修宙道则裂隙不稳定",
+    "failureMode": "敌方有宇道封禁→裂隙无法形成；裂隙过载→撕裂扩大反噬施放者",
+    "path": "宙道",
+    "level": 7,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "风雷激荡": {
+    "coreGu": ["风道六转仙蛊"],
+    "supportGu": ["雷霆之鼓蛊", "旋风聚能蛊"],
+    "effect": "风雷交加形成激荡领域——领域内敌人持续受风刃切割+雷电麻痹双重伤害，自己则乘风而行速度翻倍",
+    "cost": "仙元中等消耗 + 持续消耗",
+    "activationContext": "雷雨天环境中威力翻倍，平地发动需自造风雷",
+    "failureMode": "土道稳固→风被镇住；金道导电→雷被导入大地→威力锐减",
+    "path": "风道",
+    "level": 6,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "虚空行走": {
+    "coreGu": ["宇道七转仙蛊"],
+    "supportGu": ["空间锚点蛊", "瞬移保障蛊"],
+    "effect": "在虚空中短距连续瞬移——每次瞬移后残留空间锚点，可瞬间返回任一锚点位置",
+    "cost": "仙元高消耗 + 持续消耗",
+    "activationContext": "需宇道造诣足够，空间锚点最多同时存在3个",
+    "failureMode": "敌方布置空间封锁→虚空行走被禁；多个空间锚点同时被摧毁→施放者随机抛落到最远锚点",
+    "path": "宇道",
+    "level": 7,
+    "isOriginal": true,
+    "battleProperties": {}
+  },
+  "木灵缠绕": {
+    "coreGu": ["木灵蛊"],
+    "supportGu": ["青丝蛊"],
+    "effect": "催发藤蔓缠绕敌人腿部——降低闪避并持续造成木毒侵蚀",
+    "cost": "真元消耗×1.5",
+    "activationContext": "林地环境中藤蔓数量+3",
+    "failureMode": "火道高温→藤蔓自燃；力道蛮力→挣脱缠绕",
+    "path": "木道",
+    "level": 1,
+    "battleProperties": {}
+  },
+  "草木生长": {
+    "coreGu": ["草木精华液蛊"],
+    "supportGu": ["活血蛊"],
+    "effect": "加速受伤部位的自我修复——每回合恢复少量生命（木道治疗类基础杀招）",
+    "cost": "真元消耗×2",
+    "activationContext": "自身HP<50%时效果翻倍",
+    "failureMode": "冻伤/火毒类伤势→草木之力无法穿透→恢复无效",
+    "path": "木道",
+    "level": 2,
+    "battleProperties": {}
+  },
+  "食铁者": {
+    "coreGu": ["食铁蛊"],
+    "supportGu": ["金道基础蛊"],
+    "effect": "吞噬敌方金属性防御——每咬一口降低对方金道防御20%，累积3次可破甲",
+    "cost": "真元消耗×1.5",
+    "activationContext": "敌方装备金属蛊虫或金道流派时特效激活",
+    "failureMode": "敌方无金属蛊虫→咬在空处→自耗真元",
+    "path": "食道",
+    "level": 1,
+    "battleProperties": {}
+  },
+  "吞噬强化": {
+    "coreGu": ["食铁蛊"],
+    "supportGu": ["力气蛊"],
+    "effect": "吞噬万物转化为自身力量——每吞噬敌方一蛊虫残骸，攻击力临时+10（上限+30）",
+    "cost": "真元消耗×2.5",
+    "activationContext": "敌方蛊虫死亡/损毁后触发",
+    "failureMode": "吞噬毒蛊→自己中毒；吞噬量超过承受上限→反噬消化系统",
+    "path": "食道",
+    "level": 2,
+    "battleProperties": {}
+  },
+  "无形之手": {
+    "coreGu": ["偷天蛊"],
+    "supportGu": ["隐匿蛊"],
+    "effect": "以无形之力窃取敌方——有30%概率盗取对方包裹中一件蛊材（偷道入门必修杀招）",
+    "cost": "真元消耗×1",
+    "activationContext": "敌方未察觉状态时成功率+20%",
+    "failureMode": "敌方感知力高→识破无形之手→被反击",
+    "path": "偷道",
+    "level": 1,
+    "battleProperties": {}
+  },
+  "影子行窃": {
+    "coreGu": ["偷天蛊"],
+    "supportGu": ["暗影蛊"],
+    "effect": "藏身于影子中接近敌人——潜行状态下实施偷窃，无视对方感知检定一次",
+    "cost": "真元消耗×2",
+    "activationContext": "黑夜/室内/地下等暗光环境",
+    "failureMode": "强光之下→影子消散→暴露于敌前",
+    "path": "偷道",
+    "level": 2,
+    "battleProperties": {}
+  },
+  "拟态变化": {
+    "coreGu": ["变化道基础蛊"],
+    "supportGu": ["伪装蛊"],
+    "effect": "暂时改变自身外貌和气息——模拟野兽/凡人/低阶蛊师，降低被高阶蛊师发现的概率",
+    "cost": "真元消耗×1.5",
+    "activationContext": "非战斗状态，变化持续时间=心智属性×回合",
+    "failureMode": "对方智力/心智过高→看破变化；受到攻击→变化自动解除",
+    "path": "变化道",
+    "level": 1,
+    "battleProperties": {}
+  },
+  "百变之躯": {
+    "coreGu": ["变化道基础蛊"],
+    "supportGu": ["柔韧蛊", "变化蛊"],
+    "effect": "身躯任意变形——可缩小至鼠类大小钻入缝隙，或膨胀至巨人体型增强力量（力量+50%）",
+    "cost": "真元消耗×3",
+    "activationContext": "每次变化消耗大量真元，战斗中使用限1次",
+    "failureMode": "体型变化中途被打断→暂时卡在中间形态→行动受限2回合",
+    "path": "变化道",
+    "level": 2,
     "battleProperties": {}
   }
 }

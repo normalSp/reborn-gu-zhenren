@@ -1,6 +1,25 @@
+import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
 import type { Choice } from '../../types';
 import type { PipeState } from '../../engine/response-pipeline';
+import { audioManager } from '../../utils/audio';
+
+// ═══ M7: Choice stagger variants ═══
+const choiceContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+  },
+};
+
+const choiceItem = {
+  hidden: { opacity: 0, y: 16, scale: 0.96 },
+  visible: {
+    opacity: 1, y: 0, scale: 1,
+    transition: { type: 'spring', stiffness: 200, damping: 22 },
+  },
+};
 
 interface ChoicePanelProps {
   onSelect: (choiceId: string) => void;
@@ -91,7 +110,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
               <div
                 className="h-full rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(180,140,80,0.3), rgba(180,140,80,0.9), rgba(200,160,100,0.3))',
+                  background: 'linear-gradient(90deg, var(--gu-trace-gold-dim), var(--gu-trace-gold), var(--gu-trace-gold-dim))',
                   animation: 'choice-loading-bar 2.5s ease-in-out infinite',
                 }}
               />
@@ -143,23 +162,44 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
   }
 
   return (
-    <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-5 backdrop-blur-md">
+    <motion.div
+      className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-5 backdrop-blur-md"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: 'spring', stiffness: 180, damping: 22 }}
+    >
       <div className="max-w-3xl mx-auto">
-        <p className="text-rg-paper-200/50 text-xs font-panel mb-3 tracking-[0.1em]">
+        <motion.p
+          className="text-rg-paper-200/50 text-xs font-panel mb-3 tracking-[0.1em]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.05 }}
+        >
           做出你的选择
-        </p>
-        <div className={`grid gap-3 ${
-          choices.length === 2 ? 'grid-cols-2' :
-          choices.length === 3 ? 'grid-cols-3' :
-          'grid-cols-2 sm:grid-cols-4'
-        }`}>
+        </motion.p>
+        <motion.div
+          className={`grid gap-3 ${
+            choices.length === 2 ? 'grid-cols-2' :
+            choices.length === 3 ? 'grid-cols-3' :
+            'grid-cols-2 sm:grid-cols-4'
+          }`}
+          variants={choiceContainer}
+          initial="hidden"
+          animate="visible"
+        >
           {choices.map(choice => {
             const style = RISK_STYLES[choice.risk];
             return (
-              <div key={choice.id} className="relative group">
-                <button
-                  onClick={() => onSelect(choice.id)}
+              <motion.div key={choice.id} className="relative group" variants={choiceItem}>
+                <motion.button
+                  onClick={() => {
+                    audioManager.playSfx('select');
+                    onSelect(choice.id);
+                  }}
                   className={`w-full text-left p-4 rounded-sm border bg-rg-ink-800/50 transition-micro ${style.border} ${style.bg}`}
+                  whileHover={{ scale: 1.02, borderColor: 'var(--gu-trace-gold)' }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 >
                   {/* 风险标签 */}
                   <span className={`inline-block text-[10px] font-panel font-semibold mb-1.5 ${style.labelColor}`}>
@@ -169,7 +209,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                   <p className="text-rg-paper-100 text-sm font-button leading-relaxed">
                     {choice.text}
                   </p>
-                </button>
+                </motion.button>
                 {/* Risk tooltip */}
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-rg-ink-600 border border-rg-gold/30 rounded-sm
                               opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50
@@ -181,11 +221,11 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                                 w-0 h-0 border-l-4 border-r-4 border-t-4
                                 border-l-transparent border-r-transparent border-t-rg-ink-600" />
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

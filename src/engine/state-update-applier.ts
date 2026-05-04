@@ -1,5 +1,6 @@
 import { useStore } from '../store';
 import type { StateUpdate, ButterflyEffect } from '../types';
+import type { EncounterReward } from '../types/encounter';
 
 // ─── 全局自增计数器 ───
 let guIdCounter = 1000;
@@ -79,7 +80,18 @@ export function applyStateUpdate(update: StateUpdate): void {
   if (update.gu_inventory) {
     const inv = update.gu_inventory;
     if (inv.add) {
+      // ═══ 日志埋点: 叙事获得蛊虫
+      const gLog = useStore.getState() as any;
+      if (typeof gLog.addGameLog === 'function' && inv.add.length > 0) {
+        const names = inv.add.map(g => g.name).join('、');
+        gLog.addGameLog('gu', `叙事获得蛊虫: ${names}`, { count: inv.add.length, names: inv.add.map(g => g.name) });
+      }
       for (const gu of inv.add) {
+        // ═══ v1.7: AI叙事仙蛊过滤 — 仙蛊不可通过叙事凭空获得 ═══
+        if ((gu as any).isImmortalGu) {
+          console.warn(`[StateUpdateApplier] AI叙事尝试添加仙蛊「${gu.name}」，已根据仙蛊唯一性原则拦截。`);
+          continue;
+        }
         store.addGu({
           id: nextGuId(),
           specId: gu.name.toLowerCase().replace(/\s+/g, '_'),
@@ -123,10 +135,91 @@ export function applyStateUpdate(update: StateUpdate): void {
     }
   }
 
+  // ═══ v1.7: 杀招学习 — 事件/NPC传授路径接口预留 ═══
+  if ((update as any).kill_move?.learn && Array.isArray((update as any).kill_move.learn)) {
+    const storeRef = useStore.getState() as any;
+    if (typeof storeRef.learnKillMove === 'function') {
+      for (const moveName of (update as any).kill_move.learn) {
+        const existingCheck = storeRef.killMoves?.find((km: any) => km.name === moveName);
+        if (!existingCheck) {
+          storeRef.learnKillMove({
+            id: `learned_${moveName}_${Date.now()}`,
+            name: moveName,
+            path: '通用',
+            level: 1,
+            baseCost: 10,
+            multiplier: 1.5,
+            cooldown: 4,
+            description: `习得杀招: ${moveName}`,
+          });
+        }
+      }
+    }
+  }
+
   // ─── 势力好感度更新 ───
   if (update.faction) {
+    const logStore = useStore.getState() as any;
     for (const [factionId, data] of Object.entries(update.faction)) {
       store.updateStanding(factionId, data.standing);
+      // ═══ 日志埋点: 势力声望变更
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('npc', `势力声望变更: ${factionId} ${data.standing > 0 ? '+' : ''}${data.standing}`, {
+          factionId, delta: data.standing,
+        });
+      }
+    }
+  }
+
+  // ═══ P2-13: 六转升仙触发洞天/福地初始化 ═══
+  if (update.player?.realm) {
+    const realmValue = update.player.realm.value;
+    const realmNum = parseInt(realmValue) || 0;
+    // 六转升仙时自动初始化洞天/福地
+    if (realmNum >= 6) {
+      const currentStore = useStore.getState() as any;
+      if (!currentStore.heavenlyLand) {
+        const currentDomain = currentStore.currentDomain || '南疆';
+        const landType = Math.random() < 0.7 ? '福地' : '洞天';
+        const now = Date.now();
+        const areaMu = landType === '洞天' ? 300 + Math.floor(Math.random() * 200) : 100 + Math.floor(Math.random() * 100);
+        useStore.setState({
+          heavenlyLand: {
+            id: `land_${now}`,
+            type: landType,
+            domain: currentDomain,
+            name: `${currentDomain}${landType}`,
+            areaMu,
+            timeFlowRatio: 1 + Math.random() * 2,
+            resourceOutputRate: realmNum * 5,
+            earthSpirit: { formed: false, approval: 0 },
+            disasterCountdown: 60 + Math.floor(Math.random() * 40),
+            nextDisasterType: ['地火', '天水', '风灾', '雷劫'][Math.floor(Math.random() * 4)],
+            createdAt: currentStore.turn || 1,
+            accessible: true,
+          },
+        });
+        // ═══ 日志埋点: 六转升仙
+        if (typeof currentStore.addGameLog === 'function') {
+          currentStore.addGameLog('system', `升仙成功! 开辟${landType}: ${currentDomain}${landType} (${areaMu}亩)`, {
+            landType, areaMu, domain: currentDomain,
+          });
+        }
+        // ═══ 空窍→仙窍替换：仅当当前为 MortalAperture 时替换为 ImmortalAperture ═══
+        const currentAperture = currentStore.aperture;
+        const shouldReplace = !currentAperture || currentAperture.type === 'mortal';
+        if (shouldReplace) {
+          currentStore.initializeAperture?.({
+            type: landType,
+            area_mu: areaMu,
+            time_flow_ratio: 1 + Math.random() * 2,
+            resource_nodes: [],
+            dao_mark_density: {},
+            next_disaster_type: '地火',
+            disaster_countdown: 60 + Math.floor(Math.random() * 40),
+          });
+        }
+      }
     }
   }
 
@@ -155,4 +248,131 @@ export function applyStateUpdate(update: StateUpdate): void {
       }
     }
   }
+
+  // ─── 道痕更新（顶层 dao_marks / path_levels，passthrough兜底） ───
+  if ((update as any).dao_marks) {
+    const dm = (update as any).dao_marks as Record<string, number>;
+    const store2 = useStore.getState() as any;
+    for (const [path, delta] of Object.entries(dm)) {
+      if (typeof store2.addDaoMarks === 'function') {
+        store2.addDaoMarks(path, delta);
+      }
+    }
+  }
+  if ((update as any).path_levels) {
+    const pl = (update as any).path_levels as Record<string, string>;
+    const store2 = useStore.getState() as any;
+    const currentBuild = store2.pathBuild || {};
+    const currentLevels = { ...currentBuild.path_levels };
+    for (const [path, level] of Object.entries(pl)) {
+      currentLevels[path] = level;
+    }
+    useStore.setState({
+      pathBuild: { ...currentBuild, path_levels: currentLevels },
+    });
+  }
+
+  // ─── P2-4b: 战斗结果回写 ───
+  if ((update as any).combat_result) {
+    const cr = (update as any).combat_result;
+    const s = useStore.getState() as any;
+    if (cr.hp_delta && typeof s.applyHpDelta === 'function') {
+      s.applyHpDelta(cr.hp_delta);
+    }
+    if (cr.loot && Array.isArray(cr.loot) && cr.loot.length > 0) {
+      const currentInventory = s.gu_inventory || [];
+      // 蛊材类物品自动兑换元石（name包含蛊材类型关键词的材料）
+      const materialKeywords = ['牙','皮','骨','粉','石','草','液','晶','水','土','木','铁','金','血','丝','页','瓶','块','卷','板','盒'];
+      let yuanStoneGain = 0;
+      const nonMaterialLoot: any[] = [];
+      for (const item of cr.loot) {
+        const itemName = (item.name || '').toString();
+        if (materialKeywords.some(kw => itemName.includes(kw)) && !itemName.includes('蛊')) {
+          yuanStoneGain += item.price || (item.tier ? item.tier * 5 : 5);
+        } else {
+          nonMaterialLoot.push(item);
+        }
+      }
+      if (yuanStoneGain > 0) {
+        if (typeof s.addYuanStone === 'function') s.addYuanStone(yuanStoneGain, '战斗战利品兑换');
+        else if (typeof s.addCurrency === 'function') s.addCurrency(yuanStoneGain);
+      }
+      // ═══ v1.7: 战斗战利品修复 — gu_inventory改为调用addGu（自动受益底层仙蛊守门） ═══
+      if (typeof (s as any).addGu === 'function') {
+        for (const item of nonMaterialLoot) {
+          (s as any).addGu({
+            id: `loot_${(item.name || 'item').toString().toLowerCase().replace(/\s+/g, '_')}_${Date.now()}_${Math.random().toString(36).slice(2,6)}`,
+            specId: (item.name || '').toString().toLowerCase().replace(/\s+/g, '_'),
+            name: (item.name || '未知战利品').toString(),
+            tier: item.tier || 1,
+            path: item.path || '未知',
+            currentState: 'optimal' as const,
+            proficiency: 0,
+            bonded: false,
+            active: true,
+            acquiredAt: {
+              turn: (s as any).turn || 1,
+              narrative: `战斗中获得: ${item.name || '战利品'}`,
+            },
+          });
+        }
+      }
+    }
+    if (cr.injury && typeof s.applyInjury === 'function') {
+      s.applyInjury(cr.injury);
+    }
+  }
+}
+
+// ═══ P4.2: 遭遇奖励程序化发放 ═══
+
+export function applyEncounterRewards(rewards: EncounterReward): string[] {
+  const s = useStore.getState() as any;
+  const messages: string[] = [];
+
+  // 元石奖励
+  if (rewards.currency) {
+    const [min, max] = rewards.currency;
+    const amount = Math.floor(min + Math.random() * (max - min + 1));
+    if (amount > 0) {
+      if (typeof s.addCurrency === 'function') s.addCurrency(amount);
+      messages.push(`元石 +${amount}`);
+    }
+  }
+
+  // 材料奖励
+  if (rewards.materials) {
+    const { common, uncommon, rare, count } = rewards.materials;
+    const grades: string[] = [];
+    if (common) for (let i = 0; i < (common[1] ? Math.floor(common[0] + Math.random() * (common[1] - common[0] + 1)) : common[0]); i++) grades.push('普通蛊材');
+    if (uncommon) for (let i = 0; i < (uncommon[1] ? Math.floor(uncommon[0] + Math.random() * (uncommon[1] - uncommon[0] + 1)) : uncommon[0]); i++) grades.push('精品蛊材');
+    if (rare) for (let i = 0; i < (rare[1] ? Math.floor(rare[0] + Math.random() * (rare[1] - rare[0] + 1)) : rare[0]); i++) grades.push('稀有蛊材');
+    for (const g of grades) {
+      if (typeof s.addMaterial === 'function') s.addMaterial(g, 1);
+    }
+    if (grades.length) messages.push(`蛊材 +${grades.length}份`);
+  }
+
+  // 蛊虫奖励
+  if (rewards.gu && Math.random() < rewards.gu.chance) {
+    // 随机蛊虫逻辑简化
+    messages.push('发现了一只蛊虫');
+  }
+
+  // 势力声望
+  if (rewards.factionStanding) {
+    for (const [fid, [min, max]] of Object.entries(rewards.factionStanding)) {
+      const delta = Math.floor(min + Math.random() * (max - min + 1));
+      if (delta !== 0 && typeof s.updateStanding === 'function') s.updateStanding(fid, delta);
+    }
+  }
+
+  // 杀招残卷 B2.5a
+  if (rewards.killMoveFragment && Math.random() < rewards.killMoveFragment.chance) {
+    const [minTier, maxTier] = rewards.killMoveFragment.tierRange;
+    messages.push(`发现了杀招残卷（${minTier}-${maxTier}转）`);
+    // 延迟处理：由 response-pipeline 调用 learnKillMove
+  }
+
+  return messages;
 }

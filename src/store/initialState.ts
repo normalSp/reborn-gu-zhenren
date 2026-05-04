@@ -18,7 +18,7 @@ export const INITIAL_STATE = {
   profile: {
     name: '',
     realm: { grand: 1 as const, sub: '初阶' as const, label: '一转初阶' },
-    background: '南疆',
+    background: '',
   },
   attributes: { 资质: 5, 体魄: 5, 心智: 5, 气运: 5 },
   vitals: {
@@ -59,6 +59,23 @@ export const INITIAL_STATE = {
   killMoves: [],
   cooldowns: {} as Record<string, number>,
 
+  // ═══ v1.7: 炼蛊计数 (幽灵字段修复) ═══
+  refinedGuCount: 0 as number,
+
+  // ═══ P0.2: 幽灵计数器修复 — 5个起源+6个成就解除永久锁定 ═══
+  /** 跨域访问计数（每首次访问一个新五域+1） */
+  domainsVisited: 0 as number,
+  /** 达到过的最高境界转数 */
+  maxRealmReached: 1 as number,
+  /** 累计获得元石总额（不含初始200） */
+  totalCurrencyEarned: 0 as number,
+  /** 人祖传说听闻次数 */
+  renZuLegendsHeard: 0 as number,
+  /** 总战斗次数（含胜负） */
+  totalBattlesFought: 0 as number,
+  /** 战斗胜利次数 */
+  combatWins: 0 as number,
+
   // ─── pathSlice ───
   primaryPath: null as string | null,
   secondaryPaths: [] as string[],
@@ -73,7 +90,7 @@ export const INITIAL_STATE = {
   standings: {} as Record<string, any>,
   characterRelations: [],
 
-  // ─── immortalSlice ───
+  // ─── apertureSlice（空窍/仙窍） ───
   aperture: null,
 
   // ─── causalitySlice ───
@@ -95,7 +112,7 @@ export const INITIAL_STATE = {
 
   // ─── mapSlice ───
   knownLocations: [],
-  playerPosition: { x: 0, y: 0, region: '南疆' },
+  playerPosition: { x: 0, y: 0, region: '' },
   exploredRegions: [] as string[],
   fogOfWar: true,
 
@@ -127,11 +144,47 @@ export const INITIAL_STATE = {
 
   // ─── chapterSlice ───
   currentChapterId: null as string | null,
-  currentDomain: '南疆',
+  currentDomain: '',
   chapterHistory: [] as any[],
   activeEvents: {} as Record<string, any>,
   goals: {} as Record<string, any>,
   transitionState: 'idle' as any,
+  // P2新增: 路由选项 + 临近事件 + 全局事件状态
+  nextChapterOptions: [] as any[],
+  proximityEvents: [] as any[],
+  globalEventStatus: {} as Record<string, any>,
+  // P2-4a: 决斗引擎
+  duelState: null as any,
+  debt: 0 as number,
+  debtInterestRate: 0.05 as number,
+  // P2新增: 子系统默认值（各子系统实现时覆盖）
+  combatState: null as any,
+  dialogueState: {} as Record<string, any>,
+  shopState: { visitedShops: [] as string[], shopInventory: {} as Record<string, any> },
+  encounterState: { recentEncounters: [] as string[], cooldownTimer: 0 },
+  audioState: { masterVolume: 0.7, bgmVolume: 0.5, sfxVolume: 0.7, currentBgm: null as string | null },
+  lifeboundGu: null as { id: string; name: string } | null,
+  originUnlocks: [] as string[],
+  // ═══ P2-13: 动态系统补完 ═══
+  /** 蛊虫饥饿计数器: guId → hungerCounter */
+  guHungerCounters: {} as Record<string, number>,
+  /** NPC关系网络 — 双向好感矩阵 */
+  npcRelations: { matrix: {} as Record<string, Record<string, number>>, lastUpdatedTurn: 0 },
+  /** 洞天/福地动态模型 */
+  heavenlyLand: null as import('../types').HeavenlyLand | null,
+  // ═══ P2-流派: 本命蛊系统 ═══
+  /** 本命蛊绑定信息 */
+  lifeboundGuInfo: null as import('../types').LifeboundGu | null,
+  /** 本命蛊死亡惩罚状态 */
+  lifeboundDeathPenalty: null as import('../types').LifeboundDeathPenalty | null,
+
+  // ═══ gameLogSlice: 游戏事件日志 ═══
+  gameLog: [] as import('./slices/gameLogSlice').GameLogEntry[],
+
+  // ═══ P1.1: 拍卖系统 ═══
+  auctionItems: [] as any[],
+  isAuctionActive: false,
+  auctionLastTurn: 0,
 };
 
 /**
@@ -170,10 +223,23 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'currentNarrative',
   // 读档版本计数器（纯UI信号，不持久化）
   'gameLoadVersion',
+  // ═══ v1.7: timelineSlice临时选择状态（仅角色创建阶段使用，排除存档污染） ═══
+  'selectedNodeId', 'selectedNode', 'selectedDomain',
+  'timelineTalents', 'apertureConfig', 'apertureRemainingPoints',
+  'startingYuanStone', 'startingGuList', 'configStep',
+  'factionId', 'factionBonus', 'guaranteedGu', 'randomGuPool',
+  'selectedGuList', 'guPoolSeed', 'guRerollsRemaining',
+  'selectedKillerMoves', 'killerMovePool',
+  'selectNode', 'setConfigStep', 'setSelectedDomain', 'selectTimelineTalent',
+  'deselectTalent', 'selectLifeboundGu', 'allocateAperturePoints',
+  'setStartingResources', 'selectFaction', 'selectStartingGu',
+  'deselectStartingGu', 'rerollGuPool', 'selectKillerMove',
+  'getTimelineConfig', 'resetTimelineConfig',
 ]);
 
 /**
  * 存档文件版本号
  * 每次状态结构变更时递增，用于 migrate 兼容旧存档
+ * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  */
-export const SAVE_FORMAT_VERSION = 4;
+export const SAVE_FORMAT_VERSION = 8;

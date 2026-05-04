@@ -1,0 +1,529 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "P2-9 随机遭遇系统 — 55条模板，南疆五章×5类型：danger(战斗)/opportunity(机缘)/social(社交)/exploration(探索)/rest(休整)。每模板含触发条件、区域限制、叙事文本模板、资源变化、战利品、flag联动。",
+    "total": 22,
+    "phase": "P2-9 phase1 (22/55 done; nanjiang_chutan/shili_jueqi/sanwang_yitian pending batch fill)",
+    "chapterToTemplates": {
+      "qingmaoshan": 11,
+      "shanglu_qiusheng": 11,
+      "nanjiang_chutan": 0,
+      "shili_jueqi": 0,
+      "sanwang_yitian": 0
+    },
+    "designNotes": "danger概率15%，opportunity概率20%，social概率30%，exploration概率25%，rest概率10%。冷却机制：同类型3轮内不重复，同章内不连续出现。"
+  },
+  "encounters": {
+    "qingmaoshan": {
+      "qs_danger_wolf_pack": {
+        "id": "qs_danger_wolf_pack",
+        "type": "danger",
+        "category": "combat",
+        "title": "山道遇狼",
+        "description": "青茅山外围山林中，一头齿狼带着三四只野狼从灌木丛中窜出，绿油油的眼瞳在暮色中闪烁。齿狼嘴角还滴着上一顿猎物的鲜血。",
+        "narrativeTemplate": "你在{location}附近遭遇了一群野狼，领头的齿狼体型是普通野狼的两倍。它的齿缝间发出低沉的呜咽——这是狼群即将发起围攻的信号。\n\n「嗷呜——」齿狼长嚎一声，三只野狼从三个方向同时扑来。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 2,
+          "region": "南疆",
+          "locationKeyword": ["山林", "外围", "荒野"],
+          "minTurn": 2,
+          "cooldown": { "sameType": 4, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "fight", "text": "抽出兵器，正面硬撼齿狼", "risk": "medium", "outcome": "战斗：齿狼(HP 30, ATK 8) + 三只野狼(HP 10, ATK 3)" },
+          { "id": "flee", "text": "扔出一块肉干吸引注意力，趁机逃跑", "risk": "low", "outcome": "失去1份肉干(价值2元石)，安全脱身" },
+          { "id": "intimidate", "text": "释放蛊虫气息，吓退狼群", "risk": "low", "outcome": "若拥有攻击型蛊虫则成功，否则齿狼发起攻击" }
+        ],
+        "rewards": {
+          "currency": [3, 8],
+          "materials": { "齿狼毛皮": [1, 1], "狼牙": [1, 3] },
+          "experienceNote": "战斗胜利获得少量战斗经验"
+        },
+        "flags": { "set": { "qs_wolf_encountered": true } }
+      },
+      "qs_danger_bandit_ambush": {
+        "id": "qs_danger_bandit_ambush",
+        "type": "danger",
+        "category": "combat",
+        "title": "山贼伏击",
+        "description": "山道两侧的巨石后突然跳出两个手持短刀的山贼。为首的脸上有一道从眉心拉到下巴的刀疤，狞笑着堵住去路。「小子，把你身上的蛊虫和元石都交出来！」",
+        "narrativeTemplate": "你走在{location}的山道上，忽然听到前方一声唿哨。两个山贼从路边巨石后跳出，堵住了去路。\n\n刀疤脸山贼舔了舔嘴唇：「这青茅山地界，想过去得交买路钱。身上的蛊虫、元石，统统留下。」\n\n他手中的短刀在夕阳下闪着冷光——这不是第一次做这种买卖了。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 3,
+          "region": "南疆",
+          "locationKeyword": ["山道", "小路", "山寨外围"],
+          "minTurn": 3,
+          "cooldown": { "sameType": 5, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "fight", "text": "以蛊虫还击", "risk": "medium", "outcome": "战斗：刀疤山贼(HP 25, ATK 10) + 矮个山贼(HP 15, ATK 7)" },
+          { "id": "bribe", "text": "交出15元石买路", "risk": "low", "outcome": "-15元石，安全通过，山贼满意离去" },
+          { "id": "bluff", "text": "声称自己是古月山寨内部弟子", "risk": "medium", "outcome": "道心·智谋≥3则成功，山贼忌惮离去；否则激怒山贼" }
+        ],
+        "rewards": {
+          "currency": [5, 15],
+          "materials": { "短刀": [1, 2], "山贼的钱袋": [1, 1] },
+          "flags": { "set": { "qs_bandit_encountered": true } }
+        }
+      },
+      "qs_danger_gu_backlash": {
+        "id": "qs_danger_gu_backlash",
+        "type": "danger",
+        "category": "survival",
+        "title": "蛊虫反噬",
+        "description": "你刚喂完蛊虫准备出发，空窍中突然传来一阵剧烈的刺痛——那是蛊虫的气息暴走的征兆。你低头看到手腕上的蛊虫印记开始发出不祥的红光。",
+        "narrativeTemplate": "空窍内的蛊虫突然躁动起来。你感觉到一股冰冷的气息从窍壁渗入经脉，蛊虫似乎因为某种原因开始反噬宿主。\n\n「不好——」你强行运转体内真元压制蛊虫，但那只{active_gu_name}的气息越来越狂暴，窍壁被冲撞得隐隐作痛。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 4,
+          "region": "南疆",
+          "locationKeyword": ["any"],
+          "minTurn": 5,
+          "requiresGu": true,
+          "cooldown": { "sameType": 8, "sameChapter": 4 }
+        },
+        "choices": [
+          { "id": "suppress", "text": "全力运转真元压制蛊虫", "risk": "medium", "outcome": "消耗30%真元，成功压制；若真元不足则-15HP" },
+          { "id": "feed", "text": "紧急喂食蛊虫喜爱的食材", "risk": "low", "outcome": "消耗对应食材一份，蛊虫平息" },
+          { "id": "release", "text": "强行将蛊虫排出空窍", "risk": "high", "outcome": "-30HP，该蛊虫丢失，但保住性命" }
+        ],
+        "rewards": {
+          "experienceNote": "压制成功则增加该蛊虫熟练度+5",
+          "flags": { "set": { "qs_gu_backlash_experienced": true } }
+        }
+      },
+      "qs_oppo_herb_discovery": {
+        "id": "qs_oppo_herb_discovery",
+        "type": "opportunity",
+        "category": "resource",
+        "title": "灵药偶遇",
+        "description": "你在一片峭壁下发现了一小丛散发着淡淡荧光的药草——青灵草，这是炼蛊常用的辅材，在坊市上能卖到不错的价钱。不过峭壁上有几处松动的石头。",
+        "narrativeTemplate": "你穿过{location}时，眼角余光瞥见峭壁下方有一片不同寻常的青光。走近一看——是三株青灵草，叶片上还挂着露珠，药香扑鼻。\n\n青灵草是炼制多只一转蛊虫的基础辅材，拿到坊市上至少能卖出10元石一株。不过那片峭壁看起来不太稳固，伸手去采可能会引起塌方。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 3,
+          "region": "南疆",
+          "locationKeyword": ["山林", "峭壁", "山谷"],
+          "minTurn": 1,
+          "cooldown": { "sameType": 3, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "climb", "text": "小心攀爬峭壁采摘", "risk": "medium", "outcome": "体魄检定：≥5成功获得3株青灵草；失败则-10HP+获得1株" },
+          { "id": "tool", "text": "用长棍或藤蔓钩取", "risk": "low", "outcome": "消耗1AP，安全获得2株青灵草" },
+          { "id": "leave", "text": "太危险了，放弃", "risk": "none", "outcome": "无消耗无收获" }
+        ],
+        "rewards": {
+          "materials": { "青灵草": [1, 3] },
+          "currencyValue": "每株青灵草在坊市价值8-12元石",
+          "flags": { "set": { "qs_herb_found": true } }
+        }
+      },
+      "qs_oppo_hidden_cave": {
+        "id": "qs_oppo_hidden_cave",
+        "type": "opportunity",
+        "category": "exploration",
+        "title": "山洞奇遇",
+        "description": "你追踪一只受伤的野兽时，在藤蔓遮掩的岩壁上发现了一个隐蔽的洞口。洞内传来微弱的光芒和一股陈旧的药味——似乎是某位前辈蛊师留下的遗迹。",
+        "narrativeTemplate": "那只受伤的野兔钻进了一片茂密的藤蔓后就消失了。你拨开藤蔓，惊讶地发现后面藏着一个半人高的洞口。\n\n洞壁上残留着几道已经暗淡的符纹——这是蛊师布下的简易防护禁制，时间已久，法力所剩无几。洞内隐约可以看到一个石台，上面放着一只积满灰尘的木盒。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 3,
+          "region": "南疆",
+          "locationKeyword": ["山林", "洞穴", "遗迹"],
+          "minTurn": 4,
+          "cooldown": { "sameType": 6, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "enter", "text": "小心踏入洞中探查", "risk": "medium", "outcome": "道心·智谋≥2则发现禁制弱点安全进入；否则触发残余禁制-15HP" },
+          { "id": "break", "text": "直接破坏残破禁制闯入", "risk": "high", "outcome": "破坏禁制-20HP，但能获得全部物品" },
+          { "id": "mark", "text": "标记位置，等实力更强后再来", "risk": "none", "outcome": "flag记录，后续可重返此处（奖励提升至2转级别）" }
+        ],
+        "rewards": {
+          "gu": { "randomTier": 1, "randomPath": "any", "note": "木盒中有一只随机一转蛊虫" },
+          "materials": { "旧禁制符纸": [1, 2], "残破蛊材": [2, 4] },
+          "currency": [3, 10],
+          "flags": { "set": { "qs_hidden_cave_discovered": true } }
+        }
+      },
+      "qs_oppo_refine_inspiration": {
+        "id": "qs_oppo_refine_inspiration",
+        "type": "opportunity",
+        "category": "skill",
+        "title": "炼蛊顿悟",
+        "description": "你在观察一只野生蛊虫捕食时，突然对蛊虫之间的相生相克有了新的理解。脑海中闪过一个念头——或许可以用一种更巧妙的方法来炼制那只困扰你许久的蛊虫。",
+        "narrativeTemplate": "你在{location}歇脚时，无意间看到一只月光蛊正在捕食一只更小的花蛊。月光蛊的动作精妙——它并非直接吞噬，而是先用月光之力削弱花蛊的抵抗意志，再慢慢收服。\n\n你心中一动：如果炼蛊时不是强行压制材料蛊虫，而是先用相克的蛊虫气息削弱它的野性……成功率会不会更高？",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["any"],
+          "minTurn": 3,
+          "requiresGu": true,
+          "cooldown": { "sameType": 8, "sameChapter": 4 }
+        },
+        "choices": [
+          { "id": "experiment", "text": "花费1AP验证这个新想法", "risk": "low", "outcome": "下次炼蛊成功率+15%（一次性buff），消耗1AP" },
+          { "id": "record", "text": "记录下来日后慢慢研究", "risk": "none", "outcome": "获得flag，可在坊市换一本炼蛊心得残卷" },
+          { "id": "ignore", "text": "野生蛊虫的习性不足为信", "risk": "none", "outcome": "放弃这次灵感" }
+        ],
+        "rewards": {
+          "permanentBuff": { "nextRefineSuccessBonus": 15, "note": "仅下一次炼蛊生效" },
+          "flags": { "set": { "qs_refine_inspiration": true } }
+        }
+      },
+      "qs_social_mysterious_trader": {
+        "id": "qs_social_mysterious_trader",
+        "type": "social",
+        "category": "trade",
+        "title": "神秘行商",
+        "description": "山道上走来一个背着大包袱的行商，满脸风尘但双眼精明。他看到你后主动招呼：「这位蛊师大人，要不要看看我从西域带来的好货？有些东西在南疆可不多见。」",
+        "narrativeTemplate": "一个风尘仆仆的行商在{location}歇脚。他的包袱鼓鼓囊囊的，散发着一股混合的草药和金属的气息。\n\n「大人有眼光！」行商见你打量他的包裹，赶紧打开一角，「西域的星铁砂、东海的珊瑚蛊材、还有一件从古修士遗府淘来的好东西——」他压低声音，「虽然我也不知道那是什么，但绝对不凡。」",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 4,
+          "region": "南疆",
+          "locationKeyword": ["山道", "集市", "驿站"],
+          "minTurn": 2,
+          "minCurrency": 20,
+          "cooldown": { "sameType": 4, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "browse", "text": "看看他有什么货", "risk": "none", "outcome": "打开临时商店界面：随机3-5件物品（2件普通+1-2件稀有+1件神秘物品）" },
+          { "id": "bargain", "text": "砍价——用口才说服行商降价", "risk": "low", "outcome": "道心·智谋检定：≥4成功，全部商品打8折；失败则行商不悦，神秘物品被收回" },
+          { "id": "rob", "text": "此人独行……或许可以……", "risk": "high", "outcome": "进入战斗(行商HP 20, ATK 5, 会逃跑)；胜利获得全部商品但道心·杀戮+2，恶名+10" }
+        ],
+        "rewards": {
+          "shopItems": "随机生成2-5件商品，包含普通蛊材、稀有蛊材、可能的一转蛊虫",
+          "flags": { "set": { "qs_trader_met": true } }
+        }
+      },
+      "qs_social_fellow_cultivator": {
+        "id": "qs_social_fellow_cultivator",
+        "type": "social",
+        "category": "npc",
+        "title": "同道偶遇",
+        "description": "你在炼蛊房外遇到了一个同样来炼蛊的年轻蛊师。他看起来比你年长一两岁，身上的气息显示他已踏入二转。他正在对着炼蛊炉发愁——材料齐了，但总是失败。",
+        "narrativeTemplate": "{location}的炼蛊房外，一个约莫十七八岁的少年正蹲在门口唉声叹气。他的袖口被蛊火烧出了几个洞，脸上还沾着灰。\n\n看到你过来，他抬起头苦笑：「又是废了一炉。这只二转金甲蛊怎么这么难炼？我明明按照图谱来的……」他顿了顿，打量了你一眼，「你也是来炼蛊的？要不……交换一下心得？」",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 3,
+          "region": "南疆",
+          "locationKeyword": ["炼蛊房", "山寨", "坊市"],
+          "minTurn": 3,
+          "cooldown": { "sameType": 5, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "share", "text": "分享炼蛊心得，结交这位同道", "risk": "none", "outcome": "与该NPC建立关系(affinity+15)，可能获得一条炼蛊技巧" },
+          { "id": "teach", "text": "如果你已成功炼制过同类蛊虫，传授经验", "risk": "none", "outcome": "该NPC好感大幅提升(affinity+30)，赠送一份蛊材作为谢礼" },
+          { "id": "ignore", "text": "摇摇头离开，各人自扫门前雪", "risk": "none", "outcome": "无消耗无收获" }
+        ],
+        "rewards": {
+          "npcRelation": "结识一位同龄蛊师（随机生成NPC属性）",
+          "materials": { "蛊材礼包": [1, 2], "note": "仅选择分享/教导时获得" },
+          "flags": { "set": { "qs_fellow_met": true } }
+        }
+      },
+      "qs_explore_old_battlefield": {
+        "id": "qs_explore_old_battlefield",
+        "type": "exploration",
+        "category": "loot",
+        "title": "古战场废墟",
+        "description": "你在密林深处意外发现了一片残破的战场遗迹。破碎的蛊虫残骸散落一地，几具已经化为白骨的尸体保持着战斗的姿势。看样子是三年前那场山寨冲突的遗址。",
+        "narrativeTemplate": "穿过{location}的密林时，脚下的土地突然变得松软——那是被蛊火灼烧过的焦土。你抬头一看，四周的树木上有明显的爪痕和爆炸痕迹。\n\n这是一片被人遗忘的战场。地上散落着破碎的蛊虫残壳和几件已经生锈的武器。一具白骨化尸体的手边，还紧紧攥着一只锦囊——里面似乎还有东西。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 4,
+          "region": "南疆",
+          "locationKeyword": ["密林", "荒野", "山道"],
+          "minTurn": 4,
+          "cooldown": { "sameType": 5, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "search", "text": "仔细搜寻战场残骸", "risk": "low", "outcome": "获得随机蛊材2-4份+可能找到残缺蛊虫(需炼蛊技能修复)" },
+          { "id": "bury", "text": "先埋葬死者，以示尊重", "risk": "none", "outcome": "道心·仁心+1，在最后一个墓穴发现死者藏匿的元石袋(10-20元石)" },
+          { "id": "loot_quick", "text": "快速搜刮最有价值的东西就走", "risk": "medium", "outcome": "获得1-2件较好战利品，但可能触发战场残留蛊虫的攻击" }
+        ],
+        "rewards": {
+          "materials": { "蛊虫残骸": [2, 5], "破损武器": [1, 2] },
+          "currency": [5, 20],
+          "gu": { "chance": 0.2, "note": "20%概率找到一只可修复的残缺蛊虫" },
+          "flags": { "set": { "qs_battlefield_searched": true } }
+        }
+      },
+      "qs_explore_spirit_spring": {
+        "id": "qs_explore_spirit_spring",
+        "type": "exploration",
+        "category": "resource",
+        "title": "灵气泉眼",
+        "description": "你在山谷深处发现了一眼清澈的泉水，水面氤氲着淡淡的灵气。泉水周围的草木明显比其他地方更加茂盛——这是一处天然的灵气汇聚点。",
+        "narrativeTemplate": "{location}的山谷深处，一泓清泉从岩缝中汩汩涌出。泉水上方萦绕着一层淡薄的白雾——那不是普通的水汽，而是天地元气凝结的灵雾。\n\n泉眼周围的草木长得分外茁壮，几株野生的灵药已经开花。如果在泉眼边打坐修行，真元恢复速度应该会快上不少。不过这么好的地方，恐怕早就有其他东西占据了。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["山谷", "山林", "秘境"],
+          "minTurn": 5,
+          "cooldown": { "sameType": 8, "sameChapter": 4 }
+        },
+        "choices": [
+          { "id": "meditate", "text": "在泉边打坐恢复真元", "risk": "low", "outcome": "消耗1AP，真元全回复，获得持续3轮的「灵气滋养」buff(HP恢复+1/轮)" },
+          { "id": "harvest", "text": "采摘泉边灵药", "risk": "medium", "outcome": "获得3-5份灵药材料，但可能惊醒泉眼守护者——一条灵泉蝾螈(HP 20)" },
+          { "id": "mark_map", "text": "标记此地，作为日后修行据点", "risk": "none", "outcome": "永久flag，以后可花费1AP快速传送到此恢复真元" }
+        ],
+        "rewards": {
+          "materials": { "灵泉水": [1, 2], "野生灵药": [2, 4], "note": "仅选择采摘时获得灵药" },
+          "buff": { "spiritSpringRest": "在此打坐真元恢复速度x2", "note": "仅选择标记时永久生效" },
+          "flags": { "set": { "qs_spirit_spring_found": true } }
+        }
+      },
+      "qs_rest_wayfarer_camp": {
+        "id": "qs_rest_wayfarer_camp",
+        "type": "rest",
+        "category": "recovery",
+        "title": "旅人营地",
+        "description": "天色渐暗，你在一处山坳中发现了一个废弃的旅人营地。石头上还余留着篝火的余温——不久前有人在这里过夜。营地旁有个简单搭的棚子，勉强能遮风挡雨。",
+        "narrativeTemplate": "夜幕降临，{location}的山路上已经看不清来路。好在你发现了一个山坳中的废弃营地——前一位旅人留下了半堆柴火和一个勉强能遮风挡雨的棚子。\n\n篝火余烬还带着微温，说明那人刚离开不久。你捡起一块干燥的引火木，决定在这里过夜。安静的环境让空窍中的蛊虫也放松下来。",
+        "triggerConditions": {
+          "minRealm": 1,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["山坳", "营地", "荒野"],
+          "minTurn": 3,
+          "cooldown": { "sameType": 5, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "rest_full", "text": "生火做饭，好好休息一晚", "risk": "none", "outcome": "HP+15, 真元+20, 道心·仁心+1, 消耗1AP" },
+          { "id": "craft", "text": "利用营地工具做些手工", "risk": "none", "outcome": "消耗1AP，可以免费做一次低级炼蛊或制作道痕符纸" },
+          { "id": "watch", "text": "保持警戒，半睡半醒", "risk": "low", "outcome": "HP+5, 真元+5, 可能发现前一位旅人的去向" }
+        ],
+        "rewards": {
+          "recovery": { "hpRestore": [5, 15], "essenceRestore": [5, 20] },
+          "flags": { "set": { "qs_wayfarer_camp_used": true } }
+        }
+      }
+    },
+    "shanglu_qiusheng": {
+      "sl_danger_caravan_raid": {
+        "id": "sl_danger_caravan_raid",
+        "type": "danger",
+        "category": "combat",
+        "title": "商队遭遇劫匪",
+        "description": "商队行至荒野路段时，前方突然扬起大片尘土——一队骑着荒牛的匪徒从两侧山坡上包抄而来，为首的光头大汉挥舞着铁锤，吼声如雷。「留下货物！留你们全尸！」",
+        "narrativeTemplate": "商队在{location}徐徐前行时，前方探路的伙计突然连滚带爬地跑回来：「劫匪——是黑风寨的人！」\n\n话音未落，十几个匪徒骑着荒牛从两侧山坡上冲下来，尘土飞扬中只能看清为首光头大汉手中铁锤的寒光。商队护卫慌忙拔刀，但人数明显处于劣势。",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 4,
+          "region": "南疆",
+          "locationKeyword": ["商道", "荒野", "商队"],
+          "minTurn": 1,
+          "cooldown": { "sameType": 5, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "fight", "text": "与商队护卫并肩作战", "risk": "medium", "outcome": "战斗：光头匪首(HP 45, ATK 12) + 4个匪徒(HP 15, ATK 6)；胜利后商队好感+40" },
+          { "id": "negotiate", "text": "试图谈判，看能否用少量元石打发", "risk": "medium", "outcome": "道心·智谋≥3：用30元石买路通过；失败则匪徒直接开战" },
+          { "id": "sacrifice", "text": "建议商队丢下一部分货物引开匪徒", "risk": "low", "outcome": "商队损失一部分货物(商队好感-10)，但全员安全通过" }
+        ],
+        "rewards": {
+          "currency": [10, 30],
+          "factionStanding": { "南疆商队": [10, 40] },
+          "materials": { "劫匪的赃物": [1, 2] },
+          "flags": { "set": { "sl_caravan_raid_survived": true } }
+        }
+      },
+      "sl_danger_poison_swamp": {
+        "id": "sl_danger_poison_swamp",
+        "type": "danger",
+        "category": "survival",
+        "title": "毒瘴沼泽",
+        "description": "商道前方被一片沼泽拦住去路。沼泽上漂浮着淡绿色的瘴气，几只不知名毒虫在泥水中游弋。商队的向导说必须绕路——但如果冒险穿越，可以节省两天的路程。",
+        "narrativeTemplate": "商队停在{location}的沼泽边缘。前方的沼泽上笼罩着一层诡异的绿色雾气，几株枯树从泥沼中伸出扭曲的枝干。向导老李皱着眉头：「这是瘴毒沼泽，绕过去要多走两天。以前有人试着穿越——」他看了一眼沼泽中半埋在泥里的白骨，「那就是下场。」",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 4,
+          "region": "南疆",
+          "locationKeyword": ["沼泽", "瘴气", "荒野"],
+          "minTurn": 3,
+          "cooldown": { "sameType": 6, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "detour", "text": "听取向导建议，绕路而行", "risk": "none", "outcome": "消耗2AP，安全通过但减少了到达下一个补给点的时间余裕" },
+          { "id": "through", "text": "用蛊虫辟毒，冒险穿越沼泽", "risk": "high", "outcome": "若有治疗/净化型蛊虫：-10HP穿越成功，节省2AP；否则-30HP+中毒debuff" },
+          { "id": "scout", "text": "先派探查沼泽中是否有安全路径", "risk": "medium", "outcome": "消耗1AP探索，发现一条相对安全的路线(-10HP穿越)" }
+        ],
+        "rewards": {
+          "materials": { "沼泽毒泥": [1, 2], "毒虫毒囊": [0, 2], "note": "仅选择穿越沼泽时获得" },
+          "flags": { "set": { "sl_swamp_crossed": true } }
+        }
+      },
+      "sl_oppo_abandoned_cache": {
+        "id": "sl_oppo_abandoned_cache",
+        "type": "opportunity",
+        "category": "resource",
+        "title": "前朝遗藏",
+        "description": "商队在荒野中发现了一个被土石掩埋了大半的地窖入口。从露出的石门上精巧的雕刻来看，这不是普通农家——可能是某个覆灭家族的地窖库藏。",
+        "narrativeTemplate": "商队休整时，一个伙计在{location}发现了半埋在地下的石门。石门上刻着已经模糊不清的族纹和一行古篆：「……氏传族，后人谨记。」\n\n整个家族已经不复存在了，但这个地窖似乎还未被洗劫过。伙计咽了口唾沫：「大人，要不要打开看看？说不定里面还有值钱的东西——当然，先得您来。」",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["荒野", "商道", "废墟"],
+          "minTurn": 2,
+          "cooldown": { "sameType": 6, "sameChapter": 4 }
+        },
+        "choices": [
+          { "id": "open", "text": "合力撬开石门", "risk": "medium", "outcome": "体魄检定≥5：成功获取全部藏品；失败则触发机关-20HP" },
+          { "id": "share", "text": "邀请商队成员一起发掘，平分收获", "risk": "none", "outcome": "商队好感+15，每人分得一部分元石(你获得15-30元石)" },
+          { "id": "seal", "text": "先不打开，标记位置等待自己实力更强时独吞", "risk": "none", "outcome": "flag记录，实力达3转后返还可获得翻倍奖励" }
+        ],
+        "rewards": {
+          "materials": { "古旧蛊材": [2, 5], "残缺蛊虫残骸": [1, 3] },
+          "currency": [15, 50],
+          "gu": { "chance": 0.25, "note": "25%概率在地窖深处发现一只老旧但完整的蛊虫" }
+        }
+      },
+      "sl_oppo_fleeing_merchant": {
+        "id": "sl_oppo_fleeing_merchant",
+        "type": "opportunity",
+        "category": "trade",
+        "title": "逃难商人",
+        "description": "一个满身尘土的商人跌跌撞撞地跑过来，身后隐约传来追兵的喊声。他抓着一只鼓鼓的皮囊，气喘吁吁地对你说：「这位大人，帮帮我！我把这些货低价卖给你，你帮我拖住追兵片刻！」",
+        "narrativeTemplate": "「救——救命！」一个商贾打扮的中年人从山坡上滚下来，衣服被撕破了好几处，怀中死死抱着一只皮囊。\n\n他认出你是商队的人，扑过来抓住你的袖子：「大人，后面有几个散修在追杀我！我这些货——」他打开皮囊一角，里面居然是一小袋元石和几张泛黄的蛊方图纸，「——三折！三折卖给您！只求您帮我拖住他们一炷香！」\n\n追兵的马蹄声已经越来越近了。",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["商道", "荒野", "山道"],
+          "minTurn": 2,
+          "cooldown": { "sameType": 5, "sameChapter": 3 }
+        },
+        "choices": [
+          { "id": "help", "text": "买下他的货，然后拖住追兵", "risk": "medium", "outcome": "花15元石获得价值50+的物品+蛊方图纸；战斗：3个散修(HP 20, ATK 9 each)" },
+          { "id": "refuse", "text": "不趟这浑水，让他自求多福", "risk": "none", "outcome": "商人绝望离去，没有收获也没有损失" },
+          { "id": "double_cross", "text": "假意帮忙，然后把他交给追兵换取赏金", "risk": "medium", "outcome": "道心·智谋≥4：追兵支付30元石赏金，道心·杀戮+2，善名-10" }
+        ],
+        "rewards": {
+          "currency": [15, 40],
+          "materials": { "蛊方图纸": [1, 2], "神秘元石袋": [1, 1] },
+          "knowledge": "获得1-2张低级蛊方（永久解锁该炼制配方）"
+        }
+      },
+      "sl_social_caravan_banquet": {
+        "id": "sl_social_caravan_banquet",
+        "type": "social",
+        "category": "npc",
+        "title": "商队夜宴",
+        "description": "夜幕降临，商队在一处避风的山谷扎营。商队管事心情不错，在篝火旁摆了一小桌酒菜，邀请商队骨干一起吃喝。几杯酒下肚，大家都放松了下来。",
+        "narrativeTemplate": "商队在{location}扎营后，管事居然拿出了一坛陈年老酒和几碟卤肉。「今天运气不错，没遇到什么麻烦。」他笑着给你倒了一杯，「来，小友，陪老夫喝一杯。」\n\n篝火噼啪作响，酒过三巡后，平日里不苟言笑的护卫们也开始讲起各自的经历——走南闯北的冒险故事、道听途说的机缘传闻、以及那些在大道上不能明说的江湖规矩。",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["营地", "商队", "山谷"],
+          "minTurn": 3,
+          "cooldown": { "sameType": 5, "sameChapter": 2 }
+        },
+        "choices": [
+          { "id": "drink", "text": "开怀畅饮，与众同乐", "risk": "none", "outcome": "商队全员好感+10，随机听到2-3条情报（可能指引资源点、隐藏任务或危险预警）" },
+          { "id": "talk_shop", "text": "借机向商队管事请教经商之道", "risk": "none", "outcome": "道心·智谋+1，获得永久被动「商道眼光」：购买价格-5%" },
+          { "id": "stay_alert", "text": "保持清醒，观察每个人的底细", "risk": "none", "outcome": "发现商队中一个隐藏的逃犯/细作，后续可能触发相关事件" }
+        ],
+        "rewards": {
+          "factionStanding": { "南疆商队": [5, 15] },
+          "intel": "获得2-3条随机情报",
+          "flags": { "set": { "sl_caravan_banquet_attended": true } }
+        }
+      },
+      "sl_social_refugee_family": {
+        "id": "sl_social_refugee_family",
+        "type": "social",
+        "category": "moral",
+        "title": "流亡难民",
+        "description": "商队路过一个被山贼洗劫过的小村庄时，在废墟中发现了一对带着孩子的夫妇。男人断了一条腿，女人抱着发烧的孩子，家当只剩下一个包袱。他们跪下来求你带他们一程。",
+        "narrativeTemplate": "{location}的小村庄已经化为废墟——烧焦的房屋、倒地的栅栏，地上还有没擦干净的血迹。山贼来过又走了，留下的只有绝望。\n\n在一栋塌了半边的茅屋旁，你发现了一家三口。男人的腿被砸断了，女人怀里抱着一个正在发烧的婴儿。看到商队走近，女人扑通跪下：「大人，求求你们带我们一程——孩子再不退烧就……就……」",
+        "triggerConditions": {
+          "minRealm": 2,
+          "maxRealm": 5,
+          "region": "南疆",
+          "locationKeyword": ["村落", "废墟", "商道"],
+          "minTurn": 2,
+          "cooldown": { "sameType": 6, "sameChapter": 4 }
+        },
+        "choices": [
+          { "id": "help", "text": "说服商队收留他们，用自己的元石帮忙买药", "risk": "none", "outcome": "-15元石, 道心·仁心+3, 商队好感+5, 日后可能获得这个家庭的回报(触发后续事件)" },
+          { "id": "escort", "text": "只护送他们到下一个安全的村镇", "risk": "low", "outcome": "消耗1AP，道心·仁心+1，没有额外花费" },
+          { "id": "leave", "text": "摇头离开——在这个世道，管不了的闲事太多", "risk": "none", "outcome": "道心·杀戮+1，无其他变化。那家人可能……" }
+        ],
+        "rewards": {
+          "daoHeart": { "mercy": [0, 3] },
+          "npcRelation": "后续可能触发回报事件（道心·仁心≥3时概率触发）",
+          "flags": { "set": { "sl_refugee_helped": true } }
+        }
+      },
+      "sl_explore_trade_route_shortcut": {
+        "id": "sl_explore_trade_route_shortcut",
+        "type": "exploration",
+        "category": "travel",
+        "title": "密商捷径",
+        "description": "商队的老向导指着一条几乎被杂草淹没的小路低声告诉你：这条路是以前走私蛊材的「密商之路」，比大路近了一半，但路上有以前走私贩布下的陷阱。",
+        "narrativeTemplate": "向导老李把商队引到{location}后，神秘兮兮地把你拉到一边。「看到那条小路没？」他指着一条几乎被灌木吞没的羊肠小道，「这是老辈走私蛊材走的密道，比大路近一半。不过——」他压低声音，「几十年前走私贩子在道上布了不少阴人的陷阱。我的意思是，您要是有兴趣……我带您走一趟？」",
+        "triggerConditions": { "minRealm": 2, "maxRealm": 5, "region": "南疆", "locationKeyword": ["商道", "荒野", "小路"], "minTurn": 3, "cooldown": { "sameType": 5, "sameChapter": 3 } },
+        "choices": [
+          { "id": "take_shortcut", "text": "跟随向导走捷径探路", "risk": "medium", "outcome": "道心·智谋≥4+拥有侦测型蛊虫：发现并拆除3个陷阱，获得陷阱中的遗落财物；否则触发随机陷阱(-15HP)" },
+          { "id": "map", "text": "让向导画下路线图，自己以后来探索", "risk": "none", "outcome": "获得「密商之路」地图标记，日后可用" },
+          { "id": "report", "text": "把这个消息报告给商队，作为团队贡献", "risk": "none", "outcome": "商队好感+20，商队会派专人清理这条路线" }
+        ],
+        "rewards": { "materials": { "走私贩的藏货": [1, 3], "老旧陷阱零件": [2, 4] }, "currency": [0, 25], "flags": { "set": { "sl_shortcut_discovered": true } } }
+      },
+      "sl_explore_river_crossing": {
+        "id": "sl_explore_river_crossing", "type": "exploration", "category": "travel",
+        "title": "激流渡口", "description": "商队抵达一条湍急的河流。原本的木桥已被冲毁，只剩下几根摇摇欲坠的桥桩。河对岸隐约可见一座废弃的渡口小屋。",
+        "narrativeTemplate": "轰隆隆的水声隔老远就听到了。商队来到{location}的河边时，原本的木桥只剩几根歪斜的桥桩，河水在岩石间激起白沫。对岸有座破旧的渡口小屋，似乎已经荒废很久。渡口旁还系着一条半沉的小船。",
+        "triggerConditions": { "minRealm": 2, "maxRealm": 4, "region": "南疆", "locationKeyword": ["河流", "渡口", "荒野"], "minTurn": 4, "cooldown": { "sameType": 4, "sameChapter": 3 } },
+        "choices": [
+          { "id": "swim", "text": "用真元护体，游到对岸固定绳索", "risk": "high", "outcome": "体魄≥6：成功建立索道，商队安全通过；否则-25HP被冲走" },
+          { "id": "boat", "text": "修理那条半沉的渡船", "risk": "medium", "outcome": "消耗1AP修复渡船，安全摆渡到对岸，渡口小屋内发现遗留物资" },
+          { "id": "detour", "text": "向上游多走半天找别的过河点", "risk": "none", "outcome": "消耗2AP绕路，无风险" }
+        ],
+        "rewards": { "materials": { "渡口遗物": [1, 3] }, "currency": [5, 12], "flags": { "set": { "sl_river_crossed": true } } }
+      },
+      "sl_rest_campsite_healing": {
+        "id": "sl_rest_campsite_healing", "type": "rest", "category": "recovery",
+        "title": "商队休整", "description": "连续奔波多日，商队人困马乏。管事宣布在此扎营休整一天。众人七手八脚地搭起营帐，生火做饭。伤员包扎伤口，蛊师们忙着喂食蛊虫。",
+        "narrativeTemplate": "商队在{location}扎营，连续几日的跋涉让每个人脸上都写满了疲惫。管事宣布：「休整一天！大伙儿都歇歇。」伙夫开始炖汤，护卫们躺在草地上晒太阳。你终于有时间仔细检查空窍中蛊虫的状态——最近几次战斗让它们也消耗不小。",
+        "triggerConditions": { "minRealm": 2, "maxRealm": 5, "region": "南疆", "locationKeyword": ["营地", "山谷", "荒野"], "minTurn": 6, "cooldown": { "sameType": 8, "sameChapter": 5 } },
+        "choices": [
+          { "id": "full_rest", "text": "好好休息，恢复体力真元", "risk": "none", "outcome": "HP全回复, 真元全回复, 所有蛊虫饱食度+1" },
+          { "id": "train", "text": "趁休息时间练习蛊虫操控", "risk": "none", "outcome": "消耗1AP，随机一只蛊虫熟练度+10" },
+          { "id": "socialize", "text": "到处串门，与其他商队成员交流", "risk": "none", "outcome": "商队好感+5，可能获得随机情报" }
+        ],
+        "rewards": { "recovery": { "hpRestore": [10, 999], "essenceRestore": [10, 999] }, "flags": { "set": { "sl_rested": true } } }
+      },
+      "sl_danger_beast_territory": {
+        "id": "sl_danger_beast_territory", "type": "danger", "category": "combat",
+        "title": "荒牛领地", "description": "商队闯入了一群荒牛的领地。领头的公牛比寻常荒牛大了一倍，牛角上还挂着干涸的血迹——这是刚厮杀过的痕迹。荒牛群开始躁动，低沉的哞叫声在空气中震颤。",
+        "narrativeTemplate": "{location}的荒原上，一群荒牛正在低头啃食枯草。领头的公牛突然抬起头，两个鼻孔喷出热气——它发现了商队。牛角上还残留着暗红色的血迹，说明它刚赶走或杀死了上一波入侵者。荒牛群开始不安地踏蹄，地面微微震动。",
+        "triggerConditions": { "minRealm": 2, "maxRealm": 4, "region": "南疆", "locationKeyword": ["荒野", "平原", "商道"], "minTurn": 4, "cooldown": { "sameType": 5, "sameChapter": 3 } },
+        "choices": [
+          { "id": "fight", "text": "与商队护卫联手驱赶荒牛", "risk": "high", "outcome": "战斗：荒牛王(HP 60, ATK 15) + 3只荒牛(HP 25, ATK 8)；胜利获得荒牛肉20份(价值80元石)" },
+          { "id": "distract", "text": "扔出几块鲜艳的布料吸引牛群注意", "risk": "medium", "outcome": "智谋≥3：成功引开牛群，消耗一批布料(值10元石)，安全通过" },
+          { "id": "retreat", "text": "建议商队绕路避开牛群领地", "risk": "low", "outcome": "消耗1AP绕路，无损失安全通过" }
+        ],
+        "rewards": { "materials": { "荒牛皮": [2, 4], "荒牛肉": [5, 20] }, "currency": [0, 30], "flags": { "set": { "sl_beast_territory_survived": true } } }
+      },
+      "sl_oppo_treasure_map": {
+        "id": "sl_oppo_treasure_map", "type": "opportunity", "category": "treasure",
+        "title": "残破藏宝图", "description": "你在旧货摊上一堆破烂中发现了一张羊皮纸残片，上面画着不完整的路线图和一个奇特的蛊文标记。摊主打着哈欠：「这玩意儿？不知道谁留下来的，你要是想要，便宜给你。」",
+        "narrativeTemplate": "{location}的旧货摊上乱七八糟地堆着各种来路不明的东西。你随手翻动时，一张泛黄的羊皮纸吸引了你的目光。残破的纸面上画着一条路线，终点标着一个不认识的蛊文符号——这似乎是某位蛊师留下的藏宝图残片。摊主打了个哈欠：「这东西搁这儿半年了也没人要，给你算便宜点儿，5元石拿走。」",
+        "triggerConditions": { "minRealm": 2, "maxRealm": 5, "region": "南疆", "locationKeyword": ["集市", "坊市", "驿站"], "minTurn": 5, "minCurrency": 10, "cooldown": { "sameType": 8, "sameChapter": 5 } },
+        "choices": [
+          { "id": "buy", "text": "5元石买下残图", "risk": "none", "outcome": "-5元石，获得「残破藏宝图」，解锁后续探索事件(可能指向隐藏资源点或蛊虫)" },
+          { "id": "identify", "text": "先辨识蛊文符号的含义", "risk": "low", "outcome": "智谋≥3：成功辨识出这是某位前辈蛊师的私人宝库标记，价值翻倍" },
+          { "id": "pass", "text": "一张破纸而已，不要", "risk": "none", "outcome": "错过这次机会" }
+        ],
+        "rewards": { "flags": { "set": { "sl_treasure_map_obtained": true } }, "note": "后续触发sl_followup_treasure_hunt事件" }
+      }
+    }
+  }
+}

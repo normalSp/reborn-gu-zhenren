@@ -7,37 +7,68 @@ const STATE_LABELS: Record<string, string> = {
   optimal: '鼎盛',
   fed: '饱足',
   hungry: '饥饿',
+  injured: '受伤',
   starving: '濒饿',
   dying: '垂死',
+  dead: '死亡',
 };
 
 const STATE_COLORS: Record<string, string> = {
   optimal: 'bg-rg-jade-500/20 text-rg-jade-400 border-rg-jade-500/30',
   fed: 'bg-rg-paper-200/10 text-rg-paper-200/70 border-rg-paper-200/20',
   hungry: 'bg-rg-gold/15 text-rg-gold border-rg-gold/30',
+  injured: 'bg-rg-blood-400/10 text-rg-blood-400/80 border-rg-blood-400/30',
   starving: 'bg-rg-blood-400/10 text-rg-blood-400/80 border-rg-blood-400/30',
   dying: 'bg-rg-blood-600/20 text-rg-blood-400 border-rg-blood-600/40',
+  dead: 'bg-rg-ink-900/50 text-rg-ink-400 border-rg-ink-500/20',
 };
 
 const STATE_DOT: Record<string, string> = {
   optimal: 'bg-rg-jade-400',
   fed: 'bg-rg-paper-200/60',
   hungry: 'bg-rg-gold',
+  injured: 'bg-rg-blood-400/80',
   starving: 'bg-rg-blood-400/80',
   dying: 'bg-rg-blood-500',
+  dead: 'bg-rg-ink-600',
 };
 
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
+  const currency = useStore(s => s.currency);
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
   const removeGu = useStore(s => s.removeGu);
   const addCurrency = useStore(s => s.addCurrency) as (n: number) => void;
+  const spendCurrency = useStore((s: any) => s.spendYuanStone) || (useStore(s => s.spendCurrency) as (n: number) => boolean);
+  const updateGuState = useStore(s => s.updateGuState);
   const [filterPath, setFilterPath] = useState<PathType | 'all'>('all');
   const [sellConfirm, setSellConfirm] = useState<string | null>(null);
+  const [feedMsg, setFeedMsg] = useState('');
 
   const capacity = getApertureCapacity();
   const paths = Array.from(new Set(inventory.map(g => g.path)));
   const filtered = filterPath === 'all' ? inventory : inventory.filter(g => g.path === filterPath);
+
+  // ─── 喂养（P0.4: 接入 feedGuHunger 引擎） ───
+  const feedGu = (guId: string, currentState: string) => {
+    if (currentState === 'optimal' || currentState === 'fed' || currentState === 'dead') return;
+    // 喂食消耗元石（从 gu-database 读取 feedRequirement 类型但简化处理）
+    const feedCost = currentState === 'dying' ? 30 : currentState === 'injured' ? 15 : 5;
+    if (currency < feedCost) { setFeedMsg('元石不足'); setTimeout(() => setFeedMsg(''), 2000); return; }
+    spendCurrency(feedCost);
+    // P0.4: 调用 guSlice.feedGuHunger 引擎（内部处理饥饿计数器+状态迁移）
+    const feedGuHunger = (useStore.getState() as any).feedGuHunger;
+    if (typeof feedGuHunger === 'function') {
+      feedGuHunger(guId);
+    } else {
+      // 兜底：旧版直接状态迁移
+      const prev: Record<string, string> = { hungry: 'fed', injured: 'hungry', starving: 'injured', dying: 'injured' };
+      const target = prev[currentState];
+      if (target) updateGuState(guId, target as any);
+    }
+    setFeedMsg('喂养成功');
+    setTimeout(() => setFeedMsg(''), 1500);
+  };
 
   const doSell = (guId: string) => {
     removeGu(guId);
@@ -53,7 +84,7 @@ export function GuInventoryPanel() {
     );
   }
 
-  const headerTitle = `蛊虫图鉴（${inventory.length}/${capacity}）`;
+  const headerTitle = `蛊虫（${inventory.length}/${capacity}）`;
 
   return (
     <div className="flex-1 overflow-y-auto">
@@ -83,6 +114,13 @@ export function GuInventoryPanel() {
               {p} ({inventory.filter(g => g.path === p).length})
             </button>
           ))}
+        </div>
+      )}
+
+      {/* ─── 喂养反馈提示 ─── */}
+      {feedMsg && (
+        <div className="px-4 py-1.5 bg-rg-jade-500/10 border-b border-rg-jade-500/20 text-rg-jade-400 text-xs font-panel text-center animate-pulse">
+          {feedMsg}
         </div>
       )}
 
@@ -148,32 +186,44 @@ export function GuInventoryPanel() {
               </span>
             </div>
 
-            {/* 激活开关 + 饥饿预警 */}
-            <div className="flex items-center justify-between">
-              <button
-                onClick={() => useStore.getState().toggleActive(gu.id)}
-                disabled={gu.bonded}
-                className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
-                  gu.bonded
-                    ? 'border-rg-gold/30 text-rg-gold bg-rg-gold/10 cursor-not-allowed'
-                    : (gu as any).active !== false
-                      ? 'border-rg-jade-400/30 text-rg-jade-400 bg-rg-jade-400/10'
-                      : 'border-rg-ink-300/20 text-rg-paper-200/30'
-                }`}
-              >
-                {(gu as any).active !== false ? '已激活' : '未激活'}
-              </button>
-              {(gu.currentState === 'starving' || gu.currentState === 'dying') && (
-                <span className="text-[9px] font-button text-rg-blood-400 animate-pulse">
-                  饥饿！
-                </span>
-              )}
-              {!gu.bonded && (
-                <button onClick={() => setSellConfirm(gu.id)}
-                  className="text-[9px] font-button px-2 py-0.5 rounded-sm border border-rg-blood-400/15 text-rg-blood-400/50 hover:bg-rg-blood-400/10 transition-micro">
-                  出售
+            {/* 操作行：喂养 + 激活 + 出售 */}
+            <div className="flex items-center justify-between gap-1">
+              {/* 喂食按钮 — P0.4: 非optimal/fed/dead状态显示 */}
+              {gu.currentState !== 'optimal' && gu.currentState !== 'fed' && gu.currentState !== 'dead' ? (
+                <button
+                  onClick={() => feedGu(gu.id, gu.currentState)}
+                  className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
+                    gu.currentState === 'dying'
+                      ? 'border-rg-blood-400/30 text-rg-blood-400 bg-rg-blood-400/5 hover:bg-rg-blood-400/15'
+                      : 'border-rg-gold/25 text-rg-gold/70 hover:bg-rg-gold/10'
+                  }`}
+                >
+                  喂食({gu.currentState === 'dying' ? 30 : gu.currentState === 'injured' ? 15 : 5}石)
                 </button>
+              ) : (
+                <span className="w-[52px]" />
               )}
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => useStore.getState().toggleActive(gu.id)}
+                  disabled={gu.bonded}
+                  className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
+                    gu.bonded
+                      ? 'border-rg-gold/30 text-rg-gold bg-rg-gold/10 cursor-not-allowed'
+                      : (gu as any).active !== false
+                        ? 'border-rg-jade-400/30 text-rg-jade-400 bg-rg-jade-400/10'
+                        : 'border-rg-ink-300/20 text-rg-paper-200/30'
+                  }`}
+                >
+                  {(gu as any).active !== false ? '激活' : '休眠'}
+                </button>
+                {!gu.bonded && (
+                  <button onClick={() => setSellConfirm(gu.id)}
+                    className="text-[9px] font-button px-2 py-0.5 rounded-sm border border-rg-blood-400/15 text-rg-blood-400/50 hover:bg-rg-blood-400/10 transition-micro">
+                    出售
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         ))}

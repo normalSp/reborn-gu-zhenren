@@ -1,0 +1,351 @@
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useStore } from '../../store';
+import type { DuelPhase, CombatLogEntry } from '../../types';
+import { audioManager } from '../../utils/audio';
+import { DOMAIN_BGM } from '../../store/slices/soundSlice';
+
+// ═══ M7: Combat variants ═══
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.25 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
+};
+
+const panelVariants = {
+  hidden: { opacity: 0, scale: 0.92, y: 20 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 220, damping: 22, mass: 1 } },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.15 } },
+};
+
+const actionBtnVariant = {
+  hidden: { opacity: 0, y: 12, scale: 0.9 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0, scale: 1,
+    transition: { delay: 0.15 + i * 0.06, type: 'spring', stiffness: 250, damping: 20 },
+  }),
+};
+
+const settlementVariants = {
+  hidden: { opacity: 0, y: 16, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 18 } },
+};
+
+const logItemVariant = {
+  hidden: { opacity: 0, x: -8 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+};
+
+export function CombatOverlay() {
+  const duelState = useStore(s => s.duelState);
+  const executePlayerAction = useStore(s => s.executePlayerAction);
+  const endDuel = useStore(s => s.endDuel);
+  // ═══ v1.7: 杀招面板 ═══
+  const killMoves = useStore(s => (s as any).killMoves || []) as any[];
+  const cooldowns = useStore(s => (s as any).cooldowns || {}) as Record<string, number>;
+  const useKillMove = useStore(s => (s as any).useKillMove) as ((id: string) => void) | undefined;
+  const [showKillerPanel, setShowKillerPanel] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (duelState) {
+      setVisible(true);
+      // P2修复: 进入战斗时切换至战斗 BGM
+      audioManager.crossFade('/audio/bgm/combat.mp3', 1.0);
+    } else {
+      // 退场动画完成后才移除 DOM（AnimatePresence 的 onExitComplete 回调）
+      const t = setTimeout(() => setVisible(false), 300);
+      return () => clearTimeout(t);
+    }
+  }, [duelState]);
+
+  // ═══ Hooks must be called BEFORE any early return (React Rules of Hooks) ═══
+  const handleAction = useCallback((action: string, isPlayerTurn: boolean) => {
+    if (!isPlayerTurn) return;
+    executePlayerAction(action as any);
+  }, [executePlayerAction]);
+
+  const handleEnd = useCallback(() => {
+    endDuel();
+    // P2修复: 战斗结束后恢复域 BGM
+    const currentDomain = useStore.getState().currentDomain;
+    const bgmUrl = DOMAIN_BGM[currentDomain];
+    if (bgmUrl) {
+      audioManager.crossFade(`/audio/${bgmUrl}`, 1.5);
+    }
+  }, [endDuel]);
+
+  if (!visible) return null;
+
+  const phase = duelState?.phase;
+  const isPlayerTurn = phase === 'player_turn';
+  const isEnded = phase === 'ended';
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="battle-screen fixed inset-0 z-40 flex items-center justify-center"
+          variants={overlayVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          style={{ backgroundColor: 'var(--gu-bg-deep)', backdropFilter: 'blur(4px)' }}
+        >
+          {/* M7: 战斗光晕叠加层（GSAP killerMove 目标） */}
+          <div
+            className="battle-overlay-glow"
+            style={{
+              position: 'fixed',
+              inset: 0,
+              opacity: 0,
+              borderColor: 'transparent',
+              borderWidth: '3px',
+              borderStyle: 'solid',
+              pointerEvents: 'none',
+              zIndex: 41,
+              transition: 'none',
+            }}
+          />
+          <motion.div
+            className="w-full max-w-md mx-4 rounded-xl overflow-hidden"
+            variants={panelVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            style={{
+              backgroundColor: 'var(--gu-bg-standard)',
+              border: '1px solid var(--gu-trace-gold-dim)',
+              boxShadow: 'var(--gu-shadow-lg)',
+            }}
+          >
+            {duelState && (
+              <>
+                {/* ─── HP区域 ─── */}
+                <div className="flex gap-4 p-4 pb-2">
+                  <div className="player-side flex-1">
+                    <HpBar label={duelState.player.name} realm={duelState.player.realm} hp={duelState.player.hp} maxHp={duelState.player.maxHp} side="player" />
+                  </div>
+                  <motion.div
+                    className="flex flex-col items-center justify-center text-rg-gold-400 font-bold text-sm shrink-0"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 12, delay: 0.2 }}
+                  >
+                    VS
+                  </motion.div>
+                  <div className="enemy-side flex-1 text-right">
+                    <HpBar label={duelState.enemy.name} realm={duelState.enemy.realm} hp={duelState.enemy.hp} maxHp={duelState.enemy.maxHp} side="enemy" />
+                  </div>
+                </div>
+
+                {/* ─── 回合计数 + 阶段指示 ─── */}
+                <div className="px-4 pb-2 flex justify-between items-center">
+                  <span className="text-rg-paper-200/60 text-xs font-panel">回合 {duelState.round}</span>
+                  <PhaseLabel phase={phase} />
+                </div>
+
+                {/* ─── 行动按钮 ─── */}
+                {!isEnded && (
+                  <motion.div className="px-4 pb-2 flex gap-2" initial="hidden" animate="visible">
+                    <motion.button
+                      className="flex-1 py-2 rounded-lg text-xs font-panel font-medium bg-rg-ink-800 text-rg-gold-400 border border-rg-gold-400/30 hover:bg-rg-gold-400/10 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                      variants={actionBtnVariant}
+                      custom={0}
+                      disabled={!isPlayerTurn}
+                      onClick={() => handleAction('attack', isPlayerTurn)}
+                      whileHover={isPlayerTurn ? { scale: 1.04 } : {}}
+                      whileTap={isPlayerTurn ? { scale: 0.96 } : {}}
+                    >攻击</motion.button>
+                    <motion.button
+                      className="flex-1 py-2 rounded-lg text-xs font-panel font-medium bg-rg-ink-800 text-rg-paper-200/80 border border-rg-ink-600 hover:border-rg-paper-200/40 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                      variants={actionBtnVariant}
+                      custom={1}
+                      disabled={!isPlayerTurn}
+                      onClick={() => handleAction('defend', isPlayerTurn)}
+                      whileHover={isPlayerTurn ? { scale: 1.04 } : {}}
+                      whileTap={isPlayerTurn ? { scale: 0.96 } : {}}
+                    >防御</motion.button>
+                    <motion.button
+                      className="flex-1 py-2 rounded-lg text-xs font-panel font-medium bg-rg-ink-800 text-rg-paper-200/80 border border-rg-ink-600 hover:border-rg-jade-400/40 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                      variants={actionBtnVariant}
+                      custom={2}
+                      disabled={!isPlayerTurn}
+                      onClick={() => handleAction('gu_skill', isPlayerTurn)}
+                      whileHover={isPlayerTurn ? { scale: 1.04 } : {}}
+                      whileTap={isPlayerTurn ? { scale: 0.96 } : {}}
+                    >技能</motion.button>
+                    {/* ═══ v1.7: 杀招按钮 — 混合制基础 ═══ */}
+                    {killMoves.length > 0 && (
+                      <motion.button
+                        className="flex-1 py-2 rounded-lg text-xs font-panel font-medium bg-rg-ink-800 text-rg-gold border border-rg-gold/30 hover:bg-rg-gold/10 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                        variants={actionBtnVariant}
+                        custom={2.5}
+                        disabled={!isPlayerTurn || killMoves.every((km: any) => (cooldowns[km.id] || 0) > 0)}
+                        onClick={() => setShowKillerPanel(p => !p)}
+                        whileHover={isPlayerTurn ? { scale: 1.04 } : {}}
+                        whileTap={isPlayerTurn ? { scale: 0.96 } : {}}
+                      >杀招</motion.button>
+                    )}
+                    <motion.button
+                      className="flex-1 py-2 rounded-lg text-xs font-panel font-medium bg-rg-ink-800 text-rg-blood-400 border border-rg-blood-400/20 hover:bg-rg-blood-400/10 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                      variants={actionBtnVariant}
+                      custom={3}
+                      disabled={!isPlayerTurn}
+                      onClick={() => handleAction('escape', isPlayerTurn)}
+                      whileHover={isPlayerTurn ? { scale: 1.04 } : {}}
+                      whileTap={isPlayerTurn ? { scale: 0.96 } : {}}
+                    >逃跑</motion.button>
+                  </motion.div>
+                )}
+
+                {/* ═══ v1.7: 杀招二级选择面板 ═══ */}
+                {showKillerPanel && killMoves.length > 0 && (
+                  <motion.div
+                    className="px-4 pb-2"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="border-t border-rg-gold/20 pt-2 grid grid-cols-2 gap-2">
+                      {killMoves.map((km: any) => {
+                        const onCd = (cooldowns[km.id] || 0) > 0;
+                        return (
+                          <button
+                            key={km.id}
+                            disabled={!isPlayerTurn || onCd}
+                            onClick={() => {
+                              if (typeof useKillMove === 'function') {
+                                useKillMove(km.id);
+                                setShowKillerPanel(false);
+                              }
+                            }}
+                            className={`text-left p-2 rounded text-xs font-panel border transition-colors cursor-pointer ${
+                              onCd
+                                ? 'border-rg-ink-600 bg-rg-ink-800/30 text-rg-paper-200/30 opacity-50'
+                                : 'border-rg-gold/40 bg-rg-gold/5 text-rg-gold hover:bg-rg-gold/15'
+                            }`}
+                          >
+                            <div className="flex items-center gap-1">
+                              <span className="font-semibold">{km.name}</span>
+                              <span className="text-[10px] opacity-60 ml-auto">{km.path}·{km.level}转</span>
+                            </div>
+                            <p className="text-[10px] opacity-50 mt-0.5 line-clamp-1">{km.description}</p>
+                            {onCd && <p className="text-[9px] text-rg-blood-400 mt-0.5">冷却剩余 {cooldowns[km.id]} 回合</p>}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* ─── 战斗日志 ─── */}
+                <CombatLog entries={duelState.log} />
+
+                {/* ─── 结算面板 ─── */}
+                {isEnded && duelState.result && (
+                  <SettlementPanel result={duelState.result} roundsTaken={duelState.round} onClose={handleEnd} />
+                )}
+              </>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// ─── HP条子组件 ───
+function HpBar({ label, realm, hp, maxHp, side }: { label: string; realm: string; hp: number; maxHp: number; side: 'player' | 'enemy' }) {
+  const pct = Math.max(0, Math.min(100, (hp / maxHp) * 100));
+  const color = pct > 60 ? 'var(--gu-life-verdant)' : pct > 30 ? 'var(--gu-trace-gold)' : 'var(--gu-life-crimson)';
+
+  return (
+    <>
+      <div className="text-xs font-panel text-rg-paper-200/80 mb-1 truncate">{label}</div>
+      <div className="text-[10px] text-rg-paper-200/40 mb-1">{realm}</div>
+      <div className="w-full h-3 bg-rg-ink-900 rounded-full overflow-hidden border border-rg-ink-700/50">
+        <motion.div className={`h-full rounded-full ${side === 'player' ? 'player-hp-fill' : 'enemy-hp-fill'}`} layout transition={{ type: 'spring', stiffness: 180, damping: 20 }} style={{ width: `${pct}%`, backgroundColor: color }} />
+      </div>
+      <div className="text-[10px] text-rg-paper-200/60 mt-0.5 font-mono">{hp}/{maxHp}</div>
+    </>
+  );
+}
+
+// ─── 阶段标签 ───
+function PhaseLabel({ phase }: { phase: DuelPhase }) {
+  const map: Record<string, { text: string; color: string }> = {
+    init: { text: '准备', color: 'var(--gu-trace-gold)' },
+    player_turn: { text: '你的回合', color: 'var(--gu-life-verdant)' },
+    enemy_turn: { text: '敌人回合...', color: 'var(--gu-life-crimson)' },
+    resolution: { text: '结算中', color: 'var(--gu-trace-gold)' },
+    ended: { text: '战斗结束', color: 'var(--gu-trace-gold)' },
+  };
+  const info = map[phase] || { text: phase, color: 'var(--gu-text-disabled)' };
+  return <span className="text-xs font-panel" style={{ color: info.color }}>{info.text}</span>;
+}
+
+// ─── 行动按钮 ───
+function ActionBtn({ label, disabled, onClick, variant }: { label: string; disabled: boolean; onClick: () => void; variant?: 'defend' | 'skill' | 'escape' }) {
+  const base = 'flex-1 py-2 rounded-lg text-xs font-panel font-medium transition-all duration-150';
+  let colorClass = 'bg-rg-ink-800 text-rg-gold-400 border border-rg-gold-400/30 hover:bg-rg-gold-400/10';
+  if (variant === 'defend') colorClass = 'bg-rg-ink-800 text-rg-paper-200/80 border border-rg-ink-600 hover:border-rg-paper-200/40';
+  if (variant === 'skill') colorClass = 'bg-rg-ink-800 text-rg-paper-200/80 border border-rg-ink-600 hover:border-rg-jade-400/40';
+  if (variant === 'escape') colorClass = 'bg-rg-ink-800 text-rg-blood-400 border border-rg-blood-400/20 hover:bg-rg-blood-400/10 hover:border-rg-blood-400/50';
+  const disabledClass = disabled ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer active:scale-95';
+
+  return <button className={`${base} ${colorClass} ${disabledClass}`} disabled={disabled} onClick={onClick}>{label}</button>;
+}
+
+// ─── 战斗日志 ───
+function CombatLog({ entries }: { entries: CombatLogEntry[] }) {
+  const scrollRef = useState<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (scrollRef) {
+      const el = document.getElementById('combat-log-scroll');
+      if (el) el.scrollTop = el.scrollHeight;
+    }
+  }, [entries.length]);
+
+  if (entries.length === 0) return null;
+
+  return (
+    <div id="combat-log-scroll" className="px-4 pb-2 max-h-32 overflow-y-auto text-xs font-panel space-y-0.5" ref={(r) => { (scrollRef as any)[1]?.(r); }}>
+      {entries.map((e, i) => (
+        <div key={i} className="flex gap-2" style={{ color: i >= entries.length - 3 ? 'var(--gu-text-primary)' : 'var(--gu-text-secondary)' }}>
+          <span className="text-rg-paper-200/30 w-8 shrink-0">R{e.round}</span>
+          <span className="text-rg-paper-200/40 w-8 shrink-0">{e.actor === 'player' ? '你' : '敌'}</span>
+          <span className="flex-1 truncate">{e.message}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── 结算面板 ───
+function SettlementPanel({ result, roundsTaken, onClose }: { result: { winner: string | null; special?: string | null; escaped?: boolean; playerFinalHp: number; enemyFinalHp: number }; roundsTaken: number; onClose: () => void }) {
+  const won = result.winner === 'player';
+  const escaped = result.escaped;
+  const bgColor = won ? 'var(--gu-life-verdant)' : escaped ? 'var(--gu-trace-gold-dim)' : 'var(--gu-life-crimson-dim)';
+  const borderColor = won ? 'var(--gu-life-verdant)' : escaped ? 'var(--gu-trace-gold)' : 'var(--gu-life-crimson)';
+  const title = won ? '胜利' : escaped ? '逃脱成功' : '战败';
+  const titleColor = won ? 'var(--gu-life-verdant)' : escaped ? 'var(--gu-trace-gold)' : 'var(--gu-life-crimson)';
+
+  return (
+    <div className="px-4 pb-4">
+      <motion.div className="rounded-lg p-4 text-center" variants={settlementVariants} initial="hidden" animate="visible" style={{ backgroundColor: bgColor, border: `1px solid ${borderColor}` }}>
+        <div className="text-lg font-bold mb-2" style={{ color: titleColor }}>{title}</div>
+        {result.special === 'oneshot' && <div className="text-xs text-rg-blood-400 mb-1">境界差距过大——被瞬间秒杀</div>}
+        <div className="text-xs text-rg-paper-200/60 mb-3">共 {roundsTaken} 回合</div>
+        <motion.button
+          className="px-6 py-2 rounded-lg text-sm font-panel font-medium cursor-pointer"
+          style={{ backgroundColor: 'var(--gu-trace-gold-dim)', color: 'var(--gu-trace-gold)', border: '1px solid var(--gu-trace-gold)' }}
+          onClick={onClose}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >关闭</motion.button>
+      </motion.div>
+    </div>
+  );
+}

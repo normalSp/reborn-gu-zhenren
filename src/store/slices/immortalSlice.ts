@@ -1,17 +1,41 @@
-import type { ImmortalAperture } from '../../types';
+import type { MortalAperture, ImmortalAperture } from '../../types';
 
-interface ImmortalSlice {
-  aperture: ImmortalAperture | null;
+interface ApertureSlice {
+  aperture: MortalAperture | ImmortalAperture | null;
+  initializeMortalAperture: (aperture: MortalAperture) => void;
   initializeAperture: (aperture: ImmortalAperture) => void;
   tickAperture: (externalTime: number) => void;
 }
 
-export const createImmortalSlice = (set: any, get: any): ImmortalSlice => ({
+export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
   aperture: null,
-  initializeAperture: (aperture) => set({ aperture }),
+  initializeMortalAperture: (aperture) => {
+    set({ aperture });
+    // ═══ 日志埋点: 空窍初始化
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('system', '空窍初始化', {
+        type: 'mortal',
+        rank: (aperture as any).rank,
+        primevalSeaColor: (aperture as any).primevalSea?.colorName,
+      });
+    }
+  },
+  initializeAperture: (aperture) => {
+    set({ aperture });
+    // ═══ 日志埋点: 仙窍初始化
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('system', `仙窍初始化: ${aperture.type}`, {
+        type: aperture.type,
+        areaMu: (aperture as any).area_mu,
+        timeFlowRatio: (aperture as any).time_flow_ratio,
+      });
+    }
+  },
   tickAperture: (externalDays: number) => {
     const aperture = get().aperture as ImmortalAperture | null;
-    if (!aperture) return;
+    if (!aperture || aperture.type === 'mortal') return;
     const { resource_nodes, dao_mark_density } = aperture;
     const timeMultiplier = externalDays * aperture.time_flow_ratio;
     if (timeMultiplier <= 0) return;
@@ -30,7 +54,7 @@ export const createImmortalSlice = (set: any, get: any): ImmortalSlice => ({
     if (totalDao > 100) {
       const immortalOutput = Math.floor(timeMultiplier * totalDao * 0.001);
       if (immortalOutput > 0) {
-        set((s: ImmortalSlice) => ({
+        set((s: ApertureSlice) => ({
           aperture: s.aperture ? { ...s.aperture } : null,
         } as any));
         (get() as any).immortalCurrency = ((get() as any).immortalCurrency || 0) + immortalOutput;

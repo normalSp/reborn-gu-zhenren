@@ -1,8 +1,16 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import { useStore } from '../../store';
 import { TriangleAlertIcon } from '../../icons/TriangleAlertIcon';
 import { ZapIcon } from '../../icons/ZapIcon';
 import type { SemanticValidationResult } from '../../engine/semantic-validator';
+
+// ═══ M7: Narrative text transition variants ═══
+const textBlockVariants = {
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } },
+  exit: { opacity: 0, y: -4, transition: { duration: 0.2 } },
+};
 
 interface NarrativePanelProps {
   validation?: SemanticValidationResult | null;
@@ -103,15 +111,29 @@ export function NarrativePanel({ validation }: NarrativePanelProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto p-8" onClick={handleSkipTyping}>
+    <motion.div
+      className="flex-1 overflow-y-auto p-8"
+      onClick={handleSkipTyping}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="max-w-3xl mx-auto">
         {/* 叙事正文 */}
-        <div className="narrative-text text-rg-paper-200 text-base tracking-[0.02em] whitespace-pre-line select-none" style={{ lineHeight: 1.85 }}>
+        <motion.div
+          key={narrative?.narrative?.text?.substring(0, 40)}
+          className="narrative-text text-rg-paper-200 text-base tracking-[0.02em] whitespace-pre-line select-none"
+          style={{ lineHeight: 1.85 }}
+          variants={textBlockVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
           {displayedText}
           {!typingComplete && (
             <span className="cursor-blink text-rg-gold" />
           )}
-        </div>
+        </motion.div>
 
         {/* 打字机未完成时，提示可点击跳过 */}
         {!typingComplete && (
@@ -160,6 +182,6 @@ export function NarrativePanel({ validation }: NarrativePanelProps) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

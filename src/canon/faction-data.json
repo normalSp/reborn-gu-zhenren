@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "source": "蛊真人原著 + world-rules.json五域势力",
+    "note": "P4角色创建完整重设计——15势力含散修线。每势力含保底蛊(starterGu)、资源加成(resourceMult)、天赋点加成(talentBonus)",
+    "total": 15
+  },
+  "factions": {
+    "南疆": [
+      {
+        "id": "guyue_shanzhai",
+        "name": "古月山寨",
+        "domain": "南疆",
+        "type": "家族势力",
+        "standing": 40,
+        "description": "青茅山古月一族，以月光蛊闻名。家族等级森严，嫡系掌权，旁系需靠功绩晋升。",
+        "starterGu": { "name": "月光蛊", "tier": 1, "path": "光道", "rank": "common" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 0, "desc": "无特殊加成，家族基础配置" }
+      },
+      {
+        "id": "shangjia",
+        "name": "商家",
+        "domain": "南疆",
+        "type": "商业家族",
+        "standing": 10,
+        "description": "南疆最大商业势力，掌控多条商路和蛊材贸易。商人本性——一切皆可交易。",
+        "starterGu": { "name": "金银蛊", "tier": 2, "path": "金道", "rank": "uncommon" },
+        "bonus": { "resourceMult": 1.2, "talentBonus": 0, "desc": "初始元石×1.2，商会交易永久优惠5%" }
+      },
+      {
+        "id": "wujia",
+        "name": "武家",
+        "domain": "南疆",
+        "type": "战斗家族",
+        "standing": 0,
+        "description": "擅力道，以战养族。族人自幼习武，体魄过人，在南疆以武力震慑四方。",
+        "starterGu": { "name": "熊力蛊", "tier": 1, "path": "力道", "rank": "common" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，初始体魄+1" }
+      },
+      {
+        "id": "tiejia",
+        "name": "铁家",
+        "domain": "南疆",
+        "type": "炼器家族",
+        "standing": 0,
+        "description": "精通炼蛊，掌握金道和土道蛊虫炼制秘法。铁家出品的防御蛊南疆闻名。",
+        "starterGu": { "name": "铁皮蛊", "tier": 1, "path": "金道", "rank": "common" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，炼蛊成功率永久+5%" }
+      }
+    ],
+    "北原": [
+      {
+        "id": "wang_ting",
+        "name": "王庭",
+        "domain": "北原",
+        "type": "黄金家族联盟",
+        "standing": 10,
+        "description": "北原最高权力——黄金血脉为王庭。血脉浓度决定地位，战功是唯一的晋升阶梯。",
+        "starterGu": { "name": "力气蛊", "tier": 2, "path": "力道", "rank": "common" },
+        "bonus": { "resourceMult": 1.1, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.1，力道蛊虫炼化-0.5级" }
+      },
+      {
+        "id": "chang_sheng_tian",
+        "name": "长生天",
+        "domain": "北原",
+        "type": "远古守护势力",
+        "standing": 0,
+        "description": "高于王庭的古老存在——长生天的代理人不受部落规则约束，拥有神秘传承。",
+        "starterGu": { "name": "侦察蛊", "tier": 1, "path": "智道", "rank": "common" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 2, "desc": "天赋点+2，初始气运+1，远古传承专属天赋可选" }
+      },
+      {
+        "id": "huangjin_jiazu",
+        "name": "黄金家族",
+        "domain": "北原",
+        "type": "血统体系",
+        "standing": 15,
+        "description": "黄金血脉的拥有者——天生高贵，血统就是一切。部族内部血脉浓度决定话语权。",
+        "starterGu": { "name": "黑豕蛊", "tier": 1, "path": "力道", "rank": "uncommon" },
+        "bonus": { "resourceMult": 1.15, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.15，初始体魄+1" }
+      }
+    ],
+    "东海": [
+      {
+        "id": "sanxiu_lianmeng",
+        "name": "散修联盟",
+        "domain": "东海",
+        "type": "松散组织",
+        "standing": 10,
+        "description": "东海散修的互助网络——自由但松散，不受势力约束，也不享有势力庇护。",
+        "starterGu": { "name": "净水蛊", "tier": 1, "path": "水道", "rank": "uncommon" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 0, "desc": "无特殊加成，绝对自由" }
+      },
+      {
+        "id": "haizu_shanghui",
+        "name": "海族商会",
+        "domain": "东海",
+        "type": "非人交易网络",
+        "standing": 0,
+        "description": "掌握海下蛊材的隐秘商会——与海族有交易关系，能获取陆上罕见的深海蛊材。",
+        "starterGu": { "name": "水蛛蛊", "tier": 1, "path": "水道", "rank": "uncommon" },
+        "bonus": { "resourceMult": 1.25, "talentBonus": 0, "desc": "初始元石×1.25，水道蛊材采集+20%，但人对人社交-10%" }
+      }
+    ],
+    "西漠": [
+      {
+        "id": "mojia_xuemai",
+        "name": "莫家血脉",
+        "domain": "西漠",
+        "type": "水源统治",
+        "standing": 10,
+        "description": "在西漠——控水即控一切。莫家掌握稀有的绿洲水源，以此统治大片沙漠区域。",
+        "starterGu": { "name": "石皮蛊", "tier": 1, "path": "土道", "rank": "common" },
+        "bonus": { "resourceMult": 1.1, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.1，沙漠环境消耗-15%" }
+      },
+      {
+        "id": "lanhai_jindi",
+        "name": "蓝海禁地",
+        "domain": "西漠",
+        "type": "远古守护",
+        "standing": 0,
+        "description": "人祖传说诞生之地——蓝海禁地隐藏着远古秘密，守护者拥有超越凡俗的传承。",
+        "starterGu": { "name": "化石蛊", "tier": 3, "path": "土道", "rank": "rare" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 2, "desc": "天赋点+2，远古传承专属天赋可选，土道蛊虫炼化-1级" }
+      }
+    ],
+    "中洲": [
+      {
+        "id": "shida_gupai",
+        "name": "十大古派",
+        "domain": "中洲",
+        "type": "正道门派体系",
+        "standing": 15,
+        "description": "千年传承的正道巅峰——十大门派各有绝学，资源最集中，规矩也最森严。",
+        "starterGu": { "name": "书虫", "tier": 1, "path": "智道", "rank": "common" },
+        "bonus": { "resourceMult": 1.2, "talentBonus": 2, "desc": "天赋点+2，初始元石×1.2，智道蛊虫炼化-0.5级" }
+      },
+      {
+        "id": "tianting",
+        "name": "天庭",
+        "domain": "中洲",
+        "type": "最高元机构",
+        "standing": 0,
+        "description": "超越十大门派的天庭——监视天下大势，掌控宿命规则。加入天庭意味着与天道同行。",
+        "starterGu": { "name": "正气蛊", "tier": 4, "path": "人道", "rank": "rare" },
+        "bonus": { "resourceMult": 1.3, "talentBonus": 3, "desc": "天赋点+3，初始元石×1.3，正道势力初始友善，魔道势力初始敌视" }
+      },
+      {
+        "id": "jielv_tang",
+        "name": "戒律堂",
+        "domain": "中洲",
+        "type": "执法机构",
+        "standing": 5,
+        "description": "规则执行者——戒律堂以铁面无私著称，掌握制裁违背规则者的权力。",
+        "starterGu": { "name": "竹君子", "tier": 4, "path": "智道", "rank": "rare" },
+        "bonus": { "resourceMult": 1.1, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.1，律道蛊虫炼化-1级" }
+      }
+    ],
+    "散修": [
+      {
+        "id": "sanxiu",
+        "name": "散修",
+        "domain": "全域网",
+        "type": "无门无派",
+        "standing": 0,
+        "description": "浪迹天涯，无拘无束。不受任何势力约束，也没有任何势力会为你撑腰。自由是有代价的。",
+        "starterGu": null,
+        "bonus": { "resourceMult": 0.8, "talentBonus": 0, "desc": "无保底蛊，初始资源×0.8，但无任何势力约束，全流派天赋平等开放" }
+      }
+    ]
+  },
+  "regionGuWeights": {
+    "_meta": "五域→26流派加权映射。基础权重1.0，加权倍率越高该域随机蛊池中出现该流派蛊虫概率越大",
+    "南疆": { "光道": 2.5, "木道": 2.0, "毒道": 2.0, "土道": 1.5, "魂道": 1.3, "暗道": 1.2, "水道": 1.2, "骨道": 1.2 },
+    "北原": { "力道": 3.0, "风道": 2.0, "炎道": 1.8, "奴道": 2.0, "金道": 1.3, "冰道": 0.5, "水道": 0.6 },
+    "东海": { "水道": 3.0, "冰道": 2.0, "风道": 2.0, "食道": 1.8, "奴道": 1.5, "炎道": 0.6, "土道": 0.7 },
+    "西漠": { "土道": 3.0, "炎道": 2.5, "金道": 2.0, "骨道": 1.8, "水道": 0.3, "木道": 0.5, "冰道": 0.4 },
+    "中洲": { "智道": 2.0, "剑道": 2.0, "金道": 1.8, "律道": 1.5, "宙道": 1.3, "光道": 1.2, "暗道": 1.2 }
+  }
+}

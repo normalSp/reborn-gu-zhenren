@@ -1,4 +1,4 @@
-import type { AIContext, KeyEvent, Message } from '../types';
+import type { AIContext, KeyEvent, Message, ProximityEvent, GlobalFlag, CombatConstraint } from '../types';
 import type { RootStore } from '../store';
 
 // ─── 知识库静态导入 ───
@@ -18,7 +18,7 @@ const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你
 世界观：蛊界弱肉强食。境界不可逾越。NPC不降智不送资源。机缘必有代价。禁止markdown包裹。`;
 
 // ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
-const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta`;
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铁甲蛊",tier:1,path:"金道",rarity:"稀有",description:"提升防御"}]}`;
 
 // ─── Layer S: 风格指南（注入版） ───
 const STYLE_GUIDE_INJECT = `
@@ -28,10 +28,13 @@ const STYLE_GUIDE_INJECT = `
 - 禁用爽文套路：热血沸腾、充满希望、美好未来、前途无量、轻松愉快、皆大欢喜
 - 禁用NPC降智：无条件信任、无偿赠送、欣赏主角、全力栽培
 - 每个机缘必有对等代价，每个选项都有明确风险
+- 叙事推进（铁则）：每一轮叙事必须推动剧情实质性前进，不可在同一场景中循环不变。场景核心信息（地点/敌人/目标）应每轮有所变化——要么场景转变，要么状况发展，要么角色关系深化。禁止连续三轮在完全相同的矿洞/同一只蛊兽前原地打转
 - 蛊虫存放：蛊师可将蛊虫收入体内空窍，无需笼具或腰间携带。仅凡人/未开窍者才需外部容器。不可描述"蛊虫笼""腰间挂着蛊虫"等物理存放方式。十绝体空窍完全充满元海无空腔，需依赖第二空窍蛊或外力携带蛊虫——此为重要叙事设定
+- 蛊虫脆弱性（分层规则）：蛊虫本身极其脆弱——一只一转蛊虫被凡铁击中也可能死亡。蛊虫平时存放在蛊师空窍中受层层保护，常规战斗中双方以杀招互搏，蛊虫本体不应成为直接攻击目标。以下场景例外：(1)蛊师濒死时空窍破裂，蛊虫震出体外丧失保护 (2)十绝体空窍无空腔，蛊虫暴露 (3)特殊蛊虫本身不在空窍内——如天意蛊虫（宿命蛊）、野生仙蛊、已放出体外施法的蛊虫——可直接被外力作用。此类场景需明确描写空窍破裂/蛊虫位置/特殊性质等前因后果，不可随意出现。蛊虫消亡正常途径：蛊师死亡自爆、长期饥饿致死、炼蛊失败反噬
+- 获得蛊虫须知：若叙事中NPC给予/玩家获取了蛊虫，必须在state_update的gu_inventory.add字段中记录（含name/tier/path/rarity/description）。仅文本描述"获得"而不在state_update中记录=UI不会显示
 - 描写侧重氛围和后果，不过度描写战斗动作细节
 - 人名规范：古月方源不可称"方源哥哥"等亲昵称呼
-- 地名使用原著正名：南疆、北原、东海、西漠、中州`;
+- 地名使用原著正名：南疆、北原、东海、西漠、中洲`;
 
 // ─── 五域开局配置表 ───
 interface DomainOpeningConfig {
@@ -49,8 +52,8 @@ const DOMAIN_OPENING: Record<string, DomainOpeningConfig> = {
    - 一个冒险选择（探索山寨外围寻找机缘）`,
   },
   '中洲': {
-    location: '中洲大陆，天元皇朝治下的仙门坊市附近',
-    faction: '天元皇朝统领中洲，十大门派坐镇各方，秩序井然',
+    location: '中洲，十大门派外围 · 宗门入门试炼场',
+    faction: '十大古派统御中洲，天庭俯瞰众生，秩序井然纪律森严',
     options: `- 一个选择加入正道门派（加入十大古派之一的外门修行）
    - 一个选择散修之路（独自游历修行，寻找机缘）
    - 一个冒险选择（探索秘境遗迹寻找传承）`,
@@ -104,14 +107,25 @@ ${config.options}
 }
 
 // ─── Canon / IF 模式分化 ───
-const CANON_MODE_INJECT = `
+// P2修复：正史线提示词不再硬编码南疆，根据currentDomain动态生成
+function buildCanonModeInject(currentDomain: string): string {
+  const domainCanonHints: Record<string, string> = {
+    '南疆': '方源此时应在南疆古月山寨附近活动，核心NPC如方源、太白云生等在南疆活跃',
+    '北原': '方源此时应在南疆活动，北原黄金家族感受到南疆变局的余波，各部族在暗中观望',
+    '东海': '南疆正经历大变动，东海散修界隔海观望，商路和情报网络受到影响',
+    '西漠': '南疆剧变的消息穿越沙漠传来，绿洲城邦的商人们议论纷纷',
+    '中洲': '天庭正密切关注南疆的异动，中洲十大门派接到监视南方局势的密令',
+  };
+  const hint = domainCanonHints[currentDomain] || domainCanonHints['南疆'];
+  return `
 【当前模式：正史线】
-你正处于蛊真人原著主线中。请遵循以下约束：
-- 方源（古月方源）此时应在南疆古月山寨附近活动
+你正处于蛊真人原著主线中。当前所在域：${currentDomain}。
+- ${hint}
 - 原著关键事件（如方源使用春秋蝉重生、与太白云生相遇）按时间线发生
 - 核心NPC（方源、太白云生等）性格和行为遵循原著
 - 玩家作为独立蛊师，可与原著角色互动但不可改变原著主线关键节点
 - 如果玩家接触到原著关键剧情点，应以"旁观者"或"次要参与者"身份描写`;
+}
 
 const IF_MODE_INJECT = `
 【当前模式：IF线（自由探索）】
@@ -131,6 +145,13 @@ function injectWorldRules(): string {
     const r = rules['蛊虫死后销毁'] as any;
     lines.push(`- 蛊虫死后销毁：${r.rule}`);
     lines.push(`  例外：${r.exception}`);
+  }
+  if (rules['蛊虫本体脆弱性']) {
+    const r = rules['蛊虫本体脆弱性'] as any;
+    lines.push(`- 蛊虫脆弱性：${r.rule}`);
+    lines.push(`  战斗规则：${r.combatRule}`);
+    lines.push(`  例外：${r.exception}`);
+    lines.push(`  正常消亡：${r.normalDeathCauses}`);
   }
   if (rules['道痕战力模型']) {
     const r = rules['道痕战力模型'] as any;
@@ -191,15 +212,21 @@ function injectGuKnowledge(inventory: Array<{ name: string; tier: number; path: 
 
 // ─── 章节约束注入（P1新增：基于chapters.json注入域约束/位置锁/场景约束） ───
 function injectChapterConstraints(store: RootStore): string {
-  const flags: Record<string, any> = (store as any).flags || {};
-  const currentChapter = flags.current_chapter || '青茅山期';
-  const currentDomain = flags.current_domain || store.currentDomain || '南疆';
+  const s = store as any;
+  // P3修复：直接从 store 读取 currentChapterId + currentDomain，不再依赖 flags 同步
+  const currentChapterId = s.currentChapterId || '';
+  const currentDomain = s.currentDomain || '';
+  
+  if (!currentChapterId || !currentDomain) return '';
 
   const chaptersData = chaptersRaw as any;
   const domainChapters: any[] = chaptersData.domains?.[currentDomain] || [];
-  const chapterDef = domainChapters.find((c: any) => c.name === currentChapter);
+  const chapterDef = domainChapters.find((c: any) => c.id === currentChapterId);
 
-  if (!chapterDef) return '';
+  if (!chapterDef) {
+    console.warn(`[ContextBuilder] 未找到章节定义: id=${currentChapterId} domain=${currentDomain}`);
+    return '';
+  }
 
   const lines: string[] = ['', '【当前章节约束】'];
 
@@ -235,12 +262,132 @@ function injectChapterConstraints(store: RootStore): string {
     lines.push(`- 物价系数：${chapterDef.chapterPriceMultiplier}x（基础价格乘以该系数）`);
   }
 
-  // 涟漪层（P2使用）
-  if (chapterDef.rippleLayers?.length > 0) {
-    lines.push(`- 全局事件涟漪：${chapterDef.rippleLayers.join('、')}`);
+  // 涟漪层（P2修复：不再使用rippleLayers，由injectRippleEvents+injectGlobalFlags替代）
+  return lines.join('\n');
+}
+
+// ─── P2-2a: 涟漪事件注入（L0/L1/L2分层注入AI prompt） ───
+function injectRippleEvents(store: RootStore): string {
+  const proximityEvents: ProximityEvent[] = (store as any).proximityEvents || [];
+  if (proximityEvents.length === 0) return '';
+
+  const lines: string[] = ['【世界动态 — 全局事件涟漪】'];
+  const seen = new Set<string>();
+
+  for (const evt of proximityEvents) {
+    if (seen.has(evt.eventId)) continue;
+    seen.add(evt.eventId);
+
+    switch (evt.layer) {
+      case 'L0':
+        lines.push(`● [当前事件: ${evt.name}] 你正处于事件的中心——${evt.manifestation || '事件的完整叙事正在展开'}`);
+        break;
+      case 'L1':
+        if (evt.distance <= 15) {
+          lines.push(`○ [可介入: ${evt.name}] 你感知到这一事件的直接影响——${evt.manifestation || ''}。你可选择是否介入。`);
+        } else {
+          lines.push(`○ [临近: ${evt.name}] ${evt.manifestation || '你感受到远方传来的波动，但影响尚不明显。'}`);
+        }
+        break;
+      case 'L2':
+        lines.push(`· [远方的消息: ${evt.name}] ${evt.manifestation || '远方的天际传来一丝不寻常的气息。'}`);
+        break;
+      default:
+        break;
+    }
   }
 
   return lines.join('\n');
+}
+
+// ─── P2-2a: L3全局flag注入（持久世界状态影响） ───
+let globalFlagsCache: GlobalFlag[] | null = null;
+function loadGlobalFlags(): GlobalFlag[] {
+  if (globalFlagsCache) return globalFlagsCache;
+  try {
+    const raw = require('../canon/global-flags.json');
+    globalFlagsCache = (raw.flags || []) as GlobalFlag[];
+  } catch {
+    globalFlagsCache = [];
+  }
+  return globalFlagsCache;
+}
+
+function injectGlobalFlags(store: RootStore): string {
+  const allFlags = loadGlobalFlags();
+  if (allFlags.length === 0) return '';
+
+  const globalEventStatus: Record<string, { triggered: boolean; completed: boolean }> =
+    (store as any).globalEventStatus || {};
+
+  const activeFlags = allFlags
+    .filter(f => {
+      const status = globalEventStatus[f.eventId];
+      return status && status.completed;
+    })
+    .sort((a, b) => a.priority - b.priority);
+
+  if (activeFlags.length === 0) return '';
+
+  const lines: string[] = ['【当前世界状态 — 全局事件影响】'];
+  for (const flag of activeFlags) {
+    lines.push(`- ${flag.name}：${flag.effectOnNarrative}`);
+  }
+
+  return lines.join('\n');
+}
+
+// ─── P2-4b: 战斗约束注入（叙事战斗场景） ───
+function injectCombatConstraint(store: RootStore): string {
+  const cc = (store as any).transientCombatConstraint as CombatConstraint | null;
+  if (!cc) return '';
+
+  // 消费后清除
+  if (typeof (store as any).setTransientCombatConstraint === 'function') {
+    (store as any).setTransientCombatConstraint(null);
+  }
+
+  const lines: string[] = ['【战斗场景约束 — 叙事战斗】'];
+  lines.push(`- 场景类型：${cc.scale === 'battle' ? '大规模战斗' : '小规模冲突'}（${cc.strategicChoiceCount}个战略选项）`);
+  if (cc.baseChance !== undefined) {
+    lines.push(`- 基础成功概率：${Math.round(cc.baseChance * 100)}%（受境界差和流派加成调整）`);
+  }
+  if (cc.recommendedRealm !== undefined) {
+    lines.push(`- 推荐境界：${cc.recommendedRealm}转`);
+  }
+  lines.push(`- 必须发生：${cc.mustHappen.join('；')}`);
+  lines.push(`- 禁止出现：${cc.mustNotHappen.join('；')}`);
+  lines.push(`- 关键NPC：${cc.keyNPCs.join('、')}`);
+  lines.push(`- 关键势力：${cc.keyFactions.join('、')}`);
+  if (cc.narrativeStyle) {
+    lines.push(`- 叙事风格：${cc.narrativeStyle}`);
+  }
+  lines.push(`- 生成要求：提供${cc.strategicChoiceCount}个战略选项（含risk/risk_note），选项应体现${cc.narrativeStyle ? '上述叙事风格' : '蛊界现实'}，避免爽文套路。战斗结果必须在state_update中通过wealth.delta（战利品）和player.hp_delta（生命值变化）回写。`);
+
+  return lines.join('\n');
+}
+
+// ─── P2-5: NPC对话上下文注入 ───
+function injectDialogueContext(store: RootStore): string {
+  const ad = (store as any).activeDialogue as { npcName: string; npcPersonality: string; affinity: number; messages: { role: string; text: string }[] } | null;
+  if (!ad || ad.messages.length === 0) return '';
+
+  const lastMsg = ad.messages[ad.messages.length - 1];
+  if (lastMsg?.role !== 'player') return '';
+
+  const topic = lastMsg.text.replace('【', '').replace('】', '');
+
+  return [
+    '【NPC对话上下文】',
+    `你正在与${ad.npcName}进行对话。`,
+    `${ad.npcName}的性格：${ad.npcPersonality}`,
+    `当前好感度：${ad.affinity}（-100~100）`,
+    `玩家选择的话题：【${topic}】`,
+    '',
+    `请以${ad.npcName}的身份用第一人称回应。回应需符合该NPC的性格特征和当前好感度水平。`,
+    '回应后必须在state_update.faction中包含affinity_delta字段（正整数=好感上升，负整数=好感下降），范围-5到+5。',
+    '你仍然需要生成正常的叙事文本narrative.text和当轮的选择项choices——对话回应放在叙事文本的开头部分，然后继续当轮的正常叙事。',
+  ].join('\n');
 }
 function injectTerminology(): string {
   const core = terminology['核心概念'] as Record<string, string>;
@@ -256,6 +403,78 @@ function injectTerminology(): string {
 // ═══════════════════════════════════════════
 // ContextBuilder 类
 // ═══════════════════════════════════════════
+
+// ─── P2-流派: 道痕量变质变规则注入 ───
+const DAO_MARK_BASE = 100;
+
+/**
+ * injectDaoMarkRules — 从combat-config.json pathMatrix读取15流派克制关系
+ * 生成道痕量变→质变规则文本（100道痕=1成威力）
+ * 并检测玩家当前主修/辅修流派之间的互斥关系
+ */
+export function injectDaoMarkRules(store: RootStore): string {
+  const primaryPath = store.pathBuild?.primary || '';
+  const secondaryPaths = store.pathBuild?.secondary || [];
+  const daoMarks = store.pathBuild?.dao_marks || {};
+
+  const lines: string[] = ['', '【道痕与流派互斥规则】'];
+
+  // 段1: 道痕量变质变基础规则
+  lines.push(`道痕是蛊师修炼的根本。${DAO_MARK_BASE}道痕=1成威力，每增加${DAO_MARK_BASE}道痕威力翻倍。`);
+  lines.push('道痕累积不消失，不可逆转。主修流派的道痕数量直接影响该流派杀招威力。');
+
+  // 段2: 玩家当前道痕状态
+  if (primaryPath && daoMarks[primaryPath]) {
+    const marks = daoMarks[primaryPath];
+    const grade = marks >= 1000 ? `${Math.floor(marks / 100)}成（大成）` :
+                  marks >= 500 ? `${Math.floor(marks / 100)}成（小成）` :
+                  marks >= 100 ? `${Math.floor(marks / 100)}成` : '不足1成';
+    lines.push(`- 主修${primaryPath}：${marks}道痕（${grade}），战力倍率×${(1 + marks / 1000).toFixed(1)}`);
+  }
+
+  for (const secPath of secondaryPaths) {
+    if (daoMarks[secPath]) {
+      lines.push(`- 辅修${secPath}：${daoMarks[secPath]}道痕`);
+    }
+  }
+
+  // 段3: 流派互斥检测（基于combat-config.json pathMatrix）
+  try {
+    const combatConfig = require('../canon/combat-config.json');
+    const pathMatrix: Record<string, Record<string, number>> = combatConfig.pathMatrix?.matrix || {};
+
+    if (primaryPath && pathMatrix[primaryPath]) {
+      const conflicts: string[] = [];
+      for (const secPath of secondaryPaths) {
+        const coefficient = pathMatrix[primaryPath]?.[secPath];
+        if (coefficient !== undefined) {
+          if (coefficient <= 0.7) {
+            conflicts.push(`${secPath}→${primaryPath}被克（系数${coefficient}）：不建议同时修行`);
+          } else if (coefficient <= 0.85) {
+            conflicts.push(`${secPath}→${primaryPath}轻度冲突（系数${coefficient}）：可以辅修但效率降低`);
+          }
+        }
+      }
+
+      if (conflicts.length > 0) {
+        lines.push('');
+        lines.push('【流派互斥警告】');
+        lines.push(...conflicts.map(c => `- ${c}`));
+      } else if (secondaryPaths.length > 0) {
+        lines.push('');
+        lines.push('【流派兼容】主修与辅修流派间无直接互斥关系，可安全兼修。');
+      }
+    }
+  } catch {
+    // combat-config.json 不可用时静默跳过
+  }
+
+  // 段4: 道痕互斥通用规则
+  lines.push('');
+  lines.push('通用规则：相克流派（如炎道↔水道、金道↔木道、土道↔风道）的道痕会在体内相互抵消——同时修行会导致双方道痕均被削弱。单一蛊师最多辅修2个流派，否则道痕冲突风险指数增长。');
+
+  return lines.join('\n');
+}
 
 // ─── 经济规则注入（4D.9）【P1-6.3动静分离：去除动态${currency}保留静态物价参考】 ───
 function injectEconomyRules(): string {
@@ -279,7 +498,7 @@ function injectEconomyRules(): string {
 - 凡人与蛊师经济完全脱钩——蛊师不会为几块元石做有辱身份的事`;
 }
 
-// ─── NPC 上下文注入（5C.1 三层过滤） ───
+// ─── NPC 上下文注入（5C.1 三层过滤 + P2-3b 跨域过滤） ───
 function injectNPCContext(store: RootStore): string {
   const npcDb = (npcsRaw as any).npcDatabase as Record<string, any>;
   if (!npcDb) return '';
@@ -287,16 +506,21 @@ function injectNPCContext(store: RootStore): string {
   const flags: Record<string, any> = (store as any).flags || {};
   const currentFaction = flags.current_faction || '南疆';
   const currentChapter = flags.current_chapter || '青茅山期';
+  const currentDomain = (store as any).currentDomain || '南疆';
   const factionStandings: Record<string, number> = (store as any).standings || {};
 
-  // === 过滤层1: 根据玩家当前位置和势力关系过滤【P1-6.3动静分离：去除playerRealm评分，按角色重要性静态排序】 ===
-  const relevantNpcs: Array<{ name: string; info: any; relevance: number }> = [];
+  // === P2-3b: 域过滤层 — 按 currentDomain 优先排序 ===
+  const relevantNpcs: Array<{ name: string; info: any; relevance: number; domain: string }> = [];
 
   for (const [name, npc] of Object.entries(npcDb)) {
     const n = npc as any;
     if (!n || n.role === 'minor') continue; // 跳过龙套
 
     let relevance = 0;
+
+    // P2-3b: 同域 +5（最高权重）
+    const npcDomain = n.domain || n.faction || '南疆';
+    if (npcDomain === currentDomain) relevance += 5;
 
     // 同势力/同地区 +3
     if (n.faction === currentFaction) relevance += 3;
@@ -307,20 +531,27 @@ function injectNPCContext(store: RootStore): string {
     if (n.relationship && n.relationship !== '无关' && n.relationship !== '无直接关系') relevance += 1;
 
     if (relevance >= 2) {
-      relevantNpcs.push({ name, info: n, relevance });
+      relevantNpcs.push({ name, info: n, relevance, domain: npcDomain });
     }
   }
 
-  // 按相关度排序，取前12个
+  // 按相关度排序，取前15个（P2-3b: 从12扩展到15，给跨域NPC留余量）
   relevantNpcs.sort((a, b) => b.relevance - a.relevance);
-  const topNpcs = relevantNpcs.slice(0, 12);
+  const topNpcs = relevantNpcs.slice(0, 15);
 
   if (topNpcs.length === 0) return '';
 
   // === 过滤层2: 生成身份摘要 ===
-  const lines: string[] = ['', '【当前已知NPC身份】'];
+  const lines: string[] = ['', `【当前域：${currentDomain} · 已知NPC身份】`];
 
-  for (const { name, info } of topNpcs) {
+  let lastDomain = '';
+  for (const { name, info, domain: npcDomain } of topNpcs) {
+    // P2-3b: 跨域NPC加标注
+    if (npcDomain !== currentDomain && npcDomain !== lastDomain) {
+      lines.push(`  [${npcDomain}域]`);
+      lastDomain = npcDomain;
+    }
+
     // 检查 flags 中是否有身份覆盖
     const overrideKey = `npc_${name}_title_override`;
     const dynamicTitle = flags[overrideKey];
@@ -381,9 +612,10 @@ export class ContextBuilder {
       this.layer2Content,
     ];
 
-    // Canon / IF 模式分化
+    // Canon / IF 模式分化（P2: CANON_MODE_INJECT改为动态函数调用）
     if (mode === 'canon') {
-      parts.push(CANON_MODE_INJECT);
+      const domain = store?.currentDomain || '南疆';
+      parts.push(buildCanonModeInject(domain));
     } else {
       parts.push(IF_MODE_INJECT);
     }
@@ -391,12 +623,37 @@ export class ContextBuilder {
     // 世界规则注入
     parts.push(injectWorldRules());
 
+    // ═══ P2-流派: 道痕量变质变规则注入 ═══
+    if (store) {
+      parts.push(injectDaoMarkRules(store));
+    }
+
     // 经济规则注入（4D.9）【P1-6.3动静分离：去store参数，完全静态】
     parts.push(injectEconomyRules());
 
     // ═══ P1章节约束注入：域约束/位置锁/场景约束（在NPC上下文之前） ═══
     if (store) {
       parts.push(injectChapterConstraints(store));
+    }
+
+    // ═══ P2-2a 涟漪事件注入（L0/L1/L2分层） ═══
+    if (store) {
+      parts.push(injectRippleEvents(store));
+    }
+
+    // ═══ P2-2a L3全局flag注入（持久世界状态） ═══
+    if (store) {
+      parts.push(injectGlobalFlags(store));
+    }
+
+    // ═══ P2-4b 战斗约束注入（叙事战斗场景） ═══
+    if (store) {
+      parts.push(injectCombatConstraint(store));
+    }
+
+    // ═══ P2-5 NPC对话上下文注入 ═══
+    if (store) {
+      parts.push(injectDialogueContext(store));
     }
 
     // NPC上下文注入（5C.1 三层过滤）
@@ -426,6 +683,12 @@ export class ContextBuilder {
       guInventory: s.inventory.map((g: any) => ({
         name: g.name, tier: g.tier, path: g.path, state: g.currentState,
       })),
+      // ═══ v1.7: LLM感知玩家杀招 ═══
+      killMoves: (s as any).killMoves?.map((km: any) => ({
+        name: km.name, path: km.path, level: km.level,
+        multiplier: km.multiplier, cooldown: (s as any).cooldowns?.[km.id] || 0,
+        description: km.description,
+      })) || [],
       flags: s.flags,
       factions: (s as any).standings ? Object.entries(s as any).filter(([k]) => k !== 'updateStanding' && k !== 'updateRelation') : [],
     };
@@ -471,16 +734,58 @@ export class ContextBuilder {
       parts.push(`【当前元石余额】${currency}块元石`);
     }
 
-    // 段2: 动态NPC关系（仅在好感度非默认时注入）
-    const standings: Record<string, number> = (store as any).standings || {};
-    const dynamicStandings = Object.entries(standings)
-      .filter(([key, val]) => key !== 'updateStanding' && key !== 'updateRelation' && typeof val === 'number' && val !== 0)
-      .slice(0, 10);
-    if (dynamicStandings.length > 0) {
-      const relLines = dynamicStandings.map(([npc, rel]) =>
-        `  ${npc}: ${rel > 0 ? '+' + rel : rel} （${rel >= 30 ? '友善' : rel >= 10 ? '好感' : rel <= -30 ? '敌对' : rel <= -10 ? '反感' : '中立'}）`
-      );
-      parts.push(`【NPC关系动态】\n${relLines.join('\n')}`);
+    // ═══ P3修复: 章节位置提醒（防止AI在超长上下文中丢失当前位置导致叙事跳回） ═══
+    const currentChapterId = (store as any).currentChapterId || '';
+    const currentDomain = (store as any).currentDomain || '南疆';
+    if (currentChapterId) {
+      const chaptersData = chaptersRaw as any;
+      const domainChapters = chaptersData.domains?.[currentDomain] || [];
+      const chapterDef = domainChapters.find((c: any) => c.id === currentChapterId);
+      if (chapterDef) {
+        parts.push(`【当前章节位置 — 不可脱离】你正处于「${chapterDef.displayName}」章节，位于${currentDomain}域${chapterDef.position?.area || chapterDef.position?.region || ''}。叙事必须严格围绕当前章节展开，不可跳回前面的章节事件，也不可跳到后面的章节。`);
+      }
+    }
+
+    // ═══ P4: 天赋效果提醒（每轮注入，+150 tokens） ═══
+    const selectedTalents = (store as any).selectedTalents;
+    if (selectedTalents && selectedTalents.length > 0) {
+      try {
+        const { P4_TALENTS } = require('../data/talents-p4');
+        const { INITIAL_TALENTS } = require('../data/talents');
+        const talentLines: string[] = [];
+        for (const tid of selectedTalents) {
+          const t = P4_TALENTS.find((tt: any) => tt.id === tid) || INITIAL_TALENTS.find((tt: any) => tt.id === tid);
+          if (t) {
+            const benefits = t.benefits?.join('；') || '';
+            const costs = t.costs?.join('；') || '';
+            const note = costs ? `${benefits}。代价：${costs}` : benefits;
+            talentLines.push(`- ${t.name}：${note}`);
+          }
+        }
+        if (talentLines.length > 0) {
+          parts.push(`【天赋效果生效提醒 — 叙事必须遵守】\n${talentLines.join('\n')}\n警告：不可在叙事中描写违反以上天赋效果的情节（如\"百毒不侵\"则不可出现中毒描写）。`);
+        }
+      } catch { /* ignore */ }
+    }
+
+    // 段2: 势力声望（P4: 含势力定义注入，确保AI知晓可操作的faction）
+    const standingsData: Record<string, any> = (store as any).standings || {};
+    // 过滤掉函数属性，获取纯数值的势力声望
+    const currentStandings = Object.entries(standingsData)
+      .filter(([key, val]) => key !== 'updateStanding' && key !== 'updateRelation' && key !== 'characterRelations' && key !== 'npcRelations' && key !== 'initNpcRelations' && key !== 'updateNpcRelation' && key !== 'getNpcAffinity' && key !== 'tickNpcRelations' && typeof val === 'object' && val !== null && 'standing' in val)
+      .map(([factionId, data]: [string, any]) => ({ id: factionId, standing: data.standing || 0 }));
+
+    // P4: 从world-rules.json获取当前域势力定义
+    const domainFactions = (worldRulesRaw as any)?.['五域势力']?.[currentDomain]?.keyFactions || [];
+
+    if (domainFactions.length > 0) {
+      const factionLines = domainFactions.map((f: any) => {
+        const cur = currentStandings.find((s: any) => s.id === f.id);
+        const standing = cur?.standing ?? f.standing;
+        const label = standing >= 30 ? '友善' : standing >= 10 ? '好感' : standing >= -10 ? '中立' : standing >= -30 ? '反感' : '敌对';
+        return `  ${f.id}(${f.name}): ${standing > 0 ? '+' : ''}${standing}(${label}) — ${f.note}`;
+      });
+      parts.push(`【势力声望 — ${currentDomain}域】\n${factionLines.join('\n')}\n\n提示: 在state_update.faction中可调整势力声望，如: {\"${domainFactions[0].id}\": {\"standing\": 5}}`);
     }
 
     // 段3: 蛊虫当前状态摘要
@@ -499,6 +804,22 @@ export class ContextBuilder {
         parts.push(`【当前蛊虫状态】\n${guLines.join('\n')}`);
       }
     }
+
+    // ═══ P2-9: 随机遭遇上下文注入 ═══
+    try {
+      const encCtx = (store as any).getEncounterContext?.();
+      if (encCtx) {
+        const encLines = [
+          `【随机遭遇: ${encCtx.title}】`,
+          `类型: ${encCtx.type}`,
+          encCtx.narrativeTemplate,
+          '',
+          '玩家可选行动:',
+          ...encCtx.choices.map((c: any) => `  - ${c.text} (风险:${c.risk}) → ${c.outcome}`),
+        ];
+        parts.push(encLines.join('\n'));
+      }
+    } catch { /* encounter context injection not available */ }
 
     return parts.length > 0 ? parts.join('\n\n') : '';
   }

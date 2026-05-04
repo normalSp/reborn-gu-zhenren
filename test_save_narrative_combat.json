@@ -1,0 +1,261 @@
+{
+  "formatVersion": 8,
+  "meta": {
+    "playerName": "测试蛊师",
+    "realm": "二转初阶",
+    "turn": 8,
+    "gameMode": "canon"
+  },
+  "state": {
+    "profile": {
+      "name": "测试蛊师",
+      "realm": {
+        "grand": 2,
+        "sub": "初阶",
+        "label": "二转初阶"
+      },
+      "background": "南疆 · 散修"
+    },
+    "attributes": {
+      "资质": 7,
+      "体魄": 6,
+      "心智": 5,
+      "气运": 5
+    },
+    "vitals": {
+      "health": {
+        "current": 100,
+        "max": 100
+      },
+      "essence": {
+        "current": 100,
+        "max": 100
+      }
+    },
+    "pathBuild": {
+      "primary": "炎道",
+      "secondary": [
+        "力道"
+      ],
+      "path_levels": {},
+      "dao_marks": {
+        "炎道": 120,
+        "力道": 50
+      }
+    },
+    "daoHeart": {
+      "kill": 5,
+      "mercy": 2,
+      "scheme": 3,
+      "ambition": 8
+    },
+    "flags": {
+      "current_chapter": "青茅山期",
+      "current_chapter_id": "qingmaoshan",
+      "_origin": "南疆"
+    },
+    "currentChapterId": "qingmaoshan",
+    "currentDomain": "南疆",
+    "turn": 8,
+    "isDead": false,
+    "deathCause": "",
+    "deathTurn": 0,
+    "currency": 350,
+    "immortalCurrency": 0,
+    "battleState": null,
+    "deathRecord": null,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "morning",
+      "day": 3,
+      "month": 3,
+      "year": 1,
+      "season": "spring"
+    },
+    "inventory": [
+      {
+        "name": "星火蛊",
+        "tier": 1,
+        "path": "炎道",
+        "currentState": "normal"
+      },
+      {
+        "name": "铜皮蛊",
+        "tier": 1,
+        "path": "金道",
+        "currentState": "normal"
+      },
+      {
+        "name": "月光蛊",
+        "tier": 1,
+        "path": "光道",
+        "currentState": "normal"
+      }
+    ],
+    "materialBag": {},
+    "killMoves": [],
+    "cooldowns": {},
+    "primaryPath": "炎道",
+    "secondaryPaths": [
+      "力道"
+    ],
+    "pathLevels": {},
+    "daoMarks": {
+      "炎道": 120,
+      "力道": 50
+    },
+    "selectedTalents": [],
+    "activeModifiers": [],
+    "standings": {
+      "guyue_shanzhai": {
+        "standing": 40
+      },
+      "shangjia": {
+        "standing": 10
+      }
+    },
+    "characterRelations": [],
+    "aperture": null,
+    "butterflyEffects": [],
+    "timelineDeviation": 0,
+    "eventQueue": [],
+    "eventHistory": [],
+    "messages": [
+      {
+        "role": "assistant",
+        "content": "青茅山震动——狼潮来了。数百只蛊狼从森林深处涌出，它们的背上寄生着力量蛊，牙齿被血道蛊虫强化过。山寨围墙上站满了人——老蛊师在分发蛊虫，年轻人握着武器手心全是汗。第一匹狼冲出树林时比人还高。古月博族长站在高处大声发令——全体蛊师登墙防守！你需要在四种策略中选择一种。"
+      },
+      {
+        "role": "user",
+        "content": "c1"
+      }
+    ],
+    "keyEvents": [
+      {
+        "turn": 7,
+        "summary": "山寨发现大规模蛊狼聚集——确认狼潮即将来临"
+      },
+      {
+        "turn": 8,
+        "summary": "狼潮攻寨——数百蛊狼从山林涌出"
+      }
+    ],
+    "rollingSummary": "青茅山狼潮已至——数百只蛊狼围攻山寨。全体族人正在寨墙上防守。",
+    "knownLocations": [],
+    "playerPosition": {
+      "x": 0,
+      "y": 0,
+      "region": "南疆 · 青茅山"
+    },
+    "exploredRegions": [
+      "南疆"
+    ],
+    "fogOfWar": true,
+    "currencyLog": [],
+    "yuanStoneDelta": 0,
+    "unlockedAchievements": [],
+    "achievementProgress": {},
+    "tutorialState": "completed",
+    "currentStep": 6,
+    "tutorialSkippable": true,
+    "chapterHistory": [
+      {
+        "id": "qingmaoshan",
+        "displayName": "青茅山期",
+        "domain": "南疆"
+      }
+    ],
+    "activeEvents": {},
+    "goals": {},
+    "transitionState": "idle",
+    "nextChapterOptions": [],
+    "proximityEvents": [],
+    "globalEventStatus": {},
+    "debt": 0,
+    "debtInterestRate": 0.05,
+    "combatState": null,
+    "dialogueState": {},
+    "shopState": {
+      "visitedShops": [],
+      "shopInventory": {}
+    },
+    "encounterState": {
+      "recentEncounters": [],
+      "cooldownTimer": 0
+    },
+    "audioState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "currentBgm": null
+    },
+    "lifeboundGu": null,
+    "originUnlocks": [],
+    "guHungerCounters": {},
+    "npcRelations": {
+      "matrix": {},
+      "lastUpdatedTurn": 0
+    },
+    "heavenlyLand": null,
+    "lifeboundGuInfo": null,
+    "lifeboundDeathPenalty": null,
+    "battleHistory": [],
+    "activeDialogue": null,
+    "isAchievementToastVisible": false,
+    "currentAchievementQueue": [],
+    "gameLog": [],
+    "duelState": null,
+    "transientCombatConstraint": {
+      "sceneId": "nanjiang_langchao",
+      "combatType": "narrative",
+      "scale": "battle",
+      "mustHappen": [
+        "狼群大规模围攻山寨——成百上千只蛊狼",
+        "全体族人参与防守",
+        "狼潮被击退后山寨满目疮痍"
+      ],
+      "mustNotHappen": [
+        "狼潮被写成轻松的大规模狩猎",
+        "山寨完好无损",
+        "狼潮被归因于单一原因"
+      ],
+      "keyFactions": [
+        "古月山寨",
+        "青茅山"
+      ],
+      "keyNPCs": [
+        "古月博",
+        "古月赤练",
+        "古月漠尘",
+        "古月青书"
+      ],
+      "strategicChoiceCount": 4,
+      "narrativeStyle": "狼潮不是突然袭来——先是鸟全部飞走了，然后是地面轻微的震动，然后是远方传来的低吼声像打雷一样从地平线上滚过来。这不是一次狩猎——这是青茅山有史以来最严重的兽灾",
+      "baseChance": 0.4,
+      "recommendedRealm": 2,
+      "statBridge": {
+        "enabled": true,
+        "realmWeight": 0.12,
+        "guTagInfluence": [
+          {
+            "tag": "炎道",
+            "bonus": 0.12,
+            "note": "狼惧火，炎道范围攻击有效"
+          },
+          {
+            "tag": "土道",
+            "bonus": 0.15,
+            "note": "土道蛊虫可加固寨墙防御"
+          },
+          {
+            "tag": "金道",
+            "bonus": 0.1,
+            "note": "金道防御力可在混战中保护蛊师"
+          }
+        ]
+      }
+    },
+    "isAchievementPanelOpen": false
+  }
+}

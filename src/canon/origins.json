@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "P2-10 起源解锁系统 — 5条可解锁起源，含解锁条件表达式、初始资源、初始蛊虫。死亡不重置。",
+    "total": 5
+  },
+  "origins": [
+    {
+      "id": "gu_xian_reborn",
+      "name": "蛊仙转世",
+      "description": "前世的蛊仙记忆残留在你的神魂中。你隐约记得更高境界的修炼法门，但空窍中的真元才刚刚开始凝聚——一切要从头来。",
+      "initialBonus": { "currency": 50, "gu": "月影蛊", "attributeBonus": { "心智": 3, "气运": 2 }, "note": "起始元石多50，自带一转月影蛊，心智+3气运+2" },
+      "unlockConditions": [
+        { "type": "threshold", "field": "maxRealm", "operator": "gte", "value": 4, "description": "在任何一局游戏中达到四转境界" },
+        { "type": "threshold", "field": "achievementCount", "operator": "gte", "value": 5, "description": "累计解锁5个成就（跨存档累计）" }
+      ],
+      "narrativeFlavor": "前世记忆如碎片般在梦中浮现——更高境界的奥秘、蛊虫的相生相克、势力背后的暗流。但这一切，都只是一场新轮回的起点。"
+    },
+    {
+      "id": "merchant_heir",
+      "name": "商队后人",
+      "description": "你的父辈是一位走南闯北的行商，临终前留给你一批精心挑选的货物和一张蛊方。你深知在这个世道，信息和人脉比武力更重要。",
+      "initialBonus": { "currency": 150, "gu": "铜皮蛊", "item": "蛊方图纸×2", "attributeBonus": { "智心": 3 }, "note": "起始元石多150，自带铜皮蛊，获得2张随机蛊方图纸" },
+      "unlockConditions": [
+        { "type": "threshold", "field": "totalCurrencyEarned", "operator": "gte", "value": 1000, "description": "累计获得元石达到1000（跨存档累计）" },
+        { "type": "equality", "field": "hasFlag", "value": "sl_caravan_banquet_attended", "description": "在商队夜宴事件中与商队建立了友谊" }
+      ],
+      "narrativeFlavor": "父亲说过：蛊师靠拳头，商人靠眼力。在这片弱肉强食的大地上，看清局势的人才能走得远。"
+    },
+    {
+      "id": "lone_cultivator",
+      "name": "散修浪人",
+      "description": "你无门无派，自由如风。多年的流浪让你对各种环境的适应力极强，但也让你对人心有着深刻的不信任——信任在这个世道，太贵了。",
+      "initialBonus": { "gu": "疾风蛊", "attributeBonus": { "体魄": 3, "气运": 2 }, "skillBonus": "survival", "note": "自带疾风蛊，体魄+3气运+2，野外生存检定永久+10%" },
+      "unlockConditions": [
+        { "type": "count", "field": "domainsVisited", "operator": "gte", "value": 3, "description": "游历过3个以上大域（南疆/北原/东海/西漠/中洲）" },
+        { "type": "threshold", "field": "exploredLocations", "operator": "gte", "value": 8, "description": "在一局游戏中发现8个以上已知地点" }
+      ],
+      "narrativeFlavor": "孤身走过了三个大域的山川河流，你的足迹比大多数蛊师一生的范围都广。漂泊教会了你一件事：没有永远的敌人，也没有永远的朋友。"
+    },
+    {
+      "id": "battlefield_orphan",
+      "name": "战场遗孤",
+      "description": "你是在古战场废墟中被发现的幸存者。从小在血腥与杀戮中长大，对危险有着野兽般的直觉。你的双手早就沾过血，现在不过是用蛊虫继续活下去而已。",
+      "initialBonus": { "gu": "血牙蛊", "attributeBonus": { "杀心": 2, "体魄": 3 }, "special": "开局道心·杀戮+5", "note": "自带一转血牙蛊(攻击型)，体魄+3，道心·杀戮起始+5" },
+      "unlockConditions": [
+        { "type": "threshold", "field": "kills", "operator": "gte", "value": 10, "description": "在一局游戏中击败10个以上的敌人（战斗胜利计数）" },
+        { "type": "equality", "field": "hasFlag", "value": "qs_battlefield_searched", "description": "在青茅山期发现并搜刮过古战场废墟" }
+      ],
+      "narrativeFlavor": "古战场的腥风从未散去。每当闭眼，你仍能看到那些化为白骨的蛊师最后的姿势——有的在求饶，有的在拼命。你选择成为后者。"
+    },
+    {
+      "id": "ren_zu_believer",
+      "name": "人祖信徒",
+      "description": "你从小听祖母讲述人祖十子的传说，深信人力可以胜天。这种信念让你在绝境中也不会放弃，但有时过度的信仰也会变成固执。",
+      "initialBonus": { "gu": "定心蛊", "attributeBonus": { "心智": 3, "气运": 3 }, "special": "开局道心·仁心+5, 解锁人祖传说特殊对话选项", "note": "自带定心蛊，心智+3气运+3，道心·仁心起始+5，NPC友善对话选项增多" },
+      "unlockConditions": [
+        { "type": "count", "field": "renZuLegendsHeard", "operator": "gte", "value": 5, "description": "在游戏中聆听了5个以上的人祖传说" },
+        { "type": "equality", "field": "hasFlag", "value": "sl_refugee_helped", "description": "在南疆商路中救助过流亡的难民家庭" },
+        { "type": "threshold", "field": "daoHeartMercy", "operator": "gte", "value": 5, "description": "道心·仁心达到5以上" }
+      ],
+      "narrativeFlavor": "人祖十子，各传一道。祖母说：蛊虫是工具，人心才是根本。在这个善行常常得不到回报的世道，你依然选择相信。"
+    }
+  ]
+}

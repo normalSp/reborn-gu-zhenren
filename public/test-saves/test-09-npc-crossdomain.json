@@ -1,0 +1,444 @@
+{
+  "formatVersion": 8,
+  "timestamp": "2026-05-03T09:00:00.000Z",
+  "meta": {
+    "playerName": "跨域测试",
+    "realm": "四转初阶",
+    "turn": 45,
+    "gameMode": "canon"
+  },
+  "state": {
+    "profile": {
+      "name": "跨域测试",
+      "realm": {
+        "grand": 4,
+        "sub": "初阶",
+        "label": "四转初阶"
+      },
+      "background": "南疆 · 家族子弟"
+    },
+    "attributes": {
+      "资质": 7,
+      "体魄": 6,
+      "心智": 8,
+      "气运": 7
+    },
+    "vitals": {
+      "health": {
+        "current": 220,
+        "max": 250
+      },
+      "essence": {
+        "current": 300,
+        "max": 350
+      }
+    },
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": [],
+      "path_levels": {},
+      "dao_marks": {
+        "力道": 10
+      }
+    },
+    "daoHeart": {
+      "kill": 6,
+      "mercy": 5,
+      "scheme": 9,
+      "ambition": 8
+    },
+    "flags": {
+      "current_chapter": "王庭初现",
+      "current_domain": "北原",
+      "current_chapter_id": "north_wangting",
+      "_origin": "南疆",
+      "_identity": "家族子弟",
+      "nanjiang_completed": true,
+      "cross_domain_migrated": true,
+      "met_he_loulan": true,
+      "met_ma_hongyun": true
+    },
+    "turn": 45,
+    "isDead": false,
+    "deathCause": "",
+    "deathTurn": 0,
+    "currency": 1800,
+    "immortalCurrency": 0,
+    "battleState": null,
+    "deathRecord": null,
+    "gameTime": {
+      "ap": 2,
+      "max_ap": 4,
+      "period": "evening",
+      "day": 10,
+      "month": 10,
+      "year": 2,
+      "season": "autumn"
+    },
+    "inventory": [
+      {
+        "id": "g1",
+        "specId": "月光蛊",
+        "name": "月光蛊",
+        "tier": 4,
+        "path": "光道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g2",
+        "specId": "石皮蛊",
+        "name": "石皮蛊",
+        "tier": 4,
+        "path": "土道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g3",
+        "specId": "侦察蛊",
+        "name": "侦察蛊",
+        "tier": 3,
+        "path": "智道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      }
+    ],
+    "materialBag": {
+      "石粉": 3,
+      "月光石": 1
+    },
+    "killMoves": [],
+    "cooldowns": {},
+    "primaryPath": "力道",
+    "secondaryPaths": [],
+    "pathLevels": {},
+    "daoMarks": {
+      "力道": 10
+    },
+    "selectedTalents": [],
+    "activeModifiers": [],
+    "standings": {
+      "南疆商会": {
+        "reputation": 55,
+        "rank": "核心会员"
+      },
+      "古月山寨": {
+        "reputation": 35,
+        "rank": "外门长老"
+      },
+      "三王山势力": {
+        "reputation": 25,
+        "rank": "参与者"
+      },
+      "黄金家族王庭": {
+        "reputation": 5,
+        "rank": "外来者"
+      },
+      "影宗暗线": {
+        "reputation": -5,
+        "rank": "未知"
+      }
+    },
+    "characterRelations": [
+      {
+        "npcId": "古月方源",
+        "affinity": 15,
+        "trust": 5,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "商心慈",
+        "affinity": 40,
+        "trust": 25,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "太白云生",
+        "affinity": 20,
+        "trust": 10,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "白凝冰",
+        "affinity": -10,
+        "trust": 0,
+        "knownSecrets": [
+          "白凝冰叛逃意图"
+        ],
+        "revealedSecrets": [
+          "已告知商心慈警惕白凝冰"
+        ]
+      },
+      {
+        "npcId": "黑楼兰",
+        "affinity": 5,
+        "trust": 2,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "马鸿运",
+        "affinity": 8,
+        "trust": 3,
+        "knownSecrets": [
+          "鸿运齐天蛊存在"
+        ],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "秦百胜",
+        "affinity": -3,
+        "trust": 0,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      },
+      {
+        "npcId": "黑城",
+        "affinity": -5,
+        "trust": 0,
+        "knownSecrets": [],
+        "revealedSecrets": []
+      }
+    ],
+    "aperture": {
+      "type": "mortal",
+      "rank": 4,
+      "subRank": "初阶",
+      "primevalSea": {
+        "color": "#8c8c9a",
+        "colorName": "白银",
+        "fillPercent": 80
+      },
+      "apertureWall": {
+        "state": "坚实",
+        "opacity": 1,
+        "description": "四转窍壁稳定"
+      },
+      "capacity": 7,
+      "carriedGu": 3
+    },
+    "butterflyEffects": [],
+    "timelineDeviation": 0,
+    "eventQueue": [],
+    "eventHistory": [],
+    "messages": [],
+    "keyEvents": [],
+    "rollingSummary": "",
+    "currentNarrative": null,
+    "isLoading": false,
+    "error": null,
+    "knownLocations": [
+      "古月山寨",
+      "南疆商道",
+      "三王山外围",
+      "王庭外围营帐",
+      "黄金家族演武场",
+      "血脉试炼堂",
+      "王庭商市"
+    ],
+    "playerPosition": {
+      "x": 1,
+      "y": 0,
+      "region": "北原"
+    },
+    "exploredRegions": [
+      "南疆",
+      "北原"
+    ],
+    "fogOfWar": true,
+    "currencyLog": [],
+    "yuanStoneDelta": 0,
+    "unlockedAchievements": [],
+    "achievementProgress": {},
+    "tutorialState": "inactive",
+    "currentStep": 0,
+    "tutorialSkippable": true,
+    "currentChapterId": "north_wangting",
+    "currentDomain": "北原",
+    "chapterHistory": [
+      {
+        "chapterId": "qingmaoshan",
+        "domain": "南疆",
+        "startedAt": {
+          "turn": 1,
+          "timestamp": 1777792503783
+        },
+        "completedAt": {
+          "turn": 10,
+          "timestamp": 1777794303783
+        },
+        "goalsCompleted": [
+          "qms_first_refine",
+          "qms_reach_2nd"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "shanglu_qiusheng",
+        "domain": "南疆",
+        "startedAt": {
+          "turn": 11,
+          "timestamp": 1777794303783
+        },
+        "completedAt": {
+          "turn": 22,
+          "timestamp": 1777796103783
+        },
+        "goalsCompleted": [
+          "slqs_first_caravan",
+          "slqs_earn_200"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "nanjiang_chutan",
+        "domain": "南疆",
+        "startedAt": {
+          "turn": 23,
+          "timestamp": 1777796103783
+        },
+        "completedAt": {
+          "turn": 34,
+          "timestamp": 1777797903783
+        },
+        "goalsCompleted": [
+          "njct_visit_3_villages",
+          "njct_earn_500"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "shili_jueqi",
+        "domain": "南疆",
+        "startedAt": {
+          "turn": 35,
+          "timestamp": 1777797903783
+        },
+        "completedAt": {
+          "turn": 42,
+          "timestamp": 1777798803783
+        },
+        "goalsCompleted": [
+          "sjq_join_faction",
+          "sjq_reach_4th"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "sanwang_yitian",
+        "domain": "南疆",
+        "startedAt": {
+          "turn": 43,
+          "timestamp": 1777798803783
+        },
+        "goalsCompleted": [
+          "syt_choose_side"
+        ],
+        "goalsFailed": []
+      }
+    ],
+    "activeEvents": {},
+    "goals": {
+      "syt_choose_side": "completed",
+      "syt_reach_5th": "active"
+    },
+    "transitionState": "idle",
+    "nextChapterOptions": [],
+    "proximityEvents": [],
+    "globalEventStatus": {},
+    "duelState": null,
+    "debt": 200,
+    "debtInterestRate": 0.05,
+    "combatState": null,
+    "dialogueState": {},
+    "shopState": {
+      "visitedShops": [],
+      "shopInventory": {}
+    },
+    "encounterState": {
+      "recentEncounters": [],
+      "cooldownTimer": 0
+    },
+    "audioState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "currentBgm": null
+    },
+    "lifeboundGu": null,
+    "originUnlocks": [],
+    "guHungerCounters": {
+      "g1": 0,
+      "g2": 0,
+      "g3": 0
+    },
+    "npcRelations": {
+      "matrix": {
+        "古月方源": {
+          "affinity": 15
+        },
+        "商心慈": {
+          "affinity": 40
+        },
+        "太白云生": {
+          "affinity": 20
+        },
+        "白凝冰": {
+          "affinity": -10
+        },
+        "黑楼兰": {
+          "affinity": 5
+        },
+        "马鸿运": {
+          "affinity": 8
+        },
+        "秦百胜": {
+          "affinity": -3
+        },
+        "黑城": {
+          "affinity": -5
+        },
+        "古月博": {
+          "affinity": 20
+        },
+        "古月青书": {
+          "affinity": -8
+        }
+      },
+      "lastUpdatedTurn": 40
+    },
+    "heavenlyLand": null,
+    "lifeboundGuInfo": null,
+    "lifeboundDeathPenalty": null,
+    "gameLog": [
+      {
+        "type": "narrative",
+        "message": "南疆三王传承前夜的紧张对峙达到顶点，白凝冰在关键时刻选择叛逃",
+        "turn": 42,
+        "timestamp": 1777798503783
+      },
+      {
+        "type": "narrative",
+        "message": "穿越南疆与北原交界，踏入黄金家族王庭外围",
+        "turn": 43,
+        "timestamp": 1777798703783
+      },
+      {
+        "type": "narrative",
+        "message": "王庭外围见到黑楼兰——女扮男装的力道蛊仙，她的存在本身就是对黄金家族血脉规则的挑战",
+        "turn": 44,
+        "timestamp": 1777798903783
+      },
+      {
+        "type": "narrative",
+        "message": "马鸿运的鸿运齐天蛊引起了所有人的垂涎——但没有人敢在王庭动他",
+        "turn": 45,
+        "timestamp": 1777799103783
+      }
+    ]
+  }
+}

@@ -4,11 +4,13 @@ import { TitleScreen } from './components/title/TitleScreen';
 import { CharacterCreate } from './components/game/CharacterCreate';
 import { GameScreen } from './components/game/GameScreen';
 import { GameOverScreen } from './components/game/GameOverScreen';
-import { ModeSelectScreen } from './components/game/ModeSelectScreen';
 import { OriginSelectScreen } from './components/game/OriginSelectScreen';
+import { TimelineSelectScreen } from './components/game/TimelineSelectScreen';
+import { TimelineConfigScreen } from './components/game/TimelineConfigScreen';
 import { ErrorBoundary } from './components/game/ErrorBoundary';
+import { audioManager } from './utils/audio';
 
-type ScreenState = 'title' | 'mode_select' | 'origin_select' | 'character_create' | 'game_play' | 'game_over';
+type ScreenState = 'title' | 'origin_select' | 'timeline_select' | 'timeline_config' | 'character_create' | 'game_play' | 'game_over';
 
 const TRANSITION_MS = 350;
 
@@ -17,6 +19,22 @@ function App() {
   const setScreenState = useStore(s => s.setScreenState);
   const [displayScreen, setDisplayScreen] = useState<ScreenState>(screenState);
   const [transitioning, setTransitioning] = useState(false);
+
+  // ─── P4修复: Zustand soundSlice → AudioManager 音量桥接 ───
+  const soundState = useStore(s => s.soundState);
+  useEffect(() => {
+    audioManager.setVolumeGetters(
+      () => {
+        const s = useStore.getState();
+        return s.soundState.muted ? 0 : s.soundState.masterVolume * s.soundState.bgmVolume;
+      },
+      () => {
+        const s = useStore.getState();
+        return s.soundState.muted ? 0 : s.soundState.masterVolume * s.soundState.sfxVolume;
+      },
+    );
+    audioManager.setMuted(soundState.muted);
+  }, [soundState.muted, soundState.masterVolume, soundState.bgmVolume, soundState.sfxVolume]);
 
   useEffect(() => {
     if (screenState === displayScreen) return;
@@ -50,31 +68,34 @@ function App() {
         return (
           <div className={wrapperClass}>
             <TitleScreen onStart={() => {
-              // ═══ 新游戏入口：全量重置旧存档数据 ═══
-              (useStore.getState() as any).resetStore?.();
-              goTo('mode_select');
+              goTo('timeline_select');
             }} onContinue={() => {
-              // ═══ M4: 续档入口 — 不重置数据，直接进入游戏 ═══
               goTo('game_play');
             }} />
-          </div>
-        );
-      case 'mode_select':
-        return (
-          <div className={wrapperClass}>
-            <ModeSelectScreen onNext={() => goTo('origin_select')} onBack={() => goTo('title')} />
           </div>
         );
       case 'origin_select':
         return (
           <div className={wrapperClass}>
-            <OriginSelectScreen onNext={() => goTo('character_create')} onBack={() => goTo('mode_select')} />
+            <OriginSelectScreen onNext={() => goTo('character_create')} onBack={() => goTo('timeline_select')} />
+          </div>
+        );
+      case 'timeline_select':
+        return (
+          <div className={wrapperClass}>
+            <TimelineSelectScreen onNext={() => goTo('timeline_config')} onBack={() => goTo('title')} />
+          </div>
+        );
+      case 'timeline_config':
+        return (
+          <div className={wrapperClass}>
+            <TimelineConfigScreen onConfirm={() => goTo('character_create')} onBack={() => goTo('timeline_select')} />
           </div>
         );
       case 'character_create':
         return (
           <div className={wrapperClass}>
-            <CharacterCreate onConfirm={() => goTo('game_play')} />
+            <CharacterCreate onConfirm={() => goTo('game_play')} onBack={() => goTo('timeline_config')} />
           </div>
         );
       case 'game_play':
@@ -97,8 +118,9 @@ function App() {
   return (
     <ErrorBoundary>
       {renderScreen('title')}
-      {renderScreen('mode_select')}
       {renderScreen('origin_select')}
+      {renderScreen('timeline_select')}
+      {renderScreen('timeline_config')}
       {renderScreen('character_create')}
       {renderScreen('game_play')}
       {renderScreen('game_over')}

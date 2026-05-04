@@ -75,6 +75,8 @@ const PlayerUpdate = z.object({
   health: HealthUpdate,
   essence: HealthUpdate,
   dao_heart: DaoHeartUpdate,
+  dao_marks: z.record(z.number()).optional(),
+  path_levels: z.record(z.string()).optional(),
 }).optional();
 
 // ─── StateUpdate Schema ───

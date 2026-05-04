@@ -3,6 +3,13 @@
     "motion": {
       "command": "npx",
       "args": ["-y", "https://api.motion.dev/registry.tgz?package=motion-studio-mcp&version=latest"]
+    },
+    "edgeone-pages": {
+      "command": "npx",
+      "args": ["edgeone-pages-mcp"],
+      "env": {
+        "EDGEONE_PAGES_PROJECT_NAME": "gu-reborn"
+      }
     }
   }
 }

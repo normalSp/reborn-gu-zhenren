@@ -1,67 +1,269 @@
 {
   "_meta": {
-    "version": "1.0",
-    "total": 10,
-    "note": "P1预留8-10个南疆三章可触发成就。成就条件在P2由 achievementSlice.checkAchievements() 实现"
+    "version": "2.1",
+    "total": 26,
+    "note": "P2-8: 18常规成就 + P9-1: 8跨域成就。认证：成就检测在每轮RESOLVED后自动执行。"
   },
-  "初入蛊道": {
-    "description": "完成角色创建，正式踏入蛊界",
-    "hidden": false,
-    "category": "剧情",
-    "condition": "turn >= 1"
-  },
-  "一转蛊师": {
-    "description": "成功晋升一转蛊师",
-    "hidden": false,
-    "category": "成长",
-    "condition": "realm >= 1转初阶"
-  },
-  "二转蛊师": {
-    "description": "成功晋升二转蛊师",
-    "hidden": false,
-    "category": "成长",
-    "condition": "realm >= 2转初阶"
-  },
-  "三转蛊师": {
-    "description": "成功晋升三转蛊师",
-    "hidden": false,
-    "category": "成长",
-    "condition": "realm >= 3转初阶"
-  },
-  "蛊虫收藏家": {
-    "description": "空窍中同时携带3只蛊虫",
-    "hidden": false,
-    "category": "收集",
-    "condition": "guCount >= 3"
-  },
-  "初次炼蛊": {
-    "description": "成功炼制第一只蛊虫",
-    "hidden": false,
-    "category": "系统",
-    "condition": "refinedGuCount >= 1"
-  },
-  "元石小富": {
-    "description": "持有元石达到500块",
-    "hidden": false,
-    "category": "经济",
-    "condition": "currency >= 500"
-  },
-  "初识百家": {
-    "description": "结识3位以上NPC",
-    "hidden": false,
-    "category": "社交",
-    "condition": "knownNpcCount >= 3"
-  },
-  "黑暗抉择": {
-    "description": "做出一次高风险选择",
-    "hidden": true,
-    "category": "剧情",
-    "condition": "madeHighRiskChoice"
-  },
-  "南疆行者": {
-    "description": "在南疆解锁3个以上已知地点",
-    "hidden": false,
-    "category": "探索",
-    "condition": "knownLocations >= 3"
-  }
+  "achievements": [
+    {
+      "id": "first_step",
+      "name": "初入蛊道",
+      "description": "完成角色创建，正式踏入蛊界",
+      "tier": "bronze",
+      "category": "剧情",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "turn >= 1"
+    },
+    {
+      "id": "realm_1",
+      "name": "一转蛊师",
+      "description": "成功晋升一转蛊师",
+      "tier": "bronze",
+      "category": "成长",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "realmNum >= 1"
+    },
+    {
+      "id": "realm_2",
+      "name": "二转蛊师",
+      "description": "成功晋升二转蛊师",
+      "tier": "bronze",
+      "category": "成长",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "realmNum >= 2"
+    },
+    {
+      "id": "realm_3",
+      "name": "三转蛊师",
+      "description": "成功晋升三转蛊师",
+      "tier": "silver",
+      "category": "成长",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "realmNum >= 3"
+    },
+    {
+      "id": "realm_4",
+      "name": "四转蛊师",
+      "description": "成功晋升四转蛊师，踏入中阶蛊师行列",
+      "tier": "gold",
+      "category": "成长",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "realmNum >= 4"
+    },
+    {
+      "id": "gu_collector",
+      "name": "蛊虫收藏家",
+      "description": "空窍中同时携带3只及以上蛊虫",
+      "tier": "bronze",
+      "category": "收集",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "guCount >= 3"
+    },
+    {
+      "id": "gu_master",
+      "name": "蛊虫驯养师",
+      "description": "空窍中同时携带5只及以上蛊虫",
+      "tier": "silver",
+      "category": "收集",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "guCount >= 5"
+    },
+    {
+      "id": "first_refine",
+      "name": "初次炼蛊",
+      "description": "成功炼制第一只蛊虫",
+      "tier": "bronze",
+      "category": "系统",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "refinedGuCount >= 1"
+    },
+    {
+      "id": "alchemist",
+      "name": "炼蛊行家",
+      "description": "成功炼制5只以上蛊虫",
+      "tier": "silver",
+      "category": "系统",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "refinedGuCount >= 5"
+    },
+    {
+      "id": "rich_500",
+      "name": "元石小富",
+      "description": "持有元石达到500块",
+      "tier": "bronze",
+      "category": "经济",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "currency >= 500"
+    },
+    {
+      "id": "rich_2000",
+      "name": "元石富豪",
+      "description": "持有元石达到2000块",
+      "tier": "silver",
+      "category": "经济",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "currency >= 2000"
+    },
+    {
+      "id": "social_butterfly",
+      "name": "初识百家",
+      "description": "结识5位以上NPC",
+      "tier": "bronze",
+      "category": "社交",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "knownNpcCount >= 5"
+    },
+    {
+      "id": "nanjiang_traveler",
+      "name": "南疆行者",
+      "description": "在南疆解锁4个以上已知地点",
+      "tier": "bronze",
+      "category": "探索",
+      "domain": "南疆",
+      "hidden": false,
+      "condition": "knownLocations >= 4"
+    },
+    {
+      "id": "cross_domain",
+      "name": "跨域行者",
+      "description": "游历过2个以上大域（南疆/北原/东海/西漠/中洲）",
+      "tier": "silver",
+      "category": "探索",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "crossDomainCount >= 2"
+    },
+    {
+      "id": "combat_veteran",
+      "name": "百战余生",
+      "description": "在一局游戏中获得10次战斗胜利",
+      "tier": "silver",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "combatWins >= 10"
+    },
+    {
+      "id": "dark_choice",
+      "name": "黑暗抉择",
+      "description": "做出一次高风险选择",
+      "tier": "bronze",
+      "category": "剧情",
+      "domain": "通用",
+      "hidden": true,
+      "condition": "hasFlag: madeHighRiskChoice"
+    },
+    {
+      "id": "mercy_path",
+      "name": "仁者之心",
+      "description": "道心·仁心达到5以上",
+      "tier": "silver",
+      "category": "剧情",
+      "domain": "通用",
+      "hidden": true,
+      "condition": "daoHeart.mercy >= 5"
+    },
+    {
+      "id": "kill_path",
+      "name": "杀戮之道",
+      "description": "道心·杀戮达到5以上",
+      "tier": "silver",
+      "category": "剧情",
+      "domain": "通用",
+      "hidden": true,
+      "condition": "daoHeart.kill >= 5"
+    },
+    {
+      "id": "beiyuan_warrior",
+      "name": "北原战功",
+      "description": "在北原取得第一场战斗胜利",
+      "tier": "bronze",
+      "category": "战斗",
+      "domain": "北原",
+      "hidden": false,
+      "condition": "combatWins >= 1 && crossDomainFlags:北原"
+    },
+    {
+      "id": "beiyuan_herder",
+      "name": "草原牧者",
+      "description": "在北原结识3位以上部落NPC",
+      "tier": "silver",
+      "category": "社交",
+      "domain": "北原",
+      "hidden": false,
+      "condition": "knownNpcCount >= 3"
+    },
+    {
+      "id": "donghai_fisher",
+      "name": "东海渔客",
+      "description": "在东海水域探索5个以上地点",
+      "tier": "bronze",
+      "category": "探索",
+      "domain": "东海",
+      "hidden": false,
+      "condition": "knownLocations >= 5"
+    },
+    {
+      "id": "donghai_merchant",
+      "name": "海商巨贾",
+      "description": "在东海积累1000元石财富",
+      "tier": "silver",
+      "category": "经济",
+      "domain": "东海",
+      "hidden": false,
+      "condition": "currency >= 1000"
+    },
+    {
+      "id": "ximo_oasis",
+      "name": "绿洲行者",
+      "description": "在西漠发现绿洲并建立水源供应",
+      "tier": "bronze",
+      "category": "探索",
+      "domain": "西漠",
+      "hidden": false,
+      "condition": "hasFlag: foundOasis"
+    },
+    {
+      "id": "ximo_sandwalker",
+      "name": "沙海寻踪",
+      "description": "在西漠完成一次秘境探索",
+      "tier": "silver",
+      "category": "探索",
+      "domain": "西漠",
+      "hidden": false,
+      "condition": "hasFlag: exploredSecretRealm"
+    },
+    {
+      "id": "zhongzhou_discipline",
+      "name": "正道门徒",
+      "description": "加入中洲正道门派并完成入门考核",
+      "tier": "silver",
+      "category": "剧情",
+      "domain": "中洲",
+      "hidden": false,
+      "condition": "hasFlag: joinedSect"
+    },
+    {
+      "id": "zhongzhou_heaven",
+      "name": "天庭窥秘",
+      "description": "首次获得关于天庭的情报",
+      "tier": "gold",
+      "category": "剧情",
+      "domain": "中洲",
+      "hidden": false,
+      "condition": "hasFlag: learnedHeavenlyCourt"
+    }
+  ]
 }

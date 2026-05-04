@@ -1,5 +1,8 @@
 import { create } from 'zustand';
-import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime } from '../../types';
+import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand } from '../../types';
+import { tickHeavenlyLand } from '../../engine/HeavenlyLandEngine';
+import { computePathLevel } from '../../engine/path-progression';
+import { getMigrationNpcs } from '../../engine/npc-cross-domain';
 
 interface PlayerSlice extends PlayerState {
   gameTime: GameTime;
@@ -9,10 +12,20 @@ interface PlayerSlice extends PlayerState {
   deathTurn: number;
   currency: number;
   immortalCurrency: number;
-  /** P1预留：战斗状态（P2由战斗引擎填充） */
+  /** P0.2: 达到过的最高境界转数 */
+  maxRealmReached: number;
+  /** P0.2: 累计获得元石总额 */
+  totalCurrencyEarned: number;
+  /** P0.2: 人祖传说听闻次数 */
+  renZuLegendsHeard: number;
+  /** P2: 战斗状态 */
   battleState: import('../../types').CombatState | null;
-  /** P1预留：死亡记录（死亡时填充摘要） */
+  /** P2: 死亡记录（死亡时填充摘要） */
   deathRecord: import('../../types').DeathRecord | null;
+  /** P2-14: 洞天/福地状态 */
+  heavenlyLand: HeavenlyLand | null;
+  /** P2-14: 洞天福地产出的蛊材背包 */
+  materialBag: Record<string, number>;
   spendCurrency: (amount: number) => boolean;
   addCurrency: (amount: number) => void;
   getApertureCapacity: () => number;
@@ -21,11 +34,22 @@ interface PlayerSlice extends PlayerState {
   setRealm: (realm: RealmInfo) => void;
   addAttribute: (attr: '资质' | '体魄' | '心智' | '气运', delta: number) => void;
   setHealth: (current: number, max: number) => void;
+  /** P0.1: 对玩家造成固定数值的HP变更（正=恢复，负=伤害），附带来源追踪 */
+  applyHpDelta: (amount: number, source?: string) => void;
+  /** P0.1: 对玩家造成百分比HP变更（正=恢复，负=伤害），基于maxHP计算 */
+  applyHpPercent: (pct: number, source?: string) => void;
   setEssence: (current: number, max: number) => void;
   setPrimaryPath: (path: PathType) => void;
   advanceTurn: () => void;
   setFlag: (key: string, value: any) => void;
   removeFlag: (key: string) => void;
+  /** P2-14: 向蛊材背包添加材料 */
+  addMaterial: (materialName: string, quantity: number) => void;
+  /** P4数值修复：直接设置仙元石余额（用于时间线起点初始化） */
+  setImmortalCurrency: (amount: number) => void;
+  /** P4数值修复: 战斗属性桥接 — 体魄/资质/境界→HP/ATK/DEF */
+  combatStats: { hp: number; maxHp: number; attack: number; defense: number; accuracy: number; evasion: number } | null;
+  setCombatStats: (stats: { hp: number; maxHp: number; attack: number; defense: number; accuracy: number; evasion: number }) => void;
 }
 
 const PERIODS: GameTime['period'][] = ['morning', 'noon', 'evening', 'night'];
@@ -44,8 +68,15 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   deathTurn: 0,
   currency: 200,
   immortalCurrency: 0,
+  // ═══ P0.2: 幽灵计数器初始值 ═══
+  maxRealmReached: 1,
+  totalCurrencyEarned: 0,
+  renZuLegendsHeard: 0,
+  combatStats: null,
   battleState: null,
   deathRecord: null,
+  heavenlyLand: null,
+  materialBag: {},
   gameTime: { ap: 3, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' },
 
   applyStateUpdate: (update) => {
@@ -78,6 +109,65 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       const realmInfo = realmMap[update.realm.value];
       if (realmInfo) {
         set({ profile: { ...state.profile, realm: realmInfo } });
+        // ═══ P0.2: 更新最高境界 ═══
+        const current = get() as PlayerSlice;
+        if (realmInfo.grand > current.maxRealmReached) {
+          set({ maxRealmReached: realmInfo.grand } as any);
+        }
+        // ═══ 日志埋点: 境界突破
+        const logStore = get() as any;
+        if (typeof logStore.addGameLog === 'function') {
+          logStore.addGameLog('system', `境界突破: ${realmInfo.label}`, {
+            realm: realmInfo.label, grand: realmInfo.grand, turn: state.turn,
+          });
+        }
+
+        // ═══ 空窍状态推进：若当前为 MortalAperture，按新境界更新 ═══
+        const fullStore = get() as any;
+        const currentAperture = fullStore.aperture;
+        if (currentAperture && currentAperture.type === 'mortal') {
+          const newRank = realmInfo.grand;
+          const newSubRank = realmInfo.sub as '初阶' | '中阶' | '高阶' | '巅峰';
+          // 元海颜色：按转数映射
+          const colorNameByRank: Record<number, '青铜' | '赤铁' | '白银' | '黄金' | '紫晶'> = {
+            1: '青铜', 2: '赤铁', 3: '赤铁', 4: '白银', 5: '黄金',
+          };
+          const colorMap: Record<string, string> = {
+            '青铜': '#4a8c5c', '赤铁': '#8c4a4a', '白银': '#8c8c9a', '黄金': '#c9a84a', '紫晶': '#7a4a9a',
+          };
+          const colorName = colorNameByRank[newRank] || '青铜';
+          // 窍壁状态：初/中阶坚实，高阶潮汐初现，巅峰潮汐涌动
+          const wallStateBySub: Record<string, '坚实' | '潮汐初现' | '潮汐涌动' | '壁薄如纸'> = {
+            '初阶': '坚实', '中阶': '坚实', '高阶': '潮汐初现', '巅峰': '潮汐涌动',
+          };
+          // 容量：按转数
+          const capacityByRank: Record<number, number> = { 1: 3, 2: 5, 3: 8, 4: 12, 5: 15 };
+          // 保持现有 fillPercent（十绝体100%）或根据资质更新
+          const existingFill = currentAperture.primevalSea?.fillPercent ?? 50;
+          const updatedAperture = {
+            ...currentAperture,
+            rank: newRank,
+            subRank: newSubRank,
+            primevalSea: {
+              ...currentAperture.primevalSea,
+              color: colorMap[colorName],
+              colorName,
+              fillPercent: existingFill,
+            },
+            apertureWall: {
+              ...currentAperture.apertureWall,
+              state: wallStateBySub[newSubRank] || '坚实',
+              opacity: newSubRank === '巅峰' ? 0.7 : (newSubRank === '高阶' ? 0.85 : 1),
+              description: newSubRank === '巅峰'
+                ? '窍壁已薄如纸，真元满溢而出——距升仙仅一步之遥'
+                : newSubRank === '高阶'
+                  ? '潮汐之力冲刷窍壁，真元流转愈发汹涌'
+                  : '窍壁坚实，真元流转自如',
+            },
+            capacity: capacityByRank[newRank] || currentAperture.capacity,
+          };
+          fullStore.initializeMortalAperture?.(updatedAperture);
+        }
       }
     }
     // ─── 属性更新 ───
@@ -91,7 +181,11 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     // ─── 元石变动（wealth.delta） ───
     if ((update as any).wealth?.delta) {
       const delta = (update as any).wealth.delta;
-      set((s: PlayerSlice) => ({ currency: Math.max(0, s.currency + delta) }));
+      set((s: PlayerSlice) => ({
+        currency: Math.max(0, s.currency + delta),
+        // ═══ P0.2: 累计元石（仅正收入） ═══
+        totalCurrencyEarned: delta > 0 ? s.totalCurrencyEarned + delta : s.totalCurrencyEarned,
+      }));
       // 同步写入 yuanStoneSlice 日志（如果已注册）
       const fullStore = get() as any;
       if (delta > 0 && typeof fullStore.addYuanStone === 'function') {
@@ -116,12 +210,69 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (update.essence) {
       set({ vitals: { ...state.vitals, essence: { current: Math.min(update.essence.current, update.essence.max), max: update.essence.max } } });
     }
+    // ─── 道痕更新（增量合并到现有 dao_marks） ───
+    if (update.dao_marks) {
+      const currentDaoMarks = { ...state.pathBuild.dao_marks };
+      for (const [path, delta] of Object.entries(update.dao_marks)) {
+        currentDaoMarks[path] = (currentDaoMarks[path] || 0) + delta;
+      }
+      set((s: PlayerSlice) => ({
+        pathBuild: { ...s.pathBuild, dao_marks: currentDaoMarks },
+      }));
+      // 同步到 pathSlice.daoMarks（如存在）
+      const fullStore = get() as any;
+      if (typeof fullStore.addDaoMarks === 'function') {
+        for (const [path, delta] of Object.entries(update.dao_marks)) {
+          fullStore.addDaoMarks(path, delta);
+        }
+      }
+    }
+    // ─── 流派境界更新 ───
+    if (update.path_levels) {
+      const currentLevels = { ...state.pathBuild.path_levels };
+      for (const [path, level] of Object.entries(update.path_levels)) {
+        currentLevels[path] = level;
+      }
+      set((s: PlayerSlice) => ({
+        pathBuild: { ...s.pathBuild, path_levels: currentLevels },
+      }));
+    }
   },
   setRealm: (realm) => set({ profile: { ...get().profile, realm } }),
   addAttribute: (attr, delta) => set((s: PlayerSlice) => ({
     attributes: { ...s.attributes, [attr]: Math.max(0, Math.min(10, s.attributes[attr] + delta)) }
   })),
   setHealth: (current, max) => set({ vitals: { ...get().vitals, health: { current: Math.min(current, max), max } } }),
+  // ═══ P0.1: 固定数值HP变更（正=恢复，负=伤害） ═══
+  applyHpDelta: (amount, source = 'system') => {
+    const state = get() as PlayerSlice;
+    const { vitals } = state;
+    const newCurrent = Math.max(0, Math.min(vitals.health.current + amount, vitals.health.max));
+    set({ vitals: { ...vitals, health: { current: newCurrent, max: vitals.health.max } } });
+
+    // 事件日志：记录HP变动来源
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      const sign = amount >= 0 ? '+' : '';
+      logStore.addGameLog('combat', `生命 ${sign}${amount} (${source}) → ${newCurrent}/${vitals.health.max}`, {
+        delta: amount, source, currentHp: newCurrent, maxHp: vitals.health.max,
+      });
+    }
+
+    // 死亡检测
+    if (newCurrent <= 0) {
+      set({ isDead: true, deathCause: source, deathTurn: state.turn });
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('combat', `💀 角色死亡: ${source}`, { turn: state.turn });
+      }
+    }
+  },
+  // ═══ P0.1: 百分比HP变更（正=恢复，负=伤害） ═══
+  applyHpPercent: (pct, source = 'system') => {
+    const state = get() as PlayerSlice;
+    const amount = Math.floor(state.vitals.health.max * pct / 100);
+    (get() as any).applyHpDelta(amount, source);
+  },
   setEssence: (current, max) => set({ vitals: { ...get().vitals, essence: { current: Math.min(current, max), max } } }),
   setPrimaryPath: (path) => set((s: PlayerSlice) => ({ pathBuild: { ...s.pathBuild, primary: path } })),
   advanceTurn: () => {
@@ -145,19 +296,153 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         season: SEASONS[Math.floor(((newMonth - 1) / 3) % 4)],
       },
     });
-    // ─── 蛊虫饥饿推进（4D.10） ───
+    // ═══ P2-13: 蛊虫饥饿推进（确定性计数模型，替代旧概率模型） ═══
     const guStore = get() as any;
-    const inventory = guStore.inventory || [];
-    const hungerProbs: Record<number, number> = { 1: 0.05, 2: 0.10, 3: 0.15, 4: 0.20, 5: 0.25 };
-    const stateOrder = ['optimal', 'fed', 'hungry', 'starving', 'dying'] as const;
-    for (const gu of inventory) {
-      if (!gu.active && !gu.bonded) continue;
-      const prob = hungerProbs[gu.tier] || 0.1;
-      if (Math.random() >= prob) continue;
-      const idx = stateOrder.indexOf(gu.currentState);
-      if (idx >= 0 && idx < stateOrder.length - 1) {
-        guStore.updateGuState?.(gu.id, stateOrder[idx + 1]);
+    if (typeof guStore.tickGuHunger === 'function') {
+      guStore.tickGuHunger();
+    } else {
+      // 旧概率模型兜底（存量系统兼容）
+      const inventory = guStore.inventory || [];
+      const stateOrder = ['optimal', 'hungry', 'injured', 'dead'] as const;
+      for (const gu of inventory) {
+        if (!gu.active && !gu.bonded) continue;
+        const prob = { 1: 0.05, 2: 0.10, 3: 0.15, 4: 0.20, 5: 0.25 }[gu.tier] || 0.1;
+        if (Math.random() >= prob) continue;
+        const idx = stateOrder.indexOf(gu.currentState);
+        if (idx >= 0 && idx < stateOrder.length - 1) {
+          guStore.updateGuState?.(gu.id, stateOrder[idx + 1]);
+        }
       }
+    }
+
+    // ═══ P2-14: 洞天/福地推进（HeavenlyLandEngine纯函数集成） ═══
+    const currentStore = get() as any;
+    const land = currentStore.heavenlyLand as HeavenlyLand | null;
+    if (land && land.accessible) {
+      const landState = currentStore as PlayerSlice;
+      // 推进洞天/福地
+      const result = tickHeavenlyLand(
+        land,
+        {
+          totalDaoDensity: currentStore.aperture?.dao_mark_density
+            ? Object.values(currentStore.aperture.dao_mark_density as Record<string, number>).reduce((a: number, b: number) => a + b, 0)
+            : 0,
+          realmGrand: landState.profile.realm.grand,
+          turn: landState.turn,
+        },
+        landState.profile.realm.grand,
+        landState.turn,
+      );
+      // 资源产出写入materialBag
+      if (result.resourceYield > 0) {
+        const mats = currentStore.materialBag || {};
+        const key = `${land.domain}灵材`;
+        mats[key] = (mats[key] || 0) + result.resourceYield;
+        set({ materialBag: { ...mats } });
+      }
+      // 灾劫叙事注入到narrativeSlice
+      if (result.narrativeInjection && typeof currentStore.appendNarrative === 'function') {
+        currentStore.appendNarrative(result.narrativeInjection, 'system');
+      }
+      // 更新heavenlyLand状态（已被tickHeavenlyLand就地修改）
+      set({ heavenlyLand: { ...land } });
+    }
+
+    // ═══ P2-13: NPC关系网络自然漂移 ═══
+    if (typeof guStore.tickNpcRelations === 'function') {
+      guStore.tickNpcRelations();
+    }
+
+    // ═══ P2-流派: 本命蛊冷却递减 ═══
+    if (typeof guStore.tickLifeboundCooldown === 'function') {
+      guStore.tickLifeboundCooldown();
+    }
+
+    // ═══ P0.3: 杀招冷却递减 ═══
+    const killStore = get() as any;
+    if (typeof killStore.tickCooldowns === 'function') {
+      killStore.tickCooldowns();
+    }
+
+    // ═══ P1.1: 拍卖会触发 + NPC竞价推进 ═══
+    const auctionStore = get() as any;
+    if (typeof auctionStore.tickAuction === 'function') {
+      auctionStore.tickAuction();
+    }
+    if (typeof auctionStore.initAuction === 'function') {
+      const currentTurn = (get() as PlayerSlice).turn;
+      const lastAuction = auctionStore.auctionLastTurn || 0;
+      if (currentTurn >= 10 && currentTurn % 10 === 0 && currentTurn > lastAuction) {
+        auctionStore.initAuction();
+      }
+    }
+
+    // ═══ P1.2: 章节目标推进检测 ═══
+    const chapterStore = get() as any;
+    if (typeof chapterStore.checkProgression === 'function') {
+      const result = chapterStore.checkProgression() as any;
+      if (result?.shouldTransition && result?.nextChapterId) {
+        if (typeof chapterStore.activateChapter === 'function') {
+          chapterStore.activateChapter(result.nextChapterId);
+        }
+      }
+    }
+
+    // ═══ P1.4: 流派晋升检测 ═══
+    if (typeof chapterStore.addDaoMarks === 'function') {
+      // 读取当前各流派道痕 → 计算期望境界 → 与当前比较 → 晋升通知
+      const currentDaoMarks = (get() as any).daoMarks || (get() as PlayerSlice).pathBuild?.dao_marks || {};
+      const currentPathLevels = (get() as any).pathLevels || (get() as PlayerSlice).pathBuild?.path_levels || {};
+      let anyPromoted = false;
+      const newPathLevels: Record<string, any> = { ...currentPathLevels };
+      for (const [path, marks] of Object.entries(currentDaoMarks)) {
+        if (typeof marks !== 'number') continue;
+        const expectedLevel = computePathLevel(marks);
+        if (expectedLevel !== (currentPathLevels[path] || '普通')) {
+          newPathLevels[path] = expectedLevel;
+          anyPromoted = true;
+        }
+      }
+      if (anyPromoted) {
+        set((s: PlayerSlice) => ({
+          pathBuild: { ...s.pathBuild, path_levels: newPathLevels },
+        }));
+        // 同步到 pathSlice
+        for (const [path, level] of Object.entries(newPathLevels)) {
+          if (typeof chapterStore.setPathLevel === 'function') chapterStore.setPathLevel(path, level);
+        }
+        const logStore = get() as any;
+        if (typeof logStore.addGameLog === 'function') {
+          logStore.addGameLog('system', '流派境界晋升！', { pathLevels: newPathLevels });
+        }
+      }
+    }
+
+    // ═══ P1.3: NPC 跨域迁移检测（每10回合检测当前章节的迁移事件） ═══
+    const nsl = get() as any;
+    if (nsl.turn % 10 === 0) {
+      const currentChapterId = nsl.currentChapterId || '';
+      if (currentChapterId) {
+        const migrations = getMigrationNpcs(currentChapterId);
+        if (migrations.length > 0) {
+          for (const m of migrations) {
+            if (typeof nsl.updateNpcRelation === 'function') {
+              nsl.updateNpcRelation(m.npcId, 'player', 0, 0);
+            }
+          }
+          if (typeof nsl.addGameLog === 'function') {
+            nsl.addGameLog('system', `跨域迁移: ${migrations.map((m: any) => m.npcName).join('、')} 移至 ${migrations[0]?.toDomain || '异域'}`, {
+              npcCount: migrations.length,
+            });
+          }
+        }
+      }
+    }
+
+    // ═══ B1.2: 仙窍资源节点产出（蛊仙→每回合自动产出蛊材） ═══
+    const apertureStore = get() as any;
+    if (typeof apertureStore.tickAperture === 'function') {
+      apertureStore.tickAperture(1); // 每回合推进1天
     }
   },
   setFlag: (key, value) => set((s: PlayerSlice) => ({ flags: { ...s.flags, [key]: value } })),
@@ -172,7 +457,9 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     return true;
   },
   addCurrency: (amount) => set((s: PlayerSlice) => ({
-    currency: Math.max(0, s.currency + amount)
+    currency: Math.max(0, s.currency + amount),
+    // ═══ P0.2: 累计获得元石（仅正收入） ═══
+    totalCurrencyEarned: amount > 0 ? s.totalCurrencyEarned + amount : s.totalCurrencyEarned,
   })),
   getApertureCapacity: () => {
     const state = get() as PlayerSlice;
@@ -187,4 +474,15 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     set({ currency: state.currency - cost });
     return true;
   },
+  addMaterial: (materialName: string, quantity: number) => {
+    set((s: PlayerSlice) => {
+      const bag = { ...s.materialBag };
+      bag[materialName] = (bag[materialName] || 0) + quantity;
+      return { materialBag: bag };
+    });
+  },
+
+  setImmortalCurrency: (amount) => set({ immortalCurrency: amount }),
+
+  setCombatStats: (stats) => set({ combatStats: stats, vitals: { health: { current: stats.maxHp, max: stats.maxHp }, essence: { current: 100, max: 100 } } }),
 });

@@ -2,14 +2,14 @@ import { useStore } from '../../store';
 import { CHAR_IMAGE_MAP } from '../../data/image-maps';
 
 const RELATION_COLORS: Record<string, string> = {
-  friend: 'rgba(72,199,142,0.6)',
-  rival: 'rgba(220,53,69,0.6)',
-  romance: 'rgba(232,121,249,0.6)',
-  family: 'rgba(147,197,253,0.6)',
-  mentor: 'rgba(184,134,11,0.6)',
-  ally: 'rgba(52,211,153,0.6)',
-  enemy: 'rgba(239,68,68,0.6)',
-  stranger: 'rgba(144,144,184,0.3)',
+  friend: 'var(--gu-life-verdant)',
+  rival: 'var(--gu-life-crimson)',
+  romance: 'var(--gu-trace-gold-bright)',
+  family: 'var(--gu-life-azure)',
+  mentor: 'var(--gu-trace-gold)',
+  ally: 'var(--gu-life-verdant)',
+  enemy: 'var(--gu-life-crimson)',
+  stranger: 'var(--gu-trace-slate-light)',
 };
 
 const RELATION_LABELS: Record<string, string> = {
@@ -26,6 +26,8 @@ const RELATION_LABELS: Record<string, string> = {
 export function CharacterPanel() {
   const characterRelations = useStore(s => s.characterRelations);
   const standings = useStore(s => s.standings);
+  const initDialogue = useStore((s: any) => s.initDialogue);
+  const activeDialogue = useStore((s: any) => s.activeDialogue);
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -49,14 +51,14 @@ export function CharacterPanel() {
             </div>
           ) : (
             <div className="space-y-2">
-              {characterRelations.map(char => {
-                const color = RELATION_COLORS[char.relation_type] || 'rgba(144,144,184,0.3)';
+              {characterRelations.map((char, i) => {
+                const color = RELATION_COLORS[char.relation_type] || 'var(--gu-trace-slate-light)';
                 const label = RELATION_LABELS[char.relation_type] || char.relation_type;
                 const trustPct = Math.min(100, Math.max(0, char.trust));
                 const affinityPct = Math.min(100, Math.max(0, (char.affinity + 100) / 2));
                 return (
                   <div
-                    key={char.character_id}
+                    key={char.character_id || `npc-${i}`}
                     className="bg-rg-ink-800/50 border border-rg-ink-300/8 rounded-lg p-3"
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -74,10 +76,23 @@ export function CharacterPanel() {
                       </span>
                       <span
                         className="text-xs font-panel px-2 py-0.5 rounded-sm"
-                        style={{ background: color, color: '#e0d8c8' }}
+                        style={{ background: color, color: 'var(--gu-text-primary)' }}
                       >
                         {label}
                       </span>
+                      {typeof initDialogue === 'function' && (
+                        activeDialogue?.npcId === char.character_id ? (
+                          <span className="text-[10px] text-rg-gold-400/50 cursor-default">对话中</span>
+                        ) : (
+                          <button
+                            className="text-[10px] text-rg-gold-400 hover:underline cursor-pointer"
+                            onClick={() => {
+                              const npcFaction = (standings as any)?.[char.character_id]?.faction_id || char.character_id;
+                              initDialogue(char.character_id, char.name, '性格未详', npcFaction, char.affinity || 0);
+                            }}
+                          >对话</button>
+                        )
+                      )}
                       </div>
                     </div>
 
@@ -90,8 +105,8 @@ export function CharacterPanel() {
                             style={{
                               width: `${affinityPct}%`,
                               background: char.affinity >= 0
-                                ? 'linear-gradient(90deg, rgba(72,199,142,0.5), rgba(72,199,142,0.9))'
-                                : 'linear-gradient(90deg, rgba(220,53,69,0.5), rgba(220,53,69,0.9))',
+                                ? 'linear-gradient(90deg, var(--gu-life-verdant), var(--gu-success))'
+                                : 'linear-gradient(90deg, var(--gu-life-crimson), var(--gu-life-crimson-dim))',
                             }}
                           />
                         </div>
@@ -106,7 +121,7 @@ export function CharacterPanel() {
                             className="h-full rounded-full transition-all duration-300"
                             style={{
                               width: `${trustPct}%`,
-                              background: 'linear-gradient(90deg, rgba(147,197,253,0.5), rgba(147,197,253,0.9))',
+                              background: 'linear-gradient(90deg, var(--gu-life-azure), var(--gu-info))',
                             }}
                           />
                         </div>
@@ -116,7 +131,7 @@ export function CharacterPanel() {
                       </div>
                     </div>
 
-                    {char.known_secrets.length > 0 && (
+                    {char.known_secrets?.length > 0 && (
                       <div className="mt-2 text-xs font-panel">
                         <span className="text-rg-paper-200/40">已知秘密: </span>
                         <span className="text-rg-paper-200/50">
@@ -125,7 +140,7 @@ export function CharacterPanel() {
                         </span>
                       </div>
                     )}
-                    {char.revealed_to_them.length > 0 && (
+                    {char.revealed_to_them?.length > 0 && (
                       <div className="mt-1 text-xs font-panel">
                         <span className="text-rg-paper-200/40">已暴露: </span>
                         <span className="text-rg-paper-200/50">

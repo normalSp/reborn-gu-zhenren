@@ -68,9 +68,14 @@ export function AttributeDetailPanel() {
   const daoHeart = useStore(s => s.daoHeart);
   const standings = useStore(s => s.standings);
   const pathBuild = useStore(s => s.pathBuild);
+  const inventory = useStore(s => s.inventory);
   const turn = useStore(s => s.turn);
 
-  const attrArr = [attributes.资质, attributes.体魄, attributes.心智, attributes.气运];
+  // P2-P8-5: 气运可见性 — 需拥有运道蛊虫
+  const canSeeQiYun = (inventory || []).some((g: any) => g.path === '运道');
+  const displayQiYun = canSeeQiYun ? attributes.气运 : '???';
+
+  const attrArr = [attributes.资质, attributes.体魄, attributes.心智, canSeeQiYun ? attributes.气运 : 0];
   const labels = ['资质', '体魄', '心智', '气运'];
 
   return (
@@ -105,13 +110,15 @@ export function AttributeDetailPanel() {
           <MiniRadar values={attrArr} labels={labels} max={10} />
           <div className="grid grid-cols-4 gap-2 mt-3">
             {labels.map((label, i) => {
-              const grade = attrGrade(attrArr[i], label);
+              const isQiYunHidden = label === '气运' && !canSeeQiYun;
+              const displayVal = isQiYunHidden ? '???' : attrArr[i];
+              const grade = isQiYunHidden ? { label: '不可见', color: 'text-rg-ink-400' } : attrGrade(attrArr[i], label);
               return (
                 <div key={label} className="text-center">
                   <div className="text-rg-paper-200/60 text-xs font-panel">{label}</div>
-                  <div className={`text-lg font-bold font-panel ${grade.color}`}>{attrArr[i]}</div>
+                  <div className={`text-lg font-bold font-panel ${grade.color}`}>{displayVal}</div>
                   {grade.label && (
-                    <div className={`text-[10px] font-panel ${grade.color}`}>{grade.label}</div>
+                    <div className={`text-[10px] font-panel ${grade.color}`}>{isQiYunHidden ? '需运道蛊虫' : grade.label}</div>
                   )}
                 </div>
               );

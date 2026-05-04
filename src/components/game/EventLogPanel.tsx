@@ -1,4 +1,5 @@
 import { useStore } from '../../store';
+import { StarIcon } from '../../icons';
 import type { KeyEvent } from '../../types';
 
 const EVENT_TYPE_LABELS: Record<KeyEvent['type'], string> = {
@@ -35,8 +36,10 @@ export function EventLogPanel() {
                       {EVENT_TYPE_LABELS[event.type]}
                     </span>
                     {event.importance >= 2 && (
-                      <span className="text-rg-gold text-[10px] font-panel">
-                        {'★'.repeat(event.importance)}
+                      <span className="text-rg-gold text-[10px] font-panel flex gap-px">
+                        {Array.from({ length: event.importance }, (_, i) => (
+                          <StarIcon key={i} size={12} />
+                        ))}
                       </span>
                     )}
                     <span className="text-rg-paper-200/30 text-[10px] font-panel ml-auto">

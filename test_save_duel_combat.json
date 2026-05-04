@@ -1,0 +1,278 @@
+{
+  "formatVersion": 8,
+  "meta": {
+    "playerName": "测试蛊师",
+    "realm": "二转初阶",
+    "turn": 6,
+    "gameMode": "canon"
+  },
+  "state": {
+    "profile": {
+      "name": "测试蛊师",
+      "realm": {
+        "grand": 2,
+        "sub": "初阶",
+        "label": "二转初阶"
+      },
+      "background": "南疆 · 散修"
+    },
+    "attributes": {
+      "资质": 7,
+      "体魄": 6,
+      "心智": 5,
+      "气运": 5
+    },
+    "vitals": {
+      "health": {
+        "current": 100,
+        "max": 100
+      },
+      "essence": {
+        "current": 100,
+        "max": 100
+      }
+    },
+    "pathBuild": {
+      "primary": "炎道",
+      "secondary": [
+        "力道"
+      ],
+      "path_levels": {},
+      "dao_marks": {
+        "炎道": 120,
+        "力道": 50
+      }
+    },
+    "daoHeart": {
+      "kill": 5,
+      "mercy": 2,
+      "scheme": 3,
+      "ambition": 8
+    },
+    "flags": {
+      "current_chapter": "商路求生",
+      "current_chapter_id": "shanglu_qiusheng",
+      "_origin": "南疆"
+    },
+    "currentChapterId": "shanglu_qiusheng",
+    "currentDomain": "南疆",
+    "turn": 6,
+    "isDead": false,
+    "deathCause": "",
+    "deathTurn": 0,
+    "currency": 350,
+    "immortalCurrency": 0,
+    "battleState": null,
+    "deathRecord": null,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "morning",
+      "day": 3,
+      "month": 3,
+      "year": 1,
+      "season": "spring"
+    },
+    "inventory": [
+      {
+        "name": "星火蛊",
+        "tier": 1,
+        "path": "炎道",
+        "currentState": "normal"
+      },
+      {
+        "name": "铜皮蛊",
+        "tier": 1,
+        "path": "金道",
+        "currentState": "normal"
+      },
+      {
+        "name": "月光蛊",
+        "tier": 1,
+        "path": "光道",
+        "currentState": "normal"
+      },
+      {
+        "name": "避瘴蛊",
+        "tier": 2,
+        "path": "毒道",
+        "currentState": "normal"
+      }
+    ],
+    "materialBag": {},
+    "killMoves": [],
+    "cooldowns": {},
+    "primaryPath": "炎道",
+    "secondaryPaths": [
+      "力道"
+    ],
+    "pathLevels": {},
+    "daoMarks": {
+      "炎道": 120,
+      "力道": 50
+    },
+    "selectedTalents": [],
+    "activeModifiers": [],
+    "standings": {
+      "guyue_shanzhai": {
+        "standing": 40
+      },
+      "shangjia": {
+        "standing": 10
+      }
+    },
+    "characterRelations": [],
+    "aperture": null,
+    "butterflyEffects": [],
+    "timelineDeviation": 0,
+    "eventQueue": [],
+    "eventHistory": [],
+    "messages": [
+      {
+        "role": "assistant",
+        "content": "商队在狭窄的山道上缓缓前行。突然，前方树林中传来呼哨声——五个黑影从两侧山坡上跳下，为首的劫匪首领目光凶狠地扫过商队护卫，最后盯住了你。他冷笑着亮出了蛊虫，一场战斗不可避免。"
+      },
+      {
+        "role": "user",
+        "content": "c1"
+      }
+    ],
+    "keyEvents": [
+      {
+        "turn": 5,
+        "summary": "商队行至商路险段——右侧是悬崖，左侧是密林"
+      },
+      {
+        "turn": 6,
+        "summary": "劫匪伏击商队——首领率五人团伙拦路"
+      }
+    ],
+    "rollingSummary": "商队在南疆商路上遭有组织的劫匪伏击。劫匪首领亮出蛊虫，准备战斗。",
+    "knownLocations": [],
+    "playerPosition": {
+      "x": 0,
+      "y": 0,
+      "region": "南疆 · 青茅山"
+    },
+    "exploredRegions": [
+      "南疆"
+    ],
+    "fogOfWar": true,
+    "currencyLog": [],
+    "yuanStoneDelta": 0,
+    "unlockedAchievements": [],
+    "achievementProgress": {},
+    "tutorialState": "completed",
+    "currentStep": 6,
+    "tutorialSkippable": true,
+    "chapterHistory": [
+      {
+        "id": "shanglu_qiusheng",
+        "displayName": "商路求生",
+        "domain": "南疆"
+      }
+    ],
+    "activeEvents": {},
+    "goals": {},
+    "transitionState": "idle",
+    "nextChapterOptions": [],
+    "proximityEvents": [],
+    "globalEventStatus": {},
+    "debt": 0,
+    "debtInterestRate": 0.05,
+    "combatState": null,
+    "dialogueState": {},
+    "shopState": {
+      "visitedShops": [],
+      "shopInventory": {}
+    },
+    "encounterState": {
+      "recentEncounters": [],
+      "cooldownTimer": 0
+    },
+    "audioState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "currentBgm": null
+    },
+    "lifeboundGu": null,
+    "originUnlocks": [],
+    "guHungerCounters": {},
+    "npcRelations": {
+      "matrix": {},
+      "lastUpdatedTurn": 0
+    },
+    "heavenlyLand": null,
+    "lifeboundGuInfo": null,
+    "lifeboundDeathPenalty": null,
+    "battleHistory": [],
+    "activeDialogue": null,
+    "isAchievementToastVisible": false,
+    "currentAchievementQueue": [],
+    "gameLog": [],
+    "duelState": {
+      "duelId": "test-duel-001",
+      "phase": "player_turn",
+      "round": 0,
+      "player": {
+        "name": "测试蛊师",
+        "realm": "二转蛊师",
+        "realmNum": 2,
+        "path": "炎道",
+        "daoMarks": 120,
+        "hp": 100,
+        "maxHp": 100,
+        "attack": 22,
+        "defense": 8,
+        "accuracy": 70,
+        "evasion": 35,
+        "gu": [
+          {
+            "name": "星火蛊",
+            "path": "炎道",
+            "tier": 1
+          },
+          {
+            "name": "铜皮蛊",
+            "path": "金道",
+            "tier": 1
+          },
+          {
+            "name": "月光蛊",
+            "path": "光道",
+            "tier": 1
+          }
+        ],
+        "moves": []
+      },
+      "enemy": {
+        "name": "劫匪首领",
+        "realm": "二转蛊师",
+        "realmNum": 2,
+        "hp": 80,
+        "maxHp": 80,
+        "attack": 25,
+        "defense": 8,
+        "accuracy": 70,
+        "evasion": 30,
+        "path": "力道",
+        "daoMarks": 80,
+        "gu": [],
+        "moves": [
+          {
+            "name": "蛮力重击",
+            "damageMultiplier": 1.5,
+            "pathBonus": 5,
+            "description": "劫匪首领灌注全力的一击"
+          }
+        ]
+      },
+      "result": null,
+      "log": [],
+      "startedAt": 1777821319008
+    },
+    "transientCombatConstraint": null,
+    "isAchievementPanelOpen": false
+  }
+}

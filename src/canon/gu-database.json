@@ -1,561 +1,1911 @@
 {
   "_meta": {
-    "version": "1.0",
+    "version": "1.1",
     "source": "蛊真人原著 + 百度百科 + MC百科 + 贴吧设定整理",
     "principle": "按需构建，AI叙事涉及新蛊虫时核实原著后追加条目",
-    "total": 56
+    "total": 124,
+    "updated": "2026-05-04 P3-M2.5: +23 entries from origin research"
   },
   "月光蛊": {
-    "tier": 1, "path": "光道", "rank": "common",
+    "tier": 1,
+    "path": "光道",
+    "rank": "common",
     "effect": "发射月刃，远程攻击，攻击范围十米，古月一族镇族蛊虫",
     "feed": "月光——需在月夜放置于室外，吸收月光精华",
     "feedFailure": "连续三日未喂→饥饿→虚弱（月刃威力减半）→七日后死亡",
     "usageFailure": "真元不足→月刃威力减半；意志动摇→月刃可能偏离目标",
     "refineMaterials": "月光石 + 光道蛊材",
     "refineDifficulty": 2,
-    "feedRequirement": { "type": "月光", "rarity": "common", "description": "需在月夜放置于室外吸收月光精华，阴雨天可用月光石替代但效果减半" }
+    "feedRequirement": {
+      "type": "月光",
+      "rarity": "common",
+      "description": "需在月夜放置于室外吸收月光精华，阴雨天可用月光石替代但效果减半"
+    }
   },
   "酒虫": {
-    "tier": 1, "path": "食道", "rank": "uncommon",
+    "tier": 1,
+    "path": "食道",
+    "rank": "uncommon",
     "effect": "精炼真元，提升真元质量。可将低质真元转化为高质真元",
     "feed": "美酒——品质越高效果越好",
     "feedFailure": "连续七日无酒→酒虫休眠→真元精炼效果消失",
     "usageFailure": "喂劣酒→真元精炼效率下降；过量使用→醉真元（真元暂时浑浊）",
     "refineMaterials": "百年陈酿 + 食道蛊材",
     "refineDifficulty": 4,
-    "feedRequirement": { "type": "美酒", "rarity": "uncommon", "description": "需定期喂食品质美酒，酒越好效果越好，劣酒会降低精炼效率" }
+    "feedRequirement": {
+      "type": "美酒",
+      "rarity": "uncommon",
+      "description": "需定期喂食品质美酒，酒越好效果越好，劣酒会降低精炼效率"
+    }
   },
   "春秋蝉": {
-    "tier": 6, "path": "宙道", "rank": "legendary", "isImmortalGu": true,
+    "tier": 6,
+    "path": "宙道",
+    "rank": "legendary",
+    "isImmortalGu": true,
     "effect": "逆转时间，使蛊师重生回到过去。消耗巨大，使用后自身严重受损",
     "feed": "时间之力——自然时间流逝即为喂养",
     "feedFailure": "不可喂养失败（宙道仙蛊，时间自养）",
     "usageFailure": "重生失败→神魂俱灭；成功→春秋蝉受损需大量时间温养恢复",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属，需升炼或天地生成）",
     "refineDifficulty": 10,
-    "note": "方源核心蛊虫，原著开局即持有残缺春秋蝉"
+    "note": "方源核心蛊虫，原著开局即持有残缺春秋蝉",
+    "feedRequirement": {
+      "type": "时间流逝",
+      "rarity": "legendary",
+      "description": "仙蛊自养——自然时间流逝即为喂养，不可人为干预"
+    }
   },
   "书虫": {
-    "tier": 1, "path": "智道", "rank": "common",
+    "tier": 1,
+    "path": "智道",
+    "rank": "common",
     "effect": "将要记忆的内容喂给书虫吃，只要书虫不失，蛊师就能永远清晰记得",
     "feed": "文字——写在纸上喂食",
     "feedFailure": "无文字可食→书虫饥饿→记忆模糊→死亡后记忆全部丢失",
     "usageFailure": "喂食文字过多→书虫胀死；喂食与已有记忆矛盾的文字→记忆混乱",
     "refineMaterials": "古籍残卷 + 智道蛊材",
-    "refineDifficulty": 1
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "文字",
+      "rarity": "common",
+      "description": "每日需将新鲜文字写在纸上喂食——无文字可食则书虫记忆模糊后死亡"
+    }
   },
   "石皮蛊": {
-    "tier": 1, "path": "土道", "rank": "common",
+    "tier": 1,
+    "path": "土道",
+    "rank": "common",
     "effect": "皮肤顷刻间变为灰白色，膨胀如充气，大幅提升物理防御",
     "feed": "石粉——研磨细石粉末喂食",
     "feedFailure": "无石粉→石皮逐渐变脆→防御力下降→龟裂后死亡",
     "usageFailure": "承受超过极限的冲击→石皮碎裂，蛊师受内伤",
     "refineMaterials": "花岗岩粉末 + 土道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "石粉",
+      "rarity": "common",
+      "description": "每三日研磨细石粉末喂食——缺石粉则石皮变脆防御力下降"
+    }
   },
   "力气蛊": {
-    "tier": 2, "path": "力道", "rank": "common",
+    "tier": 2,
+    "path": "力道",
+    "rank": "common",
     "effect": "产生无形的力之气，兽力虚影脱离蛊师身体，辅助类蛊虫。由风气蛊逆炼而成",
     "feed": "肉食——需喂食生肉",
     "feedFailure": "饥饿→力之气减弱→完全饥饿→力气蛊萎靡",
     "usageFailure": "力之气超出控制范围→虚影反噬自身",
     "refineMaterials": "风气蛊（逆炼）+ 力道蛊材",
-    "refineDifficulty": 3
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "生肉",
+      "rarity": "common",
+      "description": "每周喂食新鲜生肉——饥饿则力之气减弱，长期饥饿萎靡不振"
+    }
   },
   "积德蛊": {
-    "tier": 2, "path": "人道", "rank": "uncommon",
+    "tier": 2,
+    "path": "人道",
+    "rank": "uncommon",
     "effect": "平时积德行善就能自行炼成。行善积德越大，炼出的积德蛊转数越高。道德真传基础核心",
     "feed": "善行——蛊师行善积德即自动喂养",
     "feedFailure": "行恶→积德蛊退化；长期作恶→积德蛊死亡",
     "usageFailure": "以积德蛊行恶事→蛊虫反噬，道德真元溃散",
     "refineMaterials": "不需常规蛊材（自行炼成）",
     "refineDifficulty": 0,
-    "note": "乐土真传之一，无法通过常规炼制获得"
+    "note": "乐土真传之一，无法通过常规炼制获得",
+    "feedRequirement": {
+      "type": "善行",
+      "rarity": "uncommon",
+      "description": "特殊喂养——蛊师行善积德即为喂养，行恶则退化，长期作恶则死亡"
+    }
   },
   "侦察蛊": {
-    "tier": 1, "path": "智道", "rank": "common",
+    "tier": 1,
+    "path": "智道",
+    "rank": "common",
     "effect": "释放后在空中飞行侦察，将视野传回蛊师。可用于观察气运",
     "feed": "晨露——每日清晨收集新鲜露水",
     "feedFailure": "无露水→侦察范围缩小→视野模糊→死亡",
     "usageFailure": "被敌方蛊虫拦截→侦察蛊死亡；飞行超出范围→迷路不归",
     "refineMaterials": "蜻蜓翅膀 + 晨露 + 智道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "晨露",
+      "rarity": "common",
+      "description": "每日清晨收集新鲜露水喂食——缺露水则侦察范围缩小视野模糊"
+    }
   },
   "察运蛊": {
-    "tier": 6, "path": "运道", "rank": "rare", "isImmortalGu": true,
+    "tier": 6,
+    "path": "运道",
+    "rank": "rare",
+    "isImmortalGu": true,
     "effect": "观察目标的运道气运状态，可看到气运颜色和形态",
     "feed": "气运之力——观察气运的过程即为喂养",
     "feedFailure": "长期不观察气运→察运蛊眼力退化",
     "usageFailure": "观察天意强盛者→被天意反噬；观察尊者→察运蛊可能暴毙",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 10,
-    "note": "原著中方源成为仙僵后失去查看自身气运的能力，需此蛊恢复"
+    "note": "原著中方源成为仙僵后失去查看自身气运的能力，需此蛊恢复",
+    "feedRequirement": {
+      "type": "气运",
+      "rarity": "rare",
+      "description": "仙蛊自养——观察气运的过程即为喂养，长期不观则眼力退化"
+    }
   },
   "搜魂蛊": {
-    "tier": 7, "path": "魂道", "rank": "epic", "isImmortalGu": true,
+    "tier": 7,
+    "path": "魂道",
+    "rank": "epic",
+    "isImmortalGu": true,
     "effect": "搜索目标魂魄，获取其记忆和知识",
     "feed": "魂魄碎片——每次搜魂后残留的魂魄碎片即为食物",
     "feedFailure": "无魂魄碎片可食→搜魂蛊饥饿→搜魂精度下降",
     "usageFailure": "搜魂对象意志极强→反噬搜魂蛊师；搜魂尊者→蛊师魂魄受损",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 9,
-    "note": "方源从南疆羊家蛊仙羊枯手中获得，以此构建七转魂道杀招"
+    "note": "方源从南疆羊家蛊仙羊枯手中获得，以此构建七转魂道杀招",
+    "feedRequirement": {
+      "type": "魂魄碎片",
+      "rarity": "epic",
+      "description": "仙蛊——每次搜魂后残留的魂魄碎片即为食物，无魂可食则精度下降"
+    }
   },
   "招灾蛊": {
-    "tier": 7, "path": "运道", "rank": "epic", "isImmortalGu": true,
+    "tier": 7,
+    "path": "运道",
+    "rank": "epic",
+    "isImmortalGu": true,
     "effect": "替蛊仙招灾引难，将地灾天劫脱离原来目标勾连到自己身上",
     "feed": "灾劫——经历灾劫即为喂养",
     "feedFailure": "长期无灾劫→招灾蛊力量衰减",
     "usageFailure": "招来的灾劫超出承受范围→蛊仙自身陨落",
     "refineMaterials": "不可凡蛊炼制",
-    "refineDifficulty": 9
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "灾劫",
+      "rarity": "epic",
+      "description": "仙蛊——经历灾劫即为喂养，长期无灾则力量衰减"
+    }
   },
   "排难蛊": {
-    "tier": 7, "path": "运道", "rank": "epic", "isImmortalGu": true,
+    "tier": 7,
+    "path": "运道",
+    "rank": "epic",
+    "isImmortalGu": true,
     "effect": "将福地中的天劫地灾排遣到外界",
     "feed": "与招灾蛊配合使用，相生相养",
     "feedFailure": "无灾劫可排→排难蛊休眠",
     "usageFailure": "强行排遣超越自身能力的灾劫→排难蛊受损",
     "refineMaterials": "不可凡蛊炼制",
-    "refineDifficulty": 9
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "灾劫",
+      "rarity": "epic",
+      "description": "与招灾蛊配合使用相生相养——无灾劫可排则休眠"
+    }
   },
   "定仙游": {
-    "tier": 6, "path": "宇道", "rank": "legendary", "isImmortalGu": true,
+    "tier": 6,
+    "path": "宇道",
+    "rank": "legendary",
+    "isImmortalGu": true,
     "effect": "三息之内带人瞬移至心中想去之地，四大移动仙蛊之一",
     "composition": "神游蛊 + 碧空蛊 + 定星蛊，借太古的荣耀之光合炼，辅助：两只三更蛊 + 一只百战不殆蛊",
     "feed": "空间坐标——每次瞬移消耗仙元",
     "feedFailure": "不使用时自然休眠，不需额外喂养",
     "usageFailure": "仙元不足→传送偏移或中断；天意封锁区域→无法传送",
     "refineMaterials": "不可常规炼制（需仙蛊方+仙蛊材料）",
-    "refineDifficulty": 10
+    "refineDifficulty": 10,
+    "feedRequirement": {
+      "type": "仙元",
+      "rarity": "legendary",
+      "description": "仙蛊——每次瞬移消耗仙元，不使用时不需额外喂养"
+    }
   },
   "捧杀蛊": {
-    "tier": 2, "path": "人道", "rank": "uncommon",
+    "tier": 2,
+    "path": "人道",
+    "rank": "uncommon",
     "effect": "捧杀他人，使其迷失在赞誉中。可逆炼为捧荣蛊和荣誉蛊",
     "feed": "虚情假意——需虚假的赞美和奉承",
     "feedFailure": "真诚待人→捧杀蛊无法获得食物→力量衰减",
     "usageFailure": "使用者意志不坚→捧杀蛊反噬，自身迷失",
     "refineMaterials": "虚言草 + 人道蛊材",
-    "refineDifficulty": 3
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "虚情假意",
+      "rarity": "uncommon",
+      "description": "每日需虚假的赞美和奉承——真诚待人则无法获得食物力量衰减"
+    }
   },
   "风道加速蛊": {
-    "tier": 2, "path": "风道", "rank": "common",
+    "tier": 2,
+    "path": "风道",
+    "rank": "common",
     "effect": "加速蛊师移动速度，常用于杀招中作为辅助蛊",
     "feed": "风——需在风大之处放置吸收风之精华",
     "feedFailure": "无风环境→加速效果减半→长期饥饿→死亡",
     "usageFailure": "超限加速→蛊师身体无法承受→内伤",
     "refineMaterials": "风之结晶 + 风道蛊材",
-    "refineDifficulty": 3
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "风",
+      "rarity": "common",
+      "description": "每五日需在风大之处放置吸收风之精华——无风则加速效果减半"
+    }
   },
   "血颅蛊": {
-    "tier": 5, "path": "血道", "rank": "epic",
+    "tier": 5,
+    "path": "血道",
+    "rank": "epic",
     "effect": "吸收敌人血液转化为自身真元，极强续航能力",
     "feed": "鲜血——需新鲜血液（人血或兽血均可）",
     "feedFailure": "无血可食→血颅蛊转为吸收蛊师自身血液→危及生命",
     "usageFailure": "吸收过多异种血液→血液冲突；正道蛊师使用→名声败坏",
     "refineMaterials": "百人鲜血 + 血道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "鲜血",
+      "rarity": "epic",
+      "description": "每周需新鲜人血或兽血——无血则转为吸收蛊师自身血液危及生命"
+    }
   },
   "青丝蛊": {
-    "tier": 1, "path": "木道", "rank": "common",
+    "tier": 1,
+    "path": "木道",
+    "rank": "common",
     "effect": "操控发丝攻击或束缚敌人，灵活多变",
     "feed": "草木精华——每日需浸泡草木汁液",
     "feedFailure": "无草木精华→发丝干枯断裂→失去操控力→死亡",
     "usageFailure": "发丝超出操控范围→失去控制；被火道蛊虫克制→发丝燃烧",
     "refineMaterials": "百年青藤 + 木道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "草木精华",
+      "rarity": "common",
+      "description": "每日需浸泡草木汁液——无草木精华则发丝干枯失去操控力"
+    }
   },
   "希冀蛊": {
-    "tier": 1, "path": "智道", "rank": "common",
+    "tier": 1,
+    "path": "智道",
+    "rank": "common",
     "effect": "开窍时吸收希望蛊炸开空窍。希望蛊越多→空窍越大→资质越高",
     "feed": "不需要喂养（仅在开窍时使用一次）",
     "feedFailure": "不适用",
     "usageFailure": "开窍失败→无法成为蛊师（终身凡人）",
     "refineMaterials": "不可炼制（天地生成）",
     "refineDifficulty": 10,
-    "note": "蛊师开窍的必需品，数量决定资质等级"
+    "note": "蛊师开窍的必需品，数量决定资质等级",
+    "feedRequirement": {
+      "type": "不需喂养",
+      "rarity": "common",
+      "description": "仅在开窍时使用一次——使用完毕即完成使命，不需额外喂养"
+    }
   },
   "水龙蛊": {
-    "tier": 3, "path": "水道", "rank": "uncommon",
+    "tier": 3,
+    "path": "水道",
+    "rank": "uncommon",
     "effect": "召唤水龙攻击，范围大伤害高，水道标志性攻击蛊",
     "feed": "水源——需浸泡在纯净水中",
     "feedFailure": "缺水→水龙缩小→威力下降→干涸死亡",
     "usageFailure": "在干燥环境使用→水龙无法成形；被土道蛊虫克制",
     "refineMaterials": "千年寒潭水 + 水道蛊材",
-    "refineDifficulty": 5
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "纯水",
+      "rarity": "uncommon",
+      "description": "每三日需浸泡纯净水中——缺水则水龙缩小威力下降最终干涸"
+    }
   },
   "金钟蛊": {
-    "tier": 3, "path": "金道", "rank": "uncommon",
+    "tier": 3,
+    "path": "金道",
+    "rank": "uncommon",
     "effect": "在蛊师周身形成金色钟形护罩，极高防御力",
     "feed": "金属——需喂食金粉或金矿石",
     "feedFailure": "无金属→金钟变薄→防御下降→金钟碎裂",
     "usageFailure": "承受超限攻击→金钟碎裂，蛊师暴露；金钟破碎后需重新炼制",
     "refineMaterials": "黄金 + 金道蛊材",
-    "refineDifficulty": 5
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "金粉",
+      "rarity": "uncommon",
+      "description": "每周喂食金粉或金矿石粉末——缺金则金钟变薄防御力下降"
+    }
   },
   "火鸦蛊": {
-    "tier": 3, "path": "炎道", "rank": "uncommon",
+    "tier": 3,
+    "path": "炎道",
+    "rank": "uncommon",
     "effect": "释放火鸦群攻击，群攻伤害，可叠加",
     "feed": "火焰——需在火源旁喂养",
     "feedFailure": "无火→火鸦数量减少→威力下降→熄灭死亡",
     "usageFailure": "在水域环境使用→火鸦威力大减；火鸦过多超出控制→烧伤蛊师",
     "refineMaterials": "地火之精 + 炎道蛊材",
-    "refineDifficulty": 4
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "火焰",
+      "rarity": "uncommon",
+      "description": "每五日需在火源旁吸收火焰精华——缺火焰则火鸦数量减少威力下降"
+    }
   },
   "铜皮蛊": {
-    "tier": 1, "path": "防御", "rank": "common",
+    "tier": 1,
+    "path": "金道",
+    "rank": "common",
     "effect": "提升皮肤防御力，是一转基础防御蛊虫",
     "feed": "铜屑——研磨铜粉喂食",
     "feedFailure": "无铜屑→铜皮变薄→防御下降",
     "usageFailure": "承受超限攻击→铜皮龟裂",
-    "refineMaterials": "铜粉 + 防御蛊材",
-    "refineDifficulty": 1
+    "refineMaterials": "铜粉 + 金道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "铜矿石",
+      "rarity": "common",
+      "description": "需定期喂食铜矿石粉末，可在矿脉区域采集"
+    }
   },
   "天元宝莲蛊": {
-    "tier": 3, "path": "辅助", "rank": "epic",
+    "tier": 3,
+    "path": "木道",
+    "rank": "epic",
     "effect": "号称移动元泉，日产约50枚元石及大量真元，有升炼潜力",
     "feed": "元石——需定期放置元石于莲心",
     "feedFailure": "无元石→莲瓣枯萎→产出停止",
     "usageFailure": "元石耗尽→天元宝莲休眠",
     "refineMaterials": "元泉核心 + 木道蛊材",
-    "refineDifficulty": 8
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "元石",
+      "rarity": "rare",
+      "description": "需定期放置元石于莲心——无元石则莲瓣枯萎产出停止"
+    }
   },
   "全力以赴蛊": {
-    "tier": 3, "path": "力道", "rank": "uncommon",
+    "tier": 3,
+    "path": "力道",
+    "rank": "uncommon",
     "effect": "自由催发兽力虚影攻击，可同时释放多种兽力加成",
     "feed": "兽血——需各类野兽血液混合喂食",
     "feedFailure": "无兽血→兽力虚影变淡→攻击力下降",
     "usageFailure": "兽力冲突→虚影反噬自身",
     "refineMaterials": "三兽以上鲜血 + 力道蛊材",
-    "refineDifficulty": 5
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "兽血",
+      "rarity": "uncommon",
+      "description": "需各类野兽血液混合——单一种类兽血效果减半"
+    }
   },
   "剑影蛊": {
-    "tier": 3, "path": "剑道", "rank": "rare",
+    "tier": 3,
+    "path": "剑道",
+    "rank": "rare",
     "effect": "三转攻击最强之一，与刀光蛊齐名，出剑如影无形",
     "feed": "剑意——每次使用后吸收残余剑气",
     "feedFailure": "无剑意→剑影变钝→威力减半",
     "usageFailure": "剑意不足→剑气溃散",
     "refineMaterials": "名剑碎片 + 剑道蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "剑意残片",
+      "rarity": "uncommon",
+      "description": "需在战场或铁匠铺附近吸收残留的剑意"
+    }
   },
   "月影蛊": {
-    "tier": 4, "path": "隐匿", "rank": "uncommon",
+    "tier": 4,
+    "path": "暗道",
+    "rank": "uncommon",
     "effect": "最擅隐藏身形，且能压制蛊师空窍中真元的使用",
     "feed": "月光——需月夜放置吸收月华",
     "feedFailure": "无月光→隐影效果减弱",
     "usageFailure": "被克制隐匿的蛊虫克制→显形",
     "refineMaterials": "三转幻影月蛊（升炼）+ 暗月石",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "月光",
+      "rarity": "common",
+      "description": "与月光蛊类似，需月夜吸收月光，但只需半月之夜即可"
+    }
   },
   "竹君子": {
-    "tier": 4, "path": "智道", "rank": "rare",
+    "tier": 4,
+    "path": "智道",
+    "rank": "rare",
     "effect": "以真诚为食，天生测谎。只能由从未说谎的至诚君子炼化喂养",
     "feed": "真诚——持有者须保持诚实",
     "feedFailure": "说谎→竹君子枯萎→凋零死亡",
     "usageFailure": "被测谎者意志极强→测谎失效",
     "refineMaterials": "百年翠竹 + 智道蛊材",
     "refineDifficulty": 7,
-    "note": "极其罕见，因炼化者必须从未说过谎话"
+    "note": "极其罕见，因炼化者必须从未说过谎话",
+    "feedRequirement": {
+      "type": "真诚",
+      "rarity": "rare",
+      "description": "需主人保持绝对真诚——说谎则竹君子枯萎凋零死亡"
+    }
   },
   "正气蛊": {
-    "tier": 4, "path": "心类", "rank": "rare",
+    "tier": 4,
+    "path": "人道",
+    "rank": "rare",
     "effect": "持有者秉持正义时催动，令宵小胆寒，敌方战意大幅下降",
     "feed": "正义行为——行正道即为喂养",
     "feedFailure": "行不正之事→正气蛊力量衰减→反噬",
     "usageFailure": "以邪道使用→正气蛊溃散",
-    "refineMaterials": "百年浩气石 + 心类蛊材",
-    "refineDifficulty": 6
+    "refineMaterials": "百年浩气石 + 人道蛊材",
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "善行",
+      "rarity": "uncommon",
+      "description": "主人需做一件善事（帮助他人、除暴安良），否则正气衰减"
+    }
   },
   "金缕衣蛊": {
-    "tier": 4, "path": "防御", "rank": "uncommon",
+    "tier": 4,
+    "path": "金道",
+    "rank": "uncommon",
     "effect": "形成金色丝缕覆盖全身，防御力极强，可抵御多数同级攻击",
     "feed": "金丝——需提炼纯金丝线喂食",
     "feedFailure": "无金丝→金缕衣变薄→防御下降→溃散",
     "usageFailure": "承受远超防御上限的攻击→金缕碎裂",
-    "refineMaterials": "精炼金丝 + 防御蛊材",
-    "refineDifficulty": 5
+    "refineMaterials": "精炼金丝 + 金道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "金丝线",
+      "rarity": "uncommon",
+      "description": "需用金丝线缝补，每次战斗后可能需要修补"
+    }
   },
   "天地宏音蛊": {
-    "tier": 5, "path": "音道", "rank": "epic",
+    "tier": 5,
+    "path": "音道",
+    "rank": "epic",
     "effect": "音浪攻势范围广阔，震荡天地，群攻威力惊人。久用会损声带致哑",
     "feed": "声音——战斗中的巨大声响即为喂养",
     "feedFailure": "长期沉默→宏音减弱",
     "usageFailure": "过度使用→声带永久损伤",
     "refineMaterials": "雷霆之声 + 音道蛊材",
-    "refineDifficulty": 8
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "宏大声响",
+      "rarity": "common",
+      "description": "需在瀑布边、战场、大钟旁等产生宏大声音的地方喂养"
+    }
   },
   "血幕天华蛊": {
-    "tier": 5, "path": "血道", "rank": "legendary",
+    "tier": 5,
+    "path": "血道",
+    "rank": "legendary",
     "effect": "形成血幕防御罩，防御力极强且能出不进，比水幕天华更强",
     "feed": "鲜血——需定期喂食新鲜血液维持",
     "feedFailure": "无血→血幕变淡→防御下降",
     "usageFailure": "正道蛊师使用→名声败坏；血道反噬",
     "refineMaterials": "百人鲜血 + 血道蛊材 + 防御蛊材",
     "refineDifficulty": 9,
-    "note": "古月一代原创，血道防御巅峰之作"
+    "note": "古月一代原创，血道防御巅峰之作",
+    "feedRequirement": {
+      "type": "血液",
+      "rarity": "uncommon",
+      "description": "需动物血液涂抹，每次使用后必须重新涂抹才能再次激活"
+    }
   },
   "铁皮蛊": {
-    "tier": 1, "path": "防御", "rank": "common",
+    "tier": 1,
+    "path": "金道",
+    "rank": "common",
     "effect": "皮肤变为铁质光泽，防御力优于铜皮蛊",
     "feed": "铁屑——研磨铁粉喂食",
     "feedFailure": "无铁屑→铁皮变脆→防御下降",
     "usageFailure": "超过防御极限→铁皮龟裂",
     "refineMaterials": "铁粉 + 铜皮蛊（升炼）",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "铁屑",
+      "rarity": "common",
+      "description": "需定期喂食铁屑，铁匠铺附近极易获取"
+    }
   },
   "熊力蛊": {
-    "tier": 1, "path": "力道", "rank": "common",
+    "tier": 1,
+    "path": "力道",
+    "rank": "common",
     "effect": "赋予蛊师熊的力量，熊家标志蛊虫",
     "feed": "兽肉——每次使用后需喂食新鲜兽肉",
     "feedFailure": "无肉→熊力减弱",
     "usageFailure": "超出自身承受→肌肉拉伤",
     "refineMaterials": "熊血 + 力道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "熊类兽肉",
+      "rarity": "common",
+      "description": "需定期喂食熊肉，越是凶猛的熊肉效果越好"
+    }
   },
   "骨枪蛊": {
-    "tier": 1, "path": "骨道", "rank": "common",
+    "tier": 1,
+    "path": "骨道",
+    "rank": "common",
     "effect": "凝结骨枪远程投掷攻击，贯穿力强",
     "feed": "骨粉——研磨兽骨粉末",
     "feedFailure": "无骨粉→骨枪变钝→攻击力下降",
     "usageFailure": "骨枪被格挡→碎裂需重新凝结",
     "refineMaterials": "兽骨 + 骨道蛊材",
-    "refineDifficulty": 2
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "骨骼碎片",
+      "rarity": "common",
+      "description": "需喂食动物的骨骼碎片，可在猎场或战场找到"
+    }
   },
   "蛮力天牛蛊": {
-    "tier": 1, "path": "力道", "rank": "common",
+    "tier": 1,
+    "path": "力道",
+    "rank": "common",
     "effect": "临时赋予一牛之力，维持五个呼吸，消耗型蛊虫",
     "feed": "不需喂养（一次性蛊虫）",
     "feedFailure": "使用后即消散",
     "usageFailure": "力量耗尽",
     "refineMaterials": "天牛甲壳 + 力道蛊材",
-    "refineDifficulty": 1
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "天牛甲壳",
+      "rarity": "uncommon",
+      "description": "需喂食蛮力天牛的甲壳——这是一种罕见的昆虫，需在深山老林中寻找"
+    }
   },
   "净水蛊": {
-    "tier": 1, "path": "水道", "rank": "uncommon",
+    "tier": 1,
+    "path": "水道",
+    "rank": "uncommon",
     "effect": "洗练空窍窍壁，化去异种气息，辅助修行转换流派",
     "feed": "清泉——需纯净泉水浸泡",
     "feedFailure": "无水→净水蛊干涸→失效",
     "usageFailure": "异种气息过强→净水蛊超负荷",
     "refineMaterials": "千年寒泉 + 水道蛊材",
-    "refineDifficulty": 3
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "纯净水源",
+      "rarity": "common",
+      "description": "需置于纯净水源中，污染水源会使其死亡"
+    }
   },
   "幽影随行蛊": {
-    "tier": 2, "path": "暗道", "rank": "uncommon",
+    "tier": 2,
+    "path": "暗道",
+    "rank": "uncommon",
     "effect": "身体化为浓郁黑暗潜行，视线难以追踪",
     "feed": "阴影——需在黑暗中放置吸收阴气",
     "feedFailure": "长期暴露光亮→幽影变淡→隐匿下降",
     "usageFailure": "被光道蛊虫照射→显形",
     "refineMaterials": "暗影石 + 暗道蛊材",
-    "refineDifficulty": 4
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "阴影",
+      "rarity": "common",
+      "description": "需在有阴影的地方放置，长时间暴晒会使其虚弱"
+    }
   },
   "爱生离": {
-    "tier": 2, "path": "毒道", "rank": "rare",
+    "tier": 2,
+    "path": "毒道",
+    "rank": "rare",
     "effect": "号称二转第一毒，需生息草+寡妇蛛+红针蝎+爱人之心炼制",
     "feed": "毒物——各类毒草毒虫均可喂食",
     "feedFailure": "无毒物→毒性衰减",
     "usageFailure": "毒量控制不当→自伤",
     "refineMaterials": "生息草 + 寡妇蛛 + 红针蝎 + 爱人之心",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "情感碎片",
+      "rarity": "rare",
+      "description": "需吸收主人经历过的'爱别离'情感记忆——失去重要的人的情感"
+    }
   },
   "电眼蛊": {
-    "tier": 3, "path": "侦查", "rank": "uncommon",
+    "tier": 3,
+    "path": "雷道",
+    "rank": "uncommon",
     "effect": "窥隐破形，能看穿隐匿和伪装",
     "feed": "雷电——雷雨天放置室外吸收雷电之力",
     "feedFailure": "无雷电→窥隐能力下降→视野模糊",
     "usageFailure": "观察强于自身的隐匿→被反噬致盲",
-    "refineMaterials": "雷电精华 + 侦查蛊材",
-    "refineDifficulty": 5
+    "refineMaterials": "雷电精华 + 雷道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "雷电余威",
+      "rarity": "uncommon",
+      "description": "雷雨天气后置于露天吸收空气中的雷电余威"
+    }
   },
   "雷翼蛊": {
-    "tier": 3, "path": "雷道", "rank": "rare",
+    "tier": 3,
+    "path": "雷道",
+    "rank": "rare",
     "effect": "凝聚雷光羽翼，短时间内飞翔",
     "feed": "雷电——雷雨天放置吸收雷电",
     "feedFailure": "无雷电→雷翼变弱→飞行时间缩短",
     "usageFailure": "雷翼消耗殆尽→坠落",
     "refineMaterials": "雷鹰羽 + 雷道蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "雷击木碎片",
+      "rarity": "uncommon",
+      "description": "需喂食被雷电劈中的树木的碎片"
+    }
   },
   "金罡蛊": {
-    "tier": 3, "path": "防御", "rank": "uncommon",
+    "tier": 3,
+    "path": "金道",
+    "rank": "uncommon",
     "effect": "形成金刚罡气护体，防御极强，三转防御核心",
     "feed": "金属——需高品质金属粉末",
     "feedFailure": "无金属→罡气变薄→防御下降",
     "usageFailure": "承受超限攻击→罡气碎裂",
-    "refineMaterials": "金刚石 + 防御蛊材",
-    "refineDifficulty": 5
+    "refineMaterials": "金刚石 + 金道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "金系蛊材",
+      "rarity": "uncommon",
+      "description": "需喂食金系蛊材粉末，品质越高效果越好"
+    }
   },
   "金龙蛊": {
-    "tier": 4, "path": "金道", "rank": "rare",
+    "tier": 4,
+    "path": "金道",
+    "rank": "rare",
     "effect": "催动形成金龙虚影攻击，附带电光灼烧效果",
     "feed": "雷电+金属——雷雨天喂养效果最佳",
     "feedFailure": "无雷电→金龙变淡→威力下降",
     "usageFailure": "金龙超出控制范围→反噬蛊师",
     "refineMaterials": "雷击过的黄金 + 金道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "雷电精华",
+      "rarity": "rare",
+      "description": "需喂食雷击金属粉末或雷雨天吸收雷电精华——普通龙类蛊材无法替代雷电精华"
+    }
   },
   "金风送爽蛊": {
-    "tier": 4, "path": "风道", "rank": "rare",
+    "tier": 4,
+    "path": "风道",
+    "rank": "rare",
     "effect": "形成金色旋风进行治疗，风道与治疗结合的罕见蛊虫",
     "feed": "清风——需放置在通风高处",
     "feedFailure": "长期无风→治疗旋风减弱",
     "usageFailure": "旋风中混杂杂质→治疗效果下降",
     "refineMaterials": "金风精华 + 风道蛊材 + 治疗蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "秋风之气",
+      "rarity": "common",
+      "description": "需在秋季置于室外吸收秋风之气"
+    }
   },
   "苦力蛊": {
-    "tier": 4, "path": "力道", "rank": "rare",
+    "tier": 4,
+    "path": "力道",
+    "rank": "rare",
     "effect": "受伤越重痛苦越深，发挥力气越大，有上限",
     "feed": "苦痛——每次承受伤害即为喂养",
     "feedFailure": "长期不受伤害→苦力蛊力量衰减",
     "usageFailure": "超出承受极限→苦力蛊力量反噬",
     "refineMaterials": "苦痛精华 + 力道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "苦痛",
+      "rarity": "common",
+      "description": "需主人承受伤害——每次受伤即为喂养，长期无伤害则力量衰减"
+    }
   },
   "油龙蛊": {
-    "tier": 4, "path": "火道", "rank": "uncommon",
+    "tier": 4,
+    "path": "炎道",
+    "rank": "uncommon",
     "effect": "漆黑火油化为龙形攻击，并非实体但威力惊人",
     "feed": "火油——需高品质火油浸泡",
     "feedFailure": "无火油→油龙缩小→威力下降",
     "usageFailure": "在雨天使用→油龙被浇灭",
-    "refineMaterials": "百年火油 + 火道蛊材",
-    "refineDifficulty": 5
+    "refineMaterials": "百年火油 + 炎道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "动物油脂",
+      "rarity": "common",
+      "description": "需喂食动物油脂，常见于猎场"
+    }
   },
   "狼顾蛊": {
-    "tier": 4, "path": "奴道", "rank": "rare",
+    "tier": 4,
+    "path": "奴道",
+    "rank": "rare",
     "effect": "寄托左眼，可将狼类野兽视野转移到蛊师眼中，远程侦察",
     "feed": "狼血——需定期取狼血喂食",
     "feedFailure": "无狼血→视野模糊→视野中断",
     "usageFailure": "狼被杀死→视野丢失",
     "refineMaterials": "狼王之眼 + 奴道蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "狼血",
+      "rarity": "uncommon",
+      "description": "需定期取狼血喂食——喂食时主人需蹲伏呈'顾'状"
+    }
   },
   "狼嚎蛊": {
-    "tier": 4, "path": "奴道", "rank": "rare",
+    "tier": 4,
+    "path": "奴道",
+    "rank": "rare",
     "effect": "寄托咽喉，发狼王怒吼令狼群战力暴涨",
     "feed": "狼血——与狼顾蛊共用狼血喂养",
     "feedFailure": "无狼血→狼嚎减衰",
     "usageFailure": "过度使用→声带永久损伤",
     "refineMaterials": "狼王之喉 + 奴道蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "狼血",
+      "rarity": "uncommon",
+      "description": "需定期取狼血喂食——与狼顾蛊共用狼血来源"
+    }
   },
   "狼吞蛊": {
-    "tier": 4, "path": "后勤", "rank": "uncommon",
+    "tier": 4,
+    "path": "食道",
+    "rank": "uncommon",
     "effect": "狼头鱼肚形象，用于大量储存物品",
     "feed": "食物——任何食物均可喂",
     "feedFailure": "饥饿→狼吞蛊缩小→储存空间减小",
     "usageFailure": "储存超出容量→狼吞蛊呕吐",
     "refineMaterials": "大肚蛙（升炼）+ 空间蛊材",
-    "refineDifficulty": 4
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "鲜肉",
+      "rarity": "common",
+      "description": "需在主人进食时同步喂食——主人吃多少它吃多少"
+    }
   },
   "横冲直撞蛊": {
-    "tier": 4, "path": "移动", "rank": "uncommon",
+    "tier": 4,
+    "path": "力道",
+    "rank": "uncommon",
     "effect": "横冲+直撞合炼，冲锋距离扩至两百步，间隔缩短",
     "feed": "气势——每次冲锋后自动滋养",
     "feedFailure": "长期不冲锋→冲刺距离缩减",
     "usageFailure": "冲锋被阻→反震伤害",
     "refineMaterials": "横冲蛊 + 直撞蛊（合炼）",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "气势",
+      "rarity": "common",
+      "description": "需主人频繁冲锋——每次冲锋后自动滋养，静止超过一天会使其死亡"
+    }
   },
   "水幕天华蛊": {
-    "tier": 4, "path": "水道", "rank": "rare",
+    "tier": 4,
+    "path": "水道",
+    "rank": "rare",
     "effect": "形成巨大水罩，防御极强可挡五转攻伐。无法移动，无法出入",
     "feed": "水——需置于流动水域",
     "feedFailure": "无水→水幕变薄→防御骤降",
     "usageFailure": "水流被断→水幕溃散；护城使用时机不对",
     "refineMaterials": "千年寒潭水 + 水道蛊材 + 防御蛊材",
     "refineDifficulty": 8,
-    "note": "常用于护城，战略级防御蛊虫"
+    "note": "常用于护城，战略级防御蛊虫",
+    "feedRequirement": {
+      "type": "纯净水源",
+      "rarity": "uncommon",
+      "description": "需置于瀑布下吸收水幕精华"
+    }
   },
   "点金蛊": {
-    "tier": 5, "path": "金道", "rank": "rare",
+    "tier": 5,
+    "path": "金道",
+    "rank": "rare",
     "effect": "射出金光，生灵被射中化为纯金死亡，攻击与封杀一体",
     "feed": "金器——需金质物品定期喂食",
     "feedFailure": "无金器→金光变弱→点化失效",
     "usageFailure": "被金道抗性蛊克制；误伤友军→无法挽回",
     "refineMaterials": "纯金 + 金道蛊材",
-    "refineDifficulty": 8
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "金属矿石",
+      "rarity": "uncommon",
+      "description": "需喂食各类金属矿石粉末"
+    }
   },
   "金汤蛊": {
-    "tier": 5, "path": "金道", "rank": "rare",
+    "tier": 5,
+    "path": "金道",
+    "rank": "rare",
     "effect": "如黄金水液，形状任意变化，打散可重聚，极致防守",
     "feed": "金液——需液态金属喂食",
     "feedFailure": "无金液→金汤变稠→流动性下降",
     "usageFailure": "被固金类蛊虫冻结→无法变形",
     "refineMaterials": "液态黄金 + 金道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "防御型蛊材",
+      "rarity": "uncommon",
+      "description": "需喂食各类防御型蛊材的粉末"
+    }
   },
   "松骨蛊": {
-    "tier": 5, "path": "骨道", "rank": "rare",
+    "tier": 5,
+    "path": "骨道",
+    "rank": "rare",
     "effect": "方圆五十里内松软一切生命骨骼，群控领域级蛊虫",
     "feed": "骨粉——需大量骨粉浸养",
     "feedFailure": "无骨粉→松骨范围缩小→效力减弱",
     "usageFailure": "对骨道抗性者无效",
     "refineMaterials": "万年化石 + 骨道蛊材",
-    "refineDifficulty": 8
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "松木灰烬",
+      "rarity": "common",
+      "description": "需在松木灰烬中静置——松木燃烧后的灰烬"
+    }
   },
   "功倍蛊": {
-    "tier": 5, "path": "律道", "rank": "rare",
+    "tier": 5,
+    "path": "律道",
+    "rank": "rare",
     "effect": "使其他蛊虫效果加倍，转数越高增幅越大，真元消耗也翻倍",
     "feed": "能量——喂养其他蛊虫时附带滋养",
     "feedFailure": "单独喂养→功倍蛊虚弱→增幅衰减",
     "usageFailure": "真元不足以支撑双倍消耗→功倍失效",
     "refineMaterials": "倍增石 + 律道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "成就",
+      "rarity": "uncommon",
+      "description": "需主人在完成一件有难度的事情后意气风发时喂养——方可维持效果"
+    }
   },
   "人如故": {
-    "tier": 5, "path": "宙道", "rank": "legendary",
+    "tier": 5,
+    "path": "宙道",
+    "rank": "legendary",
     "effect": "令伤者身体恢复到原来状态，紫山真君传承中的治疗巅峰",
     "feed": "时光——时间流逝自然喂养",
     "feedFailure": "不可喂养失败（宙道自养）",
     "usageFailure": "恢复过度→消耗蛊师寿命；逆天改命→遭天意反噬",
     "refineMaterials": "不可凡蛊炼制（传承获取）",
     "refineDifficulty": 10,
-    "note": "太白云生标志性蛊虫，山如故+江如故+人如故天下闻名"
+    "note": "太白云生标志性蛊虫，山如故+江如故+人如故天下闻名",
+    "feedRequirement": {
+      "type": "时间",
+      "rarity": "rare",
+      "description": "宙道自养——自然时间流逝即为喂养，不可人为干预"
+    }
   },
   "百战不殆蛊": {
-    "tier": 5, "path": "智道", "rank": "epic",
+    "tier": 5,
+    "path": "智道",
+    "rank": "epic",
     "effect": "使用后一次炼蛊必成，信王传承中的无价之宝",
     "feed": "不需喂养（一次性消耗）",
     "feedFailure": "使用后即消散",
     "usageFailure": "炼蛊对象超出一转→还需辅材",
     "refineMaterials": "不可炼制（传承获取，天地间极其稀有）",
     "refineDifficulty": 10,
-    "note": "方源从信王传承获得，价值连城"
+    "note": "方源从信王传承获得，价值连城",
+    "feedRequirement": {
+      "type": "不需喂养",
+      "rarity": "legendary",
+      "description": "一次性消耗蛊虫——使用后即消散，不需喂养"
+    }
   },
   "千里地狼蛛": {
-    "tier": 5, "path": "奴道", "rank": "epic",
+    "tier": 5,
+    "path": "奴道",
+    "rank": "epic",
     "effect": "全身漆黑，以土为食，可钻地穿行，百战级坐骑+战斗双用",
     "feed": "土石——吞食泥土岩石自动滋养",
     "feedFailure": "无土可食→钻地能力下降→体力衰减",
     "usageFailure": "地面被冰封→无法钻出；被天敌克制",
     "refineMaterials": "地狼蛛母体 + 土道蛊材 + 奴道蛊材",
-    "refineDifficulty": 9
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "小型蛊虫尸体",
+      "rarity": "uncommon",
+      "description": "需喂食小型蛊虫的尸体，每周至少一只"
+    }
   },
   "岩枪蛊": {
-    "tier": 5, "path": "土道", "rank": "uncommon",
+    "tier": 5,
+    "path": "土道",
+    "rank": "uncommon",
     "effect": "大地中凝聚岩石长枪突刺，范围攻击",
     "feed": "岩石——需各类岩石粉末",
     "feedFailure": "无岩石→岩枪变脆→碎裂",
     "usageFailure": "在沙地使用→无法凝聚",
     "refineMaterials": "花岗岩心 + 土道蛊材",
-    "refineDifficulty": 6
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "岩石碎片",
+      "rarity": "common",
+      "description": "需喂食特定岩石的碎片——越硬的岩石效果越好"
+    }
   },
   "冰封蛊": {
-    "tier": 5, "path": "冰道", "rank": "rare",
+    "tier": 5,
+    "path": "冰道",
+    "rank": "rare",
     "effect": "大范围冰封地面和敌人，控场能力极强",
     "feed": "冰雪——需在极寒环境中滋养",
     "feedFailure": "温暖环境→冰封范围缩小",
     "usageFailure": "敌人有火道防御→冰封被克制",
     "refineMaterials": "千年玄冰 + 冰道蛊材",
-    "refineDifficulty": 7
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "冰晶",
+      "rarity": "common",
+      "description": "需在寒冷环境中吸收冰晶，高温环境会使其疲惫"
+    }
   },
   "九眼酒虫": {
-    "tier": 5, "path": "食道", "rank": "epic",
+    "tier": 5,
+    "path": "食道",
+    "rank": "epic",
     "effect": "两只七香酒虫+九种百兽王眼珠合炼，提纯黄金真元一个小境界（仅五转有效）",
     "feed": "美酒+百兽王眼珠——不可缺一",
     "feedFailure": "无美酒→提纯效果减弱；无眼珠→退化为七香酒虫",
     "usageFailure": "喂劣酒→真元精炼效率下降",
     "refineMaterials": "两只七香酒虫 + 九种百兽王眼珠（合炼）",
-    "refineDifficulty": 9
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "九种不同的美酒",
+      "rarity": "rare",
+      "description": "需喂食九种不同来源的美酒——每缺失一种，效果减少一成"
+    }
+  },
+  "春雷蛊": {
+    "tier": 2,
+    "path": "雷道",
+    "rank": "uncommon",
+    "effect": "释放春雷之力，对敌人造成麻痹效果。春季使用威力翻倍",
+    "feed": "春雷余威——需在初春雷雨天后置于露天",
+    "feedFailure": "连续三十日无春雷喂养→麻痹效果消失",
+    "usageFailure": "非春季使用→威力减半；真元不足→麻痹时间缩短",
+    "refineMaterials": "雷击木 + 雷道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "春雷余威",
+      "rarity": "uncommon",
+      "description": "初春雷雨天后置于露天吸收春雷余威"
+    }
+  },
+  "化石蛊": {
+    "tier": 3,
+    "path": "土道",
+    "rank": "rare",
+    "effect": "将有机物质转化为化石，可用于制造高硬度蛊材和防御屏障",
+    "feed": "古老岩石粉末——年代越久的岩石效果越好",
+    "feedFailure": "连续喂食新岩石→转化效率递减→完全失效",
+    "usageFailure": "转化失败→材料损毁且会反噬消耗大量真元",
+    "refineMaterials": "万年化石 + 土道蛊材",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "古老岩石粉末",
+      "rarity": "rare",
+      "description": "需在矿脉深层或古战场采集的化石研磨成粉末"
+    }
+  },
+  "画皮蛊": {
+    "tier": 2,
+    "path": "变化道",
+    "rank": "uncommon",
+    "effect": "改变面部容貌和部分体型，用于伪装。持续时间约一炷香",
+    "feed": "人皮——死后人的皮肤（蛊师尸体上的皮肤）",
+    "feedFailure": "喂食动物皮→伪装效果粗糙易被识破→三日内失效",
+    "usageFailure": "真元不足→伪装不完整；对高阶蛊师无效",
+    "refineMaterials": "人皮 + 变化道蛊材",
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "人皮",
+      "rarity": "uncommon",
+      "description": "需喂食蛊师死后的人皮——凡人皮肤无效"
+    }
+  },
+  "裂地蛊": {
+    "tier": 3,
+    "path": "土道",
+    "rank": "uncommon",
+    "effect": "制造地震效果，使地面开裂，影响范围内的敌人失去平衡",
+    "feed": "地脉之气——在大地震后吸收",
+    "feedFailure": "连续三月无地脉之气→震动幅度降至微弱→失效",
+    "usageFailure": "在岩石地面使用→效果减少；过量使用→自身也受影响",
+    "refineMaterials": "地动石 + 土道蛊材",
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "地脉之气",
+      "rarity": "uncommon",
+      "description": "需在大地震后将蛊虫置于震中吸收地脉之气"
+    }
+  },
+  "洗髓蛊": {
+    "tier": 3,
+    "path": "水道",
+    "rank": "rare",
+    "effect": "洗涤骨髓，提升体魄资质。可缓慢改善蛊师的体魄属性（上限+2）",
+    "feed": "灵泉之水——位于地脉节点的天然灵泉",
+    "feedFailure": "喂普通水→洗涤效果降格→造成骨髓刺痛",
+    "usageFailure": "体魄已满→无效；连续使用→骨髓过度洗涤造成反噬",
+    "refineMaterials": "灵泉水 + 水道蛊材 + 骨髓（任意动物）",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "灵泉之水",
+      "rarity": "rare",
+      "description": "需取地脉节点的天然灵泉之水，普通水源无效且有害"
+    }
+  },
+  "换骨蛊": {
+    "tier": 4,
+    "path": "骨道",
+    "rank": "rare",
+    "effect": "替换一根骨骼。可用于修复断裂的骨骼或替换为更坚固的兽骨",
+    "feed": "活体动物骨骼——刚取出的新鲜骨骼",
+    "feedFailure": "喂食陈旧骨骼→换骨时断裂风险大增",
+    "usageFailure": "换骨失败→骨骼无法愈合→永久残废；成功→需一月恢复期",
+    "refineMaterials": "活体兽骨 + 骨道蛊材 + 医道辅助蛊材",
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "活体骨骼",
+      "rarity": "rare",
+      "description": "需活体动物的新鲜骨骼——从猎杀后取出到喂食不得超过一炷香"
+    }
+  },
+  "缝纫蛊": {
+    "tier": 1,
+    "path": "土道",
+    "rank": "common",
+    "effect": "加速伤口愈合，催生新生皮肤。外用类蛊虫",
+    "feed": "蚕丝——天然桑蚕丝线",
+    "feedFailure": "喂麻绳或人造线→伤口缝合处溃烂",
+    "usageFailure": "伤口过大→超出缝纫能力；已在腐烂的伤口→越缝越糟",
+    "refineMaterials": "桑蚕丝 + 土道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "蚕丝",
+      "rarity": "common",
+      "description": "需天然桑蚕丝线，可在养蚕人家处购买"
+    }
+  },
+  "破风蛊": {
+    "tier": 2,
+    "path": "风道",
+    "rank": "uncommon",
+    "effect": "瞬间制造强风冲击，将前方的箭矢和暗器吹偏方向",
+    "feed": "狂风中的气浪——大风天置于高处",
+    "feedFailure": "连续无风→风力减弱→暗器吹偏失败",
+    "usageFailure": "在密闭空间使用→自身也被气浪冲击；真元不足→风力微弱",
+    "refineMaterials": "风眼石 + 风道蛊材",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "狂风",
+      "rarity": "common",
+      "description": "需在大风天置于高处，吸收狂风中的气浪"
+    }
+  },
+  "蜃楼蛊": {
+    "tier": 4,
+    "path": "智道",
+    "rank": "epic",
+    "effect": "制造大规模幻觉，覆盖范围达方圆三里。陷入幻觉者看到的是各自内心最恐惧的东西",
+    "feed": "恐惧——主人的恐惧或他人的恐惧",
+    "feedFailure": "主人长期没有恐惧感→幻觉范围逐年缩减",
+    "usageFailure": "对方心智极高→可能看穿幻觉；范围过大→真元消耗倍增",
+    "refineMaterials": "上古幻阵碎片 + 智道蛊材 + 梦道蛊材",
+    "refineDifficulty": 8,
+    "feedRequirement": {
+      "type": "恐惧",
+      "rarity": "rare",
+      "description": "需吸收恐惧情绪——主人的恐惧或采集他人的恐惧都有效"
+    }
+  },
+  "辟谷蛊": {
+    "tier": 1,
+    "path": "食道",
+    "rank": "common",
+    "effect": "减少食物需求，一周只需进食一次即可维持体力",
+    "feed": "五谷杂粮——任何谷物",
+    "feedFailure": "完全不喂→反噬：蛊师暴食一周无法停止",
+    "usageFailure": "被人强行中断辟谷状态→之前累积的饥饿感全部爆发",
+    "refineMaterials": "五谷 + 食道蛊材",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "五谷",
+      "rarity": "common",
+      "description": "每周喂食一次五谷杂粮即可"
+    }
+  },
+  "缚灵蛊": {
+    "tier": 3,
+    "path": "魂道",
+    "rank": "rare",
+    "effect": "束缚游离的灵魂、残魂和游魂，可用于镇压或捕捉灵魂",
+    "feed": "灵魂碎片——战场上收集的未散尽的灵魂残余",
+    "feedFailure": "喂食自己的灵魂→反噬严重；三月无灵魂喂养→缚灵能力消失",
+    "usageFailure": "对付完整灵魂→效果有限；对方魂道修为高→可能反束缚",
+    "refineMaterials": "魂匣 + 魂道蛊材 + 死者骨灰",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "灵魂碎片",
+      "rarity": "rare",
+      "description": "需在战场上收集未散尽的灵魂残余——新鲜死亡不超过一炷香"
+    }
+  },
+  "追踪蛊": {
+    "tier": 1,
+    "path": "智道",
+    "rank": "common",
+    "effect": "标记目标后追踪其方位。需先获取目标的一件私人物品作为追踪介质",
+    "feed": "新环境信息——每次到达一个新地方需让蛊虫感知",
+    "feedFailure": "连续三月未到新地方→追踪范围缩减→最终失效",
+    "usageFailure": "目标进入秘境或特殊禁制范围→追踪中断；介质失效→需重新标记",
+    "refineMaterials": "嗅觉类动物蛊材 + 智道蛊材",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "新环境信息",
+      "rarity": "common",
+      "description": "每次到达一个新地方时让蛊虫感知周围环境，否则追踪精度下降"
+    }
+  },
+  "熔岩蛊": {
+    "tier": 3,
+    "path": "炎道",
+    "rank": "uncommon",
+    "effect": "释放高温熔岩，对一定范围内造成灼烧伤害。可熔化金属和矿石",
+    "feed": "炽热的岩浆——火山口采集",
+    "feedFailure": "喂普通火焰→温度不足→熔岩冷却为普通岩石",
+    "usageFailure": "在水域环境使用→熔岩迅速冷却为石头；真元不足→温度骤降",
+    "refineMaterials": "岩浆结晶 + 炎道蛊材",
+    "refineDifficulty": 6,
+    "feedRequirement": {
+      "type": "岩浆",
+      "rarity": "uncommon",
+      "description": "需在火山口采集炽热岩浆，普通火焰无法满足"
+    }
+  },
+  "吞金蛊": {
+    "tier": 2,
+    "path": "金道",
+    "rank": "uncommon",
+    "effect": "吞噬金属并存储，可在需要时释放出高密度金属块作为攻击或防御",
+    "feed": "各类金属——铁铜金银皆可，品质越高存储密度越大",
+    "feedFailure": "长期不喂→体内金属氧化→释放时威力大减",
+    "usageFailure": "吞噬过量→蛊虫超载炸裂；释放不干净→体内金属残留削弱下次吞噬",
+    "refineMaterials": "五种不同金属的粉末 + 金道蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "金属",
+      "rarity": "common",
+      "description": "需定期喂食各类金属，品质越高存储密度越大"
+    }
+  },
+  "种蛊": {
+    "tier": 1,
+    "path": "木道",
+    "rank": "common",
+    "effect": "加快植物生长速度——一棵树从种子到幼苗只需一天",
+    "feed": "腐殖土——腐烂植物和泥土的混合物",
+    "feedFailure": "喂贫瘠沙土→植物病变→催生的作物有毒",
+    "usageFailure": "对已成年树木→效果微乎其微；对蛊师体内的植物种子可能引发失控倾向",
+    "refineMaterials": "各类作物的种子 + 木道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "腐殖土",
+      "rarity": "common",
+      "description": "腐烂植物和泥土的混合物，可在森林地表轻松采集"
+    }
+  },
+  "扬声蛊": {
+    "tier": 1,
+    "path": "风道",
+    "rank": "common",
+    "effect": "将主人的声音放大三倍并定向传播——用于远程喊话或示警",
+    "feed": "主人说话时的声波——每天讲话不少于三百字",
+    "feedFailure": "主人连续七日不说话→扬声蛊失声",
+    "usageFailure": "在狂风中使用→声音被吹散；多人同时使用→干扰严重",
+    "refineMaterials": "号角碎片 + 风道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "声波",
+      "rarity": "common",
+      "description": "主人每天至少讲话三百字，否则蛊虫失声"
+    }
+  },
+  "酒囊蛊": {
+    "tier": 1,
+    "path": "食道",
+    "rank": "common",
+    "effect": "在体内形成酒囊——可将任何液体转化为酒，酒的品质取决于液体质量",
+    "feed": "干净水源——每日约一碗水",
+    "feedFailure": "不喂水→体内酒囊干瘪→转化失效",
+    "usageFailure": "转化的酒不可用于炼蛊（酒精浓度太低）；过量使用→酒醉蛊师",
+    "refineMaterials": "酿酒缸 + 食道蛊材 + 酒曲",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "干净水源",
+      "rarity": "common",
+      "description": "每日需一碗干净的水，脏水会产出劣质酒"
+    }
+  },
+  "巡夜蛊": {
+    "tier": 1,
+    "path": "智道",
+    "rank": "common",
+    "effect": "夜间自动巡逻——遇异常（敌人、野兽、天灾前兆）会唤醒主人",
+    "feed": "月光——每夜的月光精华",
+    "feedFailure": "连续三日无月光→巡夜能力降至零→失效",
+    "usageFailure": "月蚀之夜→巡逻范围减半；被强光照射→白天巡逻无效",
+    "refineMaterials": "猫眼石 + 智道蛊材",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "月光",
+      "rarity": "common",
+      "description": "每夜需要月光精华，阴雨天可用月光石替代但效果减半"
+    }
+  },
+  "醒酒蛊": {
+    "tier": 1,
+    "path": "水道",
+    "rank": "common",
+    "effect": "瞬间消除醉酒状态——任何程度的醉酒均可在一息之内清醒",
+    "feed": "茶水——越浓的茶效果越好",
+    "feedFailure": "长期不喂→清醒速度从一息降至一炷香",
+    "usageFailure": "连续解酒→对蛊师身体本身造成负担（宿主肝功能积累损伤）",
+    "refineMaterials": "茶叶 + 水道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "茶水",
+      "rarity": "common",
+      "description": "越浓的茶效果越好，淡茶只能维持基本活性"
+    }
+  },
+  "假死蛊": {
+    "tier": 3,
+    "path": "魂道",
+    "rank": "rare",
+    "effect": "使主人进入假死状态——心率停止、体温下降、气息全无——持续一个时辰",
+    "feed": "濒死体验——主人需回忆或经历一次濒死感受",
+    "feedFailure": "主人长期处于安逸状态→假死蛊逐渐失效→无法进入假死",
+    "usageFailure": "假死超过时限→可能真的死亡；被高阶魂道蛊师检测→假死会被识破",
+    "refineMaterials": "死神蛾的蛹 + 魂道蛊材 + 主人的一滴心头血",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "濒死体验",
+      "rarity": "rare",
+      "description": "主人需定期回忆或经历濒死感受，否则假死蛊逐渐失效"
+    }
+  },
+  "听音蛊": {
+    "tier": 1,
+    "path": "风道",
+    "rank": "common",
+    "effect": "扩大听觉范围——可听到三里外的对话内容",
+    "feed": "安静环境中的细微声音——蟋蟀鸣叫、滴水声等",
+    "feedFailure": "置于持续嘈杂处→听力衰减→回到正常水平",
+    "usageFailure": "在嘈杂环境中使用→耳鸣；偷听高阶蛊师→可能被察觉和反击",
+    "refineMaterials": "大型动物的耳骨 + 风道蛊材",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "细微声音",
+      "rarity": "common",
+      "description": "需在安静环境中吸收细微声音——蟋蟀鸣叫、滴水声等"
+    }
+  },
+  "倒戈蛊": {
+    "tier": 4,
+    "path": "奴道",
+    "rank": "epic",
+    "effect": "强制敌人的蛊虫临时'倒戈'——被控蛊虫会攻击自己原来的主人一个回合",
+    "feed": "蛊虫的认主意志——每次成功倒戈一只蛊虫，就吸收其原主人的意志碎片",
+    "feedFailure": "连续三月没有倒戈→倒戈蛊进入'反噬期'——可能倒戈主人自己的蛊虫",
+    "usageFailure": "敌方蛊虫与主人羁绊（如本命蛊）极深→倒戈失败且反噬；对方奴道修为高→可能反制",
+    "refineMaterials": "背叛者的心 + 奴道蛊材 + 魂道辅助蛊材",
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "认主意志碎片",
+      "rarity": "rare",
+      "description": "每次成功倒戈后自动吸收，无需额外喂养"
+    }
+  },
+  "锯骨蛊": {
+    "tier": 2,
+    "path": "骨道",
+    "rank": "uncommon",
+    "effect": "形成骨锯——可从敌人体内直接切割骨骼。攻击无视部分物理防御",
+    "feed": "骨骼粉末——越硬的骨骼效果越好",
+    "feedFailure": "长期不喂→骨锯变钝→切割效率下降→最终失效",
+    "usageFailure": "切割金石类防御物体→骨锯齿磨损（需五天恢复）；对方骨道修为高→效果大幅削弱",
+    "refineMaterials": "锯 + 骨道蛊材 + 铁匠铺的锯木屑",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "骨骼粉末",
+      "rarity": "common",
+      "description": "需定期喂食骨骼粉末，越硬的骨骼产出的粉末效果越好"
+    }
+  },
+  "驭虫蛊": {
+    "tier": 2,
+    "path": "奴道",
+    "rank": "uncommon",
+    "effect": "短暂控制野外的昆虫群，命令其攻击或扰乱敌人",
+    "feed": "昆虫的新鲜尸体——死亡不超过一炷香",
+    "feedFailure": "喂死尸太久→控制范围锐减→最终失灵",
+    "usageFailure": "在寒冬使用→昆虫数量大幅减少；被奴道高阶级蛊师反控→昆虫群反噬",
+    "refineMaterials": "蜂巢 + 奴道蛊材 + 蜜糖",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "新鲜昆虫尸体",
+      "rarity": "common",
+      "description": "需喂食新鲜昆虫尸体——死亡不超过一炷香"
+    }
+  },
+  "鉴毒蛊": {
+    "tier": 1,
+    "path": "毒道",
+    "rank": "common",
+    "effect": "检测食物和水源中的毒性——有毒则蛊虫变色",
+    "feed": "毒素样本——微量即可，任何类型的毒素",
+    "feedFailure": "一年未接触毒素→毒性识别能力逐渐消退（但不会完全失效）",
+    "usageFailure": "面对未知的新型毒素→可能无法识别；被其他毒道高人以隐藏毒素欺骗→可能漏检",
+    "refineMaterials": "三种不同毒素的微量样本 + 毒道蛊材",
+    "refineDifficulty": 2,
+    "feedRequirement": {
+      "type": "毒素样本",
+      "rarity": "common",
+      "description": "需定期接触微量毒素样本以维持识别能力"
+    }
+  },
+  "星火蛊": {
+    "tier": 1,
+    "path": "炎道",
+    "rank": "common",
+    "effect": "激发一点星火，炎道最基础攻击蛊虫。一转蛊师标配",
+    "feed": "火药——每次用后需喂食少量火药",
+    "feedFailure": "无火药→星火渐弱→打火石不如",
+    "usageFailure": "遇水→熄灭；大风→火焰不稳",
+    "refineMaterials": "火石 + 炎道蛊材",
+    "refineDifficulty": 1,
+    "feedRequirement": {
+      "type": "火药",
+      "rarity": "common",
+      "description": "每次使用后需喂食少量火药，可在铁匠铺或冶炼处获取"
+    }
+  },
+  "避瘴蛊": {
+    "tier": 2,
+    "path": "毒道",
+    "rank": "common",
+    "effect": "抵御瘴气毒雾——南疆山林探索必备蛊虫",
+    "feed": "解毒草——每月需喂食一株解毒草药",
+    "feedFailure": "无解毒草→避瘴能力下降→中毒",
+    "usageFailure": "面对剧毒瘴气→效力不足需配合其他解毒手段",
+    "refineMaterials": "解毒草 + 无根水 + 毒道蛊材（逆炼）",
+    "refineDifficulty": 3,
+    "note": "南疆特有，山寨中较为常见",
+    "feedRequirement": {
+      "type": "解毒草药",
+      "rarity": "common",
+      "description": "每月需喂食一株解毒草药——缺则避瘴能力下降"
+    }
+  },
+  "骨肉团圆蛊": {
+    "tier": 2,
+    "path": "骨道",
+    "rank": "uncommon",
+    "effect": "令断裂的骨骼重新愈合，南疆羊家标志性蛊虫",
+    "feed": "骨粉——研磨兽骨拌入清水",
+    "feedFailure": "无骨粉→愈合速度缓慢",
+    "usageFailure": "骨骼完全粉碎→无法愈合；对已愈合的骨骼使用→可能导致二次断裂",
+    "refineMaterials": "羊骨粉 + 骨道蛊材 + 血脉相连之人的一滴血",
+    "refineDifficulty": 4,
+    "note": "南疆羊家传承，骨肉团圆之意",
+    "feedRequirement": {
+      "type": "骨粉",
+      "rarity": "common",
+      "description": "需研磨兽骨拌入清水喂食"
+    }
+  },
+  "天意蛊": {
+    "tier": 7,
+    "path": "智道",
+    "rank": "legendary",
+    "isImmortalGu": true,
+    "effect": "感知天意运转，预知宿命走向。可窥探天道意志的一角",
+    "feed": "天机碎片——每次感知天意后残余的信息碎片",
+    "feedFailure": "长期不感知天意→天意蛊灵性减弱→预知精准度下降",
+    "usageFailure": "窥探天机过深→遭天意反噬（寿命减损/气运骤降）",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属，天地生成）",
+    "refineDifficulty": 10,
+    "note": "与宿命蛊密切相关，天庭曾用来监控天下大势",
+    "feedRequirement": {
+      "type": "天机碎片",
+      "rarity": "legendary",
+      "description": "仙蛊自养——每次感知天意后残余的信息碎片即为喂养"
+    }
+  },
+  "金银蛊": {
+    "tier": 2,
+    "path": "金道",
+    "rank": "uncommon",
+    "effect": "吞入金铁后可产出纯金或纯银——经济型辅助蛊虫",
+    "feed": "废旧金属——铁铜铅锡等廉价金属",
+    "feedFailure": "无金属→金银蛊休眠",
+    "usageFailure": "产金过量→金银蛊超负荷→金道反噬",
+    "refineMaterials": "纯金碎屑 + 纯银碎屑 + 金道蛊材",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "废旧金属",
+      "rarity": "common",
+      "description": "需定期喂食废旧金属——越贵重的金属产出越好"
+    }
+  },
+  "金刚怒目蛊": {
+    "tier": 5,
+    "path": "金道",
+    "rank": "epic",
+    "effect": "目光化为金刚怒目——对视即攻心魂，攻心为主",
+    "feed": "战意——在战场中吸收杀伐意志",
+    "feedFailure": "长期无战事→金刚怒目威力衰减",
+    "usageFailure": "敌人有高阶魂防→目光攻势失效；一对多时力量分散",
+    "refineMaterials": "金刚石之心 + 金道蛊材 + 魂道蛊材",
+    "refineDifficulty": 9,
+    "note": "金刚怒目阵核心蛊虫——目光所及皆为攻心",
+    "feedRequirement": {
+      "type": "战意",
+      "rarity": "uncommon",
+      "description": "需在战场中吸收杀伐意志——和平时期力量衰减"
+    }
+  },
+  "玉皮蛊": {
+    "tier": 1,
+    "path": "金道",
+    "rank": "uncommon",
+    "effect": "比铜皮蛊更优,消耗真元更少",
+    "feed": "玉石粉末",
+    "refineMaterials": "玉石粉末+金道蛊材",
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "玉石",
+      "rarity": "uncommon",
+      "description": "玉石粉末,季度一次"
+    }
+  },
+  "黑豕蛊": {
+    "tier": 1,
+    "path": "力道",
+    "rank": "uncommon",
+    "effect": "永久性增长气力,价值高于酒虫",
+    "feed": "力道蛊材",
+    "feedRequirement": {
+      "type": "力道蛊材",
+      "rarity": "uncommon",
+      "description": "定期喂食力道类蛊材"
+    }
+  },
+  "白豕蛊": {
+    "tier": 1,
+    "path": "力道",
+    "rank": "uncommon",
+    "effect": "永久性增长气力,白色瓢虫外形",
+    "feed": "力道蛊材",
+    "feedRequirement": {
+      "type": "力道蛊材",
+      "rarity": "uncommon",
+      "description": "定期喂食力道类蛊材"
+    }
+  },
+  "水蛛蛊": {
+    "tier": 1,
+    "path": "水道",
+    "rank": "uncommon",
+    "effect": "覆盖淡蓝水衣,淋雨时水衣增厚",
+    "feed": "净水或露水",
+    "feedRequirement": {
+      "type": "水利",
+      "rarity": "common",
+      "description": "需净水定期浸泡"
+    }
+  },
+  "一气金光虫": {
+    "tier": 1,
+    "path": "光道",
+    "rank": "uncommon",
+    "effect": "撑起淡金气罩防御",
+    "feed": "阳光或金道蛊材",
+    "feedRequirement": {
+      "type": "光道蛊材",
+      "rarity": "uncommon",
+      "description": "需定期日照或金道蛊材"
+    }
+  },
+  "希望蛊": {
+    "tier": 1,
+    "path": "天道",
+    "rank": "legendary",
+    "effect": "开窍用蛊虫,形如光点,影响空窍资质",
+    "feed": "希望意志",
+    "feedRequirement": {
+      "type": "天道",
+      "rarity": "legendary",
+      "description": "需持有者的希望意志喂养,极稀有"
+    }
+  },
+  "月芒蛊": {
+    "tier": 2,
+    "path": "光道",
+    "rank": "uncommon",
+    "effect": "月光蛊+小光蛊合炼,攻击力三倍于月光蛊",
+    "feed": "月光",
+    "refineMaterials": "月光蛊+小光蛊+光道蛊材",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "月光",
+      "rarity": "uncommon",
+      "description": "需在月夜吸收月光精华"
+    }
+  },
+  "月霓裳": {
+    "tier": 2,
+    "path": "光道",
+    "rank": "uncommon",
+    "effect": "形成淡蓝绶带防御,可替他人防御",
+    "feed": "月光+光道蛊材",
+    "feedRequirement": {
+      "type": "光道蛊材",
+      "rarity": "uncommon",
+      "description": "月光+光道蛊材"
+    }
+  },
+  "黑鬃蛊": {
+    "tier": 2,
+    "path": "力道",
+    "rank": "uncommon",
+    "effect": "汗毛变为黑鬃护甲",
+    "feed": "力道蛊材+毛发",
+    "feedRequirement": {
+      "type": "力道蛊材",
+      "rarity": "uncommon",
+      "description": "力道蛊材+动物毛发"
+    }
+  },
+  "白玉蛊": {
+    "tier": 2,
+    "path": "金道",
+    "rank": "uncommon",
+    "effect": "白豕蛊+玉皮蛊合炼,润白如玉",
+    "feed": "玉石+金道蛊材",
+    "refineMaterials": "白豕蛊+玉皮蛊+金道蛊材",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "金道蛊材",
+      "rarity": "uncommon",
+      "description": "玉石+金道蛊材"
+    }
+  },
+  "四味酒虫": {
+    "tier": 2,
+    "path": "食道",
+    "rank": "rare",
+    "effect": "提纯二转真元半阶",
+    "feed": "四种美酒",
+    "refineMaterials": "两只酒虫+四种美酒",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "美酒",
+      "rarity": "rare",
+      "description": "需四种不同美酒喂养"
+    }
+  },
+  "纸鹤蛊": {
+    "tier": 2,
+    "path": "宇道",
+    "rank": "uncommon",
+    "effect": "传信用,远距离通信",
+    "feed": "纸+真元",
+    "feedRequirement": {
+      "type": "宇道蛊材",
+      "rarity": "uncommon",
+      "description": "纸张+少量真元"
+    }
+  },
+  "蛇信蛊": {
+    "tier": 2,
+    "path": "侦察",
+    "rank": "common",
+    "effect": "感应热量,侦察范围小",
+    "feed": "活物血液",
+    "feedRequirement": {
+      "type": "血食",
+      "rarity": "common",
+      "description": "活物少量血液"
+    }
+  },
+  "血月蛊": {
+    "tier": 3,
+    "path": "血道",
+    "rank": "epic",
+    "effect": "月刃血红有血流不止效果",
+    "feed": "鲜血+月光",
+    "refineMaterials": "月芒蛊+血气蛊+血道蛊材",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "血道蛊材",
+      "rarity": "epic",
+      "description": "鲜血+月光,极其危险"
+    }
+  },
+  "刀光蛊": {
+    "tier": 3,
+    "path": "金道",
+    "rank": "rare",
+    "effect": "与剑影蛊齐名",
+    "feed": "金道蛊材+刀意",
+    "feedRequirement": {
+      "type": "金道蛊材",
+      "rarity": "rare",
+      "description": "金道蛊材+刀修意志"
+    }
+  },
+  "七香酒虫": {
+    "tier": 3,
+    "path": "食道",
+    "rank": "epic",
+    "effect": "提纯三转真元一小境界",
+    "feed": "七种美酒",
+    "refineMaterials": "四味酒虫+七种美酒",
+    "refineDifficulty": 7,
+    "feedRequirement": {
+      "type": "美酒",
+      "rarity": "epic",
+      "description": "需七种不同美酒轮流喂养"
+    }
+  },
+  "冰锥蛊": {
+    "tier": 3,
+    "path": "冰道",
+    "rank": "uncommon",
+    "effect": "形成冰锥喷射",
+    "feed": "冰晶+水道蛊材",
+    "feedRequirement": {
+      "type": "冰道蛊材",
+      "rarity": "uncommon",
+      "description": "冰晶粉末,寒冷环境下维持"
+    }
+  },
+  "古铜皮蛊": {
+    "tier": 4,
+    "path": "金道",
+    "rank": "rare",
+    "effect": "多次使用获得更胜三转铜皮的防御",
+    "feed": "古铜矿粉",
+    "feedRequirement": {
+      "type": "金道蛊材",
+      "rarity": "rare",
+      "description": "古铜矿粉,古代铜矿中提取"
+    }
+  },
+  "奴隶蛊": {
+    "tier": 5,
+    "path": "奴道",
+    "rank": "legendary",
+    "effect": "可控制五转蛊师为己用,消耗型",
+    "feed": "奴隶意志",
+    "feedRequirement": {
+      "type": "奴道",
+      "rarity": "legendary",
+      "description": "一次性消耗品,使用后蛊虫死亡"
+    }
+  },
+  "宝月光王蛊": {
+    "tier": 5,
+    "path": "光道",
+    "rank": "epic",
+    "effect": "月霓裳路线最高晋升至五转",
+    "feed": "月光+光道蛊材",
+    "refineMaterials": "月影蛊+光道顶级蛊材",
+    "refineDifficulty": 9,
+    "feedRequirement": {
+      "type": "月光",
+      "rarity": "epic",
+      "description": "满月之夜的月光精华"
+    }
+  },
+  "血滴子": {
+    "tier": 5,
+    "path": "血道",
+    "rank": "epic",
+    "effect": "养用合一,吞噬蛊师鲜血繁衍分化",
+    "feed": "蛊师鲜血",
+    "feedRequirement": {
+      "type": "血道",
+      "rarity": "epic",
+      "description": "需蛊师鲜血喂养,极度危险"
+    }
+  },
+  "群力蛊": {
+    "tier": 5,
+    "path": "力道",
+    "rank": "rare",
+    "effect": "集群力于一身",
+    "feed": "力道蛊材+群体意志",
+    "feedRequirement": {
+      "type": "力道蛊材",
+      "rarity": "rare",
+      "description": "力道蛊材+多人的力量意志"
+    }
+  },
+  "碧空蛊": {
+    "tier": 5,
+    "path": "毒道",
+    "rank": "legendary",
+    "effect": "太古时代稀有蛊,毒猛烈至极",
+    "feed": "碧空之毒",
+    "feedRequirement": {
+      "type": "毒道",
+      "rarity": "legendary",
+      "description": "太古时代的碧空之毒,极难获取"
+    }
+  },
+  "态度蛊": {
+    "tier": 6,
+    "path": "智道",
+    "rank": "rare",
+    "isImmortalGu": true,
+    "effect": "改变自身或目标的情绪态度——友变敌、敌变友皆在一念之间",
+    "feed": "情绪碎片——每次改变态度后吸收残余情绪",
+    "feedFailure": "长期不改变态度→态度蛊态度消沉",
+    "usageFailure": "目标意志极强→态度改变被抵抗",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 9,
+    "note": "盗天魔尊招牌仙蛊之一，见面曾相识杀招核心",
+    "feedRequirement": { "type": "情绪碎片", "rarity": "rare", "description": "每次改变态度后吸收残余情绪即为喂养" }
+  },
+  "坚持蛊": {
+    "tier": 6,
+    "path": "力道",
+    "rank": "rare",
+    "isImmortalGu": true,
+    "effect": "增强蛊仙意志力，持久战中耐力不减，受伤越重斗志越强",
+    "feed": "意志——蛊仙自身的坚持意志即为喂养",
+    "feedFailure": "蛊仙放弃坚持→坚持蛊力量大幅衰减→可能死亡",
+    "usageFailure": "坚持到极限→蛊师精神崩溃",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 8,
+    "feedRequirement": { "type": "意志力", "rarity": "rare", "description": "蛊仙自身坚持的意志即为喂养——放弃则力量大衰减" }
+  },
+  "净魂蛊": {
+    "tier": 6,
+    "path": "魂道",
+    "rank": "rare",
+    "isImmortalGu": true,
+    "effect": "净化魂魄中混入的异种魂力杂质，恢复魂魄纯净状态",
+    "feed": "纯净的魂力碎片——每次净化后残余",
+    "feedFailure": "长期无魂可净→净魂蛊灵性衰减",
+    "usageFailure": "魂魄杂质过多→净化不彻底",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 8,
+    "feedRequirement": { "type": "魂力碎片", "rarity": "rare", "description": "每次净化后产生的纯净魂力碎片即为喂养" }
+  },
+  "力蛊": {
+    "tier": 7,
+    "path": "力道",
+    "rank": "epic",
+    "isImmortalGu": true,
+    "effect": "赋予蛊仙无穷巨力，一拳可崩山裂石",
+    "feed": "力量的意志——战斗中挥洒的力量即为喂养",
+    "feedFailure": "长期不战斗→力蛊力量衰减",
+    "usageFailure": "用力过度→蛊师身体承受不住→内伤",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 9,
+    "feedRequirement": { "type": "战斗", "rarity": "epic", "description": "每次全力战斗即为喂养——长期安逸则力量衰减" }
+  },
+  "气运蛊": {
+    "tier": 7,
+    "path": "运道",
+    "rank": "legendary",
+    "isImmortalGu": true,
+    "effect": "操控气运走向——可增幅自身气运或削减敌人气运",
+    "feed": "气运碎片——每次操控气运后残余的气运余波",
+    "feedFailure": "气运之力耗尽→蛊虫休眠",
+    "usageFailure": "操控远超自身的气运→遭天意反噬",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 10,
+    "note": "巨阳仙尊运道核心仙蛊之一",
+    "feedRequirement": { "type": "气运碎片", "rarity": "legendary", "description": "每次操控气运后残余的气运余波即为喂养" }
+  },
+  "智慧蛊": {
+    "tier": 8,
+    "path": "智道",
+    "rank": "legendary",
+    "isImmortalGu": true,
+    "effect": "赋予蛊仙超越凡俗的智慧——能看穿一切算计，推演万事走向",
+    "feed": "知识——学习新知识的过程即为喂养",
+    "feedFailure": "长期不学习→智慧蛊退化",
+    "usageFailure": "推演超出能力范围→魂魄负担过重",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属，需九转仙蛊方）",
+    "refineDifficulty": 10,
+    "note": "天下智道至高仙蛊之一",
+    "feedRequirement": { "type": "新知识", "rarity": "legendary", "description": "学习新知识的过程即为喂养——停滞学习则退化" }
+  },
+  "逆流河蛊": {
+    "tier": 7,
+    "path": "水道",
+    "rank": "legendary",
+    "isImmortalGu": true,
+    "effect": "逆流河之力——令时间逆流，可恢复伤势或逆转战局",
+    "feed": "逆流之水——逆流河中的特殊水源",
+    "feedFailure": "无逆流之水→逆流能力减弱",
+    "usageFailure": "逆转过快→时间反噬→寿命减损",
+    "refineMaterials": "不可凡蛊炼制（需逆流河源头之水）",
+    "refineDifficulty": 10,
+    "note": "方源从逆流河中获取，配合逆流护身印使用",
+    "feedRequirement": { "type": "逆流之水", "rarity": "legendary", "description": "需逆流河中的特殊水源滋养" }
+  },
+  "因果蛊": {
+    "tier": 8,
+    "path": "律道",
+    "rank": "legendary",
+    "isImmortalGu": true,
+    "effect": "操控因果牵连——可将自身承受的因果转嫁他人，或斩断与他人的因果",
+    "feed": "因果线——每次操控因果后残留的因果碎片",
+    "feedFailure": "长期不操控因果→因果蛊沉寂",
+    "usageFailure": "因果错乱→反噬自身",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 10,
+    "feedRequirement": { "type": "因果碎片", "rarity": "legendary", "description": "每次操控因果后残留的因果碎片即为喂养" }
+  },
+  "葬魂蟾": {
+    "tier": 6,
+    "path": "魂道",
+    "rank": "rare",
+    "isImmortalGu": true,
+    "effect": "储藏魂魄的后勤仙蛊——可安全存放大量魂魄碎片，魂魄在其中不会消散",
+    "feed": "魂魄碎片——储藏过程即为喂养",
+    "feedFailure": "魂魄储量耗尽→葬魂蟾休眠（不会死亡）",
+    "usageFailure": "储藏的魂魄超出容量→泄露",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 7,
+    "feedRequirement": { "type": "魂魄碎片", "rarity": "rare", "description": "储藏魂魄的过程即为喂养——无魂可储则休眠" }
+  },
+  "百鬼夜行蛊": {
+    "tier": 7,
+    "path": "魂道",
+    "rank": "epic",
+    "isImmortalGu": true,
+    "effect": "释放上百只苍白游魂飞舞而出——群攻+扰乱敌阵，范围覆盖极广",
+    "feed": "游魂——战斗中消散的游魂碎片",
+    "feedFailure": "无游魂可收→百鬼数量减少→威力下降",
+    "usageFailure": "被光道仙蛊照射→游魂大量消散",
+    "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
+    "refineDifficulty": 9,
+    "feedRequirement": { "type": "游魂碎片", "rarity": "epic", "description": "战场上游荡的魂魄碎片即为食物——和平时期需储备" }
   }
 }

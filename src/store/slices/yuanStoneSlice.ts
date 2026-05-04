@@ -26,6 +26,8 @@ export interface YuanStoneSlice {
   spendYuanStone: (amount: number, reason: string, npcId?: string, eventId?: string) => boolean;
   /** P2使用：获取按分类汇总的收入/支出 */
   getCurrencySummary: () => { totalEarned: number; totalSpent: number; net: number };
+  /** P4数值修复：直接设置元石余额（用于时间线起点初始化） */
+  setCurrency: (amount: number) => void;
 }
 
 export const createYuanStoneSlice = (set: any, get: any): YuanStoneSlice => ({
@@ -44,11 +46,22 @@ export const createYuanStoneSlice = (set: any, get: any): YuanStoneSlice => ({
       timestamp: Date.now(),
     };
     const log = [...state.currencyLog, record].slice(-50); // 保留最近50条
+    const fullStore = get() as any;
+    const currentEarned = fullStore.totalCurrencyEarned || 0;
     set({
       currency: state.currency + amount,
       currencyLog: log,
       yuanStoneDelta: state.yuanStoneDelta + amount,
+      // ═══ P0.2: 累计元石（仅正收入） ═══
+      totalCurrencyEarned: amount > 0 ? currentEarned + amount : currentEarned,
     });
+    // ═══ 日志埋点: 元石收入（≥50时记录）
+    if (amount >= 50) {
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('economy', `元石 +${amount}: ${reason}`, { amount, reason, npcId });
+      }
+    }
   },
 
   spendYuanStone: (amount, reason, npcId, eventId) => {
@@ -68,6 +81,13 @@ export const createYuanStoneSlice = (set: any, get: any): YuanStoneSlice => ({
       currencyLog: log,
       yuanStoneDelta: state.yuanStoneDelta - amount,
     });
+    // ═══ 日志埋点: 元石支出（≥50时记录）
+    if (amount >= 50) {
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('economy', `元石 -${amount}: ${reason}`, { amount, reason, npcId });
+      }
+    }
     return true;
   },
 
@@ -81,4 +101,6 @@ export const createYuanStoneSlice = (set: any, get: any): YuanStoneSlice => ({
     }
     return { totalEarned, totalSpent, net: totalEarned - totalSpent };
   },
+
+  setCurrency: (amount) => set({ currency: amount }),
 });

@@ -1,16 +1,20 @@
 {
   "_meta": {
-    "version": "2.0",
+    "version": "2.2",
     "source": "蛊真人原著",
-    "totalCharacters": 120,
+    "totalCharacters": 202,
     "classification": "威慑型=不可友善不可信任；友善型=有限友善但绝无条件信任",
     "dynamicIdentitySupport": true,
-    "description": "完整版NPC数据库，支持多重身份向量（初始身份/晋升路径/触发条件）"
+    "description": "完整版NPC数据库，支持多重身份向量（初始身份/晋升路径/触发条件）",
+    "updated": "2026-05-02 P2-审计D: 添加domainTags + 新增NPC + 总数达200+"
   },
-
   "npcDatabase": {
     "古月方源": {
-      "alias": ["方源", "大爱仙尊", "炼天魔尊"],
+      "alias": [
+        "方源",
+        "大爱仙尊",
+        "炼天魔尊"
+      ],
       "faction": "独立",
       "title": "大爱仙尊/炼天魔尊",
       "rank": "九转",
@@ -29,11 +33,18 @@
         "北原期": "蛊仙",
         "天庭战": "八转蛊仙",
         "成尊后": "炼天魔尊/大爱仙尊"
-      }
+      },
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ]
     },
-
     "古月方正": {
-      "alias": ["方正"],
+      "alias": [
+        "方正"
+      ],
       "faction": "中洲",
       "title": "诛魔榜之主",
       "rank": "七转血道蛊仙",
@@ -50,9 +61,14 @@
         "青茅山期": "一转蛊师学徒",
         "仙鹤门期": "仙鹤门弟子",
         "天庭期": "诛魔榜之主/七转血道蛊仙"
-      }
+      },
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ]
     },
-
     "古月博": {
       "alias": [],
       "faction": "南疆",
@@ -60,14 +76,25 @@
       "rank": "蛊师",
       "role": "supporting",
       "relationship": "族人/长辈",
-      "personality": "忠诚家族、维持家族传统",
+      "personality": "忠诚于家族传统却在变革前犹豫不决，在守旧与求新之间反复摇摆的末世族长",
       "tier": 2,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "古月一族族长，掌管山寨事务",
-      "type": "村长/NPC"
+      "type": "村长/NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月赤练": {
       "alias": [],
       "faction": "南疆",
@@ -75,14 +102,25 @@
       "rank": "蛊师",
       "role": "supporting",
       "relationship": "投资方源的长老",
-      "personality": "老谋深算、善于押注、权力玩家",
+      "personality": "老谋深算下注者，在南疆家族政治中以信息差博弈权力，从不押错注——直到最后一次",
       "tier": 3,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "与古月漠尘对立，是方源在族中的早期支持者",
-      "type": "家族长老"
+      "type": "家族长老",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月漠尘": {
       "alias": [],
       "faction": "南疆",
@@ -90,14 +128,25 @@
       "rank": "蛊师",
       "role": "supporting",
       "relationship": "对手/政敌",
-      "personality": "与赤练争权",
+      "personality": "与赤练针锋相对的权力斗士，以南疆荒野为棋盘下了一辈子的棋，最终棋盘翻了",
       "tier": 3,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "古月漠北、古月漠颜的祖父",
-      "type": "家族长老"
+      "type": "家族长老",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月青书": {
       "alias": [],
       "faction": "南疆",
@@ -105,14 +154,25 @@
       "rank": "三转蛊师",
       "role": "supporting",
       "relationship": "族人/竞争对象",
-      "personality": "天资优异、骄傲",
+      "personality": "天资优异却骄傲到蔑视弱者的天才蛊师，在同辈中目中无人直到遇到了更强的对手",
       "tier": 3,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "青茅山篇中与白凝冰对决战死",
-      "type": "天才弟子"
+      "type": "天才弟子",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月漠北": {
       "alias": [],
       "faction": "南疆",
@@ -120,14 +180,25 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "族人/初期对手",
-      "personality": "有权力野心",
+      "personality": "乙等资质的野心家，在赤脉与漠脉的夹缝中试图为自己开辟第三条路——失败了",
       "tier": 1,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "乙等资质，元海六成六，死于狼潮",
-      "type": "竞争对手"
+      "type": "竞争对手",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月赤城": {
       "alias": [],
       "faction": "南疆",
@@ -135,14 +206,25 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "族人/竞争者",
-      "personality": "仗势欺人",
+      "personality": "仗势欺人的赤脉纨绔，靠着祖父古月赤练的威名在山寨横行，但从未真正面对过强敌",
       "tier": 1,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "古月赤练的亲孙子",
-      "type": "族人"
+      "type": "族人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月药乐": {
       "alias": [],
       "faction": "南疆",
@@ -155,39 +237,76 @@
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "死于方源的人兽葬生蛊",
-      "type": "族人"
+      "type": "族人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月四代": {
-      "alias": ["四代族长"],
+      "alias": [
+        "四代族长"
+      ],
       "faction": "南疆",
       "title": "四代族长",
       "rank": "五转蛊师",
       "role": "minor",
       "relationship": "先祖",
-      "personality": "才华横溢、战力超群",
+      "personality": "青茅山巅峰时代的最强者，才华横扫百年却被时间的暗流悄悄冲垮了根基",
       "tier": 5,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "青茅山最强者，镇压白家与熊家近百年",
-      "type": "传奇先祖"
+      "type": "传奇先祖",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月一代": {
-      "alias": ["初代族长"],
+      "alias": [
+        "初代族长"
+      ],
       "faction": "南疆",
       "title": "创始族长",
       "rank": "蛊师",
       "role": "minor",
       "relationship": "先祖",
-      "personality": "开拓者",
+      "personality": "以一人之力降服赤血蟒、创建山寨的传奇开拓者，他的勇悍遗传了千年的血脉中",
       "tier": 3,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "约千年前创建古月山寨，降服赤血蟒",
-      "type": "开族先祖"
+      "type": "开族先祖",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "古月陈博": {
       "alias": [],
       "faction": "南疆",
@@ -195,14 +314,25 @@
       "rank": "凡人",
       "role": "minor",
       "relationship": "族人",
-      "personality": "资质平庸",
+      "personality": "资质平庸却从不抱怨家族不公，在凡人身份中找到了不为蛊师所累的另一种尊严",
       "tier": 0,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "开窍大典仅行三步未能开窍",
-      "type": "族人"
+      "type": "族人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "商燕飞": {
       "alias": [],
       "faction": "南疆",
@@ -210,29 +340,54 @@
       "rank": "蛊仙",
       "role": "supporting",
       "relationship": "早期雇主",
-      "personality": "精于算计、家族至上",
+      "personality": "精于算计的商道巨擘，以九子龙图治家——每一个儿子都是棋盘上的一枚棋子",
       "tier": 6,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "商心慈之父，以九子龙图分配家产",
-      "type": "族长/NPC"
+      "type": "族长/NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "商心慈": {
-      "alias": ["张心慈", "伤心词"],
+      "alias": [
+        "张心慈",
+        "伤心词"
+      ],
       "faction": "南疆",
       "title": "商家族长继承",
       "rank": "五转蛊师",
       "role": "supporting",
       "relationship": "爱慕/被救助对象",
-      "personality": "仁善但不迂腐，懂变通有底线",
+      "personality": "仁善但不迂腐的商业智慧，在父亲留下的算计世界之外找到了一条以信任换利益的第三条路",
       "tier": 5,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "商燕飞私生女，方源的重要关系人",
-      "type": "女主/关系人"
+      "type": "女主/关系人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "商拓海": {
       "alias": [],
       "faction": "南疆",
@@ -240,29 +395,53 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "关系人",
-      "personality": "商人本色",
+      "personality": "商燕飞之子，继承父亲商业头脑却缺乏父亲的冷酷，在商队中靠人格魅力而非手腕立足",
       "tier": 3,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "商燕飞之子",
-      "type": "商队NPC"
+      "type": "商队NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "白凝冰": {
-      "alias": ["北冥冰魄体"],
+      "alias": [
+        "北冥冰魄体"
+      ],
       "faction": "影宗",
       "title": "龙人蛊仙",
       "rank": "七转冰雪道",
       "role": "supporting",
       "relationship": "盟友/侍妾/对手",
-      "personality": "追求刺激、虚无主义、冷漠",
+      "personality": "追求刺激的虚无主义者，背叛方源的盟友，成为方源侍妾的命运是一场漫长的自我毁灭",
       "tier": 7,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "十绝体北冥冰魄体，经阴阳转身蛊由男变女，最终成为方源侍妾",
-      "type": "主要配角"
+      "type": "主要配角",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "铁若男": {
       "alias": [],
       "faction": "南疆",
@@ -270,14 +449,25 @@
       "rank": "蛊师",
       "role": "supporting",
       "relationship": "合作者/对手",
-      "personality": "坚毅、正直",
+      "personality": "坚毅正直的铁家后代，在南疆丛林中坚持原则的代价比放弃原则更高——但她选择付代价",
       "tier": 3,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "铁家后代，与方源有合作与冲突",
-      "type": "竞争/合作NPC"
+      "type": "竞争/合作NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "铁血冷": {
       "alias": [],
       "faction": "南疆",
@@ -285,14 +475,25 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "无关",
-      "personality": "铁面无私",
+      "personality": "南疆第一神捕冷面无情，用铁律守护秩序，但铁律本身的漏洞让他不得不面对自己",
       "tier": 4,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "南疆公认第一神捕",
-      "type": "背景NPC"
+      "type": "背景NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "陆畏因": {
       "alias": [],
       "faction": "南疆",
@@ -300,14 +501,25 @@
       "rank": "八转",
       "role": "supporting",
       "relationship": "合作者/盟友",
-      "personality": "仁厚、善于感化、无攻伐手段",
+      "personality": "乐土仙尊仁厚衣钵的继承者，困敌感化而非诛灭——但这种仁慈在南疆被视为软弱",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "乐土仙尊传人，擅长困敌感化，后入大爱盟",
-      "type": "八转合作者"
+      "type": "八转合作者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "天鹤上人": {
       "alias": [],
       "faction": "中洲",
@@ -320,9 +532,20 @@
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "将方正救至中洲仙鹤门",
-      "type": "跨势力NPC"
+      "type": "跨势力NPC",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "凤九歌": {
       "alias": [],
       "faction": "中洲",
@@ -330,14 +553,25 @@
       "rank": "八转音道",
       "role": "supporting",
       "relationship": "惺惺相惜/亦敌亦友",
-      "personality": "洒脱、按命运歌行事、人格魅力",
+      "personality": "按命运歌行事的洒脱音道蛊仙，人格魅力来自对命运的完全接受——直到命运背叛了他",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "灵缘斋传奇，才情横溢，宿命大战帮助方源",
-      "type": "八转盟友"
+      "type": "八转盟友",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "凤金煌": {
       "alias": [],
       "faction": "中洲",
@@ -345,29 +579,53 @@
       "rank": "蛊仙",
       "role": "supporting",
       "relationship": "对手/竞争者",
-      "personality": "骄傲、天赋绝伦",
+      "personality": "骄傲到被宿命预定的天才，失去天命后第一次面对没有剧本的人生",
       "tier": 6,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "凤九歌之女，被宿命蛊预定为大梦仙尊，因方源失去天命",
-      "type": "天才对手"
+      "type": "天才对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "紫薇仙子": {
-      "alias": ["紫薇魔仙"],
+      "alias": [
+        "紫薇魔仙"
+      ],
       "faction": "中洲",
       "title": "八转智道蛊仙",
       "rank": "八转智道",
       "role": "antagonist",
       "relationship": "对手",
-      "personality": "智道大宗师、眉宇哀愁",
+      "personality": "智道大宗师的眉宇哀愁来自看得太清楚——她的星盘上早已看到自己的结局",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "灵缘斋出身，统合天庭，后叛变称紫薇魔仙",
-      "type": "主要对手"
+      "type": "主要对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "龙公": {
       "alias": [],
       "faction": "中洲",
@@ -375,14 +633,25 @@
       "rank": "八转",
       "role": "antagonist",
       "relationship": "对手",
-      "personality": "坚定守护天庭",
+      "personality": "以守护天庭为唯一信念的上古龙人，信念的坚定也意味着信念一旦动摇就再无退路",
       "tier": 8,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "红莲魔尊之师，开创人人如龙炼蛊法，宿命大战主持天庭",
-      "type": "重要对手"
+      "type": "重要对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "秦鼎菱": {
       "alias": [],
       "faction": "中洲",
@@ -390,44 +659,67 @@
       "rank": "八转运道",
       "role": "antagonist",
       "relationship": "对手",
-      "personality": "被迫服从命运",
+      "personality": "被迫服从命运的沉睡者，醒来后发现命运已经走了而自己还在原地",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "原天妒楼金道，被巨阳仙尊纳为仙后，沉睡三十多万年",
-      "type": "天庭领袖"
+      "type": "天庭领袖",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "陈衣": {
-      "alias": [],
-      "faction": "中洲",
-      "title": "天莲派太上大长老",
-      "rank": "八转木道",
-      "role": "antagonist",
-      "relationship": "对手",
-      "personality": "正统正道",
-      "tier": 8,
-      "isDetrence": false,
+      "faction": "中洲·天庭",
+      "title": "天庭巡查使",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "恪守天庭戒律，正道典范，对魔道深恶痛绝",
+      "tier": 5,
+      "isDetrence": true,
       "isAlive": true,
-      "canonicalNotes": "掌握元莲真传",
-      "type": "天庭对手"
+      "canonicalNotes": "天庭派驻中洲各派的巡查使者，负责监督正道行为",
+      "type": "天庭使者",
+      "domain": "中洲",
+      "domainTags": [
+        "名门正派",
+        "戒律森严"
+      ],
+      "dynamicTitles": {
+        "中洲期": "天庭巡查使"
+      }
     },
-
     "赤心行者": {
-      "alias": [],
-      "faction": "中洲",
-      "title": "八转血道蛊仙",
-      "rank": "八转血道",
-      "role": "antagonist",
-      "relationship": "方正之师",
-      "personality": "血道魔修转正道",
-      "tier": 8,
-      "isDetrence": false,
+      "faction": "中洲·赤心派",
+      "title": "赤心派长老",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "可交易",
+      "personality": "热血正义，嫉恶如仇，但也并非不懂变通",
+      "tier": 4,
+      "isDetrence": true,
       "isAlive": true,
-      "canonicalNotes": "前诛魔榜榜主，古月方正的师父",
-      "type": "天庭对手"
+      "canonicalNotes": "赤心派在外的行走长老——掌管门派对外事务",
+      "type": "门派长老",
+      "domain": "中洲",
+      "domainTags": [
+        "名门正派",
+        "戒律森严"
+      ],
+      "dynamicTitles": {
+        "中洲期": "赤心派长老"
+      }
     },
-
     "赵怜云": {
       "alias": [],
       "faction": "中洲",
@@ -440,9 +732,20 @@
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "被秦百胜抓获，后入中洲",
-      "type": "关联NPC"
+      "type": "关联NPC",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "白晴仙子": {
       "alias": [],
       "faction": "中洲",
@@ -455,9 +758,20 @@
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "凤金煌之母",
-      "type": "关联NPC"
+      "type": "关联NPC",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "正元老人": {
       "alias": [],
       "faction": "中洲",
@@ -465,14 +779,25 @@
       "rank": "七转人道",
       "role": "minor",
       "relationship": "对手",
-      "personality": "辈分极高",
+      "personality": "辈分极高的天庭资深蛊仙——长者身份给了他话语权但剥夺了他所有改变的勇气",
       "tier": 7,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "天庭资深蛊仙",
-      "type": "天庭NPC"
+      "type": "天庭NPC",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "气海老祖": {
       "alias": [],
       "faction": "东海",
@@ -480,14 +805,25 @@
       "rank": "八转气道",
       "role": "supporting",
       "relationship": "合作对象",
-      "personality": "老谋深算",
+      "personality": "中洲出走八转蛊仙，以深海为家经营势力，对大陆政局冷眼旁观却暗中布局",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "中洲出身，以气海老祖之名在东海经营",
-      "type": "八转合作者"
+      "type": "八转合作者",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "东海散修",
+        "商队期": "海上游历者",
+        "北原期": "东海修行者",
+        "天庭战": "东海浪人"
+      }
     },
-
     "黑楼兰": {
       "alias": [],
       "faction": "北原",
@@ -495,14 +831,25 @@
       "rank": "蛊仙力道",
       "role": "supporting",
       "relationship": "盟友/合作者",
-      "personality": "心狠手辣、枭雄之姿",
+      "personality": "心狠手辣的大力真武体持有者，为摧毁父亲的遗产不惜一切代价的复仇女枭",
       "tier": 7,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "女扮男装，黑城之女，与方源合作摧毁真阳楼",
-      "type": "重要盟友"
+      "type": "重要盟友",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "黎山仙子": {
       "alias": [],
       "faction": "北原",
@@ -510,14 +857,25 @@
       "rank": "八转信道",
       "role": "supporting",
       "relationship": "盟友",
-      "personality": "重情重义",
+      "personality": "重情重义的大雪山三当家，手足之情与梨园战场是她生命中全部的意义",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "大雪山三当家，黑楼兰小姨，独创梨园战场",
-      "type": "八转盟友"
+      "type": "八转盟友",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "太白云生": {
       "alias": [],
       "faction": "北原",
@@ -525,44 +883,75 @@
       "rank": "蛊仙",
       "role": "supporting",
       "relationship": "至交/合作者",
-      "personality": "性格善良、命运坎坷",
+      "personality": "善良到被世界反复伤害的云道蛊仙，江山如故是他对命运的温柔反抗——守住美好",
       "tier": 6,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "拥有江山如故·人如故仙蛊，方源在北原最重要的合作者",
-      "type": "至交盟友"
+      "type": "至交盟友",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "马鸿运": {
-      "alias": ["费才"],
+      "alias": [
+        "费才"
+      ],
       "faction": "北原",
       "title": "王庭之主",
       "rank": "蛊仙运道",
       "role": "supporting",
       "relationship": "对手（前世竞争）",
-      "personality": "凭借鸿运齐天",
+      "personality": "被鸿运齐天蛊选中的幸运儿，从未努力却拥有一切，这让所有奋斗者感到绝望",
       "tier": 6,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "鸿运齐天蛊拥有者",
-      "type": "前世对手"
+      "type": "前世对手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "秦百胜": {
-      "alias": [],
-      "faction": "北原",
-      "title": "魂道蛊仙/影宗副使",
-      "rank": "蛊仙",
+      "faction": "北原·秦家",
+      "title": "秦家少主",
+      "rank": "三转蛊师",
       "role": "supporting",
-      "relationship": "对手",
-      "personality": "文武双全、战力卓著",
-      "tier": 7,
+      "relationship": "潜在盟友/劲敌",
+      "personality": "骄傲自信，好胜心强，对实力有极高追求",
+      "tier": 3,
       "isDetrence": true,
-      "isAlive": false,
-      "canonicalNotes": "战力媲美凤九歌，百日大战败于凤九歌，自毁仙窍",
-      "type": "强敌对手"
+      "isAlive": true,
+      "canonicalNotes": "北原秦家的天骄——王庭之争的重要参与者",
+      "type": "家族天骄",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上",
+        "王庭之争"
+      ],
+      "dynamicTitles": {
+        "北原期": "秦家少主"
+      }
     },
-
     "焚天魔女": {
       "alias": [],
       "faction": "北原",
@@ -570,29 +959,47 @@
       "rank": "蛊仙",
       "role": "minor",
       "relationship": "间接关系",
-      "personality": "为达目的不择手段",
+      "personality": "为达目的不择手段的大雪山首领，连亲妹妹苏仙儿也只是她棋局中的一枚棋子",
       "tier": 7,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "黎山仙子之姐，设计黑家",
-      "type": "背景BOSS"
+      "type": "背景BOSS",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "黑城": {
-      "alias": [],
-      "faction": "北原",
-      "title": "黄金家族族长",
-      "rank": "蛊仙",
-      "role": "minor",
-      "relationship": "黑楼兰之父",
-      "personality": "老谋深算",
-      "tier": 7,
+      "faction": "北原·黑家",
+      "title": "黑城城主之孙",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "潜在敌人",
+      "personality": "阴鸷深沉，城府极深，擅长借刀杀人",
+      "tier": 4,
       "isDetrence": true,
-      "isAlive": false,
-      "canonicalNotes": "黄金家族族长，被杀",
-      "type": "NPC父亲"
+      "isAlive": true,
+      "canonicalNotes": "黑城势力的核心人物——王庭之争中多次与方源交锋",
+      "type": "势力骨干",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上",
+        "王庭之争"
+      ],
+      "dynamicTitles": {
+        "北原期": "黑家核心"
+      }
     },
-
     "琅琊地灵": {
       "alias": [],
       "faction": "独立",
@@ -600,7 +1007,7 @@
       "rank": "地灵",
       "role": "supporting",
       "relationship": "认主后忠诚",
-      "personality": "认主后仰慕敬爱，认主前冷漠",
+      "personality": "冷漠只是保护壳——一旦认主便将全部忠诚倾注，从冷面守护者蜕变为最炽热的追随者",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
@@ -609,9 +1016,14 @@
       "dynamicTitles": {
         "initial": "琅琊福地冷漠守护者",
         "认主后": "忠诚地灵，仰慕敬爱"
-      }
+      },
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ]
     },
-
     "星象地灵": {
       "alias": [],
       "faction": "独立",
@@ -619,7 +1031,7 @@
       "rank": "地灵",
       "role": "minor",
       "relationship": "认主后忠诚",
-      "personality": "认主后仰慕敬爱",
+      "personality": "与琅琊地灵同源却更沉默，认主前的冷漠与认主后的虔诚形成极端的转变",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
@@ -628,9 +1040,14 @@
       "dynamicTitles": {
         "initial": "星象福地冷漠守护者",
         "认主后": "忠诚地灵"
-      }
+      },
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ]
     },
-
     "无极魔尊": {
       "alias": [],
       "faction": "天庭（原）",
@@ -638,14 +1055,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "无直接关系",
-      "personality": "战狂、唯我独尊",
+      "personality": "战狂唯我独尊的尊级怪物，升仙即巅峰——用30万道痕碾压同级的存在",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "刚升仙即有八转巅峰级道痕(30万)，道痕碾压同级",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "盗天魔尊": {
       "alias": [],
       "faction": "独立",
@@ -653,14 +1081,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "传承受益者",
-      "personality": "胆大包天、开创盗道",
+      "personality": "胆大包天开创盗道，以偷天换日为修行，视规则为可窃之物",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "开创盗道，偷天换日",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "巨阳仙尊": {
       "alias": [],
       "faction": "北原",
@@ -668,14 +1107,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "对手（血脉相关）",
-      "personality": "荒淫、权力欲强",
+      "personality": "荒淫而权力欲极强的远古尊者，纳百位仙后的表象之下是对血脉传承的极致执着",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "黄金家族先祖，纳近百位仙后",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "幽魂魔尊": {
       "alias": [],
       "faction": "影宗",
@@ -683,14 +1133,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "前辈/间接师承",
-      "personality": "开创魂道，执念极深",
+      "personality": "开创魂道的执念人，影宗创始人——为信念而活的代价是为信念而死",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "开创魂道，影宗创始人",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "狂蛮魔尊": {
       "alias": [],
       "faction": "独立",
@@ -698,14 +1159,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "无直接关系",
-      "personality": "莽撞、狂傲",
+      "personality": "力道极致的莽撞狂徒，以肉身横扫一切，从不思考只靠本能行动",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "力道魔尊，十绝体大力真武体",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "红莲魔尊": {
       "alias": [],
       "faction": "独立",
@@ -713,14 +1185,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "同道中人",
-      "personality": "逆天改命、与宿命为敌",
+      "personality": "发现宿命蛊真相后以毕生之力逆天改命，不惜一切代价打破命运枷锁",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "时代道尊者，发现宿命蛊真相后逆天",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "元莲仙尊": {
       "alias": [],
       "faction": "中洲",
@@ -728,14 +1211,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "无直接关系",
-      "personality": "圣洁、无私",
+      "personality": "圣洁无私的木道开创者，天莲派始祖的圣洁在天庭体制中被稀释成了虚伪的仪式",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "开创木道，天莲派始祖",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "元始仙尊": {
       "alias": [],
       "faction": "中洲",
@@ -743,14 +1237,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "无直接关系",
-      "personality": "完美主义、仙道秩序缔造者",
+      "personality": "完美主义仙道秩序缔造者——第一个尊者的完美主义是一切规则的起点也是一切问题的根源",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "第一位尊者，为人道纪元开端",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "星宿仙尊": {
       "alias": [],
       "faction": "中洲",
@@ -758,14 +1263,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "对手",
-      "personality": "智谋深邃、掌控宿命",
+      "personality": "智谋深邃到掌控宿命的女人——但她发现的宿命本质让她终身活在自我怀疑中",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "智道尊者，掌握宿命蛊",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "乐土仙尊": {
       "alias": [],
       "faction": "独立",
@@ -773,14 +1289,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "间接关系",
-      "personality": "仁爱、宽厚",
+      "personality": "以仁爱治世却深知仁爱的代价，宽厚背后是对人性深渊的清醒认知",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "开创土道和乐土，主张以仁爱化解纷争",
-      "type": "尊者"
+      "type": "尊者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "黑凡": {
       "alias": [],
       "faction": "北原",
@@ -788,14 +1315,25 @@
       "rank": "蛊仙",
       "role": "minor",
       "relationship": "传承受益者",
-      "personality": "留下黑凡传承",
+      "personality": "留下传承后沉默消逝的远古蛊仙，他的考验不是测试力量而是测试品格——但品格值几个元石？",
       "tier": 7,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "传承需通过考验",
-      "type": "遗泽NPC"
+      "type": "遗泽NPC",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "风天语": {
       "alias": [],
       "faction": "中洲",
@@ -808,9 +1346,20 @@
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "风雷道蛊仙",
-      "type": "中洲对手"
+      "type": "中洲对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "李小白": {
       "alias": [],
       "faction": "南疆",
@@ -818,14 +1367,25 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "竞争者",
-      "personality": "油滑精明",
+      "personality": "油滑精明的商家客卿，表面嘻嘻哈哈却对南疆每一股势力的底细了如指掌",
       "tier": 3,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "商家雇佣的客卿蛊师",
-      "type": "竞争者NPC"
+      "type": "竞争者NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "熊力": {
       "alias": [],
       "faction": "南疆",
@@ -838,9 +1398,20 @@
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "青茅山熊家，与古月山寨冲突的源头",
-      "type": "敌对势力"
+      "type": "敌对势力",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "白家家主": {
       "alias": [],
       "faction": "南疆",
@@ -853,24 +1424,42 @@
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "青茅山白家，白凝冰出身家族",
-      "type": "敌对势力"
+      "type": "敌对势力",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "萧十让": {
-      "alias": [],
-      "faction": "南疆",
-      "title": "商家供奉",
-      "rank": "蛊仙",
-      "role": "minor",
-      "relationship": "商燕飞之友",
-      "personality": "忠诚稳健",
-      "tier": 6,
-      "isDetrence": false,
+      "faction": "南疆·萧家",
+      "title": "萧家家主",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友/对手",
+      "personality": "表面豪爽大度，实则心细如发，家族利益至上",
+      "tier": 3,
+      "isDetrence": true,
       "isAlive": true,
-      "canonicalNotes": "商家供奉的蛊仙",
-      "type": "势力NPC"
+      "canonicalNotes": "南疆萧家家主——青山古派几大家族的平衡者，善于斡旋",
+      "type": "家族族长",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "经商贸易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "萧家家主"
+      }
     },
-
     "人祖": {
       "alias": [],
       "faction": "独立",
@@ -878,14 +1467,25 @@
       "rank": "九转",
       "role": "minor",
       "relationship": "神话先祖",
-      "personality": "坚韧不拔",
+      "personality": "蛊世界第一位人类的孤独与坚韧，在没有前人的黑暗中独自走出了一条路",
       "tier": 9,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "传说中的人族始祖，人祖传主角",
-      "type": "神话人物"
+      "type": "神话人物",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "徐老怪": {
       "alias": [],
       "faction": "南疆",
@@ -893,29 +1493,48 @@
       "rank": "蛊师",
       "role": "minor",
       "relationship": "师傅/盟友",
-      "personality": "古怪、热爱炼蛊",
+      "personality": "古怪炼蛊师，对蛊虫的热情远超对人，在山寨边缘建了一间旁人不敢靠近的炼蛊房",
       "tier": 3,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "古月山寨客卿蛊师",
-      "type": "导师NPC"
+      "type": "导师NPC",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆蛊师",
+        "商队期": "南疆游历蛊师",
+        "北原期": "南疆出身的流浪蛊师",
+        "天庭战": "南疆英雄"
+      }
     },
-
     "沈家老祖": {
-      "alias": [],
-      "faction": "南疆",
-      "title": "沈家族长",
-      "rank": "蛊仙",
-      "role": "minor",
-      "relationship": "对手",
-      "personality": "极度护短，族中弟子无论对错皆先袒护，对外强硬",
-      "tier": 7,
-      "isDetrence": false,
+      "faction": "南疆·沈家",
+      "title": "沈家太上长老",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友/对手",
+      "personality": "老谋深算，护族心切，对家族利益有近乎偏执的执着",
+      "tier": 4,
+      "isDetrence": true,
       "isAlive": true,
-      "canonicalNotes": "南疆沈家老祖",
-      "type": "势力首领"
+      "canonicalNotes": "南疆沈家底蕴——四转修为坐镇，是沈家在青山古派势力的保障",
+      "type": "家族长老",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沈家长老",
+        "商队期": "沈家老祖"
+      }
     },
-
     "洪铭": {
       "alias": [],
       "faction": "中洲",
@@ -923,14 +1542,25 @@
       "rank": "蛊仙",
       "role": "minor",
       "relationship": "对手",
-      "personality": "骄傲自负",
+      "personality": "骄傲自负的洪家天才——天赋给了他盛气凌人的资格，但没给他面对失败的准备",
       "tier": 6,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "中洲十大家族洪家天才",
-      "type": "天才对手"
+      "type": "天才对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "灵缘斋主": {
       "alias": [],
       "faction": "中洲",
@@ -938,14 +1568,25 @@
       "rank": "八转",
       "role": "supporting",
       "relationship": "对手/间接关系",
-      "personality": "神秘深邃",
+      "personality": "神秘深邃的灵缘斋主人，他的每一个沉默都让人猜测他看到了什么不该被看到的东西",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "灵缘斋主人，凤九歌的师门长辈",
-      "type": "势力首领"
+      "type": "势力首领",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "万寿娘子": {
       "alias": [],
       "faction": "中洲",
@@ -953,14 +1594,25 @@
       "rank": "八转",
       "role": "minor",
       "relationship": "对手",
-      "personality": "长寿智慧",
+      "personality": "长寿智慧的八转宙道蛊仙——活了太久，智慧与倦怠是她灵魂中的共生体",
       "tier": 8,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "八转宙道蛊仙",
-      "type": "八转对手"
+      "type": "八转对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "战部渡": {
       "alias": [],
       "faction": "中洲",
@@ -973,9 +1625,20 @@
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "八转战道，战部之首",
-      "type": "八转对手"
+      "type": "八转对手",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "中洲弟子",
+        "商队期": "宗门行者",
+        "北原期": "中洲使者",
+        "天庭战": "中洲正士"
+      }
     },
-
     "雷鬼真君": {
       "alias": [],
       "faction": "北原",
@@ -988,9 +1651,20 @@
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "北原雷道大宗师",
-      "type": "八转对手"
+      "type": "八转对手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "苏仙儿": {
       "alias": [],
       "faction": "北原",
@@ -998,14 +1672,25 @@
       "rank": "蛊仙",
       "role": "minor",
       "relationship": "黑楼兰之母",
-      "personality": "温柔但执拗",
+      "personality": "温柔却执拗的妻子和母亲，在黑楼兰和焚天魔女之间找到了一条只有她才能走的路",
       "tier": 7,
       "isDetrence": false,
       "isAlive": true,
       "canonicalNotes": "焚天魔女之妹",
-      "type": "关联NPC"
+      "type": "关联NPC",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
     },
-
     "黑楼兰（前世）": {
       "alias": [],
       "faction": "北原",
@@ -1013,22 +1698,2962 @@
       "rank": "蛊仙",
       "role": "minor",
       "relationship": "前世敌人",
-      "personality": "弑父枭雄",
+      "personality": "弑父的枭雄前世，与今生黑楼兰构成命运的镜像——同一个人选择了不同的仇人",
       "tier": 7,
       "isDetrence": true,
       "isAlive": false,
       "canonicalNotes": "前世线中弑父，与方源为敌",
-      "type": "前世对手"
+      "type": "前世对手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北原部落战士",
+        "商队期": "草原游牧者",
+        "北原期": "王庭勇士",
+        "天庭战": "北原猛将"
+      }
+    },
+    "古月山魈": {
+      "faction": "古月山寨",
+      "title": "山寨老",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "族人",
+      "personality": "沉默寡言，看透世事",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古月山寨最年长的蛊师，见证了山寨三代人的兴衰",
+      "type": "智慧长者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古月山寨山寨老",
+        "商队期": "古月山寨长者",
+        "北原期": "古月山寨远祖"
+      }
+    },
+    "古月锐": {
+      "faction": "古月山寨",
+      "title": "山寨护卫队长",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "族人",
+      "personality": "忠诚护短，脾气急躁",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "古月山寨的护卫队长，负责山寨外围巡逻和防御",
+      "type": "护卫",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古月山寨护卫队长",
+        "商队期": "古月山寨战士"
+      }
+    },
+    "商鹤鸣": {
+      "faction": "商家",
+      "title": "商家外务执事",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "精于算计但守信，商人本色",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "商家在南疆招募蛊材采集者的执事，掌握多条交易路线",
+      "type": "商人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "商家外务执事",
+        "商队期": "商队贸易主管"
+      }
+    },
+    "铁骨": {
+      "faction": "铁家",
+      "title": "铁家族长次子",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "刚硬如铁，不善言辞但重承诺",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "铁家族长的次子，负责铁家在南疆的矿脉管理",
+      "type": "战士",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "铁家矿脉护卫",
+        "商队期": "铁家矿脉主管"
+      }
+    },
+    "武烈": {
+      "faction": "武家",
+      "title": "武家挑战者",
+      "rank": "四转巅峰蛊师",
+      "role": "supporting",
+      "relationship": "潜在对手",
+      "personality": "好战成性，一天不打架就浑身难受",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "武家最年轻的四转巅峰蛊师，四处挑战各山寨的四转强者",
+      "type": "战士",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "武家挑战者",
+        "商队期": "武家战斗狂人"
+      }
+    },
+    "叶萱": {
+      "faction": "南疆",
+      "title": "散修女蛊师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "独立坚韧，靠采药维持修行",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "南疆少有的女性散修蛊师，精通草木药理学",
+      "type": "散修",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆散修女蛊师",
+        "商队期": "药草采集者"
+      }
+    },
+    "南疆毒师·蛇牙": {
+      "faction": "南疆",
+      "title": "毒道散修",
+      "rank": "三转毒道蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "阴狠独行，以毒物研究为乐",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "南疆独立毒道蛊师，传闻与多条人命案有关但无人敢追究",
+      "type": "反派",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "南疆毒师",
+        "商队期": "毒道散修"
+      }
+    },
+    "贾明": {
+      "faction": "商家",
+      "title": "商家拍卖师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "口若悬河，能把枯枝说成神木",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "商家在南疆山寨巡回拍卖师，熟悉南疆所有山寨的通路和价格",
+      "type": "商人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "商家拍卖师",
+        "商队期": "巡回商人"
+      }
+    },
+    "山鬼婆婆": {
+      "faction": "南疆",
+      "title": "古林深处隐居者",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "孤僻但偶尔帮忙，没人知道她的真名",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "住在南疆深林中的神秘蛊师——只有迷路的人能遇见她",
+      "type": "隐士",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "深林隐士",
+        "商队期": "山鬼婆婆"
+      }
+    },
+    "赵霆": {
+      "faction": "南疆",
+      "title": "雷道蛊师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "暴烈如火，讲义气",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "南疆雷道蛊师，以雷翼蛊成名。曾在一次雨夜独战三名同等阶敌手并全身而退",
+      "type": "战士",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "雷道蛊师",
+        "商队期": "雷霆行者"
+      }
+    },
+    "古月琴": {
+      "faction": "古月山寨",
+      "title": "山寨药师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "族人",
+      "personality": "温和耐心，是山寨里最受欢迎的人之一",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "古月山寨唯一的药师——不擅长战斗但能配药救人",
+      "type": "辅助",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古月山寨药师",
+        "商队期": "山寨药师"
+      }
+    },
+    "钱富贵": {
+      "faction": "商家",
+      "title": "商家财富执事",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "潜在合作伙伴",
+      "personality": "精明但不贪婪——知道哪些钱能赚哪些钱不能赚",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "商家在南疆管财务的执事，掌握各山寨的债务关系",
+      "type": "商人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "商家财务执事",
+        "商队期": "资金管理人"
+      }
+    },
+    "林守": {
+      "faction": "南疆",
+      "title": "守林人",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "不善交际，把树当作朋友",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "在南疆深林外栖居的守林蛊师，精通木道——野兽和树木都不攻击他",
+      "type": "独行者",
+      "domain": "南疆",
+      "domainTags": [
+        "蛊材采集",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "守林人",
+        "商队期": "森林守护者"
+      }
+    },
+    "古月寒": {
+      "faction": "古月山寨",
+      "title": "山寨见习蛊师",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "族人",
+      "personality": "勤奋刻苦，资质平平但不服输",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "东窗事发后山寨新培养的年轻蛊师，方源的替代品",
+      "type": "后辈",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "山寨见习蛊师",
+        "商队期": "山寨正式蛊师"
+      }
+    },
+    "石磊": {
+      "faction": "铁家",
+      "title": "铁家矿工",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "朴实憨厚，只知道挖矿",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "铁家矿脉中负责采矿的蛊师——不是战士但认识每一种矿石",
+      "type": "工人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "铁家矿工",
+        "商队期": "矿脉主管"
+      }
+    },
+    "白霜": {
+      "faction": "南疆",
+      "title": "冰道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "冰冷如霜但不残忍，只是不善于表达",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "南疆罕见的冰道蛊师——据说她的师承来自北原",
+      "type": "散修",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "冰道散修",
+        "商队期": "冰霜行者"
+      }
+    },
+    "巴图": {
+      "faction": "黄金家族",
+      "title": "巴图部落族长",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "豪迈直爽，把荣耀看得比生命更重",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "黄金家族下巴图部落的首领，以'永不撤退'闻名北原",
+      "type": "族长",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "巴图部落战士",
+        "商队期": "巴图部落勇士",
+        "北原期": "巴图部落族长",
+        "天庭战": "北原战将"
+      }
+    },
+    "燕云儿": {
+      "faction": "黄金家族",
+      "title": "王庭女战士",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "巾帼不让须眉，比大多数男战士更凶悍",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "北原少有的女性高阶战士——她的战功不是靠祖荫而是用敌人的头颅堆出来的",
+      "type": "战士",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原女战士",
+        "商队期": "王庭勇士",
+        "北原期": "战功女将",
+        "天庭战": "北原巾帼"
+      }
+    },
+    "马步云": {
+      "faction": "北原",
+      "title": "马贼首领",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "见钱眼开但讲义气——只抢商队的货不杀人",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原商路上的马贼首领，没人知道他的真名——只知道他跑得比谁都快",
+      "type": "反派",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原马贼",
+        "商队期": "马贼首领",
+        "北原期": "商路劫掠者"
+      }
+    },
+    "胡勒": {
+      "faction": "黄金家族",
+      "title": "胡勒部落继承人",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在对手",
+      "personality": "傲慢但确实有资本——他的黄金血脉浓度比大部分族长更高",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "胡勒部落的指定继承人，血脉试炼中以巅峰成绩通过",
+      "type": "贵族",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部落继承人",
+        "商队期": "血脉强者",
+        "北原期": "胡勒部落太子",
+        "天庭战": "北原天骄"
+      }
+    },
+    "苏格": {
+      "faction": "北原",
+      "title": "老牧民",
+      "rank": "无（凡人）",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "把孙子的事当自己的事——孙子是你见过的人？那咱俩就是朋友了",
+      "tier": 0,
+      "isAlive": true,
+      "canonicalNotes": "北原草原上最老的一位牧民——他认识所有部落的边界",
+      "type": "智者",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原牧民",
+        "商队期": "老牧民",
+        "北原期": "草原长者"
+      }
+    },
+    "长生天祭司·暗月": {
+      "faction": "长生天",
+      "title": "长生天祭司",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "声音永远平静——不是因为冷漠，而是因为见过的事太多了",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "长生天的三位首席祭司之一，主管血脉试炼的公正执行",
+      "type": "祭司",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "长生天祭司",
+        "商队期": "血脉试炼主持",
+        "北原期": "首席祭司",
+        "天庭战": "北原圣者"
+      }
+    },
+    "黑日": {
+      "faction": "北原",
+      "title": "流浪蛊师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "表面冷漠内心火热——典型的北原人",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "从败落的部落中存活下来的蛊师。他的部落被另一个部落吞并后，他选择了流浪而不是投降",
+      "type": "流浪者",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "流浪蛊师",
+        "商队期": "独行者",
+        "北原期": "失落的部落之魂"
+      }
+    },
+    "图雅": {
+      "faction": "黄金家族",
+      "title": "王庭乐师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "歌唱时像春天的风，平时是冬天的冰",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "王庭的御用乐师——她的歌曲记录着北原所有部落的英雄史诗",
+      "type": "艺术家",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原乐师",
+        "商队期": "王庭乐师",
+        "北原期": "史诗歌者"
+      }
+    },
+    "戈尔巴": {
+      "faction": "北原",
+      "title": "兽群猎人",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "对动物比对人有耐心——对人有耐心的时候通常是想从你身上得到什么",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原最著名的兽猎者——能独自猎杀北原最大的冰原熊",
+      "type": "猎手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "兽群猎人",
+        "商队期": "巨兽猎者",
+        "北原期": "狩猎之王"
+      }
+    },
+    "花月": {
+      "faction": "北原",
+      "title": "花道散修",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "你以为花道散修都很温柔？她的花是会吃人的",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "北原罕有的花道蛊师——她的花在冰原上生长时需要的不是阳光而是体温",
+      "type": "散修",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "花道散修",
+        "商队期": "冰原花师"
+      }
+    },
+    "莫日根": {
+      "faction": "黄金家族",
+      "title": "部族萨满",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "能看到别人看不到的东西——不是灵视，是经验",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "北原部落中最受尊重的萨满，据说能与祖先的灵魂对话",
+      "type": "萨满",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部族萨满",
+        "商队期": "灵魂引路人",
+        "北原期": "先祖之喉"
+      }
+    },
+    "扎木": {
+      "faction": "黄金家族",
+      "title": "王庭侍卫",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在对手",
+      "personality": "忠于王庭胜过忠于生命——这句话不是比喻",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "王庭外围侍卫队长，负责阻止未经许可的人接近王庭会议",
+      "type": "护卫",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原战士",
+        "商队期": "王庭侍卫",
+        "北原期": "侍卫队长"
+      }
+    },
+    "额尔敦": {
+      "faction": "北原",
+      "title": "宝石商人",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "他的笑容和宝石一样昂贵——没见过他对不给钱的人笑过",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "北原唯一的不属于黄金家族的跨国商人——他的商队从北原走向中洲",
+      "type": "商人",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "草原商人",
+        "商队期": "宝石商人",
+        "北原期": "跨国商队主人"
+      }
+    },
+    "乌兰": {
+      "faction": "北原",
+      "title": "冰原斥候",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "在冰原上七天不说话——然后见到人可以说七天",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原的冰原斥候——负责在冰原上寻找新的兽群和新的敌人",
+      "type": "斥候",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "冰原斥候",
+        "商队期": "草原侦察兵",
+        "北原期": "冰原谍报者"
+      }
+    },
+    "青格尔": {
+      "faction": "北原",
+      "title": "鹰眼猎手",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "把猎杀当作艺术——而你就是他的画布上最后的空白",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原以猎杀蛊师为生的独行者。不抢财物，只要你的命——他说他在'收集'值得纪念的战斗",
+      "type": "反派",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "鹰眼猎手",
+        "商队期": "蛊师猎杀者",
+        "北原期": "草原噩梦"
+      }
+    },
+    "那沁": {
+      "faction": "长生天",
+      "title": "长生天学徒",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "虔诚到让人不安——她的信仰里没有怀疑，甚至不了解怀疑是什么",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "长生天最新一代的学徒之一。她相信长生天可以看到一切",
+      "type": "信徒",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "长生天学徒",
+        "商队期": "长生天侍从",
+        "北原期": "长生天祭司候补"
+      }
+    },
+    "海老": {
+      "faction": "东海",
+      "title": "海族长者",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "说话比沉默还慢——每个字都像是从海底捞上来的",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海某海族的长老。人类与海族之间的纠纷通常由他调解——不是因为他公正，是因为他最老",
+      "type": "智者",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "海族长者",
+        "商队期": "海域调解人",
+        "北原期": "海底元老"
+      }
+    },
+    "鹤见": {
+      "faction": "东海",
+      "title": "剑道散修",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "在岛上独居了三十年——再见到人时连自己的名字都想了半天",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海荒岛独居的剑道散修。他的岛上只有一把剑、一只鹤、和一个永远不会来的客人",
+      "type": "隐士",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "荒岛散修",
+        "商队期": "独居剑客",
+        "北原期": "岛隐者"
+      }
+    },
+    "贝娘": {
+      "faction": "海族",
+      "title": "贝族商人",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "她会把珍珠的价格翻三倍然后假装给你一折。关键是假装得很好——你不知道她是不是真的",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "贝族的著名商人。她卖的不是蛊虫——是信息。而她对你说的每一个字都可以是谈判筹码",
+      "type": "商人",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "贝族商人",
+        "商队期": "信息贩子",
+        "北原期": "浮礁情报商"
+      }
+    },
+    "蛟十三": {
+      "faction": "蛟龙",
+      "title": "蛟龙族战士",
+      "rank": "五转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "他不愤怒——愤怒需要情感波动。他只是'履行职责'",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "蛟龙族外围海域的守护者。任何未经蛟龙族许可靠近蛟龙海域的人都在他的'待清除名单'上",
+      "type": "战士",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "蛟龙族守卫",
+        "商队期": "海域守护者",
+        "北原期": "蛟龙族的剑"
+      }
+    },
+    "鱼婆婆": {
+      "faction": "海族",
+      "title": "鱼人族采珠人",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比大海还沉默——跟她买珍珠可以，跟她说话就是浪费钱",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "鱼人族中最老的采珠人。据说她采过的珍珠连起来可以从东海铺到南疆",
+      "type": "工匠",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "鱼人采珠人",
+        "商队期": "海底珍珠女",
+        "北原期": "采珠世家"
+      }
+    },
+    "风十郎": {
+      "faction": "东海",
+      "title": "风道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "把风当朋友——在海上，风确实是唯一的朋友",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海出名的风道散修。据说他能在暴风雨中踩着浪尖行走——不是飞行，而是在风和浪的缝隙里找到路",
+      "type": "散修",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "风道散修",
+        "商队期": "踏浪者",
+        "北原期": "暴风行者"
+      }
+    },
+    "螺先生": {
+      "faction": "海族",
+      "title": "螺族智者",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他不回答问题——他把问题还给你。而他给的'答案'是一座你需要自己打开的螺壳",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "螺族的智者。螺族以'从不直接说话'闻名——他们用螺壳的螺旋代表思想的螺旋",
+      "type": "智者",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "螺族智者",
+        "商队期": "螺壳先知",
+        "北原期": "深海思想家"
+      }
+    },
+    "云枝": {
+      "faction": "东海",
+      "title": "云兽训练师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她的云比她的语言丰富——她有十种不同的云，但只有一种表情",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海独有的云兽训练师。云兽不是真正的动物，而是云气与风道结合的人造生命——她的师父教会了她最后一个配方就死了",
+      "type": "驯兽师",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "云兽学徒",
+        "商队期": "云兽训练师",
+        "北原期": "云海女主人"
+      }
+    },
+    "瀚海": {
+      "faction": "东海",
+      "title": "水底探险家",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在合作伙伴",
+      "personality": "对海底的执念比海更深——他相信海底有另一个世界",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海著名的海底探险家。他说他在海底看到了不属于这个世界的光——没人知道他说的是真的还是疯了",
+      "type": "探险家",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "海底行者",
+        "商队期": "深海探险家",
+        "北原期": "海底异界探索者"
+      }
+    },
+    "赛音": {
+      "faction": "东海",
+      "title": "音道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她的声音就是她的武器——但不是让你受伤的声音，是让你忘记自己是谁的声音",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海少有的音道散修。她在海上唱歌时，鱼会跃出水面——不是听得懂，是被声音的震波推出来的",
+      "type": "散修",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "海音散修",
+        "商队期": "海上歌者",
+        "北原期": "音道传承者"
+      }
+    },
+    "绳师": {
+      "faction": "东海",
+      "title": "缚道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "没有人知道他的真名——只叫他绳师。他有三十五条不同材质的绳子，每一条都是一个故事",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海奇人——精通各种绳结和缚术。不是战斗蛊师，但他绑的结连鲸鱼都拽不开",
+      "type": "工匠",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "绳结师",
+        "商队期": "缚道散修",
+        "北原期": "缚海大师"
+      }
+    },
+    "珊瑚主母": {
+      "faction": "海族",
+      "title": "珊瑚族族长",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "一千年——她活了整整一千年。她对人类的所有评价都是'你们昨天才出生'",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "珊瑚族最年长的族长。她见证了东海从深海变成现在模样的全过程",
+      "type": "族长",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "珊瑚族长",
+        "商队期": "千年智者",
+        "北原期": "东海长明灯"
+      }
+    },
+    "浪里白": {
+      "faction": "东海",
+      "title": "水道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比浪还白——不是皮肤白，是一身白衣裳在水里从不沾湿",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海传奇水道散修。据说他在水下的时间比水上还多——他的肺已经不是肺了，是鳃",
+      "type": "散修",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "水道散修",
+        "商队期": "浪里白",
+        "北原期": "水下不归人"
+      }
+    },
+    "渔不语": {
+      "faction": "东海",
+      "title": "沉默渔者",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "二十五年来没说过一句话。不是因为不能——是因为没有必要",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "东海会说话的哑巴——不是真的哑巴，是选择不说话。他说的话全部写在他渔船的船板上",
+      "type": "渔夫",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沉默渔者",
+        "商队期": "渔船板上的日记",
+        "北原期": "无言的老渔人"
+      }
+    },
+    "涡女": {
+      "faction": "东海",
+      "title": "漩涡守护者",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "她是漩涡——靠近的人都会被吸进去。不是因为她故意要害人，是她的本性如此",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海天然大漩涡附近栖居的女蛊师——没人知道她为什么选择住在那里。靠近她的人不是死了就是疯了",
+      "type": "反派",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "漩涡守护者",
+        "商队期": "深海漩涡女",
+        "北原期": "漩涡迷境"
+      }
+    },
+    "鲸老人": {
+      "faction": "东海",
+      "title": "鲸骨船主人",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "把你的故事说给他听——他会给你一个答案。但这个答案永远不是你要的答案",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "在一艘巨大的鲸骨船上的东海传说级人物。他不知道自己的年龄——因为海上的时间不能用年计算",
+      "type": "隐士",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "鲸骨船主",
+        "商队期": "海上幻想家",
+        "北原期": "东海最后的传说"
+      }
+    },
+    "莫石": {
+      "faction": "莫家",
+      "title": "莫家水脉师",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生",
+      "personality": "他认识每一条水脉——不是地图上，是心里",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "莫家三代水脉师——他的父亲教他的不是蛊术，是'闭上眼睛感受脚下的水'",
+      "type": "水脉师",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺",
+        "血脉净化"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "水脉学徒",
+        "商队期": "水脉师",
+        "北原期": "莫家水脉守护者",
+        "天庭战": "西漠水脉守护者"
+      }
+    },
+    "沙行者·赤": {
+      "faction": "西漠",
+      "title": "沙漠向导",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "潜在合作伙伴",
+      "personality": "十六次横穿大沙漠——最后一次是一个人赤脚走完的",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠最出名的沙漠向导——你要去的地方不管多偏僻，他都能找到路。但不是免费——他收的不是元石，是故事",
+      "type": "向导",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙漠行者",
+        "商队期": "大漠向导",
+        "北原期": "赤脚沙行者"
+      }
+    },
+    "绿洲城邦·千叶城主": {
+      "faction": "西漠",
+      "title": "绿洲城主",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "表面上仁慈——但他的仁慈只给'对绿洲有用的人'",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "西漠某大绿洲城的领主。他的水井养活了三千人——但三千个人都知道：井的钥匙在他手里",
+      "type": "领主",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "绿洲贵族",
+        "商队期": "绿洲城主",
+        "北原期": "千叶城的王"
+      }
+    },
+    "暗沙": {
+      "faction": "西漠",
+      "title": "沙匪头目",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "抢你东西时会说谢谢——不是讽刺，是真的感谢你帮了他",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠最著名的沙匪。他的匪窝在移动的沙丘中——今天在这里明天就不在了。他遵守沙匪的所有潜规则：不抢水、不碰孕妇、不劫祭品",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙匪",
+        "商队期": "沙匪头目",
+        "北原期": "沙漠狼"
+      }
+    },
+    "莫莲": {
+      "faction": "莫家",
+      "title": "莫家女武师",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比沙漠的太阳还烈——她的炙热不来自火焰来自血统尊严",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "莫家最年轻的四转女战士——血脉净化仪式中以满分成绩通过",
+      "type": "战士",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "血脉净化"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "莫家武师",
+        "商队期": "血脉女战士",
+        "北原期": "莫家之焰"
+      }
+    },
+    "守井人·盲": {
+      "faction": "西漠",
+      "title": "绿洲守井人",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他是盲人——但他比任何明眼人都清楚井水的水位",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "绿洲守井人——他的家族世世代代守护这口井。眼瞎是代价——每一代守井人在成为守井人时挖掉自己的眼睛，以示'不偷看井水量'",
+      "type": "守护者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "守井人",
+        "商队期": "盲眼守井人",
+        "北原期": "绿洲的眼睛"
+      }
+    },
+    "蛇语者": {
+      "faction": "西漠",
+      "title": "蛇道散修",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "跟蛇相处太久的人会忘记怎么跟人说话。他的回答永远只有三个字: '是''不''走'",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠与蛇共生二十年的散修——他对蛇比对人更了解。他的蛊虫全都是蛇类的",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "蛇道散修",
+        "商队期": "蛇群之主",
+        "北原期": "沙漠蛇王"
+      }
+    },
+    "莫尘": {
+      "faction": "莫家",
+      "title": "莫家考古者",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "每一粒沙在他的眼里都是历史——他可以说出一片废墟的'年龄'比你的年龄还准",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "莫家最博学的考古者——他花了二十年绘制西漠所有已知的人祖遗迹分布地图",
+      "type": "学者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "血脉净化"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "考古学徒",
+        "商队期": "遗迹研究者",
+        "北原期": "人祖遗迹的守门人"
+      }
+    },
+    "棉娘": {
+      "faction": "西漠",
+      "title": "绿洲纺纱女",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "织布时唱的歌比任何战士的吼声更有力量——因为她的歌会跟着你去沙漠的每一个角落",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "绿洲纺纱女——她纺的布据说是沙漠中最好的'防沙斗篷'原料",
+      "type": "工匠",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "纺纱女",
+        "商队期": "织布匠人",
+        "北原期": "西域织品大师"
+      }
+    },
+    "死亡沙虫": {
+      "faction": "西漠",
+      "title": "野生巨虫",
+      "rank": "四转等级",
+      "role": "antagonist",
+      "relationship": "野兽——不可对话——见面即战斗",
+      "personality": "无——大地地壳的一部分——它会像地震一样过来",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "西漠最大的野生蛊虫——体型长达三十丈，在沙下穿行如鱼在水中。不是蛊师——是自然造物的怪物",
+      "type": "怪物",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "死亡沙虫",
+        "商队期": "大漠噩梦",
+        "北原期": "地下死神"
+      }
+    },
+    "干河": {
+      "faction": "西漠",
+      "title": "河床游牧者",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他只在干涸的河床上行走——从不踏上绿洲的土地",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "在西漠干河床上游牧了十三年的人——他的帐篷跟着干河的河床，他说河水终有一天会回来",
+      "type": "游牧者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "河床游牧者",
+        "商队期": "枯河行者",
+        "北原期": "等水的人"
+      }
+    },
+    "星沙老人": {
+      "faction": "西漠",
+      "title": "观星者",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "他不看人——他看星星。星星给他的回答比任何人给他的都多",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠的通宵观星者——每年最后一夜他会预言下一年的下雨天数",
+      "type": "先知",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "观星者",
+        "商队期": "星沙先知",
+        "北原期": "沙漠占星老人"
+      }
+    },
+    "噬沙蛊": {
+      "faction": "西漠",
+      "title": "沙噬虫之主",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "不计代价的生存——他的生存就是其他人的代价",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "以噬沙虫-沙噬虫为核心蛊虫的反派蛊师——可以在沙中隐形，咬人一口就是致命毒",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙噬虫之主",
+        "商队期": "沙漠刺客",
+        "北原期": "沙中死神"
+      }
+    },
+    "蓝痕": {
+      "faction": "西漠",
+      "title": "蓝海守护者",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "沉默得不是人——她守护的到底是什么连她自己都不知道",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "自命为蓝海守护者的神秘蛊师。她不让人靠近蓝海禁制——不是因为禁制会伤害你，是因为她说有人祖留下的最后的话",
+      "type": "守护者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "蓝海守护者",
+        "商队期": "禁制的看门人",
+        "北原期": "人祖末言守护者"
+      }
+    },
+    "盐老": {
+      "faction": "西漠",
+      "title": "盐矿主",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "他是整个西漠唯一卖盐的蛊师——在这个位置上被所有人讨好。但他每天都在等盐矿枯竭的那一天",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠盐矿的主人——盐在西漠是不亚于水的稀缺资源。他的担心是: 他死后, 这里会变成另一个战场",
+      "type": "商人",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "盐矿主",
+        "商队期": "白盐之王",
+        "北原期": "西漠盐道开创者"
+      }
+    },
+    "寻路人": {
+      "faction": "西漠",
+      "title": "沙漠搜救者",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她不问你为什么迷路了——她只告诉你该怎么走。'因为方向比原因重要'",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "专在沙漠中寻找迷路人的女蛊师——她不是蛊师协会的人，纯私人行为。她救了的人不许谢她——被救的人把谢意留给下一个需要帮助的人",
+      "type": "搜救者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "寻路人",
+        "商队期": "沙漠搜救者",
+        "北原期": "沙漠中的最后一盏灯"
+      }
+    },
+    "沈书剑": {
+      "faction": "十大古派",
+      "title": "古派戒律堂执事",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "潜在审问对象",
+      "personality": "把戒律写在脸上——不是严肃，是规则本身变成了他的五官",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "中洲十大古派之一戒律堂的执事。他不是在审判你的时候是冷的——是任何时候都是冷的",
+      "type": "执法者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "戒律堂执事",
+        "商队期": "戒律堂执事长",
+        "北原期": "古派戒律使",
+        "天庭战": "戒律之剑"
+      }
+    },
+    "兰芝": {
+      "faction": "十大古派",
+      "title": "女剑修·内门弟子",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "剑比人更真诚——她不怕人，但她相信剑道比人更不会骗她",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古派中剑道天资最高的女弟子——二十五岁就达到四转——但她拒绝提前成为长老，原因是她还没'参透'她的剑",
+      "type": "战士",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "女剑修",
+        "商队期": "内门剑道弟子",
+        "北原期": "古派之剑",
+        "天庭战": "剑中之女"
+      }
+    },
+    "贺年": {
+      "faction": "十大古派",
+      "title": "古派药剂师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他要是卖了一瓶假药，第二天就会主动去戒律堂自首——不是因为害怕惩罚，是因为受不了'不完美'",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "古派内门配药师——他配的药从来没有失败过。'失败'在他的字典里被替换成'尚未验证'",
+      "type": "药师",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "药剂师",
+        "商队期": "内门药师",
+        "北原期": "古派药宗"
+      }
+    },
+    "铁恕": {
+      "faction": "天庭",
+      "title": "天庭戒律司专员",
+      "rank": "五转蛊师",
+      "role": "antagonist",
+      "relationship": "审问者",
+      "personality": "恨非正道的一切——他的恨不是愤怒，是'清除污渍'的清洁欲",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "天庭戒律司的清查专员——被派到各大宗门审查'潜在魔道倾向'。他查人时从不问——只记录",
+      "type": "执法者",
+      "domain": "中洲",
+      "domainTags": [
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "戒律司专员",
+        "商队期": "天庭审查官",
+        "北原期": "正道清洗者",
+        "天庭战": "魔道猎手"
+      }
+    },
+    "石砚": {
+      "faction": "天元皇朝",
+      "title": "皇朝礼部侍郎",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他不是政治家——他是'仪式'的执行者。他认为宗门的每一个仪式都有它的理由——即使那个理由在五百年前就失效了",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "天元皇朝负责宗门礼仪事务的官员——他对各宗门门规的了解比该宗门的弟子还要多",
+      "type": "官员",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "礼部文书",
+        "商队期": "礼部侍郎",
+        "北原期": "仪式守护者",
+        "天庭战": "皇朝之礼"
+      }
+    },
+    "千面公子": {
+      "faction": "中洲",
+      "title": "伪装高手",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "不可信任",
+      "personality": "你不是在跟一个人打交道——他每次出现都是不同的脸，不同的声音，不同的性别——有时甚至不是'一个人'",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "中洲最神秘的伪装蛊师——没人见过他的真面目。他用的是变化道蛊虫，不止改变外貌，连气息和灵魂频率都能模仿",
+      "type": "反派",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "伪装者",
+        "商队期": "幻面人",
+        "北原期": "千面公子"
+      }
+    },
+    "柳青": {
+      "faction": "十大古派",
+      "title": "古派藏书阁管理员",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她是活的图书馆——不是记忆好，是她把时间都花在了书里而不是人里——在书里她找到了不需要说话也能被理解的世界",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "古派藏书阁管理员——整天埋首在古籍中，知道古派八百年来的所有大事记录",
+      "type": "学者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "藏书阁管理员",
+        "商队期": "行走的目录",
+        "北原期": "古籍女巫"
+      }
+    },
+    "天庭值守·白": {
+      "faction": "天庭",
+      "title": "天庭值守",
+      "rank": "五转蛊师",
+      "role": "antagonist",
+      "relationship": "监视者——不可信任",
+      "personality": "她看到了你的一切——但她不会告诉你她看到了什么。'天庭观察不是为了取信于人——是为了记录'",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "天庭监视网的一员——她的蛊虫在中洲的天空中飞行，记录中洲各地发生的一切可疑活动",
+      "type": "监视者",
+      "domain": "中洲",
+      "domainTags": [
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "天庭值守",
+        "商队期": "天空之眼",
+        "北原期": "天庭守望者",
+        "天庭战": "天眼"
+      }
+    },
+    "金师傅": {
+      "faction": "十大古派",
+      "title": "武器锻造大师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他挥锤子的方式像是跟铁在吵架——但最后铁总是听他的",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "十大古派共用的武器锻造师——他的武器不卖给个人，只卖给宗门——因为他相信'武器应该有自己的归属'",
+      "type": "工匠",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "武器学徒",
+        "商队期": "锻造师",
+        "北原期": "大师"
+      }
+    },
+    "秋棠": {
+      "faction": "十大古派",
+      "title": "外门弟子",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "总是最后一个被点到——但她不介意。她说'慢一点没关系——只要方向是对的总会到的'",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "古派外门弟子——入派三年仍未突破二转——但她是外门中最后离开的人——每天早上最早到练功场",
+      "type": "弟子",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "外门弟子",
+        "商队期": "外门领头弟子",
+        "北原期": "内门弟子"
+      }
+    },
+    "墨夫子": {
+      "faction": "十大古派",
+      "title": "书法大师",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他的字就是他的蛊虫——每一个笔画都是一个完整的道。他教人时不说话，在纸上写一个字——你猜它什么意思",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "十大古派中唯一的书法蛊师——将智道融入书法。他的书法可以封印蛊虫、写字成阵——但没人知道怎么写——他收了二十多个弟子，没人学得会",
+      "type": "艺术家",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "书法学生",
+        "商队期": "书法大师",
+        "北原期": "墨道宗师",
+        "天庭战": "墨魂"
+      }
+    },
+    "赫连锋": {
+      "faction": "十大古派",
+      "title": "古派战斗教官",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在的导师",
+      "personality": "他骂你的时候不是因为愤怒——是怕你将来在战场上不知道怎么死",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "古派的战斗总教官——会一百三十七种蛊虫的用法的实战派——但他从不自己在战斗中杀死人——他的全部战绩来自训练出来的弟子",
+      "type": "教官",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "战斗教官",
+        "商队期": "总教官",
+        "北原期": "战力之基石",
+        "天庭战": "教魂"
+      }
+    },
+    "春草": {
+      "faction": "仙鹤门",
+      "title": "医道修士",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她会被伤痛触怒——不是患者的伤痛，是'明明可以治好的伤却在耽误'的医者之怒",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "仙鹤门的医道修士——她用医道蛊虫的记录精确到一个细胞——但她的'语言'不是蛊师能懂的",
+      "type": "医师",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "医道修士",
+        "商队期": "仙鹤门神医",
+        "北原期": "起死回生者"
+      }
+    },
+    "关汉生": {
+      "faction": "天元皇朝",
+      "title": "皇朝监察使",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "审查者",
+      "personality": "从不开玩笑——不是不想，是他认为玩笑会让人忘记他的职责——而他的职责是让人永远不能忘记",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "皇朝派往各大宗门的监察使——他的职责是确保各宗门没有'越权行为'。但他对权力没有欲望——只是完成使命——完成后就消失",
+      "type": "官员",
+      "domain": "中洲",
+      "domainTags": [
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "监察文书",
+        "商队期": "监察使",
+        "北原期": "皇朝的影子",
+        "天庭战": "皇朝之眼"
+      }
+    },
+    "木道人": {
+      "faction": "十大古派",
+      "title": "木道隐修",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "把树当学生——他能在树下坐一整年不动而在心中建筑一个森林的哲学体系",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古派中在木上静修三十年的木道蛊师——他出来后所有人都以为他是树——实际上他比任何人都清醒",
+      "type": "隐士",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "木道隐修",
+        "商队期": "树中人",
+        "北原期": "木道大宗师",
+        "天庭战": "林魂"
+      }
+    },
+    "瑶池仙子": {
+      "faction": "十大古派",
+      "title": "古派女长老",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "美得让所有人只看到她的脸——但她最恨的就是这个。她说'我的境界比我的容貌更深'",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "古派最年轻的女长老——她的修行速度连她的师父都望尘莫及。但不是天赋——是她在每一个别人睡觉的夜晚都在孤独修炼",
+      "type": "长老",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "内门弟子",
+        "商队期": "内门首席",
+        "北原期": "最年轻的长老",
+        "天庭战": "瑶池之光"
+      }
+    },
+    "蛊材交易商·黄": {
+      "faction": "南疆",
+      "title": "蛊材商",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "用秤砣精确到分——不是小气，是在这样一个地方精确才有信用",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "南疆山寨间专门倒卖蛊材的散商",
+      "type": "商人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "蛊材商",
+        "商队期": "蛊材倒卖人"
+      }
+    },
+    "木魅": {
+      "faction": "南疆",
+      "title": "古林树精",
+      "rank": "四转等级",
+      "role": "antagonist",
+      "relationship": "野兽",
+      "personality": "无",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "南疆古林中的树精——传闻是枯萎的万年古树吸收了太多蛊师的血后异化而成",
+      "type": "怪物",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古林树精",
+        "商队期": "森林恶灵"
+      }
+    },
+    "铁大锤": {
+      "faction": "铁家",
+      "title": "铁匠",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "把每一锤都当做最后一锤——因为矿石是有限的",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "铁家矿区的铁匠——他的铁锤是特制的蛊虫——以锤养蛊",
+      "type": "工匠",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "铁匠",
+        "商队期": "铁家锻造师"
+      }
+    },
+    "武鹏": {
+      "faction": "武家",
+      "title": "武家外务",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他是武家唯一讲道理的人——不是因为他不想打架，是他被揍过太多次了",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "武家负责与其他山寨外交的执事——是武家唯一能用口舌代替拳脚的人",
+      "type": "外交官",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "武家外务",
+        "商队期": "武家外交官"
+      }
+    },
+    "岩蛙蛊母": {
+      "faction": "南疆",
+      "title": "虫群之母",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "把蛊虫当孩子养——她的岩蛙群可以把整个商队吞掉",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "南疆某岩蛙大群落的女主人——她是被南疆驱逐的人——因为她养的不是蛊虫，是一支军队",
+      "type": "反派",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "岩蛙之主",
+        "商队期": "岩蛙母巢"
+      }
+    },
+    "古月殇": {
+      "faction": "古月山寨",
+      "title": "山寨守墓人",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "族人",
+      "personality": "他每天对墓碑说的话比对话人还多——他对死人比对活人更了解",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "古月山寨墓地的守墓人, 他是山寨最早一代的后代但资质低劣",
+      "type": "守墓人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "山寨守墓人",
+        "商队期": "古月冢守"
+      }
+    },
+    "朱果": {
+      "faction": "南疆",
+      "title": "朱果树精",
+      "rank": "二转等级",
+      "role": "antagonist",
+      "relationship": "野兽",
+      "personality": "无",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "南疆朱果树的树精——会攻击采摘朱果的人。有人说树精是古蛊师死后所化",
+      "type": "怪物",
+      "domain": "南疆",
+      "domainTags": [
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "朱果树精",
+        "商队期": "朱果守护者"
+      }
+    },
+    "秦叔": {
+      "faction": "南疆",
+      "title": "年迈蛊师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "退休十五年——现在唯一的乐趣是在山寨门口看年轻人练功时摇头",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "南疆某小寨的退休蛊师, 他做了十五年山寨的防兽栅栏",
+      "type": "退休长者",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "年迈蛊师",
+        "商队期": "退休栅栏匠"
+      }
+    },
+    "花妖": {
+      "faction": "南疆",
+      "title": "花间妖蛊",
+      "rank": "二转等级",
+      "role": "antagonist",
+      "relationship": "野兽",
+      "personality": "美丽而致命——她的芬芳是毒",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "南疆花田中的变异蛊虫——汲取花蜜的蛊师有时会被感染，变为花妖的载体",
+      "type": "怪物",
+      "domain": "南疆",
+      "domainTags": [
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "花间妖蛊",
+        "商队期": "花毒宿主"
+      }
+    },
+    "林药师": {
+      "faction": "南疆",
+      "title": "野生药师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "能在森林里辨别三百种毒草——但分辨不出一家人在饭桌前说'我回来了'是什么感觉",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "自幼在森林里长大的药师——他的师父是一本笔记和一个骷髅",
+      "type": "药师",
+      "domain": "南疆",
+      "domainTags": [
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "野生药师",
+        "商队期": "森林药王"
+      }
+    },
+    "石狼": {
+      "faction": "北原",
+      "title": "岩狼骑手",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他的狼对别人来说是野兽——对他来说是兄弟。他喂狼用心头血",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原最著名的狼骑散修，与自己的岩狼蛊共享精血",
+      "type": "骑手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "岩狼骑手",
+        "商队期": "狼兄弟"
+      }
+    },
+    "铁木": {
+      "faction": "黄金家族",
+      "title": "铁木部落族长",
+      "rank": "五转蛊师",
+      "role": "antagonist",
+      "relationship": "潜在对手",
+      "personality": "被称为北原之铁——不如说是冰原之冰",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "黄金家族下铁木部落的族长——以冷酷无情的部落扩张闻名",
+      "type": "族长",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部落继承人",
+        "商队期": "部落族长",
+        "北原期": "北原之铁"
+      }
+    },
+    "冰鹿": {
+      "faction": "北原",
+      "title": "冰鹿牧者",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比冰鹿还温顺——但冰鹿发怒的时候他也会",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "北原冰鹿群的牧者——冰鹿的角是北原名贵的蛊材",
+      "type": "牧民",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "冰鹿牧者",
+        "商队期": "鹿角商人"
+      }
+    },
+    "巴雅尔": {
+      "faction": "黄金家族",
+      "title": "部落诗人",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他的歌里有整个北原的历史——没人能唱完他的歌而不哭",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "北原最著名的部落诗人——他的史诗'百战王庭'记录了北原黄金家族的全部历史",
+      "type": "艺术家",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部落诗人",
+        "商队期": "史诗编撰者",
+        "北原期": "北原歌者"
+      }
+    },
+    "霍汗": {
+      "faction": "北原",
+      "title": "冬狩猎人",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "冬狩时是野兽——冬狩后他把捕获的野兽分给部落的每个人——不是因为善良，是传统",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原著名冬狩猎手——在最冷的冬天猎到最大的野兽是他的骄傲",
+      "type": "猎手",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "冬狩猎人",
+        "商队期": "寒冬猎手"
+      }
+    },
+    "诺敏": {
+      "faction": "北原",
+      "title": "驯鹰人",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他的眼里有鹰的锋利——也有天空的寂寞",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原鹰群的主人——他的鹰可以看到二十里外的敌人",
+      "type": "驯兽师",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "驯鹰人",
+        "商队期": "鹰眼"
+      }
+    },
+    "图门": {
+      "faction": "北原",
+      "title": "部落铁匠",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "用骨和铁铸武器——他不卖武器，他问你需要什么然后打造",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "北原部落的铁匠——他的武器从不卖给部落以外的陌生人",
+      "type": "工匠",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部落铁匠",
+        "商队期": "北原铸器师"
+      }
+    },
+    "古尔": {
+      "faction": "北原",
+      "title": "独行者",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "不跟任何人说话——他只跟失败者的尸体交流",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "北原独行蛊师——据说他的手上有一百条蛊师的人命——没人去数，因为数的人都在名单上",
+      "type": "反派",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "血脉竞逐"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "独行者",
+        "商队期": "百人斩",
+        "北原期": "北原死神"
+      }
+    },
+    "冰洞守护者": {
+      "faction": "北原",
+      "title": "冰洞蛊虫群",
+      "rank": "四转等级",
+      "role": "antagonist",
+      "relationship": "野兽",
+      "personality": "无",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "北原冰洞中的野生蛊虫群——攻击一切靠近冰洞的活物",
+      "type": "怪物",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "冰洞蛊虫",
+        "商队期": "冰洞守卫"
+      }
+    },
+    "浮礁守卫·甲": {
+      "faction": "东海",
+      "title": "浮礁暗哨",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "沉默到极致——'他说话的频率是月次'——每个月说一次话",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海某浮礁的守护者——他坐在浮礁上等人来——不攻击，只是不允许你靠近珊瑚区",
+      "type": "护卫",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "浮礁暗哨",
+        "商队期": "浮礁守卫"
+      }
+    },
+    "章鱼巫": {
+      "faction": "海族",
+      "title": "章鱼族萨满",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "用八只手同时做三件事——用另外五只手指不同的命运线——但他说'命运线是不可逆的'",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "章鱼族的萨满——据说能同时看到八个未来分支",
+      "type": "萨满",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "章鱼族萨满",
+        "商队期": "八目先知"
+      }
+    },
+    "海雾女": {
+      "faction": "东海",
+      "title": "雾道散修",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "她来时海雾弥漫——走后有人消失了",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海神秘雾道蛊师——据说能在海雾中完全隐身——连灵魂感知都捕捉不到",
+      "type": "反派",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "雾道散修",
+        "商队期": "海雾女"
+      }
+    },
+    "蟹祖": {
+      "faction": "海族",
+      "title": "巨蟹族族长",
+      "rank": "五转等级",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "他的钳子没有钳断过活人——但他威胁的时候没有人不相信那对钳子可以",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "东海巨蟹族的族长——他只在族群的领地受到威胁时才行动",
+      "type": "族长",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "巨蟹族长",
+        "商队期": "海底堡垒主人"
+      }
+    },
+    "沉船老": {
+      "faction": "东海",
+      "title": "沉船探险者",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "死在沉船里是他一生的愿望——不是悲观，他认为沉船是最有尊严的坟墓",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海著名的沉船探险者——三十年探索了三百多艘沉船",
+      "type": "探险家",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沉船探险者",
+        "商队期": "海下遗物猎手"
+      }
+    },
+    "鸥语": {
+      "faction": "东海",
+      "title": "海鸥通信员",
+      "rank": "一转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她的海鸥比任何信差都快——但她的海鸥只叼信——不叼别的——她说'海鸥不是你的快递员'",
+      "tier": 1,
+      "isAlive": true,
+      "canonicalNotes": "东海独有——用海鸥传信的蛊师。她的信从来不会丢——因为她认识每一只海鸥的名字",
+      "type": "信使",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "海鸥通信员",
+        "商队期": "海上信使"
+      }
+    },
+    "人鱼公主": {
+      "faction": "海族",
+      "title": "人鱼族少族长",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她用歌声下命令——她的歌声不命令你做坏事——只命令你不要靠近",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海人鱼族的少族长——她的歌声可以控制海浪的方向",
+      "type": "贵族",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "人鱼族少族长",
+        "商队期": "海中歌者"
+      }
+    },
+    "岛主·南": {
+      "faction": "东海",
+      "title": "无名岛岛主",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "岛上的规则是你定的——但出了岛你什么都不是——这句话他每天都在念叨",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "东海无名岛的岛主——他的岛上只有三个人——他、他师父的坟、和一只海龟",
+      "type": "隐士",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修",
+        "师徒纽带"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "无名岛主",
+        "商队期": "三人岛主人"
+      }
+    },
+    "雷霆电鳗": {
+      "faction": "东海",
+      "title": "深海巨兽",
+      "rank": "五转等级",
+      "role": "antagonist",
+      "relationship": "危险动物",
+      "personality": "无——大自然的一部分",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "东海底深处的野生巨兽蛊虫——身体长达五十丈——放电范围覆盖整个海峡",
+      "type": "怪物",
+      "domain": "东海",
+      "domainTags": [
+        "海族交易"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "雷霆电鳗",
+        "商队期": "海底毁灭者"
+      }
+    },
+    "风蚀岩": {
+      "faction": "西漠",
+      "title": "岩道散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比石头还沉默——因为风已经把他的话吹走了",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠在风蚀岩石上静修的岩道散修——他的皮肤已经跟岩石融为一体",
+      "type": "散修",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "岩道散修",
+        "商队期": "石中人"
+      }
+    },
+    "旅鼠王": {
+      "faction": "西漠",
+      "title": "沙鼠之主",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "用鼠群说话——一个人沉默，一群老鼠尖叫",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠控鼠系的蛊师——他的沙鼠群可以覆盖整个绿洲在一夜之间",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙鼠之主",
+        "商队期": "鼠群噩梦"
+      }
+    },
+    "莫骨": {
+      "faction": "莫家",
+      "title": "莫家骨道护法",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "他身上有莫家所有人的骨头——不是他杀的——是他保存了莫家所有人的遗骨",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "莫家骨道护法——负责保管莫家祖先的遗骨——这个遗骨是莫家所有蛊虫的来源",
+      "type": "护法",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "血脉净化"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "骨道护法",
+        "商队期": "遗骨守护者"
+      }
+    },
+    "沙绘师": {
+      "faction": "西漠",
+      "title": "沙画预言师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "她的沙画不是画——是预言。她画完了你的一生，你就已在画中",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "西漠沙画预言师——她的沙画会在七天后变成你经历的真实事件",
+      "type": "先知",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙画师",
+        "商队期": "沙画预言师"
+      }
+    },
+    "沙暴": {
+      "faction": "西漠",
+      "title": "沙暴骑士",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "他来的地方跟着沙暴——走的地方只剩下沙子",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "西漠少见的从沙暴中走出来的蛊师——没人知道他从哪来的——只知道他带的沙暴是真实的",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙暴骑士",
+        "商队期": "沙暴之子"
+      }
+    },
+    "骆驼帮·驼商": {
+      "faction": "西漠",
+      "title": "骆驼商队首领",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "商人",
+      "personality": "两条路:一条有骆驼——一条就是死路",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠最大骆驼商队的首领——他的商队是西漠唯一穿越两个绿洲的纽带",
+      "type": "商人",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "驼队首领",
+        "商队期": "驼商"
+      }
+    },
+    "毒蝎王": {
+      "faction": "西漠",
+      "title": "毒蝎巢之主",
+      "rank": "四转等级",
+      "role": "antagonist",
+      "relationship": "危险动物",
+      "personality": "无",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "西漠最大的毒蝎巢之主——不是蛊师，是自然形成的巨型毒蝎群落",
+      "type": "怪物",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "毒蝎",
+        "商队期": "毒蝎巢"
+      }
+    },
+    "泉姨": {
+      "faction": "莫家",
+      "title": "莫家泉水管理者",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "一个碗就是莫家的全部——她把每个人的碗都记得比自己孩子的名字还清楚",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "莫家负责每天分水的'水姨'——她分的水从不出错——不是因为公平——是因为精确",
+      "type": "管理者",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "莫家水姨",
+        "商队期": "分水人"
+      }
+    },
+    "蝎女": {
+      "faction": "西漠",
+      "title": "毒蝎训练师",
+      "rank": "三转蛊师",
+      "role": "antagonist",
+      "relationship": "危险人物",
+      "personality": "毒蝎是她的孩子, 你是什么",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠毒蝎女——她与毒蝎群共生——她的毒比毒蝎还毒",
+      "type": "反派",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "毒蝎女",
+        "商队期": "毒巢女主"
+      }
+    },
+    "风蝶仙": {
+      "faction": "风蝶仙门",
+      "title": "风蝶仙门长老",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "比风还轻盈——她的步法连风都跟不上",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "风蝶仙门的核心长老——据说她的轻功可以飞越中洲十个宗门到达另一个宗门而不落地",
+      "type": "长老",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "仙门弟子",
+        "商队期": "仙门长老",
+        "北原期": "风蝶之翼"
+      }
+    },
+    "铁面": {
+      "faction": "天庭",
+      "title": "天庭裁判官",
+      "rank": "五转蛊师",
+      "role": "antagonist",
+      "relationship": "不可信任",
+      "personality": "面无表情——不是演出来的——是真的把脸换了",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "天庭裁判官之一——负责审判中洲各宗门的越权行为——他曾亲自将自己门派的长老判为'终身监禁'",
+      "type": "法官",
+      "domain": "中洲",
+      "domainTags": [
+        "戒律至上",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "戒律堂见习",
+        "商队期": "裁判官",
+        "北原期": "铁面判官"
+      }
+    },
+    "云中仙": {
+      "faction": "十大古派",
+      "title": "仙云长老",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "她在云里上课——她的课只有飞得上去的人才能听到",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "古派云中修行的长老——每天在云端静坐——她的云是活的蛊虫",
+      "type": "长老",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "云中修士",
+        "商队期": "云中仙",
+        "北原期": "云巅之上"
+      }
+    },
+    "谷雨": {
+      "faction": "天元皇朝",
+      "title": "皇朝农师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "把种子当孩子养——她的庄稼是她唯一不会背叛的东西",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "天元皇朝的农学蛊师——负责保障宗门底层弟子的粮食供给",
+      "type": "农师",
+      "domain": "中洲",
+      "domainTags": [
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "农师",
+        "商队期": "皇朝农官"
+      }
+    },
+    "铜墙": {
+      "faction": "十大古派",
+      "title": "防御阵法大师",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "宗门围墙是他唯一的朋友——不是隐喻，他给每一堵墙都起了名字",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古派负责布阵的防御大师——他布的阵法从来没人打破过——不是别人不行，是他布完之后自己也解不开了",
+      "type": "阵法师",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "阵法学徒",
+        "商队期": "防御大师",
+        "北原期": "铜墙铁壁"
+      }
+    },
+    "钟表老人": {
+      "faction": "十大古派",
+      "title": "宙道蛊师",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "准确到毫秒——不是强迫症——是在时间面前，差一点就是差了一辈子",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古派中的宙道研究者——他可以精确计时到一眨眼——他的记忆可以回溯三十年前的某天的天气",
+      "type": "学者",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "时间学生",
+        "商队期": "宙道蛊师",
+        "北原期": "时间老人"
+      }
+    },
+    "白翎": {
+      "faction": "十大古派",
+      "title": "白鹤女剑",
+      "rank": "四转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "仙鹤在她身旁环绕——那不是宠物——那是剑道蛊虫的实体化",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "古派白鹤剑道的传人——剑道与鸟蛊完美结合——她可以借助仙鹤从天空发动奇袭",
+      "type": "战士",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "白鹤女剑",
+        "商队期": "天翔剑客"
+      }
+    },
+    "古城遗迹·石像": {
+      "faction": "中洲",
+      "title": "古城守卫",
+      "rank": "五转等级",
+      "role": "antagonist",
+      "relationship": "危险",
+      "personality": "无——守城五百年的石像——但最近开始动了",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "中洲废弃古城中的石像阵——五百年前突然出现——至今没人知道是谁建的。最近有人报告石像动了",
+      "type": "怪物",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古城石像",
+        "商队期": "守城巨像",
+        "北原期": "苏醒的羁绊"
+      }
+    },
+    "无面者": {
+      "faction": "中洲",
+      "title": "无面暗杀者",
+      "rank": "四转蛊师",
+      "role": "antagonist",
+      "relationship": "不可信任——极度危险",
+      "personality": "无——他的一切都是拿来杀的——没有人格——只有任务",
+      "tier": 4,
+      "isAlive": true,
+      "canonicalNotes": "中洲地下暗杀组织的一员——没人知道他们的真名和真面——接受死亡订单只需要一封信",
+      "type": "刺客",
+      "domain": "中洲",
+      "domainTags": [
+        "戒律至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "暗杀学徒",
+        "商队期": "无面者",
+        "北原期": "暗影之手"
+      }
+    },
+    "云纹蛊": {
+      "faction": "中洲",
+      "title": "云纹蛊师",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "云上的纹路就是她的心境——变幻莫测",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "中洲云纹蛊师——精通云道——她的云会写字",
+      "type": "散修",
+      "domain": "中洲",
+      "domainTags": [
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "云纹蛊师",
+        "商队期": "云上诗人"
+      }
+    },
+    "镜湖老人": {
+      "faction": "东海",
+      "title": "镜湖守护者",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "湖面如镜——他说水面下是另一个世界",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海镜湖的守护老人",
+      "type": "隐士",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "镜湖守护者",
+        "商队期": "镜中人"
+      }
+    },
+    "北风": {
+      "faction": "北原",
+      "title": "北风斥候",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "北风带他来——北风也会带他走",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "北原最优秀的斥候——他的方向感在暴风雪中比指南针还准",
+      "type": "斥候",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "北风斥候",
+        "商队期": "暴风行者"
+      }
+    },
+    "商妇·翠": {
+      "faction": "商家",
+      "title": "商家女主人",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "管账比谁都精——比任何男管家都精",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "商家在南疆的女主人——她的账本记载了南疆十年的交易",
+      "type": "商人",
+      "domain": "南疆",
+      "domainTags": [
+        "山寨文化",
+        "家族丛林"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "商家女主人",
+        "商队期": "账本女王"
+      }
+    },
+    "鼠群": {
+      "faction": "西漠",
+      "title": "沙鼠巢",
+      "rank": "二转等级",
+      "role": "antagonist",
+      "relationship": "危险动物",
+      "personality": "无",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "西漠巨型沙鼠巢穴——会袭击商队",
+      "type": "怪物",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙鼠",
+        "商队期": "沙鼠巢"
+      }
+    },
+    "卫芷": {
+      "faction": "十大古派",
+      "title": "古派女生",
+      "rank": "二转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "害羞如芷草——但她坚持每天练剑三百次",
+      "tier": 2,
+      "isAlive": true,
+      "canonicalNotes": "古派中的女弟子——天赋平平——坚持力超绝",
+      "type": "弟子",
+      "domain": "中洲",
+      "domainTags": [
+        "宗门秩序",
+        "正道法则"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "古派女生",
+        "商队期": "古派弟子"
+      }
+    },
+    "鬼面蛛": {
+      "faction": "南疆",
+      "title": "鬼面蜘蛛",
+      "rank": "三转等级",
+      "role": "antagonist",
+      "relationship": "危险动物",
+      "personality": "无",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "南疆古林中的巨蛛——面部图案如鬼——据说会模仿人声诱惑猎物",
+      "type": "怪物",
+      "domain": "南疆",
+      "domainTags": [
+        "蛊材采集"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "鬼面蛛",
+        "商队期": "森林鬼面"
+      }
+    },
+    "龙门·鲤": {
+      "faction": "东海",
+      "title": "龙鱼蛊师",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "陌生人",
+      "personality": "养鱼养了三十年——最大的鱼还没跃过龙门——但他说再等三十年也不迟",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "东海专门养育龙鱼的蛊师——相信天地自有时",
+      "type": "渔师",
+      "domain": "东海",
+      "domainTags": [
+        "海域散修"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "龙鱼蛊师",
+        "商队期": "龙门守望者"
+      }
+    },
+    "沙漏老人": {
+      "faction": "西漠",
+      "title": "沙漏散修",
+      "rank": "三转蛊师",
+      "role": "supporting",
+      "relationship": "神秘人物",
+      "personality": "他用沙子计时——沙子流完的时候他会做你认为不可能的事",
+      "tier": 3,
+      "isAlive": true,
+      "canonicalNotes": "西漠沙漏散修——他的沙漏据说可以预知一个人的死期",
+      "type": "先知",
+      "domain": "西漠",
+      "domainTags": [
+        "沙漠绿洲",
+        "水脉争夺"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "沙漏散修",
+        "商队期": "沙汐先知"
+      }
+    },
+    "敖战": {
+      "faction": "北原",
+      "title": "部落战神",
+      "rank": "五转蛊师",
+      "role": "supporting",
+      "relationship": "潜在盟友",
+      "personality": "战斗的时候血液烧得比地火还烫",
+      "tier": 5,
+      "isAlive": true,
+      "canonicalNotes": "北原传奇战士——他在世时没有战败过",
+      "type": "战士",
+      "domain": "北原",
+      "domainTags": [
+        "草原部落",
+        "战功至上"
+      ],
+      "dynamicTitles": {
+        "青茅山期": "部落战神",
+        "商队期": "不败战士",
+        "北原期": "北原战神"
+      }
     }
   },
-
   "威慑型": {
     "古月方源": {
       "alias": "方源、大爱仙尊、炼天魔尊",
       "personality": "极致利己、算无遗策、冷静克制、不信任任何人",
       "rule": "对任何NPC不会友善、不会信任、不会无条件帮助。任何描写方源友善/信任/欣赏/送资源的文本均为角色崩坏",
       "currentStatus": "原著主线中不断重生",
-      "deterrenceWords": ["算计", "眼线", "手段", "灭口", "春秋蝉"]
+      "deterrenceWords": [
+        "算计",
+        "眼线",
+        "手段",
+        "灭口",
+        "春秋蝉"
+      ]
     },
     "太白云生": {
       "personality": "云道蛊仙，亦正亦邪，不可预测",
@@ -1043,7 +4668,6 @@
       "rule": "传承需通过考验，不是无条件的"
     }
   },
-
   "友善型": {
     "琅琊地灵": {
       "type": "地灵",

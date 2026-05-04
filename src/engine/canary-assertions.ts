@@ -382,6 +382,212 @@ function c13_NPCRoleConsistency(text: string, store: RootStore): CanaryResult {
 }
 
 // ═══════════════════════════════════════════
+// C14: 仙蛊唯一性守卫 ⚡ Critical (P3)
+// ═══════════════════════════════════════════
+// 同一仙蛊世间只能存在一只，不可出现"两只春秋蝉"等描述
+const UNIQUE_IMMORTAL_GU = ['春秋蝉','定仙游','坚持仙蛊','宿命蛊','梦蝶蛊','智慧蛊','至尊仙胎蛊','力量蛊','天元宝皇莲','升炼','天机'];
+function c14_ImmortalGuUniqueness(text: string): CanaryResult {
+  for (const gu of UNIQUE_IMMORTAL_GU) {
+    const count = (text.match(new RegExp(gu, 'g')) || []).length;
+    if (count >= 2) {
+      return { ruleId:'C14', ruleName:'仙蛊唯一性', passed:false, level:'critical', details:`${gu}出现${count}次——仙蛊世间只能存在一只` };
+    }
+  }
+  return { ruleId:'C14', ruleName:'仙蛊唯一性', passed:true, level:'critical', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C15: 方源位置一致性 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c15_FangYuanLocation(text: string, store: RootStore): CanaryResult {
+  if (!text.includes('方源')) return { ruleId:'C15', ruleName:'方源位置一致性', passed:true, level:'warning', details:'' };
+  const currentDomain = (store as any).currentDomain || '南疆';
+  // 检测：方源在南疆时，不应在其他域被描写为"出现"
+  const otherDomains = ['北原','东海','西漠','中洲'].filter(d => d !== currentDomain);
+  for (const d of otherDomains) {
+    if (text.includes(d) && contains(text, ['方源出现在','方源正在','方源来到'])) {
+      return { ruleId:'C15', ruleName:'方源位置一致性', passed:false, level:'warning', details:`方源被描写为在${d}域活动，但当前域为${currentDomain}——跨域位置矛盾` };
+    }
+  }
+  return { ruleId:'C15', ruleName:'方源位置一致性', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C16: 中洲正道约束 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c16_ZhongzhouOrthodox(text: string, store: RootStore): CanaryResult {
+  if ((store as any).currentDomain !== '中洲') return { ruleId:'C16', ruleName:'中洲正道约束', passed:true, level:'warning', details:'' };
+  const evilMethods = ['魔道手段','血祭','炼魂','夺舍','邪术','禁忌之法'];
+  if (contains(text, evilMethods) && !contains(text, ['迫不得已','走投无路','堕入魔道','背叛正道'])) {
+    return { ruleId:'C16', ruleName:'中洲正道约束', passed:false, level:'warning', details:'中洲正道NPC主动提议使用魔道手段但无正当理由' };
+  }
+  return { ruleId:'C16', ruleName:'中洲正道约束', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C17: 北原血统约束 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c17_BeiyuanBloodline(text: string, store: RootStore): CanaryResult {
+  if ((store as any).currentDomain !== '北原') return { ruleId:'C17', ruleName:'北原血统约束', passed:true, level:'warning', details:'' };
+  if (contains(text, ['觉醒黄金血脉','血脉觉醒','巨阳血脉']) && !contains(text, ['北原','黄金家族','王庭','血缘','试炼'])) {
+    return { ruleId:'C17', ruleName:'北原血统约束', passed:false, level:'warning', details:'非北原血统者被描写为觉醒黄金血脉——血统应有域限制' };
+  }
+  return { ruleId:'C17', ruleName:'北原血统约束', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C18: 东海散修约束 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c18_DonghaiLooseCultivator(text: string, store: RootStore): CanaryResult {
+  if ((store as any).currentDomain !== '东海') return { ruleId:'C18', ruleName:'东海散修约束', passed:true, level:'warning', details:'' };
+  const orgWords = ['宗门纪律','按时报到','统一号令','队列整齐','令行禁止'];
+  if (contains(text, orgWords) && !contains(text, ['散修联盟','新成立的','第一次','前所未有'])) {
+    return { ruleId:'C18', ruleName:'东海散修约束', passed:false, level:'warning', details:'东海散修表现出宗门式组织纪律性——自由散漫是东海底色' };
+  }
+  return { ruleId:'C18', ruleName:'东海散修约束', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C19: 西漠生存约束 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c19_XimoSurvival(text: string, store: RootStore): CanaryResult {
+  if ((store as any).currentDomain !== '西漠') return { ruleId:'C19', ruleName:'西漠生存约束', passed:true, level:'warning', details:'' };
+  if (contains(text, ['浪费水','倒掉水','随意用水','水多得是']) && !contains(text, ['绿洲深处','水源充足','人祖遗迹'])) {
+    return { ruleId:'C19', ruleName:'西漠生存约束', passed:false, level:'warning', details:'西漠NPC在非特殊情况下浪费水资源——水就是权力' };
+  }
+  return { ruleId:'C19', ruleName:'西漠生存约束', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C20: 南疆家族约束 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c20_NanjiangFamily(text: string, store: RootStore): CanaryResult {
+  if ((store as any).currentDomain !== '南疆') return { ruleId:'C20', ruleName:'南疆家族约束', passed:true, level:'warning', details:'' };
+  if (contains(text, ['外人','进入家族','权力核心','参与决策']) && !contains(text, ['联姻','入赘','为家族','多年效力'])) {
+    return { ruleId:'C20', ruleName:'南疆家族约束', passed:false, level:'warning', details:'外人轻易进入南疆家族权力核心——家族封闭性是南疆底色' };
+  }
+  return { ruleId:'C20', ruleName:'南疆家族约束', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C21: 仙级战斗力阈值 ⚡ Critical (P3)
+// ═══════════════════════════════════════════
+function c21_ImmortalPowerThreshold(text: string, player: PlayerSnapshot): CanaryResult {
+  if (player.realmGrand >= 6) return { ruleId:'C21', ruleName:'仙级战力阈值', passed:true, level:'critical', details:'' };
+  if (contains(text, ['八转战力','亚仙尊','仙尊级别','毁天灭地','破碎虚空']) && !contains(text, ['传承','借用','临时','代价','反噬沉睡'])) {
+    return { ruleId:'C21', ruleName:'仙级战力阈值', passed:false, level:'critical', details:'非蛊仙NPC展示八转级别战斗力且无合理代价说明' };
+  }
+  return { ruleId:'C21', ruleName:'仙级战力阈值', passed:true, level:'critical', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C22: 仙蛊材料获取限制 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c22_ImmortalMaterialLock(text: string, player: PlayerSnapshot): CanaryResult {
+  if (player.realmGrand >= 6) return { ruleId:'C22', ruleName:'仙蛊材料限制', passed:true, level:'warning', details:'' };
+  if (contains(text, ['仙蛊材料','仙蕴','天地精华','大道碎片']) && !contains(text, ['机缘','传承','遗迹','试炼','考验'])) {
+    return { ruleId:'C22', ruleName:'仙蛊材料限制', passed:false, level:'warning', details:'非蛊仙获得仙级材料但无正当获取途径(机缘/传承/遗迹)' };
+  }
+  return { ruleId:'C22', ruleName:'仙蛊材料限制', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C23: 天意关注度递增 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c23_HeavenWillAttention(text: string, player: PlayerSnapshot): CanaryResult {
+  if (!contains(text, ['天意','天道','天庭注意','被注视'])) return { ruleId:'C23', ruleName:'天意关注递增', passed:true, level:'warning', details:'' };
+  // 转数越高，天意关注应越明显——但四转以下不应该被夸张描写
+  if (player.realmGrand < 4 && contains(text, ['天意降临','天道直接','天庭亲自'])) {
+    return { ruleId:'C23', ruleName:'天意关注递增', passed:false, level:'warning', details:'低境界蛊师被描写为受到天意/天庭过度关注——天意关注应随境界递增' };
+  }
+  return { ruleId:'C23', ruleName:'天意关注递增', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C24: 大机缘代价守卫 ⚡ Critical (P3)
+// ═══════════════════════════════════════════
+function c24_GreatOpportunityCost(text: string): CanaryResult {
+  if (!contains(text, ['大机缘','传承现世','远古遗迹','天道恩赐','仙尊遗留'])) return { ruleId:'C24', ruleName:'大机缘代价', passed:true, level:'critical', details:'' };
+  const costWords = ['代价','风险','反噬','考验','试炼','危险','有可能','不确定','九死一生'];
+  if (!contains(text, costWords)) {
+    return { ruleId:'C24', ruleName:'大机缘代价', passed:false, level:'critical', details:'大机缘描写未提及任何代价/风险——蛊界机缘必有代价' };
+  }
+  return { ruleId:'C24', ruleName:'大机缘代价', passed:true, level:'critical', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C25: 拍卖行诚信守卫 ⚠️ Warning (P3)
+// ═══════════════════════════════════════════
+function c25_AuctionIntegrity(text: string): CanaryResult {
+  if (!contains(text, ['宝黄天','拍卖','竞拍','出价'])) return { ruleId:'C25', ruleName:'拍卖行诚信', passed:true, level:'warning', details:'' };
+  const cheats = ['假货','赝品','欺骗','暗中操作','内定'];
+  if (contains(text, cheats) && !contains(text, ['被揭露','被发现','受到惩罚','天庭介入'])) {
+    return { ruleId:'C25', ruleName:'拍卖行诚信', passed:false, level:'warning', details:'拍卖行出现欺诈行为但无正当后果——宝黄天应保持基本诚信' };
+  }
+  return { ruleId:'C25', ruleName:'拍卖行诚信', passed:true, level:'warning', details:'' };
+}
+
+// ═══════════════════════════════════════════
+// C26: 天赋效果校验 ⚡ Critical (P4)
+// ═══════════════════════════════════════════
+// 检测AI叙事是否违反已选天赋的benefits/costs约束
+const TALENT_VIOLATIONS: Record<string, { benefits: string[]; costs: string[]; violations: string[] }> = {
+  '百毒不侵': { benefits: ['毒素免疫'], costs: ['医道蛊虫效果减半'], violations: ['中毒','剧毒','毒性发作','毒发','被毒素'] },
+  '百兽亲和': { benefits: ['兽类不会主动攻击'], costs: [], violations: ['被兽类攻击','猛兽来袭','兽群冲向你','被兽围攻'] },
+  '影中行者': { benefits: ['隐匿不易被发现'], costs: [], violations: ['被人发现','当场抓住','暴露身形','被人认出'] },
+  '铁骨': { benefits: ['骨头坚硬','肉身强韧'], costs: [], violations: ['骨折','骨骼碎裂','骨头断裂'] },
+  '炎道亲和': { benefits: ['火行亲和'], costs: ['水道蛊虫炼化+1级'], violations: ['被火烧伤','火焰吞噬了你','火焰灼烧'] },
+  '水道亲和': { benefits: ['水行亲和'], costs: ['炎道蛊虫炼化+1级'], violations: ['溺水','被水冲走','水压'] },
+  '百炼蛊师': { benefits: ['炼蛊成功率+20%'], costs: [], violations: ['炼蛊大失败','炼蛊全毁','炼蛊失败'] },
+  '阵眼天成': { benefits: ['破阵成功率+25%'], costs: [], violations: ['被困在阵法中','无法破阵','阵法将你困住'] },
+  '天资卓绝': { benefits: ['修行速度+30%'], costs: ['体质虚弱'], violations: ['体魄惊人','肉身强横','轻松扛住'] },
+  '毒道亲和': { benefits: ['毒道亲和'], costs: [], violations: ['毒道反噬','被自己的毒所伤','中毒倒地'] },
+};
+
+function c26_TalentEffectValidation(text: string, store: RootStore): CanaryResult {
+  const talentIds = (store as any).selectedTalents || [];
+  if (!talentIds || talentIds.length === 0) return { ruleId:'C26', ruleName:'天赋效果校验', passed:true, level:'critical', details:'' };
+
+  // 获取已选天赋的名称列表
+  const knownNames = new Set(Object.keys(TALENT_VIOLATIONS));
+  let activeNames: string[] = [];
+
+  // 尝试从P4天赋池匹配
+  try {
+    const { P4_TALENTS } = require('../data/talents-p4');
+    activeNames = talentIds
+      .map((id: string) => P4_TALENTS.find((t: any) => t.id === id)?.name)
+      .filter(Boolean);
+  } catch {
+    // 如果P4_TALENTS不可用，尝试从旧天赋匹配
+    try {
+      const { INITIAL_TALENTS } = require('../data/talents');
+      activeNames = talentIds
+        .map((id: string) => INITIAL_TALENTS.find((t: any) => t.id === id)?.name)
+        .filter(Boolean);
+    } catch { /* ignore */ }
+  }
+
+  // 对每个已选天赋，检查叙事是否违反
+  for (const name of activeNames) {
+    if (!knownNames.has(name)) continue;
+    const rule = TALENT_VIOLATIONS[name];
+    if (!rule) continue;
+
+    for (const v of rule.violations) {
+      if (text.includes(v)) {
+        return {
+          ruleId:'C26', ruleName:'天赋效果校验', passed:false, level:'critical',
+          details:`玩家持有天赋"${name}"(benefits:${rule.benefits.join('/')})，但叙事中出现"${v}"——违反天赋约束`
+        };
+      }
+    }
+  }
+
+  return { ruleId:'C26', ruleName:'天赋效果校验', passed:true, level:'critical', details:'' };
+}
+
+// ═══════════════════════════════════════════
 // 主入口
 // ═══════════════════════════════════════════
 export function validateCanaryAssertions(
@@ -412,6 +618,20 @@ export function validateCanaryAssertions(
     c11_GuDestruction(text),
     c12_ApertureTransform(text),
     c13_NPCRoleConsistency(text, store),
+    // ═══ P3新增: C14-C25 ═══
+    c14_ImmortalGuUniqueness(text),
+    c15_FangYuanLocation(text, store),
+    c16_ZhongzhouOrthodox(text, store),
+    c17_BeiyuanBloodline(text, store),
+    c18_DonghaiLooseCultivator(text, store),
+    c19_XimoSurvival(text, store),
+    c20_NanjiangFamily(text, store),
+    c21_ImmortalPowerThreshold(text, player),
+    c22_ImmortalMaterialLock(text, player),
+    c23_HeavenWillAttention(text, player),
+    c24_GreatOpportunityCost(text),
+    c25_AuctionIntegrity(text),
+    c26_TalentEffectValidation(text, store),
   ];
 
   const failedCritical = results.filter(r => !r.passed && r.level === 'critical');

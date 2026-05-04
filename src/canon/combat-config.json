@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "version": "1.1",
+    "description": "蛊真人模拟器决斗引擎配置 — 境界修正系数表、15流派(L1-12+L2-3)克制矩阵、伤害公式参数。独立JSON可调参。v1.1修复: 火道→炎道(原著正名)+光道/暗道/毒道L2次要克制(1.15/0.85)",
+    "pathLayers": {
+      "L1_core": "金道/木道/水道/炎道/土道/风道/雷道/冰道/力道/魂道/血道/智道——蛊师阶段主流战斗流派，系数1.3/0.7",
+      "L2_minor": "光道/暗道/毒道——蛊师阶段存在但非主流战斗流派，系数1.15/0.85",
+      "L3_immortal": "天道/兵道/剑道/刀道/骨道/音道/奴道/变化道/律道/梦道/运道/宙道/宇道等——仅蛊仙可用，P3扩展"
+    },
+    "usageNote": "combat-engine.ts在每次伤害计算时读取realmCoefficients和pathMatrix，参数可从constants读取。",
+    "designNote": "v1.2: 移除秒杀机制(oneshotThreshold)。境界差≥2不再秒杀，改为极高伤害倍率+命中惩罚。越级战斗难度极大但理论上可行（配合计谋/道具/流派克制），更贴近原著中方源二转智斗三转的设定。"
+  },
+
+  "realmCoefficients": {
+    "_note": "realmDiff = 敌方境界 - 玩家境界。正数=敌方优势，负数=玩家优势。v1.2: 取消秒杀——diff≥2改为大伤害倍率+额外命中惩罚+逃跑限制。",
+    "table": {
+      "-3": { "playerDamageMult": 3.0, "playerHitBonus": 45, "enemyDamageMult": 0.15, "enemyHitPenalty": -40 },
+      "-2": { "playerDamageMult": 2.5, "playerHitBonus": 35, "enemyDamageMult": 0.25, "enemyHitPenalty": -25 },
+      "-1": { "playerDamageMult": 1.3, "playerHitBonus": 15, "enemyDamageMult": 0.7, "enemyHitPenalty": -10 },
+      "0":  { "playerDamageMult": 1.0, "playerHitBonus": 0,  "enemyDamageMult": 1.0, "enemyHitPenalty": 0 },
+      "1":  { "playerDamageMult": 0.7, "playerHitBonus": -10, "enemyDamageMult": 1.3, "enemyHitPenalty": 15 },
+      "2":  { "playerDamageMult": 0.25, "playerHitBonus": -25, "enemyDamageMult": 3.0, "enemyHitPenalty": 35 },
+      "3":  { "playerDamageMult": 0.15, "playerHitBonus": -40, "enemyDamageMult": 5.0, "enemyHitPenalty": 45 }
+    },
+    "overwhelmThreshold": 2,
+    "overwhelmNote": "境界差≥overwhelmThreshold时：(1)低境界方伤害倍率大幅降低 (2)高境界方伤害倍率大幅提升 (3)低境界方逃跑基础概率-30% (4)高境界方免疫逃跑(C15/crit免疫)。理论上仍可战胜但极其困难，鼓励玩家使用计谋/道具而非硬刚。"
+  },
+
+  "pathMatrix": {
+    "_note": "15流派(L1-12+L2-3)克制关系。L1核心: 克制=1.3倍/被克=0.7倍。L2次要: 克制=1.15倍/被克=0.85倍。无克制=1.0。",
+    "_paths_L1": ["金道", "木道", "水道", "炎道", "土道", "风道", "雷道", "冰道", "力道", "魂道", "血道", "智道"],
+    "_paths_L2": ["光道", "暗道", "毒道"],
+    "matrix": {
+      "金道":   { "木道": 0.7, "炎道": 0.7, "风道": 1.3, "毒道": 0.85 },
+      "木道":   { "金道": 1.3, "土道": 0.7, "水道": 1.3, "毒道": 1.15, "暗道": 0.85 },
+      "水道":   { "炎道": 1.3, "木道": 0.7, "冰道": 0.7, "毒道": 1.15 },
+      "炎道":   { "金道": 1.3, "水道": 0.7, "木道": 1.3, "冰道": 1.3, "光道": 0.85 },
+      "土道":   { "木道": 1.3, "风道": 0.7, "金道": 0.7, "毒道": 0.85 },
+      "风道":   { "土道": 1.3, "金道": 0.7, "雷道": 0.7 },
+      "雷道":   { "水道": 1.3, "风道": 1.3, "土道": 0.7, "光道": 0.85 },
+      "冰道":   { "水道": 1.3, "炎道": 0.7, "力道": 1.3, "光道": 0.85 },
+      "力道":   { "智道": 1.3, "冰道": 0.7, "雷道": 0.7, "魂道": 1.15 },
+      "魂道":   { "智道": 1.3, "血道": 0.7, "力道": 0.7, "光道": 1.15, "暗道": 1.15 },
+      "血道":   { "魂道": 1.3, "智道": 0.7, "木道": 1.3, "光道": 0.85 },
+      "智道":   { "魂道": 0.7, "力道": 0.7, "血道": 1.3, "暗道": 1.15 },
+      "光道":   { "暗道": 1.3, "炎道": 1.15, "血道": 1.15, "魂道": 0.85, "冰道": 1.15, "雷道": 1.15 },
+      "暗道":   { "光道": 1.3, "木道": 1.15, "智道": 0.85, "魂道": 0.85 },
+      "毒道":   { "木道": 0.85, "水道": 0.85, "土道": 1.15, "金道": 1.15 }
+    }
+  },
+
+  "constants": {
+    "baseVariance": { "min": 0.85, "max": 1.15, "note": "伤害浮动范围" },
+    "critRate": { "base": 0.12, "multiplier": 1.5, "note": "v1.3: 基础暴击率12%(原5%过于鸡肋)，暴击伤害1.5倍" },
+    "defenseFactor": { "value": 0.5, "note": "DEF减伤系数：实际防御力=DEF×0.5" },
+    "accuracy": { "base": 70, "note": "基础命中值，hitRate=accuracy/(accuracy+evasion)" },
+    "evasion": { "base": 30, "note": "基础闪避值，minHitRate=10%, maxHitRate=95%" },
+    "minDamage": { "value": 1, "note": "伤害下限，保证每回合至少造成1点伤害" },
+    "escape": { "baseChance": 0.5, "levelBonus": 0.1, "note": "逃跑基础概率50%+境界优势×10%，境界劣势≥2不可逃跑" }
+  }
+}

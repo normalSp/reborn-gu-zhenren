@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { callDeepSeek, apiKey } from '../../api/deepseek';
 import { useStore } from '../../store';
+import { ArrowRightIcon } from '../../icons';
 import type { ScreenState } from '../../store/slices/uiSlice';
 
 interface TitleScreenProps {
@@ -191,7 +192,7 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
                   继续冒险
                 </span>
                 <span className="text-rg-gold/40 text-xs group-hover:text-rg-gold/70 transition-micro">
-                  →
+                  <ArrowRightIcon size={14} className="inline-block" />
                 </span>
               </div>
               <p className="text-rg-paper-200/50 text-xs font-panel mt-1">

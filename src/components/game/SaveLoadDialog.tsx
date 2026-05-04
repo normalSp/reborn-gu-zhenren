@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 import { useStore } from '../../store';
 import type { SaveMeta } from '../../types';
 import { SAVE_FORMAT_VERSION } from '../../store/initialState';
+import { XIcon } from '../../icons/XIcon';
+import { audioManager } from '../../utils/audio';
 
 const SLOT_COUNT = 3;
 const SAVE_PREFIX = 'gu-zhenren-slot-';
@@ -91,6 +93,7 @@ export function SaveLoadDialog() {
     };
     writeSave(slot, data);
     writeMeta(slot, meta);
+    audioManager.playSfx('save');
   };
 
   // ─── 快速读档（localStorage 槽位） ───
@@ -227,9 +230,10 @@ export function SaveLoadDialog() {
                       </button>
                       <button
                         onClick={() => handleDelete(i)}
-                        className="text-[10px] font-button px-1.5 py-1 rounded-sm border border-rg-blood-400/30 text-rg-blood-400/60 hover:bg-rg-blood-400/10 transition-micro"
+                        className="flex items-center justify-center px-1.5 py-1 rounded-sm border border-rg-blood-400/30 text-rg-blood-400/60 hover:bg-rg-blood-400/10 transition-micro"
+                        title="删除存档"
                       >
-                        ✕
+                        <XIcon size={12} />
                       </button>
                     </>
                   )}

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { audioManager } from '../../utils/audio';
 
 // ─── 粒子数据 ───
 interface Particle {
@@ -50,6 +51,8 @@ export function BreakthroughAnimation() {
     setActive(true);
     setPhase('enter');
     particlesRef.current = generateParticles(30);
+    // P4修复: 境界突破音效
+    audioManager.playSfx('breakthrough');
   }, []);
 
   useEffect(() => {

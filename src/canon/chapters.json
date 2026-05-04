@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "version": "1.0",
-    "description": "蛊真人模拟器章节弧光系统 — 五域命名空间结构。P1仅南疆三章，其余四域为P2占位。",
-    "authoringNote": "triggerConditions使用简化表达式语言: realm_gte(3)表示境界≥三转, turn_gte(15)表示回合≥15, flag(foo)表示flag存在, flag_eq(foo,bar)表示flag值等于bar, and(...)表示全部满足, or(...)表示任一满足"
+    "version": "5.0",
+    "description": "蛊真人模拟器章节弧光系统 — P2五域22章+P2-2a 8核心全局事件L0-L3四层涟漪全部完成。global数组2→8事件（sanwangshan/wangting_fudi/yitianshan/chunqiuchan/juyang/niliuhe/suming/tianting），每事件含五域L0-L3映射+sceneConstraint+l3GlobalFlags。",
+    "authoringNote": "triggerConditions使用简化表达式语言。L0=源发域完整场景约束（mustHappen/mustNotHappen/narrativeTheme）。L1=相邻域简化参与（manifestation描述介入方式）。L2=远隔域涟漪叙事（200-400字纯叙事，不附选择）。L3=全局flag持久世界状态（l3GlobalFlags引用global-flags.json中的flag ID）。",
+    "p2Changelog": "P2-1a: 南疆P1三章→五章。P2-1b: 北原从零构建五章。P2-1c: 中洲/西漠/东海各4章。P2-2a: global数组2→8事件，sanwangshan/yitianshan补齐L0场景约束+L3 flags，新增wangting_fudi/chunqiuchan/juyang/niliuhe/suming/tianting含完整四层涟漪"
   },
-
   "domains": {
     "南疆": [
       {
@@ -16,105 +16,3695 @@
         "position": {
           "region": "南疆",
           "area": "古月山寨周边 · 青茅山区",
-          "accessibleLocations": ["古月山寨", "青茅山炼蛊房", "山寨外围山林", "坊市"]
+          "accessibleLocations": [
+            "古月山寨",
+            "青茅山炼蛊房",
+            "山寨外围山林",
+            "坊市",
+            "月下炼蛊台"
+          ]
         },
         "triggerConditions": "turn_gte(1)",
-        "keyNPCs": ["古月方源", "古月族长", "青茅山炼蛊师"],
-        "keyFactions": ["古月山寨"],
+        "keyNPCs": [
+          "古月方源",
+          "古月博",
+          "古月青书",
+          "徐老怪",
+          "古月赤练"
+        ],
+        "keyFactions": [
+          "古月山寨"
+        ],
         "sceneConstraints": {
-          "mustHappen": ["开窍大典", "首次炼蛊", "山寨日常"],
-          "mustNotHappen": ["跨域旅行", "蛊仙出现", "大宗师级战斗"],
-          "narrativeTheme": "弱肉强食的家族丛林法则——山寨资源有限，炼蛊房名额竞争激烈，每个人都在为自己的生存和地位努力"
+          "mustHappen": [
+            "开窍大典",
+            "首次炼蛊",
+            "山寨日常与家族内部竞争"
+          ],
+          "mustNotHappen": [
+            "离开青茅山范围",
+            "蛊仙出现",
+            "域外势力介入"
+          ],
+          "narrativeTheme": "弱肉强食的家族丛林法则——山寨资源有限，炼蛊房名额竞争激烈，赤脉与漠脉明争暗斗。第一次开窍、第一次炼蛊，少年蛊师的命运在青茅山的山风中展开"
         },
         "goals": [
-          { "id": "qms_first_refine", "description": "完成首次炼蛊", "type": "milestone" },
-          { "id": "qms_reach_2nd", "description": "突破至二转", "type": "realm_gate" }
+          {
+            "id": "qms_first_refine",
+            "description": "完成首次炼蛊",
+            "type": "milestone"
+          },
+          {
+            "id": "qms_reach_2nd",
+            "description": "突破至二转",
+            "type": "realm_gate"
+          }
         ],
         "economyTier": 1,
-        "chapterPriceMultiplier": 1.0,
-        "rippleLayers": []
+        "chapterPriceMultiplier": 1,
+        "rippleLayers": [],
+        "exitTriggers": "山寨覆灭或离开青茅山",
+        "crossDomainHints": {
+          "北原": {
+            "perception": "青茅山地界偏远,北原的消息要隔很久才能传到。但老蛊师们说,北方的草原上正有年轻的战士在血脉试炼中觉醒",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "途经山寨的散修聊起东海的传说:群岛之间有一种叫做海族的智慧生物,他们的交易规则和人类完全不同",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "山寨仓库里有一块来自西漠的古老石碑碎片,上面刻着谁也不认识的符文。老寨主说那是人祖时代的遗物",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "偶尔有中洲的商队经过青茅山,他们穿着整齐的宗门服饰,说话客气但从不透露中洲内部的消息",
+            "interventionNote": null
+          }
+        }
       },
       {
-        "id": "nanjiang_chutan",
-        "name": "南疆初探",
-        "displayName": "第二章 · 南疆初探",
+        "id": "shanglu_qiusheng",
+        "name": "商路求生",
+        "displayName": "第二章 · 商路求生",
         "domain": "南疆",
         "domainOpeningChapter": false,
         "position": {
           "region": "南疆",
-          "area": "南疆诸山寨 · 散修集散地",
-          "accessibleLocations": ["各大山寨", "散修集市", "荒野秘地", "小传承地", "蛊材采集区"]
+          "area": "南疆商道 · 商队据点与沿途驿站",
+          "accessibleLocations": [
+            "商队驿站",
+            "南疆商道",
+            "荒野营地",
+            "小型集市",
+            "贼寇出没区"
+          ]
         },
         "triggerConditions": "or(realm_gte(2), and(turn_gte(10), flag(qms_first_refine_completed)))",
-        "keyNPCs": ["太白云生", "南疆散修领袖", "白凝冰"],
-        "keyFactions": ["南疆散修联盟", "白家寨", "古月山寨"],
+        "keyNPCs": [
+          "商拓海",
+          "商心慈",
+          "李小白",
+          "白凝冰"
+        ],
+        "keyFactions": [
+          "南疆商队",
+          "古月山寨残部",
+          "白家寨"
+        ],
         "sceneConstraints": {
-          "mustHappen": ["与其他山寨接触", "散修交易", "发现更大世界"],
-          "mustNotHappen": ["蛊仙现世", "域外势力大规模入侵"],
-          "narrativeTheme": "走出山寨的散修世界——见识南疆的广阔与复杂，门派林立，散修艰辛。机缘与危机并存，每个选择都可能改变命运"
+          "mustHappen": [
+            "山寨覆灭的冲击与流亡",
+            "投奔或偶遇商队",
+            "第一次商路护送",
+            "商心慈初遇"
+          ],
+          "mustNotHappen": [
+            "返回已成废墟的青茅山",
+            "接触仙级力量",
+            "进入南疆核心势力圈"
+          ],
+          "narrativeTheme": "山寨化为灰烬后的流亡之路——失去家园的少年在商道上求生，第一次见识南疆的辽阔与险恶。商队是移动的避难所，也是残酷的小社会。商心慈的出现让玩家看到商人世家的另一面：精明背后是担当，利益之外有情义"
         },
         "goals": [
-          { "id": "njct_visit_3_villages", "description": "造访至少三处山寨或集市", "type": "exploration" },
-          { "id": "njct_earn_500", "description": "积累元石至500块", "type": "economy" }
+          {
+            "id": "slqs_first_caravan",
+            "description": "完成第一次商队护送任务",
+            "type": "milestone"
+          },
+          {
+            "id": "slqs_earn_200",
+            "description": "积累元石至200块",
+            "type": "economy"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.2,
+        "rippleLayers": [],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "商队管事提起北原时压低了声音:北方出大事了。黄金家族的传承试炼提前了,巨阳先祖的气息正在北原复苏",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "商队路过港口时,你看到东海的商船正在卸下大量海产蛊材。海商说有座荒岛突然冒出金光,说不定是远古传承",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "商路上遇到从西漠来的行脚商人,骆驼上驮着散发了微光的石碑残片。人祖的东西,沙漠深处最近地震又挖出了一些",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "商路上的消息贩子透露:天庭最近派人去了南疆,不是来打仗的,是来观察的。被天庭观察可不是什么好事",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "nanjiang_chutan",
+        "name": "南疆风云",
+        "displayName": "第三章 · 南疆风云",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "南疆诸山寨 · 散修集散地 · 商会据点",
+          "accessibleLocations": [
+            "各大山寨",
+            "散修集市",
+            "南疆商会",
+            "荒野秘地",
+            "小传承地",
+            "蛊材采集区"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(22), flag(slqs_first_caravan_completed)))",
+        "keyNPCs": [
+          "商心慈",
+          "太白云生",
+          "铁血冷",
+          "铁若男",
+          "熊力"
+        ],
+        "keyFactions": [
+          "南疆商会",
+          "南疆正道联盟",
+          "白家寨",
+          "熊家",
+          "散修联盟"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "南疆商会入会或建立商业关系",
+            "三足鼎立格局初探",
+            "第一次跨势力博弈"
+          ],
+          "mustNotHappen": [
+            "直接参与三王山传承",
+            "蛊仙介入凡间争斗",
+            "单方面碾压任何一方势力"
+          ],
+          "narrativeTheme": "南疆大舞台的帷幕拉开——正道联盟、魔道散修、家族势力三足鼎立。玩家在各方之间周旋，利用商会信息谋取生存空间。八卦·天机·地动三门自创功法传承散落南疆各处，散修集市上的每一次交易都可能是登天之阶"
+        },
+        "goals": [
+          {
+            "id": "njct_visit_3_villages",
+            "description": "造访至少三处山寨或集市",
+            "type": "exploration"
+          },
+          {
+            "id": "njct_earn_500",
+            "description": "积累元石至500块",
+            "type": "economy"
+          }
         ],
         "globalEventId": "sanwangshan",
         "economyTier": 1,
         "chapterPriceMultiplier": 1.5,
-        "rippleLayers": ["三王山传闻"]
+        "rippleLayers": [
+          "三王山传闻"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "南疆的势力格局重新洗牌,北原王庭注意到了这个信号。有探子回报:黄金家族正在考虑是否在南疆扶持一个代理人",
+            "interventionNote": "与北原密使接触,了解黄金家族在南疆的利益"
+          },
+          "东海": {
+            "perception": "东海的商路在南疆局势变动后被重新打开了。海商们带着稀缺蛊材涌入南疆,这些人只认元石不认势力",
+            "interventionNote": "趁南疆混乱期间,以低价从东海商人手中购入稀有蛊材"
+          },
+          "西漠": {
+            "perception": "南疆的山脉震动惊醒了西漠深处某些古老的存在。有旅人说在沙漠禁区边缘看到过人祖石碑的光芒,它在感应南疆的变化",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "天庭对南疆的关注度正式提升了一个级别。一位天庭监视使在南疆公开露面,这是千年来天庭第一次在南疆公开活动",
+            "interventionNote": "以中洲正道使者的身份与天庭监视使对话,获取南疆局势的高层情报"
+          }
+        }
       },
       {
-        "id": "sanwang_yitian",
-        "name": "三王山·义天山",
-        "displayName": "第三章 · 三王山风云",
+        "id": "shili_jueqi",
+        "name": "势力崛起",
+        "displayName": "第四章 · 势力崛起",
         "domain": "南疆",
         "domainOpeningChapter": false,
         "position": {
           "region": "南疆",
-          "area": "三王山周边 · 义天山区域",
-          "accessibleLocations": ["三王山", "义天山", "各方势力驻地", "上古战场遗迹", "蛊仙传承地"]
+          "area": "南疆势力交汇地带 · 三王山外围 · 义天山北麓",
+          "accessibleLocations": [
+            "三王山外围",
+            "义天山北麓",
+            "各方势力驻地",
+            "南疆古道",
+            "传承试炼入口"
+          ]
         },
-        "triggerConditions": "or(realm_gte(3), and(turn_gte(25), flag(njct_visit_3_villages_completed)))",
-        "keyNPCs": ["古月方源", "太白云生", "白凝冰", "三王山传人"],
-        "keyFactions": ["三王山势力", "义天山联盟", "南疆正道联盟", "散修自由势力"],
+        "triggerConditions": "or(realm_gte(4), and(turn_gte(35), flag(njct_visit_3_villages_completed)))",
+        "keyNPCs": [
+          "太白云生",
+          "白凝冰",
+          "沈家老祖",
+          "商燕飞",
+          "萧十让"
+        ],
+        "keyFactions": [
+          "三王山势力",
+          "义天山联盟",
+          "南疆正道联盟",
+          "散修自由势力"
+        ],
         "sceneConstraints": {
-          "mustHappen": ["三王山势力接触", "义天山事件波及", "势力立场选择"],
-          "mustNotHappen": ["改变原著核心结局", "蛊仙亲自出手干预凡间"],
-          "narrativeTheme": "南疆的暗流涌动——三王山与义天山的势力博弈，大时代即将来临。玩家作为独立蛊师被卷入旋涡，需要做出立场选择"
+          "mustHappen": [
+            "选择加入一方势力或保持独立",
+            "参与一次势力间的冲突",
+            "感受三王山与义天山的暗流涌动"
+          ],
+          "mustNotHappen": [
+            "直接改变三王山传承的最终结果",
+            "蛊仙亲自出手干预凡间战争",
+            "白凝冰在此之前与方源彻底决裂"
+          ],
+          "narrativeTheme": "风云际会——三王山与义天山两股巨力在南疆角力，所有势力都被卷入旋涡。玩家在风口浪尖面临抉择：择主而事以求庇护，还是特立独行走出自己的路？白凝冰的背刺是注定发生的历史，但玩家在其中的立场将决定此后被命运如何对待"
         },
         "goals": [
-          { "id": "syt_choose_side", "description": "在三王山与义天山之间做出立场选择", "type": "decision" },
-          { "id": "syt_reach_3rd_peak", "description": "达到三转巅峰", "type": "realm_gate" }
+          {
+            "id": "sjq_join_faction",
+            "description": "加入或建立一方势力",
+            "type": "decision"
+          },
+          {
+            "id": "sjq_reach_4th",
+            "description": "突破至四转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.8,
+        "rippleLayers": [
+          "三王山暗流",
+          "义天山密谋"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "北原的巨阳传承终于公开了,消息像草原上的野火一样传遍了五域。黄金家族在招募所有有资格的蛊师参加传承试炼,不论出身",
+            "interventionNote": "达到五转后可以启程前往北原参加巨阳传承试炼"
+          },
+          "东海": {
+            "perception": "散修联盟在东海正式成立了,这是东海历史上第一次有组织性的蛊师同盟。他们急需有实力的成员在南疆建立联络点",
+            "interventionNote": "作为东海散修联盟的南疆联络人,在联盟与南疆各方势力间周旋"
+          },
+          "西漠": {
+            "perception": "人祖遗迹中的蓝海秘境入口终于被定位了,在西漠最深处。但进入需要满足三个条件:至少五转、携带人祖信物、在月圆之夜到达入口",
+            "interventionNote": "搜集人祖信物碎片,为日后前往蓝海秘境做准备"
+          },
+          "中洲": {
+            "perception": "中洲十大古派之一公开宣布要介入南疆事务,这是千年来中洲门派第一次主动向南疆扩张。天庭对此保持沉默",
+            "interventionNote": "作为中洲门派代表在南疆建立影响力,或者抵制中洲的扩张"
+          }
+        }
+      },
+      {
+        "id": "sanwang_yitian",
+        "name": "三王山前夜",
+        "displayName": "第五章 · 三王山前夜",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "三王山核心区 · 义天山战场遗迹 · 上古战场",
+          "accessibleLocations": [
+            "三王山传承大殿",
+            "义天山战场",
+            "各方势力前线营地",
+            "上古战场遗迹",
+            "蛊仙传承地"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(5), and(turn_gte(48), flag(sjq_join_faction_completed)))",
+        "keyNPCs": [
+          "古月方源",
+          "白凝冰",
+          "三王山传人",
+          "义天山使者"
+        ],
+        "keyFactions": [
+          "三王山势力",
+          "义天山联盟",
+          "南疆正道联盟"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "三王传承开启前夜的紧张对峙",
+            "白凝冰背刺事件",
+            "势力立场选择迎来后果"
+          ],
+          "mustNotHappen": [
+            "改变原著核心结局",
+            "蛊仙亲自出手干预凡间战斗",
+            "方源春秋蝉重生被阻止"
+          ],
+          "narrativeTheme": "暴风雨前的宁静——三王传承即将开启，各方势力在三王山外围紧张对峙。昔日伙伴的反目、阵营选择的后果、升仙之路的诱惑，一切都在传承开启之夜达到顶点。方源的春秋蝉已经启动，历史的巨轮碾过每一个人的命运"
+        },
+        "goals": [
+          {
+            "id": "syt_choose_side",
+            "description": "在三王山与义天山之间做出最终立场选择",
+            "type": "decision"
+          },
+          {
+            "id": "syt_reach_5th",
+            "description": "达到五转",
+            "type": "realm_gate"
+          }
         ],
         "globalEventId": "yitianshan",
         "exitTriggers": "南疆→北原域切换",
         "economyTier": 2,
-        "chapterPriceMultiplier": 2.0,
-        "rippleLayers": ["三王山决战", "义天山密谋", "白凝冰叛逃", "方源春秋蝉"]
+        "chapterPriceMultiplier": 2,
+        "rippleLayers": [
+          "三王山决战前夕",
+          "义天山暗流涌动",
+          "白凝冰叛逃",
+          "方源春秋蝉波动"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "三王山的传承波动传到了北原,黄金家族的王庭号角响了三次,这意味着巨阳先祖的血脉在呼唤所有流落在外的北原儿女",
+            "interventionNote": "三王山事了后前往北原,巨阳传承的大门已经为你打开了"
+          },
+          "东海": {
+            "perception": "义天山的远古气息让东海的古老海族产生了反应,他们在深海中打开了一座从未被人类见过的传送门,直达南疆沿海",
+            "interventionNote": "通过海族传送门快速往返于东海和南疆之间"
+          },
+          "西漠": {
+            "perception": "义天山远古战场的气息与西漠的人祖石碑产生了共振,石碑上浮现出了新的文字:当义天燃烧时,蓝海的大门将短暂开启",
+            "interventionNote": "在义天山大战期间寻找蓝海秘境的线索"
+          },
+          "中洲": {
+            "perception": "天庭终于做出了决定,义天山事件必须被控制。天庭派出了千年来最大规模的监视团,但没有派出战斗部队",
+            "interventionNote": "以中洲正道身份参与天庭对义天山的监视,获得独家情报"
+          }
+        }
+      },
+      {
+        "id": "yitian_wind",
+        "name": "义天风云起",
+        "displayName": "第六章 · 义天风云起",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "义天山外围 · 各方势力前线营地 · 远古传送阵遗迹",
+          "accessibleLocations": [
+            "义天山外围侦察点",
+            "正道联盟营地",
+            "魔道散修聚集区",
+            "上古传送阵残骸",
+            "蛊仙预兆地"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(7), and(turn_gte(60), flag(sanwang_happened)))",
+        "realmRange": {
+          "min": 7,
+          "max": 8
+        },
+        "keyNPCs": [
+          "古月方源",
+          "太白云生",
+          "黑楼兰",
+          "天庭先锋"
+        ],
+        "keyFactions": [
+          "南疆正道联盟",
+          "魔道散修同盟",
+          "天庭监视团"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "多方势力在义天山外围集结对峙",
+            "方源与太白云生的第一次正式接触",
+            "远古传送阵的线索被发现"
+          ],
+          "mustNotHappen": [
+            "玩家过早获得八转战力",
+            "天庭直接介入战斗（仅完成监视）",
+            "春秋蝉被非方源角色使用"
+          ],
+          "narrativeTheme": "三王山的风暴刚刚平息，义天山已经成为新的火药桶。南疆正道联盟和魔道散修同盟在义天山外围安营扎寨——每个人都想第一个感知到义天山上那股正在苏醒的力量。你站在这片即将燃烧的土地上，看着各方势力的旗帜在风中猎猎作响——而义天山的山顶已经开始泛起不祥的红光"
+        },
+        "goals": [
+          {
+            "id": "yth_scout_battlefield",
+            "description": "侦察义天山外围各方势力分布",
+            "type": "exploration"
+          },
+          {
+            "id": "yth_choose_allegiance",
+            "description": "在正道与魔道之间做出初步立场选择",
+            "type": "decision"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "完成外围侦察并确定势力立场后，义天山核心区域打开",
+        "economyTier": 3,
+        "chapterPriceMultiplier": 3,
+        "rippleLayers": [
+          "义天山远古气息苏醒",
+          "多方势力集结",
+          "天庭首次监视义天山区域"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "北原王庭的探子回报南疆义天山有远古气息苏醒,疑似上古战场的传承即将现世",
+            "interventionNote": "前往南疆参与,在义天山外围作为北原势力代表获取情报优势"
+          },
+          "东海": {
+            "perception": "东海散修间流传南疆义天山有异动,一股不寻常的气息正在从山中渗出。海商们开始囤积疗伤蛊材",
+            "interventionNote": "以散修身份在外围搜集情报和残骸获利"
+          },
+          "西漠": {
+            "perception": "沙漠深处的古老民族收到了血脉中的呼唤,义天山下的东西与他们古老的祖先有关",
+            "interventionNote": "在义天山外围发现与西漠人祖传说相关的古老痕迹"
+          },
+          "中洲": {
+            "perception": "天庭的监测网络捕捉到南疆义天山的异常能量波动,级别:重点关注",
+            "interventionNote": "以中洲正道使者身份近距离观察而不被怀疑"
+          }
+        }
+      },
+      {
+        "id": "yitian_peak",
+        "name": "巅峰对决",
+        "displayName": "第七章 · 巅峰对决",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "义天山峰顶 · 春秋蝉核心战场 · 天庭首次介入点",
+          "accessibleLocations": [
+            "义天山峰顶平台",
+            "春秋蝉盘旋地",
+            "天庭观察台",
+            "方源隐蔽处",
+            "太白云生医疗区"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(7), flag(yth_scout_battlefield_completed))",
+        "realmRange": {
+          "min": 7,
+          "max": 8
+        },
+        "keyNPCs": [
+          "古月方源",
+          "太白云生",
+          "黑楼兰",
+          "天庭先锋",
+          "凤九歌(远处)"
+        ],
+        "keyFactions": [
+          "南疆正道联盟",
+          "魔道散修同盟",
+          "天庭监视团",
+          "中洲十大古派(远处)"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "义天山巅多方混战的全面爆发",
+            "春秋蝉丢失——方源的底牌被破",
+            "天庭第一次正面介入——虽然只是派出监视者"
+          ],
+          "mustNotHappen": [
+            "玩家直接击败方源",
+            "春秋蝉被玩家获得",
+            "天庭派出亚仙尊级别战力(超出篇章范围)"
+          ],
+          "narrativeTheme": "义天山峰顶——空气中弥漫着蛊虫气息和血腥味。正魔双方在峰顶展开全面混战，每一招杀招都可能致命。方源的表情从未如此凝重——他的春秋蝉正在被天庭势力锁定。而天庭的监视者终于从云端降下——不是来战斗的，是来记录的。被天庭记录在案——意味着你从此进入了更高层次的博弈"
+        },
+        "goals": [
+          {
+            "id": "yth_survive_inferno",
+            "description": "在义天山巅峰混战中存活",
+            "type": "survival"
+          },
+          {
+            "id": "yth_witness_cicada",
+            "description": "见证春秋蝉的丢失——这是历史的分水岭",
+            "type": "observation"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "春秋蝉丢失后，义天山的混乱开始向外扩散，各方势力重新集结",
+        "economyTier": 3,
+        "chapterPriceMultiplier": 3.5,
+        "rippleLayers": [
+          "义天山巅峰之战",
+          "春秋蝉丢失",
+          "天庭正式介入南疆"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "黄金家族王庭紧急召集,义天山巅的多方混战已经爆发,有传言说传说中的时间蛊虫在战场中出现",
+            "interventionNote": "从北原跨域赶来可参与义天山巅混战的边缘战场,获得稀有战利品"
+          },
+          "东海": {
+            "perception": "海族最先感知到了义天山上的异常,海水中的时间波纹加速了。黑市的船票价格翻了十倍",
+            "interventionNote": "从东海乘船抵达可参与巅峰之战的水上补给线争夺"
+          },
+          "西漠": {
+            "perception": "莫家祖地的封印石碑在义天山之战期间出现裂纹,沙漠的血脉与义天山下的古老存在产生了共鸣",
+            "interventionNote": "从西漠跋涉而来可在义天山战场中获得血脉共鸣buff(临时战力+15%)"
+          },
+          "中洲": {
+            "perception": "天庭终于做出了决定,派出第一支观察团前往南疆义天山。不是战斗人员,是情报搜集者",
+            "interventionNote": "作为中洲正道代表近距离观察春秋蝉事件,可获得独家的天庭情报"
+          }
+        }
+      },
+      {
+        "id": "yitian_heaven",
+        "name": "天庭初现",
+        "displayName": "第八章 · 天庭初现",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "义天山次峰 · 天庭临时营地 · 势力谈判区",
+          "accessibleLocations": [
+            "天庭临时营地",
+            "正道联盟残部集结地",
+            "魔道散修退路",
+            "太白云生医疗帐篷",
+            "春秋蝉遗失追踪点"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(7), flag(yth_survive_inferno_completed))",
+        "realmRange": {
+          "min": 7,
+          "max": 8
+        },
+        "keyNPCs": [
+          "天庭先锋(正面出场)",
+          "古月方源(退隐中)",
+          "太白云生(负伤)",
+          "凤九歌(观察者)",
+          "黑楼兰(趁乱崛起)"
+        ],
+        "keyFactions": [
+          "天庭代表",
+          "南疆正道联盟(分化)",
+          "魔道散修同盟(重组)",
+          "中洲十大古派观察团"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "天庭先锋首次正面与南疆蛊师对话——展示天庭的权威",
+            "正道联盟因天庭介入而内部出现分歧",
+            "天道反噬初现——逆天者受到第一次天道回应"
+          ],
+          "mustNotHappen": [
+            "玩家被天庭直接收编(天庭不会轻易接纳非中洲蛊师)",
+            "方源在此期间被杀死(他处于春秋蝉保护中)",
+            "天道反噬被描述为可完全免疫"
+          ],
+          "narrativeTheme": "天庭来了——不是作为敌人，而是作为'秩序维护者'。天庭先锋在南疆蛊师面前的第一次正式亮相：冷峻、专业、不带任何情感。他宣布天庭将'关注'南疆局势——这句话在南疆蛊师中引发了截然不同的反应：正道联盟感到被认可，魔道散修感到被监视，而一些老人感到了深深的寒意——被天庭'关注'从来不是免费的。而就在此时，那些在义天山之战中逆天而行的人开始感觉到一种奇怪的温差——天道在回应"
+        },
+        "goals": [
+          {
+            "id": "yth_meet_heaven_emissary",
+            "description": "与天庭先锋进行第一次对话",
+            "type": "social"
+          },
+          {
+            "id": "yth_navigate_divided_alliance",
+            "description": "在正道联盟的分化中保护自己的立场",
+            "type": "decision"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "天庭介入后势力版图重新划分——南疆旧秩序彻底崩塌",
+        "economyTier": 4,
+        "chapterPriceMultiplier": 4,
+        "rippleLayers": [
+          "天庭正式介入南疆",
+          "天道反噬初现",
+          "正道联盟分化"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "天庭介入南疆的消息传到了北原,黄金家族内部产生分歧:是趁南疆虚弱出兵劫掠,还是坐山观虎斗",
+            "interventionNote": "南疆势力重组期间,北原勇士可作为佣兵加入任何一方获得丰厚报酬"
+          },
+          "东海": {
+            "perception": "天庭在南疆建立联络处,东海散修们感到了长久以来从未有过的压迫感",
+            "interventionNote": "为抵御天庭向东海扩张,散修联盟需要南疆的情报"
+          },
+          "西漠": {
+            "perception": "天庭的到来在西漠引发了意料之外的反应,古老的沙漠部族长老们说:天庭上一次派人来西漠是三千年前",
+            "interventionNote": "代表古老的沙漠部族与天庭先锋接触"
+          },
+          "中洲": {
+            "perception": "天庭宣布南疆为关注区域,中洲十大古派开始争夺在南疆的代表权",
+            "interventionNote": "作为中洲修士参与天庭与南疆势力的谈判,为你的宗门争取利益"
+          }
+        }
+      },
+      {
+        "id": "yitian_aftermath",
+        "name": "乱局余波",
+        "displayName": "第九章 · 乱局余波",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆",
+          "area": "南疆全境 · 势力重组核心区 · 跨域路径起点",
+          "accessibleLocations": [
+            "南疆各方势力新据点",
+            "跨域传送阵(北原方向)",
+            "天庭驻南疆联络处",
+            "太白云生隐居处",
+            "黑楼兰新势力总部"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(7), flag(yth_navigate_divided_alliance_completed))",
+        "realmRange": {
+          "min": 7,
+          "max": 9
+        },
+        "keyNPCs": [
+          "黑楼兰(新势力领袖)",
+          "天庭驻南疆使节",
+          "太白云生(抉择)",
+          "南疆各家族代表",
+          "北原王庭密使(首次接触)"
+        ],
+        "keyFactions": [
+          "天庭驻南疆机构",
+          "重组后的南疆势力",
+          "北原王庭(密使接触)",
+          "东海商盟(战后重建)"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "战后势力重组——玩家的选择决定南疆未来格局",
+            "黑楼兰趁乱崛起为新势力",
+            "北原王庭首次派密使接触南疆——巨阳传承的气息已经传到南疆"
+          ],
+          "mustNotHappen": [
+            "南疆立刻恢复平静(战后的混乱是长期的)",
+            "天庭过多干预南疆内部事务(天庭只在关键节点介入)",
+            "玩家在没有跨域条件的情况下直接前往北原"
+          ],
+          "narrativeTheme": "义天山的硝烟渐渐散去，但混乱远未结束。正道联盟分裂、魔道重组、天庭在南疆建立了第一个正式联络处——南疆再也不是从前的南疆。黑楼兰趁各方势力重新洗牌的机会迅速崛起，而北原王庭的密使已经悄悄进入南疆——巨阳先祖的传承正在北方等待。是留在南疆重建秩序，还是前往北原追寻更强的力量？每一个在南疆幸存至今的蛊师都在问自己同样的问题"
+        },
+        "goals": [
+          {
+            "id": "yth_rebuild_standing",
+            "description": "在战后新格局中建立自己的势力地位",
+            "type": "social"
+          },
+          {
+            "id": "yth_reach_8th",
+            "description": "达到八转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "南疆→北原域切换",
+        "economyTier": 4,
+        "chapterPriceMultiplier": 4,
+        "rippleLayers": [
+          "南疆势力重组",
+          "黑楼兰崛起",
+          "北原王庭密使",
+          "太白云生的最后选择"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "南疆战后势力重组,北原王庭的密使已到。巨阳先祖的传承正在北方等待",
+            "interventionNote": "南疆出口方向直接传送至北原域,王庭福地入口已经对你开放"
+          },
+          "东海": {
+            "perception": "南疆战后重建需要大量物资,东海商盟迎来了史无前例的商机",
+            "interventionNote": "作为东海商人参与南疆战后重建可获得巨额利润(元石3倍基础收益)"
+          },
+          "西漠": {
+            "perception": "南疆的混乱让一条被遗忘的古老商路重新开放,从西漠绿洲经义天山到南疆腹地",
+            "interventionNote": "跟随古老商路穿越时可能发现失落的西漠远古城市遗迹"
+          },
+          "中洲": {
+            "perception": "天庭在南疆的联络处正式运作,十大古派各自派遣常驻代表",
+            "interventionNote": "获得天庭南疆联络处的外围任务,高额回报+中洲声望"
+          }
+        }
+      },
+      {
+        "id": "nilu_ascent",
+        "name": "逆流而上",
+        "displayName": "第十章 · 逆流而上",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "南疆/全域",
+          "area": "逆流河现世入口 · 时光紊乱区 · 远古时光节点",
+          "accessibleLocations": [
+            "逆流河入口",
+            "上游观测点",
+            "中游激流区",
+            "时光回响地带",
+            "春秋蝉气息感应点"
+          ]
+        },
+        "triggerConditions": "or(and(realm_gte(8), flag(sanwang_happened)), flag(nilu_river_appeared))",
+        "realmRange": {
+          "min": 8,
+          "max": 9
+        },
+        "keyNPCs": [
+          "古月方源(逆流河中)",
+          "天庭时光监测者",
+          "时光道痕长者",
+          "春秋蝉守护者"
+        ],
+        "keyFactions": [
+          "天庭时光监测院",
+          "时光道修士隐修会"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "逆流河在世界某处首次现世——所有八转以上蛊师都感知到了时间异常",
+            "第一次尝试上溯——面对时光逆流的极限挑战",
+            "时光逆流的物理感受必须被生动描写"
+          ],
+          "mustNotHappen": [
+            "玩家第一次上溯就到达源头(需要多次尝试)",
+            "逆流河被描写为普通河流(它是时间本身的具象化)",
+            "天庭在逆流河第一次出现时就派出大量军力"
+          ],
+          "narrativeTheme": "世界的时间突然变得粘稠了——就像一只巨大的手按住了时间的流动。所有八转以上的蛊师都感觉到了：有什么东西正在从时间的深处浮现。当逆流河的水在你面前展开时，你看到的不是水——是时间本身。每一滴水都是一段已经流逝的时光，每一条波浪都在倒放一个已经结束的故事。上溯逆流河就是在对抗时间本身——你的每一步都在消耗你的寿命"
+        },
+        "goals": [
+          {
+            "id": "nilu_find_entrance",
+            "description": "找到逆流河的入口",
+            "type": "exploration"
+          },
+          {
+            "id": "nilu_first_ascent",
+            "description": "完成第一次逆流上溯尝试",
+            "type": "challenge"
+          }
+        ],
+        "globalEventId": "nilu_river",
+        "exitTriggers": "逆流河中发现了关于宿命蛊的第一条线索",
+        "economyTier": 4,
+        "chapterPriceMultiplier": 5,
+        "rippleLayers": [
+          "逆流河现世",
+          "时间异常感知",
+          "天庭时光监测院介入"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "冰原上出现时间裂缝,巨阳先祖在预言中提到过:当日月倒流、冰火同现时,将有逆天之人上溯时光",
+            "interventionNote": "携带巨阳血脉信物前往逆流河可获得额外的时光抗性buff"
+          },
+          "东海": {
+            "perception": "海水倒流了,所有水道蛊师和全部海族都感知到了:时间正在被逆流",
+            "interventionNote": "利用东海水道蛊师对水流的天赋感知在逆流河中更容易找到正确路径"
+          },
+          "西漠": {
+            "perception": "沙漠中最古老的一口井突然涌现出了清水,老人说井水倒涌意味着时间在倒流,人祖曾经留下警告",
+            "interventionNote": "携带人祖石碑拓片可获得一次逆流河上溯中免消耗寿命的机会"
+          },
+          "中洲": {
+            "perception": "天庭时光监测院的警报响彻中洲,逆流河出现了",
+            "interventionNote": "利用天庭内部情报获取逆流河最安全的入口位置"
+          }
+        }
+      },
+      {
+        "id": "nilu_fate",
+        "name": "宿命线索",
+        "displayName": "第十一章 · 宿命线索",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "全域",
+          "area": "逆流河中游 · 宿命蛊踪迹区 · 天庭全力封锁线",
+          "accessibleLocations": [
+            "逆流河中游关键节点",
+            "天庭封锁线前沿",
+            "宿命蛊气息最浓区",
+            "时光回响深处",
+            "方源逆流位置"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(8), flag(nilu_first_ascent_completed))",
+        "realmRange": {
+          "min": 8,
+          "max": 9
+        },
+        "keyNPCs": [
+          "天庭全面封锁部队",
+          "宿命蛊守护者(上古存在)",
+          "古月方源(平行位置)",
+          "时光道痕长者(深入)"
+        ],
+        "keyFactions": [
+          "天庭封锁部队",
+          "全域蛊仙同盟(自发形成)"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "宿命蛊的线索在逆流河深处被首次确认",
+            "天庭倾力阻止任何人接近宿命蛊",
+            "方源在逆流河的另一个位置与你平行推进"
+          ],
+          "mustNotHappen": [
+            "宿命蛊被玩家提前发现或破坏",
+            "天庭封锁被轻易突破",
+            "方源与玩家直接联手(方源独行的铁则)"
+          ],
+          "narrativeTheme": "逆流河越往上游，时间就越稠密。你开始看到不属于你的记忆——古往今来所有在时间中留下过痕迹的人，他们的某个瞬间被逆流河保存了下来。在这些回响的深处，有一条若隐若现的线索——宿命蛊。天庭的封锁部队已经到了——他们不是在阻止你上溯，而是在阻止任何接近宿命蛊的人。而远处逆流河的另一条支流上，你隐约看到方源的身影——他也在向上游"
+        },
+        "goals": [
+          {
+            "id": "nilu_trace_fate_gu",
+            "description": "追踪宿命蛊的线索",
+            "type": "exploration"
+          },
+          {
+            "id": "nilu_penetrate_blockade",
+            "description": "突破天庭封锁线到达更深层",
+            "type": "combat"
+          }
+        ],
+        "globalEventId": "nilu_river",
+        "exitTriggers": "宿命线索指向更深的时间层——逆流河的终极挑战在等待",
+        "economyTier": 5,
+        "chapterPriceMultiplier": 6,
+        "rippleLayers": [
+          "宿命蛊线索浮现",
+          "天庭全面封锁",
+          "方源平行上溯"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "巨阳先祖的一道残留意念通过血脉传遍了黄金家族:宿命蛊的线索在逆流河深处",
+            "interventionNote": "血脉觉醒者在追踪宿命线索时获得额外感知范围+30%"
+          },
+          "东海": {
+            "perception": "海族的古老典籍中记载了宿命蛊,那是比海族文明更古老的存在的造物",
+            "interventionNote": "作为海族的代理人进入逆流河,成功后获得深海晶石(价值500仙元)"
+          },
+          "西漠": {
+            "perception": "人祖石碑在逆流河出现后开始浮现新的文字,人祖曾试图上溯逆流河但没有成功,他在中游留下了记号",
+            "interventionNote": "追踪人祖在中游留下的记号,为所有上溯者提供永久时光抗性+5%"
+          },
+          "中洲": {
+            "perception": "天庭封锁部队的规模是千年来最大的一次,亚仙尊级别以下没有人能通过封锁线",
+            "interventionNote": "中洲修士可以通过天庭内部渠道获得封锁线的部署图"
+          }
+        }
+      },
+      {
+        "id": "nilu_time",
+        "name": "时间交织",
+        "displayName": "第十二章 · 时间交织",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "全域",
+          "area": "逆流河上游深层 · 时间线交汇点 · 春秋蝉共振区",
+          "accessibleLocations": [
+            "时间线交汇点",
+            "春秋蝉共振核心",
+            "另一条时间线的投影区",
+            "天庭最高封锁点"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(8), flag(nilu_trace_fate_gu_completed))",
+        "realmRange": {
+          "min": 8,
+          "max": 9
+        },
+        "keyNPCs": [
+          "古月方源(时间线重叠)",
+          "春秋蝉(力量显现)",
+          "天庭最高封锁官",
+          "另一条时间线的幻影NPC"
+        ],
+        "keyFactions": [
+          "天庭终极封锁",
+          "时间守护者(上古遗存)"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "春秋蝉与逆流河的时间力量产生共振——玩家看到'另一条时间线'的投影",
+            "时间线交织导致玩家面对'另一个可能性的自己'",
+            "天庭终极封锁启动——亚仙尊级别战力出现在封锁线"
+          ],
+          "mustNotHappen": [
+            "玩家穿越到另一条时间线(仅能看到投影)",
+            "时间悖论被轻易解决",
+            "天庭亚仙尊级别战力被玩家击败"
+          ],
+          "narrativeTheme": "逆流河的最深处——时间在这里完全失去了方向。过去和未来像两团交融的雾气在周围涌动。你看到了自己——但不是镜子里的自己，是另一条时间线上的自己：也许他没有选择这条路，也许他在某个关键节点做了不同的决定。方源的春秋蝉在这里的力量达到顶峰——那头时间蛊虫正在吞噬逆流河溢出的时间力量。而天庭的最后一道封锁线就在前方——那不是普通的蛊师在守卫，是亚仙尊级别的存在"
+        },
+        "goals": [
+          {
+            "id": "nilu_face_alternate_self",
+            "description": "面对另一条时间线的自己——做出你的终极选择",
+            "type": "decision"
+          },
+          {
+            "id": "nilu_understand_cicada",
+            "description": "理解春秋蝉与逆流河共振的含义",
+            "type": "observation"
+          }
+        ],
+        "globalEventId": "nilu_river",
+        "exitTriggers": "时间线交织完成后，最终突破的方向已经明确",
+        "economyTier": 5,
+        "chapterPriceMultiplier": 7,
+        "rippleLayers": [
+          "春秋蝉共振",
+          "时间线交织",
+          "天庭最高封锁",
+          "另一条时间线的投影"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "巨阳先祖的预言中最隐秘的一段被逆流河的力量激活了,关于时间线的交织",
+            "interventionNote": "血脉觉醒者可在时间线交织处看到自己的一个可能未来(获得一次预知机会)"
+          },
+          "东海": {
+            "perception": "海族用他们特有的感知方式发现了时间线交织的现象",
+            "interventionNote": "携带海族信物可安全观察另一个时间线而不被反噬"
+          },
+          "西漠": {
+            "perception": "人祖石碑上出现了他从未完成的最后一句话,在时间线与时间线的交界处,他看到了另一个自己但没有勇气去面对",
+            "interventionNote": "完成人祖未竟的探索可获得人祖的祝福(道心四维+2)"
+          },
+          "中洲": {
+            "perception": "天庭最高指挥官第一次感到了恐惧,时间线交织意味着过去的任何决策都可能被现在的人改变",
+            "interventionNote": "接触天庭的最高机密,了解天庭在时间线被改写前的准备"
+          }
+        }
+      },
+      {
+        "id": "nilu_breakthrough",
+        "name": "不可能突破",
+        "displayName": "第十三章 · 不可能突破",
+        "domain": "南疆",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "全域",
+          "area": "逆流河源头 · 宿命蛊最终线索点 · 天尊前夜",
+          "accessibleLocations": [
+            "逆流河源头",
+            "宿命蛊最终线索点",
+            "天尊之路的起点标志",
+            "天庭最高指挥部"
+          ]
+        },
+        "triggerConditions": "and(realm_gte(8), flag(nilu_face_alternate_self_completed))",
+        "realmRange": {
+          "min": 8,
+          "max": 9
+        },
+        "keyNPCs": [
+          "古月方源(率先突破)",
+          "天庭最高指挥官(亚仙尊级)",
+          "宿命蛊(间接显现)",
+          "时光守护者(垂死)"
+        ],
+        "keyFactions": [
+          "天庭最高指挥部",
+          "逆天者同盟(自发形成)"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "在不可能中创造可能——玩家完成逆流河的终极突破",
+            "方源率先突破逆流河终点——成为第一个到达源头的人",
+            "世界观级转折：宿命蛊的线索指向天庭终战"
+          ],
+          "mustNotHappen": [
+            "玩家在方源之前到达源头(方源是第一个)",
+            "逆流河被玩家完全征服",
+            "宿命蛊在此时被直接接触"
+          ],
+          "narrativeTheme": "逆流河的最后一段——时间的力量在这里不是阻力，而是一种重量。每一步都像在背负着一万年的历史前进。但就在你以为这是极限时——面前的时光墙壁开始出现裂缝。不是你在打破它——是有人在对面。方源——他已经到了。你们隔着时间的裂缝对视了一眼。然后他继续向上，你做出你的选择：是跟随他突破，还是在逆流河中开辟自己的路径？这不仅仅是逆流河的终点——这是天尊之路的起点"
+        },
+        "goals": [
+          {
+            "id": "nilu_final_breakthrough",
+            "description": "完成逆流河的终极突破",
+            "type": "challenge"
+          },
+          {
+            "id": "nilu_choose_path",
+            "description": "在天尊之路的起点做出选择——跟随方源还是走出自己的路",
+            "type": "decision"
+          }
+        ],
+        "globalEventId": "nilu_river",
+        "exitTriggers": "逆流河终点→宿命大战篇",
+        "economyTier": 5,
+        "chapterPriceMultiplier": 8,
+        "rippleLayers": [
+          "逆流河终极突破",
+          "方源率先到达",
+          "天尊之路开启",
+          "宿命蛊最终线索"
+        ],
+        "crossDomainHints": {
+          "北原": {
+            "perception": "方源到达了逆流河的源头,整个北原的血脉都在震颤。巨阳先祖预言中的逆天之人已经踏出了最后一步",
+            "interventionNote": "作为北原最后的挑战者,在逆流河终点与方源的距离感是震撼性的体验"
+          },
+          "东海": {
+            "perception": "海族从深海送来了一句古老的预言:逆流河会有第二个人到达源头,那个人不是方源。海族说那个人可能来自任何域,但一定不会是中洲",
+            "interventionNote": "携带深海晶石可在方源突破后找到他留下的时间残余,获取方源的部分体悟"
+          },
+          "西漠": {
+            "perception": "人祖石碑在方源到达源头的那一刻发出了从未有过的光芒,石碑上浮现出人祖的完整形象。与此同时,蓝海秘境的真正入口显现",
+            "interventionNote": "抓住这个千载难逢的时刻进入蓝海秘境,那是人祖留给下一个逆流河上溯者的礼物"
+          },
+          "中洲": {
+            "perception": "天庭开启了最高警报,红色级别。宿命蛊的线索已经被确认,下一个事件将是天庭终战",
+            "interventionNote": "在天庭的紧急招募中获得独一无二的机遇,以中洲正道力量参与终战准备"
+          }
+        }
       }
     ],
-
-    "北原": [],
-    "东海": [],
-    "西漠": [],
-    "中洲": []
+    "北原": [
+      {
+        "id": "north_youth",
+        "name": "草原少年",
+        "displayName": "第一章 · 草原少年",
+        "domain": "北原",
+        "domainOpeningChapter": true,
+        "position": {
+          "region": "北原",
+          "area": "北原冰原外围 · 游牧部落营地",
+          "accessibleLocations": [
+            "部落营地",
+            "冰原狩猎场",
+            "部落祭祀台",
+            "野马原",
+            "冰窟秘境入口"
+          ]
+        },
+        "triggerConditions": "turn_gte(1)",
+        "keyNPCs": [
+          "苏仙儿",
+          "部落长老",
+          "游牧蛊师"
+        ],
+        "keyFactions": [
+          "游牧部落"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "血脉觉醒仪式",
+            "第一次草原狩猎",
+            "部落内部的身份确立"
+          ],
+          "mustNotHappen": [
+            "离开部落营地范围",
+            "接触蛊仙级力量",
+            "进入王庭领地"
+          ],
+          "narrativeTheme": "草原上出生的少年，血脉中流淌着远古的力量。北原的法则简单而残酷——强者生，弱者死，血脉决定你在部落中的地位。第一次弯弓狩猎、第一次血脉觉醒，冰原的寒风是最好的炼蛊炉"
+        },
+        "goals": [
+          {
+            "id": "ny_blood_awaken",
+            "description": "完成血脉觉醒仪式",
+            "type": "milestone"
+          },
+          {
+            "id": "ny_reach_2nd",
+            "description": "突破至二转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1,
+        "rippleLayers": [],
+        "exitTriggers": "离开部落进入更广阔的北原",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "部落长老讲起往事时提到了南疆:南边有座叫青茅山的地方,每年开窍大典都有几个好苗子冒出来。不过那边的蛊师活不过三十,太乱了",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "草原上的猎人偶尔能遇到从东海跋涉过来的散修,他们来北原不是为了加入部落,是为了寻找传说中在冰原深处出没的远古巨兽",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "部落的老萨满有一卷来自西漠的羊皮卷,上面画着人祖的传说",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "长生天的祭司们偶尔会提起天庭:南边那个天庭觉得自己管着整个蛊界,但他们从来不敢踏入北原。长生天的存在让天庭忌惮",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "north_trial",
+        "name": "部落试炼",
+        "displayName": "第二章 · 部落试炼",
+        "domain": "北原",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "北原",
+          "area": "北原各大部落领地 · 部落战场遗址",
+          "accessibleLocations": [
+            "部落集结地",
+            "草原战场",
+            "冰窟猎场",
+            "部落交易集市",
+            "强者墓地"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(2), and(turn_gte(12), flag(ny_blood_awaken_completed)))",
+        "keyNPCs": [
+          "黑城",
+          "部落战将",
+          "北原散修"
+        ],
+        "keyFactions": [
+          "黄金家族外围",
+          "各大部落"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "参与部落间的冲突或狩猎",
+            "首次接触黄金家族的外围势力",
+            "获得战功并建立威望"
+          ],
+          "mustNotHappen": [
+            "直接进入王庭核心圈",
+            "蛊仙级别战斗",
+            "接触到巨阳传承"
+          ],
+          "narrativeTheme": "部落间的征服战争从未停歇。每一次狩猎、每一场战斗都在证明你的价值。战功是唯一的晋升阶梯，而失败的代价是永远的沉默。黄金家族的外围势力像秃鹫一样盘旋在各部落上空，等待着收纳最强者的时机"
+        },
+        "goals": [
+          {
+            "id": "nt_first_warband",
+            "description": "完成第一次部落征伐",
+            "type": "milestone"
+          },
+          {
+            "id": "nt_earn_300",
+            "description": "积累战功等价元石300块",
+            "type": "economy"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.2,
+        "rippleLayers": [],
+        "exitTriggers": "被黄金家族招纳或自行前往王庭",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "部落试炼期间,从南疆传来消息:有一个姓古月的蛊师用一只时间蛊虫完成了一次不可能的重生",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "试炼场附近来了一群东海散修,他们说在海上发现了一座冰封的岛屿,岛上有和北原黄金血脉有关的遗迹",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "沙漠中的石碑在部落试炼期间发出了微弱的光芒,西漠的长老们派出了使者做一次古老的血脉验证",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "天庭向全蛊界发布了一条讯息:北原的血脉觉醒强度超出了预期水平。不是警告,是记录",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "north_wangting",
+        "name": "王庭初现",
+        "displayName": "第三章 · 王庭初现",
+        "domain": "北原",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "北原",
+          "area": "黄金家族王庭外围 · 王庭附庸领地",
+          "accessibleLocations": [
+            "王庭外围营帐",
+            "黄金家族演武场",
+            "血脉试炼堂",
+            "王庭商市",
+            "附庸部落领地"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(24), flag(nt_first_warband_completed)))",
+        "keyNPCs": [
+          "黑楼兰",
+          "马鸿运",
+          "秦百胜",
+          "黑城"
+        ],
+        "keyFactions": [
+          "黄金家族王庭",
+          "影宗暗线",
+          "王庭附庸部落"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "进入王庭势力范围",
+            "见识黄金家族的血脉等级制度",
+            "在部落政治中站稳脚跟"
+          ],
+          "mustNotHappen": [
+            "王庭福地开启（留给下章）",
+            "巨阳意志直接现身",
+            "蛊仙大规模混战"
+          ],
+          "narrativeTheme": "黄金家族的王庭是北原的权力心脏。巨阳先祖的血脉在这里最浓，部落政治的血腥程度远超草原上的刀兵相见。黑楼兰——黄金家族的天才，女扮男装的力道蛊仙——她的存在是天命还是诅咒？马鸿运的鸿运齐天蛊让所有人都垂涎三尺。王庭是权力与阴谋的熔炉"
+        },
+        "goals": [
+          {
+            "id": "nw_earn_rank",
+            "description": "在王庭中获得正式身份或军衔",
+            "type": "decision"
+          },
+          {
+            "id": "nw_reach_3rd",
+            "description": "突破至三转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "sanwangshan",
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.5,
+        "rippleLayers": [
+          "南疆风云余波（L1涟漪）"
+        ],
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "南疆三王山事件的消息传到了王庭,黄金家族的决策者们开始讨论:是等巨阳传承完成再处理南疆,还是现在就派人去",
+            "interventionNote": "达到要求后可前往南疆参与三王山事件,代表北原势力获取传承信物"
+          },
+          "东海": {
+            "perception": "一位东海散修在王庭外围被抓住了,他是来找巨阳传承的。他说东海传说中有一条通往北原的冰海航道",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "巨阳传承的气息在沙漠中引起了一种奇怪的现象,沙尘暴中开始出现黄金色的闪电",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "天庭正式向长生天发出了一条外交讯息,千年来的第一次。内容没有公开",
+            "interventionNote": "作为中洲使者参与天庭与长生天的首次正式接触"
+          }
+        }
+      },
+      {
+        "id": "north_golden",
+        "name": "黄金试炼",
+        "displayName": "第四章 · 黄金试炼",
+        "domain": "北原",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "北原",
+          "area": "王庭福地入口 · 巨阳试炼场 · 黄金血脉觉醒之地",
+          "accessibleLocations": [
+            "王庭福地外围",
+            "血脉试炼通道",
+            "巨阳先祖祭坛",
+            "狐仙福地边缘",
+            "黑凡传承遗址"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(4), and(turn_gte(36), flag(nw_earn_rank_completed)))",
+        "keyNPCs": [
+          "巨阳仙尊（意志化身）",
+          "太白云生",
+          "黑凡",
+          "黑楼兰"
+        ],
+        "keyFactions": [
+          "黄金家族核心血脉",
+          "狐仙福地争夺者",
+          "影宗暗子"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "王庭福地开启（巨阳血脉试炼场）",
+            "黄金血脉觉醒或增强",
+            "狐仙福地争夺的前哨战"
+          ],
+          "mustNotHappen": [
+            "巨阳完整传承落入玩家之手",
+            "长生天全面介入",
+            "方源直接出现干预北原事件"
+          ],
+          "narrativeTheme": "王庭福地开启——巨阳先祖留下的试炼场只对血脉者开放。黄金血脉的觉醒是每一名北原蛊师的终极梦想，但血脉试炼的死亡率高达七成。黑凡的传承遗址散布着远古的考验，太白云生的江山如故在这里留下了不为人知的印记。狐仙福地的争夺战在远处回响——整个北原都在燃烧"
+        },
+        "goals": [
+          {
+            "id": "ng_bloodline_trial",
+            "description": "通过血脉试炼（至少一关）",
+            "type": "milestone"
+          },
+          {
+            "id": "ng_reach_4th",
+            "description": "突破至四转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.8,
+        "rippleLayers": [
+          "王庭福地开启",
+          "狐仙福地争夺（L1涟漪）",
+          "黑凡传承涌现"
+        ],
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "巨阳先祖的血脉共鸣达到了巅峰,在南疆的义天山上,正在参与另一场大战的蛊师们感觉到了一股来自北方的注视,巨阳正在见证",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "东海的古老海族发来了一条罕见的讯息给黄金家族:巨阳先祖曾在远古时期造访过东海,他的传承中有一件需要海族帮助才能完成的试炼",
+            "interventionNote": "携带海族信物可在巨阳传承中获得一个暗道,通往传承地的最深处"
+          },
+          "西漠": {
+            "perception": "西漠的人祖石碑浮现出了一段从未见过的记载:人祖和巨阳先祖曾定下约定,谁的传承先被完成,谁就赢得一场古老的赌局",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "天庭在全蛊界发布巨阳传承观察公告,不是禁令,是观察",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "north_juyang",
+        "name": "巨阳前夜",
+        "displayName": "第五章 · 巨阳前夜",
+        "domain": "北原",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "北原",
+          "area": "王庭核心 · 巨阳传承大殿 · 长生天边缘",
+          "accessibleLocations": [
+            "巨阳传承大殿",
+            "真阳楼遗址",
+            "长生天入口",
+            "大雪山外围",
+            "各方蛊仙对峙区域"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(5), and(turn_gte(48), flag(ng_bloodline_trial_completed)))",
+        "keyNPCs": [
+          "黎山仙子",
+          "焚天魔女",
+          "雷鬼真君",
+          "巨阳仙尊（残存意志）"
+        ],
+        "keyFactions": [
+          "黄金家族王庭",
+          "大雪山",
+          "长生天",
+          "影宗残余"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "巨阳传承现世的征兆",
+            "长生天势力介入北原",
+            "黄金家族内部与大雪山的对峙"
+          ],
+          "mustNotHappen": [
+            "巨阳传承被玩家完全获取",
+            "改变方源夺取真阳楼的核心历史",
+            "长生天与天庭全面开战"
+          ],
+          "narrativeTheme": "巨阳仙尊的传承即将现世——真阳楼的倒影映在天际，长生天的意志如乌云压顶。黄金家族内部分裂：黑楼兰要摧毁而非继承，大雪山在焚天魔女的谋划下暗中布局，黎山仙子的梨园战场在冰原上绽放。雷鬼真君的咆哮在北原上空滚动。一切都是巨阳传承降临的前奏——而历史的巨轮不会为任何人停留"
+        },
+        "goals": [
+          {
+            "id": "nj_choose_allegiance",
+            "description": "在黄金家族、大雪山与长生天之间做出阵营选择",
+            "type": "decision"
+          },
+          {
+            "id": "nj_reach_5th",
+            "description": "达到五转巅峰",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "北原→东海或中洲域切换",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 2,
+        "rippleLayers": [
+          "巨阳传承现世",
+          "长生天降临",
+          "真阳楼倒映",
+          "黑楼兰抉择",
+          "南疆义天山联动（L1涟漪）"
+        ]
+      }
+    ],
+    "东海": [
+      {
+        "id": "donghai_island",
+        "name": "海岛散修",
+        "displayName": "第一章 · 海岛散修",
+        "domain": "东海",
+        "domainOpeningChapter": true,
+        "position": {
+          "region": "东海",
+          "area": "东海近海岛屿区 · 散修聚居渔村与小岛",
+          "accessibleLocations": [
+            "渔村港口",
+            "近海浅礁区",
+            "散修师父的落脚点",
+            "小型荒岛",
+            "海潮洞窟"
+          ]
+        },
+        "triggerConditions": "turn_gte(1)",
+        "keyNPCs": [
+          "散修师父（可选）",
+          "老渔夫蛊师",
+          "岛屿间的小贩"
+        ],
+        "keyFactions": [
+          "散修聚居地",
+          "近海岛屿渔民"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "选择或寻找一位愿意传你真东西的散修师父（DH-3原型：散修师徒）",
+            "第一次出海探索一座荒岛——上面可能有东西，也可能什么都没有（DH-1原型：海岛遗迹-小规模版）",
+            "建立你在海上的第一个'家'——可能是一间海边小屋，可能是师父收留你的院子"
+          ],
+          "mustNotHappen": [
+            "离开近海进入深海",
+            "与海族直接接触（听说过，没见过）",
+            "蛊仙级力量出现",
+            "气海老祖直接现身（仅以传说形式提及）"
+          ],
+          "narrativeTheme": "东海没有宗门。你出生在一座小岛上的渔村里，从小看着渔船出海和回来。有些船回来了，有些没有。蛊师的修行在这里靠的不是宗门分配资源——是师父传的私藏蛊方，是荒岛上偶然发现的远古遗物，是用命换来的交易信息差。海上的自由是真的——没有人管你今天该练什么蛊。海上的孤独也是真的——当风暴来临时，没有人会帮你。散修们都听说过气海老祖的名字：据说他是中洲来的，在东海深处有一座自己的岛。但没有人亲眼见过他——在东海，传说和现实之间的距离由海水填满"
+        },
+        "goals": [
+          {
+            "id": "dh_find_master",
+            "description": "找到一位愿意传你核心蛊方的散修师父",
+            "type": "milestone"
+          },
+          {
+            "id": "dh_reach_2nd",
+            "description": "突破至二转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1,
+        "rippleLayers": [],
+        "exitTriggers": "近海已装不下你的好奇心——你准备向更深的海域航行",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "东海渔村的老人说南疆是个吃人不吐骨头的地方,但从偶尔路过的商人口中听到:南疆有个叫古月方源的少年刚刚过了开窍大典,资质甲等",
+            "interventionNote": null
+          },
+          "北原": {
+            "perception": "一艘从北原返航的渔船带来了奇怪的消息:冰原上出现了一个巨大的黄金色光环",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "海边的礁石上有一块刻着人祖传说的石碑,是千百年前的商人从西漠运来的",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "东海散修提起中洲时总是摇头:那边的人走路都要排队,连杀人都要写申请书。不过他们的蛊虫确实锻得比我们的好",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "donghai_seaclan",
+        "name": "海族贸易",
+        "displayName": "第二章 · 海族贸易",
+        "domain": "东海",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "东海",
+          "area": "近海与中海交界 · 海族出没的贸易海域",
+          "accessibleLocations": [
+            "海族交易浮礁",
+            "中海航线",
+            "人类散修与海族共同使用的中立岛屿",
+            "海盗频繁出没的海域",
+            "深海蛊材采集区"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(2), and(turn_gte(12), flag(dh_find_master_completed)))",
+        "keyNPCs": [
+          "海族商人",
+          "人类中间人（长期与海族打交道的散修）",
+          "海上消息贩子"
+        ],
+        "keyFactions": [
+          "海族（首次接触）",
+          "海上商路网络",
+          "海盗团伙"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "第一次与海族进行交易——他们的规则和人类的完全不同（DH-2原型：海族交易）",
+            "航行中遭遇一次海上意外——风暴、海盗、或海兽（DH-4原型：海上遭遇）",
+            "学会用海族的逻辑思考——不是'谁是朋友谁是敌人'，而是'这次交易双方都能接受吗'"
+          ],
+          "mustNotHappen": [
+            "海族与人类全面冲突",
+            "进入深海海族的核心领地",
+            "蛊仙级海族现身交易场景"
+          ],
+          "narrativeTheme": "海族不是'生活在海里的蛊师'。他们是另一个文明——有自己的语言（你只能通过中间人翻译）、自己的交易规则（在他们看来人类说的'公道价'纯粹是废话）、自己对'价值'的理解（他们从不讨价还价，但会在一笔交易中突然附加一个人类看来完全不相干的条件）。你的第一次海族交易充满了困惑和危险——你说错了一个字、做错了一个手势，可能不是'谈不拢'的问题，而是'他们真的会翻脸'。但在交易成功后你获得的东西——深海蛊材、海中古蛊虫——是东海陆地上永远找不到的"
+        },
+        "goals": [
+          {
+            "id": "dh_first_trade",
+            "description": "成功完成第一次海族交易",
+            "type": "milestone"
+          },
+          {
+            "id": "dh_reach_3rd",
+            "description": "突破至三转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.2,
+        "rippleLayers": [],
+        "exitTriggers": "海族交易中获得的线索指向更深的海域——那里有更大的发现",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "海族商人问你南疆的事情,他们说南疆的山脉在过去几年一直在微微移动,像活的一样",
+            "interventionNote": null
+          },
+          "北原": {
+            "perception": "海族提到他们在北方的深海中发现了一种从未见过的黄金色矿脉,延伸到北原的冰层下面",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "一个从西漠来的奇怪商人在海族市场上出现,他用一只古怪的石头蛊虫交换深海蛊材",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "海族告诉你一个秘密:天庭曾在三千年前秘密派遣了一支远征队进入东海深海,寻找什么。远征队没有回来",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "donghai_deepsea",
+        "name": "深海机缘",
+        "displayName": "第三章 · 深海机缘",
+        "domain": "东海",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "东海",
+          "area": "中深海区域 · 大型远古遗迹与海族势力范围交界",
+          "accessibleLocations": [
+            "深海远古遗迹",
+            "海族势力范围边缘",
+            "陨落蛊仙的沉岛",
+            "深海暗流区",
+            "气海老祖的传说之岛附近海域"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(24), flag(dh_first_trade_completed)))",
+        "keyNPCs": [
+          "海族核心贸易代表",
+          "高阶散修探险者",
+          "沉岛守护者（远古遗留的存在）"
+        ],
+        "keyFactions": [
+          "海族核心势力",
+          "深海探险者联盟（非正式）",
+          "远古遗迹守护势力"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "发现一座大型远古遗迹——可能是陨落蛊仙的沉岛，也可能是上一个纪元的文明遗址（DH-1原型：海岛遗迹-升级版）",
+            "与海族进行更深层次的接触——超越了简单的交易（DH-2原型：海族交易-升级版）",
+            "第一次接触到东海更深层的历史——这片海下面埋着的东西比海面上的岛屿多得多"
+          ],
+          "mustNotHappen": [
+            "破坏海族与人类的基本和平",
+            "获得完整蛊仙传承",
+            "气海老祖直接干预（可能首次以实体出现但保持距离）"
+          ],
+          "narrativeTheme": "你潜入了一座沉岛——不是岛沉了，是这座岛从来就没浮出过水面。远古时期它是一座蛊仙的洞府，后来不知为什么被沉入了海底。里面的禁制还在运转，空气由某种古老的蛊虫维持着，但主人已经不在了。你在岛上发现了这个蛊仙留下的东西——但不是完整的传承，是残篇、是未完成的蛊方、是一些你还需要更多线索才能拼凑的东西。与此同时，海族开始以不同的态度对待你——你不再是'又一个来交易的人类'，他们似乎注意到了你在深海的探索。这意味着更多的机会……和更多的危险"
+        },
+        "goals": [
+          {
+            "id": "dh_deep_discovery",
+            "description": "在深海中完成一项重大发现",
+            "type": "milestone"
+          },
+          {
+            "id": "dh_reach_4th",
+            "description": "突破至四转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "sanwangshan",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.5,
+        "rippleLayers": [
+          "sanwangshan L2涟漪——远方商船带来的南疆动荡消息",
+          "海族感知到海水中的微弱波动"
+        ],
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "深海机缘的探索中你发现:南疆义天山下埋藏着的东西比所有人预想的都要古老,可能与东海的远古遗迹同源",
+            "interventionNote": "携带深海遗迹中的线索前往南疆义天山,解锁隐藏的远古传承关联"
+          },
+          "北原": {
+            "perception": "深海中回荡着一种只有血脉觉醒者能听到的声音,那是巨阳先祖在远古时期穿越深海时留下的意志",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "人祖石碑在深海探索期间发出了最强烈的光芒,石碑上出现了一条新的记载:人祖的船在暴风雨之夜被海族救起",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "天庭时光监测院注意到东海的深海区域出现了时间异常,与南疆逆流河出现时的异常信号完全一致",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "donghai_alliance",
+        "name": "散修联盟",
+        "displayName": "第四章 · 散修联盟",
+        "domain": "东海",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "东海",
+          "area": "东海全海域 · 散修联盟的雏形在多个岛屿间蔓延",
+          "accessibleLocations": [
+            "散修联盟议事岛",
+            "各大岛屿领主的地盘",
+            "海族中立谈判点",
+            "大陆势力的东海据点",
+            "跨域航线的起点"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(4), and(turn_gte(36), flag(dh_deep_discovery_completed)))",
+        "keyNPCs": [
+          "气海老祖（可能首次以实体出现）",
+          "岛屿领主代表",
+          "海族高层"
+        ],
+        "keyFactions": [
+          "散修联盟（形成中）",
+          "岛屿独立势力",
+          "南疆/中洲的东海据点"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "散修联盟的形成或破裂——你在其中扮演关键角色（DH-5原型：跨岛势力）",
+            "气海老祖的存在从传说变为现实——他可能支持联盟、反对联盟、或让你自己做决定（DH-3原型：散修师徒-终极版）",
+            "做出决定：成为联盟的一部分，还是继续做完全自由的散修"
+          ],
+          "mustNotHappen": [
+            "散修联盟成为东海唯一的统治势力",
+            "气海老祖取代玩家的自主选择",
+            "海族全面加入联盟（他们的态度保持暧昧）"
+          ],
+          "narrativeTheme": "东海几千年来没有统一过——从来都是每座岛各管各的，散修们习惯了'我的事我自己负责'。但最近的变化太大了：南疆在震动，北原在燃烧，中洲的天庭在收紧监视，大陆的风暴迟早会卷到海上来。有人说东海应该组织起来了——不是为了建立王朝，是为了在风暴来临时有人可以依靠。气海老祖出现了——不是传说中的幻影，是真的站在你面前。他对联盟的看法让你意外：'东海不需要另一个天庭——但如果你们要建立什么，确保它不会变成另一个天庭。'你终于明白了东海的自由不是'没有规则'，而是'规则由我们自己定'——而这个'我们'是谁，将决定东海以后是什么样"
+        },
+        "goals": [
+          {
+            "id": "dh_alliance_choice",
+            "description": "在自由散修与联盟成员之间做出选择",
+            "type": "decision"
+          },
+          {
+            "id": "dh_reach_5th",
+            "description": "突破至五转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "东海的组织化让你接触到了大陆的消息——南疆义天山的震动、北原巨阳传承的倒影、西漠人祖遗迹的异象——东海之外，整个世界都在燃烧",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.8,
+        "rippleLayers": [
+          "散修联盟的形成或拒绝",
+          "气海老祖现身",
+          "yitianshan L1涟漪——海族感知春秋蝉波动",
+          "大陆势力开始在东海建立据点"
+        ]
+      }
+    ],
+    "西漠": [
+      {
+        "id": "ximo_walker",
+        "name": "沙漠行者",
+        "displayName": "第一章 · 沙漠行者",
+        "domain": "西漠",
+        "domainOpeningChapter": true,
+        "position": {
+          "region": "西漠",
+          "area": "西漠边缘绿洲 · 莫家分支村落",
+          "accessibleLocations": [
+            "绿洲水井区",
+            "沙漠边缘狩猎场",
+            "村落祭祀台",
+            "绿洲集市",
+            "远古石碑碎片散布区"
+          ]
+        },
+        "triggerConditions": "turn_gte(1)",
+        "keyNPCs": [
+          "莫家血脉者（绿洲长老）",
+          "沙漠向导",
+          "绿洲蛊师"
+        ],
+        "keyFactions": [
+          "莫家分支",
+          "绿洲城邦"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "绿洲水资源分配中的第一次站队（XM-1原型：水源争夺-小规模版本）",
+            "初识绿洲城邦间的脆弱平衡——莫家血脉决定你分到多少水（XM-4原型：绿洲城邦）",
+            "第一次进入沙漠边缘——感受到'每一滴水都珍贵'不是比喻"
+          ],
+          "mustNotHappen": [
+            "离开绿洲进入深海沙漠",
+            "蛊仙级力量出现",
+            "人祖遗迹直接开启",
+            "莫家核心血脉试炼"
+          ],
+          "narrativeTheme": "西漠是一张被太阳烤焦的地图。绿洲是图上仅有的墨点，沙漠是墨点之间无尽的空白。你出生的绿洲由莫家血脉控制——水井的钥匙在莫家长老手中，每天分配的水量由你的血脉等级决定。这不是不公平，是沙漠教会所有人的法则：资源永远不够，必须有人分得少一些。你第一次走出绿洲边缘——沙漠在白天是熔炉，在夜晚是冰窖，而每走一步，你都在学习如何在这两者之间活下来"
+        },
+        "goals": [
+          {
+            "id": "xm_first_water",
+            "description": "在第一次水资源分配中获得稳定份额",
+            "type": "milestone"
+          },
+          {
+            "id": "xm_reach_2nd",
+            "description": "突破至二转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1,
+        "rippleLayers": [],
+        "exitTriggers": "绿洲内的生存已不足以满足你的成长——你需要进入更深的沙漠"
+      },
+      {
+        "id": "ximo_oasis",
+        "name": "绿洲秘境",
+        "displayName": "第二章 · 绿洲秘境",
+        "domain": "西漠",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "西漠",
+          "area": "沙漠禁区边缘 · 绿洲间商路",
+          "accessibleLocations": [
+            "沙漠禁区入口",
+            "商路驿站（废弃与活跃）",
+            "绿洲间的争议地带",
+            "小型远古遗迹",
+            "沙虫活动区域外围"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(2), and(turn_gte(12), flag(xm_first_water_completed)))",
+        "keyNPCs": [
+          "沙漠向导",
+          "商队首领",
+          "禁区边缘的神秘蛊师"
+        ],
+        "keyFactions": [
+          "绿洲商路联盟",
+          "莫家分支势力",
+          "沙盗团伙"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "第一次穿越沙漠禁区——不是穿过去，而是探索其中的秘密（XM-2原型：禁区穿越）",
+            "护送或参与绿洲间的商队（XM-5原型：绿洲商路）",
+            "首次接触比蛊更古老的禁制力量——沙漠中的某些东西不是蛊师留下的"
+          ],
+          "mustNotHappen": [
+            "进入蓝海秘境",
+            "人祖遗迹核心区域",
+            "蛊仙级战斗"
+          ],
+          "narrativeTheme": "沙漠禁区不是地图上的危险标注——它是上一纪文明留下的伤疤。那些古老的禁制不是为了保护什么，而是为了封锁什么。你的向导在禁区边缘犹豫了很久才带你进入——他说这是他最后一次带人进这片区域，因为'里面的东西在醒过来'。商路上你遇到了一队从远处绿洲来的商贩——他们的水袋空了三分之二，货物丢了一半。他们不说路上发生了什么，但他们的眼神说明了一切。西漠的秘境不是'探索'——是'用命去换你不知道值不值得换的东西'"
+        },
+        "goals": [
+          {
+            "id": "xm_cross_forbidden",
+            "description": "成功穿越一片沙漠禁区并活着回来",
+            "type": "milestone"
+          },
+          {
+            "id": "xm_reach_3rd",
+            "description": "突破至三转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.2,
+        "rippleLayers": [],
+        "exitTriggers": "禁区中的发现——某种和人祖有关的线索——引你向更古老的西漠深处前进",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "绿洲深处的人祖石碑上有一小段关于南疆的记载:人祖曾去过南疆,在那里遇到了他的第一个对手,不是人,是一种从山中生出的活着的火焰",
+            "interventionNote": null
+          },
+          "北原": {
+            "perception": "石碑上有一段模糊的文字提到人祖和巨阳先祖的对话,两位先祖曾争论过一个问题:力量应该来自血脉还是来自传承",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "绿洲的古老水井中涌出了一种咸水,老祭司说这是海族在通过地下水脉传递一条信息:他们在深海中发现了人祖遗物的线索",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "莫家的族长收到了天庭的一封密信,被当场烧掉了。族长在烧信后沉默了三天",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "ximo_ruins",
+        "name": "人祖遗迹",
+        "displayName": "第三章 · 人祖遗迹",
+        "domain": "西漠",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "西漠",
+          "area": "西漠深处的远古遗迹群 · 人祖传说相关禁地",
+          "accessibleLocations": [
+            "人祖祭坛遗址",
+            "远古石碑群",
+            "蓝海秘境的外围标志物",
+            "莫家血脉试炼场",
+            "沙漠最深处的禁制区域"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(24), flag(xm_cross_forbidden_completed)))",
+        "keyNPCs": [
+          "人祖遗迹守护者",
+          "莫家血脉长老",
+          "蓝海行者"
+        ],
+        "keyFactions": [
+          "莫家核心血脉",
+          "人祖遗迹守护势力",
+          "外来寻宝者"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "发现一条指向人祖的真实线索——这不再是传说（XM-3原型：人祖传说）",
+            "在寻找线索的过程中穿越更危险的禁区（XM-2原型：禁区穿越-升级版）",
+            "第一次面对'守护这片遗迹的东西'——它可能不是人"
+          ],
+          "mustNotHappen": [
+            "人祖直接现身或复活",
+            "蓝海秘境完全开启",
+            "获得完整的人祖传承",
+            "改变蛊界起源的核心设定"
+          ],
+          "narrativeTheme": "人祖不是神。他是蛊世界第一位人类——他在没有任何前人经验的情况下，独自在沙漠中活了下来，走完了从'野兽'到'人'的全部路程。你站在人祖祭坛前的时候感觉到的不是神圣，是孤独——那种'天上没有神，地上没有同类，我的一切只能靠我自己'的孤独。遗迹守护者出现的时候你以为是人，但你很快就意识到——他的存在方式已经和蛊师完全不同了。他在守护什么？还是在等待什么？你发现的线索指向一个名字：蓝海——传说中沙漠心脏里的那片蓝色水面，人祖出生的地方，也是西漠最大的秘密"
+        },
+        "goals": [
+          {
+            "id": "xm_ancestor_clue",
+            "description": "追踪一条人祖线索并得出自己的结论",
+            "type": "decision"
+          },
+          {
+            "id": "xm_reach_4th",
+            "description": "突破至四转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "sanwangshan",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.5,
+        "rippleLayers": [
+          "人祖传说从背景变为线索",
+          "sanwangshan L2涟漪——商路旅人议论南疆异变"
+        ],
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "遗址中的人祖记载揭露了一个被遗忘的真相:南疆义天山下封印着一个与蓝海秘境同源的上古存在",
+            "interventionNote": "携带人祖遗迹中的封印知识前往南疆义天山,解锁破解封印的特殊能力"
+          },
+          "北原": {
+            "perception": "人祖的石碑上用远古文字标记了一个地点,就在北原的冰层下。记载说那里埋着人祖亲手锻造的第一件武器",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "遗迹深处的壁画显示人祖曾造访过东海,不是路过,而是在那里建造了一艘能穿越时间的船",
+            "interventionNote": null
+          },
+          "中洲": {
+            "perception": "遗迹中最新浮现的记载是关于天庭的,在天庭成立之前,这片土地上存在过一个更古老的组织",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "ximo_bluesea",
+        "name": "蓝海传说",
+        "displayName": "第四章 · 蓝海传说",
+        "domain": "西漠",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "西漠",
+          "area": "蓝海秘境周边 · 西漠最深处的水源争夺核心区",
+          "accessibleLocations": [
+            "蓝海秘境外围",
+            "远古蓝宝石矿床",
+            "莫家祖地",
+            "沙漠水源命脉",
+            "跨域通道的边缘"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(4), and(turn_gte(36), flag(xm_ancestor_clue_completed)))",
+        "keyNPCs": [
+          "人祖（传说/意志残留）",
+          "莫家核心长老",
+          "蓝海行者（高阶级）"
+        ],
+        "keyFactions": [
+          "莫家核心血脉",
+          "蓝海守护者",
+          "外来大势力（对大漠古老秘密感兴趣的域外蛊仙）"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "蓝海秘境的真正线索浮现——但入口不在西漠（XM-3原型：人祖传说-升级版）",
+            "大范围的水源危机——多个绿洲的水井同时在枯竭（XM-1原型：水源争夺-升级版）",
+            "做出决定：继续追查蓝海（需跨域）还是留在西漠解决水源危机"
+          ],
+          "mustNotHappen": [
+            "蓝海秘境在西漠完全开启",
+            "人祖意志直接给予完整传承",
+            "水源危机彻底解决（这是西漠永恒的问题）"
+          ],
+          "narrativeTheme": "蓝海秘境真正的入口不在西漠。你花了一整章追查的线索到头来指向了一个残酷的真相——人祖离开西漠之后再也没有回来。蓝海的入口在别处：线索指向南疆的义天山、北原的王庭福地——甚至有人暗示和东海的深海有关。与此同时，西漠的水源危机在升级——多口古井同时枯竭，莫家血脉者召集全族寻找新水源。你面前是两条路：留下来和族人一起在沙漠中找水，或者离开西漠去追寻蓝海的真相。两条路都没有对错——只有选择后的代价"
+        },
+        "goals": [
+          {
+            "id": "xm_bluesea_choice",
+            "description": "在追查蓝海真相与留在西漠之间做出选择",
+            "type": "decision"
+          },
+          {
+            "id": "xm_reach_5th",
+            "description": "突破至五转",
+            "type": "realm_gate"
+          }
+        ],
+        "exitTriggers": "蓝海秘境真正的入口指向其他域——南疆义天山、北原王庭福地、或东海深海——无论选择追查还是留下守护，西漠的边界已经无法容纳你的成长",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.8,
+        "rippleLayers": [
+          "蓝海秘境线索浮现",
+          "西漠水源危机升级",
+          "yitianshan L2涟漪——人祖石碑异象"
+        ]
+      }
+    ],
+    "中洲": [
+      {
+        "id": "zhongzhou_entry",
+        "name": "宗门弟子",
+        "displayName": "第一章 · 宗门弟子",
+        "domain": "中洲",
+        "domainOpeningChapter": true,
+        "position": {
+          "region": "中洲",
+          "area": "十大古派外围 · 入门试炼场与宗门初学区",
+          "accessibleLocations": [
+            "宗门入门试炼场",
+            "传功堂",
+            "弟子院",
+            "宗门藏经阁",
+            "戒律堂外围",
+            "同门演武场"
+          ]
+        },
+        "triggerConditions": "turn_gte(1)",
+        "keyNPCs": [
+          "赵怜云",
+          "白晴仙子",
+          "凤金煌"
+        ],
+        "keyFactions": [
+          "灵缘斋",
+          "天莲派",
+          "仙鹤门",
+          "天妒楼"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "宗门入门考核（ZZ-1原型：宗门晋升）",
+            "拜入某位师父门下（ZZ-5原型：师承传承）",
+            "第一次感受正道秩序——宗门规则比想象中多"
+          ],
+          "mustNotHappen": [
+            "离开中洲",
+            "蛊仙级力量直接参与入门考核",
+            "天庭直接现身",
+            "突破宗门核心禁地"
+          ],
+          "narrativeTheme": "中洲是蛊界修行体系最完整的地方——十大门派、严密戒律、师承制度。这里的蛊师不是野生的，是被宗门体系一层层筛选、打磨、分级出来的。入门考核是第一道筛子——通过的成为弟子，失败的成为凡人。通过之后你会被分配到一位师父门下，而这位师父将决定你以后在中洲的所有可能性"
+        },
+        "goals": [
+          {
+            "id": "zz_first_exam",
+            "description": "通过宗门入门考核",
+            "type": "milestone"
+          },
+          {
+            "id": "zz_reach_2nd",
+            "description": "突破至二转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1,
+        "rippleLayers": [],
+        "exitTriggers": "在宗门内站稳脚跟，进入正式修行阶段"
+      },
+      {
+        "id": "zhongzhou_orthodox",
+        "name": "正道修行",
+        "displayName": "第二章 · 正道修行",
+        "domain": "中洲",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "中洲",
+          "area": "宗门修行区域 · 周边势力交界地带",
+          "accessibleLocations": [
+            "内门修行区",
+            "宗门任务堂",
+            "周边灵材采集区",
+            "两宗交界的争议地带",
+            "戒律堂内堂"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(2), and(turn_gte(12), flag(zz_first_exam_completed)))",
+        "keyNPCs": [
+          "古月方正",
+          "风天语",
+          "洪铭"
+        ],
+        "keyFactions": [
+          "玩家所在宗门",
+          "相邻宗门",
+          "戒律堂"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "第一次面对规则与良心的冲突（ZZ-2原型：正道困境）",
+            "宗门内部或宗门间的小规模摩擦（ZZ-3原型：宗门派系）",
+            "遇到从南疆被带来的古月方正——他是你的师兄、榜样、还是前车之鉴？"
+          ],
+          "mustNotHappen": [
+            "天庭直接现身干预",
+            "蛊仙大规模混战",
+            "古月方正透露诛魔榜的核心机密"
+          ],
+          "narrativeTheme": "正道修行不是念经打坐——是每天在规则和现实之间找平衡。你会第一次看到规则无法覆盖的灰色地带：某个同门犯的错有情可原，但戒律堂的判罚一字不差。古月方正从南疆来——他被天鹤上人救到中洲后一直很沉默，但你隐约感觉到他背负的东西比你想象的沉得多。洪铭是你的同期竞争者——他的天赋让你嫉妒，但他的傲慢让你警惕。中洲的正道不是善良，是一套把所有人框住的规则——而你现在被框在里面了"
+        },
+        "goals": [
+          {
+            "id": "zz_moral_choice",
+            "description": "在规则与良心的冲突中做出选择",
+            "type": "decision"
+          },
+          {
+            "id": "zz_reach_3rd",
+            "description": "突破至三转",
+            "type": "realm_gate"
+          }
+        ],
+        "economyTier": 1,
+        "chapterPriceMultiplier": 1.2,
+        "rippleLayers": [],
+        "exitTriggers": "引起天庭的注意——或在宗门内晋升到足以接触核心层面",
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "天庭的通报显示南疆正在经历一次大规模的势力洗牌",
+            "interventionNote": null
+          },
+          "北原": {
+            "perception": "天庭情报部通知十大古派:北原的巨阳传承即将正式开始,所有在北原有利益的门派应当尽快调整策略",
+            "interventionNote": null
+          },
+          "东海": {
+            "perception": "宗门的外联事务中有一件涉及东海的事项,东海即将成立第一个散修联盟",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "天庭和十大古派举行了联合会议,议题只有一个:人祖遗迹",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "zhongzhou_skywatch",
+        "name": "天庭初窥",
+        "displayName": "第三章 · 天庭初窥",
+        "domain": "中洲",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "中洲",
+          "area": "宗门核心区域 · 天庭监视范围边缘",
+          "accessibleLocations": [
+            "宗门大殿",
+            "传功长老密室",
+            "十大古派议事厅外围",
+            "天庭使者驻留地",
+            "宗门禁地边缘"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(3), and(turn_gte(24), flag(zz_moral_choice_completed)))",
+        "keyNPCs": [
+          "凤九歌",
+          "紫薇仙子",
+          "天鹤上人"
+        ],
+        "keyFactions": [
+          "玩家所在宗门",
+          "天庭（首次明确出现）",
+          "周边宗门势力"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "第一次明确感知到天庭的注视——你的某个行为被天庭记录（ZZ-4原型：天庭首次接触）",
+            "师徒关系中出现分歧——师父对某件事的看法和你不同（ZZ-5原型：师承传承-分歧版）",
+            "宗门对外事件中天庭作为观察者出现"
+          ],
+          "mustNotHappen": [
+            "与天庭直接对抗",
+            "天庭下场干预玩家个人事务",
+            "凤九歌透露命运歌的完整内容"
+          ],
+          "narrativeTheme": "你第一次明确地感知到天庭的存在。不是通过传说或长辈的警告——是你做了一件小事后，某种古老的、不带感情的扫描从你身上掠过。紫薇仙子给你的暗示意味深长：'上面的眼睛比你想的多。'凤九歌则是一副洒脱的态度——他按命运歌行事，仿佛一切都在歌中，包括天庭的注视。你的师父开始对你有了更多要求——不是因为不信任，而是因为在天庭注视下，师父的名声和弟子的表现绑得更紧了"
+        },
+        "goals": [
+          {
+            "id": "zz_skywatch_choice",
+            "description": "在天庭注视下做出关键选择：迎合、低调、还是试探",
+            "type": "decision"
+          },
+          {
+            "id": "zz_reach_4th",
+            "description": "突破至四转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "sanwangshan",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.5,
+        "rippleLayers": [
+          "天庭发布南疆局势监视令（L1涟漪）",
+          "凤九歌命运歌中的隐约暗示"
+        ],
+        "crossDomainHints": {
+          "南疆": {
+            "perception": "天庭的全面动员令,南疆义天山的远古气息即将突破临界点",
+            "interventionNote": "作为天庭观察员前往南疆义天山,近距离观察但不参与"
+          },
+          "北原": {
+            "perception": "北原全境的血脉觉醒者在同一时间感受到了巨阳先祖的意志,他在呐喊",
+            "interventionNote": "作为天庭情报员前往北原,收集巨阳传承的所有情报"
+          },
+          "东海": {
+            "perception": "海族通过中洲的中间人传递了一条给天庭的口讯:别来深海",
+            "interventionNote": null
+          },
+          "西漠": {
+            "perception": "人祖石碑开始浮现文字,来自不同时代:人祖时代、远古时代、以及明天",
+            "interventionNote": null
+          }
+        }
+      },
+      {
+        "id": "zhongzhou_fate",
+        "name": "宿命线索",
+        "displayName": "第四章 · 宿命线索",
+        "domain": "中洲",
+        "domainOpeningChapter": false,
+        "position": {
+          "region": "中洲",
+          "area": "天庭外围 · 十大古派联合议事区 · 天道异象发生地",
+          "accessibleLocations": [
+            "天庭外围观测点",
+            "十大古派联合议事厅",
+            "天道异象显现区域",
+            "宿命碑遗址",
+            "宗门最高禁地"
+          ]
+        },
+        "triggerConditions": "or(realm_gte(4), and(turn_gte(36), flag(zz_skywatch_choice_completed)))",
+        "keyNPCs": [
+          "龙公",
+          "陈衣",
+          "赤心行者"
+        ],
+        "keyFactions": [
+          "十大古派联合",
+          "天庭（从观察到暗示）",
+          "宿命相关古老势力"
+        ],
+        "sceneConstraints": {
+          "mustHappen": [
+            "面对一个动摇正道根基的大事件——规则与大义之间的终极选择（ZZ-2原型：正道困境-升级版）",
+            "十大古派级别的势力博弈——各宗门在这个事件中立场分化（ZZ-3原型：宗门派系-升级版）",
+            "宿命蛊的线索首次以模糊形式浮现——你还不知道那是什么，但你知道那是某种不可撼动的古老力量"
+          ],
+          "mustNotHappen": [
+            "宿命蛊被玩家直接接触或试图摧毁",
+            "天庭直接对玩家下达命令",
+            "改变宿命大战的核心历史走向",
+            "龙公透露天庭对宿命蛊的完整计划"
+          ],
+          "narrativeTheme": "中洲的秩序在动摇。南疆义天山的事通过天庭情报网传到了十大古派——凤九歌的命运歌中出现了一段从未有过的旋律，紫薇仙子的卦象显示出模糊但令人生畏的轨迹。龙公出现了——这位上古龙人蛊仙的存在本身就是天庭意志的证明。赤心行者——一个从魔道转正的蛊仙——他让所有人都不舒服：因为他证明了一个人可以在魔道犯下无法饶恕的罪，然后在正道用余生去赎。你开始看到宿命的影子——某种古老的、比天庭更古老的力量，在一切规则的底层运行。而你还没有准备好面对它"
+        },
+        "goals": [
+          {
+            "id": "zz_fate_stance",
+            "description": "在正道秩序与天道宿命之间做出立场选择",
+            "type": "decision"
+          },
+          {
+            "id": "zz_reach_5th",
+            "description": "突破至五转",
+            "type": "realm_gate"
+          }
+        ],
+        "globalEventId": "yitianshan",
+        "exitTriggers": "中洲→南疆域切换",
+        "economyTier": 2,
+        "chapterPriceMultiplier": 1.8,
+        "rippleLayers": [
+          "天庭召集十大古派代表（L1涟漪）",
+          "宿命线索首次浮现",
+          "龙公现身",
+          "凤九歌命运歌异常",
+          "义天山事件中洲响应"
+        ]
+      }
+    ]
   },
-
   "global": [
     {
       "eventId": "sanwangshan",
       "name": "三王山事件",
-      "description": "南疆三王山势力崛起，引发区域势力洗牌。影响范围：南疆全境。",
+      "description": "南疆三王山势力崛起，引发区域势力洗牌。源发域南疆，触发于南疆风云章。三王传承开启，定仙游炼制，白凝冰背刺——这是方源从凡人到蛊仙的关键转折，也是南疆势力格局重新洗牌的开端。",
       "triggerChapter": "nanjiang_chutan",
       "rippleStrength": "medium",
-      "affectedDomains": ["南疆"]
+      "volume": 3,
+      "affectedDomains": [
+        "南疆"
+      ],
+      "rippleDomains": {
+        "南疆": {
+          "level": "L0",
+          "chapter": "nanjiang_chutan",
+          "manifestation": "三王山的试炼场开启——三王传承同时现世，南疆所有五转以上的蛊师都感知到了传承认主的波动。白凝冰背刺方源，春秋蝉丢失，定仙游炼制成功——从此方源踏入蛊仙行列。各方势力在三王山混战，正道联盟与魔道散修全面交锋",
+          "sceneConstraint": {
+            "mustHappen": [
+              "三王传承开启",
+              "多方势力在三王山混战",
+              "白凝冰背刺事件发生",
+              "定仙游蛊炼制成功"
+            ],
+            "mustNotHappen": [
+              "玩家直接获得完整三王传承",
+              "改变方源使用定仙游离开南疆的核心历史",
+              "阻止白凝冰背刺（背刺是历史的锚点）"
+            ],
+            "narrativeTheme": "三王山的石门缓缓开启——三种古老传承的气息从山腹中涌出。南疆所有够格的蛊师都来了：正道联盟想控制传承、魔道散修想抢夺传承、家族势力想垄断传承。而你站在这场风暴的中心，看着白凝冰的手按在方源的背上——这一刀，改变了一切"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_wangting",
+          "manifestation": "黄金家族王庭感受到南疆动荡余波——三王传承的气息跨过域界传到北原，血脉中的远古感应让黄金家族加速血脉试炼准备。"
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_skywatch",
+          "manifestation": "天庭发布对南疆局势的监视令——十大古派收到通知，要求在各自区域内留意异常动向。三王山的传承波动被天庭记录在案。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_ruins",
+          "manifestation": "商路上的旅人议论南疆的异变——有人说三座大山在涌动，有人说是玄奇杜撰写。沙漠中的古老石碑微微震动，仿佛感应到了什么。"
+        },
+        "东海": {
+          "level": "L2",
+          "chapter": "donghai_deepsea",
+          "manifestation": "远方商船带来的南疆动荡消息——海族注意到海水中的微弱波动，通过人类中间人询问南边发生了什么。"
+        }
+      },
+      "l3GlobalFlags": [
+        "sanwang_happened"
+      ]
+    },
+    {
+      "eventId": "wangting_fudi",
+      "name": "王庭福地事件",
+      "description": "北原王庭福地开启——巨阳先祖的试炼场，狐仙福地的前哨争夺战，黑凡传承同时涌现。源发域北原，北原最具标志性的群仙混战事件。",
+      "triggerChapter": "north_golden",
+      "rippleStrength": "high",
+      "volume": 4,
+      "affectedDomains": [
+        "北原"
+      ],
+      "rippleDomains": {
+        "北原": {
+          "level": "L0",
+          "chapter": "north_golden",
+          "manifestation": "王庭福地开启——巨阳先祖留下的试炼场大门洞开。黄金血脉的觉醒是入场券，黑凡传承遗址散布其中。狐仙福地在远处回响，多方蛊仙混战在即。黑楼兰的决意、太白云生的执念、黎山仙子的谋划——所有人都在王庭福地中寻找自己的答案",
+          "sceneConstraint": {
+            "mustHappen": [
+              "王庭福地正式开启",
+              "黄金血脉者在福地中获得增强",
+              "狐仙福地争夺的前哨战",
+              "黑凡传承的关键物品现世"
+            ],
+            "mustNotHappen": [
+              "王庭福地的全部传承被单一势力获得",
+              "狐仙福地在本事件中完全开启",
+              "巨阳仙尊完整意志直接降临"
+            ],
+            "narrativeTheme": "王庭福地的入口在黄金家族最古老的祭坛下开启——只有血脉浓度足够的人才能踏入。福地内部是一个扭曲的空间迷宫，巨阳先祖将试炼藏在了层层叠叠的禁制之中。黑凡的传承遗址像是被遗忘的岛屿散布其中。而狐仙福地在远处散发着诱人又危险的光芒——那将是下一轮争夺的核心"
+          }
+        },
+        "南疆": {
+          "level": "L1",
+          "chapter": "shili_jueqi",
+          "manifestation": "南疆的古老势力（武家、商家）通过北部的情报网获知了王庭福地的开启——某些南疆蛊仙开始考虑前往北原分一杯羹。"
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_skywatch",
+          "manifestation": "天庭对北原巨阳传承的关注度提升——巨阳先祖是少数能与天庭抗衡的尊者之一，他的传承现世引起了天庭最高层的注意。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_ruins",
+          "manifestation": "沙漠深处的莫家祖地感受到了北方传来的血脉共鸣——巨阳先祖的黄金血脉与莫家的沙漠血脉在远古时期有着不为人知的渊源。"
+        },
+        "东海": {
+          "level": "L2",
+          "chapter": "donghai_deepsea",
+          "manifestation": "东海散修中流传着北原巨阳传承的消息——有人在考虑是否要冒险穿越中洲或南疆前往北原碰运气，但海上到草原的路途太遥远了。"
+        }
+      },
+      "l3GlobalFlags": [
+        "wangting_opened"
+      ]
     },
     {
       "eventId": "yitianshan",
       "name": "义天山事件",
-      "description": "义天山成为南疆焦点，多方势力博弈。方源春秋蝉重生于此。影响范围：南疆→波及北原。",
+      "description": "义天山成为多方势力决战的舞台。方源春秋蝉重生于此，白凝冰背刺是关键转折。义天山大战后蛊界格局发生根本性变化——方源正式成为影响世界的棋手。源发域南疆，但北原/中洲感受到强L1涟漪。",
       "triggerChapter": "sanwang_yitian",
       "rippleStrength": "high",
-      "affectedDomains": ["南疆", "北原"]
+      "volume": 5,
+      "affectedDomains": [
+        "南疆",
+        "北原",
+        "中洲",
+        "东海"
+      ],
+      "rippleDomains": {
+        "南疆": {
+          "level": "L0",
+          "chapter": "sanwang_yitian",
+          "manifestation": "义天山巅峰之战——多方势力在义天山的决战。方源春秋蝉丢失，天庭第一次正面介入南疆事务，正魔散三方全面对抗。天道反噬的第一次明确显现——逆天行为被天道标记",
+          "sceneConstraint": {
+            "mustHappen": [
+              "义天山多方混战",
+              "春秋蝉丢失（方源的底牌被破）",
+              "天庭第一次正面介入南疆",
+              "天道反噬初现——某位蛊仙的逆天行为被天道标记"
+            ],
+            "mustNotHappen": [
+              "春秋蝉被玩家获取",
+              "天庭在南疆全面部署（这是后续事件）",
+              "义天山之战改变宿命蛊的核心位置"
+            ],
+            "narrativeTheme": "义天山的天空被多股蛊仙的气息撕裂。方源的春秋蝉——那个可以逆转时间的禁忌之蛊——在混战中丢失了。天庭的使者第一次以不可忽视的方式出现在南疆：不是监视，不是观察，是出手。天道反噬的迹象第一次变得清晰——有人触碰了不该触碰的东西，而天道已经注意到了。整个蛊界的因果链在这一天开始出现裂缝"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_juyang",
+          "manifestation": "春秋蝉波动预警——黄金血脉者察觉到时间线的扰动，巨阳传承争夺加速。方源从义天山跨域进入北原的迹象越来越明显。"
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "天庭紧急召集十大古派代表——义天山事件改变了宿命的轨迹。凤九歌的命运歌中出现了一段从未有过的异常旋律，紫薇仙子的卦象首次显示出'宿命动摇'的模糊预示。"
+        },
+        "东海": {
+          "level": "L1",
+          "chapter": "donghai_alliance",
+          "manifestation": "海族注意到海水中的春秋蝉波动——影响海族对人类蛊师的态度，交易条件变得更加谨慎。气海老祖感受到跨域而来的时间波纹，开始重新评估东海与大陆的关系。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_bluesea",
+          "manifestation": "人祖遗迹中某块古老石碑开始出现从未有过的异象——与义天山方向遥相呼应。古老的石碑上浮现出新的铭文，仿佛是某种远古预言在自我验证。"
+        }
+      },
+      "l3GlobalFlags": [
+        "yitian_happened"
+      ]
+    },
+    {
+      "eventId": "chunqiuchan",
+      "name": "春秋蝉波动",
+      "description": "方源使用春秋蝉重生引发了时间线的扰动——这不是一次性事件，而是贯穿蛊界时间轴的持续振动。所有对时间敏感的蛊虫、功法、和远古存在都能感知到春秋蝉的波动。这是一个跨卷的涟漪事件，没有固定的'触发章节'，而是在多个关键时刻被感知。",
+      "triggerChapter": "sanwang_yitian",
+      "rippleStrength": "high",
+      "volume": 5,
+      "affectedDomains": [
+        "南疆",
+        "北原",
+        "中洲",
+        "东海",
+        "西漠"
+      ],
+      "rippleDomains": {
+        "南疆": {
+          "level": "L0",
+          "chapter": "sanwang_yitian",
+          "manifestation": "春秋蝉在南疆丢失——方源最大的底牌在义天山混战中遗失。春秋蝉的时间回溯能力在南疆产生了最强烈的时间波纹，修行时间类蛊虫的蛊师全部感受到了这种异常。"
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_juyang",
+          "manifestation": "时间线的扰动让黄金血脉中的远古记忆开始苏醒——巨阳先祖预见到时间线的混乱，在血脉中留下了预警。黑楼兰感知到的不是恐惧，是一种奇怪的熟悉感。"
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "天庭的宿命观测站首次出现读数异常——春秋蝉的时间回溯效应在天庭看来是'对宿命的篡改'。龙公奉命调查时间线异常的源头，但源头已经在混乱中消失了。"
+        },
+        "东海": {
+          "level": "L1",
+          "chapter": "donghai_alliance",
+          "manifestation": "海族最深处的长老——那些活了数千年的存在——感受到了海水中的时间波纹。他们对人类蛊师的态度变得更加谨慎：如果人类在玩弄时间，海族需要重新考虑与人类的关系。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_bluesea",
+          "manifestation": "沙漠中的时间遗迹——那些被埋葬了千年的古老城邦——开始出现短暂的时间回放现象。旅人在沙漠深处看到了不属于这个时代的人和事，仿佛时间的帷幕在沙漠中最薄。"
+        }
+      },
+      "l3GlobalFlags": [
+        "chunqiuchan_active"
+      ]
+    },
+    {
+      "eventId": "juyang",
+      "name": "巨阳传承",
+      "description": "巨阳仙尊的完整传承现世——真阳楼倒映天际，长生天势力全面介入北原，黄金家族的内部分裂达到顶点（黑楼兰要摧毁而非继承）。这是北原的终极事件，影响力辐射五域。",
+      "triggerChapter": "north_juyang",
+      "rippleStrength": "high",
+      "volume": 4,
+      "affectedDomains": [
+        "北原",
+        "中洲"
+      ],
+      "rippleDomains": {
+        "北原": {
+          "level": "L0",
+          "chapter": "north_juyang",
+          "manifestation": "巨阳传承完全现世——真阳楼的倒影映在北原的天际，长生天的意志如乌云压顶。黑楼兰的选择（摧毁而非继承）震撼了整个黄金家族。大雪山在焚天魔女的谋划下暗中布局，黎山仙子的梨园战场在冰原上绽放。雷鬼真君的咆哮宣告着蛊仙级混战的全面升级",
+          "sceneConstraint": {
+            "mustHappen": [
+              "巨阳传承现世的征兆不可逆转",
+              "长生天势力全面介入北原",
+              "黑楼兰做出摧毁传承的决断",
+              "黄金家族内部分裂为继承派与摧毁派"
+            ],
+            "mustNotHappen": [
+              "巨阳传承被玩家完整获取",
+              "改变黑楼兰的核心选择（这是历史的锚点）",
+              "长生天完全控制北原"
+            ],
+            "narrativeTheme": "真阳楼的倒影笼罩了整个北原——巨阳先祖的终极传承浮现在每一个血脉者的感知中。但传承的内部分裂已经无法弥合：黑楼兰要摧毁而非继承——在她看来，巨阳的遗产是诅咒而非祝福。大雪山在焚天魔女手中蠢蠢欲动。长生天的古老势力从沉睡中完全苏醒——他们要确保巨阳的传承落在'正确的人'手中。而雷鬼真君的咆哮在空中炸开，宣告着：北原的蛊仙混战，此刻正式开始"
+          }
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "天庭紧急评估巨阳传承的全球影响——巨阳仙尊是少数能与天庭抗衡的远古尊者之一。天庭向十大古派下达了'密切监视北方'的指令，同时开始重新审视宿命蛊的战略价值。"
+        },
+        "南疆": {
+          "level": "L1",
+          "chapter": "sanwang_yitian",
+          "manifestation": "南疆蛊仙感受到了北原传来的巨阳气息——义天山大战刚结束，巨阳传承现世的消息让南疆势力产生了新的野心：有人想去北原分一杯羹。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_bluesea",
+          "manifestation": "西漠的人祖石碑上浮现出巨阳先祖的远古铭文——这两位远古尊者曾经有过交集。莫家长老从石碑铭文中解读出了令人不安的信息：巨阳的传承可能不仅是北原的事。"
+        },
+        "东海": {
+          "level": "L2",
+          "chapter": "donghai_alliance",
+          "manifestation": "气海老祖——这位从大陆来到东海的老牌蛊仙——感受到了故乡的气息。他罕见地对东海散修联盟发表了意见：'巨阳的传承会让大陆陷入混乱——东海的人最好不要卷进去。'"
+        }
+      },
+      "l3GlobalFlags": [
+        "juyang_revealed"
+      ]
+    },
+    {
+      "eventId": "niliuhe",
+      "name": "逆流河上溯",
+      "description": "方源在八转境界对抗逆流河的终极挑战——逆流河是时光逆流的实体化，上溯逆流河意味着与时间本身对抗。天庭全面介入试图阻止宿命蛊被破坏。时间线在逆流河与春秋蝉的双重作用下交织混乱。源发域中洲/逆流河（特殊空间）。",
+      "triggerChapter": "zhongzhou_fate",
+      "rippleStrength": "high",
+      "volume": 6,
+      "affectedDomains": [
+        "中洲",
+        "南疆",
+        "北原"
+      ],
+      "rippleDomains": {
+        "中洲": {
+          "level": "L0",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "逆流河在中洲的虚空裂隙中浮现——这是一条由时间逆流构成的河流。方源逆流而上——每一秒的过去都在将他向后推，每向前一步都是对时间的直接冒犯。天庭倾尽全力阻止宿命蛊被破坏，但逆流河本身就不在任何人（包括天庭）的控制范围内",
+          "sceneConstraint": {
+            "mustHappen": [
+              "逆流河在虚空裂隙中显现",
+              "方源开始上溯逆流河（对抗时间逆流）",
+              "天庭全面介入试图阻止",
+              "时间线与春秋蝉效应交织产生混乱"
+            ],
+            "mustNotHappen": [
+              "玩家直接参与逆流河上溯（这是方源的独行之路）",
+              "天庭成功阻止方源",
+              "逆流河的位置被任何势力完全控制"
+            ],
+            "narrativeTheme": "逆流河不是一条河——它是时间逆流的实体化。河水从未来流向过去，每一滴水都在逆转时间的箭头。方源独自踏上这条河——他的每一步都在对抗时间的意志。天庭的全力阻止在逆流河面前显得可笑：因为逆流河本身就不遵守任何规则——包括天庭的规则。时间线在河面上分裂成无数分叉，每一道分叉都是一个可能的未来，而只有一条是所有未来的汇聚点"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_juyang",
+          "manifestation": "逆流河的时间逆流与春秋蝉的时间回溯在北原产生共振——黄金血脉中的远古预警被双重激活，巨阳先祖留下的试炼场出现了意想不到的变化：某些试炼的时间被逆转，困在试炼中的人重新获得了机会。"
+        },
+        "南疆": {
+          "level": "L1",
+          "chapter": "sanwang_yitian",
+          "manifestation": "南疆的时间类蛊虫出现集体异动——所有与时间相关的蛊虫（如春秋蝉的仿制品、时光回溯类蛊虫）全部短暂失效或异常活跃。南疆蛊仙意识到：有人在触碰比春秋蝉更根本的时间规则。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_bluesea",
+          "manifestation": "沙漠中的时间遗迹出现大规模时间回放现象——那些被埋葬千年的古老城邦在沙漠中短暂重现，仿佛时间在逆流河的影响下暂时忘记了它们应该被埋着。蓝海秘境的线索在这种混乱中变得更加清晰。"
+        },
+        "东海": {
+          "level": "L2",
+          "chapter": "donghai_alliance",
+          "manifestation": "海族最深处的长老感受到了逆流河的存在——他们说逆流河的源头和深海有关。这一发现让海族对人类蛊师的态度更加复杂：人类不仅在玩弄时间，他们的时间实验还影响到了海洋。"
+        }
+      },
+      "l3GlobalFlags": [
+        "niliuhe_crossed"
+      ]
+    },
+    {
+      "eventId": "suming",
+      "name": "宿命大战",
+      "description": "全书核心事件——宿命蛊被摧毁，命运枷锁断裂，整个蛊界的因果链重写。天道对宿命破坏者降下终极惩罚。方源从这一刻起进入'大爱仙尊'的层次。全世界势力同时感受到命运的动摇——正道恐慌、魔道狂欢、散修观望。这是蛊界历史的转捩点。",
+      "triggerChapter": "zhongzhou_fate",
+      "rippleStrength": "high",
+      "volume": 7,
+      "affectedDomains": [
+        "中洲",
+        "南疆",
+        "北原",
+        "东海",
+        "西漠"
+      ],
+      "rippleDomains": {
+        "中洲": {
+          "level": "L0",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "宿命蛊被摧毁的那一刻——天庭最深处的宿命碑碎裂，十大古派的命运卦象全部失效。天庭陷入了自建立以来最大的危机：维护了数千年的宿命秩序在这一天瓦解了。天道反噬降临——天雷、天火、天劫同时降临，整个中洲的天空被撕裂",
+          "sceneConstraint": {
+            "mustHappen": [
+              "宿命蛊被摧毁",
+              "命运枷锁断裂——全蛊界的因果链重写",
+              "天道反噬降临——对宿命破坏者的终极惩罚",
+              "方源从这一刻起进入新的层次"
+            ],
+            "mustNotHappen": [
+              "宿命蛊被玩家摧毁（这是方源的历史锚点）",
+              "天道反噬被完全消除",
+              "天庭在宿命大战后立即恢复秩序"
+            ],
+            "narrativeTheme": "宿命蛊碎裂的声音传遍了整个蛊界——那不是物理的声音，是因果链断裂的震颤。天庭最深处的宿命碑瞬间粉碎。十大古派的命运卦象全部失效——那些依赖命运预测了几千年的智道蛊师，在同一时刻失去了方向。天道暴怒——不是愤怒，是程序性的回应：有人破坏了因果链，天道必须修复它。天雷劈在中洲最高的山上，天火从天庭的裂隙中涌出。但对于另一些人来说，这一刻是解放——命运被打破意味着所有人的未来都不再被预先规定"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_juyang",
+          "manifestation": "长生天在宿命被摧毁的瞬间陷入了混乱——长生天存在的全部意义就是守护长生之道，而长生之道与宿命息息相关。黄金家族的血脉传承在这一天出现了前所未有的现象：所有血脉者的远古记忆同时苏醒。"
+        },
+        "南疆": {
+          "level": "L1",
+          "chapter": "sanwang_yitian",
+          "manifestation": "南疆的古老家族（武家、商家、古月山寨残部）全部感受到了命运的动摇——那些被宿命规定为'注定衰败'的家族，突然看到了改变命运的可能。南疆的正道联盟开始出现裂痕：命运都不存在了，正道还有什么意义？"
+        },
+        "西漠": {
+          "level": "L1",
+          "chapter": "ximo_bluesea",
+          "manifestation": "西漠的人祖遗迹出现了自人祖离去以后从未有过的变化——蓝海秘境的入口在宿命被摧毁的瞬间短暂开启。人祖石碑上的铭文全部重新排列，仿佛在回应命运的破碎。莫家血脉中觉醒了远古记忆的人说：人祖预见过这一天。"
+        },
+        "东海": {
+          "level": "L1",
+          "chapter": "donghai_alliance",
+          "manifestation": "海族在宿命被摧毁后做出了一个前所未有的决定——开放深海最秘密的区域给值得信任的人类盟友。原因是：命运不存在了，海族需要人类作为盟友来面对即将到来的混乱时代。气海老祖评价道：'没有命运的时代，比有命运的时代更危险。'"
+        }
+      },
+      "l3GlobalFlags": [
+        "fate_destroyed",
+        "tianyi_blurred",
+        "ancient_restrictions_weakening"
+      ]
+    },
+    {
+      "eventId": "tianting",
+      "name": "天庭终战",
+      "description": "全书的终局事件——天庭覆灭，方源以炼天魔尊身份君临天下。尊者之战是蛊界最高级别的对抗，蛊界格局被彻底重塑。旧的秩序崩塌，新的时代在废墟上建立。",
+      "triggerChapter": "zhongzhou_fate",
+      "rippleStrength": "high",
+      "volume": 8,
+      "affectedDomains": [
+        "中洲",
+        "南疆",
+        "北原",
+        "东海",
+        "西漠"
+      ],
+      "rippleDomains": {
+        "中洲": {
+          "level": "L0",
+          "chapter": "zhongzhou_fate",
+          "manifestation": "天庭的覆灭——维持蛊界秩序数千年的最高堡垒在这一天崩塌。方源以炼天魔尊的身份君临天庭废墟。尊者级别的对抗撕裂了中洲的天空——元始仙尊留下的禁制被打破，星宿仙尊的宿命大阵彻底瓦解。十大古派在混乱中各自为政——有的投降、有的逃亡、有的发誓抵抗到底",
+          "sceneConstraint": {
+            "mustHappen": [
+              "天庭覆灭（天庭堡垒被攻破）",
+              "方源以炼天魔尊身份登场",
+              "尊者级别的对抗发生",
+              "蛊界格局被彻底重塑——旧的秩序崩塌"
+            ],
+            "mustNotHappen": [
+              "天庭被玩家攻破（这是方源的历史锚点）",
+              "所有尊者阵亡（某些尊者的命运在原著中未完全确定）",
+              "蛊界被某一方势力完全统一"
+            ],
+            "narrativeTheme": "天庭崩塌的声音不是爆炸——是沉默。维持蛊界秩序数千年的最高堡垒，在炼天魔尊的注视下化为废墟。十大古派的天空被撕裂——元始仙尊留下的禁制像碎玻璃一样从高空坠落。尊者之间的对抗不是战斗——是两种世界秩序的直接碰撞。方源站在天庭废墟上，俯瞰中洲——他摧毁了旧的秩序，但他要建立的新的秩序是什么？没有人知道。蛊界从这一刻进入了一个没有预设剧本的时代"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_juyang",
+          "manifestation": "天庭的覆灭让长生天陷入前所未有的存在危机——长生天与天庭虽非盟友但共享某种古老的制衡关系。天庭瓦解后，北原的各方势力（黄金家族残部、大雪山、长生天）开始重新定义自己在没有天庭世界中的位置。"
+        },
+        "南疆": {
+          "level": "L1",
+          "chapter": "sanwang_yitian",
+          "manifestation": "天庭覆灭的消息传到南疆后，正道联盟名存实亡——维持正道秩序的终极权威消失了。所有维持了数千年的'正道规则'在一夜之间失去了法理基础。南疆进入了丛林法则最纯粹的阶段。"
+        },
+        "西漠": {
+          "level": "L1",
+          "chapter": "ximo_bluesea",
+          "manifestation": "蓝海秘境在天庭覆灭的同时完全开启——人祖在远古时期设下的最后一道封印被摧毁了。沙漠中的古老禁制全部失效，那些被封闭了数千年的远古区域重新开放。莫家祖地的长老宣布：人祖的遗产终于可以被继承。"
+        },
+        "东海": {
+          "level": "L1",
+          "chapter": "donghai_alliance",
+          "manifestation": "散修联盟在天庭覆灭后快速巩固——没有天庭的制衡，东海散修需要自己的秩序体系。海族趁机扩大了与人类盟友的合作范围。气海老祖罕见地主动介入东海事务：'天庭没了——但你们不能以为世界就更安全了。没有人管着，反而更危险。'"
+        }
+      },
+      "l3GlobalFlags": [
+        "tianting_fallen",
+        "order_collapsed",
+        "era_without_heaven"
+      ]
+    },
+    {
+      "eventId": "nilu_river",
+      "name": "逆流河事件",
+      "description": "逆流河现世——时光逆流的终极试炼。蛊界时间法则的具象化——上古时期时光道尊留下的遗产。所有八转以上蛊师都感知到了时间的异常——逆流河的出现意味着宿命蛊的线索即将浮现。源发域全域，南疆为核心第一显现区。方源与玩家在上游平行推进，天庭全力封锁。",
+      "triggerChapter": "yitian_aftermath",
+      "rippleStrength": "high",
+      "volume": 6,
+      "affectedDomains": [
+        "南疆",
+        "中洲"
+      ],
+      "rippleDomains": {
+        "南疆": {
+          "level": "L0",
+          "chapter": "nilu_ascent",
+          "manifestation": "逆流河在南疆核心区首次显现——时间逆流的冲击让所有蛊师停下了手中的事。逆流河不是水——是时间本身。上溯就是在对抗时间。每一步都在消耗你的寿命。方源与你在同一片逆流区域中平行向上推进。",
+          "sceneConstraint": {
+            "mustHappen": [
+              "逆流河现世时的全蛊界时间异常感知",
+              "首次上溯的极限挑战",
+              "时光逆流的物理感受充分描写"
+            ],
+            "mustNotHappen": [
+              "逆流河被描写为普通自然现象",
+              "天庭在第一时间全面封锁",
+              "时光逆流被轻易克服"
+            ],
+            "narrativeTheme": "时间本身具象化了——不是河，是逆流的时间。看着过去的一切在倒放，远古的力量从时间的源头涌来。抬头时，远处另一条支流上有个身影——方源。你们在平行推进，向着同一个方向，为同一个目标"
+          }
+        },
+        "北原": {
+          "level": "L1",
+          "chapter": "north_golden",
+          "manifestation": "北原的冰原上出现了时间裂缝——巨阳先祖的某些预言在时间的异动中被激活。黄金家族紧急召集血脉试炼者——逆流河的上溯者中必须有北原的人。"
+        },
+        "中洲": {
+          "level": "L1",
+          "chapter": "zhongzhou_skywatch",
+          "manifestation": "天庭时光监测院全面动员——十大古派中的所有八转以上蛊师被紧急召回。天庭宣布：逆流河是上古时光道尊的最后一道防线，宿命蛊的线索隐藏在源头——必须阻止任何人到达。"
+        },
+        "东海": {
+          "level": "L2",
+          "chapter": "donghai_联盟",
+          "manifestation": "东海的海水在逆流河出现时短暂倒流——所有水道蛊师都感知到了异常。海族通过中间人询问人类时间发生了什么。散修联盟紧急派遣最强者前往大陆。"
+        },
+        "西漠": {
+          "level": "L2",
+          "chapter": "ximo_blue",
+          "manifestation": "西漠深处最古老的人祖石碑在逆流河出现时发出了微弱的光芒——人祖时代的时间力量被唤醒。蓝海秘境的入口短暂显现——传说人祖曾在上古时期穿越过逆流河。"
+        }
+      },
+      "l3GlobalFlags": [
+        "nilu_river_appeared"
+      ]
+    }
+  ],
+  "domain_events": [
+    {
+      "eventId": "nanjiang_kaiqiao",
+      "name": "开窍大典",
+      "sourceDomain": "南疆",
+      "triggerChapter": "qingmaoshan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "开窍大典举行——测灵石检测空窍资质",
+          "少年在族人注视下将手掌按在测灵石上",
+          "空窍开启的那一刻——有人欢呼有人黯然"
+        ],
+        "mustNotHappen": [
+          "开窍大典写成私下测试",
+          "测灵石被破坏",
+          "玩家开窍失败（应为可选的艰辛但最终成功）"
+        ],
+        "narrativeTheme": "青茅山的开窍大典每三年一次。所有适龄少年排成一行走向测灵石——那块被摸得光滑的石头决定了每个人的命运。空窍开启的那一刻——手掌下的石头发出光芒，光芒的颜色和亮度决定了你是甲等天才还是丁等废材。而你手掌按上去的那一刻，整个山寨都安静了"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆青茅山三年一度的开窍大典刚刚结束——部落间的消息贩子带来了一份新晋蛊师的名单。黄金家族对这些名单向来不屑一顾：血脉才是真正的资质检测。",
+        "中洲": "天庭的基层记录中新增了一条关于南疆青茅山开窍大典的例行档案——这种规模的资质检测在中洲十大古派看来不过是乡野小事，连宗门入门考核的十分之一都比不上。",
+        "西漠": "商路上的旅人提起南疆的开窍大典，语气里带着一丝轻蔑：'测灵石？我们沙漠里的孩子从会走路起就在和虫子搏斗，不需要一块石头来证明什么。'",
+        "东海": "东海散修们对南疆开窍大典的态度最中立——毕竟在海上没有开窍大典也没有宗门入门考核，只有师父的一句话：'你跟我学吧，不收你元石。'"
+      }
+    },
+    {
+      "eventId": "nanjiang_yuexialiangu",
+      "name": "月下炼蛊",
+      "sourceDomain": "南疆",
+      "triggerChapter": "qingmaoshan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "月光下独自炼蛊的场景",
+          "月光蛊初成的异象——银色月光凝聚在蛊虫体表",
+          "炼蛊过程中克服的困难"
+        ],
+        "mustNotHappen": [
+          "月光蛊炼制一次成功毫无波折",
+          "在人前公开展示炼蛊过程",
+          "月光蛊异象被外人完全忽略"
+        ],
+        "narrativeTheme": "月光下独自炼蛊——青茅山的山风在夜晚变冷，月亮从山寨后面的山头升起来。你收集的蛊材摆在面前：月华草、银线虫、还有一块从坊市上换来的残损月光石。前人留下的炼蛊方上有很多字已经模糊了。当月光蛊在你手心成型的那一刻，银色的月光凝聚在它透明的躯壳里——像把一小截月光关进了虫子里"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆传来消息——有人在月下炼就了罕见的月光蛊，引起了周边山寨的注意。北原的蛊师对这种依赖月相力量的蛊虫兴趣不大：草原上没有那么多月光，但有足够多的鲜血。",
+        "中洲": "中洲炼蛊大师听到南疆月下炼蛊的传闻后只是微微点头：月光蛊在十大古派的蛊方目录里排在第五百多位。依赖天象的蛊虫在宗门标准里不够'稳定'。",
+        "西漠": "西漠炼蛊师对此反应最冷淡——沙漠的月光虽然清澈，但蛊材太稀缺了。在每一滴水都要计算的沙漠里，没有人会把资源投给一只依赖月亮的蛊虫。",
+        "东海": "月光蛊的消息传到东海时已经变成了传说——有人说南疆有人炼出了能在月光下隐身的蛊，有人说那只蛊虫一夜之间杀死了整个山寨的敌人。事实被海水稀释得面目全非。"
+      }
+    },
+    {
+      "eventId": "nanjiang_langchao",
+      "name": "狼潮攻城",
+      "sourceDomain": "南疆",
+      "triggerChapter": "qingmaoshan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "狼群围困山寨——成千上万的蛊狼从山林中涌出",
+          "山寨全员防守的血战场面",
+          "狼潮被击退后满目疮痍的山寨：死伤的族人、崩塌的围墙"
+        ],
+        "mustNotHappen": [
+          "狼潮轻易被击退",
+          "山寨在狼潮中完好无损",
+          "狼潮被归因于单一的个人错误"
+        ],
+        "narrativeTheme": "狼潮不是突然袭来的——先是山里的鸟全部飞走了，然后是地面轻微的震动，然后是远方传来的低吼声像打雷一样从地平线上滚过来。古月山寨的围墙上站满了人。第一匹狼冲出树林的时候比人还高——蛊狼不是普通的狼，它们是蛊虫改造过的野兽，嗜血、无畏、成百上千地涌来。这一夜的青茅山被血染红了"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "狼潮攻城的消息传到北原时被部落长老拿来作为反面教材：'山寨的围墙？在草原上没有人会把自己关在围墙里——如果狼来了，你唯一的选择是骑马迎上去。'",
+        "中洲": "天庭的监视记录中完整记录了这次兽潮——南疆青茅山区域的蛊兽异动已被纳入常规监测。在天庭看来，这不是偶然事件，而是南疆蛊兽生态失衡的又一个信号。",
+        "西漠": "狼潮的消息让西漠绿洲长老们更加警惕——沙漠里的沙虫比蛊狼更危险，而每个绿洲都在沙虫的迁徙路线上。'南疆的狼群还能打退，沙虫来了只能搬家。'",
+        "东海": "东海散修对狼潮的反应最实际：几个做跨海生意的南疆商人开始囤积防御类蛊虫，准备运回南疆卖个好价钱。灾难对商人是商机。"
+      }
+    },
+    {
+      "eventId": "nanjiang_shanzhai_fumo",
+      "name": "山寨覆灭",
+      "sourceDomain": "南疆",
+      "triggerChapter": "shanglu_qiusheng",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "古月山寨被焚毁——曾经的家园化为灰烬",
+          "族人四散逃亡——不是撤退，是流亡",
+          "幸存者在废墟上做最后的告别"
+        ],
+        "mustNotHappen": [
+          "山寨覆灭被写成英雄悲歌",
+          "幸存者迅速重整旗鼓",
+          "山寨可以重建"
+        ],
+        "narrativeTheme": "古月山寨烧了一天一夜。火焰从寨门开始，吞噬了木质建筑、存储的蛊材、先人的灵位——最后只剩黑色的骨架竖立在焦土上。族人四散——有的逃往其他山寨投奔远亲，有的跟随商队离开南疆，有的钻进深山再也没出来。你站在废墟上——这里曾经是你的家，现在是你的出发地"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "古月山寨覆灭的消息通过商队传到北原时，部落长老的评价很简短：'在南疆，山寨就是棺材。在草原上，部落会被打败但从不会被'覆灭'——帐篷可以重新搭，战马可以重新驯。'",
+        "中洲": "天庭记录：南疆古月山寨——毁灭，幸存者四散。更新南疆势力地图，古月山寨从'低优先级监测目标'移至'已注销'。",
+        "西漠": "西漠绿洲对山寨覆灭的反应最沉重——沙漠中的每个绿洲都是一个山寨，而沙漠从来不会饶过任何一个。'今天烧的是南疆的山寨，明天可能就是我们的水井。'",
+        "东海": "古月山寨覆灭后，几个流亡到东海的南疆散修在渔村开了家小店铺——他们从不提自己的过去，但夜深人静时会拿出几件从废墟中抢出来的遗物反复擦拭。"
+      }
+    },
+    {
+      "eventId": "nanjiang_touben",
+      "name": "投奔商队",
+      "sourceDomain": "南疆",
+      "triggerChapter": "shanglu_qiusheng",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "山寨覆灭后的流亡者遇到商队",
+          "商队对投奔者的考核：你能做什么？",
+          "在商队中找到自己的位置"
+        ],
+        "mustNotHappen": [
+          "商队无条件接纳所有流亡者",
+          "商队中所有人都诚实可靠",
+          "投奔商队比留在山寨更安稳"
+        ],
+        "narrativeTheme": "商队不是一个家——它是一个移动的微型社会。商队首领收留你不是因为同情，是因为你可以守夜、可以战斗。在商队中找到自己的位置需要证明你不只是一个吃干饭的流亡者——你需要在一群陌生人的审视中、在商路上随时可能发生的危险中，找到自己能提供的东西。商队给了你活下去的可能性，但同时教会了你：可能性不等于安全感"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "北原部落对投奔商队的行为评价很刻薄：'在南疆，家园被烧了就去跟商队跑腿——我们北原人如果丢了部落就自己去建立一个新部落。'",
+        "中洲": "中洲宗门对此毫无反应——在正道秩序中，山寨覆灭者的出路只有两条：投奔其他山寨或成为魔道散修。商队是第三条路，但这是一条在中洲不存在的路——中洲没有商队，只有宗门。",
+        "西漠": "西漠商路上的旅人对南疆流亡者抱有天然的同情——沙漠商队收留过无数失去绿洲的人。一位老商贩说：'那些孩子跟我们以前收留的沙漠流浪者一模一样。'",
+        "东海": "东海散修中也有山寨覆灭后来投奔商队的人——但海岛和陆地不同，在海上你跟不了商队（商队需要路，海上只有航道）。你只能跟鱼船、跟海盗船、或者自己划一艘小船出海。"
+      }
+    },
+    {
+      "eventId": "nanjiang_shangxinci",
+      "name": "商心慈初遇",
+      "sourceDomain": "南疆",
+      "triggerChapter": "shanglu_qiusheng",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "在商队驿站中第一次见到商心慈",
+          "商心慈展示出与年龄不符的商业头脑——精明但不刻薄",
+          "这次相遇改变了你对'商人'的理解"
+        ],
+        "mustNotHappen": [
+          "商心慈被写成无能的大小姐",
+          "商心慈轻易信任陌生人",
+          "商心慈主动赠送贵重物品"
+        ],
+        "narrativeTheme": "商心慈不是你在山寨中见过的任何一类人。她年轻，但眼睛里有商人世家的精密计算——不是狡猾，是那种从小在商队里长大才会有的、对每一笔交易价值的心算。她不会热情地欢迎你——她会冷静地评估你的价值，用一种既公事公办又让你感到被尊重的方式给你一个报价。你在她面前第一次发现：原来不用刀子也可以强大——只要你有别人需要的东西"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "商心慈的名字在北原被部落长老提起时带着一种不屑的赞赏：'商家那个丫头？确实比大多数南疆蛊师精明。但在草原上精明不够——你需要能打。'",
+        "中洲": "中洲灵缘斋的商业部门注意到了商心慈——十大古派中也有商业运作，但他们感兴趣的不是商心慈个人，而是商家在南疆构建的商业网络。",
+        "西漠": "商心慈在沙漠商路的声誉很高——一位绿洲长老说：'南疆商家那个丫头——我听说过。她祖父和她父亲都是沙漠商路上可以信任的名字。商人世家的信用比血脉更能传世。'",
+        "东海": "东海散修对商心慈的评价最有趣——一个做跨海生意的老散修说：'南疆有个女孩叫商心慈，是我见过最不像南疆蛊师的蛊师。她如果出生在海岛上，一定是东海最厉害的散修。'"
+      }
+    },
+    {
+      "eventId": "nanjiang_shangluqiefei",
+      "name": "商路劫匪",
+      "sourceDomain": "南疆",
+      "triggerChapter": "nanjiang_chutan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "商队在商路上遭遇有组织的劫匪",
+          "第一次真正的商队护送战斗",
+          "战斗后商队的损失和劫匪的来历浮现"
+        ],
+        "mustNotHappen": [
+          "劫匪被写成毫无背景的散兵游勇",
+          "商队完好无损通过",
+          "劫匪事件被一笔带过无后续影响"
+        ],
+        "narrativeTheme": "商路上的劫匪不是普通的贼——他们是商路上最危险的生态链。他们了解每条商路的关口、知道哪些商队在哪些月份经过、清楚哪些蛊师值得抢那些不值得。你第一次参与商队护送战斗——在开阔的商路上和一群有组织的亡命之徒正面交锋。战斗结束后你从劫匪首领身上发现了一些东西——让你意识到这些劫匪归顺了你还不了解的势力"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆商路劫匪的消息传到北原时，部落战士们嗤之以鼻：'抢商队太丢人了。'但黄金家族的情报系统注意到：南疆商路上的劫匪组织似乎有北部势力的背景。",
+        "中洲": "天庭记录：'南疆商道第14段——贼寇活动增加，未达到天庭干预阈值。'在天庭的优先级排序中，商路劫匪连最低级别的'值得关注'都排不上。",
+        "西漠": "西漠商路上的老商贩对南疆劫匪的评价：'你们南疆的劫匪还停留在抢货的阶段。沙漠里最危险的商路不是有沙盗的地方，是有绿洲长老暗中控制的路线。'",
+        "东海": "东海没有商路劫匪——但有海盗。南疆商路劫匪的消息让东海海盗们产生了一个想法：如果南疆的商路都开始不安全了，那些商人会不会改走海路？"
+      }
+    },
+    {
+      "eventId": "nanjiang_shanghuiruhui",
+      "name": "南疆商会入会",
+      "sourceDomain": "南疆",
+      "triggerChapter": "nanjiang_chutan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "进入南疆最大的商业网络——商会",
+          "第一次接触商会的规则、等级、和潜规则",
+          "在商会中找到自己的信息渠道"
+        ],
+        "mustNotHappen": [
+          "商会无条件对新人开放",
+          "商会被写成慈善组织",
+          "商会的等级制度被写成无足轻重"
+        ],
+        "narrativeTheme": "南疆商会不是一个建筑——它是一个由金钱、情报、和互惠互利编织成的网络。入会需要担保、需要证明价值、需要接受这个网络的规则（有些写在纸上，有些写在某些人的肚子里）。入会之后你获得的最大资源不是折扣——是信息。商会成员之间的私密情报交换让你第一次看到南疆真正的势力版图：哪个山寨在衰败、哪个家族在崛起。这些信息比任何蛊虫都值钱"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆商会的新入会者名录被北原的情报贩子高价出售——在草原上做生意没有商会，但了解南疆的商业网络对跨域贸易至关重要。",
+        "中洲": "中洲宗门对南疆商会的态度是警惕的淡漠——一个不受天庭控制的商业网络在宗门体系的盲区中膨胀，这让戒律堂的人很不舒服。",
+        "西漠": "西漠绿洲城邦对南疆商会的态度是羡慕——沙漠中没有类似的组织。水源控制了一切，商业被水源控制者垄断。",
+        "东海": "东海散修觉得南疆商会的概念很可笑——在海上每一笔交易都是独立的。'商会？我出海六天回来之后岛上可能已经换主人了，我跟谁建立商会？'"
+      }
+    },
+    {
+      "eventId": "nanjiang_sanzuboqi",
+      "name": "三族博弈",
+      "sourceDomain": "南疆",
+      "triggerChapter": "shili_jueqi",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "同时面对正道联盟、魔道散修、家族势力三足鼎立格局",
+          "在一个具体事件中周旋于三方之间",
+          "深刻理解南疆没有绝对的'好人'和'坏人'"
+        ],
+        "mustNotHappen": [
+          "三方博弈被简化为'正派vs反派'",
+          "玩家可以同时取悦三方",
+          "三族之间的历史仇恨被完全忽略"
+        ],
+        "narrativeTheme": "南疆的势力格局是三座互相角力的大山。正道联盟以维持秩序的名义掌控资源——但秩序的真正受益者是联盟中的核心家族。魔道散修以自由的名义活跃在规则之外——但自由意味着没有人保护你。家族势力在正魔之间周旋——但家族内部的血缘政治比正魔之争更残酷。南疆没有绝对的立场，只有绝对的利害关系"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆三族博弈的情报被北原部落长老用来教育年轻人：'南疆那些人分成三派斗来斗去——而我们北原只有一条规则：血脉强的说了算。'",
+        "中洲": "天庭对南疆三族关系的评估：正道联盟的衰退速度超过预期、魔道散修的组织化程度超出想象、家族势力正在成为南疆真正的权力中心。天庭的控制成本在上升。",
+        "西漠": "西漠绿洲长老们听说南疆三族博弈后陷入了深思——沙漠中的势力只有两种：控制水井的和不控制水井的。'他们能分出三派是因为他们有足够的资源让三派同时存在。'",
+        "东海": "东海散修的评价最超然：'三族博弈？说明南疆还不够乱。在海上如果有多股势力——要么他们互相之间距离至少三天的航程，要么他们已经全部打起来了。'"
+      }
+    },
+    {
+      "eventId": "nanjiang_shengxianjueze",
+      "name": "升仙抉择",
+      "sourceDomain": "南疆",
+      "triggerChapter": "sanwang_yitian",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "站在蛊仙门槛上选择升仙路线（三气升仙）",
+          "升仙前对凡间一切的告别",
+          "升仙过程中面对的道心考验"
+        ],
+        "mustNotHappen": [
+          "升仙被写成简单的'升级'",
+          "升仙成功后仍以凡蛊方式与人交往",
+          "三气升仙的路线区分被忽略"
+        ],
+        "narrativeTheme": "站在蛊仙的门槛上——前方是超越凡人的力量，背后是你作为凡蛊师的一切。三气升仙不是选择最强的路线——是选择最适合你道心的路线。有情之道以羁绊为力量，无情之道以斩断为修行，天道以超脱为目标。升仙的那一刻你感觉自己变了——不是变强了，是变了。世界在你眼中不再是一堵堵需要翻越的墙，而是一张可以看透的网"
+      },
+      "crossDomainMentions": {
+        "南疆": "this_is_source",
+        "北原": "南疆有人升仙的消息传到北原时，王庭的反应是沉默——因为三气升仙绕开了血脉。在北原，不靠血脉升仙不叫升仙，叫'走捷径'。",
+        "中洲": "天庭记录：南疆——新蛊仙登阶。按照规范流程，天庭将在近期派遣使者与新蛊仙接触，评估其立场和对天庭秩序的态度。",
+        "西漠": "西漠最务实——只要新蛊仙不觊觎沙漠的水源，西漠不在乎他是怎么升的仙。但莫家长老还是派了人去打听：这个人升仙的方式能不能在西漠复制？",
+        "东海": "气海老祖听到南疆有人升仙的消息后罕见地评论了一句：'三气升仙——是条险路。我在东海见过几个走这条路的人，有人成功了变成了我这样的人，有人失败了变成了海里的鱼食。'"
+      }
+    },
+    {
+      "eventId": "beiyuan_xuemajuexing",
+      "name": "黄金血脉觉醒",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_youth",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "血脉觉醒仪式的核心时刻——远古血脉在体内苏醒",
+          "觉醒时感知到祖先的碎片记忆——模糊但震撼",
+          "觉醒后的实力变化——血脉不仅增强力量也改变命运"
+        ],
+        "mustNotHappen": [
+          "血脉觉醒写成简单的'升级'",
+          "觉醒过程被外人干扰破坏",
+          "觉醒者立刻完全掌控觉醒力量"
+        ],
+        "narrativeTheme": "血脉觉醒不是学会一项技能——是祖先的记忆在你的血液里苏醒。你在部落祭祀台上将手掌按在远古图腾上的那一刻，某种比蛊虫更古老的力量从你的骨髓深处涌上来。你的血液在沸腾——不是因为温度，是因为其中沉睡了几十代的黄金血脉在你祖先第一次征服草原的时代留下的记忆被唤醒了。你看到了草原——不是你现在看到的草原，是你几百年前的祖先在那个冬天独自杀死了一头蛊兽后、站在它的尸体上第一次宣告'这片草原是我们家'的草原"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "南疆的古老家族对北原的血脉觉醒一向嗤之以鼻——家族传承靠的是蛊虫和资源，不是血液里的幻象。但商家的一位老者私下承认：北原的血脉术确实有无法用蛊虫解释的力量。",
+        "中洲": "天庭档案中对北原血脉觉醒的记录被标记为'参考级'——血脉力量不属于天庭管辖的范畴，因为它是比天庭更古老的遗产。十大古派中的某些古老文献提到了黄金血脉与远古尊者的关联。",
+        "西漠": "莫家长老对北原血脉觉醒的回应意味深长——他说莫家的沙漠血脉也在某些特定时刻出现过类似的觉醒现象。'也许远古时期，所有人类的血液里都有一样的东西。只是有些人忘得更彻底。'",
+        "东海": "东海散修对血脉觉醒的态度最淡然——在海上，血统不决定什么。你可以是黄金家族的后裔也可以是乞丐的私生子，到了海上你只有一个身份：散修。海不会在意你血液里有什么。"
+      }
+    },
+    {
+      "eventId": "beiyuan_buluozhengfa",
+      "name": "部落征伐首战",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_trial",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "第一次以战士身份参与部落间的征服战争",
+          "战场上证明自己——战功是北原唯一的晋升阶梯",
+          "战争结束后部落的伤亡和战利品分配"
+        ],
+        "mustNotHappen": [
+          "首战轻松大获全胜",
+          "部落征伐被写成正邪之战",
+          "战功晋升制度被写成无足轻重"
+        ],
+        "narrativeTheme": "北原的战争不是正义对邪恶——是部落对部落。你的部落和另一个部落之间可能没有仇恨——只有资源：牧场、猎场、水源。你第一次骑马出战时的恐惧不是怕死，是怕辜负——整个部落的战士都在看着你，你的家族在你的背后，你肩上扛的不是自己的命，是部落对你的期望。胜利后的战利品分配不靠资历——靠战功。你获得了自己的第一份战功——不多，但够了。从此你在部落里有了一个位置，不是血脉决定的，是你自己杀出来的"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "北原部落征伐的规模让南疆的正道联盟感到不安——如果北原的部落持续扩张，南疆北部边境的防线将被严重考验。但家族势力对此暗自期待：混乱的北原意味着更多的军备订单。",
+        "中洲": "天庭将此次部落征伐记录为北原常规冲突——在地图上的标记是一次小型战术更新：某部落的控制范围扩大，某部落缩小。这种程度的冲突不需要天庭干预。",
+        "西漠": "西漠对北原部落征伐的评论很直接：'打完仗之后他们还要分战利品？沙漠里打完仗之后最大的战利品是不用死——之后慢慢在沙漠里找水就是全部了。'",
+        "东海": "东海散修对部落征伐的态度是一种遥远的同情——'在海上，战斗不为牧场，为航道。我们和他们一样打了很多仗，但至少我们不会说谁对谁错——只有谁先把对方的船打沉了。'"
+      }
+    },
+    {
+      "eventId": "beiyuan_wangtingshenfen",
+      "name": "王庭身份确立",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_wangting",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "在王庭政治中获得正式身份——不再是无名小卒",
+          "第一次感受到王庭内部的权力游戏——比你想象的复杂",
+          "身份确立的方式决定了以后在王庭中的角色"
+        ],
+        "mustNotHappen": [
+          "身份确立被写成简单的'晋升'",
+          "王庭政治被写成正义的议事厅",
+          "黑楼兰的立场被完全忽略"
+        ],
+        "narrativeTheme": "王庭不是一个宫殿——它是一个权力漩涡。你获得正式身份的那一刻不是被接纳，是被卷入。王庭内部的权力游戏比草原上的刀兵更危险——在这里敌人不会砍你，他们会用血脉规则、战功排名、部落政治来让你寸步难行。你见到了黑楼兰——黄金家族的天才，女扮男装的力道蛊仙。她的眼神让你不安——不是因为她有多强，是因为她的眼睛里没有权力欲望，只有一种近乎殉道者的决绝。你隐约感觉到：王庭的权力游戏对某些人来说不是游戏，是棋局，而有些人在下一盘远比表面看起来更大的棋"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "南疆的正道联盟通过情报网得知了北原王庭的成员变动——有人进入了核心圈。对于南疆来说，了解北原王庭的权力结构就是在为可能的跨域贸易或冲突做准备。",
+        "中洲": "天庭更新了北原王庭的人事档案——每一个进入王庭核心圈的人都将被纳入长期监测。天庭对北原的态度不是敌对，是警觉：黄金家族的血脉中流淌着巨阳先祖的意志。",
+        "西漠": "西漠对北原王庭的态度是实用主义的——只要王庭不觊觎沙漠的水源，沙漠不在乎他们内部怎么斗。但莫家长老注意到了黑楼兰的名字：'这个人的命运轨迹和沙漠预言中的某个画面吻合。'",
+        "东海": "气海老祖罕见地提到了北原王庭——'我在中洲的时候见过黄金家族的人。他们的问题不是权力斗争——他们的问题是权力从不在他们手中。他们的权力来自巨阳的血脉，而血脉会背叛他们。'"
+      }
+    },
+    {
+      "eventId": "beiyuan_huxianqianshao",
+      "name": "狐仙福地前哨",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_golden",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "狐仙福地争夺的前哨战打响",
+          "多方蛊仙在狐仙福地外围的混战",
+          "狐仙福地的吸引力让所有人疯狂——但不是所有人都能活着靠近"
+        ],
+        "mustNotHappen": [
+          "狐仙福地在本事件中开启",
+          "单一势力完全控制福地外围",
+          "前哨战被写成毫无伤亡的试探"
+        ],
+        "narrativeTheme": "狐仙福地还没有开启——但它的光芒已经透过空间裂隙照射到北原大地上。每一个看到这道光芒的蛊仙都在悸动——不是因为美丽，是因为这是一种无法抵抗的本能：那是远古时期某位狐仙级别的蛊仙死后留下的福地，里面可能有一切。前哨战在福地外围打响——多股蛊仙的气息在空中碰撞。你没有进入主战场，但你在远处看到的一切足以让你明白：当福地真正开启的那一天，整个北原都会被卷入这场巨战"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "南疆蛊仙感知到了北原狐仙福地的气息——几位已经完成三王传承的蛊仙开始暗中评估前往北原的可能性。南疆的机缘已经洗过一轮了，而北原的机缘还在最疯狂的阶段。",
+        "中洲": "天庭注意到狐仙福地的前哨战——狐仙级别的福地在天庭的优先级列表中处于'高度关注'。但天庭选择不直接介入：在北原核心区直接部署力量的政治代价太高。",
+        "西漠": "西漠蛊仙对狐仙福地的兴趣有限——沙漠中的远古遗迹才是他们的优先目标。但蓝海行者中的有些人注意到：狐仙福地的光芒与蓝海秘境之间可能存在某种远古关联。",
+        "东海": "海族对狐仙福地的反应出人意料——海族长老在近期交易中提到了'北方之狐'，这个称呼在海族古老的语言中指向某种比蛊仙更古老的海洋存在。气海老祖对此保持了沉默。"
+      }
+    },
+    {
+      "eventId": "beiyuan_heifanchuancheng",
+      "name": "黑凡传承涌现",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_golden",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "黑凡传承的关键物品在福地中现世",
+          "多路人马同时发现传承的迹象——争夺不可避免",
+          "黑凡传承的获取方式揭示了远古蛊仙的试炼逻辑"
+        ],
+        "mustNotHappen": [
+          "黑凡传承被单一势力轻松获取",
+          "传承内容被完全公开",
+          "黑凡的历史被完全揭示（保留神秘感）"
+        ],
+        "narrativeTheme": "黑凡的名字在蛊界很少被提起——他是一位生活在远古时期的蛊仙，他的传承就像他本人一样：低调、隐秘、但一旦现世就让所有识货的人疯狂。传承的关键物品不是在福地核心区出现的——是在一个不起眼的角落、被一阵风吹开的沙子下面、由一个三转蛊师意外发现的。这块不起眼的遗物中蕴含的蛊方和功法让所有看到的人都倒吸一口冷气：黑凡的道路是超凡之路，但他把这条路藏在了最普通的外观里。太白云生的江山如故蛊据说与黑凡传承有关——这个传言让传承的价值翻了十倍"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "南疆蛊师中有人焦急地寻找黑凡传承的任何消息——据说黑凡的某个蛊方与治愈道痕有关，而南疆某些老了的大蛊师愿意为此付出任何代价。",
+        "中洲": "天庭档案中对黑凡的记录极其稀少——只有一行字：'黑凡——远古蛊仙，传承未确认，建议持续观察。'天庭对远古传承的态度始终是：掌握了就要纳入监管，没掌握就当不存在。",
+        "西漠": "西漠对黑凡传承的兴趣出人意料地浓厚——黑凡不是西漠人，但他留下的一部关于沙漠禁制的笔记在远古时期曾被人带到西漠。莫家长老说黑凡来过沙漠，并且留下了一些东西。",
+        "东海": "太白云生在东海留下了零散的足迹——一位东海散修回忆说曾在某座沉岛上发现过太白云生使用江山如故的痕迹。黑凡传承的出现让这些零散的线索突然有了更大的意义。"
+      }
+    },
+    {
+      "eventId": "beiyuan_changshengtian",
+      "name": "长生天降临",
+      "sourceDomain": "北原",
+      "triggerChapter": "north_juyang",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "长生天势力全面介入北原——从幕后走向台前",
+          "长生天的出现改变了北原的权力天平",
+          "第一次接触长生天的代理人——他们不是来帮任何人的"
+        ],
+        "mustNotHappen": [
+          "长生天被写成简单的'第三方势力'",
+          "长生天与黄金家族全面结盟",
+          "长生天的真正目的被完全揭示"
+        ],
+        "narrativeTheme": "长生天的势力在真阳楼的倒影中降临——他们不是骑马来的，是某种更古老的力量将他们的意志投射到了北原大地。长生天的代理人站在你面前的时候，你感觉到了一种比黄金血脉更古老的存在感——他们不是人，他们是某种古老意志的载体。他们对黄金家族的态度既亲近又疏离——亲近是因为他们共享远古的血脉渊源，疏离是因为长生天看到的是'血脉'而不是'家族'。在他们眼中，黑楼兰继承还是摧毁巨阳传承都是血脉的不同表达——他们不选边，因为他们在等血脉自己说话"
+      },
+      "crossDomainMentions": {
+        "北原": "this_is_source",
+        "南疆": "长生天的降临让南疆的正道势力感到了一种久违的恐惧——长生天是比天庭更古老的存在，而他们对正义和邪恶的定义完全不在人类的框架内。",
+        "中洲": "天庭对长生天的降临做出了本能的反应——长生天和天庭在远古时期有过冲突，但两方都在刻意回避这个话题。天庭的应对策略是：加强北原的情报密度，但避免直接对抗。",
+        "西漠": "人祖遗迹中的某些石碑在长生天降临时发出了微弱的光芒——莫家长老解说：人祖在远古时期与长生天有过接触，具体内容不详。'古老的势力之间的交涉已经超出了我们的理解范围。'",
+        "东海": "海族最深处的长老在长生天降临时做出了一个让气海老祖感到意外的决定——暂时限制海族与北原方向的所有交易。海族的理由是：'在我们理解长生天的意图之前，我们不想把自己暴露在它们的注视下。'"
+      }
+    },
+    {
+      "eventId": "zhongzhou_zongmenkaohe",
+      "name": "宗门入门考核",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_entry",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "参加十大古派的入门考核——竞争激烈远超预想",
+          "考核中体现的天赋决定了分配去向",
+          "考核结束后被分配到某位师父门下——师父的选择影响深远"
+        ],
+        "mustNotHappen": [
+          "入门考核被写成走过场",
+          "考核被写成所有人都通过",
+          "师父择徒被写成随机的"
+        ],
+        "narrativeTheme": "十大古派的入门考核不是走过场——每年有数千人参加，通过者不足两成。考核的内容每派不同：灵缘斋考智道推理、天莲派考木道资质、仙鹤门考武力与品德、天妒楼考金道天赋和对抗压力。你在考核中第一次感受到宗门体系的竞争烈度——同期的竞争者不是你的对手，他们是和你一样拼尽全力只为了被一个宗门接纳的年轻人。当你的名字出现在通过者名单上、当你被分配到某位师父门下——这不是结束，而是中洲宗门舞台上一段漫长的爬升之路的开始"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆山寨中的少年如果知道中洲有专门为蛊师设计的入门考核，大概会觉得荒谬——在南疆，你的资质由测灵石决定，你的成长由家族决定。考核？那是北原部落才需要的东西——在战场上被敌人考核。",
+        "北原": "北原部落的战事在入门考核季节爆发——顺便一提，中洲今年通过了入门考核的年轻人中，有几个被标记为'值得关注'——这是天庭要求十大古派在入门后就提交的名单。",
+        "西漠": "沙漠中的年轻人没有入门考核——他们会告诉你：在沙漠里，你的入门考核在你会走路的那一天就开始了。考题是：今天活着。明天继续活着。所有通过的人都叫'成年蛊师'。",
+        "东海": "东海散修对入门考核的态度是复杂的好奇——有些散修说，如果在海岛上有宗门，东海的人可能比中洲更强；另一些散修说，如果海岛上有宗门，东海就不是东海了。"
+      }
+    },
+    {
+      "eventId": "zhongzhou_guzegangchi",
+      "name": "正道规则初试",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_orthodox",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "第一次在正道规则和良心之间面对两难选择",
+          "戒律堂的规则是透明的——但规则的执行不是",
+          "这次选择将影响你在宗门内的声誉和未来路径"
+        ],
+        "mustNotHappen": [
+          "规则vs良心被写成黑白分明",
+          "玩家可以既遵守规则又满足良心且不付出任何代价",
+          "戒律堂被写成反派组织"
+        ],
+        "narrativeTheme": "正道规则在纸上是干净的——但纸张之外的阴影里，规则被不同的人以不同的方式解读。你第一次面对正道困境时感觉到的是深深的无力——你看到了事情的全貌但规则不允许你做你觉得对的事情。戒律堂执事的态度不是恶意的——他只是在执行规则。但当一个规则的执行者和一个规则下受伤害的人都站在你面前时，你才发现正道不是'好人的规则'，而是'任何人都可以用规则来证明自己是对的系统'。你在这次选择后变了——不是变成了坏人，是变成了一个不再以为'正道'等同于'正确'的人"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆听说了中洲正道规则的故事后觉得可笑——在山寨里资源决定一切，谁跟你谈规则？只有弱者才需要规则保护——南疆的强者不屑于也不需要规则。",
+        "北原": "北原对中洲正道困境的评价最直接：'在草原上我们也有规则——强者的话就是规则。你们中洲有几千页的戒律书，但我们只需要一条规则就够了。'",
+        "西漠": "沙漠里的生存法则比任何规则都简单——水井是唯一的标准。但一位绿洲长老私下说：'规则保护规则制定者。正道不是为正义服务的，是为制定正道的那些人服务的。你们中洲只是在更精致的谎言里活着。'",
+        "东海": "东海散修对正道规则的看法最现实：'我不需要规则来告诉我什么是对的——海会告诉我。你做错了事，海会让你死。不需要几千页的门规。'"
+      }
+    },
+    {
+      "eventId": "zhongzhou_tiantingganzhi",
+      "name": "天庭首次感知",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_skywatch",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "第一次明确感知到天庭的注视——不是传说而是亲身经历",
+          "被天庭注意的原因——可能是一件小事但被系统记录",
+          "感知到天庭存在后的心理变化——被注视意味着什么"
+        ],
+        "mustNotHappen": [
+          "天庭直接出手干预",
+          "天庭与玩家进行对话",
+          "天庭的注视被写成恶意监视"
+        ],
+        "narrativeTheme": "天庭的注视不是突然发生的——是你做完某件事后回头再看时，发现有一道目光似乎一直没有从你身上离开。天庭不和你说话——它不是一个人，它是一个系统。你的行为被记录、被分析、被评估。你没有被惩罚，因为你不值得惩罚——你只是被纳入了一个庞大的观测网络。但这种被注视的感觉让你从此做每一个决定时多了一层考量：天庭在看我——这个决定在天庭的评估体系中会被如何归类？你不是罪犯——你是被观察者。而观察者的目光，无论善意还是恶意，都会改变被观察者的行为"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆蛊师听说了天庭的监视体系后感到深深的不适——在南疆，没有人有这样大范围的监视能力。但一些年老的家族长老说：'天庭监视中洲，是因为中洲允许他们监视。南疆不需要天庭来监视——我们已经有自己监视彼此的方法：利益。'",
+        "北原": "北原的反应最激烈——'在北原，长生天在看着我们——那是比天庭更古老的目光。但长生天的注视是对血脉的感应。天庭的注视是对规则的维护——我们不需要后者。'",
+        "西漠": "西漠对天庭监视的反应是一种复杂的漠然——'在沙漠里没有人能监视你。天空太开阔，沙子会掩盖一切痕迹。你可以在沙漠里消失得无影无踪——只要你有足够的水能活到你决定再次出现的那一天。'",
+        "东海": "东海散修的反应是最有趣的：'在海上，你能看到观测你的人——因为他们也需要一条船。天庭如果要监视东海，他们需要先说服海族允许他们的船只进入深海。祝天庭好运。'"
+      }
+    },
+    {
+      "eventId": "zhongzhou_shipaiboqi",
+      "name": "十派博弈",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_skywatch",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "十个古派在一个具体事件上产生分歧——表面团结下的暗流",
+          "你所在宗门的立场与你的个人判断可能冲突",
+          "博弈结果将影响中洲的权力格局"
+        ],
+        "mustNotHappen": [
+          "十派被写成铁板一块",
+          "各方立场被简单化为善恶对立",
+          "博弈被写成一场无后果的辩论"
+        ],
+        "narrativeTheme": "十大门派在书面上是一起维护正道秩序的盟友。但在每一次实际决策中——从资源分配到领地划分、从对魔道的态度到对天庭的服从程度——十派的立场从来没有统一过。灵缘斋想要更多商业自主权，天莲派坚持最传统的正道路线，仙鹤门以武力强硬的姿态要求更大的发言权，天妒楼在所有人背后慢慢地积累着谁也看不懂的筹码。你被卷入了这场博弈——你的宗门要求你站队，但你的判断让你觉得宗门的立场不完全是正确的。在中洲，最危险的事情不是选错边——是不选边"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆三族博弈的参与者在听说中洲十派博弈后的反应是：'十个门派？我们只有三股势力就已经打得不可开交了。十个势力之间的博弈一定更精致——也更虚伪。'",
+        "北原": "北原王庭评价中洲十派博弈：'他们谈判是因为他们不信任武力。我们不需要谈判——草原上的规则不需要十个门派开会来决定。两个部落战场上见面，赢了的说了算。'",
+        "西漠": "西漠绿洲长老们对十派博弈的评价最深刻：'十个势力同时存在于一个系统里——这说明他们都相信这个系统。而一旦你相信了系统，你就被系统绑架了。这是沙漠教会我们最宝贵的一课：永远不要信任任何比你自己更大的系统。'",
+        "东海": "东海散修联盟最初形成时内部也经历过类似的博弈——但海上的博弈比中洲简单得多：因为每个人都可以选择离开。中洲的人不能离开——他们被土地困住了。"
+      }
+    },
+    {
+      "eventId": "zhongzhou_sumai_xiansuo",
+      "name": "宿命线索浮现",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_fate",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "宿命蛊的线索第一次以模糊形式出现在你面前——你还不知道那是什么",
+          "凤九歌的命运歌出现异常旋律——这是从未有过的",
+          "某位远古存在的话语暗示了某种不可撼动的力量"
+        ],
+        "mustNotHappen": [
+          "宿命蛊被直接接触",
+          "线索明确揭示宿命蛊的全貌",
+          "玩家在现阶段理解宿命的全部含义"
+        ],
+        "narrativeTheme": "宿命的第一次显现不是闪电般的启示——是你看到凤九歌在演练命运歌时突然停下来，他的手指停在琴弦上，脸色第一次出现了犹豫。那一段旋律他从未弹过——这不是在他的命运歌谱子里的任何一首。紫薇仙子的卦象同时出现了异常——她在星盘上看到的轨迹在某一个点上突然分叉了：一条指向'宿命'，另一条指向'无命'。没有人能解释这是什么意思——但天庭的反应异乎寻常地紧张。你开始看到某种古老的、比天庭更古老的力量的轮廓——它还不是你的敌人，但你感觉得到：它会成为一切的中心"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆古老的蛊师家族中流传着一个说法：宿命蛊是蛊界最高级别的禁忌——提到它就等于在挑衅天道。但南疆的人对天道一贯的态度是：天道是规则，而我们在规则里找到了自己的活法。",
+        "北原": "北原长生天对宿命的回应最古老——一位长生长老对北原王庭说：'宿命是被规定的东西——而我们北原的血脉是在宿命之外的。黄金血脉的存在本身就是对宿命的质疑。你可以继承宿命，也可以反抗它。'",
+        "西漠": "人祖遗迹中的石碑在宿命线索浮现时发生了异变——某块石碑上浮现出了人祖的手迹，上面写着：'命运是你以为它规定了什么——事实是它只规定了一件事：你会死。其他的都是错觉。'",
+        "东海": "海族最深处的长老说了一句让气海老祖沉默了很久的话：'宿命蛊的位置不在陆地。它在海里——在我们所知的最深处。但它不应该被碰触。有些东西保持沉默是最好的状态。'"
+      }
+    },
+    {
+      "eventId": "zhongzhou_longgong",
+      "name": "龙公意志",
+      "sourceDomain": "中洲",
+      "triggerChapter": "zhongzhou_fate",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "龙公以天庭意志化身出现——上古龙人蛊仙的存在感压倒一切",
+          "龙公的出现表明事态的严重性——非寻常时期不现身的远古存在",
+          "龙公不直接命令但所有人都感受到了他的意图"
+        ],
+        "mustNotHappen": [
+          "龙公透露天庭对宿命蛊的完整计划",
+          "龙公与玩家直接对话",
+          "龙公的立场被写成单纯的'正派'"
+        ],
+        "narrativeTheme": "龙公的出现本身就是一道命令。这位上古龙人蛊仙——天庭最古老也最强大的捍卫者——他不说话时比任何人说话都更有压迫感。他的出现意味着事情已经超出了普通蛊仙的级别——龙公不在任何宗门的管辖范围内，他直接代表天庭的最高意志。他没有看任何人——但他站的地方，所有人都不得不看向他。你第一次感受到了'远古存在'和'当代蛊师'之间的时间鸿沟——龙公不是比你强，他是活在另一个纪元的人。而当你意识到这件事时，你同时也意识到：天庭派出龙公，说明天庭在害怕什么"
+      },
+      "crossDomainMentions": {
+        "中洲": "this_is_source",
+        "南疆": "南疆蛊仙对龙公的传闻感到不寒而栗——一位活了不知几千年的上古龙人，他的每一次现身都意味着蛊界格局的重大变革。'上一次龙公现身是在什么时候？我记得是在一个叫作'天庭建立'的事件里。'",
+        "北原": "黄金血脉对龙公的出现产生了复杂的感应——血脉中的远古记忆告诉黄金族人：龙公的血脉比黄金血脉更古老，但方向不同。长生天的长老说：'龙公是时间的守卫者，我们是时间的旁观者。他捍卫过去，我们等待未来。'",
+        "西漠": "人祖石碑在龙公现身后出现了剧烈反应——某块石碑上浮现出人祖与龙的远古场景。莫家长老惊叹：'人祖和龙在远古时期有过深入的交集——他们共同面对过某种比宿命更古老的问题。而这问题的答案被刻意隐藏了。'",
+        "东海": "海族最强壮的长老在龙公现身后说了一句让所有人沉默的话：'龙不是陆地上最先出现的生物。在龙之前，海里有东西。龙公知道那是什么——这就是他为什么从不下海。'"
+      }
+    },
+    {
+      "eventId": "ximo_shuiyuanchuzheng",
+      "name": "绿洲水源初争",
+      "sourceDomain": "西漠",
+      "triggerChapter": "ximo_walker",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "绿洲水资源分配的第一次生存级站队",
+          "莫家血脉决定水分配——这是血统问题不是公平问题",
+          "在水资源问题上做出的选择有不可逆的后果"
+        ],
+        "mustNotHappen": [
+          "水资源分配被写成公平协商",
+          "水冲突的后果被美化",
+          "莫家血脉的分配逻辑被写成恶意的"
+        ],
+        "narrativeTheme": "水在西漠不是货币——是生或死。绿洲水井的钥匙在莫家血脉者手中——每天早上打开水井的时间、每个人能取多少水——由你的血脉等级决定。这不是恶意，是沙漠几百年来唯一有效的分配方式：因为如果用公平来分配水，每个人都想证明自己比别人更需要水——而这种争论本身就浪费了人类在沙漠中最稀缺的资源：时间。你第一次面对水分配的选择时感到的不是愤怒，是无助——无论你怎么选择，总有人会因为你分到的水而分到的少。而分得少的人，可能是你认识的人"
+      },
+      "crossDomainMentions": {
+        "西漠": "this_is_source",
+        "南疆": "南疆人听到西漠水分配的规则后感到不可思议：'在山寨里资源也不够分，但没人用血统来定——是因为血统靠谱还是因为人走茶凉？家族政治里血缘都靠不住，何况跨代的'血脉等级'？'",
+        "北原": "北原人觉得水分配用血脉逻辑很合理：'在草原上，最好的马给最强的人——不是因为命令，是因为他最可能让部落活下来。水也是一样的逻辑。资源跟实力——这是蛊界的通用语言。'",
+        "中洲": "天庭对西漠水分配体系的评估报告只有一句话：'基于血脉的水资源分配权在人类文明史中被证明是最高效但也是最具压迫性的社会结构——效率与正义在此关系中互为代价。'",
+        "东海": "东海散修对水分配的评价最直接：'在海上，水从来不是问题——海水太多。问题是怎么过滤。我认识一个西漠来的散修，他在海上最大的震惊不是海的辽阔，是'这里的水不要钱'这一事实。他哭了。'"
+      }
+    },
+    {
+      "eventId": "ximo_jinquchuanxing",
+      "name": "沙漠禁区首穿",
+      "sourceDomain": "西漠",
+      "triggerChapter": "ximo_oasis",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "第一次穿越沙漠禁区——不是为了穿过而是为了探索",
+          "禁区中的古老禁制被触发——比蛊更古老的防御系统",
+          "穿越成功后的收获——值得但代价明确"
+        ],
+        "mustNotHappen": [
+          "禁区被写成普通的危险区域",
+          "古老禁制的性质被完全揭示",
+          "穿越无伤且收获巨大"
+        ],
+        "narrativeTheme": "沙漠禁区不是禁区——它是上一个纪元的战争遗址。那些古老禁制被设置不是为了保护什么东西，而是为了封锁什么东西。当你触发第一个禁制时感受到的不是攻击——是某种古老的扫描，一种来自数千年前的敌我识别系统。禁制的逻辑不崇拜敌我——它攻击的是'不符合预设规则的存在'。你从禁制中活下来靠的不是实力，是运气——加上你从每一次触发禁制后学到的教训。从禁地出来后你获得的东西不是宝藏——是信息：关于这片沙漠为什么是禁区的信息。而这些信息比任何宝藏都危险——因为有些人一直在试图让过去保持沉默"
+      },
+      "crossDomainMentions": {
+        "西漠": "this_is_source",
+        "南疆": "南疆探险者对西漠禁区的反应是羡慕——南疆的禁地太少了，每一处禁地都已经被探索了好几个世纪。一位南疆老探险人说：'西漠的禁区是处女地——你们在发现的不是遗迹，是没有人触及过的历史。'",
+        "北原": "北原也有禁区——王庭福地就是最大的禁区，但北原的禁区是祖先预设的试炼场，而西漠的禁区是战场。黄金家族的评价：'祖先留下的禁区是传承，敌人留下的禁区是坟墓。你们是在坟墓里找宝物。'",
+        "中洲": "天庭对西漠禁区首穿的记录只有寥寥数笔：'西漠禁区（编号XD-7）——首次穿越记录。监测数据表明该禁区的防御系统处于半休眠状态，一次穿越不足以唤醒。继续观察。'",
+        "东海": "东海也有禁区——沉岛就是海上的禁区。一个曾在西漠穿越过禁区后来到了海上的散修说：'沙漠禁区是干的，沉岛禁区是湿的。但奇怪的是——它们留给人的感觉是一样的。仿佛沙漠禁区和沉岛禁区来自同一个纪元的同一场战争。'"
+      }
+    },
+    {
+      "eventId": "ximo_renzushibei",
+      "name": "人祖石碑激活",
+      "sourceDomain": "西漠",
+      "triggerChapter": "ximo_ruins",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "人祖遗迹中的古老石碑被激活——浮现出从未见过的铭文",
+          "石碑激活后的异象——不是恐惧而是古老的存在感",
+          "石碑铭文揭示了关于人祖的一条新线索"
+        ],
+        "mustNotHappen": [
+          "人祖石碑的完整内容被解读",
+          "石碑激活后的异象被写成可控的",
+          "人祖的完整历史被揭示"
+        ],
+        "narrativeTheme": "人祖石碑在西漠深处沉默了数千年——它不是在沉睡，只是在等待某些条件被满足。当你无意间触发了激活条件时，石碑表面的风化层剥落，露出了内部从未见过阳光的原始铭文。铭文的文字不是蛊界的文字——是更古老的东西。你能看懂的只有几个符号——但这些符号已经足以让你知道：人祖离开西漠之后没有回来，不是因为死了，而是因为他在追查某种比死亡更古老的真相。石碑上传来的古老意志不是欢迎——是警告：有些真相知道了就无法忘记"
+      },
+      "crossDomainMentions": {
+        "西漠": "this_is_source",
+        "南疆": "南疆的古老蛊师家族对人祖石碑的态度是矛盾的好奇——所有古老家族都在某种程度上和人祖有关联，但没有人能说清楚。一位南疆老家族长说：'如果人祖在西漠留有信息，那么这些信息不是给我们看的。人祖是所有人的祖先——但他从不给所有人留同样的信息。'",
+        "北原": "北原对人祖石碑的反应来自血脉记忆——黄金血脉在石碑激活时同时出现了集体感应。长生天的一位长老说：'人祖的血脉在远古时期是所有人类血脉的共同源头——包括黄金血脉的起点。我们的血液里有人祖留下的东西，而它们刚刚醒了一下。'",
+        "中洲": "天庭将人祖石碑的激活记录为'超常规现象'——在天庭的优先级列表中，任何与人祖直接相关的事件都默认排在最高监测级别。天庭档案中有一段被加密的记录：'人祖的石碑不止一块——已知的四块分散在四个域。'",
+        "东海": "海族对人祖石碑的反应最直接——石碑激活时，海族最深处的某个古老存在也睁开了眼睛。气海老祖评论说：'人祖不仅来过西漠——他来过东海。但他来东海不是为了留石碑——他是来看海的。海族和人类的第一次接触可能就是人祖完成的。'"
+      }
+    },
+    {
+      "eventId": "ximo_mojiaxuemai",
+      "name": "莫家血脉觉醒",
+      "sourceDomain": "西漠",
+      "triggerChapter": "ximo_ruins",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "莫家血脉在特定条件下觉醒——沙漠血脉的特殊能力显现",
+          "血脉觉醒带来的变化——力量的增强也带来远古记忆的碎片",
+          "莫家长老对觉醒的解读——血脉不只是力量也是责任"
+        ],
+        "mustNotHappen": [
+          "莫家血脉觉醒被写成简单的'升级'",
+          "觉醒被外人强行干扰",
+          "血脉的远古记忆被完全揭示"
+        ],
+        "narrativeTheme": "莫家血脉不是黄金血脉——它来自沙漠而不是草原。莫家血脉的力量不在于增强战斗力——在于让你能在沙漠中感受到水的气息。这不是超能力，是莫家几百代人在沙漠中生存进化出的本能被以血脉的形式固定了下来。当你的莫家血脉在远古石碑前觉醒的那一刻，你感受到的不只是力量——是你的血液中有了几百代人在沙漠中找水的记忆。你能感知到水的气息——地下深处的水脉、远方绿洲的水井、甚至某个人水囊里还剩多少水。这不是力量，是血的历史"
+      },
+      "crossDomainMentions": {
+        "西漠": "this_is_source",
+        "南疆": "南疆的家族血脉传承者们对莫家血脉的性质感到好奇——南疆家族的血脉传承主要体现在流派亲和力和体质特征，而不是环境感知能力。'沙漠血脉能感知水——那如果这个人在南疆，他感知到的是什么？雨吗？'",
+        "北原": "黄金家族对莫家血脉的评价带着一种奇特的尊敬——不是因为力量，是因为血的历史。'我们的血脉记得祖先的战场。他们的血脉记得祖先的生存。哪一种记忆更重？谁也说不清。'",
+        "中洲": "天庭的血脉研究部门将莫家血脉列入'值得深入研究'的名单——如果血脉能感知环境中的特定元素，这种能力如果有朝一日能被系统化，将在资源控制层面产生远超蛊虫能力的战略价值。",
+        "东海": "东海散修中有一种说法：水道的蛊师是海上最受尊敬的流派——因为他们能在茫茫大海中感知淡水源。如果莫家血脉能感知水——那么莫家人在海上就是天生的水道蛊师。"
+      }
+    },
+    {
+      "eventId": "ximo_lanhairukou",
+      "name": "蓝海入口线索",
+      "sourceDomain": "西漠",
+      "triggerChapter": "ximo_bluesea",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "蓝海秘境真正的入口线索出现——但它不在西漠",
+          "线索指向其他域——南疆义天山/北原王庭福地/东海深海",
+          "面对选择：追查蓝海还是留在西漠"
+        ],
+        "mustNotHappen": [
+          "蓝海入口在西漠被找到",
+          "线索明确揭示了入口的具体位置",
+          "蓝海秘境的性质被完全揭示"
+        ],
+        "narrativeTheme": "蓝海不在西漠。你在沙漠中追溯的所有线索——人祖石碑上的铭文、莫家血脉的远古记忆、沙漠禁区的古老传说——最终都指向了同一个令人震惊的结论：人祖离开西漠之后根本没有留下蓝海的入口在沙漠里。他把入口藏在了别的地方——而且用他最古老的禁制把线索分散到了各个域。南疆义天山、北原王庭福地、甚至东海的深海——每一条线索都指向一个不同的位置，但真正的位置可能在这些位置之外。蓝海不是你能找到的地方——它是你只有在理解了人祖为什么离开西漠之后，才能到达的地方"
+      },
+      "crossDomainMentions": {
+        "西漠": "this_is_source",
+        "南疆": "南疆义天山的人仔细检查了山脚附近——这里最近太热闹了（三王山事件、义天山混战），现在又多了一条关于蓝海入口的线索。南疆势力开始认真对待西漠传来的消息：'如果人祖的遗产在南疆有入口，谁找到它谁就拥有了南疆最古老的传承。'",
+        "北原": "北原王庭福地的探索者在听说蓝海入口可能在北原后加速了福地内部的探查——如果蓝海入口在王庭福地深处，那么巨阳先祖可能知道。而如果巨阳知道，那么蓝海和黄金血脉之间可能存在远比想象更深的联系。",
+        "中洲": "天庭对蓝海入口线索的反应是高度警觉——蓝海是已知蛊界最古老也最危险的禁区之一。如果入口分散在多个域，那么进入蓝海的方式可能不止一种。天庭最担心的是：有人可能会用蓝海的力量来做天庭绝不允许的事情。",
+        "东海": "海族对蓝海入口的反应出人意料地强烈——海族最深处的长老公开了一个秘密：'深海中有通往蓝海的水路。但我们一直在守护这条水路，不是为了防止人类进入，是为了防止蓝海里的东西出来。蓝海不是宝藏——它是封印。'"
+      }
+    },
+    {
+      "eventId": "donghai_shifujueze",
+      "name": "散修师父抉择",
+      "sourceDomain": "东海",
+      "triggerChapter": "donghai_island",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "在多个候选师父中做出选择——每个人能教的和想要的东西不同",
+          "师父的背景不透明——你需要靠判断力和运气",
+          "选定师父后——师父的仇家自然成为你的仇家"
+        ],
+        "mustNotHappen": [
+          "师父被写成完美导师",
+          "选择师父被写成过场",
+          "师父的过去被完全揭示"
+        ],
+        "narrativeTheme": "在东海上找师父不是填志愿——是赌博。每个散修师父都带着自己的秘密：有些人收徒是为了传承，有些人是为了找一个免费的帮手。你面前有三位候选师父：一位沉默的老蛊师从不提往事但手艺扎实，一位意气风发但有很多仇家，一位温和但要求收取你日后收入的一半作为报酬。你选了谁，就等于选择了谁的命运——他的敌人会注意到你，他的朋友也会注意到你，他的过去会悄悄渗透进你的修行中。在东海上，师父不是教你蛊术的人——是你第一个在海上建立的'家'的蓝图"
+      },
+      "crossDomainMentions": {
+        "东海": "this_is_source",
+        "南疆": "南疆的师承制度与东海完全不同——山寨中你的师父就是你的家族长辈。一位南疆蛊师说：'师父选你？在南疆，师父是血缘给的——你出生在哪个家族，哪个家族的长辈就是你的师父。选？这个字在南疆的蛊师世界里不存在。'",
+        "北原": "北原对东海散修师徒关系的评价最实际：'在草原上师父叫战功——战场上教你活下来的不是人，是敌人的刀。但如果你愿意拜一个人为师，那就等于你愿意为这个人死。在草原上这是最重的承诺。'",
+        "中洲": "中洲的师承制度是最系统化的——宗门分配师父，师父负责考核弟子。一位中洲传功长老说：'东海散修的师徒关系是最原始也最自由的师承形式——没有宗门背书，完全基于个人判断。这种纯粹性在中洲已经不存在了。'",
+        "西漠": "沙漠中的师徒关系接近于东海——没有宗门，只有人和人之间的信任。一位沙漠老蛊师说：'我在沙漠中收了七个徒弟，只有两个人活着离开了沙漠。不是因为我没有好好教——是因为沙漠替我教了他们最难的一课：没有人能替你活下去。'"
+      }
+    },
+    {
+      "eventId": "donghai_haizujiaoyi",
+      "name": "海族首次交易",
+      "sourceDomain": "东海",
+      "triggerChapter": "donghai_seaclan",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "第一次在海族浮礁上与海族进行面对面的交易",
+          "海族的交易规则与人类完全不同——每个细节都可能致命",
+          "交易成功后的收获和交易中的教训同样珍贵"
+        ],
+        "mustNotHappen": [
+          "海族被写成'穿着海草的人类'",
+          "首次交易轻松顺利",
+          "海族主动和人类建立长期信任"
+        ],
+        "narrativeTheme": "海族不是人类——这不是修辞。他们的身体构造、价值判断、对'公平'的定义和人类完全不同。你在浮礁上面对海族商人时才发现所有你学过的交易技巧都是废纸——海族不会讨价还价，他们的第一次报价就是最终报价。但他们的报价中经常附带一个人类完全无法理解的条件——你同意了？那就可以交易。你不同意？那也完全可以——没有愤怒、没有挽留、没有二次报价。海族不会骗你——但他们也不会让你理解他们的逻辑。你在第一次交易中学到的最重要的不是东西——是'和异族打交道时，你以为的常识可能是危险的'。这对你在东海以后的所有行为都是一种底色"
+      },
+      "crossDomainMentions": {
+        "东海": "this_is_source",
+        "南疆": "南疆没有海族——南疆的非人智慧生物是山精地灵，但山精地灵不搞贸易，它们要么帮你要么害你。南疆对海族的交易模式感到困惑：'不讨价还价的商人？你是说他们是商人还是他们只是懒得跟你啰嗦？'",
+        "北原": "北原对海族的态度是野生中的好奇——草原上没有非人智慧生物和人类进行有组织贸易的记录。北原人最关心的是：'这些海族能不能被收编为战力？能交易的物种一定是可以谈判的——只要能谈判就能在战场上争取过来。'",
+        "中洲": "天庭对海族的长期评估是：'非敌对但非可控'。海族在深海中有自己的文明体系，与蛊界的冲突是潜在的而非直接的。天庭的策略是保持观察——不是不想介入，是无法介入：深海不在天庭的有效控制范围内。",
+        "西漠": "西漠蛊师对海族交易的理解最快——沙漠中没有非人文明，但绿洲城邦之间的交易经常发生在互不信任的双方之间。一位西漠商贩说：'海族的交易方式听起来和我们在沙漠中交易水的方式很像——第一口价就是最后一口价。因为讨价还价的成本在沙漠里太高了——在海上大概也一样。'"
+      }
+    },
+    {
+      "eventId": "donghai_chendao",
+      "name": "沉岛遗迹探索",
+      "sourceDomain": "东海",
+      "triggerChapter": "donghai_deepsea",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "在深海中潜入一座远古沉岛——蛊仙洞府或更古老的文明遗址",
+          "沉岛内的古老禁制——不是攻击而是测试",
+          "在沉岛中的重大发现——不完全但有方向性"
+        ],
+        "mustNotHappen": [
+          "沉岛被写成普通的密室探险",
+          "沉岛的所有秘密被一次探索揭开",
+          "沉岛中的远古存在被完全复活或击杀"
+        ],
+        "narrativeTheme": "沉岛不是岛——它是被完整沉入海底的远古洞府。空气由某种古老蛊虫维持着——几千年来从未换过，每一次呼吸你都在和远古的空气对话。禁制还在运转——但它不攻击你，它测试你。禁制的逻辑很奇怪：它不关心你的境界，它在测试你的某种品质——是道心？是血脉？还是别的什么？你在沉岛中发现的东西不是完整传承——是残篇，是未完成的蛊方，是一些你还需要更多线索才能拼凑的东西。但残篇的内容让你无法忘怀：沉岛主人的笔记中反复提到一个名字——蓝海。这个在沙漠中被视为终极秘境的地方，在大海之下也有回响"
+      },
+      "crossDomainMentions": {
+        "东海": "this_is_source",
+        "南疆": "南疆的探险者们对东海的沉岛概念很着迷——南疆的古老遗迹都在山上或地面，沉入深海的洞府完全不同。一位南疆探险者说：'沉岛最大的问题不是禁制——是水。你每一次进出都在消耗蛊虫维持的空气。时间比禁制更致命。'",
+        "北原": "北原对沉岛的态度是军人式的——'一个地宫？在福地里我们见过无数个地宫。沉岛的独特不是因为它沉在水里，是因为它还在运转。几千年不关机的禁制——这说明它的设计者有不得不让它持续运转的理由。'",
+        "中洲": "天庭将沉岛遗迹标记为'高优先级考古目标'——但天庭没有深海作业能力。中洲探索者无法在深海中进行长时间探索。这让天庭感到很挫败：已知的远古遗迹中有相当一部分在深海，而天庭对深海的控制是零。",
+        "西漠": "西漠对沉岛的反应最奇怪——莫家长老说沉岛中的某段描述和沙漠中的某个传说一模一样：'远古时期，蛊界的大陆比现在小——海水覆盖了现在的很多沙漠区域。那些沉岛不是沉下去的——是海退走的时候，它们没有跟上来。'"
+      }
+    },
+    {
+      "eventId": "donghai_qihai",
+      "name": "气海老祖现身",
+      "sourceDomain": "东海",
+      "triggerChapter": "donghai_alliance",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "气海老祖从传说变为现实——他站在你面前了",
+          "气海老祖的话语不直接告诉你答案——他让你自己思考",
+          "气海老祖现身意味着东海进入了关键转折期"
+        ],
+        "mustNotHappen": [
+          "气海老祖主动提供直接帮助",
+          "气海老祖透露他离开中洲的完整原因",
+          "气海老祖被写成无所不能的导师"
+        ],
+        "narrativeTheme": "气海老祖在东海散修中是一个比传说更真实的存在——所有人都知道他在海上，但没有人能确切地说见过他。他在这一刻选择出现在你面前——不是因为认可，是因为他看到了某种让他不得不从传说中走出来说话的变化。他不叫你'弟子'，不给你蛊方，不教你杀招。他只说了一句话——关于东海、关于正在到来的风暴、关于'没有人管着的自由比有人管着的秩序更危险'。然后他转身离开了——像他到来一样突然。他不是你的师父，但他的一句话改变了你对'自由'这个词的理解"
+      },
+      "crossDomainMentions": {
+        "东海": "this_is_source",
+        "南疆": "气海老祖出现的消息在南疆引起了震动——南疆的年轻蛊师只知道他是一个传说，但年老的蛊仙知道这个人的分量：他是少数主动离开中洲的八转蛊仙，他的存在本身就是对'天道必须遵循'这一理念的拒绝。",
+        "北原": "黄金家族对气海老祖的态度很复杂——一个从中洲出走的人在海上建立了自己的势力。这和北原驱逐不符合血脉标准的族人有某种相似之处：逆流者找到自己的河。",
+        "中洲": "天庭对气海老祖现身的记录极短：'气海——确认于东海现身。立场：中立但值得持续关注。'天庭对离开中洲的强者总是最警觉的——因为你不知道他们离开是因为不在乎天庭，还是因为反对天庭。",
+        "西漠": "气海老祖在年轻的时候来过西漠——莫家长老提到他时带着一种古老的敬意：'气海老祖是我们见过唯一一个在没有任何沙漠血统的情况下独自穿越了禁区并活着回来的人。他离开西漠的时候说了一句话：这里太干了——我需要去找水。于是他就真的去建了一片海。'"
+      }
+    },
+    {
+      "eventId": "donghai_lianmeng",
+      "name": "散修联盟成立",
+      "sourceDomain": "东海",
+      "triggerChapter": "donghai_alliance",
+      "rippleStrength": "low",
+      "sceneConstraint": {
+        "mustHappen": [
+          "散修联盟从讨论变为现实——东海第一次有了准组织形式",
+          "联盟成立后各方的不同反应——有人欢迎有人拒绝",
+          "你的选择：加入联盟还是保持独立——每个选择都有明确的代价"
+        ],
+        "mustNotHappen": [
+          "散修联盟被写成东海统一的政府",
+          "联盟被所有散修一致接受",
+          "联盟成立后东海立即稳定"
+        ],
+        "narrativeTheme": "散修联盟的成立是一次与东海常识的对抗——东海散修最引以为豪的就是'我的事我自己负责'。联盟的建立不是为了统一东海，是为了在即将到来的风暴面前有一个可以彼此通知的渠道。不是每个人都加入了——有些人宁愿独自面对风暴也不愿意接受任何形式的'组织'。气海老祖的态度让所有人沉思：'你们不是在建立一个政府——你们是在建立一个'当有人需要帮忙时能找到互助的人'的网络。确保它不要变成天庭就可以了。'你的选择不是加入或不加入——是加入之后你要扮演什么样的角色，或者不加入之后你怎么独自面对世界的剧变"
+      },
+      "crossDomainMentions": {
+        "东海": "this_is_source",
+        "南疆": "南疆对散修联盟的态度是谨慎的观察——一个以南疆商会为参照系的人在了解了东海联盟的章程后说：'这比起商会更像一个互助会。南疆商会是商业组织，散修联盟是——大概是东海人终于承认了在风暴面前一个人划船可能不够用。'",
+        "北原": "北原部落对散修联盟的评价充满了自身经验的投射：'当一个没有组织的地方开始组织化，第一步是联盟，第二步是理事会，第三步是——统治。草原上也经历过这个阶段。如果散修联盟不警惕，它会在三代人之后变成它当初想要防御的东西。'",
+        "中洲": "天庭对散修联盟的评估是：'低威胁——当前阶段为信息共享网络，不构成正式的替代性秩序。但需持续观察其组织化程度的演化速度。'在天庭看来，任何形式的非天庭组织化都值得警惕。",
+        "西漠": "西漠绿洲长老们对散修联盟的态度最现实：'你们在海上建立了一个不收水费的商业网络——这一点我们西漠已经羡慕了一辈子了。沙漠需要水来维持贸易，你们只需要船。祝你们的联盟活得比我们的水源分配规矩更长久。'"
+      }
     }
   ]
 }

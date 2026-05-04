@@ -24,7 +24,7 @@ const REGIONS: { id: string; name: string; desc: string; atmosphere: string }[] 
     atmosphere: '黄沙万里 · 绿洲商路 · 秘境传说众多',
   },
   {
-    id: '中州', name: '中州',
+    id: '中洲', name: '中洲',
     desc: '天庭核心，十大门派体系。正道势力最强，规矩森严。修行资源最集中。',
     atmosphere: '宗门林立 · 正道秩序 · 修行体系最完整',
   },

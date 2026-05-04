@@ -1,4 +1,5 @@
 import { useStore } from '../../store';
+import { StarIcon, ArrowLeftIcon, ArrowRightIcon } from '../../icons';
 import type { PathLevel } from '../../types';
 
 // ─── 道痕互斥组（蛊真人设定：对立流派道痕互相削弱）────────────────
@@ -76,7 +77,7 @@ function DaoMarkBars({
               <div className="flex items-center gap-2 mb-0.5">
                 <span className={`text-xs font-panel w-16 ${isPrimary ? 'text-rg-gold font-semibold' : isSecondary ? 'text-rg-jade-400' : 'text-rg-paper-200/60'}`}>
                   {path}
-                  {isPrimary && ' ★'}
+                  {isPrimary && <StarIcon size={14} className="inline-block text-rg-gold ml-0.5" />}
                 </span>
                 <div className="flex-1 h-3 bg-rg-ink-900 rounded-full overflow-hidden">
                   <div
@@ -218,7 +219,7 @@ export function DaoMarkPanel() {
                     <div key={i} className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-rg-blood-500" />
                       <span className="text-rg-blood-400/70 text-xs font-panel">
-                        {c.pair[0]} ⟷ {c.pair[1]}（互相削弱）
+                        {c.pair[0]} <ArrowLeftIcon size={12} className="inline-block text-rg-blood-400" /><ArrowRightIcon size={12} className="inline-block text-rg-blood-400" /> {c.pair[1]}（互相削弱）
                       </span>
                     </div>
                   ))}
@@ -244,7 +245,7 @@ export function DaoMarkPanel() {
                   return (
                     <div key={path} className="flex justify-between items-center">
                       <span className={`text-xs font-panel ${isPrimary ? 'text-rg-gold' : 'text-rg-paper-200/60'}`}>
-                        {path}{isPrimary ? ' ★' : ''}
+                        {path}{isPrimary ? <StarIcon size={12} className="inline-block text-rg-gold ml-0.5" /> : ''}
                       </span>
                       <span className="text-rg-paper-200/50 text-xs font-panel">{level}</span>
                     </div>

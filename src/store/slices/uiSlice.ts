@@ -10,6 +10,7 @@ interface UiSlice {
   isSettingsOpen: boolean;
   isSaveDialogOpen: boolean;
   isEventLogExpanded: boolean;
+  isAchievementPanelOpen: boolean;
   typewriterSpeed: number;
   screenState: ScreenState;
   gameMode: GameMode;
@@ -22,6 +23,7 @@ interface UiSlice {
   toggleSettings: () => void;
   toggleSaveDialog: () => void;
   toggleEventLog: () => void;
+  toggleAchievementPanel: () => void;
   setTypewriterSpeed: (speed: number) => void;
   setScreenState: (state: ScreenState) => void;
   setGameMode: (mode: GameMode) => void;
@@ -36,6 +38,7 @@ export const createUiSlice = (set: any, get: any): UiSlice => ({
   isSettingsOpen: false,
   isSaveDialogOpen: false,
   isEventLogExpanded: false,
+  isAchievementPanelOpen: false,
   typewriterSpeed: 20,
   screenState: 'title',
   gameMode: 'canon',
@@ -47,6 +50,7 @@ export const createUiSlice = (set: any, get: any): UiSlice => ({
   toggleSettings: () => set((s: UiSlice) => ({ isSettingsOpen: !s.isSettingsOpen })),
   toggleSaveDialog: () => set((s: UiSlice) => ({ isSaveDialogOpen: !s.isSaveDialogOpen })),
   toggleEventLog: () => set((s: UiSlice) => ({ isEventLogExpanded: !s.isEventLogExpanded })),
+  toggleAchievementPanel: () => set((s: UiSlice) => ({ isAchievementPanelOpen: !s.isAchievementPanelOpen })),
   setTypewriterSpeed: (speed) => set({ typewriterSpeed: speed }),
   setScreenState: (state) => set({ screenState: state }),
   setGameMode: (mode) => set({ gameMode: mode }),

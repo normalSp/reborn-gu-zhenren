@@ -6,7 +6,7 @@ import { createKillMoveSlice } from './slices/killMoveSlice';
 import { createPathSlice } from './slices/pathSlice';
 import { createTalentSlice } from './slices/talentSlice';
 import { createFactionSlice } from './slices/factionSlice';
-import { createImmortalSlice } from './slices/immortalSlice';
+import { createApertureSlice } from './slices/immortalSlice';
 import { createCausalitySlice } from './slices/causalitySlice';
 import { createEventSlice } from './slices/eventSlice';
 import { createNarrativeSlice } from './slices/narrativeSlice';
@@ -16,11 +16,22 @@ import { createYuanStoneSlice } from './slices/yuanStoneSlice';
 import { createAchievementSlice } from './slices/achievementSlice';
 import { createTutorialSlice } from './slices/tutorialSlice';
 import { createChapterSlice } from './slices/chapterSlice';
+import { createCombatSlice } from './slices/combatSlice';
+import { createDialogueSlice } from './slices/dialogueSlice';
+import { createDebtSlice } from './slices/debtSlice';
+import { createEncounterSlice } from './slices/encounterSlice';
+import { createOriginUnlockSlice } from './slices/originUnlockSlice';
+import { createSoundSlice } from './slices/soundSlice';
+import { createGameLogSlice } from './slices/gameLogSlice';
+import { createMerchantSlice } from './slices/merchantSlice';
+import { createAuctionSlice } from './slices/auctionSlice';
+import { createTimelineSlice } from './slices/timelineSlice';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
   SAVE_FORMAT_VERSION,
 } from './initialState';
+import npcsData from '../canon/npcs.json';
 
 // ─── 存档元数据类型 ───
 export interface SaveFileFormat {
@@ -53,7 +64,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createPathSlice> &
   ReturnType<typeof createTalentSlice> &
   ReturnType<typeof createFactionSlice> &
-  ReturnType<typeof createImmortalSlice> &
+  ReturnType<typeof createApertureSlice> &
   ReturnType<typeof createCausalitySlice> &
   ReturnType<typeof createEventSlice> &
   ReturnType<typeof createNarrativeSlice> &
@@ -63,6 +74,15 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createAchievementSlice> &
   ReturnType<typeof createTutorialSlice> &
   ReturnType<typeof createChapterSlice> &
+  ReturnType<typeof createCombatSlice> &
+  ReturnType<typeof createDialogueSlice> &
+  ReturnType<typeof createDebtSlice> &
+  ReturnType<typeof createEncounterSlice> &
+  ReturnType<typeof createOriginUnlockSlice> &
+  ReturnType<typeof createSoundSlice> &
+  ReturnType<typeof createGameLogSlice> &
+  ReturnType<typeof createMerchantSlice> &
+  ReturnType<typeof createTimelineSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -106,7 +126,7 @@ export const useStore = create<RootStore>()(
         ...createPathSlice(...a),
         ...createTalentSlice(...a),
         ...createFactionSlice(...a),
-        ...createImmortalSlice(...a),
+        ...createApertureSlice(...a),
         ...createCausalitySlice(...a),
         ...createEventSlice(...a),
         ...createNarrativeSlice(...a),
@@ -116,6 +136,16 @@ export const useStore = create<RootStore>()(
         ...createAchievementSlice(...a),
         ...createTutorialSlice(...a),
         ...createChapterSlice(...a),
+        ...createCombatSlice(...a),
+        ...createDialogueSlice(...a),
+        ...createDebtSlice(...a),
+        ...createEncounterSlice(...a),
+        ...createOriginUnlockSlice(...a),
+        ...createSoundSlice(...a),
+        ...createGameLogSlice(...a),
+        ...createMerchantSlice(...a),
+        ...createAuctionSlice(...a),
+        ...createTimelineSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -123,17 +153,34 @@ export const useStore = create<RootStore>()(
 
         resetStore: () => {
           const set = a[0];
-          const get = a[1]; // BugFix: a[0] 是 set，a[1] 才是 get。之前 a[0]() 等于 set() 无参调用，会把整个 store 设为 undefined
+          const get = a[1];
           const current = get() as any;
+          // ═══ 日志埋点: 游戏重置
+          try {
+            if (typeof current.addGameLog === 'function') {
+              current.addGameLog('system', '重置游戏', { turn: current.turn, realm: current.profile?.realm?.label });
+            }
+          } catch { /* skip */ }
           // ═══ BugFix: 先清除 localStorage 持久化缓存，避免 persist 中间件竞态导致旧数据残留 ═══
           try { localStorage.removeItem('gu-zhenren-save'); } catch {}
+          // ═══ BugFix: 从独立 localStorage key 恢复成就数据（跨存档持久化） ═══
+          let savedAchievements: string[] = [];
+          let savedAchievementProgress: Record<string, number> = {};
+          try {
+            const aRaw = localStorage.getItem('gu-zhenren-achievements');
+            if (aRaw) savedAchievements = JSON.parse(aRaw);
+            const pRaw = localStorage.getItem('gu-zhenren-achievement-progress');
+            if (pRaw) savedAchievementProgress = JSON.parse(pRaw);
+          } catch { /* keep empty */ }
           set({
             ...INITIAL_STATE,
             triggeredEvents: new Set<string>(),
-            // 保留当前屏幕状态（由 App.tsx 管理，不应被重置）
             screenState: current.screenState ?? 'title',
             gameMode: current.gameMode ?? 'canon',
-          }); // shallow merge: INITIAL_STATE 覆盖所有数据 key，slice 方法（函数）自动保留
+            // 跨存档保留成就和进度
+            unlockedAchievements: savedAchievements,
+            achievementProgress: savedAchievementProgress,
+          });
         },
 
         saveToFile: () => {
@@ -168,6 +215,15 @@ export const useStore = create<RootStore>()(
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
+            // ═══ 日志埋点: 导出存档
+            try {
+              const logStore = a[1]() as any;
+              if (typeof logStore.addGameLog === 'function') {
+                logStore.addGameLog('system', `导出存档: ${meta.playerName} (T${meta.turn}, ${meta.realm})`, {
+                  turn: meta.turn, realm: meta.realm, playerName: meta.playerName,
+                });
+              }
+            } catch { /* skip */ }
           } catch (e) {
             console.error('[SaveSystem] 导出存档失败:', e);
           }
@@ -220,6 +276,22 @@ export const useStore = create<RootStore>()(
 
             const set = a[0];
             set(merged);
+            // ═══ P1.6: 存档加载后初始化 NPC 关系矩阵 ═══
+            try {
+              const loaded = a[1]() as any;
+              if (typeof loaded.initNpcRelations === 'function') {
+                loaded.initNpcRelations(npcsData);
+              }
+            } catch { /* 关系矩阵初始化失败不影响存档加载 */ }
+            // ═══ 日志埋点: 加载存档
+            try {
+              const logNew = a[1]() as any;
+              if (typeof logNew.addGameLog === 'function') {
+                logNew.addGameLog('system', `加载存档: ${parsed.meta?.playerName || '?'} (T${parsed.meta?.turn || '?'})`, {
+                  turn: parsed.meta?.turn, realm: parsed.meta?.realm,
+                });
+              }
+            } catch { /* skip */ }
             // ═══ BugFix: 读档后递增版本号，触发 GameScreen 拉取 AI 叙事 ═══
             a[0]((s: any) => ({ gameLoadVersion: (s.gameLoadVersion || 0) + 1 }));
             return { success: true };
@@ -250,12 +322,88 @@ export const useStore = create<RootStore>()(
       {
         name: 'gu-zhenren-save',
         version: SAVE_FORMAT_VERSION,
+        merge: (persistedState: any, currentState: any) => {
+          // 从独立localStorage key恢复成就数据（防止被persist水合覆盖）
+          let savedAchievements: string[] = [];
+          let savedProgress: Record<string, number> = {};
+          try {
+            const aRaw = localStorage.getItem('gu-zhenren-achievements');
+            if (aRaw) savedAchievements = JSON.parse(aRaw);
+            const pRaw = localStorage.getItem('gu-zhenren-achievement-progress');
+            if (pRaw) savedProgress = JSON.parse(pRaw);
+          } catch { /* keep defaults */ }
+          // 归一化 duelsState.phase — 修正历史存档中无效相位值（如"round"→"player_turn"）
+          const VALID_PHASES = ['init', 'player_turn', 'enemy_turn', 'ended', 'resolution'];
+          const merged = {
+            ...currentState,
+            ...persistedState,
+            unlockedAchievements: savedAchievements,
+            achievementProgress: savedProgress,
+          };
+          if (merged.duelState && !VALID_PHASES.includes(merged.duelState.phase)) {
+            merged.duelState = { ...merged.duelState, phase: 'player_turn' };
+          }
+          return merged;
+        },
         migrate: (persistedState: any, version: number) => {
-          // v1 → v2 → v3 → v4 迁移：兼容旧存档无新增字段的情况
+          // v1 → v2 → v3 → v4 → v5 迁移：兼容旧存档无新增字段的情况
+          if (version < 5 && persistedState) {
+            // v5 新增：P2扩展字段占位（combatState扩展/dialogueState/shopState/encounterState/audioState/lifeboundGu）
+            if (persistedState.combatState === undefined) persistedState.combatState = null; // 已存在但兼容旧存
+            if (persistedState.dialogueState === undefined) persistedState.dialogueState = {};
+            if (persistedState.shopState === undefined) persistedState.shopState = { visitedShops: [], shopInventory: {} };
+            if (persistedState.encounterState === undefined) persistedState.encounterState = { recentEncounters: [], cooldownTimer: 0 };
+            if (persistedState.audioState === undefined) persistedState.audioState = { masterVolume: 0.7, bgmVolume: 0.5, sfxVolume: 0.7, currentBgm: null };
+            if (persistedState.lifeboundGu === undefined) persistedState.lifeboundGu = null;
+            if (persistedState.originUnlocks === undefined) persistedState.originUnlocks = [];
+            if (persistedState.soundState === undefined) persistedState.soundState = { masterVolume: 0.7, bgmVolume: 0.5, sfxVolume: 0.7, muted: false, currentBgm: null };
+            // P2新增 chapterSlice 路由扩展字段
+            if (persistedState.nextChapterOptions === undefined) persistedState.nextChapterOptions = [];
+            if (persistedState.proximityEvents === undefined) persistedState.proximityEvents = [];
+            if (persistedState.globalEventStatus === undefined) persistedState.globalEventStatus = {};
+          }
+          if (version < 6 && persistedState) {
+            // v6 新增：决斗引擎duelState
+            if (persistedState.duelState === undefined) persistedState.duelState = null;
+          }
+          if (version < 7 && persistedState) {
+            // v7 新增 (P2-13 + P2-流派): 蛊虫饥饿状态机/NPC关系网络/洞天福地/本命蛊
+            if (persistedState.guHungerCounters === undefined) persistedState.guHungerCounters = {};
+            if (persistedState.npcRelations === undefined) persistedState.npcRelations = { matrix: {}, lastUpdatedTurn: 0 };
+            if (persistedState.heavenlyLand === undefined) persistedState.heavenlyLand = null;
+            if (persistedState.lifeboundGuInfo === undefined) persistedState.lifeboundGuInfo = null;
+            if (persistedState.lifeboundDeathPenalty === undefined) persistedState.lifeboundDeathPenalty = null;
+            // 旧存档 GuInstance.currentState 五态→四态映射
+            if (Array.isArray(persistedState.inventory)) {
+              const oldToNew: Record<string, string> = { fed: 'optimal', starving: 'injured', dying: 'dead' };
+              persistedState.inventory = persistedState.inventory.map((gu: any) => {
+                if (gu && gu.currentState && oldToNew[gu.currentState]) {
+                  return { ...gu, currentState: oldToNew[gu.currentState], hungerCounter: gu.hungerCounter ?? 0 };
+                }
+                return gu ? { ...gu, hungerCounter: gu.hungerCounter ?? 0 } : gu;
+              });
+            }
+          }
+          if (version < 8 && persistedState) {
+            // v8: 空窍/福地类型分离 —— 旧版 ImmortalAperture 数据迁移
+            // 旧版可能在 aperture 中存入了非 ImmortalAperture 的混合数据
+            // 迁移策略：检测 aperture 是否包含 ImmortalAperture 特有字段(area_mu/time_flow_ratio)
+            // 若不包含 → 旧版空窍数据，替换为 null（将在角色创建时重新初始化）
+            // 若包含 → 保留为 ImmortalAperture
+            const oldAperture = persistedState.aperture;
+            if (oldAperture && typeof oldAperture === 'object') {
+              if (oldAperture.area_mu !== undefined || oldAperture.time_flow_ratio !== undefined) {
+                // 有效 ImmortalAperture — 保留
+              } else {
+                // 旧版混合数据 — 清空
+                persistedState.aperture = null;
+              }
+            }
+          }
           if (version < 4 && persistedState) {
             // v4 新增 chapterSlice 字段默认值
             if (persistedState.currentChapterId === undefined) persistedState.currentChapterId = null;
-            if (persistedState.currentDomain === undefined) persistedState.currentDomain = '南疆';
+            if (persistedState.currentDomain === undefined) persistedState.currentDomain = '';
             if (persistedState.chapterHistory === undefined) persistedState.chapterHistory = [];
             if (persistedState.activeEvents === undefined) persistedState.activeEvents = {};
             if (persistedState.goals === undefined) persistedState.goals = {};
@@ -279,7 +427,7 @@ export const useStore = create<RootStore>()(
           const s = state as any;
           const {
             // 排除 UI 状态
-            activeTab, isSettingsOpen, isSaveDialogOpen, isEventLogExpanded,
+            activeTab, isSettingsOpen, isSaveDialogOpen, isEventLogExpanded, isAchievementPanelOpen,
             typewriterSpeed, screenState, gameMode,
             pipelinePhase, pipelineError, l3Warnings,
             setActiveTab, toggleSettings, toggleSaveDialog, toggleEventLog,
@@ -295,6 +443,13 @@ export const useStore = create<RootStore>()(
             currentNarrative,
             // 排除读档版本计数器（纯UI信号，不持久化）
             gameLoadVersion,
+            // P3修复：排除成就字段（achievementSlice独立管理localStorage，避免双重真相源覆盖）
+            unlockedAchievements, achievementProgress,
+            recentUnlocks, _achievementDefs,
+            // 排除成就相关方法
+            loadAchievementDefinitions, checkAchievements, unlockAchievement,
+            updateAchievementProgress, isAchievementUnlocked, checkCondition,
+            getAchievementStats, getAllAchievements, clearRecentUnlocks,
             // 保留其余可序列化数据
             ...rest
           } = s;

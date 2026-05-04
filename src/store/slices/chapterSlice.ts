@@ -6,11 +6,15 @@ import type {
   ChapterDefinition,
   ChapterRecord,
   ChapterProgressionResult,
+  ChapterRoute,
   ChapterTransitionState,
+  CombatConstraint,
   EventStatus,
+  GlobalEventStatus,
   GoalStatus,
 } from '../../types';
 import chaptersRaw from '../../canon/chapters.json';
+import { routeReachableChapters } from '../../engine/chapter-router';
 
 const chaptersData = chaptersRaw as {
   domains: Record<string, ChapterDefinition[]>;
@@ -30,6 +34,11 @@ export interface ChapterSlice {
   goals: Record<string, GoalStatus>;
   /** 转章过渡状态 */
   transitionState: ChapterTransitionState;
+  /** P2-2a: 全局事件状态（eventId → 触发/完成） */
+  globalEventStatus: Record<string, GlobalEventStatus>;
+  /** P2-4b: 待注入的战斗约束（消费后自动清除） */
+  transientCombatConstraint: CombatConstraint | null;
+  setTransientCombatConstraint: (c: CombatConstraint | null) => void;
 
   /** 初始化章节（角色创建后调用） */
   initChapter: (chapterId: string, domain: string) => void;
@@ -55,11 +64,13 @@ export interface ChapterSlice {
 
 export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
   currentChapterId: null,
-  currentDomain: '南疆',
+  currentDomain: '',
   chapterHistory: [],
   activeEvents: {},
   goals: {},
   transitionState: 'idle',
+  globalEventStatus: {},
+  transientCombatConstraint: null,
 
   initChapter: (chapterId, domain) => {
     const domainChapters = chaptersData.domains[domain];
@@ -105,6 +116,13 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
       store.setFlag('current_domain', domain);
       store.setFlag('current_chapter_id', chapterId);
     }
+    // ═══ 日志埋点: 章节初始化
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('narrative', `章节开始: ${def.displayName} (${domain})`, {
+        chapterId, domain, displayName: def.displayName,
+      });
+    }
   },
 
   activateChapter: (chapterId) => {
@@ -136,11 +154,22 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
       newGoals[g.id] = 'active';
     }
 
+    // P2-2a: 章节关联全局事件→标记triggered
+    const updatedEventStatus = { ...state.globalEventStatus };
+    if (def.globalEventId) {
+      updatedEventStatus[def.globalEventId] = {
+        triggered: true,
+        completed: false,
+        triggeredAtChapter: chapterId,
+      };
+    }
+
     set({
       currentChapterId: chapterId,
       activeEvents: {},
       goals: newGoals,
       transitionState: 'idle',
+      globalEventStatus: updatedEventStatus,
       chapterHistory: [...state.chapterHistory, record],
     });
 
@@ -148,6 +177,13 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
       store.setFlag('current_chapter', def.name);
       store.setFlag('current_domain', domain);
       store.setFlag('current_chapter_id', chapterId);
+    }
+    // ═══ 日志埋点: 章节激活
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('narrative', `章节激活: ${def.displayName}`, {
+        chapterId, domain, displayName: def.displayName,
+      });
     }
   },
 
@@ -162,38 +198,98 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
   checkProgression: () => {
     const state = get() as ChapterSlice;
     const chapter = get().getCurrentChapter?.() as ChapterDefinition | null;
+
+    // 无当前章节 → 使用路由引擎判断起点
     if (!chapter) {
+      // 查找当前域的入口章
+      const domainChapters = chaptersData.domains[state.currentDomain] || [];
+      const openingChapter = domainChapters.find(c => c.domainOpeningChapter);
+      if (openingChapter) {
+        return {
+          shouldTransition: true,
+          nextChapterId: openingChapter.id,
+          reason: `进入${state.currentDomain}起始章节「${openingChapter.displayName}」`,
+        };
+      }
       return { shouldTransition: false, reason: '无当前章节' };
     }
 
-    // 检查所有目标是否完成
+    // ─── 步骤1: 检查所有目标是否完成 ───
     const allGoalsCompleted = chapter.goals.every(g => state.goals[g.id] === 'completed');
     if (!allGoalsCompleted) {
       return { shouldTransition: false, reason: '章节目标未全部完成' };
     }
 
-    // 查找域内下一章节
-    const domainChapters = chaptersData.domains[state.currentDomain] || [];
-    const currentIdx = domainChapters.findIndex(c => c.id === chapter.id);
-    if (currentIdx >= 0 && currentIdx < domainChapters.length - 1) {
-      const next = domainChapters[currentIdx + 1];
+    // ─── 步骤2: 通过路由引擎计算可达章节（P2核心升级） ───
+    const store = get() as any;
+    const routerResult = routeReachableChapters({
+      currentDomain: state.currentDomain,
+      currentChapterId: state.currentChapterId,
+      chapterHistory: state.chapterHistory,
+      flags: store.flags || {},
+      realm: store.profile?.realm?.grand || 1,
+      turn: store.turn || 1,
+      chaptersData: chaptersData as any,
+    });
+
+    const { reachable, recommended, upcomingEvents } = routerResult;
+
+    // ─── 步骤3: 路由退化检测——当路由引擎输出的可达章节为空且非当前域末章时 ───
+    if (reachable.length === 0) {
+      // 检查是否已是域内最后一章
+      const domainChapters = chaptersData.domains[state.currentDomain] || [];
+      const currentIdx = domainChapters.findIndex(c => c.id === chapter.id);
+      const isLastInDomain = currentIdx >= 0 && currentIdx === domainChapters.length - 1;
+
+      // 域末章且有 exitTriggers → 跨域切换
+      if (isLastInDomain && chapter.exitTriggers) {
+        const exitDomain = chapter.exitTriggers.split('→')[1]?.trim();
+        return {
+          shouldTransition: true,
+          nextDomain: exitDomain,
+          reason: `域内章节全部完成，${chapter.exitTriggers}`,
+        };
+      }
+
+      // 域末章但无 exitTriggers → 自由漫游（P2+会补充跨域路由）
+      if (isLastInDomain) {
+        return { shouldTransition: false, reason: `已是${state.currentDomain}域最后一章，跨域切换待定` };
+      }
+
+      // 非域末章但无路由 → 退化到线性查找（兼容南疆P1三章）
+      if (currentIdx >= 0 && currentIdx < domainChapters.length - 1) {
+        const next = domainChapters[currentIdx + 1];
+        return {
+          shouldTransition: true,
+          nextChapterId: next.id,
+          reason: `所有目标已完成，可推进至「${next.displayName}」`,
+        };
+      }
+
+      return { shouldTransition: false, reason: '无可达章节' };
+    }
+
+    // ─── 步骤4: 多路由选项 → 返回选项列表供UI展示 ───
+    if (reachable.length > 1) {
+      const nextChapterOptions = reachable;
       return {
         shouldTransition: true,
-        nextChapterId: next.id,
-        reason: `所有目标已完成，可推进至「${next.displayName}」`,
+        nextChapterOptions,
+        proximityEvents: upcomingEvents,
+        reason: `发现 ${reachable.length} 条可推进路线，请选择`,
       };
     }
 
-    // 已经是域内最后一章 — 需要跨域切换（P2实现）
-    if (chapter.exitTriggers) {
-      return {
-        shouldTransition: true,
-        nextDomain: chapter.exitTriggers.split('→')[1]?.trim(),
-        reason: `域内章节全部完成，${chapter.exitTriggers}`,
-      };
-    }
-
-    return { shouldTransition: false, reason: '已是域内最后一章，跨域切换在P2实现' };
+    // ─── 步骤5: 单一路由 → 直接推荐 ───
+    const onlyRoute = reachable[0];
+    return {
+      shouldTransition: true,
+      nextChapterId: onlyRoute.chapterId || recommended?.chapterId,
+      nextChapterOptions: reachable,
+      nextDomain: onlyRoute.domain !== state.currentDomain ? onlyRoute.domain : undefined,
+      proximityEvents: upcomingEvents,
+      reason: `可推进至「${onlyRoute.displayName}」`,
+    };
   },
 
   completeGoal: (goalId) => {
@@ -212,6 +308,12 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
     set((s: ChapterSlice) => ({
       activeEvents: { ...s.activeEvents, [eventId]: 'active' as EventStatus },
     }));
+    // ═══ P0.2: 人祖传说事件检测 — 事件ID含renzu时自动递增 ═══
+    if (/renzu/i.test(eventId)) {
+      const fullStore = get() as any;
+      const current = fullStore.renZuLegendsHeard || 0;
+      set({ renZuLegendsHeard: current + 1 });
+    }
   },
 
   skipEvent: (eventId) => {
@@ -222,6 +324,10 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
 
   setTransitionState: (newState) => {
     set({ transitionState: newState });
+  },
+
+  setTransientCombatConstraint: (c) => {
+    set({ transientCombatConstraint: c });
   },
 
   finalizeChapter: () => {
@@ -241,7 +347,34 @@ export const createChapterSlice = (set: any, get: any): ChapterSlice => ({
         .filter(([, status]) => status === 'failed')
         .map(([id]) => id);
       history[history.length - 1] = last;
-      set({ chapterHistory: history, transitionState: 'confirmed' });
+
+      // P2-2a: 查找当前章节关联的全局事件并标记completed
+      const domainChapters = chaptersData.domains[state.currentDomain];
+      const def = domainChapters?.find(c => c.id === last.chapterId);
+      const updatedEventStatus = { ...state.globalEventStatus };
+      if (def?.globalEventId && updatedEventStatus[def.globalEventId]) {
+        updatedEventStatus[def.globalEventId] = {
+          ...updatedEventStatus[def.globalEventId],
+          completed: true,
+        };
+      }
+
+      set({
+        chapterHistory: history,
+        globalEventStatus: updatedEventStatus,
+        transitionState: 'confirmed',
+      });
+      // ═══ 日志埋点: 章节完成
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        const chapterDef = domainChapters?.find(c => c.id === last.chapterId);
+        logStore.addGameLog('narrative', `章节完成: ${chapterDef?.displayName || last.chapterId}`, {
+          chapterId: last.chapterId,
+          goalsCompleted: last.goalsCompleted,
+          goalsFailed: last.goalsFailed,
+          turn: last.completedAt?.turn,
+        });
+      }
     }
   },
 });

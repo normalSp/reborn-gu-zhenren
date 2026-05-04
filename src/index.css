@@ -2,32 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════ M7 Phase 0F: @font-face 声明 ═══════ */
+
+@font-face {
+  font-family: 'AlimamaShuHeiTi';
+  src: url('/fonts/AlimamaShuHeiTi-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: 'DouyinSans';
+  src: url('/fonts/DouyinSansBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ═══════ M7 Phase 0: 蛊真人设计Token体系 ═══════ */
+
 @layer base {
   :root {
-    /* ─── 账簿式色彩体系（CSS变量） ─── */
+    /* ─── 账簿式色彩体系（CSS变量 — 向后兼容） ─── */
     --rg-ink: #1a1a2e;
+    --rg-ink-900: #0D0D12;
+    --rg-ink-800: #1A1A24;
     --rg-ink-700: #1a1a2e;
     --rg-ink-500: #4a4a78;
+    --rg-ink-400: #5C5860;
     --rg-ink-300: #9090b8;
     --rg-paper: #f5f0e8;
-    --rg-paper-200: #f5f0d6;
+    --rg-paper-200: #E8E4DC;
+    --rg-paper-100: #9B9585;
     --rg-paper-50: #fdfcf7;
     --rg-blood: #8b0000;
-    --rg-blood-600: #8b0000;
+    --rg-blood-600: #C44B4B;
     --rg-blood-400: #e85050;
     --rg-jade: #2d6a4f;
-    --rg-jade-600: #2d6a4f;
+    --rg-jade-600: #4B8B6E;
+    --rg-jade-500: #4B8B6E;
     --rg-jade-400: #30d080;
     --rg-gold: #b8860b;
-    --rg-gold-600: #b8860b;
-    --rg-gold-400: #d0a840;
+    --rg-gold-600: #C9A96E;
+    --rg-gold-400: #E0C78A;
 
-    /* ─── 字体 ─── */
+    /* ═══ M7 蛊真人色板 — 三层架构 ═══ */
+
+    /* ── 底墨层（虚空/未知/纸面基底）── */
+    --gu-bg-deep:        #0D0D12;
+    --gu-bg-standard:    #1A1A24;
+    --gu-bg-elevated:    #252236;
+    --gu-bg-glass:       rgba(26, 26, 36, 0.72);
+
+    /* ── 道痕层（真元/道痕/修行气息）── */
+    --gu-trace-gold:        #C9A96E;
+    --gu-trace-gold-dim:    #8B7648;
+    --gu-trace-gold-bright: #E0C78A;
+    --gu-trace-gold-text:   #D4B87A;
+    --gu-trace-slate:       #4A5068;
+    --gu-trace-slate-light: #6B7294;
+
+    /* ── 命火层（生命/危险/杀戮/提示）── */
+    --gu-life-crimson:      #C44B4B;
+    --gu-life-crimson-dim:  #8B3A3A;
+    --gu-life-verdant:      #4B8B6E;
+    --gu-life-azure:        #4B6E8B;
+
+    /* ── 文本层级 ── */
+    --gu-text-primary:      #E8E4DC;
+    --gu-text-secondary:    #9B9585;
+    --gu-text-disabled:     #5C5860;
+    --gu-text-inverse:      #1A1A24;
+
+    /* ── 状态色 ── */
+    --gu-danger:            #C44B4B;
+    --gu-success:           #4B8B6E;
+    --gu-warning:           #C99B4B;
+    --gu-info:              #4B6E8B;
+
+    /* ─── M7 字体栈 ─── */
     --font-narrative: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
     --font-panel: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
     --font-button: 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    --font-display:    'AlimamaShuHeiTi', 'PingFang SC', 'Microsoft YaHei', serif;
+    --font-body:       'DouyinSans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    --font-numeric:    'Montserrat', 'AlimamaShuHeiTi', sans-serif;
+    --font-mono:       'JetBrains Mono', 'Fira Code', 'Source Code Pro', monospace;
 
-    /* ─── 间距体系 (4px基准) ─── */
+    /* ─── M7 间距与圆角 ─── */
     --space-1: 4px;
     --space-2: 8px;
     --space-3: 12px;
@@ -35,11 +108,44 @@
     --space-6: 24px;
     --space-8: 32px;
     --space-12: 48px;
+    --gu-space-xs:   0.25rem;
+    --gu-space-sm:   0.5rem;
+    --gu-space-md:   1rem;
+    --gu-space-lg:   1.5rem;
+    --gu-space-xl:   2rem;
+    --gu-space-2xl:  3rem;
 
-    /* ─── 圆角 ─── */
+    /* ── 圆角 ── */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 16px;
+    --gu-radius-sm:  4px;
+    --gu-radius-md:  6px;
+    --gu-radius-lg:  8px;
+    --gu-radius-xl:  12px;
+
+    /* ── P2 阴影体系（补完） ── */
+    --gu-shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.3);
+    --gu-shadow-md:   0 4px 8px rgba(0, 0, 0, 0.35);
+    --gu-shadow-lg:   0 8px 24px rgba(0, 0, 0, 0.4);
+    --gu-shadow-glow: 0 0 12px rgba(201, 169, 110, 0.25), 0 0 24px rgba(201, 169, 110, 0.1);
+
+    /* ── 磨砂玻璃 ── */
+    --gu-glass-padding:   1.25rem;
+    --gu-glass-radius:    10px;
+    --gu-glass-border:    1px solid rgba(201, 169, 110, 0.18);
+
+    /* ── M7 动效参数 ── */
+    --gu-duration-instant: 100ms;
+    --gu-duration-fast:    200ms;
+    --gu-duration-normal:  350ms;
+    --gu-duration-slow:    600ms;
+    --gu-duration-epic:    1200ms;
+
+    --gu-ease-enter:   cubic-bezier(0.16, 1, 0.3, 1);
+    --gu-ease-exit:    cubic-bezier(0.7, 0, 0.84, 0);
+    --gu-ease-both:    cubic-bezier(0.65, 0, 0.35, 1);
+    --gu-ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
 
     color-scheme: dark;
   }
@@ -49,34 +155,31 @@
   }
 
   body {
-    background-color: var(--rg-ink);
-    color: var(--rg-paper-100);
+    background-color: var(--gu-bg-deep);
+    color: var(--gu-text-primary);
     font-family: var(--font-panel);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* 叙事文本使用衬线字体 */
   .narrative-text {
     font-family: var(--font-narrative);
     line-height: 1.85;
     letter-spacing: 0.02em;
   }
 
-  /* 禁用纯黑、禁用高饱和、禁用emoji */
   ::selection {
-    background-color: rgba(184, 134, 11, 0.3);
-    color: var(--rg-paper);
+    background-color: rgba(201, 169, 110, 0.3);
+    color: var(--gu-text-primary);
   }
 
-  /* 平滑滚动 */
   html {
     scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* 面板卡片 */
+  /* ─── 向后兼容：账簿式面板 ─── */
   .ledger-panel {
     background-color: rgba(26, 26, 46, 0.8);
     border: 1px solid rgba(144, 144, 184, 0.12);
@@ -91,15 +194,124 @@
     backdrop-filter: blur(8px);
   }
 
-  /* 按钮变体 */
+  /* ═══ M7 Phase 3: 磨砂玻璃组件类 ═══ */
+  .gu-glass-panel {
+    background: var(--gu-bg-glass);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: var(--gu-glass-border);
+    border-radius: var(--gu-glass-radius);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(201, 169, 110, 0.06);
+    padding: var(--gu-glass-padding);
+  }
+
+  .gu-glass-bubble {
+    background: rgba(37, 34, 54, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: var(--gu-radius-lg);
+  }
+
+  .gu-glass-card {
+    background: rgba(26, 26, 36, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 169, 110, 0.10);
+    border-radius: var(--gu-radius-md);
+    transition: border-color var(--gu-duration-fast) var(--gu-ease-enter),
+                background var(--gu-duration-fast) var(--gu-ease-enter);
+  }
+  .gu-glass-card:hover {
+    border-color: rgba(201, 169, 110, 0.25);
+    background: rgba(26, 26, 36, 0.78);
+  }
+
+  /* ═══ P2 补完: 缺失玻璃组件类 ═══ */
+  .gu-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 13, 18, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  .gu-glass-panel--npc {
+    background: rgba(26, 26, 36, 0.72);
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    border: 1px solid rgba(75, 139, 110, 0.18);
+    border-radius: var(--gu-radius-lg);
+    padding: var(--gu-glass-padding);
+    transition: border-color var(--gu-duration-fast) var(--gu-ease-enter);
+  }
+  .gu-glass-panel--npc:hover {
+    border-color: rgba(75, 139, 110, 0.35);
+  }
+
+  .gu-ink-splash {
+    position: relative;
+    overflow: hidden;
+  }
+  .gu-ink-splash::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(201, 169, 110, 0.06), transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ═══ M7 噪点纹理（Phase 3 材质层） ═══ */
+  .gu-noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ═══ P4修复: 宣纸纹理（模仿古籍纸张肌理） ═══ */
+  .gu-bg-paper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04 0.06' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── SVG 道痕滤镜（Phase 3） ─── */
+  .gu-dao-mark-glow {
+    filter: drop-shadow(0 0 4px rgba(201, 169, 110, 0.4));
+  }
+
+  /* ─── 深渊虚化渐变（Phase 3） ─── */
+  .gu-abyss-gradient {
+    background: linear-gradient(
+      180deg,
+      var(--gu-bg-deep) 0%,
+      rgba(13, 13, 18, 0.6) 60%,
+      transparent 100%
+    );
+  }
+
+  /* ─── 按钮变体（向后兼容） ─── */
   .btn-primary {
-    background-color: var(--rg-gold);
-    color: var(--rg-ink);
+    background-color: var(--gu-trace-gold);
+    color: var(--gu-text-inverse);
     font-family: var(--font-button);
     font-weight: 600;
     padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-sm);
-    transition: all 150ms ease-out;
+    border-radius: var(--gu-radius-sm);
+    transition: all var(--gu-duration-fast) var(--gu-ease-enter);
   }
   .btn-primary:hover {
     filter: brightness(1.15);
@@ -108,47 +320,47 @@
 
   .btn-danger {
     background-color: transparent;
-    color: var(--rg-blood);
+    color: var(--gu-life-crimson);
     font-family: var(--font-button);
-    border: 1px solid rgba(139, 0, 0, 0.4);
+    border: 1px solid rgba(196, 75, 75, 0.4);
     padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-sm);
-    transition: all 150ms ease-out;
+    border-radius: var(--gu-radius-sm);
+    transition: all var(--gu-duration-fast) var(--gu-ease-enter);
   }
   .btn-danger:hover {
-    background-color: rgba(139, 0, 0, 0.15);
+    background-color: rgba(196, 75, 75, 0.15);
   }
 
   .btn-ghost {
     background-color: transparent;
-    color: var(--rg-paper);
+    color: var(--gu-text-primary);
     font-family: var(--font-button);
-    border: 1px solid rgba(144, 144, 184, 0.2);
+    border: 1px solid rgba(74, 80, 104, 0.4);
     padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-sm);
-    transition: all 150ms ease-out;
+    border-radius: var(--gu-radius-sm);
+    transition: all var(--gu-duration-fast) var(--gu-ease-enter);
   }
   .btn-ghost:hover {
-    border-color: rgba(184, 134, 11, 0.4);
+    border-color: rgba(201, 169, 110, 0.4);
   }
 
   /* 输入框 */
   .ledger-input {
     background-color: rgba(18, 18, 32, 0.8);
     border: 1px solid rgba(144, 144, 184, 0.2);
-    color: var(--rg-paper);
+    color: var(--gu-text-primary);
     font-family: var(--font-panel);
     padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-sm);
-    transition: border-color 150ms ease-out;
+    border-radius: var(--gu-radius-sm);
+    transition: border-color var(--gu-duration-fast) var(--gu-ease-enter);
   }
   .ledger-input:focus {
     outline: none;
-    border-color: var(--rg-gold);
-    box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.15);
+    border-color: var(--gu-trace-gold);
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.15);
   }
   .ledger-input::placeholder {
-    color: rgba(245, 240, 232, 0.35);
+    color: rgba(232, 228, 220, 0.35);
   }
 }
 
@@ -170,4 +382,108 @@
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+/* ═══════ M7 Phase 0F: 无障碍 — 减少动效 ═══════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .gu-glass-card:hover,
+  .gu-glass-panel--npc:hover {
+    transform: none !important;
+  }
+
+  .btn-primary:hover {
+    transform: none !important;
+  }
+}
+
+/* ═══════ M7 Phase 0F: 动画调试面板全局样式 ═══════ */
+
+.anim-test-btn {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-family: monospace;
+  border: 1px solid var(--gu-trace-slate);
+  color: var(--gu-text-secondary);
+  transition: border-color var(--gu-duration-fast) var(--gu-ease-enter),
+              color var(--gu-duration-fast) var(--gu-ease-enter);
+}
+.anim-test-btn:hover {
+  border-color: var(--gu-trace-gold);
+  color: var(--gu-trace-gold);
+}
+
+/* ═══════ M7 Phase 3: 响应式断点 & 移动端适配 ═══════ */
+
+/* ─── 宽屏 (≥1920px): 无限制，字体加大 ─── */
+@media (min-width: 1920px) {
+  :root {
+    --gu-body-size: 1.05rem;
+  }
+  .narrative-text { font-size: 1.1rem; }
+}
+
+/* ─── 桌面 (≥1440px): 默认全功能 ─── */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  /* 全功能正常，不限制 */
+}
+
+/* ─── 平板 (≤768px): 禁用磨砂玻璃 → 降级实色，字体缩小 ─── */
+@media (max-width: 768px) {
+  :root {
+    --gu-body-size: 0.92rem;
+    --gu-glass-padding: 12px;
+    --space-4: 12px;
+    --space-6: 16px;
+  }
+
+  /* 禁用 backdrop-filter → 降级为实色 */
+  .gu-glass-panel,
+  .gu-glass-bubble,
+  .gu-glass-card,
+  .gu-glass-overlay,
+  .gu-glass-panel--npc {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .gu-glass-panel { background: rgba(18, 16, 28, 0.94); }
+  .gu-glass-bubble { background: rgba(37, 34, 54, 0.94); }
+  .gu-glass-card { background: rgba(26, 26, 36, 0.92); }
+  .gu-glass-overlay { background: rgba(13, 13, 18, 0.88); }
+  .gu-glass-panel--npc { background: rgba(26, 26, 36, 0.92); }
+
+  /* 禁用 GSAP 场景动画降级标志（JS 端通过 useDeviceCapability 读取） */
+  html { --gsap-disabled: 1; }
+
+  /* 噪点纹理降低 opacity */
+  .gu-noise-overlay::before { opacity: 0.01; }
+}
+
+/* ─── 小屏 (≤375px): 紧凑模式 ─── */
+@media (max-width: 375px) {
+  :root {
+    --gu-body-size: 0.85rem;
+    font-size: 14px;
+  }
+  .narrative-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  /* 按钮和间距进一步缩小 */
+  .btn-primary,
+  .btn-danger,
+  .btn-ghost {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }

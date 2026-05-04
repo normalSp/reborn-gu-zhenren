@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
+import { SwordIcon } from '../../icons';
+import { audioManager } from '../../utils/audio';
 
 export interface BattleInfo {
   enemy: string;
@@ -22,6 +24,12 @@ export function BattleOverlay() {
     setInfo(i);
     setActive(true);
     setVisible(true);
+    // P4修复: 战斗触发音效
+    if (i.damage && i.damage > 0) {
+      audioManager.playSfx('hurt');
+    } else {
+      audioManager.playSfx('breakthrough');
+    }
     // 3秒后自动消失
     setTimeout(() => setVisible(false), 3000);
     setTimeout(() => { setActive(false); setInfo(null); }, 3500);
@@ -45,7 +53,7 @@ export function BattleOverlay() {
     >
       <div className="bg-rg-ink-700/95 border border-rg-ink-300/15 rounded-lg px-5 py-3 backdrop-blur-xl shadow-2xl">
         <div className="flex items-center gap-3 text-sm">
-          <span className="text-rg-paper-200/60 font-panel">⚔</span>
+          <SwordIcon size={16} className="text-rg-paper-200/60" />
           <span className="text-rg-gold font-narrative">{info.enemy}</span>
           <span className="text-rg-paper-200/30 text-xs font-panel">{info.enemyRealm}</span>
           <span className="text-rg-paper-200/60 font-panel">·</span>

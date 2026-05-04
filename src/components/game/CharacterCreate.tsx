@@ -1,10 +1,14 @@
 import { useState, useMemo } from 'react';
 import { useStore } from '../../store';
 import { INITIAL_TALENTS, TIER_COLORS, TIER_LABELS, TALENT_COST } from '../../data/talents';
-import type { Talent } from '../../types';
+import { P4_TALENTS, P4_TALENT_COST, getTalentsByCategory } from '../../data/talents-p4';
+import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
+import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
 
 interface CharacterCreateProps {
   onConfirm: () => void;
+  /** v1.6: 可选返回按钮，timeline模式回timeline_config */
+  onBack?: () => void;
 }
 
 // ─── 骰子随机生成属性 ───
@@ -60,11 +64,42 @@ function seedRand(seed: number): () => number {
   return () => { s = (s * 1664525 + 1013904223) & 0xFFFFFFFF; return (s >>> 0) / 0xFFFFFFFF; };
 }
 
-export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
+// ─── 计算时间线起点的初始属性（基于境界，可手动重掷） ───
+function timelineBaseAttributes(realmGrand: number): { 资质: number; 体魄: number; 心智: number; 气运: number } {
+  const baseAttr = Math.min(10, 3 + realmGrand);
+  return { 资质: baseAttr, 体魄: baseAttr, 心智: baseAttr, 气运: baseAttr };
+}
+
+export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
+  // ═══ P4: 时间线配置检测 (v1.4修复: 只选primitive值避免无限循环) ═══
+  const timelineNodeId = useStore(s => (s as any).selectedNodeId as string | null);
+  const timelineNode = useMemo(() => {
+    if (!timelineNodeId) return null;
+    return (useStore.getState() as any).selectedNode ?? null;
+  }, [timelineNodeId]);
+  const isTimelineStart = timelineNode != null;
+
+  // ═══ v1.5: 时间线起点使用基于境界的初始属性，但仍允许手动掷骰 ═══
+  const initialAttrs = useMemo(() => {
+    if (timelineNode) return timelineBaseAttributes(timelineNode.startingRealm.grand);
+    return rollAllAttributes();
+  }, [timelineNode]);
+
+  // ═══ v1.5: 时间线起点预填充P4已在TimelineConfig选好的天赋 ═══
+  const initialTalents = useMemo(() => {
+    if (!timelineNode) return [] as Talent[];
+    const state = useStore.getState() as any;
+    const talentIds: string[] = state.timelineTalents || [];
+    if (talentIds.length === 0) return [];
+    const p4Pool = getTalentsByCategory(timelineNode.talentCategory);
+    return talentIds
+      .map((id: string) => p4Pool.find(t => t.id === id))
+      .filter(Boolean) as Talent[];
+  }, [timelineNode]);
+
   const [name, setName] = useState('');
-  const [attributes, setAttributes] = useState(rollAllAttributes());
-  const [selectedTalents, setSelectedTalents] = useState<Talent[]>([]);
-  // 随机池：每页从52条目中抽取12个展示
+  const [attributes, setAttributes] = useState(initialAttrs);
+  const [selectedTalents, setSelectedTalents] = useState<Talent[]>(initialTalents);
   const [poolIndex, setPoolIndex] = useState(0);
 
   // ─── 天赋点数计算（5B: /5 而非 /6） ───
@@ -75,41 +110,48 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
     return Math.floor(total / divisor);
   }, [attributes, isTenUltimate]);
 
+  // ─── v1.5: 时间线模式用P4分层天赋池，普通模式用旧池 ───
+  const talentSourcePool = useMemo(() => {
+    if (timelineNode) return getTalentsByCategory(timelineNode.talentCategory) as Talent[];
+    return INITIAL_TALENTS;
+  }, [timelineNode]);
+
   // 随机12条天赋池（保留已选天赋在列表中）
   const shuffledPool = useMemo(() => {
     const rng = seedRand(attributes.资质 * 100 + attributes.体魄 * 10 + poolIndex);
-    const sorted = [...INITIAL_TALENTS].sort(() => rng() - 0.5);
-    // 确保已选天赋也在展示列表中
+    const sorted = [...talentSourcePool].sort(() => rng() - 0.5);
     const needShow = sorted.filter(t => selectedTalents.some(s => s.id === t.id));
     const rest = sorted.filter(t => !selectedTalents.some(s => s.id === t.id));
     return [...needShow, ...rest.slice(0, 12)];
-  }, [attributes, poolIndex, selectedTalents]);
+  }, [attributes, poolIndex, selectedTalents, talentSourcePool]);
 
-  // 已消费点数
-  const spentPoints = selectedTalents.reduce((sum, t) => sum + (TALENT_COST[t.tier] || 1), 0);
+  // 已消费点数 — v1.5: 时间线模式用P4_TALENT_COST
+  const spentPoints = selectedTalents.reduce((sum, t) => {
+    const cost = isTimelineStart
+      ? ((P4_TALENTS.find(pt => pt.id === t.id) as any) ? (P4_TALENT_COST[(t as any).tier] || 1) : (TALENT_COST[t.tier] || 1))
+      : (TALENT_COST[t.tier] || 1);
+    return sum + cost;
+  }, 0);
   const remainingPoints = talentPoints - spentPoints;
 
-  const background = useStore(s => (s as any).flags?._origin || '南疆') as string;
-  const identity = useStore(s => (s as any).flags?._identity || '蛊师学徒') as string;
+  // ─── v1.5: 时间线模式优先用节点domain作为出身域 ───
+  const background = useMemo(() => {
+    if (timelineNode) return timelineNode.domain;
+    return (useStore.getState() as any).flags?._origin || '南疆';
+  }, [timelineNode]);
+  const identity = useMemo(() => {
+    if (timelineNode) return timelineNode.talentCategory === 'immortal' ? '蛊仙' : '蛊师';
+    return (useStore.getState() as any).flags?._identity || '蛊师学徒';
+  }, [timelineNode]);
 
-  const setProfile = (profile: any) => {
-    useStore.getState().setFlag('_profile_init', true);
-    useStore.setState({
-      profile: {
-        name,
-        realm: { grand: 1, sub: '初阶', label: '一转初阶' },
-        background: `${background} · ${identity}`,
-      },
-      attributes,
-    });
-  };
-
-  // toggle 天赋选中
+  // toggle 天赋选中 — v1.5: 时间线模式用P4_TALENT_COST
   const toggleTalent = (talent: Talent) => {
     setSelectedTalents(prev => {
       const exists = prev.find(t => t.id === talent.id);
       if (exists) return prev.filter(t => t.id !== talent.id);
-      const cost = TALENT_COST[talent.tier] || 1;
+      const cost = isTimelineStart
+        ? (P4_TALENT_COST[(talent as any).tier] || 1)
+        : (TALENT_COST[talent.tier] || 1);
       if (remainingPoints >= cost) return [...prev, talent];
       return prev;
     });
@@ -117,22 +159,208 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
 
   const handleConfirm = () => {
     if (!name.trim()) return;
-    // ═══ 先全量重置旧存档数据（修复新开存档读取旧存档的 bug） ═══
-    (useStore.getState() as any).resetStore?.();
-    // 还原 origin / identity 标志（resetStore 清空了，需要从上下文中重建）
-    useStore.getState().setFlag('_origin', background);
-    useStore.getState().setFlag('_identity', identity);
+    // ═══ P4: 获取时间线配置（如有） ═══
+    const tc = (useStore.getState() as any).getTimelineConfig?.() ?? null;
+    const tNode = tc?.node;
+
+    // 完全重置旧存档
+    const fullState = useStore.getState();
+    (fullState as any).resetStore?.();
+    // v1.5: timeline模式下出身域来自节点domain，普通模式来自OriginSelect
+    const origin = tNode?.domain || background;
+    const playerIdentity = tNode ? (tNode.talentCategory === 'immortal' ? '蛊仙' : '蛊师') : identity;
+    useStore.getState().setFlag('_origin', origin);
+    useStore.getState().setFlag('_identity', playerIdentity);
     useStore.getState().setFlag('_profile_init', true);
+
+    // 境界：使用时间线预设或默认一转
+    const startRealm = tNode?.startingRealm ?? { grand: 1, sub: '初阶' };
+    const realmLabel = `${startRealm.grand}转${startRealm.sub}`;
+
     useStore.setState({
       profile: {
         name,
-        realm: { grand: 1, sub: '初阶', label: '一转初阶' },
-        background: `${background} · ${identity}`,
+        realm: { grand: startRealm.grand, sub: startRealm.sub, label: realmLabel },
+        background: `${origin} · ${playerIdentity}`,
       },
       attributes,
     });
-    // 多天赋写入 store
+
+    // ═══ v1.5: 货币 — 优先使用timeline配置，fallback到境界基础表 ═══
+    const REALM_STARTING_CURRENCY: Record<number, { currency: number; immortalCurrency: number }> = {
+      1: { currency: 200, immortalCurrency: 0 },
+      2: { currency: 500, immortalCurrency: 0 },
+      3: { currency: 1500, immortalCurrency: 0 },
+      4: { currency: 5000, immortalCurrency: 0 },
+      5: { currency: 20000, immortalCurrency: 0 },
+      6: { currency: 0, immortalCurrency: 40000 },
+      7: { currency: 0, immortalCurrency: 100000 },
+      8: { currency: 0, immortalCurrency: 350000 },
+      9: { currency: 0, immortalCurrency: 1000000 },
+    };
+    // timeline配置优先（TimelineConfig resource步骤可能已调整）
+    const tcYuan = tc?.startingYuanStone;
+    const startMoney = (tcYuan && tcYuan > 0)
+      ? { currency: startRealm.grand <= 5 ? tcYuan : 0, immortalCurrency: startRealm.grand >= 6 ? tcYuan : 0 }
+      : REALM_STARTING_CURRENCY[startRealm.grand] || REALM_STARTING_CURRENCY[1];
+    if (startMoney.currency > 0) {
+      (useStore.getState() as any).setCurrency?.(startMoney.currency);
+    }
+    if (startMoney.immortalCurrency > 0) {
+      (useStore.getState() as any).setImmortalCurrency?.(startMoney.immortalCurrency);
+    }
+
+    // 天赋写入
     selectedTalents.forEach(t => useStore.getState().selectTalent(t));
+    // ═══ P4数值修复: 战斗属性桥接 — 体魄/资质/境界→HP/ATK/DEF ═══
+    const allModifiers = extractTalentModifiers(selectedTalents as any[]);
+    const cStats = deriveCombatStats({
+      physique: attributes.体魄,
+      aptitude: attributes.资质,
+      mind: attributes.心智,
+      realmGrand: startRealm.grand,
+      talentModifiers: allModifiers,
+    });
+    (useStore.getState() as any).setCombatStats?.(cStats);
+    // P4: 写入时间线配置flag
+    if (tNode) {
+      useStore.getState().setFlag('_timeline_start', tNode.id);
+      useStore.getState().setFlag('_timeline_domain', tc.domain || tNode.domain);
+    }
+
+    // 域设置 — v1.5: timeline模式直接用节点domain
+    const domainKeys = ['中洲', '南疆', '北原', '东海', '西漠'];
+    const targetDomain = (tNode ? (tc.domain || tNode.domain) : null) || domainKeys.find(d => origin.includes(d)) || '南疆';
+    useStore.setState({ currentDomain: targetDomain } as any);
+
+    const movePlayer = (useStore.getState() as any).movePlayer;
+    const revealRegion = (useStore.getState() as any).revealRegion;
+    if (typeof movePlayer === 'function') movePlayer({ x: 0.5, y: 0.5, region: targetDomain });
+    if (typeof revealRegion === 'function') revealRegion(targetDomain);
+
+    // ═══ P4: 时间线起点→蛊仙空窍初始化 ═══
+    if (tNode && tNode.needAperture) {
+      const ac = tc.apertureConfig || { areaMu: 100, resourceNodes: 1, timeFlowRatio: 1.0, defenseLevel: 0 };
+      const immortalAperture: ImmortalAperture = {
+        type: 'immortal',
+        area_mu: ac.areaMu,
+        time_flow_ratio: ac.timeFlowRatio,
+        resource_nodes: Array.from({ length: ac.resourceNodes }, (_, i) => ({
+          type: '通用', quality: 1, output_rate: 1 + i, // Will be customized by path
+        })),
+        dao_mark_density: {},
+        status: '稳定',
+        disaster_timer: 0,
+      };
+      (useStore.getState() as any).initializeAperture?.(immortalAperture);
+    } else {
+      // 凡蛊空窍
+      const getColorName = (zizhi: number): MortalAperture['primevalSea']['colorName'] => {
+        if (zizhi >= 10) return '黄金';
+        if (zizhi >= 7) return '白银';
+        if (zizhi >= 4) return '赤铁';
+        return '青铜';
+      };
+      const colorName = getColorName(attributes.资质);
+      const colorMap: Record<string, string> = {
+        '青铜': '#4a8c5c', '赤铁': '#8c4a4a', '白银': '#8c8c9a', '黄金': '#c9a84a', '紫晶': '#7a4a9a',
+      };
+      const capacity = tNode?.baseCapacity ?? 3;
+      const aperture: MortalAperture = {
+        type: 'mortal',
+        rank: startRealm.grand,
+        subRank: startRealm.sub,
+        primevalSea: {
+          color: colorMap[colorName],
+          colorName,
+          fillPercent: attributes.资质 * 10,
+        },
+        apertureWall: {
+          state: '坚实',
+          opacity: 1,
+          description: '窍壁完整，真元流转自如',
+        },
+        capacity,
+        carriedGu: 0,
+      };
+      (useStore.getState() as any).initializeMortalAperture?.(aperture);
+    }
+
+    // ═══ P4/v1.6: 时间线起点→本命蛊绑定（修复addGuToInventory→addGu） ═══
+    if (tNode?.needLifeboundGu && tc?.lifeboundGu) {
+      const lg = tc.lifeboundGu;
+      const store = useStore.getState() as any;
+      if (typeof store.addGu === 'function') {
+        store.addGu({
+          id: `lifebound_${lg.guName}`,
+          specId: lg.guName,
+          name: lg.guName,
+          tier: lg.tier,
+          path: lg.path,
+          rank: lg.rarity,
+          description: lg.description,
+          currentState: 'optimal',
+          hungerCounter: 0,
+        });
+      }
+      store.setFlag('_lifebound_gu', lg.guName);
+      // ═══ P0.5: 绑定本命蛊 — 调用 guSlice.bindLifeboundGu 激活本命蛊系统 ═══
+      if (typeof store.bindLifeboundGu === 'function') {
+        store.bindLifeboundGu(`lifebound_${lg.guName}`, 1);
+      }
+    }
+
+    // ═══ v1.6: 势力写入 + 初始蛊虫 + 杀招 + 势力加成 ═══
+    if (tNode && tc) {
+      // 势力
+      if (tc.factionId) {
+        useStore.getState().setFlag('_faction', tc.factionId);
+        const fb = tc.factionBonus;
+        if (fb && fb.resourceMult && fb.resourceMult !== 1.0) {
+          const adjustedCurrency = Math.round(startMoney.currency * fb.resourceMult);
+          const adjustedImmortal = Math.round(startMoney.immortalCurrency * fb.resourceMult);
+          if (adjustedCurrency > 0) (useStore.getState() as any).setCurrency?.(adjustedCurrency);
+          if (adjustedImmortal > 0) (useStore.getState() as any).setImmortalCurrency?.(adjustedImmortal);
+        }
+      }
+      // 初始蛊虫
+      const allGu = [...(tc.selectedGuList || [])];
+      if (tc.guaranteedGu) allGu.unshift(tc.guaranteedGu);
+      const storeRef = useStore.getState() as any;
+      if (typeof storeRef.addGu === 'function') {
+        allGu.forEach((g: any, i: number) => {
+          storeRef.addGu({
+            id: `starter_gu_${i}_${g.name}`, specId: g.name, name: g.name,
+            tier: g.tier, path: g.path, rank: g.rank, description: g.description || '',
+            currentState: 'optimal', hungerCounter: 0,
+          });
+        });
+        useStore.getState().setFlag('_starting_gu_count', allGu.length);
+      }
+      // 杀招 — v1.7: 改为调用learnKillMove写入killMoves数组（修复孤儿数据）
+      if (tc.selectedKillerMoves && tc.selectedKillerMoves.length > 0) {
+        const storeRef2 = useStore.getState() as any;
+        tc.selectedKillerMoves.forEach((km: any, i: number) => {
+          if (typeof storeRef2.learnKillMove === 'function') {
+            storeRef2.learnKillMove({
+              id: `starter_km_${i}_${km.name}`,
+              name: km.name,
+              path: km.path,
+              level: km.level,
+              baseCost: km.level * 10,
+              multiplier: 1.5 + km.level * 0.3,
+              cooldown: Math.max(1, 8 - km.level),
+              description: km.effect || km.name,
+            });
+          }
+        });
+        useStore.getState().setFlag('_killer_moves', tc.selectedKillerMoves.map((km: any) => km.name).join(','));
+      }
+    }
+
+    // ═══ P4: 清理timelineSlice配置（避免存档污染） ═══
+    (useStore.getState() as any).resetTimelineConfig?.();
+
     onConfirm();
   };
 
@@ -142,13 +370,15 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
 
   return (
     <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center justify-start p-8 overflow-y-auto">
-      {/* ─── 标题 ─── */}
+      {/* ─── v1.5: 时间线模式与普通模式标题区分 ─── */}
       <div className="text-center mb-8 pt-8">
         <h2 className="text-3xl font-bold text-rg-gold font-narrative tracking-wider">
-          开窍
+          {isTimelineStart ? '最终确认' : '开窍'}
         </h2>
         <p className="text-rg-paper-200/50 text-sm font-panel mt-2 tracking-[0.1em]">
-          天意垂青 · 你于今日开窍，踏入蛊师之路
+          {isTimelineStart
+            ? `自"${timelineNode!.displayTitle}"出发 · ${origin} · ${identity}`
+            : '天意垂青 · 你于今日开窍，踏入蛊师之路'}
         </p>
         <div className="mt-4 w-12 h-[1px] bg-rg-gold/30 mx-auto" />
       </div>
@@ -221,54 +451,91 @@ export function CharacterCreate({ onConfirm }: CharacterCreateProps) {
           </div>
         </div>
 
-        {/* ─── 天赋遴选（多选制）─── */}
-        <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-6 backdrop-blur-md">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-rg-paper-200 text-sm font-panel font-semibold">
-              天赋遴选（可多选至点数用尽）
+        {/* ─── v1.6: 天赋区 — timeline模式只读展示（已在TimelineConfig选定） ─── */}
+        {isTimelineStart ? (
+          <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-6 backdrop-blur-md">
+            <h3 className="text-rg-paper-200 text-sm font-panel font-semibold mb-3">
+              天命馈赠 · 已在天命抉择中选定
             </h3>
-            <div className="flex items-center gap-3">
-              <span className="text-rg-paper-200/50 text-xs font-panel">
-                已选<span className="text-rg-gold font-bold">{selectedTalents.length}</span>个 · 剩余<span className="text-rg-gold font-bold">{remainingPoints}</span>点
-              </span>
-              <button onClick={() => setPoolIndex(p => p + 1)}
-                className="text-rg-gold/60 hover:text-rg-gold text-xs font-button px-2 py-0.5 border border-rg-gold/20 rounded-sm transition-micro">
-                换一批
-              </button>
+            <p className="text-rg-paper-200/40 text-xs font-panel mb-3">
+              以下天赋来自时间线节点预设与你的选择，此处仅供确认。若需调整，请返回上一步。
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {selectedTalents.length === 0 ? (
+                <p className="col-span-2 text-rg-paper-200/30 text-xs font-panel italic">未选择天赋</p>
+              ) : (
+                selectedTalents.map(talent => (
+                  <div key={talent.id}
+                    className="text-left p-4 rounded-sm border border-rg-ink-400/12 bg-rg-ink-800/50"
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`text-xs font-panel font-semibold ${TIER_COLORS[talent.tier]}`}>{TIER_LABELS[talent.tier]}</span>
+                      <span className="text-rg-paper-100 font-panel text-sm font-semibold">{talent.name}</span>
+                      <span className="text-[9px] text-rg-gold/40 ml-auto">已定</span>
+                    </div>
+                    <p className="text-rg-paper-200/60 text-xs font-panel leading-relaxed">{talent.description}</p>
+                  </div>
+                ))
+              )}
             </div>
           </div>
-          {isTenUltimate && (
-            <p className="text-rg-gold/80 text-xs font-panel mb-4">
-              十绝体！空窍十成真元、全属性极致。天赋余裕所剩无几——仅能选基础天赋。
-            </p>
-          )}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {shuffledPool.map(talent => {
-              const isSelected = selectedTalents.some(t => t.id === talent.id);
-              const cost = TALENT_COST[talent.tier] || 1;
-              const canAfford = !isSelected && cost <= remainingPoints;
-              return (
-                <button
-                  key={talent.id}
-                  onClick={() => toggleTalent(talent)}
-                  disabled={!isSelected && !canAfford}
-                  className={`text-left p-4 rounded-sm border transition-micro ${isSelected ? 'border-rg-gold/60 bg-rg-gold/10 ring-1 ring-rg-gold/20' : canAfford ? 'border-rg-ink-400/15 bg-rg-ink-800/50 hover:border-rg-gold/30' : 'border-rg-ink-400/8 bg-rg-ink-800/30 opacity-30 cursor-not-allowed'}`}
-                >
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className={`text-xs font-panel font-semibold ${TIER_COLORS[talent.tier]}`}>{TIER_LABELS[talent.tier]}</span>
-                    <span className="text-rg-paper-100 font-panel text-sm font-semibold">{talent.name}</span>
-                    {isSelected && <span className="text-[9px] text-rg-gold ml-auto">已选</span>}
-                    {!isSelected && <span className={`text-[9px] font-panel ml-auto ${canAfford ? 'text-rg-gold/60' : 'text-rg-paper-200/20'}`}>{cost}pts</span>}
-                  </div>
-                  <p className="text-rg-paper-200/60 text-xs font-panel leading-relaxed">{talent.description}</p>
+        ) : (
+          <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-6 backdrop-blur-md">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-rg-paper-200 text-sm font-panel font-semibold">
+                天赋遴选（可多选至点数用尽）
+              </h3>
+              <div className="flex items-center gap-3">
+                <span className="text-rg-paper-200/50 text-xs font-panel">
+                  已选<span className="text-rg-gold font-bold">{selectedTalents.length}</span>个 · 剩余<span className="text-rg-gold font-bold">{remainingPoints}</span>点
+                </span>
+                <button onClick={() => setPoolIndex(p => p + 1)}
+                  className="text-rg-gold/60 hover:text-rg-gold text-xs font-button px-2 py-0.5 border border-rg-gold/20 rounded-sm transition-micro">
+                  换一批
                 </button>
-              );
-            })}
+              </div>
+            </div>
+            {isTenUltimate && (
+              <p className="text-rg-gold/80 text-xs font-panel mb-4">
+                十绝体！空窍十成真元、全属性极致。天赋余裕所剩无几——仅能选基础天赋。
+              </p>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {shuffledPool.map(talent => {
+                const isSelected = selectedTalents.some(t => t.id === talent.id);
+                const cost = TALENT_COST[talent.tier] || 1;
+                const canAfford = !isSelected && cost <= remainingPoints;
+                return (
+                  <button
+                    key={talent.id}
+                    onClick={() => toggleTalent(talent)}
+                    disabled={!isSelected && !canAfford}
+                    className={`text-left p-4 rounded-sm border transition-micro ${isSelected ? 'border-rg-gold/60 bg-rg-gold/10 ring-1 ring-rg-gold/20' : canAfford ? 'border-rg-ink-400/15 bg-rg-ink-800/50 hover:border-rg-gold/30' : 'border-rg-ink-400/8 bg-rg-ink-800/30 opacity-30 cursor-not-allowed'}`}
+                  >
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`text-xs font-panel font-semibold ${TIER_COLORS[talent.tier]}`}>{TIER_LABELS[talent.tier]}</span>
+                      <span className="text-rg-paper-100 font-panel text-sm font-semibold">{talent.name}</span>
+                      {isSelected && <span className="text-[9px] text-rg-gold ml-auto">已选</span>}
+                      {!isSelected && <span className={`text-[9px] font-panel ml-auto ${canAfford ? 'text-rg-gold/60' : 'text-rg-paper-200/20'}`}>{cost}pts</span>}
+                    </div>
+                    <p className="text-rg-paper-200/60 text-xs font-panel leading-relaxed">{talent.description}</p>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* ─── 确认按钮 ─── */}
-        <div className="flex justify-center pb-12">
+        {/* ─── v1.6: 确认按钮 — timeline模式增加返回 ─── */}
+        <div className="flex justify-center gap-4 pb-12">
+          {onBack && (
+            <button
+              onClick={onBack}
+              className="text-rg-paper-200/50 hover:text-rg-paper-100 text-xs font-button px-6 py-3 border border-rg-ink-300/20 rounded-sm transition-micro"
+            >
+              上一步
+            </button>
+          )}
           <button
             onClick={handleConfirm}
             disabled={!name.trim()}

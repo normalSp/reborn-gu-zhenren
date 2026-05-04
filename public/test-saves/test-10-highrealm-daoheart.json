@@ -1,0 +1,453 @@
+{
+  "formatVersion": 8,
+  "timestamp": "2026-05-03T09:00:00.000Z",
+  "meta": {
+    "playerName": "高阶测试",
+    "realm": "五转巅峰",
+    "turn": 60,
+    "gameMode": "canon"
+  },
+  "state": {
+    "profile": {
+      "name": "高阶测试",
+      "realm": {
+        "grand": 5,
+        "sub": "巅峰",
+        "label": "五转巅峰"
+      },
+      "background": "北原 · 蛊师学徒"
+    },
+    "attributes": {
+      "资质": 10,
+      "体魄": 9,
+      "心智": 8,
+      "气运": 8
+    },
+    "vitals": {
+      "health": {
+        "current": 280,
+        "max": 400
+      },
+      "essence": {
+        "current": 450,
+        "max": 500
+      }
+    },
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": [],
+      "path_levels": {},
+      "dao_marks": {
+        "力道": 10
+      }
+    },
+    "daoHeart": {
+      "kill": 15,
+      "mercy": 0,
+      "scheme": 8,
+      "ambition": 12
+    },
+    "flags": {
+      "current_chapter": "黄金试炼",
+      "current_domain": "北原",
+      "current_chapter_id": "north_golden",
+      "_origin": "北原",
+      "_identity": "蛊师学徒",
+      "ny_blood_awaken_completed": true,
+      "nt_first_warband_completed": true,
+      "nw_earn_rank_completed": true,
+      "golden_trial_active": true,
+      "bloodline_advanced": true
+    },
+    "turn": 60,
+    "isDead": false,
+    "deathCause": "",
+    "deathTurn": 0,
+    "currency": 3500,
+    "immortalCurrency": 200,
+    "battleState": null,
+    "deathRecord": null,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 5,
+      "period": "noon",
+      "day": 25,
+      "month": 12,
+      "year": 3,
+      "season": "winter"
+    },
+    "inventory": [
+      {
+        "id": "g1",
+        "specId": "月光蛊",
+        "name": "月光蛊",
+        "tier": 5,
+        "path": "光道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g2",
+        "specId": "石皮蛊",
+        "name": "石皮蛊",
+        "tier": 5,
+        "path": "土道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g3",
+        "specId": "力气蛊",
+        "name": "力气蛊",
+        "tier": 5,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g4",
+        "specId": "酒虫",
+        "name": "酒虫",
+        "tier": 5,
+        "path": "食道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g5",
+        "specId": "书虫",
+        "name": "书虫",
+        "tier": 4,
+        "path": "智道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g6",
+        "specId": "积德蛊",
+        "name": "积德蛊",
+        "tier": 4,
+        "path": "人道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      },
+      {
+        "id": "g7",
+        "specId": "侦察蛊",
+        "name": "侦察蛊",
+        "tier": 4,
+        "path": "智道",
+        "currentState": "hungry",
+        "hungerCounter": 3
+      },
+      {
+        "id": "g8",
+        "specId": "招灾蛊",
+        "name": "招灾蛊",
+        "tier": 6,
+        "path": "运道",
+        "currentState": "optimal",
+        "hungerCounter": 0
+      }
+    ],
+    "materialBag": {
+      "生肉": 25,
+      "美酒": 30,
+      "石粉": 40,
+      "文字纸": 15,
+      "蛊材碎片": 50,
+      "灵草": 20,
+      "矿石": 30
+    },
+    "killMoves": [
+      {
+        "id": "km1",
+        "name": "月刃连斩",
+        "path": "光道",
+        "cost": 60,
+        "damage": 85,
+        "level": 5,
+        "description": "五阶月刃连斩——三道月光之刃撕裂夜空"
+      },
+      {
+        "id": "km2",
+        "name": "石皮护体",
+        "path": "土道",
+        "cost": 40,
+        "damage": 0,
+        "level": 4,
+        "description": "强化防御，大幅降低物理伤害"
+      },
+      {
+        "id": "km3",
+        "name": "青丝绞杀",
+        "path": "木道",
+        "cost": 50,
+        "damage": 70,
+        "level": 3,
+        "description": "缠绕敌人，持续木道伤害"
+      },
+      {
+        "id": "km4",
+        "name": "水龙卷",
+        "path": "水道",
+        "cost": 65,
+        "damage": 90,
+        "level": 4,
+        "description": "召唤水龙卷吞噬敌人"
+      }
+    ],
+    "cooldowns": {
+      "km1": 0,
+      "km3": 2
+    },
+    "primaryPath": "力道",
+    "secondaryPaths": [],
+    "pathLevels": {},
+    "daoMarks": {
+      "力道": 10
+    },
+    "selectedTalents": [],
+    "activeModifiers": [],
+    "standings": {
+      "黄金家族王庭": {
+        "reputation": 50,
+        "rank": "黄金试炼者"
+      },
+      "游牧部落": {
+        "reputation": 70,
+        "rank": "部落战将"
+      },
+      "影宗暗线": {
+        "reputation": -20,
+        "rank": "危险人物"
+      }
+    },
+    "characterRelations": [],
+    "aperture": {
+      "type": "mortal",
+      "rank": 5,
+      "subRank": "巅峰",
+      "primevalSea": {
+        "color": "#c9a84a",
+        "colorName": "黄金",
+        "fillPercent": 98
+      },
+      "apertureWall": {
+        "state": "坚实",
+        "opacity": 1,
+        "description": "五转巅峰窍壁——距离蛊仙仅一步之遥"
+      },
+      "capacity": 10,
+      "carriedGu": 8
+    },
+    "butterflyEffects": [],
+    "timelineDeviation": 0,
+    "eventQueue": [],
+    "eventHistory": [],
+    "messages": [],
+    "keyEvents": [],
+    "rollingSummary": "",
+    "currentNarrative": null,
+    "isLoading": false,
+    "error": null,
+    "knownLocations": [
+      "部落营地",
+      "草原战场",
+      "王庭外围营帐",
+      "黄金家族演武场",
+      "血脉试炼堂",
+      "王庭商市",
+      "附庸部落领地",
+      "王庭福地外围",
+      "血脉试炼通道"
+    ],
+    "playerPosition": {
+      "x": 1,
+      "y": 0,
+      "region": "北原"
+    },
+    "exploredRegions": [
+      "北原",
+      "南疆"
+    ],
+    "fogOfWar": true,
+    "currencyLog": [],
+    "yuanStoneDelta": 0,
+    "unlockedAchievements": [
+      "first_step",
+      "realm_1",
+      "realm_2",
+      "realm_3",
+      "realm_4",
+      "gu_collector",
+      "gu_master",
+      "rich_500",
+      "rich_2000",
+      "combat_veteran",
+      "beiyuan_warrior",
+      "cross_domain"
+    ],
+    "achievementProgress": {
+      "refinedGuCount": 3,
+      "combatWins": 12,
+      "crossDomainCount": 2
+    },
+    "tutorialState": "inactive",
+    "currentStep": 0,
+    "tutorialSkippable": true,
+    "currentChapterId": "north_golden",
+    "currentDomain": "北原",
+    "chapterHistory": [
+      {
+        "chapterId": "north_youth",
+        "domain": "北原",
+        "startedAt": {
+          "turn": 1,
+          "timestamp": 1777790103784
+        },
+        "completedAt": {
+          "turn": 8,
+          "timestamp": 1777792103784
+        },
+        "goalsCompleted": [
+          "ny_blood_awaken",
+          "ny_reach_2nd"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "north_trial",
+        "domain": "北原",
+        "startedAt": {
+          "turn": 9,
+          "timestamp": 1777792103784
+        },
+        "completedAt": {
+          "turn": 20,
+          "timestamp": 1777794303784
+        },
+        "goalsCompleted": [
+          "nt_first_warband",
+          "nt_earn_300"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "north_wangting",
+        "domain": "北原",
+        "startedAt": {
+          "turn": 21,
+          "timestamp": 1777794303784
+        },
+        "completedAt": {
+          "turn": 35,
+          "timestamp": 1777796103784
+        },
+        "goalsCompleted": [
+          "nw_earn_rank",
+          "nw_reach_3rd"
+        ],
+        "goalsFailed": []
+      },
+      {
+        "chapterId": "north_golden",
+        "domain": "北原",
+        "startedAt": {
+          "turn": 36,
+          "timestamp": 1777796103784
+        },
+        "goalsCompleted": [],
+        "goalsFailed": []
+      }
+    ],
+    "activeEvents": {},
+    "goals": {},
+    "transitionState": "idle",
+    "nextChapterOptions": [],
+    "proximityEvents": [],
+    "globalEventStatus": {
+      "wangting_fudi": {
+        "triggered": true,
+        "completed": false,
+        "triggeredAtChapter": "north_golden"
+      },
+      "juyang": {
+        "triggered": false,
+        "completed": false
+      }
+    },
+    "duelState": null,
+    "debt": 500,
+    "debtInterestRate": 0.05,
+    "combatState": null,
+    "dialogueState": {},
+    "shopState": {
+      "visitedShops": [],
+      "shopInventory": {}
+    },
+    "encounterState": {
+      "recentEncounters": [],
+      "cooldownTimer": 0
+    },
+    "audioState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "currentBgm": null
+    },
+    "lifeboundGu": null,
+    "originUnlocks": [
+      "battlefield_orphan"
+    ],
+    "guHungerCounters": {
+      "g1": 0,
+      "g2": 0,
+      "g3": 0,
+      "g4": 0,
+      "g5": 0,
+      "g6": 0,
+      "g7": 3,
+      "g8": 0
+    },
+    "npcRelations": {
+      "matrix": {},
+      "lastUpdatedTurn": 0
+    },
+    "heavenlyLand": null,
+    "lifeboundGuInfo": {
+      "id": "g3",
+      "name": "力气蛊",
+      "bindTurn": 45,
+      "upgradeCount": 2,
+      "cooldownRemaining": 5
+    },
+    "lifeboundDeathPenalty": null,
+    "gameLog": [
+      {
+        "type": "narrative",
+        "message": "北原血脉在黄金试炼场中进一步觉醒，远古的力量在体内涌动",
+        "turn": 50,
+        "timestamp": 1777796103784
+      },
+      {
+        "type": "system",
+        "message": "成就解锁：蛊虫驯养师",
+        "turn": 52,
+        "timestamp": 1777796703784
+      },
+      {
+        "type": "narrative",
+        "message": "击杀了一名影宗暗线在部落中埋下的间谍——影宗在北原的渗透远比想象中更深",
+        "turn": 55,
+        "timestamp": 1777798503784
+      },
+      {
+        "type": "system",
+        "message": "成就解锁：北原勇士",
+        "turn": 56,
+        "timestamp": 1777798703784
+      }
+    ]
+  }
+}

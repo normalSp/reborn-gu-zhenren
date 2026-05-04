@@ -95,8 +95,47 @@ function normalizeAIResponse(parsed: any): void {
     const su = parsed.state_update;
     // player: AI有时返回字符串(如"天资")而非对象 → 清空
     if (typeof su.player === 'string') delete su.player;
-    // gu_inventory: AI有时返回数组[]而非{add,remove}对象 → 清空（空数组无实际变更）
-    if (Array.isArray(su.gu_inventory)) delete su.gu_inventory;
+    // essence: AI有时返回 {current: undefined, max: undefined} → 清空
+    if (su.player?.essence && su.player.essence.current === undefined && su.player.essence.max === undefined) {
+      delete su.player.essence;
+    }
+    // health: 同理，content/max都为undefined时清空
+    if (su.player?.health && su.player.health.current === undefined && su.player.health.max === undefined) {
+      delete su.player.health;
+    }
+    // gu_inventory: AI有时返回数组[]而非{add,remove}对象 → 自动转换为 {add: array} 格式
+    if (Array.isArray(su.gu_inventory) && su.gu_inventory.length > 0) {
+      su.gu_inventory = { add: su.gu_inventory };
+    } else if (Array.isArray(su.gu_inventory)) {
+      delete su.gu_inventory; // 空数组无实际变更
+    }
+    // 6A: gu_inventory.add 字段名修正 — AI常见错误: rank→tier
+    if (su.gu_inventory?.add && Array.isArray(su.gu_inventory.add)) {
+      for (const item of su.gu_inventory.add) {
+        if (typeof item.rank === 'number' && item.tier === undefined) {
+          item.tier = item.rank;
+        }
+        if (item.rarity === undefined || item.rarity === '') {
+          // 从name推断：含"仙"→传说，"凡"→普通 默认→稀有
+          const gn = (item.name || '').toString();
+          if (gn.includes('仙')) item.rarity = '传说';
+          else if (gn.includes('凡')) item.rarity = '普通';
+          else item.rarity = '稀有';
+        }
+        if (item.description === undefined) {
+          item.description = `${item.name}（${item.tier || 1}转${item.path || '未知'}蛊虫）`;
+        }
+      }
+    }
+    // 6B: dao_marks/path_levels 顶层→player层迁移
+    if (su.dao_marks && !su.player?.dao_marks) {
+      if (!su.player) su.player = {};
+      su.player.dao_marks = su.dao_marks;
+    }
+    if (su.path_levels && !su.player?.path_levels) {
+      if (!su.player) su.player = {};
+      su.player.path_levels = su.path_levels;
+    }
   }
 
   // 2. 选项内部归一化
@@ -278,6 +317,13 @@ export class ResponsePipeline {
         if (canaryResult.recommendation === 'reject') {
           const ruleNames = canaryResult.failedCritical.map(r => r.ruleName).join('、');
           console.log(`%c[PIPE] L4_REJECT %c→ ${ruleNames}`,'color:#e85050','color:#f88');
+          // ═══ 日志埋点: L4金丝雀断言拒绝
+          try {
+            const l4Log = useStore.getState() as any;
+            if (typeof l4Log.addGameLog === 'function') {
+              l4Log.addGameLog('pipeline', `L4金丝雀断言拒绝: ${ruleNames}`, { layer: 'L4', ruleNames });
+            }
+          } catch { /* skip */ }
           return {
             state: 'ERROR',
             error: `Layer 4 金丝雀断言不通过: ${canaryResult.failedCritical.map(r => r.ruleName).join('、')}`,
@@ -340,6 +386,13 @@ export class ResponsePipeline {
         // 修正后仍有warning但无critical → warn_only，可接受
         if (semanticResult && semanticResult.recommendation === 'reject') {
           console.log(`%c[PIPE] L3_REJECT %c→ ${semanticResult.failedRules.map(r=>r.ruleName).join('、')}`,'color:#e85050','color:#f88');
+          // ═══ 日志埋点: L3语义拒绝
+          try {
+            const l3Log = useStore.getState() as any;
+            if (typeof l3Log.addGameLog === 'function') {
+              l3Log.addGameLog('pipeline', `L3语义拒绝: ${semanticResult.failedRules.map(r=>r.ruleName).join('、')}`, { layer: 'L3', ruleNames: semanticResult.failedRules.map(r=>r.ruleName) });
+            }
+          } catch { /* skip */ }
           return {
             state: 'ERROR',
             error: `Layer 3 语义验证不通过: ${semanticResult.failedRules.map(r => r.ruleName).join('、')}`,
@@ -363,22 +416,155 @@ export class ResponsePipeline {
 
       applyStateUpdate(narrative.state_update);
 
-      // ═══ P1成就钩子：每轮RESOLVED后检测成就条件（P1空执行） ═══
-      (useStore.getState() as any).checkAchievements?.();
+      // ═══ P2-8成就钩子：每轮RESOLVED后检测成就条件 ═══
+      try {
+        const achStore = useStore.getState() as any;
+        if (typeof achStore.checkAchievements === 'function') {
+          const achState = {
+            turn: achStore.turn || 1,
+            realm: achStore.profile?.realm?.label || '一转初阶',
+            realmNum: achStore.profile?.realm?.grand || 1,
+            currency: achStore.currency || 0,
+            guCount: Array.isArray(achStore.inventory) ? achStore.inventory.length : 0,
+            refinedGuCount: achStore.refinedGuCount || 0,
+            knownNpcCount: achStore.knownNpcCount || 0,
+            knownLocations: Array.isArray(achStore.knownLocations) ? achStore.knownLocations.length : 0,
+            factionStandings: achStore.factionStandings || {},
+            daoHeart: achStore.daoHeart || { kill: 0, mercy: 0, scheme: 0, ambition: 0 },
+            flags: achStore.flags || {},
+            deaths: achStore.deathCount || 0,
+            combatWins: achStore.combatWins || achStore.combatStats?.wins || 0,
+            crossDomainCount: achStore.domainsVisited || 0,
+            renZuLegendsHeard: achStore.renZuLegendsHeard || 0,
+            achievementsUnlocked: achStore.unlockedAchievements || [],
+            chapterId: achStore.currentChapterId || null,
+            domain: achStore.currentDomain || '南疆',
+          };
+          achStore.checkAchievements(achState);
+        }
+      } catch { /* achievement checker not ready — silently skip */ }
 
-      // ═══ P1章节推进钩子：每轮RESOLVED后检测章节推进条件 ═══
+      // ═══ 日志埋点：叙事回复记录
+      try {
+        const logStore = useStore.getState() as any;
+        if (typeof logStore.addGameLog === 'function') {
+          const choices = narrative?.narrative?.choices?.length || 0;
+          logStore.addGameLog('narrative', `天命已定 (${response.elapsedMs}ms, ${response.tokens?.total_tokens || '?'} tokens)`, {
+            elapsedMs: response.elapsedMs,
+            tokens: response.tokens?.total_tokens,
+            choices,
+            validated: validation?.passed ?? true,
+          });
+        }
+      } catch { /* skip */ }
+
+      // ═══ P2章节推进钩子：每轮RESOLVED后检测章节推进条件（支持多路由选项） ═══
       const chProgStore = useStore.getState() as any;
       if (typeof chProgStore.checkProgression === 'function') {
         const progResult = chProgStore.checkProgression();
         if (progResult?.shouldTransition) {
           console.log(`[Chapter] 章节推进触发: ${progResult.reason}`);
-          chProgStore.setTransitionState?.('transitioning');
+          // ═══ 日志埋点: 章节推进
+          try {
+            const chLog = useStore.getState() as any;
+            if (typeof chLog.addGameLog === 'function') {
+              chLog.addGameLog('narrative', `章节推进: ${progResult.reason}`, {
+                chapterId: chLog.currentChapterId,
+                nextChapterOptions: progResult.nextChapterOptions?.length,
+                reason: progResult.reason,
+              });
+            }
+          } catch { /* skip */ }
+
+          // P2: 保存路由选项和临近事件到store（供ChapterTransition组件展示）
+          if (progResult.nextChapterOptions?.length > 0) {
+            useStore.setState({
+              nextChapterOptions: progResult.nextChapterOptions,
+              proximityEvents: progResult.proximityEvents || [],
+            });
+          }
+
+          // P2: 多路由选项 → 需要玩家手动选择（不自动推进）
+          if (progResult.nextChapterOptions?.length > 1) {
+            console.log(`[Chapter] 多路由选项（${progResult.nextChapterOptions.length}条），等待玩家选择`);
+            chProgStore.setTransitionState?.('transitioning');
+          } else {
+            // 单一路由 → 自动推进
+            chProgStore.setTransitionState?.('transitioning');
+          }
         }
       }
+
+      // ═══ P2-4b 战斗触发钩子：扫描叙事文本检测战斗场景 ═══
+      try {
+        const { detectCombat } = await import('./combat-router');
+        const store2 = useStore.getState() as any;
+        const chapterFlag = store2.flags?.current_chapter_id || store2.currentChapterId;
+        const trigger = detectCombat(narrative.narrative.text, chapterFlag);
+        if (trigger) {
+          if (trigger.combatType === 'duel' && trigger.duelEnemy) {
+            if (typeof store2.initDuel === 'function') {
+              const playerGu = (store2.gu_inventory || []).map((g: any) => ({ name: g.name || '蛊虫', path: g.path || '力道', tier: g.rank || 1 }));
+              store2.initDuel({
+                name: store2.playerName || '蛊师',
+                realm: store2.realm || '一转蛊师',
+                path: store2.path || '力道',
+                daoMarks: store2.pathBuild?.dao_marks?.[store2.pathBuild?.primary || '力道'] || 0,
+                hp: store2.hp || 100, maxHp: store2.maxHp || 100,
+                attack: store2.attack || 20, defense: store2.defense || 5,
+                gu: playerGu, moves: [],
+              }, trigger.duelEnemy);
+            }
+          } else if (trigger.combatType === 'narrative' && trigger.narrativeConstraint) {
+            if (typeof store2.setTransientCombatConstraint === 'function') {
+              store2.setTransientCombatConstraint(trigger.narrativeConstraint);
+            }
+          }
+        }
+      } catch { /* combat-router not ready or import failed — silently skip */ }
+
+      // ═══ P4.1: 消耗上一轮活跃遭遇（清理状态） ═══
+      try {
+        const encStore = useStore.getState() as any;
+        if (typeof encStore.consumeEncounter === 'function' && encStore.activeEncounterId) {
+          encStore.consumeEncounter();
+        }
+      } catch { /* skip */ }
+
+      // ═══ P2-9 随机遭遇钩子：每轮RESOLVED后检测是否触发遭遇 ═══
+      try {
+        const encStore2 = useStore.getState() as any;
+        if (typeof encStore2.checkAndTrigger === 'function') {
+          const profile = encStore2.profile || {};
+          const realmNum = profile.realm?.grand || 1;
+          const flags = encStore2.flags || {};
+          const currency = encStore2.currency || 0;
+          const currentLoc = encStore2.currentPosition || encStore2.playerPosition;
+          const locStr = currentLoc?.area || currentLoc?.region || '南疆';
+          const hasGu = Array.isArray(encStore2.inventory) && encStore2.inventory.length > 0;
+          const chapterId = encStore2.currentChapterId || 'qingmaoshan';
+          const currentDomain = encStore2.currentDomain || '南疆';
+
+          encStore2.checkAndTrigger({
+            chapterId,
+            currentDomain,
+            playerRealm: realmNum,
+            currentTurn: encStore.turn || 1,
+            playerFlags: flags,
+            playerCurrency: currency,
+            currentLocation: locStr,
+            hasGu,
+            lastNarrativeLength: narrative.narrative.text?.length || 0,
+          });
+        }
+      } catch { /* encounter system not ready — silently skip */ }
 
       // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（开局+续档不计入） ═══
       if (!isOpening && !isResume) {
         (useStore.getState() as any).advanceTurn?.();
+        // P2-6: 债务利息+阈值检测
+        const debtStore = useStore.getState() as any;
+        if (typeof debtStore.applyDebtInterest === 'function') debtStore.applyDebtInterest();
       }
 
       // ═══ 死亡检测：叙事导致HP归零 → 生成死亡摘要并触发game_over ═══
@@ -397,6 +583,44 @@ export class ResponsePipeline {
             },
           });
         }
+        // ═══ 日志埋点: 死亡事件
+        try {
+          if (typeof (updatedStore as any).addGameLog === 'function') {
+            (updatedStore as any).addGameLog('system', `蛊师陨落: ${s.deathCause || '未知原因'}`, {
+              cause: s.deathCause,
+              turn: s.turn,
+              chapter: s.flags?.currentChapter,
+              realm: s.profile?.realm?.label,
+              achievementCount: (s.unlockedAchievements?.length) || 0,
+            });
+          }
+        } catch { /* skip */ }
+        // ═══ P2-10 起源解锁钩子：GameOver时检测起源解锁条件 ═══
+        try {
+          if (typeof (updatedStore as any).checkAndUnlock === 'function') {
+            const gameState: Record<string, any> = {
+              maxRealm: (updatedStore as any).maxRealmReached || (updatedStore as any).profile?.realm?.grand || 1,
+              kills: (updatedStore as any).combatStats?.kills || (updatedStore as any).kills || 0,
+              totalCurrencyEarned: (updatedStore as any).totalCurrencyEarned || (updatedStore as any).currency || 0,
+              domainsVisited: (updatedStore as any).domainsVisited || 1,
+              exploredLocations: Array.isArray((updatedStore as any).knownLocations) ? (updatedStore as any).knownLocations.length : 0,
+              renZuLegendsHeard: (updatedStore as any).renZuLegendsHeard || 0,
+              daoHeartMercy: (updatedStore as any).daoHeart?.mercy || 0,
+              deathCount: (updatedStore as any).deathCount || 0,
+              flags: updatedStore.flags || {},
+            };
+            const newOrigins = (updatedStore as any).checkAndUnlock(gameState);
+            if (newOrigins?.length > 0) {
+              console.log(`[OriginUnlock] 新解锁起源: ${newOrigins.join(', ')}`);
+              // ═══ 日志埋点: 起源解锁
+              try {
+                if (typeof (updatedStore as any).addGameLog === 'function') {
+                  (updatedStore as any).addGameLog('achievement', `起源解锁: ${newOrigins.join(', ')}`, { origins: newOrigins });
+                }
+              } catch { /* skip */ }
+            }
+          }
+        } catch { /* origin unlock not ready — silently skip */ }
         (updatedStore as any).setScreenState?.('game_over');
       }
 

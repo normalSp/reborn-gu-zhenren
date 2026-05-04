@@ -17,12 +17,16 @@ export function SettingsDialog() {
   const toggleSettings = useStore(s => s.toggleSettings);
   const typewriterSpeed = useStore(s => s.typewriterSpeed);
   const setTypewriterSpeed = useStore(s => s.setTypewriterSpeed);
+  const soundState = useStore(s => s.soundState);
+  const setMasterVolume = useStore(s => s.setMasterVolume);
+  const setBgmVolume = useStore(s => s.setBgmVolume);
+  const setSfxVolume = useStore(s => s.setSfxVolume);
+  const toggleMute = useStore(s => s.toggleMute);
 
   const [fontSize, setFontSize] = useState(() => {
     return parseInt(localStorage.getItem('gu-font-size') || '16', 10);
   });
   const [apiKeyInput, setApiKeyInput] = useState(() => getApiKey());
-  const [audioOn, setAudioOn] = useState(() => localStorage.getItem('gu-audio-on') !== 'false');
 
   if (!isSettingsOpen) return null;
 
@@ -38,12 +42,6 @@ export function SettingsDialog() {
 
   const handleApiKeySave = () => {
     setApiKey(apiKeyInput.trim());
-  };
-
-  const handleAudioToggle = () => {
-    const next = !audioOn;
-    setAudioOn(next);
-    localStorage.setItem('gu-audio-on', String(next));
   };
 
   return (
@@ -94,19 +92,63 @@ export function SettingsDialog() {
             </div>
           </div>
 
-          {/* ─── 音频 ─── */}
-          <div className="flex items-center justify-between">
-            <span className="text-rg-paper-200/70 text-xs font-panel">事件音效</span>
-            <button
-              onClick={handleAudioToggle}
-              className={`text-xs font-button px-3 py-1 rounded-sm border transition-micro ${
-                audioOn
-                  ? 'border-rg-jade-400/30 text-rg-jade-400 bg-rg-jade-400/10'
-                  : 'border-rg-ink-300/20 text-rg-paper-200/30'
-              }`}
-            >
-              {audioOn ? '开' : '关'}
-            </button>
+          {/* ─── 音频控制 ─── */}
+          <div className="border-t border-rg-ink-300/10 pt-4 mt-1">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-rg-paper-200/70 text-xs font-panel">音频设置</span>
+              <button
+                onClick={toggleMute}
+                className={`text-[10px] font-button px-2 py-1 rounded-sm border transition-micro ${
+                  soundState.muted
+                    ? 'border-rg-blood-400/30 text-rg-blood-400 bg-rg-blood-400/10'
+                    : 'border-rg-jade-400/30 text-rg-jade-400 bg-rg-jade-400/10'
+                }`}
+              >
+                {soundState.muted ? '已静音' : '播放中'}
+              </button>
+            </div>
+
+            {/* 主音量 */}
+            <div className="mb-3">
+              <div className="flex justify-between mb-1">
+                <span className="text-rg-paper-200/70 text-[10px] font-panel">主音量</span>
+                <span className="text-rg-gold text-[10px] font-panel">{Math.round(soundState.masterVolume * 100)}%</span>
+              </div>
+              <input
+                type="range" min="0" max="1" step="0.01"
+                value={soundState.masterVolume}
+                onChange={e => setMasterVolume(Number(e.target.value))}
+                className="w-full h-1.5 bg-rg-ink-900 rounded-full appearance-none cursor-pointer accent-rg-gold"
+              />
+            </div>
+
+            {/* BGM 音量 */}
+            <div className="mb-3">
+              <div className="flex justify-between mb-1">
+                <span className="text-rg-paper-200/70 text-[10px] font-panel">背景音乐</span>
+                <span className="text-rg-gold text-[10px] font-panel">{Math.round(soundState.bgmVolume * 100)}%</span>
+              </div>
+              <input
+                type="range" min="0" max="1" step="0.01"
+                value={soundState.bgmVolume}
+                onChange={e => setBgmVolume(Number(e.target.value))}
+                className="w-full h-1.5 bg-rg-ink-900 rounded-full appearance-none cursor-pointer accent-rg-gold"
+              />
+            </div>
+
+            {/* SFX 音量 */}
+            <div>
+              <div className="flex justify-between mb-1">
+                <span className="text-rg-paper-200/70 text-[10px] font-panel">音效</span>
+                <span className="text-rg-gold text-[10px] font-panel">{Math.round(soundState.sfxVolume * 100)}%</span>
+              </div>
+              <input
+                type="range" min="0" max="1" step="0.01"
+                value={soundState.sfxVolume}
+                onChange={e => setSfxVolume(Number(e.target.value))}
+                className="w-full h-1.5 bg-rg-ink-900 rounded-full appearance-none cursor-pointer accent-rg-gold"
+              />
+            </div>
           </div>
 
           {/* ─── API Key ─── */}
