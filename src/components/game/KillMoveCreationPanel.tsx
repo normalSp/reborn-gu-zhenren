@@ -18,12 +18,15 @@ const COMPATIBLE_PATHS: Record<string, string[]> = {
   '炼道': ['金道', '火道'], '剑道': ['金道', '力道'],
 };
 
+const _KC_EMPTY_OBJ = Object.freeze({});
+const _KC_EMPTY_ARR: readonly never[] = Object.freeze([]);
+
 export function KillMoveCreationPanel() {
   const inventory = useStore(s => s.inventory);
   const learnKillMove = useStore(s => s.learnKillMove);
   const killMoves = useStore(s => s.killMoves);
-  const daoMarks = useStore(s => (s as any).pathBuild?.dao_marks || {}) as Record<string, number>;
-  const talents = useStore(s => (s as any).selectedTalents || []) as any[];
+  const daoMarks = useStore(s => (s as any).pathBuild?.dao_marks || _KC_EMPTY_OBJ) as Record<string, number>;
+  const talents = useStore(s => (s as any).selectedTalents || _KC_EMPTY_ARR) as any[];
 
   const [step, setStep] = useState<'select_core' | 'select_support' | 'confirm'>('select_core');
   const [selectedCore, setSelectedCore] = useState<GuInstance | null>(null);

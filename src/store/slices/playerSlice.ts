@@ -2,7 +2,10 @@ import { create } from 'zustand';
 import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand } from '../../types';
 import { tickHeavenlyLand } from '../../engine/HeavenlyLandEngine';
 import { computePathLevel } from '../../engine/path-progression';
-import { getMigrationNpcs } from '../../engine/npc-cross-domain';
+import { getMigrationNpcs, crossDomainAffinityDecay, filterNpcByDomain } from '../../engine/npc-cross-domain';
+import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
+import { checkChapterGoals } from '../../engine/goal-checker';
+import { triggerBreakthrough } from '../../components/game/BreakthroughAnimation';
 
 interface PlayerSlice extends PlayerState {
   gameTime: GameTime;
@@ -10,6 +13,8 @@ interface PlayerSlice extends PlayerState {
   isDead: boolean;
   deathCause: string;
   deathTurn: number;
+  /** P2补完: 累计死亡次数（用于成就检测） */
+  deathCount: number;
   currency: number;
   immortalCurrency: number;
   /** P0.2: 达到过的最高境界转数 */
@@ -26,6 +31,10 @@ interface PlayerSlice extends PlayerState {
   heavenlyLand: HeavenlyLand | null;
   /** P2-14: 洞天福地产出的蛊材背包 */
   materialBag: Record<string, number>;
+  /** P4: 蛊材物资袋容量（随境界增长） */
+  materialBagCapacity: number;
+  /** P4: 获取当前物资袋容量 */
+  getMaterialBagCapacity: () => number;
   spendCurrency: (amount: number) => boolean;
   addCurrency: (amount: number) => void;
   getApertureCapacity: () => number;
@@ -55,6 +64,25 @@ interface PlayerSlice extends PlayerState {
 const PERIODS: GameTime['period'][] = ['morning', 'noon', 'evening', 'night'];
 const SEASONS: GameTime['season'][] = ['spring', 'summer', 'autumn', 'winter'];
 
+/** P2补完: 从角色属性+境界+天赋重新推导战斗数值（HP/ATK/DEF/命中/闪避） */
+function recalcCombatStats(set: any, get: any) {
+  const state = get() as PlayerSlice & { selectedTalents?: Array<{ benefits?: string[]; costs?: string[] }> };
+  const { physique, aptitude, mind } = state.attributes;
+  const realmGrand = state.profile.realm.grand;
+  const selectedTalents = state.selectedTalents;
+  const talentModifiers = selectedTalents ? extractTalentModifiers(selectedTalents as any[]) : [];
+  const cStats = deriveCombatStats({ physique: physique ?? 5, aptitude: aptitude ?? 5, mind: mind ?? 5, realmGrand: realmGrand ?? 1, talentModifiers });
+  // 游戏中途重推导时只更新combatStats，不清零essence
+  const currentEssence = state.vitals?.essence;
+  set({
+    combatStats: cStats,
+    vitals: {
+      health: { current: cStats.maxHp, max: cStats.maxHp },
+      essence: currentEssence ?? { current: 100, max: 100 },
+    },
+  });
+}
+
 export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   profile: { name: '', realm: { grand: 1, sub: '初阶', label: '一转初阶' }, background: '南疆' },
   attributes: { 资质: 5, 体魄: 5, 心智: 5, 气运: 5 },
@@ -66,6 +94,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   isDead: false,
   deathCause: '',
   deathTurn: 0,
+  deathCount: 0,
   currency: 200,
   immortalCurrency: 0,
   // ═══ P0.2: 幽灵计数器初始值 ═══
@@ -77,11 +106,13 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   deathRecord: null,
   heavenlyLand: null,
   materialBag: {},
+  materialBagCapacity: 20,
   gameTime: { ap: 3, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' },
 
   applyStateUpdate: (update) => {
     if (!update) return;
     const state = get() as PlayerSlice;
+    let needsCombatRecalc = false; // P2补完: 追踪是否需要重推导战斗数值
     // ─── 境界更新 ───
     if (update.realm) {
       const realmMap: Record<string, { grand: number; sub: string; label: string }> = {
@@ -109,6 +140,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       const realmInfo = realmMap[update.realm.value];
       if (realmInfo) {
         set({ profile: { ...state.profile, realm: realmInfo } });
+        needsCombatRecalc = true; // P2补完: 境界变化 → 重新推导战斗数值
         // ═══ P0.2: 更新最高境界 ═══
         const current = get() as PlayerSlice;
         if (realmInfo.grand > current.maxRealmReached) {
@@ -173,9 +205,9 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     // ─── 属性更新 ───
     if (update.attributes) {
       const attrs = update.attributes;
-      if (attrs.资质) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 资质: Math.max(0, Math.min(10, s.attributes.资质 + attrs.资质!.value)) } }));
-      if (attrs.体魄) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 体魄: Math.max(0, Math.min(10, s.attributes.体魄 + attrs.体魄!.value)) } }));
-      if (attrs.心智) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 心智: Math.max(0, Math.min(10, s.attributes.心智 + attrs.心智!.value)) } }));
+      if (attrs.资质) { set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 资质: Math.max(0, Math.min(10, s.attributes.资质 + attrs.资质!.value)) } })); needsCombatRecalc = true; }
+      if (attrs.体魄) { set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 体魄: Math.max(0, Math.min(10, s.attributes.体魄 + attrs.体魄!.value)) } })); needsCombatRecalc = true; }
+      if (attrs.心智) { set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 心智: Math.max(0, Math.min(10, s.attributes.心智 + attrs.心智!.value)) } })); needsCombatRecalc = true; }
       if (attrs.气运) set((s: PlayerSlice) => ({ attributes: { ...s.attributes, 气运: Math.max(0, Math.min(10, s.attributes.气运 + attrs.气运!.value)) } }));
     }
     // ─── 元石变动（wealth.delta） ───
@@ -200,10 +232,12 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       set({ vitals: { ...state.vitals, health: { current: newHealth, max: update.health.max } } });
       // ═══ 死亡检测（4C.1） ═══
       if (newHealth <= 0) {
+        const currentDeathCount = (get() as PlayerSlice).deathCount || 0;
         set({
           isDead: true,
           deathCause: '生命耗尽',
           deathTurn: state.turn,
+          deathCount: currentDeathCount + 1,
         });
       }
     }
@@ -237,11 +271,19 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         pathBuild: { ...s.pathBuild, path_levels: currentLevels },
       }));
     }
+    // ═══ P2补完: 境界或属性发生变化时，重新推导战斗数值 ═══
+    if (needsCombatRecalc) {
+      recalcCombatStats(set, get);
+    }
   },
   setRealm: (realm) => set({ profile: { ...get().profile, realm } }),
-  addAttribute: (attr, delta) => set((s: PlayerSlice) => ({
-    attributes: { ...s.attributes, [attr]: Math.max(0, Math.min(10, s.attributes[attr] + delta)) }
-  })),
+  addAttribute: (attr, delta) => {
+    set((s: PlayerSlice) => ({
+      attributes: { ...s.attributes, [attr]: Math.max(0, Math.min(10, s.attributes[attr] + delta)) }
+    }));
+    // P2补完: 属性变化后重新推导战斗数值
+    recalcCombatStats(set, get);
+  },
   setHealth: (current, max) => set({ vitals: { ...get().vitals, health: { current: Math.min(current, max), max } } }),
   // ═══ P0.1: 固定数值HP变更（正=恢复，负=伤害） ═══
   applyHpDelta: (amount, source = 'system') => {
@@ -261,7 +303,8 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
 
     // 死亡检测
     if (newCurrent <= 0) {
-      set({ isDead: true, deathCause: source, deathTurn: state.turn });
+      const currentDeathCount = (get() as PlayerSlice).deathCount || 0;
+      set({ isDead: true, deathCause: source, deathTurn: state.turn, deathCount: currentDeathCount + 1 });
       if (typeof logStore.addGameLog === 'function') {
         logStore.addGameLog('combat', `💀 角色死亡: ${source}`, { turn: state.turn });
       }
@@ -353,6 +396,42 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       guStore.tickNpcRelations();
     }
 
+    // ═══ P2补完: 跨域NPC亲和衰减（离开某域后该域NPC好感每10轮-1） ═══
+    try {
+      const factionStore = get() as any;
+      const currentDomain = factionStore.currentDomain || (get() as PlayerSlice).profile?.background || '南疆';
+      const turn = (get() as PlayerSlice).turn;
+      if (turn % 10 === 0) {
+        crossDomainAffinityDecay(factionStore, currentDomain);
+      }
+    } catch { /* npc cross-domain not ready */ }
+
+    // ═══ CR2: 域内NPC过滤 — 每回合将活跃NPC池限制在40-60人 ═══
+    try {
+      const factionStore = get() as any;
+      const currentDomain = factionStore.currentDomain || (get() as PlayerSlice).profile?.background || '南疆';
+      const currentFaction = factionStore.currentFaction || '';
+      // 从 NPC 关系矩阵中提取活跃 NPC 列表构建 NpcRecord[]
+      const npcMatrix = factionStore.npcRelations?.matrix || {};
+      const npcRecords = Object.entries(npcMatrix).map(([id, data]: [string, any]) => ({
+        id,
+        name: (data as any).name || id,
+        faction: (data as any).faction || '',
+        domain: (data as any).domain || currentDomain,
+        role: (data as any).role || 'minor',
+        personality: (data as any).personality || '',
+        relationship: (data as any).relationship || 'neutral',
+      }));
+      if (npcRecords.length > 0) {
+        const { filtered } = filterNpcByDomain(npcRecords, currentDomain, currentFaction);
+        // 存储过滤后的活跃NPC池供下游系统使用
+        factionStore.activeNpcPool || (set as any)({ activeNpcPool: filtered });
+        if (typeof factionStore.setActiveNpcPool === 'function') {
+          factionStore.setActiveNpcPool(filtered);
+        }
+      }
+    } catch { /* filterNpcByDomain not ready */ }
+
     // ═══ P2-流派: 本命蛊冷却递减 ═══
     if (typeof guStore.tickLifeboundCooldown === 'function') {
       guStore.tickLifeboundCooldown();
@@ -379,6 +458,17 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
 
     // ═══ P1.2: 章节目标推进检测 ═══
     const chapterStore = get() as any;
+    // ═══ P2补完: 先执行目标检测，再检查推进 ═══
+    try {
+      checkChapterGoals(chapterStore, {
+        chapterId: chapterStore.currentChapterId || null,
+        currentDomain: chapterStore.currentDomain || '南疆',
+        realmGrand: (get() as PlayerSlice).profile.realm.grand,
+        turn: (get() as PlayerSlice).turn,
+        currency: (get() as PlayerSlice).currency,
+        flags: chapterStore.flags || {},
+      });
+    } catch { /* goal checker not ready */ }
     if (typeof chapterStore.checkProgression === 'function') {
       const result = chapterStore.checkProgression() as any;
       if (result?.shouldTransition && result?.nextChapterId) {
@@ -414,6 +504,12 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         const logStore = get() as any;
         if (typeof logStore.addGameLog === 'function') {
           logStore.addGameLog('system', '流派境界晋升！', { pathLevels: newPathLevels });
+        }
+        // P4: 流派晋升时触发突破动画
+        const promotedPaths = Object.entries(newPathLevels).filter(([p, l]) => l !== (currentPathLevels[p] || '普通'));
+        if (promotedPaths.length > 0) {
+          const [mainPath, mainLevel] = promotedPaths[0] as [string, string];
+          try { triggerBreakthrough({ path: mainPath, level: mainLevel, realm: state.profile?.realm?.grand ? `${state.profile.realm.grand}转` : '未知' }); } catch {}
         }
       }
     }
@@ -478,8 +574,21 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     set((s: PlayerSlice) => {
       const bag = { ...s.materialBag };
       bag[materialName] = (bag[materialName] || 0) + quantity;
+      // P4: 超容量警告（不阻止写入，但返回容量信息）
+      const totalCount = Object.values(bag).reduce((a: number, b: number) => a + b, 0);
+      if (totalCount > s.materialBagCapacity) {
+        console.warn(`[MaterialBag] 容量超限！${totalCount}/${s.materialBagCapacity} — 请清理无用蛊材`);
+      }
       return { materialBag: bag };
     });
+  },
+  getMaterialBagCapacity: () => {
+    const state = get() as PlayerSlice;
+    const realm = state.profile?.realm?.grand || 1;
+    if (realm >= 6) return 200; // 仙窍
+    if (realm >= 5) return 60;
+    if (realm >= 3) return 40;
+    return 20;
   },
 
   setImmortalCurrency: (amount) => set({ immortalCurrency: amount }),

@@ -3,8 +3,8 @@
     "version": "1.1",
     "source": "蛊真人原著 + 百度百科 + MC百科 + 贴吧设定整理",
     "principle": "按需构建，AI叙事涉及新蛊虫时核实原著后追加条目",
-    "total": 124,
-    "updated": "2026-05-04 P3-M2.5: +23 entries from origin research"
+    "total": 128,
+    "updated": "2026-05-05 P4: 批量生成 refineCost+ascendCost 完整配方数据 + CR4补全冰晶蛊/毒液蛊/万兽蛊/治愈蛊"
   },
   "月光蛊": {
     "tier": 1,
@@ -20,6 +20,30 @@
       "type": "月光",
       "rarity": "common",
       "description": "需在月夜放置于室外吸收月光精华，阴雨天可用月光石替代但效果减半"
+    },
+    "refineCost": {
+      "generic": {
+        "光道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "月华草": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "光道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "酒虫": {
@@ -36,6 +60,30 @@
       "type": "美酒",
       "rarity": "uncommon",
       "description": "需定期喂食品质美酒，酒越好效果越好，劣酒会降低精炼效率"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "美酒": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "春秋蝉": {
@@ -54,7 +102,11 @@
       "type": "时间流逝",
       "rarity": "legendary",
       "description": "仙蛊自养——自然时间流逝即为喂养，不可人为干预"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属，需升炼或天地生成）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "书虫": {
     "tier": 1,
@@ -70,6 +122,30 @@
       "type": "文字",
       "rarity": "common",
       "description": "每日需将新鲜文字写在纸上喂食——无文字可食则书虫记忆模糊后死亡"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "古籍残页": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "石皮蛊": {
@@ -86,6 +162,30 @@
       "type": "石粉",
       "rarity": "common",
       "description": "每三日研磨细石粉末喂食——缺石粉则石皮变脆防御力下降"
+    },
+    "refineCost": {
+      "generic": {
+        "土道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "石粉": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "土道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "力气蛊": {
@@ -95,13 +195,39 @@
     "effect": "产生无形的力之气，兽力虚影脱离蛊师身体，辅助类蛊虫。由风气蛊逆炼而成",
     "feed": "肉食——需喂食生肉",
     "feedFailure": "饥饿→力之气减弱→完全饥饿→力气蛊萎靡",
-    "usageFailure": "力之气超出控制范围→虚影反噬自身",
+    "usageFailure": "真元不足→力之气涣散无力催动；力之气超出控制范围→虚影反噬自身",
     "refineMaterials": "风气蛊（逆炼）+ 力道蛊材",
     "refineDifficulty": 3,
     "feedRequirement": {
       "type": "生肉",
       "rarity": "common",
       "description": "每周喂食新鲜生肉——饥饿则力之气减弱，长期饥饿萎靡不振"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 16,
+      "difficulty": 0.13,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 12,
+      "difficulty": 0.18,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "积德蛊": {
@@ -119,7 +245,11 @@
       "type": "善行",
       "rarity": "uncommon",
       "description": "特殊喂养——蛊师行善积德即为喂养，行恶则退化，长期作恶则死亡"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不需常规蛊材（自行炼成）",
+    "noAscend": true,
+    "_noAscendReason": "不可炼制则不可升炼"
   },
   "侦察蛊": {
     "tier": 1,
@@ -135,6 +265,30 @@
       "type": "晨露",
       "rarity": "common",
       "description": "每日清晨收集新鲜露水喂食——缺露水则侦察范围缩小视野模糊"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "古籍残页": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "察运蛊": {
@@ -153,7 +307,11 @@
       "type": "气运",
       "rarity": "rare",
       "description": "仙蛊自养——观察气运的过程即为喂养，长期不观则眼力退化"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "搜魂蛊": {
     "tier": 7,
@@ -171,7 +329,11 @@
       "type": "魂魄碎片",
       "rarity": "epic",
       "description": "仙蛊——每次搜魂后残留的魂魄碎片即为食物，无魂可食则精度下降"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "招灾蛊": {
     "tier": 7,
@@ -188,7 +350,11 @@
       "type": "灾劫",
       "rarity": "epic",
       "description": "仙蛊——经历灾劫即为喂养，长期无灾则力量衰减"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "排难蛊": {
     "tier": 7,
@@ -205,7 +371,11 @@
       "type": "灾劫",
       "rarity": "epic",
       "description": "与招灾蛊配合使用相生相养——无灾劫可排则休眠"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "定仙游": {
     "tier": 6,
@@ -223,7 +393,11 @@
       "type": "仙元",
       "rarity": "legendary",
       "description": "仙蛊——每次瞬移消耗仙元，不使用时不需额外喂养"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可常规炼制（需仙蛊方+仙蛊材料）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "捧杀蛊": {
     "tier": 2,
@@ -239,6 +413,32 @@
       "type": "虚情假意",
       "rarity": "uncommon",
       "description": "每日需虚假的赞美和奉承——真诚待人则无法获得食物力量衰减"
+    },
+    "refineCost": {
+      "generic": {
+        "人道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "续命丸": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "人道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "续命丸": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "风道加速蛊": {
@@ -255,6 +455,32 @@
       "type": "风",
       "rarity": "common",
       "description": "每五日需在风大之处放置吸收风之精华——无风则加速效果减半"
+    },
+    "refineCost": {
+      "generic": {
+        "风道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "风之精华": 1
+      },
+      "currency": 16,
+      "difficulty": 0.13,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "风道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "风之精华": 2
+      },
+      "currency": 12,
+      "difficulty": 0.18,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "血颅蛊": {
@@ -271,7 +497,21 @@
       "type": "鲜血",
       "rarity": "epic",
       "description": "每周需新鲜人血或兽血——无血则转为吸收蛊师自身血液危及生命"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "血道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "新鲜血液瓶": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "青丝蛊": {
     "tier": 1,
@@ -287,6 +527,30 @@
       "type": "草木精华",
       "rarity": "common",
       "description": "每日需浸泡草木汁液——无草木精华则发丝干枯失去操控力"
+    },
+    "refineCost": {
+      "generic": {
+        "木道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "草木精华液": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "木道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "希冀蛊": {
@@ -304,7 +568,11 @@
       "type": "不需喂养",
       "rarity": "common",
       "description": "仅在开窍时使用一次——使用完毕即完成使命，不需额外喂养"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可炼制（天地生成）",
+    "noAscend": true,
+    "_noAscendReason": "不可炼制则不可升炼"
   },
   "水龙蛊": {
     "tier": 3,
@@ -320,6 +588,33 @@
       "type": "纯水",
       "rarity": "uncommon",
       "description": "每三日需浸泡纯净水中——缺水则水龙缩小威力下降最终干涸"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "山泉水": 2,
+        "冰晶核心": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "山泉水": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "金钟蛊": {
@@ -336,6 +631,33 @@
       "type": "金粉",
       "rarity": "uncommon",
       "description": "每周喂食金粉或金矿石粉末——缺金则金钟变薄防御力下降"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "火鸦蛊": {
@@ -352,6 +674,33 @@
       "type": "火焰",
       "rarity": "uncommon",
       "description": "每五日需在火源旁吸收火焰精华——缺火焰则火鸦数量减少威力下降"
+    },
+    "refineCost": {
+      "generic": {
+        "炎道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "火石粉": 2,
+        "特制木炭": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "炎道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "火石粉": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "铜皮蛊": {
@@ -368,6 +717,30 @@
       "type": "铜矿石",
       "rarity": "common",
       "description": "需定期喂食铜矿石粉末，可在矿脉区域采集"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "天元宝莲蛊": {
@@ -384,6 +757,32 @@
       "type": "元石",
       "rarity": "rare",
       "description": "需定期放置元石于莲心——无元石则莲瓣枯萎产出停止"
+    },
+    "refineCost": {
+      "generic": {
+        "木道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "草木精华液": 2
+      },
+      "currency": 96,
+      "difficulty": 0.73,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "木道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "草木精华液": 2
+      },
+      "currency": 77,
+      "difficulty": 0.78,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "全力以赴蛊": {
@@ -393,13 +792,40 @@
     "effect": "自由催发兽力虚影攻击，可同时释放多种兽力加成",
     "feed": "兽血——需各类野兽血液混合喂食",
     "feedFailure": "无兽血→兽力虚影变淡→攻击力下降",
-    "usageFailure": "兽力冲突→虚影反噬自身",
+    "usageFailure": "真元不足→兽力虚影无法凝聚；兽力冲突→虚影反噬自身",
     "refineMaterials": "三兽以上鲜血 + 力道蛊材",
     "refineDifficulty": 5,
     "feedRequirement": {
       "type": "兽血",
       "rarity": "uncommon",
       "description": "需各类野兽血液混合——单一种类兽血效果减半"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2,
+        "新鲜兽肉": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "剑影蛊": {
@@ -416,6 +842,32 @@
       "type": "剑意残片",
       "rarity": "uncommon",
       "description": "需在战场或铁匠铺附近吸收残留的剑意"
+    },
+    "refineCost": {
+      "generic": {
+        "剑道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "金属块": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "剑道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "金属块": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "月影蛊": {
@@ -432,6 +884,32 @@
       "type": "月光",
       "rarity": "common",
       "description": "与月光蛊类似，需月夜吸收月光，但只需半月之夜即可"
+    },
+    "refineCost": {
+      "generic": {
+        "暗道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "暗影精华": 2
+      },
+      "currency": 150,
+      "difficulty": 0.36,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "暗道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "暗影精华": 2
+      },
+      "currency": 120,
+      "difficulty": 0.41,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "竹君子": {
@@ -449,6 +927,32 @@
       "type": "真诚",
       "rarity": "rare",
       "description": "需主人保持绝对真诚——说谎则竹君子枯萎凋零死亡"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "古籍残页": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "古籍残页": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "正气蛊": {
@@ -465,6 +969,32 @@
       "type": "善行",
       "rarity": "uncommon",
       "description": "主人需做一件善事（帮助他人、除暴安良），否则正气衰减"
+    },
+    "refineCost": {
+      "generic": {
+        "人道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "续命丸": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "人道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "续命丸": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "金缕衣蛊": {
@@ -481,6 +1011,33 @@
       "type": "金丝线",
       "rarity": "uncommon",
       "description": "需用金丝线缝补，每次战斗后可能需要修补"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 150,
+      "difficulty": 0.36,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 120,
+      "difficulty": 0.41,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "天地宏音蛊": {
@@ -497,7 +1054,21 @@
       "type": "宏大声响",
       "rarity": "common",
       "description": "需在瀑布边、战场、大钟旁等产生宏大声音的地方喂养"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "音道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "嘈杂晶": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "血幕天华蛊": {
     "tier": 5,
@@ -514,7 +1085,21 @@
       "type": "血液",
       "rarity": "uncommon",
       "description": "需动物血液涂抹，每次使用后必须重新涂抹才能再次激活"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "血道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "新鲜血液瓶": 3
+      },
+      "currency": 800,
+      "difficulty": 0.95,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "铁皮蛊": {
     "tier": 1,
@@ -530,6 +1115,30 @@
       "type": "铁屑",
       "rarity": "common",
       "description": "需定期喂食铁屑，铁匠铺附近极易获取"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "熊力蛊": {
@@ -539,13 +1148,37 @@
     "effect": "赋予蛊师熊的力量，熊家标志蛊虫",
     "feed": "兽肉——每次使用后需喂食新鲜兽肉",
     "feedFailure": "无肉→熊力减弱",
-    "usageFailure": "超出自身承受→肌肉拉伤",
+    "usageFailure": "真元不足→熊力无法催动；超出自身承受→肌肉拉伤",
     "refineMaterials": "熊血 + 力道蛊材",
     "refineDifficulty": 2,
     "feedRequirement": {
       "type": "熊类兽肉",
       "rarity": "common",
       "description": "需定期喂食熊肉，越是凶猛的熊肉效果越好"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "骨枪蛊": {
@@ -562,6 +1195,30 @@
       "type": "骨骼碎片",
       "rarity": "common",
       "description": "需喂食动物的骨骼碎片，可在猎场或战场找到"
+    },
+    "refineCost": {
+      "generic": {
+        "骨道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "兽骨": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "骨道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "蛮力天牛蛊": {
@@ -571,13 +1228,37 @@
     "effect": "临时赋予一牛之力，维持五个呼吸，消耗型蛊虫",
     "feed": "不需喂养（一次性蛊虫）",
     "feedFailure": "使用后即消散",
-    "usageFailure": "力量耗尽",
+    "usageFailure": "真元不足→天牛之力无法唤醒；力量耗尽",
     "refineMaterials": "天牛甲壳 + 力道蛊材",
     "refineDifficulty": 1,
     "feedRequirement": {
       "type": "天牛甲壳",
       "rarity": "uncommon",
       "description": "需喂食蛮力天牛的甲壳——这是一种罕见的昆虫，需在深山老林中寻找"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "净水蛊": {
@@ -594,6 +1275,30 @@
       "type": "纯净水源",
       "rarity": "common",
       "description": "需置于纯净水源中，污染水源会使其死亡"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "山泉水": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "幽影随行蛊": {
@@ -610,6 +1315,32 @@
       "type": "阴影",
       "rarity": "common",
       "description": "需在有阴影的地方放置，长时间暴晒会使其虚弱"
+    },
+    "refineCost": {
+      "generic": {
+        "暗道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "暗影精华": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "暗道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "暗影精华": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "爱生离": {
@@ -626,6 +1357,32 @@
       "type": "情感碎片",
       "rarity": "rare",
       "description": "需吸收主人经历过的'爱别离'情感记忆——失去重要的人的情感"
+    },
+    "refineCost": {
+      "generic": {
+        "毒道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "毒物样本": 1
+      },
+      "currency": 26,
+      "difficulty": 0.49,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "毒道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "毒物样本": 2
+      },
+      "currency": 20,
+      "difficulty": 0.54,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "电眼蛊": {
@@ -642,6 +1399,32 @@
       "type": "雷电余威",
       "rarity": "uncommon",
       "description": "雷雨天气后置于露天吸收空气中的雷电余威"
+    },
+    "refineCost": {
+      "generic": {
+        "雷道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "雷击石": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "雷道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "雷击石": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "雷翼蛊": {
@@ -658,6 +1441,32 @@
       "type": "雷击木碎片",
       "rarity": "uncommon",
       "description": "需喂食被雷电劈中的树木的碎片"
+    },
+    "refineCost": {
+      "generic": {
+        "雷道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "雷击石": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "雷道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "雷击石": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "金罡蛊": {
@@ -674,6 +1483,33 @@
       "type": "金系蛊材",
       "rarity": "uncommon",
       "description": "需喂食金系蛊材粉末，品质越高效果越好"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "金龙蛊": {
@@ -690,6 +1526,33 @@
       "type": "雷电精华",
       "rarity": "rare",
       "description": "需喂食雷击金属粉末或雷雨天吸收雷电精华——普通龙类蛊材无法替代雷电精华"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "金风送爽蛊": {
@@ -706,6 +1569,32 @@
       "type": "秋风之气",
       "rarity": "common",
       "description": "需在秋季置于室外吸收秋风之气"
+    },
+    "refineCost": {
+      "generic": {
+        "风道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "风之精华": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "风道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "风之精华": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "苦力蛊": {
@@ -715,13 +1604,40 @@
     "effect": "受伤越重痛苦越深，发挥力气越大，有上限",
     "feed": "苦痛——每次承受伤害即为喂养",
     "feedFailure": "长期不受伤害→苦力蛊力量衰减",
-    "usageFailure": "超出承受极限→苦力蛊力量反噬",
+    "usageFailure": "真元不足→苦力蛊无法感应伤痛；超出承受极限→苦力蛊力量反噬",
     "refineMaterials": "苦痛精华 + 力道蛊材",
     "refineDifficulty": 7,
     "feedRequirement": {
       "type": "苦痛",
       "rarity": "common",
       "description": "需主人承受伤害——每次受伤即为喂养，长期无伤害则力量衰减"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "蛊狼牙": 2,
+        "新鲜兽肉": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "油龙蛊": {
@@ -738,6 +1654,33 @@
       "type": "动物油脂",
       "rarity": "common",
       "description": "需喂食动物油脂，常见于猎场"
+    },
+    "refineCost": {
+      "generic": {
+        "炎道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "火石粉": 2,
+        "特制木炭": 2
+      },
+      "currency": 150,
+      "difficulty": 0.36,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "炎道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "火石粉": 2
+      },
+      "currency": 120,
+      "difficulty": 0.41,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "狼顾蛊": {
@@ -754,6 +1697,32 @@
       "type": "狼血",
       "rarity": "uncommon",
       "description": "需定期取狼血喂食——喂食时主人需蹲伏呈'顾'状"
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "狼嚎蛊": {
@@ -770,6 +1739,32 @@
       "type": "狼血",
       "rarity": "uncommon",
       "description": "需定期取狼血喂食——与狼顾蛊共用狼血来源"
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "狼吞蛊": {
@@ -786,6 +1781,32 @@
       "type": "鲜肉",
       "rarity": "common",
       "description": "需在主人进食时同步喂食——主人吃多少它吃多少"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "美酒": 2
+      },
+      "currency": 150,
+      "difficulty": 0.36,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "美酒": 2
+      },
+      "currency": 120,
+      "difficulty": 0.41,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "横冲直撞蛊": {
@@ -795,13 +1816,40 @@
     "effect": "横冲+直撞合炼，冲锋距离扩至两百步，间隔缩短",
     "feed": "气势——每次冲锋后自动滋养",
     "feedFailure": "长期不冲锋→冲刺距离缩减",
-    "usageFailure": "冲锋被阻→反震伤害",
+    "usageFailure": "真元不足→横冲之势无法发动；冲锋被阻→反震伤害",
     "refineMaterials": "横冲蛊 + 直撞蛊（合炼）",
     "refineDifficulty": 6,
     "feedRequirement": {
       "type": "气势",
       "rarity": "common",
       "description": "需主人频繁冲锋——每次冲锋后自动滋养，静止超过一天会使其死亡"
+    },
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "蛊狼牙": 2,
+        "新鲜兽肉": 2
+      },
+      "currency": 150,
+      "difficulty": 0.36,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 120,
+      "difficulty": 0.41,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "水幕天华蛊": {
@@ -819,6 +1867,33 @@
       "type": "纯净水源",
       "rarity": "uncommon",
       "description": "需置于瀑布下吸收水幕精华"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "山泉水": 2,
+        "冰晶核心": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "山泉水": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "点金蛊": {
@@ -835,7 +1910,22 @@
       "type": "金属矿石",
       "rarity": "uncommon",
       "description": "需喂食各类金属矿石粉末"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "铁屑": 3,
+        "金粉": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "金汤蛊": {
     "tier": 5,
@@ -851,7 +1941,22 @@
       "type": "防御型蛊材",
       "rarity": "uncommon",
       "description": "需喂食各类防御型蛊材的粉末"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "铁屑": 3,
+        "金粉": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "松骨蛊": {
     "tier": 5,
@@ -867,7 +1972,21 @@
       "type": "松木灰烬",
       "rarity": "common",
       "description": "需在松木灰烬中静置——松木燃烧后的灰烬"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "骨道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "兽骨": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "功倍蛊": {
     "tier": 5,
@@ -883,7 +2002,21 @@
       "type": "成就",
       "rarity": "uncommon",
       "description": "需主人在完成一件有难度的事情后意气风发时喂养——方可维持效果"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "律道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "空白书页": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "人如故": {
     "tier": 5,
@@ -900,7 +2033,11 @@
       "type": "时间",
       "rarity": "rare",
       "description": "宙道自养——自然时间流逝即为喂养，不可人为干预"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（传承获取）",
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "百战不殆蛊": {
     "tier": 5,
@@ -917,7 +2054,11 @@
       "type": "不需喂养",
       "rarity": "legendary",
       "description": "一次性消耗蛊虫——使用后即消散，不需喂养"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可炼制（传承获取，天地间极其稀有）",
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "千里地狼蛛": {
     "tier": 5,
@@ -933,7 +2074,21 @@
       "type": "小型蛊虫尸体",
       "rarity": "uncommon",
       "description": "需喂食小型蛊虫的尸体，每周至少一只"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "蛊狼牙": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "岩枪蛊": {
     "tier": 5,
@@ -949,7 +2104,22 @@
       "type": "岩石碎片",
       "rarity": "common",
       "description": "需喂食特定岩石的碎片——越硬的岩石效果越好"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "土道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "石粉": 3,
+        "沃土": 3
+      },
+      "currency": 400,
+      "difficulty": 0.4,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "冰封蛊": {
     "tier": 5,
@@ -965,7 +2135,21 @@
       "type": "冰晶",
       "rarity": "common",
       "description": "需在寒冷环境中吸收冰晶，高温环境会使其疲惫"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "冰道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "冰晶核心": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "九眼酒虫": {
     "tier": 5,
@@ -981,7 +2165,21 @@
       "type": "九种不同的美酒",
       "rarity": "rare",
       "description": "需喂食九种不同来源的美酒——每缺失一种，效果减少一成"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "美酒": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "春雷蛊": {
     "tier": 2,
@@ -997,6 +2195,32 @@
       "type": "春雷余威",
       "rarity": "uncommon",
       "description": "初春雷雨天后置于露天吸收春雷余威"
+    },
+    "refineCost": {
+      "generic": {
+        "雷道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "雷击石": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "雷道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "雷击石": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "化石蛊": {
@@ -1013,6 +2237,33 @@
       "type": "古老岩石粉末",
       "rarity": "rare",
       "description": "需在矿脉深层或古战场采集的化石研磨成粉末"
+    },
+    "refineCost": {
+      "generic": {
+        "土道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "石粉": 2,
+        "沃土": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "土道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "石粉": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "画皮蛊": {
@@ -1029,6 +2280,32 @@
       "type": "人皮",
       "rarity": "uncommon",
       "description": "需喂食蛊师死后的人皮——凡人皮肤无效"
+    },
+    "refineCost": {
+      "generic": {
+        "变化道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "活木枝": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "变化道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "活木枝": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "裂地蛊": {
@@ -1045,6 +2322,33 @@
       "type": "地脉之气",
       "rarity": "uncommon",
       "description": "需在大地震后将蛊虫置于震中吸收地脉之气"
+    },
+    "refineCost": {
+      "generic": {
+        "土道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "石粉": 2,
+        "沃土": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "土道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "石粉": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "洗髓蛊": {
@@ -1061,6 +2365,33 @@
       "type": "灵泉之水",
       "rarity": "rare",
       "description": "需取地脉节点的天然灵泉之水，普通水源无效且有害"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "山泉水": 2,
+        "冰晶核心": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "山泉水": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "换骨蛊": {
@@ -1077,6 +2408,32 @@
       "type": "活体骨骼",
       "rarity": "rare",
       "description": "需活体动物的新鲜骨骼——从猎杀后取出到喂食不得超过一炷香"
+    },
+    "refineCost": {
+      "generic": {
+        "骨道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "兽骨": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "骨道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "兽骨": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "缝纫蛊": {
@@ -1093,6 +2450,30 @@
       "type": "蚕丝",
       "rarity": "common",
       "description": "需天然桑蚕丝线，可在养蚕人家处购买"
+    },
+    "refineCost": {
+      "generic": {
+        "土道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "石粉": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "土道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "破风蛊": {
@@ -1109,6 +2490,32 @@
       "type": "狂风",
       "rarity": "common",
       "description": "需在大风天置于高处，吸收狂风中的气浪"
+    },
+    "refineCost": {
+      "generic": {
+        "风道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "风之精华": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "风道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "风之精华": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "蜃楼蛊": {
@@ -1125,6 +2532,32 @@
       "type": "恐惧",
       "rarity": "rare",
       "description": "需吸收恐惧情绪——主人的恐惧或采集他人的恐惧都有效"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "古籍残页": 2
+      },
+      "currency": 240,
+      "difficulty": 0.76,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "古籍残页": 2
+      },
+      "currency": 192,
+      "difficulty": 0.81,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "辟谷蛊": {
@@ -1141,6 +2574,30 @@
       "type": "五谷",
       "rarity": "common",
       "description": "每周喂食一次五谷杂粮即可"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "美酒": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "缚灵蛊": {
@@ -1157,6 +2614,32 @@
       "type": "灵魂碎片",
       "rarity": "rare",
       "description": "需在战场上收集未散尽的灵魂残余——新鲜死亡不超过一炷香"
+    },
+    "refineCost": {
+      "generic": {
+        "魂道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "魂魄碎片容器": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "魂道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "魂魄碎片容器": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "追踪蛊": {
@@ -1173,6 +2656,30 @@
       "type": "新环境信息",
       "rarity": "common",
       "description": "每次到达一个新地方时让蛊虫感知周围环境，否则追踪精度下降"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "古籍残页": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "熔岩蛊": {
@@ -1189,6 +2696,33 @@
       "type": "岩浆",
       "rarity": "uncommon",
       "description": "需在火山口采集炽热岩浆，普通火焰无法满足"
+    },
+    "refineCost": {
+      "generic": {
+        "炎道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "火石粉": 2,
+        "特制木炭": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "炎道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "火石粉": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "吞金蛊": {
@@ -1205,6 +2739,32 @@
       "type": "金属",
       "rarity": "common",
       "description": "需定期喂食各类金属，品质越高存储密度越大"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "种蛊": {
@@ -1221,6 +2781,30 @@
       "type": "腐殖土",
       "rarity": "common",
       "description": "腐烂植物和泥土的混合物，可在森林地表轻松采集"
+    },
+    "refineCost": {
+      "generic": {
+        "木道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "草木精华液": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "木道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "扬声蛊": {
@@ -1237,6 +2821,30 @@
       "type": "声波",
       "rarity": "common",
       "description": "主人每天至少讲话三百字，否则蛊虫失声"
+    },
+    "refineCost": {
+      "generic": {
+        "风道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "风之精华": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "风道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "酒囊蛊": {
@@ -1253,6 +2861,30 @@
       "type": "干净水源",
       "rarity": "common",
       "description": "每日需一碗干净的水，脏水会产出劣质酒"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "美酒": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "巡夜蛊": {
@@ -1269,6 +2901,30 @@
       "type": "月光",
       "rarity": "common",
       "description": "每夜需要月光精华，阴雨天可用月光石替代但效果减半"
+    },
+    "refineCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "古籍残页": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "智道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "醒酒蛊": {
@@ -1285,6 +2941,30 @@
       "type": "茶水",
       "rarity": "common",
       "description": "越浓的茶效果越好，淡茶只能维持基本活性"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "山泉水": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "假死蛊": {
@@ -1301,6 +2981,32 @@
       "type": "濒死体验",
       "rarity": "rare",
       "description": "主人需定期回忆或经历濒死感受，否则假死蛊逐渐失效"
+    },
+    "refineCost": {
+      "generic": {
+        "魂道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "魂魄碎片容器": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "魂道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "魂魄碎片容器": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "听音蛊": {
@@ -1317,6 +3023,30 @@
       "type": "细微声音",
       "rarity": "common",
       "description": "需在安静环境中吸收细微声音——蟋蟀鸣叫、滴水声等"
+    },
+    "refineCost": {
+      "generic": {
+        "风道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "风之精华": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "风道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "倒戈蛊": {
@@ -1333,6 +3063,32 @@
       "type": "认主意志碎片",
       "rarity": "rare",
       "description": "每次成功倒戈后自动吸收，无需额外喂养"
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 240,
+      "difficulty": 0.76,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "奴道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 192,
+      "difficulty": 0.81,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "锯骨蛊": {
@@ -1349,6 +3105,32 @@
       "type": "骨骼粉末",
       "rarity": "common",
       "description": "需定期喂食骨骼粉末，越硬的骨骼产出的粉末效果越好"
+    },
+    "refineCost": {
+      "generic": {
+        "骨道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "兽骨": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "骨道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "兽骨": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "驭虫蛊": {
@@ -1365,6 +3147,32 @@
       "type": "新鲜昆虫尸体",
       "rarity": "common",
       "description": "需喂食新鲜昆虫尸体——死亡不超过一炷香"
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "奴道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "鉴毒蛊": {
@@ -1381,6 +3189,30 @@
       "type": "毒素样本",
       "rarity": "common",
       "description": "需定期接触微量毒素样本以维持识别能力"
+    },
+    "refineCost": {
+      "generic": {
+        "毒道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "毒物样本": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "毒道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "星火蛊": {
@@ -1397,6 +3229,30 @@
       "type": "火药",
       "rarity": "common",
       "description": "每次使用后需喂食少量火药，可在铁匠铺或冶炼处获取"
+    },
+    "refineCost": {
+      "generic": {
+        "炎道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "火石粉": 1
+      },
+      "currency": 6,
+      "difficulty": 0.1,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "炎道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 5,
+      "difficulty": 0.15,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "避瘴蛊": {
@@ -1414,6 +3270,32 @@
       "type": "解毒草药",
       "rarity": "common",
       "description": "每月需喂食一株解毒草药——缺则避瘴能力下降"
+    },
+    "refineCost": {
+      "generic": {
+        "毒道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "毒物样本": 1
+      },
+      "currency": 16,
+      "difficulty": 0.13,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "毒道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "毒物样本": 2
+      },
+      "currency": 12,
+      "difficulty": 0.18,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "骨肉团圆蛊": {
@@ -1431,6 +3313,32 @@
       "type": "骨粉",
       "rarity": "common",
       "description": "需研磨兽骨拌入清水喂食"
+    },
+    "refineCost": {
+      "generic": {
+        "骨道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "兽骨": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "骨道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "兽骨": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "天意蛊": {
@@ -1449,7 +3357,11 @@
       "type": "天机碎片",
       "rarity": "legendary",
       "description": "仙蛊自养——每次感知天意后残余的信息碎片即为喂养"
-    }
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属，天地生成）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "金银蛊": {
     "tier": 2,
@@ -1465,6 +3377,32 @@
       "type": "废旧金属",
       "rarity": "common",
       "description": "需定期喂食废旧金属——越贵重的金属产出越好"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "金刚怒目蛊": {
@@ -1482,7 +3420,22 @@
       "type": "战意",
       "rarity": "uncommon",
       "description": "需在战场中吸收杀伐意志——和平时期力量衰减"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "铁屑": 3,
+        "金粉": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "玉皮蛊": {
     "tier": 1,
@@ -1496,6 +3449,30 @@
       "type": "玉石",
       "rarity": "uncommon",
       "description": "玉石粉末,季度一次"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "黑豕蛊": {
@@ -1508,6 +3485,31 @@
       "type": "力道蛊材",
       "rarity": "uncommon",
       "description": "定期喂食力道类蛊材"
+    },
+    "usageFailure": "真元不足→气力增长失效；体魄不够强壮→气力增长事倍功半",
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "白豕蛊": {
@@ -1520,6 +3522,31 @@
       "type": "力道蛊材",
       "rarity": "uncommon",
       "description": "定期喂食力道类蛊材"
+    },
+    "usageFailure": "真元不足→气力增长失效；体魄不够强壮→气力增长事倍功半",
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "水蛛蛊": {
@@ -1532,6 +3559,30 @@
       "type": "水利",
       "rarity": "common",
       "description": "需净水定期浸泡"
+    },
+    "refineCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "山泉水": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "水道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "一气金光虫": {
@@ -1544,6 +3595,30 @@
       "type": "光道蛊材",
       "rarity": "uncommon",
       "description": "需定期日照或金道蛊材"
+    },
+    "refineCost": {
+      "generic": {
+        "光道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "月华草": 1
+      },
+      "currency": 8,
+      "difficulty": 0.25,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "光道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 6,
+      "difficulty": 0.3,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "希望蛊": {
@@ -1556,6 +3631,30 @@
       "type": "天道",
       "rarity": "legendary",
       "description": "需持有者的希望意志喂养,极稀有"
+    },
+    "refineCost": {
+      "generic": {
+        "天道蛊材": 2,
+        "普通蛊材": 1
+      },
+      "specific": {
+        "魂魄碎片容器": 1
+      },
+      "currency": 16,
+      "difficulty": 0.8,
+      "turns": 1
+    },
+    "ascendCost": {
+      "generic": {
+        "天道蛊材": 2,
+        "普通蛊材": 2
+      },
+      "specific": {},
+      "currency": 12,
+      "difficulty": 0.85,
+      "restrictions": [
+        "蛊师需≥1转"
+      ]
     }
   },
   "月芒蛊": {
@@ -1570,6 +3669,32 @@
       "type": "月光",
       "rarity": "uncommon",
       "description": "需在月夜吸收月光精华"
+    },
+    "refineCost": {
+      "generic": {
+        "光道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "月华草": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "光道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "月华草": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "月霓裳": {
@@ -1582,6 +3707,32 @@
       "type": "光道蛊材",
       "rarity": "uncommon",
       "description": "月光+光道蛊材"
+    },
+    "refineCost": {
+      "generic": {
+        "光道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "月华草": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "光道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "月华草": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "黑鬃蛊": {
@@ -1594,6 +3745,33 @@
       "type": "力道蛊材",
       "rarity": "uncommon",
       "description": "力道蛊材+动物毛发"
+    },
+    "usageFailure": "真元不足→黑鬃护甲无法凝聚；毛发养分不足→护甲变薄",
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "力道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "蛊狼牙": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "白玉蛊": {
@@ -1608,6 +3786,32 @@
       "type": "金道蛊材",
       "rarity": "uncommon",
       "description": "玉石+金道蛊材"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "四味酒虫": {
@@ -1622,6 +3826,32 @@
       "type": "美酒",
       "rarity": "rare",
       "description": "需四种不同美酒喂养"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "美酒": 1
+      },
+      "currency": 26,
+      "difficulty": 0.49,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "美酒": 2
+      },
+      "currency": 20,
+      "difficulty": 0.54,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "纸鹤蛊": {
@@ -1634,6 +3864,32 @@
       "type": "宇道蛊材",
       "rarity": "uncommon",
       "description": "纸张+少量真元"
+    },
+    "refineCost": {
+      "generic": {
+        "宇道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "空间晶石": 1
+      },
+      "currency": 20,
+      "difficulty": 0.29,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "宇道蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "空间晶石": 2
+      },
+      "currency": 15,
+      "difficulty": 0.34,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "蛇信蛊": {
@@ -1646,6 +3902,32 @@
       "type": "血食",
       "rarity": "common",
       "description": "活物少量血液"
+    },
+    "refineCost": {
+      "generic": {
+        "侦察蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "银线虫": 1
+      },
+      "currency": 16,
+      "difficulty": 0.13,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": {
+        "侦察蛊材": 3,
+        "普通蛊材": 2
+      },
+      "specific": {
+        "银线虫": 2
+      },
+      "currency": 12,
+      "difficulty": 0.18,
+      "restrictions": [
+        "蛊师需≥2转"
+      ]
     }
   },
   "血月蛊": {
@@ -1660,6 +3942,32 @@
       "type": "血道蛊材",
       "rarity": "epic",
       "description": "鲜血+月光,极其危险"
+    },
+    "refineCost": {
+      "generic": {
+        "血道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "新鲜血液瓶": 2
+      },
+      "currency": 96,
+      "difficulty": 0.73,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "血道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "新鲜血液瓶": 2
+      },
+      "currency": 77,
+      "difficulty": 0.78,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "刀光蛊": {
@@ -1672,6 +3980,33 @@
       "type": "金道蛊材",
       "rarity": "rare",
       "description": "金道蛊材+刀修意志"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 78,
+      "difficulty": 0.53,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 62,
+      "difficulty": 0.58,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "七香酒虫": {
@@ -1686,6 +4021,32 @@
       "type": "美酒",
       "rarity": "epic",
       "description": "需七种不同美酒轮流喂养"
+    },
+    "refineCost": {
+      "generic": {
+        "食道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "美酒": 2
+      },
+      "currency": 96,
+      "difficulty": 0.73,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "食道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "美酒": 2
+      },
+      "currency": 77,
+      "difficulty": 0.78,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "冰锥蛊": {
@@ -1698,6 +4059,32 @@
       "type": "冰道蛊材",
       "rarity": "uncommon",
       "description": "冰晶粉末,寒冷环境下维持"
+    },
+    "refineCost": {
+      "generic": {
+        "冰道蛊材": 4,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "冰晶核心": 2
+      },
+      "currency": 60,
+      "difficulty": 0.33,
+      "turns": 4
+    },
+    "ascendCost": {
+      "generic": {
+        "冰道蛊材": 4,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "冰晶核心": 2
+      },
+      "currency": 48,
+      "difficulty": 0.38,
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "古铜皮蛊": {
@@ -1710,6 +4097,33 @@
       "type": "金道蛊材",
       "rarity": "rare",
       "description": "古铜矿粉,古代铜矿中提取"
+    },
+    "refineCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 4
+      },
+      "specific": {
+        "铁屑": 2,
+        "金粉": 2
+      },
+      "currency": 195,
+      "difficulty": 0.56,
+      "turns": 7
+    },
+    "ascendCost": {
+      "generic": {
+        "金道蛊材": 5,
+        "精品蛊材": 3
+      },
+      "specific": {
+        "铁屑": 2
+      },
+      "currency": 156,
+      "difficulty": 0.61,
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "奴隶蛊": {
@@ -1722,7 +4136,21 @@
       "type": "奴道",
       "rarity": "legendary",
       "description": "一次性消耗品,使用后蛊虫死亡"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "奴道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "蛊狼牙": 3
+      },
+      "currency": 800,
+      "difficulty": 0.95,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "宝月光王蛊": {
     "tier": 5,
@@ -1736,7 +4164,21 @@
       "type": "月光",
       "rarity": "epic",
       "description": "满月之夜的月光精华"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "光道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "月华草": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "血滴子": {
     "tier": 5,
@@ -1748,7 +4190,21 @@
       "type": "血道",
       "rarity": "epic",
       "description": "需蛊师鲜血喂养,极度危险"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "血道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "新鲜血液瓶": 3
+      },
+      "currency": 640,
+      "difficulty": 0.8,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "群力蛊": {
     "tier": 5,
@@ -1760,7 +4216,23 @@
       "type": "力道蛊材",
       "rarity": "rare",
       "description": "力道蛊材+多人的力量意志"
-    }
+    },
+    "usageFailure": "真元不足→群力无法汇聚；意志不统一→群力反噬自身",
+    "refineCost": {
+      "generic": {
+        "力道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "蛊狼牙": 3,
+        "新鲜兽肉": 3
+      },
+      "currency": 520,
+      "difficulty": 0.6,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "碧空蛊": {
     "tier": 5,
@@ -1772,7 +4244,22 @@
       "type": "毒道",
       "rarity": "legendary",
       "description": "太古时代的碧空之毒,极难获取"
-    }
+    },
+    "refineCost": {
+      "generic": {
+        "毒道蛊材": 6,
+        "稀有蛊材": 5
+      },
+      "specific": {
+        "毒物样本": 3,
+        "通用解毒剂": 3
+      },
+      "currency": 800,
+      "difficulty": 0.95,
+      "turns": 14
+    },
+    "noAscend": true,
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
   },
   "态度蛊": {
     "tier": 6,
@@ -1786,7 +4273,15 @@
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 9,
     "note": "盗天魔尊招牌仙蛊之一，见面曾相识杀招核心",
-    "feedRequirement": { "type": "情绪碎片", "rarity": "rare", "description": "每次改变态度后吸收残余情绪即为喂养" }
+    "feedRequirement": {
+      "type": "情绪碎片",
+      "rarity": "rare",
+      "description": "每次改变态度后吸收残余情绪即为喂养"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "坚持蛊": {
     "tier": 6,
@@ -1799,7 +4294,15 @@
     "usageFailure": "坚持到极限→蛊师精神崩溃",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 8,
-    "feedRequirement": { "type": "意志力", "rarity": "rare", "description": "蛊仙自身坚持的意志即为喂养——放弃则力量大衰减" }
+    "feedRequirement": {
+      "type": "意志力",
+      "rarity": "rare",
+      "description": "蛊仙自身坚持的意志即为喂养——放弃则力量大衰减"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "净魂蛊": {
     "tier": 6,
@@ -1812,7 +4315,15 @@
     "usageFailure": "魂魄杂质过多→净化不彻底",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 8,
-    "feedRequirement": { "type": "魂力碎片", "rarity": "rare", "description": "每次净化后产生的纯净魂力碎片即为喂养" }
+    "feedRequirement": {
+      "type": "魂力碎片",
+      "rarity": "rare",
+      "description": "每次净化后产生的纯净魂力碎片即为喂养"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "力蛊": {
     "tier": 7,
@@ -1825,7 +4336,15 @@
     "usageFailure": "用力过度→蛊师身体承受不住→内伤",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 9,
-    "feedRequirement": { "type": "战斗", "rarity": "epic", "description": "每次全力战斗即为喂养——长期安逸则力量衰减" }
+    "feedRequirement": {
+      "type": "战斗",
+      "rarity": "epic",
+      "description": "每次全力战斗即为喂养——长期安逸则力量衰减"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "气运蛊": {
     "tier": 7,
@@ -1839,7 +4358,15 @@
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 10,
     "note": "巨阳仙尊运道核心仙蛊之一",
-    "feedRequirement": { "type": "气运碎片", "rarity": "legendary", "description": "每次操控气运后残余的气运余波即为喂养" }
+    "feedRequirement": {
+      "type": "气运碎片",
+      "rarity": "legendary",
+      "description": "每次操控气运后残余的气运余波即为喂养"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "智慧蛊": {
     "tier": 8,
@@ -1853,7 +4380,15 @@
     "refineMaterials": "不可凡蛊炼制（仙蛊专属，需九转仙蛊方）",
     "refineDifficulty": 10,
     "note": "天下智道至高仙蛊之一",
-    "feedRequirement": { "type": "新知识", "rarity": "legendary", "description": "学习新知识的过程即为喂养——停滞学习则退化" }
+    "feedRequirement": {
+      "type": "新知识",
+      "rarity": "legendary",
+      "description": "学习新知识的过程即为喂养——停滞学习则退化"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属，需九转仙蛊方）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "逆流河蛊": {
     "tier": 7,
@@ -1867,7 +4402,15 @@
     "refineMaterials": "不可凡蛊炼制（需逆流河源头之水）",
     "refineDifficulty": 10,
     "note": "方源从逆流河中获取，配合逆流护身印使用",
-    "feedRequirement": { "type": "逆流之水", "rarity": "legendary", "description": "需逆流河中的特殊水源滋养" }
+    "feedRequirement": {
+      "type": "逆流之水",
+      "rarity": "legendary",
+      "description": "需逆流河中的特殊水源滋养"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（需逆流河源头之水）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "因果蛊": {
     "tier": 8,
@@ -1880,7 +4423,15 @@
     "usageFailure": "因果错乱→反噬自身",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 10,
-    "feedRequirement": { "type": "因果碎片", "rarity": "legendary", "description": "每次操控因果后残留的因果碎片即为喂养" }
+    "feedRequirement": {
+      "type": "因果碎片",
+      "rarity": "legendary",
+      "description": "每次操控因果后残留的因果碎片即为喂养"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "葬魂蟾": {
     "tier": 6,
@@ -1893,7 +4444,15 @@
     "usageFailure": "储藏的魂魄超出容量→泄露",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 7,
-    "feedRequirement": { "type": "魂魄碎片", "rarity": "rare", "description": "储藏魂魄的过程即为喂养——无魂可储则休眠" }
+    "feedRequirement": {
+      "type": "魂魄碎片",
+      "rarity": "rare",
+      "description": "储藏魂魄的过程即为喂养——无魂可储则休眠"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
   },
   "百鬼夜行蛊": {
     "tier": 7,
@@ -1906,6 +4465,134 @@
     "usageFailure": "被光道仙蛊照射→游魂大量消散",
     "refineMaterials": "不可凡蛊炼制（仙蛊专属）",
     "refineDifficulty": 9,
-    "feedRequirement": { "type": "游魂碎片", "rarity": "epic", "description": "战场上游荡的魂魄碎片即为食物——和平时期需储备" }
+    "feedRequirement": {
+      "type": "游魂碎片",
+      "rarity": "epic",
+      "description": "战场上游荡的魂魄碎片即为食物——和平时期需储备"
+    },
+    "noRefine": true,
+    "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
+    "noAscend": true,
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+  },
+  "冰晶蛊": {
+    "tier": 3,
+    "path": "水道",
+    "rank": "rare",
+    "effect": "凝聚冰晶护甲覆盖全身，大幅提升物理与冰系抗性——冰晶碎裂前可抵挡致命一击",
+    "feed": "冰晶——需在严寒地带吸收寒气结晶，或以冰晶核心替代",
+    "feedFailure": "连续三日无寒气滋养→冰晶变薄→防御力下降→完全融化后死亡",
+    "usageFailure": "承受火道攻击→冰晶加速融化；极寒环境下冰晶过脆→受重击碎裂",
+    "refineMaterials": "冰晶核心 + 水道蛊材 + 稀有蛊材",
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "寒冰",
+      "rarity": "rare",
+      "description": "需在严寒地带吸收寒气结晶，或定期喂食冰晶核心维持冰层厚度"
+    },
+    "refineCost": {
+      "generic": { "水道蛊材": 3, "稀有蛊材": 1 },
+      "specific": { "冰晶核心": 1 },
+      "currency": 400,
+      "difficulty": 0.35,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": { "水道蛊材": 3, "稀有蛊材": 2 },
+      "specific": {},
+      "currency": 300,
+      "difficulty": 0.3,
+      "restrictions": ["蛊师需≥3转"]
+    }
+  },
+  "毒液蛊": {
+    "tier": 4,
+    "path": "木道",
+    "rank": "rare",
+    "effect": "分泌剧毒液体附着在攻击中——命中后持续腐蚀敌方真元与生命，持续3回合",
+    "feed": "毒物——各类毒虫毒草均可为食，越毒越好",
+    "feedFailure": "毒物不足→毒液浓度下降→腐蚀效果减半→毒素耗尽后蛊虫饥饿而死",
+    "usageFailure": "不破防则毒素无法注入；净化类蛊虫可解除毒液效果",
+    "refineMaterials": "毒物样本 + 稀有蛊材 + 木道蛊材 + 精品蛊材",
+    "refineDifficulty": 4,
+    "feedRequirement": {
+      "type": "毒物",
+      "rarity": "rare",
+      "description": "各类毒虫毒草均可——毒性越强蛊虫越活跃，隔日无毒素则剧毒退化"
+    },
+    "refineCost": {
+      "generic": { "木道蛊材": 3, "稀有蛊材": 2, "精品蛊材": 1 },
+      "specific": { "毒物样本": 1 },
+      "currency": 800,
+      "difficulty": 0.45,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": { "木道蛊材": 4, "稀有蛊材": 2 },
+      "specific": {},
+      "currency": 600,
+      "difficulty": 0.4,
+      "restrictions": ["蛊师需≥4转"]
+    }
+  },
+  "万兽蛊": {
+    "tier": 5,
+    "path": "奴道",
+    "rank": "epic",
+    "effect": "一蛊万兽——同时操控数百只野兽协同作战，虎狼成群、飞鹰蔽日",
+    "feed": "兽血——新鲜兽血浇淋蛊虫，喂养不满则兽群叛乱",
+    "feedFailure": "兽血不足→操控野兽数量减半→兽群躁动→失控反噬蛊师",
+    "usageFailure": "被奴道克制蛊虫压制→操控力失效；道心不稳→兽群拒绝听令",
+    "refineMaterials": "三兽血瓶 + 稀有蛊材 + 魂道蛊材 + 精品蛊材",
+    "refineDifficulty": 5,
+    "feedRequirement": {
+      "type": "鲜血",
+      "rarity": "rare",
+      "description": "需新鲜兽血浇淋——隔日无血则兽群躁动，连续三日反噬主人"
+    },
+    "refineCost": {
+      "generic": { "奴道蛊材": 4, "魂道蛊材": 2, "稀有蛊材": 2 },
+      "specific": { "三兽血瓶": 1 },
+      "currency": 2000,
+      "difficulty": 0.6,
+      "turns": 3
+    },
+    "ascendCost": {
+      "generic": { "奴道蛊材": 5, "魂道蛊材": 3, "稀有蛊材": 3 },
+      "specific": {},
+      "currency": 1500,
+      "difficulty": 0.55,
+      "restrictions": ["蛊师需≥5转", "需掌握奴道杀招"]
+    }
+  },
+  "治愈蛊": {
+    "tier": 3,
+    "path": "水道",
+    "rank": "rare",
+    "effect": "释放温和的水系治愈能量——持续恢复目标生命值，并清除中毒/腐蚀等负面状态",
+    "feed": "药材——各类灵药草药为食，药效越好的药材蛊虫生长越快",
+    "feedFailure": "无药草→治愈能力下降→治疗效果减半→最终枯萎死亡",
+    "usageFailure": "目标已死亡则无效；被诅咒类效果压制→治愈力暂时失效",
+    "refineMaterials": "愈合草药包 + 草木精华液 + 精品蛊材 + 水道蛊材",
+    "refineDifficulty": 3,
+    "feedRequirement": {
+      "type": "药材",
+      "rarity": "uncommon",
+      "description": "需定期喂食灵药草药——品质越高治蛊愈活跃，三日无药则药效衰退"
+    },
+    "refineCost": {
+      "generic": { "水道蛊材": 3, "精品蛊材": 2 },
+      "specific": { "愈合草药包": 1, "草木精华液": 1 },
+      "currency": 500,
+      "difficulty": 0.3,
+      "turns": 2
+    },
+    "ascendCost": {
+      "generic": { "水道蛊材": 3, "精品蛊材": 2 },
+      "specific": {},
+      "currency": 400,
+      "difficulty": 0.25,
+      "restrictions": ["蛊师需≥3转"]
+    }
   }
 }

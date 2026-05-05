@@ -237,8 +237,8 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
         <h4 className="text-rg-paper-200/60 text-[11px] font-panel font-semibold mb-2">资源节点</h4>
         {aperture.resource_nodes.length > 0 ? (
           <div className="flex flex-wrap gap-1.5">
-            {aperture.resource_nodes.map(node => (
-              <span key={node.id}
+            {aperture.resource_nodes.map((node, i) => (
+              <span key={node.id || `${node.type}-${i}`}
                 className="text-[10px] font-panel text-rg-paper-200/70 bg-rg-ink-700/90 border border-rg-ink-300/12 px-2 py-1 rounded-sm">
                 {node.type} · 产出 {node.output_rate}/季 · 品质 {node.quality}
               </span>

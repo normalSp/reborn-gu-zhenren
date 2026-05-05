@@ -36,13 +36,17 @@ const logItemVariant = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
 };
 
+// ═══ Boilerplate: 稳定空默认值，避免selector返回新引用→无限循环 ═══
+const _EMPTY_ARR: readonly never[] = Object.freeze([]);
+const _EMPTY_OBJ = Object.freeze({});
+
 export function CombatOverlay() {
   const duelState = useStore(s => s.duelState);
   const executePlayerAction = useStore(s => s.executePlayerAction);
   const endDuel = useStore(s => s.endDuel);
   // ═══ v1.7: 杀招面板 ═══
-  const killMoves = useStore(s => (s as any).killMoves || []) as any[];
-  const cooldowns = useStore(s => (s as any).cooldowns || {}) as Record<string, number>;
+  const killMoves = useStore(s => (s as any).killMoves || _EMPTY_ARR) as any[];
+  const cooldowns = useStore(s => (s as any).cooldowns || _EMPTY_OBJ) as Record<string, number>;
   const useKillMove = useStore(s => (s as any).useKillMove) as ((id: string) => void) | undefined;
   const [showKillerPanel, setShowKillerPanel] = useState(false);
   const [visible, setVisible] = useState(false);

@@ -18,7 +18,7 @@ const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你
 世界观：蛊界弱肉强食。境界不可逾越。NPC不降智不送资源。机缘必有代价。禁止markdown包裹。`;
 
 // ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
-const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铁甲蛊",tier:1,path:"金道",rarity:"稀有",description:"提升防御"}]}`;
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铁甲蛊",tier:1,path:"金道",rarity:"稀有",description:"提升防御"}]}。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。`;
 
 // ─── Layer S: 风格指南（注入版） ───
 const STYLE_GUIDE_INJECT = `
@@ -36,75 +36,11 @@ const STYLE_GUIDE_INJECT = `
 - 人名规范：古月方源不可称"方源哥哥"等亲昵称呼
 - 地名使用原著正名：南疆、北原、东海、西漠、中洲`;
 
-// ─── 五域开局配置表 ───
-interface DomainOpeningConfig {
-  location: string;
-  faction: string;
-  options: string;
-}
-
-const DOMAIN_OPENING: Record<string, DomainOpeningConfig> = {
-  '南疆': {
-    location: '南疆，古月山寨附近',
-    faction: '古月山寨为南疆散修聚集之所',
-    options: `- 一个选择炼蛊之路（加入山寨炼蛊房学习）
-   - 一个选择修行之路（独自修行提高境界）
-   - 一个冒险选择（探索山寨外围寻找机缘）`,
-  },
-  '中洲': {
-    location: '中洲，十大门派外围 · 宗门入门试炼场',
-    faction: '十大古派统御中洲，天庭俯瞰众生，秩序井然纪律森严',
-    options: `- 一个选择加入正道门派（加入十大古派之一的外门修行）
-   - 一个选择散修之路（独自游历修行，寻找机缘）
-   - 一个冒险选择（探索秘境遗迹寻找传承）`,
-  },
-  '北原': {
-    location: '北原冰原，黄金家族王庭外围的游牧营地',
-    faction: '黄金家族统御北原各部，强者为尊，弱肉强食',
-    options: `- 一个选择加入黄金家族（投入家族麾下为战士）
-   - 一个选择游牧修行（随部落迁徙苦修）
-   - 一个冒险选择（深入冰原寻找远古巢穴）`,
-  },
-  '东海': {
-    location: '东海群岛，散修聚集的岛屿坊市',
-    faction: '东海多散修与海商，势力松散而复杂',
-    options: `- 一个选择加入海商势力（为海商护航赚取灵石）
-   - 一个选择洞府修行（在荒岛开辟洞府独自修炼）
-   - 一个冒险选择（潜水探索海底洞窟）`,
-  },
-  '西漠': {
-    location: '西漠大漠，绿洲城邦的边缘聚落',
-    faction: '西漠绿洲城邦林立，沙匪横行，资源匮乏',
-    options: `- 一个选择加入商队（随商队穿越沙漠修行）
-   - 一个选择绿洲修行（在城邦道场静心修炼）
-   - 一个冒险选择（深入沙海寻找上古遗迹）`,
-  },
-};
-
-// ─── 开局专用 System Prompt（动态根据玩家出身域生成） ───
-function buildOpeningPrompt(store: RootStore): string {
-  const bg = store.profile?.background || '南疆';
-  // 从 "中洲 · 蛊师学徒" 格式中提取域名
-  const domain = Object.keys(DOMAIN_OPENING).find(d => bg.includes(d)) || '南疆';
-  const config = DOMAIN_OPENING[domain];
-
-  return `
-你现在负责生成蛊真人模拟器的开局叙事。玩家刚刚完成了角色创建，即将进入蛊界。
-
-开局背景：
-- 地点：${config.location}
-- 时代：蛊真人原著故事线之初
-- 玩家身份：刚开窍的蛊师学徒（一转初阶），身世普通
-- 所在势力：${config.faction}
-
-第一轮叙事要求：
-1. 简介玩家的背景和开窍过程（约200字），叙事必须严格围绕${domain}展开，不可出现其他域的地理位置和势力
-2. 描述当前的情景——玩家刚成为蛊师学徒，需要做出第一个重要选择
-3. 提供2-3个开局选项：
-${config.options}
-
-角色信息将在用户消息中提供。请生成开局叙事JSON。`;
-}
+/* ═══ isOpening 硬编码路径已移除（遵循「约束注入，而非固定脚本」原则） ═══
+ * 原 buildOpeningPrompt + DOMAIN_OPENING 硬编码"刚开窍的蛊师学徒（一转初阶）"，
+ * 导致时间线起点（义天山/逆流河等）的高境界信息被完全无视，叙事沦为新人故事。
+ * 现统一走标准 prompt — chapterConstraints/境界/道痕/NPC上下文全量注入，
+ * AI 从约束中自动推导对应叙事。符合「章节是状态区间，不是叙事容器」原则。 */
 
 // ─── Canon / IF 模式分化 ───
 // P2修复：正史线提示词不再硬编码南疆，根据currentDomain动态生成
@@ -594,18 +530,11 @@ export class ContextBuilder {
     this.layer2Content = SYSTEM_PROMPT_LAYER2;
   }
 
-  // ─── 构建 System Prompt（4B.3重构版） ───
+  // ─── 构建 System Prompt ───
   buildSystemPrompt(
     mode: 'canon' | 'if',
-    isOpening: boolean = false,
     store?: RootStore
   ): string {
-    if (isOpening) {
-      // store 理论上总是存在（buildFullContext 传参），安全回退到南疆默认开局
-      if (store) return buildOpeningPrompt(store);
-      return buildOpeningPrompt({ profile: { background: '南疆' } } as RootStore);
-    }
-
     const parts: string[] = [
       this.layer1Content,
       STYLE_GUIDE_INJECT,
@@ -680,6 +609,20 @@ export class ContextBuilder {
       vitals: { health: s.vitals.health, essence: s.vitals.essence },
       path: { primary: s.pathBuild.primary || '无', secondary: s.pathBuild.secondary },
       daoHeart: s.daoHeart,
+      daoHeartGuide: (() => {
+        const dh = s.daoHeart;
+        const parts: string[] = [];
+        if (dh.kill >= 5) parts.push('杀性深重——你视人命如草芥，选项应多含杀戮、毁灭、复仇之途');
+        else if (dh.kill >= 3) parts.push('杀性渐长——你不避杀戮，必要时会以血开路');
+        if (dh.mercy >= 5) parts.push('仁心深厚——你常存善念，选项应多含救赎、保护、牺牲之途');
+        else if (dh.mercy >= 3) parts.push('仁心初显——你偶有恻隐，不吝施以援手');
+        if (dh.scheme >= 5) parts.push('谋略深沉——你工于心计，选项应多含布局、算计、借刀杀人之途');
+        else if (dh.scheme >= 3) parts.push('谋略渐成——你善用计策，常思迂回之道');
+        if (dh.ambition >= 5) parts.push('野心勃勃——你志在权势，选项应多含夺权、扩张、称霸之途');
+        else if (dh.ambition >= 3) parts.push('野心萌动——你不甘平庸，追求更高地位');
+        if (parts.length === 0) parts.push('道心未定——你的心性仍在塑造中，选项应中性多元');
+        return parts.join('；');
+      })(),
       guInventory: s.inventory.map((g: any) => ({
         name: g.name, tier: g.tier, path: g.path, state: g.currentState,
       })),
@@ -715,10 +658,9 @@ export class ContextBuilder {
   // ─── 构建完整 AIContext ───
   buildFullContext(
     store: RootStore,
-    mode: 'canon' | 'if',
-    isOpening: boolean = false
+    mode: 'canon' | 'if'
   ): AIContext {
-    const systemPrompt = this.buildSystemPrompt(mode, isOpening, store);
+    const systemPrompt = this.buildSystemPrompt(mode, store);
     const playerStateJSON = this.buildPlayerStateJSON(store);
     const { keyEvents, recentMessages, rollingSummary } = this.buildNarrativeContext(store);
     return { systemPrompt, playerStateJSON, keyEvents, recentMessages, rollingSummary, mode, turnNumber: store.messages.length };
@@ -802,6 +744,18 @@ export class ContextBuilder {
       }
       if (guLines.length > 0) {
         parts.push(`【当前蛊虫状态】\n${guLines.join('\n')}`);
+        // v0.6.0: 蛊虫能力引导 — 指导AI生成使用蛊虫的选项
+        const guAbilityLines: string[] = [];
+        for (const gu of inventory.slice(0, 4)) {
+          const data = guDatabase[gu.name];
+          if (data) {
+            const ability = data.effect || data.description || '';
+            if (ability) guAbilityLines.push(`- ${gu.name}(${gu.tier}转${gu.path}): ${ability.substring(0, 40)}`);
+          }
+        }
+        if (guAbilityLines.length > 0) {
+          parts.push(`【蛊虫能力 — 选项生成规则】\n每个选项应至少有一条关联到以下蛊虫能力。在社交/战斗/探索场景中优先生成使用蛊虫的选项:\n${guAbilityLines.join('\n')}`);
+        }
       }
     }
 
@@ -820,6 +774,19 @@ export class ContextBuilder {
         parts.push(encLines.join('\n'));
       }
     } catch { /* encounter context injection not available */ }
+
+    // ═══ P2修复: 道心指导指令 — 让AI根据道心值调整叙事倾向和选项风格 ═══
+    const daoHeart = (store as any).daoHeart || { kill: 0, mercy: 0, scheme: 0, ambition: 0 };
+    const dhLines: string[] = [];
+    if (daoHeart.kill >= 3) dhLines.push(`杀性(${daoHeart.kill})：玩家的选项应至少包含一条暴力/毁灭/直接冲突的路径`);
+    if (daoHeart.mercy >= 3) dhLines.push(`仁心(${daoHeart.mercy})：玩家的选项应至少包含一条救助/保护/牺牲的路径`);
+    if (daoHeart.scheme >= 3) dhLines.push(`谋略(${daoHeart.scheme})：玩家的选项应至少包含一条布局/算计/借力打力的路径`);
+    if (daoHeart.ambition >= 3) dhLines.push(`野心(${daoHeart.ambition})：玩家的选项应至少包含一条夺权/扩张/建立势力的路径`);
+    if (dhLines.length > 0) {
+      parts.push(`【道心指导指令 — 选项生成必须遵守】\n${dhLines.join('\n')}\n\n玩家道心倾向已固化，选项若完全违背道心则违背角色一致性。但不必所有选项都顺从道心——留1条中性选项给玩家改变的空间。`);
+    } else {
+      parts.push('【道心指导指令】玩家道心尚未成型（四维均低于3），选项可多元化，每个选项引导不同的道心走向。此阶段是塑造角色道心的最佳时期。');
+    }
 
     return parts.length > 0 ? parts.join('\n\n') : '';
   }

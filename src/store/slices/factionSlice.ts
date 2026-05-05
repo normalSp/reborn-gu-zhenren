@@ -15,6 +15,9 @@ interface FactionSlice {
   getNpcAffinity: (npcIdA: string, npcIdB: string) => number;
   /** P2-13: 每轮NPC关系漂移 */
   tickNpcRelations: () => void;
+  /** P2补完: 已知NPC计数（用于成就检测） */
+  knownNpcCount: number;
+  incrementKnownNpcCount: () => void;
 }
 
 /** 从NPC关系类型推导初始好感值 */
@@ -36,6 +39,7 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
   standings: {},
   characterRelations: [],
   npcRelations: { matrix: {}, lastUpdatedTurn: 0 },
+  knownNpcCount: 0,
 
   updateStanding: (factionId, delta) => set((s: FactionSlice) => ({
     standings: {
@@ -149,4 +153,7 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
       });
     }
   },
+  incrementKnownNpcCount: () => set((s: FactionSlice) => ({
+    knownNpcCount: (s.knownNpcCount || 0) + 1,
+  })),
 });

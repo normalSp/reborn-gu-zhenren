@@ -29,16 +29,18 @@ import { AuctionPanel } from './AuctionPanel';
 import { AchievementPanel } from './AchievementPanel';
 import { AchievementToast } from './AchievementToast';
 import { ChapterTransition } from './ChapterTransition';
+import { MaterialBagPanel } from './MaterialBagPanel';
+import { ApertureManagementPanel } from './ApertureManagementPanel';
 import { useGamePipeline } from '../../hooks/useGamePipeline';
 import { useAnimationBridge } from '../../hooks/useAnimationBridge';
 import { useDeviceCapability } from '../../hooks/useDeviceCapability';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag';
 
 // P3修复：地图标题改为动态，在渲染时根据currentDomain生成
-const getPanelTitle = (panel: SidePanel, currentDomain: string): string => {
+const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: boolean): string => {
   if (panel === 'map') return currentDomain ? `${currentDomain}舆图` : '舆图';
   if (panel === 'none') return '';
   const titles: Record<string, string> = {
@@ -47,7 +49,8 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string): string => {
     gu_inventory: '蛊虫',
     kill_moves: '杀招列表',
     refine: '炼蛊',
-    aperture: '空窍状态',
+    material_bag: '蛊材',
+    aperture: isImmortal ? '仙窍' : '空窍状态',
     characters: '人物图鉴',
     dao_marks: '流派道痕',
     merchant: '商会',
@@ -63,7 +66,9 @@ const panelContent = (panel: SidePanel) => {
     case 'gu_inventory': return <GuInventoryPanel />;
     case 'kill_moves': return <KillMovePanel />;
     case 'refine': return <RefinePanel />;
+    case 'material_bag': return <MaterialBagPanel />;
     case 'aperture': return <AperturePanel />;
+    case 'aperture_management': return <ApertureManagementPanel />;
     case 'map': return <SVGMapPanel />;
     case 'characters': return <CharacterPanel />;
     case 'dao_marks': return <DaoMarkPanel />;
@@ -81,6 +86,7 @@ const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'gu_inventory', label: '蛊虫' },
   { id: 'kill_moves', label: '杀招列表' },
   { id: 'refine', label: '炼蛊' },
+  { id: 'material_bag', label: '蛊材' },
   { id: 'aperture', label: '空窍状态' },
   { id: 'characters', label: '人物图鉴' },
   { id: 'dao_marks', label: '流派道痕' },
@@ -108,6 +114,7 @@ export function GameScreen() {
 
   // ─── P4修复: BGM 自动切换 — 域变化 → crossFade ───
   const currentDomain = useStore(s => s.currentDomain);
+  const isImmortal = useStore(s => (s.profile?.realm?.grand || 1) >= 6);
   const prevDomainRef = useRef<typeof currentDomain>(currentDomain);
   useEffect(() => {
     if (currentDomain !== prevDomainRef.current) {
@@ -207,7 +214,7 @@ export function GameScreen() {
           <div className="hidden md:flex w-80 lg:w-96 border-l border-rg-ink-300/12 bg-rg-ink-800 flex-col shrink-0">
             <div className="flex items-center justify-between px-4 py-2 bg-rg-ink-700/90 border-b border-rg-ink-300/12">
               <span className="text-rg-paper-200/80 text-xs font-panel font-semibold">
-                {getPanelTitle(sidePanel, currentDomain)}
+                {getPanelTitle(sidePanel, currentDomain, isImmortal)}
               </span>
               <button
                 onClick={closePanel}
@@ -233,7 +240,7 @@ export function GameScreen() {
               </div>
               <div className="flex items-center justify-between px-4 pb-2">
                 <span className="text-rg-paper-200/80 text-xs font-panel font-semibold">
-                  {getPanelTitle(sidePanel, currentDomain)}
+                  {getPanelTitle(sidePanel, currentDomain, isImmortal)}
                 </span>
                 <button
                   onClick={closePanel}
@@ -337,7 +344,7 @@ export function GameScreen() {
               onClick={() => togglePanel(btn.id)}
               className={toolbarBtnClass(sidePanel === btn.id)}
             >
-              {btn.label}
+              {btn.id === 'aperture' && isImmortal ? '仙窍' : btn.label}
             </button>
           ))}
         </div>

@@ -1,5 +1,5 @@
 /**
- * ═══ 宝皇天仙蛊拍卖引擎 — P3 ═══
+ * ═══ 宝黄天仙蛊拍卖引擎 — P3 ═══
  * 全局面唯一性检查 + 原著主线仙蛊排除 + NPC竞价模拟
  */
 import immortalGuRaw from '../canon/immortal-gu.json';
@@ -93,4 +93,29 @@ export function playerBid(item: ImmortalAuctionItem, bidAmount: number): Immorta
     return { ...item, currentBid: Math.round(bidAmount * 1.1), bidderCount: item.bidderCount - 1 };
   }
   return { ...item, currentBid: bidAmount, bidderCount: item.bidderCount - 1 };
+}
+
+// ─── v0.6.0: 玩家上架仙蛊拍卖 ───
+export interface PlayerListedGu {
+  name: string; tier: number; path: string; rank: string;
+  listedTurn: number; expiresTurn: number;
+  startingBid: number; currentBid: number; bidderCount: number;
+  sold: boolean; finalBid: number;
+}
+
+export function listPlayerGu(guName: string, tier: number, rank: string, path: string, turn: number): PlayerListedGu {
+  const startingBid = tier * tier * 100;
+  const bidderCount = 3 + tier - 6 + (rank === 'legendary' ? 2 : rank === 'epic' ? 1 : 0);
+  return { name: guName, tier, path, rank, listedTurn: turn, expiresTurn: turn + 8, startingBid, currentBid: startingBid, bidderCount, sold: false, finalBid: 0 };
+}
+
+export function simulateSellAuction(item: PlayerListedGu): PlayerListedGu {
+  if (item.bidderCount <= 0 || item.sold) return { ...item, sold: true, finalBid: item.currentBid };
+  const raise = Math.floor(item.currentBid * (0.05 + Math.random() * 0.15));
+  const newBid = item.currentBid + raise;
+  const dropout = Math.random() < 0.3;
+  const newCount = dropout ? item.bidderCount - 1 : item.bidderCount;
+  const sold = newCount <= 0;
+  const finalBid = sold ? newBid : item.finalBid;
+  return { ...item, currentBid: newBid, bidderCount: newCount, sold, finalBid };
 }

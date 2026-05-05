@@ -14,104 +14,16 @@ import type {
   DuelState,
   CombatLogEntry,
 } from '../types';
-import combatConfigRaw from '../canon/combat-config.json';
-
-const config = combatConfigRaw as any;
-const realmTable: Record<string, { playerDamageMult: number; playerHitBonus: number; enemyDamageMult: number; enemyHitPenalty: number }> = config.realmCoefficients?.table || {};
-const pathMatrix: Record<string, Record<string, number>> = config.pathMatrix?.matrix || {};
-const C = config.constants || {};
+import {
+  REALM_NUM, toRealmNum, getEffectiveDaoMarks, getRealmCoefficients, getPathMultiplier,
+  calcHitRate, calcDamage, rollCrit, rollHit,
+  PATH_STATUS_MAP, calcStatusDamage, isStatusDisabled, isConfused, getBlindPenalty, getWeakenDefPenalty, tickStatuses,
+  type CombatStatus,
+} from './combat-formulas';
 
 /** 生成唯一决斗ID */
 function duelId(): string {
   return `duel_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-}
-
-/** 境界名称 → 数值映射 */
-const REALM_NUM: Record<string, number> = {
-  '凡人': 0, '一转': 1, '二转': 2, '三转': 3, '四转': 4, '五转': 5, '六转': 6, '七转': 7, '八转': 8, '九转': 9,
-  '一转蛊师': 1, '二转蛊师': 2, '三转蛊师': 3, '四转蛊师': 4, '五转蛊师': 5, '蛊仙': 6, '六转蛊仙': 6, '七转蛊仙': 7, '八转蛊仙': 8,
-};
-
-function toRealmNum(realm: string): number {
-  return REALM_NUM[realm] ?? 1;
-}
-
-/**
- * 获取境界修正系数
- * realmDiff = 敌方境界 - 玩家境界
- */
-function getRealmCoefficients(playerRealmNum: number, enemyRealmNum: number) {
-  const diff = enemyRealmNum - playerRealmNum;
-  const key = String(Math.max(-3, Math.min(3, diff)));
-  return realmTable[key] || realmTable['0'];
-}
-
-/**
- * 流派克制系数
- */
-function getPathMultiplier(attackerPath: string, defenderPath: string): number {
-  const row = pathMatrix[attackerPath];
-  if (!row) return 1.0;
-  return row[defenderPath] ?? 1.0;
-}
-
-/**
- * 计算命中率
- */
-function calcHitRate(baseAccuracy: number, baseEvasion: number, hitBonus: number): number {
-  const accuracy = baseAccuracy + hitBonus;
-  const evasion = baseEvasion;
-  let rate = accuracy / (accuracy + evasion);
-  return Math.max(0.1, Math.min(0.95, rate));
-}
-
-/**
- * 计算伤害
- * damage = (ATK - DEF×0.5) × pathMult × realmMult × moveMult × daoMarkMult × crit(1.5 or 1.0) × variance(0.85~1.15)
- * daoMarkMult: 道痕战力倍率 — 每100道痕+10%伤害，上限200% (2000道痕)
- * 道痕公式: 1.0 + (daoMarks / 1000)，上限3.0
- */
-function calcDamage(
-  attackerAtk: number,
-  defenderDef: number,
-  attackerPath: string,
-  defenderPath: string,
-  realmMult: number,
-  moveMult: number,
-  isCrit: boolean,
-  /** P2-P7: 攻击方道痕数 — 同一流派道痕越多伤害越高 */
-  attackerDaoMarks: number = 0,
-  /** P2-P7: 防守方道痕数 — 道痕可提供部分防御加成 */
-  defenderDaoMarks: number = 0,
-): number {
-  const defFactor = C.defenseFactor?.value ?? 0.5;
-  const baseMin = C.baseVariance?.min ?? 0.85;
-  const baseMax = C.baseVariance?.max ?? 1.15;
-  const critMult = isCrit ? (C.critRate?.multiplier ?? 1.5) : 1.0;
-  const minDmg = C.minDamage?.value ?? 1;
-
-  // 道痕因子：攻击方道痕增伤，防守方道痕减伤
-  // v1.3: 除数从1000→10000，匹配原著标度(八转巅峰=30万道痕≈3.0倍)
-  const attackDaoMult = 1.0 + (attackerDaoMarks / 10000);
-  const defenseDaoMult = 1.0 - (defenderDaoMarks / 20000);  // 防守道痕减伤减半强度
-  const daoMarkMult = Math.max(0.5, Math.min(3.0, attackDaoMult * defenseDaoMult));
-
-  const raw = attackerAtk - defenderDef * defFactor;
-  const pathMult = getPathMultiplier(attackerPath, defenderPath);
-  const variance = baseMin + Math.random() * (baseMax - baseMin);
-
-  const dmg = raw * pathMult * realmMult * moveMult * daoMarkMult * critMult * variance;
-  return Math.max(minDmg, Math.round(dmg));
-}
-
-/** 判断是否暴击 */
-function rollCrit(): boolean {
-  return Math.random() < (C.critRate?.base ?? 0.05);
-}
-
-/** 判断是否命中 */
-function rollHit(hitRate: number): boolean {
-  return Math.random() < hitRate;
 }
 
 // ─── 公开 API ───
@@ -122,29 +34,40 @@ function rollHit(hitRate: number): boolean {
 export function initDuel(
   player: {
     name: string; realm: string; path: string;
-    daoMarks: number;
+    daoMarks: number | Record<string, number>;
     hp: number; maxHp: number; attack: number; defense: number;
     accuracy?: number; evasion?: number;
     gu: { name: string; path: string; tier: number }[];
     moves: DuelMove[];
   },
   enemy: DuelEnemy,
+  /** v0.6.0: 决斗模式 */
+  mode: 'lethal' | 'training' = 'lethal',
 ): DuelState {
+  const effectiveDaoMarks = typeof player.daoMarks === 'object'
+    ? getEffectiveDaoMarks(player.daoMarks as Record<string, number>, player.path)
+    : (player.daoMarks ?? 0);
+  // AI模式：优先使用敌人配置的aiMode，默认aggressive
+  const aiMode = (enemy as any).aiMode || 'aggressive';
   return {
     duelId: duelId(),
     phase: 'init',
     round: 0,
+    mode,
     player: {
       ...player,
-      daoMarks: player.daoMarks ?? 0,
+      daoMarks: effectiveDaoMarks,
       realmNum: toRealmNum(player.realm),
-      accuracy: player.accuracy ?? (C.accuracy?.base ?? 70),
-      evasion: player.evasion ?? (C.evasion?.base ?? 30),
+      accuracy: player.accuracy ?? 70,
+      evasion: player.evasion ?? 30,
+      statuses: [],
     },
     enemy: {
       ...enemy,
-      accuracy: enemy.accuracy ?? (C.accuracy?.base ?? 70),
-      evasion: enemy.evasion ?? (C.evasion?.base ?? 30),
+      accuracy: enemy.accuracy ?? 70,
+      evasion: enemy.evasion ?? 30,
+      statuses: [] as CombatStatus[],
+      aiMode: aiMode as any,
     },
     result: null,
     log: [],
@@ -182,19 +105,25 @@ export function executePlayerTurn(
           coeff.playerDamageMult, moveMult, isCrit,
           state.player.daoMarks, state.enemy.daoMarks,
         );
-        const newEnemy = { ...state.enemy, hp: Math.max(0, state.enemy.hp - dmg) };
+        // v0.6.0: 应用状态效果
+        const newEnemyStatuses = applyStatusOnHit(state.player.path, state.enemy.statuses, state.player.daoMarks);
+        const newEnemy = { ...state.enemy, hp: Math.max(0, state.enemy.hp - dmg), statuses: newEnemyStatuses };
+        const statusNote = newEnemyStatuses.length > state.enemy.statuses.length ? ` [${PATH_STATUS_MAP[state.player.path]?.type || ''}]` : '';
         newLog.push({
           round, actor: 'player', action: move ? move.name : '普通攻击',
           damage: dmg, hit: true, crit: isCrit,
-          message: isCrit ? `暴击！造成 ${dmg} 点伤害` : `造成 ${dmg} 点伤害`,
+          message: (isCrit ? `暴击！造成 ${dmg} 点伤害` : `造成 ${dmg} 点伤害`) + statusNote,
         });
 
         if (newEnemy.hp <= 0) {
+          // v0.6.0: 训练模式→KO非致命
+          const koHp = state.mode === 'training' ? 1 : 0;
+          const finalEnemy = { ...newEnemy, hp: koHp };
           return {
             state: {
-              ...state, round, enemy: newEnemy, log: newLog,
+              ...state, round, enemy: finalEnemy, log: newLog,
               phase: 'ended',
-              result: { winner: 'player', playerFinalHp: state.player.hp, enemyFinalHp: 0, roundsTaken: round, escaped: false },
+              result: { winner: 'player', playerFinalHp: state.player.hp, enemyFinalHp: koHp, roundsTaken: round, escaped: false },
             },
             enemyTurn: false,
           };
@@ -217,8 +146,16 @@ export function executePlayerTurn(
         newLog.push({ round, actor: 'player', action: '蛊虫技能', message: '无法使用此技能' });
         return { state: { ...state, round, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
       }
+      // v0.6.0: coreGu强制检查
+      if (move.requiredCoreGu && move.requiredCoreGu.length > 0) {
+        const playerGuNames = state.player.gu.map(g => g.name);
+        const missing = move.requiredCoreGu.filter(cg => !playerGuNames.includes(cg));
+        if (missing.length > 0) {
+          newLog.push({ round, actor: 'player', action: move.name, message: `缺少核心蛊虫: ${missing.join('、')}，无法使用${move.name}` });
+          return { state: { ...state, round, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
+        }
+      }
       // 技能攻击 = attack with move multiplier + path bonus
-      const move = state.player.moves[moveIndex];
       const isCrit = rollCrit();
       const hitRate = calcHitRate(state.player.accuracy, state.enemy.evasion, coeff.playerHitBonus + move.pathBonus);
       const hit = rollHit(hitRate);
@@ -229,19 +166,19 @@ export function executePlayerTurn(
           coeff.playerDamageMult, move.damageMultiplier, isCrit,
           state.player.daoMarks, state.enemy.daoMarks,
         );
-        const newEnemy = { ...state.enemy, hp: Math.max(0, state.enemy.hp - dmg) };
-        newLog.push({ round, actor: 'player', action: move.name, damage: dmg, hit: true, crit: isCrit, message: isCrit ? `暴击！${move.name}造成 ${dmg} 点伤害` : `${move.name}造成 ${dmg} 点伤害` });
-        if (newEnemy.hp <= 0) {
+        const newEnemyStatuses2 = applyStatusOnHit(state.player.path, state.enemy.statuses, state.player.daoMarks);
+        const newEnemy2 = { ...state.enemy, hp: Math.max(0, state.enemy.hp - dmg), statuses: newEnemyStatuses2 };
+        const statusNote2 = newEnemyStatuses2.length > state.enemy.statuses.length ? ` [${PATH_STATUS_MAP[state.player.path]?.type || ''}]` : '';
+        newLog.push({ round, actor: 'player', action: move.name, damage: dmg, hit: true, crit: isCrit, message: (isCrit ? `暴击！${move.name}造成 ${dmg} 点伤害` : `${move.name}造成 ${dmg} 点伤害`) + statusNote2 });
+        if (newEnemy2.hp <= 0) {
+          const koHp2 = state.mode === 'training' ? 1 : 0;
+          const finalEnemy2 = { ...newEnemy2, hp: koHp2 };
           return {
-            state: {
-              ...state, round, enemy: newEnemy, log: newLog,
-              phase: 'ended',
-              result: { winner: 'player', playerFinalHp: state.player.hp, enemyFinalHp: 0, roundsTaken: round, escaped: false },
-            },
+            state: { ...state, round, enemy: finalEnemy2, log: newLog, phase: 'ended', result: { winner: 'player', playerFinalHp: state.player.hp, enemyFinalHp: koHp2, roundsTaken: round, escaped: false } },
             enemyTurn: false,
           };
         }
-        return { state: { ...state, round, enemy: newEnemy, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
+        return { state: { ...state, round, enemy: newEnemy2, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
       } else {
         newLog.push({ round, actor: 'player', action: move.name, hit: false, message: `${move.name}未命中` });
         return { state: { ...state, round, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
@@ -252,9 +189,36 @@ export function executePlayerTurn(
       return tryEscape(state, coeff, newLog, round);
     }
 
+    case 'surrender': {
+      newLog.push({ round, actor: 'player', action: '投降', message: '你选择投降，退出战斗' });
+      return {
+        state: {
+          ...state, round, log: newLog, phase: 'ended',
+          result: { winner: 'enemy', playerFinalHp: state.player.hp, enemyFinalHp: state.enemy.hp, roundsTaken: round, escaped: true },
+        },
+        enemyTurn: false,
+      };
+    }
+
     default:
       return { state: { ...state, round, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
   }
+}
+
+/** v0.6.0: 状态效果应用辅助 — 攻击命中时按流派概率触发状态 */
+function applyStatusOnHit(
+  attackerPath: string,
+  targetStatuses: CombatStatus[],
+  attackerDaoMarks: number,
+): CombatStatus[] {
+  const config = PATH_STATUS_MAP[attackerPath];
+  if (!config) return targetStatuses;
+  const chance = config.baseChance + attackerDaoMarks * 0.0005; // 每200道痕+0.1概率
+  if (Math.random() < Math.min(0.5, chance)) {
+    const duration = 2 + Math.floor(attackerDaoMarks / 500); // 每500道痕+1回合
+    return [...targetStatuses, { type: config.type, remainingTurns: Math.min(6, duration), potency: config.basePotency }];
+  }
+  return targetStatuses;
 }
 
 /** 敌人回合内部逻辑 (v1.2: 移除oneshot参数，统一走正常伤害计算) */
@@ -264,6 +228,19 @@ function executeEnemyTurnInternal(
   log: CombatLogEntry[],
   round: number,
 ): DuelState {
+  // v0.6.0: AI行为模式
+  const aiMode = (state.enemy as any).aiMode || 'aggressive';
+  const enemyHpPct = state.enemy.hp / state.enemy.maxHp;
+  // coward模式：低血量有逃跑概率
+  if (aiMode === 'coward' && enemyHpPct < 0.4 && Math.random() < 0.5) {
+    log.push({ round, actor: 'enemy', action: '逃跑', hit: false, message: `${state.enemy.name}仓皇逃窜！` });
+    return { ...state, round, log, phase: 'ended', result: { winner: 'player', playerFinalHp: state.player.hp, enemyFinalHp: state.enemy.hp, roundsTaken: round, escaped: true } };
+  }
+  // defensive模式：HP<70%时优先防御（跳过攻击回合），但每3回合至少攻击1次
+  if (aiMode === 'defensive' && enemyHpPct < 0.7 && round % 3 !== 0) {
+    log.push({ round, actor: 'enemy', action: '防御', message: `${state.enemy.name}转入防御姿态` });
+    return { ...state, round, log, player: state.player, phase: 'player_turn' };
+  }
   const enemyMove = state.enemy.moves.length > 0
     ? state.enemy.moves[Math.floor(Math.random() * state.enemy.moves.length)]
     : null;

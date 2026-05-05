@@ -43,7 +43,7 @@ export function normalizeKillMove(raw: Record<string, any>, id: string): KillMov
     level: raw.level || 1,
     baseCost: raw.baseCost ?? (raw.level || 1) * 10,
     multiplier: raw.multiplier ?? 1.5 + (raw.level || 1) * 0.3,
-    cooldown: raw.cooldown ?? Math.max(1, 8 - (raw.level || 1)),
+    cooldown: raw.cooldown ?? Math.max(0, 4 - Math.floor((raw.level || 1) / 2)),
     description: raw.description || raw.effect || '',
 
     // B2.0 新增字段 — 安全默认值

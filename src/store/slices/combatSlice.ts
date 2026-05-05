@@ -5,6 +5,7 @@
 import type { DuelAction, DuelEnemy, DuelMove, DuelState } from '../../types';
 import { initDuel, executePlayerTurn, executeEnemyTurn } from '../../engine/combat-engine';
 import killerMovesRaw from '../../canon/killer-moves.json';
+import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
 /** 战斗历史记录 — P2-P9-3 */
 export interface BattleRecord {
@@ -157,6 +158,8 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
           special: state.result.special,
         });
       }
+      // P4: 战斗结算时触发掷骰动画
+      try { triggerDiceRoll({ label: `战果`, value: state.result.winner === 'player' ? 100 : (state.result.winner === 'enemy' ? 0 : 50), max: 100 }); } catch {}
     }
     // ═══ GSAP: 短暂进入 resolution 阶段触发结算动画 ═══
     const current = get().duelState as DuelState | null;

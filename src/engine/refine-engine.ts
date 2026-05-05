@@ -6,6 +6,9 @@ import { useStore } from '../store';
 import { hasEffectTag } from './killmove-bridge';
 import { hasRealmRefineBonus } from './secret-realm-detector';
 import type { KillMove } from '../types';
+import guDatabaseRaw from '../canon/gu-database.json';
+
+const guDatabase = guDatabaseRaw as Record<string, any>;
 
 // ═══ B1.1: 类型定义 ═══
 
@@ -67,13 +70,64 @@ const TIER_TIME_TABLE: Record<number, number> = {
 // ═══ 蛊材解析 ═══
 
 /**
- * 解析蛊材字符串为材料列表
+ * P4: 解析蛊材 — 优先读取 refineCost 结构化字段，fallback 旧 refineMaterials 字符串
  */
+function parseMaterialsFromInput(input: RefineInput): string[] {
+  return input.refineMaterials
+    ? input.refineMaterials
+        .split(/[\+\、,，]/)
+        .map(s => s.trim())
+        .filter(s => s.length > 0 && !s.startsWith('不可') && !s.startsWith('不需') && !s.includes('不可凡蛊'))
+    : [];
+}
+
+/** 旧 parseMaterials 改名保持兼容 */
 function parseMaterials(materialsStr: string): string[] {
   return materialsStr
     .split(/[\+\、,，]/)
     .map(s => s.trim())
     .filter(s => s.length > 0 && !s.startsWith('不可') && !s.startsWith('不需') && !s.includes('不可凡蛊'));
+}
+
+/**
+ * P4-B1: 模糊匹配材料检查 — 支持通用-具体混合匹配
+ */
+function checkMaterialsWithFallback(
+  requiredMaterials: string[],
+  materialBag: Record<string, number>,
+  guPath: string
+): { ok: boolean; missing: string[] } {
+  const missing: string[] = [];
+  // 创建可消耗的材料副本
+  const available = { ...materialBag };
+
+  for (const mat of requiredMaterials) {
+    // Step 1: 精确匹配
+    if ((available[mat] || 0) >= 1) {
+      available[mat] = (available[mat] || 0) - 1;
+      continue;
+    }
+    // Step 2: 流派泛型匹配（如配方要「炎道蛊材」→ materialBag中任一炎道蛊材）
+    if (mat.endsWith('蛊材')) {
+      const pathPrefix = mat.replace('蛊材', '');
+      const genericKey = Object.keys(available).find(k => k.endsWith('蛊材') && (k.startsWith(pathPrefix) || k === mat));
+      if (genericKey && available[genericKey] >= 1) {
+        available[genericKey] -= 1;
+        continue;
+      }
+    }
+    // Step 3: 等级泛型匹配（如配方要「精品蛊材」→materialBag中任一精品蛊材）
+    const gradeMatch = mat.match(/^(普通|精品|稀有|仙材)蛊材$/);
+    if (gradeMatch) {
+      const genericKey = Object.keys(available).find(k => k.startsWith(gradeMatch[1]) && k.endsWith('蛊材'));
+      if (genericKey && available[genericKey] >= 1) {
+        available[genericKey] -= 1;
+        continue;
+      }
+    }
+    missing.push(mat);
+  }
+  return { ok: missing.length === 0, missing };
 }
 
 /**
@@ -231,8 +285,20 @@ function calculateBacklash(
 
 export function refineGu(input: RefineInput): RefineResult {
   const store = useStore.getState();
-  const required = parseMaterials(input.refineMaterials);
-  const materials = required.length > 0 ? required : [`${input.tier}转通用蛊材`];
+  
+  // P4: 优先读取 gu-database.json 中的 refineCost 结构化字段
+  const guSpec = (guDatabase as any)[input.name] || {};
+  const cost = guSpec.refineCost;
+  let materials: string[];
+  if (cost) {
+    materials = [
+      ...Object.entries(cost.generic || {} as Record<string, number>).flatMap(([k, v]) => Array(v as number).fill(k)),
+      ...Object.entries(cost.specific || {} as Record<string, number>).flatMap(([k, v]) => Array(v as number).fill(k)),
+    ];
+  } else {
+    const required = parseMaterialsFromInput(input);
+    materials = required.length > 0 ? required : [`${input.tier}转通用蛊材`];
+  }
 
   // 检查空窍容量
   const capacity = (store as any).getApertureCapacity?.() || 20;
@@ -241,19 +307,19 @@ export function refineGu(input: RefineInput): RefineResult {
     return { success: false, message: '空窍已满，无法再携带更多蛊虫', costMaterials: [], costCurrency: 0 };
   }
 
-  // 检查蛊材
-  const materialCheck = checkMaterials(materials, (store as any).materialBag || {});
-  if (!materialCheck.ok) {
+  // 检查蛊材 — P4: 使用模糊匹配
+  const matCheck = checkMaterialsWithFallback(materials, (store as any).materialBag || {}, input.path);
+  if (!matCheck.ok) {
     return {
       success: false,
-      message: `蛊材不足，缺少：${materialCheck.missing.join('、')}`,
+      message: `蛊材不足，缺少：${matCheck.missing.join('、')}`,
       costMaterials: [],
       costCurrency: 0,
     };
   }
 
   // ═══ B1.1: 统一成本公式（对齐 economy.json） ═══
-  const currencyCost = calculateMaterialCost(input.tier);
+  const currencyCost = cost ? cost.currency : calculateMaterialCost(input.tier);
   if (!(store as any).spendCurrency?.(currencyCost)) {
     return {
       success: false,
@@ -463,6 +529,98 @@ export function disassembleGu(input: DisassembleInput): DisassembleResult {
   };
 }
 
+/**
+ * P4: 凡蛊逐转升炼 — 将1-4转凡蛊升炼至下一转（上限5转）
+ * 消耗 ascendCost 材料 + 元石，成功→tier+1，失败→饥饿+1（无反噬HP扣减）
+ */
+export interface AscendGuInput {
+  guId: string;
+}
+
+export function ascendGu(input: AscendGuInput): RefineResult {
+  const store = useStore.getState() as any;
+  const inventory: any[] = store.inventory || [];
+  const gu = inventory.find((g: any) => g.id === input.guId);
+  if (!gu) return { success: false, message: '蛊虫不存在', costMaterials: [], costCurrency: 0 };
+  if (gu.tier >= 5) return { success: false, message: '凡蛊升炼上限为5转，5转→仙蛊请走 ascendImmortalGu 通道', costMaterials: [], costCurrency: 0 };
+  if (gu.currentState === 'dead') return { success: false, message: '已死亡的蛊虫无法升炼', costMaterials: [], costCurrency: 0 };
+  if (gu.bonded) return { success: false, message: '本命蛊不可升炼', costMaterials: [], costCurrency: 0 };
+
+  // 读取蛊虫 ascendCost
+  const guSpec = (guDatabase as any)[gu.name] || {};
+  const ascendCost = (guDatabase as any)[gu.name]?.ascendCost;
+  if (ascendCost) {
+    guSpec.ascendCost = ascendCost;
+  } else {
+    return { success: false, message: '该蛊虫暂无升炼配方数据', costMaterials: [], costCurrency: 0 };
+  }
+
+  const cost = guSpec.ascendCost;
+  const materials: string[] = [
+    ...Object.entries(cost.generic || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
+    ...Object.entries(cost.specific || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
+  ];
+
+  // 材料检查
+  const matCheck = checkMaterialsWithFallback(materials, store.materialBag || {} as Record<string, number>, gu.path);
+  if (!matCheck.ok) {
+    return { success: false, message: `蛊材不足，缺少：${matCheck.missing.join('、')}`, costMaterials: [], costCurrency: 0 };
+  }
+
+  // 元石检查
+  if (!store.spendCurrency?.(cost.currency)) {
+    return { success: false, message: `元石不足，需要 ${cost.currency} 元石`, costMaterials: [], costCurrency: 0 };
+  }
+
+  // 消耗材料
+  for (const mat of materials) {
+    store.removeMaterial?.(mat, 1);
+  }
+
+  // 成功率
+  const daoMarks = store.pathBuild?.dao_marks || {} as Record<string, number>;
+  const talents = store.selectedTalents || [];
+  const hasTalent = talents.some((t: any) => t.id === 'talent_hundred_refinements');
+  const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
+  let rate = Math.max(0.1, 1 - (cost.difficulty || 0.5) * 0.1);
+  rate += (daoMarks['炼道'] || 0) * 0.03;
+  if (hasTalent) rate += 0.15;
+  if (hasRefineSavant) rate += 0.20;
+  rate = Math.min(0.95, rate);
+
+  if (Math.random() < rate) {
+    // 成功 — 升转
+    const newTier = gu.tier + 1;
+    store.updateGuState?.(gu.id, 'optimal');
+    // 直接用 set 更新 inventory
+    const newInventory = inventory.map((g: any) =>
+      g.id === input.guId ? { ...g, tier: newTier, currentState: 'optimal' } : g
+    );
+    const cur = store.refinedGuCount || 0;
+    store.refinedGuCount = cur + 1;
+    // Trigger animation
+    try { const { playGuEvolutionAnimation } = require('../../hooks/useAnimationBridge'); playGuEvolutionAnimation?.(gu.name, gu.tier, newTier); } catch {}
+    return {
+      success: true,
+      message: `升炼成功！「${gu.name}」晋升为${newTier}转蛊虫（成功率${Math.round(rate * 100)}%）`,
+      costMaterials: materials,
+      costCurrency: cost.currency,
+      refineTurns: Math.max(1, Math.round((cost.turns || 2) * 0.7)),
+    };
+  }
+
+  // 失败 — 蛊虫饥饿+1
+  store.feedGuHunger?.(gu.id, gu.feedType);
+  store.updateGuState?.(gu.id, gu.currentState === 'optimal' ? 'hungry' : (gu.currentState === 'hungry' ? 'injured' : gu.currentState));
+  return {
+    success: false,
+    message: `升炼失败……蛊材与元石损耗殆尽（成功率${Math.round(rate * 100)}%），「${gu.name}」进入饥饿状态`,
+    costMaterials: materials,
+    costCurrency: cost.currency,
+    refineTurns: Math.max(1, Math.round((cost.turns || 2) * 0.7)),
+  };
+}
+
 /** B1.8: 仙蛊升炼 — 凡蛊吞噬精粹+仙材进化（≤5%概率） */
 export function ascendImmortalGu(input: AscendInput): AscendResult {
   const store = useStore.getState() as any;
@@ -474,22 +632,22 @@ export function ascendImmortalGu(input: AscendInput): AscendResult {
 
   // 检查仙材
   const matBag = store.materialBag || {};
-  const hasXiancai = immortalMaterials.some((m: string) => (matBag[m] || 0) >= 1);
-  if (!hasXiancai) return { success: false, message: `仙材不足（需：${immortalMaterials.join('或')}×1）` };
+  const hasXiancai = input.immortalMaterials.some((m: string) => (matBag[m] || 0) >= 1);
+  if (!hasXiancai) return { success: false, message: `仙材不足（需：${input.immortalMaterials.join('或')}×1）` };
 
   // 检查炼道道痕
   const daoMarks = store.pathBuild?.dao_marks || {};
   const lianDao = daoMarks['炼道'] || 0;
   if (lianDao < 20) return { success: false, message: `炼道道痕不足（${lianDao}/20），无法驾驭仙蛊升炼` };
 
-  // 成功率：3% + 炼道×0.1%，上限5%
-  const rate = Math.min(0.05, 0.03 + lianDao * 0.001);
+  // 成功率：基础1% + 炼道×0.05%(每100道痕+5%)，上限8%
+  const rate = Math.max(0.01, Math.min(0.08, 0.01 + lianDao * 0.0005));
   const talents = (store as any).selectedTalents || [];
   const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant');
   const finalRate = hasRefineSavant ? Math.min(0.08, rate + 0.02) : rate;
 
   // 消耗仙材
-  const consumedMat = immortalMaterials.find((m: string) => (matBag[m] || 0) >= 1) || immortalMaterials[0];
+  const consumedMat = input.immortalMaterials.find((m: string) => (matBag[m] || 0) >= 1) || input.immortalMaterials[0];
   store.removeMaterial?.(consumedMat, 1);
 
   if (Math.random() < finalRate) {

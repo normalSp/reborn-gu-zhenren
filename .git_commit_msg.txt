@@ -1,0 +1,28 @@
+v0.6.0 修复: 力道蛊虫真元消耗 + 蛊虫选取重掷次数等Bug修复
+
+## Bug修复
+
+### Bug 1: 力道蛊虫不消耗真元 (gu-database.json)
+- 根因: 10只力道蛊虫的usageFailure字段未提及"真元不足"，AI据此推断力道蛊虫不需要真元驱动
+- 修复: 为10只力道蛊虫统一补充真元消耗前置条件
+  - A组(6只已有usageFailure): 力气蛊/全力以赴蛊/熊力蛊/蛮力天牛蛊/苦力蛊/横冲直撞蛊 - 前置追加"真元不足"
+  - B组(4只无usageFailure): 黑豕蛊/白豕蛊/黑鬃蛊/群力蛊 - 补充完整usageFailure字段
+- 格式: "真元不足->XX失效; 物理条件不满足->XX反噬"的双层失败模式
+
+### Bug 2: 初始蛊虫选取无刷新次数 (TimelineConfigScreen.tsx)
+- 根因: useEffect守卫 if (randomGuPool.length > 0) return 阻挡了guRerollsRemaining的重置
+- 修复: 将guRerollsRemaining重置逻辑提到守卫之前，确保每次进入gu步骤都获得3次新鲜重掷机会
+- 场景: 玩家从gu步骤返回talent步骤再前进回gu步骤时，蛊池已存在但剩余次数保持上一次耗尽的0
+
+## 其他改动
+- economy.json: 经济系统数据更新
+- encounters.json: 遭遇系统数据更新
+- fragment-recipes.json: 碎片配方数据更新
+- immortal-gu.json: 仙蛊数据更新
+- 多个engine/component文件: 逻辑优化和Bug修复
+- 多个store/slice文件: 状态管理优化
+
+## 测试验证
+- Vite Build: 1.17s 通过
+- Vitest: 158/158 tests 全部通过
+- Lint: 零错误

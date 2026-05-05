@@ -13,6 +13,8 @@ interface MapSlice {
   discoverLocation: (loc: MapLocation) => void;
   movePlayer: (pos: { x: number; y: number; region: string }) => void;
   revealRegion: (region: string) => void;
+  /** P2补完: 标记跨域访问（切换域时调用） */
+  markDomainVisited: (region: string) => void;
 }
 
 export const createMapSlice = (set: any, get: any): MapSlice => ({
@@ -49,5 +51,12 @@ export const createMapSlice = (set: any, get: any): MapSlice => ({
     domainsVisited: (!s.exploredRegions.includes(region) && MAJOR_DOMAINS.has(region))
       ? s.domainsVisited + 1
       : s.domainsVisited,
+  })),
+  // P2补完: 域切换时显式标记跨域访问
+  markDomainVisited: (region) => set((s: MapSlice) => ({
+    exploredRegions: s.exploredRegions.includes(region)
+      ? s.exploredRegions
+      : [...s.exploredRegions, region],
+    domainsVisited: s.domainsVisited + 1,
   })),
 });

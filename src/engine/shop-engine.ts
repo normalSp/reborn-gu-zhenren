@@ -12,6 +12,7 @@
 
 import guDatabaseRaw from '../canon/gu-database.json';
 import shopItemsRaw from '../canon/shop-items.json';
+import economyRaw from '../canon/economy.json';
 
 // ─── 分组定义 ───
 export type TierGroupId = 1 | 2 | 3 | 4 | 5;
@@ -125,14 +126,11 @@ function calcGuPrice(tier: number, rank: string, chapterName?: string): number {
   const basePrice = group?.basePrice || tier * 150;
   const rarityMult = RARITY_PRICE_MULT[rank] || 1;
   let price = Math.round(basePrice * rarityMult);
-  // 章节通胀（>=2转才应用，v1.3: 封顶3.0避免末期天价）
+  // 章节通胀（>=2转才应用，v1.3→P2补完: 统一引用 economy.json chapterPriceMultiplier 为单一真相源）
   if (chapterName && tier >= 2) {
-    const multipliers: Record<string, number> = {
-      '青茅山期':1.0,'商路求生':1.2,'南疆风云':1.5,'势力崛起':1.8,'三王山前夜':2.0,
-      '义天风云起':2.3,'巅峰对决':2.5,'天庭初现':2.7,'乱局余波':2.8,
-      '逆流而上':2.9,'宿命线索':3.0,'时间交织':3.0,'不可能突破':3.0,
-    };
-    price = Math.round(price * Math.min(3.0, multipliers[chapterName] || 1.0));
+    const chapterMultipliers = (economyRaw as any)?.chapterPriceMultiplier;
+    const multiplier = chapterMultipliers?.[chapterName] || 1.0;
+    price = Math.round(price * Math.min(2.0, multiplier));
   }
   return price;
 }
@@ -232,4 +230,125 @@ export function getMaterialShopItems(
     if (Array.isArray(available) && !available.includes(currentChapterName)) return false;
     return true;
   });
+}
+
+// ═══ P4: 残方商店 ═══
+import fragmentRecipesRaw from '../canon/fragment-recipes.json';
+
+export interface FragmentShopEntry {
+  id: string;
+  name: string;
+  type: 'refine_fragment' | 'ascend_fragment' | 'complete_recipe';
+  targetGu: string;
+  targetTier: number;
+  path: string;
+  price: number;
+  description: string;
+  isComplete: boolean;
+  difficulty: number;
+}
+
+/** 残方刷新分组 — 复用 TIER_GROUPS 定价模式 */
+const FRAGMENT_GROUPS: Record<number, { label: string; poolSize: number; baseRefreshCost: number; completeRecipeChance: number }> = {
+  1: { label: '一转残方', poolSize: 3, baseRefreshCost: 50, completeRecipeChance: 0.05 },
+  2: { label: '二转残方', poolSize: 3, baseRefreshCost: 100, completeRecipeChance: 0.04 },
+  3: { label: '三转残方', poolSize: 2, baseRefreshCost: 200, completeRecipeChance: 0.03 },
+  4: { label: '四转残方', poolSize: 2, baseRefreshCost: 400, completeRecipeChance: 0.02 },
+  5: { label: '五转残方', poolSize: 1, baseRefreshCost: 800, completeRecipeChance: 0.01 },
+};
+
+/** 残方数据加载 */
+function loadFragmentPool(): Array<{ id: string; name: string; type: string; targetGu: string; targetTier: number; requiredMaterials: string[]; difficulty: number; description: string }> {
+  const data = fragmentRecipesRaw as any;
+  const fragments = data?.fragments || [];
+  return fragments.map((f: any) => ({
+    id: f.id,
+    name: f.name,
+    type: f.type || 'refine',
+    targetGu: f.targetGu,
+    targetTier: f.targetTier,
+    requiredMaterials: f.requiredMaterials || [],
+    difficulty: f.completionDifficulty || 0.5,
+    description: f.description || '',
+  }));
+}
+
+/** 从 gu-database.json 按转数获取可选蛊虫列表（用于生成完整蛊方） */
+function getGuNamesByTier(tier: number): string[] {
+  const db = guDatabaseRaw as Record<string, any>;
+  return Object.entries(db)
+    .filter(([k, v]) => !k.startsWith('_') && v && typeof v === 'object' && (v as any).tier === tier && !(v as any).isImmortalGu)
+    .map(([k]) => k);
+}
+
+/**
+ * P4: 生成一组残方商品
+ * 规则:
+ *  - 从 fragment-recipes.json 已定义的残方池中随机抽取
+ *  - 低概率产出完整蛊方（completeRecipeChance 随转数递减）
+ *  - 完整蛊方从 gu-database.json 中随机选择同转数蛊虫生成
+ */
+export function generateFragmentShopGroup(
+  tierGroup: number,
+  playerRealmTier: number,
+  randomFn: () => number = Math.random
+): FragmentShopEntry[] {
+  const group = FRAGMENT_GROUPS[tierGroup];
+  if (!group) return [];
+  if (tierGroup > playerRealmTier + 1) return [];
+
+  const allFragments = loadFragmentPool();
+  // 按转数过滤残方
+  const tierFragments = allFragments.filter(f => f.targetTier === tierGroup);
+  const results: FragmentShopEntry[] = [];
+  const pool = [...tierFragments];
+
+  // 随机抽取残方
+  for (let i = 0; i < group.poolSize && pool.length > 0; i++) {
+    const idx = Math.floor(randomFn() * pool.length);
+    const f = pool.splice(idx, 1)[0];
+    // 完整蛊方定价为残方的 3x
+    const basePrice = group.baseRefreshCost * 2;
+    results.push({
+      id: f.id,
+      name: f.name,
+      type: (f.type === 'ascend' ? 'ascend_fragment' : 'refine_fragment') as FragmentShopEntry['type'],
+      targetGu: f.targetGu,
+      targetTier: f.targetTier,
+      path: '',
+      price: basePrice,
+      description: f.description,
+      isComplete: false,
+      difficulty: f.difficulty,
+    });
+  }
+
+  // 低概率产出完整蛊方
+  if (randomFn() < group.completeRecipeChance) {
+    const guNames = getGuNamesByTier(tierGroup);
+    if (guNames.length > 0) {
+      const guName = guNames[Math.floor(randomFn() * guNames.length)];
+      const guSpec = (guDatabaseRaw as Record<string, any>)[guName];
+      const completePrice = group.baseRefreshCost * 5; // 完整蛊方 5x残方价
+      results.push({
+        id: `recipe_complete_${guName}_${tierGroup}`,
+        name: `完整·${guName}炼制方`,
+        type: 'complete_recipe',
+        targetGu: guName,
+        targetTier: tierGroup,
+        path: guSpec?.path || '',
+        price: completePrice,
+        description: `完整记录了${guName}的全部炼制法门——可直接用于炼蛊`,
+        isComplete: true,
+        difficulty: 0,
+      });
+    }
+  }
+
+  return results;
+}
+
+/** 获取残方刷新费用 */
+export function getFragmentRefreshCost(tierGroup: number): number {
+  return FRAGMENT_GROUPS[tierGroup]?.baseRefreshCost || 100;
 }

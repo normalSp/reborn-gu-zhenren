@@ -6,12 +6,26 @@
  */
 import type { NarrativeCombatTrigger, CombatConstraint, DuelEnemy, DuelMove } from '../types';
 import constraintsRaw from '../canon/combat-constraints.json';
+import chaptersRaw from '../canon/chapters.json';
 
 const constraints = constraintsRaw as any;
 const scenes: any[] = constraints.scenes || [];
 
-/** 已知的章节ID集合 */
-const knownChapterIds = new Set<string>(['qingmaoshan', 'shanglu_qiusheng', 'nanjiang_chutan']);
+/** CR7修复: 从 chapters.json 动态读取全部30章ID，替换硬编码3章 */
+const knownChapterIds = (() => {
+  const ids = new Set<string>();
+  try {
+    const chaptersData = chaptersRaw as any;
+    const domains = chaptersData.domains || {};
+    for (const domainChapters of Object.values(domains) as any[]) {
+      if (!Array.isArray(domainChapters)) continue;
+      for (const ch of domainChapters) {
+        if (ch?.id) ids.add(ch.id);
+      }
+    }
+  } catch { /* fallback to empty set — no combat routing until chapters load */ }
+  return ids;
+})();
 
 /**
  * 检测叙事文本中是否包含战斗触发关键词

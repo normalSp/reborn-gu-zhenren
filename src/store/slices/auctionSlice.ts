@@ -55,7 +55,7 @@ export const createAuctionSlice = (set: any, get: any): AuctionSlice => ({
     // 日志埋点
     const logStore = get() as any;
     if (typeof logStore.addGameLog === 'function') {
-      logStore.addGameLog('economy', `宝皇天拍卖会开启！本次共 ${items.length} 件仙蛊拍卖`, {
+      logStore.addGameLog('economy', `宝黄天拍卖会开启！本次共 ${items.length} 件仙蛊拍卖`, {
         itemCount: items.length, turn,
       });
     }
@@ -100,7 +100,7 @@ export const createAuctionSlice = (set: any, get: any): AuctionSlice => ({
         active: true,
         acquiredAt: {
           turn: fullStore.turn || 1,
-          narrative: `宝皇天拍卖会——以 ${bidAmount} 仙元石拍得「${item.name}」`,
+          narrative: `宝黄天拍卖会——以 ${bidAmount} 仙元石拍得「${item.name}」`,
         },
         isImmortalGu: true,
       } as any;

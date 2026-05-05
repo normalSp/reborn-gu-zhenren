@@ -228,8 +228,13 @@ export interface MortalAperture {
 }
 
 // ─── 仙窍（6转+蛊仙） ───
+/** 福地等级 — 由升仙积累评定确定 */
+export type ImmortalApertureGrade = '小福地' | '中等福地' | '上等福地';
+
 export interface ImmortalAperture {
   type: '福地' | '洞天';
+  /** 福地等级 — P4新增，决定面积和流速的基础区间 */
+  grade: ImmortalApertureGrade;
   area_mu: number;
   time_flow_ratio: number;
   resource_nodes: ResourceNode[];
@@ -240,9 +245,28 @@ export interface ImmortalAperture {
 
 export interface ResourceNode {
   id: string;
+  /** 产出类型 — 蛊材名或资源类别 */
   type: string;
+  /** 资源名称（显示用） */
+  name: string;
+  /** 每回合基础产出量 */
   output_rate: number;
+  /** 质量等级 0-100 */
   quality: number;
+  /** 产出材料等级 */
+  grade: '普通' | '精品' | '稀有' | '仙材';
+  /** 节点是否启用 */
+  active: boolean;
+}
+
+/** P4: 仙窍独立存储 — 无限容量，升仙后所有蛊虫/蛊材从空窍迁移至此 */
+export interface ApertureStorage {
+  /** 仙窍中存放的蛊虫（无限容量） */
+  gu: GuInstance[];
+  /** 仙窍中存放的蛊材（无限容量） */
+  materials: Record<string, number>;
+  /** 仙窍中存放的仙材（无限容量） */
+  immortalMaterials: Record<string, number>;
 }
 
 // ─── 因果 ───
@@ -427,11 +451,19 @@ export interface CombatLogEntry {
   message: string;
 }
 
+/** v0.6.0: 决斗模式 */
+export type DuelMode = 'lethal' | 'training';
+
+/** v0.6.0: 敌方AI行为模式 */
+export type EnemyAIMode = 'aggressive' | 'balanced' | 'defensive' | 'coward';
+
 /** 决斗核心状态 */
 export interface DuelState {
   duelId: string;
   phase: DuelPhase;
   round: number;
+  /** v0.6.0: 决斗模式 — lethal=致命, training=训练(KO非致命) */
+  mode: DuelMode;
   player: {
     name: string;
     realm: string;
@@ -446,11 +478,30 @@ export interface DuelState {
     evasion: number;
     gu: { name: string; path: string; tier: number }[];
     moves: DuelMove[];
+    /** v0.6.0: 玩家身上的状态效果 */
+    statuses: import('../engine/combat-formulas').CombatStatus[];
   };
-  enemy: DuelEnemy;
+  enemy: DuelEnemy & {
+    /** v0.6.0: 敌方身上的状态效果 */
+    statuses: import('../engine/combat-formulas').CombatStatus[];
+    /** v0.6.0: 敌方AI行为模式 */
+    aiMode: EnemyAIMode;
+  };
   result: DuelResult | null;
   log: CombatLogEntry[];
   startedAt: number;
+}
+
+// ─── v0.6.0: 小队/势力预留接口（v0.7.0填充）───
+export interface SquadMember {
+  id: string; name: string; npcId?: string;
+  path: string; realm: number;
+  loyalty: number;
+  personality: 'loyal' | 'cunning' | 'reckless' | 'cautious' | 'selfless';
+  alive: boolean;
+}
+export interface PartyState {
+  members: SquadMember[]; maxSize: number; formation: string | null;
 }
 
 // ─── P2-4b: 叙事战斗触发 ───

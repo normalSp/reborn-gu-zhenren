@@ -4,7 +4,7 @@
     "source": "蛊真人原著 + 知乎设定整理 + 百度百科",
     "principle": "仙蛊=六转及以上，不可常规炼制，需仙蛊方+凡蛊升炼或天地生成",
     "note": "仙蛊消耗仙元催动，凡蛊消耗真元催动。仙蛊有唯一性（同一种仙蛊天地间只有一只）",
-    "total": 21
+    "total": 36
   },
   "定仙游": {
     "tier": 6, "path": "宇道", "rank": "legendary",
@@ -231,5 +231,117 @@
     "usageCost": "仙元",
     "limitations": "高防御仙蛊可挡部分伤害",
     "failureMode": "目标有反伤类仙蛊→箭矢反弹"
+  },
+  "焚天炎蛊": {
+    "tier": 6, "path": "炎道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "释放焚天烈焰，大范围灼烧敌方福地/洞天，火道杀招核心",
+    "usageCost": "仙元",
+    "limitations": "水道仙蛊可克制；使用后周围环境持续燃烧",
+    "failureMode": "火焰失控→自灼仙窍"
+  },
+  "寒魄冰蛊": {
+    "tier": 6, "path": "冰道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "冻结目标仙窍时间流速，降低敌方道痕活性",
+    "usageCost": "仙元",
+    "limitations": "炎道仙蛊可克制；持续时间受道痕差距影响",
+    "failureMode": "寒气反噬→自身道痕凝固"
+  },
+  "裂地蛊": {
+    "tier": 6, "path": "土道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "撕裂大地，制造深渊裂缝吞噬敌方防御阵地",
+    "usageCost": "仙元",
+    "limitations": "空中目标无效",
+    "failureMode": "地脉反震→自身仙窍震荡"
+  },
+  "天风翼蛊": {
+    "tier": 6, "path": "风道", "rank": "rare",
+    "composition": "凡蛊升炼",
+    "effect": "赋予蛊仙飞翔能力，大幅提升移动速度和闪避",
+    "usageCost": "仙元",
+    "limitations": "无风/真空区域失效",
+    "failureMode": "强风乱流→方向失控"
+  },
+  "万木逢春蛊": {
+    "tier": 6, "path": "木道", "rank": "rare",
+    "composition": "凡蛊升炼",
+    "effect": "催生仙窍内灵植，修复受损资源节点，疗愈草木类道痕损伤",
+    "usageCost": "仙元",
+    "limitations": "对非草木类无效",
+    "failureMode": "催生过度→仙窍土地养分枯竭"
+  },
+  "雷罚天降蛊": {
+    "tier": 7, "path": "雷道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "召唤九天雷罚轰击目标，雷道杀招增幅器",
+    "usageCost": "仙元",
+    "limitations": "需雷暴天气效率最高；绝缘类仙蛊可减伤",
+    "failureMode": "雷罚偏转→误伤友方"
+  },
+  "圣光普照蛊": {
+    "tier": 6, "path": "光道", "rank": "rare",
+    "composition": "凡蛊升炼",
+    "effect": "释放圣光净化诅咒和负面道痕，驱散暗道迷雾",
+    "usageCost": "仙元",
+    "limitations": "暗道仙蛊可将光偏移",
+    "failureMode": "光照过强→暴露自身位置"
+  },
+  "暗渊吞噬蛊": {
+    "tier": 7, "path": "暗道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "制造黑暗深渊吞噬目标感官和道痕感知",
+    "usageCost": "仙元",
+    "limitations": "光道仙蛊可驱散",
+    "failureMode": "暗渊失控→吞没自身部分道痕"
+  },
+  "金甲神盾蛊": {
+    "tier": 6, "path": "金道", "rank": "rare",
+    "composition": "凡蛊升炼",
+    "effect": "凝聚金道仙元形成绝对防御护盾，可抵御多数杀招",
+    "usageCost": "仙元",
+    "limitations": "持续时间短；木道杀招可渗透",
+    "failureMode": "护盾碎裂→反噬双倍伤害"
+  },
+  "力道真罡蛊": {
+    "tier": 6, "path": "力道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "极大强化肉身力量，拳碎山河，力道杀招基础增幅",
+    "usageCost": "仙元+体力",
+    "limitations": "使用后体力透支",
+    "failureMode": "力量失控→经脉寸断"
+  },
+  "迷魂夺魄蛊": {
+    "tier": 7, "path": "魂道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "直接攻击目标魂魄，可抽取/撕裂敌方魂体",
+    "usageCost": "仙元+魂力",
+    "limitations": "魂道防御仙蛊可抵抗",
+    "failureMode": "魂魄反噬→自身魂体受损"
+  },
+  "血海滔天蛊": {
+    "tier": 7, "path": "血道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "引爆目标体内血液，大范围血道攻击，血道杀招增幅",
+    "usageCost": "仙元+自身精血",
+    "limitations": "需消耗自身精血；对无血目标无效",
+    "failureMode": "精血消耗过多→境界跌落风险"
+  },
+  "虚空穿梭蛊": {
+    "tier": 7, "path": "宇道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "折叠空间进行短距瞬移，战斗中极难捕捉",
+    "usageCost": "仙元",
+    "limitations": "长距离不如定仙游；宇道阵法可封锁",
+    "failureMode": "空间折叠失败→卡在空间夹缝"
+  },
+  "逆光回溯蛊": {
+    "tier": 7, "path": "宙道", "rank": "epic",
+    "composition": "凡蛊升炼",
+    "effect": "短时间回溯自身状态（伤愈/位置复位），非完全重生，仅回溯10息内",
+    "usageCost": "巨额仙元",
+    "limitations": "每战仅可用一次",
+    "failureMode": "回溯中断→时间反噬→加速衰老"
   }
 }

@@ -100,6 +100,10 @@ interface TimelineSlice {
   startingGuList: Array<{ name: string; tier: number; path: string; rarity: string; description: string }>;
   configStep: 'talent' | 'faction' | 'gu' | 'lifebound' | 'aperture' | 'killermove' | 'resource' | 'complete';
 
+  // P1修复: 蛊仙主修/辅修流派
+  primaryPath: string;
+  secondaryPath: string;
+
   // v1.6: 新增字段
   factionId: string;
   factionBonus: FactionSelection['bonus'] | null;
@@ -120,6 +124,9 @@ interface TimelineSlice {
   selectLifeboundGu: (gu: LifeboundGuSelection) => void;
   allocateAperturePoints: (config: Partial<ApertureConfig>) => void;
   setStartingResources: (yuanStone: number, guList: TimelineSlice['startingGuList']) => void;
+  // P1: 主修/辅修流派选择
+  setPrimaryPath: (path: string) => void;
+  setSecondaryPath: (path: string) => void;
   
   // v1.6: 新增 actions
   selectFaction: (selection: FactionSelection) => void;
@@ -149,7 +156,7 @@ const initialState = {
   apertureRemainingPoints: 0,
   startingYuanStone: 0,
   startingGuList: [] as TimelineSlice['startingGuList'],
-  configStep: 'talent' as const,
+  configStep: 'faction' as const,
   // v1.6: 新增
   factionId: '',
   factionBonus: null as FactionSelection['bonus'] | null,
@@ -157,8 +164,11 @@ const initialState = {
   randomGuPool: [] as GuSelection[],
   selectedGuList: [] as GuSelection[],
   guPoolSeed: 0,
-  guRerollsRemaining: 0,
+  guRerollsRemaining: 3,
   selectedKillerMoves: [] as KillerMoveSelection[],
+  // P1: 流派选择
+  primaryPath: '',
+  secondaryPath: '',
   killerMovePool: [] as KillerMoveSelection[],
 };
 
@@ -175,7 +185,7 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
       selectedNodeId: nodeId,
       selectedNode: node,
       selectedDomain: node.allowedDomains.length === 1 ? node.allowedDomains[0] : '',
-      configStep: 'talent',
+      configStep: 'faction',
       timelineTalents: [],
       lifeboundGu: null,
       apertureConfig: null,
@@ -187,9 +197,11 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
       randomGuPool: [],
       selectedGuList: [],
       guPoolSeed: 0,
-      guRerollsRemaining: 0,
+      guRerollsRemaining: 3,
       selectedKillerMoves: [],
       killerMovePool: [],
+      primaryPath: '',
+      secondaryPath: '',
     });
   },
 
@@ -206,6 +218,8 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
     apertureConfig: { ...(s.apertureConfig || { areaMu: 100, resourceNodes: 1, timeFlowRatio: 1.0, defenseLevel: 0 }), ...config },
   })),
   setStartingResources: (yuanStone, guList) => set({ startingYuanStone: yuanStone, startingGuList: guList }),
+  setPrimaryPath: (path) => set({ primaryPath: path, secondaryPath: '' }),
+  setSecondaryPath: (path) => set((s: TimelineSlice) => ({ secondaryPath: s.secondaryPath === path ? '' : path })),
 
   // v1.6: 新 actions
   selectFaction: (selection) => set({
@@ -225,10 +239,17 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
     selectedGuList: s.selectedGuList.filter(g => g.name !== guName),
   })),
   rerollGuPool: (pool, seed) => set({ randomGuPool: pool, guPoolSeed: seed, guRerollsRemaining: Math.max(0, (get() as TimelineSlice).guRerollsRemaining - 1) }),
-  selectKillerMove: (move) => set((s: TimelineSlice) => ({
-    selectedKillerMoves: s.selectedKillerMoves.length < 2
-      ? [...s.selectedKillerMoves, move] : s.selectedKillerMoves,
-  })),
+  selectKillerMove: (move) => set((s: TimelineSlice) => {
+    const exists = s.selectedKillerMoves.some(m => m.name === move.name);
+    if (exists) {
+      // toggle: 已选则取消
+      return { selectedKillerMoves: s.selectedKillerMoves.filter(m => m.name !== move.name) };
+    }
+    if (s.selectedKillerMoves.length >= 2) {
+      return s; // 已达上限
+    }
+    return { selectedKillerMoves: [...s.selectedKillerMoves, move] };
+  }),
 
   getTimelineConfig: () => {
     const s = get() as TimelineSlice;
@@ -239,6 +260,7 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
       factionId: s.factionId, factionBonus: s.factionBonus,
       guaranteedGu: s.guaranteedGu, selectedGuList: s.selectedGuList,
       selectedKillerMoves: s.selectedKillerMoves,
+      primaryPath: s.primaryPath, secondaryPath: s.secondaryPath,
     };
   },
 

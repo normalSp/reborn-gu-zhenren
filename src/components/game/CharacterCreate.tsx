@@ -1,9 +1,13 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useStore } from '../../store';
 import { INITIAL_TALENTS, TIER_COLORS, TIER_LABELS, TALENT_COST } from '../../data/talents';
 import { P4_TALENTS, P4_TALENT_COST, getTalentsByCategory } from '../../data/talents-p4';
 import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
+import guDbRaw from '../../canon/gu-database.json';
+import { computePathLevel } from '../../engine/path-progression';
 import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
+
+const GU_DB = guDbRaw as Record<string, any>;
 
 interface CharacterCreateProps {
   onConfirm: () => void;
@@ -86,21 +90,31 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
   }, [timelineNode]);
 
   // ═══ v1.5: 时间线起点预填充P4已在TimelineConfig选好的天赋 ═══
+  // P1修复: 直接通过 useStore 订阅 timelineTalents，避免 useMemo 依赖链断裂
+  // 原依赖 [timelineNode] 不包含 timelineTalents，变化时 memo 不重算
+  const timelineTalents = useStore(s => (s as any).timelineTalents as string[]);
   const initialTalents = useMemo(() => {
     if (!timelineNode) return [] as Talent[];
-    const state = useStore.getState() as any;
-    const talentIds: string[] = state.timelineTalents || [];
-    if (talentIds.length === 0) return [];
+    if (timelineTalents.length === 0) return [];
     const p4Pool = getTalentsByCategory(timelineNode.talentCategory);
-    return talentIds
+    return timelineTalents
       .map((id: string) => p4Pool.find(t => t.id === id))
       .filter(Boolean) as Talent[];
-  }, [timelineNode]);
+  }, [timelineNode, timelineTalents]);
 
   const [name, setName] = useState('');
   const [attributes, setAttributes] = useState(initialAttrs);
   const [selectedTalents, setSelectedTalents] = useState<Talent[]>(initialTalents);
   const [poolIndex, setPoolIndex] = useState(0);
+  const [rerollCount, setRerollCount] = useState(0);
+  const rerollRemaining = Math.max(0, 3 - rerollCount);
+
+  // ═══ useEffect 同步（App.tsx 一次性渲染全部Screen，useState 初始值在首次挂载时捕获空数组） ═══
+  useEffect(() => {
+    if (isTimelineStart && initialTalents.length > 0 && selectedTalents.length === 0) {
+      setSelectedTalents(initialTalents);
+    }
+  }, [isTimelineStart, initialTalents, selectedTalents.length]);
 
   // ─── 天赋点数计算（5B: /5 而非 /6） ───
   const isTenUltimate = attributes.资质 === 10;
@@ -222,6 +236,34 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       talentModifiers: allModifiers,
     });
     (useStore.getState() as any).setCombatStats?.(cStats);
+
+    // ═══ P4: 高转开局按流派自动解锁蛊方（用户选B方案：按流派解锁） ═══
+    if (isTimelineStart && startRealm.grand >= 4) {
+      const ALL_PATHS = ['光道','食道','智道','土道','木道','金道','力道','骨道','水道','风道','毒道','炎道','天道','人道','暗道','雷道','变化道','奴道','宇道','侦察','炼道','冰道','魂道','律道','梦道','太道','血道','音道','运道','宙道'];
+      const pathsFromTalents = new Set<string>();
+      for (const t of selectedTalents) {
+        const text = `${t.name} ${(t as any).description || ''} ${((t as any).tags || []).join(' ')}`;
+        for (const path of ALL_PATHS) {
+          if (text.includes(path)) pathsFromTalents.add(path);
+        }
+      }
+      if (pathsFromTalents.size > 0) {
+        const store = useStore.getState() as any;
+        const completed = { ...(store.flags?.completedRecipes || {}) };
+        for (const [guName, gu] of Object.entries(GU_DB)) {
+          if (gu.isImmortalGu) continue;
+          const guTier = gu.tier || 1;
+          if (guTier > startRealm.grand) continue;
+          if (!gu.path || !pathsFromTalents.has(gu.path)) continue;
+          if (!gu.refineCost && !gu.refineMaterials) continue;
+          completed[guName] = true;
+        }
+        // 通过 setState 直接写入（此时 store 刚 reset，flags 尚未写入）
+        const newFlags = { ...(store.flags || {}), completedRecipes: completed };
+        useStore.setState((s: any) => ({ ...s, flags: newFlags }));
+      }
+    }
+
     // P4: 写入时间线配置flag
     if (tNode) {
       useStore.getState().setFlag('_timeline_start', tNode.id);
@@ -273,7 +315,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
         primevalSea: {
           color: colorMap[colorName],
           colorName,
-          fillPercent: attributes.资质 * 10,
+          fillPercent: Math.min(100, 50 + attributes.资质 * 5 + (attributes.资质 >= 7 ? 10 : 0) + (attributes.资质 >= 9 ? 5 : 0)),
         },
         apertureWall: {
           state: '坚实',
@@ -361,11 +403,112 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     // ═══ P4: 清理timelineSlice配置（避免存档污染） ═══
     (useStore.getState() as any).resetTimelineConfig?.();
 
+    // ═══ P1: 蛊仙主修/辅修流派写入 pathBuild + 道痕初始化 ═══
+    // 公式设计依据：
+    //   原著：升仙时三气(天气地气人气)融合→道印加持，人气=自身积累，天气地气由人气引动
+    //   游戏阈值：大师51-200/宗师201-500/大宗师501-1500/准无上1501-5000 (path-progression.ts)
+    //   战斗倍率：1+道痕/10000 (combat-engine.ts) — 道痕数千才有显著效果
+    //   杀招进化：50/100/200/500/1500门槛 (killmove-evolution.ts)
+    //   设计原则：非线性加速增长(realm²)，6转大宗师、8转准无上，体现高转蛊仙积累差距
+    if (tNode && tc?.primaryPath) {
+      const storeRef = useStore.getState() as any;
+      const realm = startRealm.grand;
+      const allPaths = ['炎道','水道','土道','风道','剑道','毒道','木道','光道','宇道','宙道','炼道','魂道','冰道','雷道','血道','力道','智道','暗道','奴道','变化道','律道','梦道','太道','音道','运道','金道','骨道','食道'];
+      const initDaoMarks: Record<string, number> = {};
+      // 主修道痕 = realm² × 25（非线性加速，6转=900/7转=1225/8转=1600/9转=2025）
+      initDaoMarks[tc.primaryPath] = realm * realm * 25;
+      // 辅修道痕 = realm × 30（6转=180/7转=210/8转=240/9转=270）
+      if (tc.secondaryPath) initDaoMarks[tc.secondaryPath] = realm * 30;
+      // 杂道道痕×4条 = realm × 8（升仙时三气冲刷必然沾染杂道痕迹）
+      const otherPaths = allPaths.filter(p => p !== tc.primaryPath && p !== tc.secondaryPath);
+      for (let i = 0; i < 4; i++) {
+        const idx = Math.floor(Math.random() * otherPaths.length);
+        const randPath = otherPaths.splice(idx, 1)[0];
+        initDaoMarks[randPath] = realm * 8 + Math.floor(Math.random() * 5); // 微小随机波动
+      }
+      // 天赋流派亲和加成 = realm × 8（天赋加深对应流派道痕积累）
+      for (const t of selectedTalents) {
+        const tp = (t as any) as import('../data/talents-p4').P4Talent;
+        const recPath = tp.primaryPathRecommendation;
+        if (recPath && recPath !== '任意' && recPath !== '按主修推荐' && recPath !== '按所选道派推荐仙蛊') {
+          initDaoMarks[recPath] = (initDaoMarks[recPath] || 0) + realm * 8;
+        }
+      }
+      // 写入 pathBuild + 用 computePathLevel 动态计算流派境界（修复硬编码Bug）
+      const daoMarkDensity = { ...initDaoMarks };
+      if (storeRef.pathBuild) {
+        storeRef.setPrimaryPath?.(tc.primaryPath);
+        if (tc.secondaryPath) storeRef.addSecondaryPath?.(tc.secondaryPath);
+      }
+      useStore.setState((s: any) => ({
+        ...s,
+        pathBuild: {
+          ...(s.pathBuild || {}),
+          primary: tc.primaryPath,
+          secondary: tc.secondaryPath ? [tc.secondaryPath] : [],
+          dao_marks: initDaoMarks,
+          path_levels: Object.fromEntries(
+            Object.entries(initDaoMarks).map(([p, val]) => [p, computePathLevel(val)])
+          ),
+        },
+        aperture: s.aperture ? { ...s.aperture, dao_mark_density: daoMarkDensity } : s.aperture,
+      }));
+    }
+
+    // ═══ P2: 道心倾向初始化 — 据出身域和身份赋初始值 ═══
+    {
+      const storeRef = useStore.getState() as any;
+      const identity = tNode?.talentCategory === 'immortal' ? '蛊仙' : playerIdentity;
+      const isSanXiu = !tc?.factionId && identity === '蛊仙';
+      const isMortalSanXiu = !tc?.factionId && identity !== '蛊仙' && !tNode;
+      const domain = tc?.domain || tNode?.domain || origin;
+      // 基础道心值设定
+      let dhKill = 0, dhMercy = 0, dhScheme = 0, dhAmbition = 0;
+      if (isSanXiu) {
+        // 散修：杀戮倾向高，慎密
+        dhKill = 2; dhScheme = 2; dhAmbition = 3;
+      } else if (identity === '蛊仙') {
+        // 宗门蛊仙：野心与慎密并重
+        dhAmbition = 3; dhScheme = 2; dhMercy = 1;
+      } else if (tc?.factionId) {
+        // 有势力归属：正统门派偏仁慈，魔道偏杀戮
+        dhMercy = 2; dhAmbition = 2;
+      } else {
+        // 散修蛊师
+        dhKill = 2; dhScheme = 3; dhAmbition = 2;
+      }
+      // 地域修正
+      if (domain === '南疆') { dhScheme += 1; dhKill += 1; }
+      if (domain === '北原') { dhKill += 2; }
+      if (domain === '中洲') { dhMercy += 1; dhAmbition += 1; }
+      // 天赋修正
+      for (const t of selectedTalents) {
+        const desc = t.description || '';
+        const name = t.name || '';
+        if (desc.includes('杀戮') || name.includes('杀手')) dhKill += 1;
+        if (desc.includes('仁慈') || desc.includes('慈悲')) dhMercy += 1;
+        if (desc.includes('谋略') || desc.includes('慎密') || name.includes('深谋')) dhScheme += 1;
+        if (desc.includes('野心') || name.includes('逆天') || name.includes('道主')) dhAmbition += 1;
+      }
+      // 钳制范围 [0, 10]
+      useStore.setState((s: any) => ({
+        ...s,
+        daoHeart: {
+          kill: Math.min(10, Math.max(0, dhKill)),
+          mercy: Math.min(10, Math.max(0, dhMercy)),
+          scheme: Math.min(10, Math.max(0, dhScheme)),
+          ambition: Math.min(10, Math.max(0, dhAmbition)),
+        },
+      }));
+    }
+
     onConfirm();
   };
 
   const handleReroll = () => {
+    if (rerollCount >= 3) return;
     setAttributes(rollAllAttributes());
+    setRerollCount(c => c + 1);
   };
 
   return (
@@ -408,9 +551,14 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
             </h3>
             <button
               onClick={handleReroll}
-              className="text-rg-gold/80 hover:text-rg-gold text-xs font-button px-3 py-1 border border-rg-gold/25 rounded-sm hover:bg-rg-gold/10 transition-micro"
+              disabled={rerollCount >= 3}
+              className={`text-xs font-button px-3 py-1 border rounded-sm transition-micro ${
+                rerollCount >= 3
+                  ? 'text-rg-ink-400 border-rg-ink-400/20 cursor-not-allowed'
+                  : 'text-rg-gold/80 hover:text-rg-gold border-rg-gold/25 hover:bg-rg-gold/10'
+              }`}
             >
-              重新掷骰
+              {rerollCount >= 3 ? '次数用尽' : `重新掷骰(${rerollRemaining})`}
             </button>
           </div>
 

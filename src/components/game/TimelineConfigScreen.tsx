@@ -17,8 +17,16 @@ interface TimelineConfigProps {
   onBack: () => void;
 }
 
-const STEPS = ['talent', 'faction', 'gu', 'lifebound', 'aperture', 'killermove', 'resource'] as const;
+const STEPS = ['faction', 'talent', 'gu', 'lifebound', 'aperture', 'killermove', 'resource'] as const;
 type Step = typeof STEPS[number];
+
+// P2: 原著主线独占仙蛊——不出现在本命蛊/初始蛊候选池
+const MAINLINE_EXCLUDED_SET = new Set([
+  '春秋蝉','定仙游','坚持仙蛊','宿命蛊','梦蝶蛊','智慧蛊',
+  '至尊仙胎蛊','力量蛊','天元宝皇莲','升炼','天机','鸿运齐天蛊',
+  '态度蛊','悔蛊','慧剑','万我','净魂仙蛊','剑遁仙蛊','江山如故',
+  '换魂','招灾蛊','鼎力','吃力','龙力',
+]);
 
 const STEP_LABELS: Record<Step, string> = {
   talent: '天赋遴选', faction: '势力归属', gu: '初始蛊虫',
@@ -33,11 +41,11 @@ function seedRand(seed: number): () => number {
 
 // ─── 洞天点数分配公式 ───
 function calcAperturePoints(realmGrand: number): { base: number; free: number } {
-  const base = (realmGrand - 5) * 3 + 2; // 六转5点, 七转8点, 八转11点, 九转14点
-  // 最低3自由点：保证6转玩家能在面积/资源节点之间做二选一（areaMu=1pt, resourceNodes=2pt）
-  const free = Math.max(3, Math.floor(base * 0.5));
-  // 结果: 6转=3点, 7转=4点, 8转=5点, 9转=7点
-  return { base: base - free, free };
+  // P4: 方案B — 总点数=转数×15 (6转=90, 7转=105, 8转=120, 9转=135)
+  const total = realmGrand * 15;
+  const base = Math.floor(total * 0.3); // 30%为自动分配的基础值
+  const free = total - base;
+  return { base, free };
 }
 
 function calcMortalTalentPoints(node: TimelineNode): number {
@@ -55,6 +63,8 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   const timelineTalents = store.timelineTalents as string[];
   const configStep = store.configStep as Step;
   const lifeboundGu = store.lifeboundGu as LifeboundGuSelection | null;
+  const primaryPath = store.primaryPath as string;
+  const secondaryPath = store.secondaryPath as string;
   // v1.6: 新增
   const factionId = store.factionId as string;
   const guaranteedGu = store.guaranteedGu as GuSelection | null;
@@ -66,8 +76,10 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
 
   // ═══ 所有Hooks必须在此调用（v1.5修复: early return移到所有hooks之后） ═══
   const [poolIndex, setPoolIndex] = useState(0);
+  const [talentRerollCount, setTalentRerollCount] = useState(0);
+  const talentRerollRemaining = Math.max(0, 3 - talentRerollCount);
   const [localAperture, setLocalAperture] = useState({
-    areaMu: 100, resourceNodes: 1, timeFlowRatio: 1.0, defenseLevel: 0,
+    areaMu: 200, resourceNodes: 1, timeFlowRatio: 5, defenseLevel: 0,
   });
   const [resourceConfirmed, setResourceConfirmed] = useState(false);
 
@@ -82,18 +94,34 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   const shuffledPool = useMemo(() => {
     if (!selectedNode || talentPool.length === 0) return [] as P4Talent[];
     const rng = seedRand(selectedNode.startingRealm.grand * 100 + poolIndex);
-    const sorted = [...talentPool].sort(() => rng() - 0.5);
+    let filtered = [...talentPool];
+    // P1: 蛊仙模式 — 按主修/辅修过滤天赋池。流派亲和类只显示匹配的，元天赋始终显示
+    if (isImmortal && primaryPath) {
+      filtered = filtered.filter(t => {
+        const rec = t.primaryPathRecommendation;
+        // 元天赋（无流派推荐 或 推荐'任意'）始终显示
+        if (!rec || rec === '任意' || rec === '按所选道派推荐仙蛊' || rec === '按主修推荐') return true;
+        // 匹配主修或辅修
+        return rec === primaryPath || (secondaryPath && rec === secondaryPath);
+      });
+    }
+    const sorted = filtered.sort(() => rng() - 0.5);
     const needShow = sorted.filter(t => timelineTalents.includes(t.id));
     const rest = sorted.filter(t => !timelineTalents.includes(t.id));
     return [...needShow, ...rest.slice(0, 12)];
-  }, [talentPool, poolIndex, timelineTalents, selectedNode?.startingRealm?.grand]);
+  }, [talentPool, poolIndex, timelineTalents, selectedNode?.startingRealm?.grand, primaryPath, secondaryPath, isImmortal]);
+
+  // P2: 原著主线独占仙蛊——不出现在本命蛊候选池中（与auction-engine.ts MAINLINE_EXCLUDED 同步）
 
   const guCandidates = useMemo(() => {
     if (!selectedNode || !isImmortal || timelineTalents.length === 0) return null;
     const candidates: string[] = [];
     timelineTalents.forEach((tid: string) => {
       const t = talentPool.find(tt => tt.id === tid);
-      if (t?.lifeboundGuCandidates) candidates.push(...t.lifeboundGuCandidates);
+      if (t?.lifeboundGuCandidates) {
+        const filtered = t.lifeboundGuCandidates.filter(g => !MAINLINE_EXCLUDED_SET.has(g) && g !== '按所选道派推荐仙蛊' && g !== '按主修推荐');
+        candidates.push(...filtered);
+      }
     });
     // fallback: 候选不足2条时，从GU_DB按tier补充（保证至少2个实质选项）
     if (candidates.length < 2) {
@@ -101,7 +129,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
       const guEntries = Object.entries(GU_DB).filter(([k]) => k !== '_version' && k !== '_meta');
       for (const [dbKey, gu] of guEntries) {
         const g = gu as any;
-        if ((g.tier || 1) >= fallbackTier && !candidates.includes(dbKey)) {
+        if ((g.tier || 1) >= fallbackTier && !candidates.includes(dbKey) && !MAINLINE_EXCLUDED_SET.has(dbKey) && !g.isImmortalGu) {
           candidates.push(dbKey);
         }
         if (candidates.length >= 4) break;
@@ -117,20 +145,20 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
 
   const apertureSpent = useMemo(() => {
     const a = localAperture;
-    const areaCost = Math.floor((a.areaMu - 100) / 100);
-    const nodeCost = (a.resourceNodes - 1) * 2;
-    const flowCost = Math.round(((a.timeFlowRatio - 1.0) / 0.2)) * 3; // Math.round消除浮点累积误差
-    const defenseCost = a.defenseLevel * 3;
-    return Math.round(areaCost + nodeCost + flowCost + defenseCost);
+    const areaCost = Math.floor((a.areaMu - 100) / 100) * 1; // 每100万亩=1点
+    const nodeCost = (a.resourceNodes - 1) * 2;              // 每节点=2点
+    const flowCost = (a.timeFlowRatio - 5) * 3;              // 每+1流速=3点
+    const defenseCost = a.defenseLevel * 3;                  // 每级=3点
+    return areaCost + nodeCost + flowCost + defenseCost;
   }, [localAperture]);
 
-  // ═══ Bug2修复: 永不用null return — 所有7个屏幕始终挂载，resetStore后selectedNode变null时hooks必须一致 ═══
-  if (!selectedNode) return <div style={{ display: 'none' }} />;
+  // ═══ P2补完: 消除early return，改用条件渲染 — selectedNode为null时不调用任何性能敏感计算但确保同一hook链 ═══
+  const nodeReady = !!selectedNode;
 
   // ═══ 非Hook计算值（selectedNode已确保非null） ═══
-  const talentPoints = isImmortal
-    ? calcImmortalTalentPoints(selectedNode)
-    : calcMortalTalentPoints(selectedNode);
+  const talentPoints = nodeReady
+    ? (isImmortal ? calcImmortalTalentPoints(selectedNode!) : calcMortalTalentPoints(selectedNode!)) + (store.factionBonus?.talentBonus ?? 0)
+    : 0;
 
   const spentPoints = timelineTalents.reduce((sum: number, id: string) => {
     const t = talentPool.find(tt => tt.id === id);
@@ -139,7 +167,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   const remainingPoints = talentPoints - spentPoints;
 
   const apertureRemaining = aperturePoints ? aperturePoints.free - apertureSpent : 0;
-  const yuanStone = selectedNode.startingYuanStone;
+  const yuanStone = nodeReady ? selectedNode.startingYuanStone : 0;
 
   const handleSelectTalent = (talent: P4Talent) => {
     if (timelineTalents.includes(talent.id)) {
@@ -163,6 +191,8 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
       const g = gu as any;
       const tier = g.tier || 1;
       if (tier < minTier || tier > maxTier) continue;
+      if (g.isImmortalGu) continue;
+      if (MAINLINE_EXCLUDED_SET.has(dbKey)) continue;
       candidates.push({
         name: dbKey,
         tier,
@@ -187,6 +217,12 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   // ═══ Bug1修复: 蛊虫池生成 — 进入gu步骤时自动生成 ═══
   useEffect(() => {
     if (configStep !== 'gu' || !selectedNode) return;
+
+    // 每次进入gu步骤重置重掷次数（放在池生成守卫之前，确保导航回来时也刷新）
+    if (store.guRerollsRemaining <= 0) {
+      useStore.setState({ guRerollsRemaining: 3 });
+    }
+
     // 仅当池为空时生成（避免重复或覆盖手动重掷结果）
     if (randomGuPool.length > 0) return;
 
@@ -202,6 +238,8 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
       const g = gu as any;
       const tier = g.tier || 1;
       if (tier < minTier || tier > maxTier) continue;
+      if (g.isImmortalGu) continue;
+      if (MAINLINE_EXCLUDED_SET.has(dbKey)) continue;
       candidates.push({
         name: dbKey, // GU_DB的key才是蛊虫名
         tier,
@@ -220,7 +258,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
     const pool = shuffled.slice(0, count);
 
     // 直接setState（不通过rerollGuPool，避免消耗重掷次数）
-    useStore.setState((s: any) => ({ ...s, randomGuPool: pool, guPoolSeed: seed }));
+    useStore.setState((s: any) => ({ ...s, randomGuPool: pool, guPoolSeed: seed, guRerollsRemaining: 3 }));
   }, [configStep, selectedNode?.id]);
 
   // ═══ v1.7: 杀招池生成 — 进入killermove步骤时生成，排除isExclusive专属杀招 ═══
@@ -252,7 +290,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
     const shuffledOthers = others.sort(() => Math.random() - 0.5);
     // 直接写入killerMovePool
     const finalPool = [...preferred, ...shuffledOthers].slice(0, 8);
-    (useStore.getState() as any).killerMovePool = finalPool;
+    useStore.setState((s: any) => ({ ...s, killerMovePool: finalPool }));
   }, [configStep, isImmortal, selectedNode?.id]);
 
   // ─── 步进控制 ───
@@ -292,8 +330,12 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   };
 
   return (
-    <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center py-6 px-4 overflow-y-auto">
-      <div className="w-full max-w-2xl">
+    <div className={nodeReady
+      ? 'min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center py-6 px-4 overflow-y-auto'
+      : 'min-h-[100dvh] bg-rg-ink-800 flex items-center justify-center'
+    }>
+      {nodeReady ? (
+        <div className="w-full max-w-2xl">
         {/* 头 */}
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-rg-gold font-narrative">{STEP_LABELS[configStep]}</h2>
@@ -321,11 +363,54 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                 <span className="text-rg-gold font-bold text-lg ml-2">{remainingPoints}</span>
                 <span className="text-rg-paper-200/30 text-xs ml-1">/ {talentPoints}</span>
               </div>
-              <button onClick={() => setPoolIndex(p => p + 1)}
-                className="text-rg-gold/60 hover:text-rg-gold text-xs font-button px-3 py-1 border border-rg-gold/20 rounded-sm">
-                换一批
+              <button onClick={() => {
+                if (talentRerollCount >= 3) return;
+                setPoolIndex(p => p + 1);
+                setTalentRerollCount(c => c + 1);
+              }}
+                disabled={talentRerollCount >= 3}
+                className={`text-xs font-button px-3 py-1 border rounded-sm transition-micro ${
+                  talentRerollCount >= 3
+                    ? 'text-rg-ink-400 border-rg-ink-400/20 cursor-not-allowed'
+                    : 'text-rg-gold/60 hover:text-rg-gold border-rg-gold/20'
+                }`}
+              >
+                {talentRerollCount >= 3 ? '次数用尽' : `换一批(${talentRerollRemaining})`}
               </button>
             </div>
+            {/* P1: 蛊仙流派选择 — 在天赋池顶部显示主修/辅修选择器 */}
+            {isImmortal && (
+              <div className="mb-4 p-4 bg-rg-gold/5 border border-rg-gold/15 rounded-md">
+                <p className="text-rg-paper-200/60 text-xs font-panel mb-3">
+                  {primaryPath ? `主修「${primaryPath}」` : '选择你的主修流派——蛊仙升仙时吸收天地人气，必然凝聚出一脉主修道痕'}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {['炎道','水道','土道','风道','剑道','毒道','木道','光道','宇道','宙道','炼道','魂道','冰道','雷道','血道','力道','智道','暗道','奴道','变化道','律道','梦道','太道','音道','运道','金道','骨道','食道'].map(path => (
+                    <button key={path} onClick={() => {
+                      if (primaryPath === path) {
+                        store.setPrimaryPath('');
+                      } else if (!primaryPath) {
+                        store.setPrimaryPath(path);
+                      } else {
+                        store.setSecondaryPath(path);
+                      }
+                    }}
+                    className={`text-[10px] font-panel px-2 py-1 rounded-sm border transition-colors ${
+                      primaryPath === path ? 'bg-rg-gold/20 border-rg-gold/40 text-rg-gold' :
+                      secondaryPath === path ? 'bg-rg-jade-400/15 border-rg-jade-400/30 text-rg-jade-400' :
+                      'border-rg-ink-400/20 text-rg-paper-200/40 hover:border-rg-gold/30 hover:text-rg-paper-200/70'
+                    }`}>
+                      {path}
+                    </button>
+                  ))}
+                </div>
+                {primaryPath && (
+                  <p className="text-rg-paper-200/30 text-[9px] font-panel mt-2">
+                    点击另一流派设置辅修（可选）。天赋池已按流派过滤。
+                  </p>
+                )}
+              </div>
+            )}
             <div className="grid grid-cols-1 gap-2 max-h-[50vh] overflow-y-auto pr-2">
               {shuffledPool.map(talent => {
                 const isSelected = timelineTalents.includes(talent.id);
@@ -450,6 +535,11 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                         <span className="text-rg-paper-200/40 text-[9px]">{gu.path}</span>
                         <span className={`text-[9px] ml-auto ${gu.rank === 'legendary' ? 'text-rg-gold' : gu.rank === 'epic' ? 'text-purple-400' : gu.rank === 'rare' ? 'text-blue-400' : 'text-rg-paper-200/40'}`}>{gu.rank}</span>
                       </div>
+                      {gu.description && (
+                        <p className="text-rg-paper-200/30 text-[9px] mt-1 leading-tight">
+                          {gu.description.length > 40 ? gu.description.slice(0, 40) + '…' : gu.description}
+                        </p>
+                      )}
                     </button>
                   );
                 })
@@ -470,16 +560,19 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
               <div className="grid grid-cols-1 gap-3">
                 {killerMovePool.map((km: KillerMoveSelection) => {
                   const isSel = selectedKillerMoves.some(m => m.name === km.name);
+                  const atLimit = selectedKillerMoves.length >= 2 && !isSel;
                   return (
                     <button key={km.name}
-                      onClick={() => { if (!isSel) store.selectKillerMove(km); }}
-                      disabled={isSel}
+                      onClick={() => store.selectKillerMove(km)}
+                      disabled={atLimit}
                       className={`text-left p-3 rounded-sm border transition-colors ${isSel
-                        ? 'border-rg-gold/60 bg-rg-gold/10 opacity-60' : 'border-rg-ink-400/12 bg-rg-ink-800/50 hover:border-rg-gold/30'}`}
+                        ? 'border-rg-gold/60 bg-rg-gold/10 ring-1 ring-rg-gold/20' : atLimit
+                        ? 'border-rg-ink-400/8 bg-rg-ink-800/20 opacity-40 cursor-not-allowed' : 'border-rg-ink-400/12 bg-rg-ink-800/50 hover:border-rg-gold/30'}`}
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-rg-paper-100 font-narrative text-sm">{km.name}</span>
                         <span className="text-rg-paper-200/40 text-[10px]">{km.path}·{km.level}转</span>
+                        {isSel && <span className="text-[9px] text-rg-gold ml-auto">已选（点击取消）</span>}
                       </div>
                       <p className="text-rg-paper-200/50 text-[11px] font-panel">{km.effect}</p>
                       <p className="text-rg-paper-200/30 text-[10px] mt-1">核心蛊: {km.coreGu.join('+')} · {km.cost}</p>
@@ -535,10 +628,10 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
             </p>
             <div className="grid grid-cols-1 gap-4">
               {[
-                { label: '面积', unit: '亩', val: localAperture.areaMu, min: 100, max: 500, step: 100, key: 'areaMu' as const, cost: 1 },
-                { label: '资源节点', unit: '个', val: localAperture.resourceNodes, min: 1, max: 5, step: 1, key: 'resourceNodes' as const, cost: 2 },
-                { label: '流速比', unit: 'x', val: localAperture.timeFlowRatio, min: 1.0, max: 2.0, step: 0.2, key: 'timeFlowRatio' as const, cost: 3 },
-                { label: '防御阵法', unit: '级', val: localAperture.defenseLevel, min: 0, max: 3, step: 1, key: 'defenseLevel' as const, cost: 3 },
+                { label: '面积', unit: '万亩', val: localAperture.areaMu, min: 100, max: 900, step: 100, key: 'areaMu' as const, cost: 1, desc: '小≤300 / 中400-600 / 上700-900' },
+                { label: '资源节点', unit: '个', val: localAperture.resourceNodes, min: 1, max: 6, step: 1, key: 'resourceNodes' as const, cost: 2, desc: '决定每回合蛊材产出种类和数量' },
+                { label: '流速比', unit: ':1', val: localAperture.timeFlowRatio, min: 5, max: 33, step: 1, key: 'timeFlowRatio' as const, cost: 3, desc: '小1:5-8 / 中1:10-20 / 上1:20-33' },
+                { label: '防御阵法', unit: '级', val: localAperture.defenseLevel, min: 0, max: 3, step: 1, key: 'defenseLevel' as const, cost: 3, desc: '影响天灾抵抗能力' },
               ].map(row => {
                 const currentCost = row.key === 'areaMu'
                   ? Math.floor((row.val - 100) / 100) * row.cost
@@ -654,6 +747,15 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
           </button>
         </div>
       </div>
+      ) : (
+        <div className="text-center">
+          <p className="text-rg-paper-200/40 font-narrative text-lg">没有选中时间线节点</p>
+          <button onClick={onBack}
+            className="mt-4 text-rg-gold/60 hover:text-rg-gold font-button text-sm px-4 py-2 border border-rg-gold/20 rounded-sm transition-micro">
+            返回选择
+          </button>
+        </div>
+      )}
     </div>
   );
 }

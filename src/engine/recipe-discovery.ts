@@ -1,15 +1,35 @@
 /**
- * ═══ 残方发现引擎 — B1.7 ═══
+ * ═══ 残方发现引擎 + 蛊方解锁系统 — B1.7 / P4 ═══
  * 古遗迹探索→获得残方→实验材料补全→解锁新蛊虫配方
+ * 
+ * 三档配方模型（设计大纲§5.3）：
+ *   INNATE_RECIPES — 基础配方（1-2转，每流派1-2个代表蛊虫），开局即知
+ *   进阶配方（1-5转其余蛊虫） — 需残方补全或确定性合成
+ *   古方（6转+/仙蛊/传说级） — 仅古遗迹/NPC传授，面板完全隐藏
  */
 import fragmentsRaw from '../canon/fragment-recipes.json';
 import type { RefineInput } from './refine-engine';
 import { useStore } from '../store';
 
+// ═══ 基础配方白名单（约24条，覆盖全部20个流派，1-2转每流派1-2个代表蛊虫） ═══
+export const INNATE_RECIPES = new Set<string>([
+  // 1转 光道/食道/智道/土道/木道
+  '月光蛊', '酒虫', '书虫', '石皮蛊', '青丝蛊',
+  // 1转 智道/金道/力道/骨道
+  '侦察蛊', '铜皮蛊', '熊力蛊', '骨枪蛊',
+  // 1-2转 水道/木道/风道/奴道/炎道
+  '净水蛊', '种蛊', '扬声蛊', '驭虫蛊', '星火蛊',
+  // 2转 力道/暗道/雷道/金道/变化道
+  '力气蛊', '幽影随行蛊', '春雷蛊', '吞金蛊', '画皮蛊',
+  // 2转 毒道/宇道/天道/人道/侦察 — 覆盖率补齐
+  '爱生离', '纸鹤蛊', '希望蛊', '积德蛊', '蛇信蛊',
+]);
+
 export interface FragmentRecipe {
   id: string;
   name: string;
-  path: string;
+  /** CR5修复: type 与 fragment-recipes.json 字段一致。值: 'refine'(炼制残方) | 'ascend'(升炼残方) */
+  type: 'refine' | 'ascend';
   targetGu: string;
   targetTier: number;
   requiredMaterials: string[];
@@ -78,7 +98,7 @@ export function attemptCompleteFragment(
         specId: fragment.targetGu,
         name: fragment.targetGu,
         tier: fragment.targetTier,
-        path: fragment.path,
+        path: fragment.type, // CR5修复: type 字段对应 recipe 的 path
         refineMaterials: fragment.requiredMaterials.join('+'),
         refineDifficulty: fragment.completionDifficulty * 0.7, // 补全后炼制更容易
       },
@@ -99,4 +119,58 @@ export function canAttemptFragment(fragment: FragmentRecipe): boolean {
   const matBag = store.materialBag || {};
   const lastMat = fragment.requiredMaterials[fragment.requiredMaterials.length - 1];
   return (matBag[lastMat] || 0) >= 1;
+}
+
+/**
+ * 判断蛊方是否已解锁（三档模型）
+ *   基础配方(INNATE_RECIPES) + 已补全(completedRecipes) → 解锁
+ *   仙蛊/6转+ → 仅古方，不显示
+ *   其余 → 未解锁（需收集残方）
+ */
+export function isRecipeUnlocked(guName: string, guSpec: any): boolean {
+  const store = useStore.getState() as any;
+  const completed = (store.flags?.completedRecipes || {}) as Record<string, boolean>;
+  if (completed[guName]) return true;           // 残方补全/合成已解锁
+  if (INNATE_RECIPES.has(guName)) return true;  // 基础配方
+  if (guSpec.isImmortalGu) return false;         // 仙蛊: 仅古方获取
+  if ((guSpec.tier || 1) >= 6) return false;     // 6转+: 仅古方获取
+  return false;                                   // 进阶配方: 需解锁
+}
+
+/**
+ * 确定性残方合成 — 集齐 fragmentsRequired 份同名残方→自动解锁蛊方
+ */
+export function synthesizeRecipe(fragmentId: string): { success: boolean; message: string } {
+  const store = useStore.getState() as any;
+  const discovered = (store.flags?.discoveredFragments || []) as string[];
+  const fragments = loadAllFragments();
+  const fragment = fragments.find(f => f.id === fragmentId);
+  if (!fragment) return { success: false, message: '残方数据异常，请联系开发者' };
+
+  const count = discovered.filter((id: string) => id === fragmentId).length;
+  if (count < fragment.fragmentsRequired) {
+    return { success: false, message: `残方不足（需${fragment.fragmentsRequired}份，当前${count}份）` };
+  }
+
+  // 消耗残方
+  const newDiscovered = [...discovered];
+  for (let i = 0; i < fragment.fragmentsRequired; i++) {
+    const idx = newDiscovered.indexOf(fragmentId);
+    if (idx !== -1) newDiscovered.splice(idx, 1);
+  }
+
+  // 解锁蛊方
+  const completedRecipes = { ...(store.flags?.completedRecipes || {}) };
+  completedRecipes[fragment.targetGu] = true;
+
+  useStore.setState((s: any) => ({
+    ...s,
+    flags: {
+      ...s.flags,
+      discoveredFragments: newDiscovered,
+      completedRecipes,
+    },
+  }));
+
+  return { success: true, message: `残方合成成功！解锁「${fragment.targetGu}」炼制配方` };
 }

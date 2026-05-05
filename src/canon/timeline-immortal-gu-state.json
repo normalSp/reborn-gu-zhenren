@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "原著仙蛊在时间线上的占用状态。玩家放蛊升仙前必须检查，防止仙蛊唯一性冲突。occupiedSince: 'always'=永远占用, 'chapter'=某章节后占用",
+    "totalEntries": 12
+  },
+  "immortalGuState": {
+    "春秋蝉": { "occupiedSince": "always", "occupiedBy": "方源(古月方源)", "note": "方源核心仙蛊，开局即持有残缺春秋蝉" },
+    "定仙游": { "occupiedSince": "always", "occupiedBy": "方源", "note": "方源早期获得的移动仙蛊" },
+    "坚持仙蛊": { "occupiedSince": "always", "occupiedBy": "方源", "note": "方源的坚持仙蛊" },
+    "人如故": { "occupiedSince": "chapter", "occupiedBy": "太白云生", "chapterId": "wangting_fudi", "note": "王庭福地升仙时5转人如故升为仙蛊" },
+    "江山如故": { "occupiedSince": "chapter", "occupiedBy": "太白云生", "chapterId": "wangting_fudi", "note": "王庭福地升仙同时获得" },
+    "智慧蛊": { "occupiedSince": "always", "occupiedBy": "人祖传承→方源", "note": "十大奇蛊之一" },
+    "至尊仙胎蛊": { "occupiedSince": "chapter", "occupiedBy": "方源", "chapterId": "wangting_fudi", "note": "王庭福地获得" },
+    "力量蛊": { "occupiedSince": "chapter", "occupiedBy": "黑楼兰", "chapterId": "nilu_ascent", "note": "黑楼兰升仙用" },
+    "宿命蛊": { "occupiedSince": "chapter", "occupiedBy": "天庭→已摧毁", "chapterId": "yitian_heaven", "note": "义天山大事件后被方源摧毁，不可再获取" },
+    "梦蝶蛊": { "occupiedSince": "always", "occupiedBy": "影宗/天庭相关", "note": "十大奇蛊之一" },
+    "鸿运齐天蛊": { "occupiedSince": "always", "occupiedBy": "巨阳仙尊传承", "note": "运道至高仙蛊" },
+    "天元宝皇莲": { "occupiedSince": "always", "occupiedBy": "天庭", "note": "天庭核心仙蛊" }
+  }
+}

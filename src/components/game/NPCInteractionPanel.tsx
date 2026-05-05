@@ -74,6 +74,15 @@ export function NPCInteractionPanel() {
 
   const handleTopic = useCallback((topic: DialogueTopic) => {
     if (!ad) return;
+    // P4: 请教杀招 — 好感度≥80时可能触发传授
+    if (topic === '请教杀招' && ad.affinity >= 80) {
+      const teachKillMove = (useStore.getState() as any).teachKillMove;
+      const npcKillMoves = (useStore.getState() as any).npcKillMoves || [] as any[];
+      const npcMove = npcKillMoves.find((m: any) => m.npcName === ad.npcName && m.canTeach !== false);
+      if (npcMove && typeof teachKillMove === 'function') {
+        teachKillMove(npcMove);
+      }
+    }
     sendTopic(topic);
     setPendingTopic(topic);
   }, [ad, sendTopic]);

@@ -1,6 +1,7 @@
 import { useStore } from '../store';
 import type { StateUpdate, ButterflyEffect } from '../types';
 import type { EncounterReward } from '../types/encounter';
+import { evaluateApertureGrade } from '../store/slices/immortalSlice';
 
 // ─── 全局自增计数器 ───
 let guIdCounter = 1000;
@@ -171,18 +172,30 @@ export function applyStateUpdate(update: StateUpdate): void {
     }
   }
 
-  // ═══ P2-13: 六转升仙触发洞天/福地初始化 ═══
+  // ═══ P2-13 + P4: 六转升仙触发洞天/福地初始化 + 仙窍存储迁移 ═══
   if (update.player?.realm) {
     const realmValue = update.player.realm.value;
     const realmNum = parseInt(realmValue) || 0;
-    // 六转升仙时自动初始化洞天/福地
     if (realmNum >= 6) {
       const currentStore = useStore.getState() as any;
       if (!currentStore.heavenlyLand) {
         const currentDomain = currentStore.currentDomain || '南疆';
-        const landType = Math.random() < 0.7 ? '福地' : '洞天';
+
+        // P4: 方案A — 根据蛊师阶段积累评定福地等级
+        const daoMarksTotal = Object.values(currentStore.pathBuild?.dao_marks || {}).reduce((a: number, b: number) => a + b, 0);
+        const guRefinedCount = (currentStore.inventory || []).length;
+        const famousScenesCompleted = Object.values(currentStore.flags?.completedFamousScenes || {}).filter(Boolean).length;
+        const killerMovesKnown = (currentStore.killMoves || []).length;
+        const talentLevel = currentStore.attributes?.资质 || 5;
+
+        const evalResult = evaluateApertureGrade(daoMarksTotal, guRefinedCount, famousScenesCompleted, killerMovesKnown, talentLevel);
+
+        const areaMu = evalResult.areaRange[0] + Math.floor(Math.random() * (evalResult.areaRange[1] - evalResult.areaRange[0]));
+        const flowRatio = evalResult.flowRange[0] + Math.floor(Math.random() * (evalResult.flowRange[1] - evalResult.flowRange[0]));
+        const nodeCount = evalResult.nodeRange[0] + Math.floor(Math.random() * (evalResult.nodeRange[1] - evalResult.nodeRange[0]));
+
+        const landType = evalResult.grade === '上等福地' ? (Math.random() < 0.5 ? '洞天' : '福地') : '福地';
         const now = Date.now();
-        const areaMu = landType === '洞天' ? 300 + Math.floor(Math.random() * 200) : 100 + Math.floor(Math.random() * 100);
         useStore.setState({
           heavenlyLand: {
             id: `land_${now}`,
@@ -190,7 +203,7 @@ export function applyStateUpdate(update: StateUpdate): void {
             domain: currentDomain,
             name: `${currentDomain}${landType}`,
             areaMu,
-            timeFlowRatio: 1 + Math.random() * 2,
+            timeFlowRatio: flowRatio,
             resourceOutputRate: realmNum * 5,
             earthSpirit: { formed: false, approval: 0 },
             disasterCountdown: 60 + Math.floor(Math.random() * 40),
@@ -201,19 +214,54 @@ export function applyStateUpdate(update: StateUpdate): void {
         });
         // ═══ 日志埋点: 六转升仙
         if (typeof currentStore.addGameLog === 'function') {
-          currentStore.addGameLog('system', `升仙成功! 开辟${landType}: ${currentDomain}${landType} (${areaMu}亩)`, {
-            landType, areaMu, domain: currentDomain,
+          currentStore.addGameLog('system', `升仙成功! 开辟${evalResult.grade}(${landType}): ${areaMu}亩 / 流速1:${flowRatio}`, {
+            grade: evalResult.grade, landType, areaMu, flowRatio, domain: currentDomain,
           });
         }
-        // ═══ 空窍→仙窍替换：仅当当前为 MortalAperture 时替换为 ImmortalAperture ═══
+        // ═══ P4: 仙窍存储迁移 — 空窍蛊虫/蛊材全部迁入仙窍无限存储 ═══
+        if (typeof currentStore.migrateToApertureStorage === 'function') {
+          currentStore.migrateToApertureStorage();
+        }
+        // ═══ v0.6.0: 元石→仙元迁移 (1000:1) ═══
+        const mortalCurrency = currentStore.currency || 0;
+        if (mortalCurrency > 0) {
+          const immortalBonus = Math.floor(mortalCurrency / 1000);
+          const currentImmortal = currentStore.immortalCurrency || 0;
+          useStore.setState({ currency: 0, immortalCurrency: currentImmortal + immortalBonus } as any);
+          if (typeof currentStore.addGameLog === 'function') {
+            currentStore.addGameLog('system', `凡尘财富化为仙途底蕴——${mortalCurrency}元石兑换为${immortalBonus}仙元石`, { mortalCurrency, immortalBonus });
+          }
+        }
+        // ═══ 空窍→仙窍替换 + 生成初始资源节点 ═══
         const currentAperture = currentStore.aperture;
         const shouldReplace = !currentAperture || currentAperture.type === 'mortal';
         if (shouldReplace) {
+          // P4: 生成初始资源节点
+          const nodeTypes = ['月华草', '铁屑', '金粉', '冰晶核心', '雷击石', '金刚石粉', '空间晶石', '灾劫灰烬', '光阴砂', '道痕结晶'];
+          const nodeGrades: Record<string, string> = {
+            '月华草': '普通', '铁屑': '普通', '金粉': '精品', '冰晶核心': '精品',
+            '雷击石': '精品', '金刚石粉': '稀有', '空间晶石': '仙材', '灾劫灰烬': '仙材',
+            '光阴砂': '仙材', '道痕结晶': '仙材',
+          };
+          const initialNodes = [];
+          for (let i = 0; i < Math.min(nodeCount, nodeTypes.length); i++) {
+            const nodeName = nodeTypes[i];
+            initialNodes.push({
+              id: `node_${Date.now()}_${i}`,
+              type: nodeName,
+              name: nodeName,
+              output_rate: 1 + Math.floor(Math.random() * 3),
+              quality: 50 + Math.floor(Math.random() * 50),
+              grade: (nodeGrades[nodeName] || '普通') as '普通' | '精品' | '稀有' | '仙材',
+              active: true,
+            });
+          }
           currentStore.initializeAperture?.({
             type: landType,
+            grade: evalResult.grade,
             area_mu: areaMu,
-            time_flow_ratio: 1 + Math.random() * 2,
-            resource_nodes: [],
+            time_flow_ratio: flowRatio,
+            resource_nodes: initialNodes,
             dao_mark_density: {},
             next_disaster_type: '地火',
             disaster_countdown: 60 + Math.floor(Math.random() * 40),
@@ -340,15 +388,22 @@ export function applyEncounterRewards(rewards: EncounterReward): string[] {
     }
   }
 
-  // 材料奖励
+  // 材料奖励 — P4: 对齐 shop-items.json 混合产出（通用蛊材+具体材料）
   if (rewards.materials) {
     const { common, uncommon, rare, count } = rewards.materials;
     const grades: string[] = [];
+    // P4: 通用蛊材（保留原有产出逻辑）
     if (common) for (let i = 0; i < (common[1] ? Math.floor(common[0] + Math.random() * (common[1] - common[0] + 1)) : common[0]); i++) grades.push('普通蛊材');
     if (uncommon) for (let i = 0; i < (uncommon[1] ? Math.floor(uncommon[0] + Math.random() * (uncommon[1] - uncommon[0] + 1)) : uncommon[0]); i++) grades.push('精品蛊材');
     if (rare) for (let i = 0; i < (rare[1] ? Math.floor(rare[0] + Math.random() * (rare[1] - rare[0] + 1)) : rare[0]); i++) grades.push('稀有蛊材');
     for (const g of grades) {
       if (typeof s.addMaterial === 'function') s.addMaterial(g, 1);
+    }
+    // P4: 具体材料随机掉落（从 shop-items.json 材料池中概率产出，对齐混合方案）
+    if (Math.random() < 0.4 && grades.length > 0) {
+      const shopMaterials = ['月华草','石粉','铁屑','新鲜兽肉','草木精华液','特制木炭','金粉','美酒','山泉水','风之精华','毒物样本','新鲜血液瓶','冰晶核心','愈合草药包','兽骨','蚕丝卷'];
+      const randomMat = shopMaterials[Math.floor(Math.random() * shopMaterials.length)];
+      if (typeof s.addMaterial === 'function') s.addMaterial(randomMat, 1);
     }
     if (grades.length) messages.push(`蛊材 +${grades.length}份`);
   }

@@ -292,6 +292,18 @@ function evaluateConditionString(condition: string, state: AchievementCheckState
   const killMatch = cond.match(/^daoHeart\.kill\s*>=\s*(\d+)$/);
   if (killMatch) return (state.daoHeart?.kill || 0) >= parseInt(killMatch[1], 10);
 
+  // CR8: "deaths >= N" — 累计死亡次数（成就条件）
+  const deathsMatch = cond.match(/^deaths\s*>=\s*(\d+)$/);
+  if (deathsMatch) return (state.deaths || 0) >= parseInt(deathsMatch[1], 10);
+
+  // CR8: "renZuLegendsHeard >= N" — 人祖传说听闻次数
+  const renZuMatch = cond.match(/^renZuLegendsHeard\s*>=\s*(\d+)$/);
+  if (renZuMatch) return (state.renZuLegendsHeard || 0) >= parseInt(renZuMatch[1], 10);
+
+  // CR8: "totalBattlesFought >= N" — 总战斗次数（CombatSlice totals）
+  const totalBattlesMatch = cond.match(/^totalBattlesFought\s*>=\s*(\d+)$/);
+  if (totalBattlesMatch) return (state as any).totalBattlesFought >= parseInt(totalBattlesMatch[1], 10);
+
   // 兜底
   return false;
 }

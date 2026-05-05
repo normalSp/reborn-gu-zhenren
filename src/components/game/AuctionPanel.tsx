@@ -1,5 +1,5 @@
 /**
- * ═══ 宝皇天拍卖会面板 — P1.1 ═══
+ * ═══ 宝黄天拍卖会面板 — P1.1 ═══
  * 仙蛊拍卖 UI：物品列表、竞价、NPC 竞争者信息
  */
 import { useState } from 'react';
@@ -54,7 +54,7 @@ export function AuctionPanel() {
               <span className="text-base">🏛</span>
             </div>
             <div>
-              <h2 className="text-rg-gold font-narrative text-lg">宝皇天拍卖会</h2>
+              <h2 className="text-rg-gold font-narrative text-lg">宝黄天拍卖会</h2>
               <p className="text-rg-paper-200/40 text-[10px] font-panel">
                 仙元石余额: <span className="text-rg-gold font-semibold">{immortalCurrency}</span>
               </p>
@@ -176,7 +176,7 @@ export function AuctionPanel() {
         {/* ─── 底部提示 ─── */}
         <div className="px-5 py-2 border-t border-rg-ink-300/8 bg-rg-ink-800/30">
           <p className="text-[9px] font-panel text-rg-paper-200/25 text-center">
-            每 10 回合开启一次宝皇天拍卖会 &middot; 仙蛊天地间独一无二 &middot; 出价即扣除仙元石
+            每 10 回合开启一次宝黄天拍卖会 &middot; 仙蛊天地间独一无二 &middot; 出价即扣除仙元石
           </p>
         </div>
       </div>

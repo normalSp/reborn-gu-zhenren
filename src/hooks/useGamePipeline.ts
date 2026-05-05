@@ -112,9 +112,8 @@ export function useGamePipeline(): UseGamePipelineReturn {
     syncState('BUILDING_CONTEXT');
 
     try {
-      // isResume=true → isOpening=false(标准提示词), isResume=true(不推进回合)
-      // isResume=false → isOpening=true(开局提示词), isResume=false(不推进回合,同原逻辑)
-      const result = await pipeline.process(null, !isResume, isResume);
+      // isResume: 续档=true/新游戏=false（isOpening 硬编码路径已移除，统一标准约束prompt）
+      const result = await pipeline.process(null, isResume);
       setPipeResult(result);
 
       if (result.state === 'RESOLVED') {

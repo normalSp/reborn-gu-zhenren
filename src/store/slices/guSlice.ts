@@ -1,6 +1,14 @@
 import type { GuInstance, GuHungerState, GuHungerConfig, LifeboundGu, LifeboundDeathPenalty } from '../../types';
 import guDatabase from '../../canon/gu-database.json';
 
+/** CR6: 蛊虫进化动画状态 */
+export interface GuEvolutionState {
+  active: boolean;
+  guName: string;
+  fromRank: number;
+  toRank: number;
+}
+
 /** 转数 → 空窍容量映射（原著设定） */
 const CAPACITY_BY_RANK: Record<number, number> = { 1: 3, 2: 5, 3: 8, 4: 12, 5: 15 };
 
@@ -40,6 +48,26 @@ export const GU_HUNGER_CONFIG: GuHungerConfig = {
   feedRecovery: 10,
 };
 
+/** P2补完: 食物类型 → materialBag 食材键名映射 */
+export const FEED_MATERIAL_MAP: Record<string, string> = {
+  '月光': '月华草',
+  '美酒': '美酒',
+  '石粉': '石粉',
+  '肉食': '兽肉',
+  '鲜血': '兽血',
+  '草木': '灵草',
+  '文字': '古籍残页',
+  '时间流逝': '时光之砂',
+  '药材': '灵药',
+  '毒物': '毒囊',
+  '火焰': '火精',
+  '寒冰': '冰晶',
+  '雷电': '雷击木',
+  '光芒': '光耀石',
+  '暗影': '暗影尘',
+  '金铁': '金属碎块',
+};
+
 /** P2-13: 四态模型状态迁移逻辑 */
 function computeNextState(current: GuHungerState, counter: number): GuHungerState {
   const { thresholds } = GU_HUNGER_CONFIG;
@@ -57,6 +85,14 @@ interface GuSlice {
   lifeboundGuInfo: LifeboundGu | null;
   /** P2-流派: 本命蛊死亡惩罚 */
   lifeboundDeathPenalty: LifeboundDeathPenalty | null;
+  /** P2补完: 累计炼制蛊虫次数（用于成就检测） */
+  refinedGuCount: number;
+  /** CR6: 蛊虫进化动画触发状态 */
+  guEvolutionState: GuEvolutionState;
+  /** CR6: 触发蛊虫进化动画 */
+  triggerGuEvolution: (guName: string, fromRank: number, toRank: number) => void;
+  /** CR6: 清除进化动画状态 */
+  clearGuEvolution: () => void;
   addGu: (gu: GuInstance) => void;
   removeGu: (id: string) => void;
   updateGuState: (id: string, state: GuHungerState) => void;
@@ -80,6 +116,20 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
   guHungerCounters: {},
   lifeboundGuInfo: null,
   lifeboundDeathPenalty: null,
+  refinedGuCount: 0,
+  guEvolutionState: { active: false, guName: '', fromRank: 0, toRank: 0 },
+
+  triggerGuEvolution: (guName, fromRank, toRank) => {
+    set({ guEvolutionState: { active: true, guName, fromRank, toRank } });
+    // 自动3秒后清除
+    setTimeout(() => {
+      set({ guEvolutionState: { active: false, guName: '', fromRank: 0, toRank: 0 } });
+    }, 3000);
+  },
+
+  clearGuEvolution: () => {
+    set({ guEvolutionState: { active: false, guName: '', fromRank: 0, toRank: 0 } });
+  },
 
   addGu: (gu) => {
     const fullStore = get() as any;
@@ -215,6 +265,24 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
           fullStore.setHealth?.(newHp, fullStore.vitals.health.max);
         }
         return; // 反噬后不恢复饱食
+      }
+      // ═══ P2补完: 食物匹配成功 → 消耗背包食材 ═══
+      if (foodType && requiredType && foodType === requiredType) {
+        const fullStore = get() as any;
+        const materialItemName = FEED_MATERIAL_MAP[requiredType];
+        if (materialItemName) {
+          const currentBag = fullStore.materialBag || {};
+          const currentQty = currentBag[materialItemName] || 0;
+          if (currentQty <= 0) {
+            // 无食材 → 喂养失败但不反噬
+            console.warn(`[GuSlice] 食材不足! 需要${materialItemName}, 当前:${currentQty}`);
+            return;
+          }
+          // 消耗1份食材
+          const newBag = { ...currentBag };
+          newBag[materialItemName] = currentQty - 1;
+          set({ materialBag: newBag } as any);
+        }
       }
     }
 

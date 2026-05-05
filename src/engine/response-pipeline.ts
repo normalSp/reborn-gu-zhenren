@@ -4,6 +4,7 @@ import { validateNarrativeSemantics } from './semantic-validator';
 import { validateCanaryAssertions } from './canary-assertions';
 import { applyStateUpdate } from './state-update-applier';
 import { contextBuilder } from './context-builder';
+import { checkChapterGoals } from './goal-checker';
 import { useStore } from '../store';
 import type { NarrativeJSON, AIContext } from '../types';
 import type { SemanticValidationResult } from './semantic-validator';
@@ -81,6 +82,11 @@ function normalizeAIResponse(parsed: any): void {
     parsed.narrative = { text: parsed.narrative };
   }
   if (!parsed.narrative || typeof parsed.narrative !== 'object') parsed.narrative = {};
+  // P1修复: 当narrative对象缺text字段时填入空串作降级，避免ZOD验证narrative.text required崩溃
+  // AI有时返回 { narrative: { choices: [...] } } 而缺text — 对叙事管道来说空文本可接受（choices仍然有效）
+  if (typeof parsed.narrative?.text !== 'string') {
+    parsed.narrative.text = '';
+  }
 
   // 1. 顶层映射: choices/options→narrative.choices, stateUpdate/stateUpdates→state_update
   if (parsed.choices && !parsed.narrative.choices) parsed.narrative.choices = parsed.choices;
@@ -277,7 +283,6 @@ export class ResponsePipeline {
   // ─── 主处理入口 ───
   async process(
     choiceId: string | null,
-    isOpening: boolean = false,
     isResume: boolean = false
   ): Promise<PipeResult> {
     const key = apiKey.get();
@@ -291,11 +296,11 @@ export class ResponsePipeline {
     try {
       // 阶段1: 构建上下文
       this.state = 'BUILDING_CONTEXT';
-      const context = contextBuilder.buildFullContext(store, this.config.mode, isOpening);
+      const context = contextBuilder.buildFullContext(store, this.config.mode);
       // P1-6.3 动静分离：动态数据（元石余额/NPC关系/蛊虫状态）注入user message
       const dynamicCtx = contextBuilder.buildDynamicContext(store);
       const baseMessages = contextBuilder.buildMessages(context, choiceId || undefined, dynamicCtx);
-      console.log(`%c[PIPE] PROCESS %c→ isOpening=${isOpening} choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c dynamic=${dynamicCtx.length}c`,
+      console.log(`%c[PIPE] PROCESS %c→ choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c dynamic=${dynamicCtx.length}c`,
         'color:#b8860b;font-weight:bold','color:#999');
 
       // 阶段2-4: 获取+解析+格式验证
@@ -416,6 +421,19 @@ export class ResponsePipeline {
 
       applyStateUpdate(narrative.state_update);
 
+      // ═══ P2补完: 章节目标检测 — 打通目标→路由推进链路 ═══
+      try {
+        const chkStore = useStore.getState() as any;
+        checkChapterGoals(chkStore, {
+          chapterId: chkStore.currentChapterId || null,
+          currentDomain: chkStore.currentDomain || '南疆',
+          realmGrand: chkStore.profile?.realm?.grand || 1,
+          turn: chkStore.turn || 1,
+          currency: chkStore.currency || 0,
+          flags: chkStore.flags || {},
+        });
+      } catch { /* goal checker not ready — silently skip */ }
+
       // ═══ P2-8成就钩子：每轮RESOLVED后检测成就条件 ═══
       try {
         const achStore = useStore.getState() as any;
@@ -509,7 +527,7 @@ export class ResponsePipeline {
                 name: store2.playerName || '蛊师',
                 realm: store2.realm || '一转蛊师',
                 path: store2.path || '力道',
-                daoMarks: store2.pathBuild?.dao_marks?.[store2.pathBuild?.primary || '力道'] || 0,
+                daoMarks: store2.pathBuild?.dao_marks || {}, // P2补完: 传入完整道痕KV映射
                 hp: store2.hp || 100, maxHp: store2.maxHp || 100,
                 attack: store2.attack || 20, defense: store2.defense || 5,
                 gu: playerGu, moves: [],
@@ -559,8 +577,8 @@ export class ResponsePipeline {
         }
       } catch { /* encounter system not ready — silently skip */ }
 
-      // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（开局+续档不计入） ═══
-      if (!isOpening && !isResume) {
+      // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（续档不计入） ═══
+      if (!isResume) {
         (useStore.getState() as any).advanceTurn?.();
         // P2-6: 债务利息+阈值检测
         const debtStore = useStore.getState() as any;

@@ -44,6 +44,16 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         npcId, npcName, npcFaction, affinity,
       });
     }
+    // P1修复: 首次遇到NPC时递增 knownNpcCount（用于成就检测）
+    const flagKey = `_npc_met_${npcId}`;
+    if (!logStore.flags?.[flagKey]) {
+      if (typeof logStore.incrementKnownNpcCount === 'function') {
+        logStore.incrementKnownNpcCount();
+      }
+      if (typeof logStore.setFlag === 'function') {
+        logStore.setFlag(flagKey, true);
+      }
+    }
   },
 
   sendTopic: (topic) => {
