@@ -755,6 +755,15 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (typeof apertureStore.tickAperture === 'function') {
       apertureStore.tickAperture(1); // 每回合推进1天
     }
+
+    // ═══ v0.7.0: 势力系统tick — 每回合维护扣费 + 贸易收入 ═══
+    const factionStore = get() as any;
+    if (typeof factionStore.tickFactionMaintenance === 'function') {
+      try { factionStore.tickFactionMaintenance(); } catch { /* faction maintenance not ready */ }
+    }
+    if (typeof factionStore.tickFactionTrade === 'function') {
+      try { factionStore.tickFactionTrade(); } catch { /* faction trade not ready */ }
+    }
   },
   setFlag: (key, value) => set((s: PlayerSlice) => ({ flags: { ...s.flags, [key]: value } })),
   removeFlag: (key) => set((s: PlayerSlice) => {
