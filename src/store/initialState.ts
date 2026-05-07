@@ -24,6 +24,7 @@ export const INITIAL_STATE = {
   vitals: {
     health: { current: 100, max: 100 },
     essence: { current: 100, max: 100 },
+    essenceType: 'mortal' as const,
   },
   pathBuild: {
     primary: '' as any,
@@ -155,6 +156,8 @@ export const INITIAL_STATE = {
   globalEventStatus: {} as Record<string, any>,
   // P2-4a: 决斗引擎
   duelState: null as any,
+  // v0.7.0: 小队战斗状态
+  squadCombatState: null as any,
   debt: 0 as number,
   debtInterestRate: 0.05 as number,
   // P2新增: 子系统默认值（各子系统实现时覆盖）
@@ -185,6 +188,22 @@ export const INITIAL_STATE = {
   auctionItems: [] as any[],
   isAuctionActive: false,
   auctionLastTurn: 0,
+
+  // ═══ v0.7.0: 势力系统 ═══
+  /** 玩家自创势力 */
+  playerFaction: null as import('../types').PlayerFaction | null,
+  /** 势力事件日志 */
+  factionEvents: [] as import('../types').FactionEvent[],
+
+  // ═══ v0.7.0: 小队编队状态 ═══
+  partyState: { members: [], maxSize: 4, formation: null },
+
+  // ═══ v0.7.0: 仙窍存储兜底 ═══
+  apertureInventory: { gu: [], materials: {}, immortalMaterials: {} },
+
+  // ═══ v0.7.0 P2: 动态NPC注册表 ═══
+  dynamicNPCs: {} as Record<string, import('../types').DynamicNPC>,
+  maxDynamicNPCs: 500 as number,
 };
 
 /**
@@ -223,6 +242,8 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'currentNarrative',
   // 读档版本计数器（纯UI信号，不持久化）
   'gameLoadVersion',
+  // v0.7.0: 小队战斗运行时状态（不持久化，战斗结束后清理）
+  'squadCombatState',
   // ═══ v1.7: timelineSlice临时选择状态（仅角色创建阶段使用，排除存档污染） ═══
   'selectedNodeId', 'selectedNode', 'selectedDomain',
   'timelineTalents', 'apertureConfig', 'apertureRemainingPoints',
@@ -241,5 +262,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * 存档文件版本号
  * 每次状态结构变更时递增，用于 migrate 兼容旧存档
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
+ * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  */
-export const SAVE_FORMAT_VERSION = 8;
+export const SAVE_FORMAT_VERSION = 11;

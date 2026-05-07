@@ -1,11 +1,140 @@
-import { create } from 'zustand';
-import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand } from '../../types';
+import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand, ExtremePhysiqueType } from '../../types';
 import { tickHeavenlyLand } from '../../engine/HeavenlyLandEngine';
 import { computePathLevel } from '../../engine/path-progression';
 import { getMigrationNpcs, crossDomainAffinityDecay, filterNpcByDomain } from '../../engine/npc-cross-domain';
 import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
 import { checkChapterGoals } from '../../engine/goal-checker';
 import { triggerBreakthrough } from '../../components/game/BreakthroughAnimation';
+
+// ═══ Fix#5: 十绝体道痕亲和矩阵（内联定义，因 extreme-physique-daomark-affinity.json 尚未创建） ═══
+interface ExtremePhysiqueAffinity {
+  /** 亲和流派→道痕亲和值(80-100) */
+  primaryPaths: Record<string, number>;
+  /** 禁制流派（亲和=0，不可修行） */
+  forbiddenPaths: string[];
+  /** 反噬流派（亲和为负，修行扣HP） */
+  backlashPaths?: Record<string, number>;
+  /** 修行效率修正 */
+  cultivationMod?: {
+    type: 'time_based' | 'location_based' | 'flat_bonus';
+    /** 白昼倍率（仅 time_based） */
+    dayMultiplier?: number;
+    /** 夜晚倍率（仅 time_based） */
+    nightMultiplier?: number;
+    /** 每转额外道痕增长（境界突破时） */
+    daoMarkPerRealm?: number;
+  };
+}
+
+const EXTREME_PHYSIQUE_AFFINITIES: Record<ExtremePhysiqueType, ExtremePhysiqueAffinity> = {
+  '太日阳莽体': {
+    primaryPaths: { '宇道': 90 },
+    forbiddenPaths: ['暗道', '魂道'],
+    backlashPaths: { '影道': -30 },
+    cultivationMod: { type: 'time_based', dayMultiplier: 2.0, nightMultiplier: 0.2, daoMarkPerRealm: 5 },
+  },
+  '古月阴荒体': {
+    primaryPaths: { '宙道': 90 },
+    forbiddenPaths: ['光道', '炎道'],
+    backlashPaths: { '阳道': -30 },
+    cultivationMod: { type: 'time_based', dayMultiplier: 0.3, nightMultiplier: 2.5, daoMarkPerRealm: 5 },
+  },
+  '北冥冰魄体': {
+    primaryPaths: { '冰道': 90, '水道': 70 },
+    forbiddenPaths: ['炎道', '火道'],
+    backlashPaths: { '炎道': -40, '火道': -30 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '森海轮回体': {
+    primaryPaths: { '木道': 90 },
+    forbiddenPaths: ['金道'],
+    backlashPaths: { '金道': -20 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '炎煌雷泽体': {
+    primaryPaths: { '炎道': 85, '雷道': 85 },
+    forbiddenPaths: ['水道', '冰道'],
+    backlashPaths: { '水道': -35, '冰道': -35 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '万金妙华体': {
+    primaryPaths: { '金道': 95 },
+    forbiddenPaths: ['木道', '炎道'],
+    backlashPaths: { '木道': -20 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '大力真武体': {
+    primaryPaths: { '力道': 100 },
+    forbiddenPaths: ['智道', '魂道'],
+    backlashPaths: { '智道': -25 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '逍遥智心体': {
+    primaryPaths: { '智道': 95 },
+    forbiddenPaths: ['力道'],
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '厚土元央体': {
+    primaryPaths: { '土道': 90 },
+    forbiddenPaths: ['风道'],
+    cultivationMod: { type: 'location_based', daoMarkPerRealm: 5 },
+  },
+  '宇宙大衍体': {
+    primaryPaths: { '变化道': 90, '宇道': 70 },
+    forbiddenPaths: [],
+    backlashPaths: { '雷道': -20 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
+  },
+  '纯梦求真体': {
+    primaryPaths: { '梦道': 80 },
+    forbiddenPaths: ['魂道'],
+    backlashPaths: { '魂道': -50 },
+    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 3 },
+  },
+};
+
+/** 获取当前玩家十绝体类型（从 aperture 中读取） */
+function getExtremePhysiqueType(get: any): ExtremePhysiqueType | null {
+  try {
+    const aperture = get().aperture;
+    if (aperture?.extremePhysiqueType) {
+      return aperture.extremePhysiqueType as ExtremePhysiqueType;
+    }
+    // 备选：从 profile 或 flags 中读取
+    const flags = get().flags || {};
+    if (flags._extremePhysiqueType) {
+      return flags._extremePhysiqueType as ExtremePhysiqueType;
+    }
+  } catch { /* aperture state not loaded */ }
+  return null;
+}
+
+/** Fix#5: 十绝体境界突破时应用道痕亲和增长 */
+function applyExtremePhysiqueRealmGrowth(set: any, get: any, newGrand: number) {
+  const physiqueType = getExtremePhysiqueType(get);
+  if (!physiqueType) return;
+
+  const affinity = EXTREME_PHYSIQUE_AFFINITIES[physiqueType];
+  if (!affinity) return;
+
+  const daoMarkPerRealm = affinity.cultivationMod?.daoMarkPerRealm ?? 5;
+  const currentDaoMarks = { ...(get().pathBuild?.dao_marks || {}) };
+  let daoMarksChanged = false;
+
+  // 亲和流派 +N 道痕/转
+  for (const [path, baseAffinity] of Object.entries(affinity.primaryPaths)) {
+    const growth = Math.round(daoMarkPerRealm * (baseAffinity / 100));
+    currentDaoMarks[path] = (currentDaoMarks[path] || 0) + growth;
+    daoMarksChanged = true;
+    console.log(`[ExtremePhysique] ${physiqueType} 境界突破: ${path} +${growth}道痕 (newGrand=${newGrand})`);
+  }
+
+  if (daoMarksChanged) {
+    set((s: PlayerSlice) => ({
+      pathBuild: { ...s.pathBuild, dao_marks: currentDaoMarks },
+    }));
+  }
+}
 
 interface PlayerSlice extends PlayerState {
   gameTime: GameTime;
@@ -72,13 +201,26 @@ function recalcCombatStats(set: any, get: any) {
   const selectedTalents = state.selectedTalents;
   const talentModifiers = selectedTalents ? extractTalentModifiers(selectedTalents as any[]) : [];
   const cStats = deriveCombatStats({ physique: physique ?? 5, aptitude: aptitude ?? 5, mind: mind ?? 5, realmGrand: realmGrand ?? 1, talentModifiers });
-  // 游戏中途重推导时只更新combatStats，不清零essence
+
+  // ═══ v0.8.0-immortal: 根据能量类型设置不同上限 ═══
+  const isImmortal = realmGrand >= 6;
+  const essenceType = (isImmortal ? 'immortal' : 'mortal') as 'mortal' | 'immortal';
+  // 游戏中途重推导时保留当前essence值，只更新上限
   const currentEssence = state.vitals?.essence;
+  let newEssence: { current: number; max: number };
+  if (currentEssence) {
+    const maxEssence = isImmortal ? 2000 : (100 + realmGrand * 30);
+    newEssence = { current: Math.min(currentEssence.current, maxEssence), max: maxEssence };
+  } else {
+    newEssence = isImmortal ? { current: 2000, max: 2000 } : { current: 100 + realmGrand * 30, max: 100 + realmGrand * 30 };
+  }
+
   set({
     combatStats: cStats,
     vitals: {
       health: { current: cStats.maxHp, max: cStats.maxHp },
-      essence: currentEssence ?? { current: 100, max: 100 },
+      essence: newEssence,
+      essenceType,
     },
   });
 }
@@ -86,7 +228,7 @@ function recalcCombatStats(set: any, get: any) {
 export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   profile: { name: '', realm: { grand: 1, sub: '初阶', label: '一转初阶' }, background: '南疆' },
   attributes: { 资质: 5, 体魄: 5, 心智: 5, 气运: 5 },
-  vitals: { health: { current: 100, max: 100 }, essence: { current: 100, max: 100 } },
+  vitals: { health: { current: 100, max: 100 }, essence: { current: 100, max: 100 }, essenceType: 'mortal' as const },
   pathBuild: { primary: '' as PathType, secondary: [], path_levels: {}, dao_marks: {} },
   daoHeart: { kill: 0, mercy: 0, scheme: 0, ambition: 0 },
   flags: {},
@@ -141,6 +283,29 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       if (realmInfo) {
         set({ profile: { ...state.profile, realm: realmInfo } });
         needsCombatRecalc = true; // P2补完: 境界变化 → 重新推导战斗数值
+
+        // ═══ v0.8.0-immortal: 升仙时自动切换 essenceType + 填充仙元池 ═══
+        if (realmInfo.grand >= 6) {
+          const updated = get() as PlayerSlice;
+          if (updated.vitals.essenceType !== 'immortal') {
+            set((s: PlayerSlice) => ({
+              vitals: {
+                ...s.vitals,
+                essenceType: 'immortal',
+                essence: { current: 2000, max: 2000 },
+              },
+            }));
+            const logStore = get() as any;
+            if (typeof logStore.addGameLog === 'function') {
+              logStore.addGameLog('system', '⚡升仙质变！真元化作仙元，仙元池充盈（2000/2000）', {
+                realm: realmInfo.label, essenceType: 'immortal',
+              });
+            }
+          }
+        }
+
+        // ═══ Fix#5: 十绝体境界突破时应用道痕亲和增长 ═══
+        applyExtremePhysiqueRealmGrowth(set, get, realmInfo.grand);
         // ═══ P0.2: 更新最高境界 ═══
         const current = get() as PlayerSlice;
         if (realmInfo.grand > current.maxRealmReached) {
@@ -244,6 +409,24 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (update.essence) {
       set({ vitals: { ...state.vitals, essence: { current: Math.min(update.essence.current, update.essence.max), max: update.essence.max } } });
     }
+    // ═══ v0.8.0-immortal: 能量类型切换（AI叙事触发升仙时同步切换） ═══
+    if (update.essenceType) {
+      set((s: PlayerSlice) => ({
+        vitals: {
+          ...s.vitals,
+          essenceType: update.essenceType!,
+          essence: update.essenceType === 'immortal'
+            ? { current: 2000, max: 2000 }
+            : s.vitals.essence,
+        },
+      }));
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('system', `能量类型切换: ${update.essenceType}`, {
+          essenceType: update.essenceType,
+        });
+      }
+    }
     // ─── 道痕更新（增量合并到现有 dao_marks） ───
     if (update.dao_marks) {
       const currentDaoMarks = { ...state.pathBuild.dao_marks };
@@ -339,6 +522,38 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         season: SEASONS[Math.floor(((newMonth - 1) / 3) % 4)],
       },
     });
+    // ═══ v0.8.0-immortal: 蛊师真元消耗与元石补充 ═══
+    const realmGrand = (get() as PlayerSlice).profile.realm.grand;
+    const vitals = (get() as PlayerSlice).vitals;
+    if (realmGrand < 6 && vitals.essenceType !== 'immortal') {
+      // 蛊师每回合消耗微量真元维持空窍运转；低于50%自动吸收元石
+      const essencePct = vitals.essence.current / vitals.essence.max;
+      if (essencePct < 0.5) {
+        const currency = (get() as PlayerSlice).currency;
+        const STONE_COST = 1; // 1元石
+        if (currency >= STONE_COST) {
+          // 元石补充真元量（参照economy.json：一转100→二转70→三转40→四转20→五转10）
+          const essenceGain: Record<number, number> = { 1: 100, 2: 70, 3: 40, 4: 20, 5: 10 };
+          const gain = essenceGain[realmGrand] || 10;
+          const newEssence = Math.min(vitals.essence.current + gain, vitals.essence.max);
+          set((s: PlayerSlice) => ({
+            currency: s.currency - STONE_COST,
+            vitals: {
+              ...s.vitals,
+              essence: { ...s.vitals.essence, current: newEssence },
+            },
+          }));
+          // 日志记录
+          const logStore = get() as any;
+          if (typeof logStore.addGameLog === 'function') {
+            logStore.addGameLog('system', `吸收元石恢复真元+${gain} (${STONE_COST}元石消耗)`, {
+              essenceGain: gain, essenceCurrent: newEssence, essenceMax: vitals.essence.max,
+            });
+          }
+        }
+      }
+    }
+
     // ═══ P2-13: 蛊虫饥饿推进（确定性计数模型，替代旧概率模型） ═══
     const guStore = get() as any;
     if (typeof guStore.tickGuHunger === 'function') {
@@ -593,5 +808,5 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
 
   setImmortalCurrency: (amount) => set({ immortalCurrency: amount }),
 
-  setCombatStats: (stats) => set({ combatStats: stats, vitals: { health: { current: stats.maxHp, max: stats.maxHp }, essence: { current: 100, max: 100 } } }),
+  setCombatStats: (stats) => set({ combatStats: stats, vitals: { health: { current: stats.maxHp, max: stats.maxHp }, essence: { current: 100, max: 100 }, essenceType: 'mortal' as const } }),
 });

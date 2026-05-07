@@ -17,9 +17,19 @@ interface KillMoveSlice {
 export const createKillMoveSlice = (set: any, get: any): KillMoveSlice => ({
   killMoves: [],
   cooldowns: {},
-  learnKillMove: (move) => set((s: KillMoveSlice) => ({
-    killMoves: [...s.killMoves, move],
-  })),
+  learnKillMove: (move) => set((s: KillMoveSlice) => {
+    // 🆕 重复检测：若已存在同coreGu组合的杀招，静默拒绝（KillMoveCreationPanel已做UI层拦截，此处为数据层防御）
+    if (move.coreGu && move.coreGu.length > 0) {
+      const sortedNew = [...move.coreGu].sort();
+      const dup = s.killMoves.find(km => {
+        if (!km.coreGu || km.coreGu.length !== sortedNew.length) return false;
+        const sorted = [...km.coreGu].sort();
+        return sorted.every((g, i) => g === sortedNew[i]);
+      });
+      if (dup) return s; // 拒绝重复
+    }
+    return { killMoves: [...s.killMoves, move] };
+  }),
   // ═══ B2.0: 使用杀招 — 冷却 + 熟练度递增 ═══
   useKillMove: (id) => set((s: KillMoveSlice) => {
     const idx = s.killMoves.findIndex(m => m.id === id);

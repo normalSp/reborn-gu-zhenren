@@ -26,6 +26,27 @@
     "overwhelmNote": "境界差≥overwhelmThreshold时：(1)低境界方伤害倍率大幅降低 (2)高境界方伤害倍率大幅提升 (3)低境界方逃跑基础概率-30% (4)高境界方免疫逃跑(C15/crit免疫)。理论上仍可战胜但极其困难，鼓励玩家使用计谋/道具而非硬刚。"
   },
 
+  "immortalVsMortal": {
+    "_note": "v0.7.0-immortal-强化: 蛊仙(6-9转) vs 蛊师(1-5转)跨界战斗增强倍率。在getRealmCoefficients中自动检测并叠加。",
+    "immortalDamageMult": 8.0,
+    "immortalHitBonus": 80,
+    "mortalDamageMult": 0.05,
+    "mortalHitPenalty": -50,
+    "immortalRealmGate": 6,
+    "designRationale": "原著设定：蛊仙杀蛊师如踩蚂蚁。蛊仙对蛊师伤害8x+命中+80，蛊师对蛊仙伤害0.05x+命中-50。配合combat-stats.ts的真·断崖增长(5x起步HP/ATK/DEF)，综合战力差可达40-100x。"
+  },
+
+  "overreachPenalty": {
+    "_note": "v0.7.0: 越阶使用杀招惩罚表。当玩家使用高于自身境界转数的杀招时触发。",
+    "_logic": "rankOverreachSteps = killMove.level - playerRealmNum (≥1触发)。在convertKillMoveToDuelMove中计算rankPenalty，在combat-engine.ts gu_skill分支施加反噬。",
+    "table": {
+      "1": { "damageMultiplier": 0.7, "backlashPercent": 0.30, "essenceExtraCost": 1.5, "note": "越1阶: 伤害×0.7, 30%反噬扣HP, 仙元消耗×1.5" },
+      "2": { "damageMultiplier": 0.4, "backlashPercent": 0.60, "essenceExtraCost": 2.0, "note": "越2阶: 伤害×0.4, 60%反噬扣HP, 仙元消耗×2.0" },
+      "3": { "damageMultiplier": 0.2, "backlashPercent": 0.85, "essenceExtraCost": 3.0, "note": "越3阶: 伤害×0.2, 85%反噬扣HP, 仙元消耗×3.0" },
+      "4": { "damageMultiplier": 0.1, "backlashPercent": 0.95, "essenceExtraCost": 5.0, "note": "越4阶+: 伤害×0.1, 95%反噬扣HP, 仙元消耗×5.0" }
+    }
+  },
+
   "pathMatrix": {
     "_note": "15流派(L1-12+L2-3)克制关系。L1核心: 克制=1.3倍/被克=0.7倍。L2次要: 克制=1.15倍/被克=0.85倍。无克制=1.0。",
     "_paths_L1": ["金道", "木道", "水道", "炎道", "土道", "风道", "雷道", "冰道", "力道", "魂道", "血道", "智道"],

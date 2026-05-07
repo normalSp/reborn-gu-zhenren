@@ -35,6 +35,12 @@ const STATE_DOT: Record<string, string> = {
 
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
+  // ═══ BugFix v0.7.0: 蛊仙模式读取仙窍存储的蛊虫 ═══
+  const apertureInventoryGu = useStore(s => (s as any).apertureInventory?.gu as typeof inventory | undefined);
+  const realmGrand = useStore(s => s.profile?.realm?.grand ?? 1);
+  const isImmortal = realmGrand >= 6;
+  // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
+  const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
   const currency = useStore(s => s.currency);
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
   const removeGu = useStore(s => s.removeGu);
@@ -45,9 +51,9 @@ export function GuInventoryPanel() {
   const [sellConfirm, setSellConfirm] = useState<string | null>(null);
   const [feedMsg, setFeedMsg] = useState('');
 
-  const capacity = getApertureCapacity();
-  const paths = Array.from(new Set(inventory.map(g => g.path)));
-  const filtered = filterPath === 'all' ? inventory : inventory.filter(g => g.path === filterPath);
+  const capacity = isImmortal ? Infinity : getApertureCapacity();
+  const paths = Array.from(new Set(allGu.map(g => g.path)));
+  const filtered = filterPath === 'all' ? allGu : allGu.filter(g => g.path === filterPath);
 
   // ─── 喂养（P0.4: 接入 feedGuHunger 引擎） ───
   const feedGu = (guId: string, currentState: string) => {
@@ -76,15 +82,17 @@ export function GuInventoryPanel() {
     setSellConfirm(null);
   };
 
-  if (inventory.length === 0) {
+  if (allGu.length === 0) {
     return (
       <div className="flex-1 flex items-center justify-center p-6">
-        <p className="text-rg-ink-300 text-sm font-panel">空窍中尚无蛊虫</p>
+        <p className="text-rg-ink-300 text-sm font-panel">{isImmortal ? '仙窍中尚无蛊虫' : '空窍中尚无蛊虫'}</p>
       </div>
     );
   }
 
-  const headerTitle = `蛊虫（${inventory.length}/${capacity}）`;
+  const headerTitle = isImmortal
+    ? `仙窍蛊虫（${allGu.length}只）`
+    : `蛊虫（${allGu.length}/${capacity}）`;
 
   return (
     <div className="flex-1 overflow-y-auto">
@@ -99,7 +107,7 @@ export function GuInventoryPanel() {
                 : 'text-rg-paper-200/40 border border-rg-ink-300/15 hover:border-rg-gold/25 hover:text-rg-paper-200/70'
             }`}
           >
-            全部 ({inventory.length})
+            全部 ({allGu.length})
           </button>
           {paths.map(p => (
             <button
@@ -111,7 +119,7 @@ export function GuInventoryPanel() {
                   : 'text-rg-paper-200/40 border border-rg-ink-300/15 hover:border-rg-gold/25 hover:text-rg-paper-200/70'
               }`}
             >
-              {p} ({inventory.filter(g => g.path === p).length})
+              {p} ({allGu.filter(g => g.path === p).length})
             </button>
           ))}
         </div>
@@ -247,7 +255,7 @@ export function GuInventoryPanel() {
 
       {filtered.length === 0 && (
         <div className="flex items-center justify-center py-8">
-          <p className="text-rg-ink-300 text-xs font-panel">该流派下暂无蛊虫</p>
+          <p className="text-rg-ink-300 text-xs font-panel">{isImmortal ? '该流派下仙窍中暂无蛊虫' : '该流派下暂无蛊虫'}</p>
         </div>
       )}
     </div>

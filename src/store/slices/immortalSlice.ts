@@ -1,4 +1,4 @@
-import type { MortalAperture, ImmortalAperture, ApertureStorage, ImmortalApertureGrade, GuInstance } from '../../types';
+import type { MortalAperture, ImmortalAperture, ApertureStorage, ImmortalApertureGrade, GuInstance, ResourceNode, ResourceNodeBuildCost } from '../../types';
 
 /**
  * P4: 福地等级评定参数（方案A — 正常游玩路线）
@@ -73,6 +73,10 @@ interface ApertureSlice {
   tickAperture: (externalTime: number) => void;
   /** P4: 设置资源节点启用状态 */
   setNodeActive: (nodeId: string, active: boolean) => void;
+  /** v0.7.0: 开辟新资源节点 — 建造消耗元石，成功率=60%+资质×2% */
+  addResourceNode: (type: string, name: string, grade: ResourceNode['grade']) => { cost: number; success: boolean; node?: ResourceNode };
+  /** v0.7.0: 升级资源节点 — 提升品质和产出速率 */
+  upgradeResourceNode: (nodeId: string) => { cost: number; success: boolean; qualityGain?: number };
 }
 
 export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
@@ -179,6 +183,27 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
         set({ immortalCurrency: currentImmortalCurrency + immortalOutput });
       }
     }
+
+    // ═══ v0.8.0-immortal: 仙元自动回复 — 仙窍产出仙元供给战斗 ═══
+    if (state.essenceType === 'immortal' || (state.profile?.realm?.grand >= 6)) {
+      const vitals = state.vitals || {};
+      const essenceMax = vitals.essence?.max || 2000;
+      const essenceCurrent = vitals.essence?.current || 0;
+      if (essenceCurrent < essenceMax) {
+        // 回复量 = max(仙窍面积×0.02×时间流速比, 10)，保底10点/回合
+        const areaMu = aperture.area_mu || 100;
+        const flowRatio = aperture.time_flow_ratio || 5;
+        const regenAmount = Math.max(Math.round(areaMu * 0.02 * flowRatio), 10);
+        const newEssence = Math.min(essenceCurrent + regenAmount, essenceMax);
+        set({
+          vitals: {
+            ...vitals,
+            essence: { ...(vitals.essence || { current: 2000, max: 2000 }), current: newEssence },
+            essenceType: (vitals.essenceType || 'immortal') as 'mortal' | 'immortal',
+          },
+        });
+      }
+    }
   },
 
   /** P4: 切换资源节点开关 */
@@ -189,5 +214,102 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
       n.id === nodeId ? { ...n, active } : n
     );
     set({ aperture: { ...aperture, resource_nodes: updatedNodes } });
+  },
+
+  // ═══ v0.7.0: 开辟资源节点 — 建造消耗元石，成功率=60%+资质×2% ═══
+  addResourceNode: (type, name, grade) => {
+    const aperture = get().aperture as ImmortalAperture | null;
+    if (!aperture) return { cost: 0, success: false };
+
+    // 建造消耗：等级 × 基础元石（仙材更贵）
+    const gradeMultiplier = { '普通': 1, '精品': 2, '稀有': 4, '仙材': 8 }[grade] || 1;
+    const cost = 100 * gradeMultiplier;
+
+    const fullStore = get() as any;
+    const currentCurrency = fullStore.immortalCurrency || fullStore.currency || 0;
+    if (currentCurrency < cost) {
+      console.warn(`[ImmortalSlice] 元石不足: 需要${cost}, 当前${currentCurrency}`);
+      return { cost, success: false };
+    }
+
+    // 扣费
+    if (fullStore.immortalCurrency !== undefined) {
+      set({ immortalCurrency: Math.max(0, currentCurrency - cost) } as any);
+    } else {
+      set({ currency: Math.max(0, currentCurrency - cost) } as any);
+    }
+
+    // 成功率: 60% + 资质×2%
+    const talent = fullStore.attributes?.资质 || 5;
+    const successRate = Math.min(95, 60 + talent * 2);
+    const success = Math.random() * 100 < successRate;
+
+    if (success) {
+      const node: ResourceNode = {
+        id: `node_built_${Date.now()}`,
+        type,
+        name,
+        output_rate: 1,
+        quality: grade === '仙材' ? 70 : 50,
+        grade,
+        active: true,
+      };
+      const updatedNodes = [...aperture.resource_nodes, node];
+      set({ aperture: { ...aperture, resource_nodes: updatedNodes } as any });
+
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('system', `资源节点建造成功: ${name} (${grade}, 成功率${successRate}%)`, { node });
+      }
+      return { cost, success: true, node };
+    }
+
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('system', `资源节点建造失败: ${name} (成功率${successRate}%)`);
+    }
+    return { cost, success: false };
+  },
+
+  // ═══ v0.7.0: 升级资源节点 — 提升品质和产出速率 ═══
+  upgradeResourceNode: (nodeId) => {
+    const aperture = get().aperture as ImmortalAperture | null;
+    if (!aperture) return { cost: 0, success: false };
+
+    const node = aperture.resource_nodes.find(n => n.id === nodeId);
+    if (!node) return { cost: 0, success: false };
+
+    // 升级消耗：品质×50元石
+    const cost = Math.floor(node.quality * 0.5) + 50;
+    const fullStore = get() as any;
+    const currentCurrency = fullStore.immortalCurrency || fullStore.currency || 0;
+    if (currentCurrency < cost) return { cost, success: false };
+
+    // 扣费
+    if (fullStore.immortalCurrency !== undefined) {
+      set({ immortalCurrency: Math.max(0, currentCurrency - cost) } as any);
+    } else {
+      set({ currency: Math.max(0, currentCurrency - cost) } as any);
+    }
+
+    // 升级成功概率：70%基础
+    const success = Math.random() < 0.70;
+    if (!success) return { cost, success: false };
+
+    const qualityGain = 5 + Math.floor(Math.random() * 11); // 5-15
+    const outputGain = 1 + Math.floor(Math.random() * 2); // 1-2
+
+    const updatedNodes = aperture.resource_nodes.map(n =>
+      n.id === nodeId
+        ? { ...n, quality: Math.min(100, n.quality + qualityGain), output_rate: n.output_rate + outputGain }
+        : n,
+    );
+    set({ aperture: { ...aperture, resource_nodes: updatedNodes } as any });
+
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('system', `资源节点升级: ${node.name} 品质+${qualityGain} 产出+${outputGain}`, { nodeId });
+    }
+    return { cost, success: true, qualityGain };
   },
 });

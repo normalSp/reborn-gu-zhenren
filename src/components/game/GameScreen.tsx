@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../../store';
+import type { KeyEvent } from '../../types';
 import { StatusBar } from './StatusBar';
 import { NarrativePanel } from './NarrativePanel';
 import { ChoicePanel } from './ChoicePanel';
@@ -18,6 +19,7 @@ import { SaveLoadDialog } from './SaveLoadDialog';
 import { SettingsDialog } from './SettingsDialog';
 import { BattleOverlay } from './BattleOverlay';
 import { CombatOverlay } from './CombatOverlay';
+import { SquadCombatOverlay } from './SquadCombatOverlay';
 import { NarrativeCombatPanel } from './NarrativeCombatPanel';
 import { NPCInteractionPanel } from './NPCInteractionPanel';
 import { TutorialOverlay } from './TutorialOverlay';
@@ -31,13 +33,16 @@ import { AchievementToast } from './AchievementToast';
 import { ChapterTransition } from './ChapterTransition';
 import { MaterialBagPanel } from './MaterialBagPanel';
 import { ApertureManagementPanel } from './ApertureManagementPanel';
+import { TrainingGroundPanel } from './TrainingGroundPanel';
 import { useGamePipeline } from '../../hooks/useGamePipeline';
 import { useAnimationBridge } from '../../hooks/useAnimationBridge';
 import { useDeviceCapability } from '../../hooks/useDeviceCapability';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
+import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
+import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground';
 
 // P3修复：地图标题改为动态，在渲染时根据currentDomain生成
 const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: boolean): string => {
@@ -55,6 +60,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     dao_marks: '流派道痕',
     merchant: '商会',
     achievements: '成就',
+    training_ground: '道场修炼',
   };
   return titles[panel] || '';
 };
@@ -74,6 +80,7 @@ const panelContent = (panel: SidePanel) => {
     case 'dao_marks': return <DaoMarkPanel />;
     case 'merchant': return <MerchantPanel />;
     case 'achievements': return <AchievementPanel />;
+    case 'training_ground': return <TrainingGroundPanel />;
     default: return null;
   }
 };
@@ -92,6 +99,7 @@ const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'dao_marks', label: '流派道痕' },
   { id: 'merchant', label: '商会' },
   { id: 'achievements', label: '成就' },
+  { id: 'training_ground', label: '道场' },
   { id: 'events', label: '事件日志' },
 ];
 
@@ -138,6 +146,53 @@ export function GameScreen() {
   // M7: GSAP 动画桥接（监听章节过渡/杀招/名场面）
   useAnimationBridge();
 
+  // ═══ Fix#3: narrativeSlice 集成 — 监听叙事变化，记录关键事件与滚动摘要 ═══
+  const narrative = useStore(s => s.currentNarrative);
+  const messages = useStore(s => s.messages);
+  const prevNarrativeRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!narrative?.narrative?.text) return;
+    const text = narrative.narrative.text;
+
+    // updateSummary: 基于最近消息生成滚动摘要
+    if (messages.length > 0) {
+      const recentMessages = messages.slice(-5);
+      const summary = recentMessages
+        .map(m => m.role === 'user' ? `[选择]${m.content.slice(0, 30)}` : m.content.slice(0, 60))
+        .join(' | ');
+      useStore.getState().updateSummary(summary);
+    }
+
+    // addKeyEvent: 检测关键叙事事件
+    if (text !== prevNarrativeRef.current) {
+      prevNarrativeRef.current = text;
+      const keyEventPatterns: Array<{ pattern: RegExp; type: string }> = [
+        { pattern: /突破|晋升|升仙|雷劫|灾劫|天劫/, type: 'breakthrough' },
+        { pattern: /战斗|决斗|搏杀|厮杀|酣战/, type: 'combat' },
+        { pattern: /白凝冰|古月方源|商心慈|商拓海|太白云生/, type: 'key_npc' },
+        { pattern: /宝黄天|拍卖|竞价/, type: 'auction' },
+        { pattern: /人祖|传说|十子/, type: 'lore' },
+        { pattern: /死|亡|陨落|绝境|垂死/, type: 'danger' },
+        { pattern: /蛊方|炼蛊|配方|融合/, type: 'refine' },
+      ];
+      for (const { pattern, type } of keyEventPatterns) {
+        if (pattern.test(text)) {
+          const importance: 1 | 2 | 3 = type === 'breakthrough' || type === 'danger' ? 3 : 2;
+          useStore.getState().addKeyEvent({
+            id: `ke_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+            type: type as KeyEvent['type'],
+            turn: useStore.getState().turn,
+            summary: text.slice(0, 80),
+            importance,
+            timestamp: Date.now(),
+            relatedNPCs: [],
+          });
+          break; // 每条叙事仅记录一个关键事件
+        }
+      }
+    }
+  }, [narrative, messages]);
+
   // ─── P2修复: 成就面板开关（store 驱动） ───
   const isAchievementPanelOpen = useStore(s => s.isAchievementPanelOpen);
   useEffect(() => {
@@ -159,6 +214,18 @@ export function GameScreen() {
       // ─── M4: 续档检测 — turn>1 表示有存档数据，走续档流程（标准提示词+不推进回合） ───
       const turn = useStore.getState().turn;
       const isResume = turn > 1;
+
+      // ═══ Fix#1: 加载起源定义（修复 originUnlockSlice 静默失效） ═══
+      try {
+        const origins = ((originsData as any).origins || []) as OriginDefinition[];
+        if (origins.length > 0) {
+          useStore.getState().loadOriginDefinitions(origins);
+          console.log(`[OriginUnlock] 加载起源定义: ${origins.length}条`);
+        }
+      } catch (err) {
+        console.warn('[OriginUnlock] 起源定义加载失败，系统静默降级', err);
+      }
+
       startGame(isResume);
     }
     // ═══ BugFix: 离开游戏界面时重置启动标记，确保重入轮回后能重新触发开局 ═══
@@ -262,6 +329,7 @@ export function GameScreen() {
       <KillMoveCreationPanel />
       <BattleOverlay />
       <CombatOverlay />
+      <SquadCombatOverlay />
       <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
       <NPCInteractionPanel />
       <BreakthroughAnimation />

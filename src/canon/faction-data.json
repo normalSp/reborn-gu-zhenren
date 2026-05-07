@@ -35,7 +35,7 @@
         "standing": 0,
         "description": "擅力道，以战养族。族人自幼习武，体魄过人，在南疆以武力震慑四方。",
         "starterGu": { "name": "熊力蛊", "tier": 1, "path": "力道", "rank": "common" },
-        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，初始体魄+1" }
+        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，初始体魄+1", "attributeBonus": { "体魄": 1 } }
       },
       {
         "id": "tiejia",
@@ -67,7 +67,7 @@
         "standing": 0,
         "description": "高于王庭的古老存在——长生天的代理人不受部落规则约束，拥有神秘传承。",
         "starterGu": { "name": "侦察蛊", "tier": 1, "path": "智道", "rank": "common" },
-        "bonus": { "resourceMult": 1.0, "talentBonus": 2, "desc": "天赋点+2，初始气运+1，远古传承专属天赋可选" }
+        "bonus": { "resourceMult": 1.0, "talentBonus": 2, "desc": "天赋点+2，初始气运+1，远古传承专属天赋可选", "attributeBonus": { "气运": 1 } }
       },
       {
         "id": "huangjin_jiazu",
@@ -77,7 +77,7 @@
         "standing": 15,
         "description": "黄金血脉的拥有者——天生高贵，血统就是一切。部族内部血脉浓度决定话语权。",
         "starterGu": { "name": "黑豕蛊", "tier": 1, "path": "力道", "rank": "uncommon" },
-        "bonus": { "resourceMult": 1.15, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.15，初始体魄+1" }
+        "bonus": { "resourceMult": 1.15, "talentBonus": 1, "desc": "天赋点+1，初始元石×1.15，初始体魄+1", "attributeBonus": { "体魄": 1 } }
       }
     ],
     "东海": [

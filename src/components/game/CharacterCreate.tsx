@@ -1,13 +1,16 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useStore } from '../../store';
+import { useShallow } from 'zustand/shallow';
 import { INITIAL_TALENTS, TIER_COLORS, TIER_LABELS, TALENT_COST } from '../../data/talents';
 import { P4_TALENTS, P4_TALENT_COST, getTalentsByCategory } from '../../data/talents-p4';
 import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
 import guDbRaw from '../../canon/gu-database.json';
+import factionDbRaw from '../../canon/faction-data.json';
 import { computePathLevel } from '../../engine/path-progression';
 import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
 
 const GU_DB = guDbRaw as Record<string, any>;
+const FACTION_DB = factionDbRaw as Record<string, any>;
 
 interface CharacterCreateProps {
   onConfirm: () => void;
@@ -92,7 +95,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
   // ═══ v1.5: 时间线起点预填充P4已在TimelineConfig选好的天赋 ═══
   // P1修复: 直接通过 useStore 订阅 timelineTalents，避免 useMemo 依赖链断裂
   // 原依赖 [timelineNode] 不包含 timelineTalents，变化时 memo 不重算
-  const timelineTalents = useStore(s => (s as any).timelineTalents as string[]);
+  const timelineTalents = useStore(useShallow((s: any) => s.timelineTalents as string[]));
   const initialTalents = useMemo(() => {
     if (!timelineNode) return [] as Talent[];
     if (timelineTalents.length === 0) return [];
@@ -116,13 +119,19 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     }
   }, [isTimelineStart, initialTalents, selectedTalents.length]);
 
-  // ─── 天赋点数计算（5B: /5 而非 /6） ───
+  // ─── 天赋点数计算（5B: /5 而非 /6） + v0.6.0修复: 势力天赋加成 ───
   const isTenUltimate = attributes.资质 === 10;
+  const timelineConfig = useStore(useShallow((s: any) => s.getTimelineConfig?.()));
+  const factionTalentBonus = useMemo(() => {
+    const fid = timelineConfig?.factionId || (useStore.getState() as any).flags?._origin || '';
+    const faction = FACTION_DB._factions?.[fid] || Object.values(FACTION_DB._factions || {}).find((f: any) => f.id === fid);
+    return (faction as any)?.bonus?.talentBonus ?? 0;
+  }, [timelineConfig?.factionId]);
   const talentPoints = useMemo(() => {
     const total = attributes.资质 + attributes.体魄 + attributes.心智 + attributes.气运;
     const divisor = isTenUltimate ? 8 : 5;
-    return Math.floor(total / divisor);
-  }, [attributes, isTenUltimate]);
+    return Math.floor(total / divisor) + factionTalentBonus;
+  }, [attributes, isTenUltimate, factionTalentBonus]);
 
   // ─── v1.5: 时间线模式用P4分层天赋池，普通模式用旧池 ───
   const talentSourcePool = useMemo(() => {
@@ -177,6 +186,16 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     const tc = (useStore.getState() as any).getTimelineConfig?.() ?? null;
     const tNode = tc?.node;
 
+    // ═══ v1.7: 势力属性加成 → 必须在 deriveCombatStats 前注入 ═══
+    const effectiveAttributes = { ...attributes };
+    if (tNode && tc?.factionBonus?.attributeBonus) {
+      for (const [attrName, delta] of Object.entries(tc.factionBonus.attributeBonus)) {
+        if (attrName === '资质' || attrName === '体魄' || attrName === '心智' || attrName === '气运') {
+          effectiveAttributes[attrName] = Math.max(0, Math.min(10, effectiveAttributes[attrName] + delta));
+        }
+      }
+    }
+
     // 完全重置旧存档
     const fullState = useStore.getState();
     (fullState as any).resetStore?.();
@@ -197,7 +216,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
         realm: { grand: startRealm.grand, sub: startRealm.sub, label: realmLabel },
         background: `${origin} · ${playerIdentity}`,
       },
-      attributes,
+      attributes: effectiveAttributes,
     });
 
     // ═══ v1.5: 货币 — 优先使用timeline配置，fallback到境界基础表 ═══
@@ -229,9 +248,9 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     // ═══ P4数值修复: 战斗属性桥接 — 体魄/资质/境界→HP/ATK/DEF ═══
     const allModifiers = extractTalentModifiers(selectedTalents as any[]);
     const cStats = deriveCombatStats({
-      physique: attributes.体魄,
-      aptitude: attributes.资质,
-      mind: attributes.心智,
+      physique: effectiveAttributes.体魄,
+      aptitude: effectiveAttributes.资质,
+      mind: effectiveAttributes.心智,
       realmGrand: startRealm.grand,
       talentModifiers: allModifiers,
     });
@@ -303,7 +322,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
         if (zizhi >= 4) return '赤铁';
         return '青铜';
       };
-      const colorName = getColorName(attributes.资质);
+      const colorName = getColorName(effectiveAttributes.资质);
       const colorMap: Record<string, string> = {
         '青铜': '#4a8c5c', '赤铁': '#8c4a4a', '白银': '#8c8c9a', '黄金': '#c9a84a', '紫晶': '#7a4a9a',
       };
@@ -315,7 +334,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
         primevalSea: {
           color: colorMap[colorName],
           colorName,
-          fillPercent: Math.min(100, 50 + attributes.资质 * 5 + (attributes.资质 >= 7 ? 10 : 0) + (attributes.资质 >= 9 ? 5 : 0)),
+          fillPercent: Math.min(100, 50 + effectiveAttributes.资质 * 5 + (effectiveAttributes.资质 >= 7 ? 10 : 0) + (effectiveAttributes.资质 >= 9 ? 5 : 0)),
         },
         apertureWall: {
           state: '坚实',

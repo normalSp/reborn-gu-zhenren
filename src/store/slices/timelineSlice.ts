@@ -47,7 +47,7 @@ export interface FactionSelection {
   factionName: string;
   domain: string;
   starterGu: { name: string; tier: number; path: string; rank: string } | null;
-  bonus: { resourceMult: number; talentBonus: number; desc: string };
+  bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> };
 }
 
 // ─── 蛊虫选择 ───

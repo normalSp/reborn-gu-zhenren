@@ -1,9 +1,10 @@
 {
     "_meta": {
-    "version": "1.2",
-    "description": "蛊真人模拟器叙事战斗约束数据 — 南疆三章4个战斗场景。P2-4b首版，v1.2: 敌人数值标准化(combat-stats.ts公式)。",
+    "version": "1.3",
+    "description": "蛊真人模拟器叙事战斗约束数据 — 南疆三章4个战斗场景。P2-4b首版，v1.2: 敌人数值标准化(combat-stats.ts公式)，v1.3: v0.7.0-a新增combatDensity字段。",
     "usageNote": "combat-router.ts扫描AI叙事文本匹配triggerKeywords后按chapterId索引场景。duel类型走combatSlice，narrative类型走cachedCombatConstraint→context-builder注入。",
-    "enemyStatsFormula": "getStandardEnemyStats(realmGrand)×SPECIAL_ENEMY_MULTIPLIERS[特殊身份]"
+    "enemyStatsFormula": "getStandardEnemyStats(realmGrand)×SPECIAL_ENEMY_MULTIPLIERS[特殊身份]",
+    "densityLevels": "'sparse'(5回合冷却)/'moderate'(3回合)/'dense'(2回合)/'intense'(1回合)/'boss'(1回合特殊)"
   },
 
   "scenes": [
@@ -12,6 +13,7 @@
       "name": "青茅山蛊狼袭击",
       "chapterId": "qingmaoshan",
       "combatType": "narrative",
+      "combatDensity": "moderate",
       "triggerKeywords": ["蛊狼", "狼群", "野狼", "狼嚎", "狼影", "狼袭", "兽潮"],
       "scale": "skirmish",
       "recommendedRealm": 2,
@@ -36,6 +38,7 @@
       "name": "商路劫匪遭遇",
       "chapterId": "shanglu_qiusheng",
       "combatType": "duel",
+      "combatDensity": "moderate",
       "triggerKeywords": ["劫匪", "贼寇", "拦路", "劫道", "山贼", "强盗", "伏击"],
       "scale": "skirmish",
       "recommendedRealm": 2,
@@ -69,6 +72,7 @@
       "name": "白凝冰决斗",
       "chapterId": "nanjiang_chutan",
       "combatType": "duel",
+      "combatDensity": "sparse",
       "triggerKeywords": ["白凝冰", "决斗", "单挑", "对决", "恩怨", "清算", "背刺"],
       "scale": "skirmish",
       "recommendedRealm": 3,
@@ -106,6 +110,7 @@
       "name": "青茅山狼潮叙事战斗",
       "chapterId": "qingmaoshan",
       "combatType": "narrative",
+      "combatDensity": "dense",
       "triggerKeywords": ["狼潮", "兽潮", "狼群围城", "全寨防守", "寨墙"],
       "scale": "battle",
       "recommendedRealm": 2,

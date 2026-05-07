@@ -47,9 +47,9 @@ export function EventLogPanel() {
                     </span>
                   </div>
                   <p className="text-rg-paper-200/70 text-xs font-panel leading-relaxed">{event.summary}</p>
-                  {event.relatedNPCs.length > 0 && (
+                  {event.relatedNPCs?.length > 0 && (
                     <p className="text-rg-paper-200/30 text-[10px] font-panel mt-1">
-                      相关: {event.relatedNPCs.join(' · ')}
+                      相关: {event.relatedNPCs!.join(' · ')}
                     </p>
                   )}
                 </div>

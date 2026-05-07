@@ -64,12 +64,44 @@ export function deriveCombatStats(input: CombatStatsInput): CombatStats {
   const { physique, aptitude, mind, realmGrand, talentModifiers } = input;
   const r = realmGrand;
 
-  // 基础公式 (原著体魄→HP/DEF, 资质→ATK, 境界→全方位增幅)
-  let maxHp = 80 + physique * 20 + (r - 1) * 25;
-  let attack = Math.round(aptitude * 4 + physique * 2 + (r - 1) * 8);
-  let defense = Math.round(physique * 3 + (r - 1) * 4);
-  let accuracy = 70 + mind * 1 + (r - 1) * 2;
-  let evasion = 30 + physique * 1;
+  // ═══ v0.8.0-immortal: 升仙质变断崖式增长 ═══
+  // 蛊师阶段(1-5转): 线性增长 — 渐进修行
+  // 蛊仙阶段(6-9转): 断崖飞跃 — 升仙即质变，凡人不可敌
+  const isImmortal = r >= 6;
+  const immortalScale = isImmortal ? r - 5 : 0; // 6转=1, 7转=2, 8转=3, 9转=4
+
+  // 以5转巅峰值作为"蛊师基底"（蛊师阶段已计算到r-1=4）
+  const mortalBaseHp = 80 + physique * 20 + 4 * 25;
+  const mortalBaseAtk = aptitude * 4 + physique * 2 + 4 * 8;
+  const mortalBaseDef = physique * 3 + 4 * 4;
+
+  let maxHp: number;
+  let attack: number;
+  let defense: number;
+  let accuracy: number;
+  let evasion: number;
+
+  if (isImmortal) {
+    // ═══ v0.7.0: 升仙质变·真断崖——5x起步 ═══
+    // 原著：蛊仙与蛊师之间有质变断崖，数值极度夸张
+    // 6转≈6x基底, 7转≈9x, 8转≈12x, 9转≈15x
+    const hpMult = 3.0 + immortalScale * 3.0;
+    const atkMult = 2.0 + immortalScale * 1.5;
+    const defMult = 1.5 + immortalScale * 1.2;
+    maxHp = Math.round(mortalBaseHp * hpMult);
+    attack = Math.round(mortalBaseAtk * atkMult);
+    defense = Math.round(mortalBaseDef * defMult);
+    // 蛊仙命中/闪避也有质变：仙识远超凡人
+    accuracy = 75 + mind * 2 + immortalScale * 4;
+    evasion = 35 + physique * 2 + immortalScale * 2;
+  } else {
+    // 1-5转蛊师：线性增长
+    maxHp = 80 + physique * 20 + (r - 1) * 25;
+    attack = Math.round(aptitude * 4 + physique * 2 + (r - 1) * 8);
+    defense = Math.round(physique * 3 + (r - 1) * 4);
+    accuracy = 70 + mind * 1 + (r - 1) * 2;
+    evasion = 30 + physique * 1;
+  }
 
   // 天赋修正累乘
   for (const mod of talentModifiers) {
@@ -124,6 +156,7 @@ export function getStandardEnemyStats(realmGrand: number): { hp: number; attack:
 
 /**
  * 特殊角色倍率 (十绝体/族老等身份修正)
+ * v0.7.0-pre审查新增：上古荒兽倍率（七转蛊仙级肉身+荒兽天性狂暴）
  */
 export const SPECIAL_ENEMY_MULTIPLIERS: Record<string, { hp: number; atk: number; def: number }> = {
   '普通':     { hp: 1.0, atk: 1.0, def: 1.0 },
@@ -131,5 +164,6 @@ export const SPECIAL_ENEMY_MULTIPLIERS: Record<string, { hp: number; atk: number
   '族老':     { hp: 1.5, atk: 1.3, def: 1.4 },
   '十绝体':   { hp: 2.0, atk: 2.0, def: 1.5 },  // 白凝冰级
   '蛊仙':     { hp: 3.0, atk: 2.5, def: 2.0 },
+  '上古荒兽': { hp: 3.5, atk: 3.0, def: 2.5 },  // 黑狱龙级——七转蛊仙级体魄+荒兽肉身强化
   '传奇':     { hp: 5.0, atk: 4.0, def: 3.0 },  // 方源级
 };

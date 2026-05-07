@@ -7,7 +7,7 @@ import guDbRaw from '../../canon/gu-database.json';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import type { TimelineNode, LifeboundGuSelection, GuSelection, KillerMoveSelection, FactionSelection } from '../../store/slices/timelineSlice';
 
-interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string }; }
+interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> }; }
 const FACTION_DATA = (factionDataRaw as any).factions as Record<string, FactionEntry[]>;
 const GU_DB = guDbRaw as Record<string, any>;
 const KILLER_MOVES = (killerMovesRaw as any);

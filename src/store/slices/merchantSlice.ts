@@ -100,13 +100,25 @@ export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
       set({ currency: updatedCurrency });
 
       // 添加蛊虫到库存（通过guSlice）
+      // ═══ BugFix: 补全 GuInstance 必需字段，参照 state-update-applier.ts:96-108 ═══
       if (typeof store.addGu === 'function') {
+        const now = Date.now();
+        const specId = item.name.toLowerCase().replace(/\s+/g, '_');
         store.addGu({
+          id: `shop_${specId}_${now}_${Math.random().toString(36).slice(2, 7)}`,
+          specId,
           name: item.name,
           tier: item.tier,
           path: item.path,
-          rank: item.rank,
-          description: item.effect,
+          currentState: 'optimal' as const,
+          proficiency: 0,
+          bonded: false,
+          active: true,
+          hungerCounter: 0,
+          acquiredAt: {
+            turn: store.turn || 1,
+            narrative: `从商会购买: ${item.name} (${item.tier}转 ${item.path})`,
+          },
         });
       }
 

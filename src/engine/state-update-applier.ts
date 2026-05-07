@@ -2,6 +2,11 @@ import { useStore } from '../store';
 import type { StateUpdate, ButterflyEffect } from '../types';
 import type { EncounterReward } from '../types/encounter';
 import { evaluateApertureGrade } from '../store/slices/immortalSlice';
+import economyRaw from '../canon/economy.json';
+import chaptersRaw from '../canon/chapters.json';
+
+const economyData = economyRaw as Record<string, any>;
+const chaptersData = chaptersRaw as any;
 
 // ─── 全局自增计数器 ───
 let guIdCounter = 1000;
@@ -45,7 +50,68 @@ function calcReputationTier(standing: number): string {
   return '死敌';
 }
 
-// ─── StateUpdate 应用器 ───
+// ─── P2: wealth.delta 经济合理性校验 ───
+/**
+ * 基于当前章节 priceMultiplier 和 canonical 收入基准校验 wealth.delta 是否合理。
+ * 返回 { valid: boolean, clampedDelta: number, reason: string }
+ * - 超过 5x 月收入上限 (500元石) 时 warn 日志但仅警告
+ * - 超过 15x 月收入上限 (1500元石) 时 clamp 到合理范围
+ * - 负向 delta 不能使余额低于 0
+ */
+function validateWealthDelta(delta: number): { valid: boolean; clampedDelta: number; reason: string } {
+  const store = useStore.getState() as any;
+  const currentChapterId = store.currentChapterId || '';
+  const currentDomain = store.currentDomain || '南疆';
+  const currentCurrency = store.currency || 0;
+
+  // 读取当前章节priceMultiplier
+  let chapterMultiplier = 1.0;
+  try {
+    const domainChapters = chaptersData.domains?.[currentDomain] || [];
+    const chapterDef = domainChapters.find((c: any) => c.id === currentChapterId);
+    if (chapterDef?.chapterPriceMultiplier) {
+      chapterMultiplier = chapterDef.chapterPriceMultiplier;
+    }
+  } catch { /* use default */ }
+
+  // Canonical 月收入基准: 30-100元石 (来自economy.json)
+  const MAX_MONTHLY_INCOME = 100;
+  // 单轮收入合理上限 = 5x 月收入上限 × 章节系数
+  const WARN_THRESHOLD = 500 * chapterMultiplier;
+  // 绝对上限 = 15x 月收入上限 × 章节系数（超出即截断）
+  const CLAMP_THRESHOLD = 1500 * chapterMultiplier;
+
+  // 正向delta校验
+  if (delta > 0) {
+    if (delta > CLAMP_THRESHOLD) {
+      const clamped = CLAMP_THRESHOLD;
+      const reason = `wealth.delta=${delta} 超过绝对上限 ${CLAMP_THRESHOLD}(章节系数${chapterMultiplier}x)，已截断至 ${clamped}`;
+      console.warn(`[WealthValidation] ${reason}`);
+      return { valid: false, clampedDelta: clamped, reason };
+    }
+    if (delta > WARN_THRESHOLD) {
+      console.warn(`[WealthValidation] wealth.delta=${delta} 超过警告线 ${WARN_THRESHOLD}(月收入上限${MAX_MONTHLY_INCOME}×5×章节系数${chapterMultiplier})，AI可能未遵守经济锚定规则`);
+    }
+  }
+
+  // 负向delta校验：不能使余额低于0
+  if (delta < 0) {
+    if (currentCurrency + delta < 0) {
+      const clamped = -currentCurrency;
+      const reason = `wealth.delta=${delta} 将使余额变为 ${currentCurrency + delta}(负值)，已截断至 ${clamped}`;
+      console.warn(`[WealthValidation] ${reason}`);
+      return { valid: false, clampedDelta: clamped, reason };
+    }
+    if (Math.abs(delta) > CLAMP_THRESHOLD) {
+      const clamped = -Math.min(Math.abs(delta), currentCurrency);
+      const reason = `wealth.delta=${delta} 负向绝对值超过绝对上限 ${CLAMP_THRESHOLD}，已截断至 ${clamped}`;
+      console.warn(`[WealthValidation] ${reason}`);
+      return { valid: false, clampedDelta: clamped, reason };
+    }
+  }
+
+  return { valid: true, clampedDelta: delta, reason: '' };
+}
 export function applyStateUpdate(update: StateUpdate): void {
   if (!update) return; // 5C: 防崩溃守卫——state_update可选时可能为undefined
   const store = useStore.getState();
@@ -72,9 +138,21 @@ export function applyStateUpdate(update: StateUpdate): void {
     }
   }
 
-  // ─── 财富变更 ───
+  // ─── 财富变更（含经济合理性校验） ───
   if (update.wealth) {
-    (store as any).addCurrency?.(update.wealth.delta);
+    const { valid, clampedDelta, reason } = validateWealthDelta(update.wealth.delta);
+    const appliedDelta = valid ? update.wealth.delta : clampedDelta;
+    
+    if (!valid) {
+      const logStore = useStore.getState() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('system', `[经济校验] ${reason}`, { originalDelta: update.wealth.delta, appliedDelta, chapter: logStore.currentChapterId });
+      }
+    }
+    
+    if (appliedDelta !== 0) {
+      (store as any).addCurrency?.(appliedDelta);
+    }
   }
 
   // ─── 蛊虫库存更新 ───
@@ -132,6 +210,16 @@ export function applyStateUpdate(update: StateUpdate): void {
     if (update.flags.remove) {
       for (const key of update.flags.remove) {
         store.removeFlag(key);
+      }
+    }
+  }
+
+  // ─── 🆕 蛊材/材料获得 ───
+  if (update.materials?.add) {
+    const store2 = useStore.getState() as any;
+    if (typeof store2.addMaterial === 'function') {
+      for (const [matName, qty] of Object.entries(update.materials.add)) {
+        if (qty > 0) store2.addMaterial(matName, qty);
       }
     }
   }
@@ -266,6 +354,87 @@ export function applyStateUpdate(update: StateUpdate): void {
             next_disaster_type: '地火',
             disaster_countdown: 60 + Math.floor(Math.random() * 40),
           });
+          // ═══ v0.7.0: 十绝体类型升仙传递 — 设计大纲§5.2 ═══
+          const oldAperture = currentStore.aperture;
+          if (oldAperture?.extremePhysiqueType) {
+            // 将十绝体类型传递到仙窍阶段
+            currentStore.setFlag?.('ascendedExtremePhysiqueType', oldAperture.extremePhysiqueType);
+            if (typeof currentStore.addGameLog === 'function') {
+              currentStore.addGameLog('system', `十绝体「${oldAperture.extremePhysiqueType}」升仙! 高压迫槽位解除，仙窍无限容量。`);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ═══ v0.7.0 P2: 动态NPC处理 — AI叙事生成的"路人甲"NPC ═══
+  if (update.dynamic_npcs) {
+    const dn = update.dynamic_npcs;
+    const s = useStore.getState() as any;
+
+    // 处理新增NPC
+    if (dn.add && Array.isArray(dn.add)) {
+      let counter = 0;
+      for (const payload of dn.add) {
+        counter++;
+        const npcId = `npc_dynamic_${store.messages.length}_${counter}_${Date.now()}`;
+        const currentTurn = (s as any).turn || store.messages.length;
+
+        // 检查是否已有同名NPC（去重）
+        const existingByName = Object.values(s.dynamicNPCs || {}).find(
+          (n: any) => n.name === payload.name
+        );
+        if (existingByName) {
+          // 已存在同名NPC，仅更新好感度
+          if (typeof s.updateDynamicNPCAffinity === 'function') {
+            s.updateDynamicNPCAffinity((existingByName as any).id, 5);
+          }
+          continue;
+        }
+
+        const newNpc = {
+          id: npcId,
+          name: payload.name,
+          path: payload.path || '通用',
+          realm: Math.min(2, Math.max(1, payload.realm || 1)), // 限制1-2转
+          realm_label: `${payload.realm || 1}转初阶`,
+          personality: payload.personality || '未知',
+          domain: s.currentDomain || '南疆',
+          description: payload.bonding_hint || `一位名叫${payload.name}的蛊师`,
+          affinity: 10, // 初始好感度（正面初见）
+          interaction_count: 1,
+          battle_count: 0,
+          plot_participation: 5,
+          recruit_eligible: false, // 好感度<60不可招募
+          created_at: currentTurn,
+          updated_at: currentTurn,
+          hp: 80 + (payload.realm || 1) * 20,
+          maxHp: 80 + (payload.realm || 1) * 20,
+          atk: 10 + (payload.realm || 1) * 5,
+          def: 5 + (payload.realm || 1) * 3,
+        };
+
+        if (typeof s.upsertDynamicNPC === 'function') {
+          s.upsertDynamicNPC(newNpc);
+        }
+      }
+
+      // 日志记录
+      if (typeof s.addGameLog === 'function' && counter > 0) {
+        s.addGameLog('npc', `AI生成${counter}个新路人NPC`, { names: dn.add.map((p: any) => p.name) });
+      }
+    }
+
+    // 处理好感度变化
+    if (dn.affinity_delta && Array.isArray(dn.affinity_delta)) {
+      for (const ad of dn.affinity_delta) {
+        // 按名称查找NPC
+        const existingByName = Object.values(s.dynamicNPCs || {}).find(
+          (n: any) => n.name === ad.name
+        );
+        if (existingByName && typeof s.updateDynamicNPCAffinity === 'function') {
+          s.updateDynamicNPCAffinity((existingByName as any).id, ad.delta || 0);
         }
       }
     }
@@ -327,43 +496,20 @@ export function applyStateUpdate(update: StateUpdate): void {
     if (cr.hp_delta && typeof s.applyHpDelta === 'function') {
       s.applyHpDelta(cr.hp_delta);
     }
+    // ═══ v0.7.0: 战利品仅处理蛊材类（蛊虫100%销毁，不再作为战利品） ═══
     if (cr.loot && Array.isArray(cr.loot) && cr.loot.length > 0) {
-      const currentInventory = s.gu_inventory || [];
       // 蛊材类物品自动兑换元石（name包含蛊材类型关键词的材料）
       const materialKeywords = ['牙','皮','骨','粉','石','草','液','晶','水','土','木','铁','金','血','丝','页','瓶','块','卷','板','盒'];
       let yuanStoneGain = 0;
-      const nonMaterialLoot: any[] = [];
       for (const item of cr.loot) {
         const itemName = (item.name || '').toString();
         if (materialKeywords.some(kw => itemName.includes(kw)) && !itemName.includes('蛊')) {
           yuanStoneGain += item.price || (item.tier ? item.tier * 5 : 5);
-        } else {
-          nonMaterialLoot.push(item);
         }
       }
       if (yuanStoneGain > 0) {
         if (typeof s.addYuanStone === 'function') s.addYuanStone(yuanStoneGain, '战斗战利品兑换');
         else if (typeof s.addCurrency === 'function') s.addCurrency(yuanStoneGain);
-      }
-      // ═══ v1.7: 战斗战利品修复 — gu_inventory改为调用addGu（自动受益底层仙蛊守门） ═══
-      if (typeof (s as any).addGu === 'function') {
-        for (const item of nonMaterialLoot) {
-          (s as any).addGu({
-            id: `loot_${(item.name || 'item').toString().toLowerCase().replace(/\s+/g, '_')}_${Date.now()}_${Math.random().toString(36).slice(2,6)}`,
-            specId: (item.name || '').toString().toLowerCase().replace(/\s+/g, '_'),
-            name: (item.name || '未知战利品').toString(),
-            tier: item.tier || 1,
-            path: item.path || '未知',
-            currentState: 'optimal' as const,
-            proficiency: 0,
-            bonded: false,
-            active: true,
-            acquiredAt: {
-              turn: (s as any).turn || 1,
-              narrative: `战斗中获得: ${item.name || '战利品'}`,
-            },
-          });
-        }
       }
     }
     if (cr.injury && typeof s.applyInjury === 'function') {

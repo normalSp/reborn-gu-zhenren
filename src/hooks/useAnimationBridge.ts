@@ -6,7 +6,10 @@
 
 import { useEffect, useRef } from 'react';
 import { useStore } from '../store';
+import { useShallow } from 'zustand/shallow';
 import { animQueue } from '../animations/gsap/animationQueue';
+
+const EMPTY_EVENTS: Record<string, string> = {};
 
 /**
  * 监听 Zustand 状态变化，分发到 GSAP 动画队列。
@@ -23,7 +26,7 @@ export function useAnimationBridge(): void {
   const duelPhase = useStore(s => s.duelState?.phase);
   const transitionState = useStore(s => s.transitionState);
   const currentChapter = useStore(s => s.getCurrentChapter?.());
-  const activeEvents = useStore(s => (s as any).activeEvents || {});
+  const activeEvents = useStore((s: any) => s.activeEvents ?? EMPTY_EVENTS);
   const prevEventsRef = useRef<Record<string, string>>({});
 
   // ─── 转章过渡动画 ───

@@ -36,7 +36,39 @@ export function getEffectiveDaoMarks(pathDaoMarks: Record<string, number>, comba
 export function getRealmCoefficients(playerRealmNum: number, enemyRealmNum: number) {
   const diff = enemyRealmNum - playerRealmNum;
   const key = String(Math.max(-3, Math.min(3, diff)));
-  return realmTable[key] || realmTable['0'];
+  const base = realmTable[key] || realmTable['0'];
+
+  // ═══ v0.8.0-immortal: 仙凡有别 — 跨界战斗增强倍率 ═══
+  const immortalConfig = config.immortalVsMortal;
+  if (immortalConfig) {
+    const immortalGate = immortalConfig.immortalRealmGate ?? 6;
+    const playerIsImmortal = playerRealmNum >= immortalGate;
+    const enemyIsImmortal = enemyRealmNum >= immortalGate;
+    const isCrossRealm = playerIsImmortal !== enemyIsImmortal;
+
+    if (isCrossRealm) {
+      // 蛊仙(≥6转)对蛊师(≤5转)：叠加碾压倍率
+      if (playerIsImmortal && !enemyIsImmortal) {
+        return {
+          playerDamageMult: base.playerDamageMult * (immortalConfig.immortalDamageMult ?? 3.0),
+          playerHitBonus: base.playerHitBonus + (immortalConfig.immortalHitBonus ?? 50),
+          enemyDamageMult: base.enemyDamageMult * (immortalConfig.mortalDamageMult ?? 0.15),
+          enemyHitPenalty: base.enemyHitPenalty + (immortalConfig.mortalHitPenalty ?? -30),
+        };
+      }
+      // 蛊师对蛊仙：叠加被碾压倍率
+      if (!playerIsImmortal && enemyIsImmortal) {
+        return {
+          playerDamageMult: base.playerDamageMult * (immortalConfig.mortalDamageMult ?? 0.15),
+          playerHitBonus: base.playerHitBonus + (immortalConfig.mortalHitPenalty ?? -30),
+          enemyDamageMult: base.enemyDamageMult * (immortalConfig.immortalDamageMult ?? 3.0),
+          enemyHitPenalty: base.enemyHitPenalty + (immortalConfig.immortalHitBonus ?? 50),
+        };
+      }
+    }
+  }
+
+  return base;
 }
 
 /** 流派克制倍率 */
@@ -71,9 +103,9 @@ export function calcDamage(
   const baseMax = C.baseVariance?.max ?? 1.15;
   const critMult = isCrit ? (C.critRate?.multiplier ?? 1.5) : 1.0;
   const minDmg = C.minDamage?.value ?? 1;
-  const attackDaoMult = 1.0 + (attackerDaoMarks / 10000);
-  const defenseDaoMult = 1.0 - (defenderDaoMarks / 20000);
-  const daoMarkMult = Math.max(0.5, Math.min(3.0, attackDaoMult * defenseDaoMult));
+  const attackDaoMult = 1.0 + (attackerDaoMarks / 5000);
+  const defenseDaoMult = 1.0 - (defenderDaoMarks / 15000);
+  const daoMarkMult = Math.max(0.5, Math.min(5.0, attackDaoMult * defenseDaoMult));
   const raw = attackerAtk - defenderDef * defFactor;
   const pathMult = getPathMultiplier(attackerPath, defenderPath);
   const variance = baseMin + Math.random() * (baseMax - baseMin);
@@ -139,4 +171,21 @@ export function getWeakenDefPenalty(statuses: CombatStatus[]): number {
 /** 每回合结束后递减状态效果剩余回合 */
 export function tickStatuses(statuses: CombatStatus[]): CombatStatus[] {
   return statuses.map(s => ({ ...s, remainingTurns: s.remainingTurns - 1 })).filter(s => s.remainingTurns > 0);
+}
+
+// ─── v0.7.0: 十绝体道痕禁制 — 设计大纲§5.4 ───
+
+/**
+ * 检查十绝体道痕亲和/禁制
+ * @param guAffinity 蛊虫流派在该体质下的亲和值 (0=完全禁制, 负数=反噬)
+ * @param playerAffinity 玩家的流派亲和值
+ * @returns blocked=true=禁止使用, selfDamage=使用时反噬扣HP值
+ */
+export function checkAffinityBlock(
+  guAffinity: number,
+  playerAffinity: number,
+): { blocked: boolean; selfDamage: number } {
+  if (playerAffinity === 0) return { blocked: true, selfDamage: 0 };
+  if (playerAffinity < 0) return { blocked: false, selfDamage: Math.abs(playerAffinity) * 2 };
+  return { blocked: false, selfDamage: 0 };
 }

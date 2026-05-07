@@ -26,6 +26,7 @@ import { createGameLogSlice } from './slices/gameLogSlice';
 import { createMerchantSlice } from './slices/merchantSlice';
 import { createAuctionSlice } from './slices/auctionSlice';
 import { createTimelineSlice } from './slices/timelineSlice';
+import { createDynamicNPCStore } from './slices/dynamicNPCStore';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -44,6 +45,76 @@ export interface SaveFileFormat {
     gameMode: string;
   };
   state: Record<string, any>;
+}
+
+// ─── v0.6.0终局修复: 存档迁移函数 ───
+/** 将旧版本存档迁移到当前格式版本, 填充新增字段的默认值 */
+export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
+  if (!parsed.state) return parsed;
+  const s = parsed.state;
+  const v = parsed.formatVersion || 0;
+
+  // v8→v9: v0.7.0 势力/小队/成就/资源点系统
+  if (v < 9 && v >= 8) {
+    // MortalAperture补全
+    if (s.aperture?.type === 'mortal' && !s.aperture.extremePhysiqueType) {
+      s.aperture.extremePhysiqueType = undefined;
+      s.aperture.capacityLocked = s.aperture.rank >= 2 ? false : true;
+    }
+    // SquadMember战斗属性
+    if (Array.isArray(s.faction?.members)) {
+      s.faction.members = s.faction.members.map((m: any) => ({
+        ...m, hp: m.hp ?? 100, maxHp: m.maxHp ?? 100,
+        atk: m.atk ?? 20, def: m.def ?? 5,
+        adventureTrust: m.adventureTrust ?? 50,
+        interestDrive: m.interestDrive ?? 30,
+      }));
+    }
+    // DuelState essence
+    if (s.duelState?.player && !s.duelState.player.essence) {
+      s.duelState.player.essence = { current: 100, max: 100 };
+    }
+    // v0.7.0 势力系统新字段
+    if (s.playerFaction === undefined) s.playerFaction = null;
+    if (s.factionEvents === undefined) s.factionEvents = [];
+    // v0.7.0 小队编队状态
+    if (s.partyState === undefined) s.partyState = { members: [], maxSize: 4, formation: null };
+    // v0.7.0 仙窍存储兜底
+    if (s.apertureInventory === undefined) s.apertureInventory = { gu: [], materials: {}, immortalMaterials: {} };
+    // v0.7.0 任务/成就进度
+    if (s.immortalApertureBuildLog === undefined) s.immortalApertureBuildLog = [];
+    // 天赋点加成
+    if (s.flags?._faction && s.flags?._factionTalentBonus === undefined) {
+      s.flags._factionTalentBonus = 0;
+    }
+  }
+
+  // v9→v10: v0.8.0-immortal 仙元/真元双轨系统
+  if (v < 10 && v >= 9) {
+    // essenceType 默认值填充
+    if (s.vitals) {
+      if (!s.vitals.essenceType) {
+        // 根据当前境界推断能量类型
+        const realmGrand = s.profile?.realm?.grand || 1;
+        s.vitals.essenceType = realmGrand >= 6 ? 'immortal' : 'mortal';
+      }
+      // 若为蛊仙但仙元池过小(<500)，填充到2000
+      if (s.vitals.essenceType === 'immortal' && s.vitals.essence) {
+        if (s.vitals.essence.max < 500) {
+          s.vitals.essence = { current: 2000, max: 2000 };
+        }
+      }
+    }
+  }
+
+  // v10→v11: v0.7.0 P2 动态NPC系统 + 经济注入动态读取
+  if (v < 11) {
+    if (s.dynamicNPCs === undefined) s.dynamicNPCs = {};
+    if (s.maxDynamicNPCs === undefined) s.maxDynamicNPCs = 500;
+  }
+
+  parsed.formatVersion = SAVE_FORMAT_VERSION;
+  return parsed;
 }
 
 // ─── 存档系统方法接口 ───
@@ -83,6 +154,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createGameLogSlice> &
   ReturnType<typeof createMerchantSlice> &
   ReturnType<typeof createTimelineSlice> &
+  ReturnType<typeof createDynamicNPCStore> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -146,6 +218,7 @@ export const useStore = create<RootStore>()(
         ...createMerchantSlice(...a),
         ...createAuctionSlice(...a),
         ...createTimelineSlice(...a),
+        ...createDynamicNPCStore(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -241,7 +314,10 @@ export const useStore = create<RootStore>()(
               };
             }
 
-            const rawState = parsed.state || parsed; // 兼容只有 state 的旧格式
+            // v0.6.0终局修复: 旧版本存档迁移
+            const migrated = migrateSave(parsed);
+
+            const rawState = migrated.state || migrated; // 兼容只有 state 的旧格式
 
             if (!rawState || typeof rawState !== 'object') {
               return { success: false, error: '存档数据无效或已损坏。' };
@@ -440,7 +516,7 @@ export const useStore = create<RootStore>()(
             triggeredEvents,
             // 排除临时状态
             isLoading, error,
-            currentNarrative,
+            currentNarrative, squadCombatState,
             // 排除读档版本计数器（纯UI信号，不持久化）
             gameLoadVersion,
             // P3修复：排除成就字段（achievementSlice独立管理localStorage，避免双重真相源覆盖）

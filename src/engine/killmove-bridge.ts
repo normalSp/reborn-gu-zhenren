@@ -101,11 +101,13 @@ export function computeProficiency(usageCount: number): KillMoveProficiency {
 /**
  * KillMove → DuelMove（战斗用）
  * 将玩家已学习杀招转换为战斗引擎可用的 DuelMove
+ * v0.7.0: 新增rankMult转数武器因子 + rankPenalty越阶惩罚
  */
 export function convertKillMoveToDuelMove(
   killMove: KillMove,
   playerPathDaoMarks: Record<string, number>,
   pathLevels?: Record<string, string>,
+  playerRealmNum?: number,
 ): DuelMove {
   const profMult = getProficiencyMultiplier(killMove.proficiency);
   const pathProficiency = playerPathDaoMarks[killMove.path] || 0;
@@ -117,13 +119,34 @@ export function convertKillMoveToDuelMove(
   };
   const synergyMult = 1 + (pathLevelBonus[level] || 0);
 
+  // ═══ v0.7.0: 转数武器因子（rankMult） ═══
+  // 凡级杀招(1-5转): rankMult = 1 + (level-1)*0.15
+  // 仙级杀招(6-9转): rankMult = 1 + (level-6)*0.5 + 2.0（额外+2.0基底，体现仙凡质变）
+  const isImmortalKillMove = killMove.level >= 6;
+  let rankMult: number;
+  if (isImmortalKillMove) {
+    rankMult = 1.0 + (killMove.level - 6) * 0.5 + 2.0;
+  } else {
+    rankMult = 1.0 + (killMove.level - 1) * 0.15;
+  }
+
+  // ═══ v0.7.0: 越阶惩罚（rankPenalty） ═══
+  let rankPenalty: number | undefined;
+  if (playerRealmNum !== undefined && killMove.level > playerRealmNum) {
+    const overreachSteps = Math.min(4, killMove.level - playerRealmNum);
+    // 动态导入combat-config避免循环依赖，直接用内联惩罚表
+    const penaltyTable: Record<number, number> = { 1: 0.7, 2: 0.4, 3: 0.2, 4: 0.1 };
+    rankPenalty = penaltyTable[overreachSteps] ?? 0.1;
+  }
+
   return {
     name: killMove.name,
-    damageMultiplier: killMove.multiplier * profMult * synergyMult,
+    damageMultiplier: killMove.multiplier * profMult * synergyMult * rankMult,
     pathBonus: pathProficiency * 0.002,
     description: killMove.description,
     killerMoveId: killMove.id,
     requiredCoreGu: killMove.coreGu,
+    rankPenalty,
   };
 }
 
@@ -147,4 +170,124 @@ export function incrementUsage(killMove: KillMove): { proficiency?: KillMoveProf
  */
 export function hasEffectTag(killMove: KillMove, tag: KillMoveEffectTag): boolean {
   return killMove.effectTags?.includes(tag) ?? false;
+}
+
+// ═══════════════════════════════════════════════════════════
+// Fix#2: 杀招-蛊虫桥接函数（接入 KillMoveCreationPanel）
+// ═══════════════════════════════════════════════════════════
+
+import type { GuInstance } from '../types';
+
+/** 流派互补充系映射（用于辅助蛊推荐，与 KillMoveCreationPanel 共享） */
+const COMPATIBLE_PATHS: Record<string, string[]> = {
+  '金道': ['土道', '力道'], '木道': ['水道', '毒道'], '水道': ['冰道', '木道'],
+  '火道': ['风道', '土道'], '土道': ['金道', '火道'], '风道': ['火道', '雷道'],
+  '雷道': ['金道', '风道'], '冰道': ['水道', '风道'], '力道': ['土道', '金道'],
+  '魂道': ['暗道', '智道'], '血道': ['力道', '毒道'], '智道': ['光道', '魂道'],
+  '光道': ['火道', '智道'], '暗道': ['魂道', '骨道'], '毒道': ['木道', '血道'],
+  '骨道': ['暗道', '土道'], '奴道': ['魂道', '力道'], '食道': ['木道', '水道'],
+  '偷道': ['暗道', '风道'], '变化道': ['水道', '火道'],
+  '炼道': ['金道', '火道'], '剑道': ['金道', '力道'],
+};
+
+export interface KillMoveGuSlotInfo {
+  /** 核心蛊槽位数 */
+  coreSlots: number;
+  /** 辅助蛊槽位数 */
+  supportSlots: number;
+  /** 当前已使用的核心蛊名称 */
+  coreGuNames: string[];
+  /** 当前已使用的辅助蛊名称 */
+  supportGuNames: string[];
+}
+
+/**
+ * 获取杀招的蛊虫槽位信息
+ * @param killMove 目标杀招
+ * @returns 核心蛊/辅助蛊槽位详情
+ */
+export function getKillMoveGuSlots(killMove: KillMove): KillMoveGuSlotInfo {
+  return {
+    coreSlots: 1, // 杀招始终需要1个核心蛊
+    supportSlots: Math.min(5, killMove.level + 1), // 辅助蛊槽位数 = 转数+1（上限5）
+    coreGuNames: killMove.coreGu || [],
+    supportGuNames: killMove.supportGu || [],
+  };
+}
+
+/**
+ * 校验蛊虫与杀招的兼容性
+ * @param killMove 目标杀招
+ * @param gu 待校验的蛊虫实例
+ * @returns 兼容性结果
+ */
+export function checkKillMoveGuCompatibility(
+  killMove: KillMove,
+  gu: GuInstance,
+): { compatible: boolean; reason?: string } {
+  // 死蛊不可用
+  if (gu.currentState === 'dead') {
+    return { compatible: false, reason: '蛊虫已死亡' };
+  }
+  // 未激活的蛊不可用
+  if ((gu as any).active === false) {
+    return { compatible: false, reason: '蛊虫未激活' };
+  }
+  // 同流派完全兼容
+  const guPath = gu.path as string;
+  const killPath = killMove.path as string;
+  if (guPath === killPath) {
+    return { compatible: true };
+  }
+  // 互补流派兼容
+  const compatiblePaths = COMPATIBLE_PATHS[killPath] || [];
+  if (compatiblePaths.includes(guPath)) {
+    return { compatible: true };
+  }
+  // 通用流派（炼道）始终兼容
+  if (guPath === '炼道') {
+    return { compatible: true };
+  }
+  return { compatible: false, reason: `${guPath}与${killPath}无流派互补关系` };
+}
+
+/**
+ * 从蛊虫背包推荐最优辅助蛊
+ * @param inventory 玩家当前蛊虫背包
+ * @param killMove 目标杀招
+ * @param count 需要推荐的辅助蛊数量
+ * @returns 按推荐度排序的蛊虫实例列表
+ */
+export function suggestGuForKillMove(
+  inventory: GuInstance[],
+  killMove: KillMove,
+  count: number = 3,
+): GuInstance[] {
+  const killPath = killMove.path as string;
+  const compatiblePaths = COMPATIBLE_PATHS[killPath] || [];
+
+  // 过滤可用蛊虫（排除核心蛊已占用的）
+  const coreGuNames = new Set(killMove.coreGu || []);
+  const available = inventory.filter(g =>
+    g.currentState !== 'dead' &&
+    (g as any).active !== false &&
+    !coreGuNames.has(g.name),
+  );
+
+  // 评分：同流派10分 > 互补流派5分 > 炼道3分 > 其他1分
+  const scored = available.map(g => {
+    const gPath = g.path as string;
+    let score = 1;
+    if (gPath === killPath) score = 10;
+    else if (compatiblePaths.includes(gPath)) score = 5;
+    else if (gPath === '炼道') score = 3;
+    // 按转数加权
+    score += (g.tier || 1) * 0.5;
+    return { gu: g, score };
+  });
+
+  // 按评分降序排列
+  scored.sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, count).map(s => s.gu);
 }

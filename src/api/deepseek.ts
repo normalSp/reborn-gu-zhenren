@@ -4,6 +4,33 @@ interface DeepSeekConfig {
   apiKey: string;
   maxRetries?: number;
   timeoutMs?: number;
+  /** v0.7.0: 动态temperature，叙事0.85/战斗0.65/默认0.7 */
+  temperature?: number;
+  /** v0.7.0: 最大上下文token预算，超出时启用滑动窗口 */
+  maxContextTokens?: number;
+}
+
+/** v0.7.0: 动态temperature函数 — 审查报告P4修复 */
+export function getDynamicTemperature(contextType: 'narrative' | 'combat' | 'default'): number {
+  switch (contextType) {
+    case 'narrative': return 0.85;  // 叙事需要多样性
+    case 'combat':    return 0.65;  // 战斗需要一致性
+    default:          return 0.70;
+  }
+}
+
+/** v0.7.0: 滑动窗口截断 — 审查报告P1修复，MAX_CONTEXT_TOKENS=8000 */
+export function applySlidingWindow(messages: Array<{role: string; content: string}>, maxTokens: number = 8000): Array<{role: string; content: string}> {
+  let estimatedTokens = 0;
+  const result: Array<{role: string; content: string}> = [];
+  // 从最新的消息往前累加，保留最近的对话
+  for (let i = messages.length - 1; i >= 0; i--) {
+    const msgTokenEstimate = Math.ceil(messages[i].content.length * 0.4); // ~0.4 tokens/char for Chinese
+    if (estimatedTokens + msgTokenEstimate > maxTokens && result.length > 0) break;
+    estimatedTokens += msgTokenEstimate;
+    result.unshift(messages[i]);
+  }
+  return result;
 }
 
 interface TokenUsage {
@@ -38,20 +65,23 @@ async function callDeepSeek<T = any>(
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
+      // v0.7.0: 启用 response_format 约束 JSON 输出 + 动態 temperature
+      const bodyObj: any = {
+        model: 'deepseek-chat',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userMessage },
+        ],
+        temperature: config.temperature ?? getDynamicTemperature('default'),
+        response_format: { type: 'json_object' },
+      };
       const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${config.apiKey}`,
         },
-        body: JSON.stringify({
-          model: 'deepseek-chat',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userMessage },
-          ],
-          temperature: 0.7,
-        }),
+        body: JSON.stringify(bodyObj),
         signal: controller.signal,
       });
 

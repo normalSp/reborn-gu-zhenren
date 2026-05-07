@@ -9,11 +9,11 @@
     "备注": "凡人一年积蓄可能只值几块元石；蛊师经济与凡人经济完全脱钩"
   },
 
-  "仙元": {
-    "名称": "仙元 (Immortal Essence)",
-    "本质": "蛊仙通用交易媒介，一颗仙元价值无限元石",
-    "获取": "仙窍产出的仙元石",
-    "备注": "蛊仙升仙后凡间元石经济完全失效"
+  "仙元石": {
+    "名称": "仙元石 (Immortal Essence Stone)",
+    "本质": "仙元凝结成的固体货币，蛊仙通用交易媒介。一颗仙元石可兑换海量元石",
+    "获取": "仙窍产出、宝黄天交易、势力收入",
+    "备注": "蛊仙升仙后凡间元石经济完全失效。注意：仙元(能量，催动蛊虫)≠仙元石(货币，可交易)——两者不可混淆"
   },
 
   "福地等级表": {
@@ -156,5 +156,32 @@
     "绿洲秘境": 1.2,
     "人祖遗迹": 1.5,
     "蓝海传说": 1.8
+  },
+
+  "RESOURCE_NODE_BUILD_COST": {
+    "_note": "v0.7.0 资源点建造消耗配置。建造消耗=baseCost×gradeMultiplier。成功率=60%+资质×2%",
+    "gradeMultiplier": { "普通": 1, "精品": 2, "稀有": 4, "仙材": 8 },
+    "baseCost": 100,
+    "baseSuccessRate": 60,
+    "talentSuccessBonus": 2,
+    "upgradeBaseCost": 50,
+    "upgradeSuccessRate": 0.70,
+    "upgradeQualityGain": { "min": 5, "max": 15 },
+    "upgradeOutputGain": { "min": 1, "max": 2 },
+    "availableNodeTypes": [
+      { "type": "月华草", "name": "月华草田", "grade": "普通", "minApertureLevel": 1, "description": "基础草药资源，夜间产出翻倍" },
+      { "type": "石粉", "name": "石粉矿脉", "grade": "普通", "minApertureLevel": 1, "description": "土道蛊虫基础食料" },
+      { "type": "铁屑", "name": "铁砂坑", "grade": "普通", "minApertureLevel": 1, "description": "金道蛊虫炼化辅料" },
+      { "type": "灵草", "name": "灵草园", "grade": "精品", "minApertureLevel": 2, "description": "木道材料，产出精品蛊材" },
+      { "type": "金粉", "name": "金沙溪", "grade": "精品", "minApertureLevel": 2, "description": "高纯度金道材料" },
+      { "type": "冰晶", "name": "冰晶矿", "grade": "精品", "minApertureLevel": 2, "description": "冰道材料，寒冷环境加速产出" },
+      { "type": "兽肉", "name": "兽场", "grade": "精品", "minApertureLevel": 2, "description": "力道蛊虫食料来源" },
+      { "type": "雷击木", "name": "雷击林", "grade": "稀有", "minApertureLevel": 3, "description": "雷道稀有材料，雷雨天产出激增" },
+      { "type": "光耀石", "name": "光耀矿脉", "grade": "稀有", "minApertureLevel": 3, "description": "光道稀有材料" },
+      { "type": "暗影尘", "name": "暗影洞穴", "grade": "稀有", "minApertureLevel": 3, "description": "暗道稀有材料" },
+      { "type": "空间晶石", "name": "空间裂隙", "grade": "仙材", "minApertureLevel": 4, "description": "宇道仙材，极为珍贵" },
+      { "type": "光阴砂", "name": "光阴潭", "grade": "仙材", "minApertureLevel": 4, "description": "宙道仙材，时间流速节点加倍" },
+      { "type": "道痕结晶", "name": "道痕矿脉", "grade": "仙材", "minApertureLevel": 4, "description": "通用仙材，提升仙窍道痕密度" }
+    ]
   }
 }

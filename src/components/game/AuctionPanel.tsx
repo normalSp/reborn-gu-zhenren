@@ -1,11 +1,21 @@
 /**
- * ═══ 宝黄天拍卖会面板 — P1.1 ═══
- * 仙蛊拍卖 UI：物品列表、竞价、NPC 竞争者信息
+ * ═══ 宝黄天拍卖会面板 — P1.1 + v0.7.0-pre Tab化改造 ═══
+ * 仙蛊拍卖 UI + 仙材/仙蛊方/杀招传承 四类Tab（后三类为占位Tab）
  */
 import { useState } from 'react';
+import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
 import type { ImmortalAuctionItem } from '../../engine/auction-engine';
 import { TIER_COLORS, TIER_LABELS } from '../../data/talents';
+
+type AuctionTab = 'immortal_gu' | 'materials' | 'recipes' | 'killer_moves';
+
+const TAB_ITEMS: { id: AuctionTab; label: string }[] = [
+  { id: 'immortal_gu', label: '仙蛊' },
+  { id: 'materials', label: '仙材' },
+  { id: 'recipes', label: '仙蛊方' },
+  { id: 'killer_moves', label: '杀招传承' },
+];
 
 const PATH_COLORS: Record<string, string> = {
   '金道': '#c9a84a', '木道': '#4a8c5c', '水道': '#4a7a9a', '火道': '#c94a4a',
@@ -17,7 +27,7 @@ const PATH_COLORS: Record<string, string> = {
 };
 
 export function AuctionPanel() {
-  const auctionItems = useStore(s => (s as any).auctionItems as ImmortalAuctionItem[]);
+  const auctionItems = useStore(useShallow((s: any) => s.auctionItems as ImmortalAuctionItem[]));
   const isActive = useStore(s => (s as any).isAuctionActive as boolean);
   const immortalCurrency = useStore(s => s.immortalCurrency);
   const closeAuction = useStore(s => (s as any).closeAuction as () => void);
@@ -26,8 +36,11 @@ export function AuctionPanel() {
   const [bidAmounts, setBidAmounts] = useState<Record<string, number>>({});
   const [message, setMessage] = useState('');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const [currentTab, setCurrentTab] = useState<AuctionTab>('immortal_gu');
 
   if (!isActive || auctionItems.length === 0) return null;
+
+  const isPlaceholderTab = currentTab !== 'immortal_gu';
 
   const handleBid = (item: ImmortalAuctionItem) => {
     const amount = bidAmounts[item.id] || item.currentBid + 1;
@@ -68,6 +81,23 @@ export function AuctionPanel() {
           </button>
         </div>
 
+        {/* ─── Tab栏 v0.7.0-pre — 四类交易物切换 ─── */}
+        <div className="flex items-center border-b border-rg-gold/10 bg-rg-ink-800/30">
+          {TAB_ITEMS.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setCurrentTab(tab.id)}
+              className={`text-xs font-button px-4 py-2 transition-micro border-b-2 ${
+                currentTab === tab.id
+                  ? 'text-rg-gold border-rg-gold bg-rg-gold/5'
+                  : 'text-rg-paper-200/40 border-transparent hover:text-rg-paper-200/70 hover:border-rg-gold/20'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         {/* ─── 反馈消息 ─── */}
         {message && (
           <div className={`px-5 py-2 text-xs font-panel text-center border-b ${
@@ -79,99 +109,116 @@ export function AuctionPanel() {
           </div>
         )}
 
-        {/* ─── 拍卖品列表 ─── */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-3">
-          {auctionItems.map(item => (
-            <div
-              key={item.id}
-              className={`bg-rg-ink-800/60 rounded-md border transition-all ${
-                expandedItem === item.id ? 'border-rg-gold/40' : 'border-rg-ink-300/10 hover:border-rg-gold/20'
-              }`}
-            >
-              {/* 物品概要 */}
+        {/* ─── 仙蛊拍卖品列表（当前Tab） ─── */}
+        {!isPlaceholderTab ? (
+          <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            {auctionItems.map(item => (
               <div
-                className="p-4 cursor-pointer"
-                onClick={() => setExpandedItem(expandedItem === item.id ? null : item.id)}
+                key={item.id}
+                className={`bg-rg-ink-800/60 rounded-md border transition-all ${
+                  expandedItem === item.id ? 'border-rg-gold/40' : 'border-rg-ink-300/10 hover:border-rg-gold/20'
+                }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-rg-gold font-narrative text-base">{item.name}</span>
-                    <span className="text-[10px] font-button px-1.5 py-0.5 rounded-sm bg-rg-ink-700 text-rg-paper-200/60">
-                      {item.tier}转
+                {/* 物品概要 */}
+                <div
+                  className="p-4 cursor-pointer"
+                  onClick={() => setExpandedItem(expandedItem === item.id ? null : item.id)}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-rg-gold font-narrative text-base">{item.name}</span>
+                      <span className="text-[10px] font-button px-1.5 py-0.5 rounded-sm bg-rg-ink-700 text-rg-paper-200/60">
+                        {item.tier}转
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-panel" style={{ color: PATH_COLORS[item.path] || '#9a9a9a' }}>
+                      {item.path}
                     </span>
                   </div>
-                  <span className="text-[10px] font-panel" style={{ color: PATH_COLORS[item.path] || '#9a9a9a' }}>
-                    {item.path}
-                  </span>
+
+                  {/* 竞价信息 */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div>
+                        <span className="text-[9px] font-panel text-rg-paper-200/40">起拍价</span>
+                        <p className="text-rg-paper-200/70 font-semibold text-sm">{item.startingBid} 仙元</p>
+                      </div>
+                      <div>
+                        <span className="text-[9px] font-panel text-rg-paper-200/40">当前竞价</span>
+                        <p className="text-rg-gold font-bold text-sm">{item.currentBid} 仙元</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[9px] font-panel text-rg-paper-200/40">
+                        {item.bidderCount > 0
+                          ? `${item.bidderCount} 位竞争`
+                          : '即将成交'}
+                      </span>
+                      <p className="text-[10px] font-panel text-rg-ink-300">
+                        {item.expiresTurn - (useStore.getState() as any).turn} 回合后撤拍
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                {/* 竞价信息 */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <span className="text-[9px] font-panel text-rg-paper-200/40">起拍价</span>
-                      <p className="text-rg-paper-200/70 font-semibold text-sm">{item.startingBid} 仙元</p>
-                    </div>
-                    <div>
-                      <span className="text-[9px] font-panel text-rg-paper-200/40">当前竞价</span>
-                      <p className="text-rg-gold font-bold text-sm">{item.currentBid} 仙元</p>
+                {/* 展开详情 + 出价区 */}
+                {expandedItem === item.id && (
+                  <div className="px-4 pb-4 border-t border-rg-ink-300/8 pt-3">
+                    {/* 仙蛊效果 */}
+                    {item.effect && (
+                      <p className="text-rg-paper-200/50 text-xs font-panel mb-3 leading-relaxed">
+                        {item.effect}
+                      </p>
+                    )}
+
+                    {/* 出价操作 */}
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 flex items-center gap-2">
+                        <input
+                          type="number"
+                          placeholder={`${item.currentBid + 1}`}
+                          min={item.currentBid + 1}
+                          value={bidAmounts[item.id] || ''}
+                          onChange={e => setBidAmounts(prev => ({
+                            ...prev, [item.id]: parseInt(e.target.value) || 0,
+                          }))}
+                          className="flex-1 bg-rg-ink-900/80 border border-rg-ink-300/20 rounded-sm px-3 py-1.5 text-rg-paper-200 text-sm font-panel outline-none focus:border-rg-gold/40 transition-micro"
+                        />
+                        <span className="text-rg-paper-200/30 text-xs font-panel shrink-0">仙元</span>
+                      </div>
+                      <button
+                        onClick={e => { e.stopPropagation(); handleBid(item); }}
+                        disabled={immortalCurrency < (bidAmounts[item.id] || item.currentBid + 1)}
+                        className={`text-xs font-button px-4 py-1.5 rounded-sm border transition-micro ${
+                          immortalCurrency >= (bidAmounts[item.id] || item.currentBid + 1)
+                            ? 'bg-rg-gold/20 border-rg-gold/40 text-rg-gold hover:bg-rg-gold/30'
+                            : 'border-rg-ink-300/10 text-rg-paper-200/20 cursor-not-allowed'
+                        }`}
+                      >
+                        出价
+                      </button>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-[9px] font-panel text-rg-paper-200/40">
-                      {item.bidderCount > 0
-                        ? `${item.bidderCount} 位竞争`
-                        : '即将成交'}
-                    </span>
-                    <p className="text-[10px] font-panel text-rg-ink-300">
-                      {item.expiresTurn - (useStore.getState() as any).turn} 回合后撤拍
-                    </p>
-                  </div>
-                </div>
+                )}
               </div>
-
-              {/* 展开详情 + 出价区 */}
-              {expandedItem === item.id && (
-                <div className="px-4 pb-4 border-t border-rg-ink-300/8 pt-3">
-                  {/* 仙蛊效果 */}
-                  {item.effect && (
-                    <p className="text-rg-paper-200/50 text-xs font-panel mb-3 leading-relaxed">
-                      {item.effect}
-                    </p>
-                  )}
-
-                  {/* 出价操作 */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 flex items-center gap-2">
-                      <input
-                        type="number"
-                        placeholder={`${item.currentBid + 1}`}
-                        min={item.currentBid + 1}
-                        value={bidAmounts[item.id] || ''}
-                        onChange={e => setBidAmounts(prev => ({
-                          ...prev, [item.id]: parseInt(e.target.value) || 0,
-                        }))}
-                        className="flex-1 bg-rg-ink-900/80 border border-rg-ink-300/20 rounded-sm px-3 py-1.5 text-rg-paper-200 text-sm font-panel outline-none focus:border-rg-gold/40 transition-micro"
-                      />
-                      <span className="text-rg-paper-200/30 text-xs font-panel shrink-0">仙元</span>
-                    </div>
-                    <button
-                      onClick={e => { e.stopPropagation(); handleBid(item); }}
-                      disabled={immortalCurrency < (bidAmounts[item.id] || item.currentBid + 1)}
-                      className={`text-xs font-button px-4 py-1.5 rounded-sm border transition-micro ${
-                        immortalCurrency >= (bidAmounts[item.id] || item.currentBid + 1)
-                          ? 'bg-rg-gold/20 border-rg-gold/40 text-rg-gold hover:bg-rg-gold/30'
-                          : 'border-rg-ink-300/10 text-rg-paper-200/20 cursor-not-allowed'
-                      }`}
-                    >
-                      出价
-                    </button>
-                  </div>
-                </div>
-              )}
+            ))}
+          </div>
+        ) : (
+          /* ─── 占位Tab — v0.7.0-pre 接口预留 ─── */
+          <div className="flex-1 flex flex-col items-center justify-center p-8 gap-4">
+            <div className="w-16 h-16 rounded-full bg-rg-ink-800/80 border border-rg-gold/10 flex items-center justify-center">
+              <span className="text-2xl opacity-40">⏳</span>
             </div>
-          ))}
-        </div>
+            <div className="text-center">
+              <p className="text-rg-paper-200/50 font-narrative text-sm mb-1">
+                {currentTab === 'materials' ? '仙材交易' : currentTab === 'recipes' ? '仙蛊方交易' : '杀招传承拍卖'}
+              </p>
+              <p className="text-rg-ink-400 text-xs font-panel">
+                即将开放 · v0.7.0-b 实现
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* ─── 底部提示 ─── */}
         <div className="px-5 py-2 border-t border-rg-ink-300/8 bg-rg-ink-800/30">

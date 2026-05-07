@@ -52,6 +52,8 @@ export interface PlayerState {
   vitals: {
     health: { current: number; max: number };
     essence: { current: number; max: number };
+    /** v0.8.0-immortal: 能量类型 — mortal=真元(1-5转蛊师), immortal=仙元(6-9转蛊仙) */
+    essenceType: 'mortal' | 'immortal';
   };
   pathBuild: {
     primary: PathType;
@@ -177,6 +179,8 @@ export interface KillMove {
   canTeach?: boolean;
   /** 额外效果标签（炼蛊加速/成功率等联动） */
   effectTags?: KillMoveEffectTag[];
+  /** v0.7.0: 是否为仙级杀招（level≥6），影响创建成功率/道痕门槛 */
+  isImmortal?: boolean;
 }
 
 // ─── 势力与社交 ───
@@ -225,6 +229,10 @@ export interface MortalAperture {
   capacity: number;
   /** 当前已携带蛊虫数 */
   carriedGu: number;
+  /** v0.6.0终局补全: 十绝体类型（仅资质=10时有值） */
+  extremePhysiqueType?: import('./index').ExtremePhysiqueType;
+  /** v0.7.0: 十绝体capacity锁定=3，禁止扩容 */
+  capacityLocked: boolean;
 }
 
 // ─── 仙窍（6转+蛊仙） ───
@@ -257,6 +265,22 @@ export interface ResourceNode {
   grade: '普通' | '精品' | '稀有' | '仙材';
   /** 节点是否启用 */
   active: boolean;
+}
+
+/** 资源点建造消耗配置 — v0.7.0 资源点建设系统 */
+export interface ResourceNodeBuildCost {
+  /** 资源节点类型标识 */
+  type: string;
+  /** 显示名称 */
+  name: string;
+  /** 基础建造消耗（元石） */
+  baseCost: number;
+  /** 基础成功率 % */
+  successRate: number;
+  /** 所需仙窍等级（资源节点按仙窍等级解锁） */
+  requiredApertureLevel: number;
+  /** 建造描述 */
+  description: string;
 }
 
 /** P4: 仙窍独立存储 — 无限容量，升仙后所有蛊虫/蛊材从空窍迁移至此 */
@@ -306,6 +330,83 @@ export interface NarrativeJSON {
   state_update: StateUpdate;
 }
 
+// ═══ v0.7.0 P2: 动态NPC系统 — AI叙事中生成的"路人甲"NPC ═══
+/** AI叙事中动态生成的NPC（路人甲），可通过剧情培养变为队友 */
+export interface DynamicNPC {
+  /** 唯一ID，生成规则: npc_dynamic_${turn}_${counter} */
+  id: string;
+  /** NPC名称 */
+  name: string;
+  /** 流派 */
+  path: PathType;
+  /** 境界转数 1-5（默认1-2，避免战力通胀） */
+  realm: number;
+  /** 境界标签，如"一转初阶" */
+  realm_label: string;
+  /** 性格描述 */
+  personality: string;
+  /** 所在域 */
+  domain: string;
+  /** AI生成的背景描述 */
+  description: string;
+  /** 与玩家的好感度 -100~100 */
+  affinity: number;
+  /** 与玩家互动次数 */
+  interaction_count: number;
+  /** 与玩家共同战斗次数 */
+  battle_count: number;
+  /** 剧情参与度 0-100 */
+  plot_participation: number;
+  /** 是否可招募为队友（affinity>=60） */
+  recruit_eligible: boolean;
+  /** 创建回合 */
+  created_at: number;
+  /** 最后更新回合 */
+  updated_at: number;
+  /** HP */
+  hp: number;
+  /** 最大HP */
+  maxHp: number;
+  /** 攻击力 */
+  atk: number;
+  /** 防御力 */
+  def: number;
+}
+
+/** AI在 state_update 中输出的动态NPC新增载荷 */
+export interface DynamicNPCAddPayload {
+  /** NPC名称 */
+  name: string;
+  /** 流派 */
+  path: PathType;
+  /** 境界 1-5 */
+  realm: number;
+  /** 性格描述 */
+  personality: string;
+  /** 与玩家的羁绊提示（AI叙事中铺垫的好感基础） */
+  bonding_hint: string;
+}
+
+/** 动态NPC注册表状态 */
+export interface DynamicNPCState {
+  /** 所有动态NPC，key=id */
+  dynamicNPCs: Record<string, DynamicNPC>;
+  /** 注册表最大容量（默认500，超出后LRU淘汰） */
+  maxDynamicNPCs: number;
+  /** 添加/更新动态NPC */
+  upsertDynamicNPC: (npc: DynamicNPC) => void;
+  /** 更新好感度 */
+  updateDynamicNPCAffinity: (npcId: string, delta: number) => void;
+  /** 增加互动计数 */
+  incrementDynamicNPCInteraction: (npcId: string) => void;
+  /** 增加共同战斗计数 */
+  incrementDynamicNPCBattle: (npcId: string) => void;
+  /** LRU淘汰最老的NPC */
+  evictLRU: () => void;
+  /** 获取可招募列表 (affinity>=60) */
+  getRecruitableNPCs: () => DynamicNPC[];
+}
+
 export interface StateUpdate {
   player?: {
     realm?: { action: 'set'; value: string };
@@ -317,6 +418,8 @@ export interface StateUpdate {
     };
     health?: { current: number; max: number };
     essence?: { current: number; max: number };
+    /** v0.8.0-immortal: 升仙时切换能量类型 */
+    essenceType?: 'mortal' | 'immortal';
     dao_heart?: { kill?: number; mercy?: number; scheme?: number; ambition?: number };
     /** 道痕增量，如 {"力道": 500, "炎道": 300}。正数为获得，负数为损失（罕见） */
     dao_marks?: Record<string, number>;
@@ -330,6 +433,8 @@ export interface StateUpdate {
     add?: { name: string; tier: number; path: string; rarity: string; description: string }[];
     remove?: string[];
   };
+  /** 🆕 蛊材/材料获得。键=材料名，值=获得数量。如 {"毒虫毒囊":2,"沼泽毒泥":1} */
+  materials?: { add?: Record<string, number> };
   flags?: {
     set?: Record<string, any>;
     remove?: string[];
@@ -340,11 +445,16 @@ export interface StateUpdate {
     track?: string;
     butterfly_effects?: string[];
   };
+  /** 🆕 v0.7.0: 动态NPC — AI叙事中遇到的新NPC通过此字段回写结构化数据 */
+  dynamic_npcs?: {
+    add?: DynamicNPCAddPayload[];
+    affinity_delta?: { name: string; delta: number }[];
+  };
 }
 
 // ─── 战斗系统 ───
 export interface CombatState {
-  combatType: 'duel' | 'narrative' | 'group' | null;
+  combatType: 'duel' | 'narrative' | 'group' | 'squad' | null;
   enemy: EnemyState | null;
 }
 
@@ -382,6 +492,61 @@ export interface GroupCombatState {
   enemies: { id: string; hp: number }[];
   formation: 'frontline' | 'flanking' | 'defensive';
 }
+
+// ─── v0.7.0: 小队战斗系统类型 ───
+
+/** 小队战斗状态 — v0.7.0 squad-combat-engine 核心状态 */
+export interface SquadCombatState {
+  squadId: string;
+  phase: 'deploy' | 'player_turn' | 'enemy_turn' | 'resolution' | 'ended';
+  round: number;
+  /** 战术姿态 — 设计大纲§1.4.1: 替代阵型（原著为"杀招流"非"阵型流"） */
+  formation: '合击' | '牵制' | '掠阵' | '斩首';
+  /** 士气 0-100，影响全员伤害±20% */
+  morale: number;
+  /** 配合度 0-100，影响连携概率 */
+  coordination: number;
+  members: SquadMemberCombat[];
+  enemies: SquadEnemy[];
+  log: CombatLogEntry[];
+}
+
+/** 队伍成员战斗状态 */
+export interface SquadMemberCombat {
+  memberId: string;
+  name: string;
+  hp: number;
+  maxHp: number;
+  atk: number;
+  def: number;
+  path: string;
+  realm: number;
+  /** 性格驱动战斗行为（忠→保护/狡→偷袭/莽→强攻/慎→防御/无私→治疗） */
+  personality: 'loyal' | 'cunning' | 'reckless' | 'cautious' | 'selfless';
+  statuses: import('../engine/combat-formulas').CombatStatus[];
+  action: SquadAction | null;
+}
+
+/** 小队战斗敌方单位 */
+export interface SquadEnemy {
+  id: string;
+  name: string;
+  hp: number;
+  maxHp: number;
+  atk: number;
+  def: number;
+  path: string;
+  realm: number;
+  statuses: import('../engine/combat-formulas').CombatStatus[];
+  aiMode: EnemyAIMode;
+}
+
+/** 小队战斗可选行动 */
+export type SquadAction =
+  | { type: 'attack'; targetIndex: number; moveId?: string }
+  | { type: 'defend' }
+  | { type: 'gu_skill'; moveId: string; targetIndex: number }
+  | { type: 'escape' };
 
 export interface EscapeCondition {
   canEscape: boolean;
@@ -438,6 +603,8 @@ export interface DuelMove {
   activationContext?: string;
   /** P2-P7: 失败模式描述 */
   failureMode?: string;
+  /** v0.7.0: 越阶使用惩罚因子（0-1，1=无惩罚）。由killmove-bridge计算 */
+  rankPenalty?: number;
 }
 
 /** 单个战斗日志条目 */
@@ -476,6 +643,8 @@ export interface DuelState {
     defense: number;
     accuracy: number;
     evasion: number;
+    /** v0.6.0终局修复: 真元池 — 每次行动消耗真元 */
+    essence: { current: number; max: number };
     gu: { name: string; path: string; tier: number }[];
     moves: DuelMove[];
     /** v0.6.0: 玩家身上的状态效果 */
@@ -492,6 +661,22 @@ export interface DuelState {
   startedAt: number;
 }
 
+// ─── v0.6.0终局修复: 十绝体枚举 + 势力接口 + SquadMember/MortalAperture补全 ───
+
+/** 十绝体类型 — 原著10种自然十绝体(人祖十子命名) + 纯梦求真体(第11隐藏) */
+export type ExtremePhysiqueType =
+  | '太日阳莽体'   // 宇道, 白昼修行翻倍
+  | '古月阴荒体'   // 宙道, 夜晚修行增速
+  | '北冥冰魄体'   // 冰雪道, 冰水双亲和, 白凝冰
+  | '森海轮回体'   // 木道, 自然愈合翻倍
+  | '炎煌雷泽体'   // 炎雷道, 雷电火焰双亲和
+  | '万金妙华体'   // 金道, 金属蛊炼化+30%
+  | '大力真武体'   // 力道, 狂蛮魔尊
+  | '逍遥智心体'   // 智道, 杀招学习速度+50%
+  | '厚土元央体'   // 土道, 山地修行+40%
+  | '宇宙大衍体'   // 变化道/宇道, 炼蛊变异率+50%
+  | '纯梦求真体';  // 梦道, 砚石老人创造(隐藏)
+
 // ─── v0.6.0: 小队/势力预留接口（v0.7.0填充）───
 export interface SquadMember {
   id: string; name: string; npcId?: string;
@@ -499,7 +684,30 @@ export interface SquadMember {
   loyalty: number;
   personality: 'loyal' | 'cunning' | 'reckless' | 'cautious' | 'selfless';
   alive: boolean;
+  /** v0.6.0终局补全: 战斗属性 */
+  hp: number; maxHp: number; atk: number; def: number;
+  /** v0.7.0: 组队信任度(0-100)—NPC对玩家带队能力的信赖 */
+  adventureTrust: number;
+  /** v0.7.0: 利益驱动(0-100)—NPC对当前任务收益的评估 */
+  interestDrive: number;
 }
+export interface PlayerFaction {
+  id: string; name: string; domain: string;
+  type: '正派' | '魔道' | '散修联盟' | '家族';
+  level: number; reputation: number;
+  resources: { 元石: number; 仙元石: number; 蛊材: Record<string, number> };
+  members: SquadMember[]; maxMembers: number; foundedAt: number;
+}
+
+/** 势力事件 — 设计大纲§1.2.1: AI生成势力相关叙事 */
+export interface FactionEvent {
+  id: string;
+  type: 'recruitment' | 'conflict' | 'opportunity' | 'crisis';
+  description: string;
+  choices: { id: string; text: string; risk: string; outcome: string }[];
+  resolved: boolean;
+}
+
 export interface PartyState {
   members: SquadMember[]; maxSize: number; formation: string | null;
 }

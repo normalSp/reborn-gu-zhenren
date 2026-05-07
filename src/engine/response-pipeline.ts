@@ -530,6 +530,7 @@ export class ResponsePipeline {
                 daoMarks: store2.pathBuild?.dao_marks || {}, // P2补完: 传入完整道痕KV映射
                 hp: store2.hp || 100, maxHp: store2.maxHp || 100,
                 attack: store2.attack || 20, defense: store2.defense || 5,
+                essence: { current: store2.essence?.current ?? 100, max: store2.essence?.max ?? 100 },
                 gu: playerGu, moves: [],
               }, trigger.duelEnemy);
             }

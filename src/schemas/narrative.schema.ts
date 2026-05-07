@@ -51,7 +51,7 @@ const FlagsUpdate = z.object({
 
 const FactionUpdate = z.record(z.object({
   standing: z.number(),
-})).optional();
+}).passthrough()).optional();  // v0.6.0修复: passthrough容忍AI返回额外字段(reputation/status等)
 
 const WealthUpdate = z.object({
   delta: z.number(),
@@ -79,6 +79,10 @@ const PlayerUpdate = z.object({
   path_levels: z.record(z.string()).optional(),
 }).optional();
 
+const MaterialsUpdate = z.object({
+  add: z.record(z.number()).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -87,6 +91,7 @@ export const StateUpdateSchema = z.object({
   flags: FlagsUpdate,
   faction: FactionUpdate,
   causality: CausalityUpdate,
+  materials: MaterialsUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───

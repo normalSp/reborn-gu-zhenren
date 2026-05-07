@@ -24,7 +24,11 @@ export interface ImmortalAuctionItem {
   expiresTurn: number;   // 过期回合
 }
 
-const TIER_BASE_PRICE: Record<number, number> = { 6:4, 7:12, 8:35, 9:100 };
+// v0.7.0-pre审查修正：TIER_BASE_PRICE重新锚定
+// 参考 economy.json 福地等级表仙元石月产（小福地5-10/月，上等25-40/月）
+// 六转仙蛊≈小型福地半年产出(~30-60仙元石)，九转仙蛊≈顶级蛊仙数年积累
+// 原值(6:2800/7:8500/8:25000/9:80000)严重偏高，8年产出才能买6转仙蛊不合理
+const TIER_BASE_PRICE: Record<number, number> = { 6:60, 7:240, 8:960, 9:3800 };
 
 /** 判断某仙蛊是否应该出现在拍卖行 */
 export function isAuctionable(name: string, tier: number): boolean {
@@ -104,7 +108,7 @@ export interface PlayerListedGu {
 }
 
 export function listPlayerGu(guName: string, tier: number, rank: string, path: string, turn: number): PlayerListedGu {
-  const startingBid = tier * tier * 100;
+  const startingBid = Math.round((TIER_BASE_PRICE[tier] || tier * 200) * (rank === 'legendary' ? 1.5 : rank === 'epic' ? 1.2 : 1.0));
   const bidderCount = 3 + tier - 6 + (rank === 'legendary' ? 2 : rank === 'epic' ? 1 : 0);
   return { name: guName, tier, path, rank, listedTurn: turn, expiresTurn: turn + 8, startingBid, currentBid: startingBid, bidderCount, sold: false, finalBid: 0 };
 }
@@ -118,4 +122,40 @@ export function simulateSellAuction(item: PlayerListedGu): PlayerListedGu {
   const sold = newCount <= 0;
   const finalBid = sold ? newBid : item.finalBid;
   return { ...item, currentBid: newBid, bidderCount: newCount, sold, finalBid };
+}
+
+// ─── v0.7.0-pre: 仙材/仙蛊方/杀招传承 预留接口 ───
+// 完整实现在 v0.7.0-b 阶段，此处导出函数签名以支持 AuctionPanel Tab 预留结构
+
+export interface MaterialAuctionItem {
+  id: string; name: string; grade: string; path: string;
+  basePrice: number; currentBid: number; bidderCount: number;
+  expiresTurn: number;
+}
+
+export interface RecipeAuctionItem {
+  id: string; name: string; targetTier: number; path: string;
+  fragmentsRequired: number; basePrice: number; currentBid: number;
+  bidderCount: number; expiresTurn: number;
+}
+
+export interface KillerMoveAuctionItem {
+  id: string; name: string; tier: number; path: string;
+  form: '残方' | '完整传承'; basePrice: number; currentBid: number;
+  bidderCount: number; expiresTurn: number;
+}
+
+/** 生成仙材拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+export function generateMaterialPool(existingMaterialNames: string[], turn: number): MaterialAuctionItem[] {
+  return [];
+}
+
+/** 生成仙蛊方拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+export function generateRecipePool(existingRecipeNames: string[], turn: number): RecipeAuctionItem[] {
+  return [];
+}
+
+/** 生成杀招传承拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+export function generateKillerMovePool(existingKillMoveNames: string[], turn: number): KillerMoveAuctionItem[] {
+  return [];
 }

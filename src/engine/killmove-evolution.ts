@@ -4,7 +4,7 @@
  */
 import type { KillMove, KillMoveProficiency, PathType } from '../types';
 import { useStore } from '../store';
-import { computePathLevel } from './path-progression';
+import { computePathLevel, isPathLevelAtLeast } from './path-progression';
 import type { PathLevel } from '../types';
 
 /** 进化条件 */
@@ -68,11 +68,6 @@ export function checkEvolution(killMove: KillMove): {
     condition,
     missingReqs,
   };
-}
-
-function isPathLevelAtLeast(current: PathLevel, target: PathLevel): boolean {
-  const ranking: PathLevel[] = ['普通', '大师', '宗师', '大宗师', '准无上', '无上', '道主'];
-  return ranking.indexOf(current) >= ranking.indexOf(target);
 }
 
 /**

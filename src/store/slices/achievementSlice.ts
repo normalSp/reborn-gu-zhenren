@@ -74,6 +74,8 @@ export interface AchievementSlice {
   clearRecentUnlocks: () => void;
   /** 从localStorage重新加载成就数据（在loadFromFile/resetStore后调用） */
   reloadFromStorage: () => void;
+  /** v0.7.0: 发放成就奖励（杀招碎片/道痕/元石/蛊材）*/
+  grantReward: (achievementId: string) => void;
 }
 
 export const createAchievementSlice = (set: any, get: any): AchievementSlice => {
@@ -235,6 +237,66 @@ export const createAchievementSlice = (set: any, get: any): AchievementSlice => 
         achievementProgress: savedProgress,
         recentUnlocks: [],
       });
+    },
+
+    // ═══ v0.7.0: 发放成就奖励 ═══
+    grantReward: (achievementId) => {
+      const defs: Achievement[] = get()._achievementDefs || [];
+      const def = defs.find(d => d.id === achievementId);
+      if (!def || !def.reward) return;
+
+      const fullStore = get() as any;
+      const reward = def.reward;
+
+      // 元石奖励
+      if (reward.currency && reward.currency > 0) {
+        if (typeof fullStore.addCurrency === 'function') {
+          fullStore.addCurrency(reward.currency);
+        }
+      }
+
+      // 仙元石奖励
+      if (reward.immortalCurrency && reward.immortalCurrency > 0) {
+        const current = fullStore.immortalCurrency || 0;
+        set({ immortalCurrency: current + reward.immortalCurrency } as any);
+      }
+
+      // 蛊材奖励
+      if (reward.materials && Object.keys(reward.materials).length > 0) {
+        for (const [matName, qty] of Object.entries(reward.materials)) {
+          if (typeof fullStore.addMaterial === 'function') {
+            fullStore.addMaterial(matName, qty);
+          }
+        }
+      }
+
+      // 杀招碎片奖励 → 解锁对应杀招
+      if (reward.unlockKillMove && typeof fullStore.learnKillMove === 'function') {
+        fullStore.learnKillMove({
+          id: `ach_${achievementId}_${Date.now()}`,
+          name: reward.unlockKillMove,
+          path: '通用',
+          level: 1,
+          baseCost: 10,
+          multiplier: 1.5,
+          cooldown: 4,
+          description: `成就解锁杀招: ${reward.unlockKillMove}`,
+        });
+      }
+
+      // 道痕奖励
+      if (reward.daoMarks && Object.keys(reward.daoMarks).length > 0) {
+        for (const [path, delta] of Object.entries(reward.daoMarks)) {
+          if (typeof fullStore.addDaoMarks === 'function') {
+            fullStore.addDaoMarks(path, delta);
+          }
+        }
+      }
+
+      const logStore = get() as any;
+      if (typeof logStore.addGameLog === 'function') {
+        logStore.addGameLog('achievement', `成就奖励发放: ${def.name}`, { achievementId, reward });
+      }
     },
   };
 };

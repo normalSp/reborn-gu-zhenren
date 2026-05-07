@@ -4,6 +4,7 @@
  */
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useStore } from '../../store';
+import { useShallow } from 'zustand/shallow';
 import { TIER_GROUPS, type GuShopEntry, type TierGroupId, getMaterialShopItems, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry } from '../../engine/shop-engine';
 import { GU_IMAGE_MAP } from '../../data/image-maps';
 
@@ -19,11 +20,13 @@ export function MerchantPanel() {
   const currentChapter = useStore((s: any) => s.flags?.current_chapter);
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
 
-  // merchantSlice
-  const shopGroups = useStore(s => (s as any).shopGroups);
-  const refreshShopGroup = useStore(s => (s as any).refreshShopGroup);
-  const getShopRefreshCost = useStore(s => (s as any).getShopRefreshCost);
-  const buyGuFromShop = useStore(s => (s as any).buyGuFromShop);
+  // merchantSlice — useShallow防止对象/数组引用变化导致无限重渲染
+  const { shopGroups, refreshShopGroup, getShopRefreshCost, buyGuFromShop } = useStore(useShallow((s: any) => ({
+    shopGroups: s.shopGroups,
+    refreshShopGroup: s.refreshShopGroup,
+    getShopRefreshCost: s.getShopRefreshCost,
+    buyGuFromShop: s.buyGuFromShop,
+  })));
 
   const [activeGroup, setActiveGroup] = useState<TierGroupId>(1);
   const [message, setMessage] = useState('');
@@ -143,9 +146,20 @@ export function MerchantPanel() {
     if (inventoryLength >= cap) { setMessage(isImmortal ? '仙窍存储异常' : '空窍已满'); setTimeout(() => setMessage(''), 2000); return; }
     if (!payWithDualCurrency(item.price, item.name)) return;
     if (isImmortal) {
-      // 蛊仙购买→直接写入仙窍存储
+      // 蛊仙购买→直接写入仙窍存储，参照addGu的safeGu模式补全所有GuInstance必要字段
       const guList = full.apertureInventory?.gu || [];
-      const newGu = { ...item, id: `gu_shop_${Date.now()}_${Math.random().toString(36).slice(2, 8)}` };
+      const currentTurn = full.turn || 1;
+      const newGu = {
+        ...item,
+        id: `gu_shop_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+        specId: item.name.toLowerCase().replace(/\s+/g, '_'),
+        currentState: 'optimal' as const,
+        hungerCounter: 0,
+        proficiency: 0,
+        bonded: false,
+        active: true,
+        acquiredAt: { turn: currentTurn, narrative: `购买: ${item.name}` },
+      };
       useStore.setState({ apertureInventory: { ...full.apertureInventory, gu: [...guList, newGu] } });
     } else {
       const success = buyGuFromShop?.(activeGroup, item.name);

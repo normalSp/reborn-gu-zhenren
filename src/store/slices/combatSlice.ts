@@ -1,9 +1,10 @@
 /**
- * 战斗 Slice — P2-4a决斗引擎状态管理
- * 薄切片设计：仅做状态读写，计算逻辑全部委托combat-engine
+ * 战斗 Slice — P2-4a决斗引擎状态管理 + v0.7.0小队战斗
+ * 薄切片设计：仅做状态读写，计算逻辑全部委托combat-engine / squad-combat-engine
  */
-import type { DuelAction, DuelEnemy, DuelMove, DuelState } from '../../types';
+import type { DuelAction, DuelEnemy, DuelMove, DuelState, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction } from '../../types';
 import { initDuel, executePlayerTurn, executeEnemyTurn } from '../../engine/combat-engine';
+import { initSquadDuel as engineInitSquadDuel, executeSquadTurn as engineExecuteSquadTurn } from '../../engine/squad-combat-engine';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
@@ -24,6 +25,8 @@ const MAX_BATTLE_HISTORY = 10;
 
 export interface CombatSlice {
   duelState: DuelState | null;
+  /** v0.7.0: 小队战斗状态 */
+  squadCombatState: SquadCombatState | null;
   /** P2-P9-3: 最近N场战斗历史 */
   battleHistory: BattleRecord[];
   /** P0.2: 总战斗次数（含胜负逃） */
@@ -37,6 +40,7 @@ export interface CombatSlice {
     daoMarks: number;
     hp: number; maxHp: number; attack: number; defense: number;
     accuracy?: number; evasion?: number;
+    essence?: { current: number; max: number };
     gu: { name: string; path: string; tier: number }[];
     moves: DuelMove[];
   }, enemy: DuelEnemy) => void;
@@ -49,10 +53,28 @@ export interface CombatSlice {
 
   /** 执行敌人回合（自动） */
   executeEnemyTurnAction: () => void;
+
+  // ═══ v0.7.0: 小队战斗动作 ═══
+
+  /** 初始化小队战斗 */
+  initSquadDuel: (members: SquadMemberCombat[], enemies: SquadEnemy[], formation?: SquadCombatState['formation']) => void;
+
+  /** 设置战术姿态（deploy阶段） */
+  setSquadFormation: (formation: SquadCombatState['formation']) => void;
+
+  /** 确认布阵进入战斗 */
+  confirmSquadDeploy: () => void;
+
+  /** 执行小队战斗回合 */
+  executeSquadTurn: (playerActions: SquadAction[]) => void;
+
+  /** 结束小队战斗 */
+  endSquadDuel: () => void;
 }
 
 export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   duelState: null,
+  squadCombatState: null,
   battleHistory: [],
   // ═══ P0.2: 战斗计数器初始值 ═══
   totalBattlesFought: 0,
@@ -104,12 +126,11 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       const newHistory = [record, ...history].slice(0, MAX_BATTLE_HISTORY);
       set({ battleHistory: newHistory });
 
-      // P2-P8-4: 敌方蛊虫90%销毁概率（原著：蛊师临死前常自爆蛊虫防止落入敌手）
+      // ═══ v0.7.0: 敌方蛊虫100%销毁概率（原著：蛊师/蛊仙死亡时空窍破碎，蛊虫震出体外后立即自爆销毁，敌人无法获取） ═══
       if (state.result.winner === 'player') {
         const enemyGuCount = state.enemy.gu?.length || 0;
-        const destroyed = Math.floor(enemyGuCount * 0.9);
-        const survived = enemyGuCount - destroyed;
-        console.log(`[Combat] 战斗胜利！敌方${enemyGuCount}只蛊虫中，${destroyed}只在临死前自爆销毁，${survived}只可能落入手中`);
+        const destroyed = enemyGuCount; // 100%销毁
+        console.log(`[Combat] 战斗胜利！敌方${enemyGuCount}只蛊虫在空窍破碎时全部自爆销毁（原著设定）。`);
 
         // ═══ B1.2: 战斗掉落蛊材 ═══
         const fullStore = get() as any;
@@ -208,5 +229,37 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
 
     const newState = executeEnemyTurn(current);
     set({ duelState: newState });
+  },
+
+  // ═══ v0.7.0: 小队战斗动作 ═══
+
+  initSquadDuel: (members, enemies, formation = '牵制') => {
+    const state = engineInitSquadDuel('squad_duel', members, enemies, formation);
+    state.phase = 'deploy';
+    set({ squadCombatState: state });
+  },
+
+  setSquadFormation: (formation) => {
+    const current = get().squadCombatState as SquadCombatState | null;
+    if (!current || current.phase !== 'deploy') return;
+    set({ squadCombatState: { ...current, formation } });
+  },
+
+  confirmSquadDeploy: () => {
+    const current = get().squadCombatState as SquadCombatState | null;
+    if (!current || current.phase !== 'deploy') return;
+    set({ squadCombatState: { ...current, phase: 'player_turn' } });
+  },
+
+  executeSquadTurn: (playerActions) => {
+    const current = get().squadCombatState as SquadCombatState | null;
+    if (!current) return;
+    // 先短暂显示resolution阶段
+    const resolved = engineExecuteSquadTurn(current, playerActions);
+    set({ squadCombatState: resolved });
+  },
+
+  endSquadDuel: () => {
+    set({ squadCombatState: null });
   },
 });

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
+import { useShallow } from 'zustand/shallow';
 import type { DuelPhase, CombatLogEntry } from '../../types';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
@@ -41,12 +42,12 @@ const _EMPTY_ARR: readonly never[] = Object.freeze([]);
 const _EMPTY_OBJ = Object.freeze({});
 
 export function CombatOverlay() {
-  const duelState = useStore(s => s.duelState);
+  const duelState = useStore(useShallow(s => s.duelState));
   const executePlayerAction = useStore(s => s.executePlayerAction);
   const endDuel = useStore(s => s.endDuel);
   // ═══ v1.7: 杀招面板 ═══
-  const killMoves = useStore(s => (s as any).killMoves || _EMPTY_ARR) as any[];
-  const cooldowns = useStore(s => (s as any).cooldowns || _EMPTY_OBJ) as Record<string, number>;
+  const killMoves = useStore(useShallow((s: any) => s.killMoves ?? _EMPTY_ARR)) as any[];
+  const cooldowns = useStore(useShallow((s: any) => s.cooldowns ?? _EMPTY_OBJ)) as Record<string, number>;
   const useKillMove = useStore(s => (s as any).useKillMove) as ((id: string) => void) | undefined;
   const [showKillerPanel, setShowKillerPanel] = useState(false);
   const [visible, setVisible] = useState(false);

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
 import type { Achievement, AchievementStats, AchievementCategory, AchievementTier } from '../../types/achievement';
 
@@ -26,8 +27,8 @@ const TIER_BG: Record<AchievementTier, string> = {
 const CATEGORY_TABS: (AchievementCategory | '全部')[] = ['全部', '成长', '剧情', '收集', '探索', '社交', '经济', '战斗', '系统'];
 
 export function AchievementPanel() {
-  const achievements = useStore(s => s._achievementDefs as Achievement[] | undefined);
-  const unlockedIds = useStore(s => s.unlockedAchievements as string[] | undefined);
+  const achievements = useStore(useShallow((s: any) => s._achievementDefs as Achievement[] | undefined));
+  const unlockedIds = useStore(useShallow((s: any) => s.unlockedAchievements as string[] | undefined));
   const [activeTab, setActiveTab] = useState<AchievementCategory | '全部'>('全部');
 
   const defs = achievements || [];
