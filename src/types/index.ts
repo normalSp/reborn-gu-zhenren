@@ -654,6 +654,30 @@ export interface SquadCombatState {
   members: SquadMemberCombat[];
   enemies: SquadEnemy[];
   log: CombatLogEntry[];
+  trace?: BattleTraceEntry[];
+  eventCandidates?: CombatEventCandidate[];
+  seed?: number;
+  mode?: DuelMode;
+  rewardPreview?: {
+    yuanStone?: number;
+    immortalStone?: number;
+    materials?: Record<string, number>;
+    rumors?: string[];
+  };
+  result?: {
+    winner: 'player' | 'enemy' | 'escaped' | null;
+    roundsTaken: number;
+    casualties: string[];
+    wounded: string[];
+    moraleDelta: number;
+    trustDeltas: Record<string, number>;
+    rewards?: {
+      yuanStone?: number;
+      immortalStone?: number;
+      materials?: Record<string, number>;
+      rumors?: string[];
+    };
+  } | null;
 }
 
 /** 队伍成员战斗状态 */
@@ -670,6 +694,15 @@ export interface SquadMemberCombat {
   personality: 'loyal' | 'cunning' | 'reckless' | 'cautious' | 'selfless';
   statuses: import('../engine/combat-formulas').CombatStatus[];
   action: SquadAction | null;
+  moves?: DuelMove[];
+  essence?: { current: number; max: number; type: 'primeval' | 'immortal' };
+  daoMarks?: number;
+  cooldowns?: Record<string, number>;
+  fatigue?: number;
+  adventureTrust?: number;
+  loyalty?: number;
+  interestDrive?: number;
+  rolePausedUntil?: number;
 }
 
 /** 小队战斗敌方单位 */
@@ -684,6 +717,9 @@ export interface SquadEnemy {
   realm: number;
   statuses: import('../engine/combat-formulas').CombatStatus[];
   aiMode: EnemyAIMode;
+  moves?: DuelMove[];
+  daoMarks?: number;
+  morale?: number;
 }
 
 /** 小队战斗可选行动 */
@@ -943,7 +979,32 @@ export interface FactionEvent {
 }
 
 export interface PartyState {
-  members: SquadMember[]; maxSize: number; formation: string | null;
+  members: SquadMember[];
+  maxSize: number;
+  formation: SquadCombatState['formation'] | null;
+  morale: number;
+  coordination: number;
+  lastUpdatedTurn: number;
+  memberCooldowns: Record<string, number>;
+  memberRolePausedUntil: Record<string, number>;
+}
+
+export type SquadRecruitDisposition =
+  | 'willing_eager'
+  | 'willing_cautious'
+  | 'mercenary'
+  | 'unwilling';
+
+export interface SquadRecruitEvaluation {
+  memberId: string;
+  memberName: string;
+  disposition: SquadRecruitDisposition;
+  canJoin: boolean;
+  trustScore: number;
+  interestScore: number;
+  requiredPayment?: { yuanStone?: number; immortalStone?: number };
+  reasons: string[];
+  aiTags: string[];
 }
 
 // ─── P2-4b: 叙事战斗触发 ───

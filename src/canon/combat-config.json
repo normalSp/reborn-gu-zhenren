@@ -340,5 +340,83 @@
       "event",
       "morale_escape"
     ]
+  },
+  "squad": {
+    "version": "v0.7.0-b",
+    "maxPartySize": 4,
+    "formations": {
+      "合击": {
+        "damageBonus": 0.15,
+        "defenseBonus": 0,
+        "speedBonus": 0,
+        "comboChanceBonus": 0.1,
+        "targeting": "same_target",
+        "special": "两人以上集火同一目标时提升伤害，适合速杀关键敌人。"
+      },
+      "牵制": {
+        "damageBonus": 0,
+        "defenseBonus": 0.1,
+        "speedBonus": 0,
+        "enemyEvasionMult": 0.8,
+        "targeting": "pin_strongest",
+        "special": "牵制最强敌人并压低其闪避，适合越级拖回合。"
+      },
+      "掠阵": {
+        "damageBonus": 0,
+        "defenseBonus": 0.05,
+        "speedBonus": 0,
+        "healLowestPct": 0.05,
+        "targeting": "support_lowest_hp",
+        "special": "每回合照应最低血量队友，训练和护送更稳。"
+      },
+      "斩首": {
+        "damageBonus": 0.1,
+        "defenseBonus": 0,
+        "speedBonus": 0.05,
+        "critBonus": 0.1,
+        "targeting": "focus_weakest",
+        "special": "优先击破最弱或关键目标，代价是防御窗口更薄。"
+      }
+    },
+    "morale": {
+      "default": 50,
+      "minDamageMult": 0.8,
+      "maxDamageMult": 1.2,
+      "lowHitPenaltyStart": 60,
+      "lowHitPenaltyPerPoint": 0.003
+    },
+    "coordination": {
+      "default": 50,
+      "maxComboChance": 0.5,
+      "chanceDivisor": 200
+    },
+    "ttkTargets": {
+      "twoVsOne": [3, 6],
+      "threeVsTwo": [4, 8],
+      "fourVsFour": [6, 12],
+      "boss": [8, 14],
+      "lowOneRank": [7, 12],
+      "lowTwoRank": [10, 18]
+    },
+    "rewardArbitrage": {
+      "maxExpectedYuanStonePerTurnMortal": 80,
+      "maxExpectedImmortalStonePerTurn": 2,
+      "enemyGuDropPolicy": "destroy_or_story_whitelist_only"
+    },
+    "injury": {
+      "trainingDefeat": "wounded",
+      "lethalDefeat": "dead_or_captured",
+      "woundedCooldownTurns": 10
+    },
+    "escape": {
+      "baseChance": 0.35,
+      "moraleWeight": 0.002,
+      "rankPenalty": 0.08,
+      "minChance": 0.05,
+      "maxChance": 0.8
+    },
+    "trace": {
+      "maxEntries": 80
+    }
   }
 }

@@ -47,6 +47,24 @@ export interface SaveFileFormat {
   state: Record<string, any>;
 }
 
+const SQUAD_FORMATIONS = new Set(['合击', '牵制', '掠阵', '斩首']);
+
+export function normalizePartyState(party: any, turn = 0): any {
+  const formation = SQUAD_FORMATIONS.has(party?.formation) ? party.formation : null;
+  return {
+    members: Array.isArray(party?.members) ? party.members : [],
+    maxSize: Number.isFinite(party?.maxSize) ? party.maxSize : 4,
+    formation,
+    morale: Number.isFinite(party?.morale) ? Math.max(0, Math.min(100, party.morale)) : 50,
+    coordination: Number.isFinite(party?.coordination) ? Math.max(0, Math.min(100, party.coordination)) : 50,
+    lastUpdatedTurn: Number.isFinite(party?.lastUpdatedTurn) ? party.lastUpdatedTurn : turn,
+    memberCooldowns: party?.memberCooldowns && typeof party.memberCooldowns === 'object' ? party.memberCooldowns : {},
+    memberRolePausedUntil: party?.memberRolePausedUntil && typeof party.memberRolePausedUntil === 'object'
+      ? party.memberRolePausedUntil
+      : {},
+  };
+}
+
 // ─── v0.6.0终局修复: 存档迁移函数 ───
 /** 将旧版本存档迁移到当前格式版本, 填充新增字段的默认值 */
 export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
@@ -128,6 +146,7 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   }
   if (s.lastFactionEconomyLedger === undefined) s.lastFactionEconomyLedger = null;
   if (s.lastFactionEconomyTurn === undefined) s.lastFactionEconomyTurn = 0;
+  s.partyState = normalizePartyState(s.partyState, s.turn ?? 0);
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
@@ -436,6 +455,7 @@ export const useStore = create<RootStore>()(
           if (merged.duelState && !VALID_PHASES.includes(merged.duelState.phase)) {
             merged.duelState = { ...merged.duelState, phase: 'player_turn' };
           }
+          merged.partyState = normalizePartyState(merged.partyState, merged.turn ?? 0);
           return merged;
         },
         migrate: (persistedState: any, version: number) => {
@@ -444,6 +464,7 @@ export const useStore = create<RootStore>()(
             if (persistedState.targetedGuEffects === undefined) persistedState.targetedGuEffects = [];
             if (persistedState.gameLog === undefined) persistedState.gameLog = [];
             if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
+            persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {
               persistedState.deathRecord = {
                 majorChoices: [],
