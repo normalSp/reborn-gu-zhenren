@@ -325,6 +325,13 @@ export function evaluateConditionString(condition: string, state: AchievementChe
     | 'ascensionSuccessCount'
     | 'trainingGroundVisits'
     | 'huntSuccessCount'
+    | 'squadCombatWins'
+    | 'squadMembersRecruited'
+    | 'partyMembersCount'
+    | 'squadMemberWoundedRescues'
+    | 'squadMemberDeaths'
+    | 'squadComboSuccesses'
+    | 'squadOverlevelEscapes'
   >> = [
     'totalBattlesFought',
     'factionLevel',
@@ -333,6 +340,13 @@ export function evaluateConditionString(condition: string, state: AchievementChe
     'ascensionSuccessCount',
     'trainingGroundVisits',
     'huntSuccessCount',
+    'squadCombatWins',
+    'squadMembersRecruited',
+    'partyMembersCount',
+    'squadMemberWoundedRescues',
+    'squadMemberDeaths',
+    'squadComboSuccesses',
+    'squadOverlevelEscapes',
   ];
 
   for (const field of numericFields) {
@@ -343,6 +357,10 @@ export function evaluateConditionString(condition: string, state: AchievementChe
   // "turn >= N"
   const turnMatch = cond.match(/^turn\s*>=\s*(\d+)$/);
   if (turnMatch) return state.turn >= parseInt(turnMatch[1], 10);
+
+  if (cond === 'hasExtremePhysique') {
+    return !!state.hasExtremePhysique;
+  }
 
   // "realmNum >= N"
   const realmNumMatch = cond.match(/^realmNum\s*>=\s*(\d+)$/);

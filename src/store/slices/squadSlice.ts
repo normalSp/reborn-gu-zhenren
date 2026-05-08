@@ -195,6 +195,7 @@ export const createSquadSlice = (set: any, get: any): SquadSlice => ({
 
     set((s: any) => ({
       partyState: newParty,
+      squadMembersRecruited: (s.squadMembersRecruited || 0) + 1,
       gameTime: {
         ...s.gameTime,
         ap: Math.max(0, (s.gameTime?.ap ?? 0) - 1),

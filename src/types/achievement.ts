@@ -74,6 +74,22 @@ export interface AchievementCheckState {
   trainingGroundVisits: number;
   /** v0.7.0: 狩猎成功次数 */
   huntSuccessCount: number;
+  /** v0.7.0-b: 小队战胜利次数 */
+  squadCombatWins: number;
+  /** v0.7.0-b: 已招募入队成员次数 */
+  squadMembersRecruited: number;
+  /** v0.7.0-b: 当前小队成员数（不含玩家） */
+  partyMembersCount: number;
+  /** v0.7.0-b: 小队重伤救回次数 */
+  squadMemberWoundedRescues: number;
+  /** v0.7.0-b: 小队成员阵亡次数 */
+  squadMemberDeaths: number;
+  /** v0.7.0-b: 合击成功次数 */
+  squadComboSuccesses: number;
+  /** v0.7.0-b: 越级撤退成功次数 */
+  squadOverlevelEscapes: number;
+  /** v0.7.0-b: 是否为十绝体/纯梦求真体开局或觉醒 */
+  hasExtremePhysique: boolean;
   /** v0.7.0: 单流派道痕读取器，用于 singlePathDaoMarks(path) 条件 */
   singlePathDaoMarks: (path: string) => number;
   crossDomainCount: number;

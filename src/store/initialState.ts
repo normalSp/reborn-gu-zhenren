@@ -78,6 +78,18 @@ export const INITIAL_STATE = {
   totalBattlesFought: 0 as number,
   /** 战斗胜利次数 */
   combatWins: 0 as number,
+  /** v0.7.0-b: 小队战胜利次数 */
+  squadCombatWins: 0 as number,
+  /** v0.7.0-b: 调入/招募小队成员次数 */
+  squadMembersRecruited: 0 as number,
+  /** v0.7.0-b: 小队重伤救回次数 */
+  squadMemberWoundedRescues: 0 as number,
+  /** v0.7.0-b: 小队成员阵亡次数 */
+  squadMemberDeaths: 0 as number,
+  /** v0.7.0-b: 合击成功次数 */
+  squadComboSuccesses: 0 as number,
+  /** v0.7.0-b: 越级撤退成功次数 */
+  squadOverlevelEscapes: 0 as number,
 
   // ─── pathSlice ───
   primaryPath: null as string | null,

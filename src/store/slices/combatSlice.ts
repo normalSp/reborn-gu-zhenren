@@ -69,6 +69,11 @@ function pickBattleLootMaterial(enemyPath: string | undefined, enemyRealmNum: nu
   return derivedGeneric?.id || entries[0]?.id || null;
 }
 
+function avgRealm<T extends { realm: number }>(units: T[]): number {
+  if (!units.length) return 0;
+  return units.reduce((sum, unit) => sum + (unit.realm || 0), 0) / units.length;
+}
+
 export interface CombatSlice {
   duelState: DuelState | null;
   /** v0.7.0: 小队战斗状态 */
@@ -79,6 +84,16 @@ export interface CombatSlice {
   totalBattlesFought: number;
   /** P0.2: 战斗胜利次数 */
   combatWins: number;
+  /** v0.7.0-b: 小队战胜利次数 */
+  squadCombatWins: number;
+  /** v0.7.0-b: 小队重伤救回次数 */
+  squadMemberWoundedRescues: number;
+  /** v0.7.0-b: 小队成员阵亡次数 */
+  squadMemberDeaths: number;
+  /** v0.7.0-b: 合击成功次数 */
+  squadComboSuccesses: number;
+  /** v0.7.0-b: 越级撤退成功次数 */
+  squadOverlevelEscapes: number;
 
   /** 开始决斗 */
   initDuel: (player: {
@@ -125,6 +140,11 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   // ═══ P0.2: 战斗计数器初始值 ═══
   totalBattlesFought: 0,
   combatWins: 0,
+  squadCombatWins: 0,
+  squadMemberWoundedRescues: 0,
+  squadMemberDeaths: 0,
+  squadComboSuccesses: 0,
+  squadOverlevelEscapes: 0,
 
   initDuel: (player, enemy) => {
     const fullStore = get() as any;
@@ -331,7 +351,31 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
     if (!current) return;
     // 先短暂显示resolution阶段
     const resolved = engineExecuteSquadTurn(current, playerActions);
-    set({ squadCombatState: resolved });
+    const updates: Record<string, any> = { squadCombatState: resolved };
+    if (!current.result && resolved.result) {
+      const store = get() as any;
+      updates.totalBattlesFought = (store.totalBattlesFought || 0) + 1;
+      if (resolved.result.winner === 'player') {
+        updates.combatWins = (store.combatWins || 0) + 1;
+        updates.squadCombatWins = (store.squadCombatWins || 0) + 1;
+        if (resolved.formation === '合击') {
+          updates.squadComboSuccesses = (store.squadComboSuccesses || 0) + 1;
+        }
+      }
+      if (resolved.result.wounded.length > 0 && resolved.result.winner === 'player') {
+        updates.squadMemberWoundedRescues = (store.squadMemberWoundedRescues || 0) + resolved.result.wounded.length;
+      }
+      if (resolved.result.casualties.length > 0) {
+        updates.squadMemberDeaths = (store.squadMemberDeaths || 0) + resolved.result.casualties.length;
+      }
+      if (resolved.result.winner === 'escaped') {
+        const enemyAdvantage = avgRealm(resolved.enemies) - avgRealm(resolved.members);
+        if (enemyAdvantage >= 1) {
+          updates.squadOverlevelEscapes = (store.squadOverlevelEscapes || 0) + 1;
+        }
+      }
+    }
+    set(updates);
   },
 
   endSquadDuel: () => {

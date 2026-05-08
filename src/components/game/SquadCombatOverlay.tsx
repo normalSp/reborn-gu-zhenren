@@ -20,6 +20,7 @@ import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
 import type { BattleTraceEntry, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction, CombatLogEntry } from '../../types';
 import { FORMATION_BONUS } from '../../engine/squad-combat-engine';
+import { buildExtremePhysiqueSquadNotice } from '../../engine/extreme-physique-squad-gates';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 
@@ -112,6 +113,7 @@ export function SquadCombatOverlay() {
   const confirmSquadDeploy = useStore(s => s.confirmSquadDeploy);
   const executeSquadTurn = useStore(s => s.executeSquadTurn);
   const endSquadDuel = useStore(s => s.endSquadDuel);
+  const aperture = useStore(s => s.aperture);
 
   const [visible, setVisible] = useState(false);
   // 每位队员的当前行动选择 (memberIndex → SquadAction)
@@ -159,6 +161,11 @@ export function SquadCombatOverlay() {
     ];
     return entries.sort((a, b) => b.speed - a.speed);
   }, [squadCombatState]);
+
+  const extremeNotice = useMemo(() => {
+    if (!squadCombatState) return null;
+    return buildExtremePhysiqueSquadNotice(aperture, squadCombatState.members.map(member => member.path));
+  }, [aperture, squadCombatState]);
 
   // ─── 部署确认 ───
   const handleDeployConfirm = useCallback(() => {
@@ -266,6 +273,7 @@ export function SquadCombatOverlay() {
                 {isDeploy && (
                   <DeployPhase
                     state={squadCombatState}
+                    extremeNotice={extremeNotice}
                     onSelectFormation={setSquadFormation}
                     onConfirm={handleDeployConfirm}
                   />
@@ -315,9 +323,10 @@ export function SquadCombatOverlay() {
 // Deploy Phase: 阵型选择
 // ═══════════════════════════════════════════════════════════
 function DeployPhase({
-  state, onSelectFormation, onConfirm,
+  state, extremeNotice, onSelectFormation, onConfirm,
 }: {
   state: SquadCombatState;
+  extremeNotice: ReturnType<typeof buildExtremePhysiqueSquadNotice>;
   onSelectFormation: (f: SquadCombatState['formation']) => void;
   onConfirm: () => void;
 }) {
@@ -334,6 +343,21 @@ function DeployPhase({
           ))}
         </div>
       </div>
+
+      {extremeNotice && (
+        <div className="mx-4 my-2 rounded-lg p-3 text-xs" style={{ backgroundColor: 'var(--gu-life-crimson-dim)', border: '1px solid var(--gu-life-crimson)' }}>
+          <div className="font-bold mb-1" style={{ color: 'var(--gu-life-crimson)' }}>
+            十绝体高压迫：{extremeNotice.physiqueType}
+          </div>
+          <div className="text-rg-paper-200/65 mb-1">{extremeNotice.slotPressure}</div>
+          <div className="text-[10px] text-rg-paper-200/50">
+            亲和：{extremeNotice.favoredPaths.join('、') || '无'} · 禁制：{extremeNotice.forbiddenPaths.join('、') || '无'}
+          </div>
+          {extremeNotice.memberWarnings.slice(0, 2).map((warning, index) => (
+            <div key={index} className="text-[10px] mt-1" style={{ color: 'var(--gu-trace-gold)' }}>{warning}</div>
+          ))}
+        </div>
+      )}
 
       {/* 战术姿态选择 */}
       <div className="px-4 py-2">

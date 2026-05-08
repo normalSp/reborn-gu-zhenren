@@ -30,6 +30,14 @@ function makeState(overrides: Partial<AchievementCheckState> = {}): AchievementC
     ascensionSuccessCount: 1,
     trainingGroundVisits: 5,
     huntSuccessCount: 2,
+    squadCombatWins: 1,
+    squadMembersRecruited: 1,
+    partyMembersCount: 3,
+    squadMemberWoundedRescues: 1,
+    squadMemberDeaths: 1,
+    squadComboSuccesses: 1,
+    squadOverlevelEscapes: 1,
+    hasExtremePhysique: true,
     singlePathDaoMarks: (path: string) => path === '力道' ? 120 : 0,
     ...overrides,
   };
@@ -44,7 +52,15 @@ describe('v0.7.0 achievement conditions', () => {
     'ascensionSuccessCount >= 1',
     'trainingGroundVisits >= 5',
     'huntSuccessCount >= 2',
+    'squadCombatWins >= 1',
+    'squadMembersRecruited >= 1',
+    'partyMembersCount >= 3',
+    'squadMemberWoundedRescues >= 1',
+    'squadMemberDeaths >= 1',
+    'squadComboSuccesses >= 1',
+    'squadOverlevelEscapes >= 1',
     'singlePathDaoMarks(力道) >= 100',
+    'hasExtremePhysique',
   ])('supports %s', (condition) => {
     expect(evaluateConditionString(condition, makeState())).toBe(true);
   });
@@ -58,7 +74,8 @@ describe('v0.7.0 achievement canon data', () => {
   it('defines reward and progressMax for every existing achievement', () => {
     const achievements = (achievementsRaw as any).achievements as any[];
 
-    expect(achievements).toHaveLength(26);
+    expect(achievements).toHaveLength((achievementsRaw as any)._meta.total);
+    expect(achievements.length).toBeGreaterThanOrEqual(35);
     for (const achievement of achievements) {
       expect(achievement.reward, achievement.id).toBeTruthy();
       expect(achievement.progressMax, achievement.id).toBeGreaterThan(0);

@@ -148,6 +148,12 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (s.lastFactionEconomyLedger === undefined) s.lastFactionEconomyLedger = null;
   if (s.lastFactionEconomyTurn === undefined) s.lastFactionEconomyTurn = 0;
   s.partyState = normalizePartyState(s.partyState, s.turn ?? 0);
+  if (s.squadCombatWins === undefined) s.squadCombatWins = 0;
+  if (s.squadMembersRecruited === undefined) s.squadMembersRecruited = 0;
+  if (s.squadMemberWoundedRescues === undefined) s.squadMemberWoundedRescues = 0;
+  if (s.squadMemberDeaths === undefined) s.squadMemberDeaths = 0;
+  if (s.squadComboSuccesses === undefined) s.squadComboSuccesses = 0;
+  if (s.squadOverlevelEscapes === undefined) s.squadOverlevelEscapes = 0;
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;

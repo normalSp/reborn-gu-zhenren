@@ -564,6 +564,18 @@ export class ResponsePipeline {
             ascensionSuccessCount: achStore.flags?.ascensionSuccessCount || (achStore.profile?.realm?.grand >= 6 ? 1 : 0),
             trainingGroundVisits: achStore.flags?.trainingGroundVisits || 0,
             huntSuccessCount: achStore.flags?.huntSuccessCount || 0,
+            squadCombatWins: achStore.squadCombatWins || 0,
+            squadMembersRecruited: achStore.squadMembersRecruited || 0,
+            partyMembersCount: achStore.partyState?.members?.length || 0,
+            squadMemberWoundedRescues: achStore.squadMemberWoundedRescues || 0,
+            squadMemberDeaths: achStore.squadMemberDeaths || 0,
+            squadComboSuccesses: achStore.squadComboSuccesses || 0,
+            squadOverlevelEscapes: achStore.squadOverlevelEscapes || 0,
+            hasExtremePhysique: !!(
+              achStore.aperture?.extremePhysiqueType ||
+              achStore.flags?._extremePhysiqueType ||
+              achStore.flags?.ascendedExtremePhysiqueType
+            ),
             singlePathDaoMarks: (path: string) => {
               const marks = achStore.daoMarks || achStore.pathBuild?.dao_marks || {};
               return marks[path] || 0;

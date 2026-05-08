@@ -1,8 +1,8 @@
 {
   "_meta": {
     "version": "2.2",
-    "total": 26,
-    "note": "P2-8: 18常规成就 + P9-1: 8跨域成就。认证：成就检测在每轮RESOLVED后自动执行。v0.7.0-a: 26条成就已补reward/progressMax。"
+    "total": 35,
+    "note": "P2-8: 18常规成就 + P9-1: 8跨域成就 + v0.7.0-b 9条小队/势力/十绝体入口成就。认证：成就检测在每轮RESOLVED后自动执行。"
   },
   "achievements": [
     {
@@ -421,6 +421,141 @@
         "materials": {
           "情报玉简": 1
         }
+      }
+    },
+    {
+      "id": "faction_founder",
+      "name": "立起旗号",
+      "description": "创建属于自己的势力",
+      "tier": "bronze",
+      "category": "社交",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "factionLevel >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 120
+      }
+    },
+    {
+      "id": "squad_first_recruit",
+      "name": "同行之人",
+      "description": "首次将势力成员调入小队",
+      "tier": "bronze",
+      "category": "社交",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "squadMembersRecruited >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 120
+      }
+    },
+    {
+      "id": "squad_four_ready",
+      "name": "四人成阵",
+      "description": "编成三名队友同行的完整小队",
+      "tier": "silver",
+      "category": "社交",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "partyMembersCount >= 3",
+      "progressMax": 3,
+      "reward": {
+        "currency": 250
+      }
+    },
+    {
+      "id": "squad_first_victory",
+      "name": "合力破敌",
+      "description": "获得第一场小队战胜利",
+      "tier": "bronze",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "squadCombatWins >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 120,
+        "materials": {
+          "疗伤蛊材": 1
+        }
+      }
+    },
+    {
+      "id": "squad_rescue_wounded",
+      "name": "救回一命",
+      "description": "小队战胜利后救回至少一名重伤队友",
+      "tier": "silver",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "squadMemberWoundedRescues >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "疗伤蛊材": 2
+        }
+      }
+    },
+    {
+      "id": "squad_fallen_member",
+      "name": "折翼之痛",
+      "description": "经历一次小队成员阵亡",
+      "tier": "silver",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": true,
+      "condition": "squadMemberDeaths >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 180
+      }
+    },
+    {
+      "id": "squad_combo_success",
+      "name": "合击成势",
+      "description": "以合击姿态赢下一场小队战",
+      "tier": "silver",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "squadComboSuccesses >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "信物材料": 1
+        }
+      }
+    },
+    {
+      "id": "squad_overlevel_escape",
+      "name": "知进知退",
+      "description": "带领小队从高一转以上敌人手中成功撤退",
+      "tier": "bronze",
+      "category": "战斗",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "squadOverlevelEscapes >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 120
+      }
+    },
+    {
+      "id": "extreme_physique_awakened",
+      "name": "天妒之才",
+      "description": "以十绝体或纯梦求真体踏入修行",
+      "tier": "gold",
+      "category": "成长",
+      "domain": "通用",
+      "hidden": false,
+      "condition": "hasExtremePhysique",
+      "progressMax": 1,
+      "reward": {
+        "currency": 500
       }
     }
   ]
