@@ -31,15 +31,34 @@ function App() {
     audioManager.setVolumeGetters(
       () => {
         const s = useStore.getState();
-        return s.soundState.muted ? 0 : s.soundState.masterVolume * s.soundState.bgmVolume;
+        return s.getEffectiveBgmVolume();
       },
       () => {
         const s = useStore.getState();
-        return s.soundState.muted ? 0 : s.soundState.masterVolume * s.soundState.sfxVolume;
+        return s.getEffectiveSfxVolume();
+      },
+      () => {
+        const s = useStore.getState();
+        return s.getEffectiveVoiceVolume();
+      },
+      () => {
+        const s = useStore.getState();
+        return s.getEffectiveUiVolume();
       },
     );
+    audioManager.setVoiceActiveHandler((active) => {
+      useStore.getState().setVoiceActive(active);
+    });
     audioManager.setMuted(soundState.muted);
-  }, [soundState.muted, soundState.masterVolume, soundState.bgmVolume, soundState.sfxVolume]);
+  }, [
+    soundState.muted,
+    soundState.masterVolume,
+    soundState.bgmVolume,
+    soundState.sfxVolume,
+    soundState.voiceVolume,
+    soundState.uiVolume,
+    soundState.voiceActive,
+  ]);
 
   useEffect(() => {
     if (screenState === displayScreen) return;

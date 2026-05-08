@@ -1,7 +1,7 @@
 /**
  * ═══ 音频管理器 — P2-7 增强 ═══
  *
- * 三通道音效系统：BGM（背景音乐）、SFX（音效）、UI（界面音效）
+ * 五通道音效系统：master / bgm / sfx / voice / ui。
  * 零外部依赖，纯浏览器 Web Audio API。
  *
  * 使用方式：
@@ -10,11 +10,13 @@
  *   audioManager.playSfx('hurt');               // 播放 SFX
  *   audioManager.playUi('select');             // 播放 UI 音效
  */
+import { audioSourceManifest } from '../engine/audio-resource-policy';
+import { recordDiagnostic } from './diagnostic-log';
 
 // ─── 类型定义 ───
 
 type OscType = OscillatorType;
-type SfxName = 'breakthrough' | 'dice' | 'hurt' | 'death' | 'select' | 'save';
+type SfxName = 'breakthrough' | 'dice' | 'hurt' | 'death' | 'select' | 'save' | 'achievement';
 type UiName = 'select' | 'click' | 'hover' | 'confirm' | 'cancel' | 'save';
 
 interface BgmTrack {
@@ -62,6 +64,10 @@ const SFX_PRESETS: Record<SfxName, SfxDef> = {
     { freq: 440, dur: 0.12, delay: 0 },
     { freq: 554, dur: 0.12, delay: 100 },
   ]},
+  achievement: { freq: 784, dur: 0.12, type: 'sine', vol: 0.05, sequence: [
+    { freq: 784, dur: 0.12, delay: 0 },
+    { freq: 988, dur: 0.16, delay: 110 },
+  ]},
 };
 
 const UI_PRESETS: Record<UiName, { freq: number; dur: number; type: OscType; vol: number }> = {
@@ -73,6 +79,14 @@ const UI_PRESETS: Record<UiName, { freq: number; dur: number; type: OscType; vol
   save:    { freq: 440, dur: 0.15, type: 'sine', vol: 0.05 },
 };
 
+const SFX_MANIFEST_ID_BY_NAME: Partial<Record<SfxName, string>> = {
+  hurt: 'sfx_combat_hit_3',
+  breakthrough: 'sfx_achievement_unlock',
+  achievement: 'sfx_achievement_unlock',
+  select: 'sfx_ui_click',
+  save: 'sfx_ui_click',
+};
+
 // ─── AudioManager 类 ───
 
 class AudioManager {
@@ -81,11 +95,17 @@ class AudioManager {
   private masterGain: GainNode | null = null;
   private bgmGain: GainNode | null = null;
   private sfxGain: GainNode | null = null;
+  private voiceGain: GainNode | null = null;
+  private uiGain: GainNode | null = null;
+  private voiceSource: AudioBufferSourceNode | null = null;
   private initialized = false;
 
   // 音量回调（由 soundSlice 注入）
   private getBgmVol: () => number = () => 0.35;
   private getSfxVol: () => number = () => 0.49;
+  private getVoiceVol: () => number = () => 0.56;
+  private getUiVol: () => number = () => 0.49;
+  private onVoiceActive: (active: boolean) => void = () => {};
 
   /** 获取或创建 AudioContext */
   private getCtx(): AudioContext | null {
@@ -112,22 +132,39 @@ class AudioManager {
     this.masterGain = ctx.createGain();
     this.bgmGain = ctx.createGain();
     this.sfxGain = ctx.createGain();
+    this.voiceGain = ctx.createGain();
+    this.uiGain = ctx.createGain();
 
     this.masterGain.connect(ctx.destination);
     this.bgmGain.connect(this.masterGain);
     this.sfxGain.connect(this.masterGain);
+    this.voiceGain.connect(this.masterGain);
+    this.uiGain.connect(this.masterGain);
 
     this.masterGain.gain.value = 0.7;
     this.bgmGain.gain.value = 0.5;
     this.sfxGain.gain.value = 0.7;
+    this.voiceGain.gain.value = 0.8;
+    this.uiGain.gain.value = 0.7;
 
     this.initialized = true;
   }
 
   /** 设置音量回调 */
-  setVolumeGetters(getBgm: () => number, getSfx: () => number): void {
+  setVolumeGetters(
+    getBgm: () => number,
+    getSfx: () => number,
+    getVoice: () => number = () => 0.56,
+    getUi: () => number = () => 0.49,
+  ): void {
     this.getBgmVol = getBgm;
     this.getSfxVol = getSfx;
+    this.getVoiceVol = getVoice;
+    this.getUiVol = getUi;
+  }
+
+  setVoiceActiveHandler(handler: (active: boolean) => void): void {
+    this.onVoiceActive = handler;
   }
 
   /** 更新 BGM 增益节点 */
@@ -141,6 +178,18 @@ class AudioManager {
   private updateSfxGain(): void {
     if (this.sfxGain) {
       this.sfxGain.gain.value = this.getSfxVol();
+    }
+  }
+
+  private updateVoiceGain(): void {
+    if (this.voiceGain) {
+      this.voiceGain.gain.value = this.getVoiceVol();
+    }
+  }
+
+  private updateUiGain(): void {
+    if (this.uiGain) {
+      this.uiGain.gain.value = this.getUiVol();
     }
   }
 
@@ -169,6 +218,12 @@ class AudioManager {
       .catch(() => {
         this.bgm.loading = false;
         console.warn(`[Audio] 无法加载 BGM: ${url}`);
+        recordDiagnostic({
+          category: 'audio',
+          severity: 'warning',
+          message: 'BGM 加载失败',
+          detail: { url },
+        });
       });
   }
 
@@ -268,17 +323,35 @@ class AudioManager {
       .catch(() => {
         this.bgm.loading = false;
         console.warn(`[Audio] crossFade: 无法加载 ${url}`);
+        recordDiagnostic({
+          category: 'audio',
+          severity: 'warning',
+          message: 'BGM 淡入失败',
+          detail: { url },
+        });
       });
   }
 
   // ─── SFX 播放 ───
 
-  /** 播放 SFX（合成音） */
+  /** 播放 SFX。战斗/成就必须优先真实素材；缺资源时只记录诊断，不再用合成音冒充。 */
   playSfx(name: SfxName): void {
     this.init();
     const ctx = this.getCtx();
     if (!ctx || !this.sfxGain) return;
     this.updateSfxGain();
+
+    if (this.playManifestSfx(name, 'sfx')) return;
+
+    if (name !== 'select' && name !== 'save') {
+      recordDiagnostic({
+        category: 'audio',
+        severity: 'warning',
+        message: '非 UI 音效缺少已确认真实素材，已阻止合成 fallback',
+        detail: { cue: name },
+      });
+      return;
+    }
 
     const preset = SFX_PRESETS[name];
     if (!preset) return;
@@ -300,13 +373,88 @@ class AudioManager {
   playUi(name: UiName): void {
     this.init();
     const ctx = this.getCtx();
-    if (!ctx || !this.sfxGain) return;
-    this.updateSfxGain();
+    if (!ctx || !this.uiGain) return;
+    this.updateUiGain();
+
+    if (this.playManifestSfx(name === 'save' ? 'save' : 'select', 'ui')) return;
 
     const preset = UI_PRESETS[name];
     if (!preset) return;
 
-    this.playToneOnChannel(ctx, this.sfxGain, preset.freq, preset.dur, preset.type, this.getSfxVol(), 0);
+    this.playToneOnChannel(ctx, this.uiGain, preset.freq, preset.dur, preset.type, this.getUiVol(), 0);
+  }
+
+  /** 播放配音。播放期间通过 soundSlice 触发 BGM -6dB ducking。 */
+  playVoice(url: string): void {
+    this.init();
+    const ctx = this.getCtx();
+    if (!ctx || !this.voiceGain) return;
+    this.updateVoiceGain();
+
+    if (this.voiceSource) {
+      try { this.voiceSource.stop(); } catch {}
+      this.voiceSource.disconnect();
+      this.voiceSource = null;
+    }
+
+    this.onVoiceActive(true);
+    this.loadAudioBuffer(url)
+      .then(buffer => {
+        const source = ctx.createBufferSource();
+        source.buffer = buffer;
+        source.connect(this.voiceGain!);
+        source.onended = () => {
+          this.onVoiceActive(false);
+          this.voiceSource = null;
+        };
+        this.voiceSource = source;
+        source.start(0);
+      })
+      .catch(() => {
+        this.onVoiceActive(false);
+        recordDiagnostic({
+          category: 'audio',
+          severity: 'warning',
+          message: '配音资源加载失败',
+          detail: { url },
+        });
+      });
+  }
+
+  private playManifestSfx(name: SfxName, channel: 'sfx' | 'ui'): boolean {
+    const manifestId = SFX_MANIFEST_ID_BY_NAME[name];
+    if (!manifestId) return false;
+    const entry = audioSourceManifest.sfx.find(item => item.id === manifestId);
+    if (!entry?.runtimeEnabled || entry.aiOrSyntheticAllowed) return false;
+    const ctx = this.getCtx();
+    const output = channel === 'ui' ? this.uiGain : this.sfxGain;
+    if (!ctx || !output) return false;
+    const volume = channel === 'ui' ? this.getUiVol() : this.getSfxVol();
+    this.playAudioFileOnChannel(entry.filePath, output, volume);
+    return true;
+  }
+
+  private playAudioFileOnChannel(url: string, output: GainNode, volume: number): void {
+    const ctx = this.getCtx();
+    if (!ctx) return;
+    this.loadAudioBuffer(url)
+      .then(buffer => {
+        const source = ctx.createBufferSource();
+        const gain = ctx.createGain();
+        source.buffer = buffer;
+        gain.gain.value = volume;
+        source.connect(gain);
+        gain.connect(output);
+        source.start(0);
+      })
+      .catch(() => {
+        recordDiagnostic({
+          category: 'audio',
+          severity: 'warning',
+          message: '音效资源加载失败',
+          detail: { url },
+        });
+      });
   }
 
   // ─── 底层音频生成 ───
@@ -363,3 +511,5 @@ export function playDeathSound(): void { audioManager.playSfx('death'); }
 export function playSelectSound(): void { audioManager.playSfx('select'); }
 /** 播放存档音效 */
 export function playSaveSound(): void { audioManager.playSfx('save'); }
+/** 播放成就解锁音效 */
+export function playAchievementSound(): void { audioManager.playSfx('achievement'); }

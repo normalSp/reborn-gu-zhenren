@@ -1,0 +1,153 @@
+{
+  "formatVersion": 13,
+  "timestamp": "2026-05-08T21:30:00+08:00",
+  "meta": {
+    "playerName": "v0.7.0-c·缺音频诊断",
+    "realm": "四转高阶",
+    "turn": 80,
+    "gameMode": "canon",
+    "description": "v0.7.0-c 专项手测：缺音频诊断"
+  },
+  "state": {
+    "profile": {
+      "name": "v0.7.0-c·缺音频诊断",
+      "realm": {
+        "grand": 4,
+        "sub": "高阶",
+        "label": "四转高阶"
+      },
+      "background": "南疆·商队"
+    },
+    "currentDomain": "南疆",
+    "currentChapterId": "v070c_test",
+    "turn": 80,
+    "currency": 5200,
+    "immortalEssenceStones": 0,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "afternoon",
+      "day": 28,
+      "month": 6,
+      "year": 1,
+      "season": "summer"
+    },
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": [
+        "金道"
+      ],
+      "path_levels": {
+        "力道": "精通",
+        "金道": "熟练"
+      },
+      "dao_marks": {
+        "力道": 180,
+        "金道": 80
+      }
+    },
+    "vitals": {
+      "health": {
+        "current": 220,
+        "max": 240
+      },
+      "essence": {
+        "current": 84,
+        "max": 100
+      },
+      "essenceType": "mortal"
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "playerFaction": {
+      "id": "faction_v070c_test",
+      "name": "七玄试炼小队",
+      "type": "散修联盟",
+      "domain": "南疆",
+      "level": 3,
+      "reputation": 120,
+      "resources": {
+        "yuanStone": 3000,
+        "immortalStone": 0
+      },
+      "maxMembers": 8,
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 3,
+          "loyalty": 64,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 76,
+          "interestDrive": 40,
+          "status": "idle"
+        },
+        {
+          "id": "m_scout_ye",
+          "name": "叶听风",
+          "path": "智道",
+          "realm": 3,
+          "loyalty": 52,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 118,
+          "maxHp": 118,
+          "atk": 26,
+          "def": 14,
+          "adventureTrust": 68,
+          "interestDrive": 60,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 3,
+          "loyalty": 64,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 76,
+          "interestDrive": 40
+        }
+      ],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 58,
+      "coordination": 55,
+      "lastUpdatedTurn": 80,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {}
+    },
+    "materials": {
+      "鲜兽肉": 4,
+      "金粉": 2,
+      "精品蛊材": 3
+    },
+    "immortalMaterials": {},
+    "flags": {
+      "diagnosticsTest": "missing_audio"
+    }
+  }
+}
