@@ -1,0 +1,124 @@
+{
+  "version": "0.7.0-pre.0",
+  "updated": "2026-05-08",
+  "principle": "运行时内容必须能追溯来源、设计职责和数值档位；unknown 可交付但必须进入审核白名单。",
+  "runtimeDatasets": [
+    {
+      "id": "gu-database",
+      "file": "gu-database.json",
+      "scope": "凡蛊与部分项目内仙蛊",
+      "defaultProvenance": "derived",
+      "runtimePools": ["炼蛊", "升炼", "拆炼", "奖励", "商店", "蛊虫使用"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "以原著蛊虫体系为底，二创蛊必须遵守流派、食料、转数、代价和可获得性闸门。",
+        "designRole": "支撑凡人期到五转期的炼养用、战斗和探索循环。",
+        "balanceTier": "entry_rank_1_to_5"
+      }
+    },
+    {
+      "id": "immortal-gu",
+      "file": "immortal-gu.json",
+      "scope": "仙蛊与战略级蛊虫",
+      "defaultProvenance": "derived",
+      "runtimePools": ["宝黄天", "剧情奖励", "蛊虫使用", "仙蛊方"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "仙蛊遵守唯一性、高成本、强反噬和境界门槛；未确认流派条目必须 runtimeAllowed=false。",
+        "designRole": "支撑蛊仙期大目标、宝黄天战略消费和关键剧情抉择。",
+        "balanceTier": "strategic_rank_6_plus"
+      }
+    },
+    {
+      "id": "killer-moves",
+      "file": "killer-moves.json",
+      "scope": "杀招与传承",
+      "defaultProvenance": "derived",
+      "runtimePools": ["战斗", "宝黄天传承", "剧情传授"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "杀招是蛊虫组合使用方式，不能伪装成蛊虫或材料；核心蛊、辅助蛊和流派必须可审计。",
+        "designRole": "支撑 v0.7.0-a/b/c 战斗深度和传承收集。",
+        "balanceTier": "combat_tactic_to_strategic"
+      }
+    },
+    {
+      "id": "npcs",
+      "file": "npcs.json",
+      "scope": "原著 NPC 与项目动态角色锚点",
+      "defaultProvenance": "derived",
+      "runtimePools": ["人物图鉴", "剧情接触", "招募", "势力"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "玩家永远是原创参与者，方源等原著角色只能作为 NPC、远景事件或剧情交会对象。",
+        "designRole": "支撑人物图鉴、关系、声望、剧情身份锚点。",
+        "balanceTier": "narrative_anchor"
+      }
+    },
+    {
+      "id": "training-grounds",
+      "file": "training-grounds.json",
+      "scope": "道场与修炼地点",
+      "defaultProvenance": "original",
+      "runtimePools": ["训练场", "材料来源", "声望事件"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "训练场可以二创，但必须使用原著确认流派，功能标签不得写入 pathType。",
+        "designRole": "支撑中低转成长、地域材料与道痕训练循环。",
+        "balanceTier": "regional_growth"
+      }
+    },
+    {
+      "id": "encounters",
+      "file": "encounters.json",
+      "scope": "随机遭遇与剧情模板",
+      "defaultProvenance": "original",
+      "runtimePools": ["探索", "掉落", "剧情事件", "传闻地点"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "遭遇可二创，但 DeepSeek 只能提出线索和候选，奖励写入必须经过真相源校验。",
+        "designRole": "支撑探索风险、材料掉落、npc_contacts 和 rumorLocations。",
+        "balanceTier": "event_variance"
+      }
+    },
+    {
+      "id": "shop-items",
+      "file": "shop-items.json",
+      "scope": "商会货架、蛊材、残方和消耗品",
+      "defaultProvenance": "original",
+      "runtimePools": ["商会", "喂养兜底", "炼蛊来源"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "中低转可用泛型蛊材兜底，四转以上逐步具体化，仙蛊食料不走凡人商会兜底。",
+        "designRole": "支撑喂养安全回合、炼蛊材料来源和早期经济稳定。",
+        "balanceTier": "low_mid_economy"
+      }
+    },
+    {
+      "id": "auction-runtime",
+      "file": "economy-balance.json",
+      "scope": "宝黄天候选价与交易池",
+      "defaultProvenance": "original",
+      "runtimePools": ["宝黄天", "仙材", "仙蛊方", "杀招传承"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "宝黄天仅蛊仙可交易，价格采用候选价表并接受 20/100/300 回合购买力验证。",
+        "designRole": "支撑蛊仙期战略消费和防套利经济闸门。",
+        "balanceTier": "immortal_market"
+      }
+    },
+    {
+      "id": "secret-realms",
+      "file": "secret-realms.json",
+      "scope": "天地秘境与规则类奇观",
+      "defaultProvenance": "derived",
+      "runtimePools": ["舆图", "秘境检测", "炼蛊环境", "剧情传闻"],
+      "review": {
+        "whitelisted": true,
+        "worldviewNote": "天地秘境不是普通地点资源点；未确认流派的秘境不得写入 path 系统。",
+        "designRole": "支撑舆图传闻、秘境风险、炼蛊环境和后续高阶剧情入口。",
+        "balanceTier": "secret_realm_strategic"
+      }
+    }
+  ]
+}

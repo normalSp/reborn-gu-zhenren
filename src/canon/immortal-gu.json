@@ -97,12 +97,13 @@
     "failureMode": "酒后意志不清→传送至危险之地"
   },
   "第二空窍蛊": {
-    "tier": 6, "path": "特殊", "rank": "legendary",
+    "tier": 6, "path": "天道", "rank": "legendary",
     "composition": "需胎盘形态五转蛊虫+寿蛊等炼制",
     "effect": "开辟第二个空窍，可同时容纳更多蛊虫，修行效率翻倍",
     "usageCost": "仙元温养",
     "limitations": "第二空窍初始为空，需重新炼化蛊虫",
-    "failureMode": "炼制失败→材料全损→空窍可能受损"
+    "failureMode": "炼制失败→材料全损→空窍可能受损",
+    "reviewNote": "原著后期明确第二空窍蛊为天道蛊虫；v0.7.0-pre 从“特殊”修正为天道。"
   },
   "招灾蛊": {
     "tier": 7, "path": "运道", "rank": "legendary",
@@ -129,12 +130,13 @@
     "failureMode": "推算失败→反噬失寿；推算强于自身者→可能暴毙"
   },
   "态度蛊": {
-    "tier": 8, "path": "太古", "rank": "legendary",
+    "tier": 8, "path": "智道", "rank": "legendary",
     "composition": "不可炼制（太古遗存）",
     "effect": "态度是心的面具。盗天魔尊杀招「见面曾相识」核心蛊",
     "usageCost": "态度本身的消耗即为心的伪装",
     "limitations": "只能伪装态度不能改变本质",
-    "failureMode": "态度与内心完全相反→被人识破"
+    "failureMode": "态度与内心完全相反→被人识破",
+    "reviewNote": "“太古”是时代/来源标签，不是运行时流派；v0.7.0-pre 暂对齐项目蛊虫库的智道口径。"
   },
   "遁空蛊": {
     "tier": 8, "path": "宇道", "rank": "legendary",
@@ -158,7 +160,10 @@
     "effect": "以死转生，可助仙僵重回人身，擅长延寿",
     "usageCost": "仙元+特殊条件（无形容器）",
     "limitations": "需无形容器；不可对非仙僵使用",
-    "failureMode": "无形容器不达标→炼制失败→仙僵魂飞魄散"
+    "failureMode": "无形容器不达标→炼制失败→仙僵魂飞魄散",
+    "runtimeAllowed": false,
+    "reviewStatus": "blocked_pending_path_evidence",
+    "reviewNote": "未找到“生死道”为原著确认流派的证据；按 v0.7.0-pre 流派闸门先下架运行时，保留为原著证据复核项。"
   },
   "智慧蛊": {
     "tier": 9, "path": "智道", "rank": "divine",
@@ -222,7 +227,10 @@
     "effect": "同时发出三道自动寻敌的穿透箭，无视多数防御",
     "usageCost": "仙元",
     "limitations": "高防御仙蛊可挡部分伤害",
-    "failureMode": "目标有反伤类仙蛊→箭矢反弹"
+    "failureMode": "目标有反伤类仙蛊→箭矢反弹",
+    "runtimeAllowed": false,
+    "reviewStatus": "blocked_pending_path_evidence",
+    "reviewNote": "原著出现暗箭仙蛊，但未确认“箭道”为运行时流派；先下架宝黄天/奖励池，后续复核是否归暗道、兵道或仅作杀招效果。"
   },
   "焚天炎蛊": {
     "tier": 6, "path": "炎道", "rank": "epic",
