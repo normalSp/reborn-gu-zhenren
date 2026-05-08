@@ -10,6 +10,8 @@ import encountersRaw from '../canon/encounters.json';
 import shopItemsRaw from '../canon/shop-items.json';
 import economyBalanceRaw from '../canon/economy-balance.json';
 import secretRealmsRaw from '../canon/secret-realms.json';
+import { generateAuctionPool, generateKillerMovePool, generateMaterialPool, generateRareTradePool, generateRecipePool } from './auction-engine';
+import { getMaterialEntry, resolveMaterialAlias } from './material-registry';
 
 export interface RuntimeProvenanceReview {
   whitelisted?: boolean;
@@ -29,6 +31,31 @@ export interface ProvenanceGateIssue {
   id: string;
   severity: 'blocking' | 'warning';
   message: string;
+}
+
+export type ProvenanceSourceMethod = 'record_override' | 'dataset_default' | 'review_whitelist';
+
+export interface ReleaseProvenanceCoverageRow {
+  datasetId: string;
+  recordId: string;
+  name: string;
+  runtimePools: string[];
+  effectiveProvenance: GuUseProvenance;
+  sourceMethod: ProvenanceSourceMethod;
+  worldviewNote: string;
+  designRole: string;
+  balanceTier: string;
+  issues: ProvenanceGateIssue[];
+}
+
+export interface ReleaseProvenanceCoverage {
+  rows: ReleaseProvenanceCoverageRow[];
+  summary: {
+    totalRecords: number;
+    byProvenance: Record<GuUseProvenance, number>;
+    blockingCount: number;
+    warningCount: number;
+  };
 }
 
 interface CanonDatasetPolicy {
@@ -58,6 +85,63 @@ function hasText(value: unknown): boolean {
 
 function datasetSourceText(data: any): string | undefined {
   return data?._meta?.source || data?.source || data?.description || data?.principle;
+}
+
+function recordReview(item: any, fallback?: RuntimeProvenanceReview): RuntimeProvenanceReview | undefined {
+  return item?.review || item?.provenanceReview || item?.runtimeReview || fallback;
+}
+
+function recordProvenance(item: any, fallback: GuUseProvenance): GuUseProvenance {
+  return (item?.provenance || item?.sourceProvenance || fallback) as GuUseProvenance;
+}
+
+function recordName(item: any, fallback: string): string {
+  return String(item?.name || item?.title || item?.targetGu || item?.type || fallback);
+}
+
+function getPolicyRecords(policy: CanonDatasetPolicy, data: any): Array<[string, any]> {
+  if (!data) return [];
+  if (policy.file === 'gu-database.json' || policy.file === 'immortal-gu.json' || policy.file === 'killer-moves.json') {
+    return Object.entries(data).filter(([key]) => !key.startsWith('_'));
+  }
+  if (policy.file === 'npcs.json') {
+    return Object.entries(data.npcDatabase || {});
+  }
+  if (policy.file === 'training-grounds.json') {
+    return ((data.grounds || []) as any[]).map(item => [item.id || item.name, item]);
+  }
+  if (policy.file === 'encounters.json') {
+    const rows: Array<[string, any]> = [];
+    for (const [chapterId, chapter] of Object.entries(data.encounters || {})) {
+      for (const [encounterId, encounter] of Object.entries((chapter as any) || {})) {
+        rows.push([`${chapterId}:${encounterId}`, encounter]);
+      }
+    }
+    return rows;
+  }
+  if (policy.file === 'shop-items.json') {
+    return ((data.items || []) as any[]).map(item => [item.id || item.name, item]);
+  }
+  if (policy.file === 'economy-balance.json') {
+    return [
+      ['auctionPricing', data.auctionPricing || data],
+      ['simulationScenarios', data.simulationScenarios || {}],
+    ];
+  }
+  if (policy.file === 'secret-realms.json') {
+    const rows: Array<[string, any]> = [];
+    for (const [sectionId, section] of Object.entries(data)) {
+      if (sectionId === '_meta' || !section || typeof section !== 'object') continue;
+      for (const [recordId, record] of Object.entries(section as any)) {
+        if (recordId === '说明') continue;
+        rows.push([`${sectionId}:${recordId}`, record]);
+      }
+    }
+    return rows;
+  }
+  return Array.isArray(data)
+    ? data.map((item, index) => [item?.id || item?.name || String(index), item])
+    : Object.entries(data).filter(([key]) => !key.startsWith('_'));
 }
 
 function auditRecordPaths(
@@ -174,7 +258,147 @@ export function auditRuntimeProvenanceGate(): ProvenanceGateIssue[] {
     ...auditGuUseRegistryProvenance(),
     ...auditCanonDatasetProvenance(),
     ...auditPathRegistryRuntimeGate(),
+    ...auditTrainingGroundMetadata(),
+    ...auditAuctionRuntimePoolProvenance(),
   ];
+}
+
+export function generateReleaseProvenanceCoverage(): ReleaseProvenanceCoverage {
+  const rows: ReleaseProvenanceCoverageRow[] = [];
+  const policies = ((provenancePolicyRaw as any).runtimeDatasets || []) as CanonDatasetPolicy[];
+
+  for (const policy of policies) {
+    const data = canonDatasetByFile[policy.file];
+    for (const [recordId, item] of getPolicyRecords(policy, data)) {
+      const effectiveProvenance = recordProvenance(item, policy.defaultProvenance);
+      const review = recordReview(item, policy.review);
+      const issues: ProvenanceGateIssue[] = [];
+      const sourceMethod: ProvenanceSourceMethod = item?.provenance || item?.sourceProvenance
+        ? 'record_override'
+        : effectiveProvenance === 'unknown' && review?.whitelisted
+          ? 'review_whitelist'
+          : 'dataset_default';
+
+      if (!isRuntimeProvenanceAllowed({
+        id: `${policy.id}:${recordId}`,
+        name: recordName(item, recordId),
+        provenance: effectiveProvenance,
+        review,
+      })) {
+        issues.push({
+          id: `${policy.id}:${recordId}`,
+          severity: 'blocking',
+          message: `${recordId} 缺少可运行来源标注或 unknown 审核白名单。`,
+        });
+      }
+      if (!review?.worldviewNote || !review?.designRole || !review?.balanceTier) {
+        issues.push({
+          id: `${policy.id}:${recordId}`,
+          severity: effectiveProvenance === 'unknown' ? 'blocking' : 'warning',
+          message: `${recordId} 缺少完整世界观说明、设计职责或数值档位。`,
+        });
+      }
+
+      rows.push({
+        datasetId: policy.id,
+        recordId,
+        name: recordName(item, recordId),
+        runtimePools: policy.runtimePools,
+        effectiveProvenance,
+        sourceMethod,
+        worldviewNote: review?.worldviewNote || '',
+        designRole: review?.designRole || '',
+        balanceTier: review?.balanceTier || '',
+        issues,
+      });
+    }
+  }
+
+  const byProvenance = rows.reduce((acc, row) => {
+    acc[row.effectiveProvenance] = (acc[row.effectiveProvenance] || 0) + 1;
+    return acc;
+  }, {} as Record<GuUseProvenance, number>);
+  const issueRows = rows.flatMap(row => row.issues);
+
+  return {
+    rows,
+    summary: {
+      totalRecords: rows.length,
+      byProvenance,
+      blockingCount: issueRows.filter(issue => issue.severity === 'blocking').length,
+      warningCount: issueRows.filter(issue => issue.severity === 'warning').length,
+    },
+  };
+}
+
+export function auditTrainingGroundMetadata(): ProvenanceGateIssue[] {
+  const metaTotal = Number((trainingGroundsRaw as any)._meta?.totalGrounds);
+  const actualTotal = Array.isArray((trainingGroundsRaw as any).grounds)
+    ? (trainingGroundsRaw as any).grounds.length
+    : 0;
+  if (metaTotal === actualTotal) return [];
+  return [{
+    id: 'training-grounds:totalGrounds',
+    severity: 'blocking',
+    message: `training-grounds.json _meta.totalGrounds=${metaTotal}，实际 grounds=${actualTotal}。`,
+  }];
+}
+
+export function auditAuctionRuntimePoolProvenance(turn = 40): ProvenanceGateIssue[] {
+  const issues: ProvenanceGateIssue[] = [];
+  const materialPool = generateMaterialPool([], turn);
+  const recipePool = generateRecipePool([], turn);
+  const killerMovePool = generateKillerMovePool([], turn);
+  const rarePool = generateRareTradePool([], turn);
+  const immortalGuPool = generateAuctionPool([], turn);
+
+  for (const item of materialPool) {
+    if (!getMaterialEntry(item.name) && !resolveMaterialAlias(item.name)) {
+      issues.push({
+        id: `auction-material:${item.name}`,
+        severity: 'blocking',
+        message: `${item.name} 未登记在 MaterialRegistry，不能进入宝黄天仙材池。`,
+      });
+    }
+    if (!item.currentBid || item.currentBid <= 0) {
+      issues.push({ id: `auction-material:${item.name}`, severity: 'blocking', message: `${item.name} 缺少有效竞价。` });
+    }
+  }
+
+  for (const item of recipePool) {
+    if (!item.id || !item.targetGu || item.currentBid <= 0) {
+      issues.push({ id: `auction-recipe:${item.id || item.name}`, severity: 'blocking', message: `${item.name} 蛊方池缺少目标、ID或有效价格。` });
+    }
+  }
+
+  for (const item of killerMovePool) {
+    if (!isRuntimePathAllowed(item.path)) {
+      issues.push({ id: `auction-killer-move:${item.name}`, severity: 'blocking', message: `${item.name} 使用未确认运行时流派 ${item.path}。` });
+    }
+    if (item.currentBid <= 0) {
+      issues.push({ id: `auction-killer-move:${item.name}`, severity: 'blocking', message: `${item.name} 缺少有效竞价。` });
+    }
+  }
+
+  for (const item of rarePool) {
+    if (!isRuntimePathAllowed(item.path)) {
+      issues.push({ id: `auction-rare:${item.name}`, severity: 'blocking', message: `${item.name} 使用未确认运行时流派 ${item.path}。` });
+    }
+    if (!item.runtimeEffect || item.currentBid <= 0) {
+      issues.push({ id: `auction-rare:${item.name}`, severity: 'blocking', message: `${item.name} 缺少线索闸门或有效价格。` });
+    }
+  }
+
+  for (const item of immortalGuPool) {
+    if (!isRuntimePathAllowed(item.path)) {
+      issues.push({ id: `auction-immortal-gu:${item.name}`, severity: 'blocking', message: `${item.name} 使用未确认运行时流派 ${item.path}。` });
+    }
+    if (item.currentBid <= 0) {
+      issues.push({ id: `auction-immortal-gu:${item.name}`, severity: 'blocking', message: `${item.name} 缺少有效竞价。` });
+    }
+  }
+
+  return issues;
 }
 
 export function auditCanonDatasetProvenance(): ProvenanceGateIssue[] {

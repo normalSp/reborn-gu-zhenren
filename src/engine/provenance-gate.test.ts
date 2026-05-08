@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
+  auditAuctionRuntimePoolProvenance,
   auditRuntimeProvenanceGate,
+  auditTrainingGroundMetadata,
+  generateReleaseProvenanceCoverage,
   isRuntimeProvenanceAllowed,
 } from './provenance-gate';
 
@@ -29,5 +32,19 @@ describe('runtime provenance gate', () => {
     const blockingIssues = auditRuntimeProvenanceGate()
       .filter(issue => issue.severity === 'blocking');
     expect(blockingIssues).toEqual([]);
+  });
+
+  it('builds a release provenance coverage report for every runtime dataset record', () => {
+    const report = generateReleaseProvenanceCoverage();
+    expect(report.summary.totalRecords).toBeGreaterThan(250);
+    expect(report.summary.blockingCount).toBe(0);
+    expect(report.rows.every(row => row.runtimePools.length > 0)).toBe(true);
+    expect(report.rows.some(row => row.datasetId === 'encounters' && row.recordId.includes('qingmaoshan'))).toBe(true);
+    expect(report.rows.some(row => row.datasetId === 'npcs' && `${row.recordId}:${row.name}`.includes('方源'))).toBe(true);
+  });
+
+  it('keeps training ground metadata and treasure yellow heaven generated pools publishable', () => {
+    expect(auditTrainingGroundMetadata()).toEqual([]);
+    expect(auditAuctionRuntimePoolProvenance()).toEqual([]);
   });
 });
