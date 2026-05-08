@@ -1,4 +1,4 @@
-import type { GuInstance, GuHungerState, LifeboundGu, LifeboundDeathPenalty } from '../../types';
+import type { GuInstance, GuHungerState, LifeboundGu, LifeboundDeathPenalty, TargetedGuEffect } from '../../types';
 import guDatabase from '../../canon/gu-database.json';
 import { getMaterialTotalQuantity, removeMaterialFromState } from '../../engine/economy-service';
 import { GU_HUNGER_CONFIG, getFeedingCreditRequirement, isNonMaterialFeeding, normalizeFeedCandidates } from '../../engine/feeding-rules';
@@ -63,6 +63,8 @@ interface GuSlice {
   refinedGuCount: number;
   /** CR6: 蛊虫进化动画触发状态 */
   guEvolutionState: GuEvolutionState;
+  /** v0.7.0-pre: 对 NPC/队友/场景目标生效的蛊使用记录 */
+  targetedGuEffects: TargetedGuEffect[];
   /** CR6: 触发蛊虫进化动画 */
   triggerGuEvolution: (guName: string, fromRank: number, toRank: number) => void;
   /** CR6: 清除进化动画状态 */
@@ -72,6 +74,7 @@ interface GuSlice {
   updateGuState: (id: string, state: GuHungerState) => void;
   toggleActive: (id: string) => void;
   useGu: (id: string, target?: GuUseTarget) => GuUseResult;
+  addTargetedGuEffect: (effect: Omit<TargetedGuEffect, 'id' | 'appliedAtTurn'> & Partial<Pick<TargetedGuEffect, 'id' | 'appliedAtTurn'>>) => TargetedGuEffect;
   /** P2-13: 每轮推进蛊虫饥饿状态机 */
   tickGuHunger: () => void;
   /** P2-13: 喂养蛊虫 — 减少hungerCounter。P2-P8: foodType可选参数，不匹配则触发反噬 */
@@ -93,6 +96,7 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
   lifeboundDeathPenalty: null,
   refinedGuCount: 0,
   guEvolutionState: { active: false, guName: '', fromRank: 0, toRank: 0 },
+  targetedGuEffects: [],
 
   triggerGuEvolution: (guName, fromRank, toRank) => {
     set({ guEvolutionState: { active: true, guName, fromRank, toRank } });
@@ -274,6 +278,21 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
   },
 
 
+  addTargetedGuEffect: (effect) => {
+    const fullStore = get() as any;
+    const turn = effect.appliedAtTurn ?? fullStore.turn ?? 1;
+    const record: TargetedGuEffect = {
+      ...effect,
+      id: effect.id || `gu_effect_${turn}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`,
+      appliedAtTurn: turn,
+    };
+    set((s: GuSlice) => ({
+      targetedGuEffects: [...(s.targetedGuEffects || []), record].slice(-200),
+    }));
+    return record;
+  },
+
+
   // ═══ P2-13: 每轮蛊虫饥饿推进（确定性计数模型） ═══
   // v0.7.0 Q1修复: 蛊仙模式下同步遍历仙窍存储(apertureInventory.gu)
   useGu: (id, target = { type: 'self' }) => {
@@ -305,6 +324,12 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
     }
     for (const [key, value] of Object.entries(result.flags)) {
       fullStore.setFlag?.(key, value);
+    }
+    if (result.targetedEffect) {
+      (get() as GuSlice).addTargetedGuEffect({
+        ...result.targetedEffect,
+        sourceGuId: id,
+      });
     }
     if (entry.consumesGu) {
       (get() as GuSlice).removeGu(id);

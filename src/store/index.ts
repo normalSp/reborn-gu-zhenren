@@ -114,6 +114,7 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   }
 
   if (s.feedingCredits === undefined) s.feedingCredits = {};
+  if (s.targetedGuEffects === undefined) s.targetedGuEffects = [];
   if (s.rumorLocations === undefined) s.rumorLocations = [];
   if (s.materialShelf === undefined) {
     s.materialShelf = {
@@ -440,6 +441,7 @@ export const useStore = create<RootStore>()(
         migrate: (persistedState: any, version: number) => {
           if (persistedState) {
             if (persistedState.npcContacts === undefined) persistedState.npcContacts = [];
+            if (persistedState.targetedGuEffects === undefined) persistedState.targetedGuEffects = [];
             if (persistedState.gameLog === undefined) persistedState.gameLog = [];
             if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
             if (persistedState.deathRecord) {

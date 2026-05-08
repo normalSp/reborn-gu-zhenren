@@ -66,6 +66,28 @@ describe('v0.7.0-pre narrative closure gates', () => {
     expect(parsed.state_update?.npc_contacts?.add?.[0]?.name).toBe('商心慈');
   });
 
+  it('accepts scene-gated Gu use suggestions without granting execution authority to AI', () => {
+    const parsed = NarrativeJSONSchema.parse({
+      narrative: {
+        text: '毒雾散开后，地上只剩一具敌尸，衣襟间还残留着毒囊与血痕。你想起妇人心蛊的炼毒法门，但这种事若不合场景、目标与代价，绝不能随手发动，更不能让叙事模型直接改写数值。',
+        choices: [{ id: 'c1', text: '先检查尸体与毒囊', risk: 'medium', risk_note: '可能暴露毒道手段' }],
+      },
+      state_update: {
+        gu_use_suggestions: {
+          add: [{
+            guName: '妇人心蛊',
+            target: { type: 'scene_target', name: '敌尸' },
+            sceneValidated: true,
+            sceneTags: ['毒道', '尸体'],
+            reason: '剧情中出现合规尸体目标，但仍需引擎检查玩家是否持有该蛊。',
+          }],
+        },
+      },
+    });
+
+    expect(parsed.state_update?.gu_use_suggestions?.add?.[0]?.guName).toBe('妇人心蛊');
+  });
+
   it('merges contact status and increments known npc count only once', () => {
     const harness = createHarness(createFactionSlice, { turn: 3, currentChapterId: 'shangdu' });
 

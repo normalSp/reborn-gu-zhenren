@@ -228,6 +228,54 @@ export interface NpcContact {
   relatedChapterId?: string;
 }
 
+export type GuUseTargetType =
+  | 'self'
+  | 'known_npc'
+  | 'dynamic_npc'
+  | 'squad_member'
+  | 'scene_target'
+  | 'aperture_or_location';
+
+export interface TargetedGuEffectTarget {
+  type: GuUseTargetType;
+  id?: string;
+  name?: string;
+}
+
+export interface TargetedGuEffect {
+  id: string;
+  sourceGu: string;
+  sourceGuId?: string;
+  target: TargetedGuEffectTarget;
+  effects: {
+    type: string;
+    attribute?: '资质' | '体魄' | '心智' | '气运';
+    path?: string;
+    key?: string;
+    value?: number;
+    durationTurns?: number;
+    description: string;
+  }[];
+  sideEffects?: {
+    type: string;
+    kill?: number;
+    mercy?: number;
+    scheme?: number;
+    ambition?: number;
+    factionType?: string;
+    delta?: number;
+    key?: string;
+    healthPct?: number;
+    description?: string;
+  }[];
+  durationTurns?: number;
+  appliedAtTurn: number;
+  provenance: 'canon' | 'derived' | 'original' | 'unknown';
+  balanceTier: string;
+  loreRef: string;
+  consumesGu?: boolean;
+}
+
 // ─── 空窍（1-5转蛊师） ───
 export interface MortalAperture {
   type: 'mortal';
@@ -498,6 +546,16 @@ export interface StateUpdate {
       status?: NpcContactStatus;
       location?: string;
       summary?: string;
+    }[];
+  };
+  /** v0.7.0-pre: AI 只能提出场景蛊使用候选，是否生效必须由引擎校验 */
+  gu_use_suggestions?: {
+    add?: {
+      guName: string;
+      target?: TargetedGuEffectTarget;
+      sceneValidated?: boolean;
+      sceneTags?: string[];
+      reason?: string;
     }[];
   };
 }

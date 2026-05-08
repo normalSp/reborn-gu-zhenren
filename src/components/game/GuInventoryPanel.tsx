@@ -4,7 +4,15 @@ import { GU_IMAGE_MAP } from '../../data/image-maps';
 import type { PathType } from '../../types';
 import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow, type MaterialSourceTag } from '../../engine/material-source-audit';
-import { getGuUseEntry, shouldShowUseButton, canUseFromNormalButton } from '../../engine/gu-use-registry';
+import {
+  canUseFromNormalButton,
+  describeTargetRule,
+  getGuUseEntry,
+  isGuUseTargetAllowed,
+  shouldShowUseButton,
+  type GuUseRegistryEntry,
+  type GuUseTarget,
+} from '../../engine/gu-use-registry';
 
 const STATE_LABELS: Record<string, string> = {
   optimal: '鼎盛',
@@ -48,6 +56,10 @@ const SOURCE_LABELS: Record<MaterialSourceTag, string> = {
   special_rule: '规则',
 };
 
+const EMPTY_CONTACTS: any[] = [];
+const EMPTY_DYNAMIC_NPCS: Record<string, any> = {};
+const EMPTY_SQUAD_MEMBERS: any[] = [];
+
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
   // ═══ BugFix v0.7.0: 蛊仙模式读取仙窍存储的蛊虫 ═══
@@ -55,6 +67,10 @@ export function GuInventoryPanel() {
   const realmGrand = useStore(s => s.profile?.realm?.grand ?? 1);
   const materialBag = useStore(s => (s as any).materialBag);
   const apertureInventory = useStore(s => (s as any).apertureInventory);
+  const playerName = useStore(s => s.profile?.name || '自己');
+  const npcContacts = useStore(s => (s as any).npcContacts || EMPTY_CONTACTS);
+  const dynamicNPCs = useStore(s => (s as any).dynamicNPCs || EMPTY_DYNAMIC_NPCS);
+  const squadMembers = useStore(s => (s as any).squadMembers || (s as any).squad?.members || EMPTY_SQUAD_MEMBERS);
   const isImmortal = realmGrand >= 6;
   // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
   const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
@@ -66,6 +82,11 @@ export function GuInventoryPanel() {
   const [sellConfirm, setSellConfirm] = useState<string | null>(null);
   const [feedMsg, setFeedMsg] = useState('');
   const [useMsg, setUseMsg] = useState('');
+  const [targetPicker, setTargetPicker] = useState<{
+    guId: string;
+    guName: string;
+    entry: GuUseRegistryEntry;
+  } | null>(null);
 
   const capacity = isImmortal ? Infinity : getApertureCapacity();
   const paths = Array.from(new Set(allGu.map(g => g.path)));
@@ -75,6 +96,55 @@ export function GuInventoryPanel() {
     apertureInventory,
     profile: { realm: { grand: realmGrand } },
   }), [materialBag, apertureInventory, realmGrand]);
+
+  const targetOptions = useMemo<GuUseTarget[]>(() => {
+    const options: GuUseTarget[] = [
+      { type: 'self', id: 'player', name: playerName || '自己' },
+    ];
+
+    for (const contact of npcContacts) {
+      if (!contact?.name) continue;
+      options.push({
+        type: 'known_npc',
+        id: contact.npcId || contact.name,
+        name: contact.name,
+      });
+    }
+
+    for (const npc of Object.values(dynamicNPCs)) {
+      const anyNpc = npc as any;
+      if (!anyNpc?.name) continue;
+      options.push({
+        type: 'dynamic_npc',
+        id: anyNpc.id || anyNpc.name,
+        name: anyNpc.name,
+      });
+    }
+
+    const squadMemberList = Array.isArray(squadMembers)
+      ? squadMembers
+      : Object.values(squadMembers || {});
+    for (const member of squadMemberList) {
+      if (!member?.name) continue;
+      options.push({
+        type: 'squad_member',
+        id: member.id || member.memberId || member.name,
+        name: member.name,
+      });
+    }
+
+    options.push({ type: 'scene_target', id: 'current_scene', name: '当前场景目标' });
+    options.push({ type: 'aperture_or_location', id: 'current_place', name: '当前仙窍/地点' });
+
+    const dedup = new Map<string, GuUseTarget>();
+    for (const option of options) {
+      dedup.set(`${option.type}:${option.id || option.name || ''}`, option);
+    }
+    return Array.from(dedup.values());
+  }, [playerName, npcContacts, dynamicNPCs, squadMembers]);
+
+  const getTargetOptions = (entry: GuUseRegistryEntry) =>
+    targetOptions.filter(target => isGuUseTargetAllowed(entry, target));
 
   const getFeedingInfo = (gu: typeof allGu[number]) => {
     const row = getGuFeedingClosureRow(gu.name, gu.hungerCounter || 0);
@@ -98,9 +168,10 @@ export function GuInventoryPanel() {
     setSellConfirm(null);
   };
 
-  const doUseGu = (guId: string) => {
-    const res = (useStore.getState() as any).useGu?.(guId, { type: 'self' });
+  const doUseGu = (guId: string, target: GuUseTarget = { type: 'self', id: 'player', name: playerName || '自己' }) => {
+    const res = (useStore.getState() as any).useGu?.(guId, target);
     setUseMsg(res?.message || '这只蛊暂未开放主动使用。');
+    setTargetPicker(null);
     setTimeout(() => setUseMsg(''), 2200);
   };
 
@@ -290,18 +361,27 @@ export function GuInventoryPanel() {
                   const useEntry = getGuUseEntry(gu.name);
                   if (!shouldShowUseButton(useEntry)) return null;
                   const canClick = canUseFromNormalButton(useEntry);
+                  const options = getTargetOptions(useEntry);
+                  const usable = canClick && options.length > 0;
                   return (
                     <button
-                      onClick={() => canClick && doUseGu(gu.id)}
-                      disabled={!canClick}
-                      title={canClick ? useEntry.effects[0]?.description : '需要剧情场景触发'}
+                      onClick={() => {
+                        if (!usable) return;
+                        if (options.length === 1) {
+                          doUseGu(gu.id, options[0]);
+                          return;
+                        }
+                        setTargetPicker({ guId: gu.id, guName: gu.name, entry: useEntry });
+                      }}
+                      disabled={!usable}
+                      title={usable ? `${describeTargetRule(useEntry)}：${useEntry.effects[0]?.description || ''}` : '需要剧情场景触发'}
                       className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
-                        canClick
+                        usable
                           ? 'border-rg-gold/25 text-rg-gold/75 hover:bg-rg-gold/10'
                           : 'border-rg-ink-300/15 text-rg-paper-200/25 cursor-not-allowed'
                       }`}
                     >
-                      {canClick ? '使用' : '剧情'}
+                      {usable ? (options.length > 1 ? '目标' : '使用') : '剧情'}
                     </button>
                   );
                 })()}
@@ -328,6 +408,48 @@ export function GuInventoryPanel() {
                 className="flex-1 text-rg-paper-200/50 hover:text-rg-paper-200 text-xs font-button px-3 py-2 border border-rg-ink-300/15 rounded-sm transition-micro">取消</button>
               <button onClick={() => doSell(sellConfirm)}
                 className="flex-1 bg-rg-blood-400/80 text-rg-paper-100 font-button font-semibold text-xs px-3 py-2 rounded-sm hover:brightness-115 transition-micro">出售</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {targetPicker && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-rg-ink-900/80 backdrop-blur-sm">
+          <div className="bg-rg-ink-700/95 border border-rg-gold/25 rounded-lg p-5 max-w-md w-full mx-4">
+            <div className="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <h4 className="text-rg-paper-100 font-narrative text-lg">选择目标</h4>
+                <p className="text-rg-paper-200/45 text-[11px] font-panel mt-1">
+                  {targetPicker.guName}：{describeTargetRule(targetPicker.entry)}
+                </p>
+              </div>
+              <button
+                onClick={() => setTargetPicker(null)}
+                className="text-rg-paper-200/45 hover:text-rg-paper-200 text-xs font-button px-2 py-1 border border-rg-ink-300/15 rounded-sm transition-micro"
+              >
+                关闭
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2 max-h-72 overflow-y-auto pr-1">
+              {getTargetOptions(targetPicker.entry).map(target => (
+                <button
+                  key={`${target.type}:${target.id || target.name || 'target'}`}
+                  onClick={() => doUseGu(targetPicker.guId, target)}
+                  className="text-left border border-rg-ink-300/15 rounded-sm px-3 py-2 bg-rg-ink-800/40 hover:border-rg-gold/35 hover:bg-rg-gold/10 transition-micro"
+                >
+                  <div className="text-rg-paper-100 text-xs font-panel truncate">
+                    {target.name || target.id || '目标'}
+                  </div>
+                  <div className="text-rg-paper-200/40 text-[10px] font-panel mt-0.5">
+                    {target.type === 'self' && '自身'}
+                    {target.type === 'known_npc' && '人物图鉴'}
+                    {target.type === 'dynamic_npc' && '动态 NPC'}
+                    {target.type === 'squad_member' && '小队成员'}
+                    {target.type === 'scene_target' && '场景目标'}
+                    {target.type === 'aperture_or_location' && '仙窍/地点'}
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>

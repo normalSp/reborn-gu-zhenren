@@ -4,6 +4,7 @@ import type { EncounterReward } from '../types/encounter';
 import { evaluateApertureGrade } from '../store/slices/immortalSlice';
 import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, type NarrativeEventKind } from './dao-reputation-policy';
 import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
+import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -259,6 +260,55 @@ export function applyStateUpdate(update: StateUpdate): void {
       }
     }
     store2.setFlag?.('aiRumorDiscoveries', current.slice(-100));
+  }
+
+  // v0.7.0-pre M17: AI 只能提出场景蛊使用候选，实际生效必须经过引擎校验。
+  if ((update as any).gu_use_suggestions?.add && Array.isArray((update as any).gu_use_suggestions.add)) {
+    const s = useStore.getState() as any;
+    const guList = [
+      ...(Array.isArray(s.inventory) ? s.inventory : []),
+      ...(Array.isArray(s.apertureInventory?.gu) ? s.apertureInventory.gu : []),
+    ];
+    for (const suggestion of (update as any).gu_use_suggestions.add) {
+      if (!suggestion?.guName) continue;
+      const owned = guList.find((gu: any) => gu.name === suggestion.guName || gu.id === suggestion.guName);
+      const entry = getGuUseEntry(suggestion.guName);
+      const target = suggestion.target as GuUseTarget | undefined;
+      const result = resolveSceneGatedGuUseSuggestion(entry, target, {
+        sceneValidated: suggestion.sceneValidated === true,
+        sceneTags: Array.isArray(suggestion.sceneTags) ? suggestion.sceneTags : [],
+      });
+
+      if (!owned || !result.success) {
+        s.addGameLog?.('pipeline', `剧情蛊候选未执行：${suggestion.guName}`, {
+          reason: !owned ? '未持有该蛊' : result.message,
+          suggestion,
+        });
+        continue;
+      }
+
+      if (result.targetedEffect && typeof s.addTargetedGuEffect === 'function') {
+        s.addTargetedGuEffect({
+          ...result.targetedEffect,
+          sourceGuId: owned.id,
+        });
+      }
+      for (const [attr, delta] of Object.entries(result.attributeDeltas)) {
+        s.addAttribute?.(attr, delta);
+      }
+      for (const [key, value] of Object.entries(result.flags)) {
+        s.setFlag?.(key, value);
+      }
+      if (result.consumesGu && typeof s.removeGu === 'function') {
+        s.removeGu(owned.id);
+      }
+      s.addGameLog?.('gu', result.message, {
+        guId: owned.id,
+        guName: entry.guName,
+        target: result.target,
+        sceneTags: suggestion.sceneTags,
+      });
+    }
   }
 
   // v0.7.0-pre M9: AI location names are rumors until verified.

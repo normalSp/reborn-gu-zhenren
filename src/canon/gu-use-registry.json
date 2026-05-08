@@ -1,123 +1,618 @@
 {
-  "_meta": {
-    "version": "0.7.0-pre",
-    "purpose": "Runtime Gu use truth source. Canon Gu follows lore references; derived/original Gu must declare provenance and balance limits."
-  },
   "entries": [
     {
       "guName": "妇人心蛊",
       "useMode": "scene_gated",
       "targetRule": "corpse_or_scene_target",
-      "cost": { "essencePct": 0, "primevalStones": 0 },
+      "cost": { "essencePct": 20 },
       "cooldown": 0,
-      "consumesGu": false,
-      "effects": [
-        { "type": "poison_scene", "value": 1, "description": "毒道场景蛊，需尸体、目标或剧情触发，不作为随手按钮。" }
-      ],
-      "sideEffects": [
-        { "type": "daoHeart", "kill": 2, "scheme": 1 },
-        { "type": "reputation", "factionType": "righteous", "delta": -20 }
-      ],
-      "loreRef": "canon: poison Gu with strong scene and moral consequences; engine only allows it through validated narrative scenes.",
-      "provenance": "canon",
-      "balanceTier": "legendary_scene"
-    },
-    {
-      "guName": "鸿运齐天蛊",
-      "useMode": "consumable",
-      "targetRule": "self_or_known_ally",
-      "cost": { "essencePct": 0, "primevalStones": 0 },
-      "cooldown": 9999,
       "consumesGu": true,
       "effects": [
-        { "type": "attribute", "attribute": "气运", "value": 3, "description": "一次性施用后给目标附加长期气运增益。" }
+        {
+          "type": "poison_refinement",
+          "value": 1,
+          "description": "需尸体、毒道场景或剧情目标配合，普通点击不得生效。"
+        }
       ],
       "sideEffects": [
-        { "type": "flag", "key": "hong_yun_qi_tian_used" }
+        {
+          "type": "dao_heart",
+          "kill": 2,
+          "scheme": 1,
+          "mercy": -2,
+          "description": "阴狠毒炼会提高杀性与算计，降低仁慈倾向。"
+        },
+        {
+          "type": "reputation",
+          "factionType": "正道",
+          "delta": -15,
+          "description": "若暴露，正道声望显著下降。"
+        }
       ],
-      "loreRef": "canon: one-use luck Gu; high collection value, strategic timing required.",
+      "loreRef": "canon-local:reverend-insanity.txt:妇人心蛊相关原著线索；lore-skill:毒道与残酷炼蛊必须场景门槛。",
       "provenance": "canon",
-      "balanceTier": "mythic_once"
+      "balanceTier": "scene_poison_costly"
     },
     {
       "guName": "血颅蛊",
       "useMode": "scene_gated",
       "targetRule": "kin_sacrifice_scene",
-      "cost": { "essencePct": 15, "primevalStones": 0 },
+      "cost": { "essencePct": 35 },
       "cooldown": 0,
       "consumesGu": false,
       "effects": [
-        { "type": "attribute", "attribute": "资质", "value": 1, "description": "以同族血脉为代价提升资质，必须由剧情和引擎共同校验。" }
+        {
+          "type": "attribute",
+          "attribute": "资质",
+          "value": 8,
+          "description": "只在同族血祭、重大剧情和强代价场景中允许提升资质。"
+        }
       ],
       "sideEffects": [
-        { "type": "daoHeart", "kill": 3, "scheme": 1 },
-        { "type": "reputation", "factionType": "kin", "delta": -80 }
+        {
+          "type": "dao_heart",
+          "kill": 4,
+          "scheme": 2,
+          "mercy": -5,
+          "ambition": 2,
+          "description": "极端提升资质会深刻改变道心与因果。"
+        },
+        {
+          "type": "reputation",
+          "factionType": "家族/正道",
+          "delta": -80,
+          "description": "同族血祭暴露后会触发追责、仇杀和长期声望坠落。"
+        }
       ],
-      "loreRef": "canon: aptitude-raising Gu bound to clan-killing taboo.",
+      "loreRef": "canon-local:reverend-insanity.txt:血颅蛊提升资质与同族代价；lore-skill:资质改变必须稀有且强代价。",
       "provenance": "canon",
-      "balanceTier": "forbidden_growth"
-    },
-    {
-      "guName": "全力以赴蛊",
-      "useMode": "direct",
-      "targetRule": "self",
-      "cost": { "essencePct": 12, "primevalStones": 0 },
-      "cooldown": 3,
-      "consumesGu": false,
-      "effects": [
-        { "type": "temporary_buff", "attribute": "体魄", "value": 1, "durationTurns": 3, "description": "短时强化肉身，适合战斗和力道突破场景。" }
-      ],
-      "sideEffects": [
-        { "type": "backlash", "healthPct": -3, "description": "连续压榨肉身会带来反噬。" }
-      ],
-      "loreRef": "canon/derived tuning: strength-path use should feel powerful but not free.",
-      "provenance": "canon",
-      "balanceTier": "combat_direct"
-    },
-    {
-      "guName": "察运蛊",
-      "useMode": "toggle",
-      "targetRule": "self",
-      "cost": { "essencePct": 3, "primevalStones": 0 },
-      "cooldown": 1,
-      "consumesGu": false,
-      "effects": [
-        { "type": "visibility", "key": "luck_sense", "value": 1, "description": "启用后可获得气运类模糊反馈。" }
-      ],
-      "sideEffects": [],
-      "loreRef": "canon: luck observation requires suitable luck-path means.",
-      "provenance": "canon",
-      "balanceTier": "utility_toggle"
-    },
-    {
-      "guName": "月光蛊",
-      "useMode": "direct",
-      "targetRule": "scene_or_combat_target",
-      "cost": { "essencePct": 8, "primevalStones": 0 },
-      "cooldown": 1,
-      "consumesGu": false,
-      "effects": [
-        { "type": "combat_attack", "path": "月道", "value": 1, "description": "基础攻击蛊，战斗或剧情目标存在时可用。" }
-      ],
-      "sideEffects": [],
-      "loreRef": "canon: common Qing Mao mountain Gu, direct combat utility.",
-      "provenance": "canon",
-      "balanceTier": "common_direct"
+      "balanceTier": "forbidden_attribute_mutation"
     },
     {
       "guName": "酒虫",
       "useMode": "scene_gated",
       "targetRule": "refinement_or_aperture_scene",
-      "cost": { "essencePct": 0, "primevalStones": 0 },
+      "cost": { "essencePct": 10 },
       "cooldown": 0,
       "consumesGu": false,
       "effects": [
-        { "type": "refinement_support", "value": 1, "description": "主要用于真元凝练、炼蛊或突破场景，不作为普通点击消耗品。" }
+        {
+          "type": "refinement_support",
+          "value": 1,
+          "description": "炼化真元、辅助升炼或空窍相关场景触发，不作为随手对人技能。"
+        }
       ],
       "sideEffects": [],
-      "loreRef": "canon: cultivation/refinement utility rather than generic item-use.",
+      "loreRef": "canon-local:reverend-insanity.txt:酒虫用于真元与炼化相关场景；lore-skill:蛊虫用途需契合原著。",
       "provenance": "canon",
-      "balanceTier": "scene_utility"
+      "balanceTier": "scene_refinement_support"
+    },
+    {
+      "guName": "月光蛊",
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cost": { "essencePct": 8 },
+      "cooldown": 1,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "combat_attack",
+          "path": "月道",
+          "value": 12,
+          "durationTurns": 0,
+          "description": "对战斗或场景目标释放月刃。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:青茅山月光蛊；v0.7.0-pre:普通攻击类蛊走确定性目标校验。",
+      "provenance": "canon",
+      "balanceTier": "low_rank_attack"
+    },
+    {
+      "guName": "全力以赴蛊",
+      "useMode": "direct",
+      "targetRule": "self",
+      "cost": { "essencePct": 12 },
+      "cooldown": 3,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "attribute",
+          "attribute": "体魄",
+          "value": 1,
+          "durationTurns": 3,
+          "description": "短暂强化体魄与力道发挥。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:全力以赴蛊力道体系；v0.7.0-pre:体魄提升默认短暂。",
+      "provenance": "canon",
+      "balanceTier": "self_short_buff"
+    },
+    {
+      "guName": "察运蛊",
+      "useMode": "toggle",
+      "targetRule": "self",
+      "cost": { "essencePct": 6 },
+      "cooldown": 1,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "visibility",
+          "key": "luck_sight",
+          "value": 1,
+          "durationTurns": 3,
+          "description": "短时看见自身或目标气运反馈，未持有时气运信息仍显示为模糊。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:察运与运道侦察；v0.7.0-pre:气运可变但可见性受限。",
+      "provenance": "canon",
+      "balanceTier": "information_toggle"
+    },
+    {
+      "guName": "鸿运齐天蛊",
+      "useMode": "consumable",
+      "targetRule": "self_or_known_ally",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 0,
+      "consumesGu": true,
+      "effects": [
+        {
+          "type": "attribute",
+          "attribute": "气运",
+          "value": 3,
+          "durationTurns": 120,
+          "description": "给自己、已知友方或后续小队成员施加长期气运提升。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "luck_boost_major",
+          "description": "长期大运会提高重大机缘与高风险因果事件的权重。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:鸿运齐天类运道强蛊；v0.7.0-pre:一次性仙蛊必须玩家确认目标。",
+      "provenance": "canon",
+      "balanceTier": "immortal_consumable_major_luck"
+    },
+    {
+      "guName": "月霓裳",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 10 },
+      "cooldown": 2,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "shield",
+          "path": "月道",
+          "value": 18,
+          "durationTurns": 2,
+          "description": "给自己或友方披上月华防护，偏防御不偏爆发。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:16580:月霓裳可护持他人；v0.7.0-pre:友方防护类样板。",
+      "provenance": "canon",
+      "balanceTier": "ally_defense_low_mid"
+    },
+    {
+      "guName": "九叶生机草",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 8 },
+      "cooldown": 1,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "heal",
+          "path": "木道",
+          "value": 20,
+          "durationTurns": 0,
+          "description": "消耗或催发生机叶治疗自己或友方。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:16310-16324:生机叶可用于疗伤；v0.7.0-pre:治疗类友方目标样板。",
+      "provenance": "canon",
+      "balanceTier": "healing_resource_low_mid"
+    },
+    {
+      "guName": "治愈蛊",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 12 },
+      "cooldown": 2,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "heal",
+          "path": "水道",
+          "value": 18,
+          "durationTurns": 0,
+          "description": "项目二创低中转治疗蛊，给自己或友方恢复伤势。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "project-canon:gu-database 治愈蛊；derived-lore:治疗蛊存在但具体条目为项目扩展。",
+      "provenance": "original",
+      "balanceTier": "original_support_low"
+    },
+    {
+      "guName": "金风送爽蛊",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 16 },
+      "cooldown": 3,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "heal_over_time",
+          "path": "风道",
+          "value": 12,
+          "durationTurns": 3,
+          "description": "项目二创风道调息治疗，适合旅途中缓慢恢复。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "project-canon:gu-database 金风送爽蛊；worldview:风道可作舒缓与状态恢复扩展。",
+      "provenance": "original",
+      "balanceTier": "original_support_mid"
+    },
+    {
+      "guName": "金甲神盾蛊",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 6,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "shield",
+          "path": "金道",
+          "value": 60,
+          "durationTurns": 3,
+          "description": "项目二创仙蛊级护盾，短期保护自己或友方。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "immortal_gu_exposure",
+          "description": "在人前动用仙蛊会提高暴露与觊觎风险。"
+        }
+      ],
+      "loreRef": "project-canon:immortal-gu 金甲神盾蛊；lore-skill:仙蛊高成本、强暴露风险。",
+      "provenance": "original",
+      "balanceTier": "immortal_support_shield"
+    },
+    {
+      "guName": "圣光普照蛊",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 6,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "purify",
+          "path": "光道",
+          "value": 40,
+          "durationTurns": 0,
+          "description": "项目二创仙蛊级净化，清除部分负面状态。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "immortal_gu_exposure",
+          "description": "仙蛊暴露会提高敌对势力关注。"
+        }
+      ],
+      "loreRef": "project-canon:immortal-gu 圣光普照蛊；worldview:光道可承载净化与显化。",
+      "provenance": "original",
+      "balanceTier": "immortal_support_purify"
+    },
+    {
+      "guName": "人如故",
+      "useMode": "targeted",
+      "targetRule": "self_or_known_ally",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 8,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "restore_state",
+          "path": "宙道",
+          "value": 45,
+          "durationTurns": 0,
+          "description": "高阶治疗/复原类仙蛊，对自己或友方目标复原伤势状态。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "time_path_trace",
+          "description": "宙道复原会留下可被强者推演的痕迹。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:人如故多次用于治疗他人；v0.7.0-pre:高阶友方目标样板。",
+      "provenance": "canon",
+      "balanceTier": "immortal_time_healing_strategic"
+    },
+    {
+      "guName": "净魂蛊",
+      "useMode": "scene_gated",
+      "targetRule": "self_or_known_ally",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 8,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "purify_soul",
+          "path": "魂道",
+          "value": 35,
+          "durationTurns": 0,
+          "description": "净化魂魄伤势或污染，必须有魂道、疗伤或传承场景校验。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "soul_path_trace",
+          "description": "魂道治疗会提高魂道线索与风险权重。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:净魂蛊与魂道修行；lore-skill:强效果必须场景门槛。",
+      "provenance": "canon",
+      "balanceTier": "immortal_scene_soul_purify"
+    },
+    {
+      "guName": "气运蛊",
+      "useMode": "targeted",
+      "targetRule": "self_known_or_scene_target",
+      "cost": { "essencePct": 18 },
+      "cooldown": 5,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "attribute",
+          "attribute": "气运",
+          "value": 1,
+          "durationTurns": 20,
+          "description": "短期调动自己、友方、已知 NPC 或剧情目标的气运。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "luck_interference",
+          "description": "运道干涉会提高反噬、因果和敌方察觉风险。"
+        }
+      ],
+      "loreRef": "derived-lore:运道可影响自己与他人气运；v0.7.0-pre:非九转级运道只做短期弱增幅。",
+      "provenance": "derived",
+      "balanceTier": "luck_control_limited"
+    },
+    {
+      "guName": "功倍蛊",
+      "useMode": "scene_gated",
+      "targetRule": "scene_or_combat_target",
+      "cost": { "essencePct": 20 },
+      "cooldown": 6,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "amplify_gu_effect",
+          "value": 1,
+          "durationTurns": 1,
+          "description": "需要明确的被增幅蛊虫、杀招或修行场景，不开放普通点击。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "amplification_instability",
+          "description": "增幅类蛊虫会提高失败反噬。"
+        }
+      ],
+      "loreRef": "derived-lore:倍增/增幅类蛊必须绑定具体行为；v0.7.0-pre:防止万能加成。",
+      "provenance": "derived",
+      "balanceTier": "scene_amplifier"
+    },
+    {
+      "guName": "洗髓蛊",
+      "useMode": "scene_gated",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 35 },
+      "cooldown": 30,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "attribute",
+          "attribute": "体魄",
+          "value": 1,
+          "durationTurns": 0,
+          "description": "极稀有洗炼肉身，永久提升必须由剧情、材料和反噬共同校验。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "body_reconstruction_recovery",
+          "description": "洗髓后进入恢复期，期间战斗与修行承压。"
+        }
+      ],
+      "loreRef": "derived-lore:洗髓改变根骨需强门槛；v0.7.0-pre:四维资质可变但严格稀有。",
+      "provenance": "derived",
+      "balanceTier": "rare_body_mutation"
+    },
+    {
+      "guName": "换骨蛊",
+      "useMode": "scene_gated",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 35 },
+      "cooldown": 30,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "attribute",
+          "attribute": "体魄",
+          "value": 1,
+          "durationTurns": 0,
+          "description": "换骨改造需要疗伤、传承或闭关场景，不能日常连点。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "bone_replacement_backlash",
+          "description": "换骨失败会造成长期伤势。"
+        }
+      ],
+      "loreRef": "derived-lore:换骨类改造需强反噬；v0.7.0-pre:体魄永久增长受控。",
+      "provenance": "derived",
+      "balanceTier": "rare_body_mutation"
+    },
+    {
+      "guName": "招灾蛊",
+      "useMode": "scene_gated",
+      "targetRule": "aperture_or_location",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 50,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "calamity_redirect",
+          "value": 1,
+          "durationTurns": 0,
+          "description": "只能在灾劫、仙窍或地脉场景中转移/招引灾厄。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "calamity_attention",
+          "description": "强行招灾会提高天意与敌对势力关注。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:招灾/召灾类仙蛊线索；lore-skill:灾劫系统必须强校验。",
+      "provenance": "canon",
+      "balanceTier": "immortal_calamity_scene"
+    },
+    {
+      "guName": "排难蛊",
+      "useMode": "scene_gated",
+      "targetRule": "aperture_or_location",
+      "cost": { "immortalEssence": 1 },
+      "cooldown": 50,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "calamity_mitigation",
+          "value": 1,
+          "durationTurns": 0,
+          "description": "只能在灾劫、仙窍或重大危机节点中减轻灾难。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "calamity_debt",
+          "description": "排难不是无代价免灾，后续可能转化为资源债或因果债。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:排难类仙蛊线索；v0.7.0-pre:灾劫玩法前置登记。",
+      "provenance": "canon",
+      "balanceTier": "immortal_calamity_scene"
+    },
+    {
+      "guName": "态度蛊",
+      "useMode": "scene_gated",
+      "targetRule": "self_known_or_scene_target",
+      "cost": { "essencePct": 0 },
+      "cooldown": 3,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "social_mask",
+          "key": "attitude_mask",
+          "value": 1,
+          "durationTurns": 3,
+          "description": "改变目标对自身态度展示，必须在社交/伪装/谈判场景中校验。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "dao_heart",
+          "scheme": 1,
+          "description": "长期伪装会强化算计倾向。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:态度蛊为原著关键仙蛊；v0.7.0-pre:社交效果由剧情引擎校验。",
+      "provenance": "canon",
+      "balanceTier": "immortal_social_scene"
+    },
+    {
+      "guName": "爱情蛊",
+      "useMode": "lore_only",
+      "targetRule": "self_known_or_scene_target",
+      "cost": {},
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "fate_emotion_anchor",
+          "value": 1,
+          "description": "只作设定登记，绝不作为可控按钮或稳定数值工具。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:爱情蛊不可按普通资源使用；lore-skill:原著强蛊可强但不可万能按钮化。",
+      "provenance": "canon",
+      "balanceTier": "lore_only_uncontrollable"
+    },
+    {
+      "guName": "胆识蛊",
+      "useMode": "scene_gated",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 0 },
+      "cooldown": 5,
+      "consumesGu": true,
+      "effects": [
+        {
+          "type": "soul_strengthen",
+          "path": "魂道",
+          "value": 1,
+          "durationTurns": 60,
+          "description": "魂魄增强必须绑定荡魂山/胆识蛊来源或剧情白名单。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:胆识蛊与魂魄增强；v0.7.0-pre:高价值消耗品需来源校验。",
+      "provenance": "canon",
+      "balanceTier": "soul_consumable_scene"
+    },
+    {
+      "guName": "逆流护身印（设计锚点）",
+      "useMode": "lore_only",
+      "targetRule": "self_or_known_ally",
+      "cost": {},
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "reverse_flow_protection",
+          "value": 1,
+          "description": "杀招/天地秘境相关设计锚点，不进入蛊虫按钮。"
+        }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon-local:reverend-insanity.txt:440814:逆流护身印可护持他人线索；v0.7.0-a/b/c战斗设计包接入。",
+      "provenance": "canon",
+      "balanceTier": "design_anchor_not_runtime_gu"
     }
   ]
 }

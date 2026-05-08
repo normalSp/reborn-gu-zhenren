@@ -104,6 +104,24 @@ const NpcContactsUpdate = z.object({
   add: z.array(NpcContactAdd).optional(),
 }).optional();
 
+const GuUseTargetSchema = z.object({
+  type: z.enum(['self', 'known_npc', 'dynamic_npc', 'squad_member', 'scene_target', 'aperture_or_location']),
+  id: z.string().optional(),
+  name: z.string().optional(),
+}).passthrough();
+
+const GuUseSuggestionAdd = z.object({
+  guName: z.string().min(1),
+  target: GuUseTargetSchema.optional(),
+  sceneValidated: z.boolean().optional(),
+  sceneTags: z.array(z.string()).optional(),
+  reason: z.string().optional(),
+}).passthrough();
+
+const GuUseSuggestionsUpdate = z.object({
+  add: z.array(GuUseSuggestionAdd).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -115,6 +133,7 @@ export const StateUpdateSchema = z.object({
   materials: MaterialsUpdate,
   recipe_fragments: RecipeFragmentsUpdate,
   npc_contacts: NpcContactsUpdate,
+  gu_use_suggestions: GuUseSuggestionsUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───
