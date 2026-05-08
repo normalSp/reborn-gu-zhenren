@@ -34,6 +34,7 @@ import { ChapterTransition } from './ChapterTransition';
 import { MaterialBagPanel } from './MaterialBagPanel';
 import { ApertureManagementPanel } from './ApertureManagementPanel';
 import { TrainingGroundPanel } from './TrainingGroundPanel';
+import { SquadFormationPanel } from './SquadFormationPanel';
 import { useGamePipeline } from '../../hooks/useGamePipeline';
 import { useAnimationBridge } from '../../hooks/useAnimationBridge';
 import { useDeviceCapability } from '../../hooks/useDeviceCapability';
@@ -42,7 +43,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad';
 
 // P3修复：地图标题改为动态，在渲染时根据currentDomain生成
 const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: boolean): string => {
@@ -61,6 +62,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     merchant: '商会',
     achievements: '成就',
     training_ground: '道场修炼',
+    squad: '小队编成',
   };
   return titles[panel] || '';
 };
@@ -81,6 +83,7 @@ const panelContent = (panel: SidePanel) => {
     case 'merchant': return <MerchantPanel />;
     case 'achievements': return <AchievementPanel />;
     case 'training_ground': return <TrainingGroundPanel />;
+    case 'squad': return <SquadFormationPanel />;
     default: return null;
   }
 };
@@ -96,6 +99,7 @@ const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'material_bag', label: '蛊材' },
   { id: 'aperture', label: '空窍状态' },
   { id: 'characters', label: '人物图鉴' },
+  { id: 'squad', label: '小队' },
   { id: 'dao_marks', label: '流派道痕' },
   { id: 'merchant', label: '商会' },
   { id: 'achievements', label: '成就' },

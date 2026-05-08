@@ -6,6 +6,7 @@ import { createKillMoveSlice } from './slices/killMoveSlice';
 import { createPathSlice } from './slices/pathSlice';
 import { createTalentSlice } from './slices/talentSlice';
 import { createFactionSlice } from './slices/factionSlice';
+import { createSquadSlice } from './slices/squadSlice';
 import { createApertureSlice } from './slices/immortalSlice';
 import { createCausalitySlice } from './slices/causalitySlice';
 import { createEventSlice } from './slices/eventSlice';
@@ -170,6 +171,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createPathSlice> &
   ReturnType<typeof createTalentSlice> &
   ReturnType<typeof createFactionSlice> &
+  ReturnType<typeof createSquadSlice> &
   ReturnType<typeof createApertureSlice> &
   ReturnType<typeof createCausalitySlice> &
   ReturnType<typeof createEventSlice> &
@@ -234,6 +236,7 @@ export const useStore = create<RootStore>()(
         ...createPathSlice(...a),
         ...createTalentSlice(...a),
         ...createFactionSlice(...a),
+        ...createSquadSlice(...a),
         ...createApertureSlice(...a),
         ...createCausalitySlice(...a),
         ...createEventSlice(...a),

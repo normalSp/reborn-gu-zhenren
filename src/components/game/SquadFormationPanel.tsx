@@ -1,212 +1,220 @@
-/**
- * ═══ v0.7.0 小队编成面板 — SquadFormationPanel.tsx ═══
- * 设计大纲§1.4.1: 双列表（候选成员+当前编队）、战术姿态选择、出战确认
- * ~200行
- */
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
+import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
-import type { SquadMember } from '../../types';
+import type { PartyState, SquadCombatState, SquadMember, SquadRecruitEvaluation } from '../../types';
 
-const TACTICAL_POSTURES = ['合击', '牵制', '掠阵', '斩首'] as const;
-const MAX_SQUAD_SIZE = 4;
+const TACTICAL_POSTURES: SquadCombatState['formation'][] = ['合击', '牵制', '掠阵', '斩首'];
+const EMPTY_MEMBERS: SquadMember[] = [];
+const EMPTY_PARTY: PartyState = {
+  members: EMPTY_MEMBERS,
+  maxSize: 4,
+  formation: null,
+  morale: 50,
+  coordination: 50,
+  lastUpdatedTurn: 0,
+  memberCooldowns: {},
+  memberRolePausedUntil: {},
+};
+
+const POSTURE_NOTES: Record<SquadCombatState['formation'], string> = {
+  合击: '集火关键目标，适合快速破局，但需要队友配合度。',
+  牵制: '拖住强敌并降低其闪避，适合越级或护送战。',
+  掠阵: '保护低血量队友，训练和长线探索更稳。',
+  斩首: '优先击破弱点目标，爆发更高但防御窗口更薄。',
+};
+
+function dispositionLabel(evaluation: SquadRecruitEvaluation): string {
+  if (evaluation.disposition === 'willing_eager') return '愿随队';
+  if (evaluation.disposition === 'willing_cautious') return '谨慎观望';
+  if (evaluation.disposition === 'mercenary') return `索要报酬${evaluation.requiredPayment?.yuanStone ?? 0}元石`;
+  return '暂不愿意';
+}
+
+function dispositionClass(evaluation: SquadRecruitEvaluation): string {
+  if (evaluation.disposition === 'willing_eager') return 'text-emerald-300';
+  if (evaluation.disposition === 'willing_cautious') return 'text-sky-300';
+  if (evaluation.disposition === 'mercenary') return 'text-amber-300';
+  return 'text-red-300';
+}
 
 interface MemberCardProps {
   member: SquadMember;
-  action?: 'add' | 'remove' | 'none';
-  onClick?: () => void;
-  compact?: boolean;
+  evaluation?: SquadRecruitEvaluation;
+  rolePausedUntil?: number;
+  action: 'add' | 'remove';
+  disabled?: boolean;
+  onClick: () => void;
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ member, action, onClick, compact }) => {
-  const interestLabel = member.interestDrive >= 60 ? 'mercenary' : member.interestDrive >= 30 ? 'willing_cautious' : 'willing_eager';
-  const labelColors: Record<string, string> = {
-    'willing_eager': 'text-green-400',
-    'willing_cautious': 'text-blue-400',
-    'mercenary': 'text-yellow-400',
-  };
+const MemberCard: React.FC<MemberCardProps> = ({ member, evaluation, rolePausedUntil, action, disabled, onClick }) => {
+  const availabilityText = evaluation ? dispositionLabel(evaluation) : rolePausedUntil ? `岗位暂停至T${rolePausedUntil}` : '随队中';
+  const availabilityClass = evaluation ? dispositionClass(evaluation) : 'text-rg-paper-200/55';
+  const buttonLabel = action === 'add' ? '入队' : '离队';
 
   return (
-    <div className="bg-gray-800 rounded p-2 flex items-center justify-between">
-      <div className="flex-1 min-w-0">
-        <div className="text-sm truncate">
-          {member.name}
-          <span className="text-xs text-gray-500 ml-1">({member.path}{member.realm}转)</span>
-        </div>
-        {!compact && (
-          <div className="text-xs text-gray-500 mt-1">
-            信任:<span className={member.adventureTrust >= 70 ? 'text-green-400' : 'text-gray-400'}>{member.adventureTrust}</span>
-            {' '}利益:<span className={member.interestDrive >= 60 ? 'text-yellow-400' : 'text-gray-400'}>{member.interestDrive}</span>
-            {' '}<span className={labelColors[interestLabel] || 'text-gray-400'}>{interestLabel}</span>
+    <div className="rounded border border-rg-ink-300/15 bg-rg-ink-700/55 p-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-sm text-rg-paper-100 font-panel font-semibold truncate">{member.name}</span>
+            <span className="text-[10px] text-rg-paper-200/45">{member.path} {member.realm}转</span>
           </div>
-        )}
-        <div className="flex gap-2 text-xs text-gray-600 mt-1">
-          <span>HP:{member.hp}/{member.maxHp}</span>
-          <span>ATK:{member.atk}</span>
-          <span>DEF:{member.def}</span>
+          <div className="mt-1 text-[11px] text-rg-paper-200/45">
+            信任 {member.adventureTrust ?? 50} · 忠诚 {member.loyalty ?? 50} · 利益 {member.interestDrive ?? 30}
+          </div>
+          <div className="mt-1 text-[10px] text-rg-paper-200/35">
+            HP {member.hp}/{member.maxHp} · 攻 {member.atk} · 防 {member.def}
+          </div>
+          <div className={`mt-1 text-[11px] ${availabilityClass}`}>{availabilityText}</div>
+          {evaluation?.reasons?.length ? (
+            <div className="mt-1 text-[10px] text-rg-paper-200/35">{evaluation.reasons.join('；')}</div>
+          ) : null}
         </div>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={onClick}
+          className={`shrink-0 rounded-sm border px-3 py-1 text-[11px] font-button transition-micro ${
+            disabled
+              ? 'border-rg-ink-300/15 text-rg-paper-200/25 cursor-not-allowed'
+              : action === 'add'
+                ? 'border-rg-gold/35 text-rg-gold hover:bg-rg-gold/10'
+                : 'border-red-400/35 text-red-300 hover:bg-red-500/10'
+          }`}
+        >
+          {buttonLabel}
+        </button>
       </div>
-      {action === 'add' && (
-        <button
-          className="ml-2 text-xs bg-amber-700 hover:bg-amber-600 text-white px-2 py-1 rounded flex-shrink-0"
-          onClick={onClick}
-        >邀请</button>
-      )}
-      {action === 'remove' && (
-        <button
-          className="ml-2 text-xs bg-red-700 hover:bg-red-600 text-white px-2 py-1 rounded flex-shrink-0"
-          onClick={onClick}
-        >移出</button>
-      )}
     </div>
   );
 };
 
-export const SquadFormationPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const playerFaction = useStore(s => (s as any).playerFaction);
-  const partyState = useStore(s => (s as any).partyState) || { members: [], maxSize: MAX_SQUAD_SIZE, formation: null };
-  const profile = useStore(s => s.profile);
-  const advanceTurn = useStore(s => (s as any).advanceTurn);
-  const ap = useStore(s => s.gameTime?.ap || 0);
+export const SquadFormationPanel: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
+  const {
+    playerFaction,
+    partyState,
+    ap,
+    evaluateRecruitment,
+    addMemberToParty,
+    removeMemberFromParty,
+    setPartyFormation,
+  } = useStore(useShallow((s: any) => ({
+    playerFaction: s.playerFaction ?? null,
+    partyState: (s.partyState ?? EMPTY_PARTY) as PartyState,
+    ap: s.gameTime?.ap ?? 0,
+    evaluateRecruitment: s.evaluateRecruitment,
+    addMemberToParty: s.addMemberToParty,
+    removeMemberFromParty: s.removeMemberFromParty,
+    setPartyFormation: s.setPartyFormation,
+  })));
 
-  const [formation, setFormation] = useState<string>(partyState.formation || '牵制');
-
-  // 当前队伍成员
-  const squadMembers = useMemo(() => partyState.members || [], [partyState]);
-
-  // 势力中可用成员（不在队伍中的）
+  const squadMembers = partyState.members ?? EMPTY_MEMBERS;
+  const squadIds = useMemo(() => new Set(squadMembers.map(member => member.id)), [squadMembers]);
   const availableMembers = useMemo(() => {
-    if (!playerFaction?.members) return [];
-    const squadIds = new Set(squadMembers.map((m: SquadMember) => m.id));
-    return playerFaction.members.filter((m: SquadMember) => !squadIds.has(m.id) && m.alive);
-  }, [playerFaction, squadMembers]);
-
-  const handleAddToSquad = (member: SquadMember) => {
-    if (squadMembers.length >= MAX_SQUAD_SIZE) return;
-    if (ap < 1) return;
-
-    const store = (useStore.getState() as any);
-    const newParty = {
-      ...partyState,
-      members: [...squadMembers, member],
-      formation: formation || '牵制',
-    };
-    store.setState?.({ partyState: newParty });
-    // 消耗1AP
-    if (typeof advanceTurn === 'function') {
-      advanceTurn(1);
+    const members = (playerFaction?.members ?? EMPTY_MEMBERS) as SquadMember[];
+    return members.filter(member => !squadIds.has(member.id));
+  }, [playerFaction, squadIds]);
+  const evaluations = useMemo(() => {
+    const rows = new Map<string, SquadRecruitEvaluation>();
+    for (const member of availableMembers) {
+      rows.set(member.id, evaluateRecruitment(member));
     }
-  };
+    return rows;
+  }, [availableMembers, evaluateRecruitment]);
 
-  const handleRemoveFromSquad = (member: SquadMember) => {
-    const store = (useStore.getState() as any);
-    const newParty = {
-      ...partyState,
-      members: squadMembers.filter((m: SquadMember) => m.id !== member.id),
-    };
-    store.setState?.({ partyState: newParty });
-  };
-
-  const handleSetFormation = (f: string) => {
-    setFormation(f);
-    const store = (useStore.getState() as any);
-    store.setState?.({ partyState: { ...partyState, formation: f } });
-  };
-
-  // 计算总战力
-  const totalPower = squadMembers.reduce((sum: number, m: SquadMember) =>
-    sum + m.atk + m.def + m.maxHp * 0.3, 0);
-  const powerStars = Math.min(5, Math.ceil(totalPower / 200));
-  const powerLabel = powerStars <= 2 ? '可挑战野兽级' : powerStars <= 3 ? '可挑战荒兽级' : '可挑战上古荒兽级';
+  const currentFormation = partyState.formation ?? '牵制';
+  const npcSlotCount = Math.max(0, partyState.maxSize - 1);
+  const totalPower = squadMembers.reduce((sum, member) => sum + member.atk + member.def + member.maxHp * 0.3, 0);
+  const powerLabel = totalPower >= 420 ? '可挑战精英敌群' : totalPower >= 260 ? '可接中等委托' : '适合护送与侦察';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
-      <div
-        className="bg-gray-900 border border-gray-700 rounded-lg p-6 w-full max-w-2xl max-h-[85vh] overflow-y-auto text-gray-200"
-        onClick={e => e.stopPropagation()}
-      >
-        <h2 className="text-xl font-bold text-amber-400 mb-2">
-          队伍编成（{squadMembers.length}/{MAX_SQUAD_SIZE}人）
-        </h2>
-
-        {/* 战术姿态 */}
-        <div className="mb-4">
-          <span className="text-xs text-gray-500 mr-2">战术姿态：</span>
-          <div className="flex gap-2 mt-1">
-            {TACTICAL_POSTURES.map(p => (
-              <button
-                key={p}
-                className={`px-3 py-1 rounded text-sm ${formation === p ? 'bg-amber-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
-                onClick={() => handleSetFormation(p)}
-              >{p}</button>
-            ))}
-          </div>
-          <div className="text-xs text-gray-600 mt-1">
-            {formation === '合击' && '两人攻击同一目标+15%伤害'}
-            {formation === '牵制' && '牵制最强敌人使其闪避-20%'}
-            {formation === '掠阵' && '每回合自动恢复最低HP队友5%HP'}
-            {formation === '斩首' && '首击+10%暴击，优先集火最弱敌人'}
-          </div>
+    <div className="h-full overflow-y-auto p-4 text-rg-paper-200">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h2 className="font-title text-lg text-rg-gold">小队编成</h2>
+          <p className="mt-1 text-[11px] text-rg-paper-200/45">
+            队伍上限 {partyState.maxSize} 人含玩家，当前队友 {squadMembers.length}/{npcSlotCount}，行动点 {ap}
+          </p>
         </div>
+        {onClose ? (
+          <button type="button" onClick={onClose} className="text-[11px] text-rg-paper-200/45 hover:text-rg-paper-100">
+            关闭
+          </button>
+        ) : null}
+      </div>
 
-        {/* 当前编队 */}
-        <div className="mb-4">
-          <h3 className="text-sm text-gray-400 mb-2">当前编队</h3>
-          <div className="grid grid-cols-2 gap-2">
-            {Array.from({ length: MAX_SQUAD_SIZE }).map((_, i) => {
-              const member = squadMembers[i];
-              return member ? (
-                <MemberCard key={member.id} member={member} action="remove" onClick={() => handleRemoveFromSquad(member)} />
-              ) : (
-                <div key={`empty_${i}`} className="bg-gray-800/50 rounded p-2 border border-dashed border-gray-700 flex items-center justify-center text-gray-600 text-sm h-20">
-                  空位
-                </div>
+      <section className="mt-4">
+        <div className="text-[11px] text-rg-paper-200/45">战术姿态</div>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {TACTICAL_POSTURES.map(posture => (
+            <button
+              key={posture}
+              type="button"
+              onClick={() => setPartyFormation(posture)}
+              className={`rounded-sm border px-3 py-2 text-left transition-micro ${
+                currentFormation === posture
+                  ? 'border-rg-gold/50 bg-rg-gold/10 text-rg-gold'
+                  : 'border-rg-ink-300/15 text-rg-paper-200/55 hover:border-rg-gold/30'
+              }`}
+            >
+              <div className="text-sm font-panel font-semibold">{posture}</div>
+              <div className="mt-1 text-[10px] text-rg-paper-200/40">{POSTURE_NOTES[posture]}</div>
+            </button>
+          ))}
+        </div>
+        <div className="mt-2 rounded-sm border border-rg-ink-300/12 bg-rg-ink-700/35 p-2 text-[11px] text-rg-paper-200/45">
+          士气 {partyState.morale} · 配合度 {partyState.coordination} · 战力评估：{powerLabel}
+        </div>
+      </section>
+
+      <section className="mt-5">
+        <h3 className="text-xs font-panel text-rg-paper-100">当前小队</h3>
+        <div className="mt-2 space-y-2">
+          {squadMembers.length === 0 ? (
+            <div className="rounded border border-dashed border-rg-ink-300/20 p-4 text-center text-[12px] text-rg-paper-200/35">
+              暂无队友。先从势力成员池中调入成员，小队战才会进入多人结算。
+            </div>
+          ) : squadMembers.map(member => (
+            <MemberCard
+              key={member.id}
+              member={member}
+              rolePausedUntil={partyState.memberRolePausedUntil[member.id]}
+              action="remove"
+              onClick={() => removeMemberFromParty(member.id)}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-5">
+        <h3 className="text-xs font-panel text-rg-paper-100">势力成员池</h3>
+        {!playerFaction ? (
+          <div className="mt-2 rounded border border-rg-ink-300/15 bg-rg-ink-700/35 p-4 text-[12px] text-rg-paper-200/45">
+            尚未创建势力。小队核心闭环从势力成员池开始，后续可由动态 NPC 或剧情接触进入候选池。
+          </div>
+        ) : availableMembers.length === 0 ? (
+          <div className="mt-2 rounded border border-rg-ink-300/15 bg-rg-ink-700/35 p-4 text-[12px] text-rg-paper-200/45">
+            当前没有可调入成员。已入队、重伤、闭关、外派或执行势力任务的成员不会重复显示。
+          </div>
+        ) : (
+          <div className="mt-2 space-y-2">
+            {availableMembers.map(member => {
+              const evaluation = evaluations.get(member.id);
+              const disabled = !evaluation?.canJoin || ap < 1 || squadMembers.length >= npcSlotCount;
+              return (
+                <MemberCard
+                  key={member.id}
+                  member={member}
+                  evaluation={evaluation}
+                  action="add"
+                  disabled={disabled}
+                  onClick={() => addMemberToParty(member.id)}
+                />
               );
             })}
           </div>
-        </div>
-
-        {/* 战力评估 */}
-        <div className="mb-4 text-center text-sm">
-          <span className="text-gray-500">队伍总战力：</span>
-          <span className="text-amber-400">{'★'.repeat(powerStars)}{'☆'.repeat(5 - powerStars)}</span>
-          <span className="text-gray-500 ml-2">({powerLabel})</span>
-        </div>
-
-        {/* 可邀请NPC */}
-        <div>
-          <h3 className="text-sm text-gray-400 mb-2">
-            可邀请 ({availableMembers.length}人可用)
-            <span className="text-xs text-gray-600 ml-2">（调NPC入队消耗1AP）</span>
-          </h3>
-          {availableMembers.length === 0 ? (
-            <p className="text-gray-600 text-sm text-center py-4">无可用成员。招募NPC加入势力后可编入队伍。</p>
-          ) : (
-            <div className="space-y-2 max-h-48 overflow-y-auto">
-              {availableMembers.map((m: SquadMember) => (
-                <MemberCard
-                  key={m.id}
-                  member={m}
-                  action="add"
-                  onClick={() => handleAddToSquad(m)}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="flex gap-2 mt-4">
-          <button
-            className="flex-1 bg-amber-700 hover:bg-amber-600 text-white py-2 rounded"
-            onClick={onClose}
-          >
-            确认编队{squadMembers.length > 0 ? '并出发' : ''}
-          </button>
-          <button
-            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded"
-            onClick={onClose}
-          >取消</button>
-        </div>
-      </div>
+        )}
+      </section>
     </div>
   );
 };
