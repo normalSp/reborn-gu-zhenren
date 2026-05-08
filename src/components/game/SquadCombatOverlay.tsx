@@ -18,7 +18,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
-import type { SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction, CombatLogEntry } from '../../types';
+import type { BattleTraceEntry, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction, CombatLogEntry } from '../../types';
 import { FORMATION_BONUS } from '../../engine/squad-combat-engine';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
@@ -166,17 +166,16 @@ export function SquadCombatOverlay() {
   }, [confirmSquadDeploy]);
 
   // ─── 选择队员行动 ───
-  const handleSelectAction = useCallback((memberIndex: number, actionType: SquadAction['type']) => {
+  const handleSelectAction = useCallback((memberIndex: number, actionType: SquadAction['type'], moveId?: string) => {
     setPlayerActions(prev => {
       const next = new Map(prev);
-      const currentAction = next.get(memberIndex);
       const targetIdx = selectedTargets.get(memberIndex) ?? 0;
       if (actionType === 'defend') {
         next.set(memberIndex, { type: 'defend' });
       } else if (actionType === 'escape') {
         next.set(memberIndex, { type: 'escape' });
       } else if (actionType === 'gu_skill') {
-        next.set(memberIndex, { type: 'gu_skill', moveId: 'heal', targetIndex: targetIdx });
+        next.set(memberIndex, { type: 'gu_skill', moveId: moveId ?? 'heal', targetIndex: targetIdx });
       } else {
         next.set(memberIndex, { type: 'attack', targetIndex: targetIdx });
       }
@@ -297,7 +296,11 @@ export function SquadCombatOverlay() {
 
                 {/* ─── 战斗日志（全局可见） ─── */}
                 {!isDeploy && (
-                  <CombatLog entries={squadCombatState.log} />
+                  <>
+                    <SquadEventCandidates candidates={squadCombatState.eventCandidates ?? []} />
+                    <SquadTrace entries={squadCombatState.trace ?? []} />
+                    <CombatLog entries={squadCombatState.log} />
+                  </>
                 )}
               </div>
             )}
@@ -400,7 +403,7 @@ function PlayerTurnPhase({
   playerActions: Map<number, SquadAction>;
   selectedTargets: Map<number, number>;
   turnOrder: TurnOrderEntry[];
-  onSelectAction: (mi: number, action: SquadAction['type']) => void;
+  onSelectAction: (mi: number, action: SquadAction['type'], moveId?: string) => void;
   onSelectTarget: (mi: number, ei: number) => void;
   onExecute: () => void;
 }) {
@@ -408,7 +411,7 @@ function PlayerTurnPhase({
   const aliveEnemies = state.enemies.filter(e => e.hp > 0);
 
   // 是否所有队员都已选择行动
-  const allSelected = aliveMembers.every((_, i) => playerActions.has(i));
+  const allSelected = state.members.every((member, i) => member.hp <= 0 || playerActions.has(i));
 
   return (
     <div className="flex flex-col overflow-y-auto" style={{ maxHeight: '60vh' }}>
@@ -498,11 +501,30 @@ function PlayerTurnPhase({
                 </div>
               )}
 
+              {/* 资源/冷却：小队战必须让玩家看见真元与杀招状态 */}
+              <div className="flex flex-wrap gap-1 mb-2 text-[9px] font-mono">
+                {member.essence && (
+                  <span className="px-1.5 py-0.5 rounded" style={{ backgroundColor: 'var(--gu-bg-deep)', color: 'var(--gu-trace-gold-dim)' }}>
+                    {member.essence.type === 'immortal' ? '仙元' : '真元'} {member.essence.current}/{member.essence.max}
+                  </span>
+                )}
+                {member.fatigue !== undefined && member.fatigue > 0 && (
+                  <span className="px-1.5 py-0.5 rounded" style={{ backgroundColor: 'var(--gu-life-crimson-dim)', color: 'var(--gu-life-crimson)' }}>
+                    疲劳 {member.fatigue}
+                  </span>
+                )}
+                {Object.entries(member.cooldowns ?? {}).slice(0, 3).map(([key, value]) => (
+                  <span key={key} className="px-1.5 py-0.5 rounded" style={{ backgroundColor: 'var(--gu-bg-deep)', color: 'var(--gu-text-disabled)' }}>
+                    {key} 冷却{value}
+                  </span>
+                ))}
+              </div>
+
               {/* 行动按钮 + 目标选择 */}
               {isAlive && (
                 <div>
                   <div className="flex gap-1.5 mb-1.5">
-                    {(['attack', 'defend', 'gu_skill'] as const).map(type => {
+                    {(['attack', 'defend'] as const).map(type => {
                       const isSelected = currentAction?.type === type;
                       return (
                         <motion.button
@@ -517,7 +539,7 @@ function PlayerTurnPhase({
                             borderColor: isSelected ? 'var(--gu-trace-gold)' : 'var(--gu-border-dim)',
                           }}
                         >
-                          {type === 'attack' ? '🗡️攻' : type === 'defend' ? '🛡️防' : type === 'gu_skill' ? '✨技' : type}
+                          {type === 'attack' ? '🗡️攻' : '🛡️防'}
                         </motion.button>
                       );
                     })}
@@ -535,6 +557,35 @@ function PlayerTurnPhase({
                       🏃逃
                     </motion.button>
                   </div>
+
+                  {(member.moves?.length ?? 0) > 0 && (
+                    <div className="flex gap-1 flex-wrap mb-1.5">
+                      {member.moves!.slice(0, 4).map((move, moveIndex) => {
+                        const moveId = move.killerMoveId || move.name || String(moveIndex);
+                        const cooldown = member.cooldowns?.[moveId] ?? member.cooldowns?.[move.name] ?? 0;
+                        const isSelected = currentAction?.type === 'gu_skill' && currentAction.moveId === moveId;
+                        return (
+                          <motion.button
+                            key={moveId}
+                            className="text-[9px] py-1 px-2 rounded border cursor-pointer disabled:cursor-not-allowed"
+                            disabled={cooldown > 0}
+                            onClick={() => onSelectAction(mi, 'gu_skill', moveId)}
+                            whileHover={cooldown <= 0 ? { scale: 1.05 } : {}}
+                            whileTap={cooldown <= 0 ? { scale: 0.95 } : {}}
+                            title={move.description}
+                            style={{
+                              backgroundColor: isSelected ? 'var(--gu-trace-gold-dim)' : 'var(--gu-bg-deep)',
+                              color: cooldown > 0 ? 'var(--gu-text-disabled)' : isSelected ? 'var(--gu-trace-gold)' : 'var(--gu-text-secondary)',
+                              borderColor: isSelected ? 'var(--gu-trace-gold)' : 'var(--gu-border-dim)',
+                              opacity: cooldown > 0 ? 0.45 : 1,
+                            }}
+                          >
+                            ✨ {move.name.slice(0, 8)}{cooldown > 0 ? `·${cooldown}` : ''}
+                          </motion.button>
+                        );
+                      })}
+                    </div>
+                  )}
 
                   {/* 攻击/技能目标选择 */}
                   {(currentAction?.type === 'attack' || currentAction?.type === 'gu_skill') && (
@@ -646,9 +697,10 @@ function ResolutionPhase({ state }: { state: SquadCombatState }) {
 function EndedPhase({ state, onClose }: { state: SquadCombatState; onClose: () => void }) {
   const allEnemiesDead = state.enemies.every(e => e.hp <= 0);
   const allMembersDead = state.members.every(m => m.hp <= 0);
-  const won = allEnemiesDead;
-  const lost = allMembersDead;
-  const escaped = !won && !lost;
+  const winner = state.result?.winner;
+  const won = winner ? winner === 'player' : allEnemiesDead;
+  const lost = winner ? winner === 'enemy' : allMembersDead;
+  const escaped = winner ? winner === 'escaped' : !won && !lost;
 
   const bgColor = won ? 'var(--gu-life-verdant-dim)' : lost ? 'var(--gu-life-crimson-dim)' : 'var(--gu-trace-gold-dim)';
   const borderColor = won ? 'var(--gu-life-verdant)' : lost ? 'var(--gu-life-crimson)' : 'var(--gu-trace-gold)';
@@ -680,6 +732,34 @@ function EndedPhase({ state, onClose }: { state: SquadCombatState; onClose: () =
         <div className="text-[10px] text-rg-paper-200/40 mb-3">
           最终士气: {state.morale} | 配合度: {state.coordination}
         </div>
+
+        {state.result && (
+          <div className="text-left rounded-lg p-2 mb-3 space-y-1" style={{ backgroundColor: 'var(--gu-bg-deep)', border: '1px solid var(--gu-border-dim)' }}>
+            <div className="text-[10px] font-bold" style={{ color: 'var(--gu-trace-gold)' }}>关系与伤亡回流</div>
+            <div className="text-[10px] text-rg-paper-200/50">
+              士气变化 {state.result.moraleDelta >= 0 ? '+' : ''}{state.result.moraleDelta}
+              {state.result.wounded.length > 0 ? ` · 重伤：${state.result.wounded.join('、')}` : ' · 无重伤'}
+            </div>
+            {Object.keys(state.result.trustDeltas).length > 0 && (
+              <div className="text-[10px] text-rg-paper-200/45">
+                信任变化：{Object.entries(state.result.trustDeltas).map(([id, delta]) => `${id}${delta >= 0 ? '+' : ''}${delta}`).join('，')}
+              </div>
+            )}
+          </div>
+        )}
+
+        {state.rewardPreview && won && (
+          <div className="text-left rounded-lg p-2 mb-3" style={{ backgroundColor: 'var(--gu-bg-deep)', border: '1px solid var(--gu-border-dim)' }}>
+            <div className="text-[10px] font-bold mb-1" style={{ color: 'var(--gu-life-verdant)' }}>奖励闸门预览</div>
+            <div className="text-[10px] text-rg-paper-200/55">
+              元石 +{state.rewardPreview.yuanStone ?? 0}
+              {state.rewardPreview.immortalStone ? ` · 仙元石 +${state.rewardPreview.immortalStone}` : ''}
+            </div>
+            {(state.rewardPreview.rumors ?? []).map((rumor, index) => (
+              <div key={index} className="text-[10px] text-rg-paper-200/40">{rumor}</div>
+            ))}
+          </div>
+        )}
 
         <motion.button
           className="px-6 py-2 rounded-lg text-sm font-panel font-medium cursor-pointer"
@@ -778,6 +858,47 @@ function CombatLog({ entries }: { entries: CombatLogEntry[] }) {
             }}>
               -{e.damage}
             </span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SquadEventCandidates({ candidates }: { candidates: SquadCombatState['eventCandidates'] }) {
+  if (!candidates || candidates.length === 0) return null;
+  const visible = candidates.slice(-4);
+  return (
+    <div className="mx-4 mb-2 rounded-lg p-2 text-xs" style={{ backgroundColor: 'var(--gu-bg-deep)', border: '1px solid var(--gu-border-dim)' }}>
+      <div className="text-[10px] font-bold mb-1" style={{ color: 'var(--gu-trace-gold)' }}>AI候选事件（待引擎校验）</div>
+      {visible.map((candidate, index) => (
+        <div key={candidate.id ?? index} className="text-[10px] text-rg-paper-200/55 flex gap-2">
+          <span className="shrink-0" style={{ color: candidate.engineValidation === 'blocked' ? 'var(--gu-life-crimson)' : 'var(--gu-trace-gold-dim)' }}>
+            {candidate.engineValidation ?? 'pending'}
+          </span>
+          <span className="truncate">{candidate.title}：{candidate.summary}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SquadTrace({ entries }: { entries: BattleTraceEntry[] }) {
+  if (entries.length === 0) return null;
+  const visible = entries.slice(-24);
+  return (
+    <div className="mx-4 mb-2 max-h-32 overflow-y-auto rounded-lg p-2 text-xs font-panel space-y-0.5"
+      style={{ backgroundColor: 'var(--gu-bg-deep)', border: '1px solid var(--gu-border-dim)' }}>
+      <div className="text-[10px] font-bold mb-1" style={{ color: 'var(--gu-trace-gold)' }}>BattleTrace</div>
+      {visible.map((entry, index) => (
+        <div key={`${entry.round}-${entry.phase}-${index}`} className="flex gap-1.5 text-[10px]">
+          <span className="w-7 shrink-0 text-rg-paper-200/25 text-right">R{entry.round}</span>
+          <span className="w-14 shrink-0" style={{ color: entry.actor === 'enemy' ? 'var(--gu-life-crimson)' : entry.actor === 'player' ? 'var(--gu-life-verdant)' : 'var(--gu-trace-gold-dim)' }}>
+            {entry.phase}
+          </span>
+          <span className="flex-1 truncate text-rg-paper-200/55">{entry.message}</span>
+          {entry.damage !== undefined && entry.damage > 0 && (
+            <span className="shrink-0 font-mono" style={{ color: 'var(--gu-life-crimson)' }}>-{entry.damage}</span>
           )}
         </div>
       ))}

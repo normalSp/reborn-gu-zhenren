@@ -1062,6 +1062,35 @@ export class ContextBuilder {
       ].join('\n'));
     }
 
+    const activeSquadCombat = (store as any).squadCombatState;
+    if (activeSquadCombat) {
+      const members = (activeSquadCombat.members || []).slice(0, 4).map((member: any) => {
+        const moves = (member.moves || []).slice(0, 4).map((move: any) => move.name).join('、') || '无';
+        const essence = member.essence
+          ? `${member.essence.type === 'immortal' ? '仙元' : '真元'}${member.essence.current}/${member.essence.max}`
+          : '真元未知';
+        return `- ${member.name} ${member.realm}转${member.path} HP${member.hp}/${member.maxHp} ${essence} 信任${member.adventureTrust ?? '未知'} 利益${member.interestDrive ?? '未知'} 可用动作:${moves}`;
+      });
+      const enemies = (activeSquadCombat.enemies || []).slice(0, 6).map((enemy: any) =>
+        `- ${enemy.name} ${enemy.realm}转${enemy.path} HP${enemy.hp}/${enemy.maxHp} AI=${enemy.aiMode || 'balanced'}`
+      );
+      const recentTrace = (activeSquadCombat.trace || []).slice(-8).map((entry: any) =>
+        `R${entry.round}/${entry.phase}/${entry.actor}: ${entry.message}`
+      );
+      const candidates = (activeSquadCombat.eventCandidates || []).slice(-4).map((candidate: any) =>
+        `- ${candidate.title} [${candidate.type}/${candidate.engineValidation || 'pending'}]: ${candidate.summary}`
+      );
+      parts.push([
+        '【v0.7.0-b 小队战闸门】',
+        `当前小队战phase=${activeSquadCombat.phase}，round=${activeSquadCombat.round}，姿态=${activeSquadCombat.formation}，士气=${activeSquadCombat.morale}，配合=${activeSquadCombat.coordination}`,
+        `我方成员:\n${members.join('\n') || '无'}`,
+        `敌方单位:\n${enemies.join('\n') || '无'}`,
+        recentTrace.length ? `最近小队战BattleTrace:\n${recentTrace.join('\n')}` : '最近小队战BattleTrace: 无',
+        candidates.length ? `已有候选事件:\n${candidates.join('\n')}` : '已有候选事件: 无',
+        'DeepSeek只允许提出 combat_event_candidates.add 候选，例如第三方发现、地形变化、追击、谈判、队友动摇。候选必须等待引擎校验；禁止直接写伤害、奖励、任务完成、材料入库、正式地图地点或强制改变队友忠诚。',
+      ].join('\n'));
+    }
+
     const selectedTalents = (store as any).selectedTalents;
     if (selectedTalents && selectedTalents.length > 0) {
       try {
