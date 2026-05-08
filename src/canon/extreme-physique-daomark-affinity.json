@@ -13,13 +13,14 @@
   "古月阴荒体": {
     "primaryPaths": { "宙道": 90 },
     "forbiddenPaths": ["光道", "炎道"],
-    "backlashPaths": { "阳道": -30 },
+    "backlashPaths": {},
+    "ruleBacklashTags": { "阳性规则": -30 },
     "cultivationMod": { "type": "time_based", "dayMultiplier": 0.3, "nightMultiplier": 2.5, "daoMarkPerRealm": 5 }
   },
   "北冥冰魄体": {
     "primaryPaths": { "冰道": 90, "水道": 70 },
-    "forbiddenPaths": ["炎道", "火道"],
-    "backlashPaths": { "炎道": -40, "火道": -30 },
+    "forbiddenPaths": ["炎道"],
+    "backlashPaths": { "炎道": -40 },
     "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
   },
   "森海轮回体": {

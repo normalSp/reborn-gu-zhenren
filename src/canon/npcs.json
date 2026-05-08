@@ -6,7 +6,9 @@
     "classification": "威慑型=不可友善不可信任；友善型=有限友善但绝无条件信任",
     "dynamicIdentitySupport": true,
     "description": "完整版NPC数据库，支持多重身份向量（初始身份/晋升路径/触发条件）",
-    "updated": "2026-05-02 P2-审计D: 添加domainTags + 新增NPC + 总数达200+"
+    "updated": "2026-05-02 P2-审计D: 添加domainTags + 新增NPC + 总数达200+",
+    "adventureSeedCount": 32,
+    "adventureSeedUpdated": "2026-05-08 v0.7.0-a"
   },
   "npcDatabase": {
     "古月方源": {
@@ -39,7 +41,10 @@
         "山寨文化",
         "家族丛林",
         "蛊材采集"
-      ]
+      ],
+      "adventureTrust": 5,
+      "interestDrive": 95,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月方正": {
       "alias": [
@@ -67,7 +72,10 @@
         "宗门秩序",
         "戒律至上",
         "正道法则"
-      ]
+      ],
+      "adventureTrust": 8,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月博": {
       "alias": [],
@@ -93,7 +101,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 45,
+      "interestDrive": 45,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月赤练": {
       "alias": [],
@@ -119,7 +130,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 40,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月漠尘": {
       "alias": [],
@@ -145,7 +159,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月青书": {
       "alias": [],
@@ -171,7 +188,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 50,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月漠北": {
       "alias": [],
@@ -197,7 +217,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 40,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月赤城": {
       "alias": [],
@@ -223,7 +246,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 40,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月药乐": {
       "alias": [],
@@ -249,7 +275,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 45,
+      "interestDrive": 40,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月四代": {
       "alias": [
@@ -277,7 +306,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 60,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月一代": {
       "alias": [
@@ -305,7 +337,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 50,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "古月陈博": {
       "alias": [],
@@ -331,7 +366,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 45,
+      "interestDrive": 40,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "商燕飞": {
       "alias": [],
@@ -357,7 +395,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 40,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "商心慈": {
       "alias": [
@@ -386,7 +427,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "商拓海": {
       "alias": [],
@@ -412,7 +456,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "白凝冰": {
       "alias": [
@@ -440,7 +487,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "铁若男": {
       "alias": [],
@@ -466,7 +516,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 50,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "铁血冷": {
       "alias": [],
@@ -492,7 +545,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 55,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "陆畏因": {
       "alias": [],
@@ -518,7 +574,10 @@
         "商队期": "南疆游历蛊师",
         "北原期": "南疆出身的流浪蛊师",
         "天庭战": "南疆英雄"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 35,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "天鹤上人": {
       "alias": [],
@@ -544,7 +603,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 35,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "凤九歌": {
       "alias": [],
@@ -570,7 +632,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 40,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "凤金煌": {
       "alias": [],
@@ -596,7 +661,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 65,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "紫薇仙子": {
       "alias": [
@@ -624,7 +692,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 8,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "龙公": {
       "alias": [],
@@ -650,7 +721,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 8,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "秦鼎菱": {
       "alias": [],
@@ -676,7 +750,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 8,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "陈衣": {
       "faction": "中洲·天庭",
@@ -697,7 +774,10 @@
       ],
       "dynamicTitles": {
         "中洲期": "天庭巡查使"
-      }
+      },
+      "adventureTrust": 40,
+      "interestDrive": 35,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "赤心行者": {
       "faction": "中洲·赤心派",
@@ -718,7 +798,10 @@
       ],
       "dynamicTitles": {
         "中洲期": "赤心派长老"
-      }
+      },
+      "adventureTrust": 40,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "赵怜云": {
       "alias": [],
@@ -744,7 +827,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "白晴仙子": {
       "alias": [],
@@ -770,7 +856,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 30,
+      "interestDrive": 35,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "正元老人": {
       "alias": [],
@@ -796,7 +885,10 @@
         "商队期": "宗门行者",
         "北原期": "中洲使者",
         "天庭战": "中洲正士"
-      }
+      },
+      "adventureTrust": 25,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "气海老祖": {
       "alias": [],
@@ -822,7 +914,10 @@
         "商队期": "海上游历者",
         "北原期": "东海修行者",
         "天庭战": "东海浪人"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 75,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "黑楼兰": {
       "alias": [],
@@ -848,7 +943,10 @@
         "商队期": "草原游牧者",
         "北原期": "王庭勇士",
         "天庭战": "北原猛将"
-      }
+      },
+      "adventureTrust": 65,
+      "interestDrive": 70,
+      "squadSeedNotes": "v0.7.0-a: seed values for later recruitment and squad trust economy; exact recruitment logic lands in v0.7.0-b."
     },
     "黎山仙子": {
       "alias": [],

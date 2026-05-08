@@ -4,7 +4,9 @@
     "source": "蛊真人原著 + 百度百科 + MC百科 + 贴吧设定整理",
     "principle": "按需构建，AI叙事涉及新蛊虫时核实原著后追加条目",
     "total": 128,
-    "updated": "2026-05-05 P4: 批量生成 refineCost+ascendCost 完整配方数据 + CR4补全冰晶蛊/毒液蛊/万兽蛊/治愈蛊"
+    "updated": "2026-05-05 P4: 批量生成 refineCost+ascendCost 完整配方数据 + CR4补全冰晶蛊/毒液蛊/万兽蛊/治愈蛊",
+    "combatStatusCoreCount": 42,
+    "combatStatusUpdated": "2026-05-08 v0.7.0-a"
   },
   "月光蛊": {
     "tier": 1,
@@ -44,6 +46,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 8
+      },
+      "riskTier": "low",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
     }
   },
   "酒虫": {
@@ -84,6 +99,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "scene_gated",
+      "targetRule": "refinement_or_aperture_scene",
+      "cooldown": 0,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
     }
   },
   "春秋蝉": {
@@ -106,7 +134,20 @@
     "noRefine": true,
     "_noRefineReason": "不可凡蛊炼制（仙蛊专属，需升炼或天地生成）",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "support",
+      "runtimeCombatAllowed": false,
+      "useMode": "scene_gated",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 6,
+      "resourceCost": {
+        "immortalEssence": 1
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: unregistered Immortal Gu is lore/scene evidence only until uniqueness and cost are explicitly whitelisted."
+    }
   },
   "书虫": {
     "tier": 1,
@@ -146,6 +187,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "info",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "known_or_scene_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "石皮蛊": {
@@ -186,6 +240,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "力气蛊": {
@@ -228,6 +295,19 @@
       "restrictions": [
         "蛊师需≥2转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "积德蛊": {
@@ -249,7 +329,20 @@
     "noRefine": true,
     "_noRefineReason": "不需常规蛊材（自行炼成）",
     "noAscend": true,
-    "_noAscendReason": "不可炼制则不可升炼"
+    "_noAscendReason": "不可炼制则不可升炼",
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
+    }
   },
   "侦察蛊": {
     "tier": 1,
@@ -289,6 +382,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "info",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "known_or_scene_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "察运蛊": {
@@ -311,7 +417,20 @@
     "noRefine": true,
     "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "info",
+      "runtimeCombatAllowed": true,
+      "useMode": "toggle",
+      "targetRule": "self",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 6
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
+    }
   },
   "搜魂蛊": {
     "tier": 7,
@@ -333,7 +452,20 @@
     "noRefine": true,
     "_noRefineReason": "不可凡蛊炼制（仙蛊专属）",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "info",
+      "runtimeCombatAllowed": false,
+      "useMode": "scene_gated",
+      "targetRule": "known_or_scene_target",
+      "cooldown": 7,
+      "resourceCost": {
+        "immortalEssence": 1
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: unregistered Immortal Gu is lore/scene evidence only until uniqueness and cost are explicitly whitelisted."
+    }
   },
   "招灾蛊": {
     "tier": 7,
@@ -354,7 +486,20 @@
     "noRefine": true,
     "_noRefineReason": "不可凡蛊炼制",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "scene_gated",
+      "targetRule": "aperture_or_location",
+      "cooldown": 50,
+      "resourceCost": {
+        "immortalEssence": 1
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
+    }
   },
   "排难蛊": {
     "tier": 7,
@@ -375,7 +520,20 @@
     "noRefine": true,
     "_noRefineReason": "不可凡蛊炼制",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "scene_gated",
+      "targetRule": "aperture_or_location",
+      "cooldown": 50,
+      "resourceCost": {
+        "immortalEssence": 1
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
+    }
   },
   "定仙游": {
     "tier": 6,
@@ -397,7 +555,20 @@
     "noRefine": true,
     "_noRefineReason": "不可常规炼制（需仙蛊方+仙蛊材料）",
     "noAscend": true,
-    "_noAscendReason": "仙蛊不参与凡蛊升炼体系"
+    "_noAscendReason": "仙蛊不参与凡蛊升炼体系",
+    "combatStatus": {
+      "role": "strategic",
+      "runtimeCombatAllowed": false,
+      "useMode": "scene_gated",
+      "targetRule": "self",
+      "cooldown": 6,
+      "resourceCost": {
+        "immortalEssence": 1
+      },
+      "riskTier": "immortal_high_cost",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: unregistered Immortal Gu is lore/scene evidence only until uniqueness and cost are explicitly whitelisted."
+    }
   },
   "捧杀蛊": {
     "tier": 2,
@@ -439,6 +610,19 @@
       "restrictions": [
         "蛊师需≥2转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "风道加速蛊": {
@@ -481,6 +665,19 @@
       "restrictions": [
         "蛊师需≥2转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "血颅蛊": {
@@ -511,7 +708,20 @@
       "turns": 14
     },
     "noAscend": true,
-    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道",
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "scene_gated",
+      "targetRule": "kin_sacrifice_scene",
+      "cooldown": 0,
+      "resourceCost": {
+        "essencePct": 35
+      },
+      "riskTier": "high",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
+    }
   },
   "青丝蛊": {
     "tier": 1,
@@ -551,6 +761,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "希冀蛊": {
@@ -572,7 +795,20 @@
     "noRefine": true,
     "_noRefineReason": "不可炼制（天地生成）",
     "noAscend": true,
-    "_noAscendReason": "不可炼制则不可升炼"
+    "_noAscendReason": "不可炼制则不可升炼",
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
+    }
   },
   "水龙蛊": {
     "tier": 3,
@@ -615,6 +851,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "金钟蛊": {
@@ -658,6 +907,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "火鸦蛊": {
@@ -701,6 +963,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "铜皮蛊": {
@@ -741,6 +1016,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "天元宝莲蛊": {
@@ -783,6 +1071,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "全力以赴蛊": {
@@ -826,6 +1127,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 12
+      },
+      "riskTier": "medium",
+      "guUseRegistry": true,
+      "notes": "v0.7.0-a: combat status is linked to GuUseRegistry."
     }
   },
   "剑影蛊": {
@@ -868,6 +1182,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "月影蛊": {
@@ -910,6 +1237,19 @@
       "restrictions": [
         "蛊师需≥4转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 4,
+      "resourceCost": {
+        "essencePct": 16
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "竹君子": {
@@ -953,6 +1293,19 @@
       "restrictions": [
         "蛊师需≥4转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 4,
+      "resourceCost": {
+        "essencePct": 16
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "正气蛊": {
@@ -995,6 +1348,19 @@
       "restrictions": [
         "蛊师需≥4转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 4,
+      "resourceCost": {
+        "essencePct": 16
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "金缕衣蛊": {
@@ -1038,6 +1404,19 @@
       "restrictions": [
         "蛊师需≥4转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 4,
+      "resourceCost": {
+        "essencePct": 16
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "天地宏音蛊": {
@@ -1068,7 +1447,20 @@
       "turns": 14
     },
     "noAscend": true,
-    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道",
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 5,
+      "resourceCost": {
+        "essencePct": 19
+      },
+      "riskTier": "high",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
+    }
   },
   "血幕天华蛊": {
     "tier": 5,
@@ -1099,7 +1491,20 @@
       "turns": 14
     },
     "noAscend": true,
-    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道"
+    "_noAscendReason": "五转凡蛊已达上限，升仙请走 ascendImmortalGu 通道",
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 5,
+      "resourceCost": {
+        "essencePct": 19
+      },
+      "riskTier": "high",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
+    }
   },
   "铁皮蛊": {
     "tier": 1,
@@ -1139,6 +1544,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "熊力蛊": {
@@ -1179,6 +1597,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "骨枪蛊": {
@@ -1219,6 +1650,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "蛮力天牛蛊": {
@@ -1259,6 +1703,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "净水蛊": {
@@ -1299,6 +1756,19 @@
       "restrictions": [
         "蛊师需≥1转"
       ]
+    },
+    "combatStatus": {
+      "role": "passive",
+      "runtimeCombatAllowed": true,
+      "useMode": "passive",
+      "targetRule": "self",
+      "cooldown": 1,
+      "resourceCost": {
+        "essencePct": 7
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "幽影随行蛊": {
@@ -1341,6 +1811,19 @@
       "restrictions": [
         "蛊师需≥2转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "爱生离": {
@@ -1383,6 +1866,19 @@
       "restrictions": [
         "蛊师需≥2转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 2,
+      "resourceCost": {
+        "essencePct": 10
+      },
+      "riskTier": "low",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "电眼蛊": {
@@ -1425,6 +1921,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "info",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "known_or_scene_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "雷翼蛊": {
@@ -1467,6 +1976,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "attack",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "金罡蛊": {
@@ -1510,6 +2032,19 @@
       "restrictions": [
         "蛊师需≥3转"
       ]
+    },
+    "combatStatus": {
+      "role": "defense",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "self_or_known_ally",
+      "cooldown": 3,
+      "resourceCost": {
+        "essencePct": 13
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "金龙蛊": {
@@ -1553,6 +2088,19 @@
       "restrictions": [
         "蛊师需≥4转"
       ]
+    },
+    "combatStatus": {
+      "role": "control",
+      "runtimeCombatAllowed": true,
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cooldown": 4,
+      "resourceCost": {
+        "essencePct": 16
+      },
+      "riskTier": "medium",
+      "guUseRegistry": false,
+      "notes": "v0.7.0-a: temporary combat status; tighten after GuUseRegistry registration."
     }
   },
   "金风送爽蛊": {
@@ -4492,18 +5040,28 @@
       "description": "需在严寒地带吸收寒气结晶，或定期喂食冰晶核心维持冰层厚度"
     },
     "refineCost": {
-      "generic": { "水道蛊材": 3, "稀有蛊材": 1 },
-      "specific": { "冰晶核心": 1 },
+      "generic": {
+        "水道蛊材": 3,
+        "稀有蛊材": 1
+      },
+      "specific": {
+        "冰晶核心": 1
+      },
       "currency": 400,
       "difficulty": 0.35,
       "turns": 2
     },
     "ascendCost": {
-      "generic": { "水道蛊材": 3, "稀有蛊材": 2 },
+      "generic": {
+        "水道蛊材": 3,
+        "稀有蛊材": 2
+      },
       "specific": {},
       "currency": 300,
       "difficulty": 0.3,
-      "restrictions": ["蛊师需≥3转"]
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   },
   "毒液蛊": {
@@ -4522,18 +5080,29 @@
       "description": "各类毒虫毒草均可——毒性越强蛊虫越活跃，隔日无毒素则剧毒退化"
     },
     "refineCost": {
-      "generic": { "木道蛊材": 3, "稀有蛊材": 2, "精品蛊材": 1 },
-      "specific": { "毒物样本": 1 },
+      "generic": {
+        "木道蛊材": 3,
+        "稀有蛊材": 2,
+        "精品蛊材": 1
+      },
+      "specific": {
+        "毒物样本": 1
+      },
       "currency": 800,
       "difficulty": 0.45,
       "turns": 2
     },
     "ascendCost": {
-      "generic": { "木道蛊材": 4, "稀有蛊材": 2 },
+      "generic": {
+        "木道蛊材": 4,
+        "稀有蛊材": 2
+      },
       "specific": {},
       "currency": 600,
       "difficulty": 0.4,
-      "restrictions": ["蛊师需≥4转"]
+      "restrictions": [
+        "蛊师需≥4转"
+      ]
     }
   },
   "万兽蛊": {
@@ -4552,18 +5121,31 @@
       "description": "需新鲜兽血浇淋——隔日无血则兽群躁动，连续三日反噬主人"
     },
     "refineCost": {
-      "generic": { "奴道蛊材": 4, "魂道蛊材": 2, "稀有蛊材": 2 },
-      "specific": { "三兽血瓶": 1 },
+      "generic": {
+        "奴道蛊材": 4,
+        "魂道蛊材": 2,
+        "稀有蛊材": 2
+      },
+      "specific": {
+        "三兽血瓶": 1
+      },
       "currency": 2000,
       "difficulty": 0.6,
       "turns": 3
     },
     "ascendCost": {
-      "generic": { "奴道蛊材": 5, "魂道蛊材": 3, "稀有蛊材": 3 },
+      "generic": {
+        "奴道蛊材": 5,
+        "魂道蛊材": 3,
+        "稀有蛊材": 3
+      },
       "specific": {},
       "currency": 1500,
       "difficulty": 0.55,
-      "restrictions": ["蛊师需≥5转", "需掌握奴道杀招"]
+      "restrictions": [
+        "蛊师需≥5转",
+        "需掌握奴道杀招"
+      ]
     }
   },
   "治愈蛊": {
@@ -4582,18 +5164,29 @@
       "description": "需定期喂食灵药草药——品质越高治蛊愈活跃，三日无药则药效衰退"
     },
     "refineCost": {
-      "generic": { "水道蛊材": 3, "精品蛊材": 2 },
-      "specific": { "愈合草药包": 1, "草木精华液": 1 },
+      "generic": {
+        "水道蛊材": 3,
+        "精品蛊材": 2
+      },
+      "specific": {
+        "愈合草药包": 1,
+        "草木精华液": 1
+      },
       "currency": 500,
       "difficulty": 0.3,
       "turns": 2
     },
     "ascendCost": {
-      "generic": { "水道蛊材": 3, "精品蛊材": 2 },
+      "generic": {
+        "水道蛊材": 3,
+        "精品蛊材": 2
+      },
       "specific": {},
       "currency": 400,
       "difficulty": 0.25,
-      "restrictions": ["蛊师需≥3转"]
+      "restrictions": [
+        "蛊师需≥3转"
+      ]
     }
   }
 }

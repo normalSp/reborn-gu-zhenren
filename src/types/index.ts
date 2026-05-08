@@ -93,6 +93,8 @@ export interface GuSpec {
   effects: GuEffect[];
   feedRequirement: GuFeedReq;
   baseRefineDifficulty: number;
+  /** v0.7.0-a: 单人战斗纵切使用的运行时战斗状态 */
+  combatStatus?: GuCombatStatus;
 }
 
 export interface GuEffect {
@@ -104,6 +106,25 @@ export interface GuEffect {
 export interface GuFeedReq {
   essence: number;
   special?: string;
+}
+
+export type GuCombatRole = 'attack' | 'defense' | 'support' | 'control' | 'info' | 'passive' | 'strategic';
+export type GuCombatRiskTier = 'low' | 'medium' | 'high' | 'immortal_high_cost';
+
+export interface GuCombatStatus {
+  role: GuCombatRole;
+  runtimeCombatAllowed: boolean;
+  useMode: 'passive' | 'toggle' | 'direct' | 'targeted' | 'scene_gated' | 'consumable' | 'lore_only';
+  targetRule: string;
+  cooldown: number;
+  resourceCost: {
+    essencePct?: number;
+    primevalStones?: number;
+    immortalEssence?: number;
+  };
+  riskTier: GuCombatRiskTier;
+  guUseRegistry: boolean;
+  notes?: string;
 }
 
 // ═══ P2-13: 蛊虫饥饿状态机（四态模型） ═══

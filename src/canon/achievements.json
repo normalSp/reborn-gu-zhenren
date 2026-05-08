@@ -73,7 +73,9 @@
       "progressMax": 4,
       "reward": {
         "currency": 800,
-        "immortalCurrency": 3
+        "materials": {
+          "精品蛊材": 4
+        }
       }
     },
     {
@@ -416,7 +418,6 @@
       "progressMax": 1,
       "reward": {
         "currency": 800,
-        "immortalCurrency": 3,
         "materials": {
           "情报玉简": 1
         }
