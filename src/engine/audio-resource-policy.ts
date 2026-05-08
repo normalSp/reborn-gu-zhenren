@@ -1,4 +1,4 @@
-import audioManifestRaw from '../../public/audio/audio-source-manifest.json';
+import audioManifestRaw from '../canon/audio-source-manifest.json';
 import characterBgmManifestRaw from '../canon/character-bgm-manifest.json';
 
 export type AudioLayer = 'domain' | 'character' | 'scene' | 'combat';
@@ -10,10 +10,16 @@ export interface AudioSourceTrack {
   characterOrScene: string;
   sourceUrl: string;
   sourceKind: string;
+  license: string;
+  licenseUrl: string;
+  attribution: string;
   communityConfirmed: boolean;
   userConfirmed: boolean;
   runtimeEnabled: boolean;
+  runtimePackage: string;
   packageModes: string[];
+  localFileRequired: boolean;
+  fallbackTrackId?: string;
   filePath: string;
   loop: boolean;
   loopStart: number;
@@ -27,6 +33,9 @@ export interface AudioSourceSfx {
   title: string;
   sourceUrl: string;
   sourceKind: string;
+  license: string;
+  licenseUrl: string;
+  attribution: string;
   runtimeEnabled: boolean;
   aiOrSyntheticAllowed: boolean;
   filePath: string;
@@ -37,10 +46,16 @@ export interface AudioSourceManifest {
   version: string;
   policy: {
     runtimeDefaultPackage: string;
+    availablePackageModes: string[];
     aiOrSyntheticBgmAllowed: boolean;
     aiOrSyntheticCombatSfxAllowed: boolean;
     missingAssetBehavior: string;
     notes: string;
+  };
+  sourceReview?: {
+    bilibiliReference: string;
+    manualReviewCompleted: boolean;
+    manualReviewNotes: string;
   };
   tracks: AudioSourceTrack[];
   sfx: AudioSourceSfx[];
@@ -107,8 +122,14 @@ export function validateAudioSourceManifest(manifest: AudioSourceManifest = audi
     if (track.runtimeEnabled && looksLikeLegacySyntheticPath(track.filePath)) {
       issues.push({ severity: 'error', id: track.id, message: 'Legacy synthetic BGM path cannot be runtime enabled.' });
     }
-    if (track.runtimeEnabled && !track.userConfirmed && !track.communityConfirmed && !track.sourceKind.startsWith('free_')) {
-      issues.push({ severity: 'warning', id: track.id, message: 'Runtime track should be user/community confirmed or a verified free source.' });
+    if (track.runtimeEnabled && !track.sourceKind.startsWith('free_')) {
+      issues.push({ severity: 'error', id: track.id, message: 'Runtime track must be a verified free source unless it is enabled by a local user-supplied fan pack switch.' });
+    }
+    if (track.runtimeEnabled && (!track.license || !track.sourceUrl || !track.attribution)) {
+      issues.push({ severity: 'error', id: track.id, message: 'Runtime track must include source URL, license, and attribution.' });
+    }
+    if (track.runtimeEnabled && track.localFileRequired) {
+      issues.push({ severity: 'error', id: track.id, message: 'User-supplied local file references cannot be runtime enabled in the free public package.' });
     }
   }
 
@@ -122,6 +143,9 @@ export function validateAudioSourceManifest(manifest: AudioSourceManifest = audi
     }
     if (sfx.runtimeEnabled && !sfx.filePath.startsWith('/audio/sfx/')) {
       issues.push({ severity: 'error', id: sfx.id, message: 'Runtime SFX must live under /audio/sfx/.' });
+    }
+    if (sfx.runtimeEnabled && (!sfx.license || !sfx.sourceUrl || !sfx.attribution)) {
+      issues.push({ severity: 'error', id: sfx.id, message: 'Runtime SFX must include source URL, license, and attribution.' });
     }
   }
 

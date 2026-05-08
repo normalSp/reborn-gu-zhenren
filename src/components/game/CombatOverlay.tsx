@@ -4,7 +4,7 @@ import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
 import type { BattlePreview, BattleTraceEntry, DuelPhase, CombatLogEntry } from '../../types';
 import { audioManager } from '../../utils/audio';
-import { DOMAIN_BGM } from '../../store/slices/soundSlice';
+import { DOMAIN_BGM, SPECIAL_BGM } from '../../store/slices/soundSlice';
 import { buildBattlePreview } from '../../engine/combat-preview';
 
 // ═══ M7: Combat variants ═══
@@ -56,7 +56,7 @@ export function CombatOverlay() {
     if (duelState) {
       setVisible(true);
       // P2修复: 进入战斗时切换至战斗 BGM
-      audioManager.crossFade('/audio/bgm/combat.mp3', 1.0);
+      audioManager.crossFade(`/audio/${SPECIAL_BGM.combat}`, 1.0);
     } else {
       // 退场动画完成后才移除 DOM（AnimatePresence 的 onExitComplete 回调）
       const t = setTimeout(() => setVisible(false), 300);

@@ -1,6 +1,5 @@
 import {
   characterBgmManifest,
-  getCharacterBgmEntryByActor,
   type CharacterBgmEntry,
   type CharacterBgmManifest,
 } from './audio-resource-policy';
@@ -35,7 +34,7 @@ function scoreEntry(entry: CharacterBgmEntry, input: CharacterBgmTriggerInput): 
   let score = Math.max(0, input.eventImportance ?? 0);
   const reasonTags: string[] = [];
 
-  if (actors.some(actor => getCharacterBgmEntryByActor(actor)?.id === entry.id)) {
+  if (actors.some(actor => isActorMatch(entry, actor))) {
     score += 30;
     reasonTags.push('actor_match');
   }
@@ -55,6 +54,13 @@ function scoreEntry(entry: CharacterBgmEntry, input: CharacterBgmTriggerInput): 
   }
 
   return { score, reasonTags: [...new Set(reasonTags)] };
+}
+
+function isActorMatch(entry: CharacterBgmEntry, actorName: string): boolean {
+  const normalized = actorName.trim();
+  return entry.characterName === normalized
+    || entry.characterId === normalized
+    || entry.aliases.some(alias => alias === normalized);
 }
 
 export function selectCharacterBgmCue(

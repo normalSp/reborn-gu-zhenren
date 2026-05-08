@@ -22,7 +22,7 @@ import type { BattleTraceEntry, SquadCombatState, SquadMemberCombat, SquadEnemy,
 import { FORMATION_BONUS } from '../../engine/squad-combat-engine';
 import { buildExtremePhysiqueSquadNotice } from '../../engine/extreme-physique-squad-gates';
 import { audioManager } from '../../utils/audio';
-import { DOMAIN_BGM } from '../../store/slices/soundSlice';
+import { DOMAIN_BGM, SPECIAL_BGM } from '../../store/slices/soundSlice';
 
 // ═══ Animation Variants (复用CombatOverlay风格) ═══
 const overlayVariants = {
@@ -125,7 +125,7 @@ export function SquadCombatOverlay() {
   useEffect(() => {
     if (squadCombatState) {
       setVisible(true);
-      audioManager.crossFade('/audio/bgm/combat.mp3', 1.0);
+      audioManager.crossFade(`/audio/${SPECIAL_BGM.combat}`, 1.0);
       // 重置行动选择
       setPlayerActions(new Map());
       setSelectedTargets(new Map());

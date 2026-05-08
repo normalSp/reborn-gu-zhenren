@@ -1,21 +1,32 @@
-# RebornG 音频素材来源说明
+RebornG v0.7.0 Audio Attribution
+================================
 
-更新时间：2026-05-08
+Runtime source of truth:
+- src/canon/audio-source-manifest.json
+- public/audio/audio-source-manifest.json is a release mirror for inspection.
 
-v0.7.0-c 起，旧的 FFmpeg/AI/合成 BGM 不再作为运行时资源。五域 BGM 的 0 字节文件与旧合成文件已经清理，运行时音频以 `audio-source-manifest.json` 为唯一来源清单。
+Policy
+------
+- Free public package: only verified free audio is runtime enabled.
+- User-supplied fan package: user-confirmed community character themes may be enabled only when local files are supplied.
+- AI/FFmpeg/synthetic BGM placeholders are not allowed in runtime.
+- Combat and achievement SFX use real free assets, not AI-generated placeholders.
 
-## 资源分层
+Runtime enabled free assets
+---------------------------
+- Forest Ambience by TinyWorlds, OpenGameArt, CC0.
+- From Here to Where? by Ecrivain, OpenGameArt, CC0.
+- The Field Of Dreams by pauliuw, OpenGameArt, CC0.
+- Ancient Power Of Serpents by Kevin MacLeod, OpenGameArt mirror, CC0.
+- Town Theme RPG by cynicmusic, OpenGameArt, CC0.
+- Battle Theme A by cynicmusic, OpenGameArt, CC0.
+- Battle Theme by Wolfgang_, OpenGameArt, CC0.
+- Cave Theme by Brandon75689, submitted by HaelDB, OpenGameArt, CC0/OGA-BY.
+- Hit sound bitcrush by DaGameKnower, OpenGameArt, CC0.
+- Power-Up Sound Effects by Spring Spring, OpenGameArt, CC0.
+- UI Click Sounds (Sci Fi) by EZduzziteh, OpenGameArt, CC0.
+- Menu sounds by fvcalderan, OpenGameArt, CC0.
 
-- `domain`：五域氛围 BGM。
-- `character`：角色曲，例如方源「年轮」、龙公「春泥」。
-- `scene`：逆流河、定仙游、宿命战、死亡定场诗等名场面。
-- `combat`：普通战、Boss、小队战、宝黄天拍卖氛围。
-- `sfx`：打击、暴击、成就、UI、事件、环境。
-
-## 当前策略
-
-- BGM：不再使用 AI/合成占位。非盈利二创包可使用用户确认的原曲/社区曲；公开演示包可切换到免费替代素材。
-- SFX：战斗和成就音效不使用 AI/合成素材，等待免费优质素材或用户确认素材。
-- 缺文件时：运行时记录诊断并静默降级，不用合成音冒充正式素材。
-
-完整清单见 `public/audio/audio-source-manifest.json`。
+User-confirmed but not bundled by default
+-----------------------------------------
+The following references are recorded for a local nonprofit fan pack and remain disabled until files are supplied locally: 方源-年轮、龙公-春泥、白凝冰-山山而川 征途漫漫、商心慈-天若有情、黑楼兰-长安姑娘、盗天魔尊-无名的人、红莲魔尊-若梦/平生不晚、幽魂魔尊-紫荆花盛开、薄青-牵丝戏、古月药乐-青衣、凤九歌-知我、吴帅-虞美人、太白云生-Cry For Me、三王山炼制定仙游-精卫琵琶版、墨瑶-唯一、马鸿运-zood 丁真版、柳贯一-Lightning Moment dj、无极魔尊-Lightning Moment dj、定场诗通用-boss area.

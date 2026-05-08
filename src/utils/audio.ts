@@ -84,7 +84,7 @@ const SFX_MANIFEST_ID_BY_NAME: Partial<Record<SfxName, string>> = {
   breakthrough: 'sfx_achievement_unlock',
   achievement: 'sfx_achievement_unlock',
   select: 'sfx_ui_click',
-  save: 'sfx_ui_click',
+  save: 'sfx_ui_confirm',
 };
 
 // ─── AudioManager 类 ───
@@ -376,7 +376,7 @@ class AudioManager {
     if (!ctx || !this.uiGain) return;
     this.updateUiGain();
 
-    if (this.playManifestSfx(name === 'save' ? 'save' : 'select', 'ui')) return;
+    if (this.playManifestSfx(name === 'save' || name === 'confirm' ? 'save' : 'select', 'ui')) return;
 
     const preset = UI_PRESETS[name];
     if (!preset) return;

@@ -1,13 +1,18 @@
-=== RebornG BGM Attribution ===
-Updated: 2026-05-08
+RebornG BGM Attribution
+======================
 
-The previous ccMixter archive and FFmpeg-generated BGM placeholders were removed from runtime use during v0.7.0-c audio rebuild.
+The previous AI/FFmpeg/synthetic BGM placeholders are retired.
+Runtime BGM is governed by `src/canon/audio-source-manifest.json`.
 
-Runtime BGM must be listed in:
-  public/audio/audio-source-manifest.json
+Enabled free BGM files:
+- domain/nanjiang.mp3 — Forest Ambience, OpenGameArt, CC0.
+- domain/beiyuan.ogg — From Here to Where?, OpenGameArt, CC0.
+- domain/donghai.mp3 — The Field Of Dreams, OpenGameArt, CC0.
+- domain/ximo.ogg — Ancient Power Of Serpents, OpenGameArt mirror, CC0.
+- domain/zhongzhou.mp3 — Town Theme RPG, OpenGameArt, CC0.
+- combat/squad_battle.mp3 — Battle Theme A, OpenGameArt, CC0.
+- combat/boss_battle.mp3 — Battle Theme, OpenGameArt, CC0.
+- scene/death_poem.ogg — Cave Theme, OpenGameArt, CC0/OGA-BY.
+- scene/reverse_flow_river.ogg — Ancient Power Of Serpents, OpenGameArt mirror, CC0.
 
-Current confirmed design targets:
-  - Fang Yuan / 方源: 年轮
-  - Duke Long / 龙公: 春泥
-
-These character themes are not enabled until the user-supplied or manually reviewed audio files are placed at the manifest paths.
+User-confirmed community character themes are documented in the manifest but are not bundled or enabled by default.

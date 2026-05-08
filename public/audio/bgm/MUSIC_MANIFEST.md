@@ -1,40 +1,44 @@
-# 蛊真人角色曲 BGM 配置 — P3 M3
+# RebornG v0.7.0 音频清单说明
 
-## 下载方式
-使用 yt-dlp 或 bilibili-dl 下载 B站音频：
-```
-pip install yt-dlp
-yt-dlp -f ba -x --audio-format mp3 -o "public/audio/bgm/character/%(title)s.%(ext)s" "https://www.bilibili.com/video/BV1khRLBUEpk/"
-```
+本文件只描述音频策略；运行时真相源为 `src/canon/audio-source-manifest.json`，`public/audio/audio-source-manifest.json` 是发布查看用镜像。
 
-## 角色曲 → 五域/BGM 映射
+## 发布策略
 
-| 角色曲 | 对应角色 | 触发场景 | 存放路径 | B站时间戳/ID |
-|--------|---------|---------|---------|-------------|
-| 方源小曲 | 古月方源 | 方源出场/春秋蝉/关键剧情 | character/fangyuan.mp3 | BV1khRLBUEpk |
-| 红莲小曲 | 红莲魔尊 | 红莲传承相关/春秋蝉共鸣 | character/honglian.mp3 | BV1khRLBUEpk |
-| 商心慈小曲 | 商心慈 | 商队/商业交易相关 | character/shangxinci.mp3 | BV1khRLBUEpk |
-| 白凝冰小曲 | 白凝冰 | 背刺事件/冰道场景 | character/bainingbing.mp3 | BV1khRLBUEpk |
+- `free_public_pack`：默认运行时包，只启用免费可核验素材。
+- `nonprofit_fan_pack` / `user_supplied`：记录用户人工核对的角色曲与名场面曲，但需要用户本地提供文件后才能启用。
+- 不从 B 站、网易云或其他平台自动抓取商业/社区曲；旧的 `yt-dlp` 下载说明已废弃。
 
-## soundSlice 扩展 (src/store/slices/soundSlice.ts)
-```typescript
-export const CHARACTER_BGM: Record<string, string> = {
-  'fangyuan': 'bgm/character/fangyuan.mp3',
-  'honglian': 'bgm/character/honglian.mp3',
-  'shangxinci': 'bgm/character/shangxinci.mp3',
-  'bainingbing': 'bgm/character/bainingbing.mp3',
-};
-```
+## 用户人工核对曲目
 
-## 名场面 BGM 触发规则
-- 方源出场/春秋蝉波动 → fangyuan
-- 红莲传承/逆流河时间异常 → honglian
-- 商业交易大额 → shangxinci
-- 白凝冰背刺/冰道战斗 → bainingbing
+这些曲目已经登记到 manifest，但默认 `runtimeEnabled=false`：
 
-## 已有域BGM (Pixabay CC0)
-- 南疆: Ancient Chinese Dali
-- 北原: Chinese traditional song 1
-- 东海: Ambient Asia
-- 西漠: World Spirits
-- 中洲: Forbidden City Track 01
+- 方源：年轮
+- 龙公：春泥
+- 白凝冰：山山而川 征途漫漫
+- 商心慈：天若有情
+- 黑楼兰：长安姑娘
+- 盗天魔尊：无名的人
+- 红莲魔尊：若梦 / 平生不晚
+- 幽魂魔尊：紫荆花盛开
+- 薄青：牵丝戏
+- 古月药乐：青衣
+- 凤九歌：知我
+- 吴帅：虞美人
+- 太白云生/逆流河被刺：Cry For Me
+- 三王山炼制定仙游：精卫琵琶版
+- 墨瑶：唯一
+- 马鸿运：zood 丁真版
+- 柳贯一：Lightning Moment dj
+- 无极魔尊：Lightning Moment dj
+- 定场诗通用：boss area
+
+这些用户确认曲目均作为 `user_supplied_reference`，不进入免费公布包。
+
+## 当前免费运行时资源
+
+- 五域 BGM：`public/audio/bgm/domain/`
+- 战斗 BGM：`public/audio/bgm/combat/`
+- 名场面/定场诗 fallback：`public/audio/bgm/scene/`
+- 打击、成就、UI 音效：`public/audio/sfx/`
+
+所有已启用资源必须在 manifest 中具备来源 URL、许可、文件路径和用途说明。

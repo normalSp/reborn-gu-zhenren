@@ -11,9 +11,9 @@
 /** 五域 BGM 映射（P3修复：路径指向子目录） */
 export const DOMAIN_BGM: Record<string, string> = {
   '南疆': 'bgm/domain/nanjiang.mp3',
-  '北原': 'bgm/domain/beiyuan.mp3',
+  '北原': 'bgm/domain/beiyuan.ogg',
   '东海': 'bgm/domain/donghai.mp3',
-  '西漠': 'bgm/domain/ximo.mp3',
+  '西漠': 'bgm/domain/ximo.ogg',
   '中洲': 'bgm/domain/zhongzhou.mp3',
 };
 
@@ -21,7 +21,7 @@ export const DOMAIN_BGM: Record<string, string> = {
 export const SPECIAL_BGM = {
   combat: 'bgm/combat/squad_battle.mp3',
   menu: 'bgm/scene/menu.mp3',
-  death: 'bgm/scene/death_poem.mp3',
+  death: 'bgm/scene/death_poem.ogg',
 };
 
 export interface SoundState {
