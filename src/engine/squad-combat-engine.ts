@@ -1,558 +1,621 @@
-/**
- * ═══ v0.7.0 小队战斗引擎 — squad-combat-engine.ts ═══
- * 设计大纲§1.4.2: 回合制速度排序 + 目标选择AI + 战术姿态加成 + 友方治疗 + 连携攻击
- * 所有函数为纯函数——无副作用、无store依赖，复用combat-formulas.ts共享公式层。
- */
+import combatConfigRaw from '../canon/combat-config.json';
 import type {
-  SquadCombatState, SquadMemberCombat, SquadEnemy,
-  SquadAction, CombatLogEntry,
+  BattleTraceEntry,
+  CombatLogEntry,
+  DuelMove,
+  SquadAction,
+  SquadCombatState,
+  SquadEnemy,
+  SquadMemberCombat,
 } from '../types';
 import {
-  calcDamage, calcHitRate, rollHit, rollCrit,
-  getPathMultiplier, getRealmCoefficients, getBlindPenalty,
-  getWeakenDefPenalty, isStatusDisabled, isConfused,
-  calcStatusDamage, tickStatuses,
-  REALM_NUM, toRealmNum,
+  calcDamage,
+  calcHitRate,
+  calcStatusDamage,
+  createSeededRng,
+  getRealmCoefficients,
+  rollCrit,
+  rollHit,
+  tickStatuses,
+  type CombatRng,
 } from './combat-formulas';
-import type { CombatStatus } from './combat-formulas';
 
-// ─── 常量 ───
+const config = combatConfigRaw as any;
+const squadConfig = config.squad ?? {};
+const resourceCost = config.resourceCost ?? {};
+const traceConfig = squadConfig.trace ?? {};
 
-/** 战术姿态加成系数 — 设计大纲§1.4.1 */
-export const FORMATION_BONUS: Record<string, {
+type Formation = SquadCombatState['formation'];
+type ActorUnit = SquadMemberCombat | SquadEnemy;
+
+export const FORMATION_BONUS: Record<Formation, {
   damageBonus: number;
   defenseBonus: number;
   speedBonus: number;
   special: string;
 }> = {
-  '合击': { damageBonus: 0.15, defenseBonus: 0, speedBonus: 0, special: '两人攻击同一目标+15%伤害' },
-  '牵制': { damageBonus: 0, defenseBonus: 0.10, speedBonus: 0, special: '牵制最强敌人使其闪避-20%' },
-  '掠阵': { damageBonus: 0, defenseBonus: 0.05, speedBonus: 0, special: '每回合自动恢复最低HP队友5%HP' },
-  '斩首': { damageBonus: 0.10, defenseBonus: 0, speedBonus: 0.05, special: '首击暴击率+10%,优先集火最弱敌人' },
+  合击: {
+    damageBonus: squadConfig.formations?.合击?.damageBonus ?? 0.15,
+    defenseBonus: squadConfig.formations?.合击?.defenseBonus ?? 0,
+    speedBonus: squadConfig.formations?.合击?.speedBonus ?? 0,
+    special: squadConfig.formations?.合击?.special ?? '集火同一目标提升伤害',
+  },
+  牵制: {
+    damageBonus: squadConfig.formations?.牵制?.damageBonus ?? 0,
+    defenseBonus: squadConfig.formations?.牵制?.defenseBonus ?? 0.1,
+    speedBonus: squadConfig.formations?.牵制?.speedBonus ?? 0,
+    special: squadConfig.formations?.牵制?.special ?? '压低强敌闪避',
+  },
+  掠阵: {
+    damageBonus: squadConfig.formations?.掠阵?.damageBonus ?? 0,
+    defenseBonus: squadConfig.formations?.掠阵?.defenseBonus ?? 0.05,
+    speedBonus: squadConfig.formations?.掠阵?.speedBonus ?? 0,
+    special: squadConfig.formations?.掠阵?.special ?? '照应低血量队友',
+  },
+  斩首: {
+    damageBonus: squadConfig.formations?.斩首?.damageBonus ?? 0.1,
+    defenseBonus: squadConfig.formations?.斩首?.defenseBonus ?? 0,
+    speedBonus: squadConfig.formations?.斩首?.speedBonus ?? 0.05,
+    special: squadConfig.formations?.斩首?.special ?? '优先击破关键目标',
+  },
 };
 
-/** 阵型默认士气/配合度 */
-const DEFAULT_MORALE = 50;
-const DEFAULT_COORDINATION = 50;
-const MIN_DAMAGE = 1;
+const DEFAULT_MORALE = squadConfig.morale?.default ?? 50;
+const DEFAULT_COORDINATION = squadConfig.coordination?.default ?? 50;
 
-// ─── 速度排序 ───
-
-/** 计算单位行动速度（用于回合排序） */
-function getSpeed(unit: { atk: number; def: number; realm: number }, formationBonus: number): number {
-  return unit.atk * 0.6 + unit.def * 0.3 + unit.realm * 0.1 + formationBonus * 10;
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
 }
 
-// ─── 战术姿态加成 ───
+function nextInt(rng: CombatRng, max: number): number {
+  return Math.floor(rng.next() * Math.max(1, max));
+}
 
-/** 计算战术姿态对伤害的加成系数 */
-export function calcFormationBonus(formation: SquadCombatState['formation']): number {
+function makeTrace(
+  round: number,
+  phase: BattleTraceEntry['phase'],
+  actor: BattleTraceEntry['actor'],
+  action: string,
+  message: string,
+  extra: Partial<BattleTraceEntry> = {},
+): BattleTraceEntry {
+  return { round, phase, actor, action, message, ...extra };
+}
+
+function pushTrace(state: SquadCombatState, entries: BattleTraceEntry[]): BattleTraceEntry[] {
+  const maxEntries = traceConfig.maxEntries ?? 80;
+  return [...(state.trace ?? []), ...entries].slice(-maxEntries);
+}
+
+function isMember(unit: ActorUnit): unit is SquadMemberCombat {
+  return 'memberId' in unit;
+}
+
+function getSpeed(unit: { atk: number; def: number; realm: number }, formationBonus: number): number {
+  return unit.atk * 0.6 + unit.def * 0.3 + unit.realm * 3 + formationBonus * 30;
+}
+
+export function calcFormationBonus(formation: Formation): number {
   return FORMATION_BONUS[formation]?.damageBonus ?? 0;
 }
 
-/** 計算戰术姿态对速度的加成 */
-export function calcFormationSpeedBonus(formation: SquadCombatState['formation']): number {
+export function calcFormationSpeedBonus(formation: Formation): number {
   return FORMATION_BONUS[formation]?.speedBonus ?? 0;
 }
 
-// ─── 士气系统 ───
-
-/** 士气对伤害的修正：士气0-100映射到-20% ~ +20% */
 export function applyMoraleEffect(baseDamage: number, morale: number): number {
-  const modifier = ((morale - 50) / 50) * 0.20; // -0.20 ~ +0.20
-  return Math.round(baseDamage * (1 + modifier));
+  const minMult = squadConfig.morale?.minDamageMult ?? 0.8;
+  const maxMult = squadConfig.morale?.maxDamageMult ?? 1.2;
+  const multiplier = minMult + (clamp(morale, 0, 100) / 100) * (maxMult - minMult);
+  return Math.max(1, Math.round(baseDamage * multiplier));
 }
 
-/** 士气对命中率的影响：低士气降低命中 */
 export function applyMoraleHitPenalty(morale: number): number {
-  if (morale >= 60) return 0;
-  return (60 - morale) * 0.003; // 最高-0.12
+  const start = squadConfig.morale?.lowHitPenaltyStart ?? 60;
+  if (morale >= start) return 0;
+  return (start - morale) * (squadConfig.morale?.lowHitPenaltyPerPoint ?? 0.003);
 }
 
-// ─── 配合度/连携 ───
-
-/** 配合度对连携概率的影响 */
 function calcCoordinationChance(coordination: number): number {
-  return Math.min(0.50, coordination / 200); // 配合度100→50%连携概率
+  const divisor = squadConfig.coordination?.chanceDivisor ?? 200;
+  const maxChance = squadConfig.coordination?.maxComboChance ?? 0.5;
+  return Math.min(maxChance, clamp(coordination, 0, 100) / divisor);
 }
 
-// ─── AI 目标选择 ───
+function normalizeMember(member: SquadMemberCombat): SquadMemberCombat {
+  const maxEssence = member.essence?.max ?? 100;
+  return {
+    ...member,
+    hp: Math.min(member.maxHp, member.hp > 0 ? member.hp : member.maxHp),
+    statuses: member.statuses ?? [],
+    action: null,
+    moves: member.moves ?? [],
+    essence: member.essence ?? {
+      current: maxEssence,
+      max: maxEssence,
+      type: member.realm >= 6 ? 'immortal' : 'primeval',
+    },
+    daoMarks: member.daoMarks ?? Math.max(0, member.realm * 30),
+    cooldowns: member.cooldowns ?? {},
+    fatigue: member.fatigue ?? 0,
+  };
+}
 
-/** 敌方单位选择攻击目标（按性格/AI模式） */
-function selectEnemyTarget(
-  enemy: SquadEnemy,
-  members: SquadMemberCombat[],
-): number {
-  const alive = members.filter(m => m.hp > 0);
-  if (alive.length === 0) return 0;
+function normalizeEnemy(enemy: SquadEnemy): SquadEnemy {
+  return {
+    ...enemy,
+    hp: Math.min(enemy.maxHp, enemy.hp > 0 ? enemy.hp : enemy.maxHp),
+    statuses: enemy.statuses ?? [],
+    aiMode: enemy.aiMode ?? 'balanced',
+    moves: enemy.moves ?? [],
+    daoMarks: enemy.daoMarks ?? Math.max(0, enemy.realm * 30),
+  };
+}
 
-  switch (enemy.aiMode) {
-    case 'aggressive':
-      // 优先攻击HP最低的
-      return members.indexOf(alive.reduce((min, m) => m.hp < min.hp ? m : min, alive[0]));
-    case 'defensive':
-      // 优先攻击威胁最大的（ATK最高）
-      return members.indexOf(alive.reduce((max, m) => m.atk > max.atk ? m : max, alive[0]));
-    case 'coward':
-      // 优先攻击已受伤的
-      return members.indexOf(alive.reduce((min, m) => (m.hp / m.maxHp) < (min.hp / min.maxHp) ? m : min, alive[0]));
-    case 'balanced':
-    default:
-      // 随机目标
-      return members.indexOf(alive[Math.floor(Math.random() * alive.length)]);
+function findMove(member: SquadMemberCombat, action: SquadAction): DuelMove | null {
+  if (action.type !== 'gu_skill' || action.moveId === 'heal') return null;
+  const moves = member.moves ?? [];
+  return moves.find(move =>
+    move.killerMoveId === action.moveId
+    || move.name === action.moveId
+    || String(moves.indexOf(move)) === action.moveId,
+  ) ?? null;
+}
+
+function spendEssence(member: SquadMemberCombat, cost: number): { member: SquadMemberCombat; paid: boolean } {
+  const essence = member.essence ?? { current: 100, max: 100, type: member.realm >= 6 ? 'immortal' as const : 'primeval' as const };
+  if (essence.current < cost) return { member, paid: false };
+  return {
+    member: { ...member, essence: { ...essence, current: Math.max(0, essence.current - cost) } },
+    paid: true,
+  };
+}
+
+function decrementCooldowns(member: SquadMemberCombat): SquadMemberCombat {
+  const next: Record<string, number> = {};
+  for (const [key, value] of Object.entries(member.cooldowns ?? {})) {
+    if (value > 1) next[key] = value - 1;
   }
+  return { ...member, cooldowns: next };
 }
 
-/** 敌方单位选择行动 */
-function selectEnemyAction(enemy: SquadEnemy, members: SquadMemberCombat[]): SquadAction {
-  const targetIdx = selectEnemyTarget(enemy, members);
-  // 5%概率使用防御
-  if (Math.random() < 0.05 && enemy.aiMode !== 'aggressive') {
-    return { type: 'defend' };
+function selectEnemyTarget(enemy: SquadEnemy, members: SquadMemberCombat[], rng: CombatRng): number {
+  const alive = members.map((member, index) => ({ member, index })).filter(row => row.member.hp > 0);
+  if (!alive.length) return 0;
+  if (enemy.aiMode === 'aggressive') {
+    return alive.reduce((min, row) => row.member.hp < min.member.hp ? row : min, alive[0]).index;
   }
-  return { type: 'attack', targetIndex: targetIdx };
+  if (enemy.aiMode === 'defensive') {
+    return alive.reduce((max, row) => row.member.atk > max.member.atk ? row : max, alive[0]).index;
+  }
+  if (enemy.aiMode === 'coward') {
+    return alive.reduce((min, row) =>
+      (row.member.hp / row.member.maxHp) < (min.member.hp / min.member.maxHp) ? row : min, alive[0]).index;
+  }
+  return alive[nextInt(rng, alive.length)].index;
 }
 
-// ─── 性格驱动的友方行动 ───
+function selectEnemyAction(enemy: SquadEnemy, members: SquadMemberCombat[], rng: CombatRng): SquadAction {
+  if (enemy.aiMode !== 'aggressive' && rng.next() < 0.05) return { type: 'defend' };
+  return { type: 'attack', targetIndex: selectEnemyTarget(enemy, members, rng) };
+}
 
-/** 根据队员性格生成默认行动 */
 function selectMemberDefaultAction(
   member: SquadMemberCombat,
   allies: SquadMemberCombat[],
   enemies: SquadEnemy[],
 ): SquadAction {
-  const aliveEnemies = enemies.filter(e => e.hp > 0);
-  if (aliveEnemies.length === 0) return { type: 'defend' };
-
-  switch (member.personality) {
-    case 'loyal': {
-      // 忠诚：优先保护玩家（memberId最小的盟友）
-      const player = allies.find(a => a.hp > 0);
-      if (player && player.hp < player.maxHp * 0.5) {
-        return { type: 'defend' }; // 防守姿态保护
-      }
-      return { type: 'attack', targetIndex: enemies.indexOf(aliveEnemies[0]) };
-    }
-    case 'cunning':
-      // 狡诈：优先攻击最弱的敌人
-      return {
-        type: 'attack',
-        targetIndex: enemies.indexOf(aliveEnemies.reduce((min, e) => e.hp < min.hp ? e : min, aliveEnemies[0])),
-      };
-    case 'reckless':
-      // 莽撞：优先攻击最强的敌人
-      return {
-        type: 'attack',
-        targetIndex: enemies.indexOf(aliveEnemies.reduce((max, e) => e.atk > max.atk ? e : max, aliveEnemies[0])),
-      };
-    case 'cautious':
-      // 谨慎：自身HP<50%时防守
-      if (member.hp < member.maxHp * 0.5) return { type: 'defend' };
-      return { type: 'attack', targetIndex: enemies.indexOf(aliveEnemies[Math.floor(Math.random() * aliveEnemies.length)]) };
-    case 'selfless': {
-      // 无私：优先治疗受伤最重的队友
-      const injured = allies.filter(a => a.hp > 0 && a.hp < a.maxHp).sort((a, b) => (a.hp / a.maxHp) - (b.hp / b.maxHp));
-      if (injured.length > 0 && injured[0].memberId !== member.memberId) {
-        return { type: 'gu_skill', moveId: 'heal', targetIndex: allies.indexOf(injured[0]) };
-      }
-      return { type: 'attack', targetIndex: enemies.indexOf(aliveEnemies[0]) };
-    }
-    default:
-      return { type: 'attack', targetIndex: enemies.indexOf(aliveEnemies[0]) };
+  const aliveEnemies = enemies.map((enemy, index) => ({ enemy, index })).filter(row => row.enemy.hp > 0);
+  if (!aliveEnemies.length) return { type: 'defend' };
+  if (member.personality === 'selfless') {
+    const injured = allies
+      .map((ally, index) => ({ ally, index }))
+      .filter(row => row.ally.hp > 0 && row.ally.hp < row.ally.maxHp && row.ally.memberId !== member.memberId)
+      .sort((a, b) => (a.ally.hp / a.ally.maxHp) - (b.ally.hp / b.ally.maxHp));
+    if (injured.length) return { type: 'gu_skill', moveId: 'heal', targetIndex: injured[0].index };
   }
+  if (member.personality === 'reckless') {
+    return { type: 'attack', targetIndex: aliveEnemies.reduce((max, row) => row.enemy.atk > max.enemy.atk ? row : max, aliveEnemies[0]).index };
+  }
+  if (member.personality === 'cautious' && member.hp / member.maxHp < 0.35) return { type: 'defend' };
+  return { type: 'attack', targetIndex: aliveEnemies[0].index };
 }
-
-// ─── 伤害计算（squad版） ───
 
 interface AttackResult {
   damage: number;
   hit: boolean;
   crit: boolean;
+  hitRate: number;
   message: string;
 }
 
-function computeSquadAttack(
-  attacker: SquadMemberCombat | SquadEnemy,
-  defender: SquadMemberCombat | SquadEnemy,
-  formationBonus: number,
-  morale: number,
-  coordination: number,
-  isCombo: boolean,
+function computeAttack(
+  attacker: ActorUnit,
+  defender: ActorUnit,
+  options: {
+    formation: Formation;
+    morale: number;
+    isCombo: boolean;
+    move?: DuelMove | null;
+    rng: CombatRng;
+  },
 ): AttackResult {
-  const realmMult = getRealmCoefficients(
-    REALM_NUM[`${attacker.realm}转`] ?? attacker.realm,
-    REALM_NUM[`${defender.realm}转`] ?? defender.realm,
-  ).playerDamageMult || 1.0;
+  const coeff = getRealmCoefficients(attacker.realm, defender.realm);
+  const attackerIsMember = isMember(attacker);
+  const realmMult = attackerIsMember ? coeff.playerDamageMult : coeff.enemyDamageMult;
+  const hitBonus = attackerIsMember ? coeff.playerHitBonus : coeff.enemyHitPenalty;
+  const moveMult = options.move?.damageMultiplier ?? 1;
+  const pathBonus = options.move?.pathBonus ?? 0;
+  const formationDamage = attackerIsMember ? calcFormationBonus(options.formation) : 0;
+  const comboBonus = options.isCombo ? (squadConfig.formations?.合击?.comboChanceBonus ?? 0.1) : 0;
+  const baseHitRate = calcHitRate(attacker.atk + pathBonus, defender.def, hitBonus);
+  const hitRate = clamp(baseHitRate - (attackerIsMember ? applyMoraleHitPenalty(options.morale) : 0), 0.08, 0.96);
+  const hit = rollHit(hitRate, options.rng);
+  if (!hit) return { damage: 0, hit, crit: false, hitRate, message: '未命中' };
 
-  const pathMult = getPathMultiplier(attacker.path, defender.path);
-  const moveMult = 1.0; // 基础攻击，非杀招
-  const hitBonus = -getBlindPenalty(('statuses' in attacker ? (attacker as any).statuses : []));
-  const hitRate = calcHitRate(attacker.atk, defender.def, hitBonus) - applyMoraleHitPenalty(morale);
-  const hit = rollHit(hitRate);
-  if (!hit) {
-    return { damage: 0, hit: false, crit: false, message: 'miss' };
-  }
-
-  const crit = rollCrit() || (formationBonus > 0.05 && isCombo && Math.random() < 0.10); // 斩首首击+10%暴击
-  const dmg = calcDamage(
-    attacker.atk, defender.def,
-    attacker.path, defender.path,
-    realmMult, moveMult, crit,
-    0, 0,
-  );
-
-  // 战术姿态加成
-  const withFormation = Math.round(dmg * (1 + formationBonus));
-  // 士气修正
-  const withMorale = applyMoraleEffect(withFormation, morale);
-
-  return {
-    damage: Math.max(MIN_DAMAGE, withMorale),
-    hit: true,
+  const critBonus = options.formation === '斩首' && attackerIsMember ? (squadConfig.formations?.斩首?.critBonus ?? 0.1) : 0;
+  const crit = rollCrit(options.rng) || options.rng.next() < critBonus;
+  const rawDamage = calcDamage(
+    attacker.atk + pathBonus,
+    defender.def,
+    attacker.path,
+    defender.path,
+    realmMult,
+    moveMult * (1 + formationDamage + comboBonus),
     crit,
-    message: crit ? `暴击! ${withMorale}点伤害` : `${withMorale}点伤害`,
-  };
-}
-
-// ─── 治疗逻辑 ───
-
-function computeHeal(healer: SquadMemberCombat, target: SquadMemberCombat): { healAmount: number; message: string } {
-  const healBase = Math.floor(healer.atk * 0.3); // 治疗量基于ATK的30%
-  const healPct = Math.floor(target.maxHp * 0.15); // 至少恢复15%最大HP
-  const healAmount = Math.max(healBase, healPct);
+    attacker.daoMarks ?? 0,
+    defender.daoMarks ?? 0,
+    options.rng,
+  );
+  const damage = attackerIsMember ? applyMoraleEffect(rawDamage, options.morale) : rawDamage;
   return {
-    healAmount: Math.min(healAmount, target.maxHp - target.hp),
-    message: `恢复${healAmount}HP`,
+    damage,
+    hit,
+    crit,
+    hitRate,
+    message: `${crit ? '暴击，' : ''}造成${damage}点伤害`,
   };
 }
 
-// ─── 核心回合处理 ───
+function computeHeal(healer: SquadMemberCombat, target: SquadMemberCombat): number {
+  return Math.min(target.maxHp - target.hp, Math.max(Math.floor(healer.atk * 0.3), Math.floor(target.maxHp * 0.15)));
+}
 
-/** 处理单次攻击行动 */
-function processAttackAction(
-  action: SquadAction & { type: 'attack' },
-  attacker: SquadMemberCombat | SquadEnemy,
-  defenders: (SquadMemberCombat | SquadEnemy)[],
-  formationBonus: number,
-  morale: number,
-  coordination: number,
-  isCombo: boolean,
+function applyStatusTicks(
+  members: SquadMemberCombat[],
+  enemies: SquadEnemy[],
   round: number,
-): { defender: SquadMemberCombat | SquadEnemy; log: CombatLogEntry } | null {
-  if (action.targetIndex < 0 || action.targetIndex >= defenders.length) return null;
-  const defender = defenders[action.targetIndex];
-  if (defender.hp <= 0) return null;
+): { members: SquadMemberCombat[]; enemies: SquadEnemy[]; logs: CombatLogEntry[]; traces: BattleTraceEntry[] } {
+  const logs: CombatLogEntry[] = [];
+  const traces: BattleTraceEntry[] = [];
+  const nextMembers = members.map(member => {
+    let hp = member.hp;
+    for (const status of member.statuses ?? []) {
+      const damage = calcStatusDamage(status, member.maxHp);
+      if (damage > 0) {
+        hp = Math.max(0, hp - damage);
+        logs.push({ round, actor: 'player', action: status.type, damage, hit: true, crit: false, message: `${member.name} 受到${status.type}持续伤害 ${damage}` });
+        traces.push(makeTrace(round, 'resource', 'player', status.type, `${member.name} 受到${status.type}持续伤害`, { damage, tags: ['status'] }));
+      }
+    }
+    return decrementCooldowns({ ...member, hp, statuses: tickStatuses(member.statuses ?? []) });
+  });
+  const nextEnemies = enemies.map(enemy => {
+    let hp = enemy.hp;
+    for (const status of enemy.statuses ?? []) {
+      const damage = calcStatusDamage(status, enemy.maxHp);
+      if (damage > 0) {
+        hp = Math.max(0, hp - damage);
+        logs.push({ round, actor: 'enemy', action: status.type, damage, hit: true, crit: false, message: `${enemy.name} 受到${status.type}持续伤害 ${damage}` });
+        traces.push(makeTrace(round, 'resource', 'enemy', status.type, `${enemy.name} 受到${status.type}持续伤害`, { damage, tags: ['status'] }));
+      }
+    }
+    return { ...enemy, hp, statuses: tickStatuses(enemy.statuses ?? []) };
+  });
+  return { members: nextMembers, enemies: nextEnemies, logs, traces };
+}
 
-  const result = computeSquadAttack(attacker, defender, formationBonus, morale, coordination, isCombo);
-  const newHp = Math.max(0, defender.hp - result.damage);
-
+function buildRewardPreview(state: SquadCombatState): NonNullable<SquadCombatState['rewardPreview']> {
+  const enemyRealmSum = state.enemies.reduce((sum, enemy) => sum + enemy.realm, 0);
+  const yuanStone = Math.min(
+    squadConfig.rewardArbitrage?.maxExpectedYuanStonePerTurnMortal ?? 80,
+    Math.max(10, enemyRealmSum * 18),
+  );
   return {
-    defender: { ...defender, hp: newHp },
-    log: {
-      round,
-      actor: 'player',
-      action: result.hit ? (result.crit ? '暴击' : '攻击') : 'miss',
-      damage: result.damage,
-      hit: result.hit,
-      crit: result.crit,
-      message: `${attacker.name} 对 ${defender.name} ${result.message}`,
-    },
+    yuanStone,
+    materials: {},
+    rumors: ['敌方蛊虫默认死亡或自毁；只有剧情白名单允许掉蛊。'],
   };
 }
 
-// ─── 公开API ───
+function checkResult(state: SquadCombatState): SquadCombatState['result'] | null {
+  const allMembersDown = state.members.every(member => member.hp <= 0);
+  const allEnemiesDown = state.enemies.every(enemy => enemy.hp <= 0);
+  if (!allMembersDown && !allEnemiesDown) return null;
+  const winner = allEnemiesDown ? 'player' : 'enemy';
+  return {
+    winner,
+    roundsTaken: state.round,
+    casualties: [],
+    wounded: state.members.filter(member => member.hp <= 0).map(member => member.name),
+    moraleDelta: winner === 'player' ? 8 : -12,
+    trustDeltas: Object.fromEntries(state.members.map(member => [member.memberId, winner === 'player' ? 2 : -4])),
+    rewards: winner === 'player' ? buildRewardPreview(state) : undefined,
+  };
+}
 
-/** 初始化小队战斗 */
 export function initSquadDuel(
   squadId: string,
   members: SquadMemberCombat[],
   enemies: SquadEnemy[],
-  formation: SquadCombatState['formation'] = '牵制',
+  formation: Formation = '牵制',
   morale: number = DEFAULT_MORALE,
   coordination: number = DEFAULT_COORDINATION,
+  seed: number | string = `${squadId}:${Date.now()}`,
 ): SquadCombatState {
+  const safeFormation = FORMATION_BONUS[formation] ? formation : '牵制';
   return {
     squadId,
     phase: 'deploy',
     round: 1,
-    formation,
-    morale: Math.max(0, Math.min(100, morale)),
-    coordination: Math.max(0, Math.min(100, coordination)),
-    members: members.map(m => ({ ...m, hp: m.maxHp, statuses: [], action: null })),
-    enemies: enemies.map(e => ({ ...e, hp: e.maxHp, statuses: [], aiMode: e.aiMode || 'balanced' })),
+    formation: safeFormation,
+    morale: clamp(morale, 0, 100),
+    coordination: clamp(coordination, 0, 100),
+    members: members.map(normalizeMember),
+    enemies: enemies.map(normalizeEnemy),
     log: [],
+    trace: [makeTrace(0, 'scout', 'system', 'init', `小队战初始化：${members.length}v${enemies.length}`, { tags: ['squad_start'] })],
+    eventCandidates: [],
+    seed: typeof seed === 'number' ? seed : String(seed).split('').reduce((sum, char) => sum + char.charCodeAt(0), 0),
+    mode: 'lethal',
+    rewardPreview: buildRewardPreview({ enemies } as SquadCombatState),
+    result: null,
   };
 }
 
-/** 检查战斗是否结束 */
 export function checkSquadEnd(state: SquadCombatState): 'player_win' | 'enemy_win' | 'ongoing' {
-  const allMembersDead = state.members.every(m => m.hp <= 0);
-  const allEnemiesDead = state.enemies.every(e => e.hp <= 0);
-  if (allMembersDead) return 'enemy_win';
-  if (allEnemiesDead) return 'player_win';
-  return 'ongoing';
+  const result = checkResult(state);
+  if (!result) return 'ongoing';
+  return result.winner === 'player' ? 'player_win' : 'enemy_win';
 }
 
-/** 处理掠阵效果：每回合自动恢复HP最低的队友5%HP */
-function applyFlankSupport(state: SquadCombatState): SquadCombatState {
-  if (state.formation !== '掠阵') return state;
-
-  const aliveMembers = state.members.filter(m => m.hp > 0);
-  if (aliveMembers.length === 0) return state;
-
-  const lowestHp = aliveMembers.reduce((min, m) =>
-    (m.hp / m.maxHp) < (min.hp / min.maxHp) ? m : min, aliveMembers[0]);
-  const healAmount = Math.floor(lowestHp.maxHp * 0.05);
-
-  if (healAmount <= 0) return state;
-
-  const newMembers = state.members.map(m =>
-    m.memberId === lowestHp.memberId
-      ? { ...m, hp: Math.min(m.maxHp, m.hp + healAmount) }
-      : m,
+function calculateEscape(state: SquadCombatState, rng: CombatRng): boolean {
+  const livingMembers = state.members.filter(member => member.hp > 0);
+  const livingEnemies = state.enemies.filter(enemy => enemy.hp > 0);
+  const avgMemberRealm = livingMembers.reduce((sum, member) => sum + member.realm, 0) / Math.max(1, livingMembers.length);
+  const avgEnemyRealm = livingEnemies.reduce((sum, enemy) => sum + enemy.realm, 0) / Math.max(1, livingEnemies.length);
+  const chance = clamp(
+    (squadConfig.escape?.baseChance ?? 0.35)
+      + state.morale * (squadConfig.escape?.moraleWeight ?? 0.002)
+      - Math.max(0, avgEnemyRealm - avgMemberRealm) * (squadConfig.escape?.rankPenalty ?? 0.08),
+    squadConfig.escape?.minChance ?? 0.05,
+    squadConfig.escape?.maxChance ?? 0.8,
   );
+  return rng.next() < chance;
+}
 
+function applyFormationSupport(state: SquadCombatState): { members: SquadMemberCombat[]; logs: CombatLogEntry[]; traces: BattleTraceEntry[] } {
+  if (state.formation !== '掠阵') return { members: state.members, logs: [], traces: [] };
+  const candidates = state.members
+    .map((member, index) => ({ member, index }))
+    .filter(row => row.member.hp > 0 && row.member.hp < row.member.maxHp)
+    .sort((a, b) => (a.member.hp / a.member.maxHp) - (b.member.hp / b.member.maxHp));
+  if (!candidates.length) return { members: state.members, logs: [], traces: [] };
+  const row = candidates[0];
+  const heal = Math.max(1, Math.floor(row.member.maxHp * (squadConfig.formations?.掠阵?.healLowestPct ?? 0.05)));
+  const members = state.members.map((member, index) => index === row.index ? { ...member, hp: Math.min(member.maxHp, member.hp + heal) } : member);
+  const message = `掠阵护持：${row.member.name}恢复${heal}HP`;
   return {
-    ...state,
-    members: newMembers,
-    log: [...state.log, {
-      round: state.round,
-      actor: 'player',
-      action: '掠阵恢复',
-      damage: healAmount,
-      hit: true,
-      crit: false,
-      message: `掠阵: ${lowestHp.name} 恢复 ${healAmount}HP`,
-    }],
+    members,
+    logs: [{ round: state.round, actor: 'player', action: '掠阵', damage: heal, hit: true, crit: false, message }],
+    traces: [makeTrace(state.round, 'resource', 'player', '掠阵', message, { resourceCost: 0, tags: ['formation'] })],
   };
 }
 
-/** 处理牵制效果：敌方最强单位闪避-20% */
-function applyPinningEffect(state: SquadCombatState, enemyIndex: number): SquadEnemy {
-  const enemy = state.enemies[enemyIndex];
-  // 牵制通过降低def来模拟闪避降低（防守能力下降）
-  return {
-    ...enemy,
-    def: Math.floor(enemy.def * 0.80),
-    statuses: [...enemy.statuses, { type: 'weaken', remainingTurns: 1, potency: 1 }],
-  };
-}
-
-/**
- * 执行一个回合
- * @param state 当前战斗状态
- * @param playerActions 玩家为每位队员选择的行动
- * @returns 更新后的战斗状态
- */
 export function executeSquadTurn(
   state: SquadCombatState,
   playerActions: SquadAction[],
 ): SquadCombatState {
-  // 1. 为敌方生成AI行动
-  const enemyActions: SquadAction[] = state.enemies
-    .filter(e => e.hp > 0)
-    .map(e => selectEnemyAction(e, state.members));
+  const rng = createSeededRng(`${state.seed ?? 1}:${state.round}`);
+  const round = state.round;
+  const logs: CombatLogEntry[] = [...state.log];
+  const traces: BattleTraceEntry[] = [];
 
-  // 2. 速度排序：我方+敌方混排
-  const formationSpeedBonus = calcFormationSpeedBonus(state.formation);
-  interface TurnOrder {
-    type: 'member' | 'enemy';
-    index: number;
-    speed: number;
+  if (playerActions.some(action => action.type === 'escape')) {
+    const escaped = calculateEscape(state, rng);
+    traces.push(makeTrace(round, 'morale_escape', 'player', 'escape', escaped ? '小队找到撤退窗口' : '撤退失败，敌人压上', { tags: ['escape'] }));
+    logs.push({ round, actor: 'player', action: '撤退', hit: escaped, crit: false, message: escaped ? '小队撤出战场。' : '撤退失败。' });
+    if (escaped) {
+      return {
+        ...state,
+        phase: 'ended',
+        log: logs,
+        trace: pushTrace(state, traces),
+        result: {
+          winner: 'escaped',
+          roundsTaken: round,
+          casualties: [],
+          wounded: [],
+          moraleDelta: -4,
+          trustDeltas: Object.fromEntries(state.members.map(member => [member.memberId, -1])),
+        },
+      };
+    }
   }
-  const turnOrder: TurnOrder[] = [
-    ...state.members.filter(m => m.hp > 0).map((m, i) => ({
-      type: 'member' as const, index: i, speed: getSpeed(m, formationSpeedBonus),
-    })),
-    ...state.enemies.filter(e => e.hp > 0).map((e, i) => ({
-      type: 'enemy' as const, index: i, speed: getSpeed(e, 0),
-    })),
-  ].sort((a, b) => b.speed - a.speed);
 
-  // 3. 处理连携（合击加成）：检测同目标攻击
-  const coordinationChance = calcCoordinationChance(state.coordination);
+  let members = state.members.map(normalizeMember);
+  let enemies = state.enemies.map(normalizeEnemy);
+  const formationSpeedBonus = calcFormationSpeedBonus(state.formation);
+  const turnOrder = [
+    ...members.map((member, index) => ({ type: 'member' as const, index, speed: member.hp > 0 ? getSpeed(member, formationSpeedBonus) : -1 })),
+    ...enemies.map((enemy, index) => ({ type: 'enemy' as const, index, speed: enemy.hp > 0 ? getSpeed(enemy, 0) : -1 })),
+  ].filter(row => row.speed >= 0).sort((a, b) => b.speed - a.speed);
+
   const targetCounts = new Map<number, number>();
-  for (const [i, a] of playerActions.entries()) {
-    if (a.type === 'attack') targetCounts.set(a.targetIndex, (targetCounts.get(a.targetIndex) || 0) + 1);
+  for (const action of playerActions) {
+    if (action.type === 'attack' || action.type === 'gu_skill') {
+      targetCounts.set(action.targetIndex, (targetCounts.get(action.targetIndex) ?? 0) + 1);
+    }
   }
   const comboTargets = new Set<number>();
-  for (const [targetIdx, count] of targetCounts) {
-    if (count >= 2 && Math.random() < coordinationChance) comboTargets.add(targetIdx);
+  for (const [targetIndex, count] of targetCounts) {
+    if (count >= 2 && rng.next() < calcCoordinationChance(state.coordination)) comboTargets.add(targetIndex);
   }
-
-  // 4. 按速度顺序执行行动
-  let currentMembers = [...state.members];
-  let currentEnemies = [...state.enemies];
-  const newLog: CombatLogEntry[] = [...state.log];
 
   for (const actor of turnOrder) {
     if (actor.type === 'member') {
-      const member = currentMembers[actor.index];
-      if (member.hp <= 0) continue;
-      const action = playerActions[actor.index] || selectMemberDefaultAction(member, currentMembers, currentEnemies);
+      const member = members[actor.index];
+      if (!member || member.hp <= 0) continue;
+      const action = playerActions[actor.index] ?? selectMemberDefaultAction(member, members, enemies);
 
-      // 状态检测：混乱可能打自己人
-      const confused = isConfused(member.statuses);
-      const disabled = isStatusDisabled(member.statuses);
-
-      if (disabled) {
-        newLog.push({ round: state.round, actor: 'player', action: '硬直', message: `${member.name} 无法行动` });
+      if (action.type === 'defend') {
+        const { member: paidMember } = spendEssence(member, resourceCost.defendEssencePct ?? 3);
+        members[actor.index] = { ...paidMember, def: Math.round(paidMember.def * (1 + (FORMATION_BONUS[state.formation]?.defenseBonus ?? 0.12))), action };
+        logs.push({ round, actor: 'player', action: '防御', hit: true, crit: false, message: `${member.name}采取防御姿态。` });
+        traces.push(makeTrace(round, 'action', 'player', 'defend', `${member.name}防御，临时提高防御`, { tags: ['defend'] }));
         continue;
       }
 
-      if (action.type === 'attack') {
-        let targetIdx = action.targetIndex;
-        if (confused) {
-          // 混乱：随机攻击（包括队友）
-          const allTargets = [...currentEnemies.filter(e => e.hp > 0), ...currentMembers.filter(m => m.hp > 0 && m.memberId !== member.memberId)];
-          if (allTargets.length > 0) {
-            const randomTarget = allTargets[Math.floor(Math.random() * allTargets.length)];
-            targetIdx = 'memberId' in randomTarget
-              ? currentMembers.indexOf(randomTarget as SquadMemberCombat)
-              : currentEnemies.indexOf(randomTarget as SquadEnemy);
-          }
+      if (action.type === 'gu_skill' && action.moveId === 'heal') {
+        const target = members[action.targetIndex] ?? members[actor.index];
+        const heal = computeHeal(member, target);
+        const { member: paidMember, paid } = spendEssence(member, resourceCost.defaultGuSkillEssencePct ?? 8);
+        members[actor.index] = paidMember;
+        if (paid && heal > 0) {
+          members[action.targetIndex] = { ...target, hp: Math.min(target.maxHp, target.hp + heal) };
+          logs.push({ round, actor: 'player', action: '治疗', damage: heal, hit: true, crit: false, message: `${member.name}救治${target.name}，恢复${heal}HP。` });
+          traces.push(makeTrace(round, 'resource', 'player', 'heal', `${member.name}消耗真元治疗${target.name}`, { resourceCost: resourceCost.defaultGuSkillEssencePct ?? 8, tags: ['gu_skill'] }));
+        } else {
+          logs.push({ round, actor: 'player', action: '治疗失败', hit: false, crit: false, message: `${member.name}真元不足，无法救治。` });
         }
-
-        const isCombo = comboTargets.has(targetIdx) && state.formation === '合击';
-        const formationDmgBonus = calcFormationBonus(state.formation);
-
-        // 牵制姿态：攻击最强敌人
-        if (state.formation === '牵制' && targetIdx < currentEnemies.length && currentEnemies[targetIdx].hp > 0) {
-          currentEnemies[targetIdx] = applyPinningEffect(state, targetIdx);
-        }
-
-        if (targetIdx >= 0 && targetIdx < currentEnemies.length && currentEnemies[targetIdx].hp > 0) {
-          const result = processAttackAction(
-            { type: 'attack', targetIndex: targetIdx },
-            member, currentEnemies, formationDmgBonus, state.morale, state.coordination, isCombo, state.round,
-          );
-          if (result) {
-            currentEnemies[targetIdx] = result.defender as SquadEnemy;
-            newLog.push(result.log);
-          }
-        } else if (targetIdx >= 0 && targetIdx < currentMembers.length && currentMembers[targetIdx].hp > 0 && confused) {
-          // 混乱打队友
-          const dmg = Math.floor(member.atk * 0.5);
-          currentMembers[targetIdx] = { ...currentMembers[targetIdx], hp: Math.max(0, currentMembers[targetIdx].hp - dmg) };
-          newLog.push({ round: state.round, actor: 'player', action: '混乱', damage: dmg, hit: true, crit: false, message: `${member.name} 混乱中误伤 ${currentMembers[targetIdx].name}` });
-        }
-
-      } else if (action.type === 'defend') {
-        // 防御姿态：临时防御+20%
-        currentMembers[actor.index] = { ...member, def: Math.floor(member.def * 1.20), action };
-        newLog.push({ round: state.round, actor: 'player', action: '防御', message: `${member.name} 采取防御姿态` });
-
-      } else if (action.type === 'gu_skill' && action.moveId === 'heal') {
-        const targetIdx = action.targetIndex;
-        if (targetIdx >= 0 && targetIdx < currentMembers.length && currentMembers[targetIdx].hp > 0) {
-          const healResult = computeHeal(member, currentMembers[targetIdx]);
-          currentMembers[targetIdx] = { ...currentMembers[targetIdx], hp: currentMembers[targetIdx].hp + healResult.healAmount };
-          newLog.push({ round: state.round, actor: 'player', action: '治疗', damage: healResult.healAmount, hit: true, crit: false, message: `${member.name} 治疗 ${currentMembers[targetIdx].name}: ${healResult.message}` });
-        }
-
-      } else if (action.type === 'escape') {
-        newLog.push({ round: state.round, actor: 'player', action: '撤退', message: `${member.name} 试图撤退` });
-      }
-
-    } else if (actor.type === 'enemy') {
-      const enemy = currentEnemies[actor.index];
-      if (enemy.hp <= 0) continue;
-      const action = enemyActions[actor.index] || { type: 'attack', targetIndex: 0 };
-
-      const disabled = isStatusDisabled(enemy.statuses);
-      if (disabled) {
-        newLog.push({ round: state.round, actor: 'enemy', action: '硬直', message: `${enemy.name} 无法行动` });
         continue;
       }
 
-      if (action.type === 'attack' && action.targetIndex < currentMembers.length) {
-        const result = computeSquadAttack(enemy, currentMembers[action.targetIndex], 0, 50, 0, false);
-        if (result.hit) {
-          currentMembers[action.targetIndex] = {
-            ...currentMembers[action.targetIndex],
-            hp: Math.max(0, currentMembers[action.targetIndex].hp - result.damage),
+      const move = findMove(member, action);
+      const targetIndex = (action.type === 'attack' || action.type === 'gu_skill') ? action.targetIndex : 0;
+      const defender = enemies[targetIndex];
+      if (!defender || defender.hp <= 0) continue;
+
+      let actingMember = member;
+      let paid = true;
+      let resourceSpent = resourceCost.basicAttackEssencePct ?? 5;
+      if (action.type === 'gu_skill' && move) {
+        const moveCost = (move as DuelMove & { baseCost?: number }).baseCost ?? (resourceCost.defaultGuSkillEssencePct ?? 8);
+        const spent = spendEssence(member, moveCost);
+        actingMember = spent.member;
+        paid = spent.paid;
+        resourceSpent = moveCost;
+        if (paid) {
+          actingMember = {
+            ...actingMember,
+            cooldowns: {
+              ...(actingMember.cooldowns ?? {}),
+              [move.killerMoveId ?? move.name]: (move as DuelMove & { cooldown?: number }).cooldown ?? 3,
+            },
           };
         }
-        newLog.push({
-          round: state.round, actor: 'enemy', action: result.hit ? '攻击' : 'miss',
-          damage: result.damage, hit: result.hit, crit: result.crit,
-          message: `${enemy.name} 对 ${currentMembers[action.targetIndex].name} ${result.message}`,
-        });
-      } else if (action.type === 'defend') {
-        currentEnemies[actor.index] = { ...enemy, def: Math.floor(enemy.def * 1.20) };
-        newLog.push({ round: state.round, actor: 'enemy', action: '防御', message: `${enemy.name} 采取防御姿态` });
+      } else {
+        actingMember = spendEssence(member, resourceSpent).member;
       }
+      members[actor.index] = actingMember;
+      if (!paid) {
+        logs.push({ round, actor: 'player', action: '真元不足', hit: false, crit: false, message: `${member.name}真元不足，杀招未能发动。` });
+        traces.push(makeTrace(round, 'resource', 'player', 'no_essence', `${member.name}真元不足，行动失败`, { tags: ['resource_blocked'] }));
+        continue;
+      }
+
+      const attack = computeAttack(actingMember, defender, {
+        formation: state.formation,
+        morale: state.morale,
+        isCombo: comboTargets.has(targetIndex) && state.formation === '合击',
+        move,
+        rng,
+      });
+      enemies[targetIndex] = { ...defender, hp: Math.max(0, defender.hp - attack.damage) };
+      const actionName = move?.name ?? '攻击';
+      logs.push({ round, actor: 'player', action: actionName, damage: attack.damage, hit: attack.hit, crit: attack.crit, message: `${actingMember.name}对${defender.name}${attack.message}。` });
+      traces.push(makeTrace(round, 'action', 'player', actionName, `${actingMember.name} -> ${defender.name}: ${attack.message}`, {
+        damage: attack.damage,
+        hitRate: attack.hitRate,
+        resourceCost: action.type === 'gu_skill' ? resourceSpent : undefined,
+        tags: [move ? 'duel_move' : 'basic_attack', state.formation],
+      }));
+    } else {
+      const enemy = enemies[actor.index];
+      if (!enemy || enemy.hp <= 0) continue;
+      const action = selectEnemyAction(enemy, members, rng);
+      if (action.type === 'defend') {
+        enemies[actor.index] = { ...enemy, def: Math.round(enemy.def * 1.15) };
+        logs.push({ round, actor: 'enemy', action: '防御', hit: true, crit: false, message: `${enemy.name}转为防守。` });
+        continue;
+      }
+      const defender = members[action.targetIndex];
+      if (!defender || defender.hp <= 0) continue;
+      const attack = computeAttack(enemy, defender, { formation: state.formation, morale: 50, isCombo: false, rng });
+      members[action.targetIndex] = { ...defender, hp: Math.max(0, defender.hp - attack.damage) };
+      logs.push({ round, actor: 'enemy', action: '攻击', damage: attack.damage, hit: attack.hit, crit: attack.crit, message: `${enemy.name}对${defender.name}${attack.message}。` });
+      traces.push(makeTrace(round, 'counter', 'enemy', 'attack', `${enemy.name} -> ${defender.name}: ${attack.message}`, {
+        damage: attack.damage,
+        hitRate: attack.hitRate,
+        tags: ['enemy_attack'],
+      }));
     }
   }
 
-  // 5. 状态效果递减 + 持续伤害结算
-  for (let i = 0; i < currentMembers.length; i++) {
-    const m = currentMembers[i];
-    if (m.hp <= 0) continue;
-    for (const status of m.statuses) {
-      const tickDmg = calcStatusDamage(status, m.maxHp);
-      if (tickDmg > 0) {
-        currentMembers[i] = { ...currentMembers[i], hp: Math.max(0, currentMembers[i].hp - tickDmg) };
-        newLog.push({ round: state.round, actor: 'player', action: status.type, damage: tickDmg, hit: true, crit: false, message: `${m.name} 受到${status.type}伤害 ${tickDmg}` });
-      }
-    }
-    currentMembers[i] = { ...currentMembers[i], statuses: tickStatuses(m.statuses) };
-  }
+  const status = applyStatusTicks(members, enemies, round);
+  members = status.members;
+  enemies = status.enemies;
+  logs.push(...status.logs);
+  traces.push(...status.traces);
 
-  for (let i = 0; i < currentEnemies.length; i++) {
-    const e = currentEnemies[i];
-    if (e.hp <= 0) continue;
-    for (const status of e.statuses) {
-      const tickDmg = calcStatusDamage(status, e.maxHp);
-      if (tickDmg > 0) {
-        currentEnemies[i] = { ...currentEnemies[i], hp: Math.max(0, currentEnemies[i].hp - tickDmg) };
-        newLog.push({ round: state.round, actor: 'enemy', action: status.type, damage: tickDmg, hit: true, crit: false, message: `${e.name} 受到${status.type}伤害 ${tickDmg}` });
-      }
-    }
-    currentEnemies[i] = { ...currentEnemies[i], statuses: tickStatuses(e.statuses) };
-  }
-
-  // 6. 掠阵被动恢复
-  let finalState: SquadCombatState = {
+  let nextState: SquadCombatState = {
     ...state,
-    round: state.round + 1,
-    phase: 'resolution',
-    members: currentMembers,
-    enemies: currentEnemies,
-    log: newLog,
+    round: round + 1,
+    phase: 'player_turn',
+    members,
+    enemies,
+    log: logs,
+    morale: Math.max(0, state.morale - 1),
   };
-  finalState = applyFlankSupport(finalState);
 
-  // 7. 战后士气衰减（每回合-1）
-  const newMorale = Math.max(0, finalState.morale - 1);
-  finalState = { ...finalState, morale: newMorale };
+  const support = applyFormationSupport(nextState);
+  logs.push(...support.logs);
+  nextState = {
+    ...nextState,
+    members: support.members,
+    log: logs,
+  };
+  traces.push(...support.traces);
 
-  // 8. 检查结束条件
-  const endResult = checkSquadEnd(finalState);
-  if (endResult !== 'ongoing') {
-    finalState = {
-      ...finalState,
+  const result = checkResult(nextState);
+  if (result) {
+    nextState = {
+      ...nextState,
       phase: 'ended',
-      log: [...finalState.log, {
-        round: finalState.round,
-        actor: 'player',
-        action: endResult === 'player_win' ? '胜利' : '败北',
-        message: endResult === 'player_win' ? '敌方全灭，战斗胜利！' : '小队溃败...',
-      }],
+      result,
+      rewardPreview: result.rewards ?? nextState.rewardPreview,
     };
-  } else {
-    finalState = { ...finalState, phase: 'player_turn' };
+    traces.push(makeTrace(round, 'morale_escape', 'system', 'result', result.winner === 'player' ? '小队战胜利，奖励进入经济闸门预览。' : '小队战失败，等待伤亡回流。', { tags: ['battle_result'] }));
+    logs.push({
+      round,
+      actor: 'player',
+      action: result.winner === 'player' ? '胜利' : '失败',
+      hit: true,
+      crit: false,
+      message: result.winner === 'player' ? '敌方全灭，小队战胜利。' : '小队溃败。',
+    });
   }
 
-  return finalState;
+  return {
+    ...nextState,
+    log: logs,
+    trace: pushTrace(state, traces),
+  };
 }
 
-/**
- * 解决当前回合的自动行动（无玩家输入时，全员默认行动）
- */
 export function resolveSquadRound(state: SquadCombatState): SquadCombatState {
-  const defaultActions: SquadAction[] = state.members
-    .filter(m => m.hp > 0)
-    .map(m => selectMemberDefaultAction(m, state.members, state.enemies));
+  const defaultActions = state.members.map(member => member.hp > 0
+    ? selectMemberDefaultAction(member, state.members, state.enemies)
+    : { type: 'defend' as const });
   return executeSquadTurn(state, defaultActions);
 }
