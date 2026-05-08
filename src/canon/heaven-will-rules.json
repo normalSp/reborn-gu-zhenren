@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "version": "0.8.0-pre",
+    "source": "v0.8.0 outline + lore guard",
+    "note": "Heaven will is pressure and correction, not a universal forced failure button."
+  },
+  "initialLedger": {
+    "attention": 0,
+    "correction": 0,
+    "rejection": 0,
+    "ambiguity": 20
+  },
+  "thresholds": {
+    "low": 25,
+    "medium": 50,
+    "high": 75,
+    "catastrophic": 95
+  },
+  "triggers": {
+    "fate_mutation": { "attention": 12, "correction": 8, "rejection": 4, "karmicDebt": 8 },
+    "venerable_contact": { "attention": 8, "correction": 4, "rejection": 2, "karmicDebt": 4 },
+    "forbidden_gu": { "attention": 15, "correction": 10, "rejection": 8, "karmicDebt": 10 },
+    "massacre": { "attention": 6, "correction": 2, "rejection": 4, "karmicDebt": 12 },
+    "rescue": { "attention": 2, "correction": 0, "rejection": 0, "karmicDebt": -3 },
+    "oath_break": { "attention": 5, "correction": 2, "rejection": 3, "karmicDebt": 10 },
+    "inheritance_seized": { "attention": 4, "correction": 3, "rejection": 1, "karmicDebt": 4 },
+    "chaos_contact": { "attention": 20, "correction": 12, "rejection": 12, "karmicDebt": 15 }
+  },
+  "narrativeEffects": [
+    {
+      "minAttention": 25,
+      "effect": "增加敌对势力关注、情报泄露和追踪事件概率。"
+    },
+    {
+      "minAttention": 50,
+      "effect": "关键锚点附近出现修正压力，正史模式更容易重定向到旁支。"
+    },
+    {
+      "minAttention": 75,
+      "effect": "高风险事件、灾劫预兆、梦境反噬或天庭封锁显著增加。"
+    },
+    {
+      "minAttention": 95,
+      "effect": "进入灾难性压力，但仍必须用世界内逻辑表达，不允许一句天意抹杀。"
+    }
+  ]
+}

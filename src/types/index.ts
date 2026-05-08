@@ -81,6 +81,151 @@ export interface PlayerIdentityContext {
   canonIdentityGuard: string;
 }
 
+// ─── v0.8.0 剧情锚点 / 宿命 / 天意协议 ───
+export type TimelineMode = 'canon' | 'if';
+export type FateState = 'intact' | 'fractured' | 'destroyed';
+export type CanonAnchorStatus = 'fixed' | 'flexible' | 'if_only';
+export type IfBranchAxis =
+  | 'protect_fate'
+  | 'break_fate'
+  | 'faction_shift'
+  | 'npc_survival'
+  | 'resource_control'
+  | 'venerable_balance'
+  | 'heaven_will_debt';
+export type EndingProvenance = 'canon-near' | 'if-derived' | 'original-if';
+
+export interface CanonAnchor {
+  id: string;
+  displayName: string;
+  sourceEra: string;
+  canonStatus: CanonAnchorStatus;
+  playerRoleCanon: string;
+  playerRoleIf: string;
+  keyNpcs: string[];
+  keyFactions: string[];
+  requiredState: Record<string, unknown>;
+  forbiddenMutationsCanon: string[];
+  allowedVariationsCanon: string[];
+  ifDeviationAxes: IfBranchAxis[];
+  downstreamImpacts: string[];
+  evidenceRef: string;
+}
+
+export interface CanonAnchorPressure {
+  anchorId: string;
+  pressure: number;
+  reason: string;
+  attemptedMutation: string;
+  engineDecision: 'allow_local_variation' | 'redirect' | 'block';
+  fallbackNarrativeHint: string;
+}
+
+export interface IfBranchVector {
+  id: string;
+  anchorId: string;
+  axis: IfBranchAxis;
+  delta: number;
+  cause: string;
+  cost: string;
+  downstreamImpact: string[];
+  provenance: 'if-derived' | 'original-if';
+  createdTurn: number;
+}
+
+export interface HeavenWillTrigger {
+  kind:
+    | 'fate_mutation'
+    | 'venerable_contact'
+    | 'forbidden_gu'
+    | 'massacre'
+    | 'rescue'
+    | 'oath_break'
+    | 'inheritance_seized'
+    | 'chaos_contact';
+  delta: number;
+  reason: string;
+  anchorId?: string;
+  turn: number;
+}
+
+export interface HeavenWillLedger {
+  attention: number;
+  correction: number;
+  rejection: number;
+  ambiguity: number;
+  lastTriggers: HeavenWillTrigger[];
+}
+
+export interface KarmicReturn {
+  id: string;
+  sourceEventId: string;
+  expectedWindow: [number, number];
+  severity: 'low' | 'medium' | 'high' | 'catastrophic';
+  narrativeHint: string;
+  resolved: boolean;
+}
+
+export interface KarmicDebtLedger {
+  totalDebt: number;
+  byKind: Record<string, number>;
+  pendingReturns: KarmicReturn[];
+}
+
+export interface StoryEventCandidate {
+  id?: string;
+  anchorId?: string;
+  type: 'side_event' | 'npc_contact' | 'rumor' | 'faction_move' | 'inheritance_hint' | 'danger' | 'other';
+  title: string;
+  summary: string;
+  risk: 'low' | 'medium' | 'high';
+  source?: 'ai-rumor' | 'engine';
+  engineValidation?: 'pending' | 'accepted' | 'blocked';
+  validationIssues?: string[];
+}
+
+export interface IfBranchCandidate {
+  id?: string;
+  anchorId: string;
+  axis: IfBranchAxis;
+  proposedDelta: number;
+  summary: string;
+  costHint: string;
+  downstreamHint: string[];
+  source?: 'ai-rumor' | 'engine';
+  engineValidation?: 'pending' | 'accepted' | 'blocked';
+}
+
+export interface CanonAnchorResult {
+  anchorId: string;
+  status: 'unseen' | 'active' | 'resolved' | 'missed' | 'blocked';
+  canonDeviation: number;
+  summary?: string;
+}
+
+export interface EndingResolverInput {
+  gameMode: TimelineMode;
+  fateState: FateState;
+  anchorResults: Record<string, CanonAnchorResult>;
+  ifBranchVectors: IfBranchVector[];
+  heavenWillLedger: HeavenWillLedger;
+  karmicDebtLedger: KarmicDebtLedger;
+  playerFactionScore: number;
+  fangYuanRelation: 'unknown' | 'observed' | 'ally' | 'rival' | 'enemy' | 'exploited_each_other';
+  venerableBalance: Record<string, number>;
+  daoHeart: { kill: number; mercy: number; scheme: number; ambition: number };
+  playerSurvived: boolean;
+}
+
+export interface EndingOutcome {
+  familyId: string;
+  displayName: string;
+  provenance: EndingProvenance;
+  summary: string;
+  reasons: string[];
+  unresolvedWarnings: string[];
+}
+
 // ─── 蛊虫 ───
 export interface GuSpec {
   id: string;
@@ -594,6 +739,15 @@ export interface StateUpdate {
   };
   combat_event_candidates?: {
     add?: CombatEventCandidate[];
+  };
+  story_event_candidates?: {
+    add?: StoryEventCandidate[];
+  };
+  if_branch_candidates?: {
+    add?: IfBranchCandidate[];
+  };
+  canon_anchor_pressure?: {
+    add?: CanonAnchorPressure[];
   };
 }
 

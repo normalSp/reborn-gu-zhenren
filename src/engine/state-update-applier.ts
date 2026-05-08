@@ -5,6 +5,7 @@ import { evaluateApertureGrade } from '../store/slices/immortalSlice';
 import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, type NarrativeEventKind } from './dao-reputation-policy';
 import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
 import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
+import { validateIfBranchCandidate } from './v080-narrative-engine';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -358,6 +359,91 @@ export function applyStateUpdate(update: StateUpdate): void {
       });
     }
     s.setFlag?.('combatEventCandidates', current.slice(-40));
+  }
+
+  // v0.8.0-pre: story/IF/anchor updates are candidates only. The engine validates them later.
+  if ((update as any).story_event_candidates?.add && Array.isArray((update as any).story_event_candidates.add)) {
+    const s = useStore.getState() as any;
+    const current = Array.isArray(s.flags?.storyEventCandidates)
+      ? [...s.flags.storyEventCandidates]
+      : [];
+    for (const candidate of (update as any).story_event_candidates.add) {
+      if (!candidate?.title || !candidate?.summary) continue;
+      current.push({
+        ...candidate,
+        id: candidate.id || `story_candidate_${Date.now()}_${current.length}`,
+        source: candidate.source || 'ai-rumor',
+        engineValidation: 'pending',
+        createdTurn: s.turn || 1,
+        chapterId: s.currentChapterId || '',
+        domain: s.currentDomain || '',
+      });
+      s.addGameLog?.('pipeline', `剧情候选事件：${candidate.title}`, {
+        summary: candidate.summary,
+        risk: candidate.risk,
+        anchorId: candidate.anchorId,
+      });
+    }
+    s.setFlag?.('storyEventCandidates', current.slice(-60));
+  }
+
+  if ((update as any).if_branch_candidates?.add && Array.isArray((update as any).if_branch_candidates.add)) {
+    const s = useStore.getState() as any;
+    const mode = (s.gameMode || 'canon') as 'canon' | 'if';
+    const candidates = Array.isArray(s.flags?.ifBranchCandidates)
+      ? [...s.flags.ifBranchCandidates]
+      : [];
+    const vectors = Array.isArray(s.flags?.ifBranchVectors)
+      ? [...s.flags.ifBranchVectors]
+      : [];
+    for (const candidate of (update as any).if_branch_candidates.add) {
+      const verdict = validateIfBranchCandidate(candidate, mode);
+      const recorded = {
+        ...candidate,
+        id: candidate.id || `if_candidate_${Date.now()}_${candidates.length}`,
+        source: candidate.source || 'ai-rumor',
+        engineValidation: verdict.accepted ? 'accepted' : 'blocked',
+        validationIssues: verdict.issues,
+        createdTurn: s.turn || 1,
+        chapterId: s.currentChapterId || '',
+        domain: s.currentDomain || '',
+      };
+      candidates.push(recorded);
+      if (verdict.vector) {
+        vectors.push({ ...verdict.vector, id: recorded.id, createdTurn: s.turn || 1 });
+      }
+      s.addGameLog?.('pipeline', `${verdict.accepted ? 'IF分支候选已登记' : 'IF分支候选已拦截'}：${candidate.summary || candidate.axis}`, {
+        anchorId: candidate.anchorId,
+        axis: candidate.axis,
+        mode,
+        issues: verdict.issues,
+      });
+    }
+    s.setFlag?.('ifBranchCandidates', candidates.slice(-80));
+    s.setFlag?.('ifBranchVectors', vectors.slice(-80));
+  }
+
+  if ((update as any).canon_anchor_pressure?.add && Array.isArray((update as any).canon_anchor_pressure.add)) {
+    const s = useStore.getState() as any;
+    const current = Array.isArray(s.flags?.canonAnchorPressureLog)
+      ? [...s.flags.canonAnchorPressureLog]
+      : [];
+    for (const pressure of (update as any).canon_anchor_pressure.add) {
+      if (!pressure?.anchorId || !pressure?.attemptedMutation) continue;
+      const recorded = {
+        ...pressure,
+        createdTurn: s.turn || 1,
+        chapterId: s.currentChapterId || '',
+        domain: s.currentDomain || '',
+      };
+      current.push(recorded);
+      s.addGameLog?.('pipeline', `正史锚点压力：${pressure.anchorId}`, {
+        pressure: pressure.pressure,
+        decision: pressure.engineDecision,
+        attemptedMutation: pressure.attemptedMutation,
+      });
+    }
+    s.setFlag?.('canonAnchorPressureLog', current.slice(-60));
   }
 
   // v0.7.0-pre M9: AI location names are rumors until verified.

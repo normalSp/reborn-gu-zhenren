@@ -13,6 +13,7 @@ import fragmentsRaw from '../canon/fragment-recipes.json';
 import { getAllowedMaterialNamesForPrompt } from './material-registry';
 import { getRuntimePathNames } from './path-registry';
 import { describeDaoHeartNarrativeBias } from './dao-reputation-policy';
+import { getCanonAnchor, getCanonAnchors } from './v080-narrative-engine';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -25,7 +26,7 @@ const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你
 世界观：蛊界弱肉强食。境界不可逾越。禁止markdown包裹。`;
 
 // ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
-const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,recipe_fragments,dynamic_npcs,npc_contacts,gu_use_suggestions,event_policy,attribute_mutations,discoveries,dialogue_requests} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 玩家是原创角色且不可被称作方源, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铜皮蛊",tier:1,path:"金道",rarity:"普通",description:"强化皮肤防御"}]}, 获得蛊材/材料给materials:{add:{"月华草":2}}, 获得残方只能给recipe_fragments:{add:["已登记fragmentId"]}。禁止返回recipes.unlock。未列入奖励白名单的物品/蛊方/流派只能写discoveries:{add:[{type:"unknown",name:"名称",note:"待审线索",source:"ai-rumor"}]}，不得写入materials/gu_inventory。NPC对话内的委托/交易/追踪/猎杀只可写dialogue_requests.add或discoveries.add作为候选线索，不得直接创建正式任务、扣钱或给奖励。剧情中建议使用特殊蛊只能写gu_use_suggestions:{add:[{guName:"妇人心蛊",target:{type:"scene_target",name:"目标"},sceneValidated:true,sceneTags:["毒道","尸体"],reason:"剧情原因"}]}，建议不等于执行，引擎会校验持有、场景、目标、代价和反噬。真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心/声望事件用event_policy:{kind:"kill|rescue|betray|trade|deceive|keep_promise|sacrifice|loot|protect|extort",factionId:"势力id",alignment:"righteous|demonic|merchant",reason:"原因"}，四维变化只能用attribute_mutations.add并等待引擎白名单校验。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,recipe_fragments,dynamic_npcs,npc_contacts,gu_use_suggestions,event_policy,attribute_mutations,discoveries,dialogue_requests,story_event_candidates,if_branch_candidates,canon_anchor_pressure} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 玩家是原创角色且不可被称作方源, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铜皮蛊",tier:1,path:"金道",rarity:"普通",description:"强化皮肤防御"}]}, 获得蛊材/材料给materials:{add:{"月华草":2}}, 获得残方只能给recipe_fragments:{add:["已登记fragmentId"]}。禁止返回recipes.unlock。未列入奖励白名单的物品/蛊方/流派只能写discoveries:{add:[{type:"unknown",name:"名称",note:"待审线索",source:"ai-rumor"}]}，不得写入materials/gu_inventory。NPC对话内的委托/交易/追踪/猎杀只可写dialogue_requests.add或discoveries.add作为候选线索，不得直接创建正式任务、扣钱或给奖励。v0.8剧情只可写story_event_candidates.add、if_branch_candidates.add、canon_anchor_pressure.add作为候选或压力记录；不得直接改fateState、正史锚点结果、关键NPC生死、正式结局、永生/十转定论。剧情中建议使用特殊蛊只能写gu_use_suggestions:{add:[{guName:"妇人心蛊",target:{type:"scene_target",name:"目标"},sceneValidated:true,sceneTags:["毒道","尸体"],reason:"剧情原因"}]}，建议不等于执行，引擎会校验持有、场景、目标、代价和反噬。真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心/声望事件用event_policy:{kind:"kill|rescue|betray|trade|deceive|keep_promise|sacrifice|loot|protect|extort",factionId:"势力id",alignment:"righteous|demonic|merchant",reason:"原因"}，四维变化只能用attribute_mutations.add并等待引擎白名单校验。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
 
 🆕 动态NPC规则: 叙事中遇到新的"路人甲"NPC（非202预定义NPC）时，通过state_update.dynamic_npcs.add回写结构化数据: [{name:"张三",path:"力道",realm:1,personality:"憨厚老实",bonding_hint:"张三感激你出手相助，对你心生敬佩"}]. realm限制1-2(凡人/一转初阶)，避免战力通胀。人物不可重复（检查之前叙事中是否已出现同名者）。已有NPC好感变化通过dynamic_npcs.affinity_delta回写: [{name:"张三",delta:5}]。
 🆕 人物图鉴contact: 叙事中遇见、听闻或短暂交会原著/动态角色但尚未建立关系时，必须通过state_update.npc_contacts.add回写: [{name:"商心慈",source:"canon",status:"heard|seen|interacted",location:"南疆商路",summary:"一句话摘要"}]。`;
@@ -824,6 +825,43 @@ function injectResourceNodeHints(store: RootStore): string {
 }
 
 // ═══════════════════════════════════════════
+function injectV080NarrativeGuard(store: RootStore): string {
+  const s = store as any;
+  const flags = s.flags || {};
+  const mode = (s.gameMode || 'canon') as 'canon' | 'if';
+  const fateState = flags.fateState || 'intact';
+  const currentAnchorId = flags.currentCanonAnchorId || s.currentChapterId || '';
+  const currentAnchor = currentAnchorId ? getCanonAnchor(currentAnchorId) : undefined;
+  const anchors = getCanonAnchors();
+  const vectors = Array.isArray(flags.ifBranchVectors) ? flags.ifBranchVectors.slice(-5) : [];
+  const pressure = Array.isArray(flags.canonAnchorPressureLog) ? flags.canonAnchorPressureLog.slice(-5) : [];
+  const heaven = flags.heavenWillLedger || { attention: 0, correction: 0, rejection: 0, ambiguity: 20 };
+
+  const anchorLine = currentAnchor
+    ? `${currentAnchor.displayName}(${currentAnchor.id}) status=${currentAnchor.canonStatus}`
+    : `未锁定；可用锚点: ${anchors.map(anchor => anchor.id).join(', ')}`;
+  const vectorLines = vectors.length
+    ? vectors.map((vector: any) => `- ${vector.anchorId}/${vector.axis}: ${vector.delta} cost=${vector.cost || 'unknown'}`).join('\n')
+    : '无已验证 IF 分支向量';
+  const pressureLines = pressure.length
+    ? pressure.map((item: any) => `- ${item.anchorId}: pressure=${item.pressure} decision=${item.engineDecision}`).join('\n')
+    : '无近期正史锚点压力';
+
+  return [
+    '【v0.8.0 剧情锚点与宿命闸门】',
+    `mode=${mode}; fateState=${fateState}; currentAnchor=${anchorLine}`,
+    `天意账本: attention=${heaven.attention || 0}, correction=${heaven.correction || 0}, rejection=${heaven.rejection || 0}, ambiguity=${heaven.ambiguity ?? 20}`,
+    `近期 IF 向量:\n${vectorLines}`,
+    `近期锚点压力:\n${pressureLines}`,
+    mode === 'canon'
+      ? '正史模式：关键锚点不可被玩家取代或直接改写；玩家只能影响侧线、关系、资源和局部结果。'
+      : 'IF模式：可以提出护宿命/毁宿命/势力偏移等候选，但必须写入 if_branch_candidates.add，等待引擎校验后才会成为 IfBranchVector。',
+    '允许字段：story_event_candidates.add、if_branch_candidates.add、canon_anchor_pressure.add。',
+    '禁止字段/结论：不得直接改 fateState、不得直接宣告关键 NPC 死亡或锚点结果、不得直接生成正式任务/奖励/地图地点、不得宣告炼成永生蛊/真正永生/稳定十转。',
+    '永生与十转边界：无极魔尊疯魔窟求证失败；混沌、事实浮冰、十转只作为未证悬念或代价极重的线索。',
+  ].join('\n');
+}
+
 export class ContextBuilder {
   private layer1Content: string;
   private layer2Content: string;
@@ -1010,6 +1048,7 @@ export class ContextBuilder {
 
     // 段1: 经济锚定 — 玩家余额 + 购买力参考 + 章节物价系数
     parts.push(injectEconomyBalanceAnchor(store));
+    parts.push(injectV080NarrativeGuard(store));
 
     // ═══ P3修复: 章节位置提醒（防止AI在超长上下文中丢失当前位置导致叙事跳回） ═══
     const currentChapterId = (store as any).currentChapterId || '';

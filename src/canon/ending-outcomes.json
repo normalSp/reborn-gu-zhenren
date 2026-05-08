@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "version": "0.8.0-pre",
+    "source": "v0.8.0 outline",
+    "note": "Ending families are matrix outcomes. Eternal life remains unresolved and cannot be confirmed."
+  },
+  "families": [
+    {
+      "id": "canon_near",
+      "displayName": "原著近线",
+      "provenance": "canon-near",
+      "summary": "原著大势未改，玩家侧线按生死、势力和关系收束。"
+    },
+    {
+      "id": "fate_intact_order",
+      "displayName": "宿命永存线",
+      "provenance": "if-derived",
+      "summary": "护宿命成功，天庭秩序延续，众生命轨继续被锁。"
+    },
+    {
+      "id": "fate_fractured_chaos",
+      "displayName": "宿命裂痕乱世线",
+      "provenance": "if-derived",
+      "summary": "宿命未稳固也未完全破碎，世界进入半锁定半自由的混乱阶段。"
+    },
+    {
+      "id": "fate_destroyed_struggle",
+      "displayName": "宿命破碎争渡线",
+      "provenance": "if-derived",
+      "summary": "毁宿命成功，自由时代开启，代价是乱世和尊者棋局。"
+    },
+    {
+      "id": "player_faction_foothold",
+      "displayName": "玩家势力立足线",
+      "provenance": "if-derived",
+      "summary": "玩家未必改变世界根基，但在乱世中保住势力和自身道路。"
+    },
+    {
+      "id": "crazed_demon_unproven",
+      "displayName": "疯魔求证未证线",
+      "provenance": "if-derived",
+      "summary": "玩家接触事实浮冰、混沌和尊者遗留，只获得真相残片与未证悬念。"
+    },
+    {
+      "id": "death_and_dust",
+      "displayName": "身死道消线",
+      "provenance": "canon-near",
+      "summary": "玩家身死或因果债爆发，以一生总结和定场诗收束。"
+    }
+  ],
+  "forbiddenAssertions": [
+    "玩家炼成永生蛊",
+    "玩家真正永生",
+    "方源真正永生",
+    "无极魔尊已成功永生",
+    "玩家稳定掌握十转境界"
+  ],
+  "allowedUnresolvedPhrases": [
+    "混沌之外仍无答案",
+    "事实浮冰只证明求证曾发生，不证明永生已成",
+    "十转仍是猜想与雾中远影",
+    "长生与永生之间仍隔着不可跨越的雾"
+  ]
+}

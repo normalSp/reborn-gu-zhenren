@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "version": "0.8.0-pre",
+    "source": "v0.8.0 outline user decision",
+    "note": "IF mode supports protect-fate and break-fate routes. Eternal life remains unresolved."
+  },
+  "fateStates": {
+    "intact": {
+      "displayName": "宿命完整",
+      "fateIntegrityRange": [70, 100],
+      "narrativeRule": "重大命轨强约束，护宿命路线更稳定，毁宿命行为会快速提升天意注视与天庭敌意。"
+    },
+    "fractured": {
+      "displayName": "宿命裂痕",
+      "fateIntegrityRange": [1, 69],
+      "narrativeRule": "局部命轨可偏移，红莲影响、春秋蝉、梦境、尊者布置会制造异常窗口。"
+    },
+    "destroyed": {
+      "displayName": "宿命破碎",
+      "fateIntegrityRange": [0, 0],
+      "narrativeRule": "自由意志释放，但天意、因果、尊者棋局仍会以更复杂的方式回响。"
+    }
+  },
+  "routeProfiles": {
+    "protect_fate": {
+      "displayName": "护宿命",
+      "alignmentHint": "天庭、秩序、稳定、命轨锁定",
+      "benefits": ["天庭信任", "正道通行", "秩序资源", "低混乱风险"],
+      "costs": ["自由度降低", "魔道敌对", "玩家选择受限", "关键NPC命轨难改"],
+      "endingFamilies": ["fate_intact_order", "canon_near"]
+    },
+    "break_fate": {
+      "displayName": "毁宿命",
+      "alignmentHint": "自由意志、逆天、乱世、尊者棋局",
+      "benefits": ["IF分支开放", "禁制松动", "逆天机缘", "玩家势力上限更高"],
+      "costs": ["天意注视", "因果债", "乱世冲突", "尊者棋局风险"],
+      "endingFamilies": ["fate_destroyed_struggle", "fate_fractured_chaos", "player_faction_foothold"]
+    }
+  },
+  "axes": [
+    { "id": "protect_fate", "displayName": "护宿命倾向", "min": -100, "max": 100 },
+    { "id": "break_fate", "displayName": "毁宿命倾向", "min": -100, "max": 100 },
+    { "id": "faction_shift", "displayName": "势力偏移", "min": -100, "max": 100 },
+    { "id": "npc_survival", "displayName": "NPC生死偏移", "min": -100, "max": 100 },
+    { "id": "resource_control", "displayName": "资源控制偏移", "min": -100, "max": 100 },
+    { "id": "venerable_balance", "displayName": "尊者平衡偏移", "min": -100, "max": 100 },
+    { "id": "heaven_will_debt", "displayName": "天意/因果压力", "min": 0, "max": 100 }
+  ],
+  "hardBoundaries": [
+    "DeepSeek cannot directly set fateState.",
+    "Canon mode cannot destroy or preserve Fate Gu differently from the protected anchor result.",
+    "IF branch candidates require engine validation.",
+    "No v0.8 ending may confirm true eternal life or successful Eternal Life Gu refinement."
+  ]
+}

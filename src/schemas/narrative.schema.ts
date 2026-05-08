@@ -168,6 +168,59 @@ const CombatEventCandidatesUpdate = z.object({
   add: z.array(CombatEventCandidateAdd).optional(),
 }).optional();
 
+const StoryEventCandidateAdd = z.object({
+  id: z.string().optional(),
+  anchorId: z.string().optional(),
+  type: z.enum(['side_event', 'npc_contact', 'rumor', 'faction_move', 'inheritance_hint', 'danger', 'other']),
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  risk: z.enum(['low', 'medium', 'high']),
+  source: z.enum(['ai-rumor', 'engine']).optional(),
+  engineValidation: z.enum(['pending', 'accepted', 'blocked']).optional(),
+  validationIssues: z.array(z.string()).optional(),
+}).passthrough();
+
+const StoryEventCandidatesUpdate = z.object({
+  add: z.array(StoryEventCandidateAdd).optional(),
+}).optional();
+
+const IfBranchCandidateAdd = z.object({
+  id: z.string().optional(),
+  anchorId: z.string().min(1),
+  axis: z.enum([
+    'protect_fate',
+    'break_fate',
+    'faction_shift',
+    'npc_survival',
+    'resource_control',
+    'venerable_balance',
+    'heaven_will_debt',
+  ]),
+  proposedDelta: z.number(),
+  summary: z.string().min(1),
+  costHint: z.string().min(1),
+  downstreamHint: z.array(z.string()).optional().default([]),
+  source: z.enum(['ai-rumor', 'engine']).optional(),
+  engineValidation: z.enum(['pending', 'accepted', 'blocked']).optional(),
+}).passthrough();
+
+const IfBranchCandidatesUpdate = z.object({
+  add: z.array(IfBranchCandidateAdd).optional(),
+}).optional();
+
+const CanonAnchorPressureAdd = z.object({
+  anchorId: z.string().min(1),
+  pressure: z.number().min(0).max(100),
+  reason: z.string().min(1),
+  attemptedMutation: z.string().min(1),
+  engineDecision: z.enum(['allow_local_variation', 'redirect', 'block']),
+  fallbackNarrativeHint: z.string().min(1),
+}).passthrough();
+
+const CanonAnchorPressureUpdate = z.object({
+  add: z.array(CanonAnchorPressureAdd).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -184,6 +237,9 @@ export const StateUpdateSchema = z.object({
   npc_contacts: NpcContactsUpdate,
   gu_use_suggestions: GuUseSuggestionsUpdate,
   combat_event_candidates: CombatEventCandidatesUpdate,
+  story_event_candidates: StoryEventCandidatesUpdate,
+  if_branch_candidates: IfBranchCandidatesUpdate,
+  canon_anchor_pressure: CanonAnchorPressureUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───
