@@ -1,12 +1,5 @@
-import { useState, useEffect, useCallback } from 'react';
+import { Suspense, lazy, useState, useEffect, useCallback } from 'react';
 import { useStore } from './store';
-import { TitleScreen } from './components/title/TitleScreen';
-import { CharacterCreate } from './components/game/CharacterCreate';
-import { GameScreen } from './components/game/GameScreen';
-import { GameOverScreen } from './components/game/GameOverScreen';
-import { OriginSelectScreen } from './components/game/OriginSelectScreen';
-import { TimelineSelectScreen } from './components/game/TimelineSelectScreen';
-import { TimelineConfigScreen } from './components/game/TimelineConfigScreen';
 import { ErrorBoundary } from './components/game/ErrorBoundary';
 import { audioManager } from './utils/audio';
 import { installE2eHarness } from './e2e/installE2eHarness';
@@ -14,6 +7,22 @@ import { installE2eHarness } from './e2e/installE2eHarness';
 type ScreenState = 'title' | 'origin_select' | 'timeline_select' | 'timeline_config' | 'character_create' | 'game_play' | 'game_over';
 
 const TRANSITION_MS = 350;
+
+const TitleScreen = lazy(() => import('./components/title/TitleScreen').then(m => ({ default: m.TitleScreen })));
+const CharacterCreate = lazy(() => import('./components/game/CharacterCreate').then(m => ({ default: m.CharacterCreate })));
+const GameScreen = lazy(() => import('./components/game/GameScreen').then(m => ({ default: m.GameScreen })));
+const GameOverScreen = lazy(() => import('./components/game/GameOverScreen').then(m => ({ default: m.GameOverScreen })));
+const OriginSelectScreen = lazy(() => import('./components/game/OriginSelectScreen').then(m => ({ default: m.OriginSelectScreen })));
+const TimelineSelectScreen = lazy(() => import('./components/game/TimelineSelectScreen').then(m => ({ default: m.TimelineSelectScreen })));
+const TimelineConfigScreen = lazy(() => import('./components/game/TimelineConfigScreen').then(m => ({ default: m.TimelineConfigScreen })));
+
+function ScreenFallback() {
+  return (
+    <div className="min-h-[100dvh] bg-rg-ink-800 flex items-center justify-center text-rg-paper-200/60 font-panel text-sm">
+      载入中...
+    </div>
+  );
+}
 
 function App() {
   const screenState = useStore(s => s.screenState);
@@ -141,13 +150,9 @@ function App() {
 
   return (
     <ErrorBoundary>
-      {renderScreen('title')}
-      {renderScreen('origin_select')}
-      {renderScreen('timeline_select')}
-      {renderScreen('timeline_config')}
-      {renderScreen('character_create')}
-      {renderScreen('game_play')}
-      {renderScreen('game_over')}
+      <Suspense fallback={<ScreenFallback />}>
+        {renderScreen(displayScreen)}
+      </Suspense>
     </ErrorBoundary>
   );
 }

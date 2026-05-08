@@ -1,41 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
+import type { ComponentType } from 'react';
 import { useStore } from '../../store';
 import type { DialogueTopic, KeyEvent } from '../../types';
 import { StatusBar } from './StatusBar';
 import { NarrativePanel } from './NarrativePanel';
 import { ChoicePanel } from './ChoicePanel';
-import { AttributeDetailPanel } from './AttributeDetailPanel';
-import { EventLogPanel } from './EventLogPanel';
-import { GuInventoryPanel } from './GuInventoryPanel';
-import { KillMovePanel } from './KillMovePanel';
-import { RefinePanel } from './RefinePanel';
-import { AperturePanel } from './AperturePanel';
-import { SVGMapPanel } from './SVGMapPanel';
-import { CharacterPanel } from './CharacterPanel';
-import { DaoMarkPanel } from './DaoMarkPanel';
 import { BreakthroughAnimation } from './BreakthroughAnimation';
 import { DiceRollAnimation } from './DiceRollAnimation';
-import { SaveLoadDialog } from './SaveLoadDialog';
-import { SettingsDialog } from './SettingsDialog';
-import { BattleOverlay } from './BattleOverlay';
-import { CombatOverlay } from './CombatOverlay';
-import { SquadCombatOverlay } from './SquadCombatOverlay';
-import { BattleFlashOverlay } from './BattleFlashOverlay';
-import { NarrativeCombatPanel } from './NarrativeCombatPanel';
-import { NPCInteractionPanel } from './NPCInteractionPanel';
-import { TutorialOverlay } from './TutorialOverlay';
-import { MerchantPanel } from './MerchantPanel';
-import { DebugOverlay } from './DebugOverlay';
-import { GuEvolutionOverlay } from './GuEvolutionOverlay';
-import { KillMoveCreationPanel } from './KillMoveCreationPanel';
-import { AuctionPanel } from './AuctionPanel';
-import { AchievementPanel } from './AchievementPanel';
-import { AchievementToast } from './AchievementToast';
-import { ChapterTransition } from './ChapterTransition';
-import { MaterialBagPanel } from './MaterialBagPanel';
-import { ApertureManagementPanel } from './ApertureManagementPanel';
-import { TrainingGroundPanel } from './TrainingGroundPanel';
-import { SquadFormationPanel } from './SquadFormationPanel';
 import { useGamePipeline } from '../../hooks/useGamePipeline';
 import { useAnimationBridge } from '../../hooks/useAnimationBridge';
 import { useDeviceCapability } from '../../hooks/useDeviceCapability';
@@ -45,6 +16,47 @@ import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
 type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad';
+
+const lazyNamed = <T extends ComponentType<any>>(
+  loader: () => Promise<Record<string, any>>,
+  exportName: string,
+) => lazy(async () => ({ default: (await loader())[exportName] as T }));
+
+const AttributeDetailPanel = lazyNamed(() => import('./AttributeDetailPanel'), 'AttributeDetailPanel');
+const EventLogPanel = lazyNamed(() => import('./EventLogPanel'), 'EventLogPanel');
+const GuInventoryPanel = lazyNamed(() => import('./GuInventoryPanel'), 'GuInventoryPanel');
+const KillMovePanel = lazyNamed(() => import('./KillMovePanel'), 'KillMovePanel');
+const RefinePanel = lazyNamed(() => import('./RefinePanel'), 'RefinePanel');
+const AperturePanel = lazyNamed(() => import('./AperturePanel'), 'AperturePanel');
+const SVGMapPanel = lazyNamed(() => import('./SVGMapPanel'), 'SVGMapPanel');
+const CharacterPanel = lazyNamed(() => import('./CharacterPanel'), 'CharacterPanel');
+const DaoMarkPanel = lazyNamed(() => import('./DaoMarkPanel'), 'DaoMarkPanel');
+const MerchantPanel = lazyNamed(() => import('./MerchantPanel'), 'MerchantPanel');
+const AchievementPanel = lazyNamed(() => import('./AchievementPanel'), 'AchievementPanel');
+const MaterialBagPanel = lazyNamed(() => import('./MaterialBagPanel'), 'MaterialBagPanel');
+const ApertureManagementPanel = lazyNamed(() => import('./ApertureManagementPanel'), 'ApertureManagementPanel');
+const TrainingGroundPanel = lazyNamed(() => import('./TrainingGroundPanel'), 'TrainingGroundPanel');
+const SquadFormationPanel = lazyNamed(() => import('./SquadFormationPanel'), 'SquadFormationPanel');
+
+const SaveLoadDialog = lazyNamed(() => import('./SaveLoadDialog'), 'SaveLoadDialog');
+const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDialog');
+const BattleOverlay = lazyNamed(() => import('./BattleOverlay'), 'BattleOverlay');
+const CombatOverlay = lazyNamed(() => import('./CombatOverlay'), 'CombatOverlay');
+const SquadCombatOverlay = lazyNamed(() => import('./SquadCombatOverlay'), 'SquadCombatOverlay');
+const BattleFlashOverlay = lazyNamed(() => import('./BattleFlashOverlay'), 'BattleFlashOverlay');
+const NarrativeCombatPanel = lazyNamed(() => import('./NarrativeCombatPanel'), 'NarrativeCombatPanel');
+const NPCInteractionPanel = lazyNamed(() => import('./NPCInteractionPanel'), 'NPCInteractionPanel');
+const TutorialOverlay = lazyNamed(() => import('./TutorialOverlay'), 'TutorialOverlay');
+const DebugOverlay = lazyNamed(() => import('./DebugOverlay'), 'DebugOverlay');
+const GuEvolutionOverlay = lazyNamed(() => import('./GuEvolutionOverlay'), 'GuEvolutionOverlay');
+const KillMoveCreationPanel = lazyNamed(() => import('./KillMoveCreationPanel'), 'KillMoveCreationPanel');
+const AuctionPanel = lazyNamed(() => import('./AuctionPanel'), 'AuctionPanel');
+const AchievementToast = lazyNamed(() => import('./AchievementToast'), 'AchievementToast');
+const ChapterTransition = lazyNamed(() => import('./ChapterTransition'), 'ChapterTransition');
+
+function PanelFallback() {
+  return <div className="p-4 text-xs text-rg-paper-200/45 font-panel">载入中...</div>;
+}
 
 // P3修复：地图标题改为动态，在渲染时根据currentDomain生成
 const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: boolean): string => {
@@ -295,7 +307,9 @@ export function GameScreen() {
                 关闭
               </button>
             </div>
-            {panelContent(sidePanel)}
+            <Suspense fallback={<PanelFallback />}>
+              {panelContent(sidePanel)}
+            </Suspense>
           </div>
         )}
 
@@ -322,7 +336,9 @@ export function GameScreen() {
                 </button>
               </div>
               <div className="flex-1 overflow-y-auto">
-                {panelContent(sidePanel)}
+                <Suspense fallback={<PanelFallback />}>
+                  {panelContent(sidePanel)}
+                </Suspense>
               </div>
             </div>
           </div>
@@ -330,26 +346,30 @@ export function GameScreen() {
       </div>
 
       {/* ─── 覆盖层 ─── */}
-      <AuctionPanel />
-      <KillMoveCreationPanel />
-      <BattleOverlay />
-      <CombatOverlay />
-      <SquadCombatOverlay />
-      <BattleFlashOverlay />
-      <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
-      <NPCInteractionPanel
-        onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)}
-        onSubmitDialogueActionCard={(cardId: string) => submitChoice(`dialogue_choice:${cardId}`)}
-      />
+      <Suspense fallback={null}>
+        <AuctionPanel />
+        <KillMoveCreationPanel />
+        <BattleOverlay />
+        <CombatOverlay />
+        <SquadCombatOverlay />
+        <BattleFlashOverlay />
+        <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
+        <NPCInteractionPanel
+          onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)}
+          onSubmitDialogueActionCard={(cardId: string) => submitChoice(`dialogue_choice:${cardId}`)}
+        />
+      </Suspense>
       <BreakthroughAnimation />
       <DiceRollAnimation />
-      <SaveLoadDialog />
-      <SettingsDialog />
-      <TutorialOverlay />
-      <DebugOverlay />
-      <GuEvolutionOverlay />
-      <AchievementToast />
-      <ChapterTransition />
+      <Suspense fallback={null}>
+        <SaveLoadDialog />
+        <SettingsDialog />
+        <TutorialOverlay />
+        <DebugOverlay />
+        <GuEvolutionOverlay />
+        <AchievementToast />
+        <ChapterTransition />
+      </Suspense>
 
       {/* ─── M7: 名场面涟漪叠加层（GSAP Timeline 目标） ─── */}
       <div
