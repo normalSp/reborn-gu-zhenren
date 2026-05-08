@@ -1,4 +1,5 @@
 import { useStore } from '../../store';
+import { resolveTerrainCombatModifier } from '../../engine/terrain-combat';
 
 const EMPTY_LOCATIONS: any[] = [];
 
@@ -78,6 +79,23 @@ const REGIONS: RegionDef[] = [
   },
 ];
 
+const DOMAIN_TERRAIN_PRESET: Record<string, { terrainId?: string; formationId?: string }> = {
+  北原: { terrainId: 'mountain_pass', formationId: 'defensive_screen' },
+  西漠: { terrainId: 'mountain_pass', formationId: 'concealment_array' },
+  中洲: { terrainId: 'formation_ruins', formationId: 'defensive_screen' },
+  南疆: { terrainId: 'dense_forest', formationId: 'concealment_array' },
+  东海: { terrainId: 'riverbank', formationId: 'defensive_screen' },
+};
+
+function signedPercent(value: number): string {
+  const percent = Math.round(value * 100);
+  return `${percent >= 0 ? '+' : ''}${percent}%`;
+}
+
+function signedInt(value: number): string {
+  return `${value >= 0 ? '+' : ''}${value}`;
+}
+
 // 装饰：山脉纹理符号（简化SVG三角）
 const MountainIcon = ({ x, y, scale = 1 }: { x: number; y: number; scale?: number }) => (
   <g transform={`translate(${x},${y}) scale(${scale})`}>
@@ -110,9 +128,13 @@ export function SVGMapPanel() {
   const exploredRegions = useStore(s => s.exploredRegions);
   const fogOfWar = useStore(s => s.fogOfWar);
   const currentDomain = useStore(s => s.currentDomain);
+  const actorPath = useStore(s => (s.pathBuild?.primary || (s as any).primaryPath || null) as string | null);
 
   const exploredSet = new Set(Array.isArray(exploredRegions) ? exploredRegions : []);
   const rumorList = Array.isArray(rumorLocations) ? rumorLocations : EMPTY_LOCATIONS;
+  const activeRegion = currentDomain || playerPosition.region || '南疆';
+  const terrainPreset = DOMAIN_TERRAIN_PRESET[activeRegion] || {};
+  const terrainPreview = resolveTerrainCombatModifier({ ...terrainPreset, actorPath });
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -291,6 +313,52 @@ export function SVGMapPanel() {
               <span>{knownLocations.filter(l => l.discovered).length} 地点</span>
             </div>
           </div>
+        </div>
+
+        <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-4 backdrop-blur-md">
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <h3 className="text-rg-paper-200 text-sm font-panel font-semibold">地形/阵法战斗预览</h3>
+            <span className="text-[10px] text-rg-paper-200/35">来自 terrain-combat 配置</span>
+          </div>
+          {terrainPreview.terrainName || terrainPreview.formationName ? (
+            <>
+              <div className="flex flex-wrap gap-2 text-[11px]">
+                <span className="rounded-sm border border-rg-gold/20 bg-rg-gold/10 px-2 py-1 text-rg-gold">
+                  {terrainPreview.terrainName || '未知地形'}
+                </span>
+                {terrainPreview.formationName ? (
+                  <span className="rounded-sm border border-rg-jade-400/20 bg-rg-jade-400/10 px-2 py-1 text-rg-jade-300">
+                    {terrainPreview.formationName}
+                  </span>
+                ) : null}
+                <span className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-rg-paper-200/55">
+                  伤害 x{terrainPreview.damageMultiplier.toFixed(2)}
+                </span>
+                <span className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-rg-paper-200/55">
+                  命中 {signedInt(terrainPreview.hitBonus)}
+                </span>
+                <span className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-rg-paper-200/55">
+                  撤离 {signedPercent(terrainPreview.escapeModifier)}
+                </span>
+                <span className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-rg-paper-200/55">
+                  事件风险 {signedPercent(terrainPreview.eventRiskModifier)}
+                </span>
+              </div>
+              {terrainPreview.notes.length ? (
+                <div className="mt-2 text-[10px] leading-4 text-rg-paper-200/35">
+                  {terrainPreview.notes.join('；')}
+                </div>
+              ) : (
+                <div className="mt-2 text-[10px] leading-4 text-rg-paper-200/35">
+                  未知地形只显示提示，不参与数值加成；已登记地形与阵法只提供轻量修正，不覆盖境界、流派和道痕压制。
+                </div>
+              )}
+            </>
+          ) : (
+            <p className="text-[11px] text-rg-paper-200/40">
+              当前地域暂无已登记战斗地形，进入战斗时不会获得地形或阵法加成。
+            </p>
+          )}
         </div>
 
         {/* ─── 五域总览 ─── */}

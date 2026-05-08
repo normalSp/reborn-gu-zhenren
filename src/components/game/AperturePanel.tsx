@@ -1,4 +1,5 @@
 import { useStore } from '../../store';
+import { buildExtremePhysiqueCalamityProfile, type ExtremePhysiqueCalamityProfile } from '../../engine/extreme-physique-calamity';
 import type { MortalAperture, ImmortalAperture } from '../../types';
 
 /** AperturePanel Props — P2 空窍/福地双层类型 */
@@ -62,7 +63,7 @@ function isImmortal(a: MortalAperture | ImmortalAperture): a is ImmortalAperture
 }
 
 // ─── 空窍视图（1-5转蛊师）─────────────────
-function MortalApertureView({ aperture }: { aperture: MortalAperture }) {
+function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalAperture; calamityProfile: ExtremePhysiqueCalamityProfile | null }) {
   const cx = 140, cy = 140;
   const { primevalSea, apertureWall, capacity, carriedGu, rank, subRank } = aperture;
   const usageFrac = capacity > 0 ? carriedGu / capacity : 0;
@@ -184,6 +185,52 @@ function MortalApertureView({ aperture }: { aperture: MortalAperture }) {
           <p className="text-rg-blood/60 text-[9px] font-panel mt-1.5">· 容量已满 — 需升级转数或丢弃蛊虫</p>
         )}
       </div>
+
+      {calamityProfile && (
+        <div className="mt-3 bg-rg-ink-800/50 border border-rg-gold/18 rounded-md p-3">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <h4 className="text-rg-paper-200/70 text-[11px] font-panel font-semibold">十绝体压力</h4>
+            <span className={`text-[10px] font-button ${
+              calamityProfile.pressureLevel === 'critical'
+                ? 'text-rg-blood-400'
+                : calamityProfile.pressureLevel === 'strained'
+                  ? 'text-rg-gold'
+                  : 'text-rg-jade-300'
+            }`}>
+              {calamityProfile.pressureLevel}
+            </span>
+          </div>
+          <div className="h-2 bg-rg-ink-900 rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-300"
+              style={{
+                width: `${Math.min(100, calamityProfile.aperturePressure)}%`,
+                background: calamityProfile.visualState.tint,
+              }}
+            />
+          </div>
+          <div className="mt-2 grid grid-cols-2 gap-2 text-[10px] text-rg-paper-200/45">
+            <span>压力 {calamityProfile.aperturePressure}</span>
+            <span>安全 {calamityProfile.safeTurnsEstimate} 回合</span>
+            <span className="col-span-2">亲和：{calamityProfile.favoredPaths.slice(0, 4).join(' / ') || '未登记'}</span>
+            <span className="col-span-2">禁制：{calamityProfile.forbiddenPaths.slice(0, 4).join(' / ') || '暂无'}</span>
+          </div>
+          {(calamityProfile.warnings.length || calamityProfile.blockedActions.length) ? (
+            <div className="mt-2 space-y-1 text-[10px] leading-4">
+              {calamityProfile.warnings.map((warning, index) => (
+                <p key={`w-${index}`} className="text-rg-gold/75">{warning}</p>
+              ))}
+              {calamityProfile.blockedActions.map((blocked, index) => (
+                <p key={`b-${index}`} className="text-rg-blood-400/75">{blocked}</p>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-2 text-[10px] leading-4 text-rg-paper-200/35">
+              {calamityProfile.visualState.description}
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -288,6 +335,9 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
 // ─── 主组件：三层渲染 ─────────────────
 export function AperturePanel({ aperture: apertureOverride, showDaoDensity = true }: AperturePanelProps = {} as any) {
   const storeAperture = useStore(s => s.aperture);
+  const vitals = useStore(s => s.vitals);
+  const turn = useStore(s => s.turn);
+  const flags = useStore(s => s.flags);
   const aperture = apertureOverride ?? storeAperture as MortalAperture | ImmortalAperture | null;
 
   if (!aperture) {
@@ -299,7 +349,13 @@ export function AperturePanel({ aperture: apertureOverride, showDaoDensity = tru
   }
 
   if (isMortal(aperture)) {
-    return <MortalApertureView aperture={aperture} />;
+    const hpPercent = vitals?.health?.max ? (vitals.health.current / vitals.health.max) * 100 : 100;
+    const calamityProfile = buildExtremePhysiqueCalamityProfile(aperture, {
+      hpPercent,
+      turn,
+      recentForcedGuUse: Number((flags as any)?.recentForcedGuUse || 0),
+    });
+    return <MortalApertureView aperture={aperture} calamityProfile={calamityProfile} />;
   }
 
   return <ImmortalApertureView aperture={aperture} showDaoDensity={showDaoDensity} />;
