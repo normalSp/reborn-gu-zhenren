@@ -335,6 +335,31 @@ export function applyStateUpdate(update: StateUpdate): void {
     }
   }
 
+  // v0.7.0-a: LLM may only propose combat event candidates. The engine validates them later.
+  if ((update as any).combat_event_candidates?.add && Array.isArray((update as any).combat_event_candidates.add)) {
+    const s = useStore.getState() as any;
+    const current = Array.isArray(s.flags?.combatEventCandidates)
+      ? [...s.flags.combatEventCandidates]
+      : [];
+    for (const candidate of (update as any).combat_event_candidates.add) {
+      if (!candidate?.title || !candidate?.summary) continue;
+      current.push({
+        ...candidate,
+        id: candidate.id || `combat_candidate_${Date.now()}_${current.length}`,
+        source: candidate.source || 'ai-rumor',
+        engineValidation: 'pending',
+        createdTurn: s.turn || 1,
+        duelId: s.duelState?.duelId,
+      });
+      s.addGameLog?.('combat', `战斗候选事件：${candidate.title}`, {
+        type: candidate.type,
+        risk: candidate.risk,
+        summary: candidate.summary,
+      });
+    }
+    s.setFlag?.('combatEventCandidates', current.slice(-40));
+  }
+
   // v0.7.0-pre M9: AI location names are rumors until verified.
   const rumorLocationUpdates =
     (Array.isArray((update as any).map?.rumors) && (update as any).map.rumors) ||

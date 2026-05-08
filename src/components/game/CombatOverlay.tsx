@@ -48,7 +48,6 @@ export function CombatOverlay() {
   // ═══ v1.7: 杀招面板 ═══
   const killMoves = useStore(useShallow((s: any) => s.killMoves ?? _EMPTY_ARR)) as any[];
   const cooldowns = useStore(useShallow((s: any) => s.cooldowns ?? _EMPTY_OBJ)) as Record<string, number>;
-  const useKillMove = useStore(s => (s as any).useKillMove) as ((id: string) => void) | undefined;
   const [showKillerPanel, setShowKillerPanel] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -65,9 +64,9 @@ export function CombatOverlay() {
   }, [duelState]);
 
   // ═══ Hooks must be called BEFORE any early return (React Rules of Hooks) ═══
-  const handleAction = useCallback((action: string, isPlayerTurn: boolean) => {
+  const handleAction = useCallback((action: string, isPlayerTurn: boolean, moveIndex?: number) => {
     if (!isPlayerTurn) return;
-    executePlayerAction(action as any);
+    executePlayerAction(action as any, moveIndex);
   }, [executePlayerAction]);
 
   const handleEnd = useCallback(() => {
@@ -216,18 +215,19 @@ export function CombatOverlay() {
                     <div className="border-t border-rg-gold/20 pt-2 grid grid-cols-2 gap-2">
                       {killMoves.map((km: any) => {
                         const onCd = (cooldowns[km.id] || 0) > 0;
+                        const moveIndex = duelState.player.moves.findIndex((move: any) => move.killerMoveId === km.id);
+                        const unavailable = moveIndex < 0;
                         return (
                           <button
                             key={km.id}
-                            disabled={!isPlayerTurn || onCd}
+                            disabled={!isPlayerTurn || onCd || unavailable}
                             onClick={() => {
-                              if (typeof useKillMove === 'function') {
-                                useKillMove(km.id);
-                                setShowKillerPanel(false);
-                              }
+                              if (moveIndex < 0) return;
+                              handleAction('gu_skill', isPlayerTurn, moveIndex);
+                              setShowKillerPanel(false);
                             }}
                             className={`text-left p-2 rounded text-xs font-panel border transition-colors cursor-pointer ${
-                              onCd
+                              onCd || unavailable
                                 ? 'border-rg-ink-600 bg-rg-ink-800/30 text-rg-paper-200/30 opacity-50'
                                 : 'border-rg-gold/40 bg-rg-gold/5 text-rg-gold hover:bg-rg-gold/15'
                             }`}

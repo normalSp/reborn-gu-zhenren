@@ -592,6 +592,9 @@ export interface StateUpdate {
       reason?: string;
     }[];
   };
+  combat_event_candidates?: {
+    add?: CombatEventCandidate[];
+  };
 }
 
 // ─── 战斗系统 ───
@@ -702,7 +705,51 @@ export interface EscapeCondition {
 export type DuelPhase = 'init' | 'player_turn' | 'enemy_turn' | 'resolution' | 'ended';
 
 /** 玩家可选行动 */
-export type DuelAction = 'attack' | 'defend' | 'gu_skill' | 'escape';
+export type DuelAction = 'attack' | 'defend' | 'gu_skill' | 'escape' | 'surrender';
+
+export type BattleTracePhase =
+  | 'scout'
+  | 'initiative'
+  | 'action'
+  | 'counter'
+  | 'resource'
+  | 'pressure'
+  | 'event'
+  | 'morale_escape';
+
+export interface BattleTraceEntry {
+  round: number;
+  phase: BattleTracePhase;
+  actor: 'player' | 'enemy' | 'system';
+  action: string;
+  message: string;
+  damage?: number;
+  hitRate?: number;
+  resourceCost?: number;
+  tags?: string[];
+}
+
+export type CombatEventCandidateType =
+  | 'ambush'
+  | 'third_party'
+  | 'environment'
+  | 'pursuit'
+  | 'negotiation'
+  | 'reinforcement'
+  | 'escape_window'
+  | 'other';
+
+export interface CombatEventCandidate {
+  id?: string;
+  type: CombatEventCandidateType;
+  title: string;
+  summary: string;
+  risk?: 'low' | 'medium' | 'high';
+  source?: 'ai-rumor' | 'engine';
+  engineValidation?: 'pending' | 'accepted' | 'blocked';
+  validationIssues?: string[];
+  createdTurn?: number;
+}
 
 /** 决斗结果 */
 export interface DuelResult {
@@ -800,6 +847,8 @@ export interface DuelState {
   };
   result: DuelResult | null;
   log: CombatLogEntry[];
+  trace?: BattleTraceEntry[];
+  eventCandidates?: CombatEventCandidate[];
   startedAt: number;
 }
 

@@ -2,9 +2,12 @@
  * 战斗 Slice — P2-4a决斗引擎状态管理 + v0.7.0小队战斗
  * 薄切片设计：仅做状态读写，计算逻辑全部委托combat-engine / squad-combat-engine
  */
-import type { DuelAction, DuelEnemy, DuelMove, DuelState, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction } from '../../types';
+import type { BattleTraceEntry, DuelAction, DuelEnemy, DuelMove, DuelState, KillMove, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction } from '../../types';
 import { initDuel, executePlayerTurn, executeEnemyTurn } from '../../engine/combat-engine';
 import { initSquadDuel as engineInitSquadDuel, executeSquadTurn as engineExecuteSquadTurn } from '../../engine/squad-combat-engine';
+import { convertKillMoveToDuelMove } from '../../engine/killmove-bridge';
+import { toRealmNum } from '../../engine/combat-formulas';
+import { getMaterialRegistryEntries } from '../../engine/material-registry';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
@@ -22,6 +25,49 @@ export interface BattleRecord {
 }
 
 const MAX_BATTLE_HISTORY = 10;
+
+function appendTraceFromLogs(state: DuelState, fromLogIndex: number, phase: BattleTraceEntry['phase']): DuelState {
+  const newLogs = state.log.slice(fromLogIndex);
+  if (newLogs.length === 0) return state;
+  const traceEntries: BattleTraceEntry[] = newLogs.map(entry => ({
+    round: entry.round,
+    phase,
+    actor: entry.actor,
+    action: entry.action,
+    message: entry.message,
+    damage: entry.damage,
+    tags: [
+      entry.hit === true ? 'hit' : entry.hit === false ? 'miss' : '',
+      entry.crit ? 'crit' : '',
+    ].filter(Boolean),
+  }));
+  return { ...state, trace: [...(state.trace || []), ...traceEntries].slice(-120) };
+}
+
+function buildDuelMovesFromStore(player: { realm: string; path: string; daoMarks: number; moves: DuelMove[] }, store: any): DuelMove[] {
+  const learnedKillMoves = (Array.isArray(store.killMoves) ? store.killMoves : []) as KillMove[];
+  const daoMarkRecord = store.daoMarks || store.pathBuild?.dao_marks || { [player.path]: player.daoMarks || 0 };
+  const pathLevels = store.pathLevels || store.pathBuild?.path_levels || {};
+  const playerRealmNum = toRealmNum(player.realm);
+  const converted = learnedKillMoves.map(move => convertKillMoveToDuelMove(move, daoMarkRecord, pathLevels, playerRealmNum));
+  const byKey = new Map<string, DuelMove>();
+  for (const move of [...(player.moves || []), ...converted]) {
+    byKey.set(move.killerMoveId || move.name, move);
+  }
+  return Array.from(byKey.values());
+}
+
+function pickBattleLootMaterial(enemyPath: string | undefined, enemyRealmNum: number): string | null {
+  const mortalOnly = enemyRealmNum < 6;
+  const entries = getMaterialRegistryEntries()
+    .filter(entry => entry.runtimeAllowed && entry.kind === 'gu_material')
+    .filter(entry => !mortalOnly || !entry.isImmortalMaterial)
+    .filter(entry => entry.usageTags.includes('refinement') || entry.usageTags.includes('trade'));
+  const pathMatched = entries.find(entry => entry.path && entry.path === enemyPath);
+  if (pathMatched) return pathMatched.id;
+  const derivedGeneric = entries.find(entry => entry.source === 'derived-runtime' && !entry.path);
+  return derivedGeneric?.id || entries[0]?.id || null;
+}
 
 export interface CombatSlice {
   duelState: DuelState | null;
@@ -81,9 +127,21 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   combatWins: 0,
 
   initDuel: (player, enemy) => {
-    const state = initDuel(player, enemy);
+    const fullStore = get() as any;
+    const state = initDuel({
+      ...player,
+      moves: buildDuelMovesFromStore(player, fullStore),
+    }, enemy);
     // 初始阶段直接进入玩家回合
     state.phase = 'player_turn';
+    state.trace = [{
+      round: 0,
+      phase: 'scout',
+      actor: 'system',
+      action: 'init',
+      message: `战斗开始：${player.name} vs ${enemy.name}`,
+      tags: ['battle_start'],
+    }];
     set({ duelState: state });
     // ═══ 日志埋点: 战斗开始
     const logStore = get() as any;
@@ -134,16 +192,22 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
 
         // ═══ B1.2: 战斗掉落蛊材 ═══
         const fullStore = get() as any;
-        const enemyPath = state.enemy.path || '通用';
-        const enemyTier = parseInt(state.enemy.realm) || 1;
+        const enemyPath = state.enemy.path;
+        const enemyTier = state.enemy.realmNum || parseInt(state.enemy.realm) || 1;
         const lootCount = Math.max(1, Math.floor(enemyTier * (1 + Math.random() * 2)));
-        const matName = `${enemyPath}蛊材`;
+        const matName = pickBattleLootMaterial(enemyPath, enemyTier);
         if (typeof fullStore.addMaterial === 'function') {
-          fullStore.addMaterial(matName, lootCount);
+          if (matName) fullStore.addMaterial(matName, lootCount);
         }
-        if (typeof fullStore.addGameLog === 'function') {
+        if (matName && typeof fullStore.addGameLog === 'function') {
           fullStore.addGameLog('combat', `战斗胜利！获得 ${matName}×${lootCount}`, {
             material: matName, count: lootCount, enemyName: state.enemy.name,
+          });
+        } else if (!matName && typeof fullStore.addGameLog === 'function') {
+          fullStore.addGameLog('combat', '战斗胜利：未找到可登记掉落，已跳过材料入库', {
+            enemyName: state.enemy.name,
+            enemyPath,
+            enemyTier,
           });
         }
 
@@ -204,21 +268,31 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       set({ duelState: fixed });
       // 继续以修正后的相位处理当前行动
       const s = executePlayerTurn(fixed, action, moveIndex);
-      set({ duelState: s.state });
-      if (s.enemyTurn && s.state.phase === 'enemy_turn') {
-        const afterEnemy = executeEnemyTurn(s.state);
+      const withTrace = appendTraceFromLogs(s.state, fixed.log.length, 'action');
+      set({ duelState: withTrace });
+      if (s.enemyTurn && withTrace.phase === 'enemy_turn') {
+        const afterEnemyRaw = executeEnemyTurn(withTrace);
+        const afterEnemy = appendTraceFromLogs(afterEnemyRaw, withTrace.log.length, 'counter');
         set({ duelState: afterEnemy });
       }
       return;
     }
     if (current.phase !== 'player_turn') return;
 
-    const { state: newState, enemyTurn } = executePlayerTurn(current, action, moveIndex);
+    const { state: rawState, enemyTurn } = executePlayerTurn(current, action, moveIndex);
+    const newState = appendTraceFromLogs(rawState, current.log.length, 'action');
     set({ duelState: newState });
+
+    const move = action === 'gu_skill' && moveIndex !== undefined ? current.player.moves[moveIndex] : undefined;
+    const paidCost = newState.player.essence.current < current.player.essence.current || newState.player.hp < current.player.hp;
+    if (move?.killerMoveId && paidCost) {
+      (get() as any).useKillMove?.(move.killerMoveId);
+    }
 
     // 如果触发敌人回合，自动执行
     if (enemyTurn && newState.phase === 'enemy_turn') {
-      const afterEnemy = executeEnemyTurn(newState);
+      const afterEnemyRaw = executeEnemyTurn(newState);
+      const afterEnemy = appendTraceFromLogs(afterEnemyRaw, newState.log.length, 'counter');
       set({ duelState: afterEnemy });
     }
   },
@@ -227,7 +301,8 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
     const current = get().duelState as DuelState | null;
     if (!current || current.phase !== 'enemy_turn') return;
 
-    const newState = executeEnemyTurn(current);
+    const rawState = executeEnemyTurn(current);
+    const newState = appendTraceFromLogs(rawState, current.log.length, 'counter');
     set({ duelState: newState });
   },
 

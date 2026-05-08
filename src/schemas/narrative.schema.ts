@@ -152,6 +152,22 @@ const GuUseSuggestionsUpdate = z.object({
   add: z.array(GuUseSuggestionAdd).optional(),
 }).optional();
 
+const CombatEventCandidateAdd = z.object({
+  id: z.string().optional(),
+  type: z.enum(['ambush', 'third_party', 'environment', 'pursuit', 'negotiation', 'reinforcement', 'escape_window', 'other']),
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  risk: z.enum(['low', 'medium', 'high']).optional(),
+  source: z.enum(['ai-rumor', 'engine']).optional(),
+  engineValidation: z.enum(['pending', 'accepted', 'blocked']).optional(),
+  validationIssues: z.array(z.string()).optional(),
+  createdTurn: z.number().optional(),
+}).passthrough();
+
+const CombatEventCandidatesUpdate = z.object({
+  add: z.array(CombatEventCandidateAdd).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -167,6 +183,7 @@ export const StateUpdateSchema = z.object({
   dynamic_npcs: DynamicNpcUpdate,
   npc_contacts: NpcContactsUpdate,
   gu_use_suggestions: GuUseSuggestionsUpdate,
+  combat_event_candidates: CombatEventCandidatesUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───
