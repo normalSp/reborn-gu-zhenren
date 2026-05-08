@@ -146,6 +146,25 @@
       "精品蛊材": 3
     },
     "immortalMaterials": {},
+    "mortalAperture": {
+      "type": "mortal",
+      "rank": 4,
+      "subRank": "高阶",
+      "primevalSea": {
+        "color": "#8fd7ff",
+        "colorName": "黄金",
+        "fillPercent": 104
+      },
+      "apertureWall": {
+        "state": "壁薄如纸",
+        "opacity": 0.32,
+        "description": "十绝体空窍压力可视化专项"
+      },
+      "capacity": 3,
+      "carriedGu": 3,
+      "extremePhysiqueType": "北冥冰魄体",
+      "capacityLocked": true
+    },
     "flags": {
       "apertureVisualTest": true
     }

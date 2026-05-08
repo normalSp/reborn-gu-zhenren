@@ -10,9 +10,19 @@ type RebornE2eWindow = Window & {
   };
 };
 
+interface LongScenario {
+  name: string;
+  file: string;
+  minPartySize?: number;
+  expectDispatch?: boolean;
+  expectTerrain?: boolean;
+  expectExtreme?: boolean;
+  expectTreasureYellowHeavenPools?: boolean;
+}
+
 const saveDir = path.join(process.cwd(), '测试存档', 'v0.7.0');
 
-const scenarios = [
+const scenarios: LongScenario[] = [
   {
     name: '一转商队小队路径',
     file: 'v070b_mortal_caravan_squad.json',
@@ -27,6 +37,61 @@ const scenarios = [
     name: '蛊仙期小队战路径',
     file: 'v070b_immortal_squad_combat.json',
     minPartySize: 1,
+  },
+  {
+    name: '小队外派侦察专项',
+    file: 'v070c_dispatch_scout.json',
+    minPartySize: 1,
+    expectDispatch: true,
+  },
+  {
+    name: '小队外派交易专项',
+    file: 'v070c_dispatch_trade.json',
+    minPartySize: 1,
+    expectDispatch: true,
+  },
+  {
+    name: '小队外派拉拢专项',
+    file: 'v070c_dispatch_recruit.json',
+    minPartySize: 1,
+    expectDispatch: true,
+  },
+  {
+    name: '地形森林战斗专项',
+    file: 'v070c_terrain_forest_battle.json',
+    minPartySize: 1,
+    expectTerrain: true,
+  },
+  {
+    name: '地形阵法战斗专项',
+    file: 'v070c_terrain_formation_battle.json',
+    minPartySize: 1,
+    expectTerrain: true,
+  },
+  {
+    name: '十绝体灾劫专项',
+    file: 'v070c_extreme_calamity.json',
+    minPartySize: 1,
+    expectExtreme: true,
+  },
+  {
+    name: '十绝体空窍压力专项',
+    file: 'v070c_aperture_visual_pressure.json',
+    minPartySize: 1,
+    expectExtreme: true,
+  },
+  {
+    name: '宝黄天全品类专项',
+    file: 'v070c_tyh_all_pools.json',
+    minPartySize: 1,
+    expectTreasureYellowHeavenPools: true,
+  },
+  {
+    name: '小队全量回归专项',
+    file: 'v070c_full_regression_squad.json',
+    minPartySize: 1,
+    expectDispatch: true,
+    expectTerrain: true,
   },
 ];
 
@@ -61,7 +126,16 @@ async function installConsoleGuards(page: Page): Promise<string[]> {
   return errors;
 }
 
-test.describe('v0.7.0-c 三路径长测基线', () => {
+function getNumber(summary: Record<string, unknown>, key: string): number {
+  return Number(summary[key] ?? 0);
+}
+
+function getNestedNumber(summary: Record<string, unknown>, parent: string, key: string): number {
+  const value = summary[parent] as Record<string, unknown> | null | undefined;
+  return Number(value?.[key] ?? 0);
+}
+
+test.describe('v0.7.0 发布收束长测', () => {
   for (const scenario of scenarios) {
     test(`${scenario.name} 可以加载并保持核心状态稳定`, async ({ page }) => {
       const consoleErrors = await installConsoleGuards(page);
@@ -89,11 +163,39 @@ test.describe('v0.7.0-c 三路径长测基线', () => {
       expect(summary.screenState).toBe('game_play');
       expect(String(summary.playerRole)).toBe('original_participant');
       expect(String(summary.playerName)).not.toContain('方源');
-      expect(Number(summary.partySize ?? 0)).toBeGreaterThanOrEqual(scenario.minPartySize);
+      expect(getNumber(summary, 'partySize')).toBeGreaterThanOrEqual(scenario.minPartySize ?? 0);
       expect(
         summary.pipelineError === null || summary.pipelineError === 'API Key 未设置',
         `Unexpected pipeline error: ${String(summary.pipelineError)}`,
       ).toBe(true);
+
+      if (scenario.expectDispatch) {
+        expect(getNumber(summary, 'squadDispatchTaskCount'), `${scenario.name} 应加载外派任务真相源`).toBeGreaterThan(0);
+        expect(
+          getNumber(summary, 'squadDispatchEligibleMemberCount'),
+          `${scenario.name} 应能观察到可派遣成员`,
+        ).toBeGreaterThan(0);
+      }
+
+      if (scenario.expectTerrain) {
+        expect(summary.terrainPreview, `${scenario.name} 应有地形/阵法预览`).not.toBeNull();
+        expect(getNestedNumber(summary, 'terrainPreview', 'damageMultiplier')).toBeGreaterThan(0);
+      }
+
+      if (scenario.expectExtreme) {
+        expect(summary.extremePhysiquePressure, `${scenario.name} 应有十绝体压力摘要`).not.toBeNull();
+        expect(getNestedNumber(summary, 'extremePhysiquePressure', 'aperturePressure')).toBeGreaterThan(0);
+      }
+
+      if (scenario.expectTreasureYellowHeavenPools) {
+        const poolTotal =
+          getNestedNumber(summary, 'auctionPoolCategories', 'immortalGu') +
+          getNestedNumber(summary, 'auctionPoolCategories', 'materials') +
+          getNestedNumber(summary, 'auctionPoolCategories', 'recipes') +
+          getNestedNumber(summary, 'auctionPoolCategories', 'killerMoves');
+        expect(poolTotal, `${scenario.name} 应能观察到宝黄天全品类池`).toBeGreaterThan(0);
+      }
+
       expect(consoleErrors).toEqual([]);
     });
   }
