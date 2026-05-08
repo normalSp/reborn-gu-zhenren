@@ -1,23 +1,97 @@
 {
-  "version": "v0.7.0-pre",
+  "version": "v0.7.0-c",
   "entries": [
     {
-      "id": "placeholder_killer_move_flash",
-      "name": "杀招闪图占位",
+      "id": "killer_move_generic",
+      "name": "杀招闪图兜底",
       "kind": "killer_move",
+      "match": {
+        "ids": [],
+        "names": [],
+        "tags": ["killer_move"]
+      },
       "assetPath": "",
       "fallbackTint": "#c49a3a",
+      "durationMs": 1450,
+      "fadeInMs": 180,
+      "fadeOutMs": 420,
+      "shake": {
+        "intensity": 8,
+        "durationMs": 260
+      },
+      "sfxCue": "sfx_combat_hit_3",
       "triggerTags": ["killer_move", "important"],
-      "runtimePhase": "pre_schema"
+      "runtimePhase": "v0.7.0-c",
+      "notes": "没有美术图时使用流派色、文字和震屏兜底，不阻塞 DuelMove/BattleTrace。"
     },
     {
-      "id": "placeholder_immortal_gu_flash",
-      "name": "重要仙蛊闪图占位",
+      "id": "immortal_gu_generic",
+      "name": "重要仙蛊闪图兜底",
       "kind": "immortal_gu",
+      "match": {
+        "ids": [],
+        "names": [],
+        "tags": ["immortal_gu"]
+      },
       "assetPath": "",
       "fallbackTint": "#8fb6ff",
+      "durationMs": 1700,
+      "fadeInMs": 220,
+      "fadeOutMs": 520,
+      "shake": {
+        "intensity": 5,
+        "durationMs": 220
+      },
+      "sfxCue": "sfx_combat_hit_3",
       "triggerTags": ["immortal_gu", "unique"],
-      "runtimePhase": "pre_schema"
+      "runtimePhase": "v0.7.0-c",
+      "notes": "春秋蝉、人如故、鸿运齐天等重要仙蛊没有图片时使用蓝白压迫感兜底。"
+    },
+    {
+      "id": "spring_autumn_cicada_flash",
+      "name": "春秋蝉",
+      "kind": "immortal_gu",
+      "match": {
+        "ids": ["spring_autumn_cicada"],
+        "names": ["春秋蝉"],
+        "tags": ["spring_autumn_cicada", "time_path"]
+      },
+      "assetPath": "/assets/battle/immortal_gu/spring_autumn_cicada.png",
+      "fallbackTint": "#7fbf7f",
+      "durationMs": 1900,
+      "fadeInMs": 180,
+      "fadeOutMs": 640,
+      "shake": {
+        "intensity": 10,
+        "durationMs": 320
+      },
+      "sfxCue": "sfx_combat_hit_3",
+      "triggerTags": ["immortal_gu", "time_path", "reversal"],
+      "runtimePhase": "v0.7.0-c",
+      "notes": "图片路径为用户后续放入资产的目标路径；缺文件时自动 fallback。"
+    },
+    {
+      "id": "man_as_before_flash",
+      "name": "人如故",
+      "kind": "immortal_gu",
+      "match": {
+        "ids": ["man_as_before"],
+        "names": ["人如故"],
+        "tags": ["immortal_gu", "healing"]
+      },
+      "assetPath": "/assets/battle/immortal_gu/man_as_before.png",
+      "fallbackTint": "#d8f4ff",
+      "durationMs": 1550,
+      "fadeInMs": 180,
+      "fadeOutMs": 500,
+      "shake": {
+        "intensity": 2,
+        "durationMs": 140
+      },
+      "sfxCue": "sfx_achievement_unlock",
+      "triggerTags": ["immortal_gu", "healing", "support"],
+      "runtimePhase": "v0.7.0-c",
+      "notes": "治疗/回溯类重要仙蛊以低震屏、强亮度表现，避免误读为攻击。"
     }
   ]
 }

@@ -20,6 +20,7 @@ import { SettingsDialog } from './SettingsDialog';
 import { BattleOverlay } from './BattleOverlay';
 import { CombatOverlay } from './CombatOverlay';
 import { SquadCombatOverlay } from './SquadCombatOverlay';
+import { BattleFlashOverlay } from './BattleFlashOverlay';
 import { NarrativeCombatPanel } from './NarrativeCombatPanel';
 import { NPCInteractionPanel } from './NPCInteractionPanel';
 import { TutorialOverlay } from './TutorialOverlay';
@@ -334,6 +335,7 @@ export function GameScreen() {
       <BattleOverlay />
       <CombatOverlay />
       <SquadCombatOverlay />
+      <BattleFlashOverlay />
       <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
       <NPCInteractionPanel
         onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)}

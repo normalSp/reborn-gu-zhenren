@@ -6,6 +6,7 @@ import type { BattleTraceEntry, DuelAction, DuelEnemy, DuelMove, DuelState, Kill
 import { initDuel, executePlayerTurn, executeEnemyTurn } from '../../engine/combat-engine';
 import { initSquadDuel as engineInitSquadDuel, executeSquadTurn as engineExecuteSquadTurn } from '../../engine/squad-combat-engine';
 import { convertKillMoveToDuelMove } from '../../engine/killmove-bridge';
+import { buildBattleVisualEffectFromDuelMove } from '../../engine/battle-visual-effects';
 import { toRealmNum } from '../../engine/combat-formulas';
 import { getMaterialRegistryEntries } from '../../engine/material-registry';
 import killerMovesRaw from '../../canon/killer-moves.json';
@@ -134,6 +135,8 @@ export interface CombatSlice {
   squadComboSuccesses: number;
   /** v0.7.0-b: 越级撤退成功次数 */
   squadOverlevelEscapes: number;
+  /** v0.7.0-c: 杀招/重要仙蛊闪图视觉队列，纯运行时 */
+  battleVisualQueue: import('../../types').BattleVisualEffectEvent[];
 
   /** 开始决斗 */
   initDuel: (player: {
@@ -171,6 +174,13 @@ export interface CombatSlice {
 
   /** 结束小队战斗 */
   endSquadDuel: () => void;
+
+  /** v0.7.0-c: 推入战斗闪图事件 */
+  enqueueBattleVisualEffect: (event: import('../../types').BattleVisualEffectEvent) => void;
+  /** v0.7.0-c: 弹出当前闪图事件 */
+  dequeueBattleVisualEffect: () => void;
+  /** v0.7.0-c: 清空闪图队列 */
+  clearBattleVisualEffects: () => void;
 }
 
 export const createCombatSlice = (set: any, get: any): CombatSlice => ({
@@ -185,6 +195,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   squadMemberDeaths: 0,
   squadComboSuccesses: 0,
   squadOverlevelEscapes: 0,
+  battleVisualQueue: [],
 
   initDuel: (player, enemy) => {
     const fullStore = get() as any;
@@ -345,6 +356,10 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
 
     const move = action === 'gu_skill' && moveIndex !== undefined ? current.player.moves[moveIndex] : undefined;
     const paidCost = newState.player.essence.current < current.player.essence.current || newState.player.hp < current.player.hp;
+    if (action === 'gu_skill') {
+      const visual = buildBattleVisualEffectFromDuelMove(move, Date.now());
+      if (visual) (get() as any).enqueueBattleVisualEffect?.(visual);
+    }
     if (move?.killerMoveId && paidCost) {
       (get() as any).useKillMove?.(move.killerMoveId);
     }
@@ -448,6 +463,15 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       }
     }
     set(updates);
+    const visualAction = playerActions.find(action => action.type === 'gu_skill');
+    if (visualAction?.moveId) {
+      const actingMember = current.members.find(member =>
+        member.moves?.some(move => (move.killerMoveId || move.name) === visualAction.moveId),
+      );
+      const move = actingMember?.moves?.find(m => (m.killerMoveId || m.name) === visualAction.moveId);
+      const visual = buildBattleVisualEffectFromDuelMove(move, Date.now());
+      if (visual) (get() as any).enqueueBattleVisualEffect?.(visual);
+    }
     if (!current.result && resolved.result) {
       const store = get() as any;
       const reward = resolved.result.rewards ?? resolved.rewardPreview;
@@ -468,5 +492,21 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
 
   endSquadDuel: () => {
     set({ squadCombatState: null });
+  },
+
+  enqueueBattleVisualEffect: (event) => {
+    set((s: CombatSlice) => ({
+      battleVisualQueue: [...(s.battleVisualQueue || []), event].slice(-6),
+    }));
+  },
+
+  dequeueBattleVisualEffect: () => {
+    set((s: CombatSlice) => ({
+      battleVisualQueue: (s.battleVisualQueue || []).slice(1),
+    }));
+  },
+
+  clearBattleVisualEffects: () => {
+    set({ battleVisualQueue: [] });
   },
 });

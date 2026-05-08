@@ -808,6 +808,23 @@ export interface BattleTraceEntry {
   tags?: string[];
 }
 
+export interface BattleVisualEffectEvent {
+  id: string;
+  sourceId: string;
+  sourceName: string;
+  kind: 'killer_move' | 'immortal_gu' | 'scene' | 'ui_feedback';
+  assetPath?: string;
+  fallbackTint: string;
+  durationMs: number;
+  fadeInMs: number;
+  fadeOutMs: number;
+  shakeIntensity: number;
+  shakeDurationMs: number;
+  sfxCue?: string;
+  triggerTags: string[];
+  createdAt: number;
+}
+
 export type CombatEventCandidateType =
   | 'ambush'
   | 'third_party'
@@ -1138,10 +1155,24 @@ export interface BattleAssetManifestEntry {
   id: string;
   name: string;
   kind: 'killer_move' | 'immortal_gu' | 'scene' | 'ui_feedback';
+  match?: {
+    ids?: string[];
+    names?: string[];
+    tags?: string[];
+  };
   assetPath?: string;
   fallbackTint?: string;
+  durationMs?: number;
+  fadeInMs?: number;
+  fadeOutMs?: number;
+  shake?: {
+    intensity: number;
+    durationMs: number;
+  };
+  sfxCue?: string;
   triggerTags: string[];
   runtimePhase: 'pre_schema' | 'v0.7.0-a' | 'v0.7.0-b' | 'v0.7.0-c';
+  notes?: string;
 }
 
 export interface BattleDesignPack {

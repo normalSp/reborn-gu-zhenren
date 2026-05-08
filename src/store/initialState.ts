@@ -176,6 +176,8 @@ export const INITIAL_STATE = {
   duelState: null as any,
   // v0.7.0: 小队战斗状态
   squadCombatState: null as any,
+  // v0.7.0-c: 战斗闪图队列，纯运行时视觉事件，不进存档
+  battleVisualQueue: [] as import('../types').BattleVisualEffectEvent[],
   debt: 0 as number,
   debtInterestRate: 0.05 as number,
   // P2新增: 子系统默认值（各子系统实现时覆盖）
@@ -292,6 +294,8 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'gameLoadVersion',
   // v0.7.0: 小队战斗运行时状态（不持久化，战斗结束后清理）
   'squadCombatState',
+  // v0.7.0-c: 闪图视觉队列（不持久化，不参与战斗结算）
+  'battleVisualQueue',
   // ═══ v1.7: timelineSlice临时选择状态（仅角色创建阶段使用，排除存档污染） ═══
   'selectedNodeId', 'selectedNode', 'selectedDomain',
   'timelineTalents', 'apertureConfig', 'apertureRemainingPoints',
