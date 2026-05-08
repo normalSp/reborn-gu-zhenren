@@ -1,0 +1,68 @@
+{
+  "formatVersion": 13,
+  "timestamp": "2026-05-08T20:07:00+08:00",
+  "meta": {
+    "playerName": "北原客卿·赫连微",
+    "realm": "四转初阶",
+    "turn": 58,
+    "gameMode": "canon",
+    "description": "v0.7.0-b 手测：低信任高利益招募，验证 mercenary 评估、元石扣款、AP 消耗、岗位暂停和拒绝原因。"
+  },
+  "state": {
+    "profile": {
+      "name": "北原客卿·赫连微",
+      "realm": { "grand": 4, "sub": "初阶", "label": "四转初阶" },
+      "background": "北原·商路客卿"
+    },
+    "currentDomain": "北原",
+    "currentChapterId": "north_wangting_contact",
+    "turn": 58,
+    "currency": 560,
+    "gameTime": { "ap": 3, "max_ap": 3, "period": "morning", "day": 20, "month": 6, "year": 1, "season": "summer" },
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": ["奴道"],
+      "path_levels": { "力道": "精通" },
+      "dao_marks": { "力道": 180, "奴道": 40 }
+    },
+    "vitals": {
+      "health": { "current": 260, "max": 260 },
+      "essence": { "current": 120, "max": 150 },
+      "essenceType": "mortal"
+    },
+    "playerFaction": {
+      "id": "faction_north_trade",
+      "name": "北原临时商盟",
+      "type": "散修联盟",
+      "domain": "北原",
+      "level": 2,
+      "reputation": 45,
+      "resources": { "元石": 560, "仙元石": 0, "蛊材": {} },
+      "maxMembers": 8,
+      "members": [
+        { "id": "m_merc_batu", "name": "巴图尔旧部", "path": "力道", "realm": 4, "loyalty": 30, "personality": "cautious", "alive": true, "hp": 240, "maxHp": 240, "atk": 56, "def": 34, "adventureTrust": 25, "interestDrive": 82, "status": "idle" },
+        { "id": "m_unwilling_scout", "name": "游牧斥候", "path": "侦察", "realm": 3, "loyalty": 22, "personality": "cunning", "alive": true, "hp": 150, "maxHp": 150, "atk": 32, "def": 18, "adventureTrust": 18, "interestDrive": 25, "status": "idle" },
+        { "id": "m_wounded_guard", "name": "负伤护卫", "path": "金道", "realm": 3, "loyalty": 55, "personality": "loyal", "alive": true, "hp": 48, "maxHp": 180, "atk": 40, "def": 30, "adventureTrust": 76, "interestDrive": 35, "status": "wounded", "woundedUntil": 64 }
+      ]
+    },
+    "partyState": {
+      "members": [],
+      "maxSize": 4,
+      "formation": null,
+      "morale": 50,
+      "coordination": 50,
+      "lastUpdatedTurn": 58,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {}
+    },
+    "gameLog": [
+      {
+        "id": "handtest-note-mercenary",
+        "turn": 58,
+        "type": "system",
+        "summary": "手测目标：选择巴图尔旧部入队，应触发 mercenary 报酬 480 元石；游牧斥候应拒绝；负伤护卫应因重伤不可入队。",
+        "importance": "normal"
+      }
+    ]
+  }
+}

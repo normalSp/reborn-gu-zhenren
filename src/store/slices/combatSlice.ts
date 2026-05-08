@@ -74,6 +74,46 @@ function avgRealm<T extends { realm: number }>(units: T[]): number {
   return units.reduce((sum, unit) => sum + (unit.realm || 0), 0) / units.length;
 }
 
+function clampScore(value: number): number {
+  return Math.max(0, Math.min(100, Math.round(value)));
+}
+
+function applySquadResultToMember<T extends {
+  id?: string;
+  memberId?: string;
+  name: string;
+  hp?: number;
+  maxHp?: number;
+  alive?: boolean;
+  loyalty?: number;
+  adventureTrust?: number;
+}>(member: T, result: NonNullable<SquadCombatState['result']>, turn: number): T {
+  const memberKey = member.id || member.memberId || member.name;
+  const delta = result.trustDeltas?.[memberKey] ?? result.trustDeltas?.[member.name] ?? 0;
+  const wounded = result.wounded.includes(member.name) || result.wounded.includes(memberKey);
+  const dead = result.casualties.includes(member.name) || result.casualties.includes(memberKey);
+  const patch: Record<string, any> = {};
+
+  if (Number.isFinite(member.adventureTrust)) {
+    patch.adventureTrust = clampScore((member.adventureTrust ?? 50) + delta);
+  }
+  if (Number.isFinite(member.loyalty)) {
+    patch.loyalty = clampScore((member.loyalty ?? 50) + Math.trunc(delta / 2));
+  }
+  if (wounded) {
+    patch.status = 'wounded';
+    patch.woundedUntil = turn + 5;
+    patch.hp = Math.max(1, Math.min(member.hp ?? 1, Math.max(1, Math.floor((member.maxHp ?? 100) * 0.2))));
+  }
+  if (dead) {
+    patch.status = 'dead';
+    patch.alive = false;
+    patch.hp = 0;
+  }
+
+  return { ...member, ...patch };
+}
+
 export interface CombatSlice {
   duelState: DuelState | null;
   /** v0.7.0: 小队战斗状态 */
@@ -374,8 +414,56 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
           updates.squadOverlevelEscapes = (store.squadOverlevelEscapes || 0) + 1;
         }
       }
+      const result = resolved.result;
+      const reward = result.rewards ?? resolved.rewardPreview;
+      if (result.winner === 'player' && reward) {
+        if ((reward.yuanStone || 0) > 0) {
+          updates.currency = Math.max(0, (store.currency || 0) + (reward.yuanStone || 0));
+          updates.totalCurrencyEarned = (store.totalCurrencyEarned || 0) + (reward.yuanStone || 0);
+        }
+        if ((reward.immortalStone || 0) > 0) {
+          updates.immortalCurrency = Math.max(0, (store.immortalCurrency || 0) + (reward.immortalStone || 0));
+        }
+        if (reward.materials && typeof store.addMaterial === 'function') {
+          for (const [materialName, count] of Object.entries(reward.materials)) {
+            if (count > 0) store.addMaterial(materialName, count);
+          }
+        }
+      }
+
+      const turn = store.turn ?? 0;
+      if (store.playerFaction?.members) {
+        updates.playerFaction = {
+          ...store.playerFaction,
+          members: store.playerFaction.members.map((member: any) => applySquadResultToMember(member, result, turn)),
+        };
+      }
+      if (store.partyState?.members) {
+        updates.partyState = {
+          ...store.partyState,
+          morale: Math.max(0, Math.min(100, (store.partyState.morale ?? resolved.morale) + (result.moraleDelta || 0))),
+          lastUpdatedTurn: turn,
+          members: store.partyState.members.map((member: any) => applySquadResultToMember(member, result, turn)),
+        };
+      }
     }
     set(updates);
+    if (!current.result && resolved.result) {
+      const store = get() as any;
+      const reward = resolved.result.rewards ?? resolved.rewardPreview;
+      if (typeof store.addGameLog === 'function') {
+        const yuanStone = resolved.result.winner === 'player' ? (reward?.yuanStone || 0) : 0;
+        const immortalStone = resolved.result.winner === 'player' ? (reward?.immortalStone || 0) : 0;
+        store.addGameLog('combat', `小队战结算：${resolved.result.winner === 'player' ? '胜利' : resolved.result.winner === 'escaped' ? '撤退' : '失败'}，元石+${yuanStone}，仙元石+${immortalStone}`, {
+          squadId: resolved.squadId,
+          winner: resolved.result.winner,
+          roundsTaken: resolved.result.roundsTaken,
+          wounded: resolved.result.wounded,
+          casualties: resolved.result.casualties,
+          trustDeltas: resolved.result.trustDeltas,
+        });
+      }
+    }
   },
 
   endSquadDuel: () => {
