@@ -262,6 +262,30 @@ export function applyStateUpdate(update: StateUpdate): void {
     store2.setFlag?.('aiRumorDiscoveries', current.slice(-100));
   }
 
+  // ─── v0.7.0-pre: NPC对话委托/交易候选（不创建正式任务，不改经济） ───
+  if ((update as any).dialogue_requests?.add && Array.isArray((update as any).dialogue_requests.add)) {
+    const store2 = useStore.getState() as any;
+    const current = Array.isArray(store2.flags?.npcRequestCandidates)
+      ? [...store2.flags.npcRequestCandidates]
+      : [];
+    for (const request of (update as any).dialogue_requests.add) {
+      const candidate = {
+        ...request,
+        status: 'candidate',
+        source: request.source || 'ai-rumor',
+        turn: store2.turn || 1,
+        chapterId: store2.currentChapterId || '',
+        domain: store2.currentDomain || '',
+        timestamp: Date.now(),
+      };
+      current.push(candidate);
+      if (typeof store2.addGameLog === 'function') {
+        store2.addGameLog('npc', `NPC候选线索：${candidate.title}`, candidate);
+      }
+    }
+    store2.setFlag?.('npcRequestCandidates', current.slice(-100));
+  }
+
   // v0.7.0-pre M17: AI 只能提出场景蛊使用候选，实际生效必须经过引擎校验。
   if ((update as any).gu_use_suggestions?.add && Array.isArray((update as any).gu_use_suggestions.add)) {
     const s = useStore.getState() as any;

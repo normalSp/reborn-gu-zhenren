@@ -8,7 +8,7 @@ import { contextBuilder } from './context-builder';
 import { checkChapterGoals } from './goal-checker';
 import { buildDeathRecordFallback } from './death-record';
 import { useStore } from '../store';
-import type { NarrativeJSON, AIContext } from '../types';
+import type { ActiveDialogue, Choice, DialogueActionCard, DialogueActionCardCategory, NarrativeJSON, AIContext } from '../types';
 import type { SemanticValidationResult } from './semantic-validator';
 import type { CanaryValidationResult } from './canary-assertions';
 
@@ -175,6 +175,42 @@ export function extractDialogueAffinityDelta(stateUpdate: any, npcName: string):
   if (!Array.isArray(deltas)) return 0;
   const match = deltas.find((item: any) => item?.name === npcName);
   return typeof match?.delta === 'number' ? match.delta : 0;
+}
+
+export function inferDialogueActionCategory(text: string): DialogueActionCardCategory {
+  if (/接受|答应|接下|帮.*(猎|查|找|送|护)|追踪|猎杀|护送|参与/.test(text)) return 'accept_request';
+  if (/拒绝|婉拒|推辞|暂缓|不接|离开/.test(text)) return 'decline_request';
+  if (/讨价|谈判|报酬|条件|分成|交换|议价/.test(text)) return 'negotiate';
+  if (/交易|购买|出售|买|卖|蛊材|货物|商路/.test(text)) return 'trade_interest';
+  if (/挑衅|威胁|动手|杀|攻击|激怒|压迫/.test(text)) return 'hostility';
+  if (/询问|追问|打听|请教|了解|局势|情报|来历|目的/.test(text)) return 'ask_more';
+  if (/听闻|传闻|线索|消息|地点|黑市|帮派/.test(text)) return 'rumor';
+  return 'reply';
+}
+
+export function buildDialogueActionCards(
+  choices: Choice[] | undefined,
+  activeDialogue: ActiveDialogue,
+  turn: number,
+): DialogueActionCard[] {
+  if (!Array.isArray(choices)) return [];
+  const topic = activeDialogue.pendingTopic || '闲聊';
+  return choices.slice(0, 6).map((choice, index) => ({
+    id: `${activeDialogue.dialogueId}_${choice.id || `c${index + 1}`}_${turn}`,
+    npcId: activeDialogue.npcId,
+    npcName: activeDialogue.npcName,
+    topic,
+    text: choice.text,
+    risk: choice.risk || 'medium',
+    riskNote: choice.risk_note || '未知风险',
+    category: inferDialogueActionCategory(choice.text),
+    status: 'pending' as const,
+    createdTurn: turn,
+    payload: {
+      sourceChoiceId: choice.id,
+      source: 'deepseek-dialogue-choice',
+    },
+  }));
 }
 
 // ═══════════════════════════════════════════════
@@ -477,7 +513,15 @@ export class ResponsePipeline {
       const activeDialogue = dialogueStore.activeDialogue;
       if (activeDialogue?.awaitingResponse && typeof dialogueStore.appendNpcMessage === 'function') {
         const affinityDelta = extractDialogueAffinityDelta(narrative.state_update, activeDialogue.npcName);
+        const actionCards = buildDialogueActionCards(
+          narrative.narrative.choices as Choice[],
+          activeDialogue,
+          dialogueStore.turn || 1,
+        );
         dialogueStore.appendNpcMessage(narrative.narrative.text, affinityDelta);
+        if (typeof dialogueStore.setDialogueActionCards === 'function') {
+          dialogueStore.setDialogueActionCards(actionCards);
+        }
       }
 
       // ═══ P2补完: 章节目标检测 — 打通目标→路由推进链路 ═══

@@ -26,7 +26,7 @@ export interface AiRewardIssue {
 }
 
 export interface AiDiscovery {
-  type: 'material' | 'recipe' | 'path' | 'unknown';
+  type: 'material' | 'recipe' | 'path' | 'location' | 'npc_request' | 'trade' | 'unknown';
   name: string;
   note: string;
   source: 'ai-rumor';

@@ -516,10 +516,23 @@ export interface StateUpdate {
   /** AI提到但未通过真相源验证的物品/蛊方/流派线索，无数值效果 */
   discoveries?: {
     add?: {
-      type: 'material' | 'recipe' | 'path' | 'unknown';
+      type: 'material' | 'recipe' | 'path' | 'location' | 'npc_request' | 'trade' | 'unknown';
       name: string;
       note: string;
       source: 'ai-rumor';
+    }[];
+  };
+  /** NPC对话内产生的委托/交易/情报候选，只进待审线索，不直接创建正式任务 */
+  dialogue_requests?: {
+    add?: {
+      id?: string;
+      npcName: string;
+      title: string;
+      summary: string;
+      category?: 'request' | 'trade' | 'rumor' | 'hunt' | 'escort' | 'information' | 'other';
+      risk?: 'high' | 'medium' | 'low';
+      rewardHint?: string;
+      source?: 'ai-rumor';
     }[];
   };
   flags?: {
@@ -833,11 +846,38 @@ export interface NarrativeCombatTrigger {
 
 export type DialogueTopic = '闲聊' | '请教' | '请教杀招' | '交易' | '委托' | '挑衅' | '深交';
 
+export type DialogueActionCardCategory =
+  | 'reply'
+  | 'ask_more'
+  | 'accept_request'
+  | 'decline_request'
+  | 'negotiate'
+  | 'trade_interest'
+  | 'hostility'
+  | 'rumor';
+
+export type DialogueActionCardStatus = 'pending' | 'selected' | 'resolved' | 'blocked' | 'expired';
+
 export interface DialogueMessage {
   role: 'player' | 'npc';
   text: string;
   affinityChange?: number;
   timestamp: number;
+}
+
+export interface DialogueActionCard {
+  id: string;
+  npcId: string;
+  npcName: string;
+  topic: DialogueTopic | string;
+  text: string;
+  risk: 'high' | 'medium' | 'low';
+  riskNote: string;
+  category: DialogueActionCardCategory;
+  status: DialogueActionCardStatus;
+  createdTurn: number;
+  payload?: Record<string, any>;
+  validationIssues?: string[];
 }
 
 export interface ActiveDialogue {
@@ -850,8 +890,10 @@ export interface ActiveDialogue {
   messages: DialogueMessage[];
   startedAt: number;
   awaitingResponse?: boolean;
-  pendingTopic?: DialogueTopic | null;
+  pendingTopic?: DialogueTopic | string | null;
   error?: string | null;
+  actionCards?: DialogueActionCard[];
+  selectedActionCardId?: string | null;
 }
 
 // ─── 死亡记录 ───

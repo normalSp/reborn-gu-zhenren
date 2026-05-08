@@ -2,7 +2,7 @@
  * NPC对话 Slice — P2-5
  * 薄切片设计：仅管理对话状态读写，对话生成委托AI（context-builder注入）
  */
-import type { ActiveDialogue, DialogueMessage, DialogueTopic } from '../../types';
+import type { ActiveDialogue, DialogueActionCard, DialogueMessage, DialogueTopic } from '../../types';
 
 const THRESHOLD_EVENTS: Record<number, string> = {
   60: '深厚信任——NPC愿意分享私人秘密',
@@ -18,6 +18,10 @@ export interface DialogueSlice {
   initDialogue: (npcId: string, npcName: string, npcPersonality: string, npcFaction: string, affinity: number) => void;
   sendTopic: (topic: DialogueTopic) => DialogueMessage | null;
   appendNpcMessage: (text: string, affinityDelta: number) => void;
+  setDialogueActionCards: (cards: DialogueActionCard[]) => void;
+  selectDialogueActionCard: (cardId: string) => DialogueActionCard | null;
+  clearDialogueActionCards: () => void;
+  markDialogueActionBlocked: (cardId: string, reason: string) => void;
   markDialogueError: (error: string) => void;
   endDialogue: () => void;
 }
@@ -39,6 +43,8 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         awaitingResponse: false,
         pendingTopic: null,
         error: null,
+        actionCards: [],
+        selectedActionCardId: null,
       },
     });
     // ═══ 日志埋点: 开始对话
@@ -77,6 +83,8 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         awaitingResponse: true,
         pendingTopic: topic,
         error: null,
+        actionCards: [],
+        selectedActionCardId: null,
       },
     });
 
@@ -137,6 +145,88 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         awaitingResponse: false,
         pendingTopic: null,
         error: null,
+        actionCards: (current.actionCards || []).map((card) =>
+          card.id === current.selectedActionCardId ? { ...card, status: 'resolved' as const } : card,
+        ),
+        selectedActionCardId: null,
+      },
+    });
+  },
+
+  setDialogueActionCards: (cards) => {
+    const current = get().activeDialogue as ActiveDialogue | null;
+    if (!current) return;
+    set({
+      activeDialogue: {
+        ...current,
+        actionCards: cards,
+        selectedActionCardId: null,
+      },
+    });
+  },
+
+  selectDialogueActionCard: (cardId) => {
+    const current = get().activeDialogue as ActiveDialogue | null;
+    if (!current) return null;
+    const cards = current.actionCards || [];
+    const selected = cards.find((card) => card.id === cardId);
+    if (!selected || selected.status !== 'pending') return null;
+
+    const playerMsg: DialogueMessage = {
+      role: 'player',
+      text: selected.text,
+      timestamp: Date.now(),
+    };
+
+    const nextCards = cards.map((card) =>
+      card.id === cardId
+        ? { ...card, status: 'selected' as const }
+        : card.status === 'pending'
+          ? { ...card, status: 'expired' as const }
+          : card,
+    );
+
+    set({
+      activeDialogue: {
+        ...current,
+        messages: [...current.messages, playerMsg],
+        actionCards: nextCards,
+        awaitingResponse: true,
+        pendingTopic: selected.topic,
+        selectedActionCardId: cardId,
+        error: null,
+      },
+    });
+
+    return selected;
+  },
+
+  clearDialogueActionCards: () => {
+    const current = get().activeDialogue as ActiveDialogue | null;
+    if (!current) return;
+    set({
+      activeDialogue: {
+        ...current,
+        actionCards: [],
+        selectedActionCardId: null,
+      },
+    });
+  },
+
+  markDialogueActionBlocked: (cardId, reason) => {
+    const current = get().activeDialogue as ActiveDialogue | null;
+    if (!current) return;
+    set({
+      activeDialogue: {
+        ...current,
+        actionCards: (current.actionCards || []).map((card) =>
+          card.id === cardId
+            ? { ...card, status: 'blocked' as const, validationIssues: [...(card.validationIssues || []), reason] }
+            : card,
+        ),
+        awaitingResponse: false,
+        pendingTopic: null,
+        selectedActionCardId: null,
       },
     });
   },
@@ -149,6 +239,7 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         ...current,
         awaitingResponse: false,
         pendingTopic: null,
+        selectedActionCardId: null,
         error,
       },
     });

@@ -25,7 +25,7 @@ const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你
 世界观：蛊界弱肉强食。境界不可逾越。禁止markdown包裹。`;
 
 // ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
-const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,recipe_fragments,dynamic_npcs,npc_contacts,gu_use_suggestions,event_policy,attribute_mutations,discoveries} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 玩家是原创角色且不可被称作方源, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铜皮蛊",tier:1,path:"金道",rarity:"普通",description:"强化皮肤防御"}]}, 获得蛊材/材料给materials:{add:{"月华草":2}}, 获得残方只能给recipe_fragments:{add:["已登记fragmentId"]}。禁止返回recipes.unlock。未列入奖励白名单的物品/蛊方/流派只能写discoveries:{add:[{type:"unknown",name:"名称",note:"待审线索",source:"ai-rumor"}]}，不得写入materials/gu_inventory。剧情中建议使用特殊蛊只能写gu_use_suggestions:{add:[{guName:"妇人心蛊",target:{type:"scene_target",name:"目标"},sceneValidated:true,sceneTags:["毒道","尸体"],reason:"剧情原因"}]}，建议不等于执行，引擎会校验持有、场景、目标、代价和反噬。真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心/声望事件用event_policy:{kind:"kill|rescue|betray|trade|deceive|keep_promise|sacrifice|loot|protect|extort",factionId:"势力id",alignment:"righteous|demonic|merchant",reason:"原因"}，四维变化只能用attribute_mutations.add并等待引擎白名单校验。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,recipe_fragments,dynamic_npcs,npc_contacts,gu_use_suggestions,event_policy,attribute_mutations,discoveries,dialogue_requests} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 玩家是原创角色且不可被称作方源, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铜皮蛊",tier:1,path:"金道",rarity:"普通",description:"强化皮肤防御"}]}, 获得蛊材/材料给materials:{add:{"月华草":2}}, 获得残方只能给recipe_fragments:{add:["已登记fragmentId"]}。禁止返回recipes.unlock。未列入奖励白名单的物品/蛊方/流派只能写discoveries:{add:[{type:"unknown",name:"名称",note:"待审线索",source:"ai-rumor"}]}，不得写入materials/gu_inventory。NPC对话内的委托/交易/追踪/猎杀只可写dialogue_requests.add或discoveries.add作为候选线索，不得直接创建正式任务、扣钱或给奖励。剧情中建议使用特殊蛊只能写gu_use_suggestions:{add:[{guName:"妇人心蛊",target:{type:"scene_target",name:"目标"},sceneValidated:true,sceneTags:["毒道","尸体"],reason:"剧情原因"}]}，建议不等于执行，引擎会校验持有、场景、目标、代价和反噬。真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心/声望事件用event_policy:{kind:"kill|rescue|betray|trade|deceive|keep_promise|sacrifice|loot|protect|extort",factionId:"势力id",alignment:"righteous|demonic|merchant",reason:"原因"}，四维变化只能用attribute_mutations.add并等待引擎白名单校验。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
 
 🆕 动态NPC规则: 叙事中遇到新的"路人甲"NPC（非202预定义NPC）时，通过state_update.dynamic_npcs.add回写结构化数据: [{name:"张三",path:"力道",realm:1,personality:"憨厚老实",bonding_hint:"张三感激你出手相助，对你心生敬佩"}]. realm限制1-2(凡人/一转初阶)，避免战力通胀。人物不可重复（检查之前叙事中是否已出现同名者）。已有NPC好感变化通过dynamic_npcs.affinity_delta回写: [{name:"张三",delta:5}]。
 🆕 人物图鉴contact: 叙事中遇见、听闻或短暂交会原著/动态角色但尚未建立关系时，必须通过state_update.npc_contacts.add回写: [{name:"商心慈",source:"canon",status:"heard|seen|interacted",location:"南疆商路",summary:"一句话摘要"}]。`;
@@ -315,24 +315,48 @@ function injectCombatConstraint(store: RootStore): string {
 
 // ─── P2-5: NPC对话上下文注入 ───
 function injectDialogueContext(store: RootStore): string {
-  const ad = (store as any).activeDialogue as { npcName: string; npcPersonality: string; affinity: number; messages: { role: string; text: string }[] } | null;
+  const ad = (store as any).activeDialogue as {
+    npcName: string;
+    npcPersonality: string;
+    affinity: number;
+    messages: { role: string; text: string }[];
+    selectedActionCardId?: string | null;
+    actionCards?: {
+      id: string;
+      text: string;
+      topic: string;
+      category: string;
+      risk: string;
+      riskNote: string;
+      status: string;
+    }[];
+  } | null;
   if (!ad || ad.messages.length === 0) return '';
 
   const lastMsg = ad.messages[ad.messages.length - 1];
   if (lastMsg?.role !== 'player') return '';
 
-  const topic = lastMsg.text.replace('【', '').replace('】', '');
+  const selectedCard = ad.selectedActionCardId
+    ? ad.actionCards?.find((card) => card.id === ad.selectedActionCardId)
+    : null;
+  const topic = selectedCard?.topic || lastMsg.text.replace('【', '').replace('】', '');
+  const playerActionLine = selectedCard
+    ? `玩家点击了NPC对话行动卡：${selectedCard.text}（类别${selectedCard.category}，风险${selectedCard.risk}：${selectedCard.riskNote}）`
+    : `玩家选择的话题：【${topic}】`;
 
   return [
     '【NPC对话上下文】',
     `你正在与${ad.npcName}进行对话。`,
     `${ad.npcName}的性格：${ad.npcPersonality}`,
     `当前好感度：${ad.affinity}（-100~100）`,
-    `玩家选择的话题：【${topic}】`,
+    playerActionLine,
     '',
     `请以${ad.npcName}的身份用第一人称回应。回应需符合该NPC的性格特征和当前好感度水平。`,
     `回应后必须在state_update.dynamic_npcs.affinity_delta中包含好感变化，如 [{"name":"${ad.npcName}","delta":0}]；delta范围-5到+5。`,
-    '你仍然需要生成正常的叙事文本narrative.text和当轮的选择项choices——对话回应放在叙事文本的开头部分，然后继续当轮的正常叙事。',
+    '这是NPC对话内回应，不是主线推进。choices会显示为对话窗内的行动卡，给2-4个可回应选项即可，不要把它们当成主叙事推进。',
+    'NPC可以提出交易、委托、猎杀、追踪、情报等候选，但不得直接创建正式任务、扣钱、给奖励、写入背包、开放地图已知地点或改变主线进度。',
+    '如果NPC提出委托/交易/黑市/地名/目标，只能写dialogue_requests.add或discoveries.add作为待审线索；unknown内容默认无数值效果，等待引擎和白名单校验。',
+    '交易只表达意向，正式买卖必须进入商会/交易UI；委托只生成候选线索；挑衅只可调整好感、道心或冲突风险，不能直接开战。',
   ].join('\n');
 }
 function injectTerminology(): string {

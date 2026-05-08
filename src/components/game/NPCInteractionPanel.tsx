@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
-import type { DialogueTopic } from '../../types';
+import type { DialogueActionCard, DialogueTopic } from '../../types';
 
 // ═══ M7: NPC dialog animation variants ═══
 const npcOverlayVariants = {
@@ -48,11 +48,31 @@ const TOPICS: { key: DialogueTopic; label: string; color: string; desc: string }
 
 interface NPCInteractionPanelProps {
   onSubmitDialogueTopic: (topic: DialogueTopic) => Promise<void>;
+  onSubmitDialogueActionCard: (cardId: string) => Promise<void>;
 }
 
-export function NPCInteractionPanel({ onSubmitDialogueTopic }: NPCInteractionPanelProps) {
+const CATEGORY_LABEL: Record<string, string> = {
+  reply: '回应',
+  ask_more: '追问',
+  accept_request: '接下',
+  decline_request: '回绝',
+  negotiate: '议价',
+  trade_interest: '交易意向',
+  hostility: '冲突',
+  rumor: '线索',
+};
+
+const RISK_LABEL: Record<string, string> = {
+  low: '低',
+  medium: '中',
+  high: '高',
+};
+
+export function NPCInteractionPanel({ onSubmitDialogueTopic, onSubmitDialogueActionCard }: NPCInteractionPanelProps) {
   const ad = useStore((s: any) => s.activeDialogue);
   const sendTopic = useStore((s: any) => s.sendTopic);
+  const selectDialogueActionCard = useStore((s: any) => s.selectDialogueActionCard);
+  const markDialogueActionBlocked = useStore((s: any) => s.markDialogueActionBlocked);
   const markDialogueError = useStore((s: any) => s.markDialogueError);
   const endDialogue = useStore((s: any) => s.endDialogue);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -74,7 +94,7 @@ export function NPCInteractionPanel({ onSubmitDialogueTopic }: NPCInteractionPan
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [ad?.messages?.length]);
+  }, [ad?.messages?.length, ad?.actionCards?.length]);
 
   const handleTopic = useCallback(async (topic: DialogueTopic) => {
     if (!ad || ad.awaitingResponse) return;
@@ -94,6 +114,19 @@ export function NPCInteractionPanel({ onSubmitDialogueTopic }: NPCInteractionPan
       markDialogueError?.(err?.message || '对话生成失败，请稍后重试。');
     }
   }, [ad, markDialogueError, onSubmitDialogueTopic, sendTopic]);
+
+  const handleActionCard = useCallback(async (card: DialogueActionCard) => {
+    if (!ad || ad.awaitingResponse || card.status !== 'pending') return;
+    const selected = selectDialogueActionCard?.(card.id);
+    if (!selected) return;
+    try {
+      await onSubmitDialogueActionCard(card.id);
+    } catch (err: any) {
+      const message = err?.message || '对话行动失败，请稍后重试。';
+      markDialogueActionBlocked?.(card.id, message);
+      markDialogueError?.(message);
+    }
+  }, [ad, markDialogueActionBlocked, markDialogueError, onSubmitDialogueActionCard, selectDialogueActionCard]);
 
   const handleClose = useCallback(() => {
     endDialogue();
@@ -194,6 +227,56 @@ export function NPCInteractionPanel({ onSubmitDialogueTopic }: NPCInteractionPan
                   <div className="px-3 py-1.5 rounded-lg text-xs text-rg-blood-400 border border-rg-blood-400/30 bg-rg-blood-400/10">
                     {ad.error}
                   </div>
+                </motion.div>
+              )}
+              {(ad.actionCards || []).length > 0 && (
+                <motion.div
+                  className="space-y-1.5 pt-1"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <div className="text-[10px] text-rg-paper-200/35">可回应</div>
+                  {(ad.actionCards || []).map((card: DialogueActionCard) => {
+                    const disabled = !!ad.awaitingResponse || card.status !== 'pending';
+                    const riskColor = card.risk === 'high'
+                      ? 'var(--gu-life-crimson)'
+                      : card.risk === 'low'
+                        ? 'var(--gu-life-verdant)'
+                        : 'var(--gu-trace-gold)';
+                    return (
+                      <motion.button
+                        key={card.id}
+                        onClick={() => handleActionCard(card)}
+                        disabled={disabled}
+                        className={`w-full rounded-md px-3 py-2 text-left transition-all ${disabled ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:translate-x-0.5'}`}
+                        style={{
+                          backgroundColor: 'var(--gu-bg-standard)',
+                          border: `1px solid ${card.status === 'blocked' ? 'var(--gu-life-crimson)' : 'var(--gu-trace-slate)'}`,
+                          color: 'var(--gu-text-primary)',
+                        }}
+                        whileHover={disabled ? undefined : { scale: 1.01 }}
+                        whileTap={disabled ? undefined : { scale: 0.98 }}
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <span className="text-[10px] font-panel" style={{ color: riskColor }}>
+                            {CATEGORY_LABEL[card.category] || '回应'} · 风险{RISK_LABEL[card.risk] || '中'}
+                          </span>
+                          {card.status !== 'pending' && (
+                            <span className="text-[9px] text-rg-paper-200/35">
+                              {card.status === 'selected' ? '处理中' : card.status === 'resolved' ? '已回应' : card.status === 'blocked' ? '已阻断' : '已过期'}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs leading-relaxed">{card.text}</div>
+                        {card.riskNote && (
+                          <div className="text-[10px] mt-1 text-rg-paper-200/35">{card.riskNote}</div>
+                        )}
+                        {card.validationIssues?.length ? (
+                          <div className="text-[10px] mt-1 text-rg-blood-400">{card.validationIssues[card.validationIssues.length - 1]}</div>
+                        ) : null}
+                      </motion.button>
+                    );
+                  })}
                 </motion.div>
               )}
               <div ref={messagesEndRef} />

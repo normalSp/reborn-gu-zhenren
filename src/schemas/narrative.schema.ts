@@ -91,6 +91,28 @@ const RecipeFragmentsUpdate = z.object({
   add: z.array(z.string()).optional(),
 }).optional();
 
+const DiscoveriesUpdate = z.object({
+  add: z.array(z.object({
+    type: z.enum(['material', 'recipe', 'path', 'location', 'npc_request', 'trade', 'unknown']).optional().default('unknown'),
+    name: z.string().min(1),
+    note: z.string().min(1),
+    source: z.literal('ai-rumor').optional().default('ai-rumor'),
+  }).passthrough()).optional(),
+}).optional();
+
+const DialogueRequestsUpdate = z.object({
+  add: z.array(z.object({
+    id: z.string().optional(),
+    npcName: z.string().min(1),
+    title: z.string().min(1),
+    summary: z.string().min(1),
+    category: z.enum(['request', 'trade', 'rumor', 'hunt', 'escort', 'information', 'other']).optional().default('other'),
+    risk: z.enum(['high', 'medium', 'low']).optional().default('medium'),
+    rewardHint: z.string().optional(),
+    source: z.literal('ai-rumor').optional().default('ai-rumor'),
+  }).passthrough()).optional(),
+}).optional();
+
 const DynamicNpcUpdate = z.object({
   add: z.array(z.any()).optional(),
   affinity_delta: z.array(z.object({
@@ -140,6 +162,8 @@ export const StateUpdateSchema = z.object({
   causality: CausalityUpdate,
   materials: MaterialsUpdate,
   recipe_fragments: RecipeFragmentsUpdate,
+  discoveries: DiscoveriesUpdate,
+  dialogue_requests: DialogueRequestsUpdate,
   dynamic_npcs: DynamicNpcUpdate,
   npc_contacts: NpcContactsUpdate,
   gu_use_suggestions: GuUseSuggestionsUpdate,

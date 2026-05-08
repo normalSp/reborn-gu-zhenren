@@ -331,7 +331,10 @@ export function GameScreen() {
       <CombatOverlay />
       <SquadCombatOverlay />
       <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
-      <NPCInteractionPanel onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)} />
+      <NPCInteractionPanel
+        onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)}
+        onSubmitDialogueActionCard={(cardId: string) => submitChoice(`dialogue_choice:${cardId}`)}
+      />
       <BreakthroughAnimation />
       <DiceRollAnimation />
       <SaveLoadDialog />
