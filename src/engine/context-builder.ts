@@ -1043,6 +1043,25 @@ export class ContextBuilder {
     ].join('\n'));
 
     // ═══ P4: 天赋效果提醒（每轮注入，+150 tokens） ═══
+    const activeDuel = (store as any).duelState;
+    if (activeDuel) {
+      const playerMoves = (activeDuel.player?.moves || []).slice(0, 8).map((move: any) =>
+        `${move.name}${move.killerMoveId ? `(${move.killerMoveId})` : ''}`
+      );
+      const recentTrace = (activeDuel.trace || []).slice(-6).map((entry: any) =>
+        `R${entry.round}/${entry.phase}/${entry.actor}: ${entry.message}`
+      );
+      parts.push([
+        '【v0.7.0-a 战斗闸门】',
+        `当前战斗phase=${activeDuel.phase}，round=${activeDuel.round}`,
+        `敌人=${activeDuel.enemy?.name || '未知'}，境界=${activeDuel.enemy?.realm || '未知'}，流派=${activeDuel.enemy?.path || '未知'}，HP=${activeDuel.enemy?.hp}/${activeDuel.enemy?.maxHp}`,
+        `玩家HP=${activeDuel.player?.hp}/${activeDuel.player?.maxHp}，真元/仙元=${activeDuel.player?.essence?.current}/${activeDuel.player?.essence?.max}`,
+        `可用杀招/战斗蛊动作=${playerMoves.length ? playerMoves.join('、') : '无'}`,
+        recentTrace.length ? `最近战斗轨迹:\n${recentTrace.join('\n')}` : '最近战斗轨迹: 无',
+        'DeepSeek只允许提出 combat_event_candidates.add 候选，例如伏击、第三方发现、环境变化、追击、谈判。禁止直接写伤害、奖励、任务完成、材料入库、正式地图地点。',
+      ].join('\n'));
+    }
+
     const selectedTalents = (store as any).selectedTalents;
     if (selectedTalents && selectedTalents.length > 0) {
       try {
