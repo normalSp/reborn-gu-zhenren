@@ -1,8 +1,11 @@
 import economyBalanceRaw from '../canon/economy-balance.json';
+import achievementsRaw from '../canon/achievements.json';
+import type { SquadMember } from '../types';
 import { getMaterialEntry, resolveMaterialAlias } from './material-registry';
 import { getRecipeRegistryEntries, type RecipeRegistryEntry } from './recipe-registry';
 import { getRuntimeAuctionPricingSnapshot } from './auction-engine';
 import { generateGuFeedingClosureMatrix } from './material-source-audit';
+import { evaluateSquadDispatch, listSquadDispatchTasks } from './squad-dispatch';
 
 export interface EconomySimulationScenario {
   id: string;
@@ -134,7 +137,50 @@ export interface IntegratedEconomySimulationRow {
   feedingClosureBlockingCount: number;
 }
 
+export interface ReleaseCombatArbitrageProfile {
+  fightsPer20Turns: number;
+  yuanStoneRewardPerFight: number;
+  materialImmortalValuePerFight: number;
+  fatigueLossRatio: number;
+}
+
+export interface ReleaseDispatchArbitrageProfile {
+  assignmentsPer20Turns: number;
+  rewardValueMultiplier: number;
+}
+
+export interface ReleaseAchievementBurstProfile {
+  burstRatio: number;
+  materialYuanStoneValue: number;
+}
+
+export interface ReleaseArbitrageScenario {
+  id: string;
+  turns: number;
+  integrated: IntegratedEconomySimulationInput;
+  combat: ReleaseCombatArbitrageProfile;
+  dispatch: ReleaseDispatchArbitrageProfile;
+  achievements: ReleaseAchievementBurstProfile;
+}
+
+export interface ReleaseArbitrageReport {
+  scenarioId: string;
+  turns: number;
+  integratedNetImmortalCurrency: number;
+  squadCombatImmortalValue: number;
+  dispatchImmortalValue: number;
+  achievementImmortalValue: number;
+  totalImmortalEquivalent: number;
+  rank6MajorGoalCount: number;
+  canReliablyBuyRank6ImmortalGu: boolean;
+  canCompleteOneRank6MajorGoal: boolean;
+  rank7PlusRemainsStrategic: boolean;
+  releaseGatePassed: boolean;
+  notes: string[];
+}
+
 const economyBalance = economyBalanceRaw as any;
+const achievements = ((achievementsRaw as any).achievements || []) as any[];
 
 export function getEconomyBalanceConfig(): any {
   return economyBalance;
@@ -385,6 +431,140 @@ export function simulateIntegratedEconomy(input: IntegratedEconomySimulationInpu
 
 export function runIntegratedEconomySimulation(): IntegratedEconomySimulationRow[] {
   return [20, 100, 300].map(turns => simulateIntegratedEconomy(getDefaultIntegratedEconomyScenario(turns)));
+}
+
+function getPrimevalToImmortalRate(): number {
+  return Number(economyBalance.currencyPolicy?.immortalStoneToPrimevalStone || 10000);
+}
+
+function getReleaseAuditMember(): SquadMember {
+  return {
+    id: 'release_dispatcher',
+    name: 'Release Dispatch Auditor',
+    path: '智道',
+    realm: 6,
+    loyalty: 78,
+    personality: 'cautious',
+    alive: true,
+    hp: 620,
+    maxHp: 620,
+    atk: 62,
+    def: 54,
+    adventureTrust: 88,
+    interestDrive: 76,
+  };
+}
+
+function estimateAchievementBurstImmortalValue(profile: ReleaseAchievementBurstProfile): number {
+  const primevalRate = getPrimevalToImmortalRate();
+  const primevalValue = achievements.reduce((sum, achievement) => {
+    const reward = achievement.reward || {};
+    const currencyValue = Number(reward.currency || 0);
+    const materialValue = Object.values(reward.materials || {}).reduce(
+      (materialSum, amount) => materialSum + Number(amount || 0) * profile.materialYuanStoneValue,
+      0,
+    );
+    return sum + currencyValue + materialValue;
+  }, 0);
+  return (primevalValue / primevalRate) * profile.burstRatio;
+}
+
+function estimateSquadCombatImmortalValue(turns: number, profile: ReleaseCombatArbitrageProfile): number {
+  const primevalRate = getPrimevalToImmortalRate();
+  const fightCount = Math.floor((turns / 20) * profile.fightsPer20Turns);
+  const effectiveRatio = Math.max(0, 1 - profile.fatigueLossRatio);
+  return fightCount * (
+    (profile.yuanStoneRewardPerFight / primevalRate) + profile.materialImmortalValuePerFight
+  ) * effectiveRatio;
+}
+
+function estimateDispatchImmortalValue(turns: number, profile: ReleaseDispatchArbitrageProfile): number {
+  const primevalRate = getPrimevalToImmortalRate();
+  const tasks = listSquadDispatchTasks().filter(task => task.id !== 'ambush');
+  const member = getReleaseAuditMember();
+  const assignmentCount = Math.floor((turns / 20) * profile.assignmentsPer20Turns);
+  const lowMaterialUtilityValue = Number(economyBalance.auctionPricing.lowImmortalMaterialRange.min) * 0.002;
+  let value = 0;
+
+  for (let index = 0; index < assignmentCount; index += 1) {
+    const task = tasks[index % tasks.length];
+    if (!task) continue;
+    const evaluation = evaluateSquadDispatch(member, task.id, { morale: 68, turn: index + 1 });
+    const yuanStoneValue = Number(task.successReward.yuanStone || 0) / primevalRate;
+    const materialValue = Number(task.successReward.materials || 0) * lowMaterialUtilityValue;
+    const reputationUtility = Number(task.successReward.reputation || 0) * 0.01;
+    const rumorUtility = Number(task.successReward.rumors || 0) * 0.015;
+    value += (yuanStoneValue + materialValue + reputationUtility + rumorUtility)
+      * evaluation.successChance
+      * profile.rewardValueMultiplier;
+  }
+
+  return value;
+}
+
+export function getDefaultReleaseArbitrageScenario(turns: number): ReleaseArbitrageScenario {
+  return {
+    id: 'releaseHighPressure',
+    turns,
+    integrated: getDefaultIntegratedEconomyScenario(turns),
+    combat: {
+      fightsPer20Turns: 2,
+      yuanStoneRewardPerFight: 120,
+      materialImmortalValuePerFight: 0.012,
+      fatigueLossRatio: 0.45,
+    },
+    dispatch: {
+      assignmentsPer20Turns: 2,
+      rewardValueMultiplier: 0.35,
+    },
+    achievements: {
+      burstRatio: 0.35,
+      materialYuanStoneValue: 40,
+    },
+  };
+}
+
+export function simulateReleaseArbitrage(scenario: ReleaseArbitrageScenario): ReleaseArbitrageReport {
+  const integrated = simulateIntegratedEconomy(scenario.integrated);
+  const combatValue = estimateSquadCombatImmortalValue(scenario.turns, scenario.combat);
+  const dispatchValue = estimateDispatchImmortalValue(scenario.turns, scenario.dispatch);
+  const achievementValue = estimateAchievementBurstImmortalValue(scenario.achievements);
+  const total = integrated.netImmortalCurrency + combatValue + dispatchValue + achievementValue;
+  const auction = scenario.integrated.auction;
+  const rank6MajorGoalCount = Math.floor(total / auction.rank6MajorGoalPrice);
+  const canReliablyBuyRank6ImmortalGu = scenario.turns <= 20 && total >= auction.rank6ImmortalGuPrice;
+  const canCompleteOneRank6MajorGoal = total >= auction.rank6MajorGoalPrice;
+  const rank7PlusRemainsStrategic = total < auction.rank7ImmortalGuPrice;
+  const notes: string[] = [];
+
+  if (canReliablyBuyRank6ImmortalGu) notes.push('20-turn pressure can buy a rank-6 immortal gu.');
+  if (!rank7PlusRemainsStrategic) notes.push('Rank-7 target is no longer strategic under combined income.');
+  if (rank6MajorGoalCount > 1 && scenario.turns <= 100) notes.push('100-turn pressure completes more than one rank-6 major goal.');
+  if (combatValue + dispatchValue > integrated.netImmortalCurrency * 0.08) {
+    notes.push('External squad combat/dispatch income exceeds 8% of the five-ledger baseline.');
+  }
+
+  return {
+    scenarioId: scenario.id,
+    turns: scenario.turns,
+    integratedNetImmortalCurrency: integrated.netImmortalCurrency,
+    squadCombatImmortalValue: Number(combatValue.toFixed(2)),
+    dispatchImmortalValue: Number(dispatchValue.toFixed(2)),
+    achievementImmortalValue: Number(achievementValue.toFixed(2)),
+    totalImmortalEquivalent: Number(total.toFixed(2)),
+    rank6MajorGoalCount,
+    canReliablyBuyRank6ImmortalGu,
+    canCompleteOneRank6MajorGoal,
+    rank7PlusRemainsStrategic,
+    releaseGatePassed: !canReliablyBuyRank6ImmortalGu
+      && rank7PlusRemainsStrategic
+      && !(rank6MajorGoalCount > 1 && scenario.turns <= 100),
+    notes,
+  };
+}
+
+export function runReleaseArbitrageAudit(): ReleaseArbitrageReport[] {
+  return [20, 100, 300].map(turns => simulateReleaseArbitrage(getDefaultReleaseArbitrageScenario(turns)));
 }
 
 function hasMaterial(name: string): boolean {

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   auditRecipeEconomicClosure,
   getDefaultSimulationScenario,
+  runReleaseArbitrageAudit,
   runIntegratedEconomySimulation,
   runSteadyPacingSimulation,
   simulateEconomy,
@@ -47,5 +48,22 @@ describe('v0.7.0-pre economy pacing simulation', () => {
     expect(turn300.rank6MajorGoalCount).toBeGreaterThanOrEqual(3);
     expect(turn300.rank7PlusRemainsStrategic).toBe(true);
     expect(turn300.feedingClosureBlockingCount).toBe(0);
+  });
+
+  it('keeps release-level combat, dispatch and achievement burst below arbitrage thresholds', () => {
+    const [turn20, turn100, turn300] = runReleaseArbitrageAudit();
+
+    expect(turn20.releaseGatePassed).toBe(true);
+    expect(turn20.canReliablyBuyRank6ImmortalGu).toBe(false);
+    expect(turn20.totalImmortalEquivalent).toBeLessThan(3600);
+
+    expect(turn100.releaseGatePassed).toBe(true);
+    expect(turn100.rank6MajorGoalCount).toBe(1);
+    expect(turn100.squadCombatImmortalValue + turn100.dispatchImmortalValue).toBeGreaterThan(0);
+
+    expect(turn300.releaseGatePassed).toBe(true);
+    expect(turn300.rank6MajorGoalCount).toBeGreaterThanOrEqual(3);
+    expect(turn300.rank7PlusRemainsStrategic).toBe(true);
+    expect(turn300.notes).toEqual([]);
   });
 });
