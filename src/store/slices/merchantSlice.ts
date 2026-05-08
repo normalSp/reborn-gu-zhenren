@@ -3,7 +3,26 @@
  * 分组随机刷新状态管理
  * 每组独立刷新、独立记录、互不影响
  */
-import { generateShopGroup, getRefreshCost, canRefreshGroup, type GuShopEntry, type TierGroupId } from '../../engine/shop-engine';
+import {
+  generateMaterialShopShelf,
+  generateShopGroup,
+  getMaterialRefreshCost,
+  getRefreshCost,
+  canRefreshGroup,
+  type GuShopEntry,
+  type MaterialFoodShortageInput,
+  type MaterialShopEntry,
+  type TierGroupId,
+} from '../../engine/shop-engine';
+
+export interface MaterialShelfState {
+  items: MaterialShopEntry[];
+  lastRefreshed: number;
+  freeRefreshTurn: number;
+  freeRefreshCount: number;
+  emergencyRefreshUsedTurn: number;
+  emergencyActive: boolean;
+}
 
 export interface MerchantSlice {
   // ─── 各组蛊虫池 ───
@@ -12,6 +31,7 @@ export interface MerchantSlice {
     lastRefreshed: number; // turn
     refreshCount: number;  // 该组累计刷新次数（用于保底）
   }>;
+  materialShelf: MaterialShelfState;
 
   // ─── 操作 ───
   /** 刷新指定分组 */
@@ -24,6 +44,13 @@ export interface MerchantSlice {
   getShopRefreshCost: (groupId: TierGroupId, isImmortal: boolean) => number;
   /** 购买蛊虫 */
   buyGuFromShop: (groupId: TierGroupId, guName: string) => boolean;
+  refreshMaterialShelf: (
+    playerRealmTier: number,
+    turn: number,
+    chapterName?: string,
+    shortages?: MaterialFoodShortageInput[],
+  ) => MaterialShelfState;
+  getMaterialShelfRefreshCost: (playerRealmTier: number, isImmortal: boolean, turn: number) => number;
 }
 
 export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
@@ -34,6 +61,14 @@ export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
 
   return {
     shopGroups: initialGroups,
+    materialShelf: {
+      items: [],
+      lastRefreshed: 0,
+      freeRefreshTurn: 0,
+      freeRefreshCount: 0,
+      emergencyRefreshUsedTurn: 0,
+      emergencyActive: false,
+    },
 
     refreshShopGroup: (groupId, playerRealmTier, turn, chapterName) => {
       if (!canRefreshGroup(groupId, playerRealmTier)) {
@@ -90,14 +125,18 @@ export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
       const store = get();
       const currency = store.currency || 0;
 
-      if (currency < item.price) {
-        console.warn(`[Merchant] 元石不足: 需要${item.price}, 当前${currency}`);
-        return false;
+      if (typeof store.spendCurrency === 'function') {
+        if (!store.spendCurrency(item.price)) {
+          console.warn(`[Merchant] 元石不足: 需要${item.price}, 当前${currency}`);
+          return false;
+        }
+      } else {
+        if (currency < item.price) {
+          console.warn(`[Merchant] 元石不足: 需要${item.price}, 当前${currency}`);
+          return false;
+        }
+        set({ currency: currency - item.price });
       }
-
-      // 扣款
-      const updatedCurrency = currency - item.price;
-      set({ currency: updatedCurrency });
 
       // 添加蛊虫到库存（通过guSlice）
       // ═══ BugFix: 补全 GuInstance 必需字段，参照 state-update-applier.ts:96-108 ═══
@@ -132,6 +171,42 @@ export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
       });
 
       return true;
+    },
+
+    refreshMaterialShelf: (playerRealmTier, turn, chapterName, shortages) => {
+      const current = (get() as MerchantSlice).materialShelf;
+      const consumingEmergencyRefresh =
+        current.freeRefreshTurn === turn &&
+        current.freeRefreshCount > 0 &&
+        current.emergencyActive &&
+        current.emergencyRefreshUsedTurn !== turn;
+      const result = generateMaterialShopShelf({
+        currentChapterName: chapterName || '青茅山期',
+        playerRealmTier,
+        turn,
+        shortages,
+      });
+      const sameTurn = current.freeRefreshTurn === turn;
+      const freeRefreshCount = sameTurn ? current.freeRefreshCount + 1 : 1;
+      const emergencyRefreshUsedTurn = consumingEmergencyRefresh ? turn : current.emergencyRefreshUsedTurn;
+      const next: MaterialShelfState = {
+        items: result.items,
+        lastRefreshed: turn,
+        freeRefreshTurn: turn,
+        freeRefreshCount,
+        emergencyRefreshUsedTurn,
+        emergencyActive: result.emergencyActive,
+      };
+      set({ materialShelf: next } as any);
+      return next;
+    },
+
+    getMaterialShelfRefreshCost: (playerRealmTier, isImmortal, turn) => {
+      const shelf = (get() as MerchantSlice).materialShelf;
+      if (shelf.freeRefreshTurn !== turn) return 0;
+      if (shelf.freeRefreshCount <= 0) return 0;
+      if (shelf.emergencyActive && shelf.emergencyRefreshUsedTurn !== turn) return 0;
+      return getMaterialRefreshCost(playerRealmTier, isImmortal);
     },
   };
 };

@@ -8,8 +8,13 @@
  *   古方（6转+/仙蛊/传说级） — 仅古遗迹/NPC传授，面板完全隐藏
  */
 import fragmentsRaw from '../canon/fragment-recipes.json';
+import guDatabaseRaw from '../canon/gu-database.json';
 import type { RefineInput } from './refine-engine';
+import { canSpendMaterials } from './economy-service';
+import { expandMaterialCost, getRegisteredRecipeForFragment } from './recipe-registry';
 import { useStore } from '../store';
+
+const guDatabase = guDatabaseRaw as Record<string, any>;
 
 // ═══ 基础配方白名单（约24条，覆盖全部20个流派，1-2转每流派1-2个代表蛊虫） ═══
 export const INNATE_RECIPES = new Set<string>([
@@ -32,6 +37,7 @@ export interface FragmentRecipe {
   type: 'refine' | 'ascend';
   targetGu: string;
   targetTier: number;
+  fragmentsRequired?: number;
   requiredMaterials: string[];
   completionDifficulty: number;
   sourceType: 'exploration' | 'combat' | 'ruins';
@@ -81,16 +87,17 @@ export function attemptCompleteFragment(
   if (hasRefineSavant) rate += 0.10;
   rate = Math.min(0.90, Math.max(0.05, rate));
 
-  // 消耗材料（每次尝试消耗1份最难获取的材料）
+  // 消耗蛊材（每次尝试消耗1份最难获取的蛊材/仙材）
   const materialCost = fragment.requiredMaterials[fragment.requiredMaterials.length - 1];
-  const matBag = store.materialBag || {};
-  if ((matBag[materialCost] || 0) < 1) {
-    return { success: false, message: `实验材料不足，需要「${materialCost}」×1` };
+  if (!canSpendMaterials(store, [materialCost]).ok) {
+    return { success: false, message: `实验蛊材不足，需要「${materialCost}」×1` };
   }
   (store as any).removeMaterial?.(materialCost, 1);
 
   if (Math.random() < rate) {
-    // 成功 — 返回炼蛊输入（配方解锁）
+    const registryRecipe = getRegisteredRecipeForFragment(fragment.id);
+    const registeredMaterials = registryRecipe ? expandMaterialCost(registryRecipe) : fragment.requiredMaterials;
+    // 成功 — 返回炼蛊输入（蛊方解锁）
     return {
       success: true,
       message: `残方补全成功！解锁「${fragment.targetGu}」炼制配方`,
@@ -98,8 +105,8 @@ export function attemptCompleteFragment(
         specId: fragment.targetGu,
         name: fragment.targetGu,
         tier: fragment.targetTier,
-        path: fragment.type, // CR5修复: type 字段对应 recipe 的 path
-        refineMaterials: fragment.requiredMaterials.join('+'),
+        path: guDatabase[fragment.targetGu]?.path || '',
+        refineMaterials: registeredMaterials.join('+'),
         refineDifficulty: fragment.completionDifficulty * 0.7, // 补全后炼制更容易
       },
     };
@@ -107,7 +114,7 @@ export function attemptCompleteFragment(
 
   return {
     success: false,
-    message: `补全失败……实验材料损耗殆尽（成功率${Math.round(rate * 100)}%）`,
+    message: `补全失败……实验蛊材损耗殆尽（成功率${Math.round(rate * 100)}%）`,
   };
 }
 
@@ -116,9 +123,8 @@ export function attemptCompleteFragment(
  */
 export function canAttemptFragment(fragment: FragmentRecipe): boolean {
   const store = useStore.getState() as any;
-  const matBag = store.materialBag || {};
   const lastMat = fragment.requiredMaterials[fragment.requiredMaterials.length - 1];
-  return (matBag[lastMat] || 0) >= 1;
+  return canSpendMaterials(store, [lastMat]).ok;
 }
 
 /**
@@ -160,17 +166,14 @@ export function synthesizeRecipe(fragmentId: string): { success: boolean; messag
   }
 
   // 解锁蛊方
-  const completedRecipes = { ...(store.flags?.completedRecipes || {}) };
-  completedRecipes[fragment.targetGu] = true;
-
   useStore.setState((s: any) => ({
     ...s,
     flags: {
       ...s.flags,
       discoveredFragments: newDiscovered,
-      completedRecipes,
     },
   }));
+  (useStore.getState() as any).unlockRecipe?.(fragment.targetGu, `fragment:${fragment.id}`);
 
   return { success: true, message: `残方合成成功！解锁「${fragment.targetGu}」炼制配方` };
 }

@@ -1,5 +1,10 @@
-import type { GuInstance, GuHungerState, GuHungerConfig, LifeboundGu, LifeboundDeathPenalty } from '../../types';
+import type { GuInstance, GuHungerState, LifeboundGu, LifeboundDeathPenalty } from '../../types';
 import guDatabase from '../../canon/gu-database.json';
+import { getMaterialTotalQuantity, removeMaterialFromState } from '../../engine/economy-service';
+import { GU_HUNGER_CONFIG, getFeedingCreditRequirement, isNonMaterialFeeding, normalizeFeedCandidates } from '../../engine/feeding-rules';
+import { getGuUseEntry, resolveGuUse, type GuUseResult, type GuUseTarget } from '../../engine/gu-use-registry';
+
+export { GU_HUNGER_CONFIG } from '../../engine/feeding-rules';
 
 /** CR6: 蛊虫进化动画状态 */
 export interface GuEvolutionState {
@@ -37,37 +42,6 @@ function getApertureCapacity(fullStore: any): number {
   return 999; // 6转+蛊仙无空窍容量限制
 }
 
-/** P2-13: 蛊虫饥饿参数 */
-export const GU_HUNGER_CONFIG: GuHungerConfig = {
-  hungerPerTurn: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 },
-  thresholds: {
-    optimalToHungry: 5,
-    hungryToInjured: 12,
-    injuredToDead: 25,
-  },
-  feedRecovery: 10,
-};
-
-/** P2补完: 食物类型 → materialBag 食材键名映射 */
-export const FEED_MATERIAL_MAP: Record<string, string> = {
-  '月光': '月华草',
-  '美酒': '美酒',
-  '石粉': '石粉',
-  '肉食': '兽肉',
-  '鲜血': '兽血',
-  '草木': '灵草',
-  '文字': '古籍残页',
-  '时间流逝': '时光之砂',
-  '药材': '灵药',
-  '毒物': '毒囊',
-  '火焰': '火精',
-  '寒冰': '冰晶',
-  '雷电': '雷击木',
-  '光芒': '光耀石',
-  '暗影': '暗影尘',
-  '金铁': '金属碎块',
-};
-
 /** P2-13: 四态模型状态迁移逻辑 */
 function computeNextState(current: GuHungerState, counter: number): GuHungerState {
   const { thresholds } = GU_HUNGER_CONFIG;
@@ -97,10 +71,11 @@ interface GuSlice {
   removeGu: (id: string) => void;
   updateGuState: (id: string, state: GuHungerState) => void;
   toggleActive: (id: string) => void;
+  useGu: (id: string, target?: GuUseTarget) => GuUseResult;
   /** P2-13: 每轮推进蛊虫饥饿状态机 */
   tickGuHunger: () => void;
   /** P2-13: 喂养蛊虫 — 减少hungerCounter。P2-P8: foodType可选参数，不匹配则触发反噬 */
-  feedGuHunger: (guId: string, foodType?: string) => void;
+  feedGuHunger: (guId: string, foodType?: string) => boolean;
   /** P2-流派: 绑定本命蛊 */
   bindLifeboundGu: (guId: string, turn: number) => boolean;
   /** P2-流派: 解除本命蛊绑定 */
@@ -301,6 +276,50 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
 
   // ═══ P2-13: 每轮蛊虫饥饿推进（确定性计数模型） ═══
   // v0.7.0 Q1修复: 蛊仙模式下同步遍历仙窍存储(apertureInventory.gu)
+  useGu: (id, target = { type: 'self' }) => {
+    const state = get() as GuSlice;
+    const fullStore = get() as any;
+    const apertureInv = fullStore.apertureInventory as import('../../types').ApertureStorage | undefined;
+    const inventoryGu = state.inventory.find(g => g.id === id);
+    const apertureGu = apertureInv?.gu?.find(g => g.id === id);
+    const gu = inventoryGu || apertureGu;
+    const entry = getGuUseEntry(gu?.name || '未知蛊');
+    const result = resolveGuUse(entry, target);
+
+    if (!gu) {
+      return { ...result, success: false, message: '未找到这只蛊。' };
+    }
+    if (!result.success) return result;
+
+    if (entry.cost.essencePct && fullStore.vitals?.essence) {
+      const essence = fullStore.vitals.essence;
+      const cost = Math.ceil(essence.max * entry.cost.essencePct / 100);
+      if (essence.current < cost) {
+        return { ...result, success: false, message: `${entry.guName} 需要 ${cost} 真元，当前不足。` };
+      }
+      fullStore.setEssence?.(essence.current - cost, essence.max);
+    }
+
+    for (const [attr, delta] of Object.entries(result.attributeDeltas)) {
+      fullStore.addAttribute?.(attr as any, delta);
+    }
+    for (const [key, value] of Object.entries(result.flags)) {
+      fullStore.setFlag?.(key, value);
+    }
+    if (entry.consumesGu) {
+      (get() as GuSlice).removeGu(id);
+    }
+    if (typeof fullStore.addGameLog === 'function') {
+      fullStore.addGameLog('gu', result.message, {
+        guId: id,
+        guName: entry.guName,
+        useMode: entry.useMode,
+        target,
+      });
+    }
+    return result;
+  },
+
   tickGuHunger: () => {
     const state = get() as GuSlice;
     const fullStore = get() as any;
@@ -390,63 +409,64 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
       gu = apertureInv?.gu?.find(g => g.id === guId);
       if (gu) guSource = 'aperture';
     }
-    if (!gu || gu.currentState === 'dead') return;
+    if (!gu || gu.currentState === 'dead') return false;
 
-    // ═══ P2-P8-1: 食物类型匹配检查 ═══
-    if (foodType) {
-      const guSpec = (guDatabase as any)[gu.name];
-      const requiredType = guSpec?.feedRequirement?.type;
-      if (requiredType && foodType !== requiredType) {
-        // 食物不匹配 → 反噬：扣减生命，无饱食恢复
-        console.warn(`[GuSlice] 食物不匹配! 需要${requiredType}, 尝试喂${foodType}`);
-        const backlashDmg = 15 + Math.floor(Math.random() * 16); // 15-30
-        if (typeof fullStore.applyHpDelta === 'function') {
-          fullStore.applyHpDelta(-backlashDmg);
-        } else if (fullStore.vitals?.health) {
-          const newHp = Math.max(1, fullStore.vitals.health.current - backlashDmg);
-          fullStore.setHealth?.(newHp, fullStore.vitals.health.max);
-        }
-        return; // 反噬后不恢复饱食
+    // ═══ P2/P3数值闸门: 喂养必须先走蛊材/仙材食料库存，不再扣元石假喂 ═══
+    const guSpec = (guDatabase as any)[gu.name];
+    const requiredType = guSpec?.feedRequirement?.type;
+    const candidates = normalizeFeedCandidates(requiredType);
+    const selectedFoodIsCompatible = !foodType
+      || foodType === requiredType
+      || candidates.includes(foodType);
+
+    if (!selectedFoodIsCompatible) {
+      // 食物不匹配 → 反噬：扣减生命，无饱食恢复
+      console.warn(`[GuSlice] 食物不匹配! 需要${requiredType}, 尝试喂${foodType}`);
+      const backlashDmg = 15 + Math.floor(Math.random() * 16); // 15-30
+      if (typeof fullStore.applyHpDelta === 'function') {
+        fullStore.applyHpDelta(-backlashDmg);
+      } else if (fullStore.vitals?.health) {
+        const newHp = Math.max(1, fullStore.vitals.health.current - backlashDmg);
+        fullStore.setHealth?.(newHp, fullStore.vitals.health.max);
       }
-      // ═══ P2补完: 食物匹配成功 → 消耗背包食材 ═══
-      if (foodType && requiredType && foodType === requiredType) {
-        const materialItemName = FEED_MATERIAL_MAP[requiredType];
-        if (materialItemName) {
-          // v0.7.0 Q1修复: 蛊仙模式优先从仙窍存储消耗，凡人从materialBag消耗
-          if (guSource === 'aperture') {
-            const apertureInv = fullStore.apertureInventory as import('../../types').ApertureStorage | undefined;
-            const apertureMaterials = apertureInv?.materials || {};
-            const currentQty = apertureMaterials[materialItemName] || 0;
-            if (currentQty <= 0) {
-              // 仙窍无食材 → 尝试从materialBag兜底
-              const currentBag = fullStore.materialBag || {};
-              const bagQty = currentBag[materialItemName] || 0;
-              if (bagQty <= 0) {
-                console.warn(`[GuSlice] 食材不足! 需要${materialItemName}, 仙窍和背包均无库存`);
-                return;
-              }
-              const newBag = { ...currentBag };
-              newBag[materialItemName] = bagQty - 1;
-              set({ materialBag: newBag } as any);
-            } else {
-              // 从仙窍存储消耗1份食材
-              const newMaterials = { ...apertureMaterials };
-              newMaterials[materialItemName] = currentQty - 1;
-              set({ apertureInventory: { ...apertureInv, materials: newMaterials } } as any);
-            }
-          } else {
-            // 凡人模式：从materialBag消耗
-            const currentBag = fullStore.materialBag || {};
-            const currentQty = currentBag[materialItemName] || 0;
-            if (currentQty <= 0) {
-              console.warn(`[GuSlice] 食材不足! 需要${materialItemName}, 当前:${currentQty}`);
-              return;
-            }
-            const newBag = { ...currentBag };
-            newBag[materialItemName] = currentQty - 1;
-            set({ materialBag: newBag } as any);
-          }
+      return false; // 反噬后不恢复饱食
+    }
+
+    if (candidates.length > 0) {
+      const preferred = foodType && foodType !== requiredType ? [foodType, ...candidates] : candidates;
+      const materialItemName = preferred.find(materialName =>
+        getMaterialTotalQuantity(fullStore, materialName) > 0
+      );
+
+      if (!materialItemName) {
+        console.warn(`[GuSlice] 食料不足! 需要${requiredType}，候选: ${candidates.join('、')}`);
+        return false;
+      }
+
+      const spendResult = removeMaterialFromState(fullStore, materialItemName, 1);
+      if (!spendResult.ok || !spendResult.patch) {
+        console.warn(`[GuSlice] 食料扣除失败! 需要${materialItemName}`);
+        return false;
+      }
+      set(spendResult.patch as any);
+    } else if (!isNonMaterialFeeding(requiredType)) {
+      console.warn(`[GuSlice] 未登记食料映射! feedRequirement=${requiredType}, guName=${gu.name}`);
+      return false;
+    } else {
+      const creditRequirement = getFeedingCreditRequirement(requiredType);
+      if (creditRequirement) {
+        const credits = fullStore.feedingCredits || {};
+        const available = Number(credits[creditRequirement.key] || 0);
+        if (available < creditRequirement.amount) {
+          console.warn(`[GuSlice] 非物质食料信用不足: ${creditRequirement.key} ${available}/${creditRequirement.amount}`);
+          return false;
         }
+        set({
+          feedingCredits: {
+            ...credits,
+            [creditRequirement.key]: available - creditRequirement.amount,
+          },
+        } as any);
       }
     }
 
@@ -458,7 +478,7 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
     // ═══ BugFix: 防御 currentState 为 undefined 等非法值 ═══
     if (!gu.currentState) {
       console.warn(`[GuSlice] feedGuHunger 遇到无效 currentState: ${gu.currentState}, guId=${guId}, guName=${gu.name}`);
-      return;
+      return false;
     }
     const stateProgression: GuHungerState[] = ['dead', 'injured', 'hungry', 'optimal'];
     const currentIdx = stateProgression.indexOf(gu.currentState);
@@ -468,7 +488,8 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
 
     // v0.7.0 Q1修复: 按蛊虫来源更新对应存储位置
     if (guSource === 'aperture') {
-      const apertureInv = fullStore.apertureInventory as import('../../types').ApertureStorage | undefined;
+      const latestStore = get() as any;
+      const apertureInv = latestStore.apertureInventory as import('../../types').ApertureStorage | undefined;
       const newGuList = (apertureInv?.gu || []).map(g =>
         g.id === guId ? { ...g, currentState: newState, hungerCounter: counters[guId] } : g
       );
@@ -484,6 +505,7 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
         guHungerCounters: counters,
       }));
     }
+    return true;
   },
 
   // ═══ P2-流派: 绑定本命蛊 ═══

@@ -144,8 +144,14 @@ export const createAchievementSlice = (set: any, get: any): AchievementSlice => 
           console.log(`[Achievement] 解锁成就: ${evt.name} (${evt.tier})`);
           const logStore = get();
           if (typeof logStore.addGameLog === 'function') {
-            logStore.addGameLog('achievement', `解锁成就: ${evt.name}`, { tier: evt.tier, id: evt.id });
+            logStore.addGameLog('achievement', `解锁成就: ${evt.name}`, { tier: evt.tier, id: evt.achievementId });
           }
+        }
+
+        // v0.7.0: 解锁后立即发放定义表中的奖励。独立于 localStorage 的已解锁列表，
+        // 避免同一成就重复检测时反复发放。
+        for (const id of newlyUnlocked) {
+          (get() as AchievementSlice).grantReward(id);
         }
       }
 
@@ -303,8 +309,36 @@ export const createAchievementSlice = (set: any, get: any): AchievementSlice => 
 
 // ─── 条件解析器 ───
 
-function evaluateConditionString(condition: string, state: AchievementCheckState): boolean {
+export function evaluateConditionString(condition: string, state: AchievementCheckState): boolean {
   const cond = condition.trim();
+
+  if (cond.includes('&&')) {
+    return cond.split('&&').every(part => evaluateConditionString(part.trim(), state));
+  }
+
+  const numericFields: Array<keyof Pick<
+    AchievementCheckState,
+    | 'totalBattlesFought'
+    | 'factionLevel'
+    | 'membersCount'
+    | 'immortalGuCount'
+    | 'ascensionSuccessCount'
+    | 'trainingGroundVisits'
+    | 'huntSuccessCount'
+  >> = [
+    'totalBattlesFought',
+    'factionLevel',
+    'membersCount',
+    'immortalGuCount',
+    'ascensionSuccessCount',
+    'trainingGroundVisits',
+    'huntSuccessCount',
+  ];
+
+  for (const field of numericFields) {
+    const match = cond.match(new RegExp(`^${field}\\s*>=\\s*(\\d+)$`));
+    if (match) return (state[field] || 0) >= parseInt(match[1], 10);
+  }
 
   // "turn >= N"
   const turnMatch = cond.match(/^turn\s*>=\s*(\d+)$/);
@@ -365,6 +399,25 @@ function evaluateConditionString(condition: string, state: AchievementCheckState
   // CR8: "totalBattlesFought >= N" — 总战斗次数（CombatSlice totals）
   const totalBattlesMatch = cond.match(/^totalBattlesFought\s*>=\s*(\d+)$/);
   if (totalBattlesMatch) return (state as any).totalBattlesFought >= parseInt(totalBattlesMatch[1], 10);
+
+  // v0.7.0: "singlePathDaoMarks(力道) >= N"
+  const singlePathMatch = cond.match(/^singlePathDaoMarks\((['"]?)([^'")]+)\1\)\s*>=\s*(\d+)$/);
+  if (singlePathMatch) {
+    const path = singlePathMatch[2];
+    return (state.singlePathDaoMarks?.(path) || 0) >= parseInt(singlePathMatch[3], 10);
+  }
+
+  // "crossDomainFlags:北原" — 兼容早期跨域成就条件
+  const crossDomainFlagMatch = cond.match(/^crossDomainFlags:([^\s]+)$/);
+  if (crossDomainFlagMatch) {
+    const domain = crossDomainFlagMatch[1];
+    return !!(
+      state.flags?.[`crossDomain:${domain}`] ||
+      state.flags?.[`visitedDomain:${domain}`] ||
+      state.flags?.[domain] ||
+      state.domain === domain
+    );
+  }
 
   // 兜底
   return false;

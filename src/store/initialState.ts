@@ -55,6 +55,7 @@ export const INITIAL_STATE = {
   // ─── guSlice ───
   inventory: [],
   materialBag: {} as Record<string, number>,
+  feedingCredits: {} as Record<string, number>,
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -90,6 +91,7 @@ export const INITIAL_STATE = {
   // ─── factionSlice ───
   standings: {} as Record<string, any>,
   characterRelations: [],
+  npcContacts: [],
 
   // ─── apertureSlice（空窍/仙窍） ───
   aperture: null,
@@ -106,6 +108,8 @@ export const INITIAL_STATE = {
   // ─── narrativeSlice ───
   messages: [],
   keyEvents: [],
+  gameLog: [],
+  gameLogArchive: [],
   rollingSummary: '',
   currentNarrative: null,
   isLoading: false,
@@ -113,6 +117,7 @@ export const INITIAL_STATE = {
 
   // ─── mapSlice ───
   knownLocations: [],
+  rumorLocations: [],
   playerPosition: { x: 0, y: 0, region: '' },
   exploredRegions: [] as string[],
   fogOfWar: true,
@@ -164,8 +169,24 @@ export const INITIAL_STATE = {
   combatState: null as any,
   dialogueState: {} as Record<string, any>,
   shopState: { visitedShops: [] as string[], shopInventory: {} as Record<string, any> },
+  materialShelf: {
+    items: [] as any[],
+    lastRefreshed: 0,
+    freeRefreshTurn: 0,
+    freeRefreshCount: 0,
+    emergencyRefreshUsedTurn: 0,
+    emergencyActive: false,
+  },
   encounterState: { recentEncounters: [] as string[], cooldownTimer: 0 },
-  audioState: { masterVolume: 0.7, bgmVolume: 0.5, sfxVolume: 0.7, currentBgm: null as string | null },
+  audioState: {
+    masterVolume: 0.7,
+    bgmVolume: 0.5,
+    sfxVolume: 0.7,
+    voiceVolume: 0.8,
+    uiVolume: 0.7,
+    voiceActive: false,
+    currentBgm: null as string | null,
+  },
   lifeboundGu: null as { id: string; name: string } | null,
   originUnlocks: [] as string[],
   // ═══ P2-13: 动态系统补完 ═══
@@ -186,6 +207,9 @@ export const INITIAL_STATE = {
 
   // ═══ P1.1: 拍卖系统 ═══
   auctionItems: [] as any[],
+  materialAuctionItems: [] as any[],
+  recipeAuctionItems: [] as any[],
+  killerMoveAuctionItems: [] as any[],
   isAuctionActive: false,
   auctionLastTurn: 0,
 
@@ -194,6 +218,8 @@ export const INITIAL_STATE = {
   playerFaction: null as import('../types').PlayerFaction | null,
   /** 势力事件日志 */
   factionEvents: [] as import('../types').FactionEvent[],
+  lastFactionEconomyLedger: null as any,
+  lastFactionEconomyTurn: 0,
 
   // ═══ v0.7.0: 小队编队状态 ═══
   partyState: { members: [], maxSize: 4, formation: null },

@@ -5,12 +5,14 @@ import { TIER_COLORS, TIER_LABELS } from '../../data/talents';
 import factionDataRaw from '../../canon/faction-data.json';
 import guDbRaw from '../../canon/gu-database.json';
 import killerMovesRaw from '../../canon/killer-moves.json';
+import { getRuntimePathNames } from '../../engine/path-registry';
 import type { TimelineNode, LifeboundGuSelection, GuSelection, KillerMoveSelection, FactionSelection } from '../../store/slices/timelineSlice';
 
 interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> }; }
 const FACTION_DATA = (factionDataRaw as any).factions as Record<string, FactionEntry[]>;
 const GU_DB = guDbRaw as Record<string, any>;
 const KILLER_MOVES = (killerMovesRaw as any);
+const RUNTIME_PATH_NAMES = getRuntimePathNames();
 
 interface TimelineConfigProps {
   onConfirm: () => void;
@@ -385,7 +387,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                   {primaryPath ? `主修「${primaryPath}」` : '选择你的主修流派——蛊仙升仙时吸收天地人气，必然凝聚出一脉主修道痕'}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {['炎道','水道','土道','风道','剑道','毒道','木道','光道','宇道','宙道','炼道','魂道','冰道','雷道','血道','力道','智道','暗道','奴道','变化道','律道','梦道','太道','音道','运道','金道','骨道','食道'].map(path => (
+                  {RUNTIME_PATH_NAMES.map(path => (
                     <button key={path} onClick={() => {
                       if (primaryPath === path) {
                         store.setPrimaryPath('');

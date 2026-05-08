@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useStore } from '../../store';
 import { GU_IMAGE_MAP } from '../../data/image-maps';
 import type { PathType } from '../../types';
+import { getMaterialTotalQuantity } from '../../engine/economy-service';
+import { getGuFeedingClosureRow, type MaterialSourceTag } from '../../engine/material-source-audit';
+import { getGuUseEntry, shouldShowUseButton, canUseFromNormalButton } from '../../engine/gu-use-registry';
 
 const STATE_LABELS: Record<string, string> = {
   optimal: '鼎盛',
@@ -33,46 +36,59 @@ const STATE_DOT: Record<string, string> = {
   dead: 'bg-rg-ink-600',
 };
 
+const SOURCE_LABELS: Record<MaterialSourceTag, string> = {
+  shop: '商会',
+  encounter: '遭遇',
+  training_ground: '道场',
+  faction: '势力',
+  aperture_resource: '仙窍',
+  treasure_yellow_heaven: '宝黄天',
+  event_whitelist: '剧情',
+  regional_generation: '野外/地域掉落',
+  special_rule: '规则',
+};
+
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
   // ═══ BugFix v0.7.0: 蛊仙模式读取仙窍存储的蛊虫 ═══
   const apertureInventoryGu = useStore(s => (s as any).apertureInventory?.gu as typeof inventory | undefined);
   const realmGrand = useStore(s => s.profile?.realm?.grand ?? 1);
+  const materialBag = useStore(s => (s as any).materialBag);
+  const apertureInventory = useStore(s => (s as any).apertureInventory);
   const isImmortal = realmGrand >= 6;
   // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
   const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
-  const currency = useStore(s => s.currency);
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
   const removeGu = useStore(s => s.removeGu);
   const addCurrency = useStore(s => s.addCurrency) as (n: number) => void;
-  const spendCurrency = useStore((s: any) => s.spendYuanStone) || (useStore(s => s.spendCurrency) as (n: number) => boolean);
-  const updateGuState = useStore(s => s.updateGuState);
+  const feedGuHunger = useStore(s => s.feedGuHunger);
   const [filterPath, setFilterPath] = useState<PathType | 'all'>('all');
   const [sellConfirm, setSellConfirm] = useState<string | null>(null);
   const [feedMsg, setFeedMsg] = useState('');
+  const [useMsg, setUseMsg] = useState('');
 
   const capacity = isImmortal ? Infinity : getApertureCapacity();
   const paths = Array.from(new Set(allGu.map(g => g.path)));
   const filtered = filterPath === 'all' ? allGu : allGu.filter(g => g.path === filterPath);
+  const materialState = useMemo(() => ({
+    materialBag,
+    apertureInventory,
+    profile: { realm: { grand: realmGrand } },
+  }), [materialBag, apertureInventory, realmGrand]);
+
+  const getFeedingInfo = (gu: typeof allGu[number]) => {
+    const row = getGuFeedingClosureRow(gu.name, gu.hungerCounter || 0);
+    if (!row) return null;
+    const stock = row.acceptedFoods.reduce((sum, food) => sum + getMaterialTotalQuantity(materialState, food), 0);
+    const sources = Array.from(new Set(row.sources.map(source => SOURCE_LABELS[source.tag] || source.tag))).slice(0, 4);
+    return { row, stock, sources };
+  };
 
   // ─── 喂养（P0.4: 接入 feedGuHunger 引擎） ───
   const feedGu = (guId: string, currentState: string) => {
     if (currentState === 'optimal' || currentState === 'fed' || currentState === 'dead') return;
-    // 喂食消耗元石（从 gu-database 读取 feedRequirement 类型但简化处理）
-    const feedCost = currentState === 'dying' ? 30 : currentState === 'injured' ? 15 : 5;
-    if (currency < feedCost) { setFeedMsg('元石不足'); setTimeout(() => setFeedMsg(''), 2000); return; }
-    spendCurrency(feedCost);
-    // P0.4: 调用 guSlice.feedGuHunger 引擎（内部处理饥饿计数器+状态迁移）
-    const feedGuHunger = (useStore.getState() as any).feedGuHunger;
-    if (typeof feedGuHunger === 'function') {
-      feedGuHunger(guId);
-    } else {
-      // 兜底：旧版直接状态迁移
-      const prev: Record<string, string> = { hungry: 'fed', injured: 'hungry', starving: 'injured', dying: 'injured' };
-      const target = prev[currentState];
-      if (target) updateGuState(guId, target as any);
-    }
-    setFeedMsg('喂养成功');
+    const ok = feedGuHunger(guId);
+    setFeedMsg(ok ? '喂养成功' : '食料不足或不匹配');
     setTimeout(() => setFeedMsg(''), 1500);
   };
 
@@ -80,6 +96,12 @@ export function GuInventoryPanel() {
     removeGu(guId);
     addCurrency(50); // 基础回购价（简化）
     setSellConfirm(null);
+  };
+
+  const doUseGu = (guId: string) => {
+    const res = (useStore.getState() as any).useGu?.(guId, { type: 'self' });
+    setUseMsg(res?.message || '这只蛊暂未开放主动使用。');
+    setTimeout(() => setUseMsg(''), 2200);
   };
 
   if (allGu.length === 0) {
@@ -131,6 +153,11 @@ export function GuInventoryPanel() {
           {feedMsg}
         </div>
       )}
+      {useMsg && (
+        <div className="px-4 py-1.5 bg-rg-gold/10 border-b border-rg-gold/20 text-rg-gold text-xs font-panel text-center">
+          {useMsg}
+        </div>
+      )}
 
       {/* ─── 卡片网格 ─── */}
       <div className="p-3 grid grid-cols-2 gap-2">
@@ -180,6 +207,40 @@ export function GuInventoryPanel() {
               </span>
             </div>
 
+            {(() => {
+              const info = getFeedingInfo(gu);
+              if (!info) return null;
+              const { row, stock, sources } = info;
+              const noFeeding = row.fallbackPolicy === 'no_feeding_needed';
+              const materialFood = row.acceptedFoods.length > 0;
+              const safeTurns = Number.isFinite(row.safeTurns) ? `${row.safeTurns}回合` : '无';
+              return (
+                <div className={`rounded-sm border px-2 py-1 text-[9px] font-panel leading-4 ${
+                  row.blocking || (materialFood && stock <= 0)
+                    ? 'border-rg-gold/25 bg-rg-gold/5 text-rg-gold/80'
+                    : 'border-rg-ink-300/12 bg-rg-ink-800/35 text-rg-paper-200/55'
+                }`}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="truncate">
+                      {noFeeding ? '食料：不需喂养' : `食料：${materialFood ? row.acceptedFoods.join(' / ') : row.feedRequirement}`}
+                    </span>
+                    <span className="shrink-0">{noFeeding ? '' : `安全 ${safeTurns}`}</span>
+                  </div>
+                  {!noFeeding && (
+                    <>
+                      <div className="flex items-center justify-between gap-2 text-rg-paper-200/40">
+                        <span className="truncate">来源：{sources.length > 0 ? sources.join(' / ') : '待登记'}</span>
+                        {materialFood && <span className="shrink-0">库存 {stock}</span>}
+                      </div>
+                      <div className="text-rg-paper-200/35 truncate">
+                        {row.recommendedAction}
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })()}
+
             {/* 熟练度条 */}
             <div className="flex items-center gap-2">
               <span className="text-[9px] font-panel text-rg-ink-400 shrink-0">熟练</span>
@@ -196,7 +257,7 @@ export function GuInventoryPanel() {
 
             {/* 操作行：喂养 + 激活 + 出售 */}
             <div className="flex items-center justify-between gap-1">
-              {/* 喂食按钮 — P0.4: 非optimal/fed/dead状态显示 */}
+              {/* 喂食按钮 — P2/P3: 消耗登记食料，不扣元石 */}
               {gu.currentState !== 'optimal' && gu.currentState !== 'fed' && gu.currentState !== 'dead' ? (
                 <button
                   onClick={() => feedGu(gu.id, gu.currentState)}
@@ -206,7 +267,7 @@ export function GuInventoryPanel() {
                       : 'border-rg-gold/25 text-rg-gold/70 hover:bg-rg-gold/10'
                   }`}
                 >
-                  喂食({gu.currentState === 'dying' ? 30 : gu.currentState === 'injured' ? 15 : 5}石)
+                  喂食
                 </button>
               ) : (
                 <span className="w-[52px]" />
@@ -223,8 +284,27 @@ export function GuInventoryPanel() {
                         : 'border-rg-ink-300/20 text-rg-paper-200/30'
                   }`}
                 >
-                  {(gu as any).active !== false ? '激活' : '休眠'}
+                  {(gu as any).active !== false ? '启用' : '休眠'}
                 </button>
+                {(() => {
+                  const useEntry = getGuUseEntry(gu.name);
+                  if (!shouldShowUseButton(useEntry)) return null;
+                  const canClick = canUseFromNormalButton(useEntry);
+                  return (
+                    <button
+                      onClick={() => canClick && doUseGu(gu.id)}
+                      disabled={!canClick}
+                      title={canClick ? useEntry.effects[0]?.description : '需要剧情场景触发'}
+                      className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
+                        canClick
+                          ? 'border-rg-gold/25 text-rg-gold/75 hover:bg-rg-gold/10'
+                          : 'border-rg-ink-300/15 text-rg-paper-200/25 cursor-not-allowed'
+                      }`}
+                    >
+                      {canClick ? '使用' : '剧情'}
+                    </button>
+                  );
+                })()}
                 {!gu.bonded && (
                   <button onClick={() => setSellConfirm(gu.id)}
                     className="text-[9px] font-button px-2 py-0.5 rounded-sm border border-rg-blood-400/15 text-rg-blood-400/50 hover:bg-rg-blood-400/10 transition-micro">

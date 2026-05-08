@@ -1,4 +1,6 @@
+import { useMemo } from 'react';
 import { useStore } from '../../store';
+import { describeReputationEffects } from '../../engine/dao-reputation-policy';
 import { CHAR_IMAGE_MAP } from '../../data/image-maps';
 
 const RELATION_COLORS: Record<string, string> = {
@@ -23,11 +25,26 @@ const RELATION_LABELS: Record<string, string> = {
   stranger: '路人',
 };
 
+const CONTACT_STATUS_LABELS: Record<string, string> = {
+  heard: '已闻',
+  seen: '已见',
+  interacted: '已交互',
+};
+
 export function CharacterPanel() {
   const characterRelations = useStore(s => s.characterRelations);
+  const npcContacts = useStore((s: any) => s.npcContacts);
+  const dynamicNPCs = useStore((s: any) => s.dynamicNPCs);
   const standings = useStore(s => s.standings);
   const initDialogue = useStore((s: any) => s.initDialogue);
   const activeDialogue = useStore((s: any) => s.activeDialogue);
+  const dynamicNpcList = useMemo(() => Object.values(dynamicNPCs || {}) as any[], [dynamicNPCs]);
+  const contactList = useMemo(() => {
+    const relationNames = new Set(characterRelations.map(r => r.name));
+    const dynamicNames = new Set(dynamicNpcList.map(n => n.name));
+    return (npcContacts || []).filter((contact: any) => !relationNames.has(contact.name) && !dynamicNames.has(contact.name));
+  }, [characterRelations, dynamicNpcList, npcContacts]);
+  const knownCharacterCount = characterRelations.length + dynamicNpcList.length + contactList.length;
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -37,10 +54,10 @@ export function CharacterPanel() {
           <h3 className="text-rg-paper-200 text-sm font-panel font-semibold mb-3">
             人物图鉴
             <span className="text-rg-paper-200/40 text-xs font-panel ml-2">
-              （{characterRelations.length}人）
+              （{knownCharacterCount}人）
             </span>
           </h3>
-          {characterRelations.length === 0 ? (
+          {knownCharacterCount === 0 ? (
             <div className="text-center py-8">
               <p className="text-rg-paper-200/30 text-xs font-panel mb-1">
                 尚未结识任何人
@@ -152,6 +169,58 @@ export function CharacterPanel() {
                   </div>
                 );
               })}
+              {dynamicNpcList.map((npc) => (
+                <div
+                  key={npc.id}
+                  className="bg-rg-ink-800/50 border border-rg-jade-500/15 rounded-lg p-3"
+                >
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <div className="min-w-0">
+                      <div className="text-rg-paper-200 text-sm font-panel font-semibold truncate">{npc.name}</div>
+                      <div className="text-rg-paper-200/40 text-[10px] font-panel">
+                        动态 NPC · {npc.path || '未知'}道 · {npc.realm_label || `${npc.realm || 1}转`}
+                      </div>
+                    </div>
+                    {typeof initDialogue === 'function' && (
+                      activeDialogue?.npcId === npc.id ? (
+                        <span className="text-[10px] text-rg-gold-400/50 cursor-default">对话中</span>
+                      ) : (
+                        <button
+                          className="text-[10px] text-rg-gold-400 hover:underline cursor-pointer"
+                          onClick={() => initDialogue(npc.id, npc.name, npc.personality || '性格未详', npc.domain || '散修', npc.affinity || 0)}
+                        >对话</button>
+                      )
+                    )}
+                  </div>
+                  <p className="text-rg-paper-200/50 text-xs font-panel leading-relaxed">
+                    {npc.description || npc.personality || '由剧情动态生成，尚待进一步互动。'}
+                  </p>
+                  <div className="mt-2 text-[10px] text-rg-paper-200/35 font-panel">
+                    好感 {npc.affinity ?? 0} · 互动 {npc.interaction_count ?? 0} · 共同战斗 {npc.battle_count ?? 0}
+                  </div>
+                </div>
+              ))}
+              {contactList.map((contact: any) => (
+                <div
+                  key={contact.npcId || contact.name}
+                  className="bg-rg-ink-800/35 border border-rg-ink-300/8 rounded-lg p-3"
+                >
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-rg-paper-200 text-sm font-panel font-semibold truncate">
+                      {contact.name}
+                    </span>
+                    <span className="text-[10px] font-panel px-2 py-0.5 rounded-sm bg-rg-ink-900 text-rg-paper-200/60">
+                      {CONTACT_STATUS_LABELS[contact.status] || '已闻'}
+                    </span>
+                  </div>
+                  <p className="text-rg-paper-200/50 text-xs font-panel leading-relaxed">
+                    {contact.summary || '剧情中出现过的人物，尚未建立正式关系。'}
+                  </p>
+                  <div className="mt-2 text-[10px] text-rg-paper-200/30 font-panel">
+                    {contact.location || '地点未明'} · {contact.source || 'ai_rumor'} · 初见第{contact.firstSeenTurn || '?'}回
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>
@@ -171,7 +240,6 @@ export function CharacterPanel() {
           ) : (
             <div className="space-y-2">
               {Object.entries(standings).map(([factionId, data]) => {
-                const pct = (data.standing + 100) / 2;
                 const tierColor =
                   data.standing >= 60
                     ? 'text-rg-gold'
@@ -184,27 +252,37 @@ export function CharacterPanel() {
                           : data.standing >= -60
                             ? 'text-orange-400'
                             : 'text-rg-blood-400';
+                const effects = (data.benefits || data.risks)
+                  ? { benefits: data.benefits || [], risks: data.risks || [] }
+                  : describeReputationEffects(data.standing);
                 return (
-                  <div key={factionId} className="flex items-center gap-3">
-                    <span className="text-rg-paper-200/80 text-xs font-panel w-20 truncate">
-                      {factionId}
-                    </span>
-                    <div className="flex-1 h-2 bg-rg-ink-900 rounded-full overflow-hidden relative">
-                      <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-rg-ink-300/40" />
-                      <div
-                        className={`h-full rounded-full transition-all duration-300 ${data.standing >= 0 ? 'bg-rg-jade-500/70' : 'bg-rg-blood-500/70'}`}
-                        style={{
-                          width: `${Math.abs(data.standing) / 2}%`,
-                          marginLeft: data.standing >= 0 ? '50%' : `${50 - Math.abs(data.standing) / 2}%`,
-                        }}
-                      />
+                  <div key={factionId} className="rounded-sm border border-rg-ink-300/10 bg-rg-ink-800/35 p-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-rg-paper-200/80 text-xs font-panel w-20 truncate">
+                        {factionId}
+                      </span>
+                      <div className="flex-1 h-2 bg-rg-ink-900 rounded-full overflow-hidden relative">
+                        <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-rg-ink-300/40" />
+                        <div
+                          className={`h-full rounded-full transition-all duration-300 ${data.standing >= 0 ? 'bg-rg-jade-500/70' : 'bg-rg-blood-500/70'}`}
+                          style={{
+                            width: `${Math.abs(data.standing) / 2}%`,
+                            marginLeft: data.standing >= 0 ? '50%' : `${50 - Math.abs(data.standing) / 2}%`,
+                          }}
+                        />
+                      </div>
+                      <span className="text-rg-paper-200/80 text-xs font-panel w-8 text-right tabular-nums">
+                        {data.standing}
+                      </span>
+                      <span className={`text-xs font-panel ${tierColor} w-12 text-right`}>
+                        {data.reputation_tier || ''}
+                      </span>
                     </div>
-                    <span className="text-rg-paper-200/80 text-xs font-panel w-8 text-right tabular-nums">
-                      {data.standing}
-                    </span>
-                    <span className={`text-xs font-panel ${tierColor} w-12 text-right`}>
-                      {data.reputation_tier || ''}
-                    </span>
+                    <div className="mt-1 text-[10px] text-rg-paper-200/35 leading-4">
+                      {data.lastReason && <div>最近：{data.lastReason}{typeof data.lastDelta === 'number' ? ` (${data.lastDelta > 0 ? '+' : ''}${data.lastDelta})` : ''}</div>}
+                      {effects.benefits.length > 0 && <div>权益：{effects.benefits.slice(0, 2).join(' / ')}</div>}
+                      {effects.risks.length > 0 && <div className="text-rg-gold/70">风险：{effects.risks.slice(0, 2).join(' / ')}</div>}
+                    </div>
                   </div>
                 );
               })}

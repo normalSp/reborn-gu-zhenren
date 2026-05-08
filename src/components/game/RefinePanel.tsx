@@ -4,8 +4,9 @@
  */
 import { useState, useMemo, useCallback } from 'react';
 import { useStore } from '../../store';
-import { refineGu, ascendGu, combineGu, disassembleGu, ascendImmortalGu } from '../../engine/refine-engine';
+import { refineGu, ascendGu, disassembleGu, ascendImmortalGu } from '../../engine/refine-engine';
 import { isRecipeUnlocked, synthesizeRecipe, attemptCompleteFragment, canAttemptFragment, loadAllFragments } from '../../engine/recipe-discovery';
+import { findMaterialSources, type MaterialSourceTag } from '../../engine/material-source-audit';
 import type { RefineInput, RefineResult } from '../../engine/refine-engine';
 import type { FragmentRecipe } from '../../engine/recipe-discovery';
 import guDbRaw from '../../canon/gu-database.json';
@@ -18,7 +19,7 @@ const FRAGMENTS = (fragmentRecipesRaw as any).fragments || [];
 const EMPTY_OBJ = Object.freeze({});
 const EMPTY_ARR: readonly never[] = Object.freeze([]);
 
-type OpMode = 'refine' | 'ascend' | 'combine' | 'disassemble';
+type OpMode = 'refine' | 'ascend' | 'disassemble';
 
 interface RecipeEntry {
   guName: string;
@@ -31,9 +32,32 @@ interface RecipeEntry {
   effect: string;
 }
 
+const SOURCE_LABELS: Record<MaterialSourceTag, string> = {
+  shop: '商会',
+  encounter: '遭遇',
+  training_ground: '道场',
+  faction: '势力',
+  aperture_resource: '仙窍',
+  treasure_yellow_heaven: '宝黄天',
+  event_whitelist: '剧情',
+  regional_generation: '野外/地域掉落',
+  special_rule: '特殊规则',
+};
+
+interface RefineSourceRow {
+  materialName: string;
+  amount: number;
+  owned: number;
+  sourceLabels: string[];
+  hasSource: boolean;
+  enough: boolean;
+}
+
 export function RefinePanel() {
   const inventory = useStore(s => s.inventory);
   const materialBag = useStore(s => (s as any).materialBag || EMPTY_OBJ) as Record<string, number>;
+  const apertureMaterials = useStore(s => (s as any).apertureInventory?.materials || EMPTY_OBJ) as Record<string, number>;
+  const apertureImmortalMaterials = useStore(s => (s as any).apertureInventory?.immortalMaterials || EMPTY_OBJ) as Record<string, number>;
   const daoMarks = useStore(s => (s as any).pathBuild?.dao_marks || EMPTY_OBJ) as Record<string, number>;
   const talents = useStore(s => (s as any).selectedTalents || EMPTY_ARR) as any[];
   const refinedGuCount = useStore(s => (s as any).refinedGuCount || 0) as number;
@@ -45,7 +69,6 @@ export function RefinePanel() {
   const [mode, setMode] = useState<OpMode>('refine');
   const [selectedRecipe, setSelectedRecipe] = useState<string | null>(null);
   const [selectedGuIds, setSelectedGuIds] = useState<string[]>([]);
-  const [targetCombineTier, setTargetCombineTier] = useState(2);
   const [result, setResult] = useState<RefineResult | null>(null);
   const [showFragmentPanel, setShowFragmentPanel] = useState(false);
   const [showImmortalAscend, setShowImmortalAscend] = useState(false);
@@ -84,6 +107,48 @@ export function RefinePanel() {
   const selectedEntry = recipeList.unlocked.find(r => r.guName === selectedRecipe);
   const hasTalent = talents.some((t: any) => t.id === 'talent_hundred_refinements');
   const hasSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
+  const materialView = useMemo(() => {
+    const result: Record<string, number> = { ...materialBag };
+    for (const [key, qty] of Object.entries(apertureMaterials)) {
+      result[key] = (result[key] || 0) + qty;
+    }
+    for (const [key, qty] of Object.entries(apertureImmortalMaterials)) {
+      result[key] = (result[key] || 0) + qty;
+    }
+    return result;
+  }, [materialBag, apertureMaterials, apertureImmortalMaterials]);
+
+  const refineSourceRows = useMemo((): RefineSourceRow[] => {
+    if (!selectedEntry?.refineCost) return [];
+    const costBuckets: Record<string, number>[] = [
+      selectedEntry.refineCost.generic || {},
+      selectedEntry.refineCost.specific || {},
+      selectedEntry.refineCost.materials || {},
+      selectedEntry.refineCost.immortalMaterials || {},
+    ];
+    const merged: Record<string, number> = {};
+    for (const bucket of costBuckets) {
+      for (const [materialName, amount] of Object.entries(bucket)) {
+        merged[materialName] = (merged[materialName] || 0) + Number(amount || 0);
+      }
+    }
+    return Object.entries(merged).map(([materialName, amount]) => {
+      const sources = findMaterialSources(materialName);
+      const sourceLabels = Array.from(new Set(sources.map(source => SOURCE_LABELS[source.tag] || source.tag)));
+      const owned = materialView[materialName] || 0;
+      return {
+        materialName,
+        amount,
+        owned,
+        sourceLabels,
+        hasSource: sourceLabels.length > 0,
+        enough: owned >= amount,
+      };
+    });
+  }, [selectedEntry, materialView]);
+
+  const hasBlockingRefineSource = refineSourceRows.some(row => !row.hasSource);
+  const hasRefineShortage = refineSourceRows.some(row => row.hasSource && !row.enough);
 
   // ─── 成功率预览 ───
   const successPreview = useMemo(() => {
@@ -98,6 +163,14 @@ export function RefinePanel() {
   // ─── 炼制操作 ───
   const handleRefine = () => {
     if (!selectedEntry) return;
+    if (hasBlockingRefineSource) {
+      setResult({ success: false, message: '材料来源未登记，不能显示为可完成炼蛊。', costMaterials: [], costCurrency: 0 });
+      return;
+    }
+    if (hasRefineShortage) {
+      setResult({ success: false, message: '材料库存不足，请先按来源矩阵补齐。', costMaterials: [], costCurrency: 0 });
+      return;
+    }
     const result = refineGu({
       specId: selectedEntry.guName,
       name: selectedEntry.guName,
@@ -113,14 +186,6 @@ export function RefinePanel() {
   const handleAscend = () => {
     if (selectedGuIds.length !== 1) { setResult({ success: false, message: '请选择1只蛊虫进行升炼', costMaterials: [], costCurrency: 0 }); return; }
     const result = ascendGu({ guId: selectedGuIds[0] });
-    setResult(result);
-    setSelectedGuIds([]);
-  };
-
-  // ─── 合炼操作 ───
-  const handleCombine = () => {
-    if (selectedGuIds.length < 2) { setResult({ success: false, message: '合炼需要至少2只同流派蛊虫', costMaterials: [], costCurrency: 0 }); return; }
-    const result = combineGu({ guIds: selectedGuIds, targetTier: targetCombineTier });
     setResult(result);
     setSelectedGuIds([]);
   };
@@ -152,14 +217,8 @@ export function RefinePanel() {
   const handleAttemptComplete = useCallback((fragment: FragmentRecipe) => {
     const res = attemptCompleteFragment(fragment);
     if (res.success && res.refineInput) {
-      // 补全成功 → 写入 completedRecipes flag
       const store = useStore.getState() as any;
-      const completedRecipes = { ...(store.flags?.completedRecipes || {}) };
-      completedRecipes[fragment.targetGu] = true;
-      useStore.setState((s: any) => ({
-        ...s,
-        flags: { ...s.flags, completedRecipes },
-      }));
+      store.unlockRecipe?.(fragment.targetGu, `fragment-complete:${fragment.id}`);
     }
     setFragmentResult(res);
   }, []);
@@ -175,9 +234,6 @@ export function RefinePanel() {
       setResult(null);
     } else if (mode === 'ascend') {
       setSelectedGuIds(prev => prev.includes(id) ? [] : [id]);
-      setResult(null);
-    } else if (mode === 'combine') {
-      setSelectedGuIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
       setResult(null);
     } else {
       setSelectedGuIds(prev => prev.includes(id) ? [] : [id]);
@@ -199,12 +255,12 @@ export function RefinePanel() {
 
         {/* 操作模式切换 */}
         <div className="flex gap-1 mt-2">
-          {(['refine', 'ascend', 'combine', 'disassemble'] as OpMode[]).map(m => (
+          {(['refine', 'ascend', 'disassemble'] as OpMode[]).map(m => (
             <button key={m} onClick={() => { setMode(m); setSelectedRecipe(null); setSelectedGuIds([]); setResult(null); }}
               className={`text-[10px] font-button px-2 py-0.5 rounded-sm transition-micro ${
                 mode === m ? 'bg-rg-gold/20 text-rg-gold border border-rg-gold/30' : 'text-rg-paper-200/40 border border-rg-ink-700/30 hover:border-rg-gold/20'
               }`}>
-              {{ refine: '炼制', ascend: '升炼', combine: '合炼', disassemble: '拆炼' }[m]}
+              {{ refine: '炼制', ascend: '升炼', disassemble: '拆炼' }[m]}
             </button>
           ))}
           {/* CR3: 蛊仙模式下仙蛊升炼入口 */}
@@ -315,7 +371,7 @@ export function RefinePanel() {
           ) : (
             <>
               <p className="text-[10px] text-rg-paper-200/30 mb-2 px-1">
-                {mode === 'ascend' ? '选择蛊虫升炼(上限5转)' : mode === 'combine' ? '多选同流派蛊虫合炼' : '选择蛊虫拆回蛊材'}
+                {mode === 'ascend' ? '选择蛊虫升炼(上限5转)' : '选择蛊虫拆回蛊材'}
               </p>
               {inventory.filter((g: any) => mode !== 'ascend' || (g.tier < 5 && g.currentState !== 'dead')).map((g: any) => (
                 <button key={g.id} onClick={() => toggleSelect(g.id)}
@@ -350,6 +406,24 @@ export function RefinePanel() {
                   </div>
                 </div>
               )}
+              {refineSourceRows.length > 0 && (
+                <div className="rounded-sm border border-rg-ink-700/40 bg-rg-ink-800/35 p-2">
+                  <span className="text-xs text-rg-paper-200/40">来源矩阵</span>
+                  <div className="mt-1 space-y-1">
+                    {refineSourceRows.map(row => (
+                      <div key={row.materialName} className={`text-[10px] leading-4 ${!row.hasSource || !row.enough ? 'text-rg-gold' : 'text-rg-paper-200/55'}`}>
+                        <div className="flex justify-between gap-2">
+                          <span className="truncate">{row.materialName}</span>
+                          <span className="shrink-0">库存 {row.owned}/{row.amount}</span>
+                        </div>
+                        <div className="text-rg-paper-200/35 truncate">
+                          {row.hasSource ? `来源：${row.sourceLabels.join(' / ')}` : '来源：未登记，需补真相源'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               {successPreview !== null && (
                 <div>
                   <span className="text-xs text-rg-paper-200/40">成功率</span>
@@ -362,7 +436,7 @@ export function RefinePanel() {
                   </div>
                 </div>
               )}
-              <button onClick={handleRefine} className="w-full py-2 rounded-sm text-xs font-button font-semibold bg-rg-gold text-rg-ink-900 hover:brightness-115 transition-colors">
+              <button onClick={handleRefine} disabled={hasBlockingRefineSource || hasRefineShortage} className={`w-full py-2 rounded-sm text-xs font-button font-semibold transition-colors ${hasBlockingRefineSource || hasRefineShortage ? 'bg-rg-ink-700 text-rg-paper-200/30 cursor-not-allowed' : 'bg-rg-gold text-rg-ink-900 hover:brightness-115'}`}>
                 开始炼制
               </button>
             </div>
@@ -399,7 +473,7 @@ export function RefinePanel() {
                 <span className="text-xs text-rg-paper-200/40">可用仙材</span>
                 <div className="mt-1 flex flex-wrap gap-1">
                   {['空间晶石', '灾劫灰烬', '光阴砂', '道痕结晶', '三兽血瓶', '地火核心', '九天罡风', '福地本源', '星辉碎片', '古兽真血'].map(mat => {
-                    const qty = materialBag[mat] || 0;
+                    const qty = materialView[mat] || 0;
                     return (
                       <span key={mat} className={`text-[9px] px-1.5 py-0.5 rounded-sm ${qty > 0 ? 'bg-rg-ink-700/50 text-rg-paper-200/50' : 'bg-rg-ink-800/30 text-rg-ink-500'}`}>
                         {mat}×{qty}
@@ -411,20 +485,6 @@ export function RefinePanel() {
               <button onClick={handleAscendImmortal} disabled={!ascendImmortalInput.guId}
                 className={`w-full py-2 rounded-sm text-xs font-button font-semibold transition-colors ${ascendImmortalInput.guId ? 'bg-rg-gold text-rg-ink-900 hover:brightness-115' : 'bg-rg-ink-700/50 text-rg-ink-500 cursor-not-allowed'}`}>
                 仙蛊升炼
-              </button>
-            </div>
-          ) : mode === 'combine' && selectedGuIds.length >= 2 ? (
-            <div className="space-y-3">
-              <p className="text-sm font-semibold">已选 {selectedGuIds.length} 只蛊虫</p>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-rg-paper-200/40">目标转数:</span>
-                <select value={targetCombineTier} onChange={e => setTargetCombineTier(Number(e.target.value))}
-                  className="bg-rg-ink-800 border border-rg-ink-700/50 rounded-sm text-xs text-rg-paper-200 px-1 py-0.5">
-                  {[2,3,4,5].map(t => <option key={t} value={t}>{t}转</option>)}
-                </select>
-              </div>
-              <button onClick={handleCombine} className="w-full py-2 rounded-sm text-xs font-button font-semibold bg-rg-gold text-rg-ink-900 hover:brightness-115 transition-colors">
-                确认合炼
               </button>
             </div>
           ) : mode === 'disassemble' && selectedGuIds.length === 1 ? (

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "version": "2.1",
+    "version": "2.2",
     "total": 26,
-    "note": "P2-8: 18常规成就 + P9-1: 8跨域成就。认证：成就检测在每轮RESOLVED后自动执行。"
+    "note": "P2-8: 18常规成就 + P9-1: 8跨域成就。认证：成就检测在每轮RESOLVED后自动执行。v0.7.0-a: 26条成就已补reward/progressMax。"
   },
   "achievements": [
     {
@@ -13,7 +13,11 @@
       "category": "剧情",
       "domain": "通用",
       "hidden": false,
-      "condition": "turn >= 1"
+      "condition": "turn >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80
+      }
     },
     {
       "id": "realm_1",
@@ -23,7 +27,11 @@
       "category": "成长",
       "domain": "通用",
       "hidden": false,
-      "condition": "realmNum >= 1"
+      "condition": "realmNum >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80
+      }
     },
     {
       "id": "realm_2",
@@ -33,7 +41,11 @@
       "category": "成长",
       "domain": "通用",
       "hidden": false,
-      "condition": "realmNum >= 2"
+      "condition": "realmNum >= 2",
+      "progressMax": 2,
+      "reward": {
+        "currency": 80
+      }
     },
     {
       "id": "realm_3",
@@ -43,7 +55,11 @@
       "category": "成长",
       "domain": "通用",
       "hidden": false,
-      "condition": "realmNum >= 3"
+      "condition": "realmNum >= 3",
+      "progressMax": 3,
+      "reward": {
+        "currency": 250
+      }
     },
     {
       "id": "realm_4",
@@ -53,7 +69,12 @@
       "category": "成长",
       "domain": "通用",
       "hidden": false,
-      "condition": "realmNum >= 4"
+      "condition": "realmNum >= 4",
+      "progressMax": 4,
+      "reward": {
+        "currency": 800,
+        "immortalCurrency": 3
+      }
     },
     {
       "id": "gu_collector",
@@ -63,7 +84,14 @@
       "category": "收集",
       "domain": "通用",
       "hidden": false,
-      "condition": "guCount >= 3"
+      "condition": "guCount >= 3",
+      "progressMax": 3,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "通用蛊材": 2
+        }
+      }
     },
     {
       "id": "gu_master",
@@ -73,7 +101,14 @@
       "category": "收集",
       "domain": "通用",
       "hidden": false,
-      "condition": "guCount >= 5"
+      "condition": "guCount >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "通用蛊材": 2
+        }
+      }
     },
     {
       "id": "first_refine",
@@ -83,7 +118,14 @@
       "category": "系统",
       "domain": "通用",
       "hidden": false,
-      "condition": "refinedGuCount >= 1"
+      "condition": "refinedGuCount >= 1",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "炼道蛊材": 2
+        }
+      }
     },
     {
       "id": "alchemist",
@@ -93,7 +135,14 @@
       "category": "系统",
       "domain": "通用",
       "hidden": false,
-      "condition": "refinedGuCount >= 5"
+      "condition": "refinedGuCount >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "炼道蛊材": 2
+        }
+      }
     },
     {
       "id": "rich_500",
@@ -103,7 +152,11 @@
       "category": "经济",
       "domain": "通用",
       "hidden": false,
-      "condition": "currency >= 500"
+      "condition": "currency >= 500",
+      "progressMax": 500,
+      "reward": {
+        "currency": 80
+      }
     },
     {
       "id": "rich_2000",
@@ -113,7 +166,11 @@
       "category": "经济",
       "domain": "通用",
       "hidden": false,
-      "condition": "currency >= 2000"
+      "condition": "currency >= 2000",
+      "progressMax": 2000,
+      "reward": {
+        "currency": 250
+      }
     },
     {
       "id": "social_butterfly",
@@ -123,7 +180,14 @@
       "category": "社交",
       "domain": "通用",
       "hidden": false,
-      "condition": "knownNpcCount >= 5"
+      "condition": "knownNpcCount >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "信物材料": 1
+        }
+      }
     },
     {
       "id": "nanjiang_traveler",
@@ -133,7 +197,14 @@
       "category": "探索",
       "domain": "南疆",
       "hidden": false,
-      "condition": "knownLocations >= 4"
+      "condition": "knownLocations >= 4",
+      "progressMax": 4,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "侦察蛊材": 2
+        }
+      }
     },
     {
       "id": "cross_domain",
@@ -143,7 +214,14 @@
       "category": "探索",
       "domain": "通用",
       "hidden": false,
-      "condition": "crossDomainCount >= 2"
+      "condition": "crossDomainCount >= 2",
+      "progressMax": 2,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "侦察蛊材": 2
+        }
+      }
     },
     {
       "id": "combat_veteran",
@@ -153,7 +231,17 @@
       "category": "战斗",
       "domain": "通用",
       "hidden": false,
-      "condition": "combatWins >= 10"
+      "condition": "combatWins >= 10",
+      "progressMax": 10,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "疗伤蛊材": 3
+        },
+        "daoMarks": {
+          "力道": 5
+        }
+      }
     },
     {
       "id": "dark_choice",
@@ -163,7 +251,11 @@
       "category": "剧情",
       "domain": "通用",
       "hidden": true,
-      "condition": "hasFlag: madeHighRiskChoice"
+      "condition": "hasFlag: madeHighRiskChoice",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80
+      }
     },
     {
       "id": "mercy_path",
@@ -173,7 +265,14 @@
       "category": "剧情",
       "domain": "通用",
       "hidden": true,
-      "condition": "daoHeart.mercy >= 5"
+      "condition": "daoHeart.mercy >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 180,
+        "daoMarks": {
+          "人道": 5
+        }
+      }
     },
     {
       "id": "kill_path",
@@ -183,7 +282,14 @@
       "category": "剧情",
       "domain": "通用",
       "hidden": true,
-      "condition": "daoHeart.kill >= 5"
+      "condition": "daoHeart.kill >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 180,
+        "daoMarks": {
+          "杀道": 5
+        }
+      }
     },
     {
       "id": "beiyuan_warrior",
@@ -193,7 +299,14 @@
       "category": "战斗",
       "domain": "北原",
       "hidden": false,
-      "condition": "combatWins >= 1 && crossDomainFlags:北原"
+      "condition": "combatWins >= 1 && crossDomainFlags:北原",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "疗伤蛊材": 2
+        }
+      }
     },
     {
       "id": "beiyuan_herder",
@@ -203,7 +316,14 @@
       "category": "社交",
       "domain": "北原",
       "hidden": false,
-      "condition": "knownNpcCount >= 3"
+      "condition": "knownNpcCount >= 3",
+      "progressMax": 3,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "信物材料": 1
+        }
+      }
     },
     {
       "id": "donghai_fisher",
@@ -213,7 +333,14 @@
       "category": "探索",
       "domain": "东海",
       "hidden": false,
-      "condition": "knownLocations >= 5"
+      "condition": "knownLocations >= 5",
+      "progressMax": 5,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "侦察蛊材": 2
+        }
+      }
     },
     {
       "id": "donghai_merchant",
@@ -223,7 +350,11 @@
       "category": "经济",
       "domain": "东海",
       "hidden": false,
-      "condition": "currency >= 1000"
+      "condition": "currency >= 1000",
+      "progressMax": 1000,
+      "reward": {
+        "currency": 250
+      }
     },
     {
       "id": "ximo_oasis",
@@ -233,7 +364,14 @@
       "category": "探索",
       "domain": "西漠",
       "hidden": false,
-      "condition": "hasFlag: foundOasis"
+      "condition": "hasFlag: foundOasis",
+      "progressMax": 1,
+      "reward": {
+        "currency": 80,
+        "materials": {
+          "侦察蛊材": 2
+        }
+      }
     },
     {
       "id": "ximo_sandwalker",
@@ -243,7 +381,14 @@
       "category": "探索",
       "domain": "西漠",
       "hidden": false,
-      "condition": "hasFlag: exploredSecretRealm"
+      "condition": "hasFlag: exploredSecretRealm",
+      "progressMax": 1,
+      "reward": {
+        "currency": 250,
+        "materials": {
+          "侦察蛊材": 2
+        }
+      }
     },
     {
       "id": "zhongzhou_discipline",
@@ -253,7 +398,11 @@
       "category": "剧情",
       "domain": "中洲",
       "hidden": false,
-      "condition": "hasFlag: joinedSect"
+      "condition": "hasFlag: joinedSect",
+      "progressMax": 1,
+      "reward": {
+        "currency": 250
+      }
     },
     {
       "id": "zhongzhou_heaven",
@@ -263,7 +412,15 @@
       "category": "剧情",
       "domain": "中洲",
       "hidden": false,
-      "condition": "hasFlag: learnedHeavenlyCourt"
+      "condition": "hasFlag: learnedHeavenlyCourt",
+      "progressMax": 1,
+      "reward": {
+        "currency": 800,
+        "immortalCurrency": 3,
+        "materials": {
+          "情报玉简": 1
+        }
+      }
     }
   ]
 }

@@ -159,10 +159,11 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
       const output = Math.floor(node.output_rate * timeMultiplier * (node.quality / 100) * daoBonus);
       if (output <= 0) continue;
 
+      const materialKey = node.type || node.name;
       if (node.grade === '仙材') {
-        newImmortalMaterials[node.name] = (newImmortalMaterials[node.name] || 0) + output;
+        newImmortalMaterials[materialKey] = (newImmortalMaterials[materialKey] || 0) + output;
       } else {
-        newMaterials[node.name] = (newMaterials[node.name] || 0) + output;
+        newMaterials[materialKey] = (newMaterials[materialKey] || 0) + output;
       }
     }
 

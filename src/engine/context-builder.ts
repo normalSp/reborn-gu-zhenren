@@ -1,5 +1,6 @@
 import type { AIContext, KeyEvent, Message, ProximityEvent, GlobalFlag, CombatConstraint } from '../types';
 import type { RootStore } from '../store';
+import { enforceTokenBudget, TOKEN_BUDGET } from '../utils/token-budget';
 
 // ─── 知识库静态导入 ───
 import guDatabaseRaw from '../canon/gu-database.json';
@@ -8,6 +9,10 @@ import terminologyRaw from '../canon/terminology.json';
 import npcsRaw from '../canon/npcs.json';
 import chaptersRaw from '../canon/chapters.json';
 import economyRaw from '../canon/economy.json';
+import fragmentsRaw from '../canon/fragment-recipes.json';
+import { getAllowedMaterialNamesForPrompt } from './material-registry';
+import { getRuntimePathNames } from './path-registry';
+import { describeDaoHeartNarrativeBias } from './dao-reputation-policy';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -20,9 +25,10 @@ const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你
 世界观：蛊界弱肉强食。境界不可逾越。禁止markdown包裹。`;
 
 // ─── System Prompt Layer 2: 格式速查（精简至~200 tokens）───
-const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,dynamic_npcs} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铁甲蛊",tier:1,path:"金道",rarity:"稀有",description:"提升防御"}]}, 获得蛊材/材料给materials:{add:{"沼泽毒泥":2,"毒虫毒囊":1}}, 真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
+const SYSTEM_PROMPT_LAYER2 = `字段速查: choices[].{id,text,risk,risk_note} | state_update.{player,wealth,gu_inventory,flags,dao_marks,path_levels,materials,recipe_fragments,dynamic_npcs,npc_contacts,event_policy,attribute_mutations,discoveries} | risk值high|medium|low。铁则: 2-4选项各含risk/risk_note, 高境界压低级, 方源利己不友善, 机缘有代价, 玩家是原创角色且不可被称作方源, 道心给dao_heart, 元石变动给wealth.delta, 道痕变动给player:{dao_marks:{"力道":500}}, 境界变动给path_levels, 获得蛊虫给gu_inventory:{add:[{name:"铜皮蛊",tier:1,path:"金道",rarity:"普通",description:"强化皮肤防御"}]}, 获得蛊材/材料给materials:{add:{"月华草":2}}, 获得残方只能给recipe_fragments:{add:["已登记fragmentId"]}。禁止返回recipes.unlock。未列入奖励白名单的物品/蛊方/流派只能写discoveries:{add:[{type:"unknown",name:"名称",note:"待审线索",source:"ai-rumor"}]}，不得写入materials/gu_inventory。真元消耗给player.essence:{current:60,max:100}, HP变化给player.health:{current:80,max:100}。重要：真元消耗或HP变化在叙事中出现时必须在state_update中回写。材料(毒囊、兽骨、毒泥等)不是蛊虫，必须走materials字段不要错放到gu_inventory。道心/声望事件用event_policy:{kind:"kill|rescue|betray|trade|deceive|keep_promise|sacrifice|loot|protect|extort",factionId:"势力id",alignment:"righteous|demonic|merchant",reason:"原因"}，四维变化只能用attribute_mutations.add并等待引擎白名单校验。道心影响选项：杀性高→激进暴力选项,仁心高→救赎怜悯选项,谋略高→计谋迂回选项,野心高→权势自利选项。
 
-🆕 动态NPC规则: 叙事中遇到新的"路人甲"NPC（非202预定义NPC）时，通过state_update.dynamic_npcs.add回写结构化数据: [{name:"张三",path:"力道",realm:1,personality:"憨厚老实",bonding_hint:"张三感激你出手相助，对你心生敬佩"}]. realm限制1-2(凡人/一转初阶)，避免战力通胀。人物不可重复（检查之前叙事中是否已出现同名者）。已有NPC好感变化通过dynamic_npcs.affinity_delta回写: [{name:"张三",delta:5}]。`;
+🆕 动态NPC规则: 叙事中遇到新的"路人甲"NPC（非202预定义NPC）时，通过state_update.dynamic_npcs.add回写结构化数据: [{name:"张三",path:"力道",realm:1,personality:"憨厚老实",bonding_hint:"张三感激你出手相助，对你心生敬佩"}]. realm限制1-2(凡人/一转初阶)，避免战力通胀。人物不可重复（检查之前叙事中是否已出现同名者）。已有NPC好感变化通过dynamic_npcs.affinity_delta回写: [{name:"张三",delta:5}]。
+🆕 人物图鉴contact: 叙事中遇见、听闻或短暂交会原著/动态角色但尚未建立关系时，必须通过state_update.npc_contacts.add回写: [{name:"商心慈",source:"canon",status:"heard|seen|interacted",location:"南疆商路",summary:"一句话摘要"}]。`;
 
 // ─── Layer S: 风格指南（注入版） ───
 const STYLE_GUIDE_INJECT = `
@@ -896,19 +902,27 @@ export class ContextBuilder {
     // 蛊虫知识注入【P1-6.3动静分离：从system prompt移除，迁移到buildMessages动态段】
     // 原 injectGuKnowledge(store.inventory) 调用已移除
 
-    return parts.join('\n');
+    const joined = parts.join('\n');
+    return enforceTokenBudget(joined, TOKEN_BUDGET.MAX).prompt;
   }
 
   // ─── 序列化玩家状态 ───
   buildPlayerStateJSON(store: RootStore): string {
     const s = store;
+    const playerName = s.profile.name || '无名蛊师';
     const playerInfo: Record<string, any> = {
-      name: s.profile.name,
+      name: playerName,
+      playerIdentity: {
+        playerName,
+        playerRole: 'original_participant',
+        canonIdentityGuard: '玩家始终是原创蛊师，只能参与原著与二创剧情；方源只能作为原著NPC、远景事件或剧情交会对象出现。',
+      },
       realm: s.profile.realm.label,
       attributes: s.attributes,
       vitals: { health: s.vitals.health, essence: s.vitals.essence },
       path: { primary: s.pathBuild.primary || '无', secondary: s.pathBuild.secondary },
       daoHeart: s.daoHeart,
+      daoHeartNarrativeBias: describeDaoHeartNarrativeBias(s.daoHeart as any),
       daoHeartGuide: (() => {
         const dh = s.daoHeart;
         const parts: string[] = [];
@@ -984,6 +998,25 @@ export class ContextBuilder {
         parts.push(`【当前章节位置 — 不可脱离】你正处于「${chapterDef.displayName}」章节，位于${currentDomain}域${chapterDef.position?.area || chapterDef.position?.region || ''}。叙事必须严格围绕当前章节展开，不可跳回前面的章节事件，也不可跳到后面的章节。`);
       }
     }
+
+    // ═══ v0.7.0-pre: AI奖励白名单（阻止DeepSeek凭空造材料/蛊方/流派） ═══
+    const realmGrand = (store as any).profile?.realm?.grand || 1;
+    const allowedMaterials = getAllowedMaterialNamesForPrompt(realmGrand, 28);
+    const allowedPaths = getRuntimePathNames();
+    const fragmentDefs = ((fragmentsRaw as any).fragments || []) as any[];
+    const chapterName = currentChapterId || '';
+    const candidateFragments = fragmentDefs
+      .filter(f => !f.sourceChapter || chapterName.includes(f.sourceChapter) || f.sourceChapter.includes(chapterName))
+      .slice(0, 8);
+    const fragmentList = (candidateFragments.length > 0 ? candidateFragments : fragmentDefs.slice(0, 8))
+      .map(f => f.id);
+    parts.push([
+      '【state_update奖励白名单 — 必须遵守】',
+      `materials.add 只能使用这些key: ${allowedMaterials.join('、')}`,
+      `recipe_fragments.add 只能使用这些fragmentId: ${fragmentList.join('、')}`,
+      `所有 path 只能使用原著确认流派: ${allowedPaths.join('、')}`,
+      '禁止直接返回 recipes.unlock。未列入白名单的材料/蛊方/物件只可写 discoveries.add，discoveries 无数值效果。',
+    ].join('\n'));
 
     // ═══ P4: 天赋效果提醒（每轮注入，+150 tokens） ═══
     const selectedTalents = (store as any).selectedTalents;
@@ -1085,12 +1118,15 @@ export class ContextBuilder {
       parts.push('【道心指导指令】玩家道心尚未成型（四维均低于3），选项可多元化，每个选项引导不同的道心走向。此阶段是塑造角色道心的最佳时期。');
     }
 
-    return parts.length > 0 ? parts.join('\n\n') : '';
+    if (parts.length === 0) return '';
+    return enforceTokenBudget(parts.join('\n\n'), Math.floor(TOKEN_BUDGET.MAX * 0.65)).prompt;
   }
 
   // ─── 构建 API 消息列表 ───
   buildMessages(context: AIContext, choiceId?: string, dynamicContext?: string): { system: string; user: string } {
     const userContextParts = [
+      '【玩家身份锚点】playerRole=original_participant；玩家是原创角色，缺省名为“无名蛊师”。方源只能作为原著NPC或远景事件存在，不得把玩家称为方源。',
+      '',
       '【玩家当前状态】', context.playerStateJSON, '',
       '【近期关键事件】',
       context.keyEvents.length > 0

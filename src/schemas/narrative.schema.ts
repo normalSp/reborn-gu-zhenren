@@ -1,5 +1,9 @@
 import { z } from 'zod';
 
+const StringAnyRecord = z.record(z.string(), z.any());
+const StringNumberRecord = z.record(z.string(), z.number());
+const StringStringRecord = z.record(z.string(), z.string());
+
 // ─── Choice Schema ───
 export const ChoiceSchema = z.object({
   id: z.string().min(1),
@@ -45,11 +49,11 @@ const GuInventoryUpdate = z.object({
 }).optional();
 
 const FlagsUpdate = z.object({
-  set: z.record(z.any()).optional(),
+  set: StringAnyRecord.optional(),
   remove: z.array(z.string()).optional(),
 }).optional();
 
-const FactionUpdate = z.record(z.object({
+const FactionUpdate = z.record(z.string(), z.object({
   standing: z.number(),
 }).passthrough()).optional();  // v0.6.0修复: passthrough容忍AI返回额外字段(reputation/status等)
 
@@ -75,12 +79,29 @@ const PlayerUpdate = z.object({
   health: HealthUpdate,
   essence: HealthUpdate,
   dao_heart: DaoHeartUpdate,
-  dao_marks: z.record(z.number()).optional(),
-  path_levels: z.record(z.string()).optional(),
+  dao_marks: StringNumberRecord.optional(),
+  path_levels: StringStringRecord.optional(),
 }).optional();
 
 const MaterialsUpdate = z.object({
-  add: z.record(z.number()).optional(),
+  add: StringNumberRecord.optional(),
+}).optional();
+
+const RecipeFragmentsUpdate = z.object({
+  add: z.array(z.string()).optional(),
+}).optional();
+
+const NpcContactAdd = z.object({
+  npcId: z.string().optional(),
+  name: z.string().min(1),
+  source: z.enum(['canon', 'dynamic', 'ai_rumor', 'manual']).optional(),
+  status: z.enum(['heard', 'seen', 'interacted']).optional(),
+  location: z.string().optional(),
+  summary: z.string().optional(),
+}).passthrough();
+
+const NpcContactsUpdate = z.object({
+  add: z.array(NpcContactAdd).optional(),
 }).optional();
 
 // ─── StateUpdate Schema ───
@@ -92,6 +113,8 @@ export const StateUpdateSchema = z.object({
   faction: FactionUpdate,
   causality: CausalityUpdate,
   materials: MaterialsUpdate,
+  recipe_fragments: RecipeFragmentsUpdate,
+  npc_contacts: NpcContactsUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───

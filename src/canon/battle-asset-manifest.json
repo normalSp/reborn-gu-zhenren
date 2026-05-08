@@ -1,0 +1,23 @@
+{
+  "version": "v0.7.0-pre",
+  "entries": [
+    {
+      "id": "placeholder_killer_move_flash",
+      "name": "杀招闪图占位",
+      "kind": "killer_move",
+      "assetPath": "",
+      "fallbackTint": "#c49a3a",
+      "triggerTags": ["killer_move", "important"],
+      "runtimePhase": "pre_schema"
+    },
+    {
+      "id": "placeholder_immortal_gu_flash",
+      "name": "重要仙蛊闪图占位",
+      "kind": "immortal_gu",
+      "assetPath": "",
+      "fallbackTint": "#8fb6ff",
+      "triggerTags": ["immortal_gu", "unique"],
+      "runtimePhase": "pre_schema"
+    }
+  ]
+}

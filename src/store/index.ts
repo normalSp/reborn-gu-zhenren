@@ -113,6 +113,21 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
     if (s.maxDynamicNPCs === undefined) s.maxDynamicNPCs = 500;
   }
 
+  if (s.feedingCredits === undefined) s.feedingCredits = {};
+  if (s.rumorLocations === undefined) s.rumorLocations = [];
+  if (s.materialShelf === undefined) {
+    s.materialShelf = {
+      items: [],
+      lastRefreshed: 0,
+      freeRefreshTurn: 0,
+      freeRefreshCount: 0,
+      emergencyRefreshUsedTurn: 0,
+      emergencyActive: false,
+    };
+  }
+  if (s.lastFactionEconomyLedger === undefined) s.lastFactionEconomyLedger = null;
+  if (s.lastFactionEconomyTurn === undefined) s.lastFactionEconomyTurn = 0;
+
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
 }
@@ -153,6 +168,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createSoundSlice> &
   ReturnType<typeof createGameLogSlice> &
   ReturnType<typeof createMerchantSlice> &
+  ReturnType<typeof createAuctionSlice> &
   ReturnType<typeof createTimelineSlice> &
   ReturnType<typeof createDynamicNPCStore> &
   SaveSystemActions;
@@ -422,6 +438,19 @@ export const useStore = create<RootStore>()(
           return merged;
         },
         migrate: (persistedState: any, version: number) => {
+          if (persistedState) {
+            if (persistedState.npcContacts === undefined) persistedState.npcContacts = [];
+            if (persistedState.gameLog === undefined) persistedState.gameLog = [];
+            if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
+            if (persistedState.deathRecord) {
+              persistedState.deathRecord = {
+                majorChoices: [],
+                deathCauseTags: [],
+                generatedAt: new Date().toISOString(),
+                ...persistedState.deathRecord,
+              };
+            }
+          }
           // v1 → v2 → v3 → v4 → v5 迁移：兼容旧存档无新增字段的情况
           if (version < 5 && persistedState) {
             // v5 新增：P2扩展字段占位（combatState扩展/dialogueState/shopState/encounterState/audioState/lifeboundGu）
@@ -433,6 +462,11 @@ export const useStore = create<RootStore>()(
             if (persistedState.lifeboundGu === undefined) persistedState.lifeboundGu = null;
             if (persistedState.originUnlocks === undefined) persistedState.originUnlocks = [];
             if (persistedState.soundState === undefined) persistedState.soundState = { masterVolume: 0.7, bgmVolume: 0.5, sfxVolume: 0.7, muted: false, currentBgm: null };
+            if (persistedState.soundState) {
+              if (persistedState.soundState.voiceVolume === undefined) persistedState.soundState.voiceVolume = 0.8;
+              if (persistedState.soundState.uiVolume === undefined) persistedState.soundState.uiVolume = 0.7;
+              if (persistedState.soundState.voiceActive === undefined) persistedState.soundState.voiceActive = false;
+            }
             // P2新增 chapterSlice 路由扩展字段
             if (persistedState.nextChapterOptions === undefined) persistedState.nextChapterOptions = [];
             if (persistedState.proximityEvents === undefined) persistedState.proximityEvents = [];

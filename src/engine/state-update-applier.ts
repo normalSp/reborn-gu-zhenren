@@ -2,6 +2,8 @@ import { useStore } from '../store';
 import type { StateUpdate, ButterflyEffect } from '../types';
 import type { EncounterReward } from '../types/encounter';
 import { evaluateApertureGrade } from '../store/slices/immortalSlice';
+import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, type NarrativeEventKind } from './dao-reputation-policy';
+import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -224,6 +226,73 @@ export function applyStateUpdate(update: StateUpdate): void {
     }
   }
 
+  // ─── v0.7.0-pre: 残方发现（完整蛊方不允许AI直接解锁） ───
+  if ((update as any).recipe_fragments?.add && Array.isArray((update as any).recipe_fragments.add)) {
+    const store2 = useStore.getState() as any;
+    const current = Array.isArray(store2.flags?.discoveredFragments)
+      ? [...store2.flags.discoveredFragments]
+      : [];
+    for (const fragmentId of (update as any).recipe_fragments.add) {
+      current.push(fragmentId);
+      if (typeof store2.addGameLog === 'function') {
+        store2.addGameLog('system', `获得残方线索：${fragmentId}`, { fragmentId });
+      }
+    }
+    store2.setFlag?.('discoveredFragments', current);
+  }
+
+  // ─── v0.7.0-pre: AI待审线索（无数值效果） ───
+  if ((update as any).discoveries?.add && Array.isArray((update as any).discoveries.add)) {
+    const store2 = useStore.getState() as any;
+    const current = Array.isArray(store2.flags?.aiRumorDiscoveries)
+      ? [...store2.flags.aiRumorDiscoveries]
+      : [];
+    for (const discovery of (update as any).discoveries.add) {
+      current.push({
+        ...discovery,
+        turn: store2.turn || 1,
+        chapterId: store2.currentChapterId || '',
+        domain: store2.currentDomain || '',
+      });
+      if (typeof store2.addGameLog === 'function') {
+        store2.addGameLog('pipeline', `AI待审线索：${discovery.name}`, discovery);
+      }
+    }
+    store2.setFlag?.('aiRumorDiscoveries', current.slice(-100));
+  }
+
+  // v0.7.0-pre M9: AI location names are rumors until verified.
+  const rumorLocationUpdates =
+    (Array.isArray((update as any).map?.rumors) && (update as any).map.rumors) ||
+    (Array.isArray((update as any).locations?.rumors) && (update as any).locations.rumors) ||
+    [];
+  if (rumorLocationUpdates.length > 0) {
+    const store2 = useStore.getState() as any;
+    for (const loc of rumorLocationUpdates) {
+      const region = loc.region || store2.currentDomain || store2.playerPosition?.region || '未知区域';
+      const id = loc.id || `rumor_${region}_${loc.name || 'unknown'}_${store2.turn || 1}`;
+      store2.addRumorLocation?.({
+        id,
+        name: loc.name || '未核验地点',
+        region,
+        x: typeof loc.x === 'number' ? loc.x : 0.5,
+        y: typeof loc.y === 'number' ? loc.y : 0.5,
+        discovered: false,
+        type: loc.type || 'rumor',
+        description: loc.description || loc.note || 'AI 回传的未核验地点，需亲自抵达、任务验证或审核后才成为已知地点。',
+        dangerLevel: loc.dangerLevel || 'medium',
+        facilities: Array.isArray(loc.facilities) ? loc.facilities : [],
+        relatedFactions: Array.isArray(loc.relatedFactions) ? loc.relatedFactions : [],
+        resourceHints: Array.isArray(loc.resourceHints) ? loc.resourceHints : [],
+        source: 'ai_rumor',
+        credibility: typeof loc.credibility === 'number' ? loc.credibility : 35,
+        isRumor: true,
+        actions: Array.isArray(loc.actions) ? loc.actions : ['打听消息', '前往核验'],
+      });
+      store2.addGameLog?.('map', `新增传闻地点：${loc.name || id}`, { id, region, source: 'ai_rumor' });
+    }
+  }
+
   // ═══ v1.7: 杀招学习 — 事件/NPC传授路径接口预留 ═══
   if ((update as any).kill_move?.learn && Array.isArray((update as any).kill_move.learn)) {
     const storeRef = useStore.getState() as any;
@@ -436,6 +505,106 @@ export function applyStateUpdate(update: StateUpdate): void {
         if (existingByName && typeof s.updateDynamicNPCAffinity === 'function') {
           s.updateDynamicNPCAffinity((existingByName as any).id, ad.delta || 0);
         }
+      }
+    }
+  }
+
+  // ─── v0.7.0-pre M11: NPC contact 进入人物图鉴（已闻/已见/已交互）───
+  if ((update as any).npc_contacts?.add && Array.isArray((update as any).npc_contacts.add)) {
+    const s = useStore.getState() as any;
+    for (const contact of (update as any).npc_contacts.add) {
+      if (!contact?.name) continue;
+      s.addNpcContact?.({
+        npcId: contact.npcId,
+        name: contact.name,
+        source: contact.source || 'ai_rumor',
+        status: contact.status || 'seen',
+        location: contact.location || s.playerPosition?.region || s.currentDomain,
+        summary: contact.summary || '剧情中出现过的人物，尚未建立正式关系。',
+      });
+      s.addGameLog?.('npc', `人物图鉴新增线索：${contact.name}`, {
+        summary: `${contact.name} · ${contact.status || '已见'}`,
+        detail: contact.summary || '剧情中出现过的人物，尚未建立正式关系。',
+        location: contact.location || s.currentDomain,
+        actors: [contact.name],
+        importance: 2,
+      });
+    }
+  }
+
+  // ─── v0.7.0-pre M14: 事件政策真实接入，道心/声望/四维由引擎校验后写入 ───
+  const eventPolicy = (update as any).event_policy;
+  if (eventPolicy?.kind) {
+    const s = useStore.getState() as any;
+    const kind = eventPolicy.kind as NarrativeEventKind;
+    try {
+      const daoPolicy = getDaoHeartEventPolicy(kind);
+      if (daoPolicy) {
+        const prev = s.daoHeart || { kill: 0, mercy: 0, scheme: 0, ambition: 0 };
+        useStore.setState({ daoHeart: applyDaoHeartEvent(prev, daoPolicy) } as any);
+      }
+      const repPolicy = getReputationEventPolicy(kind);
+      const factionId = eventPolicy.factionId || eventPolicy.faction_id;
+      if (repPolicy && factionId && typeof s.updateStanding === 'function') {
+        const alignment = eventPolicy.alignment || 'merchant';
+        const delta = alignment === 'righteous'
+          ? repPolicy.righteousDelta
+          : alignment === 'demonic'
+            ? repPolicy.demonicDelta
+            : repPolicy.merchantDelta;
+        s.updateStanding(factionId, delta, eventPolicy.reason || repPolicy.defaultReason);
+      }
+      s.addGameLog?.('system', `事件政策结算：${kind}`, {
+        summary: eventPolicy.reason || daoPolicy?.defaultReason || `事件政策：${kind}`,
+        detail: eventPolicy.note || eventPolicy.reason || '道心与势力声望已按事件政策结算。',
+        actors: Array.isArray(eventPolicy.actors) ? eventPolicy.actors : undefined,
+        importance: 2,
+      });
+    } catch (err) {
+      s.addGameLog?.('pipeline', `事件政策拒绝：${String(eventPolicy.kind)}`, {
+        summary: '事件政策字段未通过引擎校验',
+        detail: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
+
+  const attributeMutations = Array.isArray((update as any).attribute_mutations?.add)
+    ? (update as any).attribute_mutations.add
+    : [];
+  if (attributeMutations.length > 0) {
+    const s = useStore.getState() as any;
+    for (const mutation of attributeMutations) {
+      try {
+        const policy = getAttributeMutationPolicy(mutation.source as AttributeMutationSource);
+        if (!policy) continue;
+        const verdict = canApplyAttributeMutation(policy, {
+          realmGrand: s.profile?.realm?.grand || 1,
+          targetScope: mutation.targetScope || 'self',
+          sceneValidated: mutation.sceneValidated === true,
+        });
+        if (!verdict.ok) {
+          s.addGameLog?.('pipeline', `四维变更拒绝：${mutation.source}`, { summary: verdict.reason || '不符合四维变更规则', mutation });
+          continue;
+        }
+        if (mutation.targetScope && mutation.targetScope !== 'self') {
+          s.addGameLog?.('pipeline', `四维变更暂存线索：${mutation.source}`, {
+            summary: 'NPC/队友四维变更需后续小队系统接入',
+            mutation,
+          });
+          continue;
+        }
+        const delta = Math.max(-policy.maxDelta, Math.min(policy.maxDelta, Number(mutation.delta || policy.maxDelta)));
+        s.addAttribute?.(policy.attribute, delta);
+        s.addGameLog?.('system', `四维变更：${policy.attribute}${delta > 0 ? '+' : ''}${delta}`, {
+          summary: `${policy.attribute}${delta > 0 ? '+' : ''}${delta}`,
+          detail: mutation.reason || policy.notes,
+          importance: 3,
+        });
+      } catch (err) {
+        s.addGameLog?.('pipeline', `四维变更异常：${mutation?.source || 'unknown'}`, {
+          summary: err instanceof Error ? err.message : String(err),
+          mutation,
+        });
       }
     }
   }

@@ -195,6 +195,13 @@ export function StatusBar() {
             <span className="text-rg-gold/70 text-xs font-panel tabular-nums">
               元石 {currency}
             </span>
+            <button
+              onClick={() => (useStore.getState() as any).meditateWithPrimevalStone?.(1, 'caravan')}
+              className="text-rg-gold/60 hover:text-rg-gold text-xs font-button transition-micro"
+              title="消耗1回合调息吸收元石；野外或商路可能触发干扰"
+            >
+              调息
+            </button>
             <div className="w-[1px] h-4 bg-rg-ink-300/15" />
             <motion.span
               key={`dh-${daoHeart.kill}-${daoHeart.mercy}-${daoHeart.scheme}-${daoHeart.ambition}`}

@@ -3,6 +3,11 @@
  * 全局面唯一性检查 + 原著主线仙蛊排除 + NPC竞价模拟
  */
 import immortalGuRaw from '../canon/immortal-gu.json';
+import economyRaw from '../canon/economy.json';
+import economyBalanceRaw from '../canon/economy-balance.json';
+import fragmentRecipesRaw from '../canon/fragment-recipes.json';
+import killerMovesRaw from '../canon/killer-moves.json';
+import { isRuntimePathAllowed } from './path-registry';
 
 // 原著主线仙蛊——不出现在拍卖行
 const MAINLINE_EXCLUDED = [
@@ -28,12 +33,38 @@ export interface ImmortalAuctionItem {
 // 参考 economy.json 福地等级表仙元石月产（小福地5-10/月，上等25-40/月）
 // 六转仙蛊≈小型福地半年产出(~30-60仙元石)，九转仙蛊≈顶级蛊仙数年积累
 // 原值(6:2800/7:8500/8:25000/9:80000)严重偏高，8年产出才能买6转仙蛊不合理
-const TIER_BASE_PRICE: Record<number, number> = { 6:60, 7:240, 8:960, 9:3800 };
+const AUCTION_PRICING = (economyBalanceRaw as any).auctionPricing || {};
+
+export const RUNTIME_IMMORTAL_GU_TIER_BASE_PRICE: Record<number, number> = {
+  6: AUCTION_PRICING.immortalGuBasePriceByTier?.['6'] ?? 3600,
+  7: AUCTION_PRICING.immortalGuBasePriceByTier?.['7'] ?? 12000,
+  8: AUCTION_PRICING.immortalGuBasePriceByTier?.['8'] ?? 40000,
+  9: AUCTION_PRICING.immortalGuBasePriceByTier?.['9'] ?? 120000,
+};
+export const RUNTIME_IMMORTAL_MATERIAL_BASE_PRICE: Record<string, number> = {
+  '空间晶石': AUCTION_PRICING.lowImmortalMaterialRange?.min ?? 24,
+  '光阴砂': Math.round(((AUCTION_PRICING.lowImmortalMaterialRange?.min ?? 24) + (AUCTION_PRICING.lowImmortalMaterialRange?.max ?? 120)) / 2),
+  '道痕结晶': AUCTION_PRICING.lowImmortalMaterialRange?.max ?? 120,
+};
+
+const TIER_BASE_PRICE = RUNTIME_IMMORTAL_GU_TIER_BASE_PRICE;
+const IMMORTAL_MATERIAL_BASE_PRICE = RUNTIME_IMMORTAL_MATERIAL_BASE_PRICE;
+
+export function getRuntimeAuctionPricingSnapshot() {
+  return {
+    immortalGuTierBasePrice: { ...RUNTIME_IMMORTAL_GU_TIER_BASE_PRICE },
+    immortalMaterialBasePrice: { ...RUNTIME_IMMORTAL_MATERIAL_BASE_PRICE },
+    recipeBaseFormula: 'targetTier * targetTier * 300 + fragmentsRequired * 120',
+    killerMoveFragmentFormula: 'moveTier * 300',
+    killerMoveCompleteFormula: 'moveTier * moveTier * 300',
+  };
+}
 
 /** 判断某仙蛊是否应该出现在拍卖行 */
-export function isAuctionable(name: string, tier: number): boolean {
+export function isAuctionable(name: string, tier: number, path?: string): boolean {
   if (MAINLINE_EXCLUDED.includes(name)) return false;
   if (tier < 6 || tier > 9) return false;
+  if (path && !isRuntimePathAllowed(path)) return false;
   return true;
 }
 
@@ -46,7 +77,7 @@ export function generateAuctionPool(existingGuNames: string[], turn: number): Im
     if (key.startsWith('_')) continue;
     const g = gu as any;
     const name = g.name || key;
-    if (!isAuctionable(name, g.tier)) continue;
+    if (!isAuctionable(name, g.tier, g.path)) continue;
     // 全局唯一性检查
     if (existingGuNames.includes(name)) continue;
 
@@ -134,7 +165,7 @@ export interface MaterialAuctionItem {
 }
 
 export interface RecipeAuctionItem {
-  id: string; name: string; targetTier: number; path: string;
+  id: string; name: string; targetGu: string; targetTier: number; path: string;
   fragmentsRequired: number; basePrice: number; currentBid: number;
   bidderCount: number; expiresTurn: number;
 }
@@ -145,17 +176,129 @@ export interface KillerMoveAuctionItem {
   bidderCount: number; expiresTurn: number;
 }
 
-/** 生成仙材拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+function stableScore(seed: string, turn: number): number {
+  let hash = turn * 131;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash * 33 + seed.charCodeAt(i)) >>> 0;
+  }
+  return hash / 0xffffffff;
+}
+
+function pickDeterministic<T extends { id: string; name: string }>(
+  items: T[],
+  turn: number,
+  minCount: number,
+  maxCount: number,
+): T[] {
+  const count = Math.min(items.length, minCount + (turn % Math.max(1, maxCount - minCount + 1)));
+  return [...items]
+    .sort((a, b) => stableScore(a.id + a.name, turn) - stableScore(b.id + b.name, turn))
+    .slice(0, count);
+}
+
+function priceWithMarketHeat(basePrice: number, seed: string, turn: number): number {
+  const heat = 0.9 + stableScore(seed, turn) * 0.25;
+  return Math.max(1, Math.round(basePrice * heat));
+}
+
+function inferPathFromText(text: string): string {
+  const pairs: Array<[string, string]> = [
+    ['空间', '宇道'], ['宇道', '宇道'],
+    ['光阴', '宙道'], ['时间', '宙道'], ['宙道', '宙道'],
+    ['月', '光道'], ['光', '光道'],
+    ['冰', '冰道'], ['水', '水道'],
+    ['火', '炎道'], ['炎', '炎道'],
+    ['金', '金道'], ['土', '土道'], ['木', '木道'],
+    ['风', '风道'], ['雷', '雷道'], ['毒', '毒道'],
+    ['魂', '魂道'], ['血', '血道'], ['兽', '奴道'],
+  ];
+  const hit = pairs.find(([needle]) => text.includes(needle));
+  return hit?.[1] || '炼道';
+}
+
+/** 生成仙材拍卖候选列表 */
 export function generateMaterialPool(existingMaterialNames: string[], turn: number): MaterialAuctionItem[] {
-  return [];
+  const economy = economyRaw as any;
+  const nodeDefs = economy.RESOURCE_NODE_BUILD_COST?.availableNodeTypes || [];
+  const existing = new Set(existingMaterialNames);
+  const candidates: MaterialAuctionItem[] = nodeDefs
+    .filter((node: any) => node.grade === '仙材' && !existing.has(node.type))
+    .map((node: any) => {
+      const basePrice = IMMORTAL_MATERIAL_BASE_PRICE[node.type] || 24;
+      const currentBid = priceWithMarketHeat(basePrice, node.type, turn);
+      return {
+        id: `mat_${node.type}`,
+        name: node.type,
+        grade: '仙材',
+        path: inferPathFromText(`${node.type}${node.name}${node.description || ''}`),
+        basePrice,
+        currentBid,
+        bidderCount: 2 + Math.floor(stableScore(node.type, turn) * 4),
+        expiresTurn: turn + 6 + Math.floor(stableScore(`${node.type}_expires`, turn) * 5),
+      };
+    });
+
+  return pickDeterministic(candidates, turn, 2, 3);
 }
 
-/** 生成仙蛊方拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+/** 生成仙蛊方/古方拍卖候选列表 */
 export function generateRecipePool(existingRecipeNames: string[], turn: number): RecipeAuctionItem[] {
-  return [];
+  const recipes = ((fragmentRecipesRaw as any).fragments || []) as any[];
+  const existing = new Set(existingRecipeNames);
+  const candidates: RecipeAuctionItem[] = recipes
+    .filter(recipe => !existing.has(recipe.id) && !existing.has(recipe.name) && !existing.has(recipe.targetGu))
+    .map(recipe => {
+      const path = inferPathFromText([
+        recipe.name,
+        recipe.targetGu,
+        ...(recipe.requiredMaterials || []),
+      ].join(''));
+      const basePrice = Math.max(300, Math.round(recipe.targetTier * recipe.targetTier * 300 + recipe.fragmentsRequired * 120));
+      const currentBid = priceWithMarketHeat(basePrice, recipe.id, turn);
+      return {
+        id: recipe.id,
+        name: recipe.name,
+        targetGu: recipe.targetGu,
+        targetTier: recipe.targetTier,
+        path,
+        fragmentsRequired: recipe.fragmentsRequired,
+        basePrice,
+        currentBid,
+        bidderCount: 2 + Math.floor(stableScore(recipe.id, turn) * 3),
+        expiresTurn: turn + 7 + Math.floor(stableScore(`${recipe.id}_expires`, turn) * 4),
+      };
+    });
+
+  return pickDeterministic(candidates, turn, 2, 4);
 }
 
-/** 生成杀招传承拍卖候选列表（v0.7.0-b实现，当前返回空数组） */
+/** 生成杀招传承拍卖候选列表 */
 export function generateKillerMovePool(existingKillMoveNames: string[], turn: number): KillerMoveAuctionItem[] {
-  return [];
+  const movesDb = killerMovesRaw as Record<string, any>;
+  const existing = new Set(existingKillMoveNames);
+  const candidates: KillerMoveAuctionItem[] = Object.entries(movesDb)
+    .filter(([key, move]) => !key.startsWith('_') && (move as any).level >= 6)
+    .filter(([, move]) => isRuntimePathAllowed((move as any).path))
+    .filter(([key, move]) => !existing.has(key) && !existing.has((move as any).name || key))
+    .map(([key, move]) => {
+      const tier = move.level || 6;
+      const name = move.name || key;
+      const complete = stableScore(`${key}_form`, turn) > 0.72;
+      const form: '残方' | '完整传承' = complete ? '完整传承' : '残方';
+      const basePrice = complete ? tier * tier * 300 : tier * 300;
+      const currentBid = priceWithMarketHeat(basePrice, key, turn);
+      return {
+        id: `km_${key}`,
+        name,
+        tier,
+        path: move.path || '通用',
+        form,
+        basePrice,
+        currentBid,
+        bidderCount: 1 + Math.floor(stableScore(key, turn) * 4),
+        expiresTurn: turn + 6 + Math.floor(stableScore(`${key}_expires`, turn) * 6),
+      };
+    });
+
+  return pickDeterministic(candidates, turn, 2, 3);
 }

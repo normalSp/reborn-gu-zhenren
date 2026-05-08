@@ -1,12 +1,16 @@
-import type { FactionStanding, CharacterRelation, NpcRelationMatrix, PlayerFaction, SquadMember, FactionEvent } from '../../types';
+import type { FactionStanding, CharacterRelation, NpcRelationMatrix, PlayerFaction, SquadMember, FactionEvent, NpcContact } from '../../types';
+import { calculateFactionEconomyLedger, type FactionEconomyLedger } from '../../engine/faction-economy';
+import { calculateReputationTier, describeReputationEffects } from '../../engine/dao-reputation-policy';
 
 interface FactionSlice {
   standings: Record<string, FactionStanding>;
   characterRelations: CharacterRelation[];
+  npcContacts: NpcContact[];
   /** P2-13: NPC关系双向好感矩阵 */
   npcRelations: NpcRelationMatrix;
-  updateStanding: (factionId: string, delta: number) => void;
+  updateStanding: (factionId: string, delta: number, reason?: string) => void;
   updateRelation: (charId: string, update: Partial<CharacterRelation>) => void;
+  addNpcContact: (contact: Partial<NpcContact> & { name: string }) => void;
   /** P2-13: 从已有NPC数据初始化关系矩阵 */
   initNpcRelations: (npcDatabase: Record<string, any>) => void;
   /** P2-13: 更新两个NPC之间的双向好感 */
@@ -24,6 +28,8 @@ interface FactionSlice {
   playerFaction: PlayerFaction | null;
   /** 势力事件日志 */
   factionEvents: FactionEvent[];
+  lastFactionEconomyLedger: FactionEconomyLedger | null;
+  lastFactionEconomyTurn: number;
   /** 创建势力 */
   createFaction: (name: string, domain: string, type: PlayerFaction['type']) => boolean;
   /** 解散势力 */
@@ -38,6 +44,8 @@ interface FactionSlice {
   tickFactionMaintenance: () => void;
   /** 势力贸易收入 */
   tickFactionTrade: () => void;
+  /** v0.7.0-pre: 五账本势力经济结算 */
+  tickFactionEconomy: () => FactionEconomyLedger | null;
   /** 更新成员忠诚度 */
   updateMemberLoyalty: (memberId: string, delta: number) => void;
   /** 获取当前成员数 */
@@ -96,30 +104,87 @@ function relationToAffinity(relationType: string): number {
   return map[relationType] || 0;
 }
 
+const CONTACT_STATUS_WEIGHT: Record<NpcContact['status'], number> = {
+  heard: 1,
+  seen: 2,
+  interacted: 3,
+};
+
+function normalizeNpcContactId(contact: Partial<NpcContact> & { name: string }): string {
+  const base = contact.npcId || contact.name || 'unknown';
+  return base
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '_')
+    .replace(/[^\w\u4e00-\u9fa5-]/g, '');
+}
+
 export const createFactionSlice = (set: any, get: any): FactionSlice => ({
   standings: {},
   characterRelations: [],
+  npcContacts: [],
   npcRelations: { matrix: {}, lastUpdatedTurn: 0 },
   knownNpcCount: 0,
 
   // ═══ v0.7.0: 玩家势力状态 ═══
   playerFaction: null,
   factionEvents: [],
+  lastFactionEconomyLedger: null,
+  lastFactionEconomyTurn: 0,
 
-  updateStanding: (factionId, delta) => set((s: FactionSlice) => ({
-    standings: {
-      ...s.standings,
-      [factionId]: {
-        ...s.standings[factionId],
-        standing: Math.max(-100, Math.min(100, (s.standings[factionId]?.standing || 0) + delta)),
+  updateStanding: (factionId, delta, reason) => set((s: FactionSlice) => {
+    const previous = s.standings[factionId];
+    const standing = Math.max(-100, Math.min(100, (previous?.standing || 0) + delta));
+    const effects = describeReputationEffects(standing);
+    return {
+      standings: {
+        ...s.standings,
+        [factionId]: {
+          ...previous,
+          faction_id: previous?.faction_id || factionId,
+          standing,
+          reputation_tier: calculateReputationTier(standing),
+          lastDelta: delta,
+          lastReason: reason || (delta >= 0 ? '事件带来声望提升' : '事件导致声望下降'),
+          lastUpdatedTurn: (get() as any).turn || 0,
+          benefits: effects.benefits,
+          risks: effects.risks,
+        },
       },
-    },
-  })),
+    };
+  }),
   updateRelation: (charId, update) => set((s: FactionSlice) => ({
     characterRelations: s.characterRelations.map(r =>
       r.character_id === charId ? { ...r, ...update } : r
     ),
   })),
+  addNpcContact: (contact) => set((s: FactionSlice) => {
+    const turn = (get() as any).turn || 1;
+    const npcId = normalizeNpcContactId(contact);
+    const status = contact.status || 'seen';
+    const existing = s.npcContacts.find(c => c.npcId === npcId || c.name === contact.name);
+    const mergedStatus = existing && CONTACT_STATUS_WEIGHT[existing.status] > CONTACT_STATUS_WEIGHT[status]
+      ? existing.status
+      : status;
+    const nextContact: NpcContact = {
+      npcId,
+      name: contact.name,
+      source: contact.source || existing?.source || 'ai_rumor',
+      status: mergedStatus,
+      firstSeenTurn: existing?.firstSeenTurn || contact.firstSeenTurn || turn,
+      lastSeenTurn: turn,
+      location: contact.location || existing?.location,
+      summary: contact.summary || existing?.summary || '剧情中出现过的人物，尚未建立正式关系。',
+      relatedChapterId: contact.relatedChapterId || existing?.relatedChapterId || (get() as any).currentChapterId || undefined,
+    };
+    const nextContacts = existing
+      ? s.npcContacts.map(c => (c.npcId === existing.npcId ? nextContact : c))
+      : [...s.npcContacts, nextContact];
+    return {
+      npcContacts: nextContacts.slice(-300),
+      knownNpcCount: existing ? (s.knownNpcCount || 0) : (s.knownNpcCount || 0) + 1,
+    };
+  }),
 
   // ═══ P2-13: 初始化NPC关系网络 ═══
   initNpcRelations: (npcDatabase) => {
@@ -395,8 +460,63 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
   },
 
   // ═══ v0.7.0: 每回合势力维护扣费 — 设计大纲§1.2.3 ═══
+  tickFactionEconomy: () => {
+    const state = get() as FactionSlice;
+    const faction = state.playerFaction;
+    if (!faction) return null;
+
+    const fullStore = get() as any;
+    const turn = fullStore.turn || 1;
+    if (state.lastFactionEconomyTurn === turn && state.lastFactionEconomyLedger) {
+      return state.lastFactionEconomyLedger;
+    }
+
+    const realm = fullStore.profile?.realm?.grand || 1;
+    const ledger = calculateFactionEconomyLedger(faction, realm, turn);
+    if (ledger.currencyKind === '仙元石') {
+      set({ immortalCurrency: Math.max(0, (fullStore.immortalCurrency || 0) + ledger.netIncome) } as any);
+    } else {
+      set({ currency: Math.max(0, (fullStore.currency || 0) + ledger.netIncome) } as any);
+    }
+
+    set((s: FactionSlice) => ({
+      playerFaction: {
+        ...faction,
+        resources: {
+          ...faction.resources,
+          [ledger.currencyKind]: Math.max(0, Number((faction.resources as any)?.[ledger.currencyKind] || 0) + ledger.netIncome),
+        },
+      },
+      lastFactionEconomyLedger: ledger,
+      lastFactionEconomyTurn: turn,
+      factionEvents: [
+        ...s.factionEvents.slice(-29),
+        {
+          id: `fe_economy_${turn}`,
+          type: 'opportunity' as const,
+          description: `势力经济结算：毛收入${ledger.grossIncome}${ledger.currencyKind}，维护${ledger.maintenanceCost}，风险${ledger.riskLoss}，食料预留${ledger.feedingReserved}，净收益${ledger.netIncome}。`,
+          choices: [],
+          resolved: true,
+        },
+      ],
+    } as any));
+
+    if (typeof fullStore.addGameLog === 'function') {
+      fullStore.addGameLog(
+        'economy',
+        `势力经济: 毛收入${ledger.grossIncome}${ledger.currencyKind} / 维护${ledger.maintenanceCost} / 风险${ledger.riskLoss} / 食料${ledger.feedingReserved} / 净${ledger.netIncome}`,
+        { ledger },
+      );
+    }
+    return ledger;
+  },
+
   tickFactionMaintenance: () => {
     const state = get() as FactionSlice;
+    if (typeof state.tickFactionEconomy === 'function') {
+      state.tickFactionEconomy();
+      return;
+    }
     const faction = state.playerFaction;
     if (!faction) return;
 
@@ -423,6 +543,10 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
   // ═══ v0.7.0: 势力贸易收入 — 设计大纲§1.2.3 ═══
   tickFactionTrade: () => {
     const state = get() as FactionSlice;
+    if (typeof state.tickFactionEconomy === 'function') {
+      state.tickFactionEconomy();
+      return;
+    }
     const faction = state.playerFaction;
     if (!faction) return;
 

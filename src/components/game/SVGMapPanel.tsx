@@ -1,5 +1,7 @@
 import { useStore } from '../../store';
 
+const EMPTY_LOCATIONS: any[] = [];
+
 // ─── 五域地理布局（SVG坐标空间 400×280）────────────────────
 // P4 重新设计：不再使用重叠椭圆，改为五域地理排列（北/中/南东西合围）
 
@@ -103,12 +105,14 @@ function toSvg(r: RegionDef, x: number, y: number): { px: number; py: number } {
 
 export function SVGMapPanel() {
   const knownLocations = useStore(s => s.knownLocations);
+  const rumorLocations = useStore(s => (s as any).rumorLocations);
   const playerPosition = useStore(s => s.playerPosition);
   const exploredRegions = useStore(s => s.exploredRegions);
   const fogOfWar = useStore(s => s.fogOfWar);
   const currentDomain = useStore(s => s.currentDomain);
 
   const exploredSet = new Set(Array.isArray(exploredRegions) ? exploredRegions : []);
+  const rumorList = Array.isArray(rumorLocations) ? rumorLocations : EMPTY_LOCATIONS;
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -338,26 +342,42 @@ export function SVGMapPanel() {
                 .map(loc => {
                   const r = regionAtlas(loc.region);
                   return (
-                    <div
-                      key={loc.id}
-                      className="flex items-center justify-between py-1.5 border-b border-rg-ink-300/6 last:border-b-0"
-                    >
+                    <div key={loc.id} className="py-2 border-b border-rg-ink-300/6 last:border-b-0">
                       <div className="flex items-center gap-2">
                         <span className="text-rg-paper-200 text-sm font-panel">{loc.name}</span>
-                        <span
-                          className="text-xs px-1.5 py-0.5 rounded-sm"
-                          style={{
-                            background: (r?.color || 'rgba(144,144,184,0.1)'),
-                            color: r?.labelColor || '#999',
-                            fontSize: '10px',
-                          }}
-                        >
+                        <span className="text-xs px-1.5 py-0.5 rounded-sm" style={{ background: (r?.color || 'rgba(144,144,184,0.1)'), color: r?.labelColor || '#999', fontSize: '10px' }}>
                           {loc.region}
                         </span>
+                        {loc.dangerLevel && <span className="text-[10px] text-rg-gold/70 ml-auto">危险 {loc.dangerLevel}</span>}
+                      </div>
+                      {loc.description && <p className="text-[10px] text-rg-paper-200/40 mt-1 leading-4">{loc.description}</p>}
+                      <div className="text-[10px] text-rg-paper-200/30 mt-1 truncate">
+                        {loc.facilities?.length ? `设施：${loc.facilities.join(' / ')}` : '设施：待探索'}
+                        {loc.resourceHints?.length ? ` · 线索：${loc.resourceHints.join(' / ')}` : ''}
                       </div>
                     </div>
                   );
                 })}
+            </div>
+          </div>
+        )}
+        {rumorList.length > 0 && (
+          <div className="bg-rg-ink-700/90 border border-rg-gold/15 rounded-lg p-4 backdrop-blur-md">
+            <h3 className="text-rg-paper-200 text-sm font-panel font-semibold mb-3">传闻地点</h3>
+            <div className="space-y-2">
+              {rumorList.slice(0, 8).map((loc: any) => (
+                <div key={loc.id} className="rounded-sm border border-rg-ink-300/10 bg-rg-ink-800/35 p-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-rg-paper-200/80 text-xs font-panel">{loc.name}</span>
+                    <span className="text-[10px] text-rg-paper-200/35">{loc.region}</span>
+                    <span className="ml-auto text-[10px] text-rg-gold/70">可信 {loc.credibility ?? 35}%</span>
+                  </div>
+                  <p className="text-[10px] text-rg-paper-200/35 mt-1 leading-4">{loc.description || '未核验地点，需打听或亲自前往。'}</p>
+                  <div className="text-[10px] text-rg-paper-200/25 mt-1">
+                    {(loc.actions || ['打听消息', '前往核验']).join(' / ')}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}

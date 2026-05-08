@@ -72,6 +72,15 @@ export interface PlayerState {
   flags: Record<string, any>;
 }
 
+// ─── 玩家身份协议 ───
+export type PlayerRole = 'original_participant';
+
+export interface PlayerIdentityContext {
+  playerName: string;
+  playerRole: PlayerRole;
+  canonIdentityGuard: string;
+}
+
 // ─── 蛊虫 ───
 export interface GuSpec {
   id: string;
@@ -188,6 +197,11 @@ export interface FactionStanding {
   faction_id: string;
   standing: number;
   reputation_tier: '死敌' | '敌对' | '冷淡' | '中立' | '友善' | '尊敬' | '崇拜';
+  lastReason?: string;
+  lastDelta?: number;
+  lastUpdatedTurn?: number;
+  benefits?: string[];
+  risks?: string[];
 }
 
 export interface CharacterRelation {
@@ -198,6 +212,20 @@ export interface CharacterRelation {
   trust: number;
   known_secrets: string[];
   revealed_to_them: string[];
+}
+
+export type NpcContactStatus = 'heard' | 'seen' | 'interacted';
+
+export interface NpcContact {
+  npcId: string;
+  name: string;
+  source: 'canon' | 'dynamic' | 'ai_rumor' | 'manual';
+  status: NpcContactStatus;
+  firstSeenTurn: number;
+  lastSeenTurn?: number;
+  location?: string;
+  summary: string;
+  relatedChapterId?: string;
 }
 
 // ─── 空窍（1-5转蛊师） ───
@@ -435,6 +463,17 @@ export interface StateUpdate {
   };
   /** 🆕 蛊材/材料获得。键=材料名，值=获得数量。如 {"毒虫毒囊":2,"沼泽毒泥":1} */
   materials?: { add?: Record<string, number> };
+  /** AI只允许返回已登记残方ID；完整蛊方解锁由引擎私有动作完成 */
+  recipe_fragments?: { add?: string[] };
+  /** AI提到但未通过真相源验证的物品/蛊方/流派线索，无数值效果 */
+  discoveries?: {
+    add?: {
+      type: 'material' | 'recipe' | 'path' | 'unknown';
+      name: string;
+      note: string;
+      source: 'ai-rumor';
+    }[];
+  };
   flags?: {
     set?: Record<string, any>;
     remove?: string[];
@@ -449,6 +488,17 @@ export interface StateUpdate {
   dynamic_npcs?: {
     add?: DynamicNPCAddPayload[];
     affinity_delta?: { name: string; delta: number }[];
+  };
+  /** v0.7.0-pre: 原著/动态NPC contact，允许“已闻/已见/已交互”进入人物图鉴 */
+  npc_contacts?: {
+    add?: {
+      npcId?: string;
+      name: string;
+      source?: NpcContact['source'];
+      status?: NpcContactStatus;
+      location?: string;
+      summary?: string;
+    }[];
   };
 }
 
@@ -750,6 +800,12 @@ export interface DeathRecord {
   chapter: string;
   realm: string;
   achievementCount: number;
+  lifeSummary?: string;
+  closingPoem?: string;
+  poemTitle?: string;
+  majorChoices?: string[];
+  deathCauseTags?: string[];
+  generatedAt?: string;
 }
 
 export interface AIContext {
@@ -788,6 +844,45 @@ export interface MapLocation {
   x: number;
   y: number;
   discovered: boolean;
+  type?: 'settlement' | 'wild' | 'market' | 'black_market' | 'resource' | 'sect' | 'rumor' | 'secret_realm';
+  description?: string;
+  dangerLevel?: 'low' | 'medium' | 'high' | 'extreme';
+  facilities?: string[];
+  relatedFactions?: string[];
+  resourceHints?: string[];
+  source?: 'canon' | 'chapter' | 'player_visit' | 'ai_rumor' | 'manual_review';
+  credibility?: number;
+  isRumor?: boolean;
+  actions?: string[];
+}
+
+// ─── v0.7.0-pre: 战斗/小队设计包接口（pre 只落设计协议，运行时实现进 a/b/c）───
+export interface BattleAssetManifestEntry {
+  id: string;
+  name: string;
+  kind: 'killer_move' | 'immortal_gu' | 'scene' | 'ui_feedback';
+  assetPath?: string;
+  fallbackTint?: string;
+  triggerTags: string[];
+  runtimePhase: 'pre_schema' | 'v0.7.0-a' | 'v0.7.0-b' | 'v0.7.0-c';
+}
+
+export interface BattleDesignPack {
+  version: string;
+  engineModel: 'deterministic_with_controlled_llm_events';
+  roundStructure: string[];
+  resources: string[];
+  llmEventWindows: string[];
+  pressureRules: string[];
+  assetManifest: string;
+}
+
+export interface SquadGrowthDesignSpec {
+  trustAxes: string[];
+  conflictSignals: string[];
+  dispatchTaskTypes: string[];
+  betrayalThreshold: number;
+  narrativeReturnRules: string[];
 }
 
 // ─── 天赋 ───

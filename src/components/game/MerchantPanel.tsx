@@ -5,7 +5,9 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
-import { TIER_GROUPS, type GuShopEntry, type TierGroupId, getMaterialShopItems, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry } from '../../engine/shop-engine';
+import { TIER_GROUPS, type GuShopEntry, type TierGroupId, type MaterialFoodShortageInput, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry } from '../../engine/shop-engine';
+import { getMaterialTotalQuantity } from '../../engine/economy-service';
+import { getGuFeedingClosureRow } from '../../engine/material-source-audit';
 import { GU_IMAGE_MAP } from '../../data/image-maps';
 
 const GROUP_IDS: TierGroupId[] = [1, 2, 3, 4, 5];
@@ -21,11 +23,14 @@ export function MerchantPanel() {
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
 
   // merchantSlice — useShallow防止对象/数组引用变化导致无限重渲染
-  const { shopGroups, refreshShopGroup, getShopRefreshCost, buyGuFromShop } = useStore(useShallow((s: any) => ({
+  const { shopGroups, refreshShopGroup, getShopRefreshCost, buyGuFromShop, materialShelf, refreshMaterialShelf, getMaterialShelfRefreshCost } = useStore(useShallow((s: any) => ({
     shopGroups: s.shopGroups,
     refreshShopGroup: s.refreshShopGroup,
     getShopRefreshCost: s.getShopRefreshCost,
     buyGuFromShop: s.buyGuFromShop,
+    materialShelf: s.materialShelf,
+    refreshMaterialShelf: s.refreshMaterialShelf,
+    getMaterialShelfRefreshCost: s.getMaterialShelfRefreshCost,
   })));
 
   const [activeGroup, setActiveGroup] = useState<TierGroupId>(1);
@@ -39,22 +44,44 @@ export function MerchantPanel() {
 
   // P4: 蛊材商店
   const addMaterial = useStore((s: any) => s.addMaterial) as ((name: string, qty: number) => void) | undefined;
-  const materialItems = useMemo(() => {
-    return getMaterialShopItems(currentChapter || '青茅山期', playerTier);
-  }, [currentChapter, playerTier]);
+  const materialBag = useStore((s: any) => s.materialBag);
+  const apertureInventory = useStore((s: any) => s.apertureInventory);
+  const apertureInventoryGu = useStore((s: any) => s.apertureInventory?.gu as typeof inventory | undefined);
+  const materialState = useMemo(() => ({
+    materialBag,
+    apertureInventory,
+    profile: { realm: { grand: playerTier } },
+  }), [materialBag, apertureInventory, playerTier]);
+  const materialShortages = useMemo<MaterialFoodShortageInput[]>(() => {
+    const ownedGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
+    return ownedGu
+      .map((gu: any) => {
+        const row = getGuFeedingClosureRow(gu.name, gu.hungerCounter || 0);
+        if (!row || row.acceptedFoods.length === 0) return null;
+        const stock = row.acceptedFoods.reduce((sum, food) => sum + getMaterialTotalQuantity(materialState, food), 0);
+        if (stock > 0) return null;
+        return {
+          guName: gu.name,
+          tier: gu.tier || row.rank || 1,
+          hungerCounter: gu.hungerCounter || 0,
+          feedRequirement: row.feedRequirement,
+          stock,
+        };
+      })
+      .filter(Boolean) as MaterialFoodShortageInput[];
+  }, [apertureInventoryGu, inventory, isImmortal, materialState]);
+  const materialItems = (materialShelf?.items || []) as MaterialShopEntry[];
   const handleBuyMaterial = (item: MaterialShopEntry) => {
     if (!payWithDualCurrency(item.price, item.name)) return;
-    if (isImmortal) {
-      // 蛊仙→存入仙窍
-      const full = useStore.getState() as any;
-      const storage = full.apertureInventory || { gu: [], materials: {}, immortalMaterials: {} };
-      const mats = { ...storage.materials };
-      mats[item.name] = (mats[item.name] || 0) + 1;
-      useStore.setState({ apertureInventory: { ...storage, materials: mats } });
-    } else {
-      addMaterial?.(item.name, 1);
-    }
+    addMaterial?.(item.name, 1);
     setMessage(`购买「${item.name}」`);
+    setTimeout(() => setMessage(''), 2000);
+  };
+  const handleRefreshMaterials = () => {
+    const cost = getMaterialShelfRefreshCost?.(playerTier, isImmortal, turn) ?? 0;
+    if (cost > 0 && !payWithDualCurrency(cost, '蛊材货架刷新')) return;
+    refreshMaterialShelf?.(playerTier, turn, currentChapter || '青茅山期', materialShortages);
+    setMessage(cost > 0 ? `蛊材货架已刷新，消耗${cost}${isImmortal ? '仙元/折价' : '元石'}` : '蛊材货架已刷新');
     setTimeout(() => setMessage(''), 2000);
   };
 
@@ -74,8 +101,12 @@ export function MerchantPanel() {
   const handleBuyFragment = (item: FragmentShopEntry) => {
     if (!payWithDualCurrency(item.price, item.name)) return;
     if (item.isComplete) {
-      // 完整蛊方 → 写入 completedRecipes
-      useStore.setState((s: any) => ({ flags: { ...s.flags, completedRecipes: { ...completedRecipes, [item.targetGu]: true } } }));
+      const store = useStore.getState() as any;
+      if (typeof store.unlockRecipe === 'function') {
+        store.unlockRecipe(item.targetGu, `merchant:${item.id}`);
+      } else {
+        useStore.setState((s: any) => ({ flags: { ...s.flags, completedRecipes: { ...completedRecipes, [item.targetGu]: true } } }));
+      }
       setMessage(`获得完整蛊方：「${item.targetGu}」炼制方！`);
     } else {
       // 残方 → 写入 discoveredFragments + materialBag
@@ -98,6 +129,12 @@ export function MerchantPanel() {
     }
     if (didInit) initializedRef.current = true;
   }, [shopGroups, playerTier, turn]);
+
+  useEffect(() => {
+    if (tab !== 'materials') return;
+    if ((materialShelf?.items?.length || 0) > 0 && materialShelf?.lastRefreshed === turn) return;
+    refreshMaterialShelf?.(playerTier, turn, currentChapter || '青茅山期', materialShortages);
+  }, [tab, materialShelf?.lastRefreshed, materialShelf?.items?.length, turn, playerTier, currentChapter, refreshMaterialShelf, materialShortages]);
 
   const handleRefresh = (groupId: TierGroupId) => {
     const cost = getShopRefreshCost?.(groupId, isImmortal) || 0;
@@ -144,8 +181,8 @@ export function MerchantPanel() {
     const inventoryLength = isImmortal ? (full.apertureInventory?.gu?.length || 0) : inventory.length;
     const cap = isImmortal ? Infinity : capacity;
     if (inventoryLength >= cap) { setMessage(isImmortal ? '仙窍存储异常' : '空窍已满'); setTimeout(() => setMessage(''), 2000); return; }
-    if (!payWithDualCurrency(item.price, item.name)) return;
     if (isImmortal) {
+      if (!payWithDualCurrency(item.price, item.name)) return;
       // 蛊仙购买→直接写入仙窍存储，参照addGu的safeGu模式补全所有GuInstance必要字段
       const guList = full.apertureInventory?.gu || [];
       const currentTurn = full.turn || 1;
@@ -282,6 +319,16 @@ export function MerchantPanel() {
 
       {/* 蛊材购买模式 — P4新增 */}
       {tab === 'materials' && (
+        <>
+        <div className="px-3 pt-2 flex items-center justify-between gap-2">
+          <span className="text-[10px] text-rg-paper-200/40 font-panel">
+            {materialShelf?.emergencyActive ? '食料保底已介入' : `本回合刷新 ${materialShelf?.freeRefreshTurn === turn ? materialShelf?.freeRefreshCount || 0 : 0}/1`}
+          </span>
+          <button onClick={handleRefreshMaterials}
+            className="text-[10px] font-button px-2 py-1 rounded-sm border border-rg-gold/25 text-rg-gold hover:bg-rg-gold/10 transition-micro">
+            刷新 ({getMaterialShelfRefreshCost?.(playerTier, isImmortal, turn) ?? 0}{isImmortal ? '仙元' : '元石'})
+          </button>
+        </div>
         <div className="p-3 grid grid-cols-2 gap-2">
           {materialItems.length === 0 ? (
             <div className="col-span-2 flex items-center justify-center py-12">
@@ -294,7 +341,7 @@ export function MerchantPanel() {
                 <div key={item.id} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
                   <div className="flex items-center justify-between">
                     <span className="text-rg-paper-200 font-narrative text-sm truncate">{item.name}</span>
-                    <span className="text-[8px] px-1 py-0.5 rounded-sm bg-rg-ink-800/50 text-rg-paper-200/40">{item.tier}级</span>
+                    <span className={`text-[8px] px-1 py-0.5 rounded-sm bg-rg-ink-800/50 ${item.source === 'shortage_food' ? 'text-rg-gold' : 'text-rg-paper-200/40'}`}>{item.tier}级</span>
                   </div>
                   {item.description && <p className="text-rg-paper-200/30 text-[9px] leading-relaxed line-clamp-1">{item.description}</p>}
                   <span className="text-[10px] text-rg-gold/70">
@@ -309,6 +356,7 @@ export function MerchantPanel() {
             })
           )}
         </div>
+        </>
       )}
 
       {/* 残方购买模式 — P4新增 */}

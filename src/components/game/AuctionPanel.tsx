@@ -5,7 +5,12 @@
 import { useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
-import type { ImmortalAuctionItem } from '../../engine/auction-engine';
+import type {
+  ImmortalAuctionItem,
+  KillerMoveAuctionItem,
+  MaterialAuctionItem,
+  RecipeAuctionItem,
+} from '../../engine/auction-engine';
 import { TIER_COLORS, TIER_LABELS } from '../../data/talents';
 
 type AuctionTab = 'immortal_gu' | 'materials' | 'recipes' | 'killer_moves';
@@ -28,19 +33,35 @@ const PATH_COLORS: Record<string, string> = {
 
 export function AuctionPanel() {
   const auctionItems = useStore(useShallow((s: any) => s.auctionItems as ImmortalAuctionItem[]));
+  const materialAuctionItems = useStore(useShallow((s: any) => s.materialAuctionItems as MaterialAuctionItem[]));
+  const recipeAuctionItems = useStore(useShallow((s: any) => s.recipeAuctionItems as RecipeAuctionItem[]));
+  const killerMoveAuctionItems = useStore(useShallow((s: any) => s.killerMoveAuctionItems as KillerMoveAuctionItem[]));
   const isActive = useStore(s => (s as any).isAuctionActive as boolean);
   const immortalCurrency = useStore(s => s.immortalCurrency);
+  const realmGrand = useStore(s => s.profile.realm.grand);
   const closeAuction = useStore(s => (s as any).closeAuction as () => void);
   const placeAuctionBid = useStore(s => (s as any).placeAuctionBid as (id: string, amount: number) => { success: boolean; message: string });
+  const purchaseTreasureItem = useStore(s => (s as any).purchaseTreasureItem as (
+    category: 'materials' | 'recipes' | 'killer_moves',
+    itemId: string
+  ) => { success: boolean; message: string });
 
   const [bidAmounts, setBidAmounts] = useState<Record<string, number>>({});
   const [message, setMessage] = useState('');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const [currentTab, setCurrentTab] = useState<AuctionTab>('immortal_gu');
 
-  if (!isActive || auctionItems.length === 0) return null;
+  const hasAnyItems =
+    auctionItems.length > 0 ||
+    materialAuctionItems.length > 0 ||
+    recipeAuctionItems.length > 0 ||
+    killerMoveAuctionItems.length > 0;
+  if (realmGrand < 6 || !isActive || !hasAnyItems) return null;
 
-  const isPlaceholderTab = currentTab !== 'immortal_gu';
+  const treasureItems =
+    currentTab === 'materials' ? materialAuctionItems :
+      currentTab === 'recipes' ? recipeAuctionItems :
+        currentTab === 'killer_moves' ? killerMoveAuctionItems : [];
 
   const handleBid = (item: ImmortalAuctionItem) => {
     const amount = bidAmounts[item.id] || item.currentBid + 1;
@@ -51,6 +72,13 @@ export function AuctionPanel() {
     } else if (result.message.includes('竞拍成功')) {
       setTimeout(() => setMessage(''), 4000);
     }
+  };
+
+  const handleTreasurePurchase = (item: MaterialAuctionItem | RecipeAuctionItem | KillerMoveAuctionItem) => {
+    if (currentTab === 'immortal_gu') return;
+    const result = purchaseTreasureItem(currentTab, item.id);
+    setMessage(result.message);
+    setTimeout(() => setMessage(''), result.success ? 4000 : 3000);
   };
 
   const handleClose = () => {
@@ -110,7 +138,7 @@ export function AuctionPanel() {
         )}
 
         {/* ─── 仙蛊拍卖品列表（当前Tab） ─── */}
-        {!isPlaceholderTab ? (
+        {currentTab === 'immortal_gu' ? (
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {auctionItems.map(item => (
               <div
@@ -204,26 +232,78 @@ export function AuctionPanel() {
             ))}
           </div>
         ) : (
-          /* ─── 占位Tab — v0.7.0-pre 接口预留 ─── */
-          <div className="flex-1 flex flex-col items-center justify-center p-8 gap-4">
-            <div className="w-16 h-16 rounded-full bg-rg-ink-800/80 border border-rg-gold/10 flex items-center justify-center">
-              <span className="text-2xl opacity-40">⏳</span>
-            </div>
-            <div className="text-center">
-              <p className="text-rg-paper-200/50 font-narrative text-sm mb-1">
-                {currentTab === 'materials' ? '仙材交易' : currentTab === 'recipes' ? '仙蛊方交易' : '杀招传承拍卖'}
-              </p>
-              <p className="text-rg-ink-400 text-xs font-panel">
-                即将开放 · v0.7.0-b 实现
-              </p>
-            </div>
+          <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            {treasureItems.length === 0 && (
+              <div className="py-10 text-center">
+                <p className="text-rg-paper-200/45 font-narrative text-sm">
+                  本轮暂无{currentTab === 'materials' ? '仙材' : currentTab === 'recipes' ? '仙蛊方' : '杀招传承'}挂售
+                </p>
+                <p className="text-rg-ink-400 text-xs font-panel mt-1">
+                  下一轮宝黄天交易会刷新
+                </p>
+              </div>
+            )}
+            {treasureItems.map(item => {
+              const recipe = item as Partial<RecipeAuctionItem>;
+              const move = item as Partial<KillerMoveAuctionItem>;
+              const titleMeta = currentTab === 'materials'
+                ? `${(item as MaterialAuctionItem).grade} · ${item.path}`
+                : currentTab === 'recipes'
+                  ? `${recipe.targetTier}转目标 · ${item.path}`
+                  : `${move.tier}转 · ${move.form} · ${item.path}`;
+              return (
+                <div key={item.id} className="bg-rg-ink-800/60 rounded-md border border-rg-ink-300/10 p-4">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div>
+                      <h3 className="text-rg-gold font-narrative text-base">{item.name}</h3>
+                      <p className="text-[10px] font-panel text-rg-paper-200/40 mt-1">{titleMeta}</p>
+                    </div>
+                    <span className="text-[10px] font-panel" style={{ color: PATH_COLORS[item.path] || '#9a9a9a' }}>
+                      {item.path}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-5">
+                      <div>
+                        <span className="text-[9px] font-panel text-rg-paper-200/40">底价</span>
+                        <p className="text-rg-paper-200/70 font-semibold text-sm">{item.basePrice} 仙元</p>
+                      </div>
+                      <div>
+                        <span className="text-[9px] font-panel text-rg-paper-200/40">一口价</span>
+                        <p className="text-rg-gold font-bold text-sm">{item.currentBid} 仙元</p>
+                      </div>
+                      {'fragmentsRequired' in item && (
+                        <div>
+                          <span className="text-[9px] font-panel text-rg-paper-200/40">残方份数</span>
+                          <p className="text-rg-paper-200/70 font-semibold text-sm">{item.fragmentsRequired}</p>
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => handleTreasurePurchase(item)}
+                      disabled={immortalCurrency < item.currentBid}
+                      className={`text-xs font-button px-4 py-1.5 rounded-sm border transition-micro ${
+                        immortalCurrency >= item.currentBid
+                          ? 'bg-rg-gold/20 border-rg-gold/40 text-rg-gold hover:bg-rg-gold/30'
+                          : 'border-rg-ink-300/10 text-rg-paper-200/20 cursor-not-allowed'
+                      }`}
+                    >
+                      购买
+                    </button>
+                  </div>
+                  <p className="text-[10px] font-panel text-rg-ink-300 mt-3">
+                    {item.bidderCount > 0 ? `${item.bidderCount} 位竞争者关注` : '暂无竞争者'} · {item.expiresTurn - (useStore.getState() as any).turn} 回合后撤拍
+                  </p>
+                </div>
+              );
+            })}
           </div>
         )}
 
         {/* ─── 底部提示 ─── */}
         <div className="px-5 py-2 border-t border-rg-ink-300/8 bg-rg-ink-800/30">
           <p className="text-[9px] font-panel text-rg-paper-200/25 text-center">
-            每 10 回合开启一次宝黄天拍卖会 &middot; 仙蛊天地间独一无二 &middot; 出价即扣除仙元石
+            每 10 回合开启一次宝黄天拍卖会 &middot; 仙蛊天地间独一无二 &middot; 成交后扣除仙元石
           </p>
         </div>
       </div>

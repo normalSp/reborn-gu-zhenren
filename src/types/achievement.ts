@@ -38,7 +38,7 @@ export interface Achievement {
   /** 解锁条件表达式（人类可读） */
   condition: string;
   /** 程序化检测条件 */
-  conditionCheck: (state: AchievementCheckState) => boolean;
+  conditionCheck?: (state: AchievementCheckState) => boolean;
   /** v0.7.0: 成就奖励 */
   reward?: AchievementReward;
   /** v0.7.0: 累进型成就最大进度值（progressMax） */
@@ -60,6 +60,22 @@ export interface AchievementCheckState {
   flags: Record<string, any>;
   deaths: number;
   combatWins: number;
+  /** v0.7.0: 总战斗次数（含胜负） */
+  totalBattlesFought: number;
+  /** v0.7.0: 玩家自建势力等级 */
+  factionLevel: number;
+  /** v0.7.0: 自建势力/小队成员数量 */
+  membersCount: number;
+  /** v0.7.0: 已拥有仙蛊数量 */
+  immortalGuCount: number;
+  /** v0.7.0: 成功升仙次数 */
+  ascensionSuccessCount: number;
+  /** v0.7.0: 演武/训练场访问次数 */
+  trainingGroundVisits: number;
+  /** v0.7.0: 狩猎成功次数 */
+  huntSuccessCount: number;
+  /** v0.7.0: 单流派道痕读取器，用于 singlePathDaoMarks(path) 条件 */
+  singlePathDaoMarks: (path: string) => number;
   crossDomainCount: number;
   renZuLegendsHeard: number;
   achievementsUnlocked: string[];

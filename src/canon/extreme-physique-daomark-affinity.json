@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "十绝体道痕亲和/禁制矩阵。用于境界突破道痕增长、禁制检查与后续灾劫差异化。",
+    "source": "项目v0.7.0前置实现整理，基于十绝体设定摘要。"
+  },
+  "太日阳莽体": {
+    "primaryPaths": { "宇道": 90 },
+    "forbiddenPaths": ["暗道", "魂道"],
+    "backlashPaths": { "影道": -30 },
+    "cultivationMod": { "type": "time_based", "dayMultiplier": 2.0, "nightMultiplier": 0.2, "daoMarkPerRealm": 5 }
+  },
+  "古月阴荒体": {
+    "primaryPaths": { "宙道": 90 },
+    "forbiddenPaths": ["光道", "炎道"],
+    "backlashPaths": { "阳道": -30 },
+    "cultivationMod": { "type": "time_based", "dayMultiplier": 0.3, "nightMultiplier": 2.5, "daoMarkPerRealm": 5 }
+  },
+  "北冥冰魄体": {
+    "primaryPaths": { "冰道": 90, "水道": 70 },
+    "forbiddenPaths": ["炎道", "火道"],
+    "backlashPaths": { "炎道": -40, "火道": -30 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "森海轮回体": {
+    "primaryPaths": { "木道": 90 },
+    "forbiddenPaths": ["金道"],
+    "backlashPaths": { "金道": -20 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "炎煌雷泽体": {
+    "primaryPaths": { "炎道": 85, "雷道": 85 },
+    "forbiddenPaths": ["水道", "冰道"],
+    "backlashPaths": { "水道": -35, "冰道": -35 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "万金妙华体": {
+    "primaryPaths": { "金道": 95 },
+    "forbiddenPaths": ["木道", "炎道"],
+    "backlashPaths": { "木道": -20 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "大力真武体": {
+    "primaryPaths": { "力道": 100 },
+    "forbiddenPaths": ["智道", "魂道"],
+    "backlashPaths": { "智道": -25 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "逍遥智心体": {
+    "primaryPaths": { "智道": 95 },
+    "forbiddenPaths": ["力道"],
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "厚土元央体": {
+    "primaryPaths": { "土道": 90 },
+    "forbiddenPaths": ["风道"],
+    "cultivationMod": { "type": "location_based", "daoMarkPerRealm": 5 }
+  },
+  "宇宙大衍体": {
+    "primaryPaths": { "变化道": 90, "宇道": 70 },
+    "forbiddenPaths": [],
+    "backlashPaths": { "雷道": -20 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 5 }
+  },
+  "纯梦求真体": {
+    "primaryPaths": { "梦道": 80 },
+    "forbiddenPaths": ["魂道"],
+    "backlashPaths": { "魂道": -50 },
+    "cultivationMod": { "type": "flat_bonus", "daoMarkPerRealm": 3 }
+  }
+}

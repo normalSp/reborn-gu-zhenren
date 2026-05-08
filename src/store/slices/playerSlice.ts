@@ -4,9 +4,18 @@ import { computePathLevel } from '../../engine/path-progression';
 import { getMigrationNpcs, crossDomainAffinityDecay, filterNpcByDomain } from '../../engine/npc-cross-domain';
 import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
 import { checkChapterGoals } from '../../engine/goal-checker';
+import {
+  addMaterialToState,
+  getMaterialTotalQuantity,
+  removeMaterialFromState,
+  unlockRecipeInFlags,
+} from '../../engine/economy-service';
+import { assessMeditationRisk, calculatePrimevalMeditation, type MeditationContext } from '../../engine/primeval-meditation';
+import { buildDeathRecordFallback } from '../../engine/death-record';
 import { triggerBreakthrough } from '../../components/game/BreakthroughAnimation';
+import extremePhysiqueAffinitiesRaw from '../../canon/extreme-physique-daomark-affinity.json';
 
-// ═══ Fix#5: 十绝体道痕亲和矩阵（内联定义，因 extreme-physique-daomark-affinity.json 尚未创建） ═══
+// ═══ Fix#5: 十绝体道痕亲和矩阵（v0.7.0-a迁移到canon数据） ═══
 interface ExtremePhysiqueAffinity {
   /** 亲和流派→道痕亲和值(80-100) */
   primaryPaths: Record<string, number>;
@@ -26,72 +35,7 @@ interface ExtremePhysiqueAffinity {
   };
 }
 
-const EXTREME_PHYSIQUE_AFFINITIES: Record<ExtremePhysiqueType, ExtremePhysiqueAffinity> = {
-  '太日阳莽体': {
-    primaryPaths: { '宇道': 90 },
-    forbiddenPaths: ['暗道', '魂道'],
-    backlashPaths: { '影道': -30 },
-    cultivationMod: { type: 'time_based', dayMultiplier: 2.0, nightMultiplier: 0.2, daoMarkPerRealm: 5 },
-  },
-  '古月阴荒体': {
-    primaryPaths: { '宙道': 90 },
-    forbiddenPaths: ['光道', '炎道'],
-    backlashPaths: { '阳道': -30 },
-    cultivationMod: { type: 'time_based', dayMultiplier: 0.3, nightMultiplier: 2.5, daoMarkPerRealm: 5 },
-  },
-  '北冥冰魄体': {
-    primaryPaths: { '冰道': 90, '水道': 70 },
-    forbiddenPaths: ['炎道', '火道'],
-    backlashPaths: { '炎道': -40, '火道': -30 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '森海轮回体': {
-    primaryPaths: { '木道': 90 },
-    forbiddenPaths: ['金道'],
-    backlashPaths: { '金道': -20 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '炎煌雷泽体': {
-    primaryPaths: { '炎道': 85, '雷道': 85 },
-    forbiddenPaths: ['水道', '冰道'],
-    backlashPaths: { '水道': -35, '冰道': -35 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '万金妙华体': {
-    primaryPaths: { '金道': 95 },
-    forbiddenPaths: ['木道', '炎道'],
-    backlashPaths: { '木道': -20 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '大力真武体': {
-    primaryPaths: { '力道': 100 },
-    forbiddenPaths: ['智道', '魂道'],
-    backlashPaths: { '智道': -25 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '逍遥智心体': {
-    primaryPaths: { '智道': 95 },
-    forbiddenPaths: ['力道'],
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '厚土元央体': {
-    primaryPaths: { '土道': 90 },
-    forbiddenPaths: ['风道'],
-    cultivationMod: { type: 'location_based', daoMarkPerRealm: 5 },
-  },
-  '宇宙大衍体': {
-    primaryPaths: { '变化道': 90, '宇道': 70 },
-    forbiddenPaths: [],
-    backlashPaths: { '雷道': -20 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 5 },
-  },
-  '纯梦求真体': {
-    primaryPaths: { '梦道': 80 },
-    forbiddenPaths: ['魂道'],
-    backlashPaths: { '魂道': -50 },
-    cultivationMod: { type: 'flat_bonus', daoMarkPerRealm: 3 },
-  },
-};
+const EXTREME_PHYSIQUE_AFFINITIES = extremePhysiqueAffinitiesRaw as Record<ExtremePhysiqueType, ExtremePhysiqueAffinity>;
 
 /** 获取当前玩家十绝体类型（从 aperture 中读取） */
 function getExtremePhysiqueType(get: any): ExtremePhysiqueType | null {
@@ -160,6 +104,8 @@ interface PlayerSlice extends PlayerState {
   heavenlyLand: HeavenlyLand | null;
   /** P2-14: 洞天福地产出的蛊材背包 */
   materialBag: Record<string, number>;
+  /** v0.7.0-pre: non-material feeding credits, e.g. 虚情假意. */
+  feedingCredits: Record<string, number>;
   /** P4: 蛊材物资袋容量（随境界增长） */
   materialBagCapacity: number;
   /** P4: 获取当前物资袋容量 */
@@ -177,12 +123,27 @@ interface PlayerSlice extends PlayerState {
   /** P0.1: 对玩家造成百分比HP变更（正=恢复，负=伤害），基于maxHP计算 */
   applyHpPercent: (pct: number, source?: string) => void;
   setEssence: (current: number, max: number) => void;
+  meditateWithPrimevalStone: (stoneCount?: number, context?: MeditationContext) => {
+    success: boolean;
+    message: string;
+    essenceGain: number;
+    stonesConsumed: number;
+    riskTriggered: boolean;
+  };
   setPrimaryPath: (path: PathType) => void;
   advanceTurn: () => void;
   setFlag: (key: string, value: any) => void;
   removeFlag: (key: string) => void;
   /** P2-14: 向蛊材背包添加材料 */
   addMaterial: (materialName: string, quantity: number) => void;
+  addFeedingCredit: (creditKey: string, amount: number) => void;
+  getFeedingCredit: (creditKey: string) => number;
+  /** v0.7.0-pre: unified material spend across mortal bag and aperture storage */
+  removeMaterial: (materialName: string, quantity: number) => boolean;
+  /** v0.7.0-pre: unified material quantity view across mortal bag and aperture storage */
+  getMaterialCount: (materialName: string) => number;
+  /** v0.7.0-pre: engine-private recipe unlock channel */
+  unlockRecipe: (targetGu: string, source?: string) => boolean;
   /** P4数值修复：直接设置仙元石余额（用于时间线起点初始化） */
   setImmortalCurrency: (amount: number) => void;
   /** P4数值修复: 战斗属性桥接 — 体魄/资质/境界→HP/ATK/DEF */
@@ -487,7 +448,14 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     // 死亡检测
     if (newCurrent <= 0) {
       const currentDeathCount = (get() as PlayerSlice).deathCount || 0;
-      set({ isDead: true, deathCause: source, deathTurn: state.turn, deathCount: currentDeathCount + 1 });
+      const deathState = { ...(get() as any), deathCause: source, deathTurn: state.turn, deathCount: currentDeathCount + 1 };
+      set({
+        isDead: true,
+        deathCause: source,
+        deathTurn: state.turn,
+        deathCount: currentDeathCount + 1,
+        deathRecord: (get() as any).deathRecord || buildDeathRecordFallback(deathState),
+      });
       if (typeof logStore.addGameLog === 'function') {
         logStore.addGameLog('combat', `💀 角色死亡: ${source}`, { turn: state.turn });
       }
@@ -500,6 +468,67 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     (get() as any).applyHpDelta(amount, source);
   },
   setEssence: (current, max) => set({ vitals: { ...get().vitals, essence: { current: Math.min(current, max), max } } }),
+  meditateWithPrimevalStone: (stoneCount = 1, context = 'safe') => {
+    const state = get() as PlayerSlice;
+    const vitals = state.vitals;
+    const calc = calculatePrimevalMeditation({
+      realmGrand: state.profile.realm.grand,
+      essenceCurrent: vitals.essence.current,
+      essenceMax: vitals.essence.max,
+      availableStones: state.currency,
+      requestedStones: stoneCount,
+    });
+
+    if (!calc.allowed) {
+      return {
+        success: false,
+        message: calc.reason || '无法调息。',
+        essenceGain: 0,
+        stonesConsumed: 0,
+        riskTriggered: false,
+      };
+    }
+
+    set((s: PlayerSlice) => ({
+      currency: s.currency - calc.stonesConsumed,
+      vitals: {
+        ...s.vitals,
+        essence: {
+          ...s.vitals.essence,
+          current: calc.newEssence,
+        },
+      },
+    }));
+
+    const risk = assessMeditationRisk({
+      context,
+      turn: state.turn,
+      luck: state.attributes.气运,
+    });
+
+    const logStore = get() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('system', `调息吸收元石：真元 +${calc.essenceGain}，消耗 ${calc.stonesConsumed} 元石`, {
+        context,
+        essenceGain: calc.essenceGain,
+        stonesConsumed: calc.stonesConsumed,
+        riskTriggered: risk.triggered,
+      });
+      if (risk.triggered) {
+        logStore.addGameLog('system', risk.reason, { context, riskChance: risk.riskChance });
+      }
+    }
+
+    (get() as PlayerSlice).advanceTurn();
+
+    return {
+      success: true,
+      message: risk.triggered ? `调息完成，但${risk.reason}` : '调息完成。',
+      essenceGain: calc.essenceGain,
+      stonesConsumed: calc.stonesConsumed,
+      riskTriggered: risk.triggered,
+    };
+  },
   setPrimaryPath: (path) => set((s: PlayerSlice) => ({ pathBuild: { ...s.pathBuild, primary: path } })),
   advanceTurn: () => {
     const state = get() as PlayerSlice;
@@ -523,36 +552,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       },
     });
     // ═══ v0.8.0-immortal: 蛊师真元消耗与元石补充 ═══
-    const realmGrand = (get() as PlayerSlice).profile.realm.grand;
-    const vitals = (get() as PlayerSlice).vitals;
-    if (realmGrand < 6 && vitals.essenceType !== 'immortal') {
-      // 蛊师每回合消耗微量真元维持空窍运转；低于50%自动吸收元石
-      const essencePct = vitals.essence.current / vitals.essence.max;
-      if (essencePct < 0.5) {
-        const currency = (get() as PlayerSlice).currency;
-        const STONE_COST = 1; // 1元石
-        if (currency >= STONE_COST) {
-          // 元石补充真元量（参照economy.json：一转100→二转70→三转40→四转20→五转10）
-          const essenceGain: Record<number, number> = { 1: 100, 2: 70, 3: 40, 4: 20, 5: 10 };
-          const gain = essenceGain[realmGrand] || 10;
-          const newEssence = Math.min(vitals.essence.current + gain, vitals.essence.max);
-          set((s: PlayerSlice) => ({
-            currency: s.currency - STONE_COST,
-            vitals: {
-              ...s.vitals,
-              essence: { ...s.vitals.essence, current: newEssence },
-            },
-          }));
-          // 日志记录
-          const logStore = get() as any;
-          if (typeof logStore.addGameLog === 'function') {
-            logStore.addGameLog('system', `吸收元石恢复真元+${gain} (${STONE_COST}元石消耗)`, {
-              essenceGain: gain, essenceCurrent: newEssence, essenceMax: vitals.essence.max,
-            });
-          }
-        }
-      }
-    }
+    // v0.7.0-pre M10: primeval stone recovery is now an explicit meditation action.
 
     // ═══ P2-13: 蛊虫饥饿推进（确定性计数模型，替代旧概率模型） ═══
     const guStore = get() as any;
@@ -666,7 +666,8 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (typeof auctionStore.initAuction === 'function') {
       const currentTurn = (get() as PlayerSlice).turn;
       const lastAuction = auctionStore.auctionLastTurn || 0;
-      if (currentTurn >= 10 && currentTurn % 10 === 0 && currentTurn > lastAuction) {
+      const realmGrand = (get() as PlayerSlice).profile.realm.grand;
+      if (realmGrand >= 6 && currentTurn >= 10 && currentTurn % 10 === 0 && currentTurn > lastAuction) {
         auctionStore.initAuction();
       }
     }
@@ -758,11 +759,15 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
 
     // ═══ v0.7.0: 势力系统tick — 每回合维护扣费 + 贸易收入 ═══
     const factionStore = get() as any;
-    if (typeof factionStore.tickFactionMaintenance === 'function') {
-      try { factionStore.tickFactionMaintenance(); } catch { /* faction maintenance not ready */ }
-    }
-    if (typeof factionStore.tickFactionTrade === 'function') {
-      try { factionStore.tickFactionTrade(); } catch { /* faction trade not ready */ }
+    if (typeof factionStore.tickFactionEconomy === 'function') {
+      try { factionStore.tickFactionEconomy(); } catch { /* faction economy not ready */ }
+    } else {
+      if (typeof factionStore.tickFactionMaintenance === 'function') {
+        try { factionStore.tickFactionMaintenance(); } catch { /* faction maintenance not ready */ }
+      }
+      if (typeof factionStore.tickFactionTrade === 'function') {
+        try { factionStore.tickFactionTrade(); } catch { /* faction trade not ready */ }
+      }
     }
   },
   setFlag: (key, value) => set((s: PlayerSlice) => ({ flags: { ...s.flags, [key]: value } })),
@@ -795,16 +800,45 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     return true;
   },
   addMaterial: (materialName: string, quantity: number) => {
-    set((s: PlayerSlice) => {
-      const bag = { ...s.materialBag };
-      bag[materialName] = (bag[materialName] || 0) + quantity;
-      // P4: 超容量警告（不阻止写入，但返回容量信息）
-      const totalCount = Object.values(bag).reduce((a: number, b: number) => a + b, 0);
-      if (totalCount > s.materialBagCapacity) {
-        console.warn(`[MaterialBag] 容量超限！${totalCount}/${s.materialBagCapacity} — 请清理无用蛊材`);
+    set((s: PlayerSlice & any) => {
+      const patch = addMaterialToState(s, materialName, quantity);
+      const nextBag = patch.materialBag || s.materialBag || {};
+      const totalCount = Object.values(nextBag).reduce((a: number, b: any) => a + (typeof b === 'number' ? b : 0), 0);
+      if (Number.isFinite(s.materialBagCapacity) && totalCount > s.materialBagCapacity) {
+        console.warn(`[MaterialBag] capacity exceeded: ${totalCount}/${s.materialBagCapacity}`);
       }
-      return { materialBag: bag };
+      return patch as Partial<PlayerSlice>;
     });
+  },
+  addFeedingCredit: (creditKey: string, amount: number) => {
+    if (!creditKey || amount === 0) return;
+    set((s: PlayerSlice) => ({
+      feedingCredits: {
+        ...(s.feedingCredits || {}),
+        [creditKey]: Math.max(0, (s.feedingCredits?.[creditKey] || 0) + amount),
+      },
+    }));
+  },
+  getFeedingCredit: (creditKey: string) => {
+    const state = get() as PlayerSlice;
+    return Number(state.feedingCredits?.[creditKey] || 0);
+  },
+  removeMaterial: (materialName: string, quantity: number) => {
+    const state = get() as PlayerSlice & any;
+    const result = removeMaterialFromState(state, materialName, quantity);
+    if (!result.ok || !result.patch) return false;
+    set(result.patch as Partial<PlayerSlice>);
+    return true;
+  },
+  getMaterialCount: (materialName: string) => {
+    return getMaterialTotalQuantity(get() as PlayerSlice & any, materialName);
+  },
+  unlockRecipe: (targetGu: string, source = 'engine') => {
+    if (!targetGu) return false;
+    const state = get() as PlayerSlice & any;
+    const alreadyUnlocked = Boolean(state.flags?.completedRecipes?.[targetGu]);
+    set({ flags: unlockRecipeInFlags(state.flags, targetGu, source) } as any);
+    return !alreadyUnlocked;
   },
   getMaterialBagCapacity: () => {
     const state = get() as PlayerSlice;

@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-05-07",
+  "runtimeIncluded": false,
+  "copyrightPolicy": "summary_and_locator_only",
+  "primarySources": [
+    {
+      "type": "original_text_keyword",
+      "path": "doc/original work/reverend-insanity.txt",
+      "usage": "全文关键词检索，不复制正文"
+    },
+    {
+      "type": "canon_file",
+      "path": "src/canon",
+      "usage": "运行时/设计 canon 数据"
+    }
+  ],
+  "indexes": [
+    {
+      "file": "characters.md",
+      "topics": ["characters", "npc_constraints", "core_cast"]
+    },
+    {
+      "file": "world-and-cultivation.md",
+      "topics": ["five_regions", "cultivation", "extreme_physiques", "dao_marks"]
+    },
+    {
+      "file": "gu-economy-events.md",
+      "topics": ["gu", "killer_moves", "economy", "treasure_yellow_heaven", "event_anchors"]
+    }
+  ],
+  "searchAnchors": {
+    "characters": ["方源", "白凝冰", "商心慈", "铁若男", "黑楼兰", "太白云生", "凤九歌", "龙公", "人祖"],
+    "regions": ["南疆", "北原", "东海", "西漠", "中洲"],
+    "systems": ["十绝体", "空窍", "仙窍", "道痕", "宝黄天", "仙元石", "杀招", "蛊方"],
+    "events": ["春秋蝉", "古月山寨", "商家城", "三王山", "王庭", "义天山", "逆流河", "宿命蛊"]
+  }
+}

@@ -7,10 +7,12 @@ import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-s
 import guDbRaw from '../../canon/gu-database.json';
 import factionDbRaw from '../../canon/faction-data.json';
 import { computePathLevel } from '../../engine/path-progression';
+import { getRuntimePathNames } from '../../engine/path-registry';
 import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
 
 const GU_DB = guDbRaw as Record<string, any>;
 const FACTION_DB = factionDbRaw as Record<string, any>;
+const RUNTIME_PATH_NAMES = getRuntimePathNames();
 
 interface CharacterCreateProps {
   onConfirm: () => void;
@@ -258,7 +260,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
 
     // ═══ P4: 高转开局按流派自动解锁蛊方（用户选B方案：按流派解锁） ═══
     if (isTimelineStart && startRealm.grand >= 4) {
-      const ALL_PATHS = ['光道','食道','智道','土道','木道','金道','力道','骨道','水道','风道','毒道','炎道','天道','人道','暗道','雷道','变化道','奴道','宇道','侦察','炼道','冰道','魂道','律道','梦道','太道','血道','音道','运道','宙道'];
+      const ALL_PATHS = RUNTIME_PATH_NAMES;
       const pathsFromTalents = new Set<string>();
       for (const t of selectedTalents) {
         const text = `${t.name} ${(t as any).description || ''} ${((t as any).tags || []).join(' ')}`;
@@ -432,7 +434,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     if (tNode && tc?.primaryPath) {
       const storeRef = useStore.getState() as any;
       const realm = startRealm.grand;
-      const allPaths = ['炎道','水道','土道','风道','剑道','毒道','木道','光道','宇道','宙道','炼道','魂道','冰道','雷道','血道','力道','智道','暗道','奴道','变化道','律道','梦道','太道','音道','运道','金道','骨道','食道'];
+      const allPaths = RUNTIME_PATH_NAMES;
       const initDaoMarks: Record<string, number> = {};
       // 主修道痕 = realm² × 25（非线性加速，6转=900/7转=1225/8转=1600/9转=2025）
       initDaoMarks[tc.primaryPath] = realm * realm * 25;

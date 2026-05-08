@@ -36,6 +36,7 @@ export const FactionPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => 
   const immortalCurrency = useStore(s => s.immortalCurrency);
   const realm = useStore(s => s.profile.realm.grand);
   const characterRelations = useStore(s => (s as any).characterRelations || []);
+  const lastFactionEconomyLedger = useStore(s => (s as any).lastFactionEconomyLedger);
 
   // 可用NPC筛选（好感>=60, 已在势力跳过）
   const availableNPCs = useMemo(() => {
@@ -195,6 +196,15 @@ export const FactionPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => 
               <div className="text-xs text-gray-500">
                 创建于第{playerFaction.foundedAt}回合 · 维护费≈{isImmortal ? `${playerFaction.level * 12 + Math.max(0, playerFaction.members.length - 3) * 12}仙元/轮` : '按元石折算'}
               </div>
+              {lastFactionEconomyLedger && (
+                <div className="grid grid-cols-5 gap-1 text-[11px] bg-gray-800/70 border border-gray-700 rounded p-2">
+                  <div><span className="text-gray-500">毛</span><div className="text-amber-300">{lastFactionEconomyLedger.grossIncome}</div></div>
+                  <div><span className="text-gray-500">维护</span><div>{lastFactionEconomyLedger.maintenanceCost}</div></div>
+                  <div><span className="text-gray-500">风险</span><div>{lastFactionEconomyLedger.riskLoss}</div></div>
+                  <div><span className="text-gray-500">食料</span><div>{lastFactionEconomyLedger.feedingReserved}</div></div>
+                  <div><span className="text-gray-500">净</span><div className={lastFactionEconomyLedger.netIncome >= 0 ? 'text-emerald-300' : 'text-red-300'}>{lastFactionEconomyLedger.netIncome}{lastFactionEconomyLedger.currencyKind}</div></div>
+                </div>
+              )}
               <button
                 className="w-full bg-amber-700 hover:bg-amber-600 text-white py-2 rounded text-sm disabled:opacity-50"
                 onClick={upgradeFaction}

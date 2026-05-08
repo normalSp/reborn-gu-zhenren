@@ -2,9 +2,11 @@ import { callDeepSeek, apiKey } from '../api/deepseek';
 import { NarrativeJSONSchema } from '../schemas/narrative.schema';
 import { validateNarrativeSemantics } from './semantic-validator';
 import { validateCanaryAssertions } from './canary-assertions';
+import { buildAIStateUpdateRetryHint, validateAIStateUpdate, type AiRewardValidationResult } from './ai-state-update-validator';
 import { applyStateUpdate } from './state-update-applier';
 import { contextBuilder } from './context-builder';
 import { checkChapterGoals } from './goal-checker';
+import { buildDeathRecordFallback } from './death-record';
 import { useStore } from '../store';
 import type { NarrativeJSON, AIContext } from '../types';
 import type { SemanticValidationResult } from './semantic-validator';
@@ -409,7 +411,50 @@ export class ResponsePipeline {
 
       // ─── 所有验证通过，进入 RESOLVED 阶段 ───
       this.state = 'RESOLVED';
-      const narrative = parsed as NarrativeJSON;
+      let narrative = parsed as NarrativeJSON;
+      let rewardValidation: AiRewardValidationResult | undefined;
+      if (narrative.state_update) {
+        rewardValidation = validateAIStateUpdate(narrative.state_update, {
+          realmGrand: (store as any).profile?.realm?.grand || 1,
+          currentChapterId: (store as any).currentChapterId || '',
+          currentDomain: (store as any).currentDomain || '南疆',
+          narrativeText: narrative.narrative.text,
+        });
+
+        const shouldRetryReward = rewardValidation.issues.some(
+          issue => issue.action === 'dropped' || issue.action === 'rumorOnly',
+        );
+        if (shouldRetryReward && this.config.maxSemanticRetries > 0) {
+          const retryMessages = {
+            system: baseMessages.system,
+            user: baseMessages.user + '\n\n[真相源校验·奖励修正]\n' + buildAIStateUpdateRetryHint(rewardValidation),
+          };
+          const retryResult = await this.fetchAndValidate(key, retryMessages, startTime, '(奖励修正重试)');
+          if (retryResult.success) {
+            const retryNarrative = retryResult.parsed as NarrativeJSON;
+            const retryValidation = validateAIStateUpdate(retryNarrative.state_update, {
+              realmGrand: (store as any).profile?.realm?.grand || 1,
+              currentChapterId: (store as any).currentChapterId || '',
+              currentDomain: (store as any).currentDomain || '南疆',
+              narrativeText: retryNarrative.narrative.text,
+            });
+            narrative = retryNarrative;
+            rewardValidation = retryValidation;
+          }
+        }
+
+        narrative.state_update = rewardValidation.sanitized as any;
+        if (rewardValidation.issues.length > 0) {
+          try {
+            const rewardLog = useStore.getState() as any;
+            if (typeof rewardLog.addGameLog === 'function') {
+              rewardLog.addGameLog('pipeline', `AI奖励真相源校验：${rewardValidation.issues.length}项处理`, {
+                issues: rewardValidation.issues,
+              });
+            }
+          } catch { /* skip */ }
+        }
+      }
       console.log(`%c[PIPE] RESOLVED %c→ elapsed=${Date.now()-startTime}ms textLen=${narrative.narrative.text.length} choices=${narrative.narrative.choices.length} hasState=${!!narrative.state_update}`,
         'color:#30d080;font-weight:bold','color:#999');
 
@@ -452,6 +497,19 @@ export class ResponsePipeline {
             flags: achStore.flags || {},
             deaths: achStore.deathCount || 0,
             combatWins: achStore.combatWins || achStore.combatStats?.wins || 0,
+            totalBattlesFought: achStore.totalBattlesFought || 0,
+            factionLevel: achStore.playerFaction?.level || 0,
+            membersCount: achStore.playerFaction?.members?.length || achStore.partyState?.members?.length || 0,
+            immortalGuCount: Array.isArray(achStore.inventory)
+              ? achStore.inventory.filter((g: any) => g.isImmortalGu || g.tier >= 6).length
+              : 0,
+            ascensionSuccessCount: achStore.flags?.ascensionSuccessCount || (achStore.profile?.realm?.grand >= 6 ? 1 : 0),
+            trainingGroundVisits: achStore.flags?.trainingGroundVisits || 0,
+            huntSuccessCount: achStore.flags?.huntSuccessCount || 0,
+            singlePathDaoMarks: (path: string) => {
+              const marks = achStore.daoMarks || achStore.pathBuild?.dao_marks || {};
+              return marks[path] || 0;
+            },
             crossDomainCount: achStore.domainsVisited || 0,
             renZuLegendsHeard: achStore.renZuLegendsHeard || 0,
             achievementsUnlocked: achStore.unlockedAchievements || [],
@@ -593,13 +651,7 @@ export class ResponsePipeline {
         const s = updatedStore as any;
         if (!s.deathRecord) {
           useStore.setState({
-            deathRecord: {
-              cause: s.deathCause || '未知原因',
-              turn: s.turn || 1,
-              chapter: s.flags?.currentChapter || '南疆初探',
-              realm: s.profile?.realm?.label || '一转初阶',
-              achievementCount: (s.unlockedAchievements?.length) || 0,
-            },
+            deathRecord: buildDeathRecordFallback(s),
           });
         }
         // ═══ 日志埋点: 死亡事件

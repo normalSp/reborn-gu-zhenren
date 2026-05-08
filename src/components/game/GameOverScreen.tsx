@@ -2,6 +2,7 @@ import { useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useStore } from '../../store';
 import { audioManager } from '../../utils/audio';
+import { buildDeathRecordFallback } from '../../engine/death-record';
 
 // ═══ M7: GameOver animation variants ═══
 const titleVariants = {
@@ -46,6 +47,8 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
   const turn = useStore(s => s.turn);
   const deathCause = useStore(s => (s as any).deathCause || '生命耗尽');
   const deathTurn = useStore(s => (s as any).deathTurn || turn);
+  const deathRecord = useStore(s => (s as any).deathRecord);
+  const record = useMemo(() => deathRecord || buildDeathRecordFallback(useStore.getState()), [deathRecord]);
 
   // P2修复: 死亡时播放死亡音效
   useEffect(() => {
@@ -59,8 +62,13 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
   };
 
   const handleSaveDeath = () => {
-    // ═══ 死亡时可导出存档留作纪念 ═══
-    (useStore.getState() as any).saveToFile?.();
+    const blob = new Blob([JSON.stringify(record, null, 2)], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `death-record-${record.turn || deathTurn}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -104,14 +112,42 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
           </motion.div>
           <motion.div variants={statItem}>
             <span className="text-rg-paper-200/40 text-xs font-panel">陨落于</span>
-            <p className="text-rg-paper-100 font-panel">第{deathTurn}回</p>
+            <p className="text-rg-paper-100 font-panel">第{record.turn || deathTurn}回</p>
           </motion.div>
           <motion.div variants={statItem}>
             <span className="text-rg-paper-200/40 text-xs font-panel">死因</span>
-            <p className="text-rg-blood-400 font-panel">{deathCause}</p>
+            <p className="text-rg-blood-400 font-panel">{record.cause || deathCause}</p>
           </motion.div>
         </div>
+        {record.lifeSummary && (
+          <div className="mt-4 border-t border-rg-ink-300/10 pt-3">
+            <span className="text-rg-paper-200/40 text-xs font-panel">一生摘要</span>
+            <p className="text-rg-paper-200/65 text-xs font-panel leading-relaxed mt-1">{record.lifeSummary}</p>
+          </div>
+        )}
+        {(record.majorChoices?.length || 0) > 0 && (
+          <div className="mt-3">
+            <span className="text-rg-paper-200/40 text-xs font-panel">关键选择</span>
+            <div className="mt-1 space-y-1">
+              {record.majorChoices.slice(0, 3).map((choice: string, index: number) => (
+                <p key={`${choice}-${index}`} className="text-rg-paper-200/45 text-[11px] font-panel leading-relaxed">· {choice}</p>
+              ))}
+            </div>
+          </div>
+        )}
       </motion.div>
+
+      {record.closingPoem && (
+        <motion.div
+          className="bg-rg-ink-700/70 border border-rg-gold/20 rounded-lg p-4 mb-8 max-w-md w-full backdrop-blur-md"
+          variants={epilogueVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <h3 className="text-rg-gold text-sm font-narrative mb-2">{record.poemTitle || '定场诗'}</h3>
+          <p className="text-rg-paper-100/75 text-sm font-narrative leading-7 whitespace-pre-wrap">{record.closingPoem}</p>
+        </motion.div>
+      )}
 
       <motion.p
         className="text-rg-paper-200/30 text-sm font-panel mb-8"

@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "version": "0.7.0-pre",
+    "purpose": "底层经济闭环模拟参数。正式价格需通过模拟报告与人工决策后再固化。",
+    "terminology": "仙元是能量，仙元石才是货币。"
+  },
+  "currencyPolicy": {
+    "immortalStoneToPrimevalStone": 10000,
+    "direction": "immortal_to_mortal_only",
+    "primevalToImmortalAllowed": false,
+    "ascensionPrimevalStoneCompensationCap": 500
+  },
+  "pacingTargets": {
+    "turn20": {
+      "canBuyLowImmortalMaterial": true,
+      "canReliablyBuyRank6ImmortalGu": false
+    },
+    "turn100": {
+      "canCompleteOneRank6MajorGoal": true,
+      "canRepeatRank6MajorGoal": false
+    },
+    "turn300": {
+      "canHoldMultipleRank6Assets": true,
+      "rank7PlusRemainsStrategic": true
+    }
+  },
+  "auctionPricing": {
+    "lowImmortalMaterialRange": { "min": 24, "max": 120 },
+    "rank6MajorGoalPrice": 3600,
+    "immortalGuBasePriceByTier": {
+      "6": 3600,
+      "7": 12000,
+      "8": 40000,
+      "9": 120000
+    },
+    "immortalRecipeFormula": "targetTier * targetTier * 300",
+    "killerMoveFragmentFormula": "moveTier * 300",
+    "killerMoveCompleteFormula": "moveTier * moveTier * 300"
+  },
+  "simulationScenarios": {
+    "sixTurnSteady": {
+      "realmGrand": 6,
+      "immortalCurrencyPerTurn": 36,
+      "primevalCurrencyPerTurn": 0,
+      "guMaterialEveryTurns": 5,
+      "immortalMaterialEveryTurns": 20
+    },
+    "mortalEarly": {
+      "realmGrand": 1,
+      "immortalCurrencyPerTurn": 0,
+      "primevalCurrencyPerTurn": 8,
+      "guMaterialEveryTurns": 3,
+      "immortalMaterialEveryTurns": 0
+    }
+  }
+}

@@ -13,6 +13,8 @@
 import guDatabaseRaw from '../canon/gu-database.json';
 import shopItemsRaw from '../canon/shop-items.json';
 import economyRaw from '../canon/economy.json';
+import { estimateSafeTurnsUntilDead, normalizeFeedCandidates } from './feeding-rules';
+import { getMaterialEntry } from './material-registry';
 
 // ─── 分组定义 ───
 export type TierGroupId = 1 | 2 | 3 | 4 | 5;
@@ -197,6 +199,7 @@ export interface MaterialShopEntry {
   tier: number;
   price: number;
   description: string;
+  source?: 'shortage_food' | 'chapter_common' | 'regional_common' | 'rare' | 'utility';
 }
 
 let _materialCache: MaterialShopEntry[] | null = null;
@@ -216,6 +219,22 @@ function loadMaterialPool(): MaterialShopEntry[] {
   return _materialCache;
 }
 
+function expandChapterNames(currentChapterName: string): string[] {
+  const names = new Set<string>([currentChapterName]);
+  const aliases: Record<string, string[]> = {
+    '商队求生': ['商路求生'],
+    '商路求生': ['商队求生'],
+    '青茅山': ['青茅山期'],
+    '青茅山期': ['青茅山'],
+    '三王山': ['三王山前夜'],
+    '三王山前夜': ['三王山', '南疆风云'],
+  };
+  for (const [key, values] of Object.entries(aliases)) {
+    if (currentChapterName.includes(key)) values.forEach(value => names.add(value));
+  }
+  return [...names];
+}
+
 /** 按当前章节和转数过滤蛊材商品 */
 export function getMaterialShopItems(
   currentChapterName: string,
@@ -223,13 +242,144 @@ export function getMaterialShopItems(
 ): MaterialShopEntry[] {
   const pool = loadMaterialPool();
   const chapterItems = (shopItemsRaw as any).items as any[];
-  return pool.filter((item, i) => {
+  const chapterNames = expandChapterNames(currentChapterName || '青茅山期');
+  const exact = pool.filter((item, i) => {
     if (item.tier > playerRealmTier + 1) return false;
     const raw = chapterItems[i];
     const available = raw?.chapterAvailability;
-    if (Array.isArray(available) && !available.includes(currentChapterName)) return false;
+    if (Array.isArray(available) && !available.some((name: string) => chapterNames.includes(name))) return false;
     return true;
   });
+  if (exact.length >= 8) return exact;
+  const fallback = pool.filter(item => item.tier <= playerRealmTier + 1);
+  const merged = new Map<string, MaterialShopEntry>();
+  [...exact, ...fallback].forEach(item => merged.set(item.id, item));
+  return [...merged.values()];
+}
+
+export interface MaterialFoodShortageInput {
+  guName: string;
+  tier: number;
+  hungerCounter: number;
+  feedRequirement?: string;
+  stock: number;
+}
+
+export interface MaterialShelfInput {
+  currentChapterName: string;
+  playerRealmTier: number;
+  turn: number;
+  shortages?: MaterialFoodShortageInput[];
+  randomFn?: () => number;
+}
+
+export interface MaterialShelfResult {
+  items: MaterialShopEntry[];
+  shortageItems: MaterialShopEntry[];
+  emergencyActive: boolean;
+}
+
+function materialTierPrice(tier: number): number {
+  if (tier <= 1) return 20;
+  if (tier === 2) return 45;
+  if (tier === 3) return 120;
+  if (tier === 4) return 300;
+  if (tier === 5) return 700;
+  return tier * 300;
+}
+
+function synthesizeFoodEntry(foodName: string, guTier: number): MaterialShopEntry {
+  const registry = getMaterialEntry(foodName);
+  const gradeTier: Record<string, number> = { '普通': 1, '精品': 3, '稀有': 5, '仙材': 6 };
+  const tier = Math.min(5, Math.max(1, gradeTier[String(registry?.grade || '')] ?? guTier));
+  return {
+    id: `food_${foodName}`,
+    name: foodName,
+    type: '蛊材',
+    tier,
+    price: materialTierPrice(tier),
+    description: registry?.displayName || `${foodName}，可作蛊虫食料。`,
+    source: 'shortage_food',
+  };
+}
+
+function toFoodShortageEntry(shortage: MaterialFoodShortageInput, candidates: MaterialShopEntry[]): MaterialShopEntry | null {
+  if (shortage.stock > 0) return null;
+  if (shortage.tier >= 6) return null;
+  const safeTurns = estimateSafeTurnsUntilDead(shortage.tier, shortage.hungerCounter);
+  if (safeTurns > 3) return null;
+  const foods = normalizeFeedCandidates(shortage.feedRequirement);
+  if (foods.length === 0) return null;
+  const foodName = foods[0];
+  const existing = candidates.find(item => item.name === foodName);
+  return existing ? { ...existing, source: 'shortage_food' } : synthesizeFoodEntry(foodName, shortage.tier);
+}
+
+function pickUniqueEntries(
+  pool: MaterialShopEntry[],
+  count: number,
+  randomFn: () => number,
+  source: MaterialShopEntry['source'],
+  used: Set<string>,
+): MaterialShopEntry[] {
+  const candidates = pool.filter(item => !used.has(item.name) && !used.has(item.id));
+  const picked = weightedPick(
+    candidates,
+    item => {
+      if (source === 'rare') return Math.max(1, item.tier * 2);
+      if (source === 'regional_common') return Math.max(1, 8 - item.tier);
+      return Math.max(1, 10 - item.tier);
+    },
+    count,
+    randomFn,
+  );
+  picked.forEach(item => {
+    used.add(item.id);
+    used.add(item.name);
+  });
+  return picked.map(item => ({ ...item, source }));
+}
+
+export function generateMaterialShopShelf(input: MaterialShelfInput): MaterialShelfResult {
+  const randomFn = input.randomFn || Math.random;
+  const playerTier = Math.max(1, Math.min(input.playerRealmTier || 1, 5));
+  const available = getMaterialShopItems(input.currentChapterName || '青茅山期', playerTier);
+  const used = new Set<string>();
+  const shortages = (input.shortages || [])
+    .map(shortage => toFoodShortageEntry(shortage, available))
+    .filter(Boolean) as MaterialShopEntry[];
+  const shortageItems = shortages.slice(0, 2).map(item => ({ ...item, source: 'shortage_food' as const }));
+  shortageItems.forEach(item => {
+    used.add(item.id);
+    used.add(item.name);
+  });
+
+  const materialPool = available.filter(item => item.type === '蛊材');
+  const utilityPool = available.filter(item => item.type !== '蛊材');
+  const commonPool = materialPool.filter(item => item.tier <= playerTier);
+  const regionalPool = materialPool.filter(item => item.tier <= playerTier + 1);
+  const rarePool = materialPool.filter(item => item.tier >= Math.max(2, playerTier - 1));
+
+  const common = pickUniqueEntries(commonPool, 4, randomFn, 'chapter_common', used);
+  const rare = pickUniqueEntries(rarePool, 1, randomFn, 'rare', used);
+  const utility = pickUniqueEntries(utilityPool.length > 0 ? utilityPool : materialPool, 1, randomFn, 'utility', used);
+  const regional = pickUniqueEntries(regionalPool, 8 - shortageItems.length - common.length - rare.length - utility.length, randomFn, 'regional_common', used);
+
+  const items = [...shortageItems, ...common, ...rare, ...utility, ...regional].slice(0, 8);
+  if (items.length < 8) {
+    items.push(...pickUniqueEntries(available, 8 - items.length, randomFn, 'regional_common', used));
+  }
+
+  return {
+    items: items.slice(0, 8),
+    shortageItems,
+    emergencyActive: shortageItems.length > 0,
+  };
+}
+
+export function getMaterialRefreshCost(playerRealmTier: number, isImmortal: boolean): number {
+  if (isImmortal) return 1;
+  return Math.max(10, Math.round(10 + Math.min(5, Math.max(1, playerRealmTier)) * 12));
 }
 
 // ═══ P4: 残方商店 ═══

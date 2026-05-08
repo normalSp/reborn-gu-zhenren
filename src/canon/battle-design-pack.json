@@ -1,0 +1,39 @@
+{
+  "version": "v0.7.0-pre",
+  "engineModel": "deterministic_with_controlled_llm_events",
+  "roundStructure": [
+    "侦察",
+    "先手",
+    "行动",
+    "反制",
+    "资源消耗",
+    "道痕/环境压制",
+    "第三方事件判定",
+    "士气/撤退"
+  ],
+  "resources": [
+    "生命",
+    "真元/仙元",
+    "空窍压力",
+    "蛊虫冷却",
+    "杀招蓄势",
+    "道痕共鸣",
+    "负伤",
+    "士气",
+    "警戒度",
+    "小队凝聚"
+  ],
+  "llmEventWindows": [
+    "战前情报",
+    "关键回合",
+    "濒死",
+    "第三方介入",
+    "战后追击"
+  ],
+  "pressureRules": [
+    "高转对低转提供命中、伤害、抗性和行动压力优势",
+    "伏击、地形、仙蛊、杀招与队友协作可提供逆转窗口",
+    "仙蛊唯一且高成本，低阶玩家只能短暂借用、见闻或剧情触发"
+  ],
+  "assetManifest": "src/canon/battle-asset-manifest.json"
+}

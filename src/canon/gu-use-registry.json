@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "version": "0.7.0-pre",
+    "purpose": "Runtime Gu use truth source. Canon Gu follows lore references; derived/original Gu must declare provenance and balance limits."
+  },
+  "entries": [
+    {
+      "guName": "妇人心蛊",
+      "useMode": "scene_gated",
+      "targetRule": "corpse_or_scene_target",
+      "cost": { "essencePct": 0, "primevalStones": 0 },
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        { "type": "poison_scene", "value": 1, "description": "毒道场景蛊，需尸体、目标或剧情触发，不作为随手按钮。" }
+      ],
+      "sideEffects": [
+        { "type": "daoHeart", "kill": 2, "scheme": 1 },
+        { "type": "reputation", "factionType": "righteous", "delta": -20 }
+      ],
+      "loreRef": "canon: poison Gu with strong scene and moral consequences; engine only allows it through validated narrative scenes.",
+      "provenance": "canon",
+      "balanceTier": "legendary_scene"
+    },
+    {
+      "guName": "鸿运齐天蛊",
+      "useMode": "consumable",
+      "targetRule": "self_or_known_ally",
+      "cost": { "essencePct": 0, "primevalStones": 0 },
+      "cooldown": 9999,
+      "consumesGu": true,
+      "effects": [
+        { "type": "attribute", "attribute": "气运", "value": 3, "description": "一次性施用后给目标附加长期气运增益。" }
+      ],
+      "sideEffects": [
+        { "type": "flag", "key": "hong_yun_qi_tian_used" }
+      ],
+      "loreRef": "canon: one-use luck Gu; high collection value, strategic timing required.",
+      "provenance": "canon",
+      "balanceTier": "mythic_once"
+    },
+    {
+      "guName": "血颅蛊",
+      "useMode": "scene_gated",
+      "targetRule": "kin_sacrifice_scene",
+      "cost": { "essencePct": 15, "primevalStones": 0 },
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        { "type": "attribute", "attribute": "资质", "value": 1, "description": "以同族血脉为代价提升资质，必须由剧情和引擎共同校验。" }
+      ],
+      "sideEffects": [
+        { "type": "daoHeart", "kill": 3, "scheme": 1 },
+        { "type": "reputation", "factionType": "kin", "delta": -80 }
+      ],
+      "loreRef": "canon: aptitude-raising Gu bound to clan-killing taboo.",
+      "provenance": "canon",
+      "balanceTier": "forbidden_growth"
+    },
+    {
+      "guName": "全力以赴蛊",
+      "useMode": "direct",
+      "targetRule": "self",
+      "cost": { "essencePct": 12, "primevalStones": 0 },
+      "cooldown": 3,
+      "consumesGu": false,
+      "effects": [
+        { "type": "temporary_buff", "attribute": "体魄", "value": 1, "durationTurns": 3, "description": "短时强化肉身，适合战斗和力道突破场景。" }
+      ],
+      "sideEffects": [
+        { "type": "backlash", "healthPct": -3, "description": "连续压榨肉身会带来反噬。" }
+      ],
+      "loreRef": "canon/derived tuning: strength-path use should feel powerful but not free.",
+      "provenance": "canon",
+      "balanceTier": "combat_direct"
+    },
+    {
+      "guName": "察运蛊",
+      "useMode": "toggle",
+      "targetRule": "self",
+      "cost": { "essencePct": 3, "primevalStones": 0 },
+      "cooldown": 1,
+      "consumesGu": false,
+      "effects": [
+        { "type": "visibility", "key": "luck_sense", "value": 1, "description": "启用后可获得气运类模糊反馈。" }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon: luck observation requires suitable luck-path means.",
+      "provenance": "canon",
+      "balanceTier": "utility_toggle"
+    },
+    {
+      "guName": "月光蛊",
+      "useMode": "direct",
+      "targetRule": "scene_or_combat_target",
+      "cost": { "essencePct": 8, "primevalStones": 0 },
+      "cooldown": 1,
+      "consumesGu": false,
+      "effects": [
+        { "type": "combat_attack", "path": "月道", "value": 1, "description": "基础攻击蛊，战斗或剧情目标存在时可用。" }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon: common Qing Mao mountain Gu, direct combat utility.",
+      "provenance": "canon",
+      "balanceTier": "common_direct"
+    },
+    {
+      "guName": "酒虫",
+      "useMode": "scene_gated",
+      "targetRule": "refinement_or_aperture_scene",
+      "cost": { "essencePct": 0, "primevalStones": 0 },
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        { "type": "refinement_support", "value": 1, "description": "主要用于真元凝练、炼蛊或突破场景，不作为普通点击消耗品。" }
+      ],
+      "sideEffects": [],
+      "loreRef": "canon: cultivation/refinement utility rather than generic item-use.",
+      "provenance": "canon",
+      "balanceTier": "scene_utility"
+    }
+  ]
+}
