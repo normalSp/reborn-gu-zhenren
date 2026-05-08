@@ -46,15 +46,19 @@ const TOPICS: { key: DialogueTopic; label: string; color: string; desc: string }
   { key: '深交', label: '深交', color: 'var(--gu-trace-gold)', desc: '推进关系' },
 ];
 
-export function NPCInteractionPanel() {
+interface NPCInteractionPanelProps {
+  onSubmitDialogueTopic: (topic: DialogueTopic) => Promise<void>;
+}
+
+export function NPCInteractionPanel({ onSubmitDialogueTopic }: NPCInteractionPanelProps) {
   const ad = useStore((s: any) => s.activeDialogue);
   const sendTopic = useStore((s: any) => s.sendTopic);
+  const markDialogueError = useStore((s: any) => s.markDialogueError);
   const endDialogue = useStore((s: any) => s.endDialogue);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const [visible, setVisible] = useState(false);
   const [showContent, setShowContent] = useState(false);
-  const [pendingTopic, setPendingTopic] = useState<DialogueTopic | null>(null);
 
   useEffect(() => {
     if (ad) {
@@ -72,8 +76,8 @@ export function NPCInteractionPanel() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [ad?.messages?.length]);
 
-  const handleTopic = useCallback((topic: DialogueTopic) => {
-    if (!ad) return;
+  const handleTopic = useCallback(async (topic: DialogueTopic) => {
+    if (!ad || ad.awaitingResponse) return;
     // P4: 请教杀招 — 好感度≥80时可能触发传授
     if (topic === '请教杀招' && ad.affinity >= 80) {
       const teachKillMove = (useStore.getState() as any).teachKillMove;
@@ -84,12 +88,15 @@ export function NPCInteractionPanel() {
       }
     }
     sendTopic(topic);
-    setPendingTopic(topic);
-  }, [ad, sendTopic]);
+    try {
+      await onSubmitDialogueTopic(topic);
+    } catch (err: any) {
+      markDialogueError?.(err?.message || '对话生成失败，请稍后重试。');
+    }
+  }, [ad, markDialogueError, onSubmitDialogueTopic, sendTopic]);
 
   const handleClose = useCallback(() => {
     endDialogue();
-    setPendingTopic(null);
   }, [endDialogue]);
 
   if (!visible || !ad) return null;
@@ -175,10 +182,17 @@ export function NPCInteractionPanel() {
                   </div>
                 </motion.div>
               ))}
-              {pendingTopic && (
+              {ad.awaitingResponse && ad.pendingTopic && (
                 <motion.div className="flex justify-end" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
                   <div className="px-3 py-1.5 rounded-lg text-xs" style={{ backgroundColor: 'var(--gu-trace-gold-dim)', color: 'var(--gu-trace-gold)', border: '1px dashed var(--gu-trace-gold-dim)' }}>
-                    {pendingTopic}——等待对方回应...
+                    {ad.pendingTopic}——等待对方回应...
+                  </div>
+                </motion.div>
+              )}
+              {ad.error && (
+                <motion.div className="flex justify-center" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
+                  <div className="px-3 py-1.5 rounded-lg text-xs text-rg-blood-400 border border-rg-blood-400/30 bg-rg-blood-400/10">
+                    {ad.error}
                   </div>
                 </motion.div>
               )}
@@ -193,7 +207,8 @@ export function NPCInteractionPanel() {
                   custom={i}
                   variants={topicBtnVariant}
                   onClick={() => handleTopic(t.key)}
-                  className="flex-1 py-1.5 rounded-md text-[10px] font-panel font-medium cursor-pointer flex flex-col items-center"
+                  disabled={!!ad.awaitingResponse}
+                  className={`flex-1 py-1.5 rounded-md text-[10px] font-panel font-medium flex flex-col items-center ${ad.awaitingResponse ? 'cursor-not-allowed opacity-45' : 'cursor-pointer'}`}
                   style={{
                     backgroundColor: 'var(--gu-bg-standard)',
                     color: t.color,

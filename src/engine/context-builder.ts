@@ -331,7 +331,7 @@ function injectDialogueContext(store: RootStore): string {
     `玩家选择的话题：【${topic}】`,
     '',
     `请以${ad.npcName}的身份用第一人称回应。回应需符合该NPC的性格特征和当前好感度水平。`,
-    '回应后必须在state_update.faction中包含affinity_delta字段（正整数=好感上升，负整数=好感下降），范围-5到+5。',
+    `回应后必须在state_update.dynamic_npcs.affinity_delta中包含好感变化，如 [{"name":"${ad.npcName}","delta":0}]；delta范围-5到+5。`,
     '你仍然需要生成正常的叙事文本narrative.text和当轮的选择项choices——对话回应放在叙事文本的开头部分，然后继续当轮的正常叙事。',
   ].join('\n');
 }

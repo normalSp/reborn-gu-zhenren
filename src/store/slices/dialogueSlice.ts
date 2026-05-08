@@ -18,6 +18,7 @@ export interface DialogueSlice {
   initDialogue: (npcId: string, npcName: string, npcPersonality: string, npcFaction: string, affinity: number) => void;
   sendTopic: (topic: DialogueTopic) => DialogueMessage | null;
   appendNpcMessage: (text: string, affinityDelta: number) => void;
+  markDialogueError: (error: string) => void;
   endDialogue: () => void;
 }
 
@@ -35,6 +36,9 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         affinity,
         messages: [],
         startedAt: Date.now(),
+        awaitingResponse: false,
+        pendingTopic: null,
+        error: null,
       },
     });
     // ═══ 日志埋点: 开始对话
@@ -70,6 +74,9 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
       activeDialogue: {
         ...current,
         messages: [...current.messages, playerMsg],
+        awaitingResponse: true,
+        pendingTopic: topic,
+        error: null,
       },
     });
 
@@ -127,6 +134,22 @@ export const createDialogueSlice = (set: any, get: any): DialogueSlice => ({
         ...current,
         messages: newMessages,
         affinity: newAffinity,
+        awaitingResponse: false,
+        pendingTopic: null,
+        error: null,
+      },
+    });
+  },
+
+  markDialogueError: (error) => {
+    const current = get().activeDialogue as ActiveDialogue | null;
+    if (!current) return;
+    set({
+      activeDialogue: {
+        ...current,
+        awaitingResponse: false,
+        pendingTopic: null,
+        error,
       },
     });
   },

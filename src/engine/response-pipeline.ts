@@ -170,6 +170,13 @@ function normalizeAIResponse(parsed: any): void {
   }
 }
 
+export function extractDialogueAffinityDelta(stateUpdate: any, npcName: string): number {
+  const deltas = stateUpdate?.dynamic_npcs?.affinity_delta;
+  if (!Array.isArray(deltas)) return 0;
+  const match = deltas.find((item: any) => item?.name === npcName);
+  return typeof match?.delta === 'number' ? match.delta : 0;
+}
+
 // ═══════════════════════════════════════════════
 export class ResponsePipeline {
   private state: PipeState = 'IDLE';
@@ -465,6 +472,13 @@ export class ResponsePipeline {
       });
 
       applyStateUpdate(narrative.state_update);
+
+      const dialogueStore = useStore.getState() as any;
+      const activeDialogue = dialogueStore.activeDialogue;
+      if (activeDialogue?.awaitingResponse && typeof dialogueStore.appendNpcMessage === 'function') {
+        const affinityDelta = extractDialogueAffinityDelta(narrative.state_update, activeDialogue.npcName);
+        dialogueStore.appendNpcMessage(narrative.narrative.text, affinityDelta);
+      }
 
       // ═══ P2补完: 章节目标检测 — 打通目标→路由推进链路 ═══
       try {

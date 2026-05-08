@@ -849,6 +849,9 @@ export interface ActiveDialogue {
   affinity: number;
   messages: DialogueMessage[];
   startedAt: number;
+  awaitingResponse?: boolean;
+  pendingTopic?: DialogueTopic | null;
+  error?: string | null;
 }
 
 // ─── 死亡记录 ───

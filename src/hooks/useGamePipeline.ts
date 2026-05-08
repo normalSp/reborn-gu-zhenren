@@ -190,10 +190,12 @@ export function useGamePipeline(): UseGamePipelineReturn {
       } else {
         syncState('ERROR');
         setPipelineError(result.error || 'AI响应失败');
+        useStore.getState().markDialogueError?.(result.error || '对话生成失败，请稍后重试。');
       }
     } catch (err: any) {
       syncState('ERROR');
       setPipelineError(err?.message || '选择处理异常');
+      useStore.getState().markDialogueError?.(err?.message || '对话生成失败，请稍后重试。');
     } finally {
       submittedRef.current = false;
     }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '../../store';
-import type { KeyEvent } from '../../types';
+import type { DialogueTopic, KeyEvent } from '../../types';
 import { StatusBar } from './StatusBar';
 import { NarrativePanel } from './NarrativePanel';
 import { ChoicePanel } from './ChoicePanel';
@@ -331,7 +331,7 @@ export function GameScreen() {
       <CombatOverlay />
       <SquadCombatOverlay />
       <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
-      <NPCInteractionPanel />
+      <NPCInteractionPanel onSubmitDialogueTopic={(topic: DialogueTopic) => submitChoice(`dialogue:${topic}`)} />
       <BreakthroughAnimation />
       <DiceRollAnimation />
       <SaveLoadDialog />

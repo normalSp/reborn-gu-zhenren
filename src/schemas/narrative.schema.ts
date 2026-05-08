@@ -91,6 +91,14 @@ const RecipeFragmentsUpdate = z.object({
   add: z.array(z.string()).optional(),
 }).optional();
 
+const DynamicNpcUpdate = z.object({
+  add: z.array(z.any()).optional(),
+  affinity_delta: z.array(z.object({
+    name: z.string().min(1),
+    delta: z.number(),
+  }).passthrough()).optional(),
+}).optional();
+
 const NpcContactAdd = z.object({
   npcId: z.string().optional(),
   name: z.string().min(1),
@@ -132,6 +140,7 @@ export const StateUpdateSchema = z.object({
   causality: CausalityUpdate,
   materials: MaterialsUpdate,
   recipe_fragments: RecipeFragmentsUpdate,
+  dynamic_npcs: DynamicNpcUpdate,
   npc_contacts: NpcContactsUpdate,
   gu_use_suggestions: GuUseSuggestionsUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段

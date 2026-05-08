@@ -18,6 +18,8 @@ interface TrainingGround {
 const GROUNDS = (trainingData as any).grounds as TrainingGround[];
 const TYPE_LABELS: Record<string, string> = { '磨练': '磨练', '对决': '对决', '试炼': '试炼', 'hunt': '猎场' };
 const TYPE_COLORS: Record<string, string> = { '磨练': 'text-rg-jade-400', '对决': 'text-amber-400', '试炼': 'text-purple-400', 'hunt': 'text-rg-gold' };
+const EMPTY_SECONDARY_PATHS = Object.freeze([]) as string[];
+const EMPTY_TRAINING_COOLDOWNS = Object.freeze({}) as Record<string, number>;
 
 function seedRand(seed: number) { let s = seed; return () => { s = (s * 1664525 + 1013904223) & 0xFFFFFFFF; return (s >>> 0) / 0xFFFFFFFF; }; }
 
@@ -27,10 +29,14 @@ export function TrainingGroundPanel() {
   const currentDomain = useStore(s => s.currentDomain || '南疆');
   const currentChapterId = useStore(s => (s as any).currentChapterId || '');
   const primaryPath = useStore(s => s.pathBuild?.primary || '');
-  const secondaryPaths = useStore(s => s.pathBuild?.secondary || []);
-  const cooldowns = useStore(s => (s as any).flags?.trainingCooldowns || {}) as Record<string, number>;
+  const secondaryPaths = useStore(s => s.pathBuild?.secondary ?? EMPTY_SECONDARY_PATHS);
+  const cooldowns = useStore(s => (s as any).flags?.trainingCooldowns ?? EMPTY_TRAINING_COOLDOWNS) as Record<string, number>;
   const turn = useStore(s => s.turn || 1);
   const isInCriticalPlot = useStore(s => !!(s as any).battleState || !!(s as any).flags?._ascension_in_progress);
+  const isPipelineBusy = useStore(s => {
+    const phase = (s as any).pipelinePhase;
+    return !!phase && phase !== 'IDLE' && phase !== 'RESOLVED' && phase !== 'ERROR';
+  });
 
   const [refreshCost, setRefreshCost] = useState(isImmortal ? 500 : 200);
   const [poolSeed, setPoolSeed] = useState(turn);
@@ -61,11 +67,13 @@ export function TrainingGroundPanel() {
   }, [availableGrounds, poolSeed, primaryPath, secondaryPaths]);
 
   const handleRefresh = () => {
+    if (isPipelineBusy) return;
     setPoolSeed(poolSeed + 1);
     setRefreshCost(prev => Math.min(4000, prev * 2));
   };
 
   const handleTrain = (ground: TrainingGround) => {
+    if (isPipelineBusy) return;
     const cost = isImmortal ? ground.costImmortalCurrency : ground.costCurrency;
     const store = useStore.getState() as any;
     const currency = isImmortal ? (store.immortalCurrency || 0) : (store.currency || 0);
@@ -105,7 +113,7 @@ export function TrainingGroundPanel() {
       <div className="p-4 border-b border-rg-ink-700/50">
         <div className="flex justify-between items-center">
           <h3 className="text-sm font-semibold text-rg-gold tracking-wider">道场</h3>
-          <button onClick={handleRefresh} className="text-[10px] font-button px-2 py-0.5 border border-rg-gold/20 text-rg-gold/60 hover:text-rg-gold rounded-sm">
+          <button onClick={handleRefresh} disabled={isPipelineBusy} className={`text-[10px] font-button px-2 py-0.5 border border-rg-gold/20 text-rg-gold/60 hover:text-rg-gold rounded-sm ${isPipelineBusy ? 'opacity-45 cursor-not-allowed' : ''}`}>
             刷新 ({refreshCost}{isImmortal ? '仙元' : '元石'})
           </button>
         </div>
@@ -133,8 +141,8 @@ export function TrainingGroundPanel() {
                 仙材{g.huntConfig.仙材掉落率 * 100}% · 仙蛊{g.huntConfig.仙蛊掉落率 * 100}%
               </p>
             )}
-            <button onClick={() => handleTrain(g)}
-              className={`mt-2 w-full py-1.5 rounded-sm text-[10px] font-button ${g.immortalOnly ? 'bg-rg-gold/10 border border-rg-gold/30 text-rg-gold hover:bg-rg-gold/20' : 'bg-rg-ink-700/50 border border-rg-ink-300/15 text-rg-paper-200/60 hover:border-rg-gold/20'} transition-colors`}>
+            <button onClick={() => handleTrain(g)} disabled={isPipelineBusy}
+              className={`mt-2 w-full py-1.5 rounded-sm text-[10px] font-button ${g.immortalOnly ? 'bg-rg-gold/10 border border-rg-gold/30 text-rg-gold hover:bg-rg-gold/20' : 'bg-rg-ink-700/50 border border-rg-ink-300/15 text-rg-paper-200/60 hover:border-rg-gold/20'} transition-colors ${isPipelineBusy ? 'opacity-45 cursor-not-allowed' : ''}`}>
               {g.type === 'hunt' ? '开始狩猎' : '修炼'} ({g.immortalOnly ? g.costImmortalCurrency + '仙元' : g.costCurrency + '元石'})
             </button>
           </div>
