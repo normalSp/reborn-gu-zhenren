@@ -971,6 +971,11 @@ export interface SquadMember {
   loyalty: number;
   personality: 'loyal' | 'cunning' | 'reckless' | 'cautious' | 'selfless';
   alive: boolean;
+  status?: 'available' | 'wounded' | 'closed_door' | 'expedition' | 'faction_task';
+  woundedUntil?: number;
+  closedDoorUntil?: number;
+  externalTaskUntil?: number;
+  factionTaskUntil?: number;
   /** v0.6.0终局补全: 战斗属性 */
   hp: number; maxHp: number; atk: number; def: number;
   /** v0.7.0: 组队信任度(0-100)—NPC对玩家带队能力的信赖 */
@@ -1004,6 +1009,52 @@ export interface PartyState {
   lastUpdatedTurn: number;
   memberCooldowns: Record<string, number>;
   memberRolePausedUntil: Record<string, number>;
+}
+
+export type SquadDispatchAssignmentStatus = 'active' | 'resolved' | 'failed' | 'expired';
+
+export interface SquadDispatchRewardLedger {
+  yuanStone?: number;
+  materials?: Record<string, number>;
+  rumors?: string[];
+  reputation?: number;
+  relationship?: number;
+}
+
+export interface SquadDispatchAssignment {
+  id: string;
+  taskId: string;
+  taskName: string;
+  memberId: string;
+  memberName: string;
+  startedTurn: number;
+  endsTurn: number;
+  risk: 'low' | 'medium' | 'high';
+  successChance: number;
+  status: SquadDispatchAssignmentStatus;
+  expectedReward: SquadDispatchRewardLedger;
+  validationIssues?: string[];
+}
+
+export interface SquadDispatchResult {
+  assignmentId: string;
+  taskId: string;
+  taskName: string;
+  memberId: string;
+  memberName: string;
+  turn: number;
+  success: boolean;
+  roll: number;
+  successChance: number;
+  rewards: SquadDispatchRewardLedger;
+  costs: { morale?: number; trust?: number; reputation?: number; yuanStone?: number };
+  message: string;
+}
+
+export interface SquadDispatchState {
+  activeAssignments: SquadDispatchAssignment[];
+  recentResults: SquadDispatchResult[];
+  lastUpdatedTurn: number;
 }
 
 export type SquadRecruitDisposition =

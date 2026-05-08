@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
-import type { PartyState, SquadCombatState, SquadMember, SquadRecruitEvaluation } from '../../types';
+import { evaluateSquadDispatch, listSquadDispatchTasks } from '../../engine/squad-dispatch';
+import type { PartyState, SquadCombatState, SquadDispatchState, SquadMember, SquadRecruitEvaluation } from '../../types';
 
 const TACTICAL_POSTURES: SquadCombatState['formation'][] = ['合击', '牵制', '掠阵', '斩首'];
 const EMPTY_MEMBERS: SquadMember[] = [];
@@ -14,6 +15,11 @@ const EMPTY_PARTY: PartyState = {
   lastUpdatedTurn: 0,
   memberCooldowns: {},
   memberRolePausedUntil: {},
+};
+const EMPTY_DISPATCH_STATE: SquadDispatchState = {
+  activeAssignments: [],
+  recentResults: [],
+  lastUpdatedTurn: 0,
 };
 
 const POSTURE_NOTES: Record<SquadCombatState['formation'], string> = {
@@ -90,22 +96,33 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, evaluation, rolePausedU
 };
 
 export const SquadFormationPanel: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
+  const dispatchTasks = useMemo(() => listSquadDispatchTasks(), []);
+  const [dispatchMemberId, setDispatchMemberId] = useState('');
+  const [dispatchTaskId, setDispatchTaskId] = useState(dispatchTasks[0]?.id ?? '');
   const {
     playerFaction,
     partyState,
+    squadDispatchState,
     ap,
+    turn,
     evaluateRecruitment,
     addMemberToParty,
     removeMemberFromParty,
     setPartyFormation,
+    startSquadDispatch,
+    resolveSquadDispatch,
   } = useStore(useShallow((s: any) => ({
     playerFaction: s.playerFaction ?? null,
     partyState: (s.partyState ?? EMPTY_PARTY) as PartyState,
+    squadDispatchState: (s.squadDispatchState ?? EMPTY_DISPATCH_STATE) as SquadDispatchState,
     ap: s.gameTime?.ap ?? 0,
+    turn: s.turn ?? 0,
     evaluateRecruitment: s.evaluateRecruitment,
     addMemberToParty: s.addMemberToParty,
     removeMemberFromParty: s.removeMemberFromParty,
     setPartyFormation: s.setPartyFormation,
+    startSquadDispatch: s.startSquadDispatch,
+    resolveSquadDispatch: s.resolveSquadDispatch,
   })));
 
   const squadMembers = partyState.members ?? EMPTY_MEMBERS;
@@ -121,6 +138,15 @@ export const SquadFormationPanel: React.FC<{ onClose?: () => void }> = ({ onClos
     }
     return rows;
   }, [availableMembers, evaluateRecruitment]);
+  const dispatchMember = useMemo(() => {
+    const members = (playerFaction?.members ?? EMPTY_MEMBERS) as SquadMember[];
+    return members.find(member => member.id === dispatchMemberId) ?? members.find(member => !squadIds.has(member.id)) ?? null;
+  }, [dispatchMemberId, playerFaction, squadIds]);
+  const dispatchTask = useMemo(() => dispatchTasks.find(task => task.id === dispatchTaskId) ?? dispatchTasks[0], [dispatchTaskId, dispatchTasks]);
+  const dispatchEvaluation = useMemo(() => {
+    if (!dispatchMember || !dispatchTask) return null;
+    return evaluateSquadDispatch(dispatchMember, dispatchTask.id, { morale: partyState.morale, turn });
+  }, [dispatchMember, dispatchTask, partyState.morale, turn]);
 
   const currentFormation = partyState.formation ?? '牵制';
   const npcSlotCount = Math.max(0, partyState.maxSize - 1);
@@ -214,6 +240,108 @@ export const SquadFormationPanel: React.FC<{ onClose?: () => void }> = ({ onClos
             })}
           </div>
         )}
+      </section>
+
+      <section className="mt-5">
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="text-xs font-panel text-rg-paper-100">外派回流</h3>
+          <span className="text-[10px] text-rg-paper-200/35">奖励先过经济/材料/传闻闸门</span>
+        </div>
+        <div className="mt-2 rounded border border-rg-ink-300/15 bg-rg-ink-700/35 p-3">
+          <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
+            <label className="text-[11px] text-rg-paper-200/50">
+              成员
+              <select
+                value={dispatchMember?.id ?? ''}
+                onChange={event => setDispatchMemberId(event.target.value)}
+                className="mt-1 w-full rounded-sm border border-rg-ink-300/25 bg-rg-ink-900/80 px-2 py-2 text-xs text-rg-paper-100"
+              >
+                {(playerFaction?.members ?? EMPTY_MEMBERS).map((member: SquadMember) => (
+                  <option key={member.id} value={member.id}>{member.name} · {member.path}</option>
+                ))}
+              </select>
+            </label>
+            <label className="text-[11px] text-rg-paper-200/50">
+              任务
+              <select
+                value={dispatchTask?.id ?? ''}
+                onChange={event => setDispatchTaskId(event.target.value)}
+                className="mt-1 w-full rounded-sm border border-rg-ink-300/25 bg-rg-ink-900/80 px-2 py-2 text-xs text-rg-paper-100"
+              >
+                {dispatchTasks.map(task => (
+                  <option key={task.id} value={task.id}>{task.name} · {task.durationTurns}回合 · {task.risk}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="mt-2 rounded-sm border border-rg-ink-300/12 bg-rg-ink-900/45 p-2 text-[11px] text-rg-paper-200/45">
+            {dispatchEvaluation ? (
+              <>
+                <span className={dispatchEvaluation.canDispatch ? 'text-emerald-300' : 'text-red-300'}>
+                  成功率 {Math.round(dispatchEvaluation.successChance * 100)}%
+                </span>
+                <span className="mx-2 text-rg-paper-200/25">/</span>
+                <span>风险 {dispatchEvaluation.risk}，持续 {dispatchEvaluation.durationTurns} 回合</span>
+                {dispatchEvaluation.reasons.length ? (
+                  <div className="mt-1 text-red-300/75">{dispatchEvaluation.reasons.join('；')}</div>
+                ) : null}
+              </>
+            ) : '需要先建立势力成员池。'}
+          </div>
+          <button
+            type="button"
+            disabled={!dispatchMember || !dispatchTask || !dispatchEvaluation?.canDispatch || ap < 1}
+            onClick={() => {
+              if (!dispatchMember || !dispatchTask) return;
+              startSquadDispatch(dispatchMember.id, dispatchTask.id);
+            }}
+            className="mt-3 w-full rounded-sm border border-rg-gold/35 px-3 py-2 text-xs text-rg-gold transition-micro hover:bg-rg-gold/10 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:text-rg-paper-200/25"
+          >
+            安排外派
+          </button>
+        </div>
+
+        {squadDispatchState.activeAssignments.length ? (
+          <div className="mt-3 space-y-2">
+            {squadDispatchState.activeAssignments.map(assignment => {
+              const due = assignment.endsTurn <= turn;
+              return (
+                <div key={assignment.id} className="rounded border border-rg-ink-300/15 bg-rg-ink-700/45 p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-sm text-rg-paper-100">{assignment.memberName} · {assignment.taskName}</div>
+                      <div className="mt-1 text-[10px] text-rg-paper-200/40">
+                        成功率 {Math.round(assignment.successChance * 100)}% · 风险 {assignment.risk} · {due ? '可回收' : `剩余 ${assignment.endsTurn - turn} 回合`}
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      disabled={!due}
+                      onClick={() => resolveSquadDispatch(assignment.id)}
+                      className="rounded-sm border border-rg-gold/35 px-3 py-1 text-[11px] text-rg-gold hover:bg-rg-gold/10 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:text-rg-paper-200/25"
+                    >
+                      回收
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
+
+        {squadDispatchState.recentResults.length ? (
+          <div className="mt-3 space-y-2">
+            {squadDispatchState.recentResults.slice(0, 3).map(result => (
+              <div key={result.assignmentId} className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2 text-[11px] text-rg-paper-200/50">
+                <span className={result.success ? 'text-emerald-300' : 'text-red-300'}>
+                  {result.success ? '成功' : '失败'}
+                </span>
+                <span className="mx-2 text-rg-paper-200/25">/</span>
+                {result.message}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </section>
     </div>
   );

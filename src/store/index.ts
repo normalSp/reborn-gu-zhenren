@@ -66,6 +66,20 @@ export function normalizePartyState(party: any, turn = 0): any {
   };
 }
 
+export function normalizeSquadDispatchState(dispatchState: any, turn = 0): any {
+  const activeAssignments = Array.isArray(dispatchState?.activeAssignments)
+    ? dispatchState.activeAssignments.filter((assignment: any) => assignment?.id && assignment?.memberId && assignment?.taskId)
+    : [];
+  const recentResults = Array.isArray(dispatchState?.recentResults)
+    ? dispatchState.recentResults.slice(-20)
+    : [];
+  return {
+    activeAssignments,
+    recentResults,
+    lastUpdatedTurn: Number.isFinite(dispatchState?.lastUpdatedTurn) ? dispatchState.lastUpdatedTurn : turn,
+  };
+}
+
 // ─── v0.6.0终局修复: 存档迁移函数 ───
 /** 将旧版本存档迁移到当前格式版本, 填充新增字段的默认值 */
 export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
@@ -148,6 +162,7 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (s.lastFactionEconomyLedger === undefined) s.lastFactionEconomyLedger = null;
   if (s.lastFactionEconomyTurn === undefined) s.lastFactionEconomyTurn = 0;
   s.partyState = normalizePartyState(s.partyState, s.turn ?? 0);
+  s.squadDispatchState = normalizeSquadDispatchState(s.squadDispatchState, s.turn ?? 0);
   if (s.squadCombatWins === undefined) s.squadCombatWins = 0;
   if (s.squadMembersRecruited === undefined) s.squadMembersRecruited = 0;
   if (s.squadMemberWoundedRescues === undefined) s.squadMemberWoundedRescues = 0;
