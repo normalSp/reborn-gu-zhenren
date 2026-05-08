@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
-import type { DuelPhase, CombatLogEntry } from '../../types';
+import type { BattlePreview, BattleTraceEntry, DuelPhase, CombatLogEntry } from '../../types';
 import { audioManager } from '../../utils/audio';
 import { DOMAIN_BGM } from '../../store/slices/soundSlice';
+import { buildBattlePreview } from '../../engine/combat-preview';
 
 // ═══ M7: Combat variants ═══
 const overlayVariants = {
@@ -79,9 +80,11 @@ export function CombatOverlay() {
     }
   }, [endDuel]);
 
+  const battlePreview = useMemo(() => duelState ? buildBattlePreview(duelState) : null, [duelState]);
+
   if (!visible) return null;
 
-  const phase = duelState?.phase;
+  const phase = duelState?.phase ?? 'init';
   const isPlayerTurn = phase === 'player_turn';
   const isEnded = phase === 'ended';
 
@@ -148,6 +151,8 @@ export function CombatOverlay() {
                   <span className="text-rg-paper-200/60 text-xs font-panel">回合 {duelState.round}</span>
                   <PhaseLabel phase={phase} />
                 </div>
+
+                <BattlePreviewPanel preview={battlePreview} />
 
                 {/* ─── 行动按钮 ─── */}
                 {!isEnded && (
@@ -247,6 +252,7 @@ export function CombatOverlay() {
 
                 {/* ─── 战斗日志 ─── */}
                 <CombatLog entries={duelState.log} />
+                <CombatTrace entries={(duelState.trace || _EMPTY_ARR) as BattleTraceEntry[]} />
 
                 {/* ─── 结算面板 ─── */}
                 {isEnded && duelState.result && (
@@ -258,6 +264,76 @@ export function CombatOverlay() {
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+function BattlePreviewPanel({ preview }: { preview: BattlePreview | null }) {
+  if (!preview) return null;
+  const attack = preview.actions.find(action => action.action === 'attack');
+  const bestMove = preview.actions
+    .filter(action => action.action === 'killer_move')
+    .sort((a, b) => (b.expectedDamageMax || 0) - (a.expectedDamageMax || 0))[0];
+
+  return (
+    <div className="px-4 pb-2">
+      <div className="rounded-md border border-rg-gold/15 bg-rg-ink-900/35 px-3 py-2">
+        <div className="grid grid-cols-3 gap-1.5 text-[10px] font-panel">
+          <PreviewChip
+            label="境界"
+            value={preview.pressure.rankLabel}
+            tone={preview.pressure.rankDiff > 0 ? 'danger' : preview.pressure.rankDiff < 0 ? 'good' : 'neutral'}
+            detail={`伤害×${preview.pressure.playerDamageMult.toFixed(2)} 命中${preview.pressure.playerHitBonus >= 0 ? '+' : ''}${preview.pressure.playerHitBonus}`}
+          />
+          <PreviewChip
+            label="流派"
+            value={preview.pressure.pathLabel}
+            tone={preview.pressure.pathMultiplier > 1 ? 'good' : preview.pressure.pathMultiplier < 1 ? 'danger' : 'neutral'}
+            detail={`倍率×${preview.pressure.pathMultiplier.toFixed(2)}`}
+          />
+          <PreviewChip
+            label="道痕"
+            value={preview.pressure.daoLabel}
+            tone={preview.pressure.daoResonance > 1 ? 'good' : preview.pressure.daoResonance < 1 ? 'danger' : 'neutral'}
+            detail={`共鸣×${preview.pressure.daoResonance.toFixed(2)}`}
+          />
+        </div>
+        <div className="mt-2 grid grid-cols-2 gap-1.5 text-[10px] font-panel text-rg-paper-200/58">
+          <span>攻击：命中 {attack?.hitRate !== undefined ? `${Math.round(attack.hitRate * 100)}%` : '--'} · 约 {attack?.expectedDamageMin ?? '--'}-{attack?.expectedDamageMax ?? '--'}</span>
+          <span>逃跑：{preview.escape.label} · {preview.escape.essenceCost}{preview.escape.essenceLabel}</span>
+          {bestMove && (
+            <span className="col-span-2 text-rg-gold/80">
+              推荐杀招：{bestMove.label} · 命中 {bestMove.hitRate !== undefined ? `${Math.round(bestMove.hitRate * 100)}%` : '--'} · 约 {bestMove.expectedDamageMin}-{bestMove.expectedDamageMax} · {bestMove.essenceCost}{bestMove.essenceLabel}
+            </span>
+          )}
+        </div>
+        {preview.warnings.length > 0 && (
+          <div className="mt-2 space-y-1">
+            {preview.warnings.slice(0, 2).map(warning => (
+              <div key={warning} className="text-[10px] leading-snug text-rg-blood-400/85 font-panel">
+                {warning}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function PreviewChip({ label, value, detail, tone }: { label: string; value: string; detail: string; tone: 'good' | 'danger' | 'neutral' }) {
+  const toneClass = tone === 'good'
+    ? 'border-rg-jade-400/25 text-rg-jade-400'
+    : tone === 'danger'
+      ? 'border-rg-blood-400/25 text-rg-blood-400'
+      : 'border-rg-ink-300/15 text-rg-paper-200/70';
+  return (
+    <div className={`min-w-0 rounded-sm border px-2 py-1 ${toneClass}`}>
+      <div className="flex items-center justify-between gap-1">
+        <span className="text-rg-paper-200/35">{label}</span>
+        <span className="truncate">{value}</span>
+      </div>
+      <div className="mt-0.5 truncate text-rg-paper-200/38">{detail}</div>
+    </div>
   );
 }
 
@@ -324,6 +400,39 @@ function CombatLog({ entries }: { entries: CombatLogEntry[] }) {
           <span className="flex-1 truncate">{e.message}</span>
         </div>
       ))}
+    </div>
+  );
+}
+
+function CombatTrace({ entries }: { entries: BattleTraceEntry[] }) {
+  if (!entries.length) return null;
+  const latest = entries.slice(-5);
+  const phaseLabel: Record<string, string> = {
+    scout: '侦察',
+    initiative: '先手',
+    action: '行动',
+    counter: '反制',
+    resource: '资源',
+    pressure: '压制',
+    event: '事件',
+    morale_escape: '士气/撤退',
+  };
+  return (
+    <div className="px-4 pb-3">
+      <div className="max-h-24 overflow-y-auto rounded-md border border-rg-ink-300/10 bg-rg-ink-900/25 p-2 text-[10px] font-panel space-y-1">
+        {latest.map((entry, index) => (
+          <motion.div
+            key={`${entry.round}-${entry.phase}-${index}`}
+            className="flex gap-2 text-rg-paper-200/55"
+            variants={logItemVariant}
+            initial="hidden"
+            animate="visible"
+          >
+            <span className="w-12 shrink-0 text-rg-gold/55">{phaseLabel[entry.phase] || entry.phase}</span>
+            <span className="flex-1 truncate">{entry.message}</span>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

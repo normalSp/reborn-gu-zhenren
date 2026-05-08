@@ -707,6 +707,49 @@ export type DuelPhase = 'init' | 'player_turn' | 'enemy_turn' | 'resolution' | '
 /** 玩家可选行动 */
 export type DuelAction = 'attack' | 'defend' | 'gu_skill' | 'escape' | 'surrender';
 
+export interface BattlePressureSummary {
+  rankDiff: number;
+  rankLabel: string;
+  playerDamageMult: number;
+  enemyDamageMult: number;
+  playerHitBonus: number;
+  enemyHitBonus: number;
+  pathMultiplier: number;
+  pathLabel: string;
+  daoResonance: number;
+  daoLabel: string;
+  crossRealm: boolean;
+}
+
+export interface BattleActionPreview {
+  action: DuelAction | 'killer_move';
+  label: string;
+  essenceLabel: '真元' | '仙元';
+  essenceCost: number;
+  hitRate?: number;
+  expectedDamageMin?: number;
+  expectedDamageMax?: number;
+  available: boolean;
+  reason?: string;
+  note?: string;
+}
+
+export interface EscapePreview {
+  chance: number;
+  label: string;
+  essenceLabel: '真元' | '仙元';
+  essenceCost: number;
+  blocked: boolean;
+  reason?: string;
+}
+
+export interface BattlePreview {
+  pressure: BattlePressureSummary;
+  actions: BattleActionPreview[];
+  escape: EscapePreview;
+  warnings: string[];
+}
+
 export type BattleTracePhase =
   | 'scout'
   | 'initiative'

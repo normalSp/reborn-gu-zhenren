@@ -7,6 +7,8 @@ import {
   getPathMultiplier,
   getRealmCoefficients,
 } from './combat-formulas';
+import { buildBattlePreview } from './combat-preview';
+import { createDuelEnemy, initDuel } from './combat-engine';
 import { isRuntimePathAllowed } from './path-registry';
 
 const combatConfig = combatConfigRaw as any;
@@ -54,5 +56,45 @@ describe('v0.7.0-a combat numeric source', () => {
 
     expect(first).toBe(second);
     expect(third).toBeGreaterThan(0);
+  });
+
+  it('builds a runtime battle preview without mutating duel state', () => {
+    const state = initDuel({
+      name: '预览测试蛊师',
+      realm: '三转',
+      path: '力道',
+      daoMarks: 180,
+      hp: 180,
+      maxHp: 180,
+      attack: 72,
+      defense: 22,
+      accuracy: 88,
+      evasion: 22,
+      essence: { current: 40, max: 100 },
+      gu: [{ name: '月光蛊', path: '光道', tier: 1 }],
+      moves: [{
+        name: '预览杀招',
+        damageMultiplier: 1.8,
+        pathBonus: 8,
+        description: '测试预览用',
+        requiredCoreGu: ['月光蛊'],
+      }],
+    }, createDuelEnemy({
+      name: '预览敌人',
+      realm: '四转',
+      hp: 180,
+      attack: 55,
+      defense: 24,
+      path: '智道',
+      daoMarks: 120,
+    }));
+
+    const preview = buildBattlePreview(state);
+    expect(preview.pressure.rankDiff).toBe(1);
+    expect(preview.pressure.playerDamageMult).toBeCloseTo(0.7);
+    expect(preview.pressure.pathMultiplier).toBeGreaterThan(1);
+    expect(preview.escape.chance).toBeGreaterThan(0);
+    expect(preview.actions.some(action => action.label === '预览杀招' && action.available)).toBe(true);
+    expect(state.log).toEqual([]);
   });
 });
