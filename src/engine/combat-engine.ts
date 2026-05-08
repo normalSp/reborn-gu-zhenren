@@ -14,12 +14,16 @@ import type {
   DuelState,
   CombatLogEntry,
 } from '../types';
+import combatConfigRaw from '../canon/combat-config.json';
 import {
   REALM_NUM, toRealmNum, getEffectiveDaoMarks, getRealmCoefficients, getPathMultiplier,
   calcHitRate, calcDamage, rollCrit, rollHit,
   PATH_STATUS_MAP, calcStatusDamage, isStatusDisabled, isConfused, getBlindPenalty, getWeakenDefPenalty, tickStatuses,
   type CombatStatus,
 } from './combat-formulas';
+
+const config = combatConfigRaw as any;
+const C = config.constants || {};
 
 /** 生成唯一决斗ID */
 function duelId(): string {
