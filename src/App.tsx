@@ -9,6 +9,7 @@ import { TimelineSelectScreen } from './components/game/TimelineSelectScreen';
 import { TimelineConfigScreen } from './components/game/TimelineConfigScreen';
 import { ErrorBoundary } from './components/game/ErrorBoundary';
 import { audioManager } from './utils/audio';
+import { installE2eHarness } from './e2e/installE2eHarness';
 
 type ScreenState = 'title' | 'origin_select' | 'timeline_select' | 'timeline_config' | 'character_create' | 'game_play' | 'game_over';
 
@@ -19,6 +20,10 @@ function App() {
   const setScreenState = useStore(s => s.setScreenState);
   const [displayScreen, setDisplayScreen] = useState<ScreenState>(screenState);
   const [transitioning, setTransitioning] = useState(false);
+
+  useEffect(() => {
+    installE2eHarness();
+  }, []);
 
   // ─── P4修复: Zustand soundSlice → AudioManager 音量桥接 ───
   const soundState = useStore(s => s.soundState);
