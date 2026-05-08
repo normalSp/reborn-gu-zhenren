@@ -1,11 +1,13 @@
-=== Music Attribution ===
-Generated: 2026-05-03T07:51:32.383Z
-Source: ccMixter (https://ccmixter.org)
+=== RebornG BGM Attribution ===
+Updated: 2026-05-08
 
-"Harpsichord Pack" by Klaus_N
-  Source: https://ccmixter.org/files/Klaus_Neumaier/14345
-  License: Attribution (3.0) (http://creativecommons.org/licenses/by/3.0/)
+The previous ccMixter archive and FFmpeg-generated BGM placeholders were removed from runtime use during v0.7.0-c audio rebuild.
 
----
-All tracks sourced from ccMixter under Creative Commons licenses.
-Please include this attribution when publishing your video.
+Runtime BGM must be listed in:
+  public/audio/audio-source-manifest.json
+
+Current confirmed design targets:
+  - Fang Yuan / 方源: 年轮
+  - Duke Long / 龙公: 春泥
+
+These character themes are not enabled until the user-supplied or manually reviewed audio files are placed at the manifest paths.

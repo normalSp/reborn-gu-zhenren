@@ -1,0 +1,56 @@
+{
+  "version": "v0.7.0-c",
+  "entries": [
+    {
+      "id": "fang_yuan_nianlun",
+      "trackId": "character_fang_yuan_nianlun",
+      "characterId": "fang_yuan",
+      "characterName": "方源",
+      "aliases": ["古月方源", "炼天魔尊", "大爱仙尊"],
+      "title": "年轮",
+      "filePath": "/audio/bgm/character/fang_yuan/nianlun.mp3",
+      "sourceTier": "user_confirmed_community_theme",
+      "runtimeEnabled": false,
+      "triggerTags": ["fang_yuan", "spring_autumn_cicada", "reverse_flow_river", "absolute_persistence", "venerable_clue"],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "named_line": 25,
+        "desperate_reversal": 35,
+        "killer_move_release": 15,
+        "emotional_peak": 15,
+        "venerable_clue": 25
+      },
+      "playSeconds": 18,
+      "fadeInSeconds": 0.8,
+      "fadeOutSeconds": 2,
+      "cooldownTurns": 20,
+      "duckDomainBgmDb": -6,
+      "notes": "方源只能作为原著 NPC/远景事件/剧情交会对象触发，不能把玩家身份写成方源。"
+    },
+    {
+      "id": "duke_long_chunni",
+      "trackId": "character_duke_long_chunni",
+      "characterId": "duke_long",
+      "characterName": "龙公",
+      "aliases": ["龙公", "龙御天"],
+      "title": "春泥",
+      "filePath": "/audio/bgm/character/duke_long/chunni.mp3",
+      "sourceTier": "user_confirmed_community_theme",
+      "runtimeEnabled": false,
+      "triggerTags": ["duke_long", "heavenly_court", "humanity_guardian", "fate_war_pressure", "dragonman_tragedy"],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "named_line": 25,
+        "enemy_pressure": 30,
+        "emotional_peak": 25,
+        "heavenly_court_scene": 20
+      },
+      "playSeconds": 18,
+      "fadeInSeconds": 0.8,
+      "fadeOutSeconds": 2,
+      "cooldownTurns": 24,
+      "duckDomainBgmDb": -6,
+      "notes": "用于天庭、人族守护、龙公高光或敌方压迫登场。"
+    }
+  ]
+}

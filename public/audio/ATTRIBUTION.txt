@@ -1,47 +1,21 @@
-# ═══ 蛊真人模拟器 — 音频素材来源说明 ═══
-# 创建日期：2026-05-03
-# 许可证：CC0 / 公共领域 / 合成音频
+# RebornG 音频素材来源说明
 
-## BGM（背景音乐） — 128kbps MP3, 44100Hz, ~60秒
-## 全部由 FFmpeg 合成生成，使用正弦波叠加+噪声基底，模拟暗黑修真氛围
+更新时间：2026-05-08
 
-bgm/nanjiang/nanjiang.mp3    — 南疆丝竹风格（C-E-D大三和弦合成）     CC0 / 合成音频
-bgm/beiyuan/beiyuan.mp3     — 北原马头琴风格（C-G五度+回声）         CC0 / 合成音频
-bgm/donghai/donghai.mp3     — 东海海浪风格（C#-G#+粉红噪声底噪）     CC0 / 合成音频
-bgm/ximo/ximo.mp3           — 西漠沙漠风格（F-C+布朗噪声底噪）       CC0 / 合成音频
-bgm/zhongzhou/zhongzhou.mp3 — 中洲交响风格（C-E-G-C大三和弦）       CC0 / 合成音频
+v0.7.0-c 起，旧的 FFmpeg/AI/合成 BGM 不再作为运行时资源。五域 BGM 的 0 字节文件与旧合成文件已经清理，运行时音频以 `audio-source-manifest.json` 为唯一来源清单。
 
-## SFX（音效）
-## 全部由 FFmpeg 合成生成，使用正弦波/噪声组合
+## 资源分层
 
-### 战斗类 (sfx/combat/)
-hit.mp3       — 打击音效（低频+高频叠层）                            CC0 / 合成音频
-critical.mp3  — 暴击音效（440Hz快速衰减）                            CC0 / 合成音频
-explosion.mp3 — 爆炸音效（150Hz+白噪声）                             CC0 / 合成音频
+- `domain`：五域氛围 BGM。
+- `character`：角色曲，例如方源「年轮」、龙公「春泥」。
+- `scene`：逆流河、定仙游、宿命战、死亡定场诗等名场面。
+- `combat`：普通战、Boss、小队战、宝黄天拍卖氛围。
+- `sfx`：打击、暴击、成就、UI、事件、环境。
 
-### UI类 (sfx/ui/)
-click.mp3     — 点击音效（660Hz短促正弦）                            CC0 / 合成音频
-hover.mp3     — 悬停音效（880Hz极短正弦）                            CC0 / 合成音频
-confirm.mp3   — 确认音效（C-E双音叠层）                              CC0 / 合成音频
+## 当前策略
 
-### 环境类 (sfx/env/)
-wind.mp3      — 风声（粉红噪声3秒）                                  CC0 / 合成音频
-cave.mp3      — 洞穴环境音（200Hz+布朗噪声）                         CC0 / 合成音频
-rain.mp3      — 雨声（粉红噪声+350Hz正弦）                           CC0 / 合成音频
+- BGM：不再使用 AI/合成占位。非盈利二创包可使用用户确认的原曲/社区曲；公开演示包可切换到免费替代素材。
+- SFX：战斗和成就音效不使用 AI/合成素材，等待免费优质素材或用户确认素材。
+- 缺文件时：运行时记录诊断并静默降级，不用合成音冒充正式素材。
 
-### 事件类 (sfx/event/)
-breakthrough.mp3 — 突破音效（C-E-G上行三音）                         CC0 / 合成音频
-death.mp3        — 死亡音效（A-G-D下行三音）                         CC0 / 合成音频
-discovery.mp3    — 发现音效（300Hz持续音）                           CC0 / 合成音频
-alert.mp3        — 警报音效（200Hz+白噪声）                          CC0 / 合成音频
-
-## 生成工具
-所有音频文件使用 FFmpeg 8.1 的 lavfi 虚拟输入设备合成：
-- 音源：sine（正弦波）、anoisesrc（噪声源：pink/white/brown）
-- 滤波器：afade（淡入淡出）、adelay（延迟）、aecho（回声）、amix（混音）、volume（音量）
-- 编码器：libmp3lame
-- 采样率：44100 Hz
-- 比特率：128 kbps
-
-## 免责声明
-所有音频均为算法合成生成，不含任何受版权保护的采样或录音。可自由用于任何用途（包括商业用途）。
+完整清单见 `public/audio/audio-source-manifest.json`。

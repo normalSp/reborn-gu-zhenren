@@ -10,18 +10,18 @@
 
 /** 五域 BGM 映射（P3修复：路径指向子目录） */
 export const DOMAIN_BGM: Record<string, string> = {
-  '南疆': 'bgm/nanjiang/nanjiang.mp3',
-  '北原': 'bgm/beiyuan/beiyuan.mp3',
-  '东海': 'bgm/donghai/donghai.mp3',
-  '西漠': 'bgm/ximo/ximo.mp3',
-  '中洲': 'bgm/zhongzhou/zhongzhou.mp3',
+  '南疆': 'bgm/domain/nanjiang.mp3',
+  '北原': 'bgm/domain/beiyuan.mp3',
+  '东海': 'bgm/domain/donghai.mp3',
+  '西漠': 'bgm/domain/ximo.mp3',
+  '中洲': 'bgm/domain/zhongzhou.mp3',
 };
 
 /** 特殊 BGM */
 export const SPECIAL_BGM = {
-  combat: 'bgm/combat.mp3',
-  menu: 'bgm/menu.mp3',
-  death: 'bgm/death.mp3',
+  combat: 'bgm/combat/squad_battle.mp3',
+  menu: 'bgm/scene/menu.mp3',
+  death: 'bgm/scene/death_poem.mp3',
 };
 
 export interface SoundState {
