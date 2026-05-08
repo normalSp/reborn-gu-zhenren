@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "version": "v0.7.0-c",
+    "description": "小队外派任务真相源。v0.7.0-c 只落底层协议，运行时不得绕过经济、声望、传闻和关系闸门。"
+  },
+  "tasks": [
+    {
+      "id": "scout",
+      "name": "侦察",
+      "durationTurns": 3,
+      "risk": "low",
+      "requiredTrust": 35,
+      "preferredPaths": ["信道", "智道", "暗道"],
+      "rewardTags": ["rumor", "map_intel"],
+      "baseSuccess": 0.68,
+      "failureCost": { "morale": -3, "trust": -2 },
+      "successReward": { "rumors": 1, "reputation": 1 }
+    },
+    {
+      "id": "gather",
+      "name": "采集",
+      "durationTurns": 4,
+      "risk": "medium",
+      "requiredTrust": 40,
+      "preferredPaths": ["木道", "土道", "水道"],
+      "rewardTags": ["materials", "feeding"],
+      "baseSuccess": 0.6,
+      "failureCost": { "morale": -5, "trust": -3 },
+      "successReward": { "yuanStone": 80, "materials": 2 }
+    },
+    {
+      "id": "escort",
+      "name": "护送",
+      "durationTurns": 5,
+      "risk": "medium",
+      "requiredTrust": 45,
+      "preferredPaths": ["力道", "金道", "土道"],
+      "rewardTags": ["reputation", "yuanStone"],
+      "baseSuccess": 0.58,
+      "failureCost": { "morale": -6, "trust": -4, "reputation": -2 },
+      "successReward": { "yuanStone": 160, "reputation": 3 }
+    },
+    {
+      "id": "track",
+      "name": "追踪",
+      "durationTurns": 4,
+      "risk": "high",
+      "requiredTrust": 50,
+      "preferredPaths": ["信道", "气道", "暗道", "奴道"],
+      "rewardTags": ["target_intel", "combat_candidate"],
+      "baseSuccess": 0.52,
+      "failureCost": { "morale": -8, "trust": -5 },
+      "successReward": { "rumors": 1, "reputation": 2 }
+    },
+    {
+      "id": "trade",
+      "name": "交易",
+      "durationTurns": 4,
+      "risk": "low",
+      "requiredTrust": 45,
+      "preferredPaths": ["智道", "信道", "商道"],
+      "rewardTags": ["yuanStone", "discount"],
+      "baseSuccess": 0.64,
+      "failureCost": { "morale": -2, "trust": -3, "yuanStone": -40 },
+      "successReward": { "yuanStone": 180, "reputation": 2 }
+    },
+    {
+      "id": "ambush",
+      "name": "埋伏",
+      "durationTurns": 5,
+      "risk": "high",
+      "requiredTrust": 55,
+      "preferredPaths": ["暗道", "杀道", "毒道", "血道"],
+      "rewardTags": ["combat_advantage", "dao_heart"],
+      "baseSuccess": 0.5,
+      "failureCost": { "morale": -10, "trust": -6, "reputation": -3 },
+      "successReward": { "yuanStone": 220, "rumors": 1 }
+    },
+    {
+      "id": "recruit_npc",
+      "name": "拉拢 NPC",
+      "durationTurns": 6,
+      "risk": "medium",
+      "requiredTrust": 60,
+      "preferredPaths": ["智道", "信道", "人道"],
+      "rewardTags": ["relationship", "recruit_candidate"],
+      "baseSuccess": 0.48,
+      "failureCost": { "morale": -5, "trust": -5, "reputation": -1 },
+      "successReward": { "reputation": 4, "relationship": 5 }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "version": "v0.7.0-c",
+    "description": "地形与阵法战斗影响。数值只提供轻量修正，基础境界、流派、道痕仍以 combat-config.json 为准。",
+    "numericPolicy": "地形/阵法总修正必须夹取，不能覆盖境界压制和道痕共鸣。"
+  },
+  "clamps": {
+    "damageMultiplier": [0.82, 1.18],
+    "hitBonus": [-12, 12],
+    "escapeModifier": [-0.15, 0.18],
+    "eventRiskModifier": [-0.12, 0.16]
+  },
+  "terrains": {
+    "dense_forest": {
+      "name": "密林",
+      "description": "林木遮蔽视线，木道、暗道、侦察和伏击更有发挥；炎道容易引发额外风险。",
+      "pathDamageBonus": { "木道": 0.08, "暗道": 0.06, "炎道": -0.04 },
+      "hitBonus": { "暗道": 6, "木道": 3 },
+      "escapeModifier": 0.08,
+      "eventRiskModifier": 0.06
+    },
+    "mountain_pass": {
+      "name": "山隘",
+      "description": "山道狭窄，土道与力道占据地势优势，逃离路线有限。",
+      "pathDamageBonus": { "土道": 0.08, "力道": 0.05, "风道": -0.03 },
+      "hitBonus": { "土道": 4, "力道": 3 },
+      "escapeModifier": -0.08,
+      "eventRiskModifier": 0.04
+    },
+    "riverbank": {
+      "name": "河岸",
+      "description": "水汽充沛，水道、冰道、风道更易发挥，火焰类手段受限。",
+      "pathDamageBonus": { "水道": 0.08, "冰道": 0.06, "风道": 0.04, "炎道": -0.06 },
+      "hitBonus": { "水道": 4, "冰道": 3 },
+      "escapeModifier": 0.04,
+      "eventRiskModifier": 0.02
+    },
+    "formation_ruins": {
+      "name": "残阵遗址",
+      "description": "阵纹残留导致战局不稳，智道、阵道判读者更容易借势，但未知反噬风险更高。",
+      "pathDamageBonus": { "智道": 0.06, "阵道": 0.08, "炼道": 0.04 },
+      "hitBonus": { "智道": 5, "阵道": 6 },
+      "escapeModifier": -0.04,
+      "eventRiskModifier": 0.12
+    },
+    "auction_hall": {
+      "name": "宝黄天交易幻境",
+      "description": "宝光映照，不适合真身搏杀，适合谈判、威慑和追踪交易线索。",
+      "pathDamageBonus": { "智道": 0.04, "信道": 0.06 },
+      "hitBonus": { "智道": 3, "信道": 4 },
+      "escapeModifier": 0.12,
+      "eventRiskModifier": -0.08
+    }
+  },
+  "formations": {
+    "simple_kill_array": {
+      "name": "简式杀阵",
+      "description": "一次性阵旗布置，提升伏击伤害，但暴露后反噬明显。",
+      "damageBonus": 0.1,
+      "hitBonus": 5,
+      "escapeModifier": -0.05,
+      "eventRiskModifier": 0.08
+    },
+    "defensive_screen": {
+      "name": "护身阵幕",
+      "description": "牺牲攻势换取撤退空间，适合护送与小队外派回撤。",
+      "damageBonus": -0.04,
+      "hitBonus": 0,
+      "escapeModifier": 0.12,
+      "eventRiskModifier": -0.06
+    },
+    "concealment_array": {
+      "name": "遮掩阵",
+      "description": "降低被第三方发现概率，代价是正面杀伤不足。",
+      "damageBonus": -0.06,
+      "hitBonus": 2,
+      "escapeModifier": 0.08,
+      "eventRiskModifier": -0.1
+    }
+  }
+}

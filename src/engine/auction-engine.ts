@@ -176,6 +176,46 @@ export interface KillerMoveAuctionItem {
   bidderCount: number; expiresTurn: number;
 }
 
+export interface RareTradeAuctionItem {
+  id: string; name: string; category: '第二空窍线索' | '天地秘境线索' | '特殊传承';
+  tier: number; path: string; basePrice: number; currentBid: number;
+  bidderCount: number; expiresTurn: number; runtimeEffect: 'rumor_only' | 'engine_whitelist_required';
+  notes: string;
+}
+
+const RARE_TRADE_TEMPLATES: Array<Omit<RareTradeAuctionItem, 'currentBid' | 'bidderCount' | 'expiresTurn'>> = [
+  {
+    id: 'rare_second_aperture_formula_clue',
+    name: '第二空窍蛊方线索',
+    category: '第二空窍线索',
+    tier: 6,
+    path: '天道',
+    basePrice: 1800,
+    runtimeEffect: 'engine_whitelist_required',
+    notes: '只提供线索或残方候选，不能直接解锁第二空窍蛊炼制。完整解锁必须经过剧情白名单、残方进度和引擎校验。',
+  },
+  {
+    id: 'rare_second_aperture_material_trace',
+    name: '第二空窍相关仙材踪迹',
+    category: '第二空窍线索',
+    tier: 6,
+    path: '天道',
+    basePrice: 900,
+    runtimeEffect: 'rumor_only',
+    notes: '指向稀有仙材来源，默认进入传闻/线索，不直接写入背包。',
+  },
+  {
+    id: 'rare_reverse_flow_inheritance_trace',
+    name: '逆流河相关传承线索',
+    category: '天地秘境线索',
+    tier: 8,
+    path: '水道',
+    basePrice: 4800,
+    runtimeEffect: 'rumor_only',
+    notes: '天地秘境级线索只影响剧情探索，不进入普通交易资产池。',
+  },
+];
+
 function stableScore(seed: string, turn: number): number {
   let hash = turn * 131;
   for (let i = 0; i < seed.length; i++) {
@@ -301,4 +341,27 @@ export function generateKillerMovePool(existingKillMoveNames: string[], turn: nu
     });
 
   return pickDeterministic(candidates, turn, 2, 3);
+}
+
+/** 生成宝黄天稀有线索/特殊传承候选。此池默认只给线索，不能绕过炼蛊和任务闸门。 */
+export function generateRareTradePool(existingRareTradeIds: string[], turn: number): RareTradeAuctionItem[] {
+  const existing = new Set(existingRareTradeIds);
+  const candidates = RARE_TRADE_TEMPLATES
+    .filter(item => !existing.has(item.id) && isRuntimePathAllowed(item.path))
+    .map(item => ({
+      ...item,
+      currentBid: priceWithMarketHeat(item.basePrice, item.id, turn),
+      bidderCount: 1 + Math.floor(stableScore(item.id, turn) * 3),
+      expiresTurn: turn + 8 + Math.floor(stableScore(`${item.id}_expires`, turn) * 5),
+    }));
+
+  const count = Math.min(candidates.length, 1 + (turn % 2));
+  return candidates
+    .sort((a, b) => {
+      const priorityA = a.category === '第二空窍线索' ? 0 : 1;
+      const priorityB = b.category === '第二空窍线索' ? 0 : 1;
+      if (priorityA !== priorityB) return priorityA - priorityB;
+      return stableScore(a.id, turn) - stableScore(b.id, turn);
+    })
+    .slice(0, count);
 }
