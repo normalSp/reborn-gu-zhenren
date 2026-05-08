@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "1.1",
+    "version": "2.0-v0.7.0-a",
     "description": "蛊真人模拟器决斗引擎配置 — 境界修正系数表、15流派(L1-12+L2-3)克制矩阵、伤害公式参数。独立JSON可调参。v1.1修复: 火道→炎道(原著正名)+光道/暗道/毒道L2次要克制(1.15/0.85)",
     "pathLayers": {
       "L1_core": "金道/木道/水道/炎道/土道/风道/雷道/冰道/力道/魂道/血道/智道——蛊师阶段主流战斗流派，系数1.3/0.7",
@@ -8,75 +8,337 @@
       "L3_immortal": "天道/兵道/剑道/刀道/骨道/音道/奴道/变化道/律道/梦道/运道/宙道/宇道等——仅蛊仙可用，P3扩展"
     },
     "usageNote": "combat-engine.ts在每次伤害计算时读取realmCoefficients和pathMatrix，参数可从constants读取。",
-    "designNote": "v1.2: 移除秒杀机制(oneshotThreshold)。境界差≥2不再秒杀，改为极高伤害倍率+命中惩罚。越级战斗难度极大但理论上可行（配合计谋/道具/流派克制），更贴近原著中方源二转智斗三转的设定。"
+    "designNote": "v1.2: 移除秒杀机制(oneshotThreshold)。境界差≥2不再秒杀，改为极高伤害倍率+命中惩罚。越级战斗难度极大但理论上可行（配合计谋/道具/流派克制），更贴近原著中方源二转智斗三转的设定。",
+    "combatLoop": "single-duel-playable-slice",
+    "numericPolicy": "canon pressure plus reversal windows; all runtime combat values must read this file first."
   },
-
   "realmCoefficients": {
     "_note": "realmDiff = 敌方境界 - 玩家境界。正数=敌方优势，负数=玩家优势。v1.2: 取消秒杀——diff≥2改为大伤害倍率+额外命中惩罚+逃跑限制。",
     "table": {
-      "-3": { "playerDamageMult": 3.0, "playerHitBonus": 45, "enemyDamageMult": 0.15, "enemyHitPenalty": -40 },
-      "-2": { "playerDamageMult": 2.5, "playerHitBonus": 35, "enemyDamageMult": 0.25, "enemyHitPenalty": -25 },
-      "-1": { "playerDamageMult": 1.3, "playerHitBonus": 15, "enemyDamageMult": 0.7, "enemyHitPenalty": -10 },
-      "0":  { "playerDamageMult": 1.0, "playerHitBonus": 0,  "enemyDamageMult": 1.0, "enemyHitPenalty": 0 },
-      "1":  { "playerDamageMult": 0.7, "playerHitBonus": -10, "enemyDamageMult": 1.3, "enemyHitPenalty": 15 },
-      "2":  { "playerDamageMult": 0.25, "playerHitBonus": -25, "enemyDamageMult": 3.0, "enemyHitPenalty": 35 },
-      "3":  { "playerDamageMult": 0.15, "playerHitBonus": -40, "enemyDamageMult": 5.0, "enemyHitPenalty": 45 }
+      "0": {
+        "playerDamageMult": 1,
+        "playerHitBonus": 0,
+        "enemyDamageMult": 1,
+        "enemyHitPenalty": 0
+      },
+      "1": {
+        "playerDamageMult": 0.7,
+        "playerHitBonus": -10,
+        "enemyDamageMult": 1.25,
+        "enemyHitPenalty": 10
+      },
+      "2": {
+        "playerDamageMult": 0.4,
+        "playerHitBonus": -22,
+        "enemyDamageMult": 1.75,
+        "enemyHitPenalty": 22
+      },
+      "3": {
+        "playerDamageMult": 0.2,
+        "playerHitBonus": -35,
+        "enemyDamageMult": 2.5,
+        "enemyHitPenalty": 35
+      },
+      "-3": {
+        "playerDamageMult": 2.5,
+        "playerHitBonus": 35,
+        "enemyDamageMult": 0.2,
+        "enemyHitPenalty": -35
+      },
+      "-2": {
+        "playerDamageMult": 1.75,
+        "playerHitBonus": 22,
+        "enemyDamageMult": 0.4,
+        "enemyHitPenalty": -22
+      },
+      "-1": {
+        "playerDamageMult": 1.25,
+        "playerHitBonus": 10,
+        "enemyDamageMult": 0.7,
+        "enemyHitPenalty": -10
+      }
     },
     "overwhelmThreshold": 2,
     "overwhelmNote": "境界差≥overwhelmThreshold时：(1)低境界方伤害倍率大幅降低 (2)高境界方伤害倍率大幅提升 (3)低境界方逃跑基础概率-30% (4)高境界方免疫逃跑(C15/crit免疫)。理论上仍可战胜但极其困难，鼓励玩家使用计谋/道具而非硬刚。"
   },
-
   "immortalVsMortal": {
     "_note": "v0.7.0-immortal-强化: 蛊仙(6-9转) vs 蛊师(1-5转)跨界战斗增强倍率。在getRealmCoefficients中自动检测并叠加。",
-    "immortalDamageMult": 8.0,
+    "immortalDamageMult": 8,
     "immortalHitBonus": 80,
     "mortalDamageMult": 0.05,
     "mortalHitPenalty": -50,
     "immortalRealmGate": 6,
     "designRationale": "原著设定：蛊仙杀蛊师如踩蚂蚁。蛊仙对蛊师伤害8x+命中+80，蛊师对蛊仙伤害0.05x+命中-50。配合combat-stats.ts的真·断崖增长(5x起步HP/ATK/DEF)，综合战力差可达40-100x。"
   },
-
   "overreachPenalty": {
     "_note": "v0.7.0: 越阶使用杀招惩罚表。当玩家使用高于自身境界转数的杀招时触发。",
     "_logic": "rankOverreachSteps = killMove.level - playerRealmNum (≥1触发)。在convertKillMoveToDuelMove中计算rankPenalty，在combat-engine.ts gu_skill分支施加反噬。",
     "table": {
-      "1": { "damageMultiplier": 0.7, "backlashPercent": 0.30, "essenceExtraCost": 1.5, "note": "越1阶: 伤害×0.7, 30%反噬扣HP, 仙元消耗×1.5" },
-      "2": { "damageMultiplier": 0.4, "backlashPercent": 0.60, "essenceExtraCost": 2.0, "note": "越2阶: 伤害×0.4, 60%反噬扣HP, 仙元消耗×2.0" },
-      "3": { "damageMultiplier": 0.2, "backlashPercent": 0.85, "essenceExtraCost": 3.0, "note": "越3阶: 伤害×0.2, 85%反噬扣HP, 仙元消耗×3.0" },
-      "4": { "damageMultiplier": 0.1, "backlashPercent": 0.95, "essenceExtraCost": 5.0, "note": "越4阶+: 伤害×0.1, 95%反噬扣HP, 仙元消耗×5.0" }
+      "1": {
+        "damageMultiplier": 0.7,
+        "backlashPercent": 0.3,
+        "essenceExtraCost": 1.5,
+        "note": "越1阶: 伤害×0.7, 30%反噬扣HP, 仙元消耗×1.5"
+      },
+      "2": {
+        "damageMultiplier": 0.4,
+        "backlashPercent": 0.6,
+        "essenceExtraCost": 2,
+        "note": "越2阶: 伤害×0.4, 60%反噬扣HP, 仙元消耗×2.0"
+      },
+      "3": {
+        "damageMultiplier": 0.2,
+        "backlashPercent": 0.85,
+        "essenceExtraCost": 3,
+        "note": "越3阶: 伤害×0.2, 85%反噬扣HP, 仙元消耗×3.0"
+      },
+      "4": {
+        "damageMultiplier": 0.1,
+        "backlashPercent": 0.95,
+        "essenceExtraCost": 5,
+        "note": "越4阶+: 伤害×0.1, 95%反噬扣HP, 仙元消耗×5.0"
+      }
     }
   },
-
   "pathMatrix": {
     "_note": "15流派(L1-12+L2-3)克制关系。L1核心: 克制=1.3倍/被克=0.7倍。L2次要: 克制=1.15倍/被克=0.85倍。无克制=1.0。",
-    "_paths_L1": ["金道", "木道", "水道", "炎道", "土道", "风道", "雷道", "冰道", "力道", "魂道", "血道", "智道"],
-    "_paths_L2": ["光道", "暗道", "毒道"],
+    "_paths_L1": [
+      "金道",
+      "木道",
+      "水道",
+      "炎道",
+      "土道",
+      "风道",
+      "雷道",
+      "冰道",
+      "力道",
+      "魂道",
+      "血道",
+      "智道"
+    ],
+    "_paths_L2": [
+      "光道",
+      "暗道",
+      "毒道"
+    ],
     "matrix": {
-      "金道":   { "木道": 0.7, "炎道": 0.7, "风道": 1.3, "毒道": 0.85 },
-      "木道":   { "金道": 1.3, "土道": 0.7, "水道": 1.3, "毒道": 1.15, "暗道": 0.85 },
-      "水道":   { "炎道": 1.3, "木道": 0.7, "冰道": 0.7, "毒道": 1.15 },
-      "炎道":   { "金道": 1.3, "水道": 0.7, "木道": 1.3, "冰道": 1.3, "光道": 0.85 },
-      "土道":   { "木道": 1.3, "风道": 0.7, "金道": 0.7, "毒道": 0.85 },
-      "风道":   { "土道": 1.3, "金道": 0.7, "雷道": 0.7 },
-      "雷道":   { "水道": 1.3, "风道": 1.3, "土道": 0.7, "光道": 0.85 },
-      "冰道":   { "水道": 1.3, "炎道": 0.7, "力道": 1.3, "光道": 0.85 },
-      "力道":   { "智道": 1.3, "冰道": 0.7, "雷道": 0.7, "魂道": 1.15 },
-      "魂道":   { "智道": 1.3, "血道": 0.7, "力道": 0.7, "光道": 1.15, "暗道": 1.15 },
-      "血道":   { "魂道": 1.3, "智道": 0.7, "木道": 1.3, "光道": 0.85 },
-      "智道":   { "魂道": 0.7, "力道": 0.7, "血道": 1.3, "暗道": 1.15 },
-      "光道":   { "暗道": 1.3, "炎道": 1.15, "血道": 1.15, "魂道": 0.85, "冰道": 1.15, "雷道": 1.15 },
-      "暗道":   { "光道": 1.3, "木道": 1.15, "智道": 0.85, "魂道": 0.85 },
-      "毒道":   { "木道": 0.85, "水道": 0.85, "土道": 1.15, "金道": 1.15 }
+      "金道": {
+        "木道": 0.8,
+        "炎道": 0.8,
+        "风道": 1.25,
+        "毒道": 0.9
+      },
+      "木道": {
+        "金道": 1.25,
+        "土道": 0.8,
+        "水道": 1.25,
+        "毒道": 1.15,
+        "暗道": 0.9
+      },
+      "水道": {
+        "炎道": 1.25,
+        "木道": 0.8,
+        "冰道": 0.8,
+        "毒道": 1.15
+      },
+      "炎道": {
+        "金道": 1.25,
+        "水道": 0.8,
+        "木道": 1.25,
+        "冰道": 1.25,
+        "光道": 0.9
+      },
+      "土道": {
+        "木道": 1.25,
+        "风道": 0.8,
+        "金道": 0.8,
+        "毒道": 0.9
+      },
+      "风道": {
+        "土道": 1.25,
+        "金道": 0.8,
+        "雷道": 0.8
+      },
+      "雷道": {
+        "水道": 1.25,
+        "风道": 1.25,
+        "土道": 0.8,
+        "光道": 0.9
+      },
+      "冰道": {
+        "水道": 1.25,
+        "炎道": 0.8,
+        "力道": 1.25,
+        "光道": 0.9
+      },
+      "力道": {
+        "智道": 1.25,
+        "冰道": 0.8,
+        "雷道": 0.8,
+        "魂道": 1.15
+      },
+      "魂道": {
+        "智道": 1.25,
+        "血道": 0.8,
+        "力道": 0.8,
+        "光道": 1.15,
+        "暗道": 1.15
+      },
+      "血道": {
+        "魂道": 1.25,
+        "智道": 0.8,
+        "木道": 1.25,
+        "光道": 0.9
+      },
+      "智道": {
+        "魂道": 0.8,
+        "力道": 0.8,
+        "血道": 1.25,
+        "暗道": 1.15
+      },
+      "光道": {
+        "暗道": 1.25,
+        "炎道": 1.15,
+        "血道": 1.15,
+        "魂道": 0.9,
+        "冰道": 1.15,
+        "雷道": 1.15
+      },
+      "暗道": {
+        "光道": 1.25,
+        "木道": 1.15,
+        "智道": 0.9,
+        "魂道": 0.9
+      },
+      "毒道": {
+        "木道": 0.9,
+        "水道": 0.9,
+        "土道": 1.15,
+        "金道": 1.15
+      }
     }
   },
-
   "constants": {
-    "baseVariance": { "min": 0.85, "max": 1.15, "note": "伤害浮动范围" },
-    "critRate": { "base": 0.12, "multiplier": 1.5, "note": "v1.3: 基础暴击率12%(原5%过于鸡肋)，暴击伤害1.5倍" },
-    "defenseFactor": { "value": 0.5, "note": "DEF减伤系数：实际防御力=DEF×0.5" },
-    "accuracy": { "base": 70, "note": "基础命中值，hitRate=accuracy/(accuracy+evasion)" },
-    "evasion": { "base": 30, "note": "基础闪避值，minHitRate=10%, maxHitRate=95%" },
-    "minDamage": { "value": 1, "note": "伤害下限，保证每回合至少造成1点伤害" },
-    "escape": { "baseChance": 0.5, "levelBonus": 0.1, "note": "逃跑基础概率50%+境界优势×10%，境界劣势≥2不可逃跑" }
+    "baseVariance": {
+      "min": 0.85,
+      "max": 1.15,
+      "note": "伤害浮动范围"
+    },
+    "critRate": {
+      "base": 0.12,
+      "multiplier": 1.5,
+      "note": "v1.3: 基础暴击率12%(原5%过于鸡肋)，暴击伤害1.5倍"
+    },
+    "defenseFactor": {
+      "value": 0.5,
+      "note": "DEF减伤系数：实际防御力=DEF×0.5"
+    },
+    "accuracy": {
+      "base": 70,
+      "note": "基础命中值，hitRate=accuracy/(accuracy+evasion)"
+    },
+    "evasion": {
+      "base": 30,
+      "note": "基础闪避值，minHitRate=10%, maxHitRate=95%"
+    },
+    "minDamage": {
+      "value": 1,
+      "note": "伤害下限，保证每回合至少造成1点伤害"
+    },
+    "escape": {
+      "baseChance": 0.5,
+      "levelBonus": 0.1,
+      "note": "逃跑基础概率50%+境界优势×10%，境界劣势≥2不可逃跑"
+    }
+  },
+  "rankPressure": {
+    "note": "attackerRank - defenderRank, clamped to [-3, 3]. Used by v0.7.0-a deterministic battle tests.",
+    "table": {
+      "0": {
+        "damageMult": 1,
+        "hitBonus": 0
+      },
+      "1": {
+        "damageMult": 1.25,
+        "hitBonus": 10
+      },
+      "2": {
+        "damageMult": 1.75,
+        "hitBonus": 22
+      },
+      "3": {
+        "damageMult": 2.5,
+        "hitBonus": 35
+      },
+      "-3": {
+        "damageMult": 0.2,
+        "hitBonus": -35
+      },
+      "-2": {
+        "damageMult": 0.4,
+        "hitBonus": -22
+      },
+      "-1": {
+        "damageMult": 0.7,
+        "hitBonus": -10
+      }
+    }
+  },
+  "pathCounter": {
+    "note": "Light counter matrix. Normal advantage 1.15/0.90; strong advantage 1.25/0.80; final value clamped to 0.70-1.35.",
+    "min": 0.7,
+    "max": 1.35,
+    "default": 1
+  },
+  "daoResonance": {
+    "formula": "clamp(1 + log10(1 + attackerSamePathDaoMarks) * attackerLogCoeff - log10(1 + defenderRelevantDaoMarks) * defenderLogCoeff, min, max)",
+    "attackerLogCoeff": 0.08,
+    "defenderLogCoeff": 0.05,
+    "min": 0.75,
+    "max": 1.35
+  },
+  "resourceCost": {
+    "basicAttackEssencePct": 5,
+    "defendEssencePct": 3,
+    "escapeEssencePct": 2,
+    "defaultGuSkillEssencePct": 8,
+    "immortalGuDefaultEssence": 1,
+    "immortalGuOverreachCooldownTurns": 20
+  },
+  "escape": {
+    "baseChance": 0.5,
+    "rankDiffBonus": 0.1,
+    "overwhelmPenalty": -0.3,
+    "minChance": 0.05,
+    "maxChance": 0.85
+  },
+  "injury": {
+    "retreatInjuryChance": 0.25,
+    "defeatInjuryChance": 0.65,
+    "injurySeverity": [
+      "轻伤",
+      "重伤",
+      "濒死"
+    ]
+  },
+  "loot": {
+    "noDynamicPathKeys": true,
+    "defaultMaterialSource": "MaterialRegistry",
+    "enemyGuDropPolicy": "destroy_or_story_whitelist_only",
+    "maxBattleStoneValueRatio": 0.65
+  },
+  "battleTrace": {
+    "enabled": true,
+    "seedable": true,
+    "phases": [
+      "scout",
+      "initiative",
+      "action",
+      "counter",
+      "resource",
+      "pressure",
+      "event",
+      "morale_escape"
+    ]
   }
 }

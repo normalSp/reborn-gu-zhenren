@@ -9,6 +9,43 @@ const config = combatConfigRaw as any;
 const realmTable: Record<string, { playerDamageMult: number; playerHitBonus: number; enemyDamageMult: number; enemyHitPenalty: number }> = config.realmCoefficients?.table || {};
 const pathMatrix: Record<string, Record<string, number>> = config.pathMatrix?.matrix || {};
 const C = config.constants || {};
+const pathCounterConfig = config.pathCounter || {};
+const daoResonanceConfig = config.daoResonance || {};
+
+export interface CombatRng {
+  next(): number;
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, value));
+}
+
+function hashSeed(seed: string | number): number {
+  const text = String(seed);
+  let hash = 2166136261;
+  for (let i = 0; i < text.length; i += 1) {
+    hash ^= text.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+export function createSeededRng(seed: string | number): CombatRng {
+  let state = hashSeed(seed) || 0x6d2b79f5;
+  return {
+    next(): number {
+      state = Math.imul(state + 0x6d2b79f5, 1);
+      let t = state;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    },
+  };
+}
+
+function random01(rng?: CombatRng): number {
+  return rng ? rng.next() : Math.random();
+}
 
 /** 境界名称 → 数值映射 */
 export const REALM_NUM: Record<string, number> = {
@@ -74,7 +111,8 @@ export function getRealmCoefficients(playerRealmNum: number, enemyRealmNum: numb
 /** 流派克制倍率 */
 export function getPathMultiplier(attackerPath: string, defenderPath: string): number {
   const row = pathMatrix[attackerPath];
-  return row ? (row[defenderPath] ?? 1.0) : 1.0;
+  const value = row ? (row[defenderPath] ?? (pathCounterConfig.default ?? 1.0)) : (pathCounterConfig.default ?? 1.0);
+  return clamp(value, pathCounterConfig.min ?? 0.70, pathCounterConfig.max ?? 1.35);
 }
 
 /** 计算命中率 */
@@ -83,10 +121,20 @@ export function calcHitRate(baseAccuracy: number, baseEvasion: number, hitBonus:
 }
 
 /** 判断暴击 */
-export function rollCrit(): boolean { return Math.random() < (C.critRate?.base ?? 0.05); }
+export function rollCrit(rng?: CombatRng): boolean { return random01(rng) < (C.critRate?.base ?? 0.05); }
 
 /** 判断命中 */
-export function rollHit(hitRate: number): boolean { return Math.random() < hitRate; }
+export function rollHit(hitRate: number, rng?: CombatRng): boolean { return random01(rng) < hitRate; }
+
+export function calcDaoResonance(attackerDaoMarks: number = 0, defenderDaoMarks: number = 0): number {
+  const attackerCoeff = daoResonanceConfig.attackerLogCoeff ?? 0.08;
+  const defenderCoeff = daoResonanceConfig.defenderLogCoeff ?? 0.05;
+  const min = daoResonanceConfig.min ?? 0.75;
+  const max = daoResonanceConfig.max ?? 1.35;
+  const attackTerm = Math.log10(1 + Math.max(0, attackerDaoMarks)) * attackerCoeff;
+  const defenseTerm = Math.log10(1 + Math.max(0, defenderDaoMarks)) * defenderCoeff;
+  return clamp(1 + attackTerm - defenseTerm, min, max);
+}
 
 /**
  * 计算伤害
@@ -97,18 +145,17 @@ export function calcDamage(
   attackerPath: string, defenderPath: string,
   realmMult: number, moveMult: number, isCrit: boolean,
   attackerDaoMarks: number = 0, defenderDaoMarks: number = 0,
+  rng?: CombatRng,
 ): number {
   const defFactor = C.defenseFactor?.value ?? 0.5;
   const baseMin = C.baseVariance?.min ?? 0.85;
   const baseMax = C.baseVariance?.max ?? 1.15;
   const critMult = isCrit ? (C.critRate?.multiplier ?? 1.5) : 1.0;
   const minDmg = C.minDamage?.value ?? 1;
-  const attackDaoMult = 1.0 + (attackerDaoMarks / 5000);
-  const defenseDaoMult = 1.0 - (defenderDaoMarks / 15000);
-  const daoMarkMult = Math.max(0.5, Math.min(5.0, attackDaoMult * defenseDaoMult));
+  const daoMarkMult = calcDaoResonance(attackerDaoMarks, defenderDaoMarks);
   const raw = attackerAtk - defenderDef * defFactor;
   const pathMult = getPathMultiplier(attackerPath, defenderPath);
-  const variance = baseMin + Math.random() * (baseMax - baseMin);
+  const variance = baseMin + random01(rng) * (baseMax - baseMin);
   return Math.max(minDmg, Math.round(raw * pathMult * realmMult * moveMult * daoMarkMult * critMult * variance));
 }
 
