@@ -92,6 +92,26 @@ export interface SceneGatedGuUseContext {
   sceneTags?: string[];
 }
 
+export type ImmortalGuAuthorizationMode = 'owned' | 'borrowed' | 'scene_authorized' | 'blocked';
+
+export interface ImmortalGuUseContext {
+  realmGrand: number;
+  immortalEssenceCurrent?: number;
+  sceneAuthorized?: boolean;
+  borrowed?: boolean;
+  stableOwnership?: boolean;
+  uniqueConflict?: boolean;
+}
+
+export interface ImmortalGuUseValidation {
+  allowed: boolean;
+  reason?: string;
+  authorizationMode: ImmortalGuAuthorizationMode;
+  immortalEssenceCost: number;
+  spendPlayerImmortalEssence: boolean;
+  warnings: string[];
+}
+
 interface RegistryFile {
   entries: GuUseRegistryEntry[];
 }
@@ -137,6 +157,109 @@ export function shouldShowUseButton(entry: GuUseRegistryEntry): boolean {
 
 export function canUseFromNormalButton(entry: GuUseRegistryEntry): boolean {
   return ['direct', 'targeted', 'consumable'].includes(entry.useMode);
+}
+
+function isImmortalGuEntry(entry: GuUseRegistryEntry): boolean {
+  return !!entry.cost.immortalEssence
+    || entry.balanceTier.includes('immortal')
+    || entry.loreRef.includes('仙蛊');
+}
+
+export function validateImmortalGuBattleUse(
+  entry: GuUseRegistryEntry,
+  context: ImmortalGuUseContext,
+): ImmortalGuUseValidation {
+  const immortalEssenceCost = Math.max(0, entry.cost.immortalEssence || 0);
+  const isImmortal = isImmortalGuEntry(entry);
+  const hasTemporaryAuthorization = !!context.borrowed || !!context.sceneAuthorized;
+  const authorizationMode: ImmortalGuAuthorizationMode = context.sceneAuthorized
+    ? 'scene_authorized'
+    : context.borrowed
+      ? 'borrowed'
+      : 'owned';
+
+  if (!isImmortal) {
+    return {
+      allowed: true,
+      authorizationMode: 'owned',
+      immortalEssenceCost: 0,
+      spendPlayerImmortalEssence: false,
+      warnings: [],
+    };
+  }
+
+  if (entry.provenance === 'unknown') {
+    return {
+      allowed: false,
+      reason: `${entry.guName} 尚未完成来源审核，不允许作为仙蛊运行时使用。`,
+      authorizationMode: 'blocked',
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['unknown_provenance'],
+    };
+  }
+
+  if (entry.useMode === 'lore_only') {
+    return {
+      allowed: false,
+      reason: `${entry.guName} 只作原著/设计锚点登记，不能被玩家直接使用。`,
+      authorizationMode: 'blocked',
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['lore_only'],
+    };
+  }
+
+  if (context.uniqueConflict) {
+    return {
+      allowed: false,
+      reason: `${entry.guName} 触发仙蛊唯一性冲突，必须由剧情或引擎先解决归属。`,
+      authorizationMode: 'blocked',
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['unique_conflict'],
+    };
+  }
+
+  if (context.realmGrand < 6 && !hasTemporaryAuthorization) {
+    return {
+      allowed: false,
+      reason: `${entry.guName} 是仙蛊级资源。凡人不可稳定持有或随手动用，只能通过短借、见闻或剧情授权触发。`,
+      authorizationMode: 'blocked',
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['mortal_without_authorization'],
+    };
+  }
+
+  if (hasTemporaryAuthorization) {
+    return {
+      allowed: true,
+      authorizationMode,
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['temporary_authorization'],
+    };
+  }
+
+  if (immortalEssenceCost > 0 && (context.immortalEssenceCurrent || 0) < immortalEssenceCost) {
+    return {
+      allowed: false,
+      reason: `${entry.guName} 需要 ${immortalEssenceCost} 点仙元，当前仙元不足。`,
+      authorizationMode: 'blocked',
+      immortalEssenceCost,
+      spendPlayerImmortalEssence: false,
+      warnings: ['insufficient_immortal_essence'],
+    };
+  }
+
+  return {
+    allowed: true,
+    authorizationMode: 'owned',
+    immortalEssenceCost,
+    spendPlayerImmortalEssence: immortalEssenceCost > 0,
+    warnings: [],
+  };
 }
 
 export function getAllowedTargetTypesForRule(rule: GuUseTargetRule): GuUseTargetType[] {

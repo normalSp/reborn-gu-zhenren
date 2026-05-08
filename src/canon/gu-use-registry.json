@@ -596,6 +596,32 @@
       "balanceTier": "soul_consumable_scene"
     },
     {
+      "guName": "春秋蝉",
+      "useMode": "lore_only",
+      "targetRule": "self",
+      "cost": { "immortalEssence": 3 },
+      "cooldown": 0,
+      "consumesGu": false,
+      "effects": [
+        {
+          "type": "time_rebirth_anchor",
+          "path": "宙道",
+          "value": 1,
+          "description": "原著核心仙蛊与重生锚点，v0.7.0-a 只作设定登记，不开放普通按钮。"
+        }
+      ],
+      "sideEffects": [
+        {
+          "type": "flag",
+          "key": "spring_autumn_cicada_lore_only",
+          "description": "涉及天意、时间长河和重大剧情因果，必须由主线/剧情引擎白名单触发。"
+        }
+      ],
+      "loreRef": "canon-local:reverend-insanity.txt:春秋蝉为原著关键宙道仙蛊；lore-skill:强仙蛊不可按钮化、不可稳定滥用。",
+      "provenance": "canon",
+      "balanceTier": "immortal_time_rebirth_lore_only"
+    },
+    {
       "guName": "逆流护身印（设计锚点）",
       "useMode": "lore_only",
       "targetRule": "self_or_known_ally",

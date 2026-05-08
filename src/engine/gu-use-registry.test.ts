@@ -6,6 +6,7 @@ import {
   resolveGuUse,
   resolveSceneGatedGuUseSuggestion,
   shouldShowUseButton,
+  validateImmortalGuBattleUse,
   validateGuUseRegistry,
 } from './gu-use-registry';
 
@@ -86,6 +87,48 @@ describe('gu-use-registry', () => {
       { sceneValidated: true, sceneTags: ['同族'] },
     );
     expect(invalidTarget.success).toBe(false);
+  });
+
+  it('gates Immortal Gu behind realm, temporary authorization, essence cost, and lore-only rules', () => {
+    const hongYun = getGuUseEntry('鸿运齐天蛊');
+    const mortalUse = validateImmortalGuBattleUse(hongYun, {
+      realmGrand: 4,
+      immortalEssenceCurrent: 0,
+    });
+    expect(mortalUse.allowed).toBe(false);
+    expect(mortalUse.warnings).toContain('mortal_without_authorization');
+
+    const borrowedUse = validateImmortalGuBattleUse(hongYun, {
+      realmGrand: 4,
+      borrowed: true,
+      immortalEssenceCurrent: 0,
+    });
+    expect(borrowedUse.allowed).toBe(true);
+    expect(borrowedUse.authorizationMode).toBe('borrowed');
+    expect(borrowedUse.spendPlayerImmortalEssence).toBe(false);
+
+    const insufficientEssence = validateImmortalGuBattleUse(hongYun, {
+      realmGrand: 6,
+      immortalEssenceCurrent: 0,
+    });
+    expect(insufficientEssence.allowed).toBe(false);
+    expect(insufficientEssence.warnings).toContain('insufficient_immortal_essence');
+
+    const immortalUse = validateImmortalGuBattleUse(hongYun, {
+      realmGrand: 6,
+      immortalEssenceCurrent: 3,
+    });
+    expect(immortalUse.allowed).toBe(true);
+    expect(immortalUse.immortalEssenceCost).toBe(1);
+    expect(immortalUse.spendPlayerImmortalEssence).toBe(true);
+
+    const springAutumn = getGuUseEntry('春秋蝉');
+    const loreOnly = validateImmortalGuBattleUse(springAutumn, {
+      realmGrand: 9,
+      immortalEssenceCurrent: 99,
+    });
+    expect(loreOnly.allowed).toBe(false);
+    expect(loreOnly.warnings).toContain('lore_only');
   });
 
   it('requires registered Gu use entries to carry lore and balance metadata', () => {

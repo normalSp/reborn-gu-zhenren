@@ -2,7 +2,13 @@ import type { GuInstance, GuHungerState, LifeboundGu, LifeboundDeathPenalty, Tar
 import guDatabase from '../../canon/gu-database.json';
 import { getMaterialTotalQuantity, removeMaterialFromState } from '../../engine/economy-service';
 import { GU_HUNGER_CONFIG, getFeedingCreditRequirement, isNonMaterialFeeding, normalizeFeedCandidates } from '../../engine/feeding-rules';
-import { getGuUseEntry, resolveGuUse, type GuUseResult, type GuUseTarget } from '../../engine/gu-use-registry';
+import {
+  getGuUseEntry,
+  resolveGuUse,
+  validateImmortalGuBattleUse,
+  type GuUseResult,
+  type GuUseTarget,
+} from '../../engine/gu-use-registry';
 
 export { GU_HUNGER_CONFIG } from '../../engine/feeding-rules';
 
@@ -310,13 +316,36 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
     }
     if (!result.success) return result;
 
-    if (entry.cost.essencePct && fullStore.vitals?.essence) {
-      const essence = fullStore.vitals.essence;
+    const essence = fullStore.vitals?.essence;
+    const realmGrand = Number(fullStore.profile?.realm?.grand || (fullStore.aperture?.type === 'immortal' ? 6 : 1));
+    const immortalGate = validateImmortalGuBattleUse(entry, {
+      realmGrand,
+      immortalEssenceCurrent: fullStore.vitals?.essenceType === 'immortal' ? Number(essence?.current || 0) : 0,
+      stableOwnership: true,
+    });
+    if (!immortalGate.allowed) {
+      return {
+        ...result,
+        success: false,
+        message: immortalGate.reason || `${entry.guName} 未通过仙蛊使用校验。`,
+      };
+    }
+
+    let nextEssenceCurrent = essence?.current;
+    if (entry.cost.essencePct && essence && nextEssenceCurrent !== undefined) {
       const cost = Math.ceil(essence.max * entry.cost.essencePct / 100);
-      if (essence.current < cost) {
+      if (nextEssenceCurrent < cost) {
         return { ...result, success: false, message: `${entry.guName} 需要 ${cost} 真元，当前不足。` };
       }
-      fullStore.setEssence?.(essence.current - cost, essence.max);
+      nextEssenceCurrent -= cost;
+    }
+
+    if (immortalGate.spendPlayerImmortalEssence && essence && nextEssenceCurrent !== undefined) {
+      nextEssenceCurrent -= immortalGate.immortalEssenceCost;
+    }
+
+    if (essence && nextEssenceCurrent !== undefined && nextEssenceCurrent !== essence.current) {
+      fullStore.setEssence?.(nextEssenceCurrent, essence.max);
     }
 
     for (const [attr, delta] of Object.entries(result.attributeDeltas)) {
