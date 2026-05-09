@@ -2,6 +2,7 @@ import type { GuInstance, GuHungerState, LifeboundGu, LifeboundDeathPenalty, Tar
 import guDatabase from '../../canon/gu-database.json';
 import { getMaterialTotalQuantity, removeMaterialFromState } from '../../engine/economy-service';
 import { GU_HUNGER_CONFIG, getFeedingCreditRequirement, isNonMaterialFeeding, normalizeFeedCandidates } from '../../engine/feeding-rules';
+import { applyGuFeedCostModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
 import {
   getGuUseEntry,
   resolveGuUse,
@@ -497,12 +498,46 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
         return false;
       }
 
-      const spendResult = removeMaterialFromState(fullStore, materialItemName, 1);
-      if (!spendResult.ok || !spendResult.patch) {
-        console.warn(`[GuSlice] 食料扣除失败! 需要${materialItemName}`);
-        return false;
+      const feedQuote = applyGuFeedCostModifiers(1, {
+        store: fullStore,
+        operation: 'feeding',
+        path: gu.path,
+        tier: gu.tier,
+        guName: gu.name,
+        itemName: materialItemName,
+      });
+      const progressKey = 'material_feeding';
+      const currentProgress = Number(fullStore.feedingDiscountProgress?.[progressKey] || 0);
+      const nextProgressRaw = currentProgress + feedQuote.savedUnits;
+      const discountCoversThisFeed = feedQuote.breakdown.length > 0 && nextProgressRaw >= 1;
+      const nextProgress = discountCoversThisFeed ? nextProgressRaw - 1 : nextProgressRaw;
+
+      if (!discountCoversThisFeed) {
+        const spendResult = removeMaterialFromState(fullStore, materialItemName, 1);
+        if (!spendResult.ok || !spendResult.patch) {
+          console.warn(`[GuSlice] 食料扣除失败! 需要${materialItemName}`);
+          return false;
+        }
+        set(spendResult.patch as any);
       }
-      set(spendResult.patch as any);
+
+      if (feedQuote.breakdown.length > 0) {
+        const latestStore = get() as any;
+        set({
+          feedingDiscountProgress: {
+            ...(latestStore.feedingDiscountProgress || {}),
+            [progressKey]: Number(Math.max(0, nextProgress).toFixed(4)),
+          },
+        } as any);
+        if (discountCoversThisFeed && typeof fullStore.addGameLog === 'function') {
+          fullStore.addGameLog('gu', `喂养节流生效：${gu.name} 本次未消耗 ${materialItemName}`, {
+            guId,
+            guName: gu.name,
+            materialItemName,
+            modifiers: formatModifierBreakdown(feedQuote.breakdown),
+          });
+        }
+      }
     } else if (!isNonMaterialFeeding(requiredType)) {
       console.warn(`[GuSlice] 未登记食料映射! feedRequirement=${requiredType}, guName=${gu.name}`);
       return false;

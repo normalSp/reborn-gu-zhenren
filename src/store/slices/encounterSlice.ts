@@ -101,6 +101,8 @@ export const createEncounterSlice = (set: any, get: any): EncounterSlice => {
         currentDomain,
         currentLocation,
         hasGu,
+        Math.random,
+        { store: get(), operation: 'encounter' },
       );
 
       if (!result.triggered || !result.template) return;

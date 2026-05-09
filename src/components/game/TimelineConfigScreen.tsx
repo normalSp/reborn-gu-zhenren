@@ -6,7 +6,7 @@ import factionDataRaw from '../../canon/faction-data.json';
 import guDbRaw from '../../canon/gu-database.json';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { getRuntimePathNames } from '../../engine/path-registry';
-import { getModifierLabelsForSource } from '../../engine/modifier-engine';
+import { getModifierCoverageRowsForSource, type ModifierCoverageStatus } from '../../engine/modifier-engine';
 import type { TimelineNode, LifeboundGuSelection, GuSelection, KillerMoveSelection, FactionSelection } from '../../store/slices/timelineSlice';
 
 interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> }; }
@@ -35,6 +35,37 @@ const STEP_LABELS: Record<Step, string> = {
   talent: '天赋遴选', faction: '势力归属', gu: '初始蛊虫',
   lifebound: '本命蛊', aperture: '洞天福地', killermove: '初始杀招', resource: '资源确认',
 };
+
+const COVERAGE_STATUS_LABELS: Record<ModifierCoverageStatus, string> = {
+  runtime_active: '运行时生效',
+  creation_only: '创建时生效',
+  registered_unconsumed: '已登记未消费',
+  planned_needs_system: '待系统',
+  narrative_only: '叙事效果',
+  needs_downgrade: '需降级',
+};
+
+const COVERAGE_STATUS_CLASS: Record<ModifierCoverageStatus, string> = {
+  runtime_active: 'border-rg-jade-400/25 bg-rg-jade-500/10 text-rg-jade-300',
+  creation_only: 'border-rg-gold/25 bg-rg-gold/10 text-rg-gold/80',
+  registered_unconsumed: 'border-rg-gold/20 bg-rg-gold/10 text-rg-gold/65',
+  planned_needs_system: 'border-rg-paper-200/15 bg-rg-ink-700/45 text-rg-paper-200/55',
+  narrative_only: 'border-rg-paper-200/10 bg-rg-ink-700/35 text-rg-paper-200/45',
+  needs_downgrade: 'border-rg-blood-500/25 bg-rg-blood-500/10 text-rg-blood-400',
+};
+
+function renderCoverageRows(rows: ReturnType<typeof getModifierCoverageRowsForSource>) {
+  if (!rows.length) return null;
+  return (
+    <div className="mt-2 flex flex-wrap gap-1">
+      {rows.slice(0, 5).map((row, idx) => (
+        <span key={`${row.status}-${idx}`} className={`rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${COVERAGE_STATUS_CLASS[row.status]}`}>
+          {COVERAGE_STATUS_LABELS[row.status]}：{row.claim}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 // ─── 确定性伪随机 ───
 function seedRand(seed: number): () => number {
@@ -419,7 +450,12 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                 const isSelected = timelineTalents.includes(talent.id);
                 const cost = P4_TALENT_COST[talent.tier] || 1;
                 const canAfford = !isSelected && cost <= remainingPoints;
-                const modifierLabels = getModifierLabelsForSource('talent', talent.id);
+                const coverageRows = getModifierCoverageRowsForSource('talent', talent.id, [
+                  ...(talent.benefits ?? []),
+                  ...(talent.costs ?? []),
+                  talent.triggerScene ?? '',
+                  talent.effectRange ?? '',
+                ]);
                 return (
                   <button key={talent.id} onClick={() => handleSelectTalent(talent)}
                     disabled={!isSelected && !canAfford}
@@ -445,11 +481,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     <p className="text-rg-paper-200/50 text-[11px] font-panel leading-relaxed">
                       {talent.description}
                     </p>
-                    {modifierLabels.length > 0 && (
-                      <p className="text-rg-jade-400/65 text-[10px] font-panel mt-1">
-                        已接入：{modifierLabels.join('、')}
-                      </p>
-                    )}
+                    {renderCoverageRows(coverageRows)}
                     {talent.triggerScene && (
                       <p className="text-rg-gold/40 text-[10px] font-panel mt-1">
                         触发: {talent.triggerScene} {talent.effectRange ? `| ${talent.effectRange}` : ''}
@@ -471,7 +503,12 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
             <div className="grid grid-cols-1 gap-2 max-h-[55vh] overflow-y-auto pr-2">
               {[...(FACTION_DATA[selectedNode.domain] || []), ...(FACTION_DATA['散修'] || [])].map((f: FactionEntry) => {
                 const isSelected = factionId === f.id;
-                const modifierLabels = getModifierLabelsForSource('faction', f.id);
+                const coverageRows = getModifierCoverageRowsForSource('faction', f.id, [
+                  f.bonus?.desc ?? '',
+                  f.starterGu ? `保底：${f.starterGu.name}` : '',
+                  f.bonus?.talentBonus ? `天赋点+${f.bonus.talentBonus}` : '',
+                  f.bonus?.resourceMult && f.bonus.resourceMult !== 1 ? `初始资源×${f.bonus.resourceMult}` : '',
+                ]);
                 return (
                   <button key={f.id} onClick={() => store.selectFaction({
                     factionId: f.id, factionName: f.name, domain: f.domain,
@@ -488,11 +525,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     </div>
                     <p className="text-rg-paper-200/50 text-[11px] font-panel">{f.description}</p>
                     <p className="text-rg-paper-200/30 text-[10px] font-panel mt-1">{f.bonus.desc}</p>
-                    {modifierLabels.length > 0 && (
-                      <p className="text-rg-jade-400/65 text-[10px] font-panel mt-1">
-                        已接入：{modifierLabels.join('、')}
-                      </p>
-                    )}
+                    {renderCoverageRows(coverageRows)}
                   </button>
                 );
               })}

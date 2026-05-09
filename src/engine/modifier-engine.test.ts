@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyMaterialArrayCostModifiers,
+  applyEncounterRiskModifiers,
+  applyGuFeedCostModifiers,
   applyMerchantPrice,
   applyRefineMaterialCostModifiers,
   applyRefineSuccessModifiers,
   applyRefineTimeModifiers,
+  getModifierCoverageRowsForSource,
   getSelectedTalentIds,
 } from './modifier-engine';
 
@@ -108,5 +111,38 @@ describe('modifier-engine', () => {
 
     expect(withoutKit.value).toBeCloseTo(0.5);
     expect(withKit.value).toBeCloseTo(0.55);
+  });
+
+  it('banks gu feeding discounts as fractional saved food units', () => {
+    const quote = applyGuFeedCostModifiers(1, {
+      store: makeStore({ selectedTalents: ['t_thrifty'] }),
+      operation: 'feeding',
+      guName: '酒虫',
+      itemName: '美酒',
+    });
+
+    expect(quote.multiplier).toBeCloseTo(0.95);
+    expect(quote.savedUnits).toBeCloseTo(0.05);
+    expect(quote.breakdown.map((entry) => entry.sourceId)).toContain('t_thrifty');
+  });
+
+  it('applies encounter risk modifiers to trigger chance', () => {
+    const quote = applyEncounterRiskModifiers(0.45, {
+      store: makeStore({ flags: { _faction: 'mojia_oasis' } }),
+      operation: 'encounter',
+    });
+
+    expect(quote.riskMultiplier).toBeCloseTo(0.85);
+    expect(quote.triggerChance).toBeCloseTo(0.3825);
+  });
+
+  it('classifies displayed promises that still need a subsystem', () => {
+    const rows = getModifierCoverageRowsForSource('talent', 't_thrifty', [
+      '蛊虫喂养消耗-5%',
+      '采集成功率+15%',
+    ]);
+
+    expect(rows.some((row) => row.status === 'runtime_active' && row.claim.includes('喂养'))).toBe(true);
+    expect(rows.some((row) => row.status === 'planned_needs_system' && row.claim.includes('采集'))).toBe(true);
   });
 });

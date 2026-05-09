@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import combatConfigRaw from '../canon/combat-config.json';
 import { SAVE_FORMAT_VERSION } from '../store/initialState';
-import { normalizePartyState } from '../store';
+import { migrateSave, normalizePartyState } from '../store';
 
 const combatConfig = combatConfigRaw as any;
 
@@ -14,7 +14,7 @@ describe('v0.7.0-b squad data source', () => {
   });
 
   it('bumps save format for persistent party fields', () => {
-    expect(SAVE_FORMAT_VERSION).toBe(14);
+    expect(SAVE_FORMAT_VERSION).toBe(15);
   });
 
   it('normalizes older party saves into the v0.7.0-b shape', () => {
@@ -26,6 +26,17 @@ describe('v0.7.0-b squad data source', () => {
     expect(migrated.lastUpdatedTurn).toBe(42);
     expect(migrated.memberCooldowns).toEqual({});
     expect(migrated.memberRolePausedUntil).toEqual({});
+  });
+
+  it('migrates feeding discount progress for old saves', () => {
+    const migrated = migrateSave({
+      formatVersion: 14,
+      timestamp: '2026-05-09T00:00:00.000Z',
+      state: { turn: 1 },
+    } as any);
+
+    expect(migrated.formatVersion).toBe(SAVE_FORMAT_VERSION);
+    expect((migrated.state as any).feedingDiscountProgress).toEqual({});
   });
 
   it('rejects non-canon squad formation values during migration', () => {

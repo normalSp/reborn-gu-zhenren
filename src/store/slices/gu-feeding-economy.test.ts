@@ -52,6 +52,25 @@ describe('v0.7.0-pre gu feeding economy loop', () => {
     expect(harness.state.inventory[0]).toMatchObject({ currentState: 'optimal', hungerCounter: 2 });
   });
 
+  it('lets feeding cost modifiers bank fractional food savings', () => {
+    const harness = createHarness({
+      currency: 999,
+      selectedTalents: ['t_thrifty'],
+      feedingDiscountProgress: { material_feeding: 0.95 },
+      materialBag: { 美酒: 1 },
+      inventory: [makeGu()],
+      guHungerCounters: { gu_wine_test: 12 },
+    });
+
+    const ok = harness.state.feedGuHunger('gu_wine_test');
+
+    expect(ok).toBe(true);
+    expect(harness.state.currency).toBe(999);
+    expect(harness.state.materialBag).toEqual({ 美酒: 1 });
+    expect(harness.state.feedingDiscountProgress.material_feeding).toBeCloseTo(0);
+    expect(harness.state.inventory[0]).toMatchObject({ currentState: 'optimal', hungerCounter: 2 });
+  });
+
   it('does not restore hunger when the registered food is missing', () => {
     const harness = createHarness({
       currency: 999,

@@ -15,6 +15,7 @@ import type {
   EncounterType,
   EncounterCooldown,
 } from '../types/encounter';
+import { applyEncounterRiskModifiers, type ModifierContext } from './modifier-engine';
 
 // ─── 类型权重配置 ───
 const TYPE_WEIGHTS: Record<EncounterType, number> = {
@@ -57,7 +58,12 @@ export function checkAndTriggerEncounter(
   currentLocation: string,
   hasGu: boolean,
   seed: () => number = Math.random,
+  modifierContext: ModifierContext = {},
 ): EncounterTriggerResult {
+  const riskQuote = applyEncounterRiskModifiers(BASE_TRIGGER_CHANCE, {
+    ...modifierContext,
+    operation: 'encounter',
+  });
   // ═══ 步骤1: 区域过滤 — 按当前域过滤模板 ═══
   const chapterTemplates = templates.filter(
     t => t.triggerConditions.region === currentDomain
@@ -106,6 +112,11 @@ export function checkAndTriggerEncounter(
   const locationLower = currentLocation.toLowerCase();
   const scored = eligibleFiltered.map(t => {
     let score = TYPE_WEIGHTS[t.type] || 10;
+    if (t.type === 'danger') {
+      score *= riskQuote.riskMultiplier;
+    } else if ((t.type === 'rest' || t.type === 'opportunity') && riskQuote.riskMultiplier < 1) {
+      score *= 1 + (1 - riskQuote.riskMultiplier) * 0.25;
+    }
     // 位置关键词匹配加分
     const keywords = t.triggerConditions.locationKeyword;
     const hasKeywordMatch = keywords.some(kw => {
@@ -133,7 +144,7 @@ export function checkAndTriggerEncounter(
 
   // ═══ 步骤6: 概率判定 ═══
   const triggerRoll = seed();
-  if (triggerRoll > BASE_TRIGGER_CHANCE) {
+  if (triggerRoll > riskQuote.triggerChance) {
     return { triggered: false, reason: 'probability_check_failed' };
   }
 

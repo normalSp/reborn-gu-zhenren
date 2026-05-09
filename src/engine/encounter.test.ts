@@ -126,6 +126,17 @@ describe('encounter-injector', () => {
       expect(result.triggered).toBe(false);
       expect(result.reason).toBe('probability_check_failed');
     });
+
+    it('should apply encounter risk modifiers before triggering', () => {
+      const result = checkAndTriggerEncounter(
+        templates, 'test_chapter', 3, 10,
+        {}, 100, [], {}, '南疆', '青茅山', true,
+        fixedSeeder([0.01, 0.40]), // base 0.45 would pass, Mojia 0.3825 should fail
+        { store: { flags: { _faction: 'mojia_oasis' }, selectedTalents: [] }, operation: 'encounter' },
+      );
+      expect(result.triggered).toBe(false);
+      expect(result.reason).toBe('probability_check_failed');
+    });
   });
 
   describe('checkAndTriggerEncounter - 元石/蛊虫要求', () => {

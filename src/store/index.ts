@@ -147,6 +147,7 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   }
 
   if (s.feedingCredits === undefined) s.feedingCredits = {};
+  if (s.feedingDiscountProgress === undefined) s.feedingDiscountProgress = {};
   if (s.targetedGuEffects === undefined) s.targetedGuEffects = [];
   if (s.rumorLocations === undefined) s.rumorLocations = [];
   if (s.materialShelf === undefined) {
@@ -479,6 +480,8 @@ export const useStore = create<RootStore>()(
           if (merged.duelState && !VALID_PHASES.includes(merged.duelState.phase)) {
             merged.duelState = { ...merged.duelState, phase: 'player_turn' };
           }
+          if (merged.feedingCredits === undefined) merged.feedingCredits = {};
+          if (merged.feedingDiscountProgress === undefined) merged.feedingDiscountProgress = {};
           merged.partyState = normalizePartyState(merged.partyState, merged.turn ?? 0);
           return merged;
         },
@@ -486,6 +489,8 @@ export const useStore = create<RootStore>()(
           if (persistedState) {
             if (persistedState.npcContacts === undefined) persistedState.npcContacts = [];
             if (persistedState.targetedGuEffects === undefined) persistedState.targetedGuEffects = [];
+            if (persistedState.feedingCredits === undefined) persistedState.feedingCredits = {};
+            if (persistedState.feedingDiscountProgress === undefined) persistedState.feedingDiscountProgress = {};
             if (persistedState.gameLog === undefined) persistedState.gameLog = [];
             if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);

@@ -106,6 +106,8 @@ interface PlayerSlice extends PlayerState {
   materialBag: Record<string, number>;
   /** v0.7.0-pre: non-material feeding credits, e.g. 虚情假意. */
   feedingCredits: Record<string, number>;
+  /** v0.7.0 P1: fractional material feeding discounts banked until one food unit can be saved. */
+  feedingDiscountProgress: Record<string, number>;
   /** P4: 蛊材物资袋容量（随境界增长） */
   materialBagCapacity: number;
   /** P4: 获取当前物资袋容量 */
@@ -209,6 +211,8 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   deathRecord: null,
   heavenlyLand: null,
   materialBag: {},
+  feedingCredits: {},
+  feedingDiscountProgress: {},
   materialBagCapacity: 20,
   gameTime: { ap: 3, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' },
 

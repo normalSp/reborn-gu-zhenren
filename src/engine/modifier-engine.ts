@@ -28,6 +28,14 @@ export type ModifierEffectKind =
   | 'combat_stat_mult'
   | 'attribute_add';
 
+export type ModifierCoverageStatus =
+  | 'runtime_active'
+  | 'creation_only'
+  | 'registered_unconsumed'
+  | 'planned_needs_system'
+  | 'narrative_only'
+  | 'needs_downgrade';
+
 export interface ModifierEffect {
   kind: ModifierEffectKind;
   value: number;
@@ -59,6 +67,12 @@ export interface ResolvedModifier {
 
 export interface ModifierQuote {
   breakdown: ResolvedModifier[];
+}
+
+export interface ModifierCoverageRow {
+  claim: string;
+  status: ModifierCoverageStatus;
+  evidence: string;
 }
 
 type ModifierRecord = {
@@ -179,6 +193,76 @@ export function getModifierLabelsForSource(sourceType: 'faction' | 'talent' | 'i
   return record.effects.map((effect) => effect.label ?? record.description ?? record.displayName ?? sourceId);
 }
 
+export function getModifierCoverageRowsForSource(
+  sourceType: 'faction' | 'talent' | 'item',
+  sourceId: string,
+  displayClaims: string[] = [],
+): ModifierCoverageRow[] {
+  const table = sourceType === 'faction'
+    ? REGISTRY.factions
+    : sourceType === 'talent'
+      ? REGISTRY.talents
+      : REGISTRY.items;
+  const record = table?.[sourceId];
+  const rows: ModifierCoverageRow[] = [];
+  const runtimeLabels = new Set<string>();
+
+  for (const effect of record?.effects ?? []) {
+    const label = effect.label ?? record?.description ?? record?.displayName ?? sourceId;
+    runtimeLabels.add(label);
+    rows.push({
+      claim: label,
+      status: 'runtime_active',
+      evidence: `modifier-registry:${sourceType}:${sourceId}:${effect.kind}`,
+    });
+  }
+
+  for (const rawClaim of displayClaims) {
+    const claim = String(rawClaim || '').trim();
+    if (!claim) continue;
+    if ([...runtimeLabels].some(label => label.includes(claim) || claim.includes(label))) continue;
+    rows.push(classifyDisplayClaim(claim, sourceType, sourceId));
+  }
+
+  return rows;
+}
+
+function classifyDisplayClaim(claim: string, sourceType: ModifierSourceType | 'faction' | 'talent' | 'item', sourceId: string): ModifierCoverageRow {
+  const creationOnly = /初始|天赋点|资质|体魄|心智|气运|寿命上限|资源×|资源x|资源X|保底/.test(claim);
+  if (creationOnly) {
+    return {
+      claim,
+      status: 'creation_only',
+      evidence: `${sourceType}:${sourceId}:character_creation`,
+    };
+  }
+
+  const narrativeOnly = /身份|名声|性格|倾向|关系|叙事|风格|来历|道心倾向/.test(claim);
+  if (narrativeOnly && !/[+\-]\d|成功率|概率|折扣|消耗|恢复|产出|风险|收益|速度|伤害|防御|命中|逃跑/.test(claim)) {
+    return {
+      claim,
+      status: 'narrative_only',
+      evidence: `${sourceType}:${sourceId}:lore_or_narrative`,
+    };
+  }
+
+  const plannedNeedsSystem = /修行|突破|仙窍|资源节点|产出|灾劫|陷阱|伏击|侦察|采集|鉴定|夜间|白天|逃跑|先手|杀招|战斗|道痕|洞天|阵法|恢复|反噬|伤势|毒|警戒|机会/.test(claim);
+  if (plannedNeedsSystem) {
+    return {
+      claim,
+      status: 'planned_needs_system',
+      evidence: `${sourceType}:${sourceId}:planned-needs-system`,
+    };
+  }
+
+  const numericButUnknown = /[+\-]\d|×\d|x\d|X\d|%|概率|成功率|折扣|消耗|恢复|风险|收益|速度|伤害|防御|命中|逃跑/.test(claim);
+  return {
+    claim,
+    status: numericButUnknown ? 'needs_downgrade' : 'narrative_only',
+    evidence: `${sourceType}:${sourceId}:coverage-audit`,
+  };
+}
+
 function filterModifiers(modifiers: ResolvedModifier[], kind: ModifierEffectKind): ResolvedModifier[] {
   return modifiers.filter((modifier) => modifier.effect.kind === kind);
 }
@@ -255,6 +339,36 @@ export function applyMerchantPrice(
   return {
     price: Math.max(1, Math.round(basePrice * multiplier)),
     multiplier,
+    breakdown,
+  };
+}
+
+export function applyGuFeedCostModifiers(
+  baseUnits: number,
+  context: ModifierContext,
+): { effectiveUnits: number; multiplier: number; savedUnits: number; breakdown: ResolvedModifier[] } {
+  const breakdown = filterModifiers(resolveActiveModifiers({ ...context, operation: 'feeding' }), 'gu_feed_cost_mult');
+  const rawMultiplier = breakdown.reduce((acc, modifier) => acc * modifier.effect.value, 1);
+  const multiplier = clamp(rawMultiplier, 0.5, 1.5);
+  const effectiveUnits = Math.max(0, baseUnits * multiplier);
+  return {
+    effectiveUnits,
+    multiplier,
+    savedUnits: Math.max(0, baseUnits - effectiveUnits),
+    breakdown,
+  };
+}
+
+export function applyEncounterRiskModifiers(
+  baseTriggerChance: number,
+  context: ModifierContext,
+): { triggerChance: number; riskMultiplier: number; breakdown: ResolvedModifier[] } {
+  const breakdown = filterModifiers(resolveActiveModifiers({ ...context, operation: 'encounter' }), 'encounter_risk_mult');
+  const rawMultiplier = breakdown.reduce((acc, modifier) => acc * modifier.effect.value, 1);
+  const riskMultiplier = clamp(rawMultiplier, 0.5, 1.5);
+  return {
+    triggerChance: clamp(baseTriggerChance * riskMultiplier, 0, 0.95),
+    riskMultiplier,
     breakdown,
   };
 }
