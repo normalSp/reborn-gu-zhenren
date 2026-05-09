@@ -18,6 +18,26 @@
         "bonus": { "resourceMult": 1.0, "talentBonus": 0, "desc": "无特殊加成，家族基础配置" }
       },
       {
+        "id": "xiongjia_zhai",
+        "name": "熊家寨",
+        "domain": "南疆",
+        "type": "青茅山家族势力",
+        "standing": 0,
+        "description": "青茅山前山熊家寨，以力道和猎场磨炼见长。熊力蛊是熊家标志蛊虫之一，族人重体魄、重猎战，也受三寨格局和狼潮威胁牵制。",
+        "starterGu": { "name": "熊力蛊", "tier": 1, "path": "力道", "rank": "common" },
+        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，初始体魄+1", "attributeBonus": { "体魄": 1 } }
+      },
+      {
+        "id": "baijia_zhai",
+        "name": "白家寨",
+        "domain": "南疆",
+        "type": "青茅山家族势力",
+        "standing": 0,
+        "description": "青茅山后山白家寨，依溪瀑和山势立寨，与古月、熊家共同构成青茅山三寨格局。当前作为原著本地势力入口，专属长线剧情留到v0.8深化。",
+        "starterGu": null,
+        "bonus": { "resourceMult": 1.0, "talentBonus": 0, "desc": "无直接保底蛊，获得青茅山本地身份与后续白家寨深线入口" }
+      },
+      {
         "id": "shangjia",
         "name": "商家",
         "domain": "南疆",
@@ -31,11 +51,11 @@
         "id": "wujia",
         "name": "武家",
         "domain": "南疆",
-        "type": "战斗家族",
+        "type": "正道超级势力边支",
         "standing": 0,
-        "description": "擅力道，以战养族。族人自幼习武，体魄过人，在南疆以武力震慑四方。",
-        "starterGu": { "name": "熊力蛊", "tier": 1, "path": "力道", "rank": "common" },
-        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，初始体魄+1", "attributeBonus": { "体魄": 1 } }
+        "description": "南疆正道超级势力之一。武家不再混用熊家力道设定，当前按边支、外务、风道启蒙与正道权势压力处理。",
+        "starterGu": null,
+        "bonus": { "resourceMult": 1.0, "talentBonus": 1, "desc": "天赋点+1，风道/外务深线入口；一转阶段不直接发放越阶风道蛊" }
       },
       {
         "id": "tiejia",

@@ -46,6 +46,7 @@ export interface FactionSelection {
   factionId: string;
   factionName: string;
   domain: string;
+  startProfileId?: string;
   starterGu: { name: string; tier: number; path: string; rank: string } | null;
   bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> };
 }
@@ -106,6 +107,7 @@ interface TimelineSlice {
 
   // v1.6: 新增字段
   factionId: string;
+  startProfileId: string;
   factionBonus: FactionSelection['bonus'] | null;
   guaranteedGu: GuSelection | null;
   randomGuPool: GuSelection[];
@@ -140,6 +142,7 @@ interface TimelineSlice {
     lifeboundGu: LifeboundGuSelection | null; apertureConfig: ApertureConfig | null;
     startingYuanStone: number; startingGuList: TimelineSlice['startingGuList'];
     factionId: string; factionBonus: FactionSelection['bonus'] | null;
+    startProfileId: string;
     guaranteedGu: GuSelection | null; selectedGuList: GuSelection[];
     selectedKillerMoves: KillerMoveSelection[];
   };
@@ -159,6 +162,7 @@ const initialState = {
   configStep: 'faction' as const,
   // v1.6: 新增
   factionId: '',
+  startProfileId: '',
   factionBonus: null as FactionSelection['bonus'] | null,
   guaranteedGu: null as GuSelection | null,
   randomGuPool: [] as GuSelection[],
@@ -192,6 +196,7 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
       startingYuanStone: 0,
       startingGuList: [],
       factionId: '',
+      startProfileId: '',
       factionBonus: null,
       guaranteedGu: null,
       randomGuPool: [],
@@ -224,6 +229,7 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
   // v1.6: 新 actions
   selectFaction: (selection) => set({
     factionId: selection.factionId,
+    startProfileId: selection.startProfileId || '',
     factionBonus: selection.bonus,
     guaranteedGu: selection.starterGu ? {
       name: selection.starterGu.name, tier: selection.starterGu.tier,
@@ -258,6 +264,7 @@ export const createTimelineSlice = (set: any, get: any): TimelineSlice => ({
       lifeboundGu: s.lifeboundGu, apertureConfig: s.apertureConfig,
       startingYuanStone: s.startingYuanStone, startingGuList: s.startingGuList,
       factionId: s.factionId, factionBonus: s.factionBonus,
+      startProfileId: s.startProfileId,
       guaranteedGu: s.guaranteedGu, selectedGuList: s.selectedGuList,
       selectedKillerMoves: s.selectedKillerMoves,
       primaryPath: s.primaryPath, secondaryPath: s.secondaryPath,

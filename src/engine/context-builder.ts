@@ -177,6 +177,21 @@ function injectChapterConstraints(store: RootStore): string {
   }
 
   const lines: string[] = ['', '【当前章节约束】'];
+  const flags = s.flags || {};
+  const routedLocation = flags._start_location;
+  const routedLocationText = typeof routedLocation === 'string'
+    ? routedLocation
+    : routedLocation
+      ? `${routedLocation.region || currentDomain} · ${routedLocation.area || routedLocation.name || ''}`
+      : '';
+  const routedAccessible = Array.isArray(flags._start_accessible_locations)
+    ? flags._start_accessible_locations
+    : [];
+  const routedRole = flags._start_role;
+  const routedPremise = flags._start_opening_premise;
+  const routedLocks = Array.isArray(flags._start_prompt_locks)
+    ? flags._start_prompt_locks
+    : [];
 
   // 位置约束
   if (chapterDef.position) {
@@ -184,6 +199,19 @@ function injectChapterConstraints(store: RootStore): string {
     if (chapterDef.position.accessibleLocations?.length > 0) {
       lines.push(`- 可前往地点：${chapterDef.position.accessibleLocations.join('、')}`);
     }
+  }
+
+  if (routedLocationText || routedRole || routedPremise || routedLocks.length > 0) {
+    lines.push('- 开局身份路由优先级：高于章节默认位置。若与章节默认位置冲突，以开局身份路由为准。');
+    if (routedLocationText) {
+      lines.push(`- 路由出生地：${routedLocationText}`);
+      if (routedAccessible.length > 0) {
+        lines.push(`- 路由可活动地点：${routedAccessible.join('、')}`);
+      }
+    }
+    if (routedRole) lines.push(`- 玩家开局身份：${routedRole}`);
+    if (routedPremise) lines.push(`- 开局叙事前提：${routedPremise}`);
+    for (const lock of routedLocks) lines.push(`- 开局禁令：${lock}`);
   }
 
   // 势力约束
@@ -987,6 +1015,12 @@ export class ContextBuilder {
         playerName,
         playerRole: 'original_participant',
         canonIdentityGuard: '玩家始终是原创蛊师，只能参与原著与二创剧情；方源只能作为原著NPC、远景事件或剧情交会对象出现。',
+        startProfileId: (s.flags as any)?._start_profile || null,
+        startProfileProvenance: (s.flags as any)?._start_profile_provenance || null,
+        routedRole: (s.flags as any)?._start_role || null,
+        routedLocation: (s.flags as any)?._start_location || null,
+        routedPremise: (s.flags as any)?._start_opening_premise || null,
+        routedPromptLocks: (s.flags as any)?._start_prompt_locks || [],
       },
       realm: s.profile.realm.label,
       attributes: s.attributes,
@@ -1074,7 +1108,19 @@ export class ContextBuilder {
       const domainChapters = chaptersData.domains?.[currentDomain] || [];
       const chapterDef = domainChapters.find((c: any) => c.id === currentChapterId);
       if (chapterDef) {
-        parts.push(`【当前章节位置 — 不可脱离】你正处于「${chapterDef.displayName}」章节，位于${currentDomain}域${chapterDef.position?.area || chapterDef.position?.region || ''}。叙事必须严格围绕当前章节展开，不可跳回前面的章节事件，也不可跳到后面的章节。`);
+        const flags = (store as any).flags || {};
+        const routedLocation = flags._start_location;
+        const routedRole = flags._start_role;
+        const startProfileId = String(flags._start_profile || '');
+        const routedArea = typeof routedLocation === 'string'
+          ? routedLocation
+          : routedLocation?.area || routedLocation?.name || chapterDef.position?.area || chapterDef.position?.region || '';
+        const roleClause = routedRole
+          ? startProfileId === 'start_qingmaoshan_guyue'
+            ? `玩家当前身份为「${routedRole}」，不得写成其他出身或方源。`
+            : `玩家当前身份为「${routedRole}」，不得写成其他家族弟子或古月族人。`
+          : '';
+        parts.push(`【当前章节位置 — 不可脱离】你正处于「${chapterDef.displayName}」章节，位于${currentDomain}域${routedArea}。${roleClause}叙事必须严格围绕当前章节与开局身份路由展开，不可跳回前面的章节事件，也不可跳到后面的章节。`);
       }
     }
 

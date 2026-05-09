@@ -7,6 +7,7 @@ import guDbRaw from '../../canon/gu-database.json';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { getRuntimePathNames } from '../../engine/path-registry';
 import { getModifierCoverageRowsForSource, type ModifierCoverageStatus } from '../../engine/modifier-engine';
+import { resolveStarterGuForStartProfile, resolveStartProfile } from '../../engine/start-profile';
 import type { TimelineNode, LifeboundGuSelection, GuSelection, KillerMoveSelection, FactionSelection } from '../../store/slices/timelineSlice';
 
 interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> }; }
@@ -150,6 +151,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   const secondaryPath = store.secondaryPath as string;
   // v1.6: 新增
   const factionId = store.factionId as string;
+  const startProfileId = store.startProfileId as string;
   const guaranteedGu = store.guaranteedGu as GuSelection | null;
   const randomGuPool = store.randomGuPool as GuSelection[];
   const selectedGuList = store.selectedGuList as GuSelection[];
@@ -169,6 +171,17 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
 
   // useMemo需要在selectedNode为null时也能安全返回值
   const isImmortal = selectedNode?.talentCategory === 'immortal';
+
+  const selectedStartProfile = useMemo(() => {
+    if (!selectedNode || !factionId) return null;
+    return resolveStartProfile({
+      timelineNodeId: selectedNode.id,
+      factionId,
+      domain: selectedNode.domain,
+      realmGrand: selectedNode.startingRealm.grand,
+      guTierMax: selectedNode.guTierRange?.[1],
+    }).profile;
+  }, [selectedNode, factionId]);
 
   const talentPool = useMemo(() => {
     if (!selectedNode) return [] as P4Talent[];
@@ -561,27 +574,68 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
             <div className="grid grid-cols-1 gap-2 max-h-[55vh] overflow-y-auto pr-2">
               {[...(FACTION_DATA[selectedNode.domain] || []), ...(FACTION_DATA['散修'] || [])].map((f: FactionEntry) => {
                 const isSelected = factionId === f.id;
+                const startResolution = resolveStartProfile({
+                  timelineNodeId: selectedNode.id,
+                  factionId: f.id,
+                  domain: selectedNode.domain,
+                  realmGrand: selectedNode.startingRealm.grand,
+                  guTierMax: selectedNode.guTierRange?.[1],
+                });
+                const startProfile = startResolution.profile;
+                const canSelect = Boolean(startProfile && startProfile.factionId === f.id);
+                const resolvedStarterGu = resolveStarterGuForStartProfile(
+                  f.starterGu,
+                  startProfile,
+                  selectedNode.guTierRange?.[1],
+                );
                 const coverageRows = getModifierCoverageRowsForSource('faction', f.id, [
                   f.bonus?.desc ?? '',
-                  f.starterGu ? `保底：${f.starterGu.name}` : '',
+                  resolvedStarterGu ? `保底：${resolvedStarterGu.name}` : '',
+                  startProfile?.starterAssetPolicy?.assetHint ?? '',
                   f.bonus?.talentBonus ? `天赋点+${f.bonus.talentBonus}` : '',
                   f.bonus?.resourceMult && f.bonus.resourceMult !== 1 ? `初始资源×${f.bonus.resourceMult}` : '',
                 ]);
                 return (
-                  <button key={f.id} onClick={() => store.selectFaction({
+                  <button key={f.id} disabled={!canSelect} onClick={() => canSelect && store.selectFaction({
                     factionId: f.id, factionName: f.name, domain: f.domain,
-                    starterGu: f.starterGu, bonus: f.bonus,
+                    startProfileId: startProfile?.id,
+                    starterGu: resolvedStarterGu, bonus: f.bonus,
                   })}
-                  className={`text-left p-3 rounded-sm border transition-colors ${isSelected
-                    ? 'border-rg-gold/60 bg-rg-gold/10' : 'border-rg-ink-400/12 bg-rg-ink-800/50 hover:border-rg-gold/30'}`}
+                  className={`text-left p-3 rounded-sm border transition-colors ${!canSelect
+                    ? 'border-rg-ink-400/8 bg-rg-ink-800/20 opacity-50 cursor-not-allowed'
+                    : isSelected
+                      ? 'border-rg-gold/60 bg-rg-gold/10'
+                      : 'border-rg-ink-400/12 bg-rg-ink-800/50 hover:border-rg-gold/30'}`}
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-rg-paper-100 font-panel text-sm font-semibold">{f.name}</span>
                       <span className="text-rg-paper-200/40 text-[10px] font-panel">{f.type}</span>
                       {f.bonus.talentBonus > 0 && <span className="text-rg-gold/60 text-[10px]">+{f.bonus.talentBonus}天赋点</span>}
-                      {f.starterGu && <span className="text-rg-jade-400/60 text-[10px] ml-auto">保底: {f.starterGu.name}</span>}
+                      {resolvedStarterGu && <span className="text-rg-jade-400/60 text-[10px] ml-auto">保底: {resolvedStarterGu.name}</span>}
+                      {!resolvedStarterGu && startProfile?.starterAssetPolicy?.assetHint && (
+                        <span className="text-rg-gold/45 text-[10px] ml-auto">线索/身份资产</span>
+                      )}
                     </div>
                     <p className="text-rg-paper-200/50 text-[11px] font-panel">{f.description}</p>
+                    {startProfile ? (
+                      <div className="mt-2 rounded-sm border border-rg-ink-300/10 bg-rg-ink-900/35 p-2">
+                        <div className="flex flex-wrap items-center gap-2 text-[10px] font-panel">
+                          <span className="text-rg-gold/70">{startProfile.startLocation.region} · {startProfile.startLocation.area}</span>
+                          <span className="text-rg-paper-200/35">{startProfile.provenance}</span>
+                          <span className="text-rg-jade-400/55">{startProfile.playerFactionRole}</span>
+                        </div>
+                        <p className="mt-1 text-rg-paper-200/35 text-[10px] font-panel leading-relaxed">
+                          {startProfile.openingPremise}
+                        </p>
+                        {startProfile.starterAssetPolicy.assetHint && (
+                          <p className="mt-1 text-rg-gold/45 text-[10px] font-panel">{startProfile.starterAssetPolicy.assetHint}</p>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="mt-2 text-rg-blood-400/70 text-[10px] font-panel">
+                        缺少开局身份路由，暂不可选。
+                      </p>
+                    )}
                     <p className="text-rg-paper-200/30 text-[10px] font-panel mt-1">{f.bonus.desc}</p>
                     {renderCoverageRows(coverageRows, coverageStatusFilter)}
                   </button>
@@ -815,7 +869,21 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
               {factionId && (
                 <div className="flex justify-between items-center p-3 bg-rg-ink-800/50 rounded-sm">
                   <span className="text-rg-paper-200/70 text-sm font-panel">势力</span>
-                  <span className="text-rg-paper-100 font-bold font-panel">{factionId.replace(/_/g, '')}</span>
+                  <span className="text-rg-paper-100 font-bold font-panel">
+                    {selectedStartProfile?.factionName || factionId.replace(/_/g, '')}
+                  </span>
+                </div>
+              )}
+              {selectedStartProfile && (
+                <div className="p-3 bg-rg-ink-800/50 rounded-sm">
+                  <div className="flex justify-between items-center gap-3">
+                    <span className="text-rg-paper-200/70 text-sm font-panel">开局身份</span>
+                    <span className="text-rg-gold font-bold font-panel text-xs text-right">{selectedStartProfile.playerFactionRole}</span>
+                  </div>
+                  <p className="mt-1 text-rg-paper-200/40 text-[10px] font-panel">
+                    {selectedStartProfile.startLocation.region} · {selectedStartProfile.startLocation.area}
+                    {startProfileId ? ` · ${startProfileId}` : ''}
+                  </p>
                 </div>
               )}
               {selectedGuList.length > 0 && (

@@ -11,7 +11,7 @@ const KNOWN_GU_NAMES = new Set<string>([
 ]);
 
 export interface RewardConsistencyIssue {
-  kind: 'unknown_gu_reward' | 'missing_gu_state_update' | 'essence_text_mismatch';
+  kind: 'unknown_gu_reward' | 'missing_gu_state_update' | 'essence_text_mismatch' | 'start_profile_identity_mismatch';
   name?: string;
   detail: string;
 }
@@ -96,6 +96,35 @@ function sanitizeEssenceText(text: string, store: any, issues: RewardConsistency
   return next;
 }
 
+function sanitizeStartProfileIdentityText(text: string, store: any, issues: RewardConsistencyIssue[]): string {
+  const flags = store?.flags || {};
+  const startProfileId = String(flags._start_profile || '');
+  if (!startProfileId || startProfileId === 'start_qingmaoshan_guyue') return text;
+
+  const replacement = String(flags._start_role || flags._faction_name || '外来蛊师');
+  const forbiddenIdentityPatterns = [
+    /古月山寨族学弟子/g,
+    /古月山寨弟子/g,
+    /古月一族弟子/g,
+    /古月家族弟子/g,
+    /古月族学弟子/g,
+    /古月族人/g,
+    /族学弟子/g,
+  ];
+
+  let next = text;
+  for (const pattern of forbiddenIdentityPatterns) {
+    if (pattern.test(next)) {
+      next = next.replace(pattern, replacement);
+      issues.push({
+        kind: 'start_profile_identity_mismatch',
+        detail: `开局路由为 ${startProfileId}，AI 文本不得把玩家写成古月族人，已改为「${replacement}」。`,
+      });
+    }
+  }
+  return next;
+}
+
 function sanitizeChoiceText(choice: any, store: any, owned: Set<string>, issues: ChoiceAffordanceIssue[]): any {
   const text = String(choice?.text || '');
   const useMatch = text.match(/使用[「『]?([\u4e00-\u9fa5]{1,12}蛊)[」』]?/);
@@ -122,7 +151,11 @@ export function sanitizeNarrativeConsistency(narrative: NarrativeJSON, store: an
   const owned = ownedGuNames(store);
   const pendingAdds = pendingGuAdds(narrative.state_update);
   let stateUpdate = narrative.state_update;
-  let text = sanitizeEssenceText(narrative.narrative.text, store, rewardIssues);
+  let text = sanitizeStartProfileIdentityText(
+    sanitizeEssenceText(narrative.narrative.text, store, rewardIssues),
+    store,
+    rewardIssues
+  );
 
   for (const name of extractAcquiredGuNames(text)) {
     if (owned.has(name) || pendingAdds.has(name)) continue;
@@ -142,8 +175,16 @@ export function sanitizeNarrativeConsistency(narrative: NarrativeJSON, store: an
     const sanitized = sanitizeChoiceText(choice, store, owned, choiceIssues);
     return {
       ...sanitized,
-      text: sanitizeEssenceText(String(sanitized.text || ''), store, rewardIssues),
-      risk_note: sanitizeEssenceText(String(sanitized.risk_note || ''), store, rewardIssues),
+      text: sanitizeStartProfileIdentityText(
+        sanitizeEssenceText(String(sanitized.text || ''), store, rewardIssues),
+        store,
+        rewardIssues
+      ),
+      risk_note: sanitizeStartProfileIdentityText(
+        sanitizeEssenceText(String(sanitized.risk_note || ''), store, rewardIssues),
+        store,
+        rewardIssues
+      ),
     };
   });
 

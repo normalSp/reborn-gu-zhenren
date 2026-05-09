@@ -9,6 +9,7 @@ import factionDbRaw from '../../canon/faction-data.json';
 import { computePathLevel } from '../../engine/path-progression';
 import { getRuntimePathNames } from '../../engine/path-registry';
 import { getInitialFactionStanding } from '../../engine/faction-display';
+import { buildStartProfileFlagPayload, resolveStarterGuForStartProfile, resolveStartProfile } from '../../engine/start-profile';
 import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
 
 const GU_DB = guDbRaw as Record<string, any>;
@@ -193,6 +194,16 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     // ═══ P4: 获取时间线配置（如有） ═══
     const tc = (useStore.getState() as any).getTimelineConfig?.() ?? null;
     const tNode = tc?.node;
+    const startResolution = tNode
+      ? resolveStartProfile({
+        timelineNodeId: tNode.id,
+        factionId: tc?.factionId,
+        domain: tc?.domain || tNode.domain,
+        realmGrand: tNode.startingRealm.grand,
+        guTierMax: tNode.guTierRange?.[1],
+      })
+      : { profile: null, issues: [] as string[] };
+    const startProfile = startResolution.profile;
 
     // ═══ v1.7: 势力属性加成 → 必须在 deriveCombatStats 前注入 ═══
     const effectiveAttributes = { ...attributes };
@@ -208,11 +219,20 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     const fullState = useStore.getState();
     (fullState as any).resetStore?.();
     // v1.5: timeline模式下出身域来自节点domain，普通模式来自OriginSelect
-    const origin = tNode?.domain || background;
+    const origin = (startProfile?.domain && startProfile.domain !== '全域') ? startProfile.domain : (tNode?.domain || background);
     const playerIdentity = tNode ? (tNode.talentCategory === 'immortal' ? '蛊仙' : '蛊师') : identity;
     useStore.getState().setFlag('_origin', origin);
     useStore.getState().setFlag('_identity', playerIdentity);
     useStore.getState().setFlag('_profile_init', true);
+    if (startProfile) {
+      const payload = buildStartProfileFlagPayload(startProfile);
+      for (const [key, value] of Object.entries(payload)) {
+        if (value !== undefined) useStore.getState().setFlag(key, value);
+      }
+      if (startResolution.issues.length > 0) {
+        useStore.getState().setFlag('_start_profile_issues', startResolution.issues);
+      }
+    }
 
     // 境界：使用时间线预设或默认一转
     const startRealm = tNode?.startingRealm ?? { grand: 1, sub: '初阶' };
@@ -222,7 +242,9 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       profile: {
         name,
         realm: { grand: startRealm.grand, sub: startRealm.sub, label: realmLabel },
-        background: `${origin} · ${playerIdentity}`,
+        background: startProfile
+          ? `${origin} · ${startProfile.playerFactionRole} · ${playerIdentity}`
+          : `${origin} · ${playerIdentity}`,
       },
       attributes: effectiveAttributes,
     });
@@ -293,13 +315,16 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
 
     // P4: 写入时间线配置flag
     if (tNode) {
-      useStore.getState().setFlag('_timeline_start', tNode.id);
+      useStore.getState().setFlag('_timeline_node', tNode.id);
+      useStore.getState().setFlag('_timeline_start', startProfile?.startChapterId || tNode.id);
       useStore.getState().setFlag('_timeline_domain', tc.domain || tNode.domain);
     }
 
     // 域设置 — v1.5: timeline模式直接用节点domain
     const domainKeys = ['中洲', '南疆', '北原', '东海', '西漠'];
-    const targetDomain = (tNode ? (tc.domain || tNode.domain) : null) || domainKeys.find(d => origin.includes(d)) || '南疆';
+    const targetDomain = (startProfile?.domain && startProfile.domain !== '全域')
+      ? startProfile.domain
+      : ((tNode ? (tc.domain || tNode.domain) : null) || domainKeys.find(d => origin.includes(d)) || '南疆');
     useStore.setState({ currentDomain: targetDomain } as any);
 
     const movePlayer = (useStore.getState() as any).movePlayer;
@@ -385,12 +410,18 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       // 势力
       if (tc.factionId) {
         useStore.getState().setFlag('_faction', tc.factionId);
+        useStore.getState().setFlag('_faction_name', startProfile?.factionName || tc.factionId);
+        if (tc.startProfileId || startProfile?.id) {
+          useStore.getState().setFlag('_start_profile', tc.startProfileId || startProfile?.id);
+        }
         const initialStanding = getInitialFactionStanding(tc.factionId, {
           realmGrand: startRealm.grand,
           timelineNodeId: tNode?.id,
           identity: playerIdentity,
         });
-        (useStore.getState() as any).updateStanding?.(tc.factionId, initialStanding, '开局身份：族内登记/势力初识');
+        const routedStanding = startProfile?.initialStandingPolicy?.self ?? initialStanding;
+        const standingReason = startProfile?.initialStandingPolicy?.reason || '开局身份：族内登记/势力初识';
+        (useStore.getState() as any).updateStanding?.(tc.factionId, routedStanding, `开局身份：${standingReason}`);
         const fb = tc.factionBonus;
         if (fb && fb.resourceMult && fb.resourceMult !== 1.0) {
           const adjustedCurrency = Math.round(startMoney.currency * fb.resourceMult);
@@ -401,7 +432,15 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       }
       // 初始蛊虫
       const allGu = [...(tc.selectedGuList || [])];
-      if (tc.guaranteedGu) allGu.unshift(tc.guaranteedGu);
+      const routedGuaranteedGu = resolveStarterGuForStartProfile(
+        tc.guaranteedGu,
+        startProfile,
+        tNode.guTierRange?.[1],
+      );
+      if (routedGuaranteedGu) allGu.unshift(routedGuaranteedGu);
+      if (!routedGuaranteedGu && startProfile?.starterAssetPolicy?.assetHint) {
+        useStore.getState().setFlag('_starter_asset_hint', startProfile.starterAssetPolicy.assetHint);
+      }
       const storeRef = useStore.getState() as any;
       if (typeof storeRef.addGu === 'function') {
         allGu.forEach((g: any, i: number) => {

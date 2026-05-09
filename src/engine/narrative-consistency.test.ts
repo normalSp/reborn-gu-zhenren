@@ -35,4 +35,22 @@ describe('narrative-consistency', () => {
     expect(result.narrative.narrative.text).toContain('听闻了「寻物蛊」线索');
     expect((result.narrative.state_update as any).discoveries.add[0].name).toBe('寻物蛊');
   });
+
+  it('prevents non-Guyue start profiles from being written as Guyue clan members', () => {
+    const shangStore = {
+      ...store,
+      flags: {
+        _start_profile: 'start_qingmaoshan_shangjia_caravan',
+        _start_role: '商家外围商队学徒',
+      },
+    };
+    const result = sanitizeNarrativeConsistency(narrative('你身为古月族人，正要进入古月山寨族学弟子的队列。', [
+      { id: 'c1', text: '以古月族学弟子的身份上前', risk: 'low', risk_note: '古月族人身份不会引起怀疑' },
+    ]), shangStore);
+
+    expect(result.narrative.narrative.text).toContain('商家外围商队学徒');
+    expect(result.narrative.narrative.text).not.toContain('古月族人');
+    expect(result.narrative.narrative.choices[0].text).toContain('商家外围商队学徒');
+    expect(result.rewardIssues.some(issue => issue.kind === 'start_profile_identity_mismatch')).toBe(true);
+  });
 });
