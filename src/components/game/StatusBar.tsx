@@ -30,6 +30,7 @@ export function StatusBar() {
   const essence = useStore(s => s.vitals.essence);
   const attributes = useStore(s => s.attributes);
   const currency = useStore(s => s.currency);
+  const immortalCurrency = useStore(s => (s as any).immortalCurrency ?? 0);
   const phase = useStore(s => s.pipelinePhase);
   const gameTime = useStore(s => s.gameTime);
   const turn = useStore(s => s.turn);
@@ -42,6 +43,7 @@ export function StatusBar() {
   const _achievementDefs = useStore(s => (s as any)._achievementDefs as any[] | undefined);
   const achievementCount = _achievementDefs?.length || 0;
   const unlockedCount = unlockedAchievements?.length || 0;
+  const isImmortal = (profile?.realm?.grand ?? 1) >= 6 || vitals.essenceType === 'immortal';
   // P1章节弧光：显示当前章节名
   const getCurrentChapter = useStore(s => s.getCurrentChapter);
   const currentChapter = getCurrentChapter?.();
@@ -193,14 +195,25 @@ export function StatusBar() {
             </span>
             <div className="w-[1px] h-4 bg-rg-ink-300/15" />
             <span className="text-rg-gold/70 text-xs font-panel tabular-nums">
-              元石 {currency}
+              {isImmortal ? `仙元石 ${immortalCurrency}` : `元石 ${currency}`}
             </span>
             <button
-              onClick={() => (useStore.getState() as any).meditateWithPrimevalStone?.(1, 'caravan')}
-              className="text-rg-gold/60 hover:text-rg-gold text-xs font-button transition-micro"
-              title="消耗1回合调息吸收元石；野外或商路可能触发干扰"
+              onClick={() => {
+                const api = useStore.getState() as any;
+                if (isImmortal) api.meditateWithImmortalStone?.(1, 'aperture');
+                else api.meditateWithPrimevalStone?.(1, 'caravan');
+              }}
+              disabled={(gameTime.ap ?? 0) <= 0}
+              className={`text-xs font-button transition-micro ${
+                (gameTime.ap ?? 0) <= 0
+                  ? 'text-rg-paper-200/20 cursor-not-allowed'
+                  : 'text-rg-gold/60 hover:text-rg-gold'
+              }`}
+              title={isImmortal
+                ? '消耗1 AP与1仙元石调息补充仙元；仙窍内较安全'
+                : '消耗1 AP与1元石调息补充真元；商路/野外可能触发干扰'}
             >
-              调息
+              {isImmortal ? '补仙元' : '调息'}
             </button>
             <div className="w-[1px] h-4 bg-rg-ink-300/15" />
             <motion.span

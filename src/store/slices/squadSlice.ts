@@ -242,6 +242,10 @@ export const createSquadSlice = (set: any, get: any): SquadSlice => ({
         : false;
       if (!paid) return { success: false, reason: `元石不足，需支付${payment}`, evaluation };
     }
+    const usedUnifiedAp = typeof store.spendAp === 'function';
+    if (usedUnifiedAp && !store.spendAp(1, `调${member.name}入队`)) {
+      return { success: false, reason: '行动点不足，无法调成员入队', evaluation };
+    }
 
     const nowTurn = store.turn ?? 0;
     const newParty: PartyState = {
@@ -259,10 +263,7 @@ export const createSquadSlice = (set: any, get: any): SquadSlice => ({
     set((s: any) => ({
       partyState: newParty,
       squadMembersRecruited: (s.squadMembersRecruited || 0) + 1,
-      gameTime: {
-        ...s.gameTime,
-        ap: Math.max(0, (s.gameTime?.ap ?? 0) - 1),
-      },
+      ...(usedUnifiedAp ? {} : { gameTime: { ...s.gameTime, ap: Math.max(0, (s.gameTime?.ap ?? 0) - 1) } }),
     }));
 
     if (typeof store.addGameLog === 'function') {
@@ -318,6 +319,10 @@ export const createSquadSlice = (set: any, get: any): SquadSlice => ({
     if (!evaluation.canDispatch) {
       return { success: false, reason: evaluation.reasons.join('；') || '外派条件不足' };
     }
+    const usedUnifiedAp = typeof store.spendAp === 'function';
+    if (usedUnifiedAp && !store.spendAp(1, `安排${member.name}外派`)) {
+      return { success: false, reason: '行动点不足，无法安排外派' };
+    }
 
     const assignment: SquadDispatchAssignment = {
       id: buildAssignmentId(memberId, taskId, nowTurn),
@@ -335,7 +340,7 @@ export const createSquadSlice = (set: any, get: any): SquadSlice => ({
 
     set((state: any) => ({
       ...updateFactionMember(state, memberId, { status: 'expedition', externalTaskUntil: assignment.endsTurn }),
-      gameTime: { ...state.gameTime, ap: Math.max(0, (state.gameTime?.ap ?? 0) - 1) },
+      ...(usedUnifiedAp ? {} : { gameTime: { ...state.gameTime, ap: Math.max(0, (state.gameTime?.ap ?? 0) - 1) } }),
       squadDispatchState: {
         activeAssignments: [...dispatchState.activeAssignments, assignment],
         recentResults: dispatchState.recentResults,

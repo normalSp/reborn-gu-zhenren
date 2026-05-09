@@ -54,11 +54,60 @@ const COVERAGE_STATUS_CLASS: Record<ModifierCoverageStatus, string> = {
   needs_downgrade: 'border-rg-blood-500/25 bg-rg-blood-500/10 text-rg-blood-400',
 };
 
-function renderCoverageRows(rows: ReturnType<typeof getModifierCoverageRowsForSource>) {
+type CoverageStatusFilter = ModifierCoverageStatus | 'all';
+
+const COVERAGE_FILTER_OPTIONS: Array<{ value: CoverageStatusFilter; label: string }> = [
+  { value: 'all', label: '全部效果' },
+  { value: 'runtime_active', label: '运行时' },
+  { value: 'creation_only', label: '创建时' },
+  { value: 'planned_needs_system', label: '待系统' },
+  { value: 'narrative_only', label: '叙事' },
+  { value: 'needs_downgrade', label: '降级' },
+];
+
+function CoverageStatusFilterBar({
+  value,
+  onChange,
+}: {
+  value: CoverageStatusFilter;
+  onChange: (value: CoverageStatusFilter) => void;
+}) {
+  return (
+    <div className="mb-3 flex flex-wrap items-center gap-1.5">
+      {COVERAGE_FILTER_OPTIONS.map(option => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => onChange(option.value)}
+          className={`rounded-sm border px-2 py-1 text-[10px] font-panel transition-colors ${
+            value === option.value
+              ? 'border-rg-gold/45 bg-rg-gold/10 text-rg-gold'
+              : 'border-rg-ink-300/15 text-rg-paper-200/45 hover:border-rg-gold/30 hover:text-rg-paper-200/75'
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function renderCoverageRows(
+  rows: ReturnType<typeof getModifierCoverageRowsForSource>,
+  filter: CoverageStatusFilter = 'all',
+) {
   if (!rows.length) return null;
+  const visibleRows = filter === 'all' ? rows : rows.filter(row => row.status === filter);
+  if (!visibleRows.length) {
+    return (
+      <div className="mt-2 text-[10px] font-panel text-rg-paper-200/30">
+        当前筛选下没有匹配的效果承诺
+      </div>
+    );
+  }
   return (
     <div className="mt-2 flex flex-wrap gap-1">
-      {rows.slice(0, 5).map((row, idx) => (
+      {visibleRows.slice(0, 5).map((row, idx) => (
         <span key={`${row.status}-${idx}`} className={`rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${COVERAGE_STATUS_CLASS[row.status]}`}>
           {COVERAGE_STATUS_LABELS[row.status]}：{row.claim}
         </span>
@@ -116,6 +165,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
     areaMu: 200, resourceNodes: 1, timeFlowRatio: 5, defenseLevel: 0,
   });
   const [resourceConfirmed, setResourceConfirmed] = useState(false);
+  const [coverageStatusFilter, setCoverageStatusFilter] = useState<CoverageStatusFilter>('all');
 
   // useMemo需要在selectedNode为null时也能安全返回值
   const isImmortal = selectedNode?.talentCategory === 'immortal';
@@ -445,6 +495,10 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                 )}
               </div>
             )}
+            <CoverageStatusFilterBar
+              value={coverageStatusFilter}
+              onChange={setCoverageStatusFilter}
+            />
             <div className="grid grid-cols-1 gap-2 max-h-[50vh] overflow-y-auto pr-2">
               {shuffledPool.map(talent => {
                 const isSelected = timelineTalents.includes(talent.id);
@@ -481,7 +535,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     <p className="text-rg-paper-200/50 text-[11px] font-panel leading-relaxed">
                       {talent.description}
                     </p>
-                    {renderCoverageRows(coverageRows)}
+                    {renderCoverageRows(coverageRows, coverageStatusFilter)}
                     {talent.triggerScene && (
                       <p className="text-rg-gold/40 text-[10px] font-panel mt-1">
                         触发: {talent.triggerScene} {talent.effectRange ? `| ${talent.effectRange}` : ''}
@@ -500,6 +554,10 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
             <p className="text-rg-paper-200/60 text-sm font-panel mb-4">
               {selectedNode.domain}的势力格局——选择你的归属。所选势力将影响初始资源和因果。
             </p>
+            <CoverageStatusFilterBar
+              value={coverageStatusFilter}
+              onChange={setCoverageStatusFilter}
+            />
             <div className="grid grid-cols-1 gap-2 max-h-[55vh] overflow-y-auto pr-2">
               {[...(FACTION_DATA[selectedNode.domain] || []), ...(FACTION_DATA['散修'] || [])].map((f: FactionEntry) => {
                 const isSelected = factionId === f.id;
@@ -525,7 +583,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     </div>
                     <p className="text-rg-paper-200/50 text-[11px] font-panel">{f.description}</p>
                     <p className="text-rg-paper-200/30 text-[10px] font-panel mt-1">{f.bonus.desc}</p>
-                    {renderCoverageRows(coverageRows)}
+                    {renderCoverageRows(coverageRows, coverageStatusFilter)}
                   </button>
                 );
               })}

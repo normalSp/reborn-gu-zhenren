@@ -154,8 +154,8 @@ export function convertKillMoveToDuelMove(
  * 杀招使用后更新熟练度
  * @returns 更新后的 proficiency 和 usageCount
  */
-export function incrementUsage(killMove: KillMove): { proficiency?: KillMoveProficiency; usageCount: number } {
-  const newCount = (killMove.usageCount || 0) + 1;
+export function incrementUsage(killMove: KillMove, gain = 1): { proficiency?: KillMoveProficiency; usageCount: number } {
+  const newCount = (killMove.usageCount || 0) + Math.max(1, Math.round(gain));
   const newProf = computeProficiency(newCount);
   // 仅当等级变化时才更新 proficiency
   const changed = newProf !== (killMove.proficiency ?? 0);

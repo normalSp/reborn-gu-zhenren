@@ -143,10 +143,18 @@ export const createEncounterSlice = (set: any, get: any): EncounterSlice => {
       console.log(`[Encounter] 触发遭遇: ${result.template.title} (${result.template.type}) @turn ${currentTurn}`);
       const logStore = get();
       if (typeof logStore.addGameLog === 'function') {
-        logStore.addGameLog('encounter', `触发遭遇: ${result.template.title}`, {
+        const riskLabels = result.riskModifier?.labels || [];
+        const riskSummary = result.riskModifier
+          ? `危险遭遇权重 ×${result.riskModifier.riskMultiplier.toFixed(2)}`
+          : '危险遭遇权重 ×1.00';
+        logStore.addGameLog('encounter', `触发遭遇: ${result.template.title}（${riskSummary}）`, {
           type: result.template.type,
           title: result.template.title,
           domain: result.template.domain,
+          riskModifier: result.riskModifier,
+          summary: riskLabels.length > 0
+            ? `${riskSummary}：${riskLabels.join(' / ')}`
+            : riskSummary,
         });
       }
     },

@@ -1,5 +1,6 @@
 import affinitiesRaw from '../canon/extreme-physique-daomark-affinity.json';
 import type { ExtremePhysiqueType, MortalAperture } from '../types';
+import { applyCalamityPressureModifiers } from './modifier-engine';
 
 type AffinitySpec = {
   primaryPaths?: Record<string, number>;
@@ -44,7 +45,7 @@ function getTint(physiqueType: ExtremePhysiqueType): string {
 
 export function buildExtremePhysiqueCalamityProfile(
   aperture: MortalAperture | null | undefined,
-  options: { hpPercent?: number; turn?: number; recentForcedGuUse?: number } = {},
+  options: { hpPercent?: number; turn?: number; recentForcedGuUse?: number; store?: any } = {},
 ): ExtremePhysiqueCalamityProfile | null {
   if (!aperture?.extremePhysiqueType || !aperture.capacityLocked) return null;
 
@@ -53,7 +54,13 @@ export function buildExtremePhysiqueCalamityProfile(
   const fill = aperture.primevalSea?.fillPercent ?? 100;
   const recentForcedGuUse = options.recentForcedGuUse ?? 0;
   const hpPercent = options.hpPercent ?? 100;
-  const pressure = clamp(fill + recentForcedGuUse * 8 + (hpPercent < 20 ? 12 : 0), 0, 140);
+  const rawPressure = fill + recentForcedGuUse * 8 + (hpPercent < 20 ? 12 : 0);
+  const pressureQuote = applyCalamityPressureModifiers(rawPressure, {
+    store: options.store,
+    operation: 'calamity',
+    itemName: physiqueType,
+  });
+  const pressure = clamp(pressureQuote.pressure, 0, 140);
   const pressureLevel = pressure >= 115 ? 'critical' : pressure >= 96 ? 'strained' : 'stable';
   const safeTurnsEstimate = Math.max(0, Math.floor((120 - pressure) / 6));
   const blockedActions: string[] = [];

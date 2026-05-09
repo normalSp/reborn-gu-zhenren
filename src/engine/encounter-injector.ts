@@ -15,7 +15,7 @@ import type {
   EncounterType,
   EncounterCooldown,
 } from '../types/encounter';
-import { applyEncounterRiskModifiers, type ModifierContext } from './modifier-engine';
+import { applyEncounterRiskModifiers, formatModifierBreakdown, type ModifierContext } from './modifier-engine';
 
 // ─── 类型权重配置 ───
 const TYPE_WEIGHTS: Record<EncounterType, number> = {
@@ -145,7 +145,15 @@ export function checkAndTriggerEncounter(
   // ═══ 步骤6: 概率判定 ═══
   const triggerRoll = seed();
   if (triggerRoll > riskQuote.triggerChance) {
-    return { triggered: false, reason: 'probability_check_failed' };
+    return {
+      triggered: false,
+      reason: 'probability_check_failed',
+      riskModifier: {
+        riskMultiplier: riskQuote.riskMultiplier,
+        triggerChance: riskQuote.triggerChance,
+        labels: formatModifierBreakdown(riskQuote.breakdown),
+      },
+    };
   }
 
   // ═══ 步骤7: 构建注入上下文 ═══
@@ -154,6 +162,11 @@ export function checkAndTriggerEncounter(
   return {
     triggered: true,
     template: selected,
+    riskModifier: {
+      riskMultiplier: riskQuote.riskMultiplier,
+      triggerChance: riskQuote.triggerChance,
+      labels: formatModifierBreakdown(riskQuote.breakdown),
+    },
   };
 }
 

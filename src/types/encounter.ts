@@ -143,6 +143,11 @@ export interface EncounterTriggerResult {
   triggered: boolean;
   template?: EncounterTemplate;
   reason?: string;
+  riskModifier?: {
+    riskMultiplier: number;
+    triggerChance: number;
+    labels: string[];
+  };
 }
 
 /** 遭遇注入上下文（传给 context-builder 注入 AI prompt） */

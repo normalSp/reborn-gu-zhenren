@@ -338,6 +338,7 @@ export function AperturePanel({ aperture: apertureOverride, showDaoDensity = tru
   const vitals = useStore(s => s.vitals);
   const turn = useStore(s => s.turn);
   const flags = useStore(s => s.flags);
+  const selectedTalents = useStore(s => (s as any).selectedTalents);
   const aperture = apertureOverride ?? storeAperture as MortalAperture | ImmortalAperture | null;
 
   if (!aperture) {
@@ -354,6 +355,7 @@ export function AperturePanel({ aperture: apertureOverride, showDaoDensity = tru
       hpPercent,
       turn,
       recentForcedGuUse: Number((flags as any)?.recentForcedGuUse || 0),
+      store: { flags, selectedTalents },
     });
     return <MortalApertureView aperture={aperture} calamityProfile={calamityProfile} />;
   }

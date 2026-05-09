@@ -13,7 +13,22 @@ export type ModifierOperation =
   | 'merchant_sell'
   | 'feeding'
   | 'combat'
-  | 'encounter';
+  | 'encounter'
+  | 'natural_recovery'
+  | 'immortal_recovery'
+  | 'meditation'
+  | 'cultivation'
+  | 'breakthrough'
+  | 'field_action'
+  | 'scout'
+  | 'gather'
+  | 'trap_check'
+  | 'escape_support'
+  | 'reputation'
+  | 'npc_policy'
+  | 'killer_move_mastery'
+  | 'aperture'
+  | 'calamity';
 
 export type ModifierEffectKind =
   | 'refine_success_add'
@@ -26,7 +41,23 @@ export type ModifierEffectKind =
   | 'gu_feed_cost_mult'
   | 'encounter_risk_mult'
   | 'combat_stat_mult'
-  | 'attribute_add';
+  | 'attribute_add'
+  | 'natural_recovery_mult'
+  | 'immortal_recovery_mult'
+  | 'meditation_risk_mult'
+  | 'cultivation_progress_mult'
+  | 'breakthrough_success_add'
+  | 'breakthrough_failure_penalty_mult'
+  | 'field_action_success_add'
+  | 'field_action_risk_mult'
+  | 'field_action_yield_mult'
+  | 'trap_detection_add'
+  | 'escape_success_add'
+  | 'reputation_gain_mult'
+  | 'npc_trust_mult'
+  | 'killer_move_mastery_gain_mult'
+  | 'aperture_resource_output_mult'
+  | 'calamity_pressure_mult';
 
 export type ModifierCoverageStatus =
   | 'runtime_active'
@@ -54,6 +85,8 @@ export interface ModifierContext {
   guName?: string;
   itemType?: string;
   itemName?: string;
+  period?: string;
+  locationType?: string;
 }
 
 export interface ResolvedModifier {
@@ -371,6 +404,174 @@ export function applyEncounterRiskModifiers(
     riskMultiplier,
     breakdown,
   };
+}
+
+function applyMultiplier(
+  baseValue: number,
+  context: ModifierContext,
+  kind: ModifierEffectKind,
+  operation: ModifierOperation,
+  min: number,
+  max: number,
+): { value: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const breakdown = filterModifiers(resolveActiveModifiers({ ...context, operation }), kind);
+  const rawMultiplier = breakdown.reduce((acc, modifier) => acc * modifier.effect.value, 1);
+  const multiplier = clamp(rawMultiplier, min, max);
+  return {
+    value: baseValue * multiplier,
+    multiplier,
+    breakdown,
+  };
+}
+
+function applyAdditive(
+  baseValue: number,
+  context: ModifierContext,
+  kind: ModifierEffectKind,
+  operation: ModifierOperation,
+  min: number,
+  max: number,
+): { value: number; additive: number; breakdown: ResolvedModifier[] } {
+  const breakdown = filterModifiers(resolveActiveModifiers({ ...context, operation }), kind);
+  const additive = breakdown.reduce((acc, modifier) => acc + modifier.effect.value, 0);
+  return {
+    value: clamp(baseValue + additive, min, max),
+    additive,
+    breakdown,
+  };
+}
+
+export function applyNaturalRecoveryModifiers(
+  baseAmount: number,
+  context: ModifierContext,
+): { amount: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseAmount, context, 'natural_recovery_mult', 'natural_recovery', 0.5, 2.0);
+  return { amount: Math.max(0, Math.round(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyImmortalRecoveryModifiers(
+  baseAmount: number,
+  context: ModifierContext,
+): { amount: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseAmount, context, 'immortal_recovery_mult', 'immortal_recovery', 0.5, 2.0);
+  return { amount: Math.max(0, Math.round(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyMeditationRiskModifiers(
+  baseRiskChance: number,
+  context: ModifierContext,
+): { riskChance: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseRiskChance, context, 'meditation_risk_mult', 'meditation', 0.4, 1.8);
+  return { riskChance: clamp(quote.value, 0, 0.95), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyCultivationProgressModifiers(
+  baseProgress: number,
+  context: ModifierContext,
+): { progress: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseProgress, context, 'cultivation_progress_mult', 'cultivation', 0.3, 2.5);
+  return { progress: Math.max(0, Math.round(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyBreakthroughSuccessModifiers(
+  baseRate: number,
+  context: ModifierContext,
+): { rate: number; additive: number; breakdown: ResolvedModifier[] } {
+  const quote = applyAdditive(baseRate, context, 'breakthrough_success_add', 'breakthrough', 0.01, 0.95);
+  return { rate: quote.value, additive: quote.additive, breakdown: quote.breakdown };
+}
+
+export function applyBreakthroughFailurePenaltyModifiers(
+  baseSeverity: number,
+  context: ModifierContext,
+): { severity: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseSeverity, context, 'breakthrough_failure_penalty_mult', 'breakthrough', 0.35, 1.75);
+  return { severity: clamp(quote.value, 0, 2), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyFieldActionSuccessModifiers(
+  baseRate: number,
+  context: ModifierContext,
+): { rate: number; additive: number; breakdown: ResolvedModifier[] } {
+  const quote = applyAdditive(baseRate, context, 'field_action_success_add', context.operation || 'field_action', 0.01, 0.98);
+  return { rate: quote.value, additive: quote.additive, breakdown: quote.breakdown };
+}
+
+export function applyFieldActionRiskModifiers(
+  baseRisk: number,
+  context: ModifierContext,
+): { risk: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseRisk, context, 'field_action_risk_mult', context.operation || 'field_action', 0.35, 1.8);
+  return { risk: clamp(quote.value, 0, 0.95), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyFieldActionYieldModifiers(
+  baseYield: number,
+  context: ModifierContext,
+): { yieldValue: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseYield, context, 'field_action_yield_mult', context.operation || 'field_action', 0.5, 2.0);
+  return { yieldValue: Math.max(0, Math.round(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyTrapDetectionModifiers(
+  baseRate: number,
+  context: ModifierContext,
+): { rate: number; additive: number; breakdown: ResolvedModifier[] } {
+  const trapQuote = applyAdditive(baseRate, context, 'trap_detection_add', 'trap_check', 0.01, 0.98);
+  const fieldQuote = applyAdditive(trapQuote.value, context, 'field_action_success_add', 'trap_check', 0.01, 0.98);
+  return {
+    rate: fieldQuote.value,
+    additive: trapQuote.additive + fieldQuote.additive,
+    breakdown: [...trapQuote.breakdown, ...fieldQuote.breakdown],
+  };
+}
+
+export function applyEscapeSuccessModifiers(
+  baseRate: number,
+  context: ModifierContext,
+): { rate: number; additive: number; breakdown: ResolvedModifier[] } {
+  const quote = applyAdditive(baseRate, context, 'escape_success_add', 'escape_support', 0.01, 0.98);
+  return { rate: quote.value, additive: quote.additive, breakdown: quote.breakdown };
+}
+
+export function applyReputationGainModifiers(
+  baseDelta: number,
+  context: ModifierContext,
+): { delta: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(Math.abs(baseDelta), context, 'reputation_gain_mult', 'reputation', 0.3, 2.0);
+  return { delta: Math.sign(baseDelta || 1) * Math.round(quote.value), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyNpcTrustModifiers(
+  baseDelta: number,
+  context: ModifierContext,
+): { delta: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(Math.abs(baseDelta), context, 'npc_trust_mult', 'npc_policy', 0.3, 2.0);
+  return { delta: Math.sign(baseDelta || 1) * Math.round(quote.value), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyKillerMoveMasteryGainModifiers(
+  baseGain: number,
+  context: ModifierContext,
+): { gain: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseGain, context, 'killer_move_mastery_gain_mult', 'killer_move_mastery', 0.5, 3.0);
+  return { gain: Math.max(1, Math.round(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyApertureResourceOutputModifiers(
+  baseOutput: number,
+  context: ModifierContext,
+): { output: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(baseOutput, context, 'aperture_resource_output_mult', 'aperture', 0.3, 2.5);
+  return { output: Math.max(0, Math.floor(quote.value)), multiplier: quote.multiplier, breakdown: quote.breakdown };
+}
+
+export function applyCalamityPressureModifiers(
+  basePressure: number,
+  context: ModifierContext,
+): { pressure: number; multiplier: number; breakdown: ResolvedModifier[] } {
+  const quote = applyMultiplier(basePressure, context, 'calamity_pressure_mult', 'calamity', 0.35, 1.75);
+  return { pressure: clamp(quote.value, 0, 180), multiplier: quote.multiplier, breakdown: quote.breakdown };
 }
 
 export function formatModifierBreakdown(breakdown: ResolvedModifier[]): string[] {

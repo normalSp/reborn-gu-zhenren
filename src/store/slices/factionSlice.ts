@@ -1,6 +1,7 @@
 import type { FactionStanding, CharacterRelation, NpcRelationMatrix, PlayerFaction, SquadMember, FactionEvent, NpcContact } from '../../types';
 import { calculateFactionEconomyLedger, type FactionEconomyLedger } from '../../engine/faction-economy';
 import { calculateReputationTier, describeReputationEffects } from '../../engine/dao-reputation-policy';
+import { applyReputationGainModifiers } from '../../engine/modifier-engine';
 
 interface FactionSlice {
   standings: Record<string, FactionStanding>;
@@ -134,7 +135,13 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
 
   updateStanding: (factionId, delta, reason) => set((s: FactionSlice) => {
     const previous = s.standings[factionId];
-    const standing = Math.max(-100, Math.min(100, (previous?.standing || 0) + delta));
+    const quote = applyReputationGainModifiers(delta, {
+      store: get(),
+      operation: 'reputation',
+      itemName: factionId,
+    });
+    const effectiveDelta = quote.delta;
+    const standing = Math.max(-100, Math.min(100, (previous?.standing || 0) + effectiveDelta));
     const effects = describeReputationEffects(standing);
     return {
       standings: {
@@ -144,7 +151,7 @@ export const createFactionSlice = (set: any, get: any): FactionSlice => ({
           faction_id: previous?.faction_id || factionId,
           standing,
           reputation_tier: calculateReputationTier(standing),
-          lastDelta: delta,
+          lastDelta: effectiveDelta,
           lastReason: reason || (delta >= 0 ? '事件带来声望提升' : '事件导致声望下降'),
           lastUpdatedTurn: (get() as any).turn || 0,
           benefits: effects.benefits,

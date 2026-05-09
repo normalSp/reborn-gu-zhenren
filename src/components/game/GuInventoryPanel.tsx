@@ -59,6 +59,7 @@ const SOURCE_LABELS: Record<MaterialSourceTag, string> = {
 const EMPTY_CONTACTS: any[] = [];
 const EMPTY_DYNAMIC_NPCS: Record<string, any> = {};
 const EMPTY_SQUAD_MEMBERS: any[] = [];
+const EMPTY_FEEDING_DISCOUNT_PROGRESS: Record<string, number> = {};
 
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
@@ -71,6 +72,7 @@ export function GuInventoryPanel() {
   const npcContacts = useStore(s => (s as any).npcContacts || EMPTY_CONTACTS);
   const dynamicNPCs = useStore(s => (s as any).dynamicNPCs || EMPTY_DYNAMIC_NPCS);
   const squadMembers = useStore(s => (s as any).squadMembers || (s as any).squad?.members || EMPTY_SQUAD_MEMBERS);
+  const feedingDiscountProgress = useStore(s => (s as any).feedingDiscountProgress || EMPTY_FEEDING_DISCOUNT_PROGRESS);
   const isImmortal = realmGrand >= 6;
   // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
   const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
@@ -306,6 +308,11 @@ export function GuInventoryPanel() {
                       <div className="text-rg-paper-200/35 truncate">
                         {row.recommendedAction}
                       </div>
+                      {Number(feedingDiscountProgress.material_feeding || 0) > 0 && (
+                        <div className="text-rg-jade-300/60 truncate">
+                          食料节流进度 {Math.min(99, Math.floor(Number(feedingDiscountProgress.material_feeding || 0) * 100))}%，满 100% 抵扣 1 份食料
+                        </div>
+                      )}
                     </>
                   )}
                 </div>

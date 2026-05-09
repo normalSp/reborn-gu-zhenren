@@ -11,6 +11,14 @@ import {
   unlockRecipeInFlags,
 } from '../../engine/economy-service';
 import { assessMeditationRisk, calculatePrimevalMeditation, type MeditationContext } from '../../engine/primeval-meditation';
+import { calculateImmortalStoneMeditation, calculateNaturalEssenceRecovery } from '../../engine/essence-recovery';
+import {
+  calculateBreakthroughSuccessRate,
+  calculateCultivationProgress,
+  resolveBreakthroughFailure,
+} from '../../engine/cultivation-breakthrough';
+import { resolveFieldAction, type FieldActionKind } from '../../engine/field-action';
+import { applyMeditationRiskModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
 import { buildDeathRecordFallback } from '../../engine/death-record';
 import { triggerBreakthrough } from '../../components/game/BreakthroughAnimation';
 import extremePhysiqueAffinitiesRaw from '../../canon/extreme-physique-daomark-affinity.json';
@@ -112,6 +120,7 @@ interface PlayerSlice extends PlayerState {
   materialBagCapacity: number;
   /** P4: 获取当前物资袋容量 */
   getMaterialBagCapacity: () => number;
+  spendAp: (amount: number, reason: string) => boolean;
   spendCurrency: (amount: number) => boolean;
   addCurrency: (amount: number) => void;
   getApertureCapacity: () => number;
@@ -132,6 +141,16 @@ interface PlayerSlice extends PlayerState {
     stonesConsumed: number;
     riskTriggered: boolean;
   };
+  meditateWithImmortalStone: (stoneCount?: number, context?: MeditationContext) => {
+    success: boolean;
+    message: string;
+    essenceGain: number;
+    stonesConsumed: number;
+    riskTriggered: boolean;
+  };
+  practiceCultivation: () => { success: boolean; message: string; progressGain: number; progress: number };
+  attemptBreakthrough: () => { success: boolean; message: string; rate: number };
+  performFieldAction: (kind: FieldActionKind, locationType?: 'safe' | 'caravan' | 'field' | 'wild' | 'aperture') => { success: boolean; message: string };
   setPrimaryPath: (path: PathType) => void;
   advanceTurn: () => void;
   setFlag: (key: string, value: any) => void;
@@ -472,6 +491,29 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     (get() as any).applyHpDelta(amount, source);
   },
   setEssence: (current, max) => set({ vitals: { ...get().vitals, essence: { current: Math.min(current, max), max } } }),
+  spendAp: (amount, reason) => {
+    const state = get() as PlayerSlice;
+    const cost = Math.max(0, Math.floor(amount || 0));
+    if (cost <= 0) return true;
+    if ((state.gameTime?.ap ?? 0) < cost) {
+      const logStore = get() as any;
+      logStore.addGameLog?.('system', `行动余裕不足：${reason}`, {
+        reason,
+        ap: state.gameTime?.ap ?? 0,
+        required: cost,
+      });
+      return false;
+    }
+    set((s: PlayerSlice) => ({
+      gameTime: {
+        ...s.gameTime,
+        ap: Math.max(0, (s.gameTime?.ap ?? 0) - cost),
+      },
+    }));
+    const logStore = get() as any;
+    logStore.addGameLog?.('system', `消耗 AP ${cost}：${reason}`, { reason, amount: cost });
+    return true;
+  },
   meditateWithPrimevalStone: (stoneCount = 1, context = 'safe') => {
     const state = get() as PlayerSlice;
     const vitals = state.vitals;
@@ -493,6 +535,16 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       };
     }
 
+    if (!(get() as PlayerSlice).spendAp(1, '调息吸收元石')) {
+      return {
+        success: false,
+        message: '行动点不足，无法静坐调息。',
+        essenceGain: 0,
+        stonesConsumed: 0,
+        riskTriggered: false,
+      };
+    }
+
     set((s: PlayerSlice) => ({
       currency: s.currency - calc.stonesConsumed,
       vitals: {
@@ -504,11 +556,22 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       },
     }));
 
-    const risk = assessMeditationRisk({
+    const rawRisk = assessMeditationRisk({
       context,
       turn: state.turn,
       luck: state.attributes.气运,
     });
+    const riskQuote = applyMeditationRiskModifiers(rawRisk.riskChance, {
+      store: get(),
+      operation: 'meditation',
+      tier: state.profile.realm.grand,
+      locationType: context,
+    });
+    const risk = {
+      ...rawRisk,
+      riskChance: riskQuote.riskChance,
+      triggered: riskQuote.riskChance > 0 && ((state.turn * 37 + state.attributes.气运 * 11) % 100) / 100 < riskQuote.riskChance,
+    };
 
     const logStore = get() as any;
     if (typeof logStore.addGameLog === 'function') {
@@ -517,6 +580,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         essenceGain: calc.essenceGain,
         stonesConsumed: calc.stonesConsumed,
         riskTriggered: risk.triggered,
+        modifiers: formatModifierBreakdown(riskQuote.breakdown),
       });
       if (risk.triggered) {
         logStore.addGameLog('system', risk.reason, { context, riskChance: risk.riskChance });
@@ -532,6 +596,196 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       stonesConsumed: calc.stonesConsumed,
       riskTriggered: risk.triggered,
     };
+  },
+  meditateWithImmortalStone: (stoneCount = 1, context = 'aperture') => {
+    const state = get() as PlayerSlice;
+    if ((state.profile?.realm?.grand || 1) < 6 && state.vitals.essenceType !== 'immortal') {
+      return { success: false, message: '未至蛊仙阶段，不能用仙元石补充仙元。', essenceGain: 0, stonesConsumed: 0, riskTriggered: false };
+    }
+    const calc = calculateImmortalStoneMeditation({
+      essenceCurrent: state.vitals.essence.current,
+      essenceMax: state.vitals.essence.max,
+      availableStones: state.immortalCurrency,
+      requestedStones: stoneCount,
+    });
+    if (!calc.allowed) {
+      return { success: false, message: calc.reason || '无法调息仙元。', essenceGain: 0, stonesConsumed: 0, riskTriggered: false };
+    }
+    if (!(get() as PlayerSlice).spendAp(1, '调息吸收仙元石')) {
+      return { success: false, message: '行动点不足，无法静坐调息。', essenceGain: 0, stonesConsumed: 0, riskTriggered: false };
+    }
+    set((s: PlayerSlice) => ({
+      immortalCurrency: Math.max(0, s.immortalCurrency - calc.stonesConsumed),
+      vitals: {
+        ...s.vitals,
+        essenceType: 'immortal',
+        essence: { ...s.vitals.essence, current: calc.newEssence },
+      },
+    }));
+    const risk = assessMeditationRisk({ context, turn: state.turn, luck: state.attributes.气运 });
+    const logStore = get() as any;
+    logStore.addGameLog?.('system', `调息吸收仙元石：仙元 +${calc.essenceGain}，消耗 ${calc.stonesConsumed} 仙元石`, {
+      context,
+      essenceGain: calc.essenceGain,
+      stonesConsumed: calc.stonesConsumed,
+      riskTriggered: risk.triggered,
+    });
+    (get() as PlayerSlice).advanceTurn();
+    return {
+      success: true,
+      message: risk.triggered ? `调息完成，但${risk.reason}` : '仙元调息完成。',
+      essenceGain: calc.essenceGain,
+      stonesConsumed: calc.stonesConsumed,
+      riskTriggered: risk.triggered,
+    };
+  },
+  practiceCultivation: () => {
+    const state = get() as PlayerSlice;
+    if (!(get() as PlayerSlice).spendAp(1, '专注修行')) {
+      return { success: false, message: '行动点不足，无法专注修行。', progressGain: 0, progress: Number(state.flags?.cultivationProgress || 0) };
+    }
+    const result = calculateCultivationProgress({
+      realmGrand: state.profile.realm.grand,
+      aptitude: state.attributes.资质,
+      mind: state.attributes.心智,
+      currentProgress: Number(state.flags?.cultivationProgress || 0),
+      store: state,
+      period: state.gameTime.period,
+    });
+    set((s: PlayerSlice) => ({
+      flags: {
+        ...s.flags,
+        cultivationProgress: result.newProgress,
+        lastCultivationGain: result.progressGain,
+      },
+    }));
+    const logStore = get() as any;
+    logStore.addGameLog?.('system', `专注修行：进度 +${result.progressGain}`, {
+      progress: result.newProgress,
+      modifiers: result.labels,
+    });
+    (get() as PlayerSlice).advanceTurn();
+    return { success: true, message: `修行进度 +${result.progressGain}`, progressGain: result.progressGain, progress: result.newProgress };
+  },
+  attemptBreakthrough: () => {
+    const state = get() as PlayerSlice;
+    const progress = Number(state.flags?.cultivationProgress || 0);
+    if (!(get() as PlayerSlice).spendAp(1, '尝试突破')) {
+      return { success: false, message: '行动点不足，无法静心冲击境界。', rate: 0 };
+    }
+    const quote = calculateBreakthroughSuccessRate({
+      realmGrand: state.profile.realm.grand,
+      aptitude: state.attributes.资质,
+      mind: state.attributes.心智,
+      progress,
+      store: state,
+    });
+    const roll = ((state.turn * 53 + state.attributes.气运 * 17 + Math.round(progress)) % 1000) / 1000;
+    if (roll <= quote.rate) {
+      set((s: PlayerSlice) => ({
+        flags: { ...s.flags, cultivationProgress: Math.max(0, progress - 80), lastBreakthrough: { success: true, turn: s.turn, rate: quote.rate } },
+      }));
+      const logStore = get() as any;
+      logStore.addGameLog?.('system', `突破成功：修行壁障松动`, { rate: quote.rate, modifiers: quote.labels });
+      (get() as PlayerSlice).advanceTurn();
+      return { success: true, message: '突破成功，修行壁障松动。', rate: quote.rate };
+    }
+
+    const failure = resolveBreakthroughFailure({
+      realmGrand: state.profile.realm.grand,
+      aptitude: state.attributes.资质,
+      mind: state.attributes.心智,
+      progress,
+      seed: state.turn * 97 + Math.round(progress),
+      store: state,
+      extremePhysiquePressure: (state as any).aperture?.aperturePressure,
+    });
+    const hpPenalty = failure.penalties.find(p => p.kind === 'hp_loss');
+    if (hpPenalty) (get() as any).applyHpPercent?.(-hpPenalty.amount, '突破失败反噬');
+    const essencePenalty = failure.penalties.find(p => p.kind === 'essence_shock');
+    if (essencePenalty) {
+      const current = (get() as PlayerSlice).vitals.essence.current;
+      const max = (get() as PlayerSlice).vitals.essence.max;
+      const loss = Math.round(max * essencePenalty.amount / 100);
+      set((s: PlayerSlice) => ({
+        vitals: { ...s.vitals, essence: { ...s.vitals.essence, current: Math.max(0, current - loss) } },
+      }));
+    }
+    const guPenalty = failure.penalties.find(p => p.kind === 'gu_hunger' || p.kind === 'gu_injury');
+    if (guPenalty) {
+      const currentInventory = ((get() as any).inventory || []) as any[];
+      const targetGu = currentInventory.find(gu => gu && gu.currentState !== 'dead' && (gu.active !== false || gu.bonded))
+        || currentInventory.find(gu => gu && gu.currentState !== 'dead');
+      if (targetGu) {
+        const nextInventory = currentInventory.map(gu => {
+          if (gu.id !== targetGu.id) return gu;
+          if (guPenalty.kind === 'gu_injury') {
+            return { ...gu, currentState: gu.currentState === 'dead' ? 'dead' : 'injured' };
+          }
+          const hungryState = gu.currentState === 'optimal' || gu.currentState === 'fed' ? 'hungry' : gu.currentState;
+          return {
+            ...gu,
+            currentState: hungryState,
+            hungerCounter: Number(gu.hungerCounter || 0) + Math.max(1, guPenalty.amount),
+          };
+        });
+        set({ inventory: nextInventory } as Partial<PlayerSlice>);
+      }
+    }
+    const progressLoss = failure.penalties.find(p => p.kind === 'progress_loss')?.amount || 0;
+    set((s: PlayerSlice) => ({
+      flags: {
+        ...s.flags,
+        cultivationProgress: Math.max(0, progress - progressLoss),
+        breakthroughFailureRecords: [
+          { turn: s.turn, penalties: failure.penalties, severity: failure.severity },
+          ...((s.flags?.breakthroughFailureRecords || []) as any[]),
+        ].slice(0, 10),
+      },
+    }));
+    const logStore = get() as any;
+    logStore.addGameLog?.('danger', `突破失败：${failure.penalties.map(p => p.description).join('；')}`, {
+      rate: quote.rate,
+      severity: failure.severity,
+      modifiers: failure.labels,
+    });
+    (get() as PlayerSlice).advanceTurn();
+    return { success: false, message: '突破失败，空窍与蛊虫受到反噬。', rate: quote.rate };
+  },
+  performFieldAction: (kind, locationType = 'field') => {
+    const state = get() as PlayerSlice;
+    if (!(get() as PlayerSlice).spendAp(1, kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离')) {
+      return { success: false, message: '行动点不足，无法执行野外行动。' };
+    }
+    const result = resolveFieldAction({
+      kind,
+      realmGrand: state.profile.realm.grand,
+      aptitude: state.attributes.资质,
+      mind: state.attributes.心智,
+      luck: state.attributes.气运,
+      turn: state.turn,
+      locationType,
+      store: state,
+    });
+    if (result.reward?.materials) {
+      for (const [materialName, quantity] of Object.entries(result.reward.materials)) {
+        (get() as PlayerSlice).addMaterial(materialName, quantity);
+      }
+    }
+    if (result.reward?.flag) {
+      set((s: PlayerSlice) => ({
+        flags: { ...s.flags, [result.reward!.flag!]: true },
+      }));
+    }
+    const logStore = get() as any;
+    logStore.addGameLog?.(result.success ? 'system' : 'danger', result.message, {
+      kind,
+      successRate: result.successRate,
+      riskChance: result.riskChance,
+      modifiers: result.modifierLabels,
+    });
+    (get() as PlayerSlice).advanceTurn();
+    return { success: result.success, message: result.message };
   },
   setPrimaryPath: (path) => set((s: PlayerSlice) => ({ pathBuild: { ...s.pathBuild, primary: path } })),
   advanceTurn: () => {
@@ -557,6 +811,32 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     });
     // ═══ v0.8.0-immortal: 蛊师真元消耗与元石补充 ═══
     // v0.7.0-pre M10: primeval stone recovery is now an explicit meditation action.
+    // v0.7.0 P2: natural recovery is a time-flow effect, not an AP or stone action.
+    if ((state.vitals.essenceType || 'mortal') !== 'immortal' && state.vitals.essence.current < state.vitals.essence.max) {
+      const recovery = calculateNaturalEssenceRecovery({
+        realmGrand: state.profile.realm.grand,
+        aptitude: state.attributes.资质,
+        mind: state.attributes.心智,
+        essenceCurrent: state.vitals.essence.current,
+        essenceMax: state.vitals.essence.max,
+        essenceType: state.vitals.essenceType,
+        store: state,
+        period: t.period,
+      });
+      if (recovery.amount > 0) {
+        set((s: PlayerSlice) => ({
+          vitals: {
+            ...s.vitals,
+            essence: { ...s.vitals.essence, current: recovery.newEssence },
+          },
+        }));
+        const logStore = get() as any;
+        logStore.addGameLog?.('system', `自然调息：真元 +${recovery.amount}`, {
+          essenceGain: recovery.amount,
+          modifiers: recovery.labels,
+        });
+      }
+    }
 
     // ═══ P2-13: 蛊虫饥饿推进（确定性计数模型，替代旧概率模型） ═══
     const guStore = get() as any;

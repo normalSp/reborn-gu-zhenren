@@ -1,12 +1,25 @@
 import { describe, expect, it } from 'vitest';
 import {
+  applyApertureResourceOutputModifiers,
+  applyBreakthroughFailurePenaltyModifiers,
+  applyBreakthroughSuccessModifiers,
+  applyCalamityPressureModifiers,
+  applyCultivationProgressModifiers,
+  applyEscapeSuccessModifiers,
+  applyFieldActionRiskModifiers,
+  applyFieldActionSuccessModifiers,
+  applyFieldActionYieldModifiers,
+  applyKillerMoveMasteryGainModifiers,
   applyMaterialArrayCostModifiers,
   applyEncounterRiskModifiers,
   applyGuFeedCostModifiers,
   applyMerchantPrice,
+  applyNaturalRecoveryModifiers,
   applyRefineMaterialCostModifiers,
   applyRefineSuccessModifiers,
   applyRefineTimeModifiers,
+  applyReputationGainModifiers,
+  applyTrapDetectionModifiers,
   getModifierCoverageRowsForSource,
   getSelectedTalentIds,
 } from './modifier-engine';
@@ -144,5 +157,38 @@ describe('modifier-engine', () => {
 
     expect(rows.some((row) => row.status === 'runtime_active' && row.claim.includes('喂养'))).toBe(true);
     expect(rows.some((row) => row.status === 'planned_needs_system' && row.claim.includes('采集'))).toBe(true);
+  });
+
+  it('applies P2 subsystem modifier consumers', () => {
+    const diligent = makeStore({ selectedTalents: ['talent_diligent'] });
+    expect(applyNaturalRecoveryModifiers(100, { store: diligent, operation: 'natural_recovery' }).amount).toBe(105);
+    expect(applyCultivationProgressModifiers(100, { store: diligent, operation: 'cultivation' }).progress).toBe(105);
+
+    const steady = makeStore({ selectedTalents: ['talent_steady'] });
+    expect(applyBreakthroughFailurePenaltyModifiers(1, { store: steady, operation: 'breakthrough' }).severity).toBeCloseTo(0.9);
+
+    const prodigy = makeStore({ selectedTalents: ['talent_prodigy'] });
+    expect(applyBreakthroughSuccessModifiers(0.4, { store: prodigy, operation: 'breakthrough' }).rate).toBeCloseTo(0.6);
+
+    const cautious = makeStore({ selectedTalents: ['talent_cautious'] });
+    expect(applyFieldActionRiskModifiers(0.2, { store: cautious, operation: 'scout' }).risk).toBeCloseTo(0.17);
+    expect(applyEscapeSuccessModifiers(0.4, { store: cautious, operation: 'escape_support' }).rate).toBeCloseTo(0.5);
+
+    const herbalist = makeStore({ selectedTalents: ['talent_herbalist'] });
+    expect(applyFieldActionYieldModifiers(20, { store: herbalist, operation: 'gather' }).yieldValue).toBe(23);
+    expect(applyFieldActionSuccessModifiers(0.5, { store: herbalist, operation: 'gather' }).rate).toBeCloseTo(0.6);
+    expect(applyTrapDetectionModifiers(0.5, { store: herbalist, operation: 'trap_check' }).rate).toBeCloseTo(0.6);
+
+    const quickLearner = makeStore({ selectedTalents: ['talent_quick_learner'] });
+    expect(applyKillerMoveMasteryGainModifiers(10, { store: quickLearner, operation: 'killer_move_mastery' }).gain).toBe(11);
+
+    const streetSmart = makeStore({ selectedTalents: ['talent_street_smart'] });
+    expect(applyReputationGainModifiers(10, { store: streetSmart, operation: 'reputation' }).delta).toBe(10);
+
+    const apertureMaster = makeStore({ selectedTalents: ['ti_aperture_master'] });
+    expect(applyApertureResourceOutputModifiers(100, { store: apertureMaster, operation: 'aperture' }).output).toBe(130);
+
+    const heavenDefy = makeStore({ selectedTalents: ['ti_heaven_defy'] });
+    expect(applyCalamityPressureModifiers(100, { store: heavenDefy, operation: 'calamity' }).pressure).toBe(50);
   });
 });

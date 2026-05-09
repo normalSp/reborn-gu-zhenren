@@ -65,6 +65,20 @@
           "operations": ["refine", "ascend"],
           "label": "稳扎稳打：炼蛊成功率+5%",
           "consumer": "refine"
+        },
+        {
+          "kind": "breakthrough_failure_penalty_mult",
+          "value": 0.9,
+          "operations": ["breakthrough"],
+          "label": "稳扎稳打：修行突破失败惩罚-10%",
+          "consumer": "breakthrough"
+        },
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 0.95,
+          "operations": ["cultivation"],
+          "label": "稳扎稳打：修行速度-5%",
+          "consumer": "cultivation"
         }
       ]
     },
@@ -78,6 +92,20 @@
           "operations": ["refine", "ascend"],
           "label": "稳扎稳打：炼蛊成功率+5%",
           "consumer": "refine"
+        },
+        {
+          "kind": "breakthrough_failure_penalty_mult",
+          "value": 0.9,
+          "operations": ["breakthrough"],
+          "label": "稳扎稳打：修行突破失败惩罚-10%",
+          "consumer": "breakthrough"
+        },
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 0.95,
+          "operations": ["cultivation"],
+          "label": "稳扎稳打：修行速度-5%",
+          "consumer": "cultivation"
         }
       ]
     },
@@ -284,6 +312,260 @@
           "value": 1.1,
           "label": "砍价高手：出售价+10%",
           "consumer": "merchant"
+        }
+      ]
+    },
+    "talent_diligent": {
+      "displayName": "勤能补拙",
+      "effects": [
+        {
+          "kind": "natural_recovery_mult",
+          "value": 1.05,
+          "operations": ["natural_recovery"],
+          "label": "勤能补拙：每日真元自然恢复+5%",
+          "consumer": "advanceTurn"
+        },
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 1.05,
+          "operations": ["cultivation"],
+          "label": "勤能补拙：修行进度+5%",
+          "consumer": "cultivation"
+        }
+      ]
+    },
+    "t_diligent": {
+      "displayName": "勤能补拙",
+      "aliases": ["talent_diligent"],
+      "effects": [
+        {
+          "kind": "natural_recovery_mult",
+          "value": 1.05,
+          "operations": ["natural_recovery"],
+          "label": "勤能补拙：每日真元自然恢复+5%",
+          "consumer": "advanceTurn"
+        },
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 1.05,
+          "operations": ["cultivation"],
+          "label": "勤能补拙：修行进度+5%",
+          "consumer": "cultivation"
+        }
+      ]
+    },
+    "talent_cautious": {
+      "displayName": "步步为营",
+      "effects": [
+        {
+          "kind": "field_action_risk_mult",
+          "value": 0.85,
+          "operations": ["scout", "trap_check"],
+          "label": "步步为营：陷阱/伏击风险-15%",
+          "consumer": "field_action"
+        },
+        {
+          "kind": "escape_success_add",
+          "value": 0.1,
+          "operations": ["escape_support"],
+          "label": "步步为营：逃脱成功率+10%",
+          "consumer": "field_action"
+        }
+      ]
+    },
+    "t_cautious": {
+      "displayName": "步步为营",
+      "aliases": ["talent_cautious"],
+      "effects": [
+        {
+          "kind": "field_action_risk_mult",
+          "value": 0.85,
+          "operations": ["scout", "trap_check"],
+          "label": "步步为营：陷阱/伏击风险-15%",
+          "consumer": "field_action"
+        },
+        {
+          "kind": "escape_success_add",
+          "value": 0.1,
+          "operations": ["escape_support"],
+          "label": "步步为营：逃脱成功率+10%",
+          "consumer": "field_action"
+        }
+      ]
+    },
+    "talent_herbalist": {
+      "displayName": "识草辨药",
+      "effects": [
+        {
+          "kind": "field_action_yield_mult",
+          "value": 1.15,
+          "operations": ["gather"],
+          "label": "识草辨药：蛊材采集+15%",
+          "consumer": "field_action"
+        },
+        {
+          "kind": "field_action_success_add",
+          "value": 0.1,
+          "operations": ["gather", "trap_check"],
+          "label": "识草辨药：材料鉴定成功率+10%",
+          "consumer": "field_action"
+        }
+      ]
+    },
+    "t_herbalist": {
+      "displayName": "识草辨药",
+      "aliases": ["talent_herbalist"],
+      "effects": [
+        {
+          "kind": "field_action_yield_mult",
+          "value": 1.15,
+          "operations": ["gather"],
+          "label": "识草辨药：蛊材采集+15%",
+          "consumer": "field_action"
+        },
+        {
+          "kind": "field_action_success_add",
+          "value": 0.1,
+          "operations": ["gather", "trap_check"],
+          "label": "识草辨药：材料鉴定成功率+10%",
+          "consumer": "field_action"
+        }
+      ]
+    },
+    "talent_quick_learner": {
+      "displayName": "略有慧根",
+      "effects": [
+        {
+          "kind": "killer_move_mastery_gain_mult",
+          "value": 1.1,
+          "operations": ["killer_move_mastery"],
+          "label": "略有慧根：杀招/蛊虫熟练增长+10%",
+          "consumer": "killer_move"
+        }
+      ]
+    },
+    "t_killer_move_genius": {
+      "displayName": "杀招天才",
+      "effects": [
+        {
+          "kind": "killer_move_mastery_gain_mult",
+          "value": 1.5,
+          "operations": ["killer_move_mastery"],
+          "label": "杀招天才：新杀招开发速度+50%",
+          "consumer": "killer_move"
+        }
+      ]
+    },
+    "talent_street_smart": {
+      "displayName": "市井出身",
+      "effects": [
+        {
+          "kind": "merchant_buy_price_mult",
+          "value": 0.95,
+          "operations": ["merchant_buy"],
+          "label": "市井出身：交易价格优惠5%",
+          "consumer": "merchant"
+        },
+        {
+          "kind": "npc_trust_mult",
+          "value": 1.05,
+          "operations": ["npc_policy"],
+          "label": "市井出身：NPC初始亲和+5%",
+          "consumer": "npc_policy"
+        }
+      ]
+    },
+    "t_schemer": {
+      "displayName": "深谋远虑",
+      "effects": [
+        {
+          "kind": "field_action_success_add",
+          "value": 0.15,
+          "operations": ["scout", "trap_check"],
+          "label": "深谋远虑：计谋/识破成功率+15%",
+          "consumer": "field_action"
+        }
+      ]
+    },
+    "talent_prodigy": {
+      "displayName": "天资卓绝",
+      "effects": [
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 1.3,
+          "operations": ["cultivation"],
+          "label": "天资卓绝：修行速度+30%",
+          "consumer": "cultivation"
+        },
+        {
+          "kind": "breakthrough_success_add",
+          "value": 0.2,
+          "operations": ["breakthrough"],
+          "label": "天资卓绝：突破成功率+20%",
+          "consumer": "breakthrough"
+        }
+      ]
+    },
+    "t_prodigy": {
+      "displayName": "天资卓绝",
+      "aliases": ["talent_prodigy"],
+      "effects": [
+        {
+          "kind": "cultivation_progress_mult",
+          "value": 1.3,
+          "operations": ["cultivation"],
+          "label": "天资卓绝：修行速度+30%",
+          "consumer": "cultivation"
+        },
+        {
+          "kind": "breakthrough_success_add",
+          "value": 0.2,
+          "operations": ["breakthrough"],
+          "label": "天资卓绝：突破成功率+20%",
+          "consumer": "breakthrough"
+        }
+      ]
+    },
+    "ti_aperture_master": {
+      "displayName": "洞天大宗师",
+      "effects": [
+        {
+          "kind": "aperture_resource_output_mult",
+          "value": 1.3,
+          "operations": ["aperture"],
+          "label": "洞天大宗师：资源节点产出+30%",
+          "consumer": "aperture"
+        },
+        {
+          "kind": "immortal_recovery_mult",
+          "value": 1.15,
+          "operations": ["immortal_recovery"],
+          "label": "洞天大宗师：仙窍本源恢复+15%",
+          "consumer": "advanceTurn"
+        }
+      ]
+    },
+    "ti_heaven_defy": {
+      "displayName": "逆天改命",
+      "effects": [
+        {
+          "kind": "calamity_pressure_mult",
+          "value": 0.5,
+          "operations": ["calamity"],
+          "label": "逆天改命：天劫抗性+50%",
+          "consumer": "calamity"
+        }
+      ]
+    },
+    "talent_lucky_star": {
+      "displayName": "福星高照",
+      "effects": [
+        {
+          "kind": "calamity_pressure_mult",
+          "value": 0.8,
+          "operations": ["calamity"],
+          "label": "福星高照：灾劫强度降低20%",
+          "consumer": "calamity"
         }
       ]
     }

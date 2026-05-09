@@ -1,4 +1,5 @@
 import type { MortalAperture, ImmortalAperture, ApertureStorage, ImmortalApertureGrade, GuInstance, ResourceNode, ResourceNodeBuildCost } from '../../types';
+import { applyApertureResourceOutputModifiers, applyImmortalRecoveryModifiers } from '../../engine/modifier-engine';
 
 /**
  * P4: 福地等级评定参数（方案A — 正常游玩路线）
@@ -156,7 +157,15 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     for (const node of resource_nodes) {
       if (node.active === false) continue; // P4: 跳过关闭的节点
       const daoBonus = 1 + ((dao_mark_density[node.type] || 0) * 0.01);
-      const output = Math.floor(node.output_rate * timeMultiplier * (node.quality / 100) * daoBonus);
+      const baseOutput = Math.floor(node.output_rate * timeMultiplier * (node.quality / 100) * daoBonus);
+      const outputQuote = applyApertureResourceOutputModifiers(baseOutput, {
+        store: state,
+        operation: 'aperture',
+        path: node.type,
+        tier: state.profile?.realm?.grand || 6,
+        itemName: node.name,
+      });
+      const output = outputQuote.output;
       if (output <= 0) continue;
 
       const materialKey = node.type || node.name;
@@ -194,7 +203,13 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
         // 回复量 = max(仙窍面积×0.02×时间流速比, 10)，保底10点/回合
         const areaMu = aperture.area_mu || 100;
         const flowRatio = aperture.time_flow_ratio || 5;
-        const regenAmount = Math.max(Math.round(areaMu * 0.02 * flowRatio), 10);
+        const baseRegen = Math.max(Math.round(areaMu * 0.02 * flowRatio), 10);
+        const regenQuote = applyImmortalRecoveryModifiers(baseRegen, {
+          store: state,
+          operation: 'immortal_recovery',
+          tier: state.profile?.realm?.grand || 6,
+        });
+        const regenAmount = regenQuote.amount;
         const newEssence = Math.min(essenceCurrent + regenAmount, essenceMax);
         set({
           vitals: {

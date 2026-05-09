@@ -1,5 +1,6 @@
 import type { KillMove, KillMoveProficiency } from '../../types';
 import { incrementUsage, getProficiencyCooldownBonus } from '../../engine/killmove-bridge';
+import { applyKillerMoveMasteryGainModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
 
 interface KillMoveSlice {
   killMoves: KillMove[];
@@ -37,8 +38,15 @@ export const createKillMoveSlice = (set: any, get: any): KillMoveSlice => ({
     const move = s.killMoves[idx];
     const newMoves = [...s.killMoves];
 
-    // 递增熟练度
-    const { proficiency, usageCount } = incrementUsage(move);
+    // 递增熟练度：P2 接入杀招熟练增长 modifier，只影响成长，不直接无限加伤害。
+    const masteryQuote = applyKillerMoveMasteryGainModifiers(1, {
+      store: get(),
+      operation: 'killer_move_mastery',
+      path: move.path,
+      tier: move.level,
+      itemName: move.name,
+    });
+    const { proficiency, usageCount } = incrementUsage(move, masteryQuote.gain);
     const updatedMove: KillMove = { ...move, usageCount };
     if (proficiency !== undefined) {
       updatedMove.proficiency = proficiency;
@@ -47,7 +55,7 @@ export const createKillMoveSlice = (set: any, get: any): KillMoveSlice => ({
       const logStore = get() as any;
       if (typeof logStore.addGameLog === 'function') {
         logStore.addGameLog('combat', `杀招「${move.name}」熟练度提升至【${profLabels[proficiency] || '入门'}】`, {
-          killMoveId: id, proficiency,
+          killMoveId: id, proficiency, modifiers: formatModifierBreakdown(masteryQuote.breakdown),
         });
       }
       // 宗师级解锁传授
