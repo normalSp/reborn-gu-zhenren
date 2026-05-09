@@ -1,5 +1,6 @@
 import manifestRaw from '../canon/battle-asset-manifest.json';
 import type { BattleAssetManifestEntry, BattleVisualEffectEvent, DuelMove } from '../types';
+import { resolvePathVisualProfile } from './path-visual-profiles';
 
 interface BattleAssetManifest {
   version: string;
@@ -12,6 +13,7 @@ export interface BattleVisualSource {
   id?: string;
   name: string;
   kind: BattleVisualSourceKind;
+  path?: string;
   tags?: string[];
 }
 
@@ -48,20 +50,30 @@ export function resolveBattleVisualEntry(source: BattleVisualSource): BattleAsse
 export function buildBattleVisualEffect(source: BattleVisualSource, now = Date.now()): BattleVisualEffectEvent | null {
   const entry = resolveBattleVisualEntry(source);
   if (!entry) return null;
+  const tags = [...new Set([source.path, ...(entry.triggerTags || []), ...(source.tags || [])].filter(Boolean) as string[])];
+  const profile = resolvePathVisualProfile(tags);
+  const genericEntry = entry.id === 'killer_move_generic' || entry.id === 'immortal_gu_generic';
+  const fallbackTint = genericEntry ? profile.fallbackTint : (entry.fallbackTint || profile.fallbackTint);
+  const secondaryTint = profile.secondaryTint;
+  const shakeIntensity = Math.max(entry.shake?.intensity ?? 0, genericEntry ? profile.shakeIntensity : 0);
   return {
     id: `${entry.id}_${now}`,
     sourceId: source.id || entry.id,
     sourceName: source.name || entry.name,
     kind: entry.kind,
     assetPath: entry.assetPath || undefined,
-    fallbackTint: entry.fallbackTint || '#c49a3a',
+    fallbackTint,
+    secondaryTint,
+    pathId: profile.pathId === 'generic' ? undefined : profile.pathId,
+    motif: profile.motif,
+    intensity: profile.intensity,
     durationMs: entry.durationMs ?? 1450,
     fadeInMs: entry.fadeInMs ?? 180,
     fadeOutMs: entry.fadeOutMs ?? 420,
-    shakeIntensity: entry.shake?.intensity ?? 0,
+    shakeIntensity,
     shakeDurationMs: entry.shake?.durationMs ?? 0,
     sfxCue: entry.sfxCue,
-    triggerTags: [...new Set([...(entry.triggerTags || []), ...(source.tags || [])])],
+    triggerTags: tags,
     createdAt: now,
   };
 }
@@ -74,6 +86,7 @@ export function buildBattleVisualEffectFromDuelMove(move: DuelMove | undefined, 
     id: move.killerMoveId || move.name,
     name: move.name,
     kind: 'killer_move',
-    tags: ['killer_move', ...(move.killerMoveId ? [move.killerMoveId] : [])],
+    path: move.path,
+    tags: ['killer_move', ...(move.killerMoveId ? [move.killerMoveId] : []), ...(move.path ? [move.path] : [])],
   }, now);
 }

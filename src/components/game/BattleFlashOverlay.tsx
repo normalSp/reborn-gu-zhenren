@@ -29,9 +29,16 @@ export function BattleFlashOverlay() {
           exit={{ opacity: 0 }}
           transition={{ duration: current.fadeInMs / 1000 }}
           style={{
-            background: `radial-gradient(circle at center, ${current.fallbackTint}55 0%, ${current.fallbackTint}1c 35%, rgba(0,0,0,0) 72%)`,
+            background: `radial-gradient(circle at center, ${current.fallbackTint}55 0%, ${(current.secondaryTint || current.fallbackTint)}28 36%, rgba(0,0,0,0) 74%)`,
           }}
         >
+          <div
+            className={`battle-flash-motif battle-flash-${current.motif || 'generic'} battle-flash-${current.intensity || 'normal'}`}
+            style={{
+              ['--battle-flash-primary' as string]: current.fallbackTint,
+              ['--battle-flash-secondary' as string]: current.secondaryTint || current.fallbackTint,
+            }}
+          />
           <motion.div
             className="absolute inset-0"
             animate={{
@@ -73,7 +80,7 @@ export function BattleFlashOverlay() {
                 {current.sourceName}
               </div>
               <div className="mt-2 font-panel text-xs tracking-wide text-rg-paper-200/50">
-                {current.kind === 'immortal_gu' ? '重要仙蛊发动' : '杀招发动'}
+                {current.pathId ? `${current.pathId} · ` : ''}{current.kind === 'immortal_gu' ? '重要仙蛊发动' : '杀招发动'}
               </div>
             </motion.div>
           )}

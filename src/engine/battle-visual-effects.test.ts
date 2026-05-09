@@ -22,9 +22,10 @@ describe('v0.7.0-c battle visual effects', () => {
     expect(effect?.durationMs).toBeGreaterThan(0);
   });
 
-  it('produces a generic Immortal Gu fallback when no image is registered', () => {
+  it('uses path-flavored fallback for Immortal Gu when no image is registered', () => {
     const effect = buildBattleVisualEffect({ name: '鸿运齐天蛊', kind: 'immortal_gu', tags: ['immortal_gu', 'luck_path'] }, 2000);
     expect(effect?.id).toContain('immortal_gu_generic');
-    expect(effect?.fallbackTint).toBe('#8fb6ff');
+    expect(effect?.pathId).toBe('运道');
+    expect(effect?.fallbackTint).toBe('#ffd76f');
   });
 });

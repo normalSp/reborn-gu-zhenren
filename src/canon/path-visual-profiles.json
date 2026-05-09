@@ -1,0 +1,162 @@
+{
+  "version": "v0.7.0-release-polish",
+  "purpose": "Runtime visual profiles for battle feedback. Path names must remain valid runtime paths from path-registry.json.",
+  "profiles": [
+    {
+      "pathId": "力道",
+      "displayName": "力道",
+      "runtimeAllowed": true,
+      "motif": "impact",
+      "fallbackTint": "#d6b06a",
+      "secondaryTint": "#7b4e28",
+      "intensity": "high",
+      "shakeIntensity": 12,
+      "aliases": ["strength", "strength_path", "force", "brute"],
+      "notes": "肉身、兽力、冲撞与重压。"
+    },
+    {
+      "pathId": "血道",
+      "displayName": "血道",
+      "runtimeAllowed": true,
+      "motif": "blood",
+      "fallbackTint": "#c43f4b",
+      "secondaryTint": "#3f0b14",
+      "intensity": "high",
+      "shakeIntensity": 8,
+      "aliases": ["blood", "blood_path"],
+      "notes": "血光、血雾、反噬风险。"
+    },
+    {
+      "pathId": "宙道",
+      "displayName": "宙道",
+      "runtimeAllowed": true,
+      "motif": "time",
+      "fallbackTint": "#75c484",
+      "secondaryTint": "#1d4b3a",
+      "intensity": "normal",
+      "shakeIntensity": 6,
+      "aliases": ["time", "time_path", "spring_autumn_cicada", "reversal"],
+      "notes": "光阴涟漪、回溯、残影。"
+    },
+    {
+      "pathId": "宇道",
+      "displayName": "宇道",
+      "runtimeAllowed": true,
+      "motif": "space",
+      "fallbackTint": "#9ab7ff",
+      "secondaryTint": "#262d65",
+      "intensity": "normal",
+      "shakeIntensity": 5,
+      "aliases": ["space", "space_path", "teleport"],
+      "notes": "空间折裂、挪移、虚空边界。"
+    },
+    {
+      "pathId": "魂道",
+      "displayName": "魂道",
+      "runtimeAllowed": true,
+      "motif": "soul",
+      "fallbackTint": "#8d7cff",
+      "secondaryTint": "#2a154d",
+      "intensity": "normal",
+      "shakeIntensity": 4,
+      "aliases": ["soul", "soul_path"],
+      "notes": "魂雾、幽火、精神压迫。"
+    },
+    {
+      "pathId": "梦道",
+      "displayName": "梦道",
+      "runtimeAllowed": true,
+      "motif": "dream",
+      "fallbackTint": "#d48dff",
+      "secondaryTint": "#4b275e",
+      "intensity": "normal",
+      "shakeIntensity": 2,
+      "aliases": ["dream", "dream_path", "illusion"],
+      "notes": "梦雾、幻彩、边界模糊。"
+    },
+    {
+      "pathId": "炎道",
+      "displayName": "炎道",
+      "runtimeAllowed": true,
+      "motif": "flame",
+      "fallbackTint": "#ff8f3f",
+      "secondaryTint": "#5c1b0d",
+      "intensity": "high",
+      "shakeIntensity": 7,
+      "aliases": ["fire", "fire_path", "flame"],
+      "notes": "火星、灼光、爆燃。"
+    },
+    {
+      "pathId": "水道",
+      "displayName": "水道",
+      "runtimeAllowed": true,
+      "motif": "water",
+      "fallbackTint": "#61c7ff",
+      "secondaryTint": "#12445e",
+      "intensity": "normal",
+      "shakeIntensity": 3,
+      "aliases": ["water", "water_path", "wave"],
+      "notes": "水纹、潮声感、流动压迫。"
+    },
+    {
+      "pathId": "冰道",
+      "displayName": "冰道",
+      "runtimeAllowed": true,
+      "motif": "frost",
+      "fallbackTint": "#b7ecff",
+      "secondaryTint": "#21455c",
+      "intensity": "normal",
+      "shakeIntensity": 4,
+      "aliases": ["ice", "ice_path", "frost"],
+      "notes": "霜裂、寒光、冻结。"
+    },
+    {
+      "pathId": "金道",
+      "displayName": "金道",
+      "runtimeAllowed": true,
+      "motif": "metal",
+      "fallbackTint": "#f1c75b",
+      "secondaryTint": "#5e4718",
+      "intensity": "normal",
+      "shakeIntensity": 5,
+      "aliases": ["metal", "metal_path", "gold"],
+      "notes": "金芒、锐光、兵刃震鸣。"
+    },
+    {
+      "pathId": "木道",
+      "displayName": "木道",
+      "runtimeAllowed": true,
+      "motif": "wood",
+      "fallbackTint": "#7fd36b",
+      "secondaryTint": "#194a24",
+      "intensity": "subtle",
+      "shakeIntensity": 2,
+      "aliases": ["wood", "wood_path", "vine"],
+      "notes": "藤影、生机纹、缠绕。"
+    },
+    {
+      "pathId": "智道",
+      "displayName": "智道",
+      "runtimeAllowed": true,
+      "motif": "wisdom",
+      "fallbackTint": "#c9d8ff",
+      "secondaryTint": "#28334d",
+      "intensity": "subtle",
+      "shakeIntensity": 1,
+      "aliases": ["wisdom", "wisdom_path", "deduction"],
+      "notes": "星盘、墨线、推演网格。"
+    },
+    {
+      "pathId": "运道",
+      "displayName": "运道",
+      "runtimeAllowed": true,
+      "motif": "luck",
+      "fallbackTint": "#ffd76f",
+      "secondaryTint": "#5b3e05",
+      "intensity": "normal",
+      "shakeIntensity": 3,
+      "aliases": ["luck", "luck_path", "fortune"],
+      "notes": "金线、气运流、命数波动。"
+    }
+  ]
+}

@@ -423,6 +423,92 @@
   color: var(--gu-trace-gold);
 }
 
+/* v0.7.0 release polish: path-flavored battle flash fallback motifs. */
+.battle-flash-motif {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.78;
+  --battle-flash-primary: #c49a3a;
+  --battle-flash-secondary: #2b243a;
+}
+.battle-flash-motif::before,
+.battle-flash-motif::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--battle-flash-primary) 72%, transparent);
+  box-shadow: 0 0 56px color-mix(in srgb, var(--battle-flash-primary) 42%, transparent);
+  animation: battle-flash-pulse 1.15s ease-out both;
+}
+.battle-flash-motif::after {
+  inset: 24%;
+  animation-delay: 0.08s;
+  border-color: color-mix(in srgb, var(--battle-flash-secondary) 70%, transparent);
+}
+.battle-flash-high::before { animation-duration: 0.85s; }
+.battle-flash-subtle { opacity: 0.48; }
+.battle-flash-impact::before,
+.battle-flash-impact::after {
+  border-width: 3px;
+  transform: scaleX(1.25);
+}
+.battle-flash-blood {
+  background:
+    linear-gradient(115deg, transparent 34%, color-mix(in srgb, var(--battle-flash-primary) 42%, transparent) 35%, transparent 42%),
+    radial-gradient(circle at 58% 52%, color-mix(in srgb, var(--battle-flash-primary) 28%, transparent), transparent 38%);
+}
+.battle-flash-time {
+  background:
+    repeating-radial-gradient(circle at center, transparent 0 22px, color-mix(in srgb, var(--battle-flash-primary) 25%, transparent) 23px 25px),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--battle-flash-secondary) 28%, transparent), transparent);
+}
+.battle-flash-space {
+  background:
+    linear-gradient(135deg, transparent 42%, color-mix(in srgb, var(--battle-flash-primary) 36%, transparent) 43%, transparent 47%),
+    linear-gradient(45deg, transparent 55%, color-mix(in srgb, var(--battle-flash-secondary) 32%, transparent) 56%, transparent 61%);
+  filter: contrast(1.15);
+}
+.battle-flash-soul {
+  background: radial-gradient(ellipse at 50% 62%, color-mix(in srgb, var(--battle-flash-secondary) 46%, transparent), transparent 48%);
+  filter: blur(0.4px);
+}
+.battle-flash-dream {
+  background: linear-gradient(120deg, color-mix(in srgb, var(--battle-flash-primary) 20%, transparent), transparent, color-mix(in srgb, var(--battle-flash-secondary) 28%, transparent));
+  filter: saturate(1.35) blur(0.6px);
+}
+.battle-flash-flame {
+  background: radial-gradient(circle at 50% 60%, color-mix(in srgb, var(--battle-flash-primary) 45%, transparent), transparent 35%);
+}
+.battle-flash-water,
+.battle-flash-frost {
+  background: repeating-radial-gradient(ellipse at center, transparent 0 26px, color-mix(in srgb, var(--battle-flash-primary) 24%, transparent) 28px 31px);
+}
+.battle-flash-frost { filter: brightness(1.18) contrast(1.08); }
+.battle-flash-metal {
+  background: linear-gradient(100deg, transparent 35%, color-mix(in srgb, var(--battle-flash-primary) 46%, transparent) 50%, transparent 65%);
+}
+.battle-flash-wood {
+  background:
+    linear-gradient(75deg, transparent 40%, color-mix(in srgb, var(--battle-flash-primary) 26%, transparent) 42%, transparent 47%),
+    linear-gradient(105deg, transparent 54%, color-mix(in srgb, var(--battle-flash-secondary) 34%, transparent) 56%, transparent 62%);
+}
+.battle-flash-wisdom {
+  background:
+    linear-gradient(0deg, transparent 48%, color-mix(in srgb, var(--battle-flash-primary) 18%, transparent) 49%, transparent 50%),
+    linear-gradient(90deg, transparent 48%, color-mix(in srgb, var(--battle-flash-primary) 18%, transparent) 49%, transparent 50%);
+}
+.battle-flash-luck {
+  background: conic-gradient(from 30deg at center, transparent, color-mix(in srgb, var(--battle-flash-primary) 35%, transparent), transparent, color-mix(in srgb, var(--battle-flash-secondary) 25%, transparent), transparent);
+}
+
+@keyframes battle-flash-pulse {
+  from { opacity: 0; transform: scale(0.72) rotate(0deg); }
+  42% { opacity: 1; }
+  to { opacity: 0; transform: scale(1.18) rotate(8deg); }
+}
+
 /* ═══════ M7 Phase 3: 响应式断点 & 移动端适配 ═══════ */
 
 /* ─── 宽屏 (≥1920px): 无限制，字体加大 ─── */

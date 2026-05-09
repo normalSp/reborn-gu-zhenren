@@ -969,6 +969,10 @@ export interface BattleVisualEffectEvent {
   kind: 'killer_move' | 'immortal_gu' | 'scene' | 'ui_feedback';
   assetPath?: string;
   fallbackTint: string;
+  secondaryTint?: string;
+  pathId?: string;
+  motif?: string;
+  intensity?: 'subtle' | 'normal' | 'high';
   durationMs: number;
   fadeInMs: number;
   fadeOutMs: number;
@@ -977,6 +981,19 @@ export interface BattleVisualEffectEvent {
   sfxCue?: string;
   triggerTags: string[];
   createdAt: number;
+}
+
+export interface PathVisualProfile {
+  pathId: string;
+  displayName: string;
+  runtimeAllowed: boolean;
+  motif: string;
+  fallbackTint: string;
+  secondaryTint: string;
+  intensity: 'subtle' | 'normal' | 'high';
+  shakeIntensity: number;
+  aliases?: string[];
+  notes?: string;
 }
 
 export type CombatEventCandidateType =
@@ -1035,6 +1052,7 @@ export interface DuelMove {
   pathBonus: number;         // 流派加成
   description: string;
   /** P2-P7: 关联的杀招ID（killer-moves.json中的key），空字符串表示非杀招 */
+  path?: string;
   killerMoveId?: string;
   /** P2-P7: 所需核心蛊虫名称列表 */
   requiredCoreGu?: string[];

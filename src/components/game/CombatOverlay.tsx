@@ -115,7 +115,7 @@ export function CombatOverlay() {
             }}
           />
           <motion.div
-            className="w-full max-w-md mx-4 rounded-xl overflow-hidden"
+            className="w-full max-w-4xl mx-4 rounded-xl overflow-hidden"
             variants={panelVariants}
             initial="hidden"
             animate="visible"
@@ -129,20 +129,23 @@ export function CombatOverlay() {
             {duelState && (
               <>
                 {/* ─── HP区域 ─── */}
-                <div className="flex gap-4 p-4 pb-2">
-                  <div className="player-side flex-1">
+                <div className="relative overflow-hidden border-b border-rg-gold/10 bg-rg-ink-900/30">
+                  <div className="pointer-events-none absolute inset-0 opacity-40" style={{ background: 'radial-gradient(circle at 50% 0%, rgba(196,154,58,0.18), transparent 48%)' }} />
+                  <div className="relative grid grid-cols-[1fr_auto_1fr] gap-4 p-4 pb-3">
+                  <div className="player-side min-w-0">
                     <HpBar label={duelState.player.name} realm={duelState.player.realm} hp={duelState.player.hp} maxHp={duelState.player.maxHp} side="player" />
                   </div>
                   <motion.div
-                    className="flex flex-col items-center justify-center text-rg-gold-400 font-bold text-sm shrink-0"
+                    className="flex flex-col items-center justify-center text-rg-gold-400 font-display font-bold text-lg shrink-0"
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 12, delay: 0.2 }}
                   >
                     VS
                   </motion.div>
-                  <div className="enemy-side flex-1 text-right">
+                  <div className="enemy-side min-w-0 text-right">
                     <HpBar label={duelState.enemy.name} realm={duelState.enemy.realm} hp={duelState.enemy.hp} maxHp={duelState.enemy.maxHp} side="enemy" />
+                  </div>
                   </div>
                 </div>
 

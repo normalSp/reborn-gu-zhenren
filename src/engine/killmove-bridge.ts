@@ -144,6 +144,7 @@ export function convertKillMoveToDuelMove(
     damageMultiplier: killMove.multiplier * profMult * synergyMult * rankMult,
     pathBonus: pathProficiency * 0.002,
     description: killMove.description,
+    path: killMove.path,
     killerMoveId: killMove.id,
     requiredCoreGu: killMove.coreGu,
     rankPenalty,
