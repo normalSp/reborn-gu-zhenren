@@ -5,27 +5,20 @@ import {
   buildActivityPanelState,
   type ActivityActionCard,
   type ActivityActionKind,
-  type ActivityLocationContext,
 } from '../../engine/activity-panel';
+import { deriveActivityAvailabilityContext } from '../../engine/activity-availability';
 import type { FieldActionKind } from '../../engine/field-action';
-
-const LOCATION_OPTIONS: Array<{ id: ActivityLocationContext; label: string; note: string }> = [
-  { id: 'safe', label: '安全地', note: '城镇/洞府' },
-  { id: 'caravan', label: '商路', note: '有干扰' },
-  { id: 'field', label: '野外', note: '常规风险' },
-  { id: 'wild', label: '险地', note: '高风险' },
-  { id: 'aperture', label: '仙窍', note: '蛊仙内景' },
-];
+import type { MeditationContext } from '../../engine/primeval-meditation';
 
 const PERIOD_LABEL: Record<string, string> = {
-  morning: '晨',
-  noon: '午',
-  evening: '暮',
-  night: '夜',
+  morning: '早晨',
+  noon: '午时',
+  evening: '黄昏',
+  night: '夜晚',
 };
 
-function cardTone(card: ActivityActionCard): string {
-  if (card.status === 'blocked') return 'border-rg-ink-300/12 text-rg-paper-200/38 bg-rg-ink-900/25';
+function cardTone(card: ActivityActionCard, forcedBlocked = false): string {
+  if (forcedBlocked || card.status === 'blocked') return 'border-rg-ink-300/12 text-rg-paper-200/38 bg-rg-ink-900/25';
   if (card.status === 'risky') return 'border-rg-blood-400/28 text-rg-blood-400 bg-rg-blood-400/5';
   return 'border-rg-gold/24 text-rg-paper-200/78 bg-rg-ink-900/30';
 }
@@ -44,8 +37,14 @@ function groupCards(cards: ActivityActionCard[]) {
   };
 }
 
+function toMeditationContext(kind: string): MeditationContext {
+  if (kind === 'aperture') return 'aperture';
+  if (kind === 'caravan') return 'caravan';
+  if (kind === 'safe') return 'safe';
+  return 'field';
+}
+
 export function ActionPanel() {
-  const [locationContext, setLocationContext] = useState<ActivityLocationContext>('field');
   const [lastResult, setLastResult] = useState<{ success: boolean; message: string } | null>(null);
   const storeSnapshot = useStore(useShallow((s: any) => ({
     profile: s.profile,
@@ -59,6 +58,11 @@ export function ActionPanel() {
     selectedTalents: s.selectedTalents,
     materialBag: s.materialBag,
     aperture: s.aperture,
+    currentChapterId: s.currentChapterId,
+    currentNarrative: s.currentNarrative,
+    activeDialogue: s.activeDialogue,
+    duelState: s.duelState,
+    squadCombatState: s.squadCombatState,
   })));
   const meditateWithPrimevalStone = useStore((s: any) => s.meditateWithPrimevalStone);
   const meditateWithImmortalStone = useStore((s: any) => s.meditateWithImmortalStone);
@@ -66,18 +70,31 @@ export function ActionPanel() {
   const attemptBreakthrough = useStore((s: any) => s.attemptBreakthrough);
   const performFieldAction = useStore((s: any) => s.performFieldAction);
 
+  const availability = useMemo(
+    () => deriveActivityAvailabilityContext(storeSnapshot),
+    [storeSnapshot],
+  );
   const panelState = useMemo(
-    () => buildActivityPanelState(storeSnapshot, locationContext),
-    [storeSnapshot, locationContext],
+    () => buildActivityPanelState(storeSnapshot, availability.locationContext),
+    [storeSnapshot, availability.locationContext],
   );
   const grouped = groupCards(panelState.cards);
   const essencePct = Math.max(0, Math.min(100, (panelState.essenceCurrent / panelState.essenceMax) * 100));
   const progressPct = Math.max(0, Math.min(100, panelState.cultivationProgress));
 
   const execute = (kind: ActivityActionKind) => {
+    if (availability.sceneLocked) {
+      setLastResult({ success: false, message: availability.lockReason || '当前场景锁定，不能推进行动。' });
+      return;
+    }
+    if (['scout', 'gather', 'trap_check', 'escape_support'].includes(kind) && !availability.fieldActionsAllowed) {
+      setLastResult({ success: false, message: availability.fieldActionReason || '当前地点不能执行野外行动。' });
+      return;
+    }
+
     let result: any;
     if (kind === 'meditate') {
-      const meditationContext = locationContext === 'wild' ? 'field' : locationContext;
+      const meditationContext = toMeditationContext(availability.locationContext);
       result = panelState.isImmortal
         ? meditateWithImmortalStone?.(1, meditationContext)
         : meditateWithPrimevalStone?.(1, meditationContext);
@@ -86,7 +103,7 @@ export function ActionPanel() {
     } else if (kind === 'breakthrough') {
       result = attemptBreakthrough?.();
     } else {
-      result = performFieldAction?.(kind as FieldActionKind, locationContext);
+      result = performFieldAction?.(kind as FieldActionKind, availability.locationContext);
     }
     setLastResult({
       success: Boolean(result?.success),
@@ -101,7 +118,7 @@ export function ActionPanel() {
           <div>
             <div className="text-sm font-semibold text-rg-gold">行动余裕</div>
             <div className="mt-1 text-[11px] text-rg-paper-200/45">
-              {PERIOD_LABEL[panelState.period] || panelState.period}时段 · 每次推进后回满 AP
+              {PERIOD_LABEL[panelState.period] || panelState.period} · 推进一时段后 AP 回满
             </div>
           </div>
           <div className="text-right">
@@ -118,32 +135,38 @@ export function ActionPanel() {
             <div className="h-full rounded-full bg-rg-jade-400/80" style={{ width: `${essencePct}%` }} />
           </div>
         </div>
+        <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/42">{availability.apPolicyNote}</p>
       </section>
 
       <section className="space-y-2">
         <div className="flex items-center justify-between">
-          <h3 className="text-xs font-semibold text-rg-paper-100">行动环境</h3>
-          <span className="text-[10px] text-rg-paper-200/38">影响调息与野外风险</span>
+          <h3 className="text-xs font-semibold text-rg-paper-100">当前场景</h3>
+          <span className="text-[10px] text-rg-paper-200/38">由剧情、地点与境界自动判定</span>
         </div>
-        <div className="grid grid-cols-5 gap-1">
-          {LOCATION_OPTIONS.map(option => (
-            <button
-              key={option.id}
-              onClick={() => setLocationContext(option.id)}
-              className={`rounded-sm border px-1.5 py-1 text-[10px] transition-micro ${
-                locationContext === option.id
-                  ? 'border-rg-gold/45 bg-rg-gold/12 text-rg-gold'
-                  : 'border-rg-ink-300/15 text-rg-paper-200/45 hover:border-rg-gold/25 hover:text-rg-paper-100'
-              }`}
-              title={option.note}
-            >
-              {option.label}
-            </button>
-          ))}
+        <div className="rounded-md border border-rg-ink-300/14 bg-rg-ink-900/28 p-3">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm font-semibold text-rg-gold">{availability.locationLabel}</span>
+            <span className="rounded-sm border border-rg-gold/25 px-2 py-0.5 text-[10px] text-rg-gold/80">
+              {availability.sceneLocked ? '场景锁定' : '可行动'}
+            </span>
+          </div>
+          {availability.lockReason && (
+            <p className="mt-2 text-[11px] leading-relaxed text-rg-blood-400/85">{availability.lockReason}</p>
+          )}
+          {!availability.fieldActionsAllowed && availability.fieldActionReason && (
+            <p className="mt-2 text-[11px] leading-relaxed text-rg-paper-200/50">{availability.fieldActionReason}</p>
+          )}
         </div>
       </section>
 
-      <ActionSection title="调息与修行" cards={[grouped.meditate, grouped.cultivate].filter(Boolean) as ActivityActionCard[]} onExecute={execute} />
+      <ActionSection
+        title="调息与修行"
+        note="修行/突破的详细状态建议在空窍页查看；本面板保留快捷入口。"
+        cards={[grouped.meditate, grouped.cultivate].filter(Boolean) as ActivityActionCard[]}
+        onExecute={execute}
+        forceBlocked={availability.sceneLocked}
+        blockedReason={availability.lockReason}
+      />
 
       <section className="rounded-md border border-rg-ink-300/12 bg-rg-ink-900/25 p-3">
         <div className="flex items-center justify-between text-[11px] text-rg-paper-200/55">
@@ -153,10 +176,26 @@ export function ActionPanel() {
         <div className="mt-1 h-2 overflow-hidden rounded-full bg-rg-ink-800">
           <div className="h-full rounded-full bg-rg-gold/80" style={{ width: `${progressPct}%` }} />
         </div>
+        <p className="mt-2 text-[10px] text-rg-paper-200/42">
+          当前只显示小境界推进准备；昼夜修行差异、升仙失败与复杂灾劫已并入 v0.8 深系统。
+        </p>
       </section>
 
-      <ActionSection title="突破" cards={grouped.breakthrough ? [grouped.breakthrough] : []} onExecute={execute} />
-      <ActionSection title="野外行动" cards={grouped.field} onExecute={execute} />
+      <ActionSection
+        title="突破"
+        cards={grouped.breakthrough ? [grouped.breakthrough] : []}
+        onExecute={execute}
+        forceBlocked={availability.sceneLocked}
+        blockedReason={availability.lockReason}
+      />
+      <ActionSection
+        title="野外行动"
+        note="普通狩猎、采集、侦察先走野外行动；敌对蛊师、蛊兽、伏击或剧情白名单才进入战斗。"
+        cards={grouped.field}
+        onExecute={execute}
+        forceBlocked={availability.sceneLocked || !availability.fieldActionsAllowed}
+        blockedReason={availability.lockReason || availability.fieldActionReason}
+      />
 
       {lastResult && (
         <div className={`rounded-md border px-3 py-2 text-xs leading-relaxed ${
@@ -173,51 +212,63 @@ export function ActionPanel() {
 
 function ActionSection({
   title,
+  note,
   cards,
   onExecute,
+  forceBlocked = false,
+  blockedReason,
 }: {
   title: string;
+  note?: string;
   cards: ActivityActionCard[];
   onExecute: (kind: ActivityActionKind) => void;
+  forceBlocked?: boolean;
+  blockedReason?: string;
 }) {
   if (!cards.length) return null;
   return (
     <section className="space-y-2">
-      <h3 className="text-xs font-semibold text-rg-paper-100">{title}</h3>
-      {cards.map(card => (
-        <button
-          key={card.id}
-          disabled={card.status === 'blocked'}
-          onClick={() => onExecute(card.id)}
-          className={`w-full rounded-md border p-3 text-left transition-micro ${cardTone(card)} ${
-            card.status === 'blocked' ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:border-rg-gold/45 hover:bg-rg-gold/10'
-          }`}
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0">
-              <div className="truncate text-sm font-semibold">{card.title}</div>
-              <div className="mt-0.5 text-[11px] text-rg-paper-200/48">{card.subtitle}</div>
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">{title}</h3>
+        {note && <p className="mt-1 text-[10px] text-rg-paper-200/42">{note}</p>}
+      </div>
+      {cards.map(card => {
+        const blocked = forceBlocked || card.status === 'blocked';
+        return (
+          <button
+            key={card.id}
+            disabled={blocked}
+            onClick={() => onExecute(card.id)}
+            className={`w-full rounded-md border p-3 text-left transition-micro ${cardTone(card, forceBlocked)} ${
+              blocked ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:border-rg-gold/45 hover:bg-rg-gold/10'
+            }`}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold">{card.title}</div>
+                <div className="mt-0.5 text-[11px] text-rg-paper-200/48">{card.subtitle}</div>
+              </div>
+              <span className="shrink-0 rounded-sm border border-rg-ink-300/18 px-1.5 py-0.5 text-[10px] text-rg-paper-200/45">
+                AP {card.apCost}
+              </span>
             </div>
-            <span className="shrink-0 rounded-sm border border-rg-ink-300/18 px-1.5 py-0.5 text-[10px] text-rg-paper-200/45">
-              AP {card.apCost}
-            </span>
-          </div>
-          <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
-            {card.expectedGain && <span>{card.expectedGain}</span>}
-            {card.costSummary && <span>{card.costSummary}</span>}
-            {card.successRate !== undefined && <span>成功 {pct(card.successRate)}</span>}
-            {card.riskChance !== undefined && <span>风险 {pct(card.riskChance)}</span>}
-          </div>
-          {card.modifierLabels.length > 0 && (
-            <div className="mt-2 line-clamp-2 text-[10px] text-rg-gold/55">
-              修正：{card.modifierLabels.slice(0, 3).join(' / ')}
+            <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
+              {card.expectedGain && <span>{card.expectedGain}</span>}
+              {card.costSummary && <span>{card.costSummary}</span>}
+              {card.successRate !== undefined && <span>成功 {pct(card.successRate)}</span>}
+              {card.riskChance !== undefined && <span>风险 {pct(card.riskChance)}</span>}
             </div>
-          )}
-          {card.disabledReason && (
-            <div className="mt-2 text-[10px] text-rg-blood-400/80">{card.disabledReason}</div>
-          )}
-        </button>
-      ))}
+            {card.modifierLabels.length > 0 && (
+              <div className="mt-2 line-clamp-2 text-[10px] text-rg-gold/55">
+                修正：{card.modifierLabels.slice(0, 3).join(' / ')}
+              </div>
+            )}
+            {(blockedReason || card.disabledReason) && (
+              <div className="mt-2 text-[10px] text-rg-blood-400/80">{blockedReason || card.disabledReason}</div>
+            )}
+          </button>
+        );
+      })}
     </section>
   );
 }

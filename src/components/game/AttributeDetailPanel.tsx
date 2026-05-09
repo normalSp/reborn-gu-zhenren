@@ -1,4 +1,5 @@
 import { useStore } from '../../store';
+import { resolveFactionDisplayName } from '../../engine/faction-display';
 
 // ─── 属性分级 ───
 // 原著：甲等/乙等/丙等/丁等是空窍真元容量的评价标准（资质专属）
@@ -162,7 +163,7 @@ export function AttributeDetailPanel() {
                   data.standing >= -40 ? 'text-rg-gold' : 'text-rg-blood-400';
                 return (
                   <div key={factionId} className="flex items-center gap-3">
-                    <span className="text-rg-paper-200/80 text-xs font-panel w-20">{factionId}</span>
+                    <span className="text-rg-paper-200/80 text-xs font-panel w-20">{resolveFactionDisplayName(factionId)}</span>
                     <div className="flex-1 h-1.5 bg-rg-ink-900 rounded-full overflow-hidden relative">
                       <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-rg-ink-300/40" />
                       <div className={`h-full transition-all duration-300 rounded-full ${data.standing >= 0 ? 'bg-rg-jade-500' : 'bg-rg-blood-500'}`}

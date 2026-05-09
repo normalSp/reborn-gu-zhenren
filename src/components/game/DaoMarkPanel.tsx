@@ -111,10 +111,20 @@ function DaoMarkBars({
 export function DaoMarkPanel() {
   const pathBuild = useStore(s => s.pathBuild);
   const profile = useStore(s => s.profile);
+  const inventory = useStore(s => s.inventory);
+  const killMoves = useStore(s => s.killMoves);
 
   const { primary, secondary, path_levels, dao_marks } = pathBuild;
   const daoEntries = Object.entries(dao_marks);
   const totalMarks = daoEntries.reduce((sum, [, v]) => sum + v, 0);
+  const isImmortal = (profile.realm?.grand || 1) >= 6;
+  const softTendency = Object.entries(
+    [...(inventory || []), ...(killMoves || [])].reduce((acc: Record<string, number>, item: any) => {
+      if (!item?.path) return acc;
+      acc[item.path] = (acc[item.path] || 0) + (item.baseCost ? 3 : 2);
+      return acc;
+    }, {}),
+  ).sort(([, a], [, b]) => b - a).slice(0, 3);
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -126,11 +136,16 @@ export function DaoMarkPanel() {
             <div>
               <div className="text-rg-paper-200/50 text-xs font-panel">主修流派</div>
               <div className="text-rg-gold font-narrative text-base">
-                {primary || '未选择'}
+                {primary || (isImmortal ? '未选择' : '尚未定道')}
               </div>
               {path_levels[primary] && (
                 <div className="text-rg-paper-200/50 text-xs font-panel mt-0.5">
                   {path_levels[primary]}
+                </div>
+              )}
+              {!primary && !isImmortal && (
+                <div className="mt-1 text-[10px] text-rg-paper-200/42 leading-relaxed">
+                  凡人阶段先形成软倾向，高转或升仙时再正式定道。
                 </div>
               )}
             </div>
@@ -145,6 +160,11 @@ export function DaoMarkPanel() {
               <div className="text-rg-paper-100 font-panel text-sm mt-0.5">
                 {secondary.length > 0 ? secondary.join('、') : '无'}
               </div>
+              {!primary && softTendency.length > 0 && (
+                <div className="mt-2 text-[10px] text-rg-paper-200/45">
+                  软倾向：{softTendency.map(([path, weight]) => `${path}(${weight})`).join(' / ')}
+                </div>
+              )}
             </div>
           </div>
         </div>

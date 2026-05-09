@@ -973,6 +973,14 @@ export class ContextBuilder {
   buildPlayerStateJSON(store: RootStore): string {
     const s = store;
     const playerName = s.profile.name || '无名蛊师';
+    const essenceCurrent = Number(s.vitals.essence.current || 0);
+    const essenceMax = Math.max(1, Number(s.vitals.essence.max || 1));
+    const essencePercent = Math.round((essenceCurrent / essenceMax) * 100);
+    const essenceBand = essencePercent < 25
+      ? '低于25%，可描述为真元所剩无几'
+      : essencePercent < 50
+        ? '25%-49%，可描述为真元偏低'
+        : '50%以上，不得描述为真元所剩无几';
     const playerInfo: Record<string, any> = {
       name: playerName,
       playerIdentity: {
@@ -983,6 +991,13 @@ export class ContextBuilder {
       realm: s.profile.realm.label,
       attributes: s.attributes,
       vitals: { health: s.vitals.health, essence: s.vitals.essence },
+      hardTruthThresholds: {
+        essenceCurrent,
+        essenceMax,
+        essencePercent,
+        essenceBand,
+        instruction: '叙事和选项必须服从该硬事实；例如 65/100 真元不能写“真元所剩无几”。',
+      },
       path: { primary: s.pathBuild.primary || '无', secondary: s.pathBuild.secondary },
       daoHeart: s.daoHeart,
       daoHeartNarrativeBias: describeDaoHeartNarrativeBias(s.daoHeart as any),

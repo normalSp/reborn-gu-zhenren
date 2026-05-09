@@ -754,6 +754,14 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   },
   performFieldAction: (kind, locationType = 'field') => {
     const state = get() as PlayerSlice;
+    if (locationType === 'safe' || locationType === 'aperture') {
+      return {
+        success: false,
+        message: locationType === 'aperture'
+          ? '当前处于仙窍/福地内，野外行动需要回到外界地点。'
+          : '当前处于山寨、城镇或安全营地，需离开安全地后才能执行野外行动。',
+      };
+    }
     if (!(get() as PlayerSlice).spendAp(1, kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离')) {
       return { success: false, message: '行动点不足，无法执行野外行动。' };
     }

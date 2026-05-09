@@ -7,6 +7,7 @@ import { applyStateUpdate } from './state-update-applier';
 import { contextBuilder } from './context-builder';
 import { checkChapterGoals } from './goal-checker';
 import { buildDeathRecordFallback } from './death-record';
+import { sanitizeNarrativeConsistency } from './narrative-consistency';
 import { useStore } from '../store';
 import type { ActiveDialogue, Choice, DialogueActionCard, DialogueActionCardCategory, NarrativeJSON, AIContext } from '../types';
 import type { SemanticValidationResult } from './semantic-validator';
@@ -497,6 +498,19 @@ export class ResponsePipeline {
             }
           } catch { /* skip */ }
         }
+      }
+      const consistency = sanitizeNarrativeConsistency(narrative, store);
+      narrative = consistency.narrative;
+      if (consistency.rewardIssues.length > 0 || consistency.choiceIssues.length > 0) {
+        try {
+          const consistencyLog = useStore.getState() as any;
+          if (typeof consistencyLog.addGameLog === 'function') {
+            consistencyLog.addGameLog('pipeline', `叙事数值/奖励一致性校验：${consistency.rewardIssues.length + consistency.choiceIssues.length}项处理`, {
+              rewardIssues: consistency.rewardIssues,
+              choiceIssues: consistency.choiceIssues,
+            });
+          }
+        } catch { /* skip */ }
       }
       console.log(`%c[PIPE] RESOLVED %c→ elapsed=${Date.now()-startTime}ms textLen=${narrative.narrative.text.length} choices=${narrative.narrative.choices.length} hasState=${!!narrative.state_update}`,
         'color:#30d080;font-weight:bold','color:#999');

@@ -67,6 +67,7 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
   const cx = 140, cy = 140;
   const { primevalSea, apertureWall, capacity, carriedGu, rank, subRank } = aperture;
   const usageFrac = capacity > 0 ? carriedGu / capacity : 0;
+  const isExtremePhysique = Boolean(aperture.capacityLocked || aperture.extremePhysiqueType);
 
   return (
     <div className="flex-1 overflow-y-auto p-4 gu-ink-splash">
@@ -140,7 +141,7 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
               background: `linear-gradient(90deg, ${primevalSea.color}88, ${primevalSea.color})`,
             }} />
         </div>
-        {primevalSea.fillPercent >= 100 && (
+        {isExtremePhysique && (
           <p className="text-rg-gold/60 text-[9px] font-panel mt-1.5">
             · 十绝体 — 元海无空腔
           </p>

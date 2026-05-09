@@ -73,6 +73,8 @@ export function RefinePanel() {
   const [result, setResult] = useState<RefineResult | null>(null);
   const [showFragmentPanel, setShowFragmentPanel] = useState(false);
   const [showImmortalAscend, setShowImmortalAscend] = useState(false);
+  const [recipePathFilter, setRecipePathFilter] = useState<string>('all');
+  const [showUnknownRecipes, setShowUnknownRecipes] = useState(false);
 
   // ─── 配方列表（三档过滤：基础/已解锁显示，古方隐藏，进阶显示为锁定） ───
   const recipeList = useMemo((): { unlocked: RecipeEntry[]; locked: RecipeEntry[] } => {
@@ -259,6 +261,29 @@ export function RefinePanel() {
   const availableFragments = useMemo(() => {
     return FRAGMENTS.filter((f: any) => discoveredFragments.includes(f.id));
   }, [discoveredFragments]);
+  const discoveredTargets = useMemo(
+    () => new Set(availableFragments.map((f: any) => f.targetGu).filter(Boolean)),
+    [availableFragments],
+  );
+  const recipePaths = useMemo(() => {
+    const paths = new Set<string>();
+    for (const recipe of [...recipeList.unlocked, ...recipeList.locked]) {
+      if (recipe.path && recipe.path !== '未知') paths.add(recipe.path);
+    }
+    return ['all', ...Array.from(paths).sort()];
+  }, [recipeList]);
+  const filterRecipe = useCallback((recipe: RecipeEntry) => (
+    recipePathFilter === 'all' || recipe.path === recipePathFilter
+  ), [recipePathFilter]);
+  const visibleUnlockedRecipes = useMemo(
+    () => recipeList.unlocked.filter(filterRecipe),
+    [recipeList.unlocked, filterRecipe],
+  );
+  const visibleLockedRecipes = useMemo(
+    () => recipeList.locked.filter(recipe => filterRecipe(recipe) && (showUnknownRecipes || discoveredTargets.has(recipe.guName))),
+    [recipeList.locked, filterRecipe, showUnknownRecipes, discoveredTargets],
+  );
+  const hiddenUnknownRecipeCount = recipeList.locked.filter(recipe => filterRecipe(recipe) && !discoveredTargets.has(recipe.guName)).length;
 
   return (
     <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel">
@@ -352,8 +377,36 @@ export function RefinePanel() {
         <div className="w-1/2 border-r border-rg-ink-700/30 overflow-y-auto p-2">
           {(mode === 'refine') ? (
             <>
-              <p className="text-[10px] text-rg-paper-200/30 mb-2 px-1">蛊方({recipeList.unlocked.length})</p>
-              {recipeList.unlocked.map(r => (
+              <div className="mb-2 space-y-2 px-1">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-[10px] text-rg-paper-200/30">蛊方({visibleUnlockedRecipes.length})</p>
+                  <button
+                    onClick={() => setShowUnknownRecipes(v => !v)}
+                    className="text-[9px] text-rg-gold/65 hover:text-rg-gold"
+                  >
+                    {showUnknownRecipes ? '隐藏未知' : `图鉴(${hiddenUnknownRecipeCount})`}
+                  </button>
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {recipePaths.map(path => (
+                    <button
+                      key={path}
+                      onClick={() => setRecipePathFilter(path)}
+                      className={`rounded-sm border px-1.5 py-0.5 text-[9px] transition-micro ${
+                        recipePathFilter === path
+                          ? 'border-rg-gold/40 bg-rg-gold/12 text-rg-gold'
+                          : 'border-rg-ink-300/12 text-rg-paper-200/35 hover:border-rg-gold/25 hover:text-rg-paper-200/70'
+                      }`}
+                    >
+                      {path === 'all' ? '全部流派' : path}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-[9px] text-rg-paper-200/28">
+                  默认只显示已解锁蛊方、残方或线索相关配方；未知配方不再作为可操作项展示。
+                </p>
+              </div>
+              {visibleUnlockedRecipes.map(r => (
                 <button key={r.guName} onClick={() => toggleSelect(r.guName)}
                   className={`w-full text-left px-2 py-1.5 rounded-sm mb-1 text-xs transition-colors ${
                     selectedRecipe === r.guName ? 'bg-rg-gold/15 border border-rg-gold/30 text-rg-gold' :
@@ -366,10 +419,12 @@ export function RefinePanel() {
                   <div className="text-[8px] text-rg-paper-200/20 mt-0.5 truncate">{r.source}</div>
                 </button>
               ))}
-              {recipeList.locked.length > 0 && (
+              {visibleLockedRecipes.length > 0 && (
                 <div className="mt-3 pt-2 border-t border-rg-ink-700/20">
-                  <p className="text-[9px] text-rg-paper-200/15 mb-2 px-1">未解锁蛊方({recipeList.locked.length}) — 收集残方解锁</p>
-                  {recipeList.locked.map(r => (
+                  <p className="text-[9px] text-rg-paper-200/15 mb-2 px-1">
+                    {showUnknownRecipes ? '图鉴/未解锁' : '残方/线索'}蛊方({visibleLockedRecipes.length})
+                  </p>
+                  {visibleLockedRecipes.map(r => (
                     <div key={r.guName}
                       className="w-full text-left px-2 py-1.5 rounded-sm mb-1 text-xs bg-rg-ink-800/20 border border-rg-ink-700/10 opacity-50">
                       <div className="flex items-center gap-1">

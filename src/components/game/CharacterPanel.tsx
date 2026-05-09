@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useStore } from '../../store';
 import { describeReputationEffects } from '../../engine/dao-reputation-policy';
+import { resolveFactionDisplayName } from '../../engine/faction-display';
 import { CHAR_IMAGE_MAP } from '../../data/image-maps';
 
 const RELATION_COLORS: Record<string, string> = {
@@ -259,7 +260,7 @@ export function CharacterPanel() {
                   <div key={factionId} className="rounded-sm border border-rg-ink-300/10 bg-rg-ink-800/35 p-2">
                     <div className="flex items-center gap-3">
                       <span className="text-rg-paper-200/80 text-xs font-panel w-20 truncate">
-                        {factionId}
+                        {resolveFactionDisplayName(factionId)}
                       </span>
                       <div className="flex-1 h-2 bg-rg-ink-900 rounded-full overflow-hidden relative">
                         <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-rg-ink-300/40" />

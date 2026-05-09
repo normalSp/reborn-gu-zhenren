@@ -8,11 +8,17 @@ import guDbRaw from '../../canon/gu-database.json';
 import factionDbRaw from '../../canon/faction-data.json';
 import { computePathLevel } from '../../engine/path-progression';
 import { getRuntimePathNames } from '../../engine/path-registry';
+import { getInitialFactionStanding } from '../../engine/faction-display';
 import type { Talent, MortalAperture, ImmortalAperture } from '../../types';
 
 const GU_DB = guDbRaw as Record<string, any>;
 const FACTION_DB = factionDbRaw as Record<string, any>;
 const RUNTIME_PATH_NAMES = getRuntimePathNames();
+
+function calculateMortalSeaFillPercent(aptitude: number): number {
+  if (aptitude >= 10) return 100;
+  return Math.min(95, 45 + aptitude * 5 + (aptitude >= 7 ? 5 : 0));
+}
 
 interface CharacterCreateProps {
   onConfirm: () => void;
@@ -336,7 +342,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
         primevalSea: {
           color: colorMap[colorName],
           colorName,
-          fillPercent: Math.min(100, 50 + effectiveAttributes.资质 * 5 + (effectiveAttributes.资质 >= 7 ? 10 : 0) + (effectiveAttributes.资质 >= 9 ? 5 : 0)),
+          fillPercent: calculateMortalSeaFillPercent(effectiveAttributes.资质),
         },
         apertureWall: {
           state: '坚实',
@@ -344,6 +350,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
           description: '窍壁完整，真元流转自如',
         },
         capacity,
+        capacityLocked: effectiveAttributes.资质 >= 10,
         carriedGu: 0,
       };
       (useStore.getState() as any).initializeMortalAperture?.(aperture);
@@ -378,6 +385,12 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       // 势力
       if (tc.factionId) {
         useStore.getState().setFlag('_faction', tc.factionId);
+        const initialStanding = getInitialFactionStanding(tc.factionId, {
+          realmGrand: startRealm.grand,
+          timelineNodeId: tNode?.id,
+          identity: playerIdentity,
+        });
+        (useStore.getState() as any).updateStanding?.(tc.factionId, initialStanding, '开局身份：族内登记/势力初识');
         const fb = tc.factionBonus;
         if (fb && fb.resourceMult && fb.resourceMult !== 1.0) {
           const adjustedCurrency = Math.round(startMoney.currency * fb.resourceMult);
@@ -588,16 +601,19 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
               const val = attributes[attr];
               const grade = attrGrade(val, attr);
               const isTen = attr === '资质' && val === 10;
+              const hideQiYun = attr === '气运';
               return (
                 <div key={attr} className={`text-center p-3 rounded-sm border transition-micro ${
                   isTen ? 'bg-rg-gold/10 border-rg-gold/30' : 'bg-rg-ink-800/50 border-rg-ink-400/15'
                 }`}>
                   <div className="text-rg-paper-200/70 text-xs font-panel mb-1">{attr}</div>
                   <div className={`text-2xl font-bold font-panel ${isTen ? 'text-rg-gold' : grade.color}`}>
-                    {val}
+                    {hideQiYun ? '???' : val}
                     {isTen && <span className="text-[10px] text-rg-gold ml-1">十绝</span>}
                   </div>
-                  {grade.label && (
+                  {hideQiYun ? (
+                    <div className="text-xs font-panel mt-1 text-rg-ink-400">需运道手段窥探</div>
+                  ) : grade.label && (
                     <div className={`text-xs font-panel mt-1 ${grade.color}`}>{grade.label}</div>
                   )}
                 </div>
