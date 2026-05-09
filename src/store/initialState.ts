@@ -295,7 +295,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
   // 加载/错误状态（每次都重新生成）
   'isLoading',
   'error',
-  'currentNarrative',
   // 读档版本计数器（纯UI信号，不持久化）
   'gameLoadVersion',
   // v0.7.0: 小队战斗运行时状态（不持久化，战斗结束后清理）

@@ -252,7 +252,7 @@
       "sourceKind": "user_supplied_local_fan_pack",
       "license": "user_supplied_nonprofit_fan_pack",
       "licenseUrl": "",
-      "attribution": "用户提供本地文件：仙尊の小曲.mP3；仅用于 RebornG 非盈利私用二创包。",
+      "attribution": "用户提供本地文件：仙尊の小曲.mP3；用户确认该文件为方源曲，仅用于 RebornG 非盈利私用二创包。",
       "communityConfirmed": true,
       "userConfirmed": true,
       "runtimeEnabled": true,
@@ -267,7 +267,7 @@
       "loop": false,
       "loopStart": 0,
       "loopEnd": null,
-      "reviewNotes": "用户本地文件名为“仙尊の小曲.mP3”，暂按方源/大爱仙尊角色曲接入；若后续确认不是《年轮》，只需调整 manifest 映射。"
+      "reviewNotes": "用户于 2026-05-10 确认“仙尊の小曲.mP3”指方源曲；方源只作为原著 NPC、远景事件或名场面触发对象，不作为玩家身份。"
     },
     {
       "id": "character_duke_long_chunni",
@@ -506,13 +506,13 @@
     {
       "id": "character_gu_yue_yao_le_qingyi",
       "layer": "character",
-      "title": "青衣",
+      "title": "小熊饼干",
       "characterOrScene": "古月药乐",
       "sourceUrl": "local://bgm/v0.7/古月药乐.mP3",
       "sourceKind": "user_supplied_local_fan_pack",
       "license": "user_supplied_nonprofit_fan_pack",
       "licenseUrl": "",
-      "attribution": "用户提供本地文件：古月药乐.mP3；仅用于 RebornG 非盈利私用二创包。",
+      "attribution": "用户提供本地文件：古月药乐.mP3；用户确认该文件即古月药乐《小熊饼干》，仅用于 RebornG 非盈利私用二创包。",
       "communityConfirmed": true,
       "userConfirmed": true,
       "runtimeEnabled": true,
@@ -527,7 +527,7 @@
       "loop": false,
       "loopStart": 0,
       "loopEnd": null,
-      "reviewNotes": "用户确认小熊饼干也可归古月药乐；当前目录未见独立“小熊饼干”文件，先启用本文件。"
+      "reviewNotes": "用户于 2026-05-10 确认“古月药乐.mP3”即古月药乐《小熊饼干》；保留 trackId 中 qingyi 字样仅为兼容旧 manifest 引用。"
     },
     {
       "id": "character_feng_jiu_ge_zhiwo",
@@ -690,15 +690,15 @@
       "layer": "character",
       "title": "Lightning Moment dj",
       "characterOrScene": "柳贯一",
-      "sourceUrl": "",
-      "sourceKind": "user_supplied_reference",
+      "sourceUrl": "local://bgm/v0.7/Lightning Moment.MP3",
+      "sourceKind": "user_supplied_local_fan_pack",
       "license": "user_supplied_nonprofit_fan_pack",
       "licenseUrl": "",
-      "attribution": "用户人工核对：柳贯一-Lightning Moment dj。文件需用户本地提供。",
+      "attribution": "用户提供本地文件：Lightning Moment.MP3；用户确认用于柳贯一-Lightning Moment dj，仅用于 RebornG 非盈利私用二创包。",
       "communityConfirmed": true,
       "userConfirmed": true,
-      "runtimeEnabled": false,
-      "runtimePackage": "user_supplied",
+      "runtimeEnabled": true,
+      "runtimePackage": "nonprofit_fan_pack",
       "packageModes": [
         "nonprofit_fan_pack",
         "user_supplied"
@@ -709,22 +709,22 @@
       "loop": false,
       "loopStart": 0,
       "loopEnd": null,
-      "reviewNotes": "私用包待提供文件；免费公布包使用 fallback。"
+      "reviewNotes": "用户于 2026-05-10 补充 Lightning Moment.MP3，已复制到 runtime 并启用。"
     },
     {
       "id": "character_limitless_lightning_moment",
       "layer": "character",
       "title": "Lightning Moment dj",
       "characterOrScene": "无极魔尊",
-      "sourceUrl": "",
-      "sourceKind": "user_supplied_reference",
+      "sourceUrl": "local://bgm/v0.7/Lightning Moment.MP3",
+      "sourceKind": "user_supplied_local_fan_pack",
       "license": "user_supplied_nonprofit_fan_pack",
       "licenseUrl": "",
-      "attribution": "用户人工核对：无极魔尊-Lightning Moment dj。文件需用户本地提供。",
+      "attribution": "用户提供本地文件：Lightning Moment.MP3；用户确认用于无极魔尊-Lightning Moment dj，仅用于 RebornG 非盈利私用二创包。",
       "communityConfirmed": true,
       "userConfirmed": true,
-      "runtimeEnabled": false,
-      "runtimePackage": "user_supplied",
+      "runtimeEnabled": true,
+      "runtimePackage": "nonprofit_fan_pack",
       "packageModes": [
         "nonprofit_fan_pack",
         "user_supplied"
@@ -735,7 +735,7 @@
       "loop": false,
       "loopStart": 0,
       "loopEnd": null,
-      "reviewNotes": "私用包待提供文件；免费公布包使用 fallback。"
+      "reviewNotes": "用户于 2026-05-10 补充 Lightning Moment.MP3，已复制到 runtime 并启用；同源文件也用于柳贯一曲目。"
     },
     {
       "id": "character_red_lotus_meili_shenhua_dj",

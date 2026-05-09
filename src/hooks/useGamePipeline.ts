@@ -50,6 +50,14 @@ export function useGamePipeline(): UseGamePipelineReturn {
   // ─── 开始游戏（开局叙事/续档叙事） ───
   const startGame = useCallback(async (isResume: boolean = false) => {
     console.log(`%c[PIPE] START_GAME %c→ isResume=${isResume}`,'color:#b8860b;font-weight:bold','color:#999');
+    const restoredNarrative = useStore.getState().currentNarrative;
+    if (isResume && restoredNarrative?.narrative?.text) {
+      syncState('RESOLVED');
+      setPipelineError(null);
+      setL3Warnings([]);
+      setValidation(null);
+      return;
+    }
     const pipeline = getPipeline();
     pipeline.reset();
 

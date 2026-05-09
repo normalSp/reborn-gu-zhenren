@@ -34,6 +34,7 @@ import {
   SAVE_FORMAT_VERSION,
 } from './initialState';
 import npcsData from '../canon/npcs.json';
+import type { NarrativeJSON } from '../types';
 
 // ─── 存档元数据类型 ───
 export interface SaveFileFormat {
@@ -248,6 +249,117 @@ function deserializeState(raw: Record<string, any>): Record<string, any> {
   return data;
 }
 
+const LOAD_FALLBACK_CHOICE = {
+  id: 'continue_loaded_save',
+  text: '整理当前局势，继续前行',
+  risk: 'low' as const,
+  risk_note: '载入存档后的安全续接选项',
+};
+
+function hasVisibleNarrative(value: any): value is NarrativeJSON {
+  return Boolean(value?.narrative?.text && typeof value.narrative.text === 'string');
+}
+
+function normalizeLoadedNarrative(value: any): NarrativeJSON | null {
+  if (!hasVisibleNarrative(value)) return null;
+  const choices = Array.isArray(value.narrative.choices) && value.narrative.choices.length > 0
+    ? value.narrative.choices
+    : [LOAD_FALLBACK_CHOICE];
+  return {
+    narrative: {
+      text: value.narrative.text,
+      choices,
+    },
+    state_update: value.state_update && typeof value.state_update === 'object'
+      ? value.state_update
+      : {},
+  };
+}
+
+function narrativeFromAssistantMessage(content: unknown): NarrativeJSON | null {
+  if (typeof content !== 'string' || !content.trim()) return null;
+  try {
+    const parsed = JSON.parse(content);
+    const fromJson = normalizeLoadedNarrative(parsed);
+    if (fromJson) return fromJson;
+  } catch {
+    // Plain assistant messages from older saves are still usable as visible text.
+  }
+  return {
+    narrative: {
+      text: content.trim(),
+      choices: [LOAD_FALLBACK_CHOICE],
+    },
+    state_update: {},
+  };
+}
+
+export function buildVisibleNarrativeAfterLoad(
+  state: Record<string, any>,
+  meta?: SaveFileFormat['meta'],
+): NarrativeJSON {
+  const direct = normalizeLoadedNarrative(state.currentNarrative);
+  if (direct) return direct;
+
+  const messages = Array.isArray(state.messages) ? state.messages : [];
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const message = messages[i];
+    if (message?.role === 'assistant') {
+      const fromMessage = narrativeFromAssistantMessage(message.content);
+      if (fromMessage) return fromMessage;
+    }
+  }
+
+  const realm = meta?.realm || state.profile?.realm?.label || '旧境界';
+  const turn = meta?.turn ?? state.turn ?? '?';
+  return {
+    narrative: {
+      text: `存档已载入。你从第${turn}回合、${realm}的旧局势中醒神，眼前因果与行囊已经恢复。`,
+      choices: [LOAD_FALLBACK_CHOICE],
+    },
+    state_update: {},
+  };
+}
+
+function buildLoadedStoreState(
+  currentStore: Record<string, any>,
+  stateData: Record<string, any>,
+  parsed: SaveFileFormat,
+): Record<string, any> {
+  const preservedFns: Record<string, any> = {};
+  for (const key of Object.keys(currentStore)) {
+    if (typeof currentStore[key] === 'function') {
+      preservedFns[key] = currentStore[key];
+    }
+  }
+
+  const visibleNarrative = buildVisibleNarrativeAfterLoad(stateData, parsed.meta);
+  const achievementRuntime = {
+    unlockedAchievements: currentStore.unlockedAchievements ?? [],
+    achievementProgress: currentStore.achievementProgress ?? {},
+    recentUnlocks: currentStore.recentUnlocks ?? [],
+    _achievementDefs: currentStore._achievementDefs,
+  };
+
+  return {
+    ...INITIAL_STATE,
+    ...achievementRuntime,
+    ...stateData,
+    ...preservedFns,
+    screenState: 'game_play',
+    gameMode: parsed.meta?.gameMode || stateData.gameMode || currentStore.gameMode || 'canon',
+    pipelinePhase: 'RESOLVED',
+    pipelineError: null,
+    l3Warnings: [],
+    isLoading: false,
+    error: null,
+    currentNarrative: visibleNarrative,
+    transientCombatConstraint: null,
+    squadCombatState: null,
+    battleVisualQueue: [],
+  };
+}
+
 export const useStore = create<RootStore>()(
   devtools(
     persist(
@@ -386,30 +498,7 @@ export const useStore = create<RootStore>()(
 
             const stateData = deserializeState(rawState);
             const currentStore = a[1]() as any; // BugFix: a[1] 是 get
-
-            // 保留现有的函数引用（slice methods 不能从 JSON 恢复）
-            const preservedFns: Record<string, any> = {};
-            const resetStoreFn = currentStore.resetStore;
-            const saveToFileFn = currentStore.saveToFile;
-            const loadFromFileFn = currentStore.loadFromFile;
-            const getSerializedStateFn = currentStore.getSerializedState;
-
-            for (const key of Object.keys(currentStore)) {
-              if (typeof currentStore[key] === 'function' && key !== 'resetStore' && key !== 'saveToFile' && key !== 'loadFromFile' && key !== 'getSerializedState') {
-                preservedFns[key] = currentStore[key];
-              }
-            }
-
-            // 合并：数据来自存档，函数来自当前 store（全量替换数据字段）
-            const merged = {
-              ...currentStore,
-              ...stateData,
-              ...preservedFns,
-              resetStore: resetStoreFn,
-              saveToFile: saveToFileFn,
-              loadFromFile: loadFromFileFn,
-              getSerializedState: getSerializedStateFn,
-            };
+            const merged = buildLoadedStoreState(currentStore, stateData, migrated);
 
             const set = a[0];
             set(merged);

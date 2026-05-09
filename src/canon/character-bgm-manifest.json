@@ -35,7 +35,7 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "用户本地文件已落地，私用二创包启用。方源只能作为原著 NPC/远景事件/剧情交会对象触发，不能把玩家身份写成方源。"
+      "notes": "用户确认“仙尊の小曲.mP3”为方源曲。方源只作为原著 NPC、远景事件或剧情交会对象触发，不能把玩家身份写成方源。"
     },
     {
       "id": "fang_yuan_free_highlight",
@@ -426,7 +426,7 @@
         "古月药乐",
         "药乐"
       ],
-      "title": "青衣",
+      "title": "小熊饼干",
       "filePath": "/audio/bgm/character/gu_yue_yao_le/qing_yi.mp3",
       "sourceTier": "user_supplied_local_fan_pack",
       "runtimeEnabled": true,
@@ -446,7 +446,7 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 18,
       "duckDomainBgmDb": -6,
-      "notes": "用户本地文件已落地，私用二创包启用。"
+      "notes": "用户确认“古月药乐.mP3”即古月药乐《小熊饼干》；trackId 保留 qingyi 仅用于兼容旧引用。"
     },
     {
       "id": "feng_jiu_ge_zhiwo",
@@ -644,8 +644,8 @@
       ],
       "title": "Lightning Moment dj",
       "filePath": "/audio/bgm/character/liu_guan_yi/lightning_moment_dj.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
       "triggerTags": [
         "liu_guan_yi",
         "reverse_flow_river",
@@ -662,7 +662,7 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户确认并提供 Lightning Moment.MP3，已作为柳贯一高光曲启用。"
     },
     {
       "id": "limitless_lightning_moment",
@@ -675,8 +675,8 @@
       ],
       "title": "Lightning Moment dj",
       "filePath": "/audio/bgm/character/limitless/lightning_moment_dj.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
       "triggerTags": [
         "limitless",
         "dao_pursuit",
@@ -693,7 +693,7 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户确认并提供 Lightning Moment.MP3，已作为无极魔尊求道/疯魔窟线索高光曲启用。"
     },
     {
       "id": "fixed_poem_free",

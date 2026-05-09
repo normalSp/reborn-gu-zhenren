@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { useStore } from '../../store';
+import type { SaveFileFormat } from '../../store';
 import type { SaveMeta } from '../../types';
 import { SAVE_FORMAT_VERSION } from '../../store/initialState';
 import { XIcon } from '../../icons/XIcon';
@@ -45,25 +46,14 @@ function fmtTime(ts: number): string {
 
 // ─── 获取当前存档数据（复刻 persist 的 partialize 规则）───────────────
 function getCurrentSaveData(): any {
-  const state = useStore.getState() as any;
-  const data: any = {};
-  const excludeKeys = new Set([
-    'activeTab', 'isSettingsOpen', 'isSaveDialogOpen', 'isEventLogExpanded',
-    'typewriterSpeed', 'screenState', 'gameMode',
-    'pipelinePhase', 'pipelineError', 'l3Warnings',
-    'setActiveTab', 'toggleSettings', 'toggleSaveDialog', 'toggleEventLog',
-    'setTypewriterSpeed', 'setScreenState', 'setGameMode',
-    'setPipelinePhase', 'setPipelineError', 'setL3Warnings',
-    'resetStore', 'saveToFile', 'loadFromFile', 'getSerializedState',
-    'triggeredEvents', 'isLoading', 'error', 'currentNarrative',
-    'gameLoadVersion', 'incrementLoadVersion',
-  ]);
-  for (const [key, value] of Object.entries(state)) {
-    if (!excludeKeys.has(key) && typeof value !== 'function') {
-      data[key] = value;
-    }
+  const serialized = (useStore.getState() as any).getSerializedState?.();
+  if (!serialized) return {};
+  try {
+    const parsed = JSON.parse(serialized) as SaveFileFormat;
+    return parsed.state || {};
+  } catch {
+    return {};
   }
-  return data;
 }
 
 export function SaveLoadDialog() {
@@ -101,15 +91,26 @@ export function SaveLoadDialog() {
     const data = readSave(slot);
     if (!data) return;
     const store = useStore.getState() as any;
-    const uiFns: Record<string, any> = {};
-    for (const key of Object.keys(store)) {
-      if (typeof store[key] === 'function') uiFns[key] = store[key];
+    const meta = readMeta(slot);
+    const payload: SaveFileFormat = data?.formatVersion && data?.state
+      ? data
+      : {
+          formatVersion: SAVE_FORMAT_VERSION,
+          timestamp: new Date(meta?.timestamp || Date.now()).toISOString(),
+          meta: {
+            playerName: meta?.playerName || data?.profile?.name || '无名蛊师',
+            realm: meta?.realm || data?.profile?.realm?.label || '一转初阶',
+            turn: meta?.turn || data?.turn || 1,
+            gameMode: meta?.mode || data?.gameMode || 'canon',
+          },
+          state: data,
+        };
+    const result = store.loadFromFile?.(JSON.stringify(payload));
+    if (result?.success) {
+      toggleSaveDialog();
+    } else {
+      setImportStatus({ type: 'error', message: result?.error || '读档失败' });
     }
-    const merged = { ...store, ...data, ...uiFns };
-    useStore.setState(merged);
-    // ═══ BugFix: 递增版本号，通知 GameScreen 读档完成、拉取 AI 叙事 ═══
-    store.incrementLoadVersion?.();
-    toggleSaveDialog();
   };
 
   // ─── 删除存档 ───

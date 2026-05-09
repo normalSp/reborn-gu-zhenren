@@ -41,16 +41,24 @@ describe('v0.7.0-c audio resource policy', () => {
     expect(cue?.score).toBeGreaterThanOrEqual(35);
   });
 
-  it('can still preview disabled missing tracks without treating them as runtime assets', () => {
+  it('enables Lightning Moment for Liu Guan Yi and Limitless after local files are supplied', () => {
     const cue = selectCharacterBgmCue({
       actors: ['柳贯一'],
       tags: ['reverse_flow_river', 'desperate_reversal'],
       eventImportance: 20,
-      allowDisabledForPreview: true,
+    }, characterBgmManifest);
+    const limitlessCue = selectCharacterBgmCue({
+      actors: ['无极魔尊'],
+      tags: ['limitless', 'chaos', 'venerable_scene'],
+      eventImportance: 20,
     }, characterBgmManifest);
 
     expect(cue?.title).toBe('Lightning Moment dj');
-    expect(cue?.runtimeEnabled).toBe(false);
+    expect(cue?.runtimeEnabled).toBe(true);
+    expect(cue?.filePath).toBe('/audio/bgm/character/liu_guan_yi/lightning_moment_dj.mp3');
+    expect(limitlessCue?.title).toBe('Lightning Moment dj');
+    expect(limitlessCue?.runtimeEnabled).toBe(true);
+    expect(limitlessCue?.filePath).toBe('/audio/bgm/character/limitless/lightning_moment_dj.mp3');
   });
 
   it('rotates multi-track character themes in a deterministic way', () => {
