@@ -14,6 +14,7 @@ import {
   type MaterialShopEntry,
   type TierGroupId,
 } from '../../engine/shop-engine';
+import { applyMerchantPrice } from '../../engine/modifier-engine';
 
 export interface MaterialShelfState {
   items: MaterialShopEntry[];
@@ -124,18 +125,24 @@ export const createMerchantSlice = (set: any, get: any): MerchantSlice => {
 
       const store = get();
       const currency = store.currency || 0;
+      const priceQuote = applyMerchantPrice(item.price, {
+        store,
+        operation: 'merchant_buy',
+        itemType: 'gu',
+        itemName: item.name,
+      });
 
       if (typeof store.spendCurrency === 'function') {
-        if (!store.spendCurrency(item.price)) {
-          console.warn(`[Merchant] 元石不足: 需要${item.price}, 当前${currency}`);
+        if (!store.spendCurrency(priceQuote.price)) {
+          console.warn(`[Merchant] 元石不足: 需要${priceQuote.price}, 当前${currency}`);
           return false;
         }
       } else {
-        if (currency < item.price) {
-          console.warn(`[Merchant] 元石不足: 需要${item.price}, 当前${currency}`);
+        if (currency < priceQuote.price) {
+          console.warn(`[Merchant] 元石不足: 需要${priceQuote.price}, 当前${currency}`);
           return false;
         }
-        set({ currency: currency - item.price });
+        set({ currency: currency - priceQuote.price });
       }
 
       // 添加蛊虫到库存（通过guSlice）

@@ -7,6 +7,12 @@ import { hasEffectTag } from './killmove-bridge';
 import { hasRealmRefineBonus } from './secret-realm-detector';
 import { canSpendMaterials, getMaterialTotalQuantity, getMaterialInventoryView } from './economy-service';
 import { expandMaterialCost, getAscendRecipeForGu, getRefineRecipeForGu } from './recipe-registry';
+import {
+  applyMaterialArrayCostModifiers,
+  applyRefineBacklashModifiers,
+  applyRefineSuccessModifiers,
+  applyRefineTimeModifiers,
+} from './modifier-engine';
 import type { KillMove } from '../types';
 import guDatabaseRaw from '../canon/gu-database.json';
 
@@ -199,8 +205,6 @@ function checkMaterials(required: string[], materialBag: Record<string, number>)
 function calcSuccessRate(
   input: RefineInput,
   daoMarks: Record<string, number>,
-  hasTalent: boolean,
-  hasRefineSavant: boolean = false,
 ): number {
   let rate = Math.max(0.1, 1 - input.refineDifficulty * 0.1);
 
@@ -209,9 +213,6 @@ function calcSuccessRate(
   rate += lianDao * 0.02;
 
   // 天赋加成
-  if (hasTalent) rate += 0.15;
-  if (hasRefineSavant) rate += 0.20;
-
   // B1.1: 环境加成
   if (input.refineEnvironment === 'refine_room') rate += 0.10;
   // B1.9: 天地秘境自动检测 — 同流派炼蛊+20%
@@ -243,7 +244,13 @@ function calcSuccessRate(
   };
   rate += ((pathLevelBonus[currentPathLevel] || 0) / 100);
 
-  return Math.min(0.95, rate);
+  return applyRefineSuccessModifiers(rate, {
+    store,
+    operation: 'refine',
+    path: input.path,
+    tier: input.tier,
+    guName: input.name,
+  }).value;
 }
 
 // ═══ B1.3: 反噬计算 ═══
@@ -254,17 +261,20 @@ function calcSuccessRate(
 function calculateBacklash(
   input: RefineInput,
   daoMarks: Record<string, number>,
-  hasTalent: boolean,
-  hasRefineSavant: boolean,
 ): BacklashInfo | null {
-  const failRate = 1 - calcSuccessRate(input, daoMarks, hasTalent, hasRefineSavant);
+  const failRate = 1 - calcSuccessRate(input, daoMarks);
   const difficultyMult = input.tier * 0.3;
 
   // 反噬减免
   const lianDao = daoMarks['炼道'] || 0;
   let backlashProb = failRate * difficultyMult * (1 - lianDao * 0.02);
-  if (hasTalent) backlashProb *= 0.85;
-  if (hasRefineSavant) backlashProb *= 0.75;
+  backlashProb = applyRefineBacklashModifiers(backlashProb, {
+    store: useStore.getState(),
+    operation: 'refine',
+    path: input.path,
+    tier: input.tier,
+    guName: input.name,
+  }).value;
   backlashProb = Math.max(0.01, Math.min(0.80, backlashProb));
 
   // 不触发反噬
@@ -306,6 +316,14 @@ export function refineGu(input: RefineInput): RefineResult {
   }
 
   // 检查空窍容量
+  materials = applyMaterialArrayCostModifiers(materials, {
+    store,
+    operation: 'refine',
+    path: input.path,
+    tier: input.tier,
+    guName: input.name,
+  }).materials;
+
   const capacity = (store as any).getApertureCapacity?.() || 20;
   const inventory = (store as any).inventory || [];
   if (inventory.length >= capacity) {
@@ -336,9 +354,13 @@ export function refineGu(input: RefineInput): RefineResult {
 
   // ═══ B1.1: 炼制耗时 ═══
   const speedGu = inventory.some((g: any) => g.name === '加速蛊' && g.active !== false);
-  const talents = (store as any).selectedTalents || [];
-  const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
-  const refineTurns = calculateRefineTime(input.tier, speedGu, hasRefineSavant);
+  const refineTurns = applyRefineTimeModifiers(calculateRefineTime(input.tier, speedGu, false), {
+    store,
+    operation: 'refine',
+    path: input.path,
+    tier: input.tier,
+    guName: input.name,
+  }).value;
 
   // 消耗蛊材
   for (const mat of materials) {
@@ -347,8 +369,7 @@ export function refineGu(input: RefineInput): RefineResult {
 
   // 成功率计算
   const daoMarks = store.pathBuild?.dao_marks || {};
-  const hasLianDaoTalent = talents.some((t: any) => t.id === 'talent_hundred_refinements');
-  const successRate = calcSuccessRate(input, daoMarks, hasLianDaoTalent, hasRefineSavant);
+  const successRate = calcSuccessRate(input, daoMarks);
 
   const roll = Math.random();
   const success = roll < successRate;
@@ -398,7 +419,7 @@ export function refineGu(input: RefineInput): RefineResult {
   }
 
   // ═══ B1.3: 失败 + 反噬 ═══
-  const backlash = calculateBacklash(input, daoMarks, hasLianDaoTalent, hasRefineSavant);
+  const backlash = calculateBacklash(input, daoMarks);
   if (backlash) {
     if (backlash.hpDamage > 0) {
       (store as any).applyHpDelta?.(-backlash.hpDamage, `炼蛊反噬-${backlash.severity}`);
@@ -520,10 +541,17 @@ export function ascendGu(input: AscendGuInput): RefineResult {
   }
 
   const cost = guSpec.ascendCost;
-  const materials: string[] = recipe ? expandMaterialCost(recipe) : [
+  let materials: string[] = recipe ? expandMaterialCost(recipe) : [
     ...Object.entries(cost.generic || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
     ...Object.entries(cost.specific || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
   ];
+  materials = applyMaterialArrayCostModifiers(materials, {
+    store,
+    operation: 'ascend',
+    path: gu.path,
+    tier: (gu.tier || 1) + 1,
+    guName: gu.name,
+  }).materials;
 
   // 材料检查
   const matCheck = canSpendMaterials(store as any, materials);
@@ -544,15 +572,16 @@ export function ascendGu(input: AscendGuInput): RefineResult {
 
   // 成功率
   const daoMarks = store.pathBuild?.dao_marks || {} as Record<string, number>;
-  const talents = store.selectedTalents || [];
-  const hasTalent = talents.some((t: any) => t.id === 'talent_hundred_refinements');
-  const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
   const difficulty = recipe?.difficulty ?? cost?.difficulty ?? 0.5;
   let rate = Math.max(0.1, 1 - difficulty * 0.1);
   rate += (daoMarks['炼道'] || 0) * 0.03;
-  if (hasTalent) rate += 0.15;
-  if (hasRefineSavant) rate += 0.20;
-  rate = Math.min(0.95, rate);
+  rate = applyRefineSuccessModifiers(rate, {
+    store,
+    operation: 'ascend',
+    path: gu.path,
+    tier: (gu.tier || 1) + 1,
+    guName: gu.name,
+  }).value;
 
   if (Math.random() < rate) {
     // 成功 — 升转
@@ -610,9 +639,13 @@ export function ascendImmortalGu(input: AscendInput): AscendResult {
 
   // 成功率：基础1% + 炼道×0.05%(每100道痕+5%)，上限8%
   const rate = Math.max(0.01, Math.min(0.08, 0.01 + lianDao * 0.0005));
-  const talents = (store as any).selectedTalents || [];
-  const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant');
-  const finalRate = hasRefineSavant ? Math.min(0.08, rate + 0.02) : rate;
+  const finalRate = Math.min(0.08, applyRefineSuccessModifiers(rate, {
+    store,
+    operation: 'immortal_ascend',
+    path: gu.path,
+    tier: 6,
+    guName: gu.name,
+  }).value);
 
   // 消耗仙材
   const consumedMat = input.immortalMaterials.find((m: string) => getMaterialTotalQuantity(store, m) >= 1 || (matBag[m] || 0) >= 1) || input.immortalMaterials[0];

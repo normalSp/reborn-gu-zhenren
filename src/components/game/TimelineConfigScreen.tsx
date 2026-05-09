@@ -6,6 +6,7 @@ import factionDataRaw from '../../canon/faction-data.json';
 import guDbRaw from '../../canon/gu-database.json';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { getRuntimePathNames } from '../../engine/path-registry';
+import { getModifierLabelsForSource } from '../../engine/modifier-engine';
 import type { TimelineNode, LifeboundGuSelection, GuSelection, KillerMoveSelection, FactionSelection } from '../../store/slices/timelineSlice';
 
 interface FactionEntry { id: string; name: string; domain: string; type: string; standing: number; description: string; starterGu: { name: string; tier: number; path: string; rank: string } | null; bonus: { resourceMult: number; talentBonus: number; desc: string; attributeBonus?: Record<string, number> }; }
@@ -418,6 +419,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                 const isSelected = timelineTalents.includes(talent.id);
                 const cost = P4_TALENT_COST[talent.tier] || 1;
                 const canAfford = !isSelected && cost <= remainingPoints;
+                const modifierLabels = getModifierLabelsForSource('talent', talent.id);
                 return (
                   <button key={talent.id} onClick={() => handleSelectTalent(talent)}
                     disabled={!isSelected && !canAfford}
@@ -443,6 +445,11 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     <p className="text-rg-paper-200/50 text-[11px] font-panel leading-relaxed">
                       {talent.description}
                     </p>
+                    {modifierLabels.length > 0 && (
+                      <p className="text-rg-jade-400/65 text-[10px] font-panel mt-1">
+                        已接入：{modifierLabels.join('、')}
+                      </p>
+                    )}
                     {talent.triggerScene && (
                       <p className="text-rg-gold/40 text-[10px] font-panel mt-1">
                         触发: {talent.triggerScene} {talent.effectRange ? `| ${talent.effectRange}` : ''}
@@ -464,6 +471,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
             <div className="grid grid-cols-1 gap-2 max-h-[55vh] overflow-y-auto pr-2">
               {[...(FACTION_DATA[selectedNode.domain] || []), ...(FACTION_DATA['散修'] || [])].map((f: FactionEntry) => {
                 const isSelected = factionId === f.id;
+                const modifierLabels = getModifierLabelsForSource('faction', f.id);
                 return (
                   <button key={f.id} onClick={() => store.selectFaction({
                     factionId: f.id, factionName: f.name, domain: f.domain,
@@ -480,6 +488,11 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                     </div>
                     <p className="text-rg-paper-200/50 text-[11px] font-panel">{f.description}</p>
                     <p className="text-rg-paper-200/30 text-[10px] font-panel mt-1">{f.bonus.desc}</p>
+                    {modifierLabels.length > 0 && (
+                      <p className="text-rg-jade-400/65 text-[10px] font-panel mt-1">
+                        已接入：{modifierLabels.join('、')}
+                      </p>
+                    )}
                   </button>
                 );
               })}

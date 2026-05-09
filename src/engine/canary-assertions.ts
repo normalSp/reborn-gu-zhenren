@@ -6,6 +6,7 @@
 import type { NarrativeJSON } from '../types';
 import type { RootStore } from '../store';
 import npcsRaw from '../canon/npcs.json';
+import { getSelectedTalentIds } from './modifier-engine';
 
 // ─── 玩家状态快照（轻量） ───
 interface PlayerSnapshot {
@@ -545,7 +546,7 @@ const TALENT_VIOLATIONS: Record<string, { benefits: string[]; costs: string[]; v
 };
 
 function c26_TalentEffectValidation(text: string, store: RootStore): CanaryResult {
-  const talentIds = (store as any).selectedTalents || [];
+  const talentIds = getSelectedTalentIds(store as any);
   if (!talentIds || talentIds.length === 0) return { ruleId:'C26', ruleName:'天赋效果校验', passed:true, level:'critical', details:'' };
 
   // 获取已选天赋的名称列表

@@ -7,6 +7,7 @@ import { useStore } from '../../store';
 import { refineGu, ascendGu, disassembleGu, ascendImmortalGu } from '../../engine/refine-engine';
 import { isRecipeUnlocked, synthesizeRecipe, attemptCompleteFragment, canAttemptFragment, loadAllFragments } from '../../engine/recipe-discovery';
 import { findMaterialSources, type MaterialSourceTag } from '../../engine/material-source-audit';
+import { applyRefineMaterialCostModifiers, applyRefineSuccessModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
 import type { RefineInput, RefineResult } from '../../engine/refine-engine';
 import type { FragmentRecipe } from '../../engine/recipe-discovery';
 import guDbRaw from '../../canon/gu-database.json';
@@ -105,8 +106,6 @@ export function RefinePanel() {
 
   const allFragmentRecipes = useMemo(() => loadAllFragments(), []);
   const selectedEntry = recipeList.unlocked.find(r => r.guName === selectedRecipe);
-  const hasTalent = talents.some((t: any) => t.id === 'talent_hundred_refinements');
-  const hasSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
   const materialView = useMemo(() => {
     const result: Record<string, number> = { ...materialBag };
     for (const [key, qty] of Object.entries(apertureMaterials)) {
@@ -132,7 +131,14 @@ export function RefinePanel() {
         merged[materialName] = (merged[materialName] || 0) + Number(amount || 0);
       }
     }
-    return Object.entries(merged).map(([materialName, amount]) => {
+    const adjusted = applyRefineMaterialCostModifiers(merged, {
+      store: useStore.getState(),
+      operation: 'refine',
+      path: selectedEntry.path,
+      tier: selectedEntry.tier,
+      guName: selectedEntry.guName,
+    }).costs;
+    return Object.entries(adjusted).map(([materialName, amount]) => {
       const sources = findMaterialSources(materialName);
       const sourceLabels = Array.from(new Set(sources.map(source => SOURCE_LABELS[source.tag] || source.tag)));
       const owned = materialView[materialName] || 0;
@@ -145,7 +151,7 @@ export function RefinePanel() {
         enough: owned >= amount,
       };
     });
-  }, [selectedEntry, materialView]);
+  }, [selectedEntry, materialView, talents]);
 
   const hasBlockingRefineSource = refineSourceRows.some(row => !row.hasSource);
   const hasRefineShortage = refineSourceRows.some(row => row.hasSource && !row.enough);
@@ -155,9 +161,17 @@ export function RefinePanel() {
     if (!selectedEntry?.refineCost) return null;
     let rate = Math.max(0.1, 1 - (selectedEntry.refineCost.difficulty || 0.3) * 0.1);
     rate += (daoMarks['炼道'] || 0) * 0.02;
-    if (hasTalent) rate += 0.15;
-    if (hasSavant) rate += 0.20;
-    return Math.min(0.95, rate);
+    const quote = applyRefineSuccessModifiers(rate, {
+      store: useStore.getState(),
+      operation: 'refine',
+      path: selectedEntry.path,
+      tier: selectedEntry.tier,
+      guName: selectedEntry.guName,
+    });
+    return {
+      value: quote.value,
+      labels: formatModifierBreakdown(quote.breakdown),
+    };
   }, [selectedEntry, daoMarks, talents]);
 
   // ─── 炼制操作 ───
@@ -429,11 +443,16 @@ export function RefinePanel() {
                   <span className="text-xs text-rg-paper-200/40">成功率</span>
                   <div className="flex items-center gap-2 mt-1">
                     <div className="flex-1 h-3 bg-rg-ink-800 rounded-full overflow-hidden">
-                      <div className={`h-full rounded-full transition-all ${successPreview >= 0.7 ? 'bg-rg-jade-400' : successPreview >= 0.4 ? 'bg-amber-400' : 'bg-rg-blood-400'}`}
-                        style={{ width: `${Math.round(successPreview * 100)}%` }} />
+                      <div className={`h-full rounded-full transition-all ${successPreview.value >= 0.7 ? 'bg-rg-jade-400' : successPreview.value >= 0.4 ? 'bg-amber-400' : 'bg-rg-blood-400'}`}
+                        style={{ width: `${Math.round(successPreview.value * 100)}%` }} />
                     </div>
-                    <span className="text-xs font-bold">{Math.round(successPreview * 100)}%</span>
+                    <span className="text-xs font-bold">{Math.round(successPreview.value * 100)}%</span>
                   </div>
+                  {successPreview.labels.length > 0 && (
+                    <div className="mt-1 text-[10px] text-rg-jade-400/70 truncate">
+                      已生效：{successPreview.labels.join('、')}
+                    </div>
+                  )}
                 </div>
               )}
               <button onClick={handleRefine} disabled={hasBlockingRefineSource || hasRefineShortage} className={`w-full py-2 rounded-sm text-xs font-button font-semibold transition-colors ${hasBlockingRefineSource || hasRefineShortage ? 'bg-rg-ink-700 text-rg-paper-200/30 cursor-not-allowed' : 'bg-rg-gold text-rg-ink-900 hover:brightness-115'}`}>

@@ -1,0 +1,306 @@
+{
+  "_meta": {
+    "version": "0.7.0-p0",
+    "description": "运行时修正器真相源。中文文案只负责展示，数值效果必须登记在这里并由 modifier-engine 消费。",
+    "rules": [
+      "Modifier 是工程运行时概念，不是蛊真人世界观资源分类。",
+      "数值承诺必须结构化登记；未登记效果只能显示为叙事倾向或待接入。",
+      "本表优先覆盖 v0.6.0 遗留的出身、天赋、道具 UI 承诺不生效问题。"
+    ]
+  },
+  "factions": {
+    "shangjia": {
+      "displayName": "商家",
+      "effects": [
+        {
+          "kind": "merchant_buy_price_mult",
+          "value": 0.95,
+          "label": "商家：商会交易优惠5%",
+          "consumer": "merchant"
+        }
+      ]
+    },
+    "tiejia": {
+      "displayName": "铁家",
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.05,
+          "operations": ["refine", "ascend"],
+          "label": "铁家：炼蛊成功率+5%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "east_sea_merchant": {
+      "displayName": "东海商行",
+      "effects": [
+        {
+          "kind": "merchant_buy_price_mult",
+          "value": 0.95,
+          "label": "东海商行：海路贸易优惠5%",
+          "consumer": "merchant"
+        }
+      ]
+    },
+    "mojia_oasis": {
+      "displayName": "莫家绿洲",
+      "effects": [
+        {
+          "kind": "encounter_risk_mult",
+          "value": 0.85,
+          "label": "莫家绿洲：沙漠环境消耗-15%",
+          "consumer": "encounter"
+        }
+      ]
+    }
+  },
+  "talents": {
+    "talent_steady": {
+      "displayName": "稳扎稳打",
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.05,
+          "operations": ["refine", "ascend"],
+          "label": "稳扎稳打：炼蛊成功率+5%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "t_steady": {
+      "displayName": "稳扎稳打",
+      "aliases": ["talent_steady"],
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.05,
+          "operations": ["refine", "ascend"],
+          "label": "稳扎稳打：炼蛊成功率+5%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "talent_refinement_savant": {
+      "displayName": "炼道奇才",
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.2,
+          "operations": ["refine", "ascend"],
+          "label": "炼道奇才：炼蛊成功率+20%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_success_add",
+          "value": 0.1,
+          "operations": ["fragment_complete"],
+          "label": "炼道奇才：残方补全成功率+10%",
+          "consumer": "recipe_discovery"
+        },
+        {
+          "kind": "refine_success_add",
+          "value": 0.02,
+          "operations": ["immortal_ascend"],
+          "label": "炼道奇才：仙蛊升炼成功率+2%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_material_cost_mult",
+          "value": 0.85,
+          "operations": ["refine", "ascend"],
+          "label": "炼道奇才：蛊材消耗-15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_time_mult",
+          "value": 0.85,
+          "operations": ["refine"],
+          "label": "炼道奇才：炼制耗时-15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_backlash_mult",
+          "value": 0.75,
+          "operations": ["refine"],
+          "label": "炼道奇才：反噬概率-25%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "t_refinement_savant": {
+      "displayName": "炼道奇才",
+      "aliases": ["talent_refinement_savant"],
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.2,
+          "operations": ["refine", "ascend"],
+          "label": "炼道奇才：炼蛊成功率+20%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_success_add",
+          "value": 0.1,
+          "operations": ["fragment_complete"],
+          "label": "炼道奇才：残方补全成功率+10%",
+          "consumer": "recipe_discovery"
+        },
+        {
+          "kind": "refine_success_add",
+          "value": 0.02,
+          "operations": ["immortal_ascend"],
+          "label": "炼道奇才：仙蛊升炼成功率+2%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_material_cost_mult",
+          "value": 0.85,
+          "operations": ["refine", "ascend"],
+          "label": "炼道奇才：蛊材消耗-15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_time_mult",
+          "value": 0.85,
+          "operations": ["refine"],
+          "label": "炼道奇才：炼制耗时-15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_backlash_mult",
+          "value": 0.75,
+          "operations": ["refine"],
+          "label": "炼道奇才：反噬概率-25%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "talent_hundred_refinements": {
+      "displayName": "百炼蛊师",
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.15,
+          "operations": ["refine", "ascend"],
+          "label": "百炼蛊师：炼蛊成功率+15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_backlash_mult",
+          "value": 0.8,
+          "operations": ["refine"],
+          "label": "百炼蛊师：反噬伤害/概率-20%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "t_hundred_refinements": {
+      "displayName": "百炼蛊师",
+      "aliases": ["talent_hundred_refinements"],
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.15,
+          "operations": ["refine", "ascend"],
+          "label": "百炼蛊师：炼蛊成功率+15%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "refine_backlash_mult",
+          "value": 0.8,
+          "operations": ["refine"],
+          "label": "百炼蛊师：反噬伤害/概率-20%",
+          "consumer": "refine"
+        }
+      ]
+    },
+    "talent_thrifty": {
+      "displayName": "节俭",
+      "effects": [
+        {
+          "kind": "refine_material_cost_mult",
+          "value": 0.95,
+          "operations": ["refine", "ascend"],
+          "label": "节俭：炼蛊材料消耗-5%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "gu_feed_cost_mult",
+          "value": 0.95,
+          "label": "节俭：蛊虫喂养消耗-5%",
+          "consumer": "feeding"
+        }
+      ]
+    },
+    "t_thrifty": {
+      "displayName": "节俭",
+      "aliases": ["talent_thrifty"],
+      "effects": [
+        {
+          "kind": "refine_material_cost_mult",
+          "value": 0.95,
+          "operations": ["refine", "ascend"],
+          "label": "节俭：炼蛊材料消耗-5%",
+          "consumer": "refine"
+        },
+        {
+          "kind": "gu_feed_cost_mult",
+          "value": 0.95,
+          "label": "节俭：蛊虫喂养消耗-5%",
+          "consumer": "feeding"
+        }
+      ]
+    },
+    "talent_barter": {
+      "displayName": "砍价高手",
+      "effects": [
+        {
+          "kind": "merchant_buy_price_mult",
+          "value": 0.85,
+          "label": "砍价高手：商会买价-15%",
+          "consumer": "merchant"
+        },
+        {
+          "kind": "merchant_sell_price_mult",
+          "value": 1.1,
+          "label": "砍价高手：出售价+10%",
+          "consumer": "merchant"
+        }
+      ]
+    },
+    "t_barter": {
+      "displayName": "砍价高手",
+      "aliases": ["talent_barter"],
+      "effects": [
+        {
+          "kind": "merchant_buy_price_mult",
+          "value": 0.85,
+          "label": "砍价高手：商会买价-15%",
+          "consumer": "merchant"
+        },
+        {
+          "kind": "merchant_sell_price_mult",
+          "value": 1.1,
+          "label": "砍价高手：出售价+10%",
+          "consumer": "merchant"
+        }
+      ]
+    }
+  },
+  "items": {
+    "mat_refining_kit": {
+      "displayName": "便携炼蛊工具包",
+      "matchNames": ["便携炼蛊工具包", "mat_refining_kit"],
+      "effects": [
+        {
+          "kind": "refine_success_add",
+          "value": 0.05,
+          "operations": ["refine"],
+          "label": "便携炼蛊工具包：炼蛊成功率+5%",
+          "consumer": "refine"
+        }
+      ]
+    }
+  }
+}

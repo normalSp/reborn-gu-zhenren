@@ -12,6 +12,7 @@ import guDatabaseRaw from '../canon/gu-database.json';
 import type { RefineInput } from './refine-engine';
 import { canSpendMaterials } from './economy-service';
 import { expandMaterialCost, getRegisteredRecipeForFragment } from './recipe-registry';
+import { applyRefineSuccessModifiers } from './modifier-engine';
 import { useStore } from '../store';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
@@ -79,12 +80,16 @@ export function attemptCompleteFragment(
   const store = useStore.getState() as any;
   const daoMarks = store.pathBuild?.dao_marks || {};
   const lianDao = daoMarks['炼道'] || 0;
-  const talents = (store as any).selectedTalents || [];
-  const hasRefineSavant = talents.some((t: any) => t.id === 'talent_refinement_savant' || t.id === 'ti_refine_genius');
 
   // 补全成功率 = 1 - 难度 + 炼道加成 + 失败经验
   let rate = 1 - fragment.completionDifficulty + lianDao * 0.03 + attempts * 0.05;
-  if (hasRefineSavant) rate += 0.10;
+  rate = applyRefineSuccessModifiers(rate, {
+    store,
+    operation: 'fragment_complete',
+    path: guDatabase[fragment.targetGu]?.path || '',
+    tier: fragment.targetTier,
+    guName: fragment.targetGu,
+  }).value;
   rate = Math.min(0.90, Math.max(0.05, rate));
 
   // 消耗蛊材（每次尝试消耗1份最难获取的蛊材/仙材）

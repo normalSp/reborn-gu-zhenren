@@ -14,6 +14,7 @@ import { getAllowedMaterialNamesForPrompt } from './material-registry';
 import { getRuntimePathNames } from './path-registry';
 import { describeDaoHeartNarrativeBias } from './dao-reputation-policy';
 import { getCanonAnchor, getCanonAnchors } from './v080-narrative-engine';
+import { getSelectedTalentIds, getTalentDefinition } from './modifier-engine';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1130,14 +1131,12 @@ export class ContextBuilder {
       ].join('\n'));
     }
 
-    const selectedTalents = (store as any).selectedTalents;
+    const selectedTalents = getSelectedTalentIds(store as any);
     if (selectedTalents && selectedTalents.length > 0) {
       try {
-        const { P4_TALENTS } = require('../data/talents-p4');
-        const { INITIAL_TALENTS } = require('../data/talents');
         const talentLines: string[] = [];
         for (const tid of selectedTalents) {
-          const t = P4_TALENTS.find((tt: any) => tt.id === tid) || INITIAL_TALENTS.find((tt: any) => tt.id === tid);
+          const t = getTalentDefinition(tid);
           if (t) {
             const benefits = t.benefits?.join('；') || '';
             const costs = t.costs?.join('；') || '';

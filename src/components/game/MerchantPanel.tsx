@@ -8,10 +8,12 @@ import { useShallow } from 'zustand/shallow';
 import { TIER_GROUPS, type GuShopEntry, type TierGroupId, type MaterialFoodShortageInput, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry } from '../../engine/shop-engine';
 import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow } from '../../engine/material-source-audit';
+import { applyMerchantPrice, formatModifierBreakdown } from '../../engine/modifier-engine';
 import { GU_IMAGE_MAP } from '../../data/image-maps';
 
 const GROUP_IDS: TierGroupId[] = [1, 2, 3, 4, 5];
 const EMPTY_RECIPES: Record<string, boolean> = {};
+const EMPTY_TALENTS: any[] = [];
 
 export function MerchantPanel() {
   const profile = useStore(s => s.profile);
@@ -20,6 +22,8 @@ export function MerchantPanel() {
   const inventory = useStore(s => s.inventory);
   const turn = useStore(s => s.turn);
   const currentChapter = useStore((s: any) => s.flags?.current_chapter);
+  const selectedTalents = useStore((s: any) => s.selectedTalents ?? EMPTY_TALENTS);
+  const factionFlag = useStore((s: any) => s.flags?._faction);
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
 
   // merchantSlice — useShallow防止对象/数组引用变化导致无限重渲染
@@ -41,6 +45,30 @@ export function MerchantPanel() {
   const playerTier = profile.realm.grand;
   const capacity = getApertureCapacity();
   const currentItems = (shopGroups?.[activeGroup]?.items || []) as GuShopEntry[];
+  const modifierTick = `${factionFlag || ''}:${selectedTalents.map((talent: any) => typeof talent === 'string' ? talent : talent?.id).join('|')}`;
+  const quoteBuyPrice = (price: number, itemType: string, itemName: string) => {
+    void modifierTick;
+    return applyMerchantPrice(price, {
+      store: useStore.getState(),
+      operation: 'merchant_buy',
+      itemType,
+      itemName,
+    });
+  };
+  const quoteSellPrice = (price: number, itemType: string, itemName: string) => {
+    void modifierTick;
+    return applyMerchantPrice(price, {
+      store: useStore.getState(),
+      operation: 'merchant_sell',
+      itemType,
+      itemName,
+    });
+  };
+  const renderModifierNote = (breakdown: any[]) => {
+    const labels = formatModifierBreakdown(breakdown);
+    if (!labels.length) return null;
+    return <span className="text-[9px] text-rg-jade-400/70 truncate">已生效：{labels.join('、')}</span>;
+  };
 
   // P4: 蛊材商店
   const addMaterial = useStore((s: any) => s.addMaterial) as ((name: string, qty: number) => void) | undefined;
@@ -72,7 +100,8 @@ export function MerchantPanel() {
   }, [apertureInventoryGu, inventory, isImmortal, materialState]);
   const materialItems = (materialShelf?.items || []) as MaterialShopEntry[];
   const handleBuyMaterial = (item: MaterialShopEntry) => {
-    if (!payWithDualCurrency(item.price, item.name)) return;
+    const quote = quoteBuyPrice(item.price, 'material', item.name);
+    if (!payWithDualCurrency(quote.price, item.name)) return;
     addMaterial?.(item.name, 1);
     setMessage(`购买「${item.name}」`);
     setTimeout(() => setMessage(''), 2000);
@@ -99,7 +128,8 @@ export function MerchantPanel() {
     setTimeout(() => setMessage(''), 2000);
   };
   const handleBuyFragment = (item: FragmentShopEntry) => {
-    if (!payWithDualCurrency(item.price, item.name)) return;
+    const quote = quoteBuyPrice(item.price, 'fragment', item.name);
+    if (!payWithDualCurrency(quote.price, item.name)) return;
     if (item.isComplete) {
       const store = useStore.getState() as any;
       if (typeof store.unlockRecipe === 'function') {
@@ -182,7 +212,8 @@ export function MerchantPanel() {
     const cap = isImmortal ? Infinity : capacity;
     if (inventoryLength >= cap) { setMessage(isImmortal ? '仙窍存储异常' : '空窍已满'); setTimeout(() => setMessage(''), 2000); return; }
     if (isImmortal) {
-      if (!payWithDualCurrency(item.price, item.name)) return;
+      const quote = quoteBuyPrice(item.price, 'gu', item.name);
+      if (!payWithDualCurrency(quote.price, item.name)) return;
       // 蛊仙购买→直接写入仙窍存储，参照addGu的safeGu模式补全所有GuInstance必要字段
       const guList = full.apertureInventory?.gu || [];
       const currentTurn = full.turn || 1;
@@ -287,7 +318,8 @@ export function MerchantPanel() {
             <div className="p-3 grid grid-cols-2 gap-2">
               {currentItems.map(item => {
                 const ownCount = inventory.filter(g => g.name === item.name).length;
-                const canBuy = (isImmortal ? (immortalCurrency >= Math.max(1, Math.round(item.price / 10000)) || currency >= item.price) : currency >= item.price)
+                const priceQuote = quoteBuyPrice(item.price, 'gu', item.name);
+                const canBuy = (isImmortal ? (immortalCurrency >= Math.max(1, Math.round(priceQuote.price / 10000)) || currency >= priceQuote.price) : currency >= priceQuote.price)
                   && (isImmortal ? true : inventory.length < capacity);
                 return (
                   <div key={item.name} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
@@ -301,8 +333,9 @@ export function MerchantPanel() {
                     </div>
                     {item.effect && <p className="text-rg-paper-200/30 text-[9px] leading-relaxed line-clamp-1">{item.effect}</p>}
                     <span className="text-[10px] text-rg-gold/70">
-                      {isImmortal ? `${Math.max(1, Math.round(item.price / 10000))}仙元 / ${item.price}元石` : `${item.price}元石`}
+                      {isImmortal ? `${Math.max(1, Math.round(priceQuote.price / 10000))}仙元 / ${priceQuote.price}元石` : `${priceQuote.price}元石`}
                     </span>
+                    {renderModifierNote(priceQuote.breakdown)}
                     <button onClick={() => handleBuy(item)} disabled={!canBuy}
                       className={`text-[10px] font-button px-2 py-1 rounded-sm border transition-micro text-center ${
                         canBuy ? 'border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10' : 'opacity-30 cursor-not-allowed'
@@ -336,7 +369,8 @@ export function MerchantPanel() {
             </div>
           ) : (
             materialItems.map(item => {
-              const canBuy = isImmortal ? (immortalCurrency >= Math.max(1, Math.round(item.price / 10000)) || currency >= item.price) : currency >= item.price;
+              const priceQuote = quoteBuyPrice(item.price, 'material', item.name);
+              const canBuy = isImmortal ? (immortalCurrency >= Math.max(1, Math.round(priceQuote.price / 10000)) || currency >= priceQuote.price) : currency >= priceQuote.price;
               return (
                 <div key={item.id} className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 flex flex-col gap-1.5">
                   <div className="flex items-center justify-between">
@@ -345,8 +379,9 @@ export function MerchantPanel() {
                   </div>
                   {item.description && <p className="text-rg-paper-200/30 text-[9px] leading-relaxed line-clamp-1">{item.description}</p>}
                   <span className="text-[10px] text-rg-gold/70">
-                    {isImmortal ? `${Math.max(1, Math.round(item.price / 10000))}仙元 / ${item.price}元石` : `${item.price}元石`}
+                    {isImmortal ? `${Math.max(1, Math.round(priceQuote.price / 10000))}仙元 / ${priceQuote.price}元石` : `${priceQuote.price}元石`}
                   </span>
+                  {renderModifierNote(priceQuote.breakdown)}
                   <button onClick={() => handleBuyMaterial(item)} disabled={!canBuy}
                     className={`text-[10px] font-button px-2 py-1 rounded-sm border transition-micro text-center ${canBuy ? 'border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10' : 'opacity-30 cursor-not-allowed'}`}>
                     购买
@@ -391,7 +426,8 @@ export function MerchantPanel() {
               </div>
             ) : (
               fragmentItems.map(item => {
-                const canBuy = isImmortal ? (immortalCurrency >= Math.max(1, Math.round(item.price / 10000)) || currency >= item.price) : currency >= item.price;
+                const priceQuote = quoteBuyPrice(item.price, 'fragment', item.name);
+                const canBuy = isImmortal ? (immortalCurrency >= Math.max(1, Math.round(priceQuote.price / 10000)) || currency >= priceQuote.price) : currency >= priceQuote.price;
                 return (
                   <div key={item.id} className={`bg-rg-ink-700/90 border rounded-md p-3 flex flex-col gap-1.5 ${
                     item.isComplete ? 'border-rg-gold/30 bg-rg-gold/5' : 'border-rg-ink-300/12'
@@ -408,8 +444,9 @@ export function MerchantPanel() {
                     </div>
                     <p className="text-rg-paper-200/30 text-[9px] leading-relaxed line-clamp-2">{item.description}</p>
                     <span className="text-[10px] text-rg-gold/70">
-                      {isImmortal ? `${Math.max(1, Math.round(item.price / 10000))}仙元 / ${item.price}元石` : `${item.price}元石`}
+                      {isImmortal ? `${Math.max(1, Math.round(priceQuote.price / 10000))}仙元 / ${priceQuote.price}元石` : `${priceQuote.price}元石`}
                     </span>
+                    {renderModifierNote(priceQuote.breakdown)}
                     <button onClick={() => handleBuyFragment(item)} disabled={!canBuy}
                       className={`text-[10px] font-button px-2 py-1 rounded-sm border transition-micro text-center ${
                         canBuy ? 'border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10' : 'opacity-30 cursor-not-allowed'
@@ -453,7 +490,8 @@ export function MerchantPanel() {
                     useStore.setState({ apertureInventory: { ...storage, gu: newGuList } });
                     setMessage(`已销毁「${gu.name}」`);
                   } else {
-                    const price = Math.round((TIER_GROUPS[gu.tier as TierGroupId]?.basePrice || gu.tier * 150) / 2);
+                    const basePrice = Math.round((TIER_GROUPS[gu.tier as TierGroupId]?.basePrice || gu.tier * 150) / 2);
+                    const price = quoteSellPrice(basePrice, 'gu', gu.name).price;
                     useStore.getState().removeGu?.(gu.id);
                     useStore.setState({ currency: (useStore.getState().currency || 0) + price });
                     setMessage(`出售「${gu.name}」+${price}元石`);
