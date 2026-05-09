@@ -219,6 +219,27 @@ function loadMaterialPool(): MaterialShopEntry[] {
   return _materialCache;
 }
 
+export function quoteMaterialSellBasePrice(materialName: string, isImmortal = false): { canSell: boolean; price: number; reason?: string } {
+  const registered = getMaterialEntry(materialName);
+  const poolItem = loadMaterialPool().find(item => item.name === materialName);
+  const isImmortalMaterial = String(registered?.kind || '').includes('仙材')
+    || String(registered?.grade || '').includes('仙材')
+    || String(poolItem?.type || '').includes('仙材');
+  if (isImmortalMaterial && !isImmortal) {
+    return { canSell: false, price: 0, reason: '仙材只能通过蛊仙交易渠道、宝黄天或特定黑市处理' };
+  }
+  if (!registered && !poolItem) {
+    return { canSell: false, price: 0, reason: '未登记蛊材不可在商会出售' };
+  }
+  const grade = String(registered?.grade || '');
+  const gradeFallback = grade.includes('精品') ? 45 : grade.includes('稀有') ? 120 : grade.includes('仙材') ? 30000 : 18;
+  const buyLikePrice = poolItem?.price || gradeFallback;
+  return {
+    canSell: true,
+    price: Math.max(1, Math.round(buyLikePrice * 0.45)),
+  };
+}
+
 function expandChapterNames(currentChapterName: string): string[] {
   const names = new Set<string>([currentChapterName]);
   const aliases: Record<string, string[]> = {

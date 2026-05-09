@@ -5,7 +5,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
-import { TIER_GROUPS, type GuShopEntry, type TierGroupId, type MaterialFoodShortageInput, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry } from '../../engine/shop-engine';
+import { TIER_GROUPS, type GuShopEntry, type TierGroupId, type MaterialFoodShortageInput, type MaterialShopEntry, generateFragmentShopGroup, getFragmentRefreshCost, type FragmentShopEntry, quoteMaterialSellBasePrice } from '../../engine/shop-engine';
 import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow } from '../../engine/material-source-audit';
 import { applyMerchantPrice, formatModifierBreakdown } from '../../engine/modifier-engine';
@@ -72,6 +72,7 @@ export function MerchantPanel() {
 
   // P4: 蛊材商店
   const addMaterial = useStore((s: any) => s.addMaterial) as ((name: string, qty: number) => void) | undefined;
+  const removeMaterial = useStore((s: any) => s.removeMaterial) as ((name: string, qty: number) => boolean) | undefined;
   const materialBag = useStore((s: any) => s.materialBag);
   const apertureInventory = useStore((s: any) => s.apertureInventory);
   const apertureInventoryGu = useStore((s: any) => s.apertureInventory?.gu as typeof inventory | undefined);
@@ -99,6 +100,10 @@ export function MerchantPanel() {
       .filter(Boolean) as MaterialFoodShortageInput[];
   }, [apertureInventoryGu, inventory, isImmortal, materialState]);
   const materialItems = (materialShelf?.items || []) as MaterialShopEntry[];
+  const sellableMaterialEntries = useMemo(
+    () => Object.entries(materialBag || {}).filter(([, qty]) => Number(qty || 0) > 0),
+    [materialBag],
+  );
   const handleBuyMaterial = (item: MaterialShopEntry) => {
     const quote = quoteBuyPrice(item.price, 'material', item.name);
     if (!payWithDualCurrency(quote.price, item.name)) return;
@@ -106,6 +111,25 @@ export function MerchantPanel() {
     setMessage(`购买「${item.name}」`);
     setTimeout(() => setMessage(''), 2000);
   };
+  const handleSellMaterial = (materialName: string) => {
+    const baseQuote = quoteMaterialSellBasePrice(materialName, isImmortal);
+    if (!baseQuote.canSell) {
+      setMessage(baseQuote.reason || '该蛊材当前不可出售');
+      setTimeout(() => setMessage(''), 2200);
+      return;
+    }
+    const quote = quoteSellPrice(baseQuote.price, 'material', materialName);
+    const removed = removeMaterial?.(materialName, 1);
+    if (!removed) {
+      setMessage('蛊材库存不足');
+      setTimeout(() => setMessage(''), 2000);
+      return;
+    }
+    useStore.setState({ currency: (useStore.getState().currency || 0) + quote.price });
+    setMessage(`出售「${materialName}」+${quote.price}元石`);
+    setTimeout(() => setMessage(''), 2000);
+  };
+
   const handleRefreshMaterials = () => {
     const cost = getMaterialShelfRefreshCost?.(playerTier, isImmortal, turn) ?? 0;
     if (cost > 0 && !payWithDualCurrency(cost, '蛊材货架刷新')) return;
@@ -243,8 +267,8 @@ export function MerchantPanel() {
   return (
     <div className="flex-1 overflow-y-auto">
       {/* 顶部栏 */}
-      <div className="sticky top-0 z-10 bg-rg-ink-700/95 border-b border-rg-ink-300/10 px-4 py-2 flex items-center justify-between backdrop-blur-md">
-        <div className="flex items-center gap-3">
+      <div className="sticky top-0 z-10 bg-rg-ink-700/95 border-b border-rg-ink-300/10 px-3 sm:px-4 py-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 backdrop-blur-md">
+        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto">
           <button onClick={() => setTab('buy')}
             className={`text-xs font-button px-2 py-0.5 rounded-sm transition-micro ${tab === 'buy' ? 'bg-rg-gold/15 text-rg-gold' : 'text-rg-paper-200/40'}`}>购买蛊虫</button>
           <button onClick={() => setTab('materials')}
@@ -315,7 +339,7 @@ export function MerchantPanel() {
               <p className="text-rg-ink-300 text-sm font-panel">点击刷新获取蛊虫</p>
             </div>
           ) : (
-            <div className="p-3 grid grid-cols-2 gap-2">
+            <div className="p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
               {currentItems.map(item => {
                 const ownCount = inventory.filter(g => g.name === item.name).length;
                 const priceQuote = quoteBuyPrice(item.price, 'gu', item.name);
@@ -362,7 +386,7 @@ export function MerchantPanel() {
             刷新 ({getMaterialShelfRefreshCost?.(playerTier, isImmortal, turn) ?? 0}{isImmortal ? '仙元' : '元石'})
           </button>
         </div>
-        <div className="p-3 grid grid-cols-2 gap-2">
+        <div className="p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
           {materialItems.length === 0 ? (
             <div className="col-span-2 flex items-center justify-center py-12">
               <p className="text-rg-ink-300 text-sm font-panel">当前商路暂无可购买蛊材</p>
@@ -419,7 +443,7 @@ export function MerchantPanel() {
               刷新 ({getFragmentRefreshCost(fragmentActiveGroup)}元石)
             </button>
           </div>
-          <div className="p-3 grid grid-cols-2 gap-2">
+          <div className="p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {fragmentItems.length === 0 ? (
               <div className="col-span-2 flex items-center justify-center py-12">
                 <p className="text-rg-ink-300 text-sm font-panel">点击刷新获取残方</p>
@@ -464,6 +488,46 @@ export function MerchantPanel() {
       {/* 出售/销毁模式 */}
       {tab === 'sell' && (
         <div className="p-3 flex flex-col gap-3">
+          <div className="rounded-md border border-rg-ink-300/12 bg-rg-ink-700/60 p-3">
+            <div className="mb-2 flex items-center justify-between">
+              <span className="text-xs font-semibold text-rg-gold">出售蛊材</span>
+              <span className="text-[10px] text-rg-paper-200/35">商会按保守价回收，仙材需蛊仙渠道</span>
+            </div>
+            {sellableMaterialEntries.length === 0 ? (
+              <p className="text-[11px] text-rg-paper-200/25">物资袋暂无可出售蛊材。</p>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {sellableMaterialEntries.map(([materialName, qty]) => {
+                  const baseQuote = quoteMaterialSellBasePrice(materialName, isImmortal);
+                  const quote = baseQuote.canSell ? quoteSellPrice(baseQuote.price, 'material', materialName) : null;
+                  return (
+                    <div key={materialName} className="rounded-sm border border-rg-ink-300/10 bg-rg-ink-800/55 p-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="truncate text-xs text-rg-paper-200">{materialName}</span>
+                        <span className="shrink-0 text-[10px] text-rg-paper-200/40">×{qty}</span>
+                      </div>
+                      <div className="mt-1 flex items-center justify-between gap-2">
+                        <span className={baseQuote.canSell ? 'text-[10px] text-rg-gold/75' : 'text-[10px] text-rg-blood-400/75'}>
+                          {baseQuote.canSell ? `${quote?.price || 0}元石/份` : baseQuote.reason}
+                        </span>
+                        <button
+                          onClick={() => handleSellMaterial(materialName)}
+                          disabled={!baseQuote.canSell}
+                          className={`rounded-sm border px-2 py-1 text-[9px] font-button transition-micro ${
+                            baseQuote.canSell
+                              ? 'border-rg-gold/30 text-rg-gold hover:bg-rg-gold/10'
+                              : 'border-rg-ink-300/10 text-rg-paper-200/20 cursor-not-allowed'
+                          }`}
+                        >
+                          出售1份
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
           {(() => {
             const sellGuList = isImmortal
               ? ((useStore.getState() as any).apertureInventory?.gu || []) as any[]

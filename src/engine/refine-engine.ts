@@ -522,6 +522,103 @@ export interface AscendGuInput {
   guId: string;
 }
 
+export interface AscendPreview {
+  ok: boolean;
+  guName?: string;
+  currentTier?: number;
+  targetTier?: number;
+  costMaterials: string[];
+  costCurrency: number;
+  missingMaterials: string[];
+  successRate: number;
+  refineTurns: number;
+  failureConsequence: string;
+  blockedReason?: string;
+}
+
+export interface DisassemblePreview {
+  ok: boolean;
+  guName?: string;
+  tier?: number;
+  recoveredMaterials: Array<{ name: string; quantity: number }>;
+  recoveryRate: number;
+  blockedReason?: string;
+}
+
+export function previewAscendGu(input: AscendGuInput): AscendPreview {
+  const store = useStore.getState() as any;
+  const inventory: any[] = store.inventory || [];
+  const gu = inventory.find((g: any) => g.id === input.guId);
+  if (!gu) return { ok: false, costMaterials: [], costCurrency: 0, missingMaterials: [], successRate: 0, refineTurns: 0, failureConsequence: '无', blockedReason: '蛊虫不存在' };
+  if (gu.tier >= 5) return { ok: false, guName: gu.name, currentTier: gu.tier, targetTier: gu.tier + 1, costMaterials: [], costCurrency: 0, missingMaterials: [], successRate: 0, refineTurns: 0, failureConsequence: '无', blockedReason: '凡蛊升炼上限为五转，五转以上需走仙蛊升炼通道' };
+  if (gu.currentState === 'dead') return { ok: false, guName: gu.name, currentTier: gu.tier, targetTier: gu.tier + 1, costMaterials: [], costCurrency: 0, missingMaterials: [], successRate: 0, refineTurns: 0, failureConsequence: '无', blockedReason: '已死亡蛊虫不可升炼' };
+  if (gu.bonded) return { ok: false, guName: gu.name, currentTier: gu.tier, targetTier: gu.tier + 1, costMaterials: [], costCurrency: 0, missingMaterials: [], successRate: 0, refineTurns: 0, failureConsequence: '无', blockedReason: '本命蛊与空窍性命相连，v0.7.1 暂不允许普通升炼/拆炼' };
+
+  const recipe = getAscendRecipeForGu(gu.name);
+  const ascendCost = (guDatabase as any)[gu.name]?.ascendCost;
+  if (!recipe && !ascendCost) {
+    return { ok: false, guName: gu.name, currentTier: gu.tier, targetTier: gu.tier + 1, costMaterials: [], costCurrency: 0, missingMaterials: [], successRate: 0, refineTurns: 0, failureConsequence: '无', blockedReason: '暂无升炼配方数据' };
+  }
+
+  let materials: string[] = recipe ? expandMaterialCost(recipe) : [
+    ...Object.entries(ascendCost.generic || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
+    ...Object.entries(ascendCost.specific || {}).flatMap(([k, v]) => Array(v as number).fill(k)),
+  ];
+  materials = applyMaterialArrayCostModifiers(materials, {
+    store,
+    operation: 'ascend',
+    path: gu.path,
+    tier: (gu.tier || 1) + 1,
+    guName: gu.name,
+  }).materials;
+
+  const matCheck = canSpendMaterials(store as any, materials);
+  const currencyCost = recipe?.currencyCost?.amount ?? ascendCost?.currency ?? 0;
+  const daoMarks = store.pathBuild?.dao_marks || {} as Record<string, number>;
+  const difficulty = recipe?.difficulty ?? ascendCost?.difficulty ?? 0.5;
+  let rate = Math.max(0.1, 1 - difficulty * 0.1);
+  rate += (daoMarks['炼道'] || daoMarks['鐐奸亾'] || 0) * 0.03;
+  rate = applyRefineSuccessModifiers(rate, {
+    store,
+    operation: 'ascend',
+    path: gu.path,
+    tier: (gu.tier || 1) + 1,
+    guName: gu.name,
+  }).value;
+
+  return {
+    ok: matCheck.ok && (store.currency || 0) >= currencyCost,
+    guName: gu.name,
+    currentTier: gu.tier,
+    targetTier: (gu.tier || 1) + 1,
+    costMaterials: materials,
+    costCurrency: currencyCost,
+    missingMaterials: matCheck.missing || [],
+    successRate: Math.max(0.01, Math.min(0.99, rate)),
+    refineTurns: Math.max(1, Math.round((recipe?.timeCost || ascendCost?.turns || 2) * 0.7)),
+    failureConsequence: '失败后蛊虫饥饿/损伤风险上升，不直接掉转',
+    blockedReason: !matCheck.ok ? `蛊材不足：${matCheck.missing.join('、')}` : ((store.currency || 0) < currencyCost ? `元石不足：需要 ${currencyCost}` : undefined),
+  };
+}
+
+export function previewDisassembleGu(input: DisassembleInput): DisassemblePreview {
+  const store = useStore.getState() as any;
+  const inventory: any[] = store.inventory || [];
+  const gu = inventory.find((g: any) => g.id === input.guId);
+  if (!gu) return { ok: false, recoveredMaterials: [], recoveryRate: 0.8, blockedReason: '蛊虫不存在' };
+  if (gu.bonded) return { ok: false, guName: gu.name, tier: gu.tier, recoveredMaterials: [], recoveryRate: 0.8, blockedReason: '本命蛊不可拆炼，强拆会牵动空窍与性命反噬' };
+  const grade = resolveMaterialGrade(gu.tier);
+  const count = calculateMaterialCount(gu.tier);
+  const recovered = Math.max(1, Math.floor(count * 0.8));
+  return {
+    ok: true,
+    guName: gu.name,
+    tier: gu.tier,
+    recoveredMaterials: [{ name: `${grade}铔婃潗`, quantity: recovered }],
+    recoveryRate: 0.8,
+  };
+}
+
 export function ascendGu(input: AscendGuInput): RefineResult {
   const store = useStore.getState() as any;
   const inventory: any[] = store.inventory || [];

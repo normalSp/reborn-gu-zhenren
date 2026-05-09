@@ -73,6 +73,8 @@ export function GuInventoryPanel() {
   const dynamicNPCs = useStore(s => (s as any).dynamicNPCs || EMPTY_DYNAMIC_NPCS);
   const squadMembers = useStore(s => (s as any).squadMembers || (s as any).squad?.members || EMPTY_SQUAD_MEMBERS);
   const feedingDiscountProgress = useStore(s => (s as any).feedingDiscountProgress || EMPTY_FEEDING_DISCOUNT_PROGRESS);
+  const lifeboundGuInfo = useStore(s => (s as any).lifeboundGuInfo);
+  const lifeboundPenalty = useStore(s => (s as any).lifeboundDeathPenalty);
   const isImmortal = realmGrand >= 6;
   // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
   const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
@@ -233,7 +235,28 @@ export function GuInventoryPanel() {
       )}
 
       {/* ─── 卡片网格 ─── */}
-      <div className="p-3 grid grid-cols-2 gap-2">
+      <div className="mx-3 mt-3 rounded-md border border-rg-gold/15 bg-rg-ink-800/45 p-3 text-[11px] leading-relaxed text-rg-paper-200/55">
+        <div className="flex items-center justify-between gap-2">
+          <span className="text-xs font-semibold text-rg-gold">本命蛊</span>
+          <span className={lifeboundGuInfo ? 'text-rg-jade-400' : 'text-rg-paper-200/35'}>
+            {lifeboundGuInfo ? '已绑定' : '未绑定'}
+          </span>
+        </div>
+        <div className="mt-1">
+          {lifeboundGuInfo
+            ? '当前本命蛊与空窍性命相连：启用更稳定，但普通升炼、拆炼、出售会被阻止；若本命蛊死亡，将触发生命与道痕反噬。'
+            : 'v0.7.1 不强制一转开局选择本命蛊。完整本命蛊成长、突破和升仙联动将进入 v0.8 深化。'}
+        </div>
+        {lifeboundPenalty && (
+          <div className="mt-1 text-rg-blood-400/75">
+            死亡反噬：生命损失 {lifeboundPenalty.hpPercentLoss || 0}%、
+            道痕损失 {lifeboundPenalty.daoMarkPercentLoss || 0}%、
+            持续 {lifeboundPenalty.duration || 0} 回合。
+          </div>
+        )}
+      </div>
+
+      <div className="p-3 grid grid-cols-1 sm:grid-cols-2 gap-2">
         {filtered.map(gu => (
           <div
             key={gu.id}

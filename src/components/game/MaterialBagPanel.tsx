@@ -6,6 +6,7 @@
 import { useMemo } from 'react';
 import { useStore } from '../../store';
 import { MATERIAL_GRADE_MAP, type MaterialGrade } from '../../engine/material-region';
+import { getMaterialOverloadStatus } from '../../engine/material-overload';
 
 const GRADE_ORDER: MaterialGrade[] = ['普通', '精品', '稀有', '仙材'];
 const GRADE_LABELS: Record<MaterialGrade, string> = {'普通':'普通蛊材','精品':'精品蛊材','稀有':'稀有蛊材','仙材':'仙材'};
@@ -42,6 +43,10 @@ export function MaterialBagPanel() {
   }, [materialBag]);
 
   const usagePercent = Math.min(100, Math.round((totalCount / Math.max(1, materialBagCapacity)) * 100));
+  const overloadStatus = useMemo(
+    () => getMaterialOverloadStatus({ materialBag, capacity: materialBagCapacity }),
+    [materialBag, materialBagCapacity],
+  );
 
   return (
     <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel">
@@ -64,6 +69,15 @@ export function MaterialBagPanel() {
             />
           </div>
         </div>
+
+        {overloadStatus.overloaded && (
+          <div className="mt-3 rounded-sm border border-rg-blood-400/30 bg-rg-blood-400/10 p-2 text-[10px] leading-relaxed text-rg-blood-400">
+            <div className="font-semibold">物资袋超载 {overloadStatus.excess} 份</div>
+            <div className="text-rg-paper-200/45 mt-0.5">
+              野外采集、撤离和逃脱会受影响；请先到商会出售蛊材，或整理资源后再行动。
+            </div>
+          </div>
+        )}
 
         {/* 洞天福地状态 */}
         {aperture?.type === 'immortal' && (

@@ -7,6 +7,7 @@ import {
   formatModifierBreakdown,
   type ModifierContext,
 } from './modifier-engine';
+import { getMaterialOverloadStatus } from './material-overload';
 
 export type FieldActionKind = 'scout' | 'gather' | 'trap_check' | 'escape_support';
 
@@ -75,13 +76,23 @@ export function resolveFieldAction(input: FieldActionInput): FieldActionResult {
       : applyFieldActionSuccessModifiers(baseSuccess, context);
   const riskQuote = applyFieldActionRiskModifiers(Math.max(0, base.risk * locationRisk - luck * 0.004), context);
   const yieldQuote = applyFieldActionYieldModifiers(base.yield, context);
+  const overloadStatus = getMaterialOverloadStatus({
+    materialBag: input.store?.materialBag,
+    capacity: input.store?.materialBagCapacity,
+  });
+  const overloadSuccessPenalty = input.kind === 'escape_support'
+    ? overloadStatus.escapeSuccessPenalty
+    : overloadStatus.fieldSuccessPenalty;
+  const successRate = Math.max(0.01, successQuote.rate - overloadSuccessPenalty);
+  const riskChance = Math.min(0.98, riskQuote.risk * overloadStatus.riskMultiplier);
   const rng = seeded(input.seed ?? (input.turn * 131 + realm * 17 + input.kind.length * 41));
   const roll = rng();
-  const success = roll <= successQuote.rate;
+  const success = roll <= successRate;
   const labels = [
     ...formatModifierBreakdown(successQuote.breakdown),
     ...formatModifierBreakdown(riskQuote.breakdown),
     ...formatModifierBreakdown(yieldQuote.breakdown),
+    ...(overloadStatus.overloaded ? [overloadStatus.severity === 'heavy' ? '物资袋严重超载' : '物资袋超载'] : []),
   ];
 
   if (!success) {
@@ -89,8 +100,8 @@ export function resolveFieldAction(input: FieldActionInput): FieldActionResult {
       kind: input.kind,
       success,
       roll,
-      successRate: successQuote.rate,
-      riskChance: riskQuote.risk,
+      successRate,
+      riskChance,
       message: input.kind === 'gather' ? '采集未有所得，仍消耗了本时段行动余裕。' : '行动未达成预期，已留下风险线索。',
       modifierLabels: Array.from(new Set(labels)),
     };
@@ -103,8 +114,8 @@ export function resolveFieldAction(input: FieldActionInput): FieldActionResult {
       kind: input.kind,
       success,
       roll,
-      successRate: successQuote.rate,
-      riskChance: riskQuote.risk,
+      successRate,
+      riskChance,
       reward: { yuanStoneEquivalent: yuanValue, materials: { 普通蛊材: materialAmount } },
       message: `采集成功，获得普通蛊材 x${materialAmount}（约 ${yuanValue} 元石等价）。`,
       modifierLabels: Array.from(new Set(labels)),
@@ -116,8 +127,8 @@ export function resolveFieldAction(input: FieldActionInput): FieldActionResult {
     kind: input.kind,
     success,
     roll,
-    successRate: successQuote.rate,
-    riskChance: riskQuote.risk,
+    successRate,
+    riskChance,
     reward: { flag },
     message: input.kind === 'scout'
       ? '侦察成功：下一次野外遭遇会获得更清晰风险提示。'

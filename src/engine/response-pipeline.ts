@@ -658,6 +658,11 @@ export class ResponsePipeline {
       // ═══ P2-4b 战斗触发钩子：扫描叙事文本检测战斗场景 ═══
       try {
         const { detectCombat } = await import('./combat-router');
+        const {
+          buildCombatOfferKey,
+          hasRecentCombatOffer,
+          rememberCombatOffer,
+        } = await import('./combat-offer-lock');
         const store2 = useStore.getState() as any;
         const chapterFlag = store2.flags?.current_chapter_id || store2.currentChapterId;
         const trigger = detectCombat(narrative.narrative.text, chapterFlag);
@@ -678,7 +683,21 @@ export class ResponsePipeline {
             }
           } else if (trigger.combatType === 'narrative' && trigger.narrativeConstraint) {
             if (typeof store2.setTransientCombatConstraint === 'function') {
-              store2.setTransientCombatConstraint(trigger.narrativeConstraint);
+              const currentTurn = store2.turn || 1;
+              const offer = buildCombatOfferKey(
+                trigger.narrativeConstraint,
+                narrative.narrative.text,
+                chapterFlag,
+              );
+              const existingLocks = Array.isArray(store2.flags?._combatOfferLocks)
+                ? store2.flags._combatOfferLocks
+                : [];
+              if (!hasRecentCombatOffer(existingLocks, offer, currentTurn)) {
+                store2.setTransientCombatConstraint(trigger.narrativeConstraint);
+                if (typeof store2.setFlag === 'function') {
+                  store2.setFlag('_combatOfferLocks', rememberCombatOffer(existingLocks, offer, currentTurn));
+                }
+              }
             }
           }
         }

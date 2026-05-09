@@ -81,10 +81,23 @@ export const createEncounterSlice = (set: any, get: any): EncounterSlice => {
         return;
       }
 
-      // 按章节ID预索引模板
-      const chapterTemplates = _templates.filter(t => {
-        return t.id.startsWith(chapterId.substring(0, 2)) || true; // 按ID前缀匹配
+      // 按章节、地域、地点过滤模板；不能用“永真”兜底，否则同一剧情会反复刷出战斗遭遇。
+      const chapterPrefix = String(chapterId || '').slice(0, 2).toLowerCase();
+      const sameChapterTemplates = _templates.filter(t => {
+        const id = String(t.id || '').toLowerCase();
+        const region = t.triggerConditions?.region;
+        const locationKeywords = t.triggerConditions?.locationKeyword || [];
+        const locationMatched = locationKeywords.length === 0
+          || locationKeywords.some(keyword => currentLocation.includes(keyword));
+        return (
+          (chapterPrefix && id.startsWith(chapterPrefix))
+          || (region === currentDomain && locationMatched)
+        );
       });
+
+      const chapterTemplates = sameChapterTemplates.length > 0
+        ? sameChapterTemplates
+        : _templates.filter(t => t.triggerConditions?.region === currentDomain);
 
       if (chapterTemplates.length === 0) return;
 

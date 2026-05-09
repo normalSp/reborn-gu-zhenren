@@ -4,7 +4,7 @@
  */
 import { useState, useMemo, useCallback } from 'react';
 import { useStore } from '../../store';
-import { refineGu, ascendGu, disassembleGu, ascendImmortalGu } from '../../engine/refine-engine';
+import { refineGu, ascendGu, disassembleGu, ascendImmortalGu, previewAscendGu, previewDisassembleGu } from '../../engine/refine-engine';
 import { isRecipeUnlocked, synthesizeRecipe, attemptCompleteFragment, canAttemptFragment, loadAllFragments } from '../../engine/recipe-discovery';
 import { findMaterialSources, type MaterialSourceTag } from '../../engine/material-source-audit';
 import { applyRefineMaterialCostModifiers, applyRefineSuccessModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
@@ -284,6 +284,18 @@ export function RefinePanel() {
     [recipeList.locked, filterRecipe, showUnknownRecipes, discoveredTargets],
   );
   const hiddenUnknownRecipeCount = recipeList.locked.filter(recipe => filterRecipe(recipe) && !discoveredTargets.has(recipe.guName)).length;
+  const ascendPreview = useMemo(
+    () => mode === 'ascend' && selectedGuIds.length === 1 && !showImmortalAscend
+      ? previewAscendGu({ guId: selectedGuIds[0] })
+      : null,
+    [mode, selectedGuIds, showImmortalAscend, materialBag, apertureMaterials, apertureImmortalMaterials],
+  );
+  const disassemblePreview = useMemo(
+    () => mode === 'disassemble' && selectedGuIds.length === 1
+      ? previewDisassembleGu({ guId: selectedGuIds[0] })
+      : null,
+    [mode, selectedGuIds, inventory],
+  );
 
   return (
     <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel">
@@ -372,9 +384,9 @@ export function RefinePanel() {
         </div>
       )}
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex flex-col sm:flex-row overflow-hidden">
         {/* 左侧: 列表 */}
-        <div className="w-1/2 border-r border-rg-ink-700/30 overflow-y-auto p-2">
+        <div className="w-full sm:w-1/2 border-b sm:border-b-0 sm:border-r border-rg-ink-700/30 overflow-y-auto p-2 max-h-[42vh] sm:max-h-none">
           {(mode === 'refine') ? (
             <>
               <div className="mb-2 space-y-2 px-1">
@@ -459,7 +471,7 @@ export function RefinePanel() {
         </div>
 
         {/* 右侧: 详情+操作 */}
-        <div className="w-1/2 p-3 overflow-y-auto">
+        <div className="w-full sm:w-1/2 p-3 overflow-y-auto">
           {mode === 'refine' && selectedEntry ? (
             <div className="space-y-3">
               <div><span className="text-xs text-rg-paper-200/40">蛊虫</span><p className="text-sm text-rg-paper-100 font-semibold">{selectedEntry.guName}</p></div>
@@ -518,7 +530,34 @@ export function RefinePanel() {
             <div className="space-y-3">
               <p className="text-sm font-semibold">{inventory.find((g: any) => g.id === selectedGuIds[0])?.name}</p>
               <p className="text-xs text-rg-paper-200/50">升炼将提升蛊虫转数（上限5转），失败则蛊虫饥饿+1级</p>
-              <button onClick={handleAscend} className="w-full py-2 rounded-sm text-xs font-button font-semibold bg-rg-gold text-rg-ink-900 hover:brightness-115 transition-colors">
+              {ascendPreview && (
+                <div className="rounded-sm border border-rg-ink-700/40 bg-rg-ink-800/35 p-2 space-y-1.5 text-[10px] text-rg-paper-200/55">
+                  <div className="flex justify-between gap-2"><span>目标</span><span>{ascendPreview.currentTier}转 → {ascendPreview.targetTier}转</span></div>
+                  <div className="flex justify-between gap-2"><span>成功率</span><span className="text-rg-gold">{Math.round(ascendPreview.successRate * 100)}%</span></div>
+                  <div className="flex justify-between gap-2"><span>耗时</span><span>{ascendPreview.refineTurns} 回合</span></div>
+                  <div className="flex justify-between gap-2"><span>元石</span><span>{ascendPreview.costCurrency}</span></div>
+                  <div>
+                    <div className="text-rg-paper-200/35 mb-1">所需蛊材</div>
+                    {ascendPreview.costMaterials.length > 0 ? (
+                      <div className="flex flex-wrap gap-1">
+                        {Object.entries(ascendPreview.costMaterials.reduce((acc: Record<string, number>, material) => {
+                          acc[material] = (acc[material] || 0) + 1;
+                          return acc;
+                        }, {})).map(([material, amount]) => (
+                          <span key={material} className={`rounded-sm px-1.5 py-0.5 ${ascendPreview.missingMaterials.includes(material) ? 'bg-rg-blood-400/10 text-rg-blood-400 border border-rg-blood-400/25' : 'bg-rg-ink-700/50 text-rg-paper-200/55'}`}>
+                            {material}×{amount}
+                          </span>
+                        ))}
+                      </div>
+                    ) : <div className="text-rg-paper-200/25">暂无登记材料</div>}
+                  </div>
+                  <div className="text-rg-paper-200/35">失败后果：{ascendPreview.failureConsequence}</div>
+                  {ascendPreview.blockedReason && (
+                    <div className="rounded-sm border border-rg-blood-400/30 bg-rg-blood-400/10 p-1.5 text-rg-blood-400">{ascendPreview.blockedReason}</div>
+                  )}
+                </div>
+              )}
+              <button onClick={handleAscend} disabled={!ascendPreview?.ok} className={`w-full py-2 rounded-sm text-xs font-button font-semibold transition-colors ${ascendPreview?.ok ? 'bg-rg-gold text-rg-ink-900 hover:brightness-115' : 'bg-rg-ink-700 text-rg-paper-200/30 cursor-not-allowed'}`}>
                 确认升炼
               </button>
             </div>
@@ -565,7 +604,27 @@ export function RefinePanel() {
             <div className="space-y-3">
               <p className="text-sm font-semibold">{inventory.find((g: any) => g.id === selectedGuIds[0])?.name}</p>
               <p className="text-xs text-rg-paper-200/50">拆回蛊材（回收率80%），本命蛊不可拆炼</p>
-              <button onClick={handleDisassemble} className="w-full py-2 rounded-sm text-xs font-button font-semibold bg-rg-gold text-rg-ink-900 hover:brightness-115 transition-colors">
+              {disassemblePreview && (
+                <div className="rounded-sm border border-rg-ink-700/40 bg-rg-ink-800/35 p-2 space-y-1.5 text-[10px] text-rg-paper-200/55">
+                  <div className="flex justify-between gap-2"><span>回收率</span><span>{Math.round(disassemblePreview.recoveryRate * 100)}%</span></div>
+                  <div>
+                    <div className="text-rg-paper-200/35 mb-1">预计回收</div>
+                    {disassemblePreview.recoveredMaterials.length > 0 ? (
+                      <div className="flex flex-wrap gap-1">
+                        {disassemblePreview.recoveredMaterials.map(item => (
+                          <span key={item.name} className="rounded-sm bg-rg-ink-700/50 px-1.5 py-0.5 text-rg-paper-200/55">
+                            {item.name}×{item.quantity}
+                          </span>
+                        ))}
+                      </div>
+                    ) : <div className="text-rg-paper-200/25">无可回收材料</div>}
+                  </div>
+                  {disassemblePreview.blockedReason && (
+                    <div className="rounded-sm border border-rg-blood-400/30 bg-rg-blood-400/10 p-1.5 text-rg-blood-400">{disassemblePreview.blockedReason}</div>
+                  )}
+                </div>
+              )}
+              <button onClick={handleDisassemble} disabled={!disassemblePreview?.ok} className={`w-full py-2 rounded-sm text-xs font-button font-semibold transition-colors ${disassemblePreview?.ok ? 'bg-rg-gold text-rg-ink-900 hover:brightness-115' : 'bg-rg-ink-700 text-rg-paper-200/30 cursor-not-allowed'}`}>
                 确认拆炼
               </button>
             </div>
