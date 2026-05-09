@@ -450,7 +450,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0 hidden sm:block">
-          蛊真人世界 · v0.7.0-pre.0
+          蛊真人世界 · v0.7.1-rc.0
         </p>
       </div>
 

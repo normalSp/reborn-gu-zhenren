@@ -46,3 +46,24 @@
 - `npm test`：通过 41 个测试文件 / 298 个用例。
 - `npm run build`：通过；保留 Vite 500KB+ chunk 警告为非阻塞优化项。
 - `npm run test:e2e:long`：通过 3 条 Playwright 长测路径。
+
+## 2026-05-09 RC 更新
+
+本轮进入 `v0.7.1-rc.0` 前，对用户级 skill 再次做小版本修订：
+
+- `game-dev-text` 提升到 `2.2.0`：
+  - 事实源不再固定为 `指导大纲/v0.7.0/codex`，改为读取当前目标版本的 codex、大纲和最新上下文。
+  - 新增 RC 与大版本前闸门：清理旧文档冲突、确认版本号和存档格式、校验外部资源、跑自动长测、保留人工走查清单。
+  - 构建分包已完成后，新的 Vite 500KB+ 警告视为回归风险，不再默认写成旧的非阻塞项。
+- `reverend-insanity-lore` 提升到 `0.2.0`：
+  - 增加 `StartProfile` 身份锚点规则，禁止非古月开局被写成古月族人。
+  - 增加 v0.8 正史/IF、宿命状态、天意压力、十转与永生未证边界。
+  - 增加出身深线与二创 provenance 口径：`canon-near`、`if-derived`、`original-if` 必须区分。
+
+本次 skill 更新不改变运行时代码和存档格式，但会影响后续 Codex 任务的默认审计入口和世界观边界。
+
+## 2026-05-09 RC 验证结果
+
+- `npm test`：通过，52 个测试文件 / 350 个用例。
+- `npm run build`：通过，无 500KB+ 警告。
+- `npm run test:e2e:long`：通过，12 条 Playwright 长测路径。

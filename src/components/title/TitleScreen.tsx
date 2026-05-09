@@ -202,7 +202,7 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
             </button>
           )}
           <p className="text-rg-ink-300 text-xs font-panel text-center">
-            蛊真人世界 · 人生重来模拟器 · v0.7.0-pre.0
+            蛊真人世界 · 人生重来模拟器 · v0.7.1-rc.0
           </p>
           <p className="text-rg-ink-400 text-xs font-panel text-center mt-1">
             DeepSeek V4 Pro · React · TypeScript · 账簿式 UI
