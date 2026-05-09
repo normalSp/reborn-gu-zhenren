@@ -1,0 +1,256 @@
+{
+  "formatVersion": 13,
+  "timestamp": "2026-05-10T01:20:00+08:00",
+  "meta": {
+    "playerName": "三王山散修·陆微",
+    "realm": "四转中阶",
+    "turn": 72,
+    "gameMode": "canon",
+    "description": "v0.7.0-b 手测：三王山前夜小队战，验证DuelMove、BattleTrace、奖励闸门和信任回流。（中文命名副本：09-小队战-三王山遭遇）"
+  },
+  "state": {
+    "profile": {
+      "name": "三王山散修·陆微",
+      "realm": {
+        "grand": 4,
+        "sub": "中阶",
+        "label": "四转中阶"
+      },
+      "background": "南疆·散修"
+    },
+    "currentDomain": "南疆",
+    "currentChapterId": "sanwangshan_eve",
+    "turn": 72,
+    "currency": 4200,
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": [
+        "血道"
+      ],
+      "path_levels": {
+        "力道": "精通"
+      },
+      "dao_marks": {
+        "力道": 210,
+        "血道": 60
+      }
+    },
+    "vitals": {
+      "health": {
+        "current": 240,
+        "max": 240
+      },
+      "essence": {
+        "current": 130,
+        "max": 160
+      },
+      "essenceType": "mortal"
+    },
+    "playerFaction": {
+      "id": "faction_sanwang_luwei",
+      "name": "三王山临时盟",
+      "type": "散修盟",
+      "domain": "南疆",
+      "level": 3,
+      "reputation": 120,
+      "resources": {
+        "yuanStone": 2600
+      },
+      "maxMembers": 10,
+      "members": [
+        {
+          "id": "m_blood_yan",
+          "name": "燕赤",
+          "path": "血道",
+          "realm": 3,
+          "loyalty": 45,
+          "personality": "reckless",
+          "alive": true,
+          "hp": 170,
+          "maxHp": 170,
+          "atk": 44,
+          "def": 18,
+          "adventureTrust": 61,
+          "interestDrive": 68,
+          "status": "idle"
+        },
+        {
+          "id": "m_wind_xue",
+          "name": "薛风",
+          "path": "风道",
+          "realm": 3,
+          "loyalty": 51,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 36,
+          "def": 22,
+          "adventureTrust": 58,
+          "interestDrive": 42,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_blood_yan",
+          "name": "燕赤",
+          "path": "血道",
+          "realm": 3,
+          "loyalty": 45,
+          "personality": "reckless",
+          "alive": true,
+          "hp": 170,
+          "maxHp": 170,
+          "atk": 44,
+          "def": 18,
+          "adventureTrust": 61,
+          "interestDrive": 68
+        },
+        {
+          "id": "m_wind_xue",
+          "name": "薛风",
+          "path": "风道",
+          "realm": 3,
+          "loyalty": 51,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 36,
+          "def": 22,
+          "adventureTrust": 58,
+          "interestDrive": 42
+        }
+      ],
+      "maxSize": 4,
+      "formation": "合击",
+      "morale": 62,
+      "coordination": 64,
+      "lastUpdatedTurn": 72,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {
+        "m_blood_yan": 75,
+        "m_wind_xue": 75
+      }
+    },
+    "squadCombatState": {
+      "squadId": "handtest_sanwang_squad",
+      "phase": "deploy",
+      "round": 1,
+      "formation": "合击",
+      "morale": 62,
+      "coordination": 64,
+      "members": [
+        {
+          "memberId": "player",
+          "name": "陆微",
+          "hp": 240,
+          "maxHp": 240,
+          "atk": 58,
+          "def": 28,
+          "path": "力道",
+          "realm": 4,
+          "personality": "cunning",
+          "statuses": [],
+          "action": null,
+          "moves": [
+            {
+              "name": "兽力虚影",
+              "damageMultiplier": 1.55,
+              "pathBonus": 12,
+              "description": "力道杀招，凝出兽力虚影压敌",
+              "killerMoveId": "beast_phantom"
+            }
+          ],
+          "essence": {
+            "current": 130,
+            "max": 160,
+            "type": "primeval"
+          },
+          "daoMarks": 210,
+          "cooldowns": {},
+          "fatigue": 0,
+          "adventureTrust": 100,
+          "loyalty": 100,
+          "interestDrive": 0
+        },
+        {
+          "memberId": "m_blood_yan",
+          "name": "燕赤",
+          "hp": 170,
+          "maxHp": 170,
+          "atk": 44,
+          "def": 18,
+          "path": "血道",
+          "realm": 3,
+          "personality": "reckless",
+          "statuses": [],
+          "action": null,
+          "moves": [
+            {
+              "name": "血影扑杀",
+              "damageMultiplier": 1.35,
+              "pathBonus": 8,
+              "description": "血道突袭杀招",
+              "killerMoveId": "blood_shadow_pounce"
+            }
+          ],
+          "essence": {
+            "current": 90,
+            "max": 110,
+            "type": "primeval"
+          },
+          "daoMarks": 90,
+          "cooldowns": {},
+          "fatigue": 0,
+          "adventureTrust": 61,
+          "loyalty": 45,
+          "interestDrive": 68
+        }
+      ],
+      "enemies": [
+        {
+          "id": "enemy_tieclan_hunter",
+          "name": "铁家追踪蛊师",
+          "hp": 260,
+          "maxHp": 260,
+          "atk": 50,
+          "def": 30,
+          "path": "侦察",
+          "realm": 4,
+          "statuses": [],
+          "aiMode": "balanced",
+          "daoMarks": 150,
+          "morale": 60
+        }
+      ],
+      "log": [],
+      "trace": [
+        {
+          "round": 0,
+          "phase": "scout",
+          "actor": "system",
+          "action": "init",
+          "message": "三王山小队战手测初始化",
+          "tags": [
+            "squad_start"
+          ]
+        }
+      ],
+      "eventCandidates": [],
+      "seed": 70702,
+      "mode": "lethal",
+      "rewardPreview": {
+        "yuanStone": 72,
+        "materials": {},
+        "rumors": [
+          "敌方蛊虫默认死亡或自毁；只有剧情白名单允许掉蛊。"
+        ]
+      },
+      "result": null
+    }
+  }
+}

@@ -1,17 +1,27 @@
 {
-  "version": "v0.7.0-release-audio",
+  "version": "v0.7.1-rc-audio-local-fan-pack",
   "entries": [
     {
       "id": "fang_yuan_nianlun",
       "trackId": "character_fang_yuan_nianlun",
       "characterId": "fang_yuan",
       "characterName": "方源",
-      "aliases": ["古月方源", "炼天魔尊", "大爱仙尊"],
+      "aliases": [
+        "古月方源",
+        "炼天魔尊",
+        "大爱仙尊"
+      ],
       "title": "年轮",
       "filePath": "/audio/bgm/character/fang_yuan/nianlun.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["fang_yuan", "spring_autumn_cicada", "reverse_flow_river", "absolute_persistence", "venerable_clue"],
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "fang_yuan",
+        "spring_autumn_cicada",
+        "reverse_flow_river",
+        "absolute_persistence",
+        "venerable_clue"
+      ],
       "triggerWeights": {
         "first_appearance": 20,
         "named_line": 25,
@@ -25,19 +35,29 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。方源只能作为原著 NPC/远景事件/剧情交会对象触发，不能把玩家身份写成方源。"
+      "notes": "用户本地文件已落地，私用二创包启用。方源只能作为原著 NPC/远景事件/剧情交会对象触发，不能把玩家身份写成方源。"
     },
     {
       "id": "fang_yuan_free_highlight",
       "trackId": "scene_reverse_flow_river_free",
       "characterId": "fang_yuan",
       "characterName": "方源",
-      "aliases": ["古月方源", "炼天魔尊", "大爱仙尊"],
+      "aliases": [
+        "古月方源",
+        "炼天魔尊",
+        "大爱仙尊"
+      ],
       "title": "逆流河/名场面免费替代",
       "filePath": "/audio/bgm/scene/reverse_flow_river.ogg",
       "sourceTier": "free_public_fallback",
       "runtimeEnabled": true,
-      "triggerTags": ["fang_yuan", "spring_autumn_cicada", "reverse_flow_river", "absolute_persistence", "venerable_clue"],
+      "triggerTags": [
+        "fang_yuan",
+        "spring_autumn_cicada",
+        "reverse_flow_river",
+        "absolute_persistence",
+        "venerable_clue"
+      ],
       "triggerWeights": {
         "first_appearance": 12,
         "named_line": 14,
@@ -50,19 +70,28 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 18,
       "duckDomainBgmDb": -6,
-      "notes": "免费公布包 fallback；用户提供《年轮》本地文件后可切换到私用包条目。"
+      "notes": "免费公布包 fallback；私用二创包已启用。"
     },
     {
       "id": "duke_long_chunni",
       "trackId": "character_duke_long_chunni",
       "characterId": "duke_long",
       "characterName": "龙公",
-      "aliases": ["龙公", "龙御天"],
+      "aliases": [
+        "龙公",
+        "龙御天"
+      ],
       "title": "春泥",
       "filePath": "/audio/bgm/character/duke_long/chunni.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["duke_long", "heavenly_court", "humanity_guardian", "fate_war_pressure", "dragonman_tragedy"],
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "duke_long",
+        "heavenly_court",
+        "humanity_guardian",
+        "fate_war_pressure",
+        "dragonman_tragedy"
+      ],
       "triggerWeights": {
         "first_appearance": 20,
         "named_line": 25,
@@ -75,19 +104,28 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。用于天庭、人族守护、龙公高光或敌方压迫登场。"
+      "notes": "用户本地文件已落地，私用二创包启用。用于天庭、人族守护、龙公高光或敌方压迫登场。"
     },
     {
       "id": "duke_long_free_pressure",
       "trackId": "combat_boss_battle",
       "characterId": "duke_long",
       "characterName": "龙公",
-      "aliases": ["龙公", "龙御天"],
+      "aliases": [
+        "龙公",
+        "龙御天"
+      ],
       "title": "Boss 压迫免费替代",
       "filePath": "/audio/bgm/combat/boss_battle.mp3",
       "sourceTier": "free_public_fallback",
       "runtimeEnabled": true,
-      "triggerTags": ["duke_long", "heavenly_court", "humanity_guardian", "fate_war_pressure", "dragonman_tragedy"],
+      "triggerTags": [
+        "duke_long",
+        "heavenly_court",
+        "humanity_guardian",
+        "fate_war_pressure",
+        "dragonman_tragedy"
+      ],
       "triggerWeights": {
         "first_appearance": 12,
         "named_line": 14,
@@ -100,39 +138,63 @@
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "免费公布包 fallback；用户提供《春泥》本地文件后可切换到私用包条目。"
+      "notes": "免费公布包 fallback；私用二创包已启用。"
     },
     {
       "id": "bai_ning_bing_shanshan",
       "trackId": "character_bai_ning_bing_shanshan",
       "characterId": "bai_ning_bing",
       "characterName": "白凝冰",
-      "aliases": ["白凝冰"],
+      "aliases": [
+        "白凝冰"
+      ],
       "title": "山山而川 征途漫漫",
       "filePath": "/audio/bgm/character/bai_ning_bing/shanshan_er_chuan.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["bai_ning_bing", "ice_path", "betrayal", "thrilling_life"],
-      "triggerWeights": { "first_appearance": 18, "betrayal": 28, "emotional_peak": 18, "ice_path_scene": 15 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "bai_ning_bing",
+        "ice_path",
+        "betrayal",
+        "thrilling_life"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "betrayal": 28,
+        "emotional_peak": 18,
+        "ice_path_scene": 15
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "bai_ning_bing_free_highlight",
       "trackId": "scene_reverse_flow_river_free",
       "characterId": "bai_ning_bing",
       "characterName": "白凝冰",
-      "aliases": ["白凝冰"],
+      "aliases": [
+        "白凝冰"
+      ],
       "title": "冰道/背叛免费替代",
       "filePath": "/audio/bgm/scene/reverse_flow_river.ogg",
       "sourceTier": "free_public_fallback",
       "runtimeEnabled": true,
-      "triggerTags": ["bai_ning_bing", "ice_path", "betrayal", "thrilling_life"],
-      "triggerWeights": { "first_appearance": 10, "betrayal": 20, "emotional_peak": 12, "ice_path_scene": 12 },
+      "triggerTags": [
+        "bai_ning_bing",
+        "ice_path",
+        "betrayal",
+        "thrilling_life"
+      ],
+      "triggerWeights": {
+        "first_appearance": 10,
+        "betrayal": 20,
+        "emotional_peak": 12,
+        "ice_path_scene": 12
+      },
       "playSeconds": 16,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
@@ -145,32 +207,56 @@
       "trackId": "character_shang_xin_ci_tianruoyouqing",
       "characterId": "shang_xin_ci",
       "characterName": "商心慈",
-      "aliases": ["商心慈"],
+      "aliases": [
+        "商心慈"
+      ],
       "title": "天若有情",
       "filePath": "/audio/bgm/character/shang_xin_ci/tian_ruo_you_qing.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["shang_xin_ci", "merchant_city", "kindness", "trade_scene"],
-      "triggerWeights": { "first_appearance": 18, "emotional_peak": 18, "trade_scene": 14, "mercy": 12 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "shang_xin_ci",
+        "merchant_city",
+        "kindness",
+        "trade_scene"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "emotional_peak": 18,
+        "trade_scene": 14,
+        "mercy": 12
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 18,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "shang_xin_ci_free_warmth",
       "trackId": "domain_zhongzhou",
       "characterId": "shang_xin_ci",
       "characterName": "商心慈",
-      "aliases": ["商心慈"],
+      "aliases": [
+        "商心慈"
+      ],
       "title": "商会温情免费替代",
       "filePath": "/audio/bgm/domain/zhongzhou.mp3",
       "sourceTier": "free_public_fallback",
       "runtimeEnabled": true,
-      "triggerTags": ["shang_xin_ci", "merchant_city", "kindness", "trade_scene"],
-      "triggerWeights": { "first_appearance": 10, "emotional_peak": 10, "trade_scene": 10, "mercy": 8 },
+      "triggerTags": [
+        "shang_xin_ci",
+        "merchant_city",
+        "kindness",
+        "trade_scene"
+      ],
+      "triggerWeights": {
+        "first_appearance": 10,
+        "emotional_peak": 10,
+        "trade_scene": 10,
+        "mercy": 8
+      },
       "playSeconds": 14,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
@@ -183,241 +269,394 @@
       "trackId": "character_hei_lou_lan_changan",
       "characterId": "hei_lou_lan",
       "characterName": "黑楼兰",
-      "aliases": ["黑楼兰"],
+      "aliases": [
+        "黑楼兰"
+      ],
       "title": "长安姑娘",
       "filePath": "/audio/bgm/character/hei_lou_lan/chang_an_gu_niang.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["hei_lou_lan", "great_strength_true_martial", "northern_plains", "ambition"],
-      "triggerWeights": { "first_appearance": 18, "ambition": 18, "enemy_pressure": 16, "emotional_peak": 16 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "hei_lou_lan",
+        "great_strength_true_martial",
+        "northern_plains",
+        "ambition"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "ambition": 18,
+        "enemy_pressure": 16,
+        "emotional_peak": 16
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 20,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "thieving_heaven_wuming",
       "trackId": "character_thieving_heaven_wuming",
       "characterId": "thieving_heaven",
       "characterName": "盗天魔尊",
-      "aliases": ["盗天魔尊"],
+      "aliases": [
+        "盗天魔尊"
+      ],
       "title": "无名的人",
       "filePath": "/audio/bgm/character/thieving_heaven/wu_ming_de_ren.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["thieving_heaven", "otherworldly_demon", "homesickness", "space_path"],
-      "triggerWeights": { "first_appearance": 20, "emotional_peak": 24, "venerable_clue": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "thieving_heaven",
+        "otherworldly_demon",
+        "homesickness",
+        "space_path"
+      ],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "emotional_peak": 24,
+        "venerable_clue": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "red_lotus_ruomeng",
       "trackId": "character_red_lotus_ruomeng",
       "characterId": "red_lotus",
       "characterName": "红莲魔尊",
-      "aliases": ["红莲魔尊"],
+      "aliases": [
+        "红莲魔尊"
+      ],
       "title": "若梦 | 平生不晚",
       "filePath": "/audio/bgm/character/red_lotus/ruo_meng_ping_sheng_bu_wan.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["red_lotus", "fate_gu", "time_path", "spring_autumn_cicada"],
-      "triggerWeights": { "first_appearance": 20, "venerable_clue": 24, "emotional_peak": 22, "time_path_scene": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "red_lotus",
+        "fate_gu",
+        "time_path",
+        "spring_autumn_cicada"
+      ],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "venerable_clue": 24,
+        "emotional_peak": 22,
+        "time_path_scene": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "spectral_soul_zijinghua",
       "trackId": "character_spectral_soul_zijinghua",
       "characterId": "spectral_soul",
       "characterName": "幽魂魔尊",
-      "aliases": ["幽魂魔尊"],
+      "aliases": [
+        "幽魂魔尊"
+      ],
       "title": "紫荆花盛开",
       "filePath": "/audio/bgm/character/spectral_soul/zi_jing_hua_sheng_kai.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["spectral_soul", "soul_path", "slaughter", "venerable_clue"],
-      "triggerWeights": { "first_appearance": 20, "enemy_pressure": 26, "venerable_clue": 18, "slaughter": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "spectral_soul",
+        "soul_path",
+        "slaughter",
+        "venerable_clue"
+      ],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "enemy_pressure": 26,
+        "venerable_clue": 18,
+        "slaughter": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "bo_qing_qiansixi",
       "trackId": "character_bo_qing_qiansixi",
       "characterId": "bo_qing",
       "characterName": "薄青",
-      "aliases": ["薄青"],
+      "aliases": [
+        "薄青"
+      ],
       "title": "牵丝戏",
       "filePath": "/audio/bgm/character/bo_qing/qian_si_xi.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["bo_qing", "sword_path", "mo_yao", "tragic_love"],
-      "triggerWeights": { "first_appearance": 18, "emotional_peak": 24, "sword_path_scene": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "bo_qing",
+        "sword_path",
+        "mo_yao",
+        "tragic_love"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "emotional_peak": 24,
+        "sword_path_scene": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 22,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "gu_yue_yao_le_qingyi",
       "trackId": "character_gu_yue_yao_le_qingyi",
       "characterId": "gu_yue_yao_le",
       "characterName": "古月药乐",
-      "aliases": ["古月药乐", "药乐"],
+      "aliases": [
+        "古月药乐",
+        "药乐"
+      ],
       "title": "青衣",
       "filePath": "/audio/bgm/character/gu_yue_yao_le/qing_yi.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["gu_yue_yao_le", "qing_mao_mountain", "yue_le", "youth_tragedy"],
-      "triggerWeights": { "first_appearance": 16, "emotional_peak": 16, "qing_mao_mountain": 12 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "gu_yue_yao_le",
+        "qing_mao_mountain",
+        "yue_le",
+        "youth_tragedy"
+      ],
+      "triggerWeights": {
+        "first_appearance": 16,
+        "emotional_peak": 16,
+        "qing_mao_mountain": 12
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 18,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "feng_jiu_ge_zhiwo",
       "trackId": "character_feng_jiu_ge_zhiwo",
       "characterId": "feng_jiu_ge",
       "characterName": "凤九歌",
-      "aliases": ["凤九歌", "风九歌"],
+      "aliases": [
+        "凤九歌",
+        "风九歌"
+      ],
       "title": "知我",
       "filePath": "/audio/bgm/character/feng_jiu_ge/zhi_wo.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["feng_jiu_ge", "sound_path", "fate_war", "self_belief"],
-      "triggerWeights": { "first_appearance": 18, "named_line": 24, "emotional_peak": 20, "sound_path_scene": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "feng_jiu_ge",
+        "sound_path",
+        "fate_war",
+        "self_belief"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "named_line": 24,
+        "emotional_peak": 20,
+        "sound_path_scene": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 22,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "wu_shuai_yumeiren",
       "trackId": "character_wu_shuai_yumeiren",
       "characterId": "wu_shuai",
       "characterName": "吴帅",
-      "aliases": ["吴帅"],
+      "aliases": [
+        "吴帅"
+      ],
       "title": "虞美人",
       "filePath": "/audio/bgm/character/wu_shuai/yu_mei_ren.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["wu_shuai", "dragonman", "lost_era", "tragic_memory"],
-      "triggerWeights": { "first_appearance": 18, "emotional_peak": 22, "dragonman_scene": 18 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "wu_shuai",
+        "dragonman",
+        "lost_era",
+        "tragic_memory"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "emotional_peak": 22,
+        "dragonman_scene": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 22,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "tai_bai_yun_sheng_cry_for_me",
       "trackId": "scene_tai_bai_yun_sheng_cry_for_me",
       "characterId": "tai_bai_yun_sheng",
       "characterName": "太白云生",
-      "aliases": ["太白云生", "太白"],
+      "aliases": [
+        "太白云生",
+        "太白"
+      ],
       "title": "Cry For Me",
       "filePath": "/audio/bgm/scene/tai_bai_yun_sheng_cry_for_me.mp3",
-      "sourceTier": "user_confirmed_scene_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["tai_bai_yun_sheng", "reverse_flow_river", "betrayal", "tragic_scene"],
-      "triggerWeights": { "betrayal": 30, "emotional_peak": 24, "reverse_flow_river": 20 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "tai_bai_yun_sheng",
+        "reverse_flow_river",
+        "betrayal",
+        "tragic_scene"
+      ],
+      "triggerWeights": {
+        "betrayal": 30,
+        "emotional_peak": 24,
+        "reverse_flow_river": 20
+      },
       "playSeconds": 20,
       "fadeInSeconds": 1,
       "fadeOutSeconds": 2.5,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "three_kings_ding_xian_you_jingwei",
       "trackId": "scene_three_kings_ding_xian_you_jingwei_pipa",
       "characterId": "fixed_immortal_travel_scene",
       "characterName": "三王山定仙游",
-      "aliases": ["三王山炼制定仙游", "定仙游", "三王山"],
+      "aliases": [
+        "三王山炼制定仙游",
+        "定仙游",
+        "三王山"
+      ],
       "title": "精卫琵琶版",
       "filePath": "/audio/bgm/scene/three_kings_ding_xian_you_jingwei_pipa.mp3",
-      "sourceTier": "user_confirmed_scene_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["three_kings_mountain", "fixed_immortal_travel", "refinement_climax", "desperate_reversal"],
-      "triggerWeights": { "refinement_climax": 34, "desperate_reversal": 24, "fixed_immortal_travel": 30 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "three_kings_mountain",
+        "fixed_immortal_travel",
+        "refinement_climax",
+        "desperate_reversal"
+      ],
+      "triggerWeights": {
+        "refinement_climax": 34,
+        "desperate_reversal": 24,
+        "fixed_immortal_travel": 30
+      },
       "playSeconds": 20,
       "fadeInSeconds": 1,
       "fadeOutSeconds": 2.5,
       "cooldownTurns": 24,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "mo_yao_weiyi",
       "trackId": "character_mo_yao_weiyi",
       "characterId": "mo_yao",
       "characterName": "墨瑶",
-      "aliases": ["墨瑶", "莫瑶"],
+      "aliases": [
+        "墨瑶",
+        "莫瑶"
+      ],
       "title": "唯一",
       "filePath": "/audio/bgm/character/mo_yao/wei_yi.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["mo_yao", "bo_qing", "tragic_love", "wisdom_path"],
-      "triggerWeights": { "first_appearance": 16, "emotional_peak": 24, "tragic_love": 26 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "mo_yao",
+        "bo_qing",
+        "tragic_love",
+        "wisdom_path"
+      ],
+      "triggerWeights": {
+        "first_appearance": 16,
+        "emotional_peak": 24,
+        "tragic_love": 26
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 22,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "ma_hong_yun_zood_dingzhen",
       "trackId": "character_ma_hong_yun_zood_dingzhen",
       "characterId": "ma_hong_yun",
       "characterName": "马鸿运",
-      "aliases": ["马鸿运"],
+      "aliases": [
+        "马鸿运"
+      ],
       "title": "zood 丁真版",
       "filePath": "/audio/bgm/character/ma_hong_yun/zood_dingzhen.mp3",
-      "sourceTier": "user_confirmed_community_theme",
-      "runtimeEnabled": false,
-      "triggerTags": ["ma_hong_yun", "luck_path", "northern_plains", "fortune_rival"],
-      "triggerWeights": { "first_appearance": 16, "luck_path_scene": 20, "comic_relief": 14 },
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "ma_hong_yun",
+        "luck_path",
+        "northern_plains",
+        "fortune_rival"
+      ],
+      "triggerWeights": {
+        "first_appearance": 16,
+        "luck_path_scene": 20,
+        "comic_relief": 14
+      },
       "playSeconds": 16,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
       "cooldownTurns": 18,
       "duckDomainBgmDb": -6,
-      "notes": "私用包待提供文件。"
+      "notes": "用户本地文件已落地，私用二创包启用。"
     },
     {
       "id": "liu_guan_yi_lightning_moment",
       "trackId": "character_liu_guan_yi_lightning_moment",
       "characterId": "liu_guan_yi",
       "characterName": "柳贯一",
-      "aliases": ["柳贯一"],
+      "aliases": [
+        "柳贯一"
+      ],
       "title": "Lightning Moment dj",
       "filePath": "/audio/bgm/character/liu_guan_yi/lightning_moment_dj.mp3",
       "sourceTier": "user_confirmed_community_theme",
       "runtimeEnabled": false,
-      "triggerTags": ["liu_guan_yi", "reverse_flow_river", "desperate_reversal", "perseverance"],
-      "triggerWeights": { "desperate_reversal": 30, "reverse_flow_river": 26, "emotional_peak": 18 },
+      "triggerTags": [
+        "liu_guan_yi",
+        "reverse_flow_river",
+        "desperate_reversal",
+        "perseverance"
+      ],
+      "triggerWeights": {
+        "desperate_reversal": 30,
+        "reverse_flow_river": 26,
+        "emotional_peak": 18
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
@@ -430,13 +669,25 @@
       "trackId": "character_limitless_lightning_moment",
       "characterId": "limitless",
       "characterName": "无极魔尊",
-      "aliases": ["无极魔尊", "无极"],
+      "aliases": [
+        "无极魔尊",
+        "无极"
+      ],
       "title": "Lightning Moment dj",
       "filePath": "/audio/bgm/character/limitless/lightning_moment_dj.mp3",
       "sourceTier": "user_confirmed_community_theme",
       "runtimeEnabled": false,
-      "triggerTags": ["limitless", "dao_pursuit", "venerable_clue", "crazed_demon_cave"],
-      "triggerWeights": { "first_appearance": 18, "venerable_clue": 24, "dao_pursuit": 28 },
+      "triggerTags": [
+        "limitless",
+        "dao_pursuit",
+        "venerable_clue",
+        "crazed_demon_cave"
+      ],
+      "triggerWeights": {
+        "first_appearance": 18,
+        "venerable_clue": 24,
+        "dao_pursuit": 28
+      },
       "playSeconds": 18,
       "fadeInSeconds": 0.8,
       "fadeOutSeconds": 2,
@@ -449,19 +700,127 @@
       "trackId": "scene_death_poem_free",
       "characterId": "fixed_poem",
       "characterName": "定场诗",
-      "aliases": ["定场诗", "死亡定场诗", "一生总结"],
+      "aliases": [
+        "定场诗",
+        "死亡定场诗",
+        "一生总结"
+      ],
       "title": "死亡定场诗免费替代",
       "filePath": "/audio/bgm/scene/death_poem.ogg",
       "sourceTier": "free_public_fallback",
       "runtimeEnabled": true,
-      "triggerTags": ["death_poem", "life_summary", "game_over", "closing_poem"],
-      "triggerWeights": { "death_poem": 40, "life_summary": 24, "game_over": 24, "emotional_peak": 12 },
+      "triggerTags": [
+        "death_poem",
+        "life_summary",
+        "game_over",
+        "closing_poem"
+      ],
+      "triggerWeights": {
+        "death_poem": 40,
+        "life_summary": 24,
+        "game_over": 24,
+        "emotional_peak": 12
+      },
       "playSeconds": 20,
       "fadeInSeconds": 1,
       "fadeOutSeconds": 2.5,
       "cooldownTurns": 0,
       "duckDomainBgmDb": -6,
       "notes": "免费公布包定场诗 BGM；私用包可替换为用户确认的 boss area。"
+    },
+    {
+      "id": "red_lotus_meili_shenhua_dj",
+      "trackId": "character_red_lotus_meili_shenhua_dj",
+      "characterId": "red_lotus",
+      "characterName": "红莲魔尊",
+      "aliases": [
+        "红莲魔尊"
+      ],
+      "title": "美丽的神话 DJ",
+      "filePath": "/audio/bgm/character/red_lotus/mei_li_de_shen_hua_dj.mp3",
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "red_lotus",
+        "fate_gu",
+        "time_path",
+        "spring_autumn_cicada"
+      ],
+      "triggerWeights": {
+        "first_appearance": 20,
+        "venerable_clue": 24,
+        "emotional_peak": 22,
+        "time_path_scene": 18
+      },
+      "playSeconds": 18,
+      "fadeInSeconds": 0.8,
+      "fadeOutSeconds": 2,
+      "cooldownTurns": 24,
+      "duckDomainBgmDb": -6,
+      "notes": "用户确认红莲魔尊第二曲；与《若梦》按同分候选可复现轮换。"
+    },
+    {
+      "id": "ma_hong_yun_i_got_smoke",
+      "trackId": "character_ma_hong_yun_i_got_smoke",
+      "characterId": "ma_hong_yun",
+      "characterName": "马鸿运",
+      "aliases": [
+        "马鸿运"
+      ],
+      "title": "I Got Smoke",
+      "filePath": "/audio/bgm/character/ma_hong_yun/i_got_smoke.mp3",
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "ma_hong_yun",
+        "luck_path",
+        "northern_plains",
+        "fortune_rival"
+      ],
+      "triggerWeights": {
+        "first_appearance": 16,
+        "luck_path_scene": 20,
+        "comic_relief": 14
+      },
+      "playSeconds": 16,
+      "fadeInSeconds": 0.8,
+      "fadeOutSeconds": 2,
+      "cooldownTurns": 18,
+      "duckDomainBgmDb": -6,
+      "notes": "用户确认马鸿运第二曲；与 ZOOD 按同分候选可复现轮换。"
+    },
+    {
+      "id": "fixed_poem_boss_area",
+      "trackId": "scene_fixed_poem_boss_area",
+      "characterId": "fixed_poem",
+      "characterName": "定场诗",
+      "aliases": [
+        "定场诗",
+        "死亡定场诗",
+        "一生总结"
+      ],
+      "title": "boss area",
+      "filePath": "/audio/bgm/scene/fixed_poem_boss_area.mp3",
+      "sourceTier": "user_supplied_local_fan_pack",
+      "runtimeEnabled": true,
+      "triggerTags": [
+        "death_poem",
+        "life_summary",
+        "game_over",
+        "closing_poem"
+      ],
+      "triggerWeights": {
+        "death_poem": 40,
+        "life_summary": 24,
+        "game_over": 24,
+        "emotional_peak": 12
+      },
+      "playSeconds": 20,
+      "fadeInSeconds": 1,
+      "fadeOutSeconds": 2.5,
+      "cooldownTurns": 0,
+      "duckDomainBgmDb": -6,
+      "notes": "用户确认定场诗通用 BGM；死亡总结与定场诗高光时触发。"
     }
   ]
 }

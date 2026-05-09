@@ -17,38 +17,65 @@ describe('v0.7.0-c audio resource policy', () => {
     expect(audioSourceManifest.policy.aiOrSyntheticCombatSfxAllowed).toBe(false);
   });
 
-  it('keeps Fang Yuan and Duke Long character themes as reviewed but disabled until files are supplied', () => {
+  it('enables user-supplied local fan pack character themes after files are supplied', () => {
     const fangYuan = getCharacterBgmEntryByActor('方源');
     const dukeLong = getCharacterBgmEntryByActor('龙公');
     expect(fangYuan?.title).toBe('年轮');
     expect(dukeLong?.title).toBe('春泥');
-    expect(fangYuan?.runtimeEnabled).toBe(false);
-    expect(dukeLong?.runtimeEnabled).toBe(false);
+    expect(fangYuan?.runtimeEnabled).toBe(true);
+    expect(dukeLong?.runtimeEnabled).toBe(true);
+    expect(fangYuan?.sourceTier).toBe('user_supplied_local_fan_pack');
+    expect(dukeLong?.sourceTier).toBe('user_supplied_local_fan_pack');
   });
 
-  it('can preview a high-light character cue without enabling missing audio files', () => {
+  it('selects a supplied high-light character cue when the local fan pack is present', () => {
     const cue = selectCharacterBgmCue({
       actors: ['方源'],
       tags: ['spring_autumn_cicada', 'desperate_reversal'],
+      eventImportance: 20,
+    }, characterBgmManifest);
+
+    expect(cue?.title).toBe('年轮');
+    expect(cue?.runtimeEnabled).toBe(true);
+    expect(cue?.filePath).toBe('/audio/bgm/character/fang_yuan/nianlun.mp3');
+    expect(cue?.score).toBeGreaterThanOrEqual(35);
+  });
+
+  it('can still preview disabled missing tracks without treating them as runtime assets', () => {
+    const cue = selectCharacterBgmCue({
+      actors: ['柳贯一'],
+      tags: ['reverse_flow_river', 'desperate_reversal'],
       eventImportance: 20,
       allowDisabledForPreview: true,
     }, characterBgmManifest);
 
-    expect(cue?.title).toBe('年轮');
+    expect(cue?.title).toBe('Lightning Moment dj');
     expect(cue?.runtimeEnabled).toBe(false);
-    expect(cue?.score).toBeGreaterThanOrEqual(35);
   });
 
-  it('selects a runtime-safe free fallback cue for public package character highlights', () => {
-    const cue = selectCharacterBgmCue({
-      actors: ['方源'],
-      tags: ['spring_autumn_cicada', 'desperate_reversal'],
-      eventImportance: 20,
-    }, characterBgmManifest);
+  it('rotates multi-track character themes in a deterministic way', () => {
+    const redLotusTracks = new Set<string>();
+    const maHongYunTracks = new Set<string>();
 
-    expect(cue?.title).toContain('免费替代');
-    expect(cue?.runtimeEnabled).toBe(true);
-    expect(cue?.filePath).toBe('/audio/bgm/scene/reverse_flow_river.ogg');
+    for (let turn = 1; turn <= 12; turn += 1) {
+      redLotusTracks.add(selectCharacterBgmCue({
+        actors: ['红莲魔尊'],
+        tags: ['red_lotus', 'fate_gu', 'time_path_scene'],
+        eventImportance: 20,
+        currentTurn: turn,
+      }, characterBgmManifest)?.trackId ?? '');
+      maHongYunTracks.add(selectCharacterBgmCue({
+        actors: ['马鸿运'],
+        tags: ['ma_hong_yun', 'luck_path', 'northern_plains'],
+        eventImportance: 20,
+        currentTurn: turn,
+      }, characterBgmManifest)?.trackId ?? '');
+    }
+
+    expect(redLotusTracks).toContain('character_red_lotus_ruomeng');
+    expect(redLotusTracks).toContain('character_red_lotus_meili_shenhua_dj');
+    expect(maHongYunTracks).toContain('character_ma_hong_yun_zood_dingzhen');
+    expect(maHongYunTracks).toContain('character_ma_hong_yun_i_got_smoke');
   });
 
   it('runtime enabled audio files exist and are non-empty', () => {

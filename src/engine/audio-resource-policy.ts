@@ -122,14 +122,17 @@ export function validateAudioSourceManifest(manifest: AudioSourceManifest = audi
     if (track.runtimeEnabled && looksLikeLegacySyntheticPath(track.filePath)) {
       issues.push({ severity: 'error', id: track.id, message: 'Legacy synthetic BGM path cannot be runtime enabled.' });
     }
-    if (track.runtimeEnabled && !track.sourceKind.startsWith('free_')) {
-      issues.push({ severity: 'error', id: track.id, message: 'Runtime track must be a verified free source unless it is enabled by a local user-supplied fan pack switch.' });
+    const isFreeRuntimeTrack = track.sourceKind.startsWith('free_');
+    const isLocalFanPackTrack = track.sourceKind.startsWith('user_supplied')
+      && (track.runtimePackage === 'nonprofit_fan_pack' || track.runtimePackage === 'user_supplied');
+    if (track.runtimeEnabled && !isFreeRuntimeTrack && !isLocalFanPackTrack) {
+      issues.push({ severity: 'error', id: track.id, message: 'Runtime track must be a verified free source or a local user-supplied fan pack track.' });
     }
     if (track.runtimeEnabled && (!track.license || !track.sourceUrl || !track.attribution)) {
       issues.push({ severity: 'error', id: track.id, message: 'Runtime track must include source URL, license, and attribution.' });
     }
-    if (track.runtimeEnabled && track.localFileRequired) {
-      issues.push({ severity: 'error', id: track.id, message: 'User-supplied local file references cannot be runtime enabled in the free public package.' });
+    if (track.runtimeEnabled && track.localFileRequired && !isLocalFanPackTrack) {
+      issues.push({ severity: 'error', id: track.id, message: 'User-supplied local file references must be enabled only through the local fan pack.' });
     }
   }
 

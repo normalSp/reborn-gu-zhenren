@@ -1,0 +1,286 @@
+{
+  "formatVersion": 13,
+  "timestamp": "2026-05-10T01:20:00+08:00",
+  "meta": {
+    "playerName": "东海散仙·沈照",
+    "realm": "六转初阶",
+    "turn": 180,
+    "gameMode": "canon",
+    "description": "v0.7.0-b 手测：蛊仙期小队战，验证仙元/仙元石区分、宝黄天门槛、仙蛊/杀招门槛、小队奖励不破坏经济。（中文命名副本：10-小队战-蛊仙期遭遇）"
+  },
+  "state": {
+    "profile": {
+      "name": "东海散仙·沈照",
+      "realm": {
+        "grand": 6,
+        "sub": "初阶",
+        "label": "六转初阶"
+      },
+      "background": "东海·散修"
+    },
+    "currentDomain": "东海",
+    "currentChapterId": "immortal_trade_route",
+    "turn": 180,
+    "currency": 8600,
+    "immortalCurrency": 420,
+    "pathBuild": {
+      "primary": "水道",
+      "secondary": [
+        "木道"
+      ],
+      "path_levels": {
+        "水道": "宗师",
+        "木道": "大师"
+      },
+      "dao_marks": {
+        "水道": 820,
+        "木道": 260
+      }
+    },
+    "vitals": {
+      "health": {
+        "current": 1200,
+        "max": 1200
+      },
+      "essence": {
+        "current": 540,
+        "max": 720
+      },
+      "essenceType": "immortal"
+    },
+    "aperture": {
+      "type": "immortal",
+      "area_mu": 5200,
+      "time_flow_ratio": 18,
+      "resource_points": [
+        {
+          "id": "rp_tide_lotus",
+          "name": "潮生莲池",
+          "path": "水道",
+          "level": 2,
+          "output": {
+            "月潮露": 2
+          }
+        }
+      ]
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {
+        "月潮露": 6,
+        "通用仙材": 3
+      }
+    },
+    "playerFaction": {
+      "id": "faction_donghai_shenzhao",
+      "name": "潮影盟",
+      "type": "散修联盟",
+      "domain": "东海",
+      "level": 5,
+      "reputation": 360,
+      "resources": {
+        "元石": 12000,
+        "仙元石": 68,
+        "蛊材": {}
+      },
+      "maxMembers": 16,
+      "members": [
+        {
+          "id": "m_lotus_qing",
+          "name": "青莲客",
+          "path": "木道",
+          "realm": 5,
+          "loyalty": 61,
+          "personality": "selfless",
+          "alive": true,
+          "hp": 620,
+          "maxHp": 620,
+          "atk": 88,
+          "def": 70,
+          "adventureTrust": 74,
+          "interestDrive": 42,
+          "status": "idle"
+        },
+        {
+          "id": "m_tide_yue",
+          "name": "越潮",
+          "path": "水道",
+          "realm": 6,
+          "loyalty": 54,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 980,
+          "maxHp": 980,
+          "atk": 130,
+          "def": 105,
+          "adventureTrust": 63,
+          "interestDrive": 58,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_lotus_qing",
+          "name": "青莲客",
+          "path": "木道",
+          "realm": 5,
+          "loyalty": 61,
+          "personality": "selfless",
+          "alive": true,
+          "hp": 620,
+          "maxHp": 620,
+          "atk": 88,
+          "def": 70,
+          "adventureTrust": 74,
+          "interestDrive": 42
+        },
+        {
+          "id": "m_tide_yue",
+          "name": "越潮",
+          "path": "水道",
+          "realm": 6,
+          "loyalty": 54,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 980,
+          "maxHp": 980,
+          "atk": 130,
+          "def": 105,
+          "adventureTrust": 63,
+          "interestDrive": 58
+        }
+      ],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 66,
+      "coordination": 61,
+      "lastUpdatedTurn": 180,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {
+        "m_lotus_qing": 183,
+        "m_tide_yue": 183
+      }
+    },
+    "squadCombatState": {
+      "squadId": "handtest_immortal_squad",
+      "phase": "deploy",
+      "round": 1,
+      "formation": "牵制",
+      "morale": 66,
+      "coordination": 61,
+      "members": [
+        {
+          "memberId": "player",
+          "name": "沈照",
+          "hp": 1200,
+          "maxHp": 1200,
+          "atk": 150,
+          "def": 120,
+          "path": "水道",
+          "realm": 6,
+          "personality": "cunning",
+          "statuses": [],
+          "action": null,
+          "moves": [
+            {
+              "name": "潮影锁身",
+              "damageMultiplier": 1.42,
+              "pathBonus": 24,
+              "description": "水道控制杀招，压低目标行动空间。",
+              "killerMoveId": "tide_shadow_bind"
+            }
+          ],
+          "essence": {
+            "current": 540,
+            "max": 720,
+            "type": "immortal"
+          },
+          "daoMarks": 820,
+          "cooldowns": {},
+          "fatigue": 0,
+          "adventureTrust": 100,
+          "loyalty": 100,
+          "interestDrive": 0
+        },
+        {
+          "memberId": "m_tide_yue",
+          "name": "越潮",
+          "hp": 980,
+          "maxHp": 980,
+          "atk": 130,
+          "def": 105,
+          "path": "水道",
+          "realm": 6,
+          "personality": "cautious",
+          "statuses": [],
+          "action": null,
+          "moves": [
+            {
+              "name": "潮墙护阵",
+              "damageMultiplier": 1.05,
+              "pathBonus": 14,
+              "description": "水道防护杀招，配合牵制姿态。",
+              "killerMoveId": "tide_wall_guard"
+            }
+          ],
+          "essence": {
+            "current": 320,
+            "max": 480,
+            "type": "immortal"
+          },
+          "daoMarks": 520,
+          "cooldowns": {},
+          "fatigue": 1,
+          "adventureTrust": 63,
+          "loyalty": 54,
+          "interestDrive": 58
+        }
+      ],
+      "enemies": [
+        {
+          "id": "enemy_sea_beast",
+          "name": "铁背海兽",
+          "hp": 1680,
+          "maxHp": 1680,
+          "atk": 145,
+          "def": 130,
+          "path": "力道",
+          "realm": 6,
+          "statuses": [],
+          "aiMode": "aggressive",
+          "daoMarks": 640,
+          "morale": 70
+        }
+      ],
+      "log": [],
+      "trace": [
+        {
+          "round": 0,
+          "phase": "scout",
+          "actor": "system",
+          "action": "init",
+          "message": "蛊仙期小队战手测初始化。",
+          "tags": [
+            "squad_start",
+            "immortal"
+          ]
+        }
+      ],
+      "eventCandidates": [],
+      "seed": 70801,
+      "mode": "lethal",
+      "rewardPreview": {
+        "yuanStone": 0,
+        "immortalStone": 1,
+        "materials": {},
+        "rumors": [
+          "荒兽尸骸需经资源点或宝黄天线索处理，不直接掉仙蛊。"
+        ]
+      },
+      "result": null
+    }
+  }
+}

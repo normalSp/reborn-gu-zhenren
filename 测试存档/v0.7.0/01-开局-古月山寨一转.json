@@ -1,0 +1,89 @@
+{
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T01:20:00+08:00",
+  "meta": {
+    "playerName": "古月旁支·月衡",
+    "realm": "一转初阶",
+    "turn": 1,
+    "gameMode": "canon",
+    "description": "v0.7.1 中文手测：古月山寨开局身份路由、首段剧情地点、声望、行动入口。"
+  },
+  "state": {
+    "profile": {
+      "name": "古月旁支·月衡",
+      "realm": {
+        "grand": 1,
+        "sub": "初阶",
+        "label": "一转初阶"
+      },
+      "background": "南疆 · 古月山寨新晋一转蛊师"
+    },
+    "currentDomain": "南疆",
+    "currentChapterId": "qingmaoshan",
+    "turn": 1,
+    "currency": 150,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "morning",
+      "day": 1,
+      "month": 1,
+      "year": 1,
+      "season": "spring"
+    },
+    "pathBuild": {
+      "primary": null,
+      "secondary": [],
+      "path_levels": {},
+      "dao_marks": {}
+    },
+    "vitals": {
+      "health": {
+        "current": 220,
+        "max": 220
+      },
+      "essence": {
+        "current": 100,
+        "max": 100
+      },
+      "essenceType": "mortal"
+    },
+    "playerFaction": {
+      "id": "guyue_shanzhai",
+      "name": "古月山寨",
+      "type": "家族/正道势力",
+      "domain": "南疆",
+      "level": 1,
+      "reputation": 8,
+      "resources": {
+        "yuanStone": 150
+      },
+      "maxMembers": 4,
+      "members": []
+    },
+    "partyState": {
+      "members": [],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 40,
+      "coordination": 30,
+      "lastUpdatedTurn": 1,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {}
+    },
+    "materials": {
+      "鲜兽肉": 1
+    },
+    "immortalMaterials": {},
+    "flags": {
+      "_timeline_start": "qingmaoshan",
+      "_start_profile": "start_qingmaoshan_guyue",
+      "_start_profile_provenance": "canon-near",
+      "_start_profile_role": "古月山寨新晋一转蛊师",
+      "_start_profile_location": "青茅山 · 古月山寨族学与开窍堂",
+      "_faction_name": "古月山寨",
+      "_origin_manual_save": "01-开局-古月山寨一转.json",
+      "_origin_preview_order": 1
+    }
+  }
+}

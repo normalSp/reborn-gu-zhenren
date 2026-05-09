@@ -93,6 +93,22 @@ const scenarios: LongScenario[] = [
     expectDispatch: true,
     expectTerrain: true,
   },
+  {
+    name: '中文存档：古月山寨一转开局',
+    file: '01-开局-古月山寨一转.json',
+  },
+  {
+    name: '中文存档：角色曲方源年轮',
+    file: '14-角色曲-方源年轮.json',
+    minPartySize: 1,
+  },
+  {
+    name: '中文存档：全量回归小队外派地形',
+    file: '27-全量回归-小队外派地形.json',
+    minPartySize: 1,
+    expectDispatch: true,
+    expectTerrain: true,
+  },
 ];
 
 function readSave(file: string): unknown {

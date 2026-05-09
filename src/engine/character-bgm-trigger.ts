@@ -9,6 +9,7 @@ export interface CharacterBgmTriggerInput {
   tags?: string[];
   eventImportance?: number;
   currentTurn?: number;
+  seed?: string;
   lastPlayedTurnByTrackId?: Record<string, number>;
   allowDisabledForPreview?: boolean;
 }
@@ -63,12 +64,34 @@ function isActorMatch(entry: CharacterBgmEntry, actorName: string): boolean {
     || entry.aliases.some(alias => alias === normalized);
 }
 
+function stableHash(value: string): number {
+  let hash = 2166136261;
+  for (let i = 0; i < value.length; i += 1) {
+    hash ^= value.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function pickStableCandidate(candidates: CharacterBgmCue[], input: CharacterBgmTriggerInput): CharacterBgmCue {
+  if (candidates.length === 1) return candidates[0];
+  const seed = [
+    input.seed ?? '',
+    input.currentTurn ?? 0,
+    input.actors?.join('|') ?? '',
+    input.tags?.join('|') ?? '',
+    candidates.map(candidate => candidate.id).join('|'),
+  ].join('::');
+  return candidates[stableHash(seed) % candidates.length];
+}
+
 export function selectCharacterBgmCue(
   input: CharacterBgmTriggerInput,
   manifest: CharacterBgmManifest = characterBgmManifest,
 ): CharacterBgmCue | null {
   const currentTurn = input.currentTurn ?? 0;
-  let best: CharacterBgmCue | null = null;
+  let bestScore = -Infinity;
+  const bestCandidates: CharacterBgmCue[] = [];
 
   for (const entry of manifest.entries) {
     if (!entry.runtimeEnabled && !input.allowDisabledForPreview) continue;
@@ -92,8 +115,15 @@ export function selectCharacterBgmCue(
       reasonTags: scored.reasonTags,
       runtimeEnabled: entry.runtimeEnabled,
     };
-    if (!best || cue.score > best.score) best = cue;
+    if (cue.score > bestScore) {
+      bestScore = cue.score;
+      bestCandidates.length = 0;
+      bestCandidates.push(cue);
+    } else if (cue.score === bestScore) {
+      bestCandidates.push(cue);
+    }
   }
 
-  return best;
+  if (bestCandidates.length === 0) return null;
+  return pickStableCandidate(bestCandidates, input);
 }

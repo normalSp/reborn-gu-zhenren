@@ -1,5 +1,5 @@
-RebornG v0.7.0 Audio Attribution
-================================
+RebornG v0.7.1 Audio Attribution
+=================================
 
 Runtime source of truth:
 - src/canon/audio-source-manifest.json
@@ -7,8 +7,9 @@ Runtime source of truth:
 
 Policy
 ------
-- Free public package: only verified free audio is runtime enabled.
-- User-supplied fan package: user-confirmed community character themes may be enabled only when local files are supplied.
+- Free public package: verified free BGM/SFX remain available as fallback.
+- Nonprofit fan package: user-supplied community character themes are runtime-enabled only after local files are copied into public/audio.
+- Root bgm/ is a staging folder only; runtime must reference public/audio paths.
 - AI/FFmpeg/synthetic BGM placeholders are not allowed in runtime.
 - Combat and achievement SFX use real free assets, not AI-generated placeholders.
 
@@ -26,7 +27,31 @@ Runtime enabled free assets
 - Power-Up Sound Effects by Spring Spring, OpenGameArt, CC0.
 - UI Click Sounds (Sci Fi) by EZduzziteh, OpenGameArt, CC0.
 - Menu sounds by fvcalderan, OpenGameArt, CC0.
+- Interface Sounds by Kenney, CC0, for extra UI/alert/discovery-style cues.
+- Pixabay-style free ambience pool is recorded for wind/rain replacement-safe ambience cues.
 
-User-confirmed but not bundled by default
------------------------------------------
-The following references are recorded for a local nonprofit fan pack and remain disabled until files are supplied locally: 方源-年轮、龙公-春泥、白凝冰-山山而川 征途漫漫、商心慈-天若有情、黑楼兰-长安姑娘、盗天魔尊-无名的人、红莲魔尊-若梦/平生不晚、幽魂魔尊-紫荆花盛开、薄青-牵丝戏、古月药乐-青衣、凤九歌-知我、吴帅-虞美人、太白云生-Cry For Me、三王山炼制定仙游-精卫琵琶版、墨瑶-唯一、马鸿运-zood 丁真版、柳贯一-Lightning Moment dj、无极魔尊-Lightning Moment dj、定场诗通用-boss area.
+User-supplied nonprofit fan pack
+--------------------------------
+The following files were supplied by the user under bgm/v0.7 and copied into public/audio:
+
+- 方源/大爱仙尊: 年轮 placeholder mapping from 仙尊の小曲.mP3.
+- 龙公: 春泥.
+- 白凝冰: 山山而川 征途漫漫.
+- 商心慈: 天若有情, source file 张心慈の小曲.mP3.
+- 黑楼兰: 长安姑娘.
+- 盗天魔尊: 无名的人.
+- 红莲魔尊: 若梦 / 平生不晚; 美丽的神话 DJ.
+- 幽魂魔尊: 紫荆花盛开.
+- 薄青: 牵丝戏.
+- 古月药乐: 青衣. 用户确认“小熊饼干”也可归古月药乐；当前未见独立文件。
+- 凤九歌: 知我.
+- 吴帅: 虞美人.
+- 太白云生/逆流河被刺: Cry For Me.
+- 三王山炼制定仙游: 精卫琵琶版.
+- 墨瑶: 唯一.
+- 马鸿运: ZOOD 丁真版; I Got Smoke.
+- 定场诗通用: boss area.
+
+Still missing or disabled:
+- 柳贯一: Lightning Moment dj.
+- 无极魔尊: Lightning Moment dj.

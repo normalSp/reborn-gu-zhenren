@@ -1,0 +1,149 @@
+{
+  "formatVersion": 13,
+  "timestamp": "2026-05-10T01:20:00+08:00",
+  "meta": {
+    "playerName": "商队客卿·黎川",
+    "realm": "三转初阶",
+    "turn": 36,
+    "gameMode": "canon",
+    "description": "v0.7.0-b 手测：凡人商队小队编成，验证成员池、AP消耗、岗位暂停、小队入口。（中文命名副本：08-小队-凡人商队编成）"
+  },
+  "state": {
+    "profile": {
+      "name": "商队客卿·黎川",
+      "realm": {
+        "grand": 3,
+        "sub": "初阶",
+        "label": "三转初阶"
+      },
+      "background": "南疆·商队"
+    },
+    "currentDomain": "南疆",
+    "currentChapterId": "caravan_sanwang_pre",
+    "turn": 36,
+    "currency": 1800,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "afternoon",
+      "day": 12,
+      "month": 5,
+      "year": 1,
+      "season": "spring"
+    },
+    "pathBuild": {
+      "primary": "力道",
+      "secondary": [
+        "金道"
+      ],
+      "path_levels": {
+        "力道": "熟练"
+      },
+      "dao_marks": {
+        "力道": 90,
+        "金道": 35
+      }
+    },
+    "vitals": {
+      "health": {
+        "current": 180,
+        "max": 180
+      },
+      "essence": {
+        "current": 88,
+        "max": 100
+      },
+      "essenceType": "mortal"
+    },
+    "playerFaction": {
+      "id": "faction_caravan_li",
+      "name": "黎川商队护卫组",
+      "type": "商会",
+      "domain": "南疆",
+      "level": 2,
+      "reputation": 80,
+      "resources": {
+        "yuanStone": 1200
+      },
+      "maxMembers": 8,
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 2,
+          "loyalty": 58,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 130,
+          "maxHp": 130,
+          "atk": 26,
+          "def": 18,
+          "adventureTrust": 72,
+          "interestDrive": 30,
+          "status": "idle"
+        },
+        {
+          "id": "m_scout_mo",
+          "name": "莫小七",
+          "path": "侦察",
+          "realm": 2,
+          "loyalty": 44,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 105,
+          "maxHp": 105,
+          "atk": 22,
+          "def": 12,
+          "adventureTrust": 55,
+          "interestDrive": 50,
+          "status": "idle"
+        },
+        {
+          "id": "m_healer_shen",
+          "name": "沈药娘",
+          "path": "木道",
+          "realm": 2,
+          "loyalty": 62,
+          "personality": "selfless",
+          "alive": true,
+          "hp": 100,
+          "maxHp": 100,
+          "atk": 16,
+          "def": 14,
+          "adventureTrust": 68,
+          "interestDrive": 35,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 2,
+          "loyalty": 58,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 130,
+          "maxHp": 130,
+          "atk": 26,
+          "def": 18,
+          "adventureTrust": 72,
+          "interestDrive": 30
+        }
+      ],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 55,
+      "coordination": 52,
+      "lastUpdatedTurn": 36,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {
+        "m_guard_qin": 39
+      }
+    }
+  }
+}
