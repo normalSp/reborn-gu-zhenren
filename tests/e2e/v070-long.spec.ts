@@ -14,6 +14,8 @@ interface LongScenario {
   name: string;
   file: string;
   minPartySize?: number;
+  expectDuelCombat?: boolean;
+  expectSquadCombat?: boolean;
   expectDispatch?: boolean;
   expectTerrain?: boolean;
   expectExtreme?: boolean;
@@ -32,11 +34,13 @@ const scenarios: LongScenario[] = [
     name: '三王山小队战路径',
     file: 'v070b_sanwangshan_squad_combat.json',
     minPartySize: 1,
+    expectSquadCombat: true,
   },
   {
     name: '蛊仙期小队战路径',
     file: 'v070b_immortal_squad_combat.json',
     minPartySize: 1,
+    expectSquadCombat: true,
   },
   {
     name: '小队外派侦察专项',
@@ -103,6 +107,18 @@ const scenarios: LongScenario[] = [
     minPartySize: 1,
   },
   {
+    name: '中文存档：三王山小队战专项',
+    file: '09-小队战-三王山遭遇.json',
+    minPartySize: 1,
+    expectSquadCombat: true,
+  },
+  {
+    name: '中文存档：蛊仙期小队战专项',
+    file: '10-小队战-蛊仙期遭遇.json',
+    minPartySize: 1,
+    expectSquadCombat: true,
+  },
+  {
     name: '中文存档：全量回归小队外派地形',
     file: '27-全量回归-小队外派地形.json',
     minPartySize: 1,
@@ -151,7 +167,76 @@ function getNestedNumber(summary: Record<string, unknown>, parent: string, key: 
   return Number(value?.[key] ?? 0);
 }
 
+async function mockDeepSeekConnection(page: Page): Promise<void> {
+  await page.route('https://api.deepseek.com/v1/chat/completions', async route => {
+    await route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({
+        id: 'e2e-title-connectivity',
+        object: 'chat.completion',
+        created: 1778222420,
+        model: 'deepseek-chat',
+        choices: [
+          {
+            index: 0,
+            message: {
+              role: 'assistant',
+              content: JSON.stringify({ message: '天道已响应', status: 'ok' }),
+            },
+            finish_reason: 'stop',
+          },
+        ],
+        usage: {
+          prompt_tokens: 1,
+          completion_tokens: 1,
+          total_tokens: 2,
+          prompt_cache_hit_tokens: 0,
+        },
+      }),
+    });
+  });
+}
+
 test.describe('v0.7.0 发布收束长测', () => {
+  test('标题页测试连通成功后才显示三入口，并可载入战斗存档', async ({ page }) => {
+    const consoleErrors = await installConsoleGuards(page);
+    await mockDeepSeekConnection(page);
+    await page.addInitScript(() => {
+      localStorage.clear();
+      localStorage.setItem('deepseek_api_key', 'e2e-title-key');
+    });
+
+    await page.goto('/?e2e=1');
+    await expect(page.getByRole('button', { name: '测试连通' })).toBeVisible();
+    await expect(page.getByRole('button', { name: '直接进入' })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: /继续冒险/ })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: /载入存档/ })).toHaveCount(0);
+
+    await page.getByRole('button', { name: '测试连通' }).click();
+    await expect(page.getByText('天道已响应')).toBeVisible();
+    await expect(page.getByRole('button', { name: '直接进入' })).toBeVisible();
+    await expect(page.getByRole('button', { name: /继续冒险/ })).toBeDisabled();
+    await expect(page.getByRole('button', { name: /载入存档/ })).toBeVisible();
+
+    const fileChooserPromise = page.waitForEvent('filechooser');
+    await page.getByRole('button', { name: /载入存档/ }).click();
+    const fileChooser = await fileChooserPromise;
+    await fileChooser.setFiles(path.join(saveDir, '09-小队战-三王山遭遇.json'));
+
+    await page.waitForFunction(() => {
+      const summary = (window as RebornE2eWindow).__REBORN_E2E__?.getStateSummary();
+      return summary?.screenState === 'game_play' && summary?.squadCombatPhase;
+    });
+
+    const summary = await page.evaluate(() => {
+      return (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary();
+    });
+    expect(summary.screenState).toBe('game_play');
+    expect(summary.squadCombatPhase).not.toBeNull();
+    expect(consoleErrors).toEqual([]);
+  });
+
   for (const scenario of scenarios) {
     test(`${scenario.name} 可以加载并保持核心状态稳定`, async ({ page }) => {
       const consoleErrors = await installConsoleGuards(page);
@@ -184,6 +269,14 @@ test.describe('v0.7.0 发布收束长测', () => {
         summary.pipelineError === null || summary.pipelineError === 'API Key 未设置',
         `Unexpected pipeline error: ${String(summary.pipelineError)}`,
       ).toBe(true);
+
+      if (scenario.expectDuelCombat) {
+        expect(summary.duelPhase, `${scenario.name} 应保留单人战斗状态`).not.toBeNull();
+      }
+
+      if (scenario.expectSquadCombat) {
+        expect(summary.squadCombatPhase, `${scenario.name} 应保留小队战斗状态`).not.toBeNull();
+      }
 
       if (scenario.expectDispatch) {
         expect(getNumber(summary, 'squadDispatchTaskCount'), `${scenario.name} 应加载外派任务真相源`).toBeGreaterThan(0);

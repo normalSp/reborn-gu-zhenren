@@ -294,6 +294,53 @@ function narrativeFromAssistantMessage(content: unknown): NarrativeJSON | null {
   };
 }
 
+function isValidDuelState(value: any): boolean {
+  return Boolean(
+    value &&
+    typeof value === 'object' &&
+    typeof value.phase === 'string' &&
+    value.player &&
+    value.enemy
+  );
+}
+
+function isValidSquadCombatState(value: any): boolean {
+  return Boolean(
+    value &&
+    typeof value === 'object' &&
+    typeof value.phase === 'string' &&
+    Array.isArray(value.members) &&
+    Array.isArray(value.enemies)
+  );
+}
+
+function resolveLoadedBattleRuntime(stateData: Record<string, any>): {
+  duelState: any;
+  squadCombatState: any;
+  battleVisualQueue: any[];
+  flags: Record<string, any>;
+} {
+  const loadedDuel = isValidDuelState(stateData.duelState) ? stateData.duelState : null;
+  const loadedSquad = isValidSquadCombatState(stateData.squadCombatState) ? stateData.squadCombatState : null;
+  const hasConflict = Boolean(loadedDuel && loadedSquad);
+  const flags = stateData.flags && typeof stateData.flags === 'object' ? { ...stateData.flags } : {};
+
+  if (hasConflict) {
+    flags._loadBattleStateConflict = {
+      resolved: 'squadCombatState',
+      reason: 'loaded_save_contains_duel_and_squad_combat',
+      recordedAt: new Date().toISOString(),
+    };
+  }
+
+  return {
+    duelState: hasConflict ? null : loadedDuel,
+    squadCombatState: loadedSquad,
+    battleVisualQueue: Array.isArray(stateData.battleVisualQueue) ? stateData.battleVisualQueue : [],
+    flags,
+  };
+}
+
 export function buildVisibleNarrativeAfterLoad(
   state: Record<string, any>,
   meta?: SaveFileFormat['meta'],
@@ -334,6 +381,7 @@ function buildLoadedStoreState(
   }
 
   const visibleNarrative = buildVisibleNarrativeAfterLoad(stateData, parsed.meta);
+  const battleRuntime = resolveLoadedBattleRuntime(stateData);
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
     achievementProgress: currentStore.achievementProgress ?? {},
@@ -355,8 +403,10 @@ function buildLoadedStoreState(
     error: null,
     currentNarrative: visibleNarrative,
     transientCombatConstraint: null,
-    squadCombatState: null,
-    battleVisualQueue: [],
+    duelState: battleRuntime.duelState,
+    squadCombatState: battleRuntime.squadCombatState,
+    battleVisualQueue: battleRuntime.battleVisualQueue,
+    flags: battleRuntime.flags,
   };
 }
 
