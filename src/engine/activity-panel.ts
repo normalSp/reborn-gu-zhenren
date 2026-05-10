@@ -64,7 +64,7 @@ export function buildActivityPanelState(store: any, locationContext: ActivityLoc
   const essenceMax = Math.max(1, Number(vitals.essence?.max || 1));
   const ap = Number(store?.gameTime?.ap ?? 0);
   const maxAp = Number(store?.gameTime?.max_ap ?? 3);
-  const progress = Number(store?.flags?.cultivationProgress || 0);
+  const progress = Number(store?.cultivationState?.progress ?? store?.flags?.cultivationProgress ?? 0);
   const aptitude = Number(store?.attributes?.资质 ?? 5);
   const mind = Number(store?.attributes?.心智 ?? 5);
   const luck = Number(store?.attributes?.气运 ?? 5);

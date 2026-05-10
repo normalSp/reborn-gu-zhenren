@@ -1,5 +1,5 @@
 {
-  "formatVersion": 15,
+  "formatVersion": 16,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "v0.7.0-c·残阵地形战",
@@ -292,6 +292,28 @@
         ]
       },
       "state_update": {}
+    },
+    "cultivationState": {
+      "version": "v0.8.0-b2",
+      "progress": 0,
+      "progressByRealm": {
+        "4:高阶": 0
+      },
+      "breakthroughHistory": [],
+      "ascension": {
+        "threeQi": {
+          "human": 0,
+          "earth": 0,
+          "heaven": 0
+        },
+        "preparationScore": 0,
+        "heavenWillPressure": 0,
+        "karmicDebt": 0
+      },
+      "calamityLedger": [],
+      "nextCalamityPreview": null,
+      "lastEnvironment": null,
+      "lastResolution": []
     }
   }
 }

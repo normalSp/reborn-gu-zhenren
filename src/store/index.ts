@@ -28,6 +28,8 @@ import { createMerchantSlice } from './slices/merchantSlice';
 import { createAuctionSlice } from './slices/auctionSlice';
 import { createTimelineSlice } from './slices/timelineSlice';
 import { createDynamicNPCStore } from './slices/dynamicNPCStore';
+import { createCultivationSlice } from './slices/cultivationSlice';
+import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -171,6 +173,12 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (s.squadMemberDeaths === undefined) s.squadMemberDeaths = 0;
   if (s.squadComboSuccesses === undefined) s.squadComboSuccesses = 0;
   if (s.squadOverlevelEscapes === undefined) s.squadOverlevelEscapes = 0;
+  if (v < 16 || s.cultivationState === undefined) {
+    s.cultivationState = normalizeCultivationState({
+      ...s.cultivationState,
+      progress: Number(s.cultivationState?.progress ?? s.flags?.cultivationProgress ?? 0),
+    });
+  }
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
@@ -216,6 +224,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createAuctionSlice> &
   ReturnType<typeof createTimelineSlice> &
   ReturnType<typeof createDynamicNPCStore> &
+  ReturnType<typeof createCultivationSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -382,6 +391,10 @@ function buildLoadedStoreState(
 
   const visibleNarrative = buildVisibleNarrativeAfterLoad(stateData, parsed.meta);
   const battleRuntime = resolveLoadedBattleRuntime(stateData);
+  const cultivationState = normalizeCultivationState({
+    ...stateData.cultivationState,
+    progress: Number(stateData.cultivationState?.progress ?? battleRuntime.flags?.cultivationProgress ?? 0),
+  });
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
     achievementProgress: currentStore.achievementProgress ?? {},
@@ -413,6 +426,7 @@ function buildLoadedStoreState(
     battlefieldPlaybackSteps: [],
     battlefieldTraceCursor: 0,
     flags: battleRuntime.flags,
+    cultivationState,
   };
 }
 
@@ -448,6 +462,7 @@ export const useStore = create<RootStore>()(
         ...createAuctionSlice(...a),
         ...createTimelineSlice(...a),
         ...createDynamicNPCStore(...a),
+        ...createCultivationSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -638,6 +653,10 @@ export const useStore = create<RootStore>()(
             if (persistedState.feedingDiscountProgress === undefined) persistedState.feedingDiscountProgress = {};
             if (persistedState.gameLog === undefined) persistedState.gameLog = [];
             if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
+            persistedState.cultivationState = normalizeCultivationState({
+              ...persistedState.cultivationState,
+              progress: Number(persistedState.cultivationState?.progress ?? persistedState.flags?.cultivationProgress ?? 0),
+            });
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {
               persistedState.deathRecord = {

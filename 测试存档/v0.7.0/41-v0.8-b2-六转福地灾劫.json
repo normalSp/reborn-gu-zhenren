@@ -1,59 +1,54 @@
 {
   "formatVersion": 16,
-  "timestamp": "2026-05-10T12:00:00+08:00",
+  "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
-    "playerName": "宝黄天试客",
-    "realm": "六转蛊仙",
-    "turn": 80,
+    "playerName": "福地初主·砚青",
+    "realm": "六转初阶",
+    "turn": 221,
     "gameMode": "canon",
-    "description": "v0.7.0-c 专项手测：宝黄天全品类（中文命名副本：25-宝黄天-全品类交易池）"
+    "description": "v0.8.0-b2 专项手测：六转福地灾劫，验证预览、资源节点损伤、道痕变化和仙蛊损伤。"
   },
   "state": {
     "profile": {
-      "name": "宝黄天试客",
+      "name": "福地初主·砚青",
       "realm": {
         "grand": 6,
         "sub": "初阶",
-        "label": "六转蛊仙"
+        "label": "六转初阶"
       },
       "background": "散修蛊仙"
     },
     "currentDomain": "南疆",
-    "currentChapterId": "treasure_yellow_heaven_full_pool",
-    "turn": 80,
+    "currentChapterId": "v080b2_blessed_land_calamity",
+    "turn": 221,
     "currency": 5200,
     "immortalEssenceStones": 7200,
     "gameTime": {
       "ap": 3,
       "max_ap": 3,
-      "period": "afternoon",
-      "day": 28,
-      "month": 6,
+      "period": "evening",
+      "day": 18,
+      "month": 9,
       "year": 1,
-      "season": "summer"
+      "season": "autumn"
     },
     "pathBuild": {
-      "primary": "力道",
-      "secondary": [
-        "金道"
-      ],
-      "path_levels": {
-        "力道": "精通",
-        "金道": "熟练"
-      },
+      "primary": "气道",
+      "level": "大师",
       "dao_marks": {
-        "力道": 180,
-        "金道": 80
+        "气道": 340,
+        "炎道": 90,
+        "木道": 60
       }
     },
     "vitals": {
       "health": {
-        "current": 220,
-        "max": 240
+        "current": 320,
+        "max": 320
       },
       "essence": {
-        "current": 1600,
-        "max": 2000
+        "current": 1200,
+        "max": 1200
       },
       "essenceType": "immortal"
     },
@@ -146,108 +141,121 @@
       "精品蛊材": 3
     },
     "immortalMaterials": {},
-    "flags": {},
+    "flags": {
+      "cultivationProgress": 0
+    },
     "apertureInventory": {
       "gu": [
         {
-          "id": "fixture_25_宝黄天_全品类交易池_1",
+          "id": "v080b2_fixed_travel",
           "specId": "定仙游",
           "name": "定仙游",
           "tier": 6,
           "path": "宇道",
           "currentState": "optimal",
           "hungerCounter": 0,
-          "proficiency": 70,
+          "proficiency": 76,
           "bonded": false,
           "active": true,
           "acquiredAt": {
-            "turn": 80,
-            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
           }
         },
         {
-          "id": "fixture_25_宝黄天_全品类交易池_2",
+          "id": "v080b2_luck_inspect",
           "specId": "察运蛊",
           "name": "察运蛊",
           "tier": 6,
           "path": "运道",
           "currentState": "optimal",
           "hungerCounter": 0,
-          "proficiency": 70,
+          "proficiency": 76,
           "bonded": false,
           "active": true,
           "acquiredAt": {
-            "turn": 80,
-            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
           }
         },
         {
-          "id": "fixture_25_宝黄天_全品类交易池_3",
+          "id": "v080b2_soul_search",
           "specId": "搜魂蛊",
           "name": "搜魂蛊",
           "tier": 7,
           "path": "魂道",
           "currentState": "optimal",
           "hungerCounter": 0,
-          "proficiency": 70,
+          "proficiency": 76,
           "bonded": false,
           "active": true,
           "acquiredAt": {
-            "turn": 80,
-            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
           }
         }
       ],
       "materials": {},
-      "immortalMaterials": {}
+      "immortalMaterials": {
+        "月潮露": 6,
+        "通用仙材": 3
+      }
     },
     "inventory": [],
     "immortalCurrency": 7200,
     "gameMode": "canon",
     "playerRole": "original_participant",
     "attributes": {
-      "资质": 5,
-      "体魄": 5,
-      "心智": 5,
-      "气运": 5
+      "资质": 9,
+      "体魄": 8,
+      "心智": 8,
+      "气运": 6
     },
     "aperture": {
       "type": "福地",
       "grade": "中等福地",
-      "area_mu": 5200,
+      "area_mu": 520,
       "time_flow_ratio": 18,
       "resource_nodes": [
         {
-          "id": "node_moon_lotus_pool",
-          "type": "水道",
-          "name": "月潮莲池",
-          "output_rate": 2,
-          "quality": 72,
+          "id": "v080b2_node_fire",
+          "type": "炎道",
+          "name": "火脉灵田",
+          "output_rate": 3,
+          "quality": 80,
           "grade": "仙材",
           "active": true
         },
         {
-          "id": "node_star_iron_vein",
-          "type": "金道",
-          "name": "星铁矿脉",
-          "output_rate": 1,
-          "quality": 66,
+          "id": "v080b2_node_wood",
+          "type": "木道",
+          "name": "青木药圃",
+          "output_rate": 2,
+          "quality": 70,
+          "grade": "精品",
+          "active": true
+        },
+        {
+          "id": "v080b2_node_qi",
+          "type": "气道",
+          "name": "三气回旋口",
+          "output_rate": 2,
+          "quality": 68,
           "grade": "仙材",
           "active": true
         }
       ],
       "dao_mark_density": {
-        "力道": 180,
-        "金道": 80,
-        "水道": 60
+        "炎道": 70,
+        "木道": 40,
+        "气道": 120
       },
-      "next_disaster_type": "地火风灾",
-      "disaster_countdown": 48,
-      "status": "稳定"
+      "next_disaster_type": "地火",
+      "disaster_countdown": 6
     },
     "currentNarrative": {
       "narrative": {
-        "text": "v0.7.0-c 专项手测：宝黄天全品类（中文命名副本：25-宝黄天-全品类交易池）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为六转蛊仙，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "text": "福地边缘有赤色火线渗出，地火灾劫将至。此档用于测试 v0.8.0-b2 六转福地灾劫：预览、资源节点损伤、道痕变化、仙蛊损伤都必须由本地引擎结算。",
         "choices": [
           {
             "id": "continue_loaded_fixture",
@@ -268,18 +276,66 @@
       "breakthroughHistory": [],
       "ascension": {
         "threeQi": {
-          "human": 0,
-          "earth": 0,
-          "heaven": 0
+          "human": 88,
+          "earth": 84,
+          "heaven": 82
         },
-        "preparationScore": 0,
-        "heavenWillPressure": 0,
-        "karmicDebt": 0
+        "preparationScore": 88,
+        "heavenWillPressure": 18,
+        "karmicDebt": 4
       },
       "calamityLedger": [],
-      "nextCalamityPreview": null,
+      "nextCalamityPreview": {
+        "id": "earth_fire",
+        "name": "地火",
+        "category": "earth_calamity",
+        "path": "炎道",
+        "severity": 0.78,
+        "countdown": 6,
+        "affectedResourceNodeIds": [
+          "v080b2_node_fire",
+          "v080b2_node_wood"
+        ],
+        "expectedAreaLossPct": 0.09,
+        "warnings": [
+          "灾劫迫近，应立刻护住核心资源点。"
+        ],
+        "tags": [
+          "地灾",
+          "地火",
+          "资源灼烧"
+        ]
+      },
       "lastEnvironment": null,
-      "lastResolution": []
+      "lastResolution": [
+        {
+          "id": "fixture_v080b2_calamity",
+          "turn": 221,
+          "kind": "calamity_warning",
+          "message": "地火灾劫预兆已登记，正式后果只由本地 b2 action 写入。",
+          "tags": [
+            "fixture",
+            "calamity"
+          ]
+        }
+      ]
+    },
+    "heavenlyLand": {
+      "id": "v080b2_land_calamity",
+      "type": "福地",
+      "domain": "南疆",
+      "name": "砚青福地",
+      "areaMu": 520,
+      "timeFlowRatio": 18,
+      "resourceOutputRate": 24,
+      "earthSpirit": {
+        "formed": false,
+        "approval": 0
+      },
+      "disasterCountdown": 6,
+      "nextDisasterType": "地火",
+      "createdAt": 180,
+      "accessible": true
     }
   }
 }

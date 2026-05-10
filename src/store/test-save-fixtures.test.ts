@@ -27,6 +27,9 @@ describe('v0.7.0 current-format test save fixtures', () => {
       expect(state.profile?.realm?.label, `${file} should include player realm`).toBeTruthy();
       expect(state.attributes?.资质, `${file} should include attributes`).toBeTypeOf('number');
       expect(state.playerRole, `${file} should preserve original participant role`).toBe('original_participant');
+      expect(state.cultivationState?.version, `${file} should include v0.8.0-b2 cultivation state`).toBe('v0.8.0-b2');
+      expect(Array.isArray(state.cultivationState?.breakthroughHistory), `${file} should include breakthrough history`).toBe(true);
+      expect(Array.isArray(state.cultivationState?.calamityLedger), `${file} should include calamity ledger`).toBe(true);
     }
   });
 

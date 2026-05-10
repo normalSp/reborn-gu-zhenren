@@ -441,6 +441,7 @@ export function GameScreen() {
           <button
             onClick={() => togglePanel('map' as SidePanel)}
             className={toolbarBtnClass(sidePanel === 'map')}
+            data-testid="side-panel-map"
           >
             {currentDomain ? `${currentDomain}舆图` : '舆图'}
           </button>
@@ -470,6 +471,7 @@ export function GameScreen() {
               key={btn.id}
               onClick={() => togglePanel(btn.id)}
               className={toolbarBtnClass(sidePanel === btn.id)}
+              data-testid={`side-panel-${btn.id}`}
             >
               {btn.id === 'aperture' && isImmortal ? '仙窍' : btn.label}
             </button>

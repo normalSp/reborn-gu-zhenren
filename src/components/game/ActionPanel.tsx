@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
 import {
@@ -46,6 +47,7 @@ function toMeditationContext(kind: string): MeditationContext {
 
 export function ActionPanel() {
   const [lastResult, setLastResult] = useState<{ success: boolean; message: string } | null>(null);
+  const reducedMotion = useReducedMotion();
   const storeSnapshot = useStore(useShallow((s: any) => ({
     profile: s.profile,
     attributes: s.attributes,
@@ -63,11 +65,16 @@ export function ActionPanel() {
     activeDialogue: s.activeDialogue,
     duelState: s.duelState,
     squadCombatState: s.squadCombatState,
+    cultivationState: s.cultivationState,
+    heavenlyLand: s.heavenlyLand,
   })));
   const meditateWithPrimevalStone = useStore((s: any) => s.meditateWithPrimevalStone);
   const meditateWithImmortalStone = useStore((s: any) => s.meditateWithImmortalStone);
   const practiceCultivation = useStore((s: any) => s.practiceCultivation);
   const attemptBreakthrough = useStore((s: any) => s.attemptBreakthrough);
+  const previewCultivationDeepening = useStore((s: any) => s.previewCultivationDeepening);
+  const attemptAscension = useStore((s: any) => s.attemptAscension);
+  const resolveApertureCalamity = useStore((s: any) => s.resolveApertureCalamity);
   const performFieldAction = useStore((s: any) => s.performFieldAction);
 
   const availability = useMemo(
@@ -81,6 +88,12 @@ export function ActionPanel() {
   const grouped = groupCards(panelState.cards);
   const essencePct = Math.max(0, Math.min(100, (panelState.essenceCurrent / panelState.essenceMax) * 100));
   const progressPct = Math.max(0, Math.min(100, panelState.cultivationProgress));
+  const cultivationPreview = useMemo(
+    () => previewCultivationDeepening?.(availability.locationContext) || null,
+    [previewCultivationDeepening, availability.locationContext, storeSnapshot],
+  );
+  const cultivationState = storeSnapshot.cultivationState;
+  const lastTrace = Array.isArray(cultivationState?.lastResolution) ? cultivationState.lastResolution : [];
 
   const execute = (kind: ActivityActionKind) => {
     if (availability.sceneLocked) {
@@ -108,6 +121,22 @@ export function ActionPanel() {
     setLastResult({
       success: Boolean(result?.success),
       message: result?.message || '行动已提交。',
+    });
+  };
+
+  const runAscension = () => {
+    const result = attemptAscension?.();
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || '升仙尝试已提交。',
+    });
+  };
+
+  const runCalamity = () => {
+    const result = resolveApertureCalamity?.();
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || '灾劫处置已提交。',
     });
   };
 
@@ -177,9 +206,98 @@ export function ActionPanel() {
           <div className="h-full rounded-full bg-rg-gold/80" style={{ width: `${progressPct}%` }} />
         </div>
         <p className="mt-2 text-[10px] text-rg-paper-200/42">
-          当前只显示小境界推进准备；昼夜修行差异、升仙失败与复杂灾劫已并入 v0.8 深系统。
+          v0.8-b2 已接管修行、突破、升仙与灾劫结算；剧情只能提供预兆，数值结果由本地引擎决定。
         </p>
       </section>
+
+      {cultivationPreview && (
+        <motion.section
+          data-testid="cultivation-deepening-panel"
+          initial={reducedMotion ? false : { opacity: 0, y: 8 }}
+          animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.18 }}
+          className="rounded-md border border-rg-gold/18 bg-rg-ink-900/35 p-3"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="text-xs font-semibold text-rg-paper-100">v0.8 深修态势</h3>
+              <p className="mt-1 text-[10px] text-rg-paper-200/45">
+                {cultivationPreview.environment.periodLabel} · {cultivationPreview.environment.locationLabel} · 风险 x{cultivationPreview.environment.riskMultiplier}
+              </p>
+            </div>
+            <span className={`rounded-sm border px-2 py-0.5 text-[10px] ${
+              cultivationPreview.environment.safety === 'dangerous'
+                ? 'border-rg-blood-400/30 text-rg-blood-400'
+                : cultivationPreview.environment.safety === 'secure'
+                  ? 'border-rg-jade-400/30 text-rg-jade-400'
+                  : 'border-rg-gold/25 text-rg-gold/80'
+            }`}>
+              {cultivationPreview.environment.safety === 'dangerous' ? '险地' : cultivationPreview.environment.safety === 'secure' ? '稳妥' : '需警戒'}
+            </span>
+          </div>
+
+          <div className="mt-3 grid gap-2 md:grid-cols-3">
+            <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
+              <div className="text-[10px] text-rg-paper-200/42">突破校验</div>
+              <div className="mt-1 text-sm font-semibold text-rg-gold">{pct(cultivationPreview.breakthrough.successRate)}</div>
+              <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+                {cultivationPreview.breakthrough.valid
+                  ? `目标 ${cultivationPreview.breakthrough.targetRealm?.label || '未知'}`
+                  : cultivationPreview.breakthrough.reason}
+              </div>
+            </div>
+            <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
+              <div className="text-[10px] text-rg-paper-200/42">升仙三气</div>
+              <div className="mt-1 text-xs text-rg-paper-100">
+                人{cultivationPreview.ascension.threeQi.human} / 地{cultivationPreview.ascension.threeQi.earth} / 天{cultivationPreview.ascension.threeQi.heaven}
+              </div>
+              <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+                {cultivationPreview.ascension.valid ? `成功 ${pct(cultivationPreview.ascension.successRate)}` : cultivationPreview.ascension.reason}
+              </div>
+            </div>
+            <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
+              <div className="text-[10px] text-rg-paper-200/42">灾劫预兆</div>
+              <div className="mt-1 text-sm font-semibold text-rg-blood-400">
+                {cultivationPreview.calamity?.name || '暂无'}
+              </div>
+              <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+                {cultivationPreview.calamity
+                  ? `${cultivationPreview.calamity.countdown} 回合后，影响 ${cultivationPreview.calamity.affectedResourceNodeIds.length} 个资源点`
+                  : '未开辟福地或未登记灾劫。'}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              data-testid="cultivation-ascension-action"
+              onClick={runAscension}
+              disabled={!cultivationPreview.ascension.valid}
+              className="rounded border border-rg-gold/28 px-3 py-1.5 text-xs text-rg-gold transition-micro hover:bg-rg-gold/10 disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              尝试升仙
+            </button>
+            <button
+              data-testid="cultivation-calamity-action"
+              onClick={runCalamity}
+              disabled={!cultivationPreview.calamity}
+              className="rounded border border-rg-blood-400/28 px-3 py-1.5 text-xs text-rg-blood-400 transition-micro hover:bg-rg-blood-400/10 disabled:cursor-not-allowed disabled:opacity-45"
+            >
+              处置灾劫
+            </button>
+          </div>
+
+          {lastTrace.length > 0 && (
+            <div data-testid="cultivation-resolution-trace" className="mt-3 max-h-28 space-y-1 overflow-y-auto border-t border-rg-ink-300/12 pt-2">
+              {lastTrace.slice(-4).map((item: any) => (
+                <div key={item.id} className="text-[10px] leading-relaxed text-rg-paper-200/55">
+                  <span className="text-rg-gold/70">{item.kind}</span> · {item.message}
+                </div>
+              ))}
+            </div>
+          )}
+        </motion.section>
+      )}
 
       <ActionSection
         title="突破"

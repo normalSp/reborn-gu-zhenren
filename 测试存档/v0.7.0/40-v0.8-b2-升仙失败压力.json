@@ -1,61 +1,56 @@
 {
   "formatVersion": 16,
-  "timestamp": "2026-05-10T12:00:00+08:00",
+  "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
-    "playerName": "v0.7.0-c·外派侦察",
-    "realm": "四转高阶",
-    "turn": 80,
+    "playerName": "南疆散修·气衡",
+    "realm": "五转巅峰",
+    "turn": 198,
     "gameMode": "canon",
-    "description": "v0.7.0-c 专项手测：外派侦察（中文命名副本：18-外派-侦察）"
+    "description": "v0.8.0-b2 专项手测：升仙失败压力，验证天意压力、业债、反噬与降级提示。"
   },
   "state": {
     "profile": {
-      "name": "v0.7.0-c·外派侦察",
+      "name": "南疆散修·气衡",
       "realm": {
-        "grand": 4,
-        "sub": "高阶",
-        "label": "四转高阶"
+        "grand": 5,
+        "sub": "巅峰",
+        "label": "五转巅峰"
       },
       "background": "南疆·商队"
     },
     "currentDomain": "南疆",
-    "currentChapterId": "v070c_test",
-    "turn": 80,
+    "currentChapterId": "v080b2_ascension_failure_pressure",
+    "turn": 198,
     "currency": 5200,
     "immortalEssenceStones": 0,
     "gameTime": {
       "ap": 3,
       "max_ap": 3,
-      "period": "afternoon",
-      "day": 28,
-      "month": 6,
+      "period": "night",
+      "day": 9,
+      "month": 8,
       "year": 1,
       "season": "summer"
     },
     "pathBuild": {
-      "primary": "力道",
-      "secondary": [
-        "金道"
-      ],
-      "path_levels": {
-        "力道": "精通",
-        "金道": "熟练"
-      },
+      "primary": "气道",
+      "level": "大师",
       "dao_marks": {
-        "力道": 180,
-        "金道": 80
+        "气道": 260,
+        "炎道": 80,
+        "木道": 40
       }
     },
     "vitals": {
       "health": {
-        "current": 220,
+        "current": 170,
         "max": 240
       },
       "essence": {
-        "current": 84,
-        "max": 100
+        "current": 118,
+        "max": 180
       },
-      "essenceType": "mortal"
+      "essenceType": "primeval"
     },
     "soundState": {
       "masterVolume": 0.7,
@@ -147,130 +142,102 @@
     },
     "immortalMaterials": {},
     "flags": {
-      "dispatchTask": "scout"
+      "apertureVisualTest": true,
+      "cultivationProgress": 180,
+      "completedFamousScenes": {
+        "sanwangshan": true
+      }
     },
     "inventory": [
       {
-        "id": "fixture_18-外派-侦察_1",
-        "specId": "白豕蛊",
-        "name": "白豕蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_moon_glow",
+        "specId": "月芒蛊",
+        "name": "月芒蛊",
+        "tier": 5,
+        "path": "月道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
+        "proficiency": 78,
         "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_2",
-        "specId": "黑豕蛊",
-        "name": "黑豕蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_stone_skin",
+        "specId": "石皮蛊",
+        "name": "石皮蛊",
+        "tier": 4,
+        "path": "土道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
+        "proficiency": 78,
+        "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_3",
-        "specId": "蛮力天牛蛊",
-        "name": "蛮力天牛蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_heal",
+        "specId": "治愈蛊",
+        "name": "治愈蛊",
+        "tier": 4,
+        "path": "木道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
+        "proficiency": 78,
+        "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_4",
-        "specId": "熊力蛊",
-        "name": "熊力蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_bookworm",
+        "specId": "书虫",
+        "name": "书虫",
+        "tier": 3,
+        "path": "信道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
+        "proficiency": 78,
+        "bonded": true,
+        "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
-        }
-      },
-      {
-        "id": "fixture_18-外派-侦察_5",
-        "specId": "黑鬃蛊",
-        "name": "黑鬃蛊",
-        "tier": 2,
-        "path": "力道",
-        "currentState": "optimal",
-        "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
-        "acquiredAt": {
-          "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
-        }
-      },
-      {
-        "id": "fixture_18-外派-侦察_6",
-        "specId": "力气蛊",
-        "name": "力气蛊",
-        "tier": 2,
-        "path": "力道",
-        "currentState": "optimal",
-        "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
-        "acquiredAt": {
-          "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       }
     ],
     "gameMode": "canon",
     "playerRole": "original_participant",
     "attributes": {
-      "资质": 5,
-      "体魄": 5,
-      "心智": 5,
-      "气运": 5
+      "资质": 10,
+      "体魄": 9,
+      "心智": 9,
+      "气运": 8
     },
     "aperture": {
       "type": "mortal",
-      "rank": 4,
-      "subRank": "高阶",
+      "rank": 5,
+      "subRank": "巅峰",
       "primevalSea": {
-        "color": "#c9a84a",
+        "color": "#d7b94b",
         "colorName": "黄金",
-        "fillPercent": 70
+        "fillPercent": 112
       },
       "apertureWall": {
-        "state": "潮汐初现",
-        "opacity": 0.84,
-        "description": "真元潮汐开始冲刷窍壁，适合观察空窍压力。"
+        "state": "壁薄如纸",
+        "opacity": 0.22,
+        "description": "三气失衡后窍壁震荡，强行升仙会加重反噬。"
       },
-      "capacity": 12,
-      "carriedGu": 6,
+      "capacity": 15,
+      "carriedGu": 4,
       "capacityLocked": false
     },
     "apertureInventory": {
@@ -280,7 +247,7 @@
     },
     "currentNarrative": {
       "narrative": {
-        "text": "v0.7.0-c 专项手测：外派侦察（中文命名副本：18-外派-侦察）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转高阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "text": "一次仓促引三气的尝试留下阴影：窍壁震荡、天意压力攀升、业债未消。此档用于测试 v0.8.0-b2 升仙失败压力与本地反噬结算。",
         "choices": [
           {
             "id": "continue_loaded_fixture",
@@ -294,25 +261,49 @@
     },
     "cultivationState": {
       "version": "v0.8.0-b2",
-      "progress": 0,
+      "progress": 180,
       "progressByRealm": {
-        "4:高阶": 0
+        "4:高阶": 0,
+        "5:巅峰": 180
       },
       "breakthroughHistory": [],
       "ascension": {
         "threeQi": {
-          "human": 0,
-          "earth": 0,
-          "heaven": 0
+          "human": 80,
+          "earth": 80,
+          "heaven": 80
         },
-        "preparationScore": 0,
-        "heavenWillPressure": 0,
-        "karmicDebt": 0
+        "preparationScore": 80,
+        "heavenWillPressure": 100,
+        "karmicDebt": 35
       },
       "calamityLedger": [],
       "nextCalamityPreview": null,
       "lastEnvironment": null,
-      "lastResolution": []
+      "lastResolution": [
+        {
+          "id": "fixture_v080b2_failure_1",
+          "turn": 198,
+          "kind": "injury",
+          "message": "上次升仙失败留下肉身与魂魄暗伤。",
+          "amount": 28,
+          "tags": [
+            "fixture",
+            "ascension_failure"
+          ]
+        },
+        {
+          "id": "fixture_v080b2_failure_2",
+          "turn": 198,
+          "kind": "aperture_pressure",
+          "message": "天意压力已满，下一次尝试必须由本地引擎判定。",
+          "amount": 22,
+          "tags": [
+            "fixture",
+            "heaven_will"
+          ]
+        }
+      ]
     }
   }
 }

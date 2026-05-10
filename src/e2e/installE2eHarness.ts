@@ -2,6 +2,7 @@ import { useStore } from '../store';
 import { buildExtremePhysiqueCalamityProfile } from '../engine/extreme-physique-calamity';
 import { listSquadDispatchTasks } from '../engine/squad-dispatch';
 import { resolveTerrainCombatModifier } from '../engine/terrain-combat';
+import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
 
 type E2eSave = string | Record<string, unknown>;
 
@@ -27,6 +28,7 @@ declare global {
       startBattlefieldGroupDemo: () => Record<string, unknown>;
       startBattlefieldLargeGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
+      startCultivationDeepeningDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -121,6 +123,15 @@ function summarizeStore(): Record<string, unknown> {
       stepCount: Array.isArray(state.battlefieldPlaybackSteps) ? state.battlefieldPlaybackSteps.length : 0,
       traceCursor: Number(state.battlefieldTraceCursor || 0),
       result: state.battlefieldCombatState.result || null,
+    } : null,
+    cultivation: state.cultivationState ? {
+      progress: Number(state.cultivationState.progress || 0),
+      breakthroughCount: Array.isArray(state.cultivationState.breakthroughHistory) ? state.cultivationState.breakthroughHistory.length : 0,
+      calamityCount: Array.isArray(state.cultivationState.calamityLedger) ? state.cultivationState.calamityLedger.length : 0,
+      lastStepCount: Array.isArray(state.cultivationState.lastResolution) ? state.cultivationState.lastResolution.length : 0,
+      threeQi: state.cultivationState.ascension?.threeQi || null,
+      heavenWillPressure: Number(state.cultivationState.ascension?.heavenWillPressure || 0),
+      nextCalamity: state.cultivationState.nextCalamityPreview?.name || null,
     } : null,
     extremePhysiquePressure: extremePhysiquePressure ? {
       physiqueType: extremePhysiquePressure.physiqueType,
@@ -295,6 +306,60 @@ export function installE2eHarness(): void {
           },
           state_update: {},
         },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
+      return summarizeStore();
+    },
+    startCultivationDeepeningDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      const cultivationState = createDefaultCultivationState({
+        progress: 190,
+        ascension: {
+          threeQi: { human: 72, earth: 68, heaven: 70 },
+          preparationScore: 74,
+          heavenWillPressure: 8,
+          karmicDebt: 2,
+        },
+      });
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 8),
+        activeTab: 'actions',
+        profile: { name: 'b2演武蛊师', background: '升仙演武', realm: { grand: 5, sub: '巅峰', label: '五转巅峰' } },
+        attributes: { 资质: 8, 体魄: 7, 心智: 8, 气运: 7 },
+        vitals: {
+          health: { current: 240, max: 240 },
+          essence: { current: 260, max: 260 },
+          essenceType: 'mortal',
+        },
+        gameTime: { ap: 3, max_ap: 3, period: 'night', day: 18, month: 6, year: 1, season: 'summer' },
+        pathBuild: {
+          primary: '气道',
+          secondary: ['炎道'],
+          path_levels: { 气道: '大师' },
+          dao_marks: { 气道: 240, 炎道: 80 },
+        },
+        aperture: {
+          type: 'mortal',
+          rank: 5,
+          subRank: '巅峰',
+          primevalSea: { color: '#c9a84a', colorName: '黄金', fillPercent: 94 },
+          apertureWall: { state: '壁薄如纸', opacity: 0.62, description: '窍壁已薄如纸，三气牵引升仙机缘。' },
+          capacity: 15,
+          carriedGu: 3,
+          capacityLocked: false,
+        },
+        inventory: [
+          { id: 'b2_rank5_core', specId: 'moonlight_gu', name: '月芒蛊', tier: 5, path: '光道', currentState: 'optimal', hungerCounter: 0, proficiency: 2, bonded: true, active: true, acquiredAt: { turn: 1, narrative: 'e2e' } },
+          { id: 'b2_rank4_support', specId: 'stone_skin_gu', name: '石皮蛊', tier: 4, path: '土道', currentState: 'optimal', hungerCounter: 0, proficiency: 1, bonded: false, active: true, acquiredAt: { turn: 1, narrative: 'e2e' } },
+        ],
+        killMoves: [{ id: 'b2_qi_guard', name: '三气护窍', path: '气道', level: 5, baseCost: 60, multiplier: 1.1, cooldown: 3, description: '升仙前护住窍壁的演武杀招。' }],
+        cultivationState,
+        flags: { ...(store.flags || {}), cultivationProgress: 190 },
         pipelinePhase: 'RESOLVED',
         pipelineError: null,
       } as any);

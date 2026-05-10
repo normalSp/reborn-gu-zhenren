@@ -1,7 +1,6 @@
 import { useStore } from '../store';
 import type { StateUpdate, ButterflyEffect } from '../types';
 import type { EncounterReward } from '../types/encounter';
-import { evaluateApertureGrade } from '../store/slices/immortalSlice';
 import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, type NarrativeEventKind } from './dao-reputation-policy';
 import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
 import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
@@ -44,6 +43,29 @@ function parseRealmGrand(value: string): number {
   if (!match) return 0;
   const raw = match[1];
   return Number.isFinite(Number(raw)) ? Number(raw) : REALM_GRAND_BY_LABEL[raw] || 0;
+}
+
+function sanitizePlayerUpdateForCultivation(
+  playerUpdate: StateUpdate['player'],
+  store: any,
+): { safe: StateUpdate['player']; blocked: string[] } {
+  if (!playerUpdate) return { safe: playerUpdate, blocked: [] };
+  const safe: NonNullable<StateUpdate['player']> = { ...playerUpdate };
+  const blocked: string[] = [];
+  const currentGrand = Number(store?.profile?.realm?.grand || 1);
+  const realmValue = getRealmUpdateValue(playerUpdate.realm);
+  const targetGrand = realmValue ? parseRealmGrand(realmValue) : 0;
+
+  if (realmValue && targetGrand > 0 && targetGrand !== currentGrand) {
+    delete safe.realm;
+    blocked.push(`境界写入 ${realmValue} 已降级：v0.8-b2 后跨境界必须由本地修行/升仙引擎结算。`);
+  }
+  if (playerUpdate.essenceType === 'immortal' && currentGrand < 6) {
+    delete safe.essenceType;
+    blocked.push('仙元类型写入已降级：凡人到蛊仙的质变必须由升仙引擎结算。');
+  }
+
+  return { safe, blocked };
 }
 
 // ─── 声望级别计算 ───
@@ -125,9 +147,17 @@ export function applyStateUpdate(update: StateUpdate): void {
 
   // ─── Player 更新（直接调用 store 方法） ───
   if (update.player) {
-    const p = update.player;
+    const sanitized = sanitizePlayerUpdateForCultivation(update.player, store);
+    const p = sanitized.safe || {};
+    if (sanitized.blocked.length > 0) {
+      const s = useStore.getState() as any;
+      s.addGameLog?.('pipeline', `修行/升仙写入已拦截：${sanitized.blocked.join('；')}`, {
+        source: 'v080-cultivation-guard',
+        blocked: sanitized.blocked,
+      });
+    }
     // 直接调用 playerSlice 的方法
-    if (typeof (store as any).applyStateUpdate === 'function') {
+    if (p && typeof (store as any).applyStateUpdate === 'function') {
       (store as any).applyStateUpdate(p);
     }
     // ─── 道心四维变更 ───
@@ -527,112 +557,11 @@ export function applyStateUpdate(update: StateUpdate): void {
   }
 
   // ═══ P2-13 + P4: 六转升仙触发洞天/福地初始化 + 仙窍存储迁移 ═══
-  if (update.player?.realm) {
-    const realmValue = getRealmUpdateValue(update.player.realm);
-    const realmNum = realmValue ? parseRealmGrand(realmValue) : 0;
-    if (realmNum >= 6) {
-      const currentStore = useStore.getState() as any;
-      if (!currentStore.heavenlyLand) {
-        const currentDomain = currentStore.currentDomain || '南疆';
-
-        // P4: 方案A — 根据蛊师阶段积累评定福地等级
-        const daoMarksTotal = Object.values(currentStore.pathBuild?.dao_marks || {}).reduce((a: number, b: number) => a + b, 0);
-        const guRefinedCount = (currentStore.inventory || []).length;
-        const famousScenesCompleted = Object.values(currentStore.flags?.completedFamousScenes || {}).filter(Boolean).length;
-        const killerMovesKnown = (currentStore.killMoves || []).length;
-        const talentLevel = currentStore.attributes?.资质 || 5;
-
-        const evalResult = evaluateApertureGrade(daoMarksTotal, guRefinedCount, famousScenesCompleted, killerMovesKnown, talentLevel);
-
-        const areaMu = evalResult.areaRange[0] + Math.floor(Math.random() * (evalResult.areaRange[1] - evalResult.areaRange[0]));
-        const flowRatio = evalResult.flowRange[0] + Math.floor(Math.random() * (evalResult.flowRange[1] - evalResult.flowRange[0]));
-        const nodeCount = evalResult.nodeRange[0] + Math.floor(Math.random() * (evalResult.nodeRange[1] - evalResult.nodeRange[0]));
-
-        const landType = evalResult.grade === '上等福地' ? (Math.random() < 0.5 ? '洞天' : '福地') : '福地';
-        const now = Date.now();
-        useStore.setState({
-          heavenlyLand: {
-            id: `land_${now}`,
-            type: landType,
-            domain: currentDomain,
-            name: `${currentDomain}${landType}`,
-            areaMu,
-            timeFlowRatio: flowRatio,
-            resourceOutputRate: realmNum * 5,
-            earthSpirit: { formed: false, approval: 0 },
-            disasterCountdown: 60 + Math.floor(Math.random() * 40),
-            nextDisasterType: ['地火', '天水', '风灾', '雷劫'][Math.floor(Math.random() * 4)],
-            createdAt: currentStore.turn || 1,
-            accessible: true,
-          },
-        });
-        // ═══ 日志埋点: 六转升仙
-        if (typeof currentStore.addGameLog === 'function') {
-          currentStore.addGameLog('system', `升仙成功! 开辟${evalResult.grade}(${landType}): ${areaMu}亩 / 流速1:${flowRatio}`, {
-            grade: evalResult.grade, landType, areaMu, flowRatio, domain: currentDomain,
-          });
-        }
-        // ═══ P4: 仙窍存储迁移 — 空窍蛊虫/蛊材全部迁入仙窍无限存储 ═══
-        if (typeof currentStore.migrateToApertureStorage === 'function') {
-          currentStore.migrateToApertureStorage();
-        }
-        // ═══ v0.6.0: 元石→仙元迁移 (1000:1) ═══
-        const mortalCurrency = currentStore.currency || 0;
-        if (mortalCurrency > 0) {
-          const immortalBonus = Math.floor(mortalCurrency / 1000);
-          const currentImmortal = currentStore.immortalCurrency || 0;
-          useStore.setState({ currency: 0, immortalCurrency: currentImmortal + immortalBonus } as any);
-          if (typeof currentStore.addGameLog === 'function') {
-            currentStore.addGameLog('system', `凡尘财富化为仙途底蕴——${mortalCurrency}元石兑换为${immortalBonus}仙元石`, { mortalCurrency, immortalBonus });
-          }
-        }
-        // ═══ 空窍→仙窍替换 + 生成初始资源节点 ═══
-        const currentAperture = currentStore.aperture;
-        const shouldReplace = !currentAperture || currentAperture.type === 'mortal';
-        if (shouldReplace) {
-          // P4: 生成初始资源节点
-          const nodeTypes = ['月华草', '铁屑', '金粉', '冰晶核心', '雷击石', '金刚石粉', '空间晶石', '灾劫灰烬', '光阴砂', '道痕结晶'];
-          const nodeGrades: Record<string, string> = {
-            '月华草': '普通', '铁屑': '普通', '金粉': '精品', '冰晶核心': '精品',
-            '雷击石': '精品', '金刚石粉': '稀有', '空间晶石': '仙材', '灾劫灰烬': '仙材',
-            '光阴砂': '仙材', '道痕结晶': '仙材',
-          };
-          const initialNodes = [];
-          for (let i = 0; i < Math.min(nodeCount, nodeTypes.length); i++) {
-            const nodeName = nodeTypes[i];
-            initialNodes.push({
-              id: `node_${Date.now()}_${i}`,
-              type: nodeName,
-              name: nodeName,
-              output_rate: 1 + Math.floor(Math.random() * 3),
-              quality: 50 + Math.floor(Math.random() * 50),
-              grade: (nodeGrades[nodeName] || '普通') as '普通' | '精品' | '稀有' | '仙材',
-              active: true,
-            });
-          }
-          currentStore.initializeAperture?.({
-            type: landType,
-            grade: evalResult.grade,
-            area_mu: areaMu,
-            time_flow_ratio: flowRatio,
-            resource_nodes: initialNodes,
-            dao_mark_density: {},
-            next_disaster_type: '地火',
-            disaster_countdown: 60 + Math.floor(Math.random() * 40),
-          });
-          // ═══ v0.7.0: 十绝体类型升仙传递 — 设计大纲§5.2 ═══
-          const oldAperture = currentStore.aperture;
-          if (oldAperture?.extremePhysiqueType) {
-            // 将十绝体类型传递到仙窍阶段
-            currentStore.setFlag?.('ascendedExtremePhysiqueType', oldAperture.extremePhysiqueType);
-            if (typeof currentStore.addGameLog === 'function') {
-              currentStore.addGameLog('system', `十绝体「${oldAperture.extremePhysiqueType}」升仙! 高压迫槽位解除，仙窍无限容量。`);
-            }
-          }
-        }
-      }
-    }
-  }
+  // v0.8.0-b2: 叙事 state_update 不再负责升仙/福地初始化。
+  // 跨境界与六转质变已在上方 sanitizePlayerUpdateForCultivation 降级，
+  // 正式结算必须走 cultivationSlice.attemptAscension() 的本地引擎轨迹。
+  // v0.8.0-b2: AI state_update may no longer initialize immortal aperture or blessed land here.
+  // Cross-realm cultivation, ascension, and calamity outcomes must enter via cultivationSlice local actions.
 
   // ═══ v0.7.0 P2: 动态NPC处理 — AI叙事生成的"路人甲"NPC ═══
   if (update.dynamic_npcs) {

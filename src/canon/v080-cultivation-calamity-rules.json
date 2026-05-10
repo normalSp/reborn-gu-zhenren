@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "version": "v0.8.0-b2",
+    "purpose": "Rules for local cultivation, breakthrough, ascension, and calamity resolution. DeepSeek may reference warnings but must not write numeric outcomes."
+  },
+  "environment": {
+    "periods": {
+      "morning": { "label": "晨修", "progressMultiplier": 1.08, "riskMultiplier": 0.92, "qiBias": "human" },
+      "noon": { "label": "午炼", "progressMultiplier": 1.0, "riskMultiplier": 1.0, "qiBias": "earth" },
+      "evening": { "label": "暮息", "progressMultiplier": 0.96, "riskMultiplier": 0.95, "qiBias": "human" },
+      "night": { "label": "夜修", "progressMultiplier": 1.14, "riskMultiplier": 1.12, "qiBias": "heaven" }
+    },
+    "locations": {
+      "safe": { "label": "安全居所", "progressMultiplier": 0.96, "riskMultiplier": 0.65, "essenceCostMultiplier": 0.9 },
+      "caravan": { "label": "商队营地", "progressMultiplier": 1.0, "riskMultiplier": 0.95, "essenceCostMultiplier": 1.0 },
+      "field": { "label": "野外驻足", "progressMultiplier": 1.05, "riskMultiplier": 1.2, "essenceCostMultiplier": 1.05 },
+      "wild": { "label": "荒野险地", "progressMultiplier": 1.12, "riskMultiplier": 1.45, "essenceCostMultiplier": 1.15 },
+      "aperture": { "label": "空窍/福地内景", "progressMultiplier": 1.18, "riskMultiplier": 0.82, "essenceCostMultiplier": 0.82 }
+    }
+  },
+  "cultivation": {
+    "essenceCostByRealm": { "1": 6, "2": 10, "3": 15, "4": 22, "5": 32, "6": 48 },
+    "progressThresholdByRealm": { "1": 72, "2": 88, "3": 108, "4": 132, "5": 160, "6": 210 },
+    "progressOverflowCap": 260,
+    "aperturePressure": {
+      "baseIncrease": 3,
+      "extremePhysiqueIncrease": 8,
+      "criticalThreshold": 115,
+      "strainThreshold": 96
+    }
+  },
+  "breakthrough": {
+    "minimumEssencePercent": 0.35,
+    "progressSpendOnSuccess": 80,
+    "progressSpendOnFailureBase": 18,
+    "sameRealmSubrankBonus": 0.08,
+    "grandRealmPenalty": 0.06
+  },
+  "ascension": {
+    "requiredRealmGrand": 5,
+    "requiredSubRealm": "巅峰",
+    "requiredProgress": 160,
+    "threeQiMinimum": 45,
+    "threeQiBalanceTolerance": 35,
+    "baseSuccessRate": 0.32,
+    "preparationRateScale": 0.004,
+    "balanceBonus": 0.12,
+    "heavenWillPenaltyScale": 0.003,
+    "failureBacklash": {
+      "healthPct": 28,
+      "essencePct": 55,
+      "aperturePressure": 22,
+      "karmicDebt": 8,
+      "heavenWillPressure": 10
+    },
+    "blessedLand": {
+      "type": "福地",
+      "disasterCountdownRange": [42, 66],
+      "initialResourceOutputByGrade": {
+        "小福地": 16,
+        "中等福地": 24,
+        "上等福地": 34
+      }
+    }
+  },
+  "calamities": [
+    {
+      "id": "earth_fire",
+      "name": "地火",
+      "category": "earth_calamity",
+      "path": "炎道",
+      "severity": 0.78,
+      "resourceDamagePct": 0.16,
+      "areaLossPct": 0.09,
+      "daoMarkDelta": { "炎道": 18, "木道": -8 },
+      "tags": ["地灾", "地火", "资源灼烧"]
+    },
+    {
+      "id": "sky_water",
+      "name": "天水",
+      "category": "earth_calamity",
+      "path": "水道",
+      "severity": 0.72,
+      "resourceDamagePct": 0.14,
+      "areaLossPct": 0.08,
+      "daoMarkDelta": { "水道": 16, "土道": -6 },
+      "tags": ["地灾", "天水", "灵田浸没"]
+    },
+    {
+      "id": "wind_calamity",
+      "name": "风灾",
+      "category": "earth_calamity",
+      "path": "风道",
+      "severity": 0.82,
+      "resourceDamagePct": 0.18,
+      "areaLossPct": 0.1,
+      "daoMarkDelta": { "风道": 18, "金道": -5 },
+      "tags": ["地灾", "罡风", "边界剥离"]
+    },
+    {
+      "id": "thunder_tribulation",
+      "name": "雷劫",
+      "category": "heavenly_tribulation",
+      "path": "雷道",
+      "severity": 0.96,
+      "resourceDamagePct": 0.22,
+      "areaLossPct": 0.13,
+      "daoMarkDelta": { "雷道": 25, "木道": -10 },
+      "tags": ["天劫", "劫雷", "道痕铭刻"]
+    }
+  ],
+  "consequenceTags": [
+    "progress_gain",
+    "resource_spend",
+    "realm_change",
+    "injury",
+    "essence_shock",
+    "gu_damage",
+    "aperture_pressure",
+    "dao_mark_shift",
+    "calamity_warning",
+    "calamity_consequence",
+    "failure",
+    "settlement"
+  ]
+}

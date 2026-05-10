@@ -1913,6 +1913,119 @@ export interface HeavenlyLand {
   accessible: boolean;
 }
 
+// ═══ v0.8.0-b2: 修行 / 突破 / 升仙 / 灾劫深化状态 ═══
+export type CultivationLocationContext = 'safe' | 'caravan' | 'field' | 'wild' | 'aperture';
+export type CultivationQiKind = 'human' | 'earth' | 'heaven';
+export type CultivationOutcome = 'success' | 'failure' | 'blocked';
+export type CultivationResolutionStepKind =
+  | 'environment'
+  | 'progress_gain'
+  | 'resource_spend'
+  | 'realm_change'
+  | 'injury'
+  | 'essence_shock'
+  | 'gu_damage'
+  | 'aperture_pressure'
+  | 'dao_mark_shift'
+  | 'calamity_warning'
+  | 'calamity_consequence'
+  | 'failure'
+  | 'settlement';
+
+export interface CultivationResolutionStep {
+  id: string;
+  turn: number;
+  kind: CultivationResolutionStepKind;
+  message: string;
+  amount?: number;
+  path?: PathType;
+  source?: string;
+  severity?: number;
+  tags: string[];
+}
+
+export interface CultivationEnvironmentProfile {
+  period: GameTime['period'];
+  periodLabel: string;
+  location: CultivationLocationContext;
+  locationLabel: string;
+  safety: 'secure' | 'watchful' | 'dangerous';
+  progressMultiplier: number;
+  riskMultiplier: number;
+  essenceCostMultiplier: number;
+  qiBias: CultivationQiKind;
+  labels: string[];
+  warnings: string[];
+}
+
+export interface BreakthroughAttemptRecord {
+  id: string;
+  turn: number;
+  outcome: CultivationOutcome;
+  realmBefore: RealmInfo;
+  realmAfter?: RealmInfo;
+  successRate: number;
+  roll?: number;
+  severity?: number;
+  steps: CultivationResolutionStep[];
+}
+
+export interface AscensionAttemptRecord {
+  id: string;
+  turn: number;
+  outcome: CultivationOutcome;
+  successRate: number;
+  roll?: number;
+  threeQi: Record<CultivationQiKind, number>;
+  blessedLandGrade?: ImmortalApertureGrade;
+  heavenlyLandId?: string;
+  steps: CultivationResolutionStep[];
+}
+
+export interface CalamityPreview {
+  id: string;
+  name: string;
+  category: 'earth_calamity' | 'heavenly_tribulation';
+  path: PathType;
+  severity: number;
+  countdown: number;
+  affectedResourceNodeIds: string[];
+  expectedAreaLossPct: number;
+  warnings: string[];
+  tags: string[];
+}
+
+export interface CalamityRecord {
+  id: string;
+  turn: number;
+  calamityId: string;
+  calamityName: string;
+  outcome: CultivationOutcome;
+  areaLoss: number;
+  resourceNodeDamage: Record<string, number>;
+  daoMarkDelta: Record<PathType, number>;
+  guDamageIds: string[];
+  steps: CultivationResolutionStep[];
+}
+
+export interface CultivationDeepeningState {
+  version: 'v0.8.0-b2';
+  progress: number;
+  progressByRealm: Record<string, number>;
+  breakthroughHistory: BreakthroughAttemptRecord[];
+  ascension: {
+    threeQi: Record<CultivationQiKind, number>;
+    preparationScore: number;
+    heavenWillPressure: number;
+    karmicDebt: number;
+    lastAttempt?: AscensionAttemptRecord;
+  };
+  calamityLedger: CalamityRecord[];
+  nextCalamityPreview: CalamityPreview | null;
+  lastEnvironment: CultivationEnvironmentProfile | null;
+  lastResolution: CultivationResolutionStep[];
+}
+
 /** NPC关系网络 — 双向好感矩阵 */
 export interface NpcRelationMatrix {
   /** 

@@ -1,61 +1,56 @@
 {
   "formatVersion": 16,
-  "timestamp": "2026-05-10T12:00:00+08:00",
+  "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
-    "playerName": "v0.7.0-c·外派侦察",
-    "realm": "四转高阶",
-    "turn": 80,
+    "playerName": "南疆散修·气衡",
+    "realm": "五转巅峰",
+    "turn": 196,
     "gameMode": "canon",
-    "description": "v0.7.0-c 专项手测：外派侦察（中文命名副本：18-外派-侦察）"
+    "description": "v0.8.0-b2 专项手测：五转巅峰升仙准备，验证三气、成功率、福地生成与本地结算。"
   },
   "state": {
     "profile": {
-      "name": "v0.7.0-c·外派侦察",
+      "name": "南疆散修·气衡",
       "realm": {
-        "grand": 4,
-        "sub": "高阶",
-        "label": "四转高阶"
+        "grand": 5,
+        "sub": "巅峰",
+        "label": "五转巅峰"
       },
       "background": "南疆·商队"
     },
     "currentDomain": "南疆",
-    "currentChapterId": "v070c_test",
-    "turn": 80,
+    "currentChapterId": "v080b2_ascension_ready",
+    "turn": 196,
     "currency": 5200,
     "immortalEssenceStones": 0,
     "gameTime": {
       "ap": 3,
       "max_ap": 3,
-      "period": "afternoon",
-      "day": 28,
-      "month": 6,
+      "period": "night",
+      "day": 9,
+      "month": 8,
       "year": 1,
       "season": "summer"
     },
     "pathBuild": {
-      "primary": "力道",
-      "secondary": [
-        "金道"
-      ],
-      "path_levels": {
-        "力道": "精通",
-        "金道": "熟练"
-      },
+      "primary": "气道",
+      "level": "大师",
       "dao_marks": {
-        "力道": 180,
-        "金道": 80
+        "气道": 260,
+        "炎道": 80,
+        "木道": 40
       }
     },
     "vitals": {
       "health": {
-        "current": 220,
+        "current": 240,
         "max": 240
       },
       "essence": {
-        "current": 84,
-        "max": 100
+        "current": 180,
+        "max": 180
       },
-      "essenceType": "mortal"
+      "essenceType": "primeval"
     },
     "soundState": {
       "masterVolume": 0.7,
@@ -147,130 +142,102 @@
     },
     "immortalMaterials": {},
     "flags": {
-      "dispatchTask": "scout"
+      "apertureVisualTest": true,
+      "cultivationProgress": 210,
+      "completedFamousScenes": {
+        "sanwangshan": true
+      }
     },
     "inventory": [
       {
-        "id": "fixture_18-外派-侦察_1",
-        "specId": "白豕蛊",
-        "name": "白豕蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_moon_glow",
+        "specId": "月芒蛊",
+        "name": "月芒蛊",
+        "tier": 5,
+        "path": "月道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
+        "proficiency": 78,
         "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_2",
-        "specId": "黑豕蛊",
-        "name": "黑豕蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_stone_skin",
+        "specId": "石皮蛊",
+        "name": "石皮蛊",
+        "tier": 4,
+        "path": "土道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
+        "proficiency": 78,
+        "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_3",
-        "specId": "蛮力天牛蛊",
-        "name": "蛮力天牛蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_heal",
+        "specId": "治愈蛊",
+        "name": "治愈蛊",
+        "tier": 4,
+        "path": "木道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
+        "proficiency": 78,
+        "bonded": true,
         "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       },
       {
-        "id": "fixture_18-外派-侦察_4",
-        "specId": "熊力蛊",
-        "name": "熊力蛊",
-        "tier": 1,
-        "path": "力道",
+        "id": "v080b2_ready_bookworm",
+        "specId": "书虫",
+        "name": "书虫",
+        "tier": 3,
+        "path": "信道",
         "currentState": "optimal",
         "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
+        "proficiency": 78,
+        "bonded": true,
+        "active": true,
         "acquiredAt": {
           "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
-        }
-      },
-      {
-        "id": "fixture_18-外派-侦察_5",
-        "specId": "黑鬃蛊",
-        "name": "黑鬃蛊",
-        "tier": 2,
-        "path": "力道",
-        "currentState": "optimal",
-        "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
-        "acquiredAt": {
-          "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
-        }
-      },
-      {
-        "id": "fixture_18-外派-侦察_6",
-        "specId": "力气蛊",
-        "name": "力气蛊",
-        "tier": 2,
-        "path": "力道",
-        "currentState": "optimal",
-        "hungerCounter": 0,
-        "proficiency": 50,
-        "bonded": false,
-        "active": false,
-        "acquiredAt": {
-          "turn": 80,
-          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+          "narrative": "v0.8.0-b2测试存档补齐：修行、升仙与灾劫专项蛊虫。"
         }
       }
     ],
     "gameMode": "canon",
     "playerRole": "original_participant",
     "attributes": {
-      "资质": 5,
-      "体魄": 5,
-      "心智": 5,
-      "气运": 5
+      "资质": 10,
+      "体魄": 9,
+      "心智": 9,
+      "气运": 8
     },
     "aperture": {
       "type": "mortal",
-      "rank": 4,
-      "subRank": "高阶",
+      "rank": 5,
+      "subRank": "巅峰",
       "primevalSea": {
-        "color": "#c9a84a",
+        "color": "#d7b94b",
         "colorName": "黄金",
-        "fillPercent": 70
+        "fillPercent": 96
       },
       "apertureWall": {
-        "state": "潮汐初现",
-        "opacity": 0.84,
-        "description": "真元潮汐开始冲刷窍壁，适合观察空窍压力。"
+        "state": "壁薄如纸",
+        "opacity": 0.36,
+        "description": "五转巅峰，窍壁临近升仙冲击极限。"
       },
-      "capacity": 12,
-      "carriedGu": 6,
+      "capacity": 15,
+      "carriedGu": 4,
       "capacityLocked": false
     },
     "apertureInventory": {
@@ -280,7 +247,7 @@
     },
     "currentNarrative": {
       "narrative": {
-        "text": "v0.7.0-c 专项手测：外派侦察（中文命名副本：18-外派-侦察）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转高阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "text": "夜色压在山谷上，你将人气、地气、天气三者一一校准。此档用于测试 v0.8.0-b2 五转巅峰升仙准备：三气平衡、福地生成、真元与 AP 消耗都必须由本地引擎结算。",
         "choices": [
           {
             "id": "continue_loaded_fixture",
@@ -294,25 +261,37 @@
     },
     "cultivationState": {
       "version": "v0.8.0-b2",
-      "progress": 0,
+      "progress": 210,
       "progressByRealm": {
-        "4:高阶": 0
+        "4:高阶": 0,
+        "5:巅峰": 210
       },
       "breakthroughHistory": [],
       "ascension": {
         "threeQi": {
-          "human": 0,
-          "earth": 0,
-          "heaven": 0
+          "human": 90,
+          "earth": 90,
+          "heaven": 90
         },
-        "preparationScore": 0,
+        "preparationScore": 90,
         "heavenWillPressure": 0,
         "karmicDebt": 0
       },
       "calamityLedger": [],
       "nextCalamityPreview": null,
       "lastEnvironment": null,
-      "lastResolution": []
+      "lastResolution": [
+        {
+          "id": "fixture_v080b2_ready",
+          "turn": 196,
+          "kind": "calamity_warning",
+          "message": "三气已齐，升仙只可由本地 b2 action 结算。",
+          "tags": [
+            "fixture",
+            "ascension"
+          ]
+        }
+      ]
     }
   }
 }
