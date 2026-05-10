@@ -56,20 +56,28 @@ function cellLabel(cell: BattlefieldCell): string {
 
 function targetRequired(action: BattlefieldAction | null, actor: BattlefieldUnit | undefined, validation: any): boolean {
   if (!action || !actor) return false;
-  if (action.type === 'retreat' || action.type === 'wait') return false;
+  if (action.type === 'retreat' || action.type === 'wait' || action.type === 'rally' || action.type === 'observe') return false;
   return !validation?.validTargetCellIds?.includes(actor.cellId);
 }
 
-function UnitPill({ unit, active }: { unit: BattlefieldUnit; active?: boolean }) {
+function UnitPill({ unit, active, onSelect }: { unit: BattlefieldUnit; active?: boolean; onSelect?: (unit: BattlefieldUnit) => void }) {
   const hp = hpPercent(unit);
   const essence = essencePercent(unit);
   return (
     <motion.div
       layout
-      className={`border px-3 py-2 bg-[rgba(13,13,18,0.72)] ${
+      role={onSelect ? 'button' : undefined}
+      tabIndex={onSelect ? 0 : undefined}
+      onClick={() => onSelect?.(unit)}
+      onKeyDown={(event) => {
+        if (!onSelect) return;
+        if (event.key === 'Enter' || event.key === ' ') onSelect(unit);
+      }}
+      className={`border px-3 py-2 bg-[rgba(13,13,18,0.72)] ${onSelect ? 'cursor-pointer hover:border-[rgba(201,169,110,0.45)]' : ''} ${
         active ? 'border-[var(--gu-trace-gold)] shadow-[0_0_18px_rgba(201,169,110,0.18)]' : 'border-[rgba(201,169,110,0.14)]'
-      }`}
+      } ${unit.revealed === false ? 'opacity-70' : ''}`}
       style={{ borderRadius: 6 }}
+      data-testid={`battlefield-unit-${unit.id}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="min-w-0">
@@ -77,11 +85,18 @@ function UnitPill({ unit, active }: { unit: BattlefieldUnit; active?: boolean })
           <div className="text-[10px] text-[var(--gu-text-secondary)]">{unit.realmNum}转 · {unit.path}</div>
         </div>
         <div className={`text-[10px] px-1.5 py-0.5 border ${
-          unit.side === 'enemy' ? 'text-[var(--gu-life-crimson)] border-[rgba(196,75,75,0.35)]' : 'text-[var(--gu-life-verdant)] border-[rgba(75,139,110,0.35)]'
+          unit.side === 'enemy' ? 'text-[var(--gu-life-crimson)] border-[rgba(196,75,75,0.35)]' : unit.side === 'neutral' ? 'text-[#7A8EA8] border-[rgba(122,142,168,0.35)]' : 'text-[var(--gu-life-verdant)] border-[rgba(75,139,110,0.35)]'
         }`} style={{ borderRadius: 4 }}>
-          {unit.side === 'enemy' ? '敌' : unit.side === 'ally' ? '友' : '我'}
+          {unit.revealed === false ? '伏' : unit.side === 'enemy' ? '敌' : unit.side === 'ally' ? '友' : unit.side === 'neutral' ? '中' : '我'}
         </div>
       </div>
+      {(unit.role || typeof unit.morale === 'number' || typeof unit.threat === 'number') && (
+        <div className="mt-1 flex flex-wrap gap-1 text-[9px] text-[var(--gu-text-secondary)]">
+          {unit.role && <span>{unit.role}</span>}
+          {typeof unit.morale === 'number' && <span>morale {unit.morale}</span>}
+          {typeof unit.threat === 'number' && <span>threat {unit.threat}</span>}
+        </div>
+      )}
       <div className="mt-2 space-y-1">
         <div className="h-1.5 bg-[rgba(92,88,96,0.28)] overflow-hidden" style={{ borderRadius: 999 }}>
           <motion.div layout className="h-full bg-[var(--gu-life-crimson)]" style={{ width: `${hp}%` }} />
@@ -302,6 +317,7 @@ export function BattlefieldCombatOverlay() {
     selectAction,
     selectTarget,
     executeSelected,
+    selectActor,
     close,
     advanceTrace,
     setTraceCursor,
@@ -316,6 +332,7 @@ export function BattlefieldCombatOverlay() {
     selectAction: s.selectBattlefieldAction,
     selectTarget: s.selectBattlefieldTarget,
     executeSelected: s.executeSelectedBattlefieldAction,
+    selectActor: s.selectBattlefieldActor,
     close: s.closeBattlefieldCombat,
     advanceTrace: s.advanceBattlefieldTraceCursor,
     setTraceCursor: s.setBattlefieldTraceCursor,
@@ -360,7 +377,9 @@ export function BattlefieldCombatOverlay() {
 
   const allies = state.units.filter(unit => unit.side === 'player' || unit.side === 'ally');
   const enemies = state.units.filter(unit => unit.side === 'enemy');
+  const neutrals = state.units.filter(unit => unit.side === 'neutral');
   const reason = validation?.reason ? describeBattlefieldReason(validation.reason) : selectedCard?.disabledReason;
+  const isGroup = state.mode === 'group';
 
   return (
     <motion.div
@@ -387,10 +406,11 @@ export function BattlefieldCombatOverlay() {
         <header className="flex items-center justify-between gap-3 border-b border-[rgba(201,169,110,0.14)] px-3 py-2 md:px-5">
           <div className="min-w-0">
             <div className="text-[13px] md:text-[15px] text-[var(--gu-trace-gold-text)] font-panel font-semibold truncate">
-              v0.8 凡战棋盘 · 第{state.round}回合
+              {isGroup ? 'v0.8 群像战棋盘' : 'v0.8 凡战棋盘'} · 第{state.round}回合
             </div>
             <div className="text-[10px] text-[var(--gu-text-secondary)] truncate">
               {state.activeTerrainId || 'plain'} · {state.activeFormationId || '无阵'} · {state.phase}
+              {isGroup && state.activeUnitId ? ` · active ${state.activeUnitId}` : ''}
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -418,7 +438,29 @@ export function BattlefieldCombatOverlay() {
         <main className="battlefield-shell flex-1 min-h-0 p-3 md:p-4">
           <aside className="battlefield-allies min-h-0 overflow-y-auto space-y-2">
             <div className="text-[11px] text-[var(--gu-trace-gold-text)]">我方单位</div>
-            {allies.map(unit => <UnitPill key={unit.id} unit={unit} active={unit.id === actor.id} />)}
+            {allies.map(unit => (
+              <UnitPill
+                key={unit.id}
+                unit={unit}
+                active={unit.id === actor.id}
+                onSelect={isGroup ? next => selectActor?.(next.id) : undefined}
+              />
+            ))}
+            {isGroup && state.morale && (
+              <div className="border border-[rgba(201,169,110,0.14)] bg-[rgba(13,13,18,0.72)] p-3" style={{ borderRadius: 6 }} data-testid="battlefield-morale">
+                <div className="text-[11px] text-[var(--gu-trace-gold-text)]">士气</div>
+                <div className="mt-2 space-y-2 text-[10px] text-[var(--gu-text-secondary)]">
+                  {(['player', 'enemy'] as const).map(key => (
+                    <div key={key}>
+                      <div className="flex justify-between"><span>{key}</span><span>{state.morale?.[key] ?? 0}</span></div>
+                      <div className="h-1.5 bg-[rgba(92,88,96,0.28)] overflow-hidden" style={{ borderRadius: 999 }}>
+                        <motion.div layout className={key === 'player' ? 'h-full bg-[var(--gu-life-verdant)]' : 'h-full bg-[var(--gu-life-crimson)]'} style={{ width: `${state.morale?.[key] ?? 0}%` }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </aside>
 
           <section className="battlefield-center min-h-0 flex flex-col gap-3">
@@ -439,6 +481,27 @@ export function BattlefieldCombatOverlay() {
           <aside className="battlefield-enemies min-h-0 overflow-y-auto space-y-2">
             <div className="text-[11px] text-[var(--gu-trace-gold-text)]">敌方与战场情报</div>
             {enemies.map(unit => <UnitPill key={unit.id} unit={unit} />)}
+            {isGroup && neutrals.length > 0 && (
+              <div data-testid="battlefield-third-parties" className="space-y-2">
+                <div className="text-[11px] text-[#7A8EA8]">中立/第三方</div>
+                {neutrals.map(unit => <UnitPill key={unit.id} unit={unit} />)}
+              </div>
+            )}
+            {isGroup && state.objectives?.length ? (
+              <div className="border border-[rgba(201,169,110,0.14)] bg-[rgba(13,13,18,0.72)] p-3 text-[11px] leading-5" style={{ borderRadius: 6 }} data-testid="battlefield-objectives">
+                <div className="text-[var(--gu-trace-gold-text)]">目标</div>
+                <div className="mt-1 space-y-1">
+                  {state.objectives.map(objective => (
+                    <div key={objective.id} className="flex items-center justify-between gap-2 text-[var(--gu-text-secondary)]">
+                      <span className="truncate">{objective.label}</span>
+                      <span className={objective.status === 'active' ? 'text-[var(--gu-trace-gold-text)]' : objective.status === 'succeeded' ? 'text-[var(--gu-life-verdant)]' : 'text-[var(--gu-life-crimson)]'}>
+                        {objective.status}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             <div className="border border-[rgba(201,169,110,0.14)] bg-[rgba(13,13,18,0.72)] p-3 text-[11px] leading-5 text-[var(--gu-text-secondary)]" style={{ borderRadius: 6 }}>
               <div className="text-[var(--gu-text-primary)]">当前行动</div>
               <div className="mt-1">{selectedCard?.label || '未选择'}</div>

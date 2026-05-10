@@ -62,6 +62,61 @@
     "defaultInterruptBacklashDamage": 3,
     "interruptionCooldownPenalty": 1
   },
+  "group": {
+    "morale": {
+      "min": 0,
+      "max": 100,
+      "defaultPlayer": 62,
+      "defaultEnemy": 58,
+      "lowThreshold": 35,
+      "highThreshold": 75,
+      "lowHitPenalty": 0.08,
+      "highDamageMultiplier": 1.08,
+      "rallyGain": 14,
+      "ambushLoss": 8,
+      "allyDownLoss": 12,
+      "enemyDownGain": 10,
+      "protectedDownLoss": 18
+    },
+    "assist": {
+      "duration": 1,
+      "range": 2,
+      "hitBonus": 0.12,
+      "damageMultiplier": 1.15,
+      "maxStacks": 1
+    },
+    "guard": {
+      "duration": 1,
+      "damageReduction": 0.45,
+      "adjacentRequired": true
+    },
+    "ambush": {
+      "firstStrikeDamageMultiplier": 1.12,
+      "observeRevealCount": 2,
+      "hiddenEvasionBonus": 18
+    },
+    "formation": {
+      "controlDuration": 2,
+      "controlRange": 2,
+      "rallyMoraleBonus": 4,
+      "arrayNodeDamageMultiplier": 1.12,
+      "breakMoraleDelta": -10
+    },
+    "thirdParty": {
+      "entryRound": 2,
+      "threatTargetThreshold": 45,
+      "damageMultiplier": 0.75
+    },
+    "objectives": {
+      "escortEdgeRequired": true,
+      "protectHpThreshold": 1,
+      "keyEnemyMoraleGain": 12
+    },
+    "retreat": {
+      "objectivePenalty": 0.2,
+      "allyCoverBonus": 0.1
+    }
+  },
   "guShapes": {
     "line": { "targetPolicy": "aligned", "blockedByCover": true, "allowsMove": false },
     "cone": { "targetPolicy": "fan", "blockedByCover": true, "allowsMove": false },

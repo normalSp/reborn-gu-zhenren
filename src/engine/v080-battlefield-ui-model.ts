@@ -11,6 +11,7 @@ import type {
 } from '../types';
 import {
   createBattlefieldCombatState,
+  createBattlefieldGroupCombatState,
   listBattlefieldActionTargets,
   validateBattlefieldAction,
 } from './v080-battlefield-combat-engine';
@@ -104,6 +105,10 @@ const REASON_TEXT: Record<string, string> = {
   killer_move_not_learned: '尚未学会此杀招',
   unsupported_action: '当前行动暂未接入',
   retreat_failed: '撤退失败',
+  group_mode_required: '需要群像战模式',
+  no_adjacent_ally_to_guard: '需要相邻队友或目标',
+  no_ally_to_assist: '需要可援助的队友',
+  no_formation_cell: '射程内没有阵位格',
 };
 
 export function describeBattlefieldReason(reason?: string): string {
@@ -123,7 +128,8 @@ export function formatBattlefieldCost(cost?: { essencePct?: number; immortalEsse
 }
 
 export function getBattlefieldActor(state: BattlefieldCombatState, preferredId = 'player'): BattlefieldUnit | undefined {
-  return state.units.find(unit => unit.id === preferredId && unit.hp > 0)
+  return state.units.find(unit => unit.id === state.activeUnitId && unit.hp > 0)
+    ?? state.units.find(unit => unit.id === preferredId && unit.hp > 0)
     ?? state.units.find(unit => (unit.side === 'player' || unit.side === 'ally') && unit.hp > 0);
 }
 
@@ -239,6 +245,229 @@ export function createBattlefieldDemoState(source: BattlefieldDemoSource = {}): 
         cooldowns: {},
         statusEffects: [],
         intent: '以岩枪压制中线，伺机逼退',
+      },
+    ],
+  });
+}
+
+export function createBattlefieldGroupDemoState(source: BattlefieldDemoSource = {}): BattlefieldCombatState {
+  const primaryPath = source.pathBuild?.primary || source.primaryPath || '月道';
+  const daoMarks = source.pathBuild?.dao_marks || source.daoMarks || { [primaryPath]: 80 };
+  const guNames = extractNormalCombatGuNames(source);
+  const killerMoveNames = extractKillerMoveNames(source, guNames);
+  const playerName = source.profile?.name || '演武蛊师';
+  const realmNum = Math.max(2, Math.min(5, Number(source.profile?.realm?.grand || 3)));
+  const healthMax = Number(source.vitals?.health?.max || 180);
+  const healthCurrent = Number(source.vitals?.health?.current || healthMax);
+  const essenceMax = Number(source.vitals?.essence?.max || 100);
+  const essenceCurrent = Number(source.vitals?.essence?.current || essenceMax);
+
+  return createBattlefieldGroupCombatState({
+    battleId: `v080_b1_group_demo_${Date.now()}`,
+    seed: 'v080-b1-group-battlefield-demo',
+    activeTerrainId: 'dense_forest',
+    activeFormationId: 'neutral_array_node',
+    activeUnitId: 'player',
+    morale: { player: 62, enemy: 58, neutral: 50 },
+    ambush: {
+      side: 'enemy',
+      revealed: false,
+      openingResolved: false,
+      hiddenUnitIds: ['enemy_ambusher'],
+      scoutDifficulty: 60,
+    },
+    thirdParties: [{
+      id: 'tie_patrol',
+      unitIds: ['third_tie_patrol'],
+      entryRound: 2,
+      entered: false,
+      stance: 'attack_high_threat',
+    }],
+    objectives: [
+      {
+        id: 'protect_merchant',
+        type: 'protect',
+        label: '护住商队账房',
+        status: 'active',
+        unitId: 'merchant',
+      },
+      {
+        id: 'escort_merchant',
+        type: 'escort',
+        label: '护送账房抵达边缘格',
+        status: 'active',
+        unitId: 'merchant',
+        requiredEdge: true,
+      },
+      {
+        id: 'defeat_enemy_leader',
+        type: 'defeat_key',
+        label: '击破伏击头目',
+        status: 'active',
+        targetUnitId: 'enemy_leader',
+      },
+    ],
+    cells: [
+      { id: 'c1_0', flags: ['cover'] },
+      { id: 'c2_0', flags: ['dao_field'], daoFieldPath: primaryPath },
+      { id: 'c2_1', flags: ['array_node'] },
+      { id: 'c3_1', flags: ['concealment'] },
+      { id: 'c2_2', flags: ['hazard'], dangerTags: ['unstable_primeval_tide'] },
+      { id: 'c4_2', flags: ['concealment'] },
+    ],
+    units: [
+      {
+        id: 'player',
+        name: playerName,
+        side: 'player',
+        role: 'leader',
+        cellId: 'c1_1',
+        realmNum,
+        path: primaryPath,
+        hp: Math.max(1, Math.min(healthCurrent, healthMax)),
+        maxHp: healthMax,
+        attack: 36 + realmNum * 5,
+        defense: 20 + realmNum * 3,
+        accuracy: 76,
+        evasion: 18,
+        daoMarks,
+        morale: 62,
+        threat: 62,
+        revealed: true,
+        essence: { current: essenceCurrent, max: essenceMax, type: 'primeval' },
+        guNames,
+        killerMoveNames,
+        cooldowns: {},
+        statusEffects: [],
+        objectiveTags: ['command'],
+        intent: '群像战演武主控单位，负责蛊虫、阵位和士气抉择',
+      },
+      {
+        id: 'ally_guard',
+        name: '护阵弟子',
+        side: 'ally',
+        role: 'guard',
+        cellId: 'c0_1',
+        realmNum: Math.max(1, realmNum - 1),
+        path: '木道',
+        hp: 118,
+        maxHp: 130,
+        attack: 24,
+        defense: 22,
+        accuracy: 68,
+        evasion: 14,
+        daoMarks: { 木道: 38 },
+        morale: 60,
+        threat: 36,
+        revealed: true,
+        essence: { current: 78, max: 90, type: 'primeval' },
+        guNames: ['青丝蛊', '种蛊', '治愈蛊'].filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        intent: '贴身守护与牵制',
+      },
+      {
+        id: 'merchant',
+        name: '商队账房',
+        side: 'ally',
+        role: 'objective',
+        cellId: 'c0_2',
+        realmNum: 1,
+        path: '信道',
+        hp: 54,
+        maxHp: 60,
+        attack: 8,
+        defense: 8,
+        accuracy: 48,
+        evasion: 8,
+        daoMarks: 0,
+        morale: 48,
+        threat: 80,
+        revealed: true,
+        essence: { current: 20, max: 30, type: 'primeval' },
+        guNames: [],
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        objectiveTags: ['protect', 'escort'],
+        intent: '保护/护送目标',
+      },
+      {
+        id: 'enemy_leader',
+        name: '伏击头目',
+        side: 'enemy',
+        role: 'leader',
+        cellId: 'c4_1',
+        realmNum: Math.max(2, realmNum),
+        path: '土道',
+        hp: 160,
+        maxHp: 160,
+        attack: 38,
+        defense: 24,
+        accuracy: 72,
+        evasion: 14,
+        daoMarks: { 土道: 62, 雷道: 22 },
+        morale: 58,
+        threat: 72,
+        revealed: true,
+        essence: { current: 96, max: 100, type: 'primeval' },
+        guNames: DEMO_ENEMY_GU_NAMES.filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        objectiveTags: ['key_enemy'],
+        intent: '压制阵位并逼迫撤退',
+      },
+      {
+        id: 'enemy_ambusher',
+        name: '林中暗手',
+        side: 'enemy',
+        role: 'scout',
+        cellId: 'c3_1',
+        realmNum: Math.max(2, realmNum - 1),
+        path: '暗道',
+        hp: 92,
+        maxHp: 100,
+        attack: 30,
+        defense: 14,
+        accuracy: 74,
+        evasion: 24,
+        daoMarks: { 暗道: 44 },
+        morale: 58,
+        threat: 46,
+        revealed: false,
+        essence: { current: 76, max: 90, type: 'primeval' },
+        guNames: ['幽影随行蛊', '破风蛊'].filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        intent: '未侦察时获得伏击先手',
+      },
+      {
+        id: 'third_tie_patrol',
+        name: '铁家巡使',
+        side: 'neutral',
+        role: 'third_party',
+        cellId: 'c4_2',
+        realmNum: 3,
+        path: '金道',
+        hp: 120,
+        maxHp: 120,
+        attack: 32,
+        defense: 22,
+        accuracy: 70,
+        evasion: 16,
+        daoMarks: { 金道: 48 },
+        morale: 50,
+        threat: 54,
+        revealed: false,
+        essence: { current: 90, max: 90, type: 'primeval' },
+        guNames: ['金钟蛊', '金缕衣蛊'].filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        intent: '第二回合按本地规则介入，优先压制高威胁方',
       },
     ],
   });
@@ -372,19 +601,76 @@ export function buildBattlefieldActionCards(
   }
 
   if (tab === 'observe') {
+    const action: BattlefieldAction = { type: 'observe', actorId: actor.id };
+    const validation = listBattlefieldActionTargets(state, action);
     return [{
       id: 'observe:intel',
       tab,
       label: '观察战场',
-      action: null,
-      validation: null,
+      action: state.mode === 'group' ? action : null,
+      validation: state.mode === 'group' ? validation : null,
       costText: '无消耗',
       cooldownText: '即时',
-      counters: ['不推进结算'],
-      sceneUtilities: ['查看地形', '查看状态', '确认目标'],
+      counters: state.mode === 'group' ? ['会消耗当前单位行动', '可揭示伏击/遮蔽/第三方动向'] : ['不推进结算'],
+      sceneUtilities: ['查看地形', '查看状态', '确认目标', '揭示伏击'],
       visualTint: '#4B6E8B',
-      uniqueness: '观察只展示本地状态，不产生战斗结果',
+      uniqueness: state.mode === 'group'
+        ? '观察由本地引擎揭示隐藏单位、危险格和第三方动向，不直接造成伤害'
+        : '观察只展示本地状态，不产生战斗结果',
     }];
+  }
+
+  if (tab === 'formation' && state.mode === 'group') {
+    const groupActions: Array<{ id: string; label: string; action: BattlefieldAction; tint: string; text: string }> = [
+      {
+        id: 'formation:guard',
+        label: '援护',
+        action: { type: 'guard', actorId: actor.id },
+        tint: '#5C8B7A',
+        text: '守护相邻队友或护送目标，下一次受击由本地引擎减伤并输出 guard 轨迹',
+      },
+      {
+        id: 'formation:assist',
+        label: '协攻',
+        action: { type: 'assist', actorId: actor.id },
+        tint: '#C9A96E',
+        text: '援助队友下一次蛊虫或杀招行动，提供命中和伤害加成',
+      },
+      {
+        id: 'formation:rally',
+        label: '振奋士气',
+        action: { type: 'rally', actorId: actor.id },
+        tint: '#C9A96E',
+        text: '消耗行动恢复己方士气，缓解低士气命中惩罚',
+      },
+      {
+        id: 'formation:node',
+        label: '争夺阵位',
+        action: { type: 'formation', actorId: actor.id },
+        tint: '#8B6F3A',
+        text: '在阵位格建立、争夺或破坏阵位控制，输出 formation 轨迹',
+      },
+    ];
+    return groupActions.map(item => {
+      const targets = listBattlefieldActionTargets(state, item.action);
+      const validation = validateAnyTarget(state, item.action, targets, actor);
+      return {
+        id: item.id,
+        tab,
+        label: item.label,
+        action: item.action,
+        validation: targets,
+        disabledReason: validation.ok ? undefined : describeBattlefieldReason(validation.reason),
+        path: 'group',
+        shape: item.action.type,
+        costText: '无消耗',
+        cooldownText: '1回合',
+        counters: ['占位、士气和目标状态均由本地引擎结算'],
+        sceneUtilities: ['阵位', '援护', '士气', '群像战'],
+        visualTint: item.tint,
+        uniqueness: item.text,
+      };
+    });
   }
 
   return [{

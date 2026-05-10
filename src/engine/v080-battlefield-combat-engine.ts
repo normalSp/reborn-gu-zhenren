@@ -76,6 +76,30 @@ type BattlefieldRules = {
     defaultInterruptBacklashDamage: number;
     interruptionCooldownPenalty: number;
   };
+  group: {
+    morale: {
+      min: number;
+      max: number;
+      defaultPlayer: number;
+      defaultEnemy: number;
+      lowThreshold: number;
+      highThreshold: number;
+      lowHitPenalty: number;
+      highDamageMultiplier: number;
+      rallyGain: number;
+      ambushLoss: number;
+      allyDownLoss: number;
+      enemyDownGain: number;
+      protectedDownLoss: number;
+    };
+    assist: { duration: number; range: number; hitBonus: number; damageMultiplier: number; maxStacks: number };
+    guard: { duration: number; damageReduction: number; adjacentRequired: boolean };
+    ambush: { firstStrikeDamageMultiplier: number; observeRevealCount: number; hiddenEvasionBonus: number };
+    formation: { controlDuration: number; controlRange: number; rallyMoraleBonus: number; arrayNodeDamageMultiplier: number; breakMoraleDelta: number };
+    thirdParty: { entryRound: number; threatTargetThreshold: number; damageMultiplier: number };
+    objectives: { escortEdgeRequired: boolean; protectHpThreshold: number; keyEnemyMoraleGain: number };
+    retreat: { objectivePenalty: number; allyCoverBonus: number };
+  };
   guShapes: Record<string, ShapeRule>;
   killerMoveShapes: Record<string, ShapeRule>;
 };
@@ -87,6 +111,13 @@ export interface CreateBattlefieldCombatInput {
   phase?: BattlefieldCombatState['phase'];
   cells?: Array<Partial<BattlefieldCell> & Pick<BattlefieldCell, 'id'>>;
   units: BattlefieldUnit[];
+  mode?: BattlefieldCombatState['mode'];
+  activeUnitId?: string;
+  actedUnitIdsThisRound?: string[];
+  morale?: BattlefieldCombatState['morale'];
+  objectives?: BattlefieldCombatState['objectives'];
+  ambush?: BattlefieldCombatState['ambush'];
+  thirdParties?: BattlefieldCombatState['thirdParties'];
   activeTerrainId?: string;
   activeFormationId?: string;
   eventWindows?: BattlefieldCombatState['eventWindows'];
@@ -125,6 +156,7 @@ function cloneUnit(unit: BattlefieldUnit): BattlefieldUnit {
     essence: unit.essence ? { ...unit.essence } : undefined,
     guNames: [...unit.guNames],
     statusEffects: [...unit.statusEffects],
+    objectiveTags: unit.objectiveTags ? [...unit.objectiveTags] : undefined,
     cooldowns: { ...(unit.cooldowns ?? {}) },
     killerMoveNames: unit.killerMoveNames ? [...unit.killerMoveNames] : undefined,
     daoMarks: typeof unit.daoMarks === 'object' && unit.daoMarks ? { ...unit.daoMarks } : unit.daoMarks,
@@ -156,6 +188,11 @@ function cloneState(state: BattlefieldCombatState): BattlefieldCombatState {
       statusEffects: [...effect.statusEffects],
       tags: [...effect.tags],
     })),
+    actedUnitIdsThisRound: state.actedUnitIdsThisRound ? [...state.actedUnitIdsThisRound] : undefined,
+    morale: state.morale ? { ...state.morale } : undefined,
+    objectives: state.objectives?.map(objective => ({ ...objective })),
+    ambush: state.ambush ? { ...state.ambush, hiddenUnitIds: [...state.ambush.hiddenUnitIds] } : undefined,
+    thirdParties: state.thirdParties?.map(party => ({ ...party, unitIds: [...party.unitIds] })),
     pendingActions: state.pendingActions?.map(action => ({
       ...action,
       targetUnitIds: [...action.targetUnitIds],
@@ -231,6 +268,46 @@ function isHostile(a: BattlefieldUnit, b: BattlefieldUnit): boolean {
   if (a.side === 'neutral' || b.side === 'neutral') return false;
   if (a.side === 'enemy') return b.side === 'player' || b.side === 'ally';
   return b.side === 'enemy';
+}
+
+function isPlayerSide(unit: BattlefieldUnit): boolean {
+  return unit.side === 'player' || unit.side === 'ally';
+}
+
+function moraleKey(unit: BattlefieldUnit): 'player' | 'enemy' | 'neutral' {
+  if (unit.side === 'enemy') return 'enemy';
+  if (unit.side === 'neutral') return 'neutral';
+  return 'player';
+}
+
+function clampMorale(value: number): number {
+  return Math.max(rules.group.morale.min, Math.min(rules.group.morale.max, Math.round(value)));
+}
+
+function moraleFor(state: BattlefieldCombatState, unit: BattlefieldUnit): number {
+  const key = moraleKey(unit);
+  if (key === 'neutral') return state.morale?.neutral ?? 50;
+  return state.morale?.[key] ?? (key === 'player' ? rules.group.morale.defaultPlayer : rules.group.morale.defaultEnemy);
+}
+
+function updateMorale(state: BattlefieldCombatState, key: 'player' | 'enemy' | 'neutral', delta: number): BattlefieldCombatState {
+  const morale = {
+    player: state.morale?.player ?? rules.group.morale.defaultPlayer,
+    enemy: state.morale?.enemy ?? rules.group.morale.defaultEnemy,
+    neutral: state.morale?.neutral,
+  };
+  const current = key === 'neutral' ? morale.neutral ?? 50 : morale[key];
+  return { ...state, morale: { ...morale, [key]: clampMorale(current + delta) } };
+}
+
+function groupVisible(unit: BattlefieldUnit): boolean {
+  return unit.revealed !== false;
+}
+
+function sameSide(a: BattlefieldUnit, b: BattlefieldUnit): boolean {
+  if (a.side === 'enemy') return b.side === 'enemy';
+  if (a.side === 'neutral') return b.side === 'neutral';
+  return b.side === 'player' || b.side === 'ally';
 }
 
 function manhattan(a: BattlefieldCell, b: BattlefieldCell): number {
@@ -315,6 +392,7 @@ function normalizeUnit(unit: BattlefieldUnit): BattlefieldUnit {
     statusEffects: [...unit.statusEffects],
     killerMoveNames: unit.killerMoveNames ? [...unit.killerMoveNames] : [],
     cooldowns: { ...(unit.cooldowns ?? {}) },
+    objectiveTags: unit.objectiveTags ? [...unit.objectiveTags] : undefined,
   };
 }
 
@@ -369,12 +447,19 @@ export function createBattlefieldCombatState(input: CreateBattlefieldCombatInput
     seed: input.seed ?? input.battleId,
     round: input.round ?? 1,
     phase: input.phase ?? 'player_turn',
+    mode: input.mode ?? 'duel',
     grid: {
       width: 5,
       height: 3,
       cells: withCellOccupants(cells, units),
     },
     units,
+    activeUnitId: input.activeUnitId,
+    actedUnitIdsThisRound: input.actedUnitIdsThisRound ? [...input.actedUnitIdsThisRound] : [],
+    morale: input.morale ? { ...input.morale } : undefined,
+    objectives: input.objectives?.map(objective => ({ ...objective })),
+    ambush: input.ambush ? { ...input.ambush, hiddenUnitIds: [...input.ambush.hiddenUnitIds] } : undefined,
+    thirdParties: input.thirdParties?.map(party => ({ ...party, unitIds: [...party.unitIds] })),
     activeTerrainId: input.activeTerrainId,
     activeFormationId: input.activeFormationId,
     activeEffects: [],
@@ -382,6 +467,23 @@ export function createBattlefieldCombatState(input: CreateBattlefieldCombatInput
     result: null,
     eventWindows: input.eventWindows ?? [],
     pendingResolution: [],
+  };
+}
+
+export function createBattlefieldGroupCombatState(input: CreateBattlefieldCombatInput): BattlefieldCombatState {
+  const state = createBattlefieldCombatState({
+    ...input,
+    mode: 'group',
+    morale: input.morale ?? {
+      player: rules.group.morale.defaultPlayer,
+      enemy: rules.group.morale.defaultEnemy,
+    },
+    actedUnitIdsThisRound: input.actedUnitIdsThisRound ?? [],
+  });
+  return {
+    ...state,
+    activeUnitId: input.activeUnitId ?? nextFriendlyActor(state, []),
+    eventWindows: input.eventWindows ?? ['scout', 'action', 'counter', 'settlement'],
   };
 }
 
@@ -463,6 +565,7 @@ function targetUnitsForCells(state: BattlefieldCombatState, actor: BattlefieldUn
   const cellSet = new Set(cellIds);
   return state.units
     .filter(unit => unit.hp > 0 && unit.id !== actor.id && cellSet.has(unit.cellId))
+    .filter(unit => state.mode !== 'group' || groupVisible(unit) || sameSide(actor, unit))
     .map(unit => unit.id);
 }
 
@@ -531,13 +634,48 @@ function visualForMove(move: KillerMoveExpressionSpec, intensity: BattleResoluti
 }
 
 function settleIfNeeded(state: BattlefieldCombatState): { state: BattlefieldCombatState; step?: BattleResolutionStep } {
+  let objectiveState = state;
+  let objectiveReason: string | null = null;
+  if (state.mode === 'group' && state.objectives?.length) {
+    const nextObjectives = state.objectives.map(objective => {
+      if (objective.status !== 'active') return objective;
+      if (objective.type === 'protect' && objective.unitId) {
+        const unit = getUnit(state, objective.unitId);
+        if (!unit || unit.hp < rules.group.objectives.protectHpThreshold) {
+          objectiveReason = `objective_failed:${objective.id}`;
+          return { ...objective, status: 'failed' as const };
+        }
+      }
+      if (objective.type === 'escort' && objective.unitId) {
+        const unit = getUnit(state, objective.unitId);
+        const cell = unit ? getCell(state, unit.cellId) : undefined;
+        if (unit && unit.hp > 0 && cell && (!objective.requiredEdge || isEdgeCell(cell))) {
+          objectiveReason = `objective_succeeded:${objective.id}`;
+          return { ...objective, status: 'succeeded' as const };
+        }
+      }
+      if (objective.type === 'defeat_key' && objective.targetUnitId) {
+        const target = getUnit(state, objective.targetUnitId);
+        if (!target || target.hp <= 0) {
+          objectiveReason = `objective_succeeded:${objective.id}`;
+          return { ...objective, status: 'succeeded' as const };
+        }
+      }
+      return objective;
+    });
+    objectiveState = { ...state, objectives: nextObjectives };
+  }
   const playerAlive = state.units.some(unit => unit.hp > 0 && (unit.side === 'player' || unit.side === 'ally'));
   const enemyAlive = state.units.some(unit => unit.hp > 0 && unit.side === 'enemy');
   let result: BattlefieldCombatResult | null = null;
+  if (objectiveReason?.startsWith('objective_failed')) result = { winner: 'enemy', reason: objectiveReason, roundsTaken: state.round };
+  if (objectiveReason?.startsWith('objective_succeeded') && objectiveState.objectives?.every(objective => objective.status !== 'active')) {
+    result = { winner: 'player', reason: objectiveReason, roundsTaken: state.round };
+  }
   if (!enemyAlive) result = { winner: 'player', reason: 'enemy_eliminated', roundsTaken: state.round };
   if (!playerAlive) result = { winner: 'enemy', reason: 'player_eliminated', roundsTaken: state.round };
-  if (!result) return { state };
-  const nextState = { ...state, phase: 'ended' as const, result };
+  if (!result) return { state: objectiveState };
+  const nextState = { ...objectiveState, phase: 'ended' as const, result };
   const step = makeStep(nextState, 'settlement', {
     message: result.reason,
     visual: {
@@ -598,12 +736,81 @@ function buildActionTargetsForKillerMove(state: BattlefieldCombatState, actor: B
   });
 }
 
+function buildGroupActionTargets(state: BattlefieldCombatState, actor: BattlefieldUnit, type: BattlefieldAction['type']): BattlefieldActionValidation {
+  const actorCell = getCell(state, actor.cellId);
+  if (!actorCell || state.mode !== 'group') return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, { reason: 'group_mode_required' });
+  if (type === 'rally') {
+    return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, {
+      ok: true,
+      validTargetCellIds: [actor.cellId],
+      affectedCellIds: [actor.cellId],
+      targetUnitIds: [actor.id],
+      sourceName: 'rally',
+      tags: ['group', 'rally', 'morale'],
+    });
+  }
+  if (type === 'observe') {
+    const hiddenCellIds = state.units
+      .filter(unit => unit.hp > 0 && unit.revealed === false)
+      .map(unit => unit.cellId);
+    const intelCellIds = state.grid.cells
+      .filter(cell => cell.flags.includes('concealment') || cell.flags.includes('hazard') || cell.flags.includes('array_node') || hiddenCellIds.includes(cell.id))
+      .map(cell => cell.id);
+    const affectedCellIds = [...new Set(intelCellIds.length ? intelCellIds : state.grid.cells.map(cell => cell.id))];
+    return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, {
+      ok: true,
+      validTargetCellIds: affectedCellIds,
+      affectedCellIds,
+      targetUnitIds: state.units.filter(unit => unit.revealed === false).map(unit => unit.id),
+      sourceName: 'observe',
+      tags: ['group', 'observe', 'ambush'],
+    });
+  }
+  if (type === 'formation') {
+    const validCells = state.grid.cells.filter(cell => (
+      cell.flags.includes('array_node') &&
+      manhattan(actorCell, cell) <= rules.group.formation.controlRange
+    ));
+    return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, {
+      ok: validCells.length > 0,
+      reason: validCells.length ? undefined : 'no_formation_cell',
+      validTargetCellIds: validCells.map(cell => cell.id),
+      affectedCellIds: validCells.map(cell => cell.id),
+      sourceName: 'formation',
+      tags: ['group', 'formation', 'array_node'],
+    });
+  }
+
+  const candidates = state.units.filter(unit => {
+    if (unit.id === actor.id || unit.hp <= 0) return false;
+    if (!sameSide(actor, unit)) return false;
+    const cell = getCell(state, unit.cellId);
+    if (!cell) return false;
+    const distance = manhattan(actorCell, cell);
+    return type === 'guard'
+      ? distance <= 1
+      : distance <= rules.group.assist.range;
+  });
+  return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, {
+    ok: candidates.length > 0,
+    reason: candidates.length ? undefined : type === 'guard' ? 'no_adjacent_ally_to_guard' : 'no_ally_to_assist',
+    validTargetCellIds: candidates.map(unit => unit.cellId),
+    affectedCellIds: candidates.map(unit => unit.cellId),
+    targetUnitIds: candidates.map(unit => unit.id),
+    sourceName: type,
+    tags: ['group', type],
+  });
+}
+
 export function listBattlefieldActionTargets(state: BattlefieldCombatState, action: BattlefieldAction): BattlefieldActionValidation {
   const actor = getActor(state, action);
   if (!actor) return defaultValidation(action, { reason: 'actor_not_found_or_defeated' });
   if (action.type === 'move') return buildActionTargetsForMove(state, actor);
   if (action.type === 'retreat') return defaultValidation(action, { ok: true, tags: ['retreat'] });
   if (action.type === 'wait') return defaultValidation(action, { ok: true, tags: ['wait'] });
+  if (action.type === 'assist' || action.type === 'guard' || action.type === 'rally' || action.type === 'formation' || action.type === 'observe') {
+    return buildGroupActionTargets(state, actor, action.type);
+  }
   if (action.type === 'gu') {
     const spec = getGuExpressionSpec(action.guName ?? '');
     if (!spec) return defaultValidation(action, { reason: 'gu_not_found' });
@@ -624,6 +831,24 @@ export function validateBattlefieldAction(state: BattlefieldCombatState, action:
 
   if (action.type === 'wait') {
     return defaultValidation(action, { ok: true, tags: ['wait'] });
+  }
+
+  if (action.type === 'rally' || action.type === 'observe') {
+    return buildGroupActionTargets(state, actor, action.type);
+  }
+
+  if (action.type === 'assist' || action.type === 'guard' || action.type === 'formation') {
+    const targets = buildGroupActionTargets(state, actor, action.type);
+    if (!targets.ok) return targets;
+    if (!action.targetCellId) return { ...targets, ok: false, reason: 'missing_target' };
+    if (!targets.validTargetCellIds.includes(action.targetCellId)) return { ...targets, ok: false, reason: 'target_out_of_range' };
+    const targetUnitIds = targets.targetUnitIds.filter(id => getUnit(state, id)?.cellId === action.targetCellId);
+    return {
+      ...targets,
+      ok: true,
+      affectedCellIds: [action.targetCellId],
+      targetUnitIds: action.type === 'formation' ? [] : targetUnitIds,
+    };
   }
 
   if (action.type === 'move') {
@@ -720,6 +945,47 @@ function updateUnits(state: BattlefieldCombatState, units: BattlefieldUnit[]): B
   };
 }
 
+export function listBattlefieldTurnOrder(state: BattlefieldCombatState): BattlefieldUnit[] {
+  return state.units
+    .filter(unit => unit.hp > 0)
+    .filter(unit => unit.side !== 'neutral' || unit.revealed !== false)
+    .sort((a, b) => {
+      const sideRank = (unit: BattlefieldUnit) => unit.side === 'player' ? 0 : unit.side === 'ally' ? 1 : unit.side === 'enemy' ? 2 : 3;
+      const speedA = (a.accuracy ?? rules.defaults.accuracy) + (a.evasion ?? rules.defaults.evasion) + a.realmNum * 3;
+      const speedB = (b.accuracy ?? rules.defaults.accuracy) + (b.evasion ?? rules.defaults.evasion) + b.realmNum * 3;
+      return sideRank(a) - sideRank(b) || speedB - speedA || a.id.localeCompare(b.id);
+    });
+}
+
+function nextFriendlyActor(state: BattlefieldCombatState, actedIds: string[]): string | undefined {
+  const acted = new Set(actedIds);
+  return listBattlefieldTurnOrder(state)
+    .find(unit => isPlayerSide(unit) && !acted.has(unit.id))?.id;
+}
+
+function markActorActed(state: BattlefieldCombatState, actorId: string): BattlefieldCombatState {
+  if (state.mode !== 'group') return state;
+  const acted = [...new Set([...(state.actedUnitIdsThisRound ?? []), actorId])];
+  return {
+    ...state,
+    actedUnitIdsThisRound: acted,
+    activeUnitId: nextFriendlyActor(state, acted),
+  };
+}
+
+function effectMatches(effect: BattlefieldActiveEffect, tag: string, targetId: string): boolean {
+  return effect.tags.includes(tag) && (effect.targetIds ?? []).includes(targetId) && effect.remainingTurns > 0;
+}
+
+function consumeEffects(state: BattlefieldCombatState, consumedIds: string[]): BattlefieldCombatState {
+  if (!consumedIds.length) return state;
+  const consumed = new Set(consumedIds);
+  return {
+    ...state,
+    activeEffects: (state.activeEffects ?? []).filter(effect => !consumed.has(effect.id)),
+  };
+}
+
 function rollAttack(
   state: BattlefieldCombatState,
   actor: BattlefieldUnit,
@@ -729,14 +995,17 @@ function rollAttack(
   targetCells: BattlefieldCell[],
   moveMultiplier: number,
   affinity: ReturnType<typeof terrainAffinity>,
+  groupModifier: { hitBonus?: number; damageMultiplier?: number } = {},
 ) {
   const coeff = getRealmCoefficients(actor.realmNum, target.realmNum);
   const baseAccuracy = actor.accuracy ?? rules.defaults.accuracy;
-  const baseEvasion = target.evasion ?? rules.defaults.evasion;
+  const baseEvasion = (target.evasion ?? rules.defaults.evasion) + (target.revealed === false ? rules.group.ambush.hiddenEvasionBonus : 0);
   let hitRate = calcHitRate(baseAccuracy, baseEvasion, coeff.playerHitBonus);
   if (targetCells.some(hasCover)) hitRate -= rules.defaults.hitCoverPenalty;
   if (affinity.isFavored) hitRate += rules.defaults.favoredHitBonus;
   if (affinity.isHindered) hitRate -= rules.defaults.hinderedHitPenalty;
+  if (state.mode === 'group' && moraleFor(state, actor) <= rules.group.morale.lowThreshold) hitRate -= rules.group.morale.lowHitPenalty;
+  if (groupModifier.hitBonus) hitRate += groupModifier.hitBonus;
   hitRate = Math.max(0.05, Math.min(0.98, hitRate));
   const rng = createSeededRng(`${state.seed}:${state.round}:${actor.id}:${target.id}:${sourceName}`);
   const hit = rollHit(hitRate, rng);
@@ -745,6 +1014,9 @@ function rollAttack(
     * (affinity.isHindered ? rules.defaults.hinderedDamageMultiplier : 1)
     * (targetCells.some(cell => cell.flags.includes('array_node')) ? rules.defaults.arrayNodeDamageMultiplier : 1)
     * (targetCells.some(hasCover) ? rules.defaults.coverDamageMultiplier : 1);
+  const moraleMult = state.mode === 'group' && moraleFor(state, actor) >= rules.group.morale.highThreshold
+    ? rules.group.morale.highDamageMultiplier
+    : 1;
   const damage = hit
     ? calcDamage(
       actor.attack ?? rules.defaults.attack,
@@ -752,7 +1024,7 @@ function rollAttack(
       path,
       target.path,
       coeff.playerDamageMult,
-      moveMultiplier * terrainMult,
+      moveMultiplier * terrainMult * moraleMult * (groupModifier.damageMultiplier ?? 1),
       crit,
       daoMarksFor(actor, path),
       daoMarksFor(target, target.path),
@@ -771,6 +1043,51 @@ function addStatuses(unit: BattlefieldUnit, statuses: string[]): { unit: Battlef
     added.push(status);
   }
   return { unit: { ...unit, statusEffects: [...existing] }, added };
+}
+
+function groupAssistFor(state: BattlefieldCombatState, actorId: string): { hitBonus: number; damageMultiplier: number; effectIds: string[] } {
+  const effects = (state.activeEffects ?? []).filter(effect => effectMatches(effect, 'assist', actorId));
+  if (!effects.length) return { hitBonus: 0, damageMultiplier: 1, effectIds: [] };
+  const used = effects.slice(0, rules.group.assist.maxStacks);
+  return {
+    hitBonus: rules.group.assist.hitBonus * used.length,
+    damageMultiplier: Math.pow(rules.group.assist.damageMultiplier, used.length),
+    effectIds: used.map(effect => effect.id),
+  };
+}
+
+function applyGroupGuard(
+  state: BattlefieldCombatState,
+  target: BattlefieldUnit,
+  incomingDamage: number,
+): { damage: number; guardStep?: BattleResolutionStep; consumedEffectIds: string[] } {
+  if (state.mode !== 'group' || incomingDamage <= 0) return { damage: incomingDamage, consumedEffectIds: [] };
+  const effect = (state.activeEffects ?? []).find(item => effectMatches(item, 'guard', target.id));
+  if (!effect) return { damage: incomingDamage, consumedEffectIds: [] };
+  const guardian = effect.actorId ? getUnit(state, effect.actorId) : undefined;
+  if (!guardian || guardian.hp <= 0) return { damage: incomingDamage, consumedEffectIds: [effect.id] };
+  const targetCell = getCell(state, target.cellId);
+  const guardianCell = getCell(state, guardian.cellId);
+  if (rules.group.guard.adjacentRequired && targetCell && guardianCell && manhattan(targetCell, guardianCell) > 1) {
+    return { damage: incomingDamage, consumedEffectIds: [effect.id] };
+  }
+  const reduced = Math.max(0, Math.round(incomingDamage * (1 - rules.group.guard.damageReduction)));
+  const step = makeStep(state, 'guard', {
+    actorId: guardian.id,
+    targetIds: [target.id],
+    affectedCellIds: [target.cellId],
+    damage: incomingDamage - reduced,
+    sourceName: 'guard',
+    message: 'guard_damage_reduced',
+    visual: {
+      motif: 'guard',
+      primaryTint: '#5C8B7A',
+      motion: 'shield_intercept',
+      intensity: 'normal',
+    },
+    tags: ['group', 'guard', 'damage_reduction'],
+  });
+  return { damage: reduced, guardStep: step, consumedEffectIds: [effect.id] };
 }
 
 function executeGuAction(state: BattlefieldCombatState, action: BattlefieldAction, validation: BattlefieldActionValidation): BattlefieldActionResolution {
@@ -843,7 +1160,24 @@ function executeGuAction(state: BattlefieldCombatState, action: BattlefieldActio
     }
     const targetCell = getCell(nextState, target.cellId);
     const cells = targetCell ? [targetCell] : targetCells;
-    const rolled = rollAttack(nextState, actor, target, spec.guName, spec.path, cells, rules.defaults.baseGuDamageMultiplier, affinity);
+    const assist = groupAssistFor(nextState, actor.id);
+    if (assist.effectIds.length) {
+      steps.push(makeStep(nextState, 'assist', {
+        actorId: actor.id,
+        targetIds: [target.id],
+        sourceName: spec.guName,
+        affectedCellIds: cells.map(cell => cell.id),
+        message: 'assist_bonus_applied',
+        visual: {
+          motif: 'assist',
+          primaryTint: '#C9A96E',
+          motion: 'linked_strike',
+          intensity: 'subtle',
+        },
+        tags: ['group', 'assist'],
+      }));
+    }
+    const rolled = rollAttack(nextState, actor, target, spec.guName, spec.path, cells, rules.defaults.baseGuDamageMultiplier, affinity, assist);
     if (!rolled.hit) {
       steps.push(makeStep(nextState, 'miss', {
         actorId: actor.id,
@@ -854,15 +1188,19 @@ function executeGuAction(state: BattlefieldCombatState, action: BattlefieldActio
         visual: visualForGu(spec, 'subtle'),
         tags: ['miss', spec.path],
       }));
+      nextState = consumeEffects(nextState, assist.effectIds);
       continue;
     }
-    let nextTarget = { ...target, hp: Math.max(0, target.hp - rolled.damage) };
+    const guarded = applyGroupGuard(nextState, target, rolled.damage);
+    if (guarded.guardStep) steps.push(guarded.guardStep);
+    let nextTarget = { ...target, hp: Math.max(0, target.hp - guarded.damage) };
+    nextState = consumeEffects(nextState, [...assist.effectIds, ...guarded.consumedEffectIds]);
     steps.push(makeStep(nextState, 'hit', {
       actorId: actor.id,
       targetIds: [target.id],
       sourceName: spec.guName,
       affectedCellIds: cells.map(cell => cell.id),
-      damage: rolled.damage,
+      damage: guarded.damage,
       message: `${spec.guName} hit ${target.name}`,
       visual: visualForGu(spec, rolled.crit ? 'high' : 'normal'),
       tags: ['hit', spec.path, rolled.crit ? 'crit' : 'normal'],
@@ -881,6 +1219,22 @@ function executeGuAction(state: BattlefieldCombatState, action: BattlefieldActio
         tags: ['status_apply', ...statusResult.added],
       }));
     }
+    if (target.hp > 0 && nextTarget.hp <= 0 && state.mode === 'group') {
+      const moraleKeyToRaise = isPlayerSide(actor) ? 'player' : actor.side === 'enemy' ? 'enemy' : 'neutral';
+      nextState = updateMorale(nextState, moraleKeyToRaise, rules.group.morale.enemyDownGain);
+      steps.push(makeStep(nextState, 'morale', {
+        actorId: actor.id,
+        targetIds: [target.id],
+        message: 'unit_down_morale_shift',
+        visual: {
+          motif: 'morale',
+          primaryTint: '#C9A96E',
+          motion: 'surge',
+          intensity: 'subtle',
+        },
+        tags: ['group', 'morale', moraleKeyToRaise],
+      }));
+    }
     changedUnits.push(nextTarget);
   }
 
@@ -895,7 +1249,7 @@ function executeGuAction(state: BattlefieldCombatState, action: BattlefieldActio
     }));
   }
 
-  nextState = updateUnits(nextState, changedUnits);
+  nextState = markActorActed(updateUnits(nextState, changedUnits), actor.id);
   const settled = settleIfNeeded(appendSteps(nextState, steps));
   const allSteps = settled.step ? [...steps, settled.step] : steps;
   return { state: settled.state, steps: allSteps, validation };
@@ -939,7 +1293,7 @@ function executeMoveAction(state: BattlefieldCombatState, action: BattlefieldAct
       tags: ['hazard'],
     }));
   }
-  nextState = updateUnit(nextState, actor);
+  nextState = markActorActed(updateUnit(nextState, actor), actor.id);
   return { state: appendSteps(nextState, steps), steps, validation };
 }
 
@@ -969,6 +1323,23 @@ function releaseKillerMove(
     const target = getUnit(nextState, targetId);
     if (!target || target.hp <= 0 || !isHostile(actor, target)) continue;
     const targetCell = getCell(nextState, target.cellId);
+    const assist = groupAssistFor(nextState, actor.id);
+    if (assist.effectIds.length) {
+      steps.push(makeStep(nextState, 'assist', {
+        actorId: actor.id,
+        targetIds: [target.id],
+        sourceName: move.moveName,
+        affectedCellIds: targetCell ? [targetCell.id] : validation.affectedCellIds,
+        message: 'assist_bonus_applied',
+        visual: {
+          motif: 'assist',
+          primaryTint: '#C9A96E',
+          motion: 'linked_strike',
+          intensity: 'subtle',
+        },
+        tags: ['group', 'assist'],
+      }));
+    }
     const rolled = rollAttack(
       nextState,
       actor,
@@ -978,6 +1349,7 @@ function releaseKillerMove(
       targetCell ? [targetCell] : targetCells,
       rules.defaults.baseKillerMoveDamageMultiplier,
       affinity,
+      assist,
     );
     if (!rolled.hit) {
       steps.push(makeStep(nextState, 'miss', {
@@ -989,16 +1361,20 @@ function releaseKillerMove(
         visual: visualForMove(move, 'normal'),
         tags: ['miss', move.path],
       }));
+      nextState = consumeEffects(nextState, assist.effectIds);
       continue;
     }
-    const nextTarget = { ...target, hp: Math.max(0, target.hp - rolled.damage) };
+    const guarded = applyGroupGuard(nextState, target, rolled.damage);
+    if (guarded.guardStep) steps.push(guarded.guardStep);
+    const nextTarget = { ...target, hp: Math.max(0, target.hp - guarded.damage) };
+    nextState = consumeEffects(nextState, [...assist.effectIds, ...guarded.consumedEffectIds]);
     changedUnits.push(nextTarget);
     steps.push(makeStep(nextState, 'hit', {
       actorId: actor.id,
       targetIds: [target.id],
       sourceName: move.moveName,
       affectedCellIds: targetCell ? [targetCell.id] : validation.affectedCellIds,
-      damage: rolled.damage,
+      damage: guarded.damage,
       message: `${move.moveName} hit ${target.name}`,
       visual: visualForMove(move, rolled.crit ? 'high' : 'normal'),
       tags: ['hit', move.path, rolled.crit ? 'crit' : 'normal'],
@@ -1065,13 +1441,150 @@ function executeKillerMoveAction(state: BattlefieldCombatState, action: Battlefi
       visual: visualForMove(move, 'normal'),
       tags: ['pending', move.path, move.boardPattern.shape],
     }));
-    return { state: appendSteps(nextState, steps), steps, validation };
+    return { state: appendSteps(markActorActed(nextState, actor.id), steps), steps, validation };
   }
 
   const released = releaseKillerMove(nextState, actor, move, validation);
-  const settled = settleIfNeeded(appendSteps(released.state, [...steps, ...released.steps]));
+  const settled = settleIfNeeded(appendSteps(markActorActed(released.state, actor.id), [...steps, ...released.steps]));
   const allSteps = settled.step ? [...steps, ...released.steps, settled.step] : [...steps, ...released.steps];
   return { state: settled.state, steps: allSteps, validation };
+}
+
+function executeGroupSupportAction(state: BattlefieldCombatState, action: BattlefieldAction, validation: BattlefieldActionValidation): BattlefieldActionResolution {
+  let nextState = cloneState(state);
+  const actor = getUnit(nextState, action.actorId)!;
+  const steps: BattleResolutionStep[] = [];
+
+  if (action.type === 'assist' || action.type === 'guard') {
+    const targetId = validation.targetUnitIds[0];
+    const target = getUnit(nextState, targetId);
+    if (!target) return failureResolution(nextState, action, action.type === 'guard' ? 'no_adjacent_ally_to_guard' : 'no_ally_to_assist');
+    const effect: BattlefieldActiveEffect = {
+      id: `${nextState.battleId}_${nextState.round}_${action.type}_${actor.id}_${target.id}`,
+      sourceName: action.type,
+      actorId: actor.id,
+      targetIds: [target.id],
+      affectedCellIds: [target.cellId],
+      remainingTurns: action.type === 'guard' ? rules.group.guard.duration : rules.group.assist.duration,
+      statusEffects: [action.type === 'guard' ? 'guarded' : 'assisted'],
+      tags: ['group', action.type],
+    };
+    nextState = {
+      ...nextState,
+      activeEffects: [...(nextState.activeEffects ?? []), effect],
+    };
+    steps.push(makeStep(nextState, action.type, {
+      actorId: actor.id,
+      targetIds: [target.id],
+      affectedCellIds: [target.cellId],
+      sourceName: action.type,
+      message: `${action.type}_prepared`,
+      visual: {
+        motif: action.type,
+        primaryTint: action.type === 'guard' ? '#5C8B7A' : '#C9A96E',
+        motion: action.type === 'guard' ? 'shield_set' : 'linked_ready',
+        intensity: 'normal',
+      },
+      tags: ['group', action.type],
+    }));
+    nextState = markActorActed(nextState, actor.id);
+    return { state: appendSteps(nextState, steps), steps, validation };
+  }
+
+  if (action.type === 'rally') {
+    const key = moraleKey(actor);
+    nextState = updateMorale(nextState, key, rules.group.morale.rallyGain);
+    steps.push(makeStep(nextState, 'morale', {
+      actorId: actor.id,
+      targetIds: [actor.id],
+      affectedCellIds: [actor.cellId],
+      sourceName: 'rally',
+      message: 'rally_morale_restored',
+      visual: {
+        motif: 'morale_rally',
+        primaryTint: '#C9A96E',
+        motion: 'banner_lift',
+        intensity: 'normal',
+      },
+      tags: ['group', 'rally', key],
+    }));
+    nextState = markActorActed(nextState, actor.id);
+    return { state: appendSteps(nextState, steps), steps, validation };
+  }
+
+  if (action.type === 'formation') {
+    const targetCell = getCell(nextState, action.targetCellId);
+    if (!targetCell?.flags.includes('array_node')) return failureResolution(nextState, action, 'no_formation_cell');
+    const side = moraleKey(actor);
+    const previous = nextState.activeFormationId;
+    nextState = {
+      ...nextState,
+      activeFormationId: `${side}_array_control`,
+      activeEffects: [
+        ...(nextState.activeEffects ?? []),
+        {
+          id: `${nextState.battleId}_${nextState.round}_formation_${targetCell.id}`,
+          sourceName: 'formation',
+          actorId: actor.id,
+          affectedCellIds: [targetCell.id],
+          remainingTurns: rules.group.formation.controlDuration,
+          statusEffects: ['formation_control'],
+          tags: ['group', 'formation', side],
+        },
+      ],
+    };
+    if (previous && !previous.includes(side)) {
+      nextState = updateMorale(nextState, side === 'enemy' ? 'player' : 'enemy', rules.group.formation.breakMoraleDelta);
+    }
+    steps.push(makeStep(nextState, 'formation', {
+      actorId: actor.id,
+      affectedCellIds: [targetCell.id],
+      sourceName: 'formation',
+      message: previous && !previous.includes(side) ? 'formation_broken_and_taken' : 'formation_controlled',
+      visual: {
+        motif: 'array_node',
+        primaryTint: '#C9A96E',
+        motion: 'array_expand',
+        intensity: 'high',
+      },
+      tags: ['group', 'formation', side],
+    }));
+    nextState = markActorActed(nextState, actor.id);
+    return { state: appendSteps(nextState, steps), steps, validation };
+  }
+
+  if (action.type === 'observe') {
+    const revealLimit = rules.group.ambush.observeRevealCount;
+    const hiddenIds = nextState.units
+      .filter(unit => unit.hp > 0 && unit.revealed === false)
+      .slice(0, revealLimit)
+      .map(unit => unit.id);
+    const units = nextState.units.map(unit => hiddenIds.includes(unit.id) ? { ...unit, revealed: true } : unit);
+    nextState = {
+      ...nextState,
+      units,
+      grid: { ...nextState.grid, cells: withCellOccupants(nextState.grid.cells, units) },
+      ambush: nextState.ambush ? { ...nextState.ambush, revealed: hiddenIds.length > 0 || nextState.ambush.revealed } : nextState.ambush,
+    };
+    steps.push(makeStep(nextState, 'ambush', {
+      actorId: actor.id,
+      targetIds: hiddenIds,
+      affectedCellIds: validation.affectedCellIds,
+      sourceName: 'observe',
+      message: hiddenIds.length ? 'hidden_units_revealed' : 'battlefield_observed',
+      visual: {
+        motif: 'observe',
+        primaryTint: '#4B6E8B',
+        motion: 'scan_reveal',
+        intensity: 'subtle',
+      },
+      tags: ['group', 'observe', hiddenIds.length ? 'revealed' : 'intel'],
+    }));
+    nextState = markActorActed(nextState, actor.id);
+    return { state: appendSteps(nextState, steps), steps, validation };
+  }
+
+  return failureResolution(nextState, action, 'unsupported_action');
 }
 
 function executeRetreatAction(state: BattlefieldCombatState, action: BattlefieldAction, validation: BattlefieldActionValidation): BattlefieldActionResolution {
@@ -1085,6 +1598,8 @@ function executeRetreatAction(state: BattlefieldCombatState, action: Battlefield
   let chance = rules.escape.baseChance;
   if (isEdgeCell(actorCell)) chance += rules.escape.edgeBonus;
   if (actor.side === 'ally') chance += rules.escape.allySideBonus;
+  if (state.mode === 'group' && (state.objectives ?? []).some(objective => objective.status === 'active')) chance -= rules.group.retreat.objectivePenalty;
+  if (state.mode === 'group' && actorCell.flags.includes('cover')) chance += rules.group.retreat.allyCoverBonus;
   chance -= adjacentEnemies * rules.escape.enemyAdjacentPenalty;
   if (actor.statusEffects.includes('bound')) chance -= rules.escape.boundPenalty;
   chance = Math.max(rules.escape.minChance, Math.min(rules.escape.maxChance, chance));
@@ -1108,6 +1623,8 @@ function executeRetreatAction(state: BattlefieldCombatState, action: Battlefield
       phase: 'ended',
       result: { winner: 'escaped', reason: 'retreat_success', roundsTaken: nextState.round },
     };
+  } else {
+    nextState = markActorActed(nextState, actor.id);
   }
   nextState = appendSteps(nextState, [step]);
   return { state: nextState, steps: [step], validation };
@@ -1119,6 +1636,9 @@ export function executeBattlefieldAction(state: BattlefieldCombatState, action: 
   if (action.type === 'move') return executeMoveAction(state, action, validation);
   if (action.type === 'gu') return executeGuAction(state, action, validation);
   if (action.type === 'killer_move') return executeKillerMoveAction(state, action, validation);
+  if (action.type === 'assist' || action.type === 'guard' || action.type === 'rally' || action.type === 'formation' || action.type === 'observe') {
+    return executeGroupSupportAction(state, action, validation);
+  }
   if (action.type === 'retreat') return executeRetreatAction(state, action, validation);
   if (action.type === 'wait') {
     const step = makeStep(state, 'settlement', {
@@ -1132,9 +1652,189 @@ export function executeBattlefieldAction(state: BattlefieldCombatState, action: 
       },
       tags: ['wait'],
     });
-    return { state: appendSteps(state, [step]), steps: [step], validation };
+    return { state: appendSteps(markActorActed(state, action.actorId), [step]), steps: [step], validation };
   }
   return failureResolution(state, action, 'unsupported_action');
+}
+
+function chooseHostileTarget(state: BattlefieldCombatState, actor: BattlefieldUnit): BattlefieldUnit | undefined {
+  const visibleHostiles = state.units
+    .filter(unit => unit.hp > 0 && groupVisible(unit) && isHostile(actor, unit));
+  return visibleHostiles.sort((a, b) => (b.threat ?? 0) - (a.threat ?? 0) || a.hp - b.hp)[0];
+}
+
+function firstUsableGuAction(state: BattlefieldCombatState, actor: BattlefieldUnit, target: BattlefieldUnit): BattlefieldAction | null {
+  for (const guName of actor.guNames) {
+    const action: BattlefieldAction = {
+      type: 'gu',
+      actorId: actor.id,
+      guName,
+      targetCellId: target.cellId,
+      targetUnitIds: [target.id],
+    };
+    if (validateBattlefieldAction(state, action).ok) return action;
+  }
+  return null;
+}
+
+function enterDueThirdParties(state: BattlefieldCombatState): { state: BattlefieldCombatState; steps: BattleResolutionStep[] } {
+  let nextState = state;
+  const steps: BattleResolutionStep[] = [];
+  for (const party of nextState.thirdParties ?? []) {
+    if (party.entered || nextState.round < party.entryRound) continue;
+    const units = nextState.units.map(unit => party.unitIds.includes(unit.id) ? { ...unit, revealed: true } : unit);
+    nextState = {
+      ...nextState,
+      units,
+      grid: { ...nextState.grid, cells: withCellOccupants(nextState.grid.cells, units) },
+      thirdParties: (nextState.thirdParties ?? []).map(item => item.id === party.id ? { ...item, entered: true } : item),
+    };
+    steps.push(makeStep(nextState, 'third_party', {
+      targetIds: party.unitIds,
+      sourceName: party.id,
+      message: 'third_party_entered',
+      visual: {
+        motif: 'third_party_entry',
+        primaryTint: '#7A8EA8',
+        motion: 'enter_field',
+        intensity: 'high',
+      },
+      tags: ['group', 'third_party', party.stance],
+    }));
+  }
+  return { state: nextState, steps };
+}
+
+export function resolveBattlefieldAmbushOpening(state: BattlefieldCombatState): BattlefieldActionResolution {
+  let nextState = cloneState(state);
+  const ambush = nextState.ambush;
+  if (!ambush || ambush.openingResolved) {
+    return {
+      state: nextState,
+      steps: [],
+      validation: defaultValidation({ type: 'observe', actorId: 'system' }, { ok: true, tags: ['ambush', 'noop'] }),
+    };
+  }
+  const steps: BattleResolutionStep[] = [];
+  const ambushers = ambush.hiddenUnitIds
+    .map(id => getUnit(nextState, id))
+    .filter((unit): unit is BattlefieldUnit => !!unit && unit.hp > 0);
+  if (!ambush.revealed) {
+    nextState = updateMorale(nextState, ambush.side === 'enemy' ? 'player' : 'enemy', -rules.group.morale.ambushLoss);
+    for (const ambusher of ambushers) {
+      const target = chooseHostileTarget(nextState, ambusher);
+      if (!target) continue;
+      const damage = Math.max(1, Math.round((ambusher.attack ?? rules.defaults.attack) * 0.35 * rules.group.ambush.firstStrikeDamageMultiplier));
+      const damagedTarget = { ...target, hp: Math.max(0, target.hp - damage) };
+      nextState = updateUnit(nextState, damagedTarget);
+      steps.push(makeStep(nextState, 'ambush', {
+        actorId: ambusher.id,
+        targetIds: [target.id],
+        affectedCellIds: [target.cellId],
+        damage,
+        sourceName: 'ambush_opening',
+        message: 'ambush_first_strike',
+        visual: {
+          motif: 'ambush',
+          primaryTint: '#8B3A3A',
+          motion: 'burst_from_cover',
+          intensity: 'high',
+        },
+        tags: ['group', 'ambush', 'first_strike'],
+      }));
+    }
+  } else {
+    steps.push(makeStep(nextState, 'ambush', {
+      targetIds: ambushers.map(unit => unit.id),
+      sourceName: 'ambush_opening',
+      message: 'ambush_revealed_before_opening',
+      visual: {
+        motif: 'ambush_revealed',
+        primaryTint: '#4B6E8B',
+        motion: 'reveal',
+        intensity: 'subtle',
+      },
+      tags: ['group', 'ambush', 'revealed'],
+    }));
+  }
+  nextState = {
+    ...nextState,
+    ambush: { ...ambush, openingResolved: true, revealed: true },
+    units: nextState.units.map(unit => ambush.hiddenUnitIds.includes(unit.id) ? { ...unit, revealed: true } : unit),
+  };
+  nextState = {
+    ...nextState,
+    grid: { ...nextState.grid, cells: withCellOccupants(nextState.grid.cells, nextState.units) },
+  };
+  const settled = settleIfNeeded(appendSteps(nextState, steps));
+  const allSteps = settled.step ? [...steps, settled.step] : steps;
+  return {
+    state: settled.state,
+    steps: allSteps,
+    validation: defaultValidation({ type: 'observe', actorId: 'system' }, { ok: true, tags: ['ambush'] }),
+  };
+}
+
+export function resolveBattlefieldEnemyTurn(state: BattlefieldCombatState): BattlefieldActionResolution {
+  let nextState = cloneState(state);
+  const entry = enterDueThirdParties(nextState);
+  nextState = entry.state;
+  const steps: BattleResolutionStep[] = [...entry.steps];
+
+  const enemies = listBattlefieldTurnOrder(nextState).filter(unit => unit.side === 'enemy' && unit.hp > 0 && groupVisible(unit));
+  for (const enemy of enemies) {
+    const targets = nextState.units
+      .filter(unit => unit.hp > 0 && groupVisible(unit) && isHostile(enemy, unit))
+      .sort((a, b) => (b.threat ?? 0) - (a.threat ?? 0) || a.hp - b.hp);
+    const action = targets.map(target => firstUsableGuAction(nextState, enemy, target)).find(Boolean) ?? null;
+    if (!action) continue;
+    const resolution = executeBattlefieldAction(nextState, action);
+    nextState = resolution.state;
+    steps.push(...resolution.steps);
+    if (nextState.phase === 'ended') break;
+  }
+
+  const thirdParties = listBattlefieldTurnOrder(nextState).filter(unit => unit.side === 'neutral' && unit.hp > 0 && unit.revealed !== false);
+  for (const third of thirdParties) {
+    const target = nextState.units
+      .filter(unit => unit.hp > 0 && unit.side !== 'neutral')
+      .sort((a, b) => (b.threat ?? 0) - (a.threat ?? 0))[0];
+    if (!target) continue;
+    const damage = Math.max(1, Math.round((third.attack ?? rules.defaults.attack) * rules.group.thirdParty.damageMultiplier * 0.25));
+    const damaged = { ...target, hp: Math.max(0, target.hp - damage) };
+    nextState = updateUnit(nextState, damaged);
+    const step = makeStep(nextState, 'third_party', {
+      actorId: third.id,
+      targetIds: [target.id],
+      affectedCellIds: [target.cellId],
+      damage,
+      sourceName: 'third_party',
+      message: 'third_party_pressure',
+      visual: {
+        motif: 'third_party',
+        primaryTint: '#7A8EA8',
+        motion: 'intervene',
+        intensity: 'normal',
+      },
+      tags: ['group', 'third_party'],
+    });
+    nextState = appendSteps(nextState, [step]);
+    steps.push(step);
+  }
+
+  nextState = {
+    ...nextState,
+    phase: nextState.phase === 'ended' ? nextState.phase : 'player_turn',
+    actedUnitIdsThisRound: [],
+    activeUnitId: nextFriendlyActor(nextState, []),
+  };
+  const settled = settleIfNeeded(nextState);
+  const allSteps = settled.step ? [...steps, settled.step] : steps;
+  return {
+    state: settled.state,
+    steps: allSteps,
+    validation: defaultValidation({ type: 'wait', actorId: 'enemy_turn' }, { ok: true, tags: ['enemy_turn', 'group'] }),
+  };
 }
 
 export function advanceBattlefieldRound(state: BattlefieldCombatState): BattlefieldActionResolution {
@@ -1143,12 +1843,21 @@ export function advanceBattlefieldRound(state: BattlefieldCombatState): Battlefi
     ...nextState,
     round: nextState.round + 1,
     units: nextState.units.map(tickCooldowns),
+    actedUnitIdsThisRound: nextState.mode === 'group' ? [] : nextState.actedUnitIdsThisRound,
     activeEffects: (nextState.activeEffects ?? [])
       .map(effect => ({ ...effect, remainingTurns: effect.remainingTurns - 1 }))
       .filter(effect => effect.remainingTurns > 0),
   };
+  if (nextState.mode === 'group') {
+    nextState = { ...nextState, activeUnitId: nextFriendlyActor(nextState, []) };
+  }
 
   const steps: BattleResolutionStep[] = [];
+  if (nextState.mode === 'group') {
+    const entry = enterDueThirdParties(nextState);
+    nextState = entry.state;
+    steps.push(...entry.steps);
+  }
   const remainingPending: BattlefieldPendingAction[] = [];
   for (const pending of nextState.pendingActions ?? []) {
     const actor = getUnit(nextState, pending.actorId);

@@ -24,6 +24,7 @@ declare global {
       loadSave: (save: E2eSave) => { success: boolean; error?: string };
       getStateSummary: () => Record<string, unknown>;
       startBattlefieldDemo: () => Record<string, unknown>;
+      startBattlefieldGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
@@ -103,10 +104,16 @@ function summarizeStore(): Record<string, unknown> {
     },
     battlefieldCombat: state.battlefieldCombatState ? {
       battleId: state.battlefieldCombatState.battleId,
+      mode: state.battlefieldCombatState.mode || 'duel',
       phase: state.battlefieldCombatState.phase,
       round: state.battlefieldCombatState.round,
+      activeUnitId: state.battlefieldCombatState.activeUnitId || null,
       cellCount: Array.isArray(state.battlefieldCombatState.grid?.cells) ? state.battlefieldCombatState.grid.cells.length : 0,
       unitCount: Array.isArray(state.battlefieldCombatState.units) ? state.battlefieldCombatState.units.length : 0,
+      hiddenUnitCount: Array.isArray(state.battlefieldCombatState.units) ? state.battlefieldCombatState.units.filter((unit: any) => unit.revealed === false).length : 0,
+      objectiveCount: Array.isArray(state.battlefieldCombatState.objectives) ? state.battlefieldCombatState.objectives.length : 0,
+      thirdPartyCount: Array.isArray(state.battlefieldCombatState.thirdParties) ? state.battlefieldCombatState.thirdParties.length : 0,
+      morale: state.battlefieldCombatState.morale || null,
       stepCount: Array.isArray(state.battlefieldPlaybackSteps) ? state.battlefieldPlaybackSteps.length : 0,
       traceCursor: Number(state.battlefieldTraceCursor || 0),
       result: state.battlefieldCombatState.result || null,
@@ -166,6 +173,15 @@ export function installE2eHarness(): void {
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldDemo?.();
+      return summarizeStore();
+    },
+    startBattlefieldGroupDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      store.setScreenState?.('game_play');
+      store.setGameMode?.('canon');
+      store.initBattlefieldGroupDemo?.();
       return summarizeStore();
     },
     startNarrativeGuAffordanceDemo() {

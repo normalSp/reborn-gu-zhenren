@@ -69,4 +69,36 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     harness.get().executeSelectedBattlefieldAction();
     expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.tags.includes('retreat'))).toBe(true);
   });
+
+  it('creates a non-persistent group demo, switches active actor, and appends group steps', () => {
+    const harness = createHarness();
+    harness.get().initBattlefieldGroupDemo();
+    const battle = harness.get().battlefieldCombatState;
+
+    expect(battle.mode).toBe('group');
+    expect(battle.grid.cells).toHaveLength(15);
+    expect(battle.units.filter((unit: any) => unit.side === 'ally' || unit.side === 'player').length).toBeGreaterThan(1);
+    expect(battle.units.some((unit: any) => unit.side === 'neutral')).toBe(true);
+    expect(battle.objectives.length).toBeGreaterThan(0);
+    expect(EXCLUDE_FROM_SAVE.has('battlefieldCombatState')).toBe(true);
+
+    const formationCards = buildBattlefieldActionCards(battle, 'player', 'formation');
+    expect(formationCards.some(card => card.action?.type === 'guard')).toBe(true);
+    expect(formationCards.some(card => card.action?.type === 'assist')).toBe(true);
+    expect(formationCards.some(card => card.action?.type === 'rally')).toBe(true);
+    expect(formationCards.some(card => card.action?.type === 'formation')).toBe(true);
+
+    harness.get().selectBattlefieldAction({ type: 'observe', actorId: 'player' });
+    harness.get().executeSelectedBattlefieldAction();
+    expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'ambush')).toBe(true);
+
+    harness.get().selectBattlefieldActor('ally_guard');
+    expect(harness.get().battlefieldCombatState.activeUnitId).toBe('ally_guard');
+    const allyCards = buildBattlefieldActionCards(harness.get().battlefieldCombatState, 'ally_guard', 'formation');
+    expect(allyCards.length).toBeGreaterThan(0);
+
+    harness.get().selectBattlefieldAction({ type: 'rally', actorId: 'ally_guard' });
+    harness.get().executeSelectedBattlefieldAction();
+    expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'morale')).toBe(true);
+  });
 });

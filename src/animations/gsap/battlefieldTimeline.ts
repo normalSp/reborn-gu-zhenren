@@ -12,8 +12,9 @@ function intensityScale(step: BattleResolutionStep): number {
 }
 
 function durationFor(step: BattleResolutionStep): number {
-  if (step.kind === 'killer_move') return 0.9;
-  if (step.kind === 'settlement') return 1;
+  if (step.kind === 'killer_move' || step.kind === 'formation' || step.kind === 'third_party') return 0.9;
+  if (step.kind === 'settlement' || step.kind === 'ambush') return 1;
+  if (step.kind === 'morale' || step.kind === 'guard' || step.kind === 'assist') return 0.62;
   if (step.kind === 'counter' || step.kind === 'failure') return 0.55;
   return 0.42;
 }
@@ -44,7 +45,7 @@ export function playBattlefieldStepTimeline(gsap: GsapModule, step: BattleResolu
   });
 
   const timeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
-  if (step.kind === 'killer_move' || step.kind === 'settlement') {
+  if (step.kind === 'killer_move' || step.kind === 'settlement' || step.kind === 'ambush' || step.kind === 'formation' || step.kind === 'third_party') {
     timeline
       .to(ring, { opacity: 0.95, scale: scale * 1.22, duration: duration * 0.42 })
       .to(flare, { opacity: 0.75, scale: scale * 1.8, duration: duration * 0.5 }, '<')

@@ -1163,10 +1163,26 @@ export interface BattlefieldUnit {
   essence?: { current: number; max: number; type: 'primeval' | 'immortal' };
   guNames: string[];
   statusEffects: string[];
+  role?: 'leader' | 'vanguard' | 'support' | 'scout' | 'guard' | 'objective' | 'third_party';
+  morale?: number;
+  threat?: number;
+  guardTargetId?: string;
+  revealed?: boolean;
+  objectiveTags?: string[];
   intent?: string;
 }
 
-export type BattlefieldActionType = 'move' | 'gu' | 'killer_move' | 'wait' | 'retreat';
+export type BattlefieldActionType =
+  | 'move'
+  | 'gu'
+  | 'killer_move'
+  | 'wait'
+  | 'retreat'
+  | 'assist'
+  | 'guard'
+  | 'rally'
+  | 'formation'
+  | 'observe';
 
 export interface BattlefieldAction {
   type: BattlefieldActionType;
@@ -1217,6 +1233,33 @@ export interface BattlefieldActiveEffect {
   tags: string[];
 }
 
+export interface BattlefieldObjective {
+  id: string;
+  type: 'protect' | 'escort' | 'defeat_key';
+  label: string;
+  status: 'active' | 'succeeded' | 'failed';
+  unitId?: string;
+  targetUnitId?: string;
+  cellId?: string;
+  requiredEdge?: boolean;
+}
+
+export interface BattlefieldAmbushState {
+  side: 'player' | 'ally' | 'enemy' | 'neutral';
+  revealed: boolean;
+  openingResolved: boolean;
+  hiddenUnitIds: string[];
+  scoutDifficulty?: number;
+}
+
+export interface BattlefieldThirdPartyState {
+  id: string;
+  unitIds: string[];
+  entryRound: number;
+  entered: boolean;
+  stance: 'neutral' | 'attack_high_threat' | 'protect_objective';
+}
+
 export interface BattlefieldCombatResult {
   winner: 'player' | 'enemy' | 'escaped' | null;
   reason: string;
@@ -1233,12 +1276,23 @@ export interface BattlefieldCombatState {
   battleId: string;
   round: number;
   phase: 'scout' | 'deploy' | 'player_turn' | 'enemy_turn' | 'resolution' | 'ended';
+  mode?: 'duel' | 'group';
   grid: {
     width: 5;
     height: 3;
     cells: BattlefieldCell[];
   };
   units: BattlefieldUnit[];
+  activeUnitId?: string;
+  actedUnitIdsThisRound?: string[];
+  morale?: {
+    player: number;
+    enemy: number;
+    neutral?: number;
+  };
+  objectives?: BattlefieldObjective[];
+  ambush?: BattlefieldAmbushState;
+  thirdParties?: BattlefieldThirdPartyState[];
   activeTerrainId?: string;
   activeFormationId?: string;
   seed?: string | number;
@@ -1262,6 +1316,12 @@ export type BattleResolutionStepKind =
   | 'resource_spend'
   | 'failure'
   | 'morale'
+  | 'assist'
+  | 'guard'
+  | 'ambush'
+  | 'formation'
+  | 'objective'
+  | 'third_party'
   | 'settlement';
 
 export interface BattleResolutionStep {
