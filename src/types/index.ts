@@ -1115,10 +1115,80 @@ export interface BattlefieldUnit {
   path: string;
   hp: number;
   maxHp: number;
+  attack?: number;
+  defense?: number;
+  accuracy?: number;
+  evasion?: number;
+  daoMarks?: number | Record<string, number>;
+  cooldowns?: Record<string, number>;
+  killerMoveNames?: string[];
   essence?: { current: number; max: number; type: 'primeval' | 'immortal' };
   guNames: string[];
   statusEffects: string[];
   intent?: string;
+}
+
+export type BattlefieldActionType = 'move' | 'gu' | 'killer_move' | 'wait' | 'retreat';
+
+export interface BattlefieldAction {
+  type: BattlefieldActionType;
+  actorId: string;
+  targetCellId?: string;
+  targetUnitIds?: string[];
+  guName?: string;
+  killerMoveName?: string;
+  sceneGate?: boolean;
+  pendingActionId?: string;
+}
+
+export interface BattlefieldActionValidation {
+  ok: boolean;
+  reason?: string;
+  actorId?: string;
+  actionType?: BattlefieldActionType;
+  validTargetCellIds: string[];
+  affectedCellIds: string[];
+  targetUnitIds: string[];
+  resourceCost?: GuExpressionCost;
+  cooldown?: number;
+  sourceName?: string;
+  tags: string[];
+}
+
+export interface BattlefieldPendingAction {
+  id: string;
+  actorId: string;
+  type: 'killer_move';
+  sourceName: string;
+  targetCellId?: string;
+  targetUnitIds: string[];
+  affectedCellIds: string[];
+  remainingTurns: number;
+  interruptible: boolean;
+  resourceCost?: GuExpressionCost;
+}
+
+export interface BattlefieldActiveEffect {
+  id: string;
+  sourceName: string;
+  actorId?: string;
+  targetIds?: string[];
+  affectedCellIds: string[];
+  remainingTurns: number;
+  statusEffects: string[];
+  tags: string[];
+}
+
+export interface BattlefieldCombatResult {
+  winner: 'player' | 'enemy' | 'escaped' | null;
+  reason: string;
+  roundsTaken: number;
+}
+
+export interface BattlefieldActionResolution {
+  state: BattlefieldCombatState;
+  steps: BattleResolutionStep[];
+  validation: BattlefieldActionValidation;
 }
 
 export interface BattlefieldCombatState {
@@ -1133,6 +1203,10 @@ export interface BattlefieldCombatState {
   units: BattlefieldUnit[];
   activeTerrainId?: string;
   activeFormationId?: string;
+  seed?: string | number;
+  activeEffects?: BattlefieldActiveEffect[];
+  pendingActions?: BattlefieldPendingAction[];
+  result?: BattlefieldCombatResult | null;
   eventWindows: BattleTracePhase[];
   pendingResolution: BattleResolutionStep[];
 }

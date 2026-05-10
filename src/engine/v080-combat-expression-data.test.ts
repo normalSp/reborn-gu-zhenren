@@ -2,14 +2,22 @@ import { describe, expect, it } from 'vitest';
 import guDatabaseRaw from '../canon/gu-database.json';
 import guExpressionSpecsRaw from '../canon/gu-expression-specs.json';
 import killerMoveExpressionSpecsRaw from '../canon/killer-move-expression-specs.json';
+import battlefieldCombatRulesRaw from '../canon/battlefield-combat-rules.json';
 import { isRuntimePathAllowed } from './path-registry';
 import {
   buildGuResolutionStepDraft,
   getGuExpressionSpec,
+  isGuNormalCombatUsable,
+  isGuPassive,
+  isGuSceneGated,
   listGuExpressionSpecs,
   listKillerMoveExpressionSpecs,
   listSceneUtilitiesForGu,
 } from './gu-expression-registry';
+import {
+  createBattlefieldCombatState,
+  listBattlefieldActionTargets,
+} from './v080-battlefield-combat-engine';
 
 const REQUIRED_GU = [
   '月光蛊', '月芒蛊', '小光蛊', '骨枪蛊', '熊力蛊', '蛮力天牛蛊', '水龙蛊', '火鸦蛊', '雷翼蛊', '春雷蛊', '岩枪蛊', '金龙蛊',
@@ -123,5 +131,71 @@ describe('v0.8.0 Gu expression data foundation', () => {
   it('keeps JSON metadata synchronized with entry counts', () => {
     expect((guExpressionSpecsRaw as any)._meta.entryCount).toBe((guExpressionSpecsRaw as any).entries.length);
     expect((killerMoveExpressionSpecsRaw as any)._meta.entryCount).toBe((killerMoveExpressionSpecsRaw as any).entries.length);
+  });
+
+  it('supports every Gu and killer move board shape in battlefield combat rules', () => {
+    const rules = battlefieldCombatRulesRaw as any;
+    const guShapes = new Set(Object.keys(rules.guShapes));
+    const killerMoveShapes = new Set(Object.keys(rules.killerMoveShapes));
+
+    for (const spec of listGuExpressionSpecs()) {
+      expect(guShapes.has(spec.range.shape), `${spec.guName}.range.shape=${spec.range.shape}`).toBe(true);
+    }
+    for (const move of listKillerMoveExpressionSpecs()) {
+      expect(killerMoveShapes.has(move.boardPattern.shape), `${move.moveName}.boardPattern.shape=${move.boardPattern.shape}`).toBe(true);
+    }
+  });
+
+  it('lets the battlefield target enumerator handle all direct Gu while excluding passive and scene-gated buttons', () => {
+    const specs = listGuExpressionSpecs();
+    const directGuNames = specs.filter(isGuNormalCombatUsable).map(spec => spec.guName);
+    const state = createBattlefieldCombatState({
+      battleId: 'expression-target-enumeration',
+      seed: 'expression-target-enumeration',
+      units: [
+        {
+          id: 'player',
+          name: 'player',
+          side: 'player',
+          cellId: 'c0_1',
+          realmNum: 3,
+          path: '光道',
+          hp: 100,
+          maxHp: 100,
+          essence: { current: 1000, max: 1000, type: 'primeval' },
+          guNames: directGuNames,
+          killerMoveNames: [],
+          statusEffects: [],
+        },
+        {
+          id: 'enemy',
+          name: 'enemy',
+          side: 'enemy',
+          cellId: 'c2_1',
+          realmNum: 3,
+          path: '土道',
+          hp: 100,
+          maxHp: 100,
+          essence: { current: 100, max: 100, type: 'primeval' },
+          guNames: [],
+          killerMoveNames: [],
+          statusEffects: [],
+        },
+      ],
+    });
+
+    for (const spec of specs.filter(isGuNormalCombatUsable)) {
+      const targets = listBattlefieldActionTargets(state, {
+        type: 'gu',
+        actorId: 'player',
+        guName: spec.guName,
+      });
+      expect(targets.tags, spec.guName).toContain(spec.range.shape);
+      expect(Array.isArray(targets.validTargetCellIds), spec.guName).toBe(true);
+    }
+
+    for (const spec of specs.filter(spec => isGuPassive(spec) || isGuSceneGated(spec))) {
+      expect(isGuNormalCombatUsable(spec), spec.guName).toBe(false);
+    }
   });
 });

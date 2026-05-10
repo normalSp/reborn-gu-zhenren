@@ -31,6 +31,32 @@ export function getGuExpressionSpec(guName: string): GuExpressionSpec | undefine
   return guByName.get(guName);
 }
 
+function resolveGuSpec(specOrName: GuExpressionSpec | string | undefined): GuExpressionSpec | undefined {
+  if (!specOrName) return undefined;
+  return typeof specOrName === 'string' ? getGuExpressionSpec(specOrName) : specOrName;
+}
+
+export function isGuPassive(specOrName: GuExpressionSpec | string | undefined): boolean {
+  return resolveGuSpec(specOrName)?.availability === 'passive';
+}
+
+export function isGuSceneGated(specOrName: GuExpressionSpec | string | undefined): boolean {
+  return resolveGuSpec(specOrName)?.availability === 'scene_gated';
+}
+
+export function isGuForbidden(specOrName: GuExpressionSpec | string | undefined): boolean {
+  return resolveGuSpec(specOrName)?.realmScope === 'mortal_forbidden';
+}
+
+export function isGuNormalCombatUsable(specOrName: GuExpressionSpec | string | undefined): boolean {
+  const spec = resolveGuSpec(specOrName);
+  return !!spec && spec.availability === 'direct' && spec.realmScope === 'mortal';
+}
+
+export function listNormalCombatGuExpressionSpecs(): GuExpressionSpec[] {
+  return guSpecFile.entries.filter(isGuNormalCombatUsable);
+}
+
 export function listKillerMoveExpressionSpecs(): KillerMoveExpressionSpec[] {
   return killerMoveSpecFile.entries;
 }

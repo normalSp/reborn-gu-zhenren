@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "version": "v0.8.0-a1",
+    "description": "Pure local mortal battlefield rules for the v0.8 5x3 vertical slice.",
+    "saveFormatImpact": "none"
+  },
+  "grid": {
+    "width": 5,
+    "height": 3
+  },
+  "defaults": {
+    "terrainId": "open",
+    "movementRange": 1,
+    "attack": 30,
+    "defense": 10,
+    "accuracy": 70,
+    "evasion": 30,
+    "daoMarks": 0,
+    "baseGuDamageMultiplier": 1.15,
+    "baseKillerMoveDamageMultiplier": 1.65,
+    "statusDuration": 2,
+    "hitCoverPenalty": 0.18,
+    "coverDamageMultiplier": 0.85,
+    "arrayNodeDamageMultiplier": 1.08,
+    "hazardDamageOnEnter": 4,
+    "hinderedHitPenalty": 0.12,
+    "favoredHitBonus": 0.08,
+    "favoredDamageMultiplier": 1.12,
+    "hinderedDamageMultiplier": 0.82
+  },
+  "escape": {
+    "baseChance": 0.45,
+    "edgeBonus": 0.25,
+    "allySideBonus": 0.1,
+    "enemyAdjacentPenalty": 0.18,
+    "boundPenalty": 0.3,
+    "minChance": 0.05,
+    "maxChance": 0.9
+  },
+  "terrainTags": {
+    "open": ["open"],
+    "dense_forest": ["dense_forest", "dense_cover"],
+    "mountain_pass": ["mountain_pass", "stone_floor", "narrow_pass"],
+    "riverbank": ["riverbank", "water"],
+    "formation_ruins": ["array_node", "formation"],
+    "auction_hall": ["room", "safe_cover"],
+    "night_market": ["night", "indoor"],
+    "moonlit_courtyard": ["open", "moonlight"]
+  },
+  "cellFlagTags": {
+    "cover": ["cover", "dense_cover", "safe_cover"],
+    "hazard": ["hazard", "trap_field"],
+    "array_node": ["array_node", "formation"],
+    "concealment": ["concealment", "dense_cover"],
+    "dao_field": ["dao_field"]
+  },
+  "cooldown": {
+    "tick": "round_start",
+    "minimumActiveCooldown": 1
+  },
+  "pending": {
+    "defaultInterruptBacklashDamage": 3,
+    "interruptionCooldownPenalty": 1
+  },
+  "guShapes": {
+    "line": { "targetPolicy": "aligned", "blockedByCover": true, "allowsMove": false },
+    "cone": { "targetPolicy": "fan", "blockedByCover": true, "allowsMove": false },
+    "self": { "targetPolicy": "self", "blockedByCover": false, "allowsMove": false },
+    "adjacent": { "targetPolicy": "adjacent", "blockedByCover": false, "allowsMove": false },
+    "arc": { "targetPolicy": "range", "blockedByCover": false, "allowsMove": false },
+    "dash": { "targetPolicy": "line_empty", "blockedByCover": false, "allowsMove": true },
+    "cell": { "targetPolicy": "cell", "blockedByCover": false, "allowsMove": false },
+    "self_or_adjacent": { "targetPolicy": "self_or_adjacent", "blockedByCover": false, "allowsMove": false },
+    "line_wall": { "targetPolicy": "aligned", "blockedByCover": true, "allowsMove": false },
+    "teleport_short": { "targetPolicy": "range_empty", "blockedByCover": false, "allowsMove": true },
+    "touch_or_scene": { "targetPolicy": "self_or_adjacent", "blockedByCover": false, "allowsMove": false },
+    "splash": { "targetPolicy": "range_area", "blockedByCover": false, "allowsMove": false },
+    "sight": { "targetPolicy": "line_of_sight", "blockedByCover": true, "allowsMove": false },
+    "scene": { "targetPolicy": "scene_gate", "blockedByCover": false, "allowsMove": false },
+    "aura": { "targetPolicy": "around_self", "blockedByCover": false, "allowsMove": false },
+    "zone": { "targetPolicy": "range_area", "blockedByCover": false, "allowsMove": false }
+  },
+  "killerMoveShapes": {
+    "multi_line": { "targetPolicy": "aligned_area", "blockedByCover": true },
+    "self": { "targetPolicy": "self", "blockedByCover": false },
+    "zone": { "targetPolicy": "range_area", "blockedByCover": false },
+    "aura": { "targetPolicy": "around_self", "blockedByCover": false },
+    "line_pull": { "targetPolicy": "aligned", "blockedByCover": true },
+    "moving_column": { "targetPolicy": "aligned_area", "blockedByCover": true },
+    "dome": { "targetPolicy": "self", "blockedByCover": false },
+    "self_aura": { "targetPolicy": "around_self", "blockedByCover": false },
+    "pre_battle": { "targetPolicy": "self", "blockedByCover": false },
+    "adjacent": { "targetPolicy": "adjacent", "blockedByCover": false },
+    "sight": { "targetPolicy": "line_of_sight", "blockedByCover": true },
+    "shadow_path": { "targetPolicy": "range_empty", "blockedByCover": false },
+    "scene_ritual": { "targetPolicy": "scene_gate", "blockedByCover": false },
+    "array_zone": { "targetPolicy": "range_area", "blockedByCover": false }
+  }
+}
