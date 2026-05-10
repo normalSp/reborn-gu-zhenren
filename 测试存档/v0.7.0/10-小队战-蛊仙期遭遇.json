@@ -1,6 +1,6 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-10T01:20:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "东海散仙·沈照",
     "realm": "六转初阶",
@@ -49,23 +49,80 @@
       "essenceType": "immortal"
     },
     "aperture": {
-      "type": "immortal",
+      "type": "福地",
       "area_mu": 5200,
       "time_flow_ratio": 18,
-      "resource_points": [
+      "grade": "中等福地",
+      "resource_nodes": [
         {
           "id": "rp_tide_lotus",
+          "type": "水道",
           "name": "潮生莲池",
-          "path": "水道",
-          "level": 2,
-          "output": {
-            "月潮露": 2
-          }
+          "output_rate": 2,
+          "quality": 70,
+          "grade": "仙材",
+          "active": true
         }
-      ]
+      ],
+      "dao_mark_density": {
+        "水道": 820,
+        "木道": 260
+      },
+      "next_disaster_type": "地火风灾",
+      "disaster_countdown": 48,
+      "status": "稳定"
     },
     "apertureInventory": {
-      "gu": [],
+      "gu": [
+        {
+          "id": "fixture_10_小队战_蛊仙期遭遇_1",
+          "specId": "定仙游",
+          "name": "定仙游",
+          "tier": 6,
+          "path": "宇道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        },
+        {
+          "id": "fixture_10_小队战_蛊仙期遭遇_2",
+          "specId": "察运蛊",
+          "name": "察运蛊",
+          "tier": 6,
+          "path": "运道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        },
+        {
+          "id": "fixture_10_小队战_蛊仙期遭遇_3",
+          "specId": "搜魂蛊",
+          "name": "搜魂蛊",
+          "tier": 7,
+          "path": "魂道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        }
+      ],
       "materials": {},
       "immortalMaterials": {
         "月潮露": 6,
@@ -281,6 +338,54 @@
         ]
       },
       "result": null
+    },
+    "inventory": [],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "immortalEssenceStones": 30,
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "afternoon",
+      "day": 29,
+      "month": 6,
+      "year": 1,
+      "season": "summer"
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "materials": {
+      "普通蛊材": 6,
+      "精品蛊材": 3
+    },
+    "immortalMaterials": {},
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-b 手测：蛊仙期小队战，验证仙元/仙元石区分、宝黄天门槛、仙蛊/杀招门槛、小队奖励不破坏经济。（中文命名副本：10-小队战-蛊仙期遭遇）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为六转初阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
     }
   }
 }

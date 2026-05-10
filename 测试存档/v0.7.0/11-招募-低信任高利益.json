@@ -1,6 +1,6 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-10T01:20:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "北原客卿·赫连微",
     "realm": "四转初阶",
@@ -138,6 +138,165 @@
         "summary": "手测目标：选择巴图尔旧部入队，应触发 mercenary 报酬 480 元石；游牧斥候应拒绝；负伤护卫应因重伤不可入队。",
         "importance": "normal"
       }
-    ]
+    ],
+    "inventory": [
+      {
+        "id": "fixture_11-招募-低信任高利益_1",
+        "specId": "白豕蛊",
+        "name": "白豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_11-招募-低信任高利益_2",
+        "specId": "黑豕蛊",
+        "name": "黑豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_11-招募-低信任高利益_3",
+        "specId": "蛮力天牛蛊",
+        "name": "蛮力天牛蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_11-招募-低信任高利益_4",
+        "specId": "熊力蛊",
+        "name": "熊力蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_11-招募-低信任高利益_5",
+        "specId": "黑鬃蛊",
+        "name": "黑鬃蛊",
+        "tier": 2,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_11-招募-低信任高利益_6",
+        "specId": "力气蛊",
+        "name": "力气蛊",
+        "tier": 2,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 58,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "immortalEssenceStones": 0,
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "materials": {
+      "普通蛊材": 6,
+      "精品蛊材": 3
+    },
+    "immortalMaterials": {},
+    "aperture": {
+      "type": "mortal",
+      "rank": 4,
+      "subRank": "初阶",
+      "primevalSea": {
+        "color": "#c9a84a",
+        "colorName": "黄金",
+        "fillPercent": 70
+      },
+      "apertureWall": {
+        "state": "坚实",
+        "opacity": 1,
+        "description": "窍壁完整，真元流转自如。"
+      },
+      "capacity": 12,
+      "carriedGu": 6,
+      "capacityLocked": false
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-b 手测：低信任高利益招募，验证 mercenary 评估、元石扣款、AP 消耗、岗位暂停和拒绝原因。（中文命名副本：11-招募-低信任高利益）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转初阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
+    }
   }
 }

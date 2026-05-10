@@ -18,10 +18,18 @@ const StateAttributeAction = z.object({
   value: z.number(),
 });
 
-const RealmUpdate = z.object({
-  action: z.literal('set'),
+const RealmUpdate = z.preprocess((value) => {
+  if (typeof value === 'string') {
+    return { action: 'set', value };
+  }
+  if (value && typeof value === 'object' && 'value' in value && !('action' in value)) {
+    return { ...(value as Record<string, unknown>), action: 'set' };
+  }
+  return value;
+}, z.object({
+  action: z.literal('set').optional().default('set'),
   value: z.string(),
-});
+}));
 
 const AttributesUpdate = z.object({
   资质: StateAttributeAction.optional(),

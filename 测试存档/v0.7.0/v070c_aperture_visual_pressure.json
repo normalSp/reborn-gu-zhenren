@@ -1,16 +1,16 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-08T21:30:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
-    "playerName": "v0.7.0-c·空窍压力可视化",
+    "playerName": "纯梦求真体专项走查",
     "realm": "四转高阶",
     "turn": 80,
     "gameMode": "canon",
-    "description": "v0.7.0-c 专项手测：空窍压力可视化"
+    "description": "v0.7.0-c 专项手测：空窍压力可视化｜隐藏第十一绝体：纯梦求真体"
   },
   "state": {
     "profile": {
-      "name": "v0.7.0-c·空窍压力可视化",
+      "name": "纯梦求真体专项走查",
       "realm": {
         "grand": 4,
         "sub": "高阶",
@@ -33,17 +33,13 @@
       "season": "summer"
     },
     "pathBuild": {
-      "primary": "力道",
-      "secondary": [
-        "金道"
-      ],
+      "primary": "梦道",
+      "secondary": [],
       "path_levels": {
-        "力道": "精通",
-        "金道": "熟练"
+        "梦道": "精通"
       },
       "dao_marks": {
-        "力道": 180,
-        "金道": 80
+        "梦道": 80
       }
     },
     "vitals": {
@@ -146,27 +142,104 @@
       "精品蛊材": 3
     },
     "immortalMaterials": {},
-    "mortalAperture": {
+    "flags": {
+      "apertureVisualTest": true
+    },
+    "inventory": [
+      {
+        "id": "fixture_v070c_aperture_visual_pressure_1",
+        "specId": "月光蛊",
+        "name": "月光蛊",
+        "tier": 1,
+        "path": "光道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_aperture_visual_pressure_2",
+        "specId": "酒虫",
+        "name": "酒虫",
+        "tier": 1,
+        "path": "食道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_aperture_visual_pressure_3",
+        "specId": "侦察蛊",
+        "name": "侦察蛊",
+        "tier": 1,
+        "path": "智道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "attributes": {
+      "资质": 10,
+      "体魄": 7,
+      "心智": 9,
+      "气运": 6
+    },
+    "aperture": {
       "type": "mortal",
       "rank": 4,
       "subRank": "高阶",
       "primevalSea": {
-        "color": "#8fd7ff",
+        "color": "#e5a2ff",
         "colorName": "黄金",
-        "fillPercent": 104
+        "fillPercent": 100
       },
       "apertureWall": {
         "state": "壁薄如纸",
-        "opacity": 0.32,
-        "description": "十绝体空窍压力可视化专项"
+        "opacity": 0.36,
+        "description": "纯梦求真体高压空窍：真元满溢，需压制体质反噬。"
       },
       "capacity": 3,
       "carriedGu": 3,
-      "extremePhysiqueType": "北冥冰魄体",
+      "extremePhysiqueType": "纯梦求真体",
       "capacityLocked": true
     },
-    "flags": {
-      "apertureVisualTest": true
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-c 专项手测：空窍压力可视化已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转高阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。 隐藏第十一绝体「纯梦求真体」已开启专项压力观测。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
     }
   }
 }

@@ -239,6 +239,15 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
 // ─── 仙窍视图（6转+蛊仙）─────────────────
 function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: ImmortalAperture; showDaoDensity: boolean }) {
   const cx = 140, cy = 140;
+  const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
+  const daoMarkDensity = aperture.dao_mark_density && typeof aperture.dao_mark_density === 'object'
+    ? aperture.dao_mark_density
+    : {};
+  const areaMu = Number.isFinite(aperture.area_mu) ? aperture.area_mu : 0;
+  const timeFlowRatio = Number.isFinite(aperture.time_flow_ratio) ? aperture.time_flow_ratio : 1;
+  const disasterCountdown = Number.isFinite(aperture.disaster_countdown)
+    ? aperture.disaster_countdown
+    : 60;
 
   return (
     <div className="flex-1 overflow-y-auto p-4">
@@ -260,7 +269,7 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
             className="text-rg-ink-300/30" />
           <text x={cx} y={cy - 25} textAnchor="middle"
             className="fill-rg-paper-200/70 font-narrative text-sm">
-            {aperture.area_mu} 亩
+            {areaMu} 亩
           </text>
           <text x={cx} y={cy - 10} textAnchor="middle"
             className="fill-rg-ink-400 font-panel text-[10px]">
@@ -271,7 +280,7 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
             className="text-rg-jade-500/30" />
           <text x={cx} y={cy + 2} textAnchor="middle"
             className="fill-rg-paper-200/70 font-narrative text-sm">
-            1:{aperture.time_flow_ratio}
+            1:{timeFlowRatio}
           </text>
           <text x={cx} y={cy + 16} textAnchor="middle"
             className="fill-rg-ink-400 font-panel text-[10px]">
@@ -283,9 +292,9 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
       {/* ─── 资源节点 ─── */}
       <div className="bg-rg-ink-800/50 border border-rg-ink-300/12 rounded-md p-3 mb-3">
         <h4 className="text-rg-paper-200/60 text-[11px] font-panel font-semibold mb-2">资源节点</h4>
-        {aperture.resource_nodes.length > 0 ? (
+        {resourceNodes.length > 0 ? (
           <div className="flex flex-wrap gap-1.5">
-            {aperture.resource_nodes.map((node, i) => (
+            {resourceNodes.map((node, i) => (
               <span key={node.id || `${node.type}-${i}`}
                 className="text-[10px] font-panel text-rg-paper-200/70 bg-rg-ink-700/90 border border-rg-ink-300/12 px-2 py-1 rounded-sm">
                 {node.type} · 产出 {node.output_rate}/季 · 品质 {node.quality}
@@ -298,11 +307,11 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
       </div>
 
       {/* ─── 道痕密度 ─── */}
-      {showDaoDensity && Object.keys(aperture.dao_mark_density).length > 0 && (
+      {showDaoDensity && Object.keys(daoMarkDensity).length > 0 && (
         <div className="bg-rg-ink-800/50 border border-rg-ink-300/12 rounded-md p-3 mb-3">
           <h4 className="text-rg-paper-200/60 text-[11px] font-panel font-semibold mb-2">道痕密度</h4>
           <div className="flex flex-wrap gap-1.5">
-            {Object.entries(aperture.dao_mark_density).map(([path, density]) => (
+            {Object.entries(daoMarkDensity).map(([path, density]) => (
               <span key={path}
                 className="text-[10px] font-panel text-rg-paper-200/70 bg-rg-ink-700/90 border border-rg-ink-300/12 px-2 py-1 rounded-sm">
                 {path} {density}
@@ -320,12 +329,12 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[10px] font-panel text-rg-ink-400">距离天劫</span>
             <span className="text-[10px] font-button text-rg-blood-400 tabular-nums">
-              {aperture.disaster_countdown} 回合
+              {disasterCountdown} 回合
             </span>
           </div>
           <div className="h-1.5 bg-rg-ink-900 rounded-full overflow-hidden">
             <div className="h-full bg-gradient-to-r from-rg-gold to-rg-blood-600 rounded-full"
-              style={{ width: `${Math.max(5, 100 - aperture.disaster_countdown)}%` }} />
+              style={{ width: `${Math.max(5, 100 - disasterCountdown)}%` }} />
           </div>
         </div>
       )}

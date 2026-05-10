@@ -1,6 +1,6 @@
 {
   "formatVersion": 15,
-  "timestamp": "2026-05-10T01:20:00+08:00",
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "武家边支·武听岳",
     "realm": "一转初阶",
@@ -32,7 +32,7 @@
       "season": "spring"
     },
     "pathBuild": {
-      "primary": null,
+      "primary": "力道",
       "secondary": [],
       "path_levels": {},
       "dao_marks": {}
@@ -59,7 +59,40 @@
         "yuanStone": 150
       },
       "maxMembers": 4,
-      "members": []
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 1,
+          "loyalty": 64,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 76,
+          "interestDrive": 40,
+          "status": "idle"
+        },
+        {
+          "id": "m_scout_ye",
+          "name": "叶听风",
+          "path": "智道",
+          "realm": 1,
+          "loyalty": 52,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 118,
+          "maxHp": 118,
+          "atk": 26,
+          "def": 14,
+          "adventureTrust": 68,
+          "interestDrive": 60,
+          "status": "idle"
+        }
+      ]
     },
     "partyState": {
       "members": [],
@@ -84,6 +117,112 @@
       "_faction_name": "武家",
       "_origin_manual_save": "05-开局-武家边支一转.json",
       "_origin_preview_order": 5
+    },
+    "inventory": [
+      {
+        "id": "fixture_05-开局-武家边支一转_1",
+        "specId": "白豕蛊",
+        "name": "白豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 1,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_05-开局-武家边支一转_2",
+        "specId": "黑豕蛊",
+        "name": "黑豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 1,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_05-开局-武家边支一转_3",
+        "specId": "蛮力天牛蛊",
+        "name": "蛮力天牛蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 1,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "immortalEssenceStones": 0,
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "aperture": {
+      "type": "mortal",
+      "rank": 1,
+      "subRank": "初阶",
+      "primevalSea": {
+        "color": "#4a8c5c",
+        "colorName": "青铜",
+        "fillPercent": 70
+      },
+      "apertureWall": {
+        "state": "坚实",
+        "opacity": 1,
+        "description": "窍壁完整，真元流转自如。"
+      },
+      "capacity": 3,
+      "carriedGu": 3,
+      "capacityLocked": false
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.1 中文手测：武家开局身份路由、首段剧情地点、声望、行动入口。已按 v0.7.1-rc.0 当前存档格式载入。当前境界为一转初阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
     }
   }
 }

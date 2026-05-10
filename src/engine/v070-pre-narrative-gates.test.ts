@@ -66,6 +66,22 @@ describe('v0.7.0-pre narrative closure gates', () => {
     expect(parsed.state_update?.npc_contacts?.add?.[0]?.name).toBe('商心慈');
   });
 
+  it('normalizes shorthand player realm strings in AI state_update', () => {
+    const parsed = NarrativeJSONSchema.parse({
+      narrative: {
+        text: '商队绕过山脊后，你在临时营地压下真元波动，只把破境后的气息收束在衣袖之间。旁人只看见你神色沉稳，却不知道空窍壁已经被新一轮真元潮汐冲刷过。',
+        choices: [{ id: 'c1', text: '稳住气息继续前行', risk: 'low', risk_note: '不会暴露完整底牌' }],
+      },
+      state_update: {
+        player: {
+          realm: '二转中阶',
+        },
+      },
+    });
+
+    expect(parsed.state_update?.player?.realm).toEqual({ action: 'set', value: '二转中阶' });
+  });
+
   it('accepts scene-gated Gu use suggestions without granting execution authority to AI', () => {
     const parsed = NarrativeJSONSchema.parse({
       narrative: {

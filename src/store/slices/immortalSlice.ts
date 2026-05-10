@@ -145,7 +145,10 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     const state = get() as any;
     const aperture = state.aperture as ImmortalAperture | null;
     if (!aperture || aperture.type === 'mortal') return;
-    const { resource_nodes, dao_mark_density } = aperture;
+    const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
+    const daoMarkDensity = aperture.dao_mark_density && typeof aperture.dao_mark_density === 'object'
+      ? aperture.dao_mark_density
+      : {};
     const timeMultiplier = externalDays * aperture.time_flow_ratio;
     if (timeMultiplier <= 0) return;
 
@@ -154,9 +157,9 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     const newMaterials = { ...currentStorage.materials };
     const newImmortalMaterials = { ...currentStorage.immortalMaterials };
 
-    for (const node of resource_nodes) {
+    for (const node of resourceNodes) {
       if (node.active === false) continue; // P4: 跳过关闭的节点
-      const daoBonus = 1 + ((dao_mark_density[node.type] || 0) * 0.01);
+      const daoBonus = 1 + ((daoMarkDensity[node.type] || 0) * 0.01);
       const baseOutput = Math.floor(node.output_rate * timeMultiplier * (node.quality / 100) * daoBonus);
       const outputQuote = applyApertureResourceOutputModifiers(baseOutput, {
         store: state,
@@ -185,7 +188,7 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     });
 
     // 道痕密度>100产出仙元石
-    const totalDao = Object.values(dao_mark_density as Record<string, number>).reduce((a: number, b: number) => a + b, 0);
+    const totalDao = Object.values(daoMarkDensity as Record<string, number>).reduce((a: number, b: number) => a + b, 0);
     if (totalDao > 100) {
       const immortalOutput = Math.floor(timeMultiplier * totalDao * 0.001);
       if (immortalOutput > 0) {
@@ -226,7 +229,8 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
   setNodeActive: (nodeId: string, active: boolean) => {
     const aperture = get().aperture as ImmortalAperture | null;
     if (!aperture) return;
-    const updatedNodes = aperture.resource_nodes.map(n =>
+    const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
+    const updatedNodes = resourceNodes.map(n =>
       n.id === nodeId ? { ...n, active } : n
     );
     set({ aperture: { ...aperture, resource_nodes: updatedNodes } });
@@ -270,7 +274,8 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
         grade,
         active: true,
       };
-      const updatedNodes = [...aperture.resource_nodes, node];
+      const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
+      const updatedNodes = [...resourceNodes, node];
       set({ aperture: { ...aperture, resource_nodes: updatedNodes } as any });
 
       const logStore = get() as any;
@@ -292,7 +297,8 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     const aperture = get().aperture as ImmortalAperture | null;
     if (!aperture) return { cost: 0, success: false };
 
-    const node = aperture.resource_nodes.find(n => n.id === nodeId);
+    const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
+    const node = resourceNodes.find(n => n.id === nodeId);
     if (!node) return { cost: 0, success: false };
 
     // 升级消耗：品质×50元石
@@ -315,7 +321,7 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     const qualityGain = 5 + Math.floor(Math.random() * 11); // 5-15
     const outputGain = 1 + Math.floor(Math.random() * 2); // 1-2
 
-    const updatedNodes = aperture.resource_nodes.map(n =>
+    const updatedNodes = resourceNodes.map(n =>
       n.id === nodeId
         ? { ...n, quality: Math.min(100, n.quality + qualityGain), output_rate: n.output_rate + outputGain }
         : n,

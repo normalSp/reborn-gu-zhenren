@@ -19,29 +19,31 @@ function nextGuId(): string {
   return `gu_${++guIdCounter}_${Date.now()}`;
 }
 
-// ─── 境界标签映射 ───
-const REALM_LABEL_MAP: Record<string, { grand: number; sub: string; label: string }> = {
-  '一转初阶': { grand: 1, sub: '初阶', label: '一转初阶' },
-  '一转中阶': { grand: 1, sub: '中阶', label: '一转中阶' },
-  '一转高阶': { grand: 1, sub: '高阶', label: '一转高阶' },
-  '一转巅峰': { grand: 1, sub: '巅峰', label: '一转巅峰' },
-  '二转初阶': { grand: 2, sub: '初阶', label: '二转初阶' },
-  '二转中阶': { grand: 2, sub: '中阶', label: '二转中阶' },
-  '二转高阶': { grand: 2, sub: '高阶', label: '二转高阶' },
-  '二转巅峰': { grand: 2, sub: '巅峰', label: '二转巅峰' },
-  '三转初阶': { grand: 3, sub: '初阶', label: '三转初阶' },
-  '三转中阶': { grand: 3, sub: '中阶', label: '三转中阶' },
-  '三转高阶': { grand: 3, sub: '高阶', label: '三转高阶' },
-  '三转巅峰': { grand: 3, sub: '巅峰', label: '三转巅峰' },
-  '四转初阶': { grand: 4, sub: '初阶', label: '四转初阶' },
-  '四转中阶': { grand: 4, sub: '中阶', label: '四转中阶' },
-  '四转高阶': { grand: 4, sub: '高阶', label: '四转高阶' },
-  '四转巅峰': { grand: 4, sub: '巅峰', label: '四转巅峰' },
-  '五转初阶': { grand: 5, sub: '初阶', label: '五转初阶' },
-  '五转中阶': { grand: 5, sub: '中阶', label: '五转中阶' },
-  '五转高阶': { grand: 5, sub: '高阶', label: '五转高阶' },
-  '五转巅峰': { grand: 5, sub: '巅峰', label: '五转巅峰' },
+// ─── 境界标签解析 ───
+const REALM_GRAND_BY_LABEL: Record<string, number> = {
+  一: 1,
+  二: 2,
+  三: 3,
+  四: 4,
+  五: 5,
+  六: 6,
+  七: 7,
+  八: 8,
+  九: 9,
 };
+
+function getRealmUpdateValue(realm: NonNullable<StateUpdate['player']>['realm']): string | null {
+  if (!realm) return null;
+  if (typeof realm === 'string') return realm;
+  return typeof realm.value === 'string' ? realm.value : null;
+}
+
+function parseRealmGrand(value: string): number {
+  const match = value.trim().match(/([一二三四五六七八九]|[1-9])转/);
+  if (!match) return 0;
+  const raw = match[1];
+  return Number.isFinite(Number(raw)) ? Number(raw) : REALM_GRAND_BY_LABEL[raw] || 0;
+}
 
 // ─── 声望级别计算 ───
 function calcReputationTier(standing: number): string {
@@ -516,8 +518,8 @@ export function applyStateUpdate(update: StateUpdate): void {
 
   // ═══ P2-13 + P4: 六转升仙触发洞天/福地初始化 + 仙窍存储迁移 ═══
   if (update.player?.realm) {
-    const realmValue = update.player.realm.value;
-    const realmNum = parseInt(realmValue) || 0;
+    const realmValue = getRealmUpdateValue(update.player.realm);
+    const realmNum = realmValue ? parseRealmGrand(realmValue) : 0;
     if (realmNum >= 6) {
       const currentStore = useStore.getState() as any;
       if (!currentStore.heavenlyLand) {

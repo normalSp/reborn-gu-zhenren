@@ -207,6 +207,48 @@ function recalcCombatStats(set: any, get: any) {
   });
 }
 
+const REALM_NUM_LABELS: Record<number, string> = {
+  1: '一',
+  2: '二',
+  3: '三',
+  4: '四',
+  5: '五',
+  6: '六',
+  7: '七',
+  8: '八',
+  9: '九',
+};
+
+const REALM_NUM_BY_LABEL: Record<string, number> = Object.fromEntries(
+  Object.entries(REALM_NUM_LABELS).map(([num, label]) => [label, Number(num)]),
+);
+
+function getRealmUpdateValue(realm: NonNullable<import('../../types').StateUpdate['player']>['realm']): string | null {
+  if (!realm) return null;
+  if (typeof realm === 'string') return realm;
+  return typeof realm.value === 'string' ? realm.value : null;
+}
+
+function parseRealmInfo(value: string): RealmInfo | null {
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  const realmMatch = trimmed.match(/([一二三四五六七八九]|[1-9])转/);
+  if (!realmMatch) return null;
+  const grandRaw = realmMatch[1];
+  const grand = Number.isFinite(Number(grandRaw))
+    ? Number(grandRaw)
+    : REALM_NUM_BY_LABEL[grandRaw];
+  if (!grand || grand < 1 || grand > 9) return null;
+
+  const subMatch = trimmed.match(/(初阶|中阶|高阶|巅峰)/);
+  const sub = (subMatch?.[1] || '初阶') as RealmInfo['sub'];
+  return {
+    grand: grand as RealmInfo['grand'],
+    sub,
+    label: `${REALM_NUM_LABELS[grand]}转${sub}`,
+  };
+}
+
 export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   profile: { name: '', realm: { grand: 1, sub: '初阶', label: '一转初阶' }, background: '南疆' },
   attributes: { 资质: 5, 体魄: 5, 心智: 5, 气运: 5 },
@@ -241,29 +283,8 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     let needsCombatRecalc = false; // P2补完: 追踪是否需要重推导战斗数值
     // ─── 境界更新 ───
     if (update.realm) {
-      const realmMap: Record<string, { grand: number; sub: string; label: string }> = {
-        '一转初阶': { grand: 1, sub: '初阶', label: '一转初阶' },
-        '一转中阶': { grand: 1, sub: '中阶', label: '一转中阶' },
-        '一转高阶': { grand: 1, sub: '高阶', label: '一转高阶' },
-        '一转巅峰': { grand: 1, sub: '巅峰', label: '一转巅峰' },
-        '二转初阶': { grand: 2, sub: '初阶', label: '二转初阶' },
-        '二转中阶': { grand: 2, sub: '中阶', label: '二转中阶' },
-        '二转高阶': { grand: 2, sub: '高阶', label: '二转高阶' },
-        '二转巅峰': { grand: 2, sub: '巅峰', label: '二转巅峰' },
-        '三转初阶': { grand: 3, sub: '初阶', label: '三转初阶' },
-        '三转中阶': { grand: 3, sub: '中阶', label: '三转中阶' },
-        '三转高阶': { grand: 3, sub: '高阶', label: '三转高阶' },
-        '三转巅峰': { grand: 3, sub: '巅峰', label: '三转巅峰' },
-        '四转初阶': { grand: 4, sub: '初阶', label: '四转初阶' },
-        '四转中阶': { grand: 4, sub: '中阶', label: '四转中阶' },
-        '四转高阶': { grand: 4, sub: '高阶', label: '四转高阶' },
-        '四转巅峰': { grand: 4, sub: '巅峰', label: '四转巅峰' },
-        '五转初阶': { grand: 5, sub: '初阶', label: '五转初阶' },
-        '五转中阶': { grand: 5, sub: '中阶', label: '五转中阶' },
-        '五转高阶': { grand: 5, sub: '高阶', label: '五转高阶' },
-        '五转巅峰': { grand: 5, sub: '巅峰', label: '五转巅峰' },
-      };
-      const realmInfo = realmMap[update.realm.value];
+      const realmValue = getRealmUpdateValue(update.realm);
+      const realmInfo = realmValue ? parseRealmInfo(realmValue) : null;
       if (realmInfo) {
         set({ profile: { ...state.profile, realm: realmInfo } });
         needsCombatRecalc = true; // P2补完: 境界变化 → 重新推导战斗数值

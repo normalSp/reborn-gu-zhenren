@@ -1,8 +1,8 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-08T21:30:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
-    "playerName": "v0.7.0-c·宝黄天全品类",
+    "playerName": "宝黄天试客",
     "realm": "六转蛊仙",
     "turn": 80,
     "gameMode": "canon",
@@ -52,10 +52,10 @@
         "max": 240
       },
       "essence": {
-        "current": 84,
-        "max": 100
+        "current": 1600,
+        "max": 2000
       },
-      "essenceType": "mortal"
+      "essenceType": "immortal"
     },
     "soundState": {
       "masterVolume": 0.7,
@@ -146,6 +146,118 @@
       "精品蛊材": 3
     },
     "immortalMaterials": {},
-    "flags": {}
+    "flags": {},
+    "apertureInventory": {
+      "gu": [
+        {
+          "id": "fixture_v070c_tyh_all_pools_1",
+          "specId": "定仙游",
+          "name": "定仙游",
+          "tier": 6,
+          "path": "宇道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 80,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        },
+        {
+          "id": "fixture_v070c_tyh_all_pools_2",
+          "specId": "察运蛊",
+          "name": "察运蛊",
+          "tier": 6,
+          "path": "运道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 80,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        },
+        {
+          "id": "fixture_v070c_tyh_all_pools_3",
+          "specId": "搜魂蛊",
+          "name": "搜魂蛊",
+          "tier": 7,
+          "path": "魂道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 70,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 80,
+            "narrative": "v0.7.1 RC测试存档补齐：用于入口、战斗、炼蛊、音频与走查验证。"
+          }
+        }
+      ],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "inventory": [],
+    "immortalCurrency": 7200,
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "aperture": {
+      "type": "福地",
+      "grade": "中等福地",
+      "area_mu": 5200,
+      "time_flow_ratio": 18,
+      "resource_nodes": [
+        {
+          "id": "node_moon_lotus_pool",
+          "type": "水道",
+          "name": "月潮莲池",
+          "output_rate": 2,
+          "quality": 72,
+          "grade": "仙材",
+          "active": true
+        },
+        {
+          "id": "node_star_iron_vein",
+          "type": "金道",
+          "name": "星铁矿脉",
+          "output_rate": 1,
+          "quality": 66,
+          "grade": "仙材",
+          "active": true
+        }
+      ],
+      "dao_mark_density": {
+        "力道": 180,
+        "金道": 80,
+        "水道": 60
+      },
+      "next_disaster_type": "地火风灾",
+      "disaster_countdown": 48,
+      "status": "稳定"
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-c 专项手测：宝黄天全品类已按 v0.7.1-rc.0 当前存档格式载入。当前境界为六转蛊仙，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
+    }
   }
 }

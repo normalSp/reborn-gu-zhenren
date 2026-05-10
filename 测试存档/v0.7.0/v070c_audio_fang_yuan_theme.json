@@ -1,6 +1,6 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-08T21:30:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "v0.7.0-c·方源角色曲触发",
     "realm": "四转高阶",
@@ -149,6 +149,149 @@
     "flags": {
       "characterBgmTest": "fang_yuan_nianlun",
       "actor": "方源"
+    },
+    "inventory": [
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_1",
+        "specId": "白豕蛊",
+        "name": "白豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_2",
+        "specId": "黑豕蛊",
+        "name": "黑豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_3",
+        "specId": "蛮力天牛蛊",
+        "name": "蛮力天牛蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_4",
+        "specId": "熊力蛊",
+        "name": "熊力蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_5",
+        "specId": "黑鬃蛊",
+        "name": "黑鬃蛊",
+        "tier": 2,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_v070c_audio_fang_yuan_theme_6",
+        "specId": "力气蛊",
+        "name": "力气蛊",
+        "tier": 2,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 80,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "aperture": {
+      "type": "mortal",
+      "rank": 4,
+      "subRank": "高阶",
+      "primevalSea": {
+        "color": "#c9a84a",
+        "colorName": "黄金",
+        "fillPercent": 70
+      },
+      "apertureWall": {
+        "state": "潮汐初现",
+        "opacity": 0.84,
+        "description": "真元潮汐开始冲刷窍壁，适合观察空窍压力。"
+      },
+      "capacity": 12,
+      "carriedGu": 6,
+      "capacityLocked": false
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-c 专项手测：方源角色曲触发已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转高阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
     }
   }
 }

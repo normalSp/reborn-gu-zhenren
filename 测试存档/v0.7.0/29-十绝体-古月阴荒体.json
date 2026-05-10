@@ -1,0 +1,248 @@
+{
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
+  "meta": {
+    "playerName": "古月阴荒体专项走查",
+    "realm": "四转高阶",
+    "turn": 91,
+    "gameMode": "canon",
+    "description": "v0.7.1 RC 专项手测：自然十绝体「古月阴荒体」空窍压力、亲和道途与凡蛊夹具。"
+  },
+  "state": {
+    "profile": {
+      "name": "古月阴荒体专项走查",
+      "realm": {
+        "grand": 4,
+        "sub": "高阶",
+        "label": "四转高阶"
+      },
+      "background": "中洲·十绝体专项"
+    },
+    "currentDomain": "中洲",
+    "currentChapterId": "v071_extreme_physique_matrix",
+    "turn": 91,
+    "currency": 6800,
+    "immortalEssenceStones": 0,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "afternoon",
+      "day": 29,
+      "month": 6,
+      "year": 1,
+      "season": "summer"
+    },
+    "vitals": {
+      "health": {
+        "current": 220,
+        "max": 240
+      },
+      "essence": {
+        "current": 96,
+        "max": 100
+      },
+      "essenceType": "mortal"
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "playerFaction": {
+      "id": "faction_extreme_matrix",
+      "name": "十绝体矩阵走查组",
+      "type": "散修联盟",
+      "domain": "中洲",
+      "level": 3,
+      "reputation": 150,
+      "resources": {
+        "yuanStone": 3600,
+        "immortalStone": 0
+      },
+      "maxMembers": 8,
+      "members": [
+        {
+          "id": "m_matrix_guard",
+          "name": "矩阵护法",
+          "path": "力道",
+          "realm": 3,
+          "loyalty": 68,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 78,
+          "interestDrive": 42,
+          "status": "idle"
+        },
+        {
+          "id": "m_matrix_scribe",
+          "name": "阵录书手",
+          "path": "智道",
+          "realm": 3,
+          "loyalty": 58,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 120,
+          "maxHp": 120,
+          "atk": 26,
+          "def": 14,
+          "adventureTrust": 70,
+          "interestDrive": 55,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_matrix_guard",
+          "name": "矩阵护法",
+          "path": "力道",
+          "realm": 3,
+          "loyalty": 68,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 78,
+          "interestDrive": 42,
+          "status": "idle"
+        }
+      ],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 62,
+      "coordination": 58,
+      "lastUpdatedTurn": 91,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {}
+    },
+    "materials": {
+      "普通蛊材": 8,
+      "精品蛊材": 4,
+      "亲和蛊材": 2
+    },
+    "immortalMaterials": {},
+    "flags": {
+      "apertureVisualTest": true,
+      "extremePhysiqueMatrix": true,
+      "_extremePhysiqueType": "古月阴荒体"
+    },
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "attributes": {
+      "资质": 10,
+      "体魄": 7,
+      "心智": 6,
+      "气运": 6
+    },
+    "pathBuild": {
+      "primary": "宙道",
+      "secondary": [],
+      "path_levels": {
+        "宙道": "精通"
+      },
+      "dao_marks": {
+        "宙道": 90
+      }
+    },
+    "inventory": [
+      {
+        "id": "fixture_29-十绝体-古月阴荒体_1",
+        "specId": "月光蛊",
+        "name": "月光蛊",
+        "tier": 1,
+        "path": "光道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 91,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_29-十绝体-古月阴荒体_2",
+        "specId": "酒虫",
+        "name": "酒虫",
+        "tier": 1,
+        "path": "食道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 91,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_29-十绝体-古月阴荒体_3",
+        "specId": "侦察蛊",
+        "name": "侦察蛊",
+        "tier": 1,
+        "path": "智道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 91,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "aperture": {
+      "type": "mortal",
+      "rank": 4,
+      "subRank": "高阶",
+      "primevalSea": {
+        "color": "#c9a84a",
+        "colorName": "黄金",
+        "fillPercent": 100
+      },
+      "apertureWall": {
+        "state": "壁薄如纸",
+        "opacity": 0.36,
+        "description": "古月阴荒体高压空窍：真元满溢，需压制体质反噬。"
+      },
+      "capacity": 3,
+      "carriedGu": 3,
+      "extremePhysiqueType": "古月阴荒体",
+      "capacityLocked": true
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.1 RC 专项手测：自然十绝体「古月阴荒体」空窍压力、亲和道途与凡蛊夹具。已按 v0.7.1-rc.0 当前存档格式载入。当前境界为四转高阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。 自然十绝体「古月阴荒体」已开启专项压力观测。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
+    }
+  }
+}

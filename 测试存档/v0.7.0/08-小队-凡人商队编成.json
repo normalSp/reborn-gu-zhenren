@@ -1,6 +1,6 @@
 {
-  "formatVersion": 13,
-  "timestamp": "2026-05-10T01:20:00+08:00",
+  "formatVersion": 15,
+  "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "商队客卿·黎川",
     "realm": "三转初阶",
@@ -144,6 +144,149 @@
       "memberRolePausedUntil": {
         "m_guard_qin": 39
       }
+    },
+    "inventory": [
+      {
+        "id": "fixture_08-小队-凡人商队编成_1",
+        "specId": "白豕蛊",
+        "name": "白豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": true,
+        "active": true,
+        "acquiredAt": {
+          "turn": 36,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_08-小队-凡人商队编成_2",
+        "specId": "黑豕蛊",
+        "name": "黑豕蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 36,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_08-小队-凡人商队编成_3",
+        "specId": "蛮力天牛蛊",
+        "name": "蛮力天牛蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": true,
+        "acquiredAt": {
+          "turn": 36,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_08-小队-凡人商队编成_4",
+        "specId": "熊力蛊",
+        "name": "熊力蛊",
+        "tier": 1,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 36,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      },
+      {
+        "id": "fixture_08-小队-凡人商队编成_5",
+        "specId": "黑鬃蛊",
+        "name": "黑鬃蛊",
+        "tier": 2,
+        "path": "力道",
+        "currentState": "optimal",
+        "hungerCounter": 0,
+        "proficiency": 50,
+        "bonded": false,
+        "active": false,
+        "acquiredAt": {
+          "turn": 36,
+          "narrative": "v0.7.1 RC 当前格式测试存档夹具：用于入口、战斗、空窍、炼蛊、音频与走查验证。"
+        }
+      }
+    ],
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "immortalEssenceStones": 0,
+    "attributes": {
+      "资质": 5,
+      "体魄": 5,
+      "心智": 5,
+      "气运": 5
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "materials": {
+      "普通蛊材": 6,
+      "精品蛊材": 3
+    },
+    "immortalMaterials": {},
+    "aperture": {
+      "type": "mortal",
+      "rank": 3,
+      "subRank": "初阶",
+      "primevalSea": {
+        "color": "#b8c2d8",
+        "colorName": "白银",
+        "fillPercent": 70
+      },
+      "apertureWall": {
+        "state": "坚实",
+        "opacity": 1,
+        "description": "窍壁完整，真元流转自如。"
+      },
+      "capacity": 8,
+      "carriedGu": 5,
+      "capacityLocked": false
+    },
+    "apertureInventory": {
+      "gu": [],
+      "materials": {},
+      "immortalMaterials": {}
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "v0.7.0-b 手测：凡人商队小队编成，验证成员池、AP消耗、岗位暂停、小队入口。（中文命名副本：08-小队-凡人商队编成）已按 v0.7.1-rc.0 当前存档格式载入。当前境界为三转初阶，空窍、蛊虫、资源与专项状态都已预置，可直接进行走查。",
+        "choices": [
+          {
+            "id": "continue_loaded_fixture",
+            "text": "继续走查当前专项",
+            "risk": "low",
+            "risk_note": "测试存档固定入口"
+          }
+        ]
+      },
+      "state_update": {}
     }
   }
 }

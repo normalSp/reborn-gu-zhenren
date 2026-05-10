@@ -651,7 +651,7 @@ export interface DynamicNPCState {
 
 export interface StateUpdate {
   player?: {
-    realm?: { action: 'set'; value: string };
+    realm?: string | { action?: 'set'; value: string };
     attributes?: {
       资质?: { action: 'add'; value: number };
       体魄?: { action: 'add'; value: number };
@@ -1016,6 +1016,164 @@ export interface CombatEventCandidate {
   engineValidation?: 'pending' | 'accepted' | 'blocked';
   validationIssues?: string[];
   createdTurn?: number;
+}
+
+export type GuExpressionAvailability = 'direct' | 'passive' | 'scene_gated';
+export type GuExpressionRealmScope = 'mortal' | 'mortal_forbidden' | 'immortal_scene';
+export type GuExpressionProvenance = 'canon' | 'canon-near' | 'project-canon' | 'derived' | 'derived-runtime' | 'original';
+
+export interface GuExpressionRange {
+  shape: string;
+  min: number;
+  max: number;
+  area: number;
+}
+
+export interface GuExpressionCost {
+  essencePct?: number;
+  immortalEssence?: number;
+  primevalStones?: number;
+}
+
+export interface GuVisualMotif {
+  motif: string;
+  primaryTint: string;
+  secondaryTint?: string;
+  motion: string;
+}
+
+export interface GuExpressionSpec {
+  guName: string;
+  path: string;
+  realmScope: GuExpressionRealmScope;
+  provenance: GuExpressionProvenance;
+  availability: GuExpressionAvailability;
+  verbs: string[];
+  targetRule: string;
+  range: GuExpressionRange;
+  cost: GuExpressionCost;
+  cooldown: number;
+  statusEffects: string[];
+  counters: string[];
+  terrainAffinity: {
+    favored: string[];
+    hindered: string[];
+  };
+  sceneUtilities: string[];
+  visualMotif: GuVisualMotif;
+  uniqueness: string;
+}
+
+export interface KillerMoveExpressionSpec {
+  moveName: string;
+  path: string;
+  level: number;
+  provenance: GuExpressionProvenance;
+  coreGu: string[];
+  auxiliaryGu: string[];
+  boardPattern: {
+    shape: string;
+    range: number;
+    area: number;
+  };
+  charge: {
+    turns: number;
+    interruptible: boolean;
+    tell: string;
+  };
+  release: string;
+  maintain: {
+    essencePctPerTurn: number;
+    maxTurns: number;
+  };
+  opening: string;
+  failureMode: string;
+  backlash: string;
+  visualBeats: string[];
+  sceneUtilities: string[];
+}
+
+export type BattlefieldCellFlag = 'cover' | 'hazard' | 'array_node' | 'concealment' | 'dao_field';
+
+export interface BattlefieldCell {
+  id: string;
+  x: number;
+  y: number;
+  terrainId: string;
+  flags: BattlefieldCellFlag[];
+  occupantId?: string | null;
+  daoFieldPath?: string;
+  dangerTags?: string[];
+}
+
+export interface BattlefieldUnit {
+  id: string;
+  name: string;
+  side: 'player' | 'ally' | 'enemy' | 'neutral';
+  cellId: string;
+  realmNum: number;
+  path: string;
+  hp: number;
+  maxHp: number;
+  essence?: { current: number; max: number; type: 'primeval' | 'immortal' };
+  guNames: string[];
+  statusEffects: string[];
+  intent?: string;
+}
+
+export interface BattlefieldCombatState {
+  battleId: string;
+  round: number;
+  phase: 'scout' | 'deploy' | 'player_turn' | 'enemy_turn' | 'resolution' | 'ended';
+  grid: {
+    width: 5;
+    height: 3;
+    cells: BattlefieldCell[];
+  };
+  units: BattlefieldUnit[];
+  activeTerrainId?: string;
+  activeFormationId?: string;
+  eventWindows: BattleTracePhase[];
+  pendingResolution: BattleResolutionStep[];
+}
+
+export type BattleResolutionStepKind =
+  | 'move'
+  | 'gu_use'
+  | 'killer_move'
+  | 'hit'
+  | 'miss'
+  | 'status_apply'
+  | 'status_tick'
+  | 'terrain_change'
+  | 'counter'
+  | 'resource_spend'
+  | 'failure'
+  | 'morale'
+  | 'settlement';
+
+export interface BattleResolutionStep {
+  id: string;
+  round: number;
+  kind: BattleResolutionStepKind;
+  actorId?: string;
+  targetIds?: string[];
+  sourceName?: string;
+  fromCellId?: string;
+  toCellId?: string;
+  affectedCellIds?: string[];
+  damage?: number;
+  statusEffects?: string[];
+  resourceCost?: GuExpressionCost;
+  message: string;
+  visual: {
+    motif: string;
+    primaryTint: string;
+    motion: string;
+    intensity?: 'subtle' | 'normal' | 'high';
+  };
+  blockedReason?: string;
+  tags: string[];
 }
 
 /** 决斗结果 */
