@@ -54,6 +54,20 @@ function cellLabel(cell: BattlefieldCell): string {
   return `${cell.id} ${cell.terrainId} ${flags}`;
 }
 
+function cellTacticalLabel(cell: BattlefieldCell): string {
+  if (cell.flags.includes('escort_exit')) return '出口';
+  if (cell.flags.includes('entry_point')) return '入场';
+  if (cell.flags.includes('array_node')) return '阵位';
+  if (cell.flags.includes('dao_field')) return '道痕';
+  if (cell.flags.includes('hazard')) return '危险';
+  if (cell.flags.includes('concealment')) return '伏影';
+  if (cell.flags.includes('cover')) return '遮蔽';
+  if (cell.flags.includes('frontline')) return '前线';
+  if (cell.flags.includes('midline')) return '中线';
+  if (cell.flags.includes('backline')) return '后线';
+  return '地势';
+}
+
 function targetRequired(action: BattlefieldAction | null, actor: BattlefieldUnit | undefined, validation: any): boolean {
   if (!action || !actor) return false;
   if (action.type === 'retreat' || action.type === 'wait' || action.type === 'rally' || action.type === 'observe') return false;
@@ -164,6 +178,7 @@ function ActionCardButton({
 
 function BattlefieldBoard({
   cells,
+  gridWidth,
   units,
   actor,
   validation,
@@ -171,6 +186,7 @@ function BattlefieldBoard({
   onCellClick,
 }: {
   cells: BattlefieldCell[];
+  gridWidth: number;
   units: BattlefieldUnit[];
   actor?: BattlefieldUnit;
   validation: any;
@@ -178,10 +194,18 @@ function BattlefieldBoard({
   onCellClick: (cell: BattlefieldCell) => void;
 }) {
   const unitByCell = useMemo(() => new Map(units.map(unit => [unit.cellId, unit])), [units]);
+  const largeBoard = cells.length > 15;
+  const minCellWidth = largeBoard ? 76 : 92;
 
   return (
-    <div className="battlefield-board-wrap" data-testid="battlefield-board">
-      <div className="grid grid-cols-5 gap-2">
+    <div className="battlefield-board-wrap" data-testid="battlefield-board" data-grid-size={`${gridWidth}x${Math.ceil(cells.length / Math.max(1, gridWidth))}`}>
+      <div
+        className="grid gap-2"
+        style={{
+          gridTemplateColumns: `repeat(${Math.max(1, gridWidth)}, minmax(${largeBoard ? 70 : 82}px, 1fr))`,
+          minWidth: largeBoard ? `${Math.max(1, gridWidth) * minCellWidth}px` : undefined,
+        }}
+      >
         {cells.map(cell => {
           const tags = buildCellClassTags(cell, validation, selectedCellId);
           const unit = unitByCell.get(cell.id);
@@ -197,7 +221,7 @@ function BattlefieldBoard({
               onClick={() => onCellClick(cell)}
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.985 }}
-              className={`relative aspect-[1.25/1] min-h-[86px] border bg-[rgba(13,13,18,0.82)] overflow-hidden text-left ${
+              className={`relative aspect-[1.25/1] ${largeBoard ? 'min-h-[62px] md:min-h-[72px]' : 'min-h-[86px]'} border bg-[rgba(13,13,18,0.82)] overflow-hidden text-left ${
                 selected
                   ? 'border-[var(--gu-trace-gold)]'
                   : target
@@ -234,7 +258,7 @@ function BattlefieldBoard({
               <div className="relative z-10 flex h-full flex-col justify-between p-2">
                 <div className="flex items-center justify-between text-[9px] text-[var(--gu-text-secondary)]">
                   <span>{cell.id}</span>
-                  <span>{cell.flags.includes('cover') ? '遮蔽' : cell.flags.includes('array_node') ? '阵位' : cell.flags.includes('dao_field') ? '道痕' : cell.flags.includes('hazard') ? '危险' : '地势'}</span>
+                  <span>{cellTacticalLabel(cell)}</span>
                 </div>
                 {unit ? (
                   <motion.div
@@ -466,6 +490,7 @@ export function BattlefieldCombatOverlay() {
           <section className="battlefield-center min-h-0 flex flex-col gap-3">
             <BattlefieldBoard
               cells={state.grid.cells}
+              gridWidth={state.grid.width}
               units={state.units}
               actor={actor}
               validation={validation}
@@ -592,6 +617,8 @@ export function BattlefieldCombatOverlay() {
           background: rgba(13,13,18,0.68);
           border-radius: 6px;
           padding: 10px;
+          overflow-x: auto;
+          overflow-y: hidden;
         }
         @media (max-width: 860px) {
           .battlefield-shell {

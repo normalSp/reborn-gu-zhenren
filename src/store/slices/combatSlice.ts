@@ -35,6 +35,7 @@ import {
 import {
   createBattlefieldDemoState,
   createBattlefieldGroupDemoState,
+  createBattlefieldLargeGroupDemoState,
   describeBattlefieldReason,
   getBattlefieldActor,
 } from '../../engine/v080-battlefield-ui-model';
@@ -261,6 +262,7 @@ export interface CombatSlice {
   clearBattleVisualEffects: () => void;
   initBattlefieldDemo: () => void;
   initBattlefieldGroupDemo: () => void;
+  initBattlefieldLargeGroupDemo: () => void;
   selectBattlefieldActor: (actorId: string) => void;
   selectBattlefieldAction: (action: BattlefieldAction | null) => void;
   selectBattlefieldTarget: (cellId: string | null) => void;
@@ -641,6 +643,30 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
     if (typeof store.addGameLog === 'function') {
       store.addGameLog('combat', 'v0.8.0-b1 群像战演武开启', {
         battleId: state.battleId,
+        terrain: state.activeTerrainId,
+        formation: state.activeFormationId,
+        objectives: state.objectives?.map(objective => objective.id) ?? [],
+      });
+    }
+  },
+
+  initBattlefieldLargeGroupDemo: () => {
+    const store = get() as any;
+    const state = createBattlefieldLargeGroupDemoState(store);
+    const actor = getBattlefieldActor(state);
+    set({
+      battlefieldCombatState: state,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: [],
+      battlefieldTraceCursor: 0,
+    });
+    if (typeof store.addGameLog === 'function') {
+      store.addGameLog('combat', 'v0.8.0-b1.1 7x5 群像战大阵演武开启', {
+        battleId: state.battleId,
+        preset: state.gridPresetId,
+        cells: state.grid.cells.length,
         terrain: state.activeTerrainId,
         formation: state.activeFormationId,
         objectives: state.objectives?.map(objective => objective.id) ?? [],

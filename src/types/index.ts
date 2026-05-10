@@ -1131,7 +1131,17 @@ export interface KillerMoveExpressionSpec {
   sceneUtilities: string[];
 }
 
-export type BattlefieldCellFlag = 'cover' | 'hazard' | 'array_node' | 'concealment' | 'dao_field';
+export type BattlefieldCellFlag =
+  | 'cover'
+  | 'hazard'
+  | 'array_node'
+  | 'concealment'
+  | 'dao_field'
+  | 'frontline'
+  | 'midline'
+  | 'backline'
+  | 'escort_exit'
+  | 'entry_point';
 
 export interface BattlefieldCell {
   id: string;
@@ -1277,9 +1287,10 @@ export interface BattlefieldCombatState {
   round: number;
   phase: 'scout' | 'deploy' | 'player_turn' | 'enemy_turn' | 'resolution' | 'ended';
   mode?: 'duel' | 'group';
+  gridPresetId?: string;
   grid: {
-    width: 5;
-    height: 3;
+    width: number;
+    height: number;
     cells: BattlefieldCell[];
   };
   units: BattlefieldUnit[];

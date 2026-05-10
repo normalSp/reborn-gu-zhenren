@@ -1,12 +1,61 @@
 {
   "_meta": {
-    "version": "v0.8.0-a1",
-    "description": "Pure local mortal battlefield rules for the v0.8 5x3 vertical slice.",
+    "version": "v0.8.0-b1.1",
+    "description": "Pure local mortal battlefield rules for the v0.8 variable-scale battlefield vertical slice.",
     "saveFormatImpact": "none"
   },
   "grid": {
     "width": 5,
     "height": 3
+  },
+  "gridPresets": {
+    "skirmish_5x3": {
+      "width": 5,
+      "height": 3,
+      "description": "Default compact v0.8 mortal skirmish board."
+    },
+    "ambush_7x5": {
+      "width": 7,
+      "height": 5,
+      "description": "Large group-combat valley ambush board for distance, sight, formations, escort routes, and third-party entry.",
+      "cells": [
+        { "id": "c0_0", "terrainId": "dense_forest", "flags": ["cover", "backline"] },
+        { "id": "c1_0", "terrainId": "dense_forest", "flags": ["cover", "backline"] },
+        { "id": "c2_0", "terrainId": "mountain_pass", "flags": ["backline"] },
+        { "id": "c3_0", "terrainId": "mountain_pass", "flags": ["array_node", "backline"] },
+        { "id": "c4_0", "terrainId": "dense_forest", "flags": ["concealment", "backline"] },
+        { "id": "c5_0", "terrainId": "dense_forest", "flags": ["cover", "backline"] },
+        { "id": "c6_0", "terrainId": "mountain_pass", "flags": ["entry_point", "backline"] },
+        { "id": "c0_1", "terrainId": "dense_forest", "flags": ["cover", "backline"] },
+        { "id": "c1_1", "terrainId": "mountain_pass", "flags": ["backline"] },
+        { "id": "c2_1", "terrainId": "mountain_pass", "flags": ["dao_field", "midline"], "daoFieldPath": "力道" },
+        { "id": "c3_1", "terrainId": "formation_ruins", "flags": ["array_node", "midline"] },
+        { "id": "c4_1", "terrainId": "dense_forest", "flags": ["concealment", "midline"] },
+        { "id": "c5_1", "terrainId": "dense_forest", "flags": ["cover", "frontline"] },
+        { "id": "c6_1", "terrainId": "mountain_pass", "flags": ["entry_point", "frontline"] },
+        { "id": "c0_2", "terrainId": "mountain_pass", "flags": ["escort_exit", "backline"] },
+        { "id": "c1_2", "terrainId": "mountain_pass", "flags": ["midline"] },
+        { "id": "c2_2", "terrainId": "formation_ruins", "flags": ["array_node", "midline"] },
+        { "id": "c3_2", "terrainId": "mountain_pass", "flags": ["hazard", "midline"], "dangerTags": ["falling_rocks"] },
+        { "id": "c4_2", "terrainId": "dense_forest", "flags": ["concealment", "frontline"] },
+        { "id": "c5_2", "terrainId": "mountain_pass", "flags": ["frontline"] },
+        { "id": "c6_2", "terrainId": "mountain_pass", "flags": ["frontline"] },
+        { "id": "c0_3", "terrainId": "riverbank", "flags": ["escort_exit", "backline"] },
+        { "id": "c1_3", "terrainId": "riverbank", "flags": ["cover", "midline"] },
+        { "id": "c2_3", "terrainId": "mountain_pass", "flags": ["midline"] },
+        { "id": "c3_3", "terrainId": "formation_ruins", "flags": ["array_node", "midline"] },
+        { "id": "c4_3", "terrainId": "dense_forest", "flags": ["concealment", "frontline"] },
+        { "id": "c5_3", "terrainId": "dense_forest", "flags": ["cover", "frontline"] },
+        { "id": "c6_3", "terrainId": "dense_forest", "flags": ["entry_point", "frontline"] },
+        { "id": "c0_4", "terrainId": "riverbank", "flags": ["escort_exit", "backline"] },
+        { "id": "c1_4", "terrainId": "riverbank", "flags": ["cover", "backline"] },
+        { "id": "c2_4", "terrainId": "mountain_pass", "flags": ["midline"] },
+        { "id": "c3_4", "terrainId": "mountain_pass", "flags": ["hazard", "midline"], "dangerTags": ["loose_scree"] },
+        { "id": "c4_4", "terrainId": "dense_forest", "flags": ["concealment", "frontline"] },
+        { "id": "c5_4", "terrainId": "dense_forest", "flags": ["cover", "frontline"] },
+        { "id": "c6_4", "terrainId": "dense_forest", "flags": ["entry_point", "frontline"] }
+      ]
+    }
   },
   "defaults": {
     "terrainId": "open",
@@ -52,7 +101,12 @@
     "hazard": ["hazard", "trap_field"],
     "array_node": ["array_node", "formation"],
     "concealment": ["concealment", "dense_cover"],
-    "dao_field": ["dao_field"]
+    "dao_field": ["dao_field"],
+    "frontline": ["frontline"],
+    "midline": ["midline"],
+    "backline": ["backline"],
+    "escort_exit": ["escort_exit"],
+    "entry_point": ["entry_point"]
   },
   "cooldown": {
     "tick": "round_start",
@@ -93,6 +147,7 @@
     "ambush": {
       "firstStrikeDamageMultiplier": 1.12,
       "observeRevealCount": 2,
+      "observeRange": 3,
       "hiddenEvasionBonus": 18
     },
     "formation": {

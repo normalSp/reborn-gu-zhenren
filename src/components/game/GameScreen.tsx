@@ -138,6 +138,7 @@ export function GameScreen() {
   const gameLoadVersion = useStore(s => s.gameLoadVersion);
   const initBattlefieldDemo = useStore((s: any) => s.initBattlefieldDemo);
   const initBattlefieldGroupDemo = useStore((s: any) => s.initBattlefieldGroupDemo);
+  const initBattlefieldLargeGroupDemo = useStore((s: any) => s.initBattlefieldLargeGroupDemo);
   const startedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
 
@@ -456,6 +457,13 @@ export function GameScreen() {
             data-testid="open-battlefield-group-demo"
           >
             群像战
+          </button>
+          <button
+            onClick={() => initBattlefieldLargeGroupDemo?.()}
+            className={toolbarBtnClass(false)}
+            data-testid="open-battlefield-large-group-demo"
+          >
+            群像战-大阵
           </button>
           {TOOLBAR_BUTTONS_BASE.map(btn => (
             <button

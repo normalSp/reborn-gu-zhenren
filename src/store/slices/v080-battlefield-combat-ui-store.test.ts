@@ -101,4 +101,32 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     harness.get().executeSelectedBattlefieldAction();
     expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'morale')).toBe(true);
   });
+
+  it('creates a non-persistent 7x5 large group demo and keeps old 5x3 entry intact', () => {
+    const harness = createHarness();
+
+    harness.get().initBattlefieldGroupDemo();
+    expect(harness.get().battlefieldCombatState.grid.cells).toHaveLength(15);
+
+    harness.get().initBattlefieldLargeGroupDemo();
+    const battle = harness.get().battlefieldCombatState;
+
+    expect(battle.mode).toBe('group');
+    expect(battle.gridPresetId).toBe('ambush_7x5');
+    expect(battle.grid.width).toBe(7);
+    expect(battle.grid.height).toBe(5);
+    expect(battle.grid.cells).toHaveLength(35);
+    expect(battle.grid.cells.some((cell: any) => cell.flags.includes('escort_exit'))).toBe(true);
+    expect(battle.objectives.some((objective: any) => objective.type === 'escort' && objective.cellId === 'c0_3')).toBe(true);
+
+    harness.get().selectBattlefieldActor('ally_scout');
+    harness.get().selectBattlefieldAction({ type: 'observe', actorId: 'ally_scout' });
+    harness.get().executeSelectedBattlefieldAction();
+    expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'ambush')).toBe(true);
+
+    harness.get().selectBattlefieldAction({ type: 'formation', actorId: 'player', targetCellId: 'c2_2' });
+    harness.get().selectBattlefieldTarget('c2_2');
+    harness.get().executeSelectedBattlefieldAction();
+    expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'formation')).toBe(true);
+  });
 });

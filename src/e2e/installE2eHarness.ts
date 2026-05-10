@@ -25,6 +25,7 @@ declare global {
       getStateSummary: () => Record<string, unknown>;
       startBattlefieldDemo: () => Record<string, unknown>;
       startBattlefieldGroupDemo: () => Record<string, unknown>;
+      startBattlefieldLargeGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
@@ -107,6 +108,9 @@ function summarizeStore(): Record<string, unknown> {
       mode: state.battlefieldCombatState.mode || 'duel',
       phase: state.battlefieldCombatState.phase,
       round: state.battlefieldCombatState.round,
+      gridPresetId: state.battlefieldCombatState.gridPresetId || null,
+      gridWidth: Number(state.battlefieldCombatState.grid?.width || 0),
+      gridHeight: Number(state.battlefieldCombatState.grid?.height || 0),
       activeUnitId: state.battlefieldCombatState.activeUnitId || null,
       cellCount: Array.isArray(state.battlefieldCombatState.grid?.cells) ? state.battlefieldCombatState.grid.cells.length : 0,
       unitCount: Array.isArray(state.battlefieldCombatState.units) ? state.battlefieldCombatState.units.length : 0,
@@ -182,6 +186,15 @@ export function installE2eHarness(): void {
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldGroupDemo?.();
+      return summarizeStore();
+    },
+    startBattlefieldLargeGroupDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      store.setScreenState?.('game_play');
+      store.setGameMode?.('canon');
+      store.initBattlefieldLargeGroupDemo?.();
       return summarizeStore();
     },
     startNarrativeGuAffordanceDemo() {

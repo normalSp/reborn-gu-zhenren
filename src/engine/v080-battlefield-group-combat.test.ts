@@ -5,6 +5,7 @@ import {
   createBattlefieldGroupCombatState,
   executeBattlefieldAction,
   getBattlefieldCombatRulesForTests,
+  listBattlefieldActionTargets,
   listBattlefieldTurnOrder,
   resolveBattlefieldAmbushOpening,
   resolveBattlefieldEnemyTurn,
@@ -136,6 +137,84 @@ describe('v0.8.0-b1 battlefield group combat engine', () => {
     expect(state.units.filter(item => item.side === 'enemy')).toHaveLength(2);
     expect(state.objectives).toHaveLength(2);
     expect(listBattlefieldTurnOrder(state).map(item => item.id)).toContain('player');
+  });
+
+  it('keeps default 5x3 but supports ambush_7x5 preset, occupancy validation, and fixed escort exits', () => {
+    const defaultState = groupState();
+    expect(defaultState.grid.width).toBe(5);
+    expect(defaultState.grid.height).toBe(3);
+    expect(defaultState.grid.cells).toHaveLength(15);
+
+    const largeState = createBattlefieldGroupCombatState({
+      battleId: 'b11-large-grid-test',
+      seed: 'b11-large-seed',
+      gridPresetId: 'ambush_7x5',
+      activeUnitId: 'player',
+      objectives: [
+        { id: 'escort', type: 'escort', label: 'escort', status: 'active', unitId: 'merchant', cellId: 'c0_3', requiredEdge: true },
+      ],
+      units: [
+        unit({ id: 'player', side: 'player', cellId: 'c1_2', guNames: ['月光蛊', '力气蛊'] }),
+        unit({ id: 'merchant', name: 'merchant', side: 'ally', role: 'objective', cellId: 'c1_3', guNames: [] }),
+        unit({ id: 'enemy', side: 'enemy', cellId: 'c5_2', guNames: ['力气蛊'] }),
+        unit({ id: 'hidden_enemy', side: 'enemy', cellId: 'c4_1', guNames: ['破风蛊'], revealed: false }),
+      ],
+    });
+    expect(largeState.gridPresetId).toBe('ambush_7x5');
+    expect(largeState.grid.width).toBe(7);
+    expect(largeState.grid.height).toBe(5);
+    expect(largeState.grid.cells).toHaveLength(35);
+    expect(largeState.grid.cells.find(cell => cell.id === 'c0_3')?.flags).toContain('escort_exit');
+
+    expect(() => createBattlefieldGroupCombatState({
+      battleId: 'b11-out-of-bounds',
+      gridPresetId: 'ambush_7x5',
+      units: [unit({ id: 'bad', cellId: 'c7_0' })],
+    })).toThrow(/unit_out_of_bounds/);
+    expect(() => createBattlefieldGroupCombatState({
+      battleId: 'b11-duplicate',
+      gridPresetId: 'ambush_7x5',
+      units: [unit({ id: 'a', cellId: 'c1_1' }), unit({ id: 'b', cellId: 'c1_1' })],
+    })).toThrow(/duplicate_occupant/);
+
+    const escortMove = executeBattlefieldAction(largeState, {
+      type: 'move',
+      actorId: 'merchant',
+      targetCellId: 'c0_3',
+    });
+    expect(escortMove.state.objectives?.find(objective => objective.id === 'escort')?.status).toBe('succeeded');
+    expect(escortMove.steps.some(step => step.kind === 'objective' || step.kind === 'settlement')).toBe(true);
+  });
+
+  it('enumerates ranges and local intel on a 7x5 board deterministically', () => {
+    const largeState = createBattlefieldGroupCombatState({
+      battleId: 'b11-range-test',
+      seed: 'b11-range-seed',
+      gridPresetId: 'ambush_7x5',
+      activeUnitId: 'player',
+      units: [
+        unit({ id: 'player', side: 'player', cellId: 'c1_2', guNames: ['月光蛊', '力气蛊', '侦察蛊', '破风蛊'] }),
+        unit({ id: 'ally_scout', side: 'ally', cellId: 'c2_1', guNames: ['侦察蛊'] }),
+        unit({ id: 'enemy', side: 'enemy', cellId: 'c5_2', guNames: ['力气蛊'] }),
+        unit({ id: 'hidden_enemy', side: 'enemy', cellId: 'c4_1', guNames: ['破风蛊'], revealed: false }),
+      ],
+    });
+
+    const line = listBattlefieldActionTargets(largeState, { type: 'gu', actorId: 'player', guName: '月光蛊' });
+    expect(line.validTargetCellIds.length).toBeGreaterThan(0);
+    expect(line.validTargetCellIds.every(cellId => largeState.grid.cells.some(cell => cell.id === cellId))).toBe(true);
+
+    const adjacent = listBattlefieldActionTargets(largeState, { type: 'gu', actorId: 'player', guName: '力气蛊' });
+    expect(adjacent.validTargetCellIds.length).toBeGreaterThan(0);
+    expect(adjacent.validTargetCellIds).not.toContain('c5_2');
+
+    const observe = executeBattlefieldAction(largeState, { type: 'observe', actorId: 'ally_scout' });
+    expect(observe.steps.some(step => step.kind === 'ambush')).toBe(true);
+    expect(observe.state.units.find(item => item.id === 'hidden_enemy')?.revealed).toBe(true);
+
+    const first = resolveBattlefieldEnemyTurn(largeState).steps.map(step => ({ kind: step.kind, targetIds: step.targetIds, damage: step.damage }));
+    const second = resolveBattlefieldEnemyTurn(largeState).steps.map(step => ({ kind: step.kind, targetIds: step.targetIds, damage: step.damage }));
+    expect(second).toEqual(first);
   });
 
   it('resolves guard, assist, rally, formation, and observe as local steps', () => {

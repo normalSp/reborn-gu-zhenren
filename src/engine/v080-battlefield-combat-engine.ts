@@ -40,6 +40,12 @@ type ShapeRule = {
 
 type BattlefieldRules = {
   grid: { width: number; height: number };
+  gridPresets?: Record<string, {
+    width: number;
+    height: number;
+    description?: string;
+    cells?: Array<Partial<BattlefieldCell> & Pick<BattlefieldCell, 'id'>>;
+  }>;
   defaults: {
     terrainId: string;
     movementRange: number;
@@ -94,7 +100,7 @@ type BattlefieldRules = {
     };
     assist: { duration: number; range: number; hitBonus: number; damageMultiplier: number; maxStacks: number };
     guard: { duration: number; damageReduction: number; adjacentRequired: boolean };
-    ambush: { firstStrikeDamageMultiplier: number; observeRevealCount: number; hiddenEvasionBonus: number };
+    ambush: { firstStrikeDamageMultiplier: number; observeRevealCount: number; observeRange: number; hiddenEvasionBonus: number };
     formation: { controlDuration: number; controlRange: number; rallyMoraleBonus: number; arrayNodeDamageMultiplier: number; breakMoraleDelta: number };
     thirdParty: { entryRound: number; threatTargetThreshold: number; damageMultiplier: number };
     objectives: { escortEdgeRequired: boolean; protectHpThreshold: number; keyEnemyMoraleGain: number };
@@ -109,6 +115,8 @@ export interface CreateBattlefieldCombatInput {
   seed?: string | number;
   round?: number;
   phase?: BattlefieldCombatState['phase'];
+  gridPresetId?: string;
+  gridSize?: { width: number; height: number };
   cells?: Array<Partial<BattlefieldCell> & Pick<BattlefieldCell, 'id'>>;
   units: BattlefieldUnit[];
   mode?: BattlefieldCombatState['mode'];
@@ -124,6 +132,7 @@ export interface CreateBattlefieldCombatInput {
 }
 
 const rules = battlefieldRulesRaw as BattlefieldRules;
+const DEFAULT_GRID_PRESET_ID = 'skirmish_5x3';
 
 function cellId(x: number, y: number): string {
   return `c${x}_${y}`;
@@ -166,6 +175,7 @@ function cloneUnit(unit: BattlefieldUnit): BattlefieldUnit {
 function cloneState(state: BattlefieldCombatState): BattlefieldCombatState {
   return {
     ...state,
+    gridPresetId: state.gridPresetId,
     grid: {
       ...state.grid,
       cells: state.grid.cells.map(cloneCell),
@@ -318,8 +328,8 @@ function isAligned(a: BattlefieldCell, b: BattlefieldCell): boolean {
   return a.x === b.x || a.y === b.y;
 }
 
-function isEdgeCell(cell: BattlefieldCell): boolean {
-  return cell.x === 0 || cell.y === 0 || cell.x === rules.grid.width - 1 || cell.y === rules.grid.height - 1;
+function isEdgeCell(state: BattlefieldCombatState, cell: BattlefieldCell): boolean {
+  return cell.x === 0 || cell.y === 0 || cell.x === state.grid.width - 1 || cell.y === state.grid.height - 1;
 }
 
 function cellsBetween(state: BattlefieldCombatState, from: BattlefieldCell, to: BattlefieldCell): BattlefieldCell[] {
@@ -396,10 +406,31 @@ function normalizeUnit(unit: BattlefieldUnit): BattlefieldUnit {
   };
 }
 
-function buildDefaultCells(): BattlefieldCell[] {
+function resolveGridConfig(input: Pick<CreateBattlefieldCombatInput, 'gridPresetId' | 'gridSize'>): {
+  presetId?: string;
+  width: number;
+  height: number;
+  cells: Array<Partial<BattlefieldCell> & Pick<BattlefieldCell, 'id'>>;
+} {
+  const presetId = input.gridPresetId ?? DEFAULT_GRID_PRESET_ID;
+  const preset = rules.gridPresets?.[presetId];
+  if (input.gridPresetId && !preset) {
+    throw new Error(`unknown_grid_preset:${input.gridPresetId}`);
+  }
+  const width = Math.max(1, Math.floor(input.gridSize?.width ?? preset?.width ?? rules.grid.width));
+  const height = Math.max(1, Math.floor(input.gridSize?.height ?? preset?.height ?? rules.grid.height));
+  return {
+    presetId,
+    width,
+    height,
+    cells: preset?.cells ?? [],
+  };
+}
+
+function buildDefaultCells(width: number, height: number): BattlefieldCell[] {
   const cells: BattlefieldCell[] = [];
-  for (let y = 0; y < rules.grid.height; y += 1) {
-    for (let x = 0; x < rules.grid.width; x += 1) {
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
       cells.push({
         id: cellId(x, y),
         x,
@@ -411,6 +442,17 @@ function buildDefaultCells(): BattlefieldCell[] {
     }
   }
   return cells;
+}
+
+function applyCellOverride(cell: BattlefieldCell, override?: Partial<BattlefieldCell>): BattlefieldCell {
+  if (!override) return cell;
+  return {
+    ...cell,
+    ...override,
+    flags: override.flags ? [...override.flags] : [...cell.flags],
+    dangerTags: override.dangerTags ? [...override.dangerTags] : cell.dangerTags ? [...cell.dangerTags] : undefined,
+    occupantId: null,
+  };
 }
 
 function validateOccupancy(cells: BattlefieldCell[], units: BattlefieldUnit[]): void {
@@ -429,16 +471,13 @@ function validateOccupancy(cells: BattlefieldCell[], units: BattlefieldUnit[]): 
 }
 
 export function createBattlefieldCombatState(input: CreateBattlefieldCombatInput): BattlefieldCombatState {
-  const defaultCells = buildDefaultCells();
+  const gridConfig = resolveGridConfig(input);
+  const defaultCells = buildDefaultCells(gridConfig.width, gridConfig.height);
+  const presetOverrides = new Map(gridConfig.cells.map(cell => [cell.id, cell]));
   const cellOverrides = new Map(input.cells?.map(cell => [cell.id, cell]) ?? []);
   const cells = defaultCells.map(cell => {
-    const override = cellOverrides.get(cell.id);
-    return {
-      ...cell,
-      ...override,
-      flags: override?.flags ? [...override.flags] : [...cell.flags],
-      occupantId: null,
-    };
+    const presetCell = applyCellOverride(cell, presetOverrides.get(cell.id));
+    return applyCellOverride(presetCell, cellOverrides.get(cell.id));
   });
   const units = input.units.map(normalizeUnit);
   validateOccupancy(cells, units);
@@ -448,9 +487,10 @@ export function createBattlefieldCombatState(input: CreateBattlefieldCombatInput
     round: input.round ?? 1,
     phase: input.phase ?? 'player_turn',
     mode: input.mode ?? 'duel',
+    gridPresetId: gridConfig.presetId,
     grid: {
-      width: 5,
-      height: 3,
+      width: gridConfig.width,
+      height: gridConfig.height,
       cells: withCellOccupants(cells, units),
     },
     units,
@@ -649,7 +689,9 @@ function settleIfNeeded(state: BattlefieldCombatState): { state: BattlefieldComb
       if (objective.type === 'escort' && objective.unitId) {
         const unit = getUnit(state, objective.unitId);
         const cell = unit ? getCell(state, unit.cellId) : undefined;
-        if (unit && unit.hp > 0 && cell && (!objective.requiredEdge || isEdgeCell(cell))) {
+        if (unit && unit.hp > 0 && cell && (
+          objective.cellId ? cell.id === objective.cellId : (!objective.requiredEdge || isEdgeCell(state, cell))
+        )) {
           objectiveReason = `objective_succeeded:${objective.id}`;
           return { ...objective, status: 'succeeded' as const };
         }
@@ -750,18 +792,27 @@ function buildGroupActionTargets(state: BattlefieldCombatState, actor: Battlefie
     });
   }
   if (type === 'observe') {
-    const hiddenCellIds = state.units
-      .filter(unit => unit.hp > 0 && unit.revealed === false)
-      .map(unit => unit.cellId);
+    const observeRange = rules.group.ambush.observeRange;
+    const hiddenUnits = state.units.filter(unit => unit.hp > 0 && unit.revealed === false);
+    const hiddenUnitsInRange = hiddenUnits.filter(unit => {
+      const cell = getCell(state, unit.cellId);
+      return !!cell && manhattan(actorCell, cell) <= observeRange;
+    });
+    const hiddenCellIds = (hiddenUnitsInRange.length ? hiddenUnitsInRange : hiddenUnits).map(unit => unit.cellId);
     const intelCellIds = state.grid.cells
-      .filter(cell => cell.flags.includes('concealment') || cell.flags.includes('hazard') || cell.flags.includes('array_node') || hiddenCellIds.includes(cell.id))
+      .filter(cell => (
+        manhattan(actorCell, cell) <= observeRange &&
+        (cell.flags.includes('concealment') || cell.flags.includes('hazard') || cell.flags.includes('array_node'))
+      ) || hiddenCellIds.includes(cell.id))
       .map(cell => cell.id);
-    const affectedCellIds = [...new Set(intelCellIds.length ? intelCellIds : state.grid.cells.map(cell => cell.id))];
+    const affectedCellIds = [...new Set(intelCellIds.length
+      ? intelCellIds
+      : state.grid.cells.filter(cell => manhattan(actorCell, cell) <= observeRange).map(cell => cell.id))];
     return defaultValidation({ type, actorId: actor.id } as BattlefieldAction, {
       ok: true,
       validTargetCellIds: affectedCellIds,
       affectedCellIds,
-      targetUnitIds: state.units.filter(unit => unit.revealed === false).map(unit => unit.id),
+      targetUnitIds: (hiddenUnitsInRange.length ? hiddenUnitsInRange : hiddenUnits).map(unit => unit.id),
       sourceName: 'observe',
       tags: ['group', 'observe', 'ambush'],
     });
@@ -1294,7 +1345,9 @@ function executeMoveAction(state: BattlefieldCombatState, action: BattlefieldAct
     }));
   }
   nextState = markActorActed(updateUnit(nextState, actor), actor.id);
-  return { state: appendSteps(nextState, steps), steps, validation };
+  const settled = settleIfNeeded(appendSteps(nextState, steps));
+  const allSteps = settled.step ? [...steps, settled.step] : steps;
+  return { state: settled.state, steps: allSteps, validation };
 }
 
 function releaseKillerMove(
@@ -1555,8 +1608,12 @@ function executeGroupSupportAction(state: BattlefieldCombatState, action: Battle
 
   if (action.type === 'observe') {
     const revealLimit = rules.group.ambush.observeRevealCount;
-    const hiddenIds = nextState.units
-      .filter(unit => unit.hp > 0 && unit.revealed === false)
+    const revealCandidates = validation.targetUnitIds.length
+      ? validation.targetUnitIds
+      : nextState.units.filter(unit => unit.hp > 0 && unit.revealed === false).map(unit => unit.id);
+    const hiddenIds = revealCandidates
+      .map(unitId => getUnit(nextState, unitId))
+      .filter((unit): unit is BattlefieldUnit => !!unit && unit.hp > 0 && unit.revealed === false)
       .slice(0, revealLimit)
       .map(unit => unit.id);
     const units = nextState.units.map(unit => hiddenIds.includes(unit.id) ? { ...unit, revealed: true } : unit);
@@ -1596,7 +1653,7 @@ function executeRetreatAction(state: BattlefieldCombatState, action: Battlefield
     return !!cell && manhattan(actorCell, cell) <= 1;
   }).length;
   let chance = rules.escape.baseChance;
-  if (isEdgeCell(actorCell)) chance += rules.escape.edgeBonus;
+  if (isEdgeCell(nextState, actorCell)) chance += rules.escape.edgeBonus;
   if (actor.side === 'ally') chance += rules.escape.allySideBonus;
   if (state.mode === 'group' && (state.objectives ?? []).some(objective => objective.status === 'active')) chance -= rules.group.retreat.objectivePenalty;
   if (state.mode === 'group' && actorCell.flags.includes('cover')) chance += rules.group.retreat.allyCoverBonus;
