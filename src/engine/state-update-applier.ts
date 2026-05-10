@@ -6,6 +6,7 @@ import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, t
 import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
 import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
 import { validateIfBranchCandidate } from './v080-narrative-engine';
+import { validateNarrativeGuUseSuggestion } from './v080-narrative-gu-affordances';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -299,6 +300,15 @@ export function applyStateUpdate(update: StateUpdate): void {
     for (const suggestion of (update as any).gu_use_suggestions.add) {
       if (!suggestion?.guName) continue;
       const owned = guList.find((gu: any) => gu.name === suggestion.guName || gu.id === suggestion.guName);
+      const narrativeGuValidation = validateNarrativeGuUseSuggestion(suggestion, s);
+      if (!narrativeGuValidation.allowed || !narrativeGuValidation.executable) {
+        s.addGameLog?.('pipeline', `剧情蛊候选未执行：${suggestion.guName}`, {
+          reason: narrativeGuValidation.reason,
+          suggestion,
+          affordance: narrativeGuValidation.affordance,
+        });
+        continue;
+      }
       const entry = getGuUseEntry(suggestion.guName);
       const target = suggestion.target as GuUseTarget | undefined;
       const result = resolveSceneGatedGuUseSuggestion(entry, target, {

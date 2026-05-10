@@ -1,6 +1,7 @@
 import guDatabaseRaw from '../canon/gu-database.json';
 import immortalGuRaw from '../canon/immortal-gu.json';
 import type { NarrativeJSON } from '../types';
+import { annotateNarrativeGuChoices } from './v080-narrative-gu-affordances';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const immortalGu = immortalGuRaw as Record<string, any>;
@@ -17,10 +18,11 @@ export interface RewardConsistencyIssue {
 }
 
 export interface ChoiceAffordanceIssue {
-  kind: 'unowned_gu_use';
+  kind: 'unowned_gu_use' | 'unknown_gu_affordance' | 'missing_gu_affordance' | 'utility_mismatch' | 'forbidden_gu_gate';
   name: string;
   choiceId?: string;
   detail: string;
+  utilityId?: string;
 }
 
 export interface NarrativeConsistencyResult {
@@ -171,8 +173,24 @@ export function sanitizeNarrativeConsistency(narrative: NarrativeJSON, store: an
     text = text.replace(new RegExp(`(获得|得到|收下|收入|捡到|拿到|炼成|买下|夺得)(了|一只|这只|那只|「|『)?${name}`, 'g'), `听闻了「${name}」线索`);
   }
 
-  const choices = (narrative.narrative.choices || []).map(choice => {
-    const sanitized = sanitizeChoiceText(choice, store, owned, choiceIssues);
+  const guChoiceResult = annotateNarrativeGuChoices({
+    ...narrative,
+    narrative: {
+      ...narrative.narrative,
+      text,
+    },
+    state_update: stateUpdate,
+  }, store);
+  choiceIssues.push(...guChoiceResult.issues.map(issue => ({
+    kind: issue.kind,
+    name: issue.sourceName || '未知蛊虫',
+    choiceId: issue.choiceId,
+    detail: issue.detail,
+    utilityId: issue.utilityId,
+  })));
+
+  const choices = (guChoiceResult.narrative.narrative.choices || []).map(choice => {
+    const sanitized = choice;
     return {
       ...sanitized,
       text: sanitizeStartProfileIdentityText(

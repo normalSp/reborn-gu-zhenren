@@ -58,6 +58,26 @@ const RISK_STYLES: Record<Choice['risk'], {
   },
 };
 
+function getChoiceGuAffordances(choice: Choice) {
+  const raw = (choice as any).guAffordances ?? (choice as any).gu_affordance;
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw : [raw];
+}
+
+function getGuAffordanceTone(status: string | undefined) {
+  if (status === 'available') return 'border-rg-jade-400/40 text-rg-jade-300 bg-rg-jade-600/10';
+  if (status === 'missing') return 'border-rg-gold/35 text-rg-gold bg-rg-gold/10';
+  if (status === 'forbidden') return 'border-rg-blood-400/45 text-rg-blood-300 bg-rg-blood-600/10';
+  return 'border-rg-ink-300/25 text-rg-paper-200/65 bg-rg-ink-700/70';
+}
+
+function getGuAffordanceStatusLabel(status: string | undefined) {
+  if (status === 'available') return '蛊虫解法';
+  if (status === 'missing') return '缺少蛊虫';
+  if (status === 'forbidden') return '禁忌门槛';
+  return '待校验';
+}
+
 export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelProps) {
   const narrative = useStore(s => s.currentNarrative);
   const phase = useStore(s => s.pipelinePhase);
@@ -189,6 +209,8 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
         >
           {choices.map(choice => {
             const style = RISK_STYLES[choice.risk];
+            const guAffordances = getChoiceGuAffordances(choice);
+            const primaryGuAffordance = guAffordances[0];
             return (
               <motion.div key={choice.id} className="relative group" variants={choiceItem}>
                 <motion.button
@@ -202,9 +224,23 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 >
                   {/* 风险标签 */}
-                  <span className={`inline-block text-[10px] font-panel font-semibold mb-1.5 ${style.labelColor}`}>
-                    {style.label}
-                  </span>
+                  <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
+                    <span className={`inline-block text-[10px] font-panel font-semibold ${style.labelColor}`}>
+                      {style.label}
+                    </span>
+                    {primaryGuAffordance && (
+                      <motion.span
+                        className={`inline-flex max-w-full items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${getGuAffordanceTone(primaryGuAffordance.status)}`}
+                        initial={{ opacity: 0, y: 3 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                        data-testid={`choice-gu-affordance-${primaryGuAffordance.status || 'unknown'}`}
+                      >
+                        <span>{getGuAffordanceStatusLabel(primaryGuAffordance.status)}</span>
+                        <span className="truncate">{primaryGuAffordance.sourceName}</span>
+                      </motion.span>
+                    )}
+                  </div>
                   {/* 选项文本 */}
                   <p className="text-rg-paper-100 text-sm font-button leading-relaxed">
                     {choice.text}
@@ -213,10 +249,20 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                 {/* Risk tooltip */}
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-rg-ink-600 border border-rg-gold/30 rounded-sm
                               opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50
-                              pointer-events-none shadow-lg shadow-black/50">
+                              pointer-events-none shadow-lg shadow-black/50"
+                              data-testid={`choice-gu-affordance-tooltip-${choice.id}`}>
                   <p className="text-rg-paper-200/80 text-xs font-panel leading-relaxed">
                     {choice.risk_note}
                   </p>
+                  {guAffordances.length > 0 && (
+                    <div className="mt-2 border-t border-rg-ink-300/20 pt-2">
+                      {guAffordances.slice(0, 2).map((affordance: any, index: number) => (
+                        <p key={`${affordance.sourceName}-${affordance.utilityId}-${index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
+                          {getGuAffordanceStatusLabel(affordance.status)}：{affordance.label || affordance.sourceName}；{affordance.reason || affordance.riskHint}
+                        </p>
+                      ))}
+                    </div>
+                  )}
                   <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1
                                 w-0 h-0 border-l-4 border-r-4 border-t-4
                                 border-l-transparent border-r-transparent border-t-rg-ink-600" />

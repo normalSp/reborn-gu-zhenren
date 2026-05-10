@@ -15,6 +15,7 @@ import { getRuntimePathNames } from './path-registry';
 import { describeDaoHeartNarrativeBias } from './dao-reputation-policy';
 import { getCanonAnchor, getCanonAnchors } from './v080-narrative-engine';
 import { getSelectedTalentIds, getTalentDefinition } from './modifier-engine';
+import { buildNarrativeGuAffordancePromptInject } from './v080-narrative-gu-affordances';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1232,6 +1233,11 @@ export class ContextBuilder {
     }
 
     // 段3: 蛊虫当前状态摘要
+    const narrativeGuAffordancePrompt = buildNarrativeGuAffordancePromptInject(store);
+    if (narrativeGuAffordancePrompt) {
+      parts.push(narrativeGuAffordancePrompt);
+    }
+
     const inventory = store.inventory;
     if (inventory && inventory.length > 0) {
       const guLines: string[] = [];

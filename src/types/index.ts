@@ -562,6 +562,8 @@ export interface Choice {
   text: string;
   risk: 'high' | 'medium' | 'low';
   risk_note: string;
+  guAffordances?: NarrativeGuChoiceAffordance[];
+  gu_affordance?: NarrativeGuChoiceAffordance | NarrativeGuChoiceAffordance[];
 }
 
 export interface NarrativeJSON {
@@ -570,6 +572,39 @@ export interface NarrativeJSON {
     choices: Choice[];
   };
   state_update: StateUpdate;
+}
+
+export type NarrativeGuUtilityCategory =
+  | 'reconnaissance'
+  | 'tracking'
+  | 'healing'
+  | 'detox'
+  | 'obstacle_breaking'
+  | 'concealment'
+  | 'intimidation'
+  | 'forbidden_ritual'
+  | 'mobility'
+  | 'protection'
+  | 'control'
+  | 'signal'
+  | 'survival'
+  | 'refinement';
+
+export interface NarrativeGuChoiceAffordance {
+  sourceType: 'gu' | 'killer_move';
+  sourceName: string;
+  utilityId: string;
+  category: NarrativeGuUtilityCategory;
+  categoryLabel: string;
+  label: string;
+  status: 'available' | 'missing' | 'blocked' | 'forbidden';
+  reason: string;
+  risk: 'low' | 'medium' | 'high';
+  riskHint: string;
+  owned: boolean;
+  sceneGated: boolean;
+  forbidden: boolean;
+  promptHint?: string;
 }
 
 // ═══ v0.7.0 P2: 动态NPC系统 — AI叙事中生成的"路人甲"NPC ═══
@@ -732,6 +767,9 @@ export interface StateUpdate {
     add?: {
       guName: string;
       target?: TargetedGuEffectTarget;
+      utilityId?: string;
+      category?: NarrativeGuUtilityCategory;
+      riskHint?: string;
       sceneValidated?: boolean;
       sceneTags?: string[];
       reason?: string;

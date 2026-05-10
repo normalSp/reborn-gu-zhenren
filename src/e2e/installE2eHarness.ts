@@ -24,6 +24,7 @@ declare global {
       loadSave: (save: E2eSave) => { success: boolean; error?: string };
       getStateSummary: () => Record<string, unknown>;
       startBattlefieldDemo: () => Record<string, unknown>;
+      startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -128,6 +129,15 @@ function summarizeStore(): Record<string, unknown> {
   };
 }
 
+function skipTutorialForE2e(): void {
+  try {
+    window.localStorage.setItem('gu-zhenren-tutorial-skipped', 'true');
+  } catch {
+    /* no-op */
+  }
+  useStore.setState({ tutorialState: 'skipped', currentStep: 0 } as any);
+}
+
 export function installE2eHarness(): void {
   if (!isE2eEnabled()) return;
 
@@ -151,10 +161,117 @@ export function installE2eHarness(): void {
     getStateSummary: summarizeStore,
     startBattlefieldDemo() {
       const store = useStore.getState() as any;
+      skipTutorialForE2e();
       useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldDemo?.();
+      return summarizeStore();
+    },
+    startNarrativeGuAffordanceDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 2),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        inventory: [
+          {
+            id: 'e2e_moonlight_gu',
+            name: '月光蛊',
+            tier: 1,
+            path: '光道',
+            rarity: '普通',
+            description: '可凝出月刃切断绳索或示警。',
+            currentState: 'normal',
+          },
+          {
+            id: 'e2e_woman_heart_gu',
+            name: '妇人心蛊',
+            tier: 4,
+            path: '毒道',
+            rarity: '禁忌',
+            description: '毒道禁忌蛊，只能在强场景门槛下候选使用。',
+            currentState: 'sealed',
+          },
+        ],
+        currentNarrative: {
+          narrative: {
+            text: '山道尽头有一处被藤索封住的暗门，商队护卫催促你尽快决定。暗处还有尸毒气息残留，任何蛊虫手段都必须经过场景校验，不能把尝试直接写成奖励或胜负。',
+            choices: [
+              {
+                id: 'c1',
+                text: '使用月光蛊切断藤索，先开一条缝观察里面',
+                risk: 'medium',
+                risk_note: '月刃声响可能惊动附近巡夜人',
+                guAffordances: [{
+                  sourceType: 'gu',
+                  sourceName: '月光蛊',
+                  utilityId: 'cut_rope',
+                  category: 'obstacle_breaking',
+                  categoryLabel: '破障',
+                  label: '月光蛊 · 破障',
+                  status: 'available',
+                  reason: '你持有月光蛊，可作为切断藤索的剧情解法候选。',
+                  risk: 'medium',
+                  riskHint: '结果仍由本地规则校验。',
+                  owned: true,
+                  sceneGated: false,
+                  forbidden: false,
+                }],
+              },
+              {
+                id: 'c2',
+                text: '寻找追踪蛊线索，判断有没有人先进去过',
+                risk: 'low',
+                risk_note: '你尚未持有追踪蛊，只能打听线索',
+                guAffordances: [{
+                  sourceType: 'gu',
+                  sourceName: '追踪蛊',
+                  utilityId: 'follow_fugitive',
+                  category: 'tracking',
+                  categoryLabel: '追踪',
+                  label: '追踪蛊 · 追踪',
+                  status: 'missing',
+                  reason: '你尚未持有追踪蛊，此选项只能作为线索。',
+                  risk: 'medium',
+                  riskHint: '缺蛊时不能显示为可执行使用。',
+                  owned: false,
+                  sceneGated: false,
+                  forbidden: false,
+                }],
+              },
+              {
+                id: 'c3',
+                text: '压下妇人心蛊的毒意，只记录尸毒门槛',
+                risk: 'high',
+                risk_note: '禁忌蛊若无强场景授权会引发反噬和声名风险',
+                guAffordances: [{
+                  sourceType: 'gu',
+                  sourceName: '妇人心蛊',
+                  utilityId: 'forbidden_poison_refinement',
+                  category: 'detox',
+                  categoryLabel: '解毒',
+                  label: '妇人心蛊 · 禁忌门槛',
+                  status: 'forbidden',
+                  reason: '妇人心蛊需要强剧情门槛，不能当普通安全解法。',
+                  risk: 'high',
+                  riskHint: '需要 sceneValidated=true 后才可候选执行。',
+                  owned: true,
+                  sceneGated: true,
+                  forbidden: true,
+                }],
+              },
+            ],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
       return summarizeStore();
     },
     clearRuntime() {

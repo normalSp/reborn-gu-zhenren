@@ -4,12 +4,51 @@ const StringAnyRecord = z.record(z.string(), z.any());
 const StringNumberRecord = z.record(z.string(), z.number());
 const StringStringRecord = z.record(z.string(), z.string());
 
+const NarrativeGuUtilityCategorySchema = z.enum([
+  'reconnaissance',
+  'tracking',
+  'healing',
+  'detox',
+  'obstacle_breaking',
+  'concealment',
+  'intimidation',
+  'forbidden_ritual',
+  'mobility',
+  'protection',
+  'control',
+  'signal',
+  'survival',
+  'refinement',
+]);
+
+const ChoiceGuAffordanceSchema = z.object({
+  sourceType: z.enum(['gu', 'killer_move']).optional(),
+  sourceName: z.string().min(1),
+  utilityId: z.string().min(1).optional(),
+  category: NarrativeGuUtilityCategorySchema.optional(),
+  categoryLabel: z.string().optional(),
+  label: z.string().optional(),
+  status: z.enum(['available', 'missing', 'blocked', 'forbidden']).optional(),
+  reason: z.string().optional(),
+  risk: z.enum(['low', 'medium', 'high']).optional(),
+  riskHint: z.string().optional(),
+  owned: z.boolean().optional(),
+  sceneGated: z.boolean().optional(),
+  forbidden: z.boolean().optional(),
+  promptHint: z.string().optional(),
+}).passthrough();
+
 // ─── Choice Schema ───
 export const ChoiceSchema = z.object({
   id: z.string().min(1),
   text: z.string().min(1).max(100), // 5B: 放宽文本长度限制
   risk: z.enum(['high', 'medium', 'low']).optional().default('medium'), // 5B: 可选
   risk_note: z.string().min(0).max(200).optional().default('未知风险'), // 5B: 可选
+  gu_affordance: z.union([
+    ChoiceGuAffordanceSchema,
+    z.array(ChoiceGuAffordanceSchema),
+  ]).optional(),
+  guAffordances: z.array(ChoiceGuAffordanceSchema).optional(),
 }).passthrough(); // 5B: 容忍AI的outcome/reward等额外字段
 
 // ─── StateUpdate Sub-Schemas ───
@@ -151,6 +190,9 @@ const GuUseTargetSchema = z.object({
 const GuUseSuggestionAdd = z.object({
   guName: z.string().min(1),
   target: GuUseTargetSchema.optional(),
+  utilityId: z.string().min(1).optional(),
+  category: NarrativeGuUtilityCategorySchema.optional(),
+  riskHint: z.string().optional(),
   sceneValidated: z.boolean().optional(),
   sceneTags: z.array(z.string()).optional(),
   reason: z.string().optional(),

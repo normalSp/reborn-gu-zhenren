@@ -48,4 +48,58 @@ describe('v0.8.0 narrative state_update schema', () => {
     expect(parsed.state_update?.if_branch_candidates?.add?.[0].axis).toBe('break_fate');
     expect(parsed.state_update?.canon_anchor_pressure?.add?.[0].engineDecision).toBe('redirect');
   });
+
+  it('accepts v0.8 narrative Gu affordance metadata and guarded suggestions', () => {
+    const parsed = NarrativeJSONSchema.parse({
+      narrative: {
+        text: 'The sealed ravine is blocked by old vine cords and corpse poison mist. The engine must expose Gu-based scene options as candidates only, while local validation decides whether any registered effect may execute.',
+        choices: [
+          {
+            id: 'c1',
+            text: 'Use Moonlight Gu to cut the vine cord',
+            risk: 'medium',
+            risk_note: 'The blade flash may reveal your position.',
+            gu_affordance: {
+              sourceType: 'gu',
+              sourceName: '月光蛊',
+              utilityId: 'cut_rope',
+              category: 'obstacle_breaking',
+              status: 'available',
+              riskHint: 'Scene result still needs local validation.',
+            },
+          },
+          {
+            id: 'c2',
+            text: 'Ask for traces of Tracking Gu',
+            risk: 'low',
+            risk_note: 'Without the Gu this remains a clue route.',
+            guAffordances: [{
+              sourceType: 'gu',
+              sourceName: '追踪蛊',
+              utilityId: 'follow_fugitive',
+              category: 'tracking',
+              status: 'missing',
+            }],
+          },
+        ],
+      },
+      state_update: {
+        gu_use_suggestions: {
+          add: [{
+            guName: '月光蛊',
+            utilityId: 'cut_rope',
+            category: 'obstacle_breaking',
+            riskHint: 'May make noise in the ravine.',
+            sceneValidated: true,
+            sceneTags: ['ravine', 'vine_cord'],
+            reason: 'The selected choice asks for a registered obstacle-breaking use.',
+          }],
+        },
+      },
+    });
+
+    expect(parsed.narrative.choices[0].gu_affordance).toBeTruthy();
+    expect(parsed.narrative.choices[1].guAffordances?.[0].category).toBe('tracking');
+    expect(parsed.state_update?.gu_use_suggestions?.add?.[0].utilityId).toBe('cut_rope');
+  });
 });

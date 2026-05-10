@@ -18,6 +18,11 @@ import {
   createBattlefieldCombatState,
   listBattlefieldActionTargets,
 } from './v080-battlefield-combat-engine';
+import {
+  NARRATIVE_GU_AFFORDANCE_CATEGORIES,
+  getNarrativeGuUtilityCategory,
+  validateNarrativeGuUtilityMap,
+} from './v080-narrative-gu-affordances';
 
 const REQUIRED_GU = [
   '月光蛊', '月芒蛊', '小光蛊', '骨枪蛊', '熊力蛊', '蛮力天牛蛊', '水龙蛊', '火鸦蛊', '雷翼蛊', '春雷蛊', '岩枪蛊', '金龙蛊',
@@ -131,6 +136,34 @@ describe('v0.8.0 Gu expression data foundation', () => {
   it('keeps JSON metadata synchronized with entry counts', () => {
     expect((guExpressionSpecsRaw as any)._meta.entryCount).toBe((guExpressionSpecsRaw as any).entries.length);
     expect((killerMoveExpressionSpecsRaw as any)._meta.entryCount).toBe((killerMoveExpressionSpecsRaw as any).entries.length);
+  });
+
+  it('maps every narrative scene utility into fixed v0.8 Gu affordance categories', () => {
+    expect(validateNarrativeGuUtilityMap()).toEqual([]);
+    expect(NARRATIVE_GU_AFFORDANCE_CATEGORIES).toEqual([
+      'reconnaissance',
+      'tracking',
+      'healing',
+      'detox',
+      'obstacle_breaking',
+      'concealment',
+      'intimidation',
+      'forbidden_ritual',
+      'mobility',
+      'protection',
+      'control',
+      'signal',
+      'survival',
+      'refinement',
+    ]);
+    expect(getNarrativeGuUtilityCategory('spot_ambush')?.id).toBe('reconnaissance');
+    expect(getNarrativeGuUtilityCategory('follow_fugitive')?.id).toBe('tracking');
+    expect(getNarrativeGuUtilityCategory('save_wounded_ally')?.id).toBe('healing');
+    expect(getNarrativeGuUtilityCategory('remove_low_poison')?.id).toBe('detox');
+    expect(getNarrativeGuUtilityCategory('cut_rope')?.id).toBe('obstacle_breaking');
+    expect(getNarrativeGuUtilityCategory('hide_in_moon_shadow')?.id).toBe('concealment');
+    expect(getNarrativeGuUtilityCategory('intimidate_mortal')?.id).toBe('intimidation');
+    expect(getNarrativeGuUtilityCategory('forbidden_array')?.id).toBe('forbidden_ritual');
   });
 
   it('supports every Gu and killer move board shape in battlefield combat rules', () => {

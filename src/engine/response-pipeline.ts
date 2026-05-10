@@ -8,6 +8,7 @@ import { contextBuilder } from './context-builder';
 import { checkChapterGoals } from './goal-checker';
 import { buildDeathRecordFallback } from './death-record';
 import { sanitizeNarrativeConsistency } from './narrative-consistency';
+import { buildSelectedChoiceNarrativeGuContext } from './v080-narrative-gu-affordances';
 import { useStore } from '../store';
 import type { ActiveDialogue, Choice, DialogueActionCard, DialogueActionCardCategory, NarrativeJSON, AIContext } from '../types';
 import type { SemanticValidationResult } from './semantic-validator';
@@ -344,7 +345,9 @@ export class ResponsePipeline {
       this.state = 'BUILDING_CONTEXT';
       const context = contextBuilder.buildFullContext(store, this.config.mode);
       // P1-6.3 动静分离：动态数据（元石余额/NPC关系/蛊虫状态）注入user message
-      const dynamicCtx = contextBuilder.buildDynamicContext(store);
+      const dynamicCtxBase = contextBuilder.buildDynamicContext(store);
+      const selectedChoiceCtx = buildSelectedChoiceNarrativeGuContext(store, choiceId);
+      const dynamicCtx = [dynamicCtxBase, selectedChoiceCtx].filter(Boolean).join('\n\n');
       const baseMessages = contextBuilder.buildMessages(context, choiceId || undefined, dynamicCtx);
       console.log(`%c[PIPE] PROCESS %c→ choiceId=${choiceId||'START'} ctx_sys=${context.systemPrompt.length}c ctx_user=${baseMessages.user.length}c dynamic=${dynamicCtx.length}c`,
         'color:#b8860b;font-weight:bold','color:#999');

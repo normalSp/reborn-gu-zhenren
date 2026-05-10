@@ -1,0 +1,314 @@
+{
+  "_meta": {
+    "version": "v0.8.0-a3",
+    "description": "Maps GuExpressionSpec and KillerMoveExpressionSpec sceneUtilities into narrative choice categories. This is a prompt/UI/validation truth source only; it does not grant numeric rewards, combat results, or inventory changes.",
+    "source": "src/canon/gu-expression-specs.json and src/canon/killer-move-expression-specs.json"
+  },
+  "categories": [
+    {
+      "id": "reconnaissance",
+      "label": "侦察",
+      "risk": "low",
+      "promptVerb": "查明",
+      "utilityIds": [
+        "avoid_watch",
+        "blood_debt_record",
+        "check_trap",
+        "contest_strength",
+        "detect_hidden_motion",
+        "detect_infiltration",
+        "disarm_trap",
+        "extend_scouting",
+        "identify_gu",
+        "identify_poison_trap",
+        "inspect_dark_room",
+        "inspect_wound",
+        "night_watch",
+        "read_fast_enemy",
+        "read_omen",
+        "read_patrol",
+        "read_record",
+        "recall_map",
+        "scout_crevice",
+        "spot_ambush",
+        "spot_metal_wire",
+        "test_food"
+      ]
+    },
+    {
+      "id": "tracking",
+      "label": "追踪",
+      "risk": "medium",
+      "promptVerb": "追索",
+      "utilityIds": [
+        "choose_pursuit_window",
+        "find_camp",
+        "follow_fugitive",
+        "protect_camp",
+        "resume_pursuit",
+        "split_pursuit",
+        "tail_target",
+        "trace_waterline",
+        "wash_tracks"
+      ]
+    },
+    {
+      "id": "healing",
+      "label": "治疗",
+      "risk": "low",
+      "promptVerb": "救治",
+      "utilityIds": [
+        "clean_wound",
+        "conceal_minor_wound",
+        "conceal_wound",
+        "cool_burn",
+        "escort_recovery",
+        "guard_wounded",
+        "protect_companion",
+        "protect_wounded",
+        "restore_morale",
+        "save_wounded_ally",
+        "stabilize_negotiation",
+        "stabilize_wounded"
+      ]
+    },
+    {
+      "id": "detox",
+      "label": "解毒",
+      "risk": "medium",
+      "promptVerb": "验毒/解毒",
+      "utilityIds": [
+        "cross_poison_fog",
+        "enter_plague_room",
+        "forbidden_poison_refinement",
+        "poison_plot",
+        "purify_water",
+        "remove_low_poison",
+        "survive_no_food",
+        "taint_food",
+        "withstand_poisoned_blade"
+      ]
+    },
+    {
+      "id": "obstacle_breaking",
+      "label": "破障",
+      "risk": "medium",
+      "promptVerb": "破开阻碍",
+      "utilityIds": [
+        "break_chain",
+        "break_gate",
+        "break_grapple",
+        "break_grip",
+        "break_hold",
+        "break_line",
+        "break_road",
+        "break_thin_lock",
+        "break_weapon",
+        "clear_crowd",
+        "clear_fire",
+        "counter_metal_guard",
+        "cut_chain",
+        "cut_rope",
+        "destroy_webs",
+        "eat_lock",
+        "force_door",
+        "force_entry",
+        "force_gap",
+        "melt_light_lock",
+        "open_hidden_gap",
+        "pierce_floorboard",
+        "ram_gate",
+        "sabotage_preparation",
+        "smash_barricade",
+        "support_breakthrough"
+      ]
+    },
+    {
+      "id": "concealment",
+      "label": "遮掩",
+      "risk": "medium",
+      "promptVerb": "隐匿",
+      "utilityIds": [
+        "avoid_bad_trade",
+        "avoid_patrol",
+        "cross_shadow",
+        "escape_patrol",
+        "hide_in_moon_shadow",
+        "hide_inner_armor",
+        "hide_silhouette",
+        "hide_supply_usage",
+        "night_infiltrate",
+        "night_signal"
+      ]
+    },
+    {
+      "id": "intimidation",
+      "label": "威慑",
+      "risk": "medium",
+      "promptVerb": "震慑",
+      "utilityIds": [
+        "dark_reputation_branch",
+        "display_force",
+        "force_attention",
+        "force_duel_distance",
+        "force_negotiation",
+        "formal_duel_presence",
+        "intimidate_crowd",
+        "intimidate_mortal",
+        "prove_body_tempering",
+        "prove_force_path",
+        "show_strength",
+        "threaten_from_range"
+      ]
+    },
+    {
+      "id": "forbidden_ritual",
+      "label": "禁忌仪式",
+      "risk": "high",
+      "promptVerb": "触发禁忌门槛",
+      "utilityIds": [
+        "blood_debt_branch",
+        "dark_branch",
+        "forbidden_aptitude_plot",
+        "forbidden_array",
+        "forbidden_branch",
+        "interrupt_ritual",
+        "raise_extreme_pressure",
+        "ritual_cover"
+      ]
+    },
+    {
+      "id": "mobility",
+      "label": "移动",
+      "risk": "medium",
+      "promptVerb": "位移",
+      "utilityIds": [
+        "burst_escape",
+        "carry_heavy_load",
+        "carry_supplies",
+        "cover_retreat",
+        "cross_gravel",
+        "cross_water",
+        "move_boulder",
+        "pull_ally",
+        "retrieve_item",
+        "retrieve_key",
+        "short_gap_cross",
+        "speed_escape",
+        "steal_document",
+        "steal_key",
+        "stop_escape",
+        "trap_runner",
+        "trip_runner"
+      ]
+    },
+    {
+      "id": "protection",
+      "label": "防护",
+      "risk": "low",
+      "promptVerb": "护持",
+      "utilityIds": [
+        "absorb_first_hit",
+        "block_arrow_rain",
+        "block_blade",
+        "block_corridor",
+        "block_fire",
+        "block_narrow_path",
+        "bodyguard_posture",
+        "bodyguard_wall",
+        "buy_time",
+        "guard_hostage",
+        "harass_guard",
+        "hold_doorway",
+        "resist_cut",
+        "resist_needle",
+        "tank_arrow",
+        "tank_first_hit",
+        "withstand_fall"
+      ]
+    },
+    {
+      "id": "control",
+      "label": "控制",
+      "risk": "medium",
+      "promptVerb": "牵制",
+      "utilityIds": [
+        "ambush_setup",
+        "area_denial",
+        "blind_pursuer",
+        "body_check",
+        "burst_cut_rope",
+        "capture_alive",
+        "clear_drunk_target",
+        "clear_smoke",
+        "counter_wine_trap",
+        "earn_trust",
+        "escort_merchant",
+        "escort_through_swamp",
+        "extinguish_fire",
+        "flush_hidden_enemy",
+        "force_detour",
+        "force_single_attempt",
+        "grow_cover",
+        "hold_hot_chain",
+        "hold_witness",
+        "ignite_oil",
+        "knock_into_trap",
+        "lift_heavy_object",
+        "lift_weight",
+        "pin_cloth",
+        "plant_delayed_risk",
+        "plant_evidence",
+        "prepare_trap",
+        "push_projectile",
+        "raise_foothold",
+        "reduce_afterbattle_injury",
+        "scatter_crowd",
+        "set_wet_snare",
+        "startle_beast",
+        "tie_target",
+        "trigger_mechanism",
+        "trigger_trap",
+        "wake_unconscious"
+      ]
+    },
+    {
+      "id": "signal",
+      "label": "信号",
+      "risk": "low",
+      "promptVerb": "示警/传讯",
+      "utilityIds": [
+        "brief_illumination",
+        "enhance_light_gu",
+        "mark_cache",
+        "mark_safe_path",
+        "moonlit_signal",
+        "ranged_warning",
+        "signal_allies"
+      ]
+    },
+    {
+      "id": "survival",
+      "label": "生存",
+      "risk": "low",
+      "promptVerb": "维持生存",
+      "utilityIds": [
+        "survive_assassination",
+        "survive_wilderness"
+      ]
+    },
+    {
+      "id": "refinement",
+      "label": "炼化",
+      "risk": "medium",
+      "promptVerb": "炼化/准备",
+      "utilityIds": [
+        "consume_residue",
+        "judge_wine_quality",
+        "prepare_duel",
+        "refine_primeval_essence",
+        "turn_scrap_to_power"
+      ]
+    }
+  ]
+}
