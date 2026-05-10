@@ -406,6 +406,12 @@ function buildLoadedStoreState(
     duelState: battleRuntime.duelState,
     squadCombatState: battleRuntime.squadCombatState,
     battleVisualQueue: battleRuntime.battleVisualQueue,
+    battlefieldCombatState: null,
+    battlefieldSelectedAction: null,
+    battlefieldSelectedTargetCellId: null,
+    battlefieldValidation: null,
+    battlefieldPlaybackSteps: [],
+    battlefieldTraceCursor: 0,
     flags: battleRuntime.flags,
   };
 }
@@ -742,6 +748,8 @@ export const useStore = create<RootStore>()(
             // 排除临时状态
             isLoading, error,
             currentNarrative, squadCombatState,
+            battlefieldCombatState, battlefieldSelectedAction, battlefieldSelectedTargetCellId,
+            battlefieldValidation, battlefieldPlaybackSteps, battlefieldTraceCursor,
             // 排除读档版本计数器（纯UI信号，不持久化）
             gameLoadVersion,
             // P3修复：排除成就字段（achievementSlice独立管理localStorage，避免双重真相源覆盖）

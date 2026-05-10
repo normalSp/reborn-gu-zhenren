@@ -44,6 +44,7 @@ const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDial
 const BattleOverlay = lazyNamed(() => import('./BattleOverlay'), 'BattleOverlay');
 const CombatOverlay = lazyNamed(() => import('./CombatOverlay'), 'CombatOverlay');
 const SquadCombatOverlay = lazyNamed(() => import('./SquadCombatOverlay'), 'SquadCombatOverlay');
+const BattlefieldCombatOverlay = lazyNamed(() => import('./BattlefieldCombatOverlay'), 'BattlefieldCombatOverlay');
 const BattleFlashOverlay = lazyNamed(() => import('./BattleFlashOverlay'), 'BattleFlashOverlay');
 const NarrativeCombatPanel = lazyNamed(() => import('./NarrativeCombatPanel'), 'NarrativeCombatPanel');
 const NPCInteractionPanel = lazyNamed(() => import('./NPCInteractionPanel'), 'NPCInteractionPanel');
@@ -135,6 +136,7 @@ export function GameScreen() {
   const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
   const screenState = useStore(s => s.screenState);
   const gameLoadVersion = useStore(s => s.gameLoadVersion);
+  const initBattlefieldDemo = useStore((s: any) => s.initBattlefieldDemo);
   const startedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
 
@@ -356,6 +358,7 @@ export function GameScreen() {
         <BattleOverlay />
         <CombatOverlay />
         <SquadCombatOverlay />
+        <BattlefieldCombatOverlay />
         <BattleFlashOverlay />
         <NarrativeCombatPanel onSelectStrategem={(strategy) => submitChoice(strategy)} />
         <NPCInteractionPanel
@@ -438,6 +441,13 @@ export function GameScreen() {
             className={toolbarBtnClass(sidePanel === 'map')}
           >
             {currentDomain ? `${currentDomain}舆图` : '舆图'}
+          </button>
+          <button
+            onClick={() => initBattlefieldDemo?.()}
+            className={toolbarBtnClass(false)}
+            data-testid="open-battlefield-demo"
+          >
+            凡战
           </button>
           {TOOLBAR_BUTTONS_BASE.map(btn => (
             <button

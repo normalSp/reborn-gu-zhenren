@@ -179,6 +179,12 @@ export const INITIAL_STATE = {
   squadCombatState: null as any,
   // v0.7.0-c: 战斗闪图队列，纯运行时视觉事件，不进存档
   battleVisualQueue: [] as import('../types').BattleVisualEffectEvent[],
+  battlefieldCombatState: null as import('../types').BattlefieldCombatState | null,
+  battlefieldSelectedAction: null as import('../types').BattlefieldAction | null,
+  battlefieldSelectedTargetCellId: null as string | null,
+  battlefieldValidation: null as import('../types').BattlefieldActionValidation | null,
+  battlefieldPlaybackSteps: [] as import('../types').BattleResolutionStep[],
+  battlefieldTraceCursor: 0 as number,
   debt: 0 as number,
   debtInterestRate: 0.05 as number,
   // P2新增: 子系统默认值（各子系统实现时覆盖）
@@ -301,6 +307,12 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'squadCombatState',
   // v0.7.0-c: 闪图视觉队列（不持久化，不参与战斗结算）
   'battleVisualQueue',
+  'battlefieldCombatState',
+  'battlefieldSelectedAction',
+  'battlefieldSelectedTargetCellId',
+  'battlefieldValidation',
+  'battlefieldPlaybackSteps',
+  'battlefieldTraceCursor',
   // ═══ v1.7: timelineSlice临时选择状态（仅角色创建阶段使用，排除存档污染） ═══
   'selectedNodeId', 'selectedNode', 'selectedDomain',
   'timelineTalents', 'apertureConfig', 'apertureRemainingPoints',

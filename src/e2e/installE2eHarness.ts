@@ -23,6 +23,7 @@ declare global {
     __REBORN_E2E__?: {
       loadSave: (save: E2eSave) => { success: boolean; error?: string };
       getStateSummary: () => Record<string, unknown>;
+      startBattlefieldDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -99,6 +100,16 @@ function summarizeStore(): Record<string, unknown> {
       eventRiskModifier: terrainPreview.eventRiskModifier,
       notes: terrainPreview.notes,
     },
+    battlefieldCombat: state.battlefieldCombatState ? {
+      battleId: state.battlefieldCombatState.battleId,
+      phase: state.battlefieldCombatState.phase,
+      round: state.battlefieldCombatState.round,
+      cellCount: Array.isArray(state.battlefieldCombatState.grid?.cells) ? state.battlefieldCombatState.grid.cells.length : 0,
+      unitCount: Array.isArray(state.battlefieldCombatState.units) ? state.battlefieldCombatState.units.length : 0,
+      stepCount: Array.isArray(state.battlefieldPlaybackSteps) ? state.battlefieldPlaybackSteps.length : 0,
+      traceCursor: Number(state.battlefieldTraceCursor || 0),
+      result: state.battlefieldCombatState.result || null,
+    } : null,
     extremePhysiquePressure: extremePhysiquePressure ? {
       physiqueType: extremePhysiquePressure.physiqueType,
       pressureLevel: extremePhysiquePressure.pressureLevel,
@@ -138,6 +149,14 @@ export function installE2eHarness(): void {
       return result;
     },
     getStateSummary: summarizeStore,
+    startBattlefieldDemo() {
+      const store = useStore.getState() as any;
+      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      store.setScreenState?.('game_play');
+      store.setGameMode?.('canon');
+      store.initBattlefieldDemo?.();
+      return summarizeStore();
+    },
     clearRuntime() {
       try {
         window.localStorage.removeItem('gu-zhenren-save');

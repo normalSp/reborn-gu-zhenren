@@ -2,13 +2,40 @@
  * 战斗 Slice — P2-4a决斗引擎状态管理 + v0.7.0小队战斗
  * 薄切片设计：仅做状态读写，计算逻辑全部委托combat-engine / squad-combat-engine
  */
-import type { BattleTraceEntry, DuelAction, DuelEnemy, DuelMove, DuelState, KillMove, SquadCombatState, SquadMemberCombat, SquadEnemy, SquadAction } from '../../types';
+import type {
+  BattleResolutionStep,
+  BattleTraceEntry,
+  BattlefieldAction,
+  BattlefieldActionValidation,
+  BattlefieldCombatState,
+  DuelAction,
+  DuelEnemy,
+  DuelMove,
+  DuelState,
+  KillMove,
+  SquadCombatState,
+  SquadMemberCombat,
+  SquadEnemy,
+  SquadAction,
+} from '../../types';
 import { initDuel, executePlayerTurn, executeEnemyTurn } from '../../engine/combat-engine';
 import { initSquadDuel as engineInitSquadDuel, executeSquadTurn as engineExecuteSquadTurn } from '../../engine/squad-combat-engine';
 import { convertKillMoveToDuelMove } from '../../engine/killmove-bridge';
 import { buildBattleVisualEffectFromDuelMove } from '../../engine/battle-visual-effects';
 import { toRealmNum } from '../../engine/combat-formulas';
 import { getMaterialRegistryEntries } from '../../engine/material-registry';
+import {
+  advanceBattlefieldRound,
+  executeBattlefieldAction,
+  interruptPendingBattlefieldAction,
+  listBattlefieldActionTargets,
+  validateBattlefieldAction,
+} from '../../engine/v080-battlefield-combat-engine';
+import {
+  createBattlefieldDemoState,
+  describeBattlefieldReason,
+  getBattlefieldActor,
+} from '../../engine/v080-battlefield-ui-model';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
@@ -115,6 +142,45 @@ function applySquadResultToMember<T extends {
   return { ...member, ...patch };
 }
 
+function appendBattlefieldSteps(previous: BattleResolutionStep[], steps: BattleResolutionStep[]): BattleResolutionStep[] {
+  return [...previous, ...steps].slice(-120);
+}
+
+function pickEnemyReply(state: BattlefieldCombatState): BattlefieldAction | null {
+  const player = state.units.find(unit => unit.hp > 0 && (unit.side === 'player' || unit.side === 'ally'));
+  const enemy = state.units.find(unit => unit.hp > 0 && unit.side === 'enemy');
+  if (!player || !enemy) return null;
+  for (const guName of enemy.guNames) {
+    const action: BattlefieldAction = {
+      type: 'gu',
+      actorId: enemy.id,
+      guName,
+      targetCellId: player.cellId,
+      targetUnitIds: [player.id],
+    };
+    if (validateBattlefieldAction(state, action).ok) return action;
+  }
+  return null;
+}
+
+function resolveEnemyReply(state: BattlefieldCombatState): { state: BattlefieldCombatState; steps: BattleResolutionStep[] } {
+  if (state.phase === 'ended') return { state, steps: [] };
+  const reply = pickEnemyReply(state);
+  if (!reply) return { state, steps: [] };
+  const resolution = executeBattlefieldAction(state, reply);
+  return { state: resolution.state, steps: resolution.steps };
+}
+
+function selectionValidation(
+  state: BattlefieldCombatState | null,
+  action: BattlefieldAction | null,
+  targetCellId?: string | null,
+): BattlefieldActionValidation | null {
+  if (!state || !action) return null;
+  if (targetCellId) return validateBattlefieldAction(state, { ...action, targetCellId });
+  return listBattlefieldActionTargets(state, action);
+}
+
 export interface CombatSlice {
   duelState: DuelState | null;
   /** v0.7.0: 小队战斗状态 */
@@ -137,6 +203,12 @@ export interface CombatSlice {
   squadOverlevelEscapes: number;
   /** v0.7.0-c: 杀招/重要仙蛊闪图视觉队列，纯运行时 */
   battleVisualQueue: import('../../types').BattleVisualEffectEvent[];
+  battlefieldCombatState: BattlefieldCombatState | null;
+  battlefieldSelectedAction: BattlefieldAction | null;
+  battlefieldSelectedTargetCellId: string | null;
+  battlefieldValidation: BattlefieldActionValidation | null;
+  battlefieldPlaybackSteps: BattleResolutionStep[];
+  battlefieldTraceCursor: number;
 
   /** 开始决斗 */
   initDuel: (player: {
@@ -181,6 +253,15 @@ export interface CombatSlice {
   dequeueBattleVisualEffect: () => void;
   /** v0.7.0-c: 清空闪图队列 */
   clearBattleVisualEffects: () => void;
+  initBattlefieldDemo: () => void;
+  selectBattlefieldAction: (action: BattlefieldAction | null) => void;
+  selectBattlefieldTarget: (cellId: string | null) => void;
+  executeSelectedBattlefieldAction: () => void;
+  advanceBattlefieldRoundAction: () => void;
+  interruptBattlefieldPendingAction: (pendingActionId: string, reason: string) => void;
+  setBattlefieldTraceCursor: (cursor: number) => void;
+  advanceBattlefieldTraceCursor: () => void;
+  closeBattlefieldCombat: () => void;
 }
 
 export const createCombatSlice = (set: any, get: any): CombatSlice => ({
@@ -196,6 +277,12 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   squadComboSuccesses: 0,
   squadOverlevelEscapes: 0,
   battleVisualQueue: [],
+  battlefieldCombatState: null,
+  battlefieldSelectedAction: null,
+  battlefieldSelectedTargetCellId: null,
+  battlefieldValidation: null,
+  battlefieldPlaybackSteps: [],
+  battlefieldTraceCursor: 0,
 
   initDuel: (player, enemy) => {
     const fullStore = get() as any;
@@ -508,5 +595,139 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
 
   clearBattleVisualEffects: () => {
     set({ battleVisualQueue: [] });
+  },
+
+  initBattlefieldDemo: () => {
+    const store = get() as any;
+    const state = createBattlefieldDemoState(store);
+    const actor = getBattlefieldActor(state);
+    set({
+      battlefieldCombatState: state,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: [],
+      battlefieldTraceCursor: 0,
+    });
+    if (typeof store.addGameLog === 'function') {
+      store.addGameLog('combat', 'v0.8.0-a2 凡战棋盘演武开启', {
+        battleId: state.battleId,
+        terrain: state.activeTerrainId,
+        formation: state.activeFormationId,
+      });
+    }
+  },
+
+  selectBattlefieldAction: (action) => {
+    const state = get().battlefieldCombatState as BattlefieldCombatState | null;
+    set({
+      battlefieldSelectedAction: action,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: selectionValidation(state, action),
+    });
+  },
+
+  selectBattlefieldTarget: (cellId) => {
+    const state = get().battlefieldCombatState as BattlefieldCombatState | null;
+    const action = get().battlefieldSelectedAction as BattlefieldAction | null;
+    set({
+      battlefieldSelectedTargetCellId: cellId,
+      battlefieldValidation: selectionValidation(state, action, cellId),
+    });
+  },
+
+  executeSelectedBattlefieldAction: () => {
+    const current = get().battlefieldCombatState as BattlefieldCombatState | null;
+    const selected = get().battlefieldSelectedAction as BattlefieldAction | null;
+    if (!current || !selected) return;
+
+    const targetCellId = get().battlefieldSelectedTargetCellId as string | null;
+    const action = targetCellId ? { ...selected, targetCellId } : selected;
+    const validation = validateBattlefieldAction(current, action);
+    if (!validation.ok) {
+      const failure = executeBattlefieldAction(current, action);
+      set((s: CombatSlice) => ({
+        battlefieldCombatState: failure.state,
+        battlefieldValidation: failure.validation,
+        battlefieldPlaybackSteps: appendBattlefieldSteps(s.battlefieldPlaybackSteps, failure.steps),
+      }));
+      return;
+    }
+
+    const playerResolution = executeBattlefieldAction(current, action);
+    const enemyResolution = resolveEnemyReply(playerResolution.state);
+    const roundResolution = enemyResolution.state.phase === 'ended'
+      ? { state: enemyResolution.state, steps: [] as BattleResolutionStep[] }
+      : advanceBattlefieldRound(enemyResolution.state);
+    const nextState = roundResolution.state;
+    const steps = [...playerResolution.steps, ...enemyResolution.steps, ...roundResolution.steps];
+    const actor = getBattlefieldActor(nextState);
+    set((s: CombatSlice) => ({
+      battlefieldCombatState: nextState,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(nextState, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: appendBattlefieldSteps(s.battlefieldPlaybackSteps, steps),
+    }));
+
+    const store = get() as any;
+    if (nextState.result && typeof store.addGameLog === 'function') {
+      store.addGameLog('combat', `v0.8 凡战结算：${nextState.result.reason}`, {
+        battleId: nextState.battleId,
+        winner: nextState.result.winner,
+        roundsTaken: nextState.result.roundsTaken,
+      });
+    }
+  },
+
+  advanceBattlefieldRoundAction: () => {
+    const current = get().battlefieldCombatState as BattlefieldCombatState | null;
+    if (!current) return;
+    const resolution = advanceBattlefieldRound(current);
+    const actor = getBattlefieldActor(resolution.state);
+    set((s: CombatSlice) => ({
+      battlefieldCombatState: resolution.state,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(resolution.state, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: appendBattlefieldSteps(s.battlefieldPlaybackSteps, resolution.steps),
+    }));
+  },
+
+  interruptBattlefieldPendingAction: (pendingActionId, reason) => {
+    const current = get().battlefieldCombatState as BattlefieldCombatState | null;
+    if (!current) return;
+    const resolution = interruptPendingBattlefieldAction(current, pendingActionId, reason || 'pending action interrupted');
+    set((s: CombatSlice) => ({
+      battlefieldCombatState: resolution.state,
+      battlefieldValidation: resolution.validation,
+      battlefieldPlaybackSteps: appendBattlefieldSteps(s.battlefieldPlaybackSteps, resolution.steps),
+    }));
+  },
+
+  setBattlefieldTraceCursor: (cursor) => {
+    const total = (get().battlefieldPlaybackSteps as BattleResolutionStep[] | undefined)?.length ?? 0;
+    set({ battlefieldTraceCursor: Math.max(0, Math.min(total, cursor)) });
+  },
+
+  advanceBattlefieldTraceCursor: () => {
+    const total = (get().battlefieldPlaybackSteps as BattleResolutionStep[] | undefined)?.length ?? 0;
+    const current = Number(get().battlefieldTraceCursor || 0);
+    set({ battlefieldTraceCursor: Math.max(0, Math.min(total, current + 1)) });
+  },
+
+  closeBattlefieldCombat: () => {
+    const current = get().battlefieldCombatState as BattlefieldCombatState | null;
+    const store = get() as any;
+    if (current && typeof store.addGameLog === 'function') {
+      const reason = current.result?.reason ? `，${describeBattlefieldReason(current.result.reason) || current.result.reason}` : '';
+      store.addGameLog('combat', `v0.8.0-a2 凡战棋盘关闭${reason}`, { battleId: current.battleId });
+    }
+    set({
+      battlefieldCombatState: null,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: null,
+      battlefieldPlaybackSteps: [],
+      battlefieldTraceCursor: 0,
+    });
   },
 });
