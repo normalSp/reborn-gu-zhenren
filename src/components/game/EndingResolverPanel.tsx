@@ -41,7 +41,7 @@ export function EndingResolverPanel() {
   const reduceMotion = useReducedMotion();
   const endingState = useStore(s => (s as any).endingState);
   const refreshEndingCandidatesAction = useStore(s => (s as any).refreshEndingCandidatesAction);
-  const commitEndingCandidateAction = useStore(s => (s as any).commitEndingCandidateAction);
+  const commitBestEndingCandidateAction = useStore(s => (s as any).commitBestEndingCandidateAction);
 
   const state = endingState || {};
   const input = state.lastInput;
@@ -86,6 +86,20 @@ export function EndingResolverPanel() {
           data-testid="refresh-ending-candidates"
         >
           重算终局候选
+        </button>
+        <button
+          type="button"
+          onClick={() => commitBestEndingCandidateAction?.()}
+          disabled={state.status === 'committed'}
+          className={`ml-2 mt-3 rounded-sm px-3 py-1.5 text-xs font-button transition-micro ${
+            state.status === 'committed'
+              ? 'border border-rg-ink-300/16 text-rg-paper-200/32'
+              : 'border border-rg-gold/45 bg-rg-gold/12 text-rg-gold hover:bg-rg-gold/20'
+          }`}
+          data-testid="commit-best-ending-button"
+          title="由本地终局引擎自动选择当前证据下最合适的可提交结局"
+        >
+          结束此局 / 收束因果
         </button>
       </div>
 
@@ -143,20 +157,17 @@ export function EndingResolverPanel() {
                     <p key={reason} className="text-[11px] text-rg-blood-200/80">· {reason}</p>
                   ))}
                 </div>
-                <button
-                  type="button"
-                  onClick={() => commitEndingCandidateAction?.(candidate.id)}
-                  disabled={!candidate.canCommit || state.status === 'committed'}
-                  className={`mt-3 rounded-sm px-3 py-1.5 text-xs font-button transition-micro ${
-                    candidate.canCommit && state.status !== 'committed'
-                      ? 'border border-rg-gold/45 bg-rg-gold/12 text-rg-gold hover:bg-rg-gold/20'
-                      : 'border border-rg-ink-300/16 text-rg-paper-200/32'
+                <div
+                  className={`mt-3 inline-flex rounded-sm border px-2 py-1 text-[11px] font-panel ${
+                    candidate.canCommit
+                      ? 'border-rg-jade-400/35 bg-rg-jade-600/10 text-rg-jade-200'
+                      : 'border-rg-ink-300/16 text-rg-paper-200/36'
                   }`}
-                  data-testid={`ending-commit-button-${candidate.familyId}`}
-                  title={candidate.canCommit ? '由本地终局引擎正式结算' : (candidate.blockers || ['终局门槛不足']).join('；')}
+                  data-testid={`ending-readonly-candidate-${candidate.familyId}`}
+                  title={candidate.canCommit ? '可被自动终局按钮选中' : (candidate.blockers || ['终局门槛不足']).join('；')}
                 >
-                  结算终局
-                </button>
+                  {candidate.canCommit ? '可自动收束' : '证据不足'}
+                </div>
               </motion.div>
             ))}
             {candidates.length === 0 && <p className="text-[11px] text-rg-paper-200/38">暂无终局候选，先重算一次。</p>}

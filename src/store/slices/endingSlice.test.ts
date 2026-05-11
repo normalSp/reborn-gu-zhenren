@@ -129,6 +129,19 @@ describe('v0.8.0-c1 ending framework store slice', () => {
     expect(harness.get().flags.endingOutcome.familyId).toBe(candidate!.familyId);
   });
 
+  it('auto commits the best local ending candidate instead of letting UI pick a route', () => {
+    const harness = createHarness();
+    const preview = harness.get().refreshEndingCandidatesAction();
+    const best = preview.candidates.find((item: any) => item.canCommit && item.familyId === preview.validation.recommendedFamilyId)
+      || preview.candidates.find((item: any) => item.canCommit);
+
+    const result = harness.get().commitBestEndingCandidateAction();
+
+    expect(result.success).toBe(true);
+    expect(harness.get().endingState.status).toBe('committed');
+    expect(harness.get().flags.endingOutcome.familyId).toBe(best!.familyId);
+  });
+
   it('blocks premature commits and writes an L3 warning', () => {
     const harness = createHarness({
       turn: 3,

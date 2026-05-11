@@ -420,7 +420,11 @@ export function BattlefieldCombatOverlay() {
           backgroundSize: '44px 44px',
         }}
       />
-      <div ref={effectLayerRef} className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+      <div
+        ref={effectLayerRef}
+        className="pointer-events-none absolute inset-0 z-50 overflow-hidden mix-blend-screen"
+        data-testid="battlefield-effect-layer"
+      >
         <div className="battlefield-gsap-flare absolute left-1/2 top-1/2 h-[52vmin] w-[52vmin] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0" />
         <div className="battlefield-gsap-ring absolute left-1/2 top-1/2 h-[34vmin] w-[34vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-0" />
         <div className="battlefield-gsap-pulse absolute left-0 right-0 top-1/2 h-[2px] opacity-0" />

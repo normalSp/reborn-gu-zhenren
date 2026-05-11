@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store';
 import { GU_SPRING_DEFAULT, GU_SPRING_PANEL, GU_SPRING_DAMAGE } from '../../animations/motion/springTokens';
+import { normalizePathDaoMarkState } from '../../engine/path-dao-mark-normalizer';
 
 const PERIOD_LABELS: Record<string, string> = { morning: '清晨', noon: '日中', evening: '黄昏', night: '深夜' };
 const SEASON_LABELS: Record<string, string> = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' };
@@ -36,6 +37,13 @@ export function StatusBar() {
   const turn = useStore(s => s.turn);
   const daoHeart = useStore(s => s.daoHeart);
   const inventory = useStore(s => s.inventory);
+  const killMoves = useStore(s => s.killMoves);
+  const pathBuild = useStore(s => s.pathBuild);
+  const daoMarksTop = useStore(s => (s as any).daoMarks);
+  const aperture = useStore(s => (s as any).aperture);
+  const primaryPath = useStore(s => (s as any).primaryPath);
+  const secondaryPaths = useStore(s => (s as any).secondaryPaths);
+  const pathLevelsTop = useStore(s => (s as any).pathLevels);
   const toggleSaveDialog = useStore(s => s.toggleSaveDialog);
   const toggleSettings = useStore(s => s.toggleSettings);
   const toggleAchievementPanel = useStore(s => s.toggleAchievementPanel);
@@ -49,6 +57,16 @@ export function StatusBar() {
   const currentChapter = getCurrentChapter?.();
   // P2-P8-5: 气运可见性检测 — 需有运道蛊虫（如察运蛊）
   const canSeeQiYun = (inventory || []).some((g: any) => g.path === '运道');
+  const daoSummary = normalizePathDaoMarkState({
+    pathBuild,
+    daoMarks: daoMarksTop,
+    aperture,
+    primaryPath,
+    secondaryPaths,
+    pathLevels: pathLevelsTop,
+    inventory,
+    killMoves,
+  });
 
   const healthPct = vitals.health.current / vitals.health.max * 100;
   const essencePct = essence.current / essence.max * 100;
@@ -196,6 +214,14 @@ export function StatusBar() {
             <div className="w-[1px] h-4 bg-rg-ink-300/15" />
             <span className="text-rg-gold/70 text-xs font-panel tabular-nums">
               {isImmortal ? `仙元石 ${immortalCurrency}` : `元石 ${currency}`}
+            </span>
+            <div className="hidden h-4 w-[1px] bg-rg-ink-300/15 lg:block" />
+            <span
+              className="hidden max-w-[220px] truncate text-xs font-panel text-rg-paper-200/45 lg:inline"
+              title={`主修：${daoSummary.primary || '未定'}；辅修：${daoSummary.secondary.join('、') || '无'}；道痕总计：${daoSummary.totalMarks}`}
+            >
+              {daoSummary.primary || '未定道'} · 道痕 {daoSummary.totalMarks}
+              {daoSummary.topDaoMarks[0] ? ` · ${daoSummary.topDaoMarks[0][0]}${daoSummary.topDaoMarks[0][1]}` : ''}
             </span>
             <button
               onClick={() => {

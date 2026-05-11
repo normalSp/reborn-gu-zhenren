@@ -1,6 +1,7 @@
 import { useStore } from '../../store';
 import { StarIcon, ArrowLeftIcon, ArrowRightIcon } from '../../icons';
 import type { PathLevel } from '../../types';
+import { normalizePathDaoMarkState } from '../../engine/path-dao-mark-normalizer';
 
 // ─── 道痕互斥组（蛊真人设定：对立流派道痕互相削弱）────────────────
 const PATH_MUTUAL_EXCLUSION: Record<string, string[]> = {
@@ -110,21 +111,33 @@ function DaoMarkBars({
 
 export function DaoMarkPanel() {
   const pathBuild = useStore(s => s.pathBuild);
+  const daoMarksTop = useStore(s => (s as any).daoMarks);
+  const aperture = useStore(s => (s as any).aperture);
+  const primaryPath = useStore(s => (s as any).primaryPath);
+  const secondaryPaths = useStore(s => (s as any).secondaryPaths);
+  const pathLevelsTop = useStore(s => (s as any).pathLevels);
   const profile = useStore(s => s.profile);
   const inventory = useStore(s => s.inventory);
   const killMoves = useStore(s => s.killMoves);
 
-  const { primary, secondary, path_levels, dao_marks } = pathBuild;
+  const normalized = normalizePathDaoMarkState({
+    pathBuild,
+    daoMarks: daoMarksTop,
+    aperture,
+    primaryPath,
+    secondaryPaths,
+    pathLevels: pathLevelsTop,
+    inventory,
+    killMoves,
+  });
+  const primary = normalized.primary;
+  const secondary = normalized.secondary;
+  const path_levels = normalized.pathLevels;
+  const dao_marks = normalized.daoMarks;
   const daoEntries = Object.entries(dao_marks);
-  const totalMarks = daoEntries.reduce((sum, [, v]) => sum + v, 0);
+  const totalMarks = normalized.totalMarks;
   const isImmortal = (profile.realm?.grand || 1) >= 6;
-  const softTendency = Object.entries(
-    [...(inventory || []), ...(killMoves || [])].reduce((acc: Record<string, number>, item: any) => {
-      if (!item?.path) return acc;
-      acc[item.path] = (acc[item.path] || 0) + (item.baseCost ? 3 : 2);
-      return acc;
-    }, {}),
-  ).sort(([, a], [, b]) => b - a).slice(0, 3);
+  const softTendency = normalized.softTendency;
 
   return (
     <div className="h-full overflow-y-auto p-4">
@@ -152,6 +165,11 @@ export function DaoMarkPanel() {
             <div>
               <div className="text-rg-paper-200/50 text-xs font-panel">道痕总计</div>
               <div className="text-rg-paper-100 font-panel text-lg">{totalMarks}</div>
+              {Object.keys(normalized.apertureDensity).length > 0 && (
+                <div className="mt-0.5 text-[10px] text-rg-paper-200/42">
+                  仙窍密度已纳入展示
+                </div>
+              )}
             </div>
             <div className="col-span-2">
               <div className="text-rg-paper-200/50 text-xs font-panel">

@@ -18,6 +18,7 @@ export interface EndingSlice {
   previewEndingFramework: () => { validation: EndingEntryValidation; candidates: EndingRouteCandidate[] };
   refreshEndingCandidatesAction: () => { validation: EndingEntryValidation; candidates: EndingRouteCandidate[] };
   commitEndingCandidateAction: (candidateId: string) => { success: boolean; message: string };
+  commitBestEndingCandidateAction: () => { success: boolean; message: string };
   recordEndingPressureAction: (attemptedOutcome: string, reason?: string) => { success: boolean; message: string };
 }
 
@@ -135,6 +136,21 @@ export const createEndingSlice = (set: any, get: any): EndingSlice => ({
       provenance: result.outcome.provenance,
     });
     return { success: true, message: `终局已结算：${result.outcome.displayName}` };
+  },
+
+  commitBestEndingCandidateAction: () => {
+    const store = get() as any;
+    const refreshed = store.refreshEndingCandidatesAction?.();
+    const validation = refreshed?.validation;
+    const candidates: EndingRouteCandidate[] = Array.isArray(refreshed?.candidates) ? refreshed.candidates : [];
+    const best = candidates.find(item => item.canCommit && item.familyId === validation?.recommendedFamilyId)
+      || candidates.find(item => item.canCommit);
+    if (!best) {
+      const issues = validation?.issues?.join('；') || candidates.flatMap(item => item.blockers || []).slice(0, 3).join('；') || '终局证据不足，无法自动收束。';
+      pushL3Warning(get, 'ending_auto_commit_blocked', issues);
+      return { success: false, message: issues };
+    }
+    return store.commitEndingCandidateAction?.(best.id) || { success: false, message: '终局结算动作不可用。' };
   },
 
   recordEndingPressureAction: (attemptedOutcome, reason) => {

@@ -152,23 +152,22 @@ export function GameScreen() {
   // ─── P4修复: BGM 自动切换 — 域变化 → crossFade ───
   const currentDomain = useStore(s => s.currentDomain);
   const isImmortal = useStore(s => (s.profile?.realm?.grand || 1) >= 6);
-  const prevDomainRef = useRef<typeof currentDomain>(currentDomain);
+  const prevDomainRef = useRef<typeof currentDomain | null>(null);
   useEffect(() => {
-    if (currentDomain !== prevDomainRef.current) {
-      const bgmUrl = DOMAIN_BGM[currentDomain];
-      if (bgmUrl) {
-        audioManager.crossFade(`/audio/${bgmUrl}`, 1.5);
-        console.log(`[BGM] 域切换: ${prevDomainRef.current} → ${currentDomain} (${bgmUrl})`);
-      }
+    if (!currentDomain) return;
+    const bgmUrl = DOMAIN_BGM[currentDomain];
+    if (!bgmUrl) return;
+    if (!startedRef.current) {
+      audioManager.playBgm(`/audio/${bgmUrl}`);
+      startedRef.current = true;
       prevDomainRef.current = currentDomain;
+      console.log(`[BGM] 开局播放: ${currentDomain} (${bgmUrl})`);
+      return;
     }
-    // 首次进入游戏：播放当前域 BGM
-    if (!prevDomainRef.current && currentDomain && !startedRef.current) {
-      const bgmUrl = DOMAIN_BGM[currentDomain];
-      if (bgmUrl) {
-        audioManager.playBgm(`/audio/${bgmUrl}`);
-        console.log(`[BGM] 开局播放: ${currentDomain} (${bgmUrl})`);
-      }
+    if (currentDomain !== prevDomainRef.current) {
+      audioManager.crossFade(`/audio/${bgmUrl}`, 1.5);
+      console.log(`[BGM] 域切换: ${prevDomainRef.current} → ${currentDomain} (${bgmUrl})`);
+      prevDomainRef.current = currentDomain;
     }
   }, [currentDomain]);
 
