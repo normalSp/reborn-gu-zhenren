@@ -41,6 +41,7 @@ async function openApp(page: Page): Promise<void> {
 }
 
 async function resetToApp(page: Page): Promise<void> {
+  await page.evaluate(() => localStorage.clear()).catch(() => {});
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
 }

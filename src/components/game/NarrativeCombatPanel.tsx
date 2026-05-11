@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 import { useStore } from '../../store';
 import type { CombatConstraint, CombatEventCandidate } from '../../types';
 import { scaleLabel } from '../../engine/v080-narrative-combat-orchestration';
@@ -7,16 +8,30 @@ interface NarrativeCombatPanelProps {
   onSelectStrategem?: (strategy: string) => void;
 }
 
+const EMPTY_COMBAT_EVENT_CANDIDATES: CombatEventCandidate[] = [];
+
 export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanelProps) {
-  const cc = useStore((s: any) => s.transientCombatConstraint) as CombatConstraint | null;
-  const setCC = useStore((s: any) => s.setTransientCombatConstraint) as ((c: CombatConstraint | null) => void) | undefined;
-  const setFlag = useStore((s: any) => s.setFlag) as ((key: string, value: any) => void) | undefined;
-  const turn = useStore((s: any) => s.turn) as number | undefined;
-  const realm = useStore((s: any) => s.realm) as string | undefined;
-  const guInventory = useStore((s: any) => s.gu_inventory) as any[] | undefined;
-  const combatEventCandidates = useStore((s: any) => s.flags?.combatEventCandidates || []) as CombatEventCandidate[];
-  const acceptCombatEventCandidate = useStore((s: any) => s.acceptCombatEventCandidate) as ((id: string) => boolean) | undefined;
-  const combatEncounterState = useStore((s: any) => s.combatEncounterState) as any;
+  const {
+    cc,
+    setCC,
+    setFlag,
+    turn,
+    realm,
+    guInventory,
+    combatEventCandidates,
+    acceptCombatEventCandidate,
+    combatEncounterState,
+  } = useStore(useShallow((s: any) => ({
+    cc: s.transientCombatConstraint as CombatConstraint | null,
+    setCC: s.setTransientCombatConstraint as ((c: CombatConstraint | null) => void) | undefined,
+    setFlag: s.setFlag as ((key: string, value: any) => void) | undefined,
+    turn: s.turn as number | undefined,
+    realm: s.realm as string | undefined,
+    guInventory: s.gu_inventory as any[] | undefined,
+    combatEventCandidates: (s.flags?.combatEventCandidates || EMPTY_COMBAT_EVENT_CANDIDATES) as CombatEventCandidate[],
+    acceptCombatEventCandidate: s.acceptCombatEventCandidate as ((id: string) => boolean) | undefined,
+    combatEncounterState: s.combatEncounterState as any,
+  })));
 
   const formalCandidates = useMemo(
     () => combatEventCandidates

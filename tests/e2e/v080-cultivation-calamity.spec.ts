@@ -3,6 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 type RebornE2eWindow = Window & {
   __REBORN_E2E__?: {
     startCultivationDeepeningDemo: () => Record<string, unknown>;
+    startCultivationCalamityNarrativeDemo: () => Record<string, unknown>;
     getStateSummary: () => Record<string, unknown>;
     clearRuntime: () => void;
   };
@@ -37,8 +38,19 @@ async function openCultivationDemo(page: Page): Promise<string[]> {
   return consoleErrors;
 }
 
-test.describe('v0.8.0-b2 cultivation and calamity UI', () => {
-  test('desktop can preview cultivation, attempt ascension, and settle a blessed-land calamity', async ({ page }) => {
+async function openRankSevenCalamityDemo(page: Page): Promise<string[]> {
+  const consoleErrors = await installConsoleGuards(page);
+  await page.addInitScript(() => localStorage.clear());
+  await page.goto('/?e2e=1');
+  await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
+  await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startCultivationCalamityNarrativeDemo());
+  await page.getByTestId('side-panel-actions').click();
+  await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toBeVisible();
+  return consoleErrors;
+}
+
+test.describe('v0.8.0-c2.4 cultivation and calamity narrative UI', () => {
+  test('desktop can preview cultivation, attempt ascension, and stage calamity into narrative', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openCultivationDemo(page);
 
@@ -58,8 +70,28 @@ test.describe('v0.8.0-b2 cultivation and calamity UI', () => {
 
     const calamitySummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const cultivation = calamitySummary.cultivation as Record<string, unknown>;
-    expect(Number(cultivation.calamityCount)).toBeGreaterThanOrEqual(1);
+    expect(String(cultivation.pendingCalamitySceneKind || '')).not.toBe('');
+    expect(Number(cultivation.calamityCount)).toBe(0);
     expect(Number(cultivation.lastStepCount)).toBeGreaterThan(0);
+    expect(consoleErrors).toEqual([]);
+  });
+
+  test('rank seven panel hides rank-five ascension and stages calamity through scene AP', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const consoleErrors = await openRankSevenCalamityDemo(page);
+
+    await expect(page.locator('[data-testid="cultivation-ascension-action"]:visible')).toHaveCount(0);
+    await expect(page.locator('[data-testid="cultivation-calamity-action"]:visible')).toBeEnabled();
+    await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toContainText('仙窍');
+    await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).not.toContainText('五转阶段');
+
+    await page.locator('[data-testid="cultivation-calamity-action"]:visible').click();
+    await expect(page.locator('[data-testid="cultivation-resolution-trace"]:visible')).toContainText('calamity_warning');
+    const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
+    const cultivation = summary.cultivation as Record<string, unknown>;
+    expect(String(cultivation.pendingCalamitySceneKind || '')).not.toBe('');
+    expect(Number(cultivation.sceneBudgetRemaining)).toBe(2);
+    expect(Number(cultivation.calamityCount)).toBe(0);
     expect(consoleErrors).toEqual([]);
   });
 

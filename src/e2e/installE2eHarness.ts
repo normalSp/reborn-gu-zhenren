@@ -38,6 +38,7 @@ declare global {
       startBattlefieldLargeGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       startCultivationDeepeningDemo: () => Record<string, unknown>;
+      startCultivationCalamityNarrativeDemo: () => Record<string, unknown>;
       startMidgameAnchorDemo: () => Record<string, unknown>;
       startEndingFrameworkDemo: () => Record<string, unknown>;
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
@@ -147,6 +148,9 @@ function summarizeStore(): Record<string, unknown> {
       threeQi: state.cultivationState.ascension?.threeQi || null,
       heavenWillPressure: Number(state.cultivationState.ascension?.heavenWillPressure || 0),
       nextCalamity: state.cultivationState.nextCalamityPreview?.name || null,
+      pendingCalamitySceneKind: state.flags?.pendingCalamitySceneSpec?.kind || null,
+      pendingCalamitySceneCombatScale: state.flags?.pendingCalamitySceneSpec?.combatScale || null,
+      sceneBudgetRemaining: Number(state.sceneSessionState?.budget?.remainingAp ?? state.gameTime?.ap ?? 0),
     } : null,
     storyAnchor: state.storyAnchorState ? {
       fateState: state.storyAnchorState.fateState,
@@ -227,7 +231,26 @@ export function installE2eHarness(): void {
     startBattlefieldDemo() {
       const store = useStore.getState() as any;
       skipTutorialForE2e();
-      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 2),
+        currentNarrative: {
+          narrative: {
+            text: '演武战场已展开。此处只验证本地战斗棋盘与轨迹播放，不触发新一轮叙事生成。',
+            choices: [],
+          },
+          state_update: {},
+        },
+        sceneSessionState: {
+          sceneId: 'battlefield_demo',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldDemo?.();
@@ -236,7 +259,26 @@ export function installE2eHarness(): void {
     startBattlefieldGroupDemo() {
       const store = useStore.getState() as any;
       skipTutorialForE2e();
-      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 2),
+        currentNarrative: {
+          narrative: {
+            text: '群像演武战场已展开。此处只验证本地群像战斗，不触发新一轮叙事生成。',
+            choices: [],
+          },
+          state_update: {},
+        },
+        sceneSessionState: {
+          sceneId: 'battlefield_group_demo',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldGroupDemo?.();
@@ -245,7 +287,26 @@ export function installE2eHarness(): void {
     startBattlefieldLargeGroupDemo() {
       const store = useStore.getState() as any;
       skipTutorialForE2e();
-      useStore.setState({ turn: Math.max(Number(store.turn || 1), 2) } as any);
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 2),
+        currentNarrative: {
+          narrative: {
+            text: '七乘五山谷伏击演武已展开。此处只验证大棋盘、阵位与移动端横滚，不触发新一轮叙事生成。',
+            choices: [],
+          },
+          state_update: {},
+        },
+        sceneSessionState: {
+          sceneId: 'battlefield_large_group_demo',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldLargeGroupDemo?.();
@@ -258,6 +319,14 @@ export function installE2eHarness(): void {
         turn: Math.max(Number(store.turn || 1), 2),
         tutorialState: 'skipped',
         currentStep: 0,
+        sceneSessionState: {
+          sceneId: 'narrative_gu_affordance_demo',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
         inventory: [
           {
             id: 'e2e_moonlight_gu',
@@ -349,6 +418,11 @@ export function installE2eHarness(): void {
           },
           state_update: {},
         },
+        flags: {
+          ...(store.flags || {}),
+          pendingCalamitySceneSpec: null,
+          combatEventCandidates: [],
+        },
         pipelinePhase: 'RESOLVED',
         pipelineError: null,
       } as any);
@@ -380,6 +454,14 @@ export function installE2eHarness(): void {
           essenceType: 'mortal',
         },
         gameTime: { ap: 3, max_ap: 3, period: 'night', day: 18, month: 6, year: 1, season: 'summer' },
+        sceneSessionState: {
+          sceneId: 'rank5_ascension_preparation',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
         pathBuild: {
           primary: '气道',
           secondary: ['炎道'],
@@ -402,7 +484,100 @@ export function installE2eHarness(): void {
         ],
         killMoves: [{ id: 'b2_qi_guard', name: '三气护窍', path: '气道', level: 5, baseCost: 60, multiplier: 1.1, cooldown: 3, description: '升仙前护住窍壁的演武杀招。' }],
         cultivationState,
-        flags: { ...(store.flags || {}), cultivationProgress: 190 },
+        flags: {
+          ...(store.flags || {}),
+          cultivationProgress: 190,
+          pendingCalamitySceneSpec: null,
+          combatEventCandidates: [],
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
+      return summarizeStore();
+    },
+    startCultivationCalamityNarrativeDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      const cultivationState = createDefaultCultivationState({
+        progress: 260,
+        ascension: {
+          threeQi: { human: 100, earth: 100, heaven: 100 },
+          preparationScore: 100,
+          heavenWillPressure: 18,
+          karmicDebt: 6,
+        },
+      });
+      const resourceNodes = [
+        { id: 'rank7_fire_node', type: '炎道', name: '火脉灵田', output_rate: 4, quality: 82, grade: '仙材', active: true },
+        { id: 'rank7_wood_node', type: '木道', name: '青木药圃', output_rate: 3, quality: 76, grade: '精品', active: true },
+        { id: 'rank7_qi_node', type: '气道', name: '三气回旋口', output_rate: 3, quality: 74, grade: '仙材', active: true },
+      ];
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 24),
+        activeTab: 'actions',
+        profile: { name: 'c2.4七转演武', background: '灾劫叙事化', realm: { grand: 7, sub: '巅峰', label: '七转巅峰' } },
+        attributes: { 资质: 10, 体魄: 10, 心智: 10, 气运: 8 },
+        vitals: {
+          health: { current: 2520, max: 2520 },
+          essence: { current: 2000, max: 2000 },
+          essenceType: 'immortal',
+        },
+        currency: Number(store.currency || 72000),
+        immortalCurrency: Number(store.immortalCurrency || 160),
+        gameTime: { ap: 3, max_ap: 3, period: 'night', day: 10, month: 1, year: 1, season: 'spring' },
+        sceneSessionState: {
+          sceneId: 'rank7_aperture_calamity_omen',
+          status: 'active',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pathBuild: {
+          primary: '气道',
+          secondary: ['炎道', '木道'],
+          path_levels: { 气道: '宗师', 炎道: '大师' },
+          dao_marks: { 气道: 1500, 炎道: 620, 木道: 410 },
+        },
+        aperture: {
+          type: '福地',
+          grade: '上等福地',
+          area_mu: 920,
+          time_flow_ratio: 28,
+          resource_nodes: resourceNodes,
+          dao_mark_density: { 气道: 1500, 炎道: 620, 木道: 410 },
+          next_disaster_type: '地火',
+          disaster_countdown: 4,
+        },
+        heavenlyLand: {
+          id: 'rank7_e2e_land',
+          type: '福地',
+          domain: '中洲',
+          name: '七转演武福地',
+          areaMu: 920,
+          timeFlowRatio: 28,
+          resourceOutputRate: 36,
+          earthSpirit: { formed: false, approval: 0 },
+          disasterCountdown: 4,
+          nextDisasterType: '地火',
+          createdAt: 1,
+          accessible: true,
+        },
+        inventory: [
+          { id: 'rank7_moon_gu', specId: 'moonlight_gu', name: '月芒蛊', tier: 5, path: '光道', currentState: 'optimal', hungerCounter: 0, proficiency: 2, bonded: true, active: true, acquiredAt: { turn: 1, narrative: 'e2e' } },
+          { id: 'rank7_guard_gu', specId: 'stone_skin_gu', name: '石皮蛊', tier: 4, path: '土道', currentState: 'optimal', hungerCounter: 0, proficiency: 1, bonded: false, active: true, acquiredAt: { turn: 1, narrative: 'e2e' } },
+        ],
+        killMoves: [{ id: 'rank7_qi_guard', name: '三气护窍', path: '气道', level: 5, baseCost: 60, multiplier: 1.1, cooldown: 3, description: '护住福地边界的演武杀招。' }],
+        cultivationState,
+        flags: {
+          ...(store.flags || {}),
+          cultivationProgress: 260,
+          pendingCalamitySceneSpec: null,
+          combatEventCandidates: [],
+        },
         pipelinePhase: 'RESOLVED',
         pipelineError: null,
       } as any);

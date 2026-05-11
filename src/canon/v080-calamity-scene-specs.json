@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c2.4",
+    "purpose": "Calamity scene templates. DeepSeek may narrate omens; local engine chooses scene kind and owns consequences.",
+    "notes": [
+      "Path names come from runtime calamity preview / path-registry-backed rules.",
+      "This is a scene orchestration layer, not a direct damage button."
+    ]
+  },
+  "entries": [
+    {
+      "kind": "natural_disaster",
+      "label": "自然灾害类",
+      "omen": "福地天象忽变，风雷水火在边界聚成灾云。",
+      "entry": "灾云压入福地，资源节点先受冲刷；可先护住关键节点，再决定是否硬抗。",
+      "responses": ["observe", "formation", "resource_protection", "repair_aperture"],
+      "consequences": ["福地面积损伤", "资源节点质量下降", "对应道痕增减"],
+      "tags": ["calamity", "terrain", "resource_node"]
+    },
+    {
+      "kind": "desolate_beast_invasion",
+      "label": "荒兽/荒植入侵类",
+      "omen": "天地二气裂开缝隙，兽影或荒植根须先在福地边缘显形。",
+      "entry": "入侵者会优先冲击高产资源点；若不接战，只能用阵位和牺牲蛊虫拖延。",
+      "responses": ["observe", "formation", "combat", "sacrifice_gu", "resource_protection"],
+      "consequences": ["触发群像战或凡战", "蛊虫损伤", "护送/保护资源目标"],
+      "combatScale": "group_7x5",
+      "tags": ["calamity", "beast", "combat"]
+    },
+    {
+      "kind": "human_calamity",
+      "label": "人劫/敌袭类",
+      "omen": "外敌窥见福地气机，敌意沿因果账本回返。",
+      "entry": "人劫不只打资源，也会试探你的身份、盟友和因果破绽。",
+      "responses": ["observe", "combat", "formation", "retreat_inside_aperture"],
+      "consequences": ["触发剧情战斗候选", "天意压力变化", "关系与因果债变化"],
+      "combatScale": "group_5x3",
+      "tags": ["calamity", "human_calamity", "combat"]
+    },
+    {
+      "kind": "dao_mark_manifestation",
+      "label": "道痕化形类",
+      "omen": "福地内某一道痕过盛，化作雾、刃、藤、炎或雷纹。",
+      "entry": "道痕化形既是危险也是机缘；处理方式会影响后续道痕密度。",
+      "responses": ["observe", "formation", "resource_protection", "repair_aperture"],
+      "consequences": ["道痕偏移", "仙窍密度变化", "资源节点失衡"],
+      "tags": ["calamity", "dao_mark", "aperture"]
+    },
+    {
+      "kind": "immortal_killer_pressure",
+      "label": "类仙道杀招压迫类",
+      "omen": "灾云像杀招一样有起手、蓄势和落点，福地阵纹被迫显形。",
+      "entry": "这类灾劫要读节拍、找破绽；硬抗会扩大反噬。",
+      "responses": ["observe", "formation", "sacrifice_gu", "repair_aperture"],
+      "consequences": ["阵位破坏", "蛊虫损伤", "伤势与仙元压力"],
+      "tags": ["calamity", "killer_move_pressure", "formation"]
+    },
+    {
+      "kind": "resource_node_imbalance",
+      "label": "资源节点失衡类",
+      "omen": "资源节点之间气机互冲，福地内产出节律开始错乱。",
+      "entry": "若不先停产和调配，灾劫会沿资源链扩散。",
+      "responses": ["observe", "resource_protection", "repair_aperture"],
+      "consequences": ["产出下降", "节点停摆", "后续灾劫倒计时变化"],
+      "tags": ["calamity", "resource_node", "economy"]
+    }
+  ]
+}

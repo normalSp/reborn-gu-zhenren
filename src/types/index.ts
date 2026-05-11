@@ -2443,6 +2443,34 @@ export interface CalamityPreview {
   tags: string[];
 }
 
+export type CalamitySceneKind =
+  | 'natural_disaster'
+  | 'desolate_beast_invasion'
+  | 'human_calamity'
+  | 'dao_mark_manifestation'
+  | 'immortal_killer_pressure'
+  | 'resource_node_imbalance';
+
+export interface CalamitySceneSpec {
+  id: string;
+  previewId: string;
+  name: string;
+  kind: CalamitySceneKind;
+  category: CalamityPreview['category'];
+  path: PathType;
+  severity: number;
+  sceneId: string;
+  realmGrand: number;
+  countdown: number;
+  affectedResourceNodeIds: string[];
+  omenText: string;
+  entryText: string;
+  allowedResponses: Array<'observe' | 'formation' | 'resource_protection' | 'combat' | 'sacrifice_gu' | 'repair_aperture' | 'retreat_inside_aperture'>;
+  possibleConsequences: string[];
+  combatScale?: CombatEncounterScale;
+  tags: string[];
+}
+
 export interface CalamityRecord {
   id: string;
   turn: number;

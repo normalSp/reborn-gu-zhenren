@@ -1,4 +1,5 @@
 import type {
+  CalamitySceneSpec,
   CultivationDeepeningState,
   CultivationEnvironmentProfile,
   CultivationLocationContext,
@@ -15,6 +16,7 @@ import {
   validateAscensionAttempt,
   validateMajorBreakthroughAttempt,
 } from '../../engine/v080-cultivation-calamity-engine';
+import { buildCalamitySceneSpec } from '../../engine/v080-calamity-scene-engine';
 
 interface CultivationPreview {
   environment: CultivationEnvironmentProfile;
@@ -29,6 +31,7 @@ export interface CultivationSlice {
   practiceCultivationDeep: (location?: CultivationLocationContext) => { success: boolean; message: string; progressGain: number; progress: number };
   attemptMajorBreakthrough: () => { success: boolean; message: string; rate: number };
   attemptAscension: () => { success: boolean; message: string; rate: number };
+  stageCalamityScene: () => { success: boolean; message: string; spec?: CalamitySceneSpec };
   resolveApertureCalamity: () => { success: boolean; message: string; areaLoss?: number };
   practiceCultivation: () => { success: boolean; message: string; progressGain: number; progress: number };
   attemptBreakthrough: () => { success: boolean; message: string; rate: number };
@@ -250,6 +253,66 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       message: result.success ? '升仙成功，福地已开辟。' : '升仙失败，三气反噬已结算。',
       rate: result.validation.successRate,
     };
+  },
+
+  stageCalamityScene: () => {
+    const store = get() as any;
+    const state = normalizeCultivationState(store.cultivationState);
+    const preview = buildCalamityPreview({ store, state });
+    const spec = buildCalamitySceneSpec({ store, preview });
+    if (!spec) {
+      return { success: false, message: '尚未形成可进入剧情的灾劫预兆。' };
+    }
+    if (!spendCultivationSceneAp(store, 'calamity', `灾劫预兆入场：${spec.name}`, 'stageCalamityScene')) {
+      return { success: false, message: '行动点不足，无法布置灾劫应对。', spec };
+    }
+    const turn = Number(store.turn || 1);
+    const resolutionStep = {
+      id: `calamity_scene_${turn}_${spec.kind}`,
+      turn,
+      kind: 'calamity_warning' as const,
+      message: `${spec.name}已进入剧情场景：${spec.omenText}`,
+      source: 'v0.8.0-c2.4',
+      severity: spec.severity,
+      path: spec.path,
+      tags: ['calamity_scene', spec.kind, spec.path],
+    };
+    set((s: any) => {
+      const candidates = Array.isArray(s.flags?.combatEventCandidates) ? s.flags.combatEventCandidates : [];
+      const combatCandidate = spec.combatScale ? [{
+        id: `calamity_combat_${spec.id}`,
+        type: spec.kind === 'human_calamity' ? 'ambush' : 'environment',
+        title: spec.name,
+        summary: spec.entryText,
+        risk: spec.severity >= 4 ? 'high' : 'medium',
+        scale: spec.combatScale,
+        enemyHint: spec.kind === 'human_calamity' ? '人劫敌袭' : '灾劫化形',
+        source: 'engine',
+        engineValidation: 'pending',
+        createdTurn: turn,
+      }] : [];
+      const lastResolution = [resolutionStep, ...state.lastResolution].slice(0, 12);
+      return {
+        cultivationState: normalizeCultivationState({
+          ...state,
+          nextCalamityPreview: preview,
+          lastResolution,
+        }),
+        flags: {
+          ...(s.flags || {}),
+          pendingCalamitySceneSpec: spec,
+          combatEventCandidates: [...candidates, ...combatCandidate].slice(-40),
+          lastCultivationResolution: lastResolution,
+        },
+      };
+    });
+    store.addGameLog?.('danger', `灾劫预兆入场：${spec.name}`, {
+      source: 'v080-calamity-scene',
+      kind: spec.kind,
+      path: spec.path,
+      severity: spec.severity,
+    });
+    return { success: true, message: `灾劫预兆已进入剧情：${spec.name}`, spec };
   },
 
   resolveApertureCalamity: () => {
