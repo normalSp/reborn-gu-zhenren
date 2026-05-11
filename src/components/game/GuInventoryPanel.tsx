@@ -4,6 +4,7 @@ import { GU_IMAGE_MAP } from '../../data/image-maps';
 import type { PathType } from '../../types';
 import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow, type MaterialSourceTag } from '../../engine/material-source-audit';
+import { getLifeboundGuGrowthProfile } from '../../engine/v080-origin-lifebound-closure';
 import {
   canUseFromNormalButton,
   describeTargetRule,
@@ -95,6 +96,12 @@ export function GuInventoryPanel() {
   const capacity = isImmortal ? Infinity : getApertureCapacity();
   const paths = Array.from(new Set(allGu.map(g => g.path)));
   const filtered = filterPath === 'all' ? allGu : allGu.filter(g => g.path === filterPath);
+  const lifeboundGu = useMemo(() => {
+    const id = lifeboundGuInfo?.guId || lifeboundGuInfo?.id;
+    const name = lifeboundGuInfo?.guName || lifeboundGuInfo?.name;
+    return allGu.find(gu => (id && gu.id === id) || (name && gu.name === name)) || null;
+  }, [allGu, lifeboundGuInfo]);
+  const lifeboundProfile = useMemo(() => getLifeboundGuGrowthProfile(lifeboundGu), [lifeboundGu]);
   const materialState = useMemo(() => ({
     materialBag,
     apertureInventory,
@@ -192,7 +199,7 @@ export function GuInventoryPanel() {
     : `蛊虫（${allGu.length}/${capacity}）`;
 
   return (
-    <div className="flex-1 overflow-y-auto">
+    <div className="flex-1 overflow-y-auto" data-testid="gu-inventory-panel">
       {/* ─── 流派筛选栏 ─── */}
       {paths.length > 1 && (
         <div className="px-4 py-2 flex items-center gap-1.5 overflow-x-auto border-b border-rg-ink-300/8">
@@ -244,9 +251,14 @@ export function GuInventoryPanel() {
         </div>
         <div className="mt-1">
           {lifeboundGuInfo
-            ? '当前本命蛊与空窍性命相连：启用更稳定，但普通升炼、拆炼、出售会被阻止；若本命蛊死亡，将触发生命与道痕反噬。'
-            : 'v0.7.1 不强制一转开局选择本命蛊。完整本命蛊成长、突破和升仙联动将进入 v0.8 深化。'}
+            ? `当前本命蛊进入 ${lifeboundProfile?.displayName || '凡蛊本命基线'}：普通升炼、拆炼、出售和移除被阻止；${lifeboundProfile?.growthStages?.[0]?.hint || '若本命蛊死亡，将触发生命与道痕反噬。'}`
+            : 'v0.8.0-c1.2 已建立本命蛊成长协议；未绑定前只显示候选和风险，不会把普通背包蛊虫自动改成本命蛊。'}
         </div>
+        {lifeboundGuInfo && lifeboundProfile && (
+          <div className="mt-1 text-rg-paper-200/45">
+            风险：{lifeboundProfile.riskTags.slice(0, 4).join(' / ')}；终局权重：{Object.keys(lifeboundProfile.endingWeights || {}).slice(0, 3).join(' / ')}
+          </div>
+        )}
         {lifeboundPenalty && (
           <div className="mt-1 text-rg-blood-400/75">
             死亡反噬：生命损失 {lifeboundPenalty.hpPercentLoss || 0}%、

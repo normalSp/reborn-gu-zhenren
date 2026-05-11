@@ -349,6 +349,77 @@ export interface EndingOutcome {
 
 export type EndingFrameworkStatus = 'idle' | 'ready' | 'committed' | 'blocked';
 
+export interface OriginAnchorAccess {
+  anchorId: string;
+  role: string;
+  cost: string;
+}
+
+export interface OriginDeepLineProfile {
+  id: string;
+  displayName: string;
+  provenance: 'canon-near' | 'derived' | 'original';
+  startProfileIds: string[];
+  identityBoundary: string;
+  replacementIdentity: string;
+  forbiddenIdentityClaims: string[];
+  initialPressure: string[];
+  longTermPressure: string[];
+  keyNpcs: string[];
+  friendlyFactions: string[];
+  hostileFactions: string[];
+  resourceEntrances: string[];
+  canonAnchorAccess: OriginAnchorAccess[];
+  ifDeviationCosts: string[];
+  endingDebtLabels: string[];
+}
+
+export interface FrontMidgameAnchorMapping {
+  id: string;
+  canonAnchorId: string;
+  displayName: string;
+  chapterIds: string[];
+  startProfileIds: string[];
+  modeBoundaries: {
+    canon: string;
+    if: string;
+  };
+  allowedRoles: string[];
+  forbiddenRewrites: string[];
+  handoffSystems: string[];
+}
+
+export interface LifeboundGuGrowthStage {
+  id: string;
+  label: string;
+  hint: string;
+}
+
+export interface LifeboundGuGrowthProfile {
+  id: string;
+  displayName: string;
+  matchPaths: string[];
+  matchGuNames: string[];
+  selectionConditions: string[];
+  growthStages: LifeboundGuGrowthStage[];
+  benefits: string[];
+  costs: string[];
+  backlash: string[];
+  ascensionWeights: Record<string, number>;
+  calamityWeights: Record<string, number>;
+  endingWeights: Record<string, number>;
+  riskTags: string[];
+}
+
+export type LifeboundGuOperation = 'remove' | 'sell' | 'refine' | 'disassemble' | 'ascend' | 'feed' | 'use';
+
+export interface LifeboundGuOperationValidation {
+  allowed: boolean;
+  operation: LifeboundGuOperation;
+  reason: string;
+  profile?: LifeboundGuGrowthProfile | null;
+}
+
 export interface EndingEvidenceSummary {
   battle: {
     totalBattles: number;
@@ -372,6 +443,14 @@ export interface EndingEvidenceSummary {
   origin: {
     background: string;
     debtLabels: string[];
+    profileId?: string;
+    profileName?: string;
+    provenance?: OriginDeepLineProfile['provenance'];
+    identityBoundary?: string;
+    initialPressure?: string[];
+    longTermPressure?: string[];
+    anchorAccess?: OriginAnchorAccess[];
+    ifDeviationCosts?: string[];
   };
   faction: {
     score: number;
@@ -381,6 +460,11 @@ export interface EndingEvidenceSummary {
   lifebound: {
     guName?: string;
     hasPenalty: boolean;
+    profileId?: string;
+    profileName?: string;
+    growthStage?: string;
+    riskTags?: string[];
+    endingWeights?: Record<string, number>;
   };
   anchors: {
     resolvedCount: number;

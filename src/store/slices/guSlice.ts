@@ -3,6 +3,7 @@ import guDatabase from '../../canon/gu-database.json';
 import { getMaterialTotalQuantity, removeMaterialFromState } from '../../engine/economy-service';
 import { GU_HUNGER_CONFIG, getFeedingCreditRequirement, isNonMaterialFeeding, normalizeFeedCandidates } from '../../engine/feeding-rules';
 import { applyGuFeedCostModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
+import { validateLifeboundGuOperation } from '../../engine/v080-origin-lifebound-closure';
 import {
   getGuUseEntry,
   resolveGuUse,
@@ -182,6 +183,17 @@ export const createGuSlice = (set: any, get: any): GuSlice => ({
   removeGu: (id) => {
     const fullStore = get() as any;
     const inventory = (get() as GuSlice).inventory;
+    const lifeboundGuard = validateLifeboundGuOperation(fullStore, id, 'remove');
+    if (!lifeboundGuard.allowed) {
+      if (typeof fullStore.addGameLog === 'function') {
+        fullStore.addGameLog('gu', lifeboundGuard.reason, {
+          guId: id,
+          operation: 'remove',
+          profileId: lifeboundGuard.profile?.id,
+        });
+      }
+      return;
+    }
     const foundInInventory = inventory.some(g => g.id === id);
     
     if (foundInInventory) {

@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c1.2",
+    "purpose": "把所有开局出身映射到长期身份边界、压力、资源入口和正史/IF参与权，供上下文、降级与终局证据读取。"
+  },
+  "profiles": [
+    {
+      "id": "origin_qingmao_guyue",
+      "displayName": "青茅山古月内线",
+      "provenance": "canon-near",
+      "startProfileIds": ["start_qingmaoshan_guyue", "start_default_guyue"],
+      "identityBoundary": "玩家可被叙事称为古月山寨族学弟子，但不能天然继承方源/方正的独占因果。",
+      "replacementIdentity": "古月山寨弟子",
+      "forbiddenIdentityClaims": ["方源本人", "方正本人", "天命主角"],
+      "initialPressure": ["族学考核", "家老观察", "青茅山三寨摩擦"],
+      "longTermPressure": ["狼潮旧账", "古月一族因果", "正史锚点的近距离压力"],
+      "keyNpcs": ["古月族学教习", "青茅山执事", "三寨探子"],
+      "friendlyFactions": ["guyue_shanzhai"],
+      "hostileFactions": ["xiongjia_zhai", "baijia_zhai"],
+      "resourceEntrances": ["族学配给", "青茅山任务", "山寨交易"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "inner_witness", "cost": "近距离承压，不能替代正史核心人物。" },
+        { "anchorId": "shang_clan_city", "role": "later_side_entry", "cost": "需通过南疆商路或逃亡线索接入。" }
+      ],
+      "ifDeviationCosts": ["古月因果债", "青茅山身份暴露", "天意关注上升"],
+      "endingDebtLabels": ["青茅山旧债", "古月身份因果"]
+    },
+    {
+      "id": "origin_qingmao_xiongjia",
+      "displayName": "青茅山熊家外线",
+      "provenance": "canon-near",
+      "startProfileIds": ["start_qingmaoshan_xiongjia", "start_default_xiongjia"],
+      "identityBoundary": "玩家是熊家寨蛊师，不能被叙事写成古月族人或古月族学弟子。",
+      "replacementIdentity": "熊家寨蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "古月山寨族学弟子", "古月一族弟子", "族学弟子"],
+      "initialPressure": ["寨中勇武考核", "三寨资源争夺", "古月寨戒备"],
+      "longTermPressure": ["熊家寨存亡压力", "青茅山战后身份清算", "南疆正道关系债"],
+      "keyNpcs": ["熊家寨猎堂执事", "熊家小队首领"],
+      "friendlyFactions": ["xiongjia_zhai"],
+      "hostileFactions": ["guyue_shanzhai", "baijia_zhai"],
+      "resourceEntrances": ["猎堂任务", "山林采集", "熊家寨军备"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "outer_witness", "cost": "只能侧翼参与三寨压力，不能替代古月内线剧情。" }
+      ],
+      "ifDeviationCosts": ["三寨仇怨", "熊家名声债", "资源争夺反噬"],
+      "endingDebtLabels": ["熊家寨旧债", "三寨外线因果"]
+    },
+    {
+      "id": "origin_qingmao_baijia",
+      "displayName": "青茅山白家外线",
+      "provenance": "canon-near",
+      "startProfileIds": ["start_qingmaoshan_baijia", "start_default_baijia"],
+      "identityBoundary": "玩家是白家寨蛊师，不能被叙事写成古月族人或古月族学弟子。",
+      "replacementIdentity": "白家寨蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "古月山寨族学弟子", "古月一族弟子", "族学弟子"],
+      "initialPressure": ["白家族规", "三寨贸易与暗斗", "青茅山资源线"],
+      "longTermPressure": ["白家血脉信誉", "青茅山战后清算", "南疆正道关系债"],
+      "keyNpcs": ["白家寨执事", "白家商队管事"],
+      "friendlyFactions": ["baijia_zhai"],
+      "hostileFactions": ["guyue_shanzhai", "xiongjia_zhai"],
+      "resourceEntrances": ["白家库房", "商队补给", "山寨交易"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "outer_witness", "cost": "只能侧翼参与三寨压力，不能替代古月内线剧情。" },
+        { "anchorId": "shang_clan_city", "role": "trade_side_entry", "cost": "需承担商路信誉与正道审查。" }
+      ],
+      "ifDeviationCosts": ["白家信誉债", "三寨交易债", "天意关注上升"],
+      "endingDebtLabels": ["白家寨旧债", "正道交易因果"]
+    },
+    {
+      "id": "origin_southern_shangjia",
+      "displayName": "南疆商家商路线",
+      "provenance": "derived",
+      "startProfileIds": ["start_qingmaoshan_shangjia_caravan", "start_default_shangjia"],
+      "identityBoundary": "玩家是商家或商队相关人物，不是青茅山三寨族人。",
+      "replacementIdentity": "商路蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "熊家寨族人", "白家寨族人"],
+      "initialPressure": ["商路信誉", "货物护送", "南疆正道审查"],
+      "longTermPressure": ["商家城利益债", "黑白两道平衡", "宝物来源审查"],
+      "keyNpcs": ["商队管事", "商家城执事", "黑市掮客"],
+      "friendlyFactions": ["shangjia"],
+      "hostileFactions": ["山贼", "敌对商队"],
+      "resourceEntrances": ["商路贸易", "商家城委托", "拍卖线索"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "trade_passenger", "cost": "只能以商路旁观/救援身份接触青茅山。" },
+        { "anchorId": "shang_clan_city", "role": "inner_trade_entry", "cost": "资源收益必须受信誉与门槛约束。" },
+        { "anchorId": "san_wang_mountain", "role": "trade_side_entry", "cost": "进入遗藏线会引发正魔双方关注。" }
+      ],
+      "ifDeviationCosts": ["商家信誉债", "商路因果债", "黑市暴露风险"],
+      "endingDebtLabels": ["商路利益", "商家城信誉"]
+    },
+    {
+      "id": "origin_southern_wujia",
+      "displayName": "南疆武家支脉线",
+      "provenance": "derived",
+      "startProfileIds": ["start_qingmaoshan_wujia_branch", "start_default_wujia"],
+      "identityBoundary": "玩家是武家支脉/外派蛊师，不是青茅山三寨族人。",
+      "replacementIdentity": "武家支脉蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "商家嫡系"],
+      "initialPressure": ["支脉审查", "正道名声", "外派功绩"],
+      "longTermPressure": ["武家门第债", "南疆正道站队", "家族资源配给门槛"],
+      "keyNpcs": ["武家外事执事", "正道巡查蛊师"],
+      "friendlyFactions": ["wujia"],
+      "hostileFactions": ["敌对正道支脉", "魔道散修"],
+      "resourceEntrances": ["家族委任", "南疆巡查", "正道互市"],
+      "canonAnchorAccess": [
+        { "anchorId": "shang_clan_city", "role": "righteous_side_entry", "cost": "需承担正道审查与家族立场。" },
+        { "anchorId": "yi_tian_mountain", "role": "late_side_hook", "cost": "b3/c1阶段只能侧翼压力，不能改写核心因果。" }
+      ],
+      "ifDeviationCosts": ["正道门第债", "家族清算", "南疆站队代价"],
+      "endingDebtLabels": ["武家门第", "正道站队"]
+    },
+    {
+      "id": "origin_southern_tiejia",
+      "displayName": "南疆铁家执法线",
+      "provenance": "derived",
+      "startProfileIds": ["start_qingmaoshan_tiejia_patrol", "start_default_tiejia"],
+      "identityBoundary": "玩家是铁家巡查/执法蛊师，不是古月、熊家、白家族人。",
+      "replacementIdentity": "铁家执法蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "魔道巨擘"],
+      "initialPressure": ["执法证据", "正道规矩", "巡查目标"],
+      "longTermPressure": ["铁家执法债", "正魔边界", "证据链反噬"],
+      "keyNpcs": ["铁家巡查使", "南疆案牍师"],
+      "friendlyFactions": ["tiejia"],
+      "hostileFactions": ["魔道散修", "逃犯"],
+      "resourceEntrances": ["执法任务", "案牍线索", "正道赏格"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "investigation_side_entry", "cost": "只能以调查身份进入，不能天然掌握三寨内线。" },
+        { "anchorId": "san_wang_mountain", "role": "law_side_entry", "cost": "遗藏争夺必须受证据与正道名声限制。" }
+      ],
+      "ifDeviationCosts": ["铁家执法债", "正道信任损耗", "证据链断裂"],
+      "endingDebtLabels": ["铁家执法", "正魔边界"]
+    },
+    {
+      "id": "origin_southern_sanxiu",
+      "displayName": "南疆散修漂泊线",
+      "provenance": "original",
+      "startProfileIds": ["start_qingmaoshan_sanxiu", "start_default_sanxiu"],
+      "identityBoundary": "玩家是散修/外来蛊师，不能被叙事直接写成大族嫡系或正史核心人物。",
+      "replacementIdentity": "外来散修",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "商家嫡系", "武家嫡系", "天庭蛊仙"],
+      "initialPressure": ["无靠山", "低阶资源匮乏", "身份审查"],
+      "longTermPressure": ["散修信誉", "黑白两道债", "资源来源追查"],
+      "keyNpcs": ["散修同道", "黑市掮客", "山寨巡查"],
+      "friendlyFactions": ["sanxiu"],
+      "hostileFactions": ["地方豪强", "山贼"],
+      "resourceEntrances": ["野外采集", "临时雇佣", "黑市传闻"],
+      "canonAnchorAccess": [
+        { "anchorId": "qingmao_mountain", "role": "outsider_side_entry", "cost": "只能侧翼接触，需解释入场理由。" },
+        { "anchorId": "shang_clan_city", "role": "outsider_trade_entry", "cost": "交易与身份必须被本地门槛校验。" },
+        { "anchorId": "san_wang_mountain", "role": "risk_side_entry", "cost": "遗藏行动高风险，不能直接获得核心机缘。" }
+      ],
+      "ifDeviationCosts": ["散修信誉债", "黑市暴露", "天意关注上升"],
+      "endingDebtLabels": ["散修无靠", "黑白两道债"]
+    },
+    {
+      "id": "origin_northern_plains",
+      "displayName": "北原王庭与黄金血脉线",
+      "provenance": "derived",
+      "startProfileIds": ["start_default_wang_ting", "start_default_chang_sheng_tian", "start_default_huangjin"],
+      "identityBoundary": "玩家与北原王庭、长生天或黄金家族相关，不能被叙事写成南疆三寨族人。",
+      "replacementIdentity": "北原蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "南疆商家嫡系"],
+      "initialPressure": ["部族归属", "草原资源", "黄金血脉审查"],
+      "longTermPressure": ["王庭旧账", "长生天规矩", "北原势力站队"],
+      "keyNpcs": ["王庭巡骑", "黄金家族执事", "草原盟友"],
+      "friendlyFactions": ["wang_ting", "chang_sheng_tian", "huangjin_jiazu"],
+      "hostileFactions": ["敌对部族", "外域势力"],
+      "resourceEntrances": ["草原狩猎", "部族互市", "王庭任务"],
+      "canonAnchorAccess": [
+        { "anchorId": "northern_plains_wangting", "role": "regional_entry", "cost": "王庭行动必须承担部族与黄金血脉压力。" },
+        { "anchorId": "reverse_flow_river", "role": "late_pressure_hook", "cost": "只能作为后续压力入口，不替代正史核心逆流河因果。" }
+      ],
+      "ifDeviationCosts": ["王庭因果债", "长生天审查", "部族清算"],
+      "endingDebtLabels": ["王庭旧账", "北原站队"]
+    },
+    {
+      "id": "origin_eastern_sea",
+      "displayName": "东海商会与散修线",
+      "provenance": "original",
+      "startProfileIds": ["start_default_donghai_sanxiu", "start_default_haizu"],
+      "identityBoundary": "玩家来自东海散修联盟或海族商会，不能被叙事写成南疆/北原本地内线。",
+      "replacementIdentity": "东海蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "王庭蛊师", "天庭蛊仙"],
+      "initialPressure": ["海路贸易", "商会信誉", "海域风险"],
+      "longTermPressure": ["东海利益债", "宝物来源审查", "跨域入场成本"],
+      "keyNpcs": ["海族商会管事", "东海散修盟友"],
+      "friendlyFactions": ["sanxiu_lianmeng", "haizu_shanghui"],
+      "hostileFactions": ["海盗", "敌对商会"],
+      "resourceEntrances": ["海路商贸", "水域采集", "商会委托"],
+      "canonAnchorAccess": [
+        { "anchorId": "shang_clan_city", "role": "cross_region_trade_entry", "cost": "跨域入场需要商路或传送代价。" },
+        { "anchorId": "dream_shadow_sect", "role": "late_clue_hook", "cost": "只能作为梦境/影宗线索，不能直接掌握核心真相。" }
+      ],
+      "ifDeviationCosts": ["东海商债", "跨域暴露", "宝物来源追查"],
+      "endingDebtLabels": ["东海商债", "跨域因果"]
+    },
+    {
+      "id": "origin_western_desert",
+      "displayName": "西漠商道与绿洲线",
+      "provenance": "derived",
+      "startProfileIds": ["start_default_mojia", "start_default_lanhai"],
+      "identityBoundary": "玩家来自西漠墨家血脉或绿洲势力，不能被叙事写成南疆三寨族人。",
+      "replacementIdentity": "西漠蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "天庭蛊仙", "商家嫡系"],
+      "initialPressure": ["沙漠商路", "绿洲资源", "血脉与地盘审查"],
+      "longTermPressure": ["西漠商道债", "绿洲守护压力", "跨域入场成本"],
+      "keyNpcs": ["墨家血脉执事", "绿洲商队首领"],
+      "friendlyFactions": ["mojia_xuemai", "lanhai_jindi"],
+      "hostileFactions": ["沙盗", "敌对绿洲"],
+      "resourceEntrances": ["沙漠商路", "绿洲采集", "血脉任务"],
+      "canonAnchorAccess": [
+        { "anchorId": "san_wang_mountain", "role": "cross_region_rumor_entry", "cost": "遗藏线只能由传闻/商路接入。" },
+        { "anchorId": "fate_war", "role": "late_side_hook", "cost": "只能作为侧翼或后勤压力入口。" }
+      ],
+      "ifDeviationCosts": ["西漠商道债", "绿洲资源债", "跨域暴露"],
+      "endingDebtLabels": ["西漠商道", "绿洲资源债"]
+    },
+    {
+      "id": "origin_central_continent",
+      "displayName": "中洲门派与天庭秩序线",
+      "provenance": "derived",
+      "startProfileIds": ["start_default_shida", "start_default_tianting", "start_default_jielv"],
+      "identityBoundary": "玩家来自中洲门派、天庭外缘或戒律堂，不等于天庭核心蛊仙，也不能普通战斗击杀尊者。",
+      "replacementIdentity": "中洲蛊师",
+      "forbiddenIdentityClaims": ["古月族人", "古月族学弟子", "天庭蛊仙本尊", "尊者"],
+      "initialPressure": ["门规考核", "中洲秩序", "天庭审查"],
+      "longTermPressure": ["门派功绩", "天庭秩序债", "宿命侧翼压力"],
+      "keyNpcs": ["门派长老", "戒律堂执事", "天庭外缘观察者"],
+      "friendlyFactions": ["shida_gupai", "tianting", "jielv_tang"],
+      "hostileFactions": ["魔道散修", "影宗线索"],
+      "resourceEntrances": ["门派任务", "中洲互市", "戒律审查"],
+      "canonAnchorAccess": [
+        { "anchorId": "fate_war", "role": "side_wing", "cost": "只能侧翼、后勤、救援或情报参与，不能获得宿命蛊。" },
+        { "anchorId": "dream_shadow_sect", "role": "investigation_hook", "cost": "只能调查线索，不能直接写死关键真相。" }
+      ],
+      "ifDeviationCosts": ["天庭秩序债", "门派清算", "宿命压力上升"],
+      "endingDebtLabels": ["中洲门规", "天庭秩序"]
+    }
+  ]
+}

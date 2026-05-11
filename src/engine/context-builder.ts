@@ -17,6 +17,7 @@ import { getCanonAnchor, getCanonAnchors } from './v080-narrative-engine';
 import { getSelectedTalentIds, getTalentDefinition } from './modifier-engine';
 import { buildNarrativeGuAffordancePromptInject } from './v080-narrative-gu-affordances';
 import { buildSceneTimeContext, formatSceneTimeContextForPrompt } from './v080-scene-time-engine';
+import { buildOriginLifeboundContextForPrompt } from './v080-origin-lifebound-closure';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1114,6 +1115,7 @@ export class ContextBuilder {
     // 段1: 经济锚定 — 玩家余额 + 购买力参考 + 章节物价系数
     parts.push(injectEconomyBalanceAnchor(store));
     parts.push(formatSceneTimeContextForPrompt(buildSceneTimeContext(store)));
+    parts.push(buildOriginLifeboundContextForPrompt(store));
     parts.push(injectV080NarrativeGuard(store));
 
     // ═══ P3修复: 章节位置提醒（防止AI在超长上下文中丢失当前位置导致叙事跳回） ═══

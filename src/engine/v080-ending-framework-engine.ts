@@ -16,6 +16,7 @@ import type {
 import { buildEndingResolverInput, normalizeStoryAnchorState } from './v080-midgame-anchor-engine';
 import { resolveEnding, validateEndingText } from './v080-narrative-engine';
 import { normalizeCultivationState } from './v080-cultivation-calamity-engine';
+import { buildLifeboundEndingEvidence, buildOriginEndingEvidence } from './v080-origin-lifebound-closure';
 
 type EndingRules = typeof endingRulesRaw;
 type EndingFamilyConfig = EndingRules['familyWeights'][keyof EndingRules['familyWeights']];
@@ -139,37 +140,22 @@ function buildCultivationEvidence(store: any): EndingEvidenceSummary['cultivatio
   };
 }
 
-function originDebtLabels(store: any): string[] {
-  const labels: string[] = [];
-  const background = String(store?.profile?.background || store?.selectedOriginId || '');
-  if (/商|caravan|shang/i.test(background)) labels.push('商路利益');
-  if (/武|wu/i.test(background)) labels.push('正道门第');
-  if (/铁|tie/i.test(background)) labels.push('正道执法');
-  if (/散修|rogue/i.test(background)) labels.push('散修无庇护');
-  if (/天庭|heaven/i.test(background)) labels.push('天庭秩序');
-  return labels;
-}
-
 function buildEvidence(input: { storyAnchorState: StoryAnchorState; store: any }): EndingEvidenceSummary {
   const store = input.store || {};
   const factionEvents = Array.isArray(store.factionEvents) ? store.factionEvents : [];
   const relations = Array.isArray(store.characterRelations) ? store.characterRelations : [];
+  const originEvidence = buildOriginEndingEvidence(store);
+  const lifeboundEvidence = buildLifeboundEndingEvidence(store);
   return {
     battle: buildBattleEvidence(store),
     cultivation: buildCultivationEvidence(store),
-    origin: {
-      background: store.profile?.background || store.selectedOriginId || '未登记出身',
-      debtLabels: originDebtLabels(store),
-    },
+    origin: originEvidence,
     faction: {
       score: Number(store.playerFaction?.reputation || store.flags?.playerFactionScore || 0),
       relationCount: relations.length,
       factionEventCount: factionEvents.length,
     },
-    lifebound: {
-      guName: store.lifeboundGuInfo?.guName || store.lifeboundGuInfo?.name || store.lifeboundGu?.name,
-      hasPenalty: Boolean(store.lifeboundDeathPenalty),
-    },
+    lifebound: lifeboundEvidence,
     anchors: countAnchorStatuses(input.storyAnchorState),
   };
 }
@@ -238,6 +224,8 @@ function scoreFamily(familyId: string, config: EndingFamilyConfig, input: Ending
   if (chaosPressure >= 85) reasons.push('疯魔/混沌/尊者求证压力达到终局阈值，但仍只能给未证悬念。');
   if (input.evidence.battle.squadDeaths > 0) reasons.push('群战伤亡进入终局代价。');
   if (input.evidence.cultivation.calamityCount > 0) reasons.push('灾劫伤痕进入终局代价。');
+  if ((input.evidence.origin.debtLabels || []).length > 0) reasons.push(`出身深线证据进入终局：${input.evidence.origin.debtLabels.join(' / ')}。`);
+  if (input.evidence.lifebound.profileId) reasons.push(`本命蛊成长协议进入终局：${input.evidence.lifebound.profileName || input.evidence.lifebound.profileId}。`);
   if (input.evidence.lifebound.hasPenalty) reasons.push('本命蛊反噬压低终局稳定性。');
 
   return { score: clamp(score, 0, 100), blockers, reasons, tags };

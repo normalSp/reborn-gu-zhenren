@@ -1,0 +1,169 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c1.2",
+    "purpose": "为本命蛊建立成长协议、风险和终局权重；本阶段只做协议、校验、UI可读提示和基础保护。"
+  },
+  "ordinaryOperationPolicy": {
+    "remove": "block",
+    "sell": "block",
+    "refine": "block",
+    "disassemble": "block",
+    "ascend": "block",
+    "feed": "allow",
+    "use": "allow"
+  },
+  "profiles": [
+    {
+      "id": "lifebound_default_mortal",
+      "displayName": "凡蛊本命基线",
+      "matchPaths": ["通用", "特殊"],
+      "matchGuNames": [],
+      "selectionConditions": ["一至五转可绑定", "蛊虫未死亡", "未处于本命冷却"],
+      "growthStages": [
+        { "id": "bonded", "label": "性命相连", "hint": "启用稳定，普通出售、拆炼、升炼被阻止。" },
+        { "id": "tempered", "label": "窍壁温养", "hint": "随修行回合、战斗使用和喂养稳定度积累成长提示。" },
+        { "id": "ascension_seed", "label": "升仙证据", "hint": "五转巅峰后进入升仙/灾劫权重，不直接生成仙蛊。" }
+      ],
+      "benefits": ["启用优先级更稳", "剧情可作为个人标识", "终局证据记录本命路线"],
+      "costs": ["普通出售/移除/拆炼/升炼禁止", "死亡会触发生命与道痕反噬", "升仙时会增加三气平衡压力"],
+      "backlash": ["本命蛊死亡：生命损伤与道痕损失", "长期饥饿：修行与战斗稳定下降"],
+      "ascensionWeights": { "stability": 4, "heavenWillPressure": 2 },
+      "calamityWeights": { "lifeboundInjuryRisk": 8, "resourcePressure": 4 },
+      "endingWeights": { "personalDaoTrace": 8, "instabilityRisk": 4 },
+      "riskTags": ["lifebound-backlash", "cannot-be-ordinary-item"]
+    },
+    {
+      "id": "lifebound_strength_path",
+      "displayName": "力道本命",
+      "matchPaths": ["力道"],
+      "matchGuNames": ["熊力蛊", "黑豕蛊", "白豕蛊", "蛮力天牛蛊"],
+      "selectionConditions": ["力道蛊虫未死亡", "玩家生命状态不低于重伤"],
+      "growthStages": [
+        { "id": "bonded", "label": "筋骨同契", "hint": "近战和搬运叙事更容易获得可执行入口。" },
+        { "id": "tempered", "label": "力纹入窍", "hint": "战斗承压会提高成长，但伤势反噬也更直观。" },
+        { "id": "ascension_seed", "label": "力道根骨", "hint": "升仙时偏向肉身压力与灾劫冲击。" }
+      ],
+      "benefits": ["力道行动解释力增强", "护送、破障、近战选择更易成立"],
+      "costs": ["受伤时本命反噬更重", "智谋/遮掩类选择不因本命自动成立"],
+      "backlash": ["本命受损时增加生命反噬", "低士气群像战更容易触发破绽"],
+      "ascensionWeights": { "bodyPressure": 7, "stability": 3 },
+      "calamityWeights": { "physicalTrial": 9, "lifeboundInjuryRisk": 7 },
+      "endingWeights": { "battleWitness": 7, "personalDaoTrace": 6 },
+      "riskTags": ["body-backlash", "frontline-risk"]
+    },
+    {
+      "id": "lifebound_refinement_path",
+      "displayName": "炼道本命",
+      "matchPaths": ["炼道"],
+      "matchGuNames": ["酒虫"],
+      "selectionConditions": ["炼道蛊虫未死亡", "有稳定喂养来源或炼蛊场景"],
+      "growthStages": [
+        { "id": "bonded", "label": "火候相随", "hint": "炼化、修补、温养类剧情获得更清晰的代价说明。" },
+        { "id": "tempered", "label": "炉心入窍", "hint": "材料经济与本命成长会互相牵动。" },
+        { "id": "ascension_seed", "label": "炼意成痕", "hint": "升仙证据偏向材料、火候和失败反噬。" }
+      ],
+      "benefits": ["炼化线索更容易变成可执行选择", "材料损耗解释更清楚"],
+      "costs": ["材料短缺会拖累成长", "不允许把本命蛊当素材消耗"],
+      "backlash": ["炼蛊失败可能牵动本命稳定", "灾劫中资源节点损伤权重提高"],
+      "ascensionWeights": { "refinementEvidence": 8, "resourcePressure": 5 },
+      "calamityWeights": { "resourceNodeDamage": 8, "lifeboundInjuryRisk": 5 },
+      "endingWeights": { "craftLegacy": 8, "resourceDebt": 5 },
+      "riskTags": ["material-pressure", "refinement-backlash"]
+    },
+    {
+      "id": "lifebound_moon_path",
+      "displayName": "月道本命",
+      "matchPaths": ["月道"],
+      "matchGuNames": ["月光蛊", "月芒蛊", "月影蛊", "月霓裳"],
+      "selectionConditions": ["月道蛊虫未死亡", "夜间或月华场景成长提示更强"],
+      "growthStages": [
+        { "id": "bonded", "label": "月华照窍", "hint": "破障、信号、远程压制选择更容易获得系统解释。" },
+        { "id": "tempered", "label": "刃影成痕", "hint": "战斗轨迹和剧情场景能记录月刃使用证据。" },
+        { "id": "ascension_seed", "label": "月魄入证", "hint": "升仙时偏向光暗、时段与场景亲和证据。" }
+      ],
+      "benefits": ["破障/信号/压制叙事入口增强", "夜间场景提示更明确"],
+      "costs": ["遮蔽、无光或强防护场景会降低表现", "不能凭月道本命自动解决高阶禁制"],
+      "backlash": ["月刃失控会造成伤势或暴露", "月华不足时成长停滞"],
+      "ascensionWeights": { "sceneAffinity": 7, "stability": 4 },
+      "calamityWeights": { "lightShadowTrial": 7, "lifeboundInjuryRisk": 5 },
+      "endingWeights": { "personalDaoTrace": 7, "battleWitness": 5 },
+      "riskTags": ["scene-dependent", "exposure-risk"]
+    },
+    {
+      "id": "lifebound_blood_taboo",
+      "displayName": "血道禁忌本命",
+      "matchPaths": ["血道"],
+      "matchGuNames": ["血颅蛊", "血滴子"],
+      "selectionConditions": ["必须有强场景授权", "禁忌门槛不足时只显示传闻或风险"],
+      "growthStages": [
+        { "id": "bonded", "label": "血契入窍", "hint": "只在强场景门槛下显示，不进入普通战斗按钮。" },
+        { "id": "tempered", "label": "血债缠身", "hint": "每次使用都应写入因果债或天意压力。" },
+        { "id": "ascension_seed", "label": "血灾之证", "hint": "升仙/灾劫中显著提高反噬与因果权重。" }
+      ],
+      "benefits": ["禁忌仪式、威慑和高风险剧情可解释"],
+      "costs": ["因果债显著提高", "正道敌意与天意关注上升", "普通场景必须降级"],
+      "backlash": ["生命反噬", "因果债暴涨", "正道追索"],
+      "ascensionWeights": { "karmicDebt": 12, "heavenWillPressure": 8 },
+      "calamityWeights": { "bloodDebtTrial": 12, "lifeboundInjuryRisk": 10 },
+      "endingWeights": { "tabooDebt": 12, "instabilityRisk": 10 },
+      "riskTags": ["taboo", "karmic-debt", "scene-gated"]
+    },
+    {
+      "id": "lifebound_wisdom_path",
+      "displayName": "智道/信道本命",
+      "matchPaths": ["智道", "信道"],
+      "matchGuNames": ["书虫", "察运蛊"],
+      "selectionConditions": ["智道或信道蛊虫未死亡", "场景存在可推演或可记录对象"],
+      "growthStages": [
+        { "id": "bonded", "label": "念头入窍", "hint": "侦察、推断、记忆类选择更容易成立。" },
+        { "id": "tempered", "label": "算痕渐生", "hint": "连续推演会带来精神和天意压力。" },
+        { "id": "ascension_seed", "label": "算证入局", "hint": "终局时作为路线证据，而非直接给出全知视角。" }
+      ],
+      "benefits": ["侦察/推演/记录选择解释力增强", "锚点边界提示更清晰"],
+      "costs": ["不能绕过本地系统直接获知正史真相", "高压推演会增加天意关注"],
+      "backlash": ["心神损耗", "天意关注", "错误推演引发风险"],
+      "ascensionWeights": { "mindPressure": 7, "heavenWillPressure": 5 },
+      "calamityWeights": { "illusionTrial": 7, "lifeboundInjuryRisk": 4 },
+      "endingWeights": { "anchorUnderstanding": 8, "heavenWillPressure": 4 },
+      "riskTags": ["heaven-will-attention", "not-omniscience"]
+    },
+    {
+      "id": "lifebound_movement_path",
+      "displayName": "风道/宇道身法本命",
+      "matchPaths": ["风道", "宇道"],
+      "matchGuNames": ["破风蛊", "雷翼蛊"],
+      "selectionConditions": ["移动类蛊虫未死亡", "场景存在移动、追击或撤退空间"],
+      "growthStages": [
+        { "id": "bonded", "label": "身法入窍", "hint": "追击、撤退、护送和换位选择更容易获得系统入口。" },
+        { "id": "tempered", "label": "步罡成痕", "hint": "大棋盘战场和剧情移动会留下成长证据。" },
+        { "id": "ascension_seed", "label": "行迹成证", "hint": "升仙/终局中影响生还、撤退和护送权重。" }
+      ],
+      "benefits": ["追击/撤退/护送更可读", "群像战移动证据进入终局"],
+      "costs": ["禁制、封锁、无路地形会降低表现", "高速移动失败会造成暴露或伤势"],
+      "backlash": ["跌坠/暴露", "真元压力", "阵位脱节"],
+      "ascensionWeights": { "mobilityEvidence": 8, "stability": 3 },
+      "calamityWeights": { "spaceWindTrial": 8, "lifeboundInjuryRisk": 5 },
+      "endingWeights": { "survivalRoute": 8, "escortWitness": 5 },
+      "riskTags": ["position-risk", "escape-evidence"]
+    },
+    {
+      "id": "lifebound_healing_path",
+      "displayName": "木道/水道疗护本命",
+      "matchPaths": ["木道", "水道"],
+      "matchGuNames": ["治愈蛊", "净水蛊", "金风送爽蛊"],
+      "selectionConditions": ["疗护类蛊虫未死亡", "目标可被凡蛊疗护或净化"],
+      "growthStages": [
+        { "id": "bonded", "label": "生机入窍", "hint": "治疗、解毒、净化类选择更容易获得明确代价。" },
+        { "id": "tempered", "label": "生息成痕", "hint": "救援与护持会进入终局证据。" },
+        { "id": "ascension_seed", "label": "生机为证", "hint": "升仙/灾劫中偏向资源节点和生命压力。" }
+      ],
+      "benefits": ["治疗/解毒/护持叙事入口增强", "群像战救援证据更明确"],
+      "costs": ["不能治疗超阶伤势或正史死亡", "大量治疗会提高资源与真元压力"],
+      "backlash": ["过度治疗造成真元空虚", "灾劫中资源节点更易受损"],
+      "ascensionWeights": { "lifeEvidence": 8, "resourcePressure": 4 },
+      "calamityWeights": { "resourceNodeDamage": 6, "lifeboundInjuryRisk": 4 },
+      "endingWeights": { "rescueWitness": 8, "personalDaoTrace": 5 },
+      "riskTags": ["resource-pressure", "cannot-overheal-canon"]
+    }
+  ]
+}

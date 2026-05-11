@@ -5,6 +5,11 @@ import { resolveTerrainCombatModifier } from '../engine/terrain-combat';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
+import {
+  buildLifeboundEndingEvidence,
+  buildOriginEndingEvidence,
+  buildOriginLifeboundContextForPrompt,
+} from '../engine/v080-origin-lifebound-closure';
 
 type E2eSave = string | Record<string, unknown>;
 
@@ -33,6 +38,7 @@ declare global {
       startCultivationDeepeningDemo: () => Record<string, unknown>;
       startMidgameAnchorDemo: () => Record<string, unknown>;
       startEndingFrameworkDemo: () => Record<string, unknown>;
+      startOriginLifeboundClosureDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -67,6 +73,8 @@ function summarizeStore(): Record<string, unknown> {
     killerMoves: Array.isArray(state.killerMoveAuctionItems) ? state.killerMoveAuctionItems.length : 0,
   };
   const factionMembers = Array.isArray(state.playerFaction?.members) ? state.playerFaction.members : [];
+  const originEvidence = buildOriginEndingEvidence(state);
+  const lifeboundEvidence = buildLifeboundEndingEvidence(state);
 
   return {
     screenState: state.screenState,
@@ -155,6 +163,16 @@ function summarizeStore(): Record<string, unknown> {
       committedFamilyId: state.endingState.commitRecord?.outcome?.familyId || null,
       lastStepCount: Array.isArray(state.endingState.lastResolutionSteps) ? state.endingState.lastResolutionSteps.length : 0,
     } : null,
+    originLifebound: {
+      originProfileId: originEvidence.profileId || null,
+      originProfileName: originEvidence.profileName || null,
+      originDebtLabels: originEvidence.debtLabels || [],
+      lifeboundProfileId: lifeboundEvidence.profileId || null,
+      lifeboundProfileName: lifeboundEvidence.profileName || null,
+      lifeboundGuName: lifeboundEvidence.guName || null,
+      lifeboundRiskTags: lifeboundEvidence.riskTags || [],
+      contextPreview: buildOriginLifeboundContextForPrompt(state),
+    },
     extremePhysiquePressure: extremePhysiquePressure ? {
       physiqueType: extremePhysiquePressure.physiqueType,
       pressureLevel: extremePhysiquePressure.pressureLevel,
@@ -633,6 +651,92 @@ export function installE2eHarness(): void {
       next.setScreenState?.('game_play');
       next.setGameMode?.('if');
       next.refreshEndingCandidatesAction?.();
+      return summarizeStore();
+    },
+    startOriginLifeboundClosureDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 16),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '南疆',
+        currentChapterId: 'shang_clan_city',
+        activeTab: 'gu_inventory',
+        profile: {
+          name: 'c1.2演武蛊师',
+          background: '商家商队外线',
+          realm: { grand: 3, sub: '高阶', label: '三转高阶' },
+        },
+        flags: {
+          ...(store.flags || {}),
+          _start_profile: 'start_default_shangjia',
+          _start_role: '商家外围商队学徒',
+          _faction_name: '商家',
+          currentCanonAnchorId: 'shang_clan_city',
+        },
+        inventory: [
+          {
+            id: 'c12_moonlight_lifebound',
+            specId: 'moonlight_gu',
+            name: '月光蛊',
+            tier: 1,
+            path: '月道',
+            currentState: 'optimal',
+            hungerCounter: 0,
+            proficiency: 18,
+            bonded: true,
+            active: true,
+            acquiredAt: { turn: 1, narrative: 'c1.2 e2e 本命蛊演示' },
+          },
+          {
+            id: 'c12_bookworm',
+            specId: 'bookworm',
+            name: '书虫',
+            tier: 1,
+            path: '信道',
+            currentState: 'optimal',
+            hungerCounter: 0,
+            proficiency: 12,
+            bonded: false,
+            active: true,
+            acquiredAt: { turn: 1, narrative: 'c1.2 e2e 出身深线演示' },
+          },
+        ],
+        guHungerCounters: {
+          c12_moonlight_lifebound: 0,
+          c12_bookworm: 0,
+        },
+        lifeboundGuInfo: {
+          guId: 'c12_moonlight_lifebound',
+          guName: '月光蛊',
+          boundAt: 3,
+          turnsSinceBound: 13,
+          cooldownRemaining: 0,
+          upgradeCount: 1,
+          onCooldown: false,
+        },
+        lifeboundDeathPenalty: null,
+        currentNarrative: {
+          narrative: {
+            text: '商家城外的商路灯火压着夜色，商队管事提醒你：出身、资源入口和本命蛊都必须按本地系统解释。',
+            choices: [
+              {
+                id: 'c12_origin_choice',
+                text: '以商路蛊师身份递交货单，避免被误写成古月族学弟子',
+                risk: 'low',
+                risk_note: '出身深线会降级跨身份越权。',
+              },
+            ],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
       return summarizeStore();
     },
     clearRuntime() {

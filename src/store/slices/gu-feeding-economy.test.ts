@@ -146,6 +146,27 @@ describe('v0.7.0-pre gu feeding economy loop', () => {
     expect(harness.state.inventory[0]).toMatchObject({ currentState: 'hungry', hungerCounter: 12 });
   });
 
+  it('blocks ordinary removal for lifebound Gu', () => {
+    const logs: any[] = [];
+    const harness = createHarness({
+      inventory: [makeGu({
+        id: 'moonlight',
+        name: '月光蛊',
+        path: '月道',
+        bonded: true,
+        currentState: 'optimal',
+        hungerCounter: 0,
+      })],
+      lifeboundGuInfo: { guId: 'moonlight', guName: '月光蛊', boundAt: 1, turnsSinceBound: 0, cooldownRemaining: 0, upgradeCount: 0, onCooldown: false },
+      addGameLog: (...args: any[]) => logs.push(args),
+    });
+
+    harness.state.removeGu('moonlight');
+
+    expect(harness.state.inventory).toHaveLength(1);
+    expect(logs[0]?.[1]).toContain('本命蛊成长协议');
+  });
+
   it('consumes non-material feeding credit when feeding succeeds', () => {
     const harness = createHarness({
       feedingCredits: { 虚情假意: 1 },

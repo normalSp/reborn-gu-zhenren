@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c1.2",
+    "purpose": "补齐前中期 A1-A4 正史锚点边界，让系统能解析当前叙事所处的正史/IF区域，而不要求一次写完整剧情长线。"
+  },
+  "entries": [
+    {
+      "id": "front_qingmao_mountain",
+      "canonAnchorId": "qingmao_mountain",
+      "displayName": "青茅山与三寨压力",
+      "chapterIds": ["chapter_1", "qingmao_school", "qingmao_wolf_tide", "s0-qingmao"],
+      "startProfileIds": [
+        "start_qingmaoshan_guyue",
+        "start_qingmaoshan_xiongjia",
+        "start_qingmaoshan_baijia",
+        "start_qingmaoshan_shangjia_caravan",
+        "start_qingmaoshan_wujia_branch",
+        "start_qingmaoshan_tiejia_patrol",
+        "start_qingmaoshan_sanxiu",
+        "start_default_guyue",
+        "start_default_xiongjia",
+        "start_default_baijia"
+      ],
+      "modeBoundaries": {
+        "canon": "允许族学、三寨、狼潮、侧翼救援和撤退；核心正史人物的命运不能由普通选择直接改写。",
+        "if": "允许局部站队、救援和资源偏移，但必须写入 IF 向量和因果债。"
+      },
+      "allowedRoles": ["inner_witness", "outer_witness", "trade_passenger", "investigation_side_entry", "outsider_side_entry"],
+      "forbiddenRewrites": ["替代方源/方正", "无代价挽救三寨核心正史结果", "直接获得正史独占机缘"],
+      "handoffSystems": ["scene_time", "narrative_gu_affordance", "origin_deep_line", "story_anchor"]
+    },
+    {
+      "id": "front_shang_clan_city",
+      "canonAnchorId": "shang_clan_city",
+      "displayName": "商家城与南疆商路",
+      "chapterIds": ["shang_clan_city", "southern_border_trade", "s1-shang"],
+      "startProfileIds": ["start_qingmaoshan_shangjia_caravan", "start_default_shangjia", "start_default_donghai_sanxiu", "start_default_haizu"],
+      "modeBoundaries": {
+        "canon": "允许交易、拍卖、情报、护送和侧翼冲突；不得凭叙事直接跳过信誉、资金和门槛。",
+        "if": "允许商路站队、黑市接触和资源线偏移，但需要信誉与因果代价。"
+      },
+      "allowedRoles": ["inner_trade_entry", "trade_side_entry", "cross_region_trade_entry", "outsider_trade_entry"],
+      "forbiddenRewrites": ["无门槛获取高阶仙材", "凭商队身份直接支配商家城", "绕过本地经济门槛"],
+      "handoffSystems": ["resource_ecology_gate", "scene_time", "origin_deep_line", "story_anchor"]
+    },
+    {
+      "id": "front_san_wang_mountain",
+      "canonAnchorId": "san_wang_mountain",
+      "displayName": "三王山遗藏与正魔争夺",
+      "chapterIds": ["san_wang_mountain", "inheritance_struggle", "s2-sanwang"],
+      "startProfileIds": ["start_default_shangjia", "start_default_tiejia", "start_default_mojia", "start_default_lanhai", "start_default_sanxiu"],
+      "modeBoundaries": {
+        "canon": "允许遗藏外围、侦察、抢夺小资源和撤退；正史核心机缘不得直接落入玩家手中。",
+        "if": "允许阵营偏移和侧翼资源线，但要同步天意、因果和势力代价。"
+      },
+      "allowedRoles": ["trade_side_entry", "law_side_entry", "risk_side_entry", "cross_region_rumor_entry"],
+      "forbiddenRewrites": ["直接夺取正史核心机缘", "普通战斗击杀高阶关键人物", "无代价进入遗藏中心"],
+      "handoffSystems": ["battlefield_group", "narrative_gu_affordance", "resource_ecology_gate", "story_anchor"]
+    },
+    {
+      "id": "front_northern_wangting",
+      "canonAnchorId": "northern_plains_wangting",
+      "displayName": "北原王庭与部族站队",
+      "chapterIds": ["northern_plains_wangting", "wang_ting_contest", "s3-wangting"],
+      "startProfileIds": ["start_default_wang_ting", "start_default_chang_sheng_tian", "start_default_huangjin"],
+      "modeBoundaries": {
+        "canon": "允许部族任务、护送、情报和侧翼战斗；不得越权替代正史王庭核心因果。",
+        "if": "允许部族站队、保护/破坏局部目标，但必须写入王庭旧账与长生天审查。"
+      },
+      "allowedRoles": ["regional_entry", "late_pressure_hook"],
+      "forbiddenRewrites": ["替代正史核心人物", "无代价左右王庭结局", "直接获得长生天核心授权"],
+      "handoffSystems": ["battlefield_group", "scene_time", "origin_deep_line", "story_anchor"]
+    }
+  ]
+}

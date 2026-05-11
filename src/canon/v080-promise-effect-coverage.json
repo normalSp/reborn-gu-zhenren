@@ -66,11 +66,10 @@
       "id": "origin-lifebound-pre-c2",
       "sourceTypes": ["talent", "faction"],
       "matchAny": ["身份", "来历", "本命蛊", "血脉相融", "道心倾向"],
-      "status": "planned_needs_system",
-      "evidence": "v0.8.0-c1.2 planned origin/lifebound closure",
+      "status": "runtime_active",
+      "evidence": "v080-origin-lifebound-closure + OriginDeepLineProfile + LifeboundGuGrowthProfile",
       "ownerPhase": "v0.8.0-c1.2",
-      "reason": "需要出身深线与本命蛊成长协议提供完整解释。",
-      "nextStep": "Implement OriginDeepLineProfile and LifeboundGuGrowthProfile before c2."
+      "reason": "出身深线、本命蛊成长协议、前中期锚点映射已能注入上下文、降级越权、保护普通背包操作并进入终局证据。"
     },
     {
       "id": "narrative-text-only",

@@ -2,6 +2,7 @@ import guDatabaseRaw from '../canon/gu-database.json';
 import immortalGuRaw from '../canon/immortal-gu.json';
 import type { NarrativeJSON } from '../types';
 import { annotateNarrativeGuChoices } from './v080-narrative-gu-affordances';
+import { sanitizeOriginIdentityText } from './v080-origin-lifebound-closure';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const immortalGu = immortalGuRaw as Record<string, any>;
@@ -99,6 +100,15 @@ function sanitizeEssenceText(text: string, store: any, issues: RewardConsistency
 }
 
 function sanitizeStartProfileIdentityText(text: string, store: any, issues: RewardConsistencyIssue[]): string {
+  const originSanitized = sanitizeOriginIdentityText(text, store);
+  if (originSanitized.changed) {
+    issues.push({
+      kind: 'start_profile_identity_mismatch',
+      detail: originSanitized.detail || '出身深线身份边界已降级。',
+    });
+    return originSanitized.text;
+  }
+
   const flags = store?.flags || {};
   const startProfileId = String(flags._start_profile || '');
   if (!startProfileId || startProfileId === 'start_qingmaoshan_guyue') return text;

@@ -48,9 +48,20 @@ describe('narrative-consistency', () => {
       { id: 'c1', text: '以古月族学弟子的身份上前', risk: 'low', risk_note: '古月族人身份不会引起怀疑' },
     ]), shangStore);
 
-    expect(result.narrative.narrative.text).toContain('商家外围商队学徒');
+    expect(result.narrative.narrative.text).toContain('商路蛊师');
     expect(result.narrative.narrative.text).not.toContain('古月族人');
-    expect(result.narrative.narrative.choices[0].text).toContain('商家外围商队学徒');
+    expect(result.narrative.narrative.choices[0].text).toContain('商路蛊师');
+    expect(result.rewardIssues.some(issue => issue.kind === 'start_profile_identity_mismatch')).toBe(true);
+  });
+
+  it('uses c1.2 origin deep line profiles to downgrade cross-origin claims', () => {
+    const result = sanitizeNarrativeConsistency(narrative('你被执事当成古月族人，直接带进古月族学弟子的队列。'), {
+      ...store,
+      flags: { _start_profile: 'start_default_shangjia' },
+    });
+
+    expect(result.narrative.narrative.text).toContain('商路蛊师');
+    expect(result.narrative.narrative.text).not.toContain('古月族人');
     expect(result.rewardIssues.some(issue => issue.kind === 'start_profile_identity_mismatch')).toBe(true);
   });
 });
