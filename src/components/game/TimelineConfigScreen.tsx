@@ -78,6 +78,7 @@ function CoverageStatusFilterBar({
         <button
           key={option.value}
           type="button"
+          data-testid={`coverage-filter-${option.value}`}
           onClick={() => onChange(option.value)}
           className={`rounded-sm border px-2 py-1 text-[10px] font-panel transition-colors ${
             value === option.value
@@ -110,6 +111,7 @@ function renderCoverageRows(
       {visibleRows.slice(0, 5).map((row, idx) => (
         <span
           key={`${row.status}-${idx}`}
+          data-testid={`coverage-row-${row.status}`}
           title={[row.reason, row.ownerPhase ? `归属：${row.ownerPhase}` : '', row.nextStep].filter(Boolean).join('\n')}
           className={`rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${COVERAGE_STATUS_CLASS[row.status]}`}
         >
@@ -430,7 +432,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
   };
 
   return (
-    <div className={nodeReady
+    <div data-testid="timeline-config-screen" className={nodeReady
       ? 'min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center py-6 px-4 overflow-y-auto'
       : 'min-h-[100dvh] bg-rg-ink-800 flex items-center justify-center'
     }>
@@ -527,7 +529,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
                   talent.effectRange ?? '',
                 ]);
                 return (
-                  <button key={talent.id} onClick={() => handleSelectTalent(talent)}
+                  <button key={talent.id} data-testid={`timeline-talent-card-${talent.id}`} onClick={() => handleSelectTalent(talent)}
                     disabled={!isSelected && !canAfford}
                     className={`text-left p-3 rounded-sm border transition-colors ${isSelected
                       ? 'border-rg-gold/60 bg-rg-gold/10' : canAfford

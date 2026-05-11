@@ -10,6 +10,8 @@ import {
   buildOriginEndingEvidence,
   buildOriginLifeboundContextForPrompt,
 } from '../engine/v080-origin-lifebound-closure';
+import timelineNodesRaw from '../canon/timeline-nodes.json';
+import type { TimelineNode } from '../store/slices/timelineSlice';
 
 type E2eSave = string | Record<string, unknown>;
 
@@ -39,6 +41,7 @@ declare global {
       startMidgameAnchorDemo: () => Record<string, unknown>;
       startEndingFrameworkDemo: () => Record<string, unknown>;
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
+      startTimelineTalentCoverageDemo: (category?: 'mortal' | 'immortal') => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -738,6 +741,35 @@ export function installE2eHarness(): void {
       next.setScreenState?.('game_play');
       next.setGameMode?.('canon');
       return summarizeStore();
+    },
+    startTimelineTalentCoverageDemo(category = 'mortal') {
+      const store = useStore.getState() as any;
+      const nodes = ((timelineNodesRaw as any).nodes || []) as TimelineNode[];
+      const node = nodes.find(candidate => candidate.talentCategory === category) ?? nodes[0];
+      if (!node) return { ...summarizeStore(), error: 'timeline node unavailable' };
+
+      skipTutorialForE2e();
+      store.resetTimelineConfig?.();
+      store.selectNode?.(node.id, nodes);
+      const selectedDomain = node.allowedDomains?.[0] || node.domain || '';
+      useStore.setState({
+        selectedDomain,
+        configStep: 'talent',
+        primaryPath: '',
+        secondaryPath: '',
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('timeline_config');
+      return {
+        ...summarizeStore(),
+        timelineCoverage: {
+          selectedNodeId: node.id,
+          talentCategory: node.talentCategory,
+          selectedDomain,
+        },
+      };
     },
     clearRuntime() {
       try {
