@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "商队客卿·黎川",
@@ -529,6 +529,23 @@
       "pressureLog": [],
       "lastResolutionSteps": [],
       "commitRecord": null
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "caravan_sanwang_pre:36:afternoon",
+      "narrativeTurn": 36,
+      "locationId": "南疆",
+      "period": "afternoon",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

@@ -132,6 +132,13 @@ function applyBreakthroughPenalties(set: any, get: any, penalties: Array<{ kind:
   }
 }
 
+function spendCultivationSceneAp(store: any, type: 'cultivate' | 'breakthrough' | 'calamity', summary: string, source: string): boolean {
+  if (typeof store.spendSceneAp === 'function') {
+    return Boolean(store.spendSceneAp(1, type, summary, source)?.success);
+  }
+  return Boolean(store.spendAp?.(1, summary));
+}
+
 export const createCultivationSlice = (set: any, get: any): CultivationSlice => ({
   cultivationState: createDefaultCultivationState(),
 
@@ -154,12 +161,11 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       setCultivationState(set, get, result.state);
       return { success: false, message: result.steps.at(-1)?.message || '修行条件不足。', progressGain: 0, progress: result.state.progress };
     }
-    if (!store.spendAp?.(1, 'v0.8 深修')) {
+    if (!spendCultivationSceneAp(store, 'cultivate', `v0.8 深修：进度 +${result.progressGain}`, 'practiceCultivationDeep')) {
       return { success: false, message: '行动点不足，无法专注修行。', progressGain: 0, progress: state.progress };
     }
     spendEssence(set, get, result.essenceCost);
     setCultivationState(set, get, result.state);
-    (get() as any).advanceTurn?.();
     return {
       success: true,
       message: `修行进度 +${result.progressGain}，${result.environment.periodLabel}气机已记录。`,
@@ -175,7 +181,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
     if (!validation.valid) {
       return { success: false, message: validation.reason || '突破条件不足。', rate: validation.successRate };
     }
-    if (!store.spendAp?.(1, 'v0.8 大境界突破')) {
+    if (!spendCultivationSceneAp(store, 'breakthrough', 'v0.8 大境界突破：成败由本地引擎结算', 'attemptMajorBreakthrough')) {
       return { success: false, message: '行动点不足，无法冲击境界。', rate: validation.successRate };
     }
     const result = resolveMajorBreakthroughAttempt({ store: get(), state, seed: `bt:${store.turn}:${state.progress}` });
@@ -186,7 +192,6 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       applyBreakthroughPenalties(set, get, result.penalties);
     }
     setCultivationState(set, get, result.state);
-    (get() as any).advanceTurn?.();
     return {
       success: result.success,
       message: result.success ? `突破成功：${result.realmAfter?.label}` : '突破失败，反噬已由本地引擎结算。',
@@ -201,7 +206,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
     if (!validation.valid) {
       return { success: false, message: validation.reason || '升仙条件不足。', rate: validation.successRate };
     }
-    if (!store.spendAp?.(1, 'v0.8 升仙尝试')) {
+    if (!spendCultivationSceneAp(store, 'breakthrough', 'v0.8 升仙尝试：三气与福地由本地引擎结算', 'attemptAscension')) {
       return { success: false, message: '行动点不足，无法布置升仙。', rate: validation.successRate };
     }
     const oldAperture = store.aperture;
@@ -240,7 +245,6 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       }
       setCultivationState(set, get, result.state);
     }
-    (get() as any).advanceTurn?.();
     return {
       success: result.success,
       message: result.success ? '升仙成功，福地已开辟。' : '升仙失败，三气反噬已结算。',
@@ -250,7 +254,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
 
   resolveApertureCalamity: () => {
     const store = get() as any;
-    if (!store.spendAp?.(1, 'v0.8 灾劫处置')) {
+    if (!spendCultivationSceneAp(store, 'calamity', 'v0.8 灾劫处置：后果由本地引擎结算', 'resolveApertureCalamity')) {
       return { success: false, message: '行动点不足，无法处置灾劫。' };
     }
     const state = normalizeCultivationState(store.cultivationState);
@@ -273,7 +277,6 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       source: 'v080-cultivation',
       record: result.record,
     });
-    (get() as any).advanceTurn?.();
     return {
       success: true,
       message: `灾劫已结算：${result.record?.calamityName}`,

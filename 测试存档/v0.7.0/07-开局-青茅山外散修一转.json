@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "山外散修·陆青",
@@ -463,6 +463,23 @@
       "pressureLog": [],
       "lastResolutionSteps": [],
       "commitRecord": null
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "qingmaoshan:1:morning",
+      "narrativeTurn": 1,
+      "locationId": "南疆",
+      "period": "morning",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

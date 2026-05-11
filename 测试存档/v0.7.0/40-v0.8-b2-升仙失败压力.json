@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "南疆散修·气衡",
@@ -522,6 +522,23 @@
       "pressureLog": [],
       "lastResolutionSteps": [],
       "commitRecord": null
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "v080b2_ascension_failure_pressure:198:night",
+      "narrativeTurn": 198,
+      "locationId": "南疆",
+      "period": "night",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

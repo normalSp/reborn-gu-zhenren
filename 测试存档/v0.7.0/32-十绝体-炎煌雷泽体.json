@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "炎煌雷泽体专项走查",
@@ -487,6 +487,23 @@
       "pressureLog": [],
       "lastResolutionSteps": [],
       "commitRecord": null
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "v071_extreme_physique_matrix:94:afternoon",
+      "narrativeTurn": 94,
+      "locationId": "西漠",
+      "period": "afternoon",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

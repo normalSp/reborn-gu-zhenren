@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "b3宿命战侧翼蛊仙",
@@ -747,6 +747,23 @@
       "pressureLog": [],
       "lastResolutionSteps": [],
       "commitRecord": null
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "fate_war:118:evening",
+      "narrativeTurn": 118,
+      "locationId": "中洲",
+      "period": "evening",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

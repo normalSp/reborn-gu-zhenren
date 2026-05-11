@@ -66,6 +66,47 @@ export interface SceneTimeContext {
   pendingNarrativeSettlement: string[];
 }
 
+export interface SceneActionBudget {
+  maxAp: number;
+  remainingAp: number;
+  grantedBy: 'narrative_scene' | 'calamity_scene' | 'combat_aftermath' | 'manual_recovery';
+  exhaustedPolicy: 'advance_narrative' | 'wait_or_rest';
+}
+
+export interface LocalActionLedgerEntry {
+  id: string;
+  turn: number;
+  sceneId: string;
+  actionType: 'meditate' | 'cultivate' | 'breakthrough' | 'field_action' | 'training_ground' | 'dojo' | 'resource' | 'combat' | 'calamity' | 'other';
+  source: string;
+  cost: number;
+  summary: string;
+  systemResult: Record<string, unknown>;
+  risks: string[];
+}
+
+export interface NarrativeAdvanceIntent {
+  id: string;
+  sceneId: string;
+  reason: string;
+  spentAp: number;
+  ledgerEntryIds: string[];
+  summary: string;
+}
+
+export interface SceneSessionState {
+  version: 'v0.8.0-c2.2';
+  sceneId: string;
+  narrativeTurn: number;
+  locationId: string;
+  period: string;
+  safety: 'safe' | 'guarded' | 'dangerous' | 'locked';
+  actionBudget: SceneActionBudget;
+  localActionLedger: LocalActionLedgerEntry[];
+  pendingAdvanceIntent: NarrativeAdvanceIntent | null;
+  lastNarrativeSummary: string;
+}
+
 export interface ImmortalTime {
   inner_year: number;
   inner_month: number;

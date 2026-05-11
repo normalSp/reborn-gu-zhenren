@@ -15,6 +15,7 @@ import type { ScreenState, GameMode, PipelinePhase } from './slices/uiSlice';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
+import { createDefaultSceneSessionState } from '../engine/v080-scene-session-engine';
 
 export const INITIAL_STATE = {
   // ─── playerSlice ───
@@ -64,6 +65,7 @@ export const INITIAL_STATE = {
   cultivationState: createDefaultCultivationState(),
   storyAnchorState: createDefaultStoryAnchorState(),
   endingState: createDefaultEndingFrameworkState(),
+  sceneSessionState: createDefaultSceneSessionState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -339,4 +341,4 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  */
-export const SAVE_FORMAT_VERSION = 18;
+export const SAVE_FORMAT_VERSION = 19;

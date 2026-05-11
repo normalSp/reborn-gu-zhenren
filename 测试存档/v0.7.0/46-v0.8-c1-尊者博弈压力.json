@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1尊者博弈蛊仙",
@@ -829,6 +829,23 @@
       ],
       "commitRecord": null
     },
-    "isDead": false
+    "isDead": false,
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "venerable_chessboard:128:evening",
+      "narrativeTurn": 128,
+      "locationId": "疯魔窟外缘",
+      "period": "evening",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
+    }
   }
 }

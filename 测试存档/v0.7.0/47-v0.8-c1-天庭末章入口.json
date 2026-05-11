@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1天庭末章蛊仙",
@@ -806,6 +806,23 @@
       ],
       "commitRecord": null
     },
-    "isDead": false
+    "isDead": false,
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "heavenly_court_late_chapter:128:evening",
+      "narrativeTurn": 128,
+      "locationId": "中洲天庭侧翼",
+      "period": "evening",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
+    }
   }
 }

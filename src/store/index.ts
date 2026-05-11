@@ -31,9 +31,11 @@ import { createDynamicNPCStore } from './slices/dynamicNPCStore';
 import { createCultivationSlice } from './slices/cultivationSlice';
 import { createStoryAnchorSlice } from './slices/storyAnchorSlice';
 import { createEndingSlice } from './slices/endingSlice';
+import { createSceneSessionSlice } from './slices/sceneSessionSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
+import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -189,6 +191,9 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (v < 18 || s.endingState === undefined) {
     s.endingState = normalizeEndingFrameworkState(s.endingState || s.flags?.endingState);
   }
+  if (v < 19 || s.sceneSessionState === undefined) {
+    s.sceneSessionState = normalizeSceneSessionState(s.sceneSessionState);
+  }
   s.flags = mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState);
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
@@ -238,6 +243,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createCultivationSlice> &
   ReturnType<typeof createStoryAnchorSlice> &
   ReturnType<typeof createEndingSlice> &
+  ReturnType<typeof createSceneSessionSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -429,6 +435,7 @@ function buildLoadedStoreState(
     { ...(battleRuntime.flags || {}), ...(stateData.flags || {}) },
   );
   const endingState = normalizeEndingFrameworkState(stateData.endingState || stateData.flags?.endingState);
+  const sceneSessionState = normalizeSceneSessionState(stateData.sceneSessionState);
   const flags = mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState);
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
@@ -464,6 +471,7 @@ function buildLoadedStoreState(
     cultivationState,
     storyAnchorState,
     endingState,
+    sceneSessionState,
   };
 }
 
@@ -502,6 +510,7 @@ export const useStore = create<RootStore>()(
         ...createCultivationSlice(...a),
         ...createStoryAnchorSlice(...a),
         ...createEndingSlice(...a),
+        ...createSceneSessionSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -684,6 +693,7 @@ export const useStore = create<RootStore>()(
           merged.partyState = normalizePartyState(merged.partyState, merged.turn ?? 0);
           merged.storyAnchorState = normalizeStoryAnchorState(merged.storyAnchorState, merged.flags || {});
           merged.endingState = normalizeEndingFrameworkState(merged.endingState || merged.flags?.endingState);
+          merged.sceneSessionState = normalizeSceneSessionState(merged.sceneSessionState);
           merged.flags = mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState);
           return merged;
         },
@@ -701,6 +711,7 @@ export const useStore = create<RootStore>()(
             });
             persistedState.storyAnchorState = normalizeStoryAnchorState(persistedState.storyAnchorState, persistedState.flags || {});
             persistedState.endingState = normalizeEndingFrameworkState(persistedState.endingState || persistedState.flags?.endingState);
+            persistedState.sceneSessionState = normalizeSceneSessionState(persistedState.sceneSessionState);
             persistedState.flags = mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState);
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {

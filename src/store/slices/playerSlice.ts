@@ -88,6 +88,22 @@ function applyExtremePhysiqueRealmGrowth(set: any, get: any, newGrand: number) {
   }
 }
 
+function spendSceneBudgetOrAp(
+  get: any,
+  cost: number,
+  actionType: 'meditate' | 'cultivate' | 'breakthrough' | 'field_action',
+  summary: string,
+  source: string,
+  systemResult?: Record<string, unknown>,
+): boolean {
+  const store = get() as any;
+  if (typeof store.spendSceneAp === 'function') {
+    const result = store.spendSceneAp(cost, actionType, summary, source, systemResult);
+    return Boolean(result?.success);
+  }
+  return Boolean(store.spendAp?.(cost, summary));
+}
+
 interface PlayerSlice extends PlayerState {
   gameTime: GameTime;
   turn: number;
@@ -556,7 +572,11 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       };
     }
 
-    if (!(get() as PlayerSlice).spendAp(1, '调息吸收元石')) {
+    if (!spendSceneBudgetOrAp(get, 1, 'meditate', `调息吸收元石：真元 +${calc.essenceGain}，消耗 ${calc.stonesConsumed} 元石`, 'meditateWithPrimevalStone', {
+      essenceGain: calc.essenceGain,
+      stonesConsumed: calc.stonesConsumed,
+      context,
+    })) {
       return {
         success: false,
         message: '行动点不足，无法静坐调息。',
@@ -608,8 +628,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       }
     }
 
-    (get() as PlayerSlice).advanceTurn();
-
     return {
       success: true,
       message: risk.triggered ? `调息完成，但${risk.reason}` : '调息完成。',
@@ -632,7 +650,11 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (!calc.allowed) {
       return { success: false, message: calc.reason || '无法调息仙元。', essenceGain: 0, stonesConsumed: 0, riskTriggered: false };
     }
-    if (!(get() as PlayerSlice).spendAp(1, '调息吸收仙元石')) {
+    if (!spendSceneBudgetOrAp(get, 1, 'meditate', `调息吸收仙元石：仙元 +${calc.essenceGain}，消耗 ${calc.stonesConsumed} 仙元石`, 'meditateWithImmortalStone', {
+      essenceGain: calc.essenceGain,
+      stonesConsumed: calc.stonesConsumed,
+      context,
+    })) {
       return { success: false, message: '行动点不足，无法静坐调息。', essenceGain: 0, stonesConsumed: 0, riskTriggered: false };
     }
     set((s: PlayerSlice) => ({
@@ -651,7 +673,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       stonesConsumed: calc.stonesConsumed,
       riskTriggered: risk.triggered,
     });
-    (get() as PlayerSlice).advanceTurn();
     return {
       success: true,
       message: risk.triggered ? `调息完成，但${risk.reason}` : '仙元调息完成。',
@@ -662,7 +683,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
   },
   practiceCultivation: () => {
     const state = get() as PlayerSlice;
-    if (!(get() as PlayerSlice).spendAp(1, '专注修行')) {
+    if (!spendSceneBudgetOrAp(get, 1, 'cultivate', '专注修行，修行进度即将由本地引擎结算。', 'practiceCultivation')) {
       return { success: false, message: '行动点不足，无法专注修行。', progressGain: 0, progress: Number(state.flags?.cultivationProgress || 0) };
     }
     const result = calculateCultivationProgress({
@@ -685,13 +706,12 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       progress: result.newProgress,
       modifiers: result.labels,
     });
-    (get() as PlayerSlice).advanceTurn();
     return { success: true, message: `修行进度 +${result.progressGain}`, progressGain: result.progressGain, progress: result.newProgress };
   },
   attemptBreakthrough: () => {
     const state = get() as PlayerSlice;
     const progress = Number(state.flags?.cultivationProgress || 0);
-    if (!(get() as PlayerSlice).spendAp(1, '尝试突破')) {
+    if (!spendSceneBudgetOrAp(get, 1, 'breakthrough', '尝试突破，成败与反噬由本地引擎结算。', 'attemptBreakthrough')) {
       return { success: false, message: '行动点不足，无法静心冲击境界。', rate: 0 };
     }
     const quote = calculateBreakthroughSuccessRate({
@@ -708,7 +728,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       }));
       const logStore = get() as any;
       logStore.addGameLog?.('system', `突破成功：修行壁障松动`, { rate: quote.rate, modifiers: quote.labels });
-      (get() as PlayerSlice).advanceTurn();
       return { success: true, message: '突破成功，修行壁障松动。', rate: quote.rate };
     }
 
@@ -770,7 +789,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       severity: failure.severity,
       modifiers: failure.labels,
     });
-    (get() as PlayerSlice).advanceTurn();
     return { success: false, message: '突破失败，空窍与蛊虫受到反噬。', rate: quote.rate };
   },
   performFieldAction: (kind, locationType = 'field') => {
@@ -783,7 +801,10 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
           : '当前处于山寨、城镇或安全营地，需离开安全地后才能执行野外行动。',
       };
     }
-    if (!(get() as PlayerSlice).spendAp(1, kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离')) {
+    if (!spendSceneBudgetOrAp(get, 1, 'field_action', kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离', 'performFieldAction', {
+      kind,
+      locationType,
+    })) {
       return { success: false, message: '行动点不足，无法执行野外行动。' };
     }
     const result = resolveFieldAction({
@@ -813,7 +834,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       riskChance: result.riskChance,
       modifiers: result.modifierLabels,
     });
-    (get() as PlayerSlice).advanceTurn();
     return { success: result.success, message: result.message };
   },
   setPrimaryPath: (path) => set((s: PlayerSlice) => ({ pathBuild: { ...s.pathBuild, primary: path } })),

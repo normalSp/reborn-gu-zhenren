@@ -1,5 +1,5 @@
 {
-  "formatVersion": 18,
+  "formatVersion": 19,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1身死道消蛊仙",
@@ -834,6 +834,23 @@
         "v0.8.0-c1 终局仍保留混沌与永生未证边界"
       ],
       "generatedAt": "2026-05-11T00:00:00.000Z"
+    },
+    "sceneSessionState": {
+      "version": "v0.8.0-c2.2",
+      "sceneId": "fate_war:128:evening",
+      "narrativeTurn": 128,
+      "locationId": "中洲天庭侧翼",
+      "period": "evening",
+      "safety": "safe",
+      "actionBudget": {
+        "maxAp": 3,
+        "remainingAp": 3,
+        "grantedBy": "narrative_scene",
+        "exhaustedPolicy": "advance_narrative"
+      },
+      "localActionLedger": [],
+      "pendingAdvanceIntent": null,
+      "lastNarrativeSummary": ""
     }
   }
 }

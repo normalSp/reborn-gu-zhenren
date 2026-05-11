@@ -62,14 +62,15 @@ describe('player P2 AP and action consumers', () => {
     expect(harness.state.vitals.essence.current).toBeGreaterThan(20);
   });
 
-  it('primeval stone meditation consumes AP and stones, then advances the period', () => {
+  it('primeval stone meditation consumes scene AP and stones without advancing narrative text', () => {
     const harness = createHarness();
+    const beforeTurn = harness.state.turn;
     const result = harness.state.meditateWithPrimevalStone(1, 'safe');
 
     expect(result.success).toBe(true);
     expect(harness.state.currency).toBe(9);
-    expect(harness.state.turn).toBeGreaterThan(0);
-    expect(harness.state.gameTime.ap).toBe(3);
+    expect(harness.state.turn).toBe(beforeTurn);
+    expect(harness.state.gameTime.ap).toBe(0);
     expect(harness.state.vitals.essence.current).toBeGreaterThan(20);
   });
 
@@ -88,17 +89,16 @@ describe('player P2 AP and action consumers', () => {
     const result = harness.state.performFieldAction('gather', 'field');
 
     expect(typeof result.success).toBe('boolean');
-    expect(harness.state.gameTime.ap).toBe(3);
-    expect(harness.state.turn).toBeGreaterThan(0);
+    expect(harness.state.gameTime.ap).toBe(0);
     expect(Object.values(harness.state.materialBag).reduce((sum: number, value: any) => sum + Number(value), 0)).toBeGreaterThanOrEqual(0);
   });
 
-  it('breakthrough failure records concrete penalties and advances time', () => {
+  it('breakthrough failure records concrete penalties without advancing narrative text', () => {
     const harness = createHarness({ gameTime: { ap: 1, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' }, turn: 10 });
     const result = harness.state.attemptBreakthrough();
 
     expect(typeof result.success).toBe('boolean');
-    expect(harness.state.turn).toBeGreaterThan(10);
+    expect(harness.state.turn).toBe(10);
     if (!result.success) {
       expect(harness.state.flags.breakthroughFailureRecords?.[0]?.penalties?.length).toBeGreaterThan(0);
       expect(harness.state.vitals.health.current).toBeLessThanOrEqual(100);

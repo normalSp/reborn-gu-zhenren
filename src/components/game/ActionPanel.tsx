@@ -67,6 +67,7 @@ export function ActionPanel() {
     squadCombatState: s.squadCombatState,
     cultivationState: s.cultivationState,
     heavenlyLand: s.heavenlyLand,
+    sceneSessionState: s.sceneSessionState,
   })));
   const meditateWithPrimevalStone = useStore((s: any) => s.meditateWithPrimevalStone);
   const meditateWithImmortalStone = useStore((s: any) => s.meditateWithImmortalStone);
@@ -76,6 +77,8 @@ export function ActionPanel() {
   const attemptAscension = useStore((s: any) => s.attemptAscension);
   const resolveApertureCalamity = useStore((s: any) => s.resolveApertureCalamity);
   const performFieldAction = useStore((s: any) => s.performFieldAction);
+  const prepareNarrativeAdvanceIntent = useStore((s: any) => s.prepareNarrativeAdvanceIntent);
+  const resetSceneActionBudget = useStore((s: any) => s.resetSceneActionBudget);
 
   const availability = useMemo(
     () => deriveActivityAvailabilityContext(storeSnapshot),
@@ -94,6 +97,8 @@ export function ActionPanel() {
   );
   const cultivationState = storeSnapshot.cultivationState;
   const lastTrace = Array.isArray(cultivationState?.lastResolution) ? cultivationState.lastResolution : [];
+  const sceneSession = storeSnapshot.sceneSessionState;
+  const localLedger = Array.isArray(sceneSession?.localActionLedger) ? sceneSession.localActionLedger.slice(-4) : [];
 
   const execute = (kind: ActivityActionKind) => {
     if (availability.sceneLocked) {
@@ -140,6 +145,19 @@ export function ActionPanel() {
     });
   };
 
+  const advanceScene = () => {
+    const intent = prepareNarrativeAdvanceIntent?.('player_advance');
+    setLastResult({
+      success: true,
+      message: intent?.summary || '已整理本轮行动账本，下一轮剧情会承接这些本地结算事实。',
+    });
+  };
+
+  const resetScene = () => {
+    resetSceneActionBudget?.('narrative_scene');
+    setLastResult({ success: true, message: '当前场景行动预算已按剧情时段重置。' });
+  };
+
   return (
     <div className="rg-scrollable h-full overflow-y-auto p-3 space-y-4 font-panel sm:p-4" data-testid="action-panel">
       <section className="rg-explain-card p-3">
@@ -165,6 +183,35 @@ export function ActionPanel() {
           </div>
         </div>
         <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/42">{availability.apPolicyNote}</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={advanceScene}
+            className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs"
+            data-testid="prepare-narrative-advance"
+            data-audio-confirm="true"
+          >
+            推进剧情 / 结束时段
+          </button>
+          <button
+            type="button"
+            onClick={resetScene}
+            className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs text-rg-paper-200/60"
+            data-testid="reset-scene-budget"
+          >
+            重置场景 AP
+          </button>
+        </div>
+        {localLedger.length > 0 && (
+          <div className="mt-3 space-y-1 border-t border-rg-ink-300/10 pt-2">
+            <div className="text-[10px] tracking-[0.12em] text-rg-paper-200/42">本轮行动账本</div>
+            {localLedger.map((entry: any) => (
+              <div key={entry.id} className="text-[10px] leading-relaxed text-rg-paper-200/55">
+                <span className="text-rg-gold">{entry.actionType}</span> · {entry.summary}
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="space-y-2">
