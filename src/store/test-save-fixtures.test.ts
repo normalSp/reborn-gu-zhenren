@@ -39,6 +39,11 @@ describe('v0.7.0 current-format test save fixtures', () => {
       expect(Array.isArray(state.endingState?.candidates), `${file} should include ending candidates array`).toBe(true);
       expect(Array.isArray(state.endingState?.pressureLog), `${file} should include ending pressure ledger`).toBe(true);
       expect(Array.isArray(state.endingState?.lastResolutionSteps), `${file} should include ending resolution steps`).toBe(true);
+      expect(state.inheritanceLandState?.version, `${file} should include v0.8.0-c2.5 inheritance land state`).toBe('v0.8.0-c2.5');
+      expect(Array.isArray(state.inheritanceLandState?.candidates), `${file} should include inheritance candidates array`).toBe(true);
+      expect(Array.isArray(state.inheritanceLandState?.claimAttempts), `${file} should include land claim attempts array`).toBe(true);
+      expect(Array.isArray(state.inheritanceLandState?.blockedRecords), `${file} should include inheritance blocked records`).toBe(true);
+      expect(state.flags?.inheritanceLandCandidates, `${file} should mirror inheritance candidates for old prompt compatibility`).toEqual(state.inheritanceLandState?.candidates);
     }
   });
 
@@ -94,5 +99,23 @@ describe('v0.7.0 current-format test save fixtures', () => {
 
     expect([...found].sort()).toEqual([...EXTREME_PHYSIQUES].sort());
     expect(found.has('纯梦求真体'), 'Pure Dream Reality Seeker should be covered as hidden eleventh physique').toBe(true);
+  });
+
+  it('covers c2.5 inheritance, blessed land, and grotto-heaven boundary fixture slices', () => {
+    const saves = loadSaves();
+    const bySite = new Map<string, any>();
+
+    for (const { state } of saves) {
+      for (const candidate of state.inheritanceLandState?.candidates || []) {
+        bySite.set(candidate.siteId, candidate);
+      }
+    }
+
+    expect(bySite.get('minor_cave_inheritance')?.kind).toBe('minor_cave');
+    expect(bySite.get('three_kings_side_branch')?.kind).toBe('canon_side_branch');
+    expect(bySite.get('unclaimed_blessed_land_seed')?.kind).toBe('blessed_land_claim');
+    expect(bySite.get('unclaimed_blessed_land_seed')?.landClaimTerms?.length).toBeGreaterThan(0);
+    expect(bySite.get('grotto_heaven_boundary_rumor')?.status).toBe('rumor');
+    expect(bySite.get('grotto_heaven_boundary_rumor')?.validationIssues?.join(' ')).toContain('洞天');
   });
 });

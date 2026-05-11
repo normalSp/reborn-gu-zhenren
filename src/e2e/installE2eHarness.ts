@@ -5,6 +5,7 @@ import { resolveTerrainCombatModifier } from '../engine/terrain-combat';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
+import { createDefaultInheritanceLandState, listInheritanceSiteSpecs } from '../engine/v080-inheritance-land-engine';
 import {
   buildLifeboundEndingEvidence,
   buildOriginEndingEvidence,
@@ -42,6 +43,7 @@ declare global {
       startMidgameAnchorDemo: () => Record<string, unknown>;
       startEndingFrameworkDemo: () => Record<string, unknown>;
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
+      startInheritanceLandDemo: () => Record<string, unknown>;
       startTimelineTalentCoverageDemo: (category?: 'mortal' | 'immortal') => Record<string, unknown>;
       clearRuntime: () => void;
     };
@@ -169,6 +171,13 @@ function summarizeStore(): Record<string, unknown> {
       pressureCount: Array.isArray(state.endingState.pressureLog) ? state.endingState.pressureLog.length : 0,
       committedFamilyId: state.endingState.commitRecord?.outcome?.familyId || null,
       lastStepCount: Array.isArray(state.endingState.lastResolutionSteps) ? state.endingState.lastResolutionSteps.length : 0,
+    } : null,
+    inheritanceLand: state.inheritanceLandState ? {
+      candidateCount: Array.isArray(state.inheritanceLandState.candidates) ? state.inheritanceLandState.candidates.length : 0,
+      claimedLandCount: Array.isArray(state.inheritanceLandState.claimedLandIds) ? state.inheritanceLandState.claimedLandIds.length : 0,
+      blockedCount: Array.isArray(state.inheritanceLandState.blockedRecords) ? state.inheritanceLandState.blockedRecords.length : 0,
+      lastStepCount: Array.isArray(state.inheritanceLandState.lastResolutionSteps) ? state.inheritanceLandState.lastResolutionSteps.length : 0,
+      heavenlyLandName: state.heavenlyLand?.name || null,
     } : null,
     originLifebound: {
       originProfileId: originEvidence.profileId || null,
@@ -915,6 +924,142 @@ export function installE2eHarness(): void {
       const next = useStore.getState() as any;
       next.setScreenState?.('game_play');
       next.setGameMode?.('canon');
+      return summarizeStore();
+    },
+    startInheritanceLandDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      const sites = listInheritanceSiteSpecs();
+      const resourceNodes = [
+        { id: 'c25_qi_node', type: '气道', name: '清气泉眼', output_rate: 3, quality: 76, grade: '仙材', active: true },
+        { id: 'c25_wood_node', type: '木道', name: '青苔药圃', output_rate: 2, quality: 68, grade: '灵植', active: true },
+      ];
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 32),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '南疆',
+        currentChapterId: 'san_wang_mountain',
+        activeTab: 'inheritance',
+        profile: { name: 'c2.5传承演武蛊仙', background: '三王山旁支争夺', realm: { grand: 6, sub: '初阶', label: '六转初阶' } },
+        attributes: { 资质: 10, 体魄: 9, 心智: 9, 气运: 7 },
+        vitals: {
+          health: { current: 1180, max: 1320 },
+          essence: { current: 620, max: 900 },
+          essenceType: 'immortal',
+        },
+        currency: Number(store.currency || 68000),
+        immortalCurrency: Number(store.immortalCurrency || 42),
+        gameTime: { ap: 3, max_ap: 3, period: 'afternoon', day: 18, month: 4, year: 1, season: 'spring' },
+        sceneSessionState: {
+          sceneId: 'c25_inheritance_land_demo',
+          status: 'active',
+          budget: { remainingAp: 4, maxAp: 4, spentAp: 0 },
+          actionBudget: { remainingAp: 4, maxAp: 4, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pathBuild: {
+          primary: '炼道',
+          secondary: ['土道', '奴道'],
+          path_levels: { 炼道: '大师', 土道: '准大师' },
+          dao_marks: { 炼道: 760, 土道: 420, 奴道: 260 },
+        },
+        aperture: {
+          type: '福地',
+          grade: '中等福地',
+          area_mu: 540,
+          time_flow_ratio: 18,
+          resource_nodes: resourceNodes,
+          dao_mark_density: { 炼道: 760, 土道: 420, 奴道: 260 },
+          next_disaster_type: '资源节点失衡',
+          disaster_countdown: 16,
+        },
+        heavenlyLand: {
+          id: 'c25_existing_land',
+          type: '福地',
+          domain: '南疆',
+          name: '演武福地',
+          areaMu: 540,
+          timeFlowRatio: 18,
+          resourceOutputRate: 18,
+          earthSpirit: { formed: true, approval: 54 },
+          disasterCountdown: 16,
+          nextDisasterType: '资源节点失衡',
+          createdAt: 12,
+          accessible: true,
+        },
+        inheritanceLandState: createDefaultInheritanceLandState(),
+        flags: {
+          ...(store.flags || {}),
+          pendingCalamitySceneSpec: null,
+          combatEventCandidates: [],
+          currentCanonAnchorId: 'san_wang_mountain',
+        },
+        currentNarrative: {
+          narrative: {
+            text: '三王山余波未散，山腹中有小传承洞府的封印裂隙，旁支试炼也引来地灵传闻。洞天边界只能作为传闻与禁区压力，不能在 v0.8 被正式认主。',
+            choices: [
+              {
+                id: 'c25_inheritance_hint',
+                text: '检查小传承洞府封印，只登记线索和试炼入口',
+                risk: 'medium',
+                risk_note: '奖励和守护战都由本地引擎结算。',
+                inheritanceTags: [{
+                  kind: 'inheritance_hint',
+                  label: '传承线索',
+                  status: 'available',
+                  siteId: 'minor_cave_inheritance',
+                  reason: '小传承洞府可以作为有限样板进入试炼。',
+                }],
+              },
+              {
+                id: 'c25_land_claim',
+                text: '询问地灵执念，评估待认主福地条件',
+                risk: 'high',
+                risk_note: '六转以上才可尝试，仍需 AP、试炼和资源压力校验。',
+                inheritanceTags: [{
+                  kind: 'blessed_land_claim',
+                  label: '待认主福地',
+                  status: 'available',
+                  siteId: 'unclaimed_blessed_land_seed',
+                  reason: '满足六转门槛，但认主结果必须本地结算。',
+                }],
+              },
+              {
+                id: 'c25_grotto_rumor',
+                text: '记录洞天边界传闻，不触碰认主禁区',
+                risk: 'high',
+                risk_note: '洞天在 v0.8 只作为传闻和后续入口。',
+                inheritanceTags: [{
+                  kind: 'grotto_heaven_rumor',
+                  label: '洞天传闻',
+                  status: 'rumor',
+                  siteId: 'grotto_heaven_boundary_rumor',
+                  reason: '洞天正式认主不在 v0.8 开放。',
+                }],
+              },
+            ],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
+      for (const site of sites) {
+        next.recordInheritanceCandidateAction?.({
+          siteId: site.siteId,
+          title: site.title,
+          summary: `${site.title} 已作为 c2.5 演武候选登记。`,
+          anchorId: site.anchorId,
+          risk: site.risk,
+          source: 'engine',
+        });
+      }
       return summarizeStore();
     },
     startTimelineTalentCoverageDemo(category = 'mortal') {

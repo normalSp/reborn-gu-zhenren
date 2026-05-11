@@ -21,6 +21,7 @@ import { buildOriginLifeboundContextForPrompt } from './v080-origin-lifebound-cl
 import { formatSceneSessionForPrompt } from './v080-scene-session-engine';
 import { formatCombatEncounterForPrompt } from './v080-narrative-combat-orchestration';
 import { formatCalamitySceneForPrompt } from './v080-calamity-scene-engine';
+import { formatInheritanceContextForPrompt } from './v080-inheritance-land-engine';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1123,6 +1124,8 @@ export class ContextBuilder {
     if (combatEncounterPrompt) parts.push(combatEncounterPrompt);
     const calamityScenePrompt = formatCalamitySceneForPrompt((store as any).flags?.pendingCalamitySceneSpec);
     if (calamityScenePrompt) parts.push(calamityScenePrompt);
+    const inheritancePrompt = formatInheritanceContextForPrompt((store as any).inheritanceLandState);
+    if (inheritancePrompt) parts.push(inheritancePrompt);
     parts.push(buildOriginLifeboundContextForPrompt(store));
     parts.push(injectV080NarrativeGuard(store));
 

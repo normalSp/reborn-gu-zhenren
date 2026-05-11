@@ -1,5 +1,5 @@
 {
-  "formatVersion": 19,
+  "formatVersion": 20,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1势力立足蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "if",
     "description": "v0.8.0-c1 玩家势力立足终局专项：势力分、关系、群像战代价与锚点证据汇入终局矩阵。",
-    "formatVersion": 18
+    "formatVersion": 20
   },
   "state": {
     "profile": {
@@ -299,7 +299,11 @@
         }
       ],
       "endingStatus": "ready",
-      "playerFactionScore": 86
+      "playerFactionScore": 86,
+      "inheritanceLandCandidates": [],
+      "inheritanceClaimAttempts": [],
+      "claimedLandIds": [],
+      "lastInheritanceLandResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -823,6 +827,16 @@
       "localActionLedger": [],
       "pendingAdvanceIntent": null,
       "lastNarrativeSummary": ""
+    },
+    "inheritanceLandState": {
+      "version": "v0.8.0-c2.5",
+      "candidates": [],
+      "claimAttempts": [],
+      "completedSiteIds": [],
+      "claimedLandIds": [],
+      "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }

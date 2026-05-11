@@ -1,5 +1,5 @@
 {
-  "formatVersion": 19,
+  "formatVersion": 20,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "大力真武体专项走查",
@@ -7,7 +7,7 @@
     "turn": 96,
     "gameMode": "canon",
     "description": "v0.7.1 RC 专项手测：自然十绝体「大力真武体」空窍压力、亲和道途与凡蛊夹具。",
-    "formatVersion": 18
+    "formatVersion": 20
   },
   "state": {
     "profile": {
@@ -209,7 +209,11 @@
       "ifBranchCandidates": [],
       "canonAnchorPressureLog": [],
       "lastStoryAnchorResolution": [],
-      "endingStatus": "idle"
+      "endingStatus": "idle",
+      "inheritanceLandCandidates": [],
+      "inheritanceClaimAttempts": [],
+      "claimedLandIds": [],
+      "lastInheritanceLandResolution": []
     },
     "gameMode": "canon",
     "playerRole": "original_participant",
@@ -500,6 +504,16 @@
       "localActionLedger": [],
       "pendingAdvanceIntent": null,
       "lastNarrativeSummary": ""
+    },
+    "inheritanceLandState": {
+      "version": "v0.8.0-c2.5",
+      "candidates": [],
+      "claimAttempts": [],
+      "completedSiteIds": [],
+      "claimedLandIds": [],
+      "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }

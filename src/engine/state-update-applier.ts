@@ -444,6 +444,12 @@ export function applyStateUpdate(update: StateUpdate): void {
     if (direct.rankTen !== undefined || direct.rank_ten !== undefined) directAttempts.push('direct rank ten write');
     if (direct.immortalityConclusion !== undefined || direct.immortality_conclusion !== undefined) directAttempts.push('direct immortality conclusion write');
     if (direct.keyNpcDeath !== undefined || direct.key_npc_death !== undefined) directAttempts.push('direct key NPC death write');
+    if (direct.inheritanceReward !== undefined || direct.inheritance_rewards !== undefined) directAttempts.push('direct inheritance reward write');
+    if (direct.landClaim !== undefined || direct.land_claim !== undefined) directAttempts.push('direct land claim write');
+    if (direct.heavenlyLand !== undefined || direct.heavenly_land !== undefined) directAttempts.push('direct heavenly land write');
+    if (direct.grottoHeaven !== undefined || direct.grotto_heaven !== undefined) directAttempts.push('direct grotto-heaven write');
+    if (direct.resourceNodes !== undefined || direct.resource_nodes !== undefined) directAttempts.push('direct resource node write');
+    if (direct.immortalGu !== undefined || direct.immortal_gu !== undefined) directAttempts.push('direct immortal Gu write');
     if (directAttempts.length > 0) {
       const s = useStore.getState() as any;
       s.recordEndingPressureAction?.(directAttempts.join(', '), 'AI 不能直接写入正式终局、尊者击杀、十转或永生定论。');
@@ -479,6 +485,24 @@ export function applyStateUpdate(update: StateUpdate): void {
     for (const pressure of (update as any).canon_anchor_pressure.add) {
       if (!pressure?.anchorId || !pressure?.attemptedMutation) continue;
       s.recordCanonAnchorPressureAction?.(pressure);
+    }
+  }
+
+  if ((update as any).inheritance_land_candidates?.add && Array.isArray((update as any).inheritance_land_candidates.add)) {
+    const s = useStore.getState() as any;
+    for (const candidate of (update as any).inheritance_land_candidates.add) {
+      if (!candidate?.siteId) continue;
+      const validation = s.recordInheritanceCandidateAction?.({
+        ...candidate,
+        source: candidate.source || 'ai-rumor',
+      });
+      if (!validation?.valid) {
+        s.addGameLog?.('pipeline', `传承/福地候选已降级：${candidate.title || candidate.siteId}`, {
+          source: 'v080-c25-inheritance-land-guard',
+          candidate,
+          validation,
+        });
+      }
     }
   }
 

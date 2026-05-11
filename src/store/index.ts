@@ -32,11 +32,13 @@ import { createCultivationSlice } from './slices/cultivationSlice';
 import { createStoryAnchorSlice } from './slices/storyAnchorSlice';
 import { createEndingSlice } from './slices/endingSlice';
 import { createSceneSessionSlice } from './slices/sceneSessionSlice';
+import { createInheritanceLandSlice } from './slices/inheritanceLandSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine';
 import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
+import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-engine';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -195,6 +197,9 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (v < 19 || s.sceneSessionState === undefined) {
     s.sceneSessionState = normalizeSceneSessionState(s.sceneSessionState);
   }
+  if (v < 20 || s.inheritanceLandState === undefined) {
+    s.inheritanceLandState = normalizeInheritanceLandState(s.inheritanceLandState);
+  }
   s.flags = mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState);
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
@@ -245,6 +250,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createStoryAnchorSlice> &
   ReturnType<typeof createEndingSlice> &
   ReturnType<typeof createSceneSessionSlice> &
+  ReturnType<typeof createInheritanceLandSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -437,6 +443,7 @@ function buildLoadedStoreState(
   );
   const endingState = normalizeEndingFrameworkState(stateData.endingState || stateData.flags?.endingState);
   const sceneSessionState = normalizeSceneSessionState(stateData.sceneSessionState);
+  const inheritanceLandState = normalizeInheritanceLandState(stateData.inheritanceLandState);
   const flags = mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState);
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
@@ -474,6 +481,7 @@ function buildLoadedStoreState(
     storyAnchorState,
     endingState,
     sceneSessionState,
+    inheritanceLandState,
   };
 }
 
@@ -513,6 +521,7 @@ export const useStore = create<RootStore>()(
         ...createStoryAnchorSlice(...a),
         ...createEndingSlice(...a),
         ...createSceneSessionSlice(...a),
+        ...createInheritanceLandSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -696,6 +705,7 @@ export const useStore = create<RootStore>()(
           merged.storyAnchorState = normalizeStoryAnchorState(merged.storyAnchorState, merged.flags || {});
           merged.endingState = normalizeEndingFrameworkState(merged.endingState || merged.flags?.endingState);
           merged.sceneSessionState = normalizeSceneSessionState(merged.sceneSessionState);
+          merged.inheritanceLandState = normalizeInheritanceLandState(merged.inheritanceLandState);
           merged.flags = mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState);
           return merged;
         },
@@ -714,6 +724,7 @@ export const useStore = create<RootStore>()(
             persistedState.storyAnchorState = normalizeStoryAnchorState(persistedState.storyAnchorState, persistedState.flags || {});
             persistedState.endingState = normalizeEndingFrameworkState(persistedState.endingState || persistedState.flags?.endingState);
             persistedState.sceneSessionState = normalizeSceneSessionState(persistedState.sceneSessionState);
+            persistedState.inheritanceLandState = normalizeInheritanceLandState(persistedState.inheritanceLandState);
             persistedState.flags = mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState);
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {

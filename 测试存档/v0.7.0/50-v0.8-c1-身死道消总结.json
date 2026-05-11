@@ -1,5 +1,5 @@
 {
-  "formatVersion": 19,
+  "formatVersion": 20,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1身死道消蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "if",
     "description": "v0.8.0-c1 身死道消总结专项：玩家已死时只生成生平总结和定场诗，不伪造成永生结论。",
-    "formatVersion": 18
+    "formatVersion": 20
   },
   "state": {
     "profile": {
@@ -299,7 +299,11 @@
         }
       ],
       "endingStatus": "ready",
-      "playerFactionScore": 68
+      "playerFactionScore": 68,
+      "inheritanceLandCandidates": [],
+      "inheritanceClaimAttempts": [],
+      "claimedLandIds": [],
+      "lastInheritanceLandResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -851,6 +855,16 @@
       "localActionLedger": [],
       "pendingAdvanceIntent": null,
       "lastNarrativeSummary": ""
+    },
+    "inheritanceLandState": {
+      "version": "v0.8.0-c2.5",
+      "candidates": [],
+      "claimAttempts": [],
+      "completedSiteIds": [],
+      "claimedLandIds": [],
+      "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }

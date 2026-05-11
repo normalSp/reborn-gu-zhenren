@@ -38,6 +38,16 @@ const ChoiceGuAffordanceSchema = z.object({
   promptHint: z.string().optional(),
 }).passthrough();
 
+const ChoiceInheritanceTagSchema = z.object({
+  siteId: z.string().min(1).optional(),
+  kind: z.enum(['inheritance_hint', 'blessed_land_claim', 'grotto_heaven_rumor', 'forbidden_block']).optional(),
+  label: z.string().min(1),
+  status: z.enum(['available', 'blocked', 'rumor', 'resolved']).optional(),
+  reason: z.string().optional(),
+  risk: z.enum(['low', 'medium', 'high']).optional(),
+  apCost: z.number().min(0).optional(),
+}).passthrough();
+
 // ─── Choice Schema ───
 export const ChoiceSchema = z.object({
   id: z.string().min(1),
@@ -49,6 +59,8 @@ export const ChoiceSchema = z.object({
     z.array(ChoiceGuAffordanceSchema),
   ]).optional(),
   guAffordances: z.array(ChoiceGuAffordanceSchema).optional(),
+  inheritanceTags: z.array(ChoiceInheritanceTagSchema).optional(),
+  inheritance_tags: z.array(ChoiceInheritanceTagSchema).optional(),
 }).passthrough(); // 5B: 容忍AI的outcome/reward等额外字段
 
 // ─── StateUpdate Sub-Schemas ───
@@ -271,6 +283,38 @@ const CanonAnchorPressureUpdate = z.object({
   add: z.array(CanonAnchorPressureAdd).optional(),
 }).optional();
 
+const InheritanceRewardPreviewSchema = z.object({
+  kind: z.enum(['gu', 'material', 'recipe_fragment', 'killer_move_fragment', 'resource_node', 'rumor']),
+  id: z.string().min(1).optional(),
+  name: z.string().min(1),
+  quantity: z.number().min(1).optional(),
+  tier: z.number().min(1).max(9).optional(),
+  path: z.string().optional(),
+  registered: z.boolean().optional(),
+  note: z.string().optional(),
+}).passthrough();
+
+const InheritanceLandCandidateAdd = z.object({
+  id: z.string().optional(),
+  siteId: z.string().min(1),
+  title: z.string().min(1).optional(),
+  summary: z.string().min(1).optional(),
+  locationHint: z.string().optional(),
+  anchorId: z.string().optional(),
+  risk: z.enum(['low', 'medium', 'high']).optional(),
+  source: z.enum(['ai-rumor', 'engine', 'player_choice']).optional(),
+  apCostHint: z.number().min(0).optional(),
+  requiredClues: z.array(z.string()).optional(),
+  rewardPreview: z.array(InheritanceRewardPreviewSchema).optional(),
+  landSpiritDemand: z.string().optional(),
+  boundaryHint: z.string().optional(),
+  sceneTags: z.array(z.string()).optional(),
+}).passthrough();
+
+const InheritanceLandCandidatesUpdate = z.object({
+  add: z.array(InheritanceLandCandidateAdd).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -290,6 +334,7 @@ export const StateUpdateSchema = z.object({
   story_event_candidates: StoryEventCandidatesUpdate,
   if_branch_candidates: IfBranchCandidatesUpdate,
   canon_anchor_pressure: CanonAnchorPressureUpdate,
+  inheritance_land_candidates: InheritanceLandCandidatesUpdate,
 }).passthrough(); // 5B: strict→passthrough 容忍AI额外字段
 
 // ─── NarrativeJSON Schema ───

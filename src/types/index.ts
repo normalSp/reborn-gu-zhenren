@@ -77,7 +77,7 @@ export interface LocalActionLedgerEntry {
   id: string;
   turn: number;
   sceneId: string;
-  actionType: 'meditate' | 'cultivate' | 'breakthrough' | 'field_action' | 'training_ground' | 'dojo' | 'resource' | 'combat' | 'calamity' | 'other';
+  actionType: 'meditate' | 'cultivate' | 'breakthrough' | 'field_action' | 'training_ground' | 'dojo' | 'resource' | 'combat' | 'calamity' | 'inheritance' | 'other';
   source: string;
   cost: number;
   summary: string;
@@ -158,6 +158,144 @@ export interface CombatEncounterState {
   validation: CombatEncounterEntryValidation | null;
   startedTurn: number;
   outcomeSummary: BattleOutcomeSummary | null;
+}
+
+export type InheritanceSiteKind = 'minor_cave' | 'canon_side_branch' | 'blessed_land_claim' | 'grotto_heaven_rumor';
+export type InheritanceCandidateStatus = 'candidate' | 'active' | 'resolved' | 'failed' | 'rumor' | 'blocked' | 'expired';
+export type InheritanceResolutionStepKind =
+  | 'candidate'
+  | 'entry_validation'
+  | 'trial'
+  | 'reward_preview'
+  | 'land_claim'
+  | 'combat_hook'
+  | 'calamity_hook'
+  | 'anchor_pressure'
+  | 'rumor'
+  | 'failure'
+  | 'settlement';
+
+export interface InheritanceRewardPreview {
+  kind: 'gu' | 'material' | 'recipe_fragment' | 'killer_move_fragment' | 'resource_node' | 'rumor';
+  id: string;
+  name: string;
+  quantity?: number;
+  registered: boolean;
+  note: string;
+}
+
+export interface LandClaimTerm {
+  id: string;
+  label: string;
+  description: string;
+  required: boolean;
+  status: 'pending' | 'satisfied' | 'failed' | 'blocked';
+}
+
+export interface InheritanceSiteSpec {
+  siteId: string;
+  title: string;
+  kind: InheritanceSiteKind;
+  anchorId?: string;
+  minRealmGrand: number;
+  maxRealmGrand?: number;
+  entryCostAp: number;
+  pathTags: PathType[];
+  provenance: 'canon-side' | 'if-derived' | 'original-if';
+  summary: string;
+  trialLabels: string[];
+  rewardPreview: InheritanceRewardPreview[];
+  landClaimTerms?: LandClaimTerm[];
+  combatScale?: CombatEncounterScale;
+  calamityKinds?: string[];
+  blockedRuntimeClaims: string[];
+}
+
+export interface InheritanceCandidateInput {
+  id?: string;
+  siteId: string;
+  title?: string;
+  summary?: string;
+  anchorId?: string;
+  source?: 'ai-rumor' | 'engine';
+  risk?: 'low' | 'medium' | 'high';
+  entryPoint?: string;
+  claimIntent?: boolean;
+  sceneId?: string;
+}
+
+export interface InheritanceCandidateRecord {
+  id: string;
+  siteId: string;
+  title: string;
+  summary: string;
+  kind: InheritanceSiteKind;
+  status: InheritanceCandidateStatus;
+  source: 'ai-rumor' | 'engine';
+  risk: 'low' | 'medium' | 'high';
+  anchorId?: string;
+  sceneId: string;
+  entryPoint: string;
+  claimIntent: boolean;
+  validationIssues: string[];
+  warnings: string[];
+  rewardPreview: InheritanceRewardPreview[];
+  landClaimTerms: LandClaimTerm[];
+  createdTurn: number;
+  updatedTurn: number;
+}
+
+export interface InheritanceResolutionStep {
+  id: string;
+  turn: number;
+  kind: InheritanceResolutionStepKind;
+  siteId?: string;
+  candidateId?: string;
+  message: string;
+  severity: 'info' | 'success' | 'warning' | 'danger';
+  metadata?: Record<string, unknown>;
+}
+
+export interface InheritanceEntryValidation {
+  valid: boolean;
+  site: InheritanceSiteSpec | null;
+  candidate: InheritanceCandidateRecord | null;
+  blockers: string[];
+  warnings: string[];
+  downgradedTo?: 'rumor' | 'boundary_rumor' | 'blocked';
+}
+
+export interface LandClaimAttemptRecord {
+  id: string;
+  candidateId: string;
+  siteId: string;
+  turn: number;
+  outcome: 'success' | 'failure' | 'blocked';
+  approvalDelta: number;
+  roll?: number;
+  terms: LandClaimTerm[];
+  heavenlyLandId?: string;
+  steps: InheritanceResolutionStep[];
+}
+
+export interface InheritanceLandState {
+  version: 'v0.8.0-c2.5';
+  candidates: InheritanceCandidateRecord[];
+  claimAttempts: LandClaimAttemptRecord[];
+  completedSiteIds: string[];
+  claimedLandIds: string[];
+  activeTrial: { candidateId: string; trialIndex: number; startedTurn: number } | null;
+  blockedRecords: InheritanceResolutionStep[];
+  lastResolutionSteps: InheritanceResolutionStep[];
+}
+
+export interface InheritanceChoiceTag {
+  kind: 'inheritance_hint' | 'blessed_land_claim' | 'grotto_heaven_rumor' | 'forbidden_block';
+  label: string;
+  status: 'available' | 'blocked' | 'rumor' | 'resolved';
+  siteId?: string;
+  reason: string;
+  riskHint?: string;
 }
 
 export interface ImmortalTime {
@@ -996,6 +1134,8 @@ export interface Choice {
   combat_encounter?: Record<string, unknown> | Record<string, unknown>[];
   combatTags?: Record<string, unknown>[];
   combat_tags?: Record<string, unknown>[];
+  inheritanceTags?: InheritanceChoiceTag[];
+  inheritance_tags?: InheritanceChoiceTag[];
 }
 
 export interface NarrativeJSON {
@@ -1217,6 +1357,9 @@ export interface StateUpdate {
   };
   combat_event_candidates?: {
     add?: CombatEventCandidate[];
+  };
+  inheritance_land_candidates?: {
+    add?: InheritanceCandidateInput[];
   };
   story_event_candidates?: {
     add?: StoryEventCandidate[];

@@ -290,3 +290,22 @@ GSAP 负责：
 边界：
 - 动效不结算灾劫。灾劫类型来自 `CalamitySceneSpec`，正式面积、资源、道痕、伤势、蛊虫损伤和战斗胜负必须来自本地引擎。
 - reduced motion 下必须保留灾劫类型、倒计时、影响资源点、可处理方向和本地结算轨迹。
+
+## v0.8.0-c2.5 传承与待认主福地动效分工
+
+c2.5 的主要新增界面是 `InheritanceLandPanel`、`ChoicePanel` 的传承标签和 `AperturePanel` 的待认主/已认主福地摘要。它们属于解释型系统 UI，不是战斗强演出；默认使用 Motion/CSS，GSAP 只保留给后续传承封印开启、地灵试炼、认主成败等独立效果层。
+
+Motion 负责：
+- `传承` 面板卡片、候选列表、奖励预览、地灵条款、拦截记录和结算轨迹的进入、重排与移动端抽屉状态。
+- `传承线索 / 待认主福地 / 洞天传闻 / 禁区拦截` 标签的 hover、tooltip 和 reduced-motion fallback。
+- `AperturePanel` 中福地摘要、资源压力和灾劫压力提示的轻量布局状态。
+- 移动端抽屉必须给底部导航留出可点击空间；长面板滚动不得遮挡工具带。
+
+GSAP 只允许用于：
+- 传承封印开启、地灵现形、认主成功/失败、禁区压力显影等独立 effect layer。
+- 后续若传承守护战进入 battlefield overlay，战斗特效仍消费 `BattleResolutionStep[]`，不在传承面板私算结果。
+
+边界：
+- 动效不创造传承奖励、福地归属、资源节点或洞天归属；这些事实只能来自 `inheritanceLandState` 和 `v080-inheritance-land-engine`。
+- 洞天在 v0.8 只显示传闻/禁区压力，不用强演出暗示玩家已经可以正式认主或吞并。
+- reduced motion 下必须保留候选状态、可进入/不可进入原因、AP 成本、地灵执念条件、奖励来源和拦截原因。

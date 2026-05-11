@@ -15,7 +15,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor' | 'ending';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'aperture_management' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor' | 'ending' | 'inheritance';
 
 const lazyNamed = <T extends ComponentType<any>>(
   loader: () => Promise<Record<string, any>>,
@@ -40,6 +40,7 @@ const SquadFormationPanel = lazyNamed(() => import('./SquadFormationPanel'), 'Sq
 const ActionPanel = lazyNamed(() => import('./ActionPanel'), 'ActionPanel');
 const StoryAnchorPanel = lazyNamed(() => import('./StoryAnchorPanel'), 'StoryAnchorPanel');
 const EndingResolverPanel = lazyNamed(() => import('./EndingResolverPanel'), 'EndingResolverPanel');
+const InheritanceLandPanel = lazyNamed(() => import('./InheritanceLandPanel'), 'InheritanceLandPanel');
 
 const SaveLoadDialog = lazyNamed(() => import('./SaveLoadDialog'), 'SaveLoadDialog');
 const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDialog');
@@ -83,6 +84,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     actions: '行动',
     story_anchor: '宿命',
     ending: '终局',
+    inheritance: '传承',
   };
   return titles[panel] || '';
 };
@@ -107,6 +109,7 @@ const panelContent = (panel: SidePanel) => {
     case 'actions': return <ActionPanel />;
     case 'story_anchor': return <StoryAnchorPanel />;
     case 'ending': return <EndingResolverPanel />;
+    case 'inheritance': return <InheritanceLandPanel />;
     default: return null;
   }
 };
@@ -116,6 +119,7 @@ interface ToolbarButton { id: SidePanel; label: string; }
 // P3修复：工具栏标签支持动态域（地图按钮根据currentDomain动态生成）
 const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'actions', label: '行动' },
+  { id: 'inheritance', label: '传承' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'ending', label: '终局' },
   { id: 'attributes', label: '蛊师属性' },
@@ -326,7 +330,10 @@ export function GameScreen() {
 
         {/* 移动端：底部抽屉 */}
         {sidePanel !== 'none' && (
-          <div className="md:hidden fixed inset-0 z-40 flex flex-col justify-end">
+          <div
+            className="md:hidden fixed inset-x-0 top-0 z-40 flex flex-col justify-end"
+            style={{ bottom: '56px' }}
+          >
             {/* 遮罩 */}
             <div className="absolute inset-0 bg-rg-ink-800/60 backdrop-blur-sm" onClick={closePanel} />
             {/* 抽屉 */}
@@ -484,7 +491,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0 hidden sm:block">
-          蛊真人世界 · v0.8.0-c2
+          蛊真人世界 · v0.8.0-c2.5
         </p>
       </div>
 

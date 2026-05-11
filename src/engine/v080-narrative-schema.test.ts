@@ -102,4 +102,62 @@ describe('v0.8.0 narrative state_update schema', () => {
     expect(parsed.narrative.choices[1].guAffordances?.[0].category).toBe('tracking');
     expect(parsed.state_update?.gu_use_suggestions?.add?.[0].utilityId).toBe('cut_rope');
   });
+
+  it('accepts v0.8-c2.5 inheritance choice tags and guarded candidates', () => {
+    const parsed = NarrativeJSONSchema.parse({
+      narrative: {
+        text: 'A sealed side cave shows old refinement marks and a faint land-spirit oath. The AI may surface the clue, but the local inheritance engine decides whether the trial can start, whether any reward is registered, and whether a blessed land can be claimed.',
+        choices: [
+          {
+            id: 'c1',
+            text: 'Inspect the minor inheritance seal',
+            risk: 'medium',
+            risk_note: 'The seal may trigger a guardian trial.',
+            inheritance_tags: [{
+              siteId: 'minor_cave_inheritance',
+              kind: 'inheritance_hint',
+              label: '传承线索',
+              status: 'available',
+              reason: 'Only a candidate; rewards need local validation.',
+              risk: 'medium',
+              apCost: 1,
+            }],
+          },
+          {
+            id: 'c2',
+            text: 'Listen for grotto-heaven rumors',
+            risk: 'high',
+            risk_note: 'This remains boundary pressure in v0.8.',
+            inheritanceTags: [{
+              siteId: 'grotto_heaven_boundary_rumor',
+              kind: 'grotto_heaven_rumor',
+              label: '洞天传闻',
+              status: 'rumor',
+              reason: 'Grotto-heaven claiming is not opened in v0.8.',
+            }],
+          },
+        ],
+      },
+      state_update: {
+        inheritance_land_candidates: {
+          add: [{
+            siteId: 'minor_cave_inheritance',
+            title: '小传承洞府线索',
+            summary: '旧炼道洞府露出封印裂隙，等待本地引擎判断是否能进入。',
+            rewardPreview: [{
+              kind: 'gu',
+              name: '月光蛊',
+              tier: 1,
+              path: '月道',
+              registered: true,
+            }],
+          }],
+        },
+      },
+    });
+
+    expect(parsed.narrative.choices[0].inheritance_tags?.[0].label).toBe('传承线索');
+    expect(parsed.narrative.choices[1].inheritanceTags?.[0].status).toBe('rumor');
+    expect(parsed.state_update?.inheritance_land_candidates?.add?.[0].siteId).toBe('minor_cave_inheritance');
+  });
 });

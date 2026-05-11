@@ -239,6 +239,8 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
 // ─── 仙窍视图（6转+蛊仙）─────────────────
 function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: ImmortalAperture; showDaoDensity: boolean }) {
   const cx = 140, cy = 140;
+  const inheritanceLandState = useStore(s => (s as any).inheritanceLandState);
+  const heavenlyLand = useStore(s => (s as any).heavenlyLand);
   const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
   const daoMarkDensity = aperture.dao_mark_density && typeof aperture.dao_mark_density === 'object'
     ? aperture.dao_mark_density
@@ -248,6 +250,9 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
   const disasterCountdown = Number.isFinite(aperture.disaster_countdown)
     ? aperture.disaster_countdown
     : 60;
+  const inheritanceCandidates = Array.isArray(inheritanceLandState?.candidates) ? inheritanceLandState.candidates : [];
+  const landClaimCandidates = inheritanceCandidates.filter((candidate: any) => candidate.kind === 'blessed_land_claim');
+  const claimedLandIds = Array.isArray(inheritanceLandState?.claimedLandIds) ? inheritanceLandState.claimedLandIds : [];
 
   return (
     <div className="flex-1 overflow-y-auto p-4">
@@ -304,6 +309,19 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
         ) : (
           <p className="text-rg-ink-400 text-[10px] font-panel">暂无资源节点</p>
         )}
+      </div>
+
+      <div className="bg-rg-ink-800/50 border border-rg-gold/18 rounded-md p-3 mb-3" data-testid="aperture-inheritance-land-summary">
+        <div className="flex items-center justify-between gap-2">
+          <h4 className="text-rg-paper-200/70 text-[11px] font-panel font-semibold">待认主福地</h4>
+          <span className="text-[10px] font-panel text-rg-gold">{claimedLandIds.length} 已认主</span>
+        </div>
+        <p className="mt-1 text-xs text-rg-paper-100">
+          {heavenlyLand?.name || claimedLandIds[0] || '尚未认主福地'}
+        </p>
+        <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/48">
+          候选 {landClaimCandidates.length} 个；福地归属、资源节点和地灵执念只由传承/福地引擎结算。
+        </p>
       </div>
 
       {/* ─── 道痕密度 ─── */}

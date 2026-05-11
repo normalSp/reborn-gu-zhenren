@@ -1,5 +1,5 @@
 {
-  "formatVersion": 19,
+  "formatVersion": 20,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "b3义天山侧翼蛊师",
@@ -7,7 +7,7 @@
     "turn": 82,
     "gameMode": "canon",
     "description": "v0.8.0-b3 义天山侧翼战场专项",
-    "formatVersion": 18
+    "formatVersion": 20
   },
   "state": {
     "profile": {
@@ -245,7 +245,11 @@
           "severity": "success"
         }
       ],
-      "endingStatus": "idle"
+      "endingStatus": "idle",
+      "inheritanceLandCandidates": [],
+      "inheritanceClaimAttempts": [],
+      "claimedLandIds": [],
+      "lastInheritanceLandResolution": []
     },
     "inventory": [
       {
@@ -591,6 +595,16 @@
       "localActionLedger": [],
       "pendingAdvanceIntent": null,
       "lastNarrativeSummary": ""
+    },
+    "inheritanceLandState": {
+      "version": "v0.8.0-c2.5",
+      "candidates": [],
+      "claimAttempts": [],
+      "completedSiteIds": [],
+      "claimedLandIds": [],
+      "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }

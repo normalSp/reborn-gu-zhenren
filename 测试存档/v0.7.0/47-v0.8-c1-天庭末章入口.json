@@ -1,5 +1,5 @@
 {
-  "formatVersion": 19,
+  "formatVersion": 20,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1天庭末章蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "canon",
     "description": "v0.8.0-c1 天庭末章入口专项：末章锚点压力、宿命状态和正史/IF 边界进入终局预览。",
-    "formatVersion": 18
+    "formatVersion": 20
   },
   "state": {
     "profile": {
@@ -299,7 +299,11 @@
         }
       ],
       "endingStatus": "ready",
-      "playerFactionScore": 68
+      "playerFactionScore": 68,
+      "inheritanceLandCandidates": [],
+      "inheritanceClaimAttempts": [],
+      "claimedLandIds": [],
+      "lastInheritanceLandResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -823,6 +827,16 @@
       "localActionLedger": [],
       "pendingAdvanceIntent": null,
       "lastNarrativeSummary": ""
+    },
+    "inheritanceLandState": {
+      "version": "v0.8.0-c2.5",
+      "candidates": [],
+      "claimAttempts": [],
+      "completedSiteIds": [],
+      "claimedLandIds": [],
+      "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }
