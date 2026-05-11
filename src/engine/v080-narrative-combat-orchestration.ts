@@ -13,6 +13,10 @@ import {
   getKillerMoveExpressionSpec,
   isGuNormalCombatUsable,
 } from './gu-expression-registry';
+import {
+  normalizeCombatRouteScale,
+  resolveCombatRoutePolicy,
+} from './combat-route-policy';
 
 const DEFAULT_ENEMY_HINT: Record<CombatEncounterScale, string> = {
   duel: '剧情对手',
@@ -32,11 +36,7 @@ export function createIdleCombatEncounterState(): CombatEncounterState {
 }
 
 export function normalizeCombatEncounterScale(input: unknown): CombatEncounterScale {
-  const raw = String(input || '').toLowerCase();
-  if (raw === 'duel' || raw === '1v1' || raw === 'one_vs_one') return 'duel';
-  if (raw === 'group_7x5' || raw === 'large' || raw === 'large_group' || raw === 'ambush_7x5' || raw === 'war') return 'group_7x5';
-  if (raw === 'group_5x3' || raw === 'group' || raw === 'squad' || raw === 'battle') return 'group_5x3';
-  return 'battlefield_5x3';
+  return normalizeCombatRouteScale(input);
 }
 
 function collectOwnedGu(store: any): string[] {
@@ -70,13 +70,25 @@ function resolveCandidateId(candidate: Partial<CombatEventCandidate>, turn: numb
 
 export function normalizeCombatEncounterSpec(candidate: Partial<CombatEventCandidate>, store: any): CombatEncounterSpec {
   const turn = Number(candidate.createdTurn || store?.turn || 1);
-  const scale = normalizeCombatEncounterScale((candidate as any).scale || (candidate as any).encounterScale || candidate.type);
+  const route = resolveCombatRoutePolicy({
+    scale: (candidate as any).scale,
+    encounterScale: (candidate as any).encounterScale,
+    type: candidate.type,
+    title: candidate.title,
+    summary: candidate.summary,
+    tags: (candidate as any).tags,
+    enemyCount: (candidate as any).enemyCount,
+    allyCount: (candidate as any).allyCount,
+    neutralCount: (candidate as any).neutralCount,
+    objectiveTags: (candidate as any).objectiveTags,
+  });
+  const scale = route.scale;
   const ownedGu = collectOwnedGu(store);
   const learnedMoves = collectLearnedKillerMoves(store, ownedGu);
   const enemyHint = String((candidate as any).enemyHint || (candidate as any).enemy || DEFAULT_ENEMY_HINT[scale]);
   const requiredRealmGrand = Number((candidate as any).requiredRealmGrand || (candidate as any).recommendedRealm || 0) || undefined;
   const blockers: string[] = [];
-  const warnings: string[] = [];
+  const warnings: string[] = [...route.warnings];
 
   if (!candidate.title || !candidate.summary) blockers.push('缺少标题或摘要，不能进入正式战斗。');
   if (requiredRealmGrand && Number(store?.profile?.realm?.grand || 1) < requiredRealmGrand) {

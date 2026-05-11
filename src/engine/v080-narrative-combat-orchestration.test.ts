@@ -42,6 +42,30 @@ describe('v0.8.0-c2.3 narrative combat orchestration', () => {
     expect(validation.spec?.scale).toBe('group_5x3');
   });
 
+  it('lets local route policy decide AI combat candidates and downgrade unknown scale safely', () => {
+    const hunt = evaluateCombatEncounterEntry({
+      id: 'fight_hunt',
+      type: 'environment',
+      title: '荒兽踪迹',
+      summary: '山谷里有荒兽与兽群残痕。',
+      risk: 'high',
+    }, store());
+    expect(hunt.valid).toBe(true);
+    expect(hunt.spec?.scale).toBe('group_7x5');
+
+    const unknownScale = evaluateCombatEncounterEntry({
+      id: 'fight_unknown_scale',
+      type: 'pursuit',
+      title: '追击',
+      summary: '敌人从林间逼近。',
+      risk: 'medium',
+      scale: 'weird_scale' as any,
+    }, store());
+    expect(unknownScale.valid).toBe(true);
+    expect(unknownScale.spec?.scale).toBe('battlefield_5x3');
+    expect(unknownScale.warnings.join('')).toContain('未知战斗规模 weird_scale');
+  });
+
   it('downgrades invalid or over-realm candidates to hints', () => {
     const validation = evaluateCombatEncounterEntry({
       id: 'fight_blocked',

@@ -9,12 +9,25 @@ import {
   type TrainingGroundRuntime,
   type TrainingGroundSpec,
 } from '../../engine/training-ground-engine';
+import {
+  summarizeTrainingGroundEntries,
+  type TrainingGroundEntryPolicy,
+} from '../../engine/training-ground-entry-policy';
 
 const GROUNDS = (trainingData as any).grounds as TrainingGroundSpec[];
 const TYPE_LABELS: Record<string, string> = { '磨练': '磨练', '对决': '对决', '试炼': '试炼', hunt: '猎场' };
 const TYPE_COLORS: Record<string, string> = { '磨练': 'text-rg-jade-400', '对决': 'text-amber-400', '试炼': 'text-purple-400', hunt: 'text-rg-gold' };
 const EMPTY_SECONDARY_PATHS = Object.freeze([]) as string[];
 const EMPTY_TRAINING_COOLDOWNS = Object.freeze({}) as Record<string, number>;
+const STATUS_LABELS: Record<string, string> = {
+  available: '可用',
+  debug_only: '旧入口',
+  missing_clue: '缺线索',
+  location_mismatch: '地点不符',
+  realm_blocked: '境界不足',
+  cooldown: '冷却中',
+  blocked: '不可用',
+};
 
 export function TrainingGroundPanel() {
   const realm = useStore(s => s.profile?.realm?.grand || 1);
@@ -51,6 +64,14 @@ export function TrainingGroundPanel() {
   }), [realm, isImmortal, currentChapterId, primaryPath, secondaryPaths, cooldowns, turn, aptitude, currency, immortalCurrency]);
 
   const picked = useMemo(() => pickTrainingGrounds(GROUNDS, context, runtime), [context, runtime]);
+  const policySummary = useMemo(
+    () => summarizeTrainingGroundEntries(GROUNDS, context, { allowLegacyDebugAccess: true }),
+    [context],
+  );
+  const policyByGroundId = useMemo(
+    () => new Map(policySummary.entries.map(entry => [entry.ground.id, entry] as const)),
+    [policySummary],
+  );
 
   const commitCurrencyPatch = (patch: { currency?: number; immortalCurrency?: number }) => {
     if (patch.currency !== undefined || patch.immortalCurrency !== undefined) {
@@ -101,13 +122,16 @@ export function TrainingGroundPanel() {
   }
 
   return (
-    <div className="flex h-full flex-col overflow-y-auto bg-rg-ink-900/95 font-panel text-rg-paper-200">
+    <div className="flex h-full flex-col overflow-y-auto bg-rg-ink-900/95 font-panel text-rg-paper-200" data-testid="training-ground-panel">
       <div className="border-b border-rg-ink-700/50 p-4">
         <div className="flex items-center justify-between gap-3">
           <div>
             <h3 className="text-sm font-semibold tracking-wider text-rg-gold">道场</h3>
             <p className="mt-1 text-[10px] text-rg-paper-200/40">
               本地引擎结算：扣费、失败、冷却、道痕产出均由规则输出。
+            </p>
+            <p className="mt-1 text-[10px] leading-relaxed text-rg-gold/55" data-testid="training-ground-legacy-policy">
+              v0.9.0-a1 清账：当前保留旧道场入口；正式闭环将在 a2 改为剧情线索、场景 AP 与行动账本驱动。
             </p>
           </div>
           <button
@@ -127,27 +151,66 @@ export function TrainingGroundPanel() {
 
       <div className="flex-1 space-y-3 p-3">
         {picked.length === 0 ? (
-          <p className="py-8 text-center text-xs italic text-rg-paper-200/25">当前无可用道场，可能是章节未解锁、境界不足或仍在冷却。</p>
-        ) : picked.map(ground => (
-          <div key={ground.id} className="rounded-md border border-rg-ink-300/12 bg-rg-ink-800/50 p-3">
-            <div className="mb-1 flex items-center justify-between">
-              <span className="text-xs font-semibold">{ground.name}</span>
-              <span className={`text-[9px] ${TYPE_COLORS[ground.type] || 'text-rg-paper-200/45'}`}>{TYPE_LABELS[ground.type] || ground.type}</span>
+          <div className="rounded-md border border-rg-gold/20 bg-rg-ink-800/70 p-4" data-testid="training-ground-empty-policy">
+            <p className="text-xs font-semibold text-rg-gold">当前没有可进入道场</p>
+            <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/50">
+              不是刷新坏了，而是当前剧情、地点或境界没有满足道场入口策略。
+            </p>
+            <div className="mt-3 space-y-1">
+              {(policySummary.blockers.length ? policySummary.blockers.slice(0, 4) : ['缺少剧情线索或地点权限。']).map((reason, index) => (
+                <p key={`blocker-${index}`} className="text-[10px] text-rg-paper-200/45">· {reason}</p>
+              ))}
             </div>
-            <p className="mb-2 text-[10px] leading-relaxed text-rg-paper-200/45">{ground.description}</p>
-            <div className="flex items-center justify-between text-[10px]">
-              <span className="text-rg-paper-200/35">{ground.pathType} · Lv{ground.tier} · 产出{ground.baseYield}道痕</span>
-              <span className="text-rg-paper-200/25">{ground.cooldownTurns}回冷却</span>
+            <div className="mt-3 border-t border-rg-ink-300/10 pt-3">
+              {policySummary.recommendedActions.slice(0, 4).map((action, index) => (
+                <p key={`action-${index}`} className="text-[10px] text-rg-gold/60">建议：{action}</p>
+              ))}
             </div>
-            <button
-              onClick={() => handleTrain(ground)}
-              disabled={isPipelineBusy}
-              className={`mt-2 w-full rounded-sm py-1.5 text-[10px] font-button transition-colors ${ground.immortalOnly ? 'border border-rg-gold/30 bg-rg-gold/10 text-rg-gold hover:bg-rg-gold/20' : 'border border-rg-ink-300/15 bg-rg-ink-700/50 text-rg-paper-200/65 hover:border-rg-gold/25'} ${isPipelineBusy ? 'cursor-not-allowed opacity-45' : ''}`}
-            >
-              {ground.type === 'hunt' ? '开始狩猎' : '修炼'} ({isImmortal ? `${ground.costImmortalCurrency}仙元石` : `${ground.costCurrency}元石`})
-            </button>
           </div>
-        ))}
+        ) : picked.map(ground => {
+          const policy = policyByGroundId.get(ground.id) as TrainingGroundEntryPolicy | undefined;
+          return (
+            <div key={ground.id} className="rounded-md border border-rg-ink-300/12 bg-rg-ink-800/50 p-3">
+              <div className="mb-1 flex items-center justify-between gap-2">
+                <span className="text-xs font-semibold">{ground.name}</span>
+                <span className="flex shrink-0 items-center gap-1">
+                  <span className={`text-[9px] ${TYPE_COLORS[ground.type] || 'text-rg-paper-200/45'}`}>{TYPE_LABELS[ground.type] || ground.type}</span>
+                  {policy && (
+                    <span className="rounded-sm border border-rg-gold/20 bg-rg-gold/5 px-1.5 py-0.5 text-[8px] text-rg-gold/65">
+                      {STATUS_LABELS[policy.status] || policy.status}
+                    </span>
+                  )}
+                </span>
+              </div>
+              <p className="mb-2 text-[10px] leading-relaxed text-rg-paper-200/45">{ground.description}</p>
+              {policy?.routeHint && (
+                <p className="mb-2 rounded-sm border border-rg-ink-300/10 bg-rg-ink-900/40 px-2 py-1 text-[9px] leading-relaxed text-rg-paper-200/40">
+                  正式路由提示：{policy.routeHint} · 当前仍按旧道场入口结算，a2/a3 会接入剧情线索与敌库。
+                </p>
+              )}
+              {policy?.warnings.length ? (
+                <div className="mb-2 space-y-1">
+                  {policy.warnings.slice(0, 2).map((warning, index) => (
+                    <p key={`${ground.id}-warning-${index}`} className="text-[9px] leading-relaxed text-rg-gold/50">
+                      {warning}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
+              <div className="flex items-center justify-between text-[10px]">
+                <span className="text-rg-paper-200/35">{ground.pathType} · Lv{ground.tier} · 产出{ground.baseYield}道痕</span>
+                <span className="text-rg-paper-200/25">{ground.cooldownTurns}回冷却</span>
+              </div>
+              <button
+                onClick={() => handleTrain(ground)}
+                disabled={isPipelineBusy}
+                className={`mt-2 w-full rounded-sm py-1.5 text-[10px] font-button transition-colors ${ground.immortalOnly ? 'border border-rg-gold/30 bg-rg-gold/10 text-rg-gold hover:bg-rg-gold/20' : 'border border-rg-ink-300/15 bg-rg-ink-700/50 text-rg-paper-200/65 hover:border-rg-gold/25'} ${isPipelineBusy ? 'cursor-not-allowed opacity-45' : ''}`}
+              >
+                {ground.type === 'hunt' ? '开始狩猎' : '修炼'} ({isImmortal ? `${ground.costImmortalCurrency}仙元石` : `${ground.costCurrency}元石`})
+              </button>
+            </div>
+          );
+        })}
       </div>
 
       {lastSteps.length > 0 && (

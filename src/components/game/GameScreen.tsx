@@ -455,30 +455,37 @@ export function GameScreen() {
           >
             {currentDomain ? `${currentDomain}舆图` : '舆图'}
           </button>
-          <button
-            onClick={() => initBattlefieldDemo?.()}
-            className={toolbarBtnClass(false)}
-            data-testid="open-battlefield-demo"
+          <div
+            className="flex shrink-0 items-center gap-1 rounded-sm border border-rg-ink-300/10 bg-rg-ink-900/35 px-1 py-1"
+            data-testid="debug-battlefield-demo-group"
             title="Debug/演武入口：正式战斗由剧情候选进入"
           >
-            演武-凡战
-          </button>
-          <button
-            onClick={() => initBattlefieldGroupDemo?.()}
-            className={toolbarBtnClass(false)}
-            data-testid="open-battlefield-group-demo"
-            title="Debug/演武入口：正式群像战由剧情候选进入"
-          >
-            演武-群像
-          </button>
-          <button
-            onClick={() => initBattlefieldLargeGroupDemo?.()}
-            className={toolbarBtnClass(false)}
-            data-testid="open-battlefield-large-group-demo"
-            title="Debug/演武入口：正式大阵战由剧情候选进入"
-          >
-            演武-大阵
-          </button>
+            <span className="hidden text-[9px] text-rg-paper-200/30 sm:inline">演武</span>
+            <button
+              onClick={() => initBattlefieldDemo?.()}
+              className={toolbarBtnClass(false)}
+              data-testid="open-battlefield-demo"
+              title="Debug/演武入口：正式 1v1/凡战由剧情候选进入"
+            >
+              凡战
+            </button>
+            <button
+              onClick={() => initBattlefieldGroupDemo?.()}
+              className={toolbarBtnClass(false)}
+              data-testid="open-battlefield-group-demo"
+              title="Debug/演武入口：正式群像战由剧情候选进入"
+            >
+              群像
+            </button>
+            <button
+              onClick={() => initBattlefieldLargeGroupDemo?.()}
+              className={toolbarBtnClass(false)}
+              data-testid="open-battlefield-large-group-demo"
+              title="Debug/演武入口：正式大场面由剧情候选进入"
+            >
+              大阵
+            </button>
+          </div>
           {TOOLBAR_BUTTONS_BASE.map(btn => (
             <button
               key={btn.id}
@@ -490,8 +497,8 @@ export function GameScreen() {
             </button>
           ))}
         </div>
-        <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0 hidden sm:block">
-          蛊真人世界 · v0.8.0-c2.5
+        <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0" data-testid="app-version-label">
+          蛊真人世界 · v0.9.0-a1
         </p>
       </div>
 
