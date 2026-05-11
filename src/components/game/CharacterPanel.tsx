@@ -48,10 +48,10 @@ export function CharacterPanel() {
   const knownCharacterCount = characterRelations.length + dynamicNpcList.length + contactList.length;
 
   return (
-    <div className="h-full overflow-y-auto p-4">
+    <div className="rg-scrollable h-full overflow-y-auto p-3 sm:p-4">
       <div className="max-w-lg mx-auto space-y-5">
         {/* ─── 角色关系网 ─── */}
-        <div className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-4 backdrop-blur-md">
+        <div className="rg-panel-surface p-4">
           <h3 className="text-rg-paper-200 text-sm font-panel font-semibold mb-3">
             人物图鉴
             <span className="text-rg-paper-200/40 text-xs font-panel ml-2">
@@ -77,7 +77,7 @@ export function CharacterPanel() {
                 return (
                   <div
                     key={char.character_id || `npc-${i}`}
-                    className="bg-rg-ink-800/50 border border-rg-ink-300/8 rounded-lg p-3"
+                    className="rg-explain-card p-3"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       {CHAR_IMAGE_MAP[char.name] && (

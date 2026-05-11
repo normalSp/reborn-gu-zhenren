@@ -65,10 +65,10 @@ export function StatusBar() {
   };
 
   return (
-    <div className="w-full bg-rg-ink-700/90 border-b border-rg-ink-300/12 backdrop-blur-md">
+    <div className="rg-statusbar w-full border-b backdrop-blur-md" data-testid="game-status-bar">
       {/* ─── 第一行：角色 + 生命/真元 + 管道 ─── */}
-      <div className="px-6 py-2">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-6">
+      <div className="px-3 py-2 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 sm:gap-4">
           <div className="flex items-center gap-4 min-w-0">
             <motion.div
               className="text-rg-gold font-narrative text-lg font-bold tracking-wider whitespace-nowrap"
@@ -89,10 +89,10 @@ export function StatusBar() {
             </motion.div>
           </div>
 
-          <motion.div className="flex items-center gap-5" variants={staggerContainer} initial="hidden" animate="visible">
+          <motion.div className="order-3 flex w-full flex-wrap items-center gap-3 sm:gap-5 md:order-none md:w-auto" variants={staggerContainer} initial="hidden" animate="visible">
             <motion.div className="flex items-center gap-2" variants={barItem}>
               <span className="text-rg-paper-200/60 text-xs font-panel w-8">生命</span>
-              <div className="w-24 h-2 bg-rg-ink-900 rounded-full overflow-hidden">
+              <div className="h-2 w-20 overflow-hidden rounded-full bg-rg-ink-900 sm:w-24">
                 <motion.div
                   className={`h-full ${healthColor} rounded-full health-bar-breath`}
                   layout
@@ -112,7 +112,7 @@ export function StatusBar() {
             </motion.div>
             <motion.div className="flex items-center gap-2" variants={barItem}>
               <span className="text-rg-paper-200/60 text-xs font-panel w-8">真元</span>
-              <div className="w-24 h-2 bg-rg-ink-900 rounded-full overflow-hidden">
+              <div className="h-2 w-20 overflow-hidden rounded-full bg-rg-ink-900 sm:w-24">
                 <motion.div
                   className="h-full bg-blue-500 rounded-full essence-bar-breath"
                   layout
@@ -132,7 +132,7 @@ export function StatusBar() {
             </motion.div>
           </motion.div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <div className="hidden lg:flex items-center gap-3">
               {(['资质', '体魄', '心智', '气运'] as const).map(attr => (
                 <div key={attr} className="text-center">
@@ -165,9 +165,9 @@ export function StatusBar() {
       </div>
 
       {/* ─── 第二行：时间/回合/AP/道心 ─── */}
-      <div className="px-6 pb-2 border-t border-rg-ink-300/8">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
+      <div className="border-t border-rg-ink-300/8 px-3 pb-2 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 sm:gap-4">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-4">
             <span className="text-rg-paper-200/50 text-xs font-panel">
               第{turn}回
             </span>
@@ -189,7 +189,7 @@ export function StatusBar() {
             </span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 sm:gap-x-4">
             <span className="text-rg-paper-200/40 text-xs font-panel">
               AP: {gameTime.ap}/{gameTime.max_ap}
             </span>

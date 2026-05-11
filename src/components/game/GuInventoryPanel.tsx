@@ -188,7 +188,7 @@ export function GuInventoryPanel() {
 
   if (allGu.length === 0) {
     return (
-      <div className="flex-1 flex items-center justify-center p-6">
+      <div className="rg-panel-surface flex-1 flex items-center justify-center p-6">
         <p className="text-rg-ink-300 text-sm font-panel">{isImmortal ? '仙窍中尚无蛊虫' : '空窍中尚无蛊虫'}</p>
       </div>
     );
@@ -199,13 +199,13 @@ export function GuInventoryPanel() {
     : `蛊虫（${allGu.length}/${capacity}）`;
 
   return (
-    <div className="flex-1 overflow-y-auto" data-testid="gu-inventory-panel">
+    <div className="rg-scrollable flex-1 overflow-y-auto" data-testid="gu-inventory-panel">
       {/* ─── 流派筛选栏 ─── */}
       {paths.length > 1 && (
-        <div className="px-4 py-2 flex items-center gap-1.5 overflow-x-auto border-b border-rg-ink-300/8">
+        <div className="rg-scrollable px-3 py-2 flex items-center gap-1.5 overflow-x-auto border-b border-rg-ink-300/8 sm:px-4">
           <button
             onClick={() => setFilterPath('all')}
-            className={`text-[10px] font-button px-2 py-0.5 rounded-sm whitespace-nowrap transition-micro ${
+            className={`rg-toolbar-btn rg-focus-ring whitespace-nowrap px-2 py-0.5 text-[10px] ${
               filterPath === 'all'
                 ? 'bg-rg-gold/15 text-rg-gold border border-rg-gold/25'
                 : 'text-rg-paper-200/40 border border-rg-ink-300/15 hover:border-rg-gold/25 hover:text-rg-paper-200/70'
@@ -217,7 +217,7 @@ export function GuInventoryPanel() {
             <button
               key={p}
               onClick={() => setFilterPath(p)}
-              className={`text-[10px] font-button px-2 py-0.5 rounded-sm whitespace-nowrap transition-micro ${
+              className={`rg-toolbar-btn rg-focus-ring whitespace-nowrap px-2 py-0.5 text-[10px] ${
                 filterPath === p
                   ? 'bg-rg-gold/15 text-rg-gold border border-rg-gold/25'
                   : 'text-rg-paper-200/40 border border-rg-ink-300/15 hover:border-rg-gold/25 hover:text-rg-paper-200/70'
@@ -242,7 +242,7 @@ export function GuInventoryPanel() {
       )}
 
       {/* ─── 卡片网格 ─── */}
-      <div className="mx-3 mt-3 rounded-md border border-rg-gold/15 bg-rg-ink-800/45 p-3 text-[11px] leading-relaxed text-rg-paper-200/55">
+      <div className="rg-explain-card mx-3 mt-3 p-3 text-[11px] leading-relaxed text-rg-paper-200/55">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs font-semibold text-rg-gold">本命蛊</span>
           <span className={lifeboundGuInfo ? 'text-rg-jade-400' : 'text-rg-paper-200/35'}>
@@ -272,7 +272,7 @@ export function GuInventoryPanel() {
         {filtered.map(gu => (
           <div
             key={gu.id}
-            className="bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-md p-3 backdrop-blur-md flex flex-col gap-1.5"
+            className="rg-explain-card p-3 flex flex-col gap-1.5"
           >
             {/* 蛊虫标本图 */}
             {GU_IMAGE_MAP[gu.name] && (

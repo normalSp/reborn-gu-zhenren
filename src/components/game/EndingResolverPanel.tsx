@@ -57,7 +57,7 @@ export function EndingResolverPanel() {
 
   return (
     <motion.div
-      className="h-full overflow-y-auto px-4 py-4 text-rg-paper-100"
+      className="rg-scrollable h-full overflow-y-auto px-3 py-4 text-rg-paper-100 sm:px-4"
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 180, damping: 24 }}
@@ -82,7 +82,7 @@ export function EndingResolverPanel() {
         <button
           type="button"
           onClick={() => refreshEndingCandidatesAction?.()}
-          className="mt-3 rounded-sm border border-rg-gold/35 px-3 py-1.5 text-xs font-button text-rg-gold transition-micro hover:bg-rg-gold/10"
+          className="rg-toolbar-btn rg-focus-ring mt-3 px-3 py-1.5 text-xs"
           data-testid="refresh-ending-candidates"
         >
           重算终局候选
@@ -91,7 +91,7 @@ export function EndingResolverPanel() {
 
       {evidence && (
         <section className="mb-4 grid gap-2 sm:grid-cols-2" data-testid="ending-evidence">
-          <div className="rounded-sm border border-rg-ink-300/16 bg-rg-ink-800/55 p-3">
+          <div className="rg-explain-card p-3">
             <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">长期证据</p>
             <div className="grid grid-cols-2 gap-2 text-[11px] text-rg-paper-200/62">
               <span>战斗 {evidence.battle.totalBattles}</span>
@@ -102,7 +102,7 @@ export function EndingResolverPanel() {
               <span>势力 {evidence.faction.score}</span>
             </div>
           </div>
-          <div className="rounded-sm border border-rg-ink-300/16 bg-rg-ink-800/55 p-3">
+          <div className="rg-explain-card p-3">
             <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">宿命压力</p>
             <Meter label="天意关注" value={input?.heavenWillLedger?.attention || 0} />
             <Meter label="因果债" value={input?.karmicDebtLedger?.totalDebt || 0} />
@@ -117,7 +117,7 @@ export function EndingResolverPanel() {
             {candidates.map((candidate: any) => (
               <motion.div
                 key={candidate.id}
-                className={`rounded-sm border p-3 ${candidate.canCommit ? 'border-rg-jade-400/35 bg-rg-jade-600/10' : 'border-rg-ink-300/16 bg-rg-ink-800/55'}`}
+                className={`rg-explain-card p-3 ${candidate.canCommit ? 'border-rg-jade-400/35 bg-rg-jade-600/10' : ''}`}
                 initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                 animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
@@ -168,7 +168,7 @@ export function EndingResolverPanel() {
         <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">禁区与压力</p>
         <div className="space-y-2">
           {pressureLog.map((item: any) => (
-            <div key={item.id} className="rounded-sm border border-rg-blood-400/25 bg-rg-blood-600/10 p-3">
+            <div key={item.id} className="rg-explain-card border-rg-blood-400/25 bg-rg-blood-600/10 p-3">
               <div className="flex justify-between gap-2 text-[11px]">
                 <span className="truncate text-rg-blood-200">{item.engineDecision}</span>
                 <span className="text-rg-gold">{item.severity}</span>
@@ -182,7 +182,7 @@ export function EndingResolverPanel() {
 
       <section data-testid="ending-resolution-steps">
         <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">本地结算轨迹</p>
-        <div className="space-y-1.5">
+        <div className="rg-trace-list space-y-1.5">
           {steps.map((step: any) => (
             <div key={step.id} className="flex gap-2 text-[11px] leading-relaxed text-rg-paper-200/62">
               <span className="shrink-0 text-rg-gold">{step.kind}</span>

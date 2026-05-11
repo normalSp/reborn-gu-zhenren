@@ -49,7 +49,7 @@ export function MaterialBagPanel() {
   );
 
   return (
-    <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel">
+    <div className="rg-panel-surface h-full flex flex-col text-rg-paper-200 font-panel">
       {/* Header */}
       <div className="p-4 border-b border-rg-ink-700/50">
         <h3 className="text-sm font-semibold text-rg-gold tracking-wider">蛊材物资袋</h3>
@@ -88,7 +88,7 @@ export function MaterialBagPanel() {
       </div>
 
       {/* 材料列表 */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-3">
+      <div className="rg-scrollable flex-1 overflow-y-auto p-3 space-y-3">
         {Object.entries(materialBag).length === 0 ? (
           <div className="flex items-center justify-center py-12">
             <p className="text-xs text-rg-paper-200/20 italic">物资袋空空如也——探索、战斗、商会获取蛊材</p>
@@ -106,7 +106,7 @@ export function MaterialBagPanel() {
                 <div className="space-y-0.5">
                   {itemEntries.map(([name, qty]) => (
                     <div key={name}
-                      className={`flex items-center justify-between px-2 py-1 rounded-sm border text-xs ${GRADE_BG[grade]} ${GRADE_BORDER[grade]}`}>
+                      className={`rg-explain-card flex items-center justify-between px-2 py-1 text-xs ${GRADE_BG[grade]} ${GRADE_BORDER[grade]}`}>
                       <span className="truncate mr-2">{name}</span>
                       <span className="text-rg-paper-200/40 shrink-0">×{qty}</span>
                     </div>

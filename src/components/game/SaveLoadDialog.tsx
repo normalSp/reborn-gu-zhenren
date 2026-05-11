@@ -168,7 +168,7 @@ export function SaveLoadDialog() {
 
       {/* 对话框 */}
       <div
-        className="relative z-10 bg-rg-ink-700/95 border border-rg-ink-300/15 rounded-xl p-6 max-w-md w-full mx-4 backdrop-blur-xl shadow-2xl max-h-[85vh] overflow-y-auto"
+        className="rg-panel-surface rg-scrollable relative z-10 p-4 max-w-md w-full mx-4 shadow-2xl max-h-[85vh] overflow-y-auto sm:p-6"
         onClick={e => e.stopPropagation()}
       >
         {/* 标题 */}
@@ -193,7 +193,7 @@ export function SaveLoadDialog() {
             {metas.map((meta, i) => (
               <div
                 key={i}
-                className="bg-rg-ink-800/50 border border-rg-ink-300/10 rounded-lg p-3 flex items-center justify-between"
+                className="rg-explain-card p-3 flex items-center justify-between"
               >
                 <div className="min-w-0 flex-1">
                   {meta ? (

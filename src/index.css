@@ -362,6 +362,173 @@
   .ledger-input::placeholder {
     color: rgba(232, 228, 220, 0.35);
   }
+
+  .rg-game-shell {
+    background:
+      radial-gradient(circle at 50% -10%, rgba(201, 169, 110, 0.08), transparent 34rem),
+      linear-gradient(180deg, rgba(13, 13, 18, 0.98), rgba(15, 14, 24, 0.96) 45%, rgba(10, 10, 16, 0.99));
+  }
+
+  .rg-statusbar,
+  .rg-bottom-nav,
+  .rg-side-panel,
+  .rg-mobile-sheet,
+  .rg-panel-surface {
+    background:
+      linear-gradient(180deg, rgba(26, 26, 36, 0.94), rgba(13, 13, 18, 0.96)),
+      radial-gradient(circle at 12% 0%, rgba(201, 169, 110, 0.08), transparent 18rem);
+    border-color: rgba(201, 169, 110, 0.16);
+    box-shadow: inset 0 1px 0 rgba(232, 228, 220, 0.04);
+  }
+
+  .rg-statusbar {
+    border-bottom-width: 1px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .rg-bottom-nav {
+    border-top-width: 1px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .rg-side-panel {
+    border-left-width: 1px;
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .rg-side-panel-header {
+    background: linear-gradient(90deg, rgba(201, 169, 110, 0.08), rgba(13, 13, 18, 0.2));
+    border-bottom: 1px solid rgba(201, 169, 110, 0.14);
+  }
+
+  .rg-mobile-sheet {
+    border-top-width: 1px;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.42);
+  }
+
+  .rg-toolbar-btn {
+    min-height: 2rem;
+    padding: 0.38rem 0.62rem;
+    border-radius: var(--gu-radius-sm);
+    border: 1px solid rgba(144, 144, 184, 0.16);
+    color: rgba(232, 228, 220, 0.56);
+    background: rgba(13, 13, 18, 0.36);
+    font-family: var(--font-button);
+    font-size: 0.72rem;
+    line-height: 1;
+    white-space: nowrap;
+    transition:
+      color var(--gu-duration-fast) var(--gu-ease-enter),
+      border-color var(--gu-duration-fast) var(--gu-ease-enter),
+      background var(--gu-duration-fast) var(--gu-ease-enter),
+      box-shadow var(--gu-duration-fast) var(--gu-ease-enter);
+  }
+  .rg-toolbar-btn:hover {
+    border-color: rgba(201, 169, 110, 0.38);
+    color: var(--gu-text-primary);
+    background: rgba(201, 169, 110, 0.08);
+  }
+  .rg-toolbar-btn.is-active {
+    color: var(--gu-trace-gold-bright);
+    border-color: rgba(201, 169, 110, 0.45);
+    background: rgba(201, 169, 110, 0.13);
+    box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.08), var(--gu-shadow-glow);
+  }
+
+  .rg-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    max-width: 100%;
+    border-radius: var(--gu-radius-sm);
+    border: 1px solid rgba(144, 144, 184, 0.18);
+    background: rgba(13, 13, 18, 0.46);
+    padding: 0.18rem 0.42rem;
+    font-size: 0.66rem;
+    line-height: 1.2;
+    font-family: var(--font-panel);
+  }
+  .rg-chip--gold {
+    color: var(--gu-trace-gold-bright);
+    border-color: rgba(201, 169, 110, 0.34);
+    background: rgba(201, 169, 110, 0.1);
+  }
+  .rg-chip--jade {
+    color: #8FD7B2;
+    border-color: rgba(75, 139, 110, 0.38);
+    background: rgba(75, 139, 110, 0.12);
+  }
+  .rg-chip--blood {
+    color: #F0A5A5;
+    border-color: rgba(196, 75, 75, 0.42);
+    background: rgba(196, 75, 75, 0.12);
+  }
+  .rg-chip--muted {
+    color: rgba(232, 228, 220, 0.56);
+    border-color: rgba(144, 144, 184, 0.16);
+    background: rgba(37, 34, 54, 0.56);
+  }
+
+  .rg-choice-card,
+  .rg-explain-card,
+  .rg-action-card {
+    position: relative;
+    border: 1px solid rgba(201, 169, 110, 0.14);
+    border-radius: var(--gu-radius-md);
+    background:
+      linear-gradient(180deg, rgba(26, 26, 36, 0.76), rgba(13, 13, 18, 0.72)),
+      radial-gradient(circle at 100% 0%, rgba(201, 169, 110, 0.06), transparent 12rem);
+    box-shadow: inset 0 1px 0 rgba(232, 228, 220, 0.035);
+  }
+  .rg-choice-card:hover,
+  .rg-action-card:hover {
+    border-color: rgba(201, 169, 110, 0.38);
+    background:
+      linear-gradient(180deg, rgba(30, 28, 42, 0.84), rgba(13, 13, 18, 0.78)),
+      radial-gradient(circle at 100% 0%, rgba(201, 169, 110, 0.08), transparent 12rem);
+  }
+
+  .rg-explain-tooltip {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: 50%;
+    width: min(18rem, calc(100vw - 2rem));
+    transform: translateX(-50%);
+    border: 1px solid rgba(201, 169, 110, 0.28);
+    border-radius: var(--gu-radius-md);
+    background: rgba(13, 13, 18, 0.98);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48);
+    padding: 0.62rem;
+    z-index: 50;
+  }
+
+  .rg-trace-list,
+  .rg-scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 169, 110, 0.38) rgba(13, 13, 18, 0.55);
+  }
+  .rg-trace-list::-webkit-scrollbar,
+  .rg-scrollable::-webkit-scrollbar {
+    width: 0.58rem;
+    height: 0.58rem;
+  }
+  .rg-trace-list::-webkit-scrollbar-track,
+  .rg-scrollable::-webkit-scrollbar-track {
+    background: rgba(13, 13, 18, 0.55);
+  }
+  .rg-trace-list::-webkit-scrollbar-thumb,
+  .rg-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(201, 169, 110, 0.32);
+    border: 2px solid rgba(13, 13, 18, 0.75);
+    border-radius: 999px;
+  }
+
+  .rg-focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(13, 13, 18, 0.98), 0 0 0 4px rgba(201, 169, 110, 0.62);
+  }
 }
 
 @layer utilities {
@@ -403,6 +570,13 @@
 
   .btn-primary:hover {
     transform: none !important;
+  }
+
+  .rg-choice-card:hover,
+  .rg-action-card:hover,
+  .rg-toolbar-btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
   }
 }
 
@@ -547,6 +721,27 @@
   .gu-glass-card { background: rgba(26, 26, 36, 0.92); }
   .gu-glass-overlay { background: rgba(13, 13, 18, 0.88); }
   .gu-glass-panel--npc { background: rgba(26, 26, 36, 0.92); }
+  .rg-statusbar,
+  .rg-bottom-nav,
+  .rg-mobile-sheet,
+  .rg-side-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .rg-bottom-nav {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+  .rg-toolbar-btn {
+    min-height: 2.15rem;
+    padding-inline: 0.58rem;
+    font-size: 0.68rem;
+  }
+  .rg-explain-tooltip {
+    left: 0;
+    right: 0;
+    width: auto;
+    transform: none;
+  }
 
   /* 禁用 GSAP 场景动画降级标志（JS 端通过 useDeviceCapability 读取） */
   html { --gsap-disabled: 1; }

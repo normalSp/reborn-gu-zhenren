@@ -196,7 +196,7 @@ export const ChapterTransition: React.FC = () => {
         zIndex: 1000,
         opacity,
         transition: 'opacity 0.5s ease-in-out',
-        pointerEvents: showContent ? 'auto' : 'none',
+        pointerEvents: showRouteSelector ? 'auto' : 'none',
       }}
     >
       {/* M7: 水墨遮罩层（GSAP 动画目标） */}

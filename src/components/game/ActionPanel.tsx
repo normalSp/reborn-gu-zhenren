@@ -141,8 +141,8 @@ export function ActionPanel() {
   };
 
   return (
-    <div className="h-full overflow-y-auto p-4 space-y-4 font-panel">
-      <section className="rounded-md border border-rg-gold/18 bg-rg-ink-900/35 p-3">
+    <div className="rg-scrollable h-full overflow-y-auto p-3 space-y-4 font-panel sm:p-4" data-testid="action-panel">
+      <section className="rg-explain-card p-3">
         <div className="flex items-center justify-between gap-3">
           <div>
             <div className="text-sm font-semibold text-rg-gold">行动余裕</div>
@@ -172,10 +172,10 @@ export function ActionPanel() {
           <h3 className="text-xs font-semibold text-rg-paper-100">当前场景</h3>
           <span className="text-[10px] text-rg-paper-200/38">由剧情、地点与境界自动判定</span>
         </div>
-        <div className="rounded-md border border-rg-ink-300/14 bg-rg-ink-900/28 p-3">
+        <div className="rg-explain-card p-3">
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm font-semibold text-rg-gold">{availability.locationLabel}</span>
-            <span className="rounded-sm border border-rg-gold/25 px-2 py-0.5 text-[10px] text-rg-gold/80">
+            <span className={`rg-chip ${availability.sceneLocked ? 'rg-chip--blood' : 'rg-chip--jade'}`}>
               {availability.sceneLocked ? '场景锁定' : '可行动'}
             </span>
           </div>
@@ -197,7 +197,7 @@ export function ActionPanel() {
         blockedReason={availability.lockReason}
       />
 
-      <section className="rounded-md border border-rg-ink-300/12 bg-rg-ink-900/25 p-3">
+      <section className="rg-explain-card p-3">
         <div className="flex items-center justify-between text-[11px] text-rg-paper-200/55">
           <span>修行进度</span>
           <span>{Math.round(progressPct)}%</span>
@@ -216,7 +216,7 @@ export function ActionPanel() {
           initial={reducedMotion ? false : { opacity: 0, y: 8 }}
           animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.18 }}
-          className="rounded-md border border-rg-gold/18 bg-rg-ink-900/35 p-3"
+          className="rg-explain-card p-3"
         >
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -273,7 +273,7 @@ export function ActionPanel() {
               data-testid="cultivation-ascension-action"
               onClick={runAscension}
               disabled={!cultivationPreview.ascension.valid}
-              className="rounded border border-rg-gold/28 px-3 py-1.5 text-xs text-rg-gold transition-micro hover:bg-rg-gold/10 disabled:cursor-not-allowed disabled:opacity-45"
+              className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
             >
               尝试升仙
             </button>
@@ -281,14 +281,14 @@ export function ActionPanel() {
               data-testid="cultivation-calamity-action"
               onClick={runCalamity}
               disabled={!cultivationPreview.calamity}
-              className="rounded border border-rg-blood-400/28 px-3 py-1.5 text-xs text-rg-blood-400 transition-micro hover:bg-rg-blood-400/10 disabled:cursor-not-allowed disabled:opacity-45"
+              className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs text-rg-blood-400 disabled:cursor-not-allowed disabled:opacity-45"
             >
               处置灾劫
             </button>
           </div>
 
           {lastTrace.length > 0 && (
-            <div data-testid="cultivation-resolution-trace" className="mt-3 max-h-28 space-y-1 overflow-y-auto border-t border-rg-ink-300/12 pt-2">
+            <div data-testid="cultivation-resolution-trace" className="rg-trace-list mt-3 max-h-28 overflow-y-auto border-t border-rg-ink-300/12 pt-2">
               {lastTrace.slice(-4).map((item: any) => (
                 <div key={item.id} className="text-[10px] leading-relaxed text-rg-paper-200/55">
                   <span className="text-rg-gold/70">{item.kind}</span> · {item.message}
@@ -357,7 +357,7 @@ function ActionSection({
             key={card.id}
             disabled={blocked}
             onClick={() => onExecute(card.id)}
-            className={`w-full rounded-md border p-3 text-left transition-micro ${cardTone(card, forceBlocked)} ${
+            className={`rg-action-card rg-focus-ring w-full p-3 text-left ${cardTone(card, forceBlocked)} ${
               blocked ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:border-rg-gold/45 hover:bg-rg-gold/10'
             }`}
           >
@@ -366,7 +366,7 @@ function ActionSection({
                 <div className="truncate text-sm font-semibold">{card.title}</div>
                 <div className="mt-0.5 text-[11px] text-rg-paper-200/48">{card.subtitle}</div>
               </div>
-              <span className="shrink-0 rounded-sm border border-rg-ink-300/18 px-1.5 py-0.5 text-[10px] text-rg-paper-200/45">
+              <span className="rg-chip rg-chip--muted shrink-0">
                 AP {card.apCost}
               </span>
             </div>

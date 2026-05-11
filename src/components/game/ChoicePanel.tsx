@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useStore } from '../../store';
 import type { Choice } from '../../types';
 import type { PipeState } from '../../engine/response-pipeline';
@@ -70,11 +70,31 @@ function getChoiceAnchorTags(choice: Choice) {
   return Array.isArray(raw) ? raw : [raw];
 }
 
+function getChoiceSystemTags(choice: Choice) {
+  const raw =
+    (choice as any).systemTags ??
+    (choice as any).system_tags ??
+    (choice as any).originTags ??
+    (choice as any).origin_tags ??
+    (choice as any).lifeboundTags ??
+    (choice as any).lifebound_tags;
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw : [raw];
+}
+
+function getSystemTagTone(tag: any) {
+  const status = tag?.status || tag?.kind || tag?.tone;
+  if (status === 'available' || status === 'active' || status === 'runtime_active') return 'rg-chip rg-chip--jade';
+  if (status === 'blocked' || status === 'forbidden' || status === 'risk') return 'rg-chip rg-chip--blood';
+  if (status === 'planned_needs_system' || status === 'pending') return 'rg-chip rg-chip--gold';
+  return 'rg-chip rg-chip--muted';
+}
+
 function getGuAffordanceTone(status: string | undefined) {
-  if (status === 'available') return 'border-rg-jade-400/40 text-rg-jade-300 bg-rg-jade-600/10';
-  if (status === 'missing') return 'border-rg-gold/35 text-rg-gold bg-rg-gold/10';
-  if (status === 'forbidden') return 'border-rg-blood-400/45 text-rg-blood-300 bg-rg-blood-600/10';
-  return 'border-rg-ink-300/25 text-rg-paper-200/65 bg-rg-ink-700/70';
+  if (status === 'available') return 'rg-chip rg-chip--jade';
+  if (status === 'missing') return 'rg-chip rg-chip--gold';
+  if (status === 'forbidden') return 'rg-chip rg-chip--blood';
+  return 'rg-chip rg-chip--muted';
 }
 
 function getGuAffordanceStatusLabel(status: string | undefined) {
@@ -85,14 +105,15 @@ function getGuAffordanceStatusLabel(status: string | undefined) {
 }
 
 function getAnchorTagTone(kind: string | undefined) {
-  if (kind === 'canon_side') return 'border-rg-gold/35 text-rg-gold bg-rg-gold/10';
-  if (kind === 'if_deviation') return 'border-rg-jade-400/35 text-rg-jade-300 bg-rg-jade-600/10';
-  if (kind === 'heaven_pressure') return 'border-rg-blood-400/45 text-rg-blood-300 bg-rg-blood-600/10';
-  if (kind === 'forbidden_block') return 'border-rg-blood-500/60 text-rg-blood-200 bg-rg-blood-700/20';
-  return 'border-rg-ink-300/25 text-rg-paper-200/65 bg-rg-ink-700/70';
+  if (kind === 'canon_side') return 'rg-chip rg-chip--gold';
+  if (kind === 'if_deviation') return 'rg-chip rg-chip--jade';
+  if (kind === 'heaven_pressure') return 'rg-chip rg-chip--blood';
+  if (kind === 'forbidden_block') return 'rg-chip rg-chip--blood';
+  return 'rg-chip rg-chip--muted';
 }
 
 export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelProps) {
+  const reduceMotion = useReducedMotion();
   const narrative = useStore(s => s.currentNarrative);
   const phase = useStore(s => s.pipelinePhase);
 
@@ -109,7 +130,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
 
   if (isError) {
     return (
-      <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-4 backdrop-blur-md">
+      <div className="rg-panel-surface w-full border-t px-4 py-4 sm:px-6" data-testid="choice-panel-error">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-rg-blood-400 text-sm font-panel mb-3">
             天机紊乱，感应天道失败
@@ -136,7 +157,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
       '命运正在汇聚...';
 
     return (
-      <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-5 backdrop-blur-md">
+      <div className="rg-panel-surface w-full border-t px-4 py-5 sm:px-6" data-testid="choice-panel-processing">
         <div className="max-w-3xl mx-auto">
           {/* 加载条 */}
           <div className="mb-3">
@@ -185,7 +206,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
 
   if (choices.length === 0) {
     return (
-      <div className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-4 backdrop-blur-md">
+      <div className="rg-panel-surface w-full border-t px-4 py-4 sm:px-6" data-testid="choice-panel-empty">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-rg-paper-200/30 text-sm font-panel">
             等待命运的分岔...
@@ -197,10 +218,11 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
 
   return (
     <motion.div
-      className="w-full bg-rg-ink-700/90 border-t border-rg-ink-300/12 px-6 py-5 backdrop-blur-md"
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
+      className="rg-panel-surface w-full border-t px-4 py-5 sm:px-6"
+      initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+      animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 180, damping: 22 }}
+      data-testid="choice-panel"
     >
       <div className="max-w-3xl mx-auto">
         <motion.p
@@ -213,9 +235,9 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
         </motion.p>
         <motion.div
           className={`grid gap-3 ${
-            choices.length === 2 ? 'grid-cols-2' :
-            choices.length === 3 ? 'grid-cols-3' :
-            'grid-cols-2 sm:grid-cols-4'
+            choices.length === 2 ? 'grid-cols-1 sm:grid-cols-2' :
+            choices.length === 3 ? 'grid-cols-1 sm:grid-cols-3' :
+            'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
           }`}
           variants={choiceContainer}
           initial="hidden"
@@ -227,6 +249,8 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
             const primaryGuAffordance = guAffordances[0];
             const anchorTags = getChoiceAnchorTags(choice);
             const primaryAnchorTag = anchorTags[0];
+            const systemTags = getChoiceSystemTags(choice);
+            const primarySystemTag = systemTags[0];
             return (
               <motion.div key={choice.id} className="relative group" variants={choiceItem}>
                 <motion.button
@@ -234,9 +258,9 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                     audioManager.playSfx('select');
                     onSelect(choice.id);
                   }}
-                  className={`w-full text-left p-4 rounded-sm border bg-rg-ink-800/50 transition-micro ${style.border} ${style.bg}`}
-                  whileHover={{ scale: 1.02, borderColor: 'var(--gu-trace-gold)' }}
-                  whileTap={{ scale: 0.98 }}
+                  className={`rg-choice-card rg-focus-ring w-full text-left p-4 ${style.border} ${style.bg}`}
+                  whileHover={reduceMotion ? undefined : { scale: 1.01, borderColor: 'var(--gu-trace-gold)' }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.99 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 >
                   {/* 风险标签 */}
@@ -246,9 +270,9 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                     </span>
                     {primaryGuAffordance && (
                       <motion.span
-                        className={`inline-flex max-w-full items-center gap-1 rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${getGuAffordanceTone(primaryGuAffordance.status)}`}
-                        initial={{ opacity: 0, y: 3 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        className={`max-w-full ${getGuAffordanceTone(primaryGuAffordance.status)}`}
+                        initial={reduceMotion ? false : { opacity: 0, y: 3 }}
+                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                         transition={{ type: 'spring', stiffness: 260, damping: 22 }}
                         data-testid={`choice-gu-affordance-${primaryGuAffordance.status || 'unknown'}`}
                       >
@@ -258,13 +282,24 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                     )}
                     {primaryAnchorTag && (
                       <motion.span
-                        className={`inline-flex max-w-full items-center rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${getAnchorTagTone(primaryAnchorTag.kind)}`}
-                        initial={{ opacity: 0, y: 3 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        className={`max-w-full ${getAnchorTagTone(primaryAnchorTag.kind)}`}
+                        initial={reduceMotion ? false : { opacity: 0, y: 3 }}
+                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                         transition={{ type: 'spring', stiffness: 260, damping: 22 }}
                         data-testid={`choice-anchor-tag-${primaryAnchorTag.kind || 'unknown'}`}
                       >
                         <span className="truncate">{primaryAnchorTag.label || '剧情锚点'}</span>
+                      </motion.span>
+                    )}
+                    {primarySystemTag && (
+                      <motion.span
+                        className={`max-w-full ${getSystemTagTone(primarySystemTag)}`}
+                        initial={reduceMotion ? false : { opacity: 0, y: 3 }}
+                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                        data-testid={`choice-system-tag-${primarySystemTag.kind || primarySystemTag.status || 'unknown'}`}
+                      >
+                        <span className="truncate">{primarySystemTag.label || primarySystemTag.name || '系统约束'}</span>
                       </motion.span>
                     )}
                   </div>
@@ -274,9 +309,8 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                   </p>
                 </motion.button>
                 {/* Risk tooltip */}
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-rg-ink-600 border border-rg-gold/30 rounded-sm
-                              opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50
-                              pointer-events-none shadow-lg shadow-black/50"
+                <div className="rg-explain-tooltip invisible absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 p-2 opacity-0
+                              group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
                               data-testid={`choice-gu-affordance-tooltip-${choice.id}`}>
                   <p className="text-rg-paper-200/80 text-xs font-panel leading-relaxed">
                     {choice.risk_note}
@@ -295,6 +329,15 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                       {anchorTags.slice(0, 3).map((tag: any, index: number) => (
                         <p key={`${tag.kind}-${tag.anchorId || index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
                           {tag.label || '剧情锚点'}：{tag.reason || tag.anchorId || '等待本地锚点引擎校验'}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  {systemTags.length > 0 && (
+                    <div className="mt-2 border-t border-rg-ink-300/20 pt-2">
+                      {systemTags.slice(0, 3).map((tag: any, index: number) => (
+                        <p key={`${tag.kind || tag.status || 'system'}-${index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
+                          {tag.label || tag.name || '系统约束'}：{tag.reason || tag.riskHint || tag.description || '由本地系统决定可用性、代价和风险。'}
                         </p>
                       ))}
                     </div>

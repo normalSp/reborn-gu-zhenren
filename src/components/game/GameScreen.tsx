@@ -134,11 +134,7 @@ const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
 ];
 
 const toolbarBtnClass = (active: boolean) =>
-  `text-[11px] font-button px-2 py-1 rounded-sm transition-micro whitespace-nowrap shrink-0 ${
-    active
-      ? 'bg-rg-gold/15 text-rg-gold border border-rg-gold/25'
-      : 'text-rg-paper-200/50 border border-rg-ink-300/20 hover:border-rg-gold/30 hover:text-rg-paper-100'
-  }`;
+  `rg-toolbar-btn rg-focus-ring shrink-0 ${active ? 'is-active' : ''}`;
 
 export function GameScreen() {
   const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
@@ -285,7 +281,7 @@ export function GameScreen() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col relative gu-noise-overlay gu-bg-paper" data-device-tier={deviceCap.tier}>
+    <div className="rg-game-shell min-h-[100dvh] bg-rg-ink-800 flex flex-col relative gu-noise-overlay gu-bg-paper" data-device-tier={deviceCap.tier} data-testid="game-screen-shell">
       {/* ─── 宣纸纹理底层（P4材质激活）─── */}
       <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.05]"
         style={{
@@ -311,8 +307,8 @@ export function GameScreen() {
 
         {/* 桌面端：右侧栏 */}
         {sidePanel !== 'none' && (
-          <div className="hidden md:flex w-80 lg:w-96 border-l border-rg-ink-300/12 bg-rg-ink-800 flex-col shrink-0">
-            <div className="flex items-center justify-between px-4 py-2 bg-rg-ink-700/90 border-b border-rg-ink-300/12">
+          <div className="rg-side-panel hidden md:flex w-80 lg:w-96 bg-rg-ink-800 flex-col shrink-0" data-testid="desktop-side-panel">
+            <div className="rg-side-panel-header flex items-center justify-between px-4 py-2">
               <span className="text-rg-paper-200/80 text-xs font-panel font-semibold">
                 {getPanelTitle(sidePanel, currentDomain, isImmortal)}
               </span>
@@ -335,7 +331,7 @@ export function GameScreen() {
             {/* 遮罩 */}
             <div className="absolute inset-0 bg-rg-ink-800/60 backdrop-blur-sm" onClick={closePanel} />
             {/* 抽屉 */}
-            <div className="relative bg-rg-ink-700/95 border-t border-rg-ink-300/15 rounded-t-xl max-h-[65vh] flex flex-col shadow-2xl animate-slide-up">
+            <div className="rg-mobile-sheet relative rounded-t-xl max-h-[70vh] flex flex-col animate-slide-up" data-testid="mobile-side-sheet">
               {/* 关闭手柄 */}
               <div className="flex items-center justify-center py-2">
                 <div className="w-10 h-1 bg-rg-ink-300/30 rounded-full" />
@@ -351,7 +347,7 @@ export function GameScreen() {
                   关闭
                 </button>
               </div>
-              <div className="flex-1 overflow-y-auto">
+              <div className="rg-scrollable flex-1 overflow-y-auto">
                 <Suspense fallback={<PanelFallback />}>
                   {panelContent(sidePanel)}
                 </Suspense>
@@ -443,8 +439,8 @@ export function GameScreen() {
       ))}
 
       {/* ─── 底部工具栏 ─── */}
-      <div className="bg-rg-ink-700/90 px-3 sm:px-6 py-2 border-t border-rg-ink-300/12 flex items-center justify-between backdrop-blur-md gap-2">
-        <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto flex-1 min-w-0">
+      <div className="rg-bottom-nav px-3 sm:px-6 py-2 flex items-center justify-between backdrop-blur-md gap-2" data-testid="bottom-nav">
+        <div className="rg-scrollable flex items-center gap-1 sm:gap-2 overflow-x-auto flex-1 min-w-0 pb-1">
           {/* P3修复：地图按钮标签根据currentDomain动态生成 */}
           <button
             onClick={() => togglePanel('map' as SidePanel)}
@@ -486,7 +482,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0 hidden sm:block">
-          蛊真人世界 · v0.7.1-rc.0
+          蛊真人世界 · v0.8.0-c2
         </p>
       </div>
 

@@ -64,7 +64,7 @@ export function StoryAnchorPanel() {
 
   return (
     <motion.div
-      className="h-full overflow-y-auto px-4 py-4 text-rg-paper-100"
+      className="rg-scrollable h-full overflow-y-auto px-3 py-4 text-rg-paper-100 sm:px-4"
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 180, damping: 24 }}
@@ -112,7 +112,7 @@ export function StoryAnchorPanel() {
                   evaluateStoryAnchorEntryAction?.(anchorId);
                   setCurrentStoryAnchor?.(anchorId);
                 }}
-                className={`w-full rounded-sm border p-3 text-left transition-micro ${getAnchorTone(status)} ${active ? 'ring-1 ring-rg-gold/60' : ''}`}
+                className={`rg-action-card rg-focus-ring w-full p-3 text-left ${getAnchorTone(status)} ${active ? 'ring-1 ring-rg-gold/60' : ''}`}
                 whileHover={reduceMotion ? undefined : { y: -1 }}
                 whileTap={reduceMotion ? undefined : { scale: 0.99 }}
                 data-testid={`story-anchor-card-${anchorId}`}
@@ -126,7 +126,7 @@ export function StoryAnchorPanel() {
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {anchor?.ifDeviationAxes?.slice(0, 4).map(axis => (
-                    <span key={axis} className="rounded-sm border border-rg-ink-300/18 px-1.5 py-0.5 text-[10px] text-rg-paper-200/58">
+                    <span key={axis} className="rg-chip rg-chip--muted">
                       {axis}
                     </span>
                   ))}
@@ -138,7 +138,7 @@ export function StoryAnchorPanel() {
       </section>
 
       <section className="mb-4 grid gap-2 sm:grid-cols-2">
-        <div className="rounded-sm border border-rg-ink-300/16 bg-rg-ink-800/55 p-3" data-testid="story-anchor-karma">
+        <div className="rg-explain-card p-3" data-testid="story-anchor-karma">
           <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">因果债</p>
           <p className="font-title text-xl text-rg-blood-300">{karma.totalDebt || 0}</p>
           <div className="mt-2 space-y-1">
@@ -153,7 +153,7 @@ export function StoryAnchorPanel() {
             )}
           </div>
         </div>
-        <div className="rounded-sm border border-rg-ink-300/16 bg-rg-ink-800/55 p-3" data-testid="story-anchor-if-vectors">
+        <div className="rg-explain-card p-3" data-testid="story-anchor-if-vectors">
           <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">IF 向量</p>
           <div className="space-y-2">
             {ifVectors.slice(0, 4).map(vector => (
@@ -177,7 +177,7 @@ export function StoryAnchorPanel() {
             {candidates.map(candidate => (
               <motion.div
                 key={candidate.id}
-                className="rounded-sm border border-rg-ink-300/16 bg-rg-ink-800/55 p-3"
+                className="rg-explain-card p-3"
                 initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                 animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
@@ -200,7 +200,7 @@ export function StoryAnchorPanel() {
         <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">拦截与压力</p>
         <div className="space-y-2">
           {pressureLog.map((item, index) => (
-            <div key={`${item.anchorId}-${index}`} className="rounded-sm border border-rg-blood-400/25 bg-rg-blood-600/10 p-3">
+            <div key={`${item.anchorId}-${index}`} className="rg-explain-card border-rg-blood-400/25 bg-rg-blood-600/10 p-3">
               <div className="flex items-center justify-between gap-2 text-[11px]">
                 <span className="truncate text-rg-blood-200">{item.anchorId}</span>
                 <span className="text-rg-gold">{item.engineDecision}</span>
@@ -214,7 +214,7 @@ export function StoryAnchorPanel() {
 
       <section data-testid="story-anchor-resolution-steps">
         <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">本地结算轨迹</p>
-        <div className="space-y-1.5">
+        <div className="rg-trace-list space-y-1.5">
           {steps.map(step => (
             <div key={step.id} className="flex gap-2 text-[11px] leading-relaxed text-rg-paper-200/62">
               <span className="shrink-0 text-rg-gold">{step.kind}</span>
