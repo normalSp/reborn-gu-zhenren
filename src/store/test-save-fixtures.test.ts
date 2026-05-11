@@ -35,6 +35,10 @@ describe('v0.7.0 current-format test save fixtures', () => {
       expect(state.storyAnchorState?.anchorResults?.fate_war, `${file} should include fate war anchor result`).toBeTruthy();
       expect(Array.isArray(state.storyAnchorState?.ifBranchVectors), `${file} should include IF vector ledger`).toBe(true);
       expect(state.flags?.fateState, `${file} should mirror fateState for old prompt compatibility`).toBe(state.storyAnchorState?.fateState);
+      expect(state.endingState?.version, `${file} should include v0.8.0-c1 ending framework state`).toBe('v0.8.0-c1');
+      expect(Array.isArray(state.endingState?.candidates), `${file} should include ending candidates array`).toBe(true);
+      expect(Array.isArray(state.endingState?.pressureLog), `${file} should include ending pressure ledger`).toBe(true);
+      expect(Array.isArray(state.endingState?.lastResolutionSteps), `${file} should include ending resolution steps`).toBe(true);
     }
   });
 

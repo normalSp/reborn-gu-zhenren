@@ -14,7 +14,7 @@ describe('v0.7.0-b squad data source', () => {
   });
 
   it('bumps save format for persistent party fields', () => {
-    expect(SAVE_FORMAT_VERSION).toBe(17);
+    expect(SAVE_FORMAT_VERSION).toBe(18);
   });
 
   it('normalizes older party saves into the v0.7.0-b shape', () => {

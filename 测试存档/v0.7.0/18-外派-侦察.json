@@ -1,5 +1,5 @@
 {
-  "formatVersion": 17,
+  "formatVersion": 18,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "v0.7.0-c·外派侦察",
@@ -7,7 +7,7 @@
     "turn": 80,
     "gameMode": "canon",
     "description": "v0.7.0-c 专项手测：外派侦察（中文命名副本：18-外派-侦察）",
-    "formatVersion": 17
+    "formatVersion": 18
   },
   "state": {
     "profile": {
@@ -219,7 +219,8 @@
       "storyEventCandidates": [],
       "ifBranchCandidates": [],
       "canonAnchorPressureLog": [],
-      "lastStoryAnchorResolution": []
+      "lastStoryAnchorResolution": [],
+      "endingStatus": "idle"
     },
     "inventory": [
       {
@@ -521,6 +522,15 @@
       "ifBranchCandidates": [],
       "canonAnchorPressureLog": [],
       "lastResolutionSteps": []
+    },
+    "endingState": {
+      "version": "v0.8.0-c1",
+      "status": "idle",
+      "lastInput": null,
+      "candidates": [],
+      "pressureLog": [],
+      "lastResolutionSteps": [],
+      "commitRecord": null
     }
   }
 }

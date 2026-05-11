@@ -49,11 +49,12 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
   const deathTurn = useStore(s => (s as any).deathTurn || turn);
   const deathRecord = useStore(s => (s as any).deathRecord);
   const record = useMemo(() => deathRecord || buildDeathRecordFallback(useStore.getState()), [deathRecord]);
+  const isEndingSummary = Boolean(record.endingFamilyId && record.endingFamilyId !== 'death_and_dust');
 
   // P2修复: 死亡时播放死亡音效
   useEffect(() => {
-    audioManager.playSfx('death');
-  }, []);
+    if (!isEndingSummary) audioManager.playSfx('death');
+  }, [isEndingSummary]);
 
   const handleRestart = () => {
     // ═══ 全量重置存档状态，再返回标题 ═══
@@ -66,24 +67,26 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `death-record-${record.turn || deathTurn}.json`;
+    a.download = `${isEndingSummary ? 'ending-record' : 'death-record'}-${record.turn || deathTurn}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
 
   return (
     <motion.div
+      data-testid={isEndingSummary ? 'ending-summary-screen' : 'game-over-screen'}
       className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center justify-center p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
     >
       <motion.h1
+        data-testid={isEndingSummary ? 'ending-summary-title' : 'game-over-title'}
         className="text-4xl font-bold text-rg-blood font-narrative tracking-widest mb-6"
         variants={titleVariants}
         initial="hidden"
         animate="visible"
       >
-        道陨
+        {isEndingSummary ? '终局' : '道陨'}
       </motion.h1>
       <motion.p
         className="text-rg-paper-200/60 text-lg font-narrative mb-4"
@@ -91,7 +94,7 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
         initial="hidden"
         animate="visible"
       >
-        你的蛊师之路在此终结
+        {isEndingSummary ? '此行因果已由本地终局引擎收束' : '你的蛊师之路在此终结'}
       </motion.p>
 
       {/* 死因详情 */}
@@ -111,14 +114,29 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
             <p className="text-rg-paper-100 font-panel">{profile.realm.label}</p>
           </motion.div>
           <motion.div variants={statItem}>
-            <span className="text-rg-paper-200/40 text-xs font-panel">陨落于</span>
+            <span className="text-rg-paper-200/40 text-xs font-panel">{isEndingSummary ? '收束于' : '陨落于'}</span>
             <p className="text-rg-paper-100 font-panel">第{record.turn || deathTurn}回</p>
           </motion.div>
           <motion.div variants={statItem}>
-            <span className="text-rg-paper-200/40 text-xs font-panel">死因</span>
+            <span className="text-rg-paper-200/40 text-xs font-panel">{isEndingSummary ? '结局' : '死因'}</span>
             <p className="text-rg-blood-400 font-panel">{record.cause || deathCause}</p>
           </motion.div>
         </div>
+        {record.endingFamilyId && (
+          <div className="mt-4 border-t border-rg-ink-300/10 pt-3" data-testid="ending-summary-family">
+            <span className="text-rg-paper-200/40 text-xs font-panel">终局族群</span>
+            <p className="text-rg-gold text-xs font-panel leading-relaxed mt-1">
+              {record.endingFamilyId} · {record.endingProvenance || 'unknown'}
+            </p>
+            {(record.unresolvedWarnings?.length || 0) > 0 && (
+              <div className="mt-2 space-y-1">
+                {record.unresolvedWarnings!.slice(0, 2).map((warning: string) => (
+                  <p key={warning} className="text-rg-paper-200/42 text-[11px] font-panel leading-relaxed">· {warning}</p>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
         {record.lifeSummary && (
           <div className="mt-4 border-t border-rg-ink-300/10 pt-3">
             <span className="text-rg-paper-200/40 text-xs font-panel">一生摘要</span>
@@ -155,7 +173,7 @@ export function GameOverScreen({ onRestart }: GameOverScreenProps) {
         initial="hidden"
         animate="visible"
       >
-        蛊界从不因一个人的死亡而停止运转
+        {isEndingSummary ? '蛊界仍在运转，真正永生仍只是雾中未证之问' : '蛊界从不因一个人的死亡而停止运转'}
       </motion.p>
 
       <motion.div className="flex gap-4" variants={btnContainer} initial="hidden" animate="visible">

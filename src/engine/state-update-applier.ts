@@ -409,14 +409,21 @@ export function applyStateUpdate(update: StateUpdate): void {
     if (direct.fateState !== undefined || direct.fate_state !== undefined) directAttempts.push('direct fateState write');
     if (direct.anchorResults !== undefined || direct.anchor_results !== undefined) directAttempts.push('direct anchorResults write');
     if (direct.endingOutcome !== undefined || direct.ending_outcome !== undefined) directAttempts.push('direct ending write');
+    if (direct.endingState !== undefined || direct.ending_state !== undefined) directAttempts.push('direct endingState write');
+    if (direct.ending_candidates !== undefined || direct.endingCandidates !== undefined) directAttempts.push('direct ending candidates write');
+    if (direct.finalOutcome !== undefined || direct.final_outcome !== undefined) directAttempts.push('direct final outcome write');
+    if (direct.venerableKill !== undefined || direct.venerable_kill !== undefined) directAttempts.push('direct venerable kill write');
+    if (direct.rankTen !== undefined || direct.rank_ten !== undefined) directAttempts.push('direct rank ten write');
+    if (direct.immortalityConclusion !== undefined || direct.immortality_conclusion !== undefined) directAttempts.push('direct immortality conclusion write');
     if (direct.keyNpcDeath !== undefined || direct.key_npc_death !== undefined) directAttempts.push('direct key NPC death write');
     if (directAttempts.length > 0) {
       const s = useStore.getState() as any;
+      s.recordEndingPressureAction?.(directAttempts.join(', '), 'AI 不能直接写入正式终局、尊者击杀、十转或永生定论。');
       const anchorId = s.storyAnchorState?.currentAnchorId || s.flags?.currentCanonAnchorId || s.currentChapterId || 'unknown_anchor';
       s.recordCanonAnchorPressureAction?.({
         anchorId,
         pressure: 100,
-        reason: 'AI 不能直接写入宿命状态、正史结果、关键 NPC 生死或正式结局。',
+        reason: 'AI 不能直接写入宿命状态、正史结果、关键 NPC 生死、尊者击杀或正式结局。',
         attemptedMutation: directAttempts.join(', '),
         engineDecision: 'block',
         fallbackNarrativeHint: '改写为候选或压力记录，等待本地引擎结算。',

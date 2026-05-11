@@ -4,6 +4,7 @@ import { listSquadDispatchTasks } from '../engine/squad-dispatch';
 import { resolveTerrainCombatModifier } from '../engine/terrain-combat';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
+import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 
 type E2eSave = string | Record<string, unknown>;
 
@@ -31,6 +32,7 @@ declare global {
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       startCultivationDeepeningDemo: () => Record<string, unknown>;
       startMidgameAnchorDemo: () => Record<string, unknown>;
+      startEndingFrameworkDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -144,6 +146,14 @@ function summarizeStore(): Record<string, unknown> {
       heavenWillAttention: Number(state.storyAnchorState.heavenWillLedger?.attention || 0),
       karmicDebt: Number(state.storyAnchorState.karmicDebtLedger?.totalDebt || 0),
       lastStepCount: Array.isArray(state.storyAnchorState.lastResolutionSteps) ? state.storyAnchorState.lastResolutionSteps.length : 0,
+    } : null,
+    ending: state.endingState ? {
+      status: state.endingState.status,
+      candidateCount: Array.isArray(state.endingState.candidates) ? state.endingState.candidates.length : 0,
+      canCommitCount: Array.isArray(state.endingState.candidates) ? state.endingState.candidates.filter((candidate: any) => candidate.canCommit).length : 0,
+      pressureCount: Array.isArray(state.endingState.pressureLog) ? state.endingState.pressureLog.length : 0,
+      committedFamilyId: state.endingState.commitRecord?.outcome?.familyId || null,
+      lastStepCount: Array.isArray(state.endingState.lastResolutionSteps) ? state.endingState.lastResolutionSteps.length : 0,
     } : null,
     extremePhysiquePressure: extremePhysiquePressure ? {
       physiqueType: extremePhysiquePressure.physiqueType,
@@ -537,6 +547,92 @@ export function installE2eHarness(): void {
       const next = useStore.getState() as any;
       next.setScreenState?.('game_play');
       next.setGameMode?.('if');
+      return summarizeStore();
+    },
+    startEndingFrameworkDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      const storyAnchorState = createDefaultStoryAnchorState({
+        currentAnchorId: 'heavenly_court_late_chapter',
+        fateState: 'destroyed',
+        ifBranchVectors: [
+          {
+            id: 'e2e_c1_break_fate',
+            anchorId: 'fate_war',
+            axis: 'break_fate',
+            delta: 62,
+            cause: '宿命战侧翼演武后偏向毁宿命。',
+            cost: '天意排斥、正道敌意、尊者棋局压力',
+            downstreamImpact: ['fate_destroyed_struggle', 'venerable_balance'],
+            provenance: 'if-derived',
+            createdTurn: 88,
+          },
+          {
+            id: 'e2e_c1_faction',
+            anchorId: 'venerable_chessboard',
+            axis: 'faction_shift',
+            delta: 38,
+            cause: '玩家势力在乱世中保住一处立足点。',
+            cost: '各方势力开始计入玩家变量。',
+            downstreamImpact: ['player_faction_foothold'],
+            provenance: 'if-derived',
+            createdTurn: 96,
+          },
+        ],
+        heavenWillLedger: {
+          attention: 58,
+          correction: 34,
+          rejection: 42,
+          ambiguity: 36,
+          lastTriggers: [],
+        },
+        karmicDebtLedger: {
+          totalDebt: 36,
+          byKind: { chaos_debt: 18, venerable_attention: 18 },
+          pendingReturns: [],
+        },
+      });
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 120),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '中洲',
+        currentChapterId: 'heavenly_court_late_chapter',
+        profile: { name: 'c1终局演武蛊师', background: '武家边支外务', realm: { grand: 7, sub: '中阶', label: '七转中阶' } },
+        vitals: {
+          health: { current: 420, max: 480 },
+          essence: { current: 1800, max: 2400 },
+          essenceType: 'immortal',
+        },
+        playerFaction: {
+          id: 'e2e_player_faction',
+          name: '墨痕别院',
+          reputation: 82,
+          members: [],
+        },
+        totalBattlesFought: 18,
+        combatWins: 12,
+        squadCombatWins: 4,
+        squadMemberDeaths: 1,
+        squadMemberWoundedRescues: 2,
+        storyAnchorState,
+        endingState: createDefaultEndingFrameworkState(),
+        flags: {
+          ...(store.flags || {}),
+          playerFactionScore: 82,
+          fateState: storyAnchorState.fateState,
+          currentCanonAnchorId: storyAnchorState.currentAnchorId,
+          ifBranchVectors: storyAnchorState.ifBranchVectors,
+          heavenWillLedger: storyAnchorState.heavenWillLedger,
+          karmicDebtLedger: storyAnchorState.karmicDebtLedger,
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('if');
+      next.refreshEndingCandidatesAction?.();
       return summarizeStore();
     },
     clearRuntime() {

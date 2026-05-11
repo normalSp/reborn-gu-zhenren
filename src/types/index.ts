@@ -310,6 +310,133 @@ export interface EndingOutcome {
   unresolvedWarnings: string[];
 }
 
+export type EndingFrameworkStatus = 'idle' | 'ready' | 'committed' | 'blocked';
+
+export interface EndingEvidenceSummary {
+  battle: {
+    totalBattles: number;
+    combatWins: number;
+    squadWins: number;
+    squadDeaths: number;
+    woundedRescues: number;
+    comboSuccesses: number;
+    overlevelEscapes: number;
+    currentBattlefieldSteps: number;
+  };
+  cultivation: {
+    breakthroughFailures: number;
+    breakthroughSuccesses: number;
+    ascensionOutcome?: CultivationOutcome;
+    calamityCount: number;
+    calamityScars: number;
+    heavenWillPressure: number;
+    karmicDebt: number;
+  };
+  origin: {
+    background: string;
+    debtLabels: string[];
+  };
+  faction: {
+    score: number;
+    relationCount: number;
+    factionEventCount: number;
+  };
+  lifebound: {
+    guName?: string;
+    hasPenalty: boolean;
+  };
+  anchors: {
+    resolvedCount: number;
+    blockedCount: number;
+    activeCount: number;
+    currentAnchorId?: string | null;
+  };
+}
+
+export interface EndingResolutionInput extends EndingResolverInput {
+  turn: number;
+  realmGrand: number;
+  realmLabel: string;
+  playerName: string;
+  currentChapterId?: string | null;
+  currentDomain?: string;
+  evidence: EndingEvidenceSummary;
+}
+
+export interface EndingEntryValidation {
+  canCommit: boolean;
+  readiness: number;
+  issues: string[];
+  warnings: string[];
+  recommendedFamilyId?: string;
+}
+
+export interface EndingRouteCandidate {
+  id: string;
+  familyId: string;
+  displayName: string;
+  provenance: EndingProvenance;
+  summary: string;
+  readiness: number;
+  risk: 'low' | 'medium' | 'high';
+  canCommit: boolean;
+  reasons: string[];
+  blockers: string[];
+  warnings: string[];
+  evidenceTags: string[];
+  forbiddenHits: string[];
+}
+
+export type EndingResolutionStepKind =
+  | 'input'
+  | 'candidate'
+  | 'readiness'
+  | 'venerable_pressure'
+  | 'forbidden_block'
+  | 'commit'
+  | 'summary';
+
+export interface EndingResolutionStep {
+  id: string;
+  kind: EndingResolutionStepKind;
+  turn: number;
+  message: string;
+  severity?: 'info' | 'warning' | 'danger' | 'success';
+  familyId?: string;
+  metadata?: Record<string, unknown>;
+}
+
+export interface EndingCommitRecord {
+  id: string;
+  turn: number;
+  committedAt: string;
+  candidateId: string;
+  outcome: EndingOutcome;
+  evidence: EndingEvidenceSummary;
+  lifeSummary: string;
+  closingPoem: string;
+  poemTitle: string;
+  screenStateAfterCommit: 'game_over';
+}
+
+export interface EndingFrameworkState {
+  version: 'v0.8.0-c1';
+  status: EndingFrameworkStatus;
+  lastInput: EndingResolutionInput | null;
+  candidates: EndingRouteCandidate[];
+  pressureLog: Array<{
+    id: string;
+    turn: number;
+    reason: string;
+    attemptedOutcome: string;
+    engineDecision: 'allow_preview' | 'redirect' | 'block';
+    severity: 'medium' | 'high';
+    forbiddenHits: string[];
+  }>;
+  lastResolutionSteps: EndingResolutionStep[];
+  commitRecord: EndingCommitRecord | null;
+}
+
 // ─── 蛊虫 ───
 export interface GuSpec {
   id: string;
@@ -1757,6 +1884,10 @@ export interface DeathRecord {
   poemTitle?: string;
   majorChoices?: string[];
   deathCauseTags?: string[];
+  endingFamilyId?: string;
+  endingProvenance?: EndingProvenance;
+  endingReasons?: string[];
+  unresolvedWarnings?: string[];
   generatedAt?: string;
 }
 

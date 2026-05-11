@@ -1,0 +1,132 @@
+{
+  "version": "v0.8.0-c1",
+  "sourceRegistries": {
+    "anchors": "canon-anchor-registry.json",
+    "ifAxes": "fate-branch-matrix.json",
+    "endingFamilies": "ending-outcomes.json"
+  },
+  "coveredAnchorIds": [
+    "venerable_chessboard",
+    "heavenly_court_late_chapter"
+  ],
+  "requiredEvidence": {
+    "minimumRealmGrandForLivingEndings": 5,
+    "minimumTurnForCommit": 10,
+    "recommendedResolvedAnchors": [
+      "yi_tian_mountain",
+      "reverse_flow_river",
+      "dream_shadow_sect",
+      "fate_war"
+    ]
+  },
+  "candidateLimits": {
+    "maxCandidates": 8,
+    "maxPressureLog": 80,
+    "maxResolutionSteps": 24
+  },
+  "readinessThresholds": {
+    "canCommit": 55,
+    "strongCandidate": 75,
+    "highRisk": 70
+  },
+  "familyWeights": {
+    "canon_near": {
+      "base": 42,
+      "requiresFateState": ["intact", "fractured", "destroyed"],
+      "tags": ["canon-near", "side-line"]
+    },
+    "fate_intact_order": {
+      "base": 28,
+      "requiresFateState": ["intact"],
+      "preferredAxes": ["protect_fate"],
+      "tags": ["protect_fate", "heavenly_court", "order"]
+    },
+    "fate_fractured_chaos": {
+      "base": 30,
+      "requiresFateState": ["fractured"],
+      "preferredAxes": ["break_fate", "heaven_will_debt"],
+      "tags": ["fractured_fate", "mixed_cost"]
+    },
+    "fate_destroyed_struggle": {
+      "base": 34,
+      "requiresFateState": ["destroyed"],
+      "preferredAxes": ["break_fate"],
+      "tags": ["break_fate", "free_will", "chaos"]
+    },
+    "player_faction_foothold": {
+      "base": 22,
+      "requiresFactionScore": 60,
+      "preferredAxes": ["faction_shift", "resource_control", "venerable_balance"],
+      "tags": ["player_faction", "survival"]
+    },
+    "crazed_demon_unproven": {
+      "base": 18,
+      "requiresChaosPressure": 85,
+      "preferredAxes": ["venerable_balance", "heaven_will_debt"],
+      "tags": ["crazed_demon_cave", "unproven", "chaos"]
+    },
+    "death_and_dust": {
+      "base": 100,
+      "requiresPlayerDead": true,
+      "tags": ["death", "summary"]
+    }
+  },
+  "evidenceWeights": {
+    "resolvedMidgameAnchor": 5,
+    "ifVectorMagnitude": 0.35,
+    "heavenWillAttention": 0.2,
+    "karmicDebt": -0.08,
+    "playerFactionScore": 0.35,
+    "battleWins": 1.5,
+    "squadDeathsPenalty": -3,
+    "breakthroughFailurePenalty": -2,
+    "calamityScarPenalty": -2,
+    "lifeboundPenalty": -6
+  },
+  "forbiddenRuntimeAssertions": [
+    "十转",
+    "永生蛊",
+    "真正永生",
+    "玩家获得宿命蛊",
+    "玩家炼成永生蛊",
+    "玩家真正永生",
+    "玩家稳定掌握十转境界",
+    "普通战斗击杀尊者",
+    "玩家无代价成为尊者",
+    "尊者集体降智投靠"
+  ],
+  "venerableBoundary": {
+    "allowed": [
+      "势力站队",
+      "交易传闻",
+      "侧翼战役",
+      "外派牵制",
+      "尊者注意",
+      "局部筹码"
+    ],
+    "blocked": [
+      "普通战斗击杀尊者",
+      "玩家无代价替代尊者",
+      "尊者集体降智投靠",
+      "玩家稳定掌握十转境界"
+    ]
+  },
+  "commitPolicy": {
+    "deepSeekAllowed": [
+      "story_event_candidates.add",
+      "if_branch_candidates.add",
+      "canon_anchor_pressure.add"
+    ],
+    "deepSeekForbidden": [
+      "endingState",
+      "endingOutcome",
+      "ending_candidates",
+      "finalOutcome",
+      "keyNpcDeath",
+      "venerableKill",
+      "rankTen",
+      "immortalityConclusion"
+    ],
+    "screenAfterCommit": "game_over"
+  }
+}

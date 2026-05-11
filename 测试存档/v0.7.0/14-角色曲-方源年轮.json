@@ -1,5 +1,5 @@
 {
-  "formatVersion": 17,
+  "formatVersion": 18,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "听潮散修",
@@ -8,7 +8,7 @@
     "gameMode": "canon",
     "description": "用于验证方源角色曲触发；玩家仍是原创角色听潮散修。",
     "displayName": "角色曲测试：方源年轮",
-    "formatVersion": 17
+    "formatVersion": 18
   },
   "state": {
     "profile": {
@@ -221,7 +221,8 @@
       "storyEventCandidates": [],
       "ifBranchCandidates": [],
       "canonAnchorPressureLog": [],
-      "lastStoryAnchorResolution": []
+      "lastStoryAnchorResolution": [],
+      "endingStatus": "idle"
     },
     "inventory": [
       {
@@ -523,6 +524,15 @@
       "ifBranchCandidates": [],
       "canonAnchorPressureLog": [],
       "lastResolutionSteps": []
+    },
+    "endingState": {
+      "version": "v0.8.0-c1",
+      "status": "idle",
+      "lastInput": null,
+      "candidates": [],
+      "pressureLog": [],
+      "lastResolutionSteps": [],
+      "commitRecord": null
     }
   }
 }

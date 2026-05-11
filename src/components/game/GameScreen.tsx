@@ -15,7 +15,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor' | 'ending';
 
 const lazyNamed = <T extends ComponentType<any>>(
   loader: () => Promise<Record<string, any>>,
@@ -39,6 +39,7 @@ const TrainingGroundPanel = lazyNamed(() => import('./TrainingGroundPanel'), 'Tr
 const SquadFormationPanel = lazyNamed(() => import('./SquadFormationPanel'), 'SquadFormationPanel');
 const ActionPanel = lazyNamed(() => import('./ActionPanel'), 'ActionPanel');
 const StoryAnchorPanel = lazyNamed(() => import('./StoryAnchorPanel'), 'StoryAnchorPanel');
+const EndingResolverPanel = lazyNamed(() => import('./EndingResolverPanel'), 'EndingResolverPanel');
 
 const SaveLoadDialog = lazyNamed(() => import('./SaveLoadDialog'), 'SaveLoadDialog');
 const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDialog');
@@ -81,6 +82,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     squad: '小队编成',
     actions: '行动',
     story_anchor: '宿命',
+    ending: '终局',
   };
   return titles[panel] || '';
 };
@@ -104,6 +106,7 @@ const panelContent = (panel: SidePanel) => {
     case 'squad': return <SquadFormationPanel />;
     case 'actions': return <ActionPanel />;
     case 'story_anchor': return <StoryAnchorPanel />;
+    case 'ending': return <EndingResolverPanel />;
     default: return null;
   }
 };
@@ -114,6 +117,7 @@ interface ToolbarButton { id: SidePanel; label: string; }
 const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'actions', label: '行动' },
   { id: 'story_anchor', label: '宿命' },
+  { id: 'ending', label: '终局' },
   { id: 'attributes', label: '蛊师属性' },
   { id: 'gu_inventory', label: '蛊虫' },
   { id: 'kill_moves', label: '杀招列表' },
