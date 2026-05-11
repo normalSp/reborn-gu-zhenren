@@ -19,6 +19,7 @@ import { buildNarrativeGuAffordancePromptInject } from './v080-narrative-gu-affo
 import { buildSceneTimeContext, formatSceneTimeContextForPrompt } from './v080-scene-time-engine';
 import { buildOriginLifeboundContextForPrompt } from './v080-origin-lifebound-closure';
 import { formatSceneSessionForPrompt } from './v080-scene-session-engine';
+import { formatCombatEncounterForPrompt } from './v080-narrative-combat-orchestration';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1117,6 +1118,8 @@ export class ContextBuilder {
     parts.push(injectEconomyBalanceAnchor(store));
     parts.push(formatSceneTimeContextForPrompt(buildSceneTimeContext(store)));
     parts.push(formatSceneSessionForPrompt((store as any).sceneSessionState));
+    const combatEncounterPrompt = formatCombatEncounterForPrompt((store as any).combatEncounterState);
+    if (combatEncounterPrompt) parts.push(combatEncounterPrompt);
     parts.push(buildOriginLifeboundContextForPrompt(store));
     parts.push(injectV080NarrativeGuard(store));
 

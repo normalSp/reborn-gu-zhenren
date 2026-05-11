@@ -6,6 +6,7 @@ import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMu
 import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
 import { validateNarrativeGuUseSuggestion } from './v080-narrative-gu-affordances';
 import { validateResourceEcologyGate } from './v080-scene-time-engine';
+import { evaluateCombatEncounterEntry } from './v080-narrative-combat-orchestration';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -408,11 +409,15 @@ export function applyStateUpdate(update: StateUpdate): void {
       : [];
     for (const candidate of (update as any).combat_event_candidates.add) {
       if (!candidate?.title || !candidate?.summary) continue;
+      const id = candidate.id || `combat_candidate_${Date.now()}_${current.length}`;
+      const validation = evaluateCombatEncounterEntry({ ...candidate, id }, s);
       current.push({
         ...candidate,
-        id: candidate.id || `combat_candidate_${Date.now()}_${current.length}`,
+        id,
         source: candidate.source || 'ai-rumor',
-        engineValidation: 'pending',
+        engineValidation: validation.valid ? 'pending' : 'downgraded',
+        validationIssues: validation.blockers,
+        entryValidation: validation,
         createdTurn: s.turn || 1,
         duelId: s.duelState?.duelId,
       });

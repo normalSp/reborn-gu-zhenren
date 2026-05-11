@@ -36,6 +36,7 @@ import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-e
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine';
+import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -467,6 +468,7 @@ function buildLoadedStoreState(
     battlefieldValidation: null,
     battlefieldPlaybackSteps: [],
     battlefieldTraceCursor: 0,
+    combatEncounterState: createIdleCombatEncounterState(),
     flags,
     cultivationState,
     storyAnchorState,
@@ -824,7 +826,7 @@ export const useStore = create<RootStore>()(
             isLoading, error,
             currentNarrative, squadCombatState,
             battlefieldCombatState, battlefieldSelectedAction, battlefieldSelectedTargetCellId,
-            battlefieldValidation, battlefieldPlaybackSteps, battlefieldTraceCursor,
+            battlefieldValidation, battlefieldPlaybackSteps, battlefieldTraceCursor, combatEncounterState,
             // 排除读档版本计数器（纯UI信号，不持久化）
             gameLoadVersion,
             // P3修复：排除成就字段（achievementSlice独立管理localStorage，避免双重真相源覆盖）

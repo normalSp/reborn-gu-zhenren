@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useStore } from '../../store';
-import type { CombatConstraint } from '../../types';
+import type { CombatConstraint, CombatEventCandidate } from '../../types';
+import { scaleLabel } from '../../engine/v080-narrative-combat-orchestration';
 
 interface NarrativeCombatPanelProps {
   onSelectStrategem?: (strategy: string) => void;
@@ -13,12 +14,24 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
   const turn = useStore((s: any) => s.turn) as number | undefined;
   const realm = useStore((s: any) => s.realm) as string | undefined;
   const guInventory = useStore((s: any) => s.gu_inventory) as any[] | undefined;
+  const combatEventCandidates = useStore((s: any) => s.flags?.combatEventCandidates || []) as CombatEventCandidate[];
+  const acceptCombatEventCandidate = useStore((s: any) => s.acceptCombatEventCandidate) as ((id: string) => boolean) | undefined;
+  const combatEncounterState = useStore((s: any) => s.combatEncounterState) as any;
+
+  const formalCandidates = useMemo(
+    () => combatEventCandidates
+      .filter(candidate => candidate?.id && candidate.engineValidation !== 'accepted')
+      .slice(-4)
+      .reverse(),
+    [combatEventCandidates],
+  );
 
   const [visible, setVisible] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    if (cc) {
+    const shouldShow = Boolean(cc) || formalCandidates.length > 0 || combatEncounterState?.outcomeSummary;
+    if (shouldShow) {
       setVisible(true);
       const t = setTimeout(() => setShowContent(true), 100);
       return () => clearTimeout(t);
@@ -27,10 +40,155 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
     setShowContent(false);
     const t = setTimeout(() => setVisible(false), 300);
     return () => clearTimeout(t);
-  }, [cc]);
+  }, [cc, formalCandidates.length, combatEncounterState?.outcomeSummary]);
 
-  if (!visible || !cc) return null;
+  if (!visible) return null;
 
+  const handleDismiss = () => {
+    setCC?.(null);
+    setShowContent(false);
+    setTimeout(() => setVisible(false), 180);
+  };
+
+  if (cc) {
+    return (
+      <LegacyCombatStrategyPanel
+        cc={cc}
+        realm={realm}
+        guInventory={guInventory}
+        turn={turn}
+        setCC={setCC}
+        setFlag={setFlag}
+        onSelectStrategem={onSelectStrategem}
+        showContent={showContent}
+      />
+    );
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-45 flex items-end justify-center px-3 pb-3 sm:pb-6 transition-all duration-300 pointer-events-none"
+      style={{ backgroundColor: showContent ? 'rgba(0,0,0,0.28)' : 'rgba(0,0,0,0)' }}
+      data-testid="narrative-combat-panel"
+    >
+      <div
+        className="w-full max-w-xl rounded-xl overflow-hidden pointer-events-auto transition-all duration-300 max-h-[82vh] overflow-y-auto"
+        style={{
+          opacity: showContent ? 1 : 0,
+          transform: showContent ? 'translateY(0)' : 'translateY(20px)',
+          backgroundColor: 'var(--gu-bg-standard)',
+          border: '1px solid var(--gu-trace-gold-dim)',
+          boxShadow: 'var(--gu-shadow-lg)',
+        }}
+      >
+        <div className="p-4">
+          <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
+            <div>
+              <div className="text-sm font-bold text-rg-gold-400">剧情战斗候选</div>
+              <div className="text-[11px] text-rg-paper-200/45 mt-1">
+                DeepSeek 只提出敌情，本地引擎决定能否入场、胜负与战后回流。
+              </div>
+            </div>
+            <button
+              className="text-xs text-rg-paper-200/45 hover:text-rg-paper-100 transition-micro"
+              onClick={handleDismiss}
+            >
+              收起
+            </button>
+          </div>
+
+          {combatEncounterState?.outcomeSummary && (
+            <div className="mb-3 rounded-lg border border-rg-jade-500/25 bg-rg-jade-600/10 p-3" data-testid="battle-outcome-summary">
+              <div className="text-xs font-semibold text-rg-jade-300">战后回流已写入场景账本</div>
+              <div className="mt-1 text-xs text-rg-paper-200/70 leading-relaxed">
+                {combatEncounterState.outcomeSummary.summary}
+              </div>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 gap-2">
+            {formalCandidates.length === 0 && (
+              <div className="rounded-lg border border-rg-ink-300/20 bg-rg-ink-900/30 p-3 text-xs text-rg-paper-200/45">
+                暂无可进入的剧情战斗候选。
+              </div>
+            )}
+            {formalCandidates.map(candidate => {
+              const validation = candidate.entryValidation;
+              const spec = validation?.spec;
+              const blocked = candidate.engineValidation === 'downgraded' || validation?.valid === false;
+              return (
+                <div
+                  key={candidate.id}
+                  className="rounded-lg border border-rg-ink-300/20 bg-rg-ink-900/40 p-3"
+                  data-testid="narrative-combat-candidate"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className={blocked ? 'rg-chip rg-chip--blood' : 'rg-chip rg-chip--gold'}>
+                          {blocked ? '危险提示' : '进入战斗'}
+                        </span>
+                        <span className="text-sm font-bold text-rg-paper-100">{candidate.title}</span>
+                      </div>
+                      <p className="mt-1 text-xs text-rg-paper-200/60 leading-relaxed">{candidate.summary}</p>
+                    </div>
+                    <div className="text-right text-[11px] text-rg-paper-200/50">
+                      <div>{spec ? scaleLabel(spec.scale) : '待校验'}</div>
+                      <div className={candidate.risk === 'high' ? 'text-rg-blood-300' : 'text-rg-gold'}>
+                        风险 {candidate.risk || 'medium'}
+                      </div>
+                    </div>
+                  </div>
+
+                  {spec && (
+                    <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-rg-paper-200/55">
+                      <div>敌情：{spec.enemyHint}</div>
+                      <div>可用蛊虫：{spec.availableGu.slice(0, 3).join('、') || '无登记凡战蛊'}</div>
+                      <div>杀招：{spec.availableKillerMoves.slice(0, 2).join('、') || '无'}</div>
+                    </div>
+                  )}
+
+                  {(validation?.blockers?.length || candidate.validationIssues?.length) && (
+                    <div className="mt-2 text-[11px] text-rg-blood-300/80">
+                      {(validation?.blockers || candidate.validationIssues || []).join('；')}
+                    </div>
+                  )}
+
+                  <div className="mt-3 flex justify-end">
+                    <button
+                      className={`rounded-sm px-3 py-1.5 text-xs font-semibold transition-micro ${
+                        blocked
+                          ? 'border border-rg-ink-300/20 text-rg-paper-200/35'
+                          : 'bg-rg-gold/80 text-rg-ink-900 hover:bg-rg-gold'
+                      }`}
+                      disabled={blocked}
+                      onClick={() => candidate.id && acceptCombatEventCandidate?.(candidate.id)}
+                      data-testid="enter-combat-candidate"
+                    >
+                      {blocked ? '已降级' : '进入战斗'}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LegacyCombatStrategyPanel(props: {
+  cc: CombatConstraint;
+  realm?: string;
+  guInventory?: any[];
+  turn?: number;
+  setCC?: (c: CombatConstraint | null) => void;
+  setFlag?: (key: string, value: any) => void;
+  onSelectStrategem?: (strategy: string) => void;
+  showContent: boolean;
+}) {
+  const { cc, realm, guInventory, turn, setCC, setFlag, onSelectStrategem, showContent } = props;
   const realmNum = realmToNum(realm || '一转蛊师');
   const realmDiff = realmNum - (cc.recommendedRealm || 2);
   const baseChance = cc.baseChance || 0.5;
@@ -47,10 +205,6 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
       : 'var(--gu-life-crimson)';
   const riskLabel = successChance >= 0.7 ? '高胜算' : successChance >= 0.4 ? '有风险' : '极大风险';
   const strategyCount = Math.min(cc.strategicChoiceCount || 2, 4);
-
-  const handleDismiss = () => {
-    setCC?.(null);
-  };
 
   const handleSelect = (strategyLabel: string) => {
     setCC?.(null);
@@ -126,7 +280,7 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
 
           <button
             className="w-full mt-3 py-1.5 rounded-lg text-xs font-panel text-rg-paper-200/40 hover:text-rg-paper-200/70 transition-all cursor-pointer"
-            onClick={handleDismiss}
+            onClick={() => setCC?.(null)}
           >
             关闭
           </button>

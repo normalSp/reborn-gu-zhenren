@@ -17,6 +17,20 @@ function createHarness() {
     inventory: [],
     apertureInventory: { gu: [] },
     killMoves: [],
+    flags: {},
+    turn: 82,
+    sceneSessionState: {
+      version: 'v0.8.0-c2.2',
+      sceneId: 'test_scene',
+      narrativeTurn: 82,
+      locationId: 'qingmao',
+      period: 'night',
+      safety: 'dangerous',
+      actionBudget: { maxAp: 3, remainingAp: 3, grantedBy: 'narrative_scene', exhaustedPolicy: 'advance_narrative' },
+      localActionLedger: [],
+      pendingAdvanceIntent: null,
+      lastNarrativeSummary: '',
+    },
     addGameLog: vi.fn(),
   };
   const set = (patch: any) => {
@@ -24,6 +38,18 @@ function createHarness() {
     state = { ...state, ...next };
   };
   const get = () => state;
+  state.setFlag = (key: string, value: any) => {
+    state = { ...state, flags: { ...(state.flags || {}), [key]: value } };
+  };
+  state.recordLocalActionLedger = (entry: any) => {
+    state = {
+      ...state,
+      sceneSessionState: {
+        ...state.sceneSessionState,
+        localActionLedger: [...state.sceneSessionState.localActionLedger, entry],
+      },
+    };
+  };
   state = { ...state, ...createCombatSlice(set, get) };
   return { get: () => state };
 }
@@ -128,5 +154,30 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     harness.get().selectBattlefieldTarget('c2_2');
     harness.get().executeSelectedBattlefieldAction();
     expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'formation')).toBe(true);
+  });
+
+  it('enters narrative combat candidates and writes battle outcome back to the scene ledger', () => {
+    const harness = createHarness();
+    harness.get().setFlag('combatEventCandidates', [{
+      id: 'candidate_duel',
+      type: 'ambush',
+      title: '林间截杀',
+      summary: '山道旁有一名蛊师拦路试探。',
+      risk: 'medium',
+      scale: 'duel',
+      source: 'ai-rumor',
+      engineValidation: 'pending',
+    }]);
+
+    expect(harness.get().acceptCombatEventCandidate('candidate_duel')).toBe(true);
+    expect(harness.get().combatEncounterState.status).toBe('active');
+    expect(harness.get().combatEncounterState.spec.scale).toBe('duel');
+    expect(harness.get().battlefieldCombatState.units.filter((unit: any) => unit.side === 'enemy')).toHaveLength(1);
+
+    const outcome = harness.get().resolveNarrativeCombatOutcome('retreat');
+    expect(outcome.result).toBe('retreat');
+    expect(harness.get().combatEncounterState.status).toBe('resolved');
+    expect(harness.get().sceneSessionState.localActionLedger.at(-1).actionType).toBe('combat');
+    expect(EXCLUDE_FROM_SAVE.has('combatEncounterState')).toBe(true);
   });
 });

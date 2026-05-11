@@ -107,6 +107,59 @@ export interface SceneSessionState {
   lastNarrativeSummary: string;
 }
 
+export type CombatEncounterScale = 'duel' | 'battlefield_5x3' | 'group_5x3' | 'group_7x5';
+export type CombatEncounterStatus = 'idle' | 'candidate' | 'active' | 'resolved' | 'abandoned';
+export type BattleOutcomeResult = 'victory' | 'defeat' | 'retreat' | 'abandoned' | 'unresolved';
+
+export interface CombatEncounterSpec {
+  id: string;
+  title: string;
+  summary: string;
+  scale: CombatEncounterScale;
+  risk: 'low' | 'medium' | 'high';
+  source: 'ai-rumor' | 'engine';
+  sceneId: string;
+  createdTurn: number;
+  enemyHint: string;
+  requiredRealmGrand?: number;
+  availableGu: string[];
+  availableKillerMoves: string[];
+  blockers: string[];
+  warnings: string[];
+}
+
+export interface CombatEncounterEntryValidation {
+  valid: boolean;
+  spec: CombatEncounterSpec | null;
+  blockers: string[];
+  warnings: string[];
+  downgradedTo?: 'rumor' | 'danger_hint';
+}
+
+export interface BattleOutcomeSummary {
+  id: string;
+  encounterId: string;
+  scale: CombatEncounterScale;
+  result: BattleOutcomeResult;
+  summary: string;
+  winner?: 'player' | 'enemy' | 'neutral' | 'escaped' | null;
+  roundsTaken: number;
+  hpDelta: number;
+  essenceDelta: number;
+  consumedGu: string[];
+  daoMarkDelta: Record<string, number>;
+  createdTurn: number;
+  steps: string[];
+}
+
+export interface CombatEncounterState {
+  status: CombatEncounterStatus;
+  spec: CombatEncounterSpec | null;
+  validation: CombatEncounterEntryValidation | null;
+  startedTurn: number;
+  outcomeSummary: BattleOutcomeSummary | null;
+}
+
 export interface ImmortalTime {
   inner_year: number;
   inner_month: number;
@@ -939,6 +992,10 @@ export interface Choice {
   gu_affordance?: NarrativeGuChoiceAffordance | NarrativeGuChoiceAffordance[];
   anchorTags?: NarrativeAnchorChoiceTag[];
   anchor_tags?: NarrativeAnchorChoiceTag[];
+  combatEncounter?: Record<string, unknown> | Record<string, unknown>[];
+  combat_encounter?: Record<string, unknown> | Record<string, unknown>[];
+  combatTags?: Record<string, unknown>[];
+  combat_tags?: Record<string, unknown>[];
 }
 
 export interface NarrativeJSON {
@@ -1434,9 +1491,13 @@ export interface CombatEventCandidate {
   summary: string;
   risk?: 'low' | 'medium' | 'high';
   source?: 'ai-rumor' | 'engine';
-  engineValidation?: 'pending' | 'accepted' | 'blocked';
+  engineValidation?: 'pending' | 'accepted' | 'blocked' | 'downgraded';
   validationIssues?: string[];
   createdTurn?: number;
+  scale?: CombatEncounterScale | 'skirmish' | 'battle' | 'war' | 'large' | 'group' | 'squad' | '1v1';
+  enemyHint?: string;
+  requiredRealmGrand?: number;
+  entryValidation?: CombatEncounterEntryValidation;
 }
 
 export type GuExpressionAvailability = 'direct' | 'passive' | 'scene_gated';

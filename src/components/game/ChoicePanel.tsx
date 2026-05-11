@@ -82,6 +82,22 @@ function getChoiceSystemTags(choice: Choice) {
   return Array.isArray(raw) ? raw : [raw];
 }
 
+function getChoiceCombatTags(choice: Choice) {
+  const raw =
+    (choice as any).combatEncounter ??
+    (choice as any).combat_encounter ??
+    (choice as any).combatTags ??
+    (choice as any).combat_tags;
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw : [raw];
+}
+
+function getCombatTagTone(tag: any) {
+  if (tag?.status === 'blocked' || tag?.risk === 'high') return 'rg-chip rg-chip--blood';
+  if (tag?.status === 'available' || tag?.enterable === true) return 'rg-chip rg-chip--gold';
+  return 'rg-chip rg-chip--muted';
+}
+
 function getSystemTagTone(tag: any) {
   const status = tag?.status || tag?.kind || tag?.tone;
   if (status === 'available' || status === 'active' || status === 'runtime_active') return 'rg-chip rg-chip--jade';
@@ -251,6 +267,8 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
             const primaryAnchorTag = anchorTags[0];
             const systemTags = getChoiceSystemTags(choice);
             const primarySystemTag = systemTags[0];
+            const combatTags = getChoiceCombatTags(choice);
+            const primaryCombatTag = combatTags[0];
             return (
               <motion.div key={choice.id} className="relative group" variants={choiceItem}>
                 <motion.button
@@ -302,6 +320,17 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                         <span className="truncate">{primarySystemTag.label || primarySystemTag.name || '系统约束'}</span>
                       </motion.span>
                     )}
+                    {primaryCombatTag && (
+                      <motion.span
+                        className={`max-w-full ${getCombatTagTone(primaryCombatTag)}`}
+                        initial={reduceMotion ? false : { opacity: 0, y: 3 }}
+                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                        data-testid="choice-combat-tag"
+                      >
+                        <span className="truncate">{primaryCombatTag.label || primaryCombatTag.title || '进入战斗'}</span>
+                      </motion.span>
+                    )}
                   </div>
                   {/* 选项文本 */}
                   <p className="text-rg-paper-100 text-sm font-button leading-relaxed">
@@ -338,6 +367,15 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                       {systemTags.slice(0, 3).map((tag: any, index: number) => (
                         <p key={`${tag.kind || tag.status || 'system'}-${index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
                           {tag.label || tag.name || '系统约束'}：{tag.reason || tag.riskHint || tag.description || '由本地系统决定可用性、代价和风险。'}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  {combatTags.length > 0 && (
+                    <div className="mt-2 border-t border-rg-ink-300/20 pt-2">
+                      {combatTags.slice(0, 2).map((tag: any, index: number) => (
+                        <p key={`${tag.id || tag.title || 'combat'}-${index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
+                          {tag.label || tag.title || '战斗入口'}：{tag.reason || tag.enemyHint || tag.riskHint || '敌情由本地战斗编排器校验，胜负不会由文本私算。'}
                         </p>
                       ))}
                     </div>

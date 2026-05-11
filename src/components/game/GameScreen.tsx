@@ -452,22 +452,25 @@ export function GameScreen() {
             onClick={() => initBattlefieldDemo?.()}
             className={toolbarBtnClass(false)}
             data-testid="open-battlefield-demo"
+            title="Debug/演武入口：正式战斗由剧情候选进入"
           >
-            凡战
+            演武-凡战
           </button>
           <button
             onClick={() => initBattlefieldGroupDemo?.()}
             className={toolbarBtnClass(false)}
             data-testid="open-battlefield-group-demo"
+            title="Debug/演武入口：正式群像战由剧情候选进入"
           >
-            群像战
+            演武-群像
           </button>
           <button
             onClick={() => initBattlefieldLargeGroupDemo?.()}
             className={toolbarBtnClass(false)}
             data-testid="open-battlefield-large-group-demo"
+            title="Debug/演武入口：正式大阵战由剧情候选进入"
           >
-            群像战-大阵
+            演武-大阵
           </button>
           {TOOLBAR_BUTTONS_BASE.map(btn => (
             <button

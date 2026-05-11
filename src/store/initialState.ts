@@ -16,6 +16,7 @@ import { createDefaultCultivationState } from '../engine/v080-cultivation-calami
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 import { createDefaultSceneSessionState } from '../engine/v080-scene-session-engine';
+import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 
 export const INITIAL_STATE = {
   // ─── playerSlice ───
@@ -193,6 +194,7 @@ export const INITIAL_STATE = {
   battlefieldValidation: null as import('../types').BattlefieldActionValidation | null,
   battlefieldPlaybackSteps: [] as import('../types').BattleResolutionStep[],
   battlefieldTraceCursor: 0 as number,
+  combatEncounterState: createIdleCombatEncounterState(),
   debt: 0 as number,
   debtInterestRate: 0.05 as number,
   // P2新增: 子系统默认值（各子系统实现时覆盖）
@@ -321,6 +323,7 @@ export const EXCLUDE_FROM_SAVE = new Set([
   'battlefieldValidation',
   'battlefieldPlaybackSteps',
   'battlefieldTraceCursor',
+  'combatEncounterState',
   // ═══ v1.7: timelineSlice临时选择状态（仅角色创建阶段使用，排除存档污染） ═══
   'selectedNodeId', 'selectedNode', 'selectedDomain',
   'timelineTalents', 'apertureConfig', 'apertureRemainingPoints',

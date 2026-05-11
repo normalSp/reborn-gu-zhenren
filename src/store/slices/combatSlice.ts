@@ -8,6 +8,10 @@ import type {
   BattlefieldAction,
   BattlefieldActionValidation,
   BattlefieldCombatState,
+  BattleOutcomeResult,
+  BattleOutcomeSummary,
+  CombatEncounterEntryValidation,
+  CombatEncounterState,
   DuelAction,
   DuelEnemy,
   DuelMove,
@@ -36,9 +40,16 @@ import {
   createBattlefieldDemoState,
   createBattlefieldGroupDemoState,
   createBattlefieldLargeGroupDemoState,
+  createBattlefieldNarrativeDuelState,
   describeBattlefieldReason,
   getBattlefieldActor,
 } from '../../engine/v080-battlefield-ui-model';
+import {
+  buildCombatOutcomeLedgerEntry,
+  buildBattleOutcomeSummary,
+  createIdleCombatEncounterState,
+  evaluateCombatEncounterEntry,
+} from '../../engine/v080-narrative-combat-orchestration';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
@@ -178,6 +189,58 @@ function resolveEnemyReply(state: BattlefieldCombatState): { state: BattlefieldC
   return { state: resolution.state, steps: resolution.steps };
 }
 
+function startBattlefieldForEncounter(store: any, spec: NonNullable<CombatEncounterEntryValidation['spec']>): BattlefieldCombatState {
+  if (spec.scale === 'duel') return createBattlefieldNarrativeDuelState(store, spec);
+  if (spec.scale === 'group_7x5') return createBattlefieldLargeGroupDemoState(store);
+  if (spec.scale === 'group_5x3') return createBattlefieldGroupDemoState(store);
+  return createBattlefieldDemoState(store);
+}
+
+function updateCombatCandidateFlags(store: any, candidateId: string, patch: Record<string, unknown>) {
+  const candidates = Array.isArray(store.flags?.combatEventCandidates) ? store.flags.combatEventCandidates : [];
+  const next = candidates.map((candidate: any) => (
+    String(candidate?.id) === String(candidateId) ? { ...candidate, ...patch } : candidate
+  ));
+  store.setFlag?.('combatEventCandidates', next.slice(-40));
+}
+
+function finalizeNarrativeBattlefieldEncounter(
+  set: any,
+  get: any,
+  result?: BattleOutcomeResult,
+): BattleOutcomeSummary | null {
+  const store = get() as any;
+  const encounter = store.combatEncounterState as CombatEncounterState | null;
+  if (!encounter?.spec || !['active', 'candidate'].includes(encounter.status)) return null;
+  const outcome = buildBattleOutcomeSummary({
+    encounter: encounter.spec,
+    battlefieldState: store.battlefieldCombatState,
+    playbackSteps: store.battlefieldPlaybackSteps,
+    result,
+    turn: store.turn || encounter.spec.createdTurn,
+  });
+  const ledger = buildCombatOutcomeLedgerEntry(outcome, store.sceneSessionState?.sceneId || encounter.spec.sceneId);
+  store.recordLocalActionLedger?.(ledger);
+  set((s: any) => ({
+    combatEncounterState: {
+      ...encounter,
+      status: outcome.result === 'abandoned' ? 'abandoned' : 'resolved',
+      outcomeSummary: outcome,
+    },
+    flags: {
+      ...(s.flags || {}),
+      lastBattleOutcomeSummary: outcome,
+      activeCombatEncounterId: null,
+    },
+  }));
+  store.addGameLog?.('combat', `剧情战斗回流：${outcome.summary}`, {
+    encounterId: outcome.encounterId,
+    scale: outcome.scale,
+    result: outcome.result,
+  });
+  return outcome;
+}
+
 function selectionValidation(
   state: BattlefieldCombatState | null,
   action: BattlefieldAction | null,
@@ -216,6 +279,7 @@ export interface CombatSlice {
   battlefieldValidation: BattlefieldActionValidation | null;
   battlefieldPlaybackSteps: BattleResolutionStep[];
   battlefieldTraceCursor: number;
+  combatEncounterState: CombatEncounterState;
 
   /** 开始决斗 */
   initDuel: (player: {
@@ -263,6 +327,8 @@ export interface CombatSlice {
   initBattlefieldDemo: () => void;
   initBattlefieldGroupDemo: () => void;
   initBattlefieldLargeGroupDemo: () => void;
+  acceptCombatEventCandidate: (candidateId: string) => boolean;
+  resolveNarrativeCombatOutcome: (result?: BattleOutcomeResult) => BattleOutcomeSummary | null;
   selectBattlefieldActor: (actorId: string) => void;
   selectBattlefieldAction: (action: BattlefieldAction | null) => void;
   selectBattlefieldTarget: (cellId: string | null) => void;
@@ -293,6 +359,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   battlefieldValidation: null,
   battlefieldPlaybackSteps: [],
   battlefieldTraceCursor: 0,
+  combatEncounterState: createIdleCombatEncounterState(),
 
   initDuel: (player, enemy) => {
     const fullStore = get() as any;
@@ -618,6 +685,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
       battlefieldPlaybackSteps: [],
       battlefieldTraceCursor: 0,
+      combatEncounterState: createIdleCombatEncounterState(),
     });
     if (typeof store.addGameLog === 'function') {
       store.addGameLog('combat', 'v0.8.0-a2 凡战棋盘演武开启', {
@@ -639,6 +707,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
       battlefieldPlaybackSteps: [],
       battlefieldTraceCursor: 0,
+      combatEncounterState: createIdleCombatEncounterState(),
     });
     if (typeof store.addGameLog === 'function') {
       store.addGameLog('combat', 'v0.8.0-b1 群像战演武开启', {
@@ -661,6 +730,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
       battlefieldPlaybackSteps: [],
       battlefieldTraceCursor: 0,
+      combatEncounterState: createIdleCombatEncounterState(),
     });
     if (typeof store.addGameLog === 'function') {
       store.addGameLog('combat', 'v0.8.0-b1.1 7x5 群像战大阵演武开启', {
@@ -673,6 +743,73 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       });
     }
   },
+
+  acceptCombatEventCandidate: (candidateId) => {
+    const store = get() as any;
+    const candidates = Array.isArray(store.flags?.combatEventCandidates) ? store.flags.combatEventCandidates : [];
+    const candidate = candidates.find((item: any) => String(item?.id) === String(candidateId));
+    if (!candidate) return false;
+
+    const validation = evaluateCombatEncounterEntry(candidate, store);
+    if (!validation.valid || !validation.spec) {
+      updateCombatCandidateFlags(store, candidateId, {
+        engineValidation: 'downgraded',
+        validationIssues: validation.blockers,
+        entryValidation: validation,
+      });
+      set({
+        combatEncounterState: {
+          status: 'candidate',
+          spec: validation.spec,
+          validation,
+          startedTurn: store.turn || 1,
+          outcomeSummary: null,
+        },
+      });
+      store.addGameLog?.('combat', `战斗候选降级：${candidate.title}`, {
+        candidateId,
+        blockers: validation.blockers,
+        downgradedTo: validation.downgradedTo,
+      });
+      return false;
+    }
+
+    const state = startBattlefieldForEncounter(store, validation.spec);
+    const actor = getBattlefieldActor(state);
+    updateCombatCandidateFlags(store, candidateId, {
+      engineValidation: 'accepted',
+      validationIssues: [],
+      entryValidation: validation,
+    });
+    set((s: any) => ({
+      battlefieldCombatState: state,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: [],
+      battlefieldTraceCursor: 0,
+      combatEncounterState: {
+        status: 'active',
+        spec: validation.spec,
+        validation,
+        startedTurn: store.turn || validation.spec.createdTurn,
+        outcomeSummary: null,
+      },
+      flags: {
+        ...(s.flags || {}),
+        activeCombatEncounterId: validation.spec.id,
+      },
+    }));
+    store.addGameLog?.('combat', `剧情战斗入场：${validation.spec.title}`, {
+      encounterId: validation.spec.id,
+      scale: validation.spec.scale,
+      risk: validation.spec.risk,
+      enemyHint: validation.spec.enemyHint,
+    });
+    return true;
+  },
+
+  resolveNarrativeCombatOutcome: (result) => finalizeNarrativeBattlefieldEncounter(set, get, result),
 
   selectBattlefieldActor: (actorId) => {
     const state = get().battlefieldCombatState as BattlefieldCombatState | null;
@@ -754,6 +891,9 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
         roundsTaken: nextState.result.roundsTaken,
       });
     }
+    if (nextState.result && (store.combatEncounterState as CombatEncounterState | undefined)?.status === 'active') {
+      finalizeNarrativeBattlefieldEncounter(set, get);
+    }
   },
 
   advanceBattlefieldRoundAction: () => {
@@ -793,6 +933,11 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   closeBattlefieldCombat: () => {
     const current = get().battlefieldCombatState as BattlefieldCombatState | null;
     const store = get() as any;
+    const encounter = store.combatEncounterState as CombatEncounterState | null;
+    if (encounter?.status === 'active' && encounter.spec) {
+      const result = current?.result ? undefined : 'abandoned';
+      finalizeNarrativeBattlefieldEncounter(set, get, result);
+    }
     if (current && typeof store.addGameLog === 'function') {
       const reason = current.result?.reason ? `，${describeBattlefieldReason(current.result.reason) || current.result.reason}` : '';
       store.addGameLog('combat', `v0.8.0-a2 凡战棋盘关闭${reason}`, { battleId: current.battleId });

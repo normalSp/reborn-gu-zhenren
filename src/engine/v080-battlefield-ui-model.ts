@@ -6,6 +6,7 @@ import type {
   BattlefieldCell,
   BattlefieldCombatState,
   BattlefieldUnit,
+  CombatEncounterSpec,
   GuExpressionSpec,
   KillerMoveExpressionSpec,
 } from '../types';
@@ -245,6 +246,80 @@ export function createBattlefieldDemoState(source: BattlefieldDemoSource = {}): 
         cooldowns: {},
         statusEffects: [],
         intent: '以岩枪压制中线，伺机逼退',
+      },
+    ],
+  });
+}
+
+export function createBattlefieldNarrativeDuelState(
+  source: BattlefieldDemoSource = {},
+  spec?: CombatEncounterSpec | null,
+): BattlefieldCombatState {
+  const primaryPath = source.pathBuild?.primary || source.primaryPath || '月道';
+  const daoMarks = source.pathBuild?.dao_marks || source.daoMarks || { [primaryPath]: 60 };
+  const guNames = extractNormalCombatGuNames(source);
+  const killerMoveNames = extractKillerMoveNames(source, guNames);
+  const playerName = source.profile?.name || '剧情蛊师';
+  const realmNum = Math.max(1, Math.min(5, Number(source.profile?.realm?.grand || 3)));
+  const healthMax = Number(source.vitals?.health?.max || 180);
+  const healthCurrent = Number(source.vitals?.health?.current || healthMax);
+  const essenceMax = Number(source.vitals?.essence?.max || 100);
+  const essenceCurrent = Number(source.vitals?.essence?.current || essenceMax);
+  const risk = spec?.risk || 'medium';
+  const enemyRealm = Math.max(1, Math.min(5, realmNum + (risk === 'high' ? 1 : 0)));
+
+  return createBattlefieldCombatState({
+    battleId: `v080_c23_duel_${spec?.id || Date.now()}`,
+    seed: `v080-c23-narrative-duel:${spec?.id || 'fallback'}`,
+    activeTerrainId: 'dense_forest',
+    activeFormationId: 'defensive_screen',
+    eventWindows: ['scout', 'action', 'counter', 'settlement'],
+    cells: [
+      { id: 'c1_1', flags: ['dao_field'], daoFieldPath: primaryPath },
+      { id: 'c2_1', flags: ['hazard'], dangerTags: ['narrative_pressure'] },
+    ],
+    units: [
+      {
+        id: 'player',
+        name: playerName,
+        side: 'player',
+        cellId: 'c0_1',
+        realmNum,
+        path: primaryPath,
+        hp: Math.max(1, Math.min(healthCurrent, healthMax)),
+        maxHp: healthMax,
+        attack: 34 + realmNum * 5,
+        defense: 18 + realmNum * 3,
+        accuracy: 74,
+        evasion: 18,
+        daoMarks,
+        essence: { current: essenceCurrent, max: essenceMax, type: 'primeval' },
+        guNames,
+        killerMoveNames,
+        cooldowns: {},
+        statusEffects: [],
+        intent: '剧情触发的一对一凡战，由本地棋盘引擎结算胜负与消耗',
+      },
+      {
+        id: 'enemy_cultivator',
+        name: spec?.enemyHint || spec?.title || '剧情敌手',
+        side: 'enemy',
+        cellId: 'c4_1',
+        realmNum: enemyRealm,
+        path: risk === 'high' ? '暗道' : '土道',
+        hp: 120 + enemyRealm * 14,
+        maxHp: 120 + enemyRealm * 14,
+        attack: 28 + enemyRealm * 5,
+        defense: 18 + enemyRealm * 3,
+        accuracy: risk === 'high' ? 76 : 70,
+        evasion: risk === 'high' ? 20 : 14,
+        daoMarks: risk === 'high' ? { 暗道: 62 } : { 土道: 52 },
+        essence: { current: 90, max: 100, type: 'primeval' },
+        guNames: (risk === 'high' ? ['幽影随行蛊', '破风蛊'] : DEMO_ENEMY_GU_NAMES).filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        intent: spec?.summary || '剧情敌手按本地引擎反击',
       },
     ],
   });
