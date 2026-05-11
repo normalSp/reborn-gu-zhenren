@@ -1,12 +1,13 @@
 {
-  "formatVersion": 16,
+  "formatVersion": 17,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "山外散修·陆青",
     "realm": "一转初阶",
     "turn": 1,
     "gameMode": "canon",
-    "description": "v0.7.1 中文手测：散修开局身份路由、首段剧情地点、声望、行动入口。"
+    "description": "v0.7.1 中文手测：散修开局身份路由、首段剧情地点、声望、行动入口。",
+    "formatVersion": 17
   },
   "state": {
     "profile": {
@@ -116,7 +117,78 @@
       "_start_profile_location": "青茅山外 · 山外猎户营地",
       "_faction_name": "散修",
       "_origin_manual_save": "07-开局-青茅山外散修一转.json",
-      "_origin_preview_order": 7
+      "_origin_preview_order": 7,
+      "fateState": "intact",
+      "currentCanonAnchorId": null,
+      "anchorResults": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "unseen",
+          "canonDeviation": 0
+        }
+      },
+      "ifBranchVectors": [],
+      "heavenWillLedger": {
+        "attention": 0,
+        "correction": 0,
+        "rejection": 0,
+        "ambiguity": 20,
+        "lastTriggers": []
+      },
+      "karmicDebtLedger": {
+        "totalDebt": 0,
+        "byKind": {},
+        "pendingReturns": []
+      },
+      "storyEventCandidates": [],
+      "ifBranchCandidates": [],
+      "canonAnchorPressureLog": [],
+      "lastStoryAnchorResolution": []
     },
     "inventory": [
       {
@@ -245,6 +317,142 @@
       "nextCalamityPreview": null,
       "lastEnvironment": null,
       "lastResolution": []
+    },
+    "storyAnchorState": {
+      "version": "v0.8.0-b3",
+      "fateState": "intact",
+      "currentAnchorId": null,
+      "anchorResults": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "unseen",
+          "canonDeviation": 0
+        }
+      },
+      "anchorRecords": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "青茅山"
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "商家城"
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "三王山"
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "王庭"
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "义天山"
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "逆流河"
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "梦境与影宗"
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "宿命战"
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "尊者博弈"
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "天庭末章"
+        }
+      },
+      "ifBranchVectors": [],
+      "heavenWillLedger": {
+        "attention": 0,
+        "correction": 0,
+        "rejection": 0,
+        "ambiguity": 20,
+        "lastTriggers": []
+      },
+      "karmicDebtLedger": {
+        "totalDebt": 0,
+        "byKind": {},
+        "pendingReturns": []
+      },
+      "storyEventCandidates": [],
+      "ifBranchCandidates": [],
+      "canonAnchorPressureLog": [],
+      "lastResolutionSteps": []
     }
   }
 }

@@ -15,7 +15,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor';
 
 const lazyNamed = <T extends ComponentType<any>>(
   loader: () => Promise<Record<string, any>>,
@@ -38,6 +38,7 @@ const ApertureManagementPanel = lazyNamed(() => import('./ApertureManagementPane
 const TrainingGroundPanel = lazyNamed(() => import('./TrainingGroundPanel'), 'TrainingGroundPanel');
 const SquadFormationPanel = lazyNamed(() => import('./SquadFormationPanel'), 'SquadFormationPanel');
 const ActionPanel = lazyNamed(() => import('./ActionPanel'), 'ActionPanel');
+const StoryAnchorPanel = lazyNamed(() => import('./StoryAnchorPanel'), 'StoryAnchorPanel');
 
 const SaveLoadDialog = lazyNamed(() => import('./SaveLoadDialog'), 'SaveLoadDialog');
 const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDialog');
@@ -79,6 +80,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     training_ground: '道场修炼',
     squad: '小队编成',
     actions: '行动',
+    story_anchor: '宿命',
   };
   return titles[panel] || '';
 };
@@ -101,6 +103,7 @@ const panelContent = (panel: SidePanel) => {
     case 'training_ground': return <TrainingGroundPanel />;
     case 'squad': return <SquadFormationPanel />;
     case 'actions': return <ActionPanel />;
+    case 'story_anchor': return <StoryAnchorPanel />;
     default: return null;
   }
 };
@@ -110,6 +113,7 @@ interface ToolbarButton { id: SidePanel; label: string; }
 // P3修复：工具栏标签支持动态域（地图按钮根据currentDomain动态生成）
 const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'actions', label: '行动' },
+  { id: 'story_anchor', label: '宿命' },
   { id: 'attributes', label: '蛊师属性' },
   { id: 'gu_inventory', label: '蛊虫' },
   { id: 'kill_moves', label: '杀招列表' },

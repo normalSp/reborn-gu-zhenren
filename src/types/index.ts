@@ -203,6 +203,90 @@ export interface CanonAnchorResult {
   summary?: string;
 }
 
+export type StoryAnchorResolutionStepKind =
+  | 'entry'
+  | 'candidate'
+  | 'if_vector'
+  | 'pressure'
+  | 'heaven_will'
+  | 'karmic_debt'
+  | 'fate_state'
+  | 'block'
+  | 'redirect'
+  | 'settlement';
+
+export interface StoryAnchorResolutionStep {
+  id: string;
+  kind: StoryAnchorResolutionStepKind;
+  anchorId?: string;
+  turn: number;
+  message: string;
+  severity?: 'info' | 'warning' | 'danger' | 'success';
+  metadata?: Record<string, unknown>;
+}
+
+export interface StoryAnchorRecord {
+  anchorId: string;
+  status: 'locked' | 'available' | 'active' | 'resolved' | 'blocked';
+  firstSeenTurn?: number;
+  lastUpdatedTurn?: number;
+  entryIssues?: string[];
+  canonDeviation: number;
+  summary?: string;
+}
+
+export interface StoryAnchorCandidateRecord extends StoryEventCandidate {
+  id: string;
+  source: 'ai-rumor' | 'engine';
+  engineValidation: 'pending' | 'accepted' | 'blocked';
+  validationIssues: string[];
+  createdTurn: number;
+  chapterId?: string;
+  domain?: string;
+  resolutionHint?: string;
+}
+
+export interface StoryAnchorIfCandidateRecord extends IfBranchCandidate {
+  id: string;
+  source: 'ai-rumor' | 'engine';
+  engineValidation: 'pending' | 'accepted' | 'blocked';
+  validationIssues: string[];
+  createdTurn: number;
+  chapterId?: string;
+  domain?: string;
+}
+
+export interface StoryAnchorEntryValidation {
+  anchorId: string;
+  allowed: boolean;
+  status: 'locked' | 'available' | 'active' | 'resolved' | 'blocked';
+  issues: string[];
+  warnings: string[];
+  requiredRealm?: number;
+  mode: TimelineMode;
+  recommendedRole: string;
+}
+
+export interface StoryAnchorState {
+  version: 'v0.8.0-b3';
+  fateState: FateState;
+  currentAnchorId: string | null;
+  anchorResults: Record<string, CanonAnchorResult>;
+  anchorRecords: Record<string, StoryAnchorRecord>;
+  ifBranchVectors: IfBranchVector[];
+  heavenWillLedger: HeavenWillLedger;
+  karmicDebtLedger: KarmicDebtLedger;
+  storyEventCandidates: StoryAnchorCandidateRecord[];
+  ifBranchCandidates: StoryAnchorIfCandidateRecord[];
+  canonAnchorPressureLog: Array<CanonAnchorPressure & {
+    id?: string;
+    createdTurn?: number;
+    chapterId?: string;
+    domain?: string;
+  }>;
+  lastResolutionSteps: StoryAnchorResolutionStep[];
+}
+
 export interface EndingResolverInput {
   gameMode: TimelineMode;
   fateState: FateState;
@@ -564,6 +648,8 @@ export interface Choice {
   risk_note: string;
   guAffordances?: NarrativeGuChoiceAffordance[];
   gu_affordance?: NarrativeGuChoiceAffordance | NarrativeGuChoiceAffordance[];
+  anchorTags?: NarrativeAnchorChoiceTag[];
+  anchor_tags?: NarrativeAnchorChoiceTag[];
 }
 
 export interface NarrativeJSON {
@@ -605,6 +691,14 @@ export interface NarrativeGuChoiceAffordance {
   sceneGated: boolean;
   forbidden: boolean;
   promptHint?: string;
+}
+
+export interface NarrativeAnchorChoiceTag {
+  kind: 'canon_side' | 'if_deviation' | 'heaven_pressure' | 'forbidden_block';
+  label: string;
+  anchorId?: string;
+  reason?: string;
+  severity?: 'low' | 'medium' | 'high';
 }
 
 // ═══ v0.7.0 P2: 动态NPC系统 — AI叙事中生成的"路人甲"NPC ═══

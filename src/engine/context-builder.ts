@@ -858,14 +858,19 @@ function injectResourceNodeHints(store: RootStore): string {
 function injectV080NarrativeGuard(store: RootStore): string {
   const s = store as any;
   const flags = s.flags || {};
+  const storyAnchor = s.storyAnchorState || {};
   const mode = (s.gameMode || 'canon') as 'canon' | 'if';
-  const fateState = flags.fateState || 'intact';
-  const currentAnchorId = flags.currentCanonAnchorId || s.currentChapterId || '';
+  const fateState = storyAnchor.fateState || flags.fateState || 'intact';
+  const currentAnchorId = storyAnchor.currentAnchorId || flags.currentCanonAnchorId || s.currentChapterId || '';
   const currentAnchor = currentAnchorId ? getCanonAnchor(currentAnchorId) : undefined;
   const anchors = getCanonAnchors();
-  const vectors = Array.isArray(flags.ifBranchVectors) ? flags.ifBranchVectors.slice(-5) : [];
-  const pressure = Array.isArray(flags.canonAnchorPressureLog) ? flags.canonAnchorPressureLog.slice(-5) : [];
-  const heaven = flags.heavenWillLedger || { attention: 0, correction: 0, rejection: 0, ambiguity: 20 };
+  const vectorSource = Array.isArray(storyAnchor.ifBranchVectors) ? storyAnchor.ifBranchVectors : flags.ifBranchVectors;
+  const pressureSource = Array.isArray(storyAnchor.canonAnchorPressureLog) ? storyAnchor.canonAnchorPressureLog : flags.canonAnchorPressureLog;
+  const vectors = Array.isArray(vectorSource) ? vectorSource.slice(-5) : [];
+  const pressure = Array.isArray(pressureSource) ? pressureSource.slice(-5) : [];
+  const heaven = storyAnchor.heavenWillLedger || flags.heavenWillLedger || { attention: 0, correction: 0, rejection: 0, ambiguity: 20 };
+  const karma = storyAnchor.karmicDebtLedger || flags.karmicDebtLedger || { totalDebt: 0, byKind: {} };
+  const candidates = Array.isArray(storyAnchor.storyEventCandidates) ? storyAnchor.storyEventCandidates.slice(-3) : [];
 
   const anchorLine = currentAnchor
     ? `${currentAnchor.displayName}(${currentAnchor.id}) status=${currentAnchor.canonStatus}`
@@ -876,13 +881,18 @@ function injectV080NarrativeGuard(store: RootStore): string {
   const pressureLines = pressure.length
     ? pressure.map((item: any) => `- ${item.anchorId}: pressure=${item.pressure} decision=${item.engineDecision}`).join('\n')
     : '无近期正史锚点压力';
+  const candidateLines = candidates.length
+    ? candidates.map((item: any) => `- ${item.anchorId || 'free'}: ${item.title} status=${item.engineValidation}`).join('\n')
+    : '无近期剧情锚点候选';
 
   return [
     '【v0.8.0 剧情锚点与宿命闸门】',
     `mode=${mode}; fateState=${fateState}; currentAnchor=${anchorLine}`,
     `天意账本: attention=${heaven.attention || 0}, correction=${heaven.correction || 0}, rejection=${heaven.rejection || 0}, ambiguity=${heaven.ambiguity ?? 20}`,
+    `因果债: total=${karma.totalDebt || 0}; kinds=${Object.entries(karma.byKind || {}).map(([kind, value]) => `${kind}:${value}`).join(', ') || 'none'}`,
     `近期 IF 向量:\n${vectorLines}`,
     `近期锚点压力:\n${pressureLines}`,
+    `近期候选:\n${candidateLines}`,
     mode === 'canon'
       ? '正史模式：关键锚点不可被玩家取代或直接改写；玩家只能影响侧线、关系、资源和局部结果。'
       : 'IF模式：可以提出护宿命/毁宿命/势力偏移等候选，但必须写入 if_branch_candidates.add，等待引擎校验后才会成为 IfBranchVector。',

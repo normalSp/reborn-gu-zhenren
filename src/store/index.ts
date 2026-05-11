@@ -29,7 +29,9 @@ import { createAuctionSlice } from './slices/auctionSlice';
 import { createTimelineSlice } from './slices/timelineSlice';
 import { createDynamicNPCStore } from './slices/dynamicNPCStore';
 import { createCultivationSlice } from './slices/cultivationSlice';
+import { createStoryAnchorSlice } from './slices/storyAnchorSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
+import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -179,6 +181,10 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
       progress: Number(s.cultivationState?.progress ?? s.flags?.cultivationProgress ?? 0),
     });
   }
+  if (v < 17 || s.storyAnchorState === undefined) {
+    s.storyAnchorState = normalizeStoryAnchorState(s.storyAnchorState, s.flags || {});
+  }
+  s.flags = mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState);
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
@@ -225,6 +231,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createTimelineSlice> &
   ReturnType<typeof createDynamicNPCStore> &
   ReturnType<typeof createCultivationSlice> &
+  ReturnType<typeof createStoryAnchorSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -256,6 +263,22 @@ function deserializeState(raw: Record<string, any>): Record<string, any> {
     data.triggeredEvents = new Set(data.triggeredEvents);
   }
   return data;
+}
+
+function mirrorStoryAnchorFlagsForLoad(flags: Record<string, any>, storyAnchorState: any): Record<string, any> {
+  return {
+    ...flags,
+    fateState: storyAnchorState.fateState,
+    currentCanonAnchorId: storyAnchorState.currentAnchorId,
+    anchorResults: storyAnchorState.anchorResults,
+    ifBranchVectors: storyAnchorState.ifBranchVectors,
+    heavenWillLedger: storyAnchorState.heavenWillLedger,
+    karmicDebtLedger: storyAnchorState.karmicDebtLedger,
+    storyEventCandidates: storyAnchorState.storyEventCandidates,
+    ifBranchCandidates: storyAnchorState.ifBranchCandidates,
+    canonAnchorPressureLog: storyAnchorState.canonAnchorPressureLog,
+    lastStoryAnchorResolution: storyAnchorState.lastResolutionSteps,
+  };
 }
 
 const LOAD_FALLBACK_CHOICE = {
@@ -395,6 +418,11 @@ function buildLoadedStoreState(
     ...stateData.cultivationState,
     progress: Number(stateData.cultivationState?.progress ?? battleRuntime.flags?.cultivationProgress ?? 0),
   });
+  const storyAnchorState = normalizeStoryAnchorState(
+    stateData.storyAnchorState,
+    { ...(battleRuntime.flags || {}), ...(stateData.flags || {}) },
+  );
+  const flags = mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState);
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
     achievementProgress: currentStore.achievementProgress ?? {},
@@ -425,8 +453,9 @@ function buildLoadedStoreState(
     battlefieldValidation: null,
     battlefieldPlaybackSteps: [],
     battlefieldTraceCursor: 0,
-    flags: battleRuntime.flags,
+    flags,
     cultivationState,
+    storyAnchorState,
   };
 }
 
@@ -463,6 +492,7 @@ export const useStore = create<RootStore>()(
         ...createTimelineSlice(...a),
         ...createDynamicNPCStore(...a),
         ...createCultivationSlice(...a),
+        ...createStoryAnchorSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -643,6 +673,8 @@ export const useStore = create<RootStore>()(
           if (merged.feedingCredits === undefined) merged.feedingCredits = {};
           if (merged.feedingDiscountProgress === undefined) merged.feedingDiscountProgress = {};
           merged.partyState = normalizePartyState(merged.partyState, merged.turn ?? 0);
+          merged.storyAnchorState = normalizeStoryAnchorState(merged.storyAnchorState, merged.flags || {});
+          merged.flags = mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState);
           return merged;
         },
         migrate: (persistedState: any, version: number) => {
@@ -657,6 +689,8 @@ export const useStore = create<RootStore>()(
               ...persistedState.cultivationState,
               progress: Number(persistedState.cultivationState?.progress ?? persistedState.flags?.cultivationProgress ?? 0),
             });
+            persistedState.storyAnchorState = normalizeStoryAnchorState(persistedState.storyAnchorState, persistedState.flags || {});
+            persistedState.flags = mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState);
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {
               persistedState.deathRecord = {

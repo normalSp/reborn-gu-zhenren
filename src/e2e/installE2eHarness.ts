@@ -3,6 +3,7 @@ import { buildExtremePhysiqueCalamityProfile } from '../engine/extreme-physique-
 import { listSquadDispatchTasks } from '../engine/squad-dispatch';
 import { resolveTerrainCombatModifier } from '../engine/terrain-combat';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
+import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 
 type E2eSave = string | Record<string, unknown>;
 
@@ -29,6 +30,7 @@ declare global {
       startBattlefieldLargeGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
       startCultivationDeepeningDemo: () => Record<string, unknown>;
+      startMidgameAnchorDemo: () => Record<string, unknown>;
       clearRuntime: () => void;
     };
   }
@@ -132,6 +134,16 @@ function summarizeStore(): Record<string, unknown> {
       threeQi: state.cultivationState.ascension?.threeQi || null,
       heavenWillPressure: Number(state.cultivationState.ascension?.heavenWillPressure || 0),
       nextCalamity: state.cultivationState.nextCalamityPreview?.name || null,
+    } : null,
+    storyAnchor: state.storyAnchorState ? {
+      fateState: state.storyAnchorState.fateState,
+      currentAnchorId: state.storyAnchorState.currentAnchorId || null,
+      storyCandidateCount: Array.isArray(state.storyAnchorState.storyEventCandidates) ? state.storyAnchorState.storyEventCandidates.length : 0,
+      ifVectorCount: Array.isArray(state.storyAnchorState.ifBranchVectors) ? state.storyAnchorState.ifBranchVectors.length : 0,
+      pressureCount: Array.isArray(state.storyAnchorState.canonAnchorPressureLog) ? state.storyAnchorState.canonAnchorPressureLog.length : 0,
+      heavenWillAttention: Number(state.storyAnchorState.heavenWillLedger?.attention || 0),
+      karmicDebt: Number(state.storyAnchorState.karmicDebtLedger?.totalDebt || 0),
+      lastStepCount: Array.isArray(state.storyAnchorState.lastResolutionSteps) ? state.storyAnchorState.lastResolutionSteps.length : 0,
     } : null,
     extremePhysiquePressure: extremePhysiquePressure ? {
       physiqueType: extremePhysiquePressure.physiqueType,
@@ -366,6 +378,165 @@ export function installE2eHarness(): void {
       const next = useStore.getState() as any;
       next.setScreenState?.('game_play');
       next.setGameMode?.('canon');
+      return summarizeStore();
+    },
+    startMidgameAnchorDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      const storyAnchorState = createDefaultStoryAnchorState({
+        currentAnchorId: 'fate_war',
+        fateState: 'fractured',
+        ifBranchVectors: [{
+          id: 'e2e_break_fate_vector',
+          anchorId: 'fate_war',
+          axis: 'break_fate',
+          delta: 18,
+          cause: '玩家在侧翼战场保护撤退窗口，同时偏向毁宿命阵营。',
+          cost: '天意排斥与天庭关注上升',
+          downstreamImpact: ['heaven_will_debt', 'faction_shift'],
+          provenance: 'if-derived',
+          createdTurn: 12,
+        }],
+        heavenWillLedger: {
+          attention: 42,
+          correction: 28,
+          rejection: 18,
+          ambiguity: 45,
+          lastTriggers: [{
+            kind: 'fate_mutation',
+            delta: 12,
+            reason: '宿命战侧翼 IF 偏移演武',
+            anchorId: 'fate_war',
+            turn: 12,
+          }],
+        },
+        karmicDebtLedger: {
+          totalDebt: 18,
+          byKind: { heavenly_court_attention: 10, chaos_debt: 8 },
+          pendingReturns: [],
+        },
+        storyEventCandidates: [{
+          id: 'e2e_fate_side_rescue',
+          anchorId: 'fate_war',
+          type: 'side_event',
+          title: '宿命战侧翼救援',
+          summary: '玩家只能争取救援与撤退窗口，不能夺取宿命蛊或替代核心战果。',
+          risk: 'high',
+          source: 'engine',
+          engineValidation: 'accepted',
+          validationIssues: [],
+          createdTurn: 12,
+          chapterId: 'fate_war',
+          domain: '中洲',
+          resolutionHint: '侧翼战场可进入战斗或关系变化，不结算核心宿命结果。',
+        }],
+        ifBranchCandidates: [{
+          id: 'e2e_if_break_fate_candidate',
+          anchorId: 'fate_war',
+          axis: 'break_fate',
+          proposedDelta: 18,
+          summary: '协助毁宿命一方争取侧翼窗口',
+          costHint: '天意排斥与势力仇怨',
+          downstreamHint: ['heaven_will_debt'],
+          source: 'engine',
+          engineValidation: 'accepted',
+          validationIssues: [],
+          createdTurn: 12,
+          chapterId: 'fate_war',
+          domain: '中洲',
+        }],
+        canonAnchorPressureLog: [{
+          id: 'e2e_pressure_fate_gu',
+          anchorId: 'fate_war',
+          pressure: 100,
+          reason: '玩家不能获得宿命蛊。',
+          attemptedMutation: '玩家获得宿命蛊',
+          engineDecision: 'block',
+          fallbackNarrativeHint: '改为侧翼见证或撤退压力。',
+          createdTurn: 12,
+          chapterId: 'fate_war',
+          domain: '中洲',
+        }],
+        lastResolutionSteps: [{
+          id: 'e2e_anchor_step',
+          kind: 'block',
+          anchorId: 'fate_war',
+          turn: 12,
+          message: '宿命战核心结果由本地引擎保护，玩家行动降级为侧翼战场。',
+          severity: 'danger',
+        }],
+      });
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 12),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '中洲',
+        currentChapterId: 'fate_war',
+        profile: { name: 'b3锚点演武蛊师', background: '宿命侧翼', realm: { grand: 6, sub: '初阶', label: '六转初阶' } },
+        storyAnchorState,
+        flags: {
+          ...(store.flags || {}),
+          fateState: storyAnchorState.fateState,
+          currentCanonAnchorId: storyAnchorState.currentAnchorId,
+          ifBranchVectors: storyAnchorState.ifBranchVectors,
+          heavenWillLedger: storyAnchorState.heavenWillLedger,
+          karmicDebtLedger: storyAnchorState.karmicDebtLedger,
+          storyEventCandidates: storyAnchorState.storyEventCandidates,
+          canonAnchorPressureLog: storyAnchorState.canonAnchorPressureLog,
+        },
+        currentNarrative: {
+          narrative: {
+            text: '中洲天穹低压，宿命战的风暴从正面战场漫到侧翼。你能抢救一队撤退的蛊师，或在 IF 模式下记录一次偏移，但不能替代原著核心因果。',
+            choices: [
+              {
+                id: 'anchor_side_rescue',
+                text: '进入侧翼战场，护送受伤蛊师撤出阵纹余波',
+                risk: 'medium',
+                risk_note: '可影响关系与局部战果，不改变宿命蛊核心归属。',
+                anchorTags: [{
+                  kind: 'canon_side',
+                  label: '正史侧翼',
+                  anchorId: 'fate_war',
+                  reason: '侧翼救援属于正史允许变化。',
+                  severity: 'medium',
+                }],
+              },
+              {
+                id: 'anchor_if_break',
+                text: '记录毁宿命侧的 IF 偏移意图，等待本地引擎校验代价',
+                risk: 'high',
+                risk_note: 'IF 倾向会写入向量，并提升天意与因果压力。',
+                anchorTags: [{
+                  kind: 'if_deviation',
+                  label: 'IF偏移',
+                  anchorId: 'fate_war',
+                  reason: 'break_fate 是宿命战允许 IF 轴，但必须付代价。',
+                  severity: 'high',
+                }],
+              },
+              {
+                id: 'anchor_forbidden_fate_gu',
+                text: '试图夺取宿命蛊本体',
+                risk: 'high',
+                risk_note: '禁区操作会被本地锚点引擎拦截。',
+                anchorTags: [{
+                  kind: 'forbidden_block',
+                  label: '禁区拦截',
+                  anchorId: 'fate_war',
+                  reason: '玩家获得宿命蛊属于 b3 禁区。',
+                  severity: 'high',
+                }],
+              },
+            ],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('if');
       return summarizeStore();
     },
     clearRuntime() {

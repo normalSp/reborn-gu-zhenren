@@ -1,0 +1,619 @@
+{
+  "formatVersion": 17,
+  "timestamp": "2026-05-11T00:00:00.000Z",
+  "meta": {
+    "playerName": "b3梦境影宗线索蛊仙",
+    "realm": "六转初阶",
+    "turn": 101,
+    "gameMode": "canon",
+    "description": "v0.8.0-b3 梦境与影宗线索专项",
+    "formatVersion": 17
+  },
+  "state": {
+    "profile": {
+      "name": "b3梦境影宗线索蛊仙",
+      "realm": {
+        "grand": 6,
+        "sub": "初阶",
+        "label": "六转初阶"
+      },
+      "background": "散修蛊仙"
+    },
+    "currentDomain": "南疆",
+    "currentChapterId": "dream_shadow_sect",
+    "turn": 101,
+    "currency": 5200,
+    "immortalEssenceStones": 7200,
+    "gameTime": {
+      "ap": 3,
+      "max_ap": 3,
+      "period": "evening",
+      "day": 18,
+      "month": 9,
+      "year": 1,
+      "season": "autumn"
+    },
+    "pathBuild": {
+      "primary": "气道",
+      "level": "大师",
+      "dao_marks": {
+        "气道": 340,
+        "炎道": 90,
+        "木道": 60
+      }
+    },
+    "vitals": {
+      "health": {
+        "current": 320,
+        "max": 320
+      },
+      "essence": {
+        "current": 1200,
+        "max": 1200
+      },
+      "essenceType": "immortal"
+    },
+    "soundState": {
+      "masterVolume": 0.7,
+      "bgmVolume": 0.5,
+      "sfxVolume": 0.7,
+      "voiceVolume": 0.8,
+      "uiVolume": 0.7,
+      "muted": false,
+      "currentBgm": null,
+      "voiceActive": false
+    },
+    "playerFaction": {
+      "id": "faction_v070c_test",
+      "name": "七玄试炼小队",
+      "type": "散修联盟",
+      "domain": "南疆",
+      "level": 3,
+      "reputation": 120,
+      "resources": {
+        "yuanStone": 3000,
+        "immortalStone": 0
+      },
+      "maxMembers": 8,
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 3,
+          "loyalty": 64,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 76,
+          "interestDrive": 40,
+          "status": "idle"
+        },
+        {
+          "id": "m_scout_ye",
+          "name": "叶听风",
+          "path": "智道",
+          "realm": 3,
+          "loyalty": 52,
+          "personality": "cautious",
+          "alive": true,
+          "hp": 118,
+          "maxHp": 118,
+          "atk": 26,
+          "def": 14,
+          "adventureTrust": 68,
+          "interestDrive": 60,
+          "status": "idle"
+        }
+      ]
+    },
+    "partyState": {
+      "members": [
+        {
+          "id": "m_guard_qin",
+          "name": "秦铁",
+          "path": "金道",
+          "realm": 3,
+          "loyalty": 64,
+          "personality": "loyal",
+          "alive": true,
+          "hp": 150,
+          "maxHp": 150,
+          "atk": 34,
+          "def": 22,
+          "adventureTrust": 76,
+          "interestDrive": 40
+        }
+      ],
+      "maxSize": 4,
+      "formation": "牵制",
+      "morale": 58,
+      "coordination": 55,
+      "lastUpdatedTurn": 80,
+      "memberCooldowns": {},
+      "memberRolePausedUntil": {}
+    },
+    "materials": {
+      "鲜兽肉": 4,
+      "金粉": 2,
+      "精品蛊材": 3
+    },
+    "immortalMaterials": {},
+    "flags": {
+      "cultivationProgress": 0,
+      "fateState": "intact",
+      "currentCanonAnchorId": "dream_shadow_sect",
+      "anchorResults": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "active",
+          "canonDeviation": 8,
+          "summary": "玩家获得梦境与影宗线索候选，但不能无代价破解影宗全局。"
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "unseen",
+          "canonDeviation": 0
+        }
+      },
+      "ifBranchVectors": [],
+      "heavenWillLedger": {
+        "attention": 22,
+        "correction": 14,
+        "rejection": 8,
+        "ambiguity": 50,
+        "lastTriggers": []
+      },
+      "karmicDebtLedger": {
+        "totalDebt": 12,
+        "byKind": {
+          "dream_contact": 7,
+          "shadow_sect_contact": 5
+        },
+        "pendingReturns": []
+      },
+      "storyEventCandidates": [
+        {
+          "id": "b3_dream_shadow_clue",
+          "anchorId": "dream_shadow_sect",
+          "type": "rumor",
+          "title": "梦境影宗线索",
+          "summary": "玩家获得梦境与影宗线索候选，但不能无代价破解影宗全局。",
+          "risk": "medium",
+          "source": "engine",
+          "engineValidation": "accepted",
+          "validationIssues": [],
+          "createdTurn": 101,
+          "chapterId": "dream_shadow_sect",
+          "domain": "南疆",
+          "resolutionHint": "可接入蛊虫剧情表现化、修行压力或侧支战斗。"
+        }
+      ],
+      "ifBranchCandidates": [],
+      "canonAnchorPressureLog": [],
+      "lastStoryAnchorResolution": [
+        {
+          "id": "b3_dream_step",
+          "kind": "candidate",
+          "anchorId": "dream_shadow_sect",
+          "turn": 101,
+          "message": "梦境影宗线索候选已登记，并写入因果债。",
+          "severity": "warning"
+        }
+      ]
+    },
+    "apertureInventory": {
+      "gu": [
+        {
+          "id": "v080b2_fixed_travel",
+          "specId": "定仙游",
+          "name": "定仙游",
+          "tier": 6,
+          "path": "宇道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 76,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
+          }
+        },
+        {
+          "id": "v080b2_luck_inspect",
+          "specId": "察运蛊",
+          "name": "察运蛊",
+          "tier": 6,
+          "path": "运道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 76,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
+          }
+        },
+        {
+          "id": "v080b2_soul_search",
+          "specId": "搜魂蛊",
+          "name": "搜魂蛊",
+          "tier": 7,
+          "path": "魂道",
+          "currentState": "optimal",
+          "hungerCounter": 0,
+          "proficiency": 76,
+          "bonded": false,
+          "active": true,
+          "acquiredAt": {
+            "turn": 180,
+            "narrative": "v0.8.0-b2测试存档补齐：福地灾劫专项仙蛊。"
+          }
+        }
+      ],
+      "materials": {},
+      "immortalMaterials": {
+        "月潮露": 6,
+        "通用仙材": 3
+      }
+    },
+    "inventory": [],
+    "immortalCurrency": 7200,
+    "gameMode": "canon",
+    "playerRole": "original_participant",
+    "attributes": {
+      "资质": 9,
+      "体魄": 8,
+      "心智": 8,
+      "气运": 6
+    },
+    "aperture": {
+      "type": "福地",
+      "grade": "中等福地",
+      "area_mu": 520,
+      "time_flow_ratio": 18,
+      "resource_nodes": [
+        {
+          "id": "v080b2_node_fire",
+          "type": "炎道",
+          "name": "火脉灵田",
+          "output_rate": 3,
+          "quality": 80,
+          "grade": "仙材",
+          "active": true
+        },
+        {
+          "id": "v080b2_node_wood",
+          "type": "木道",
+          "name": "青木药圃",
+          "output_rate": 2,
+          "quality": 70,
+          "grade": "精品",
+          "active": true
+        },
+        {
+          "id": "v080b2_node_qi",
+          "type": "气道",
+          "name": "三气回旋口",
+          "output_rate": 2,
+          "quality": 68,
+          "grade": "仙材",
+          "active": true
+        }
+      ],
+      "dao_mark_density": {
+        "炎道": 70,
+        "木道": 40,
+        "气道": 120
+      },
+      "next_disaster_type": "地火",
+      "disaster_countdown": 6
+    },
+    "currentNarrative": {
+      "narrative": {
+        "text": "一段梦境碎片在福地边缘结霜，影宗的影子像线一样缠在魂道交易后面。你能追索线索或进行侧支战斗，却不能无代价破解影宗全局。",
+        "choices": [
+          {
+            "id": "dream_clue",
+            "text": "以侦察蛊确认梦境边界，保留影宗线索",
+            "risk": "medium",
+            "risk_note": "线索进入候选账本，不直接给奖励。",
+            "anchorTags": [
+              {
+                "kind": "canon_side",
+                "label": "正史侧翼",
+                "anchorId": "dream_shadow_sect",
+                "reason": "梦境探索和线索传闻属于允许变化。",
+                "severity": "medium"
+              }
+            ]
+          }
+        ]
+      },
+      "state_update": {}
+    },
+    "cultivationState": {
+      "version": "v0.8.0-b2",
+      "progress": 0,
+      "progressByRealm": {
+        "6:初阶": 0
+      },
+      "breakthroughHistory": [],
+      "ascension": {
+        "threeQi": {
+          "human": 88,
+          "earth": 84,
+          "heaven": 82
+        },
+        "preparationScore": 88,
+        "heavenWillPressure": 18,
+        "karmicDebt": 4
+      },
+      "calamityLedger": [],
+      "nextCalamityPreview": {
+        "id": "earth_fire",
+        "name": "地火",
+        "category": "earth_calamity",
+        "path": "炎道",
+        "severity": 0.78,
+        "countdown": 6,
+        "affectedResourceNodeIds": [
+          "v080b2_node_fire",
+          "v080b2_node_wood"
+        ],
+        "expectedAreaLossPct": 0.09,
+        "warnings": [
+          "灾劫迫近，应立刻护住核心资源点。"
+        ],
+        "tags": [
+          "地灾",
+          "地火",
+          "资源灼烧"
+        ]
+      },
+      "lastEnvironment": null,
+      "lastResolution": [
+        {
+          "id": "fixture_v080b2_calamity",
+          "turn": 221,
+          "kind": "calamity_warning",
+          "message": "地火灾劫预兆已登记，正式后果只由本地 b2 action 写入。",
+          "tags": [
+            "fixture",
+            "calamity"
+          ]
+        }
+      ]
+    },
+    "heavenlyLand": {
+      "id": "v080b2_land_calamity",
+      "type": "福地",
+      "domain": "南疆",
+      "name": "砚青福地",
+      "areaMu": 520,
+      "timeFlowRatio": 18,
+      "resourceOutputRate": 24,
+      "earthSpirit": {
+        "formed": false,
+        "approval": 0
+      },
+      "disasterCountdown": 6,
+      "nextDisasterType": "地火",
+      "createdAt": 180,
+      "accessible": true
+    },
+    "storyAnchorState": {
+      "version": "v0.8.0-b3",
+      "fateState": "intact",
+      "currentAnchorId": "dream_shadow_sect",
+      "anchorResults": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "active",
+          "canonDeviation": 8,
+          "summary": "玩家获得梦境与影宗线索候选，但不能无代价破解影宗全局。"
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "unseen",
+          "canonDeviation": 0
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "unseen",
+          "canonDeviation": 0
+        }
+      },
+      "anchorRecords": {
+        "qingmao_mountain": {
+          "anchorId": "qingmao_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "青茅山"
+        },
+        "shang_clan_city": {
+          "anchorId": "shang_clan_city",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "商家城"
+        },
+        "san_wang_mountain": {
+          "anchorId": "san_wang_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "三王山"
+        },
+        "northern_plains_wangting": {
+          "anchorId": "northern_plains_wangting",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "王庭"
+        },
+        "yi_tian_mountain": {
+          "anchorId": "yi_tian_mountain",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "义天山"
+        },
+        "reverse_flow_river": {
+          "anchorId": "reverse_flow_river",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "逆流河"
+        },
+        "dream_shadow_sect": {
+          "anchorId": "dream_shadow_sect",
+          "status": "active",
+          "firstSeenTurn": 101,
+          "lastUpdatedTurn": 101,
+          "entryIssues": [],
+          "canonDeviation": 8,
+          "summary": "梦境影宗线索"
+        },
+        "fate_war": {
+          "anchorId": "fate_war",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "宿命战"
+        },
+        "venerable_chessboard": {
+          "anchorId": "venerable_chessboard",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "尊者博弈"
+        },
+        "heavenly_court_late_chapter": {
+          "anchorId": "heavenly_court_late_chapter",
+          "status": "locked",
+          "canonDeviation": 0,
+          "summary": "天庭末章"
+        }
+      },
+      "ifBranchVectors": [],
+      "heavenWillLedger": {
+        "attention": 22,
+        "correction": 14,
+        "rejection": 8,
+        "ambiguity": 50,
+        "lastTriggers": []
+      },
+      "karmicDebtLedger": {
+        "totalDebt": 12,
+        "byKind": {
+          "dream_contact": 7,
+          "shadow_sect_contact": 5
+        },
+        "pendingReturns": []
+      },
+      "storyEventCandidates": [
+        {
+          "id": "b3_dream_shadow_clue",
+          "anchorId": "dream_shadow_sect",
+          "type": "rumor",
+          "title": "梦境影宗线索",
+          "summary": "玩家获得梦境与影宗线索候选，但不能无代价破解影宗全局。",
+          "risk": "medium",
+          "source": "engine",
+          "engineValidation": "accepted",
+          "validationIssues": [],
+          "createdTurn": 101,
+          "chapterId": "dream_shadow_sect",
+          "domain": "南疆",
+          "resolutionHint": "可接入蛊虫剧情表现化、修行压力或侧支战斗。"
+        }
+      ],
+      "ifBranchCandidates": [],
+      "canonAnchorPressureLog": [],
+      "lastResolutionSteps": [
+        {
+          "id": "b3_dream_step",
+          "kind": "candidate",
+          "anchorId": "dream_shadow_sect",
+          "turn": 101,
+          "message": "梦境影宗线索候选已登记，并写入因果债。",
+          "severity": "warning"
+        }
+      ]
+    }
+  }
+}

@@ -30,6 +30,11 @@ describe('v0.7.0 current-format test save fixtures', () => {
       expect(state.cultivationState?.version, `${file} should include v0.8.0-b2 cultivation state`).toBe('v0.8.0-b2');
       expect(Array.isArray(state.cultivationState?.breakthroughHistory), `${file} should include breakthrough history`).toBe(true);
       expect(Array.isArray(state.cultivationState?.calamityLedger), `${file} should include calamity ledger`).toBe(true);
+      expect(state.storyAnchorState?.version, `${file} should include v0.8.0-b3 story anchor state`).toBe('v0.8.0-b3');
+      expect(['intact', 'fractured', 'destroyed'], `${file} should keep canonical fate state`).toContain(state.storyAnchorState?.fateState);
+      expect(state.storyAnchorState?.anchorResults?.fate_war, `${file} should include fate war anchor result`).toBeTruthy();
+      expect(Array.isArray(state.storyAnchorState?.ifBranchVectors), `${file} should include IF vector ledger`).toBe(true);
+      expect(state.flags?.fateState, `${file} should mirror fateState for old prompt compatibility`).toBe(state.storyAnchorState?.fateState);
     }
   });
 

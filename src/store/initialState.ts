@@ -13,6 +13,7 @@
 
 import type { ScreenState, GameMode, PipelinePhase } from './slices/uiSlice';
 import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
+import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 
 export const INITIAL_STATE = {
   // ─── playerSlice ───
@@ -60,6 +61,7 @@ export const INITIAL_STATE = {
   feedingCredits: {} as Record<string, number>,
   feedingDiscountProgress: {} as Record<string, number>,
   cultivationState: createDefaultCultivationState(),
+  storyAnchorState: createDefaultStoryAnchorState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -335,4 +337,4 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  */
-export const SAVE_FORMAT_VERSION = 16;
+export const SAVE_FORMAT_VERSION = 17;

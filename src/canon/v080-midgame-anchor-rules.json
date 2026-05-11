@@ -1,0 +1,140 @@
+{
+  "version": "v0.8.0-b3",
+  "sourceRegistries": {
+    "anchors": "canon-anchor-registry.json",
+    "ifAxes": "fate-branch-matrix.json"
+  },
+  "fateStates": ["intact", "fractured", "destroyed"],
+  "modes": ["canon", "if"],
+  "coveredAnchorIds": [
+    "yi_tian_mountain",
+    "reverse_flow_river",
+    "dream_shadow_sect",
+    "fate_war"
+  ],
+  "futureAnchorIds": [
+    "venerable_chessboard",
+    "heavenly_court_late_chapter"
+  ],
+  "forbiddenRuntimeAssertions": [
+    "十转",
+    "永生蛊",
+    "真正永生",
+    "玩家获得宿命蛊",
+    "玩家炼成永生蛊",
+    "玩家真正永生",
+    "玩家稳定掌握十转境界",
+    "普通战斗击杀尊者"
+  ],
+  "canonAllowedActionLabels": [
+    "旁观",
+    "侧翼战场",
+    "救援",
+    "撤退",
+    "关系变化",
+    "局部战果",
+    "线索发现",
+    "资源线索",
+    "战后声望",
+    "阵营见证"
+  ],
+  "candidateLimits": {
+    "maxStoryCandidates": 80,
+    "maxIfCandidates": 80,
+    "maxPressureLog": 80,
+    "maxResolutionSteps": 20
+  },
+  "anchorRules": {
+    "yi_tian_mountain": {
+      "displayName": "义天山",
+      "stageOrder": ["rumor", "entry", "side_battle", "shadow_pressure", "aftermath"],
+      "entry": {
+        "minRealm": 5,
+        "allowedModes": ["canon", "if"],
+        "recommendedCanonRole": "侧翼战场、梦境试炼、局部阵营选择、线索发现",
+        "recommendedIfRole": "允许站队偏移，但必须登记 faction_shift / resource_control / venerable_balance / heaven_will_debt 之一"
+      },
+      "canonSafeMutations": ["侧支牺牲", "局部阵营选择", "线索发现", "梦境试炼"],
+      "forbiddenMutations": ["玩家夺取至尊仙胎主线位置", "提前公开影宗全局真相"],
+      "allowedIfAxes": ["faction_shift", "resource_control", "venerable_balance", "heaven_will_debt"],
+      "heavenWillTriggers": ["fate_mutation", "venerable_contact", "inheritance_seized"],
+      "karmicDebtKinds": ["shadow_sect_contact", "dream_contact", "faction_betrayal"],
+      "linkedSystems": ["battlefield", "cultivation", "narrative_gu_affordance"]
+    },
+    "reverse_flow_river": {
+      "displayName": "逆流河",
+      "stageOrder": ["rumor", "entry_pressure", "parallel_pursuit", "river_trial", "retreat_or_witness"],
+      "entry": {
+        "minRealm": 6,
+        "allowedModes": ["canon", "if"],
+        "recommendedCanonRole": "个人试炼、平行追击、情报获得、撤退或失败",
+        "recommendedIfRole": "允许护宿命/毁宿命压力，但不能替代方源核心名场面"
+      },
+      "canonSafeMutations": ["个人试炼", "平行追击", "情报获得", "撤退或失败"],
+      "forbiddenMutations": ["替代方源完成逆流河核心名场面", "直接接触宿命蛊本体"],
+      "allowedIfAxes": ["break_fate", "protect_fate", "heaven_will_debt"],
+      "heavenWillTriggers": ["fate_mutation", "rescue", "chaos_contact"],
+      "karmicDebtKinds": ["river_trial", "fate_pressure", "retreat_cost"],
+      "linkedSystems": ["battlefield", "cultivation", "narrative_gu_affordance"]
+    },
+    "dream_shadow_sect": {
+      "displayName": "梦境与影宗",
+      "stageOrder": ["rumor", "dream_contact", "soul_trade", "shadow_pressure", "side_battle"],
+      "entry": {
+        "minRealm": 6,
+        "allowedModes": ["canon", "if"],
+        "recommendedCanonRole": "梦境探索、魂道交易、线索传闻、侧支战斗",
+        "recommendedIfRole": "允许势力偏移和尊者平衡压力，但必须产生天意或因果债"
+      },
+      "canonSafeMutations": ["梦境探索", "魂道交易", "线索传闻", "侧支战斗"],
+      "forbiddenMutations": ["无代价破解影宗全局", "随意改变幽魂级大局"],
+      "allowedIfAxes": ["faction_shift", "venerable_balance", "resource_control", "heaven_will_debt"],
+      "heavenWillTriggers": ["venerable_contact", "chaos_contact", "inheritance_seized"],
+      "karmicDebtKinds": ["dream_contact", "shadow_sect_contact", "soul_path_debt"],
+      "linkedSystems": ["battlefield", "cultivation", "narrative_gu_affordance"]
+    },
+    "fate_war": {
+      "displayName": "宿命战",
+      "stageOrder": ["rumor", "side_entry", "wing_battle", "fate_pressure", "aftermath"],
+      "entry": {
+        "minRealm": 6,
+        "allowedModes": ["canon", "if"],
+        "recommendedCanonRole": "侧翼战斗、救援或撤退、战后声望、阵营见证",
+        "recommendedIfRole": "允许护宿命/毁宿命/势力偏移候选，但不得获得宿命蛊或替代核心摧毁者"
+      },
+      "canonSafeMutations": ["侧翼战斗", "救援或撤退", "战后声望", "阵营见证"],
+      "forbiddenMutations": ["玩家替代方源摧毁宿命蛊", "玩家获得宿命蛊", "龙公无代价投降玩家"],
+      "allowedIfAxes": ["protect_fate", "break_fate", "faction_shift", "venerable_balance", "heaven_will_debt"],
+      "heavenWillTriggers": ["fate_mutation", "venerable_contact", "rescue"],
+      "karmicDebtKinds": ["fate_pressure", "heavenly_court_attention", "faction_betrayal"],
+      "linkedSystems": ["battlefield", "cultivation", "narrative_gu_affordance"]
+    }
+  },
+  "ifAxisCosts": {
+    "protect_fate": ["heaven_will_attention", "righteous_entanglement", "freedom_loss"],
+    "break_fate": ["heaven_will_rejection", "chaos_debt", "faction_hostility"],
+    "faction_shift": ["relationship_cost", "betrayal_memory", "resource_pressure"],
+    "npc_survival": ["heaven_will_correction", "karmic_return", "replacement_death_risk"],
+    "resource_control": ["faction_hostility", "heaven_will_attention", "market_trace"],
+    "venerable_balance": ["venerable_attention", "chaos_debt", "long_tail_pressure"],
+    "heaven_will_debt": ["heaven_will_rejection", "future_calamity_pressure", "ambiguity_loss"]
+  },
+  "enginePolicy": {
+    "deepSeekAllowed": [
+      "story_event_candidates.add",
+      "if_branch_candidates.add",
+      "canon_anchor_pressure.add"
+    ],
+    "deepSeekForbidden": [
+      "fateState",
+      "anchorResults",
+      "keyNpcDeath",
+      "endingOutcome",
+      "resourceRewards",
+      "battleVictory",
+      "immortalityConclusion"
+    ],
+    "canonModeDecision": "fixed anchors are side-line only; core mutation is blocked or redirected",
+    "ifModeDecision": "legal axes create IfBranchVector and must also create heaven-will, karmic, relationship, or faction cost"
+  }
+}

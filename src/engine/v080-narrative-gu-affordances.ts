@@ -481,6 +481,11 @@ export function buildSelectedChoiceNarrativeGuContext(store: any, choiceId: stri
   const guLines = affordances.length > 0
     ? affordances.map(affordance => `- ${affordance.label}: ${affordance.status}; ${affordance.reason}; risk=${affordance.risk}`).join('\n')
     : '- 本次选择未绑定已登记蛊虫剧情用途。';
+  const rawAnchorTags = (choice as any).anchorTags ?? (choice as any).anchor_tags ?? [];
+  const anchorTags = Array.isArray(rawAnchorTags) ? rawAnchorTags : [rawAnchorTags].filter(Boolean);
+  const anchorLines = anchorTags.length > 0
+    ? anchorTags.map((tag: any) => `- ${tag.label || tag.kind}: ${tag.anchorId || 'free'}; ${tag.reason || '等待本地 storyAnchorState 校验'}; severity=${tag.severity || 'medium'}`).join('\n')
+    : '- 本次选择未绑定剧情锚点标签。';
   return [
     '【玩家本轮选择详情】',
     `choiceId=${choice.id}`,
@@ -489,6 +494,8 @@ export function buildSelectedChoiceNarrativeGuContext(store: any, choiceId: stri
     `choiceRiskNote=${choice.risk_note}`,
     '绑定蛊虫剧情用途：',
     guLines,
+    '绑定剧情锚点/IF 信息：',
+    anchorLines,
     '下一轮叙事必须承认玩家选择内容；若蛊虫用途不可执行，只能写为寻找线索、尝试失败或引发风险，不能直接给正式收益。',
   ].join('\n');
 }

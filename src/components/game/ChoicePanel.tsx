@@ -64,6 +64,12 @@ function getChoiceGuAffordances(choice: Choice) {
   return Array.isArray(raw) ? raw : [raw];
 }
 
+function getChoiceAnchorTags(choice: Choice) {
+  const raw = (choice as any).anchorTags ?? (choice as any).anchor_tags;
+  if (!raw) return [];
+  return Array.isArray(raw) ? raw : [raw];
+}
+
 function getGuAffordanceTone(status: string | undefined) {
   if (status === 'available') return 'border-rg-jade-400/40 text-rg-jade-300 bg-rg-jade-600/10';
   if (status === 'missing') return 'border-rg-gold/35 text-rg-gold bg-rg-gold/10';
@@ -76,6 +82,14 @@ function getGuAffordanceStatusLabel(status: string | undefined) {
   if (status === 'missing') return '缺少蛊虫';
   if (status === 'forbidden') return '禁忌门槛';
   return '待校验';
+}
+
+function getAnchorTagTone(kind: string | undefined) {
+  if (kind === 'canon_side') return 'border-rg-gold/35 text-rg-gold bg-rg-gold/10';
+  if (kind === 'if_deviation') return 'border-rg-jade-400/35 text-rg-jade-300 bg-rg-jade-600/10';
+  if (kind === 'heaven_pressure') return 'border-rg-blood-400/45 text-rg-blood-300 bg-rg-blood-600/10';
+  if (kind === 'forbidden_block') return 'border-rg-blood-500/60 text-rg-blood-200 bg-rg-blood-700/20';
+  return 'border-rg-ink-300/25 text-rg-paper-200/65 bg-rg-ink-700/70';
 }
 
 export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelProps) {
@@ -211,6 +225,8 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
             const style = RISK_STYLES[choice.risk];
             const guAffordances = getChoiceGuAffordances(choice);
             const primaryGuAffordance = guAffordances[0];
+            const anchorTags = getChoiceAnchorTags(choice);
+            const primaryAnchorTag = anchorTags[0];
             return (
               <motion.div key={choice.id} className="relative group" variants={choiceItem}>
                 <motion.button
@@ -240,6 +256,17 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                         <span className="truncate">{primaryGuAffordance.sourceName}</span>
                       </motion.span>
                     )}
+                    {primaryAnchorTag && (
+                      <motion.span
+                        className={`inline-flex max-w-full items-center rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${getAnchorTagTone(primaryAnchorTag.kind)}`}
+                        initial={{ opacity: 0, y: 3 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                        data-testid={`choice-anchor-tag-${primaryAnchorTag.kind || 'unknown'}`}
+                      >
+                        <span className="truncate">{primaryAnchorTag.label || '剧情锚点'}</span>
+                      </motion.span>
+                    )}
                   </div>
                   {/* 选项文本 */}
                   <p className="text-rg-paper-100 text-sm font-button leading-relaxed">
@@ -259,6 +286,15 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
                       {guAffordances.slice(0, 2).map((affordance: any, index: number) => (
                         <p key={`${affordance.sourceName}-${affordance.utilityId}-${index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
                           {getGuAffordanceStatusLabel(affordance.status)}：{affordance.label || affordance.sourceName}；{affordance.reason || affordance.riskHint}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                  {anchorTags.length > 0 && (
+                    <div className="mt-2 border-t border-rg-ink-300/20 pt-2">
+                      {anchorTags.slice(0, 3).map((tag: any, index: number) => (
+                        <p key={`${tag.kind}-${tag.anchorId || index}`} className="text-[11px] text-rg-paper-200/75 font-panel leading-relaxed">
+                          {tag.label || '剧情锚点'}：{tag.reason || tag.anchorId || '等待本地锚点引擎校验'}
                         </p>
                       ))}
                     </div>
