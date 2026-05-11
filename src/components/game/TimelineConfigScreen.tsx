@@ -63,7 +63,6 @@ const COVERAGE_FILTER_OPTIONS: Array<{ value: CoverageStatusFilter; label: strin
   { value: 'creation_only', label: '创建时' },
   { value: 'planned_needs_system', label: '待系统' },
   { value: 'narrative_only', label: '叙事' },
-  { value: 'needs_downgrade', label: '降级' },
 ];
 
 function CoverageStatusFilterBar({
@@ -109,8 +108,12 @@ function renderCoverageRows(
   return (
     <div className="mt-2 flex flex-wrap gap-1">
       {visibleRows.slice(0, 5).map((row, idx) => (
-        <span key={`${row.status}-${idx}`} className={`rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${COVERAGE_STATUS_CLASS[row.status]}`}>
-          {COVERAGE_STATUS_LABELS[row.status]}：{row.claim}
+        <span
+          key={`${row.status}-${idx}`}
+          title={[row.reason, row.ownerPhase ? `归属：${row.ownerPhase}` : '', row.nextStep].filter(Boolean).join('\n')}
+          className={`rounded-sm border px-1.5 py-0.5 text-[10px] font-panel ${COVERAGE_STATUS_CLASS[row.status]}`}
+        >
+          {COVERAGE_STATUS_LABELS[row.status]}{row.ownerPhase ? `·${row.ownerPhase}` : ''}：{row.claim}
         </span>
       ))}
     </div>

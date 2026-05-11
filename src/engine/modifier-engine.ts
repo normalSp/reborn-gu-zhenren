@@ -1,6 +1,7 @@
 import modifierRegistry from '../canon/modifier-registry.json';
 import { INITIAL_TALENTS } from '../data/talents';
 import { P4_TALENTS } from '../data/talents-p4';
+import { classifyPromiseEffectClaim } from './v080-promise-effect-coverage';
 
 export type ModifierSourceType = 'faction' | 'talent' | 'item' | 'secret_realm' | 'runtime';
 
@@ -106,6 +107,9 @@ export interface ModifierCoverageRow {
   claim: string;
   status: ModifierCoverageStatus;
   evidence: string;
+  ownerPhase?: string;
+  reason?: string;
+  nextStep?: string;
 }
 
 type ModifierRecord = {
@@ -261,6 +265,7 @@ export function getModifierCoverageRowsForSource(
 }
 
 function classifyDisplayClaim(claim: string, sourceType: ModifierSourceType | 'faction' | 'talent' | 'item', sourceId: string): ModifierCoverageRow {
+  return classifyPromiseEffectClaim(claim, sourceType, sourceId) as ModifierCoverageRow;
   const creationOnly = /初始|天赋点|资质|体魄|心智|气运|寿命上限|资源×|资源x|资源X|保底/.test(claim);
   if (creationOnly) {
     return {

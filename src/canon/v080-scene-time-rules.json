@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c1.1",
+    "purpose": "Scene time, scene lock, combat intent, and resource ecology gates before the c2 global UX pass."
+  },
+  "anchorChapterMap": {
+    "qingmaoshan": "qingmao_mountain",
+    "qingmao_start": "qingmao_mountain",
+    "start_qingmaoshan_guyue": "qingmao_mountain",
+    "shangdu": "shang_clan_city",
+    "shang_clan_city": "shang_clan_city",
+    "shanglu_survival": "shang_clan_city",
+    "san_wang_mountain": "san_wang_mountain",
+    "three_kings": "san_wang_mountain",
+    "wangting": "northern_plains_wangting",
+    "northern_plains_wangting": "northern_plains_wangting",
+    "yi_tian_mountain": "yi_tian_mountain",
+    "reverse_flow_river": "reverse_flow_river",
+    "dream_shadow_sect": "dream_shadow_sect",
+    "fate_war": "fate_war",
+    "venerable_chessboard": "venerable_chessboard",
+    "heavenly_court_late_chapter": "heavenly_court_late_chapter"
+  },
+  "locationPolicies": {
+    "safe": {
+      "label": "安全据点",
+      "allowedActions": ["dialogue", "trade", "cultivation", "merchant", "scout"],
+      "blockedActions": ["ambush", "wild_gather", "hostile_combat"]
+    },
+    "caravan": {
+      "label": "商路/车队",
+      "allowedActions": ["dialogue", "trade", "scout", "wild_gather", "hostile_combat", "ambush"],
+      "blockedActions": []
+    },
+    "field": {
+      "label": "野外",
+      "allowedActions": ["scout", "wild_gather", "hostile_combat", "ambush", "cultivation"],
+      "blockedActions": ["trade"]
+    },
+    "wild": {
+      "label": "险地",
+      "allowedActions": ["scout", "wild_gather", "hostile_combat", "ambush"],
+      "blockedActions": ["trade", "safe_cultivation"]
+    },
+    "aperture": {
+      "label": "仙窍/福地",
+      "allowedActions": ["cultivation", "aperture_management", "calamity"],
+      "blockedActions": ["wild_gather", "ordinary_trade"]
+    }
+  },
+  "resourceEcologyGates": [
+    {
+      "id": "mortal-cannot-trade-treasure-yellow-heaven",
+      "matchAny": ["宝黄天", "treasure yellow heaven", "TYH"],
+      "minRealmGrand": 6,
+      "onFail": "block",
+      "reason": "宝黄天是蛊仙层级贸易；凡人只能听闻传闻或获得线索。"
+    },
+    {
+      "id": "immortal-material-gathering-gate",
+      "matchAny": ["仙材", "immortal material", "福地资源", "洞天资源"],
+      "minRealmGrand": 6,
+      "onFail": "downgrade_to_rumor",
+      "reason": "低境界不能稳定采集仙材，只能获得传闻、残片或危险预兆。"
+    },
+    {
+      "id": "sect-core-resource-gate",
+      "matchAny": ["宗门核心", "天庭资源", "尊者遗藏", "宿命蛊", "永生蛊", "十转"],
+      "minRealmGrand": 9,
+      "onFail": "block",
+      "reason": "核心资源、宿命蛊、永生蛊、十转不得成为普通运行时奖励。"
+    }
+  ],
+  "sceneLocks": [
+    {
+      "id": "dialogue-lock",
+      "whenFlag": "activeDialogue",
+      "blocks": ["wild_gather", "ambush", "hostile_combat"],
+      "reason": "对话场景锁定时不能切出到无关野外行动或战斗。"
+    },
+    {
+      "id": "trade-lock",
+      "whenAnyFlag": ["activeMerchant", "merchantPanelOpen"],
+      "blocks": ["wild_gather", "ambush", "hostile_combat"],
+      "reason": "交易场景锁定时只允许完成交易、对话或离开。"
+    },
+    {
+      "id": "combat-lock",
+      "whenAnyState": ["duelState", "squadCombatState", "battlefieldCombatState"],
+      "blocks": ["dialogue", "trade", "wild_gather", "scout", "cultivation"],
+      "reason": "战斗结算中不能并行开启其他行动。"
+    }
+  ]
+}

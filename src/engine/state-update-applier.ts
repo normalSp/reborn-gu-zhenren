@@ -5,6 +5,7 @@ import { applyDaoHeartEvent, getDaoHeartEventPolicy, getReputationEventPolicy, t
 import { canApplyAttributeMutation, getAttributeMutationPolicy, type AttributeMutationSource } from './attribute-mutation-policy';
 import { getGuUseEntry, resolveSceneGatedGuUseSuggestion, type GuUseTarget } from './gu-use-registry';
 import { validateNarrativeGuUseSuggestion } from './v080-narrative-gu-affordances';
+import { validateResourceEcologyGate } from './v080-scene-time-engine';
 import economyRaw from '../canon/economy.json';
 import chaptersRaw from '../canon/chapters.json';
 
@@ -255,7 +256,29 @@ export function applyStateUpdate(update: StateUpdate): void {
     const store2 = useStore.getState() as any;
     if (typeof store2.addMaterial === 'function') {
       for (const [matName, qty] of Object.entries(update.materials.add)) {
-        if (qty > 0) store2.addMaterial(matName, qty);
+        if (Number(qty) <= 0) continue;
+        const resourceGate = validateResourceEcologyGate(store2, 'immortal_resource_gather', matName);
+        if (resourceGate.disposition !== 'allow') {
+          if (resourceGate.disposition === 'downgrade_to_rumor') {
+            const currentRumors = Array.isArray(store2.flags?.aiRumorDiscoveries)
+              ? [...store2.flags.aiRumorDiscoveries]
+              : [];
+            currentRumors.push({
+              type: 'resource_rumor',
+              name: matName,
+              note: resourceGate.reason,
+              source: 'v080-scene-time-resource-gate',
+            });
+            store2.setFlag?.('aiRumorDiscoveries', currentRumors);
+          }
+          store2.addGameLog?.('pipeline', `AI材料写入已拦截：${matName}。${resourceGate.reason}`, {
+            material: matName,
+            disposition: resourceGate.disposition,
+            reason: resourceGate.reason,
+          });
+          continue;
+        }
+        store2.addMaterial(matName, Number(qty));
       }
     }
   }

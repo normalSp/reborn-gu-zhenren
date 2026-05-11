@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "version": "v0.8.0-c1.1",
+    "purpose": "Release-facing truth source for displayed promise/effect coverage. UI text may advertise an effect only when it can be explained here or by modifier-registry runtime consumers.",
+    "releasePolicy": {
+      "allowNeedsDowngrade": false,
+      "plannedRowsMustExplainOwner": true
+    }
+  },
+  "explicitClaims": [
+    {
+      "id": "creation-attribute-resource",
+      "sourceTypes": ["talent", "faction"],
+      "matchAny": ["初始", "天赋点", "资质", "体魄", "心智", "气运", "资源x", "资源X", "资源×", "保底"],
+      "status": "creation_only",
+      "evidence": "timelineSlice/CharacterCreate applies creation-only setup",
+      "ownerPhase": "v0.7.1-polish",
+      "reason": "角色创建阶段一次性结算，不属于运行时循环。"
+    },
+    {
+      "id": "refine-feeding-merchant-runtime",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["炼蛊", "炼化", "蛊材消耗", "喂养", "商会价格", "出售价", "交易"],
+      "status": "runtime_active",
+      "evidence": "modifier-engine + refine/feeding/merchant consumers",
+      "ownerPhase": "v0.7.1-polish",
+      "reason": "已有结构化 modifier effect 与对应消费者。"
+    },
+    {
+      "id": "cultivation-breakthrough-calamity-runtime",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["修行", "突破", "升仙", "天劫", "地灾", "灾劫", "窍壁", "仙窍", "福地", "洞天"],
+      "status": "runtime_active",
+      "evidence": "v080-cultivation-calamity-engine + modifier-engine cultivation consumers",
+      "ownerPhase": "v0.8.0-b2",
+      "reason": "修行/突破/升仙/灾劫已由本地 b2 引擎结算；洞天类承诺在 b2 只作为边界提示，不能直接生成洞天。"
+    },
+    {
+      "id": "battle-ambush-formation-runtime",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["战斗", "先手", "伏击", "暗杀", "首击", "伤害", "防御", "命中", "逃脱", "阵法", "破阵", "杀招"],
+      "status": "runtime_active",
+      "evidence": "v080 battlefield combat engines + battlefield-combat-rules",
+      "ownerPhase": "v0.8.0-a1/b1",
+      "reason": "凡战、群像、伏击、阵位、撤退已由本地战斗引擎输出 BattleResolutionStep。"
+    },
+    {
+      "id": "field-action-runtime",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["采集", "鉴定", "侦察", "陷阱", "警戒", "野外", "水产", "山地移动", "隐匿", "潜行", "兽类亲和"],
+      "status": "runtime_active",
+      "evidence": "field-action + activity-availability + v080-scene-time-engine",
+      "ownerPhase": "v0.8.0-c1.1",
+      "reason": "普通采集/侦察/陷阱/撤退辅助已有本地结算；高阶资源由 c1.1 资源生态底线降级或阻断。"
+    },
+    {
+      "id": "story-anchor-ending-runtime",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["宿命", "天意", "因果", "名场面", "正史", "IF", "结局", "道心", "势力地位", "声望"],
+      "status": "runtime_active",
+      "evidence": "storyAnchorState + endingState + dao-reputation-policy",
+      "ownerPhase": "v0.8.0-b3/c1",
+      "reason": "锚点、宿命/天意/因果与终局框架已持久化并由本地引擎校验。"
+    },
+    {
+      "id": "origin-lifebound-pre-c2",
+      "sourceTypes": ["talent", "faction"],
+      "matchAny": ["身份", "来历", "本命蛊", "血脉相融", "道心倾向"],
+      "status": "planned_needs_system",
+      "evidence": "v0.8.0-c1.2 planned origin/lifebound closure",
+      "ownerPhase": "v0.8.0-c1.2",
+      "reason": "需要出身深线与本命蛊成长协议提供完整解释。",
+      "nextStep": "Implement OriginDeepLineProfile and LifeboundGuGrowthProfile before c2."
+    },
+    {
+      "id": "narrative-text-only",
+      "sourceTypes": ["talent", "faction", "item"],
+      "matchAny": ["性格", "风格", "倾向", "名声", "关系", "传闻"],
+      "status": "narrative_only",
+      "evidence": "context-builder narrative constraints",
+      "ownerPhase": "v0.7.1-polish",
+      "reason": "只进入提示词和文本一致性约束，不产生直接数值。"
+    }
+  ],
+  "plannedBacklog": [
+    {
+      "id": "front-midgame-a1-a4-full-content",
+      "ownerPhase": "v0.8.0-rc",
+      "reason": "青茅山、商家城、三王山、王庭完整长线内容不阻塞 c2；c1.2 只补锚点映射和边界协议。"
+    },
+    {
+      "id": "full-high-resource-economy",
+      "ownerPhase": "v0.8.0-rc",
+      "reason": "完整黑市/宝黄天/福地资源经济后置；c1.1 只做低境界阻断和降级。"
+    }
+  ]
+}

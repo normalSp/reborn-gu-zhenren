@@ -29,6 +29,43 @@ export interface GameTime {
   season: 'spring' | 'summer' | 'autumn' | 'winter';
 }
 
+export type ActionTimePolicy =
+  | 'dialogue'
+  | 'trade'
+  | 'merchant'
+  | 'cultivation'
+  | 'scout'
+  | 'wild_gather'
+  | 'hostile_combat'
+  | 'ambush'
+  | 'aperture_management'
+  | 'calamity'
+  | 'treasure_yellow_heaven'
+  | 'immortal_resource_gather'
+  | 'ordinary_trade'
+  | 'safe_cultivation';
+
+export type SceneLockState = 'open' | 'dialogue_locked' | 'trade_locked' | 'combat_locked';
+export type CombatIntent = 'none' | 'duel' | 'squad' | 'battlefield' | 'ambush' | 'hostile_challenge';
+export type SceneLocationContext = 'safe' | 'caravan' | 'field' | 'wild' | 'aperture';
+
+export interface SceneTimeContext {
+  version: 'v0.8.0-c1.1';
+  currentChapterId: string | null;
+  currentCanonAnchorId: string | null;
+  domain: string;
+  period: string;
+  locationContext: SceneLocationContext;
+  locationLabel: string;
+  sceneLockState: SceneLockState;
+  lockReasons: string[];
+  combatIntent: CombatIntent;
+  allowedActions: ActionTimePolicy[];
+  blockedActions: ActionTimePolicy[];
+  resourceWarnings: string[];
+  pendingNarrativeSettlement: string[];
+}
+
 export interface ImmortalTime {
   inner_year: number;
   inner_month: number;

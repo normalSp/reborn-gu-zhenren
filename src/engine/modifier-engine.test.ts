@@ -156,7 +156,8 @@ describe('modifier-engine', () => {
     ]);
 
     expect(rows.some((row) => row.status === 'runtime_active' && row.claim.includes('喂养'))).toBe(true);
-    expect(rows.some((row) => row.status === 'planned_needs_system' && row.claim.includes('采集'))).toBe(true);
+    expect(rows.some((row) => row.status === 'runtime_active' && row.claim.includes('采集'))).toBe(true);
+    expect(rows.some((row) => row.status === 'needs_downgrade')).toBe(false);
   });
 
   it('applies P2 subsystem modifier consumers', () => {
