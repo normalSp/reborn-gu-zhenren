@@ -6,7 +6,6 @@ import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow, type MaterialSourceTag } from '../../engine/material-source-audit';
 import { getLifeboundGuGrowthProfile } from '../../engine/v080-origin-lifebound-closure';
 import {
-  canUseFromNormalButton,
   describeTargetRule,
   getGuUseEntry,
   isGuUseTargetAllowed,
@@ -179,11 +178,37 @@ export function GuInventoryPanel() {
     setSellConfirm(null);
   };
 
-  const doUseGu = (guId: string, target: GuUseTarget = { type: 'self', id: 'player', name: playerName || '自己' }) => {
-    const res = (useStore.getState() as any).useGu?.(guId, target);
-    setUseMsg(res?.message || '这只蛊暂未开放主动使用。');
+  const requestNarrativeGuUse = (
+    gu: typeof allGu[number],
+    entry: GuUseRegistryEntry,
+    target: GuUseTarget = { type: 'self', id: 'player', name: playerName || '自己' },
+  ) => {
+    const store = useStore.getState() as any;
+    const targetName = target.name || target.id || target.type;
+    const res = store.spendSceneAp?.(
+      1,
+      'other',
+      `剧情用蛊意图：${gu.name} -> ${targetName}`,
+      'v0.8.0-c2.7:gu-narrative-intent',
+      {
+        guId: gu.id,
+        guName: gu.name,
+        target,
+        targetRule: entry.targetRule,
+        effects: entry.effects?.map(effect => effect.id || effect.description).filter(Boolean).slice(0, 4) || [],
+      },
+      ['用蛊结果需由剧情场景、本地校验和下一轮叙事共同承接'],
+    );
+    if (res?.success === false) {
+      setUseMsg(res.message || '当前场景 AP 不足，不能登记用蛊意图。');
+      setTargetPicker(null);
+      setTimeout(() => setUseMsg(''), 2600);
+      return;
+    }
+    store.prepareNarrativeAdvanceIntent?.('gu_use_intent');
+    setUseMsg(res?.message || `已登记 ${gu.name} 的剧情用蛊意图，推进剧情时承接。`);
     setTargetPicker(null);
-    setTimeout(() => setUseMsg(''), 2200);
+    setTimeout(() => setUseMsg(''), 2600);
   };
 
   if (allGu.length === 0) {
@@ -402,28 +427,27 @@ export function GuInventoryPanel() {
                 {(() => {
                   const useEntry = getGuUseEntry(gu.name);
                   if (!shouldShowUseButton(useEntry)) return null;
-                  const canClick = canUseFromNormalButton(useEntry);
                   const options = getTargetOptions(useEntry);
-                  const usable = canClick && options.length > 0;
+                  const usable = options.length > 0;
                   return (
                     <button
                       onClick={() => {
                         if (!usable) return;
                         if (options.length === 1) {
-                          doUseGu(gu.id, options[0]);
+                          requestNarrativeGuUse(gu, useEntry, options[0]);
                           return;
                         }
                         setTargetPicker({ guId: gu.id, guName: gu.name, entry: useEntry });
                       }}
                       disabled={!usable}
-                      title={usable ? `${describeTargetRule(useEntry)}：${useEntry.effects[0]?.description || ''}` : '需要剧情场景触发'}
+                      title={usable ? `${describeTargetRule(useEntry)}；登记剧情用蛊意图，不会立即改写世界状态。` : '需要剧情场景触发'}
                       className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
                         usable
                           ? 'border-rg-gold/25 text-rg-gold/75 hover:bg-rg-gold/10'
                           : 'border-rg-ink-300/15 text-rg-paper-200/25 cursor-not-allowed'
                       }`}
                     >
-                      {usable ? (options.length > 1 ? '目标' : '使用') : '剧情'}
+                      {usable ? (options.length > 1 ? '入剧情' : '剧情') : '剧情'}
                     </button>
                   );
                 })()}
@@ -476,7 +500,10 @@ export function GuInventoryPanel() {
               {getTargetOptions(targetPicker.entry).map(target => (
                 <button
                   key={`${target.type}:${target.id || target.name || 'target'}`}
-                  onClick={() => doUseGu(targetPicker.guId, target)}
+                  onClick={() => {
+                    const targetGu = allGu.find(gu => gu.id === targetPicker.guId);
+                    if (targetGu) requestNarrativeGuUse(targetGu, targetPicker.entry, target);
+                  }}
                   className="text-left border border-rg-ink-300/15 rounded-sm px-3 py-2 bg-rg-ink-800/40 hover:border-rg-gold/35 hover:bg-rg-gold/10 transition-micro"
                 >
                   <div className="text-rg-paper-100 text-xs font-panel truncate">

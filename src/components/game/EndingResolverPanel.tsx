@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useStore } from '../../store';
 
@@ -39,6 +39,7 @@ function Meter({ label, value }: { label: string; value: number }) {
 
 export function EndingResolverPanel() {
   const reduceMotion = useReducedMotion();
+  const [showDetails, setShowDetails] = useState(false);
   const endingState = useStore(s => (s as any).endingState);
   const refreshEndingCandidatesAction = useStore(s => (s as any).refreshEndingCandidatesAction);
   const commitBestEndingCandidateAction = useStore(s => (s as any).commitBestEndingCandidateAction);
@@ -101,8 +102,18 @@ export function EndingResolverPanel() {
         >
           结束此局 / 收束因果
         </button>
+        <button
+          type="button"
+          onClick={() => setShowDetails(value => !value)}
+          className="rg-toolbar-btn rg-focus-ring ml-2 mt-3 px-3 py-1.5 text-xs"
+          data-testid="ending-toggle-details"
+          aria-expanded={showDetails}
+        >
+          {showDetails ? '收起详情' : '查看详情'}
+        </button>
       </div>
 
+      <div className={showDetails ? '' : 'hidden'} data-testid="ending-detail-body">
       {evidence && (
         <section className="mb-4 grid gap-2 sm:grid-cols-2" data-testid="ending-evidence">
           <div className="rg-explain-card p-3">
@@ -203,6 +214,7 @@ export function EndingResolverPanel() {
           {steps.length === 0 && <p className="text-[11px] text-rg-paper-200/38">等待终局引擎产生轨迹。</p>}
         </div>
       </section>
+      </div>
     </motion.div>
   );
 }

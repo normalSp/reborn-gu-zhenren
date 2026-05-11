@@ -74,6 +74,25 @@ function targetRequired(action: BattlefieldAction | null, actor: BattlefieldUnit
   return !validation?.validTargetCellIds?.includes(actor.cellId);
 }
 
+function battlefieldPhaseLabel(state: any): string {
+  if (state?.phase === 'enemy_turn') return '敌方阶段';
+  if (state?.phase === 'resolution') return '结算阶段';
+  if (state?.phase === 'ended') return '已结束';
+  if (state?.phase === 'scout') return '侦察阶段';
+  if (state?.mode === 'group') return '我方阶段';
+  return '玩家回合';
+}
+
+function remainingFriendlyActors(state: any): number {
+  if (!state || state.mode !== 'group') return 0;
+  const acted = new Set(state.actedUnitIdsThisRound || []);
+  return state.units.filter((unit: BattlefieldUnit) =>
+    unit.hp > 0
+    && (unit.side === 'player' || unit.side === 'ally')
+    && !acted.has(unit.id)
+  ).length;
+}
+
 function UnitPill({ unit, active, onSelect }: { unit: BattlefieldUnit; active?: boolean; onSelect?: (unit: BattlefieldUnit) => void }) {
   const hp = hpPercent(unit);
   const essence = essencePercent(unit);
@@ -404,6 +423,9 @@ export function BattlefieldCombatOverlay() {
   const neutrals = state.units.filter(unit => unit.side === 'neutral');
   const reason = validation?.reason ? describeBattlefieldReason(validation.reason) : selectedCard?.disabledReason;
   const isGroup = state.mode === 'group';
+  const phaseLabel = battlefieldPhaseLabel(state);
+  const remainingActors = remainingFriendlyActors(state);
+  const actedActors = state.mode === 'group' ? (state.actedUnitIdsThisRound?.length || 0) : 0;
 
   return (
     <motion.div
@@ -422,12 +444,12 @@ export function BattlefieldCombatOverlay() {
       />
       <div
         ref={effectLayerRef}
-        className="pointer-events-none absolute inset-0 z-50 overflow-hidden mix-blend-screen"
+        className="pointer-events-none absolute inset-0 z-[80] overflow-visible"
         data-testid="battlefield-effect-layer"
       >
-        <div className="battlefield-gsap-flare absolute left-1/2 top-1/2 h-[52vmin] w-[52vmin] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0" />
-        <div className="battlefield-gsap-ring absolute left-1/2 top-1/2 h-[34vmin] w-[34vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-0" />
-        <div className="battlefield-gsap-pulse absolute left-0 right-0 top-1/2 h-[2px] opacity-0" />
+        <div className="battlefield-gsap-flare absolute left-1/2 top-1/2 h-[52vmin] w-[52vmin] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[1px]" />
+        <div className="battlefield-gsap-ring absolute left-1/2 top-1/2 h-[34vmin] w-[34vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 opacity-0" />
+        <div className="battlefield-gsap-pulse absolute left-0 right-0 top-1/2 h-[3px] opacity-0" />
       </div>
 
       <div className="relative z-30 flex h-full flex-col">
@@ -437,19 +459,21 @@ export function BattlefieldCombatOverlay() {
               {isGroup ? 'v0.8 群像战棋盘' : 'v0.8 凡战棋盘'} · 第{state.round}回合
             </div>
             <div className="text-[10px] text-[var(--gu-text-secondary)] truncate">
-              {state.activeTerrainId || 'plain'} · {state.activeFormationId || '无阵'} · {state.phase}
-              {isGroup && state.activeUnitId ? ` · active ${state.activeUnitId}` : ''}
+              {state.activeTerrainId || 'plain'} · {state.activeFormationId || '无阵'} · {phaseLabel}
+              {isGroup ? ` · 已行动 ${actedActors} / 剩余 ${remainingActors}` : ''}
             </div>
           </div>
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={advanceRound}
-              className="hidden sm:inline-flex items-center gap-1 border border-[rgba(201,169,110,0.18)] px-2 py-1 text-[11px] text-[var(--gu-text-secondary)] hover:text-[var(--gu-trace-gold-text)]"
+              className="inline-flex items-center gap-1 border border-[rgba(201,169,110,0.22)] px-2 py-1 text-[11px] text-[var(--gu-text-secondary)] hover:text-[var(--gu-trace-gold-text)]"
               style={{ borderRadius: 5 }}
+              data-testid="battlefield-end-player-phase"
+              title={isGroup ? '结束我方阶段后，敌方与第三方会由本地引擎自动行动。' : '推进到下一回合。'}
             >
               <InfoIcon size={13} />
-              推进
+              {isGroup ? '结束我方阶段' : '推进'}
             </button>
             <button
               type="button"

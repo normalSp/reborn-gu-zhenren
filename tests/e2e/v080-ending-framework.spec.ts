@@ -48,6 +48,9 @@ test.describe('v0.8.0-c1 ending framework UI', () => {
     const panel = visibleEndingPanel(page);
 
     await expect(panel.getByTestId('ending-state-status')).toBeVisible();
+    await expect(panel.getByTestId('ending-toggle-details')).toBeVisible();
+    await expect(panel.getByTestId('ending-candidate-list')).toBeHidden();
+    await panel.getByTestId('ending-toggle-details').click();
     await expect(panel.getByTestId('ending-evidence')).toBeVisible();
     await expect(panel.getByTestId('ending-candidate-list')).toBeVisible();
     await expect(panel.getByTestId('ending-pressure-log')).toBeVisible();
@@ -58,9 +61,7 @@ test.describe('v0.8.0-c1 ending framework UI', () => {
     expect(Number(endingBefore.candidateCount)).toBeGreaterThan(0);
     expect(Number(endingBefore.canCommitCount)).toBeGreaterThan(0);
 
-    await panel.locator('[data-testid^="ending-commit-button-"]:not([disabled])').first().evaluate((button: Element) => {
-      (button as HTMLButtonElement).click();
-    });
+    await panel.getByTestId('commit-best-ending-button').click();
     await expect(panel).toBeHidden();
     await expect(page.locator('h1').first()).toBeVisible();
 
@@ -78,8 +79,9 @@ test.describe('v0.8.0-c1 ending framework UI', () => {
 
     await expect(panel).toBeVisible();
     await expect(panel.getByTestId('ending-state-status')).toBeVisible();
+    await panel.getByTestId('ending-toggle-details').click();
     await expect(panel.getByTestId('ending-candidate-list')).toBeVisible();
-    await expect(panel.locator('[data-testid^="ending-commit-button-"]').first()).toBeVisible();
+    await expect(panel.getByTestId('commit-best-ending-button')).toBeVisible();
 
     const panelBox = await panel.boundingBox();
     const candidateBox = await panel.getByTestId('ending-candidate-list').boundingBox();

@@ -241,171 +241,26 @@ export function ActionPanel() {
         </div>
       </section>
 
-      <ActionSection
-        title="调息与修行"
-        note="修行/突破的详细状态建议在空窍页查看；本面板保留快捷入口。"
-        cards={[grouped.meditate, grouped.cultivate].filter(Boolean) as ActivityActionCard[]}
-        onExecute={execute}
-        forceBlocked={availability.sceneLocked}
-        blockedReason={availability.lockReason}
-      />
-
-      <section className="rg-explain-card p-3">
-        <div className="flex items-center justify-between text-[11px] text-rg-paper-200/55">
-          <span>修行进度</span>
-          <span>{Math.round(progressPct)}%</span>
-        </div>
-        <div className="mt-1 h-2 overflow-hidden rounded-full bg-rg-ink-800">
-          <div className="h-full rounded-full bg-rg-gold/80" style={{ width: `${progressPct}%` }} />
-        </div>
-        <p className="mt-2 text-[10px] text-rg-paper-200/42">
-          {isImmortalCultivator
-            ? '六转以上以仙窍、仙元、道痕密度与灾劫预兆为主；灾劫先进入剧情场景，正式后果由本地引擎结算。'
-            : isAscensionStage
-              ? '五转阶段以升仙三气、窍壁压力和福地准备为主；是否升仙由本地引擎校验。'
-              : '凡人阶段以空窍、真元、窍壁压力和小境界突破为主；剧情只能提供预兆，数值结果由本地引擎决定。'}
+      <section className="rg-explain-card p-3" data-testid="cultivation-moved-to-aperture-note">
+        <div className="text-xs font-semibold text-rg-gold">调息与修行已移入空窍/仙窍</div>
+        <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/52">
+          本面板只处理当前剧情场景允许的行动；修行、突破、升仙和灾劫请在空窍/仙窍面板中执行，结果会写入场景账本并在推进剧情时承接。
         </p>
       </section>
-
-      {cultivationPreview && (
-        <motion.section
-          data-testid="cultivation-deepening-panel"
-          initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-          animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-          transition={{ duration: 0.18 }}
-          className="rg-explain-card p-3"
-        >
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <h3 className="text-xs font-semibold text-rg-paper-100">v0.8 深修态势</h3>
-              <p className="mt-1 text-[10px] text-rg-paper-200/45">
-                {cultivationModeLabel} · {cultivationPreview.environment.periodLabel} · {cultivationPreview.environment.locationLabel} · 风险 x{cultivationPreview.environment.riskMultiplier}
-              </p>
-            </div>
-            <span className={`rounded-sm border px-2 py-0.5 text-[10px] ${
-              cultivationPreview.environment.safety === 'dangerous'
-                ? 'border-rg-blood-400/30 text-rg-blood-400'
-                : cultivationPreview.environment.safety === 'secure'
-                  ? 'border-rg-jade-400/30 text-rg-jade-400'
-                  : 'border-rg-gold/25 text-rg-gold/80'
-            }`}>
-              {cultivationPreview.environment.safety === 'dangerous' ? '险地' : cultivationPreview.environment.safety === 'secure' ? '稳妥' : '需警戒'}
-            </span>
-          </div>
-
-          <div className="mt-3 grid gap-2 md:grid-cols-3">
-            {!isImmortalCultivator && (
-              <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
-                <div className="text-[10px] text-rg-paper-200/42">{isMortalCultivator ? '突破校验' : '窍壁极限'}</div>
-                <div className="mt-1 text-sm font-semibold text-rg-gold">{pct(cultivationPreview.breakthrough.successRate)}</div>
-                <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-                  {cultivationPreview.breakthrough.valid
-                    ? `目标 ${cultivationPreview.breakthrough.targetRealm?.label || '未知'}`
-                    : cultivationPreview.breakthrough.reason}
-                </div>
-              </div>
-            )}
-            {isAscensionStage && (
-              <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
-                <div className="text-[10px] text-rg-paper-200/42">升仙三气</div>
-                <div className="mt-1 text-xs text-rg-paper-100">
-                  人{cultivationPreview.ascension.threeQi.human} / 地{cultivationPreview.ascension.threeQi.earth} / 天{cultivationPreview.ascension.threeQi.heaven}
-                </div>
-                <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-                  {cultivationPreview.ascension.valid ? `成功 ${pct(cultivationPreview.ascension.successRate)}` : cultivationPreview.ascension.reason}
-                </div>
-              </div>
-            )}
-            {isImmortalCultivator && (
-              <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
-                <div className="text-[10px] text-rg-paper-200/42">仙窍/福地</div>
-                <div className="mt-1 text-xs text-rg-paper-100">
-                  仙元 {storeSnapshot.vitals?.essence?.current || 0}/{storeSnapshot.vitals?.essence?.max || 0}
-                </div>
-                <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-                  {storeSnapshot.heavenlyLand?.grade || storeSnapshot.aperture?.grade || '福地'} · 道痕密度随灾劫和经营变化
-                </div>
-              </div>
-            )}
-            {isImmortalCultivator && (
-              <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
-                <div className="text-[10px] text-rg-paper-200/42">灾劫预兆</div>
-                <div className="mt-1 text-sm font-semibold text-rg-blood-400">
-                  {cultivationPreview.calamity?.name || '暂无'}
-                </div>
-                <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-                  {cultivationPreview.calamity
-                    ? `${cultivationPreview.calamity.countdown} 回合后，影响 ${cultivationPreview.calamity.affectedResourceNodeIds.length} 个资源点`
-                    : '未登记下一劫；需要先进入仙窍/福地系统确认。'}
-                </div>
-              </div>
-            )}
-            {isImmortalCultivator && (
-              <div className="rounded border border-rg-ink-300/12 bg-rg-ink-800/35 p-2">
-                <div className="text-[10px] text-rg-paper-200/42">剧情化处理</div>
-                <div className="mt-1 text-xs text-rg-paper-100">预兆 → 选择 → 本地结算</div>
-                <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-                  可触发荒兽/人劫/道痕化形/资源失衡等场景，不再直接一键扣资源。
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="mt-3 flex flex-wrap gap-2">
-            {isAscensionStage && (
-              <button
-                data-testid="cultivation-ascension-action"
-                onClick={runAscension}
-                disabled={!cultivationPreview.ascension.valid}
-                className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
-              >
-                尝试升仙
-              </button>
-            )}
-            {isImmortalCultivator && (
-              <button
-                data-testid="cultivation-calamity-action"
-                onClick={runCalamity}
-                disabled={!cultivationPreview.calamity}
-                className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs text-rg-blood-400 disabled:cursor-not-allowed disabled:opacity-45"
-              >
-                灾劫入场
-              </button>
-            )}
-            {isMortalCultivator && (
-              <span className="text-[10px] text-rg-paper-200/42">升仙与灾劫将在五转巅峰以后开放。</span>
-            )}
-          </div>
-
-          {lastTrace.length > 0 && (
-            <div data-testid="cultivation-resolution-trace" className="rg-trace-list mt-3 max-h-28 overflow-y-auto border-t border-rg-ink-300/12 pt-2">
-              {lastTrace.slice(-4).map((item: any) => (
-                <div key={item.id} className="text-[10px] leading-relaxed text-rg-paper-200/55">
-                  <span className="text-rg-gold/70">{item.kind}</span> · {item.message}
-                </div>
-              ))}
-            </div>
-          )}
-        </motion.section>
-      )}
-
-      {!isImmortalCultivator && (
-        <ActionSection
-          title={isAscensionStage ? '凡窍极限' : '突破'}
-          cards={grouped.breakthrough ? [grouped.breakthrough] : []}
-          onExecute={execute}
-          forceBlocked={availability.sceneLocked}
-          blockedReason={availability.lockReason}
-        />
-      )}
       <ActionSection
         title="野外行动"
         note="普通狩猎、采集、侦察先走野外行动；敌对蛊师、蛊兽、伏击或剧情白名单才进入战斗。"
-        cards={grouped.field}
+        cards={availability.fieldActionsAllowed && !availability.sceneLocked ? grouped.field : []}
         onExecute={execute}
-        forceBlocked={availability.sceneLocked || !availability.fieldActionsAllowed}
-        blockedReason={availability.lockReason || availability.fieldActionReason}
       />
+      {(!availability.fieldActionsAllowed || availability.sceneLocked) && (
+        <section className="rg-explain-card p-3" data-testid="field-actions-hidden-reason">
+          <div className="text-xs font-semibold text-rg-paper-100">当前不显示野外行动</div>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {availability.lockReason || availability.fieldActionReason || '当前剧情场景没有开放野外行动；等文本推进到山林、荒野、商路或伏击场景后再出现。'}
+          </p>
+        </section>
+      )}
 
       {lastResult && (
         <div className={`rounded-md border px-3 py-2 text-xs leading-relaxed ${

@@ -123,29 +123,11 @@ export function InheritanceLandPanel() {
         </p>
       </header>
 
-      <section className="mb-4 grid gap-2 sm:grid-cols-2" data-testid="inheritance-site-samples">
-        {sites.map(site => {
-          const already = candidates.some(candidate => candidate.siteId === site.siteId);
-          return (
-            <button
-              key={site.siteId}
-              type="button"
-              onClick={() => stageSample(site)}
-              className={`rg-action-card rg-focus-ring p-3 text-left ${siteTone(site.kind)} disabled:cursor-not-allowed disabled:opacity-50`}
-              disabled={already}
-              data-testid={`inheritance-site-sample-${site.siteId}`}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-button text-sm text-rg-paper-100">{site.title}</span>
-                <span className="text-[11px] text-rg-gold">{KIND_LABEL[site.kind] || site.kind}</span>
-              </div>
-              <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/58">{site.summary}</p>
-              <p className="mt-2 text-[11px] text-rg-paper-200/42">
-                AP {site.entryCostAp} · {site.pathTags.join(' / ')}
-              </p>
-            </button>
-          );
-        })}
+      <section className="rg-explain-card mb-4 border-rg-gold/20 bg-rg-gold/5 p-3" data-testid="inheritance-clue-ledger-policy">
+        <p className="text-xs font-panel tracking-[0.12em] text-rg-gold/85">线索账本</p>
+        <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/58">
+          传承、无主福地和洞天边界只从剧情线索进入；本面板不再直接生成样板入口。点击“出发”会消耗场景 AP 并登记叙事推进意图，奖励和归属仍由本地引擎在试炼/认主后结算。
+        </p>
       </section>
 
       {lastMessage && (
@@ -160,13 +142,14 @@ export function InheritanceLandPanel() {
       )}
 
       <section className="mb-4" data-testid="inheritance-candidate-list">
-        <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">已登记候选</p>
+        <p className="mb-2 text-xs font-panel tracking-[0.12em] text-rg-paper-200/55">剧情线索账本</p>
         <AnimatePresence initial={false}>
           <div className="space-y-2">
             {candidates.map(candidate => {
               const site = siteById.get(candidate.siteId);
-              const canTrial = candidate.status === 'candidate' || candidate.status === 'active' || candidate.status === 'failed';
-              const canClaim = site?.kind === 'blessed_land_claim' && candidate.status !== 'rumor' && candidate.status !== 'blocked';
+              const canDepart = candidate.status === 'candidate' || candidate.status === 'failed';
+              const canResolve = candidate.status === 'active';
+              const canClaim = site?.kind === 'blessed_land_claim' && candidate.status === 'resolved';
               return (
                 <motion.article
                   key={candidate.id}
@@ -203,16 +186,16 @@ export function InheritanceLandPanel() {
                     <button
                       type="button"
                       onClick={() => handleStart(candidate)}
-                      disabled={!canTrial || candidate.kind === 'grotto_heaven_rumor'}
+                      disabled={!canDepart || candidate.kind === 'grotto_heaven_rumor'}
                       className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
                       data-testid="inheritance-start-trial-action"
                     >
-                      开始试炼
+                      出发 / 进入线索地
                     </button>
                     <button
                       type="button"
                       onClick={() => handleResolve(candidate)}
-                      disabled={!canTrial || candidate.kind === 'grotto_heaven_rumor'}
+                      disabled={!canResolve || candidate.kind === 'grotto_heaven_rumor'}
                       className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
                       data-testid="inheritance-resolve-trial-action"
                     >
@@ -240,7 +223,7 @@ export function InheritanceLandPanel() {
             })}
             {candidates.length === 0 && (
               <p className="rg-explain-card p-3 text-[11px] text-rg-paper-200/42">
-                暂无传承候选。剧情可提交候选，或用上方样板登记一个本地演示候选。
+                暂无剧情线索。传承、福地和洞天边界需要先在剧情文本中被发现，再进入本地线索账本。
               </p>
             )}
           </div>

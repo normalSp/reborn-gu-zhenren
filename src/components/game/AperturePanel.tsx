@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useStore } from '../../store';
 import { buildExtremePhysiqueCalamityProfile, type ExtremePhysiqueCalamityProfile } from '../../engine/extreme-physique-calamity';
 import type { MortalAperture, ImmortalAperture } from '../../types';
@@ -60,6 +61,140 @@ function isMortal(a: MortalAperture | ImmortalAperture): a is MortalAperture {
 
 function isImmortal(a: MortalAperture | ImmortalAperture): a is ImmortalAperture {
   return !isMortal(a);
+}
+
+function pct(value?: number): string {
+  if (value === undefined) return '--';
+  return `${Math.round(Math.max(0, Math.min(1, value)) * 100)}%`;
+}
+
+function CultivationApertureActions({ realmGrand }: { realmGrand: number }) {
+  const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
+  const vitals = useStore(s => s.vitals);
+  const heavenlyLand = useStore(s => (s as any).heavenlyLand);
+  const cultivationState = useStore(s => (s as any).cultivationState);
+  const previewCultivationDeepening = useStore(s => (s as any).previewCultivationDeepening);
+  const meditateWithPrimevalStone = useStore(s => (s as any).meditateWithPrimevalStone);
+  const meditateWithImmortalStone = useStore(s => (s as any).meditateWithImmortalStone);
+  const practiceCultivation = useStore(s => (s as any).practiceCultivation);
+  const attemptBreakthrough = useStore(s => (s as any).attemptBreakthrough);
+  const attemptAscension = useStore(s => (s as any).attemptAscension);
+  const stageCalamityScene = useStore(s => (s as any).stageCalamityScene);
+  const resolveApertureCalamity = useStore(s => (s as any).resolveApertureCalamity);
+  const preview = previewCultivationDeepening?.('aperture');
+  const isImmortalRealm = realmGrand >= 6;
+  const isAscensionStage = realmGrand === 5;
+  const lastTrace = Array.isArray(cultivationState?.lastResolution) ? cultivationState.lastResolution.slice(-4) : [];
+
+  const report = (result: any, fallback: string) => {
+    setMessage({ ok: Boolean(result?.success), text: result?.message || fallback });
+  };
+
+  const runMeditation = () => report(
+    isImmortalRealm ? meditateWithImmortalStone?.(1, 'aperture') : meditateWithPrimevalStone?.(1, 'aperture'),
+    '调息已提交。',
+  );
+  const runCultivation = () => report(practiceCultivation?.(), '修行已提交。');
+  const runBreakthrough = () => report(attemptBreakthrough?.(), '突破尝试已提交。');
+  const runAscension = () => report(attemptAscension?.(), '升仙尝试已提交。');
+  const runCalamity = () => report(stageCalamityScene?.() || resolveApertureCalamity?.(), '灾劫预兆已提交。');
+
+  return (
+    <div className="mt-3 bg-rg-ink-800/50 border border-rg-gold/18 rounded-md p-3" data-testid="aperture-cultivation-actions">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h4 className="text-rg-paper-200/70 text-[11px] font-panel font-semibold">
+            {isImmortalRealm ? '仙窍修持' : isAscensionStage ? '升仙准备' : '凡窍修行'}
+          </h4>
+          <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/45">
+            调息、修行、突破和灾劫在这里结算；行动结果写入场景账本，推进剧情时再由文本承接。
+          </p>
+        </div>
+        <span className="text-[10px] font-panel text-rg-gold">v0.8 闭环</span>
+      </div>
+
+      <div className="mt-3 grid gap-2 sm:grid-cols-3">
+        {!isImmortalRealm && (
+          <div className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2">
+            <div className="text-[10px] text-rg-paper-200/42">突破校验</div>
+            <div className="mt-1 text-sm font-semibold text-rg-gold">{pct(preview?.breakthrough?.successRate)}</div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+              {preview?.breakthrough?.valid
+                ? `目标 ${preview?.breakthrough?.targetRealm?.label || '未知'}`
+                : preview?.breakthrough?.reason || '需要积累修行进度和窍壁压力。'}
+            </div>
+          </div>
+        )}
+        {isAscensionStage && (
+          <div className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2">
+            <div className="text-[10px] text-rg-paper-200/42">升仙三气</div>
+            <div className="mt-1 text-xs text-rg-paper-100">
+              人{preview?.ascension?.threeQi?.human || 0} / 地{preview?.ascension?.threeQi?.earth || 0} / 天{preview?.ascension?.threeQi?.heaven || 0}
+            </div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+              {preview?.ascension?.valid ? `成功 ${pct(preview?.ascension?.successRate)}` : preview?.ascension?.reason || '五转巅峰后才能尝试升仙。'}
+            </div>
+          </div>
+        )}
+        {isImmortalRealm && (
+          <div className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2">
+            <div className="text-[10px] text-rg-paper-200/42">仙元与福地</div>
+            <div className="mt-1 text-xs text-rg-paper-100">
+              {vitals?.essence?.current || 0}/{vitals?.essence?.max || 0}
+            </div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+              {heavenlyLand?.name || '未登记福地'}；七至九转突破和万劫长线仍是后续扩展。
+            </div>
+          </div>
+        )}
+        {isImmortalRealm && (
+          <div className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2">
+            <div className="text-[10px] text-rg-paper-200/42">灾劫预兆</div>
+            <div className="mt-1 text-sm font-semibold text-rg-blood-400">
+              {preview?.calamity?.name || '暂无'}
+            </div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
+              {preview?.calamity
+                ? `${preview.calamity.countdown} 回合后，影响 ${preview.calamity.affectedResourceNodeIds.length} 个资源点`
+                : '灾劫需要进入剧情场景，再触发战斗、资源防护或仙窍修补。'}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button type="button" onClick={runMeditation} className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs" data-testid="aperture-meditation-action">调息</button>
+        <button type="button" onClick={runCultivation} className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs" data-testid="aperture-cultivation-action">修行</button>
+        {!isImmortalRealm && (
+          <button type="button" onClick={isAscensionStage ? runAscension : runBreakthrough} className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs" data-testid={isAscensionStage ? 'aperture-ascension-action' : 'aperture-breakthrough-action'}>
+            {isAscensionStage ? '尝试升仙' : '尝试突破'}
+          </button>
+        )}
+        {isImmortalRealm && (
+          <button type="button" onClick={runCalamity} disabled={!preview?.calamity} className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs text-rg-blood-400 disabled:cursor-not-allowed disabled:opacity-45" data-testid="aperture-calamity-action">
+            灾劫入场
+          </button>
+        )}
+      </div>
+
+      {message && (
+        <div className={`mt-3 rounded border px-2 py-1.5 text-[11px] leading-relaxed ${
+          message.ok ? 'border-rg-jade-400/25 bg-rg-jade-400/10 text-rg-jade-300' : 'border-rg-blood-400/25 bg-rg-blood-400/10 text-rg-blood-300'
+        }`}>
+          {message.text}
+        </div>
+      )}
+      {lastTrace.length > 0 && (
+        <div className="rg-trace-list mt-3 max-h-28 overflow-y-auto border-t border-rg-ink-300/12 pt-2" data-testid="aperture-cultivation-resolution-trace">
+          {lastTrace.map((item: any) => (
+            <div key={item.id} className="text-[10px] leading-relaxed text-rg-paper-200/55">
+              <span className="text-rg-gold/70">{item.kind}</span> · {item.message}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
 // ─── 空窍视图（1-5转蛊师）─────────────────
@@ -187,6 +322,8 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
         )}
       </div>
 
+      <CultivationApertureActions realmGrand={rank} />
+
       {calamityProfile && (
         <div className="mt-3 bg-rg-ink-800/50 border border-rg-gold/18 rounded-md p-3">
           <div className="flex items-center justify-between gap-3 mb-2">
@@ -241,6 +378,7 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
   const cx = 140, cy = 140;
   const inheritanceLandState = useStore(s => (s as any).inheritanceLandState);
   const heavenlyLand = useStore(s => (s as any).heavenlyLand);
+  const realmGrand = useStore(s => s.profile?.realm?.grand ?? 6);
   const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
   const daoMarkDensity = aperture.dao_mark_density && typeof aperture.dao_mark_density === 'object'
     ? aperture.dao_mark_density
@@ -293,6 +431,8 @@ function ImmortalApertureView({ aperture, showDaoDensity }: { aperture: Immortal
           </text>
         </svg>
       </div>
+
+      <CultivationApertureActions realmGrand={Math.max(6, Number(realmGrand || 6))} />
 
       {/* ─── 资源节点 ─── */}
       <div className="bg-rg-ink-800/50 border border-rg-ink-300/12 rounded-md p-3 mb-3">

@@ -189,6 +189,46 @@ function resolveEnemyReply(state: BattlefieldCombatState): { state: BattlefieldC
   return { state: resolution.state, steps: resolution.steps };
 }
 
+function makeBattlefieldPhaseStep(
+  state: BattlefieldCombatState,
+  phaseTag: string,
+  message: string,
+  tint = '#C9A96E',
+): BattleResolutionStep {
+  return {
+    id: `phase_${state.battleId}_${state.round}_${phaseTag}`,
+    round: state.round,
+    kind: 'settlement',
+    sourceName: 'battlefield_phase',
+    message,
+    visual: {
+      motif: 'phase',
+      primaryTint: tint,
+      motion: 'phase_shift',
+      intensity: 'subtle',
+    },
+    tags: ['phase', phaseTag],
+  };
+}
+
+function resolveBattlefieldGroupPhase(state: BattlefieldCombatState): { state: BattlefieldCombatState; steps: BattleResolutionStep[] } {
+  if (state.phase === 'ended') return { state, steps: [] };
+  const enemyPhaseState: BattlefieldCombatState = { ...state, phase: 'enemy_turn' };
+  const enemyPhaseStart = makeBattlefieldPhaseStep(enemyPhaseState, 'enemy_turn_start', '敌方阶段开始。', '#C44B4B');
+  const enemyResolution = resolveBattlefieldEnemyTurn(enemyPhaseState);
+  const enemyPhaseEnd = makeBattlefieldPhaseStep(enemyResolution.state, 'enemy_turn_end', '敌方阶段结算完成。', '#C44B4B');
+  const roundResolution = enemyResolution.state.phase === 'ended'
+    ? { state: enemyResolution.state, steps: [] as BattleResolutionStep[] }
+    : advanceBattlefieldRound(enemyResolution.state);
+  const playerPhaseStart = roundResolution.state.phase === 'ended'
+    ? []
+    : [makeBattlefieldPhaseStep(roundResolution.state, 'player_turn_start', '我方阶段开始。', '#4B8B6E')];
+  return {
+    state: roundResolution.state,
+    steps: [enemyPhaseStart, ...enemyResolution.steps, enemyPhaseEnd, ...roundResolution.steps, ...playerPhaseStart],
+  };
+}
+
 function startBattlefieldForEncounter(store: any, spec: NonNullable<CombatEncounterEntryValidation['spec']>): BattlefieldCombatState {
   if (spec.scale === 'duel') return createBattlefieldNarrativeDuelState(store, spec);
   if (spec.scale === 'group_7x5') return createBattlefieldLargeGroupDemoState(store);
@@ -899,13 +939,21 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   advanceBattlefieldRoundAction: () => {
     const current = get().battlefieldCombatState as BattlefieldCombatState | null;
     if (!current) return;
-    const resolution = advanceBattlefieldRound(current);
+    const resolution = current.mode === 'group'
+      ? resolveBattlefieldGroupPhase(current)
+      : advanceBattlefieldRound(current);
     const actor = getBattlefieldActor(resolution.state);
     set((s: CombatSlice) => ({
       battlefieldCombatState: resolution.state,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
       battlefieldValidation: actor ? listBattlefieldActionTargets(resolution.state, { type: 'wait', actorId: actor.id }) : null,
       battlefieldPlaybackSteps: appendBattlefieldSteps(s.battlefieldPlaybackSteps, resolution.steps),
     }));
+    const store = get() as any;
+    if (resolution.state.result && (store.combatEncounterState as CombatEncounterState | undefined)?.status === 'active') {
+      finalizeNarrativeBattlefieldEncounter(set, get);
+    }
   },
 
   interruptBattlefieldPendingAction: (pendingActionId, reason) => {

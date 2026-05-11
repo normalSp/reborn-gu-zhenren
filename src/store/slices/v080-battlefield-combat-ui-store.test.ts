@@ -128,6 +128,20 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.kind === 'morale')).toBe(true);
   });
 
+  it('ends the friendly group phase and resolves deterministic enemy actions', () => {
+    const harness = createHarness();
+    harness.get().initBattlefieldGroupDemo();
+
+    harness.get().advanceBattlefieldRoundAction();
+    const steps = harness.get().battlefieldPlaybackSteps;
+
+    expect(steps.some((step: any) => step.tags.includes('enemy_turn_start'))).toBe(true);
+    expect(steps.some((step: any) => step.tags.includes('enemy_turn_end'))).toBe(true);
+    expect(steps.some((step: any) => step.tags.includes('player_turn_start'))).toBe(true);
+    expect(harness.get().battlefieldCombatState.phase).toBe('player_turn');
+    expect(harness.get().battlefieldCombatState.actedUnitIdsThisRound).toEqual([]);
+  });
+
   it('creates a non-persistent 7x5 large group demo and keeps old 5x3 entry intact', () => {
     const harness = createHarness();
 

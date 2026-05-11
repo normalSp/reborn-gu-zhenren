@@ -33,8 +33,8 @@ async function openCultivationDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startCultivationDeepeningDemo());
-  await page.getByTestId('side-panel-actions').click();
-  await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toBeVisible();
+  await page.getByTestId('side-panel-aperture').click();
+  await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
   return consoleErrors;
 }
 
@@ -44,8 +44,8 @@ async function openRankSevenCalamityDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startCultivationCalamityNarrativeDemo());
-  await page.getByTestId('side-panel-actions').click();
-  await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toBeVisible();
+  await page.getByTestId('side-panel-aperture').click();
+  await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
   return consoleErrors;
 }
 
@@ -54,19 +54,19 @@ test.describe('v0.8.0-c2.4 cultivation and calamity narrative UI', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openCultivationDemo(page);
 
-    const ascensionAction = page.locator('[data-testid="cultivation-ascension-action"]:visible');
+    const ascensionAction = page.locator('[data-testid="aperture-ascension-action"]:visible');
     await expect(ascensionAction).toBeEnabled();
     await ascensionAction.click();
-    await expect(page.locator('[data-testid="cultivation-resolution-trace"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="aperture-cultivation-resolution-trace"]:visible')).toBeVisible();
 
     const ascensionSummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const ascension = ascensionSummary.cultivation as Record<string, unknown>;
     expect(Number(ascension.lastStepCount)).toBeGreaterThan(0);
 
-    const calamityAction = page.locator('[data-testid="cultivation-calamity-action"]:visible');
+    const calamityAction = page.locator('[data-testid="aperture-calamity-action"]:visible');
     await expect(calamityAction).toBeEnabled();
     await calamityAction.click();
-    await expect(page.locator('[data-testid="cultivation-resolution-trace"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="aperture-cultivation-resolution-trace"]:visible')).toBeVisible();
 
     const calamitySummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const cultivation = calamitySummary.cultivation as Record<string, unknown>;
@@ -80,13 +80,13 @@ test.describe('v0.8.0-c2.4 cultivation and calamity narrative UI', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openRankSevenCalamityDemo(page);
 
-    await expect(page.locator('[data-testid="cultivation-ascension-action"]:visible')).toHaveCount(0);
-    await expect(page.locator('[data-testid="cultivation-calamity-action"]:visible')).toBeEnabled();
-    await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toContainText('仙窍');
-    await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).not.toContainText('五转阶段');
+    await expect(page.locator('[data-testid="aperture-ascension-action"]:visible')).toHaveCount(0);
+    await expect(page.locator('[data-testid="aperture-calamity-action"]:visible')).toBeEnabled();
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toContainText('仙窍');
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).not.toContainText('五转阶段');
 
-    await page.locator('[data-testid="cultivation-calamity-action"]:visible').click();
-    await expect(page.locator('[data-testid="cultivation-resolution-trace"]:visible')).toContainText('calamity_warning');
+    await page.locator('[data-testid="aperture-calamity-action"]:visible').click();
+    await expect(page.locator('[data-testid="aperture-cultivation-resolution-trace"]:visible')).toContainText('calamity_warning');
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const cultivation = summary.cultivation as Record<string, unknown>;
     expect(String(cultivation.pendingCalamitySceneKind || '')).not.toBe('');
@@ -100,16 +100,16 @@ test.describe('v0.8.0-c2.4 cultivation and calamity narrative UI', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const consoleErrors = await openCultivationDemo(page);
 
-    await expect(page.locator('[data-testid="cultivation-deepening-panel"]:visible')).toBeVisible();
-    const ascensionAction = page.locator('[data-testid="cultivation-ascension-action"]:visible');
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
+    const ascensionAction = page.locator('[data-testid="aperture-ascension-action"]:visible');
     await expect(ascensionAction).toBeEnabled();
-    const panelBox = await page.locator('[data-testid="cultivation-deepening-panel"]:visible').boundingBox();
+    const panelBox = await page.locator('[data-testid="aperture-cultivation-actions"]:visible').boundingBox();
     const buttonBox = await ascensionAction.boundingBox();
     expect(panelBox?.width).toBeGreaterThan(300);
     expect(buttonBox?.height).toBeGreaterThan(24);
 
     await ascensionAction.click();
-    await expect(page.locator('[data-testid="cultivation-resolution-trace"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="aperture-cultivation-resolution-trace"]:visible')).toBeVisible();
     expect(consoleErrors).toEqual([]);
   });
 });

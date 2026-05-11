@@ -45,20 +45,17 @@ test.describe('v0.8.0-c2.5 inheritance and land claim UI', () => {
 
     await page.getByTestId('side-panel-inheritance').click();
     await expect(page.locator('[data-testid="inheritance-land-panel"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="inheritance-clue-ledger-policy"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="inheritance-candidate-card"]:visible')).toHaveCount(4);
     await expect(page.locator('[data-testid="inheritance-land-claim-action"]:visible').first()).toBeVisible();
-    await expect(page.locator('[data-testid="inheritance-site-sample-unclaimed_blessed_land_seed"]:visible')).toBeDisabled();
-
-    await page.getByTestId('side-panel-actions').click();
-    const actionPanel = page.locator('[data-testid="cultivation-deepening-panel"]:visible');
-    await expect(actionPanel).toBeVisible();
-    await expect(page.locator('[data-testid="cultivation-ascension-action"]:visible')).toHaveCount(0);
-    await expect(actionPanel).not.toContainText('尝试升仙');
-    await expect(actionPanel).not.toContainText('升仙三气');
-    await expect(actionPanel).not.toContainText('五转阶段');
+    await expect(page.locator('[data-testid^="inheritance-site-sample-"]:visible')).toHaveCount(0);
 
     await page.getByTestId('side-panel-aperture').click();
     await expect(page.locator('[data-testid="aperture-inheritance-land-summary"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="aperture-ascension-action"]:visible')).toHaveCount(0);
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).not.toContainText('尝试升仙');
+    await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).not.toContainText('升仙三气');
 
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const inheritance = summary.inheritanceLand as Record<string, unknown>;
@@ -78,12 +75,13 @@ test.describe('v0.8.0-c2.5 inheritance and land claim UI', () => {
     await page.getByTestId('side-panel-inheritance').click();
     const panel = page.locator('[data-testid="inheritance-land-panel"]:visible');
     await expect(panel).toBeVisible();
+    await expect(page.locator('[data-testid="inheritance-clue-ledger-policy"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="inheritance-candidate-card"]:visible').first()).toBeVisible();
     const buttonBox = await page.locator('[data-testid="inheritance-resolve-trial-action"]:visible').first().boundingBox();
     expect(buttonBox?.height).toBeGreaterThan(24);
 
-    await page.getByTestId('side-panel-actions').click();
-    await expect(page.locator('[data-testid="cultivation-ascension-action"]:visible')).toHaveCount(0);
+    await page.getByTestId('side-panel-aperture').click();
+    await expect(page.locator('[data-testid="aperture-ascension-action"]:visible')).toHaveCount(0);
     expect(consoleErrors).toEqual([]);
   });
 });

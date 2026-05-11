@@ -61,6 +61,9 @@ test.describe('v0.8.0-b1 group battlefield UI vertical slice', () => {
     await expect(page.getByTestId('battlefield-execute-action')).toBeEnabled();
     await page.getByTestId('battlefield-execute-action').click();
     await expect(page.getByTestId('battlefield-step-morale').first()).toBeVisible();
+    await expect(page.getByTestId('battlefield-end-player-phase')).toBeVisible();
+    await page.getByTestId('battlefield-end-player-phase').click();
+    await expect(page.getByText('敌方阶段结算完成。').first()).toBeVisible();
 
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     const battlefield = summary.battlefieldCombat as Record<string, unknown>;
@@ -82,6 +85,7 @@ test.describe('v0.8.0-b1 group battlefield UI vertical slice', () => {
     await page.getByTestId('battlefield-tab-formation').click();
     await expect(page.getByTestId('battlefield-action-formation:guard')).toBeVisible();
     await expect(page.getByTestId('battlefield-action-formation:rally')).toBeVisible();
+    await expect(page.getByTestId('battlefield-end-player-phase')).toBeVisible();
 
     const overlayBox = await page.getByTestId('battlefield-overlay').boundingBox();
     const moraleBox = await page.getByTestId('battlefield-morale').boundingBox();

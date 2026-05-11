@@ -43,13 +43,14 @@ export function DebugOverlay() {
       border: `1px solid ${color}44`, borderRadius: 6,
       padding: '8px 12px', maxWidth: expanded ? 420 : 340, fontFamily: 'monospace',
       fontSize: 11, lineHeight: 1.5,
+      pointerEvents: 'none',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: expanded ? 6 : 0 }}>
         <div style={{ color, fontWeight: 700 }}>
           ● <span style={{ fontSize: 13 }}>{phase}</span>
           <span style={{ color: 'var(--gu-text-disabled)', marginLeft: 10 }}>T{turn} {screenState}</span>
         </div>
-        <div style={{ display: 'flex', gap: 4 }}>
+        <div style={{ display: 'flex', gap: 4, pointerEvents: 'auto' }}>
           <button
             onClick={() => setExpanded(v => !v)}
             style={{
@@ -83,6 +84,7 @@ export function DebugOverlay() {
         <div style={{
           maxHeight: 240, overflowY: 'auto', marginTop: 6,
           borderTop: '1px solid var(--gu-trace-slate)', paddingTop: 6,
+          pointerEvents: 'auto',
         }}>
           {lastLogs.length === 0 ? (
             <div style={{ color: 'var(--gu-text-disabled)', fontSize: 10, fontStyle: 'italic' }}>暂无日志</div>

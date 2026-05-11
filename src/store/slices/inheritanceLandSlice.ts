@@ -150,10 +150,24 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
     const store = get() as any;
     const state = normalizeInheritanceLandState(store.inheritanceLandState);
     const candidate = findCandidate(state, candidateId);
-    if (!candidate || candidate.status !== 'candidate') {
+    const site = candidate ? getInheritanceSiteSpec(candidate.siteId) : null;
+    if (!candidate || candidate.status !== 'candidate' || !site) {
       const message = '传承候选不可进入试炼。';
       pushL3Warning(get, 'inheritance_trial_unavailable', message);
       return { success: false, message };
+    }
+    const spend = spendInheritanceAp(get, candidate.id, site.entryCostAp, `出发前往传承线索地：${candidate.title}`, {
+      siteId: site.siteId,
+      candidateId: candidate.id,
+      kind: site.kind,
+      phase: 'departure',
+    });
+    if (!spend.success) {
+      pushL3Warning(get, 'inheritance_departure_scene_ap_insufficient', spend.message);
+      return { success: false, message: spend.message };
+    }
+    if (typeof store.prepareNarrativeAdvanceIntent === 'function') {
+      store.prepareNarrativeAdvanceIntent('inheritance_departure');
     }
     const next = normalizeInheritanceLandState({
       ...state,
@@ -165,12 +179,12 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
         kind: 'trial',
         siteId: candidate.siteId,
         candidateId: candidate.id,
-        message: `传承试炼开始：${candidate.title}。`,
+        message: `已出发前往传承线索地：${candidate.title}。试炼结果需由剧情与本地引擎继续承接。`,
         severity: 'info',
       }],
     });
     commitInheritanceLandState(set, get, next);
-    return { success: true, message: `传承试炼开始：${candidate.title}` };
+    return { success: true, message: `已出发：${candidate.title}。${spend.message}` };
   },
 
   resolveInheritanceTrialAction: (candidateId) => {
