@@ -102,7 +102,7 @@ describe('v0.9.0-a2 training ground clue engine', () => {
     expect(result.combatCandidate?.source).toBe('engine');
   });
 
-  it('keeps hunt grounds blocked until the v0.9.0-a3 beast library', () => {
+  it('opens hunt grounds through the v0.9.0-a3 beast library without direct loot', () => {
     const activeStore = store({
       currentChapterId: 'nilu_ascent',
       profile: { realm: { grand: 7, sub: '巅峰', label: '七转巅峰' } },
@@ -115,10 +115,16 @@ describe('v0.9.0-a2 training ground clue engine', () => {
       summary: '只登记传闻，不结算荒兽掉落。',
     }, activeStore);
 
-    expect(staged.validation.valid).toBe(false);
+    expect(staged.validation.valid).toBe(true);
     const entry = evaluateTrainingGroundEntry(staged.state, 'tg_white_heaven', activeStore);
-    expect(entry.status).toBe('beast_library_pending');
-    expect(entry.canEnter).toBe(false);
-    expect(entry.blockers.join('')).toContain('v0.9.0-a3');
+    expect(entry.status).toBe('available');
+    expect(entry.canEnter).toBe(true);
+    expect(entry.enemyPreview?.length).toBeGreaterThan(0);
+
+    const result = resolveTrainingGroundAction(staged.state, 'tg_white_heaven', activeStore, 'hunt-seed');
+    expect(result.success).toBe(true);
+    expect(result.combatCandidate?.scale).toBe('group_7x5');
+    expect(result.combatCandidate?.enemySpecIds?.length).toBeGreaterThan(0);
+    expect(result.combatCandidate?.dropPolicyId).toBeTruthy();
   });
 });

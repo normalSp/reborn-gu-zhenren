@@ -46,6 +46,7 @@ declare global {
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
       startInheritanceLandDemo: () => Record<string, unknown>;
       startTrainingGroundClueDemo: () => Record<string, unknown>;
+      startBeastHuntDemo: () => Record<string, unknown>;
       startTimelineTalentCoverageDemo: (category?: 'mortal' | 'immortal') => Record<string, unknown>;
       clearRuntime: () => void;
     };
@@ -1151,6 +1152,111 @@ export function installE2eHarness(): void {
         apCostHint: 1,
         risk: 'low',
         sceneTags: ['qingmaoshan', 'training_ground_clue'],
+      });
+      return summarizeStore();
+    },
+    startBeastHuntDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 22),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '苍穹',
+        currentChapterId: 'nilu_ascent',
+        activeTab: 'training_ground',
+        profile: {
+          name: 'v090-a3 beast hunt demo',
+          background: 'white-heaven hunt clue holder',
+          realm: { grand: 7, sub: '巅峰', label: '七转巅峰' },
+        },
+        attributes: { 资质: 10, 体魄: 10, 心智: 10, 气运: 8 },
+        pathBuild: {
+          primary: '风道',
+          secondary: ['光道', '智道'],
+          path_levels: { 风道: '大师', 光道: '准大师' },
+          dao_marks: { 风道: 260, 光道: 120, 智道: 80 },
+        },
+        vitals: {
+          health: { current: 900, max: 900 },
+          essence: { current: 320, max: 320 },
+        },
+        inventory: [
+          { id: 'e2e_moonlight_gu', name: '月光蛊', tier: 1, path: '光道', currentState: 'normal' },
+          { id: 'e2e_stone_skin_gu', name: '石皮蛊', tier: 2, path: '土道', currentState: 'normal' },
+          { id: 'e2e_water_dragon_gu', name: '水龙蛊', tier: 4, path: '水道', currentState: 'normal' },
+        ],
+        apertureInventory: {
+          gu: [{ id: 'e2e_golden_bell_gu', name: '金钟蛊', tier: 4, path: '金道', currentState: 'normal' }],
+          materials: {},
+          immortalMaterials: {},
+        },
+        currency: Math.max(Number(store.currency || 0), 8000),
+        immortalCurrency: Math.max(Number(store.immortalCurrency || 0), 9000),
+        gameTime: { ap: 5, max_ap: 5, period: 'dawn', day: 12, month: 4, year: 1, season: 'spring' },
+        sceneSessionState: {
+          version: 'v0.8.0-c2.2',
+          sceneId: 'v090_beast_hunt_demo',
+          status: 'active',
+          locationId: 'white_heaven_hunt_edge',
+          period: 'dawn',
+          safety: 'dangerous',
+          budget: { remainingAp: 5, maxAp: 5, spentAp: 0 },
+          actionBudget: { remaining: 5, max: 5, spent: 0, reserved: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          pendingAdvanceIntent: null,
+          narrativeAdvanceIntent: null,
+        },
+        trainingGroundState: createDefaultTrainingGroundState(),
+        battlefieldCombatState: null,
+        battlefieldSelectedAction: null,
+        battlefieldSelectedTargetCellId: null,
+        battlefieldValidation: null,
+        battlefieldPlaybackSteps: [],
+        battlefieldTraceCursor: 0,
+        combatEncounterState: null,
+        flags: {
+          ...(store.flags || {}),
+          trainingGroundClues: [],
+          trainingCooldowns: {},
+          combatEventCandidates: [],
+          activeCombatEncounterId: null,
+        },
+        currentNarrative: {
+          narrative: {
+            text: '白天边缘的风光乱流里出现荒兽迁徙痕迹。线索只登记狩猎入口，出发、战斗和掉落全部由本地敌库与 battlefield 引擎结算。',
+            choices: [{
+              id: 'a3_beast_hunt_hint',
+              text: '记录白天荒兽狩猎线索',
+              risk: 'high',
+              risk_note: '狩猎胜利不会稳定掉蛊或仙蛊。',
+              trainingGroundTags: [{
+                kind: 'beast_hunt',
+                label: '荒兽狩猎',
+                status: 'available',
+                groundId: 'tg_white_heaven',
+                reason: '剧情线索允许出发到白天边缘，进入 7x5 荒兽棋盘战。',
+              }],
+            }],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
+      next.recordTrainingGroundCandidateAction?.({
+        groundId: 'tg_white_heaven',
+        title: '白天荒兽狩猎线索',
+        summary: '风光乱流中有荒兽活动痕迹，适合以 7x5 群像棋盘验证狩猎、伏击、敌方本能行动和掉落边界。',
+        source: 'engine',
+        locationHint: '白天边缘风光道乱流',
+        apCostHint: 1,
+        risk: 'high',
+        sceneTags: ['beast_hunt', 'white_heaven', 'v090_a3'],
       });
       return summarizeStore();
     },

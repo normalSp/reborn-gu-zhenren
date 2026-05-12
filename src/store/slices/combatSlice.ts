@@ -50,6 +50,10 @@ import {
   createIdleCombatEncounterState,
   evaluateCombatEncounterEntry,
 } from '../../engine/v080-narrative-combat-orchestration';
+import {
+  createBattlefieldBeastEncounterState,
+  resolveBeastLootForOutcome,
+} from '../../engine/v090-beast-enemy-registry';
 import killerMovesRaw from '../../canon/killer-moves.json';
 import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
 
@@ -230,6 +234,7 @@ function resolveBattlefieldGroupPhase(state: BattlefieldCombatState): { state: B
 }
 
 function startBattlefieldForEncounter(store: any, spec: NonNullable<CombatEncounterEntryValidation['spec']>): BattlefieldCombatState {
+  if (spec.enemySpecIds?.length) return createBattlefieldBeastEncounterState(store, spec);
   if (spec.scale === 'duel') return createBattlefieldNarrativeDuelState(store, spec);
   if (spec.scale === 'group_7x5') return createBattlefieldLargeGroupDemoState(store);
   if (spec.scale === 'group_5x3') return createBattlefieldGroupDemoState(store);
@@ -259,6 +264,16 @@ function finalizeNarrativeBattlefieldEncounter(
     result,
     turn: store.turn || encounter.spec.createdTurn,
   });
+  if (encounter.spec.enemySpecIds?.length) {
+    outcome.beastLoot = resolveBeastLootForOutcome(
+      encounter.spec,
+      outcome.result,
+      `${encounter.spec.id}:${store.turn || encounter.spec.createdTurn}:loot`,
+    );
+    for (const [materialName, count] of Object.entries(outcome.beastLoot.materialDrops)) {
+      if (count > 0 && typeof store.addMaterial === 'function') store.addMaterial(materialName, count);
+    }
+  }
   const ledger = buildCombatOutcomeLedgerEntry(outcome, store.sceneSessionState?.sceneId || encounter.spec.sceneId);
   store.recordLocalActionLedger?.(ledger);
   set((s: any) => ({

@@ -96,7 +96,7 @@ describe('v0.9.0-a2 training ground store slice', () => {
     } as any);
 
     expect(migrated.formatVersion).toBe(SAVE_FORMAT_VERSION);
-    expect((migrated.state as any).trainingGroundState.version).toBe('v0.9.0-a2');
+    expect((migrated.state as any).trainingGroundState.version).toBe('v0.9.0-a3');
     expect((migrated.state as any).trainingGroundState.clues).toEqual([]);
   });
 
@@ -139,7 +139,7 @@ describe('v0.9.0-a2 training ground store slice', () => {
     expect(harness.get().prepareNarrativeAdvanceIntent).toHaveBeenCalledWith('training_ground_duel');
   });
 
-  it('blocks hunt clues until a3 and records a warning instead of drops', () => {
+  it('turns hunt clues into unified 7x5 beast combat candidates', () => {
     const harness = createHarness({
       currentChapterId: 'nilu_ascent',
       profile: { name: '七转测试', realm: { grand: 7, sub: '巅峰', label: '七转巅峰' } },
@@ -152,11 +152,12 @@ describe('v0.9.0-a2 training ground store slice', () => {
       source: 'ai-rumor',
     });
 
-    expect(validation.valid).toBe(false);
-    expect(harness.get().trainingGroundState.clues[0].status).toBe('blocked');
-    expect(harness.get().setL3Warnings).toHaveBeenCalled();
+    expect(validation.valid).toBe(true);
+    expect(harness.get().trainingGroundState.clues[0].status).toBe('clue');
     const result = harness.get().resolveTrainingGroundAction('tg_white_heaven');
-    expect(result.success).toBe(false);
-    expect(harness.get().flags.combatEventCandidates).toBeUndefined();
+    expect(result.success).toBe(true);
+    expect(harness.get().flags.combatEventCandidates[0].scale).toBe('group_7x5');
+    expect(harness.get().flags.combatEventCandidates[0].enemySpecIds.length).toBeGreaterThan(0);
+    expect(harness.get().prepareNarrativeAdvanceIntent).toHaveBeenCalledWith('training_ground_hunt');
   });
 });

@@ -37,3 +37,30 @@
 
 - `v0.9.0-b1`：统一出发协议。
 - `v0.9.0-b2`：旧 duel/squad 正式入口清理。
+
+## 完成记录
+
+本阶段已完成并验证。
+
+分支：`codex/v090-a3-beast-guardian-battlefield`
+
+主要实现：
+- 新增 v0.9 文档三件套和 a3 敌库设计文档，已单独提交为 `docs: 补齐v0.9大纲与a3敌库计划`。
+- 扩展 `wild-beasts.json` 为运行时敌库，包含普通野兽、兽王、兽皇、荒兽、上古荒兽、荒植和守护者样板。
+- 新增 `v090-beast-enemy-registry`，提供敌库校验、hunt 绑定、7x5 狩猎战场构建和掉落边界结算。
+- `hunt` 道场由 a2 的“待 a3”转为可出发战斗候选，默认路由到 `group_7x5`。
+- battlefield 敌方阶段支持 `BeastInstinctMove`，荒兽不伪装成蛊师，也不持有普通 `guNames`。
+- 战后掉落边界改为材料、线索、传闻或拦截记录；寄生蛊不会稳定直接入背包，仙蛊、十转、永生蛊、宿命蛊归属全部拦截/降级。
+- 增加 E2E harness `startBeastHuntDemo()` 和 `tests/e2e/v090-beast-hunt-battlefield.spec.ts`。
+- 测试存档仍为 `formatVersion = 21`，仅同步 `trainingGroundState.version = v0.9.0-a3`，无存档协议升级。
+
+测试结果：
+- Targeted unit：通过。
+- Full unit：`npm test` 通过，84 files / 521 tests。
+- Build：`npm run build` 通过，仅既有 chunk size warning。
+- Beast hunt E2E：通过，桌面与移动 reduced motion 共 2 tests。
+- a1/a2 route/clue E2E：通过，4 tests。
+- Long E2E：`npm run test:e2e:long` 通过，18 tests。
+
+下一阶段建议：
+- 进入 `v0.9.0-b1`，把传承、福地、道场、灾劫、野外行动统一到同一个剧情出发协议。

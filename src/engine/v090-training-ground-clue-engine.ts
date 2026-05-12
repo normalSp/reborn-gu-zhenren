@@ -15,8 +15,13 @@ import {
   type TrainingGroundSessionResolution,
   type TrainingGroundSpec,
 } from './training-ground-engine';
+import {
+  buildHuntCombatCandidate,
+  describeHuntGroundBinding,
+  getHuntBindingForGround,
+} from './v090-beast-enemy-registry';
 
-const VERSION: TrainingGroundState['version'] = 'v0.9.0-a2';
+const VERSION: TrainingGroundState['version'] = 'v0.9.0-a3';
 const CLUE_LIMIT = 40;
 const STEP_LIMIT = 40;
 const DEFAULT_RISK: TrainingGroundClueRecord['risk'] = 'medium';
@@ -66,6 +71,8 @@ export interface TrainingGroundEntryView {
   routeHint?: CombatEncounterScale;
   apCost: number;
   debugOnly: boolean;
+  enemyPreview?: string[];
+  dropBoundary?: string;
 }
 
 export interface TrainingGroundActionResolution {
@@ -287,8 +294,10 @@ export function evaluateTrainingGroundCandidate(
   const hits = forbiddenHits(input);
   if (hits.length > 0) blockers.push(`触及运行时禁区: ${hits.slice(0, 4).join('、')}`);
   if (ground.type === 'hunt') {
-    blockers.push('hunt 道场等待 v0.9.0-a3 荒兽/兽群敌库，a2 不结算狩猎掉落。');
-    warnings.push('荒兽寄生蛊、仙蛊、稳定蛊虫掉落均不得由剧情线索直接写入。');
+    if (!getHuntBindingForGround(ground.id)) {
+      blockers.push('hunt ground has no v0.9.0-a3 beast enemy binding.');
+    }
+    warnings.push('荒兽寄生蛊、仙蛊、稳定蛊虫掉落不得由剧情线索直接写入；a3 只生成本地狩猎战斗候选。');
   }
 
   const turn = currentTurn(store);
@@ -437,14 +446,15 @@ export function evaluateTrainingGroundEntry(
     blockers.push(`场景 AP 不足：需要 ${apCost} 点。`);
     recommendedActions.push('推进剧情或结束当前时段后再出发。');
   }
+  const huntBinding = ground.type === 'hunt' ? describeHuntGroundBinding(ground.id) : null;
   if (ground.type === 'hunt') {
-    blockers.push('待 v0.9.0-a3 荒兽/兽群敌库接入后开放。');
-    warnings.push('a2 不结算荒兽掉落，不产出仙蛊或稳定蛊虫。');
+    if (!huntBinding?.available) blockers.push('hunt ground has no v0.9.0-a3 beast enemy binding.');
+    warnings.push('狩猎胜利只结算已登记材料、传闻或线索；寄生蛊不会直接入背包。');
   }
   if (clue?.blockers.length) blockers.push(...clue.blockers);
 
   let status: TrainingGroundEntryView['status'] = 'available';
-  if (ground.type === 'hunt') status = 'beast_library_pending';
+  if (ground.type === 'hunt' && !huntBinding?.available) status = 'beast_library_pending';
   else if (blockers.some(item => item.includes('缺少剧情线索'))) status = 'missing_clue';
   else if (blockers.some(item => item.includes('冷却'))) status = 'cooldown';
   else if (blockers.some(item => item.includes('境界不足'))) status = 'realm_blocked';
@@ -466,6 +476,8 @@ export function evaluateTrainingGroundEntry(
     routeHint: routeHintForGround(ground),
     apCost,
     debugOnly: false,
+    enemyPreview: huntBinding?.enemyNames,
+    dropBoundary: huntBinding?.available ? '狩猎材料/线索由本地敌库结算；寄生蛊只会损毁、逃脱、传闻或后续调查。' : undefined,
   };
 }
 
@@ -597,20 +609,48 @@ export function resolveTrainingGroundAction(
     };
   }
 
-  const steps = [makeStep('blocked', 'hunt 道场等待 v0.9.0-a3 荒兽/兽群敌库接入。', {
+  const combatCandidate = buildHuntCombatCandidate(entry.ground, store, seed);
+  if (!combatCandidate) {
+    const steps = [makeStep('blocked', 'hunt ground has no valid v0.9.0-a3 beast enemy pool.', {
+      turn,
+      groundId,
+      clueId: entry.clue?.id,
+      severity: 'warning',
+    })];
+    return {
+      success: false,
+      message: steps[0].message,
+      entry,
+      steps,
+      state: normalizeTrainingGroundState({
+        ...state,
+        blockedRecords: limitSteps([...state.blockedRecords, ...steps]),
+        lastResolutionSteps: steps,
+      }),
+    };
+  }
+  const steps = [makeStep('combat_candidate', `狩猎战斗候选已生成：${entry.ground.name}`, {
     turn,
     groundId,
     clueId: entry.clue?.id,
-    severity: 'warning',
+    severity: 'success',
+    metadata: {
+      combatCandidateId: combatCandidate.id,
+      scale: combatCandidate.scale,
+      enemySpecIds: combatCandidate.enemySpecIds,
+      dropPolicyId: combatCandidate.dropPolicyId,
+    },
   })];
   return {
-    success: false,
+    success: true,
     message: steps[0].message,
     entry,
+    combatCandidate,
     steps,
     state: normalizeTrainingGroundState({
       ...state,
-      blockedRecords: limitSteps([...state.blockedRecords, ...steps]),
+      activeGroundId: groundId,
+      clues: state.clues.map(clue => clue.groundId === groundId ? { ...clue, status: 'active', updatedTurn: turn } : clue),
       lastResolutionSteps: steps,
     }),
   };

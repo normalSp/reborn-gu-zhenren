@@ -1,44 +1,281 @@
 {
   "_meta": {
-    "version": "1.0",
-    "source": "蛊真人原著 + 贴吧设定整理",
-    "principle": "荒兽有等级体系，身上寄生蛊虫但不可靠，击杀掉落非必然"
+    "version": "v0.9.0-a3",
+    "source": "蛊真人原著规则边界 + RebornG 狩猎竖切整理",
+    "principle": "荒兽、荒植和守护者可以进入棋盘战斗，但击杀不是稳定获得蛊虫或仙蛊的途径。寄生蛊可能损毁、逃脱或只留下线索。"
   },
-  "等级体系": {
-    "普通野兽": { "equivalent": "一转蛊师级", "intelligence": "无灵智" },
-    "百兽王": { "equivalent": "二转蛊师级", "intelligence": "微弱灵智" },
-    "千兽王": { "equivalent": "三转蛊师级", "intelligence": "初级灵智" },
-    "万兽王": { "equivalent": "四转蛊师级", "intelligence": "中等灵智" },
-    "兽皇": { "equivalent": "五转蛊师巅峰级", "intelligence": "高等灵智" },
-    "荒兽": { "equivalent": "六转蛊仙级", "intelligence": "完整灵智，有荒兽杀招" },
-    "上古荒兽": { "equivalent": "七转蛊仙级", "intelligence": "高智慧，杀招繁多" },
-    "太古荒兽": { "equivalent": "八转蛊仙级", "intelligence": "几近人类，可媲美八转" }
+  "loreRules": {
+    "tierSystem": {
+      "common_beast": { "label": "普通野兽", "equivalentRealm": 1, "intelligence": "无灵智或低本能" },
+      "hundred_beast_king": { "label": "百兽王", "equivalentRealm": 2, "intelligence": "微弱灵智" },
+      "thousand_beast_king": { "label": "千兽王", "equivalentRealm": 3, "intelligence": "初级灵智" },
+      "myriad_beast_king": { "label": "万兽王", "equivalentRealm": 4, "intelligence": "中等灵智" },
+      "beast_emperor": { "label": "兽皇", "equivalentRealm": 5, "intelligence": "高等灵智" },
+      "desolate_beast": { "label": "荒兽", "equivalentRealm": 6, "intelligence": "完整灵智，可形成天赋杀招" },
+      "ancient_desolate_beast": { "label": "上古荒兽", "equivalentRealm": 7, "intelligence": "高智，杀招复杂" },
+      "immemorial_rumor": { "label": "太古荒兽", "equivalentRealm": 8, "intelligence": "v0.9 仅作高压传闻，不作为常规运行时敌人" }
+    },
+    "parasiteGuRule": "寄生在荒兽体内的蛊虫不稳定，战斗中可能损毁、逃脱或与宿主同亡；不得把荒兽狩猎当成稳定获得蛊虫/仙蛊的刷取途径。",
+    "dropRule": "胜利后只可结算已登记材料、通用流派材料、传承线索或后续调查线索；未知材料、仙蛊、十转、永生蛊和宿命蛊全部拦截或降级为传闻。",
+    "instinctMoveRule": "荒兽天赋杀招更接近本能释放，不需要伪装成蛊师，也不使用 guNames。"
   },
-  "荒兽战力": {
-    "summary": "荒兽战力一般来讲是同阶垫底的，就比仙僵强。寄宿的凡蛊仙蛊容易坏、还会跑、催发看运气、没有章法。",
-    "vsGuxian": "正常蛊仙虽然能打过荒兽，但没有仙蛊才是蛊仙的绝大多数，打荒兽类似狐狸打刺猬——无从下手"
+  "dropPolicies": {
+    "mortal_beast_safe": {
+      "materialIds": ["通用蛊材", "力道蛊材"],
+      "minCount": 0,
+      "maxCount": 2,
+      "parasiteGuPolicy": "rumor_only",
+      "notes": "凡兽与兽王最多产出普通材料或线索，不稳定掉蛊。"
+    },
+    "desolate_material_clue": {
+      "materialIds": ["通用仙材", "光道仙材", "风道仙材", "智道仙材", "暗道仙材", "毒道仙材", "魂道仙材", "土道仙材", "木道仙材", "水道仙材"],
+      "minCount": 0,
+      "maxCount": 2,
+      "parasiteGuPolicy": "damaged_or_escape",
+      "clueIds": ["parasite_gu_trace", "desolate_beast_track"],
+      "notes": "荒兽狩猎只给材料、寄生蛊踪迹或后续调查，不直接入手仙蛊。"
+    },
+    "guardian_trial_clue": {
+      "materialIds": ["通用蛊材", "土道蛊材", "木道蛊材", "水道蛊材"],
+      "minCount": 0,
+      "maxCount": 1,
+      "parasiteGuPolicy": "none",
+      "clueIds": ["inheritance_seal_fragment", "land_spirit_condition_hint"],
+      "notes": "守护者主要结算传承/福地试炼进度，不做刷材料入口。"
+    }
   },
-  "寄生蛊规则": {
-    "stability": "寄生在荒兽身上的蛊虫不稳定",
-    "damage": "容易在战斗中损坏",
-    "escape": "蛊虫可能逃跑",
-    "activation": "催发看运气，没有章法",
-    "feeding": "寄生蛊是否需要单独喂养存在争议——部分寄生蛊以荒兽本身为食"
+  "enemyRegistry": [
+    {
+      "id": "fang_wolf",
+      "name": "齿狼",
+      "tier": "common_beast",
+      "kind": "beast",
+      "realmNum": 1,
+      "path": "力道",
+      "daoMarkBias": { "力道": 8 },
+      "battlefield": { "hp": 70, "attack": 18, "defense": 6, "accuracy": 58, "evasion": 30, "preferredTerrain": ["dense_forest", "mountain_pass"], "behavior": "pounce" },
+      "instinctMoves": [
+        { "id": "wolf_bite", "name": "裂齿扑咬", "range": 1, "damageMultiplier": 1.0, "accuracy": 0.62, "statusEffects": ["bleeding"], "terrainEffects": [], "visualMotif": { "motif": "fang", "primaryTint": "#9C6B4E", "motion": "lunge" }, "tags": ["beast", "melee"] }
+      ],
+      "dropRule": { "materialIds": ["通用蛊材", "力道蛊材"], "minCount": 0, "maxCount": 1, "parasiteGuPolicy": "rumor_only", "notes": "普通野兽只给低阶材料或追踪线索。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "hundred_wolf_king",
+      "name": "百兽狼王",
+      "tier": "hundred_beast_king",
+      "kind": "beast_pack",
+      "realmNum": 2,
+      "path": "力道",
+      "daoMarkBias": { "力道": 18 },
+      "battlefield": { "hp": 130, "attack": 30, "defense": 10, "accuracy": 62, "evasion": 34, "preferredTerrain": ["dense_forest", "mountain_pass"], "behavior": "swarm" },
+      "instinctMoves": [
+        { "id": "pack_howl", "name": "狼嚎压阵", "range": 3, "damageMultiplier": 0.75, "accuracy": 0.66, "statusEffects": ["morale_shaken"], "terrainEffects": [], "visualMotif": { "motif": "howl", "primaryTint": "#B8B0A0", "motion": "pulse" }, "tags": ["beast_pack", "morale"] }
+      ],
+      "dropRule": { "materialIds": ["通用蛊材", "力道蛊材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "rumor_only", "notes": "兽王可留下兽群迁徙线索。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "myriad_wolf_king",
+      "name": "万兽狼王",
+      "tier": "myriad_beast_king",
+      "kind": "beast_pack",
+      "realmNum": 4,
+      "path": "力道",
+      "daoMarkBias": { "力道": 55 },
+      "battlefield": { "hp": 260, "attack": 52, "defense": 22, "accuracy": 68, "evasion": 38, "preferredTerrain": ["dense_forest", "mountain_pass"], "behavior": "swarm" },
+      "instinctMoves": [
+        { "id": "wolf_tide", "name": "狼潮合围", "range": 2, "damageMultiplier": 1.25, "accuracy": 0.7, "statusEffects": ["surrounded"], "terrainEffects": ["hazard"], "visualMotif": { "motif": "beast_tide", "primaryTint": "#7C6B5A", "motion": "surge" }, "tags": ["beast_pack", "control"] }
+      ],
+      "dropRule": { "materialIds": ["通用蛊材", "力道蛊材"], "minCount": 1, "maxCount": 3, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["wolf_king_parasite_trace"], "notes": "寄生蛊只形成线索，不直接入背包。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "light_wing_beast",
+      "name": "光翼兽",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "光道",
+      "daoMarkBias": { "光道": 120 },
+      "battlefield": { "hp": 520, "attack": 92, "defense": 42, "accuracy": 72, "evasion": 48, "preferredTerrain": ["open", "dao_field", "frontline"], "behavior": "ambush" },
+      "instinctMoves": [
+        { "id": "light_wing_dive", "name": "光翼俯冲", "range": 3, "damageMultiplier": 1.35, "accuracy": 0.74, "statusEffects": ["blinded"], "terrainEffects": [], "visualMotif": { "motif": "light_wing", "primaryTint": "#F2D36B", "secondaryTint": "#FFF4C4", "motion": "dive" }, "tags": ["desolate_beast", "burst"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "光道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["light_path_parasite_trace"], "notes": "光道仙材与寄生蛊线索，不给仙蛊。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "gang_wind_falcon",
+      "name": "罡风隼",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "风道",
+      "daoMarkBias": { "风道": 118 },
+      "battlefield": { "hp": 470, "attack": 96, "defense": 36, "accuracy": 74, "evasion": 56, "preferredTerrain": ["open", "mountain_pass", "entry_point"], "behavior": "pounce" },
+      "instinctMoves": [
+        { "id": "gang_wind_shear", "name": "罡风剪影", "range": 4, "damageMultiplier": 1.2, "accuracy": 0.76, "statusEffects": ["wind_shear"], "terrainEffects": ["hazard"], "visualMotif": { "motif": "wind_blade", "primaryTint": "#A7D4D8", "motion": "slash" }, "tags": ["desolate_beast", "line"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "风道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["wind_path_parasite_trace"], "notes": "罡风羽类材料按通用风道仙材结算。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "phantom_wisdom_monkey",
+      "name": "幻智猴",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "智道",
+      "daoMarkBias": { "智道": 105 },
+      "battlefield": { "hp": 430, "attack": 78, "defense": 34, "accuracy": 78, "evasion": 54, "preferredTerrain": ["dense_forest", "concealment", "dao_field"], "behavior": "control" },
+      "instinctMoves": [
+        { "id": "phantom_confusion", "name": "幻念扰识", "range": 4, "damageMultiplier": 0.8, "accuracy": 0.78, "statusEffects": ["confused"], "terrainEffects": [], "visualMotif": { "motif": "wisdom_mist", "primaryTint": "#9F86FF", "motion": "ripple" }, "tags": ["desolate_beast", "control"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "智道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["wisdom_path_parasite_trace"], "notes": "智慧结晶统一按智道仙材处理。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "shadow_python",
+      "name": "暗影蟒",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "暗道",
+      "daoMarkBias": { "暗道": 130 },
+      "battlefield": { "hp": 560, "attack": 88, "defense": 48, "accuracy": 70, "evasion": 50, "preferredTerrain": ["dense_forest", "concealment", "backline"], "behavior": "ambush" },
+      "instinctMoves": [
+        { "id": "shadow_coil", "name": "暗影缠杀", "range": 2, "damageMultiplier": 1.3, "accuracy": 0.72, "statusEffects": ["bound"], "terrainEffects": ["concealment"], "visualMotif": { "motif": "shadow_coil", "primaryTint": "#5B4B76", "motion": "coil" }, "tags": ["desolate_beast", "bind"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "暗道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["dark_path_parasite_trace"], "notes": "暗道材料与寄生蛊踪迹。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "poison_mist_toad",
+      "name": "毒雾蟾",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "毒道",
+      "daoMarkBias": { "毒道": 126 },
+      "battlefield": { "hp": 610, "attack": 76, "defense": 58, "accuracy": 66, "evasion": 32, "preferredTerrain": ["riverbank", "hazard", "dense_forest"], "behavior": "hazard" },
+      "instinctMoves": [
+        { "id": "poison_mist_bloom", "name": "毒雾鼓涌", "range": 3, "damageMultiplier": 0.9, "accuracy": 0.7, "statusEffects": ["poisoned"], "terrainEffects": ["hazard"], "visualMotif": { "motif": "poison_mist", "primaryTint": "#7ED36A", "motion": "bloom" }, "tags": ["desolate_beast", "poison", "terrain"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "毒道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["poison_path_parasite_trace"], "notes": "毒囊、毒雾残痕统一按毒道仙材结算。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "soul_devouring_bat",
+      "name": "噬魂鬼蝠",
+      "tier": "desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 6,
+      "path": "魂道",
+      "daoMarkBias": { "魂道": 128 },
+      "battlefield": { "hp": 450, "attack": 90, "defense": 34, "accuracy": 75, "evasion": 58, "preferredTerrain": ["concealment", "backline", "dense_forest"], "behavior": "ambush" },
+      "instinctMoves": [
+        { "id": "soul_screech", "name": "噬魂尖啸", "range": 4, "damageMultiplier": 1.05, "accuracy": 0.75, "statusEffects": ["soul_shaken"], "terrainEffects": [], "visualMotif": { "motif": "soul_wave", "primaryTint": "#79B1FF", "motion": "shockwave" }, "tags": ["desolate_beast", "soul"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "魂道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["soul_path_parasite_trace"], "notes": "魂道残材与后续调查线索。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "black_prison_dragon",
+      "name": "黑狱龙",
+      "tier": "ancient_desolate_beast",
+      "kind": "desolate_beast",
+      "realmNum": 7,
+      "path": "暗道",
+      "daoMarkBias": { "暗道": 260, "力道": 80 },
+      "battlefield": { "hp": 900, "attack": 138, "defense": 86, "accuracy": 78, "evasion": 42, "preferredTerrain": ["concealment", "hazard", "frontline"], "behavior": "hazard" },
+      "instinctMoves": [
+        { "id": "black_prison_crush", "name": "黑狱碾压", "range": 2, "damageMultiplier": 1.55, "accuracy": 0.78, "statusEffects": ["crushed"], "terrainEffects": ["hazard"], "visualMotif": { "motif": "dark_dragon", "primaryTint": "#3A2C4E", "secondaryTint": "#C44B4B", "motion": "slam" }, "tags": ["ancient_desolate_beast", "boss"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "暗道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "damaged_or_escape", "clueIds": ["ancient_beast_retreat_trace"], "notes": "上古荒兽在 v0.9-a3 只用于高压样板，胜利也不稳定产出蛊虫。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "ancient_vine_guardian",
+      "name": "古藤荒植",
+      "tier": "desolate_plant",
+      "kind": "desolate_plant",
+      "realmNum": 6,
+      "path": "木道",
+      "daoMarkBias": { "木道": 150 },
+      "battlefield": { "hp": 700, "attack": 80, "defense": 70, "accuracy": 68, "evasion": 20, "preferredTerrain": ["dense_forest", "array_node", "dao_field"], "behavior": "control" },
+      "instinctMoves": [
+        { "id": "vine_cage", "name": "古藤囚笼", "range": 3, "damageMultiplier": 0.95, "accuracy": 0.72, "statusEffects": ["bound"], "terrainEffects": ["cover"], "visualMotif": { "motif": "vine_cage", "primaryTint": "#4FA66A", "motion": "entangle" }, "tags": ["desolate_plant", "control"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "木道仙材"], "minCount": 0, "maxCount": 2, "parasiteGuPolicy": "none", "clueIds": ["wood_path_resource_node_trace"], "notes": "荒植偏资源节点线索，不掉蛊。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "inheritance_stone_guardian",
+      "name": "传承石傀",
+      "tier": "guardian",
+      "kind": "inheritance_guardian",
+      "realmNum": 5,
+      "path": "土道",
+      "daoMarkBias": { "土道": 95 },
+      "battlefield": { "hp": 480, "attack": 72, "defense": 66, "accuracy": 66, "evasion": 18, "preferredTerrain": ["formation_ruins", "array_node", "mountain_pass"], "behavior": "guard" },
+      "instinctMoves": [
+        { "id": "seal_slam", "name": "封印震击", "range": 2, "damageMultiplier": 1.05, "accuracy": 0.68, "statusEffects": ["stunned"], "terrainEffects": ["array_node"], "visualMotif": { "motif": "seal_stone", "primaryTint": "#C9A96E", "motion": "stamp" }, "tags": ["guardian", "inheritance"] }
+      ],
+      "dropRule": { "materialIds": ["通用蛊材", "土道蛊材"], "minCount": 0, "maxCount": 1, "parasiteGuPolicy": "none", "clueIds": ["inheritance_seal_fragment"], "notes": "传承守护者结算试炼进度和封印碎片。" },
+      "runtimeAllowed": true
+    },
+    {
+      "id": "spirit_spring_salamander",
+      "name": "灵泉守护兽",
+      "tier": "guardian",
+      "kind": "blessed_land_guardian",
+      "realmNum": 6,
+      "path": "水道",
+      "daoMarkBias": { "水道": 120 },
+      "battlefield": { "hp": 620, "attack": 82, "defense": 60, "accuracy": 70, "evasion": 35, "preferredTerrain": ["riverbank", "dao_field", "array_node"], "behavior": "guard" },
+      "instinctMoves": [
+        { "id": "spring_wave_guard", "name": "灵泉回潮", "range": 3, "damageMultiplier": 0.9, "accuracy": 0.7, "statusEffects": ["slowed"], "terrainEffects": ["cover"], "visualMotif": { "motif": "spring_wave", "primaryTint": "#6BBFD8", "motion": "wave" }, "tags": ["guardian", "blessed_land"] }
+      ],
+      "dropRule": { "materialIds": ["通用仙材", "水道仙材"], "minCount": 0, "maxCount": 1, "parasiteGuPolicy": "none", "clueIds": ["land_spirit_condition_hint"], "notes": "福地守护兽不开奖励池，主要推动地灵认主条件。" },
+      "runtimeAllowed": true
+    }
+  ],
+  "huntBindings": {
+    "tg_white_heaven": {
+      "encounterKind": "beast_hunt",
+      "gridPresetId": "ambush_7x5",
+      "dropPolicyId": "desolate_material_clue",
+      "enemyPool": ["light_wing_beast", "gang_wind_falcon", "phantom_wisdom_monkey"],
+      "minEnemies": 2,
+      "maxEnemies": 3,
+      "risk": "high",
+      "notes": "白天狩猎以光道、风道、智道荒兽为首批样板。"
+    },
+    "tg_black_heaven": {
+      "encounterKind": "beast_hunt",
+      "gridPresetId": "ambush_7x5",
+      "dropPolicyId": "desolate_material_clue",
+      "enemyPool": ["shadow_python", "poison_mist_toad", "soul_devouring_bat", "black_prison_dragon"],
+      "minEnemies": 2,
+      "maxEnemies": 4,
+      "risk": "high",
+      "notes": "黑天样板允许上古荒兽作为高压目标，但仍不直接掉仙蛊。"
+    },
+    "inheritance_guardian_sample": {
+      "encounterKind": "inheritance_guardian",
+      "gridPresetId": "ambush_7x5",
+      "dropPolicyId": "guardian_trial_clue",
+      "enemyPool": ["inheritance_stone_guardian", "ancient_vine_guardian"],
+      "minEnemies": 1,
+      "maxEnemies": 2,
+      "risk": "medium",
+      "notes": "传承守护战后续给 c2.8/b1 复用。"
+    }
   },
-  "击杀掉落规则": {
-    "rule": "荒兽死后寄生蛊可能存活也可能死亡，不可预测，非必然掉落",
-    "reason": "荒兽临死前可能自爆寄生蛊；寄生蛊在宿主死亡后可能自行逃脱；部分寄生蛊与宿主同生共死",
-    "获取蛊虫": "杀死荒兽不是可靠的蛊虫获取途径。正规途径是炼蛊或获取传承"
-  },
-  "荒兽杀招": {
-    "hasKillerMoves": true,
-    "characteristic": "荒兽有自身的天赋杀招，与蛊师杀招机制不同——更接近本能而非组合使用",
-    "effect": "荒兽杀招通常强大但单一，缺乏蛊师杀招的灵活组合"
-  },
-  "常见荒兽类型": {
-    "雷鬼真君坐骑": "上古荒兽级，速度极快，雷电属性",
-    "狐仙福地守护兽": "荒兽级，守护福地，不主动攻击进入者",
-    "泥怪": "低智慧荒兽，皮糙肉厚，难以击杀",
-    "云兽": "天空荒兽，飞行能力，风道属性"
+  "blockedRuntime": {
+    "immemorialDesolateBeast": "太古荒兽在 v0.9-a3 只作传闻和禁区压力，不作为常规战斗敌人。",
+    "immortalGuDrop": "荒兽死亡不得稳定产出仙蛊；未知仙蛊候选一律拦截或降级为传闻。",
+    "rankTenOrEternalLife": "十转、永生蛊、真正永生、玩家获得宿命蛊不允许成为运行时奖励。"
   }
 }

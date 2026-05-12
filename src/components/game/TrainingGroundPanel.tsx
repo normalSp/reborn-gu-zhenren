@@ -6,6 +6,7 @@ import {
   listTrainingGroundSpecs,
   type TrainingGroundEntryView,
 } from '../../engine/v090-training-ground-clue-engine';
+import { describeHuntGroundBinding } from '../../engine/v090-beast-enemy-registry';
 
 const TYPE_LABELS: Record<string, string> = {
   '磨练': '磨练',
@@ -27,7 +28,7 @@ const STATUS_LABELS: Record<TrainingGroundEntryView['status'], string> = {
   location_mismatch: '地点不匹配',
   realm_blocked: '境界不足',
   cooldown: '冷却中',
-  beast_library_pending: '待荒兽敌库',
+  beast_library_pending: '敌库未绑定',
   blocked: '不可用',
 };
 
@@ -54,7 +55,7 @@ function currencyText(store: any, immortalOnly: boolean): string {
 function actionLabel(entry: TrainingGroundEntryView): string {
   if (entry.actionKind === 'duel') return '出发对决';
   if (entry.actionKind === 'trial') return '进入试炼';
-  if (entry.actionKind === 'hunt') return '等待 a3';
+  if (entry.actionKind === 'hunt') return '出发狩猎';
   return '出发磨练';
 }
 
@@ -102,6 +103,12 @@ function ClueCard({
         <span>路线：{entry.routeHint || '本地校验'}</span>
       </div>
 
+      {entry.enemyPreview && entry.enemyPreview.length > 0 && (
+        <div className="rounded-sm border border-rg-blood-400/15 bg-rg-blood-500/5 px-2 py-2 text-[10px] leading-relaxed text-rg-paper-200/60" data-testid="training-ground-hunt-preview">
+          <p className="font-semibold text-rg-blood-200">狩猎敌情：{entry.enemyPreview.join('、')}</p>
+          {entry.dropBoundary && <p className="mt-1 text-rg-paper-200/45">{entry.dropBoundary}</p>}
+        </div>
+      )}
       {warnings.length > 0 && (
         <div className="space-y-1 rounded-sm border border-rg-gold/15 bg-rg-gold/5 px-2 py-2">
           {warnings.map((warning, index) => (
@@ -149,6 +156,7 @@ export function TrainingGroundPanel() {
   const blockedRecords = state?.blockedRecords || [];
   const specs = useMemo(() => listTrainingGroundSpecs(), []);
   const debugSpecs = specs.filter(spec => spec.type !== 'hunt').slice(0, 3);
+  const debugHuntSpecs = specs.filter(spec => spec.type === 'hunt' && describeHuntGroundBinding(spec.id).available).slice(0, 2);
 
   const handleDepart = (entry: TrainingGroundEntryView) => {
     const result = (useStore.getState() as any).startTrainingGroundDepartureAction(entry.ground.id);
@@ -178,7 +186,7 @@ export function TrainingGroundPanel() {
           <div>
             <h3 className="text-sm font-semibold tracking-wider text-rg-gold">道场线索账本</h3>
             <p className="mt-1 max-w-2xl text-[11px] leading-relaxed text-rg-paper-200/50" data-testid="training-ground-clue-policy">
-              v0.9.0-a2：正式道场不再靠刷新刷池，只能由剧情、地点、势力、传承或福地资源点给出线索。出发、消耗、奖励与战斗路由都由本地引擎校验，并写入场景 AP 账本。
+              v0.9.0-a3：正式道场不再靠刷新刷池，只能由剧情、地点、势力、传承或福地资源点给出线索。狩猎线索会生成 7x5 荒兽棋盘战，奖励边界由本地敌库校验。
             </p>
           </div>
           <div className="rounded-sm border border-rg-gold/15 bg-rg-gold/5 px-3 py-2 text-right text-[10px] text-rg-paper-200/55">
@@ -204,7 +212,7 @@ export function TrainingGroundPanel() {
               <p>· 磨练：消耗场景 AP，结算道痕、冷却和代价。</p>
               <p>· 对决：生成正式战斗候选，走统一战斗路由。</p>
               <p>· 试炼：写入行动账本，由下一轮剧情承接。</p>
-              <p>· 狩猎：等待 a3 荒兽/兽群敌库，不结算掉落。</p>
+              <p>· 狩猎：有线索后进入 7x5 荒兽/兽群棋盘战，寄生蛊不直接掉落。</p>
             </div>
             {blockedRecords.length > 0 && (
               <div className="mt-3 border-t border-rg-ink-300/10 pt-3">
@@ -226,7 +234,7 @@ export function TrainingGroundPanel() {
             旧刷新/旧训练入口已降级。这里仅用于测试和兼容，不代表玩家可以绕过剧情线索反复刷道场。
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {debugSpecs.map(spec => (
+            {[...debugSpecs, ...debugHuntSpecs].map(spec => (
               <button
                 key={spec.id}
                 className="rg-button rg-button--ghost px-2 py-1 text-[10px]"

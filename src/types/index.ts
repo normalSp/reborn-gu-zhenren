@@ -163,7 +163,7 @@ export interface TrainingGroundResolutionStep {
 }
 
 export interface TrainingGroundState {
-  version: 'v0.9.0-a2';
+  version: 'v0.9.0-a2' | 'v0.9.0-a3';
   clues: TrainingGroundClueRecord[];
   unlockedGroundIds: string[];
   activeGroundId: string | null;
@@ -173,7 +173,7 @@ export interface TrainingGroundState {
 }
 
 export interface TrainingGroundChoiceTag {
-  kind: 'training_ground_clue' | 'training_ground_departure' | 'location_permission' | 'beast_library_pending';
+  kind: 'training_ground_clue' | 'training_ground_departure' | 'location_permission' | 'beast_library_pending' | 'beast_hunt';
   label: string;
   status: 'available' | 'blocked' | 'rumor' | 'debug';
   groundId?: string;
@@ -184,6 +184,99 @@ export interface TrainingGroundChoiceTag {
 export type CombatEncounterScale = 'duel' | 'battlefield_5x3' | 'group_5x3' | 'group_7x5';
 export type CombatEncounterStatus = 'idle' | 'candidate' | 'active' | 'resolved' | 'abandoned';
 export type BattleOutcomeResult = 'victory' | 'defeat' | 'retreat' | 'abandoned' | 'unresolved';
+export type BeastEnemyTier =
+  | 'common_beast'
+  | 'hundred_beast_king'
+  | 'thousand_beast_king'
+  | 'myriad_beast_king'
+  | 'beast_emperor'
+  | 'desolate_beast'
+  | 'ancient_desolate_beast'
+  | 'desolate_plant'
+  | 'guardian'
+  | 'immemorial_rumor';
+export type BeastEnemyKind =
+  | 'beast'
+  | 'beast_pack'
+  | 'desolate_beast'
+  | 'desolate_plant'
+  | 'inheritance_guardian'
+  | 'blessed_land_guardian'
+  | 'calamity_beast';
+export type BeastEncounterKind =
+  | 'beast_hunt'
+  | 'beast_pack'
+  | 'desolate_plant'
+  | 'inheritance_guardian'
+  | 'blessed_land_guardian'
+  | 'calamity_beast';
+
+export interface BeastInstinctMove {
+  id: string;
+  name: string;
+  range: number;
+  damageMultiplier: number;
+  accuracy?: number;
+  statusEffects?: string[];
+  terrainEffects?: string[];
+  visualMotif: GuVisualMotif;
+  tags: string[];
+}
+
+export interface BeastDropRule {
+  materialIds: string[];
+  minCount: number;
+  maxCount: number;
+  parasiteGuPolicy: 'none' | 'rumor_only' | 'damaged_or_escape';
+  clueIds?: string[];
+  notes: string;
+}
+
+export interface BeastEnemySpec {
+  id: string;
+  name: string;
+  tier: BeastEnemyTier;
+  kind: BeastEnemyKind;
+  realmNum: number;
+  path: string;
+  daoMarkBias: Record<string, number>;
+  battlefield: {
+    hp: number;
+    attack: number;
+    defense: number;
+    accuracy: number;
+    evasion: number;
+    preferredTerrain: string[];
+    behavior: 'pounce' | 'swarm' | 'ambush' | 'control' | 'guard' | 'hazard';
+  };
+  instinctMoves: BeastInstinctMove[];
+  dropRule: BeastDropRule;
+  runtimeAllowed: boolean;
+  notes?: string;
+}
+
+export interface BeastEncounterRuntimeSpec {
+  id: string;
+  title: string;
+  groundId?: string;
+  encounterKind: BeastEncounterKind;
+  enemySpecIds: string[];
+  dropPolicyId: string;
+  gridPresetId: 'ambush_7x5' | 'skirmish_5x3';
+  risk: 'low' | 'medium' | 'high';
+  seed: string | number;
+}
+
+export interface BeastLootResolution {
+  encounterId: string;
+  result: BattleOutcomeResult;
+  materialDrops: Record<string, number>;
+  clueDrops: string[];
+  rumors: string[];
+  blockedRewards: string[];
+  parasiteGuOutcome: 'none' | 'destroyed' | 'escaped' | 'rumor_only';
+  steps: string[];
+}
 
 export interface CombatEncounterSpec {
   id: string;
@@ -200,6 +293,11 @@ export interface CombatEncounterSpec {
   availableKillerMoves: string[];
   blockers: string[];
   warnings: string[];
+  encounterKind?: BeastEncounterKind | string;
+  enemySpecIds?: string[];
+  groundId?: string;
+  dropPolicyId?: string;
+  gridPresetId?: string;
 }
 
 export interface CombatEncounterEntryValidation {
@@ -224,6 +322,7 @@ export interface BattleOutcomeSummary {
   daoMarkDelta: Record<string, number>;
   createdTurn: number;
   steps: string[];
+  beastLoot?: BeastLootResolution;
 }
 
 export interface CombatEncounterState {
@@ -1720,6 +1819,11 @@ export interface CombatEventCandidate {
   enemyHint?: string;
   requiredRealmGrand?: number;
   entryValidation?: CombatEncounterEntryValidation;
+  encounterKind?: BeastEncounterKind | string;
+  enemySpecIds?: string[];
+  groundId?: string;
+  dropPolicyId?: string;
+  gridPresetId?: string;
 }
 
 export type GuExpressionAvailability = 'direct' | 'passive' | 'scene_gated';
@@ -1846,6 +1950,8 @@ export interface BattlefieldUnit {
   revealed?: boolean;
   objectiveTags?: string[];
   intent?: string;
+  beastSpecId?: string;
+  instinctMoves?: BeastInstinctMove[];
 }
 
 export type BattlefieldActionType =

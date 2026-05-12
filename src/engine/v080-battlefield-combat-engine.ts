@@ -1734,6 +1734,152 @@ function firstUsableGuAction(state: BattlefieldCombatState, actor: BattlefieldUn
   return null;
 }
 
+function firstUsableInstinctTarget(state: BattlefieldCombatState, actor: BattlefieldUnit, targets: BattlefieldUnit[]): {
+  target: BattlefieldUnit;
+  move: NonNullable<BattlefieldUnit['instinctMoves']>[number];
+} | null {
+  const actorCell = getCell(state, actor.cellId);
+  if (!actorCell || !actor.instinctMoves?.length) return null;
+  for (const move of actor.instinctMoves) {
+    for (const target of targets) {
+      const targetCell = getCell(state, target.cellId);
+      if (!targetCell) continue;
+      if (manhattan(actorCell, targetCell) <= Math.max(1, Number(move.range || 1))) {
+        return { target, move };
+      }
+    }
+  }
+  return null;
+}
+
+function applyInstinctTerrainEffect(
+  state: BattlefieldCombatState,
+  targetCellId: string,
+  effects: string[] | undefined,
+): { state: BattlefieldCombatState; step?: BattleResolutionStep } {
+  const allowed: BattlefieldCellFlag[] = ['hazard', 'cover', 'concealment', 'array_node'];
+  const toAdd = (effects || []).filter((effect): effect is BattlefieldCellFlag => allowed.includes(effect as BattlefieldCellFlag));
+  if (!toAdd.length) return { state };
+  let changed = false;
+  const cells = state.grid.cells.map(cell => {
+    if (cell.id !== targetCellId) return cell;
+    const flags = [...cell.flags];
+    for (const flag of toAdd) {
+      if (!flags.includes(flag)) {
+        flags.push(flag);
+        changed = true;
+      }
+    }
+    return changed ? { ...cell, flags } : cell;
+  });
+  if (!changed) return { state };
+  const nextState = { ...state, grid: { ...state.grid, cells } };
+  const step = makeStep(nextState, 'terrain_change', {
+    affectedCellIds: [targetCellId],
+    sourceName: 'beast_instinct',
+    message: 'beast_instinct_terrain_shift',
+    visual: {
+      motif: 'terrain_shift',
+      primaryTint: '#7C6B5A',
+      motion: 'ripple',
+      intensity: 'normal',
+    },
+    tags: ['beast_instinct', 'terrain_change', ...toAdd],
+  });
+  return { state: nextState, step };
+}
+
+function resolveBeastInstinctAction(
+  state: BattlefieldCombatState,
+  actor: BattlefieldUnit,
+  target: BattlefieldUnit,
+  move: NonNullable<BattlefieldUnit['instinctMoves']>[number],
+): BattlefieldActionResolution {
+  let nextState = cloneState(state);
+  const currentActor = getUnit(nextState, actor.id) || actor;
+  const currentTarget = getUnit(nextState, target.id) || target;
+  const targetCell = getCell(nextState, currentTarget.cellId);
+  if (!targetCell) {
+    return failureResolution(nextState, { type: 'wait', actorId: actor.id }, 'beast_instinct_missing_cell', move.name, ['beast_instinct']);
+  }
+  const targetCells = [targetCell];
+  const affinityTags = new Set(targetCells.flatMap(cell => tagsForCell(nextState, cell)));
+  const preferred = new Set(currentActor.objectiveTags || []);
+  const attack = rollAttack(
+    nextState,
+    currentActor,
+    currentTarget,
+    move.name,
+    currentActor.path,
+    targetCells,
+    Math.max(0.1, Number(move.damageMultiplier || 1)),
+    {
+      isFavored: [...preferred].some(tag => affinityTags.has(tag)),
+      isHindered: false,
+      tags: [...affinityTags],
+    },
+  );
+  const guard = applyGroupGuard(nextState, currentTarget, attack.damage);
+  const damage = guard.damage;
+  const damagedTarget: BattlefieldUnit = attack.hit
+    ? { ...currentTarget, hp: Math.max(0, currentTarget.hp - damage) }
+    : currentTarget;
+  const statusResult = attack.hit ? addStatuses(damagedTarget, move.statusEffects || []) : { unit: damagedTarget, added: [] as string[] };
+  nextState = updateUnit(consumeEffects(nextState, guard.consumedEffectIds), statusResult.unit);
+  const hitStep = makeStep(nextState, attack.hit ? 'hit' : 'miss', {
+    actorId: currentActor.id,
+    targetIds: [currentTarget.id],
+    affectedCellIds: [currentTarget.cellId],
+    damage,
+    sourceName: move.name,
+    message: attack.hit ? 'beast_instinct_hit' : 'beast_instinct_miss',
+    visual: {
+      motif: move.visualMotif?.motif || 'beast_instinct',
+      primaryTint: move.visualMotif?.primaryTint || '#C44B4B',
+      motion: move.visualMotif?.motion || 'lunge',
+      intensity: currentActor.realmNum >= 6 ? 'high' : 'normal',
+    },
+    tags: ['beast_instinct', ...(move.tags || []), attack.hit ? 'hit' : 'miss'],
+  });
+  const steps: BattleResolutionStep[] = [];
+  if (guard.guardStep) steps.push(guard.guardStep);
+  steps.push(hitStep);
+  if (statusResult.added.length) {
+    steps.push(makeStep(nextState, 'status_apply', {
+      actorId: currentActor.id,
+      targetIds: [currentTarget.id],
+      affectedCellIds: [currentTarget.cellId],
+      statusEffects: statusResult.added,
+      sourceName: move.name,
+      message: 'beast_instinct_status_apply',
+      visual: {
+        motif: move.visualMotif?.motif || 'beast_status',
+        primaryTint: move.visualMotif?.primaryTint || '#7ED36A',
+        motion: 'status_pulse',
+        intensity: 'normal',
+      },
+      tags: ['beast_instinct', 'status_apply', ...statusResult.added],
+    }));
+  }
+  const terrain = applyInstinctTerrainEffect(nextState, currentTarget.cellId, move.terrainEffects);
+  nextState = terrain.state;
+  if (terrain.step) steps.push(terrain.step);
+  nextState = appendSteps(nextState, steps);
+  const settled = settleIfNeeded(nextState);
+  const allSteps = settled.step ? [...steps, settled.step] : steps;
+  return {
+    state: settled.state,
+    steps: allSteps,
+    validation: defaultValidation({ type: 'wait', actorId: actor.id }, {
+      ok: true,
+      sourceName: move.name,
+      affectedCellIds: [currentTarget.cellId],
+      targetUnitIds: [currentTarget.id],
+      tags: ['beast_instinct', ...(move.tags || [])],
+    }),
+  };
+}
+
 function enterDueThirdParties(state: BattlefieldCombatState): { state: BattlefieldCombatState; steps: BattleResolutionStep[] } {
   let nextState = state;
   const steps: BattleResolutionStep[] = [];
@@ -1844,8 +1990,11 @@ export function resolveBattlefieldEnemyTurn(state: BattlefieldCombatState): Batt
       .filter(unit => unit.hp > 0 && groupVisible(unit) && isHostile(enemy, unit))
       .sort((a, b) => (b.threat ?? 0) - (a.threat ?? 0) || a.hp - b.hp);
     const action = targets.map(target => firstUsableGuAction(nextState, enemy, target)).find(Boolean) ?? null;
-    if (!action) continue;
-    const resolution = executeBattlefieldAction(nextState, action);
+    const instinct = action ? null : firstUsableInstinctTarget(nextState, enemy, targets);
+    if (!action && !instinct) continue;
+    const resolution = action
+      ? executeBattlefieldAction(nextState, action)
+      : resolveBeastInstinctAction(nextState, enemy, instinct!.target, instinct!.move);
     nextState = resolution.state;
     steps.push(...resolution.steps);
     if (nextState.phase === 'ended') break;

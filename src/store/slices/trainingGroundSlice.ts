@@ -128,7 +128,7 @@ export const createTrainingGroundSlice = (set: any, get: any): TrainingGroundSli
     applyTrainingSessionEffects(set, get, result);
 
     if (result.combatCandidate) appendCombatCandidate(set, get, result.combatCandidate);
-    if (entry.actionKind === 'duel' || entry.actionKind === 'trial') {
+    if (entry.actionKind === 'duel' || entry.actionKind === 'trial' || entry.actionKind === 'hunt') {
       (get() as any).prepareNarrativeAdvanceIntent?.(`training_ground_${entry.actionKind}`);
     }
     (get() as any).addGameLog?.('system', result.message, {

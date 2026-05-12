@@ -17,6 +17,7 @@ import {
   normalizeCombatRouteScale,
   resolveCombatRoutePolicy,
 } from './combat-route-policy';
+import { getBeastEnemySpec } from './v090-beast-enemy-registry';
 
 const DEFAULT_ENEMY_HINT: Record<CombatEncounterScale, string> = {
   duel: '剧情对手',
@@ -68,6 +69,10 @@ function resolveCandidateId(candidate: Partial<CombatEventCandidate>, turn: numb
   return `combat_${turn}_${title}`;
 }
 
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))];
+}
+
 export function normalizeCombatEncounterSpec(candidate: Partial<CombatEventCandidate>, store: any): CombatEncounterSpec {
   const turn = Number(candidate.createdTurn || store?.turn || 1);
   const route = resolveCombatRoutePolicy({
@@ -89,10 +94,18 @@ export function normalizeCombatEncounterSpec(candidate: Partial<CombatEventCandi
   const requiredRealmGrand = Number((candidate as any).requiredRealmGrand || (candidate as any).recommendedRealm || 0) || undefined;
   const blockers: string[] = [];
   const warnings: string[] = [...route.warnings];
+  const enemySpecIds = Array.isArray((candidate as any).enemySpecIds)
+    ? uniqueStrings((candidate as any).enemySpecIds.map(String))
+    : [];
+  const validEnemySpecIds = enemySpecIds.filter(id => getBeastEnemySpec(id));
+  const unknownEnemySpecIds = enemySpecIds.filter(id => !getBeastEnemySpec(id));
 
   if (!candidate.title || !candidate.summary) blockers.push('缺少标题或摘要，不能进入正式战斗。');
   if (requiredRealmGrand && Number(store?.profile?.realm?.grand || 1) < requiredRealmGrand) {
     blockers.push(`当前境界不足：需要${requiredRealmGrand}转以上。`);
+  }
+  if (unknownEnemySpecIds.length > 0) {
+    blockers.push(`unknown beast enemy specs: ${unknownEnemySpecIds.join(', ')}`);
   }
   if (scale !== 'duel' && ownedGu.length === 0) {
     warnings.push('玩家没有可登记凡战蛊虫，本地战斗会降为保命/观察向压力。');
@@ -113,6 +126,11 @@ export function normalizeCombatEncounterSpec(candidate: Partial<CombatEventCandi
     availableKillerMoves: learnedMoves,
     blockers,
     warnings,
+    encounterKind: (candidate as any).encounterKind,
+    enemySpecIds: validEnemySpecIds,
+    groundId: (candidate as any).groundId,
+    dropPolicyId: (candidate as any).dropPolicyId,
+    gridPresetId: (candidate as any).gridPresetId,
   };
 }
 
@@ -195,6 +213,7 @@ export function buildCombatOutcomeLedgerEntry(
       hpDelta: outcome.hpDelta,
       essenceDelta: outcome.essenceDelta,
       steps: outcome.steps,
+      beastLoot: outcome.beastLoot,
     },
     risks: outcome.result === 'victory' ? [] : ['战斗结果会作为下一轮剧情压力承接'],
   };
