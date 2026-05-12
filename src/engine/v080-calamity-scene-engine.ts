@@ -1,6 +1,25 @@
 import sceneSpecsRaw from '../canon/v080-calamity-scene-specs.json';
-import type { CalamityPreview, CalamitySceneKind, CalamitySceneSpec, CombatEncounterScale } from '../types';
+import type {
+  CalamityPreview,
+  CalamitySceneKind,
+  CalamitySceneSpec,
+  CombatEncounterScale,
+  LocalActionLedgerEntry,
+  NarrativeReturnContext,
+  WorldActionCandidate,
+  WorldActionDeparture,
+  WorldActionResolution,
+  WorldActionResolutionMode,
+  WorldActionRisk,
+} from '../types';
 import { buildCalamityPreview } from './v080-cultivation-calamity-engine';
+import {
+  buildNarrativeReturnContext,
+  createWorldActionCandidate,
+  createWorldActionDeparture,
+  createWorldActionResolution,
+  projectWorldActionLedgerEntry,
+} from './v090-world-action-protocol';
 
 interface SceneTemplate {
   kind: CalamitySceneKind;
@@ -15,12 +34,53 @@ interface SceneTemplate {
 
 const sceneTemplates = (sceneSpecsRaw as { entries: SceneTemplate[] }).entries;
 
+export type CalamityWorldActionPhase = 'omen' | 'consequence';
+
+export interface CalamityWorldActionBridge {
+  worldActionCandidate: WorldActionCandidate;
+  worldActionDeparture: WorldActionDeparture;
+  worldActionResolution: WorldActionResolution;
+  worldActionLedgerEntry: LocalActionLedgerEntry;
+  narrativeReturnContext: NarrativeReturnContext;
+}
+
 export function listCalamitySceneTemplates(): SceneTemplate[] {
   return sceneTemplates.slice();
 }
 
 function lowerTags(preview: CalamityPreview): Set<string> {
   return new Set((preview.tags || []).map(tag => String(tag).toLowerCase()));
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function currentTurn(store: any): number {
+  return Number(store?.turn || 1);
+}
+
+function currentLocationId(store: any): string {
+  return String(store?.currentLocationId || store?.currentDomain || store?.sceneSessionState?.locationId || '');
+}
+
+function calamityRisk(spec: CalamitySceneSpec): WorldActionRisk {
+  if (spec.severity >= 4 || spec.category === 'heavenly_tribulation') return 'high';
+  if (spec.severity >= 2) return 'medium';
+  return 'low';
+}
+
+function defaultCalamityFacts(spec: CalamitySceneSpec, phase: CalamityWorldActionPhase): string[] {
+  const affected = spec.affectedResourceNodeIds.length > 0 ? spec.affectedResourceNodeIds.join('、') : '暂未锁定';
+  const facts = [
+    phase === 'omen'
+      ? `灾劫预兆已由本地引擎登记：${spec.name}。`
+      : `灾劫结算已进入本地行动协议：${spec.name}。`,
+    `灾劫类型：${spec.kind}；流派：${spec.path}；严重度：${spec.severity}；倒计时：${spec.countdown}；影响资源点：${affected}。`,
+  ];
+  if (spec.combatScale) facts.push(`灾劫战斗候选规模：${spec.combatScale}；战斗胜负仍等待战斗引擎结算。`);
+  facts.push('灾劫面积损失、资源点损伤、道痕变化、蛊虫损坏和奖励不得由 DeepSeek 判定。');
+  return facts;
 }
 
 export function selectCalamitySceneKind(preview: CalamityPreview, store: any = {}): CalamitySceneKind {
@@ -72,6 +132,108 @@ export function buildCalamitySceneSpec(input: {
     possibleConsequences: template.consequences,
     combatScale,
     tags: [...new Set([...preview.tags, ...template.tags, kind])],
+  };
+}
+
+export function buildCalamityWorldActionBridge(input: {
+  spec: CalamitySceneSpec;
+  store?: any;
+  phase: CalamityWorldActionPhase;
+  summary?: string;
+  status?: WorldActionResolution['status'];
+  localFacts?: string[];
+  risks?: string[];
+  blockedReasons?: string[];
+  mode?: WorldActionResolutionMode;
+  chargeAp?: boolean;
+  metadata?: Record<string, unknown>;
+}): CalamityWorldActionBridge {
+  const store = input.store || {};
+  const spec = input.spec;
+  const turn = currentTurn(store);
+  const summary = input.summary || (input.phase === 'omen'
+    ? `灾劫预兆入场：${spec.name}`
+    : `灾劫结算：${spec.name}`);
+  const risks = uniqueStrings([
+    ...spec.possibleConsequences,
+    'DeepSeek 只能写预兆、压力和选择描述；灾劫后果必须由本地引擎结算。',
+    ...(input.risks || []),
+  ]);
+  const candidate = createWorldActionCandidate({
+    domain: 'calamity',
+    sourceId: spec.previewId,
+    title: spec.name,
+    summary,
+    source: 'engine',
+    sceneId: spec.sceneId,
+    locationId: currentLocationId(store),
+    risk: calamityRisk(spec),
+    apCost: 1,
+    blockers: input.blockedReasons,
+    warnings: risks,
+    tags: uniqueStrings(['calamity', input.phase, spec.kind, spec.path, ...spec.tags]),
+    createdTurn: turn,
+    metadata: {
+      specId: spec.id,
+      previewId: spec.previewId,
+      category: spec.category,
+      path: spec.path,
+      kind: spec.kind,
+      severity: spec.severity,
+      countdown: spec.countdown,
+      affectedResourceNodeIds: spec.affectedResourceNodeIds,
+      combatScale: spec.combatScale,
+      phase: input.phase,
+      ...input.metadata,
+    },
+  });
+  const status = input.status || (input.blockedReasons?.length ? 'blocked' : input.phase === 'omen' ? 'pending_narrative' : 'resolved');
+  const mode = input.mode || (status === 'blocked' ? 'blocked' : input.phase === 'omen' ? 'narrative_return' : 'local_resolution');
+  const departure = createWorldActionDeparture({
+    candidate,
+    turn,
+    mode,
+    chargeAp: input.chargeAp ?? status !== 'blocked',
+    summary,
+    blockers: input.blockedReasons,
+    warnings: risks,
+    metadata: {
+      specId: spec.id,
+      previewId: spec.previewId,
+      phase: input.phase,
+    },
+  });
+  const worldResolution = createWorldActionResolution({
+    departure,
+    status,
+    summary,
+    localFacts: input.localFacts || defaultCalamityFacts(spec, input.phase),
+    risks,
+    blockedReasons: input.blockedReasons,
+    rewardPolicy: 'local_engine_only',
+    metadata: {
+      specId: spec.id,
+      previewId: spec.previewId,
+      phase: input.phase,
+      ...input.metadata,
+    },
+  });
+  const ledger = projectWorldActionLedgerEntry({
+    departure,
+    resolution: worldResolution,
+    source: `calamity:${spec.id}:${input.phase}`,
+  });
+  return {
+    worldActionCandidate: candidate,
+    worldActionDeparture: departure,
+    worldActionResolution: worldResolution,
+    worldActionLedgerEntry: ledger,
+    narrativeReturnContext: buildNarrativeReturnContext({
+      sceneId: candidate.sceneId,
+      turn,
+      ledgerEntries: [ledger],
+      resolutions: [worldResolution],
+    }),
   };
 }
 

@@ -286,7 +286,14 @@ describe('v0.8.0-b2 cultivation store slice', () => {
         localActionLedger: [],
       },
     });
-    harness.get().spendSceneAp = vi.fn((amount: number, actionType: string, summary: string, source: string) => {
+    harness.get().spendSceneAp = vi.fn((
+      amount: number,
+      actionType: string,
+      summary: string,
+      source: string,
+      systemResult: Record<string, unknown> = {},
+      risks: string[] = [],
+    ) => {
       const scene = harness.get().sceneSessionState;
       if (scene.budget.remainingAp < amount) return { success: false };
       const entry = {
@@ -294,10 +301,11 @@ describe('v0.8.0-b2 cultivation store slice', () => {
         turn: harness.get().turn,
         sceneId: scene.sceneId,
         actionType,
-        apCost: amount,
+        cost: amount,
         summary,
         source,
-        systemResult: { staged: true },
+        systemResult,
+        risks,
       };
       harness.get().sceneSessionState = {
         ...scene,
@@ -320,11 +328,98 @@ describe('v0.8.0-b2 cultivation store slice', () => {
     expect(harness.get().cultivationState.calamityLedger.length).toBe(0);
     expect(harness.get().cultivationState.lastResolution[0].kind).toBe('calamity_warning');
     expect(harness.get().sceneSessionState.budget.remainingAp).toBe(1);
+    expect(harness.get().sceneSessionState.localActionLedger[0].source).toBe(`calamity:${result.spec?.id}:omen`);
+    expect(harness.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.domain).toBe('calamity');
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('灾劫预兆');
+    expect(harness.get().flags.lastCalamityWorldAction.resolution.status).toBe('pending_narrative');
     expect(harness.get().spendSceneAp).toHaveBeenCalledWith(
       1,
       'calamity',
       expect.stringContaining('灾劫预兆入场'),
-      'stageCalamityScene',
+      `calamity:${result.spec?.id}:omen`,
+      expect.objectContaining({
+        worldAction: expect.objectContaining({
+          domain: 'calamity',
+          status: 'pending_narrative',
+        }),
+      }),
+      expect.arrayContaining([expect.stringContaining('本地引擎结算')]),
     );
+  });
+
+  it('reuses staged calamity AP when settling local consequences', () => {
+    const aperture = immortalAperture();
+    const harness = createHarness({
+      turn: 25,
+      profile: { name: '七转测试', realm: { grand: 7, sub: SUB.peak, label: '七转巅峰' } },
+      vitals: { health: { current: 2520, max: 2520 }, essence: { current: 2000, max: 2000 }, essenceType: 'immortal' },
+      aperture,
+      heavenlyLand: {
+        id: 'land_rank7',
+        type: '福地',
+        domain: '中洲',
+        name: '七转测试福地',
+        areaMu: aperture.area_mu,
+        timeFlowRatio: aperture.time_flow_ratio,
+        resourceOutputRate: 24,
+        earthSpirit: { formed: false, approval: 0 },
+        disasterCountdown: aperture.disaster_countdown,
+        nextDisasterType: aperture.next_disaster_type,
+        createdAt: 1,
+        accessible: true,
+      },
+      cultivationState: createDefaultCultivationState(),
+      flags: {},
+      sceneSessionState: {
+        sceneId: 'immortal_aperture_calamity',
+        budget: { remainingAp: 2, maxAp: 3, spentAp: 1 },
+        localActionLedger: [],
+      },
+    });
+    harness.get().spendSceneAp = vi.fn((
+      amount: number,
+      actionType: string,
+      summary: string,
+      source: string,
+      systemResult: Record<string, unknown> = {},
+      risks: string[] = [],
+    ) => {
+      const scene = harness.get().sceneSessionState;
+      if (scene.budget.remainingAp < amount) return { success: false };
+      const entry = {
+        id: `ledger_${source}`,
+        turn: harness.get().turn,
+        sceneId: scene.sceneId,
+        actionType,
+        cost: amount,
+        summary,
+        source,
+        systemResult,
+        risks,
+      };
+      harness.get().sceneSessionState = {
+        ...scene,
+        budget: {
+          ...scene.budget,
+          remainingAp: scene.budget.remainingAp - amount,
+          spentAp: scene.budget.spentAp + amount,
+        },
+        localActionLedger: [...scene.localActionLedger, entry],
+      };
+      return { success: true, entry };
+    });
+
+    const staged = harness.get().stageCalamityScene();
+    const settled = harness.get().resolveApertureCalamity();
+
+    expect(staged.success).toBe(true);
+    expect(settled.success).toBe(true);
+    expect(harness.get().spendSceneAp).toHaveBeenCalledTimes(1);
+    expect(harness.get().sceneSessionState.budget.remainingAp).toBe(1);
+    expect(harness.get().sceneSessionState.localActionLedger).toHaveLength(1);
+    expect(harness.get().flags.pendingCalamitySceneSpec).toBeNull();
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('灾劫后果由本地引擎结算');
+    expect(harness.get().flags.lastCalamityWorldAction.resolution.status).toBe('resolved');
+    expect(harness.get().cultivationState.calamityLedger.length).toBe(1);
   });
 });

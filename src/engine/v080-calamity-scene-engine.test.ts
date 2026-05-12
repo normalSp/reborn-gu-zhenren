@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { CalamityPreview, ImmortalAperture, ResourceNode } from '../types';
 import {
   buildCalamitySceneSpec,
+  buildCalamityWorldActionBridge,
   formatCalamitySceneForPrompt,
   listCalamitySceneTemplates,
   selectCalamitySceneKind,
@@ -96,5 +97,35 @@ describe('v0.8.0-c2.4 calamity scene engine', () => {
     expect(prompt).toContain('灾劫场景规格');
     expect(prompt).toContain('DeepSeek 只能写预兆');
     expect(prompt).toContain('本地引擎结算');
+  });
+
+  it('projects calamity scenes into the unified world-action protocol', () => {
+    const spec = buildCalamitySceneSpec({
+      store: {
+        turn: 12,
+        currentChapterId: 'immortal_aperture_calamity',
+        currentDomain: '南疆',
+        profile: { realm: { grand: 6 } },
+        aperture: immortalAperture(),
+      },
+      preview: preview({ severity: 4 }),
+    });
+
+    const bridge = buildCalamityWorldActionBridge({
+      spec: spec!,
+      store: { turn: 12, currentChapterId: 'immortal_aperture_calamity', currentDomain: '南疆' },
+      phase: 'omen',
+      summary: `灾劫预兆入场：${spec?.name}`,
+      status: 'pending_narrative',
+      mode: 'narrative_return',
+    });
+
+    expect(bridge.worldActionCandidate.domain).toBe('calamity');
+    expect(bridge.worldActionDeparture.mode).toBe('narrative_return');
+    expect(bridge.worldActionResolution.rewardPolicy).toBe('local_engine_only');
+    expect(bridge.worldActionLedgerEntry.actionType).toBe('calamity');
+    expect(bridge.worldActionLedgerEntry.source).toContain(':omen');
+    expect(bridge.narrativeReturnContext.promptSummary).toContain('灾劫预兆');
+    expect(bridge.narrativeReturnContext.promptSummary).toContain('不得由 DeepSeek 判定');
   });
 });

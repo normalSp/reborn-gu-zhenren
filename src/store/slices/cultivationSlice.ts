@@ -3,6 +3,7 @@ import type {
   CultivationDeepeningState,
   CultivationEnvironmentProfile,
   CultivationLocationContext,
+  LocalActionLedgerEntry,
 } from '../../types';
 import {
   buildCalamityPreview,
@@ -16,7 +17,12 @@ import {
   validateAscensionAttempt,
   validateMajorBreakthroughAttempt,
 } from '../../engine/v080-cultivation-calamity-engine';
-import { buildCalamitySceneSpec } from '../../engine/v080-calamity-scene-engine';
+import {
+  buildCalamitySceneSpec,
+  buildCalamityWorldActionBridge,
+  type CalamityWorldActionBridge,
+} from '../../engine/v080-calamity-scene-engine';
+import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
 
 interface CultivationPreview {
   environment: CultivationEnvironmentProfile;
@@ -135,11 +141,106 @@ function applyBreakthroughPenalties(set: any, get: any, penalties: Array<{ kind:
   }
 }
 
-function spendCultivationSceneAp(store: any, type: 'cultivate' | 'breakthrough' | 'calamity', summary: string, source: string): boolean {
-  if (typeof store.spendSceneAp === 'function') {
-    return Boolean(store.spendSceneAp(1, type, summary, source)?.success);
+function spendCultivationSceneAp(
+  store: any,
+  type: 'cultivate' | 'breakthrough' | 'calamity',
+  cost: number,
+  summary: string,
+  source: string,
+  systemResult: Record<string, unknown> = {},
+  risks: string[] = [],
+): { success: boolean; message: string; entry?: LocalActionLedgerEntry } {
+  if (cost <= 0) {
+    return {
+      success: true,
+      message: '无需消耗行动点。',
+      entry: {
+        id: `cultivation_ap_${source}`,
+        turn: Number(store.turn || 1),
+        sceneId: String(store.sceneSessionState?.sceneId || store.currentChapterId || 'current_scene'),
+        actionType: type,
+        source,
+        cost: 0,
+        summary,
+        systemResult,
+        risks,
+      },
+    };
   }
-  return Boolean(store.spendAp?.(1, summary));
+  if (typeof store.spendSceneAp === 'function') {
+    return store.spendSceneAp(cost, type, summary, source, systemResult, risks);
+  }
+  const success = Boolean(store.spendAp?.(cost, summary));
+  return {
+    success,
+    message: success ? `消耗${cost}点行动点（兼容模式）。` : `行动点不足：需要${cost}点。`,
+    entry: success ? {
+      id: `cultivation_ap_${source}`,
+      turn: Number(store.turn || 1),
+      sceneId: String(store.sceneSessionState?.sceneId || store.currentChapterId || 'current_scene'),
+      actionType: type,
+      source,
+      cost,
+      summary,
+      systemResult,
+      risks,
+    } : undefined,
+  };
+}
+
+function findWorldActionLedgerEntry(store: any, source: string): LocalActionLedgerEntry | null {
+  const ledger = Array.isArray(store.sceneSessionState?.localActionLedger) ? store.sceneSessionState.localActionLedger : [];
+  return ledger.find((entry: any) => entry.source === source) || null;
+}
+
+function commitCalamityWorldActionReturnContext(
+  set: any,
+  get: any,
+  bridge: CalamityWorldActionBridge | null,
+  spentEntry?: LocalActionLedgerEntry | null,
+): void {
+  if (!bridge?.worldActionResolution) return;
+  const store = get() as any;
+  const ledgerEntries = spentEntry ? [spentEntry] : [bridge.worldActionLedgerEntry];
+  const context = buildNarrativeReturnContext({
+    sceneId: bridge.worldActionCandidate.sceneId || store.sceneSessionState?.sceneId || 'current_scene',
+    turn: Number(store.turn || bridge.worldActionResolution.turn || 1),
+    ledgerEntries,
+    resolutions: [bridge.worldActionResolution],
+  });
+  set((s: any) => ({
+    flags: {
+      ...(s.flags || {}),
+      lastWorldActionReturnContext: context,
+      lastCalamityWorldAction: {
+        candidate: bridge.worldActionCandidate,
+        departure: bridge.worldActionDeparture,
+        resolution: bridge.worldActionResolution,
+      },
+    },
+  }));
+}
+
+function calamityConsequenceFacts(result: ReturnType<typeof resolveCalamityConsequence>, spec: CalamitySceneSpec): string[] {
+  if (!result.success || !result.record) {
+    return [
+      `灾劫结算被本地引擎阻断：${result.blockedReason || result.steps.at(-1)?.message || spec.name}。`,
+      '阻断状态下不得让 DeepSeek 私自补写面积、资源点、道痕、蛊虫损伤或奖励。',
+    ];
+  }
+  const record = result.record;
+  const resourceDamageCount = Object.keys(record.resourceNodeDamage || {}).length;
+  const daoMarkText = Object.entries(record.daoMarkDelta || {})
+    .map(([path, delta]) => `${path}${Number(delta) >= 0 ? '+' : ''}${delta}`)
+    .join('、');
+  return [
+    `灾劫后果由本地引擎结算：${record.calamityName}。`,
+    `福地面积损失 ${record.areaLoss} 亩，${resourceDamageCount} 个资源点受损。`,
+    daoMarkText ? `道痕变化：${daoMarkText}。` : '本次未产生新增道痕变化。',
+    record.guDamageIds.length > 0 ? `${record.guDamageIds.length} 只蛊虫被灾劫波及。` : '本次未产生蛊虫损伤。',
+    result.preview ? `下一劫预兆：${result.preview.name}，倒计时 ${result.preview.countdown}。` : '下一劫预兆暂未形成。',
+    'DeepSeek 只能承接这些本地事实写回流文本，不得改写灾劫后果。',
+  ];
 }
 
 export const createCultivationSlice = (set: any, get: any): CultivationSlice => ({
@@ -164,7 +265,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       setCultivationState(set, get, result.state);
       return { success: false, message: result.steps.at(-1)?.message || '修行条件不足。', progressGain: 0, progress: result.state.progress };
     }
-    if (!spendCultivationSceneAp(store, 'cultivate', `v0.8 深修：进度 +${result.progressGain}`, 'practiceCultivationDeep')) {
+    if (!spendCultivationSceneAp(store, 'cultivate', 1, `v0.8 深修：进度 +${result.progressGain}`, 'practiceCultivationDeep').success) {
       return { success: false, message: '行动点不足，无法专注修行。', progressGain: 0, progress: state.progress };
     }
     spendEssence(set, get, result.essenceCost);
@@ -184,7 +285,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
     if (!validation.valid) {
       return { success: false, message: validation.reason || '突破条件不足。', rate: validation.successRate };
     }
-    if (!spendCultivationSceneAp(store, 'breakthrough', 'v0.8 大境界突破：成败由本地引擎结算', 'attemptMajorBreakthrough')) {
+    if (!spendCultivationSceneAp(store, 'breakthrough', 1, 'v0.8 大境界突破：成败由本地引擎结算', 'attemptMajorBreakthrough').success) {
       return { success: false, message: '行动点不足，无法冲击境界。', rate: validation.successRate };
     }
     const result = resolveMajorBreakthroughAttempt({ store: get(), state, seed: `bt:${store.turn}:${state.progress}` });
@@ -209,7 +310,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
     if (!validation.valid) {
       return { success: false, message: validation.reason || '升仙条件不足。', rate: validation.successRate };
     }
-    if (!spendCultivationSceneAp(store, 'breakthrough', 'v0.8 升仙尝试：三气与福地由本地引擎结算', 'attemptAscension')) {
+    if (!spendCultivationSceneAp(store, 'breakthrough', 1, 'v0.8 升仙尝试：三气与福地由本地引擎结算', 'attemptAscension').success) {
       return { success: false, message: '行动点不足，无法布置升仙。', rate: validation.successRate };
     }
     const oldAperture = store.aperture;
@@ -263,8 +364,31 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
     if (!spec) {
       return { success: false, message: '尚未形成可进入剧情的灾劫预兆。' };
     }
-    if (!spendCultivationSceneAp(store, 'calamity', `灾劫预兆入场：${spec.name}`, 'stageCalamityScene')) {
-      return { success: false, message: '行动点不足，无法布置灾劫应对。', spec };
+    const bridge = buildCalamityWorldActionBridge({
+      spec,
+      store,
+      phase: 'omen',
+      summary: `灾劫预兆入场：${spec.name}`,
+      status: 'pending_narrative',
+      mode: 'narrative_return',
+      chargeAp: true,
+      localFacts: [
+        `灾劫预兆已入场：${spec.name}。`,
+        `DeepSeek 可写${spec.allowedResponses.join('、')}等应对方向，但不得结算灾劫后果。`,
+        '灾劫面积、资源点、道痕、蛊虫损伤和战斗胜负仍由本地引擎决定。',
+      ],
+    });
+    const spend = spendCultivationSceneAp(
+      store,
+      'calamity',
+      bridge.worldActionLedgerEntry.cost,
+      bridge.worldActionLedgerEntry.summary,
+      bridge.worldActionLedgerEntry.source,
+      bridge.worldActionLedgerEntry.systemResult,
+      bridge.worldActionLedgerEntry.risks,
+    );
+    if (!spend.success) {
+      return { success: false, message: spend.message || '行动点不足，无法布置灾劫应对。', spec };
     }
     const turn = Number(store.turn || 1);
     const resolutionStep = {
@@ -312,18 +436,65 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       path: spec.path,
       severity: spec.severity,
     });
+    commitCalamityWorldActionReturnContext(set, get, bridge, spend.entry);
     return { success: true, message: `灾劫预兆已进入剧情：${spec.name}`, spec };
   },
 
   resolveApertureCalamity: () => {
     const store = get() as any;
-    if (!spendCultivationSceneAp(store, 'calamity', 'v0.8 灾劫处置：后果由本地引擎结算', 'resolveApertureCalamity')) {
-      return { success: false, message: '行动点不足，无法处置灾劫。' };
-    }
     const state = normalizeCultivationState(store.cultivationState);
+    const preview = buildCalamityPreview({ store, state });
+    const pendingSpec = store.flags?.pendingCalamitySceneSpec as CalamitySceneSpec | undefined;
+    const spec = pendingSpec || buildCalamitySceneSpec({ store, preview });
+    const stagedSource = spec ? `calamity:${spec.id}:omen` : '';
+    const stagedEntry = stagedSource ? findWorldActionLedgerEntry(store, stagedSource) : null;
+    const alreadyStaged = Boolean(pendingSpec || stagedEntry);
     const result = resolveCalamityConsequence({ store: get(), state, seed: `cal:${store.turn}:${store.heavenlyLand?.nextDisasterType}` });
+    const bridge = spec ? buildCalamityWorldActionBridge({
+      spec,
+      store,
+      phase: 'consequence',
+      summary: result.success
+        ? `灾劫结算：${result.record?.calamityName || spec.name}，福地损失 ${result.record?.areaLoss || 0} 亩`
+        : `灾劫结算受阻：${result.blockedReason || spec.name}`,
+      status: result.success ? 'resolved' : result.blockedReason ? 'blocked' : 'failed',
+      mode: result.success ? 'local_resolution' : 'blocked',
+      chargeAp: !alreadyStaged,
+      localFacts: calamityConsequenceFacts(result, spec),
+      risks: result.success
+        ? ['灾劫回流文本只能解释已结算后果，不得追加奖励或反向修正损失。']
+        : ['灾劫被阻断时不得让 AI 私自完成结算。'],
+      blockedReasons: result.success ? [] : [result.blockedReason || result.steps.at(-1)?.message || '灾劫无法结算。'],
+      metadata: {
+        calamityRecordId: result.record?.id,
+        areaLoss: result.record?.areaLoss,
+        resourceNodeDamage: result.record?.resourceNodeDamage,
+        daoMarkDelta: result.record?.daoMarkDelta,
+        guDamageIds: result.record?.guDamageIds,
+      },
+    }) : null;
+    let spend: { success: boolean; message: string; entry?: LocalActionLedgerEntry } = {
+      success: true,
+      message: alreadyStaged ? '已在灾劫预兆入场阶段消耗行动点。' : '无需消耗行动点。',
+      entry: stagedEntry || undefined,
+    };
+    if (!alreadyStaged && bridge?.worldActionLedgerEntry && bridge.worldActionLedgerEntry.cost > 0) {
+      spend = spendCultivationSceneAp(
+        store,
+        'calamity',
+        bridge.worldActionLedgerEntry.cost,
+        bridge.worldActionLedgerEntry.summary,
+        bridge.worldActionLedgerEntry.source,
+        bridge.worldActionLedgerEntry.systemResult,
+        bridge.worldActionLedgerEntry.risks,
+      );
+      if (!spend.success) {
+        return { success: false, message: spend.message || '行动点不足，无法处置灾劫。' };
+      }
+    }
     if (!result.success) {
       setCultivationState(set, get, result.state);
+      commitCalamityWorldActionReturnContext(set, get, bridge, spend.entry);
       return { success: false, message: result.steps.at(-1)?.message || '灾劫无法结算。' };
     }
     set((s: any) => ({
@@ -333,6 +504,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       inventory: result.inventory || s.inventory,
       flags: {
         ...(s.flags || {}),
+        pendingCalamitySceneSpec: null,
         lastCultivationResolution: result.steps,
       },
     }));
@@ -340,6 +512,7 @@ export const createCultivationSlice = (set: any, get: any): CultivationSlice => 
       source: 'v080-cultivation',
       record: result.record,
     });
+    commitCalamityWorldActionReturnContext(set, get, bridge, spend.entry);
     return {
       success: true,
       message: `灾劫已结算：${result.record?.calamityName}`,
