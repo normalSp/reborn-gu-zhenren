@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { calculateBreakthroughSuccessRate, calculateCultivationProgress, resolveBreakthroughFailure } from './cultivation-breakthrough';
 import { calculateImmortalStoneMeditation, calculateNaturalEssenceRecovery } from './essence-recovery';
-import { resolveFieldAction } from './field-action';
+import { buildFieldActionWorldActionBridge, resolveFieldAction } from './field-action';
 
 const makeStore = (overrides: Record<string, any> = {}) => ({
   flags: {},
@@ -98,5 +98,31 @@ describe('P2 action subsystem engines', () => {
       expect(result.reward?.yuanStoneEquivalent).toBeLessThanOrEqual(30);
       expect(Object.values(result.reward?.materials || {}).reduce((sum, value) => sum + Number(value), 0)).toBeGreaterThan(0);
     }
+  });
+
+  it('projects field gather into the unified world-action protocol without upgrading rewards', () => {
+    const result = resolveFieldAction({
+      kind: 'gather',
+      realmGrand: 2,
+      aptitude: 6,
+      mind: 6,
+      luck: 5,
+      turn: 3,
+      locationType: 'field',
+      store: makeStore({ turn: 3, currentChapterId: 'qingmao_field_edge' }),
+      seed: 1,
+    });
+    const bridge = buildFieldActionWorldActionBridge({
+      result,
+      store: { turn: 3, currentChapterId: 'qingmao_field_edge', currentDomain: '南疆' },
+      locationType: 'field',
+    });
+
+    expect(bridge.worldActionCandidate.domain).toBe('field_action');
+    expect(bridge.worldActionLedgerEntry.actionType).toBe('field_action');
+    expect(bridge.worldActionResolution.rewardPolicy).toBe('local_engine_only');
+    expect(bridge.narrativeReturnContext.promptSummary).toContain('野外采集由本地引擎结算');
+    expect(bridge.narrativeReturnContext.promptSummary).toContain('不得追加材料');
+    expect(bridge.worldActionResolution.risks.join('；')).toContain('不得升级为仙材、仙蛊');
   });
 });

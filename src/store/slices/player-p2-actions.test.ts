@@ -93,6 +93,55 @@ describe('player P2 AP and action consumers', () => {
     expect(Object.values(harness.state.materialBag).reduce((sum: number, value: any) => sum + Number(value), 0)).toBeGreaterThanOrEqual(0);
   });
 
+  it('writes field gather into the scene ledger and narrative return context', () => {
+    const harness = createHarness({
+      turn: 11,
+      selectedTalents: ['talent_herbalist'],
+      sceneSessionState: {
+        sceneId: 'qingmao_field_edge',
+        actionBudget: { remainingAp: 2, maxAp: 3, grantedBy: 'narrative_scene', exhaustedPolicy: 'advance_narrative' },
+        localActionLedger: [],
+      },
+      gameTime: { ap: 2, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' },
+    });
+    harness.state.spendSceneAp = (cost: number, actionType: string, summary: string, source: string, systemResult: any, risks: string[]) => {
+      const scene = harness.state.sceneSessionState;
+      if (scene.actionBudget.remainingAp < cost) return { success: false, message: 'AP不足' };
+      const entry = {
+        id: `ledger_${source}`,
+        turn: harness.state.turn,
+        sceneId: scene.sceneId,
+        actionType,
+        source,
+        cost,
+        summary,
+        systemResult,
+        risks,
+      };
+      harness.state.sceneSessionState = {
+        ...scene,
+        actionBudget: {
+          ...scene.actionBudget,
+          remainingAp: scene.actionBudget.remainingAp - cost,
+        },
+        localActionLedger: [...scene.localActionLedger, entry],
+      };
+      harness.state.gameTime = { ...harness.state.gameTime, ap: harness.state.sceneSessionState.actionBudget.remainingAp };
+      return { success: true, message: summary, entry };
+    };
+
+    const result = harness.state.performFieldAction('gather', 'field');
+
+    expect(typeof result.success).toBe('boolean');
+    expect(harness.state.sceneSessionState.actionBudget.remainingAp).toBe(1);
+    expect(harness.state.sceneSessionState.localActionLedger).toHaveLength(1);
+    expect(harness.state.sceneSessionState.localActionLedger[0].source).toContain('field_action:gather');
+    expect(harness.state.sceneSessionState.localActionLedger[0].systemResult.worldAction.domain).toBe('field_action');
+    expect(harness.state.sceneSessionState.localActionLedger[0].risks.join('；')).toContain('不得升级为仙材');
+    expect(harness.state.flags.lastWorldActionReturnContext.promptSummary).toContain('野外采集由本地引擎结算');
+    expect(harness.state.flags.lastFieldActionWorldAction.resolution.rewardPolicy).toBe('local_engine_only');
+  });
+
   it('breakthrough failure records concrete penalties without advancing narrative text', () => {
     const harness = createHarness({ gameTime: { ap: 1, max_ap: 3, period: 'morning', day: 1, month: 1, year: 1, season: 'spring' }, turn: 10 });
     const result = harness.state.attemptBreakthrough();

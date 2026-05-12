@@ -1,4 +1,4 @@
-import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand, ExtremePhysiqueType } from '../../types';
+import type { PlayerState, RealmInfo, PathType, PathLevel, GameTime, HeavenlyLand, ExtremePhysiqueType, LocalActionLedgerEntry } from '../../types';
 import { tickHeavenlyLand } from '../../engine/HeavenlyLandEngine';
 import { computePathLevel } from '../../engine/path-progression';
 import { getMigrationNpcs, crossDomainAffinityDecay, filterNpcByDomain } from '../../engine/npc-cross-domain';
@@ -17,7 +17,13 @@ import {
   calculateCultivationProgress,
   resolveBreakthroughFailure,
 } from '../../engine/cultivation-breakthrough';
-import { resolveFieldAction, type FieldActionKind } from '../../engine/field-action';
+import {
+  buildFieldActionWorldActionBridge,
+  resolveFieldAction,
+  type FieldActionKind,
+  type FieldActionWorldActionBridge,
+} from '../../engine/field-action';
+import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
 import { applyMeditationRiskModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
 import { buildDeathRecordFallback } from '../../engine/death-record';
 import { triggerBreakthrough } from '../../components/game/BreakthroughAnimation';
@@ -88,20 +94,75 @@ function applyExtremePhysiqueRealmGrowth(set: any, get: any, newGrand: number) {
   }
 }
 
+type PlayerSceneActionType = 'meditate' | 'cultivate' | 'breakthrough' | 'field_action';
+
+function spendSceneBudgetOrApResult(
+  get: any,
+  cost: number,
+  actionType: PlayerSceneActionType,
+  summary: string,
+  source: string,
+  systemResult?: Record<string, unknown>,
+  risks: string[] = [],
+): { success: boolean; message: string; entry?: LocalActionLedgerEntry } {
+  const store = get() as any;
+  if (typeof store.spendSceneAp === 'function') {
+    return store.spendSceneAp(cost, actionType, summary, source, systemResult, risks);
+  }
+  const success = Boolean(store.spendAp?.(cost, summary));
+  return {
+    success,
+    message: success ? summary : '行动点不足。',
+    entry: success ? {
+      id: `player_action_${source}`,
+      turn: Number(store.turn || 1),
+      sceneId: String(store.sceneSessionState?.sceneId || store.currentChapterId || 'current_scene'),
+      actionType,
+      source,
+      cost,
+      summary,
+      systemResult: systemResult || {},
+      risks,
+    } : undefined,
+  };
+}
+
 function spendSceneBudgetOrAp(
   get: any,
   cost: number,
-  actionType: 'meditate' | 'cultivate' | 'breakthrough' | 'field_action',
+  actionType: PlayerSceneActionType,
   summary: string,
   source: string,
   systemResult?: Record<string, unknown>,
 ): boolean {
+  return spendSceneBudgetOrApResult(get, cost, actionType, summary, source, systemResult).success;
+}
+
+function commitFieldActionWorldActionReturnContext(
+  set: any,
+  get: any,
+  bridge: FieldActionWorldActionBridge,
+  spentEntry?: LocalActionLedgerEntry,
+): void {
   const store = get() as any;
-  if (typeof store.spendSceneAp === 'function') {
-    const result = store.spendSceneAp(cost, actionType, summary, source, systemResult);
-    return Boolean(result?.success);
-  }
-  return Boolean(store.spendAp?.(cost, summary));
+  const ledgerEntries = spentEntry ? [spentEntry] : [bridge.worldActionLedgerEntry];
+  const context = buildNarrativeReturnContext({
+    sceneId: bridge.worldActionCandidate.sceneId || store.sceneSessionState?.sceneId || 'current_scene',
+    turn: Number(store.turn || bridge.worldActionResolution.turn || 1),
+    ledgerEntries,
+    resolutions: [bridge.worldActionResolution],
+  });
+  set((s: PlayerSlice) => ({
+    flags: {
+      ...s.flags,
+      lastWorldActionReturnContext: context,
+      lastFieldActionWorldAction: {
+        candidate: bridge.worldActionCandidate,
+        departure: bridge.worldActionDeparture,
+        resolution: bridge.worldActionResolution,
+      },
+    },
+  }));
 }
 
 interface PlayerSlice extends PlayerState {
@@ -801,12 +862,6 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
           : '当前处于山寨、城镇或安全营地，需离开安全地后才能执行野外行动。',
       };
     }
-    if (!spendSceneBudgetOrAp(get, 1, 'field_action', kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离', 'performFieldAction', {
-      kind,
-      locationType,
-    })) {
-      return { success: false, message: '行动点不足，无法执行野外行动。' };
-    }
     const result = resolveFieldAction({
       kind,
       realmGrand: state.profile.realm.grand,
@@ -817,6 +872,25 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       locationType,
       store: state,
     });
+    const bridge = buildFieldActionWorldActionBridge({
+      result,
+      store: state,
+      locationType,
+      summary: `${kind === 'gather' ? '野外采集' : kind === 'scout' ? '侦察周边' : kind === 'trap_check' ? '排查陷阱' : '准备撤离'}：${result.message}`,
+      status: result.success ? 'resolved' : 'failed',
+    });
+    const spend = spendSceneBudgetOrApResult(
+      get,
+      bridge.worldActionLedgerEntry.cost,
+      'field_action',
+      bridge.worldActionLedgerEntry.summary,
+      bridge.worldActionLedgerEntry.source,
+      bridge.worldActionLedgerEntry.systemResult,
+      bridge.worldActionLedgerEntry.risks,
+    );
+    if (!spend.success) {
+      return { success: false, message: spend.message || '行动点不足，无法执行野外行动。' };
+    }
     if (result.reward?.materials) {
       for (const [materialName, quantity] of Object.entries(result.reward.materials)) {
         (get() as PlayerSlice).addMaterial(materialName, quantity);
@@ -833,7 +907,9 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
       successRate: result.successRate,
       riskChance: result.riskChance,
       modifiers: result.modifierLabels,
+      worldAction: bridge.worldActionResolution,
     });
+    commitFieldActionWorldActionReturnContext(set, get, bridge, spend.entry);
     return { success: result.success, message: result.message };
   },
   setPrimaryPath: (path) => set((s: PlayerSlice) => ({ pathBuild: { ...s.pathBuild, primary: path } })),
