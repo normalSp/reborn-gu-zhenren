@@ -1,4 +1,4 @@
-import { callDeepSeek, apiKey } from '../api/deepseek';
+import { callDeepSeek, apiKey, type DeepSeekResponse } from '../api/deepseek';
 import { NarrativeJSONSchema } from '../schemas/narrative.schema';
 import { validateNarrativeSemantics } from './semantic-validator';
 import { validateCanaryAssertions } from './canary-assertions';
@@ -34,9 +34,22 @@ export interface PipeResult {
   validation?: SemanticValidationResult;
   canary?: CanaryValidationResult;
   error?: string;
-  tokens?: { prompt: number; completion: number; total: number };
+  tokens?: PipeTokenUsage;
   elapsedMs?: number;
   retries?: number;
+}
+
+export interface PipeTokenUsage {
+  prompt: number;
+  completion: number;
+  total: number;
+  cached: number;
+  cacheHitRatio: number;
+  retryTotal: number;
+  calls: number;
+  model?: string;
+  temperature?: number;
+  promptPrefixHash?: string;
 }
 
 // ─── 配置 ───
@@ -45,6 +58,8 @@ interface PipelineConfig {
   maxNetworkRetries: number;
   maxSemanticRetries: number;
   mode: 'canon' | 'if';
+  model?: string;
+  temperature?: number;
 }
 
 const DEFAULT_CONFIG: PipelineConfig = {
@@ -53,6 +68,59 @@ const DEFAULT_CONFIG: PipelineConfig = {
   maxSemanticRetries: 1, // L3 critical违规后最多修正重试1次
   mode: 'canon',
 };
+
+function emptyPipeTokenUsage(): PipeTokenUsage {
+  return {
+    prompt: 0,
+    completion: 0,
+    total: 0,
+    cached: 0,
+    cacheHitRatio: 0,
+    retryTotal: 0,
+    calls: 0,
+  };
+}
+
+function usageFromResponse(response: DeepSeekResponse<any>, retryCall: boolean): PipeTokenUsage {
+  const prompt = response.tokens?.prompt_tokens ?? 0;
+  const completion = response.tokens?.completion_tokens ?? 0;
+  const total = response.tokens?.total_tokens ?? 0;
+  const cached = response.tokens?.cached_tokens ?? 0;
+  return {
+    prompt,
+    completion,
+    total,
+    cached,
+    cacheHitRatio: prompt > 0 ? cached / prompt : 0,
+    retryTotal: retryCall ? total : 0,
+    calls: response.tokens ? 1 : 0,
+    model: response.model,
+    temperature: response.temperature,
+    promptPrefixHash: response.prompt_prefix_hash,
+  };
+}
+
+function mergePipeTokenUsage(a: PipeTokenUsage, b?: PipeTokenUsage): PipeTokenUsage {
+  if (!b) return a;
+  const prompt = a.prompt + b.prompt;
+  const cached = a.cached + b.cached;
+  return {
+    prompt,
+    completion: a.completion + b.completion,
+    total: a.total + b.total,
+    cached,
+    cacheHitRatio: prompt > 0 ? cached / prompt : 0,
+    retryTotal: a.retryTotal + b.retryTotal,
+    calls: a.calls + b.calls,
+    model: b.model || a.model,
+    temperature: b.temperature ?? a.temperature,
+    promptPrefixHash: b.promptPrefixHash || a.promptPrefixHash,
+  };
+}
+
+function formatCacheRatio(value: number): string {
+  return `${Math.round(value * 100)}%`;
+}
 
 // ─── 构建L3修正提示 ───
 function buildSemanticRetryPrompt(semanticResult: SemanticValidationResult, originalText: string): string {
@@ -233,8 +301,9 @@ export class ResponsePipeline {
     key: string,
     messages: { system: string; user: string },
     startTime: number,
-    attemptLabel: string
-  ): Promise<{ success: true; parsed: any; tokens?: any } | { success: false; error: string }> {
+    attemptLabel: string,
+    retryCall: boolean = false
+  ): Promise<{ success: true; parsed: any; usage: PipeTokenUsage } | { success: false; error: string; usage?: PipeTokenUsage }> {
     this.state = 'FETCHING';
     console.log(`%c[PIPE] FETCHING %c→ system=${messages.system.length}c user=${messages.user.length}c`,
       'color:#b8860b', 'color:#999');
@@ -242,14 +311,21 @@ export class ResponsePipeline {
     const response = await callDeepSeek<any>(
       messages.system,
       messages.user,
-      { apiKey: key, maxRetries: this.config.maxNetworkRetries, timeoutMs: 45000 }
+      {
+        apiKey: key,
+        maxRetries: this.config.maxNetworkRetries,
+        timeoutMs: 45000,
+        model: this.config.model,
+        temperature: this.config.temperature,
+      }
     );
+    let usage = usageFromResponse(response, retryCall);
 
     if (!response.success || !response.data) {
       console.log(`%c[PIPE] API_FAIL %c→ ${response.error}`,'color:#e85050','color:#999');
-      return { success: false, error: `AI 响应失败${attemptLabel}: ${response.error || '未知'}` };
+      return { success: false, error: `AI 响应失败${attemptLabel}: ${response.error || '未知'}`, usage };
     }
-    console.log(`%c[PIPE] API_OK %c→ ${response.elapsedMs}ms tokens=${response.tokens?.total_tokens || '?'}`,
+    console.log(`%c[PIPE] API_OK %c→ ${response.model} ${response.elapsedMs}ms tokens=${response.tokens?.total_tokens || '?'} cache=${formatCacheRatio(usage.cacheHitRatio)} prefix=${response.prompt_prefix_hash || '?'}`,
       'color:#30d080','color:#999');
 
     // 解析JSON
@@ -263,18 +339,25 @@ export class ResponsePipeline {
         const fixRetry = await callDeepSeek<any>(
           messages.system,
           messages.user + '\n\n[系统] JSON不合法，请严格按格式重新输出。只输出JSON。',
-          { apiKey: key, maxRetries: 1, timeoutMs: 45000 }
+          {
+            apiKey: key,
+            maxRetries: 1,
+            timeoutMs: 45000,
+            model: this.config.model,
+            temperature: this.config.temperature,
+          }
         );
+        usage = mergePipeTokenUsage(usage, usageFromResponse(fixRetry, true));
         if (!fixRetry.success || !fixRetry.data) {
-          return { success: false, error: `JSON解析重试失败: ${fixRetry.error || '未知'}` };
+          return { success: false, error: `JSON解析重试失败: ${fixRetry.error || '未知'}`, usage };
         }
         try {
           parsed = typeof fixRetry.data === 'string' ? JSON.parse(fixRetry.data) : fixRetry.data;
         } catch {
-          return { success: false, error: 'JSON解析重试后仍然失败' };
+          return { success: false, error: 'JSON解析重试后仍然失败', usage };
         }
       } else {
-        return { success: false, error: 'AI响应JSON解析失败' };
+        return { success: false, error: 'AI响应JSON解析失败', usage };
       }
     }
 
@@ -302,21 +385,28 @@ export class ResponsePipeline {
         const fixRetry = await callDeepSeek<any>(
           messages.system,
           messages.user + `\n\n[系统] JSON格式问题：${errors}。请修正后重新输出。`,
-          { apiKey: key, maxRetries: 1, timeoutMs: 45000 }
+          {
+            apiKey: key,
+            maxRetries: 1,
+            timeoutMs: 45000,
+            model: this.config.model,
+            temperature: this.config.temperature,
+          }
         );
+        usage = mergePipeTokenUsage(usage, usageFromResponse(fixRetry, true));
         if (fixRetry.success && fixRetry.data) {
           const retryParsed = typeof fixRetry.data === 'string' ? JSON.parse(fixRetry.data) : fixRetry.data;
           normalizeAIResponse(retryParsed); // 5D: retry路径也归一化
           const retryZod = NarrativeJSONSchema.safeParse(retryParsed);
           if (!retryZod.success) {
-            return { success: false, error: `Zod验证重试后仍失败` };
+            return { success: false, error: `Zod验证重试后仍失败`, usage };
           }
           parsed = retryZod.data;
         } else {
-          return { success: false, error: `Zod验证失败: ${errors}` };
+          return { success: false, error: `Zod验证失败: ${errors}`, usage };
         }
       } else {
-        return { success: false, error: `Zod验证失败: ${errors}` };
+        return { success: false, error: `Zod验证失败: ${errors}`, usage };
       }
     } else {
       parsed = zodResult.data;
@@ -324,7 +414,7 @@ export class ResponsePipeline {
         'color:#30d080','color:#999');
     }
 
-    return { success: true, parsed };
+    return { success: true, parsed, usage };
   }
 
   // ─── 主处理入口 ───
@@ -339,6 +429,7 @@ export class ResponsePipeline {
 
     const startTime = Date.now();
     const store = useStore.getState();
+    let usageSummary = emptyPipeTokenUsage();
 
     try {
       // 阶段1: 构建上下文
@@ -354,9 +445,10 @@ export class ResponsePipeline {
 
       // 阶段2-4: 获取+解析+格式验证
       const fetchResult = await this.fetchAndValidate(key, baseMessages, startTime, '');
+      usageSummary = mergePipeTokenUsage(usageSummary, fetchResult.usage);
       if (!fetchResult.success) {
         console.log(`%c[PIPE] FETCH_FAIL %c→ ${fetchResult.error}`,'color:#e85050','color:#f88');
-        return { state: 'ERROR', error: fetchResult.error, elapsedMs: Date.now() - startTime };
+        return { state: 'ERROR', error: fetchResult.error, tokens: usageSummary, elapsedMs: Date.now() - startTime };
       }
 
       let parsed = fetchResult.parsed;
@@ -410,7 +502,8 @@ export class ResponsePipeline {
             user: baseMessages.user + '\n\n[天意检校·修正要求]\n' + retryPrompt,
           };
 
-          const retryResult = await this.fetchAndValidate(key, retryMessages, startTime, '(修正重试)');
+          const retryResult = await this.fetchAndValidate(key, retryMessages, startTime, '(修正重试)', true);
+          usageSummary = mergePipeTokenUsage(usageSummary, retryResult.usage);
 
           if (retryResult.success) {
             parsed = retryResult.parsed;
@@ -423,6 +516,7 @@ export class ResponsePipeline {
                   state: 'ERROR',
                   error: `Layer 3 语义验证修正重试后仍不通过: ${semanticResult.failedRules.map(r => r.ruleName).join('、')}`,
                   validation: semanticResult,
+                  tokens: usageSummary,
                   elapsedMs: Date.now() - startTime,
                   retries: 1,
                 };
@@ -432,6 +526,7 @@ export class ResponsePipeline {
             return {
               state: 'ERROR',
               error: `语义修正重试失败: ${retryResult.error}`,
+              tokens: usageSummary,
               elapsedMs: Date.now() - startTime,
             };
           }
@@ -451,6 +546,7 @@ export class ResponsePipeline {
             state: 'ERROR',
             error: `Layer 3 语义验证不通过: ${semanticResult.failedRules.map(r => r.ruleName).join('、')}`,
             validation: semanticResult,
+            tokens: usageSummary,
             elapsedMs: Date.now() - startTime,
           };
         }
@@ -476,7 +572,8 @@ export class ResponsePipeline {
             system: baseMessages.system,
             user: baseMessages.user + '\n\n[真相源校验·奖励修正]\n' + buildAIStateUpdateRetryHint(rewardValidation),
           };
-          const retryResult = await this.fetchAndValidate(key, retryMessages, startTime, '(奖励修正重试)');
+          const retryResult = await this.fetchAndValidate(key, retryMessages, startTime, '(奖励修正重试)', true);
+          usageSummary = mergePipeTokenUsage(usageSummary, retryResult.usage);
           if (retryResult.success) {
             const retryNarrative = retryResult.parsed as NarrativeJSON;
             const retryValidation = validateAIStateUpdate(retryNarrative.state_update, {
@@ -612,11 +709,20 @@ export class ResponsePipeline {
         const logStore = useStore.getState() as any;
         if (typeof logStore.addGameLog === 'function') {
           const choices = narrative?.narrative?.choices?.length || 0;
-          logStore.addGameLog('narrative', `天命已定 (${response.elapsedMs}ms, ${response.tokens?.total_tokens || '?'} tokens)`, {
-            elapsedMs: response.elapsedMs,
-            tokens: response.tokens?.total_tokens,
+          logStore.addGameLog('narrative', `天命已定 (${Date.now() - startTime}ms, ${usageSummary.total || '?'} tokens, cache ${formatCacheRatio(usageSummary.cacheHitRatio)})`, {
+            elapsedMs: Date.now() - startTime,
+            tokens: usageSummary.total,
+            promptTokens: usageSummary.prompt,
+            completionTokens: usageSummary.completion,
+            cachedTokens: usageSummary.cached,
+            cacheHitRatio: usageSummary.cacheHitRatio,
+            retryTokens: usageSummary.retryTotal,
+            aiCalls: usageSummary.calls,
+            model: usageSummary.model,
+            temperature: usageSummary.temperature,
+            promptPrefixHash: usageSummary.promptPrefixHash,
             choices,
-            validated: validation?.passed ?? true,
+            validated: semanticResult?.recommendation !== 'reject',
           });
         }
       } catch { /* skip */ }
@@ -811,6 +917,7 @@ export class ResponsePipeline {
         narrative,
         validation: semanticResult,
         canary: canaryResult,
+        tokens: usageSummary,
         elapsedMs: Date.now() - startTime,
       };
     } catch (err: any) {
@@ -819,6 +926,7 @@ export class ResponsePipeline {
       return {
         state: 'ERROR',
         error: err?.message || '管道处理异常',
+        tokens: usageSummary,
         elapsedMs: Date.now() - startTime,
       };
     }

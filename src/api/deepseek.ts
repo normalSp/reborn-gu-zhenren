@@ -1,7 +1,10 @@
 const DEEPSEEK_BASE_URL = 'https://api.deepseek.com';
+const DEEPSEEK_DEFAULT_MODEL = 'deepseek-chat';
 
 interface DeepSeekConfig {
   apiKey: string;
+  /** Runtime model. Keep default cheap/stable; use stronger models only after eval gates. */
+  model?: string;
   maxRetries?: number;
   timeoutMs?: number;
   /** v0.7.0: 动态temperature，叙事0.85/战斗0.65/默认0.7 */
@@ -38,15 +41,28 @@ interface TokenUsage {
   completion_tokens: number;
   total_tokens: number;
   cached_tokens: number;
+  cache_hit_ratio: number;
 }
 
 interface DeepSeekResponse<T = any> {
   success: boolean;
   data?: T;
   tokens?: TokenUsage;
+  model?: string;
+  temperature?: number;
+  prompt_prefix_hash?: string;
   elapsedMs?: number;
   error?: string;
   retries?: number;
+}
+
+function hashPromptPrefix(text: string): string {
+  let hash = 2166136261;
+  for (let i = 0; i < text.length; i++) {
+    hash ^= text.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(16).padStart(8, '0');
 }
 
 async function callDeepSeek<T = any>(
@@ -56,6 +72,9 @@ async function callDeepSeek<T = any>(
 ): Promise<DeepSeekResponse<T>> {
   const maxRetries = config.maxRetries ?? 2;
   const timeoutMs = config.timeoutMs ?? 30000;
+  const model = config.model?.trim() || DEEPSEEK_DEFAULT_MODEL;
+  const temperature = config.temperature ?? getDynamicTemperature('default');
+  const promptPrefixHash = hashPromptPrefix(systemPrompt);
   let lastError: string = '';
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
@@ -67,12 +86,12 @@ async function callDeepSeek<T = any>(
 
       // v0.7.0: 启用 response_format 约束 JSON 输出 + 动態 temperature
       const bodyObj: any = {
-        model: 'deepseek-chat',
+        model,
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userMessage },
         ],
-        temperature: config.temperature ?? getDynamicTemperature('default'),
+        temperature,
         response_format: { type: 'json_object' },
       };
       const response = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
@@ -94,7 +113,7 @@ async function callDeepSeek<T = any>(
           await delay(Math.pow(2, attempt) * 1000); // 指数退避: 1s, 2s
           continue;
         }
-        return { success: false, error: lastError, retries: attempt };
+        return { success: false, error: lastError, retries: attempt, model, temperature, prompt_prefix_hash: promptPrefixHash };
       }
 
       const json = await response.json();
@@ -107,7 +126,7 @@ async function callDeepSeek<T = any>(
           await delay(Math.pow(2, attempt) * 1000);
           continue;
         }
-        return { success: false, error: lastError, retries: attempt };
+        return { success: false, error: lastError, retries: attempt, model, temperature, prompt_prefix_hash: promptPrefixHash };
       }
 
       let parsed: T;
@@ -124,28 +143,40 @@ async function callDeepSeek<T = any>(
           await delay(Math.pow(2, attempt) * 1000);
           continue;
         }
-        return { success: false, error: lastError, retries: attempt };
+        return { success: false, error: lastError, retries: attempt, model, temperature, prompt_prefix_hash: promptPrefixHash };
       }
 
+      const promptTokens = json.usage?.prompt_tokens ?? 0;
+      const cachedTokens = json.usage?.prompt_cache_hit_tokens ?? 0;
       const tokens: TokenUsage = {
-        prompt_tokens: json.usage?.prompt_tokens ?? 0,
+        prompt_tokens: promptTokens,
         completion_tokens: json.usage?.completion_tokens ?? 0,
         total_tokens: json.usage?.total_tokens ?? 0,
-        cached_tokens: json.usage?.prompt_cache_hit_tokens ?? 0,
+        cached_tokens: cachedTokens,
+        cache_hit_ratio: promptTokens > 0 ? cachedTokens / promptTokens : 0,
       };
 
-      return { success: true, data: parsed, tokens, elapsedMs, retries: attempt };
+      return {
+        success: true,
+        data: parsed,
+        tokens,
+        model,
+        temperature,
+        prompt_prefix_hash: promptPrefixHash,
+        elapsedMs,
+        retries: attempt,
+      };
     } catch (err: any) {
       lastError = err?.message || 'Unknown error';
       if (attempt < maxRetries) {
         await delay(Math.pow(2, attempt) * 1000);
         continue;
       }
-      return { success: false, error: lastError, retries: attempt };
+      return { success: false, error: lastError, retries: attempt, model, temperature, prompt_prefix_hash: promptPrefixHash };
     }
   }
 
-  return { success: false, error: lastError, retries: maxRetries };
+  return { success: false, error: lastError, retries: maxRetries, model, temperature, prompt_prefix_hash: promptPrefixHash };
 }
 
 function delay(ms: number): Promise<void> {
@@ -159,4 +190,5 @@ const apiKey = {
 };
 
 export { callDeepSeek, apiKey };
+export { DEEPSEEK_DEFAULT_MODEL, hashPromptPrefix };
 export type { DeepSeekConfig, DeepSeekResponse, TokenUsage };

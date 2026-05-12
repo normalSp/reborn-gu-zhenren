@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { callDeepSeek, apiKey } from '../../api/deepseek';
+import { callDeepSeek, apiKey, DEEPSEEK_DEFAULT_MODEL } from '../../api/deepseek';
 import { useStore } from '../../store';
 import { ArrowRightIcon } from '../../icons';
 
@@ -56,7 +56,7 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
       setConnectionVerified(true);
       setResultMessage(response.data.message || '天道已响应，API 连通成功');
       setTokenInfo(
-        `耗时 ${response.elapsedMs}ms · Tokens ${response.tokens?.total_tokens ?? '?'}（缓存命中 ${response.tokens?.cached_tokens ?? 0}）`
+        `模型 ${response.model || DEEPSEEK_DEFAULT_MODEL} · 耗时 ${response.elapsedMs}ms · Tokens ${response.tokens?.total_tokens ?? '?'}（缓存命中 ${response.tokens?.cached_tokens ?? 0}，${Math.round((response.tokens?.cache_hit_ratio ?? 0) * 100)}%）`
       );
     } else {
       setResultSuccess(false);
@@ -277,10 +277,10 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
 
         <div className="mt-8 pt-4 border-t border-rg-ink-400/20">
           <p className="text-rg-ink-300 text-xs font-panel text-center">
-            蛊真人世界 · 人生重来模拟器 · v0.7.1-rc.0
+            蛊真人世界 · 人生重来模拟器 · v0.9.0-a3
           </p>
           <p className="text-rg-ink-400 text-xs font-panel text-center mt-1">
-            DeepSeek V4 Pro · React · TypeScript · 账簿式 UI
+            DeepSeek V4 系列 · 默认 {DEEPSEEK_DEFAULT_MODEL} · React · TypeScript
           </p>
         </div>
       </div>
