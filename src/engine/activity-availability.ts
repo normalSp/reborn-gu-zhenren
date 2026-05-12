@@ -79,7 +79,13 @@ export function deriveActivityAvailabilityContext(store: any): ActivityAvailabil
   const realmGrand = Number(store?.profile?.realm?.grand || 1);
   const isImmortal = realmGrand >= 6 || store?.vitals?.essenceType === 'immortal';
   const location = resolveLocation(store, isImmortal);
-  const inCombat = Boolean(store?.duelState || store?.squadCombatState?.status === 'active' || store?.squadCombatState?.phase);
+  const inCombat = Boolean(
+    store?.battlefieldCombatState ||
+    store?.combatEncounterState?.status === 'active' ||
+    store?.duelState ||
+    store?.squadCombatState?.status === 'active' ||
+    store?.squadCombatState?.phase,
+  );
   const inDialogue = Boolean(store?.activeDialogue);
   const inTrade = Boolean(store?.activeMerchant || store?.merchantPanelOpen || store?.flags?.sceneLock === 'trade');
 

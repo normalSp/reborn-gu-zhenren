@@ -34,4 +34,18 @@ describe('deriveActivityAvailabilityContext', () => {
     expect(ctx.sceneLocked).toBe(true);
     expect(ctx.fieldActionsAllowed).toBe(false);
   });
+
+  it('locks actions while a battlefield encounter is active', () => {
+    const ctx = deriveActivityAvailabilityContext({
+      ...baseStore,
+      flags: { currentLocation: '野外森林' },
+      battlefieldCombatState: { battleId: 'battlefield_1', phase: 'player_turn' },
+      combatEncounterState: { status: 'active' },
+    });
+
+    expect(ctx.sceneMode).toBe('combat');
+    expect(ctx.sceneLocked).toBe(true);
+    expect(ctx.fieldActionsAllowed).toBe(false);
+    expect(ctx.fieldActionReason).toContain('战斗中');
+  });
 });

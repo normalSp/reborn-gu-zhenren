@@ -80,4 +80,21 @@ describe('AI state_update 语义验证', () => {
     expect(result.rumorOnly.map(i => i.key)).toContain('铁翅蛊');
     expect(result.rumorOnly.map(i => i.key)).toContain('起死回生蛊');
   });
+
+  it('AI 不能直接写入 combat_result 作为正式战斗结算', () => {
+    const result = validateAIStateUpdate(
+      {
+        combat_result: {
+          hp_delta: -20,
+          loot: [{ name: '狼牙', price: 10 }],
+          injury: 'light',
+        },
+      } as any,
+      { realmGrand: 2, currentChapterId: 'qingmaoshan', currentDomain: '南疆' },
+    );
+
+    expect((result.sanitized as any).combat_result).toBeUndefined();
+    expect(result.rumorOnly.map(i => i.key)).toContain('combat_result');
+    expect(result.sanitized.discoveries?.add?.some(d => d.name === 'AI战斗结算尝试')).toBe(true);
+  });
 });

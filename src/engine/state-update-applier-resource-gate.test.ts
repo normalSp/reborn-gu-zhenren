@@ -23,6 +23,10 @@ function resetStore(grand = 4) {
       mocks.store.flags[key] = value;
     }),
     addGameLog: vi.fn(),
+    applyHpDelta: vi.fn(),
+    addYuanStone: vi.fn(),
+    addCurrency: vi.fn(),
+    applyInjury: vi.fn(),
   };
 }
 
@@ -126,6 +130,32 @@ describe('state-update-applier resource ecology gates', () => {
         engineDecision: 'block',
         attemptedMutation: expect.stringContaining('direct training ground reward write'),
       }),
+    );
+  });
+
+  it('downgrades direct AI combat_result without applying HP, loot, or injury', () => {
+    applyStateUpdate({
+      combat_result: {
+        hp_delta: -20,
+        loot: [{ name: '狼牙', price: 10 }],
+        injury: 'light',
+      },
+    } as any);
+
+    expect(mocks.store.applyHpDelta).not.toHaveBeenCalled();
+    expect(mocks.store.addYuanStone).not.toHaveBeenCalled();
+    expect(mocks.store.addCurrency).not.toHaveBeenCalled();
+    expect(mocks.store.applyInjury).not.toHaveBeenCalled();
+    expect(mocks.store.flags.aiRumorDiscoveries).toEqual([
+      expect.objectContaining({
+        type: 'combat_result_rumor',
+        source: 'v090-b2-combat-result-guard',
+      }),
+    ]);
+    expect(mocks.store.addGameLog).toHaveBeenCalledWith(
+      'pipeline',
+      expect.stringContaining('AI战斗结算写入已降级'),
+      expect.objectContaining({ source: 'v090-b2-combat-result-guard' }),
     );
   });
 });

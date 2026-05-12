@@ -332,7 +332,7 @@ function injectCombatConstraint(store: RootStore): string {
     (store as any).setTransientCombatConstraint(null);
   }
 
-  const lines: string[] = ['【战斗场景约束 — 叙事战斗】'];
+  const lines: string[] = ['【旧战斗场景约束 — 兼容提示】'];
   lines.push(`- 场景类型：${cc.scale === 'battle' ? '大规模战斗' : '小规模冲突'}（${cc.strategicChoiceCount}个战略选项）`);
   if (cc.baseChance !== undefined) {
     lines.push(`- 基础成功概率：${Math.round(cc.baseChance * 100)}%（受境界差和流派加成调整）`);
@@ -347,7 +347,8 @@ function injectCombatConstraint(store: RootStore): string {
   if (cc.narrativeStyle) {
     lines.push(`- 叙事风格：${cc.narrativeStyle}`);
   }
-  lines.push(`- 生成要求：提供${cc.strategicChoiceCount}个战略选项（含risk/risk_note），选项应体现${cc.narrativeStyle ? '上述叙事风格' : '蛊界现实'}，避免爽文套路。战斗/修炼结果必须在state_update中回写：wealth.delta(战利品)、player.health({current,max})(HP变化)、player.essence({current,max})(真元消耗)、materials.add(蛊材获得)。叙事中提到真元消耗或HP变化时必须同步回写数值——不可只描述不更新。蛊材/材料走materials字段，不可错放到gu_inventory(蛊虫)。`);
+  lines.push('- v0.9.0-b2 后此字段只作旧存档/调试兼容。正式战斗不得由 AI 直接结算胜负、血量、真元、伤势、材料、蛊虫或元石。');
+  lines.push(`- 生成要求：如需进入战斗，只能返回 state_update.combat_event_candidates.add，并提供标题、摘要、风险、敌情和规模线索。正式入场、胜负、掉落和行动账本由本地 battlefield 引擎结算；不要返回 combat_result、wealth.delta、player.health、player.essence 或 materials.add 作为战斗结算。`);
 
   return lines.join('\n');
 }

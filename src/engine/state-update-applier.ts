@@ -826,32 +826,28 @@ export function applyStateUpdate(update: StateUpdate): void {
     });
   }
 
-  // ─── P2-4b: 战斗结果回写 ───
+  // ─── v0.9.0-b2: AI 战斗结果只作线索，不再直写正式战果 ───
   if ((update as any).combat_result) {
     const cr = (update as any).combat_result;
     const s = useStore.getState() as any;
-    if (cr.hp_delta && typeof s.applyHpDelta === 'function') {
-      s.applyHpDelta(cr.hp_delta);
-    }
-    // ═══ v0.7.0: 战利品仅处理蛊材类（蛊虫100%销毁，不再作为战利品） ═══
-    if (cr.loot && Array.isArray(cr.loot) && cr.loot.length > 0) {
-      // 蛊材类物品自动兑换元石（name包含蛊材类型关键词的材料）
-      const materialKeywords = ['牙','皮','骨','粉','石','草','液','晶','水','土','木','铁','金','血','丝','页','瓶','块','卷','板','盒'];
-      let yuanStoneGain = 0;
-      for (const item of cr.loot) {
-        const itemName = (item.name || '').toString();
-        if (materialKeywords.some(kw => itemName.includes(kw)) && !itemName.includes('蛊')) {
-          yuanStoneGain += item.price || (item.tier ? item.tier * 5 : 5);
-        }
-      }
-      if (yuanStoneGain > 0) {
-        if (typeof s.addYuanStone === 'function') s.addYuanStone(yuanStoneGain, '战斗战利品兑换');
-        else if (typeof s.addCurrency === 'function') s.addCurrency(yuanStoneGain);
-      }
-    }
-    if (cr.injury && typeof s.applyInjury === 'function') {
-      s.applyInjury(cr.injury);
-    }
+    const currentRumors = Array.isArray(s.flags?.aiRumorDiscoveries)
+      ? [...s.flags.aiRumorDiscoveries]
+      : [];
+    currentRumors.push({
+      type: 'combat_result_rumor',
+      name: 'AI战斗结算尝试',
+      note: 'AI尝试直接写入战斗胜负、伤害、掉落或伤势；v0.9.0-b2 后已降级，正式战果必须来自本地 battlefield 引擎。',
+      source: 'v090-b2-combat-result-guard',
+      payload: cr,
+      turn: s.turn || 1,
+      chapterId: s.currentChapterId || '',
+      domain: s.currentDomain || '',
+    });
+    s.setFlag?.('aiRumorDiscoveries', currentRumors.slice(-100));
+    s.addGameLog?.('pipeline', 'AI战斗结算写入已降级：请改用 combat_event_candidates，正式胜负、伤害和掉落由本地 battlefield 引擎结算。', {
+      source: 'v090-b2-combat-result-guard',
+      attempted: cr,
+    });
   }
 }
 

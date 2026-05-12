@@ -766,48 +766,32 @@ export class ResponsePipeline {
 
       // ═══ P2-4b 战斗触发钩子：扫描叙事文本检测战斗场景 ═══
       try {
-        const { detectCombat } = await import('./combat-router');
-        const {
-          buildCombatOfferKey,
-          hasRecentCombatOffer,
-          rememberCombatOffer,
-        } = await import('./combat-offer-lock');
+        const { buildCombatEventCandidateFromTrigger, detectCombat } = await import('./combat-router');
         const store2 = useStore.getState() as any;
         const chapterFlag = store2.flags?.current_chapter_id || store2.currentChapterId;
         const trigger = detectCombat(narrative.narrative.text, chapterFlag);
         if (trigger) {
-          if (trigger.combatType === 'duel' && trigger.duelEnemy) {
-            if (typeof store2.initDuel === 'function') {
-              const playerGu = (store2.gu_inventory || []).map((g: any) => ({ name: g.name || '蛊虫', path: g.path || '力道', tier: g.rank || 1 }));
-              store2.initDuel({
-                name: store2.playerName || '蛊师',
-                realm: store2.realm || '一转蛊师',
-                path: store2.path || '力道',
-                daoMarks: store2.pathBuild?.dao_marks || {}, // P2补完: 传入完整道痕KV映射
-                hp: store2.hp || 100, maxHp: store2.maxHp || 100,
-                attack: store2.attack || 20, defense: store2.defense || 5,
-                essence: { current: store2.essence?.current ?? 100, max: store2.essence?.max ?? 100 },
-                gu: playerGu, moves: [],
-              }, trigger.duelEnemy);
-            }
-          } else if (trigger.combatType === 'narrative' && trigger.narrativeConstraint) {
-            if (typeof store2.setTransientCombatConstraint === 'function') {
-              const currentTurn = store2.turn || 1;
-              const offer = buildCombatOfferKey(
-                trigger.narrativeConstraint,
-                narrative.narrative.text,
-                chapterFlag,
-              );
-              const existingLocks = Array.isArray(store2.flags?._combatOfferLocks)
-                ? store2.flags._combatOfferLocks
-                : [];
-              if (!hasRecentCombatOffer(existingLocks, offer, currentTurn)) {
-                store2.setTransientCombatConstraint(trigger.narrativeConstraint);
-                if (typeof store2.setFlag === 'function') {
-                  store2.setFlag('_combatOfferLocks', rememberCombatOffer(existingLocks, offer, currentTurn));
-                }
-              }
-            }
+          const currentTurn = store2.turn || 1;
+          const candidate = buildCombatEventCandidateFromTrigger(
+            trigger,
+            narrative.narrative.text,
+            chapterFlag,
+            currentTurn,
+          );
+          const existingCandidates = Array.isArray(store2.flags?.combatEventCandidates)
+            ? store2.flags.combatEventCandidates
+            : [];
+          const alreadyRecorded = candidate && existingCandidates.some(
+            (item: any) => String(item?.id) === String(candidate.id),
+          );
+          if (candidate && !alreadyRecorded) {
+            applyStateUpdate({ combat_event_candidates: { add: [candidate] } } as any);
+            const updatedStore = useStore.getState() as any;
+            updatedStore.addGameLog?.('combat', `叙事战斗已转为本地候选：${candidate.title}`, {
+              source: 'v090-b2-legacy-combat-closure',
+              candidateId: candidate.id,
+              scale: candidate.scale,
+            });
           }
         }
       } catch { /* combat-router not ready or import failed — silently skip */ }
@@ -838,7 +822,7 @@ export class ResponsePipeline {
             chapterId,
             currentDomain,
             playerRealm: realmNum,
-            currentTurn: encStore.turn || 1,
+            currentTurn: encStore2.turn || 1,
             playerFlags: flags,
             playerCurrency: currency,
             currentLocation: locStr,

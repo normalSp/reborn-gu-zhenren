@@ -15,6 +15,7 @@ export type AiRewardField =
   | 'player.path_levels'
   | 'dao_marks'
   | 'path_levels'
+  | 'combat_result'
   | 'dynamic_npcs.add';
 
 export interface AiRewardIssue {
@@ -327,6 +328,22 @@ export function validateAIStateUpdate(
     sanitized.path_levels = sanitizePathRecord(result, 'path_levels', sanitized.path_levels);
   }
 
+  if (sanitized.combat_result) {
+    pushIssue(result, {
+      field: 'combat_result',
+      key: 'combat_result',
+      action: 'rumorOnly',
+      reason: 'AI不能直接写入正式战斗胜负、伤害、掉落或伤势；必须先登记 combat_event_candidates，由本地 battlefield 引擎结算。',
+    });
+    addDiscovery(result, {
+      type: 'unknown',
+      name: 'AI战斗结算尝试',
+      note: 'AI尝试直接写入 combat_result，已降级为待审线索；正式战果必须来自本地战斗引擎。',
+      source: 'ai-rumor',
+    });
+    delete sanitized.combat_result;
+  }
+
   if (sanitized.dynamic_npcs?.add) {
     sanitized.dynamic_npcs.add = sanitized.dynamic_npcs.add.map((npc: any) => {
       if (!npc?.path || isRuntimePathAllowed(npc.path)) return npc;
@@ -360,5 +377,6 @@ export function buildAIStateUpdateRetryHint(result: AiRewardValidationResult): s
   if (badFragments.length > 0) lines.push(`- 未登记残方ID：${badFragments.join('、')}。只能返回 fragment-recipes.json 中存在的ID。`);
   if (badPaths.length > 0) lines.push(`- 非法流派：${badPaths.join('、')}。path 必须使用原著确认流派注册表。`);
   lines.push('- 不要直接返回 recipes.unlock；完整蛊方只能由引擎解锁。');
+  lines.push('- 不要直接返回 combat_result；战斗只能先返回 combat_event_candidates，正式胜负/掉落由本地 battlefield 引擎结算。');
   return lines.join('\n');
 }
