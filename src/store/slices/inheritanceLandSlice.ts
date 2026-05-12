@@ -8,6 +8,7 @@ import type {
   LandClaimAttemptRecord,
 } from '../../types';
 import {
+  buildInheritanceWorldActionBridge,
   createDefaultInheritanceLandState,
   evaluateLandClaimEntry,
   getInheritanceSiteSpec,
@@ -16,6 +17,7 @@ import {
   resolveLandClaimAttempt,
   stageInheritanceCandidate,
 } from '../../engine/v080-inheritance-land-engine';
+import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
 
 export interface InheritanceLandSlice {
   inheritanceLandState: InheritanceLandState;
@@ -62,7 +64,14 @@ function findCandidate(state: InheritanceLandState, candidateId: string) {
   return state.candidates.find(candidate => candidate.id === candidateId || candidate.siteId === candidateId) || null;
 }
 
-function spendInheritanceAp(get: any, candidateId: string, cost: number, summary: string, systemResult: Record<string, unknown>) {
+function spendInheritanceAp(
+  get: any,
+  cost: number,
+  summary: string,
+  source: string,
+  systemResult: Record<string, unknown>,
+  risks: string[],
+) {
   const store = get() as any;
   if (cost <= 0) return { success: true, message: '无需消耗场景AP。' };
   if (typeof store.spendSceneAp === 'function') {
@@ -70,13 +79,55 @@ function spendInheritanceAp(get: any, candidateId: string, cost: number, summary
       cost,
       'inheritance',
       summary,
-      'v0.8.0-c2.5:inheritance-land',
+      source,
       systemResult,
-      ['传承/福地结果将进入下一轮叙事上下文。'],
+      risks,
     );
   }
   if (Number(store.gameTime?.ap || 0) < cost) return { success: false, message: `场景AP不足：需要${cost}点。` };
-  return { success: true, message: `消耗${cost}点AP（兼容模式）。`, entry: { id: `inheritance_ap_${candidateId}`, cost } };
+  return {
+    success: true,
+    message: `消耗${cost}点AP（兼容模式）。`,
+    entry: {
+      id: `inheritance_ap_${source}`,
+      turn: Number(store.turn || 1),
+      sceneId: String(store.sceneSessionState?.sceneId || 'current_scene'),
+      actionType: 'inheritance',
+      source,
+      cost,
+      summary,
+      systemResult,
+      risks,
+    },
+  };
+}
+
+function findWorldActionLedgerEntry(store: any, source: string) {
+  const ledger = Array.isArray(store.sceneSessionState?.localActionLedger) ? store.sceneSessionState.localActionLedger : [];
+  return ledger.find((entry: any) => entry.source === source) || null;
+}
+
+function commitInheritanceWorldActionReturnContext(set: any, get: any, resolution: any, spentEntry?: any): void {
+  if (!resolution?.worldActionResolution) return;
+  const store = get() as any;
+  const ledgerEntries = spentEntry ? [spentEntry] : resolution.worldActionLedgerEntry ? [resolution.worldActionLedgerEntry] : [];
+  const context = buildNarrativeReturnContext({
+    sceneId: resolution.worldActionCandidate?.sceneId || store.sceneSessionState?.sceneId || 'current_scene',
+    turn: Number(store.turn || resolution.worldActionResolution.turn || 1),
+    ledgerEntries,
+    resolutions: [resolution.worldActionResolution],
+  });
+  set((s: any) => ({
+    flags: {
+      ...(s.flags || {}),
+      lastWorldActionReturnContext: context,
+      lastInheritanceWorldAction: {
+        candidate: resolution.worldActionCandidate,
+        departure: resolution.worldActionDeparture,
+        resolution: resolution.worldActionResolution,
+      },
+    },
+  }));
 }
 
 function rewardGu(reward: InheritanceRewardPreview, turn: number, path = '月道'): GuInstance {
@@ -156,12 +207,29 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
       pushL3Warning(get, 'inheritance_trial_unavailable', message);
       return { success: false, message };
     }
-    const spend = spendInheritanceAp(get, candidate.id, site.entryCostAp, `出发前往传承线索地：${candidate.title}`, {
-      siteId: site.siteId,
-      candidateId: candidate.id,
-      kind: site.kind,
+    const bridge = buildInheritanceWorldActionBridge({
+      candidate,
+      site,
+      store,
       phase: 'departure',
+      summary: `已出发前往传承线索地：${candidate.title}。试炼结果需由剧情与本地引擎继续承接。`,
+      status: 'pending_narrative',
+      mode: 'narrative_return',
+      chargeAp: site.entryCostAp > 0,
+      localFacts: [
+        `玩家已出发前往传承线索地：${candidate.title}。`,
+        '本次出发只建立试炼承接关系；奖励、认主和资源归属仍等待本地引擎结算。',
+      ],
+      risks: ['传承/福地结果将进入下一轮叙事上下文。'],
     });
+    const spend = spendInheritanceAp(
+      get,
+      bridge.worldActionLedgerEntry.cost,
+      bridge.worldActionLedgerEntry.summary,
+      bridge.worldActionLedgerEntry.source,
+      bridge.worldActionLedgerEntry.systemResult,
+      bridge.worldActionLedgerEntry.risks,
+    );
     if (!spend.success) {
       pushL3Warning(get, 'inheritance_departure_scene_ap_insufficient', spend.message);
       return { success: false, message: spend.message };
@@ -184,6 +252,7 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
       }],
     });
     commitInheritanceLandState(set, get, next);
+    commitInheritanceWorldActionReturnContext(set, get, bridge, spend.entry);
     return { success: true, message: `已出发：${candidate.title}。${spend.message}` };
   },
 
@@ -194,22 +263,30 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
     const site = candidate ? getInheritanceSiteSpec(candidate.siteId) : null;
     if (!candidate || !site) return { success: false, message: '传承候选不存在。', steps: [] };
 
-    const spend = spendInheritanceAp(get, candidate.id, site.entryCostAp, `传承试炼：${candidate.title}`, {
-      siteId: site.siteId,
-      candidateId: candidate.id,
-      kind: site.kind,
-    });
-    if (!spend.success) {
-      pushL3Warning(get, 'inheritance_scene_ap_insufficient', spend.message);
-      return { success: false, message: spend.message, steps: [] };
-    }
-
+    const departedEntry = findWorldActionLedgerEntry(store, `inheritance:${candidate.id}:departure`);
+    const alreadyDeparted = state.activeTrial?.candidateId === candidate.id || Boolean(departedEntry);
     const result = resolveTrialEngine({
       state,
       candidateId: candidate.id,
       store: get(),
       seed: `${store.turn || 1}:${candidate.id}:store-trial`,
+      worldActionChargeAp: !alreadyDeparted,
     });
+    let spend: any = { success: true, message: alreadyDeparted ? '已在出发阶段消耗场景AP。' : '无需消耗场景AP。', entry: departedEntry };
+    if (!alreadyDeparted && result.worldActionLedgerEntry && result.worldActionLedgerEntry.cost > 0) {
+      spend = spendInheritanceAp(
+        get,
+        result.worldActionLedgerEntry.cost,
+        result.worldActionLedgerEntry.summary,
+        result.worldActionLedgerEntry.source,
+        result.worldActionLedgerEntry.systemResult,
+        result.worldActionLedgerEntry.risks,
+      );
+      if (!spend.success) {
+        pushL3Warning(get, 'inheritance_scene_ap_insufficient', spend.message);
+        return { success: false, message: spend.message, steps: [] };
+      }
+    }
     commitInheritanceLandState(set, get, result.state);
     if (result.success) {
       applyRegisteredRewards(set, get, result.state, candidate.id);
@@ -223,6 +300,7 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
         }));
       }
     }
+    commitInheritanceWorldActionReturnContext(set, get, result, spend.entry);
     return {
       success: result.success,
       message: result.steps.at(-1)?.message || (result.success ? '传承试炼完成。' : result.blockedReason || '传承试炼失败。'),
@@ -242,20 +320,17 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
       return { success: false, message };
     }
     if (!validation.valid) {
-      const result = resolveLandClaimAttempt({ state, candidateId: candidate.id, store, seed: `${store.turn || 1}:${candidate.id}:blocked-claim` });
+      const result = resolveLandClaimAttempt({
+        state,
+        candidateId: candidate.id,
+        store,
+        seed: `${store.turn || 1}:${candidate.id}:blocked-claim`,
+        worldActionChargeAp: false,
+      });
       commitInheritanceLandState(set, get, result.state);
+      commitInheritanceWorldActionReturnContext(set, get, result);
       pushL3Warning(get, 'land_claim_blocked', result.blockedReason || validation.blockers.join('；'));
       return { success: false, message: result.blockedReason || validation.blockers.join('；'), attempt: result.attempt };
-    }
-
-    const spend = spendInheritanceAp(get, candidate.id, site.entryCostAp, `尝试认主福地：${candidate.title}`, {
-      siteId: site.siteId,
-      candidateId: candidate.id,
-      terms: validation.terms.map(term => term.id),
-    });
-    if (!spend.success) {
-      pushL3Warning(get, 'land_claim_scene_ap_insufficient', spend.message);
-      return { success: false, message: spend.message };
     }
 
     const result = resolveLandClaimAttempt({
@@ -264,7 +339,23 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
       store: get(),
       seed: `${store.turn || 1}:${candidate.id}:store-claim`,
       skipApCheck: true,
+      worldActionChargeAp: true,
     });
+    let spend: any = { success: true, message: '无需消耗场景AP。' };
+    if (result.worldActionLedgerEntry && result.worldActionLedgerEntry.cost > 0) {
+      spend = spendInheritanceAp(
+        get,
+        result.worldActionLedgerEntry.cost,
+        result.worldActionLedgerEntry.summary,
+        result.worldActionLedgerEntry.source,
+        result.worldActionLedgerEntry.systemResult,
+        result.worldActionLedgerEntry.risks,
+      );
+      if (!spend.success) {
+        pushL3Warning(get, 'land_claim_scene_ap_insufficient', spend.message);
+        return { success: false, message: spend.message };
+      }
+    }
     const nextPatch: Record<string, any> = {
       inheritanceLandState: result.state,
       flags: {
@@ -278,6 +369,7 @@ export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandS
     if (result.heavenlyLand) nextPatch.heavenlyLand = result.heavenlyLand;
     set(nextPatch);
     commitInheritanceLandState(set, get, result.state);
+    commitInheritanceWorldActionReturnContext(set, get, result, spend.entry);
     return {
       success: result.success,
       message: result.steps.at(-1)?.message || (result.success ? '福地认主完成。' : '福地认主失败。'),

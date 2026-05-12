@@ -113,7 +113,32 @@ describe('v0.8.0-c2.5 inheritance land store slice', () => {
     expect(result.steps.length).toBeGreaterThan(0);
     expect(harness.get().sceneSessionState.actionBudget.remainingAp).toBe(2);
     expect(harness.get().sceneSessionState.localActionLedger[0].actionType).toBe('inheritance');
+    expect(harness.get().sceneSessionState.localActionLedger[0].source).toBe(`inheritance:${candidate.id}:trial`);
+    expect(harness.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.domain).toBe('inheritance');
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('传承试炼由本地引擎结算');
     expect(harness.get().inheritanceLandState.lastResolutionSteps.at(-1)?.kind).toBe('settlement');
+  });
+
+  it('does not spend scene AP twice when a trial is started before resolution', () => {
+    const harness = createHarness();
+    harness.get().recordInheritanceCandidateAction({
+      siteId: 'minor_cave_inheritance',
+      title: '青茅山腹小传承',
+      summary: '先出发，再由本地引擎结算试炼。',
+    });
+    const candidate = harness.get().inheritanceLandState.candidates[0];
+
+    const started = harness.get().startInheritanceTrialAction(candidate.id);
+    expect(started.success).toBe(true);
+    expect(harness.get().sceneSessionState.actionBudget.remainingAp).toBe(2);
+    expect(harness.get().sceneSessionState.localActionLedger).toHaveLength(1);
+    expect(harness.get().sceneSessionState.localActionLedger[0].source).toBe(`inheritance:${candidate.id}:departure`);
+
+    const resolved = harness.get().resolveInheritanceTrialAction(candidate.id);
+    expect(resolved.steps.length).toBeGreaterThan(0);
+    expect(harness.get().sceneSessionState.actionBudget.remainingAp).toBe(2);
+    expect(harness.get().sceneSessionState.localActionLedger).toHaveLength(1);
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('传承试炼由本地引擎结算');
   });
 
   it('blocks AI direct caveats and records L3 warnings', () => {
@@ -170,5 +195,7 @@ describe('v0.8.0-c2.5 inheritance land store slice', () => {
     expect(lastResult.attempt?.outcome).toMatch(/success|failure/);
     expect(successful?.get().heavenlyLand?.type).toBe('福地');
     expect(successful?.get().sceneSessionState.localActionLedger[0].actionType).toBe('inheritance');
+    expect(successful?.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.domain).toBe('blessed_land');
+    expect(successful?.get().flags.lastWorldActionReturnContext.promptSummary).toContain('福地认主由本地引擎结算');
   });
 });

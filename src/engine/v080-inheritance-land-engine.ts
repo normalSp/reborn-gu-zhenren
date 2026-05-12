@@ -12,8 +12,21 @@ import type {
   InheritanceSiteSpec,
   LandClaimAttemptRecord,
   LandClaimTerm,
+  LocalActionLedgerEntry,
+  NarrativeReturnContext,
+  WorldActionCandidate,
+  WorldActionDeparture,
+  WorldActionResolution,
+  WorldActionResolutionMode,
 } from '../types';
 import { createSeededRng, type CombatRng } from './combat-formulas';
+import {
+  buildNarrativeReturnContext,
+  createWorldActionCandidate,
+  createWorldActionDeparture,
+  createWorldActionResolution,
+  projectWorldActionLedgerEntry,
+} from './v090-world-action-protocol';
 
 type InheritanceRules = typeof rulesRaw;
 
@@ -26,6 +39,16 @@ export interface InheritanceStageResolution {
   state: InheritanceLandState;
   validation: InheritanceEntryValidation;
   steps: InheritanceResolutionStep[];
+}
+
+export type InheritanceWorldActionPhase = 'departure' | 'trial' | 'land_claim';
+
+export interface InheritanceWorldActionBridge {
+  worldActionCandidate: WorldActionCandidate;
+  worldActionDeparture: WorldActionDeparture;
+  worldActionResolution: WorldActionResolution;
+  worldActionLedgerEntry: LocalActionLedgerEntry;
+  narrativeReturnContext: NarrativeReturnContext;
 }
 
 export interface InheritanceTrialResolution {
@@ -44,6 +67,11 @@ export interface InheritanceTrialResolution {
     sceneId: string;
     enemyHint: string;
   };
+  worldActionCandidate?: WorldActionCandidate;
+  worldActionDeparture?: WorldActionDeparture;
+  worldActionResolution?: WorldActionResolution;
+  worldActionLedgerEntry?: LocalActionLedgerEntry;
+  narrativeReturnContext?: NarrativeReturnContext;
 }
 
 export interface LandClaimEntryValidation extends InheritanceEntryValidation {
@@ -59,10 +87,19 @@ export interface LandClaimResolution {
   attempt: LandClaimAttemptRecord;
   steps: InheritanceResolutionStep[];
   heavenlyLand?: HeavenlyLand;
+  worldActionCandidate?: WorldActionCandidate;
+  worldActionDeparture?: WorldActionDeparture;
+  worldActionResolution?: WorldActionResolution;
+  worldActionLedgerEntry?: LocalActionLedgerEntry;
+  narrativeReturnContext?: NarrativeReturnContext;
 }
 
 function ensureArray<T>(value: T[] | undefined | null): T[] {
   return Array.isArray(value) ? value : [];
+}
+
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))];
 }
 
 function cloneTerms(terms: LandClaimTerm[] | undefined): LandClaimTerm[] {
@@ -162,6 +199,10 @@ function currentSceneId(store: any, fallback?: string): string {
   );
 }
 
+function currentLocationId(store: any, fallback?: string): string {
+  return String(fallback || store?.currentLocationId || store?.currentDomain || store?.sceneSessionState?.locationId || '');
+}
+
 function getRealmGrand(store: any): number {
   return Number(store?.profile?.realm?.grand || store?.realm?.grand || 1);
 }
@@ -210,6 +251,115 @@ function makeStep(
     message,
     severity: input.severity || 'info',
     metadata: input.metadata,
+  };
+}
+
+function worldActionDomainForSite(site: InheritanceSiteSpec): WorldActionCandidate['domain'] {
+  return site.kind === 'blessed_land_claim' ? 'blessed_land' : 'inheritance';
+}
+
+function rewardBoundaryFact(site: InheritanceSiteSpec): string {
+  const registered = site.rewardPreview
+    .filter(reward => reward.registered && reward.kind !== 'rumor')
+    .map(reward => reward.name);
+  const rumors = site.rewardPreview
+    .filter(reward => !reward.registered || reward.kind === 'rumor')
+    .map(reward => reward.name);
+  const facts = ['传承奖励、资源节点、福地归属和洞天边界只能由本地引擎/canon 决定。'];
+  if (registered.length > 0) facts.push(`已登记奖励候选：${registered.join('、')}。`);
+  if (rumors.length > 0) facts.push(`传闻或边界项不得直接入库：${rumors.join('、')}。`);
+  return facts.join('');
+}
+
+export function buildInheritanceWorldActionBridge(input: {
+  candidate: InheritanceCandidateRecord;
+  site: InheritanceSiteSpec;
+  store?: any;
+  phase: InheritanceWorldActionPhase;
+  summary: string;
+  status: WorldActionResolution['status'];
+  localFacts?: string[];
+  risks?: string[];
+  blockedReasons?: string[];
+  mode?: WorldActionResolutionMode;
+  chargeAp?: boolean;
+  rewardPolicy?: WorldActionResolution['rewardPolicy'];
+  metadata?: Record<string, unknown>;
+}): InheritanceWorldActionBridge {
+  const store = input.store || {};
+  const turn = currentTurn(store, input.candidate.updatedTurn);
+  const domain = worldActionDomainForSite(input.site);
+  const candidate = createWorldActionCandidate({
+    domain,
+    sourceId: input.site.siteId,
+    title: input.candidate.title,
+    summary: input.candidate.summary || input.site.summary,
+    source: input.candidate.source,
+    sceneId: currentSceneId(store, input.candidate.sceneId),
+    locationId: currentLocationId(store, input.candidate.entryPoint),
+    risk: input.candidate.risk,
+    apCost: input.site.entryCostAp,
+    blockers: input.blockedReasons,
+    warnings: uniqueStrings([...input.candidate.warnings, ...ensureArray(input.risks)]),
+    tags: ['inheritance_land', input.phase, input.site.kind, ...input.site.pathTags],
+    createdTurn: Number(input.candidate.createdTurn || turn),
+    metadata: {
+      siteId: input.site.siteId,
+      candidateId: input.candidate.id,
+      siteKind: input.site.kind,
+      phase: input.phase,
+      anchorId: input.site.anchorId,
+      claimIntent: input.candidate.claimIntent,
+    },
+  });
+  const mode = input.mode || (input.status === 'blocked' ? 'blocked' : 'local_resolution');
+  const departure = createWorldActionDeparture({
+    candidate,
+    turn,
+    mode,
+    chargeAp: input.chargeAp ?? (input.status !== 'blocked' && input.site.entryCostAp > 0),
+    summary: input.summary,
+    blockers: input.blockedReasons,
+    warnings: input.risks,
+    metadata: {
+      siteId: input.site.siteId,
+      candidateId: input.candidate.id,
+      siteKind: input.site.kind,
+      phase: input.phase,
+    },
+  });
+  const worldResolution = createWorldActionResolution({
+    departure,
+    status: input.status,
+    summary: input.summary,
+    localFacts: input.localFacts,
+    risks: input.risks,
+    blockedReasons: input.blockedReasons,
+    rewardPolicy: input.rewardPolicy || (input.site.kind === 'grotto_heaven_rumor' ? 'rumor_only' : 'local_engine_only'),
+    metadata: {
+      siteId: input.site.siteId,
+      candidateId: input.candidate.id,
+      siteKind: input.site.kind,
+      phase: input.phase,
+      ...input.metadata,
+    },
+  });
+  const ledger = projectWorldActionLedgerEntry({
+    departure,
+    resolution: worldResolution,
+    source: `inheritance:${input.candidate.id}:${input.phase}`,
+  });
+  return {
+    worldActionCandidate: candidate,
+    worldActionDeparture: departure,
+    worldActionResolution: worldResolution,
+    worldActionLedgerEntry: ledger,
+    narrativeReturnContext: buildNarrativeReturnContext({
+      sceneId: candidate.sceneId,
+      turn,
+      ledgerEntries: [ledger],
+      resolutions: [worldResolution],
+    }),
   };
 }
 
@@ -499,11 +649,62 @@ function updateCandidate(
     : candidate);
 }
 
+function trialWorldFacts(result: InheritanceTrialResolution, candidate: InheritanceCandidateRecord, site: InheritanceSiteSpec): string[] {
+  const facts = result.success
+    ? [`传承试炼由本地引擎结算通过：${candidate.title}。`]
+    : result.blockedReason
+      ? [`传承试炼被本地规则阻断：${result.blockedReason}`]
+      : [`传承试炼由本地引擎结算失败：${candidate.title}。`];
+  facts.push(rewardBoundaryFact(site));
+  if (result.combatCandidate) {
+    facts.push(`传承守护战候选已生成：${result.combatCandidate.scale}；胜负仍由战斗引擎结算。`);
+  }
+  return facts;
+}
+
+function attachTrialWorldActionBridge(
+  result: InheritanceTrialResolution,
+  store: any,
+  chargeAp: boolean,
+): InheritanceTrialResolution {
+  if (!result.candidate || !result.site) return result;
+  const status: WorldActionResolution['status'] = result.blockedReason
+    && (result.candidate.status === 'blocked' || result.candidate.status === 'rumor' || result.site.kind === 'grotto_heaven_rumor')
+    ? 'blocked'
+    : result.success
+      ? 'resolved'
+      : 'failed';
+  const bridge = buildInheritanceWorldActionBridge({
+    candidate: result.candidate,
+    site: result.site,
+    store,
+    phase: 'trial',
+    summary: result.steps.at(-1)?.message || result.blockedReason || `传承试炼结算：${result.candidate.title}`,
+    status,
+    mode: status === 'blocked' ? 'blocked' : 'local_resolution',
+    chargeAp: chargeAp && status !== 'blocked',
+    localFacts: trialWorldFacts(result, result.candidate, result.site),
+    risks: uniqueStrings([
+      ...result.candidate.warnings,
+      result.site.kind === 'canon_side_branch' ? '正史旁支不能改写核心原著结果。' : '',
+      result.site.kind === 'grotto_heaven_rumor' ? '洞天只作为边界传闻，不开放正式认主。' : '',
+      result.combatCandidate ? '传承守护战胜负不得由 DeepSeek 判定。' : '',
+    ]),
+    blockedReasons: status === 'blocked' ? [result.blockedReason || '传承试炼被阻断。'] : [],
+    metadata: {
+      stepIds: result.steps.map(step => step.id),
+      combatCandidate: result.combatCandidate,
+    },
+  });
+  return { ...result, ...bridge };
+}
+
 export function resolveInheritanceTrialAction(input: {
   state?: Partial<InheritanceLandState> | null;
   candidateId: string;
   store?: any;
   seed?: string | number;
+  worldActionChargeAp?: boolean;
 }): InheritanceTrialResolution {
   const state = normalizeInheritanceLandState(input.state);
   const store = input.store || {};
@@ -534,7 +735,7 @@ export function resolveInheritanceTrialAction(input: {
       candidateId: candidate.id,
       severity: 'warning',
     }));
-    return {
+    const result: InheritanceTrialResolution = {
       success: false,
       blockedReason: message,
       state: normalizeInheritanceLandState({ ...state, blockedRecords: [...state.blockedRecords, ...steps], lastResolutionSteps: steps }),
@@ -542,6 +743,7 @@ export function resolveInheritanceTrialAction(input: {
       site,
       steps,
     };
+    return attachTrialWorldActionBridge(result, store, false);
   }
 
   const rng = createSeededRng(input.seed ?? `${turn}:${candidate.id}:inheritance-trial`);
@@ -611,7 +813,7 @@ export function resolveInheritanceTrialAction(input: {
     lastResolutionSteps: steps,
   });
 
-  return {
+  const result: InheritanceTrialResolution = {
     success,
     state: next,
     candidate: next.candidates.find(item => item.id === candidate.id) || candidate,
@@ -629,6 +831,7 @@ export function resolveInheritanceTrialAction(input: {
         }
       : undefined,
   };
+  return attachTrialWorldActionBridge(result, store, input.worldActionChargeAp ?? true);
 }
 
 export function evaluateLandClaimEntry(
@@ -703,12 +906,67 @@ function createClaimedHeavenlyLand(site: InheritanceSiteSpec, candidate: Inherit
   };
 }
 
+function landClaimWorldFacts(result: LandClaimResolution, candidate: InheritanceCandidateRecord, site: InheritanceSiteSpec): string[] {
+  const facts = result.success
+    ? [`福地认主由本地引擎结算成功：${candidate.title}。`]
+    : result.blockedReason
+      ? [`福地认主被本地规则阻断：${result.blockedReason}`]
+      : [`福地认主由本地引擎结算失败：${candidate.title}。`];
+  if (result.heavenlyLand) {
+    facts.push(`本地已写入福地归属：${result.heavenlyLand.name}（${result.heavenlyLand.id}）。`);
+    facts.push(`资源节点、地灵状态与灾劫压力等待后续本地系统承接；DeepSeek 不得直接追加福地收益。`);
+  } else {
+    facts.push('福地归属未成立；不能绕过地灵条款、守护试炼或 AP 规则强行占有。');
+  }
+  facts.push('洞天仍为边界传闻，不开放正式认主或吞并。');
+  return facts;
+}
+
+function attachLandClaimWorldActionBridge(
+  result: LandClaimResolution,
+  store: any,
+  chargeAp: boolean,
+): LandClaimResolution {
+  if (!result.candidate || !result.site) return result;
+  const status: WorldActionResolution['status'] = result.attempt.outcome === 'blocked'
+    ? 'blocked'
+    : result.success
+      ? 'resolved'
+      : 'failed';
+  const bridge = buildInheritanceWorldActionBridge({
+    candidate: result.candidate,
+    site: result.site,
+    store,
+    phase: 'land_claim',
+    summary: result.steps.at(-1)?.message || result.blockedReason || `福地认主结算：${result.candidate.title}`,
+    status,
+    mode: status === 'blocked' ? 'blocked' : 'local_resolution',
+    chargeAp: chargeAp && status !== 'blocked',
+    localFacts: landClaimWorldFacts(result, result.candidate, result.site),
+    risks: uniqueStrings([
+      ...result.candidate.warnings,
+      '福地归属、资源节点、地灵与灾劫后果不得由 DeepSeek 判定。',
+      '洞天正式认主和洞天吞并不在当前版本开放。',
+    ]),
+    blockedReasons: status === 'blocked' ? [result.blockedReason || '福地认主被阻断。'] : [],
+    metadata: {
+      attemptId: result.attempt.id,
+      outcome: result.attempt.outcome,
+      heavenlyLandId: result.heavenlyLand?.id,
+      stepIds: result.steps.map(step => step.id),
+      terms: result.attempt.terms.map(term => ({ id: term.id, status: term.status, required: term.required })),
+    },
+  });
+  return { ...result, ...bridge };
+}
+
 export function resolveLandClaimAttempt(input: {
   state?: Partial<InheritanceLandState> | null;
   candidateId: string;
   store?: any;
   seed?: string | number;
   skipApCheck?: boolean;
+  worldActionChargeAp?: boolean;
 }): LandClaimResolution {
   const state = normalizeInheritanceLandState(input.state);
   const store = input.store || {};
@@ -738,7 +996,7 @@ export function resolveLandClaimAttempt(input: {
       terms: validation.terms.map(term => ({ ...term, status: term.required ? 'blocked' : term.status })),
       steps,
     };
-    return {
+    const result: LandClaimResolution = {
       success: false,
       blockedReason: message,
       state: normalizeInheritanceLandState({
@@ -752,6 +1010,7 @@ export function resolveLandClaimAttempt(input: {
       attempt,
       steps,
     };
+    return attachLandClaimWorldActionBridge(result, store, false);
   }
 
   const chance = claimChance(store);
@@ -814,7 +1073,7 @@ export function resolveLandClaimAttempt(input: {
     lastResolutionSteps: steps,
   });
 
-  return {
+  const result: LandClaimResolution = {
     success,
     state: next,
     candidate: next.candidates.find(item => item.id === candidate.id) || candidate,
@@ -823,6 +1082,7 @@ export function resolveLandClaimAttempt(input: {
     steps,
     heavenlyLand,
   };
+  return attachLandClaimWorldActionBridge(result, store, input.worldActionChargeAp ?? true);
 }
 
 function siteKindLabel(kind: InheritanceSiteKind): string {

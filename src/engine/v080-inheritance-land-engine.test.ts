@@ -120,6 +120,11 @@ describe('v0.8.0-c2.5 inheritance/land engine', () => {
     expect(second.steps).toEqual(first.steps);
     expect(first.steps.map(step => step.kind)).toContain('trial');
     expect(first.steps.map(step => step.kind)).toContain('settlement');
+    expect(first.worldActionCandidate?.domain).toBe('inheritance');
+    expect(first.worldActionDeparture?.mode).toBe('local_resolution');
+    expect(first.worldActionResolution?.status).toMatch(/resolved|failed/);
+    expect(first.worldActionLedgerEntry?.cost).toBe(1);
+    expect(first.narrativeReturnContext?.promptSummary).toContain('传承试炼由本地引擎结算');
   });
 
   it('allows Three Kings side branch pressure without rewriting the canon core', () => {
@@ -166,6 +171,9 @@ describe('v0.8.0-c2.5 inheritance/land engine', () => {
 
     const result = resolveLandClaimAttempt({ state: staged.state, candidateId, store: immortalStore, seed: 'land-claim-fixed' });
     expect(result.attempt.outcome).toMatch(/success|failure/);
+    expect(result.worldActionCandidate?.domain).toBe('blessed_land');
+    expect(result.worldActionResolution?.status).toMatch(/resolved|failed/);
+    expect(result.narrativeReturnContext?.promptSummary).toContain('福地认主由本地引擎结算');
     if (result.success) {
       expect(result.heavenlyLand?.type).toBe('福地');
       expect(result.heavenlyLand?.name).toContain('福地');
@@ -191,6 +199,9 @@ describe('v0.8.0-c2.5 inheritance/land engine', () => {
     });
     expect(trial.success).toBe(false);
     expect(trial.steps[0].kind).toBe('rumor');
+    expect(trial.worldActionDeparture?.mode).toBe('blocked');
+    expect(trial.worldActionLedgerEntry?.cost).toBe(0);
+    expect(trial.worldActionResolution?.rewardPolicy).toBe('rumor_only');
   });
 
   it('formats prompt context with local boundaries', () => {
