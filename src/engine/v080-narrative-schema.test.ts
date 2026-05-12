@@ -160,4 +160,58 @@ describe('v0.8.0 narrative state_update schema', () => {
     expect(parsed.narrative.choices[1].inheritanceTags?.[0].status).toBe('rumor');
     expect(parsed.state_update?.inheritance_land_candidates?.add?.[0].siteId).toBe('minor_cave_inheritance');
   });
+
+  it('accepts v0.9-a2 training ground choice tags and guarded clue candidates', () => {
+    const parsed = NarrativeJSONSchema.parse({
+      narrative: {
+        text: 'The clan elder hands over a bamboo token that only points to the outer refinement platform. It is a clue, not a reward.',
+        choices: [
+          {
+            id: 'training_clue',
+            text: 'Accept the token and verify the training-ground clue',
+            risk: 'low',
+            risk_note: 'The local engine decides AP, cost, cooldown and result.',
+            trainingGroundTags: [{
+              groundId: 'tg_nanjiang_refine',
+              kind: 'training_ground_clue',
+              label: '道场线索',
+              status: 'available',
+              reason: 'Only visible after a story clue.',
+              apCost: 1,
+            }],
+          },
+          {
+            id: 'hunt_rumor',
+            text: 'Record the black-heaven hunting rumor as a later lead',
+            risk: 'high',
+            risk_note: 'Hunt entries wait for the v0.9.0-a3 beast library.',
+            training_ground_tags: [{
+              groundId: 'tg_black_heaven',
+              kind: 'beast_library_pending',
+              label: '待荒兽敌库',
+              status: 'blocked',
+              reason: 'No beast drop can be written by narrative text.',
+            }],
+          },
+        ],
+      },
+      state_update: {
+        training_ground_candidates: {
+          add: [{
+            groundId: 'tg_nanjiang_refine',
+            title: '青茅山炼蛊台竹牌',
+            summary: '剧情给出的道场线索，等待本地引擎校验。',
+            source: 'ai-rumor',
+            locationHint: '青茅山',
+            risk: 'low',
+            apCostHint: 1,
+          }],
+        },
+      },
+    });
+
+    expect(parsed.narrative.choices[0].trainingGroundTags?.[0].groundId).toBe('tg_nanjiang_refine');
+    expect(parsed.narrative.choices[1].training_ground_tags?.[0].status).toBe('blocked');
+    expect(parsed.state_update?.training_ground_candidates?.add?.[0].groundId).toBe('tg_nanjiang_refine');
+  });
 });

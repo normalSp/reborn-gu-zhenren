@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1尊者博弈蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "if",
     "description": "v0.8-c2.5：洞天边界传闻，只做禁区压力和后续入口。",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -346,7 +346,10 @@
           "message": "洞天边界传闻 已登记为 c2.5 测试候选。",
           "severity": "info"
         }
-      ]
+      ],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -938,6 +941,15 @@
           "severity": "info"
         }
       ]
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
+      "blockedRecords": [],
+      "lastResolutionSteps": []
     }
   }
 }

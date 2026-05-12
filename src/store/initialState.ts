@@ -18,6 +18,7 @@ import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framewo
 import { createDefaultSceneSessionState } from '../engine/v080-scene-session-engine';
 import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 import { createDefaultInheritanceLandState } from '../engine/v080-inheritance-land-engine';
+import { createDefaultTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
 
 export const INITIAL_STATE = {
   // ─── playerSlice ───
@@ -69,6 +70,7 @@ export const INITIAL_STATE = {
   endingState: createDefaultEndingFrameworkState(),
   sceneSessionState: createDefaultSceneSessionState(),
   inheritanceLandState: createDefaultInheritanceLandState(),
+  trainingGroundState: createDefaultTrainingGroundState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -346,4 +348,4 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  */
-export const SAVE_FORMAT_VERSION = 20;
+export const SAVE_FORMAT_VERSION = 21;

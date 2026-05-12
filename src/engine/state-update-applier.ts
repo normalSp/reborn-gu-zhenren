@@ -430,6 +430,25 @@ export function applyStateUpdate(update: StateUpdate): void {
     s.setFlag?.('combatEventCandidates', current.slice(-40));
   }
 
+  // v0.9.0-a2: training grounds are clues only. Local policy validates entry, AP, rewards and combat routing.
+  if ((update as any).training_ground_candidates?.add && Array.isArray((update as any).training_ground_candidates.add)) {
+    const s = useStore.getState() as any;
+    for (const candidate of (update as any).training_ground_candidates.add) {
+      if (!candidate?.groundId) continue;
+      const validation = s.recordTrainingGroundCandidateAction?.({
+        ...candidate,
+        source: candidate.source || 'ai-rumor',
+      });
+      if (!validation?.valid) {
+        s.addGameLog?.('pipeline', `道场线索候选已降级：${candidate.title || candidate.groundId}`, {
+          source: 'v090-a2-training-ground-guard',
+          candidate,
+          validation,
+        });
+      }
+    }
+  }
+
   // v0.8.0-b3: story/IF/anchor updates are candidates only. The local engine validates them.
   {
     const direct = update as any;
@@ -450,6 +469,11 @@ export function applyStateUpdate(update: StateUpdate): void {
     if (direct.grottoHeaven !== undefined || direct.grotto_heaven !== undefined) directAttempts.push('direct grotto-heaven write');
     if (direct.resourceNodes !== undefined || direct.resource_nodes !== undefined) directAttempts.push('direct resource node write');
     if (direct.immortalGu !== undefined || direct.immortal_gu !== undefined) directAttempts.push('direct immortal Gu write');
+    if (direct.trainingGroundReward !== undefined || direct.training_ground_reward !== undefined) directAttempts.push('direct training ground reward write');
+    if (direct.trainingGroundRewards !== undefined || direct.training_ground_rewards !== undefined) directAttempts.push('direct training ground rewards write');
+    if (direct.trainingGroundDrops !== undefined || direct.training_ground_drops !== undefined) directAttempts.push('direct training ground drops write');
+    if (direct.huntDrops !== undefined || direct.hunt_drops !== undefined) directAttempts.push('direct hunt drops write');
+    if (direct.desolateBeastLoot !== undefined || direct.desolate_beast_loot !== undefined) directAttempts.push('direct desolate beast loot write');
     if (directAttempts.length > 0) {
       const s = useStore.getState() as any;
       s.recordEndingPressureAction?.(directAttempts.join(', '), 'AI 不能直接写入正式终局、尊者击杀、十转或永生定论。');

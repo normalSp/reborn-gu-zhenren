@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "逍遥智心体专项走查",
@@ -7,7 +7,7 @@
     "turn": 97,
     "gameMode": "canon",
     "description": "v0.7.1 RC 专项手测：自然十绝体「逍遥智心体」空窍压力、亲和道途与凡蛊夹具。",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -213,7 +213,10 @@
       "inheritanceLandCandidates": [],
       "inheritanceClaimAttempts": [],
       "claimedLandIds": [],
-      "lastInheritanceLandResolution": []
+      "lastInheritanceLandResolution": [],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "gameMode": "canon",
     "playerRole": "original_participant",
@@ -512,6 +515,15 @@
       "completedSiteIds": [],
       "claimedLandIds": [],
       "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
     }

@@ -44,6 +44,10 @@ describe('v0.7.0 current-format test save fixtures', () => {
       expect(Array.isArray(state.inheritanceLandState?.claimAttempts), `${file} should include land claim attempts array`).toBe(true);
       expect(Array.isArray(state.inheritanceLandState?.blockedRecords), `${file} should include inheritance blocked records`).toBe(true);
       expect(state.flags?.inheritanceLandCandidates, `${file} should mirror inheritance candidates for old prompt compatibility`).toEqual(state.inheritanceLandState?.candidates);
+      expect(state.trainingGroundState?.version, `${file} should include v0.9.0-a2 training ground state`).toBe('v0.9.0-a2');
+      expect(Array.isArray(state.trainingGroundState?.clues), `${file} should include training ground clue ledger`).toBe(true);
+      expect(Array.isArray(state.trainingGroundState?.blockedRecords), `${file} should include training ground blocked records`).toBe(true);
+      expect(state.flags?.trainingGroundClues, `${file} should mirror training ground clues for old prompt compatibility`).toEqual(state.trainingGroundState?.clues);
     }
   });
 

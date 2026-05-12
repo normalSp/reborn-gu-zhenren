@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1宿命破碎蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "if",
     "description": "v0.8.0-c1 宿命破碎终局候选专项：break_fate 向量、天意账本和因果债共同生成可提交候选。",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -303,7 +303,10 @@
       "inheritanceLandCandidates": [],
       "inheritanceClaimAttempts": [],
       "claimedLandIds": [],
-      "lastInheritanceLandResolution": []
+      "lastInheritanceLandResolution": [],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -835,6 +838,15 @@
       "completedSiteIds": [],
       "claimedLandIds": [],
       "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
     }

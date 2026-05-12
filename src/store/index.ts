@@ -33,12 +33,14 @@ import { createStoryAnchorSlice } from './slices/storyAnchorSlice';
 import { createEndingSlice } from './slices/endingSlice';
 import { createSceneSessionSlice } from './slices/sceneSessionSlice';
 import { createInheritanceLandSlice } from './slices/inheritanceLandSlice';
+import { createTrainingGroundSlice } from './slices/trainingGroundSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine';
 import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-engine';
+import { normalizeTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
@@ -200,7 +202,17 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
   if (v < 20 || s.inheritanceLandState === undefined) {
     s.inheritanceLandState = normalizeInheritanceLandState(s.inheritanceLandState);
   }
-  s.flags = mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState);
+  if (v < 21 || s.trainingGroundState === undefined) {
+    s.trainingGroundState = normalizeTrainingGroundState(s.trainingGroundState || {
+      clues: s.flags?.trainingGroundClues,
+      cooldowns: s.flags?.trainingCooldowns,
+      lastResolutionSteps: s.flags?.lastTrainingGroundResolution,
+    });
+  }
+  s.flags = mirrorTrainingGroundFlagsForLoad(
+    mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState),
+    s.trainingGroundState,
+  );
 
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
@@ -251,6 +263,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createEndingSlice> &
   ReturnType<typeof createSceneSessionSlice> &
   ReturnType<typeof createInheritanceLandSlice> &
+  ReturnType<typeof createTrainingGroundSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -297,6 +310,20 @@ function mirrorStoryAnchorFlagsForLoad(flags: Record<string, any>, storyAnchorSt
     ifBranchCandidates: storyAnchorState.ifBranchCandidates,
     canonAnchorPressureLog: storyAnchorState.canonAnchorPressureLog,
     lastStoryAnchorResolution: storyAnchorState.lastResolutionSteps,
+  };
+}
+
+function mirrorTrainingGroundFlagsForLoad(flags: Record<string, any>, trainingGroundState: any): Record<string, any> {
+  return {
+    ...flags,
+    trainingGroundClues: Array.isArray(trainingGroundState?.clues) ? trainingGroundState.clues : [],
+    trainingCooldowns: trainingGroundState?.cooldowns && typeof trainingGroundState.cooldowns === 'object'
+      ? trainingGroundState.cooldowns
+      : {},
+    lastTrainingGroundResolution: Array.isArray(trainingGroundState?.lastResolutionSteps)
+      ? trainingGroundState.lastResolutionSteps
+      : [],
+    activeTrainingGroundId: trainingGroundState?.activeGroundId || null,
   };
 }
 
@@ -444,7 +471,15 @@ function buildLoadedStoreState(
   const endingState = normalizeEndingFrameworkState(stateData.endingState || stateData.flags?.endingState);
   const sceneSessionState = normalizeSceneSessionState(stateData.sceneSessionState);
   const inheritanceLandState = normalizeInheritanceLandState(stateData.inheritanceLandState);
-  const flags = mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState);
+  const trainingGroundState = normalizeTrainingGroundState(stateData.trainingGroundState || {
+    clues: stateData.flags?.trainingGroundClues,
+    cooldowns: stateData.flags?.trainingCooldowns,
+    lastResolutionSteps: stateData.flags?.lastTrainingGroundResolution,
+  });
+  const flags = mirrorTrainingGroundFlagsForLoad(
+    mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState),
+    trainingGroundState,
+  );
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
     achievementProgress: currentStore.achievementProgress ?? {},
@@ -482,6 +517,7 @@ function buildLoadedStoreState(
     endingState,
     sceneSessionState,
     inheritanceLandState,
+    trainingGroundState,
   };
 }
 
@@ -522,6 +558,7 @@ export const useStore = create<RootStore>()(
         ...createEndingSlice(...a),
         ...createSceneSessionSlice(...a),
         ...createInheritanceLandSlice(...a),
+        ...createTrainingGroundSlice(...a),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -706,7 +743,15 @@ export const useStore = create<RootStore>()(
           merged.endingState = normalizeEndingFrameworkState(merged.endingState || merged.flags?.endingState);
           merged.sceneSessionState = normalizeSceneSessionState(merged.sceneSessionState);
           merged.inheritanceLandState = normalizeInheritanceLandState(merged.inheritanceLandState);
-          merged.flags = mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState);
+          merged.trainingGroundState = normalizeTrainingGroundState(merged.trainingGroundState || {
+            clues: merged.flags?.trainingGroundClues,
+            cooldowns: merged.flags?.trainingCooldowns,
+            lastResolutionSteps: merged.flags?.lastTrainingGroundResolution,
+          });
+          merged.flags = mirrorTrainingGroundFlagsForLoad(
+            mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState),
+            merged.trainingGroundState,
+          );
           return merged;
         },
         migrate: (persistedState: any, version: number) => {
@@ -725,7 +770,15 @@ export const useStore = create<RootStore>()(
             persistedState.endingState = normalizeEndingFrameworkState(persistedState.endingState || persistedState.flags?.endingState);
             persistedState.sceneSessionState = normalizeSceneSessionState(persistedState.sceneSessionState);
             persistedState.inheritanceLandState = normalizeInheritanceLandState(persistedState.inheritanceLandState);
-            persistedState.flags = mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState);
+            persistedState.trainingGroundState = normalizeTrainingGroundState(persistedState.trainingGroundState || {
+              clues: persistedState.flags?.trainingGroundClues,
+              cooldowns: persistedState.flags?.trainingCooldowns,
+              lastResolutionSteps: persistedState.flags?.lastTrainingGroundResolution,
+            });
+            persistedState.flags = mirrorTrainingGroundFlagsForLoad(
+              mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState),
+              persistedState.trainingGroundState,
+            );
             persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
             if (persistedState.deathRecord) {
               persistedState.deathRecord = {

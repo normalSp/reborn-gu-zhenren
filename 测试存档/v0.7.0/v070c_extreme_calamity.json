@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "太日阳莽体专项走查",
@@ -7,7 +7,7 @@
     "turn": 80,
     "gameMode": "canon",
     "description": "v0.7.0-c 专项手测：十绝体灾劫｜自然十绝体：太日阳莽体",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -219,7 +219,10 @@
       "inheritanceLandCandidates": [],
       "inheritanceClaimAttempts": [],
       "claimedLandIds": [],
-      "lastInheritanceLandResolution": []
+      "lastInheritanceLandResolution": [],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "inventory": [
       {
@@ -508,6 +511,15 @@
       "completedSiteIds": [],
       "claimedLandIds": [],
       "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
     }

@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "b3宿命战侧翼蛊仙",
@@ -7,7 +7,7 @@
     "turn": 118,
     "gameMode": "if",
     "description": "v0.8.0-b3 宿命战侧翼 IF 分叉专项",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -302,7 +302,10 @@
       "inheritanceLandCandidates": [],
       "inheritanceClaimAttempts": [],
       "claimedLandIds": [],
-      "lastInheritanceLandResolution": []
+      "lastInheritanceLandResolution": [],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "apertureInventory": {
       "gu": [
@@ -776,6 +779,15 @@
       "completedSiteIds": [],
       "claimedLandIds": [],
       "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
     }

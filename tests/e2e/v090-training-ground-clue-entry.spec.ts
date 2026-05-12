@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 type RebornE2eWindow = Window & {
   __REBORN_E2E__?: {
-    startMidgameAnchorDemo: () => Record<string, unknown>;
+    startTrainingGroundClueDemo: () => Record<string, unknown>;
     getStateSummary: () => Record<string, unknown>;
   };
 };
@@ -25,53 +25,49 @@ async function installConsoleGuards(page: Page): Promise<string[]> {
   return errors;
 }
 
-async function openMidgameDemo(page: Page): Promise<string[]> {
+async function openTrainingGroundDemo(page: Page): Promise<string[]> {
   const consoleErrors = await installConsoleGuards(page);
   await page.addInitScript(() => localStorage.clear());
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
-  await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startMidgameAnchorDemo());
+  await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startTrainingGroundClueDemo());
   return consoleErrors;
 }
 
-test.describe('v0.9 product route closure remains compatible after a2', () => {
-  test('desktop shows training-ground clue policy, debug demo grouping, and current version stamp', async ({ page }) => {
+test.describe('v0.9.0-a2 training ground clue entry', () => {
+  test('desktop shows clue ledger, consumes scene AP, and keeps debug folded', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
-    const consoleErrors = await openMidgameDemo(page);
+    const consoleErrors = await openTrainingGroundDemo(page);
 
-    await expect(page.getByTestId('game-screen-shell')).toBeVisible();
     await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a2');
-    await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
-
     await page.getByTestId('side-panel-training_ground').click();
     await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toBeVisible();
-    await expect(page.locator('[data-testid="training-ground-clue-policy"]:visible')).toContainText('v0.9.0-a2');
-    await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toContainText('当前没有可出发道场线索');
-    await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toContainText(/剧情|线索|势力/);
+    await expect(page.locator('[data-testid="training-ground-clue-policy"]:visible')).toContainText('剧情');
+    await expect(page.locator('[data-testid="training-ground-clue-card"]:visible')).toContainText('青茅山炼蛊台竹牌');
+    await expect(page.locator('[data-testid="training-ground-debug-legacy"]:visible')).toContainText('Debug/兼容入口');
 
-    await page.getByTestId('open-battlefield-demo').click();
-    await expect(page.getByTestId('battlefield-overlay')).toBeVisible();
-    await expect(page.getByTestId('battlefield-board')).toHaveAttribute('data-grid-size', '5x3');
+    await page.locator('[data-testid="training-ground-departure-action"]:visible').first().click();
+    await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toContainText(/本地结算轨迹|冷却|道痕/);
 
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
-    expect(summary).toBeTruthy();
+    expect((summary.trainingGround as any).clueCount).toBeGreaterThan(0);
+    expect((summary.trainingGround as any).lastStepCount).toBeGreaterThan(0);
+    expect((summary.trainingGround as any).sceneBudgetRemaining).toBeLessThan(3);
     expect(consoleErrors).toEqual([]);
   });
 
-  test('mobile reduced-motion keeps route explanations readable without overlap', async ({ page }) => {
+  test('mobile reduced-motion keeps clue cards and blockers readable', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    const consoleErrors = await openMidgameDemo(page);
-
-    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a2');
-    await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
+    const consoleErrors = await openTrainingGroundDemo(page);
 
     await page.getByTestId('side-panel-training_ground').click();
     const panel = page.locator('[data-testid="training-ground-panel"]:visible');
     await expect(panel).toBeVisible();
-    await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toBeVisible();
-    const box = await page.locator('[data-testid="training-ground-empty-policy"]:visible').boundingBox();
+    await expect(page.locator('[data-testid="training-ground-clue-card"]:visible')).toBeVisible();
+    const box = await page.locator('[data-testid="training-ground-clue-card"]:visible').first().boundingBox();
     expect(box?.width).toBeGreaterThan(300);
+    await expect(page.locator('[data-testid="choice-training-ground-tag-training_ground_clue"]:visible')).toBeVisible();
 
     expect(consoleErrors).toEqual([]);
   });

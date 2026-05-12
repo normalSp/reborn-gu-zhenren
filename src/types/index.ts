@@ -107,6 +107,80 @@ export interface SceneSessionState {
   lastNarrativeSummary: string;
 }
 
+export type TrainingGroundCandidateSource =
+  | 'ai-rumor'
+  | 'engine'
+  | 'player_choice'
+  | 'location'
+  | 'faction'
+  | 'inheritance'
+  | 'blessed_land';
+
+export type TrainingGroundClueStatus = 'clue' | 'active' | 'resolved' | 'blocked' | 'expired';
+export type TrainingGroundResolutionKind = 'candidate' | 'departure' | 'training' | 'combat_candidate' | 'trial' | 'failure' | 'blocked';
+
+export interface TrainingGroundCandidateInput {
+  id?: string;
+  groundId: string;
+  title?: string;
+  summary?: string;
+  locationHint?: string;
+  source?: TrainingGroundCandidateSource;
+  risk?: 'low' | 'medium' | 'high';
+  apCostHint?: number;
+  sceneTags?: string[];
+  expiresTurn?: number;
+  unlockReason?: string;
+}
+
+export interface TrainingGroundClueRecord {
+  id: string;
+  groundId: string;
+  title: string;
+  summary: string;
+  locationHint: string;
+  source: TrainingGroundCandidateSource;
+  risk: 'low' | 'medium' | 'high';
+  apCostHint: number;
+  sceneTags: string[];
+  status: TrainingGroundClueStatus;
+  blockers: string[];
+  warnings: string[];
+  createdTurn: number;
+  updatedTurn: number;
+  expiresTurn?: number;
+}
+
+export interface TrainingGroundResolutionStep {
+  id: string;
+  turn: number;
+  kind: TrainingGroundResolutionKind;
+  groundId?: string;
+  clueId?: string;
+  message: string;
+  severity: 'info' | 'success' | 'warning' | 'danger';
+  metadata?: Record<string, unknown>;
+}
+
+export interface TrainingGroundState {
+  version: 'v0.9.0-a2';
+  clues: TrainingGroundClueRecord[];
+  unlockedGroundIds: string[];
+  activeGroundId: string | null;
+  cooldowns: Record<string, number>;
+  blockedRecords: TrainingGroundResolutionStep[];
+  lastResolutionSteps: TrainingGroundResolutionStep[];
+}
+
+export interface TrainingGroundChoiceTag {
+  kind: 'training_ground_clue' | 'training_ground_departure' | 'location_permission' | 'beast_library_pending';
+  label: string;
+  status: 'available' | 'blocked' | 'rumor' | 'debug';
+  groundId?: string;
+  reason: string;
+  riskHint?: string;
+}
+
 export type CombatEncounterScale = 'duel' | 'battlefield_5x3' | 'group_5x3' | 'group_7x5';
 export type CombatEncounterStatus = 'idle' | 'candidate' | 'active' | 'resolved' | 'abandoned';
 export type BattleOutcomeResult = 'victory' | 'defeat' | 'retreat' | 'abandoned' | 'unresolved';
@@ -1136,6 +1210,8 @@ export interface Choice {
   combat_tags?: Record<string, unknown>[];
   inheritanceTags?: InheritanceChoiceTag[];
   inheritance_tags?: InheritanceChoiceTag[];
+  trainingGroundTags?: TrainingGroundChoiceTag[];
+  training_ground_tags?: TrainingGroundChoiceTag[];
 }
 
 export interface NarrativeJSON {
@@ -1357,6 +1433,9 @@ export interface StateUpdate {
   };
   combat_event_candidates?: {
     add?: CombatEventCandidate[];
+  };
+  training_ground_candidates?: {
+    add?: TrainingGroundCandidateInput[];
   };
   inheritance_land_candidates?: {
     add?: InheritanceCandidateInput[];

@@ -48,6 +48,15 @@ const ChoiceInheritanceTagSchema = z.object({
   apCost: z.number().min(0).optional(),
 }).passthrough();
 
+const ChoiceTrainingGroundTagSchema = z.object({
+  groundId: z.string().min(1).optional(),
+  kind: z.enum(['training_ground_clue', 'training_ground_departure', 'location_permission', 'beast_library_pending']).optional(),
+  label: z.string().min(1),
+  status: z.enum(['available', 'blocked', 'rumor', 'debug']).optional(),
+  reason: z.string().optional(),
+  riskHint: z.string().optional(),
+}).passthrough();
+
 // ─── Choice Schema ───
 export const ChoiceSchema = z.object({
   id: z.string().min(1),
@@ -61,6 +70,8 @@ export const ChoiceSchema = z.object({
   guAffordances: z.array(ChoiceGuAffordanceSchema).optional(),
   inheritanceTags: z.array(ChoiceInheritanceTagSchema).optional(),
   inheritance_tags: z.array(ChoiceInheritanceTagSchema).optional(),
+  trainingGroundTags: z.array(ChoiceTrainingGroundTagSchema).optional(),
+  training_ground_tags: z.array(ChoiceTrainingGroundTagSchema).optional(),
 }).passthrough(); // 5B: 容忍AI的outcome/reward等额外字段
 
 // ─── StateUpdate Sub-Schemas ───
@@ -315,6 +326,24 @@ const InheritanceLandCandidatesUpdate = z.object({
   add: z.array(InheritanceLandCandidateAdd).optional(),
 }).optional();
 
+const TrainingGroundCandidateAdd = z.object({
+  id: z.string().optional(),
+  groundId: z.string().min(1),
+  title: z.string().min(1).optional(),
+  summary: z.string().min(1).optional(),
+  locationHint: z.string().optional(),
+  source: z.enum(['ai-rumor', 'engine', 'player_choice', 'location', 'faction', 'inheritance', 'blessed_land']).optional(),
+  risk: z.enum(['low', 'medium', 'high']).optional(),
+  apCostHint: z.number().min(0).optional(),
+  sceneTags: z.array(z.string()).optional(),
+  expiresTurn: z.number().min(0).optional(),
+  unlockReason: z.string().optional(),
+}).passthrough();
+
+const TrainingGroundCandidatesUpdate = z.object({
+  add: z.array(TrainingGroundCandidateAdd).optional(),
+}).optional();
+
 // ─── StateUpdate Schema ───
 export const StateUpdateSchema = z.object({
   player: PlayerUpdate,
@@ -331,6 +360,7 @@ export const StateUpdateSchema = z.object({
   npc_contacts: NpcContactsUpdate,
   gu_use_suggestions: GuUseSuggestionsUpdate,
   combat_event_candidates: CombatEventCandidatesUpdate,
+  training_ground_candidates: TrainingGroundCandidatesUpdate,
   story_event_candidates: StoryEventCandidatesUpdate,
   if_branch_candidates: IfBranchCandidatesUpdate,
   canon_anchor_pressure: CanonAnchorPressureUpdate,

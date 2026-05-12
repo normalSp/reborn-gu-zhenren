@@ -1,5 +1,5 @@
 {
-  "formatVersion": 20,
+  "formatVersion": 21,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "听潮散修",
@@ -8,7 +8,7 @@
     "gameMode": "canon",
     "description": "用于验证方源角色曲触发；玩家仍是原创角色听潮散修。",
     "displayName": "角色曲测试：方源年轮",
-    "formatVersion": 20
+    "formatVersion": 21
   },
   "state": {
     "profile": {
@@ -226,7 +226,10 @@
       "inheritanceLandCandidates": [],
       "inheritanceClaimAttempts": [],
       "claimedLandIds": [],
-      "lastInheritanceLandResolution": []
+      "lastInheritanceLandResolution": [],
+      "trainingGroundClues": [],
+      "trainingCooldowns": {},
+      "lastTrainingGroundResolution": []
     },
     "inventory": [
       {
@@ -562,6 +565,15 @@
       "completedSiteIds": [],
       "claimedLandIds": [],
       "activeTrial": null,
+      "blockedRecords": [],
+      "lastResolutionSteps": []
+    },
+    "trainingGroundState": {
+      "version": "v0.9.0-a2",
+      "clues": [],
+      "unlockedGroundIds": [],
+      "activeGroundId": null,
+      "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
     }

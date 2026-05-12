@@ -6,6 +6,7 @@ import { createDefaultCultivationState } from '../engine/v080-cultivation-calami
 import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
 import { createDefaultInheritanceLandState, listInheritanceSiteSpecs } from '../engine/v080-inheritance-land-engine';
+import { createDefaultTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
 import {
   buildLifeboundEndingEvidence,
   buildOriginEndingEvidence,
@@ -44,6 +45,7 @@ declare global {
       startEndingFrameworkDemo: () => Record<string, unknown>;
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
       startInheritanceLandDemo: () => Record<string, unknown>;
+      startTrainingGroundClueDemo: () => Record<string, unknown>;
       startTimelineTalentCoverageDemo: (category?: 'mortal' | 'immortal') => Record<string, unknown>;
       clearRuntime: () => void;
     };
@@ -178,6 +180,15 @@ function summarizeStore(): Record<string, unknown> {
       blockedCount: Array.isArray(state.inheritanceLandState.blockedRecords) ? state.inheritanceLandState.blockedRecords.length : 0,
       lastStepCount: Array.isArray(state.inheritanceLandState.lastResolutionSteps) ? state.inheritanceLandState.lastResolutionSteps.length : 0,
       heavenlyLandName: state.heavenlyLand?.name || null,
+    } : null,
+    trainingGround: state.trainingGroundState ? {
+      clueCount: Array.isArray(state.trainingGroundState.clues) ? state.trainingGroundState.clues.length : 0,
+      unlockedCount: Array.isArray(state.trainingGroundState.unlockedGroundIds) ? state.trainingGroundState.unlockedGroundIds.length : 0,
+      activeGroundId: state.trainingGroundState.activeGroundId || null,
+      blockedCount: Array.isArray(state.trainingGroundState.blockedRecords) ? state.trainingGroundState.blockedRecords.length : 0,
+      lastStepCount: Array.isArray(state.trainingGroundState.lastResolutionSteps) ? state.trainingGroundState.lastResolutionSteps.length : 0,
+      combatCandidateCount: Array.isArray(state.flags?.combatEventCandidates) ? state.flags.combatEventCandidates.length : 0,
+      sceneBudgetRemaining: Number(state.sceneSessionState?.actionBudget?.remaining ?? state.sceneSessionState?.budget?.remainingAp ?? state.gameTime?.ap ?? 0),
     } : null,
     originLifebound: {
       originProfileId: originEvidence.profileId || null,
@@ -1060,6 +1071,87 @@ export function installE2eHarness(): void {
           source: 'engine',
         });
       }
+      return summarizeStore();
+    },
+    startTrainingGroundClueDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 9),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '南疆',
+        currentChapterId: 'qingmaoshan',
+        activeTab: 'training_ground',
+        profile: { name: 'a2道场线索演武', background: '青茅山外门弟子', realm: { grand: 2, sub: '中阶', label: '二转中阶' } },
+        attributes: { 资质: 8, 体魄: 6, 心智: 7, 气运: 5 },
+        pathBuild: {
+          primary: '炼道',
+          secondary: ['木道'],
+          path_levels: { 炼道: '入门' },
+          dao_marks: { 炼道: 16, 木道: 8 },
+        },
+        currency: Math.max(Number(store.currency || 0), 800),
+        immortalCurrency: Number(store.immortalCurrency || 0),
+        gameTime: { ap: 3, max_ap: 3, period: 'afternoon', day: 3, month: 2, year: 1, season: 'spring' },
+        sceneSessionState: {
+          version: 'v0.8.0-c2.2',
+          sceneId: 'v090_training_ground_clue_demo',
+          status: 'active',
+          locationId: 'qingmaoshan_outer_slope',
+          period: 'afternoon',
+          safety: 'guarded',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          actionBudget: { remaining: 3, max: 3, spent: 0, reserved: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          pendingAdvanceIntent: null,
+          narrativeAdvanceIntent: null,
+        },
+        trainingGroundState: createDefaultTrainingGroundState(),
+        flags: {
+          ...(store.flags || {}),
+          trainingGroundClues: [],
+          trainingCooldowns: {},
+          combatEventCandidates: [],
+        },
+        currentNarrative: {
+          narrative: {
+            text: '山脚执事给出一枚竹牌，指向青茅山外侧的炼蛊台。道场只能先作为剧情线索登记，出发与结算由本地场景 AP 与道场引擎承接。',
+            choices: [
+              {
+                id: 'a2_training_ground_hint',
+                text: '收下竹牌，登记炼蛊台道场线索',
+                risk: 'low',
+                risk_note: 'AI 只提交线索候选，不直接给奖励。',
+                trainingGroundTags: [{
+                  kind: 'training_ground_clue',
+                  label: '道场线索',
+                  status: 'available',
+                  groundId: 'tg_nanjiang_refine',
+                  reason: '剧情给出线索后，道场面板才显示可出发项。',
+                }],
+              },
+            ],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
+      next.recordTrainingGroundCandidateAction?.({
+        groundId: 'tg_nanjiang_refine',
+        title: '青茅山炼蛊台竹牌',
+        summary: '执事交出的竹牌可引你去外山炼蛊台磨练炼道火候。',
+        source: 'engine',
+        locationHint: '青茅山外侧炼蛊台',
+        apCostHint: 1,
+        risk: 'low',
+        sceneTags: ['qingmaoshan', 'training_ground_clue'],
+      });
       return summarizeStore();
     },
     startTimelineTalentCoverageDemo(category = 'mortal') {

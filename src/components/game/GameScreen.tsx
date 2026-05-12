@@ -498,7 +498,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0" data-testid="app-version-label">
-          蛊真人世界 · v0.9.0-a1
+          蛊真人世界 · v0.9.0-a2
         </p>
       </div>
 
