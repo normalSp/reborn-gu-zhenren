@@ -20,6 +20,10 @@ function ensureArray(value: unknown): string[] {
   return Array.isArray(value) ? value.map(String).filter(Boolean) : [];
 }
 
+function uniqueStrings(values: string[]): string[] {
+  return [...new Set(values.filter(Boolean))];
+}
+
 function stableHash(text: string): string {
   let hash = 2166136261;
   for (let i = 0; i < text.length; i += 1) {
@@ -110,8 +114,8 @@ export function createWorldActionDeparture(input: {
     chargeAp: input.chargeAp ?? (candidate.apCost > 0 && mode !== 'blocked'),
     mode,
     summary: input.summary || candidate.summary,
-    blockers: [...candidate.blockers, ...ensureArray(input.blockers)],
-    warnings: [...candidate.warnings, ...ensureArray(input.warnings)],
+    blockers: uniqueStrings([...candidate.blockers, ...ensureArray(input.blockers)]),
+    warnings: uniqueStrings([...candidate.warnings, ...ensureArray(input.warnings)]),
     metadata: input.metadata,
   };
 }
@@ -127,7 +131,7 @@ export function createWorldActionResolution(input: {
   metadata?: Record<string, unknown>;
 }): WorldActionResolution {
   const departure = input.departure;
-  const blockedReasons = [...departure.blockers, ...ensureArray(input.blockedReasons)];
+  const blockedReasons = uniqueStrings([...departure.blockers, ...ensureArray(input.blockedReasons)]);
   const status = input.status || (blockedReasons.length > 0 ? 'blocked' : 'resolved');
   return {
     id: `world_resolution_${departure.candidateId}_${departure.turn}`,
@@ -139,7 +143,7 @@ export function createWorldActionResolution(input: {
     status,
     summary: input.summary,
     localFacts: ensureArray(input.localFacts),
-    risks: [...departure.warnings, ...ensureArray(input.risks)],
+    risks: uniqueStrings([...departure.warnings, ...ensureArray(input.risks)]),
     blockedReasons,
     rewardPolicy: input.rewardPolicy || 'local_engine_only',
     metadata: input.metadata,
@@ -173,7 +177,7 @@ export function projectWorldActionLedgerEntry(input: {
         localFacts: resolution?.localFacts || [],
       },
     },
-    risks: [...departure.warnings, ...(resolution?.risks || [])],
+    risks: uniqueStrings([...departure.warnings, ...(resolution?.risks || [])]),
   };
 }
 
@@ -191,15 +195,15 @@ export function buildNarrativeReturnContext(input: {
     ...resolutions.flatMap(item => item.localFacts.length > 0 ? item.localFacts : [item.summary]),
     ...ensureArray(input.extraFacts),
   ].filter(Boolean);
-  const risks = [
+  const risks = uniqueStrings([
     ...resolutions.flatMap(item => item.risks),
     ...input.ledgerEntries.flatMap(entry => entry.risks || []),
     ...ensureArray(input.extraRisks),
-  ].filter(Boolean);
-  const blockedReasons = [
+  ]);
+  const blockedReasons = uniqueStrings([
     ...resolutions.flatMap(item => item.blockedReasons),
     ...ensureArray(input.extraBlockedReasons),
-  ].filter(Boolean);
+  ]);
   const ledgerEntryIds = input.ledgerEntries.map(entry => entry.id);
   const actionIds = resolutions.length > 0
     ? resolutions.map(item => item.candidateId)

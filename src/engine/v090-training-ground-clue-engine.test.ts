@@ -26,7 +26,7 @@ function store(overrides: Record<string, any> = {}) {
   };
 }
 
-describe('v0.9.0-a2 training ground clue engine', () => {
+describe('v0.9.0-b1 training ground clue engine', () => {
   it('registers a legal clue and exposes a readable entry', () => {
     const staged = stageTrainingGroundCandidate(createDefaultTrainingGroundState(), {
       groundId: 'tg_nanjiang_refine',
@@ -82,6 +82,31 @@ describe('v0.9.0-a2 training ground clue engine', () => {
     expect(first.session?.daoMarkGain).toBe(second.session?.daoMarkGain);
     expect(first.session?.currencyPatch.currency).toBeLessThan(1000);
     expect(first.state.cooldowns.tg_nanjiang_refine).toBeGreaterThan(12);
+    expect(first.worldActionCandidate?.domain).toBe('training_ground');
+    expect(first.worldActionDeparture?.mode).toBe('local_resolution');
+    expect(first.worldActionResolution?.status).toBe('resolved');
+    expect(first.worldActionLedgerEntry?.cost).toBe(1);
+    expect(first.narrativeReturnContext?.promptSummary).toContain('本地引擎结算');
+  });
+
+  it('projects AP blockers into the unified action protocol without charging AP', () => {
+    const noApStore = store({
+      sceneSessionState: { actionBudget: { remaining: 0, remainingAp: 0, max: 3, maxAp: 3, spent: 3, spentAp: 3 } },
+      gameTime: { ap: 0, max_ap: 3 },
+    });
+    const staged = stageTrainingGroundCandidate(createDefaultTrainingGroundState(), {
+      groundId: 'tg_nanjiang_refine',
+      title: '青茅山炼蛊台',
+      summary: '进入炼蛊台磨练。',
+    }, noApStore);
+
+    const result = resolveTrainingGroundAction(staged.state, 'tg_nanjiang_refine', noApStore, 'blocked-seed');
+
+    expect(result.success).toBe(false);
+    expect(result.worldActionDeparture?.mode).toBe('blocked');
+    expect(result.worldActionDeparture?.chargeAp).toBe(false);
+    expect(result.worldActionLedgerEntry?.cost).toBe(0);
+    expect(result.worldActionResolution?.blockedReasons.join('')).toContain('场景 AP 不足');
   });
 
   it('routes duel grounds into combat candidates instead of old duel state', () => {
@@ -100,6 +125,9 @@ describe('v0.9.0-a2 training ground clue engine', () => {
     expect(result.success).toBe(true);
     expect(result.combatCandidate?.scale).toBe('duel');
     expect(result.combatCandidate?.source).toBe('engine');
+    expect(result.worldActionDeparture?.mode).toBe('combat_candidate');
+    expect(result.worldActionResolution?.status).toBe('pending_narrative');
+    expect(result.worldActionResolution?.localFacts.join('')).toContain('胜负和奖励等待战斗引擎结算');
   });
 
   it('opens hunt grounds through the v0.9.0-a3 beast library without direct loot', () => {
@@ -126,5 +154,8 @@ describe('v0.9.0-a2 training ground clue engine', () => {
     expect(result.combatCandidate?.scale).toBe('group_7x5');
     expect(result.combatCandidate?.enemySpecIds?.length).toBeGreaterThan(0);
     expect(result.combatCandidate?.dropPolicyId).toBeTruthy();
+    expect(result.worldActionDeparture?.mode).toBe('combat_candidate');
+    expect(result.worldActionResolution?.localFacts.join('')).toContain('掉落只允许由敌库和本地结算决定');
+    expect(result.worldActionResolution?.risks.join('')).toContain('寄生蛊不会直接入背包');
   });
 });

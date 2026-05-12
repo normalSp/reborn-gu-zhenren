@@ -67,6 +67,7 @@ describe('v0.9.0-b1 world action protocol', () => {
       summary: '本地系统登记灾劫压力，AI 只能承接氛围。',
       sceneId: 'aperture:80:storm',
       apCost: 0,
+      warnings: ['灾劫后果不得由 AI 判定'],
       createdTurn: 80,
     });
     const departure = createWorldActionDeparture({ candidate, mode: 'local_resolution', chargeAp: false });
@@ -87,6 +88,7 @@ describe('v0.9.0-b1 world action protocol', () => {
     const prompt = formatNarrativeReturnContext(context);
 
     expect(context.ledgerEntryIds).toEqual([ledger.id]);
+    expect(context.risks.filter(risk => risk === '灾劫后果不得由 AI 判定')).toHaveLength(1);
     expect(prompt).toContain('空窍灾劫压力增加');
     expect(prompt).toContain('不得改写 AP、资源、奖励');
   });

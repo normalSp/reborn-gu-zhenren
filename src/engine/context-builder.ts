@@ -23,6 +23,7 @@ import { formatCombatEncounterForPrompt } from './v080-narrative-combat-orchestr
 import { formatCalamitySceneForPrompt } from './v080-calamity-scene-engine';
 import { formatInheritanceContextForPrompt } from './v080-inheritance-land-engine';
 import { formatTrainingGroundContextForPrompt } from './v090-training-ground-clue-engine';
+import { formatNarrativeReturnContext } from './v090-world-action-protocol';
 
 const guDatabase = guDatabaseRaw as Record<string, any>;
 const worldRules = worldRulesRaw as Record<string, any>;
@@ -1129,6 +1130,8 @@ export class ContextBuilder {
     if (inheritancePrompt) parts.push(inheritancePrompt);
     const trainingGroundPrompt = formatTrainingGroundContextForPrompt((store as any).trainingGroundState);
     if (trainingGroundPrompt) parts.push(trainingGroundPrompt);
+    const worldActionReturnContext = (store as any).flags?.lastWorldActionReturnContext;
+    if (worldActionReturnContext) parts.push(formatNarrativeReturnContext(worldActionReturnContext));
     parts.push(buildOriginLifeboundContextForPrompt(store));
     parts.push(injectV080NarrativeGuard(store));
 

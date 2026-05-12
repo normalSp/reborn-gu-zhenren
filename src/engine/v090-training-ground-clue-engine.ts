@@ -2,13 +2,26 @@ import trainingGroundsRaw from '../canon/training-grounds.json';
 import type {
   CombatEventCandidate,
   CombatEncounterScale,
+  LocalActionLedgerEntry,
+  NarrativeReturnContext,
   TrainingGroundCandidateInput,
   TrainingGroundCandidateSource,
   TrainingGroundClueRecord,
   TrainingGroundClueStatus,
   TrainingGroundResolutionStep,
   TrainingGroundState,
+  WorldActionCandidate,
+  WorldActionDeparture,
+  WorldActionResolution,
+  WorldActionResolutionMode,
 } from '../types';
+import {
+  buildNarrativeReturnContext,
+  createWorldActionCandidate,
+  createWorldActionDeparture,
+  createWorldActionResolution,
+  projectWorldActionLedgerEntry,
+} from './v090-world-action-protocol';
 import {
   resolveTrainingGroundSession,
   type TrainingGroundContext,
@@ -83,6 +96,11 @@ export interface TrainingGroundActionResolution {
   steps: TrainingGroundResolutionStep[];
   session?: TrainingGroundSessionResolution;
   combatCandidate?: CombatEventCandidate;
+  worldActionCandidate?: WorldActionCandidate;
+  worldActionDeparture?: WorldActionDeparture;
+  worldActionResolution?: WorldActionResolution;
+  worldActionLedgerEntry?: LocalActionLedgerEntry;
+  narrativeReturnContext?: NarrativeReturnContext;
 }
 
 function ensureArray<T>(value: T[] | null | undefined): T[] {
@@ -158,6 +176,120 @@ function routeHintForGround(ground: TrainingGroundSpec): CombatEncounterScale | 
   if (kind === 'trial') return 'battlefield_5x3';
   if (kind === 'hunt') return 'group_7x5';
   return undefined;
+}
+
+function worldActionModeForEntry(entry: TrainingGroundEntryView): WorldActionResolutionMode {
+  if (!entry.canEnter) return 'blocked';
+  if (entry.actionKind === 'duel' || entry.actionKind === 'hunt') return 'combat_candidate';
+  if (entry.actionKind === 'trial') return 'narrative_return';
+  return 'local_resolution';
+}
+
+function worldActionFactsForResolution(
+  entry: TrainingGroundEntryView,
+  resolution: Partial<TrainingGroundActionResolution>,
+): string[] {
+  if (entry.actionKind === 'train' && resolution.session) {
+    const session = resolution.session;
+    const facts = [`${entry.ground.name}道场磨练由本地引擎结算：${session.message}`];
+    if (session.pathType && session.daoMarkGain > 0) facts.push(`${session.pathType}道痕本地增加 ${session.daoMarkGain}。`);
+    if (session.currencyPatch.currency !== undefined) facts.push(`元石余额本地结算为 ${session.currencyPatch.currency}。`);
+    if (session.currencyPatch.immortalCurrency !== undefined) facts.push(`仙元石余额本地结算为 ${session.currencyPatch.immortalCurrency}。`);
+    return facts;
+  }
+  if (entry.actionKind === 'duel') {
+    return [`${entry.ground.name}道场对决已生成本地 duel 战斗候选，胜负和奖励等待战斗引擎结算。`];
+  }
+  if (entry.actionKind === 'hunt') {
+    return [`${entry.ground.name}狩猎已生成本地 7x5 荒兽战斗候选，掉落只允许由敌库和本地结算决定。`];
+  }
+  if (entry.actionKind === 'trial') {
+    return [`${entry.ground.name}道场试炼已出发，后续叙事只能承接试炼状态，不能直接发放奖励。`];
+  }
+  return [resolution.message || `${entry.ground.name}道场行动已记录。`];
+}
+
+function attachWorldActionBridge(
+  result: TrainingGroundActionResolution,
+  store: any,
+): TrainingGroundActionResolution {
+  const entry = result.entry;
+  if (!entry) return result;
+  const turn = currentTurn(store);
+  const candidate = createWorldActionCandidate({
+    domain: 'training_ground',
+    sourceId: entry.ground.id,
+    title: entry.clue?.title || entry.ground.name,
+    summary: entry.clue?.summary || entry.ground.description || result.message,
+    source: entry.clue?.source || 'engine',
+    sceneId: currentSceneId(store),
+    locationId: String(store?.currentLocationId || store?.currentDomain || entry.clue?.locationHint || ''),
+    risk: entry.clue?.risk || 'medium',
+    apCost: entry.apCost,
+    blockers: entry.blockers,
+    warnings: entry.warnings,
+    tags: ['training_ground', entry.actionKind, entry.ground.type, entry.ground.pathType].filter(Boolean),
+    createdTurn: turn,
+    metadata: {
+      groundId: entry.ground.id,
+      actionKind: entry.actionKind,
+      routeHint: entry.routeHint,
+      clueId: entry.clue?.id,
+      dropBoundary: entry.dropBoundary,
+    },
+  });
+  const mode = worldActionModeForEntry(entry);
+  const departure = createWorldActionDeparture({
+    candidate,
+    turn,
+    mode,
+    chargeAp: entry.canEnter && entry.apCost > 0,
+    summary: `${entry.ground.name}道场${entry.actionKind === 'hunt' ? '狩猎' : entry.actionKind === 'duel' ? '对决' : entry.actionKind === 'trial' ? '试炼' : '磨练'}出发`,
+    metadata: {
+      groundId: entry.ground.id,
+      actionKind: entry.actionKind,
+      routeHint: entry.routeHint,
+    },
+  });
+  const status: WorldActionResolution['status'] = !entry.canEnter
+    ? 'blocked'
+    : result.success
+      ? (entry.actionKind === 'train' ? 'resolved' : 'pending_narrative')
+      : 'failed';
+  const worldResolution = createWorldActionResolution({
+    departure,
+    status,
+    summary: result.message,
+    localFacts: worldActionFactsForResolution(entry, result),
+    risks: [...entry.warnings, ...(entry.dropBoundary ? [entry.dropBoundary] : [])],
+    blockedReasons: result.success ? [] : entry.blockers,
+    rewardPolicy: entry.actionKind === 'train' ? 'local_engine_only' : 'local_engine_only',
+    metadata: {
+      groundId: entry.ground.id,
+      actionKind: entry.actionKind,
+      stepIds: result.steps.map(step => step.id),
+      combatCandidateId: result.combatCandidate?.id,
+      sessionSuccess: result.session?.success,
+    },
+  });
+  const ledger = projectWorldActionLedgerEntry({
+    departure,
+    resolution: worldResolution,
+    source: `training_ground:${entry.ground.id}`,
+  });
+  return {
+    ...result,
+    worldActionCandidate: candidate,
+    worldActionDeparture: departure,
+    worldActionResolution: worldResolution,
+    worldActionLedgerEntry: ledger,
+    narrativeReturnContext: buildNarrativeReturnContext({
+      sceneId: candidate.sceneId,
+      turn,
+      ledgerEntries: [ledger],
+      resolutions: [worldResolution],
+    }),
+  };
 }
 
 function defaultApCost(ground: TrainingGroundSpec, clue?: TrainingGroundClueRecord | null): number {
@@ -510,7 +642,7 @@ export function resolveTrainingGroundAction(
       severity: 'warning',
       metadata: { status: entry.status },
     })];
-    return {
+    return attachWorldActionBridge({
       success: false,
       message: steps[0].message,
       entry,
@@ -520,7 +652,7 @@ export function resolveTrainingGroundAction(
         blockedRecords: limitSteps([...state.blockedRecords, ...steps]),
         lastResolutionSteps: steps,
       }),
-    };
+    }, store);
   }
 
   if (entry.actionKind === 'train') {
@@ -538,7 +670,7 @@ export function resolveTrainingGroundAction(
         metadata: step.metadata,
       },
     ));
-    return {
+    return attachWorldActionBridge({
       success: session.success,
       message: session.message,
       entry,
@@ -551,7 +683,7 @@ export function resolveTrainingGroundAction(
         clues: state.clues.map(clue => clue.groundId === groundId ? { ...clue, status: session.success ? 'resolved' : clue.status, updatedTurn: turn } : clue),
         lastResolutionSteps: steps,
       }),
-    };
+    }, store);
   }
 
   if (entry.actionKind === 'duel') {
@@ -573,7 +705,7 @@ export function resolveTrainingGroundAction(
       severity: 'success',
       metadata: { combatCandidateId: combatCandidate.id, scale: combatCandidate.scale },
     })];
-    return {
+    return attachWorldActionBridge({
       success: true,
       message: steps[0].message,
       entry,
@@ -585,7 +717,7 @@ export function resolveTrainingGroundAction(
         clues: state.clues.map(clue => clue.groundId === groundId ? { ...clue, status: 'active', updatedTurn: turn } : clue),
         lastResolutionSteps: steps,
       }),
-    };
+    }, store);
   }
 
   if (entry.actionKind === 'trial') {
@@ -595,7 +727,7 @@ export function resolveTrainingGroundAction(
       clueId: entry.clue?.id,
       severity: 'success',
     })];
-    return {
+    return attachWorldActionBridge({
       success: true,
       message: steps[0].message,
       entry,
@@ -606,7 +738,7 @@ export function resolveTrainingGroundAction(
         clues: state.clues.map(clue => clue.groundId === groundId ? { ...clue, status: 'active', updatedTurn: turn } : clue),
         lastResolutionSteps: steps,
       }),
-    };
+    }, store);
   }
 
   const combatCandidate = buildHuntCombatCandidate(entry.ground, store, seed);
@@ -617,7 +749,7 @@ export function resolveTrainingGroundAction(
       clueId: entry.clue?.id,
       severity: 'warning',
     })];
-    return {
+    return attachWorldActionBridge({
       success: false,
       message: steps[0].message,
       entry,
@@ -627,7 +759,7 @@ export function resolveTrainingGroundAction(
         blockedRecords: limitSteps([...state.blockedRecords, ...steps]),
         lastResolutionSteps: steps,
       }),
-    };
+    }, store);
   }
   const steps = [makeStep('combat_candidate', `狩猎战斗候选已生成：${entry.ground.name}`, {
     turn,
@@ -641,7 +773,7 @@ export function resolveTrainingGroundAction(
       dropPolicyId: combatCandidate.dropPolicyId,
     },
   })];
-  return {
+  return attachWorldActionBridge({
     success: true,
     message: steps[0].message,
     entry,
@@ -653,7 +785,7 @@ export function resolveTrainingGroundAction(
       clues: state.clues.map(clue => clue.groundId === groundId ? { ...clue, status: 'active', updatedTurn: turn } : clue),
       lastResolutionSteps: steps,
     }),
-  };
+  }, store);
 }
 
 export function formatTrainingGroundContextForPrompt(stateInput?: Partial<TrainingGroundState> | null): string {

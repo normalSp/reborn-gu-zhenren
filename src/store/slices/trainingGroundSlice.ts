@@ -11,6 +11,7 @@ import {
   stageTrainingGroundCandidate,
   type TrainingGroundCandidateValidation,
 } from '../../engine/v090-training-ground-clue-engine';
+import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
 
 export interface TrainingGroundSlice {
   trainingGroundState: TrainingGroundState;
@@ -67,12 +68,42 @@ function applyTrainingSessionEffects(set: any, get: any, resolution: ReturnType<
   }
 }
 
-function spendTrainingSceneAp(get: any, groundId: string, cost: number, summary: string, risks: string[]) {
+function spendTrainingSceneAp(
+  get: any,
+  cost: number,
+  summary: string,
+  source: string,
+  systemResult: Record<string, unknown>,
+  risks: string[],
+) {
   const store = get() as any;
   if (typeof store.spendSceneAp !== 'function') {
     return { success: false, message: '场景 AP 系统不可用。' };
   }
-  return store.spendSceneAp(cost, 'training_ground', summary, `training_ground:${groundId}`, { groundId }, risks);
+  return store.spendSceneAp(cost, 'training_ground', summary, source, systemResult, risks);
+}
+
+function commitWorldActionReturnContext(set: any, get: any, resolution: ReturnType<typeof resolveTrainingGroundActionEngine>, spentEntry: any): void {
+  if (!resolution.worldActionResolution) return;
+  const store = get() as any;
+  const ledgerEntries = spentEntry ? [spentEntry] : resolution.worldActionLedgerEntry ? [resolution.worldActionLedgerEntry] : [];
+  const context = buildNarrativeReturnContext({
+    sceneId: resolution.worldActionCandidate?.sceneId || store.sceneSessionState?.sceneId || 'current_scene',
+    turn: Number(store.turn || resolution.worldActionResolution.turn || 1),
+    ledgerEntries,
+    resolutions: [resolution.worldActionResolution],
+  });
+  set((s: any) => ({
+    flags: {
+      ...(s.flags || {}),
+      lastWorldActionReturnContext: context,
+      lastTrainingGroundWorldAction: {
+        candidate: resolution.worldActionCandidate,
+        departure: resolution.worldActionDeparture,
+        resolution: resolution.worldActionResolution,
+      },
+    },
+  }));
 }
 
 export const createTrainingGroundSlice = (set: any, get: any): TrainingGroundSlice => ({
@@ -111,21 +142,24 @@ export const createTrainingGroundSlice = (set: any, get: any): TrainingGroundSli
       return { success: false, message: result.message };
     }
 
+    const result = resolveTrainingGroundActionEngine(state, groundId, store, `${store.turn || 1}:${groundId}:action`);
+    const ledger = result.worldActionLedgerEntry;
     const spend = spendTrainingSceneAp(
       get,
-      groundId,
-      entry.apCost,
-      `${entry.ground.name}道场行动`,
-      [...entry.warnings, ...entry.blockers],
+      ledger?.cost ?? entry.apCost,
+      ledger?.summary ?? `${entry.ground.name}道场行动`,
+      ledger?.source ?? `training_ground:${groundId}`,
+      (ledger?.systemResult as Record<string, unknown>) ?? { groundId },
+      ledger?.risks ?? [...entry.warnings, ...entry.blockers],
     );
     if (!spend.success) {
       pushL3Warning(get, 'training_ground_scene_ap_insufficient', spend.message);
       return { success: false, message: spend.message };
     }
 
-    const result = resolveTrainingGroundActionEngine(state, groundId, get(), `${store.turn || 1}:${groundId}:action`);
     commitTrainingGroundState(set, get, result.state);
     applyTrainingSessionEffects(set, get, result);
+    commitWorldActionReturnContext(set, get, result, spend.entry);
 
     if (result.combatCandidate) appendCombatCandidate(set, get, result.combatCandidate);
     if (entry.actionKind === 'duel' || entry.actionKind === 'trial' || entry.actionKind === 'hunt') {

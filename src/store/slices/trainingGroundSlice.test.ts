@@ -82,7 +82,7 @@ function createHarness(overrides: Record<string, any> = {}) {
   return { get: () => state };
 }
 
-describe('v0.9.0-a2 training ground store slice', () => {
+describe('v0.9.0-b1 training ground store slice', () => {
   it('migrates v20 saves to v21 with trainingGroundState defaults', () => {
     const migrated = migrateSave({
       formatVersion: 20,
@@ -113,7 +113,11 @@ describe('v0.9.0-a2 training ground store slice', () => {
     const result = harness.get().resolveTrainingGroundAction('tg_nanjiang_refine');
     expect(result.success).toBe(true);
     expect(harness.get().sceneSessionState.localActionLedger[0].actionType).toBe('training_ground');
+    expect(harness.get().sceneSessionState.localActionLedger[0].source).toBe('training_ground:tg_nanjiang_refine');
+    expect(harness.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.status).toBe('resolved');
     expect(harness.get().sceneSessionState.actionBudget.remaining).toBeLessThan(3);
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('本地引擎结算');
+    expect(harness.get().flags.lastTrainingGroundWorldAction.resolution.status).toBe('resolved');
     expect(harness.get().addDaoMarks).toHaveBeenCalled();
     expect(harness.get().trainingGroundState.lastResolutionSteps.length).toBeGreaterThan(0);
   });
@@ -135,6 +139,8 @@ describe('v0.9.0-a2 training ground store slice', () => {
     const result = harness.get().resolveTrainingGroundAction('tg_nanjiang_bone');
     expect(result.success).toBe(true);
     expect(harness.get().flags.combatEventCandidates[0].scale).toBe('duel');
+    expect(harness.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.mode).toBe('combat_candidate');
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('胜负和奖励等待战斗引擎结算');
     expect(harness.get().duelState).toBeUndefined();
     expect(harness.get().prepareNarrativeAdvanceIntent).toHaveBeenCalledWith('training_ground_duel');
   });
@@ -158,6 +164,8 @@ describe('v0.9.0-a2 training ground store slice', () => {
     expect(result.success).toBe(true);
     expect(harness.get().flags.combatEventCandidates[0].scale).toBe('group_7x5');
     expect(harness.get().flags.combatEventCandidates[0].enemySpecIds.length).toBeGreaterThan(0);
+    expect(harness.get().sceneSessionState.localActionLedger[0].systemResult.worldAction.status).toBe('pending_narrative');
+    expect(harness.get().flags.lastWorldActionReturnContext.promptSummary).toContain('掉落只允许由敌库和本地结算决定');
     expect(harness.get().prepareNarrativeAdvanceIntent).toHaveBeenCalledWith('training_ground_hunt');
   });
 });
