@@ -20,6 +20,13 @@
 - 不要直接删除 `C:\Users\11411\.codex\plugins\cache`。
 - 如仍异常，先备份 `config.toml`、`.codex-global-state.json`、`state_5.sqlite`，再考虑重建 marketplace 配置。
 
+## PowerShell 输出
+
+- `C:\Users\11411\Documents\WindowsPowerShell\profile.ps1` 已设置 UTF-8，并让 fastfetch 只在真实交互终端显示，避免污染 Codex 工具输出。
+- 如再次出现中文路径打花，先检查 `chcp` 是否为 `65001`，`[Console]::OutputEncoding.WebName` 是否为 `utf-8`。
+- 读 UTF-8 文件优先用 `Get-Content -Encoding UTF8` 或 Node REPL；不要根据打花的终端输出判断 skill 或文档本身已损坏。
+- Git 中文路径显示依赖 `git config --global core.quotepath false`。
+
 ## 每次迭代前
 
 - 先读最新 `codex上下文信息` 和 `00-总览/README.md`。

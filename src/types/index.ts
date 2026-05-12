@@ -107,6 +107,91 @@ export interface SceneSessionState {
   lastNarrativeSummary: string;
 }
 
+export type WorldActionDomain =
+  | 'training_ground'
+  | 'inheritance'
+  | 'blessed_land'
+  | 'calamity'
+  | 'field_action'
+  | 'combat'
+  | 'other';
+
+export type WorldActionSource =
+  | 'ai-rumor'
+  | 'engine'
+  | 'player_choice'
+  | 'location'
+  | 'faction'
+  | 'inheritance'
+  | 'blessed_land'
+  | 'calamity';
+
+export type WorldActionRisk = 'low' | 'medium' | 'high';
+export type WorldActionStatus = 'candidate' | 'blocked' | 'departed' | 'resolved' | 'failed' | 'pending_narrative' | 'rumor';
+export type WorldActionResolutionMode = 'local_resolution' | 'combat_candidate' | 'narrative_return' | 'blocked';
+
+export interface WorldActionCandidate {
+  id: string;
+  domain: WorldActionDomain;
+  sourceId?: string;
+  title: string;
+  summary: string;
+  source: WorldActionSource;
+  sceneId: string;
+  locationId?: string;
+  risk: WorldActionRisk;
+  apCost: number;
+  blockers: string[];
+  warnings: string[];
+  tags: string[];
+  createdTurn: number;
+  metadata?: Record<string, unknown>;
+}
+
+export interface WorldActionDeparture {
+  id: string;
+  candidateId: string;
+  domain: WorldActionDomain;
+  sceneId: string;
+  turn: number;
+  apCost: number;
+  chargeAp: boolean;
+  mode: WorldActionResolutionMode;
+  summary: string;
+  blockers: string[];
+  warnings: string[];
+  metadata?: Record<string, unknown>;
+}
+
+export interface WorldActionResolution {
+  id: string;
+  departureId: string;
+  candidateId: string;
+  domain: WorldActionDomain;
+  sceneId: string;
+  turn: number;
+  status: Extract<WorldActionStatus, 'resolved' | 'failed' | 'blocked' | 'pending_narrative'>;
+  summary: string;
+  localFacts: string[];
+  risks: string[];
+  blockedReasons: string[];
+  rewardPolicy: 'none' | 'local_engine_only' | 'rumor_only';
+  metadata?: Record<string, unknown>;
+}
+
+export interface NarrativeReturnContext {
+  id: string;
+  sceneId: string;
+  turn: number;
+  ledgerEntryIds: string[];
+  actionIds: string[];
+  facts: string[];
+  risks: string[];
+  blockedReasons: string[];
+  promptSummary: string;
+  aiMutationBoundaries: string[];
+}
+
 export type TrainingGroundCandidateSource =
   | 'ai-rumor'
   | 'engine'
