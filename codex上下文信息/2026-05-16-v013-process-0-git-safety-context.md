@@ -73,8 +73,10 @@
 
 ## Commit / Push
 
-- 本交接将随 `v0.13.0-process-0 Git安全收束` 首个治理提交一起提交。
-- 本轮目标是把该治理提交推送到 `codex/v013-npc-faction-reaction`，作为 v0.13 第一条可回滚分支点。
+- v0.13 分支已创建：`codex/v013-npc-faction-reaction`。
+- `v0.13.0-process-0 Git安全收束` 首个治理提交已创建：`ce9b1e9 docs: 建立v0.13流程与Git安全收束`。
+- 该提交已推送到 `origin/codex/v013-npc-faction-reaction`，作为 v0.13 第一条可回滚分支点。
 - 提交范围只包含 v0.13 规划、MiroFish 请求、process-0 Git 计划、AGENTS、PROJECT-STATE 和本交接。
 - 未纳入本次提交：运行时代码、测试存档、`.github/`、素材、zip、历史删除项、外部参考目录和其他历史脏项。
+- 本记录会以一个后续小提交同步到远端，用于记录实际 commit / push 证据。
 - 下一次推荐提交范围：继续按 `v0.13.0-process-0-Git安全收束.md` 的分组，先整理 v0.12 完成线与 CI 门禁，或在用户要求时直接进入 `v0.13.0-a1` 文档门禁。
