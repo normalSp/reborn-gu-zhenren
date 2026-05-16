@@ -3,6 +3,8 @@
  * 参照大纲第四部分：新手引导系统
  */
 
+import { STORAGE_KEYS } from '../storageKeys';
+
 export type TutorialState = 'inactive' | 'active' | 'completed' | 'skipped';
 
 export interface TutorialSlice {
@@ -23,8 +25,8 @@ export interface TutorialSlice {
   completeTutorial: () => void;
 }
 
-const TUTORIAL_COMPLETED_KEY = 'gu-zhenren-tutorial-completed';
-const TUTORIAL_SKIPPED_KEY = 'gu-zhenren-tutorial-skipped';
+const TUTORIAL_COMPLETED_KEY = STORAGE_KEYS.TUTORIAL_COMPLETED;
+const TUTORIAL_SKIPPED_KEY = STORAGE_KEYS.TUTORIAL_SKIPPED;
 
 export const createTutorialSlice = (set: any, get: any): TutorialSlice => ({
   tutorialState: 'inactive',

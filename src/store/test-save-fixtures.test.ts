@@ -6,17 +6,22 @@ import { SAVE_FORMAT_VERSION } from './initialState';
 import { isRuntimePathAllowed } from '../engine/path-registry';
 
 const SAVE_DIR = path.join(process.cwd(), '测试存档', 'v0.7.0');
+const PUBLIC_SAVE_DIR = path.join(process.cwd(), 'public', 'test-saves');
 const EXTREME_PHYSIQUES = Object.keys(extremeAffinityRaw).filter(key => !key.startsWith('_'));
 const VALID_SUB_RANKS = new Set(['初阶', '中阶', '高阶', '巅峰']);
 
-function loadSaves(): Array<{ file: string; save: any; state: any }> {
-  return fs.readdirSync(SAVE_DIR)
-    .filter(file => file.endsWith('.json'))
-    .sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'))
-    .map(file => {
-      const save = JSON.parse(fs.readFileSync(path.join(SAVE_DIR, file), 'utf8'));
+function loadSavesFrom(dir: string, includeFile = (file: string) => file.endsWith('.json')): Array<{ file: string; save: any; state: any }> {
+  return fs.readdirSync(dir)
+    .filter(includeFile)
+    .sort((a: string, b: string) => a.localeCompare(b, 'zh-Hans-CN'))
+    .map((file: string) => {
+      const save = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
       return { file, save, state: save.state || save };
     });
+}
+
+function loadSaves(): Array<{ file: string; save: any; state: any }> {
+  return loadSavesFrom(SAVE_DIR);
 }
 
 describe('v0.7.0 current-format test save fixtures', () => {
@@ -121,5 +126,23 @@ describe('v0.7.0 current-format test save fixtures', () => {
     expect(bySite.get('unclaimed_blessed_land_seed')?.landClaimTerms?.length).toBeGreaterThan(0);
     expect(bySite.get('grotto_heaven_boundary_rumor')?.status).toBe('rumor');
     expect(bySite.get('grotto_heaven_boundary_rumor')?.validationIssues?.join(' ')).toContain('洞天');
+  });
+});
+
+describe('v0.9.0 public test save mirrors', () => {
+  it('keeps public import fixtures on the current save format and visible enough for manual QA', () => {
+    const saves = loadSavesFrom(PUBLIC_SAVE_DIR, file => /^test-\d+.+\.json$/.test(file));
+
+    expect(saves.length, 'public test-saves should expose the 10 curated rc mirrors').toBe(10);
+
+    for (const { file, save, state } of saves) {
+      expect(save.formatVersion, `${file} should use current save format`).toBe(SAVE_FORMAT_VERSION);
+      expect(save.meta?.description, `${file} should include public QA metadata`).toBeTruthy();
+      expect(state.currentNarrative?.narrative?.text, `${file} should include visible narrative`).toBeTruthy();
+      expect(state.profile?.realm?.label, `${file} should include player realm`).toBeTruthy();
+      expect(state.attributes?.资质, `${file} should include attributes`).toBeTypeOf('number');
+      expect(state.trainingGroundState?.version, `${file} should preserve v0.9.0-a3 training ground state`).toBe('v0.9.0-a3');
+      expect(Array.isArray(state.trainingGroundState?.clues), `${file} should include training ground clue ledger`).toBe(true);
+    }
   });
 });

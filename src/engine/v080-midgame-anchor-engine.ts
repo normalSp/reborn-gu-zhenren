@@ -19,6 +19,7 @@ import type {
   IfBranchAxis,
   IfBranchCandidate,
   IfBranchVector,
+  KarmicReturn,
   KarmicDebtLedger,
   StoryAnchorCandidateRecord,
   StoryAnchorEntryValidation,
@@ -164,7 +165,7 @@ function normalizeHeavenLedger(input: any): HeavenWillLedger {
     correction: clamp(Number(input?.correction ?? initial.correction), 0, 100),
     rejection: clamp(Number(input?.rejection ?? initial.rejection), 0, 100),
     ambiguity: clamp(Number(input?.ambiguity ?? initial.ambiguity), 0, 100),
-    lastTriggers: ensureArray(input?.lastTriggers).slice(0, 8),
+    lastTriggers: ensureArray<HeavenWillTrigger>(input?.lastTriggers).slice(0, 8),
   };
 }
 
@@ -176,7 +177,7 @@ function normalizeKarmicLedger(input: any): KarmicDebtLedger {
   return {
     totalDebt: clamp(Number(input?.totalDebt ?? Object.values(normalizedByKind).reduce((sum: number, value: any) => sum + Number(value || 0), 0)), 0, 9999),
     byKind: normalizedByKind,
-    pendingReturns: ensureArray(input?.pendingReturns).slice(0, 20),
+    pendingReturns: ensureArray<KarmicReturn>(input?.pendingReturns).slice(0, 20),
   };
 }
 
@@ -300,12 +301,12 @@ function addKarmicDebt(
       {
         id: `karma_${turn}_${kind}_${ensureArray(ledger.pendingReturns).length}`,
         sourceEventId: `story_anchor_${turn}`,
-        expectedWindow: [turn + 3, turn + 12],
-        severity: amount >= 20 ? 'high' : amount >= 10 ? 'medium' : 'low',
+        expectedWindow: [turn + 3, turn + 12] as [number, number],
+        severity: (amount >= 20 ? 'high' : amount >= 10 ? 'medium' : 'low') as KarmicReturn['severity'],
         narrativeHint: hint,
         resolved: false,
       },
-      ...ensureArray(ledger.pendingReturns),
+      ...ensureArray<KarmicReturn>(ledger.pendingReturns),
     ].slice(0, 20),
   };
 }
@@ -351,7 +352,7 @@ export function normalizeStoryAnchorState(input?: Partial<StoryAnchorState> | nu
     currentAnchorId: typeof currentAnchorId === 'string' && currentAnchorId.length > 0 ? currentAnchorId : null,
     anchorResults: mergeAnchorResults(raw.anchorResults),
     anchorRecords: mergeAnchorRecords(raw.anchorRecords),
-    ifBranchVectors: ensureArray(raw.ifBranchVectors ?? legacyFlags.ifBranchVectors).slice(-80),
+    ifBranchVectors: ensureArray<IfBranchVector>(raw.ifBranchVectors ?? legacyFlags.ifBranchVectors).slice(-80),
     heavenWillLedger: normalizeHeavenLedger(raw.heavenWillLedger ?? legacyFlags.heavenWillLedger),
     karmicDebtLedger: normalizeKarmicLedger(raw.karmicDebtLedger ?? legacyFlags.karmicDebtLedger),
     storyEventCandidates: ensureArray(raw.storyEventCandidates ?? legacyFlags.storyEventCandidates).slice(-rules.candidateLimits.maxStoryCandidates).map((candidate: any, index) => ({
@@ -371,8 +372,8 @@ export function normalizeStoryAnchorState(input?: Partial<StoryAnchorState> | nu
       createdTurn: Number(candidate.createdTurn || 0),
       downstreamHint: ensureArray(candidate.downstreamHint),
     })),
-    canonAnchorPressureLog: ensureArray(raw.canonAnchorPressureLog ?? legacyFlags.canonAnchorPressureLog).slice(-rules.candidateLimits.maxPressureLog),
-    lastResolutionSteps: ensureArray(raw.lastResolutionSteps).slice(-rules.candidateLimits.maxResolutionSteps),
+    canonAnchorPressureLog: ensureArray<CanonAnchorPressure & { id?: string; createdTurn?: number; chapterId?: string; domain?: string }>(raw.canonAnchorPressureLog ?? legacyFlags.canonAnchorPressureLog).slice(-rules.candidateLimits.maxPressureLog),
+    lastResolutionSteps: ensureArray<StoryAnchorResolutionStep>(raw.lastResolutionSteps).slice(-rules.candidateLimits.maxResolutionSteps),
   };
 }
 

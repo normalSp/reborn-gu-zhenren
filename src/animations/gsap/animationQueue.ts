@@ -6,7 +6,7 @@
 
 import { isReducedMotion } from '../../hooks/useReducedMotion';
 
-type AnimFactory = () => Promise<void> | gsap.core.Timeline;
+type AnimFactory = () => Promise<void | GSAPTimeline> | GSAPTimeline;
 
 class AnimationQueue {
   private queue: AnimFactory[] = [];

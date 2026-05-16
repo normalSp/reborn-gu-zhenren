@@ -39,7 +39,7 @@ test.describe('v0.9.0-a3 training ground clue entry', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openTrainingGroundDemo(page);
 
-    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a3');
+    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
     await page.getByTestId('side-panel-training_ground').click();
     await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="training-ground-clue-policy"]:visible')).toContainText('剧情');

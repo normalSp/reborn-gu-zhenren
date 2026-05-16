@@ -15,7 +15,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'aperture_management' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'story_anchor' | 'ending' | 'inheritance';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'aperture_management' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'free_goal' | 'story_anchor' | 'ending' | 'inheritance';
 
 const lazyNamed = <T extends ComponentType<any>>(
   loader: () => Promise<Record<string, any>>,
@@ -38,6 +38,7 @@ const ApertureManagementPanel = lazyNamed(() => import('./ApertureManagementPane
 const TrainingGroundPanel = lazyNamed(() => import('./TrainingGroundPanel'), 'TrainingGroundPanel');
 const SquadFormationPanel = lazyNamed(() => import('./SquadFormationPanel'), 'SquadFormationPanel');
 const ActionPanel = lazyNamed(() => import('./ActionPanel'), 'ActionPanel');
+const FreeGoalPanel = lazyNamed(() => import('./FreeGoalPanel'), 'FreeGoalPanel');
 const StoryAnchorPanel = lazyNamed(() => import('./StoryAnchorPanel'), 'StoryAnchorPanel');
 const EndingResolverPanel = lazyNamed(() => import('./EndingResolverPanel'), 'EndingResolverPanel');
 const InheritanceLandPanel = lazyNamed(() => import('./InheritanceLandPanel'), 'InheritanceLandPanel');
@@ -82,6 +83,7 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     training_ground: '道场修炼',
     squad: '小队编成',
     actions: '行动',
+    free_goal: '自由目标',
     story_anchor: '宿命',
     ending: '终局',
     inheritance: '传承',
@@ -107,6 +109,7 @@ const panelContent = (panel: SidePanel) => {
     case 'training_ground': return <TrainingGroundPanel />;
     case 'squad': return <SquadFormationPanel />;
     case 'actions': return <ActionPanel />;
+    case 'free_goal': return <FreeGoalPanel />;
     case 'story_anchor': return <StoryAnchorPanel />;
     case 'ending': return <EndingResolverPanel />;
     case 'inheritance': return <InheritanceLandPanel />;
@@ -119,6 +122,7 @@ interface ToolbarButton { id: SidePanel; label: string; }
 // P3修复：工具栏标签支持动态域（地图按钮根据currentDomain动态生成）
 const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'actions', label: '行动' },
+  { id: 'free_goal', label: '自由目标' },
   { id: 'inheritance', label: '传承' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'ending', label: '终局' },
@@ -145,6 +149,7 @@ export function GameScreen() {
   const screenState = useStore(s => s.screenState);
   const gameLoadVersion = useStore(s => s.gameLoadVersion);
   const initBattlefieldDemo = useStore((s: any) => s.initBattlefieldDemo);
+  const initQingmaoMortalBattlefieldDemo = useStore((s: any) => s.initQingmaoMortalBattlefieldDemo);
   const initBattlefieldGroupDemo = useStore((s: any) => s.initBattlefieldGroupDemo);
   const initBattlefieldLargeGroupDemo = useStore((s: any) => s.initBattlefieldLargeGroupDemo);
   const startedRef = useRef(false);
@@ -462,6 +467,14 @@ export function GameScreen() {
           >
             <span className="hidden text-[9px] text-rg-paper-200/30 sm:inline">演武</span>
             <button
+              onClick={() => initQingmaoMortalBattlefieldDemo?.()}
+              className={toolbarBtnClass(false)}
+              data-testid="open-qingmao-battlefield-demo"
+              title="b3 竖切：青茅山凡战，美术边界与事实只读 UI"
+            >
+              青茅
+            </button>
+            <button
               onClick={() => initBattlefieldDemo?.()}
               className={toolbarBtnClass(false)}
               data-testid="open-battlefield-demo"
@@ -498,7 +511,7 @@ export function GameScreen() {
           ))}
         </div>
         <p className="text-rg-ink-400 text-[9px] sm:text-[10px] font-panel shrink-0" data-testid="app-version-label">
-          蛊真人世界 · v0.9.0-a3
+          蛊真人世界 · v0.9.0
         </p>
       </div>
 

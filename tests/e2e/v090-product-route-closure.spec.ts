@@ -40,7 +40,7 @@ test.describe('v0.9 product route closure remains compatible after a2', () => {
     const consoleErrors = await openMidgameDemo(page);
 
     await expect(page.getByTestId('game-screen-shell')).toBeVisible();
-    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a3');
+    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
     await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
 
     await page.getByTestId('side-panel-training_ground').click();
@@ -63,7 +63,7 @@ test.describe('v0.9 product route closure remains compatible after a2', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const consoleErrors = await openMidgameDemo(page);
 
-    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a3');
+    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
     await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
 
     await page.getByTestId('side-panel-training_ground').click();

@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "南疆散修·气衡",
@@ -7,7 +7,7 @@
     "turn": 196,
     "gameMode": "canon",
     "description": "v0.8-c2.5：三王传承旁支争夺，不改写正史核心。",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -669,6 +669,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

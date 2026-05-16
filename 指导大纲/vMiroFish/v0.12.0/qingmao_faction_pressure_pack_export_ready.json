@@ -1,0 +1,1453 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-16-qingmao-faction-pressure-pack",
+  "targetPhase": "v0.12.0-b2 NPC / faction reaction bridge 第一刀",
+  "generatedAt": "2026-05-16T02:09:26.757629+00:00",
+  "suggestedOutputName": "qingmao_faction_pressure_pack_export_ready.json",
+  "sourceDataset": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_100pkg_tight_v2_pressure_reviewable",
+  "reviewLedger": "uploads\\ri_corpus\\reviews\\living_world_item_reviews_tight_v2_pressure_reviewable_promoted.json",
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "quote-redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "hiddenFacts": "hidden_ref_only_until_RebornG_gate",
+    "deepSeekAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "pressure_ch0005_guyue_faction_competition",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0005",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "开窍大典后的资质结果会进入古月山寨内部派系视野，异常表现或资质落差会触发观望、评估和潜在拉拢。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0005",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "古月山寨内部派系竞争方向成立。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_b3adfe0d18da",
+        "sp_38f5940b94c8",
+        "sp_2e1f047c441d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0005",
+          "paragraphId": "ch_0005_p0040",
+          "startOffset": 11008,
+          "endOffset": 11032,
+          "summary": "乙等资质少年",
+          "sourcePointerId": "sp_b3adfe0d18da"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0005",
+          "paragraphId": "ch_0005_p0054",
+          "startOffset": 11592,
+          "endOffset": 11662,
+          "summary": "家老，古月漠北的爷爷",
+          "sourcePointerId": "sp_38f5940b94c8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0005",
+          "paragraphId": "ch_0005_p0055",
+          "startOffset": 11666,
+          "endOffset": 11699,
+          "summary": "家老，红发，古月赤城的爷爷",
+          "sourcePointerId": "sp_2e1f047c441d"
+        }
+      ],
+      "subjectType": "faction",
+      "subjectId": "guyue_mountain_village",
+      "pressureAxis": "opportunity",
+      "publicTrigger": "开窍大典、资质评价或少年归属变化被公开观察。",
+      "likelyReactions": [
+        "观望",
+        "评估",
+        "拉拢候选少年"
+      ],
+      "playerVisibleRisk": "玩家的资质、表现和公开身份会被山寨内部派系记录，后续可能影响接触窗口。",
+      "sourcePressureAxis": "家族内部派系竞争",
+      "sourceLikelyReactions": [
+        "观察乙等资质少年归属"
+      ],
+      "subject": "古月山寨",
+      "originalSubject": "古月山寨",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0005",
+        "pressureId": "pressure_1",
+        "faction": "古月山寨",
+        "status": "valid",
+        "flags": [
+          "collective_marker"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": ""
+      }
+    },
+    {
+      "id": "pressure_ch0011_clan_school_refinement_exam",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0011",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_001"
+      },
+      "summary": "本命蛊炼化和头名考核形成族学层面的公开竞争压力，进度异常、夺魁或落后都会被学堂记录。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0011",
+        "field": "factionPressures",
+        "itemId": "pressure_001",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "炼蛊考核竞争属于可见家族压力。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_51789a502f81",
+        "sp_21e0b9cf4ccf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，甲等资质，炼蛊考核竞争者",
+          "sourcePointerId": "sp_51789a502f81"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0061",
+          "startOffset": 29772,
+          "endOffset": 29919,
+          "summary": "同族，背后有长辈支持，元石充沛",
+          "sourcePointerId": "sp_21e0b9cf4ccf"
+        }
+      ],
+      "subjectType": "clan_school",
+      "subjectId": "guyue_clan_school",
+      "pressureAxis": "record_trace",
+      "publicTrigger": "参加本命蛊炼化考核、领取奖励或表现明显偏离预期。",
+      "likelyReactions": [
+        "监督考核",
+        "记录进度",
+        "比较学员表现"
+      ],
+      "playerVisibleRisk": "玩家在族学考核中的异常表现会增加学堂关注，可能引发后续试探或资源比较。",
+      "sourcePressureAxis": "炼蛊考核竞争",
+      "sourceLikelyReactions": [
+        "观察各候选者进度"
+      ],
+      "subject": "古月家族",
+      "originalSubject": "古月家族",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0011",
+        "pressureId": "pressure_001",
+        "faction": "古月家族",
+        "status": "valid",
+        "flags": [
+          "collective_marker"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": ""
+      }
+    },
+    {
+      "id": "pressure_ch0016_elder_security_alert",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0016",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_001"
+      },
+      "summary": "古月家老层面对历史遗留威胁和山寨安全有持续警戒，可作为发现可疑行动后的上层调查压力。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0016",
+        "field": "factionPressures",
+        "itemId": "pressure_001",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "家老们对族长被杀后的安全/复仇压力来源清楚。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_e74cd6e107ae",
+        "sp_050afb293b8b"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0050",
+          "startOffset": 45212,
+          "endOffset": 45251,
+          "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走",
+          "sourcePointerId": "sp_e74cd6e107ae"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长",
+          "sourcePointerId": "sp_050afb293b8b"
+        }
+      ],
+      "subjectType": "faction",
+      "subjectId": "guyue_elder_council",
+      "pressureAxis": "suspicion",
+      "publicTrigger": "出现与山寨安全、旧怨或可疑地点相关的公开线索。",
+      "likelyReactions": [
+        "加强警戒",
+        "调查可疑活动",
+        "约束族内成员"
+      ],
+      "playerVisibleRisk": "玩家若频繁接触敏感区域或引出旧怨线索，会触发家老层面的警戒。",
+      "sourcePressureAxis": "族长被杀后的复仇与安全威胁",
+      "sourceLikelyReactions": [
+        "调查花酒行者下落",
+        "加强族内警戒"
+      ],
+      "subject": "古月族家老们",
+      "originalSubject": "古月族家老们",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0016",
+        "pressureId": "pressure_001",
+        "faction": "古月族家老们",
+        "status": "valid",
+        "flags": [
+          "collective_marker"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": ""
+      }
+    },
+    {
+      "id": "reaction_ch0024_inn_caravan_wine_window",
+      "category": "npcReactionCandidate",
+      "packageId": "ri_lw_ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_4e1b28b0723a"
+      },
+      "summary": "客栈伙计提供商队将至和青竹酒可能缺货的信息，可作为商队/客栈补给窗口与消费痕迹的候选反应。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0024",
+        "field": "events",
+        "itemId": "evt_4e1b28b0723a",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T02:09:26.757500+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_31d025e4a54d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "sourcePointerId": "sp_31d025e4a54d"
+        }
+      ],
+      "subjectType": "merchant",
+      "subjectId": "qingmao_inn_staff_and_caravan_window",
+      "pressureAxis": "resource_control",
+      "publicTrigger": "玩家频繁购买青竹酒、饭食或在商队到来前集中囤积补给。",
+      "likelyReactions": [
+        "提供交易消息",
+        "形成库存压力",
+        "留下消费痕迹"
+      ],
+      "playerVisibleRisk": "大额或高频补给购买会暴露行动准备节奏，也可能错过商队前的库存窗口。"
+    },
+    {
+      "id": "reaction_ch0028_school_elder_observes_extortion",
+      "category": "npcReactionCandidate",
+      "packageId": "ri_lw_ch_0028",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_ce7ac9db5658"
+      },
+      "summary": "学堂家老对学员公开冲突采取观察而非立刻干预，适合作为族学反应桥中的观望/记录候选。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0028",
+        "field": "events",
+        "itemId": "evt_ce7ac9db5658",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T02:09:26.757629+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3300ddbb6b7a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0028",
+          "paragraphId": "ch_0028_p0063",
+          "startOffset": 81521,
+          "endOffset": 81554,
+          "summary": "学堂家老得知方源堵门勒索后，登上楼阁观察，并未立即阻止",
+          "sourcePointerId": "sp_3300ddbb6b7a"
+        }
+      ],
+      "subjectType": "clan_school",
+      "subjectId": "guyue_clan_school_elder",
+      "pressureAxis": "record_trace",
+      "publicTrigger": "玩家在族学门口公开打斗、勒索、破坏秩序或展示异常战斗能力。",
+      "likelyReactions": [
+        "登高观察",
+        "记录表现",
+        "延后干预"
+      ],
+      "playerVisibleRisk": "公开冲突未必立刻受罚，但会进入学堂家老视野，成为后续评价和试探依据。"
+    },
+    {
+      "id": "pressure_ch0060_jiafu_caravan_revenge",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0060",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "贾富商队因商队成员事件形成追查与复仇压力，会推动继续调查、对质和外部追责。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0060",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "贾富商队是可接受的集体压力主体，复仇/调查方向来源支撑充分。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_531959c17550",
+        "sp_1ca72b02eb22",
+        "sp_0ad01fe0ea98",
+        "sp_0364ca99b3dc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0060",
+          "paragraphId": "ch_0060_p0005",
+          "startOffset": 182143,
+          "endOffset": 182145,
+          "summary": "商队主人，贾金生之兄",
+          "sourcePointerId": "sp_531959c17550"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0060",
+          "paragraphId": "ch_0060_p0008",
+          "startOffset": 182249,
+          "endOffset": 182252,
+          "summary": "贾富之弟，已死",
+          "sourcePointerId": "sp_1ca72b02eb22"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0060",
+          "paragraphId": "ch_0060_p0016",
+          "startOffset": 182784,
+          "endOffset": 182786,
+          "summary": "贾富怀疑的对象",
+          "sourcePointerId": "sp_0ad01fe0ea98"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0060",
+          "paragraphId": "ch_0060_p0043",
+          "startOffset": 183989,
+          "endOffset": 184036,
+          "summary": "贾富的弟弟，被栽赃者",
+          "sourcePointerId": "sp_0364ca99b3dc"
+        }
+      ],
+      "subjectType": "merchant",
+      "subjectId": "jiafu_caravan",
+      "pressureAxis": "suspicion",
+      "publicTrigger": "玩家与商队争端、失踪调查、酒虫来源盘问或公开对质产生关联。",
+      "likelyReactions": [
+        "追查真凶",
+        "调查嫌疑人",
+        "继续外部追责"
+      ],
+      "playerVisibleRisk": "商队压力不会直接给出结论，但会带来盘问、外部调查和长期追责风险。",
+      "sourcePressureAxis": "兄弟被杀复仇压力",
+      "sourceLikelyReactions": [
+        "调查贾贵",
+        "追查真凶"
+      ],
+      "subject": "贾富商队",
+      "originalSubject": "贾富商队",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0060",
+        "pressureId": "pressure_1",
+        "faction": "贾富商队",
+        "status": "needs_review",
+        "flags": [
+          "person_name_embedded",
+          "leader_named_collective"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": "贾富"
+      }
+    },
+    {
+      "id": "reaction_ch0078_tri_clan_external_suspicion",
+      "category": "npcReactionCandidate",
+      "packageId": "ri_lw_ch_0078",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "古月山寨面对重大安全事件时，会把白家寨、熊家寨列入外部嫌疑和调查方向。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0078",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "candidate only; included to cover Bai/Xiong external-suspicion request; RebornG intake must review before use"
+        ],
+        "updatedAt": "2026-05-16T02:09:26.757629+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_6cfcc30df108",
+        "sp_00bb95b9f6a7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0078",
+          "paragraphId": "ch_0078_p0036",
+          "startOffset": 241583,
+          "endOffset": 241649,
+          "summary": "古月山寨家老",
+          "sourcePointerId": "sp_6cfcc30df108"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0078",
+          "paragraphId": "ch_0078_p0064",
+          "startOffset": 242588,
+          "endOffset": 242625,
+          "summary": "古月山寨家主",
+          "sourcePointerId": "sp_00bb95b9f6a7"
+        }
+      ],
+      "subjectType": "faction",
+      "subjectId": "qingmao_three_clan_external_suspicion",
+      "pressureAxis": "suspicion",
+      "publicTrigger": "山寨内出现重大安全威胁，且线索可能指向外部山寨。",
+      "likelyReactions": [
+        "调查白家寨与熊家寨",
+        "加强内部警戒",
+        "收紧外部接触"
+      ],
+      "playerVisibleRisk": "玩家若接触外寨线索或可疑人员，可能被卷入三寨互疑和警戒链。",
+      "sourcePressureAxis": "暗杀威胁调查",
+      "sourceLikelyReactions": [
+        "调查白家寨和熊家寨"
+      ],
+      "subject": "古月山寨家老会",
+      "originalSubject": "古月山寨家老会",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0078",
+        "pressureId": "pressure_1",
+        "faction": "古月山寨家老会",
+        "status": "valid",
+        "flags": [
+          "collective_marker"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": ""
+      }
+    },
+    {
+      "id": "pressure_ch0089_jiaosan_group_resource_distribution",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0089",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "角三小组在任务报酬和工具分配上形成组内资源控制压力，新成员容易被压低收益或被观察服从性。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0089",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "角三小组作为集体主体成立，资源分配与组内压力可保留。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_9c2fd1b6558f",
+        "sp_73d84b5c9cf3",
+        "sp_e08ac31464df",
+        "sp_4d60735290bd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0089",
+          "paragraphId": "ch_0089_p0003",
+          "startOffset": 275691,
+          "endOffset": 275695,
+          "summary": "五人小组组长",
+          "sourcePointerId": "sp_9c2fd1b6558f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0089",
+          "paragraphId": "ch_0089_p0033",
+          "startOffset": 276925,
+          "endOffset": 276929,
+          "summary": "小组组长",
+          "sourcePointerId": "sp_73d84b5c9cf3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0089",
+          "paragraphId": "ch_0089_p0068",
+          "startOffset": 278276,
+          "endOffset": 278280,
+          "summary": "小组组长",
+          "sourcePointerId": "sp_e08ac31464df"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0089",
+          "paragraphId": "ch_0089_p0026",
+          "startOffset": 276602,
+          "endOffset": 276606,
+          "summary": "角三是组长，其他三位组员服从角三，但对方源有不满",
+          "sourcePointerId": "sp_4d60735290bd"
+        }
+      ],
+      "subjectType": "task_group",
+      "subjectId": "guyue_jiaosan_task_group",
+      "pressureAxis": "resource_control",
+      "publicTrigger": "玩家加入小组并参与家族任务后的报酬分配、工具分发或组内协作。",
+      "likelyReactions": [
+        "压低收益",
+        "观察服从",
+        "继续打压"
+      ],
+      "playerVisibleRisk": "小组任务收益可能被组长和老成员控制，公开争执会升级组内压力。",
+      "sourcePressureAxis": "资源分配矛盾",
+      "sourceLikelyReactions": [
+        "监视方源",
+        "继续打压"
+      ],
+      "subject": "古月角三小组",
+      "originalSubject": "古月角三小组",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0089",
+        "pressureId": "pressure_1",
+        "faction": "古月角三小组",
+        "status": "needs_review",
+        "flags": [
+          "person_name_embedded",
+          "leader_named_collective"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": "古月角三"
+      }
+    },
+    {
+      "id": "pressure_ch0090_jiaosan_group_social_payment",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0090",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "角三小组用请客、组长评价和任务规则制造软性服从压力，适合作为低阶 NPC 试探候选。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0090",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "角三小组继续施压请客，主体和事件都清楚。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_fc91ced51f4a",
+        "sp_5dbd0e0a00a9",
+        "sp_64a240bf1b64",
+        "sp_5a52e8b6bfcb",
+        "sp_fdbc3a15b1d3"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0090",
+          "paragraphId": "ch_0090_p0003",
+          "startOffset": 278737,
+          "endOffset": 278741,
+          "summary": "小组组长",
+          "sourcePointerId": "sp_fc91ced51f4a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0090",
+          "paragraphId": "ch_0090_p0003",
+          "startOffset": 278751,
+          "endOffset": 278753,
+          "summary": "新加入的蛊师",
+          "sourcePointerId": "sp_5dbd0e0a00a9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0090",
+          "paragraphId": "ch_0090_p0011",
+          "startOffset": 279209,
+          "endOffset": 279213,
+          "summary": "小组成员",
+          "sourcePointerId": "sp_64a240bf1b64"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0090",
+          "paragraphId": "ch_0090_p0012",
+          "startOffset": 279277,
+          "endOffset": 279282,
+          "summary": "小组成员",
+          "sourcePointerId": "sp_5a52e8b6bfcb"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0090",
+          "paragraphId": "ch_0090_p0015",
+          "startOffset": 279447,
+          "endOffset": 279452,
+          "summary": "女蛊师1用年末考核奖励暗示方源有钱，并说组长评价重要，要求方源巴结组长",
+          "sourcePointerId": "sp_fdbc3a15b1d3"
+        }
+      ],
+      "subjectType": "task_group",
+      "subjectId": "guyue_jiaosan_task_group",
+      "pressureAxis": "task_authority",
+      "publicTrigger": "玩家拒绝请客、拒绝组内潜规则、绕开组长安排或不配合任务节奏。",
+      "likelyReactions": [
+        "言语试探",
+        "评价施压",
+        "继续索取"
+      ],
+      "playerVisibleRisk": "拒绝组内潜规则会降低小组信任，后续任务中可能被排挤或监视。",
+      "sourcePressureAxis": "资源索取压力",
+      "sourceLikelyReactions": [
+        "继续施压请客"
+      ],
+      "subject": "古月角三小组",
+      "originalSubject": "古月角三小组",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0090",
+        "pressureId": "pressure_1",
+        "faction": "古月角三小组",
+        "status": "needs_review",
+        "flags": [
+          "person_name_embedded",
+          "leader_named_collective"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": "古月角三"
+      }
+    },
+    {
+      "id": "pressure_ch0092_jiaosan_group_task_authority",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0092",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "角三小组对集合、任务执行和闭关异常有组内权威压力，缺席会触发寻找、上门确认和上报候选。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0092",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "组内权威和任务执行压力来源清楚。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_daa99f87e8d0",
+        "sp_00df0d9aaac5",
+        "sp_d5d632135e43",
+        "sp_b7e929f76814",
+        "sp_cd7e4bd36160",
+        "sp_54b53658431f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0012",
+          "startOffset": 285618,
+          "endOffset": 285622,
+          "summary": "组长，蛊师",
+          "sourcePointerId": "sp_daa99f87e8d0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0015",
+          "startOffset": 285768,
+          "endOffset": 285772,
+          "summary": "组员，蛊师",
+          "sourcePointerId": "sp_00df0d9aaac5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0013",
+          "startOffset": 285647,
+          "endOffset": 285650,
+          "summary": "角三小组的女蛊师",
+          "sourcePointerId": "sp_d5d632135e43"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0064",
+          "startOffset": 287949,
+          "endOffset": 287951,
+          "summary": "人物，可能为势力成员",
+          "sourcePointerId": "sp_b7e929f76814"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0065",
+          "startOffset": 287985,
+          "endOffset": 287987,
+          "summary": "角三小组的成员",
+          "sourcePointerId": "sp_cd7e4bd36160"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0066",
+          "startOffset": 288040,
+          "endOffset": 288042,
+          "summary": "组长",
+          "sourcePointerId": "sp_54b53658431f"
+        }
+      ],
+      "subjectType": "task_group",
+      "subjectId": "guyue_jiaosan_task_group",
+      "pressureAxis": "record_trace",
+      "publicTrigger": "玩家未按任务集合、异常闭关、拒绝任务或在关键时间失联。",
+      "likelyReactions": [
+        "上门查问",
+        "寻找下落",
+        "向上级汇报"
+      ],
+      "playerVisibleRisk": "缺席或失联会留下公开流程痕迹，并让组长拥有盘问理由。",
+      "sourcePressureAxis": "组内权威与任务执行",
+      "sourceLikelyReactions": [
+        "监视方源",
+        "汇报上级"
+      ],
+      "subject": "古月角三小组",
+      "originalSubject": "古月角三小组",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0092",
+        "pressureId": "pressure_1",
+        "faction": "古月角三小组",
+        "status": "needs_review",
+        "flags": [
+          "person_name_embedded",
+          "leader_named_collective"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": "古月角三"
+      }
+    },
+    {
+      "id": "pressure_ch0096_sick_snake_group_trust_crisis",
+      "category": "factionPressure",
+      "packageId": "ri_lw_ch_0096",
+      "sourceItem": {
+        "field": "factionPressures",
+        "itemId": "pressure_1"
+      },
+      "summary": "病蛇小组在野外协作失败后形成信任危机，异常援助、失误或旁观都可能引发调查和监视。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0096",
+        "field": "factionPressures",
+        "itemId": "pressure_1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "病蛇小组作为主体成立，内部信任危机可保留。",
+          "auto-promoted to export_ready by local promotion lint"
+        ],
+        "updatedAt": "2026-05-15T18:03:47.875839+00:00",
+        "persisted": true
+      },
+      "reborngGate": {
+        "materialType": "factionPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_93b0b1bd02d3",
+        "sp_08f0bed51196",
+        "sp_503a5a689e5d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0096",
+          "paragraphId": "ch_0096_p0006",
+          "startOffset": 299152,
+          "endOffset": 299195,
+          "summary": "蛊师",
+          "sourcePointerId": "sp_93b0b1bd02d3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0096",
+          "paragraphId": "ch_0096_p0041",
+          "startOffset": 300425,
+          "endOffset": 300485,
+          "summary": "病蛇小组组长",
+          "sourcePointerId": "sp_08f0bed51196"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0096",
+          "paragraphId": "ch_0096_p0039",
+          "startOffset": 300351,
+          "endOffset": 300385,
+          "summary": "病蛇小组成员",
+          "sourcePointerId": "sp_503a5a689e5d"
+        }
+      ],
+      "subjectType": "npc_group",
+      "subjectId": "guyue_sick_snake_group",
+      "pressureAxis": "trust_crisis",
+      "publicTrigger": "玩家在野外协作、救援或战斗中出现明显异常，导致其他小组受损或怀疑。",
+      "likelyReactions": [
+        "调查玩家",
+        "监视后续行动",
+        "质疑协作动机"
+      ],
+      "playerVisibleRisk": "野外协作中的异常表现会被其他小组记住，形成小组间信任裂痕。",
+      "sourcePressureAxis": "内部信任危机",
+      "sourceLikelyReactions": [
+        "调查方源"
+      ],
+      "subject": "病蛇小组",
+      "originalSubject": "病蛇小组",
+      "normalizationFlags": [],
+      "beneficiaries": [],
+      "victims": [],
+      "subjectValidation": {
+        "packageId": "ri_lw_ch_0096",
+        "pressureId": "pressure_1",
+        "faction": "病蛇小组",
+        "status": "needs_review",
+        "flags": [
+          "person_name_embedded",
+          "leader_named_collective"
+        ],
+        "matchedCollective": "",
+        "matchedPerson": "病蛇"
+      }
+    },
+    {
+      "id": "reaction_ch0099_internal_affairs_task_trace",
+      "category": "npcReactionCandidate",
+      "packageId": "ri_lw_ch_0099",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_7cd3f132eae7"
+      },
+      "summary": "内务堂任务申请会留下公开流程记录，可作为家产、任务和身份流程的 record trace 候选。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0099",
+        "field": "events",
+        "itemId": "evt_7cd3f132eae7",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T02:09:26.757629+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3ccaa1803bf0"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0099",
+          "paragraphId": "ch_0099_p0002",
+          "startOffset": 309520,
+          "endOffset": 309576,
+          "summary": "方源申请分家任务，内务堂告知三天后来取",
+          "sourcePointerId": "sp_3ccaa1803bf0"
+        }
+      ],
+      "subjectType": "internal_affairs",
+      "subjectId": "guyue_internal_affairs_hall",
+      "pressureAxis": "record_trace",
+      "publicTrigger": "玩家申请分家任务、家产任务、特殊流程或需要等待内务堂安排。",
+      "likelyReactions": [
+        "登记流程",
+        "延后告知",
+        "安排任务",
+        "让相关家族成员获知"
+      ],
+      "playerVisibleRisk": "通过内务堂的正式流程会留下记录，可能被亲族、家老或任务相关人利用。"
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0078",
+      "paragraphId": "ch_0078_p0064",
+      "startOffset": 242588,
+      "endOffset": 242625,
+      "summary": "古月山寨家主",
+      "sourcePointerId": "sp_00bb95b9f6a7"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0015",
+      "startOffset": 285768,
+      "endOffset": 285772,
+      "summary": "组员，蛊师",
+      "sourcePointerId": "sp_00df0d9aaac5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0060",
+      "paragraphId": "ch_0060_p0043",
+      "startOffset": 183989,
+      "endOffset": 184036,
+      "summary": "贾富的弟弟，被栽赃者",
+      "sourcePointerId": "sp_0364ca99b3dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0043",
+      "startOffset": 44991,
+      "endOffset": 45053,
+      "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长",
+      "sourcePointerId": "sp_050afb293b8b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0096",
+      "paragraphId": "ch_0096_p0041",
+      "startOffset": 300425,
+      "endOffset": 300485,
+      "summary": "病蛇小组组长",
+      "sourcePointerId": "sp_08f0bed51196"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0060",
+      "paragraphId": "ch_0060_p0016",
+      "startOffset": 182784,
+      "endOffset": 182786,
+      "summary": "贾富怀疑的对象",
+      "sourcePointerId": "sp_0ad01fe0ea98"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0060",
+      "paragraphId": "ch_0060_p0008",
+      "startOffset": 182249,
+      "endOffset": 182252,
+      "summary": "贾富之弟，已死",
+      "sourcePointerId": "sp_1ca72b02eb22"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0061",
+      "startOffset": 29772,
+      "endOffset": 29919,
+      "summary": "同族，背后有长辈支持，元石充沛",
+      "sourcePointerId": "sp_21e0b9cf4ccf"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0005",
+      "paragraphId": "ch_0005_p0055",
+      "startOffset": 11666,
+      "endOffset": 11699,
+      "summary": "家老，红发，古月赤城的爷爷",
+      "sourcePointerId": "sp_2e1f047c441d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0059",
+      "startOffset": 69860,
+      "endOffset": 69990,
+      "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+      "sourcePointerId": "sp_31d025e4a54d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0028",
+      "paragraphId": "ch_0028_p0063",
+      "startOffset": 81521,
+      "endOffset": 81554,
+      "summary": "学堂家老得知方源堵门勒索后，登上楼阁观察，并未立即阻止",
+      "sourcePointerId": "sp_3300ddbb6b7a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0005",
+      "paragraphId": "ch_0005_p0054",
+      "startOffset": 11592,
+      "endOffset": 11662,
+      "summary": "家老，古月漠北的爷爷",
+      "sourcePointerId": "sp_38f5940b94c8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0099",
+      "paragraphId": "ch_0099_p0002",
+      "startOffset": 309520,
+      "endOffset": 309576,
+      "summary": "方源申请分家任务，内务堂告知三天后来取",
+      "sourcePointerId": "sp_3ccaa1803bf0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0089",
+      "paragraphId": "ch_0089_p0026",
+      "startOffset": 276602,
+      "endOffset": 276606,
+      "summary": "角三是组长，其他三位组员服从角三，但对方源有不满",
+      "sourcePointerId": "sp_4d60735290bd"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0096",
+      "paragraphId": "ch_0096_p0039",
+      "startOffset": 300351,
+      "endOffset": 300385,
+      "summary": "病蛇小组成员",
+      "sourcePointerId": "sp_503a5a689e5d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0056",
+      "startOffset": 29537,
+      "endOffset": 29605,
+      "summary": "同族兄弟，甲等资质，炼蛊考核竞争者",
+      "sourcePointerId": "sp_51789a502f81"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0060",
+      "paragraphId": "ch_0060_p0005",
+      "startOffset": 182143,
+      "endOffset": 182145,
+      "summary": "商队主人，贾金生之兄",
+      "sourcePointerId": "sp_531959c17550"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0066",
+      "startOffset": 288040,
+      "endOffset": 288042,
+      "summary": "组长",
+      "sourcePointerId": "sp_54b53658431f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0090",
+      "paragraphId": "ch_0090_p0012",
+      "startOffset": 279277,
+      "endOffset": 279282,
+      "summary": "小组成员",
+      "sourcePointerId": "sp_5a52e8b6bfcb"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0090",
+      "paragraphId": "ch_0090_p0003",
+      "startOffset": 278751,
+      "endOffset": 278753,
+      "summary": "新加入的蛊师",
+      "sourcePointerId": "sp_5dbd0e0a00a9"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0090",
+      "paragraphId": "ch_0090_p0011",
+      "startOffset": 279209,
+      "endOffset": 279213,
+      "summary": "小组成员",
+      "sourcePointerId": "sp_64a240bf1b64"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0078",
+      "paragraphId": "ch_0078_p0036",
+      "startOffset": 241583,
+      "endOffset": 241649,
+      "summary": "古月山寨家老",
+      "sourcePointerId": "sp_6cfcc30df108"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0089",
+      "paragraphId": "ch_0089_p0033",
+      "startOffset": 276925,
+      "endOffset": 276929,
+      "summary": "小组组长",
+      "sourcePointerId": "sp_73d84b5c9cf3"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0096",
+      "paragraphId": "ch_0096_p0006",
+      "startOffset": 299152,
+      "endOffset": 299195,
+      "summary": "蛊师",
+      "sourcePointerId": "sp_93b0b1bd02d3"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0089",
+      "paragraphId": "ch_0089_p0003",
+      "startOffset": 275691,
+      "endOffset": 275695,
+      "summary": "五人小组组长",
+      "sourcePointerId": "sp_9c2fd1b6558f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0005",
+      "paragraphId": "ch_0005_p0040",
+      "startOffset": 11008,
+      "endOffset": 11032,
+      "summary": "乙等资质少年",
+      "sourcePointerId": "sp_b3adfe0d18da"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0064",
+      "startOffset": 287949,
+      "endOffset": 287951,
+      "summary": "人物，可能为势力成员",
+      "sourcePointerId": "sp_b7e929f76814"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0065",
+      "startOffset": 287985,
+      "endOffset": 287987,
+      "summary": "角三小组的成员",
+      "sourcePointerId": "sp_cd7e4bd36160"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0013",
+      "startOffset": 285647,
+      "endOffset": 285650,
+      "summary": "角三小组的女蛊师",
+      "sourcePointerId": "sp_d5d632135e43"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0012",
+      "startOffset": 285618,
+      "endOffset": 285622,
+      "summary": "组长，蛊师",
+      "sourcePointerId": "sp_daa99f87e8d0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0089",
+      "paragraphId": "ch_0089_p0068",
+      "startOffset": 278276,
+      "endOffset": 278280,
+      "summary": "小组组长",
+      "sourcePointerId": "sp_e08ac31464df"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0050",
+      "startOffset": 45212,
+      "endOffset": 45251,
+      "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走",
+      "sourcePointerId": "sp_e74cd6e107ae"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0090",
+      "paragraphId": "ch_0090_p0003",
+      "startOffset": 278737,
+      "endOffset": 278741,
+      "summary": "小组组长",
+      "sourcePointerId": "sp_fc91ced51f4a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0090",
+      "paragraphId": "ch_0090_p0015",
+      "startOffset": 279447,
+      "endOffset": 279452,
+      "summary": "女蛊师1用年末考核奖励暗示方源有钱，并说组长评价重要，要求方源巴结组长",
+      "sourcePointerId": "sp_fdbc3a15b1d3"
+    }
+  ],
+  "skipped": [],
+  "summary": {
+    "totalItems": 12,
+    "byCategory": {
+      "factionPressure": 8,
+      "npcReactionCandidate": 4
+    },
+    "byReviewStatus": {
+      "export_ready": 12
+    },
+    "sourcePointers": 34,
+    "quoteLikeKeys": 0,
+    "coverage": {
+      "clanSchoolPressure": 2,
+      "taskGroupPressure": 3,
+      "merchantPressure": 2,
+      "internalAffairsTrace": true,
+      "externalClanSuspicion": true,
+      "factionPressureItems": 8,
+      "npcReactionCandidates": 4
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "version": "v0.12.0-a2",
+  "status": "low_rank_if_matrix_first_cut",
+  "sourcePolicy": {
+    "anchorSource": "src/canon/qingmao-canon-anchors.json",
+    "factCardSource": "src/canon/qingmao-canon-fact-cards.json",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "deviationLevels": [
+    {
+      "id": "blocked",
+      "description": "直接阻断，不能进入正式候选，只能给原因和安全改写方向。",
+      "runtimeWritePolicy": "no_state_write"
+    },
+    {
+      "id": "rumor_only",
+      "description": "只能作为公开传闻或无证据讨论，不产生正式事实、奖励、位置或隐藏信息。",
+      "runtimeWritePolicy": "public_rumor_or_no_write"
+    },
+    {
+      "id": "precondition_required",
+      "description": "需要路线、资源、身份、证据或风险条件；当前只能生成准备链或缺口说明。",
+      "runtimeWritePolicy": "preparation_or_gap_only"
+    },
+    {
+      "id": "minor_deviation",
+      "description": "允许低阶局部偏离，但必须由本地引擎结算，不能改写正史核心因果。",
+      "runtimeWritePolicy": "local_engine_controlled_patch_only"
+    },
+    {
+      "id": "major_deviation_candidate",
+      "description": "重大 IF 候选，只能进入候选池、压力链或长期准备，不直接改变正史。",
+      "runtimeWritePolicy": "candidate_only_until_user_or_engine_gate"
+    }
+  ],
+  "costTypes": [
+    {
+      "id": "resource_cost",
+      "description": "元石、食料、蛊材、补给等低阶资源成本。"
+    },
+    {
+      "id": "time_cost",
+      "description": "训练、调查、赶路、等待商队或错过窗口的时间成本。"
+    },
+    {
+      "id": "identity_risk",
+      "description": "身份暴露、族内怀疑、被认定叛逃或越界的风险。"
+    },
+    {
+      "id": "faction_pressure",
+      "description": "古月、白家、熊家、商队或散修群体的公开压力。"
+    },
+    {
+      "id": "npc_memory",
+      "description": "关键人物或普通 NPC 对玩家行为形成记忆、警惕或试探。"
+    },
+    {
+      "id": "pursuit_risk",
+      "description": "离山、逃跑、盗取资源或越界后被追查的风险。"
+    },
+    {
+      "id": "hidden_fact_probe_risk",
+      "description": "接近隐藏事实但证据不足时触发的阻断、误导、怀疑或危险。"
+    },
+    {
+      "id": "canon_anchor_pressure",
+      "description": "触碰正史关键因果时产生的阻断、降级、代价或重定向。"
+    }
+  ],
+  "axes": [
+    {
+      "id": "npc_attention",
+      "description": "玩家被关键人物或普通 NPC 注意、怀疑、试探或记录。",
+      "relatedAnchorIds": ["fang_yuan_hidden_causality_guard", "bai_ning_bing_pressure_guard", "guyue_clan_school_order"],
+      "defaultDeviationLevel": "precondition_required",
+      "allowedWrites": ["npcMemories", "actionConsequences"],
+      "forbiddenWrites": ["npc_death", "npc_loyalty_lock", "hidden_truth_reveal"],
+      "deepSeekAllowed": ["describe_public_attention", "offer_indirect_contact_candidate"],
+      "deepSeekForbidden": ["settle_key_npc_death", "grant_private_knowledge"]
+    },
+    {
+      "id": "faction_pressure",
+      "description": "三寨、族学、商队等组织对玩家公开行为产生压力。",
+      "relatedAnchorIds": ["qingmao_three_clan_pressure_chain", "qingmao_wolf_tide_pressure_chain"],
+      "defaultDeviationLevel": "precondition_required",
+      "allowedWrites": ["factionPressure", "actionConsequences"],
+      "forbiddenWrites": ["faction_identity_change", "clan_control", "alliance_command"],
+      "deepSeekAllowed": ["describe_public_faction_pressure", "offer_social_candidate"],
+      "deepSeekForbidden": ["settle_faction_membership", "rewrite_three_clan_balance"]
+    },
+    {
+      "id": "resource_control",
+      "description": "元石、食料、补给、低阶蛊材和资源缺口。",
+      "relatedAnchorIds": ["qingmao_mortal_resource_loop", "qingmao_resource_and_crisis_chain"],
+      "defaultDeviationLevel": "minor_deviation",
+      "allowedWrites": ["actionConsequences", "knownFacts"],
+      "forbiddenWrites": ["direct_reward", "free_gu", "free_primeval_stones", "hidden_resource_cause"],
+      "deepSeekAllowed": ["describe_resource_pressure", "offer_trade_or_search_candidate"],
+      "deepSeekForbidden": ["award_inventory", "invent_shop_stock", "reveal_hidden_resource_cause"]
+    },
+    {
+      "id": "route_escape",
+      "description": "离开青茅山的路线、补给、遮掩和追击压力。",
+      "relatedAnchorIds": ["qingmao_caravan_and_route_window", "qingmao_region_foundation"],
+      "defaultDeviationLevel": "precondition_required",
+      "allowedWrites": ["actionConsequences", "knownFacts", "factionPressure"],
+      "forbiddenWrites": ["location_unlock", "escape_success", "new_region_access"],
+      "deepSeekAllowed": ["offer_route_candidate", "describe_supply_gap", "describe_pursuit_pressure"],
+      "deepSeekForbidden": ["declare_escape_success", "unlock_region", "erase_pursuit_risk"]
+    },
+    {
+      "id": "hidden_fact_probe",
+      "description": "玩家试探灵泉、方源私因果、花酒传承、古月一代等隐藏事实。",
+      "relatedAnchorIds": ["fang_yuan_hidden_causality_guard", "guyue_first_gen_hidden_anchor_guard", "qingmao_resource_and_crisis_chain"],
+      "defaultDeviationLevel": "blocked",
+      "allowedWrites": ["actionConsequences", "npcMemories"],
+      "forbiddenWrites": ["hidden_fact_body", "hidden_location", "secret_identity", "private_causality"],
+      "deepSeekAllowed": ["refuse_hidden_truth_request", "redirect_to_public_evidence"],
+      "deepSeekForbidden": ["reveal_hidden_truth", "name_hidden_location", "explain_private_causality"]
+    },
+    {
+      "id": "local_survival",
+      "description": "低阶人物的受伤、失踪、撤退、避险或局部生存压力。",
+      "relatedAnchorIds": ["bai_ning_bing_pressure_guard", "qingmao_wolf_tide_pressure_chain"],
+      "defaultDeviationLevel": "precondition_required",
+      "allowedWrites": ["actionConsequences", "npcMemories"],
+      "forbiddenWrites": ["key_npc_death", "canon_finale_resolution", "battle_outcome_without_engine"],
+      "deepSeekAllowed": ["describe_danger", "offer_retreat_or_avoidance_candidate"],
+      "deepSeekForbidden": ["settle_key_npc_survival_or_death", "resolve_major_disaster"]
+    },
+    {
+      "id": "canon_anchor_pressure",
+      "description": "触碰正史核心因果、后期隐藏线或高阶体系时的压力闸门。",
+      "relatedAnchorIds": ["fang_yuan_hidden_causality_guard", "guyue_first_gen_hidden_anchor_guard", "qingmao_wolf_tide_pressure_chain"],
+      "defaultDeviationLevel": "blocked",
+      "allowedWrites": ["actionConsequences"],
+      "forbiddenWrites": ["canon_rewrite", "immortal_authority", "fate_level_axis", "rank_nine_acquisition"],
+      "deepSeekAllowed": ["explain_local_block_reason", "offer_low_rank_redirect"],
+      "deepSeekForbidden": ["rewrite_canon_anchor", "grant_high_rank_power", "open_venerable_axis"]
+    }
+  ],
+  "rules": [
+    {
+      "id": "block_rank_nine_or_immortal_demand",
+      "priority": 100,
+      "title": "阻断九转蛊、仙蛊、宝黄天等高阶索取",
+      "matcher": {
+        "rawTextIncludesAny": ["九转", "九轉", "仙蛊", "仙蠱", "宝黄天", "寶黃天", "永生"]
+      },
+      "axisIds": ["resource_control", "canon_anchor_pressure"],
+      "anchorIds": ["qingmao_mortal_resource_loop"],
+      "factCardIds": ["primeval_stone_mortal_currency_and_cultivation"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "blocked",
+      "costTypes": ["canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "blocked_with_low_rank_redirect",
+      "forbiddenWrites": ["direct_reward", "free_gu", "rank_nine_acquisition", "immortal_authority"],
+      "playerFacingResult": "当前只允许凡阶青茅局部行动；高阶蛊、仙道交易和永生目标必须阻断并重定向。"
+    },
+    {
+      "id": "block_unbounded_resource_reward",
+      "priority": 92,
+      "title": "阻断大量或无限元石资源索取",
+      "matcher": {
+        "rawTextIncludesAny": ["大量元石", "无限元石", "無限元石", "无数元石", "無數元石", "白给元石"]
+      },
+      "axisIds": ["resource_control"],
+      "anchorIds": ["qingmao_mortal_resource_loop"],
+      "factCardIds": ["primeval_stone_mortal_currency_and_cultivation"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "blocked",
+      "costTypes": ["resource_cost", "canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "resource_gap_or_earning_candidate_only",
+      "forbiddenWrites": ["direct_reward", "free_primeval_stones"],
+      "playerFacingResult": "元石必须通过本地经济、任务或交易路径结算，不能由自由输入直接获得。"
+    },
+    {
+      "id": "block_bai_ning_bing_direct_kill",
+      "priority": 90,
+      "title": "阻断低阶直接杀死白凝冰",
+      "matcher": {
+        "targetRefs": ["npc:bai_ning_bing:defeat_or_kill"],
+        "rawTextIncludesAny": ["杀死白凝冰", "殺死白凝冰", "阻止白凝冰自爆", "阻止他自爆", "自爆"]
+      },
+      "axisIds": ["npc_attention", "local_survival", "canon_anchor_pressure"],
+      "anchorIds": ["bai_ning_bing_pressure_guard"],
+      "factCardIds": ["baijia_bai_ning_bing_public_talent"],
+      "hiddenFactRefIds": ["bai_ning_bing_extreme_body_hidden_risk_ref"],
+      "deviationLevel": "blocked",
+      "costTypes": ["npc_memory", "faction_pressure", "canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "indirect_public_pressure_or_avoidance_only",
+      "forbiddenWrites": ["key_npc_death", "hidden_truth_reveal", "battle_outcome_without_engine"],
+      "playerFacingResult": "低阶玩家不能用一句话杀死关键强者；只能转为避让、公开情报、间接接触或风险提示。"
+    },
+    {
+      "id": "block_first_gen_hidden_truth",
+      "priority": 88,
+      "title": "阻断古月一代隐藏真相直取",
+      "matcher": {
+        "rawTextIncludesAny": ["古月一代", "一代族长", "一代族長", "天鹤", "天鶴", "血道"]
+      },
+      "axisIds": ["hidden_fact_probe", "canon_anchor_pressure"],
+      "anchorIds": ["guyue_first_gen_hidden_anchor_guard"],
+      "factCardIds": [],
+      "hiddenFactRefIds": ["guyue_first_gen_hidden_blood_path_ref"],
+      "deviationLevel": "blocked",
+      "costTypes": ["hidden_fact_probe_risk", "canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "public_anomaly_or_refusal_only",
+      "forbiddenWrites": ["hidden_fact_body", "hidden_location", "secret_identity", "canon_finale_resolution"],
+      "playerFacingResult": "古月一代深层真相属于隐藏锚点；当前只能得到无证据、异常感或公开调查方向。"
+    },
+    {
+      "id": "block_spirit_spring_hidden_cause",
+      "priority": 86,
+      "title": "阻断灵泉隐藏原因直取",
+      "matcher": {
+        "rawTextIncludesAny": ["灵泉", "靈泉", "枯竭", "枯竭秘密", "资源危机真相"]
+      },
+      "axisIds": ["hidden_fact_probe", "resource_control", "canon_anchor_pressure"],
+      "anchorIds": ["qingmao_resource_and_crisis_chain"],
+      "factCardIds": [],
+      "hiddenFactRefIds": ["guyue_spirit_spring_resource_basis"],
+      "deviationLevel": "blocked",
+      "costTypes": ["hidden_fact_probe_risk", "faction_pressure", "canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "public_resource_pressure_only",
+      "forbiddenWrites": ["hidden_fact_body", "hidden_resource_cause", "crisis_resolved"],
+      "playerFacingResult": "灵泉深层原因不能被普通调查直接揭露；只能转为资源紧张、流言或公开压力。"
+    },
+    {
+      "id": "block_flower_wine_hidden_location",
+      "priority": 84,
+      "title": "阻断花酒传承位置直取",
+      "matcher": {
+        "rawTextIncludesAny": ["花酒传承", "花酒傳承", "传承位置", "傳承位置", "直接找到花酒"]
+      },
+      "axisIds": ["hidden_fact_probe", "canon_anchor_pressure"],
+      "anchorIds": ["fang_yuan_hidden_causality_guard"],
+      "factCardIds": ["flower_wine_monk_public_legend"],
+      "hiddenFactRefIds": ["flower_wine_inheritance_hidden_location_ref"],
+      "deviationLevel": "blocked",
+      "costTypes": ["hidden_fact_probe_risk", "npc_memory", "canon_anchor_pressure"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "public_rumor_or_failed_probe_only",
+      "forbiddenWrites": ["hidden_location", "hidden_fact_body", "direct_reward"],
+      "playerFacingResult": "公开传闻可以调查，但隐藏传承位置和奖励不能由一句话直接拿到。"
+    },
+    {
+      "id": "precondition_follow_fang_yuan_public_only",
+      "priority": 72,
+      "title": "跟踪方源只能走公开旁证与注意风险",
+      "matcher": {
+        "targetRefs": ["npc:fang_yuan"],
+        "rawTextIncludesAny": ["跟踪方源", "观察方源", "盯着方源", "调查方源"]
+      },
+      "axisIds": ["npc_attention", "hidden_fact_probe", "canon_anchor_pressure"],
+      "anchorIds": ["fang_yuan_hidden_causality_guard"],
+      "factCardIds": ["flower_wine_monk_public_legend"],
+      "hiddenFactRefIds": ["fang_yuan_private_causality_hidden_anchor"],
+      "deviationLevel": "precondition_required",
+      "costTypes": ["time_cost", "npc_memory", "hidden_fact_probe_risk"],
+      "requiredPreconditions": ["public_observation_window", "cover_identity", "risk_of_being_noticed"],
+      "allowedOutcome": "public_behavior_observation_only",
+      "forbiddenWrites": ["private_causality", "hidden_fact_body", "secret_motive"],
+      "playerFacingResult": "可以尝试观察公开行动，但不能知道方源私有因果；失败会增加被注意风险。"
+    },
+    {
+      "id": "major_candidate_join_bai_clan",
+      "priority": 68,
+      "title": "投靠白家只能先进入重大 IF 候选与接触窗口",
+      "matcher": {
+        "targetRefs": ["faction:baijia_zhai"],
+        "rawTextIncludesAny": ["投靠白家", "加入白家", "叛出古月", "转投白家"]
+      },
+      "axisIds": ["faction_pressure", "npc_attention", "canon_anchor_pressure"],
+      "anchorIds": ["qingmao_three_clan_pressure_chain", "bai_ning_bing_pressure_guard"],
+      "factCardIds": ["qingmao_three_clans_layout", "baijia_bai_ning_bing_public_talent"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "major_deviation_candidate",
+      "costTypes": ["identity_risk", "faction_pressure", "npc_memory"],
+      "requiredPreconditions": ["contact_window", "trust_or_leverage", "pursuit_and_identity_risk_review"],
+      "allowedOutcome": "contact_window_or_pressure_only",
+      "forbiddenWrites": ["faction_identity_change", "clan_membership_success", "key_npc_loyalty_lock"],
+      "playerFacingResult": "投靠白家是重大 IF 候选，当前只能推进接触窗口、代价和风险，不能直接改阵营。"
+    },
+    {
+      "id": "precondition_escape_qingmao_route",
+      "priority": 64,
+      "title": "逃离青茅山需要路线、补给与追击准备",
+      "matcher": {
+        "targetRefs": ["route:caravan"],
+        "rawTextIncludesAny": ["逃离青茅", "离开青茅", "離開青茅", "跟着商队", "跟著商隊", "商队逃走"]
+      },
+      "axisIds": ["route_escape", "resource_control", "faction_pressure"],
+      "anchorIds": ["qingmao_caravan_and_route_window", "qingmao_region_foundation"],
+      "factCardIds": ["qingmao_caravan_trade_window", "qingmao_location_guyue_village"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "precondition_required",
+      "costTypes": ["resource_cost", "time_cost", "identity_risk", "pursuit_risk"],
+      "requiredPreconditions": ["route_candidate", "supply_pack", "identity_cover", "pursuit_risk_review"],
+      "allowedOutcome": "route_preparation_chain_only",
+      "forbiddenWrites": ["escape_success", "location_unlock", "new_region_access"],
+      "playerFacingResult": "逃离青茅山必须先变成路线、补给、遮掩和追击压力准备链，不能直接成功。"
+    },
+    {
+      "id": "precondition_scout_mountain_path",
+      "priority": 52,
+      "title": "山道密林侦查只能形成路线情报和暴露风险",
+      "matcher": {
+        "rawTextIncludesAny": ["侦查山道", "偵查山道", "探密林", "山道路线", "山道路線", "临时藏身点", "臨時藏身點"]
+      },
+      "axisIds": ["route_escape", "local_survival", "npc_attention"],
+      "anchorIds": ["qingmao_region_foundation", "qingmao_caravan_and_route_window"],
+      "factCardIds": ["qingmao_location_guyue_village", "qingmao_caravan_trade_window"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "precondition_required",
+      "costTypes": ["time_cost", "pursuit_risk", "npc_memory"],
+      "requiredPreconditions": ["scouting_window", "terrain_risk_check", "cover_identity"],
+      "allowedOutcome": "route_clue_or_exposure_risk_only",
+      "forbiddenWrites": ["escape_success", "location_unlock", "new_region_access"],
+      "playerFacingResult": "侦查山道可以获得路线情报或暴露风险，但不能直接离山或解锁新地域。"
+    },
+    {
+      "id": "rumor_flower_wine_public",
+      "priority": 42,
+      "title": "花酒行者公开传闻只作为流言入口",
+      "matcher": {
+        "rawTextIncludesAny": ["花酒", "花酒行者", "花酒传闻", "花酒傳聞", "问花酒", "打听花酒"]
+      },
+      "axisIds": ["hidden_fact_probe", "npc_attention"],
+      "anchorIds": ["fang_yuan_hidden_causality_guard"],
+      "factCardIds": ["flower_wine_monk_public_legend"],
+      "hiddenFactRefIds": ["flower_wine_inheritance_hidden_location_ref"],
+      "deviationLevel": "rumor_only",
+      "costTypes": ["time_cost", "npc_memory", "hidden_fact_probe_risk"],
+      "requiredPreconditions": [],
+      "allowedOutcome": "public_rumor_only",
+      "forbiddenWrites": ["hidden_location", "direct_reward", "hidden_fact_body"],
+      "playerFacingResult": "可以听公开旧闻，但这不等于掌握传承位置、奖励或隐藏因果。"
+    },
+    {
+      "id": "minor_resource_feeding_plan",
+      "priority": 32,
+      "title": "低阶食料与元石计划可做小偏离",
+      "matcher": {
+        "rawTextIncludesAny": ["月兰花", "月蘭花", "食料", "喂养", "餵养", "月光蛊", "月光蠱", "省元石"]
+      },
+      "axisIds": ["resource_control"],
+      "anchorIds": ["qingmao_mortal_resource_loop"],
+      "factCardIds": [
+        "primeval_stone_mortal_currency_and_cultivation",
+        "guyue_moon_orchid_feeding_base",
+        "guyue_moonlight_gu_local_specialty"
+      ],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "minor_deviation",
+      "costTypes": ["resource_cost", "time_cost"],
+      "requiredPreconditions": ["local_price_or_supply_check"],
+      "allowedOutcome": "local_engine_resource_plan_only",
+      "forbiddenWrites": ["direct_reward", "free_gu", "free_primeval_stones"],
+      "playerFacingResult": "可以做低阶资源计划，但实际消耗、库存和收益必须由本地经济引擎结算。"
+    },
+    {
+      "id": "minor_war_merit_patrol",
+      "priority": 30,
+      "title": "狼潮巡逻与战功只能做低阶公开行动",
+      "matcher": {
+        "rawTextIncludesAny": ["狼潮巡逻", "战功巡逻", "戰功巡邏", "参加巡逻", "參加巡邏", "三寨战功"]
+      },
+      "axisIds": ["faction_pressure", "local_survival", "canon_anchor_pressure"],
+      "anchorIds": ["qingmao_wolf_tide_pressure_chain", "qingmao_three_clan_pressure_chain"],
+      "factCardIds": ["qingmao_wolf_tide_recurring_pressure", "qingmao_three_clan_alliance_war_merit"],
+      "hiddenFactRefIds": [],
+      "deviationLevel": "minor_deviation",
+      "costTypes": ["time_cost", "faction_pressure", "npc_memory"],
+      "requiredPreconditions": ["local_patrol_window", "combat_or_scouting_risk_check"],
+      "allowedOutcome": "local_patrol_candidate_only",
+      "forbiddenWrites": ["war_merit_reward_without_engine", "wolf_tide_resolution", "alliance_command"],
+      "playerFacingResult": "可以作为巡逻/侦查候选，但战功、伤亡和狼潮走势必须由本地引擎结算。"
+    }
+  ]
+}

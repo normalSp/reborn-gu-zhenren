@@ -4,11 +4,20 @@ import type { CombatConstraint } from '../types';
 
 const constraint: CombatConstraint = {
   scale: 'skirmish',
+  combatType: 'narrative',
   sceneId: 'qingmao-wolf-tide',
+  mustHappen: [],
+  mustNotHappen: [],
+  keyFactions: [],
+  keyNPCs: [],
   recommendedRealm: 2,
   baseChance: 0.4,
   narrativeStyle: '狼潮压近，寨外草木皆动。',
   strategicChoiceCount: 3,
+  statBridge: {
+    realmWeight: 1,
+    guTagInfluence: [],
+  },
 };
 
 describe('combat offer lock', () => {

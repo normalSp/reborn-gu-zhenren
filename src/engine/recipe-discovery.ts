@@ -1,7 +1,7 @@
 /**
  * ═══ 残方发现引擎 + 蛊方解锁系统 — B1.7 / P4 ═══
  * 古遗迹探索→获得残方→实验材料补全→解锁新蛊虫配方
- * 
+ *
  * 三档配方模型（设计大纲§5.3）：
  *   INNATE_RECIPES — 基础配方（1-2转，每流派1-2个代表蛊虫），开局即知
  *   进阶配方（1-5转其余蛊虫） — 需残方补全或确定性合成
@@ -159,13 +159,14 @@ export function synthesizeRecipe(fragmentId: string): { success: boolean; messag
   if (!fragment) return { success: false, message: '残方数据异常，请联系开发者' };
 
   const count = discovered.filter((id: string) => id === fragmentId).length;
-  if (count < fragment.fragmentsRequired) {
-    return { success: false, message: `残方不足（需${fragment.fragmentsRequired}份，当前${count}份）` };
+  const requiredCount = Number(fragment.fragmentsRequired || 1);
+  if (count < requiredCount) {
+    return { success: false, message: `残方不足（需${requiredCount}份，当前${count}份）` };
   }
 
   // 消耗残方
   const newDiscovered = [...discovered];
-  for (let i = 0; i < fragment.fragmentsRequired; i++) {
+  for (let i = 0; i < requiredCount; i++) {
     const idx = newDiscovered.indexOf(fragmentId);
     if (idx !== -1) newDiscovered.splice(idx, 1);
   }

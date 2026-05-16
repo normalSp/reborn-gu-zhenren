@@ -4,7 +4,6 @@ import type {
   TrainingGroundState,
 } from '../../types';
 import {
-  createDefaultTrainingGroundState,
   evaluateTrainingGroundEntry,
   normalizeTrainingGroundState,
   resolveTrainingGroundAction as resolveTrainingGroundActionEngine,
@@ -12,6 +11,7 @@ import {
   type TrainingGroundCandidateValidation,
 } from '../../engine/v090-training-ground-clue-engine';
 import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
+import { createInitialTrainingGroundState } from '../defaultEngineStates';
 
 export interface TrainingGroundSlice {
   trainingGroundState: TrainingGroundState;
@@ -107,7 +107,7 @@ function commitWorldActionReturnContext(set: any, get: any, resolution: ReturnTy
 }
 
 export const createTrainingGroundSlice = (set: any, get: any): TrainingGroundSlice => ({
-  trainingGroundState: createDefaultTrainingGroundState(),
+  trainingGroundState: createInitialTrainingGroundState(),
 
   recordTrainingGroundCandidateAction: (candidate) => {
     const store = get() as any;

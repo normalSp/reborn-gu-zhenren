@@ -32,10 +32,10 @@ interface GlobalEventEntry {
   name: string;
   description: string;
   triggerChapter: string;
-  rippleStrength: 'high' | 'medium';
-  volume: number;
-  affectedDomains: string[];
-  rippleDomains: Record<string, RippleDomainEntry>;
+  rippleStrength: string;
+  volume?: number;
+  affectedDomains?: string[];
+  rippleDomains?: Record<string, RippleDomainEntry>;
   l3GlobalFlags?: string[];
 }
 
@@ -119,7 +119,7 @@ export function detectNearEvents(params: DetectParams): ProximityEvent[] {
     results.push({
       eventId: event.eventId,
       name: event.name,
-      domain: event.affectedDomains[0] || '未知',
+      domain: event.affectedDomains?.[0] || '未知',
       distance,
       layer,
       manifestation,
@@ -191,4 +191,3 @@ export function detectDomainEvents(params: DomainDetectParams): ProximityEvent[]
 
   return results;
 }
-

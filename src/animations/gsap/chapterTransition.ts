@@ -7,7 +7,7 @@
 
 import { isReducedMotion } from '../../hooks/useReducedMotion';
 
-type GsapModule = typeof import('gsap');
+type GsapModule = typeof import('gsap').default;
 
 /**
  * 转章过渡动画 GLUE 函数

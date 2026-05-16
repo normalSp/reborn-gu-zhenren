@@ -180,14 +180,14 @@ export function applyStateUpdate(update: StateUpdate): void {
   if (update.wealth) {
     const { valid, clampedDelta, reason } = validateWealthDelta(update.wealth.delta);
     const appliedDelta = valid ? update.wealth.delta : clampedDelta;
-    
+
     if (!valid) {
       const logStore = useStore.getState() as any;
       if (typeof logStore.addGameLog === 'function') {
         logStore.addGameLog('system', `[经济校验] ${reason}`, { originalDelta: update.wealth.delta, appliedDelta, chapter: logStore.currentChapterId });
       }
     }
-    
+
     if (appliedDelta !== 0) {
       (store as any).addCurrency?.(appliedDelta);
     }
@@ -216,6 +216,7 @@ export function applyStateUpdate(update: StateUpdate): void {
           tier: gu.tier,
           path: gu.path,
           currentState: 'optimal' as const,
+          hungerCounter: 0,
           proficiency: 0,
           bonded: false,
           active: true,

@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "c1尊者博弈蛊仙",
@@ -7,7 +7,7 @@
     "turn": 128,
     "gameMode": "if",
     "description": "v0.8.0-c1 尊者博弈压力专项：只允许侧翼牵制、筹码与压力，不允许普通战斗击杀或替代尊者。",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -872,6 +872,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

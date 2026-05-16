@@ -8,7 +8,6 @@ import type {
 import {
   buildCalamityPreview,
   buildCultivationEnvironmentProfile,
-  createDefaultCultivationState,
   normalizeCultivationState,
   resolveAscensionAttempt,
   resolveCalamityConsequence,
@@ -23,6 +22,7 @@ import {
   type CalamityWorldActionBridge,
 } from '../../engine/v080-calamity-scene-engine';
 import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
+import { createInitialCultivationState } from '../defaultCultivationState';
 
 interface CultivationPreview {
   environment: CultivationEnvironmentProfile;
@@ -244,7 +244,7 @@ function calamityConsequenceFacts(result: ReturnType<typeof resolveCalamityConse
 }
 
 export const createCultivationSlice = (set: any, get: any): CultivationSlice => ({
-  cultivationState: createDefaultCultivationState(),
+  cultivationState: createInitialCultivationState(),
 
   previewCultivationDeepening: (location) => {
     const store = get() as any;

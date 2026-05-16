@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "听潮散修",
@@ -8,7 +8,7 @@
     "gameMode": "canon",
     "description": "用于验证方源角色曲触发；玩家仍是原创角色听潮散修。",
     "displayName": "角色曲测试：方源年轮",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -576,6 +576,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

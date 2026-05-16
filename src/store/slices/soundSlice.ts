@@ -8,6 +8,8 @@
  * - CombatOverlay.tsx：战斗触发时切换至战斗 BGM
  */
 
+import { STORAGE_KEYS } from '../storageKeys';
+
 /** 五域 BGM 映射（P3修复：路径指向子目录） */
 export const DOMAIN_BGM: Record<string, string> = {
   '南疆': 'bgm/domain/nanjiang.mp3',
@@ -64,7 +66,7 @@ export interface SoundSlice {
   getEffectiveUiVolume: () => number;
 }
 
-const STORAGE_KEY = 'gu-zhenren-sound-settings';
+const STORAGE_KEY = STORAGE_KEYS.SOUND_SETTINGS;
 
 function loadSoundSettings(): Partial<SoundState> {
   try {

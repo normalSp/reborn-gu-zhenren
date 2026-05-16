@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-11T00:00:00.000Z",
   "meta": {
     "playerName": "福地初主·砚青",
@@ -7,7 +7,7 @@
     "turn": 221,
     "gameMode": "canon",
     "description": "v0.8.0-b2 专项手测：六转福地灾劫，验证预览、资源节点损伤、道痕变化和仙蛊损伤。",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -597,6 +597,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

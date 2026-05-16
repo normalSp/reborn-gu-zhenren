@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "version": "v0.10.0-b3-first-cut",
+    "status": "runtime_active",
+    "saveFormatImpact": "none",
+    "scope": "青茅山低阶食料/蛊材小循环第一刀",
+    "rewardBoundary": "每个场景内同一入口最多结算一次；单次只允许 1 份注册低阶食料/蛊材，不掉蛊虫、不掉完整蛊方、不掉仙材。",
+    "deepSeekBoundary": "DeepSeek 只能承接本地结算后的事实摘要和叙事回流，不得写入材料、蛊虫、蛊方、奖励或商店库存。"
+  },
+  "actions": [
+    {
+      "id": "moonlight_grass_gathering",
+      "displayName": "月下巡采月华草",
+      "targetGu": "月光蛊",
+      "sourceLabel": "青茅山月草坡",
+      "mode": "material_reward",
+      "apCost": 1,
+      "risk": "low",
+      "materialRewards": [
+        { "materialName": "月华草", "quantity": 1, "usage": "feeding" }
+      ],
+      "feedingRequirementType": "月光",
+      "recipeFragmentId": "frag_moonlight_advanced",
+      "notes": [
+        "只作为月光蛊炼养用食料来源，不解锁完整蛊方。",
+        "月光蛊升炼残方只展示门槛，完整升炼仍由本地炼蛊系统私有动作决定。"
+      ],
+      "failureCost": "本入口第一刀固定成功；真正炼蛊/补方失败代价仍由 refine/recipe engine 处理。"
+    },
+    {
+      "id": "liquor_worm_wine_errand",
+      "displayName": "酒坊杂役取酒",
+      "targetGu": "酒虫",
+      "sourceLabel": "古月山寨酒坊杂役",
+      "mode": "material_reward",
+      "apCost": 1,
+      "risk": "low",
+      "materialRewards": [
+        { "materialName": "美酒", "quantity": 1, "usage": "feeding" }
+      ],
+      "feedingRequirementType": "美酒",
+      "notes": [
+        "酒虫只作为喂养/战前支持资源链路，不变成普通攻击奖励。",
+        "本入口不给元石、声望、蛊虫或战斗掉落。"
+      ],
+      "failureCost": "本入口第一刀固定成功；后续若接委托失败，只能消耗 AP 或给风险提示。"
+    },
+    {
+      "id": "white_jade_gap_review",
+      "displayName": "白玉蛊食料缺口核对",
+      "targetGu": "白玉蛊",
+      "sourceLabel": "族学账册核对",
+      "mode": "gap_only",
+      "apCost": 0,
+      "risk": "medium",
+      "feedingCandidates": ["碎玉片", "金道蛊材", "金道普通蛊材"],
+      "gapRequirements": [
+        {
+          "materialName": "碎玉片",
+          "quantity": 1,
+          "sourceStatus": "not_approved",
+          "reason": "用户已批准第一刀只显示缺口，不把碎玉片设为青茅山稳定来源。"
+        },
+        {
+          "materialName": "金道普通蛊材",
+          "quantity": 1,
+          "sourceStatus": "engine_private",
+          "reason": "可由既有材料系统识别，但本入口不发放。"
+        }
+      ],
+      "notes": [
+        "白玉蛊不新增稳定碎玉片来源。",
+        "后续若要把碎玉片作为族学/委托稀有奖励，需要重新进入专家团决策。"
+      ],
+      "failureCost": "无出发结算；只显示缺口，不扣 AP。"
+    }
+  ]
+}

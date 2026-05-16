@@ -460,7 +460,7 @@ function estimateAchievementBurstImmortalValue(profile: ReleaseAchievementBurstP
   const primevalValue = achievements.reduce((sum, achievement) => {
     const reward = achievement.reward || {};
     const currencyValue = Number(reward.currency || 0);
-    const materialValue = Object.values(reward.materials || {}).reduce(
+    const materialValue = (Object.values(reward.materials || {}) as number[]).reduce(
       (materialSum, amount) => materialSum + Number(amount || 0) * profile.materialYuanStoneValue,
       0,
     );

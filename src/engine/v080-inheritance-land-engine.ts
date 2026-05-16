@@ -130,7 +130,7 @@ function normalizeSite(raw: any): InheritanceSiteSpec {
     provenance: raw.provenance || 'original-if',
     summary: String(raw.summary || ''),
     trialLabels: ensureArray(raw.trialLabels).map(String),
-    rewardPreview: ensureArray(raw.rewardPreview).map(normalizeReward),
+    rewardPreview: ensureArray<InheritanceRewardPreview>(raw.rewardPreview).map(normalizeReward),
     landClaimTerms: cloneTerms(raw.landClaimTerms),
     combatScale: raw.combatScale as CombatEncounterScale | undefined,
     calamityKinds: ensureArray(raw.calamityKinds).map(String),
@@ -373,7 +373,7 @@ function textForbiddenHits(text: string, site?: InheritanceSiteSpec | null): str
 }
 
 function candidateRewardBlockers(input: InheritanceCandidateInput): string[] {
-  const rewards = ensureArray((input as any).rewardPreview || (input as any).rewards);
+  const rewards = ensureArray<any>((input as any).rewardPreview || (input as any).rewards);
   const blockers: string[] = [];
   for (const reward of rewards) {
     const kind = String(reward?.kind || '').toLowerCase();
@@ -439,8 +439,8 @@ function normalizeCandidate(raw: any): InheritanceCandidateRecord | null {
     claimIntent: Boolean(raw.claimIntent),
     validationIssues: ensureArray(raw.validationIssues).map(String),
     warnings: ensureArray(raw.warnings).map(String),
-    rewardPreview: ensureArray(raw.rewardPreview).length ? ensureArray(raw.rewardPreview).map(normalizeReward) : site.rewardPreview.map(reward => ({ ...reward })),
-    landClaimTerms: ensureArray(raw.landClaimTerms).length ? cloneTerms(raw.landClaimTerms) : cloneTerms(site.landClaimTerms),
+    rewardPreview: ensureArray<InheritanceRewardPreview>(raw.rewardPreview).length ? ensureArray<InheritanceRewardPreview>(raw.rewardPreview).map(normalizeReward) : site.rewardPreview.map(reward => ({ ...reward })),
+    landClaimTerms: ensureArray<LandClaimTerm>(raw.landClaimTerms).length ? cloneTerms(raw.landClaimTerms) : cloneTerms(site.landClaimTerms),
     createdTurn: Number(raw.createdTurn || turn),
     updatedTurn: Number(raw.updatedTurn || turn),
   };
@@ -473,7 +473,7 @@ export function createDefaultInheritanceLandState(): InheritanceLandState {
 
 export function normalizeInheritanceLandState(input?: Partial<InheritanceLandState> | null): InheritanceLandState {
   const base = createDefaultInheritanceLandState();
-  const candidates = ensureArray(input?.candidates).map(normalizeCandidate).filter(Boolean) as InheritanceCandidateRecord[];
+  const candidates = ensureArray<InheritanceCandidateRecord>(input?.candidates).map(normalizeCandidate).filter(Boolean) as InheritanceCandidateRecord[];
   const claimAttempts = ensureArray(input?.claimAttempts).map((attempt: any) => ({
     id: String(attempt?.id || `claim_${attempt?.siteId || 'unknown'}_${attempt?.turn || 0}`),
     candidateId: String(attempt?.candidateId || ''),
@@ -484,7 +484,7 @@ export function normalizeInheritanceLandState(input?: Partial<InheritanceLandSta
     roll: Number.isFinite(attempt?.roll) ? Number(attempt.roll) : undefined,
     terms: cloneTerms(attempt?.terms),
     heavenlyLandId: attempt?.heavenlyLandId ? String(attempt.heavenlyLandId) : undefined,
-    steps: ensureArray(attempt?.steps),
+    steps: ensureArray<InheritanceResolutionStep>(attempt?.steps),
   }));
   return {
     ...base,

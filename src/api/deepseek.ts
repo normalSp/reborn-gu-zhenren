@@ -1,5 +1,7 @@
+import { STORAGE_KEYS } from '../store/storageKeys';
+
 const DEEPSEEK_BASE_URL = 'https://api.deepseek.com';
-const DEEPSEEK_DEFAULT_MODEL = 'deepseek-chat';
+const DEEPSEEK_DEFAULT_MODEL = 'deepseek-v4-flash';
 
 interface DeepSeekConfig {
   apiKey: string;
@@ -41,6 +43,7 @@ interface TokenUsage {
   completion_tokens: number;
   total_tokens: number;
   cached_tokens: number;
+  cache_miss_tokens: number;
   cache_hit_ratio: number;
 }
 
@@ -148,11 +151,13 @@ async function callDeepSeek<T = any>(
 
       const promptTokens = json.usage?.prompt_tokens ?? 0;
       const cachedTokens = json.usage?.prompt_cache_hit_tokens ?? 0;
+      const cacheMissTokens = json.usage?.prompt_cache_miss_tokens ?? Math.max(promptTokens - cachedTokens, 0);
       const tokens: TokenUsage = {
         prompt_tokens: promptTokens,
         completion_tokens: json.usage?.completion_tokens ?? 0,
         total_tokens: json.usage?.total_tokens ?? 0,
         cached_tokens: cachedTokens,
+        cache_miss_tokens: cacheMissTokens,
         cache_hit_ratio: promptTokens > 0 ? cachedTokens / promptTokens : 0,
       };
 
@@ -184,9 +189,9 @@ function delay(ms: number): Promise<void> {
 }
 
 const apiKey = {
-  get: (): string | null => localStorage.getItem('deepseek_api_key'),
-  set: (key: string) => localStorage.setItem('deepseek_api_key', key),
-  remove: () => localStorage.removeItem('deepseek_api_key'),
+  get: (): string | null => localStorage.getItem(STORAGE_KEYS.DEEPSEEK_API_KEY),
+  set: (key: string) => localStorage.setItem(STORAGE_KEYS.DEEPSEEK_API_KEY, key),
+  remove: () => localStorage.removeItem(STORAGE_KEYS.DEEPSEEK_API_KEY),
 };
 
 export { callDeepSeek, apiKey };

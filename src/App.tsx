@@ -3,8 +3,7 @@ import { useStore } from './store';
 import { ErrorBoundary } from './components/game/ErrorBoundary';
 import { audioManager } from './utils/audio';
 import { installE2eHarness } from './e2e/installE2eHarness';
-
-type ScreenState = 'title' | 'origin_select' | 'timeline_select' | 'timeline_config' | 'character_create' | 'game_play' | 'game_over';
+import type { ScreenState } from './store/slices/uiSlice';
 
 const TRANSITION_MS = 350;
 

@@ -7,7 +7,7 @@
 
 import { isReducedMotion } from '../../hooks/useReducedMotion';
 
-type GsapModule = typeof import('gsap');
+type GsapModule = typeof import('gsap').default;
 
 /** 流派颜色映射 */
 export const PATH_COLORS: Record<string, string> = {

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao moonlit resource grove atmosphere">
+  <defs>
+    <radialGradient id="glow" cx="0.42" cy="0.32" r="0.46">
+      <stop offset="0" stop-color="#e0c78a" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#e0c78a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1316"/>
+      <stop offset="0.55" stop-color="#10201a"/>
+      <stop offset="1" stop-color="#0c0c10"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#ground)"/>
+  <rect width="960" height="540" fill="url(#glow)"/>
+  <g opacity="0.34" fill="#8fd0b3">
+    <ellipse cx="262" cy="338" rx="46" ry="12"/>
+    <ellipse cx="336" cy="366" rx="52" ry="14"/>
+    <ellipse cx="438" cy="340" rx="58" ry="12"/>
+    <ellipse cx="606" cy="374" rx="48" ry="12"/>
+  </g>
+  <g opacity="0.52" stroke="#e0c78a" stroke-width="2">
+    <path d="M252 324 C258 286 278 278 292 318"/>
+    <path d="M326 352 C336 306 358 304 372 348"/>
+    <path d="M430 326 C444 286 468 292 482 330"/>
+    <path d="M598 360 C610 318 632 320 648 358"/>
+  </g>
+  <g opacity="0.32" stroke="#c9a96e" stroke-width="3" fill="none">
+    <path d="M116 424 C238 390 342 412 480 382 C616 352 730 376 852 334"/>
+    <path d="M160 458 C306 434 428 446 574 410 C690 382 768 398 882 366"/>
+  </g>
+  <g opacity="0.45">
+    <rect x="642" y="232" width="124" height="86" rx="6" fill="#111216" stroke="#c9a96e" stroke-opacity="0.22"/>
+    <path d="M664 258 H744 M664 282 H732" stroke="#c9a96e" stroke-opacity="0.28"/>
+    <circle cx="720" cy="318" r="28" fill="#c44b4b" fill-opacity="0.1" stroke="#c44b4b" stroke-opacity="0.2"/>
+  </g>
+  <g opacity="0.42" stroke="#8fd0b3" stroke-width="2">
+    <path d="M80 196 C214 156 314 188 420 146"/>
+    <path d="M520 168 C646 118 746 150 884 104"/>
+  </g>
+</svg>

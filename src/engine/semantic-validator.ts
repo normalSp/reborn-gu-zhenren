@@ -19,6 +19,7 @@ export interface RuleResult {
   ruleName: string;
   passed: boolean;
   score: number;
+  weight: number;
   positiveHits: number;
   negativeHits: number;
   level: 'critical' | 'warning' | 'notice';
@@ -205,6 +206,7 @@ function evaluateRule(text: string, rule: SemanticRule): RuleResult {
     ruleName: rule.name,
     passed,
     score,
+    weight: rule.weight,
     positiveHits,
     negativeHits,
     level: rule.level,

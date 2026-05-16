@@ -549,6 +549,7 @@ export function executeSquadTurn(
         logs.push({ round, actor: 'enemy', action: '防御', hit: true, crit: false, message: `${enemy.name}转为防守。` });
         continue;
       }
+      if (action.type !== 'attack') continue;
       const defender = members[action.targetIndex];
       if (!defender || defender.hp <= 0) continue;
       const attack = computeAttack(enemy, defender, { formation: state.formation, morale: 50, isCombo: false, rng });

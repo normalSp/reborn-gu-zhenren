@@ -225,8 +225,8 @@ export function createDefaultCultivationState(seedState: Partial<CultivationDeep
 
 export function normalizeCultivationState(value?: Partial<CultivationDeepeningState> | null): CultivationDeepeningState {
   const source = value && typeof value === 'object' ? value : {};
-  const ascension = source.ascension && typeof source.ascension === 'object' ? source.ascension : {};
-  const threeQi = ascension.threeQi && typeof ascension.threeQi === 'object' ? ascension.threeQi : {};
+  const ascension = source.ascension && typeof source.ascension === 'object' ? source.ascension as any : {};
+  const threeQi = ascension.threeQi && typeof ascension.threeQi === 'object' ? ascension.threeQi as any : {};
   return {
     version: 'v0.8.0-b2',
     progress: clamp(Number(source.progress || 0), 0, rules.cultivation.progressOverflowCap),
@@ -770,12 +770,12 @@ export function resolveCalamityConsequence(input: { state?: CultivationDeepening
     };
   }
   const guDamageIds: string[] = [];
-  const damagedInventory = inventory.map((gu) => {
+  const damagedInventory: GuInstance[] = inventory.map((gu) => {
     if (guDamageIds.length >= 2 || gu.currentState === 'dead' || rng.next() > rule.severity * 0.18) return gu;
     guDamageIds.push(gu.id);
     return {
       ...gu,
-      currentState: gu.currentState === 'optimal' ? 'hungry' : 'injured',
+      currentState: (gu.currentState === 'optimal' ? 'hungry' : 'injured') as GuInstance['currentState'],
       hungerCounter: Number(gu.hungerCounter || 0) + 2,
     };
   });

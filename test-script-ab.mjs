@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // ====== 配置 ======
-const API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-a4dbe3719f70427e8d15fff2ad2a118c';
+const API_KEY = process.env.DEEPSEEK_API_KEY || '';
 const BASE_URL = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1';
 const MODEL = 'deepseek-chat';
 

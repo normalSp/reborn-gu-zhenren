@@ -5,6 +5,7 @@ import type { PathType } from '../../types';
 import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { getGuFeedingClosureRow, type MaterialSourceTag } from '../../engine/material-source-audit';
 import { getLifeboundGuGrowthProfile } from '../../engine/v080-origin-lifebound-closure';
+import { getQingmaoResourceLoopSpec } from '../../engine/v010-qingmao-resource-loop';
 import {
   describeTargetRule,
   getGuUseEntry,
@@ -60,6 +61,9 @@ const EMPTY_CONTACTS: any[] = [];
 const EMPTY_DYNAMIC_NPCS: Record<string, any> = {};
 const EMPTY_SQUAD_MEMBERS: any[] = [];
 const EMPTY_FEEDING_DISCOUNT_PROGRESS: Record<string, number> = {};
+const QINGMAO_FEEDING_ACTIONS = getQingmaoResourceLoopSpec().actions
+  .filter(action => action.mode === 'material_reward' && action.materialRewards?.some(reward => reward.usage === 'feeding'));
+const QINGMAO_FEEDING_ACTION_BY_GU = new Map(QINGMAO_FEEDING_ACTIONS.map(action => [action.targetGu, action]));
 
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
@@ -195,7 +199,7 @@ export function GuInventoryPanel() {
         guName: gu.name,
         target,
         targetRule: entry.targetRule,
-        effects: entry.effects?.map(effect => effect.id || effect.description).filter(Boolean).slice(0, 4) || [],
+        effects: entry.effects?.map(effect => effect.description).filter(Boolean).slice(0, 4) || [],
       },
       ['用蛊结果需由剧情场景、本地校验和下一轮叙事共同承接'],
     );
@@ -347,12 +351,17 @@ export function GuInventoryPanel() {
               const noFeeding = row.fallbackPolicy === 'no_feeding_needed';
               const materialFood = row.acceptedFoods.length > 0;
               const safeTurns = Number.isFinite(row.safeTurns) ? `${row.safeTurns}回合` : '无';
+              const qingmaoAction = QINGMAO_FEEDING_ACTION_BY_GU.get(gu.name);
+              const qingmaoReward = qingmaoAction?.materialRewards
+                ?.filter(reward => reward.usage === 'feeding')
+                .map(reward => `${reward.materialName} x${reward.quantity}`)
+                .join(' / ');
               return (
                 <div className={`rounded-sm border px-2 py-1 text-[9px] font-panel leading-4 ${
                   row.blocking || (materialFood && stock <= 0)
                     ? 'border-rg-gold/25 bg-rg-gold/5 text-rg-gold/80'
                     : 'border-rg-ink-300/12 bg-rg-ink-800/35 text-rg-paper-200/55'
-                }`}>
+                }`} data-testid={`gu-feeding-info-${gu.id}`}>
                   <div className="flex items-center justify-between gap-2">
                     <span className="truncate">
                       {noFeeding ? '食料：不需喂养' : `食料：${materialFood ? row.acceptedFoods.join(' / ') : row.feedRequirement}`}
@@ -368,6 +377,11 @@ export function GuInventoryPanel() {
                       <div className="text-rg-paper-200/35 truncate">
                         {row.recommendedAction}
                       </div>
+                      {qingmaoAction && (
+                        <div className="text-rg-jade-300/65 truncate" data-testid={`qingmao-feeding-bridge-${gu.id}`}>
+                          青茅来源：行动面板「{qingmaoAction.displayName}」{' -> '}{qingmaoReward || '低阶食料'}
+                        </div>
+                      )}
                       {Number(feedingDiscountProgress.material_feeding || 0) > 0 && (
                         <div className="text-rg-jade-300/60 truncate">
                           食料节流进度 {Math.min(99, Math.floor(Number(feedingDiscountProgress.material_feeding || 0) * 100))}%，满 100% 抵扣 1 份食料
@@ -396,14 +410,15 @@ export function GuInventoryPanel() {
             {/* 操作行：喂养 + 激活 + 出售 */}
             <div className="flex items-center justify-between gap-1">
               {/* 喂食按钮 — P2/P3: 消耗登记食料，不扣元石 */}
-              {gu.currentState !== 'optimal' && gu.currentState !== 'fed' && gu.currentState !== 'dead' ? (
+              {gu.currentState !== 'optimal' && gu.currentState !== 'dead' ? (
                 <button
                   onClick={() => feedGu(gu.id, gu.currentState)}
                   className={`text-[9px] font-button px-2 py-0.5 rounded-sm border transition-micro ${
-                    gu.currentState === 'dying'
+                    gu.currentState === 'injured'
                       ? 'border-rg-blood-400/30 text-rg-blood-400 bg-rg-blood-400/5 hover:bg-rg-blood-400/15'
                       : 'border-rg-gold/25 text-rg-gold/70 hover:bg-rg-gold/10'
                   }`}
+                  data-testid={`gu-feed-${gu.id}`}
                 >
                   喂食
                 </button>

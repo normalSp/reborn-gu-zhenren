@@ -1,0 +1,344 @@
+{
+  "version": 1,
+  "reviews": [
+    {
+      "packageId": "ri_lw_ch_0003",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "家庭级压力有用，但 faction 标签需确认是否进入势力压力表。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.494622+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0003",
+      "field": "hiddenFacts",
+      "itemId": "hf_0003_001",
+      "status": "needs_review",
+      "classification": "hidden",
+      "notes": [
+        "事实成立但玩家可见性取决于开局身份，导入前需按 start profile 分层。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.547902+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0004",
+      "field": "hiddenFacts",
+      "itemId": "hf_ch_0004_001",
+      "status": "needs_review",
+      "classification": "hidden",
+      "notes": [
+        "眼线判断偏推断，需要更明确证据或降级为 inferred hidden。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.550903+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0005",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "古月山寨内部派系竞争方向成立。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0008",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "hidden",
+      "notes": [
+        "遗藏归属压力偏未来/隐藏，需和 hiddenFact 层区分。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.529623+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0008",
+      "field": "hiddenFacts",
+      "itemId": "ri_lw_ch_0008_hf_001",
+      "status": "export_ready",
+      "classification": "hidden",
+      "notes": [
+        "重生与未来记忆是关键隐藏事实，只能 hidden_ref_only 导入。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.554904+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0010",
+      "field": "hiddenFacts",
+      "itemId": "hf_0010_001",
+      "status": "export_ready",
+      "classification": "hidden",
+      "notes": [
+        "舅父母陷害计划可作为隐藏事实候选。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.558905+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0011",
+      "field": "factionPressures",
+      "itemId": "pressure_001",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "炼蛊考核竞争属于可见家族压力。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0012",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "方源识破色诱并反制的动机清楚，可作为人物行为模型候选。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.576153+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0013",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "猎户们是群体但不是稳定势力，是否进入 factionPressure 需人工取舍。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.536624+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0014",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "approved",
+      "classification": "hidden",
+      "notes": [
+        "引诱酒虫寻找遗藏成立，但导入时需受遗藏隐藏事实门控制。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.582385+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0014",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "approved",
+      "classification": "hidden",
+      "notes": [
+        "花酒遗藏相关族内压力可保留，但导入时应走隐藏/未来事实门。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.540815+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0016",
+      "field": "factionPressures",
+      "itemId": "pressure_001",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "家老们对族长被杀后的安全/复仇压力来源清楚。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0017",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "approved",
+      "classification": "hidden",
+      "notes": [
+        "独吞遗藏以获取资源的动机成立。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.588458+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0017",
+      "field": "hiddenFacts",
+      "itemId": "hf_0017_001",
+      "status": "needs_review",
+      "classification": "hidden",
+      "notes": [
+        "与前序重生事实重复，导入前需要合并去重。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.562083+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0018",
+      "field": "hiddenFacts",
+      "itemId": "hf_ch_0018_001",
+      "status": "needs_review",
+      "classification": "hidden",
+      "notes": [
+        "与重生/前世记忆事实重复，建议合并到同一 canon hidden ref。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.566085+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0020",
+      "field": "hiddenFacts",
+      "itemId": "hf_0020_001",
+      "status": "export_ready",
+      "classification": "hidden",
+      "notes": [
+        "春秋蝉本命蛊事实可保留，但必须高阶隐藏门禁且不进可见 prompt。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.569085+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0026",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "候选细节比来源摘要更具体，需补更贴近的 source pointer。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.592460+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0026",
+      "field": "hiddenFacts",
+      "itemId": "hf_ch_0026_01",
+      "status": "rejected",
+      "classification": "rejected",
+      "notes": [
+        "来源摘要不足以支撑学堂家老内定第一，主体疑似不稳。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.573153+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0027",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "打劫元石以获取修炼资源，来源和动机明确。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.596458+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0028",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "approved",
+      "classification": "canon-soft",
+      "notes": [
+        "堵门勒索同窗元石成立，但和 ch_0027 可合并为连续行为。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.600460+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0032",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "古月漠北雪耻动机成立。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0034",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "主体用斜杠合并两个标签，需规范为同一漠之一脉/分家实体。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.498622+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0060",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "贾富商队是可接受的集体压力主体，复仇/调查方向来源支撑充分。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0079",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "族长脉标签可用但较概括，需要和暗堂/族长派系实体表对齐。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.504622+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0089",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "角三小组作为集体主体成立，资源分配与组内压力可保留。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0090",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "角三小组继续施压请客，主体和事件都清楚。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0092",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "组内权威和任务执行压力来源清楚。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0093",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "needs_review",
+      "classification": "canon-soft",
+      "notes": [
+        "角三小组缺少古月前缀，建议归一化后再导出。"
+      ],
+      "updatedAt": "2026-05-15T17:23:07.518624+00:00"
+    },
+    {
+      "packageId": "ri_lw_ch_0096",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "status": "export_ready",
+      "classification": "canon-soft",
+      "notes": [
+        "病蛇小组作为主体成立，内部信任危机可保留。",
+        "auto-promoted to export_ready by local promotion lint"
+      ],
+      "updatedAt": "2026-05-15T18:03:47.875839+00:00"
+    }
+  ]
+}

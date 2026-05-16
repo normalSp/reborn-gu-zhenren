@@ -38,12 +38,12 @@ const STEP_LABELS: Record<Step, string> = {
 };
 
 const COVERAGE_STATUS_LABELS: Record<ModifierCoverageStatus, string> = {
-  runtime_active: '运行时生效',
+  runtime_active: '已生效',
   creation_only: '创建时生效',
-  registered_unconsumed: '已登记未消费',
-  planned_needs_system: '待系统',
-  narrative_only: '叙事效果',
-  needs_downgrade: '需降级',
+  registered_unconsumed: '已登记',
+  planned_needs_system: '需前置',
+  narrative_only: '叙事倾向',
+  needs_downgrade: '降阶处理',
 };
 
 const COVERAGE_STATUS_CLASS: Record<ModifierCoverageStatus, string> = {
@@ -59,9 +59,9 @@ type CoverageStatusFilter = ModifierCoverageStatus | 'all';
 
 const COVERAGE_FILTER_OPTIONS: Array<{ value: CoverageStatusFilter; label: string }> = [
   { value: 'all', label: '全部效果' },
-  { value: 'runtime_active', label: '运行时' },
+  { value: 'runtime_active', label: '已生效' },
   { value: 'creation_only', label: '创建时' },
-  { value: 'planned_needs_system', label: '待系统' },
+  { value: 'planned_needs_system', label: '需前置' },
   { value: 'narrative_only', label: '叙事' },
 ];
 
@@ -102,7 +102,7 @@ function renderCoverageRows(
   if (!visibleRows.length) {
     return (
       <div className="mt-2 text-[10px] font-panel text-rg-paper-200/30">
-        当前筛选下没有匹配的效果承诺
+        当前筛选下没有匹配的效果
       </div>
     );
   }
@@ -400,7 +400,7 @@ export function TimelineConfigScreen({ onConfirm, onBack }: TimelineConfigProps)
 
   // v1.6: 凡蛊节点跳过的步骤
   const MORTAL_SKIP = new Set(['lifebound', 'aperture', 'killermove']);
-  
+
   const goNext = () => {
     // ═══ 离开aperture步骤时提交localAperture到store ═══
     if (configStep === 'aperture' && isImmortal) {

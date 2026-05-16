@@ -10,6 +10,17 @@ import {
 import { deriveActivityAvailabilityContext } from '../../engine/activity-availability';
 import type { FieldActionKind } from '../../engine/field-action';
 import type { MeditationContext } from '../../engine/primeval-meditation';
+import type { QingmaoRegionActionEntry } from '../../engine/v010-qingmao-region-engine';
+import type { QingmaoResourceLoopEntry } from '../../engine/v010-qingmao-resource-loop';
+import {
+  buildQingmaoCombatEventCandidate,
+  listQingmaoCombatTemplateReadiness,
+  type QingmaoCombatTemplateReadiness,
+} from '../../engine/v010-qingmao-combat-pack';
+import {
+  buildQingmaoSceneVariantViews,
+  type QingmaoSceneVariantView,
+} from '../../engine/v010-qingmao-scene-variants';
 
 const PERIOD_LABEL: Record<string, string> = {
   morning: '早晨',
@@ -22,6 +33,62 @@ function cardTone(card: ActivityActionCard, forcedBlocked = false): string {
   if (forcedBlocked || card.status === 'blocked') return 'border-rg-ink-300/12 text-rg-paper-200/38 bg-rg-ink-900/25';
   if (card.status === 'risky') return 'border-rg-blood-400/28 text-rg-blood-400 bg-rg-blood-400/5';
   return 'border-rg-gold/24 text-rg-paper-200/78 bg-rg-ink-900/30';
+}
+
+const QINGMAO_STATUS_LABEL: Record<QingmaoRegionActionEntry['status'], string> = {
+  available: '可出发',
+  blocked: '阻断',
+  identity_blocked: '身份不符',
+  ap_blocked: 'AP不足',
+  persistent_state_blocked: '需区域状态',
+  rumor_only: '传闻',
+};
+
+const QINGMAO_RESOURCE_STATUS_LABEL: Record<QingmaoResourceLoopEntry['status'], string> = {
+  available: '可结算',
+  ap_blocked: 'AP不足',
+  scene_used: '本场景已结算',
+  gap_only: '缺口展示',
+  blocked: '阻断',
+};
+
+function qingmaoEntryTone(entry: QingmaoRegionActionEntry, forcedBlocked = false): string {
+  if (forcedBlocked || !entry.canDepart) return 'border-rg-ink-300/12 bg-rg-ink-900/25 text-rg-paper-200/45';
+  if (entry.risk === 'high') return 'border-rg-blood-400/28 bg-rg-blood-400/5 text-rg-blood-400';
+  if (entry.risk === 'medium') return 'border-rg-gold/24 bg-rg-gold/8 text-rg-paper-200/78';
+  return 'border-rg-jade-400/22 bg-rg-jade-400/6 text-rg-paper-200/78';
+}
+
+function qingmaoResourceTone(entry: QingmaoResourceLoopEntry, forcedBlocked = false): string {
+  if (forcedBlocked || !entry.canResolve) return 'border-rg-ink-300/12 bg-rg-ink-900/25 text-rg-paper-200/45';
+  if (entry.risk === 'high') return 'border-rg-blood-400/28 bg-rg-blood-400/5 text-rg-blood-400';
+  if (entry.risk === 'medium') return 'border-rg-gold/24 bg-rg-gold/8 text-rg-paper-200/78';
+  return 'border-rg-jade-400/22 bg-rg-jade-400/6 text-rg-paper-200/78';
+}
+
+function qingmaoSceneVariantTone(view: QingmaoSceneVariantView): string {
+  if (view.status === 'playable') return 'border-rg-jade-400/24 bg-rg-jade-400/6 text-rg-paper-200/78';
+  if (view.status === 'readiness') return 'border-rg-gold/24 bg-rg-gold/8 text-rg-paper-200/74';
+  if (view.status === 'blocked') return 'border-rg-blood-400/22 bg-rg-blood-400/5 text-rg-blood-400';
+  return 'border-rg-ink-300/14 bg-rg-ink-900/28 text-rg-paper-200/58';
+}
+
+function riskLabel(risk: QingmaoRegionActionEntry['risk']): string {
+  if (risk === 'high') return '高风险';
+  if (risk === 'medium') return '中风险';
+  return '低风险';
+}
+
+function requirementSummary(lines: QingmaoResourceLoopEntry['feedingRequirements'], empty = '暂无缺口'): string {
+  const missing = lines.filter(line => line.missing > 0);
+  if (missing.length > 0) {
+    return missing.slice(0, 3).map(line => `${line.materialName}缺${line.missing}`).join(' / ');
+  }
+  const owned = lines.filter(line => line.owned > 0);
+  if (owned.length > 0) {
+    return owned.slice(0, 3).map(line => `${line.materialName}${line.owned}`).join(' / ');
+  }
+  return empty;
 }
 
 function pct(value?: number): string {
@@ -58,7 +125,9 @@ export function ActionPanel() {
     flags: s.flags,
     turn: s.turn,
     selectedTalents: s.selectedTalents,
+    inventory: s.inventory,
     materialBag: s.materialBag,
+    feedingCredits: s.feedingCredits,
     aperture: s.aperture,
     currentChapterId: s.currentChapterId,
     currentNarrative: s.currentNarrative,
@@ -80,6 +149,11 @@ export function ActionPanel() {
   const performFieldAction = useStore((s: any) => s.performFieldAction);
   const prepareNarrativeAdvanceIntent = useStore((s: any) => s.prepareNarrativeAdvanceIntent);
   const resetSceneActionBudget = useStore((s: any) => s.resetSceneActionBudget);
+  const listQingmaoRegionActionEntriesAction = useStore((s: any) => s.listQingmaoRegionActionEntriesAction);
+  const resolveQingmaoRegionActionAction = useStore((s: any) => s.resolveQingmaoRegionActionAction);
+  const listQingmaoResourceLoopEntriesAction = useStore((s: any) => s.listQingmaoResourceLoopEntriesAction);
+  const resolveQingmaoResourceLoopActionAction = useStore((s: any) => s.resolveQingmaoResourceLoopActionAction);
+  const registerQingmaoCombatCandidateAction = useStore((s: any) => s.registerQingmaoCombatCandidateAction);
 
   const availability = useMemo(
     () => deriveActivityAvailabilityContext(storeSnapshot),
@@ -88,6 +162,34 @@ export function ActionPanel() {
   const panelState = useMemo(
     () => buildActivityPanelState(storeSnapshot, availability.locationContext),
     [storeSnapshot, availability.locationContext],
+  );
+  const qingmaoRegionEntries: QingmaoRegionActionEntry[] = useMemo(
+    () => listQingmaoRegionActionEntriesAction?.() || [],
+    [listQingmaoRegionActionEntriesAction, storeSnapshot],
+  );
+  const qingmaoResourceEntries: QingmaoResourceLoopEntry[] = useMemo(
+    () => listQingmaoResourceLoopEntriesAction?.() || [],
+    [listQingmaoResourceLoopEntriesAction, storeSnapshot],
+  );
+  const qingmaoCombatReadiness: Array<QingmaoCombatTemplateReadiness & { validationLabel: string }> = useMemo(
+    () => listQingmaoCombatTemplateReadiness().map(item => {
+      const built = buildQingmaoCombatEventCandidate(item.template.id, storeSnapshot);
+      const blockers = built.blockers.length;
+      const warnings = built.warnings.length;
+      return {
+        ...item,
+        validationLabel: blockers > 0 ? `${blockers} 阻断` : warnings > 0 ? `${warnings} 提醒` : '可校验',
+      };
+    }),
+    [storeSnapshot],
+  );
+  const qingmaoSceneVariants = useMemo(
+    () => buildQingmaoSceneVariantViews({
+      regionEntries: qingmaoRegionEntries,
+      resourceEntries: qingmaoResourceEntries,
+      combatReadiness: qingmaoCombatReadiness,
+    }),
+    [qingmaoRegionEntries, qingmaoResourceEntries, qingmaoCombatReadiness],
   );
   const grouped = groupCards(panelState.cards);
   const essencePct = Math.max(0, Math.min(100, (panelState.essenceCurrent / panelState.essenceMax) * 100));
@@ -162,6 +264,47 @@ export function ActionPanel() {
   const resetScene = () => {
     resetSceneActionBudget?.('narrative_scene');
     setLastResult({ success: true, message: '当前场景行动预算已按剧情时段重置。' });
+  };
+
+  const runQingmaoRegionAction = (entry: QingmaoRegionActionEntry) => {
+    if (availability.sceneLocked) {
+      setLastResult({ success: false, message: availability.lockReason || '当前场景锁定，不能推进行动。' });
+      return;
+    }
+    const result = resolveQingmaoRegionActionAction?.({
+      sourceId: entry.source.id,
+      actionSlotId: entry.actionSlot.id,
+      title: entry.candidate.title,
+      summary: entry.candidate.summary,
+      risk: entry.risk,
+      apCost: entry.apCost,
+      tags: entry.candidate.tags,
+      metadata: entry.candidate.metadata,
+    });
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || '青茅区域行动已提交。',
+    });
+  };
+
+  const registerQingmaoCombatCandidate = (templateId: string) => {
+    const result = registerQingmaoCombatCandidateAction?.(templateId);
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || '青茅凡战候选登记失败。',
+    });
+  };
+
+  const runQingmaoResourceLoopAction = (entry: QingmaoResourceLoopEntry) => {
+    if (availability.sceneLocked) {
+      setLastResult({ success: false, message: availability.lockReason || '当前场景锁定，不能推进行动。' });
+      return;
+    }
+    const result = resolveQingmaoResourceLoopActionAction?.(entry.action.id);
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || '青茅炼养用资源行动已提交。',
+    });
   };
 
   return (
@@ -247,6 +390,23 @@ export function ActionPanel() {
           本面板只处理当前剧情场景允许的行动；修行、突破、升仙和灾劫请在空窍/仙窍面板中执行，结果会写入场景账本并在推进剧情时承接。
         </p>
       </section>
+      <QingmaoSceneVariantSection variants={qingmaoSceneVariants} />
+      <QingmaoRegionSection
+        entries={qingmaoRegionEntries}
+        sceneLocked={availability.sceneLocked}
+        lockReason={availability.lockReason}
+        onDepart={runQingmaoRegionAction}
+      />
+      <QingmaoResourceLoopSection
+        entries={qingmaoResourceEntries}
+        sceneLocked={availability.sceneLocked}
+        lockReason={availability.lockReason}
+        onResolve={runQingmaoResourceLoopAction}
+      />
+      <QingmaoCombatReadinessSection
+        readiness={qingmaoCombatReadiness}
+        onRegister={registerQingmaoCombatCandidate}
+      />
       <ActionSection
         title="野外行动"
         note="普通狩猎、采集、侦察先走野外行动；敌对蛊师、蛊兽、伏击或剧情白名单才进入战斗。"
@@ -272,6 +432,275 @@ export function ActionPanel() {
         </div>
       )}
     </div>
+  );
+}
+
+function QingmaoSceneVariantSection({ variants }: { variants: QingmaoSceneVariantView[] }) {
+  if (!variants.length) return null;
+  return (
+    <section className="space-y-2" data-testid="qingmao-scene-variant-section">
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">青茅场景变体</h3>
+        <p className="mt-1 text-[10px] text-rg-paper-200/42">b4 只做可读性、构图和短录屏规划；不新增存档字段或奖励。</p>
+      </div>
+      <div className="grid gap-2">
+        {variants.slice(0, 3).map(view => (
+          <div
+            key={view.id}
+            className={`grid grid-cols-[64px_1fr] gap-3 rounded-md border p-2 ${qingmaoSceneVariantTone(view)}`}
+            data-testid={`qingmao-scene-variant-${view.id}`}
+          >
+            <div className="relative h-16 overflow-hidden rounded-[6px] border border-rg-ink-300/14 bg-rg-ink-900/40">
+              {view.asset?.src ? (
+                <img
+                  src={view.asset.src}
+                  alt={view.asset.label}
+                  className="h-full w-full object-cover opacity-90"
+                  data-testid={`qingmao-scene-variant-asset-${view.id}`}
+                  onError={(event) => {
+                    event.currentTarget.dataset.missing = 'true';
+                    event.currentTarget.alt = view.asset?.fallbackText || `${view.displayName}候选图缺失`;
+                  }}
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center text-[10px] text-rg-paper-200/38">无图</div>
+              )}
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-semibold">{view.displayName}</div>
+                  <div className="mt-0.5 truncate text-[10px] text-rg-paper-200/45">{view.subtitle}</div>
+                </div>
+                <span className={`rg-chip shrink-0 ${view.status === 'playable' ? 'rg-chip--jade' : view.status === 'readiness' ? 'rg-chip--gold' : 'rg-chip--muted'}`}>
+                  {view.statusLabel}
+                </span>
+              </div>
+              <div className="mt-1 line-clamp-2 text-[10px] leading-relaxed text-rg-paper-200/56">{view.primaryPlayerQuestion}</div>
+              <div className="mt-1 line-clamp-1 text-[10px] text-rg-gold/55">构图：{view.compositionLine}</div>
+              <div className="mt-1 line-clamp-1 text-[10px] text-rg-paper-200/42">录屏：{view.recordingLine}</div>
+              {view.linkedRuntimeLabels.length > 0 && (
+                <div className="mt-1 line-clamp-1 text-[10px] text-rg-jade-300/55">
+                  关联：{view.linkedRuntimeLabels.slice(0, 3).join(' / ')}
+                </div>
+              )}
+              <div className="mt-1 line-clamp-1 text-[10px] text-rg-blood-400/55">
+                禁止暗示：{view.forbiddenSummary}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function QingmaoResourceLoopSection({
+  entries,
+  sceneLocked,
+  lockReason,
+  onResolve,
+}: {
+  entries: QingmaoResourceLoopEntry[];
+  sceneLocked: boolean;
+  lockReason?: string;
+  onResolve: (entry: QingmaoResourceLoopEntry) => void;
+}) {
+  if (!entries.length) return null;
+  return (
+    <section className="space-y-2" data-testid="qingmao-resource-loop-section">
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">青茅炼养用资源</h3>
+        <p className="mt-1 text-[10px] text-rg-paper-200/42">低阶食料与蛊材只走本地结算；白玉蛊先显示缺口。</p>
+      </div>
+      <div className="grid gap-2">
+        {entries.slice(0, 4).map(entry => {
+          const blocked = sceneLocked || !entry.canResolve;
+          const blockers = sceneLocked && lockReason ? [lockReason, ...entry.blockers] : entry.blockers;
+          const rewards = entry.rewardPreview.length > 0
+            ? entry.rewardPreview.map(item => `${item.materialName} x${item.quantity}`).join(' / ')
+            : '无材料发放';
+          const missing = requirementSummary([
+            ...entry.feedingRequirements,
+            ...entry.fragmentRequirements,
+            ...entry.gapRequirements,
+          ], '只核对缺口');
+          return (
+            <button
+              type="button"
+              key={entry.id}
+              disabled={blocked}
+              onClick={() => onResolve(entry)}
+              className={`rg-action-card rg-focus-ring w-full p-3 text-left ${qingmaoResourceTone(entry, sceneLocked)} ${
+                blocked ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:border-rg-gold/45 hover:bg-rg-gold/10'
+              }`}
+              data-testid={`qingmao-resource-loop-${entry.action.id}`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-semibold">{entry.action.displayName}</div>
+                  <div className="mt-0.5 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/48">
+                    {entry.action.sourceLabel} · {entry.action.targetGu}
+                  </div>
+                </div>
+                <span className={`rg-chip shrink-0 ${entry.canResolve ? 'rg-chip--jade' : 'rg-chip--muted'}`}>
+                  {QINGMAO_RESOURCE_STATUS_LABEL[entry.status]}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
+                <span>AP {entry.apCost}</span>
+                <span>{riskLabel(entry.risk)}</span>
+                <span>{rewards}</span>
+                <span>{missing}</span>
+              </div>
+              {entry.action.notes.length > 0 && (
+                <div className="mt-2 line-clamp-2 text-[10px] text-rg-gold/55">
+                  {entry.action.notes.slice(0, 2).join(' / ')}
+                </div>
+              )}
+              {blockers.length > 0 && (
+                <div className="mt-2 line-clamp-2 text-[10px] text-rg-blood-400/80">
+                  {blockers.slice(0, 2).join('；')}
+                </div>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function QingmaoCombatReadinessSection({
+  readiness,
+  onRegister,
+}: {
+  readiness: Array<QingmaoCombatTemplateReadiness & { validationLabel: string }>;
+  onRegister: (templateId: string) => void;
+}) {
+  if (!readiness.length) return null;
+  return (
+    <section className="space-y-2" data-testid="qingmao-combat-readiness-section">
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">青茅凡战候选</h3>
+        <p className="mt-1 text-[10px] text-rg-paper-200/42">只读 readiness；奖励与胜负仍等待本地战斗入口。</p>
+      </div>
+      <div className="grid gap-2">
+        {readiness.slice(0, 4).map(item => {
+          const ready = item.status === 'ready_for_local_validation';
+          return (
+            <div
+              key={item.template.id}
+              className={`rounded-md border p-3 ${
+                ready
+                  ? 'border-rg-gold/18 bg-rg-ink-900/30 text-rg-paper-200/72'
+                  : 'border-rg-ink-300/12 bg-rg-ink-900/20 text-rg-paper-200/45'
+              }`}
+              data-testid={`qingmao-combat-readiness-${item.template.id}`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-semibold">{item.template.displayName}</div>
+                  <div className="mt-0.5 text-[11px] text-rg-paper-200/48">{item.template.notes}</div>
+                </div>
+                <span className={`rg-chip shrink-0 ${ready ? 'rg-chip--gold' : 'rg-chip--muted'}`}>
+                  {ready ? '待验证' : '候选'}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
+                <span>{item.template.combatScale}</span>
+                <span>{item.template.risk === 'high' ? '高风险' : item.template.risk === 'medium' ? '中风险' : '低风险'}</span>
+                <span>{item.template.rewardPolicy}</span>
+                <span>{item.validationLabel}</span>
+              </div>
+              <div className="mt-2 line-clamp-2 text-[10px] text-rg-gold/55">
+                {item.recommendedGuNames.slice(0, 4).join(' / ')}
+              </div>
+              {(item.blockers.length > 0 || item.warnings.length > 0) && (
+                <div className="mt-2 line-clamp-2 text-[10px] text-rg-blood-400/75">
+                  {[...item.blockers, ...item.warnings].slice(0, 2).join('；')}
+                </div>
+              )}
+              <div className="mt-3 flex justify-end">
+                <button
+                  type="button"
+                  disabled={!ready}
+                  onClick={() => onRegister(item.template.id)}
+                  className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
+                  data-testid={`qingmao-combat-register-${item.template.id}`}
+                >
+                  登记候选
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function QingmaoRegionSection({
+  entries,
+  sceneLocked,
+  lockReason,
+  onDepart,
+}: {
+  entries: QingmaoRegionActionEntry[];
+  sceneLocked: boolean;
+  lockReason?: string;
+  onDepart: (entry: QingmaoRegionActionEntry) => void;
+}) {
+  if (!entries.length) return null;
+  return (
+    <section className="space-y-2" data-testid="qingmao-region-action-section">
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">青茅山区域行动</h3>
+        <p className="mt-1 text-[10px] text-rg-paper-200/42">三寨身份、线索来源和行动账本由本地引擎校验。</p>
+      </div>
+      {entries.slice(0, 4).map(entry => {
+        const blocked = sceneLocked || !entry.canDepart;
+        const blockers = sceneLocked && lockReason ? [lockReason, ...entry.blockers] : entry.blockers;
+        return (
+          <button
+            type="button"
+            key={entry.id}
+            disabled={blocked}
+            onClick={() => onDepart(entry)}
+            className={`rg-action-card rg-focus-ring w-full p-3 text-left ${qingmaoEntryTone(entry, sceneLocked)} ${
+              blocked ? 'cursor-not-allowed opacity-70' : 'cursor-pointer hover:border-rg-gold/45 hover:bg-rg-gold/10'
+            }`}
+            data-testid={`qingmao-region-action-${entry.source.id}-${entry.actionSlot.id}`}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold">{entry.candidate.title}</div>
+                <div className="mt-0.5 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/48">{entry.candidate.summary}</div>
+              </div>
+              <span className={`rg-chip shrink-0 ${entry.canDepart ? 'rg-chip--jade' : 'rg-chip--muted'}`}>
+                {QINGMAO_STATUS_LABEL[entry.status]}
+              </span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
+              <span>{entry.source.displayName}</span>
+              <span>AP {entry.apCost}</span>
+              <span>{riskLabel(entry.risk)}</span>
+              <span>{entry.identity.role}</span>
+            </div>
+            {entry.warnings.length > 0 && (
+              <div className="mt-2 line-clamp-2 text-[10px] text-rg-gold/55">
+                {entry.warnings.slice(0, 2).join(' / ')}
+              </div>
+            )}
+            {blockers.length > 0 && (
+              <div className="mt-2 line-clamp-2 text-[10px] text-rg-blood-400/80">
+                {blockers.slice(0, 2).join('；')}
+              </div>
+            )}
+          </button>
+        );
+      })}
+    </section>
   );
 }
 

@@ -5,7 +5,8 @@
  */
 import { useMemo } from 'react';
 import { useStore } from '../../store';
-import { MATERIAL_GRADE_MAP, type MaterialGrade } from '../../engine/material-region';
+import { MATERIAL_GRADE_MAP } from '../../engine/material-region';
+import type { MaterialGrade } from '../../engine/refine-engine';
 import { getMaterialOverloadStatus } from '../../engine/material-overload';
 
 const GRADE_ORDER: MaterialGrade[] = ['普通', '精品', '稀有', '仙材'];
@@ -80,7 +81,7 @@ export function MaterialBagPanel() {
         )}
 
         {/* 洞天福地状态 */}
-        {aperture?.type === 'immortal' && (
+        {aperture && aperture.type !== 'mortal' && (
           <p className="text-[10px] text-rg-paper-200/30 mt-2">
             仙窍 · {aperture.grade || '未知'} · 面积{(aperture as any).area_mu || '?'}亩
           </p>

@@ -6,12 +6,12 @@ import type {
 import {
   buildEndingResolutionInput,
   commitEndingOutcome,
-  createDefaultEndingFrameworkState,
   evaluateEndingReadiness,
   generateEndingRouteCandidates,
   normalizeEndingFrameworkState,
   recordEndingPressure,
 } from '../../engine/v080-ending-framework-engine';
+import { createInitialEndingFrameworkState } from '../defaultEngineStates';
 
 export interface EndingSlice {
   endingState: EndingFrameworkState;
@@ -53,7 +53,7 @@ function commitEndingState(set: any, get: any, next: EndingFrameworkState): void
 }
 
 export const createEndingSlice = (set: any, get: any): EndingSlice => ({
-  endingState: createDefaultEndingFrameworkState(),
+  endingState: createInitialEndingFrameworkState(),
 
   previewEndingFramework: () => {
     const store = get() as any;

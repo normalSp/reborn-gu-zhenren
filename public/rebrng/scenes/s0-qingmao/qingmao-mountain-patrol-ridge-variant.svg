@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao mountain patrol ridge atmosphere">
+  <defs>
+    <linearGradient id="ridgeSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#101722"/>
+      <stop offset="0.62" stop-color="#14201a"/>
+      <stop offset="1" stop-color="#0c0c10"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#ridgeSky)"/>
+  <path d="M0 356 C118 278 190 298 282 238 C378 176 514 228 620 166 C724 104 808 142 960 88 V540 H0Z" fill="#0a0b0f"/>
+  <path d="M0 404 C132 330 220 360 356 300 C458 254 540 314 656 258 C780 198 846 236 960 194 V540 H0Z" fill="#111816"/>
+  <path d="M88 288 C248 256 378 274 530 250 C662 230 784 238 920 206" stroke="#c9a96e" stroke-opacity="0.16" stroke-width="4" fill="none"/>
+  <g opacity="0.44" stroke="#090b0d" stroke-width="9">
+    <path d="M126 92 C132 208 118 288 142 420"/>
+    <path d="M184 64 C190 184 178 286 206 454"/>
+    <path d="M782 72 C772 176 790 286 762 432"/>
+    <path d="M840 104 C822 212 850 300 826 470"/>
+  </g>
+  <g opacity="0.3" stroke="#8fd0b3" stroke-width="2">
+    <path d="M104 160 L204 96"/>
+    <path d="M136 208 L244 150"/>
+    <path d="M760 150 L850 108"/>
+    <path d="M746 206 L858 154"/>
+  </g>
+  <rect x="0" y="174" width="960" height="88" fill="url(#mist)"/>
+  <rect x="0" y="292" width="960" height="80" fill="url(#mist)" opacity="0.72"/>
+  <g opacity="0.62">
+    <circle cx="628" cy="268" r="5" fill="#c44b4b"/>
+    <path d="M602 270 H654" stroke="#c44b4b" stroke-opacity="0.36"/>
+    <path d="M628 242 V296" stroke="#c44b4b" stroke-opacity="0.22"/>
+  </g>
+</svg>

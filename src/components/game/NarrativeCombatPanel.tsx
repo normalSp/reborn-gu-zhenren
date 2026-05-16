@@ -10,6 +10,41 @@ interface NarrativeCombatPanelProps {
 
 const EMPTY_COMBAT_EVENT_CANDIDATES: CombatEventCandidate[] = [];
 
+function rewardPolicyCopy(policy?: string): { label: string; detail: string; tone: 'gold' | 'jade' | 'paper' } {
+  if (policy === 'local_engine_only') {
+    return {
+      label: '本地引擎结算',
+      detail: '胜负、损耗和回流由战斗引擎决定，本候选不直接发放蛊虫、蛊材、声望或地点解锁。',
+      tone: 'gold',
+    };
+  }
+  if (policy === 'candidate_clue_only' || policy === 'rumor_only') {
+    return {
+      label: '候选线索',
+      detail: '只可生成线索或传闻，不能作为正式掉落、奖励池或商店来源。',
+      tone: 'jade',
+    };
+  }
+  if (policy) {
+    return {
+      label: policy,
+      detail: '奖励仍需对应本地注册表和战斗结算复核。',
+      tone: 'paper',
+    };
+  }
+  return {
+    label: '未登记',
+    detail: '未登记奖励策略前，只能作为危险提示或剧情候选。',
+    tone: 'paper',
+  };
+}
+
+function rewardPolicyClass(tone: 'gold' | 'jade' | 'paper'): string {
+  if (tone === 'gold') return 'border-rg-gold/25 bg-rg-gold/10 text-rg-gold';
+  if (tone === 'jade') return 'border-rg-jade-500/25 bg-rg-jade-600/10 text-rg-jade-300';
+  return 'border-rg-ink-300/20 bg-rg-ink-900/30 text-rg-paper-200/55';
+}
+
 export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanelProps) {
   const {
     cc,
@@ -130,7 +165,15 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
             {formalCandidates.map(candidate => {
               const validation = candidate.entryValidation;
               const spec = validation?.spec;
-              const blocked = candidate.engineValidation === 'downgraded' || validation?.valid === false;
+              const blocked = candidate.engineValidation === 'blocked'
+                || candidate.engineValidation === 'downgraded'
+                || validation?.valid === false;
+              const rewardPolicy = rewardPolicyCopy(candidate.dropPolicyId || spec?.dropPolicyId);
+              const blockers = [...(validation?.blockers || [])];
+              const warnings = [...new Set([
+                ...(validation?.warnings || []),
+                ...((candidate.validationIssues || []).filter(issue => !blockers.includes(issue))),
+              ])];
               return (
                 <div
                   key={candidate.id}
@@ -142,6 +185,9 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
                       <div className="flex flex-wrap items-center gap-2">
                         <span className={blocked ? 'rg-chip rg-chip--blood' : 'rg-chip rg-chip--gold'}>
                           {blocked ? '危险提示' : '进入战斗'}
+                        </span>
+                        <span className={`rg-chip ${validation?.valid ? 'rg-chip--jade' : 'rg-chip--blood'}`}>
+                          {validation ? (validation.valid ? '入口校验通过' : '入口校验阻断') : '等待校验'}
                         </span>
                         <span className="text-sm font-bold text-rg-paper-100">{candidate.title}</span>
                       </div>
@@ -163,9 +209,23 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
                     </div>
                   )}
 
-                  {(validation?.blockers?.length || candidate.validationIssues?.length) && (
-                    <div className="mt-2 text-[11px] text-rg-blood-300/80">
-                      {(validation?.blockers || candidate.validationIssues || []).join('；')}
+                  <div
+                    className={`mt-2 rounded-md border p-2 text-[11px] leading-relaxed ${rewardPolicyClass(rewardPolicy.tone)}`}
+                    data-testid="narrative-combat-reward-boundary"
+                  >
+                    <div className="font-semibold">奖励边界：{rewardPolicy.label}</div>
+                    <div className="mt-0.5 opacity-80">{rewardPolicy.detail}</div>
+                  </div>
+
+                  {blockers.length > 0 && (
+                    <div className="mt-2 text-[11px] text-rg-blood-300/80" data-testid="narrative-combat-blockers">
+                      {blockers.join('；')}
+                    </div>
+                  )}
+
+                  {warnings.length > 0 && (
+                    <div className="mt-2 text-[11px] text-rg-gold/75" data-testid="narrative-combat-warnings">
+                      {warnings.join('；')}
                     </div>
                   )}
 

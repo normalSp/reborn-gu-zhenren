@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "三王山散修·陆微",
@@ -7,7 +7,7 @@
     "turn": 72,
     "gameMode": "canon",
     "description": "v0.7.0-b 手测：三王山前夜小队战，验证DuelMove、BattleTrace、奖励闸门和信任回流。",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -704,6 +704,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

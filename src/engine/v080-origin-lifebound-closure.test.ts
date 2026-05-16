@@ -26,7 +26,7 @@ function store(overrides: Record<string, any> = {}) {
         name: '月光蛊',
         path: '月道',
         tier: 1,
-        currentState: 'optimal',
+        currentState: 'optimal' as const,
         bonded: true,
       },
     ],

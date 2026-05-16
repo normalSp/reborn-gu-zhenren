@@ -1,7 +1,7 @@
 {
   "name": "temp-guzhenren",
   "private": true,
-  "version": "0.9.0-a3.0",
+  "version": "0.9.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,11 +9,21 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
+    "check:qingmao-assets": "node scripts/check-qingmao-visual-assets.mjs",
+    "check:runtime-assets": "node scripts/check-runtime-assets.mjs",
+    "check:player-visible-copy": "node scripts/check-player-visible-copy.mjs",
+    "check:production-preview": "npm run build && node scripts/check-production-preview.mjs",
+    "eval:deepseek:dry-run": "node scripts/run-deepseek-eval.mjs --dry-run",
+    "eval:deepseek:live": "node scripts/run-deepseek-eval.mjs --live --confirm-cost",
+    "capture:qingmao:v001": "node scripts/capture-qingmao-v001-materials.mjs",
     "test:e2e": "playwright test",
     "test:e2e:long": "playwright test tests/e2e/v070-long.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
+    "@types/node": "^20.19.41",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
     "typescript": "~6.0.2",
     "vite": "^8.0.10",
     "vitest": "^4.1.5"

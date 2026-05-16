@@ -64,7 +64,7 @@ export function AchievementToast() {
     <AnimatePresence mode="wait">
       {visible && event && (
         <motion.div
-          key={event.id || event.name}
+          key={event.achievementId || event.name}
           className="fixed top-4 left-1/2 -translate-x-1/2 z-50 pointer-events-none"
           variants={toastVariants}
           initial="initial"

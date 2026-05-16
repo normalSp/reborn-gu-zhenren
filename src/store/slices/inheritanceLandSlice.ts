@@ -9,7 +9,6 @@ import type {
 } from '../../types';
 import {
   buildInheritanceWorldActionBridge,
-  createDefaultInheritanceLandState,
   evaluateLandClaimEntry,
   getInheritanceSiteSpec,
   normalizeInheritanceLandState,
@@ -18,6 +17,7 @@ import {
   stageInheritanceCandidate,
 } from '../../engine/v080-inheritance-land-engine';
 import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
+import { createInitialInheritanceLandState } from '../defaultEngineStates';
 
 export interface InheritanceLandSlice {
   inheritanceLandState: InheritanceLandState;
@@ -185,7 +185,7 @@ function applyRegisteredRewards(set: any, get: any, state: InheritanceLandState,
 }
 
 export const createInheritanceLandSlice = (set: any, get: any): InheritanceLandSlice => ({
-  inheritanceLandState: createDefaultInheritanceLandState(),
+  inheritanceLandState: createInitialInheritanceLandState(),
 
   recordInheritanceCandidateAction: (candidate) => {
     const store = get() as any;

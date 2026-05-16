@@ -1,7 +1,16 @@
 import { describe, expect, it, vi } from 'vitest';
 import { EXCLUDE_FROM_SAVE } from '../initialState';
 import { createCombatSlice } from './combatSlice';
-import { buildBattlefieldActionCards } from '../../engine/v080-battlefield-ui-model';
+import {
+  buildBattlefieldActionCards,
+  buildQingmaoAssetManifest,
+  buildQingmaoBattlefieldAtmosphereAsset,
+  buildQingmaoBattlefieldAssets,
+  buildQingmaoBattlefieldCues,
+  buildQingmaoBattlefieldStoryboard,
+  isQingmaoMortalBattlefield,
+} from '../../engine/v080-battlefield-ui-model';
+import { buildQingmaoCombatEventCandidate } from '../../engine/v010-qingmao-combat-pack';
 
 function createHarness() {
   let state: any = {
@@ -94,6 +103,82 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     harness.get().selectBattlefieldAction({ type: 'retreat', actorId: 'player' });
     harness.get().executeSelectedBattlefieldAction();
     expect(harness.get().battlefieldPlaybackSteps.some((step: any) => step.tags.includes('retreat'))).toBe(true);
+  });
+
+  it('creates the v0.9.0-b3 Qingmao mortal visual slice without turning Liquor Worm into an attack button', () => {
+    const harness = createHarness();
+
+    harness.get().initQingmaoMortalBattlefieldDemo();
+    const battle = harness.get().battlefieldCombatState;
+
+    expect(isQingmaoMortalBattlefield(battle)).toBe(true);
+    expect(battle.grid.cells).toHaveLength(15);
+    expect(battle.activeTerrainId).toBe('moonlit_courtyard');
+    expect(battle.activeFormationId).toBe('qingmao_aperture_ring');
+
+    const cards = buildBattlefieldActionCards(battle, 'player', 'gu');
+    const moonlightCard = cards.find(card => card.label === '月光蛊');
+    expect(moonlightCard && !moonlightCard.disabledReason).toBe(true);
+    expect(moonlightCard?.rangeText).toContain('3格');
+    expect(moonlightCard?.targetText).toContain('格');
+    expect(moonlightCard?.counterText).toContain('遮蔽');
+    expect(cards.some(card => card.label === '白玉蛊' && !card.disabledReason)).toBe(true);
+    expect(cards.some(card => card.label === '酒虫')).toBe(false);
+
+    const cues = buildQingmaoBattlefieldCues(battle);
+    expect(cues.map(cue => cue.id)).toEqual(['moonlight-gu', 'white-jade-gu', 'liquor-worm', 'art-boundary']);
+    expect(cues.find(cue => cue.id === 'liquor-worm')?.text).toContain('不作为普通攻击按钮');
+    expect(cues.find(cue => cue.id === 'art-boundary')?.text).toContain('不暗示仙蛊');
+
+    const assets = buildQingmaoBattlefieldAssets(battle);
+    expect(assets.map(asset => asset.id)).toEqual(['moonlight-gu', 'white-jade-gu', 'liquor-worm']);
+    expect(assets.every(asset => asset.src.startsWith('/rebrng/gu/s0-qingmao/'))).toBe(true);
+    expect(assets.every(asset => asset.sceneBinding === 'generic')).toBe(true);
+    expect(assets.every(asset => asset.admission === 'runtime_active')).toBe(true);
+    expect(assets.find(asset => asset.id === 'liquor-worm')?.boundary).toContain('不进入普通攻击按钮');
+
+    const atmosphere = buildQingmaoBattlefieldAtmosphereAsset(battle);
+    expect(atmosphere?.id).toBe('qingmao-mortal-battlefield-generic-atmosphere');
+    expect(atmosphere?.role).toBe('background');
+    expect(atmosphere?.runtimeLayer).toBe('scene_background');
+    expect(atmosphere?.sceneBinding).toBe('generic');
+    expect(atmosphere?.admission).toBe('runtime_active');
+    expect(atmosphere?.compositionContractId).toBe('c035-qingmao-generic-battlefield-atmosphere');
+    expect(atmosphere?.src).toBe('/rebrng/scenes/s0-qingmao/qingmao-mortal-battlefield-generic-atmosphere.svg');
+    expect(atmosphere?.boundary).toContain('不绑定方源');
+
+    const manifest = buildQingmaoAssetManifest();
+    expect(manifest.some(asset => asset.status === 'review-only' && asset.role === 'scene_reference')).toBe(true);
+    expect(manifest.some(asset => asset.status === 'active' && asset.role === 'scene_reference')).toBe(false);
+    expect(manifest.filter(asset => asset.status === 'active' && asset.role === 'background')).toHaveLength(1);
+    expect(manifest.filter(asset => asset.sceneBinding === 'scene_specific').every(asset => asset.status === 'review-only')).toBe(true);
+    expect(manifest.find(asset => asset.id === 'spring-autumn-cicada')?.status).toBe('blocked');
+    expect(manifest.find(asset => asset.id === 'spring-autumn-cicada')?.admission).toBe('blocked');
+    expect(manifest.find(asset => asset.id === 'spring-autumn-cicada')?.boundary).toContain('当前 UI 禁用');
+
+    const idleStoryboard = buildQingmaoBattlefieldStoryboard(battle);
+    expect(idleStoryboard.map(beat => beat.id)).toEqual([
+      'moon-blade-chain',
+      'white-jade-shell',
+      'liquor-worm-support',
+      'forbidden-threshold',
+    ]);
+    expect(idleStoryboard.find(beat => beat.id === 'liquor-worm-support')?.active).toBe(true);
+    expect(idleStoryboard.find(beat => beat.id === 'forbidden-threshold')?.active).toBe(false);
+
+    const activeStoryboard = buildQingmaoBattlefieldStoryboard(battle, {
+      id: 'test_moon_step',
+      round: 1,
+      kind: 'killer_move',
+      actorId: 'player',
+      sourceName: '月刃连斩',
+      affectedCellIds: ['c3_1'],
+      message: '月刃连斩扫过中线',
+      visual: { motif: 'crescent_chain', primaryTint: '#E0C78A', motion: 'straight_arc', intensity: 'high' },
+      tags: ['killer_move'],
+    });
+    expect(activeStoryboard.find(beat => beat.id === 'moon-blade-chain')?.active).toBe(true);
+    expect(activeStoryboard.find(beat => beat.id === 'moon-blade-chain')?.boundary).toContain('不追加伤害');
   });
 
   it('creates a non-persistent group demo, switches active actor, and appends group steps', () => {
@@ -193,5 +278,30 @@ describe('v0.8.0-a2 battlefield combat UI store bridge', () => {
     expect(harness.get().combatEncounterState.status).toBe('resolved');
     expect(harness.get().sceneSessionState.localActionLedger.at(-1).actionType).toBe('combat');
     expect(EXCLUDE_FROM_SAVE.has('combatEncounterState')).toBe(true);
+  });
+
+  it('keeps Qingmao low-rank combat outcomes local-engine-only without loot activation', () => {
+    const harness = createHarness();
+    const built = buildQingmaoCombatEventCandidate('qingmao_encounter_clan_school_spar', harness.get());
+    expect(built.candidate?.dropPolicyId).toBe('local_engine_only');
+    expect(built.candidate?.engineValidation).toBe('pending');
+    harness.get().setFlag('combatEventCandidates', [built.candidate]);
+
+    expect(harness.get().acceptCombatEventCandidate(built.candidate!.id!)).toBe(true);
+    expect(harness.get().flags.combatEventCandidates[0].engineValidation).toBe('accepted');
+    expect(harness.get().combatEncounterState.spec.dropPolicyId).toBe('local_engine_only');
+
+    const outcome = harness.get().resolveNarrativeCombatOutcome('retreat');
+    expect(outcome.result).toBe('retreat');
+    expect(outcome.beastLoot).toBeUndefined();
+    expect(harness.get().flags.lastBattleOutcomeSummary.beastLoot).toBeUndefined();
+    const ledger = harness.get().sceneSessionState.localActionLedger.at(-1);
+    expect(ledger.actionType).toBe('combat');
+    expect(ledger.systemResult.beastLoot).toBeUndefined();
+    expect(harness.get().addGameLog).toHaveBeenCalledWith(
+      'combat',
+      expect.stringContaining('剧情战斗回流'),
+      expect.objectContaining({ encounterId: built.candidate!.id }),
+    );
   });
 });

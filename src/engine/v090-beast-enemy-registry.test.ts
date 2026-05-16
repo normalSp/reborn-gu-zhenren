@@ -8,6 +8,7 @@ import {
 } from './v090-beast-enemy-registry';
 import { getTrainingGroundSpec } from './v090-training-ground-clue-engine';
 import { resolveBattlefieldEnemyTurn } from './v080-battlefield-combat-engine';
+import type { CombatEncounterSpec } from '../types';
 
 function immortalStore(overrides: Record<string, any> = {}) {
   return {
@@ -26,6 +27,31 @@ function immortalStore(overrides: Record<string, any> = {}) {
       sceneId: 'beast_hunt_test',
       actionBudget: { remaining: 5, remainingAp: 5 },
     },
+    ...overrides,
+  };
+}
+
+function asEncounterSpec(candidate: any, overrides: Partial<CombatEncounterSpec>): CombatEncounterSpec {
+  return {
+    id: candidate.id || overrides.id || 'beast-hunt-test',
+    title: candidate.title || '荒兽狩猎测试',
+    summary: candidate.summary || '测试用荒兽狩猎候选。',
+    scale: 'group_7x5',
+    risk: candidate.risk || 'medium',
+    source: candidate.source || 'engine',
+    sceneId: candidate.sceneId || overrides.sceneId || 'beast_hunt_test',
+    createdTurn: candidate.createdTurn || 21,
+    enemyHint: candidate.enemyHint || '荒兽',
+    requiredRealmGrand: candidate.requiredRealmGrand,
+    encounterKind: candidate.encounterKind,
+    enemySpecIds: candidate.enemySpecIds,
+    groundId: candidate.groundId,
+    dropPolicyId: candidate.dropPolicyId,
+    gridPresetId: candidate.gridPresetId,
+    availableGu: [],
+    availableKillerMoves: [],
+    blockers: [],
+    warnings: [],
     ...overrides,
   };
 }
@@ -56,14 +82,14 @@ describe('v0.9.0-a3 beast enemy registry', () => {
   it('creates a real battlefield with beast instinct enemies and deterministic enemy turns', () => {
     const ground = getTrainingGroundSpec('tg_white_heaven')!;
     const candidate = buildHuntCombatCandidate(ground, immortalStore(), 'battle-seed')!;
-    const state = createBattlefieldBeastEncounterState(immortalStore(), {
-      ...candidate,
+    const state = createBattlefieldBeastEncounterState(immortalStore(), asEncounterSpec(candidate, {
+      id: candidate.id || 'beast-hunt-battle-test',
       availableGu: ['月光蛊', '石皮蛊'],
       availableKillerMoves: [],
       blockers: [],
       warnings: [],
       sceneId: 'beast_hunt_test',
-    });
+    }));
 
     expect(state.gridPresetId).toBe('ambush_7x5');
     expect(state.grid.cells).toHaveLength(35);
@@ -83,14 +109,14 @@ describe('v0.9.0-a3 beast enemy registry', () => {
   it('resolves loot without stable Gu or Immortal Gu drops', () => {
     const ground = getTrainingGroundSpec('tg_white_heaven')!;
     const candidate = buildHuntCombatCandidate(ground, immortalStore(), 'loot-seed')!;
-    const loot = resolveBeastLootForOutcome({
-      ...candidate,
+    const loot = resolveBeastLootForOutcome(asEncounterSpec(candidate, {
+      id: candidate.id || 'beast-hunt-loot-test',
       availableGu: [],
       availableKillerMoves: [],
       blockers: [],
       warnings: [],
       sceneId: 'beast_hunt_test',
-    }, 'victory', 'loot-seed');
+    }), 'victory', 'loot-seed');
 
     expect(Object.keys(loot.materialDrops).every(name => !name.includes('仙蛊'))).toBe(true);
     expect(loot.blockedRewards).toContain('immortal_gu_drop_blocked');

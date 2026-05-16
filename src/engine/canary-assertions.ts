@@ -133,7 +133,7 @@ function c02_FangYuanLock(text: string): CanaryResult {
 // ═══════════════════════════════════════════
 function c03_RealmJump(narrative: NarrativeJSON, player: PlayerSnapshot): CanaryResult {
   const update = narrative.state_update?.player?.realm;
-  if (!update || update.action !== 'set') {
+  if (!update || typeof update === 'string' || update.action !== 'set') {
     return { ruleId: 'C03', ruleName: '境界跳跃检测', passed: true, level: 'critical', details: '' };
   }
   const newRealm = extractRealm(update.value);

@@ -3,13 +3,14 @@
  * 独立Store + localStorage持久化（死亡不重置）
  *
  * 设计原则：
- * - 使用独立localStorage键名 'gu-zhenren-unlocked-origins' 避免与主存档混淆
+ * - 使用独立 localStorage 键名，避免与主存档混淆
  * - 所有条件评估委托 unlock-condition-checker 纯函数
  * - 集成点：response-pipeline.ts GameOver时调用checkAndUnlock
  */
 
 import type { UnlockCondition, ConditionEvalResult } from '../../engine/unlock-condition-checker';
 import { evaluateAllConditions, areAllConditionsSatisfied, formatUnmetConditions } from '../../engine/unlock-condition-checker';
+import { STORAGE_KEYS } from '../storageKeys';
 
 /** 起源定义 */
 export interface OriginDefinition {
@@ -55,7 +56,7 @@ export interface OriginUnlockSlice {
   getUnmetConditions: (originId: string) => string[];
 }
 
-const STORAGE_KEY = 'gu-zhenren-unlocked-origins';
+const STORAGE_KEY = STORAGE_KEYS.UNLOCKED_ORIGINS;
 
 function loadUnlockedFromStorage(): string[] {
   try {

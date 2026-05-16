@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { useStore } from '../../store';
-import type { Achievement, AchievementStats, AchievementCategory, AchievementTier } from '../../types/achievement';
+import type { Achievement, AchievementStats, AchievementCategory, AchievementTier, AchievementDomain } from '../../types/achievement';
 
 const TIER_LABELS: Record<AchievementTier, string> = {
   bronze: '铜',
@@ -38,6 +38,7 @@ export function AchievementPanel() {
   // 改为在 useMemo 中本地计算统计
   const stats = useMemo<AchievementStats>(() => {
     const tiers: AchievementTier[] = ['bronze', 'silver', 'gold', 'legendary'];
+    const domains: AchievementDomain[] = ['南疆', '北原', '东海', '西漠', '中洲', '通用'];
     const total = defs.length;
     const unlockedCount = unlockedIds?.length || 0;
     const byTier = Object.fromEntries(
@@ -58,7 +59,17 @@ export function AchievementPanel() {
         }];
       })
     ) as AchievementStats['byCategory'];
-    return { total, unlocked: unlockedCount, byTier, byCategory };
+    const byDomain = Object.fromEntries(
+      domains.map(domain => {
+        const domainDefs = defs.filter(d => d.domain === domain);
+        return [domain, {
+          total: domainDefs.length,
+          unlocked: domainDefs.filter(d => unlocked.has(d.id)).length,
+        }];
+      })
+    ) as AchievementStats['byDomain'];
+    const hiddenUnlocked = defs.filter(d => d.hidden && unlocked.has(d.id)).length;
+    return { total, unlocked: unlockedCount, byTier, byCategory, byDomain, hiddenUnlocked };
   }, [defs, unlockedIds]);
 
   const filtered = defs.filter(a => {

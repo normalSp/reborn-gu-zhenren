@@ -134,7 +134,7 @@ describe('v0.8.0-b2 cultivation calamity engine', () => {
   });
 
   it('normalizes v16 state and applies time, location, and safety modifiers', () => {
-    const normalized = normalizeCultivationState({ progress: 999, ascension: { threeQi: { human: 200, earth: -1, heaven: 50 } as any } });
+    const normalized = normalizeCultivationState({ progress: 999, ascension: { threeQi: { human: 200, earth: -1, heaven: 50 } as any } } as any);
     expect(normalized.version).toBe('v0.8.0-b2');
     expect(normalized.progress).toBe(rulesRaw.cultivation.progressOverflowCap);
     expect(normalized.ascension.threeQi.human).toBe(100);

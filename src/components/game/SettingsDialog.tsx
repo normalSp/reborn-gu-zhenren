@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { useStore } from '../../store';
-
-// ─── API Key 管理 ───
-const API_KEY_STORAGE = 'deepseek_api_key';
+import { STORAGE_KEYS } from '../../store/storageKeys';
 
 function getApiKey(): string {
-  return localStorage.getItem(API_KEY_STORAGE) || '';
+  return localStorage.getItem(STORAGE_KEYS.DEEPSEEK_API_KEY) || '';
 }
 
 function setApiKey(key: string) {
-  localStorage.setItem(API_KEY_STORAGE, key);
+  localStorage.setItem(STORAGE_KEYS.DEEPSEEK_API_KEY, key);
 }
 
 export function SettingsDialog() {
@@ -24,7 +22,7 @@ export function SettingsDialog() {
   const toggleMute = useStore(s => s.toggleMute);
 
   const [fontSize, setFontSize] = useState(() => {
-    return parseInt(localStorage.getItem('gu-font-size') || '16', 10);
+    return parseInt(localStorage.getItem(STORAGE_KEYS.FONT_SIZE) || '16', 10);
   });
   const [apiKeyInput, setApiKeyInput] = useState(() => getApiKey());
 
@@ -32,7 +30,7 @@ export function SettingsDialog() {
 
   const handleFontSize = (val: number) => {
     setFontSize(val);
-    localStorage.setItem('gu-font-size', String(val));
+    localStorage.setItem(STORAGE_KEYS.FONT_SIZE, String(val));
     document.documentElement.style.fontSize = val + 'px';
   };
 

@@ -1,0 +1,455 @@
+{
+  "version": "v0.12.0-a1",
+  "status": "static_anchor_truth_source",
+  "sourcePolicy": {
+    "factCardSource": "src/canon/qingmao-canon-fact-cards.json",
+    "primaryText": "doc/original work/reverend-insanity.txt",
+    "storedContent": "summary_plus_line_locator_only",
+    "noOriginalProse": true
+  },
+  "saveFormatDecision": {
+    "currentSaveFormatVersion": 22,
+    "bumpRequiredInA1": false,
+    "reason": "v0.12.0-a1 only adds static canon and anchor references; it does not persist new player state."
+  },
+  "classificationPolicy": {
+    "allowedFactCategories": [
+      "canon_hard_fact",
+      "player_visible_fact",
+      "hidden_fact_ref",
+      "if_deviation_point"
+    ],
+    "hiddenExposure": "hidden_ref_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only",
+    "localAuthority": "facts_rewards_locations_battles_fate_and_endings"
+  },
+  "allowedLowRankIfAxes": [
+    "npc_attention",
+    "faction_pressure",
+    "resource_control",
+    "route_escape",
+    "hidden_fact_probe",
+    "local_survival",
+    "canon_anchor_pressure"
+  ],
+  "forbiddenHighLevelAxes": [
+    "protect_fate",
+    "break_fate",
+    "venerable_balance",
+    "immortal_trade",
+    "rank_nine_acquisition",
+    "treasure_yellow_heaven_transaction"
+  ],
+  "anchors": [
+    {
+      "id": "qingmao_region_foundation",
+      "title": "青茅山区域根基",
+      "stage": "early_qingmao",
+      "anchorType": "fixed_context",
+      "canonStatus": "fixed",
+      "visibility": "mixed_public_hidden",
+      "factCardIds": [
+        "qingmao_location_guyue_village",
+        "qingmao_three_clans_layout",
+        "guyue_spirit_spring_resource_basis"
+      ],
+      "playerVisibleFactIds": [
+        "qingmao_location_guyue_village",
+        "qingmao_three_clans_layout"
+      ],
+      "hiddenFactRefIds": ["guyue_spirit_spring_resource_basis"],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["local_survival", "faction_pressure"],
+      "allowedPlayerLevers": [
+        "choose_local_identity_pressure",
+        "investigate_public_three_clan_rumors",
+        "seek_low_rank_work_inside_or_near_village"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_claim_qingmao_mountain",
+        "player_cannot_expose_spirit_spring_by_free_text",
+        "player_cannot_open_remote_regions_from_start"
+      ],
+      "deepSeekAllowed": [
+        "describe_public_region_pressure",
+        "offer_local_candidate_actions",
+        "surface_public_three_clan_tension"
+      ],
+      "deepSeekForbidden": [
+        "reveal_hidden_spirit_spring_truth",
+        "award_region_control",
+        "create_remote_region_escape_success"
+      ],
+      "nextPhaseUse": "a2 IF matrix and route/supply/pursuit design must attach to this anchor before changing region pressure."
+    },
+    {
+      "id": "guyue_clan_school_order",
+      "title": "古月族学与低阶成长秩序",
+      "stage": "early_qingmao",
+      "anchorType": "fixed_context",
+      "canonStatus": "fixed",
+      "visibility": "public_context",
+      "factCardIds": [
+        "guyue_aperture_ceremony_and_clan_school",
+        "guyue_aptitude_grade_public_order",
+        "guyue_lifebound_gu_first_exam",
+        "guyue_moonlight_gu_local_specialty"
+      ],
+      "playerVisibleFactIds": [
+        "guyue_aperture_ceremony_and_clan_school",
+        "guyue_aptitude_grade_public_order",
+        "guyue_lifebound_gu_first_exam",
+        "guyue_moonlight_gu_local_specialty"
+      ],
+      "hiddenFactRefIds": [],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["npc_attention", "resource_control", "local_survival"],
+      "allowedPlayerLevers": [
+        "train_or_skip_clan_school_tasks",
+        "choose_lifebound_gu_plan_inside_available_pool",
+        "seek_elder_or_peer_attention"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_skip_aperture_rules",
+        "player_cannot_gain_high_rank_cultivation_without_local_engine",
+        "player_cannot_turn_clan_school_into_unbounded_reward_source"
+      ],
+      "deepSeekAllowed": [
+        "write_training_pressure",
+        "offer_clan_school_candidate_actions",
+        "describe_social_reaction"
+      ],
+      "deepSeekForbidden": [
+        "change_aptitude_result_without_engine",
+        "grant_gu_rewards",
+        "settle_cultivation_breakthrough"
+      ],
+      "nextPhaseUse": "v0.12 player goals and public action candidates can reference this anchor for school, aptitude, and lifebound Gu pressure."
+    },
+    {
+      "id": "qingmao_mortal_resource_loop",
+      "title": "凡阶资源与食料循环",
+      "stage": "early_qingmao",
+      "anchorType": "resource_loop",
+      "canonStatus": "fixed",
+      "visibility": "public_context",
+      "factCardIds": [
+        "guyue_moonlight_gu_local_specialty",
+        "liquor_worm_rare_support_role",
+        "primeval_stone_mortal_currency_and_cultivation",
+        "guyue_moon_orchid_feeding_base",
+        "flower_wine_monk_public_legend",
+        "guyue_jade_skin_white_jade_refinement_boundary"
+      ],
+      "playerVisibleFactIds": [
+        "guyue_moonlight_gu_local_specialty",
+        "liquor_worm_rare_support_role",
+        "primeval_stone_mortal_currency_and_cultivation",
+        "guyue_moon_orchid_feeding_base",
+        "flower_wine_monk_public_legend",
+        "guyue_jade_skin_white_jade_refinement_boundary"
+      ],
+      "hiddenFactRefIds": [],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["resource_control", "npc_attention", "local_survival"],
+      "allowedPlayerLevers": [
+        "buy_sell_or_save_primeval_stones",
+        "plan_gu_feeding_cost",
+        "search_public_resource_rumors"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_generate_free_primeval_stones",
+        "player_cannot_make_gu_feedless",
+        "player_cannot_receive_liquor_worm_or_white_jade_gu_without_local_reward_path"
+      ],
+      "deepSeekAllowed": [
+        "describe_resource_pressure",
+        "offer_public_trade_or_search_candidates",
+        "write_clues_for_visible_rumors"
+      ],
+      "deepSeekForbidden": [
+        "settle_inventory_changes",
+        "award_gu_or_primeval_stones",
+        "reveal_hidden_inheritance_location"
+      ],
+      "nextPhaseUse": "Route, combat, and faction reaction systems must pass through local economy checks before accepting resource-changing actions."
+    },
+    {
+      "id": "qingmao_caravan_and_route_window",
+      "title": "商队与离山窗口",
+      "stage": "early_qingmao",
+      "anchorType": "if_window",
+      "canonStatus": "deviation_window",
+      "visibility": "public_context",
+      "factCardIds": ["qingmao_caravan_trade_window"],
+      "playerVisibleFactIds": ["qingmao_caravan_trade_window"],
+      "hiddenFactRefIds": [],
+      "ifDeviationPointIds": ["qingmao_caravan_trade_window"],
+      "lowRankIfAxes": ["route_escape", "resource_control", "local_survival"],
+      "allowedPlayerLevers": [
+        "seek_supply_information",
+        "try_to_join_or_shadow_caravan",
+        "trade_or_negotiate_under_local_limits"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_leave_qingmao_without_route_supply_and_pursuit_resolution",
+        "player_cannot_open_all_regions_by_following_caravan",
+        "player_cannot_buy_any_gu_outside_local_manifest"
+      ],
+      "deepSeekAllowed": [
+        "offer_route_candidate_actions",
+        "describe_trade_pressure",
+        "surface_public_supply_clues"
+      ],
+      "deepSeekForbidden": [
+        "declare_escape_success",
+        "invent_unbounded_shop_inventory",
+        "grant_new_region_access"
+      ],
+      "nextPhaseUse": "This is the preferred first route/supply/pursuit runtime bridge after a1."
+    },
+    {
+      "id": "qingmao_wolf_tide_pressure_chain",
+      "title": "狼潮与三寨战功压力链",
+      "stage": "early_qingmao",
+      "anchorType": "pressure_chain",
+      "canonStatus": "pressure",
+      "visibility": "public_context",
+      "factCardIds": [
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit",
+        "qingmao_three_clans_layout"
+      ],
+      "playerVisibleFactIds": [
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit",
+        "qingmao_three_clans_layout"
+      ],
+      "hiddenFactRefIds": [],
+      "ifDeviationPointIds": [
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "lowRankIfAxes": ["canon_anchor_pressure", "faction_pressure", "local_survival", "resource_control"],
+      "allowedPlayerLevers": [
+        "volunteer_for_low_rank_scouting",
+        "avoid_or_accept_patrol_risk",
+        "earn_minor_war_merit_through_local_engine"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_stop_wolf_tide_by_single_action",
+        "player_cannot_command_three_clan_alliance_at_low_rank",
+        "player_cannot_force_major_canon_disaster_resolution_in_a1"
+      ],
+      "deepSeekAllowed": [
+        "write_pressure_rumors",
+        "offer_patrol_or_shelter_candidates",
+        "describe_public_war_merit_tension"
+      ],
+      "deepSeekForbidden": [
+        "settle_wolf_tide_outcome",
+        "change_three_clan_command_structure",
+        "award_war_merit_without_engine"
+      ],
+      "nextPhaseUse": "a2 must turn this into small IF branches and refusal/pressure reasons, not full disaster simulation."
+    },
+    {
+      "id": "qingmao_three_clan_pressure_chain",
+      "title": "三寨关系与低阶势力反应",
+      "stage": "early_qingmao",
+      "anchorType": "pressure_chain",
+      "canonStatus": "pressure",
+      "visibility": "public_context",
+      "factCardIds": [
+        "qingmao_three_clans_layout",
+        "baijia_bai_ning_bing_public_talent",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "playerVisibleFactIds": [
+        "qingmao_three_clans_layout",
+        "baijia_bai_ning_bing_public_talent",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "hiddenFactRefIds": [],
+      "ifDeviationPointIds": ["qingmao_three_clan_alliance_war_merit"],
+      "lowRankIfAxes": ["faction_pressure", "npc_attention", "canon_anchor_pressure"],
+      "allowedPlayerLevers": [
+        "shift_minor_attention_between_clans",
+        "collect_public_rumors",
+        "avoid_or_trigger_low_rank_suspicion"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_merge_or_destroy_a_clan_in_a1",
+        "player_cannot_convert_bai_ning_bing_into_ally_by_free_text",
+        "player_cannot_make_public_pressure_ignore_canon_status"
+      ],
+      "deepSeekAllowed": [
+        "describe_public_faction_pressure",
+        "offer_social_candidate_actions",
+        "surface_rumor_quality_or_suspicion"
+      ],
+      "deepSeekForbidden": [
+        "settle_npc_loyalty",
+        "kill_or_recruit_key_npc",
+        "rewrite_three_clan_balance"
+      ],
+      "nextPhaseUse": "This becomes the seed for NPC/faction reaction engine after route and IF matrix are stable."
+    },
+    {
+      "id": "fang_yuan_hidden_causality_guard",
+      "title": "方源不可见因果保护",
+      "stage": "early_qingmao",
+      "anchorType": "hidden_guard",
+      "canonStatus": "fixed_hidden",
+      "visibility": "hidden_guard",
+      "factCardIds": [
+        "fang_yuan_private_causality_hidden_anchor",
+        "flower_wine_monk_public_legend",
+        "flower_wine_inheritance_hidden_location_ref"
+      ],
+      "playerVisibleFactIds": ["flower_wine_monk_public_legend"],
+      "hiddenFactRefIds": [
+        "fang_yuan_private_causality_hidden_anchor",
+        "flower_wine_inheritance_hidden_location_ref"
+      ],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["hidden_fact_probe", "npc_attention", "canon_anchor_pressure"],
+      "allowedPlayerLevers": [
+        "observe_public_behavior",
+        "ask_public_rumors",
+        "create_side_pressure_without_private_knowledge"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_know_fang_yuan_private_causality",
+        "player_cannot_preempt_hidden_inheritance_without_valid_path",
+        "player_cannot_force_hidden_truth_into_public_ui"
+      ],
+      "deepSeekAllowed": [
+        "describe_public_behavior_only",
+        "offer_observation_or_rumor_candidates",
+        "refuse_or_redirect_private_causality_requests"
+      ],
+      "deepSeekForbidden": [
+        "reveal_hidden_causality",
+        "explain_private_regression_or_secret_motive",
+        "award_hidden_inheritance"
+      ],
+      "nextPhaseUse": "All Fang Yuan-adjacent IF branches must preserve third-party visibility and use refusal/redirect when input asks for hidden truth."
+    },
+    {
+      "id": "bai_ning_bing_pressure_guard",
+      "title": "白凝冰公开压力与隐藏风险保护",
+      "stage": "early_qingmao",
+      "anchorType": "hidden_guard",
+      "canonStatus": "fixed_hidden",
+      "visibility": "mixed_public_hidden",
+      "factCardIds": [
+        "baijia_bai_ning_bing_public_talent",
+        "bai_ning_bing_extreme_body_hidden_risk_ref"
+      ],
+      "playerVisibleFactIds": ["baijia_bai_ning_bing_public_talent"],
+      "hiddenFactRefIds": ["bai_ning_bing_extreme_body_hidden_risk_ref"],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["npc_attention", "faction_pressure", "canon_anchor_pressure"],
+      "allowedPlayerLevers": [
+        "hear_public_reputation",
+        "avoid_or_seek_indirect_contact",
+        "change_minor_attention_without_settling_key_outcome"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_kill_bai_ning_bing_by_free_text",
+        "player_cannot_reveal_hidden_body_risk",
+        "player_cannot_force_key_npc_route_change_without_dedicated_branch"
+      ],
+      "deepSeekAllowed": [
+        "describe_public_reputation",
+        "offer_indirect_contact_candidates",
+        "raise_pressure_or_warning_without_hidden_detail"
+      ],
+      "deepSeekForbidden": [
+        "reveal_hidden_body_truth",
+        "settle_key_npc_death",
+        "grant_private_knowledge"
+      ],
+      "nextPhaseUse": "Bai Ning Bing-related action samples should be refusals, pressure shifts, or indirect public consequences until a dedicated branch exists."
+    },
+    {
+      "id": "guyue_first_gen_hidden_anchor_guard",
+      "title": "古月一代隐藏真相保护",
+      "stage": "late_qingmao",
+      "anchorType": "hidden_guard",
+      "canonStatus": "fixed_hidden",
+      "visibility": "hidden_guard",
+      "factCardIds": ["guyue_first_gen_hidden_blood_path_ref"],
+      "playerVisibleFactIds": [],
+      "hiddenFactRefIds": ["guyue_first_gen_hidden_blood_path_ref"],
+      "ifDeviationPointIds": [],
+      "lowRankIfAxes": ["hidden_fact_probe", "canon_anchor_pressure"],
+      "allowedPlayerLevers": [
+        "notice_public_anomalies_only_after_local_conditions",
+        "record_suspicion_without_truth",
+        "trigger_guarded_refusal_for_direct_hidden_requests"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_reveal_first_gen_hidden_truth_in_early_qingmao",
+        "player_cannot_locate_hidden_site_by_free_text",
+        "player_cannot_force_late_qingmao_finale_in_v0_12_a1"
+      ],
+      "deepSeekAllowed": [
+        "refuse_hidden_truth_requests",
+        "write_ominous_but_non_specific_pressure",
+        "redirect_to_public_investigation"
+      ],
+      "deepSeekForbidden": [
+        "name_hidden_truth_or_location",
+        "explain_late_qingmao_finale",
+        "settle_first_gen_or_crane_related_outcome"
+      ],
+      "nextPhaseUse": "This anchor exists to prevent accidental leakage; it should not become playable content before public fact cards and route branches mature."
+    },
+    {
+      "id": "qingmao_resource_and_crisis_chain",
+      "title": "资源枯竭与危机压力保护",
+      "stage": "mid_late_qingmao",
+      "anchorType": "hidden_guard",
+      "canonStatus": "pressure_hidden",
+      "visibility": "mixed_public_hidden",
+      "factCardIds": [
+        "guyue_spirit_spring_resource_basis",
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "playerVisibleFactIds": [
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "hiddenFactRefIds": ["guyue_spirit_spring_resource_basis"],
+      "ifDeviationPointIds": [
+        "qingmao_wolf_tide_recurring_pressure",
+        "qingmao_three_clan_alliance_war_merit"
+      ],
+      "lowRankIfAxes": ["canon_anchor_pressure", "resource_control", "local_survival"],
+      "allowedPlayerLevers": [
+        "respond_to_public_resource_shortage",
+        "notice_pressure_without_hidden_cause",
+        "choose_survival_or_faction_response"
+      ],
+      "protectedOutcomes": [
+        "player_cannot_explain_hidden_resource_cause_without_unlock",
+        "player_cannot_solve_crisis_by_free_text",
+        "player_cannot_force_late_disaster_resolution_in_a1"
+      ],
+      "deepSeekAllowed": [
+        "describe_public_resource_pressure",
+        "offer_survival_candidate_actions",
+        "raise_cost_or_risk_language"
+      ],
+      "deepSeekForbidden": [
+        "reveal_hidden_cause",
+        "declare_crisis_solved",
+        "award_crisis_rewards"
+      ],
+      "nextPhaseUse": "Use as a pressure guard when a2/a3 introduce public choices that brush against hidden crisis causes."
+    }
+  ]
+}

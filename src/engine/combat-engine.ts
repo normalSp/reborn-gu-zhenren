@@ -202,7 +202,7 @@ export function executePlayerTurn(
       }
 
       const playerGuNames = state.player.gu.map(g => g.name);
-      const missing = move.requiredCoreGu.filter(cg => !playerGuNames.includes(cg));
+      const missing = (move.requiredCoreGu || []).filter(cg => !playerGuNames.includes(cg));
       if (missing.length > 0) {
         newLog.push({ round, actor: 'player', action: move.name, message: `缺少核心蛊虫: ${missing.join('、')}，无法使用${move.name}` });
         return { state: { ...state, round, log: newLog, phase: 'enemy_turn' }, enemyTurn: true };
@@ -411,7 +411,7 @@ export function tryEscape(
 }
 
 /**
- * 创建决斗用敌人（从简版EnemyState + 额外字段） 
+ * 创建决斗用敌人（从简版EnemyState + 额外字段）
  */
 export function createDuelEnemy(overrides: Partial<DuelEnemy> & { name: string; realm: string; hp: number; attack: number; path: string }): DuelEnemy {
   return {

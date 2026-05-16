@@ -12,13 +12,16 @@
  */
 
 import type { ScreenState, GameMode, PipelinePhase } from './slices/uiSlice';
-import { createDefaultCultivationState } from '../engine/v080-cultivation-calamity-engine';
-import { createDefaultStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
-import { createDefaultEndingFrameworkState } from '../engine/v080-ending-framework-engine';
-import { createDefaultSceneSessionState } from '../engine/v080-scene-session-engine';
-import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
-import { createDefaultInheritanceLandState } from '../engine/v080-inheritance-land-engine';
-import { createDefaultTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
+import { createInitialCultivationState } from './defaultCultivationState';
+import { createInitialLivingWorldState } from './defaultLivingWorldState';
+import {
+  createInitialCombatEncounterState,
+  createInitialEndingFrameworkState,
+  createInitialInheritanceLandState,
+  createInitialSceneSessionState,
+  createInitialStoryAnchorState,
+  createInitialTrainingGroundState,
+} from './defaultEngineStates';
 
 export const INITIAL_STATE = {
   // ─── playerSlice ───
@@ -65,12 +68,13 @@ export const INITIAL_STATE = {
   materialBag: {} as Record<string, number>,
   feedingCredits: {} as Record<string, number>,
   feedingDiscountProgress: {} as Record<string, number>,
-  cultivationState: createDefaultCultivationState(),
-  storyAnchorState: createDefaultStoryAnchorState(),
-  endingState: createDefaultEndingFrameworkState(),
-  sceneSessionState: createDefaultSceneSessionState(),
-  inheritanceLandState: createDefaultInheritanceLandState(),
-  trainingGroundState: createDefaultTrainingGroundState(),
+  cultivationState: createInitialCultivationState(),
+  storyAnchorState: createInitialStoryAnchorState(),
+  endingState: createInitialEndingFrameworkState(),
+  sceneSessionState: createInitialSceneSessionState(),
+  inheritanceLandState: createInitialInheritanceLandState(),
+  trainingGroundState: createInitialTrainingGroundState(),
+  livingWorldState: createInitialLivingWorldState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -198,7 +202,7 @@ export const INITIAL_STATE = {
   battlefieldValidation: null as import('../types').BattlefieldActionValidation | null,
   battlefieldPlaybackSteps: [] as import('../types').BattleResolutionStep[],
   battlefieldTraceCursor: 0 as number,
-  combatEncounterState: createIdleCombatEncounterState(),
+  combatEncounterState: createInitialCombatEncounterState(),
   debt: 0 as number,
   debtInterestRate: 0.05 as number,
   // P2新增: 子系统默认值（各子系统实现时覆盖）
@@ -237,10 +241,6 @@ export const INITIAL_STATE = {
   lifeboundGuInfo: null as import('../types').LifeboundGu | null,
   /** 本命蛊死亡惩罚状态 */
   lifeboundDeathPenalty: null as import('../types').LifeboundDeathPenalty | null,
-
-  // ═══ gameLogSlice: 游戏事件日志 ═══
-  gameLog: [] as import('./slices/gameLogSlice').GameLogEntry[],
-
   // ═══ P1.1: 拍卖系统 ═══
   auctionItems: [] as any[],
   materialAuctionItems: [] as any[],
@@ -347,5 +347,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * 每次状态结构变更时递增，用于 migrate 兼容旧存档
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
+ * v21→v22: v0.11.0-a2 活世界状态协议 livingWorldState
  */
-export const SAVE_FORMAT_VERSION = 21;
+export const SAVE_FORMAT_VERSION = 22;

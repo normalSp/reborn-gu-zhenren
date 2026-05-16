@@ -599,6 +599,164 @@ export interface PlayerState {
   flags: Record<string, any>;
 }
 
+// ─── v0.11.0 活世界状态协议 ───
+export type LivingWorldPhase = 'start' | 'morning' | 'afternoon' | 'night';
+
+export type LivingRegionStatus = 'stable' | 'tense' | 'restricted' | 'collapsing';
+
+export type LivingRegionAccess = 'known' | 'rumored' | 'restricted' | 'blocked';
+
+export type LivingFactScope = 'world' | 'region' | 'npc' | 'faction' | 'item' | 'quest';
+
+export type LivingKnownFactSource =
+  | 'canon_summary'
+  | 'engine_result'
+  | 'deepseek_clue'
+  | 'player_observation';
+
+export type LivingFactConfidence = 'confirmed' | 'rumor' | 'misleading';
+
+export type LivingGoalStatus = 'active' | 'blocked' | 'deferred' | 'completed' | 'failed';
+
+export type LivingIfDeviationLevel = 'none' | 'minor' | 'major' | 'critical';
+
+export interface LivingWorldClock {
+  turn: number;
+  day: number;
+  phase: LivingWorldPhase;
+  lastActionId: string | null;
+}
+
+export interface LivingRegionState {
+  regionId: string;
+  status: LivingRegionStatus;
+  pressure: number;
+  alertLevel: 0 | 1 | 2 | 3;
+  access: LivingRegionAccess;
+  knownEventIds: string[];
+  hiddenFactRefIds: string[];
+  factionPressureIds: string[];
+  lastUpdatedTurn: number;
+}
+
+export interface PlayerKnownFact {
+  id: string;
+  scope: LivingFactScope;
+  source: LivingKnownFactSource;
+  summary: string;
+  learnedTurn: number;
+  confidence: LivingFactConfidence;
+  tags: string[];
+}
+
+export interface HiddenFactRefState {
+  id: string;
+  scope: LivingFactScope;
+  sourcePointer: string;
+  revealPolicyId: string;
+  guard: 'hidden';
+  lastCheckedTurn: number | null;
+}
+
+export interface LivingNpcMemoryEntry {
+  id: string;
+  npcId: string;
+  turn: number;
+  regionId: string | null;
+  actionId: string | null;
+  publicSummary: string;
+  privateRefId: string | null;
+  attitudeDelta: number;
+  weight: number;
+  tags: string[];
+  expiresTurn: number | null;
+}
+
+export interface LivingFactionPressureEntry {
+  id: string;
+  factionId: string;
+  pressureType: 'suspicion' | 'favor' | 'hostility' | 'opportunity';
+  delta: number;
+  reason: string;
+  turn: number;
+  visibility: 'player_visible' | 'system_hidden';
+}
+
+export interface LivingPlayerGoalEntry {
+  id: string;
+  intentType: 'obtain_item' | 'join_faction' | 'investigate' | 'travel' | 'long_term_goal';
+  targetRef: string;
+  status: LivingGoalStatus;
+  createdTurn: number;
+  lastUpdatedTurn: number;
+  rationale: string;
+  nextStepHints: string[];
+  blockedByRefIds: string[];
+}
+
+export interface LivingActionConsequenceEntry {
+  id: string;
+  actionId: string;
+  turn: number;
+  scope: 'world' | 'region' | 'npc' | 'faction' | 'combat' | 'resource';
+  publicSummary: string;
+  effectRefs: string[];
+  followUpRefs: string[];
+}
+
+export interface LivingIfDeviationEntry {
+  id: string;
+  anchorRefId: string;
+  level: LivingIfDeviationLevel;
+  reason: string;
+  turn: number;
+  status: 'recorded' | 'resolved' | 'rejected';
+  visibleToPlayer: boolean;
+}
+
+export interface LivingWorldState {
+  schemaVersion: 1;
+  worldClock: LivingWorldClock;
+  regions: Record<string, LivingRegionState>;
+  knownFacts: Record<string, PlayerKnownFact>;
+  hiddenFactRefs: Record<string, HiddenFactRefState>;
+  npcMemories: LivingNpcMemoryEntry[];
+  factionPressure: LivingFactionPressureEntry[];
+  playerGoals: LivingPlayerGoalEntry[];
+  actionConsequences: LivingActionConsequenceEntry[];
+  ifDeviations: LivingIfDeviationEntry[];
+}
+
+export interface IntentCandidate {
+  id: string;
+  rawText: string;
+  intentType: 'obtain_item' | 'join_faction' | 'investigate' | 'travel' | 'long_term_goal';
+  actorId: string;
+  targetRef: string;
+  regionId: string | null;
+  source: 'player_input' | 'deepseek_candidate' | 'engine_suggestion';
+  evidenceRefIds: string[];
+}
+
+export interface IntentRuling {
+  candidateId: string;
+  category:
+    | 'available'
+    | 'available_with_cost'
+    | 'requires_prerequisite'
+    | 'rumor_only'
+    | 'long_term_goal'
+    | 'world_rule_blocked'
+    | 'hidden_fact_blocked'
+    | 'major_if_deviation';
+  allowed: boolean;
+  reasons: string[];
+  prerequisiteRefs: string[];
+  costRefs: string[];
+  riskLevel: 0 | 1 | 2 | 3;
+  visibleExplanation: string;
+}
+
 // ─── 玩家身份协议 ───
 export type PlayerRole = 'original_participant';
 
@@ -1095,13 +1253,13 @@ export interface GuCombatStatus {
 }
 
 // ═══ P2-13: 蛊虫饥饿状态机（四态模型） ═══
-/** 
+/**
  * 蛊虫饥饿状态机 — P2-13 四态模型
  * optimal = 最佳状态（满饱食），成功率+10%
  * hungry = 饥饿状态（开始降效），成功率-15%
  * injured = 受伤状态（反噬风险），成功率-30%，每轮5%概率反噬（扣除主人10-20生命）
  * dead = 死亡状态（蛊虫已死），不可用且不可恢复
- * 
+ *
  * 向后兼容映射（v6→v7存档迁移）:
  *   fed → optimal, starving → injured, dying → dead
  */
@@ -1829,6 +1987,7 @@ export type BattleTracePhase =
   | 'initiative'
   | 'action'
   | 'counter'
+  | 'settlement'
   | 'resource'
   | 'pressure'
   | 'event'
@@ -2917,7 +3076,7 @@ export interface CultivationDeepeningState {
 
 /** NPC关系网络 — 双向好感矩阵 */
 export interface NpcRelationMatrix {
-  /** 
+  /**
    * 稀疏矩阵: [npcIdA]: { [npcIdB]: affinity }
    * affinity范围 -100~100
    * 正数=好感，负数=恶感

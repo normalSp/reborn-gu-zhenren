@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" role="img" aria-labelledby="title desc">
+  <title id="title">Qingmao mortal battlefield generic atmosphere</title>
+  <desc id="desc">A generic moonlit Qingmao mountain battlefield atmosphere with bamboo, old stone, fog, formation lines, and mortal-scale risk cues.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101718"/>
+      <stop offset="0.55" stop-color="#18231f"/>
+      <stop offset="1" stop-color="#0f1113"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18201c"/>
+      <stop offset="0.45" stop-color="#23231f"/>
+      <stop offset="1" stop-color="#0f1012"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5f5032" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d0aa62" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#5f5032" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="jadeLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5f9c78" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fc9aa" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#5f9c78" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="paperGrain" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M0 9h42M16 0v42M31 0v42" stroke="#d6c38a" stroke-opacity="0.035" stroke-width="1"/>
+      <path d="M5 31h7M22 18h9M35 7h5" stroke="#92b69e" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+    <filter id="soften" x="-8%" y="-8%" width="116%" height="116%">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+  </defs>
+
+  <rect width="1672" height="941" fill="url(#sky)"/>
+  <rect width="1672" height="941" fill="url(#paperGrain)" opacity="0.58"/>
+
+  <path d="M0 384c132-91 252-143 373-128 93 12 148 69 230 66 94-4 147-86 246-94 123-10 235 97 340 78 92-17 152-89 265-80 86 7 152 54 218 101v614H0z" fill="#0b1012" opacity="0.68"/>
+  <path d="M0 438c91-50 193-67 306-50 116 18 181 74 286 62 102-12 170-88 277-94 127-8 225 73 342 67 126-7 222-85 461 34v484H0z" fill="#14201c" opacity="0.78"/>
+
+  <g opacity="0.74" filter="url(#soften)">
+    <path d="M-90 445c235-50 415-34 642 12 151 31 304 38 456 4 226-50 454-49 754 20v82c-291-57-527-52-750-8-166 33-326 24-488-8-224-44-403-55-614-14z" fill="#d0d6c7" opacity="0.09"/>
+    <path d="M-140 332c258-36 471-28 664 19 144 35 266 34 404 4 200-44 431-39 884 46v52c-395-71-635-77-857-31-154 32-283 26-432-9-190-45-393-52-663-16z" fill="#9db8aa" opacity="0.08"/>
+  </g>
+
+  <g opacity="0.38">
+    <path d="M76 208c-12 175-15 351-8 529" stroke="#0a0d0d" stroke-width="22" stroke-linecap="round"/>
+    <path d="M119 182c-19 185-22 379-11 582" stroke="#0a0d0d" stroke-width="18" stroke-linecap="round"/>
+    <path d="M1567 190c8 176 5 363-10 562" stroke="#0a0d0d" stroke-width="20" stroke-linecap="round"/>
+    <path d="M1517 238c15 153 12 329-7 531" stroke="#0a0d0d" stroke-width="16" stroke-linecap="round"/>
+    <path d="M89 280c61 19 104 35 139 67M101 392c73 6 129 22 179 53M1537 316c-74 12-125 34-181 78M1531 436c-85 0-144 17-208 54" stroke="#131b18" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <path d="M0 590c231-27 481-38 735-17 311 26 600 1 937-23v391H0z" fill="url(#ground)"/>
+  <path d="M188 941c108-119 191-196 277-245 106-61 237-81 392-77 178 4 318 32 421 93 76 44 139 112 207 229z" fill="#151515" opacity="0.58"/>
+
+  <g opacity="0.52">
+    <path d="M307 720c345-60 690-62 1035-4" stroke="#b89a5a" stroke-opacity="0.18" stroke-width="3"/>
+    <path d="M244 798c387-69 777-72 1170-4" stroke="#b89a5a" stroke-opacity="0.14" stroke-width="2"/>
+    <path d="M195 880c424-72 854-75 1287-6" stroke="#b89a5a" stroke-opacity="0.11" stroke-width="2"/>
+    <path d="M448 645 300 941M670 624 615 941M846 621v320M1026 628l75 313M1241 658l188 283" stroke="#d0aa62" stroke-opacity="0.09" stroke-width="3"/>
+  </g>
+
+  <g opacity="0.68">
+    <ellipse cx="839" cy="724" rx="376" ry="86" fill="none" stroke="url(#goldLine)" stroke-width="3"/>
+    <ellipse cx="839" cy="724" rx="253" ry="58" fill="none" stroke="url(#jadeLine)" stroke-width="2"/>
+    <path d="M514 722h650M840 646v152" stroke="#d0aa62" stroke-opacity="0.18" stroke-width="2"/>
+    <path d="M630 676c145 55 280 56 416 0M635 773c136-42 273-41 410 0" stroke="#8fc9aa" stroke-opacity="0.16" stroke-width="2" fill="none"/>
+  </g>
+
+  <g opacity="0.46">
+    <path d="M1032 760c80 8 159 15 239 23" stroke="#7d2e33" stroke-opacity="0.34" stroke-width="4" stroke-linecap="round"/>
+    <path d="M1095 787c47 2 91 8 132 17" stroke="#c45552" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"/>
+    <path d="M411 732c72-25 151-38 236-41" stroke="#d0aa62" stroke-opacity="0.19" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.28">
+    <path d="M115 742c180-56 325-68 444-38M1099 699c151-45 312-43 482 9" stroke="#8bb79f" stroke-width="18" stroke-linecap="round" filter="url(#soften)"/>
+    <path d="M12 875c237-32 456-34 657-5M1001 858c245-44 463-42 653 4" stroke="#d7cfb0" stroke-width="16" stroke-linecap="round" filter="url(#soften)" opacity="0.4"/>
+  </g>
+
+  <rect width="1672" height="941" fill="none" stroke="#d0aa62" stroke-opacity="0.08" stroke-width="8"/>
+</svg>

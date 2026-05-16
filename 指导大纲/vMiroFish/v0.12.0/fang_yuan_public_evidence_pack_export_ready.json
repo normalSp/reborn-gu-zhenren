@@ -1,0 +1,1042 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-16-fang-yuan-public-evidence-pack",
+  "targetPhase": "v0.12.0-b3 方源公开旁证询问",
+  "generatedAt": "2026-05-16T05:26:41.743886+00:00",
+  "suggestedOutputName": "fang_yuan_public_evidence_pack_export_ready.json",
+  "sourceDataset": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_100pkg_tight_v2_pressure_reviewable",
+  "reviewLedger": "uploads\\ri_corpus\\reviews\\living_world_item_reviews_tight_v2_pressure_reviewable_promoted.json",
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "quote-redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "hiddenFacts": "hidden_ref_only_until_RebornG_gate",
+    "deepSeekAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "fy_public_ch0010_night_exit_trace",
+      "category": "publicEvidenceCandidate",
+      "packageId": "ri_lw_ch_0010",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_6daf362d8ab4"
+      },
+      "summary": "方源早期出现离寨夜行和进入山路的可旁证痕迹。第三者最多把它当作出入记录或可疑行动线索，不能推导目的。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0010",
+        "field": "events",
+        "itemId": "evt_6daf362d8ab4",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.741887+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicEvidenceCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_929e88080440"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_929e88080440"
+        }
+      ],
+      "publicTrigger": "询问寨门、巡路者，或核对夜间出入痕迹。",
+      "publiclyObservable": false,
+      "playerVisibleResult": "玩家最多获得夜间外出可能和大致方向线索，不获得动机、目的地结论或隐藏因果。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": [
+        "记录出入异常",
+        "提高路口警惕"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0012_inn_lodging_shift",
+      "category": "publicEvidenceCandidate",
+      "packageId": "ri_lw_ch_0012",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_4ef595f8c16f"
+      },
+      "summary": "方源从原住处转到客栈暂居，会留下客栈、住处和日常出入层面的公开痕迹。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0012",
+        "field": "events",
+        "itemId": "evt_4ef595f8c16f",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicEvidenceCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_f5fddfc895bf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0048",
+          "startOffset": 31911,
+          "endOffset": 31929,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_f5fddfc895bf"
+        }
+      ],
+      "publicTrigger": "询问客栈、原住处附近的人，或核对住宿变化。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可以确认住宿变化和客栈出入记录，但不能据此确认方源的真实计划。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": [
+        "客栈伙计回忆住宿",
+        "亲族关系压力上升"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0018_family_inn_question",
+      "category": "npcObservationCandidate",
+      "packageId": "ri_lw_ch_0018",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_a34ee5c7f3a0"
+      },
+      "summary": "方正在客栈饭堂公开质询方源为何不回原住处，形成可由亲族、客栈人员或旁观者交叉询问的公开旁证。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0018",
+        "field": "events",
+        "itemId": "evt_a34ee5c7f3a0",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcObservationCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_03c7401103c1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0018",
+          "paragraphId": "ch_0018_p0084",
+          "startOffset": 51311,
+          "endOffset": 51327,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_03c7401103c1"
+        }
+      ],
+      "publicTrigger": "询问方正、客栈饭堂旁观者，或追问兄弟二人的住处变化。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可得知亲族曾对住处异常提出疑问；结果只形成关系压力，不揭示方源真实原因。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": [
+        "方正困惑或不满",
+        "客栈人员谨慎旁证",
+        "亲族关系紧张"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0022_clan_school_ranking_board",
+      "category": "publicFactCandidate",
+      "packageId": "ri_lw_ch_0022",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_be84c78c281d"
+      },
+      "summary": "族学初期考核榜单把方源列为第一，形成学堂、同窗和家老都可公开核验的表现记录。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0022",
+        "field": "events",
+        "itemId": "evt_be84c78c281d",
+        "status": "export_ready",
+        "classification": "public-fact",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicFactCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_67bddc27e620"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0022",
+          "paragraphId": "ch_0022_p0040",
+          "startOffset": 62618,
+          "endOffset": 62657,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_67bddc27e620"
+        }
+      ],
+      "publicTrigger": "查看族学公告、询问学员或学堂执事。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可确认方源在该次族学考核中有异常亮眼的公开表现，但不能得到其内部原因。",
+      "hiddenBoundary": "private_causality_not_observable",
+      "likelyReactions": [
+        "同窗震惊",
+        "学堂记录",
+        "家老重新评估"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0024_inn_supply_trace",
+      "category": "publicEvidenceCandidate",
+      "packageId": "ri_lw_ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_b8838e3ed8ea"
+      },
+      "summary": "方源在客栈集中购买酒水并安排送达住处或学堂相关地点，会留下店铺、送货和库存窗口的公开痕迹。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0024",
+        "field": "events",
+        "itemId": "evt_b8838e3ed8ea",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicEvidenceCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3209eabab218"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_3209eabab218"
+        }
+      ],
+      "publicTrigger": "询问客栈伙计、送货人，或核对短期补给记录。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可确认消费和送货痕迹；用途、准备目标和后续因果不能由公开旁证推出。",
+      "hiddenBoundary": "resource_use_purpose_hidden_ref_only",
+      "likelyReactions": [
+        "伙计回忆订单",
+        "店铺关注库存",
+        "旁观者产生误读"
+      ],
+      "forbiddenRevealReason": "private_resource_plan"
+    },
+    {
+      "id": "fy_hidden_boundary_ch0024_supply_purpose",
+      "category": "hiddenBoundaryRef",
+      "packageId": "ri_lw_ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_b8838e3ed8ea"
+      },
+      "summary": "补给购买的公开表象可以进入旁证池，但购买用途、资源安排和真实目的必须留在 hidden boundary。",
+      "visibility": "hidden",
+      "playerVisibility": "hidden",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0024",
+        "field": "events",
+        "itemId": "evt_b8838e3ed8ea",
+        "status": "export_ready",
+        "classification": "hidden-boundary",
+        "notes": [
+          "hidden review note withheld for RebornG gate"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "hiddenBoundaryRef",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3209eabab218"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_3209eabab218"
+        }
+      ],
+      "publicTrigger": "玩家追问方源购买酒水的用途、准备目标或是否关联后续行动。",
+      "publiclyObservable": false,
+      "playerVisibleResult": "只能得到消费痕迹与可能的误读，不能得到用途结论。",
+      "hiddenBoundary": "resource_use_purpose_hidden_ref_only",
+      "likelyReactions": [
+        "店铺谨慎",
+        "同窗猜测",
+        "不会给出真实用途"
+      ],
+      "forbiddenRevealReason": "private_resource_plan",
+      "hiddenFactId": "",
+      "hiddenRefOnly": true,
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "whoKnows": [],
+      "whoDoesNotKnow": []
+    },
+    {
+      "id": "fy_public_ch0028_school_gate_conflict",
+      "category": "npcObservationCandidate",
+      "packageId": "ri_lw_ch_0028",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_ce7ac9db5658"
+      },
+      "summary": "方源在族学门口的公开冲突被学堂家老观察并记录，适合作为学堂对方源公开表现的旁证。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0028",
+        "field": "events",
+        "itemId": "evt_ce7ac9db5658",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "npcObservationCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3300ddbb6b7a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0028",
+          "paragraphId": "ch_0028_p0063",
+          "startOffset": 81521,
+          "endOffset": 81554,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_3300ddbb6b7a"
+        }
+      ],
+      "publicTrigger": "询问同窗、学堂执事，或调查族学门口冲突记录。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可得知方源公开冲突进入学堂视野；家老内部评价和后续判断不可见。",
+      "hiddenBoundary": "elder_internal_evaluation_not_observable",
+      "likelyReactions": [
+        "学堂观察",
+        "同窗畏惧或不满",
+        "延后干预"
+      ],
+      "forbiddenRevealReason": "npc_internal_judgment"
+    },
+    {
+      "id": "fy_public_ch0031_repeat_school_gate_conflict",
+      "category": "publicEvidenceCandidate",
+      "packageId": "ri_lw_ch_0031",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_a4b83fa7d5da"
+      },
+      "summary": "方源多次在族学门口制造公开冲突，且多名同窗可作为旁证来源。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0031",
+        "field": "events",
+        "itemId": "evt_a4b83fa7d5da",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicEvidenceCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_5c845e8d9a5f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0048",
+          "startOffset": 90472,
+          "endOffset": 90533,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_5c845e8d9a5f"
+        }
+      ],
+      "publicTrigger": "询问古月漠北、古月赤城、普通学员或拳脚教头。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可确认重复冲突和同窗反应；不能得到方源真实策略或长期目的。",
+      "hiddenBoundary": "private_strategy_not_observable",
+      "likelyReactions": [
+        "同窗敌意",
+        "学堂继续记录",
+        "家族亲属压力上升"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0056_merchant_inquiry_record",
+      "category": "inquiryReactionCandidate",
+      "packageId": "ri_lw_ch_0056",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_2d52d554d2c1"
+      },
+      "summary": "商队一方曾把方源牵入公开问询，公开层面只证明问询发生、有人提出指认和家族高层介入。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0056",
+        "field": "events",
+        "itemId": "evt_2d52d554d2c1",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "inquiryReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_437320bbd311"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0056",
+          "paragraphId": "ch_0056_p0033",
+          "startOffset": 169486,
+          "endOffset": 169547,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_437320bbd311"
+        }
+      ],
+      "publicTrigger": "询问商队成员、议事堂相关人员，或核对当堂对质记录。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可得到问询和指认曾发生的旁证；不能得到真相结论、隐藏因果或私下布局。",
+      "hiddenBoundary": "case_truth_and_private_causality_not_observable",
+      "likelyReactions": [
+        "商队持续怀疑",
+        "家族高层谨慎",
+        "被问询者警惕"
+      ],
+      "forbiddenRevealReason": "private_causality"
+    },
+    {
+      "id": "fy_public_ch0058_inquiry_test_procedure",
+      "category": "inquiryReactionCandidate",
+      "packageId": "ri_lw_ch_0058",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_5c6aa920eea6"
+      },
+      "summary": "商队问询中出现过公开检验程序的提议。对第三者玩家来说，这只能作为程序记录，不是隐藏真相授权。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0058",
+        "field": "events",
+        "itemId": "evt_5c6aa920eea6",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.742888+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "inquiryReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_1ff4e841daf6"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0058",
+          "paragraphId": "ch_0058_p0029",
+          "startOffset": 176289,
+          "endOffset": 176364,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_1ff4e841daf6"
+        }
+      ],
+      "publicTrigger": "追问商队调查流程、当堂检验过程或见证者反应。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可知道曾有检验程序被提起；不能得到检验背后的隐藏机制、真实因果或最终真相。",
+      "hiddenBoundary": "test_mechanism_and_case_truth_hidden_ref_only",
+      "likelyReactions": [
+        "商队要求流程化验证",
+        "家族人员保持警惕",
+        "旁观者形成有限印象"
+      ],
+      "forbiddenRevealReason": "hidden_mechanism_and_private_causality"
+    },
+    {
+      "id": "fy_public_ch0058_continued_investigation_pressure",
+      "category": "inquiryReactionCandidate",
+      "packageId": "ri_lw_ch_0058",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_08c60926446d"
+      },
+      "summary": "商队一方在问询后仍保留继续调查意向，可作为玩家追问方源相关事件时的外部压力旁证。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0058",
+        "field": "events",
+        "itemId": "evt_08c60926446d",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.743886+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "inquiryReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_545734bdc7dc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0058",
+          "paragraphId": "ch_0058_p0076",
+          "startOffset": 178145,
+          "endOffset": 178147,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_545734bdc7dc"
+        }
+      ],
+      "publicTrigger": "询问商队后续态度、调查是否结束，或查问外部追责线索。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家只得到外部压力仍可能存在的候选线索，不获得调查成功、追踪成功或正史改变结论。",
+      "hiddenBoundary": "case_truth_not_observable",
+      "likelyReactions": [
+        "商队保持追查",
+        "家族减少公开说明",
+        "相关人员警惕追问"
+      ],
+      "forbiddenRevealReason": "case_truth_and_future_result"
+    },
+    {
+      "id": "fy_hidden_boundary_ch0087_arena_internal_check",
+      "category": "hiddenBoundaryRef",
+      "packageId": "ri_lw_ch_0087",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_741ef43fabf9"
+      },
+      "summary": "擂台赛后治疗和现场处置可被旁证，但任何内部检查细节、内部判断和隐蔽结论都必须停在 hidden boundary。",
+      "visibility": "hidden",
+      "playerVisibility": "hidden",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0087",
+        "field": "events",
+        "itemId": "evt_741ef43fabf9",
+        "status": "export_ready",
+        "classification": "hidden-boundary",
+        "notes": [
+          "hidden review note withheld for RebornG gate"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.743886+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "hiddenBoundaryRef",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_6bf4fd17114d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0025",
+          "startOffset": 270525,
+          "endOffset": 270568,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_6bf4fd17114d"
+        }
+      ],
+      "publicTrigger": "玩家询问擂台赛后方源是否被检查、治疗或评估。",
+      "publiclyObservable": false,
+      "playerVisibleResult": "只能知道现场有处置或关切，不能知道内部检查细节或家老判断。",
+      "hiddenBoundary": "internal_check_result_hidden_ref_only",
+      "likelyReactions": [
+        "家老不公开解释",
+        "学员只能猜测",
+        "继续观察方源"
+      ],
+      "forbiddenRevealReason": "internal_check_and_npc_private_judgment",
+      "hiddenFactId": "",
+      "hiddenRefOnly": true,
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "whoKnows": [],
+      "whoDoesNotKnow": []
+    },
+    {
+      "id": "fy_public_ch0092_task_absence_trace",
+      "category": "publicEvidenceCandidate",
+      "packageId": "ri_lw_ch_0092",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_f7fc96fa1c1a"
+      },
+      "summary": "角三小组集合时方源未出现，形成小组任务流程、集合地点和组内寻找记录层面的公开旁证。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "high",
+      "review": {
+        "packageId": "ri_lw_ch_0092",
+        "field": "events",
+        "itemId": "evt_f7fc96fa1c1a",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.743886+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicEvidenceCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_590d3649e24b"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0012",
+          "startOffset": 285618,
+          "endOffset": 285643,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_590d3649e24b"
+        }
+      ],
+      "publicTrigger": "询问角三小组成员、北门附近人员，或核对任务集合缺席记录。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可确认缺席和寻找行动；不能据此确认方源所在地点、状态或真实目的。",
+      "hiddenBoundary": "whereabouts_and_private_purpose_not_observable",
+      "likelyReactions": [
+        "小组寻找",
+        "组长施压",
+        "任务信誉受损"
+      ],
+      "forbiddenRevealReason": "private_whereabouts_and_causality"
+    },
+    {
+      "id": "fy_public_ch0093_landlord_whereabouts_statement",
+      "category": "inquiryReactionCandidate",
+      "packageId": "ri_lw_ch_0093",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_ba43d00796b0"
+      },
+      "summary": "房东可提供方源短期未归与公开去向说法，适合作为玩家侧面询问方源行踪时的旁证来源。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0093",
+        "field": "events",
+        "itemId": "evt_ba43d00796b0",
+        "status": "export_ready",
+        "classification": "public-evidence",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.743886+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "inquiryReactionCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_828c2203b1dc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0093",
+          "paragraphId": "ch_0093_p0021",
+          "startOffset": 289764,
+          "endOffset": 289766,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_828c2203b1dc"
+        }
+      ],
+      "publicTrigger": "询问房东、邻近住户或追查方源住处出入。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可得到房东口供和公开去向说法；线索真伪、路线结果和真实目的必须保持不确定。",
+      "hiddenBoundary": "statement_truth_and_private_route_plan_not_observable",
+      "likelyReactions": [
+        "房东提供有限口供",
+        "小组扩大寻找",
+        "追问者暴露关注"
+      ],
+      "forbiddenRevealReason": "private_route_plan"
+    },
+    {
+      "id": "fy_public_ch0099_internal_affairs_trace",
+      "category": "publicFactCandidate",
+      "packageId": "ri_lw_ch_0099",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_7cd3f132eae7"
+      },
+      "summary": "方源通过内务堂申请家产相关任务会留下正式流程记录，适合作为玩家公开询问家产线时的旁证。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0099",
+        "field": "events",
+        "itemId": "evt_7cd3f132eae7",
+        "status": "export_ready",
+        "classification": "public-fact",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-16T05:26:41.743886+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicFactCandidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3ccaa1803bf0"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0099",
+          "paragraphId": "ch_0099_p0002",
+          "startOffset": 309520,
+          "endOffset": 309576,
+          "summary": "hidden source pointer summary withheld for RebornG gate",
+          "sourcePointerId": "sp_3ccaa1803bf0"
+        }
+      ],
+      "publicTrigger": "询问内务堂流程、任务登记，或核对家产相关申请记录。",
+      "publiclyObservable": true,
+      "playerVisibleResult": "玩家可确认存在正式申请和等待流程；不能得到幕后安排、任务难度操纵或最终结果。",
+      "hiddenBoundary": "backroom_arrangement_hidden_ref_only",
+      "likelyReactions": [
+        "内务堂按流程回应",
+        "亲族关系压力上升",
+        "相关人员警惕打听"
+      ],
+      "forbiddenRevealReason": "backroom_arrangement_and_private_causality"
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0018",
+      "paragraphId": "ch_0018_p0084",
+      "startOffset": 51311,
+      "endOffset": 51327,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_03c7401103c1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0058",
+      "paragraphId": "ch_0058_p0029",
+      "startOffset": 176289,
+      "endOffset": 176364,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_1ff4e841daf6"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0065",
+      "startOffset": 70182,
+      "endOffset": 70222,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_3209eabab218"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0028",
+      "paragraphId": "ch_0028_p0063",
+      "startOffset": 81521,
+      "endOffset": 81554,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_3300ddbb6b7a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0099",
+      "paragraphId": "ch_0099_p0002",
+      "startOffset": 309520,
+      "endOffset": 309576,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_3ccaa1803bf0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0056",
+      "paragraphId": "ch_0056_p0033",
+      "startOffset": 169486,
+      "endOffset": 169547,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_437320bbd311"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0058",
+      "paragraphId": "ch_0058_p0076",
+      "startOffset": 178145,
+      "endOffset": 178147,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_545734bdc7dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0012",
+      "startOffset": 285618,
+      "endOffset": 285643,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_590d3649e24b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0048",
+      "startOffset": 90472,
+      "endOffset": 90533,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_5c845e8d9a5f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0022",
+      "paragraphId": "ch_0022_p0040",
+      "startOffset": 62618,
+      "endOffset": 62657,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_67bddc27e620"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0087",
+      "paragraphId": "ch_0087_p0025",
+      "startOffset": 270525,
+      "endOffset": 270568,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_6bf4fd17114d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0093",
+      "paragraphId": "ch_0093_p0021",
+      "startOffset": 289764,
+      "endOffset": 289766,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_828c2203b1dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0069",
+      "startOffset": 26888,
+      "endOffset": 26918,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_929e88080440"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0012",
+      "paragraphId": "ch_0012_p0048",
+      "startOffset": 31911,
+      "endOffset": 31929,
+      "summary": "hidden source pointer summary withheld for RebornG gate",
+      "sourcePointerId": "sp_f5fddfc895bf"
+    }
+  ],
+  "skipped": [],
+  "summary": {
+    "totalItems": 15,
+    "byCategory": {
+      "hiddenBoundaryRef": 2,
+      "inquiryReactionCandidate": 4,
+      "npcObservationCandidate": 2,
+      "publicEvidenceCandidate": 5,
+      "publicFactCandidate": 2
+    },
+    "byReviewStatus": {
+      "export_ready": 15
+    },
+    "sourcePointers": 14,
+    "quoteLikeKeys": 0,
+    "coverage": {
+      "publicFactCandidates": 2,
+      "publicEvidenceCandidates": 5,
+      "npcObservationCandidates": 2,
+      "inquiryReactionCandidates": 4,
+      "hiddenBoundaryRefs": 2,
+      "hasSchoolEvidence": true,
+      "hasMerchantInquiry": true,
+      "hasTaskAbsence": true
+    }
+  }
+}

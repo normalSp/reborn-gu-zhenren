@@ -165,7 +165,9 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
     phase === 'FETCHING' ||
     phase === 'BUILDING_CONTEXT' ||
     phase === 'PARSING' ||
+    phase === 'VALIDATING_L4' ||
     phase === 'VALIDATING_L3' ||
+    phase === 'VALIDATING_L3_RETRY' ||
     phase === 'VALIDATING_FORMAT';
 
   const isError = phase === 'ERROR' || pipelineState === 'ERROR';
@@ -195,6 +197,7 @@ export function ChoicePanel({ onSelect, onRetry, pipelineState }: ChoicePanelPro
       phase === 'PARSING' ? '解读天机...' :
       phase === 'VALIDATING_L4' ? '金丝雀检校...' :
       phase === 'VALIDATING_L3' ? '天道审核中...' :
+      phase === 'VALIDATING_L3_RETRY' ? '天道复核中...' :
       phase === 'VALIDATING_FORMAT' ? '命数交织...' :
       '命运正在汇聚...';
 

@@ -101,7 +101,8 @@ export function MerchantPanel() {
   }, [apertureInventoryGu, inventory, isImmortal, materialState]);
   const materialItems = (materialShelf?.items || []) as MaterialShopEntry[];
   const sellableMaterialEntries = useMemo(
-    () => Object.entries(materialBag || {}).filter(([, qty]) => Number(qty || 0) > 0),
+    () => (Object.entries(materialBag || {}) as [string, number][])
+      .filter(([, qty]) => Number(qty || 0) > 0),
     [materialBag],
   );
   const handleBuyMaterial = (item: MaterialShopEntry) => {

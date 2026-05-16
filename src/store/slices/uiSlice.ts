@@ -1,9 +1,28 @@
 // ─── 游戏屏幕状态 ───
 // title → character_create → game_play → game_over
-export type ScreenState = 'title' | 'mode_select' | 'origin_select' | 'character_create' | 'tutorial' | 'game_play' | 'game_over';
+export type ScreenState =
+  | 'title'
+  | 'mode_select'
+  | 'origin_select'
+  | 'timeline_select'
+  | 'timeline_config'
+  | 'character_create'
+  | 'tutorial'
+  | 'game_play'
+  | 'game_over';
 export type GameMode = 'canon' | 'if';
 
-export type PipelinePhase = 'IDLE' | 'BUILDING_CONTEXT' | 'FETCHING' | 'PARSING' | 'VALIDATING_L3' | 'VALIDATING_FORMAT' | 'RESOLVED' | 'ERROR';
+export type PipelinePhase =
+  | 'IDLE'
+  | 'BUILDING_CONTEXT'
+  | 'FETCHING'
+  | 'PARSING'
+  | 'VALIDATING_L4'
+  | 'VALIDATING_L3'
+  | 'VALIDATING_L3_RETRY'
+  | 'VALIDATING_FORMAT'
+  | 'RESOLVED'
+  | 'ERROR';
 
 interface UiSlice {
   activeTab: string;

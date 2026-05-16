@@ -7,8 +7,9 @@ import { useStore } from '../../store';
 import { refineGu, ascendGu, disassembleGu, ascendImmortalGu, previewAscendGu, previewDisassembleGu } from '../../engine/refine-engine';
 import { isRecipeUnlocked, synthesizeRecipe, attemptCompleteFragment, canAttemptFragment, loadAllFragments } from '../../engine/recipe-discovery';
 import { findMaterialSources, type MaterialSourceTag } from '../../engine/material-source-audit';
+import { getMaterialTotalQuantity } from '../../engine/economy-service';
 import { applyRefineMaterialCostModifiers, applyRefineSuccessModifiers, formatModifierBreakdown } from '../../engine/modifier-engine';
-import type { RefineInput, RefineResult } from '../../engine/refine-engine';
+import type { AscendResult, DisassembleResult, RefineInput, RefineResult } from '../../engine/refine-engine';
 import type { FragmentRecipe } from '../../engine/recipe-discovery';
 import guDbRaw from '../../canon/gu-database.json';
 import fragmentRecipesRaw from '../../canon/fragment-recipes.json';
@@ -21,6 +22,7 @@ const EMPTY_OBJ = Object.freeze({});
 const EMPTY_ARR: readonly never[] = Object.freeze([]);
 
 type OpMode = 'refine' | 'ascend' | 'disassemble';
+type RefinePanelResult = RefineResult | AscendResult | DisassembleResult;
 
 interface RecipeEntry {
   guName: string;
@@ -54,6 +56,13 @@ interface RefineSourceRow {
   enough: boolean;
 }
 
+interface FragmentMaterialRow {
+  materialName: string;
+  owned: number;
+  sourceLabels: string[];
+  enough: boolean;
+}
+
 export function RefinePanel() {
   const inventory = useStore(s => s.inventory);
   const materialBag = useStore(s => (s as any).materialBag || EMPTY_OBJ) as Record<string, number>;
@@ -70,7 +79,7 @@ export function RefinePanel() {
   const [mode, setMode] = useState<OpMode>('refine');
   const [selectedRecipe, setSelectedRecipe] = useState<string | null>(null);
   const [selectedGuIds, setSelectedGuIds] = useState<string[]>([]);
-  const [result, setResult] = useState<RefineResult | null>(null);
+  const [result, setResult] = useState<RefinePanelResult | null>(null);
   const [showFragmentPanel, setShowFragmentPanel] = useState(false);
   const [showImmortalAscend, setShowImmortalAscend] = useState(false);
   const [recipePathFilter, setRecipePathFilter] = useState<string>('all');
@@ -118,6 +127,14 @@ export function RefinePanel() {
     }
     return result;
   }, [materialBag, apertureMaterials, apertureImmortalMaterials]);
+  const materialState = useMemo(() => ({
+    materialBag,
+    apertureInventory: {
+      materials: apertureMaterials,
+      immortalMaterials: apertureImmortalMaterials,
+    },
+    profile: { realm: { grand: realm } },
+  }), [materialBag, apertureMaterials, apertureImmortalMaterials, realm]);
 
   const refineSourceRows = useMemo((): RefineSourceRow[] => {
     if (!selectedEntry?.refineCost) return [];
@@ -261,6 +278,31 @@ export function RefinePanel() {
   const availableFragments = useMemo(() => {
     return FRAGMENTS.filter((f: any) => discoveredFragments.includes(f.id));
   }, [discoveredFragments]);
+  const qingmaoMoonlightFragment = useMemo(
+    () => allFragmentRecipes.find(fragment => fragment.id === 'frag_moonlight_advanced') || null,
+    [allFragmentRecipes],
+  );
+  const qingmaoMoonlightFragmentCopies = useMemo(
+    () => discoveredFragments.filter(id => id === 'frag_moonlight_advanced').length,
+    [discoveredFragments],
+  );
+  const qingmaoMoonlightRows = useMemo((): FragmentMaterialRow[] => {
+    if (!qingmaoMoonlightFragment) return [];
+    return qingmaoMoonlightFragment.requiredMaterials.map(materialName => {
+      const sources = findMaterialSources(materialName);
+      const sourceLabels = Array.from(new Set(sources.map(source => SOURCE_LABELS[source.tag] || source.tag)));
+      const owned = getMaterialTotalQuantity(materialState, materialName);
+      return {
+        materialName,
+        owned,
+        sourceLabels,
+        enough: owned > 0,
+      };
+    });
+  }, [qingmaoMoonlightFragment, materialState]);
+  const qingmaoMoonlightCanAttempt = Boolean(qingmaoMoonlightFragment)
+    && qingmaoMoonlightFragmentCopies > 0
+    && canAttemptFragment(qingmaoMoonlightFragment as FragmentRecipe);
   const discoveredTargets = useMemo(
     () => new Set(availableFragments.map((f: any) => f.targetGu).filter(Boolean)),
     [availableFragments],
@@ -322,6 +364,7 @@ export function RefinePanel() {
             </button>
           )}
           <button onClick={() => setShowFragmentPanel(!showFragmentPanel)}
+            data-testid="toggle-fragment-panel"
             className={`text-[10px] font-button px-2 py-0.5 rounded-sm transition-micro ml-auto ${showFragmentPanel ? 'bg-rg-gold/20 text-rg-gold border border-rg-gold/30' : 'text-rg-paper-200/40 border border-rg-ink-700/30'}`}>
             残方({availableFragments.length})
           </button>
@@ -332,6 +375,42 @@ export function RefinePanel() {
       {showFragmentPanel && (
         <div className="p-3 border-b border-rg-ink-700/30 bg-rg-ink-800/50 max-h-52 overflow-y-auto">
           <p className="text-[10px] text-rg-paper-200/30 mb-2">已发现残方 — 补全或合成解锁蛊方</p>
+          {qingmaoMoonlightFragment && (
+            <div
+              className="mb-2 rounded-sm border border-rg-gold/20 bg-rg-gold/10 p-2 text-[10px] text-rg-paper-200/55"
+              data-testid="qingmao-fragment-preview-frag_moonlight_advanced"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold text-rg-gold">青茅残方线索：{qingmaoMoonlightFragment.name}</span>
+                <span className="text-rg-paper-200/35">{qingmaoMoonlightFragmentCopies}份/{qingmaoMoonlightFragment.fragmentsRequired || 2}份</span>
+              </div>
+              <div className="mt-1 text-rg-paper-200/42">
+                目标：{qingmaoMoonlightFragment.targetGu}升至{qingmaoMoonlightFragment.targetTier}转；完整蛊方只能由本地引擎解锁。
+              </div>
+              <div className="mt-1 grid grid-cols-1 gap-1 sm:grid-cols-2">
+                {qingmaoMoonlightRows.map(row => (
+                  <div key={row.materialName} className={row.enough ? 'text-rg-jade-300/70' : 'text-rg-gold/75'}>
+                    <div className="flex justify-between gap-2">
+                      <span>{row.materialName}</span>
+                      <span>库存 {row.owned}</span>
+                    </div>
+                    <div className="truncate text-rg-paper-200/30">
+                      {row.sourceLabels.length > 0 ? `来源：${row.sourceLabels.slice(0, 2).join(' / ')}` : '来源：待登记'}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-1 text-rg-paper-200/35">
+                尝试补全会消耗最难获取的一份实验蛊材；失败只给经验与损耗，不由 DeepSeek 追加奖励。
+              </div>
+              {qingmaoMoonlightFragmentCopies <= 0 && (
+                <div className="mt-1 text-rg-blood-400/70">尚未发现该残方，当前只显示门槛，不开放尝试。</div>
+              )}
+              {qingmaoMoonlightFragmentCopies > 0 && !qingmaoMoonlightCanAttempt && (
+                <div className="mt-1 text-rg-gold/70">材料不足，暂不能尝试补全。</div>
+              )}
+            </div>
+          )}
           {availableFragments.length === 0 ? (
             <p className="text-xs text-rg-paper-200/20 italic">尚未发现任何残方——探索、战斗、商会获取</p>
           ) : (
@@ -481,8 +560,8 @@ export function RefinePanel() {
                 <div>
                   <span className="text-xs text-rg-paper-200/40">所需材料</span>
                   <div className="text-[10px] text-rg-paper-200/60 mt-0.5">
-                    {Object.entries(selectedEntry.refineCost.generic || {} as Record<string,number>).map(([k, v]) => <span key={k} className="mr-2">{k}×{v}</span>)}
-                    {Object.entries(selectedEntry.refineCost.specific || {} as Record<string,number>).map(([k, v]) => <span key={k} className="mr-2">{k}×{v}</span>)}
+                    {(Object.entries(selectedEntry.refineCost.generic || {}) as [string, number][]).map(([k, v]) => <span key={k} className="mr-2">{k}×{v}</span>)}
+                    {(Object.entries(selectedEntry.refineCost.specific || {}) as [string, number][]).map(([k, v]) => <span key={k} className="mr-2">{k}×{v}</span>)}
                     <span className="block mt-1">元石 {selectedEntry.refineCost.currency} | 耗时 {selectedEntry.refineCost.turns}回合</span>
                   </div>
                 </div>

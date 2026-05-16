@@ -1,0 +1,420 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-15T18:03:47.874625+00:00",
+  "sourceStatus": "approved",
+  "targetStatus": "export_ready",
+  "summary": {
+    "evaluated": 13,
+    "promotable": 9,
+    "blocked": 4,
+    "byField": {
+      "characterMotives": {
+        "evaluated": 4,
+        "promotable": 1,
+        "blocked": 3
+      },
+      "factionPressures": {
+        "evaluated": 9,
+        "promotable": 8,
+        "blocked": 1
+      }
+    }
+  },
+  "decisions": [
+    {
+      "packageId": "ri_lw_ch_0005",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "古月山寨内部派系竞争方向成立。"
+      ],
+      "itemPreview": {
+        "faction": "古月山寨",
+        "pressureAxis": "家族内部派系竞争"
+      },
+      "details": {
+        "sourcePointerCount": 3,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0005",
+          "pressureId": "pressure_1",
+          "faction": "古月山寨",
+          "status": "valid",
+          "flags": [
+            "collective_marker"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": ""
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0011",
+      "field": "factionPressures",
+      "itemId": "pressure_001",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "炼蛊考核竞争属于可见家族压力。"
+      ],
+      "itemPreview": {
+        "faction": "古月家族",
+        "pressureAxis": "炼蛊考核竞争"
+      },
+      "details": {
+        "sourcePointerCount": 2,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0011",
+          "pressureId": "pressure_001",
+          "faction": "古月家族",
+          "status": "valid",
+          "flags": [
+            "collective_marker"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": ""
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0014",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "currentStatus": "approved",
+      "targetStatus": "",
+      "decision": "block",
+      "classification": "hidden",
+      "reasons": [
+        "hidden_classification_requires_dependency_gate"
+      ],
+      "notes": [
+        "引诱酒虫寻找遗藏成立，但导入时需受遗藏隐藏事实门控制。"
+      ],
+      "itemPreview": {
+        "character": "方源",
+        "observedMotive": "在竹林倾倒青竹酒引诱酒虫",
+        "inferredMotive": "想通过酒虫找到花酒行者遗藏"
+      },
+      "details": {
+        "sourcePointerCount": 2
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0014",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "",
+      "decision": "block",
+      "classification": "hidden",
+      "reasons": [
+        "hidden_classification_requires_dependency_gate"
+      ],
+      "notes": [
+        "花酒遗藏相关族内压力可保留，但导入时应走隐藏/未来事实门。"
+      ],
+      "itemPreview": {
+        "faction": "古月家族",
+        "pressureAxis": "遗藏归属与传承利益"
+      },
+      "details": {
+        "sourcePointerCount": 3,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0014",
+          "pressureId": "pressure_1",
+          "faction": "古月家族",
+          "status": "valid",
+          "flags": [
+            "collective_marker"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": ""
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0016",
+      "field": "factionPressures",
+      "itemId": "pressure_001",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "家老们对族长被杀后的安全/复仇压力来源清楚。"
+      ],
+      "itemPreview": {
+        "faction": "古月族家老们",
+        "pressureAxis": "族长被杀后的复仇与安全威胁"
+      },
+      "details": {
+        "sourcePointerCount": 2,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0016",
+          "pressureId": "pressure_001",
+          "faction": "古月族家老们",
+          "status": "valid",
+          "flags": [
+            "collective_marker"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": ""
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0017",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "currentStatus": "approved",
+      "targetStatus": "",
+      "decision": "block",
+      "classification": "hidden",
+      "reasons": [
+        "hidden_classification_requires_dependency_gate"
+      ],
+      "notes": [
+        "独吞遗藏以获取资源的动机成立。"
+      ],
+      "itemPreview": {
+        "character": "方源",
+        "observedMotive": "独吞遗藏，不禀告家族",
+        "inferredMotive": "获取资源用于自身提升"
+      },
+      "details": {
+        "sourcePointerCount": 2
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0028",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "currentStatus": "approved",
+      "targetStatus": "",
+      "decision": "block",
+      "classification": "canon-soft",
+      "reasons": [
+        "review_note_requires_manual_followup"
+      ],
+      "notes": [
+        "堵门勒索同窗元石成立，但和 ch_0027 可合并为连续行为。"
+      ],
+      "itemPreview": {
+        "character": "方源",
+        "observedMotive": "堵门勒索同窗元石",
+        "inferredMotive": "获取修炼资源"
+      },
+      "details": {
+        "sourcePointerCount": 2
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0032",
+      "field": "characterMotives",
+      "itemId": "motive_001",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "古月漠北雪耻动机成立。"
+      ],
+      "itemPreview": {
+        "character": "古月漠北",
+        "observedMotive": "被方源打昏两次后苦练拳脚",
+        "inferredMotive": "想提升实力以雪前耻"
+      },
+      "details": {
+        "sourcePointerCount": 2
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0060",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "贾富商队是可接受的集体压力主体，复仇/调查方向来源支撑充分。"
+      ],
+      "itemPreview": {
+        "faction": "贾富商队",
+        "pressureAxis": "兄弟被杀复仇压力"
+      },
+      "details": {
+        "sourcePointerCount": 4,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0060",
+          "pressureId": "pressure_1",
+          "faction": "贾富商队",
+          "status": "needs_review",
+          "flags": [
+            "person_name_embedded",
+            "leader_named_collective"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": "贾富"
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0089",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "角三小组作为集体主体成立，资源分配与组内压力可保留。"
+      ],
+      "itemPreview": {
+        "faction": "古月角三小组",
+        "pressureAxis": "资源分配矛盾"
+      },
+      "details": {
+        "sourcePointerCount": 4,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0089",
+          "pressureId": "pressure_1",
+          "faction": "古月角三小组",
+          "status": "needs_review",
+          "flags": [
+            "person_name_embedded",
+            "leader_named_collective"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": "古月角三"
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0090",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "角三小组继续施压请客，主体和事件都清楚。"
+      ],
+      "itemPreview": {
+        "faction": "古月角三小组",
+        "pressureAxis": "资源索取压力"
+      },
+      "details": {
+        "sourcePointerCount": 5,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0090",
+          "pressureId": "pressure_1",
+          "faction": "古月角三小组",
+          "status": "needs_review",
+          "flags": [
+            "person_name_embedded",
+            "leader_named_collective"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": "古月角三"
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0092",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "组内权威和任务执行压力来源清楚。"
+      ],
+      "itemPreview": {
+        "faction": "古月角三小组",
+        "pressureAxis": "组内权威与任务执行"
+      },
+      "details": {
+        "sourcePointerCount": 6,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0092",
+          "pressureId": "pressure_1",
+          "faction": "古月角三小组",
+          "status": "needs_review",
+          "flags": [
+            "person_name_embedded",
+            "leader_named_collective"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": "古月角三"
+        }
+      }
+    },
+    {
+      "packageId": "ri_lw_ch_0096",
+      "field": "factionPressures",
+      "itemId": "pressure_1",
+      "currentStatus": "approved",
+      "targetStatus": "export_ready",
+      "decision": "promote",
+      "classification": "canon-soft",
+      "reasons": [
+        "passes_local_promotion_lint"
+      ],
+      "notes": [
+        "病蛇小组作为主体成立，内部信任危机可保留。"
+      ],
+      "itemPreview": {
+        "faction": "病蛇小组",
+        "pressureAxis": "内部信任危机"
+      },
+      "details": {
+        "sourcePointerCount": 3,
+        "subjectValidation": {
+          "packageId": "ri_lw_ch_0096",
+          "pressureId": "pressure_1",
+          "faction": "病蛇小组",
+          "status": "needs_review",
+          "flags": [
+            "person_name_embedded",
+            "leader_named_collective"
+          ],
+          "matchedCollective": "",
+          "matchedPerson": "病蛇"
+        }
+      }
+    }
+  ],
+  "appliedReviewsPath": "uploads\\ri_corpus\\reviews\\living_world_item_reviews_tight_v2_pressure_reviewable_promoted.json"
+}

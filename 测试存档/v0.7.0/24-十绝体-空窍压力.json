@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "炎煌雷泽体专项走查",
@@ -7,7 +7,7 @@
     "turn": 80,
     "gameMode": "canon",
     "description": "v0.7.0-c 专项手测：空窍压力可视化（中文命名副本：24-十绝体-空窍压力）｜自然十绝体：炎煌雷泽体",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -527,6 +527,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

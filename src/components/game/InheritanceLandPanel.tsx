@@ -51,7 +51,7 @@ function buildCandidateFromSite(site: InheritanceSiteSpec) {
     title: site.title,
     summary: `${kindLabel}候选：${site.summary}`,
     anchorId: site.anchorId,
-    risk: site.risk,
+    risk: site.kind === 'grotto_heaven_rumor' ? 'high' : site.kind === 'blessed_land_claim' ? 'medium' : 'low',
     source: 'engine' as const,
     rewardPreview: site.rewardPreview,
     landSpiritDemand: site.landClaimTerms?.map(term => term.description).join('；'),
@@ -168,7 +168,7 @@ export function InheritanceLandPanel() {
                   </div>
                   <div className="mt-2 grid gap-2 text-[11px] text-rg-paper-200/60 sm:grid-cols-2">
                     <p>奖励预览：{rewardText(candidate, site)}</p>
-                    <p>入口条件：境界 {site?.requiredRealmGrand || 1}+，AP {site?.entryCostAp || 0}</p>
+                    <p>入口条件：境界 {site?.minRealmGrand || 1}+，AP {site?.entryCostAp || 0}</p>
                     <p>正史边界：{site?.anchorId || candidate.anchorId || '当前场景'}</p>
                     <p>风险：{candidate.risk} · {candidate.validationIssues?.[0] || '由本地引擎继续校验'}</p>
                   </div>

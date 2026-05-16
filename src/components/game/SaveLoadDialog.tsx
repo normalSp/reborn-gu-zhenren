@@ -3,39 +3,38 @@ import { useStore } from '../../store';
 import type { SaveFileFormat } from '../../store';
 import type { SaveMeta } from '../../types';
 import { SAVE_FORMAT_VERSION } from '../../store/initialState';
+import { saveSlotKey, saveSlotMetaKey } from '../../store/storageKeys';
 import { XIcon } from '../../icons/XIcon';
 import { audioManager } from '../../utils/audio';
 
 const SLOT_COUNT = 3;
-const SAVE_PREFIX = 'gu-zhenren-slot-';
-const META_PREFIX = 'gu-zhenren-meta-';
 
 // ─── 槽位读写（localStorage）───────────────
 function readMeta(slot: number): SaveMeta | null {
   try {
-    const raw = localStorage.getItem(META_PREFIX + slot);
+    const raw = localStorage.getItem(saveSlotMetaKey(slot));
     if (!raw) return null;
     return JSON.parse(raw);
   } catch { return null; }
 }
 
 function writeMeta(slot: number, meta: SaveMeta) {
-  localStorage.setItem(META_PREFIX + slot, JSON.stringify(meta));
+  localStorage.setItem(saveSlotMetaKey(slot), JSON.stringify(meta));
 }
 
 function readSave(slot: number) {
-  const raw = localStorage.getItem(SAVE_PREFIX + slot);
+  const raw = localStorage.getItem(saveSlotKey(slot));
   if (!raw) return null;
   try { return JSON.parse(raw); } catch { return null; }
 }
 
 function writeSave(slot: number, data: any) {
-  localStorage.setItem(SAVE_PREFIX + slot, JSON.stringify(data));
+  localStorage.setItem(saveSlotKey(slot), JSON.stringify(data));
 }
 
 function deleteSave(slot: number) {
-  localStorage.removeItem(SAVE_PREFIX + slot);
-  localStorage.removeItem(META_PREFIX + slot);
+  localStorage.removeItem(saveSlotKey(slot));
+  localStorage.removeItem(saveSlotMetaKey(slot));
 }
 
 // ─── 时间格式化 ───

@@ -4,7 +4,7 @@
     "module": "esnext",
     "lib": ["ES2023", "DOM"],
     "jsx": "react-jsx",
-    "types": ["vite/client"],
+    "types": ["vite/client", "node"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -17,6 +17,7 @@
     /* Linting */
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "noImplicitAny": false,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },

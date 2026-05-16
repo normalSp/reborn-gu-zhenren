@@ -41,3 +41,13 @@ test-results/
 
 # CodeBuddy IDE internal data
 .codebuddy/
+
+# Codex local runtime data
+.codex/*
+!.codex/skills/
+!.codex/skills/**
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*

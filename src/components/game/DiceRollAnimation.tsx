@@ -1,18 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-
-export interface DiceRollPayload {
-  label: string;       // 检定名称，如"资质检定"
-  difficulty: number;   // 难度值 (1-20)
-  target: number;       // 目标值，需 ≥ 此数通过
-  onComplete?: (result: { roll: number; passed: boolean }) => void;
-}
-
-// ─── 暴露给外部的触发函数 ───
-let triggerDiceFn: ((payload: DiceRollPayload) => void) | null = null;
-
-export function triggerDiceRoll(payload: DiceRollPayload) {
-  triggerDiceFn?.(payload);
-}
+import { bindDiceRollTrigger, type DiceRollPayload } from '../../ui/dice-roll-bus';
 
 const BORDER_COLORS = [
   'border-rg-gold',
@@ -46,8 +33,8 @@ export function DiceRollAnimation() {
   }, []);
 
   useEffect(() => {
-    triggerDiceFn = doTrigger;
-    return () => { triggerDiceFn = null; };
+    bindDiceRollTrigger(doTrigger);
+    return () => { bindDiceRollTrigger(null); };
   }, [doTrigger]);
 
   // 骰子翻滚阶段
@@ -102,7 +89,6 @@ export function DiceRollAnimation() {
   return (
     <div
       className={`fixed inset-0 z-50 flex items-center justify-center pointer-events-none
-        ${phase === 'enter' ? 'animate-in fade-in duration-300' : ''}
         ${phase === 'exit' ? 'animate-out fade-out duration-400' : ''}`}
     >
       {/* 背景遮罩 */}

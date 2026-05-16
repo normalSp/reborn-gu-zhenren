@@ -163,7 +163,7 @@ export const createEncounterSlice = (set: any, get: any): EncounterSlice => {
         logStore.addGameLog('encounter', `触发遭遇: ${result.template.title}（${riskSummary}）`, {
           type: result.template.type,
           title: result.template.title,
-          domain: result.template.domain,
+          domain: result.template.triggerConditions.region || params.currentDomain,
           riskModifier: result.riskModifier,
           summary: riskLabels.length > 0
             ? `${riskSummary}：${riskLabels.join(' / ')}`

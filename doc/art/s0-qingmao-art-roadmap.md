@@ -1,7 +1,7 @@
 # S0 青茅山第一卷美术总台账
 
-状态：`single-image-cadence-p0`  
-最近更新：2026-04-29  
+状态：`single-image-cadence-p0`
+最近更新：2026-04-29
 范围：《蛊真人》第一卷 / 青茅山阶段，当前按第 1-199 章维护。
 
 本文档是第一卷美术资产的总入口。旧 prompt 文档继续保留作为生成历史和细节档案，但之后新增图、重做图、记录缺图、调整构图规则时，优先更新本文档。
@@ -31,7 +31,7 @@
 
 | 类型 | 数量 | 正式目录 | 规格说明 | 覆盖说明 |
 | --- | ---: | --- | --- | --- |
-| 场景 | active 3 / archived 42 | `apps/desktop/src/assets/rebrng/scenes/s0-qingmao/` | 2026-04-29 已按“清理成品集”策略全部归档；当前单张慢产已入库 3 张。 | 归档清单见 `output/archive/s0-qingmao/scenes-full-regeneration-20260429/manifest.json`。 |
+| 场景 | active 3 PNG + runtime generic SVG 1 / archived 42 | `public/rebrng/scenes/s0-qingmao/` | 2026-04-29 已按“清理成品集”策略全部归档；当前单张慢产已入库 3 张具体场景图，C-035 新增 1 张泛用棋盘底图样板。 | 归档清单见 `output/archive/s0-qingmao/scenes-full-regeneration-20260429/manifest.json`。 |
 | 原著角色 | 25 | `apps/desktop/src/assets/rebrng/characters/canon/` | 多数为竖幅立绘。 | 覆盖方源、方正、白凝冰、青书、铁家、一代、天鹤上人、族老、商队和关键配角。 |
 | 原创角色 | 9 | `apps/desktop/src/assets/rebrng/characters/original/` | 多数为竖幅立绘。 | 服务 sandbox/player 视角的青茅山补充角色。 |
 | 蛊虫图鉴 | 32 | `apps/desktop/src/assets/rebrng/gu/s0-qingmao/` | 标本卡片式 PNG。 | 核心辨识蛊已优先完成，许多功能蛊仍缺图。 |
@@ -189,6 +189,13 @@ Quality Lock Master：
 - 这里仍然不锁构图。方源二战白凝冰可以沿用此镜头，其他战斗和叙事场景必须各自写 `Composition Contract`。
 - `quality-lock-master` 的负例清单：地面被碎石和砂砾铺满、衣袍出现大量刮痕小笔触、蛊虫节段被画成满壳细纹、暖色变成点状火花、画面整体回到批量 AI 奇幻封面质感。
 
+成片感提示实验：
+
+- 用户反馈：单纯要求“厚涂插画”时，gptimg2 候选图可能出现破碎色块和碎笔触。
+- 后续资产生产阶段可在单张慢产 prompt 中加入：`complete finished illustration, coherent large color masses, low fragmentation, clean grouped shadows, continuous rim light, clear focal hierarchy, image-like polished final frame`。
+- 中文约束可写为：完整成片感，连续大色块，低碎片密度，干净暗形，连续边缘光，焦点层级清楚，像完成度高的正式图片，不要破碎厚涂色块。
+- 该提示只是质量实验，不替代 `Composition Contract`、原著复核、设定色优先和 `Quality Drift Watch`。
+
 Single Image Cadence：
 
 - 后续所有场景图、战斗图、蛊虫图都改为一次只生成 1 张正式候选。
@@ -237,6 +244,13 @@ thumbnail_read:
 must_not_repeat:
 source_checkpoint:
 ```
+
+C-035 泛用底图样板已单独冻结 Composition Contract：
+
+- `composition_contract_id`: `c035-qingmao-generic-battlefield-atmosphere`
+- 文件：`public/rebrng/scenes/s0-qingmao/qingmao-mortal-battlefield-generic-atmosphere.svg`
+- 文档：`指导大纲/v0.9.0/codex/00-总览/v0.9.0-b3-5-C035-青茅凡战泛用场景底图样板.md`
+- 边界：只作为青茅凡战棋盘底层氛围，不绑定方源、白凝冰、青书等具体原著战斗身份；不暗示仙蛊、十转、永生、宿命蛊或宝黄天正式交易。
 
 可用 `shot_id`：
 
@@ -311,6 +325,7 @@ source_checkpoint:
 
 | 日期 | 文件 | 候选路径 | 正式路径 | 尺寸 | 状态 | 验收 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-05-13 | `qingmao-mortal-battlefield-generic-atmosphere.svg` | `-` | `public/rebrng/scenes/s0-qingmao/qingmao-mortal-battlefield-generic-atmosphere.svg` | `1672x941 viewBox` | `runtime-active-svg-sample` | C-035 泛用棋盘底图样板。采用可审查 SVG，不消耗图片生成；只表达冷雾、竹影、旧演武坪、金色道痕和凡人危险边界，不绑定具体人物战斗。 |
 | 2026-04-29 | `fang-yuan-vs-bai-ning-bing-second-battle.png` | `output/imagegen/s0-qingmao/p0-scenes/fang-yuan-vs-bai-ning-bing-second-battle-candidate-quality-lock-master.png` | `apps/desktop/src/assets/rebrng/scenes/s0-qingmao/fang-yuan-vs-bai-ning-bing-second-battle.png` | `1672x941` | `generated-pass-single-1` | 使用 `quality-lock-master` 入库。保留低机位近身压迫、干净大暗形、低碎度、连续暖边；下一张为 `qing-shu-vs-bai-ning-bing-forest-duel.png`。 |
 | 2026-04-29 | `qing-shu-vs-bai-ning-bing-forest-duel.png` | `output/imagegen/s0-qingmao/p0-scenes/qing-shu-vs-bai-ning-bing-forest-duel-candidate-01.png` | `apps/desktop/src/assets/rebrng/scenes/s0-qingmao/qing-shu-vs-bai-ning-bing-forest-duel.png` | `1672x941` | `generated-pass-single-2-with-notes` | 单张生成。raw 为 `1671x941`，已保留 `qing-shu-vs-bai-ning-bing-forest-duel-candidate-01-raw-1671x941.png` 并校正候选为 `1672x941`。斜俯视交叉火线、青书树化和远处白凝冰可读；构图通过，仍需关注藤蔓/地面碎色块。 |
 | 2026-04-29 | `earthwolf-spider-third-battle.png` | `output/imagegen/s0-qingmao/p0-scenes/earthwolf-spider-third-battle-candidate-01.png` | `-` | `1672x941` | `rejected-composition-lore-mismatch` | 单张候选 01 拒绝。S 形山道不符合原著此段场地；方源手中蛊虫读法偏离锯齿金蜈。不得入库，后续改用 `battlefield-beast-charge`。 |
@@ -394,3 +409,4 @@ source_checkpoint:
 - 2026-04-29：单张慢产第 3 张入库：`earthwolf-spider-third-battle.png`，正式目录 active 场景数更新为 3。下一张进入 `blood-lake-rank-five-battle.png`，优先复核第 182-185 节血湖墓地、血河蟒、铁血冷与一代古月段落。
 - 2026-04-29：单张慢产第 4 张候选：`blood-lake-rank-five-battle-candidate-01.png` 已生成并留档，尺寸校正为 `1672x941`，后因画面碎、元素平均、张力不足标记为 `rejected-style-fractured-low-tension`。正式目录未入库。
 - 2026-04-29：单张慢产第 4 张重做候选：`blood-lake-rank-five-battle-candidate-02-smooth-tension.png` 已生成并留档，尺寸 `1672x941`，状态 `candidate-awaiting-user-review-single-4-redo`。构图改为 `low-bloodline-grapple`，正式目录暂不入库。
+- 2026-05-13：C-035 新增 `qingmao-mortal-battlefield-generic-atmosphere.svg` 作为青茅凡战泛用棋盘底图样板；该资产不是具体人物战斗图，不替代后续 bitmap 单张慢产流程。

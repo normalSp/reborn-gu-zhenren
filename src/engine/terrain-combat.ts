@@ -50,7 +50,7 @@ export interface TerrainCombatModifier {
   notes: string[];
 }
 
-const TERRAIN_CONFIG = terrainConfigRaw as TerrainConfig;
+const TERRAIN_CONFIG = terrainConfigRaw as unknown as TerrainConfig;
 
 function clamp(value: number, [min, max]: NumericRange): number {
   return Math.max(min, Math.min(max, value));

@@ -50,7 +50,7 @@ test.describe('v0.9.0-a3 beast hunt battlefield', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openBeastHuntDemo(page);
 
-    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0-a3');
+    await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
     await departAndEnterHuntBattle(page);
 
     await expect(page.getByTestId('battlefield-board')).toHaveAttribute('data-grid-size', '7x5');

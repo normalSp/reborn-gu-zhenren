@@ -5,7 +5,7 @@
  */
 import React, { useState, useMemo } from 'react';
 import { useStore } from '../../store';
-import type { ResourceNode, ResourceNodeBuildCost, ImmortalAperture } from '../../types';
+import type { ResourceNode, ResourceNodeBuildCost, ImmortalAperture, MortalAperture } from '../../types';
 
 // 从economy.json读取的建造配置（编译时静态导入）
 const NODE_TYPE_CONFIG: Array<{
@@ -29,7 +29,7 @@ const NODE_TYPE_CONFIG: Array<{
 ];
 
 export const ResourceNodeBuildPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const aperture = useStore(s => (s as any).aperture as ImmortalAperture | null);
+  const aperture = useStore(s => (s as any).aperture as ImmortalAperture | MortalAperture | null);
   const addResourceNode = useStore(s => (s as any).addResourceNode);
   const upgradeResourceNode = useStore(s => (s as any).upgradeResourceNode);
   const currency = useStore(s => s.currency);
@@ -45,6 +45,7 @@ export const ResourceNodeBuildPanel: React.FC<{ onClose: () => void }> = ({ onCl
     if (!aperture) return 1;
     // 福地等级映射：小福地=1, 中等=2, 上等=3
     const grade = (aperture as any).grade;
+    if (aperture.type === 'mortal') return 1;
     if (grade === '上等福地' || aperture.type === '洞天') return 3;
     if (grade === '中等福地') return 2;
     return 1;
@@ -57,7 +58,8 @@ export const ResourceNodeBuildPanel: React.FC<{ onClose: () => void }> = ({ onCl
 
   // 已有节点名（防止重复建造）
   const existingNodeNames = useMemo(() => {
-    return new Set((aperture?.resource_nodes || []).map(n => n.name));
+    if (!aperture || aperture.type === 'mortal') return new Set<string>();
+    return new Set((aperture.resource_nodes || []).map(n => n.name));
   }, [aperture]);
 
   const buildableTypes = availableTypes.filter(n => !existingNodeNames.has(n.name));

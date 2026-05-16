@@ -1,0 +1,24 @@
+{
+  "totalItems": 17,
+  "byCategory": {
+    "factionPressure": 5,
+    "hiddenFactRef": 1,
+    "publicFact": 1,
+    "pursuitTrigger": 3,
+    "routeCandidate": 3,
+    "supplyRequirement": 4
+  },
+  "byReviewStatus": {
+    "export_ready": 17
+  },
+  "sourcePointers": 35,
+  "quoteLikeKeys": 0,
+  "coverage": {
+    "caravanRouteOrWindow": true,
+    "mountainOrForestRouteRisk": true,
+    "supplyRequirement": true,
+    "identityCoverOrSuspicion": true,
+    "pursuitOrMonitoringTrigger": true,
+    "factionPressureSubjects": 5
+  }
+}

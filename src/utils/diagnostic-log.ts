@@ -1,3 +1,5 @@
+import { STORAGE_KEYS } from '../store/storageKeys';
+
 export type DiagnosticCategory = 'audio' | 'battle' | 'e2e' | 'economy' | 'system';
 
 export interface DiagnosticLogEntry {
@@ -9,7 +11,7 @@ export interface DiagnosticLogEntry {
   createdAt: string;
 }
 
-const STORAGE_KEY = 'reborn-v070c-diagnostics';
+const STORAGE_KEY = STORAGE_KEYS.DIAGNOSTICS;
 const MAX_ENTRIES = 120;
 
 function canUseStorage(): boolean {

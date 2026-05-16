@@ -93,7 +93,7 @@ export interface CharacterBgmManifest {
 }
 
 export const audioSourceManifest = audioManifestRaw as AudioSourceManifest;
-export const characterBgmManifest = characterBgmManifestRaw as CharacterBgmManifest;
+export const characterBgmManifest = characterBgmManifestRaw as unknown as CharacterBgmManifest;
 
 function looksLikeLegacySyntheticPath(filePath: string): boolean {
   return /\/audio\/bgm\/(nanjiang|beiyuan|zhongzhou|donghai|ximo)\//.test(filePath)

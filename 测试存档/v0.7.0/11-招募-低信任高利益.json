@@ -1,5 +1,5 @@
 {
-  "formatVersion": 21,
+  "formatVersion": 22,
   "timestamp": "2026-05-10T12:00:00+08:00",
   "meta": {
     "playerName": "北原客卿·赫连微",
@@ -7,7 +7,7 @@
     "turn": 58,
     "gameMode": "canon",
     "description": "v0.7.0-b 手测：低信任高利益招募，验证 mercenary 评估、元石扣款、AP 消耗、岗位暂停和拒绝原因。（中文命名副本：11-招募-低信任高利益）",
-    "formatVersion": 21
+    "formatVersion": 22
   },
   "state": {
     "profile": {
@@ -582,6 +582,23 @@
       "cooldowns": {},
       "blockedRecords": [],
       "lastResolutionSteps": []
+    },
+    "livingWorldState": {
+      "schemaVersion": 1,
+      "worldClock": {
+        "turn": 0,
+        "day": 1,
+        "phase": "start",
+        "lastActionId": null
+      },
+      "regions": {},
+      "knownFacts": {},
+      "hiddenFactRefs": {},
+      "npcMemories": [],
+      "factionPressure": [],
+      "playerGoals": [],
+      "actionConsequences": [],
+      "ifDeviations": []
     }
   }
 }

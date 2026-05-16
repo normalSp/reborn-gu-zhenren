@@ -89,7 +89,7 @@ export function AscensionBalancePanel({ onComplete }: { onComplete: (result: { a
     const newDeathLine = deathLine(difficulty);
     if (newDiff >= newDeathLine) {
       const prob = Math.min(70, (newDiff - newDeathLine) * 2);
-      if (Math.random() * 100 < prob) { setResult('dead'); return prev; }
+      if (Math.random() * 100 < prob) { setResult('dead'); return; }
     }
     const nextTurn = turn + 1;
     setTurn(nextTurn);

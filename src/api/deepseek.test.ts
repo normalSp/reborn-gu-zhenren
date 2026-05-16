@@ -6,6 +6,10 @@ afterEach(() => {
 });
 
 describe('callDeepSeek observability', () => {
+  it('keeps the approved runtime default on the evaluated Flash model', () => {
+    expect(DEEPSEEK_DEFAULT_MODEL).toBe('deepseek-v4-flash');
+  });
+
   it('uses the default model and exposes cache usage telemetry', async () => {
     let requestBody: any = null;
     vi.stubGlobal('fetch', vi.fn(async (_url: string, init: RequestInit) => {
@@ -23,6 +27,7 @@ describe('callDeepSeek observability', () => {
           completion_tokens: 20,
           total_tokens: 120,
           prompt_cache_hit_tokens: 75,
+          prompt_cache_miss_tokens: 25,
         },
       }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     }));
@@ -43,8 +48,34 @@ describe('callDeepSeek observability', () => {
       completion_tokens: 20,
       total_tokens: 120,
       cached_tokens: 75,
+      cache_miss_tokens: 25,
       cache_hit_ratio: 0.75,
     });
+  });
+
+  it('derives cache miss tokens when DeepSeek omits the explicit miss field', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify({
+      choices: [
+        {
+          message: {
+            content: JSON.stringify({ message: 'ok' }),
+          },
+        },
+      ],
+      usage: {
+        prompt_tokens: 80,
+        completion_tokens: 10,
+        total_tokens: 90,
+        prompt_cache_hit_tokens: 20,
+      },
+    }), { status: 200, headers: { 'Content-Type': 'application/json' } })));
+
+    const result = await callDeepSeek('system', 'user', {
+      apiKey: 'test-key',
+    });
+
+    expect(result.success).toBe(true);
+    expect(result.tokens?.cache_miss_tokens).toBe(60);
   });
 
   it('allows model override for gated evaluation runs', async () => {

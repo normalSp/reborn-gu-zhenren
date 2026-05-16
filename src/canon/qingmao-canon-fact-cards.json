@@ -1,0 +1,809 @@
+{
+  "version": "v0.12.0-a1",
+  "status": "expanded_static_truth_source",
+  "sourcePolicy": {
+    "primarySource": "doc/original work/reverend-insanity.txt",
+    "allowedStoredContent": "summary_plus_line_locator_only",
+    "forbiddenStoredContent": [
+      "original_text_excerpt",
+      "verbatim_original_prose",
+      "hidden_fact_body_for_ui"
+    ],
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "cards": [
+    {
+      "id": "qingmao_location_guyue_village",
+      "title": "青茅山与古月山寨",
+      "scope": "region",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_region_foundation"
+      ],
+      "summary": "青茅山是南疆山地，古月山寨是玩家早期可进入的本地修行共同体。",
+      "playerVisibleSummary": "你立足青茅山古月山寨，周边仍受三寨与山路资源限制。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L103-L115",
+          "keywords": [
+            "青茅山与古月山寨",
+            "qingmao",
+            "location",
+            "guyue",
+            "village"
+          ],
+          "note": "开篇定位青茅山与古月山寨。"
+        }
+      ],
+      "designBoundary": "只能作为青茅山本地入口，不能把南疆大地图、远域势力或高阶仙道内容提前开放。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "guyue_aperture_ceremony_and_clan_school",
+      "title": "古月开窍与族学秩序",
+      "scope": "faction",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "guyue_clan_school_order"
+      ],
+      "summary": "古月一族以开窍、资质、族学与资源配给来安排少年修行者的早期道路。",
+      "playerVisibleSummary": "开窍与族学会决定你早期资源、身份压力和能接触到的任务。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L530-L622",
+          "keywords": [
+            "古月开窍与族学秩序",
+            "guyue",
+            "aperture",
+            "ceremony",
+            "and",
+            "clan"
+          ],
+          "note": "开窍仪式、族学长老、资质等级与修行入口。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L771-L814",
+          "keywords": [
+            "古月开窍与族学秩序",
+            "guyue",
+            "aperture",
+            "ceremony",
+            "and",
+            "clan"
+          ],
+          "note": "方源开窍与资质结果样例。"
+        }
+      ],
+      "designBoundary": "玩家可以获得不同开局压力，但不能跳过开窍体系直接拥有高阶修为或跨族正式身份。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "guyue_spirit_spring_resource_basis",
+      "title": "古月灵泉资源根基",
+      "scope": "faction",
+      "classification": "hidden_fact",
+      "v012Category": "hidden_fact_ref",
+      "visibility": "hidden",
+      "runtimeExposure": "hidden_ref_only",
+      "anchorRefs": [
+        "qingmao_region_foundation",
+        "qingmao_resource_and_crisis_chain"
+      ],
+      "summary": "古月山寨的灵泉与族内资源根基相关，后续会牵动族群生存压力。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L19019-L19023",
+          "keywords": [
+            "古月灵泉资源根基",
+            "guyue",
+            "spirit",
+            "spring",
+            "resource",
+            "basis"
+          ],
+          "note": "灵泉根基与后续危机压力的线索。"
+        }
+      ],
+      "designBoundary": "DeepSeek 与 UI 不能在普通阶段泄露灵泉秘密；只能作为隐藏事实引用和正史压力保护点。",
+      "confidence": "confirmed",
+      "revealPolicyId": "hidden_fact_requires_engine_gate"
+    },
+    {
+      "id": "qingmao_three_clans_layout",
+      "title": "青茅山三寨格局",
+      "scope": "region",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_region_foundation",
+        "qingmao_three_clan_pressure_chain"
+      ],
+      "summary": "青茅山存在古月、白家、熊家等本地势力，彼此竞争也会在外部压力下合作。",
+      "playerVisibleSummary": "青茅山不只有古月山寨，白家寨、熊家寨也会影响本地局势。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L4585-L4593",
+          "keywords": [
+            "青茅山三寨格局",
+            "qingmao",
+            "three",
+            "clans",
+            "layout"
+          ],
+          "note": "青茅山三寨与兽潮压力关系。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L19745-L19747",
+          "keywords": [
+            "青茅山三寨格局",
+            "qingmao",
+            "three",
+            "clans",
+            "layout"
+          ],
+          "note": "三寨在外部压力下的合作与格局变动。"
+        }
+      ],
+      "designBoundary": "三寨只能作为低阶区域政治与压力来源，不能在低阶阶段生成跨域联盟或仙道交易。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "baijia_bai_ning_bing_public_talent",
+      "title": "白家白凝冰公开天才",
+      "scope": "npc",
+      "classification": "player_visible_fact",
+      "v012Category": "player_visible_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "bai_ning_bing_pressure_guard"
+      ],
+      "summary": "白凝冰是青茅山白家寨公开可闻的天才人物，会对本地势力压力产生影响。",
+      "playerVisibleSummary": "白家寨有一位强势天才白凝冰，普通低阶蛊师很难正面撼动。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L141-L147",
+          "keywords": [
+            "白家白凝冰公开天才",
+            "baijia",
+            "bai",
+            "ning",
+            "bing",
+            "public"
+          ],
+          "note": "早期提及白凝冰及其公开声名。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L11432",
+          "keywords": [
+            "白家白凝冰公开天才",
+            "baijia",
+            "bai",
+            "ning",
+            "bing",
+            "public"
+          ],
+          "note": "青茅三寨内对白凝冰资质和修为的公开评价。"
+        }
+      ],
+      "designBoundary": "可以成为压力与传闻来源，不能让玩家在低阶阶段随口杀死、招募或彻底改变其正史压力。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "guyue_moonlight_gu_local_specialty",
+      "title": "月光蛊与古月特色",
+      "scope": "item",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "guyue_clan_school_order",
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "月光蛊是古月一族早期蛊虫体系中的标志性蛊虫，适合做本地战斗样板。",
+      "playerVisibleSummary": "月光蛊代表古月早期攻伐风格，仍受真元、食料和修为限制。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1059-L1124",
+          "keywords": [
+            "月光蛊与古月特色",
+            "guyue",
+            "moonlight",
+            "gu",
+            "local",
+            "specialty"
+          ],
+          "note": "蛊室、本命蛊选择与月光蛊相关早期材料。"
+        }
+      ],
+      "designBoundary": "可用于青茅凡战样板，但不能让月光蛊越级承担仙蛊、十转或跨体系杀招效果。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "liquor_worm_rare_support_role",
+      "title": "酒虫早期支援定位",
+      "scope": "item",
+      "classification": "player_visible_fact",
+      "v012Category": "player_visible_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "酒虫在早期可作为修行与真元相关的稀有支援资产，但不应变成万能奖励。",
+      "playerVisibleSummary": "酒虫属于稀有支援资产，会改善低阶修行体验，但仍需来源与代价。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1124-L1124",
+          "keywords": [
+            "酒虫早期支援定位",
+            "liquor",
+            "worm",
+            "rare",
+            "support",
+            "role"
+          ],
+          "note": "蛊室与酒虫相关早期线索。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1756-L1937",
+          "keywords": [
+            "酒虫早期支援定位",
+            "liquor",
+            "worm",
+            "rare",
+            "support",
+            "role"
+          ],
+          "note": "酒虫获取线索与早期互动。"
+        }
+      ],
+      "designBoundary": "可作为支援与线索资产，不得由 DeepSeek 直接发放、刷新库存或改写正式来源。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "fang_yuan_private_causality_hidden_anchor",
+      "title": "方源私有因果隐藏锚点",
+      "scope": "npc",
+      "classification": "hidden_fact",
+      "v012Category": "hidden_fact_ref",
+      "visibility": "hidden",
+      "runtimeExposure": "hidden_ref_only",
+      "anchorRefs": [
+        "fang_yuan_hidden_causality_guard"
+      ],
+      "summary": "方源的关键私有因果不属于普通第三者玩家可见信息，必须作为隐藏锚点保护。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1-L160",
+          "keywords": [
+            "方源私有因果隐藏锚点",
+            "fang",
+            "yuan",
+            "private",
+            "causality",
+            "hidden"
+          ],
+          "note": "开篇与角色私有因果相关的正史结构入口。"
+        }
+      ],
+      "designBoundary": "DeepSeek、UI 与普通选项不能泄露方源私有因果；玩家只能观察公开行为与可见后果。",
+      "confidence": "confirmed",
+      "revealPolicyId": "hidden_fact_requires_engine_gate"
+    },
+    {
+      "id": "guyue_aptitude_grade_public_order",
+      "title": "资质等级与早期秩序",
+      "scope": "faction",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "guyue_clan_school_order"
+      ],
+      "summary": "甲乙丙丁等资质会影响少年蛊师修行上限、资源关注和族内待遇。",
+      "playerVisibleSummary": "你的资质会改变族学评价、资源压力和同龄人对你的态度。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L614-L622",
+          "keywords": [
+            "资质等级与早期秩序",
+            "guyue",
+            "aptitude",
+            "grade",
+            "public",
+            "order"
+          ],
+          "note": "资质等级与价值判断。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L936-L940",
+          "keywords": [
+            "资质等级与早期秩序",
+            "guyue",
+            "aptitude",
+            "grade",
+            "public",
+            "order"
+          ],
+          "note": "甲等资质公开影响样例。"
+        }
+      ],
+      "designBoundary": "资质可影响开局和成长压力，但不能让玩家凭空突破修为、血脉或原著核心因果。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "guyue_lifebound_gu_first_exam",
+      "title": "本命蛊与初次考验",
+      "scope": "faction",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "guyue_clan_school_order"
+      ],
+      "summary": "族学早期会围绕本命蛊选择、炼化、考验和奖励形成低阶成长节奏。",
+      "playerVisibleSummary": "你需要围绕本命蛊选择和族学考验建立早期战斗与修行节奏。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1059-L1104",
+          "keywords": [
+            "本命蛊与初次考验",
+            "guyue",
+            "lifebound",
+            "gu",
+            "first",
+            "exam"
+          ],
+          "note": "蛊室、本命蛊与第一次考验。"
+        }
+      ],
+      "designBoundary": "本命蛊只提供低阶成长入口，不允许绕过炼化、食料、真元与族学限制。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "primeval_stone_mortal_currency_and_cultivation",
+      "title": "元石货币与修行资源",
+      "scope": "item",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "元石既是低阶交易货币，也是恢复真元和支撑修行的重要资源。",
+      "playerVisibleSummary": "元石会同时影响交易、修行补给和短期行动能力。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1138-L1152",
+          "keywords": [
+            "元石货币与修行资源",
+            "primeval",
+            "stone",
+            "mortal",
+            "currency",
+            "and"
+          ],
+          "note": "元石作为交易与修行资源的早期说明。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1500-L1528",
+          "keywords": [
+            "元石货币与修行资源",
+            "primeval",
+            "stone",
+            "mortal",
+            "currency",
+            "and"
+          ],
+          "note": "元石恢复真元与资质差异相关。"
+        }
+      ],
+      "designBoundary": "系统可计算元石消耗与收益，DeepSeek 只能描述压力，不能私自结算奖励。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "guyue_moon_orchid_feeding_base",
+      "title": "月兰花与月道蛊食料",
+      "scope": "item",
+      "classification": "hard_fact",
+      "v012Category": "canon_hard_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "月兰花是古月一族重要资源，也支撑月光蛊等早期月道蛊虫饲养。",
+      "playerVisibleSummary": "月兰花会影响月光蛊食料、族内资源和低阶经济压力。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L552-L556",
+          "keywords": [
+            "月兰花与月道蛊食料",
+            "guyue",
+            "moon",
+            "orchid",
+            "feeding",
+            "base"
+          ],
+          "note": "月兰花与古月蛊虫食料关系。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L3455-L3469",
+          "keywords": [
+            "月兰花与月道蛊食料",
+            "guyue",
+            "moon",
+            "orchid",
+            "feeding",
+            "base"
+          ],
+          "note": "购买月兰花饲养月光蛊。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L5823-L5882",
+          "keywords": [
+            "月兰花与月道蛊食料",
+            "guyue",
+            "moon",
+            "orchid",
+            "feeding",
+            "base"
+          ],
+          "note": "蛊虫饲养成本与食料压力。"
+        }
+      ],
+      "designBoundary": "食料可做资源压力和任务来源，不能让蛊虫长期无成本存活或无限升级。",
+      "confidence": "confirmed"
+    },
+    {
+      "id": "qingmao_caravan_trade_window",
+      "title": "商队贸易窗口",
+      "scope": "quest",
+      "classification": "player_visible_fact",
+      "v012Category": "if_deviation_point",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_caravan_and_route_window"
+      ],
+      "ifAxes": [
+        "route_escape",
+        "resource_control",
+        "local_survival"
+      ],
+      "summary": "外来商队会阶段性进入青茅山，带来贸易、补给、情报和离开本地的可能窗口。",
+      "playerVisibleSummary": "商队到来时，交易、补给、打听消息和离开路线都会变得更现实。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L5710-L5759",
+          "keywords": [
+            "商队贸易窗口",
+            "qingmao",
+            "caravan",
+            "trade",
+            "window"
+          ],
+          "note": "商队入山、交易和地方影响。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L6637-L6639",
+          "keywords": [
+            "商队贸易窗口",
+            "qingmao",
+            "caravan",
+            "trade",
+            "window"
+          ],
+          "note": "商队路线与周边山寨关系。"
+        }
+      ],
+      "designBoundary": "商队可作为路线与补给窗口，但不能直接开放全地图、宝黄天或无条件逃离结局。",
+      "confidence": "rumor"
+    },
+    {
+      "id": "qingmao_wolf_tide_recurring_pressure",
+      "title": "狼潮周期性压力",
+      "scope": "region",
+      "classification": "player_visible_fact",
+      "v012Category": "if_deviation_point",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_wolf_tide_pressure_chain"
+      ],
+      "ifAxes": [
+        "canon_anchor_pressure",
+        "faction_pressure",
+        "local_survival"
+      ],
+      "summary": "狼潮是青茅山周期性外部压力，会影响三寨防务、资源消耗和行动安全。",
+      "playerVisibleSummary": "狼潮传闻会提高巡逻、防线、补给和三寨协作压力。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L4585-L4593",
+          "keywords": [
+            "狼潮周期性压力",
+            "qingmao",
+            "wolf",
+            "tide",
+            "recurring",
+            "pressure"
+          ],
+          "note": "狼潮与三寨压力关系。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L14685-L14687",
+          "keywords": [
+            "狼潮周期性压力",
+            "qingmao",
+            "wolf",
+            "tide",
+            "recurring",
+            "pressure"
+          ],
+          "note": "青茅山狼潮周期提示。"
+        }
+      ],
+      "designBoundary": "当前只能做前兆与压力链，不提前结算大灾变、山寨命运或关键角色结局。",
+      "confidence": "rumor"
+    },
+    {
+      "id": "qingmao_three_clan_alliance_war_merit",
+      "title": "三寨联盟与战功压力",
+      "scope": "faction",
+      "classification": "player_visible_fact",
+      "v012Category": "if_deviation_point",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_wolf_tide_pressure_chain",
+        "qingmao_three_clan_pressure_chain"
+      ],
+      "ifAxes": [
+        "faction_pressure",
+        "local_survival",
+        "resource_control"
+      ],
+      "summary": "外部压力下三寨会形成协作、战功与资源分配秩序，低阶蛊师会被卷入。",
+      "playerVisibleSummary": "三寨协作会让战功、巡逻、防线与资源分配变得更重要。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L20857-L20861",
+          "keywords": [
+            "三寨联盟与战功压力",
+            "qingmao",
+            "three",
+            "clan",
+            "alliance",
+            "war"
+          ],
+          "note": "三寨联盟法令与战功榜。"
+        }
+      ],
+      "designBoundary": "可以塑造任务压力和声望变化，不能让玩家低阶阶段掌控三寨联盟或改写大局。",
+      "confidence": "rumor"
+    },
+    {
+      "id": "flower_wine_monk_public_legend",
+      "title": "花酒行者公开传闻",
+      "scope": "quest",
+      "classification": "player_visible_fact",
+      "v012Category": "player_visible_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "fang_yuan_hidden_causality_guard",
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "花酒行者在古月山寨周边有公开传闻，可作为低阶探索与流言入口。",
+      "playerVisibleSummary": "你能听到关于花酒行者的旧闻，但传闻不等于你已掌握其秘密。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1011-L1027",
+          "keywords": [
+            "花酒行者公开传闻",
+            "flower",
+            "wine",
+            "monk",
+            "public",
+            "legend"
+          ],
+          "note": "花酒行者公开旧闻和族内历史关联。"
+        }
+      ],
+      "designBoundary": "公开传闻只能引出调查兴趣，不能直接暴露传承位置、隐藏因果或正式奖励。",
+      "confidence": "rumor"
+    },
+    {
+      "id": "flower_wine_inheritance_hidden_location_ref",
+      "title": "花酒传承隐藏位置引用",
+      "scope": "quest",
+      "classification": "hidden_fact",
+      "v012Category": "hidden_fact_ref",
+      "visibility": "hidden",
+      "runtimeExposure": "hidden_ref_only",
+      "anchorRefs": [
+        "fang_yuan_hidden_causality_guard"
+      ],
+      "summary": "花酒行者相关传承线索属于隐藏事实，只有特定正史与调查条件才可推动。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L1035-L1039",
+          "keywords": [
+            "花酒传承隐藏位置引用",
+            "flower",
+            "wine",
+            "inheritance",
+            "hidden",
+            "location"
+          ],
+          "note": "酒虫与花酒线索的隐藏关联。"
+        }
+      ],
+      "designBoundary": "DeepSeek、UI 与普通探索不能泄露隐藏事实、传承位置或奖励，只能给隐藏事实引用。",
+      "confidence": "confirmed",
+      "revealPolicyId": "hidden_fact_requires_engine_gate"
+    },
+    {
+      "id": "guyue_first_gen_hidden_blood_path_ref",
+      "title": "古月一代隐藏真相引用",
+      "scope": "npc",
+      "classification": "hidden_fact",
+      "v012Category": "hidden_fact_ref",
+      "visibility": "hidden",
+      "runtimeExposure": "hidden_ref_only",
+      "anchorRefs": [
+        "guyue_first_gen_hidden_anchor_guard"
+      ],
+      "summary": "古月一代相关深层真相属于隐藏事实，会影响青茅山后段正史压力。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L31750-L31750",
+          "keywords": [
+            "古月一代隐藏真相引用",
+            "guyue",
+            "first",
+            "gen",
+            "hidden",
+            "blood"
+          ],
+          "note": "后段隐藏地点与深层真相入口。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L32050-L32358",
+          "keywords": [
+            "古月一代隐藏真相引用",
+            "guyue",
+            "first",
+            "gen",
+            "hidden",
+            "blood"
+          ],
+          "note": "古月一代隐藏真相相关段落。"
+        }
+      ],
+      "designBoundary": "DeepSeek、UI 与低阶普通行动不能泄露一代隐藏真相、位置、身份链或后段结局。",
+      "confidence": "confirmed",
+      "revealPolicyId": "hidden_fact_requires_engine_gate"
+    },
+    {
+      "id": "bai_ning_bing_extreme_body_hidden_risk_ref",
+      "title": "白凝冰隐藏体质风险引用",
+      "scope": "npc",
+      "classification": "hidden_fact",
+      "v012Category": "hidden_fact_ref",
+      "visibility": "hidden",
+      "runtimeExposure": "hidden_ref_only",
+      "anchorRefs": [
+        "bai_ning_bing_pressure_guard"
+      ],
+      "summary": "白凝冰的深层体质风险属于隐藏事实，会在后续正史压力中改变局面。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L22490-L22599",
+          "keywords": [
+            "白凝冰隐藏体质风险引用",
+            "bai",
+            "ning",
+            "bing",
+            "extreme",
+            "body"
+          ],
+          "note": "白凝冰后续体质风险与压力真相。"
+        }
+      ],
+      "designBoundary": "DeepSeek、UI 与普通传闻不能提前揭示隐藏体质、自爆风险或后续关键因果。",
+      "confidence": "confirmed",
+      "revealPolicyId": "hidden_fact_requires_engine_gate"
+    },
+    {
+      "id": "guyue_jade_skin_white_jade_refinement_boundary",
+      "title": "玉皮蛊与白玉蛊防御线",
+      "scope": "item",
+      "classification": "player_visible_fact",
+      "v012Category": "player_visible_fact",
+      "visibility": "player_visible",
+      "runtimeExposure": "safe_summary",
+      "anchorRefs": [
+        "qingmao_mortal_resource_loop"
+      ],
+      "summary": "玉皮蛊、白玉蛊属于早期防御成长线，涉及来源、炼合、食料和真元限制。",
+      "playerVisibleSummary": "玉皮蛊与白玉蛊能提高防护，但来源、炼合、食料和真元都有限制。",
+      "sourcePointers": [
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L9516-L9524",
+          "keywords": [
+            "玉皮蛊与白玉蛊防御线",
+            "guyue",
+            "jade",
+            "skin",
+            "white",
+            "jade"
+          ],
+          "note": "玉皮蛊在蛊室与资源稀缺中的早期位置。"
+        },
+        {
+          "path": "doc/original work/reverend-insanity.txt",
+          "locator": "L15614-L15797",
+          "keywords": [
+            "玉皮蛊与白玉蛊防御线",
+            "guyue",
+            "jade",
+            "skin",
+            "white",
+            "jade"
+          ],
+          "note": "白玉蛊炼合与早期防御用途。"
+        }
+      ],
+      "designBoundary": "可支持战斗防护与资源压力，不能变成无成本护体、永生或高阶仙道防御。",
+      "confidence": "confirmed"
+    }
+  ],
+  "copyrightPolicy": "summary_and_locator_only"
+}

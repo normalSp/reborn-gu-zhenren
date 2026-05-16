@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "version": "v0.10.0-b4-first-cut",
+    "status": "runtime_readability",
+    "saveFormatImpact": "none",
+    "scope": "Qingmao three-clan scene variants for readability, screenshot composition, and short-recording planning.",
+    "boundary": "Scene variants are presentation and comprehension aids. They do not unlock locations, rewards, faction standing, Gu, recipes, or canon outcomes."
+  },
+  "variants": [
+    {
+      "id": "clan_school_courtyard",
+      "displayName": "族学演武坪",
+      "subtitle": "竹墙、石坪、月刃练习线",
+      "assetId": "qingmao-clan-school-courtyard-variant",
+      "linkedActionSlots": ["clan_school_training"],
+      "linkedResourceActions": [],
+      "linkedCombatTemplates": ["qingmao_encounter_clan_school_spar"],
+      "primaryPlayerQuestion": "我能否用当前蛊虫完成一次低阶切磋，并看懂入口校验？",
+      "visualIntent": "把族学训练、候选登记、5x3 凡战入口放在同一组可读画面里。",
+      "readabilityCues": [
+        "AP 消耗与本地引擎结算并列展示",
+        "候选登记不是胜利、掉落或族学排名",
+        "月光蛊与白玉蛊只消费战斗引擎事实"
+      ],
+      "screenshotComposition": [
+        "左侧保留行动卡与候选登记按钮",
+        "右侧露出 NarrativeCombatPanel 的入口校验和奖励边界",
+        "避免把人物身份写成方源、方正或具体原著人物"
+      ],
+      "shortRecordingBeats": [
+        "打开行动面板定位族学演武坪变体",
+        "登记族学切磋候选",
+        "进入 5x3 战场并展示月光蛊/白玉蛊边界"
+      ],
+      "reducedMotionSummary": "静态展示演武坪、入口校验、奖励边界和棋盘格，不依赖扫光或强位移。",
+      "loreBoundary": "族学只作为低阶训练/切磋入口，不改写原著核心人物因果。",
+      "forbiddenImplications": ["正式击败原著核心人物", "蛊虫或材料掉落", "完整蛊方解锁"]
+    },
+    {
+      "id": "front_mountain_patrol",
+      "displayName": "前山巡查路",
+      "subtitle": "竹影、山雾、巡夜火线",
+      "assetId": "qingmao-mountain-patrol-ridge-variant",
+      "linkedActionSlots": ["mountain_patrol"],
+      "linkedResourceActions": [],
+      "linkedCombatTemplates": [
+        "qingmao_encounter_front_mountain_patrol",
+        "qingmao_encounter_wolf_shadow_pressure"
+      ],
+      "primaryPlayerQuestion": "我是否要把一次巡查推进成野外行动或本地凡战验证？",
+      "visualIntent": "强调山道风险、遮蔽、伏击压力和野外行动入口，不把巡查直接写成战果。",
+      "readabilityCues": [
+        "风险提示优先于视觉刺激",
+        "巡查行动和战斗候选分层显示",
+        "胜负、消耗和战后回流仍由本地战斗/野外引擎拥有"
+      ],
+      "screenshotComposition": [
+        "行动卡、风险标签和战斗候选卡同屏",
+        "画面上半保留山雾/竹影，下半保留按钮与阻断原因",
+        "不要展示宝黄天交易、仙蛊或高阶传承暗示"
+      ],
+      "shortRecordingBeats": [
+        "展示山道巡查入口",
+        "展示前山巡查/狼影压力候选的 readiness",
+        "点击可验证模板进入既有 5x3 战场"
+      ],
+      "reducedMotionSummary": "以静态风险标签、遮蔽格和入口校验说明危险，不用强闪烁。",
+      "loreBoundary": "山道巡查是青茅低阶区域压力，不是三寨正式战争结论。",
+      "forbiddenImplications": ["稳定战斗掉落", "三寨立场永久改变", "高阶地点解锁"]
+    },
+    {
+      "id": "moonlit_resource_grove",
+      "displayName": "月草坡与酒坊支线",
+      "subtitle": "月华草、酒香账册、白玉缺口",
+      "assetId": "qingmao-resource-grove-variant",
+      "linkedActionSlots": [],
+      "linkedResourceActions": [
+        "moonlight_grass_gathering",
+        "liquor_worm_wine_errand",
+        "white_jade_gap_review"
+      ],
+      "linkedCombatTemplates": [],
+      "primaryPlayerQuestion": "我缺什么食料，哪些能本地结算，哪些只是缺口展示？",
+      "visualIntent": "把喂养、残方、缺口展示放在一个低刺激但强可读的资源画面里。",
+      "readabilityCues": [
+        "单次只给 1 份注册低阶食料",
+        "白玉蛊只显示缺口，不产出碎玉片",
+        "完整蛊方仍由本地炼蛊系统私有动作决定"
+      ],
+      "screenshotComposition": [
+        "行动面板显示月华草/美酒入口和白玉缺口",
+        "切到 GuInventoryPanel 展示食料来源，再切 RefinePanel 展示残方门槛",
+        "避免做成刷材料、刷元石或刷蛊虫的宣传图"
+      ],
+      "shortRecordingBeats": [
+        "点击月下巡采月华草获得本地材料",
+        "打开蛊虫面板喂养月光蛊",
+        "打开炼蛊面板查看残方门槛和完整蛊方边界"
+      ],
+      "reducedMotionSummary": "使用清晰数字、缺口文字和材料来源提示，不依赖奖励闪光。",
+      "loreBoundary": "食料、蛊材、残方、完整蛊方分层展示；DeepSeek 不发正式奖励。",
+      "forbiddenImplications": ["稳定碎玉片来源", "完整蛊方发放", "蛊虫或仙材掉落"]
+    }
+  ]
+}

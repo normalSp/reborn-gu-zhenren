@@ -1,19 +1,20 @@
-# 蛊真人世界 · 人生重来模拟器 v0.5.0
+# RebornG · 蛊真人世界人生重来模拟器 v0.9.0
 
-基于 DeepSeek AI 的蛊真人世界观文字 RPG。你扮演一名刚开窍的蛊师学徒，在南疆古月山寨开始你的修行之路。AI 主持人根据你的选择生成叙事、管理状态、推动剧情。
+基于 React、TypeScript、Vite 与 DeepSeek 的蛊真人二创文字 RPG。v0.9.0 的核心成果是统一“线索 -> 出发 -> 本地结算 -> 行动账本 -> 回流文本”协议，并完成青茅山凡战 5x3 视觉竖切、公开测试存档和 DeepSeek 成本观测。
 
 ## 技术栈
 
 - React 18 + TypeScript + Vite 8
 - Zustand 5（状态管理）+ Zod 4（Schema 校验）
 - Tailwind CSS 3.4（账簿式暗黑 UI）
-- DeepSeek API（AI 叙事生成）
+- GSAP + Framer Motion（战斗演出与 UI 状态）
+- DeepSeek API（AI 叙事生成，默认 `deepseek-v4-flash`）
 
 ## 快速开始
 
 ```bash
 # 1. 安装依赖
-npm install
+npm ci
 
 # 2. 启动开发服务器
 npm run dev
@@ -27,14 +28,13 @@ npm run dev
 
 密钥仅存储在浏览器 localStorage，不会上传到任何服务器。
 
-## 功能
+## v0.9.0 功能
 
-- **角色创建**：四维属性掷骰 + 52 种天赋（白/蓝/紫/橙/红/金）+ 五域出身选择
-- **AI 叙事**：每次选择触发 AI 生成 ~200-500 字叙事 + 3-4 个风险选项
-- **经济系统**：元石货币 + 商会购买/出售蛊虫 + 炼蛊合成 + 蛊虫喂养
-- **四层防线**：Prompt 约束 + 反馈修正 + 语义规则 + 金丝雀断言，防 AI 违规
-- **知识库**：62 种凡蛊 + 33 种仙蛊 + 21 种杀招 + 11 个天地秘境
-- **存档系统**：localStorage 持久化，支持多档位
+- **统一行动协议**：道场、传承/福地、灾劫、野外行动统一接入“线索 -> 出发 -> 本地结算 -> 行动账本 -> 回流文本”。
+- **战斗入口收束**：新正式战斗只登记候选并走本地 route policy / battlefield 引擎，旧 duel/squad 入口保留兼容和调试。
+- **青茅山凡战视觉竖切**：5x3 棋盘、月光蛊、白玉蛊、酒虫支持提示、禁忌门槛、入场演出、reduced motion 与移动端验收。
+- **DeepSeek 成本观测**：调用记录模型名、temperature、tokens、缓存命中/未命中、重试成本、耗时和 prompt 前缀 hash。
+- **公开测试存档**：`public/test-saves/` 提供 10 个 `formatVersion 22` 存档镜像，用于快速检查主要路线。
 
 ## 项目结构
 
@@ -58,8 +58,20 @@ src/
 ```bash
 npm run dev          # 启动开发服务器
 npm run build        # 构建生产版本
-npm test             # 运行 41 个测试用例
+npm test             # 运行单元测试
+npm run check:runtime-assets
+npm run check:qingmao-assets
+npm run test:e2e:long
 ```
+
+## EdgeOne Pages 部署
+
+仓库包含 `edgeone.json`。CodeBuddy 或 EdgeOne Pages 连接仓库后可使用：
+
+- 安装命令：`npm ci`
+- 构建命令：`npm run build`
+- 输出目录：`./dist`
+- Node 版本：`22.11.0`
 
 ## 免责声明
 

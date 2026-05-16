@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useStore } from '../../store';
 import { useShallow } from 'zustand/shallow';
 import { INITIAL_TALENTS, TIER_COLORS, TIER_LABELS, TALENT_COST } from '../../data/talents';
-import { P4_TALENTS, P4_TALENT_COST, getTalentsByCategory } from '../../data/talents-p4';
+import { P4_TALENTS, P4_TALENT_COST, getTalentsByCategory, type P4Talent } from '../../data/talents-p4';
 import { deriveCombatStats, extractTalentModifiers } from '../../engine/combat-stats';
 import guDbRaw from '../../canon/gu-database.json';
 import factionDbRaw from '../../canon/faction-data.json';
@@ -210,7 +210,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     if (tNode && tc?.factionBonus?.attributeBonus) {
       for (const [attrName, delta] of Object.entries(tc.factionBonus.attributeBonus)) {
         if (attrName === '资质' || attrName === '体魄' || attrName === '心智' || attrName === '气运') {
-          effectiveAttributes[attrName] = Math.max(0, Math.min(10, effectiveAttributes[attrName] + delta));
+          effectiveAttributes[attrName] = Math.max(0, Math.min(10, effectiveAttributes[attrName] + Number(delta)));
         }
       }
     }
@@ -336,15 +336,22 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
     if (tNode && tNode.needAperture) {
       const ac = tc.apertureConfig || { areaMu: 100, resourceNodes: 1, timeFlowRatio: 1.0, defenseLevel: 0 };
       const immortalAperture: ImmortalAperture = {
-        type: 'immortal',
+        type: ac.areaMu >= 900 ? '洞天' : '福地',
+        grade: ac.areaMu >= 601 ? '上等福地' : ac.areaMu >= 301 ? '中等福地' : '小福地',
         area_mu: ac.areaMu,
         time_flow_ratio: ac.timeFlowRatio,
         resource_nodes: Array.from({ length: ac.resourceNodes }, (_, i) => ({
-          type: '通用', quality: 1, output_rate: 1 + i, // Will be customized by path
+          id: `timeline-node-${i + 1}`,
+          type: tc.primaryPath || '通用',
+          name: `${tc.primaryPath || '通用'}资源节点${i + 1}`,
+          quality: 60,
+          grade: i >= 3 ? '仙材' : i >= 1 ? '精品' : '普通',
+          active: true,
+          output_rate: 1 + i, // Will be customized by path
         })),
         dao_mark_density: {},
-        status: '稳定',
-        disaster_timer: 0,
+        next_disaster_type: '地气失衡',
+        disaster_countdown: 12 + (ac.defenseLevel * 2),
       };
       (useStore.getState() as any).initializeAperture?.(immortalAperture);
     } else {
@@ -501,7 +508,7 @@ export function CharacterCreate({ onConfirm, onBack }: CharacterCreateProps) {
       }
       // 天赋流派亲和加成 = realm × 8（天赋加深对应流派道痕积累）
       for (const t of selectedTalents) {
-        const tp = (t as any) as import('../data/talents-p4').P4Talent;
+        const tp = t as P4Talent;
         const recPath = tp.primaryPathRecommendation;
         if (recPath && recPath !== '任意' && recPath !== '按主修推荐' && recPath !== '按所选道派推荐仙蛊') {
           initDaoMarks[recPath] = (initDaoMarks[recPath] || 0) + realm * 8;

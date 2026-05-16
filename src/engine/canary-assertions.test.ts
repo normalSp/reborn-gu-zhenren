@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { validateCanaryAssertions, resetC09Counter } from './canary-assertions';
 import type { NarrativeJSON } from '../types';
+import type { Choice } from '../types';
 
 // 模拟 store
 function makeStore(overrides: any = {}) {
@@ -14,7 +15,7 @@ function makeStore(overrides: any = {}) {
 
 function makeNarrative(opts: {
   text?: string;
-  choices?: Array<{ id: string; text: string; risk: string; risk_note: string }>;
+  choices?: Choice[];
   stateUpdate?: any;
 }): NarrativeJSON {
   return {

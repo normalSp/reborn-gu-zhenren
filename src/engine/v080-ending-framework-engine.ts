@@ -251,9 +251,9 @@ export function normalizeEndingFrameworkState(input?: Partial<EndingFrameworkSta
     version: 'v0.8.0-c1',
     status,
     lastInput: raw.lastInput || null,
-    candidates: ensureArray(raw.candidates).slice(-rules.candidateLimits.maxCandidates),
-    pressureLog: ensureArray(raw.pressureLog).slice(-rules.candidateLimits.maxPressureLog),
-    lastResolutionSteps: ensureArray(raw.lastResolutionSteps).slice(-rules.candidateLimits.maxResolutionSteps),
+    candidates: ensureArray<EndingRouteCandidate>(raw.candidates).slice(-rules.candidateLimits.maxCandidates),
+    pressureLog: ensureArray<EndingFrameworkState['pressureLog'][number]>(raw.pressureLog).slice(-rules.candidateLimits.maxPressureLog),
+    lastResolutionSteps: ensureArray<EndingResolutionStep>(raw.lastResolutionSteps).slice(-rules.candidateLimits.maxResolutionSteps),
     commitRecord: raw.commitRecord || null,
   };
 }

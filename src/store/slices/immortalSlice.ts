@@ -143,7 +143,7 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
 
   tickAperture: (externalDays: number) => {
     const state = get() as any;
-    const aperture = state.aperture as ImmortalAperture | null;
+    const aperture = state.aperture as MortalAperture | ImmortalAperture | null;
     if (!aperture || aperture.type === 'mortal') return;
     const resourceNodes = Array.isArray(aperture.resource_nodes) ? aperture.resource_nodes : [];
     const daoMarkDensity = aperture.dao_mark_density && typeof aperture.dao_mark_density === 'object'

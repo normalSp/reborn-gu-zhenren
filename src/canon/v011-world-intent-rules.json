@@ -1,0 +1,98 @@
+{
+  "version": "v0.11.0-a3",
+  "status": "first_slice_scope_frozen",
+  "purpose": "Local truth source for the first World Intent Engine slice. DeepSeek may propose wording, but this file and local engine decide intent kind, ruling category, boundaries, and test samples.",
+  "intentTypes": [
+    "obtain_item",
+    "join_faction",
+    "investigate",
+    "travel",
+    "long_term_goal"
+  ],
+  "rulingCategories": [
+    "available",
+    "available_with_cost",
+    "requires_prerequisite",
+    "rumor_only",
+    "long_term_goal",
+    "world_rule_blocked",
+    "hidden_fact_blocked",
+    "major_if_deviation"
+  ],
+  "hardBoundaries": [
+    "DeepSeek may not directly grant Gu, Immortal Gu, recipes, materials, currency, locations, battle results, NPC death, canon anchor changes, or endings.",
+    "UI may display a ruling and collect player confirmation, but UI may not calculate success, rewards, hidden facts, or faction membership.",
+    "World Intent Engine routes goals into existing local systems. It does not replace action protocol, combat, resource, refinement, story/canon, or store authority.",
+    "Hidden original facts are represented by refs only; visible explanations must not reveal unrevealed bodies.",
+    "Rank nine Gu, Spring Autumn Cicada, rank ten, true eternal life, Fate Gu ownership, mortal Treasure Yellow Heaven trading, and grotto-heaven ownership are blocked or downgraded unless a later local canon/story gate explicitly opens them."
+  ],
+  "firstSliceSamples": [
+    {
+      "id": "sample_obtain_rank_nine_gu",
+      "rawText": "我要拿九转蛊",
+      "expectedIntentType": "obtain_item",
+      "expectedCategory": "long_term_goal",
+      "expectedAllowed": false
+    },
+    {
+      "id": "sample_obtain_spring_autumn_cicada",
+      "rawText": "我要获得春秋蝉",
+      "expectedIntentType": "obtain_item",
+      "expectedCategory": "world_rule_blocked",
+      "expectedAllowed": false
+    },
+    {
+      "id": "sample_trade_treasure_yellow_heaven",
+      "rawText": "我要去宝黄天交易",
+      "expectedIntentType": "travel",
+      "expectedCategory": "world_rule_blocked",
+      "expectedAllowed": false
+    },
+    {
+      "id": "sample_join_bai_clan",
+      "rawText": "我要投靠白家",
+      "expectedIntentType": "join_faction",
+      "expectedCategory": "requires_prerequisite",
+      "expectedAllowed": false
+    },
+    {
+      "id": "sample_investigate_fang_yuan",
+      "rawText": "我要跟踪方源",
+      "expectedIntentType": "investigate",
+      "expectedCategory": "available_with_cost",
+      "expectedAllowed": true
+    },
+    {
+      "id": "sample_travel_escape_qingmao",
+      "rawText": "我要逃离青茅山",
+      "expectedIntentType": "travel",
+      "expectedCategory": "requires_prerequisite",
+      "expectedAllowed": false
+    },
+    {
+      "id": "sample_kill_bai_ning_bing",
+      "rawText": "我要杀死白凝冰",
+      "expectedIntentType": "long_term_goal",
+      "expectedCategory": "major_if_deviation",
+      "expectedAllowed": false
+    }
+  ],
+  "deepSeekContract": {
+    "allowedOutputs": [
+      "candidate phrasing",
+      "visible explanation based on local ruling",
+      "rumor framing",
+      "next-step wording",
+      "risk wording"
+    ],
+    "forbiddenOutputs": [
+      "direct rewards",
+      "direct faction membership",
+      "direct travel unlock",
+      "direct NPC death",
+      "hidden fact body",
+      "canon anchor rewrite",
+      "formal ending"
+    ]
+  }
+}

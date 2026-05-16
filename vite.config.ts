@@ -3,49 +3,118 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
+const normalizedId = (id: string) => id.replace(/\\/g, '/');
+const hasAny = (id: string, patterns: string[]) => {
+  const normalized = normalizedId(id);
+  return patterns.some(pattern => normalized.includes(pattern));
+};
+
 export default defineConfig({
   plugins: [react()],
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       output: {
-        manualChunks(id) {
-          const normalized = id.replace(/\\/g, '/');
-          if (normalized.includes('/node_modules/react/') || normalized.includes('/node_modules/react-dom/')) {
-            return 'react-vendor';
-          }
-          if (
-            normalized.includes('/node_modules/framer-motion/') ||
-            normalized.includes('/node_modules/gsap/') ||
-            normalized.includes('/node_modules/recharts/') ||
-            normalized.includes('/node_modules/@tanstack/react-query/') ||
-            normalized.includes('/node_modules/zod/') ||
-            normalized.includes('/node_modules/zustand/')
-          ) {
-            return 'ui-vendor';
-          }
-          if (normalized.includes('/src/canon/chapters.json')) return 'canon-chapters';
-          if (normalized.includes('/src/canon/npcs.json')) return 'canon-npcs';
-          if (
-            normalized.includes('/src/canon/gu-database.json') ||
-            normalized.includes('/src/canon/immortal-gu.json') ||
-            normalized.includes('/src/canon/killer-moves.json') ||
-            normalized.includes('/src/canon/gu-use-registry.json') ||
-            normalized.includes('/src/canon/fragment-recipes.json')
-          ) {
-            return 'canon-gu';
-          }
-          if (normalized.includes('/src/canon/')) return 'canon-core';
-          if (normalized.includes('/src/engine/audio') || normalized.includes('/src/utils/audio')) return 'audio';
-          if (
-            normalized.includes('/src/engine/combat') ||
-            normalized.includes('/src/engine/squad') ||
-            normalized.includes('/src/components/game/CombatOverlay') ||
-            normalized.includes('/src/components/game/SquadCombatOverlay') ||
-            normalized.includes('/src/components/game/BattleFlashOverlay')
-          ) {
-            return 'combat-squad';
-          }
-          if (normalized.includes('/src/engine/')) return 'engine';
+        codeSplitting: {
+          minSize: 20_000,
+          maxSize: 450_000,
+          groups: [
+            {
+              name: 'react-vendor',
+              test: id => hasAny(id, ['/node_modules/react/', '/node_modules/react-dom/']),
+              priority: 50,
+            },
+            {
+              name: 'ui-vendor',
+              test: id => hasAny(id, [
+                '/node_modules/framer-motion/',
+                '/node_modules/gsap/',
+                '/node_modules/recharts/',
+                '/node_modules/@tanstack/react-query/',
+                '/node_modules/zod/',
+                '/node_modules/zustand/',
+              ]),
+              priority: 40,
+            },
+            { name: 'canon-chapters', test: id => normalizedId(id).includes('/src/canon/chapters.json'), priority: 35 },
+            { name: 'canon-npcs', test: id => normalizedId(id).includes('/src/canon/npcs.json'), priority: 35 },
+            {
+              name: 'canon-gu',
+              test: id => hasAny(id, [
+                '/src/canon/gu-database.json',
+                '/src/canon/immortal-gu.json',
+                '/src/canon/killer-moves.json',
+                '/src/canon/gu-use-registry.json',
+                '/src/canon/fragment-recipes.json',
+              ]),
+              priority: 34,
+            },
+            { name: 'canon-core', test: id => normalizedId(id).includes('/src/canon/'), priority: 20 },
+            {
+              name: 'audio',
+              test: id => hasAny(id, ['/src/engine/audio', '/src/utils/audio']),
+              priority: 30,
+            },
+            {
+              name: 'combat-squad',
+              test: id => hasAny(id, ['/src/engine/combat', '/src/engine/squad']),
+              priority: 30,
+            },
+            {
+              name: 'engine-battlefield',
+              test: id => hasAny(id, [
+                '/src/engine/v080-battlefield',
+                '/src/engine/v080-narrative-combat-orchestration',
+                '/src/engine/v090-beast-enemy-registry',
+              ]),
+              priority: 29,
+            },
+            {
+              name: 'engine-action',
+              test: id => hasAny(id, [
+                '/src/engine/v090-world-action-protocol',
+                '/src/engine/v090-training-ground-clue-engine',
+                '/src/engine/field-action',
+                '/src/engine/training-ground-engine',
+              ]),
+              priority: 28,
+            },
+            {
+              name: 'engine-economy',
+              test: id => hasAny(id, [
+                '/src/engine/auction',
+                '/src/engine/economy',
+                '/src/engine/feeding-rules',
+                '/src/engine/gu-use-registry',
+                '/src/engine/material-registry',
+                '/src/engine/recipe-discovery',
+                '/src/engine/refine-engine',
+                '/src/engine/shop-engine',
+              ]),
+              priority: 27,
+            },
+            {
+              name: 'engine-story',
+              test: id => hasAny(id, [
+                '/src/engine/chapter-router',
+                '/src/engine/context-builder',
+                '/src/engine/dao-reputation-policy',
+                '/src/engine/encounter-injector',
+                '/src/engine/HeavenlyLandEngine',
+                '/src/engine/npc-cross-domain',
+                '/src/engine/response-pipeline',
+                '/src/engine/state-update-applier',
+                '/src/engine/v080-calamity',
+                '/src/engine/v080-cultivation',
+                '/src/engine/v080-ending',
+                '/src/engine/v080-inheritance',
+                '/src/engine/v080-midgame',
+                '/src/engine/v080-narrative',
+                '/src/engine/v080-origin',
+              ]),
+              priority: 26,
+            },
+            { name: 'engine', test: id => normalizedId(id).includes('/src/engine/'), priority: 10 },
+          ],
         },
       },
     },

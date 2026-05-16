@@ -17,10 +17,11 @@ import type {
   AchievementDomain,
   AchievementUnlockEvent,
 } from '../../types/achievement';
+import { STORAGE_KEYS } from '../storageKeys';
 
 // ─── 持久化 Key ───
-const PERSIST_KEY = 'gu-zhenren-achievements';
-const PERSIST_PROGRESS_KEY = 'gu-zhenren-achievement-progress';
+const PERSIST_KEY = STORAGE_KEYS.ACHIEVEMENTS;
+const PERSIST_PROGRESS_KEY = STORAGE_KEYS.ACHIEVEMENT_PROGRESS;
 
 function loadUnlockedIds(): string[] {
   try {

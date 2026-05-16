@@ -124,7 +124,7 @@ const C13_ALIAS_RULES: PromiseEffectAliasRule[] = [
     status: 'narrative_only',
     evidence: 'v080-c13-promise-alias:generic-explained-display',
     ownerPhase: 'v0.8.0-c1.3',
-    reason: '该展示文案未对应独立可重复数值消费者时，只作为选择解释、风险提示和叙事倾向，不再显示成泛泛的待系统。',
+    reason: '该展示文案未对应独立可重复数值消费者时，只作为选择解释、风险提示和叙事倾向，不再显示成工程状态。',
     nextStep: '若后续加入专门运行时消费者，再迁入 modifier-registry 或显式 coverage rule。',
   },
 ];

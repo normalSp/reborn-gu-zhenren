@@ -41,6 +41,7 @@ import {
   createBattlefieldGroupDemoState,
   createBattlefieldLargeGroupDemoState,
   createBattlefieldNarrativeDuelState,
+  createQingmaoMortalBattlefieldState,
   describeBattlefieldReason,
   getBattlefieldActor,
 } from '../../engine/v080-battlefield-ui-model';
@@ -55,7 +56,8 @@ import {
   resolveBeastLootForOutcome,
 } from '../../engine/v090-beast-enemy-registry';
 import killerMovesRaw from '../../canon/killer-moves.json';
-import { triggerDiceRoll } from '../../components/game/DiceRollAnimation';
+import { triggerDiceRoll } from '../../ui/dice-roll-bus';
+import { createInitialCombatEncounterState } from '../defaultEngineStates';
 
 /** 战斗历史记录 — P2-P9-3 */
 export interface BattleRecord {
@@ -380,6 +382,7 @@ export interface CombatSlice {
   /** v0.7.0-c: 清空闪图队列 */
   clearBattleVisualEffects: () => void;
   initBattlefieldDemo: () => void;
+  initQingmaoMortalBattlefieldDemo: () => void;
   initBattlefieldGroupDemo: () => void;
   initBattlefieldLargeGroupDemo: () => void;
   acceptCombatEventCandidate: (candidateId: string) => boolean;
@@ -414,7 +417,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
   battlefieldValidation: null,
   battlefieldPlaybackSteps: [],
   battlefieldTraceCursor: 0,
-  combatEncounterState: createIdleCombatEncounterState(),
+  combatEncounterState: createInitialCombatEncounterState(),
 
   initDuel: (player, enemy) => {
     const fullStore = get() as any;
@@ -534,7 +537,13 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
         });
       }
       // P4: 战斗结算时触发掷骰动画
-      try { triggerDiceRoll({ label: `战果`, value: state.result.winner === 'player' ? 100 : (state.result.winner === 'enemy' ? 0 : 50), max: 100 }); } catch {}
+      try {
+        triggerDiceRoll({
+          label: '战果',
+          difficulty: state.result.winner === 'player' ? 20 : 0,
+          target: state.result.winner === 'enemy' ? 21 : 11,
+        });
+      } catch {}
     }
     // ═══ GSAP: 短暂进入 resolution 阶段触发结算动画 ═══
     const current = get().duelState as DuelState | null;
@@ -751,6 +760,29 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
     }
   },
 
+  initQingmaoMortalBattlefieldDemo: () => {
+    const store = get() as any;
+    const state = createQingmaoMortalBattlefieldState(store);
+    const actor = getBattlefieldActor(state);
+    set({
+      battlefieldCombatState: state,
+      battlefieldSelectedAction: null,
+      battlefieldSelectedTargetCellId: null,
+      battlefieldValidation: actor ? listBattlefieldActionTargets(state, { type: 'wait', actorId: actor.id }) : null,
+      battlefieldPlaybackSteps: [],
+      battlefieldTraceCursor: 0,
+      combatEncounterState: createIdleCombatEncounterState(),
+    });
+    if (typeof store.addGameLog === 'function') {
+      store.addGameLog('combat', 'v0.9.0-b3 青茅山凡战视觉竖切开启', {
+        battleId: state.battleId,
+        terrain: state.activeTerrainId,
+        formation: state.activeFormationId,
+        artBoundary: 'mortal_qingmao_no_immortal_implication',
+      });
+    }
+  },
+
   initBattlefieldGroupDemo: () => {
     const store = get() as any;
     const state = createBattlefieldGroupDemoState(store);
@@ -806,7 +838,8 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
     if (!candidate) return false;
 
     const validation = evaluateCombatEncounterEntry(candidate, store);
-    if (!validation.valid || !validation.spec) {
+    const spec = validation.spec;
+    if (!validation.valid || !spec) {
       updateCombatCandidateFlags(store, candidateId, {
         engineValidation: 'downgraded',
         validationIssues: validation.blockers,
@@ -815,7 +848,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       set({
         combatEncounterState: {
           status: 'candidate',
-          spec: validation.spec,
+          spec,
           validation,
           startedTurn: store.turn || 1,
           outcomeSummary: null,
@@ -829,7 +862,7 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       return false;
     }
 
-    const state = startBattlefieldForEncounter(store, validation.spec);
+    const state = startBattlefieldForEncounter(store, spec);
     const actor = getBattlefieldActor(state);
     updateCombatCandidateFlags(store, candidateId, {
       engineValidation: 'accepted',
@@ -845,21 +878,21 @@ export const createCombatSlice = (set: any, get: any): CombatSlice => ({
       battlefieldTraceCursor: 0,
       combatEncounterState: {
         status: 'active',
-        spec: validation.spec,
+        spec,
         validation,
-        startedTurn: store.turn || validation.spec.createdTurn,
+        startedTurn: store.turn || spec.createdTurn,
         outcomeSummary: null,
       },
       flags: {
         ...(s.flags || {}),
-        activeCombatEncounterId: validation.spec.id,
+        activeCombatEncounterId: spec.id,
       },
     }));
-    store.addGameLog?.('combat', `剧情战斗入场：${validation.spec.title}`, {
-      encounterId: validation.spec.id,
-      scale: validation.spec.scale,
-      risk: validation.spec.risk,
-      enemyHint: validation.spec.enemyHint,
+    store.addGameLog?.('combat', `剧情战斗入场：${spec.title}`, {
+      encounterId: spec.id,
+      scale: spec.scale,
+      risk: spec.risk,
+      enemyHint: spec.enemyHint,
     });
     return true;
   },

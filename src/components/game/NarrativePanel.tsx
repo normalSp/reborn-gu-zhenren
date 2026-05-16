@@ -100,7 +100,7 @@ export function NarrativePanel({ validation }: NarrativePanelProps) {
   }
 
   // 暂无叙事
-  if (!narrative?.narrative?.text && phase !== 'FETCHING') {
+  if (!narrative?.narrative?.text) {
     return (
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="text-center text-rg-paper-200/40 font-narrative text-lg">

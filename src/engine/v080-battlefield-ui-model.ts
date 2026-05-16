@@ -10,6 +10,7 @@ import type {
   GuExpressionSpec,
   KillerMoveExpressionSpec,
 } from '../types';
+import qingmaoVisualAssets from '../canon/qingmao-visual-assets.json';
 import {
   createBattlefieldCombatState,
   createBattlefieldGroupCombatState,
@@ -36,10 +37,47 @@ export interface BattlefieldActionCard {
   shape?: string;
   costText: string;
   cooldownText: string;
+  rangeText: string;
+  targetText: string;
+  counterText: string;
+  utilityText: string;
   counters: string[];
   sceneUtilities: string[];
   visualTint: string;
   uniqueness: string;
+}
+
+export interface BattlefieldVisualCue {
+  id: string;
+  label: string;
+  tone: 'attack' | 'defense' | 'support' | 'boundary';
+  text: string;
+}
+
+export interface BattlefieldVisualAsset {
+  id: string;
+  label: string;
+  src: string;
+  role: 'attack' | 'defense' | 'support' | 'scene_reference' | 'background' | 'atmosphere';
+  status: 'active' | 'candidate' | 'review-only' | 'blocked';
+  runtimeLayer?: 'gu_asset' | 'scene_background' | 'atmosphere' | 'review_reference' | 'blocked';
+  runtimeScope?: 'qingmao_mortal_battlefield' | 'scene_specific' | 'forbidden_for_b3';
+  sceneBinding?: 'generic' | 'scene_specific' | 'forbidden';
+  admission?: 'runtime_active' | 'generic_candidate' | 'specific_scene_only' | 'review_only' | 'blocked';
+  compositionContractId?: string;
+  text: string;
+  boundary: string;
+  fallbackText?: string;
+}
+
+export interface BattlefieldStoryboardBeat {
+  id: string;
+  label: string;
+  tone: BattlefieldVisualCue['tone'];
+  triggerText: string;
+  beats: string[];
+  boundary: string;
+  active: boolean;
 }
 
 export interface BattlefieldDemoSource {
@@ -86,6 +124,8 @@ const DEMO_ENEMY_GU_NAMES = ['岩枪蛊', '石皮蛊', '春雷蛊', '力气蛊']
 
 const DEMO_KILLER_MOVES = ['月刃连斩', '石皮护体', '木灵缠绕', '水龙卷', '金钟不破'];
 
+const QINGMAO_BATTLE_ID_PREFIX = 'v090_b3_qingmao_mortal';
+
 const REASON_TEXT: Record<string, string> = {
   actor_not_found_or_defeated: '行动者已失去战力',
   battle_already_ended: '战斗已经结算',
@@ -112,6 +152,19 @@ const REASON_TEXT: Record<string, string> = {
   no_formation_cell: '射程内没有阵位格',
 };
 
+const COMPACT_BATTLEFIELD_TERM_TEXT: Record<string, string> = {
+  cover: '遮蔽',
+  evasion: '闪避',
+  thick_armor: '厚甲',
+  sustained_crack: '持续裂纹',
+  heavy_force: '重击',
+  essence_drain: '真元消耗',
+  bad_wine: '劣酒',
+  aperture_pressure: '窍壁压力',
+  dense_cover: '密林遮蔽',
+  heavy_rain: '暴雨',
+};
+
 export function describeBattlefieldReason(reason?: string): string {
   if (!reason) return '';
   if (reason.startsWith('missing_core_gu:')) return `缺少核心蛊：${reason.split(':')[1]}`;
@@ -121,11 +174,33 @@ export function describeBattlefieldReason(reason?: string): string {
 
 export function formatBattlefieldCost(cost?: { essencePct?: number; immortalEssence?: number; primevalStones?: number }): string {
   if (!cost) return '无消耗';
-  const parts = [];
+  const parts: string[] = [];
   if (cost.essencePct) parts.push(`真元 ${cost.essencePct}`);
   if (cost.immortalEssence) parts.push(`仙元 ${cost.immortalEssence}`);
   if (cost.primevalStones) parts.push(`元石 ${cost.primevalStones}`);
   return parts.length ? parts.join(' / ') : '无消耗';
+}
+
+function formatBattlefieldRange(range?: { shape?: string; min?: number; max?: number; area?: number }): string {
+  if (!range) return '战场';
+  if (range.shape === 'self' || range.max === 0) return '自身';
+  const distance = typeof range.min === 'number' && typeof range.max === 'number' && range.min !== range.max
+    ? `${range.min}-${range.max}格`
+    : `${range.max ?? 0}格`;
+  return `${range.shape || '范围'} ${distance}`;
+}
+
+function formatBattlefieldTargetText(validation?: BattlefieldActionValidation | null): string {
+  if (!validation) return '未接入';
+  if (validation.affectedCellIds.length > 1) return `影响 ${validation.affectedCellIds.length}格`;
+  if (validation.validTargetCellIds.length > 0) return `可选 ${validation.validTargetCellIds.length}格`;
+  return '无需目标';
+}
+
+function compactBattlefieldList(items: string[], fallback: string, limit = 2): string {
+  const next = items.filter(Boolean).map(item => COMPACT_BATTLEFIELD_TERM_TEXT[item] ?? item);
+  if (!next.length) return fallback;
+  return next.slice(0, limit).join(' / ');
 }
 
 export function getBattlefieldActor(state: BattlefieldCombatState, preferredId = 'player'): BattlefieldUnit | undefined {
@@ -249,6 +324,218 @@ export function createBattlefieldDemoState(source: BattlefieldDemoSource = {}): 
       },
     ],
   });
+}
+
+export function createQingmaoMortalBattlefieldState(source: BattlefieldDemoSource = {}): BattlefieldCombatState {
+  const playerName = source.profile?.name || '青茅山演武蛊师';
+  const healthMax = Number(source.vitals?.health?.max || 128);
+  const healthCurrent = Number(source.vitals?.health?.current || healthMax);
+  const essenceMax = Number(source.vitals?.essence?.max || 88);
+  const essenceCurrent = Number(source.vitals?.essence?.current || essenceMax);
+
+  return createBattlefieldCombatState({
+    battleId: `${QINGMAO_BATTLE_ID_PREFIX}_${Date.now()}`,
+    seed: 'v090-b3-qingmao-mortal-battlefield',
+    activeTerrainId: 'moonlit_courtyard',
+    activeFormationId: 'qingmao_aperture_ring',
+    eventWindows: ['scout', 'action', 'counter', 'settlement'],
+    cells: [
+      { id: 'c0_0', terrainId: 'dense_forest', flags: ['cover', 'backline'] },
+      { id: 'c1_0', terrainId: 'dense_forest', flags: ['cover', 'backline'] },
+      { id: 'c2_0', terrainId: 'moonlit_courtyard', flags: ['dao_field', 'midline'], daoFieldPath: '光道' },
+      { id: 'c3_0', terrainId: 'dense_forest', flags: ['concealment', 'frontline'] },
+      { id: 'c4_0', terrainId: 'mountain_pass', flags: ['frontline'] },
+      { id: 'c1_1', terrainId: 'moonlit_courtyard', flags: ['dao_field'], daoFieldPath: '光道' },
+      { id: 'c2_1', terrainId: 'formation_ruins', flags: ['array_node'], daoFieldPath: '光道' },
+      { id: 'c4_1', terrainId: 'mountain_pass', flags: ['cover'] },
+      { id: 'c0_2', terrainId: 'dense_forest', flags: ['backline'] },
+      { id: 'c2_2', terrainId: 'mountain_pass', flags: ['hazard', 'midline'], dangerTags: ['aperture_pressure'] },
+      { id: 'c3_2', terrainId: 'dense_forest', flags: ['concealment', 'frontline'] },
+    ],
+    units: [
+      {
+        id: 'player',
+        name: playerName,
+        side: 'player',
+        cellId: 'c0_1',
+        realmNum: 2,
+        path: '光道',
+        hp: Math.max(1, Math.min(healthCurrent, healthMax)),
+        maxHp: healthMax,
+        attack: 30,
+        defense: 18,
+        accuracy: 76,
+        evasion: 20,
+        daoMarks: { 光道: 34, 金道: 16, 食道: 6 },
+        essence: { current: essenceCurrent, max: essenceMax, type: 'primeval' },
+        guNames: ['月光蛊', '小光蛊', '月芒蛊', '白玉蛊', '酒虫'],
+        killerMoveNames: ['月刃连斩'],
+        cooldowns: {},
+        statusEffects: ['essence_refined'],
+        intent: '青茅山凡战竖切主控单位：月光蛊进攻、白玉蛊护体，酒虫只作为战前真元支持提示。',
+      },
+      {
+        id: 'qingmao_rival',
+        name: '山道截斗蛊师',
+        side: 'enemy',
+        cellId: 'c3_1',
+        realmNum: 2,
+        path: '土道',
+        hp: 118,
+        maxHp: 118,
+        attack: 28,
+        defense: 22,
+        accuracy: 70,
+        evasion: 16,
+        daoMarks: { 土道: 42, 雷道: 10 },
+        essence: { current: 78, max: 86, type: 'primeval' },
+        guNames: ['岩枪蛊', '石皮蛊', '力气蛊'].filter(isGuNormalCombatUsable),
+        killerMoveNames: [],
+        cooldowns: {},
+        statusEffects: [],
+        intent: '以岩枪和石皮逼迫玩家解释射程、遮蔽、防护与反制。',
+      },
+    ],
+  });
+}
+
+export function isQingmaoMortalBattlefield(state?: BattlefieldCombatState | null): boolean {
+  return !!state && (
+    state.battleId.startsWith(QINGMAO_BATTLE_ID_PREFIX)
+    || state.activeFormationId === 'qingmao_aperture_ring'
+  );
+}
+
+export function buildQingmaoBattlefieldCues(state?: BattlefieldCombatState | null): BattlefieldVisualCue[] {
+  if (!isQingmaoMortalBattlefield(state)) return [];
+  const moonlight = getGuExpressionSpec('月光蛊');
+  const whiteJade = getGuExpressionSpec('白玉蛊');
+  const liquorWorm = getGuExpressionSpec('酒虫');
+  return [
+    {
+      id: 'moonlight-gu',
+      label: '月光蛊',
+      tone: 'attack',
+      text: moonlight
+        ? `直线${moonlight.range.max}格月刃；遮蔽、消耗和命中只认本地引擎。`
+        : '月刃表现缺少 canon 登记，不能进入竖切。',
+    },
+    {
+      id: 'white-jade-gu',
+      label: '白玉蛊',
+      tone: 'defense',
+      text: whiteJade
+        ? `自我护体，消耗${whiteJade.cost.essencePct ?? 0}真元；不暗示仙体或永生。`
+        : '白玉护体缺少 canon 登记，不能进入竖切。',
+    },
+    {
+      id: 'liquor-worm',
+      label: '酒虫',
+      tone: 'support',
+      text: liquorWorm
+        ? '场景门槛支持：只显示真元质变与战前准备，不作为普通攻击按钮。'
+        : '酒虫缺少 canon 登记，不能进入竖切。',
+    },
+    {
+      id: 'art-boundary',
+      label: '美术边界',
+      tone: 'boundary',
+      text: '凡人尺度：不暗示仙蛊、永生、十转、宿命蛊归属或宝黄天交易。',
+    },
+  ];
+}
+
+export function buildQingmaoBattlefieldAssets(state?: BattlefieldCombatState | null): BattlefieldVisualAsset[] {
+  if (!isQingmaoMortalBattlefield(state)) return [];
+  return buildQingmaoAssetManifest().filter(asset => (
+    asset.runtimeLayer === 'gu_asset'
+    && asset.status === 'active'
+    && asset.sceneBinding === 'generic'
+    && asset.admission === 'runtime_active'
+  ));
+}
+
+export function buildQingmaoBattlefieldAtmosphereAsset(state?: BattlefieldCombatState | null): BattlefieldVisualAsset | null {
+  if (!isQingmaoMortalBattlefield(state)) return null;
+  return buildQingmaoAssetManifest().find(asset => (
+    asset.runtimeLayer === 'scene_background'
+    && asset.role === 'background'
+    && asset.status === 'active'
+    && asset.sceneBinding === 'generic'
+    && asset.admission === 'runtime_active'
+  )) ?? null;
+}
+
+export function buildQingmaoAssetManifest(): BattlefieldVisualAsset[] {
+  return (qingmaoVisualAssets.entries as BattlefieldVisualAsset[]).map(asset => ({ ...asset }));
+}
+
+function stepMatches(
+  step: BattleResolutionStep | undefined,
+  sources: string[],
+  motifs: string[],
+  tags: string[] = [],
+): boolean {
+  if (!step) return false;
+  const sourceName = step.sourceName ?? '';
+  const motif = step.visual?.motif ?? '';
+  return sources.some(source => sourceName.includes(source))
+    || motifs.some(item => motif.includes(item))
+    || tags.some(tag => step.tags.includes(tag));
+}
+
+export function buildQingmaoBattlefieldStoryboard(
+  state?: BattlefieldCombatState | null,
+  currentStep?: BattleResolutionStep,
+): BattlefieldStoryboardBeat[] {
+  if (!isQingmaoMortalBattlefield(state)) return [];
+  const player = state?.units.find(unit => unit.id === 'player');
+  const liquorSupportActive = !!player?.statusEffects.includes('essence_refined');
+  const forbiddenActive = !!currentStep && (
+    currentStep.kind === 'failure'
+    || currentStep.kind === 'counter'
+    || currentStep.tags.some(tag => ['aperture_pressure', 'forbidden', 'backlash', 'hazard'].includes(tag))
+    || ['action_blocked', 'hazard'].includes(currentStep.visual?.motif ?? '')
+  );
+
+  return [
+    {
+      id: 'moon-blade-chain',
+      label: '月刃连斩',
+      tone: 'attack',
+      triggerText: '月光蛊 / 月刃连斩 / crescent_blade',
+      beats: ['指尖凝月', '两段切线扫格', '余光回写轨迹'],
+      boundary: '只播放 step；不追加伤害、命中或打断。',
+      active: stepMatches(currentStep, ['月光蛊', '月刃连斩'], ['crescent_blade', 'moon_gather', 'crescent_chain']),
+    },
+    {
+      id: 'white-jade-shell',
+      label: '白玉护体',
+      tone: 'defense',
+      triggerText: '白玉蛊 / white_jade_shell',
+      beats: ['玉色闭合', '裂纹显压', '消耗留在轨迹'],
+      boundary: '凡人护体，不表现仙体、永生或绝对免伤。',
+      active: stepMatches(currentStep, ['白玉蛊'], ['white_jade_shell', 'jade_gloss']),
+    },
+    {
+      id: 'liquor-worm-support',
+      label: '酒虫支持',
+      tone: 'support',
+      triggerText: 'essence_refined / wine_worm',
+      beats: ['空窍内旋', '真元质变提示', '不进入攻击栏'],
+      boundary: '酒虫只做战前/场景支持，不造成伤害。',
+      active: liquorSupportActive || stepMatches(currentStep, ['酒虫'], ['wine_worm'], ['essence_refined']),
+    },
+    {
+      id: 'forbidden-threshold',
+      label: '禁忌门槛',
+      tone: 'boundary',
+      triggerText: 'failure / counter / aperture_pressure',
+      beats: ['血线压低', '窍壁警示', '失败原因可读'],
+      boundary: '血色只提示风险/反噬，不暗示未开放禁术奖励。',
+      active: forbiddenActive,
+    },
+  ];
 }
 
 export function createBattlefieldNarrativeDuelState(
@@ -885,6 +1172,10 @@ function cardFromGu(state: BattlefieldCombatState, actor: BattlefieldUnit, spec:
     shape: spec.range.shape,
     costText: formatBattlefieldCost(spec.cost),
     cooldownText: spec.cooldown > 0 ? `${spec.cooldown}回合` : '无冷却',
+    rangeText: formatBattlefieldRange(spec.range),
+    targetText: formatBattlefieldTargetText(targets),
+    counterText: compactBattlefieldList(spec.counters, '无反制登记'),
+    utilityText: compactBattlefieldList(spec.sceneUtilities, '无场景用途'),
     counters: spec.counters,
     sceneUtilities: spec.sceneUtilities,
     visualTint: spec.visualMotif.primaryTint,
@@ -907,6 +1198,15 @@ function cardFromKillerMove(state: BattlefieldCombatState, actor: BattlefieldUni
     shape: move.boardPattern.shape,
     costText: formatBattlefieldCost(targets.resourceCost),
     cooldownText: `${Math.max(1, move.level)}回合`,
+    rangeText: formatBattlefieldRange({
+      shape: move.boardPattern.shape,
+      min: move.boardPattern.range > 0 ? 1 : 0,
+      max: move.boardPattern.range,
+      area: move.boardPattern.area,
+    }),
+    targetText: formatBattlefieldTargetText(targets),
+    counterText: compactBattlefieldList([move.failureMode, move.backlash].filter(Boolean), '无反制登记'),
+    utilityText: compactBattlefieldList(move.sceneUtilities, '无场景用途'),
     counters: [move.failureMode, move.backlash].filter(Boolean),
     sceneUtilities: move.sceneUtilities,
     visualTint: '#C9A96E',
@@ -948,10 +1248,14 @@ export function buildBattlefieldActionCards(
       disabledReason: validation.validTargetCellIds.length ? undefined : '没有可移动格',
       costText: '无消耗',
       cooldownText: '即时',
+      rangeText: formatBattlefieldRange({ shape: 'move', min: 1, max: 1, area: 1 }),
+      targetText: formatBattlefieldTargetText(validation),
+      counterText: '危险格',
+      utilityText: '调整阵位',
       counters: ['进入危险格会触发地形伤害'],
       sceneUtilities: ['调整阵位', '脱离压制'],
       visualTint: '#7A8EA8',
-      uniqueness: '按棋盘空格移动，所有占位与危险由本地引擎判定',
+      uniqueness: '按棋盘空格移动，所有阵位与危险由本地引擎判定',
     }];
   }
 
@@ -966,6 +1270,10 @@ export function buildBattlefieldActionCards(
       validation,
       costText: '无消耗',
       cooldownText: '即时',
+      rangeText: '边缘格',
+      targetText: formatBattlefieldTargetText(validation),
+      counterText: '贴身敌人',
+      utilityText: '保命',
       counters: ['贴身敌人会降低成功率', '边缘格更利于撤退'],
       sceneUtilities: ['保命', '保留后续剧情压力'],
       visualTint: '#8B3A3A',
@@ -984,6 +1292,10 @@ export function buildBattlefieldActionCards(
       validation: state.mode === 'group' ? validation : null,
       costText: '无消耗',
       cooldownText: '即时',
+      rangeText: state.mode === 'group' ? '战场' : '只读',
+      targetText: formatBattlefieldTargetText(validation),
+      counterText: state.mode === 'group' ? '消耗行动' : '不推进',
+      utilityText: '查看情报',
       counters: state.mode === 'group' ? ['会消耗当前单位行动', '可揭示伏击/遮蔽/第三方动向'] : ['不推进结算'],
       sceneUtilities: ['查看地形', '查看状态', '确认目标', '揭示伏击'],
       visualTint: '#4B6E8B',
@@ -1038,7 +1350,11 @@ export function buildBattlefieldActionCards(
         shape: item.action.type,
         costText: '无消耗',
         cooldownText: '1回合',
-        counters: ['占位、士气和目标状态均由本地引擎结算'],
+        rangeText: item.action.type === 'rally' ? '己方' : '邻近',
+        targetText: formatBattlefieldTargetText(targets),
+        counterText: '阵位/士气',
+        utilityText: compactBattlefieldList(['阵位', '援护', '士气', '群像战'], '群像战'),
+        counters: ['阵位、士气和目标状态均由本地引擎结算'],
         sceneUtilities: ['阵位', '援护', '士气', '群像战'],
         visualTint: item.tint,
         uniqueness: item.text,
@@ -1052,13 +1368,17 @@ export function buildBattlefieldActionCards(
     label: '阵位未成',
     action: null,
     validation: null,
-    disabledReason: 'a2 只展示阵位与阵纹，不执行完整阵法',
+    disabledReason: '当前只展示阵位与阵纹，不执行完整阵法',
     costText: '无消耗',
-    cooldownText: '未接入',
-    counters: ['破阵与布阵留到群像战斗阶段'],
+    cooldownText: '未开放',
+    rangeText: '未开放',
+    targetText: '无需目标',
+    counterText: '阵法未成',
+    utilityText: '识别阵位',
+    counters: ['破阵与布阵需要先满足群像战斗条件'],
     sceneUtilities: ['识别阵位', '识别道痕场'],
     visualTint: '#C9A96E',
-    uniqueness: '棋盘已显示阵位格，完整阵法运行时在后续小版本接入',
+    uniqueness: '棋盘已显示阵位格，完整阵法需要满足群像战斗条件后再运行',
   }];
 }
 

@@ -23,6 +23,10 @@ interface LongScenario {
 }
 
 const saveDir = path.join(process.cwd(), '测试存档', 'v0.7.0');
+const publicSaveDir = path.join(process.cwd(), 'public', 'test-saves');
+const publicSaveFiles = fs.readdirSync(publicSaveDir)
+  .filter(file => /^test-\d+.+\.json$/.test(file))
+  .sort((a, b) => a.localeCompare(b));
 
 const scenarios: LongScenario[] = [
   {
@@ -129,6 +133,11 @@ const scenarios: LongScenario[] = [
 
 function readSave(file: string): unknown {
   const fullPath = path.join(saveDir, file);
+  return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+}
+
+function readPublicSave(file: string): unknown {
+  const fullPath = path.join(publicSaveDir, file);
   return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
 }
 
@@ -308,4 +317,72 @@ test.describe('v0.7.0 发布收束长测', () => {
       expect(consoleErrors).toEqual([]);
     });
   }
+});
+
+test.describe('v0.9.0 公开测试存档镜像', () => {
+  for (const file of publicSaveFiles) {
+    test(`${file} 可以由运行时载入`, async ({ page }) => {
+      const consoleErrors = await installConsoleGuards(page);
+      const save = readPublicSave(file);
+
+      await page.goto('/?e2e=1');
+      await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
+
+      const result = await page.evaluate(payload => {
+        return (window as RebornE2eWindow).__REBORN_E2E__!.loadSave(payload);
+      }, save);
+      expect(result.success, result.error).toBe(true);
+
+      await page.waitForFunction(() => {
+        const summary = (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary();
+        return summary.screenState === 'game_play';
+      });
+
+      const summary = await page.evaluate(() => {
+        return (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary();
+      });
+
+      expect(summary.screenState).toBe('game_play');
+      expect(String(summary.playerRole)).toBe('original_participant');
+      expect(String(summary.realm)).not.toBe('');
+      expect(String(summary.playerName)).not.toContain('方源');
+      expect(
+        summary.pipelineError === null || summary.pipelineError === 'API Key 未设置',
+        `Unexpected pipeline error: ${String(summary.pipelineError)}`,
+      ).toBe(true);
+      expect(consoleErrors).toEqual([]);
+    });
+  }
+
+  test('标题页文件导入可载入公开宝黄天存档', async ({ page }) => {
+    const consoleErrors = await installConsoleGuards(page);
+    await mockDeepSeekConnection(page);
+    await page.addInitScript(() => {
+      localStorage.clear();
+      localStorage.setItem('deepseek_api_key', 'e2e-title-key');
+    });
+
+    await page.goto('/?e2e=1');
+    await page.getByRole('button', { name: '测试连通' }).click();
+    await expect(page.getByText('天道已响应')).toBeVisible();
+
+    const fileChooserPromise = page.waitForEvent('filechooser');
+    await page.getByRole('button', { name: /载入存档/ }).click();
+    const fileChooser = await fileChooserPromise;
+    await fileChooser.setFiles(path.join(publicSaveDir, 'test-08-economy-tyh-pools.json'));
+
+    await page.waitForFunction(() => {
+      const summary = (window as RebornE2eWindow).__REBORN_E2E__?.getStateSummary();
+      return summary?.screenState === 'game_play';
+    });
+
+    const summary = await page.evaluate(() => {
+      return (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary();
+    });
+
+    expect(summary.screenState).toBe('game_play');
+    expect(String(summary.realm)).toContain('六转');
+    expect(String(summary.currentDomain)).not.toBe('');
+    expect(consoleErrors).toEqual([]);
+  });
 });

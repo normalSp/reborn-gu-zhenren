@@ -34,6 +34,8 @@ import { createEndingSlice } from './slices/endingSlice';
 import { createSceneSessionSlice } from './slices/sceneSessionSlice';
 import { createInheritanceLandSlice } from './slices/inheritanceLandSlice';
 import { createTrainingGroundSlice } from './slices/trainingGroundSlice';
+import { createQingmaoRegionSlice } from './slices/qingmaoRegionSlice';
+import { createLivingWorldSlice } from './slices/livingWorldSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
@@ -41,11 +43,13 @@ import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine'
 import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-engine';
 import { normalizeTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
+import { normalizeLivingWorldState } from './defaultLivingWorldState';
 import {
   INITIAL_STATE,
   EXCLUDE_FROM_SAVE,
   SAVE_FORMAT_VERSION,
 } from './initialState';
+import { STORAGE_KEYS } from './storageKeys';
 import npcsData from '../canon/npcs.json';
 import type { NarrativeJSON } from '../types';
 
@@ -160,60 +164,10 @@ export function migrateSave(parsed: SaveFileFormat): SaveFileFormat {
     if (s.maxDynamicNPCs === undefined) s.maxDynamicNPCs = 500;
   }
 
-  if (s.feedingCredits === undefined) s.feedingCredits = {};
-  if (s.feedingDiscountProgress === undefined) s.feedingDiscountProgress = {};
-  if (s.targetedGuEffects === undefined) s.targetedGuEffects = [];
-  if (s.rumorLocations === undefined) s.rumorLocations = [];
-  if (s.materialShelf === undefined) {
-    s.materialShelf = {
-      items: [],
-      lastRefreshed: 0,
-      freeRefreshTurn: 0,
-      freeRefreshCount: 0,
-      emergencyRefreshUsedTurn: 0,
-      emergencyActive: false,
-    };
-  }
-  if (s.lastFactionEconomyLedger === undefined) s.lastFactionEconomyLedger = null;
-  if (s.lastFactionEconomyTurn === undefined) s.lastFactionEconomyTurn = 0;
-  s.partyState = normalizePartyState(s.partyState, s.turn ?? 0);
-  s.squadDispatchState = normalizeSquadDispatchState(s.squadDispatchState, s.turn ?? 0);
-  if (s.squadCombatWins === undefined) s.squadCombatWins = 0;
-  if (s.squadMembersRecruited === undefined) s.squadMembersRecruited = 0;
-  if (s.squadMemberWoundedRescues === undefined) s.squadMemberWoundedRescues = 0;
-  if (s.squadMemberDeaths === undefined) s.squadMemberDeaths = 0;
-  if (s.squadComboSuccesses === undefined) s.squadComboSuccesses = 0;
-  if (s.squadOverlevelEscapes === undefined) s.squadOverlevelEscapes = 0;
-  if (v < 16 || s.cultivationState === undefined) {
-    s.cultivationState = normalizeCultivationState({
-      ...s.cultivationState,
-      progress: Number(s.cultivationState?.progress ?? s.flags?.cultivationProgress ?? 0),
-    });
-  }
-  if (v < 17 || s.storyAnchorState === undefined) {
-    s.storyAnchorState = normalizeStoryAnchorState(s.storyAnchorState, s.flags || {});
-  }
-  if (v < 18 || s.endingState === undefined) {
-    s.endingState = normalizeEndingFrameworkState(s.endingState || s.flags?.endingState);
-  }
-  if (v < 19 || s.sceneSessionState === undefined) {
-    s.sceneSessionState = normalizeSceneSessionState(s.sceneSessionState);
-  }
-  if (v < 20 || s.inheritanceLandState === undefined) {
-    s.inheritanceLandState = normalizeInheritanceLandState(s.inheritanceLandState);
-  }
-  if (v < 21 || s.trainingGroundState === undefined) {
-    s.trainingGroundState = normalizeTrainingGroundState(s.trainingGroundState || {
-      clues: s.flags?.trainingGroundClues,
-      cooldowns: s.flags?.trainingCooldowns,
-      lastResolutionSteps: s.flags?.lastTrainingGroundResolution,
-    });
-  }
-  s.flags = mirrorTrainingGroundFlagsForLoad(
-    mirrorStoryAnchorFlagsForLoad(s.flags || {}, s.storyAnchorState),
-    s.trainingGroundState,
-  );
-
+  parsed.state = normalizePersistedGameState(s, {
+    turn: s.turn ?? 0,
+    flags: s.flags || {},
+  });
   parsed.formatVersion = SAVE_FORMAT_VERSION;
   return parsed;
 }
@@ -264,6 +218,8 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createSceneSessionSlice> &
   ReturnType<typeof createInheritanceLandSlice> &
   ReturnType<typeof createTrainingGroundSlice> &
+  ReturnType<typeof createQingmaoRegionSlice> &
+  ReturnType<typeof createLivingWorldSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -419,6 +375,80 @@ function resolveLoadedBattleRuntime(stateData: Record<string, any>): {
   };
 }
 
+export function normalizePersistedGameState(
+  rawState: Record<string, any>,
+  options: { turn?: number; flags?: Record<string, any> } = {},
+): Record<string, any> {
+  const state = rawState && typeof rawState === 'object' ? { ...rawState } : {};
+  const optionTurn = typeof options.turn === 'number' && Number.isFinite(options.turn)
+    ? options.turn
+    : undefined;
+  const turn = optionTurn ?? Number(state.turn ?? 0);
+  const sourceFlags = options.flags && typeof options.flags === 'object'
+    ? { ...options.flags }
+    : (state.flags && typeof state.flags === 'object' ? { ...state.flags } : {});
+
+  if (state.dynamicNPCs === undefined) state.dynamicNPCs = {};
+  if (state.maxDynamicNPCs === undefined) state.maxDynamicNPCs = 500;
+  if (state.npcContacts === undefined) state.npcContacts = [];
+  if (state.targetedGuEffects === undefined) state.targetedGuEffects = [];
+  if (state.feedingCredits === undefined) state.feedingCredits = {};
+  if (state.feedingDiscountProgress === undefined) state.feedingDiscountProgress = {};
+  if (state.gameLog === undefined) state.gameLog = [];
+  if (state.gameLogArchive === undefined) state.gameLogArchive = [];
+  if (state.rumorLocations === undefined) state.rumorLocations = [];
+  if (state.materialShelf === undefined) {
+    state.materialShelf = {
+      items: [],
+      lastRefreshed: 0,
+      freeRefreshTurn: 0,
+      freeRefreshCount: 0,
+      emergencyRefreshUsedTurn: 0,
+      emergencyActive: false,
+    };
+  }
+  if (state.lastFactionEconomyLedger === undefined) state.lastFactionEconomyLedger = null;
+  if (state.lastFactionEconomyTurn === undefined) state.lastFactionEconomyTurn = 0;
+  if (state.squadCombatWins === undefined) state.squadCombatWins = 0;
+  if (state.squadMembersRecruited === undefined) state.squadMembersRecruited = 0;
+  if (state.squadMemberWoundedRescues === undefined) state.squadMemberWoundedRescues = 0;
+  if (state.squadMemberDeaths === undefined) state.squadMemberDeaths = 0;
+  if (state.squadComboSuccesses === undefined) state.squadComboSuccesses = 0;
+  if (state.squadOverlevelEscapes === undefined) state.squadOverlevelEscapes = 0;
+
+  state.partyState = normalizePartyState(state.partyState, turn);
+  state.squadDispatchState = normalizeSquadDispatchState(state.squadDispatchState, turn);
+  state.cultivationState = normalizeCultivationState({
+    ...state.cultivationState,
+    progress: Number(state.cultivationState?.progress ?? sourceFlags.cultivationProgress ?? 0),
+  });
+  state.storyAnchorState = normalizeStoryAnchorState(state.storyAnchorState, sourceFlags);
+  state.endingState = normalizeEndingFrameworkState(state.endingState || sourceFlags.endingState);
+  state.sceneSessionState = normalizeSceneSessionState(state.sceneSessionState);
+  state.inheritanceLandState = normalizeInheritanceLandState(state.inheritanceLandState);
+  state.trainingGroundState = normalizeTrainingGroundState(state.trainingGroundState || {
+    clues: sourceFlags.trainingGroundClues,
+    cooldowns: sourceFlags.trainingCooldowns,
+    lastResolutionSteps: sourceFlags.lastTrainingGroundResolution,
+  });
+  state.livingWorldState = normalizeLivingWorldState(state.livingWorldState, turn);
+  state.flags = mirrorTrainingGroundFlagsForLoad(
+    mirrorStoryAnchorFlagsForLoad(sourceFlags, state.storyAnchorState),
+    state.trainingGroundState,
+  );
+
+  if (state.deathRecord) {
+    state.deathRecord = {
+      majorChoices: [],
+      deathCauseTags: [],
+      generatedAt: new Date().toISOString(),
+      ...state.deathRecord,
+    };
+  }
+
+  return state;
+}
+
 export function buildVisibleNarrativeAfterLoad(
   state: Record<string, any>,
   meta?: SaveFileFormat['meta'],
@@ -460,26 +490,10 @@ function buildLoadedStoreState(
 
   const visibleNarrative = buildVisibleNarrativeAfterLoad(stateData, parsed.meta);
   const battleRuntime = resolveLoadedBattleRuntime(stateData);
-  const cultivationState = normalizeCultivationState({
-    ...stateData.cultivationState,
-    progress: Number(stateData.cultivationState?.progress ?? battleRuntime.flags?.cultivationProgress ?? 0),
+  const normalizedState = normalizePersistedGameState(stateData, {
+    turn: stateData.turn ?? 0,
+    flags: { ...(battleRuntime.flags || {}), ...(stateData.flags || {}) },
   });
-  const storyAnchorState = normalizeStoryAnchorState(
-    stateData.storyAnchorState,
-    { ...(battleRuntime.flags || {}), ...(stateData.flags || {}) },
-  );
-  const endingState = normalizeEndingFrameworkState(stateData.endingState || stateData.flags?.endingState);
-  const sceneSessionState = normalizeSceneSessionState(stateData.sceneSessionState);
-  const inheritanceLandState = normalizeInheritanceLandState(stateData.inheritanceLandState);
-  const trainingGroundState = normalizeTrainingGroundState(stateData.trainingGroundState || {
-    clues: stateData.flags?.trainingGroundClues,
-    cooldowns: stateData.flags?.trainingCooldowns,
-    lastResolutionSteps: stateData.flags?.lastTrainingGroundResolution,
-  });
-  const flags = mirrorTrainingGroundFlagsForLoad(
-    mirrorStoryAnchorFlagsForLoad(battleRuntime.flags, storyAnchorState),
-    trainingGroundState,
-  );
   const achievementRuntime = {
     unlockedAchievements: currentStore.unlockedAchievements ?? [],
     achievementProgress: currentStore.achievementProgress ?? {},
@@ -491,6 +505,7 @@ function buildLoadedStoreState(
     ...INITIAL_STATE,
     ...achievementRuntime,
     ...stateData,
+    ...normalizedState,
     ...preservedFns,
     screenState: 'game_play',
     gameMode: parsed.meta?.gameMode || stateData.gameMode || currentStore.gameMode || 'canon',
@@ -511,54 +526,52 @@ function buildLoadedStoreState(
     battlefieldPlaybackSteps: [],
     battlefieldTraceCursor: 0,
     combatEncounterState: createIdleCombatEncounterState(),
-    flags,
-    cultivationState,
-    storyAnchorState,
-    endingState,
-    sceneSessionState,
-    inheritanceLandState,
-    trainingGroundState,
   };
 }
 
 export const useStore = create<RootStore>()(
   devtools(
     persist(
-      (...a) => ({
-        ...createPlayerSlice(...a),
-        ...createGuSlice(...a),
-        ...createKillMoveSlice(...a),
-        ...createPathSlice(...a),
-        ...createTalentSlice(...a),
-        ...createFactionSlice(...a),
-        ...createSquadSlice(...a),
-        ...createApertureSlice(...a),
-        ...createCausalitySlice(...a),
-        ...createEventSlice(...a),
-        ...createNarrativeSlice(...a),
-        ...createMapSlice(...a),
-        ...createUiSlice(...a),
-        ...createYuanStoneSlice(...a),
-        ...createAchievementSlice(...a),
-        ...createTutorialSlice(...a),
-        ...createChapterSlice(...a),
-        ...createCombatSlice(...a),
-        ...createDialogueSlice(...a),
-        ...createDebtSlice(...a),
-        ...createEncounterSlice(...a),
-        ...createOriginUnlockSlice(...a),
-        ...createSoundSlice(...a),
-        ...createGameLogSlice(...a),
-        ...createMerchantSlice(...a),
-        ...createAuctionSlice(...a),
-        ...createTimelineSlice(...a),
-        ...createDynamicNPCStore(...a),
-        ...createCultivationSlice(...a),
-        ...createStoryAnchorSlice(...a),
-        ...createEndingSlice(...a),
-        ...createSceneSessionSlice(...a),
-        ...createInheritanceLandSlice(...a),
-        ...createTrainingGroundSlice(...a),
+      (...a) => {
+        const sliceArgs = [a[0], a[1]] as const;
+
+        return {
+        ...createPlayerSlice(...sliceArgs),
+        ...createGuSlice(...sliceArgs),
+        ...createKillMoveSlice(...sliceArgs),
+        ...createPathSlice(...sliceArgs),
+        ...createTalentSlice(...sliceArgs),
+        ...createFactionSlice(...sliceArgs),
+        ...createSquadSlice(...sliceArgs),
+        ...createApertureSlice(...sliceArgs),
+        ...createCausalitySlice(...sliceArgs),
+        ...createEventSlice(...sliceArgs),
+        ...createNarrativeSlice(...sliceArgs),
+        ...createMapSlice(...sliceArgs),
+        ...createUiSlice(...sliceArgs),
+        ...createYuanStoneSlice(...sliceArgs),
+        ...createAchievementSlice(...sliceArgs),
+        ...createTutorialSlice(...sliceArgs),
+        ...createChapterSlice(...sliceArgs),
+        ...createCombatSlice(...sliceArgs),
+        ...createDialogueSlice(...sliceArgs),
+        ...createDebtSlice(...sliceArgs),
+        ...createEncounterSlice(...sliceArgs),
+        ...createOriginUnlockSlice(...sliceArgs),
+        ...createSoundSlice(...sliceArgs),
+        ...createGameLogSlice(...sliceArgs),
+        ...createMerchantSlice(...sliceArgs),
+        ...createAuctionSlice(...sliceArgs),
+        ...createTimelineSlice(...sliceArgs),
+        ...createDynamicNPCStore(...sliceArgs),
+        ...createCultivationSlice(...sliceArgs),
+        ...createStoryAnchorSlice(...sliceArgs),
+        ...createEndingSlice(...sliceArgs),
+        ...createSceneSessionSlice(...sliceArgs),
+        ...createInheritanceLandSlice(...sliceArgs),
+        ...createTrainingGroundSlice(...sliceArgs),
+        ...createQingmaoRegionSlice(...sliceArgs),
+        ...createLivingWorldSlice(...sliceArgs),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -575,14 +588,14 @@ export const useStore = create<RootStore>()(
             }
           } catch { /* skip */ }
           // ═══ BugFix: 先清除 localStorage 持久化缓存，避免 persist 中间件竞态导致旧数据残留 ═══
-          try { localStorage.removeItem('gu-zhenren-save'); } catch {}
+          try { localStorage.removeItem(STORAGE_KEYS.MAIN_SAVE); } catch {}
           // ═══ BugFix: 从独立 localStorage key 恢复成就数据（跨存档持久化） ═══
           let savedAchievements: string[] = [];
           let savedAchievementProgress: Record<string, number> = {};
           try {
-            const aRaw = localStorage.getItem('gu-zhenren-achievements');
+            const aRaw = localStorage.getItem(STORAGE_KEYS.ACHIEVEMENTS);
             if (aRaw) savedAchievements = JSON.parse(aRaw);
-            const pRaw = localStorage.getItem('gu-zhenren-achievement-progress');
+            const pRaw = localStorage.getItem(STORAGE_KEYS.ACHIEVEMENT_PROGRESS);
             if (pRaw) savedAchievementProgress = JSON.parse(pRaw);
           } catch { /* keep empty */ }
           set({
@@ -711,18 +724,19 @@ export const useStore = create<RootStore>()(
             state: stateData,
           } as SaveFileFormat, null, 2);
         },
-      }),
+      };
+      },
       {
-        name: 'gu-zhenren-save',
+        name: STORAGE_KEYS.MAIN_SAVE,
         version: SAVE_FORMAT_VERSION,
         merge: (persistedState: any, currentState: any) => {
           // 从独立localStorage key恢复成就数据（防止被persist水合覆盖）
           let savedAchievements: string[] = [];
           let savedProgress: Record<string, number> = {};
           try {
-            const aRaw = localStorage.getItem('gu-zhenren-achievements');
+            const aRaw = localStorage.getItem(STORAGE_KEYS.ACHIEVEMENTS);
             if (aRaw) savedAchievements = JSON.parse(aRaw);
-            const pRaw = localStorage.getItem('gu-zhenren-achievement-progress');
+            const pRaw = localStorage.getItem(STORAGE_KEYS.ACHIEVEMENT_PROGRESS);
             if (pRaw) savedProgress = JSON.parse(pRaw);
           } catch { /* keep defaults */ }
           // 归一化 duelsState.phase — 修正历史存档中无效相位值（如"round"→"player_turn"）
@@ -736,59 +750,9 @@ export const useStore = create<RootStore>()(
           if (merged.duelState && !VALID_PHASES.includes(merged.duelState.phase)) {
             merged.duelState = { ...merged.duelState, phase: 'player_turn' };
           }
-          if (merged.feedingCredits === undefined) merged.feedingCredits = {};
-          if (merged.feedingDiscountProgress === undefined) merged.feedingDiscountProgress = {};
-          merged.partyState = normalizePartyState(merged.partyState, merged.turn ?? 0);
-          merged.storyAnchorState = normalizeStoryAnchorState(merged.storyAnchorState, merged.flags || {});
-          merged.endingState = normalizeEndingFrameworkState(merged.endingState || merged.flags?.endingState);
-          merged.sceneSessionState = normalizeSceneSessionState(merged.sceneSessionState);
-          merged.inheritanceLandState = normalizeInheritanceLandState(merged.inheritanceLandState);
-          merged.trainingGroundState = normalizeTrainingGroundState(merged.trainingGroundState || {
-            clues: merged.flags?.trainingGroundClues,
-            cooldowns: merged.flags?.trainingCooldowns,
-            lastResolutionSteps: merged.flags?.lastTrainingGroundResolution,
-          });
-          merged.flags = mirrorTrainingGroundFlagsForLoad(
-            mirrorStoryAnchorFlagsForLoad(merged.flags || {}, merged.storyAnchorState),
-            merged.trainingGroundState,
-          );
-          return merged;
+          return normalizePersistedGameState(merged, { turn: merged.turn ?? 0 }) as any;
         },
         migrate: (persistedState: any, version: number) => {
-          if (persistedState) {
-            if (persistedState.npcContacts === undefined) persistedState.npcContacts = [];
-            if (persistedState.targetedGuEffects === undefined) persistedState.targetedGuEffects = [];
-            if (persistedState.feedingCredits === undefined) persistedState.feedingCredits = {};
-            if (persistedState.feedingDiscountProgress === undefined) persistedState.feedingDiscountProgress = {};
-            if (persistedState.gameLog === undefined) persistedState.gameLog = [];
-            if (persistedState.gameLogArchive === undefined) persistedState.gameLogArchive = [];
-            persistedState.cultivationState = normalizeCultivationState({
-              ...persistedState.cultivationState,
-              progress: Number(persistedState.cultivationState?.progress ?? persistedState.flags?.cultivationProgress ?? 0),
-            });
-            persistedState.storyAnchorState = normalizeStoryAnchorState(persistedState.storyAnchorState, persistedState.flags || {});
-            persistedState.endingState = normalizeEndingFrameworkState(persistedState.endingState || persistedState.flags?.endingState);
-            persistedState.sceneSessionState = normalizeSceneSessionState(persistedState.sceneSessionState);
-            persistedState.inheritanceLandState = normalizeInheritanceLandState(persistedState.inheritanceLandState);
-            persistedState.trainingGroundState = normalizeTrainingGroundState(persistedState.trainingGroundState || {
-              clues: persistedState.flags?.trainingGroundClues,
-              cooldowns: persistedState.flags?.trainingCooldowns,
-              lastResolutionSteps: persistedState.flags?.lastTrainingGroundResolution,
-            });
-            persistedState.flags = mirrorTrainingGroundFlagsForLoad(
-              mirrorStoryAnchorFlagsForLoad(persistedState.flags || {}, persistedState.storyAnchorState),
-              persistedState.trainingGroundState,
-            );
-            persistedState.partyState = normalizePartyState(persistedState.partyState, persistedState.turn ?? 0);
-            if (persistedState.deathRecord) {
-              persistedState.deathRecord = {
-                majorChoices: [],
-                deathCauseTags: [],
-                generatedAt: new Date().toISOString(),
-                ...persistedState.deathRecord,
-              };
-            }
-          }
           // v1 → v2 → v3 → v4 → v5 迁移：兼容旧存档无新增字段的情况
           if (version < 5 && persistedState) {
             // v5 新增：P2扩展字段占位（combatState扩展/dialogueState/shopState/encounterState/audioState/lifeboundGu）
@@ -869,7 +833,9 @@ export const useStore = create<RootStore>()(
             if (persistedState.currentStep === undefined) persistedState.currentStep = 0;
             if (persistedState.tutorialSkippable === undefined) persistedState.tutorialSkippable = true;
           }
-          return persistedState as any;
+          return persistedState
+            ? normalizePersistedGameState(persistedState, { turn: persistedState.turn ?? 0 }) as any
+            : persistedState as any;
         },
         partialize: (state) => {
           const s = state as any;
@@ -884,6 +850,8 @@ export const useStore = create<RootStore>()(
             incrementLoadVersion,
             // 排除存档系统方法（仅运行时功能）
             resetStore, saveToFile, loadFromFile, getSerializedState,
+            listQingmaoRegionActionEntriesAction, resolveQingmaoRegionActionAction, registerQingmaoCombatCandidateAction,
+            previewWorldIntentAction, confirmWorldIntentGoalAction, resolveVisibleInvestigationAction,
             // 排除 Set 类型
             triggeredEvents,
             // 排除临时状态

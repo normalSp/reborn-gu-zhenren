@@ -1,0 +1,215 @@
+{
+  "version": "v0.10.0-a1",
+  "regionId": "qingmao_three_clans",
+  "displayName": "青茅山三寨区域主线板",
+  "status": "scope_frozen",
+  "canonMode": "canon-near+if",
+  "saveFormatDecision": {
+    "currentFormatVersion": 21,
+    "bumpInA1": false,
+    "reason": "a1 only adds static canon truth-source data and tests. No persisted qingmaoRegionState or regionPressureLedger is introduced.",
+    "futureBumpTrigger": "Bump SAVE_FORMAT_VERSION only when a persistent region state, pressure ledger, clue ledger, or migration default is added."
+  },
+  "identityScope": [
+    {
+      "startProfileId": "start_qingmaoshan_guyue",
+      "originProfileId": "origin_qingmao_guyue",
+      "factionId": "guyue_shanzhai",
+      "role": "guyue_clan_member",
+      "provenance": "canon-near",
+      "identityBoundary": "玩家可被叙事称为古月山寨族学弟子，但不能继承方源、方正或其他正史核心人物的独占因果。",
+      "startingAccess": ["guyue_clan_school", "guyue_outer_paths", "qingmao_market_rumors"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_xiongjia",
+      "originProfileId": "origin_qingmao_xiongjia",
+      "factionId": "xiongjia_zhai",
+      "role": "xiong_clan_member",
+      "provenance": "canon-near",
+      "identityBoundary": "玩家是熊家寨蛊师，不能被叙事写成古月族人或古月族学弟子。",
+      "startingAccess": ["xiong_hunting_ground", "front_mountain_patrol", "qingmao_market_rumors"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_baijia",
+      "originProfileId": "origin_qingmao_baijia",
+      "factionId": "baijia_zhai",
+      "role": "bai_clan_member",
+      "provenance": "canon-near",
+      "identityBoundary": "玩家是白家寨蛊师，不能被叙事写成古月族人或古月族学弟子。",
+      "startingAccess": ["bai_clan_school", "stream_path_patrol", "qingmao_market_rumors"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_shangjia_caravan",
+      "originProfileId": "origin_southern_shangjia",
+      "factionId": "shangjia",
+      "role": "caravan_observer",
+      "provenance": "derived",
+      "identityBoundary": "玩家是商家或商队相关人物，不是青茅山三寨族人。",
+      "startingAccess": ["caravan_trade_rumors", "qingmao_market_rumors"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_wujia_branch",
+      "originProfileId": "origin_southern_wujia",
+      "factionId": "wujia",
+      "role": "outside_branch_observer",
+      "provenance": "derived",
+      "identityBoundary": "玩家是武家支脉或外派蛊师，不是青茅山三寨族人。",
+      "startingAccess": ["outside_faction_inquiry", "qingmao_market_rumors"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_tiejia_patrol",
+      "originProfileId": "origin_southern_tiejia",
+      "factionId": "tiejia",
+      "role": "outside_patrol_observer",
+      "provenance": "derived",
+      "identityBoundary": "玩家是铁家巡查或执法蛊师，不是古月、熊家、白家族人。",
+      "startingAccess": ["outside_faction_inquiry", "front_mountain_patrol"]
+    },
+    {
+      "startProfileId": "start_qingmaoshan_sanxiu",
+      "originProfileId": "origin_southern_sanxiu",
+      "factionId": "sanxiu",
+      "role": "rogue_observer",
+      "provenance": "original",
+      "identityBoundary": "玩家是散修或外来蛊师，不能被叙事直接写成大族嫡系或正史核心人物。",
+      "startingAccess": ["wild_path_rumors", "qingmao_market_rumors"]
+    }
+  ],
+  "pressureAxes": [
+    {
+      "id": "guyue_trust",
+      "displayName": "古月信任",
+      "ownerFactionId": "guyue_shanzhai",
+      "range": [-100, 100],
+      "initialByRole": {
+        "guyue_clan_member": 20,
+        "xiong_clan_member": -15,
+        "bai_clan_member": -10,
+        "caravan_observer": 0,
+        "outside_branch_observer": -5,
+        "outside_patrol_observer": -5,
+        "rogue_observer": -10
+      },
+      "engineMeaning": "Only local engine may change this value. DeepSeek may describe suspicion or favor as a candidate pressure hint."
+    },
+    {
+      "id": "xiongjia_trust",
+      "displayName": "熊家信任",
+      "ownerFactionId": "xiongjia_zhai",
+      "range": [-100, 100],
+      "initialByRole": {
+        "guyue_clan_member": -15,
+        "xiong_clan_member": 20,
+        "bai_clan_member": -10,
+        "caravan_observer": 0,
+        "outside_branch_observer": -5,
+        "outside_patrol_observer": -5,
+        "rogue_observer": -10
+      },
+      "engineMeaning": "Tracks local trust pressure for Xiong clan actions and blockers."
+    },
+    {
+      "id": "baijia_trust",
+      "displayName": "白家信任",
+      "ownerFactionId": "baijia_zhai",
+      "range": [-100, 100],
+      "initialByRole": {
+        "guyue_clan_member": -10,
+        "xiong_clan_member": -10,
+        "bai_clan_member": 20,
+        "caravan_observer": 0,
+        "outside_branch_observer": -5,
+        "outside_patrol_observer": -5,
+        "rogue_observer": -10
+      },
+      "engineMeaning": "Tracks local trust pressure for Bai clan actions and blockers."
+    },
+    {
+      "id": "canon_anchor_heat",
+      "displayName": "正史锚点热度",
+      "ownerFactionId": "local_engine",
+      "range": [0, 100],
+      "initialByRole": {
+        "guyue_clan_member": 10,
+        "xiong_clan_member": 8,
+        "bai_clan_member": 8,
+        "caravan_observer": 5,
+        "outside_branch_observer": 5,
+        "outside_patrol_observer": 5,
+        "rogue_observer": 4
+      },
+      "engineMeaning": "Measures pressure near original anchors. It is not a morality meter and cannot be directly edited by AI."
+    }
+  ],
+  "clueSources": [
+    {
+      "id": "clan_school_notice",
+      "displayName": "族学告示",
+      "sourceType": "faction",
+      "allowedRoles": ["guyue_clan_member", "xiong_clan_member", "bai_clan_member"],
+      "worldActionSource": "faction",
+      "allowedDomains": ["training_ground", "field_action"],
+      "aiAuthority": "candidate_only",
+      "localGate": "must match selected start profile faction or be framed as rumor"
+    },
+    {
+      "id": "mountain_path_patrol",
+      "displayName": "山道巡查",
+      "sourceType": "location",
+      "allowedRoles": ["guyue_clan_member", "xiong_clan_member", "bai_clan_member", "outside_patrol_observer", "rogue_observer"],
+      "worldActionSource": "location",
+      "allowedDomains": ["field_action", "combat"],
+      "aiAuthority": "candidate_only",
+      "localGate": "local AP, risk, location, and encounter table decide departure"
+    },
+    {
+      "id": "caravan_rumor",
+      "displayName": "商队传闻",
+      "sourceType": "rumor",
+      "allowedRoles": ["caravan_observer", "outside_branch_observer", "outside_patrol_observer", "rogue_observer"],
+      "worldActionSource": "ai-rumor",
+      "allowedDomains": ["field_action", "other"],
+      "aiAuthority": "rumor_only",
+      "localGate": "cannot become formal reward, official task, or canon fact without local registration"
+    }
+  ],
+  "actionSlots": [
+    {
+      "id": "clan_school_training",
+      "displayName": "族学/道场磨练",
+      "targetPhase": "v0.10.0-b1",
+      "worldActionDomain": "training_ground",
+      "localOwner": "v090-training-ground-clue-engine",
+      "requiresPersistentState": false,
+      "notes": "Can reuse existing trainingGroundState for first playable action; region pressure persistence waits for later implementation."
+    },
+    {
+      "id": "mountain_patrol",
+      "displayName": "山道巡查",
+      "targetPhase": "v0.10.0-b1",
+      "worldActionDomain": "field_action",
+      "localOwner": "field-action",
+      "requiresPersistentState": false,
+      "notes": "Initial sample can use world action metadata and scene ledger; persistent patrol history requires save bump."
+    },
+    {
+      "id": "three_clan_commission",
+      "displayName": "三寨委托/传闻核验",
+      "targetPhase": "v0.10.0-b1",
+      "worldActionDomain": "other",
+      "localOwner": "new qingmao region engine",
+      "requiresPersistentState": true,
+      "notes": "If implemented as persistent region state, bump SAVE_FORMAT_VERSION and add migration defaults first."
+    }
+  ],
+  "deepSeekBoundary": [
+    "DeepSeek may add rumors, pressure hints, narrative return text, and candidate clues only.",
+    "DeepSeek may not assign clan identity, faction standing deltas, rewards, Gu, materials, location unlocks, battle outcomes, or canon anchor changes.",
+    "Any text that rewrites a non-Gu-Yue start into Gu Yue identity must be repaired, retried, or downgraded."
+  ],
+  "loreBoundaries": [
+    "No Immortal Gu, rank ten, true eternal life, Fate Gu ownership, mortal Treasure Yellow Heaven trade, or grotto-heaven ownership.",
+    "Qingmao three-clan pressure is a regional IF layer, not a rewrite of major original outcomes.",
+    "Moonlight Gu, White Jade Gu, and Liquor Worm visual cues remain low-rank presentation cues; Liquor Worm is not a normal attack button."
+  ]
+}

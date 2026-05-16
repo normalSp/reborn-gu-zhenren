@@ -1,4 +1,7 @@
-import type { GameEvent } from '../../types';
+interface GameEvent {
+  id: string;
+  [key: string]: unknown;
+}
 
 interface EventSlice {
   eventQueue: GameEvent[];

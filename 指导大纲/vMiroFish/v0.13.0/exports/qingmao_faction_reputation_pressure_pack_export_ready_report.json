@@ -1,0 +1,74 @@
+{
+  "totalItems": 885,
+  "byCategory": {
+    "blockadeCandidate": 23,
+    "factionPressure": 704,
+    "factionStanceCandidate": 2,
+    "recruitmentCandidate": 11,
+    "taskSourceCandidate": 145
+  },
+  "byReviewStatus": {
+    "export_ready": 885
+  },
+  "sourcePointers": 1019,
+  "quoteLikeKeys": 0,
+  "skipped": 218,
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "clan_school_opening_training": 131,
+      "three_clans_competition": 143,
+      "merchant_trade_supply": 273,
+      "absence_or_refusal": 57,
+      "route_or_detour": 51,
+      "inquiry_or_message": 68,
+      "rescue_or_aid": 18,
+      "theft_or_deception": 42,
+      "escape_preparation": 22,
+      "external_contact": 403
+    },
+    "subjectTypes": {
+      "clan_school": 101,
+      "npc": 10,
+      "npc_group": 41,
+      "merchant": 261,
+      "faction": 365,
+      "other": 35,
+      "elder": 5,
+      "task_group": 67
+    },
+    "pressureAxes": {
+      "suspicion": 459,
+      "task_authority": 145,
+      "resource_control": 242,
+      "blockade_risk": 23,
+      "recruitment_probe": 11,
+      "opportunity": 3,
+      "rumor_spread": 2
+    },
+    "recommendedDowngrades": {
+      "pressure_only": 461,
+      "requires_precondition": 387,
+      "blocked_until_user_decision": 23,
+      "opportunity_only": 14
+    },
+    "requiredFieldsPresent": {
+      "id": 885,
+      "category": 885,
+      "summary": 885,
+      "subjectType": 885,
+      "subjectId": 885,
+      "pressureAxis": 885,
+      "publicTrigger": 885,
+      "candidateEffect": 885,
+      "playerVisibleRisk": 885,
+      "recommendedDowngrade": 885,
+      "visibility": 885,
+      "playerVisibility": 885,
+      "confidence": 885,
+      "sourcePointerIds": 885,
+      "sourcePointers": 885,
+      "review": 885,
+      "reborngGate": 885
+    }
+  }
+}

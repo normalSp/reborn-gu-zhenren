@@ -2,10 +2,10 @@ import type { LocalActionLedgerEntry, NarrativeAdvanceIntent, SceneSessionState 
 import {
   buildNarrativeAdvanceIntent,
   buildSceneSessionFromStore,
-  createDefaultSceneSessionState,
   normalizeSceneSessionState,
   spendSceneActionBudget,
 } from '../../engine/v080-scene-session-engine';
+import { createInitialSceneSessionState } from '../defaultEngineStates';
 
 export interface SceneSessionSlice {
   sceneSessionState: SceneSessionState;
@@ -24,7 +24,7 @@ export interface SceneSessionSlice {
 }
 
 export const createSceneSessionSlice = (set: any, get: any): SceneSessionSlice => ({
-  sceneSessionState: createDefaultSceneSessionState(),
+  sceneSessionState: createInitialSceneSessionState(),
 
   ensureSceneSession: () => {
     const store = get() as any;

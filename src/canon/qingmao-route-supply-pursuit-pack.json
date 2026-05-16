@@ -1,0 +1,154 @@
+{
+  "version": "v0.12.0-b1",
+  "status": "route_supply_pursuit_rule_draft_first_cut",
+  "sourceReview": {
+    "requestId": "mirofish-request-2026-05-16-qingmao-route-supply-pursuit-pack",
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/2026-05-16-qingmao-route-supply-pursuit-pack-intake-review.md",
+    "sourcePackage": "指导大纲/vMiroFish/v0.12.0/qingmao_route_supply_pursuit_pack_export_ready.json",
+    "absorptionPolicy": "rewritten_reborng_local_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "boundaries": {
+    "allowedRuntimeOutputs": [
+      "route_candidate_preview",
+      "supply_gap_preview",
+      "pursuit_pressure_preview",
+      "blocked_outcome_reason",
+      "local_action_ledger_entry"
+    ],
+    "forbiddenWrites": [
+      "escape_success",
+      "location_unlock",
+      "region_unlock",
+      "teleport",
+      "reward",
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "recipe_unlock",
+      "faction_identity_change",
+      "standing_delta",
+      "npc_death",
+      "canon_anchor_change",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion"
+    ],
+    "deferredItemIds": [
+      "pressure_ch0060_jiafu_caravan_revenge",
+      "pressure_ch0089_jiaosan_group_resource_distribution",
+      "pressure_ch0090_jiaosan_group_resource_request",
+      "pressure_ch0092_jiaosan_group_task_authority",
+      "pressure_ch0096_sick_snake_group_trust_crisis",
+      "hidden_ref_ch0010_household_trap"
+    ]
+  },
+  "routeCandidates": [
+    {
+      "id": "route_qingmao_outer_night_mountain_road",
+      "title": "山寨外夜路",
+      "routeType": "mountain_road",
+      "sourceItemIds": ["route_ch0010_night_mountain_road_exit"],
+      "sourcePointerIds": ["sp_929e88080440"],
+      "summary": "山寨外山路可作为低阶移动路线候选；夜间移动会降低可见度并放大野外与误判风险。",
+      "entryCondition": "必须仍处在青茅山内或山寨外缘；本阶段只勘查路线，不结算离山。",
+      "riskTags": ["night_road", "wilderness", "low_rank_solo_risk", "identity_misread"],
+      "blockedOutcome": "不能据此直接判定逃离青茅山成功或正式解锁外部地域。"
+    },
+    {
+      "id": "route_qingmao_bamboo_forest_riverbank",
+      "title": "竹林至后山河滩",
+      "routeType": "forest_to_riverbank",
+      "sourceItemIds": ["route_ch0015_bamboo_forest_to_riverbank"],
+      "sourcePointerIds": ["sp_2fabefd36c6a"],
+      "summary": "竹林、后山与河滩可以组成山内低阶野外移动链，适合做绕行、藏身或追踪线索。",
+      "entryCondition": "需要明确目的、可追踪目标或本地野外行动入口；本阶段只作为山内路线素材。",
+      "riskTags": ["forest_cover", "riverbank_gap", "tracking_risk", "wilderness_interference"],
+      "blockedOutcome": "只能作为山内移动素材，不能表示离山成功。"
+    },
+    {
+      "id": "route_qingmao_task_valley",
+      "title": "小组任务山谷",
+      "routeType": "task_valley",
+      "sourceItemIds": ["route_ch0089_snow_task_valley"],
+      "sourcePointerIds": ["sp_6453e3677b7e"],
+      "summary": "小组任务可把低阶蛊师带到山地/山谷地形；这类路线受任务、天气、工具与队内分配影响。",
+      "entryCondition": "通常需要小组任务或家族任务作为公开入口；不适合作为自由离山入口。",
+      "riskTags": ["task_authority", "weather", "tool_distribution", "team_supervision"],
+      "blockedOutcome": "不能作为自由离山路线或外部地图入口。"
+    }
+  ],
+  "supplyRequirements": [
+    {
+      "id": "supply_qingmao_food_wine_short_trip",
+      "title": "饭食与酒类短途补给",
+      "sourceItemIds": ["supply_ch0024_food_wine_and_moon_orchid_cost"],
+      "sourcePointerIds": ["sp_7943c8462da8"],
+      "summary": "饭食、酒类与短途行动消耗需要元石购买；本阶段只登记需求，不发放资源。",
+      "gapTags": ["food", "wine", "primeval_stone_cost", "short_trip_supply"],
+      "blockedOutcome": "不得写入元石、酒、食物、月兰花、蛊材或蛊虫奖励。"
+    },
+    {
+      "id": "supply_qingmao_caravan_wine_window",
+      "title": "商队窗口与酒类缺口",
+      "sourceItemIds": [
+        "public_ch0024_caravan_arrival_trade_window",
+        "supply_ch0024_caravan_pressure_on_wine_stock"
+      ],
+      "sourcePointerIds": ["sp_31d025e4a54d", "sp_3209eabab218"],
+      "summary": "商队到来会形成交易窗口，也可能压缩酒类补给；玩家只能得到窗口/缺口提示。",
+      "gapTags": ["caravan_window", "wine_stock_pressure", "timing", "market_competition"],
+      "blockedOutcome": "不能表示商队可直接带玩家离开，也不能自动生成交易结果。"
+    },
+    {
+      "id": "supply_qingmao_liquor_worm_feeding_stock",
+      "title": "酒虫食料储备压力",
+      "sourceItemIds": ["supply_ch0030_liquor_worm_feeding_stock"],
+      "sourcePointerIds": ["sp_568bfe0c02e8"],
+      "summary": "若玩家已有酒虫相关资产或线索，酒类补给会成为持续食料压力；否则只作为酒类补给风险。",
+      "gapTags": ["liquor_worm_contextual", "feeding_stock", "wine_cost", "asset_dependent"],
+      "blockedOutcome": "不得因此授予酒虫、酒类库存或稳定食料来源。"
+    },
+    {
+      "id": "supply_qingmao_refinement_primeval_stones",
+      "title": "炼化与长期行动元石压力",
+      "sourceItemIds": ["supply_ch0018_refinement_primeval_stones"],
+      "sourcePointerIds": ["sp_c35dd28aba62"],
+      "summary": "炼化、维持蛊虫和长期行动都会占用元石储备；离山准备必须把元石压力作为缺口。",
+      "gapTags": ["primeval_stone_cost", "refinement_pressure", "long_action_reserve"],
+      "blockedOutcome": "不得直接写入元石变化或完整炼化结果。"
+    }
+  ],
+  "pursuitTriggers": [
+    {
+      "id": "pursuit_qingmao_task_absence_north_gate",
+      "title": "任务集合异常缺席",
+      "sourceItemIds": ["pursuit_ch0092_group_waits_at_north_gate"],
+      "sourcePointerIds": ["sp_590d3649e24b"],
+      "summary": "任务集合或公开节奏中的异常缺席，会触发小组寻找、盘问或监视。",
+      "trigger": "未按任务集合、临时缺席、公开行程与小组节奏冲突。",
+      "pressureType": "suspicion",
+      "riskDelta": 2
+    },
+    {
+      "id": "pursuit_qingmao_residence_check",
+      "title": "闭关/住处追踪",
+      "sourceItemIds": ["pursuit_ch0092_group_breaks_routine_to_find_fang_yuan"],
+      "sourcePointerIds": ["sp_9e2b251b564c"],
+      "summary": "闭关、拒绝任务或异常沉默可能引发同伴上门、住处盘问和行动干扰。",
+      "trigger": "缺席、闭关、拒绝小组任务节奏或行踪解释不足。",
+      "pressureType": "npc_attention",
+      "riskDelta": 2
+    },
+    {
+      "id": "pursuit_qingmao_internal_affairs_trace",
+      "title": "内务堂流程痕迹",
+      "sourceItemIds": ["pursuit_ch0099_family_task_monitoring"],
+      "sourcePointerIds": ["sp_3ccaa1803bf0"],
+      "summary": "分家、家产或任务申请会留下公开流程痕迹，可能成为后续追踪和问责线索。",
+      "trigger": "申请任务、动用家产权益、留下内务堂可查记录。",
+      "pressureType": "record_trace",
+      "riskDelta": 1
+    }
+  ]
+}

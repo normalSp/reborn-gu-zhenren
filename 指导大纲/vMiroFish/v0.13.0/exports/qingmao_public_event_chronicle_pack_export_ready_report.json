@@ -1,0 +1,55 @@
+{
+  "totalItems": 1153,
+  "byCategory": {
+    "eventChronicleAnchor": 465,
+    "eventVisibilityRule": 7,
+    "publicActionSummaryCandidate": 119,
+    "publicEventCandidate": 562
+  },
+  "byReviewStatus": {
+    "export_ready": 1153
+  },
+  "sourcePointers": 1139,
+  "quoteLikeKeys": 0,
+  "skipped": 211,
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "clan_school_opening_training": 99,
+      "three_clans_competition": 112,
+      "merchant_trade_supply": 151,
+      "absence_or_refusal": 35,
+      "route_or_detour": 50,
+      "inquiry_or_message": 33,
+      "rescue_or_aid": 23,
+      "theft_or_deception": 39,
+      "escape_preparation": 35,
+      "external_contact": 47
+    },
+    "eventScopes": {
+      "clan_school": 97,
+      "other": 337,
+      "merchant": 261,
+      "village": 235,
+      "route": 36,
+      "task_group": 59,
+      "three_clans": 128
+    },
+    "requiredFieldsPresent": {
+      "id": 1153,
+      "category": 1153,
+      "summary": 1153,
+      "eventScope": 1153,
+      "publicTrigger": 1153,
+      "whoCanKnow": 1153,
+      "whoLikelyRecords": 1153,
+      "promptSafeSummary": 1153,
+      "visibility": 1153,
+      "playerVisibility": 1153,
+      "confidence": 1153,
+      "sourcePointerIds": 1153,
+      "sourcePointers": 1153,
+      "review": 1153,
+      "reborngGate": 1153
+    }
+  }
+}

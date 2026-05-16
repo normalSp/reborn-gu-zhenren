@@ -1,7 +1,7 @@
 /**
  * 叙事质量四层防线压力测试
  * 目标：验证 L1(prompt)+L2(retry)+L3(semantic)+L4(canary) 能否推至93-97%
- * 
+ *
  * 测试方案：
  * 1. 20个"诱惑性场景"——故意诱导AI违规的叙事文本
  * 2. 每条文本经过L3语义验证 + L4金丝雀断言
@@ -47,7 +47,7 @@ interface TestCase {
   text: string;
   expectedL3: 'pass' | 'warn' | 'reject';
   expectedL4: 'pass' | 'warn' | 'reject';
-  expectedJoint: 'pass' | 'warn' | 'reject';
+  expectedJoint?: 'pass' | 'warn' | 'reject';
   category: string;
 }
 
@@ -199,6 +199,7 @@ describe('叙事质量四层防线压力测试', () => {
   const results: Array<{
     id: string; category: string; description: string;
     l3Result: string; l4Result: string;
+    jointResult: string;
     l3Match: boolean; l4Match: boolean;
   }> = [];
 
@@ -223,7 +224,7 @@ describe('叙事质量四层防线压力测试', () => {
       // Layer 3: 语义验证
       const l3 = validateNarrativeSemantics(tc.text);
       const l3Result = l3.recommendation === 'reject' ? 'reject'
-      : ((l3 as any).warnings?.length > 0 || l3.totalScore < 80) ? 'warn' : 'pass';
+      : ((l3 as any).warnings?.length > 0 || Number((l3 as any).totalScore ?? 100) < 80) ? 'warn' : 'pass';
 
     // Layer 4: 金丝雀断言（排除C08长度检查）
     const l4 = validateCanaryAssertions(narrative, store);

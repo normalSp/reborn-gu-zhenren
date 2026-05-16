@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-05-16T11:40:45.752470+00:00",
+  "sourceDataset": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_0200_reviewable",
+  "outputs": {
+    "public_event_chronicle": "uploads\\ri_corpus\\exports\\qingmao_v013_request_packs\\qingmao_public_event_chronicle_pack_export_ready.json",
+    "npc_memory_motive": "uploads\\ri_corpus\\exports\\qingmao_v013_request_packs\\qingmao_npc_memory_motive_pack_export_ready.json",
+    "faction_reputation_pressure": "uploads\\ri_corpus\\exports\\qingmao_v013_request_packs\\qingmao_faction_reputation_pressure_pack_export_ready.json"
+  },
+  "summaries": {
+    "public_event_chronicle": {
+      "totalItems": 1153,
+      "byCategory": {
+        "eventChronicleAnchor": 465,
+        "eventVisibilityRule": 7,
+        "publicActionSummaryCandidate": 119,
+        "publicEventCandidate": 562
+      },
+      "byReviewStatus": {
+        "export_ready": 1153
+      },
+      "sourcePointers": 1139,
+      "quoteLikeKeys": 0,
+      "skipped": 211
+    },
+    "npc_memory_motive": {
+      "totalItems": 1564,
+      "byCategory": {
+        "npcInterestTrigger": 1034,
+        "npcMemoryCandidate": 437,
+        "npcMotiveCandidate": 40,
+        "npcSuspicionTrigger": 53
+      },
+      "byReviewStatus": {
+        "export_ready": 1564
+      },
+      "sourcePointers": 1195,
+      "quoteLikeKeys": 0,
+      "skipped": 213
+    },
+    "faction_reputation_pressure": {
+      "totalItems": 885,
+      "byCategory": {
+        "blockadeCandidate": 23,
+        "factionPressure": 704,
+        "factionStanceCandidate": 2,
+        "recruitmentCandidate": 11,
+        "taskSourceCandidate": 145
+      },
+      "byReviewStatus": {
+        "export_ready": 885
+      },
+      "sourcePointers": 1019,
+      "quoteLikeKeys": 0,
+      "skipped": 218
+    }
+  },
+  "scopeCoverage": {
+    "public_event_chronicle": {
+      "clan_school_opening_training": 99,
+      "three_clans_competition": 112,
+      "merchant_trade_supply": 151,
+      "absence_or_refusal": 35,
+      "route_or_detour": 50,
+      "inquiry_or_message": 33,
+      "rescue_or_aid": 23,
+      "theft_or_deception": 39,
+      "escape_preparation": 35,
+      "external_contact": 47
+    },
+    "npc_memory_motive": {
+      "clan_school_opening_training": 148,
+      "three_clans_competition": 191,
+      "merchant_trade_supply": 249,
+      "absence_or_refusal": 48,
+      "route_or_detour": 75,
+      "inquiry_or_message": 45,
+      "rescue_or_aid": 36,
+      "theft_or_deception": 60,
+      "escape_preparation": 44,
+      "external_contact": 201
+    },
+    "faction_reputation_pressure": {
+      "clan_school_opening_training": 131,
+      "three_clans_competition": 143,
+      "merchant_trade_supply": 273,
+      "absence_or_refusal": 57,
+      "route_or_detour": 51,
+      "inquiry_or_message": 68,
+      "rescue_or_aid": 18,
+      "theft_or_deception": 42,
+      "escape_preparation": 22,
+      "external_contact": 403
+    }
+  },
+  "completionGate": {
+    "status": "complete_candidate",
+    "missingScopeCoverage": {},
+    "notes": [
+      "complete_candidate means request fields and scope keywords are covered by quote-redacted candidates",
+      "RebornG intake review is still required before runtime absorption"
+    ]
+  }
+}

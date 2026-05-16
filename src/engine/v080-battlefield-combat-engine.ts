@@ -710,9 +710,10 @@ function settleIfNeeded(state: BattlefieldCombatState): { state: BattlefieldComb
   const playerAlive = state.units.some(unit => unit.hp > 0 && (unit.side === 'player' || unit.side === 'ally'));
   const enemyAlive = state.units.some(unit => unit.hp > 0 && unit.side === 'enemy');
   let result: BattlefieldCombatResult | null = null;
-  if (objectiveReason?.startsWith('objective_failed')) result = { winner: 'enemy', reason: objectiveReason, roundsTaken: state.round };
-  if (objectiveReason?.startsWith('objective_succeeded') && objectiveState.objectives?.every(objective => objective.status !== 'active')) {
-    result = { winner: 'player', reason: objectiveReason, roundsTaken: state.round };
+  const objectiveReasonText = objectiveReason ?? '';
+  if (objectiveReasonText.startsWith('objective_failed')) result = { winner: 'enemy', reason: objectiveReasonText, roundsTaken: state.round };
+  if (objectiveReasonText.startsWith('objective_succeeded') && objectiveState.objectives?.every(objective => objective.status !== 'active')) {
+    result = { winner: 'player', reason: objectiveReasonText, roundsTaken: state.round };
   }
   if (!enemyAlive) result = { winner: 'player', reason: 'enemy_eliminated', roundsTaken: state.round };
   if (!playerAlive) result = { winner: 'enemy', reason: 'player_eliminated', roundsTaken: state.round };

@@ -44,6 +44,7 @@ export interface PipeTokenUsage {
   completion: number;
   total: number;
   cached: number;
+  cacheMiss: number;
   cacheHitRatio: number;
   retryTotal: number;
   calls: number;
@@ -75,22 +76,25 @@ function emptyPipeTokenUsage(): PipeTokenUsage {
     completion: 0,
     total: 0,
     cached: 0,
+    cacheMiss: 0,
     cacheHitRatio: 0,
     retryTotal: 0,
     calls: 0,
   };
 }
 
-function usageFromResponse(response: DeepSeekResponse<any>, retryCall: boolean): PipeTokenUsage {
+export function pipeTokenUsageFromResponse(response: DeepSeekResponse<any>, retryCall: boolean): PipeTokenUsage {
   const prompt = response.tokens?.prompt_tokens ?? 0;
   const completion = response.tokens?.completion_tokens ?? 0;
   const total = response.tokens?.total_tokens ?? 0;
   const cached = response.tokens?.cached_tokens ?? 0;
+  const cacheMiss = response.tokens?.cache_miss_tokens ?? Math.max(prompt - cached, 0);
   return {
     prompt,
     completion,
     total,
     cached,
+    cacheMiss,
     cacheHitRatio: prompt > 0 ? cached / prompt : 0,
     retryTotal: retryCall ? total : 0,
     calls: response.tokens ? 1 : 0,
@@ -100,15 +104,17 @@ function usageFromResponse(response: DeepSeekResponse<any>, retryCall: boolean):
   };
 }
 
-function mergePipeTokenUsage(a: PipeTokenUsage, b?: PipeTokenUsage): PipeTokenUsage {
+export function mergePipeTokenUsage(a: PipeTokenUsage, b?: PipeTokenUsage): PipeTokenUsage {
   if (!b) return a;
   const prompt = a.prompt + b.prompt;
   const cached = a.cached + b.cached;
+  const cacheMiss = a.cacheMiss + b.cacheMiss;
   return {
     prompt,
     completion: a.completion + b.completion,
     total: a.total + b.total,
     cached,
+    cacheMiss,
     cacheHitRatio: prompt > 0 ? cached / prompt : 0,
     retryTotal: a.retryTotal + b.retryTotal,
     calls: a.calls + b.calls,
@@ -120,6 +126,80 @@ function mergePipeTokenUsage(a: PipeTokenUsage, b?: PipeTokenUsage): PipeTokenUs
 
 function formatCacheRatio(value: number): string {
   return `${Math.round(value * 100)}%`;
+}
+
+export interface PipelineWarning {
+  scope: string;
+  message: string;
+  meta: Record<string, unknown>;
+}
+
+const PIPELINE_WARN_REDACTED_KEY = /api[-_]?key|authorization|token|secret|prompt|system|user|messages/i;
+
+function summarizePipelineError(error: unknown): string {
+  if (error instanceof Error) return error.message || error.name;
+  if (typeof error === 'string') return error;
+  if (error && typeof error === 'object' && 'message' in error) {
+    return String((error as any).message || 'unknown_error');
+  }
+  return 'unknown_error';
+}
+
+function sanitizePipelineWarningValue(value: unknown, depth = 0): unknown {
+  if (value === null || value === undefined) return value;
+  if (typeof value === 'string') {
+    return value.length > 160 ? `${value.slice(0, 157)}...` : value;
+  }
+  if (typeof value === 'number' || typeof value === 'boolean') return value;
+  if (Array.isArray(value)) {
+    if (depth >= 2) return `[array:${value.length}]`;
+    return value.slice(0, 6).map(item => sanitizePipelineWarningValue(item, depth + 1));
+  }
+  if (typeof value === 'object') {
+    if (depth >= 2) return '[object]';
+    const entries = Object.entries(value as Record<string, unknown>).slice(0, 12);
+    return Object.fromEntries(entries.map(([key, entryValue]) => [
+      key,
+      PIPELINE_WARN_REDACTED_KEY.test(key)
+        ? '[redacted]'
+        : sanitizePipelineWarningValue(entryValue, depth + 1),
+    ]));
+  }
+  return String(value);
+}
+
+export function buildPipelineWarning(
+  scope: string,
+  error: unknown,
+  meta: Record<string, unknown> = {},
+): PipelineWarning {
+  return {
+    scope,
+    message: summarizePipelineError(error),
+    meta: sanitizePipelineWarningValue(meta) as Record<string, unknown>,
+  };
+}
+
+export function pipelineWarn(
+  scope: string,
+  error: unknown,
+  meta: Record<string, unknown> = {},
+): PipelineWarning {
+  const warning = buildPipelineWarning(scope, error, meta);
+  try {
+    console.warn('[PIPE_WARN]', warning);
+  } catch {
+    // Keep warnings strictly non-blocking.
+  }
+  try {
+    const logStore = useStore.getState() as any;
+    if (typeof logStore.addGameLog === 'function') {
+      logStore.addGameLog('pipeline', `管道可选步骤跳过: ${scope}`, warning);
+    }
+  } catch {
+    // Logging must never become a second failure path.
+  }
+  return warning;
 }
 
 // ─── 构建L3修正提示 ───
@@ -319,7 +399,7 @@ export class ResponsePipeline {
         temperature: this.config.temperature,
       }
     );
-    let usage = usageFromResponse(response, retryCall);
+    let usage = pipeTokenUsageFromResponse(response, retryCall);
 
     if (!response.success || !response.data) {
       console.log(`%c[PIPE] API_FAIL %c→ ${response.error}`,'color:#e85050','color:#999');
@@ -347,7 +427,7 @@ export class ResponsePipeline {
             temperature: this.config.temperature,
           }
         );
-        usage = mergePipeTokenUsage(usage, usageFromResponse(fixRetry, true));
+        usage = mergePipeTokenUsage(usage, pipeTokenUsageFromResponse(fixRetry, true));
         if (!fixRetry.success || !fixRetry.data) {
           return { success: false, error: `JSON解析重试失败: ${fixRetry.error || '未知'}`, usage };
         }
@@ -393,7 +473,7 @@ export class ResponsePipeline {
             temperature: this.config.temperature,
           }
         );
-        usage = mergePipeTokenUsage(usage, usageFromResponse(fixRetry, true));
+        usage = mergePipeTokenUsage(usage, pipeTokenUsageFromResponse(fixRetry, true));
         if (fixRetry.success && fixRetry.data) {
           const retryParsed = typeof fixRetry.data === 'string' ? JSON.parse(fixRetry.data) : fixRetry.data;
           normalizeAIResponse(retryParsed); // 5D: retry路径也归一化
@@ -469,7 +549,9 @@ export class ResponsePipeline {
             if (typeof l4Log.addGameLog === 'function') {
               l4Log.addGameLog('pipeline', `L4金丝雀断言拒绝: ${ruleNames}`, { layer: 'L4', ruleNames });
             }
-          } catch { /* skip */ }
+          } catch (logErr) {
+            pipelineWarn('l4-canary-game-log', logErr, { layer: 'L4', stage: this.state, turn: (store as any).turn || 1 });
+          }
           return {
             state: 'ERROR',
             error: `Layer 4 金丝雀断言不通过: ${canaryResult.failedCritical.map(r => r.ruleName).join('、')}`,
@@ -541,7 +623,9 @@ export class ResponsePipeline {
             if (typeof l3Log.addGameLog === 'function') {
               l3Log.addGameLog('pipeline', `L3语义拒绝: ${semanticResult.failedRules.map(r=>r.ruleName).join('、')}`, { layer: 'L3', ruleNames: semanticResult.failedRules.map(r=>r.ruleName) });
             }
-          } catch { /* skip */ }
+          } catch (logErr) {
+            pipelineWarn('l3-semantic-game-log', logErr, { layer: 'L3', stage: this.state, turn: (store as any).turn || 1 });
+          }
           return {
             state: 'ERROR',
             error: `Layer 3 语义验证不通过: ${semanticResult.failedRules.map(r => r.ruleName).join('、')}`,
@@ -557,7 +641,7 @@ export class ResponsePipeline {
       let narrative = parsed as NarrativeJSON;
       let rewardValidation: AiRewardValidationResult | undefined;
       if (narrative.state_update) {
-        rewardValidation = validateAIStateUpdate(narrative.state_update, {
+        rewardValidation = validateAIStateUpdate(narrative.state_update as any, {
           realmGrand: (store as any).profile?.realm?.grand || 1,
           currentChapterId: (store as any).currentChapterId || '',
           currentDomain: (store as any).currentDomain || '南疆',
@@ -576,7 +660,7 @@ export class ResponsePipeline {
           usageSummary = mergePipeTokenUsage(usageSummary, retryResult.usage);
           if (retryResult.success) {
             const retryNarrative = retryResult.parsed as NarrativeJSON;
-            const retryValidation = validateAIStateUpdate(retryNarrative.state_update, {
+            const retryValidation = validateAIStateUpdate(retryNarrative.state_update as any, {
               realmGrand: (store as any).profile?.realm?.grand || 1,
               currentChapterId: (store as any).currentChapterId || '',
               currentDomain: (store as any).currentDomain || '南疆',
@@ -596,7 +680,9 @@ export class ResponsePipeline {
                 issues: rewardValidation.issues,
               });
             }
-          } catch { /* skip */ }
+          } catch (logErr) {
+            pipelineWarn('reward-validation-game-log', logErr, { stage: this.state, turn: (store as any).turn || 1 });
+          }
         }
       }
       const consistency = sanitizeNarrativeConsistency(narrative, store);
@@ -610,7 +696,9 @@ export class ResponsePipeline {
               choiceIssues: consistency.choiceIssues,
             });
           }
-        } catch { /* skip */ }
+        } catch (logErr) {
+          pipelineWarn('narrative-consistency-game-log', logErr, { stage: this.state, turn: (store as any).turn || 1 });
+        }
       }
       console.log(`%c[PIPE] RESOLVED %c→ elapsed=${Date.now()-startTime}ms textLen=${narrative.narrative.text.length} choices=${narrative.narrative.choices.length} hasState=${!!narrative.state_update}`,
         'color:#30d080;font-weight:bold','color:#999');
@@ -649,7 +737,9 @@ export class ResponsePipeline {
           currency: chkStore.currency || 0,
           flags: chkStore.flags || {},
         });
-      } catch { /* goal checker not ready — silently skip */ }
+      } catch (goalErr) {
+        pipelineWarn('chapter-goal-checker', goalErr, { stage: this.state, turn: (store as any).turn || 1 });
+      }
 
       // ═══ P2-8成就钩子：每轮RESOLVED后检测成就条件 ═══
       try {
@@ -702,7 +792,9 @@ export class ResponsePipeline {
           };
           achStore.checkAchievements(achState);
         }
-      } catch { /* achievement checker not ready — silently skip */ }
+      } catch (achievementErr) {
+        pipelineWarn('achievement-checker', achievementErr, { stage: this.state, turn: (store as any).turn || 1 });
+      }
 
       // ═══ 日志埋点：叙事回复记录
       try {
@@ -715,6 +807,7 @@ export class ResponsePipeline {
             promptTokens: usageSummary.prompt,
             completionTokens: usageSummary.completion,
             cachedTokens: usageSummary.cached,
+            cacheMissTokens: usageSummary.cacheMiss,
             cacheHitRatio: usageSummary.cacheHitRatio,
             retryTokens: usageSummary.retryTotal,
             aiCalls: usageSummary.calls,
@@ -725,7 +818,13 @@ export class ResponsePipeline {
             validated: semanticResult?.recommendation !== 'reject',
           });
         }
-      } catch { /* skip */ }
+      } catch (logErr) {
+        pipelineWarn('narrative-response-game-log', logErr, {
+          stage: this.state,
+          turn: (store as any).turn || 1,
+          totalTokens: usageSummary.total,
+        });
+      }
 
       // ═══ P2章节推进钩子：每轮RESOLVED后检测章节推进条件（支持多路由选项） ═══
       const chProgStore = useStore.getState() as any;
@@ -743,14 +842,19 @@ export class ResponsePipeline {
                 reason: progResult.reason,
               });
             }
-          } catch { /* skip */ }
+          } catch (logErr) {
+            pipelineWarn('chapter-progression-game-log', logErr, {
+              stage: this.state,
+              turn: (store as any).turn || 1,
+            });
+          }
 
           // P2: 保存路由选项和临近事件到store（供ChapterTransition组件展示）
           if (progResult.nextChapterOptions?.length > 0) {
             useStore.setState({
               nextChapterOptions: progResult.nextChapterOptions,
               proximityEvents: progResult.proximityEvents || [],
-            });
+            } as any);
           }
 
           // P2: 多路由选项 → 需要玩家手动选择（不自动推进）
@@ -794,7 +898,9 @@ export class ResponsePipeline {
             });
           }
         }
-      } catch { /* combat-router not ready or import failed — silently skip */ }
+      } catch (combatRouterErr) {
+        pipelineWarn('combat-router', combatRouterErr, { stage: this.state, turn: (store as any).turn || 1 });
+      }
 
       // ═══ P4.1: 消耗上一轮活跃遭遇（清理状态） ═══
       try {
@@ -802,7 +908,9 @@ export class ResponsePipeline {
         if (typeof encStore.consumeEncounter === 'function' && encStore.activeEncounterId) {
           encStore.consumeEncounter();
         }
-      } catch { /* skip */ }
+      } catch (encounterErr) {
+        pipelineWarn('consume-active-encounter', encounterErr, { stage: this.state, turn: (store as any).turn || 1 });
+      }
 
       // ═══ P2-9 随机遭遇钩子：每轮RESOLVED后检测是否触发遭遇 ═══
       try {
@@ -830,7 +938,9 @@ export class ResponsePipeline {
             lastNarrativeLength: narrative.narrative.text?.length || 0,
           });
         }
-      } catch { /* encounter system not ready — silently skip */ }
+      } catch (encounterErr) {
+        pipelineWarn('random-encounter-checker', encounterErr, { stage: this.state, turn: (store as any).turn || 1 });
+      }
 
       // ═══ 回合推进：每轮RESOLVED后自动推进turn/gameTime（续档不计入） ═══
       if (!isResume) {
@@ -861,7 +971,9 @@ export class ResponsePipeline {
               achievementCount: (s.unlockedAchievements?.length) || 0,
             });
           }
-        } catch { /* skip */ }
+        } catch (logErr) {
+          pipelineWarn('death-event-game-log', logErr, { stage: this.state, turn: (updatedStore as any).turn || 1 });
+        }
         // ═══ P2-10 起源解锁钩子：GameOver时检测起源解锁条件 ═══
         try {
           if (typeof (updatedStore as any).checkAndUnlock === 'function') {
@@ -884,10 +996,14 @@ export class ResponsePipeline {
                 if (typeof (updatedStore as any).addGameLog === 'function') {
                   (updatedStore as any).addGameLog('achievement', `起源解锁: ${newOrigins.join(', ')}`, { origins: newOrigins });
                 }
-              } catch { /* skip */ }
+              } catch (logErr) {
+                pipelineWarn('origin-unlock-game-log', logErr, { stage: this.state, turn: (updatedStore as any).turn || 1 });
+              }
             }
           }
-        } catch { /* origin unlock not ready — silently skip */ }
+        } catch (originErr) {
+          pipelineWarn('origin-unlock-checker', originErr, { stage: this.state, turn: (updatedStore as any).turn || 1 });
+        }
         (updatedStore as any).setScreenState?.('game_over');
       }
 

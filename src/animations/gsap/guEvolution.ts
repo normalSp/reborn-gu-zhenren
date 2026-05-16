@@ -7,7 +7,7 @@
 
 import { isReducedMotion } from '../../hooks/useReducedMotion';
 
-type GsapModule = typeof import('gsap');
+type GsapModule = typeof import('gsap').default;
 
 export async function playGuEvolution(
   gsap: GsapModule,

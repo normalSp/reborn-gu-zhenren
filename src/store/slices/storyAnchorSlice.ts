@@ -8,13 +8,13 @@ import type {
 } from '../../types';
 import {
   applyHeavenWillTrigger,
-  createDefaultStoryAnchorState,
   evaluateStoryAnchorEntry,
   normalizeStoryAnchorState,
   recordCanonAnchorPressure,
   resolveIfBranchCandidate,
   resolveStoryEventCandidate,
 } from '../../engine/v080-midgame-anchor-engine';
+import { createInitialStoryAnchorState } from '../defaultEngineStates';
 
 export interface StoryAnchorSlice {
   storyAnchorState: StoryAnchorState;
@@ -67,7 +67,7 @@ function pushL3Warning(get: any, ruleName: string, details: string): void {
 }
 
 export const createStoryAnchorSlice = (set: any, get: any): StoryAnchorSlice => ({
-  storyAnchorState: createDefaultStoryAnchorState(),
+  storyAnchorState: createInitialStoryAnchorState(),
 
   evaluateStoryAnchorEntryAction: (anchorId) => {
     const store = get() as any;

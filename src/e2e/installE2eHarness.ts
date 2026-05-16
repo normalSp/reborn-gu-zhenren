@@ -12,6 +12,7 @@ import {
   buildOriginEndingEvidence,
   buildOriginLifeboundContextForPrompt,
 } from '../engine/v080-origin-lifebound-closure';
+import { STORAGE_KEYS } from '../store/storageKeys';
 import timelineNodesRaw from '../canon/timeline-nodes.json';
 import type { TimelineNode } from '../store/slices/timelineSlice';
 
@@ -36,6 +37,8 @@ declare global {
       loadSave: (save: E2eSave) => { success: boolean; error?: string };
       getStateSummary: () => Record<string, unknown>;
       startBattlefieldDemo: () => Record<string, unknown>;
+      startQingmaoMortalBattlefieldDemo: () => Record<string, unknown>;
+      triggerQingmaoForbiddenThresholdFailure: () => Record<string, unknown>;
       startBattlefieldGroupDemo: () => Record<string, unknown>;
       startBattlefieldLargeGroupDemo: () => Record<string, unknown>;
       startNarrativeGuAffordanceDemo: () => Record<string, unknown>;
@@ -46,6 +49,7 @@ declare global {
       startOriginLifeboundClosureDemo: () => Record<string, unknown>;
       startInheritanceLandDemo: () => Record<string, unknown>;
       startTrainingGroundClueDemo: () => Record<string, unknown>;
+      startQingmaoRegionActionDemo: () => Record<string, unknown>;
       startBeastHuntDemo: () => Record<string, unknown>;
       startTimelineTalentCoverageDemo: (category?: 'mortal' | 'immortal') => Record<string, unknown>;
       clearRuntime: () => void;
@@ -134,6 +138,8 @@ function summarizeStore(): Record<string, unknown> {
       gridPresetId: state.battlefieldCombatState.gridPresetId || null,
       gridWidth: Number(state.battlefieldCombatState.grid?.width || 0),
       gridHeight: Number(state.battlefieldCombatState.grid?.height || 0),
+      activeTerrainId: state.battlefieldCombatState.activeTerrainId || null,
+      activeFormationId: state.battlefieldCombatState.activeFormationId || null,
       activeUnitId: state.battlefieldCombatState.activeUnitId || null,
       cellCount: Array.isArray(state.battlefieldCombatState.grid?.cells) ? state.battlefieldCombatState.grid.cells.length : 0,
       unitCount: Array.isArray(state.battlefieldCombatState.units) ? state.battlefieldCombatState.units.length : 0,
@@ -191,6 +197,35 @@ function summarizeStore(): Record<string, unknown> {
       combatCandidateCount: Array.isArray(state.flags?.combatEventCandidates) ? state.flags.combatEventCandidates.length : 0,
       sceneBudgetRemaining: Number(state.sceneSessionState?.actionBudget?.remaining ?? state.sceneSessionState?.budget?.remainingAp ?? state.gameTime?.ap ?? 0),
     } : null,
+    livingWorld: state.livingWorldState ? {
+      playerGoalCount: Array.isArray(state.livingWorldState.playerGoals) ? state.livingWorldState.playerGoals.length : 0,
+      playerGoals: Array.isArray(state.livingWorldState.playerGoals)
+        ? state.livingWorldState.playerGoals.map((goal: any) => ({
+          id: goal.id,
+          intentType: goal.intentType,
+          targetRef: goal.targetRef,
+          status: goal.status,
+          createdTurn: goal.createdTurn,
+          blockedByRefIds: goal.blockedByRefIds || [],
+        }))
+        : [],
+      knownFactCount: state.livingWorldState.knownFacts ? Object.keys(state.livingWorldState.knownFacts).length : 0,
+      knownFactIds: state.livingWorldState.knownFacts ? Object.keys(state.livingWorldState.knownFacts) : [],
+      hiddenFactRefCount: state.livingWorldState.hiddenFactRefs ? Object.keys(state.livingWorldState.hiddenFactRefs).length : 0,
+      hiddenFactRefIds: state.livingWorldState.hiddenFactRefs ? Object.keys(state.livingWorldState.hiddenFactRefs) : [],
+      npcMemoryCount: Array.isArray(state.livingWorldState.npcMemories) ? state.livingWorldState.npcMemories.length : 0,
+      npcMemoryIds: Array.isArray(state.livingWorldState.npcMemories)
+        ? state.livingWorldState.npcMemories.map((entry: any) => entry.id)
+        : [],
+      factionPressureCount: Array.isArray(state.livingWorldState.factionPressure) ? state.livingWorldState.factionPressure.length : 0,
+      factionPressureIds: Array.isArray(state.livingWorldState.factionPressure)
+        ? state.livingWorldState.factionPressure.map((entry: any) => entry.id)
+        : [],
+      actionConsequenceCount: Array.isArray(state.livingWorldState.actionConsequences) ? state.livingWorldState.actionConsequences.length : 0,
+    } : null,
+    materialBag: state.materialBag || {},
+    feedingCredits: state.feedingCredits || {},
+    lastWorldActionPromptSummary: state.flags?.lastWorldActionReturnContext?.promptSummary || null,
     originLifebound: {
       originProfileId: originEvidence.profileId || null,
       originProfileName: originEvidence.profileName || null,
@@ -221,7 +256,7 @@ function summarizeStore(): Record<string, unknown> {
 
 function skipTutorialForE2e(): void {
   try {
-    window.localStorage.setItem('gu-zhenren-tutorial-skipped', 'true');
+    window.localStorage.setItem(STORAGE_KEYS.TUTORIAL_SKIPPED, 'true');
   } catch {
     /* no-op */
   }
@@ -275,6 +310,67 @@ export function installE2eHarness(): void {
       store.setScreenState?.('game_play');
       store.setGameMode?.('canon');
       store.initBattlefieldDemo?.();
+      return summarizeStore();
+    },
+    startQingmaoMortalBattlefieldDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 6),
+        currentDomain: '南疆',
+        currentChapterId: 'qingmaoshan',
+        profile: {
+          name: 'b3青茅凡战演武蛊师',
+          background: '古月山寨外山弟子',
+          realm: { grand: 2, sub: '初阶', label: '二转初阶' },
+        },
+        vitals: {
+          health: { current: 126, max: 128 },
+          essence: { current: 88, max: 88 },
+        },
+        pathBuild: {
+          primary: '光道',
+          secondary: ['金道', '食道'],
+          path_levels: { 光道: '入门', 金道: '入门' },
+          dao_marks: { 光道: 34, 金道: 16, 食道: 6 },
+        },
+        inventory: [
+          { id: 'b3_moonlight_gu', name: '月光蛊', tier: 1, path: '光道', currentState: 'normal' },
+          { id: 'b3_white_jade_gu', name: '白玉蛊', tier: 3, path: '金道', currentState: 'normal' },
+          { id: 'b3_liquor_worm', name: '酒虫', tier: 1, path: '食道', currentState: 'normal' },
+        ],
+        currentNarrative: {
+          narrative: {
+            text: '青茅山夜雾压在山道上。此处只验证本地 5x3 凡战棋盘、美术边界和蛊虫表现提示，不触发新一轮叙事生成。',
+            choices: [],
+          },
+          state_update: {},
+        },
+        sceneSessionState: {
+          sceneId: 'v090_b3_qingmao_mortal_battlefield_demo',
+          status: 'active',
+          locationId: 'qingmaoshan_outer_path',
+          period: 'night',
+          safety: 'dangerous',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          narrativeAdvanceIntent: null,
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      store.setScreenState?.('game_play');
+      store.setGameMode?.('canon');
+      store.initQingmaoMortalBattlefieldDemo?.();
+      return summarizeStore();
+    },
+    triggerQingmaoForbiddenThresholdFailure() {
+      const store = useStore.getState() as any;
+      if (!store.battlefieldCombatState) store.initQingmaoMortalBattlefieldDemo?.();
+      store.selectBattlefieldAction?.({ type: 'gu', actorId: 'player', guName: '月光蛊' });
+      store.selectBattlefieldTarget?.('c1_0');
+      store.executeSelectedBattlefieldAction?.();
       return summarizeStore();
     },
     startBattlefieldGroupDemo() {
@@ -1068,7 +1164,7 @@ export function installE2eHarness(): void {
           title: site.title,
           summary: `${site.title} 已作为 c2.5 演武候选登记。`,
           anchorId: site.anchorId,
-          risk: site.risk,
+          risk: site.kind === 'grotto_heaven_rumor' ? 'high' : site.kind === 'blessed_land_claim' ? 'medium' : 'low',
           source: 'engine',
         });
       }
@@ -1153,6 +1249,72 @@ export function installE2eHarness(): void {
         risk: 'low',
         sceneTags: ['qingmaoshan', 'training_ground_clue'],
       });
+      return summarizeStore();
+    },
+    startQingmaoRegionActionDemo() {
+      const store = useStore.getState() as any;
+      skipTutorialForE2e();
+      useStore.setState({
+        turn: Math.max(Number(store.turn || 1), 12),
+        tutorialState: 'skipped',
+        currentStep: 0,
+        currentDomain: '南疆',
+        currentChapterId: 'qingmaoshan',
+        activeTab: 'actions',
+        selectedStartProfileId: 'start_qingmaoshan_guyue',
+        profile: { name: 'b1青茅区域演武', background: '青茅山古月族学弟子', realm: { grand: 1, sub: '中阶', label: '一转中阶' } },
+        attributes: { 资质: 7, 体魄: 6, 心智: 6, 气运: 5 },
+        pathBuild: {
+          primary: '月道',
+          secondary: ['炼道'],
+          path_levels: { 月道: '入门', 炼道: '入门' },
+          dao_marks: { 月道: 10, 炼道: 4 },
+        },
+        currency: Math.max(Number(store.currency || 0), 500),
+        immortalCurrency: Number(store.immortalCurrency || 0),
+        materialBag: {},
+        feedingCredits: {},
+        inventory: [
+          { id: 'e2e_moonlight_gu', name: '月光蛊', tier: 1, path: '光道', currentState: 'hungry', hungerCounter: 12, active: true },
+          { id: 'e2e_liquor_worm', name: '酒虫', tier: 1, path: '食道', currentState: 'hungry', hungerCounter: 12, active: true },
+          { id: 'e2e_white_jade_gu', name: '白玉蛊', tier: 2, path: '金道', currentState: 'hungry', hungerCounter: 12, active: true },
+        ],
+        gameTime: { ap: 3, max_ap: 3, period: 'morning', day: 5, month: 2, year: 1, season: 'spring' },
+        sceneSessionState: {
+          version: 'v0.10.0-b1',
+          sceneId: 'v010_qingmao_region_action_demo',
+          status: 'active',
+          locationId: 'qingmaoshan_clan_school',
+          period: 'morning',
+          safety: 'guarded',
+          budget: { remainingAp: 3, maxAp: 3, spentAp: 0 },
+          actionBudget: { remaining: 3, remainingAp: 3, max: 3, maxAp: 3, spent: 0, spentAp: 0, reserved: 0 },
+          localActionLedger: [],
+          pendingEvents: [],
+          pendingAdvanceIntent: null,
+          narrativeAdvanceIntent: null,
+        },
+        trainingGroundState: createDefaultTrainingGroundState(),
+        flags: {
+          ...(store.flags || {}),
+          _start_profile: 'start_qingmaoshan_guyue',
+          trainingGroundClues: [],
+          trainingCooldowns: {},
+          combatEventCandidates: [],
+        },
+        currentNarrative: {
+          narrative: {
+            text: '族学门口的晨雾尚未散尽，告示栏挂出今日炼蛊台磨练与前山巡查安排。',
+            choices: [],
+          },
+          state_update: {},
+        },
+        pipelinePhase: 'RESOLVED',
+        pipelineError: null,
+      } as any);
+      const next = useStore.getState() as any;
+      next.setScreenState?.('game_play');
+      next.setGameMode?.('canon');
       return summarizeStore();
     },
     startBeastHuntDemo() {
@@ -1291,7 +1453,7 @@ export function installE2eHarness(): void {
     },
     clearRuntime() {
       try {
-        window.localStorage.removeItem('gu-zhenren-save');
+        window.localStorage.removeItem(STORAGE_KEYS.MAIN_SAVE);
       } catch {
         /* no-op */
       }

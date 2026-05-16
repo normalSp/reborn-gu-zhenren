@@ -41,7 +41,7 @@ export function ApertureManagementPanel() {
     };
   }, [apertureInventory]);
 
-  if (!isImmortal || !aperture || aperture.type === 'mortal') {
+  if (!isImmortal || !aperture) {
     return (
       <div className="h-full flex items-center justify-center bg-rg-ink-900/95">
         <p className="text-rg-ink-300 text-sm font-panel">仙窍未开辟——六转升仙后解锁</p>

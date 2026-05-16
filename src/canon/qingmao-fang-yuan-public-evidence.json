@@ -1,0 +1,312 @@
+{
+  "version": "v0.12.0-b3",
+  "status": "fang_yuan_public_evidence_rule_draft_first_cut",
+  "sourceReview": {
+    "request": "指导大纲/vMiroFish/requests/2026-05-16-fang-yuan-public-evidence-pack.md",
+    "package": "指导大纲/vMiroFish/v0.12.0/fang_yuan_public_evidence_pack_export_ready.json",
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/2026-05-16-fang-yuan-public-evidence-pack-intake-review.md",
+    "sourceCoverage": "ri_lw_ch_0001 through ri_lw_ch_0100 reviewed sample",
+    "runtimeAuthority": "reborn_local_rule_draft_only",
+    "deepSeekAuthority": "narrative_explanation_only"
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "tracking_success",
+      "capture_result",
+      "npc_death",
+      "npc_route_result",
+      "fang_yuan_hidden_causality",
+      "hidden_fact_reveal",
+      "canon_anchor_change",
+      "reward",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "recipe_unlock",
+      "location_unlock",
+      "faction_transfer",
+      "standing_delta",
+      "deepseek_authority_expansion"
+    ],
+    "forbiddenPlayerVisibleTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "未来记忆"
+    ]
+  },
+  "evidenceItems": [
+    {
+      "id": "fy_public_night_exit_trace",
+      "sourceItemId": "fy_public_ch0010_night_exit_trace",
+      "category": "publicEvidenceCandidate",
+      "scope": "npc",
+      "confidence": "rumor",
+      "publiclyObservable": false,
+      "publicTrigger": "询问寨门、巡路者，或核对夜间出入痕迹。",
+      "playerVisibleSummary": "方源早期可能留下夜间出入和山路方向的公开痕迹；这只能作为可疑线索，不能推出目的。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": ["记录出入异常", "提高路口警惕"],
+      "tags": ["fang_yuan", "night_trace", "route_hint"],
+      "sourcePointerIds": ["sp_929e88080440"]
+    },
+    {
+      "id": "fy_public_inn_lodging_shift",
+      "sourceItemId": "fy_public_ch0012_inn_lodging_shift",
+      "category": "publicEvidenceCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问客栈、原住处附近的人，或核对住宿变化。",
+      "playerVisibleSummary": "方源住处变化和客栈出入可以形成公开旁证，但不能确认真实计划。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": ["客栈伙计回忆住宿", "亲族关系压力上升"],
+      "tags": ["fang_yuan", "inn", "lodging"],
+      "sourcePointerIds": ["sp_f5fddfc895bf"]
+    },
+    {
+      "id": "fy_public_family_inn_question",
+      "sourceItemId": "fy_public_ch0018_family_inn_question",
+      "category": "npcObservationCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问方正、客栈饭堂旁观者，或追问兄弟二人的住处变化。",
+      "playerVisibleSummary": "亲族曾对方源住处异常提出公开疑问；这只形成关系压力，不揭示真实原因。",
+      "hiddenBoundary": "private_motive_not_observable",
+      "likelyReactions": ["方正困惑或不满", "客栈人员谨慎旁证", "亲族关系紧张"],
+      "tags": ["fang_yuan", "fang_zheng", "lodging", "relationship_pressure"],
+      "sourcePointerIds": ["sp_03c7401103c1"]
+    },
+    {
+      "id": "fy_public_clan_school_ranking",
+      "sourceItemId": "fy_public_ch0022_clan_school_ranking_board",
+      "category": "publicFactCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "查看族学公告、询问学员或学堂执事。",
+      "playerVisibleSummary": "族学初期榜单显示方源有异常亮眼的公开表现；内部原因不可见。",
+      "hiddenBoundary": "private_causality_not_observable",
+      "likelyReactions": ["同窗震惊", "学堂记录", "家老重新评估"],
+      "tags": ["fang_yuan", "clan_school", "ranking"],
+      "sourcePointerIds": ["sp_67bddc27e620"]
+    },
+    {
+      "id": "fy_public_inn_supply_trace",
+      "sourceItemId": "fy_public_ch0024_inn_supply_trace",
+      "category": "publicEvidenceCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问客栈伙计、送货人，或核对短期补给记录。",
+      "playerVisibleSummary": "客栈酒水消费和送货痕迹可以被旁证；用途、准备目标和后续因果不可由公开信息推出。",
+      "hiddenBoundary": "resource_use_purpose_hidden_ref_only",
+      "hiddenBoundaryRefId": "fy_hidden_supply_purpose_boundary",
+      "likelyReactions": ["伙计回忆订单", "店铺关注库存", "旁观者产生误读"],
+      "tags": ["fang_yuan", "inn", "supply_trace"],
+      "sourcePointerIds": ["sp_3209eabab218"]
+    },
+    {
+      "id": "fy_public_school_gate_conflict",
+      "sourceItemId": "fy_public_ch0028_school_gate_conflict",
+      "category": "npcObservationCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问同窗、学堂执事，或调查族学门口冲突记录。",
+      "playerVisibleSummary": "方源在族学门口的公开冲突进入学堂视野；家老内部评价不可见。",
+      "hiddenBoundary": "elder_internal_evaluation_not_observable",
+      "likelyReactions": ["学堂观察", "同窗畏惧或不满", "延后干预"],
+      "tags": ["fang_yuan", "clan_school", "conflict"],
+      "sourcePointerIds": ["sp_3300ddbb6b7a"]
+    },
+    {
+      "id": "fy_public_repeat_school_gate_conflict",
+      "sourceItemId": "fy_public_ch0031_repeat_school_gate_conflict",
+      "category": "publicEvidenceCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问同窗或拳脚教头。",
+      "playerVisibleSummary": "方源多次公开冲突可由同窗旁证；真实策略和长期目的不可见。",
+      "hiddenBoundary": "private_strategy_not_observable",
+      "likelyReactions": ["同窗敌意", "学堂继续记录", "家族亲属压力上升"],
+      "tags": ["fang_yuan", "clan_school", "repeat_conflict"],
+      "sourcePointerIds": ["sp_5c845e8d9a5f"]
+    },
+    {
+      "id": "fy_public_merchant_inquiry_record",
+      "sourceItemId": "fy_public_ch0056_merchant_inquiry_record",
+      "category": "inquiryReactionCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问商队成员、议事相关人员，或核对当堂对质记录。",
+      "playerVisibleSummary": "商队问询和公开指认曾发生，但这不是案件真相或隐藏因果授权。",
+      "hiddenBoundary": "case_truth_and_private_causality_not_observable",
+      "likelyReactions": ["商队持续怀疑", "家族高层谨慎", "被问询者警惕"],
+      "tags": ["fang_yuan", "merchant", "inquiry"],
+      "sourcePointerIds": ["sp_437320bbd311"]
+    },
+    {
+      "id": "fy_public_inquiry_test_procedure",
+      "sourceItemId": "fy_public_ch0058_inquiry_test_procedure",
+      "category": "inquiryReactionCandidate",
+      "scope": "npc",
+      "confidence": "rumor",
+      "publiclyObservable": true,
+      "publicTrigger": "追问商队调查流程、当堂检验过程或见证者反应。",
+      "playerVisibleSummary": "公开检验程序曾被提起；第三者只能知道流程痕迹，不能获得隐藏机制或真相。",
+      "hiddenBoundary": "test_mechanism_and_case_truth_hidden_ref_only",
+      "likelyReactions": ["商队要求流程化验证", "家族人员保持警惕", "旁观者形成有限印象"],
+      "tags": ["fang_yuan", "merchant", "procedure"],
+      "sourcePointerIds": ["sp_1ff4e841daf6"]
+    },
+    {
+      "id": "fy_public_continued_investigation_pressure",
+      "sourceItemId": "fy_public_ch0058_continued_investigation_pressure",
+      "category": "inquiryReactionCandidate",
+      "scope": "npc",
+      "confidence": "rumor",
+      "publiclyObservable": true,
+      "publicTrigger": "询问商队后续态度、调查是否结束，或查问外部追责线索。",
+      "playerVisibleSummary": "商队外部压力仍可能存在；这只是候选线索，不等于调查成功或正史改变。",
+      "hiddenBoundary": "case_truth_not_observable",
+      "likelyReactions": ["商队保持追查", "家族减少公开说明", "相关人员警惕追问"],
+      "tags": ["fang_yuan", "merchant", "external_pressure"],
+      "sourcePointerIds": ["sp_545734bdc7dc"]
+    },
+    {
+      "id": "fy_public_task_absence_trace",
+      "sourceItemId": "fy_public_ch0092_task_absence_trace",
+      "category": "publicEvidenceCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问角三小组成员、北门附近人员，或核对任务集合缺席记录。",
+      "playerVisibleSummary": "方源缺席小组集合和组内寻找可以形成公开旁证；所在地点、状态和真实目的不可由此确定。",
+      "hiddenBoundary": "whereabouts_and_private_purpose_not_observable",
+      "likelyReactions": ["小组寻找", "组长施压", "任务信誉受损"],
+      "tags": ["fang_yuan", "task_group", "absence"],
+      "sourcePointerIds": ["sp_590d3649e24b"]
+    },
+    {
+      "id": "fy_public_landlord_whereabouts_statement",
+      "sourceItemId": "fy_public_ch0093_landlord_whereabouts_statement",
+      "category": "inquiryReactionCandidate",
+      "scope": "npc",
+      "confidence": "rumor",
+      "publiclyObservable": true,
+      "publicTrigger": "询问房东、邻近住户或追查方源住处出入。",
+      "playerVisibleSummary": "房东或邻近住户只能提供有限口供；线索真伪、路线结果和真实目的必须保持不确定。",
+      "hiddenBoundary": "statement_truth_and_private_route_plan_not_observable",
+      "likelyReactions": ["房东提供有限口供", "小组扩大寻找", "追问者暴露关注"],
+      "tags": ["fang_yuan", "landlord", "whereabouts"],
+      "sourcePointerIds": ["sp_828c2203b1dc"]
+    },
+    {
+      "id": "fy_public_internal_affairs_trace",
+      "sourceItemId": "fy_public_ch0099_internal_affairs_trace",
+      "category": "publicFactCandidate",
+      "scope": "npc",
+      "confidence": "confirmed",
+      "publiclyObservable": true,
+      "publicTrigger": "询问内务堂流程、任务登记，或核对家产相关申请记录。",
+      "playerVisibleSummary": "方源通过内务堂申请家产相关任务会留下正式流程记录；幕后安排和结果不可见。",
+      "hiddenBoundary": "backroom_arrangement_hidden_ref_only",
+      "likelyReactions": ["内务堂按流程回应", "亲族关系压力上升", "相关人员警惕打听"],
+      "tags": ["fang_yuan", "internal_affairs", "process_trace"],
+      "sourcePointerIds": ["sp_3ccaa1803bf0"]
+    }
+  ],
+  "hiddenBoundaryRefs": [
+    {
+      "id": "fy_hidden_supply_purpose_boundary",
+      "sourceItemId": "fy_hidden_boundary_ch0024_supply_purpose",
+      "scope": "npc",
+      "sourcePointerIds": ["sp_3209eabab218"],
+      "revealPolicyId": "fang_yuan_public_evidence_hidden_boundary",
+      "publicBlockSummary": "只能得到消费痕迹与可能误读，不能得到用途结论。",
+      "forbiddenReveals": ["supply_purpose", "private_preparation_target", "private_causality"]
+    },
+    {
+      "id": "fy_hidden_arena_internal_check_boundary",
+      "sourceItemId": "fy_hidden_boundary_ch0087_arena_internal_check",
+      "scope": "npc",
+      "sourcePointerIds": ["sp_6bf4fd17114d"],
+      "revealPolicyId": "fang_yuan_public_evidence_hidden_boundary",
+      "publicBlockSummary": "只能知道现场有处置或关切，不能知道内部检查细节或家老判断。",
+      "forbiddenReveals": ["internal_check_result", "elder_private_evaluation", "hidden_conclusion"]
+    }
+  ],
+  "inquiryProfiles": [
+    {
+      "id": "general_public_evidence",
+      "matchKeywords": ["方源", "跟踪", "观察", "打听", "盯"],
+      "evidenceItemIds": [
+        "fy_public_inn_lodging_shift",
+        "fy_public_clan_school_ranking",
+        "fy_public_school_gate_conflict",
+        "fy_public_task_absence_trace",
+        "fy_public_internal_affairs_trace"
+      ],
+      "hiddenBoundaryRefIds": ["fy_hidden_supply_purpose_boundary"],
+      "pressureType": "suspicion",
+      "pressureDelta": 1,
+      "publicSummary": "方源公开旁证只允许确认住处、族学、公开冲突、任务缺席和内务堂流程等表象。"
+    },
+    {
+      "id": "lodging_and_inn_evidence",
+      "matchKeywords": ["住处", "客栈", "住宿", "房东", "出入"],
+      "evidenceItemIds": [
+        "fy_public_inn_lodging_shift",
+        "fy_public_family_inn_question",
+        "fy_public_landlord_whereabouts_statement"
+      ],
+      "hiddenBoundaryRefIds": [],
+      "pressureType": "suspicion",
+      "pressureDelta": 1,
+      "publicSummary": "住处和客栈线只能给出住宿变化、亲族疑问和有限口供。"
+    },
+    {
+      "id": "clan_school_evidence",
+      "matchKeywords": ["族学", "榜单", "同窗", "冲突", "学堂"],
+      "evidenceItemIds": [
+        "fy_public_clan_school_ranking",
+        "fy_public_school_gate_conflict",
+        "fy_public_repeat_school_gate_conflict"
+      ],
+      "hiddenBoundaryRefIds": ["fy_hidden_arena_internal_check_boundary"],
+      "pressureType": "hostility",
+      "pressureDelta": 1,
+      "publicSummary": "族学线只能显示公开表现、冲突和同窗反应，不能显示家老内部判断。"
+    },
+    {
+      "id": "merchant_inquiry_evidence",
+      "matchKeywords": ["商队", "商人", "贾", "问询", "对质"],
+      "evidenceItemIds": [
+        "fy_public_merchant_inquiry_record",
+        "fy_public_inquiry_test_procedure",
+        "fy_public_continued_investigation_pressure"
+      ],
+      "hiddenBoundaryRefIds": [],
+      "pressureType": "suspicion",
+      "pressureDelta": 2,
+      "publicSummary": "商队线只能证明问询、流程和外部压力，不给出案件真相。"
+    },
+    {
+      "id": "supply_and_task_evidence",
+      "matchKeywords": ["酒", "补给", "任务", "角三", "内务堂", "缺席"],
+      "evidenceItemIds": [
+        "fy_public_inn_supply_trace",
+        "fy_public_task_absence_trace",
+        "fy_public_internal_affairs_trace"
+      ],
+      "hiddenBoundaryRefIds": ["fy_hidden_supply_purpose_boundary"],
+      "pressureType": "suspicion",
+      "pressureDelta": 2,
+      "publicSummary": "补给和任务线只能显示消费、缺席、申请流程与压力，不能推出真实用途和路线结果。"
+    }
+  ]
+}

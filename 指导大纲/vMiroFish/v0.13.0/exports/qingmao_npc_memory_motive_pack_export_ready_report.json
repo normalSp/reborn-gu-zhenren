@@ -1,0 +1,66 @@
+{
+  "totalItems": 1564,
+  "byCategory": {
+    "npcInterestTrigger": 1034,
+    "npcMemoryCandidate": 437,
+    "npcMotiveCandidate": 40,
+    "npcSuspicionTrigger": 53
+  },
+  "byReviewStatus": {
+    "export_ready": 1564
+  },
+  "sourcePointers": 1195,
+  "quoteLikeKeys": 0,
+  "skipped": 213,
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "clan_school_opening_training": 148,
+      "three_clans_competition": 191,
+      "merchant_trade_supply": 249,
+      "absence_or_refusal": 48,
+      "route_or_detour": 75,
+      "inquiry_or_message": 45,
+      "rescue_or_aid": 36,
+      "theft_or_deception": 60,
+      "escape_preparation": 44,
+      "external_contact": 201
+    },
+    "subjectTypes": {
+      "elder": 92,
+      "npc": 1070,
+      "npc_group": 248,
+      "clan_school": 25,
+      "merchant": 108,
+      "task_group": 21
+    },
+    "motiveAxes": {
+      "benefit": 750,
+      "task_discipline": 213,
+      "resource_interest": 303,
+      "risk_avoidance": 205,
+      "suspicion": 53,
+      "relationship_probe": 19,
+      "authority": 21
+    },
+    "requiredFieldsPresent": {
+      "id": 1564,
+      "category": 1564,
+      "summary": 1564,
+      "subjectType": 1564,
+      "subjectId": 1564,
+      "subjectDisplayName": 1564,
+      "memoryTrigger": 1564,
+      "motiveAxis": 1564,
+      "likelyMemory": 1564,
+      "likelyReaction": 1564,
+      "playerVisibleReason": 1564,
+      "visibility": 1564,
+      "playerVisibility": 1564,
+      "confidence": 1564,
+      "sourcePointerIds": 1564,
+      "sourcePointers": 1564,
+      "review": 1564,
+      "reborngGate": 1564
+    }
+  }
+}

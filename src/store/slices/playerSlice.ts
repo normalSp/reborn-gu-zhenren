@@ -255,7 +255,7 @@ const SEASONS: GameTime['season'][] = ['spring', 'summer', 'autumn', 'winter'];
 /** P2补完: 从角色属性+境界+天赋重新推导战斗数值（HP/ATK/DEF/命中/闪避） */
 function recalcCombatStats(set: any, get: any) {
   const state = get() as PlayerSlice & { selectedTalents?: Array<{ benefits?: string[]; costs?: string[] }> };
-  const { physique, aptitude, mind } = state.attributes;
+  const { 体魄: physique, 资质: aptitude, 心智: mind } = state.attributes;
   const realmGrand = state.profile.realm.grand;
   const selectedTalents = state.selectedTalents;
   const talentModifiers = selectedTalents ? extractTalentModifiers(selectedTalents as any[]) : [];
@@ -530,7 +530,7 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
     if (update.path_levels) {
       const currentLevels = { ...state.pathBuild.path_levels };
       for (const [path, level] of Object.entries(update.path_levels)) {
-        currentLevels[path] = level;
+        currentLevels[path] = level as PathLevel;
       }
       set((s: PlayerSlice) => ({
         pathBuild: { ...s.pathBuild, path_levels: currentLevels },
@@ -1134,7 +1134,12 @@ export const createPlayerSlice = (set: any, get: any): PlayerSlice => ({
         const promotedPaths = Object.entries(newPathLevels).filter(([p, l]) => l !== (currentPathLevels[p] || '普通'));
         if (promotedPaths.length > 0) {
           const [mainPath, mainLevel] = promotedPaths[0] as [string, string];
-          try { triggerBreakthrough({ path: mainPath, level: mainLevel, realm: state.profile?.realm?.grand ? `${state.profile.realm.grand}转` : '未知' }); } catch {}
+          try {
+            triggerBreakthrough({
+              oldRealm: `${mainPath}${currentPathLevels[mainPath] || '普通'}`,
+              newRealm: `${mainPath}${mainLevel}`,
+            });
+          } catch {}
         }
       }
     }

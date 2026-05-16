@@ -56,7 +56,7 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
       setConnectionVerified(true);
       setResultMessage(response.data.message || '天道已响应，API 连通成功');
       setTokenInfo(
-        `模型 ${response.model || DEEPSEEK_DEFAULT_MODEL} · 耗时 ${response.elapsedMs}ms · Tokens ${response.tokens?.total_tokens ?? '?'}（缓存命中 ${response.tokens?.cached_tokens ?? 0}，${Math.round((response.tokens?.cache_hit_ratio ?? 0) * 100)}%）`
+        `模型 ${response.model || DEEPSEEK_DEFAULT_MODEL} · 耗时 ${response.elapsedMs}ms · Tokens ${response.tokens?.total_tokens ?? '?'}（命中 ${response.tokens?.cached_tokens ?? 0} / 未命中 ${response.tokens?.cache_miss_tokens ?? 0}，${Math.round((response.tokens?.cache_hit_ratio ?? 0) * 100)}%） · 前缀 ${response.prompt_prefix_hash || '?'}`
       );
     } else {
       setResultSuccess(false);
@@ -277,7 +277,7 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
 
         <div className="mt-8 pt-4 border-t border-rg-ink-400/20">
           <p className="text-rg-ink-300 text-xs font-panel text-center">
-            蛊真人世界 · 人生重来模拟器 · v0.9.0-a3
+            蛊真人世界 · 人生重来模拟器 · v0.9.0
           </p>
           <p className="text-rg-ink-400 text-xs font-panel text-center mt-1">
             DeepSeek V4 系列 · 默认 {DEEPSEEK_DEFAULT_MODEL} · React · TypeScript
