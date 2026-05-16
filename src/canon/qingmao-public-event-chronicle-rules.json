@@ -1,0 +1,137 @@
+{
+  "version": "v0.13.0-b2",
+  "status": "public_event_chronicle_rule_draft_first_cut",
+  "sourceReview": {
+    "requestId": "mirofish-request-2026-05-16-qingmao-public-event-chronicle-pack",
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/v0.13.0/2026-05-16-qingmao-public-event-chronicle-pack-intake-review.md",
+    "sourcePackage": "指导大纲/vMiroFish/intake-reviews/v0.13.0/qingmao_public_event_chronicle_pack_export_ready.json",
+    "absorptionPolicy": "rewritten_reborng_local_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "prompt_safe_public_summary_only"
+  },
+  "boundaries": {
+    "maxEventsPerSummary": 5,
+    "allowedRuntimeOutputs": [
+      "public_event_summary_candidate",
+      "prompt_safe_public_summary",
+      "visible_source_refs",
+      "blocked_upgrade_reason"
+    ],
+    "forbiddenWrites": [
+      "public_event_chronicle_store_write",
+      "hidden_fact_body",
+      "hidden_fact_reveal",
+      "standing_delta",
+      "warrant_active",
+      "recruitment_success",
+      "task_created",
+      "task_reward",
+      "faction_transfer",
+      "faction_identity_change",
+      "reward",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "recipe_unlock",
+      "location_unlock",
+      "npc_death",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "canon_anchor_change",
+      "deepseek_authority_expansion"
+    ]
+  },
+  "eventRules": [
+    {
+      "id": "public_event_clan_school_record",
+      "sourceItemIds": ["qmpub_1a87e2568478", "qmpub_e18e7438e49e"],
+      "sourcePointerIds": ["sp_a921e407da24", "sp_446bd6f85c78"],
+      "category": "eventChronicleAnchor",
+      "eventScope": "local_group",
+      "triggerRefs": [
+        "fact:guyue_aperture_ceremony_and_clan_school",
+        "fact:qingmao_three_clans_layout"
+      ],
+      "publicSummary": "族学与开窍相关公开记录成为青茅行动摘要的一部分。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:stabilize_clan_school_record"],
+      "blockedUpgrades": ["standing_delta", "task_reward"]
+    },
+    {
+      "id": "public_event_baijia_contact_window",
+      "sourceItemIds": ["qmpub_956b5b7d583b", "qmpub_0db3f9dea409"],
+      "sourcePointerIds": ["sp_cad5b09c3f10", "sp_e21531cd89c6"],
+      "category": "publicActionSummaryCandidate",
+      "eventScope": "faction_visible",
+      "triggerRefs": [
+        "fact:baijia_bai_ning_bing_public_talent",
+        "pressure:baijia_zhai:opportunity"
+      ],
+      "publicSummary": "白家方向出现公开接触窗口，但仍只是试探和递话空间。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:send_public_message", "followup:prepare_cover_story"],
+      "blockedUpgrades": ["recruitment_success", "faction_transfer"]
+    },
+    {
+      "id": "public_event_escape_route_preparation",
+      "sourceItemIds": ["qmpub_da46ac4c3ddb", "qmpub_4f6512eda316"],
+      "sourcePointerIds": ["sp_346b986970bb", "sp_929e88080440"],
+      "category": "publicActionSummaryCandidate",
+      "eventScope": "region_public",
+      "triggerRefs": [
+        "knownFact:qingmao_escape_route_preparation_baseline",
+        "action:qingmao_escape_route_preparation_probe"
+      ],
+      "publicSummary": "离山路线准备留下公开前置痕迹，身份遮掩和追踪风险仍未解决。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:prepare_public_reason", "followup:avoid_repeated_route"],
+      "blockedUpgrades": ["location_unlock", "pursuit_success", "escape_success"]
+    },
+    {
+      "id": "public_event_internal_affairs_trace",
+      "sourceItemIds": ["qmpub_ba79a4b86d45", "qmpub_76a9f3632f45"],
+      "sourcePointerIds": ["sp_a245feadfd03", "sp_38f5940b94c8"],
+      "category": "publicActionSummaryCandidate",
+      "eventScope": "faction_visible",
+      "triggerRefs": [
+        "pursuit:pursuit_qingmao_internal_affairs_trace",
+        "pursuit:pursuit_qingmao_task_absence_north_gate"
+      ],
+      "publicSummary": "内务和任务流程产生可追溯记录，可能带来盘问或说明压力。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:explain_task_absence", "followup:reduce_process_trace"],
+      "blockedUpgrades": ["task_created", "task_reward", "warrant_active"]
+    },
+    {
+      "id": "public_event_caravan_supply_window",
+      "sourceItemIds": ["qmpub_d1fda2cede33", "qmpub_382681c3b4b4"],
+      "sourcePointerIds": ["sp_f34a72f59673", "sp_c54694d9fe51"],
+      "category": "eventChronicleAnchor",
+      "eventScope": "merchant_visible",
+      "triggerRefs": [
+        "supply:supply_qingmao_caravan_wine_window",
+        "pressure:jiafu_caravan"
+      ],
+      "publicSummary": "商队与客栈窗口可记录补给痕迹，既是机会也是暴露风险。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:use_caravan_cover", "followup:avoid_supply_pattern"],
+      "blockedUpgrades": ["currency_delta", "material_reward", "formal_trade_result"]
+    },
+    {
+      "id": "public_event_fang_yuan_public_inquiry",
+      "sourceItemIds": ["qmpub_2f84c932a920", "qmpub_8bb1b75badc2"],
+      "sourcePointerIds": ["sp_196136f0b2d6", "sp_cc81db82f6c6"],
+      "category": "publicEventCandidate",
+      "eventScope": "npc_public",
+      "triggerRefs": [
+        "action:qingmao_fang_yuan_public_evidence_inquiry",
+        "npc_memory:fang_yuan"
+      ],
+      "publicSummary": "关于方源的公开旁证询问只留下谨慎打听痕迹，没有获得隐藏因果。",
+      "promptSafe": true,
+      "recommendedFollowUps": ["followup:public_evidence_only"],
+      "blockedUpgrades": ["hidden_fact_body", "hidden_fact_reveal", "tracking_success"]
+    }
+  ]
+}

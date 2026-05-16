@@ -1,0 +1,97 @@
+{
+  "version": "v0.13.0-b3",
+  "status": "social_followup_candidate_rule_draft_first_cut",
+  "sourceReview": {
+    "source": "v0.13.0-a2-b2-local-projections",
+    "absorptionPolicy": "reborng_local_followup_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "boundaries": {
+    "maxFollowups": 5,
+    "allowedRuntimeOutputs": [
+      "social_followup_candidate",
+      "candidate_reason",
+      "blocked_upgrade_reason"
+    ],
+    "forbiddenWrites": [
+      "task_created",
+      "task_reward",
+      "standing_delta",
+      "relationship_score",
+      "warrant_active",
+      "recruitment_success",
+      "faction_transfer",
+      "faction_identity_change",
+      "reward",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "recipe_unlock",
+      "location_unlock",
+      "npc_death",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "canon_anchor_change",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion"
+    ]
+  },
+  "followupRules": [
+    {
+      "id": "followup_explain_task_absence",
+      "triggerRefs": ["followup:explain_task_absence", "followup:submit_public_reason"],
+      "kind": "explain",
+      "title": "解释缺席与任务节奏",
+      "publicReason": "已有任务或内务流程痕迹，玩家可以补交公开理由，降低被盘问的风险。",
+      "riskLevel": "medium",
+      "blockedUpgrades": ["task_created", "task_reward", "standing_delta"]
+    },
+    {
+      "id": "followup_prepare_public_reason",
+      "triggerRefs": ["followup:prepare_public_reason", "followup:reduce_process_trace"],
+      "kind": "cover",
+      "title": "准备公开理由并降低流程痕迹",
+      "publicReason": "路线准备、内务记录或巡查视线已形成痕迹，下一步可以处理公开解释和行动遮掩。",
+      "riskLevel": "medium",
+      "blockedUpgrades": ["warrant_active", "pursuit_success", "npc_capture_result"]
+    },
+    {
+      "id": "followup_baijia_public_message",
+      "triggerRefs": ["followup:send_public_message", "followup:prepare_cover_story"],
+      "kind": "message",
+      "title": "向白家方向递出公开话头",
+      "publicReason": "白家方向存在公开试探窗口，但只能做递话和遮掩准备，不等于投靠或招揽。",
+      "riskLevel": "medium",
+      "blockedUpgrades": ["recruitment_success", "faction_transfer", "standing_delta"]
+    },
+    {
+      "id": "followup_caravan_cover",
+      "triggerRefs": ["followup:use_caravan_cover", "followup:avoid_supply_pattern"],
+      "kind": "cover",
+      "title": "利用商队窗口制造补给遮掩",
+      "publicReason": "商队与客栈窗口既能递话，也会暴露补给节奏；玩家可以选择低可见度处理。",
+      "riskLevel": "medium",
+      "blockedUpgrades": ["currency_delta", "material_reward", "formal_trade_result"]
+    },
+    {
+      "id": "followup_fang_yuan_public_evidence_only",
+      "triggerRefs": ["followup:public_evidence_only", "followup:avoid_hidden_causality_probe"],
+      "kind": "investigate",
+      "title": "只沿公开旁证继续打听方源",
+      "publicReason": "方源相关线索只能沿公开旁证继续，不允许触碰隐藏因果或私密轨迹。",
+      "riskLevel": "high",
+      "blockedUpgrades": ["hidden_fact_reveal", "tracking_success", "npc_fate_result"]
+    },
+    {
+      "id": "followup_patrol_timing_shift",
+      "triggerRefs": ["followup:shift_patrol_timing", "followup:avoid_repeated_route"],
+      "kind": "avoid",
+      "title": "调整巡查时间与路线重复度",
+      "publicReason": "前山巡查和离山准备产生可见节奏，玩家可以先降低重复路线带来的注意。",
+      "riskLevel": "low",
+      "blockedUpgrades": ["location_unlock", "pursuit_success", "npc_capture_result"]
+    }
+  ]
+}

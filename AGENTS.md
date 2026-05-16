@@ -30,9 +30,9 @@ RebornG is an AI-driven browser text RPG set in a Reverend Insanity-inspired Gu 
 - `v0.12.0` is complete as a local development milestone: a1/a2/b1/b2/b3/process-1 and rc quality closure pass. `v0.12` starts from Qingmao original fact cards and canon anchors, then Qingmao low-rank IF matrix, route/supply/pursuit, lightweight NPC/faction reaction, Fang Yuan public-evidence inquiry after more public facts, and GitHub/CI as a process sidecar. Next step is `v0.13.0` startup review and scope freeze.
 - `v0.12.0-process-1` GitHub/CI engineering gate is established: `.github/workflows/ci.yml` runs the deterministic quality gate, PR/issue templates require phase scope, user decision, MiroFish need, save-format impact, DeepSeek/hidden-fact boundaries, dashboard/handoff updates, and verification evidence. Playwright smoke is manual via `workflow_dispatch run_e2e=true` unless later promoted by user decision.
 - `v0.12.0-rc` quality closure passed: `npm test -- --reporter=dot`, `npx tsc --noEmit --pretty false`, `npm run build`, runtime/Qingmao/player-visible-copy scans, production-preview smoke, FreeGoalPanel e2e, Qingmao region/battlefield e2e, and long e2e all pass.
-- `v0.13.0` mainline, first cut, v22 field strategy, Git safety process-0, and first two MiroFish requests are approved. Mainline is `NPC 与势力反应系统`; current step is `v0.13.0-process-0 Git安全收束`, then `v0.13.0-a1` social-memory protocol, field table, and test matrix. Do not start runtime named NPC/faction rules until the relevant MiroFish package is delivered and passes intake review.
+- `v0.13.0` mainline, first cut, v22 field strategy, Git safety process-0, and three v0.13 MiroFish intake reviews are approved/complete. Mainline is `NPC 与势力反应系统`. `v0.13.0-a1` social-memory protocol/field table/test matrix is complete, `v0.13.0-a2` NPC memory projection first cut is complete as read-only non-named-subject projection, `v0.13.0-b1` faction stance/pressure projection first cut is complete as read-only pressure/opportunity projection, `v0.13.0-b2` public event chronicle first cut is complete as read-only prompt-safe public summary, and `v0.13.0-b3` social follow-up candidates first cut is complete as candidate-only followups. Current next step is `v0.13.0-b4`, which needs user decision on Player Advocate UI entry/presentation. Do not upgrade named NPC/faction rules, persistent social ledgers, formal standing/warrant/recruitment/tasks, or DeepSeek authority without user decision.
 - MiroFish handoff is now part of the phase gate for canon/IF/NPC/faction/route/hidden-fact work. Current b1 package `qingmao_route_supply_pursuit_pack_export_ready.json`, b2 package `qingmao_faction_pressure_pack_export_ready.json`, and b3 package `fang_yuan_public_evidence_pack_export_ready.json` passed intake review and may feed only candidate/rule drafts; MiroFish output is not canon, not runtime authority, and not DeepSeek authority.
-- v0.13 MiroFish requests exist for `qingmao_npc_memory_motive_pack`, `qingmao_faction_reputation_pressure_pack`, and `qingmao_public_event_chronicle_pack`; the user will transfer the first two to MiroFish thread `019e207b-c55d-7e23-b450-efa7a054a165`, and the third can wait until b2 unless the user chooses otherwise.
+- v0.13 MiroFish packages `qingmao_npc_memory_motive_pack`, `qingmao_faction_reputation_pressure_pack`, and `qingmao_public_event_chronicle_pack` are delivered under `指导大纲/vMiroFish/intake-reviews/v0.13.0/` and passed intake review. They may feed only candidate/rule drafts and tests; no additional MiroFish package is needed before a1/a2 unless a later subject allowlist, escalation precondition, or narrower public-event subset proves necessary.
 - Before any living-world, free-intent, NPC memory, canon/IF adjudication, or Qingmao living-loop runtime work, read `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-设计门禁输出.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-活世界状态协议字段表.md`, and `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-测试矩阵.md`; World Intent Engine is an entry adjudicator/router, not a replacement for existing action/combat/resource/refine/story/canon/store authority.
 
 For fuller current facts, read `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md` first, then `指导大纲/v0.13.0/codex/00-总览/README.md`, then `指导大纲/v0.12.0/codex/00-总览/README.md`.
@@ -97,10 +97,17 @@ For fuller current facts, read `.codex/skills/reborn-expert-council/references/P
 - v0.13 MiroFish protocol: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-MiroFish资料需求与交付协议.md`
 - v0.13 Git plan: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-Git提交与推送计划.md`
 - v0.13 Git safety process: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-process-0-Git安全收束.md`
+- v0.13 a1 social-memory protocol: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-a1-社会记忆协议.md`
+- v0.13 a1 field/write gate: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-a1-字段表与写入权限.md`
+- v0.13 a1 test matrix: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-a1-测试矩阵.md`
+- v0.13 a2 NPC memory projection: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-a2-NPC记忆投影引擎第一刀.md`
+- v0.13 b1 faction stance projection: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-b1-势力态度压力投影第一刀.md`
+- v0.13 b2 public event chronicle: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-b2-事件编年史与公开摘要第一刀.md`
+- v0.13 b3 social followups: `指导大纲/v0.13.0/codex/00-总览/v0.13.0-b3-后续行动候选第一刀.md`
 - MiroFish handoff area: `指导大纲/vMiroFish/`
 - MiroFish first handshake review: `指导大纲/vMiroFish/2026-05-16-第一次对接复盘与流程固化.md`
-- MiroFish latest completed intake: `指导大纲/vMiroFish/intake-reviews/2026-05-16-fang-yuan-public-evidence-pack-intake-review.md`
-- MiroFish v0.13 priority requests: `指导大纲/vMiroFish/requests/2026-05-16-qingmao-npc-memory-motive-pack.md`, `指导大纲/vMiroFish/requests/2026-05-16-qingmao-faction-reputation-pressure-pack.md`
+- MiroFish latest completed intake: `指导大纲/vMiroFish/intake-reviews/v0.13.0/2026-05-16-v013-three-pack-intake-review-summary.md`
+- MiroFish v0.13 package area: `指导大纲/vMiroFish/intake-reviews/v0.13.0/`
 - Long-route docs: `指导大纲/长期路线/`
 - Long architecture route: `指导大纲/长期路线/RebornG-长期架构演进路线图-纯前端到薄后端.md`
 - Long narrative anti-collapse and Qingmao IF placement: `指导大纲/长期路线/RebornG-长线叙事防崩坏与青茅IF矩阵落位.md`

@@ -1,0 +1,198 @@
+{
+  "version": "v0.13.0-b1",
+  "status": "faction_stance_projection_rule_draft_first_cut",
+  "sourceReview": {
+    "requestId": "mirofish-request-2026-05-16-qingmao-faction-reputation-pressure-pack",
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/v0.13.0/2026-05-16-qingmao-faction-reputation-pressure-pack-intake-review.md",
+    "sourcePackage": "指导大纲/vMiroFish/intake-reviews/v0.13.0/qingmao_faction_reputation_pressure_pack_export_ready.json",
+    "absorptionPolicy": "rewritten_reborng_local_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "boundaries": {
+    "maxProjectionsPerAction": 5,
+    "allowedRuntimeOutputs": [
+      "faction_stance_projection",
+      "faction_pressure_candidate",
+      "public_reason",
+      "blocked_escalation_reason"
+    ],
+    "forbiddenWrites": [
+      "standing_delta",
+      "standing_score",
+      "reputation_score",
+      "warrant_active",
+      "recruitment_success",
+      "task_created",
+      "task_reward",
+      "faction_transfer",
+      "faction_identity_change",
+      "reward",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "recipe_unlock",
+      "location_unlock",
+      "npc_death",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "canon_anchor_change",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion"
+    ]
+  },
+  "factionAllowlist": [
+    {
+      "id": "guyue_shanzhai",
+      "displayName": "古月山寨",
+      "runtimeStandingScore": false
+    },
+    {
+      "id": "baijia_zhai",
+      "displayName": "白家寨",
+      "runtimeStandingScore": false
+    },
+    {
+      "id": "xiongjia_zhai",
+      "displayName": "熊家寨",
+      "runtimeStandingScore": false
+    },
+    {
+      "id": "qingmao_caravan_window",
+      "displayName": "青茅商队窗口",
+      "runtimeStandingScore": false
+    },
+    {
+      "id": "guyue_internal_affairs",
+      "displayName": "古月内务",
+      "runtimeStandingScore": false
+    },
+    {
+      "id": "guyue_task_groups",
+      "displayName": "古月任务小组",
+      "runtimeStandingScore": false
+    }
+  ],
+  "stanceRules": [
+    {
+      "id": "faction_stance_guyue_clan_school_watch",
+      "sourceItemIds": ["qmfac_c363520dc16d", "qmfac_e36d38e95313"],
+      "sourcePointerIds": ["sp_a921e407da24", "sp_446bd6f85c78"],
+      "category": "factionPressure",
+      "factionId": "guyue_shanzhai",
+      "stanceAxis": "watch",
+      "triggerRefs": [
+        "fact:guyue_aperture_ceremony_and_clan_school",
+        "fact:qingmao_three_clans_layout"
+      ],
+      "publicTrigger": "开窍、族学表现和公开身份节奏进入山寨视线。",
+      "localSummary": "古月山寨会把族学表现视为观察依据，但不直接给声望数值。",
+      "severity": "low",
+      "recommendedFollowUps": ["followup:stabilize_clan_school_record", "followup:explain_public_absence"],
+      "blockedUpgrades": ["standing_score", "task_reward"]
+    },
+    {
+      "id": "faction_stance_guyue_internal_affairs_trace",
+      "sourceItemIds": ["qmfac_62214473fdc6", "qmfac_34ad7017b604"],
+      "sourcePointerIds": ["sp_2ca0469ecf67", "sp_3ccaa1803bf0"],
+      "category": "taskSourceCandidate",
+      "factionId": "guyue_internal_affairs",
+      "stanceAxis": "task_source_hint",
+      "triggerRefs": [
+        "knownFact:qingmao_escape_route_preparation_baseline",
+        "pursuit:pursuit_qingmao_internal_affairs_trace"
+      ],
+      "publicTrigger": "内务流程、离山准备、家产或任务流程留下公开痕迹。",
+      "localSummary": "古月内务可以形成流程盘问或任务来源候选，但不创建正式任务。",
+      "severity": "medium",
+      "recommendedFollowUps": ["followup:prepare_public_reason", "followup:reduce_process_trace"],
+      "blockedUpgrades": ["task_created", "task_reward", "warrant_active"]
+    },
+    {
+      "id": "faction_stance_baijia_contact_opportunity",
+      "sourceItemIds": ["qmfac_0ba96de4b143"],
+      "sourcePointerIds": ["sp_25743f795db1"],
+      "category": "factionPressure",
+      "factionId": "baijia_zhai",
+      "stanceAxis": "recruitment_hint",
+      "triggerRefs": [
+        "fact:baijia_bai_ning_bing_public_talent",
+        "pressure:baijia_zhai:opportunity"
+      ],
+      "publicTrigger": "玩家对白家公开事实或接触窗口产生行动。",
+      "localSummary": "白家方向可出现试探和机会，但招揽、投靠和阵营变化必须另行决策。",
+      "severity": "medium",
+      "recommendedFollowUps": ["followup:send_public_message", "followup:prepare_cover_story"],
+      "blockedUpgrades": ["recruitment_success", "faction_transfer", "standing_delta"]
+    },
+    {
+      "id": "faction_stance_three_clan_external_suspicion",
+      "sourceItemIds": ["qmfac_2182e80cdd89"],
+      "sourcePointerIds": ["sp_6cfcc30df108"],
+      "category": "factionPressure",
+      "factionId": "xiongjia_zhai",
+      "stanceAxis": "suspicion",
+      "triggerRefs": [
+        "fact:qingmao_three_clans_layout",
+        "pressure:qingmao_three_clan_external_suspicion"
+      ],
+      "publicTrigger": "三寨互疑、外部接触或区域安全压力进入公开讨论。",
+      "localSummary": "熊家方向可作为三寨互疑的一侧压力，但不开放阵营跳转。",
+      "severity": "low",
+      "recommendedFollowUps": ["followup:keep_external_contact_public", "followup:avoid_tri_clan_blame"],
+      "blockedUpgrades": ["faction_identity_change", "location_unlock"]
+    },
+    {
+      "id": "faction_stance_caravan_supply_window",
+      "sourceItemIds": ["qmfac_b34fdd972a2a", "qmfac_985fe3acc675"],
+      "sourcePointerIds": ["sp_f34a72f59673", "sp_c54694d9fe51"],
+      "category": "factionPressure",
+      "factionId": "qingmao_caravan_window",
+      "stanceAxis": "trade_window",
+      "triggerRefs": [
+        "supply:supply_qingmao_caravan_wine_window",
+        "pressure:jiafu_caravan"
+      ],
+      "publicTrigger": "补给、商队窗口、酒食或外部交易痕迹变得可见。",
+      "localSummary": "商队方向可提供递话和补给窗口候选，但不产生交易结算或物品奖励。",
+      "severity": "medium",
+      "recommendedFollowUps": ["followup:use_caravan_cover", "followup:avoid_supply_pattern"],
+      "blockedUpgrades": ["currency_delta", "material_reward", "formal_trade_result"]
+    },
+    {
+      "id": "faction_stance_task_group_authority_pressure",
+      "sourceItemIds": ["qmfac_b2b3fa8c38b0", "qmfac_741fbffad241"],
+      "sourcePointerIds": ["sp_a7bf6a69ad78", "sp_b3adfe0d18da"],
+      "category": "taskSourceCandidate",
+      "factionId": "guyue_task_groups",
+      "stanceAxis": "task_source_hint",
+      "triggerRefs": [
+        "pursuit:pursuit_qingmao_task_absence_north_gate",
+        "knownFact:qingmao_escape_route_preparation_baseline"
+      ],
+      "publicTrigger": "任务集合、缺席、绕开安排或异常闭关形成流程压力。",
+      "localSummary": "任务小组可形成盘问、上报和任务来源候选，但不创建正式任务。",
+      "severity": "high",
+      "recommendedFollowUps": ["followup:explain_task_absence", "followup:choose_low_visibility_route"],
+      "blockedUpgrades": ["task_created", "task_reward", "pursuit_success"]
+    },
+    {
+      "id": "faction_stance_route_blockade_hint",
+      "sourceItemIds": ["qmfac_9383583387f8"],
+      "sourcePointerIds": ["sp_346b986970bb"],
+      "category": "blockadeCandidate",
+      "factionId": "guyue_shanzhai",
+      "stanceAxis": "blockade_hint",
+      "triggerRefs": [
+        "pursuit:pursuit_qingmao_residence_check",
+        "pressure:guyue_shanzhai:suspicion"
+      ],
+      "publicTrigger": "路线、住处、内务流程或山寨安全压力形成封锁候选。",
+      "localSummary": "封锁只能作为风险提示，不生效为正式封锁、抓捕或通缉。",
+      "severity": "high",
+      "recommendedFollowUps": ["followup:reduce_visible_trace", "followup:avoid_residence_check"],
+      "blockedUpgrades": ["warrant_active", "npc_capture_result", "pursuit_success"]
+    }
+  ]
+}

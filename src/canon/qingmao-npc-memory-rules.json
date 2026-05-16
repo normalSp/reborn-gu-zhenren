@@ -1,0 +1,229 @@
+{
+  "version": "v0.13.0-a2",
+  "status": "npc_memory_projection_rule_draft_first_cut",
+  "sourceReview": {
+    "requestId": "mirofish-request-2026-05-16-qingmao-npc-memory-motive-pack",
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/v0.13.0/2026-05-16-qingmao-npc-memory-motive-pack-intake-review.md",
+    "sourcePackage": "指导大纲/vMiroFish/intake-reviews/v0.13.0/qingmao_npc_memory_motive_pack_export_ready.json",
+    "absorptionPolicy": "rewritten_reborng_local_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only"
+  },
+  "boundaries": {
+    "maxProjectionsPerAction": 5,
+    "allowedRuntimeOutputs": [
+      "npc_memory_projection",
+      "public_reason",
+      "recommended_followup_candidate",
+      "blocked_upgrade_reason"
+    ],
+    "forbiddenWrites": [
+      "npc_memory_store_write",
+      "relationship_score",
+      "standing_delta",
+      "faction_transfer",
+      "faction_identity_change",
+      "reward",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "recipe_unlock",
+      "location_unlock",
+      "npc_death",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "canon_anchor_change",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion"
+    ]
+  },
+  "subjectAllowlist": [
+    {
+      "id": "guyue_clan_school_peer_circle",
+      "subjectType": "peer_group",
+      "displayName": "族学同辈视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "guyue_clan_school_record_keeper",
+      "subjectType": "clan_school",
+      "displayName": "族学记录视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "baijia_outer_watch",
+      "subjectType": "external_faction_watch",
+      "displayName": "白家外围试探视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "fang_yuan_public_caution_shadow",
+      "subjectType": "protected_public_npc_shadow",
+      "displayName": "方源公开谨慎阴影",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "guyue_internal_affairs_hall",
+      "subjectType": "internal_affairs",
+      "displayName": "古月内务流程视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "qingmao_caravan_supply_observers",
+      "subjectType": "merchant_window",
+      "displayName": "青茅商队补给视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "guyue_task_group_watch",
+      "subjectType": "task_group",
+      "displayName": "古月任务小组视线",
+      "runtimeNamedNpc": false
+    },
+    {
+      "id": "front_mountain_patrol_watch",
+      "subjectType": "patrol_group",
+      "displayName": "前山巡查视线",
+      "runtimeNamedNpc": false
+    }
+  ],
+  "memoryRules": [
+    {
+      "id": "npc_memory_clan_school_public_record",
+      "sourceItemIds": ["qmnpc_4a88752ca490", "qmnpc_927a901a45b0"],
+      "sourcePointerIds": ["sp_b39aa4fa34ff", "sp_262bd18391a3"],
+      "category": "npcMemoryCandidate",
+      "subjectId": "guyue_clan_school_peer_circle",
+      "memoryAxis": "attention",
+      "triggerRefs": [
+        "fact:guyue_aperture_ceremony_and_clan_school",
+        "fact:qingmao_three_clans_layout"
+      ],
+      "publicTrigger": "开窍、族学表现、缺席或公开偏离同辈节奏。",
+      "localSummary": "族学同辈会把公开表现、缺席和异常节奏记成可见印象。",
+      "riskLevel": "low",
+      "recommendedFollowUps": ["followup:explain_clan_school_absence", "followup:stabilize_peer_impression"],
+      "blockedUpgrades": ["relationship_score", "reward", "standing_delta"]
+    },
+    {
+      "id": "npc_memory_clan_school_record_trace",
+      "sourceItemIds": ["qmnpc_927a901a45b0"],
+      "sourcePointerIds": ["sp_262bd18391a3"],
+      "category": "npcMemoryCandidate",
+      "subjectId": "guyue_clan_school_record_keeper",
+      "memoryAxis": "record_trace",
+      "triggerRefs": [
+        "action:qingmao_faction_reaction_bridge_review",
+        "fact:guyue_aperture_ceremony_and_clan_school"
+      ],
+      "publicTrigger": "族学相关公开行动进入局势反应推演。",
+      "localSummary": "族学记录层只形成流程痕迹和后续试探理由，不直接奖惩。",
+      "riskLevel": "medium",
+      "recommendedFollowUps": ["followup:submit_public_reason", "followup:avoid_extra_conflict"],
+      "blockedUpgrades": ["formal_punishment", "reward", "relationship_score"]
+    },
+    {
+      "id": "npc_memory_baijia_contact_interest",
+      "sourceItemIds": ["qmnpc_9336358a6cbf"],
+      "sourcePointerIds": ["sp_25743f795db1"],
+      "category": "npcInterestTrigger",
+      "subjectId": "baijia_outer_watch",
+      "memoryAxis": "interest",
+      "triggerRefs": [
+        "fact:baijia_bai_ning_bing_public_talent",
+        "pressure:baijia_zhai:opportunity"
+      ],
+      "publicTrigger": "玩家对白家公开事实或接触窗口产生行动。",
+      "localSummary": "白家方向可以形成外围试探兴趣，但不等于招揽或投靠。",
+      "riskLevel": "medium",
+      "recommendedFollowUps": ["followup:send_public_message", "followup:prepare_cover_story"],
+      "blockedUpgrades": ["recruitment_success", "faction_transfer", "standing_delta"]
+    },
+    {
+      "id": "npc_memory_fang_yuan_public_probe_caution",
+      "sourceItemIds": ["qmnpc_84bcc7101d74"],
+      "sourcePointerIds": ["sp_196136f0b2d6"],
+      "category": "npcInterestTrigger",
+      "subjectId": "fang_yuan_public_caution_shadow",
+      "memoryAxis": "avoidance",
+      "triggerRefs": [
+        "npc_memory:fang_yuan",
+        "action:qingmao_fang_yuan_public_evidence_inquiry"
+      ],
+      "publicTrigger": "玩家对方源进行公开范围内的打听或旁证询问。",
+      "localSummary": "方源相关反应只能记录公开谨慎和可见失败痕迹，不揭示隐藏因果。",
+      "riskLevel": "high",
+      "recommendedFollowUps": ["followup:public_evidence_only", "followup:avoid_hidden_causality_probe"],
+      "blockedUpgrades": ["hidden_fact_reveal", "npc_fate_result", "tracking_success"]
+    },
+    {
+      "id": "npc_memory_internal_affairs_route_trace",
+      "sourceItemIds": ["qmnpc_1dfef2c6a624"],
+      "sourcePointerIds": ["sp_2ca0469ecf67"],
+      "category": "npcInterestTrigger",
+      "subjectId": "guyue_internal_affairs_hall",
+      "memoryAxis": "suspicion",
+      "triggerRefs": [
+        "knownFact:qingmao_escape_route_preparation_baseline",
+        "pursuit:pursuit_qingmao_internal_affairs_trace"
+      ],
+      "publicTrigger": "路线准备、内务流程、离山申请或任务痕迹进入公开记录。",
+      "localSummary": "内务流程会形成可追溯记录和盘问理由，但不结算抓捕或通缉。",
+      "riskLevel": "high",
+      "recommendedFollowUps": ["followup:prepare_public_reason", "followup:reduce_process_trace"],
+      "blockedUpgrades": ["warrant_active", "capture_result", "location_unlock"]
+    },
+    {
+      "id": "npc_memory_caravan_supply_trace",
+      "sourceItemIds": ["qmnpc_b363ba8be4b4"],
+      "sourcePointerIds": ["sp_f34a72f59673"],
+      "category": "npcInterestTrigger",
+      "subjectId": "qingmao_caravan_supply_observers",
+      "memoryAxis": "interest",
+      "triggerRefs": [
+        "supply:supply_qingmao_caravan_wine_window",
+        "pressure:jiafu_caravan"
+      ],
+      "publicTrigger": "补给、酒食、商队窗口或外部交易痕迹变得可见。",
+      "localSummary": "商队和客栈视线会把补给行为记成机会或风险，不发放物品。",
+      "riskLevel": "medium",
+      "recommendedFollowUps": ["followup:use_caravan_cover", "followup:avoid_supply_pattern"],
+      "blockedUpgrades": ["material_reward", "currency_delta", "formal_trade_result"]
+    },
+    {
+      "id": "npc_memory_task_group_absence_pressure",
+      "sourceItemIds": ["qmnpc_c907ed1f55bf"],
+      "sourcePointerIds": ["sp_bf5633cc8b08"],
+      "category": "npcInterestTrigger",
+      "subjectId": "guyue_task_group_watch",
+      "memoryAxis": "suspicion",
+      "triggerRefs": [
+        "pursuit:pursuit_qingmao_task_absence_north_gate",
+        "knownFact:qingmao_escape_route_preparation_baseline"
+      ],
+      "publicTrigger": "任务集合、缺席、绕开安排或异常闭关形成流程压力。",
+      "localSummary": "任务小组会把异常缺席记成盘问和上报理由，不直接结算追捕。",
+      "riskLevel": "medium",
+      "recommendedFollowUps": ["followup:explain_task_absence", "followup:choose_low_visibility_route"],
+      "blockedUpgrades": ["pursuit_success", "npc_capture_result", "standing_delta"]
+    },
+    {
+      "id": "npc_memory_front_mountain_patrol_trace",
+      "sourceItemIds": ["qmnpc_b25994f53a5d"],
+      "sourcePointerIds": ["sp_929e88080440"],
+      "category": "npcMemoryCandidate",
+      "subjectId": "front_mountain_patrol_watch",
+      "memoryAxis": "attention",
+      "triggerRefs": [
+        "action:qingmao_escape_route_preparation_probe",
+        "action:mountain_patrol"
+      ],
+      "publicTrigger": "前山巡查、路线探查或山道异常行动被巡查视线注意。",
+      "localSummary": "前山巡查视线会记住路线异常和节奏变化，但不直接阻断移动。",
+      "riskLevel": "low",
+      "recommendedFollowUps": ["followup:shift_patrol_timing", "followup:avoid_repeated_route"],
+      "blockedUpgrades": ["location_unlock", "pursuit_success", "npc_fate_result"]
+    }
+  ]
+}

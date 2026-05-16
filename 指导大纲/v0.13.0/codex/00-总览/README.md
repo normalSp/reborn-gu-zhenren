@@ -1,7 +1,7 @@
 # RebornG v0.13.0 Codex 当前入口
 
 日期：2026-05-16
-状态：主线、第一刀、Git 安全收束和前两项 MiroFish 请求已获用户批准
+状态：主线、第一刀、Git 安全收束和三项 MiroFish intake 已通过
 主题：`NPC 与势力反应系统`
 
 ## 定位
@@ -34,6 +34,13 @@
 - `v0.13.0-项目仪表盘.md`
 - `v0.13.0-Git提交与推送计划.md`
 - `v0.13.0-process-0-Git安全收束.md`
+- `v0.13.0-a1-社会记忆协议.md`
+- `v0.13.0-a1-字段表与写入权限.md`
+- `v0.13.0-a1-测试矩阵.md`
+- `v0.13.0-a2-NPC记忆投影引擎第一刀.md`
+- `v0.13.0-b1-势力态度压力投影第一刀.md`
+- `v0.13.0-b2-事件编年史与公开摘要第一刀.md`
+- `v0.13.0-b3-后续行动候选第一刀.md`
 
 ## 建议主线
 
@@ -72,6 +79,14 @@ v0.13 涉及 NPC 动机、势力关系、公开事件编年史，必须在规划
 
 当前 Codex 线程不能直接联系 MiroFish 会话；需要用户转交请求给会话 `019e207b-c55d-7e23-b450-efa7a054a165`。
 
+当前三项 v0.13 MiroFish 包已交付并通过 intake review：
+
+- `qingmao_npc_memory_motive_pack`：可进入 a1/a2 候选池。
+- `qingmao_faction_reputation_pressure_pack`：可进入 a1/b1 候选池。
+- `qingmao_public_event_chronicle_pack`：可进入 a1/b2 候选池。
+
+三包只可进入 `candidate_pool`、`rule_draft`、`test_sample`；不得直接成为 canon、runtime truth、DeepSeek authority 或玩家可见隐藏事实。
+
 ## 下一步
 
 用户已批准：
@@ -83,6 +98,11 @@ v0.13 涉及 NPC 动机、势力关系、公开事件编年史，必须在规划
 
 当前行动：
 
-- 用户负责把前两个 MiroFish 请求转交给会话 `019e207b-c55d-7e23-b450-efa7a054a165`。
 - `v0.13.0-process-0 Git安全收束` 第一刀已建立：本版本 Git 计划、回滚守门职责、提交分组和脏项隔离记录已落文档。
-- process-0 后进入 `v0.13.0-a1` 文档门禁开发；runtime 命名 NPC/势力规则必须等 MiroFish 包交付并通过 intake review。
+- 三项 v0.13 MiroFish 包已通过 intake review，runtime 命名 NPC/势力规则的资料门槛已清除，但仍必须经过 a1 字段/权限/测试门禁。
+- `v0.13.0-a1` 社会记忆协议、字段表与写入权限、测试矩阵已建立。
+- `v0.13.0-a2` NPC 记忆投影引擎第一刀已完成 read-only projection，不写存档、不开放命名 NPC runtime 规则。
+- `v0.13.0-b1` 势力态度 / 压力投影第一刀已完成 read-only projection，不写声望、不开放通缉、招揽、任务或奖励。
+- `v0.13.0-b2` 事件编年史与公开行动摘要第一刀已完成 read-only prompt-safe summary，不写新存档字段、不把 hidden body 交给 DeepSeek。
+- `v0.13.0-b3` 后续行动候选第一刀已完成 candidate-only 输出，不创建正式任务或奖励。
+- 下一步 `v0.13.0-b4` 进入玩家可见 UI，需要用户决策入口和展示方式。
