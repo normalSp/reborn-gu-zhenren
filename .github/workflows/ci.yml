@@ -1,0 +1,83 @@
+name: RebornG CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+      - "codex/**"
+  workflow_dispatch:
+    inputs:
+      run_e2e:
+        description: "Run Playwright smoke checks"
+        required: true
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+concurrency:
+  group: reborng-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-gate:
+    name: deterministic quality gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.11.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npx tsc --noEmit --pretty false
+
+      - name: Unit tests
+        run: npm test -- --reporter=dot
+
+      - name: Build
+        run: npm run build
+
+      - name: Runtime asset scan
+        run: npm run check:runtime-assets
+
+      - name: Qingmao asset scan
+        run: npm run check:qingmao-assets
+
+      - name: Player-visible copy scan
+        run: npm run check:player-visible-copy
+
+  e2e-smoke:
+    name: manual Playwright smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_e2e == 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.11.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Free-goal smoke
+        run: npm run test:e2e -- tests/e2e/v011-free-goal-panel.spec.ts

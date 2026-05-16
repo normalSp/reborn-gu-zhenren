@@ -1,0 +1,43 @@
+name: RebornG bug report
+description: Record a bug with reproduction, root-cause notes, and regression gate.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: What did the player or developer observe?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Exact route, save, browser, command, or screenshot evidence.
+    validations:
+      required: true
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact area
+      options:
+        - UI readability
+        - save/migration
+        - DeepSeek/prompt
+        - canon/hidden fact
+        - living-world/action protocol
+        - combat/resource/reward
+        - build/deploy
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: expected_gate
+    attributes:
+      label: Anti-regression gate
+      description: What test, scan, or manual gate should prevent this from recurring?
+      placeholder: Add or update .learnings/ERRORS.md when this is meaningful.
+    validations:
+      required: true

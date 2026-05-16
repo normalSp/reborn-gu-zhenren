@@ -1,0 +1,63 @@
+name: RebornG phase task
+description: Track an approved version slice or expert-council proposal.
+title: "[phase] "
+labels:
+  - phase
+body:
+  - type: input
+    id: version_phase
+    attributes:
+      label: Version phase
+      description: Example: v0.12.0-process-1, v0.12.0-rc.
+    validations:
+      required: true
+  - type: dropdown
+    id: user_input_type
+    attributes:
+      label: User input type
+      options:
+        - direction
+        - boundary
+        - priority
+        - feel
+        - tradeoff
+        - release
+        - not_needed
+    validations:
+      required: true
+  - type: dropdown
+    id: mirofish_need
+    attributes:
+      label: MiroFish package need
+      options:
+        - not_needed
+        - optional
+        - preferred
+        - blocking
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in and out of this phase?
+      placeholder: |
+        In:
+        Out:
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Gates
+      description: Which gates must pass before implementation or merge?
+      value: |
+        - Save format:
+        - DeepSeek authority:
+        - Canon/IF boundary:
+        - Hidden facts:
+        - NPC/faction/social memory:
+        - Git/rollback:
+        - Tests:
+    validations:
+      required: true
