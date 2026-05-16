@@ -12,6 +12,7 @@ RebornG is an AI-driven browser text RPG set in a Reverend Insanity-inspired Gu 
 - Long E2E: `npm run test:e2e:long`
 - Runtime asset scan: `npm run check:runtime-assets`
 - Qingmao asset scan: `npm run check:qingmao-assets`
+- Player Advocate gate check: `npm run check:player-advocate-gate -- <record.md> <10|50>`
 - Production preview smoke: `npm run check:production-preview`
 
 ## Current State
@@ -31,6 +32,7 @@ RebornG is an AI-driven browser text RPG set in a Reverend Insanity-inspired Gu 
 - `v0.12.0-process-1` GitHub/CI engineering gate is established: `.github/workflows/ci.yml` runs the deterministic quality gate, PR/issue templates require phase scope, user decision, MiroFish need, save-format impact, DeepSeek/hidden-fact boundaries, dashboard/handoff updates, and verification evidence. Playwright smoke is manual via `workflow_dispatch run_e2e=true` unless later promoted by user decision.
 - `v0.12.0-rc` quality closure passed: `npm test -- --reporter=dot`, `npx tsc --noEmit --pretty false`, `npm run build`, runtime/Qingmao/player-visible-copy scans, production-preview smoke, FreeGoalPanel e2e, Qingmao region/battlefield e2e, and long e2e all pass.
 - `v0.13.0` is complete as a local development milestone. Mainline was `NPC 与势力反应系统`: `v0.13.0-a1` social-memory protocol/field table/test matrix, `v0.13.0-a2` read-only NPC memory projection, `v0.13.0-b1` read-only faction stance/pressure projection, `v0.13.0-b2` read-only prompt-safe public event chronicle, `v0.13.0-b3` candidate-only social followups, `v0.13.0-b4` FreeGoalPanel social-impact foldout, `v0.13.0-process-1` remote Actions gate, `v0.13.0-process-2` Git baseline sync, and `v0.13.0-rc` quality closure are complete. GitHub Actions runs `25965710557` and `25965994252` passed after syncing the baseline and moving CI Node to `22.12.0`. Current next step is next-version startup review and user decision for `v0.14.0` direction. Do not upgrade named NPC/faction rules, persistent social ledgers, formal standing/warrant/recruitment/tasks, or DeepSeek authority without user decision.
+- Player Advocate playtest gate is now a project-level process. From `v0.14.0` onward, player-facing/runtime small versions need a 10-round player-view walkthrough, and rc needs a 50-round walkthrough. Records live under the current version docs and must pass `check:player-advocate-gate` before claiming the phase is complete unless the phase is pure docs/CI/internal and the exemption is recorded.
 - MiroFish handoff is now part of the phase gate for canon/IF/NPC/faction/route/hidden-fact work. Current b1 package `qingmao_route_supply_pursuit_pack_export_ready.json`, b2 package `qingmao_faction_pressure_pack_export_ready.json`, and b3 package `fang_yuan_public_evidence_pack_export_ready.json` passed intake review and may feed only candidate/rule drafts; MiroFish output is not canon, not runtime authority, and not DeepSeek authority.
 - v0.13 MiroFish packages `qingmao_npc_memory_motive_pack`, `qingmao_faction_reputation_pressure_pack`, and `qingmao_public_event_chronicle_pack` are delivered under `指导大纲/vMiroFish/intake-reviews/v0.13.0/` and passed intake review. They may feed only candidate/rule drafts and tests; no additional MiroFish package is needed before a1/a2 unless a later subject allowlist, escalation precondition, or narrower public-event subset proves necessary.
 - Before any living-world, free-intent, NPC memory, canon/IF adjudication, or Qingmao living-loop runtime work, read `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-设计门禁输出.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-活世界状态协议字段表.md`, and `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-测试矩阵.md`; World Intent Engine is an entry adjudicator/router, not a replacement for existing action/combat/resource/refine/story/canon/store authority.
@@ -118,6 +120,9 @@ For fuller current facts, read `.codex/skills/reborn-expert-council/references/P
 - Latest handoff notes: newest files in `codex上下文信息/`
 - Design learnings: `.learnings/LEARNINGS.md`
 - Historical bugs: `.learnings/ERRORS.md`
+- Project-level process docs: `指导大纲/流程制度/`
+- Player Advocate playtest gate: `指导大纲/流程制度/Player-Advocate走查制度.md`
+- Player Advocate walkthrough template: `指导大纲/流程制度/Player-Advocate走查记录模板.md`
 - External Claude Code Game Studio analysis: `指导大纲/大方向/` is reference only, not an authority source.
 
 ## Phase Gate
@@ -131,10 +136,11 @@ Before entering a new version phase:
 5. If the change touches living-world state, free intent, NPC memory, canon/IF adjudication, or Qingmao living-loop work, pass the world-intent hard gate before runtime code.
 6. If the change touches canon facts, IF, NPC/faction reaction, route/supply/pursuit, Fang Yuan public evidence, or hidden facts, classify the MiroFish need as `blocking`, `preferred`, `optional`, or `not_needed`; if needed, say so in the user-facing answer and write/read the request and intake review under `指导大纲/vMiroFish/`.
 7. If the change touches free-intent/UI/store/DeepSeek/canon-IF behavior, update or confirm the testing-engineering matrix before implementation.
-8. Produce 3-5 candidate requirements only when scope is not already approved.
-9. Run relevant checks and update docs/context at phase completion.
-10. Update the project dashboard and record commit/push status in the handoff.
-11. For v0.13 and later, check the current version Git plan before committing or pushing; do not push EdgeOne deployment changes automatically.
+8. If the change touches player-facing/runtime experience, apply the Player Advocate gate: small-version completion needs 10 walkthrough rounds, rc needs 50 rounds, and the record must be checked with `npm run check:player-advocate-gate -- <record.md> <10|50>`. Pure docs/CI/internal phases may be exempt only if documented.
+9. Produce 3-5 candidate requirements only when scope is not already approved.
+10. Run relevant checks and update docs/context at phase completion.
+11. Update the project dashboard and record commit/push status in the handoff.
+12. For v0.13 and later, check the current version Git plan before committing or pushing; do not push EdgeOne deployment changes automatically.
 
 Lightweight expert roles:
 
@@ -142,7 +148,7 @@ Lightweight expert roles:
 - Lore & World Designer: world rules, canon/IF, Gu terminology, original-boundary stability.
 - Systems Architect: economy, combat, save format, rewards, exploit risk.
 - AI Pipeline Architect: prompt budget, DeepSeek cache/JSON/retry telemetry, validation gates.
-- Player Advocate: onboarding, readable choices, pacing, meaningful consequences.
+- Player Advocate: onboarding, readable choices, pacing, meaningful consequences, and 10/50-round player-view walkthrough gates.
 - Frontend & Motion Lead: UI readability, motion, asset manifest, mobile/reduced-motion.
 - QA/Test Engineering Guardian: tests, sample matrices, quantitative gates, build, save compatibility, release notes.
 - Git/rollback Steward: commit boundary, push cadence, branch suitability, explicit stage scope, dirty-worktree isolation, and recovery points.

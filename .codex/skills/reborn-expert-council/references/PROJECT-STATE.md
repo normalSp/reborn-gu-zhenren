@@ -1,6 +1,6 @@
 # RebornG Project State
 
-Last updated: 2026-05-16
+Last updated: 2026-05-17
 
 ## Version
 
@@ -44,6 +44,7 @@ Last updated: 2026-05-16
 - Previous completed phase: `v0.10.0` locked as a local development milestone.
 - Save format: `SAVE_FORMAT_VERSION = 22`.
 - Runtime DeepSeek model: `deepseek-v4-flash`.
+- Player Advocate gate: project-level process established on 2026-05-17. From `v0.14.0` onward, player-facing/runtime small versions need 10 player-view walkthrough rounds, rc needs 50 rounds, and records must pass `npm run check:player-advocate-gate -- <record.md> <10|50>` unless the phase is pure docs/CI/internal and the exemption is recorded.
 
 ## Current Phase Facts
 
@@ -113,14 +114,15 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 ## Source Priority
 
 1. Runtime canon and engine source.
-2. `指导大纲/v0.12.0/codex/00-总览/` when discussing next scope.
-3. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
-4. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
-5. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
-6. This `PROJECT-STATE.md`.
-7. Latest `codex上下文信息/`.
-8. `指导大纲/大方向/` as external reference only.
-9. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
+2. `指导大纲/流程制度/` for cross-version process gates such as Player Advocate walkthroughs.
+3. `指导大纲/v0.12.0/codex/00-总览/` when discussing next scope.
+4. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
+5. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
+6. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
+7. This `PROJECT-STATE.md`.
+8. Latest `codex上下文信息/`.
+9. `指导大纲/大方向/` as external reference only.
+10. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
 
 ## Triggered Expert Roles
 
@@ -128,7 +130,7 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 - Gu world, canon/IF, recipes, paths, rewards: Lore & World Designer.
 - Economy, combat, save, exploit risk: Systems Architect.
 - Prompt/context/DeepSeek telemetry: AI Pipeline Architect.
-- UI/player comprehension/first rounds: Player Advocate plus Frontend & Motion Lead.
+- UI/player comprehension/10-round and 50-round walkthrough gates: Player Advocate plus Frontend & Motion Lead.
 - Release/build/save compatibility: QA & Release Guardian.
 - Codex stability/context/plugin/cache concerns: Dev Environment Steward.
 - Git recovery and publish cadence: Git / rollback steward, jointly owned by QA & Release Guardian and Dev Environment Steward.
