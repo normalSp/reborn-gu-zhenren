@@ -11,6 +11,7 @@
 
 - `Player-Advocate走查制度.md`：玩家视角走查门禁。小版本 10 轮，rc 前 50 轮。
 - `Player-Advocate走查记录模板.md`：每次走查记录模板。
+- `测试矩阵演进规则.md`：新极端玩家意图、bug、走查、MiroFish、DeepSeek eval 样本必须三分流为当前矩阵、后续样本池或明确丢弃。
 
 ## 使用规则
 
