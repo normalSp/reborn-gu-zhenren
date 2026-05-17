@@ -144,6 +144,128 @@ function socialRiskClass(value: string): string {
   return 'border-emerald-300/20 text-emerald-100/70';
 }
 
+type FreeGoalSocialImpactBundle = {
+  npcMemory: QingmaoNpcMemoryProjectionResult;
+  factionStance: QingmaoFactionStanceProjectionResult;
+  publicChronicle: QingmaoPublicEventChronicleResult;
+  socialFollowups: QingmaoSocialFollowupResult;
+};
+
+function pickPriorityRoute(preview: QingmaoRouteContinuationPreviewResult): QingmaoRouteConditionPreview | null {
+  return preview.previews.find(route => route.eligibility !== 'blocked') || preview.previews[0] || null;
+}
+
+function topSocialHint(socialImpact: FreeGoalSocialImpactBundle): string {
+  const followUp = socialImpact.socialFollowups.candidates[0];
+  if (followUp) {
+    return `${SOCIAL_FOLLOW_UP_KIND_LABELS[followUp.kind] || followUp.kind} · ${followUp.title}`;
+  }
+  const faction = socialImpact.factionStance.projections[0];
+  if (faction) {
+    return `${faction.factionLabel} · ${FACTION_STANCE_AXIS_LABELS[faction.stanceAxis] || faction.stanceAxis}`;
+  }
+  const npc = socialImpact.npcMemory.projections[0];
+  if (npc) {
+    return `${npc.subjectLabel} · ${NPC_MEMORY_AXIS_LABELS[npc.memoryAxis] || npc.memoryAxis}`;
+  }
+  const event = socialImpact.publicChronicle.events[0];
+  if (event) {
+    return PUBLIC_EVENT_SCOPE_LABELS[event.eventScope] || event.eventScope;
+  }
+  return '暂无公开信号';
+}
+
+function FreeGoalNextStepSummary({
+  goals,
+  routeContinuation,
+  factionGoalPrerequisites,
+  socialImpact,
+  hasIntentContext,
+}: {
+  goals: LivingPlayerGoalEntry[];
+  routeContinuation: QingmaoRouteContinuationPreviewResult;
+  factionGoalPrerequisites: QingmaoFactionGoalPrerequisiteResult;
+  socialImpact: FreeGoalSocialImpactBundle;
+  hasIntentContext: boolean;
+}) {
+  const topGoal = goals[0] || null;
+  const priorityRoute = pickPriorityRoute(routeContinuation);
+  const factionCard = factionGoalPrerequisites.cards[0] || null;
+  const socialSignalCount = socialImpact.npcMemory.projections.length
+    + socialImpact.factionStance.projections.length
+    + socialImpact.publicChronicle.events.length
+    + socialImpact.socialFollowups.candidates.length;
+  const routeLine = hasIntentContext && priorityRoute
+    ? `${priorityRoute.displayName} · ${ROUTE_ELIGIBILITY_LABELS[priorityRoute.eligibility] || priorityRoute.eligibility}`
+    : '输入目标后评估路线';
+  const routeReason = hasIntentContext && priorityRoute
+    ? priorityRoute.reason
+    : '先让本地裁决判断目标类型，再看路线、前置和风险。';
+  const factionLine = factionCard
+    ? `${factionCard.title} · ${FACTION_GOAL_DISPOSITION_LABELS[factionCard.disposition] || factionCard.disposition}`
+    : '无阵营前置命中';
+  const socialLine = socialSignalCount > 0
+    ? `${socialSignalCount} 条公开信号 · ${topSocialHint(socialImpact)}`
+    : '暂无公开信号';
+
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/25 bg-rg-ink-900/48 p-3"
+      data-testid="free-goal-next-step-summary"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-gold">优先摘要</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/50">
+            先看下一步，再展开完整路线、阵营和社会影响。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-gold/25 px-2 py-1 text-[10px] text-rg-gold/80">
+          只读
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-2" data-testid="free-goal-summary-goal">
+          <p className="text-[10px] text-rg-paper-200/35">当前目标</p>
+          <p className="mt-1 text-xs font-semibold text-rg-paper-100">
+            {topGoal ? `${topGoal.targetRef} · ${STATUS_LABELS[topGoal.status]}` : '尚未记录目标'}
+          </p>
+          <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {topGoal?.rationale || '可先输入自由目标，本地裁决后再决定是否写入目标账本。'}
+          </p>
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-2" data-testid="free-goal-summary-route">
+          <p className="text-[10px] text-rg-paper-200/35">路线</p>
+          <p className="mt-1 text-xs font-semibold text-rg-paper-100">{routeLine}</p>
+          <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/50">{routeReason}</p>
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-2" data-testid="free-goal-summary-faction">
+          <p className="text-[10px] text-rg-paper-200/35">阵营 / 身份</p>
+          <p className="mt-1 text-xs font-semibold text-rg-paper-100">{factionLine}</p>
+          <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {factionCard?.publicSummary || '只在命中投靠、商队、商家城或散修目标时展示前置。'}
+          </p>
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-2" data-testid="free-goal-summary-social">
+          <p className="text-[10px] text-rg-paper-200/35">社会影响</p>
+          <p className="mt-1 text-xs font-semibold text-rg-paper-100">{socialLine}</p>
+          <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {socialSignalCount > 0 ? '先处理高风险公开后续，再考虑路线承接。' : '公开行动痕迹不足时，不推演声望、通缉或招揽。'}
+          </p>
+        </div>
+      </div>
+
+      <p className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-950/35 px-2 py-1.5 text-[10px] leading-relaxed text-rg-paper-200/42">
+        摘要只排序信息，不写状态、不转阵营、不发奖励、不进地点。
+      </p>
+    </section>
+  );
+}
+
 function FollowUpCard({
   followUp,
   onExecuteBaiContact,
@@ -893,6 +1015,14 @@ export function FreeGoalPanel() {
       </section>
 
       {preview && <RulingCard adjudication={preview} />}
+
+      <FreeGoalNextStepSummary
+        goals={sortedGoals}
+        routeContinuation={routeContinuation}
+        factionGoalPrerequisites={factionGoalPrerequisites}
+        socialImpact={socialImpact}
+        hasIntentContext={Boolean(rawText.trim() || preview || sortedGoals.length > 0)}
+      />
 
       {followUps.length > 0 && (
         <section className="space-y-2" data-testid="free-goal-followups">
