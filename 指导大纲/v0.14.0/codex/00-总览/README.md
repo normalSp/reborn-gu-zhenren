@@ -1,7 +1,7 @@
 # RebornG v0.14.0 Codex 当前入口
 
 日期：2026-05-17
-状态：b3 阵营目标前置条件展示本地质量门已通过，待提交、推送与远端 CI
+状态：b3 阵营目标前置条件展示已完成，下一步进入 b4 UI 摘要优先级
 主题：`青茅后续路线承接`
 
 ## 定位
@@ -95,8 +95,8 @@ v0.14 需要先准备三类资料，但不等于一开始全部 blocking：
 - `v0.14.0-a2` 路线条件读取第一刀完成：新增 RebornG-owned route-continuation rules、只读 route condition preview engine、focused unit tests，并通过 20 轮 Player Advocate gate。
 - `v0.14.0-b1` 候选后续到正式前置行动桥已完成：`遮掩逃离痕迹` 从社会后续候选升级为正式前置行动样板，只写现有 v22 活世界字段，不开放地点、阵营、奖励、NPC 生死或 DeepSeek 新权限；本地验证和 GitHub Actions run `25987158730` 均通过。
 - `v0.14.0-b2` 青茅离开路线第一刀已完成：`山路逃离路线` 已从目标、路线准备、遮掩痕迹和路线条件 preview 串成路线承接候选；仍不写 `route_entered`、不改变地点/阵营、不发奖励、不判定逃离成功、不新增存档字段；本地质量门和 GitHub Actions run `25988584563` 均通过。
-- `v0.14.0-b3` 阵营目标前置条件展示本地质量门已通过：自由目标面板新增 `阵营/身份目标前置`，可解释投靠白家、加入商队、商家城公开入口和散修过渡的前置、风险与禁止升级；仍不写 store、不转阵营、不创建正式任务、不发奖励、不开放城市或地点、不扩张 DeepSeek 权限。focused unit、tsc、b3 e2e、20 轮 Player Advocate、full unit、build、scans、production-preview smoke 均通过，待提交、推送和远端 CI。
+- `v0.14.0-b3` 阵营目标前置条件展示已完成：自由目标面板新增 `阵营/身份目标前置`，可解释投靠白家、加入商队、商家城公开入口和散修过渡的前置、风险与禁止升级；仍不写 store、不转阵营、不创建正式任务、不发奖励、不开放城市或地点、不扩张 DeepSeek 权限。focused unit、tsc、b3 e2e、20 轮 Player Advocate、full unit、build、scans、production-preview smoke 和 GitHub Actions run `25992213170` 均通过。
 
 下一步建议：
 
-- 收束 `v0.14.0-b3` 全量质量门与远端 CI；之后进入 `v0.14.0-b4 路线承接 UI 与摘要优先级`。若后续触及正式 route state、地点变化、阵营转移、任务奖励或新增持久字段，必须停下来让用户决策。
+- 进入 `v0.14.0-b4 路线承接 UI 与摘要优先级`。若后续触及正式 route state、地点变化、阵营转移、任务奖励或新增持久字段，必须停下来让用户决策。

@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v0.14.0-b3 阵营目标前置条件展示`
-- 状态：本地质量门已通过，待提交、推送和远端 CI
+- 状态：已完成；实现提交已推送，远端 CI 已通过
 - MiroFish：`not_needed`
 - SAVE_FORMAT_VERSION：`22`，本阶段未新增持久字段
 - DeepSeek：`deepseek-v4-flash`，本阶段未改 prompt/schema/model/context-builder
@@ -82,21 +82,16 @@ npm run check:production-preview
 - Qingmao assets：10 entries，active=4。
 - production-preview smoke：通过。
 
-## 待收束
+## Git 与远端证据
 
-明确 stage 范围，提交：
+已提交并推送：
 
-```text
-feat: 展示v0.14阵营目标前置条件
-```
+- `540e196 feat: 展示v0.14阵营目标前置条件`
+- GitHub Actions run `25992213170` deterministic quality gate 通过
 
-推送后等待 GitHub Actions 通过，并将 run id 回填到：
+待做窄范围证据提交：
 
-- `v0.14.0-Git提交与推送计划.md`
-- `v0.11.0-项目仪表盘.md`
-- `PROJECT-STATE.md`
-- `AGENTS.md`
-- 本上下文文件或新增远端验证上下文
+- 回填 Git 计划、仪表盘、PROJECT-STATE、AGENTS、当前上下文文件中的远端证据。
 
 ## 已知历史脏项
 
@@ -114,7 +109,7 @@ feat: 展示v0.14阵营目标前置条件
 
 ## 下一步
 
-若 b3 全量质量门和远端 CI 通过，进入：
+若证据提交的远端 CI 也通过，进入：
 
 `v0.14.0-b4 路线承接 UI 与摘要优先级`
 
