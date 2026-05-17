@@ -503,12 +503,87 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       rejected: [],
     }));
     expect(harness.get().materialBag).toBe(beforeMaterialBag);
-    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('route_entered');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('route_entered_granted');
     expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('投靠成功');
     expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('春秋蝉');
     expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
       rewardPolicy: 'none',
       forbiddenUpgrades: expect.arrayContaining(['location_unlock', 'faction_transfer', 'reward']),
+    }));
+  });
+
+  it('commits Qingmao mountain-pass route continuation as candidate-only state', () => {
+    const harness = createHarness({ turn: 64 });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const beforeFaction = harness.get().currentFaction;
+    const result = harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(result.applied).toEqual(expect.arrayContaining([
+      'knownFact:qingmao_mountain_pass_route_continuation_candidate',
+      'factionPressure:faction_pressure_qingmao_mountain_pass_route_window',
+      'factionPressure:faction_pressure_qingmao_mountain_pass_guyue_shanzhai_pursuit_attention',
+      'npcMemory:npc_memory_qingmao_mountain_pass_outer_watch',
+      expect.stringMatching(/^playerGoal:/),
+      'actionConsequence:consequence_qingmao_mountain_pass_route_continuation_probe',
+      'worldClock',
+    ]));
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_mountain_pass_route_continuation_candidate: expect.objectContaining({
+        summary: expect.stringContaining('仍未离开青茅山'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.factionPressure.map((entry: any) => entry.id)).toEqual(expect.arrayContaining([
+      'faction_pressure_qingmao_mountain_pass_route_window',
+      'faction_pressure_qingmao_mountain_pass_guyue_shanzhai_pursuit_attention',
+    ]));
+    expect(harness.get().livingWorldState.npcMemories.map((entry: any) => entry.id)).toContain(
+      'npc_memory_qingmao_mountain_pass_outer_watch',
+    );
+    expect(harness.get().livingWorldState.actionConsequences.map((entry: any) => entry.id)).toContain(
+      'consequence_qingmao_mountain_pass_route_continuation_probe',
+    );
+    expect(harness.get().livingWorldState.playerGoals[0].blockedByRefIds).toEqual(expect.arrayContaining([
+      'gate:no_route_entered',
+      'gate:no_location_unlock',
+      'gap:travel_supply_gap',
+      'risk:pursuit_attention',
+    ]));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain(
+      'qingmao_mountain_pass_route_continuation_probe',
+    );
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_mountain_pass_route_continuation',
+      actionId: 'qingmao_mountain_pass_route_continuation_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect(harness.get().currentFaction).toBe(beforeFaction);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('route_entered_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('location_unlock_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('投靠成功');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('春秋蝉');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      routeKey: 'mountain_pass_escape',
+      routeEligibility: 'candidate',
+      rewardPolicy: 'none',
+      forbiddenUpgrades: expect.arrayContaining(['route_entered', 'location_unlock', 'faction_transfer', 'reward']),
     }));
   });
 });

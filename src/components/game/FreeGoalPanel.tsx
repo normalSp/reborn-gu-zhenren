@@ -23,6 +23,11 @@ import {
   buildQingmaoSocialFollowups,
   type QingmaoSocialFollowupResult,
 } from '../../engine/v013-qingmao-social-followups';
+import {
+  buildQingmaoRouteContinuationPreview,
+  type QingmaoRouteConditionPreview,
+  type QingmaoRouteContinuationPreviewResult,
+} from '../../engine/v014-qingmao-route-continuation';
 
 const EMPTY_LOCAL_ACTION_LEDGER: LocalActionLedgerEntry[] = [];
 
@@ -103,6 +108,13 @@ const SOCIAL_FOLLOW_UP_KIND_LABELS: Record<string, string> = {
   cover: '遮掩',
   avoid: '避险',
   investigate: '旁证',
+};
+
+const ROUTE_ELIGIBILITY_LABELS: Record<string, string> = {
+  blocked: '阻断',
+  needs_preparation: '需前置',
+  candidate: '候选',
+  ready: '预览满足',
 };
 
 function socialRiskLabel(value: string): string {
@@ -348,6 +360,105 @@ function SocialImpactPanel({
   );
 }
 
+function RouteContinuationCard({
+  route,
+  onExecuteMountainPass,
+}: {
+  route: QingmaoRouteConditionPreview;
+  onExecuteMountainPass?: () => void;
+}) {
+  const missingIds = route.missingConditions.map(condition => condition.id);
+  const isMountainPass = route.routeKey === 'mountain_pass_escape';
+  const canExecute = isMountainPass
+    && (route.eligibility === 'candidate' || route.eligibility === 'ready')
+    && !missingIds.includes('social_cover_story');
+  return (
+    <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/35 p-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-rg-paper-100">{route.displayName}</p>
+          <p className="mt-1 text-[11px] text-rg-paper-200/45">
+            {route.routeKey} · 候选，不是地点进入
+          </p>
+        </div>
+        <span className={`shrink-0 rounded-sm border px-2 py-1 text-[10px] ${
+          route.eligibility === 'candidate' || route.eligibility === 'ready'
+            ? 'border-rg-gold/25 text-rg-gold'
+            : 'border-rg-ink-300/20 text-rg-paper-200/50'
+        }`}
+        >
+          {ROUTE_ELIGIBILITY_LABELS[route.eligibility] || route.eligibility}
+        </span>
+      </div>
+      <p className="mt-2 text-xs leading-relaxed text-rg-paper-200/65">{route.reason}</p>
+      {route.missingConditions.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {route.missingConditions.slice(0, 4).map(condition => (
+            <span key={condition.id} className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-[10px] text-rg-paper-200/45">
+              缺 {condition.label}
+            </span>
+          ))}
+        </div>
+      )}
+      <p className="mt-2 text-[10px] text-rg-paper-200/38">
+        不改变阵营 · 不发奖励 · 不写 route_entered
+      </p>
+      {isMountainPass && onExecuteMountainPass && (
+        <button
+          type="button"
+          onClick={onExecuteMountainPass}
+          disabled={!canExecute}
+          className="mt-3 rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+          data-testid="free-goal-mountain-pass-route-run"
+        >
+          承接山路
+        </button>
+      )}
+    </article>
+  );
+}
+
+function RouteContinuationPanel({
+  preview,
+  onExecuteMountainPass,
+}: {
+  preview: QingmaoRouteContinuationPreviewResult;
+  onExecuteMountainPass?: () => void;
+}) {
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/18 bg-rg-ink-900/38 p-3"
+      data-testid="free-goal-route-continuation"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">路线承接</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            只读路线条件和前置缺口，正式离开青茅山仍需后续阶段。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/20 px-2 py-1 text-[10px] text-rg-paper-200/55">
+          {preview.previews.length}
+        </span>
+      </div>
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+        {preview.previews.slice(0, 4).map(route => (
+          <RouteContinuationCard
+            key={route.routeKey}
+            route={route}
+            onExecuteMountainPass={onExecuteMountainPass}
+          />
+        ))}
+      </div>
+      {preview.intentRulingHints.length > 0 && (
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/28 p-3 text-xs leading-relaxed text-rg-paper-200/62">
+          {preview.intentRulingHints[0].visibleSummary}
+        </div>
+      )}
+    </section>
+  );
+}
+
 function RulingCard({ adjudication }: { adjudication: WorldIntentAdjudication }) {
   const ruling = adjudication.ruling;
   const goal = adjudication.suggestedPlayerGoal;
@@ -484,6 +595,7 @@ export function FreeGoalPanel() {
     resolveBaiContactWindowAction,
     resolveQingmaoEscapeRoutePreparationAction,
     resolveQingmaoCoverEscapeTracksAction,
+    resolveQingmaoMountainPassRouteContinuationAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -496,6 +608,7 @@ export function FreeGoalPanel() {
     resolveBaiContactWindowAction: state.resolveBaiContactWindowAction,
     resolveQingmaoEscapeRoutePreparationAction: state.resolveQingmaoEscapeRoutePreparationAction,
     resolveQingmaoCoverEscapeTracksAction: state.resolveQingmaoCoverEscapeTracksAction,
+    resolveQingmaoMountainPassRouteContinuationAction: state.resolveQingmaoMountainPassRouteContinuationAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -539,6 +652,11 @@ export function FreeGoalPanel() {
       socialFollowups,
     };
   }, [livingWorldState, localActionLedger]);
+  const routeContinuation = useMemo(() => buildQingmaoRouteContinuationPreview({
+    livingWorldState,
+    intentText: rawText.trim() || sortedGoals[0]?.rationale || '我想离开青茅山',
+    maxRoutes: 4,
+  }), [livingWorldState, rawText, sortedGoals]);
 
   const handlePreview = () => {
     const result = previewWorldIntentAction(rawText);
@@ -580,6 +698,11 @@ export function FreeGoalPanel() {
 
   const handleCoverEscapeTracks = () => {
     const result = resolveQingmaoCoverEscapeTracksAction();
+    setMessage(result.message);
+  };
+
+  const handleMountainPassRouteContinuation = () => {
+    const result = resolveQingmaoMountainPassRouteContinuationAction();
     setMessage(result.message);
   };
 
@@ -705,6 +828,11 @@ export function FreeGoalPanel() {
         expanded={socialImpactExpanded}
         onToggle={() => setSocialImpactExpanded(value => !value)}
         onExecuteCoverTracks={handleCoverEscapeTracks}
+      />
+
+      <RouteContinuationPanel
+        preview={routeContinuation}
+        onExecuteMountainPass={handleMountainPassRouteContinuation}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">
