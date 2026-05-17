@@ -6,6 +6,7 @@
 执行者：Player Advocate
 MiroFish：not_needed / optional / preferred / blocking
 DeepSeek 运行模型：`deepseek-v4-flash`
+走查层级：deterministic_walkthrough / live_narrative_probe / mixed
 
 ## 范围
 
@@ -15,6 +16,9 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 - 起始存档 / 路径：
 - 本阶段新增或重点验证内容：
 - 本次不验证：
+- 是否调用 live DeepSeek：
+- 存档价值：none / debug_only / regression_candidate / golden_playthrough_candidate
+- transcript / 存档落点：
 
 ## 验收指标
 
@@ -27,6 +31,8 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 | 隐藏事实泄露 | 0 | TBD |
 | UI 私算奖励/地点/阵营/NPC 生死 | 0 | TBD |
 | 关键 UI 遮挡/不可读 | 0 | TBD |
+| live DeepSeek 越权 | 0 / 不适用 | TBD |
+| 值得保留的回归存档 | 按需 | TBD |
 
 ## 覆盖分布
 
@@ -73,6 +79,8 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 - 需要写入 `.learnings/ERRORS.md`：
 - 需要用户决策：
 - 进入需求池：
+- 本次存档是否保留：
+- 是否需要追加 live narrative probe：
 
 ## 后续
 

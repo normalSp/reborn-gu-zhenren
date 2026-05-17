@@ -131,6 +131,30 @@ Player Advocate 走查不替代：
 
 它补的是自动测试难以判断的玩家口感、自由感、理解度和继续游玩欲望。
 
+## 确定性走查与 live DeepSeek
+
+Player Advocate 走查分两层：
+
+1. `deterministic_walkthrough`：默认层。使用本地引擎、测试存档、Playwright 或手工可复现步骤走查，验证目标、选择、反馈、边界、UI 和存档是否可理解。小版本和 rc 的轮次默认按这一层计数。
+2. `live_narrative_probe`：叙事探针层。仅当本阶段修改 DeepSeek prompt/schema/model、正式叙事回流、公开候选体验，或用户明确要求“像真实游玩一样调用模型”时启用。它必须记录模型名、轮次、token/缓存命中、失败原因、是否保存 transcript、是否进入 eval 样本。
+
+live DeepSeek 不替代确定性走查。原因是 live 输出有随机性，适合验证叙事口感、越权和成本，不适合单独证明本地引擎门禁稳定。
+
+rc 或公开候选前建议追加：
+
+- 5-10 轮 live narrative probe，用于检查叙事口感、越权、隐藏事实和 token/缓存表现。
+- 若用户要求完整 live 长测，可升级为 50/60 轮 live 走查，但必须单独记录成本与可复现性风险。
+
+## 存档价值评估
+
+每份走查记录都必须写明：
+
+- 本次走查是否产生值得保留的测试存档。
+- 存档价值是 `none`、`debug_only`、`regression_candidate` 还是 `golden_playthrough_candidate`。
+- 若是候选存档，后续是否要落到 `public/test-saves`、e2e fixture 或长期回放样本。
+
+不能把一次主观体验走查直接当成 golden playthrough；必须先通过自动测试、隐藏事实扫描和旧档兼容检查。
+
 走查发现的可回归问题，应补到：
 
 - `tests/e2e/`

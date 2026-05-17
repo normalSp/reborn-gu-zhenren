@@ -1,0 +1,376 @@
+{
+  "version": "v0.14.0-a2",
+  "status": "route_condition_preview_rule_draft_first_cut",
+  "sourceReview": {
+    "absorptionPolicy": "rewritten_reborng_local_rule_draft",
+    "runtimeAuthority": "local_canon_and_engine_only",
+    "deepSeekAuthority": "narrative_candidates_clues_rumors_pressure_only",
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-17-qingmao-exit-route-aftermath-pack-intake-review.md",
+      "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-17-southern-border-low-rank-route-pack-intake-review.md",
+      "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-17-shang-clan-city-public-entry-pack-intake-review.md",
+      "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-17-v014-three-pack-intake-review-summary.md"
+    ],
+    "sourcePackages": [
+      "qingmao_exit_route_aftermath_pack_export_ready.json",
+      "southern_border_low_rank_route_pack_export_ready.json",
+      "shang_clan_city_public_entry_pack_export_ready.json"
+    ]
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "route_entered",
+      "escape_success",
+      "location_unlock",
+      "region_unlock",
+      "teleport",
+      "reward",
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "recipe_unlock",
+      "faction_identity_change",
+      "standing_delta",
+      "warrant",
+      "formal_recruitment",
+      "formal_task",
+      "npc_death",
+      "npc_capture",
+      "canon_anchor_change",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion"
+    ],
+    "deferredItemIds": [
+      "v014exit_30146f740a69"
+    ],
+    "visibleBoundaries": [
+      {
+        "id": "boundary_no_location_unlock",
+        "type": "no_location_unlock",
+        "visibleText": "当前只是路线承接预览，不判定已经离开青茅山。"
+      },
+      {
+        "id": "boundary_no_faction_transfer",
+        "type": "no_faction_transfer",
+        "visibleText": "阵营目标只能显示前置条件和风险，不直接改变身份。"
+      },
+      {
+        "id": "boundary_no_reward",
+        "type": "no_reward",
+        "visibleText": "路线预览不发放元石、材料、蛊虫、蛊方或任务奖励。"
+      },
+      {
+        "id": "boundary_hidden_ref_only",
+        "type": "hidden_ref_only",
+        "visibleText": "隐藏事实只保留系统索引，不向玩家或 DeepSeek 展示正文。"
+      },
+      {
+        "id": "boundary_deepseek_no_authority",
+        "type": "deepseek_no_authority",
+        "visibleText": "DeepSeek 可以润色叙事，但不能决定路线、地点、阵营、奖励或结局。"
+      }
+    ]
+  },
+  "routeArchetypes": [
+    {
+      "routeKey": "mountain_pass_escape",
+      "displayName": "山路逃离路线",
+      "summary": "以山路、竹林、后山、河滩等低阶移动线作为逃离青茅山的第一层路线候选。",
+      "intentTags": ["escape_qingmao", "leave_guyue", "outside_qingmao"],
+      "requiredConditionIds": ["goal_escape_qingmao", "route_prep_baseline"],
+      "softConditionIds": ["travel_supply_gap", "pursuit_risk_ack"],
+      "riskRuleIds": ["risk_pursuit_attention", "risk_low_rank_wilderness"],
+      "preparationActionIds": ["cover_escape_tracks", "gather_travel_supply"],
+      "sourceRefs": [
+        "mirofish-pack:qingmao_exit_route_aftermath_pack",
+        "mirofish-pack:southern_border_low_rank_route_pack",
+        "v012:qingmao-route-supply-pursuit-pack"
+      ]
+    },
+    {
+      "routeKey": "merchant_caravan_contact",
+      "displayName": "商队接触路线",
+      "summary": "先建立公开理由、递话窗口和补给/元石准备，不直接加入商队或到达商家城。",
+      "intentTags": ["join_caravan", "merchant_caravan", "shang_public_entry"],
+      "requiredConditionIds": ["public_reason_caravan", "social_cover_story"],
+      "softConditionIds": ["travel_supply_gap", "caravan_timing_window"],
+      "riskRuleIds": ["risk_caravan_scrutiny", "risk_trade_window_competition"],
+      "preparationActionIds": ["send_caravan_message", "gather_travel_supply"],
+      "sourceRefs": [
+        "mirofish-pack:southern_border_low_rank_route_pack",
+        "mirofish-pack:shang_clan_city_public_entry_pack",
+        "v013:qingmao-social-followups"
+      ]
+    },
+    {
+      "routeKey": "baijia_contact_window",
+      "displayName": "白家接触窗口",
+      "summary": "只处理接触、递话、试探和风险说明，不开放投靠成功或阵营转换。",
+      "intentTags": ["join_baijia", "baijia_contact", "faction_goal"],
+      "requiredConditionIds": ["baijia_contact_evidence", "social_cover_story"],
+      "softConditionIds": ["pursuit_risk_ack"],
+      "riskRuleIds": ["risk_guyue_suspicion", "risk_baijia_trust_gap"],
+      "preparationActionIds": ["send_baijia_message", "avoid_guyue_attention"],
+      "sourceRefs": [
+        "v011:qingmao-bai-contact-window",
+        "v013:qingmao-faction-stance",
+        "mirofish-pack:qingmao_exit_route_aftermath_pack"
+      ]
+    },
+    {
+      "routeKey": "rogue_cultivator_path",
+      "displayName": "散修过渡路线",
+      "summary": "只显示低阶生存、补给、身份遮掩和落脚点缺口，不开放完整散修系统。",
+      "intentTags": ["rogue_cultivator", "survival_route", "outside_qingmao"],
+      "requiredConditionIds": ["goal_escape_qingmao", "route_prep_baseline"],
+      "softConditionIds": ["travel_supply_gap", "social_cover_story", "low_rank_identity_gap"],
+      "riskRuleIds": ["risk_low_rank_wilderness", "risk_identity_exposure"],
+      "preparationActionIds": ["cover_escape_tracks", "avoid_guyue_attention"],
+      "sourceRefs": [
+        "mirofish-pack:southern_border_low_rank_route_pack",
+        "v012:qingmao-route-supply-pursuit-pack"
+      ]
+    },
+    {
+      "routeKey": "shang_public_entry_deferred",
+      "displayName": "商家城公开入口候选",
+      "summary": "只评估远期公开入口条件，不开放完整商家城、任务、奖励或城市系统。",
+      "intentTags": ["shang_city", "shang_public_entry"],
+      "requiredConditionIds": ["public_reason_caravan", "social_cover_story", "route_prep_baseline"],
+      "softConditionIds": ["travel_supply_gap", "caravan_timing_window"],
+      "riskRuleIds": ["risk_caravan_scrutiny", "risk_deferred_city_system"],
+      "preparationActionIds": ["send_caravan_message"],
+      "sourceRefs": [
+        "mirofish-pack:shang_clan_city_public_entry_pack",
+        "v014:deferred_city_system_note"
+      ],
+      "deferred": true
+    }
+  ],
+  "conditions": [
+    {
+      "id": "goal_escape_qingmao",
+      "type": "route_knowledge",
+      "label": "已确认离开青茅山或逃离青茅山的长期目标",
+      "severity": "hard",
+      "canPrepareNow": true,
+      "preparationActionId": "confirm_escape_goal"
+    },
+    {
+      "id": "route_prep_baseline",
+      "type": "route_knowledge",
+      "label": "已完成第一轮路线、补给、遮掩和追击风险准备",
+      "severity": "hard",
+      "canPrepareNow": true,
+      "preparationActionId": "qingmao_escape_route_preparation_probe"
+    },
+    {
+      "id": "travel_supply_gap",
+      "type": "supply",
+      "label": "短途补给、酒类、元石和行动消耗仍需准备",
+      "severity": "soft",
+      "canPrepareNow": true,
+      "preparationActionId": "gather_travel_supply"
+    },
+    {
+      "id": "social_cover_story",
+      "type": "social_cover",
+      "label": "缺少公开说法、担保或身份遮掩",
+      "severity": "soft",
+      "canPrepareNow": true,
+      "preparationActionId": "cover_escape_tracks"
+    },
+    {
+      "id": "public_reason_caravan",
+      "type": "public_reason",
+      "label": "缺少接触商队或递话的公开理由",
+      "severity": "hard",
+      "canPrepareNow": true,
+      "preparationActionId": "send_caravan_message"
+    },
+    {
+      "id": "caravan_timing_window",
+      "type": "public_reason",
+      "label": "商队窗口、时机和交易压力尚未确认",
+      "severity": "soft",
+      "canPrepareNow": true,
+      "preparationActionId": "send_caravan_message"
+    },
+    {
+      "id": "baijia_contact_evidence",
+      "type": "social_cover",
+      "label": "白家接触窗口只有机会与风险，没有正式投靠条件",
+      "severity": "hard",
+      "canPrepareNow": true,
+      "preparationActionId": "send_baijia_message"
+    },
+    {
+      "id": "pursuit_risk_ack",
+      "type": "risk_acceptance",
+      "label": "古月山寨和三寨残余压力仍会形成追踪、盘问或阻拦",
+      "severity": "soft",
+      "canPrepareNow": false
+    },
+    {
+      "id": "low_rank_identity_gap",
+      "type": "social_cover",
+      "label": "低阶蛊师离山后的身份、担保和落脚点仍不足",
+      "severity": "soft",
+      "canPrepareNow": true,
+      "preparationActionId": "cover_escape_tracks"
+    }
+  ],
+  "riskRules": [
+    {
+      "id": "risk_pursuit_attention",
+      "axis": "pursuit",
+      "label": "公开节奏异常会引起追踪或盘问",
+      "level": "medium",
+      "visibleSummary": "缺席、闭关、动用内务流程或路线准备都可能留下痕迹。"
+    },
+    {
+      "id": "risk_low_rank_wilderness",
+      "axis": "local_survival",
+      "label": "低阶蛊师野外生存风险",
+      "level": "medium",
+      "visibleSummary": "一转/二转阶段缺少补给、侦查和遮掩时，不应把离山写成轻松成功。"
+    },
+    {
+      "id": "risk_guyue_suspicion",
+      "axis": "faction_pressure",
+      "label": "古月山寨疑心",
+      "level": "high",
+      "visibleSummary": "接触外部势力会提高被本地势力注意的概率。"
+    },
+    {
+      "id": "risk_baijia_trust_gap",
+      "axis": "faction_pressure",
+      "label": "白家信任缺口",
+      "level": "high",
+      "visibleSummary": "白家接触窗口只代表试探机会，双方都需要公开理由、担保和代价。"
+    },
+    {
+      "id": "risk_caravan_scrutiny",
+      "axis": "faction_pressure",
+      "label": "商队审视与盘问",
+      "level": "medium",
+      "visibleSummary": "商队机会伴随身份、元石、货物、纠纷和安全审查。"
+    },
+    {
+      "id": "risk_trade_window_competition",
+      "axis": "resource",
+      "label": "交易窗口竞争",
+      "level": "medium",
+      "visibleSummary": "商队窗口可能带来补给机会，也可能推高酒类和资源压力。"
+    },
+    {
+      "id": "risk_identity_exposure",
+      "axis": "hidden_fact_probe",
+      "label": "身份暴露风险",
+      "level": "medium",
+      "visibleSummary": "遮掩失败会留下公开后果，但不能据此泄露隐藏事实正文。"
+    },
+    {
+      "id": "risk_deferred_city_system",
+      "axis": "canon_anchor_pressure",
+      "label": "完整城市系统延期",
+      "level": "blocked",
+      "visibleSummary": "商家城在 v0.14 只作为远期公开入口候选，不开放完整城市、任务或奖励。"
+    }
+  ],
+  "preparationActions": [
+    {
+      "id": "confirm_escape_goal",
+      "label": "先把离开青茅山写成长期目标",
+      "actionType": "avoid_attention",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "qingmao_escape_route_preparation_probe",
+      "label": "准备逃离青茅山路线",
+      "actionType": "avoid_attention",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "cover_escape_tracks",
+      "label": "遮掩逃离痕迹",
+      "actionType": "cover_tracks",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "send_caravan_message",
+      "label": "递话商队",
+      "actionType": "send_message",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "send_baijia_message",
+      "label": "递话白家接触窗口",
+      "actionType": "send_message",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "avoid_guyue_attention",
+      "label": "避开古月视线",
+      "actionType": "avoid_attention",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    },
+    {
+      "id": "gather_travel_supply",
+      "label": "整理短途补给",
+      "actionType": "gather_supply",
+      "rewardPolicy": "none",
+      "canChangeLocation": false,
+      "canChangeFaction": false
+    }
+  ],
+  "intentSampleBuckets": [
+    {
+      "id": "R14-INTENT-NORMAL-001",
+      "bucket": "normal",
+      "sample": "我想先看看离开青茅山有哪些路线",
+      "expectedDisposition": "route_preview",
+      "matrixTriage": "current_matrix"
+    },
+    {
+      "id": "R14-INTENT-SHORT-001",
+      "bucket": "short_term",
+      "sample": "我先遮掩一下行踪，别让古月山寨发现",
+      "expectedDisposition": "preparation_only",
+      "matrixTriage": "current_matrix"
+    },
+    {
+      "id": "R14-INTENT-LONG-001",
+      "bucket": "long_term",
+      "sample": "我想离开古月，找机会进入商队去南疆闯荡",
+      "expectedDisposition": "route_preview_with_prerequisites",
+      "matrixTriage": "current_matrix"
+    },
+    {
+      "id": "R14-INTENT-FACTION-001",
+      "bucket": "long_term",
+      "sample": "我想投靠白家",
+      "expectedDisposition": "faction_goal_prerequisites_only",
+      "matrixTriage": "current_matrix"
+    },
+    {
+      "id": "R14-INTENT-EXTREME-001",
+      "bucket": "extreme",
+      "sample": "一转刚开窍、非天外之魔，想立刻拿到盗天魔尊传承",
+      "expectedDisposition": "future_sample_pool",
+      "matrixTriage": "future_sample_pool"
+    }
+  ]
+}
