@@ -28,6 +28,11 @@ import {
   type QingmaoRouteConditionPreview,
   type QingmaoRouteContinuationPreviewResult,
 } from '../../engine/v014-qingmao-route-continuation';
+import {
+  buildQingmaoFactionGoalPrerequisites,
+  type QingmaoFactionGoalPrerequisiteCard,
+  type QingmaoFactionGoalPrerequisiteResult,
+} from '../../engine/v014-qingmao-faction-goal-prerequisites';
 
 const EMPTY_LOCAL_ACTION_LEDGER: LocalActionLedgerEntry[] = [];
 
@@ -115,6 +120,15 @@ const ROUTE_ELIGIBILITY_LABELS: Record<string, string> = {
   needs_preparation: '需前置',
   candidate: '候选',
   ready: '预览满足',
+};
+
+const FACTION_GOAL_DISPOSITION_LABELS: Record<string, string> = {
+  already_in_faction: '本阵营前置',
+  cross_faction_prerequisites: '跨阵营前置',
+  outer_contact_prerequisites: '外来接触前置',
+  merchant_contact_prerequisites: '商队前置',
+  city_entry_deferred: '城市入口延期',
+  identity_gap_prerequisites: '身份缺口',
 };
 
 function socialRiskLabel(value: string): string {
@@ -459,6 +473,92 @@ function RouteContinuationPanel({
   );
 }
 
+function FactionGoalPrerequisiteCard({ card }: { card: QingmaoFactionGoalPrerequisiteCard }) {
+  return (
+    <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/35 p-3">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-rg-paper-100">{card.title}</p>
+          <p className="mt-1 text-[11px] text-rg-paper-200/45">
+            {card.currentIdentitySummary} · 只显示前置，不转阵营
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-gold/25 px-2 py-1 text-[10px] text-rg-gold">
+          {FACTION_GOAL_DISPOSITION_LABELS[card.disposition] || card.disposition}
+        </span>
+      </div>
+      <p className="mt-2 text-xs leading-relaxed text-rg-paper-200/65">{card.publicSummary}</p>
+      <div className="mt-3 grid grid-cols-1 gap-2 lg:grid-cols-3">
+        <div className="rounded-sm border border-rg-ink-300/12 bg-rg-ink-700/30 p-2">
+          <p className="text-[10px] font-semibold text-rg-paper-100">前置条件</p>
+          <ul className="mt-1 space-y-1 text-[11px] leading-relaxed text-rg-paper-200/55">
+            {card.prerequisiteLines.slice(0, 3).map(line => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-sm border border-red-300/10 bg-red-400/5 p-2">
+          <p className="text-[10px] font-semibold text-red-100/75">风险</p>
+          <ul className="mt-1 space-y-1 text-[11px] leading-relaxed text-rg-paper-200/55">
+            {card.riskLines.slice(0, 3).map(line => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-sm border border-rg-gold/14 bg-rg-gold/5 p-2">
+          <p className="text-[10px] font-semibold text-rg-gold/85">可做小步</p>
+          <ul className="mt-1 space-y-1 text-[11px] leading-relaxed text-rg-paper-200/55">
+            {card.allowedNextSteps.slice(0, 3).map(line => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="mt-2 flex flex-wrap gap-1.5">
+        {card.blockedUpgrades.slice(0, 6).map(item => (
+          <span key={item} className="rounded-sm border border-red-300/15 bg-red-400/5 px-2 py-1 text-[10px] text-red-100/55">
+            禁止 {item}
+          </span>
+        ))}
+      </div>
+      <p className="mt-2 text-[10px] text-rg-paper-200/38">
+        只读 · 不改变阵营 · 不创建正式任务 · 不发奖励
+      </p>
+    </article>
+  );
+}
+
+function FactionGoalPrerequisitePanel({
+  preview,
+}: {
+  preview: QingmaoFactionGoalPrerequisiteResult;
+}) {
+  if (preview.cards.length === 0) return null;
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/18 bg-rg-ink-900/38 p-3"
+      data-testid="free-goal-faction-prerequisites"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">阵营/身份目标前置</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            把长期阵营、商队或城市入口目标拆成可见前置。这里只读，不转阵营。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/20 px-2 py-1 text-[10px] text-rg-paper-200/55">
+          {preview.cards.length}
+        </span>
+      </div>
+      <div className="space-y-2">
+        {preview.cards.map(card => (
+          <FactionGoalPrerequisiteCard key={card.id} card={card} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function RulingCard({ adjudication }: { adjudication: WorldIntentAdjudication }) {
   const ruling = adjudication.ruling;
   const goal = adjudication.suggestedPlayerGoal;
@@ -600,6 +700,8 @@ export function FreeGoalPanel() {
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
     localActionLedger,
+    selectedStartProfileId,
+    currentFactionId,
   } = useStore(useShallow((state: any) => ({
     goals: state.livingWorldState?.playerGoals || [],
     previewWorldIntentAction: state.previewWorldIntentAction,
@@ -613,6 +715,8 @@ export function FreeGoalPanel() {
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
     localActionLedger: state.sceneSessionState?.localActionLedger || EMPTY_LOCAL_ACTION_LEDGER,
+    selectedStartProfileId: state.selectedStartProfileId || state.timelineState?.startProfileId || state.flags?._start_profile || null,
+    currentFactionId: state.timelineState?.factionId || state.currentFaction || state.flags?._faction || null,
   })));
 
   const sortedGoals = useMemo(
@@ -657,6 +761,13 @@ export function FreeGoalPanel() {
     intentText: rawText.trim() || sortedGoals[0]?.rationale || '我想离开青茅山',
     maxRoutes: 4,
   }), [livingWorldState, rawText, sortedGoals]);
+  const factionGoalPrerequisites = useMemo(() => buildQingmaoFactionGoalPrerequisites({
+    livingWorldState,
+    intentText: rawText.trim() || preview?.candidate.rawText || sortedGoals[0]?.rationale || '',
+    selectedStartProfileId,
+    playerFactionId: currentFactionId,
+    maxCards: 4,
+  }), [livingWorldState, rawText, preview, sortedGoals, selectedStartProfileId, currentFactionId]);
 
   const handlePreview = () => {
     const result = previewWorldIntentAction(rawText);
@@ -829,6 +940,8 @@ export function FreeGoalPanel() {
         onToggle={() => setSocialImpactExpanded(value => !value)}
         onExecuteCoverTracks={handleCoverEscapeTracks}
       />
+
+      <FactionGoalPrerequisitePanel preview={factionGoalPrerequisites} />
 
       <RouteContinuationPanel
         preview={routeContinuation}
