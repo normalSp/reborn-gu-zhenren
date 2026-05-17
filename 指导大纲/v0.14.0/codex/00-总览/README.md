@@ -98,7 +98,7 @@ v0.14 需要先准备三类资料，但不等于一开始全部 blocking：
 - `v0.14.0-b1` 候选后续到正式前置行动桥已完成：`遮掩逃离痕迹` 从社会后续候选升级为正式前置行动样板，只写现有 v22 活世界字段，不开放地点、阵营、奖励、NPC 生死或 DeepSeek 新权限；本地验证和 GitHub Actions run `25987158730` 均通过。
 - `v0.14.0-b2` 青茅离开路线第一刀已完成：`山路逃离路线` 已从目标、路线准备、遮掩痕迹和路线条件 preview 串成路线承接候选；仍不写 `route_entered`、不改变地点/阵营、不发奖励、不判定逃离成功、不新增存档字段；本地质量门和 GitHub Actions run `25988584563` 均通过。
 - `v0.14.0-b3` 阵营目标前置条件展示已完成：自由目标面板新增 `阵营/身份目标前置`，可解释投靠白家、加入商队、商家城公开入口和散修过渡的前置、风险与禁止升级；仍不写 store、不转阵营、不创建正式任务、不发奖励、不开放城市或地点、不扩张 DeepSeek 权限。focused unit、tsc、b3 e2e、20 轮 Player Advocate、full unit、build、scans、production-preview smoke 和 GitHub Actions run `25992213170` 均通过。
-- `v0.14.0-b4` 路线承接 UI 摘要优先级已完成：自由目标面板新增 `优先摘要`，将当前目标、路线、阵营/身份前置、社会影响压成第一眼可读的只读摘要；不写状态、不转阵营、不发奖励、不进地点、不扩张 DeepSeek 权限。`tsc`、b4 移动端 e2e、20 轮 Player Advocate、full unit、build、player-visible-copy、runtime/Qingmao asset scans 和 production-preview smoke 均通过。
+- `v0.14.0-b4` 路线承接 UI 摘要优先级已完成：自由目标面板新增 `优先摘要`，将当前目标、路线、阵营/身份前置、社会影响压成第一眼可读的只读摘要；不写状态、不转阵营、不发奖励、不进地点、不扩张 DeepSeek 权限。`tsc`、b4 移动端 e2e、20 轮 Player Advocate、full unit、build、player-visible-copy、runtime/Qingmao asset scans、production-preview smoke 和 GitHub Actions run `25992906897` 均通过。
 
 下一步建议：
 

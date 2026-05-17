@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v0.14.0-b4 路线承接 UI 与摘要优先级`
-- 状态：本地实现与质量门已完成，待提交、推送和远端 CI。
+- 状态：实现、验证、提交、推送和远端 CI 已完成。
 - MiroFish：`not_needed`，本阶段只做现有 RebornG UI 摘要排序。
 - 存档：未新增字段，`SAVE_FORMAT_VERSION` 保持 `22`。
 - DeepSeek：未改 prompt、schema、model、context-builder 或权限，运行模型仍为 `deepseek-v4-flash`。
@@ -86,7 +86,9 @@ npm run check:production-preview
 
 ## Git / 脏工作树
 
-只允许 stage b4 相关文件。
+- 实现提交：`d5ee422 feat: 优化v0.14路线承接摘要`。
+- 推送：已推送到 `origin/codex/v013-npc-faction-reaction`。
+- 远端 CI：GitHub Actions run `25992906897` deterministic quality gate 通过。
 
 仍存在历史或外部未跟踪项，本阶段不要纳入：
 
@@ -105,10 +107,8 @@ npm run check:production-preview
 
 ## 下一步
 
-1. 提交 b4：建议 `feat: 优化v0.14路线承接摘要`。
-2. 推送到 `origin/codex/v013-npc-faction-reaction`。
-3. 等 GitHub Actions deterministic quality gate 通过后，补 Git plan、仪表盘和证据文档记录。
-4. 进入 `v0.14.0-rc` 质量收束。
+1. 补一条证据文档提交，记录 b4 commit、push、CI。
+2. 进入 `v0.14.0-rc` 质量收束。
 
 停止门：
 
