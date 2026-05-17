@@ -5,7 +5,7 @@
 - Branch: `codex/v013-npc-faction-reaction`
 - Version line: `v0.14.0 青茅后续路线承接`
 - Phase: `v0.14.0-rc`
-- Local status: rc quality gate passed; commit/push/remote CI evidence pending at the time this handoff was first written.
+- Local/remote status: rc quality gate passed, commit `6370115` pushed, GitHub Actions run `25993465843` passed.
 - MiroFish: `not_needed` for rc; no new canon/IF/route/NPC/faction/hidden-fact content was added.
 - DeepSeek: no live narrative probe in rc; no prompt, schema, model, context-builder, story-backflow, or DeepSeek authority change.
 - Save format: unchanged, `SAVE_FORMAT_VERSION = 22`.
@@ -62,4 +62,3 @@ Suggested v0.15 decision candidates:
 3. 路线候选是否升级为正式进入前最后门禁。
 4. live narrative probe 是否作为 v0.15 process 小刀。
 5. 移动端推荐下一步按钮排序。
-

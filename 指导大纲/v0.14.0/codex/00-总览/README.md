@@ -1,7 +1,7 @@
 # RebornG v0.14.0 Codex 当前入口
 
 日期：2026-05-17
-状态：rc 质量收束本地通过，等待提交与远端验证证据回填
+状态：v0.14.0 已完成为本地开发里程碑，远端 CI 通过
 主题：`青茅后续路线承接`
 
 ## 定位
@@ -101,9 +101,8 @@ v0.14 需要先准备三类资料，但不等于一开始全部 blocking：
 - `v0.14.0-b2` 青茅离开路线第一刀已完成：`山路逃离路线` 已从目标、路线准备、遮掩痕迹和路线条件 preview 串成路线承接候选；仍不写 `route_entered`、不改变地点/阵营、不发奖励、不判定逃离成功、不新增存档字段；本地质量门和 GitHub Actions run `25988584563` 均通过。
 - `v0.14.0-b3` 阵营目标前置条件展示已完成：自由目标面板新增 `阵营/身份目标前置`，可解释投靠白家、加入商队、商家城公开入口和散修过渡的前置、风险与禁止升级；仍不写 store、不转阵营、不创建正式任务、不发奖励、不开放城市或地点、不扩张 DeepSeek 权限。focused unit、tsc、b3 e2e、20 轮 Player Advocate、full unit、build、scans、production-preview smoke 和 GitHub Actions run `25992213170` 均通过。
 - `v0.14.0-b4` 路线承接 UI 摘要优先级已完成：自由目标面板新增 `优先摘要`，将当前目标、路线、阵营/身份前置、社会影响压成第一眼可读的只读摘要；不写状态、不转阵营、不发奖励、不进地点、不扩张 DeepSeek 权限。`tsc`、b4 移动端 e2e、20 轮 Player Advocate、full unit、build、player-visible-copy、runtime/Qingmao asset scans、production-preview smoke 和 GitHub Actions run `25992906897` 均通过。
-- `v0.14.0-rc` 质量收束本地通过：完整质量门、路线相关 e2e、long e2e 和 60 轮 Player Advocate 均通过。rc 不新增 canon/IF/route/NPC/faction/hidden-fact 内容，不调用 live DeepSeek，不扩张 DeepSeek 权限。
+- `v0.14.0-rc` 质量收束已完成：完整质量门、路线相关 e2e、long e2e、60 轮 Player Advocate 和 GitHub Actions run `25993465843` 均通过。rc 不新增 canon/IF/route/NPC/faction/hidden-fact 内容，不调用 live DeepSeek，不扩张 DeepSeek 权限。
 
 下一步建议：
 
-- 提交并推送 `v0.14.0-rc` 收束记录，等待 GitHub Actions 远端验证。
-- 远端验证通过后，停止在 `v0.15.0` 启动审查前让用户决策下一阶段方向；若后续触及正式 route state、地点变化、阵营转移、任务奖励或新增持久字段，必须停下来让用户决策。
+- 停止在 `v0.15.0` 启动审查前让用户决策下一阶段方向；若后续触及正式 route state、地点变化、阵营转移、任务奖励或新增持久字段，必须停下来让用户决策。
