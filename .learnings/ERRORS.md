@@ -22,6 +22,11 @@
 - **根因**：store 启动期模块顶层同步调用 engine 默认状态函数，在生产拆包循环依赖下可能早于 JSON/rules 初始化。
 - **防范**：默认 engine state 走 store 侧稳定默认值，不在 store 模块顶层调用复杂 engine 默认函数；发布前跑 `npm run check:production-preview`。
 
+### Playwright 长测不要和其他 dev-server 套件并行
+- **症状**：`npm run test:e2e:long` 前几条通过后，后续出现 `ERR_CONNECTION_REFUSED` 或 `page.waitForFunction` 等待 `__REBORN_E2E__` 超时。
+- **根因**：长测和其他 Playwright e2e 套件并行运行时会争用同一个本地 dev server/端口，某个套件结束后可能关闭服务，导致另一套件误报连接失败。
+- **防范**：rc 收束时长测必须单独运行；不要把 `npm run test:e2e:long` 放进 `multi_tool_use.parallel` 与其他 `npm run test:e2e` 同时执行。若出现此类失败，先单独重跑长测确认，再判断是否为真实回归。
+
 ### 青茅资源小循环不能变掉落池
 - **症状风险**：资源入口、战斗候选、喂养、残方 UI 互相绕过边界，导致稳定刷材料/蛊方/蛊虫。
 - **防范**：资源奖励单次 1-2 份低阶注册材料；白玉蛊缺口不产出；战斗候选不激活 `beastLoot` 或材料掉落；DeepSeek 回流无奖励追加权。
