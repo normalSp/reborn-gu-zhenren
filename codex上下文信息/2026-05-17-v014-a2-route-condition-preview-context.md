@@ -4,7 +4,7 @@
 
 - 当前分支：`codex/v013-npc-faction-reaction`
 - 当前阶段：`v0.14.0-a2 路线条件表与账本读取`
-- 状态：已完成本地实现与验证，准备提交/推送
+- 状态：已完成本地实现、验证、提交、推送和远端 CI
 - 存档版本：仍为 `SAVE_FORMAT_VERSION = 22`
 - DeepSeek 模型：仍为 `deepseek-v4-flash`
 
@@ -94,7 +94,13 @@ npm run check:qingmao-assets
 
 ## Git
 
-本阶段提交时只 stage v0.14-a1/a2 相关文件，不使用 `git add -A`。
+本阶段已提交并推送：
+
+- commit：`b2b2540 feat: 建立v0.14路线条件读取`
+- remote：`origin/codex/v013-npc-faction-reaction`
+- GitHub Actions：`25986181322`，RebornG CI deterministic quality gate 通过。
+
+本阶段只 stage v0.14-a1/a2 相关文件，未使用 `git add -A`。
 
 仍不要 stage：
 
