@@ -170,6 +170,7 @@ function SocialImpactPanel({
   socialFollowups,
   expanded,
   onToggle,
+  onExecuteCoverTracks,
 }: {
   npcMemory: QingmaoNpcMemoryProjectionResult;
   factionStance: QingmaoFactionStanceProjectionResult;
@@ -177,6 +178,7 @@ function SocialImpactPanel({
   socialFollowups: QingmaoSocialFollowupResult;
   expanded: boolean;
   onToggle: () => void;
+  onExecuteCoverTracks?: () => void;
 }) {
   const totalSignals = npcMemory.projections.length
     + factionStance.projections.length
@@ -309,7 +311,7 @@ function SocialImpactPanel({
                         <div className="min-w-0">
                           <p className="truncate text-xs font-semibold text-rg-gold">{candidate.title}</p>
                           <p className="mt-1 text-[10px] text-rg-paper-200/45">
-                            {SOCIAL_FOLLOW_UP_KIND_LABELS[candidate.kind] || candidate.kind} · 候选，不是任务
+                            {SOCIAL_FOLLOW_UP_KIND_LABELS[candidate.kind] || candidate.kind} · {candidate.id === 'followup_prepare_public_reason' ? '可执行前置行动，不是任务' : '候选，不是任务'}
                           </p>
                         </div>
                         <span className={`shrink-0 rounded-sm border px-2 py-1 text-[10px] ${socialRiskClass(candidate.riskLevel)}`}>
@@ -320,6 +322,16 @@ function SocialImpactPanel({
                       <p className="mt-2 text-[10px] text-rg-paper-200/38">
                         不创建正式任务 · 不发奖励 · 不改变阵营
                       </p>
+                      {candidate.id === 'followup_prepare_public_reason' && onExecuteCoverTracks && (
+                        <button
+                          type="button"
+                          onClick={onExecuteCoverTracks}
+                          className="mt-3 rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15"
+                          data-testid="free-goal-cover-tracks-run"
+                        >
+                          遮掩痕迹
+                        </button>
+                      )}
                     </article>
                   ))}
                 </div>
@@ -471,6 +483,7 @@ export function FreeGoalPanel() {
     resolveVisibleInvestigationAction,
     resolveBaiContactWindowAction,
     resolveQingmaoEscapeRoutePreparationAction,
+    resolveQingmaoCoverEscapeTracksAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -482,6 +495,7 @@ export function FreeGoalPanel() {
     resolveVisibleInvestigationAction: state.resolveVisibleInvestigationAction,
     resolveBaiContactWindowAction: state.resolveBaiContactWindowAction,
     resolveQingmaoEscapeRoutePreparationAction: state.resolveQingmaoEscapeRoutePreparationAction,
+    resolveQingmaoCoverEscapeTracksAction: state.resolveQingmaoCoverEscapeTracksAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -561,6 +575,11 @@ export function FreeGoalPanel() {
 
   const handleEscapeRoutePreparation = (goalId: string) => {
     const result = resolveQingmaoEscapeRoutePreparationAction(goalId);
+    setMessage(result.message);
+  };
+
+  const handleCoverEscapeTracks = () => {
+    const result = resolveQingmaoCoverEscapeTracksAction();
     setMessage(result.message);
   };
 
@@ -685,6 +704,7 @@ export function FreeGoalPanel() {
         socialFollowups={socialImpact.socialFollowups}
         expanded={socialImpactExpanded}
         onToggle={() => setSocialImpactExpanded(value => !value)}
+        onExecuteCoverTracks={handleCoverEscapeTracks}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

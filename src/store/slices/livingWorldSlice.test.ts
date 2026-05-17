@@ -455,4 +455,60 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
     expect(uiResult.state.playerGoals).toHaveLength(0);
     expect(deepSeekResult.state.playerGoals).toHaveLength(0);
   });
+
+  it('commits Qingmao cover-tracks as a formal preparation action without route entry', () => {
+    const harness = createHarness({ turn: 53 });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+
+    const beforeMaterialBag = harness.get().materialBag;
+    const result = harness.get().resolveQingmaoCoverEscapeTracksAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_escape_tracks_cover_baseline: expect.objectContaining({
+        summary: expect.stringContaining('仍未离开青茅山'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.factionPressure.map((entry: any) => entry.id)).toEqual(expect.arrayContaining([
+      'faction_pressure_qingmao_cover_tracks_low_visibility_window',
+      'faction_pressure_qingmao_cover_tracks_guyue_shanzhai_residual_trace',
+    ]));
+    expect(harness.get().livingWorldState.npcMemories.map((entry: any) => entry.id)).toEqual(expect.arrayContaining([
+      'npc_memory_qingmao_cover_tracks_public_routine',
+    ]));
+    expect(harness.get().livingWorldState.actionConsequences.map((entry: any) => entry.id)).toEqual(expect.arrayContaining([
+      'consequence_qingmao_cover_escape_tracks_probe',
+    ]));
+    expect(harness.get().livingWorldState.playerGoals[0]).toEqual(expect.objectContaining({
+      status: 'deferred',
+      blockedByRefIds: expect.arrayContaining([
+        'gate:no_location_unlock',
+        'gate:no_faction_transfer',
+        'risk:pursuit_residual_trace',
+      ]),
+    }));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain(
+      'qingmao_cover_escape_tracks_probe',
+    );
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_cover_escape_tracks',
+      actionId: 'qingmao_cover_escape_tracks_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('route_entered');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('投靠成功');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('春秋蝉');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      rewardPolicy: 'none',
+      forbiddenUpgrades: expect.arrayContaining(['location_unlock', 'faction_transfer', 'reward']),
+    }));
+  });
 });
