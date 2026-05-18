@@ -71,3 +71,9 @@ npm run build
 - 不使用 `git add -A`。
 - 只 stage v0.15-a 与美术盘点相关文件。
 - 不纳入历史未跟踪资源：`.cursor/`、`RebornG_codebuddy.zip`、`artifacts/`、`bgm/`、`doc/art/candidates/`、`doc/art/style-lock/`、`public/rebrng/...` 资产文件等，除非用户后续明确要求。
+
+提交与远端验证：
+
+- commit：`69e78bb feat: 建立v0.15低阶经济规则池`
+- push：已推送到 `origin/codex/v013-npc-faction-reaction`
+- GitHub Actions：run `26015132014` deterministic quality gate 通过
