@@ -586,4 +586,81 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       forbiddenUpgrades: expect.arrayContaining(['route_entered', 'location_unlock', 'faction_transfer', 'reward']),
     }));
   });
+
+  it('commits Qingmao supply and feeding preparation without resources, market, or save fields', () => {
+    const harness = createHarness({ turn: 72 });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+    harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const beforeFaction = harness.get().currentFaction;
+    const result = harness.get().resolveQingmaoSupplyFeedingPreparationAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(result.applied).toEqual(expect.arrayContaining([
+      'knownFact:qingmao_supply_feeding_preparation_baseline',
+      'factionPressure:faction_pressure_qingmao_supply_preparation_guyue_shanzhai_watch',
+      'npcMemory:npc_memory_qingmao_supply_feeding_local_watch',
+      expect.stringMatching(/^playerGoal:/),
+      'actionConsequence:consequence_qingmao_supply_feeding_preparation_probe',
+      'worldClock',
+    ]));
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_supply_feeding_preparation_baseline: expect.objectContaining({
+        summary: expect.stringContaining('没有补给入库'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.playerGoals[0].nextStepHints).toEqual(expect.arrayContaining([
+      'supply:supply_qingmao_route_food_water_pack',
+      'supply:supply_qingmao_route_shelter_and_trade_cover',
+      'feeding:feeding_liquor_worm_wine_stock_pressure',
+      'market:market_supply_preparation_before_trade',
+    ]));
+    expect(harness.get().livingWorldState.playerGoals[0].blockedByRefIds).toEqual(expect.arrayContaining([
+      'gate:no_material_reward',
+      'gate:no_currency_delta',
+      'gate:no_formal_market_trade',
+      'gap:liquor_worm_wine_stock',
+      'gap:route_food_water_pack',
+    ]));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain('qingmao_supply_feeding_preparation_probe');
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_supply_feeding_preparation',
+      actionId: 'qingmao_supply_feeding_preparation_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect(harness.get().currentFaction).toBe(beforeFaction);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('material_reward_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('currency_delta_applied');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('formal_market_trade_opened');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('route_entered_granted');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      rewardPolicy: 'none',
+      supplyRequirementIds: expect.arrayContaining(['supply_qingmao_route_food_water_pack']),
+      feedingRequirementIds: ['feeding_liquor_worm_wine_stock_pressure'],
+      marketPreparationRuleId: 'market_supply_preparation_before_trade',
+      forbiddenUpgrades: expect.arrayContaining([
+        'material_reward',
+        'currency_delta',
+        'formal_market_trade',
+        'deepseek_authority_expansion',
+        'save_format_bump',
+      ]),
+    }));
+  });
 });

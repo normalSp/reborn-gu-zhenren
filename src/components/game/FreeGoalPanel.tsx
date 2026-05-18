@@ -595,6 +595,45 @@ function RouteContinuationPanel({
   );
 }
 
+function SupplyFeedingPreparationPanel({
+  canExecute,
+  onExecute,
+}: {
+  canExecute: boolean;
+  onExecute: () => void;
+}) {
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/18 bg-rg-ink-900/38 p-3"
+      data-testid="free-goal-supply-feeding-prep-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">补给/喂养缺口</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            把离山补给、落脚遮掩和酒虫食料压力写入前置账本。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/20 px-2 py-1 text-[10px] text-rg-paper-200/55">
+          v0.15-b1
+        </span>
+      </div>
+      <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/28 p-3 text-xs leading-relaxed text-rg-paper-200/62">
+        不发材料 · 不扣元石 · 不开放市场 · 不判定离山成功
+      </div>
+      <button
+        type="button"
+        onClick={onExecute}
+        disabled={!canExecute}
+        className="rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+        data-testid="free-goal-supply-feeding-prep"
+      >
+        整理缺口
+      </button>
+    </section>
+  );
+}
+
 function FactionGoalPrerequisiteCard({ card }: { card: QingmaoFactionGoalPrerequisiteCard }) {
   return (
     <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/35 p-3">
@@ -818,6 +857,7 @@ export function FreeGoalPanel() {
     resolveQingmaoEscapeRoutePreparationAction,
     resolveQingmaoCoverEscapeTracksAction,
     resolveQingmaoMountainPassRouteContinuationAction,
+    resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -833,6 +873,7 @@ export function FreeGoalPanel() {
     resolveQingmaoEscapeRoutePreparationAction: state.resolveQingmaoEscapeRoutePreparationAction,
     resolveQingmaoCoverEscapeTracksAction: state.resolveQingmaoCoverEscapeTracksAction,
     resolveQingmaoMountainPassRouteContinuationAction: state.resolveQingmaoMountainPassRouteContinuationAction,
+    resolveQingmaoSupplyFeedingPreparationAction: state.resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -890,6 +931,21 @@ export function FreeGoalPanel() {
     playerFactionId: currentFactionId,
     maxCards: 4,
   }), [livingWorldState, rawText, preview, sortedGoals, selectedStartProfileId, currentFactionId]);
+  const canPrepareSupplyFeeding = useMemo(() => {
+    const facts = livingWorldState?.knownFacts || {};
+    const hasEscapeGoal = sortedGoals.some(goal => (
+      goal.status !== 'failed'
+      && (goal.targetRef === 'region:outside_qingmao' || goal.rationale.includes('逃离青茅山'))
+    ));
+    return Boolean(
+      hasEscapeGoal
+      && (
+        facts.qingmao_escape_route_preparation_baseline
+        || facts.qingmao_escape_tracks_cover_baseline
+        || facts.qingmao_mountain_pass_route_continuation_candidate
+      )
+    );
+  }, [livingWorldState, sortedGoals]);
 
   const handlePreview = () => {
     const result = previewWorldIntentAction(rawText);
@@ -936,6 +992,11 @@ export function FreeGoalPanel() {
 
   const handleMountainPassRouteContinuation = () => {
     const result = resolveQingmaoMountainPassRouteContinuationAction();
+    setMessage(result.message);
+  };
+
+  const handleSupplyFeedingPreparation = () => {
+    const result = resolveQingmaoSupplyFeedingPreparationAction();
     setMessage(result.message);
   };
 
@@ -1076,6 +1137,11 @@ export function FreeGoalPanel() {
       <RouteContinuationPanel
         preview={routeContinuation}
         onExecuteMountainPass={handleMountainPassRouteContinuation}
+      />
+
+      <SupplyFeedingPreparationPanel
+        canExecute={canPrepareSupplyFeeding}
+        onExecute={handleSupplyFeedingPreparation}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

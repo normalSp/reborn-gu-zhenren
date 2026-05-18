@@ -33,6 +33,10 @@ import {
   resolveQingmaoMountainPassRouteContinuationAction,
   type QingmaoMountainPassRouteContinuationResolution,
 } from '../../engine/v014-qingmao-mountain-pass-route-continuation';
+import {
+  resolveQingmaoSupplyFeedingPreparationAction,
+  type QingmaoSupplyFeedingPreparationResolution,
+} from '../../engine/v015-qingmao-supply-feeding-preparation';
 import type { LivingPlayerGoalEntry, LivingWorldState } from '../../types';
 
 export interface WorldIntentPreviewResult {
@@ -108,6 +112,14 @@ export interface QingmaoMountainPassRouteContinuationCommitResult {
   rejected: string[];
 }
 
+export interface QingmaoSupplyFeedingPreparationCommitResult {
+  success: boolean;
+  message: string;
+  resolution: QingmaoSupplyFeedingPreparationResolution;
+  applied: string[];
+  rejected: string[];
+}
+
 export interface LivingWorldSlice {
   livingWorldState: LivingWorldState;
   previewWorldIntentAction: (rawText: string) => WorldIntentPreviewResult;
@@ -119,6 +131,7 @@ export interface LivingWorldSlice {
   resolveFangYuanPublicEvidenceAction: (adjudication: WorldIntentAdjudication) => QingmaoFangYuanPublicEvidenceCommitResult;
   resolveQingmaoCoverEscapeTracksAction: () => QingmaoCoverEscapeTracksCommitResult;
   resolveQingmaoMountainPassRouteContinuationAction: () => QingmaoMountainPassRouteContinuationCommitResult;
+  resolveQingmaoSupplyFeedingPreparationAction: () => QingmaoSupplyFeedingPreparationCommitResult;
 }
 
 type SliceSet = (...args: any[]) => void;
@@ -880,6 +893,105 @@ export const createLivingWorldSlice = (
       npcMemoryIds: resolution.npcMemories.map(entry => entry.id),
       playerGoalIds: resolution.playerGoals.map(goal => goal.id),
       actionConsequenceIds: resolution.actionConsequences.map(entry => entry.id),
+      rewardPolicy: resolution.worldActionResolution.rewardPolicy,
+      forbiddenUpgrades: resolution.forbiddenUpgrades,
+      applied: patch.applied,
+      rejected: [...resolution.rejectedReasons, ...patch.rejected],
+    });
+
+    return {
+      success: resolution.success && patch.rejected.length === 0,
+      message: patch.rejected.length === 0
+        ? resolution.message
+        : `${resolution.message}；部分写入被拒绝：${patch.rejected.join('、')}`,
+      resolution,
+      applied: patch.applied,
+      rejected: [...resolution.rejectedReasons, ...patch.rejected],
+    };
+  },
+  resolveQingmaoSupplyFeedingPreparationAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveQingmaoSupplyFeedingPreparationAction({
+      livingWorldState: store.livingWorldState,
+      turn: store.turn,
+      sceneId: store.sceneSessionState?.sceneId,
+      locationId: store.sceneSessionState?.locationId,
+      selectedStartProfileId: store.selectedStartProfileId,
+      playerFactionId: store.timelineState?.factionId || store.currentFaction,
+    });
+
+    const shouldPatch = (
+      resolution.knownFacts.length > 0
+      || resolution.factionPressure.length > 0
+      || resolution.npcMemories.length > 0
+      || resolution.playerGoals.length > 0
+      || resolution.actionConsequences.length > 0
+    );
+    const patch = shouldPatch
+      ? applyLivingWorldPatch(store.livingWorldState, {
+        source: 'action_protocol',
+        worldClock: {
+          ...(store.livingWorldState?.worldClock || {}),
+          lastActionId: resolution.actionId,
+        },
+        knownFacts: resolution.knownFacts,
+        factionPressure: resolution.factionPressure,
+        npcMemories: resolution.npcMemories,
+        playerGoals: resolution.playerGoals,
+        actionConsequences: resolution.actionConsequences,
+      })
+      : {
+        state: store.livingWorldState,
+        applied: [],
+        rejected: resolution.rejectedReasons,
+      };
+
+    if (set) {
+      set((state: any) => {
+        const currentLedger = Array.isArray(state.sceneSessionState?.localActionLedger)
+          ? state.sceneSessionState.localActionLedger
+          : [];
+        const nextLedger = resolution.success
+          ? [
+            ...currentLedger.filter((entry: any) => entry?.id !== resolution.worldActionLedgerEntry.id),
+            resolution.worldActionLedgerEntry,
+          ].slice(-40)
+          : currentLedger;
+        return {
+          livingWorldState: patch.state,
+          sceneSessionState: state.sceneSessionState
+            ? {
+              ...state.sceneSessionState,
+              localActionLedger: nextLedger,
+            }
+            : state.sceneSessionState,
+          flags: {
+            ...(state.flags || {}),
+            lastWorldActionReturnContext: resolution.narrativeReturnContext,
+            lastLivingWorldPatch: {
+              source: 'qingmao_supply_feeding_preparation',
+              actionId: resolution.actionId,
+              success: resolution.success,
+              applied: patch.applied,
+              rejected: [...resolution.rejectedReasons, ...patch.rejected],
+            },
+          },
+        };
+      });
+    }
+
+    store.addGameLog?.('system', `青茅补给喂养缺口整理：${resolution.publicSummary}`, {
+      actionId: resolution.actionId,
+      success: resolution.success,
+      visibleSourceRefs: resolution.visibleSourceRefs,
+      knownFactIds: resolution.knownFacts.map(fact => fact.id),
+      factionPressureIds: resolution.factionPressure.map(entry => entry.id),
+      npcMemoryIds: resolution.npcMemories.map(entry => entry.id),
+      playerGoalIds: resolution.playerGoals.map(goal => goal.id),
+      actionConsequenceIds: resolution.actionConsequences.map(entry => entry.id),
+      supplyRequirementIds: resolution.supplyPlan.ruleDrafts.map(rule => rule.id),
+      feedingRequirementIds: resolution.feedingPlan.ruleDrafts.map(rule => rule.id),
+      marketPreparationRuleId: resolution.marketPreparationRule?.id || null,
       rewardPolicy: resolution.worldActionResolution.rewardPolicy,
       forbiddenUpgrades: resolution.forbiddenUpgrades,
       applied: patch.applied,
