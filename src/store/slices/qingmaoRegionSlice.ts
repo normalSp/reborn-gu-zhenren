@@ -15,6 +15,10 @@ import {
   buildQingmaoCombatEventCandidate,
   type QingmaoCombatCandidateBuildResult,
 } from '../../engine/v010-qingmao-combat-pack';
+import {
+  buildV017CombatEventCandidate,
+  type V017CombatCandidateBuildResult,
+} from '../../engine/v017-combat-deepening';
 import type { LocalActionLedgerEntry } from '../../types';
 import { buildNarrativeReturnContext } from '../../engine/v090-world-action-protocol';
 import { applyLivingWorldPatch } from '../../engine/v011-living-world-patch';
@@ -42,6 +46,11 @@ export interface QingmaoRegionSlice {
     success: boolean;
     message: string;
     build: QingmaoCombatCandidateBuildResult;
+  };
+  registerV017CombatCandidateAction: (ruleId: string) => {
+    success: boolean;
+    message: string;
+    build: V017CombatCandidateBuildResult;
   };
 }
 
@@ -380,6 +389,46 @@ export const createQingmaoRegionSlice = (_set: any, get: any): QingmaoRegionSlic
       templateId,
       validation: candidate.entryValidation,
       rewardPolicy: candidate.dropPolicyId,
+    });
+    return { success: true, message, build };
+  },
+
+  registerV017CombatCandidateAction: (ruleId) => {
+    const build = buildV017CombatEventCandidate(ruleId, get());
+    const ready = build.view?.status === 'ready_for_local_validation';
+    if (!build.candidate || !build.validation?.valid || !ready) {
+      const message = build.blockers.join('；')
+        || build.warnings.join('；')
+        || 'v0.17 战斗样本仍处于候选审查，暂不能登记。';
+      pushL3Warning(get, 'v017_combat_candidate_blocked', message);
+      (get() as any).addGameLog?.('danger', message, {
+        ruleId,
+        readiness: build.view?.status,
+        blockers: build.blockers,
+        warnings: build.warnings,
+      });
+      return { success: false, message, build };
+    }
+
+    const candidate = build.candidate;
+    const current = Array.isArray((get() as any).flags?.combatEventCandidates)
+      ? (get() as any).flags.combatEventCandidates
+      : [];
+    _set((s: any) => ({
+      flags: {
+        ...(s.flags || {}),
+        combatEventCandidates: [
+          ...current.filter((item: any) => item?.id !== candidate.id),
+          candidate,
+        ].slice(-40),
+      },
+    }));
+    const message = `已登记 v0.17 战斗候选：${candidate.title}。`;
+    (get() as any).addGameLog?.('system', message, {
+      ruleId,
+      validation: candidate.entryValidation,
+      rewardPolicy: candidate.dropPolicyId,
+      boundary: 'no_reward_location_faction_npc_life_or_deepseek_authority',
     });
     return { success: true, message, build };
   },

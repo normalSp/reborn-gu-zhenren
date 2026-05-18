@@ -3,6 +3,7 @@ import { GuInventoryPanel } from './GuInventoryPanel';
 import { KillMovePanel } from './KillMovePanel';
 import { MaterialBagPanel } from './MaterialBagPanel';
 import { RefinePanel } from './RefinePanel';
+import { V017CombatBoundaryPanel } from './V017CombatBoundaryPanel';
 
 type GuDaoTab = 'gu_inventory' | 'kill_moves' | 'refine' | 'material_bag';
 
@@ -49,7 +50,16 @@ export function GuDaoPanel() {
 
       <div className="min-h-0 flex-1" data-testid={`gu-dao-content-${tab}`}>
         {tab === 'gu_inventory' && <GuInventoryPanel />}
-        {tab === 'kill_moves' && <KillMovePanel />}
+        {tab === 'kill_moves' && (
+          <div className="flex h-full min-h-0 flex-col">
+            <div className="shrink-0 p-3 pb-0">
+              <V017CombatBoundaryPanel compact />
+            </div>
+            <div className="min-h-0 flex-1">
+              <KillMovePanel />
+            </div>
+          </div>
+        )}
         {tab === 'refine' && <RefinePanel />}
         {tab === 'material_bag' && <MaterialBagPanel />}
       </div>

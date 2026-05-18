@@ -3,6 +3,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { useStore } from '../../store';
 import type { CombatConstraint, CombatEventCandidate } from '../../types';
 import { scaleLabel } from '../../engine/v080-narrative-combat-orchestration';
+import { buildV017OutcomeBackflowView } from '../../engine/v017-combat-deepening';
 
 interface NarrativeCombatPanelProps {
   onSelectStrategem?: (strategy: string) => void;
@@ -115,6 +116,10 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
     );
   }
 
+  const v017OutcomeBackflow = combatEncounterState?.outcomeSummary
+    ? buildV017OutcomeBackflowView(combatEncounterState.outcomeSummary)
+    : null;
+
   return (
     <div
       className="fixed inset-0 z-45 flex items-end justify-center px-3 pb-3 sm:pb-6 transition-all duration-300 pointer-events-none"
@@ -153,6 +158,19 @@ export function NarrativeCombatPanel({ onSelectStrategem }: NarrativeCombatPanel
               <div className="mt-1 text-xs text-rg-paper-200/70 leading-relaxed">
                 {combatEncounterState.outcomeSummary.summary}
               </div>
+              {v017OutcomeBackflow && (
+                <div className="mt-2 rounded-md border border-rg-ink-300/14 bg-rg-ink-900/28 p-2" data-testid="v017-combat-outcome-backflow">
+                  <div className="text-[11px] font-semibold text-rg-gold">{v017OutcomeBackflow.title}</div>
+                  <div className="mt-1 space-y-1">
+                    {v017OutcomeBackflow.lines.slice(1, 4).map((line, index) => (
+                      <div key={`${v017OutcomeBackflow.id}_${index}`} className="line-clamp-1 text-[10px] text-rg-paper-200/52">
+                        {line}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-1 line-clamp-1 text-[10px] text-rg-blood-400/55">{v017OutcomeBackflow.boundary}</div>
+                </div>
+              )}
             </div>
           )}
 

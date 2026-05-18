@@ -1,0 +1,2067 @@
+{
+  "schema": "reborng.mirofish.v017-combat-request-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v017-killer-move-counter-boundary-pack",
+  "packageKey": "v017_killer_move_counter_boundary",
+  "title": "v0.17 Killer Move Counter Boundary Pack",
+  "generatedAt": "2026-05-18T15:30:56.889007+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierFactsWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not runtime truth, not DeepSeek authority"
+    ]
+  },
+  "deliveryStatus": "complete_candidate",
+  "caveats": [
+    "Low-rank Gu and mortal-move counter material is source-backed but remains rule-draft only.",
+    "No Gu, killer move, recipe, material, reward, or canon rewrite is granted."
+  ],
+  "items": [
+    {
+      "id": "v017_counter_moonblade_range_line",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "月刃适合表现为低阶远程线性输出，反制重点是遮挡、距离、移动和真元压力。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_b0fe0dfa6420",
+          "summary": "方源在混乱中悄悄发出精准月刃，击中左前方草人傀儡颈部，造成显著攻击效果",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_e4cfcaadc7b3",
+          "summary": "学员发现月刃消耗真元巨大，丙等修为只能连续催发三片月刃",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_17c4cc8410ff",
+          "summary": "学堂家老演示发射月光蛊月刃，切断草人傀儡颈部",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_9aa5c0f0858c",
+          "summary": "学堂家老布置作业：三天后检查月刃练习成果，最好成绩者奖励十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_b2e0b68479b5",
+          "summary": "家老演示催动月光蛊劈出月刃，击毁草人傀儡头部，展现威力",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_262bd18391a3",
+        "sp_574d7957ed61",
+        "sp_37bba17aaeca",
+        "sp_8c1671e7b7c3",
+        "sp_3146169d6139"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0057",
+          "startOffset": 66319,
+          "endOffset": 66370,
+          "summary": "方源在混乱中悄悄发出精准月刃，击中左前方草人傀儡颈部，造成显著攻击效果",
+          "sourcePointerId": "sp_262bd18391a3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0079",
+          "startOffset": 67229,
+          "endOffset": 67275,
+          "summary": "学员发现月刃消耗真元巨大，丙等修为只能连续催发三片月刃",
+          "sourcePointerId": "sp_574d7957ed61"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0029",
+          "startOffset": 64927,
+          "endOffset": 64992,
+          "summary": "学堂家老演示发射月光蛊月刃，切断草人傀儡颈部",
+          "sourcePointerId": "sp_37bba17aaeca"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0075",
+          "startOffset": 67071,
+          "endOffset": 67139,
+          "summary": "学堂家老布置作业：三天后检查月刃练习成果，最好成绩者奖励十块元石",
+          "sourcePointerId": "sp_8c1671e7b7c3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0034",
+          "startOffset": 65212,
+          "endOffset": 65267,
+          "summary": "家老演示催动月光蛊劈出月刃，击毁草人傀儡头部，展现威力",
+          "sourcePointerId": "sp_3146169d6139"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "moonlight_gu",
+        "moonblade"
+      ],
+      "usableWhen": [
+        "range_line",
+        "training_or_combat"
+      ],
+      "counterHints": [
+        "cover",
+        "evasion",
+        "range_break"
+      ],
+      "riskHints": [
+        "primeval_essence_cost",
+        "public_exposure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_moonlight_refinement_gap",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "月光蛊相关能力必须受炼化/拥有状态限制，候选文本不能让玩家误以为已可用。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_92a97d9a1c84",
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "relations",
+          "itemId": "rel_5fba4bface4f",
+          "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7138719a1356",
+        "sp_d5de1d516bc9",
+        "sp_51789a502f81"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0026",
+          "startOffset": 28152,
+          "endOffset": 28190,
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "sourcePointerId": "sp_d5de1d516bc9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优",
+          "sourcePointerId": "sp_51789a502f81"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "moonlight_gu"
+      ],
+      "usableWhen": [
+        "owned_and_refined_only"
+      ],
+      "counterHints": [
+        "resource_pressure",
+        "condition_check"
+      ],
+      "riskHints": [
+        "primeval_essence_cost",
+        "failed_activation"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_white_jade_defense_boundary",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "白玉蛊/玉皮类防御可作为减伤或抵挡候选，不应写成无敌或自动胜利。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0100",
+          "chapterId": "ch_0100",
+          "field": "events",
+          "itemId": "evt_b31d421f82cf",
+          "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0101",
+          "chapterId": "ch_0101",
+          "field": "events",
+          "itemId": "evt_dc987e6b1200",
+          "summary": "方源用白豕蛊和玉皮蛊合炼出白玉蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0064",
+          "chapterId": "ch_0064",
+          "field": "events",
+          "itemId": "evt_a974904afffe",
+          "summary": "古月博以玉皮蛊为提前奖励，要求方正率先突破二转成为修为第一人",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0064",
+          "chapterId": "ch_0064",
+          "field": "events",
+          "itemId": "evt_c63b4432b60d",
+          "summary": "古月博在月下赠予方正玉皮蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0077",
+          "chapterId": "ch_0077",
+          "field": "events",
+          "itemId": "evt_3a7acee8e565",
+          "summary": "王大攻击方正时被玉皮蛊反伤，中毒而死",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_eb68d364a0cd",
+        "sp_600a65847f0e",
+        "sp_fbcec94e53c6",
+        "sp_d5223e77948e",
+        "sp_3d8bab84fbf1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0035",
+          "startOffset": 314282,
+          "endOffset": 314327,
+          "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+          "sourcePointerId": "sp_eb68d364a0cd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0101",
+          "paragraphId": "ch_0101_p0051",
+          "startOffset": 317493,
+          "endOffset": 317535,
+          "summary": "方源用白豕蛊和玉皮蛊合炼出白玉蛊",
+          "sourcePointerId": "sp_600a65847f0e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0064",
+          "paragraphId": "ch_0064_p0036",
+          "startOffset": 195909,
+          "endOffset": 195965,
+          "summary": "古月博以玉皮蛊为提前奖励，要求方正率先突破二转成为修为第一人",
+          "sourcePointerId": "sp_fbcec94e53c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0064",
+          "paragraphId": "ch_0064_p0032",
+          "startOffset": 195720,
+          "endOffset": 195724,
+          "summary": "古月博在月下赠予方正玉皮蛊",
+          "sourcePointerId": "sp_d5223e77948e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0077",
+          "paragraphId": "ch_0077_p0090",
+          "startOffset": 239970,
+          "endOffset": 239972,
+          "summary": "王大攻击方正时被玉皮蛊反伤，中毒而死",
+          "sourcePointerId": "sp_3d8bab84fbf1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "white_jade_gu",
+        "defense"
+      ],
+      "usableWhen": [
+        "self_defense",
+        "close_range_pressure"
+      ],
+      "counterHints": [
+        "resource_pressure",
+        "sustained_attack",
+        "terrain"
+      ],
+      "riskHints": [
+        "primeval_essence_cost",
+        "false_security"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_liquor_worm_support_boundary",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "酒虫只适合作为修炼/战前支持候选，不应进入普通攻击按钮或直接伤害链。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "events",
+          "itemId": "evt_e5491ec827ed",
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_71b3548f72e1",
+          "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_4567f0cac93c",
+          "summary": "方源去酒肆买酒，意图用酒香吸引酒虫现身。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "events",
+          "itemId": "evt_e3f615bcb71f",
+          "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0015",
+          "chapterId": "ch_0015",
+          "field": "events",
+          "itemId": "evt_b6f2d26c0405",
+          "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_59e2db5ea832",
+        "sp_f34a72f59673",
+        "sp_26df7dc62772",
+        "sp_309e68f5b2c4",
+        "sp_b440e94e651d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+          "sourcePointerId": "sp_59e2db5ea832"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0047",
+          "startOffset": 19899,
+          "endOffset": 19949,
+          "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+          "sourcePointerId": "sp_f34a72f59673"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0028",
+          "startOffset": 21549,
+          "endOffset": 21564,
+          "summary": "方源去酒肆买酒，意图用酒香吸引酒虫现身。",
+          "sourcePointerId": "sp_26df7dc62772"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0052",
+          "startOffset": 38638,
+          "endOffset": 38725,
+          "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。",
+          "sourcePointerId": "sp_309e68f5b2c4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0026",
+          "startOffset": 40562,
+          "endOffset": 40629,
+          "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸",
+          "sourcePointerId": "sp_b440e94e651d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "liquor_worm"
+      ],
+      "usableWhen": [
+        "pre_battle_support",
+        "cultivation_support"
+      ],
+      "counterHints": [
+        "supply_limit",
+        "public_attention"
+      ],
+      "riskHints": [
+        "resource_pressure",
+        "availability"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_sawtooth_centipede_close_pressure",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "锯齿金蜈可作为近战压迫候选，反制重点是拉开距离、侧移、地形和冷色远攻压制。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0170",
+          "chapterId": "ch_0170",
+          "field": "events",
+          "itemId": "evt_27a12afb278e",
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_49d2b9e62980",
+          "summary": "方源与白凝冰再次交战，方源使用锯齿金蜈压制白凝冰",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0162",
+          "chapterId": "ch_0162",
+          "field": "events",
+          "itemId": "evt_7c211211f7f6",
+          "summary": "方源考虑探索花酒行者的遗藏并收服锯齿金蜈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0163",
+          "chapterId": "ch_0163",
+          "field": "events",
+          "itemId": "evt_2a08466d408e",
+          "summary": "方源用白银真元催动锯齿金蜈，绞灭其野生意志，收服锯齿金蜈",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_1cafb8c1276c",
+        "sp_46dc874d3015",
+        "sp_3a38a6c98c2f",
+        "sp_d7245cab21a9",
+        "sp_c8e9965afc04"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0170",
+          "paragraphId": "ch_0170_p0082",
+          "startOffset": 568080,
+          "endOffset": 568084,
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "sourcePointerId": "sp_1cafb8c1276c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0073",
+          "startOffset": 556592,
+          "endOffset": 556635,
+          "summary": "方源与白凝冰再次交战，方源使用锯齿金蜈压制白凝冰",
+          "sourcePointerId": "sp_46dc874d3015"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0162",
+          "paragraphId": "ch_0162_p0101",
+          "startOffset": 540298,
+          "endOffset": 540345,
+          "summary": "方源考虑探索花酒行者的遗藏并收服锯齿金蜈",
+          "sourcePointerId": "sp_d7245cab21a9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0163",
+          "paragraphId": "ch_0163_p0066",
+          "startOffset": 542793,
+          "endOffset": 542852,
+          "summary": "方源用白银真元催动锯齿金蜈，绞灭其野生意志，收服锯齿金蜈",
+          "sourcePointerId": "sp_c8e9965afc04"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "sawtooth_golden_centipede"
+      ],
+      "usableWhen": [
+        "close_range",
+        "beast_or_duel_pressure"
+      ],
+      "counterHints": [
+        "range_break",
+        "terrain",
+        "evasion"
+      ],
+      "riskHints": [
+        "commitment_risk",
+        "exposure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_ice_blade_range_pressure",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "冰刃/冰锥类表现可作为远程与控场压力候选，反制依赖防御、遮挡和近身压迫。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "entities",
+          "itemId": "entity_6ce6cf7552b5",
+          "summary": "对手，使用冰刃、蓝鸟冰棺蛊、冰锥蛊，拥有冰肌防御",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0137",
+          "chapterId": "ch_0137",
+          "field": "events",
+          "itemId": "evt_3332fe945970",
+          "summary": "白凝冰从口中吐出三转蓝鸟冰棺蛊，准备使用",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0137",
+          "chapterId": "ch_0137",
+          "field": "events",
+          "itemId": "evt_c71e13b0f054",
+          "summary": "白凝冰使用蓝鸟冰棺蛊杀死熊力小组中的后勤蛊师",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0141",
+          "chapterId": "ch_0141",
+          "field": "events",
+          "itemId": "evt_04eae83f134e",
+          "summary": "白凝冰与家老战斗，白凝冰使用冰刃蛊，家老使用月手刀和黄金月",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_157a02c19e45",
+        "sp_3a38a6c98c2f",
+        "sp_334eb2c6201a",
+        "sp_9933ed87bff2",
+        "sp_22fad1c8a621"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0099",
+          "startOffset": 557503,
+          "endOffset": 557506,
+          "summary": "对手，使用冰刃、蓝鸟冰棺蛊、冰锥蛊，拥有冰肌防御",
+          "sourcePointerId": "sp_157a02c19e45"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0137",
+          "paragraphId": "ch_0137_p0029",
+          "startOffset": 448674,
+          "endOffset": 448694,
+          "summary": "白凝冰从口中吐出三转蓝鸟冰棺蛊，准备使用",
+          "sourcePointerId": "sp_334eb2c6201a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0137",
+          "paragraphId": "ch_0137_p0037",
+          "startOffset": 448874,
+          "endOffset": 448878,
+          "summary": "白凝冰使用蓝鸟冰棺蛊杀死熊力小组中的后勤蛊师",
+          "sourcePointerId": "sp_9933ed87bff2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0141",
+          "paragraphId": "ch_0141_p0034",
+          "startOffset": 463212,
+          "endOffset": 463215,
+          "summary": "白凝冰与家老战斗，白凝冰使用冰刃蛊，家老使用月手刀和黄金月",
+          "sourcePointerId": "sp_22fad1c8a621"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "ice_blade",
+        "ice_cone"
+      ],
+      "usableWhen": [
+        "range_line",
+        "area_pressure"
+      ],
+      "counterHints": [
+        "cover",
+        "self_defense",
+        "close_pressure"
+      ],
+      "riskHints": [
+        "terrain_lock",
+        "resource_pressure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_wood_binding_vs_ice_cut",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "木系缠绕与冰系切割可支持属性反制显示，但不能决定 NPC 生死或正史结局。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0143",
+          "chapterId": "ch_0143",
+          "field": "events",
+          "itemId": "evt_c20b7524206f",
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_5b4fbcc00cec",
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0141",
+          "chapterId": "ch_0141",
+          "field": "events",
+          "itemId": "evt_65e69caea238",
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_b0654d6e54a4",
+          "summary": "古月青书与白凝冰的战斗进入僵持阶段，双方都无法收手，冰刃风暴被古月青书的力量压缩。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_bf71e6eae8b1",
+          "summary": "古月青书使用木魅蛊变成树精，与白凝冰激战，白凝冰使用蓝鸟冰棺蛊将古月青书冻住，但古月青书在冰晶中发生异变",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_98d16e9ac9c6",
+        "sp_1830a49f25f1",
+        "sp_76542326d1fe",
+        "sp_03ef7a85d744",
+        "sp_9efcb7f5d6c2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0143",
+          "paragraphId": "ch_0143_p0010",
+          "startOffset": 469010,
+          "endOffset": 469030,
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "sourcePointerId": "sp_98d16e9ac9c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0095",
+          "startOffset": 468388,
+          "endOffset": 468392,
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "sourcePointerId": "sp_1830a49f25f1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0141",
+          "paragraphId": "ch_0141_p0081",
+          "startOffset": 464739,
+          "endOffset": 464774,
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "sourcePointerId": "sp_76542326d1fe"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0097",
+          "startOffset": 468463,
+          "endOffset": 468480,
+          "summary": "古月青书与白凝冰的战斗进入僵持阶段，双方都无法收手，冰刃风暴被古月青书的力量压缩。",
+          "sourcePointerId": "sp_03ef7a85d744"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0057",
+          "startOffset": 467008,
+          "endOffset": 467034,
+          "summary": "古月青书使用木魅蛊变成树精，与白凝冰激战，白凝冰使用蓝鸟冰棺蛊将古月青书冻住，但古月青书在冰晶中发生异变",
+          "sourcePointerId": "sp_9efcb7f5d6c2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "wood_binding",
+        "ice_blade"
+      ],
+      "usableWhen": [
+        "terrain_forest",
+        "duel_pressure"
+      ],
+      "counterHints": [
+        "attribute_pressure",
+        "terrain",
+        "cut_or_bind"
+      ],
+      "riskHints": [
+        "npc_life_boundary",
+        "overcommit"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_wolf_tide_group_pressure",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "狼群压力适合显示目标被包围、行动受限和防线风险，不能转成固定掉落或刷怪奖励。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0150",
+          "chapterId": "ch_0150",
+          "field": "events",
+          "itemId": "evt_2870d25ef499",
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "events",
+          "itemId": "evt_1a51f1fc1a49",
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "relations",
+          "itemId": "rel_6b25830b7edb",
+          "summary": "雷冠头狼率领狼群攻击古月山寨",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0125",
+          "chapterId": "ch_0125",
+          "field": "events",
+          "itemId": "evt_0bd19a3a398a",
+          "summary": "狼潮前奏，残狼群增多，山脚村庄被屠尽，蛊师撤退",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0128",
+          "chapterId": "ch_0128",
+          "field": "events",
+          "itemId": "evt_6af36f6a9bb5",
+          "summary": "方源使用隐鳞蛊在狼群眼皮底下安然远去",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_37f512c17ff5",
+        "sp_50124a1c0532",
+        "sp_5b6d4a4c98ac",
+        "sp_7640ddeb0378",
+        "sp_d48e998ef2d7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0150",
+          "paragraphId": "ch_0150_p0041",
+          "startOffset": 494799,
+          "endOffset": 494801,
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "sourcePointerId": "sp_37f512c17ff5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0083",
+          "startOffset": 547097,
+          "endOffset": 547156,
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "sourcePointerId": "sp_50124a1c0532"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0075",
+          "startOffset": 546856,
+          "endOffset": 546879,
+          "summary": "雷冠头狼率领狼群攻击古月山寨",
+          "sourcePointerId": "sp_5b6d4a4c98ac"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0125",
+          "paragraphId": "ch_0125_p0049",
+          "startOffset": 405476,
+          "endOffset": 405538,
+          "summary": "狼潮前奏，残狼群增多，山脚村庄被屠尽，蛊师撤退",
+          "sourcePointerId": "sp_7640ddeb0378"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0128",
+          "paragraphId": "ch_0128_p0040",
+          "startOffset": 415530,
+          "endOffset": 415554,
+          "summary": "方源使用隐鳞蛊在狼群眼皮底下安然远去",
+          "sourcePointerId": "sp_d48e998ef2d7"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "wolf_pack_pressure"
+      ],
+      "usableWhen": [
+        "wild_beast",
+        "village_defense"
+      ],
+      "counterHints": [
+        "formation",
+        "retreat",
+        "terrain",
+        "focus_fire"
+      ],
+      "riskHints": [
+        "surround",
+        "route_risk",
+        "resource_pressure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_monkey_swarm_ambush",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "石猴群与猴王偷袭支持包围/伏击反制显示，重点是警戒线、遮挡和防御消耗。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0116",
+          "chapterId": "ch_0116",
+          "field": "events",
+          "itemId": "evt_a8520416dd99",
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0116",
+          "chapterId": "ch_0116",
+          "field": "relations",
+          "itemId": "rel_9301874cbef6",
+          "summary": "方源与玉眼石猴王战斗，石猴王偷袭方源",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0115",
+          "chapterId": "ch_0115",
+          "field": "events",
+          "itemId": "evt_5efb9710d57b",
+          "summary": "方源剿灭了最后一根石柱以外的所有猴群",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0115",
+          "chapterId": "ch_0115",
+          "field": "events",
+          "itemId": "evt_bb3de2e9ffef",
+          "summary": "方源决定使用赤铁舍利蛊晋升二转中阶",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0117",
+          "chapterId": "ch_0117",
+          "field": "events",
+          "itemId": "evt_54399ecf206b",
+          "summary": "石猴王因重伤死亡，被玉眼石猴踏尸",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_281012fe7df2",
+        "sp_778064cdb8d3",
+        "sp_fe53c7f3a889",
+        "sp_44fdf476e16d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "sourcePointerId": "sp_281012fe7df2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0115",
+          "paragraphId": "ch_0115_p0066",
+          "startOffset": 370091,
+          "endOffset": 370093,
+          "summary": "方源剿灭了最后一根石柱以外的所有猴群",
+          "sourcePointerId": "sp_778064cdb8d3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0115",
+          "paragraphId": "ch_0115_p0091",
+          "startOffset": 371044,
+          "endOffset": 371046,
+          "summary": "方源决定使用赤铁舍利蛊晋升二转中阶",
+          "sourcePointerId": "sp_fe53c7f3a889"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0117",
+          "paragraphId": "ch_0117_p0050",
+          "startOffset": 376585,
+          "endOffset": 376588,
+          "summary": "石猴王因重伤死亡，被玉眼石猴踏尸",
+          "sourcePointerId": "sp_44fdf476e16d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "stone_monkey_swarm",
+        "ambush"
+      ],
+      "usableWhen": [
+        "cave",
+        "swarm_pressure"
+      ],
+      "counterHints": [
+        "watch_line",
+        "cover",
+        "self_defense"
+      ],
+      "riskHints": [
+        "ambush",
+        "resource_pressure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_earthwolf_spider_mount_pressure",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "千里地狼蛛坐骑可作为低位突入和大型体量压力候选，反制是距离、地面控制与属性阻断。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_7b672cda0be1",
+          "summary": "方源骑千里地狼蛛从地下出现，与白凝冰交战，使用锯齿金蜈对抗冰刃，千里地狼蛛攻击白凝冰，白凝冰骑白相仙蛇应战",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_be04a26c1ae0",
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_cbd4bbe5be9f",
+          "summary": "方源与白凝冰在迷雾中战斗，方源使用地听肉耳草听声辩位，白凝冰使用电眼蛊和冰锥蛊攻击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0189",
+          "chapterId": "ch_0189",
+          "field": "events",
+          "itemId": "evt_792850863956",
+          "summary": "方源发现石壁中的千里地狼蛛，将其炼化并驱使前行",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0190",
+          "chapterId": "ch_0190",
+          "field": "events",
+          "itemId": "evt_0f8bfa624de3",
+          "summary": "千里地狼蛛发狂，方源骑乘它向地面钻去",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_2e8cda80e137",
+        "sp_2127da087169",
+        "sp_7503f6f7529f",
+        "sp_8a700176a713",
+        "sp_3148c0cd0c08"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0012",
+          "startOffset": 640008,
+          "endOffset": 640010,
+          "summary": "方源骑千里地狼蛛从地下出现，与白凝冰交战，使用锯齿金蜈对抗冰刃，千里地狼蛛攻击白凝冰，白凝冰骑白相仙蛇应战",
+          "sourcePointerId": "sp_2e8cda80e137"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0042",
+          "startOffset": 640967,
+          "endOffset": 640986,
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "sourcePointerId": "sp_2127da087169"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0078",
+          "startOffset": 642131,
+          "endOffset": 642173,
+          "summary": "方源与白凝冰在迷雾中战斗，方源使用地听肉耳草听声辩位，白凝冰使用电眼蛊和冰锥蛊攻击",
+          "sourcePointerId": "sp_7503f6f7529f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0189",
+          "paragraphId": "ch_0189_p0081",
+          "startOffset": 635466,
+          "endOffset": 635515,
+          "summary": "方源发现石壁中的千里地狼蛛，将其炼化并驱使前行",
+          "sourcePointerId": "sp_8a700176a713"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0190",
+          "paragraphId": "ch_0190_p0065",
+          "startOffset": 638668,
+          "endOffset": 638670,
+          "summary": "千里地狼蛛发狂，方源骑乘它向地面钻去",
+          "sourcePointerId": "sp_3148c0cd0c08"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "earthwolf_spider",
+        "mounted_assault"
+      ],
+      "usableWhen": [
+        "mounted_pressure",
+        "public_duel"
+      ],
+      "counterHints": [
+        "range_break",
+        "terrain",
+        "attribute_pressure"
+      ],
+      "riskHints": [
+        "position_lock",
+        "public_exposure"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_tianpeng_defense_cost",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "天蓬蛊类防御可作为防守提示，但需要资源压力和受击方向限制，不能显示为永久护盾。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0156",
+          "chapterId": "ch_0156",
+          "field": "events",
+          "itemId": "evt_69e0faac45c7",
+          "summary": "方源第一次合炼天蓬蛊失败，水罩蛊死亡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0156",
+          "chapterId": "ch_0156",
+          "field": "events",
+          "itemId": "evt_e88f8c83a82b",
+          "summary": "方源合炼成功三转天蓬蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0169",
+          "chapterId": "ch_0169",
+          "field": "events",
+          "itemId": "evt_67b5b7e11bbd",
+          "summary": "狡电狈释放闪电攻击方源，方源使用雷盾蛊和天蓬蛊防御",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0169",
+          "chapterId": "ch_0169",
+          "field": "events",
+          "itemId": "evt_f338c191e1ad",
+          "summary": "方源遭遇上百头电狼群，使用锯齿金蜈和天蓬蛊战斗",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3a38a6c98c2f",
+        "sp_02f416036923",
+        "sp_a0303771b22f",
+        "sp_027b90e77064",
+        "sp_e97cd4b5c16b"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0156",
+          "paragraphId": "ch_0156_p0077",
+          "startOffset": 518534,
+          "endOffset": 518568,
+          "summary": "方源第一次合炼天蓬蛊失败，水罩蛊死亡",
+          "sourcePointerId": "sp_02f416036923"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0156",
+          "paragraphId": "ch_0156_p0074",
+          "startOffset": 518460,
+          "endOffset": 518466,
+          "summary": "方源合炼成功三转天蓬蛊",
+          "sourcePointerId": "sp_a0303771b22f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0169",
+          "paragraphId": "ch_0169_p0043",
+          "startOffset": 562836,
+          "endOffset": 562875,
+          "summary": "狡电狈释放闪电攻击方源，方源使用雷盾蛊和天蓬蛊防御",
+          "sourcePointerId": "sp_027b90e77064"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0169",
+          "paragraphId": "ch_0169_p0077",
+          "startOffset": 563872,
+          "endOffset": 563892,
+          "summary": "方源遭遇上百头电狼群，使用锯齿金蜈和天蓬蛊战斗",
+          "sourcePointerId": "sp_e97cd4b5c16b"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "tianpeng_gu",
+        "defense"
+      ],
+      "usableWhen": [
+        "self_defense",
+        "duel_pressure"
+      ],
+      "counterHints": [
+        "sustained_attack",
+        "resource_pressure",
+        "flank"
+      ],
+      "riskHints": [
+        "primeval_essence_cost",
+        "coverage_gap"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    },
+    {
+      "id": "v017_counter_blood_lake_danger_boundary",
+      "category": "killer_move_or_gu_counter_boundary",
+      "summary": "血湖混战只能作为危险场景和撤退风险提示，不应暴露隐藏因果或变成可刷副本。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_48def73b2240",
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_937f149775c2",
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0186",
+          "chapterId": "ch_0186",
+          "field": "events",
+          "itemId": "evt_1e8e93f39b7c",
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_3dee5856b0e9",
+          "summary": "血河蟒从血湖中现身，上半身出现在方源视野",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_d2b4282b6ed2",
+          "summary": "铁血冷出现在血湖上空，发出声音",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_335dc65714e7",
+        "sp_4d11f42fbb58",
+        "sp_ce65256e2dbd",
+        "sp_607d896b2520",
+        "sp_9c0c26364a80"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0054",
+          "startOffset": 620759,
+          "endOffset": 620798,
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "sourcePointerId": "sp_335dc65714e7"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0088",
+          "startOffset": 621970,
+          "endOffset": 621996,
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "sourcePointerId": "sp_4d11f42fbb58"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0079",
+          "startOffset": 624871,
+          "endOffset": 624874,
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "sourcePointerId": "sp_ce65256e2dbd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0011",
+          "startOffset": 618940,
+          "endOffset": 618958,
+          "summary": "血河蟒从血湖中现身，上半身出现在方源视野",
+          "sourcePointerId": "sp_607d896b2520"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0002",
+          "startOffset": 618591,
+          "endOffset": 618626,
+          "summary": "铁血冷出现在血湖上空，发出声音",
+          "sourcePointerId": "sp_9c0c26364a80"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "killer_move_counter_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "guOrMoveHints": [
+        "danger_zone",
+        "serpent_pressure"
+      ],
+      "usableWhen": [
+        "scene_only",
+        "crisis_pressure"
+      ],
+      "counterHints": [
+        "retreat",
+        "avoidance",
+        "terrain"
+      ],
+      "riskHints": [
+        "hidden_boundary",
+        "npc_life_boundary"
+      ],
+      "blockedImplications": [
+        "immortal_gu",
+        "instant_kill",
+        "gu_grant",
+        "recipe_unlock",
+        "reward_grant",
+        "material_drop",
+        "canon_rewrite",
+        "npc_life_conclusion"
+      ],
+      "riskTags": [
+        "counter_inference",
+        "high_rank_leak_guard"
+      ]
+    }
+  ],
+  "coverage": {
+    "itemCount": 12,
+    "sourcePointerCount": 55,
+    "categoryCounts": {
+      "killer_move_or_gu_counter_boundary": 12
+    }
+  }
+}

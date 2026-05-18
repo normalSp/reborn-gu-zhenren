@@ -21,6 +21,11 @@ import {
   buildQingmaoSceneVariantViews,
   type QingmaoSceneVariantView,
 } from '../../engine/v010-qingmao-scene-variants';
+import {
+  listV017CombatPreparationViews,
+  type V017CombatPreparationView,
+} from '../../engine/v017-combat-deepening';
+import { V017CombatBoundaryPanel } from './V017CombatBoundaryPanel';
 
 const PERIOD_LABEL: Record<string, string> = {
   morning: '早晨',
@@ -154,6 +159,7 @@ export function ActionPanel() {
   const listQingmaoResourceLoopEntriesAction = useStore((s: any) => s.listQingmaoResourceLoopEntriesAction);
   const resolveQingmaoResourceLoopActionAction = useStore((s: any) => s.resolveQingmaoResourceLoopActionAction);
   const registerQingmaoCombatCandidateAction = useStore((s: any) => s.registerQingmaoCombatCandidateAction);
+  const registerV017CombatCandidateAction = useStore((s: any) => s.registerV017CombatCandidateAction);
 
   const availability = useMemo(
     () => deriveActivityAvailabilityContext(storeSnapshot),
@@ -181,6 +187,10 @@ export function ActionPanel() {
         validationLabel: blockers > 0 ? `${blockers} 阻断` : warnings > 0 ? `${warnings} 提醒` : '可校验',
       };
     }),
+    [storeSnapshot],
+  );
+  const v017CombatPreparation = useMemo(
+    () => listV017CombatPreparationViews(storeSnapshot),
     [storeSnapshot],
   );
   const qingmaoSceneVariants = useMemo(
@@ -292,6 +302,14 @@ export function ActionPanel() {
     setLastResult({
       success: Boolean(result?.success),
       message: result?.message || '青茅凡战候选登记失败。',
+    });
+  };
+
+  const registerV017CombatCandidate = (ruleId: string) => {
+    const result = registerV017CombatCandidateAction?.(ruleId);
+    setLastResult({
+      success: Boolean(result?.success),
+      message: result?.message || 'v0.17 战斗候选登记失败。',
     });
   };
 
@@ -407,6 +425,11 @@ export function ActionPanel() {
         readiness={qingmaoCombatReadiness}
         onRegister={registerQingmaoCombatCandidate}
       />
+      <V017CombatPreparationSection
+        views={v017CombatPreparation}
+        onRegister={registerV017CombatCandidate}
+      />
+      <V017CombatBoundaryPanel compact />
       <ActionSection
         title="野外行动"
         note="普通狩猎、采集、侦察先走野外行动；敌对蛊师、蛊兽、伏击或剧情白名单才进入战斗。"
@@ -635,6 +658,110 @@ function QingmaoCombatReadinessSection({
             </div>
           );
         })}
+      </div>
+    </section>
+  );
+}
+
+const V017_STATUS_LABEL: Record<V017CombatPreparationView['status'], string> = {
+  ready_for_local_validation: '可登记',
+  candidate_only: '候选',
+  blocked: '阻断',
+};
+
+function v017CombatTone(view: V017CombatPreparationView): string {
+  if (view.status === 'blocked') return 'border-rg-blood-400/20 bg-rg-blood-400/5 text-rg-blood-300';
+  if (view.status === 'ready_for_local_validation') return 'border-rg-gold/22 bg-rg-ink-900/30 text-rg-paper-200/75';
+  return 'border-rg-ink-300/12 bg-rg-ink-900/22 text-rg-paper-200/48';
+}
+
+function V017CombatPreparationSection({
+  views,
+  onRegister,
+}: {
+  views: V017CombatPreparationView[];
+  onRegister: (ruleId: string) => void;
+}) {
+  if (!views.length) return null;
+  const labelBlockedOutcome = (value: string): string => {
+    const labels: Record<string, string> = {
+      reward_grant: '奖励',
+      gu_grant: '蛊虫发放',
+      formal_currency_reward: '正式元石奖励',
+      formal_extortion_profit: '正式勒索收益',
+      formal_material_drop: '正式材料掉落',
+      beast_loot: '兽材掉落',
+      location_unlock: '地点解锁',
+      faction_transfer: '阵营转移',
+      npc_death: 'NPC 生死',
+      hidden_fact_reveal: '隐藏事实',
+      canon_rewrite: '改写正史',
+      route_success: '路线成功',
+      inheritance_unlock: '传承开放',
+      treasure_grant: '宝物发放',
+    };
+    return labels[value] || value;
+  };
+  return (
+    <section className="space-y-2" data-testid="v017-combat-preparation-section">
+      <div>
+        <h3 className="text-xs font-semibold text-rg-paper-100">v0.17 战斗准备</h3>
+        <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/42">
+          MiroFish 只提供候选材料；本地引擎只登记安全低阶战斗入口，胜负与回流仍由战斗棋盘结算。
+        </p>
+      </div>
+      <div className="grid gap-2">
+        {views.slice(0, 4).map(view => (
+          <div
+            key={view.id}
+            className={`rounded-md border p-3 ${v017CombatTone(view)}`}
+            data-testid={`v017-combat-preparation-${view.id}`}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <div className="truncate text-sm font-semibold">{view.title}</div>
+                <div className="mt-0.5 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/50">{view.summary}</div>
+              </div>
+              <span className={`rg-chip shrink-0 ${view.canRegister ? 'rg-chip--gold' : view.status === 'blocked' ? 'rg-chip--blood' : 'rg-chip--muted'}`}>
+                {V017_STATUS_LABEL[view.status]}
+              </span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-1 text-[10px] text-rg-paper-200/48">
+              <span>{view.scale}</span>
+              <span>{view.risk === 'high' ? '高风险' : view.risk === 'medium' ? '中风险' : '低风险'}</span>
+              <span>{view.terrainLine}</span>
+              <span>{view.validationLabel}</span>
+            </div>
+            <div className="mt-2 line-clamp-1 text-[10px] text-rg-gold/55">
+              蛊虫：{view.recommendedGuLine}
+            </div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-jade-300/58">
+              反制：{view.counterHints.slice(0, 2).join(' / ') || '等待反制样本'}
+            </div>
+            <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/42">
+              小队：{view.tacticHints.slice(0, 2).join(' / ') || '等待小队样本'}
+            </div>
+            <div className="mt-1 line-clamp-1 text-[10px] text-rg-blood-400/58">
+              禁止：{view.blockedOutcomes.slice(0, 5).map(labelBlockedOutcome).join(' / ')}
+            </div>
+            {(view.blockers.length > 0 || view.warnings.length > 0) && (
+              <div className="mt-2 line-clamp-2 text-[10px] text-rg-blood-400/75">
+                {[...view.blockers, ...view.warnings].slice(0, 2).join('；')}
+              </div>
+            )}
+            <div className="mt-3 flex justify-end">
+              <button
+                type="button"
+                disabled={!view.canRegister}
+                onClick={() => onRegister(view.id)}
+                className="rg-toolbar-btn rg-focus-ring px-3 py-1.5 text-xs disabled:cursor-not-allowed disabled:opacity-45"
+                data-testid={`v017-combat-register-${view.id}`}
+              >
+                登记候选
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

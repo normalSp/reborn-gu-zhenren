@@ -56,6 +56,7 @@ describe('v0.10.0-b1 Qingmao region store slice', () => {
       'resolveQingmaoRegionActionAction',
       'resolveQingmaoResourceLoopActionAction',
       'registerQingmaoCombatCandidateAction',
+      'registerV017CombatCandidateAction',
     ]);
   });
 
@@ -161,5 +162,30 @@ describe('v0.10.0-b1 Qingmao region store slice', () => {
     expect(result.success).toBe(false);
     expect(harness.get().flags.combatEventCandidates).toBeUndefined();
     expect(harness.get().l3Warnings[0].ruleName).toBe('qingmao_combat_candidate_blocked');
+  });
+
+  it('registers v0.17 combat deepening candidates through the existing combat queue only', () => {
+    const harness = createHarness();
+    const result = harness.get().registerV017CombatCandidateAction('v017_combat_clan_school_moonblade_drill');
+
+    expect(result.success).toBe(true);
+    expect(result.build.saveFormatImpact).toBe('none');
+    expect(harness.get().flags.combatEventCandidates).toHaveLength(1);
+    expect(harness.get().flags.combatEventCandidates[0].title).toBe('族学月刃练习');
+    expect(harness.get().flags.combatEventCandidates[0].source).toBe('engine');
+    expect(harness.get().flags.combatEventCandidates[0].engineValidation).toBe('pending');
+    expect(harness.get().flags.combatEventCandidates[0].dropPolicyId).toBe('local_engine_only');
+    expect(harness.get().flags.combatEventCandidates[0].enemySpecIds).toBeUndefined();
+    expect(result.build.validation?.valid).toBe(true);
+  });
+
+  it('keeps v0.17 candidate-only inheritance/cave risks out of the combat queue', () => {
+    const harness = createHarness();
+    const result = harness.get().registerV017CombatCandidateAction('v017_combat_flower_wine_cave_risk');
+
+    expect(result.success).toBe(false);
+    expect(result.build.saveFormatImpact).toBe('none');
+    expect(harness.get().flags.combatEventCandidates).toBeUndefined();
+    expect(harness.get().l3Warnings[0].ruleName).toBe('v017_combat_candidate_blocked');
   });
 });

@@ -850,7 +850,7 @@ export const useStore = create<RootStore>()(
             incrementLoadVersion,
             // 排除存档系统方法（仅运行时功能）
             resetStore, saveToFile, loadFromFile, getSerializedState,
-            listQingmaoRegionActionEntriesAction, resolveQingmaoRegionActionAction, registerQingmaoCombatCandidateAction,
+            listQingmaoRegionActionEntriesAction, resolveQingmaoRegionActionAction, registerQingmaoCombatCandidateAction, registerV017CombatCandidateAction,
             previewWorldIntentAction, confirmWorldIntentGoalAction, resolveVisibleInvestigationAction,
             // 排除 Set 类型
             triggeredEvents,

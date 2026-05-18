@@ -1,0 +1,2096 @@
+{
+  "schema": "reborng.mirofish.v017-combat-request-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v017-low-rank-combat-encounter-pack",
+  "packageKey": "v017_low_rank_combat_encounter",
+  "title": "v0.17 Low-Rank Combat Encounter Pack",
+  "generatedAt": "2026-05-18T15:30:56.372212+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierFactsWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not runtime truth, not DeepSeek authority"
+    ]
+  },
+  "deliveryStatus": "complete_candidate",
+  "caveats": [
+    "Focused on Qingmao low-rank public combat evidence in 0001-0600.",
+    "No formal reward, drop, location, faction, NPC-life, or canon conclusion is granted."
+  ],
+  "items": [
+    {
+      "id": "v017_combat_clan_school_moonblade_drill",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "族学练习可作为低阶战斗教学候选，重点是月刃消耗、命中练习和同窗观察压力。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_9aa5c0f0858c",
+          "summary": "学堂家老布置作业：三天后检查月刃练习成果，最好成绩者奖励十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_e32455704ee2",
+          "summary": "丙等学员可能发出了月刃，引起众人关注",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0025",
+          "chapterId": "ch_0025",
+          "field": "events",
+          "itemId": "evt_d7652f077a95",
+          "summary": "学堂家老宣布开始月刃考核，要求学员五人一组使用月刃攻击三次",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_b0fe0dfa6420",
+          "summary": "方源在混乱中悄悄发出精准月刃，击中左前方草人傀儡颈部，造成显著攻击效果",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0023",
+          "chapterId": "ch_0023",
+          "field": "events",
+          "itemId": "evt_e4cfcaadc7b3",
+          "summary": "学员发现月刃消耗真元巨大，丙等修为只能连续催发三片月刃",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_8c1671e7b7c3",
+        "sp_41c8da5f590b",
+        "sp_3b8d1f27cfac",
+        "sp_262bd18391a3",
+        "sp_574d7957ed61"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0075",
+          "startOffset": 67071,
+          "endOffset": 67139,
+          "summary": "学堂家老布置作业：三天后检查月刃练习成果，最好成绩者奖励十块元石",
+          "sourcePointerId": "sp_8c1671e7b7c3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0065",
+          "startOffset": 66642,
+          "endOffset": 66674,
+          "summary": "丙等学员可能发出了月刃，引起众人关注",
+          "sourcePointerId": "sp_41c8da5f590b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0025",
+          "paragraphId": "ch_0025_p0046",
+          "startOffset": 73270,
+          "endOffset": 73333,
+          "summary": "学堂家老宣布开始月刃考核，要求学员五人一组使用月刃攻击三次",
+          "sourcePointerId": "sp_3b8d1f27cfac"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0057",
+          "startOffset": 66319,
+          "endOffset": 66370,
+          "summary": "方源在混乱中悄悄发出精准月刃，击中左前方草人傀儡颈部，造成显著攻击效果",
+          "sourcePointerId": "sp_262bd18391a3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0023",
+          "paragraphId": "ch_0023_p0079",
+          "startOffset": 67229,
+          "endOffset": 67275,
+          "summary": "学员发现月刃消耗真元巨大，丙等修为只能连续催发三片月刃",
+          "sourcePointerId": "sp_574d7957ed61"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "族学训练与考核",
+      "sceneTags": [
+        "clan_school",
+        "training",
+        "moonblade"
+      ],
+      "participantHints": [
+        "student",
+        "elder_instructor",
+        "low_rank_gu_master"
+      ],
+      "terrainHints": [
+        "courtyard",
+        "training_dummy"
+      ],
+      "pressureAxes": [
+        "reputation",
+        "resource",
+        "learning"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "pressure_update",
+        "public_consequence"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "combat_training_boundary"
+      ]
+    },
+    {
+      "id": "v017_combat_refinement_competition_pressure",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "本命蛊炼化考核能转为战斗前置压力样本，但不能变成奖励发放或正式资源结算。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "relations",
+          "itemId": "rel_5fba4bface4f",
+          "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0021",
+          "chapterId": "ch_0021",
+          "field": "entities",
+          "itemId": "entity_5b5bd6806dc9",
+          "summary": "古月家族学员，丙等资质，炼化月光蛊成为本届第一",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7138719a1356",
+        "sp_51789a502f81",
+        "sp_c6f1fd819eef"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优",
+          "sourcePointerId": "sp_51789a502f81"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0036",
+          "startOffset": 59903,
+          "endOffset": 59911,
+          "summary": "古月家族学员，丙等资质，炼化月光蛊成为本届第一",
+          "sourcePointerId": "sp_c6f1fd819eef"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "低阶修行竞争造成公开压力",
+      "sceneTags": [
+        "clan_school",
+        "resource_pressure",
+        "pre_battle"
+      ],
+      "participantHints": [
+        "student",
+        "clan_elder"
+      ],
+      "terrainHints": [
+        "clan_school",
+        "gu_room"
+      ],
+      "pressureAxes": [
+        "resource",
+        "reputation"
+      ],
+      "allowedOutcomes": [
+        "pressure_update",
+        "trace_only"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "reward_boundary"
+      ]
+    },
+    {
+      "id": "v017_combat_academy_extortion_conflict",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "学员之间的勒索与冲突可作为公开低烈度战斗理由，后果只应是压力、声誉或关系提示。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0074",
+          "chapterId": "ch_0074",
+          "field": "events",
+          "itemId": "evt_d716f9be2e73",
+          "summary": "方源打败了方正、赤城、漠北三人，但未勒索元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0028",
+          "chapterId": "ch_0028",
+          "field": "events",
+          "itemId": "evt_e16229a0b47c",
+          "summary": "方源堵住学堂大门，公然勒索同窗元石，连续击倒多名学员，包括古月漠北",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0031",
+          "chapterId": "ch_0031",
+          "field": "events",
+          "itemId": "evt_a4b83fa7d5da",
+          "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0028",
+          "chapterId": "ch_0028",
+          "field": "events",
+          "itemId": "evt_ee8ae4a5d8a4",
+          "summary": "方源在学堂大门口公然勒索其他学员元石，遭到反抗后出手击倒多人",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0029",
+          "chapterId": "ch_0029",
+          "field": "events",
+          "itemId": "evt_3baebe99d25a",
+          "summary": "方源在学堂门口袭击并勒索学员，每人收取一块元石",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_05691868046f",
+        "sp_9d00c854c8b1",
+        "sp_5c845e8d9a5f",
+        "sp_8e556be9d891",
+        "sp_a9fe218ca747"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0074",
+          "paragraphId": "ch_0074_p0002",
+          "startOffset": 226398,
+          "endOffset": 226470,
+          "summary": "方源打败了方正、赤城、漠北三人，但未勒索元石",
+          "sourcePointerId": "sp_05691868046f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0028",
+          "paragraphId": "ch_0028_p0044",
+          "startOffset": 80888,
+          "endOffset": 80911,
+          "summary": "方源堵住学堂大门，公然勒索同窗元石，连续击倒多名学员，包括古月漠北",
+          "sourcePointerId": "sp_9d00c854c8b1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0048",
+          "startOffset": 90472,
+          "endOffset": 90533,
+          "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。",
+          "sourcePointerId": "sp_5c845e8d9a5f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0028",
+          "paragraphId": "ch_0028_p0004",
+          "startOffset": 79494,
+          "endOffset": 79524,
+          "summary": "方源在学堂大门口公然勒索其他学员元石，遭到反抗后出手击倒多人",
+          "sourcePointerId": "sp_8e556be9d891"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0029",
+          "paragraphId": "ch_0029_p0039",
+          "startOffset": 83793,
+          "endOffset": 83832,
+          "summary": "方源在学堂门口袭击并勒索学员，每人收取一块元石",
+          "sourcePointerId": "sp_a9fe218ca747"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "同窗冲突、资源与面子压力",
+      "sceneTags": [
+        "clan_school",
+        "student_conflict"
+      ],
+      "participantHints": [
+        "student",
+        "low_rank_gu_master"
+      ],
+      "terrainHints": [
+        "courtyard",
+        "dormitory_or_school_path"
+      ],
+      "pressureAxes": [
+        "resource",
+        "reputation"
+      ],
+      "allowedOutcomes": [
+        "pressure_update",
+        "public_consequence",
+        "trace_only"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "npc_life_boundary"
+      ]
+    },
+    {
+      "id": "v017_combat_wild_boar_mountain_hunt",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "野外猎兽和山林遭遇可作为巡山战斗候选，重点是地形、耐力和撤退风险。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0066",
+          "chapterId": "ch_0066",
+          "field": "events",
+          "itemId": "evt_46d25f99852b",
+          "summary": "方源在野外寻找野生山猪，途中发现蜂窝和陷阱中的山猪。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0069",
+          "chapterId": "ch_0069",
+          "field": "events",
+          "itemId": "evt_f44d0dd0f673",
+          "summary": "方源命令两个年轻猎人在木屋中搜寻兽皮地图，两人翻遍木屋未找到，方源亲自搜查并最终在壁炉中发现藏有兽皮地图的竹筒。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0073",
+          "chapterId": "ch_0073",
+          "field": "events",
+          "itemId": "evt_67c96eb33f8f",
+          "summary": "方源夜间猎杀野猪，用白豕蛊映照身躯，吸收元石，用酒虫精炼，温养窍壁，天亮才睡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0073",
+          "chapterId": "ch_0073",
+          "field": "events",
+          "itemId": "evt_98f6a1bc377d",
+          "summary": "学堂家老宣布年中考核通知：三天后猎杀野猪，收集野猪牙，每颗牙换十块元石，允许团队狩猎",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0073",
+          "chapterId": "ch_0073",
+          "field": "events",
+          "itemId": "evt_c6f54cbd37a1",
+          "summary": "方源意识到年中考核内容从采集野生蜂蜜变为猎取野猪獠牙，认为是蝴蝶效应",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cd1358d58ee6",
+        "sp_45516de6852b",
+        "sp_000aa17581b8",
+        "sp_68eeb9019bc1",
+        "sp_4b7b97ba03de"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0066",
+          "paragraphId": "ch_0066_p0056",
+          "startOffset": 203439,
+          "endOffset": 203507,
+          "summary": "方源在野外寻找野生山猪，途中发现蜂窝和陷阱中的山猪。",
+          "sourcePointerId": "sp_cd1358d58ee6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0069",
+          "paragraphId": "ch_0069_p0054",
+          "startOffset": 212884,
+          "endOffset": 212922,
+          "summary": "方源命令两个年轻猎人在木屋中搜寻兽皮地图，两人翻遍木屋未找到，方源亲自搜查并最终在壁炉中发现藏有兽皮地图的竹筒。",
+          "sourcePointerId": "sp_45516de6852b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0073",
+          "paragraphId": "ch_0073_p0012",
+          "startOffset": 223641,
+          "endOffset": 223645,
+          "summary": "方源夜间猎杀野猪，用白豕蛊映照身躯，吸收元石，用酒虫精炼，温养窍壁，天亮才睡",
+          "sourcePointerId": "sp_000aa17581b8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0073",
+          "paragraphId": "ch_0073_p0028",
+          "startOffset": 224504,
+          "endOffset": 224508,
+          "summary": "学堂家老宣布年中考核通知：三天后猎杀野猪，收集野猪牙，每颗牙换十块元石，允许团队狩猎",
+          "sourcePointerId": "sp_68eeb9019bc1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0073",
+          "paragraphId": "ch_0073_p0037",
+          "startOffset": 224993,
+          "endOffset": 225048,
+          "summary": "方源意识到年中考核内容从采集野生蜂蜜变为猎取野猪獠牙，认为是蝴蝶效应",
+          "sourcePointerId": "sp_4b7b97ba03de"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "山林猎兽或巡山遭遇",
+      "sceneTags": [
+        "mountain_patrol",
+        "wild_beast"
+      ],
+      "participantHints": [
+        "low_rank_gu_master",
+        "wild_beast"
+      ],
+      "terrainHints": [
+        "dense_forest",
+        "mountain_path"
+      ],
+      "pressureAxes": [
+        "survival",
+        "resource",
+        "route_risk"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "route_risk_hint",
+        "pressure_update"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "material_drop_block"
+      ]
+    },
+    {
+      "id": "v017_combat_flower_wine_cave_risk",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "遗藏探索相关洞窟风险可作为环境战斗或撤退样本，但不得开放正式传承或地点奖励。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_600b9af6d1d4",
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_7aecdbf30678",
+          "summary": "方源考虑元石不足，但决定继续探索花酒行者遗藏，因为遗藏中可能有大量元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_9242533eb358",
+          "summary": "方源计划饭后探索花酒行者遗藏。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "events",
+          "itemId": "evt_e5491ec827ed",
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0017",
+          "chapterId": "ch_0017",
+          "field": "events",
+          "itemId": "evt_c3d3ed33d816",
+          "summary": "方源发现并独吞花酒行者的遗藏。",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d4ada8d2d0af",
+        "sp_c424d1e33aa2",
+        "sp_7382913a4c3d",
+        "sp_59e2db5ea832",
+        "sp_31507e586298"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0059",
+          "startOffset": 26540,
+          "endOffset": 26564,
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+          "sourcePointerId": "sp_d4ada8d2d0af"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0071",
+          "startOffset": 32937,
+          "endOffset": 33007,
+          "summary": "方源考虑元石不足，但决定继续探索花酒行者遗藏，因为遗藏中可能有大量元石",
+          "sourcePointerId": "sp_c424d1e33aa2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0056",
+          "startOffset": 32262,
+          "endOffset": 32324,
+          "summary": "方源计划饭后探索花酒行者遗藏。",
+          "sourcePointerId": "sp_7382913a4c3d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+          "sourcePointerId": "sp_59e2db5ea832"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0017",
+          "paragraphId": "ch_0017_p0023",
+          "startOffset": 46219,
+          "endOffset": 46320,
+          "summary": "方源发现并独吞花酒行者的遗藏。",
+          "sourcePointerId": "sp_31507e586298"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "洞窟探索与未知风险",
+      "sceneTags": [
+        "cave",
+        "route_risk",
+        "rumor"
+      ],
+      "participantHints": [
+        "low_rank_gu_master",
+        "hidden_threat"
+      ],
+      "terrainHints": [
+        "cave",
+        "narrow_path"
+      ],
+      "pressureAxes": [
+        "survival",
+        "resource"
+      ],
+      "allowedOutcomes": [
+        "route_risk_hint",
+        "trace_only"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "inheritance_unlock_block"
+      ]
+    },
+    {
+      "id": "v017_combat_monkey_cavern_swarm",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "石猴洞窟可作为群体围攻样本，允许表现包围、闪避和资源压力，不允许直接授予蛊或材料。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0116",
+          "chapterId": "ch_0116",
+          "field": "events",
+          "itemId": "evt_a8520416dd99",
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0080",
+          "chapterId": "ch_0080",
+          "field": "events",
+          "itemId": "evt_9c9c726aa067",
+          "summary": "方源尝试前进，发现接近石柱会惊动大量玉眼石猴",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0081",
+          "chapterId": "ch_0081",
+          "field": "events",
+          "itemId": "evt_224f0a47244a",
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0101",
+          "chapterId": "ch_0101",
+          "field": "events",
+          "itemId": "evt_3970a3382683",
+          "summary": "方源在地下石林中斩杀玉眼石猴，获取玉石眼球",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0115",
+          "chapterId": "ch_0115",
+          "field": "events",
+          "itemId": "evt_5efb9710d57b",
+          "summary": "方源剿灭了最后一根石柱以外的所有猴群",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_281012fe7df2",
+        "sp_9c6182d7d251",
+        "sp_f3a02222890f",
+        "sp_cdd5420a9490",
+        "sp_778064cdb8d3"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "sourcePointerId": "sp_281012fe7df2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0080",
+          "paragraphId": "ch_0080_p0076",
+          "startOffset": 249856,
+          "endOffset": 249858,
+          "summary": "方源尝试前进，发现接近石柱会惊动大量玉眼石猴",
+          "sourcePointerId": "sp_9c6182d7d251"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0061",
+          "startOffset": 252272,
+          "endOffset": 252341,
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+          "sourcePointerId": "sp_f3a02222890f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0101",
+          "paragraphId": "ch_0101_p0042",
+          "startOffset": 317129,
+          "endOffset": 317168,
+          "summary": "方源在地下石林中斩杀玉眼石猴，获取玉石眼球",
+          "sourcePointerId": "sp_cdd5420a9490"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0115",
+          "paragraphId": "ch_0115_p0066",
+          "startOffset": 370091,
+          "endOffset": 370093,
+          "summary": "方源剿灭了最后一根石柱以外的所有猴群",
+          "sourcePointerId": "sp_778064cdb8d3"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "洞窟兽群警戒与围攻",
+      "sceneTags": [
+        "wild_beast",
+        "cave",
+        "swarm"
+      ],
+      "participantHints": [
+        "low_rank_gu_master",
+        "beast_swarm"
+      ],
+      "terrainHints": [
+        "stone_forest",
+        "cave"
+      ],
+      "pressureAxes": [
+        "survival",
+        "resource"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "pressure_update",
+        "route_risk_hint"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "gu_grant_block"
+      ]
+    },
+    {
+      "id": "v017_combat_bai_ning_bing_duel_pressure",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "白凝冰相关交战可作为强敌压力样本，重点是属性压制、撤退判断和风险提示。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_2b243d7006a2",
+          "summary": "白凝冰与方源再次战斗，白凝冰攻击方源",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0170",
+          "chapterId": "ch_0170",
+          "field": "events",
+          "itemId": "evt_27a12afb278e",
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0168",
+          "chapterId": "ch_0168",
+          "field": "relations",
+          "itemId": "rel_f6abdd2aee3c",
+          "summary": "方源与白凝冰正在战斗，白凝冰使用冰刃风暴追击方源",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0135",
+          "chapterId": "ch_0135",
+          "field": "events",
+          "itemId": "evt_1b62af062c47",
+          "summary": "白凝冰压制修为至二转，与方源在狼群中追逐战斗",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f95d1136a107",
+        "sp_3a38a6c98c2f",
+        "sp_1cafb8c1276c",
+        "sp_ac744a65ef25",
+        "sp_ae658f483e44"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0004",
+          "startOffset": 554450,
+          "endOffset": 554486,
+          "summary": "白凝冰与方源再次战斗，白凝冰攻击方源",
+          "sourcePointerId": "sp_f95d1136a107"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0170",
+          "paragraphId": "ch_0170_p0082",
+          "startOffset": 568080,
+          "endOffset": 568084,
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "sourcePointerId": "sp_1cafb8c1276c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0002",
+          "startOffset": 557956,
+          "endOffset": 557959,
+          "summary": "方源与白凝冰正在战斗，白凝冰使用冰刃风暴追击方源",
+          "sourcePointerId": "sp_ac744a65ef25"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0135",
+          "paragraphId": "ch_0135_p0002",
+          "startOffset": 440278,
+          "endOffset": 440336,
+          "summary": "白凝冰压制修为至二转，与方源在狼群中追逐战斗",
+          "sourcePointerId": "sp_ae658f483e44"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "三寨摩擦中的强敌遭遇",
+      "sceneTags": [
+        "three_clan_pressure",
+        "duel",
+        "ice"
+      ],
+      "participantHints": [
+        "low_rank_gu_master",
+        "rival_clan_elite"
+      ],
+      "terrainHints": [
+        "forest",
+        "mountain_path"
+      ],
+      "pressureAxes": [
+        "survival",
+        "reputation",
+        "canon_anchor_pressure"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "pressure_update",
+        "route_risk_hint"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "canon_anchor_pressure"
+      ]
+    },
+    {
+      "id": "v017_combat_qing_shu_forest_duel",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "青书与白凝冰的森林缠斗可支持属性对抗、掩护和战场压力，不给 NPC 生死结论。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0143",
+          "chapterId": "ch_0143",
+          "field": "events",
+          "itemId": "evt_c20b7524206f",
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_5b4fbcc00cec",
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0141",
+          "chapterId": "ch_0141",
+          "field": "events",
+          "itemId": "evt_65e69caea238",
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_b0654d6e54a4",
+          "summary": "古月青书与白凝冰的战斗进入僵持阶段，双方都无法收手，冰刃风暴被古月青书的力量压缩。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_bf71e6eae8b1",
+          "summary": "古月青书使用木魅蛊变成树精，与白凝冰激战，白凝冰使用蓝鸟冰棺蛊将古月青书冻住，但古月青书在冰晶中发生异变",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_98d16e9ac9c6",
+        "sp_1830a49f25f1",
+        "sp_76542326d1fe",
+        "sp_03ef7a85d744",
+        "sp_9efcb7f5d6c2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0143",
+          "paragraphId": "ch_0143_p0010",
+          "startOffset": 469010,
+          "endOffset": 469030,
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "sourcePointerId": "sp_98d16e9ac9c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0095",
+          "startOffset": 468388,
+          "endOffset": 468392,
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "sourcePointerId": "sp_1830a49f25f1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0141",
+          "paragraphId": "ch_0141_p0081",
+          "startOffset": 464739,
+          "endOffset": 464774,
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "sourcePointerId": "sp_76542326d1fe"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0097",
+          "startOffset": 468463,
+          "endOffset": 468480,
+          "summary": "古月青书与白凝冰的战斗进入僵持阶段，双方都无法收手，冰刃风暴被古月青书的力量压缩。",
+          "sourcePointerId": "sp_03ef7a85d744"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0057",
+          "startOffset": 467008,
+          "endOffset": 467034,
+          "summary": "古月青书使用木魅蛊变成树精，与白凝冰激战，白凝冰使用蓝鸟冰棺蛊将古月青书冻住，但古月青书在冰晶中发生异变",
+          "sourcePointerId": "sp_9efcb7f5d6c2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "森林遭遇与同族掩护压力",
+      "sceneTags": [
+        "forest",
+        "duel",
+        "wood_vs_ice"
+      ],
+      "participantHints": [
+        "low_rank_gu_master",
+        "rival_clan_elite"
+      ],
+      "terrainHints": [
+        "dense_forest",
+        "vine_cover"
+      ],
+      "pressureAxes": [
+        "survival",
+        "reputation"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "pressure_update",
+        "public_consequence"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "npc_life_boundary"
+      ]
+    },
+    {
+      "id": "v017_combat_wolf_tide_village_defense",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "狼潮和山寨防线适合做群战压力样本，后果仅作为压力和路线风险，不直接结算胜败。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0147",
+          "chapterId": "ch_0147",
+          "field": "events",
+          "itemId": "evt_6a686c4bced3",
+          "summary": "电狼潮汹涌而来，蛊师们节节败退",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0150",
+          "chapterId": "ch_0150",
+          "field": "events",
+          "itemId": "evt_2870d25ef499",
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0150",
+          "chapterId": "ch_0150",
+          "field": "events",
+          "itemId": "evt_a04f7330eb8f",
+          "summary": "狼潮袭寨，方源参战五次，电狼群数量不减反增，预计持续到夜里",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0160",
+          "chapterId": "ch_0160",
+          "field": "events",
+          "itemId": "evt_51ab4d2939cc",
+          "summary": "狼潮冲击古月山寨，蛊师与电狼群激战",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "events",
+          "itemId": "evt_1a51f1fc1a49",
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_654207d58a20",
+        "sp_37f512c17ff5",
+        "sp_f3337366655e",
+        "sp_7b790bf061fd",
+        "sp_50124a1c0532"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0147",
+          "paragraphId": "ch_0147_p0060",
+          "startOffset": 485188,
+          "endOffset": 485207,
+          "summary": "电狼潮汹涌而来，蛊师们节节败退",
+          "sourcePointerId": "sp_654207d58a20"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0150",
+          "paragraphId": "ch_0150_p0041",
+          "startOffset": 494799,
+          "endOffset": 494801,
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "sourcePointerId": "sp_37f512c17ff5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0150",
+          "paragraphId": "ch_0150_p0099",
+          "startOffset": 496734,
+          "endOffset": 496793,
+          "summary": "狼潮袭寨，方源参战五次，电狼群数量不减反增，预计持续到夜里",
+          "sourcePointerId": "sp_f3337366655e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0160",
+          "paragraphId": "ch_0160_p0025",
+          "startOffset": 530164,
+          "endOffset": 530254,
+          "summary": "狼潮冲击古月山寨，蛊师与电狼群激战",
+          "sourcePointerId": "sp_7b790bf061fd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0083",
+          "startOffset": 547097,
+          "endOffset": 547156,
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "sourcePointerId": "sp_50124a1c0532"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "兽潮逼近山寨",
+      "sceneTags": [
+        "wild_beast",
+        "village_defense",
+        "crowd_battle"
+      ],
+      "participantHints": [
+        "patrol",
+        "clan_defender",
+        "beast"
+      ],
+      "terrainHints": [
+        "village_gate",
+        "mountain_slope"
+      ],
+      "pressureAxes": [
+        "survival",
+        "route_risk",
+        "reputation"
+      ],
+      "allowedOutcomes": [
+        "pressure_update",
+        "route_risk_hint",
+        "public_consequence"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "canon_anchor_pressure"
+      ]
+    },
+    {
+      "id": "v017_combat_three_clan_tournament_pressure",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "三族比武可作为公开竞争和声誉压力样本，不能写成阵营转换、永久重伤或正式奖励。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0179",
+          "chapterId": "ch_0179",
+          "field": "events",
+          "itemId": "evt_80926d13ab2e",
+          "summary": "白家族长告知白凝冰三族协商结果：举办三族大比武，三十岁以下蛊师参加，以此判定赔偿方案",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0180",
+          "chapterId": "ch_0180",
+          "field": "events",
+          "itemId": "evt_409ff5b9cd09",
+          "summary": "三族因狼潮利益分配问题僵持，决定举办三族大比武",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_be04a26c1ae0",
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0179",
+          "chapterId": "ch_0179",
+          "field": "relations",
+          "itemId": "rel_6289b860df2e",
+          "summary": "白家族长提出三族大比武以压榨白凝冰价值，白凝冰真心感谢",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0180",
+          "chapterId": "ch_0180",
+          "field": "relations",
+          "itemId": "rel_f059a92b4a9a",
+          "summary": "青茅山三家僵持不下，将举办三族大比武",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_1950620882d2",
+        "sp_c45ccb1fbdd6",
+        "sp_2127da087169",
+        "sp_275c01ceb4f9"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0179",
+          "paragraphId": "ch_0179_p0088",
+          "startOffset": 600000,
+          "endOffset": 600082,
+          "summary": "白家族长告知白凝冰三族协商结果：举办三族大比武，三十岁以下蛊师参加，以此判定赔偿方案",
+          "sourcePointerId": "sp_1950620882d2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0180",
+          "paragraphId": "ch_0180_p0070",
+          "startOffset": 603116,
+          "endOffset": 603119,
+          "summary": "三族因狼潮利益分配问题僵持，决定举办三族大比武",
+          "sourcePointerId": "sp_c45ccb1fbdd6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0042",
+          "startOffset": 640967,
+          "endOffset": 640986,
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "sourcePointerId": "sp_2127da087169"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0179",
+          "paragraphId": "ch_0179_p0090",
+          "startOffset": 600147,
+          "endOffset": 600198,
+          "summary": "白家族长提出三族大比武以压榨白凝冰价值，白凝冰真心感谢",
+          "sourcePointerId": "sp_275c01ceb4f9"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "三族公开比斗和摩擦",
+      "sceneTags": [
+        "three_clan_pressure",
+        "tournament",
+        "public_combat"
+      ],
+      "participantHints": [
+        "clan_youth",
+        "elder_observer",
+        "rival_clan"
+      ],
+      "terrainHints": [
+        "arena",
+        "public_ground"
+      ],
+      "pressureAxes": [
+        "reputation",
+        "survival",
+        "canon_anchor_pressure"
+      ],
+      "allowedOutcomes": [
+        "pressure_update",
+        "public_consequence",
+        "trace_only"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "faction_transfer_block"
+      ]
+    },
+    {
+      "id": "v017_combat_xiong_li_squad_pressure",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "熊力小组与白凝冰冲突可做小队遭遇样本，重点是协作、包围压力和撤退风险。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0136",
+          "chapterId": "ch_0136",
+          "field": "events",
+          "itemId": "evt_310e33d5551e",
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0136",
+          "chapterId": "ch_0136",
+          "field": "events",
+          "itemId": "evt_46d30608ba78",
+          "summary": "白凝冰与熊力小组交战，白凝冰斩杀豪电狼和治疗蛊师，右臂骨折，但仍占据上风",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0137",
+          "chapterId": "ch_0137",
+          "field": "events",
+          "itemId": "evt_197426ec5cef",
+          "summary": "熊力小组与白凝冰激战，白凝冰压制熊力等人，但未全力以赴",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_e8cc17c82ce0",
+        "sp_42a8eb953a29",
+        "sp_0e302d52270a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0136",
+          "paragraphId": "ch_0136_p0014",
+          "startOffset": 444208,
+          "endOffset": 444224,
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "sourcePointerId": "sp_e8cc17c82ce0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0136",
+          "paragraphId": "ch_0136_p0066",
+          "startOffset": 446873,
+          "endOffset": 446876,
+          "summary": "白凝冰与熊力小组交战，白凝冰斩杀豪电狼和治疗蛊师，右臂骨折，但仍占据上风",
+          "sourcePointerId": "sp_42a8eb953a29"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0137",
+          "paragraphId": "ch_0137_p0003",
+          "startOffset": 447582,
+          "endOffset": 447590,
+          "summary": "熊力小组与白凝冰激战，白凝冰压制熊力等人，但未全力以赴",
+          "sourcePointerId": "sp_0e302d52270a"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "小队遭遇强敌与兽群压力",
+      "sceneTags": [
+        "squad",
+        "three_clan_pressure",
+        "wild_beast"
+      ],
+      "participantHints": [
+        "squad",
+        "rival_clan_elite",
+        "beast"
+      ],
+      "terrainHints": [
+        "forest",
+        "wolf_pressure"
+      ],
+      "pressureAxes": [
+        "survival",
+        "reputation"
+      ],
+      "allowedOutcomes": [
+        "trace_only",
+        "pressure_update",
+        "route_risk_hint"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "npc_life_boundary"
+      ]
+    },
+    {
+      "id": "v017_combat_blood_lake_public_boundary",
+      "category": "low_rank_combat_encounter_candidate",
+      "summary": "血湖战场只可作为公开可见混战和危险压力样本，隐藏身份与结论必须隔离。",
+      "confidence": "medium",
+      "visibility": "public_or_public_adjacent",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0186",
+          "chapterId": "ch_0186",
+          "field": "events",
+          "itemId": "evt_1e8e93f39b7c",
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_48def73b2240",
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_937f149775c2",
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0186",
+          "chapterId": "ch_0186",
+          "field": "events",
+          "itemId": "evt_572b3599924f",
+          "summary": "古月一代从血湖中央的漩涡中，以大红棺材形式出现，是一具干尸飞僵",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_ce65256e2dbd",
+        "sp_335dc65714e7",
+        "sp_4d11f42fbb58",
+        "sp_d5d50bd45a5e"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0079",
+          "startOffset": 624871,
+          "endOffset": 624874,
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "sourcePointerId": "sp_ce65256e2dbd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0054",
+          "startOffset": 620759,
+          "endOffset": 620798,
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "sourcePointerId": "sp_335dc65714e7"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0088",
+          "startOffset": 621970,
+          "endOffset": 621996,
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "sourcePointerId": "sp_4d11f42fbb58"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0090",
+          "startOffset": 625188,
+          "endOffset": 625190,
+          "summary": "古月一代从血湖中央的漩涡中，以大红棺材形式出现，是一具干尸飞僵",
+          "sourcePointerId": "sp_d5d50bd45a5e"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "v017-combat-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "low_rank_combat_encounter_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_drop",
+          "direct_gu_grant",
+          "direct_material_grant",
+          "direct_recipe_grant",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "canon_rewrite",
+          "hidden_fact_body"
+        ]
+      },
+      "publicCombatReason": "山寨危机中的公开混战压力",
+      "sceneTags": [
+        "village_crisis",
+        "public_combat",
+        "danger_zone"
+      ],
+      "participantHints": [
+        "clan_defender",
+        "outsider_investigator",
+        "threat"
+      ],
+      "terrainHints": [
+        "underground_lake",
+        "village_crisis"
+      ],
+      "pressureAxes": [
+        "survival",
+        "canon_anchor_pressure"
+      ],
+      "allowedOutcomes": [
+        "pressure_update",
+        "public_consequence",
+        "trace_only"
+      ],
+      "blockedOutcomes": [
+        "reward_grant",
+        "gu_grant",
+        "material_drop",
+        "location_unlock",
+        "npc_death",
+        "npc_capture",
+        "permanent_injury",
+        "faction_transfer",
+        "canon_rewrite"
+      ],
+      "riskTags": [
+        "hidden_identity_boundary"
+      ]
+    }
+  ],
+  "coverage": {
+    "itemCount": 12,
+    "sourcePointerCount": 54,
+    "categoryCounts": {
+      "low_rank_combat_encounter_candidate": 12
+    }
+  }
+}
