@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v0.15.0-b4` 本地质量门已通过，待提交推送与远端 CI。
+`v0.15.0-b4` 已完成并推送，远端 CI 通过。
 
 本阶段新增 `qingmao_gray_trade_boundary_probe`，把黑市传闻、委托代售、假货、陷阱、势力关注、身份洗白和稳定套利等高风险内容转写成延期边界样本。它让玩家看见“后面可以往这条线探索”，但不开放正式黑市、委托收益、库存价格或交易结算。
 
@@ -99,13 +99,13 @@ npm run check:production-preview
 ## Git 状态
 
 - 当前分支：`codex/v013-npc-faction-reaction`
-- 本阶段提交：待提交。
-- 推送状态：待推送。
-- 远端 CI：待推送后确认。
+- 本阶段提交：`9872c28 feat: 接入v0.15灰色交易边界样板`。
+- 推送状态：已推送到 `origin/codex/v013-npc-faction-reaction`。
+- 远端 CI：GitHub Actions run `26027822854` 通过。
 - 不要 stage unrelated dirty/untracked files，例如 `doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`指导大纲/vMiroFish/README.md`、`指导大纲/vMiroFish/requests/README.md`、`.cursor/`、`bgm/`、`artifacts/`、美术候选图和 `指导大纲/大方向/`。
 
 ## 下一步
 
-先提交并推送 b4，确认 GitHub Actions 通过。通过后进入 `v0.15.0-rc` 质量收束。
+下一步进入 `v0.15.0-rc` 质量收束。
 
 rc 仍不得开放正式材料/元石/库存消耗、完整市场/黑市/委托系统、新存档字段、地点/阵营/NPC 生死结果或 DeepSeek 新权限，除非用户重新决策。
