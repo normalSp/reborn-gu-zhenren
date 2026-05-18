@@ -1,7 +1,7 @@
 # RebornG v0.17.0 Codex 当前入口
 
 日期：2026-05-18
-状态：本地开发里程碑已完成，Git/远端 CI 收束中
+状态：本地开发里程碑已完成，Git/远端 CI 已通过
 主题：`战斗、杀招、小队与阵法深化`
 
 ## 定位
@@ -39,7 +39,7 @@
 | b2 | 低阶战斗轨迹与后果回流第一刀 | 是 | 已完成 |
 | b3 | 杀招/蛊虫反制与风险显示第一刀 | 是 | 已完成 |
 | b4 | 小队/阵法/撤退/追击第一刀 | 是 | 已完成 |
-| rc | 全量质量收束与 Player Advocate | 是 | 本地已完成，远端 CI 收束中 |
+| rc | 全量质量收束与 Player Advocate | 是 | 已完成，远端 CI 通过 |
 
 ## 明确非目标
 
@@ -68,6 +68,7 @@
 - MiroFish v0.17 三包 intake review 已通过，不需要追加包。
 - focused tests、`tsc`、v0.17 e2e、全量 `npm test`、build、runtime/Qingmao/player-visible-copy scans、full e2e、long e2e、production-preview smoke 均通过。
 - b1/b2/b3/b4 Player Advocate 20 轮均通过；rc 60 轮通过，下一步理解率 93.3%，P0/P1 阻断 0。
+- implementation commit `005c1da` 已推送；GitHub Actions run `26046493464` 通过。
 
 ## 用户决策记录
 
