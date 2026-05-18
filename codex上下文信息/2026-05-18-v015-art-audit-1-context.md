@@ -52,8 +52,8 @@ npm run check:runtime-assets
 ## Git 与推送
 
 - 资源/manifest/专项文档提交：`37ad706 docs: 收束v0.15美术资源治理专项`
-- 状态交接提交：待本文件提交后生成
-- 推送：待状态交接提交后一起推送
+- 状态交接提交：`687ac63 docs: 记录v0.15美术治理交接`
+- 推送：已推送到 `origin/codex/v013-npc-faction-reaction`
 
 ## 下一阶段入口
 
