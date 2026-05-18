@@ -1,7 +1,7 @@
 # RebornG v0.15.0 Codex 当前入口
 
 日期：2026-05-18
-状态：`v0.15-b1` 本地完成，补给/喂养缺口行动样板已通过质量门
+状态：`v0.15-b1` 完成，补给/喂养缺口行动样板已通过本地质量门和远端 CI
 主题：`低阶蛊师经济、补给、炼养用深循环`
 
 ## 定位
@@ -94,7 +94,7 @@ v0.15 三个 request 已交付并通过 intake review：
 - `v0.15.0-a2` 候选规则池与 schema 第一刀已完成：24 条当前候选规则、10 条灰色交易延期边界、只读 helper、focused tests、TypeScript、full unit 和 build 通过。
 - 项目美术资源盘点第二版已完成：全项目 445 个媒体文件，334 个图片/视觉文件，110 个音频文件，1 个视频文件；`doc/art/` 66 张图已纳入统计。
 - `v0.15-art-audit-1` 第一刀已完成：用户批准的 3 张战斗候选已复制到 `public/rebrng/scenes/s0-qingmao/` 稳定路径；`public/rebrng/scenes/s0-qingmao/` 现有三张 PNG 纳入 `review-only` 治理；9 张青茅场景 SVG 补登记为 `candidate`；v1.0 hero 三件套已复制到 `public/rebrng/release/v1-hero/`，但尚未绑定 UI/EdgeOne/OG meta。
-- `v0.15.0-b1` 补给/喂养缺口行动样板已完成：新增 `qingmao_supply_feeding_preparation_probe`，将离山补给、落脚遮掩、酒虫食料压力写入既有 `livingWorldState` 和本地行动账本；不发材料、不扣元石、不开放市场、不判定离山成功、不新增存档字段、不扩张 DeepSeek 权限。
+- `v0.15.0-b1` 补给/喂养缺口行动样板已完成并推送：新增 `qingmao_supply_feeding_preparation_probe`，将离山补给、落脚遮掩、酒虫食料压力写入既有 `livingWorldState` 和本地行动账本；不发材料、不扣元石、不开放市场、不判定离山成功、不新增存档字段、不扩张 DeepSeek 权限；commit `8ec823c`，GitHub Actions run `26019950577` 通过。
 
 下一步建议：
 

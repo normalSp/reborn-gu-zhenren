@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v0.15.0-b1` 本地完成，待提交、推送和远端 CI 反馈。
+`v0.15.0-b1` 完成，已提交、推送，远端 CI 通过。
 
 本阶段新增 `qingmao_supply_feeding_preparation_probe`，把离山补给、落脚遮掩、酒虫食料压力整理为本地前置行动。
 
@@ -72,13 +72,13 @@ npm run check:production-preview
 ## Git 状态
 
 - 当前分支：`codex/v013-npc-faction-reaction`
-- 本阶段建议提交：`feat: 接入v0.15补给喂养行动样板`
+- 本阶段提交：`8ec823c feat: 接入v0.15补给喂养行动样板`
+- 推送状态：已推送到 `origin/codex/v013-npc-faction-reaction`
+- 远端 CI：GitHub Actions run `26019950577` 通过
 - 不要 stage unrelated dirty/untracked files，例如 `doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`指导大纲/vMiroFish/README.md`、`指导大纲/vMiroFish/requests/README.md`、`.cursor/`、`bgm/`、`artifacts/`、美术候选图和 `指导大纲/大方向/`。
 
 ## 下一步
 
-提交并推送 b1 后，等待 GitHub Actions 反馈。
-
-若远端 CI 通过，可进入 `v0.15.0-b2 炼蛊/残方/失败代价第一刀`。
+可进入 `v0.15.0-b2 炼蛊/残方/失败代价第一刀`。
 
 b2 必须继续停在保守边界内：不消耗库存、不解锁完整蛊方、不判定炼蛊成功、不新增存档字段、不扩张 DeepSeek 权限，除非用户明确批准。
