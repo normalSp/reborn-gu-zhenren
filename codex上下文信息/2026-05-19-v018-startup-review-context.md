@@ -76,4 +76,7 @@
 
 - 开始时分支：`codex/v013-npc-faction-reaction`。
 - 工作区存在美术资产相关历史脏文件与未跟踪文件，本轮不得 stage。
-- 本轮计划只 stage v0.18 文档、MiroFish v0.18 request、仪表盘、AGENTS、PROJECT-STATE 和本交接文件。
+- 本轮只 stage 了 v0.18 文档、MiroFish v0.18 request、仪表盘、AGENTS、PROJECT-STATE 和本交接文件。
+- 启动审查提交：`b8bf4f8 docs: 建立v0.18路线承接启动审查`。
+- 已推送到 `origin/codex/v013-npc-faction-reaction`。
+- GitHub Actions：`26048159455` 通过 deterministic quality gate。
