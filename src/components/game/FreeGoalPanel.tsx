@@ -712,6 +712,45 @@ function MarketWindowPanel({
   );
 }
 
+function GrayTradeBoundaryPanel({
+  canExecute,
+  onExecute,
+}: {
+  canExecute: boolean;
+  onExecute: () => void;
+}) {
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-red-300/16 bg-rg-ink-900/38 p-3"
+      data-testid="free-goal-gray-trade-boundary-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">灰色交易/委托边界</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            试探黑市传闻、委托和代售风险，只形成延期边界样本。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/20 px-2 py-1 text-[10px] text-rg-paper-200/55">
+          v0.15-b4
+        </span>
+      </div>
+      <div className="rounded-sm border border-red-300/10 bg-red-400/5 p-3 text-xs leading-relaxed text-rg-paper-200/62">
+        不开黑市 · 不开委托收益 · 不写库存价格 · 不结算买卖
+      </div>
+      <button
+        type="button"
+        onClick={onExecute}
+        disabled={!canExecute}
+        className="rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+        data-testid="free-goal-gray-trade-boundary"
+      >
+        试探边界
+      </button>
+    </section>
+  );
+}
+
 function FactionGoalPrerequisiteCard({ card }: { card: QingmaoFactionGoalPrerequisiteCard }) {
   return (
     <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/35 p-3">
@@ -938,6 +977,7 @@ export function FreeGoalPanel() {
     resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoRefinementBoundaryAction,
     resolveQingmaoMarketWindowAction,
+    resolveQingmaoGrayTradeBoundaryAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -956,6 +996,7 @@ export function FreeGoalPanel() {
     resolveQingmaoSupplyFeedingPreparationAction: state.resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoRefinementBoundaryAction: state.resolveQingmaoRefinementBoundaryAction,
     resolveQingmaoMarketWindowAction: state.resolveQingmaoMarketWindowAction,
+    resolveQingmaoGrayTradeBoundaryAction: state.resolveQingmaoGrayTradeBoundaryAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -1048,6 +1089,14 @@ export function FreeGoalPanel() {
       )),
     );
   }, [livingWorldState]);
+  const canRunGrayTradeBoundary = useMemo(() => {
+    const facts = livingWorldState?.knownFacts || {};
+    const consequences = livingWorldState?.actionConsequences || [];
+    return Boolean(
+      facts.qingmao_market_window_candidate_baseline
+      || consequences.some(entry => entry.actionId === 'qingmao_market_window_probe'),
+    );
+  }, [livingWorldState]);
 
   const handlePreview = () => {
     const result = previewWorldIntentAction(rawText);
@@ -1109,6 +1158,11 @@ export function FreeGoalPanel() {
 
   const handleMarketWindow = () => {
     const result = resolveQingmaoMarketWindowAction();
+    setMessage(result.message);
+  };
+
+  const handleGrayTradeBoundary = () => {
+    const result = resolveQingmaoGrayTradeBoundaryAction();
     setMessage(result.message);
   };
 
@@ -1264,6 +1318,11 @@ export function FreeGoalPanel() {
       <MarketWindowPanel
         canExecute={canRunMarketWindow}
         onExecute={handleMarketWindow}
+      />
+
+      <GrayTradeBoundaryPanel
+        canExecute={canRunGrayTradeBoundary}
+        onExecute={handleGrayTradeBoundary}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

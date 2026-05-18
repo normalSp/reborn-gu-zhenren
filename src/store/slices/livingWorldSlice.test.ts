@@ -842,4 +842,95 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       ]),
     }));
   });
+
+  it('commits Qingmao gray-trade boundary as deferred risk state without black-market or commission systems', () => {
+    const harness = createHarness({
+      turn: 101,
+      materialBag: {
+        '月华草': 1,
+      },
+    });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山，先找商队问价，再打听灰色委托风险').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+    harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+    harness.get().resolveQingmaoSupplyFeedingPreparationAction();
+    harness.get().resolveQingmaoRefinementBoundaryAction();
+    harness.get().resolveQingmaoMarketWindowAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const beforeFaction = harness.get().currentFaction;
+    const beforeFactionPressureIds = Object.keys(harness.get().livingWorldState.factionPressure || {});
+    const result = harness.get().resolveQingmaoGrayTradeBoundaryAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(result.applied).toEqual(expect.arrayContaining([
+      'knownFact:qingmao_gray_trade_commission_boundary_baseline',
+      'npcMemory:npc_memory_qingmao_gray_trade_boundary_rumor_listener',
+      expect.stringMatching(/^playerGoal:/),
+      'actionConsequence:consequence_qingmao_gray_trade_boundary_probe',
+      'worldClock',
+    ]));
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_gray_trade_commission_boundary_baseline: expect.objectContaining({
+        summary: expect.stringContaining('没有正式黑市、委托收益、库存、价格、元石变化、交易成功或地点开放'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.playerGoals[0].nextStepHints).toEqual(expect.arrayContaining([
+      'gray_trade:deferred_gray_commission_candidate_outer_broker',
+      'gray_trade:deferred_gray_fraud_fake_goods_risk',
+    ]));
+    expect(harness.get().livingWorldState.playerGoals[0].blockedByRefIds).toEqual(expect.arrayContaining([
+      'gate:no_formal_black_market',
+      'gate:no_commission_profit',
+      'gate:no_gray_trade_inventory',
+      'gate:no_formal_task',
+      'gate:no_currency_delta',
+      'risk:fraud_or_trap_unresolved',
+      'risk:identity_wash_blocked',
+    ]));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain('qingmao_gray_trade_boundary_probe');
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_gray_trade_boundary',
+      actionId: 'qingmao_gray_trade_boundary_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(Object.keys(harness.get().livingWorldState.factionPressure || {})).toEqual(beforeFactionPressureIds);
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect(harness.get().currentFaction).toBe(beforeFaction);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('black_market_opened');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('commission_profit_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('gray_trade_inventory_opened');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('currency_delta_applied');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('npc_capture_resolved');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      rewardPolicy: 'none',
+      boundaryRuleIds: expect.arrayContaining([
+        'deferred_gray_commission_candidate_outer_broker',
+        'deferred_gray_fraud_fake_goods_risk',
+        'deferred_forbidden_reward_boundary',
+      ]),
+      forbiddenUpgrades: expect.arrayContaining([
+        'formal_black_market',
+        'black_market_trade',
+        'commission_profit',
+        'gray_trade_inventory',
+        'currency_delta',
+        'deepseek_authority_expansion',
+        'save_format_bump',
+      ]),
+    }));
+  });
 });
