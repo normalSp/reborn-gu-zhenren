@@ -1,0 +1,113 @@
+{
+  "requestId": "mirofish-request-2026-05-18-v015-low-rank-black-market-commission-boundary-pack",
+  "generatedAt": "2026-05-18T03:32:46.929820+00:00",
+  "suggestedOutputName": "v015_low_rank_black_market_commission_boundary_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "summary": {
+    "totalItems": 10,
+    "byCategory": {
+      "anti_farm_rule": 2,
+      "commission_candidate": 2,
+      "faction_attention_trigger": 1,
+      "forbidden_reward_boundary": 1,
+      "fraud_or_trap_risk": 2,
+      "gray_trade_risk": 1,
+      "rumor_only_trade": 1
+    },
+    "byReviewStatus": {
+      "export_ready": 10
+    },
+    "sourcePointers": 9,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "gray_trade_risk": 9,
+      "commission_candidate": 6,
+      "fraud_or_trap_risk": 2,
+      "faction_attention_trigger": 4,
+      "forbidden_reward_boundary": 4,
+      "anti_farm_rule": 4
+    },
+    "itemCategories": {
+      "anti_farm_rule": 2,
+      "commission_candidate": 2,
+      "faction_attention_trigger": 1,
+      "forbidden_reward_boundary": 1,
+      "fraud_or_trap_risk": 2,
+      "gray_trade_risk": 1,
+      "rumor_only_trade": 1
+    },
+    "chapterCoverage": {
+      "ch_0010": 1,
+      "ch_0012": 1,
+      "ch_0013": 1,
+      "ch_0043": 1,
+      "ch_0046": 1,
+      "ch_0124": 2,
+      "ch_0171": 1,
+      "ch_0231": 1,
+      "ch_0311": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 10,
+      "category": 10,
+      "summary": 10,
+      "playerVisibility": 10,
+      "confidence": 10,
+      "sourcePointers": 10,
+      "reviewStatus": 10,
+      "reborngGate": 10
+    },
+    "exactTermSignals": {
+      "黑市": 0,
+      "委托": 12,
+      "诈骗": 1,
+      "设局": 6,
+      "陷害": 26,
+      "压价": 12,
+      "盘问": 1,
+      "生机叶": 31,
+      "秘方": 67
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 黑市 is absent in 0001-0600; delivered as gray-trade and commission boundary candidates"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "hiddenFactItemCount": 0,
+    "itemsWithSourcePointers": 10,
+    "itemsRequiringHumanCanonReview": 10,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "conditional_complete_candidate",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates.",
+      "RebornG must run intake review before absorbing any item into local rules, canon data, or tests."
+    ]
+  }
+}

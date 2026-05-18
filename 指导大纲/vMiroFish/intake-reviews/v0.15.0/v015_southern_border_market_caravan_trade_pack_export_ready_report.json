@@ -1,0 +1,120 @@
+{
+  "requestId": "mirofish-request-2026-05-18-v015-southern-border-market-caravan-trade-pack",
+  "generatedAt": "2026-05-18T03:32:45.989849+00:00",
+  "suggestedOutputName": "v015_southern_border_market_caravan_trade_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "summary": {
+    "totalItems": 11,
+    "byCategory": {
+      "caravan_contact_window": 1,
+      "faction_attention_trigger": 3,
+      "market_window": 1,
+      "price_pressure_hint": 1,
+      "public_reason_requirement": 1,
+      "risk_factor": 1,
+      "social_cover_requirement": 1,
+      "supply_preparation": 1,
+      "trade_requirement": 1
+    },
+    "byReviewStatus": {
+      "export_ready": 11
+    },
+    "sourcePointers": 10,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_contact": 9,
+      "supply_preparation": 3,
+      "market_window": 5,
+      "public_reason": 3,
+      "guarantee_boundary": 2,
+      "price_pressure_hint": 2,
+      "risk_factor": 2,
+      "faction_attention_trigger": 4
+    },
+    "itemCategories": {
+      "caravan_contact_window": 1,
+      "faction_attention_trigger": 3,
+      "market_window": 1,
+      "price_pressure_hint": 1,
+      "public_reason_requirement": 1,
+      "risk_factor": 1,
+      "social_cover_requirement": 1,
+      "supply_preparation": 1,
+      "trade_requirement": 1
+    },
+    "chapterCoverage": {
+      "ch_0024": 2,
+      "ch_0040": 2,
+      "ch_0043": 1,
+      "ch_0046": 1,
+      "ch_0092": 1,
+      "ch_0180": 1,
+      "ch_0231": 1,
+      "ch_0234": 1,
+      "ch_0305": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 11,
+      "category": 11,
+      "summary": 11,
+      "playerVisibility": 11,
+      "confidence": 11,
+      "sourcePointers": 11,
+      "reviewStatus": 11,
+      "reborngGate": 11
+    },
+    "exactTermSignals": {
+      "商队": 219,
+      "坊市": 0,
+      "递话": 0,
+      "担保": 1,
+      "压价": 12,
+      "盘问": 1,
+      "路引": 0,
+      "随行": 4,
+      "商家城": 98,
+      "商心慈": 576
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source terms 坊市/路引 are absent in 0001-0600; coverage uses caravan, inn, shop, questioning, and guarantee signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "hiddenFactItemCount": 0,
+    "itemsWithSourcePointers": 11,
+    "itemsRequiringHumanCanonReview": 11,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "conditional_complete_candidate",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates.",
+      "RebornG must run intake review before absorbing any item into local rules, canon data, or tests."
+    ]
+  }
+}

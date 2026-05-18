@@ -1,0 +1,120 @@
+{
+  "requestId": "mirofish-request-2026-05-18-v015-low-rank-economy-refinement-feeding-pack",
+  "generatedAt": "2026-05-18T03:32:44.865815+00:00",
+  "suggestedOutputName": "v015_low_rank_economy_refinement_feeding_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "summary": {
+    "totalItems": 13,
+    "byCategory": {
+      "anti_farm_rule": 3,
+      "feeding_requirement": 1,
+      "low_rank_material_candidate": 1,
+      "market_cost_hint": 1,
+      "refinement_failure_cost": 2,
+      "refinement_fragment": 2,
+      "scarcity_rule": 1,
+      "supply_requirement": 2
+    },
+    "byReviewStatus": {
+      "export_ready": 13
+    },
+    "sourcePointers": 13,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "low_rank_material": 4,
+      "low_rank_feeding": 2,
+      "refinement_failure_cost": 5,
+      "refinement_fragment": 3,
+      "supply_requirement": 2,
+      "market_window": 6,
+      "anti_farm_rule": 3
+    },
+    "itemCategories": {
+      "anti_farm_rule": 3,
+      "feeding_requirement": 1,
+      "low_rank_material_candidate": 1,
+      "market_cost_hint": 1,
+      "refinement_failure_cost": 2,
+      "refinement_fragment": 2,
+      "scarcity_rule": 1,
+      "supply_requirement": 2
+    },
+    "chapterCoverage": {
+      "ch_0008": 2,
+      "ch_0009": 1,
+      "ch_0012": 1,
+      "ch_0013": 1,
+      "ch_0016": 1,
+      "ch_0024": 1,
+      "ch_0043": 1,
+      "ch_0092": 1,
+      "ch_0099": 1,
+      "ch_0100": 1,
+      "ch_0124": 1,
+      "ch_0149": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 13,
+      "category": 13,
+      "summary": 13,
+      "playerVisibility": 13,
+      "confidence": 13,
+      "sourcePointers": 13,
+      "reviewStatus": 13,
+      "reborngGate": 13
+    },
+    "exactTermSignals": {
+      "蛊材": 9,
+      "食料": 0,
+      "喂养": 15,
+      "炼蛊": 173,
+      "炼化": 109,
+      "合炼": 59,
+      "蛊方": 22,
+      "残方": 3,
+      "秘方": 67,
+      "商队": 219
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 食料 is absent in 0001-0600; feeding coverage is via 喂养/酒虫/青竹酒 signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "hiddenFactItemCount": 0,
+    "itemsWithSourcePointers": 13,
+    "itemsRequiringHumanCanonReview": 13,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "conditional_complete_candidate",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates.",
+      "RebornG must run intake review before absorbing any item into local rules, canon data, or tests."
+    ]
+  }
+}

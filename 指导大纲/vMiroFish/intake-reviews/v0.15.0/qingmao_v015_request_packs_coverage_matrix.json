@@ -1,0 +1,394 @@
+{
+  "generatedAt": "2026-05-18T03:32:46.959067+00:00",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "outputs": {
+    "low_rank_economy_refinement_feeding": "uploads\\ri_corpus\\exports\\qingmao_v015_request_packs\\v015_low_rank_economy_refinement_feeding_pack_export_ready.json",
+    "southern_border_market_caravan_trade": "uploads\\ri_corpus\\exports\\qingmao_v015_request_packs\\v015_southern_border_market_caravan_trade_pack_export_ready.json",
+    "low_rank_black_market_commission_boundary": "uploads\\ri_corpus\\exports\\qingmao_v015_request_packs\\v015_low_rank_black_market_commission_boundary_pack_export_ready.json"
+  },
+  "reports": {
+    "low_rank_economy_refinement_feeding": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_low_rank_economy_refinement_feeding_pack_export_ready_report.json",
+    "southern_border_market_caravan_trade": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_southern_border_market_caravan_trade_pack_export_ready_report.json",
+    "low_rank_black_market_commission_boundary": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_low_rank_black_market_commission_boundary_pack_export_ready_report.json"
+  },
+  "handoffs": {
+    "low_rank_economy_refinement_feeding": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_low_rank_economy_refinement_feeding_pack_handoff.md",
+    "southern_border_market_caravan_trade": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_southern_border_market_caravan_trade_pack_handoff.md",
+    "low_rank_black_market_commission_boundary": "uploads\\ri_corpus\\reports\\qingmao_v015_request_packs\\v015_low_rank_black_market_commission_boundary_pack_handoff.md"
+  },
+  "summaries": {
+    "low_rank_economy_refinement_feeding": {
+      "totalItems": 13,
+      "byCategory": {
+        "anti_farm_rule": 3,
+        "feeding_requirement": 1,
+        "low_rank_material_candidate": 1,
+        "market_cost_hint": 1,
+        "refinement_failure_cost": 2,
+        "refinement_fragment": 2,
+        "scarcity_rule": 1,
+        "supply_requirement": 2
+      },
+      "byReviewStatus": {
+        "export_ready": 13
+      },
+      "sourcePointers": 13,
+      "forbiddenTextKeyCount": 0,
+      "highRankLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source term 食料 is absent in 0001-0600; feeding coverage is via 喂养/酒虫/青竹酒 signals"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "highRankLeakTermCount": 0,
+        "hiddenFactItemCount": 0,
+        "itemsWithSourcePointers": 13,
+        "itemsRequiringHumanCanonReview": 13,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "southern_border_market_caravan_trade": {
+      "totalItems": 11,
+      "byCategory": {
+        "caravan_contact_window": 1,
+        "faction_attention_trigger": 3,
+        "market_window": 1,
+        "price_pressure_hint": 1,
+        "public_reason_requirement": 1,
+        "risk_factor": 1,
+        "social_cover_requirement": 1,
+        "supply_preparation": 1,
+        "trade_requirement": 1
+      },
+      "byReviewStatus": {
+        "export_ready": 11
+      },
+      "sourcePointers": 10,
+      "forbiddenTextKeyCount": 0,
+      "highRankLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source terms 坊市/路引 are absent in 0001-0600; coverage uses caravan, inn, shop, questioning, and guarantee signals"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "highRankLeakTermCount": 0,
+        "hiddenFactItemCount": 0,
+        "itemsWithSourcePointers": 11,
+        "itemsRequiringHumanCanonReview": 11,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "low_rank_black_market_commission_boundary": {
+      "totalItems": 10,
+      "byCategory": {
+        "anti_farm_rule": 2,
+        "commission_candidate": 2,
+        "faction_attention_trigger": 1,
+        "forbidden_reward_boundary": 1,
+        "fraud_or_trap_risk": 2,
+        "gray_trade_risk": 1,
+        "rumor_only_trade": 1
+      },
+      "byReviewStatus": {
+        "export_ready": 10
+      },
+      "sourcePointers": 9,
+      "forbiddenTextKeyCount": 0,
+      "highRankLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source term 黑市 is absent in 0001-0600; delivered as gray-trade and commission boundary candidates"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "highRankLeakTermCount": 0,
+        "hiddenFactItemCount": 0,
+        "itemsWithSourcePointers": 10,
+        "itemsRequiringHumanCanonReview": 10,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    }
+  },
+  "coverageMatrix": {
+    "low_rank_economy_refinement_feeding": {
+      "scopeCoverage": {
+        "low_rank_material": 4,
+        "low_rank_feeding": 2,
+        "refinement_failure_cost": 5,
+        "refinement_fragment": 3,
+        "supply_requirement": 2,
+        "market_window": 6,
+        "anti_farm_rule": 3
+      },
+      "itemCategories": {
+        "anti_farm_rule": 3,
+        "feeding_requirement": 1,
+        "low_rank_material_candidate": 1,
+        "market_cost_hint": 1,
+        "refinement_failure_cost": 2,
+        "refinement_fragment": 2,
+        "scarcity_rule": 1,
+        "supply_requirement": 2
+      },
+      "chapterCoverage": {
+        "ch_0008": 2,
+        "ch_0009": 1,
+        "ch_0012": 1,
+        "ch_0013": 1,
+        "ch_0016": 1,
+        "ch_0024": 1,
+        "ch_0043": 1,
+        "ch_0092": 1,
+        "ch_0099": 1,
+        "ch_0100": 1,
+        "ch_0124": 1,
+        "ch_0149": 1
+      },
+      "requiredFieldsPresent": {
+        "id": 13,
+        "category": 13,
+        "summary": 13,
+        "playerVisibility": 13,
+        "confidence": 13,
+        "sourcePointers": 13,
+        "reviewStatus": 13,
+        "reborngGate": 13
+      },
+      "exactTermSignals": {
+        "蛊材": 9,
+        "食料": 0,
+        "喂养": 15,
+        "炼蛊": 173,
+        "炼化": 109,
+        "合炼": 59,
+        "蛊方": 22,
+        "残方": 3,
+        "秘方": 67,
+        "商队": 219
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source term 食料 is absent in 0001-0600; feeding coverage is via 喂养/酒虫/青竹酒 signals"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      }
+    },
+    "southern_border_market_caravan_trade": {
+      "scopeCoverage": {
+        "caravan_contact": 9,
+        "supply_preparation": 3,
+        "market_window": 5,
+        "public_reason": 3,
+        "guarantee_boundary": 2,
+        "price_pressure_hint": 2,
+        "risk_factor": 2,
+        "faction_attention_trigger": 4
+      },
+      "itemCategories": {
+        "caravan_contact_window": 1,
+        "faction_attention_trigger": 3,
+        "market_window": 1,
+        "price_pressure_hint": 1,
+        "public_reason_requirement": 1,
+        "risk_factor": 1,
+        "social_cover_requirement": 1,
+        "supply_preparation": 1,
+        "trade_requirement": 1
+      },
+      "chapterCoverage": {
+        "ch_0024": 2,
+        "ch_0040": 2,
+        "ch_0043": 1,
+        "ch_0046": 1,
+        "ch_0092": 1,
+        "ch_0180": 1,
+        "ch_0231": 1,
+        "ch_0234": 1,
+        "ch_0305": 1
+      },
+      "requiredFieldsPresent": {
+        "id": 11,
+        "category": 11,
+        "summary": 11,
+        "playerVisibility": 11,
+        "confidence": 11,
+        "sourcePointers": 11,
+        "reviewStatus": 11,
+        "reborngGate": 11
+      },
+      "exactTermSignals": {
+        "商队": 219,
+        "坊市": 0,
+        "递话": 0,
+        "担保": 1,
+        "压价": 12,
+        "盘问": 1,
+        "路引": 0,
+        "随行": 4,
+        "商家城": 98,
+        "商心慈": 576
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source terms 坊市/路引 are absent in 0001-0600; coverage uses caravan, inn, shop, questioning, and guarantee signals"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      }
+    },
+    "low_rank_black_market_commission_boundary": {
+      "scopeCoverage": {
+        "gray_trade_risk": 9,
+        "commission_candidate": 6,
+        "fraud_or_trap_risk": 2,
+        "faction_attention_trigger": 4,
+        "forbidden_reward_boundary": 4,
+        "anti_farm_rule": 4
+      },
+      "itemCategories": {
+        "anti_farm_rule": 2,
+        "commission_candidate": 2,
+        "faction_attention_trigger": 1,
+        "forbidden_reward_boundary": 1,
+        "fraud_or_trap_risk": 2,
+        "gray_trade_risk": 1,
+        "rumor_only_trade": 1
+      },
+      "chapterCoverage": {
+        "ch_0010": 1,
+        "ch_0012": 1,
+        "ch_0013": 1,
+        "ch_0043": 1,
+        "ch_0046": 1,
+        "ch_0124": 2,
+        "ch_0171": 1,
+        "ch_0231": 1,
+        "ch_0311": 1
+      },
+      "requiredFieldsPresent": {
+        "id": 10,
+        "category": 10,
+        "summary": 10,
+        "playerVisibility": 10,
+        "confidence": 10,
+        "sourcePointers": 10,
+        "reviewStatus": 10,
+        "reborngGate": 10
+      },
+      "exactTermSignals": {
+        "黑市": 0,
+        "委托": 12,
+        "诈骗": 1,
+        "设局": 6,
+        "陷害": 26,
+        "压价": 12,
+        "盘问": 1,
+        "生机叶": 31,
+        "秘方": 67
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "conditional_complete_candidate",
+        "missingScopeCoverage": [],
+        "caveats": [
+          "exact source term 黑市 is absent in 0001-0600; delivered as gray-trade and commission boundary candidates"
+        ],
+        "notes": [
+          "complete means required request scopes have redacted source-backed candidates",
+          "candidate material still requires RebornG intake review before any runtime absorption"
+        ]
+      }
+    }
+  },
+  "completionGate": {
+    "low_rank_economy_refinement_feeding": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 食料 is absent in 0001-0600; feeding coverage is via 喂养/酒虫/青竹酒 signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    },
+    "southern_border_market_caravan_trade": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source terms 坊市/路引 are absent in 0001-0600; coverage uses caravan, inn, shop, questioning, and guarantee signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    },
+    "low_rank_black_market_commission_boundary": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 黑市 is absent in 0001-0600; delivered as gray-trade and commission boundary candidates"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "notes": [
+    "v0.15 request packs are deterministic redacted candidates.",
+    "No live model call is used; source is the 0001-0600 strict/reviewable base."
+  ]
+}

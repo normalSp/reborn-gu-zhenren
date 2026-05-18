@@ -1,0 +1,896 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-18-v015-low-rank-black-market-commission-boundary-pack",
+  "targetPhase": "v0.15.0-late or v0.16+ black-market, commission, and gray-trade boundary",
+  "generatedAt": "2026-05-18T03:32:46.929820+00:00",
+  "suggestedOutputName": "v015_low_rank_black_market_commission_boundary_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "redactionBoundary": {
+    "originalProseBody": "not_included",
+    "textFieldBan": "enforced",
+    "hiddenFacts": "hidden_ref_only_when_present"
+  },
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "rewardAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v015_a938170c7e18",
+      "category": "commission_candidate",
+      "summary": "私下委托代理贩卖/收购资源可作为委托候选；奖励和库存必须由本地引擎拥有，不能由叙事直接结算。",
+      "packageId": "ri_lw_ch_0124",
+      "chapterId": "ch_0124",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_94f5b8423c50",
+        "sourceSummary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊"
+      },
+      "scopeTags": [
+        "commission_candidate",
+        "gray_trade_risk",
+        "anti_farm_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_98fd4b622c7d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0124",
+          "paragraphId": "ch_0124_p0045",
+          "startOffset": 401706,
+          "endOffset": 401708,
+          "summary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊",
+          "sourcePointerId": "sp_98fd4b622c7d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "commission_candidate-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.109449+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "commission_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "commissionType": "sell_buy_agent",
+      "publicEntryConditionCandidate": "trusted intermediary and reviewable inventory source",
+      "riskCandidate": "agent leakage, underpayment, or faction attention",
+      "rewardBoundary": "engine_owned_reward"
+    },
+    {
+      "id": "v015_8cdcf3e40d61",
+      "category": "fraud_or_trap_risk",
+      "summary": "假货/诈骗样本说明灰色交易必须有验货、追责和损失风险；不能把陌生交易当作稳定收益。",
+      "packageId": "ri_lw_ch_0046",
+      "chapterId": "ch_0046",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_2475d763e514",
+        "sourceSummary": "贾金生商业诈骗青年蛊师，卖假货"
+      },
+      "scopeTags": [
+        "fraud_or_trap_risk",
+        "gray_trade_risk"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_47318acd20dc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0046",
+          "paragraphId": "ch_0046_p0008",
+          "startOffset": 133080,
+          "endOffset": 133134,
+          "summary": "贾金生商业诈骗青年蛊师，卖假货",
+          "sourcePointerId": "sp_47318acd20dc"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "fraud_or_trap_risk-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.170578+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "fraud_or_trap_risk",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "material",
+      "visibilityRisk": "public dispute or merchant retaliation",
+      "antiExploitNote": "Unknown goods stay candidate or rumor until local validation.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_457ae2b114ee",
+      "category": "fraud_or_trap_risk",
+      "summary": "设局/陷害样本可作为委托与私下交易的社交陷阱边界；玩家不能把灰色任务视为无风险按钮。",
+      "packageId": "ri_lw_ch_0010",
+      "chapterId": "ch_0010",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_954cf05dff8a",
+        "sourceSummary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权"
+      },
+      "scopeTags": [
+        "fraud_or_trap_risk",
+        "faction_attention_trigger"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_57d6ef6e37cf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0039",
+          "startOffset": 25487,
+          "endOffset": 25585,
+          "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权",
+          "sourcePointerId": "sp_57d6ef6e37cf"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "fraud_or_trap_risk-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.225357+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "fraud_or_trap_risk",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "service",
+      "visibilityRisk": "accusation, witness setup, or reputation loss",
+      "antiExploitNote": "Risky private meetings require public fallback and refusal outcomes.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_950991beff5c",
+      "category": "gray_trade_risk",
+      "summary": "压价、市价和威胁转卖构成灰色交易压力样本；只给相对风险，不给正式价格表。",
+      "packageId": "ri_lw_ch_0043",
+      "chapterId": "ch_0043",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_e68ba34e422c",
+        "sourceSummary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。"
+      },
+      "scopeTags": [
+        "gray_trade_risk",
+        "price_pressure_hint"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_f2a34571b3fd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0062",
+          "startOffset": 126461,
+          "endOffset": 126505,
+          "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+          "sourcePointerId": "sp_f2a34571b3fd"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "gray_trade_risk-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.347644+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gray_trade_risk",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "material",
+      "visibilityRisk": "merchant resentment or attention",
+      "antiExploitNote": "Haggling can close a window or raise attention; no guaranteed arbitrage.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_c1fa4e5b5724",
+      "category": "faction_attention_trigger",
+      "summary": "入口/村口盘问可作为灰色接触暴露风险；公开身份不稳时只能降级为打探或撤退。",
+      "packageId": "ri_lw_ch_0231",
+      "chapterId": "ch_0231",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_3252606c31e1",
+        "sourceSummary": "方源在村口被守卫盘问，自称凡人"
+      },
+      "scopeTags": [
+        "faction_attention_trigger",
+        "visibility_risk"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_1d574dde60f1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0231",
+          "paragraphId": "ch_0231_p0028",
+          "startOffset": 784266,
+          "endOffset": 784287,
+          "summary": "方源在村口被守卫盘问，自称凡人",
+          "sourcePointerId": "sp_1d574dde60f1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "faction_attention_trigger-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.438667+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "faction_attention_trigger",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "service",
+      "visibilityRisk": "identity exposure and follow-up questioning",
+      "antiExploitNote": "Failed cover cannot open a market or commission chain.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_a566d84abb5e",
+      "category": "commission_candidate",
+      "summary": "委托调查样本适合转化为风险/线索委托边界；委托只能产生公开压力和候选线索，不直接给奖励结论。",
+      "packageId": "ri_lw_ch_0171",
+      "chapterId": "ch_0171",
+      "sourceItem": {
+        "field": "entities",
+        "itemId": "entity_5aca570f776d",
+        "sourceSummary": "委托调查杀人案的人"
+      },
+      "scopeTags": [
+        "commission_candidate",
+        "faction_attention_trigger"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_72d6ae0de8e5"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0171",
+          "paragraphId": "ch_0171_p0114",
+          "startOffset": 572283,
+          "endOffset": 572347,
+          "summary": "委托调查杀人案的人",
+          "sourcePointerId": "sp_72d6ae0de8e5"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "commission_candidate-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.481248+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "commission_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "commissionType": "investigation_probe",
+      "publicEntryConditionCandidate": "public cause, named requester, and local risk gate",
+      "riskCandidate": "faction attention, accusation, or counter-investigation",
+      "rewardBoundary": "no_direct_reward"
+    },
+    {
+      "id": "v015_7dcda82b76c1",
+      "category": "rumor_only_trade",
+      "summary": "代为报价购买秘方可作为信息/残方交易候选；秘方仍是复核对象，不开放完整蛊方或直接学会。",
+      "packageId": "ri_lw_ch_0311",
+      "chapterId": "ch_0311",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_0a0ca4d30aaa",
+        "sourceSummary": "方源委托魏央代为报价购买秘方，魏央炼化铭心蛊后直接传给方源"
+      },
+      "scopeTags": [
+        "rumor_only_trade",
+        "commission_candidate",
+        "forbidden_reward_boundary"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_3ed45fd30667"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0311",
+          "paragraphId": "ch_0311_p0013",
+          "startOffset": 1074786,
+          "endOffset": 1074817,
+          "summary": "方源委托魏央代为报价购买秘方，魏央炼化铭心蛊后直接传给方源",
+          "sourcePointerId": "sp_3ed45fd30667"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "rumor_only_trade-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.525051+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "rumor_only_trade",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "commissionType": "brokered_information_purchase",
+      "publicEntryConditionCandidate": "trusted broker plus human review",
+      "riskCandidate": "false information, overpricing, or exposure of intent",
+      "rewardBoundary": "no_direct_reward"
+    },
+    {
+      "id": "v015_4a0a8c48eee4",
+      "category": "forbidden_reward_boundary",
+      "summary": "任何灰色交易、委托或黑市线索都只能输出候选、线索、压力或引擎所有奖励；不得直接发放材料、蛊虫、蛊方或元石。",
+      "packageId": "ri_lw_ch_0012",
+      "chapterId": "ch_0012",
+      "sourceItem": {
+        "field": "entities",
+        "itemId": "entity_d4ee91f15507",
+        "sourceSummary": "店主，与方源交易"
+      },
+      "scopeTags": [
+        "forbidden_reward_boundary",
+        "anti_farm_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_3191e2cb1666"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0066",
+          "startOffset": 32749,
+          "endOffset": 32785,
+          "summary": "店主，与方源交易",
+          "sourcePointerId": "sp_3191e2cb1666"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "forbidden_reward_boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.654680+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "forbidden_reward_boundary",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "service",
+      "visibilityRisk": "reward claim can reveal hidden inventory or intent",
+      "antiExploitNote": "No direct reward from MiroFish, DeepSeek, or narrative text.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_02d34210193f",
+      "category": "anti_farm_rule",
+      "summary": "代理贩卖和收购必须有库存、冷却、注意力和信任门槛；不能形成可刷交易循环。",
+      "packageId": "ri_lw_ch_0124",
+      "chapterId": "ch_0124",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_94f5b8423c50",
+        "sourceSummary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊"
+      },
+      "scopeTags": [
+        "anti_farm_rule",
+        "commission_candidate"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_98fd4b622c7d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0124",
+          "paragraphId": "ch_0124_p0045",
+          "startOffset": 401706,
+          "endOffset": 401708,
+          "summary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊",
+          "sourcePointerId": "sp_98fd4b622c7d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "anti_farm_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.769913+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "anti_farm_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "material",
+      "visibilityRisk": "repeat supply draws suspicion",
+      "antiExploitNote": "Stock, buyer demand, and intermediary trust are engine-owned gates.",
+      "mustRemainRumorOrCandidate": true
+    },
+    {
+      "id": "v015_7d1646a97dfb",
+      "category": "anti_farm_rule",
+      "summary": "公开炫富或高调消费会引发低阶身份压力；交易系统应能把异常消费转成关注触发。",
+      "packageId": "ri_lw_ch_0013",
+      "chapterId": "ch_0013",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_821150edb6e9",
+        "sourceSummary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。"
+      },
+      "scopeTags": [
+        "anti_farm_rule",
+        "faction_attention_trigger"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_991c8e9bd1a4"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0013",
+          "paragraphId": "ch_0013_p0027",
+          "startOffset": 34077,
+          "endOffset": 34134,
+          "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+          "sourcePointerId": "sp_991c8e9bd1a4"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "anti_farm_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:46.891976+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "anti_farm_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "food",
+      "visibilityRisk": "public wealth display and social attention",
+      "antiExploitNote": "Repeated conspicuous purchases can increase scrutiny instead of only consuming currency.",
+      "mustRemainRumorOrCandidate": true
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0231",
+      "paragraphId": "ch_0231_p0028",
+      "startOffset": 784266,
+      "endOffset": 784287,
+      "summary": "方源在村口被守卫盘问，自称凡人",
+      "sourcePointerId": "sp_1d574dde60f1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0012",
+      "paragraphId": "ch_0012_p0066",
+      "startOffset": 32749,
+      "endOffset": 32785,
+      "summary": "店主，与方源交易",
+      "sourcePointerId": "sp_3191e2cb1666"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0311",
+      "paragraphId": "ch_0311_p0013",
+      "startOffset": 1074786,
+      "endOffset": 1074817,
+      "summary": "方源委托魏央代为报价购买秘方，魏央炼化铭心蛊后直接传给方源",
+      "sourcePointerId": "sp_3ed45fd30667"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0046",
+      "paragraphId": "ch_0046_p0008",
+      "startOffset": 133080,
+      "endOffset": 133134,
+      "summary": "贾金生商业诈骗青年蛊师，卖假货",
+      "sourcePointerId": "sp_47318acd20dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0039",
+      "startOffset": 25487,
+      "endOffset": 25585,
+      "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权",
+      "sourcePointerId": "sp_57d6ef6e37cf"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0171",
+      "paragraphId": "ch_0171_p0114",
+      "startOffset": 572283,
+      "endOffset": 572347,
+      "summary": "委托调查杀人案的人",
+      "sourcePointerId": "sp_72d6ae0de8e5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0124",
+      "paragraphId": "ch_0124_p0045",
+      "startOffset": 401706,
+      "endOffset": 401708,
+      "summary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊",
+      "sourcePointerId": "sp_98fd4b622c7d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0013",
+      "paragraphId": "ch_0013_p0027",
+      "startOffset": 34077,
+      "endOffset": 34134,
+      "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+      "sourcePointerId": "sp_991c8e9bd1a4"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0043",
+      "paragraphId": "ch_0043_p0062",
+      "startOffset": 126461,
+      "endOffset": 126505,
+      "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+      "sourcePointerId": "sp_f2a34571b3fd"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "gray_trade_risk": 9,
+      "commission_candidate": 6,
+      "fraud_or_trap_risk": 2,
+      "faction_attention_trigger": 4,
+      "forbidden_reward_boundary": 4,
+      "anti_farm_rule": 4
+    },
+    "itemCategories": {
+      "anti_farm_rule": 2,
+      "commission_candidate": 2,
+      "faction_attention_trigger": 1,
+      "forbidden_reward_boundary": 1,
+      "fraud_or_trap_risk": 2,
+      "gray_trade_risk": 1,
+      "rumor_only_trade": 1
+    },
+    "chapterCoverage": {
+      "ch_0010": 1,
+      "ch_0012": 1,
+      "ch_0013": 1,
+      "ch_0043": 1,
+      "ch_0046": 1,
+      "ch_0124": 2,
+      "ch_0171": 1,
+      "ch_0231": 1,
+      "ch_0311": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 10,
+      "category": 10,
+      "summary": 10,
+      "playerVisibility": 10,
+      "confidence": 10,
+      "sourcePointers": 10,
+      "reviewStatus": 10,
+      "reborngGate": 10
+    },
+    "exactTermSignals": {
+      "黑市": 0,
+      "委托": 12,
+      "诈骗": 1,
+      "设局": 6,
+      "陷害": 26,
+      "压价": 12,
+      "盘问": 1,
+      "生机叶": 31,
+      "秘方": 67
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 黑市 is absent in 0001-0600; delivered as gray-trade and commission boundary candidates"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 10,
+    "byCategory": {
+      "anti_farm_rule": 2,
+      "commission_candidate": 2,
+      "faction_attention_trigger": 1,
+      "forbidden_reward_boundary": 1,
+      "fraud_or_trap_risk": 2,
+      "gray_trade_risk": 1,
+      "rumor_only_trade": 1
+    },
+    "byReviewStatus": {
+      "export_ready": 10
+    },
+    "sourcePointers": 9,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  }
+}

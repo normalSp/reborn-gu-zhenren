@@ -1,0 +1,977 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-18-v015-southern-border-market-caravan-trade-pack",
+  "targetPhase": "v0.15.0-b1/b2 supply preparation, caravan message, and public trade window",
+  "generatedAt": "2026-05-18T03:32:45.989849+00:00",
+  "suggestedOutputName": "v015_southern_border_market_caravan_trade_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "redactionBoundary": {
+    "originalProseBody": "not_included",
+    "textFieldBan": "enforced",
+    "hiddenFacts": "hidden_ref_only_when_present"
+  },
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "rewardAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v015_5735bc1e61c1",
+      "category": "caravan_contact_window",
+      "summary": "商队到来会形成公开接触和交易窗口；玩家只能做递话、询价、补给准备等小步，不自动加入商队。",
+      "packageId": "ri_lw_ch_0024",
+      "chapterId": "ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_4e1b28b0723a",
+        "sourceSummary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货"
+      },
+      "scopeTags": [
+        "caravan_contact",
+        "market_window"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_31d025e4a54d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "sourcePointerId": "sp_31d025e4a54d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "caravan_contact_window-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.009937+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "caravan_contact_window",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "message",
+      "entryConditionCandidate": "public reason plus safe contact channel",
+      "blockedOutcome": "no_formal_join",
+      "riskCandidate": "merchant attention, clan attention, or supply shortage"
+    },
+    {
+      "id": "v015_56dd0a155b26",
+      "category": "market_window",
+      "summary": "商队抵达后可形成临时商铺/交易区；适合做短时交易窗口，不开放完整商店系统。",
+      "packageId": "ri_lw_ch_0040",
+      "chapterId": "ch_0040",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_940ebd157d4d",
+        "sourceSummary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转"
+      },
+      "scopeTags": [
+        "market_window",
+        "temporary_trade"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_98eb45a538fa"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "market_window-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.156562+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "market_window",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "supply",
+      "costTierHint": "relative_only_event_window",
+      "antiExploitNote": "Temporary market stock must expire or change with caravan movement."
+    },
+    {
+      "id": "v015_6f5d7e8287f0",
+      "category": "trade_requirement",
+      "summary": "商队大额采购会改变低阶商品库存和价格压力；补给准备要早于商队扫货窗口。",
+      "packageId": "ri_lw_ch_0024",
+      "chapterId": "ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_4e1b28b0723a",
+        "sourceSummary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货"
+      },
+      "scopeTags": [
+        "supply_preparation",
+        "price_pressure_hint"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_31d025e4a54d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "sourcePointerId": "sp_31d025e4a54d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "trade_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.282054+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "trade_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "supply",
+      "costTierHint": "relative_only_rising_pressure",
+      "antiExploitNote": "Player cannot convert caravan demand into guaranteed resale profit."
+    },
+    {
+      "id": "v015_af792713d24a",
+      "category": "price_pressure_hint",
+      "summary": "商人收购、压价和市价谈判是低阶交易常态；只输出相对压价风险，不给正式运行时价格。",
+      "packageId": "ri_lw_ch_0043",
+      "chapterId": "ch_0043",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_e68ba34e422c",
+        "sourceSummary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。"
+      },
+      "scopeTags": [
+        "price_pressure_hint",
+        "market_window"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_f2a34571b3fd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0062",
+          "startOffset": 126461,
+          "endOffset": 126505,
+          "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+          "sourcePointerId": "sp_f2a34571b3fd"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "price_pressure_hint-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.397957+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "price_pressure_hint",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "material",
+      "costTierHint": "relative_only_haggling_pressure",
+      "antiExploitNote": "Negotiation result requires local engine or human-designed rule."
+    },
+    {
+      "id": "v015_aee430ed77e8",
+      "category": "risk_factor",
+      "summary": "商人交易存在假货、诈骗和赔偿压力；商队/坊市窗口必须展示验货和被骗风险。",
+      "packageId": "ri_lw_ch_0046",
+      "chapterId": "ch_0046",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_2475d763e514",
+        "sourceSummary": "贾金生商业诈骗青年蛊师，卖假货"
+      },
+      "scopeTags": [
+        "risk_factor",
+        "fraud_or_trap"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_47318acd20dc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0046",
+          "paragraphId": "ch_0046_p0008",
+          "startOffset": 133080,
+          "endOffset": 133134,
+          "summary": "贾金生商业诈骗青年蛊师，卖假货",
+          "sourcePointerId": "sp_47318acd20dc"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "risk_factor-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.444904+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "risk_factor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "material",
+      "costTierHint": "relative_only_loss_risk",
+      "antiExploitNote": "Suspicious deals should produce risk or review samples, not direct rewards."
+    },
+    {
+      "id": "v015_8d6814c49840",
+      "category": "public_reason_requirement",
+      "summary": "加入商队/随行路线存在伪装、身份和公开理由要求；只能作为接触前置，不输出正式加入成功。",
+      "packageId": "ri_lw_ch_0234",
+      "chapterId": "ch_0234",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_422478c80c75",
+        "sourceSummary": "方源和白凝冰商议加入商队以到达商家城，伪装成凡人"
+      },
+      "scopeTags": [
+        "public_reason",
+        "social_cover",
+        "caravan_contact"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_2e0c2cdeb3ef"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0234",
+          "paragraphId": "ch_0234_p0039",
+          "startOffset": 795039,
+          "endOffset": 795041,
+          "summary": "方源和白凝冰商议加入商队以到达商家城，伪装成凡人",
+          "sourcePointerId": "sp_2e0c2cdeb3ef"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "public_reason_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.483738+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "public_reason_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "public_reason",
+      "entryConditionCandidate": "credible identity, low-risk public reason, and supply readiness",
+      "blockedOutcome": "no_formal_join",
+      "riskCandidate": "identity questioning or route exposure"
+    },
+    {
+      "id": "v015_f48ee044734f",
+      "category": "supply_preparation",
+      "summary": "远行前需要干粮、水和生活用品采办；这适合成为商队递话前的补给检查样板。",
+      "packageId": "ri_lw_ch_0092",
+      "chapterId": "ch_0092",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_364d7000824b",
+        "sourceSummary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水"
+      },
+      "scopeTags": [
+        "supply_preparation",
+        "escape_supply"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_553d178a4815"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0002",
+          "startOffset": 285301,
+          "endOffset": 285324,
+          "summary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水",
+          "sourcePointerId": "sp_553d178a4815"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "supply_preparation-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.617477+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "supply_preparation",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "tradeRole": "food",
+      "costTierHint": "relative_only_basic_supply",
+      "antiExploitNote": "Supply purchase grants no route success by itself."
+    },
+    {
+      "id": "v015_acb0b281af03",
+      "category": "social_cover_requirement",
+      "summary": "村口/入口盘问样本说明低阶行动需要身份说法；商队接触前要准备公开身份和被问询的降级结果。",
+      "packageId": "ri_lw_ch_0231",
+      "chapterId": "ch_0231",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_3252606c31e1",
+        "sourceSummary": "方源在村口被守卫盘问，自称凡人"
+      },
+      "scopeTags": [
+        "social_cover",
+        "faction_attention_trigger"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_1d574dde60f1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0231",
+          "paragraphId": "ch_0231_p0028",
+          "startOffset": 784266,
+          "endOffset": 784287,
+          "summary": "方源在村口被守卫盘问，自称凡人",
+          "sourcePointerId": "sp_1d574dde60f1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "social_cover_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.737580+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "social_cover_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "public_reason",
+      "entryConditionCandidate": "visible identity claim and fallback story",
+      "blockedOutcome": "no_city_entry",
+      "riskCandidate": "questioning, delay, or attention record"
+    },
+    {
+      "id": "v015_51eb81bf1030",
+      "category": "faction_attention_trigger",
+      "summary": "山寨与商队有公开迎接/贸易关系；私下接触商队可能触发古月方面注意。",
+      "packageId": "ri_lw_ch_0040",
+      "chapterId": "ch_0040",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_b0955cf0aa1f",
+        "sourceSummary": "古月博以族长身份欢迎商队领袖，山寨与商队之间的贸易伙伴关系"
+      },
+      "scopeTags": [
+        "faction_attention_trigger",
+        "caravan_contact"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_d12deac099b1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0038",
+          "startOffset": 116666,
+          "endOffset": 116710,
+          "summary": "古月博以族长身份欢迎商队领袖，山寨与商队之间的贸易伙伴关系",
+          "sourcePointerId": "sp_d12deac099b1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "faction_attention_trigger-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.859095+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "faction_attention_trigger",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "message",
+      "entryConditionCandidate": "avoid bypassing clan-visible trade protocol",
+      "blockedOutcome": "no_faction_identity_change",
+      "riskCandidate": "Gu Yue attention or trade-channel suspicion"
+    },
+    {
+      "id": "v015_a4f825010e51",
+      "category": "faction_attention_trigger",
+      "summary": "百家/白家相关营地和调查线索会让外部接触变成势力注意力；交易或递话不能跳过营地/身份压力。",
+      "packageId": "ri_lw_ch_0180",
+      "chapterId": "ch_0180",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_409ff5b9cd09",
+        "sourceSummary": "三族因狼潮利益分配问题僵持，决定举办三族大比武"
+      },
+      "scopeTags": [
+        "faction_attention_trigger",
+        "social_cover"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_c45ccb1fbdd6"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0180",
+          "paragraphId": "ch_0180_p0070",
+          "startOffset": 603116,
+          "endOffset": 603119,
+          "summary": "三族因狼潮利益分配问题僵持，决定举办三族大比武",
+          "sourcePointerId": "sp_c45ccb1fbdd6"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "faction_attention_trigger-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.907079+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "faction_attention_trigger",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "message",
+      "entryConditionCandidate": "public reason before entering another group's space",
+      "blockedOutcome": "no_faction_identity_change",
+      "riskCandidate": "Bai-group attention or questioning"
+    },
+    {
+      "id": "v015_b9a6eb057beb",
+      "category": "faction_attention_trigger",
+      "summary": "担保类表述可以作为关系压力样本；低阶玩家不能据此自动获得铁家保护或免追究。",
+      "packageId": "ri_lw_ch_0305",
+      "chapterId": "ch_0305",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_c6e0d43f64a8",
+        "sourceSummary": "铁若男是铁家成员，能担保铁家不追究"
+      },
+      "scopeTags": [
+        "faction_attention_trigger",
+        "guarantee_boundary"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_55bca9e0f0e2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0305",
+          "paragraphId": "ch_0305_p0032",
+          "startOffset": 1054196,
+          "endOffset": 1054246,
+          "summary": "铁若男是铁家成员，能担保铁家不追究",
+          "sourcePointerId": "sp_55bca9e0f0e2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "faction_attention_trigger-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:45.948940+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "faction_attention_trigger",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "contactType": "guarantee",
+      "entryConditionCandidate": "named guarantor and human review",
+      "blockedOutcome": "no_formal_protection",
+      "riskCandidate": "guarantee can increase scrutiny rather than grant safety"
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0231",
+      "paragraphId": "ch_0231_p0028",
+      "startOffset": 784266,
+      "endOffset": 784287,
+      "summary": "方源在村口被守卫盘问，自称凡人",
+      "sourcePointerId": "sp_1d574dde60f1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0234",
+      "paragraphId": "ch_0234_p0039",
+      "startOffset": 795039,
+      "endOffset": 795041,
+      "summary": "方源和白凝冰商议加入商队以到达商家城，伪装成凡人",
+      "sourcePointerId": "sp_2e0c2cdeb3ef"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0059",
+      "startOffset": 69860,
+      "endOffset": 69990,
+      "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+      "sourcePointerId": "sp_31d025e4a54d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0046",
+      "paragraphId": "ch_0046_p0008",
+      "startOffset": 133080,
+      "endOffset": 133134,
+      "summary": "贾金生商业诈骗青年蛊师，卖假货",
+      "sourcePointerId": "sp_47318acd20dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0002",
+      "startOffset": 285301,
+      "endOffset": 285324,
+      "summary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水",
+      "sourcePointerId": "sp_553d178a4815"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0305",
+      "paragraphId": "ch_0305_p0032",
+      "startOffset": 1054196,
+      "endOffset": 1054246,
+      "summary": "铁若男是铁家成员，能担保铁家不追究",
+      "sourcePointerId": "sp_55bca9e0f0e2"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0045",
+      "startOffset": 116953,
+      "endOffset": 117038,
+      "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+      "sourcePointerId": "sp_98eb45a538fa"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0180",
+      "paragraphId": "ch_0180_p0070",
+      "startOffset": 603116,
+      "endOffset": 603119,
+      "summary": "三族因狼潮利益分配问题僵持，决定举办三族大比武",
+      "sourcePointerId": "sp_c45ccb1fbdd6"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0038",
+      "startOffset": 116666,
+      "endOffset": 116710,
+      "summary": "古月博以族长身份欢迎商队领袖，山寨与商队之间的贸易伙伴关系",
+      "sourcePointerId": "sp_d12deac099b1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0043",
+      "paragraphId": "ch_0043_p0062",
+      "startOffset": 126461,
+      "endOffset": 126505,
+      "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+      "sourcePointerId": "sp_f2a34571b3fd"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_contact": 9,
+      "supply_preparation": 3,
+      "market_window": 5,
+      "public_reason": 3,
+      "guarantee_boundary": 2,
+      "price_pressure_hint": 2,
+      "risk_factor": 2,
+      "faction_attention_trigger": 4
+    },
+    "itemCategories": {
+      "caravan_contact_window": 1,
+      "faction_attention_trigger": 3,
+      "market_window": 1,
+      "price_pressure_hint": 1,
+      "public_reason_requirement": 1,
+      "risk_factor": 1,
+      "social_cover_requirement": 1,
+      "supply_preparation": 1,
+      "trade_requirement": 1
+    },
+    "chapterCoverage": {
+      "ch_0024": 2,
+      "ch_0040": 2,
+      "ch_0043": 1,
+      "ch_0046": 1,
+      "ch_0092": 1,
+      "ch_0180": 1,
+      "ch_0231": 1,
+      "ch_0234": 1,
+      "ch_0305": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 11,
+      "category": 11,
+      "summary": 11,
+      "playerVisibility": 11,
+      "confidence": 11,
+      "sourcePointers": 11,
+      "reviewStatus": 11,
+      "reborngGate": 11
+    },
+    "exactTermSignals": {
+      "商队": 219,
+      "坊市": 0,
+      "递话": 0,
+      "担保": 1,
+      "压价": 12,
+      "盘问": 1,
+      "路引": 0,
+      "随行": 4,
+      "商家城": 98,
+      "商心慈": 576
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source terms 坊市/路引 are absent in 0001-0600; coverage uses caravan, inn, shop, questioning, and guarantee signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 11,
+    "byCategory": {
+      "caravan_contact_window": 1,
+      "faction_attention_trigger": 3,
+      "market_window": 1,
+      "price_pressure_hint": 1,
+      "public_reason_requirement": 1,
+      "risk_factor": 1,
+      "social_cover_requirement": 1,
+      "supply_preparation": 1,
+      "trade_requirement": 1
+    },
+    "byReviewStatus": {
+      "export_ready": 11
+    },
+    "sourcePointers": 10,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  }
+}

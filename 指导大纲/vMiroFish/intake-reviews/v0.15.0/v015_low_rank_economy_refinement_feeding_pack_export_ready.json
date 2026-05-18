@@ -1,0 +1,1160 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-18-v015-low-rank-economy-refinement-feeding-pack",
+  "targetPhase": "v0.15.0-a1/a2 low-rank economy, refinement, and feeding gate",
+  "generatedAt": "2026-05-18T03:32:44.865815+00:00",
+  "suggestedOutputName": "v015_low_rank_economy_refinement_feeding_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600"
+  },
+  "redactionBoundary": {
+    "originalProseBody": "not_included",
+    "textFieldBan": "enforced",
+    "hiddenFacts": "hidden_ref_only_when_present"
+  },
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "rewardAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v015_476f44fe7d11",
+      "category": "market_cost_hint",
+      "summary": "元石在低阶阶段同时承担修炼、住宿、购买酒食和炼化消耗压力；RebornG 只能把它作为相对成本压力，不输出正式价格。",
+      "packageId": "ri_lw_ch_0008",
+      "chapterId": "ch_0008",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_0375893543be",
+        "sourceSummary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石"
+      },
+      "scopeTags": [
+        "low_rank_material",
+        "market_cost_hint",
+        "scarcity_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_43cce366ab6b"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "market_cost_hint-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:43.595014+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "market_cost_hint",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "trade",
+      "rankBand": "low_rank",
+      "scarcityTier": "limited",
+      "notGrantableByAI": true,
+      "costTierHint": "relative_only_low_to_medium_pressure",
+      "antiExploitNote": "Repeated conversion of narrative money pressure into inventory must be blocked by local engine review."
+    },
+    {
+      "id": "v015_9de612dc4552",
+      "category": "feeding_requirement",
+      "summary": "酒虫相关线索反复绑定酒类、酒肆购买和野外引诱；可作为酒虫食料/维护候选，但不得直接发放酒虫或稳定产出。",
+      "packageId": "ri_lw_ch_0008",
+      "chapterId": "ch_0008",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_71b3548f72e1",
+        "sourceSummary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果"
+      },
+      "scopeTags": [
+        "low_rank_feeding",
+        "liquor_worm",
+        "scarcity_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_f34a72f59673"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0047",
+          "startOffset": 19899,
+          "endOffset": 19949,
+          "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+          "sourcePointerId": "sp_f34a72f59673"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "feeding_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:43.727836+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "feeding_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "feeding",
+      "rankBand": "rank_1",
+      "scarcityTier": "limited",
+      "notGrantableByAI": true,
+      "feedingPressure": "wine supply competes with primeval-stone budget and public visibility."
+    },
+    {
+      "id": "v015_555bac2c7e53",
+      "category": "low_rank_material_candidate",
+      "summary": "月兰花瓣有低阶购买线索，可作为月系蛊维护/食料候选素材进入人工复核；不能由叙事直接加入背包。",
+      "packageId": "ri_lw_ch_0016",
+      "chapterId": "ch_0016",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_fbe46c507ab4",
+        "sourceSummary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命"
+      },
+      "scopeTags": [
+        "low_rank_material",
+        "feeding_requirement"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_eeb41700ee70"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0033",
+          "startOffset": 44357,
+          "endOffset": 44500,
+          "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+          "sourcePointerId": "sp_eeb41700ee70"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "low_rank_material_candidate-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:43.847410+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "low_rank_material_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "rule_draft"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "feeding",
+      "rankBand": "rank_1",
+      "scarcityTier": "limited",
+      "notGrantableByAI": true
+    },
+    {
+      "id": "v015_494cccaa30bc",
+      "category": "refinement_failure_cost",
+      "summary": "月光蛊炼化样本显示低资质、真元和元石不足会形成明显失败/止损压力；成功门槛应由本地引擎拥有。",
+      "packageId": "ri_lw_ch_0009",
+      "chapterId": "ch_0009",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_502fc57ad717",
+        "sourceSummary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。"
+      },
+      "scopeTags": [
+        "refinement_failure_cost",
+        "rank_1",
+        "moonlight_gu"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_3aa8bb64b68c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0022",
+          "startOffset": 21279,
+          "endOffset": 21310,
+          "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+          "sourcePointerId": "sp_3aa8bb64b68c"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "refinement_failure_cost-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:43.969159+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "refinement_failure_cost",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "recipeStatus": "review_required",
+      "failureCostCandidate": "primeval essence depletion, time loss, and primeval-stone pressure",
+      "mustRemainEngineOwned": true
+    },
+    {
+      "id": "v015_72d90ece78a2",
+      "category": "refinement_failure_cost",
+      "summary": "合炼失败样本可支持“材料/源蛊风险、进度损失、重新尝试成本”边界；不生成完整蛊方或确定成功率。",
+      "packageId": "ri_lw_ch_0099",
+      "chapterId": "ch_0099",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_7e6ef8701c60",
+        "sourceSummary": "方源考虑合炼白玉蛊还是月芒蛊，因元石不足只能选其一，决定合炼白玉蛊以采集蜜酒和继承花酒行者传承"
+      },
+      "scopeTags": [
+        "refinement_failure_cost",
+        "refinement_fragment"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_0fd3eb5b151b"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0099",
+          "paragraphId": "ch_0099_p0037",
+          "startOffset": 311187,
+          "endOffset": 311189,
+          "summary": "方源考虑合炼白玉蛊还是月芒蛊，因元石不足只能选其一，决定合炼白玉蛊以采集蜜酒和继承花酒行者传承",
+          "sourcePointerId": "sp_0fd3eb5b151b"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "refinement_failure_cost-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.027383+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "refinement_failure_cost",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "recipeStatus": "fragment",
+      "failureCostCandidate": "source Gu separation, consumed preparation, and retry pressure",
+      "mustRemainEngineOwned": true
+    },
+    {
+      "id": "v015_61b443a12493",
+      "category": "refinement_fragment",
+      "summary": "合炼秘方可作为残方/秘方线索进入复核，但完整蛊方、材料清单和成功率都必须保持引擎与人工审核所有权。",
+      "packageId": "ri_lw_ch_0149",
+      "chapterId": "ch_0149",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_dff0cac2719c",
+        "sourceSummary": "方源分析自身处境，决定晋升三转以应对危机"
+      },
+      "scopeTags": [
+        "refinement_fragment",
+        "recipe_boundary"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_3fb390ba9f3a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0053",
+          "startOffset": 492328,
+          "endOffset": 492428,
+          "summary": "方源分析自身处境，决定晋升三转以应对危机",
+          "sourcePointerId": "sp_3fb390ba9f3a"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "refinement_fragment-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.087328+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "refinement_fragment",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "recipeStatus": "fragment",
+      "failureCostCandidate": "incomplete knowledge can waste materials or expose intent",
+      "mustRemainEngineOwned": true
+    },
+    {
+      "id": "v015_1031bfedbd1d",
+      "category": "scarcity_rule",
+      "summary": "商队到来会挤压青竹酒等低阶商品库存；RebornG 可把外部采购潮作为季节/事件型稀缺规则。",
+      "packageId": "ri_lw_ch_0024",
+      "chapterId": "ch_0024",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_4e1b28b0723a",
+        "sourceSummary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货"
+      },
+      "scopeTags": [
+        "scarcity_rule",
+        "market_window",
+        "caravan_window"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_31d025e4a54d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "sourcePointerId": "sp_31d025e4a54d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "scarcity_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.206270+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "scarcity_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "trade",
+      "rankBand": "low_rank",
+      "scarcityTier": "event_gated",
+      "notGrantableByAI": true,
+      "antiExploitNote": "Bulk buying pressure should reduce availability instead of creating a player farming loop."
+    },
+    {
+      "id": "v015_5e0d204d89ea",
+      "category": "supply_requirement",
+      "summary": "客栈、酒菜和临时落脚会消耗元石；逃离或接触商队前应展示住宿、食物和行动遮掩的补给压力。",
+      "packageId": "ri_lw_ch_0012",
+      "chapterId": "ch_0012",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_78deb33587ec",
+        "sourceSummary": "方源在客栈租房并用元石购买酒菜。"
+      },
+      "scopeTags": [
+        "supply_requirement",
+        "market_cost_hint"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_64399addb724"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0054",
+          "startOffset": 32158,
+          "endOffset": 32214,
+          "summary": "方源在客栈租房并用元石购买酒菜。",
+          "sourcePointerId": "sp_64399addb724"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "supply_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.315296+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "supply_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "supply",
+      "rankBand": "low_rank",
+      "scarcityTier": "common",
+      "notGrantableByAI": true,
+      "costTierHint": "relative_only_small_but_repeated_pressure"
+    },
+    {
+      "id": "v015_d194ccef5467",
+      "category": "supply_requirement",
+      "summary": "离山/长途行动前存在干粮、水、被褥、火炉等生活用品采办样本；可作为补给清单候选，不代表地点解锁。",
+      "packageId": "ri_lw_ch_0092",
+      "chapterId": "ch_0092",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_364d7000824b",
+        "sourceSummary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水"
+      },
+      "scopeTags": [
+        "supply_requirement",
+        "escape_supply"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_553d178a4815"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0092",
+          "paragraphId": "ch_0092_p0002",
+          "startOffset": 285301,
+          "endOffset": 285324,
+          "summary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水",
+          "sourcePointerId": "sp_553d178a4815"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "supply_requirement-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.417082+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "supply_requirement",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "supply",
+      "rankBand": "low_rank",
+      "scarcityTier": "common",
+      "notGrantableByAI": true
+    },
+    {
+      "id": "v015_7788e7bd556b",
+      "category": "refinement_fragment",
+      "summary": "白玉蛊相关合炼线索可作为二转防御蛊路线候选；源蛊、材料和成功结算必须由本地规则拥有。",
+      "packageId": "ri_lw_ch_0100",
+      "chapterId": "ch_0100",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_b31d421f82cf",
+        "sourceSummary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊"
+      },
+      "scopeTags": [
+        "refinement_fragment",
+        "white_jade_gu",
+        "rank_2"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_eb68d364a0cd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0035",
+          "startOffset": 314282,
+          "endOffset": 314327,
+          "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+          "sourcePointerId": "sp_eb68d364a0cd"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "refinement_fragment-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.465620+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "refinement_fragment",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "recipeStatus": "fragment",
+      "failureCostCandidate": "source Gu and material loss risk",
+      "mustRemainEngineOwned": true
+    },
+    {
+      "id": "v015_fcb22d1216b0",
+      "category": "anti_farm_rule",
+      "summary": "低阶交易存在市价、压价和转卖博弈；玩家反复倒买倒卖时应触发压价、拒收或关注，而非稳定套利。",
+      "packageId": "ri_lw_ch_0043",
+      "chapterId": "ch_0043",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_e68ba34e422c",
+        "sourceSummary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。"
+      },
+      "scopeTags": [
+        "anti_farm_rule",
+        "market_cost_hint",
+        "scarcity_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_f2a34571b3fd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0062",
+          "startOffset": 126461,
+          "endOffset": 126505,
+          "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+          "sourcePointerId": "sp_f2a34571b3fd"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "anti_farm_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.586213+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "anti_farm_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "trade",
+      "rankBand": "low_rank",
+      "scarcityTier": "limited",
+      "notGrantableByAI": true,
+      "antiExploitNote": "No deterministic buy-low/sell-high loop without engine-owned stock, reputation, and risk gates."
+    },
+    {
+      "id": "v015_e6104ed65f17",
+      "category": "anti_farm_rule",
+      "summary": "公开消费贵重酒食会引发身份与财力注意；资源行为应能产生怀疑、盘问或社交压力。",
+      "packageId": "ri_lw_ch_0013",
+      "chapterId": "ch_0013",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_821150edb6e9",
+        "sourceSummary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。"
+      },
+      "scopeTags": [
+        "anti_farm_rule",
+        "suspicion_rule"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_991c8e9bd1a4"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0013",
+          "paragraphId": "ch_0013_p0027",
+          "startOffset": 34077,
+          "endOffset": 34134,
+          "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+          "sourcePointerId": "sp_991c8e9bd1a4"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "anti_farm_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.700782+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "anti_farm_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "trade",
+      "rankBand": "low_rank",
+      "scarcityTier": "limited",
+      "notGrantableByAI": true,
+      "antiExploitNote": "Visible purchases can raise attention instead of only changing inventory."
+    },
+    {
+      "id": "v015_6793b0d4bfb4",
+      "category": "anti_farm_rule",
+      "summary": "代售/代购生机叶等资源线索可作为灰色渠道样本；必须防止固定代理变成无限刷钱或无限收购。",
+      "packageId": "ri_lw_ch_0124",
+      "chapterId": "ch_0124",
+      "sourceItem": {
+        "field": "relations",
+        "itemId": "rel_94f5b8423c50",
+        "sourceSummary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊"
+      },
+      "scopeTags": [
+        "anti_farm_rule",
+        "commission_candidate",
+        "resource_source"
+      ],
+      "playerVisibility": "limited_public",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_98fd4b622c7d"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0124",
+          "paragraphId": "ch_0124_p0045",
+          "startOffset": 401706,
+          "endOffset": 401708,
+          "summary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊",
+          "sourcePointerId": "sp_98fd4b622c7d"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "anti_farm_rule-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "no original prose body is included"
+        ],
+        "updatedAt": "2026-05-18T03:32:44.828284+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "anti_farm_rule",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "faction_identity_change",
+          "npc_life_conclusion"
+        ]
+      },
+      "resourceRole": "trade",
+      "rankBand": "low_rank",
+      "scarcityTier": "event_gated",
+      "notGrantableByAI": true,
+      "antiExploitNote": "Agent selling/buying requires stock, trust, attention, and cooldown gates."
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0099",
+      "paragraphId": "ch_0099_p0037",
+      "startOffset": 311187,
+      "endOffset": 311189,
+      "summary": "方源考虑合炼白玉蛊还是月芒蛊，因元石不足只能选其一，决定合炼白玉蛊以采集蜜酒和继承花酒行者传承",
+      "sourcePointerId": "sp_0fd3eb5b151b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0059",
+      "startOffset": 69860,
+      "endOffset": 69990,
+      "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+      "sourcePointerId": "sp_31d025e4a54d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0009",
+      "paragraphId": "ch_0009_p0022",
+      "startOffset": 21279,
+      "endOffset": 21310,
+      "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+      "sourcePointerId": "sp_3aa8bb64b68c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0053",
+      "startOffset": 492328,
+      "endOffset": 492428,
+      "summary": "方源分析自身处境，决定晋升三转以应对危机",
+      "sourcePointerId": "sp_3fb390ba9f3a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0008",
+      "paragraphId": "ch_0008_p0053",
+      "startOffset": 20186,
+      "endOffset": 20276,
+      "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+      "sourcePointerId": "sp_43cce366ab6b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0092",
+      "paragraphId": "ch_0092_p0002",
+      "startOffset": 285301,
+      "endOffset": 285324,
+      "summary": "方源一夜未睡，天亮后出门大肆采办生活用品，包括被褥、油灯、桌椅、火炉、干粮和水",
+      "sourcePointerId": "sp_553d178a4815"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0012",
+      "paragraphId": "ch_0012_p0054",
+      "startOffset": 32158,
+      "endOffset": 32214,
+      "summary": "方源在客栈租房并用元石购买酒菜。",
+      "sourcePointerId": "sp_64399addb724"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0124",
+      "paragraphId": "ch_0124_p0045",
+      "startOffset": 401706,
+      "endOffset": 401708,
+      "summary": "方源委托江牙贩卖生机叶并收购鱼鳞蛊",
+      "sourcePointerId": "sp_98fd4b622c7d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0013",
+      "paragraphId": "ch_0013_p0027",
+      "startOffset": 34077,
+      "endOffset": 34134,
+      "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+      "sourcePointerId": "sp_991c8e9bd1a4"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0035",
+      "startOffset": 314282,
+      "endOffset": 314327,
+      "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+      "sourcePointerId": "sp_eb68d364a0cd"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0033",
+      "startOffset": 44357,
+      "endOffset": 44500,
+      "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+      "sourcePointerId": "sp_eeb41700ee70"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0043",
+      "paragraphId": "ch_0043_p0062",
+      "startOffset": 126461,
+      "endOffset": 126505,
+      "summary": "方源与贾金生就癞土蛤蟆的收购进行谈判，方源坚持市价五百块元石，贾金生试图压价失败，最终同意收购。",
+      "sourcePointerId": "sp_f2a34571b3fd"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0008",
+      "paragraphId": "ch_0008_p0047",
+      "startOffset": 19899,
+      "endOffset": 19949,
+      "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+      "sourcePointerId": "sp_f34a72f59673"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "low_rank_material": 4,
+      "low_rank_feeding": 2,
+      "refinement_failure_cost": 5,
+      "refinement_fragment": 3,
+      "supply_requirement": 2,
+      "market_window": 6,
+      "anti_farm_rule": 3
+    },
+    "itemCategories": {
+      "anti_farm_rule": 3,
+      "feeding_requirement": 1,
+      "low_rank_material_candidate": 1,
+      "market_cost_hint": 1,
+      "refinement_failure_cost": 2,
+      "refinement_fragment": 2,
+      "scarcity_rule": 1,
+      "supply_requirement": 2
+    },
+    "chapterCoverage": {
+      "ch_0008": 2,
+      "ch_0009": 1,
+      "ch_0012": 1,
+      "ch_0013": 1,
+      "ch_0016": 1,
+      "ch_0024": 1,
+      "ch_0043": 1,
+      "ch_0092": 1,
+      "ch_0099": 1,
+      "ch_0100": 1,
+      "ch_0124": 1,
+      "ch_0149": 1
+    },
+    "requiredFieldsPresent": {
+      "id": 13,
+      "category": 13,
+      "summary": 13,
+      "playerVisibility": 13,
+      "confidence": 13,
+      "sourcePointers": 13,
+      "reviewStatus": 13,
+      "reborngGate": 13
+    },
+    "exactTermSignals": {
+      "蛊材": 9,
+      "食料": 0,
+      "喂养": 15,
+      "炼蛊": 173,
+      "炼化": 109,
+      "合炼": 59,
+      "蛊方": 22,
+      "残方": 3,
+      "秘方": 67,
+      "商队": 219
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "missingScopeCoverage": [],
+      "caveats": [
+        "exact source term 食料 is absent in 0001-0600; feeding coverage is via 喂养/酒虫/青竹酒 signals"
+      ],
+      "notes": [
+        "complete means required request scopes have redacted source-backed candidates",
+        "candidate material still requires RebornG intake review before any runtime absorption"
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 13,
+    "byCategory": {
+      "anti_farm_rule": 3,
+      "feeding_requirement": 1,
+      "low_rank_material_candidate": 1,
+      "market_cost_hint": 1,
+      "refinement_failure_cost": 2,
+      "refinement_fragment": 2,
+      "scarcity_rule": 1,
+      "supply_requirement": 2
+    },
+    "byReviewStatus": {
+      "export_ready": 13
+    },
+    "sourcePointers": 13,
+    "forbiddenTextKeyCount": 0,
+    "highRankLeakTermCount": 0,
+    "skipped": 0
+  }
+}
