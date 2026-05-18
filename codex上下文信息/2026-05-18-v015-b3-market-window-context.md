@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v0.15.0-b3` 本地质量门通过，待提交、推送和远端 CI。
+`v0.15.0-b3` 已完成并推送，远端 CI 通过。
 
 本阶段新增 `qingmao_market_window_probe`，把商队接触、公开问价、身份担保、公开理由、价格压力和交易风险整理为本地候选窗口行动。
 
@@ -82,15 +82,13 @@ npm run check:production-preview
 ## Git 状态
 
 - 当前分支：`codex/v013-npc-faction-reaction`
-- 本阶段提交：待创建
-- 推送状态：待推送
-- 远端 CI：待推送后确认
+- 本阶段提交：`a3dedde feat: 接入v0.15商队市场窗口样板`
+- 推送状态：已推送到 `origin/codex/v013-npc-faction-reaction`
+- 远端 CI：GitHub Actions run `26025266822` 通过
 - 不要 stage unrelated dirty/untracked files，例如 `doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`指导大纲/vMiroFish/README.md`、`指导大纲/vMiroFish/requests/README.md`、`.cursor/`、`bgm/`、`artifacts/`、美术候选图和 `指导大纲/大方向/`。
 
 ## 下一步
 
-先提交、推送并确认 GitHub Actions。远端通过后，更新 b3 远端证据。
-
-如果 b3 远端通过，下一阶段可进入 `v0.15.0-b4 灰色交易/委托边界样本`。
+下一阶段进入 `v0.15.0-b4 灰色交易/委托边界样本`。
 
 b4 必须继续停在保守边界内：黑市、委托代售、灰色交易、稳定套利、诈骗设局、势力关注都只能先做边界/测试/延期样本，不开放正式收益、库存、地点、阵营、任务、奖励、存档字段或 DeepSeek 新权限，除非用户明确批准。
