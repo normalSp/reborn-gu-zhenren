@@ -42,6 +42,6 @@
 
 ## Git 状态
 
-`005c1da feat: 完成v0.17战斗深化第一层` 已推送到 `codex/v013-npc-faction-reaction`。GitHub Actions run `26046493464` 通过 deterministic quality gate。
+`005c1da feat: 完成v0.17战斗深化第一层` 与 `9c77935 docs: 记录v0.17远端验证` 已推送到 `codex/v013-npc-faction-reaction`。GitHub Actions run `26046493464`、`26046685585` 通过 deterministic quality gate。
 
 后续提交仍必须显式 stage 相关文件，不得使用 `git add -A`，不得混入历史脏文件、美术候选、zip、artifacts、bgm、`.cursor` 或 `指导大纲/大方向/`。
