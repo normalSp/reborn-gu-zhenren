@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao night black market atmosphere">
+  <defs>
+    <linearGradient id="nmSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#08090d"/>
+      <stop offset="0.55" stop-color="#0c1010"/>
+      <stop offset="1" stop-color="#06070a"/>
+    </linearGradient>
+    <radialGradient id="nmFaintGlow" cx="0.5" cy="0.5" r="0.4">
+      <stop offset="0" stop-color="#c44b4b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#c44b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nmColdMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#nmSky)"/>
+  <path d="M0 224 H180 L210 196 L240 224 H320 L350 192 L380 224 H540 L572 196 L604 224 H760 L790 198 L820 224 H960 V332 H0 Z" fill="#040506" opacity="0.92"/>
+  <g opacity="0.76" stroke="#1a1612" stroke-opacity="0.7" stroke-width="1.2" fill="#0a0a0a">
+    <path d="M86 372 L132 332 L210 332 L246 372 L246 442 L86 442 Z"/>
+    <path d="M286 374 L334 336 L408 336 L444 374 L444 442 L286 442 Z"/>
+    <path d="M520 374 L572 336 L646 336 L686 374 L686 442 L520 442 Z"/>
+    <path d="M736 372 L786 334 L856 334 L896 372 L896 442 L736 442 Z"/>
+  </g>
+  <g opacity="0.7">
+    <ellipse cx="166" cy="362" rx="40" ry="10" fill="url(#nmFaintGlow)"/>
+    <ellipse cx="166" cy="362" rx="3" ry="3.5" fill="#c44b4b" fill-opacity="0.75"/>
+    <ellipse cx="166" cy="362" rx="1.4" ry="1.6" fill="#e0c78a" fill-opacity="0.9"/>
+    <ellipse cx="365" cy="364" rx="36" ry="9" fill="url(#nmFaintGlow)"/>
+    <ellipse cx="365" cy="364" rx="3" ry="3.5" fill="#c44b4b" fill-opacity="0.75"/>
+    <ellipse cx="365" cy="364" rx="1.4" ry="1.6" fill="#e0c78a" fill-opacity="0.9"/>
+    <ellipse cx="603" cy="364" rx="38" ry="10" fill="url(#nmFaintGlow)"/>
+    <ellipse cx="603" cy="364" rx="3" ry="3.5" fill="#c44b4b" fill-opacity="0.75"/>
+    <ellipse cx="603" cy="364" rx="1.4" ry="1.6" fill="#e0c78a" fill-opacity="0.9"/>
+    <ellipse cx="816" cy="362" rx="36" ry="9" fill="url(#nmFaintGlow)"/>
+    <ellipse cx="816" cy="362" rx="3" ry="3.5" fill="#c44b4b" fill-opacity="0.75"/>
+    <ellipse cx="816" cy="362" rx="1.4" ry="1.6" fill="#e0c78a" fill-opacity="0.9"/>
+  </g>
+  <g opacity="0.65" fill="#040405">
+    <path d="M198 470 C198 446 208 432 218 432 C228 432 238 446 238 470 L238 488 L198 488 Z"/>
+    <path d="M384 472 C384 446 394 432 404 432 C414 432 424 446 424 472 L424 488 L384 488 Z"/>
+    <path d="M620 472 C620 446 630 432 640 432 C650 432 660 446 660 472 L660 488 L620 488 Z"/>
+    <path d="M838 470 C838 446 848 432 858 432 C868 432 878 446 878 470 L878 488 L838 488 Z"/>
+  </g>
+  <g opacity="0.42" fill="#040405">
+    <ellipse cx="282" cy="476" rx="9" ry="14"/>
+    <ellipse cx="498" cy="478" rx="9" ry="14"/>
+    <ellipse cx="710" cy="476" rx="9" ry="14"/>
+  </g>
+  <rect x="0" y="408" width="960" height="80" fill="url(#nmColdMist)" opacity="0.6"/>
+  <rect x="0" y="476" width="960" height="64" fill="url(#nmColdMist)" opacity="0.38"/>
+  <g opacity="0.35" stroke="#8fd0b3" stroke-width="1" stroke-opacity="0.32" fill="none">
+    <path d="M40 304 C168 286 290 296 432 282 C566 268 700 280 838 264"/>
+  </g>
+</svg>

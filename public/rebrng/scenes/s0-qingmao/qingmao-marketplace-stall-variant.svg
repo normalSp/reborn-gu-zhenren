@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao marketplace stalls atmosphere">
+  <defs>
+    <linearGradient id="mktGround" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#13180f"/>
+      <stop offset="0.55" stop-color="#1a1f14"/>
+      <stop offset="1" stop-color="#0c0d09"/>
+    </linearGradient>
+    <radialGradient id="mktGlow" cx="0.5" cy="0.32" r="0.6">
+      <stop offset="0" stop-color="#e0c78a" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#e0c78a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mktMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#mktGround)"/>
+  <rect width="960" height="540" fill="url(#mktGlow)"/>
+  <path d="M0 286 L88 268 L132 252 L188 270 L262 252 L318 268 L390 250 L460 264 L532 248 L606 262 L676 246 L744 262 L818 248 L884 264 L960 250 V336 H0 Z" fill="#0a0c08" opacity="0.78"/>
+  <g opacity="0.6" stroke="#c9a96e" stroke-opacity="0.28" stroke-width="1.4">
+    <path d="M88 332 L160 304 L246 304 L286 332" fill="#1a1610"/>
+    <path d="M308 332 L370 308 L444 308 L488 332" fill="#1c1812"/>
+    <path d="M524 336 L588 312 L668 312 L708 336" fill="#1a1610"/>
+    <path d="M732 332 L788 310 L860 310 L900 332" fill="#1c1812"/>
+  </g>
+  <g opacity="0.62">
+    <circle cx="168" cy="320" r="5" fill="#c44b4b"/>
+    <circle cx="168" cy="320" r="2.4" fill="#e0c78a"/>
+    <circle cx="396" cy="320" r="5" fill="#c44b4b"/>
+    <circle cx="396" cy="320" r="2.4" fill="#e0c78a"/>
+    <circle cx="616" cy="324" r="5" fill="#c44b4b"/>
+    <circle cx="616" cy="324" r="2.4" fill="#e0c78a"/>
+    <circle cx="822" cy="322" r="5" fill="#c44b4b"/>
+    <circle cx="822" cy="322" r="2.4" fill="#e0c78a"/>
+  </g>
+  <g opacity="0.34" stroke="#c9a96e" stroke-width="2" fill="none">
+    <path d="M40 422 C160 400 282 414 420 396 C552 378 686 392 818 376 C880 368 920 372 960 366"/>
+    <path d="M40 462 C168 446 290 458 432 444 C566 428 702 442 838 426"/>
+  </g>
+  <g opacity="0.4" fill="#0a0b08">
+    <ellipse cx="206" cy="446" rx="10" ry="18"/>
+    <ellipse cx="232" cy="448" rx="9" ry="16"/>
+    <ellipse cx="412" cy="446" rx="10" ry="18"/>
+    <ellipse cx="442" cy="448" rx="9" ry="16"/>
+    <ellipse cx="630" cy="448" rx="10" ry="18"/>
+    <ellipse cx="660" cy="450" rx="9" ry="16"/>
+    <ellipse cx="836" cy="446" rx="10" ry="18"/>
+  </g>
+  <rect x="0" y="372" width="960" height="64" fill="url(#mktMist)" opacity="0.7"/>
+  <rect x="0" y="468" width="960" height="72" fill="url(#mktMist)" opacity="0.5"/>
+</svg>

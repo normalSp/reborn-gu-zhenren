@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao cave interior atmosphere">
+  <defs>
+    <radialGradient id="cvDepth" cx="0.5" cy="0.46" r="0.6">
+      <stop offset="0" stop-color="#0e1010" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="cvTorch" cx="0.32" cy="0.62" r="0.22">
+      <stop offset="0" stop-color="#e0c78a" stop-opacity="0.78"/>
+      <stop offset="0.45" stop-color="#c44b4b" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#c44b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cvWall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0c0d0a"/>
+      <stop offset="0.5" stop-color="#161412"/>
+      <stop offset="1" stop-color="#080807"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#cvWall)"/>
+  <rect width="960" height="540" fill="url(#cvDepth)"/>
+  <path d="M0 540 L0 348 C70 326 140 308 210 312 L260 320 L320 274 L388 312 L460 268 L532 302 L606 264 L676 308 L746 274 L820 318 L890 308 L960 332 L960 540 Z" fill="#0a0a0a" opacity="0.94"/>
+  <g opacity="0.74">
+    <path d="M120 0 L132 84 L142 0 Z" fill="#0e0e0c"/>
+    <path d="M226 0 L238 124 L248 0 Z" fill="#100f0d"/>
+    <path d="M348 0 L360 92 L372 0 Z" fill="#0e0e0c"/>
+    <path d="M482 0 L494 140 L506 0 Z" fill="#101010"/>
+    <path d="M620 0 L632 100 L644 0 Z" fill="#0e0e0c"/>
+    <path d="M740 0 L750 122 L762 0 Z" fill="#100f0d"/>
+    <path d="M850 0 L862 88 L872 0 Z" fill="#0e0e0c"/>
+  </g>
+  <g opacity="0.78">
+    <path d="M186 540 L196 460 L206 540 Z" fill="#0c0c0a"/>
+    <path d="M308 540 L320 426 L334 540 Z" fill="#0e0d0a"/>
+    <path d="M430 540 L444 412 L460 540 Z" fill="#100f0d"/>
+    <path d="M566 540 L580 422 L596 540 Z" fill="#0e0d0a"/>
+    <path d="M696 540 L710 432 L724 540 Z" fill="#0c0c0a"/>
+    <path d="M810 540 L822 446 L834 540 Z" fill="#0e0d0a"/>
+  </g>
+  <ellipse cx="306" cy="334" rx="120" ry="30" fill="url(#cvTorch)"/>
+  <g opacity="0.92">
+    <path d="M298 348 L304 314 L310 332 L316 312 L322 346 Z" fill="#c44b4b" fill-opacity="0.7"/>
+    <path d="M302 346 L310 322 L316 342 Z" fill="#e0c78a" fill-opacity="0.85"/>
+    <rect x="304" y="346" width="4" height="36" fill="#3a2818"/>
+  </g>
+  <g opacity="0.4" fill="#06070a">
+    <ellipse cx="356" cy="376" rx="9" ry="14"/>
+    <ellipse cx="380" cy="378" rx="8" ry="13"/>
+  </g>
+  <g opacity="0.32" stroke="#c9a96e" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <path d="M40 478 C160 466 280 472 420 462 C540 454 660 462 800 452"/>
+  </g>
+  <g opacity="0.18" stroke="#8fd0b3" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <path d="M540 220 C620 230 700 234 820 240"/>
+  </g>
+</svg>

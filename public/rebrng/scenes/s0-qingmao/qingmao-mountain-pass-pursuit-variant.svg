@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao mountain pass pursuit atmosphere">
+  <defs>
+    <linearGradient id="ppSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0e1622"/>
+      <stop offset="0.55" stop-color="#13201c"/>
+      <stop offset="1" stop-color="#0a0c0a"/>
+    </linearGradient>
+    <radialGradient id="ppDistantTorch" cx="0.84" cy="0.42" r="0.18">
+      <stop offset="0" stop-color="#c44b4b" stop-opacity="0.5"/>
+      <stop offset="0.5" stop-color="#c44b4b" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#c44b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ppMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#ppSky)"/>
+  <rect width="960" height="540" fill="url(#ppDistantTorch)"/>
+  <path d="M0 232 C82 184 170 198 264 162 C346 130 432 154 514 124 C596 96 678 112 760 92 C840 74 906 86 960 80 V540 H0 Z" fill="#0a0d0a" opacity="0.86"/>
+  <path d="M0 318 L96 312 L156 268 L228 320 L312 280 L384 326 L468 286 L552 332 L640 290 L728 336 L820 292 L900 340 L960 304 V540 H0 Z" fill="#0d130d" opacity="0.92"/>
+  <path d="M0 412 C140 386 250 408 392 380 C520 354 644 376 786 348 C870 332 920 340 960 332 V540 H0 Z" fill="#11181a" opacity="0.78"/>
+  <g opacity="0.5" stroke="#1a201c" stroke-width="1.5" fill="none">
+    <path d="M120 528 C200 480 286 462 360 432 C440 400 522 388 596 374 C680 358 752 354 820 346"/>
+    <path d="M150 540 C232 500 320 482 396 452 C476 422 558 408 632 394"/>
+  </g>
+  <g opacity="0.62" stroke="#c9a96e" stroke-opacity="0.32" stroke-width="2" fill="none">
+    <path d="M120 528 C200 480 286 462 360 432 C440 400 522 388 596 374 C680 358 752 354 820 346"/>
+  </g>
+  <g opacity="0.6" fill="#06070a">
+    <path d="M180 510 C180 484 192 470 204 470 C214 470 224 484 224 510 L224 528 L180 528 Z"/>
+    <path d="M236 514 C236 488 246 472 256 472 C266 472 274 488 274 514 L274 530 L236 530 Z"/>
+    <path d="M298 506 C298 480 308 466 318 466 C328 466 336 480 336 506 L336 524 L298 524 Z"/>
+  </g>
+  <g opacity="0.58">
+    <ellipse cx="800" cy="226" rx="6" ry="8" fill="#c44b4b" fill-opacity="0.7"/>
+    <ellipse cx="800" cy="226" rx="2.6" ry="3.4" fill="#e0c78a" fill-opacity="0.85"/>
+    <ellipse cx="852" cy="232" rx="5" ry="7" fill="#c44b4b" fill-opacity="0.55"/>
+    <ellipse cx="852" cy="232" rx="2.2" ry="3" fill="#e0c78a" fill-opacity="0.78"/>
+  </g>
+  <g opacity="0.46" fill="#06070a">
+    <path d="M770 248 C770 226 778 214 786 214 C794 214 800 226 800 248 L800 262 L770 262 Z"/>
+    <path d="M838 252 C838 230 846 220 854 220 C862 220 868 230 868 252 L868 264 L838 264 Z"/>
+  </g>
+  <g opacity="0.34" stroke="#0a0b0a" stroke-width="9">
+    <path d="M84 86 C90 198 78 304 110 442"/>
+    <path d="M876 92 C868 200 894 308 858 462"/>
+  </g>
+  <rect x="0" y="194" width="960" height="84" fill="url(#ppMist)" opacity="0.62"/>
+  <rect x="0" y="320" width="960" height="76" fill="url(#ppMist)" opacity="0.46"/>
+  <rect x="0" y="476" width="960" height="64" fill="url(#ppMist)" opacity="0.32"/>
+</svg>

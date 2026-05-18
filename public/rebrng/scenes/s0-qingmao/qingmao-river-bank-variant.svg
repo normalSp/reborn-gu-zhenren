@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao river bank atmosphere">
+  <defs>
+    <linearGradient id="rbSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="0.5" stop-color="#152018"/>
+      <stop offset="1" stop-color="#0a0c0a"/>
+    </linearGradient>
+    <linearGradient id="rbWater" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1a2a30"/>
+      <stop offset="0.5" stop-color="#0e1820"/>
+      <stop offset="1" stop-color="#06090c"/>
+    </linearGradient>
+    <linearGradient id="rbWaterShine" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fcde0" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rbMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#rbSky)"/>
+  <path d="M0 232 C140 198 254 214 388 188 C516 162 644 184 776 158 C854 142 912 152 960 148 V302 H0 Z" fill="#0a0d0a" opacity="0.86"/>
+  <rect x="0" y="298" width="960" height="156" fill="url(#rbWater)"/>
+  <rect x="0" y="298" width="960" height="156" fill="url(#rbWaterShine)" opacity="0.7"/>
+  <g opacity="0.42" stroke="#8fcde0" stroke-opacity="0.32" stroke-width="1.4" fill="none">
+    <path d="M40 326 C160 322 280 332 420 326 C540 320 660 330 800 322 C870 318 920 322 960 320"/>
+    <path d="M40 354 C168 350 290 360 432 354 C566 348 700 358 838 350" stroke-opacity="0.22"/>
+    <path d="M40 388 C176 384 304 394 446 388 C586 382 720 392 858 384" stroke-opacity="0.16"/>
+  </g>
+  <g opacity="0.6" stroke="#1a201a" stroke-width="2" fill="#0a0e0c">
+    <path d="M0 446 C160 420 290 440 432 412 C566 386 700 410 838 384 C898 372 932 378 960 376 V540 H0 Z"/>
+  </g>
+  <g opacity="0.55" stroke="#3a2c18" stroke-width="2" fill="none">
+    <path d="M156 442 C158 416 170 408 178 414"/>
+    <path d="M186 444 C190 422 200 410 210 416"/>
+    <path d="M232 446 C238 426 248 416 258 422"/>
+    <path d="M276 446 C282 424 292 414 302 420"/>
+    <path d="M328 446 C334 424 344 414 354 420"/>
+    <path d="M654 442 C658 420 668 410 678 416"/>
+    <path d="M696 442 C700 422 710 412 720 418"/>
+    <path d="M744 442 C748 420 758 412 768 418"/>
+    <path d="M790 442 C794 422 804 412 814 418"/>
+  </g>
+  <g opacity="0.46" stroke="#c9a96e" stroke-opacity="0.4" stroke-width="2" fill="none">
+    <path d="M156 442 C158 416 170 408 178 414"/>
+    <path d="M232 446 C238 426 248 416 258 422"/>
+    <path d="M696 442 C700 422 710 412 720 418"/>
+    <path d="M790 442 C794 422 804 412 814 418"/>
+  </g>
+  <g opacity="0.6" fill="#06070a">
+    <path d="M448 318 L478 248 L496 252 L488 320 Z"/>
+    <ellipse cx="472" cy="324" rx="22" ry="3" fill-opacity="0.72"/>
+    <path d="M412 322 L424 256 L432 256 L426 322 Z"/>
+    <path d="M508 322 L516 268 L524 270 L520 322 Z"/>
+  </g>
+  <rect x="0" y="220" width="960" height="92" fill="url(#rbMist)" opacity="0.6"/>
+  <rect x="0" y="298" width="960" height="42" fill="url(#rbMist)" opacity="0.4"/>
+</svg>

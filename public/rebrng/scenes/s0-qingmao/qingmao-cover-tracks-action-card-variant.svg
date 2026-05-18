@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao cover tracks action card atmosphere">
+  <defs>
+    <linearGradient id="ctSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0e1620"/>
+      <stop offset="0.5" stop-color="#11201d"/>
+      <stop offset="1" stop-color="#0a0c0a"/>
+    </linearGradient>
+    <radialGradient id="ctDistantTorch" cx="0.18" cy="0.4" r="0.16">
+      <stop offset="0" stop-color="#c44b4b" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#c44b4b" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#c44b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ctMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="ctGroundLight" cx="0.62" cy="0.78" r="0.32">
+      <stop offset="0" stop-color="#1a201c" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#0e1310" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#06080a" stop-opacity="0.94"/>
+    </radialGradient>
+  </defs>
+
+  <!-- sky and far pursuit torch hint -->
+  <rect width="960" height="540" fill="url(#ctSky)"/>
+  <rect width="960" height="540" fill="url(#ctDistantTorch)"/>
+
+  <!-- distant ridge with pursuer torch cluster -->
+  <path d="M0 232 C82 196 168 214 252 184 C334 152 418 174 502 146 C586 120 668 138 752 118 C836 100 904 112 960 106 V268 H0 Z" fill="#0a0d0a" opacity="0.86"/>
+  <g opacity="0.62">
+    <ellipse cx="166" cy="208" rx="6" ry="8" fill="#c44b4b" fill-opacity="0.72"/>
+    <ellipse cx="166" cy="208" rx="2.4" ry="3.4" fill="#e0c78a" fill-opacity="0.86"/>
+    <ellipse cx="206" cy="216" rx="4" ry="5.5" fill="#c44b4b" fill-opacity="0.52"/>
+    <ellipse cx="206" cy="216" rx="1.8" ry="2.4" fill="#e0c78a" fill-opacity="0.74"/>
+    <ellipse cx="142" cy="220" rx="3.4" ry="4.6" fill="#c44b4b" fill-opacity="0.46"/>
+  </g>
+  <g opacity="0.5" fill="#06070a">
+    <path d="M150 230 C150 210 158 198 166 198 C174 198 180 210 180 230 L180 244 L150 244 Z"/>
+    <path d="M196 236 C196 218 202 208 210 208 C218 208 224 218 224 236 L224 246 L196 246 Z"/>
+    <path d="M130 240 C130 224 136 214 142 214 C148 214 154 224 154 240 L154 250 L130 250 Z"/>
+  </g>
+
+  <!-- mid ground hill shoulder shielding the foreground -->
+  <path d="M0 326 C140 304 250 322 392 296 C520 274 644 292 786 270 C870 256 920 264 960 258 V540 H0 Z" fill="#10181a" opacity="0.78"/>
+
+  <!-- foreground ground in evasion shadow -->
+  <rect width="960" height="540" fill="url(#ctGroundLight)" opacity="0.78"/>
+
+  <!-- bamboo grove protecting foreground (cover) -->
+  <g opacity="0.42" stroke="#0a0b0a" stroke-width="10">
+    <path d="M60 96 C72 218 50 322 84 462"/>
+    <path d="M96 60 C102 198 92 312 116 482"/>
+    <path d="M132 92 C140 220 124 318 152 480"/>
+    <path d="M870 76 C864 196 884 308 856 472"/>
+    <path d="M906 92 C900 218 920 318 892 488"/>
+  </g>
+  <g opacity="0.5" stroke="#1a4032" stroke-width="1.6" fill="none">
+    <path d="M60 96 C72 218 50 322 84 462"/>
+    <path d="M96 60 C102 198 92 312 116 482"/>
+    <path d="M870 76 C864 196 884 308 856 472"/>
+  </g>
+
+  <!-- bamboo leaves dropping/being swept across the ground (covering) -->
+  <g opacity="0.78">
+    <path d="M340 432 C360 426 386 428 408 436" stroke="#1a3024" stroke-width="2" fill="none"/>
+    <path d="M384 446 C402 442 422 444 448 452" stroke="#1a3024" stroke-width="2" fill="none"/>
+    <path d="M420 460 C436 456 458 458 482 466" stroke="#1a3024" stroke-width="2" fill="none"/>
+
+    <!-- scattered leaves -->
+    <path d="M348 442 q6 -6 14 -2 q-4 8 -14 6 Z" fill="#23402e" opacity="0.7"/>
+    <path d="M396 456 q7 -5 14 -1 q-4 8 -14 5 Z" fill="#23402e" opacity="0.62"/>
+    <path d="M440 470 q6 -6 14 -2 q-4 8 -14 6 Z" fill="#23402e" opacity="0.56"/>
+    <path d="M510 478 q7 -5 14 -1 q-4 8 -14 5 Z" fill="#23402e" opacity="0.5"/>
+  </g>
+
+  <!-- faint footprint trail being covered (footprints fading from left to right) -->
+  <g opacity="0.62">
+    <ellipse cx="180" cy="496" rx="14" ry="6" fill="#06070a" opacity="0.7"/>
+    <ellipse cx="180" cy="496" rx="8" ry="3.4" fill="#1a201c" opacity="0.4"/>
+    <ellipse cx="232" cy="486" rx="13" ry="6" fill="#06070a" opacity="0.5"/>
+    <ellipse cx="232" cy="486" rx="7" ry="3" fill="#1a201c" opacity="0.32"/>
+    <ellipse cx="288" cy="478" rx="12" ry="5.4" fill="#06070a" opacity="0.36"/>
+    <ellipse cx="346" cy="466" rx="11" ry="5" fill="#06070a" opacity="0.24"/>
+    <ellipse cx="400" cy="456" rx="10" ry="4.4" fill="#06070a" opacity="0.16"/>
+  </g>
+
+  <!-- a hand silhouette holding a leafy branch sweeping (anonymous, partial frame) -->
+  <g opacity="0.92">
+    <path d="M640 480 C660 470 686 466 706 470 C720 472 730 480 736 492 L720 506 C700 502 678 504 656 508 C644 510 632 510 624 504 Z" fill="#0a0b0a"/>
+    <path d="M730 484 L840 444 C852 440 866 442 872 452 C868 460 856 462 846 466 L740 506 Z" fill="#1a120b" opacity="0.92"/>
+    <g opacity="0.78">
+      <path d="M790 436 q14 -8 26 -2 q-8 16 -26 12 Z" fill="#1a3024"/>
+      <path d="M806 446 q12 -10 24 -4 q-6 18 -24 14 Z" fill="#23402e"/>
+      <path d="M824 430 q12 -8 22 -2 q-8 14 -22 10 Z" fill="#1a3024"/>
+      <path d="M842 442 q12 -8 22 -2 q-8 14 -22 10 Z" fill="#23402e" opacity="0.86"/>
+    </g>
+    <!-- motion arc suggesting the sweep -->
+    <path d="M640 488 Q702 446 818 432" stroke="#5e7e7a" stroke-opacity="0.22" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- mist bands -->
+  <rect x="0" y="208" width="960" height="84" fill="url(#ctMist)" opacity="0.62"/>
+  <rect x="0" y="328" width="960" height="78" fill="url(#ctMist)" opacity="0.48"/>
+  <rect x="0" y="468" width="960" height="72" fill="url(#ctMist)" opacity="0.36"/>
+</svg>

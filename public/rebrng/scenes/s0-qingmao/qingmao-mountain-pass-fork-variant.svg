@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao mountain pass fork atmosphere for route continuation UI">
+  <defs>
+    <linearGradient id="forkSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#101822"/>
+      <stop offset="0.55" stop-color="#13201d"/>
+      <stop offset="1" stop-color="#0a0c0a"/>
+    </linearGradient>
+    <radialGradient id="forkDistantVillage" cx="0.22" cy="0.46" r="0.16">
+      <stop offset="0" stop-color="#c9a96e" stop-opacity="0.42"/>
+      <stop offset="0.5" stop-color="#c9a96e" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#c9a96e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="forkDistantRidge" cx="0.78" cy="0.42" r="0.18">
+      <stop offset="0" stop-color="#5e7e7a" stop-opacity="0.28"/>
+      <stop offset="0.6" stop-color="#5e7e7a" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#5e7e7a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="forkMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="forkLeftPath" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1f1a16" stop-opacity="0.95"/>
+      <stop offset="0.7" stop-color="#1a1612" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#0a0c0a" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="forkRightPath" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1a1f1c" stop-opacity="0.9"/>
+      <stop offset="0.6" stop-color="#14181a" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#0a0c0c" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky and atmosphere -->
+  <rect width="960" height="540" fill="url(#forkSky)"/>
+  <rect width="960" height="540" fill="url(#forkDistantVillage)"/>
+  <rect width="960" height="540" fill="url(#forkDistantRidge)"/>
+
+  <!-- distant mountain ridges -->
+  <path d="M0 224 C82 192 168 208 252 178 C334 148 418 168 502 142 C586 116 668 132 752 116 C836 98 904 110 960 104 V260 H0 Z" fill="#0c1110" opacity="0.86"/>
+  <path d="M0 278 L96 270 L168 240 L242 282 L322 246 L398 286 L482 256 L562 292 L642 260 L722 296 L808 264 L884 298 L960 274 V340 H0 Z" fill="#0d130d" opacity="0.92"/>
+
+  <!-- distant village hint, warm cluster on the left fork direction -->
+  <g opacity="0.5">
+    <rect x="186" y="246" width="6" height="6" fill="#c9a96e" fill-opacity="0.62"/>
+    <rect x="198" y="244" width="5" height="5" fill="#c9a96e" fill-opacity="0.48"/>
+    <rect x="210" y="248" width="4" height="4" fill="#c9a96e" fill-opacity="0.38"/>
+    <path d="M178 252 L222 252 L222 258 L178 258 Z" fill="#1f1612" opacity="0.85"/>
+  </g>
+
+  <!-- far ridge fading away on the right fork direction -->
+  <g opacity="0.42">
+    <path d="M720 216 L760 198 L798 218 L842 196 L880 220" stroke="#5e7e7a" stroke-opacity="0.5" stroke-width="1.4" fill="none"/>
+  </g>
+
+  <!-- mid ground hill shoulders -->
+  <path d="M0 372 C140 348 250 366 392 340 C520 318 644 336 786 314 C870 300 920 308 960 302 V540 H0 Z" fill="#10181a" opacity="0.78"/>
+
+  <!-- left fork path descending into mist (toward leaving the mountain) -->
+  <path d="M448 320 C396 360 320 396 226 432 C156 460 88 484 0 510 L0 540 L0 540 L468 540 L484 348 Z" fill="url(#forkLeftPath)"/>
+  <g opacity="0.46" stroke="#c9a96e" stroke-opacity="0.22" stroke-width="1.5" fill="none">
+    <path d="M448 332 C396 366 320 398 232 432 C160 458 92 482 18 510"/>
+  </g>
+
+  <!-- right fork path turning back up into the mountain interior -->
+  <path d="M512 320 C566 354 642 380 736 410 C812 432 884 452 960 472 L960 540 L492 540 L484 348 Z" fill="url(#forkRightPath)"/>
+  <g opacity="0.4" stroke="#5e7e7a" stroke-opacity="0.22" stroke-width="1.4" fill="none">
+    <path d="M512 332 C566 360 642 382 736 412 C812 432 884 450 944 466"/>
+  </g>
+
+  <!-- central wooden direction marker post -->
+  <g transform="translate(478 296)" opacity="0.95">
+    <rect x="-4" y="0" width="8" height="78" fill="#1a120b"/>
+    <path d="M-32 14 L-32 28 L-2 28 L4 21 L-2 14 Z" fill="#241810"/>
+    <path d="M32 16 L32 30 L4 30 L-2 23 L4 16 Z" fill="#241810" opacity="0.78"/>
+    <path d="M-32 14 L-32 28 L-2 28 L4 21 L-2 14 Z" fill="none" stroke="#3a2a1c" stroke-width="0.6"/>
+    <path d="M32 16 L32 30 L4 30 L-2 23 L4 16 Z" fill="none" stroke="#2a1c12" stroke-width="0.6"/>
+    <!-- subtle weather lines on post -->
+    <line x1="-2" y1="40" x2="2" y2="70" stroke="#0a0806" stroke-width="0.6" opacity="0.7"/>
+  </g>
+
+  <!-- a few stones piled at the fork base -->
+  <g opacity="0.74">
+    <ellipse cx="466" cy="376" rx="22" ry="6" fill="#0a0c0a"/>
+    <path d="M450 374 C454 360 466 358 472 366 C478 358 488 362 488 374 Z" fill="#1a1f1c"/>
+    <path d="M458 372 C461 365 468 364 472 369 C476 365 482 367 482 372 Z" fill="#243028" opacity="0.8"/>
+  </g>
+
+  <!-- bamboo silhouettes left fore corner (suggests cover for departure) -->
+  <g opacity="0.34" stroke="#0a0b0a" stroke-width="9">
+    <path d="M48 96 C62 218 38 322 76 462"/>
+    <path d="M76 64 C82 198 70 312 96 482"/>
+  </g>
+
+  <!-- mist bands -->
+  <rect x="0" y="206" width="960" height="86" fill="url(#forkMist)" opacity="0.62"/>
+  <rect x="0" y="344" width="960" height="80" fill="url(#forkMist)" opacity="0.46"/>
+  <rect x="0" y="486" width="960" height="54" fill="url(#forkMist)" opacity="0.32"/>
+</svg>

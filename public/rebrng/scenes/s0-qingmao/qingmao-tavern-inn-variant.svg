@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao tavern inn evening atmosphere">
+  <defs>
+    <linearGradient id="tavSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d1014"/>
+      <stop offset="0.6" stop-color="#141a18"/>
+      <stop offset="1" stop-color="#0a0c0a"/>
+    </linearGradient>
+    <radialGradient id="tavDoorGlow" cx="0.5" cy="0.62" r="0.42">
+      <stop offset="0" stop-color="#e0c78a" stop-opacity="0.45"/>
+      <stop offset="0.45" stop-color="#c9a96e" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#c9a96e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tavMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#tavSky)"/>
+  <rect x="240" y="40" width="480" height="500" fill="url(#tavDoorGlow)"/>
+  <g opacity="0.85">
+    <path d="M180 168 L300 124 L660 124 L780 168 L780 460 L180 460 Z" fill="#0d100c" stroke="#c9a96e" stroke-opacity="0.18" stroke-width="1.4"/>
+    <path d="M180 168 L780 168" stroke="#c9a96e" stroke-opacity="0.26" stroke-width="1.6"/>
+    <path d="M214 134 L766 134" stroke="#c9a96e" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <rect x="406" y="266" width="148" height="194" fill="#1a140c" opacity="0.92"/>
+  <rect x="412" y="272" width="136" height="184" fill="#3c2a18" opacity="0.6"/>
+  <path d="M406 266 L554 266" stroke="#c9a96e" stroke-opacity="0.4" stroke-width="2"/>
+  <g opacity="0.7">
+    <rect x="248" y="244" width="56" height="58" fill="#0a0d09" stroke="#c9a96e" stroke-opacity="0.18" stroke-width="1"/>
+    <rect x="640" y="244" width="56" height="58" fill="#0a0d09" stroke="#c9a96e" stroke-opacity="0.18" stroke-width="1"/>
+    <rect x="252" y="248" width="48" height="50" fill="#c9a96e" fill-opacity="0.14"/>
+    <rect x="644" y="248" width="48" height="50" fill="#c9a96e" fill-opacity="0.14"/>
+  </g>
+  <g opacity="0.78">
+    <path d="M340 196 L420 196" stroke="#c44b4b" stroke-opacity="0.55" stroke-width="2.5"/>
+    <ellipse cx="356" cy="206" rx="7" ry="9" fill="#c44b4b" fill-opacity="0.55"/>
+    <ellipse cx="356" cy="206" rx="3" ry="4" fill="#e0c78a" fill-opacity="0.85"/>
+    <ellipse cx="404" cy="206" rx="7" ry="9" fill="#c44b4b" fill-opacity="0.55"/>
+    <ellipse cx="404" cy="206" rx="3" ry="4" fill="#e0c78a" fill-opacity="0.85"/>
+    <path d="M540 196 L620 196" stroke="#c44b4b" stroke-opacity="0.55" stroke-width="2.5"/>
+    <ellipse cx="556" cy="206" rx="7" ry="9" fill="#c44b4b" fill-opacity="0.55"/>
+    <ellipse cx="556" cy="206" rx="3" ry="4" fill="#e0c78a" fill-opacity="0.85"/>
+    <ellipse cx="604" cy="206" rx="7" ry="9" fill="#c44b4b" fill-opacity="0.55"/>
+    <ellipse cx="604" cy="206" rx="3" ry="4" fill="#e0c78a" fill-opacity="0.85"/>
+  </g>
+  <g opacity="0.5" fill="#08090a">
+    <ellipse cx="466" cy="448" rx="10" ry="14"/>
+    <ellipse cx="492" cy="450" rx="9" ry="13"/>
+  </g>
+  <g opacity="0.32" stroke="#c9a96e" stroke-width="1.5" fill="none">
+    <path d="M40 484 C160 472 280 478 420 470 C560 462 700 470 820 458 C880 452 920 454 960 450"/>
+  </g>
+  <rect x="0" y="446" width="960" height="64" fill="url(#tavMist)" opacity="0.62"/>
+</svg>

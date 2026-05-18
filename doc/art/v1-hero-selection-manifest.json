@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "version": "v0.15-art-audit-1",
+    "date": "2026-05-18",
+    "purpose": "v1.0 public-facing hero asset selection. These files are selected release candidates, not runtime gameplay authority.",
+    "runtimeBinding": "not_bound_yet",
+    "boundary": "Hero assets may improve first impression and sharing surfaces. They must not imply unavailable Gu, routes, rewards, canon outcomes, immortal-level facts, or EdgeOne auto-deploy."
+  },
+  "entries": [
+    {
+      "id": "v1-title-screen-hero",
+      "role": "title_screen_hero",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/title-screen-hero-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/title-screen-hero.png",
+      "intendedBinding": "src/components/title/TitleScreen.tsx",
+      "currentBinding": "not_bound",
+      "usage": "Game title screen first viewport hero background.",
+      "boundary": "Not a playable location unlock and not a promise of complete final art."
+    },
+    {
+      "id": "v1-edgeone-landing-hero",
+      "role": "edgeone_landing_hero",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/edgeone-landing-hero-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/edgeone-landing-hero.png",
+      "intendedBinding": "future public landing or announcement page",
+      "currentBinding": "not_bound",
+      "usage": "EdgeOne/public preview landing hero for external introduction and announcement surfaces.",
+      "boundary": "No EdgeOne auto-deploy, no marketing claim beyond currently implemented milestones."
+    },
+    {
+      "id": "v1-og-share-image",
+      "role": "og_share_image",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/og-share-image-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/og-share-image.png",
+      "intendedBinding": "future Open Graph and social-share meta tags",
+      "currentBinding": "not_bound",
+      "usage": "Social link card image for public sharing surfaces.",
+      "boundary": "No gameplay meaning, no canon fact exposure, no hidden fact implication."
+    }
+  ]
+}

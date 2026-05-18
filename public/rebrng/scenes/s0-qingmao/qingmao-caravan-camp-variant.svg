@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Qingmao caravan camp atmosphere">
+  <defs>
+    <linearGradient id="campSky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0e1620"/>
+      <stop offset="0.6" stop-color="#15201c"/>
+      <stop offset="1" stop-color="#0c0d09"/>
+    </linearGradient>
+    <radialGradient id="campFire" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#e0c78a" stop-opacity="0.78"/>
+      <stop offset="0.45" stop-color="#c44b4b" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#c44b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="campMist" x1="0" x2="1">
+      <stop offset="0" stop-color="#8fd0b3" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#8fd0b3" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8fd0b3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#campSky)"/>
+  <path d="M0 246 C140 196 250 224 384 188 C504 156 624 184 752 156 C842 138 902 148 960 142 V540 H0 Z" fill="#0a0d0a" opacity="0.88"/>
+  <path d="M0 322 C156 286 286 308 432 280 C566 256 700 280 836 252 C898 240 932 246 960 244 V540 H0 Z" fill="#10151a" opacity="0.78"/>
+  <g opacity="0.85">
+    <path d="M148 408 L208 332 L268 408 Z" fill="#1a1a14" stroke="#c9a96e" stroke-opacity="0.24" stroke-width="1.4"/>
+    <path d="M208 332 L208 408" stroke="#c9a96e" stroke-opacity="0.18" stroke-width="1"/>
+    <path d="M298 412 L362 336 L426 412 Z" fill="#181814" stroke="#c9a96e" stroke-opacity="0.22" stroke-width="1.4"/>
+    <path d="M362 336 L362 412" stroke="#c9a96e" stroke-opacity="0.16" stroke-width="1"/>
+    <path d="M572 414 L630 344 L688 414 Z" fill="#181814" stroke="#c9a96e" stroke-opacity="0.22" stroke-width="1.4"/>
+    <path d="M630 344 L630 414" stroke="#c9a96e" stroke-opacity="0.16" stroke-width="1"/>
+    <path d="M716 418 L774 350 L832 418 Z" fill="#1a1814" stroke="#c9a96e" stroke-opacity="0.22" stroke-width="1.4"/>
+    <path d="M774 350 L774 418" stroke="#c9a96e" stroke-opacity="0.16" stroke-width="1"/>
+  </g>
+  <ellipse cx="488" cy="436" rx="84" ry="22" fill="url(#campFire)"/>
+  <g opacity="0.92">
+    <path d="M468 444 L482 412 L490 432 L500 414 L510 442 Z" fill="#c44b4b" fill-opacity="0.7"/>
+    <path d="M474 444 L488 422 L498 440 Z" fill="#e0c78a" fill-opacity="0.85"/>
+    <path d="M460 446 L500 446" stroke="#3a2a18" stroke-width="3" stroke-linecap="round"/>
+    <path d="M468 446 L508 446" stroke="#3a2a18" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.46" fill="#080a08">
+    <ellipse cx="440" cy="438" rx="8" ry="14"/>
+    <ellipse cx="540" cy="438" rx="8" ry="14"/>
+    <ellipse cx="358" cy="430" rx="10" ry="16"/>
+    <ellipse cx="624" cy="432" rx="10" ry="16"/>
+  </g>
+  <g opacity="0.62" fill="#080a08">
+    <path d="M104 454 C124 448 144 450 162 446 C176 444 188 442 200 444 L200 478 L104 478 Z"/>
+    <path d="M104 454 L104 478" stroke="#1a1a14" stroke-width="1"/>
+    <path d="M820 456 C840 450 858 452 876 448 C892 446 904 444 916 446 L916 480 L820 480 Z"/>
+  </g>
+  <rect x="0" y="406" width="960" height="60" fill="url(#campMist)" opacity="0.55"/>
+  <rect x="0" y="470" width="960" height="56" fill="url(#campMist)" opacity="0.4"/>
+</svg>
