@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v0.15.0-b2` 本地质量门通过，待提交、推送、远端 CI。
+`v0.15.0-b2` 完成，已提交、推送，远端 CI 通过。
 
 本阶段新增 `qingmao_refinement_boundary_probe`，把残方不是完整蛊方、材料验证缺口、炼蛊失败代价和轻微社会注意整理为本地边界试读行动。
 
@@ -80,13 +80,14 @@ npm run check:production-preview
 ## Git 状态
 
 - 当前分支：`codex/v013-npc-faction-reaction`
-- 本阶段提交：待创建
-- 推送状态：待推送
-- 远端 CI：待验证
+- 本阶段提交：`03a2f88 feat: 接入v0.15炼蛊残方边界样板`
+- 推送状态：已推送到 `origin/codex/v013-npc-faction-reaction`
+- 远端 CI：GitHub Actions run `26022209682` 通过
+- 流程侧提醒：run `26022209682` 有 GitHub Actions Node 20 deprecation warning，已记录到 v0.15 需求池为 process_followup，不阻塞 b2。
 - 不要 stage unrelated dirty/untracked files，例如 `doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`指导大纲/vMiroFish/README.md`、`指导大纲/vMiroFish/requests/README.md`、`.cursor/`、`bgm/`、`artifacts/`、美术候选图和 `指导大纲/大方向/`。
 
 ## 下一步
 
-完成 b2 commit/push/CI 后，可进入 `v0.15.0-b3 商队/市场窗口候选`。
+可进入 `v0.15.0-b3 商队/市场窗口候选`。
 
 b3 必须继续停在保守边界内：不开放完整坊市、正式价格表、商队加入、正式交易收益、黑市、委托代售、新存档字段或 DeepSeek 新权限，除非用户明确批准。

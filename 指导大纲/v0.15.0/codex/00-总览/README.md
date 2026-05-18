@@ -1,7 +1,7 @@
 # RebornG v0.15.0 Codex 当前入口
 
 日期：2026-05-18
-状态：`v0.15-b2` 本地质量门通过，待提交推送/远端 CI
+状态：`v0.15-b2` 完成并推送，远端 CI 通过
 主题：`低阶蛊师经济、补给、炼养用深循环`
 
 ## 定位
@@ -97,10 +97,9 @@ v0.15 三个 request 已交付并通过 intake review：
 - 项目美术资源盘点第二版已完成：全项目 445 个媒体文件，334 个图片/视觉文件，110 个音频文件，1 个视频文件；`doc/art/` 66 张图已纳入统计。
 - `v0.15-art-audit-1` 第一刀已完成：用户批准的 3 张战斗候选已复制到 `public/rebrng/scenes/s0-qingmao/` 稳定路径；`public/rebrng/scenes/s0-qingmao/` 现有三张 PNG 纳入 `review-only` 治理；9 张青茅场景 SVG 补登记为 `candidate`；v1.0 hero 三件套已复制到 `public/rebrng/release/v1-hero/`，但尚未绑定 UI/EdgeOne/OG meta。
 - `v0.15.0-b1` 补给/喂养缺口行动样板已完成并推送：新增 `qingmao_supply_feeding_preparation_probe`，将离山补给、落脚遮掩、酒虫食料压力写入既有 `livingWorldState` 和本地行动账本；不发材料、不扣元石、不开放市场、不判定离山成功、不新增存档字段、不扩张 DeepSeek 权限；commit `8ec823c`，GitHub Actions run `26019950577` 通过。
-- `v0.15.0-b2` 炼蛊/残方/失败代价第一刀本地质量门通过：新增 `qingmao_refinement_boundary_probe`，将残方不是完整蛊方、材料验证缺口、失败代价和轻微社会注意写入既有 `livingWorldState` 与本地行动账本；不消耗材料、不解锁蛊方、不判定炼成或失败结算、不新增存档字段、不扩张 DeepSeek 权限；focused unit、TypeScript、Playwright b2 e2e、Player Advocate 20 轮、full unit、build、asset scans、production-preview smoke 已通过。
+- `v0.15.0-b2` 炼蛊/残方/失败代价第一刀已完成并推送：新增 `qingmao_refinement_boundary_probe`，将残方不是完整蛊方、材料验证缺口、失败代价和轻微社会注意写入既有 `livingWorldState` 与本地行动账本；不消耗材料、不解锁蛊方、不判定炼成或失败结算、不新增存档字段、不扩张 DeepSeek 权限；focused unit、TypeScript、Playwright b2 e2e、Player Advocate 20 轮、full unit、build、asset scans、production-preview smoke 已通过；commit `03a2f88`，GitHub Actions run `26022209682` 通过。
 
 下一步建议：
 
-- 完成 `v0.15.0-b2` commit/push/CI。
-- 远端 CI 通过后进入 `v0.15.0-b3` 商队/市场窗口候选。
+- 进入 `v0.15.0-b3` 商队/市场窗口候选。
 - 若需要正式材料、元石、库存消耗、蛊方解锁、新存档字段、市场交易或 DeepSeek 新权限，必须停下来让用户决策。
