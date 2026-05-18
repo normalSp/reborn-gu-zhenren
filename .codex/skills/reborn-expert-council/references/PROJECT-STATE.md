@@ -1,6 +1,6 @@
 # RebornG Project State
 
-Last updated: 2026-05-17
+Last updated: 2026-05-18
 
 ## Version
 
@@ -8,6 +8,7 @@ Last updated: 2026-05-17
 - Public release baseline: `v0.9.0` locked.
 - Previous completed development milestone: `v0.13.0`.
 - Current completed development milestone: `v0.14.0`.
+- Current active draft: `v0.15.0` docs startup is established as `低阶蛊师经济、补给、炼养用深循环`. v0.15 MiroFish request + intake review was committed and pushed as `42c6841 docs: 验收v0.15 MiroFish交付包`; the docs startup package lives under `指导大纲/v0.15.0/codex/00-总览/`. Next step is `v0.15.0-a1` design gate before runtime. Do not start runtime, add save fields, grant rewards/materials/Gu/recipes, open full market/black-market/commission systems, or expand DeepSeek authority before the a1 gate and any required user decision.
 - `v0.11.0` mainline: `活世界地基与自由意图闸门`.
 - `v0.11.0-a0` player-visible old-debt cleanup is complete.
 - `v0.11.0-a1` architecture/save hardening first round is complete: save normalization, response-pipeline observability, storage-key unification, and expert-gate checklist.
@@ -24,7 +25,8 @@ Last updated: 2026-05-17
 - Hard design gate approved before `v0.11.0-a2/a3/b2`: `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`.
 - Long-route docs: `指导大纲/长期路线/`, including `RebornG-长期架构演进路线图-纯前端到薄后端.md`.
 - Current v0.11 completion docs: `指导大纲/v0.11.0/codex/00-总览/`.
-- Current v0.14 formal draft docs: `指导大纲/v0.14.0/codex/00-总览/`.
+- Current v0.15 formal draft docs: `指导大纲/v0.15.0/codex/00-总览/`.
+- Previous completed v0.14 formal docs: `指导大纲/v0.14.0/codex/00-总览/`.
 - Previous v0.13 completed docs: `指导大纲/v0.13.0/codex/00-总览/`.
 - Previous v0.12 completed docs: `指导大纲/v0.12.0/codex/00-总览/`.
 - `v0.12.0-a1` first cut is complete: `src/canon/qingmao-canon-fact-cards.json` expanded from the v0.11 Qingmao pilot into a v0.12 fact-card base; `src/canon/qingmao-canon-anchors.json` establishes 10 Qingmao canon anchors; `src/engine/v012-qingmao-canon-anchors.ts` exposes read-only prompt-safe anchor helpers; `src/engine/v011-qingmao-fact-cards.ts` maps more free-text intents to visible/hidden fact-card refs. Focused tests for fact cards, anchors, helper redaction, and v0.12 intent mapping pass; `npx tsc --noEmit --pretty false` and full `npm test -- --reporter=dot` also pass.
