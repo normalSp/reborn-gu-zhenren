@@ -1,7 +1,7 @@
 # RebornG v0.15.0 Codex 当前入口
 
 日期：2026-05-18
-状态：`v0.15-rc` 本地质量门通过，待提交推送与远端 CI
+状态：`v0.15.0` 已完成，rc 远端 CI 通过
 主题：`低阶蛊师经济、补给、炼养用深循环`
 
 ## 定位
@@ -106,9 +106,9 @@ v0.15 三个 request 已交付并通过 intake review：
 - `v0.15.0-b2` 炼蛊/残方/失败代价第一刀已完成并推送：新增 `qingmao_refinement_boundary_probe`，将残方不是完整蛊方、材料验证缺口、失败代价和轻微社会注意写入既有 `livingWorldState` 与本地行动账本；不消耗材料、不解锁蛊方、不判定炼成或失败结算、不新增存档字段、不扩张 DeepSeek 权限；focused unit、TypeScript、Playwright b2 e2e、Player Advocate 20 轮、full unit、build、asset scans、production-preview smoke 已通过；commit `03a2f88`，GitHub Actions run `26022209682` 通过。
 - `v0.15.0-b3` 商队/市场窗口候选第一刀已完成并推送：新增 `qingmao_market_window_probe`，将商队接触、公开问价、身份担保、公开理由和交易风险写入既有 `livingWorldState` 与本地行动账本；不买卖、不写价格表、不开放库存、不加入商队、不开放黑市/委托、不新增存档字段、不扩张 DeepSeek 权限；focused unit、TypeScript、Playwright b3 e2e、Player Advocate 20 轮、full unit、build、asset scans、production-preview smoke 已通过；commit `a3dedde`，GitHub Actions run `26025266822` 通过。
 - `v0.15.0-b4` 灰色交易/委托边界样本已完成并推送：新增 `qingmao_gray_trade_boundary_probe`，将黑市传闻、委托代售、假货、陷阱、势力关注和反刷写成延期边界账本；不开黑市、不开委托收益、不写库存价格、不结算买卖、不写抓捕/地点/阵营/NPC 生死、不新增存档字段、不扩张 DeepSeek 权限；focused unit、TypeScript、Playwright b4 e2e、Player Advocate 20 轮、full unit、build、asset scans、production-preview smoke 已通过；commit `9872c28` 已推送，GitHub Actions run `26027822854` 通过。
-- `v0.15.0-rc` 本地质量门已通过：TypeScript、full unit、build、runtime/Qingmao/player-visible-copy scans、v0.15 相关 e2e、long e2e、production-preview smoke、Player Advocate 60 轮均通过；待提交推送和远端 CI。
+- `v0.15.0-rc` 质量收束已完成并推送：TypeScript、full unit、build、runtime/Qingmao/player-visible-copy scans、v0.15 相关 e2e、long e2e、production-preview smoke、Player Advocate 60 轮均通过；commit `1c15ecb` 已推送，GitHub Actions run `26028779369` 通过。
 
 下一步建议：
 
-- 完成 `v0.15.0-rc` 提交推送和远端 CI。
+- 停止等待用户决策下一大版本方向。
 - 若需要正式材料、元石、库存消耗、蛊方解锁、新存档字段、市场交易或 DeepSeek 新权限，必须停下来让用户决策。

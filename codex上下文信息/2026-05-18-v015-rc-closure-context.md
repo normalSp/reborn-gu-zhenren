@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v0.15.0-rc` 本地质量门已通过，待提交推送与远端 CI。
+`v0.15.0-rc` 已完成并推送，远端 CI 通过。
 
 v0.15 主线 `低阶蛊师经济、补给、炼养用深循环` 已完成本地收束：补给/喂养、残方/炼蛊边界、商队/市场窗口、灰色交易/委托边界四段都保持在候选、边界、风险账本范围内。
 
@@ -65,11 +65,11 @@ npm run check:production-preview
 ## Git 状态
 
 - 当前分支：`codex/v013-npc-faction-reaction`
-- rc 收束提交：待提交。
-- 推送状态：待推送。
-- 远端 CI：待推送后确认。
+- rc 收束提交：`1c15ecb docs: 完成v0.15-rc本地收束`。
+- 推送状态：已推送到 `origin/codex/v013-npc-faction-reaction`。
+- 远端 CI：GitHub Actions run `26028779369` 通过。
 - 不要 stage unrelated dirty/untracked files，例如 `doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`指导大纲/vMiroFish/README.md`、`指导大纲/vMiroFish/requests/README.md`、`.cursor/`、`bgm/`、`artifacts/`、美术候选图和 `指导大纲/大方向/`。
 
 ## 下一步
 
-提交并推送 rc 收束记录，确认 GitHub Actions 通过。通过后将 `v0.15.0` 标记为完成的本地开发里程碑，并停止给用户做下一大版本方向决策。
+`v0.15.0` 已完成为本地开发里程碑。下一步停止，等待用户决策下一大版本方向。
