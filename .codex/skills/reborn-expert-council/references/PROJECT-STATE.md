@@ -8,7 +8,7 @@ Last updated: 2026-05-18
 - Public release baseline: `v0.9.0` locked.
 - Previous completed development milestone: `v0.13.0`.
 - Current completed development milestone: `v0.14.0`.
-- Current active draft: `v0.15.0` docs startup is established as `低阶蛊师经济、补给、炼养用深循环`. v0.15 MiroFish request + intake review was committed and pushed as `42c6841 docs: 验收v0.15 MiroFish交付包`; the docs startup package lives under `指导大纲/v0.15.0/codex/00-总览/`. Next step is `v0.15.0-a1` design gate before runtime. Do not start runtime, add save fields, grant rewards/materials/Gu/recipes, open full market/black-market/commission systems, or expand DeepSeek authority before the a1 gate and any required user decision.
+- Current active draft: `v0.15.0` docs startup is established as `低阶蛊师经济、补给、炼养用深循环`. v0.15 MiroFish request + intake review was committed and pushed as `42c6841 docs: 验收v0.15 MiroFish交付包`; the docs startup package under `指导大纲/v0.15.0/codex/00-总览/` was committed and pushed as `619c5f1 docs: 建立v0.15低阶经济炼养用大纲`. Next step is `v0.15.0-a1` design gate before runtime. Do not start runtime, add save fields, grant rewards/materials/Gu/recipes, open full market/black-market/commission systems, or expand DeepSeek authority before the a1 gate and any required user decision.
 - `v0.11.0` mainline: `活世界地基与自由意图闸门`.
 - `v0.11.0-a0` player-visible old-debt cleanup is complete.
 - `v0.11.0-a1` architecture/save hardening first round is complete: save normalization, response-pipeline observability, storage-key unification, and expert-gate checklist.

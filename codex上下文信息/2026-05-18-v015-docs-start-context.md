@@ -6,6 +6,7 @@
 - Version line: `v0.15.0 低阶蛊师经济、补给、炼养用深循环`
 - Phase: docs startup, before `v0.15.0-a1`
 - MiroFish baseline: request + intake review committed and pushed as `42c6841 docs: 验收v0.15 MiroFish交付包`.
+- Docs startup baseline: committed and pushed as `619c5f1 docs: 建立v0.15低阶经济炼养用大纲`.
 - Save format: unchanged, `SAVE_FORMAT_VERSION = 22`.
 - DeepSeek: unchanged, runtime model `deepseek-v4-flash`; no authority expansion.
 

@@ -82,7 +82,7 @@ v0.15 三个 request 已交付并通过 intake review：
 
 - 用户批准进入 v0.15 文档启动。
 - v0.15 MiroFish request 与 intake review 已提交并推送：`42c6841 docs: 验收v0.15 MiroFish交付包`。
-- v0.15 文档启动包已建立。
+- v0.15 文档启动包已建立并推送：`619c5f1 docs: 建立v0.15低阶经济炼养用大纲`。
 
 下一步建议：
 
