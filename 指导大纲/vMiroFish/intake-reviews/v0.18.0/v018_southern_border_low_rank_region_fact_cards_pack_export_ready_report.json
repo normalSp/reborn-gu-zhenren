@@ -1,0 +1,114 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v018-southern-border-low-rank-region-fact-cards-pack",
+  "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+  "generatedAt": "2026-05-18T17:40:23.310213+00:00",
+  "suggestedOutputName": "v018_southern_border_low_rank_region_fact_cards_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "baseAssessment": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "caravan_public_context": 1,
+      "danger_or_pursuit_context": 1,
+      "low_rank_landing_point": 1,
+      "market_or_inn_public_context": 1,
+      "public_route_area": 1,
+      "region_fact_card": 3
+    },
+    "sourcePointers": 14,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_public_context": 2,
+      "danger_or_pursuit_context": 3,
+      "full_map_boundary": 2,
+      "hidden_boundary": 1,
+      "identity_pressure": 3,
+      "low_rank_landing_point": 2,
+      "low_rank_route": 2,
+      "market_or_inn": 1,
+      "market_or_inn_public_context": 1,
+      "market_window": 1,
+      "mountain_road": 1,
+      "player_visible": 2,
+      "public": 6,
+      "public_region": 5,
+      "public_route_area": 1,
+      "pursuit_pressure": 1,
+      "region_fact_card": 3,
+      "southern_border": 2,
+      "supply_gap": 1
+    },
+    "itemCategories": {
+      "caravan_public_context": 1,
+      "danger_or_pursuit_context": 1,
+      "low_rank_landing_point": 1,
+      "market_or_inn_public_context": 1,
+      "public_route_area": 1,
+      "region_fact_card": 3
+    },
+    "chapterCoverage": {
+      "ch_0009": 1,
+      "ch_0010": 1,
+      "ch_0012": 1,
+      "ch_0040": 1,
+      "ch_0076": 1,
+      "ch_0199": 1,
+      "ch_0246": 1,
+      "ch_0262": 1
+    },
+    "itemsWithSourcePointers": 8,
+    "missingRequiredCategories": [],
+    "exactTermSignals": {
+      "南疆": 41,
+      "商队": 219,
+      "山路": 5,
+      "野外": 5,
+      "客栈": 35,
+      "坊市": 0,
+      "商家城": 98,
+      "落脚": 2
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Exact term 坊市 is sparse in 0001-0600; delivery uses nearby market, inn, caravan, and trade signals."
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete",
+    "baseSufficiency": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates.",
+      "RebornG must run intake review before absorbing any item into local rules, canon data, or tests.",
+      "Source body is omitted; locator pointers are retained for review."
+    ]
+  }
+}

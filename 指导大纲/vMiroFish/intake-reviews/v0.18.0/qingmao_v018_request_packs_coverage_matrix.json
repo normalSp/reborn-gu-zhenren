@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-05-18T17:40:24.404451+00:00",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "baseAssessment": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates"
+  },
+  "outputs": {
+    "route": "uploads\\ri_corpus\\exports\\qingmao_v018_request_packs\\v018_route_entry_state_and_milestones_pack_export_ready.json",
+    "region": "uploads\\ri_corpus\\exports\\qingmao_v018_request_packs\\v018_southern_border_low_rank_region_fact_cards_pack_export_ready.json",
+    "pressure": "uploads\\ri_corpus\\exports\\qingmao_v018_request_packs\\v018_post_qingmao_pressure_reaction_pack_export_ready.json"
+  },
+  "reports": {
+    "route": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_route_entry_state_and_milestones_pack_export_ready_report.json",
+    "region": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_southern_border_low_rank_region_fact_cards_pack_export_ready_report.json",
+    "pressure": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_post_qingmao_pressure_reaction_pack_export_ready_report.json"
+  },
+  "handoffs": {
+    "route": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_route_entry_state_and_milestones_pack_handoff.md",
+    "region": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_southern_border_low_rank_region_fact_cards_pack_handoff.md",
+    "pressure": "uploads\\ri_corpus\\reports\\qingmao_v018_request_packs\\v018_post_qingmao_pressure_reaction_pack_handoff.md"
+  },
+  "summaries": {
+    "route": {
+      "totalItems": 8,
+      "byCategory": {
+        "identity_boundary": 1,
+        "pursuit_boundary": 1,
+        "route_entry_prerequisite": 1,
+        "route_failure_or_return": 1,
+        "route_milestone_public": 2,
+        "route_stage_candidate": 1,
+        "supply_boundary": 1
+      },
+      "sourcePointers": 10,
+      "forbiddenTextKeyCount": 0,
+      "forbiddenTextTokenCount": 0,
+      "sensitiveLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Compiled from 0001-0600 low-rank public-route material; later chapters should be requested only if v0.18 needs broader post-Shang-city coverage."
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "sensitiveLeakTermCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "region": {
+      "totalItems": 8,
+      "byCategory": {
+        "caravan_public_context": 1,
+        "danger_or_pursuit_context": 1,
+        "low_rank_landing_point": 1,
+        "market_or_inn_public_context": 1,
+        "public_route_area": 1,
+        "region_fact_card": 3
+      },
+      "sourcePointers": 14,
+      "forbiddenTextKeyCount": 0,
+      "forbiddenTextTokenCount": 0,
+      "sensitiveLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Exact term 坊市 is sparse in 0001-0600; delivery uses nearby market, inn, caravan, and trade signals."
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "sensitiveLeakTermCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "pressure": {
+      "totalItems": 8,
+      "byCategory": {
+        "caravan_guarantee_requirement": 1,
+        "faction_residual_pressure": 1,
+        "identity_suspicion": 1,
+        "npc_public_memory_candidate": 1,
+        "post_qingmao_public_pressure": 2,
+        "pursuit_reaction": 1,
+        "quarantined": 1
+      },
+      "sourcePointers": 13,
+      "forbiddenTextKeyCount": 0,
+      "forbiddenTextTokenCount": 0,
+      "sensitiveLeakTermCount": 0,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Private or hidden-source material is retained only as locator-level quarantine for human review."
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "sensitiveLeakTermCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    }
+  },
+  "coverageMatrix": {
+    "route": {
+      "scopeCoverage": {
+        "caravan_contact": 1,
+        "engine_owned_reward": 1,
+        "faction_boundary": 1,
+        "identity_boundary": 1,
+        "identity_pressure": 3,
+        "location_boundary": 1,
+        "mountain_road": 1,
+        "player_visible": 3,
+        "public": 5,
+        "public_milestone": 1,
+        "public_region": 1,
+        "pursuit_boundary": 1,
+        "pursuit_pressure": 2,
+        "return_pressure": 1,
+        "route_entry": 4,
+        "route_entry_prerequisite": 1,
+        "route_escape": 2,
+        "route_failure": 1,
+        "route_failure_or_return": 1,
+        "route_milestone": 1,
+        "route_milestone_public": 2,
+        "route_stage": 1,
+        "route_stage_candidate": 1,
+        "supply_boundary": 1,
+        "supply_gap": 2
+      },
+      "itemCategories": {
+        "identity_boundary": 1,
+        "pursuit_boundary": 1,
+        "route_entry_prerequisite": 1,
+        "route_failure_or_return": 1,
+        "route_milestone_public": 2,
+        "route_stage_candidate": 1,
+        "supply_boundary": 1
+      },
+      "chapterCoverage": {
+        "ch_0011": 1,
+        "ch_0012": 1,
+        "ch_0024": 1,
+        "ch_0087": 1,
+        "ch_0200": 1,
+        "ch_0222": 1,
+        "ch_0243": 1,
+        "ch_0262": 1
+      },
+      "itemsWithSourcePointers": 8,
+      "missingRequiredCategories": [],
+      "exactTermSignals": {
+        "青茅": 44,
+        "商队": 219,
+        "山路": 5,
+        "客栈": 35,
+        "商家城": 98,
+        "追": 250,
+        "身份": 170,
+        "补给": 0
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Compiled from 0001-0600 low-rank public-route material; later chapters should be requested only if v0.18 needs broader post-Shang-city coverage."
+        ]
+      }
+    },
+    "region": {
+      "scopeCoverage": {
+        "caravan_public_context": 2,
+        "danger_or_pursuit_context": 3,
+        "full_map_boundary": 2,
+        "hidden_boundary": 1,
+        "identity_pressure": 3,
+        "low_rank_landing_point": 2,
+        "low_rank_route": 2,
+        "market_or_inn": 1,
+        "market_or_inn_public_context": 1,
+        "market_window": 1,
+        "mountain_road": 1,
+        "player_visible": 2,
+        "public": 6,
+        "public_region": 5,
+        "public_route_area": 1,
+        "pursuit_pressure": 1,
+        "region_fact_card": 3,
+        "southern_border": 2,
+        "supply_gap": 1
+      },
+      "itemCategories": {
+        "caravan_public_context": 1,
+        "danger_or_pursuit_context": 1,
+        "low_rank_landing_point": 1,
+        "market_or_inn_public_context": 1,
+        "public_route_area": 1,
+        "region_fact_card": 3
+      },
+      "chapterCoverage": {
+        "ch_0009": 1,
+        "ch_0010": 1,
+        "ch_0012": 1,
+        "ch_0040": 1,
+        "ch_0076": 1,
+        "ch_0199": 1,
+        "ch_0246": 1,
+        "ch_0262": 1
+      },
+      "itemsWithSourcePointers": 8,
+      "missingRequiredCategories": [],
+      "exactTermSignals": {
+        "南疆": 41,
+        "商队": 219,
+        "山路": 5,
+        "野外": 5,
+        "客栈": 35,
+        "坊市": 0,
+        "商家城": 98,
+        "落脚": 2
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Exact term 坊市 is sparse in 0001-0600; delivery uses nearby market, inn, caravan, and trade signals."
+        ]
+      }
+    },
+    "pressure": {
+      "scopeCoverage": {
+        "caravan_guarantee": 2,
+        "caravan_guarantee_requirement": 1,
+        "faction_residual": 3,
+        "faction_residual_pressure": 1,
+        "hidden_boundary": 1,
+        "human_review_only": 1,
+        "identity_pressure": 5,
+        "identity_suspicion": 1,
+        "npc_public_memory": 1,
+        "npc_public_memory_candidate": 1,
+        "player_visible": 3,
+        "post_qingmao_public_pressure": 2,
+        "public": 4,
+        "pursuit_pressure": 3,
+        "pursuit_reaction": 1,
+        "quarantined": 2,
+        "route_escape": 1,
+        "supply_gap": 2
+      },
+      "itemCategories": {
+        "caravan_guarantee_requirement": 1,
+        "faction_residual_pressure": 1,
+        "identity_suspicion": 1,
+        "npc_public_memory_candidate": 1,
+        "post_qingmao_public_pressure": 2,
+        "pursuit_reaction": 1,
+        "quarantined": 1
+      },
+      "chapterCoverage": {
+        "ch_0003": 1,
+        "ch_0024": 2,
+        "ch_0040": 1,
+        "ch_0087": 1,
+        "ch_0199": 1,
+        "ch_0222": 1,
+        "ch_0229": 1
+      },
+      "itemsWithSourcePointers": 8,
+      "missingRequiredCategories": [],
+      "exactTermSignals": {
+        "青茅": 44,
+        "古月": 2060,
+        "白家": 195,
+        "熊家": 124,
+        "商队": 219,
+        "身份": 170,
+        "盘问": 1,
+        "怀疑": 116,
+        "追": 250,
+        "担保": 1
+      },
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete",
+        "requiredCategoryCoverage": "complete",
+        "missingRequiredCategories": [],
+        "candidateOnly": true,
+        "caveats": [
+          "Private or hidden-source material is retained only as locator-level quarantine for human review."
+        ]
+      }
+    }
+  },
+  "completionGate": {
+    "route": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Compiled from 0001-0600 low-rank public-route material; later chapters should be requested only if v0.18 needs broader post-Shang-city coverage."
+      ]
+    },
+    "region": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Exact term 坊市 is sparse in 0001-0600; delivery uses nearby market, inn, caravan, and trade signals."
+      ]
+    },
+    "pressure": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Private or hidden-source material is retained only as locator-level quarantine for human review."
+      ]
+    }
+  },
+  "notes": [
+    "v0.18 request packs are deterministic redacted candidates.",
+    "No live model call is used; source is the 0001-0600 strict/reviewable base."
+  ]
+}

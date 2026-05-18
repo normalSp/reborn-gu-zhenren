@@ -1,0 +1,122 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v018-route-entry-state-and-milestones-pack",
+  "packageId": "v018_route_entry_state_and_milestones_pack",
+  "generatedAt": "2026-05-18T17:40:22.090971+00:00",
+  "suggestedOutputName": "v018_route_entry_state_and_milestones_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "baseAssessment": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "identity_boundary": 1,
+      "pursuit_boundary": 1,
+      "route_entry_prerequisite": 1,
+      "route_failure_or_return": 1,
+      "route_milestone_public": 2,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1
+    },
+    "sourcePointers": 10,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_contact": 1,
+      "engine_owned_reward": 1,
+      "faction_boundary": 1,
+      "identity_boundary": 1,
+      "identity_pressure": 3,
+      "location_boundary": 1,
+      "mountain_road": 1,
+      "player_visible": 3,
+      "public": 5,
+      "public_milestone": 1,
+      "public_region": 1,
+      "pursuit_boundary": 1,
+      "pursuit_pressure": 2,
+      "return_pressure": 1,
+      "route_entry": 4,
+      "route_entry_prerequisite": 1,
+      "route_escape": 2,
+      "route_failure": 1,
+      "route_failure_or_return": 1,
+      "route_milestone": 1,
+      "route_milestone_public": 2,
+      "route_stage": 1,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1,
+      "supply_gap": 2
+    },
+    "itemCategories": {
+      "identity_boundary": 1,
+      "pursuit_boundary": 1,
+      "route_entry_prerequisite": 1,
+      "route_failure_or_return": 1,
+      "route_milestone_public": 2,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1
+    },
+    "chapterCoverage": {
+      "ch_0011": 1,
+      "ch_0012": 1,
+      "ch_0024": 1,
+      "ch_0087": 1,
+      "ch_0200": 1,
+      "ch_0222": 1,
+      "ch_0243": 1,
+      "ch_0262": 1
+    },
+    "itemsWithSourcePointers": 8,
+    "missingRequiredCategories": [],
+    "exactTermSignals": {
+      "青茅": 44,
+      "商队": 219,
+      "山路": 5,
+      "客栈": 35,
+      "商家城": 98,
+      "追": 250,
+      "身份": 170,
+      "补给": 0
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Compiled from 0001-0600 low-rank public-route material; later chapters should be requested only if v0.18 needs broader post-Shang-city coverage."
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete",
+    "baseSufficiency": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates.",
+      "RebornG must run intake review before absorbing any item into local rules, canon data, or tests.",
+      "Source body is omitted; locator pointers are retained for review."
+    ]
+  }
+}

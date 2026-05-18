@@ -1,0 +1,976 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-19-v018-southern-border-low-rank-region-fact-cards-pack",
+  "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+  "targetPhase": "v0.18.0-b3 Southern Border low-rank region fact cards",
+  "generatedAt": "2026-05-18T17:40:23.310213+00:00",
+  "suggestedOutputName": "v018_southern_border_low_rank_region_fact_cards_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "baseAssessment": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates"
+  },
+  "redactionBoundary": {
+    "sourceBody": "not_included",
+    "forbiddenTextFields": "enforced",
+    "hiddenFacts": "locator_only_when_present"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "rewardAuthority": "none",
+    "locationAuthority": "none",
+    "factionAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v018_590bbc871249",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "public_route_area",
+      "summary": "南疆低阶路线可先整理成公开区域语义：山路、商队行进、临时落脚与风险区分开。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0038",
+          "startOffset": 116666,
+          "endOffset": 116710,
+          "summary": "古月家族族长",
+          "sourcePointerId": "sp_d12deac099b1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d12deac099b1",
+        "sp_98eb45a538fa"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0040",
+          "chapterId": "ch_0040",
+          "field": "factionPressures",
+          "itemId": "pressure_001",
+          "sourceSummary": "商队贸易资源分配"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "southern_border",
+        "low_rank_route",
+        "public_region"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.234207+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_d741f932b231",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "region_fact_card",
+      "summary": "山路和野外应作为低阶蛊师可接触的危险通行环境，强调移动成本、遭遇风险和补给消耗。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "sourcePointerId": "sp_929e88080440"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_929e88080440"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_6daf362d8ab4",
+          "sourceSummary": "方源离开山寨，独自走入黑暗的山路"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "mountain_road",
+        "danger_or_pursuit_context",
+        "low_rank_route"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.381201+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_369305cf6cca",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "caravan_public_context",
+      "summary": "商队是低阶区域移动、交易和消息流的公开语义来源；加入、随行和交易仍需 RebornG 本地审核。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0022",
+          "startOffset": 837049,
+          "endOffset": 837054,
+          "summary": "金家寨族长",
+          "sourcePointerId": "sp_039a09c4506f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0020",
+          "startOffset": 837000,
+          "endOffset": 837004,
+          "summary": "金家族长的亲卫",
+          "sourcePointerId": "sp_a66b0a4cc78e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0033",
+          "startOffset": 837528,
+          "endOffset": 837574,
+          "summary": "金家族长",
+          "sourcePointerId": "sp_72c99a3b6844"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0066",
+          "startOffset": 839015,
+          "endOffset": 839019,
+          "summary": "金家族长",
+          "sourcePointerId": "sp_28cb931b0d3e"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_039a09c4506f",
+        "sp_a66b0a4cc78e",
+        "sp_72c99a3b6844",
+        "sp_28cb931b0d3e"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0246",
+          "chapterId": "ch_0246",
+          "field": "factionPressures",
+          "itemId": "pressure_001",
+          "sourceSummary": "金簪草交易与声誉威胁"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "caravan_public_context",
+        "market_window",
+        "identity_pressure"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.514666+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_6ec56f4521c6",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "market_or_inn_public_context",
+      "summary": "客栈、酒肆和小规模交易点可作为临时住宿、打探消息和低阶花费压力的事实卡候选。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0038",
+          "startOffset": 21926,
+          "endOffset": 21977,
+          "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+          "sourcePointerId": "sp_fede8bb413bd"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_fede8bb413bd"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_e39ae5522b5d",
+          "sourceSummary": "方源在酒肆购买了两坛酒，并支付了元石。"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "market_or_inn",
+        "public_region",
+        "supply_gap"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.658866+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_719c1f92eabf",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "low_rank_landing_point",
+      "summary": "低阶落脚点应体现住宿、盘问、资源消耗和消息流，不能直接转化为完整区域开放。",
+      "visibility": "player_visible",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0048",
+          "startOffset": 31911,
+          "endOffset": 31929,
+          "summary": "方源离开原住处，搬到山寨客栈暂居。",
+          "sourcePointerId": "sp_f5fddfc895bf"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f5fddfc895bf"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_4ef595f8c16f",
+          "sourceSummary": "方源离开原住处，搬到山寨客栈暂居。"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "low_rank_landing_point",
+        "identity_pressure",
+        "public_region"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.817647+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_2398d94c9f8e",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "danger_or_pursuit_context",
+      "summary": "追索、怀疑和野外危险可进入区域事实卡的风险层；只作为候选风险，不产生正式通缉。",
+      "visibility": "player_visible",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0199",
+          "paragraphId": "ch_0199_p0002",
+          "startOffset": 667536,
+          "endOffset": 667546,
+          "summary": "主角，古月一族叛徒",
+          "sourcePointerId": "sp_d97bf78ce311"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0199",
+          "paragraphId": "ch_0199_p0006",
+          "startOffset": 667613,
+          "endOffset": 667646,
+          "summary": "source pointer summary withheld by RebornG gate",
+          "sourcePointerId": "sp_17c8a3f53238"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0199",
+          "paragraphId": "ch_0199_p0019",
+          "startOffset": 668072,
+          "endOffset": 668122,
+          "summary": "source pointer summary withheld by RebornG gate",
+          "sourcePointerId": "sp_81c49ea7d118"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d97bf78ce311",
+        "sp_17c8a3f53238",
+        "sp_81c49ea7d118"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0199",
+          "chapterId": "ch_0199",
+          "field": "factionPressures",
+          "itemId": "pressure_1",
+          "sourceSummary": "source pointer summary withheld by RebornG gate"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "danger_or_pursuit_context",
+        "pursuit_pressure",
+        "identity_pressure"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.937371+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_587dd975ce2c",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "region_fact_card",
+      "summary": "商家城相关内容只交付外缘公共语义候选：商队、客栈、进入条件和交易窗口；不开放完整城市结构。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0059",
+          "startOffset": 897507,
+          "endOffset": 897527,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+          "sourcePointerId": "sp_d9682ef9d78f"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d9682ef9d78f"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0262",
+          "chapterId": "ch_0262",
+          "field": "events",
+          "itemId": "evt_a8d424e76c38",
+          "sourceSummary": "翼家商队乘坐飞天蓝鲸抵达商家城"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "southern_border",
+        "public_region",
+        "full_map_boundary"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:23.082906+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    },
+    {
+      "id": "v018_b37421ede3f9",
+      "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
+      "category": "region_fact_card",
+      "summary": "区域事实卡应只沉淀公开、低阶、可逐步得知的语义；地图、奖励和势力关系必须留给本地规则。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0076",
+          "paragraphId": "ch_0076_p0043",
+          "startOffset": 235036,
+          "endOffset": 235038,
+          "summary": "方源思考撤退路线，决定反其道而行，避开王大可能埋伏的野猪分布区域",
+          "sourcePointerId": "sp_90cc0d245149"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_90cc0d245149"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0076",
+          "chapterId": "ch_0076",
+          "field": "events",
+          "itemId": "evt_9635394724ea",
+          "sourceSummary": "方源思考撤退路线，决定反其道而行，避开王大可能埋伏的野猪分布区域"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "hidden_fact_body",
+        "full_map_unlock",
+        "formal_reward",
+        "formal_location_unlock"
+      ],
+      "riskTags": [
+        "public_region",
+        "hidden_boundary",
+        "full_map_boundary"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:23.279735+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "fact_card_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "hidden_fact_body",
+          "full_map_unlock",
+          "formal_reward",
+          "formal_location_unlock"
+        ]
+      }
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0246",
+      "paragraphId": "ch_0246_p0022",
+      "startOffset": 837049,
+      "endOffset": 837054,
+      "summary": "金家寨族长",
+      "sourcePointerId": "sp_039a09c4506f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0199",
+      "paragraphId": "ch_0199_p0006",
+      "startOffset": 667613,
+      "endOffset": 667646,
+      "summary": "source pointer summary withheld by RebornG gate",
+      "sourcePointerId": "sp_17c8a3f53238"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0246",
+      "paragraphId": "ch_0246_p0066",
+      "startOffset": 839015,
+      "endOffset": 839019,
+      "summary": "金家族长",
+      "sourcePointerId": "sp_28cb931b0d3e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0246",
+      "paragraphId": "ch_0246_p0033",
+      "startOffset": 837528,
+      "endOffset": 837574,
+      "summary": "金家族长",
+      "sourcePointerId": "sp_72c99a3b6844"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0199",
+      "paragraphId": "ch_0199_p0019",
+      "startOffset": 668072,
+      "endOffset": 668122,
+      "summary": "source pointer summary withheld by RebornG gate",
+      "sourcePointerId": "sp_81c49ea7d118"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0076",
+      "paragraphId": "ch_0076_p0043",
+      "startOffset": 235036,
+      "endOffset": 235038,
+      "summary": "方源思考撤退路线，决定反其道而行，避开王大可能埋伏的野猪分布区域",
+      "sourcePointerId": "sp_90cc0d245149"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0069",
+      "startOffset": 26888,
+      "endOffset": 26918,
+      "summary": "方源离开山寨，独自走入黑暗的山路",
+      "sourcePointerId": "sp_929e88080440"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0045",
+      "startOffset": 116953,
+      "endOffset": 117038,
+      "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+      "sourcePointerId": "sp_98eb45a538fa"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0246",
+      "paragraphId": "ch_0246_p0020",
+      "startOffset": 837000,
+      "endOffset": 837004,
+      "summary": "金家族长的亲卫",
+      "sourcePointerId": "sp_a66b0a4cc78e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0038",
+      "startOffset": 116666,
+      "endOffset": 116710,
+      "summary": "古月家族族长",
+      "sourcePointerId": "sp_d12deac099b1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0059",
+      "startOffset": 897507,
+      "endOffset": 897527,
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+      "sourcePointerId": "sp_d9682ef9d78f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0199",
+      "paragraphId": "ch_0199_p0002",
+      "startOffset": 667536,
+      "endOffset": 667546,
+      "summary": "主角，古月一族叛徒",
+      "sourcePointerId": "sp_d97bf78ce311"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0012",
+      "paragraphId": "ch_0012_p0048",
+      "startOffset": 31911,
+      "endOffset": 31929,
+      "summary": "方源离开原住处，搬到山寨客栈暂居。",
+      "sourcePointerId": "sp_f5fddfc895bf"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0009",
+      "paragraphId": "ch_0009_p0038",
+      "startOffset": 21926,
+      "endOffset": 21977,
+      "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+      "sourcePointerId": "sp_fede8bb413bd"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_public_context": 2,
+      "danger_or_pursuit_context": 3,
+      "full_map_boundary": 2,
+      "hidden_boundary": 1,
+      "identity_pressure": 3,
+      "low_rank_landing_point": 2,
+      "low_rank_route": 2,
+      "market_or_inn": 1,
+      "market_or_inn_public_context": 1,
+      "market_window": 1,
+      "mountain_road": 1,
+      "player_visible": 2,
+      "public": 6,
+      "public_region": 5,
+      "public_route_area": 1,
+      "pursuit_pressure": 1,
+      "region_fact_card": 3,
+      "southern_border": 2,
+      "supply_gap": 1
+    },
+    "itemCategories": {
+      "caravan_public_context": 1,
+      "danger_or_pursuit_context": 1,
+      "low_rank_landing_point": 1,
+      "market_or_inn_public_context": 1,
+      "public_route_area": 1,
+      "region_fact_card": 3
+    },
+    "chapterCoverage": {
+      "ch_0009": 1,
+      "ch_0010": 1,
+      "ch_0012": 1,
+      "ch_0040": 1,
+      "ch_0076": 1,
+      "ch_0199": 1,
+      "ch_0246": 1,
+      "ch_0262": 1
+    },
+    "itemsWithSourcePointers": 8,
+    "missingRequiredCategories": [],
+    "exactTermSignals": {
+      "南疆": 41,
+      "商队": 219,
+      "山路": 5,
+      "野外": 5,
+      "客栈": 35,
+      "坊市": 0,
+      "商家城": 98,
+      "落脚": 2
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Exact term 坊市 is sparse in 0001-0600; delivery uses nearby market, inn, caravan, and trade signals."
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "caravan_public_context": 1,
+      "danger_or_pursuit_context": 1,
+      "low_rank_landing_point": 1,
+      "market_or_inn_public_context": 1,
+      "public_route_area": 1,
+      "region_fact_card": 3
+    },
+    "sourcePointers": 14,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "skipped": 0
+  }
+}

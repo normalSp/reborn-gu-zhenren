@@ -1,0 +1,908 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-19-v018-route-entry-state-and-milestones-pack",
+  "packageId": "v018_route_entry_state_and_milestones_pack",
+  "targetPhase": "v0.18.0-a1/b1 route entry state and milestone design",
+  "generatedAt": "2026-05-18T17:40:22.090971+00:00",
+  "suggestedOutputName": "v018_route_entry_state_and_milestones_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "baseAssessment": "sufficient_for_v018_low_rank_public_route_region_pressure_candidates"
+  },
+  "redactionBoundary": {
+    "sourceBody": "not_included",
+    "forbiddenTextFields": "enforced",
+    "hiddenFacts": "locator_only_when_present"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "rewardAuthority": "none",
+    "locationAuthority": "none",
+    "factionAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v018_2f9aa228868f",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "route_milestone_public",
+      "summary": "离开青茅后的路线候选应先表现为公开行程阶段，而不是正式地点解锁或阵营迁移。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0200",
+          "paragraphId": "ch_0200_p0036",
+          "startOffset": 672723,
+          "endOffset": 672854,
+          "summary": "方源提议离开青茅山，前往白骨山，白凝冰同意但要求方源跟随她",
+          "sourcePointerId": "sp_cf85ac741438"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cf85ac741438"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0200",
+          "chapterId": "ch_0200",
+          "field": "events",
+          "itemId": "evt_49779cbd0806",
+          "sourceSummary": "方源提议离开青茅山，前往白骨山，白凝冰同意但要求方源跟随她"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "route_entry",
+        "route_escape",
+        "public_milestone"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.074677+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_643b127a1e04",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "route_entry_prerequisite",
+      "summary": "商队接触可以作为路线承接的候选入口；需要公开理由、可信度或随行条件，不能自动加入商队。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0243",
+          "paragraphId": "ch_0243_p0090",
+          "startOffset": 828651,
+          "endOffset": 828693,
+          "summary": "商队因黄金山两寨要求而分裂，分别进入黄家寨和金家寨",
+          "sourcePointerId": "sp_ea43562092ee"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_ea43562092ee"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0243",
+          "chapterId": "ch_0243",
+          "field": "events",
+          "itemId": "evt_4c2c33e2c7be",
+          "sourceSummary": "商队因黄金山两寨要求而分裂，分别进入黄家寨和金家寨"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "route_entry",
+        "caravan_contact",
+        "identity_pressure"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.223935+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_cb57e3cf0c51",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "route_stage_candidate",
+      "summary": "山路、赶路和临时落脚可拆成低阶路线阶段；每一阶段都应保留补给、风险和回退判断。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0048",
+          "startOffset": 31911,
+          "endOffset": 31929,
+          "summary": "方源离开原住处，搬到山寨客栈暂居。",
+          "sourcePointerId": "sp_f5fddfc895bf"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f5fddfc895bf"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_4ef595f8c16f",
+          "sourceSummary": "方源离开原住处，搬到山寨客栈暂居。"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "route_stage",
+        "mountain_road",
+        "supply_gap"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.373656+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_b2d4a7c4234f",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "supply_boundary",
+      "summary": "元石、干粮、水、住宿等低阶补给压力可作为路线门槛；叙事候选不能直接发放资源。",
+      "visibility": "player_visible",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0043",
+          "startOffset": 69061,
+          "endOffset": 69124,
+          "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+          "sourcePointerId": "sp_7943c8462da8"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7943c8462da8"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0024",
+          "chapterId": "ch_0024",
+          "field": "events",
+          "itemId": "evt_00f4e18b170a",
+          "sourceSummary": "方源在客栈购买青竹酒和饭菜，支付三块元石"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "supply_gap",
+        "route_entry",
+        "engine_owned_reward"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.513773+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_b033bdf5b36a",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "pursuit_boundary",
+      "summary": "青茅后续的追索压力应表现为路线风险、盘查或绕行成本；不能直接生成正式追捕结果。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0222",
+          "paragraphId": "ch_0222_p0013",
+          "startOffset": 748187,
+          "endOffset": 748338,
+          "summary": "source pointer summary withheld by RebornG gate",
+          "sourcePointerId": "sp_02c576c791d7"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_02c576c791d7"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0222",
+          "chapterId": "ch_0222",
+          "field": "events",
+          "itemId": "evt_326333f7cd2e",
+          "sourceSummary": "source pointer summary withheld by RebornG gate"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "pursuit_pressure",
+        "route_escape",
+        "identity_pressure"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.633172+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_90afe271499d",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "identity_boundary",
+      "summary": "离山后的身份遮掩、公开理由和被询问风险可作为路线状态字段候选；不能改写玩家阵营身份。",
+      "visibility": "player_visible",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0035",
+          "startOffset": 270973,
+          "endOffset": 271032,
+          "summary": "学堂家老，治疗并检查方源",
+          "sourcePointerId": "sp_76ec06770b51"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0041",
+          "startOffset": 271297,
+          "endOffset": 271333,
+          "summary": "方源的对手，二转蛊师，拥有玉皮蛊",
+          "sourcePointerId": "sp_ed4752485335"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0065",
+          "startOffset": 272474,
+          "endOffset": 272517,
+          "summary": "学员，比武第一",
+          "sourcePointerId": "sp_8892a59ced5f"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_76ec06770b51",
+        "sp_ed4752485335",
+        "sp_8892a59ced5f"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0087",
+          "chapterId": "ch_0087",
+          "field": "factionPressures",
+          "itemId": "pressure_1",
+          "sourceSummary": "方源资质异常引发怀疑"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "identity_pressure",
+        "route_entry",
+        "faction_boundary"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.724007+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_546dea8c497f",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "route_failure_or_return",
+      "summary": "补给不足、遮掩不足或追索升级时，路线候选应允许失败、折返或降级，而不是自动推进到下一地区。",
+      "visibility": "player_visible",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7138719a1356"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "sourceSummary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "route_failure",
+        "return_pressure",
+        "pursuit_pressure"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:21.916709+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    },
+    {
+      "id": "v018_ad0d627a605f",
+      "packageId": "v018_route_entry_state_and_milestones_pack",
+      "category": "route_milestone_public",
+      "summary": "商家城相关线索只能作为外缘里程碑和后续 intake 候选；不能一次性开放完整城市、任务或势力关系。",
+      "visibility": "public",
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0059",
+          "startOffset": 897507,
+          "endOffset": 897527,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+          "sourcePointerId": "sp_d9682ef9d78f"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d9682ef9d78f"
+      ],
+      "sourceRefs": [
+        {
+          "sourcePackageId": "ri_lw_ch_0262",
+          "chapterId": "ch_0262",
+          "field": "events",
+          "itemId": "evt_a8d424e76c38",
+          "sourceSummary": "翼家商队乘坐飞天蓝鲸抵达商家城"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "formal_reward",
+        "formal_location_unlock",
+        "formal_faction_transfer",
+        "npc_life_result"
+      ],
+      "riskTags": [
+        "route_milestone",
+        "public_region",
+        "location_boundary"
+      ],
+      "confidence": "medium",
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body is not included"
+        ],
+        "updatedAt": "2026-05-18T17:40:22.060335+00:00",
+        "persisted": false
+      },
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reborngGate": {
+        "runtimeAuthority": "candidate_only",
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "requiresHumanCanonReview": true,
+        "hiddenRefOnly": false,
+        "allowedUse": [
+          "candidate_pool",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_location_unlock",
+          "formal_faction_transfer",
+          "npc_life_result"
+        ]
+      }
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0222",
+      "paragraphId": "ch_0222_p0013",
+      "startOffset": 748187,
+      "endOffset": 748338,
+      "summary": "source pointer summary withheld by RebornG gate",
+      "sourcePointerId": "sp_02c576c791d7"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0039",
+      "startOffset": 28670,
+      "endOffset": 28708,
+      "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+      "sourcePointerId": "sp_7138719a1356"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0087",
+      "paragraphId": "ch_0087_p0035",
+      "startOffset": 270973,
+      "endOffset": 271032,
+      "summary": "学堂家老，治疗并检查方源",
+      "sourcePointerId": "sp_76ec06770b51"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0043",
+      "startOffset": 69061,
+      "endOffset": 69124,
+      "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+      "sourcePointerId": "sp_7943c8462da8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0087",
+      "paragraphId": "ch_0087_p0065",
+      "startOffset": 272474,
+      "endOffset": 272517,
+      "summary": "学员，比武第一",
+      "sourcePointerId": "sp_8892a59ced5f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0200",
+      "paragraphId": "ch_0200_p0036",
+      "startOffset": 672723,
+      "endOffset": 672854,
+      "summary": "方源提议离开青茅山，前往白骨山，白凝冰同意但要求方源跟随她",
+      "sourcePointerId": "sp_cf85ac741438"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0059",
+      "startOffset": 897507,
+      "endOffset": 897527,
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+      "sourcePointerId": "sp_d9682ef9d78f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0243",
+      "paragraphId": "ch_0243_p0090",
+      "startOffset": 828651,
+      "endOffset": 828693,
+      "summary": "商队因黄金山两寨要求而分裂，分别进入黄家寨和金家寨",
+      "sourcePointerId": "sp_ea43562092ee"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0087",
+      "paragraphId": "ch_0087_p0041",
+      "startOffset": 271297,
+      "endOffset": 271333,
+      "summary": "方源的对手，二转蛊师，拥有玉皮蛊",
+      "sourcePointerId": "sp_ed4752485335"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0012",
+      "paragraphId": "ch_0012_p0048",
+      "startOffset": 31911,
+      "endOffset": 31929,
+      "summary": "方源离开原住处，搬到山寨客栈暂居。",
+      "sourcePointerId": "sp_f5fddfc895bf"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "caravan_contact": 1,
+      "engine_owned_reward": 1,
+      "faction_boundary": 1,
+      "identity_boundary": 1,
+      "identity_pressure": 3,
+      "location_boundary": 1,
+      "mountain_road": 1,
+      "player_visible": 3,
+      "public": 5,
+      "public_milestone": 1,
+      "public_region": 1,
+      "pursuit_boundary": 1,
+      "pursuit_pressure": 2,
+      "return_pressure": 1,
+      "route_entry": 4,
+      "route_entry_prerequisite": 1,
+      "route_escape": 2,
+      "route_failure": 1,
+      "route_failure_or_return": 1,
+      "route_milestone": 1,
+      "route_milestone_public": 2,
+      "route_stage": 1,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1,
+      "supply_gap": 2
+    },
+    "itemCategories": {
+      "identity_boundary": 1,
+      "pursuit_boundary": 1,
+      "route_entry_prerequisite": 1,
+      "route_failure_or_return": 1,
+      "route_milestone_public": 2,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1
+    },
+    "chapterCoverage": {
+      "ch_0011": 1,
+      "ch_0012": 1,
+      "ch_0024": 1,
+      "ch_0087": 1,
+      "ch_0200": 1,
+      "ch_0222": 1,
+      "ch_0243": 1,
+      "ch_0262": 1
+    },
+    "itemsWithSourcePointers": 8,
+    "missingRequiredCategories": [],
+    "exactTermSignals": {
+      "青茅": 44,
+      "商队": 219,
+      "山路": 5,
+      "客栈": 35,
+      "商家城": 98,
+      "追": 250,
+      "身份": 170,
+      "补给": 0
+    },
+    "skipped": 0,
+    "completionGate": {
+      "status": "complete",
+      "requiredCategoryCoverage": "complete",
+      "missingRequiredCategories": [],
+      "candidateOnly": true,
+      "caveats": [
+        "Compiled from 0001-0600 low-rank public-route material; later chapters should be requested only if v0.18 needs broader post-Shang-city coverage."
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "identity_boundary": 1,
+      "pursuit_boundary": 1,
+      "route_entry_prerequisite": 1,
+      "route_failure_or_return": 1,
+      "route_milestone_public": 2,
+      "route_stage_candidate": 1,
+      "supply_boundary": 1
+    },
+    "sourcePointers": 10,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "skipped": 0
+  }
+}

@@ -1,7 +1,7 @@
 # RebornG v0.18.0 Codex 当前入口
 
 日期：2026-05-19
-状态：启动审查与范围冻结草案，等待用户批准后进入 `v0.18.0-a1`
+状态：启动审查与范围冻结已批准；`a1/a2` 设计与资料门禁第一版完成，等待进入 `v0.18.0-b1`
 主题：`南疆路线与多区域承接`
 
 ## 定位
@@ -22,6 +22,8 @@
 - `v0.18.0-测试矩阵.md`
 - `v0.18.0-MiroFish资料需求与交付协议.md`
 - `v0.18.0-Git提交与推送计划.md`
+- `v0.18.0-a1-路线地点存档BFF设计门禁.md`
+- `v0.18.0-a2-MiroFish-intake与字段表.md`
 
 ## 主目标
 
@@ -31,8 +33,8 @@
 
 | 阶段 | 主题 | 是否 runtime | MiroFish need |
 |---|---|---:|---|
-| a1 | 路线/地点/存档/BFF 设计门禁 | 否 | not_needed |
-| a2 | v0.18 MiroFish intake、字段表、测试矩阵 | 否 | blocking/preferred packages |
+| a1 | 路线/地点/存档/BFF 设计门禁 | 否 | not_needed，已完成第一版 |
+| a2 | v0.18 MiroFish intake、字段表、测试矩阵 | 否 | 三包已交付并通过 intake |
 | b1 | 青茅离开路线正式门槛样板 | 是 | route entry package blocking if writing route state |
 | b2 | 路线状态第一刀或候选承接第一刀 | 是 | route entry package blocking |
 | b3 | 南疆低阶区域事实卡与路线面板 | 是 | region fact package preferred |
@@ -55,4 +57,4 @@
 
 ## 当前建议
 
-专家团建议先批准 `a1/a2` 文档门禁和 MiroFish 请求。真正进入 `route_entered`、新地点字段或 `SAVE_FORMAT_VERSION` 变更前必须再次停下来让用户拍板。
+专家团建议下一步进入 `v0.18.0-b1 青茅离开路线正式门槛样板`。b1 只能使用 existing v22 字段和统一行动协议。真正进入 `route_entered`、新地点字段或 `SAVE_FORMAT_VERSION` 变更前必须再次停下来让用户拍板。
