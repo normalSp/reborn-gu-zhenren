@@ -39,7 +39,8 @@ test.describe('v0.14.0-b4 free-goal summary priority', () => {
     await page.setViewportSize({ width: 390, height: 844 });
     const consoleErrors = await openQingmaoRegionActionDemo(page);
 
-    await page.getByTestId('side-panel-free_goal').click();
+    await page.getByTestId('side-panel-actions').click();
+    await page.locator('[data-testid=action-hub-tab-free_goal]:visible').click();
     await expect(page.locator('[data-testid="mobile-side-sheet"]:visible')).toBeVisible();
     const panel = page.locator('[data-testid="free-goal-panel"]:visible');
 

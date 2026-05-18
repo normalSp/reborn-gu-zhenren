@@ -65,14 +65,15 @@ test.describe('v0.10.0 Qingmao region action and combat readiness panel', () => 
     const resourceSummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     expect((resourceSummary.materialBag as any).月华草).toBeGreaterThanOrEqual(1);
     expect(String((resourceSummary.lastWorldActionPromptSummary as any) || '')).toContain('本地青茅资源小循环');
-    await page.getByTestId('side-panel-gu_inventory').click();
+    await page.getByTestId('side-panel-gu_dao').click();
+    await page.locator('[data-testid=gu-dao-tab-gu_inventory]:visible').click();
     await expect(page.locator('[data-testid="gu-inventory-panel"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="qingmao-feeding-bridge-e2e_moonlight_gu"]:visible')).toContainText('月下巡采月华草');
     await page.locator('[data-testid="gu-feed-e2e_moonlight_gu"]:visible').click();
     await expect(page.locator('[data-testid="gu-inventory-panel"]:visible')).toContainText('喂养成功');
     const fedSummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     expect(Number((fedSummary.materialBag as any).月华草 || 0)).toBe(0);
-    await page.getByTestId('side-panel-refine').click();
+    await page.locator('[data-testid=gu-dao-tab-refine]:visible').click();
     await expect(page.locator('[data-testid="desktop-side-panel"]:visible')).toContainText('炼蛊');
     await page.locator('[data-testid="toggle-fragment-panel"]:visible').click();
     const fragmentPreview = page.locator('[data-testid="qingmao-fragment-preview-frag_moonlight_advanced"]:visible');

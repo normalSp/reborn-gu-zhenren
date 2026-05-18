@@ -43,14 +43,16 @@ test.describe('v0.8.0-c2.5 inheritance and land claim UI', () => {
     await expect(page.getByTestId('choice-panel')).toBeVisible();
     await expect(page.locator('[data-testid^="choice-inheritance-tag-"]').first()).toBeVisible();
 
-    await page.getByTestId('side-panel-inheritance').click();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-inheritance]:visible').click();
     await expect(page.locator('[data-testid="inheritance-land-panel"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="inheritance-clue-ledger-policy"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="inheritance-candidate-card"]:visible')).toHaveCount(4);
     await expect(page.locator('[data-testid="inheritance-land-claim-action"]:visible').first()).toBeVisible();
     await expect(page.locator('[data-testid^="inheritance-site-sample-"]:visible')).toHaveCount(0);
 
-    await page.getByTestId('side-panel-aperture').click();
+    await page.getByTestId('side-panel-role').click();
+    await page.locator('[data-testid=role-hub-tab-aperture]:visible').click();
     await expect(page.locator('[data-testid="aperture-inheritance-land-summary"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="aperture-ascension-action"]:visible')).toHaveCount(0);
@@ -72,7 +74,8 @@ test.describe('v0.8.0-c2.5 inheritance and land claim UI', () => {
     const choiceBox = await page.getByTestId('choice-panel').boundingBox();
     expect(choiceBox?.width).toBeGreaterThan(320);
 
-    await page.getByTestId('side-panel-inheritance').click();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-inheritance]:visible').click();
     const panel = page.locator('[data-testid="inheritance-land-panel"]:visible');
     await expect(panel).toBeVisible();
     await expect(page.locator('[data-testid="inheritance-clue-ledger-policy"]:visible')).toBeVisible();
@@ -80,7 +83,8 @@ test.describe('v0.8.0-c2.5 inheritance and land claim UI', () => {
     const buttonBox = await page.locator('[data-testid="inheritance-resolve-trial-action"]:visible').first().boundingBox();
     expect(buttonBox?.height).toBeGreaterThan(24);
 
-    await page.getByTestId('side-panel-aperture').click();
+    await page.getByTestId('side-panel-role').click();
+    await page.locator('[data-testid=role-hub-tab-aperture]:visible').click();
     await expect(page.locator('[data-testid="aperture-ascension-action"]:visible')).toHaveCount(0);
     expect(consoleErrors).toEqual([]);
   });

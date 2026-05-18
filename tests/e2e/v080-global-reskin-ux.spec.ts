@@ -72,15 +72,17 @@ test.describe('v0.8.0-c2 global reskin and UX closure', () => {
     await expect(page.locator('[data-testid="action-panel"]:visible')).toBeVisible();
 
     await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startOriginLifeboundClosureDemo());
-    await page.getByTestId('side-panel-gu_inventory').click();
+    await page.getByTestId('side-panel-gu_dao').click();
+    await page.locator('[data-testid=gu-dao-tab-gu_inventory]:visible').click();
     await expect(page.locator('[data-testid="gu-inventory-panel"]:visible')).toBeVisible();
 
     await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startMidgameAnchorDemo());
-    await page.getByTestId('side-panel-story_anchor').click();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-story_anchor]:visible').click();
     await expect(page.locator('[data-testid="story-anchor-panel"]:visible')).toBeVisible();
 
     await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startEndingFrameworkDemo());
-    await page.getByTestId('side-panel-ending').click();
+    await page.locator('[data-testid=world-hub-tab-ending]:visible').click();
     await expect(page.locator('[data-testid="ending-panel"]:visible')).toBeVisible();
 
     await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startBattlefieldLargeGroupDemo());

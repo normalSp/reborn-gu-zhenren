@@ -11,8 +11,9 @@
 
 ## 目录
 
-- `requests/`：RebornG 需要 MiroFish 产包时写入的请求文件。
-- `intake-reviews/`：RebornG 对 MiroFish 交付包的审查结论。
+- `requests/`：RebornG 主线（runtime / canon / save / DeepSeek）需要 MiroFish 产包时写入的请求文件，按版本分子目录。
+- `美术/`：RebornG 美术专项（跨版本，不绑某个 RebornG 小版本主线）的 MiroFish 请求；交付包仍按主协议放到 `intake-reviews/<version>/`。
+- `intake-reviews/`：RebornG 对 MiroFish 交付包的审查结论（主线 + 美术专项交付包都进这里）。
 - 根目录：MiroFish 产出的主 JSON、报告、ledger、说明文件。
 
 ## 当前主协议

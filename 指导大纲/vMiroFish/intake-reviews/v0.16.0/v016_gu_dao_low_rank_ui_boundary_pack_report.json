@@ -1,0 +1,45 @@
+{
+  "schema": "reborng.mirofish.v016-ui-boundary-report.v1",
+  "requestId": "mirofish-request-2026-05-18-v016-gu-dao-low-rank-ui-boundary-pack",
+  "packageKey": "v016_gu_dao_low_rank_ui_boundary",
+  "generatedAt": "2026-05-18T13:07:04.448466+00:00",
+  "requestedPaths": [
+    "指导大纲/vMiroFish/requests/v0.16.0/2026-05-18-v016-gu-dao-low-rank-ui-boundary-pack.md",
+    "指导大纲/vMiroFish/requests/v0.16.0/2026-05-18-v016-high-tier-scene-gating-boundary-pack.md",
+    "指导大纲/vMiroFish/requests/v0.16.0/README.md"
+  ],
+  "deliveryStatus": "complete_candidate",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "coverage": {
+    "itemCount": 16,
+    "sourcePointerCount": 33,
+    "categoryCounts": {
+      "gu_dao_ui_category_boundary": 1,
+      "high_rank_forbidden_implication": 8,
+      "killer_move_ui_boundary": 1,
+      "low_rank_gu_visibility_rule": 2,
+      "material_feeding_ui_boundary": 1,
+      "recipe_fragment_boundary": 1,
+      "refinement_ui_boundary": 1,
+      "ui_copy_safety_hint": 1
+    }
+  },
+  "qualityGates": {
+    "jsonParseable": true,
+    "sourcePointersPresentForAllItems": true,
+    "missingPointerItems": [],
+    "textSnippetFieldCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "gateErrorCount": 0,
+    "gateErrors": []
+  },
+  "caveats": [
+    "Low-rank UI boundary material is sufficiently supported by 0001-0600.",
+    "High-tier and hidden boundaries are represented as blocked categories, not fact bodies."
+  ]
+}

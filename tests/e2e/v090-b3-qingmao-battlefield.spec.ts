@@ -157,11 +157,12 @@ test.describe('v0.9.0-b3 Qingmao mortal battlefield visual slice', () => {
     await expect(page.getByTestId('battlefield-qingmao-storyboard-liquor-worm-support')).toHaveAttribute('data-active', 'true');
     await expectQingmaoBoardHasThreeReadableRows(page);
     for (const assetId of ['moonlight-gu', 'white-jade-gu', 'liquor-worm']) {
-      const loaded = await page.getByTestId(`battlefield-qingmao-asset-${assetId}`).evaluate((node) => {
+      const asset = page.getByTestId(`battlefield-qingmao-asset-${assetId}`);
+      await expect(asset).toBeVisible();
+      await expect.poll(async () => asset.evaluate((node) => {
         const img = node as HTMLImageElement;
         return img.complete && img.naturalWidth > 0 && img.naturalHeight > 0;
-      });
-      expect(loaded).toBe(true);
+      }), { timeout: 4000 }).toBe(true);
     }
     await expect(page.getByTestId('battlefield-action-gu:月光蛊')).toBeVisible();
     await expect(page.getByTestId('battlefield-action-meta-gu:月光蛊')).toContainText('消耗');

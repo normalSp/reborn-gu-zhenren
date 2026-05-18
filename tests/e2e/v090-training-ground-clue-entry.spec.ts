@@ -40,7 +40,8 @@ test.describe('v0.9.0-a3 training ground clue entry', () => {
     const consoleErrors = await openTrainingGroundDemo(page);
 
     await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
-    await page.getByTestId('side-panel-training_ground').click();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-training_ground]:visible').click();
     await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="training-ground-clue-policy"]:visible')).toContainText('剧情');
     await expect(page.locator('[data-testid="training-ground-clue-card"]:visible')).toContainText('青茅山炼蛊台竹牌');
@@ -61,7 +62,8 @@ test.describe('v0.9.0-a3 training ground clue entry', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     const consoleErrors = await openTrainingGroundDemo(page);
 
-    await page.getByTestId('side-panel-training_ground').click();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-training_ground]:visible').click();
     const panel = page.locator('[data-testid="training-ground-panel"]:visible');
     await expect(panel).toBeVisible();
     await expect(page.locator('[data-testid="training-ground-clue-card"]:visible')).toBeVisible();

@@ -33,7 +33,8 @@ async function openCultivationDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startCultivationDeepeningDemo());
-  await page.getByTestId('side-panel-aperture').click();
+  await page.getByTestId('side-panel-role').click();
+  await page.locator('[data-testid=role-hub-tab-aperture]:visible').click();
   await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
   return consoleErrors;
 }
@@ -44,7 +45,8 @@ async function openRankSevenCalamityDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startCultivationCalamityNarrativeDemo());
-  await page.getByTestId('side-panel-aperture').click();
+  await page.getByTestId('side-panel-role').click();
+  await page.locator('[data-testid=role-hub-tab-aperture]:visible').click();
   await expect(page.locator('[data-testid="aperture-cultivation-actions"]:visible')).toBeVisible();
   return consoleErrors;
 }

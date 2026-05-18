@@ -1,0 +1,2385 @@
+{
+  "schema": "reborng.mirofish.v016-ui-boundary-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v016-gu-dao-low-rank-ui-boundary-pack",
+  "packageKey": "v016_gu_dao_low_rank_ui_boundary",
+  "title": "v0.16 Gu Dao Low-Rank UI Boundary Pack",
+  "generatedAt": "2026-05-18T13:07:03.451091+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierBodiesWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not runtime truth, not DeepSeek authority"
+    ]
+  },
+  "deliveryStatus": "complete_candidate",
+  "caveats": [
+    "Low-rank UI boundary material is sufficiently supported by 0001-0600.",
+    "High-tier and hidden boundaries are represented as blocked categories, not fact bodies."
+  ],
+  "items": [
+    {
+      "id": "owned-gu-public-boundary",
+      "category": "gu_dao_ui_category_boundary",
+      "summary": "蛊虫可作为蛊道工作台的核心对象，但“已拥有”只能来自本地引擎和存档，MiroFish 只能提供候选说明。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_502fc57ad717",
+          "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_c117ff2f1260",
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0087",
+          "chapterId": "ch_0087",
+          "field": "events",
+          "itemId": "evt_741ef43fabf9",
+          "summary": "学堂家老跳上擂台，先查看方正伤势，然后为方源治疗，并暗中探查方源的空窍",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0108",
+          "chapterId": "ch_0108",
+          "field": "events",
+          "itemId": "evt_9c2b7640360c",
+          "summary": "方源思考自身处境，计划合炼四味酒虫，并需要补充侦测类和移动类蛊虫",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3aa8bb64b68c",
+        "sp_cccf79d74fc2",
+        "sp_6bf4fd17114d",
+        "sp_5af14303acf2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0022",
+          "startOffset": 21279,
+          "endOffset": 21310,
+          "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+          "sourcePointerId": "sp_3aa8bb64b68c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0012",
+          "startOffset": 27527,
+          "endOffset": 27545,
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+          "sourcePointerId": "sp_cccf79d74fc2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0025",
+          "startOffset": 270525,
+          "endOffset": 270568,
+          "summary": "学堂家老跳上擂台，先查看方正伤势，然后为方源治疗，并暗中探查方源的空窍",
+          "sourcePointerId": "sp_6bf4fd17114d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0108",
+          "paragraphId": "ch_0108_p0053",
+          "startOffset": 342929,
+          "endOffset": 343025,
+          "summary": "方源思考自身处境，计划合炼四味酒虫，并需要补充侦测类和移动类蛊虫",
+          "sourcePointerId": "sp_5af14303acf2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "limited_public",
+      "recommendedUiGroup": "owned_gu",
+      "allowedUiCopy": [
+        "已登记蛊虫",
+        "候选蛊虫",
+        "需本地确认"
+      ],
+      "forbiddenImplications": [
+        "不得暗示已获得未登记蛊虫",
+        "不得把候选条目写成背包事实"
+      ]
+    },
+    {
+      "id": "observable-gu-action-boundary",
+      "category": "low_rank_gu_visibility_rule",
+      "summary": "低阶用蛊动作可展示为可观察行为或候选动作，不应自动升级为正式战技或稳定数值能力。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "entities",
+          "itemId": "entity_3f7c67e10fc9",
+          "summary": "主角，使用锯齿金蜈、血色月刃、天蓬蛊战斗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0169",
+          "chapterId": "ch_0169",
+          "field": "events",
+          "itemId": "evt_f338c191e1ad",
+          "summary": "方源遭遇上百头电狼群，使用锯齿金蜈和天蓬蛊战斗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0170",
+          "chapterId": "ch_0170",
+          "field": "events",
+          "itemId": "evt_27a12afb278e",
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0183",
+          "chapterId": "ch_0183",
+          "field": "events",
+          "itemId": "evt_0c130f14b287",
+          "summary": "方源被血水卷入地下，落入血湖墓地，使用天蓬蛊和雷翼蛊，但雷翼蛊萎靡，最终用锯齿金蜈挂在山壁上",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3a38a6c98c2f",
+        "sp_e97cd4b5c16b",
+        "sp_1cafb8c1276c",
+        "sp_4485971e55e8"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0169",
+          "paragraphId": "ch_0169_p0077",
+          "startOffset": 563872,
+          "endOffset": 563892,
+          "summary": "方源遭遇上百头电狼群，使用锯齿金蜈和天蓬蛊战斗",
+          "sourcePointerId": "sp_e97cd4b5c16b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0170",
+          "paragraphId": "ch_0170_p0082",
+          "startOffset": 568080,
+          "endOffset": 568084,
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "sourcePointerId": "sp_1cafb8c1276c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0183",
+          "paragraphId": "ch_0183_p0066",
+          "startOffset": 614001,
+          "endOffset": 614042,
+          "summary": "方源被血水卷入地下，落入血湖墓地，使用天蓬蛊和雷翼蛊，但雷翼蛊萎靡，最终用锯齿金蜈挂在山壁上",
+          "sourcePointerId": "sp_4485971e55e8"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "rank_1",
+      "playerVisibility": "limited_public",
+      "recommendedUiGroup": "owned_gu",
+      "allowedUiCopy": [
+        "可观察用蛊",
+        "动作线索",
+        "需战斗系统裁决"
+      ],
+      "forbiddenImplications": [
+        "不得写成正式战技解锁",
+        "不得保证命中或伤害"
+      ]
+    },
+    {
+      "id": "killer-move-label-boundary",
+      "category": "killer_move_ui_boundary",
+      "summary": "杀招入口应保持严格命名；普通用蛊、组合动作或一次性战斗表现，只能先作为候选动作或战斗表现。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_5b4fbcc00cec",
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0143",
+          "chapterId": "ch_0143",
+          "field": "events",
+          "itemId": "evt_c20b7524206f",
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0165",
+          "chapterId": "ch_0165",
+          "field": "events",
+          "itemId": "evt_27a0b12ea82e",
+          "summary": "古月博带领家老主动出击，对抗雷冠头狼及其狼群，使用月刃等杀招，家老各显神通，狼群反击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0170",
+          "chapterId": "ch_0170",
+          "field": "events",
+          "itemId": "evt_27a12afb278e",
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_1830a49f25f1",
+        "sp_98d16e9ac9c6",
+        "sp_f6daee08a4f6",
+        "sp_3a38a6c98c2f",
+        "sp_1cafb8c1276c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0095",
+          "startOffset": 468388,
+          "endOffset": 468392,
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "sourcePointerId": "sp_1830a49f25f1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0143",
+          "paragraphId": "ch_0143_p0010",
+          "startOffset": 469010,
+          "endOffset": 469030,
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "sourcePointerId": "sp_98d16e9ac9c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0165",
+          "paragraphId": "ch_0165_p0002",
+          "startOffset": 547240,
+          "endOffset": 547285,
+          "summary": "古月博带领家老主动出击，对抗雷冠头狼及其狼群，使用月刃等杀招，家老各显神通，狼群反击",
+          "sourcePointerId": "sp_f6daee08a4f6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0170",
+          "paragraphId": "ch_0170_p0082",
+          "startOffset": 568080,
+          "endOffset": 568084,
+          "summary": "方源和白凝冰在突围后立即互相攻击，使用冰刃蛊和锯齿金蜈",
+          "sourcePointerId": "sp_1cafb8c1276c"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "review_required",
+      "recommendedUiGroup": "killer_move",
+      "allowedUiCopy": [
+        "候选动作",
+        "组合表现",
+        "待复核战技"
+      ],
+      "forbiddenImplications": [
+        "不得把任意用蛊动作标成正式杀招",
+        "不得给出传承或完整招式归属"
+      ]
+    },
+    {
+      "id": "refinement-progress-boundary",
+      "category": "refinement_ui_boundary",
+      "summary": "炼化与合炼可以显示进度、消耗压力和失败风险，但成功结算、完整配方和产物归属必须由本地规则决定。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_502fc57ad717",
+          "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_92a97d9a1c84",
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_c117ff2f1260",
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_43cce366ab6b",
+        "sp_3aa8bb64b68c",
+        "sp_7138719a1356",
+        "sp_d5de1d516bc9",
+        "sp_cccf79d74fc2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0022",
+          "startOffset": 21279,
+          "endOffset": 21310,
+          "summary": "方源在学堂蛊室中挑选了一只月光蛊，打算作为本命蛊，但因心念酒虫而暂未炼化。",
+          "sourcePointerId": "sp_3aa8bb64b68c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0026",
+          "startOffset": 28152,
+          "endOffset": 28190,
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "sourcePointerId": "sp_d5de1d516bc9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0012",
+          "startOffset": 27527,
+          "endOffset": 27545,
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+          "sourcePointerId": "sp_cccf79d74fc2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "limited_public",
+      "recommendedUiGroup": "refinement",
+      "allowedUiCopy": [
+        "炼化中",
+        "条件不足",
+        "需本地裁决"
+      ],
+      "forbiddenImplications": [
+        "不得写成已炼成",
+        "不得由叙事直接发放产物"
+      ]
+    },
+    {
+      "id": "recipe-fragment-boundary",
+      "category": "recipe_fragment_boundary",
+      "summary": "残方、秘方和线索应进入残方线索或缺口组；完整蛊方只能在人工和本地规则确认后注册。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0157",
+          "chapterId": "ch_0157",
+          "field": "events",
+          "itemId": "evt_6970d30bf5f7",
+          "summary": "方源在蛊师老者带领下进入地下密室，准备查看合炼秘方",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0157",
+          "chapterId": "ch_0157",
+          "field": "events",
+          "itemId": "evt_a966ff5643c4",
+          "summary": "方源查看白色照影蛊中的三转蛊虫合炼秘方，重点关注黄金月、霜霖月蛊、幻影月蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0157",
+          "chapterId": "ch_0157",
+          "field": "events",
+          "itemId": "evt_c1ac8a0703f8",
+          "summary": "方源阅读月痕蛊合炼秘方，并暗记心得",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0157",
+          "chapterId": "ch_0157",
+          "field": "events",
+          "itemId": "evt_ccee0650ef3f",
+          "summary": "方源进入密室，使用照影蛊查看合炼秘方",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0158",
+          "chapterId": "ch_0158",
+          "field": "events",
+          "itemId": "evt_ff01fa438025",
+          "summary": "方源在密室中查看血月蛊秘方，决定合炼血月蛊。",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_6ce367636d9f",
+        "sp_230bbd990b8e",
+        "sp_3d774c67143f",
+        "sp_a3f86bf48d4e",
+        "sp_acff0caf0762"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0157",
+          "paragraphId": "ch_0157_p0002",
+          "startOffset": 518807,
+          "endOffset": 518856,
+          "summary": "方源在蛊师老者带领下进入地下密室，准备查看合炼秘方",
+          "sourcePointerId": "sp_6ce367636d9f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0157",
+          "paragraphId": "ch_0157_p0052",
+          "startOffset": 521016,
+          "endOffset": 521064,
+          "summary": "方源查看白色照影蛊中的三转蛊虫合炼秘方，重点关注黄金月、霜霖月蛊、幻影月蛊",
+          "sourcePointerId": "sp_230bbd990b8e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0157",
+          "paragraphId": "ch_0157_p0045",
+          "startOffset": 520783,
+          "endOffset": 520798,
+          "summary": "方源阅读月痕蛊合炼秘方，并暗记心得",
+          "sourcePointerId": "sp_3d774c67143f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0157",
+          "paragraphId": "ch_0157_p0034",
+          "startOffset": 520364,
+          "endOffset": 520402,
+          "summary": "方源进入密室，使用照影蛊查看合炼秘方",
+          "sourcePointerId": "sp_a3f86bf48d4e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0158",
+          "paragraphId": "ch_0158_p0007",
+          "startOffset": 522299,
+          "endOffset": 522301,
+          "summary": "方源在密室中查看血月蛊秘方，决定合炼血月蛊。",
+          "sourcePointerId": "sp_acff0caf0762"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "review_required",
+      "recommendedUiGroup": "gap",
+      "allowedUiCopy": [
+        "残方线索",
+        "配方缺口",
+        "待复核"
+      ],
+      "forbiddenImplications": [
+        "不得写成完整蛊方",
+        "不得显示稳定成功率",
+        "不得自动加入配方库"
+      ]
+    },
+    {
+      "id": "material-feeding-role-boundary",
+      "category": "material_feeding_ui_boundary",
+      "summary": "蛊材、食料和普通材料应按用途角色区分；可见资源线索不等于可购买、可刷取或可直接发放。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0013",
+          "chapterId": "ch_0013",
+          "field": "events",
+          "itemId": "evt_821150edb6e9",
+          "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0013",
+          "chapterId": "ch_0013",
+          "field": "events",
+          "itemId": "evt_dccfdf395ad9",
+          "summary": "酒肆内，青年蛊师与叫嚣的猎户口角升级，蛊师显露一转身份，怒摔青竹酒坛，训斥猎户炫富，猎户惊恐献上元石，蛊师未收，最终扫视全场震慑众人",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0016",
+          "chapterId": "ch_0016",
+          "field": "events",
+          "itemId": "evt_fbe46c507ab4",
+          "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0024",
+          "chapterId": "ch_0024",
+          "field": "events",
+          "itemId": "evt_00f4e18b170a",
+          "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0024",
+          "chapterId": "ch_0024",
+          "field": "events",
+          "itemId": "evt_b8838e3ed8ea",
+          "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_991c8e9bd1a4",
+        "sp_5b96cbc79e97",
+        "sp_eeb41700ee70",
+        "sp_7943c8462da8",
+        "sp_3209eabab218"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0013",
+          "paragraphId": "ch_0013_p0027",
+          "startOffset": 34077,
+          "endOffset": 34134,
+          "summary": "年轻人出言挑衅猎户买不起青竹酒，猎户被激将后叫小二上酒。",
+          "sourcePointerId": "sp_991c8e9bd1a4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0013",
+          "paragraphId": "ch_0013_p0047",
+          "startOffset": 34963,
+          "endOffset": 35014,
+          "summary": "酒肆内，青年蛊师与叫嚣的猎户口角升级，蛊师显露一转身份，怒摔青竹酒坛，训斥猎户炫富，猎户惊恐献上元石，蛊师未收，最终扫视全场震慑众人",
+          "sourcePointerId": "sp_5b96cbc79e97"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0033",
+          "startOffset": 44357,
+          "endOffset": 44500,
+          "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+          "sourcePointerId": "sp_eeb41700ee70"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0043",
+          "startOffset": 69061,
+          "endOffset": 69124,
+          "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+          "sourcePointerId": "sp_7943c8462da8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍",
+          "sourcePointerId": "sp_3209eabab218"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "limited_public",
+      "recommendedUiGroup": "material",
+      "allowedUiCopy": [
+        "材料线索",
+        "食料候选",
+        "缺口"
+      ],
+      "forbiddenImplications": [
+        "不得直接发放材料",
+        "不得把线索写成商店库存",
+        "不得把食料独立成万能资源类"
+      ]
+    },
+    {
+      "id": "primeval-stone-cost-boundary",
+      "category": "low_rank_gu_visibility_rule",
+      "summary": "元石可支持成本压力和稀缺提示，但不应从叙事候选直接转成正式价格、奖励或余额变化。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_e39ae5522b5d",
+          "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_2f163da69b5b",
+          "summary": "舅父给方源和方正每人六块元石作为修炼资助",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_7aecdbf30678",
+          "summary": "方源考虑元石不足，但决定继续探索花酒行者遗藏，因为遗藏中可能有大量元石",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_43cce366ab6b",
+        "sp_fede8bb413bd",
+        "sp_c3a76fabd85a",
+        "sp_7138719a1356",
+        "sp_c424d1e33aa2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0038",
+          "startOffset": 21926,
+          "endOffset": 21977,
+          "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+          "sourcePointerId": "sp_fede8bb413bd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "舅父给方源和方正每人六块元石作为修炼资助",
+          "sourcePointerId": "sp_c3a76fabd85a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0071",
+          "startOffset": 32937,
+          "endOffset": 33007,
+          "summary": "方源考虑元石不足，但决定继续探索花酒行者遗藏，因为遗藏中可能有大量元石",
+          "sourcePointerId": "sp_c424d1e33aa2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "low_rank",
+      "playerVisibility": "limited_public",
+      "recommendedUiGroup": "material",
+      "allowedUiCopy": [
+        "成本压力",
+        "元石不足",
+        "需本地结算"
+      ],
+      "forbiddenImplications": [
+        "不得写成正式价格表",
+        "不得直接改余额",
+        "不得生成奖励"
+      ]
+    },
+    {
+      "id": "rumor-gap-copy-boundary",
+      "category": "ui_copy_safety_hint",
+      "summary": "候选、传闻、缺口、未具备条件、需本地裁决是安全 UI 语气；已获得、可炼成、正式解锁是高风险语气。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_71b3548f72e1",
+          "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_92a97d9a1c84",
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0026",
+          "chapterId": "ch_0026",
+          "field": "events",
+          "itemId": "evt_4eba638bd9cb",
+          "summary": "学堂进行月刃准头考核，方正、漠北、赤城三人表现最佳，均击中草人傀儡胸腹，方源最后一组上场，刚发出第一记月刃。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0033",
+          "chapterId": "ch_0033",
+          "field": "events",
+          "itemId": "evt_926b02dc4013",
+          "summary": "漠颜率家奴到客栈寻找方源，高碗先行监视并言语威胁，方源无视，气氛紧张",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0035",
+          "chapterId": "ch_0035",
+          "field": "events",
+          "itemId": "evt_c4c8bbc834ca",
+          "summary": "方源试图离开宿舍，与看守高碗发生搏斗，双方拳脚相向，方源一度攻击高碗腰部要害未果",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f34a72f59673",
+        "sp_d5de1d516bc9",
+        "sp_34fd39be677a",
+        "sp_c82165cd464c",
+        "sp_0362802420a1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0047",
+          "startOffset": 19899,
+          "endOffset": 19949,
+          "summary": "方源买酒夜晚在寨外闲逛，试图用酒气吸引酒虫，未果",
+          "sourcePointerId": "sp_f34a72f59673"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0026",
+          "startOffset": 28152,
+          "endOffset": 28190,
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+          "sourcePointerId": "sp_d5de1d516bc9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0026",
+          "paragraphId": "ch_0026_p0032",
+          "startOffset": 75530,
+          "endOffset": 75561,
+          "summary": "学堂进行月刃准头考核，方正、漠北、赤城三人表现最佳，均击中草人傀儡胸腹，方源最后一组上场，刚发出第一记月刃。",
+          "sourcePointerId": "sp_34fd39be677a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0033",
+          "paragraphId": "ch_0033_p0027",
+          "startOffset": 94712,
+          "endOffset": 94743,
+          "summary": "漠颜率家奴到客栈寻找方源，高碗先行监视并言语威胁，方源无视，气氛紧张",
+          "sourcePointerId": "sp_c82165cd464c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0035",
+          "paragraphId": "ch_0035_p0063",
+          "startOffset": 101763,
+          "endOffset": 101805,
+          "summary": "方源试图离开宿舍，与看守高碗发生搏斗，双方拳脚相向，方源一度攻击高碗腰部要害未果",
+          "sourcePointerId": "sp_0362802420a1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "unknown",
+      "playerVisibility": "candidate_only",
+      "recommendedUiGroup": "rumor",
+      "allowedUiCopy": [
+        "候选",
+        "传闻",
+        "缺口",
+        "未具备条件",
+        "需本地裁决"
+      ],
+      "forbiddenImplications": [
+        "不得写成已获得",
+        "不得写成可炼成",
+        "不得写成正式解锁"
+      ]
+    },
+    {
+      "id": "immortal-material-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "不属于低阶窗口的材料只能作为开发阻断类别，不得进入低阶材料或食料列表。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "material",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "immortal-gu-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "不属于低阶窗口的蛊类不得作为拥有、候选或奖励展示。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "owned_gu",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "high-tier-market-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "跨域高阶市场不得作为低阶可购买入口展示。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "locked",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "blessed-space-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "隐藏空间和高阶洞府不得被 UI 暗示为可直接进入地点。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "locked",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "venerable-rank-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "远高于低阶的称号、境界和顶点目标不得出现在低阶工作台可达路径。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "dev_only",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "eternal-life-ending-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "终极目标不得作为低阶可追踪任务、成就或配方目标。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "locked",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "private-causality-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "涉及角色私密因果的内容只能做 hidden ref，不能进玩家可见摘要。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "high_rank_blocked",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "dev_only",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    },
+    {
+      "id": "complete-recipe-grant-ui-block",
+      "category": "high_rank_forbidden_implication",
+      "summary": "完整蛊方不能由 MiroFish、DeepSeek 或普通 UI 文案直接授予。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0043",
+          "chapterId": "ch_0043",
+          "field": "events",
+          "itemId": "evt_83be073df31c",
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0424",
+          "chapterId": "ch_0424",
+          "field": "relations",
+          "itemId": "rel_329f1285200f",
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be",
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0011",
+          "chapterId": "ch_0011",
+          "field": "events",
+          "itemId": "evt_1cc269cf2a94",
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_752a56790609",
+        "sp_97d85b1badcc",
+        "sp_43cce366ab6b",
+        "sp_7138719a1356"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0043",
+          "paragraphId": "ch_0043_p0038",
+          "startOffset": 125405,
+          "endOffset": 125416,
+          "summary": "方源在赌石场开出一只活着的癞土蛤蟆（蟾蛊），并当场炼化。",
+          "sourcePointerId": "sp_752a56790609"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0424",
+          "paragraphId": "ch_0424_p0003",
+          "startOffset": 1471505,
+          "endOffset": 1471507,
+          "summary": "鹤风扬代表仙鹤门与方源进行交易，方源提出元石、蛊虫、材料等要求",
+          "sourcePointerId": "sp_97d85b1badcc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+          "sourcePointerId": "sp_7138719a1356"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "gu_dao_ui_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "rankBand": "unknown",
+      "playerVisibility": "hidden_ref_only",
+      "recommendedUiGroup": "refinement",
+      "allowedUiCopy": [
+        "未开放",
+        "需人工复核",
+        "仅作开发阻断"
+      ],
+      "forbiddenImplications": [
+        "不得写成低阶可用事实",
+        "不得写成可购买或可获得",
+        "不得暴露隐藏正文"
+      ]
+    }
+  ],
+  "coverage": {
+    "itemCount": 16,
+    "sourcePointerCount": 33,
+    "categoryCounts": {
+      "gu_dao_ui_category_boundary": 1,
+      "high_rank_forbidden_implication": 8,
+      "killer_move_ui_boundary": 1,
+      "low_rank_gu_visibility_rule": 2,
+      "material_feeding_ui_boundary": 1,
+      "recipe_fragment_boundary": 1,
+      "refinement_ui_boundary": 1,
+      "ui_copy_safety_hint": 1
+    }
+  },
+  "uiMisreadTestSamples": [
+    {
+      "id": "gu_owned_from_candidate",
+      "risk": "候选蛊虫被误读成背包已拥有",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "owned-gu-public-boundary"
+    },
+    {
+      "id": "recipe_hint_as_complete",
+      "risk": "残方线索被误读成完整配方",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "recipe-fragment-boundary"
+    },
+    {
+      "id": "refinement_progress_as_success",
+      "risk": "炼化进度被误读成已炼成",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "refinement-progress-boundary"
+    },
+    {
+      "id": "material_hint_as_inventory",
+      "risk": "材料线索被误读成库存到账",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "material-feeding-role-boundary"
+    },
+    {
+      "id": "feeding_candidate_as_stable_source",
+      "risk": "食料候选被误读成稳定产出",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "material-feeding-role-boundary"
+    },
+    {
+      "id": "primeval_stone_pressure_as_reward",
+      "risk": "元石压力被误读成奖励发放",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "primeval-stone-cost-boundary"
+    },
+    {
+      "id": "ordinary_action_as_killer_move",
+      "risk": "普通用蛊动作被误读成正式杀招",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "killer-move-label-boundary"
+    },
+    {
+      "id": "rumor_as_unlock",
+      "risk": "传闻被误读成入口已解锁",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "rumor-gap-copy-boundary"
+    },
+    {
+      "id": "high_tier_block_as_preview",
+      "risk": "开发阻断类别被误读成即将开放",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "immortal-gu-ui-block"
+    },
+    {
+      "id": "deepseek_text_as_authority",
+      "risk": "AI 文案被误读成运行时权威",
+      "expectedUiRuling": "downgrade_to_candidate_or_blocked",
+      "sourceItemId": "owned-gu-public-boundary"
+    }
+  ]
+}

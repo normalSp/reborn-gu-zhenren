@@ -32,7 +32,8 @@ async function openEndingDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startEndingFrameworkDemo());
-  await page.getByTestId('side-panel-ending').click();
+  await page.getByTestId('side-panel-world').click();
+  await page.locator('[data-testid=world-hub-tab-ending]:visible').click();
   await expect(visibleEndingPanel(page)).toBeVisible();
   return consoleErrors;
 }

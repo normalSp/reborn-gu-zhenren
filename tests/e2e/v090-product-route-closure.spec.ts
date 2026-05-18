@@ -41,17 +41,19 @@ test.describe('v0.9 product route closure remains compatible after a2', () => {
 
     await expect(page.getByTestId('game-screen-shell')).toBeVisible();
     await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
-    await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-dev_demo]:visible').click();
+    await expect(page.locator('[data-testid=debug-battlefield-demo-group]:visible')).toBeVisible();
+    await page.locator('[data-testid=open-battlefield-demo]:visible').click();
+    await expect(page.getByTestId('battlefield-overlay')).toBeVisible();
+    await expect(page.getByTestId('battlefield-board')).toHaveAttribute('data-grid-size', '5x3');
+    await page.getByLabel('关闭凡战棋盘').click();
 
-    await page.getByTestId('side-panel-training_ground').click();
+    await page.locator('[data-testid=world-hub-tab-training_ground]:visible').click();
     await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toBeVisible();
     await expect(page.locator('[data-testid="training-ground-clue-policy"]:visible')).toContainText('v0.9.0-a3');
     await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toContainText('当前没有可出发道场线索');
     await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toContainText(/剧情|线索|势力/);
-
-    await page.getByTestId('open-battlefield-demo').click();
-    await expect(page.getByTestId('battlefield-overlay')).toBeVisible();
-    await expect(page.getByTestId('battlefield-board')).toHaveAttribute('data-grid-size', '5x3');
 
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     expect(summary).toBeTruthy();
@@ -64,9 +66,11 @@ test.describe('v0.9 product route closure remains compatible after a2', () => {
     const consoleErrors = await openMidgameDemo(page);
 
     await expect(page.getByTestId('app-version-label')).toContainText('v0.9.0');
-    await expect(page.getByTestId('debug-battlefield-demo-group')).toBeVisible();
+    await page.getByTestId('side-panel-world').click();
+    await page.locator('[data-testid=world-hub-tab-dev_demo]:visible').click();
+    await expect(page.locator('[data-testid=debug-battlefield-demo-group]:visible')).toBeVisible();
 
-    await page.getByTestId('side-panel-training_ground').click();
+    await page.locator('[data-testid=world-hub-tab-training_ground]:visible').click();
     const panel = page.locator('[data-testid="training-ground-panel"]:visible');
     await expect(panel).toBeVisible();
     await expect(page.locator('[data-testid="training-ground-empty-policy"]:visible')).toBeVisible();

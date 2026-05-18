@@ -39,7 +39,8 @@ test.describe('v0.14.0-b1 cover escape tracks action', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const consoleErrors = await openQingmaoRegionActionDemo(page);
 
-    await page.getByTestId('side-panel-free_goal').click();
+    await page.getByTestId('side-panel-actions').click();
+    await page.locator('[data-testid=action-hub-tab-free_goal]:visible').click();
     const panel = page.locator('[data-testid="free-goal-panel"]:visible');
     await panel.locator('[data-testid="free-goal-input"]').fill('我要逃离青茅山');
     await panel.locator('[data-testid="free-goal-adjudicate"]').click();

@@ -2,6 +2,8 @@
 
 当 RebornG 某个阶段需要原著候选材料时，在本目录新增请求文件。
 
+**美术专项例外**：RebornG 美术总路线（`doc/art/v014-to-v100-art-roadmap.md`）跨多个小版本，节奏与 runtime 主线解耦。从 2026-05-18 起，美术专项请求统一写到 `指导大纲/vMiroFish/美术/`，而不是本目录。本目录继续承载主线（runtime / canon / save / DeepSeek）请求。已存在的 `requests/v0.14.0/2026-05-17-qingmao-unfilled-gu-appearance-pack.md` 是历史遗留美术请求，留在原位不动；后续美术请求请走 `美术/`。
+
 ## 请求文件必须包含
 
 - `requestId`

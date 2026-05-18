@@ -50,7 +50,7 @@ export function MaterialBagPanel() {
   );
 
   return (
-    <div className="rg-panel-surface h-full flex flex-col text-rg-paper-200 font-panel">
+    <div className="rg-panel-surface h-full flex flex-col text-rg-paper-200 font-panel" data-testid="material-bag-panel">
       {/* Header */}
       <div className="p-4 border-b border-rg-ink-700/50">
         <h3 className="text-sm font-semibold text-rg-gold tracking-wider">蛊材物资袋</h3>

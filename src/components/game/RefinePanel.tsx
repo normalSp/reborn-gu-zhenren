@@ -340,7 +340,7 @@ export function RefinePanel() {
   );
 
   return (
-    <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel">
+    <div className="h-full flex flex-col bg-rg-ink-900/95 text-rg-paper-200 font-panel" data-testid="refine-panel">
       {/* Header */}
       <div className="p-4 border-b border-rg-ink-700/50">
         <h3 className="text-sm font-semibold text-rg-gold tracking-wider">炼蛊</h3>

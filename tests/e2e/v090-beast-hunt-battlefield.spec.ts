@@ -35,7 +35,8 @@ async function openBeastHuntDemo(page: Page): Promise<string[]> {
 }
 
 async function departAndEnterHuntBattle(page: Page): Promise<void> {
-  await page.getByTestId('side-panel-training_ground').click();
+  await page.getByTestId('side-panel-world').click();
+  await page.locator('[data-testid=world-hub-tab-training_ground]:visible').click();
   await expect(page.locator('[data-testid="training-ground-panel"]:visible')).toBeVisible();
   await expect(page.locator('[data-testid="training-ground-hunt-preview"]:visible')).toBeVisible();
   await page.locator('[data-testid="training-ground-departure-action"]:visible').first().click();

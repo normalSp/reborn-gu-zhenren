@@ -15,7 +15,7 @@ import { DOMAIN_BGM } from '../../store/slices/soundSlice';
 import type { OriginDefinition } from '../../store/slices/originUnlockSlice';
 import originsData from '../../canon/origins.json';
 
-type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'aperture_management' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'free_goal' | 'story_anchor' | 'ending' | 'inheritance';
+type SidePanel = 'none' | 'attributes' | 'events' | 'gu_inventory' | 'kill_moves' | 'aperture' | 'aperture_management' | 'map' | 'characters' | 'dao_marks' | 'merchant' | 'achievements' | 'refine' | 'material_bag' | 'training_ground' | 'squad' | 'actions' | 'free_goal' | 'story_anchor' | 'ending' | 'inheritance' | 'role' | 'gu_dao' | 'world' | 'records';
 
 const lazyNamed = <T extends ComponentType<any>>(
   loader: () => Promise<Record<string, any>>,
@@ -42,6 +42,11 @@ const FreeGoalPanel = lazyNamed(() => import('./FreeGoalPanel'), 'FreeGoalPanel'
 const StoryAnchorPanel = lazyNamed(() => import('./StoryAnchorPanel'), 'StoryAnchorPanel');
 const EndingResolverPanel = lazyNamed(() => import('./EndingResolverPanel'), 'EndingResolverPanel');
 const InheritanceLandPanel = lazyNamed(() => import('./InheritanceLandPanel'), 'InheritanceLandPanel');
+const ActionHubPanel = lazyNamed(() => import('./ActionHubPanel'), 'ActionHubPanel');
+const GuDaoPanel = lazyNamed(() => import('./GuDaoPanel'), 'GuDaoPanel');
+const RoleHubPanel = lazyNamed(() => import('./RoleHubPanel'), 'RoleHubPanel');
+const WorldHubPanel = lazyNamed(() => import('./WorldHubPanel'), 'WorldHubPanel');
+const RecordsHubPanel = lazyNamed(() => import('./RecordsHubPanel'), 'RecordsHubPanel');
 
 const SaveLoadDialog = lazyNamed(() => import('./SaveLoadDialog'), 'SaveLoadDialog');
 const SettingsDialog = lazyNamed(() => import('./SettingsDialog'), 'SettingsDialog');
@@ -84,6 +89,10 @@ const getPanelTitle = (panel: SidePanel, currentDomain: string, isImmortal: bool
     squad: '小队编成',
     actions: '行动',
     free_goal: '自由目标',
+    role: '角色',
+    gu_dao: '蛊道',
+    world: '世界',
+    records: '记录',
     story_anchor: '宿命',
     ending: '终局',
     inheritance: '传承',
@@ -108,7 +117,11 @@ const panelContent = (panel: SidePanel) => {
     case 'achievements': return <AchievementPanel />;
     case 'training_ground': return <TrainingGroundPanel />;
     case 'squad': return <SquadFormationPanel />;
-    case 'actions': return <ActionPanel />;
+    case 'role': return <RoleHubPanel />;
+    case 'gu_dao': return <GuDaoPanel />;
+    case 'world': return <WorldHubPanel />;
+    case 'records': return <RecordsHubPanel />;
+    case 'actions': return <ActionHubPanel />;
     case 'free_goal': return <FreeGoalPanel />;
     case 'story_anchor': return <StoryAnchorPanel />;
     case 'ending': return <EndingResolverPanel />;
@@ -122,23 +135,10 @@ interface ToolbarButton { id: SidePanel; label: string; }
 // P3修复：工具栏标签支持动态域（地图按钮根据currentDomain动态生成）
 const TOOLBAR_BUTTONS_BASE: ToolbarButton[] = [
   { id: 'actions', label: '行动' },
-  { id: 'free_goal', label: '自由目标' },
-  { id: 'inheritance', label: '传承' },
-  { id: 'story_anchor', label: '宿命' },
-  { id: 'ending', label: '终局' },
-  { id: 'attributes', label: '蛊师属性' },
-  { id: 'gu_inventory', label: '蛊虫' },
-  { id: 'kill_moves', label: '杀招列表' },
-  { id: 'refine', label: '炼蛊' },
-  { id: 'material_bag', label: '蛊材' },
-  { id: 'aperture', label: '空窍状态' },
-  { id: 'characters', label: '人物图鉴' },
-  { id: 'squad', label: '小队' },
-  { id: 'dao_marks', label: '流派道痕' },
-  { id: 'merchant', label: '商会' },
-  { id: 'achievements', label: '成就' },
-  { id: 'training_ground', label: '道场' },
-  { id: 'events', label: '事件日志' },
+  { id: 'role', label: '角色' },
+  { id: 'gu_dao', label: '蛊道' },
+  { id: 'world', label: '世界' },
+  { id: 'records', label: '记录' },
 ];
 
 const toolbarBtnClass = (active: boolean) =>
@@ -148,10 +148,6 @@ export function GameScreen() {
   const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
   const screenState = useStore(s => s.screenState);
   const gameLoadVersion = useStore(s => s.gameLoadVersion);
-  const initBattlefieldDemo = useStore((s: any) => s.initBattlefieldDemo);
-  const initQingmaoMortalBattlefieldDemo = useStore((s: any) => s.initQingmaoMortalBattlefieldDemo);
-  const initBattlefieldGroupDemo = useStore((s: any) => s.initBattlefieldGroupDemo);
-  const initBattlefieldLargeGroupDemo = useStore((s: any) => s.initBattlefieldLargeGroupDemo);
   const startedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
 
@@ -460,45 +456,6 @@ export function GameScreen() {
           >
             {currentDomain ? `${currentDomain}舆图` : '舆图'}
           </button>
-          <div
-            className="flex shrink-0 items-center gap-1 rounded-sm border border-rg-ink-300/10 bg-rg-ink-900/35 px-1 py-1"
-            data-testid="debug-battlefield-demo-group"
-            title="Debug/演武入口：正式战斗由剧情候选进入"
-          >
-            <span className="hidden text-[9px] text-rg-paper-200/30 sm:inline">演武</span>
-            <button
-              onClick={() => initQingmaoMortalBattlefieldDemo?.()}
-              className={toolbarBtnClass(false)}
-              data-testid="open-qingmao-battlefield-demo"
-              title="b3 竖切：青茅山凡战，美术边界与事实只读 UI"
-            >
-              青茅
-            </button>
-            <button
-              onClick={() => initBattlefieldDemo?.()}
-              className={toolbarBtnClass(false)}
-              data-testid="open-battlefield-demo"
-              title="Debug/演武入口：正式 1v1/凡战由剧情候选进入"
-            >
-              凡战
-            </button>
-            <button
-              onClick={() => initBattlefieldGroupDemo?.()}
-              className={toolbarBtnClass(false)}
-              data-testid="open-battlefield-group-demo"
-              title="Debug/演武入口：正式群像战由剧情候选进入"
-            >
-              群像
-            </button>
-            <button
-              onClick={() => initBattlefieldLargeGroupDemo?.()}
-              className={toolbarBtnClass(false)}
-              data-testid="open-battlefield-large-group-demo"
-              title="Debug/演武入口：正式大场面由剧情候选进入"
-            >
-              大阵
-            </button>
-          </div>
           {TOOLBAR_BUTTONS_BASE.map(btn => (
             <button
               key={btn.id}
@@ -506,7 +463,7 @@ export function GameScreen() {
               className={toolbarBtnClass(sidePanel === btn.id)}
               data-testid={`side-panel-${btn.id}`}
             >
-              {btn.id === 'aperture' && isImmortal ? '仙窍' : btn.label}
+              {btn.label}
             </button>
           ))}
         </div>

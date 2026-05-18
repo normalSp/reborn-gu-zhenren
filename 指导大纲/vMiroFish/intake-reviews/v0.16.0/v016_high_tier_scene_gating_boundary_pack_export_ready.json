@@ -1,0 +1,1753 @@
+{
+  "schema": "reborng.mirofish.v016-ui-boundary-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v016-high-tier-scene-gating-boundary-pack",
+  "packageKey": "v016_high_tier_scene_gating_boundary",
+  "title": "v0.16 High-Tier Scene Gating Boundary Pack",
+  "generatedAt": "2026-05-18T13:07:04.447462+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierBodiesWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not runtime truth, not DeepSeek authority"
+    ]
+  },
+  "deliveryStatus": "complete_candidate",
+  "caveats": [
+    "Scene-gating boundaries are sufficiently supported as UI policy candidates by 0001-0600.",
+    "High-tier and hidden entries are blocked categories only; no hidden body is included."
+  ],
+  "items": [
+    {
+      "id": "inheritance-entry-rumor-only",
+      "category": "inheritance_entry_boundary",
+      "summary": "传承入口可作为传闻、线索或场景回顾出现，不能常驻底栏并暗示正式获得或可直接进入。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_600b9af6d1d4",
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0047",
+          "chapterId": "ch_0047",
+          "field": "events",
+          "itemId": "evt_92085992a249",
+          "summary": "花酒行者的影壁传承被方源发现，方源成为继承者",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0179",
+          "chapterId": "ch_0179",
+          "field": "events",
+          "itemId": "evt_76b082191063",
+          "summary": "方正和铁若男讨论方源酒虫来源和贾金生被杀动机，铁若男推测方源可能获得遗藏传承",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "relations",
+          "itemId": "rel_fe09282c726b",
+          "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0179",
+          "chapterId": "ch_0179",
+          "field": "relations",
+          "itemId": "rel_9ea37eca683f",
+          "summary": "铁若男调查方源，怀疑方源有遗藏传承并因此杀人",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d4ada8d2d0af",
+        "sp_8924a4a57f7d",
+        "sp_9f942272eaba",
+        "sp_59e2db5ea832",
+        "sp_85a0c122f0dd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0059",
+          "startOffset": 26540,
+          "endOffset": 26564,
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+          "sourcePointerId": "sp_d4ada8d2d0af"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0047",
+          "paragraphId": "ch_0047_p0033",
+          "startOffset": 138482,
+          "endOffset": 138602,
+          "summary": "花酒行者的影壁传承被方源发现，方源成为继承者",
+          "sourcePointerId": "sp_8924a4a57f7d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0179",
+          "paragraphId": "ch_0179_p0030",
+          "startOffset": 597490,
+          "endOffset": 597512,
+          "summary": "方正和铁若男讨论方源酒虫来源和贾金生被杀动机，铁若男推测方源可能获得遗藏传承",
+          "sourcePointerId": "sp_9f942272eaba"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产",
+          "sourcePointerId": "sp_59e2db5ea832"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0179",
+          "paragraphId": "ch_0179_p0022",
+          "startOffset": 597249,
+          "endOffset": 597310,
+          "summary": "铁若男调查方源，怀疑方源有遗藏传承并因此杀人",
+          "sourcePointerId": "sp_85a0c122f0dd"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "inheritance",
+      "lowRankVisibility": "rumor_only",
+      "allowedUiCopy": [
+        "传闻线索",
+        "待验证遗留痕迹",
+        "需场景触发"
+      ],
+      "forbiddenImplications": [
+        "不得暗示正式传承已获得",
+        "不得显示隐藏地点坐标",
+        "不得发放奖励"
+      ],
+      "hardStopConditions": [
+        "player_requests_direct_inheritance",
+        "ui_copy_implies_unlocked_location"
+      ],
+      "playerMisreadRisk": "high"
+    },
+    {
+      "id": "fate-entry-pressure-only",
+      "category": "fate_entry_boundary",
+      "summary": "宿命类入口只能表达压力、不可控风险或长期主题，不能变成玩家可控按钮或改写器。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "events",
+          "itemId": "evt_de319beee172",
+          "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_74e8525f4bae",
+          "summary": "人祖用中年供奉智慧蛊，获得智慧",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_d2c0d3dc79cb",
+          "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0032",
+          "chapterId": "ch_0032",
+          "field": "events",
+          "itemId": "evt_9631751b7f04",
+          "summary": "中年男子在客栈找到方源，狞笑威胁说漠颜正在到处找他算账，想以势压人。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0032",
+          "chapterId": "ch_0032",
+          "field": "events",
+          "itemId": "evt_df9c5c7f9de0",
+          "summary": "古月漠颜执行家族侦察任务返回，向古月漠尘汇报狼巢情况，预测来年将有狼潮，共计三只雷冠头狼",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cc81db82f6c6",
+        "sp_66613a7e314d",
+        "sp_65830546f9c9",
+        "sp_047ff102e5d1",
+        "sp_d59d416d6f41"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0066",
+          "startOffset": 9341,
+          "endOffset": 9367,
+          "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人",
+          "sourcePointerId": "sp_cc81db82f6c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0020",
+          "startOffset": 13325,
+          "endOffset": 13360,
+          "summary": "人祖用中年供奉智慧蛊，获得智慧",
+          "sourcePointerId": "sp_66613a7e314d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0003",
+          "startOffset": 12662,
+          "endOffset": 12700,
+          "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内",
+          "sourcePointerId": "sp_65830546f9c9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0032",
+          "paragraphId": "ch_0032_p0058",
+          "startOffset": 93226,
+          "endOffset": 93263,
+          "summary": "中年男子在客栈找到方源，狞笑威胁说漠颜正在到处找他算账，想以势压人。",
+          "sourcePointerId": "sp_047ff102e5d1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0032",
+          "paragraphId": "ch_0032_p0024",
+          "startOffset": 91522,
+          "endOffset": 91576,
+          "summary": "古月漠颜执行家族侦察任务返回，向古月漠尘汇报狼巢情况，预测来年将有狼潮，共计三只雷冠头狼",
+          "sourcePointerId": "sp_d59d416d6f41"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "fate",
+      "lowRankVisibility": "review_only",
+      "allowedUiCopy": [
+        "压力迹象",
+        "长期主题",
+        "需后续版本处理"
+      ],
+      "forbiddenImplications": [
+        "不得暗示玩家可直接改写宿命",
+        "不得暴露高阶因果正文",
+        "不得变成数值开关"
+      ],
+      "hardStopConditions": [
+        "player_asks_to_control_fate",
+        "ai_explains_hidden_causality"
+      ],
+      "playerMisreadRisk": "high"
+    },
+    {
+      "id": "ending-entry-stage-goal-only",
+      "category": "ending_entry_boundary",
+      "summary": "终局入口应迁出常驻底栏；低阶阶段只显示阶段目标、生存压力和长期方向，不展示结局结论。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_74e8525f4bae",
+          "summary": "人祖用中年供奉智慧蛊，获得智慧",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_359666c9458f",
+          "summary": "沈翠色诱方源，反被方源威吓，惊恐逃离。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0027",
+          "chapterId": "ch_0027",
+          "field": "events",
+          "itemId": "evt_3400dac0a0c7",
+          "summary": "家老宣布晋升规则：三个月内率先晋升一转中阶者可获三十元石奖励和第二蛊虫优先权，并设立班头、副班头职位。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0041",
+          "chapterId": "ch_0041",
+          "field": "events",
+          "itemId": "evt_e96c826dab8e",
+          "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0051",
+          "chapterId": "ch_0051",
+          "field": "events",
+          "itemId": "evt_099d12b55a09",
+          "summary": "古月漠北计划在养伤期间温养空窍四壁，从初阶晋升到中阶，以夺取班头位置",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_66613a7e314d",
+        "sp_346b986970bb",
+        "sp_7a55482f41e4",
+        "sp_9f386882749b",
+        "sp_395f0824dd22"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0020",
+          "startOffset": 13325,
+          "endOffset": 13360,
+          "summary": "人祖用中年供奉智慧蛊，获得智慧",
+          "sourcePointerId": "sp_66613a7e314d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0045",
+          "startOffset": 31786,
+          "endOffset": 31827,
+          "summary": "沈翠色诱方源，反被方源威吓，惊恐逃离。",
+          "sourcePointerId": "sp_346b986970bb"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0027",
+          "paragraphId": "ch_0027_p0014",
+          "startOffset": 77591,
+          "endOffset": 77751,
+          "summary": "家老宣布晋升规则：三个月内率先晋升一转中阶者可获三十元石奖励和第二蛊虫优先权，并设立班头、副班头职位。",
+          "sourcePointerId": "sp_7a55482f41e4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0040",
+          "startOffset": 119937,
+          "endOffset": 119977,
+          "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。",
+          "sourcePointerId": "sp_9f386882749b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0051",
+          "paragraphId": "ch_0051_p0011",
+          "startOffset": 150949,
+          "endOffset": 150973,
+          "summary": "古月漠北计划在养伤期间温养空窍四壁，从初阶晋升到中阶，以夺取班头位置",
+          "sourcePointerId": "sp_395f0824dd22"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "ending",
+      "lowRankVisibility": "locked",
+      "allowedUiCopy": [
+        "阶段目标",
+        "生存目标",
+        "长期方向未开放"
+      ],
+      "forbiddenImplications": [
+        "不得展示最终结局",
+        "不得预告正史核心结果",
+        "不得把成长目标写成胜利条件"
+      ],
+      "hardStopConditions": [
+        "ui_copy_mentions_final_result",
+        "player_reads_stage_goal_as_completed_ending"
+      ],
+      "playerMisreadRisk": "medium"
+    },
+    {
+      "id": "market-entry-caravan-scene-only",
+      "category": "market_entry_boundary",
+      "summary": "商会/市场入口在低阶阶段应以商队、交易窗口和递话机会呈现，不应开放跨域高阶交易。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0040",
+          "chapterId": "ch_0040",
+          "field": "events",
+          "itemId": "evt_940ebd157d4d",
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0044",
+          "chapterId": "ch_0044",
+          "field": "events",
+          "itemId": "evt_f3645b564a03",
+          "summary": "方源想起白骨山有一位正道四转蛊师的力量传承，但需要两人合作才能通过",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0046",
+          "chapterId": "ch_0046",
+          "field": "events",
+          "itemId": "evt_c924b407c9d6",
+          "summary": "方源计划将物品卖给商队中的商家，以规避风险",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0110",
+          "chapterId": "ch_0110",
+          "field": "events",
+          "itemId": "evt_0a08eb0dc607",
+          "summary": "方源在商队中游走闲逛，进入树屋商铺，看到酒虫等蛊虫。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0114",
+          "chapterId": "ch_0114",
+          "field": "events",
+          "itemId": "evt_e66749e67cef",
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_98eb45a538fa",
+        "sp_521720a1ac79",
+        "sp_c7dfe0d60cc2",
+        "sp_c876dd3138a9",
+        "sp_cc2aca7fe832"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0044",
+          "paragraphId": "ch_0044_p0054",
+          "startOffset": 129236,
+          "endOffset": 129317,
+          "summary": "方源想起白骨山有一位正道四转蛊师的力量传承，但需要两人合作才能通过",
+          "sourcePointerId": "sp_521720a1ac79"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0046",
+          "paragraphId": "ch_0046_p0034",
+          "startOffset": 134229,
+          "endOffset": 134282,
+          "summary": "方源计划将物品卖给商队中的商家，以规避风险",
+          "sourcePointerId": "sp_c7dfe0d60cc2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0110",
+          "paragraphId": "ch_0110_p0066",
+          "startOffset": 351653,
+          "endOffset": 351668,
+          "summary": "方源在商队中游走闲逛，进入树屋商铺，看到酒虫等蛊虫。",
+          "sourcePointerId": "sp_c876dd3138a9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0114",
+          "paragraphId": "ch_0114_p0021",
+          "startOffset": 364908,
+          "endOffset": 364910,
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "sourcePointerId": "sp_cc2aca7fe832"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "market",
+      "lowRankVisibility": "scene_only",
+      "allowedUiCopy": [
+        "商队窗口",
+        "交易线索",
+        "递话机会"
+      ],
+      "forbiddenImplications": [
+        "不得暗示高阶市场可用",
+        "不得显示稳定跨域交易",
+        "不得直接发放稀有物"
+      ],
+      "hardStopConditions": [
+        "ui_copy_implies_high_tier_market_access",
+        "ai_grants_material_or_gu"
+      ],
+      "playerMisreadRisk": "high"
+    },
+    {
+      "id": "qingmao-demo-dev-drawer",
+      "category": "debug_demo_entry_boundary",
+      "summary": "青茅演示入口可放入开发抽屉或回顾入口，不应作为正式地点、身份或任务结论常驻展示。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0285f9834ec7",
+          "summary": "花酒行者流窜至青茅山，企图在古月山寨作案，被四代族长识破后发生激战，花酒行者不敌求饶，随后偷袭重伤族长，族长击毙花酒行者，自己也重伤不治身亡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0171",
+          "chapterId": "ch_0171",
+          "field": "events",
+          "itemId": "evt_a60107f5fa96",
+          "summary": "方源决定即刻离开青茅山",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_ff2c990adcbc",
+          "summary": "铁血冷收到神秘来信，得知古月山寨藏有血祸",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0336",
+          "chapterId": "ch_0336",
+          "field": "events",
+          "itemId": "evt_583e544f9328",
+          "summary": "方正回忆与哥哥方源在青茅山古月山寨的擂台战",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0040",
+          "chapterId": "ch_0040",
+          "field": "events",
+          "itemId": "evt_940ebd157d4d",
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_4b873a5c9dbe",
+        "sp_a8da82911b6e",
+        "sp_3ecab995ad83",
+        "sp_42bcd70ea9e8",
+        "sp_98eb45a538fa"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0036",
+          "startOffset": 19269,
+          "endOffset": 19399,
+          "summary": "花酒行者流窜至青茅山，企图在古月山寨作案，被四代族长识破后发生激战，花酒行者不敌求饶，随后偷袭重伤族长，族长击毙花酒行者，自己也重伤不治身亡",
+          "sourcePointerId": "sp_4b873a5c9dbe"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0171",
+          "paragraphId": "ch_0171_p0006",
+          "startOffset": 568824,
+          "endOffset": 568844,
+          "summary": "方源决定即刻离开青茅山",
+          "sourcePointerId": "sp_a8da82911b6e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0041",
+          "startOffset": 620237,
+          "endOffset": 620274,
+          "summary": "铁血冷收到神秘来信，得知古月山寨藏有血祸",
+          "sourcePointerId": "sp_3ecab995ad83"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0336",
+          "paragraphId": "ch_0336_p0086",
+          "startOffset": 1167332,
+          "endOffset": 1167365,
+          "summary": "方正回忆与哥哥方源在青茅山古月山寨的擂台战",
+          "sourcePointerId": "sp_42bcd70ea9e8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "qingmao_demo",
+      "lowRankVisibility": "dev_only",
+      "allowedUiCopy": [
+        "开发演示",
+        "回顾入口",
+        "候选场景"
+      ],
+      "forbiddenImplications": [
+        "不得暗示正式地点解锁",
+        "不得改写身份",
+        "不得结算任务结果"
+      ],
+      "hardStopConditions": [
+        "demo_entry_visible_in_formal_bottom_nav",
+        "ui_copy_grants_location"
+      ],
+      "playerMisreadRisk": "medium"
+    },
+    {
+      "id": "battle-demo-scene-only",
+      "category": "debug_demo_entry_boundary",
+      "summary": "凡战演示入口可作为战斗回顾或验证入口，不能暗示战斗结果、掉落、NPC 生死或正式路线变化。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0135",
+          "chapterId": "ch_0135",
+          "field": "events",
+          "itemId": "evt_1b62af062c47",
+          "summary": "白凝冰压制修为至二转，与方源在狼群中追逐战斗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0136",
+          "chapterId": "ch_0136",
+          "field": "events",
+          "itemId": "evt_310e33d5551e",
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_be04a26c1ae0",
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0128",
+          "chapterId": "ch_0128",
+          "field": "events",
+          "itemId": "evt_e7a598bfcfc7",
+          "summary": "一个多月后，方源在雪地中与电狼战斗，采集狼眼，被狼群半包围",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0131",
+          "chapterId": "ch_0131",
+          "field": "events",
+          "itemId": "evt_d1bfaab74b5f",
+          "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_ae658f483e44",
+        "sp_e8cc17c82ce0",
+        "sp_2127da087169",
+        "sp_3c69582e487f",
+        "sp_7a3cd9e19e53"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0135",
+          "paragraphId": "ch_0135_p0002",
+          "startOffset": 440278,
+          "endOffset": 440336,
+          "summary": "白凝冰压制修为至二转，与方源在狼群中追逐战斗",
+          "sourcePointerId": "sp_ae658f483e44"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0136",
+          "paragraphId": "ch_0136_p0014",
+          "startOffset": 444208,
+          "endOffset": 444224,
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "sourcePointerId": "sp_e8cc17c82ce0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0042",
+          "startOffset": 640967,
+          "endOffset": 640986,
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "sourcePointerId": "sp_2127da087169"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0128",
+          "paragraphId": "ch_0128_p0032",
+          "startOffset": 415110,
+          "endOffset": 415120,
+          "summary": "一个多月后，方源在雪地中与电狼战斗，采集狼眼，被狼群半包围",
+          "sourcePointerId": "sp_3c69582e487f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0007",
+          "startOffset": 425805,
+          "endOffset": 425855,
+          "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗",
+          "sourcePointerId": "sp_7a3cd9e19e53"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "battle_demo",
+      "lowRankVisibility": "scene_only",
+      "allowedUiCopy": [
+        "战斗回顾",
+        "验证候选",
+        "无奖励演示"
+      ],
+      "forbiddenImplications": [
+        "不得暗示胜负已定",
+        "不得发放掉落",
+        "不得写 NPC 生死结论"
+      ],
+      "hardStopConditions": [
+        "ui_copy_implies_reward",
+        "ui_copy_implies_npc_life_conclusion"
+      ],
+      "playerMisreadRisk": "high"
+    },
+    {
+      "id": "crowd-demo-review-only",
+      "category": "debug_demo_entry_boundary",
+      "summary": "群像入口只适合做开发/美术回顾和测试样本，不应直接生成势力声望、阵营转移或公众结论。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0022",
+          "chapterId": "ch_0022",
+          "field": "events",
+          "itemId": "evt_be84c78c281d",
+          "summary": "学堂公告墙张贴炼化月光蛊的新榜单，方源第一，方正第二",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0086",
+          "chapterId": "ch_0086",
+          "field": "events",
+          "itemId": "evt_05a4bbafdbbc",
+          "summary": "方正回忆过去，包括族人的议论、舅父舅母的期望、族长的鼓励、沈翠的鼓励",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0117",
+          "chapterId": "ch_0117",
+          "field": "events",
+          "itemId": "evt_027cbfe75353",
+          "summary": "方源修为被族人发现，暴露了赤铁舍利蛊和黒豕蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0262",
+          "chapterId": "ch_0262",
+          "field": "events",
+          "itemId": "evt_a8d424e76c38",
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "events",
+          "itemId": "evt_5e4811b27ffb",
+          "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_67bddc27e620",
+        "sp_8a93727e91ee",
+        "sp_7c8cf1c72eea",
+        "sp_d9682ef9d78f",
+        "sp_2bb29c744ff9"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0022",
+          "paragraphId": "ch_0022_p0040",
+          "startOffset": 62618,
+          "endOffset": 62657,
+          "summary": "学堂公告墙张贴炼化月光蛊的新榜单，方源第一，方正第二",
+          "sourcePointerId": "sp_67bddc27e620"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0086",
+          "paragraphId": "ch_0086_p0013",
+          "startOffset": 266738,
+          "endOffset": 266772,
+          "summary": "方正回忆过去，包括族人的议论、舅父舅母的期望、族长的鼓励、沈翠的鼓励",
+          "sourcePointerId": "sp_8a93727e91ee"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0117",
+          "paragraphId": "ch_0117_p0085",
+          "startOffset": 377748,
+          "endOffset": 377750,
+          "summary": "方源修为被族人发现，暴露了赤铁舍利蛊和黒豕蛊",
+          "sourcePointerId": "sp_7c8cf1c72eea"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0059",
+          "startOffset": 897507,
+          "endOffset": 897527,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+          "sourcePointerId": "sp_d9682ef9d78f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0040",
+          "startOffset": 8404,
+          "endOffset": 8432,
+          "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论",
+          "sourcePointerId": "sp_2bb29c744ff9"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "crowd_demo",
+      "lowRankVisibility": "review_only",
+      "allowedUiCopy": [
+        "群像回顾",
+        "测试样本",
+        "需复核"
+      ],
+      "forbiddenImplications": [
+        "不得生成正式声望",
+        "不得转移阵营",
+        "不得写公众定论"
+      ],
+      "hardStopConditions": [
+        "ui_copy_implies_faction_change",
+        "ai_generates_public_verdict"
+      ],
+      "playerMisreadRisk": "medium"
+    },
+    {
+      "id": "formation-demo-dev-only",
+      "category": "debug_demo_entry_boundary",
+      "summary": "大阵/阵势类入口应保持开发或复核可见，低阶玩家不应从常驻按钮误读为已掌握阵法或开启高阶场景。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0454",
+          "chapterId": "ch_0454",
+          "field": "events",
+          "itemId": "evt_87c25338566e",
+          "summary": "葛家迁徙途中遭遇大批龟背狼群，疑似万狼群，葛家准备防御",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0140",
+          "chapterId": "ch_0140",
+          "field": "events",
+          "itemId": "evt_badbac716de5",
+          "summary": "古月青书要求方正离开战场，但被家老阻止",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0140",
+          "chapterId": "ch_0140",
+          "field": "events",
+          "itemId": "evt_d7da7ca78db2",
+          "summary": "方源离开战场，回山寨报信",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0194",
+          "chapterId": "ch_0194",
+          "field": "events",
+          "itemId": "evt_5afd5963a09c",
+          "summary": "不断有蛊师在对耗中死去",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0249",
+          "chapterId": "ch_0249",
+          "field": "events",
+          "itemId": "evt_8c96c1f2de14",
+          "summary": "冷翡枭猫袭击商队，被第二道防线击溃",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_6ddc3c24bab0",
+        "sp_143051fc4913",
+        "sp_3bb9859e4135",
+        "sp_e1cb141f462e",
+        "sp_1986c19f56d1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0454",
+          "paragraphId": "ch_0454_p0002",
+          "startOffset": 1577139,
+          "endOffset": 1577200,
+          "summary": "葛家迁徙途中遭遇大批龟背狼群，疑似万狼群，葛家准备防御",
+          "sourcePointerId": "sp_6ddc3c24bab0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0140",
+          "paragraphId": "ch_0140_p0077",
+          "startOffset": 461164,
+          "endOffset": 461168,
+          "summary": "古月青书要求方正离开战场，但被家老阻止",
+          "sourcePointerId": "sp_143051fc4913"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0140",
+          "paragraphId": "ch_0140_p0069",
+          "startOffset": 460814,
+          "endOffset": 460816,
+          "summary": "方源离开战场，回山寨报信",
+          "sourcePointerId": "sp_3bb9859e4135"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0078",
+          "startOffset": 653367,
+          "endOffset": 653369,
+          "summary": "不断有蛊师在对耗中死去",
+          "sourcePointerId": "sp_e1cb141f462e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0249",
+          "paragraphId": "ch_0249_p0027",
+          "startOffset": 847365,
+          "endOffset": 847369,
+          "summary": "冷翡枭猫袭击商队，被第二道防线击溃",
+          "sourcePointerId": "sp_1986c19f56d1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "formation_demo",
+      "lowRankVisibility": "dev_only",
+      "allowedUiCopy": [
+        "开发演示",
+        "阵势候选",
+        "需复核"
+      ],
+      "forbiddenImplications": [
+        "不得暗示玩家已掌握阵法",
+        "不得开放高阶场景",
+        "不得把演示写成正式能力"
+      ],
+      "hardStopConditions": [
+        "ui_copy_implies_player_mastery",
+        "demo_entry_unlocks_formal_scene"
+      ],
+      "playerMisreadRisk": "medium"
+    },
+    {
+      "id": "high-tier-market-lock",
+      "category": "high_rank_forbidden_implication",
+      "summary": "高阶交易概念只能作为阻断样本，不应作为低阶市场入口或商会功能预览。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0040",
+          "chapterId": "ch_0040",
+          "field": "events",
+          "itemId": "evt_940ebd157d4d",
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0044",
+          "chapterId": "ch_0044",
+          "field": "events",
+          "itemId": "evt_f3645b564a03",
+          "summary": "方源想起白骨山有一位正道四转蛊师的力量传承，但需要两人合作才能通过",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0046",
+          "chapterId": "ch_0046",
+          "field": "events",
+          "itemId": "evt_c924b407c9d6",
+          "summary": "方源计划将物品卖给商队中的商家，以规避风险",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0110",
+          "chapterId": "ch_0110",
+          "field": "events",
+          "itemId": "evt_0a08eb0dc607",
+          "summary": "方源在商队中游走闲逛，进入树屋商铺，看到酒虫等蛊虫。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0114",
+          "chapterId": "ch_0114",
+          "field": "events",
+          "itemId": "evt_e66749e67cef",
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_98eb45a538fa",
+        "sp_521720a1ac79",
+        "sp_c7dfe0d60cc2",
+        "sp_c876dd3138a9",
+        "sp_cc2aca7fe832"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0044",
+          "paragraphId": "ch_0044_p0054",
+          "startOffset": 129236,
+          "endOffset": 129317,
+          "summary": "方源想起白骨山有一位正道四转蛊师的力量传承，但需要两人合作才能通过",
+          "sourcePointerId": "sp_521720a1ac79"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0046",
+          "paragraphId": "ch_0046_p0034",
+          "startOffset": 134229,
+          "endOffset": 134282,
+          "summary": "方源计划将物品卖给商队中的商家，以规避风险",
+          "sourcePointerId": "sp_c7dfe0d60cc2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0110",
+          "paragraphId": "ch_0110_p0066",
+          "startOffset": 351653,
+          "endOffset": 351668,
+          "summary": "方源在商队中游走闲逛，进入树屋商铺，看到酒虫等蛊虫。",
+          "sourcePointerId": "sp_c876dd3138a9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0114",
+          "paragraphId": "ch_0114_p0021",
+          "startOffset": 364908,
+          "endOffset": 364910,
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "sourcePointerId": "sp_cc2aca7fe832"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "market",
+      "lowRankVisibility": "hidden",
+      "allowedUiCopy": [
+        "未开放",
+        "不属于低阶窗口",
+        "需后续版本审核"
+      ],
+      "forbiddenImplications": [
+        "不得暗示低阶可交易",
+        "不得作为商会按钮",
+        "不得给出购买路径"
+      ],
+      "hardStopConditions": [
+        "player_asks_for_high_tier_trade",
+        "ui_copy_implies_market_unlocked"
+      ],
+      "playerMisreadRisk": "high"
+    },
+    {
+      "id": "hidden-causality-scene-lock",
+      "category": "high_rank_forbidden_implication",
+      "summary": "角色私密因果和隐藏机制只能作为本地 hidden ref，不得出现在场景入口、提示或 DeepSeek 可见上下文。",
+      "confidence": "medium",
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "events",
+          "itemId": "evt_a5de295e5f66",
+          "summary": "方源思考摘取天元宝莲的风险，担心家族追查",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0220",
+          "chapterId": "ch_0220",
+          "field": "events",
+          "itemId": "evt_939d311a83a1",
+          "summary": "百家女族长在营帐中观察方源的表现，认为方源已上钩",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0221",
+          "chapterId": "ch_0221",
+          "field": "events",
+          "itemId": "evt_e621c870d71b",
+          "summary": "百家族长放弃从地图上定位元泉，决定继续观察",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0239",
+          "chapterId": "ch_0239",
+          "field": "relations",
+          "itemId": "rel_46c759bc7428",
+          "summary": "白凝冰跟随方源，观察他的行动",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0599",
+          "chapterId": "ch_0599",
+          "field": "relations",
+          "itemId": "rel_e944025e1c21",
+          "summary": "方源与墨瑶对话，墨瑶观察方源行动",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_93aff926dd38",
+        "sp_0ebed0c9d458",
+        "sp_3a8c670888d8",
+        "sp_618c83d723ef",
+        "sp_650c8e915e55"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0062",
+          "startOffset": 546394,
+          "endOffset": 546422,
+          "summary": "方源思考摘取天元宝莲的风险，担心家族追查",
+          "sourcePointerId": "sp_93aff926dd38"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0220",
+          "paragraphId": "ch_0220_p0089",
+          "startOffset": 743937,
+          "endOffset": 743963,
+          "summary": "百家女族长在营帐中观察方源的表现，认为方源已上钩",
+          "sourcePointerId": "sp_0ebed0c9d458"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0221",
+          "paragraphId": "ch_0221_p0003",
+          "startOffset": 744008,
+          "endOffset": 744012,
+          "summary": "百家族长放弃从地图上定位元泉，决定继续观察",
+          "sourcePointerId": "sp_3a8c670888d8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0239",
+          "paragraphId": "ch_0239_p0107",
+          "startOffset": 814192,
+          "endOffset": 814195,
+          "summary": "白凝冰跟随方源，观察他的行动",
+          "sourcePointerId": "sp_618c83d723ef"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0599",
+          "paragraphId": "ch_0599_p0070",
+          "startOffset": 2107242,
+          "endOffset": 2107244,
+          "summary": "方源与墨瑶对话，墨瑶观察方源行动",
+          "sourcePointerId": "sp_650c8e915e55"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "ui-boundary-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "scene_gating_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "notGrantableByAI": true,
+        "allowedUse": [
+          "candidate_pool",
+          "ui_boundary_draft",
+          "rule_draft",
+          "test_sample"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "formal_faction_change",
+          "npc_life_conclusion",
+          "hidden_fact_body",
+          "direct_inventory_grant",
+          "direct_recipe_grant"
+        ]
+      },
+      "entryKey": "fate",
+      "lowRankVisibility": "hidden",
+      "allowedUiCopy": [
+        "隐藏引用",
+        "不可见",
+        "需人工复核"
+      ],
+      "forbiddenImplications": [
+        "不得解释私密因果",
+        "不得暴露隐藏机制",
+        "不得让 AI 继承权威"
+      ],
+      "hardStopConditions": [
+        "ai_or_ui_exposes_hidden_body",
+        "entry_text_explains_private_causality"
+      ],
+      "playerMisreadRisk": "high"
+    }
+  ],
+  "coverage": {
+    "itemCount": 10,
+    "sourcePointerCount": 43,
+    "categoryCounts": {
+      "debug_demo_entry_boundary": 4,
+      "ending_entry_boundary": 1,
+      "fate_entry_boundary": 1,
+      "high_rank_forbidden_implication": 2,
+      "inheritance_entry_boundary": 1,
+      "market_entry_boundary": 1
+    }
+  },
+  "playerMisreadTestSamples": [
+    {
+      "id": "inheritance_button_as_claimed",
+      "playerMisread": "玩家看到传承按钮后以为已获得传承",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "inheritance-entry-rumor-only"
+    },
+    {
+      "id": "inheritance_rumor_as_location",
+      "playerMisread": "传闻线索被误读成地点已解锁",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "inheritance-entry-rumor-only"
+    },
+    {
+      "id": "fate_button_as_control",
+      "playerMisread": "宿命入口被误读成可直接改写世界状态",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "fate-entry-pressure-only"
+    },
+    {
+      "id": "fate_pressure_as_failure_button",
+      "playerMisread": "压力提示被误读成强制失败按钮",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "fate-entry-pressure-only"
+    },
+    {
+      "id": "ending_stage_goal_as_finale",
+      "playerMisread": "阶段目标被误读成最终结局",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "ending-entry-stage-goal-only"
+    },
+    {
+      "id": "market_entry_as_high_tier_trade",
+      "playerMisread": "商会入口被误读成高阶交易已开放",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "market-entry-caravan-scene-only"
+    },
+    {
+      "id": "caravan_window_as_unlimited_shop",
+      "playerMisread": "商队窗口被误读成无限商店",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "market-entry-caravan-scene-only"
+    },
+    {
+      "id": "qingmao_demo_as_location_unlock",
+      "playerMisread": "青茅演示被误读成正式地点解锁",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "qingmao-demo-dev-drawer"
+    },
+    {
+      "id": "battle_demo_as_reward_run",
+      "playerMisread": "凡战演示被误读成可刷奖励",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "battle-demo-scene-only"
+    },
+    {
+      "id": "crowd_demo_as_reputation",
+      "playerMisread": "群像入口被误读成正式声望系统",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "crowd-demo-review-only"
+    },
+    {
+      "id": "formation_demo_as_mastery",
+      "playerMisread": "大阵演示被误读成玩家已掌握阵法",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "formation-demo-dev-only"
+    },
+    {
+      "id": "hidden_ref_as_player_hint",
+      "playerMisread": "隐藏引用被误读成玩家提示",
+      "expectedUiRuling": "hide_lock_scene_only_or_review",
+      "sourceItemId": "hidden-causality-scene-lock"
+    }
+  ],
+  "forbiddenImplicationSamples": [
+    {
+      "id": "direct_inheritance_grant",
+      "forbiddenImplication": "入口文案暗示直接获得传承",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "inheritance-entry-rumor-only"
+    },
+    {
+      "id": "hidden_location_unlock",
+      "forbiddenImplication": "入口文案暗示隐藏地点已开放",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "inheritance-entry-rumor-only"
+    },
+    {
+      "id": "fate_rewrite_button",
+      "forbiddenImplication": "宿命入口写成可控制开关",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "fate-entry-pressure-only"
+    },
+    {
+      "id": "final_result_preview",
+      "forbiddenImplication": "终局入口展示结局结论",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "ending-entry-stage-goal-only"
+    },
+    {
+      "id": "high_tier_market_access",
+      "forbiddenImplication": "商会入口暗示高阶交易可用",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "high-tier-market-lock"
+    },
+    {
+      "id": "formal_reward_from_demo",
+      "forbiddenImplication": "演示入口发放正式奖励",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "battle-demo-scene-only"
+    },
+    {
+      "id": "npc_life_conclusion_from_demo",
+      "forbiddenImplication": "演示入口写 NPC 生死结论",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "battle-demo-scene-only"
+    },
+    {
+      "id": "faction_change_from_crowd",
+      "forbiddenImplication": "群像入口改变阵营或声望",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "crowd-demo-review-only"
+    },
+    {
+      "id": "formation_mastery_from_demo",
+      "forbiddenImplication": "大阵入口赋予正式能力",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "formation-demo-dev-only"
+    },
+    {
+      "id": "ai_visible_hidden_ref",
+      "forbiddenImplication": "隐藏引用进入 AI 可见上下文",
+      "expectedUiRuling": "block_or_downgrade",
+      "sourceItemId": "hidden-causality-scene-lock"
+    }
+  ]
+}

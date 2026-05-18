@@ -32,7 +32,8 @@ async function openMidgameAnchorDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startMidgameAnchorDemo());
-  await page.getByTestId('side-panel-story_anchor').click();
+  await page.getByTestId('side-panel-world').click();
+  await page.locator('[data-testid=world-hub-tab-story_anchor]:visible').click();
   await expect(visibleStoryAnchorPanel(page)).toBeVisible();
   return consoleErrors;
 }

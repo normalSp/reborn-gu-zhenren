@@ -32,7 +32,8 @@ async function openOriginLifeboundDemo(page: Page): Promise<string[]> {
   await page.goto('/?e2e=1');
   await page.waitForFunction(() => !!(window as RebornE2eWindow).__REBORN_E2E__);
   await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.startOriginLifeboundClosureDemo());
-  await page.getByTestId('side-panel-gu_inventory').click();
+  await page.getByTestId('side-panel-gu_dao').click();
+  await page.locator('[data-testid=gu-dao-tab-gu_inventory]:visible').click();
   await expect(visibleGuInventoryPanel(page)).toBeVisible();
   return consoleErrors;
 }
