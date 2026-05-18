@@ -82,5 +82,8 @@ b1 限定：
 
 ## Git 状态
 
-- 本轮应提交 a1/a2 文档、v0.18 MiroFish 交付包、intake review、仪表盘/AGENTS/PROJECT-STATE/handoff。
+- 本轮已提交 a1/a2 文档、v0.18 MiroFish 交付包、intake review、仪表盘/AGENTS/PROJECT-STATE/handoff。
+- 提交：`b352909 docs: 完成v0.18路线门禁与MiroFish intake`。
+- 已推送到 `origin/codex/v013-npc-faction-reaction`。
+- GitHub Actions：`26051537010` 通过 deterministic quality gate。
 - 不 stage 当前历史脏文件：美术候选、zip、artifacts、bgm、`.cursor`、`指导大纲/大方向`。
