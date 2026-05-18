@@ -673,6 +673,45 @@ function RefinementBoundaryPanel({
   );
 }
 
+function MarketWindowPanel({
+  canExecute,
+  onExecute,
+}: {
+  canExecute: boolean;
+  onExecute: () => void;
+}) {
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/18 bg-rg-ink-900/38 p-3"
+      data-testid="free-goal-market-window-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">商队/市场窗口</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            试探商队、问价、递话和公开理由，只形成候选窗口。
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/20 px-2 py-1 text-[10px] text-rg-paper-200/55">
+          v0.15-b3
+        </span>
+      </div>
+      <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/28 p-3 text-xs leading-relaxed text-rg-paper-200/62">
+        不买卖 · 不写价格 · 不开放库存 · 不加入商队
+      </div>
+      <button
+        type="button"
+        onClick={onExecute}
+        disabled={!canExecute}
+        className="rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+        data-testid="free-goal-market-window"
+      >
+        试探窗口
+      </button>
+    </section>
+  );
+}
+
 function FactionGoalPrerequisiteCard({ card }: { card: QingmaoFactionGoalPrerequisiteCard }) {
   return (
     <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/35 p-3">
@@ -898,6 +937,7 @@ export function FreeGoalPanel() {
     resolveQingmaoMountainPassRouteContinuationAction,
     resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoRefinementBoundaryAction,
+    resolveQingmaoMarketWindowAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -915,6 +955,7 @@ export function FreeGoalPanel() {
     resolveQingmaoMountainPassRouteContinuationAction: state.resolveQingmaoMountainPassRouteContinuationAction,
     resolveQingmaoSupplyFeedingPreparationAction: state.resolveQingmaoSupplyFeedingPreparationAction,
     resolveQingmaoRefinementBoundaryAction: state.resolveQingmaoRefinementBoundaryAction,
+    resolveQingmaoMarketWindowAction: state.resolveQingmaoMarketWindowAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -995,6 +1036,18 @@ export function FreeGoalPanel() {
       || consequences.some(entry => entry.actionId === 'qingmao_supply_feeding_preparation_probe'),
     );
   }, [livingWorldState]);
+  const canRunMarketWindow = useMemo(() => {
+    const facts = livingWorldState?.knownFacts || {};
+    const consequences = livingWorldState?.actionConsequences || [];
+    return Boolean(
+      facts.qingmao_supply_feeding_preparation_baseline
+      || facts.qingmao_refinement_fragment_boundary_baseline
+      || consequences.some(entry => (
+        entry.actionId === 'qingmao_supply_feeding_preparation_probe'
+        || entry.actionId === 'qingmao_refinement_boundary_probe'
+      )),
+    );
+  }, [livingWorldState]);
 
   const handlePreview = () => {
     const result = previewWorldIntentAction(rawText);
@@ -1051,6 +1104,11 @@ export function FreeGoalPanel() {
 
   const handleRefinementBoundary = () => {
     const result = resolveQingmaoRefinementBoundaryAction();
+    setMessage(result.message);
+  };
+
+  const handleMarketWindow = () => {
+    const result = resolveQingmaoMarketWindowAction();
     setMessage(result.message);
   };
 
@@ -1201,6 +1259,11 @@ export function FreeGoalPanel() {
       <RefinementBoundaryPanel
         canExecute={canRunRefinementBoundary}
         onExecute={handleRefinementBoundary}
+      />
+
+      <MarketWindowPanel
+        canExecute={canRunMarketWindow}
+        onExecute={handleMarketWindow}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

@@ -753,4 +753,93 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       ]),
     }));
   });
+
+  it('commits Qingmao market window as candidate-only state without trade or price tables', () => {
+    const harness = createHarness({
+      turn: 91,
+      materialBag: {
+        '月华草': 1,
+      },
+    });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山并找商队问价').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+    harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+    harness.get().resolveQingmaoSupplyFeedingPreparationAction();
+    harness.get().resolveQingmaoRefinementBoundaryAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const beforeFaction = harness.get().currentFaction;
+    const result = harness.get().resolveQingmaoMarketWindowAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(result.applied).toEqual(expect.arrayContaining([
+      'knownFact:qingmao_market_window_candidate_baseline',
+      'factionPressure:faction_pressure_qingmao_market_window_caravan_opportunity',
+      'factionPressure:faction_pressure_qingmao_market_window_guyue_shanzhai_attention',
+      'npcMemory:npc_memory_qingmao_market_window_caravan_runner',
+      expect.stringMatching(/^playerGoal:/),
+      'actionConsequence:consequence_qingmao_market_window_probe',
+      'worldClock',
+    ]));
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_market_window_candidate_baseline: expect.objectContaining({
+        summary: expect.stringContaining('没有买卖、价格表、库存、元石变化或商队加入'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.playerGoals[0].nextStepHints).toEqual(expect.arrayContaining([
+      'market:market_caravan_contact_window_first_touch',
+      'market:market_trade_requirement_identity_and_guarantee',
+      'market:market_public_reason_requirement',
+    ]));
+    expect(harness.get().livingWorldState.playerGoals[0].blockedByRefIds).toEqual(expect.arrayContaining([
+      'gate:no_formal_market_trade',
+      'gate:no_formal_shop_inventory',
+      'gate:no_currency_delta',
+      'gate:no_caravan_join',
+      'gap:identity_and_guarantee',
+      'gap:public_trade_reason',
+    ]));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain('qingmao_market_window_probe');
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_market_window',
+      actionId: 'qingmao_market_window_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect(harness.get().currentFaction).toBe(beforeFaction);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('formal_market_trade_opened');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('shop_inventory_opened');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('currency_delta_applied');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('caravan_joined');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('交易成功');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      rewardPolicy: 'none',
+      marketRuleIds: expect.arrayContaining([
+        'market_caravan_contact_window_first_touch',
+        'market_trade_requirement_identity_and_guarantee',
+        'market_public_reason_requirement',
+      ]),
+      forbiddenUpgrades: expect.arrayContaining([
+        'formal_market_trade',
+        'formal_shop_inventory',
+        'currency_delta',
+        'caravan_join',
+        'deepseek_authority_expansion',
+        'save_format_bump',
+      ]),
+    }));
+  });
 });
