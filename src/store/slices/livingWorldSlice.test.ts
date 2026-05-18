@@ -663,4 +663,94 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       ]),
     }));
   });
+
+  it('commits Qingmao refinement boundary as a ledger-only preview without consuming materials or unlocking recipes', () => {
+    const harness = createHarness({
+      turn: 82,
+      materialBag: {
+        '月华草': 1,
+      },
+    });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山').adjudication!;
+    harness.get().confirmWorldIntentGoalAction(preview);
+    const goalId = harness.get().livingWorldState.playerGoals[0].id;
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalId);
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+    harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+    harness.get().resolveQingmaoSupplyFeedingPreparationAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const beforeFaction = harness.get().currentFaction;
+    const result = harness.get().resolveQingmaoRefinementBoundaryAction();
+
+    expect(result.success).toBe(true);
+    expect(result.rejected).toEqual([]);
+    expect(result.applied).toEqual(expect.arrayContaining([
+      'knownFact:qingmao_refinement_fragment_boundary_baseline',
+      'factionPressure:faction_pressure_qingmao_refinement_boundary_guyue_shanzhai_attention',
+      'npcMemory:npc_memory_qingmao_refinement_boundary_local_watch',
+      expect.stringMatching(/^playerGoal:/),
+      'actionConsequence:consequence_qingmao_refinement_boundary_probe',
+      'worldClock',
+    ]));
+    expect(result.resolution.fragmentPreview).toEqual(expect.objectContaining({
+      fragmentId: 'frag_moonlight_advanced',
+      targetGu: '月光蛊',
+      canAttemptNow: false,
+      canUnlockRecipeNow: false,
+    }));
+    expect(harness.get().livingWorldState.knownFacts).toEqual(expect.objectContaining({
+      qingmao_refinement_fragment_boundary_baseline: expect.objectContaining({
+        summary: expect.stringContaining('没有消耗材料'),
+      }),
+    }));
+    expect(harness.get().livingWorldState.playerGoals[0].nextStepHints).toEqual(expect.arrayContaining([
+      'refinement:recipe_fragment_incomplete_formula_boundary',
+      'refinement:refine_failure_cost_aperture_and_material_loss',
+      'fragment:frag_moonlight_advanced',
+    ]));
+    expect(harness.get().livingWorldState.playerGoals[0].blockedByRefIds).toEqual(expect.arrayContaining([
+      'gate:no_complete_recipe_unlock',
+      'gate:no_refinement_success',
+      'gate:no_material_consumption',
+      'gap:fragment_material_verification',
+    ]));
+    expect(harness.get().sceneSessionState.localActionLedger.map(
+      (entry: any) => entry.systemResult?.worldAction?.candidateId,
+    )).toContain('qingmao_refinement_boundary_probe');
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'qingmao_refinement_boundary',
+      actionId: 'qingmao_refinement_boundary_probe',
+      success: true,
+      rejected: [],
+    }));
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect(harness.get().currentFaction).toBe(beforeFaction);
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('complete_recipe_unlock_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('recipe_unlock_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('refinement_success_granted');
+    expect(JSON.stringify(harness.get().livingWorldState)).not.toContain('material_consumed');
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      rewardPolicy: 'none',
+      refinementRuleIds: expect.arrayContaining([
+        'refine_failure_cost_aperture_and_material_loss',
+        'recipe_fragment_incomplete_formula_boundary',
+      ]),
+      fragmentId: 'frag_moonlight_advanced',
+      fragmentTargetGu: '月光蛊',
+      forbiddenUpgrades: expect.arrayContaining([
+        'complete_recipe_unlock',
+        'refinement_success',
+        'material_consumption',
+        'deepseek_authority_expansion',
+        'save_format_bump',
+      ]),
+    }));
+  });
 });
