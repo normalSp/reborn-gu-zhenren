@@ -1,6 +1,6 @@
 # RebornG Project State
 
-Last updated: 2026-05-18
+Last updated: 2026-05-19
 
 ## Version
 
@@ -8,7 +8,7 @@ Last updated: 2026-05-18
 - Public release baseline: `v0.9.0` locked.
 - Previous completed development milestone: `v0.16.0`.
 - Current completed development milestone: `v0.17.0`.
-- Current active draft: none. Next required step is stopping for user decision before `v0.18.0` startup review. `v0.17.0` is complete as a local development milestone for `战斗、杀招、小队与阵法深化`: MiroFish v0.17 low-rank combat, killer-move counter, and squad/formation packages passed intake review and were absorbed only as RebornG-owned candidate rules/tests/UI prompts. Runtime adds `src/canon/v017-combat-deepening-rules.json`, `src/engine/v017-combat-deepening.ts`, `V017CombatBoundaryPanel`, ActionPanel/GuDaoPanel/NarrativeCombatPanel bridges, and `registerV017CombatCandidateAction`, all using existing v22 fields and the existing combat-candidate queue. `v0.17.0-rc` passed focused tests, `tsc`, v0.17 e2e, full tests, build, runtime/Qingmao/player-visible-copy scans, full e2e, long e2e, production-preview smoke, b1/b2/b3/b4 20-round Player Advocate gates, rc 60-round Player Advocate gate, and GitHub Actions runs `26046493464` / `26046685585`; implementation commit is `005c1da`, evidence commit is `9c77935`. It adds no save fields, no DeepSeek authority, no formal rewards/drops/materials/Gu/locations/factions/NPC life, no `enemySpecIds`, no backend/BFF, no automatic deployment, and no public commitment. Stop before save-format changes, DeepSeek authority expansion, formal rewards/locations/factions/NPC life, MiroFish-blocking canon work, external runtime dependencies, backend/BFF, automatic deployment, or public commitments.
+- Current active draft: `v0.18.0` startup review and scope-freeze draft exists as `南疆路线与多区域承接`. `v0.17.0` is complete as a local development milestone for `战斗、杀招、小队与阵法深化`: MiroFish v0.17 low-rank combat, killer-move counter, and squad/formation packages passed intake review and were absorbed only as RebornG-owned candidate rules/tests/UI prompts. Runtime adds `src/canon/v017-combat-deepening-rules.json`, `src/engine/v017-combat-deepening.ts`, `V017CombatBoundaryPanel`, ActionPanel/GuDaoPanel/NarrativeCombatPanel bridges, and `registerV017CombatCandidateAction`, all using existing v22 fields and the existing combat-candidate queue. `v0.17.0-rc` passed focused tests, `tsc`, v0.17 e2e, full tests, build, runtime/Qingmao/player-visible-copy scans, full e2e, long e2e, production-preview smoke, b1/b2/b3/b4 20-round Player Advocate gates, rc 60-round Player Advocate gate, and GitHub Actions runs `26046493464` / `26046685585` / `26046889062`; implementation commit is `005c1da`, evidence commit is `9c77935`, final git-status commit is `8d40330`. v0.18 proposed sequence is `a1` route/location/save/BFF design gate, `a2` MiroFish intake + field table + matrix, `b1` Qingmao route-entry threshold sample, `b2` route state first cut or candidate-continuation fallback, `b3` Southern Border low-rank public fact cards and route panel, `b4` previous-ledger supply/pursuit/identity pressure, `b5` caravan/rogue/Shang-clan-outer public-entry boundary, then `rc`. It adds no runtime code yet. Stop before entering runtime work, adding route/location/save fields, bumping save format, unlocking regions/factions/rewards/NPC-life outcomes, opening full Southern Border or full Shang clan city, adding backend/BFF, expanding DeepSeek authority, or making public commitments without user decision.
 - `v0.11.0` mainline: `活世界地基与自由意图闸门`.
 - `v0.11.0-a0` player-visible old-debt cleanup is complete.
 - `v0.11.0-a1` architecture/save hardening first round is complete: save normalization, response-pipeline observability, storage-key unification, and expert-gate checklist.
@@ -25,6 +25,7 @@ Last updated: 2026-05-18
 - Hard design gate approved before `v0.11.0-a2/a3/b2`: `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`.
 - Project dashboard: `指导大纲/项目仪表盘.md`.
 - Long-route docs: `指导大纲/长期路线/`, including `RebornG-长期架构演进路线图-纯前端到薄后端.md` and the approved `RebornG-v0.16至v1.0减法专项与路线调整草案.md`.
+- Current v0.18 startup draft docs: `指导大纲/v0.18.0/codex/00-总览/`.
 - Current v0.11 completion docs: `指导大纲/v0.11.0/codex/00-总览/`.
 - Current v0.17 completion docs: `指导大纲/v0.17.0/codex/00-总览/`.
 - Completed v0.16 docs: `指导大纲/v0.16.0/codex/00-总览/`.
@@ -99,7 +100,7 @@ Last updated: 2026-05-18
 
 `v0.11.0` is complete as a local development milestone. The b2 living-world loop now covers visible-scope investigation, Bai contact pressure, Fang Yuan hidden-protection public failure, derived follow-up hints, Bai contact-window formal action, and Qingmao escape-route preparation. Both b2-5 and b2-6 use `action_protocol` patch, write only approved v22 fields, set `rewardPolicy = none`, and do not change faction, rewards, locations, NPC death, canon anchors, hidden facts, or DeepSeek authority. `v0.11.0-rc` verification passed: `npm test` (107 files, 632 tests), `npx tsc --noEmit --pretty false`, `npm run build`, runtime/Qingmao asset scans, `npm run check:production-preview`, `npm run test:e2e -- tests/e2e/v011-free-goal-panel.spec.ts`, `npm run test:e2e:long`, and `npm run test:e2e -- tests/e2e/v010-qingmao-region-actions.spec.ts tests/e2e/v090-b3-qingmao-battlefield.spec.ts`.
 
-User approved the `v0.12.0` formal draft scope, and `v0.12.0-a1/a2/b1/b2/b3/process-1/rc` is complete without save-format bump, rewards, route success, NPC death, faction identity changes, hidden fact reveal, tracking success/capture, Fang Yuan trajectory changes, DeepSeek authority expansion, branch protection, auto-deploy, or auto-merge. User then approved v0.13 mainline `NPC 与势力反应系统`, approved `v0.13.0-a1` design gate first, approved first-stage reuse of v22 fields rather than adding a persistent social ledger now, approved v0.13 MiroFish requests, approved per-version Git push/rollback governance through `v0.13.0-process-0`, and approved b4 UI option A. `v0.13.0`, `v0.14.0`, `v0.15.0`, `v0.16.0`, and `v0.17.0` are complete as local development milestones. `v0.17.0` completed combat/killer move/squad/formation deepening under the v0.16 navigation and authority structure. Stop before persistent social ledger fields, named NPC runtime rule upgrades, faction identity changes, formal route/location unlocks, NPC survival/canon anchors, rewards, save-format changes, DeepSeek authority expansion, hidden fact reveal, formal tracking/capture systems, Fang Yuan trajectory changes, branch protection, automatic deployment, or PR-required full Playwright gates.
+User approved the `v0.12.0` formal draft scope, and `v0.12.0-a1/a2/b1/b2/b3/process-1/rc` is complete without save-format bump, rewards, route success, NPC death, faction identity changes, hidden fact reveal, tracking success/capture, Fang Yuan trajectory changes, DeepSeek authority expansion, branch protection, auto-deploy, or auto-merge. User then approved v0.13 mainline `NPC 与势力反应系统`, approved `v0.13.0-a1` design gate first, approved first-stage reuse of v22 fields rather than adding a persistent social ledger now, approved v0.13 MiroFish requests, approved per-version Git push/rollback governance through `v0.13.0-process-0`, and approved b4 UI option A. `v0.13.0`, `v0.14.0`, `v0.15.0`, `v0.16.0`, and `v0.17.0` are complete as local development milestones. `v0.17.0` completed combat/killer move/squad/formation deepening under the v0.16 navigation and authority structure. `v0.18.0` startup review now exists as a draft and recommends the long-route theme `南疆路线与多区域承接`; before runtime work, the user must approve the mainline, small-version sequence, MiroFish requests, route/location/save design review, and Player Advocate escalation rule. Stop before persistent social ledger fields, named NPC runtime rule upgrades, faction identity changes, formal route/location unlocks, NPC survival/canon anchors, rewards, save-format changes, DeepSeek authority expansion, hidden fact reveal, formal tracking/capture systems, Fang Yuan trajectory changes, branch protection, automatic deployment, or PR-required full Playwright gates.
 
 The long-term architecture decision is: do not do a large backend rewrite now. v1.0-before architecture remains frontend-first with local deterministic TypeScript core, static/public canon, Zustand saves, and DeepSeek runtime calls. From v0.12 onward, design public/hidden facts, canon helpers, World Intent Engine, route/supply/pursuit, and reaction bridge as backend-ready pure TS core. A thin backend/BFF is only a future gate for API-key protection, hidden/private canon delivery, cloud saves, prompt/token/cache observability, live eval archives, or public-test security. External AI life/TRPG projects, including the Bilibili `AI人生引擎` demo discussed by the user, are useful as breadth, free-input rhythm, and public-demo feedback references; no confirmed public source repo has been adopted. RebornG's core remains deterministic RPG world adjudication and original-fact depth, not a generic AI companion/chat shell or pure LLM life simulator.
 
@@ -125,17 +126,19 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 ## Source Priority
 
 1. Runtime canon and engine source.
-2. `指导大纲/v0.14.0/codex/00-总览/` for current route-continuation scope.
+2. `指导大纲/v0.18.0/codex/00-总览/` for current startup review, scope freeze, MiroFish needs, and route/multi-region planning.
 3. `指导大纲/流程制度/` for cross-version process gates such as Player Advocate walkthroughs.
-4. `指导大纲/v0.13.0/codex/00-总览/` for completed NPC/faction reaction facts.
-5. `指导大纲/v0.12.0/codex/00-总览/` for Qingmao canon/IF/route groundwork.
-6. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
-7. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
-8. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
-9. This `PROJECT-STATE.md`.
-10. Latest `codex上下文信息/`.
-11. `指导大纲/大方向/` as external reference only.
-12. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
+4. `指导大纲/v0.17.0/codex/00-总览/` for completed combat/killer-move/squad/formation facts.
+5. `指导大纲/v0.14.0/codex/00-总览/` for previous route-continuation scope and carryover constraints.
+6. `指导大纲/v0.13.0/codex/00-总览/` for completed NPC/faction reaction facts.
+7. `指导大纲/v0.12.0/codex/00-总览/` for Qingmao canon/IF/route groundwork.
+8. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
+9. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
+10. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
+11. This `PROJECT-STATE.md`.
+12. Latest `codex上下文信息/`.
+13. `指导大纲/大方向/` as external reference only.
+14. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
 
 ## Triggered Expert Roles
 
