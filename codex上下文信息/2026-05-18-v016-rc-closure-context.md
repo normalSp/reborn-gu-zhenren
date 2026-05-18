@@ -47,7 +47,9 @@
 
 ## Git
 
-本地质量门已完成。提交/推送后回填 commit、push、CI 状态到 `v0.16.0-Git提交与推送计划.md` 和根目录项目仪表盘。
+commit `800021c feat: 完成v0.16系统收束与入口归并` 已推送到 `origin/codex/v013-npc-faction-reaction`。
+
+GitHub Actions run `26041195458` 已通过 deterministic quality gate。
 
 ## 下一步
 
