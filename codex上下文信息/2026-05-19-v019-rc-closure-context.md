@@ -42,22 +42,18 @@
 
 ## Git Status
 
-- 本文件生成时，v0.19 本地验证已完成，commit/push/远端 CI 仍待执行。
-- 不要使用 `git add -A`。
-- 只 stage v0.19 code/docs、项目状态文档、仪表盘、handoff 和明确相关的 MiroFish intake 文件。
-- 不要 stage 历史美术脏文件、`.cursor/`、`RebornG_codebuddy.zip`、`artifacts/`、`bgm/`、`指导大纲/大方向/`。
+- 主体 commit：`fe6f468 feat: 完成v0.19发布准备工具层`
+- push：已推送到 `codex/v013-npc-faction-reaction`
+- 远端验证：GitHub Actions run `26082464543` 通过 deterministic quality gate
+- staging 范围：只包含 v0.19 code/docs、项目状态文档、仪表盘、handoff 和明确相关的 MiroFish intake 文件。
+- 未纳入：历史美术脏文件、`.cursor/`、`RebornG_codebuddy.zip`、`artifacts/`、`bgm/`、`指导大纲/大方向/`。
 
 ## Next Step
 
-1. 显式 stage 本阶段文件。
-2. commit `feat: 完成v0.19发布准备工具层`。
-3. push 当前分支。
-4. 等待 GitHub Actions deterministic quality gate。
-5. 把 commit/push/CI 编号补入：
-   - `指导大纲/v0.19.0/codex/00-总览/v0.19.0-Git提交与推送计划.md`
-   - `指导大纲/项目仪表盘.md`
-   - `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-   - 本 handoff 或新的 evidence handoff。
+1. 补录 `fe6f468` / `26082464543` 到 Git 计划、仪表盘、PROJECT-STATE、AGENTS 和本 handoff。
+2. 提交 evidence commit。
+3. push 当前分支并等待 evidence commit 的 GitHub Actions。
+4. 若远端验证通过，下一阶段进入 `v1.0` 启动审查与范围冻结讨论。
 
 ## Must Stop For User
 
