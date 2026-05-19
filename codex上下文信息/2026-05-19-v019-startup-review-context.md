@@ -46,4 +46,5 @@
 - `AGENTS.md` 已加入 v0.19 启动审查草案、MiroFish request 和硬停边界。
 - `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md` 已同步 v0.19 active draft。
 - `指导大纲/项目仪表盘.md` 已同步 v0.19 待决策状态。
+- commit `00c7615 docs: 建立v0.19发布准备启动审查` 已推送，GitHub Actions `26078064150` 通过。
 - 全局 `C:\Users\11411\.codex\skills\reborn-expert-council\SKILL.md` 受当前 workspace-write 沙箱限制，本轮未直接写入；仓库镜像和项目状态已更新。
