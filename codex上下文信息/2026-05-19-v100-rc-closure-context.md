@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v1.0.0-rc`
-- 状态：本地质量门通过，待提交/远端 CI
+- 状态：本地质量门与远端 CI 通过
 - MiroFish：不需要新包
 - 存档版本：`SAVE_FORMAT_VERSION = 22`，未变更
 - DeepSeek：`deepseek-v4-flash`，未扩权
@@ -37,6 +37,8 @@
 - `npm run test:e2e`：87 passed。
 - `npm run test:e2e:long`：29 passed。
 - `npm run check:production-preview`：通过。
+- Git：commit `53bdf98 chore: 完成v1.0 rc质量收束`，已推送。
+- GitHub Actions：run `26098733549` 通过。
 
 ## 禁写边界
 
@@ -44,7 +46,5 @@
 
 ## 下一步
 
-1. 提交 rc 文档与状态入口。
-2. 推送并等待 GitHub Actions。
-3. 若通过，更新 PROJECT-STATE、AGENTS、相关 skill。
-4. 停下来向用户汇报 v1.0 实际可玩功能，并讨论后续大方向。
+1. 更新 PROJECT-STATE、AGENTS、相关 skill。
+2. 停下来向用户汇报 v1.0 实际可玩功能，并讨论后续大方向。

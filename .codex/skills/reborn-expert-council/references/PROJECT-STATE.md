@@ -6,9 +6,10 @@ Last updated: 2026-05-19
 
 - Package baseline: `0.9.0`.
 - Public release baseline: `v0.9.0` locked.
-- Previous completed development milestone: `v0.18.0`.
-- Current completed development milestone: `v0.19.0`.
-- Current active draft: `v1.0.0` is underway as the `活世界早期正式版`. User approved D-001 through D-010 on 2026-05-19. MiroFish v1.0 three packs passed intake review under `指导大纲/vMiroFish/intake-reviews/v1.0.0/2026-05-19-v100-three-pack-intake-review-summary.md`; they remain candidate-only. `v1.0.0-a0/a1/a2` are complete. `v1.0.0-b1` 青茅到南疆早期连续体验第一刀 is complete and pushed: commit `595bdc0`, GitHub Actions run `26091674479` passed; evidence commit `b0d4221`, run `26091861120` passed. `v1.0.0-b2` 低阶蛊师 life loop 释出版闭环 is complete and pushed: commit `c21ce9a`, GitHub Actions run `26093300607` passed. `v1.0.0-b3` 自由意图与极端意图收束 is complete and pushed: commit `352948e`, GitHub Actions run `26095586533` passed; evidence commit `611a1ef`, run `26096235442` passed. `v1.0.0-b4` 公开素材与文案边界 is complete and pushed: commit `54ed13d`, GitHub Actions run `26096913115` passed. b4 adds only docs/Player Advocate records for hero 三件套、release note、FAQ、截图/短录屏边界 and does not bind hero, auto-deploy EdgeOne, generate large new art, or make public commitments. Next step is `v1.0.0-process-1` preview/rollback/observability checklist or rc quality closure. `v0.19.0` remains the previous completed milestone with commit `fe6f468` and GitHub Actions run `26082464543` passing deterministic quality gate.
+- Previous completed development milestone: `v0.19.0`.
+- Current completed development milestone: `v1.0.0`.
+- Current active draft: none. Stop for user decision before public release preparation, EdgeOne publish, hero binding, v1.1 planning, or any scope expansion.
+- `v1.0.0` is complete as the `活世界早期正式版` local development milestone. User approved D-001 through D-010 on 2026-05-19. MiroFish v1.0 three packs passed intake review under `指导大纲/vMiroFish/intake-reviews/v1.0.0/2026-05-19-v100-three-pack-intake-review-summary.md`; they remain candidate-only. `v1.0.0-a0/a1/a2`, `b1` 青茅到南疆早期连续体验第一刀, `b2` 低阶蛊师 life loop 释出版闭环, `b3` 自由意图与极端意图收束, `b4` 公开素材与文案边界, `process-1` 预览回滚与观测清单, and `rc` 质量收束 are complete. Key commits and runs: b1 `595bdc0` / `26091674479`, b1 evidence `b0d4221` / `26091861120`, b2 `c21ce9a` / `26093300607`, b3 `352948e` / `26095586533`, b3 evidence `611a1ef` / `26096235442`, b4 `54ed13d` / `26096913115`, b4 evidence `d09a44b` / `26097260987`, process-1 `0c2ed24` / `26097693808`, process evidence `43d7578` / `26097887191`, rc `53bdf98` / `26098733549`. `v1.0.0-rc` passed `tsc`, full unit tests, build, runtime/Qingmao/player-visible-copy scans, v0.19 content governance scan, full e2e, long e2e, production-preview smoke, and 150-round Player Advocate gate. It adds no save fields, no route/location persistent fields, no formal route/location/faction/reward/NPC-life outcomes, no formal economic inventory/market system, no BFF/backend, no auto deployment, no public commitment, no MiroFish runtime authority, and no DeepSeek authority expansion.
 - `v0.11.0` mainline: `活世界地基与自由意图闸门`.
 - `v0.11.0-a0` player-visible old-debt cleanup is complete.
 - `v0.11.0-a1` architecture/save hardening first round is complete: save normalization, response-pipeline observability, storage-key unification, and expert-gate checklist.
@@ -25,8 +26,8 @@ Last updated: 2026-05-19
 - Hard design gate approved before `v0.11.0-a2/a3/b2`: `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`.
 - Project dashboard: `指导大纲/项目仪表盘.md`.
 - Long-route docs: `指导大纲/长期路线/`, including `RebornG-长期架构演进路线图-纯前端到薄后端.md` and the approved `RebornG-v0.16至v1.0减法专项与路线调整草案.md`.
-- Current active draft docs: `指导大纲/v1.0.0/codex/00-总览/`.
-- Current completed draft docs: `指导大纲/v0.19.0/codex/00-总览/`.
+- Current completed draft docs: `指导大纲/v1.0.0/codex/00-总览/`.
+- Previous completed draft docs: `指导大纲/v0.19.0/codex/00-总览/`.
 - Current v0.18 completion docs: `指导大纲/v0.18.0/codex/00-总览/`.
 - Current v0.18 MiroFish intake: `指导大纲/vMiroFish/intake-reviews/v0.18.0/2026-05-19-v018-three-pack-intake-review-summary.md`.
 - Current v0.11 completion docs: `指导大纲/v0.11.0/codex/00-总览/`.
