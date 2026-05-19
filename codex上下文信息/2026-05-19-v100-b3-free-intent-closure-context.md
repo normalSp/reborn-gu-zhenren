@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v1.0.0-b3 自由意图与极端意图收束`
-- 状态：本地 full gate 已通过，待 commit/push/CI
+- 状态：已完成，commit `352948e` 已推送，GitHub Actions `26095586533` 通过
 - MiroFish：v1.0 三包已通过 intake；本阶段不需要新包
 - 存档版本：`SAVE_FORMAT_VERSION = 22`，未变更
 - DeepSeek：`deepseek-v4-flash`，未扩权
@@ -90,7 +90,7 @@
 
 ## Git 注意
 
-当前仓库仍有历史 dirty/untracked 文件，尤其是美术候选、bgm、外部参考、MiroFish 历史 intake、`.cursor/`、zip 等。提交时不要用 `git add -A`，只 stage b3 明确文件。
+当前仓库仍有历史 dirty/untracked 文件，尤其是美术候选、bgm、外部参考、MiroFish 历史 intake、`.cursor/`、zip 等。后续提交仍不要用 `git add -A`，只 stage 当前阶段明确文件。
 
 建议提交信息：
 
@@ -98,8 +98,8 @@
 
 ## 下一步
 
-1. explicit stage b3 文件。
-2. commit/push。
-3. 等 GitHub Actions deterministic gate 通过。
-4. 若 CI 通过，更新 b3 docs/dashboard/PROJECT-STATE/AGENTS/skill 的 commit/run id。
-5. 进入 `v1.0.0-b4` 公开素材与文案边界；b4 前不需要新 MiroFish 包，除非公开文案要新增未审核原著事实。
+1. b3 已完成：commit `352948e feat: 收束v1.0自由意图与极端意图`。
+2. push 已完成：branch `codex/v013-npc-faction-reaction`。
+3. GitHub Actions 已通过：run `26095586533`。
+4. 下一步进入 `v1.0.0-b4` 公开素材与文案边界；b4 前不需要新 MiroFish 包，除非公开文案要新增未审核原著事实。
+5. b4 若形成 public commitment、自动部署或大规模新图生成，必须停下来让用户决策。
