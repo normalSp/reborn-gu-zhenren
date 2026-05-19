@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-`v1.0.0-b1` 已完成本地实现与质量门，等待 Git 提交、推送和远端 CI 补录。
+`v1.0.0-b1` 已完成本地实现、本地质量门、Git 提交、推送和远端 CI。
 
 ## 本阶段做了什么
 
@@ -61,17 +61,18 @@ b1 不写：
 
 ## Git 状态
 
-- 本轮待提交路径必须显式 stage。
+- 本轮提交：`595bdc0 feat: 验收v1.0青茅南疆连续体验`。
+- 远端分支：`codex/v013-npc-faction-reaction`。
+- GitHub Actions：`26091674479` 通过 deterministic quality gate。
+- 本轮 stage 已显式列路径。
 - 不使用 `git add -A`。
 - 历史脏文件继续忽略：美术候选、`doc/art/s0-qingmao-art-roadmap.md`、`src/data/image-maps.ts`、`bgm/` 等与本阶段无关文件。
-- 本轮 commit/push/CI 待补录。
 
 ## 下一步
 
-1. 提交并推送 b1。
-2. 等待 GitHub Actions 通过。
-3. 补录 run id。
-4. 若 b1 远端通过，进入 b2：低阶蛊师 life loop 释出版闭环。
+1. 进入 b2：低阶蛊师 life loop 释出版闭环。
+2. b2 暂不需要新 MiroFish 包；若 life loop 细节需要新增原著证据，再按 MiroFish gate 停下来。
+3. 继续保持不写正式 route/location/currentRegion，不开放正式阵营/奖励/NPC 生死。
 
 ## 仍需停手事项
 
