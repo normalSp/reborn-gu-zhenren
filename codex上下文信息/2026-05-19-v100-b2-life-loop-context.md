@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v1.0.0-b2 低阶蛊师 life loop 释出版闭环`
-- 状态：本地 full gate 已通过，待 commit / push / GitHub Actions。
+- 状态：已完成，commit `c21ce9a` 已推送，GitHub Actions `26093300607` 通过。
 - MiroFish：v1.0 三包已通过 intake review；b2 未请求新包，使用 `v100_low_rank_life_loop_release_boundary_pack` 与 `v100_qingmao_southern_border_continuity_pack` 的 candidate-only 材料。
 
 ## 本阶段新增
@@ -60,7 +60,6 @@
 
 ## 下一步
 
-1. stage 明确文件，不使用 `git add -A`。
-2. commit 建议：`feat: 收束v1.0低阶蛊师life loop`
-3. push 后等待 GitHub Actions。
-4. 远端通过后补录 run id，进入 `v1.0.0-b3 自由意图与极端意图收束`。
+1. 进入 `v1.0.0-b3 自由意图与极端意图收束`。
+2. 暂不需要新 MiroFish 包；如果 b3 发现原著边界证据不足，再停手向用户请求。
+3. 继续禁止新增 save 字段、DeepSeek 权限、正式奖励/地点/阵营/NPC 生死、正式经济/市场系统。
