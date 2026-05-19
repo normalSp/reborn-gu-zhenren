@@ -1,7 +1,7 @@
 # RebornG v1.0.0 Codex 当前入口
 
 日期：2026-05-19
-状态：a0/a1/a2 已完成，b1/b2/b3 已通过本地质量门与远端 CI，b4 本地 preflight 已通过
+状态：a0/a1/a2 已完成，b1/b2/b3/b4 已通过本地质量门与远端 CI
 主题：`活世界早期正式版`
 
 ## 定位
@@ -52,7 +52,7 @@
 | b1 | 青茅到南疆早期连续体验主线第一刀 | 是 | 已完成，commit `595bdc0`，GitHub Actions `26091674479` 通过 |
 | b2 | 低阶蛊师 life loop 释出版闭环与 UI 口感 | 是 | 已完成，commit `c21ce9a`，Actions `26093300607` 通过 |
 | b3 | 玩家自由意图/极端意图/前置条件说明收束 | 是 | 已完成，commit `352948e`，Actions `26095586533` 通过；不需要新包 |
-| b4 | v1.0 hero 三件套、公开素材、说明文案预检 | 否或 manifest | 已完成本地 preflight；最终公开承诺仍需用户审批 |
+| b4 | v1.0 hero 三件套、公开素材、说明文案预检 | 否或 manifest | 已完成，commit `54ed13d`，Actions `26096913115` 通过；最终公开承诺仍需用户审批 |
 | process-1 | EdgeOne 手动预览、回滚、错误观测最小清单 | 否或脚本 | not_needed |
 | rc | v1.0 release candidate 质量收束 | 是 | no new package unless blocked |
 
@@ -72,4 +72,4 @@
 
 专家团建议批准 v1.0 作为“活世界早期正式版”启动，但不应把远期愿景压进本版本。v1.0 应先把青茅山到南疆早期路线、低阶蛊师闭环、自由意图裁决、NPC/势力回流、公开安全和长测体系打通。
 
-用户已批准 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 三包已交付并通过 intake。b1 第一刀已把 v0.18 路线准备、候选承接和压力回流收束为 v1.0 连续体验候选验收，不写正式 route/location/currentRegion 字段，不开放正式地点、阵营、奖励或 NPC 生死；本地质量门与 GitHub Actions `26091674479` 已通过。b2 已把修行、补给、蛊虫维护、炼养用、交易窗口和路线压力收束为可验收的低阶 life loop，GitHub Actions `26093300607` 已通过，但仍不写正式经济、库存、路线、地点、奖励或 DeepSeek 新权限。b3 已把逃离青茅山、投靠白家、跟踪方源、去商家城、盗天魔尊传承、九转蛊、关键 NPC 生死等样本收束为本地裁决和禁写边界；commit `352948e` 已推送，GitHub Actions `26095586533` 已通过。b4 已整理 hero 三件套、release note、FAQ、截图/短录屏边界候选，并通过本地 preflight；公开承诺、自动部署、hero 正式绑定或大规模新图仍必须由用户批准。
+用户已批准 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 三包已交付并通过 intake。b1 第一刀已把 v0.18 路线准备、候选承接和压力回流收束为 v1.0 连续体验候选验收，不写正式 route/location/currentRegion 字段，不开放正式地点、阵营、奖励或 NPC 生死；本地质量门与 GitHub Actions `26091674479` 已通过。b2 已把修行、补给、蛊虫维护、炼养用、交易窗口和路线压力收束为可验收的低阶 life loop，GitHub Actions `26093300607` 已通过，但仍不写正式经济、库存、路线、地点、奖励或 DeepSeek 新权限。b3 已把逃离青茅山、投靠白家、跟踪方源、去商家城、盗天魔尊传承、九转蛊、关键 NPC 生死等样本收束为本地裁决和禁写边界；commit `352948e` 已推送，GitHub Actions `26095586533` 已通过。b4 已整理 hero 三件套、release note、FAQ、截图/短录屏边界候选；commit `54ed13d` 已推送，GitHub Actions `26096913115` 已通过。公开承诺、自动部署、hero 正式绑定或大规模新图仍必须由用户批准。

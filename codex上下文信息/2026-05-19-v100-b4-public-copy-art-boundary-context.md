@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v1.0.0-b4 公开素材与文案边界`
-- 状态：本地 preflight 已通过，待 commit/push/CI
+- 状态：已完成，commit `54ed13d` 已推送，GitHub Actions `26096913115` 通过
 - MiroFish：v1.0 三包已通过 intake；本阶段不需要新包
 - 存档版本：`SAVE_FORMAT_VERSION = 22`，未变更
 - DeepSeek：`deepseek-v4-flash`，未扩权
@@ -72,8 +72,7 @@ b4 不改 runtime。它只把公开候选内容整理成可审包：
 
 ## 下一步
 
-1. explicit stage b4 文件。
-2. commit/push。
-3. 等 GitHub Actions deterministic gate 通过。
-4. 若 CI 通过，更新 b4 docs/dashboard/PROJECT-STATE/AGENTS/skill 的 commit/run id。
-5. 之后进入 `v1.0.0-process-1` 预览、回滚、观测清单或 `v1.0.0-rc`。任何发布承诺、EdgeOne 部署、hero 正式绑定或大规模新图生成都必须停下来让用户决策。
+1. b4 已完成：commit `54ed13d docs: 整理v1.0公开素材与文案边界`。
+2. push 已完成：branch `codex/v013-npc-faction-reaction`。
+3. GitHub Actions 已通过：run `26096913115`。
+4. 之后进入 `v1.0.0-process-1` 预览、回滚、观测清单或 `v1.0.0-rc`。任何发布承诺、EdgeOne 部署、hero 正式绑定或大规模新图生成都必须停下来让用户决策。
