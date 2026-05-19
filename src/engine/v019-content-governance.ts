@@ -131,6 +131,13 @@ interface V019RulesFile {
 }
 
 const rules = rulesRaw as V019RulesFile;
+const ALLOWED_RELEASE_ART_RUNTIME_BINDINGS = new Set(['not_bound_yet', 'approved_v1_public_release']);
+const ALLOWED_RELEASE_ART_STATUSES = new Set(['selected_candidate', 'approved_release_asset']);
+const ALLOWED_RELEASE_ART_BINDINGS = new Set([
+  'src/components/title/TitleScreen.tsx',
+  'index.html og:image',
+  'public_release_docs_and_edgeone_manual_handoff',
+]);
 
 function cloneArray<T>(items: readonly T[]): T[] {
   return items.map(item => (
@@ -313,7 +320,7 @@ export function validateV019ReleaseArtManifest(manifest: V019ReleaseArtManifest)
   const requiredIds = new Set(rules.releaseArtPack.map(entry => entry.id));
   const entries = manifest.entries || [];
 
-  if (manifest._meta?.runtimeBinding && manifest._meta.runtimeBinding !== 'not_bound_yet') {
+  if (manifest._meta?.runtimeBinding && !ALLOWED_RELEASE_ART_RUNTIME_BINDINGS.has(manifest._meta.runtimeBinding)) {
     errors.push(`release_art_runtime_binding_not_allowed:${manifest._meta.runtimeBinding}`);
   }
 
@@ -326,12 +333,20 @@ export function validateV019ReleaseArtManifest(manifest: V019ReleaseArtManifest)
       warnings.push(`unexpected_release_art_entry:${entry.id}`);
       continue;
     }
-    if (entry.status !== 'selected_candidate') errors.push(`invalid_release_art_status:${entry.id}:${entry.status}`);
+    if (!ALLOWED_RELEASE_ART_STATUSES.has(entry.status)) errors.push(`invalid_release_art_status:${entry.id}:${entry.status}`);
     if (!entry.source) errors.push(`missing_release_art_source:${entry.id}`);
     if (!entry.publicPath) errors.push(`missing_release_art_public_path:${entry.id}`);
     if (!entry.boundary) errors.push(`missing_release_art_boundary:${entry.id}`);
-    if (entry.currentBinding && entry.currentBinding !== 'not_bound') {
-      errors.push(`release_art_entry_bound_too_early:${entry.id}:${entry.currentBinding}`);
+    const currentBinding = entry.currentBinding || (entry as any).binding;
+    if (entry.status === 'approved_release_asset' && (!currentBinding || currentBinding === 'not_bound')) {
+      errors.push(`approved_release_art_missing_binding:${entry.id}`);
+    }
+    if (currentBinding && currentBinding !== 'not_bound') {
+      if (entry.status !== 'approved_release_asset') {
+        errors.push(`release_art_entry_binding_requires_approval:${entry.id}:${currentBinding}`);
+      } else if (!ALLOWED_RELEASE_ART_BINDINGS.has(currentBinding)) {
+        errors.push(`release_art_entry_binding_not_allowed:${entry.id}:${currentBinding}`);
+      }
     }
   }
 

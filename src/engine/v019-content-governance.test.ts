@@ -148,10 +148,23 @@ describe('v0.19 content governance tooling', () => {
     ]));
   });
 
-  it('keeps the v1 hero manifest as selected candidates, not runtime authority', () => {
+  it('allows the approved v1 hero manifest without turning art into gameplay authority', () => {
     const result = validateV019ReleaseArtManifest(heroManifestRaw);
     expect(result.ok).toBe(true);
     expect(result.warnings).toEqual([]);
+    expect(heroManifestRaw._meta.runtimeBinding).toBe('approved_v1_public_release');
+    expect(heroManifestRaw.entries).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        id: 'v1-title-screen-hero',
+        status: 'approved_release_asset',
+        currentBinding: 'src/components/title/TitleScreen.tsx',
+      }),
+      expect.objectContaining({
+        id: 'v1-og-share-image',
+        status: 'approved_release_asset',
+        currentBinding: 'index.html og:image',
+      }),
+    ]));
 
     const bad = validateV019ReleaseArtManifest({
       _meta: { runtimeBinding: 'bound_now' },
@@ -172,7 +185,7 @@ describe('v0.19 content governance tooling', () => {
       'release_art_runtime_binding_not_allowed:bound_now',
       'invalid_release_art_status:v1-title-screen-hero:runtime_active',
       'missing_release_art_source:v1-title-screen-hero',
-      'release_art_entry_bound_too_early:v1-title-screen-hero:src/components/title/TitleScreen.tsx',
+      'release_art_entry_binding_requires_approval:v1-title-screen-hero:src/components/title/TitleScreen.tsx',
     ]));
   });
 });

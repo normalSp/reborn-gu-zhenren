@@ -80,12 +80,21 @@ for (const fileName of requiredMiroFishPackages) {
 
 if (!fs.existsSync(heroManifestPath)) fail(`missing hero manifest: ${heroManifestPath}`);
 const heroManifest = readJson(heroManifestPath);
-if (heroManifest._meta?.runtimeBinding !== 'not_bound_yet') fail('v1 hero manifest must remain not_bound_yet');
 const requiredHeroIds = new Set(['v1-title-screen-hero', 'v1-edgeone-landing-hero', 'v1-og-share-image']);
+const allowedHeroBindings = new Set([
+  'src/components/title/TitleScreen.tsx',
+  'index.html og:image',
+  'public_release_docs_and_edgeone_manual_handoff',
+]);
 for (const entry of heroManifest.entries || []) {
   if (requiredHeroIds.has(entry.id)) requiredHeroIds.delete(entry.id);
-  if (entry.status !== 'selected_candidate') fail(`hero entry must be selected_candidate: ${entry.id}`);
-  if (entry.currentBinding !== 'not_bound') fail(`hero entry must not be runtime-bound yet: ${entry.id}`);
+  if (!['selected_candidate', 'approved_release_asset'].includes(entry.status)) fail(`hero entry has invalid status: ${entry.id}`);
+  if (entry.status === 'selected_candidate' && entry.currentBinding !== 'not_bound') {
+    fail(`candidate hero entry must not be bound yet: ${entry.id}`);
+  }
+  if (entry.status === 'approved_release_asset' && !allowedHeroBindings.has(entry.currentBinding)) {
+    fail(`approved hero entry has unexpected binding: ${entry.id} -> ${entry.currentBinding}`);
+  }
   if (!entry.boundary) fail(`hero entry missing boundary: ${entry.id}`);
   const publicPath = String(entry.publicPath || '').replace(/^\//, '');
   const publicFile = path.join(root, 'public', publicPath);
@@ -95,5 +104,8 @@ for (const entry of heroManifest.entries || []) {
   if (!fs.existsSync(sourceFile)) fail(`hero source file missing: ${entry.id} -> ${sourceFile}`);
 }
 if (requiredHeroIds.size > 0) fail(`hero manifest missing ids: ${[...requiredHeroIds].join(', ')}`);
+if (!['not_bound_yet', 'approved_v1_public_release'].includes(heroManifest._meta?.runtimeBinding)) {
+  fail('v1 hero manifest has invalid runtimeBinding');
+}
 
 console.log('[v019-content-governance] ok templates=6 publicBoundaries=8 playthroughAnchors=8 artBoundaries=8 heroEntries=3 mirofishPackages=3');

@@ -1,7 +1,7 @@
 # RebornG v1.0.0 Codex 当前入口
 
-日期：2026-05-19
-状态：v1.0.0 已完成为本地开发里程碑；rc commit `53bdf98`，GitHub Actions `26098733549` 通过
+日期：2026-05-20
+状态：v1.0.0 已完成为本地开发里程碑；用户已批准正式发布口径，发布标识与 hero 绑定进入最终复验
 主题：`活世界早期正式版`
 
 ## 定位
@@ -45,7 +45,7 @@
 
 ## 主目标
 
-把 v0.11 到 v0.19 铺开的活世界地基收束成玩家可理解、可连续体验、可测试、可回滚、可公开预览的 v1.0 候选版本。
+把 v0.11 到 v0.19 铺开的活世界地基收束成玩家可理解、可连续体验、可测试、可回滚、可正式发布的 v1.0 早期正式版。
 
 ## 推荐小版本
 
@@ -57,7 +57,7 @@
 | b1 | 青茅到南疆早期连续体验主线第一刀 | 是 | 已完成，commit `595bdc0`，GitHub Actions `26091674479` 通过 |
 | b2 | 低阶蛊师 life loop 释出版闭环与 UI 口感 | 是 | 已完成，commit `c21ce9a`，Actions `26093300607` 通过 |
 | b3 | 玩家自由意图/极端意图/前置条件说明收束 | 是 | 已完成，commit `352948e`，Actions `26095586533` 通过；不需要新包 |
-| b4 | v1.0 hero 三件套、公开素材、说明文案预检 | 否或 manifest | 已完成，commit `54ed13d`，Actions `26096913115` 通过；最终公开承诺仍需用户审批 |
+| b4 | v1.0 hero 三件套、公开素材、说明文案预检 | 否或 manifest | 已完成，commit `54ed13d`，Actions `26096913115` 通过；2026-05-20 用户批准正式发布口径和 hero 使用 |
 | process-1 | EdgeOne 手动预览、回滚、错误观测最小清单 | 否或脚本 | 已完成，commit `0c2ed24`，Actions `26097693808` 通过；不自动部署 |
 | rc | v1.0 release candidate 质量收束 | 是 | 已完成，commit `53bdf98`，Actions `26098733549` 通过 |
 
@@ -77,4 +77,4 @@
 
 专家团建议批准 v1.0 作为“活世界早期正式版”启动，但不应把远期愿景压进本版本。v1.0 应先把青茅山到南疆早期路线、低阶蛊师闭环、自由意图裁决、NPC/势力回流、公开安全和长测体系打通。
 
-用户已批准 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 三包已交付并通过 intake。b1 第一刀已把 v0.18 路线准备、候选承接和压力回流收束为 v1.0 连续体验候选验收，不写正式 route/location/currentRegion 字段，不开放正式地点、阵营、奖励或 NPC 生死；本地质量门与 GitHub Actions `26091674479` 已通过。b2 已把修行、补给、蛊虫维护、炼养用、交易窗口和路线压力收束为可验收的低阶 life loop，GitHub Actions `26093300607` 已通过，但仍不写正式经济、库存、路线、地点、奖励或 DeepSeek 新权限。b3 已把逃离青茅山、投靠白家、跟踪方源、去商家城、盗天魔尊传承、九转蛊、关键 NPC 生死等样本收束为本地裁决和禁写边界；commit `352948e` 已推送，GitHub Actions `26095586533` 已通过。b4 已整理 hero 三件套、release note、FAQ、截图/短录屏边界候选；commit `54ed13d` 已推送，GitHub Actions `26096913115` 已通过。process-1 已建立 EdgeOne 手动预览、回滚和错误观测清单，commit `0c2ed24` 已推送，GitHub Actions `26097693808` 已通过。rc 已完成并通过：commit `53bdf98`，GitHub Actions `26098733549`；本地 `tsc`、763 个单测、build、资产/copy/content scans、87 个 e2e、29 个 long e2e、production preview、150 轮 Player Advocate 全部通过。2026-05-20 已进入 public release prep：先整理发布准备启动检查和用户审批清单。公开承诺、自动部署、版本显示改为 `v1.0.0`、hero 正式绑定或大规模新图仍必须由用户批准。
+用户已批准 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 三包已交付并通过 intake。b1 第一刀已把 v0.18 路线准备、候选承接和压力回流收束为 v1.0 连续体验候选验收，不写正式 route/location/currentRegion 字段，不开放正式地点、阵营、奖励或 NPC 生死；本地质量门与 GitHub Actions `26091674479` 已通过。b2 已把修行、补给、蛊虫维护、炼养用、交易窗口和路线压力收束为可验收的低阶 life loop，GitHub Actions `26093300607` 已通过，但仍不写正式经济、库存、路线、地点、奖励或 DeepSeek 新权限。b3 已把逃离青茅山、投靠白家、跟踪方源、去商家城、盗天魔尊传承、九转蛊、关键 NPC 生死等样本收束为本地裁决和禁写边界；commit `352948e` 已推送，GitHub Actions `26095586533` 已通过。b4 已整理 hero 三件套、release note、FAQ、截图/短录屏边界候选；commit `54ed13d` 已推送，GitHub Actions `26096913115` 已通过。process-1 已建立 EdgeOne 手动预览、回滚和错误观测清单，commit `0c2ed24` 已推送，GitHub Actions `26097693808` 已通过。rc 已完成并通过：commit `53bdf98`，GitHub Actions `26098733549`；本地 `tsc`、763 个单测、build、资产/copy/content scans、87 个 e2e、29 个 long e2e、production preview、150 轮 Player Advocate 全部通过。2026-05-20 用户已批准 D-PUB-001 至 D-PUB-007：版本标识改为 `v1.0.0`，公告标题为 `RebornG v1.0《青茅之后，活世界初成》`，公告正文口径、hero 三件套、截图/短录屏方向和“正式发布”称谓均获批准；EdgeOne 发布动作仍由用户执行。当前发布准备补丁负责最终复验、提交推送和跨窗口交接。

@@ -627,28 +627,28 @@
     {
       "id": "v1-title-screen-hero",
       "role": "title_screen_hero",
-      "status": "selected_candidate",
+      "status": "approved_release_asset",
       "source": "doc/art/candidates/title-hero/title-screen-hero-candidate-01.png",
       "publicPath": "/rebrng/release/v1-hero/title-screen-hero.png",
-      "binding": "not_bound",
+      "currentBinding": "src/components/title/TitleScreen.tsx",
       "boundary": "first impression only; no playable-location unlock"
     },
     {
       "id": "v1-edgeone-landing-hero",
       "role": "edgeone_landing_hero",
-      "status": "selected_candidate",
+      "status": "approved_release_asset",
       "source": "doc/art/candidates/title-hero/edgeone-landing-hero-candidate-01.png",
       "publicPath": "/rebrng/release/v1-hero/edgeone-landing-hero.png",
-      "binding": "not_bound",
-      "boundary": "external intro candidate; no deployment or release commitment"
+      "currentBinding": "public_release_docs_and_edgeone_manual_handoff",
+      "boundary": "external intro asset; EdgeOne deployment remains manual and user-owned"
     },
     {
       "id": "v1-og-share-image",
       "role": "og_share_image",
-      "status": "selected_candidate",
+      "status": "approved_release_asset",
       "source": "doc/art/candidates/title-hero/og-share-image-candidate-01.png",
       "publicPath": "/rebrng/release/v1-hero/og-share-image.png",
-      "binding": "not_bound",
+      "currentBinding": "index.html og:image",
       "boundary": "social preview only; no hidden fact implication"
     }
   ],

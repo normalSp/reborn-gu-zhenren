@@ -8,6 +8,9 @@ interface TitleScreenProps {
   onContinue: () => void;
 }
 
+const TITLE_SCREEN_HERO_URL = '/rebrng/release/v1-hero/title-screen-hero.png';
+const RELEASE_TITLE = 'RebornG v1.0《青茅之后，活世界初成》';
+
 export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
   const [keyInput, setKeyInput] = useState(apiKey.get() || '');
   const [showKey, setShowKey] = useState(false);
@@ -119,18 +122,34 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-rg-ink-800 flex flex-col items-center justify-center p-8 md:p-12">
-      <div className="mt-12 mb-12">
-        <h1 className="text-4xl font-bold text-rg-gold mb-3 font-narrative tracking-wider">
-          蛊真人世界
-        </h1>
-        <p className="text-rg-paper-100 text-lg font-panel tracking-[0.15em]">
-          人生重来模拟器
-        </p>
-        <div className="mt-6 w-16 h-[1px] bg-rg-gold/40" />
-      </div>
+    <div
+      className="relative min-h-[100dvh] overflow-hidden bg-rg-ink-900 text-rg-paper-100"
+      data-release-hero="v1-title-screen-hero"
+      data-testid="title-screen"
+    >
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
+        style={{ backgroundImage: `url("${TITLE_SCREEN_HERO_URL}")` }}
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-rg-ink-900/75" />
+      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1/3 bg-rg-ink-900/55" />
 
-      <div className="w-full max-w-md bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-8 shadow-lg shadow-black/40 backdrop-blur-md">
+      <main className="relative z-10 flex min-h-[100dvh] flex-col items-center justify-center gap-8 p-6 md:p-12">
+        <section className="w-full max-w-5xl text-left md:text-center">
+          <p className="text-sm font-panel text-rg-gold/75 md:text-base">
+            {RELEASE_TITLE}
+          </p>
+          <h1 className="mt-3 text-4xl font-bold text-rg-gold font-narrative tracking-wider md:text-6xl">
+            蛊真人世界
+          </h1>
+          <p className="mt-4 text-base text-rg-paper-100 font-panel tracking-[0.15em] md:text-xl">
+            人生重来模拟器
+          </p>
+          <div className="mt-6 h-[1px] w-20 bg-rg-gold/45 md:mx-auto" />
+        </section>
+
+        <div className="w-full max-w-md bg-rg-ink-700/90 border border-rg-ink-300/12 rounded-lg p-8 shadow-lg shadow-black/40 backdrop-blur-md">
         <label className="block text-rg-paper-200 text-sm font-panel mb-2">
           蛊界天道密钥
         </label>
@@ -277,18 +296,19 @@ export function TitleScreen({ onStart, onContinue }: TitleScreenProps) {
 
         <div className="mt-8 pt-4 border-t border-rg-ink-400/20">
           <p className="text-rg-ink-300 text-xs font-panel text-center">
-            蛊真人世界 · 人生重来模拟器 · v0.9.0
+            蛊真人世界 · 人生重来模拟器 · v1.0.0
           </p>
           <p className="text-rg-ink-400 text-xs font-panel text-center mt-1">
             DeepSeek V4 系列 · 默认 {DEEPSEEK_DEFAULT_MODEL} · React · TypeScript
           </p>
         </div>
-      </div>
+        </div>
 
-      <p className="mt-8 text-rg-ink-300/80 text-xs font-panel max-w-md text-center leading-relaxed">
-        API Key 仅存储在浏览器本地，不会上传至任何服务器。
-        你可以随时在设置中更换或清除密钥。
-      </p>
+        <p className="text-rg-paper-200/65 text-xs font-panel max-w-md text-center leading-relaxed">
+          API Key 仅存储在浏览器本地，不会上传至任何服务器。
+          你可以随时在设置中更换或清除密钥。
+        </p>
+      </main>
     </div>
   );
 }
