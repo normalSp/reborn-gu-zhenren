@@ -8,7 +8,7 @@ Last updated: 2026-05-19
 - Public release baseline: `v0.9.0` locked.
 - Previous completed development milestone: `v0.18.0`.
 - Current completed development milestone: `v0.19.0`.
-- Current active draft: `v1.0` startup review pending. `v0.19.0` is complete as a local development milestone for `内容生产、长测与 v1.0 发布工具`: MiroFish v0.19 public canon boundary, representative playthrough anchor, and release art caption boundary packs passed intake review and were absorbed only as RebornG-owned content/copy/playthrough/art-boundary rules and tests. Runtime/tooling adds `src/canon/v019-content-governance-rules.json`, `src/engine/v019-content-governance.ts`, focused tests, and `scripts/check-v019-content-governance.mjs`, using no new save fields and giving no new DeepSeek authority. `v0.19.0-rc` passed `tsc`, full unit tests, build, runtime/Qingmao/player-visible-copy scans, v0.19 content governance check, full e2e, long e2e, production-preview smoke, b2 30-round Player Advocate gate, and rc 100-round Player Advocate gate. Implementation commit `fe6f468 feat: 完成v0.19发布准备工具层` is pushed, and GitHub Actions run `26082464543` passed deterministic quality gate. v0.19 adds no save fields, no `route_entered/currentRoute/currentRegion`, no formal location/faction/reward/NPC-life result, no complete Southern Border, no full Shang clan city, no BFF/backend, no automatic deployment, no public commitment, no large new image generation, and no DeepSeek authority expansion.
+- Current active draft: `v1.0.0` startup review and scope freeze draft is established under `指导大纲/v1.0.0/codex/00-总览/`. `v1.0.0` is proposed as the `活世界早期正式版`: Qingmao to early Southern Border continuity, low-rank Gu Master life loop, free-intent adjudication closure, NPC/faction/route backflow, public safety, and long-playtest closure. Required user decisions are tracked in `v1.0.0-需求决策池.md`; v1.0 MiroFish requests are drafted under `指导大纲/vMiroFish/requests/v1.0.0/` for `v100_qingmao_southern_border_continuity_pack`, `v100_low_rank_life_loop_release_boundary_pack`, and `v100_public_release_copy_art_boundary_pack`. `v0.19.0` is complete as a local development milestone for `内容生产、长测与 v1.0 发布工具`: MiroFish v0.19 public canon boundary, representative playthrough anchor, and release art caption boundary packs passed intake review and were absorbed only as RebornG-owned content/copy/playthrough/art-boundary rules and tests. Runtime/tooling adds `src/canon/v019-content-governance-rules.json`, `src/engine/v019-content-governance.ts`, focused tests, and `scripts/check-v019-content-governance.mjs`, using no new save fields and giving no new DeepSeek authority. `v0.19.0-rc` passed `tsc`, full unit tests, build, runtime/Qingmao/player-visible-copy scans, v0.19 content governance check, full e2e, long e2e, production-preview smoke, b2 30-round Player Advocate gate, and rc 100-round Player Advocate gate. Implementation commit `fe6f468 feat: 完成v0.19发布准备工具层` is pushed, and GitHub Actions run `26082464543` passed deterministic quality gate; evidence commit `1d29593` and GitHub Actions run `26082710647` are also pushed/passing. v0.19 adds no save fields, no `route_entered/currentRoute/currentRegion`, no formal location/faction/reward/NPC-life result, no complete Southern Border, no full Shang clan city, no BFF/backend, no automatic deployment, no public commitment, no large new image generation, and no DeepSeek authority expansion.
 - `v0.11.0` mainline: `活世界地基与自由意图闸门`.
 - `v0.11.0-a0` player-visible old-debt cleanup is complete.
 - `v0.11.0-a1` architecture/save hardening first round is complete: save normalization, response-pipeline observability, storage-key unification, and expert-gate checklist.
@@ -25,7 +25,8 @@ Last updated: 2026-05-19
 - Hard design gate approved before `v0.11.0-a2/a3/b2`: `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`.
 - Project dashboard: `指导大纲/项目仪表盘.md`.
 - Long-route docs: `指导大纲/长期路线/`, including `RebornG-长期架构演进路线图-纯前端到薄后端.md` and the approved `RebornG-v0.16至v1.0减法专项与路线调整草案.md`.
-- Current active draft docs: `指导大纲/v0.19.0/codex/00-总览/`.
+- Current active draft docs: `指导大纲/v1.0.0/codex/00-总览/`.
+- Current completed draft docs: `指导大纲/v0.19.0/codex/00-总览/`.
 - Current v0.18 completion docs: `指导大纲/v0.18.0/codex/00-总览/`.
 - Current v0.18 MiroFish intake: `指导大纲/vMiroFish/intake-reviews/v0.18.0/2026-05-19-v018-three-pack-intake-review-summary.md`.
 - Current v0.11 completion docs: `指导大纲/v0.11.0/codex/00-总览/`.
@@ -128,20 +129,21 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 ## Source Priority
 
 1. Runtime canon and engine source.
-2. `指导大纲/v0.19.0/codex/00-总览/` for completed v0.19 content governance, long-playtest, MiroFish intake, tests, Git plan, and v1.0 readiness tooling.
-3. `指导大纲/v0.18.0/codex/00-总览/` for completed route/multi-region facts.
-4. `指导大纲/流程制度/` for cross-version process gates such as Player Advocate walkthroughs.
-5. `指导大纲/v0.17.0/codex/00-总览/` for completed combat/killer-move/squad/formation facts.
-6. `指导大纲/v0.14.0/codex/00-总览/` for previous route-continuation scope and carryover constraints.
-7. `指导大纲/v0.13.0/codex/00-总览/` for completed NPC/faction reaction facts.
-8. `指导大纲/v0.12.0/codex/00-总览/` for Qingmao canon/IF/route groundwork.
-9. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
-10. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
-11. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
-12. This `PROJECT-STATE.md`.
-13. Latest `codex上下文信息/`.
-14. `指导大纲/大方向/` as external reference only.
-15. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
+2. `指导大纲/v1.0.0/codex/00-总览/` for current v1.0 startup review, scope freeze, decisions, MiroFish requests, test matrix, truth-source index, and Git plan.
+3. `指导大纲/v0.19.0/codex/00-总览/` for completed v0.19 content governance, long-playtest, MiroFish intake, tests, Git plan, and v1.0 readiness tooling.
+4. `指导大纲/v0.18.0/codex/00-总览/` for completed route/multi-region facts.
+5. `指导大纲/流程制度/` for cross-version process gates such as Player Advocate walkthroughs.
+6. `指导大纲/v0.17.0/codex/00-总览/` for completed combat/killer-move/squad/formation facts.
+7. `指导大纲/v0.14.0/codex/00-总览/` for previous route-continuation scope and carryover constraints.
+8. `指导大纲/v0.13.0/codex/00-总览/` for completed NPC/faction reaction facts.
+9. `指导大纲/v0.12.0/codex/00-总览/` for Qingmao canon/IF/route groundwork.
+10. `指导大纲/v0.11.0/codex/00-总览/` for completed v0.11 milestone facts.
+11. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
+12. `指导大纲/v0.10.0/codex/00-总览/` for completed milestone facts.
+13. This `PROJECT-STATE.md`.
+14. Latest `codex上下文信息/`.
+15. `指导大纲/大方向/` as external reference only.
+16. Old v0.6/v0.7/v0.8 docs and reports as historical evidence only.
 
 ## Triggered Expert Roles
 
