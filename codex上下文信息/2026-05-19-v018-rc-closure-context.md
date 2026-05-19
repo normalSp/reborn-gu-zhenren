@@ -2,7 +2,7 @@
 
 ## 状态
 
-`v0.18.0 南疆路线与多区域承接` 已完成为本地开发里程碑。当前等待 commit、push 和 GitHub Actions 远端验证记录。
+`v0.18.0 南疆路线与多区域承接` 已完成为本地开发里程碑。runtime+rc commit `56bb9dd feat: 完成v0.18路线多区域承接` 已推送，GitHub Actions run `26070709256` 已通过。
 
 ## 已完成
 
@@ -37,8 +37,6 @@ MiroFish 三包只作为 candidate/rule/test material，被重写为 RebornG-own
 
 ## 下一步
 
-1. Stage explicit v0.18 paths only; do not use `git add -A`.
-2. Commit as `feat: 完成v0.18路线多区域承接`.
-3. Push `codex/v013-npc-faction-reaction`.
-4. Record GitHub Actions run in `v0.18.0-Git提交与推送计划.md`、`指导大纲/项目仪表盘.md`、`PROJECT-STATE.md` and this handoff if doing a follow-up evidence commit.
-5. Stop for user decision before `v0.19.0` startup review.
+1. Stop for user decision before `v0.19.0` startup review.
+2. If a later evidence-only commit is made, push it and record the final run in the final handoff.
+3. Do not expand to `SAVE_FORMAT_VERSION = 23`、formal route/location state、complete Southern Border、full Shang clan city、BFF/backend、DeepSeek authority expansion、automatic deployment or public commitments without user decision.
