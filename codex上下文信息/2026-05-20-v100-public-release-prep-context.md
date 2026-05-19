@@ -6,6 +6,7 @@
 - 上一提交：`a56e972 fix: 收束v1.1前置bug与启动文档`
 - 本轮目标：开始 v1.0 public release prep，但不自动部署、不发布公告、不形成公开承诺。
 - release prep 文档提交：`e8cc289 docs: 启动v1.0发布准备`
+- release prep 状态提交：`611b570 docs: 记录v1.0发布准备提交状态`
 
 ## 本轮新增/更新
 
