@@ -1,7 +1,7 @@
 # RebornG v0.19.0 Codex 当前入口
 
 日期：2026-05-19
-状态：启动审查与范围冻结草案已建立，等待用户批准决策项
+状态：本地开发里程碑已完成，等待 commit/push/远端 CI 证据补录
 主题：`内容生产、长测与 v1.0 发布工具`
 
 ## 定位
@@ -53,6 +53,6 @@
 - 新模型评估或 DeepSeek 权限扩大。
 - 对外发布承诺；发布文案必须等用户最终批准。
 
-## 当前建议
+## 当前结论
 
-专家团建议先批准 `v0.19.0` 作为“v1.0 readiness 工具层”，并先请求 3 个 MiroFish preferred 包：公开口径边界、代表性游玩路径锚点、release art/caption 边界。它们不阻塞 `a1` 文档和 schema 设计，但建议在 `b2/b3/b4` 前完成 intake。
+用户已批准 `v0.19.0` 作为“v1.0 readiness 工具层”。3 个 MiroFish preferred 包已交付并通过 intake review；a1/a2/b1/b2/b3/b4/process-1/rc 均已完成本地收束。下一步是按 Git 制度提交、推送、等待远端 CI，再进入 `v1.0` 启动审查与范围冻结讨论。

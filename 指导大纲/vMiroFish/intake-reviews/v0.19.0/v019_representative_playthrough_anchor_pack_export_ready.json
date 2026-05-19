@@ -1,0 +1,651 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v019-representative-playthrough-anchor-pack",
+  "packageId": "v019_representative_playthrough_anchor_pack",
+  "targetPhase": "v0.19.0 representative playthrough and Player Advocate matrix",
+  "generatedAt": "2026-05-19T05:49:50.626175+00:00",
+  "suggestedOutputName": "v019_representative_playthrough_anchor_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v019_public_boundary_playthrough_and_release_art_caption_candidates"
+  },
+  "redactionPolicy": {
+    "sourceBodyIncluded": false,
+    "originalWordingIncluded": false,
+    "omittedTextFieldFamilies": [
+      "source_body_fields"
+    ],
+    "candidateOnly": true
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "low_rank_start_path": 1,
+      "task_supply_combat_path": 1,
+      "escape_route_path": 1,
+      "investigation_boundary_path": 1,
+      "rival_clan_contact_path": 1,
+      "loose_cultivator_contact_path": 1,
+      "outer_city_edge_path": 1,
+      "extreme_goal_redline_path": 1
+    },
+    "sourcePointers": 15,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "low_rank_start_path": 1,
+      "task_supply_combat_path": 1,
+      "escape_route_path": 1,
+      "investigation_boundary_path": 1,
+      "rival_clan_contact_path": 1,
+      "loose_cultivator_contact_path": 1,
+      "outer_city_edge_path": 1,
+      "extreme_goal_redline_path": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "deepSeekVisible": 8,
+      "hiddenBoundaryRef": 8,
+      "id": 8,
+      "ifRisk": 8,
+      "pathLabel": 8,
+      "pressurePoint": 8,
+      "publicAnchorSummary": 8,
+      "reborngGate": 8,
+      "recommendedTestUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, or release-art use"
+      ]
+    }
+  },
+  "items": [
+    {
+      "pathLabel": "古月/青茅低阶开局：族学、训练、资源压力",
+      "publicAnchorSummary": "从低阶学员身份、课堂/训练、补给和公开竞争开始。",
+      "pressurePoint": "资源、评价、同辈竞争、家族纪律会形成早期压力。",
+      "hiddenBoundaryRef": "不解释隐藏因果或角色私密知识。",
+      "ifRisk": "不得生成正式奖励、资质改写或关键 NPC 结论。",
+      "recommendedTestUse": [
+        "Player Advocate scenario",
+        "playthrough_anchor_draft"
+      ],
+      "id": "v019_playthrough_f27cb5799c54",
+      "category": "low_rank_start_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:49.966051+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_2aed3f091b61"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_a89af49b6f8d"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_28382c5b7fb7",
+        "sp_a921e407da24"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "source pointer summary withheld by v0.19 public-boundary gate",
+          "sourcePointerId": "sp_28382c5b7fb7"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0039",
+          "startOffset": 1653,
+          "endOffset": 1751,
+          "summary": "古月族长为明天的开窍大典举行祭祀祈祷。",
+          "sourcePointerId": "sp_a921e407da24"
+        }
+      ]
+    },
+    {
+      "pathLabel": "巡山/补给/低阶战斗准备路径",
+      "publicAnchorSummary": "玩家可测试任务集合、补给短缺、战斗前置和小队关系。",
+      "pressurePoint": "纪律、补给、路线选择和组队信任压力。",
+      "hiddenBoundaryRef": "不揭示幕后安排或未来必然结局。",
+      "ifRisk": "不得自动发放蛊、材料、元石或任务成功结论。",
+      "recommendedTestUse": [
+        "test_sample",
+        "Player Advocate scenario"
+      ],
+      "id": "v019_playthrough_110aac5da08c",
+      "category": "task_supply_combat_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.043349+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0016",
+          "chapterId": "ch_0016",
+          "field": "relations",
+          "itemId": "rel_193fd6bda333"
+        },
+        {
+          "packageId": "ri_lw_ch_0016",
+          "chapterId": "ch_0016",
+          "field": "relations",
+          "itemId": "rel_384171d4eda2"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_050afb293b8b",
+        "sp_e74cd6e107ae"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长",
+          "sourcePointerId": "sp_050afb293b8b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0050",
+          "startOffset": 45212,
+          "endOffset": 45251,
+          "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走",
+          "sourcePointerId": "sp_e74cd6e107ae"
+        }
+      ]
+    },
+    {
+      "pathLabel": "原创角色尝试逃离青茅，寻找商队/散修路线",
+      "publicAnchorSummary": "只测试离开准备、路线打听、商队接触和可见追问。",
+      "pressurePoint": "身份、担保、补给、路线安全和追问压力。",
+      "hiddenBoundaryRef": "不开放隐藏真相、确定逃离成功或后续地图权限。",
+      "ifRisk": "不得自动进入商队、改阵营或解锁远程地点。",
+      "recommendedTestUse": [
+        "playthrough_anchor_draft",
+        "long_test_matrix"
+      ],
+      "id": "v019_playthrough_0eae394624f1",
+      "category": "escape_route_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.132605+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_29e7bbb9f105"
+        },
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "relations",
+          "itemId": "rel_c653abded724"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d93bd65a6dc2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0026",
+          "startOffset": 13561,
+          "endOffset": 13615,
+          "summary": "力量蛊和智慧蛊发现人祖年老无供奉后绝情离开",
+          "sourcePointerId": "sp_d93bd65a6dc2"
+        }
+      ]
+    },
+    {
+      "pathLabel": "玩家试图调查方源",
+      "publicAnchorSummary": "只能得到公开旁证、目击说法、传闻或调查失败的可见后果。",
+      "pressurePoint": "打探对象、记录者和旁观者会带来怀疑与反问。",
+      "hiddenBoundaryRef": "方源私人因果和隐藏知识只允许 hidden_ref。",
+      "ifRisk": "不得输出心理真相、私人记忆或确定敌对结论。",
+      "recommendedTestUse": [
+        "Player Advocate scenario",
+        "redline_test"
+      ],
+      "id": "v019_playthrough_3273f62573d0",
+      "category": "investigation_boundary_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.222464+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_50b72b9bf0f8"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_2aed3f091b61"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_990e1aaf0150",
+        "sp_28382c5b7fb7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0031",
+          "startOffset": 1412,
+          "endOffset": 1436,
+          "summary": "方源在正道群雄围攻下自爆身亡。",
+          "sourcePointerId": "sp_990e1aaf0150"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "source pointer summary withheld by v0.19 public-boundary gate",
+          "sourcePointerId": "sp_28382c5b7fb7"
+        }
+      ]
+    },
+    {
+      "pathLabel": "玩家试图投靠白家或接近白凝冰",
+      "publicAnchorSummary": "只测试竞争名声、前置接触、路线上风险和公开反应。",
+      "pressurePoint": "身份审查、敌对阵营风险、名声和安全距离。",
+      "hiddenBoundaryRef": "角色秘辛、体质线和后续转折不写正文。",
+      "ifRisk": "不得直接加入白家、获得保护或决定 NPC 生死。",
+      "recommendedTestUse": [
+        "test_sample",
+        "deferred"
+      ],
+      "id": "v019_playthrough_f1cd6d8b8608",
+      "category": "rival_clan_contact_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.297775+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_386e51a40f5e"
+        },
+        {
+          "packageId": "ri_lw_ch_0030",
+          "chapterId": "ch_0030",
+          "field": "events",
+          "itemId": "evt_63215690e575"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_82bc141e3adf",
+        "sp_ad8dd64670ac"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0052",
+          "startOffset": 2183,
+          "endOffset": 2222,
+          "summary": "白家寨天才蛊师，天资恐怖",
+          "sourcePointerId": "sp_82bc141e3adf"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0030",
+          "paragraphId": "ch_0030_p0062",
+          "startOffset": 87702,
+          "endOffset": 87788,
+          "summary": "古月赤城向爷爷诉苦，请求为自己出头，被古月赤练拒绝并教导应自强自立",
+          "sourcePointerId": "sp_ad8dd64670ac"
+        }
+      ]
+    },
+    {
+      "pathLabel": "南疆早期散修/客栈/外缘市场接触",
+      "publicAnchorSummary": "测试询价、担保、客栈听闻和低阶交易窗口。",
+      "pressurePoint": "价格、身份、担保、库存和路线风险。",
+      "hiddenBoundaryRef": "不开放高级交易系统或稳定材料供应。",
+      "ifRisk": "不得生成正式合约、固定商店或跨域市场权限。",
+      "recommendedTestUse": [
+        "long_test_matrix",
+        "playthrough_anchor_draft"
+      ],
+      "id": "v019_playthrough_f97011cff570",
+      "category": "loose_cultivator_contact_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.391815+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0100",
+          "chapterId": "ch_0100",
+          "field": "events",
+          "itemId": "evt_8dfc3964a14e"
+        },
+        {
+          "packageId": "ri_lw_ch_0103",
+          "chapterId": "ch_0103",
+          "field": "relations",
+          "itemId": "rel_48f9c668d912"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_2578af159602",
+        "sp_de386caa90a6"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0004",
+          "startOffset": 312867,
+          "endOffset": 312887,
+          "summary": "source pointer summary withheld by v0.19 public-boundary gate",
+          "sourcePointerId": "sp_2578af159602"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0103",
+          "paragraphId": "ch_0103_p0021",
+          "startOffset": 323709,
+          "endOffset": 323772,
+          "summary": "中年男蛊师因交情帮助古月冻土，属于交易关系",
+          "sourcePointerId": "sp_de386caa90a6"
+        }
+      ]
+    },
+    {
+      "pathLabel": "玩家试图进入商家城外缘",
+      "publicAnchorSummary": "只测试外缘目标、传闻、担保和未开放入口。",
+      "pressurePoint": "证明身份、找担保、路费与风险评估。",
+      "hiddenBoundaryRef": "完整城市和正式城内系统暂不开放。",
+      "ifRisk": "不得直接入城、加入势力或解锁城内 NPC 网络。",
+      "recommendedTestUse": [
+        "Player Advocate scenario",
+        "release_scope_check"
+      ],
+      "id": "v019_playthrough_3d3752eceae6",
+      "category": "outer_city_edge_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.483167+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0250",
+          "chapterId": "ch_0250",
+          "field": "events",
+          "itemId": "evt_663d2bdd9269"
+        },
+        {
+          "packageId": "ri_lw_ch_0250",
+          "chapterId": "ch_0250",
+          "field": "events",
+          "itemId": "evt_81d5f3ce4613"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f5ff4c66cf21",
+        "sp_212a59ffa53a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0250",
+          "paragraphId": "ch_0250_p0039",
+          "startOffset": 851138,
+          "endOffset": 851156,
+          "summary": "白羽飞象群肆虐商队，造成重大伤亡",
+          "sourcePointerId": "sp_f5ff4c66cf21"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0250",
+          "paragraphId": "ch_0250_p0059",
+          "startOffset": 851975,
+          "endOffset": 852068,
+          "summary": "贾龙作为商队首领，命令众人尽快撤离，舍弃搬不动的货物",
+          "sourcePointerId": "sp_212a59ffa53a"
+        }
+      ]
+    },
+    {
+      "pathLabel": "极端目标红线：高阶蛊、远程交易、关键 NPC 生死",
+      "publicAnchorSummary": "可测试玩家提出越界目标时的拒绝、降级和延期流程。",
+      "pressurePoint": "将目标降级为传闻、不可达愿望、失败调查或人工审查。",
+      "hiddenBoundaryRef": "future high-rank, secret inheritance, cross-realm market, and key-NPC outcome lines stay redline.",
+      "ifRisk": "不得给正式剧情结论、奖励、地点解锁或 NPC 生死。",
+      "recommendedTestUse": [
+        "redline_test",
+        "Player Advocate scenario"
+      ],
+      "id": "v019_playthrough_76d570380d87",
+      "category": "extreme_goal_redline_path",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "playthrough_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T05:49:50.626175+00:00"
+      },
+      "reborngGate": {
+        "materialType": "playthrough_anchor_draft",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_bd7cd9991af0"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_386e51a40f5e"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_729ce8b47868",
+        "sp_82bc141e3adf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0002",
+          "startOffset": 366,
+          "endOffset": 387,
+          "summary": "source pointer summary withheld by v0.19 public-boundary gate",
+          "sourcePointerId": "sp_729ce8b47868"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0052",
+          "startOffset": 2183,
+          "endOffset": 2222,
+          "summary": "白家寨天才蛊师，天资恐怖",
+          "sourcePointerId": "sp_82bc141e3adf"
+        }
+      ]
+    }
+  ],
+  "skipped": []
+}

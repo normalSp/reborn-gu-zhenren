@@ -1,0 +1,274 @@
+{
+  "generatedAt": "2026-05-19T05:49:52.372104+00:00",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v019_public_boundary_playthrough_and_release_art_caption_candidates"
+  },
+  "outputs": {
+    "public_canon": "uploads\\ri_corpus\\exports\\qingmao_v019_request_packs\\v019_public_canon_boundary_pack_export_ready.json",
+    "playthrough": "uploads\\ri_corpus\\exports\\qingmao_v019_request_packs\\v019_representative_playthrough_anchor_pack_export_ready.json",
+    "art_caption": "uploads\\ri_corpus\\exports\\qingmao_v019_request_packs\\v019_release_art_caption_boundary_pack_export_ready.json"
+  },
+  "reports": {
+    "public_canon": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_public_canon_boundary_pack_export_ready_report.json",
+    "playthrough": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_representative_playthrough_anchor_pack_export_ready_report.json",
+    "art_caption": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_release_art_caption_boundary_pack_export_ready_report.json"
+  },
+  "handoffs": {
+    "public_canon": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_public_canon_boundary_pack_handoff.md",
+    "playthrough": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_representative_playthrough_anchor_pack_handoff.md",
+    "art_caption": "uploads\\ri_corpus\\reports\\qingmao_v019_request_packs\\v019_release_art_caption_boundary_pack_handoff.md"
+  },
+  "summaries": {
+    "public_canon": {
+      "totalItems": 8,
+      "byCategory": {
+        "qingmao_public_fact_boundary": 1,
+        "southern_border_route_public_boundary": 1,
+        "caravan_market_public_boundary": 1,
+        "fang_yuan_public_evidence_boundary": 1,
+        "three_clans_character_public_boundary": 1,
+        "hidden_history_public_redline": 1,
+        "shang_outer_edge_public_boundary": 1,
+        "future_high_rank_public_redline": 1
+      },
+      "sourcePointers": 16,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "playthrough": {
+      "totalItems": 8,
+      "byCategory": {
+        "low_rank_start_path": 1,
+        "task_supply_combat_path": 1,
+        "escape_route_path": 1,
+        "investigation_boundary_path": 1,
+        "rival_clan_contact_path": 1,
+        "loose_cultivator_contact_path": 1,
+        "outer_city_edge_path": 1,
+        "extreme_goal_redline_path": 1
+      },
+      "sourcePointers": 15,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "art_caption": {
+      "totalItems": 8,
+      "byCategory": {
+        "low_rank_qingmao_visual_boundary": 1,
+        "route_and_patrol_visual_boundary": 1,
+        "caravan_market_visual_boundary": 1,
+        "low_rank_gu_material_visual_boundary": 1,
+        "three_clans_visual_boundary": 1,
+        "fang_yuan_visual_boundary": 1,
+        "bai_ning_bing_visual_boundary": 1,
+        "shang_outer_edge_visual_boundary": 1
+      },
+      "sourcePointers": 16,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    }
+  },
+  "coverageMatrix": {
+    "public_canon": {
+      "scopeCoverage": {
+        "qingmao_public_fact_boundary": 1,
+        "southern_border_route_public_boundary": 1,
+        "caravan_market_public_boundary": 1,
+        "fang_yuan_public_evidence_boundary": 1,
+        "three_clans_character_public_boundary": 1,
+        "hidden_history_public_redline": 1,
+        "shang_outer_edge_public_boundary": 1,
+        "future_high_rank_public_redline": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "deepSeekVisible": 8,
+        "forbiddenImplication": 8,
+        "id": 8,
+        "reborngGate": 8,
+        "recommendedUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "safePublicSummary": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      }
+    },
+    "playthrough": {
+      "scopeCoverage": {
+        "low_rank_start_path": 1,
+        "task_supply_combat_path": 1,
+        "escape_route_path": 1,
+        "investigation_boundary_path": 1,
+        "rival_clan_contact_path": 1,
+        "loose_cultivator_contact_path": 1,
+        "outer_city_edge_path": 1,
+        "extreme_goal_redline_path": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "deepSeekVisible": 8,
+        "hiddenBoundaryRef": 8,
+        "id": 8,
+        "ifRisk": 8,
+        "pathLabel": 8,
+        "pressurePoint": 8,
+        "publicAnchorSummary": 8,
+        "reborngGate": 8,
+        "recommendedTestUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      }
+    },
+    "art_caption": {
+      "scopeCoverage": {
+        "low_rank_qingmao_visual_boundary": 1,
+        "route_and_patrol_visual_boundary": 1,
+        "caravan_market_visual_boundary": 1,
+        "low_rank_gu_material_visual_boundary": 1,
+        "three_clans_visual_boundary": 1,
+        "fang_yuan_visual_boundary": 1,
+        "bai_ning_bing_visual_boundary": 1,
+        "shang_outer_edge_visual_boundary": 1
+      },
+      "requiredFieldsPresent": {
+        "assetTheme": 8,
+        "category": 8,
+        "deepSeekVisible": 8,
+        "forbiddenVisualImplication": 8,
+        "id": 8,
+        "reborngGate": 8,
+        "recommendedUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskyMotifs": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "safeCaptionBoundary": 8,
+        "safeMotifs": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, or release-art use"
+        ]
+      }
+    }
+  },
+  "completionGate": {
+    "public_canon": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, or release-art use"
+      ]
+    },
+    "playthrough": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, or release-art use"
+      ]
+    },
+    "art_caption": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, or release-art use"
+      ]
+    }
+  },
+  "notes": [
+    "v0.19 request packs are deterministic source-redacted candidates.",
+    "No live model call is used; source is the current strict/reviewable base through 2120."
+  ]
+}

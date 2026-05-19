@@ -1,0 +1,88 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v019-release-art-caption-boundary-pack",
+  "packageId": "v019_release_art_caption_boundary_pack",
+  "generatedAt": "2026-05-19T05:49:52.332932+00:00",
+  "suggestedOutputName": "v019_release_art_caption_boundary_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v019_public_boundary_playthrough_and_release_art_caption_candidates"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "low_rank_qingmao_visual_boundary": 1,
+      "route_and_patrol_visual_boundary": 1,
+      "caravan_market_visual_boundary": 1,
+      "low_rank_gu_material_visual_boundary": 1,
+      "three_clans_visual_boundary": 1,
+      "fang_yuan_visual_boundary": 1,
+      "bai_ning_bing_visual_boundary": 1,
+      "shang_outer_edge_visual_boundary": 1
+    },
+    "sourcePointers": 16,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "low_rank_qingmao_visual_boundary": 1,
+      "route_and_patrol_visual_boundary": 1,
+      "caravan_market_visual_boundary": 1,
+      "low_rank_gu_material_visual_boundary": 1,
+      "three_clans_visual_boundary": 1,
+      "fang_yuan_visual_boundary": 1,
+      "bai_ning_bing_visual_boundary": 1,
+      "shang_outer_edge_visual_boundary": 1
+    },
+    "requiredFieldsPresent": {
+      "assetTheme": 8,
+      "category": 8,
+      "deepSeekVisible": 8,
+      "forbiddenVisualImplication": 8,
+      "id": 8,
+      "reborngGate": 8,
+      "recommendedUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "riskyMotifs": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "safeCaptionBoundary": 8,
+      "safeMotifs": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, or release-art use"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete_candidate",
+    "baseSufficiency": "sufficient_for_v019_public_boundary_playthrough_and_release_art_caption_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "notes": [
+      "All records are source-backed candidates with original source wording omitted.",
+      "RebornG must approve final public copy, release art, or playthrough tests.",
+      "MiroFish output is not canon truth or runtime authority."
+    ]
+  }
+}

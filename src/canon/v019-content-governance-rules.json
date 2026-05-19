@@ -1,0 +1,696 @@
+{
+  "_meta": {
+    "version": "v0.19.0",
+    "status": "v1_readiness_tool_gate",
+    "theme": "content_production_longtest_release_tools",
+    "date": "2026-05-19",
+    "runtimeAuthority": "local_tooling_only",
+    "sourcePolicy": "summary_pointer_boundary_only",
+    "mirofishPolicy": "candidate_material_only_not_canon_not_runtime_authority",
+    "saveFormatDecision": "keep_SAVE_FORMAT_VERSION_22"
+  },
+  "sourceReviews": {
+    "intakeReview": "指导大纲/vMiroFish/intake-reviews/v0.19.0/2026-05-19-v019-three-pack-intake-review-summary.md",
+    "sourcePackages": [
+      "v019_public_canon_boundary_pack_export_ready.json",
+      "v019_representative_playthrough_anchor_pack_export_ready.json",
+      "v019_release_art_caption_boundary_pack_export_ready.json"
+    ],
+    "coverageMatrix": "qingmao_v019_request_packs_coverage_matrix.json",
+    "forbiddenImportedFields": [
+      "quote",
+      "originalText",
+      "excerpt",
+      "verbatim",
+      "sourceBody",
+      "source_body"
+    ]
+  },
+  "hardStops": [
+    "route_entered/currentRoute/currentRegion persistent fields",
+    "SAVE_FORMAT_VERSION = 23",
+    "formal route or location entry",
+    "formal faction transfer",
+    "formal reward, Gu, material, recipe, or drop grant",
+    "NPC life, capture, or permanent fate result",
+    "complete Southern Border or full Shang clan city",
+    "BFF/backend implementation",
+    "automatic EdgeOne deployment",
+    "public release commitment",
+    "DeepSeek authority expansion"
+  ],
+  "contentTemplates": [
+    {
+      "id": "fact_card",
+      "label": "fact card",
+      "runtimeTarget": "src/canon/*fact-cards.json",
+      "requiredFields": [
+        "id",
+        "summary",
+        "visibility",
+        "classification",
+        "sourcePointers",
+        "runtimeExposure",
+        "designBoundary",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "quote",
+        "originalText",
+        "excerpt",
+        "verbatim",
+        "hiddenBodyPlayerVisible"
+      ],
+      "requiredAuthority": "local_canon_review",
+      "deepSeekBoundary": "visible summaries only; hidden refs never enter visible context",
+      "requiredTests": [
+        "summary_and_pointer_only",
+        "hidden_fact_redaction",
+        "player_visible_copy_scan"
+      ]
+    },
+    {
+      "id": "route_rule",
+      "label": "route rule",
+      "runtimeTarget": "src/canon/*route*.json",
+      "requiredFields": [
+        "id",
+        "routeId",
+        "publicSummary",
+        "requirements",
+        "blockedUpgrades",
+        "sourceItemIds",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "route_entered",
+        "currentRoute",
+        "currentRegion",
+        "locationUnlock",
+        "rewardGrant"
+      ],
+      "requiredAuthority": "local_engine_preview_or_action_protocol",
+      "deepSeekBoundary": "narrative and candidate text only",
+      "requiredTests": [
+        "no_route_state_write",
+        "no_location_unlock",
+        "old_save_compatibility"
+      ]
+    },
+    {
+      "id": "pressure_rule",
+      "label": "pressure rule",
+      "runtimeTarget": "src/canon/*pressure*|*reaction*.json",
+      "requiredFields": [
+        "id",
+        "subjectId",
+        "pressureType",
+        "publicReason",
+        "ledgerInputs",
+        "blockedEscalations",
+        "sourceItemIds",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "formalStandingDelta",
+        "warrant",
+        "recruitment",
+        "taskReward",
+        "npcLifeResult"
+      ],
+      "requiredAuthority": "living_world_engine_or_read_only_projection",
+      "deepSeekBoundary": "pressure prose only; no standing or warrant authority",
+      "requiredTests": [
+        "no_formal_standing",
+        "no_warrant_or_recruitment",
+        "public_memory_only"
+      ]
+    },
+    {
+      "id": "combat_candidate",
+      "label": "combat candidate",
+      "runtimeTarget": "src/canon/*combat*.json",
+      "requiredFields": [
+        "id",
+        "entryGate",
+        "combatTemplateId",
+        "rewardPolicy",
+        "counterOrFailureReason",
+        "sourceItemIds",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "guDrop",
+        "materialDrop",
+        "enemySpecIds",
+        "npcDeathResult",
+        "uiDamageFormula"
+      ],
+      "requiredAuthority": "local_combat_engine",
+      "deepSeekBoundary": "battle narration only after local battle facts exist",
+      "requiredTests": [
+        "engine_owned_damage",
+        "no_drop_grant",
+        "battlefield_readability"
+      ]
+    },
+    {
+      "id": "economy_rule",
+      "label": "economy rule",
+      "runtimeTarget": "src/canon/*economy*|*resource*|*market*.json",
+      "requiredFields": [
+        "id",
+        "resourceKind",
+        "sourceGate",
+        "limitPolicy",
+        "blockedEscalations",
+        "sourceItemIds",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "completeRecipeUnlock",
+        "shopInventory",
+        "priceTable",
+        "commissionProfit",
+        "treasureYellowHeavenTrade"
+      ],
+      "requiredAuthority": "local_economy_or_refine_engine",
+      "deepSeekBoundary": "rumor or candidate only; no numeric economy ownership",
+      "requiredTests": [
+        "anti_farm_cap",
+        "no_recipe_unlock",
+        "no_formal_shop"
+      ]
+    },
+    {
+      "id": "asset_manifest",
+      "label": "asset manifest",
+      "runtimeTarget": "doc/art/*manifest.json or src/canon/*visual-assets.json",
+      "requiredFields": [
+        "id",
+        "role",
+        "status",
+        "source",
+        "publicPath",
+        "usage",
+        "boundary",
+        "testSampleIds"
+      ],
+      "forbiddenFields": [
+        "canonOutcome",
+        "immortalGuImplication",
+        "routeUnlockImplication",
+        "npcLifeImplication",
+        "publicCommitment"
+      ],
+      "requiredAuthority": "art_review_manifest",
+      "deepSeekBoundary": "caption draft only; must pass public safety preflight",
+      "requiredTests": [
+        "asset_exists",
+        "zero_byte_scan",
+        "caption_boundary_scan"
+      ]
+    }
+  ],
+  "publicCanonBoundaries": [
+    {
+      "id": "v019_public_canon_6c8c42f03829",
+      "category": "qingmao_public_fact_boundary",
+      "visibility": "public_safe",
+      "promotedTo": [
+        "copy_boundary",
+        "test_sample"
+      ],
+      "allowedUses": [
+        "public FAQ scope",
+        "player-visible copy guard"
+      ],
+      "forbiddenImplications": [
+        "hidden fact body",
+        "canon outcome rewrite"
+      ]
+    },
+    {
+      "id": "v019_public_canon_24bad48f3edf",
+      "category": "southern_border_route_public_boundary",
+      "visibility": "public_safe_with_route_limits",
+      "promotedTo": [
+        "copy_boundary",
+        "release_note_scope",
+        "test_sample"
+      ],
+      "allowedUses": [
+        "route candidate wording",
+        "v1.0 scope wording"
+      ],
+      "forbiddenImplications": [
+        "formal route entry",
+        "complete Southern Border map"
+      ]
+    },
+    {
+      "id": "v019_public_canon_2dadd2af896b",
+      "category": "caravan_market_public_boundary",
+      "visibility": "public_safe_with_market_limits",
+      "promotedTo": [
+        "copy_boundary",
+        "release_manifest_check"
+      ],
+      "allowedUses": [
+        "caravan and low-rank market copy"
+      ],
+      "forbiddenImplications": [
+        "formal shop inventory",
+        "commission profit",
+        "Treasure Yellow Heaven access"
+      ]
+    },
+    {
+      "id": "v019_public_canon_7f81fd2d297d",
+      "category": "fang_yuan_public_evidence_boundary",
+      "visibility": "public_evidence_only",
+      "promotedTo": [
+        "copy_boundary",
+        "test_sample",
+        "human_review_only"
+      ],
+      "allowedUses": [
+        "public-evidence wording",
+        "hidden-fact probe tests"
+      ],
+      "forbiddenImplications": [
+        "rebirth",
+        "Spring Autumn Cicada ownership",
+        "private causality"
+      ]
+    },
+    {
+      "id": "v019_public_canon_03ebdb87b228",
+      "category": "three_clans_character_public_boundary",
+      "visibility": "public_safe_with_character_redlines",
+      "promotedTo": [
+        "copy_boundary",
+        "test_sample"
+      ],
+      "allowedUses": [
+        "three-clan public character wording"
+      ],
+      "forbiddenImplications": [
+        "NPC death result",
+        "major canon character trajectory"
+      ]
+    },
+    {
+      "id": "v019_public_canon_f4e5d42a2b8c",
+      "category": "hidden_history_public_redline",
+      "visibility": "hidden_ref_only",
+      "promotedTo": [
+        "deferred",
+        "human_review_only"
+      ],
+      "allowedUses": [
+        "negative test sample",
+        "hidden-fact safety preflight"
+      ],
+      "forbiddenImplications": [
+        "UI hidden summary",
+        "DeepSeek visible context"
+      ]
+    },
+    {
+      "id": "v019_public_canon_ce109676fa5c",
+      "category": "shang_outer_edge_public_boundary",
+      "visibility": "public_safe_with_location_limits",
+      "promotedTo": [
+        "copy_boundary",
+        "release_note_scope"
+      ],
+      "allowedUses": [
+        "outer-edge entry wording"
+      ],
+      "forbiddenImplications": [
+        "full Shang clan city",
+        "formal city location unlock"
+      ]
+    },
+    {
+      "id": "v019_public_canon_08a2fc1da4d9",
+      "category": "future_high_rank_public_redline",
+      "visibility": "redline",
+      "promotedTo": [
+        "FAQ_redline",
+        "test_sample"
+      ],
+      "allowedUses": [
+        "future high-rank boundary tests"
+      ],
+      "forbiddenImplications": [
+        "Immortal Gu acquisition",
+        "rank ten",
+        "true eternal life",
+        "mortal Treasure Yellow Heaven trade"
+      ]
+    }
+  ],
+  "playthroughAnchors": [
+    {
+      "id": "v019_playthrough_f27cb5799c54",
+      "category": "low_rank_start_path",
+      "pathLabel": "低阶开局基础路径",
+      "playerGoal": "理解身份、行动入口和下一步",
+      "expectedOutcome": "玩家知道自己处在低阶蛊师样板，不误以为高阶世界已开放",
+      "recommendedTestUse": [
+        "golden_playthrough",
+        "new_player"
+      ],
+      "blockedOutcomes": [
+        "high_rank_opened",
+        "identity_rewritten"
+      ]
+    },
+    {
+      "id": "v019_playthrough_110aac5da08c",
+      "category": "task_supply_combat_path",
+      "pathLabel": "行动-补给-战斗闭环路径",
+      "playerGoal": "从行动进入补给、蛊道和战斗候选",
+      "expectedOutcome": "玩家看见成本、风险、候选和不掉落边界",
+      "recommendedTestUse": [
+        "golden_playthrough",
+        "anti_reward_overreach"
+      ],
+      "blockedOutcomes": [
+        "gu_drop",
+        "material_drop",
+        "ui_damage_formula"
+      ]
+    },
+    {
+      "id": "v019_playthrough_0eae394624f1",
+      "category": "escape_route_path",
+      "pathLabel": "青茅离开路线承接路径",
+      "playerGoal": "准备离开青茅山并理解路线仍是候选",
+      "expectedOutcome": "路线门槛、压力和入口边界可理解，但不写正式地点",
+      "recommendedTestUse": [
+        "golden_playthrough",
+        "route_boundary"
+      ],
+      "blockedOutcomes": [
+        "route_entered",
+        "location_unlock",
+        "currentRegion_write"
+      ]
+    },
+    {
+      "id": "v019_playthrough_3273f62573d0",
+      "category": "investigation_boundary_path",
+      "pathLabel": "调查与隐藏事实边界路径",
+      "playerGoal": "调查方源、灵泉或隐藏历史",
+      "expectedOutcome": "系统给公开证据或失败反馈，不泄露隐藏事实",
+      "recommendedTestUse": [
+        "hidden_fact_probe",
+        "public_evidence_only"
+      ],
+      "blockedOutcomes": [
+        "hidden_body_visible",
+        "Spring Autumn Cicada leak",
+        "private causality leak"
+      ]
+    },
+    {
+      "id": "v019_playthrough_f1cd6d8b8608",
+      "category": "rival_clan_contact_path",
+      "pathLabel": " rival clan contact path",
+      "playerGoal": "试图接触白家或熊家",
+      "expectedOutcome": "展示前置条件、风险和观察压力，不转阵营",
+      "recommendedTestUse": [
+        "faction_goal_prerequisite",
+        "social_pressure"
+      ],
+      "blockedOutcomes": [
+        "faction_transfer",
+        "formal_recruitment",
+        "standing_delta"
+      ]
+    },
+    {
+      "id": "v019_playthrough_f97011cff570",
+      "category": "loose_cultivator_contact_path",
+      "pathLabel": "散修/外部接触路径",
+      "playerGoal": "寻求散修、商队或外部人脉",
+      "expectedOutcome": "显示担保、身份和补给压力，不开放完整外部社会",
+      "recommendedTestUse": [
+        "outer_contact",
+        "identity_pressure"
+      ],
+      "blockedOutcomes": [
+        "formal_identity_wash",
+        "commission_profit",
+        "full_market_opened"
+      ]
+    },
+    {
+      "id": "v019_playthrough_3d3752eceae6",
+      "category": "outer_city_edge_path",
+      "pathLabel": "商家城外缘路径",
+      "playerGoal": "理解商家城外缘入口和未开放城市边界",
+      "expectedOutcome": "玩家知道只是外缘/公开入口，不是完整商家城",
+      "recommendedTestUse": [
+        "release_copy_scope",
+        "location_boundary"
+      ],
+      "blockedOutcomes": [
+        "full_shang_clan_city",
+        "auction_house_system",
+        "formal_city_unlock"
+      ]
+    },
+    {
+      "id": "v019_playthrough_76d570380d87",
+      "category": "extreme_goal_redline_path",
+      "pathLabel": "极端目标红线路径",
+      "playerGoal": "尝试九转蛊、盗天传承、宝黄天交易或杀关键 NPC",
+      "expectedOutcome": "系统降级为长期目标/传闻/前置条件或直接拒绝",
+      "recommendedTestUse": [
+        "extreme_intent",
+        "lore_redline"
+      ],
+      "blockedOutcomes": [
+        "rank_nine_granted",
+        "Theft Heaven inheritance granted",
+        "mortal_Treasure_Yellow_Heaven_trade",
+        "NPC_life_decided"
+      ]
+    }
+  ],
+  "releaseArtCaptionBoundaries": [
+    {
+      "id": "v019_art_caption_421e9da58835",
+      "category": "low_rank_qingmao_visual_boundary",
+      "assetTheme": "low-rank Qingmao",
+      "safeMotifs": [
+        "mountain mist",
+        "clan village silhouettes",
+        "low-rank Gu hints",
+        "moonlight and ink"
+      ],
+      "riskyMotifs": [
+        "Immortal Gu",
+        "venerable imagery",
+        "full fate symbols"
+      ],
+      "safeCaptionBoundary": "low-rank living-world slice only",
+      "forbiddenVisualImplication": "complete Gu world or immortal-layer gameplay"
+    },
+    {
+      "id": "v019_art_caption_71fbe3e0820a",
+      "category": "route_and_patrol_visual_boundary",
+      "assetTheme": "route and patrol",
+      "safeMotifs": [
+        "mountain path",
+        "tracks",
+        "pursuit lanterns",
+        "supply tension"
+      ],
+      "riskyMotifs": [
+        "formal map unlock",
+        "teleport route",
+        "finished Southern Border"
+      ],
+      "safeCaptionBoundary": "candidate route and pressure only",
+      "forbiddenVisualImplication": "player has formally entered a new region"
+    },
+    {
+      "id": "v019_art_caption_e5c3e4117107",
+      "category": "caravan_market_visual_boundary",
+      "assetTheme": "caravan and low-rank market",
+      "safeMotifs": [
+        "mortal caravan",
+        "temporary stall",
+        "low-rank goods",
+        "human bargaining"
+      ],
+      "riskyMotifs": [
+        "Treasure Yellow Heaven",
+        "immortal trade",
+        "auction authority"
+      ],
+      "safeCaptionBoundary": "public caravan/market window only",
+      "forbiddenVisualImplication": "formal market, auction, or immortal trade system"
+    },
+    {
+      "id": "v019_art_caption_aa4c4ae97309",
+      "category": "low_rank_gu_material_visual_boundary",
+      "assetTheme": "low-rank Gu materials",
+      "safeMotifs": [
+        "feeding materials",
+        "recipe fragments",
+        "resource scarcity"
+      ],
+      "riskyMotifs": [
+        "complete recipe unlock",
+        "rare immortal material",
+        "guaranteed Gu reward"
+      ],
+      "safeCaptionBoundary": "feeding/refinement pressure, not reward grant",
+      "forbiddenVisualImplication": "complete recipe or formal drop table"
+    },
+    {
+      "id": "v019_art_caption_6c42554a21d8",
+      "category": "three_clans_visual_boundary",
+      "assetTheme": "three-clan public pressure",
+      "safeMotifs": [
+        "clan silhouettes",
+        "ordinary public confrontation",
+        "low-rank pressure"
+      ],
+      "riskyMotifs": [
+        "canon death scene",
+        "major character fate",
+        "confirmed alliance outcome"
+      ],
+      "safeCaptionBoundary": "public pressure only",
+      "forbiddenVisualImplication": "NPC life/death or canon anchor settlement"
+    },
+    {
+      "id": "v019_art_caption_247f5279e0f6",
+      "category": "fang_yuan_visual_boundary",
+      "assetTheme": "Fang Yuan public-evidence boundary",
+      "safeMotifs": [
+        "anonymous observer",
+        "public suspicion",
+        "unconfirmed traces"
+      ],
+      "riskyMotifs": [
+        "rebirth",
+        "Spring Autumn Cicada",
+        "private hidden causality"
+      ],
+      "safeCaptionBoundary": "public evidence and human review only",
+      "forbiddenVisualImplication": "hidden cause, future knowledge, or rebirth fact"
+    },
+    {
+      "id": "v019_art_caption_d57ea09bcf61",
+      "category": "bai_ning_bing_visual_boundary",
+      "assetTheme": "Bai Ning Bing public pressure",
+      "safeMotifs": [
+        "cold pressure",
+        "public talent threat",
+        "low-rank danger"
+      ],
+      "riskyMotifs": [
+        "death result",
+        "self-detonation certainty",
+        "hidden physique resolution"
+      ],
+      "safeCaptionBoundary": "public pressure; no life/fate settlement",
+      "forbiddenVisualImplication": "Bai Ning Bing fate already decided"
+    },
+    {
+      "id": "v019_art_caption_24b30ed49c6a",
+      "category": "shang_outer_edge_visual_boundary",
+      "assetTheme": "Shang outer edge",
+      "safeMotifs": [
+        "outer gate",
+        "caravan road",
+        "distant city layers"
+      ],
+      "riskyMotifs": [
+        "full city access",
+        "auction house ownership",
+        "formal Shang faction entry"
+      ],
+      "safeCaptionBoundary": "outer-edge public preview only",
+      "forbiddenVisualImplication": "full Shang clan city is open"
+    }
+  ],
+  "releaseArtPack": [
+    {
+      "id": "v1-title-screen-hero",
+      "role": "title_screen_hero",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/title-screen-hero-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/title-screen-hero.png",
+      "binding": "not_bound",
+      "boundary": "first impression only; no playable-location unlock"
+    },
+    {
+      "id": "v1-edgeone-landing-hero",
+      "role": "edgeone_landing_hero",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/edgeone-landing-hero-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/edgeone-landing-hero.png",
+      "binding": "not_bound",
+      "boundary": "external intro candidate; no deployment or release commitment"
+    },
+    {
+      "id": "v1-og-share-image",
+      "role": "og_share_image",
+      "status": "selected_candidate",
+      "source": "doc/art/candidates/title-hero/og-share-image-candidate-01.png",
+      "publicPath": "/rebrng/release/v1-hero/og-share-image.png",
+      "binding": "not_bound",
+      "boundary": "social preview only; no hidden fact implication"
+    }
+  ],
+  "preflightRules": {
+    "bannedPlayerVisibleCopyPatterns": [
+      "已开放完整南疆",
+      "已开放完整商家城",
+      "已正式进入新地点",
+      "宝黄天交易",
+      "仙蛊奖励",
+      "十转",
+      "永生",
+      "宿命蛊归属",
+      "春秋蝉回溯",
+      "方源重生",
+      "击杀白凝冰",
+      "盗天传承已获得"
+    ],
+    "bannedDeepSeekContextPatterns": [
+      "hidden_ref_only",
+      "hidden_history_public_redline",
+      "Spring Autumn Cicada",
+      "rebirth_private_causality",
+      "spirit_spring_hidden_body"
+    ],
+    "bannedWriteTargets": [
+      "route_entered",
+      "currentRoute",
+      "currentRegion",
+      "locationUnlock",
+      "factionTransfer",
+      "rewardGrant",
+      "npcLifeResult",
+      "saveFormatVersion23",
+      "deepSeekAuthorityExpansion"
+    ]
+  },
+  "playerAdvocatePolicy": {
+    "smallVersionPlayerFacingRounds": 30,
+    "rcRounds": 100,
+    "v1RcSuggestedRounds": 150,
+    "docsOnlyExemptionAllowed": true,
+    "liveDeepSeekProbe": "optional_fixed_samples_only_and_requires_recorded_cost"
+  }
+}
