@@ -47,6 +47,13 @@ import {
   type V100ContinuityCheckPreview,
   type V100QingmaoSouthernBorderContinuityOverview,
 } from '../../engine/v100-qingmao-southern-border-continuity';
+import {
+  buildV100LowRankLifeLoopOverview,
+  type V100LifeLoopBoundaryRule,
+  type V100LifeLoopCheckPreview,
+  type V100LifeLoopPillarRule,
+  type V100LowRankLifeLoopOverview,
+} from '../../engine/v100-low-rank-life-loop-release';
 
 const EMPTY_LOCAL_ACTION_LEDGER: LocalActionLedgerEntry[] = [];
 
@@ -1146,6 +1153,100 @@ function V100ContinuityPanel({
   );
 }
 
+function V100LifeLoopCheckCard({ check }: { check: V100LifeLoopCheckPreview }) {
+  return (
+    <article className={`rounded-sm border p-2 ${check.satisfied ? 'border-emerald-400/24 bg-emerald-400/8' : 'border-rg-gold/24 bg-rg-ink-900/35'}`}>
+      <div className="flex items-start justify-between gap-2">
+        <p className="text-[11px] font-semibold text-rg-paper-100">{check.label}</p>
+        <span className={check.satisfied ? 'text-[10px] text-emerald-200' : 'text-[10px] text-rg-gold'}>
+          {check.satisfied ? '已满足' : check.blocking ? '仍缺' : '边界'}
+        </span>
+      </div>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{check.summary}</p>
+      {check.evidenceRefs.length > 0 && (
+        <p className="mt-1 truncate text-[10px] text-rg-paper-200/34">{check.evidenceRefs.slice(0, 2).join(' / ')}</p>
+      )}
+    </article>
+  );
+}
+
+function V100LifeLoopPillarCard({ pillar }: { pillar: V100LifeLoopPillarRule }) {
+  return (
+    <article className="rounded-sm border border-emerald-300/18 bg-emerald-400/7 p-2">
+      <p className="text-[11px] font-semibold text-emerald-100">{pillar.label}</p>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{pillar.summary}</p>
+    </article>
+  );
+}
+
+function V100LifeLoopBoundaryCard({ boundary }: { boundary: V100LifeLoopBoundaryRule }) {
+  return (
+    <article className="rounded-sm border border-red-300/18 bg-red-400/7 p-2">
+      <p className="text-[11px] font-semibold text-red-100">{boundary.label}</p>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{boundary.summary}</p>
+    </article>
+  );
+}
+
+function V100LifeLoopPanel({
+  overview,
+  onRunLifeLoop,
+}: {
+  overview: V100LowRankLifeLoopOverview;
+  onRunLifeLoop: () => void;
+}) {
+  const canRun = overview.status === 'release_loop_ready';
+
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-emerald-300/22 bg-rg-ink-900/40 p-3"
+      data-testid="free-goal-v100-life-loop-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">v1.0 低阶 life loop 验收</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/52">{overview.publicSummary}</p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-emerald-300/25 px-2 py-1 text-[10px] text-emerald-200">
+          {overview.statusLabel}
+        </span>
+      </div>
+
+      <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-950/32 p-2 text-xs leading-relaxed text-rg-paper-200/62">
+        {overview.nextStep} 不写材料、价格、委托收益、route_entered/currentRoute/currentRegion 或正式地点。
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-4" data-testid="free-goal-v100-life-loop-checks">
+        {overview.checks.map(check => (
+          <V100LifeLoopCheckCard key={check.id} check={check} />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={onRunLifeLoop}
+        disabled={!canRun}
+        className="w-full rounded-sm border border-emerald-300/35 bg-emerald-300/10 px-3 py-2 text-xs font-semibold text-emerald-100 transition-micro hover:bg-emerald-300/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+        data-testid="free-goal-v100-life-loop-run"
+      >
+        验收低阶 life loop
+      </button>
+
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-4" data-testid="free-goal-v100-life-loop-pillars">
+        {overview.releasePillars.map(pillar => (
+          <V100LifeLoopPillarCard key={pillar.id} pillar={pillar} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2" data-testid="free-goal-v100-life-loop-redlines">
+        {overview.deferredRedlines.map(boundary => (
+          <V100LifeLoopBoundaryCard key={boundary.id} boundary={boundary} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function RulingCard({ adjudication }: { adjudication: WorldIntentAdjudication }) {
   const ruling = adjudication.ruling;
   const goal = adjudication.suggestedPlayerGoal;
@@ -1291,6 +1392,7 @@ export function FreeGoalPanel() {
     resolveV018QingmaoCandidateContinuationAction,
     resolveV018QingmaoPressureBackflowAction,
     resolveV100QingmaoSouthernBorderContinuityAction,
+    resolveV100LowRankLifeLoopReleaseAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -1314,6 +1416,7 @@ export function FreeGoalPanel() {
     resolveV018QingmaoCandidateContinuationAction: state.resolveV018QingmaoCandidateContinuationAction,
     resolveV018QingmaoPressureBackflowAction: state.resolveV018QingmaoPressureBackflowAction,
     resolveV100QingmaoSouthernBorderContinuityAction: state.resolveV100QingmaoSouthernBorderContinuityAction,
+    resolveV100LowRankLifeLoopReleaseAction: state.resolveV100LowRankLifeLoopReleaseAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -1375,6 +1478,9 @@ export function FreeGoalPanel() {
     livingWorldState,
   }), [livingWorldState]);
   const v100ContinuityOverview = useMemo(() => buildV100QingmaoSouthernBorderContinuityOverview({
+    livingWorldState,
+  }), [livingWorldState]);
+  const v100LifeLoopOverview = useMemo(() => buildV100LowRankLifeLoopOverview({
     livingWorldState,
   }), [livingWorldState]);
   const canPrepareSupplyFeeding = useMemo(() => {
@@ -1506,6 +1612,11 @@ export function FreeGoalPanel() {
 
   const handleV100Continuity = () => {
     const result = resolveV100QingmaoSouthernBorderContinuityAction();
+    setMessage(result.message);
+  };
+
+  const handleV100LifeLoop = () => {
+    const result = resolveV100LowRankLifeLoopReleaseAction();
     setMessage(result.message);
   };
 
@@ -1678,6 +1789,11 @@ export function FreeGoalPanel() {
       <V100ContinuityPanel
         overview={v100ContinuityOverview}
         onRunContinuity={handleV100Continuity}
+      />
+
+      <V100LifeLoopPanel
+        overview={v100LifeLoopOverview}
+        onRunLifeLoop={handleV100LifeLoop}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

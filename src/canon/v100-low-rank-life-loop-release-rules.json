@@ -1,0 +1,203 @@
+{
+  "version": "v1.0.0-b2",
+  "sourceReview": {
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v1.0.0/2026-05-19-v100-three-pack-intake-review-summary.md"
+    ],
+    "sourcePackages": [
+      "v100_low_rank_life_loop_release_boundary_pack",
+      "v100_qingmao_southern_border_continuity_pack"
+    ],
+    "sourcePolicy": "MiroFish output is candidate-only and rewritten into RebornG-owned v1.0 life-loop release rules/tests/UI boundaries."
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "recipe_unlock",
+      "refinement_success",
+      "formal_market_trade",
+      "black_market_trade",
+      "shop_inventory",
+      "price_table",
+      "commission_profit",
+      "formal_task",
+      "route_entered",
+      "current_route",
+      "current_region",
+      "location_unlock",
+      "region_unlock",
+      "faction_transfer",
+      "standing_delta",
+      "npc_life_result",
+      "npc_capture_result",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion",
+      "save_format_bump",
+      "bff_backend"
+    ],
+    "visibleBoundaryLines": [
+      "v1.0 低阶 life loop 只验收修行、补给、蛊虫维护、炼蛊边界、战斗准备、交易窗口和社会压力是否可读。",
+      "当前不写材料库存、价格表、正式任务收益、正式路线状态或地点进入。",
+      "低阶循环可以让玩家看懂缺口和下一步，但不能直接跳境界、改资质、授予蛊虫或蛊方。",
+      "交易、委托、黑市和商队都保持候选/边界语义，不开放正式结算。"
+    ]
+  },
+  "loopChecks": [
+    {
+      "id": "v100_loop_continuity",
+      "label": "路线连续性",
+      "summary": "b1 已确认青茅到南疆早期连续体验候选。",
+      "requiredRefs": [
+        "v100_qingmao_southern_border_continuity_acceptance"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_continuity_3c8906dba8f9"
+      ]
+    },
+    {
+      "id": "v100_loop_cultivation_pressure",
+      "label": "修行压力",
+      "summary": "低阶修行以真元、资质、元石和时间压力为可读缺口，不直接改资质或跳境界。",
+      "requiredRefs": [
+        "gate:low_rank_cultivation_context"
+      ],
+      "blocking": false,
+      "sourceItemIds": [
+        "v100_life_loop_1f90f0e38ba4"
+      ]
+    },
+    {
+      "id": "v100_loop_supply_feeding",
+      "label": "补给/喂养",
+      "summary": "补给和酒虫食料压力已整理为路线前置，不发材料或库存。",
+      "requiredRefs": [
+        "qingmao_supply_feeding_preparation_baseline"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_life_loop_051adb843344",
+        "v100_life_loop_dac23b797b63"
+      ]
+    },
+    {
+      "id": "v100_loop_refinement_boundary",
+      "label": "炼养用边界",
+      "summary": "残方、炼蛊失败代价和缺项可读，但不判定炼蛊成功或蛊方解锁。",
+      "requiredRefs": [
+        "qingmao_refinement_fragment_boundary_baseline"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_life_loop_dac23b797b63"
+      ]
+    },
+    {
+      "id": "v100_loop_market_window",
+      "label": "交易窗口",
+      "summary": "商队/市场窗口已可见，只能询价、递话和展示担保压力。",
+      "requiredRefs": [
+        "qingmao_market_window_candidate_baseline"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_life_loop_74838e510343"
+      ]
+    },
+    {
+      "id": "v100_loop_route_pressure",
+      "label": "路线压力",
+      "summary": "补给、追索、身份和商队担保压力已回流到路线语义。",
+      "requiredRefs": [
+        "v018_qingmao_route_pressure_backflow_baseline"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_life_loop_a679642bc73b"
+      ]
+    },
+    {
+      "id": "v100_loop_combat_boundary",
+      "label": "战斗准备",
+      "summary": "低阶战斗只强调准备、蛊虫配合、地形、队伍信任和撤退成本，不写胜负结论。",
+      "requiredRefs": [
+        "gate:combat_boundary_only"
+      ],
+      "blocking": false,
+      "sourceItemIds": [
+        "v100_life_loop_e4eb2760bbda"
+      ]
+    },
+    {
+      "id": "v100_loop_commission_boundary",
+      "label": "委托/社会压力",
+      "summary": "委托、资格、担保、报酬不确定和旁观者记录只作为压力候选。",
+      "requiredRefs": [
+        "gate:commission_social_pressure_boundary"
+      ],
+      "blocking": false,
+      "sourceItemIds": [
+        "v100_life_loop_0ffda523e8a7",
+        "v100_life_loop_a679642bc73b"
+      ]
+    }
+  ],
+  "releasePillars": [
+    {
+      "id": "v100_life_pillar_cultivation",
+      "label": "修行",
+      "summary": "真元、资质、元石和时间压力是低阶循环核心。",
+      "sourceItemIds": [
+        "v100_life_loop_1f90f0e38ba4"
+      ]
+    },
+    {
+      "id": "v100_life_pillar_supply",
+      "label": "生存补给",
+      "summary": "住宿、食水、元石和基础材料短缺形成取舍。",
+      "sourceItemIds": [
+        "v100_life_loop_051adb843344"
+      ]
+    },
+    {
+      "id": "v100_life_pillar_gu",
+      "label": "蛊虫维护",
+      "summary": "蛊虫使用需要喂养、消耗、维护、适配和失败风险。",
+      "sourceItemIds": [
+        "v100_life_loop_dac23b797b63"
+      ]
+    },
+    {
+      "id": "v100_life_pillar_trade",
+      "label": "交易/委托",
+      "summary": "交易和委托只开放低阶询价、担保、信誉和失败成本边界。",
+      "sourceItemIds": [
+        "v100_life_loop_74838e510343",
+        "v100_life_loop_0ffda523e8a7"
+      ]
+    }
+  ],
+  "deferredRedlines": [
+    {
+      "id": "v100_life_redline_reward",
+      "label": "正式收益",
+      "summary": "不得直接给正式任务成功、奖励结算、材料库存、价格表或地点解锁。",
+      "sourceItemIds": [
+        "v100_life_loop_0ffda523e8a7",
+        "v100_life_loop_74838e510343"
+      ]
+    },
+    {
+      "id": "v100_life_redline_power_jump",
+      "label": "越级成长",
+      "summary": "不得直接改资质、跳境界、授予高阶蛊虫、完整蛊方或高阶杀招结论。",
+      "sourceItemIds": [
+        "v100_life_loop_1f90f0e38ba4",
+        "v100_life_loop_dac23b797b63",
+        "v100_life_loop_53d232289edd"
+      ]
+    }
+  ]
+}
