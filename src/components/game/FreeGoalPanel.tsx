@@ -33,6 +33,14 @@ import {
   type QingmaoFactionGoalPrerequisiteCard,
   type QingmaoFactionGoalPrerequisiteResult,
 } from '../../engine/v014-qingmao-faction-goal-prerequisites';
+import {
+  buildV018QingmaoRouteMultiRegionOverview,
+  type V018EntryBoundaryPreview,
+  type V018RegionFactDraft,
+  type V018RouteMilestonePreview,
+  type V018RouteMultiRegionOverview,
+  type V018RoutePressurePreview,
+} from '../../engine/v018-qingmao-route-multi-region';
 
 const EMPTY_LOCAL_ACTION_LEDGER: LocalActionLedgerEntry[] = [];
 
@@ -129,6 +137,21 @@ const FACTION_GOAL_DISPOSITION_LABELS: Record<string, string> = {
   merchant_contact_prerequisites: '商队前置',
   city_entry_deferred: '城市入口延期',
   identity_gap_prerequisites: '身份缺口',
+};
+
+const V018_PRESSURE_AXIS_LABELS: Record<string, string> = {
+  supply: '补给',
+  pursuit: '追索',
+  identity: '身份',
+  caravan_guarantee: '商队担保',
+  faction_residual: '势力残余',
+  npc_memory: '公开记忆',
+};
+
+const V018_ENTRY_KIND_LABELS: Record<string, string> = {
+  caravan: '商队',
+  rogue: '散修',
+  shang_outer: '商家城外缘',
 };
 
 function socialRiskLabel(value: string): string {
@@ -837,6 +860,201 @@ function FactionGoalPrerequisitePanel({
   );
 }
 
+function V018MilestoneCard({ milestone }: { milestone: V018RouteMilestonePreview }) {
+  return (
+    <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/28 p-2">
+      <div className="flex items-start justify-between gap-2">
+        <p className="min-w-0 text-xs font-semibold text-rg-paper-100">{milestone.label}</p>
+        <span className={`shrink-0 rounded-sm border px-2 py-0.5 text-[10px] ${
+          milestone.satisfied
+            ? 'border-emerald-300/20 text-emerald-100/70'
+            : 'border-rg-gold/20 text-rg-gold/70'
+        }`}>
+          {milestone.satisfied ? '已满足' : '待补'}
+        </span>
+      </div>
+      <p className="mt-1 line-clamp-2 text-[11px] leading-relaxed text-rg-paper-200/55">{milestone.summary}</p>
+    </article>
+  );
+}
+
+function V018RegionFactCard({ fact }: { fact: V018RegionFactDraft }) {
+  return (
+    <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/24 p-2">
+      <div className="flex items-start justify-between gap-2">
+        <p className="min-w-0 text-xs font-semibold text-rg-paper-100">{fact.title}</p>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/18 px-2 py-0.5 text-[10px] text-rg-paper-200/45">
+          {fact.visibility === 'player_visible' ? '玩家可见' : '公开'}
+        </span>
+      </div>
+      <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/58">{fact.summary}</p>
+      <p className="mt-1 text-[10px] text-rg-paper-200/34">
+        不开放完整地图 · 不写地点
+      </p>
+    </article>
+  );
+}
+
+function V018PressureCard({ pressure }: { pressure: V018RoutePressurePreview }) {
+  return (
+    <article className={`rounded-sm border p-2 ${
+      pressure.active
+        ? 'border-rg-gold/25 bg-rg-gold/7'
+        : 'border-rg-ink-300/15 bg-rg-ink-700/24'
+    }`}>
+      <div className="flex items-start justify-between gap-2">
+        <p className="min-w-0 text-xs font-semibold text-rg-paper-100">
+          {V018_PRESSURE_AXIS_LABELS[pressure.pressureAxis] || pressure.pressureAxis}
+        </p>
+        <span className="shrink-0 rounded-sm border border-rg-ink-300/18 px-2 py-0.5 text-[10px] text-rg-paper-200/45">
+          {pressure.active ? '已命中' : '候选'} · {socialRiskLabel(pressure.severity)}
+        </span>
+      </div>
+      <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/58">{pressure.publicReason}</p>
+      <div className="mt-1 flex flex-wrap gap-1">
+        {pressure.blockedEscalations.slice(0, 3).map(item => (
+          <span key={item} className="rounded-sm border border-red-300/12 bg-red-400/5 px-1.5 py-0.5 text-[10px] text-red-100/45">
+            禁止 {item}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function V018EntryBoundaryCard({ entry }: { entry: V018EntryBoundaryPreview }) {
+  return (
+    <article className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/24 p-2">
+      <div className="flex items-start justify-between gap-2">
+        <p className="min-w-0 text-xs font-semibold text-rg-paper-100">{entry.title}</p>
+        <span className="shrink-0 rounded-sm border border-rg-gold/18 px-2 py-0.5 text-[10px] text-rg-gold/75">
+          {V018_ENTRY_KIND_LABELS[entry.entryKind] || entry.entryKind}
+        </span>
+      </div>
+      <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/58">{entry.publicSummary}</p>
+      <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <div className="rounded-sm bg-rg-ink-900/35 p-2">
+          <p className="text-[10px] font-semibold text-rg-paper-100">可做小步</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {entry.allowedNextSteps.slice(0, 2).join('；')}
+          </p>
+        </div>
+        <div className="rounded-sm bg-rg-ink-900/35 p-2">
+          <p className="text-[10px] font-semibold text-rg-paper-100">仍缺前置</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/50">
+            {entry.missingPrerequisites.length > 0 ? entry.missingPrerequisites.slice(0, 2).join('；') : '外缘条件已可读'}
+          </p>
+        </div>
+      </div>
+      <p className="mt-2 text-[10px] text-rg-paper-200/34">
+        外缘边界 · 不转阵营 · 不开完整城市 · 不发奖励
+      </p>
+    </article>
+  );
+}
+
+function V018RouteMultiRegionPanel({
+  overview,
+  onRunThreshold,
+  onRunContinuation,
+  onRunPressure,
+}: {
+  overview: V018RouteMultiRegionOverview;
+  onRunThreshold: () => void;
+  onRunContinuation: () => void;
+  onRunPressure: () => void;
+}) {
+  const canRunThreshold = overview.stage === 'threshold_ready';
+  const canRunContinuation = overview.stage === 'commitment_preview' || overview.stage === 'candidate_continuation';
+  const canRunPressure = overview.stage === 'commitment_preview' || overview.stage === 'candidate_continuation';
+
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/22 bg-rg-ink-900/42 p-3"
+      data-testid="free-goal-v018-route-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-paper-100">v0.18 南疆路线承接</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/48">
+            {overview.publicSummary}
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-gold/25 px-2 py-1 text-[10px] text-rg-gold">
+          {overview.stageLabel}
+        </span>
+      </div>
+
+      <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-950/32 p-2 text-xs leading-relaxed text-rg-paper-200/62">
+        {overview.nextStep} 当前不写 route_entered，不开放地点、阵营、奖励或 NPC 生死。
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" data-testid="free-goal-v018-milestones">
+        {overview.milestones.slice(0, 6).map(milestone => (
+          <V018MilestoneCard key={milestone.id} milestone={milestone} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+        <button
+          type="button"
+          onClick={onRunThreshold}
+          disabled={!canRunThreshold}
+          className="rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+          data-testid="free-goal-v018-route-threshold"
+        >
+          确认门槛
+        </button>
+        <button
+          type="button"
+          onClick={onRunContinuation}
+          disabled={!canRunContinuation}
+          className="rounded-sm border border-sky-300/30 bg-sky-300/10 px-3 py-2 text-xs font-semibold text-sky-100 transition-micro hover:bg-sky-300/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+          data-testid="free-goal-v018-candidate-continuation"
+        >
+          候选承接
+        </button>
+        <button
+          type="button"
+          onClick={onRunPressure}
+          disabled={!canRunPressure}
+          className="rounded-sm border border-red-300/30 bg-red-400/10 px-3 py-2 text-xs font-semibold text-red-100 transition-micro hover:bg-red-400/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+          data-testid="free-goal-v018-pressure-backflow"
+        >
+          回流压力
+        </button>
+      </div>
+
+      <div className="space-y-2" data-testid="free-goal-v018-region-facts">
+        <p className="text-[11px] font-semibold text-rg-paper-100">南疆低阶公开事实</p>
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+          {overview.regionFacts.slice(0, 6).map(fact => (
+            <V018RegionFactCard key={fact.id} fact={fact} />
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-2" data-testid="free-goal-v018-route-pressure">
+        <p className="text-[11px] font-semibold text-rg-paper-100">补给 / 追索 / 身份压力</p>
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+          {overview.pressurePreviews.slice(0, 4).map(pressure => (
+            <V018PressureCard key={pressure.id} pressure={pressure} />
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-2" data-testid="free-goal-v018-entry-boundaries">
+        <p className="text-[11px] font-semibold text-rg-paper-100">商队 / 散修 / 商家城外缘</p>
+        <div className="space-y-2">
+          {overview.entryBoundaries.map(entry => (
+            <V018EntryBoundaryCard key={entry.id} entry={entry} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function RulingCard({ adjudication }: { adjudication: WorldIntentAdjudication }) {
   const ruling = adjudication.ruling;
   const goal = adjudication.suggestedPlayerGoal;
@@ -978,6 +1196,9 @@ export function FreeGoalPanel() {
     resolveQingmaoRefinementBoundaryAction,
     resolveQingmaoMarketWindowAction,
     resolveQingmaoGrayTradeBoundaryAction,
+    resolveV018QingmaoRouteEntryThresholdAction,
+    resolveV018QingmaoCandidateContinuationAction,
+    resolveV018QingmaoPressureBackflowAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -997,6 +1218,9 @@ export function FreeGoalPanel() {
     resolveQingmaoRefinementBoundaryAction: state.resolveQingmaoRefinementBoundaryAction,
     resolveQingmaoMarketWindowAction: state.resolveQingmaoMarketWindowAction,
     resolveQingmaoGrayTradeBoundaryAction: state.resolveQingmaoGrayTradeBoundaryAction,
+    resolveV018QingmaoRouteEntryThresholdAction: state.resolveV018QingmaoRouteEntryThresholdAction,
+    resolveV018QingmaoCandidateContinuationAction: state.resolveV018QingmaoCandidateContinuationAction,
+    resolveV018QingmaoPressureBackflowAction: state.resolveV018QingmaoPressureBackflowAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -1054,6 +1278,9 @@ export function FreeGoalPanel() {
     playerFactionId: currentFactionId,
     maxCards: 4,
   }), [livingWorldState, rawText, preview, sortedGoals, selectedStartProfileId, currentFactionId]);
+  const v018RouteOverview = useMemo(() => buildV018QingmaoRouteMultiRegionOverview({
+    livingWorldState,
+  }), [livingWorldState]);
   const canPrepareSupplyFeeding = useMemo(() => {
     const facts = livingWorldState?.knownFacts || {};
     const hasEscapeGoal = sortedGoals.some(goal => (
@@ -1163,6 +1390,21 @@ export function FreeGoalPanel() {
 
   const handleGrayTradeBoundary = () => {
     const result = resolveQingmaoGrayTradeBoundaryAction();
+    setMessage(result.message);
+  };
+
+  const handleV018RouteThreshold = () => {
+    const result = resolveV018QingmaoRouteEntryThresholdAction();
+    setMessage(result.message);
+  };
+
+  const handleV018CandidateContinuation = () => {
+    const result = resolveV018QingmaoCandidateContinuationAction();
+    setMessage(result.message);
+  };
+
+  const handleV018PressureBackflow = () => {
+    const result = resolveV018QingmaoPressureBackflowAction();
     setMessage(result.message);
   };
 
@@ -1323,6 +1565,13 @@ export function FreeGoalPanel() {
       <GrayTradeBoundaryPanel
         canExecute={canRunGrayTradeBoundary}
         onExecute={handleGrayTradeBoundary}
+      />
+
+      <V018RouteMultiRegionPanel
+        overview={v018RouteOverview}
+        onRunThreshold={handleV018RouteThreshold}
+        onRunContinuation={handleV018CandidateContinuation}
+        onRunPressure={handleV018PressureBackflow}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

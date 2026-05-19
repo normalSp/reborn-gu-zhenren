@@ -1,0 +1,420 @@
+{
+  "version": "v0.18.0",
+  "sourceReview": {
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v0.18.0/2026-05-19-v018-three-pack-intake-review-summary.md"
+    ],
+    "sourcePackages": [
+      "v018_route_entry_state_and_milestones_pack",
+      "v018_southern_border_low_rank_region_fact_cards_pack",
+      "v018_post_qingmao_pressure_reaction_pack"
+    ],
+    "sourcePolicy": "MiroFish output is candidate-only and rewritten into RebornG-owned rules."
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "route_entered",
+      "location_unlock",
+      "region_unlock",
+      "current_region_change",
+      "faction_transfer",
+      "faction_identity_change",
+      "formal_warrant",
+      "formal_recruitment",
+      "formal_task",
+      "standing_delta",
+      "reward",
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "recipe_unlock",
+      "formal_trade",
+      "npc_life_result",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "hidden_fact_reveal",
+      "canon_anchor_change",
+      "deepseek_authority_expansion",
+      "save_format_bump",
+      "bff_backend"
+    ],
+    "quarantinedItemIds": [
+      "v018_hidden_982eba1c3730"
+    ],
+    "visibleBoundaryLines": [
+      "当前仍不写 route_entered。",
+      "当前不开放完整南疆地图、商家城、阵营转移或路线奖励。",
+      "DeepSeek 只能叙事本地 route view，不能决定地点、奖励、阵营或 NPC 命运。",
+      "MiroFish 隔离项只能保留为 human_review_only，不进入 UI、DeepSeek 或 runtime facts。"
+    ]
+  },
+  "routeEntryMilestones": [
+    {
+      "id": "milestone_escape_goal",
+      "label": "离山目标",
+      "summary": "玩家已把离开青茅山登记为长期目标。",
+      "requirement": "escape_goal",
+      "sourceItemIds": [
+        "v018_2f9aa228868f"
+      ]
+    },
+    {
+      "id": "milestone_route_preparation",
+      "label": "路线准备",
+      "summary": "已完成青茅外路、补给、追索与公开理由的第一层路线准备。",
+      "requirement": "route_preparation",
+      "sourceItemIds": [
+        "v018_cb57e3cf0c51"
+      ]
+    },
+    {
+      "id": "milestone_cover_tracks",
+      "label": "遮掩痕迹",
+      "summary": "公开理由、行动节奏和路线痕迹已整理，但追索风险没有被消除。",
+      "requirement": "cover_tracks",
+      "sourceItemIds": [
+        "v018_90afe271499d",
+        "v018_b033bdf5b36a"
+      ]
+    },
+    {
+      "id": "milestone_mountain_pass_candidate",
+      "label": "山路候选",
+      "summary": "山路逃离被承接为候选路线；这不是地点进入。",
+      "requirement": "mountain_pass_candidate",
+      "sourceItemIds": [
+        "v018_cb57e3cf0c51"
+      ]
+    },
+    {
+      "id": "milestone_supply_feeding",
+      "label": "补给/喂养",
+      "summary": "离山补给、落脚遮掩和酒虫食料压力已整理为前置清单。",
+      "requirement": "supply_feeding",
+      "sourceItemIds": [
+        "v018_b2d4a7c4234f",
+        "v018_546dea8c497f"
+      ]
+    },
+    {
+      "id": "milestone_commitment_threshold",
+      "label": "承诺前门槛",
+      "summary": "准备、遮掩、山路候选与补给缺口已汇合成离山承诺前门槛；仍不写 route_entered。",
+      "requirement": "route_threshold_commitment",
+      "sourceItemIds": [
+        "v018_2f9aa228868f",
+        "v018_546dea8c497f"
+      ]
+    }
+  ],
+  "regionFactDrafts": [
+    {
+      "id": "v018_region_public_route_area",
+      "title": "南疆低阶公开路线语义",
+      "regionRef": "southern_border_low_rank_routes",
+      "visibility": "public",
+      "summary": "南疆低阶路线先按山路、商队行进、临时落脚和风险区分展示，不开放完整地图。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_590bbc871249"
+      ],
+      "blockedImplications": [
+        "full_map_unlock",
+        "formal_location_unlock",
+        "formal_reward"
+      ]
+    },
+    {
+      "id": "v018_region_mountain_road",
+      "title": "山路/野外危险通行",
+      "regionRef": "mountain_road_outer_wild",
+      "visibility": "public",
+      "summary": "山路和野外是低阶蛊师可接触但高风险的通行环境，重点是移动成本、遭遇风险和补给消耗。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_d741f932b231",
+        "v018_b37421ede3f9"
+      ],
+      "blockedImplications": [
+        "route_entered",
+        "pursuit_result",
+        "hidden_fact_reveal"
+      ]
+    },
+    {
+      "id": "v018_region_caravan_context",
+      "title": "商队公共语义",
+      "regionRef": "southern_border_caravan_window",
+      "visibility": "public",
+      "summary": "商队可作为移动、消息和交易窗口的公开语义来源；随行、交易和雇佣仍要本地审核。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_369305cf6cca",
+        "v018_93086c91c682"
+      ],
+      "blockedImplications": [
+        "caravan_join",
+        "formal_trade",
+        "formal_recruitment"
+      ]
+    },
+    {
+      "id": "v018_region_inn_market_context",
+      "title": "客栈/酒肆/交易点",
+      "regionRef": "low_rank_inn_market_outer",
+      "visibility": "public",
+      "summary": "客栈、酒肆和小规模交易点只作为住宿、消息和花费压力的事实卡候选。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_6ec56f4521c6",
+        "v018_719c1f92eabf"
+      ],
+      "blockedImplications": [
+        "formal_shop_inventory",
+        "formal_price_table",
+        "currency_delta"
+      ]
+    },
+    {
+      "id": "v018_region_shang_outer_boundary",
+      "title": "商家城外缘公共入口",
+      "regionRef": "shang_clan_city_outer_public",
+      "visibility": "public",
+      "summary": "商家城相关内容只做外缘公共语义：商队、客栈、进入条件和交易窗口；不开放完整城市结构。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_587dd975ce2c",
+        "v018_ad0d627a605f"
+      ],
+      "blockedImplications": [
+        "full_shang_clan_city",
+        "auction",
+        "battle_stage",
+        "inner_city",
+        "formal_task"
+      ]
+    },
+    {
+      "id": "v018_region_pursuit_risk_layer",
+      "title": "追索/怀疑风险层",
+      "regionRef": "post_qingmao_public_pressure",
+      "visibility": "player_visible",
+      "summary": "追索、怀疑和野外危险只进入玩家可见风险层，不产生正式通缉或追捕结论。",
+      "allowedPromptUse": true,
+      "sourceItemIds": [
+        "v018_2398d94c9f8e",
+        "v018_de49b5bab5c1"
+      ],
+      "blockedImplications": [
+        "formal_warrant",
+        "pursuit_success",
+        "pursuit_failure",
+        "npc_capture_result"
+      ]
+    }
+  ],
+  "routePressureDrafts": [
+    {
+      "id": "v018_pressure_supply_gap",
+      "pressureAxis": "supply",
+      "severity": "medium",
+      "publicReason": "干粮、水、住宿、元石和食料压力会影响离山路线，但当前不发放资源。",
+      "ledgerInputs": [
+        "qingmao_supply_feeding_preparation_baseline",
+        "qingmao_market_window_candidate_baseline"
+      ],
+      "sourceItemIds": [
+        "v018_b2d4a7c4234f",
+        "v018_788203acb592"
+      ],
+      "blockedEscalations": [
+        "material_reward",
+        "currency_delta",
+        "formal_trade"
+      ]
+    },
+    {
+      "id": "v018_pressure_pursuit",
+      "pressureAxis": "pursuit",
+      "severity": "high",
+      "publicReason": "追索只能表现为搜寻、盘查、绕行成本和可信度下降，不结算追捕成败。",
+      "ledgerInputs": [
+        "qingmao_escape_tracks_cover_baseline",
+        "qingmao_mountain_pass_route_continuation_candidate"
+      ],
+      "sourceItemIds": [
+        "v018_b033bdf5b36a",
+        "v018_7d47b3832c32"
+      ],
+      "blockedEscalations": [
+        "formal_warrant",
+        "pursuit_success",
+        "pursuit_failure",
+        "npc_capture_result"
+      ]
+    },
+    {
+      "id": "v018_pressure_identity",
+      "pressureAxis": "identity",
+      "severity": "medium",
+      "publicReason": "身份遮掩、公开理由和被询问风险会影响路线窗口，但不改写玩家阵营身份。",
+      "ledgerInputs": [
+        "qingmao_escape_tracks_cover_baseline",
+        "qingmao_market_window_candidate_baseline",
+        "qingmao_gray_trade_commission_boundary_baseline"
+      ],
+      "sourceItemIds": [
+        "v018_90afe271499d",
+        "v018_ea22161a4e1a"
+      ],
+      "blockedEscalations": [
+        "faction_transfer",
+        "faction_identity_change",
+        "identity_wash"
+      ]
+    },
+    {
+      "id": "v018_pressure_caravan_guarantee",
+      "pressureAxis": "caravan_guarantee",
+      "severity": "medium",
+      "publicReason": "商队随行、递话或交易需要可信公共理由、担保或低风险接触窗口。",
+      "ledgerInputs": [
+        "qingmao_market_window_candidate_baseline",
+        "v018_qingmao_route_candidate_continuation_view"
+      ],
+      "sourceItemIds": [
+        "v018_643b127a1e04",
+        "v018_93086c91c682"
+      ],
+      "blockedEscalations": [
+        "caravan_join",
+        "formal_recruitment",
+        "formal_trade"
+      ]
+    },
+    {
+      "id": "v018_pressure_faction_residual",
+      "pressureAxis": "faction_residual",
+      "severity": "high",
+      "publicReason": "三寨、古月、白家、熊家相关公开残余压力可进入账本，但不得生成正式声望、通缉或阵营变更。",
+      "ledgerInputs": [
+        "factionPressure",
+        "npcMemories",
+        "actionConsequences"
+      ],
+      "sourceItemIds": [
+        "v018_de49b5bab5c1",
+        "v018_87303ea29f43"
+      ],
+      "blockedEscalations": [
+        "standing_delta",
+        "formal_warrant",
+        "formal_recruitment",
+        "faction_transfer"
+      ]
+    },
+    {
+      "id": "v018_pressure_npc_public_memory",
+      "pressureAxis": "npc_memory",
+      "severity": "low",
+      "publicReason": "NPC 或群体只能保留公开可见的记忆候选，例如行踪、询问、交易或冲突印象。",
+      "ledgerInputs": [
+        "npcMemories",
+        "localActionLedger"
+      ],
+      "sourceItemIds": [
+        "v018_9f17da2833fd"
+      ],
+      "blockedEscalations": [
+        "hidden_motive_body",
+        "npc_life_result",
+        "npc_capture_result"
+      ]
+    }
+  ],
+  "entryBoundaries": [
+    {
+      "id": "v018_entry_caravan_outer",
+      "entryKind": "caravan",
+      "title": "商队同行/递话外缘",
+      "publicSummary": "可把商队作为路线、消息和低阶交易窗口，但随行需要公开理由、担保和补给账本。",
+      "prerequisites": [
+        "market_window",
+        "caravan_guarantee_pressure",
+        "public_reason"
+      ],
+      "allowedNextSteps": [
+        "整理担保口径",
+        "补齐可见补给",
+        "等待公开接触窗口"
+      ],
+      "blockedUpgrades": [
+        "caravan_join",
+        "formal_trade",
+        "formal_recruitment",
+        "location_unlock"
+      ],
+      "sourceItemIds": [
+        "v018_643b127a1e04",
+        "v018_369305cf6cca",
+        "v018_93086c91c682"
+      ]
+    },
+    {
+      "id": "v018_entry_rogue_survival",
+      "entryKind": "rogue",
+      "title": "散修/独行落脚外缘",
+      "publicSummary": "散修路线先展示低阶落脚、身份遮掩和野外风险，不直接洗白身份或获得独立势力身份。",
+      "prerequisites": [
+        "route_threshold_commitment",
+        "supply_pressure_reviewed",
+        "identity_pressure_reviewed"
+      ],
+      "allowedNextSteps": [
+        "确认短期落脚语义",
+        "检查补给缺口",
+        "接受追索/盘问风险"
+      ],
+      "blockedUpgrades": [
+        "identity_wash",
+        "faction_identity_change",
+        "formal_warrant",
+        "npc_life_result"
+      ],
+      "sourceItemIds": [
+        "v018_719c1f92eabf",
+        "v018_2398d94c9f8e",
+        "v018_ea22161a4e1a"
+      ]
+    },
+    {
+      "id": "v018_entry_shang_outer",
+      "entryKind": "shang_outer",
+      "title": "商家城外缘公共入口",
+      "publicSummary": "商家城只开放外缘公共入口语义：抵达线索、客栈/商队/交易窗口和进入条件，不开放完整城市。",
+      "prerequisites": [
+        "candidate_continuation",
+        "caravan_or_market_context",
+        "public_entry_reason"
+      ],
+      "allowedNextSteps": [
+        "记录外缘入口条件",
+        "继续收集公开事实卡",
+        "等待后续版本商家城专项"
+      ],
+      "blockedUpgrades": [
+        "full_shang_clan_city",
+        "auction",
+        "battle_stage",
+        "inner_city",
+        "formal_task",
+        "faction_transfer"
+      ],
+      "sourceItemIds": [
+        "v018_587dd975ce2c",
+        "v018_ad0d627a605f"
+      ]
+    }
+  ]
+}

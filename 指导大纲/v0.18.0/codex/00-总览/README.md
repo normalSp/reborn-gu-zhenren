@@ -1,7 +1,7 @@
 # RebornG v0.18.0 Codex 当前入口
 
 日期：2026-05-19
-状态：启动审查与范围冻结已批准；`a1/a2` 设计与资料门禁第一版完成，等待进入 `v0.18.0-b1`
+状态：本地开发里程碑完成；等待提交、推送与远端 CI 记录
 主题：`南疆路线与多区域承接`
 
 ## 定位
@@ -24,6 +24,14 @@
 - `v0.18.0-Git提交与推送计划.md`
 - `v0.18.0-a1-路线地点存档BFF设计门禁.md`
 - `v0.18.0-a2-MiroFish-intake与字段表.md`
+- `v0.18.0-b1-青茅离开正式门槛样板.md`
+- `v0.18.0-b2-路线候选承接第一刀.md`
+- `v0.18.0-b3-南疆低阶区域事实与路线面板.md`
+- `v0.18.0-b4-前期账本压力回流.md`
+- `v0.18.0-b5-商队散修商家城外缘入口边界.md`
+- `v0.18.0-b1-b5-Player-Advocate-100轮走查记录.md`
+- `v0.18.0-rc-Player-Advocate-60轮走查记录.md`
+- `v0.18.0-rc-质量收束记录.md`
 
 ## 主目标
 
@@ -35,12 +43,12 @@
 |---|---|---:|---|
 | a1 | 路线/地点/存档/BFF 设计门禁 | 否 | not_needed，已完成第一版 |
 | a2 | v0.18 MiroFish intake、字段表、测试矩阵 | 否 | 三包已交付并通过 intake |
-| b1 | 青茅离开路线正式门槛样板 | 是 | route entry package blocking if writing route state |
-| b2 | 路线状态第一刀或候选承接第一刀 | 是 | route entry package blocking |
-| b3 | 南疆低阶区域事实卡与路线面板 | 是 | region fact package preferred |
-| b4 | 前期账本影响后续补给、追索、身份压力 | 是 | reaction package preferred |
-| b5 | 商队/散修/商家城外缘公开入口边界 | 是 | carryover v0.14 package, optional refresh |
-| rc | 全量质量收束与 Player Advocate | 是 | no new package unless blocked |
+| b1 | 青茅离开路线正式门槛样板 | 是 | 已完成；existing v22 字段 |
+| b2 | 路线候选承接第一刀 | 是 | 已完成；未写 route state |
+| b3 | 南疆低阶区域事实卡与路线面板 | 是 | 已完成；只展示公开低阶事实 |
+| b4 | 前期账本影响后续补给、追索、身份压力 | 是 | 已完成；只显示压力，不结算结果 |
+| b5 | 商队/散修/商家城外缘公开入口边界 | 是 | 已完成；不开放完整城市/阵营 |
+| rc | 全量质量收束与 Player Advocate | 是 | 本地质量门通过 |
 
 ## 明确非目标
 
@@ -55,6 +63,8 @@
 - DeepSeek 直接决定路线进入、地点解锁、阵营、奖励或 NPC 命运。
 - 后端/BFF、云存档、自动部署；只做设计评估，除非用户单独批准。
 
-## 当前建议
+## 完成结论
 
-专家团建议下一步进入 `v0.18.0-b1 青茅离开路线正式门槛样板`。b1 只能使用 existing v22 字段和统一行动协议。真正进入 `route_entered`、新地点字段或 `SAVE_FORMAT_VERSION` 变更前必须再次停下来让用户拍板。
+`v0.18.0` 已完成为本地开发里程碑：玩家可以看到青茅离开门槛、候选路线承接、南疆低阶公开事实、前期账本压力回流，以及商队/散修/商家城外缘入口边界。所有 runtime 写入都限制在 existing v22 字段和本地 action ledger 内；未新增 `route_entered`、新地点字段、`SAVE_FORMAT_VERSION = 23`、正式地点/阵营/奖励/NPC 生死、BFF/backend 或 DeepSeek 权限。
+
+下一步应停下来做 `v0.19.0` 启动审查与范围冻结。真正进入正式 route/location state、完整南疆、完整商家城、正式阵营/任务/奖励或后端/BFF 前，必须再次让用户决策。

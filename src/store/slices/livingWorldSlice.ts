@@ -49,6 +49,12 @@ import {
   resolveQingmaoGrayTradeBoundaryAction,
   type QingmaoGrayTradeBoundaryResolution,
 } from '../../engine/v015-qingmao-gray-trade-boundary';
+import {
+  resolveV018QingmaoCandidateContinuationAction,
+  resolveV018QingmaoPressureBackflowAction,
+  resolveV018QingmaoRouteEntryThresholdAction,
+  type V018QingmaoRouteActionResolution,
+} from '../../engine/v018-qingmao-route-multi-region';
 import type { LivingPlayerGoalEntry, LivingWorldState } from '../../types';
 
 export interface WorldIntentPreviewResult {
@@ -156,6 +162,14 @@ export interface QingmaoGrayTradeBoundaryCommitResult {
   rejected: string[];
 }
 
+export interface V018QingmaoRouteActionCommitResult {
+  success: boolean;
+  message: string;
+  resolution: V018QingmaoRouteActionResolution;
+  applied: string[];
+  rejected: string[];
+}
+
 export interface LivingWorldSlice {
   livingWorldState: LivingWorldState;
   previewWorldIntentAction: (rawText: string) => WorldIntentPreviewResult;
@@ -171,10 +185,109 @@ export interface LivingWorldSlice {
   resolveQingmaoRefinementBoundaryAction: () => QingmaoRefinementBoundaryCommitResult;
   resolveQingmaoMarketWindowAction: () => QingmaoMarketWindowCommitResult;
   resolveQingmaoGrayTradeBoundaryAction: () => QingmaoGrayTradeBoundaryCommitResult;
+  resolveV018QingmaoRouteEntryThresholdAction: () => V018QingmaoRouteActionCommitResult;
+  resolveV018QingmaoCandidateContinuationAction: () => V018QingmaoRouteActionCommitResult;
+  resolveV018QingmaoPressureBackflowAction: () => V018QingmaoRouteActionCommitResult;
 }
 
 type SliceSet = (...args: any[]) => void;
 type SliceGet = () => any;
+
+function commitLivingWorldActionResolution(
+  set: SliceSet | undefined,
+  get: SliceGet | undefined,
+  resolution: V018QingmaoRouteActionResolution,
+  source: string,
+  logPrefix: string,
+): V018QingmaoRouteActionCommitResult {
+  const store = get?.() || {};
+  const shouldPatch = (
+    resolution.knownFacts.length > 0
+    || resolution.factionPressure.length > 0
+    || resolution.npcMemories.length > 0
+    || resolution.playerGoals.length > 0
+    || resolution.actionConsequences.length > 0
+  );
+  const patch = shouldPatch
+    ? applyLivingWorldPatch(store.livingWorldState, {
+      source: 'action_protocol',
+      worldClock: {
+        ...(store.livingWorldState?.worldClock || {}),
+        lastActionId: resolution.actionId,
+      },
+      knownFacts: resolution.knownFacts,
+      factionPressure: resolution.factionPressure,
+      npcMemories: resolution.npcMemories,
+      playerGoals: resolution.playerGoals,
+      actionConsequences: resolution.actionConsequences,
+    })
+    : {
+      state: store.livingWorldState,
+      applied: [],
+      rejected: resolution.rejectedReasons,
+    };
+
+  if (set) {
+    set((state: any) => {
+      const currentLedger = Array.isArray(state.sceneSessionState?.localActionLedger)
+        ? state.sceneSessionState.localActionLedger
+        : [];
+      const nextLedger = resolution.success
+        ? [
+          ...currentLedger.filter((entry: any) => entry?.id !== resolution.worldActionLedgerEntry.id),
+          resolution.worldActionLedgerEntry,
+        ].slice(-40)
+        : currentLedger;
+      return {
+        livingWorldState: patch.state,
+        sceneSessionState: state.sceneSessionState
+          ? {
+            ...state.sceneSessionState,
+            localActionLedger: nextLedger,
+          }
+          : state.sceneSessionState,
+        flags: {
+          ...(state.flags || {}),
+          lastWorldActionReturnContext: resolution.narrativeReturnContext,
+          lastLivingWorldPatch: {
+            source,
+            actionId: resolution.actionId,
+            success: resolution.success,
+            applied: patch.applied,
+            rejected: [...resolution.rejectedReasons, ...patch.rejected],
+          },
+        },
+      };
+    });
+  }
+
+  store.addGameLog?.('system', `${logPrefix}：${resolution.publicSummary}`, {
+    actionId: resolution.actionId,
+    routeId: resolution.routeId,
+    success: resolution.success,
+    stage: resolution.overview.stage,
+    knownFactIds: resolution.knownFacts.map(fact => fact.id),
+    factionPressureIds: resolution.factionPressure.map(entry => entry.id),
+    npcMemoryIds: resolution.npcMemories.map(entry => entry.id),
+    playerGoalIds: resolution.playerGoals.map(goal => goal.id),
+    actionConsequenceIds: resolution.actionConsequences.map(entry => entry.id),
+    visibleSourceRefs: resolution.visibleSourceRefs,
+    rewardPolicy: resolution.worldActionResolution.rewardPolicy,
+    forbiddenUpgrades: resolution.forbiddenUpgrades,
+    applied: patch.applied,
+    rejected: [...resolution.rejectedReasons, ...patch.rejected],
+  });
+
+  return {
+    success: resolution.success && patch.rejected.length === 0,
+    message: patch.rejected.length === 0
+      ? resolution.message
+      : `${resolution.message}；部分写入被拒绝：${patch.rejected.join('、')}`,
+    resolution,
+    applied: patch.applied,
+    rejected: [...resolution.rejectedReasons, ...patch.rejected],
+  };
+}
 
 export const createLivingWorldSlice = (
   set?: SliceSet,
@@ -1335,5 +1448,59 @@ export const createLivingWorldSlice = (
       applied: patch.applied,
       rejected: [...resolution.rejectedReasons, ...patch.rejected],
     };
+  },
+  resolveV018QingmaoRouteEntryThresholdAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveV018QingmaoRouteEntryThresholdAction({
+      livingWorldState: store.livingWorldState,
+      turn: store.turn,
+      sceneId: store.sceneSessionState?.sceneId,
+      locationId: store.sceneSessionState?.locationId,
+      selectedStartProfileId: store.selectedStartProfileId,
+      playerFactionId: store.timelineState?.factionId || store.currentFaction,
+    });
+    return commitLivingWorldActionResolution(
+      set,
+      get,
+      resolution,
+      'v018_qingmao_route_entry_threshold',
+      'v0.18青茅离山门槛',
+    );
+  },
+  resolveV018QingmaoCandidateContinuationAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveV018QingmaoCandidateContinuationAction({
+      livingWorldState: store.livingWorldState,
+      turn: store.turn,
+      sceneId: store.sceneSessionState?.sceneId,
+      locationId: store.sceneSessionState?.locationId,
+      selectedStartProfileId: store.selectedStartProfileId,
+      playerFactionId: store.timelineState?.factionId || store.currentFaction,
+    });
+    return commitLivingWorldActionResolution(
+      set,
+      get,
+      resolution,
+      'v018_qingmao_candidate_continuation',
+      'v0.18南疆路线候选承接',
+    );
+  },
+  resolveV018QingmaoPressureBackflowAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveV018QingmaoPressureBackflowAction({
+      livingWorldState: store.livingWorldState,
+      turn: store.turn,
+      sceneId: store.sceneSessionState?.sceneId,
+      locationId: store.sceneSessionState?.locationId,
+      selectedStartProfileId: store.selectedStartProfileId,
+      playerFactionId: store.timelineState?.factionId || store.currentFaction,
+    });
+    return commitLivingWorldActionResolution(
+      set,
+      get,
+      resolution,
+      'v018_qingmao_pressure_backflow',
+      'v0.18路线压力回流',
+    );
   },
 });
