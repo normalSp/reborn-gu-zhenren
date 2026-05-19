@@ -4,7 +4,7 @@
 
 - 分支：`codex/v013-npc-faction-reaction`
 - 阶段：`v1.0.0-process-1 预览回滚与观测清单`
-- 状态：流程文档已建立，本地 production smoke 通过，待提交/CI
+- 状态：流程文档已建立，本地 production smoke 与远端 CI 通过
 - MiroFish：不需要新包
 - 存档版本：`SAVE_FORMAT_VERSION = 22`，未变更
 - DeepSeek：`deepseek-v4-flash`，未扩权
@@ -30,8 +30,9 @@
 ## 待验证
 
 - `npm run check:production-preview`：通过，本地预览 `http://127.0.0.1:4182/?e2e=1`，无 P0/P1 runtime error。
+- Git：commit `0c2ed24 docs: 建立v1.0预览回滚与观测清单`，已推送。
+- GitHub Actions：run `26097693808` 通过。
 
 ## 下一步
 
-1. 提交/推送/等待 CI。
-2. 若通过，进入 `v1.0.0-rc`。
+1. 进入 `v1.0.0-rc`。
