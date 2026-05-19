@@ -60,6 +60,31 @@ describe('v0.11.0-a3 World Intent Engine first slice', () => {
     expect(treasureYellowHeaven.ruling.reasons.join('；')).toContain('凡人阶段不能正式交易');
   });
 
+  it('blocks immediate Theft Heaven inheritance and Shang city entry behind world prerequisites', () => {
+    const theftHeaven = adjudicateWorldIntent({
+      ...guyueContext,
+      rawText: '我要拿盗天魔尊传承',
+    });
+    const shangCity = adjudicateWorldIntent({
+      ...guyueContext,
+      rawText: '我要去商家城',
+    });
+
+    expect(theftHeaven.candidate.intentType).toBe('obtain_item');
+    expect(theftHeaven.candidate.targetRef).toBe('inheritance:theft_heaven_demon_venerable');
+    expect(theftHeaven.ruling.category).toBe('world_rule_blocked');
+    expect(theftHeaven.ruling.allowed).toBe(false);
+    expect(theftHeaven.ruling.visibleExplanation).toContain('遥远传闻');
+    expect(theftHeaven.route.forbiddenStateWrites).toContain('inventory');
+
+    expect(shangCity.candidate.intentType).toBe('travel');
+    expect(shangCity.candidate.targetRef).toBe('location:shang_clan_city_outer_edge');
+    expect(shangCity.ruling.category).toBe('requires_prerequisite');
+    expect(shangCity.ruling.allowed).toBe(false);
+    expect(shangCity.ruling.visibleExplanation).toContain('不能直接开放商家城核心区');
+    expect(shangCity.route.forbiddenStateWrites).toContain('locationUnlocks');
+  });
+
   it('separates Bai clan membership from cross-faction defection attempts', () => {
     const guyueToBai = adjudicateWorldIntent({
       ...guyueContext,
@@ -148,6 +173,20 @@ describe('v0.11.0-a3 World Intent Engine first slice', () => {
     expect(result.route.forbiddenStateWrites).toContain('npcDeath');
   });
 
+  it('blocks generic key NPC life results as a major IF deviation', () => {
+    const result = adjudicateWorldIntent({
+      ...guyueContext,
+      rawText: '我要杀死关键 NPC 改写正史核心因果',
+    });
+
+    expect(result.candidate.intentType).toBe('long_term_goal');
+    expect(result.candidate.targetRef).toBe('npc:key_character:death_or_capture');
+    expect(result.ruling.category).toBe('major_if_deviation');
+    expect(result.ruling.allowed).toBe(false);
+    expect(result.ruling.visibleExplanation).toContain('不能写 NPC 生死');
+    expect(result.route.forbiddenStateWrites).toContain('npcDeath');
+  });
+
   it('overrides DeepSeek candidates with local rulings and forbidden-output contracts', () => {
     const candidate = createIntentCandidate({
       ...guyueContext,
@@ -174,11 +213,14 @@ describe('v0.11.0-a3 World Intent Engine first slice', () => {
     }> = [
       { text: '我想搞到九转仙蛊', intentType: 'obtain_item', targetPrefix: 'item:rank_nine_gu', category: 'long_term_goal', allowed: false },
       { text: '能不能给我春秋蝉', intentType: 'obtain_item', targetPrefix: 'item:spring_autumn_cicada', category: 'world_rule_blocked', allowed: false },
+      { text: '我想拿盗天魔尊传承', intentType: 'obtain_item', targetPrefix: 'inheritance:theft_heaven_demon_venerable', category: 'world_rule_blocked', allowed: false },
       { text: '我想去宝黄天买东西', intentType: 'travel', targetPrefix: 'location:treasure_yellow_heaven', category: 'world_rule_blocked', allowed: false },
+      { text: '我想去商家城', intentType: 'travel', targetPrefix: 'location:shang_clan_city_outer_edge', category: 'requires_prerequisite', allowed: false },
       { text: '我想加入白家寨', intentType: 'join_faction', targetPrefix: 'faction:baijia_zhai', category: 'requires_prerequisite', allowed: false },
       { text: '我想盯着方源看他做什么', intentType: 'investigate', targetPrefix: 'npc:fang_yuan', category: 'available_with_cost', allowed: true },
       { text: '我想跑路离开青茅山', intentType: 'travel', targetPrefix: 'region:outside_qingmao', category: 'requires_prerequisite', allowed: false },
       { text: '有没有办法弄死白凝冰', intentType: 'long_term_goal', targetPrefix: 'npc:bai_ning_bing:defeat_or_kill', category: 'major_if_deviation', allowed: false },
+      { text: '我要杀死关键 NPC 改写正史核心因果', intentType: 'long_term_goal', targetPrefix: 'npc:key_character:death_or_capture', category: 'major_if_deviation', allowed: false },
       { text: '我要变强', intentType: 'long_term_goal', targetPrefix: 'goal:unclassified:', category: 'long_term_goal', allowed: false },
       { text: '我要赚钱', intentType: 'long_term_goal', targetPrefix: 'goal:unclassified:', category: 'long_term_goal', allowed: false },
       { text: '我要找机缘', intentType: 'investigate', targetPrefix: 'investigation:unknown:', category: 'available_with_cost', allowed: true },

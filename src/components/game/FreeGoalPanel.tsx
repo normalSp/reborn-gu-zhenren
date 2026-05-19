@@ -54,6 +54,14 @@ import {
   type V100LifeLoopPillarRule,
   type V100LowRankLifeLoopOverview,
 } from '../../engine/v100-low-rank-life-loop-release';
+import {
+  buildV100FreeIntentReleaseClosureOverview,
+  type V100FreeIntentBoundaryRule,
+  type V100FreeIntentPillarRule,
+  type V100FreeIntentReadinessPreview,
+  type V100FreeIntentReleaseClosureOverview,
+  type V100FreeIntentSamplePreview,
+} from '../../engine/v100-free-intent-release-closure';
 
 const EMPTY_LOCAL_ACTION_LEDGER: LocalActionLedgerEntry[] = [];
 
@@ -1247,6 +1255,135 @@ function V100LifeLoopPanel({
   );
 }
 
+function V100FreeIntentReadinessCard({ check }: { check: V100FreeIntentReadinessPreview }) {
+  return (
+    <article className={`rounded-sm border p-2 ${check.satisfied ? 'border-emerald-300/20 bg-emerald-300/8' : 'border-rg-gold/22 bg-rg-gold/8'}`}>
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-[11px] font-semibold text-rg-paper-100">{check.label}</p>
+        <span className={`text-[10px] ${check.satisfied ? 'text-emerald-200' : 'text-rg-gold'}`}>
+          {check.satisfied ? '已满足' : '缺前置'}
+        </span>
+      </div>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{check.summary}</p>
+    </article>
+  );
+}
+
+function V100FreeIntentSampleCard({ sample }: { sample: V100FreeIntentSamplePreview }) {
+  const refs = [...sample.prerequisiteRefs, ...sample.costRefs].slice(0, 4);
+  return (
+    <article className={`rounded-sm border p-2 ${sample.matchedExpected ? 'border-rg-ink-300/15 bg-rg-ink-950/32' : 'border-red-300/25 bg-red-400/8'}`}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <p className="text-[11px] font-semibold text-rg-paper-100">{sample.label}</p>
+          <p className="mt-0.5 text-[10px] text-rg-paper-200/40">{sample.rawText}</p>
+        </div>
+        <span className={`shrink-0 rounded-sm border px-1.5 py-0.5 text-[10px] ${sample.allowed ? 'border-emerald-300/25 text-emerald-200' : 'border-rg-gold/25 text-rg-gold'}`}>
+          {CATEGORY_LABELS[sample.category] || sample.category}
+        </span>
+      </div>
+      <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-100/68">{sample.summary}</p>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{sample.visibleExplanation}</p>
+      <div className="mt-2 grid grid-cols-2 gap-1.5 text-[10px] text-rg-paper-200/52">
+        <span className="rounded-sm bg-rg-ink-700/45 px-2 py-1">{sample.intentType}</span>
+        <span className="rounded-sm bg-rg-ink-700/45 px-2 py-1">风险 {riskLabel(sample.riskLevel)}</span>
+      </div>
+      {refs.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1">
+          {refs.map(ref => (
+            <span key={ref} className="rounded-sm border border-rg-ink-300/15 px-1.5 py-0.5 text-[9px] text-rg-paper-200/45">
+              {ref}
+            </span>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function V100FreeIntentPillarCard({ pillar }: { pillar: V100FreeIntentPillarRule }) {
+  return (
+    <article className="rounded-sm border border-rg-gold/20 bg-rg-gold/8 p-2">
+      <p className="text-[11px] font-semibold text-rg-gold">{pillar.label}</p>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/55">{pillar.summary}</p>
+    </article>
+  );
+}
+
+function V100FreeIntentBoundaryCard({ boundary }: { boundary: V100FreeIntentBoundaryRule }) {
+  return (
+    <article className="rounded-sm border border-red-300/18 bg-red-400/7 p-2">
+      <p className="text-[11px] font-semibold text-red-100">{boundary.label}</p>
+      <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/52">{boundary.summary}</p>
+    </article>
+  );
+}
+
+function V100FreeIntentClosurePanel({
+  overview,
+  onRunClosure,
+}: {
+  overview: V100FreeIntentReleaseClosureOverview;
+  onRunClosure: () => void;
+}) {
+  const canRun = overview.status === 'closure_ready';
+
+  return (
+    <section
+      className="space-y-3 rounded-sm border border-rg-gold/25 bg-rg-ink-900/45 p-3"
+      data-testid="free-goal-v100-intent-closure-panel"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs font-semibold text-rg-gold">v1.0 自由意图收束</p>
+          <p className="mt-1 text-[11px] leading-relaxed text-rg-paper-200/55">{overview.publicSummary}</p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-rg-gold/25 px-2 py-1 text-[10px] text-rg-gold">
+          {overview.statusLabel}
+        </span>
+      </div>
+
+      <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-950/32 p-2 text-xs leading-relaxed text-rg-paper-200/62">
+        {overview.nextStep} 不写九转蛊、盗天传承、正式地点、阵营转移、NPC 生死、隐藏事实或 DeepSeek 新权限。
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2" data-testid="free-goal-v100-intent-readiness">
+        {overview.readinessChecks.map(check => (
+          <V100FreeIntentReadinessCard key={check.id} check={check} />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={onRunClosure}
+        disabled={!canRun}
+        className="w-full rounded-sm border border-rg-gold/35 bg-rg-gold/10 px-3 py-2 text-xs font-semibold text-rg-gold transition-micro hover:bg-rg-gold/15 disabled:cursor-not-allowed disabled:border-rg-ink-300/15 disabled:bg-rg-ink-700/30 disabled:text-rg-paper-200/25"
+        data-testid="free-goal-v100-intent-closure-run"
+      >
+        验收自由意图收束
+      </button>
+
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2" data-testid="free-goal-v100-intent-samples">
+        {overview.intentSamples.map(sample => (
+          <V100FreeIntentSampleCard key={sample.id} sample={sample} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-3" data-testid="free-goal-v100-intent-pillars">
+        {overview.releasePillars.map(pillar => (
+          <V100FreeIntentPillarCard key={pillar.id} pillar={pillar} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-2" data-testid="free-goal-v100-intent-redlines">
+        {overview.deferredRedlines.map(boundary => (
+          <V100FreeIntentBoundaryCard key={boundary.id} boundary={boundary} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function RulingCard({ adjudication }: { adjudication: WorldIntentAdjudication }) {
   const ruling = adjudication.ruling;
   const goal = adjudication.suggestedPlayerGoal;
@@ -1393,6 +1530,7 @@ export function FreeGoalPanel() {
     resolveV018QingmaoPressureBackflowAction,
     resolveV100QingmaoSouthernBorderContinuityAction,
     resolveV100LowRankLifeLoopReleaseAction,
+    resolveV100FreeIntentReleaseClosureAction,
     resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction,
     livingWorldState,
@@ -1417,6 +1555,7 @@ export function FreeGoalPanel() {
     resolveV018QingmaoPressureBackflowAction: state.resolveV018QingmaoPressureBackflowAction,
     resolveV100QingmaoSouthernBorderContinuityAction: state.resolveV100QingmaoSouthernBorderContinuityAction,
     resolveV100LowRankLifeLoopReleaseAction: state.resolveV100LowRankLifeLoopReleaseAction,
+    resolveV100FreeIntentReleaseClosureAction: state.resolveV100FreeIntentReleaseClosureAction,
     resolveQingmaoFactionReactionBridgeAction: state.resolveQingmaoFactionReactionBridgeAction,
     resolveFangYuanPublicEvidenceAction: state.resolveFangYuanPublicEvidenceAction,
     livingWorldState: state.livingWorldState,
@@ -1483,6 +1622,11 @@ export function FreeGoalPanel() {
   const v100LifeLoopOverview = useMemo(() => buildV100LowRankLifeLoopOverview({
     livingWorldState,
   }), [livingWorldState]);
+  const v100IntentClosureOverview = useMemo(() => buildV100FreeIntentReleaseClosureOverview({
+    livingWorldState,
+    selectedStartProfileId,
+    playerFactionId: currentFactionId,
+  }), [livingWorldState, selectedStartProfileId, currentFactionId]);
   const canPrepareSupplyFeeding = useMemo(() => {
     const facts = livingWorldState?.knownFacts || {};
     const hasEscapeGoal = sortedGoals.some(goal => (
@@ -1617,6 +1761,11 @@ export function FreeGoalPanel() {
 
   const handleV100LifeLoop = () => {
     const result = resolveV100LowRankLifeLoopReleaseAction();
+    setMessage(result.message);
+  };
+
+  const handleV100IntentClosure = () => {
+    const result = resolveV100FreeIntentReleaseClosureAction();
     setMessage(result.message);
   };
 
@@ -1794,6 +1943,11 @@ export function FreeGoalPanel() {
       <V100LifeLoopPanel
         overview={v100LifeLoopOverview}
         onRunLifeLoop={handleV100LifeLoop}
+      />
+
+      <V100FreeIntentClosurePanel
+        overview={v100IntentClosureOverview}
+        onRunClosure={handleV100IntentClosure}
       />
 
       <section className="space-y-2" data-testid="free-goal-ledger">

@@ -1,0 +1,213 @@
+{
+  "version": "v1.0.0-b3",
+  "sourceReview": {
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v1.0.0/2026-05-19-v100-three-pack-intake-review-summary.md"
+    ],
+    "sourcePackages": [
+      "v100_qingmao_southern_border_continuity_pack",
+      "v100_low_rank_life_loop_release_boundary_pack",
+      "v100_public_release_copy_art_boundary_pack"
+    ],
+    "sourcePolicy": "MiroFish output is candidate-only and rewritten into RebornG-owned v1.0 free-intent release closure rules/tests/UI boundaries."
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "rank_nine_gu_reward",
+      "inheritance_grant",
+      "recipe_unlock",
+      "refinement_success",
+      "formal_market_trade",
+      "black_market_trade",
+      "commission_profit",
+      "route_entered",
+      "current_route",
+      "current_region",
+      "location_unlock",
+      "region_unlock",
+      "faction_transfer",
+      "standing_delta",
+      "npc_life_result",
+      "npc_capture_result",
+      "canon_anchor_mutation",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion",
+      "save_format_bump",
+      "bff_backend"
+    ],
+    "visibleBoundaryLines": [
+      "v1.0 自由意图收束只验收本地裁决、前置条件、降级说明和风险说明是否可读。",
+      "玩家可以提出正常、短期、长期和极端目标，但正式事实、奖励、地点、阵营和 NPC 生死仍由本地引擎与后续版本决定。",
+      "极端目标必须被降级为长期目标、传闻风险、前置行动或世界规则阻断，不能变成即时成功。",
+      "DeepSeek 只能围绕本地裁决写叙事、候选、线索、传闻和压力，不得给出正式奖励、隐藏事实或结局。"
+    ]
+  },
+  "readinessChecks": [
+    {
+      "id": "v100_intent_life_loop_ready",
+      "label": "低阶闭环已验收",
+      "summary": "b2 已确认低阶蛊师生活闭环，极端意图解释可落在真实缺口和世界规则上。",
+      "requiredRefs": [
+        "v100_low_rank_life_loop_release_acceptance"
+      ],
+      "blocking": true,
+      "sourceItemIds": [
+        "v100_life_loop_1f90f0e38ba4",
+        "v100_life_loop_dac23b797b63"
+      ]
+    },
+    {
+      "id": "v100_intent_hidden_boundary_ready",
+      "label": "隐藏事实保护",
+      "summary": "隐藏事实只可作为本地保护和风险，不进入玩家可见正文或 DeepSeek 可见事实。",
+      "requiredRefs": [
+        "gate:hidden_ref_only"
+      ],
+      "blocking": false,
+      "sourceItemIds": [
+        "v100_public_release_hidden_boundary"
+      ]
+    }
+  ],
+  "intentSamples": [
+    {
+      "id": "v100_intent_escape_qingmao",
+      "label": "逃离青茅山",
+      "rawText": "我要逃离青茅山",
+      "releaseClass": "normal_route_goal",
+      "expectedIntentType": "travel",
+      "expectedTargetRefPrefix": "region:outside_qingmao",
+      "expectedCategory": "requires_prerequisite",
+      "summary": "可记录为明确目标，但必须走路线、补给、身份遮掩和追索压力前置。",
+      "sourceItemIds": [
+        "v100_continuity_3c8906dba8f9"
+      ]
+    },
+    {
+      "id": "v100_intent_join_bai_clan",
+      "label": "投靠白家",
+      "rawText": "我要投靠白家",
+      "releaseClass": "faction_prerequisite",
+      "expectedIntentType": "join_faction",
+      "expectedTargetRefPrefix": "faction:baijia_zhai",
+      "expectedCategory": "requires_prerequisite",
+      "summary": "只显示接触渠道、身份风险和前置条件；不转阵营、不写声望。",
+      "sourceItemIds": [
+        "v100_continuity_faction_pressure"
+      ]
+    },
+    {
+      "id": "v100_intent_track_fang_yuan",
+      "label": "跟踪方源",
+      "rawText": "我要跟踪方源",
+      "releaseClass": "hidden_fact_guard",
+      "expectedIntentType": "investigate",
+      "expectedTargetRefPrefix": "npc:fang_yuan",
+      "expectedCategory": "available_with_cost",
+      "summary": "可做可见范围调查，但隐藏因果只作本地保护，不泄露给玩家。",
+      "sourceItemIds": [
+        "v100_public_release_hidden_boundary"
+      ]
+    },
+    {
+      "id": "v100_intent_go_shang_city",
+      "label": "前往商家城",
+      "rawText": "我要去商家城",
+      "releaseClass": "region_prerequisite",
+      "expectedIntentType": "travel",
+      "expectedTargetRefPrefix": "location:shang_clan_city_outer_edge",
+      "expectedCategory": "requires_prerequisite",
+      "summary": "只允许外缘路线、担保和公开入口前置；不开放完整商家城或核心区。",
+      "sourceItemIds": [
+        "v100_continuity_shang_outer_edge"
+      ]
+    },
+    {
+      "id": "v100_intent_theft_heaven_inheritance",
+      "label": "盗天魔尊传承",
+      "rawText": "我要拿盗天魔尊传承",
+      "releaseClass": "extreme_world_rule",
+      "expectedIntentType": "obtain_item",
+      "expectedTargetRefPrefix": "inheritance:theft_heaven_demon_venerable",
+      "expectedCategory": "world_rule_blocked",
+      "summary": "当前低阶、非天外之魔语境下不能直接获得，只能降级为遥远传闻、骗局风险或未来专项。",
+      "sourceItemIds": [
+        "v100_life_loop_53d232289edd"
+      ]
+    },
+    {
+      "id": "v100_intent_rank_nine_gu",
+      "label": "一转拿九转蛊",
+      "rawText": "我要一转拿九转蛊",
+      "releaseClass": "extreme_power_jump",
+      "expectedIntentType": "obtain_item",
+      "expectedTargetRefPrefix": "item:rank_nine_gu",
+      "expectedCategory": "long_term_goal",
+      "summary": "记录为远期野心或传闻风险，不发蛊、不写背包、不开放高阶 reward。",
+      "sourceItemIds": [
+        "v100_life_loop_53d232289edd"
+      ]
+    },
+    {
+      "id": "v100_intent_kill_key_npc",
+      "label": "杀死关键 NPC",
+      "rawText": "我要杀死关键 NPC 改写正史核心因果",
+      "releaseClass": "major_if_gate",
+      "expectedIntentType": "long_term_goal",
+      "expectedTargetRefPrefix": "npc:key_character:death_or_capture",
+      "expectedCategory": "major_if_deviation",
+      "summary": "重大 IF 只能成为危险目标或未来专项，不由自由输入直接判定 NPC 生死。",
+      "sourceItemIds": [
+        "v100_public_release_hidden_boundary"
+      ]
+    }
+  ],
+  "releasePillars": [
+    {
+      "id": "v100_intent_pillar_local_ruling",
+      "label": "本地裁决",
+      "summary": "自由目标先进入本地裁决，再决定是行动、目标、前置、拒绝还是长期记录。",
+      "sourceItemIds": [
+        "v100_public_release_hidden_boundary"
+      ]
+    },
+    {
+      "id": "v100_intent_pillar_prerequisites",
+      "label": "前置条件",
+      "summary": "路线、阵营、地点、传承和关键 NPC 目标都需要可解释的前置条件。",
+      "sourceItemIds": [
+        "v100_continuity_3c8906dba8f9",
+        "v100_life_loop_a679642bc73b"
+      ]
+    },
+    {
+      "id": "v100_intent_pillar_downgrade",
+      "label": "降级而非满足",
+      "summary": "超出阶段的目标会降级为传闻、长期目标、调查线或骗局风险。",
+      "sourceItemIds": [
+        "v100_life_loop_53d232289edd"
+      ]
+    }
+  ],
+  "deferredRedlines": [
+    {
+      "id": "v100_intent_redline_formal_outcome",
+      "label": "正式结论",
+      "summary": "不得通过自由输入直接写正式奖励、地点、阵营、NPC 生死、正史锚点或结局。",
+      "sourceItemIds": [
+        "v100_public_release_hidden_boundary"
+      ]
+    },
+    {
+      "id": "v100_intent_redline_high_rank",
+      "label": "高阶越权",
+      "summary": "仙蛊、九转蛊、尊者传承、宝黄天交易和完整大地域不能成为 v1.0 即时能力。",
+      "sourceItemIds": [
+        "v100_life_loop_53d232289edd"
+      ]
+    }
+  ]
+}

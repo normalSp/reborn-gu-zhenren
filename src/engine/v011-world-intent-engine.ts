@@ -148,11 +148,27 @@ function classifyIntent(rawText: string): Pick<IntentCandidate, 'intentType' | '
     };
   }
 
+  if (includesAny(text, ['盗天魔尊', '盜天魔尊', '盗天传承', '盜天傳承', '盗天遗藏', '盜天遺藏', 'theftheaven'])) {
+    return {
+      intentType: 'obtain_item',
+      targetRef: 'inheritance:theft_heaven_demon_venerable',
+      evidenceRefIds: ['boundary:theft_heaven_inheritance_not_low_rank_reward'],
+    };
+  }
+
   if (includesAny(text, ['宝黄天交易', '寶黃天交易', '去宝黄天', '去寶黃天', 'treasureyellowheaven'])) {
     return {
       intentType: 'travel',
       targetRef: 'location:treasure_yellow_heaven',
       evidenceRefIds: ['boundary:mortal_treasure_yellow_heaven_trade_blocked'],
+    };
+  }
+
+  if (includesAny(text, ['商家城', '商家城核心', '商家城内城', '商家城外缘', '商家城外圍', '商家城外围'])) {
+    return {
+      intentType: 'travel',
+      targetRef: 'location:shang_clan_city_outer_edge',
+      evidenceRefIds: ['route_gate:shang_clan_city_requires_route_supply_and_guarantee'],
     };
   }
 
@@ -177,6 +193,17 @@ function classifyIntent(rawText: string): Pick<IntentCandidate, 'intentType' | '
       intentType: 'travel',
       targetRef: 'region:outside_qingmao',
       evidenceRefIds: ['route_gate:qingmao_exit_requires_route_and_supply'],
+    };
+  }
+
+  if (
+    includesAny(text, ['关键NPC', '關鍵NPC', '关键npc', '關鍵npc', '关键人物', '關鍵人物', '重要NPC', '重要npc', '正史人物'])
+    && includesAny(text, ['杀', '殺', '杀死', '殺死', '刺杀', '刺殺', '除掉', '弄死', '抓捕', '改写', '改寫'])
+  ) {
+    return {
+      intentType: 'long_term_goal',
+      targetRef: 'npc:key_character:death_or_capture',
+      evidenceRefIds: ['canon_anchor:major_npc_life_result_gate'],
     };
   }
 
@@ -299,6 +326,25 @@ function adjudicateCandidate(candidate: IntentCandidate, context: WorldIntentCon
     });
   }
 
+  if (candidate.targetRef === 'inheritance:theft_heaven_demon_venerable') {
+    return makeRuling(candidate, 'world_rule_blocked', {
+      allowed: false,
+      reasons: [
+        '盗天魔尊传承不能由一转阶段自由输入直接获得。',
+        '当前角色不是经本地系统确认的天外之魔相关身份，不能把该传承写成即时奖励。',
+        '该目标只能降级为远期传闻、骗局风险、路线线索或未来专项。',
+      ],
+      prerequisiteRefs: [
+        'realm:far_future_high_rank_gate',
+        'canon_gate:theft_heaven_inheritance',
+        'identity_gate:otherworldly_demon_not_confirmed',
+      ],
+      costRefs: ['risk:fraud_or_trap', 'risk:high_rank_attention'],
+      riskLevel: 3,
+      visibleExplanation: '盗天魔尊传承不是当前一转、低阶阶段能直接获得的东西。系统可以把它记成遥远传闻或危险线索，但不会发传承、写背包，也不会默认你具备天外之魔相关前提。',
+    });
+  }
+
   if (candidate.targetRef === 'location:treasure_yellow_heaven') {
     if (realmGrand >= 6) {
       return makeRuling(candidate, 'available_with_cost', {
@@ -322,6 +368,26 @@ function adjudicateCandidate(candidate: IntentCandidate, context: WorldIntentCon
       prerequisiteRefs: ['realm:gu_immortal', 'system:treasure_yellow_heaven_trade_engine'],
       riskLevel: 3,
       visibleExplanation: '凡人阶段不能去宝黄天正式交易。当前只能听闻相关传说，或把它作为蛊仙期以后才可能接触的目标。',
+    });
+  }
+
+  if (candidate.targetRef === 'location:shang_clan_city_outer_edge') {
+    return makeRuling(candidate, 'requires_prerequisite', {
+      allowed: false,
+      reasons: [
+        '商家城不是当前阶段可直接传送或完整开放的地点。',
+        '只能先处理青茅离山、南疆路线、补给、身份和担保等外缘前置。',
+        '本地引擎不会写入正式地点、入城资格、商会任务或交易结果。',
+      ],
+      prerequisiteRefs: [
+        'route:southern_border_low_rank_route',
+        'resource:travel_supply',
+        'contact:caravan_or_guarantee',
+        'gate:shang_outer_edge_only',
+      ],
+      costRefs: ['risk:pursuit', 'risk:identity_exposure', 'time:travel_preparation'],
+      riskLevel: 2,
+      visibleExplanation: '去商家城可以作为后续路线目标，但 v1.0 只处理外缘路线和前置条件：补给、身份、担保、追索风险。不能直接开放商家城核心区、商会任务或正式交易。',
     });
   }
 
@@ -407,6 +473,21 @@ function adjudicateCandidate(candidate: IntentCandidate, context: WorldIntentCon
       costRefs: ['risk:lethal_conflict', 'risk:canon_anchor_heat'],
       riskLevel: 3,
       visibleExplanation: '这会触及重大 IF 偏离。当前只能记录为危险目标或调查线，不能直接判定成功，更不能由 DeepSeek 宣告白凝冰死亡。',
+    });
+  }
+
+  if (candidate.targetRef === 'npc:key_character:death_or_capture') {
+    return makeRuling(candidate, 'major_if_deviation', {
+      allowed: false,
+      reasons: [
+        '关键 NPC 生死、抓捕和正史核心因果属于重大 IF 或正史锚点变化。',
+        '自由输入不能直接决定正式生死结果、抓捕结果或正史锚点变化。',
+        '后续必须由具体身份、实力、情报、场景、时机和用户批准的 IF 规则处理。',
+      ],
+      prerequisiteRefs: ['if_gate:major_deviation_review', 'canon_anchor:key_npc_life_gate'],
+      costRefs: ['risk:lethal_conflict', 'risk:faction_retaliation', 'risk:canon_anchor_heat'],
+      riskLevel: 3,
+      visibleExplanation: '杀死或抓捕关键 NPC 是重大 IF，不是自由输入能直接成功的行动。当前只能作为危险目标或未来专项记录，不能写 NPC 生死、正史锚点或结局。',
     });
   }
 
