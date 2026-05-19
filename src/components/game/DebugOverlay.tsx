@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useStore } from '../../store';
 
 const COLOR_MAP: Record<string, string> = {
@@ -15,6 +15,16 @@ export function DebugOverlay() {
   const gameLog = useStore(s => s.gameLog);
   const exportGameLog = useStore(s => s.exportGameLog);
   const [expanded, setExpanded] = useState(false);
+  const [compactViewport, setCompactViewport] = useState(() => (
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  ));
+
+  useEffect(() => {
+    const handleResize = () => setCompactViewport(window.innerWidth < 640);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleExportLog = useCallback(() => {
     const json = exportGameLog();
@@ -38,10 +48,14 @@ export function DebugOverlay() {
 
   return (
     <div style={{
-      position: 'fixed', bottom: 56, right: 8, zIndex: 9999,
+      position: 'fixed',
+      top: compactViewport ? 8 : 'auto',
+      bottom: compactViewport ? 'auto' : 56,
+      right: 8,
+      zIndex: 9999,
       background: 'var(--gu-bg-glass)', backdropFilter: 'blur(6px)',
       border: `1px solid ${color}44`, borderRadius: 6,
-      padding: '8px 12px', maxWidth: expanded ? 420 : 340, fontFamily: 'monospace',
+      padding: '8px 12px', maxWidth: compactViewport ? 260 : (expanded ? 420 : 340), fontFamily: 'monospace',
       fontSize: 11, lineHeight: 1.5,
       pointerEvents: 'none',
     }}>

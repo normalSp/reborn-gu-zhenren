@@ -7,6 +7,31 @@
 
 ## 当前防坑索引 (2026-05-15)
 
+### 新建角色首帧卡在“等待天命显现...”
+- **症状**：建好角色进入游戏后，叙事区停在“等待天命显现...”，需要存档再读档才正常显示开局叙事。
+- **根因**：`GameScreen` 用同一个 `startedRef` 同时控制 BGM 启动和 DeepSeek 叙事管线。`CharacterCreate` 先写入 `currentDomain`，BGM effect 提前把 ref 置为 true，导致进入 `game_play` 后叙事管线误判已经启动。
+- **防范**：音频启动与叙事管线必须使用独立 ref/state；新增 `tests/e2e/pre-v110-bugfixes.spec.ts` 覆盖“新建角色无需存档读档即可进入叙事”。
+
+### 五转初阶误显示升仙入口
+- **症状**：五转初阶修行面板直接出现“尝试升仙”，违背原著中五转巅峰才具备升仙门槛的边界。
+- **根因**：本地 cultivation engine 已要求五转巅峰，但 `AperturePanel` UI 只检查 `realmGrand === 5`，缺少 `subRank === '巅峰'`。
+- **防范**：境界 UI 必须和 engine validation 同步；新增 E2E 覆盖五转初阶只显示突破/继续修行提示，新增 engine 测试覆盖五转巅峰前不可升仙。
+
+### 手改升仙存档后凡蛊重复显示
+- **症状**：导出存档手动修改到升仙/仙窍状态后，自己的蛊虫被复制一批，凡窍 inventory 与仙窍 apertureInventory 同时显示。
+- **根因**：升仙迁移只把 `inventory` 复制进 `apertureInventory.gu`，未清空凡窍 inventory，也没有对已存在仙窍蛊做身份去重；GuInventoryPanel 对仙人视角又拼接两处数据。
+- **防范**：升仙迁移和存档归一化必须把凡窍蛊迁入仙窍后清空来源，并按 `id/specId/name+tier+path` 去重；仙人蛊虫面板显示前也做防御性去重。新增 `immortalSlice` 与 save normalization 回归测试。
+
+### DeepSeek 缓存命中率被动态 system prompt 拉低
+- **症状**：玩家反馈 DeepSeek 缓存命中率低，例如命中:未命中约 `2550:11898`。
+- **根因**：`ContextBuilder.buildSystemPrompt(mode, store)` 过去注入了道痕、当前蛊虫、NPC、旗标、对话上下文等易变 store 内容，使可缓存前缀随玩家状态变化而变化。DeepSeek 的上下文缓存依赖后续请求完整复用已落盘前缀，动态前缀会降低命中。
+- **防范**：system prompt 只放稳定规则和权限边界，store 相关内容移入 dynamic/user context；新增 `src/engine/context-builder-cache.test.ts` 断言普通玩家状态变化不改变 system prompt，同时 dynamic context 仍携带道痕、余额、蛊虫等必要状态。
+
+### 移动端调试浮层遮挡可点击控件
+- **症状**：移动端 reduced-motion 下，旧结局面板的“查看详情”按钮被右下角 DebugOverlay 的“日志/导出日志”按钮挡住，Playwright 点击超时。
+- **根因**：调试浮层固定在右下角，内部按钮允许 pointer events；窄屏时可能覆盖正文面板底部操作区。
+- **防范**：开发调试浮层在窄屏挪到右上角，避免挡住底部/中下部玩家操作；全量 E2E 已覆盖 `v080-ending-framework.spec.ts` 移动端路径。
+
 ### 青茅凡战 5x3 棋盘被说明卡/行动坞挤压
 - **症状**：桌面 900px 高度下只能看到一行半到两行战场格，蛊虫/杀招/美术说明与底部行动卡抢占主视区。
 - **根因**：战场格保留宽度驱动的 `aspect-ratio`，中栏越宽格子越高；底部行动卡用 `28vh` 展开；旧 e2e 只检查格子数量，没检查第三行是否可见。

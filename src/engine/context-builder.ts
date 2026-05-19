@@ -30,6 +30,45 @@ const worldRules = worldRulesRaw as Record<string, any>;
 const terminology = terminologyRaw as Record<string, any>;
 const economyData = economyRaw as Record<string, any>;
 
+function getGuIdentityKey(gu: any): string {
+  return String(gu?.specId || gu?.id || gu?.name || '').trim();
+}
+
+function dedupeGuRecords<T>(records: T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+  for (const record of records) {
+    const key = getGuIdentityKey(record);
+    if (!key) {
+      result.push(record);
+      continue;
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(record);
+  }
+  return result;
+}
+
+function getPromptGuInventory(store: RootStore): Array<{ name: string; tier: number; path: string; currentState?: string }> {
+  const s = store as any;
+  const inventory = Array.isArray(s.inventory) ? s.inventory : [];
+  const realmGrand = Number(s.profile?.realm?.grand || 0);
+  const apertureGu = realmGrand >= 6 && Array.isArray(s.apertureInventory?.gu)
+    ? s.apertureInventory.gu
+    : [];
+  return realmGrand >= 6
+    ? dedupeGuRecords([...apertureGu, ...inventory])
+    : inventory;
+}
+
+function withPromptGuInventory(store: RootStore): RootStore {
+  const s = store as any;
+  const promptInventory = getPromptGuInventory(store);
+  if (promptInventory === s.inventory) return store;
+  return { ...s, inventory: promptInventory } as RootStore;
+}
+
 // ─── System Prompt Layer 1: 世界观核心 ───
 const SYSTEM_PROMPT_LAYER1 = `你是蛊真人模拟器的AI游戏主持人。你必须按以下格式输出纯JSON：{"narrative":{"text":"叙事","choices":[{"id":"c1","text":"选项","risk":"high|medium|low","risk_note":"风险说明"}]},"state_update":{...}}。字段名不可自创：choices非options、state_update非stateUpdate。
 
@@ -945,70 +984,11 @@ export class ContextBuilder {
     // 世界规则注入
     parts.push(injectWorldRules());
 
-    // ═══ P2-流派: 道痕量变质变规则注入 ═══
-    if (store) {
-      parts.push(injectDaoMarkRules(store));
-    }
-
     // 经济规则注入 — P2修复：动态读取economy.json + 余额锚定
-    parts.push(injectEconomyRules(store!));
+    parts.push(injectEconomyRules((store || {}) as RootStore));
 
-    // ═══ P1章节约束注入：域约束/位置锁/场景约束（在NPC上下文之前） ═══
-    if (store) {
-      parts.push(injectChapterConstraints(store));
-    }
-
-    // ═══ P2-2a 涟漪事件注入（L0/L1/L2分层） ═══
-    if (store) {
-      parts.push(injectRippleEvents(store));
-    }
-
-    // ═══ P2-2a L3全局flag注入（持久世界状态） ═══
-    if (store) {
-      parts.push(injectGlobalFlags(store));
-    }
-
-    // ═══ P2-4b 战斗约束注入（叙事战斗场景） ═══
-    if (store) {
-      parts.push(injectCombatConstraint(store));
-    }
-
-    // ═══ P2-5 NPC对话上下文注入 ═══
-    if (store) {
-      parts.push(injectDialogueContext(store));
-    }
-
-    // NPC上下文注入（5C.1 三层过滤）
-    if (store) {
-      parts.push(injectNPCContext(store));
-    }
-
-    // ═══ v0.7.0 P2: 动态NPC上下文注入 ═══
-    if (store) {
-      parts.push(injectDynamicNPCContext(store));
-    }
-
-    // ═══ v0.7.0: 5个新注入管道 ═══
-    // P1: 十绝体苏醒叙事
-    if (store) {
-      parts.push(injectExtremePhysiqueAwakening(store));
-    }
-    // P2: 势力外交铺垫
-    if (store) {
-      parts.push(injectFactionDiplomacy(store));
-    }
-    // P3: 小队士气上下文
-    if (store) {
-      parts.push(injectSquadMoraleContext(store));
-    }
-    // P4: 成就进度感知
-    if (store) {
-      parts.push(injectAchievementProgressContext(store));
-    }
-    // P5: 资源点建设提示
-    if (store) {
-      parts.push(injectResourceNodeHints(store));
-    }
+    // Store-dependent sections live in buildDynamicContext so the cacheable system
+    // prefix stays stable across ordinary player-state changes.
 
     // 术语速查
     parts.push(injectTerminology());
@@ -1072,7 +1052,7 @@ export class ContextBuilder {
         if (parts.length === 0) parts.push('道心未定——你的心性仍在塑造中，选项应中性多元');
         return parts.join('；');
       })(),
-      guInventory: s.inventory.map((g: any) => ({
+      guInventory: getPromptGuInventory(s).map((g: any) => ({
         name: g.name, tier: g.tier, path: g.path, state: g.currentState,
       })),
       // ═══ v1.7: LLM感知玩家杀招 ═══
@@ -1118,33 +1098,51 @@ export class ContextBuilder {
   // ─── P1-6.3 构建动态上下文（注入到user message，不污染system prompt缓存） ───
   buildDynamicContext(store: RootStore): string {
     const parts: string[] = [];
+    const promptStore = withPromptGuInventory(store);
+
+    const volatileSystemSections = [
+      injectDaoMarkRules(promptStore),
+      injectChapterConstraints(promptStore),
+      injectRippleEvents(promptStore),
+      injectGlobalFlags(promptStore),
+      injectCombatConstraint(promptStore),
+      injectDialogueContext(promptStore),
+      injectNPCContext(promptStore),
+      injectDynamicNPCContext(promptStore),
+      injectExtremePhysiqueAwakening(promptStore),
+      injectFactionDiplomacy(promptStore),
+      injectSquadMoraleContext(promptStore),
+      injectAchievementProgressContext(promptStore),
+      injectResourceNodeHints(promptStore),
+    ].filter(Boolean);
+    parts.push(...volatileSystemSections);
 
     // 段1: 经济锚定 — 玩家余额 + 购买力参考 + 章节物价系数
-    parts.push(injectEconomyBalanceAnchor(store));
-    parts.push(formatSceneTimeContextForPrompt(buildSceneTimeContext(store)));
-    parts.push(formatSceneSessionForPrompt((store as any).sceneSessionState));
-    const combatEncounterPrompt = formatCombatEncounterForPrompt((store as any).combatEncounterState);
+    parts.push(injectEconomyBalanceAnchor(promptStore));
+    parts.push(formatSceneTimeContextForPrompt(buildSceneTimeContext(promptStore)));
+    parts.push(formatSceneSessionForPrompt((promptStore as any).sceneSessionState));
+    const combatEncounterPrompt = formatCombatEncounterForPrompt((promptStore as any).combatEncounterState);
     if (combatEncounterPrompt) parts.push(combatEncounterPrompt);
-    const calamityScenePrompt = formatCalamitySceneForPrompt((store as any).flags?.pendingCalamitySceneSpec);
+    const calamityScenePrompt = formatCalamitySceneForPrompt((promptStore as any).flags?.pendingCalamitySceneSpec);
     if (calamityScenePrompt) parts.push(calamityScenePrompt);
-    const inheritancePrompt = formatInheritanceContextForPrompt((store as any).inheritanceLandState);
+    const inheritancePrompt = formatInheritanceContextForPrompt((promptStore as any).inheritanceLandState);
     if (inheritancePrompt) parts.push(inheritancePrompt);
-    const trainingGroundPrompt = formatTrainingGroundContextForPrompt((store as any).trainingGroundState);
+    const trainingGroundPrompt = formatTrainingGroundContextForPrompt((promptStore as any).trainingGroundState);
     if (trainingGroundPrompt) parts.push(trainingGroundPrompt);
-    const worldActionReturnContext = (store as any).flags?.lastWorldActionReturnContext;
+    const worldActionReturnContext = (promptStore as any).flags?.lastWorldActionReturnContext;
     if (worldActionReturnContext) parts.push(formatNarrativeReturnContext(worldActionReturnContext));
-    parts.push(buildOriginLifeboundContextForPrompt(store));
-    parts.push(injectV080NarrativeGuard(store));
+    parts.push(buildOriginLifeboundContextForPrompt(promptStore));
+    parts.push(injectV080NarrativeGuard(promptStore));
 
     // ═══ P3修复: 章节位置提醒（防止AI在超长上下文中丢失当前位置导致叙事跳回） ═══
-    const currentChapterId = (store as any).currentChapterId || '';
-    const currentDomain = (store as any).currentDomain || '南疆';
+    const currentChapterId = (promptStore as any).currentChapterId || '';
+    const currentDomain = (promptStore as any).currentDomain || '南疆';
     if (currentChapterId) {
       const chaptersData = chaptersRaw as any;
       const domainChapters = chaptersData.domains?.[currentDomain] || [];
       const chapterDef = domainChapters.find((c: any) => c.id === currentChapterId);
       if (chapterDef) {
-        const flags = (store as any).flags || {};
+        const flags = (promptStore as any).flags || {};
         const routedLocation = flags._start_location;
         const routedRole = flags._start_role;
         const startProfileId = String(flags._start_profile || '');
@@ -1161,7 +1159,7 @@ export class ContextBuilder {
     }
 
     // ═══ v0.7.0-pre: AI奖励白名单（阻止DeepSeek凭空造材料/蛊方/流派） ═══
-    const realmGrand = (store as any).profile?.realm?.grand || 1;
+    const realmGrand = (promptStore as any).profile?.realm?.grand || 1;
     const allowedMaterials = getAllowedMaterialNamesForPrompt(realmGrand, 28);
     const allowedPaths = getRuntimePathNames();
     const fragmentDefs = ((fragmentsRaw as any).fragments || []) as any[];
@@ -1180,7 +1178,7 @@ export class ContextBuilder {
     ].join('\n'));
 
     // ═══ P4: 天赋效果提醒（每轮注入，+150 tokens） ═══
-    const activeDuel = (store as any).duelState;
+    const activeDuel = (promptStore as any).duelState;
     if (activeDuel) {
       const playerMoves = (activeDuel.player?.moves || []).slice(0, 8).map((move: any) =>
         `${move.name}${move.killerMoveId ? `(${move.killerMoveId})` : ''}`
@@ -1199,7 +1197,7 @@ export class ContextBuilder {
       ].join('\n'));
     }
 
-    const activeSquadCombat = (store as any).squadCombatState;
+    const activeSquadCombat = (promptStore as any).squadCombatState;
     if (activeSquadCombat) {
       const members = (activeSquadCombat.members || []).slice(0, 4).map((member: any) => {
         const moves = (member.moves || []).slice(0, 4).map((move: any) => move.name).join('、') || '无';
@@ -1228,7 +1226,7 @@ export class ContextBuilder {
       ].join('\n'));
     }
 
-    const selectedTalents = getSelectedTalentIds(store as any);
+    const selectedTalents = getSelectedTalentIds(promptStore as any);
     if (selectedTalents && selectedTalents.length > 0) {
       try {
         const talentLines: string[] = [];
@@ -1248,7 +1246,7 @@ export class ContextBuilder {
     }
 
     // 段2: 势力声望（P4: 含势力定义注入，确保AI知晓可操作的faction）
-    const standingsData: Record<string, any> = (store as any).standings || {};
+    const standingsData: Record<string, any> = (promptStore as any).standings || {};
     // 过滤掉函数属性，获取纯数值的势力声望
     const currentStandings = Object.entries(standingsData)
       .filter(([key, val]) => key !== 'updateStanding' && key !== 'updateRelation' && key !== 'characterRelations' && key !== 'npcRelations' && key !== 'initNpcRelations' && key !== 'updateNpcRelation' && key !== 'getNpcAffinity' && key !== 'tickNpcRelations' && typeof val === 'object' && val !== null && 'standing' in val)
@@ -1268,12 +1266,12 @@ export class ContextBuilder {
     }
 
     // 段3: 蛊虫当前状态摘要
-    const narrativeGuAffordancePrompt = buildNarrativeGuAffordancePromptInject(store);
+    const narrativeGuAffordancePrompt = buildNarrativeGuAffordancePromptInject(promptStore);
     if (narrativeGuAffordancePrompt) {
       parts.push(narrativeGuAffordancePrompt);
     }
 
-    const inventory = store.inventory;
+    const inventory = getPromptGuInventory(promptStore);
     if (inventory && inventory.length > 0) {
       const guLines: string[] = [];
       for (const gu of inventory.slice(0, 6)) {
@@ -1303,7 +1301,7 @@ export class ContextBuilder {
 
     // ═══ P2-9: 随机遭遇上下文注入 ═══
     try {
-      const encCtx = (store as any).getEncounterContext?.();
+      const encCtx = (promptStore as any).getEncounterContext?.();
       if (encCtx) {
         const encLines = [
           `【随机遭遇: ${encCtx.title}】`,
@@ -1318,7 +1316,7 @@ export class ContextBuilder {
     } catch { /* encounter context injection not available */ }
 
     // ═══ P2修复: 道心指导指令 — 让AI根据道心值调整叙事倾向和选项风格 ═══
-    const daoHeart = (store as any).daoHeart || { kill: 0, mercy: 0, scheme: 0, ambition: 0 };
+    const daoHeart = (promptStore as any).daoHeart || { kill: 0, mercy: 0, scheme: 0, ambition: 0 };
     const dhLines: string[] = [];
     if (daoHeart.kill >= 3) dhLines.push(`杀性(${daoHeart.kill})：玩家的选项应至少包含一条暴力/毁灭/直接冲突的路径`);
     if (daoHeart.mercy >= 3) dhLines.push(`仁心(${daoHeart.mercy})：玩家的选项应至少包含一条救助/保护/牺牲的路径`);

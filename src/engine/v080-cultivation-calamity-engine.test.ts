@@ -248,6 +248,30 @@ describe('v0.8.0-b2 cultivation calamity engine', () => {
     expect(failure?.steps.map(step => step.kind)).toEqual(expect.arrayContaining(['injury', 'essence_shock', 'aperture_pressure']));
   });
 
+  it('requires rank-five peak before ascension while allowing lower rank-five subrealm breakthrough', () => {
+    const store = baseStore({
+      profile: { name: '五转初阶测试', realm: { grand: 5, sub: SUB.initial, label: '五转初阶' } },
+      aperture: mortalAperture(5, SUB.initial),
+    });
+    const state = createDefaultCultivationState({
+      progress: 240,
+      ascension: {
+        threeQi: { human: 90, earth: 90, heaven: 90 },
+        preparationScore: 90,
+        heavenWillPressure: 0,
+        karmicDebt: 0,
+      },
+    });
+
+    const ascension = validateAscensionAttempt({ store, state });
+    expect(ascension.valid).toBe(false);
+    expect(ascension.reason).toBe('升仙必须处于五转巅峰。');
+
+    const breakthrough = validateMajorBreakthroughAttempt({ store, state });
+    expect(breakthrough.valid).toBe(true);
+    expect(breakthrough.targetRealm?.label).toBe('五转中阶');
+  });
+
   it('previews and resolves blessed-land calamity consequences deterministically', () => {
     const aperture = immortalAperture();
     const store = baseStore({

@@ -1,0 +1,91 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v110-southern-border-outer-edge-public-fact-pack",
+  "packageId": "v110_southern_border_outer_edge_public_fact_pack",
+  "generatedAt": "2026-05-19T14:02:53.173920+00:00",
+  "suggestedOutputName": "v110_southern_border_outer_edge_public_fact_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v110_route_location_outer_edge_public_fact_and_travel_pressure_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "route_edge_public_fact": 1,
+      "caravan_public_fact": 1,
+      "loose_cultivator_public_fact": 1,
+      "resource_point_boundary": 1,
+      "danger_area_public_fact": 1,
+      "city_outer_edge_public_fact": 1,
+      "ui_public_summary_boundary": 1,
+      "hidden_causality_boundary": 1
+    },
+    "sourcePointers": 18,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "route_edge_public_fact": 1,
+      "caravan_public_fact": 1,
+      "loose_cultivator_public_fact": 1,
+      "resource_point_boundary": 1,
+      "danger_area_public_fact": 1,
+      "city_outer_edge_public_fact": 1,
+      "ui_public_summary_boundary": 1,
+      "hidden_causality_boundary": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "hiddenBoundary": 8,
+      "itemId": 8,
+      "playerVisibleBoundary": 8,
+      "publicSummary": 8,
+      "reborngGate": 8,
+      "recommendedRebornGUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "riskTags": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete_candidate",
+    "baseSufficiency": "sufficient_for_v110_route_location_outer_edge_public_fact_and_travel_pressure_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "notes": [
+      "All records are source-backed candidates with original source wording omitted.",
+      "RebornG must approve final route, region, UI, rule, and test material.",
+      "MiroFish output is not canon truth or runtime authority."
+    ]
+  }
+}

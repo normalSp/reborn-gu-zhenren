@@ -63,6 +63,39 @@ const EMPTY_APERTURE_STORAGE: ApertureStorage = {
   immortalMaterials: {},
 };
 
+function getGuIdentityKey(gu: Partial<GuInstance> | null | undefined): string {
+  return String((gu as any)?.specId || gu?.id || gu?.name || '').trim();
+}
+
+function dedupeGuRecords<T extends GuInstance>(records: T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+  for (const record of records) {
+    const key = getGuIdentityKey(record);
+    if (!key) {
+      result.push(record);
+      continue;
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(record);
+  }
+  return result;
+}
+
+function mergeMaterialRecords(...records: Array<Record<string, number> | null | undefined>): Record<string, number> {
+  const merged: Record<string, number> = {};
+  for (const record of records) {
+    if (!record || typeof record !== 'object') continue;
+    for (const [name, quantity] of Object.entries(record)) {
+      const amount = Number(quantity);
+      if (!Number.isFinite(amount) || amount <= 0) continue;
+      merged[name] = (merged[name] || 0) + amount;
+    }
+  }
+  return merged;
+}
+
 interface ApertureSlice {
   aperture: MortalAperture | ImmortalAperture | null;
   /** P4: 仙窍独立存储 — 升仙后所有蛊虫/蛊材存放于此，无限容量 */
@@ -117,17 +150,23 @@ export const createApertureSlice = (set: any, get: any): ApertureSlice => ({
     const state = get() as any;
     const inventory: GuInstance[] = state.inventory || [];
     const materialBag: Record<string, number> = state.materialBag || {};
+    const currentStorage = state.apertureInventory || EMPTY_APERTURE_STORAGE;
 
     // 迁移蛊虫到仙窍
     const apertureInv: ApertureStorage = {
-      gu: [...inventory],
-      materials: { ...materialBag },
-      immortalMaterials: state.apertureInventory?.immortalMaterials || {},
+      gu: dedupeGuRecords([
+        ...(Array.isArray(currentStorage.gu) ? currentStorage.gu : []),
+        ...inventory,
+      ]),
+      materials: mergeMaterialRecords(currentStorage.materials, materialBag),
+      immortalMaterials: { ...(currentStorage.immortalMaterials || {}) },
     };
 
     // 清空空窍，解除容量
     set({
       apertureInventory: apertureInv,
+      inventory: [],
+      materialBag: {},
       materialBagCapacity: Infinity,
     });
 

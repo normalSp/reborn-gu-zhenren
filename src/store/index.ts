@@ -328,6 +328,55 @@ function narrativeFromAssistantMessage(content: unknown): NarrativeJSON | null {
   };
 }
 
+function getGuIdentityKey(gu: any): string {
+  return String(gu?.specId || gu?.id || gu?.name || '').trim();
+}
+
+function dedupeGuRecords(records: any[]): any[] {
+  const seen = new Set<string>();
+  const result: any[] = [];
+  for (const record of records) {
+    const key = getGuIdentityKey(record);
+    if (!key) {
+      result.push(record);
+      continue;
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(record);
+  }
+  return result;
+}
+
+function isImmortalPersistedState(state: Record<string, any>): boolean {
+  const realmGrand = Number(state.profile?.realm?.grand || 0);
+  const apertureType = state.aperture?.type;
+  return realmGrand >= 6 || (Boolean(apertureType) && apertureType !== 'mortal') || state.vitals?.essenceType === 'immortal';
+}
+
+function normalizeApertureInventoryForPersistedState(state: Record<string, any>): void {
+  const storage = state.apertureInventory && typeof state.apertureInventory === 'object'
+    ? state.apertureInventory
+    : {};
+  const normalizedStorage = {
+    gu: Array.isArray(storage.gu) ? storage.gu : [],
+    materials: storage.materials && typeof storage.materials === 'object' ? storage.materials : {},
+    immortalMaterials: storage.immortalMaterials && typeof storage.immortalMaterials === 'object' ? storage.immortalMaterials : {},
+  };
+
+  if (!isImmortalPersistedState(state)) {
+    state.apertureInventory = normalizedStorage;
+    return;
+  }
+
+  const inventory = Array.isArray(state.inventory) ? state.inventory : [];
+  state.apertureInventory = {
+    ...normalizedStorage,
+    gu: dedupeGuRecords([...normalizedStorage.gu, ...inventory]),
+  };
+  state.inventory = [];
+}
+
 function isValidDuelState(value: any): boolean {
   return Boolean(
     value &&
@@ -436,6 +485,7 @@ export function normalizePersistedGameState(
     mirrorStoryAnchorFlagsForLoad(sourceFlags, state.storyAnchorState),
     state.trainingGroundState,
   );
+  normalizeApertureInventoryForPersistedState(state);
 
   if (state.deathRecord) {
     state.deathRecord = {

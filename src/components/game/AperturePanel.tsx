@@ -68,7 +68,7 @@ function pct(value?: number): string {
   return `${Math.round(Math.max(0, Math.min(1, value)) * 100)}%`;
 }
 
-function CultivationApertureActions({ realmGrand }: { realmGrand: number }) {
+function CultivationApertureActions({ realmGrand, subRank }: { realmGrand: number; subRank?: string }) {
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
   const vitals = useStore(s => s.vitals);
   const heavenlyLand = useStore(s => (s as any).heavenlyLand);
@@ -83,7 +83,8 @@ function CultivationApertureActions({ realmGrand }: { realmGrand: number }) {
   const resolveApertureCalamity = useStore(s => (s as any).resolveApertureCalamity);
   const preview = previewCultivationDeepening?.('aperture');
   const isImmortalRealm = realmGrand >= 6;
-  const isAscensionStage = realmGrand === 5;
+  const isRankFiveMortal = realmGrand === 5 && !isImmortalRealm;
+  const isAscensionStage = isRankFiveMortal && subRank === '巅峰';
   const lastTrace = Array.isArray(cultivationState?.lastResolution) ? cultivationState.lastResolution.slice(-4) : [];
 
   const report = (result: any, fallback: string) => {
@@ -125,14 +126,18 @@ function CultivationApertureActions({ realmGrand }: { realmGrand: number }) {
             </div>
           </div>
         )}
-        {isAscensionStage && (
+        {isRankFiveMortal && (
           <div className="rounded border border-rg-ink-300/12 bg-rg-ink-900/35 p-2">
-            <div className="text-[10px] text-rg-paper-200/42">升仙三气</div>
-            <div className="mt-1 text-xs text-rg-paper-100">
-              人{preview?.ascension?.threeQi?.human || 0} / 地{preview?.ascension?.threeQi?.earth || 0} / 天{preview?.ascension?.threeQi?.heaven || 0}
-            </div>
+            <div className="text-[10px] text-rg-paper-200/42">升仙门槛</div>
+            {isAscensionStage && (
+              <div className="mt-1 text-xs text-rg-paper-100">
+                人{preview?.ascension?.threeQi?.human || 0} / 地{preview?.ascension?.threeQi?.earth || 0} / 天{preview?.ascension?.threeQi?.heaven || 0}
+              </div>
+            )}
             <div className="mt-1 line-clamp-2 text-[10px] text-rg-paper-200/48">
-              {preview?.ascension?.valid ? `成功 ${pct(preview?.ascension?.successRate)}` : preview?.ascension?.reason || '五转巅峰后才能尝试升仙。'}
+              {isAscensionStage
+                ? (preview?.ascension?.valid ? `成功 ${pct(preview?.ascension?.successRate)}` : preview?.ascension?.reason || '五转巅峰后才能尝试升仙。')
+                : '五转巅峰后才能尝试升仙；当前仍需继续突破小境界。'}
             </div>
           </div>
         )}
@@ -322,7 +327,7 @@ function MortalApertureView({ aperture, calamityProfile }: { aperture: MortalApe
         )}
       </div>
 
-      <CultivationApertureActions realmGrand={rank} />
+      <CultivationApertureActions realmGrand={rank} subRank={subRank} />
 
       {calamityProfile && (
         <div className="mt-3 bg-rg-ink-800/50 border border-rg-gold/18 rounded-md p-3">

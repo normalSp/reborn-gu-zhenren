@@ -1,0 +1,723 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v110-southern-border-outer-edge-public-fact-pack",
+  "packageId": "v110_southern_border_outer_edge_public_fact_pack",
+  "targetPhase": "v1.1.0 Southern Border outer-edge public fact and UI boundary",
+  "generatedAt": "2026-05-19T14:02:53.173920+00:00",
+  "suggestedOutputName": "v110_southern_border_outer_edge_public_fact_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v110_route_location_outer_edge_public_fact_and_travel_pressure_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "redactionPolicy": {
+    "sourceBodyIncluded": false,
+    "originalWordingIncluded": false,
+    "omittedTextFieldFamilies": [
+      "source_body_fields"
+    ],
+    "candidateOnly": true
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "route_edge_public_fact": 1,
+      "caravan_public_fact": 1,
+      "loose_cultivator_public_fact": 1,
+      "resource_point_boundary": 1,
+      "danger_area_public_fact": 1,
+      "city_outer_edge_public_fact": 1,
+      "ui_public_summary_boundary": 1,
+      "hidden_causality_boundary": 1
+    },
+    "sourcePointers": 18,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "route_edge_public_fact": 1,
+      "caravan_public_fact": 1,
+      "loose_cultivator_public_fact": 1,
+      "resource_point_boundary": 1,
+      "danger_area_public_fact": 1,
+      "city_outer_edge_public_fact": 1,
+      "ui_public_summary_boundary": 1,
+      "hidden_causality_boundary": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "hiddenBoundary": 8,
+      "itemId": 8,
+      "playerVisibleBoundary": 8,
+      "publicSummary": 8,
+      "reborngGate": 8,
+      "recommendedRebornGUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "riskTags": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    }
+  },
+  "items": [
+    {
+      "visibility": "public",
+      "publicSummary": "山路和野外可作为离开青茅后的公开外缘事实：移动成本、危险和临时落脚。",
+      "playerVisibleBoundary": "玩家可见环境、距离感、天气/地形压力和低阶风险。",
+      "hiddenBoundary": "不显示隐藏追踪因果或正史真相。",
+      "riskTags": [
+        "route_edge",
+        "public_fact",
+        "danger_area"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "rule_draft"
+      ],
+      "itemId": "v110_outer_edge_ec91b5c42f76",
+      "category": "route_edge_public_fact",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.475027+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_6daf362d8ab4"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "events",
+          "itemId": "evt_e5491ec827ed"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_929e88080440",
+        "sp_59e2db5ea832"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "sourcePointerId": "sp_929e88080440"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+          "sourcePointerId": "sp_59e2db5ea832"
+        }
+      ]
+    },
+    {
+      "visibility": "public",
+      "publicSummary": "商队可作为低阶移动、交易、消息流和担保窗口。",
+      "playerVisibleBoundary": "只显示询价、担保、随行风险和公开接触条件。",
+      "hiddenBoundary": "不承诺正式雇佣、稳定商店、高阶市场或跨域交易。",
+      "riskTags": [
+        "caravan",
+        "market_window",
+        "no_formal_contract"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_outer_edge_21c57fbe0cdf",
+      "category": "caravan_public_fact",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.565666+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "entities",
+          "itemId": "entity_d4ee91f15507"
+        },
+        {
+          "packageId": "ri_lw_ch_0019",
+          "chapterId": "ch_0019",
+          "field": "relations",
+          "itemId": "rel_3749298d0acd"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3191e2cb1666",
+        "sp_928c45dfcb77"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0066",
+          "startOffset": 32749,
+          "endOffset": 32785,
+          "summary": "店主，与方源交易",
+          "sourcePointerId": "sp_3191e2cb1666"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0019",
+          "paragraphId": "ch_0019_p0040",
+          "startOffset": 53109,
+          "endOffset": 53146,
+          "summary": "方源打了方正耳光，并以沈翠为筹码交易，关系紧张。",
+          "sourcePointerId": "sp_928c45dfcb77"
+        }
+      ]
+    },
+    {
+      "visibility": "public",
+      "publicSummary": "散修和客栈接触可提供公开传闻、低阶交易和身份压力。",
+      "playerVisibleBoundary": "玩家可见打听、观察、警惕和价格压力。",
+      "hiddenBoundary": "不输出隐藏组织、关键 NPC 私密动机或高阶情报。",
+      "riskTags": [
+        "loose_cultivator",
+        "inn_context",
+        "identity_pressure"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "rule_draft"
+      ],
+      "itemId": "v110_outer_edge_c4b1653f3b1a",
+      "category": "loose_cultivator_public_fact",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.671915+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0087",
+          "chapterId": "ch_0087",
+          "field": "relations",
+          "itemId": "rel_cab0de1567dd"
+        },
+        {
+          "packageId": "ri_lw_ch_0087",
+          "chapterId": "ch_0087",
+          "field": "factionPressures",
+          "itemId": "pressure_1"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_8892a59ced5f",
+        "sp_76ec06770b51",
+        "sp_ed4752485335"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0065",
+          "startOffset": 272474,
+          "endOffset": 272517,
+          "summary": "家老们怀疑方源背后有神秘后台",
+          "sourcePointerId": "sp_8892a59ced5f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0035",
+          "startOffset": 270973,
+          "endOffset": 271032,
+          "summary": "学堂家老，治疗并检查方源",
+          "sourcePointerId": "sp_76ec06770b51"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0087",
+          "paragraphId": "ch_0087_p0041",
+          "startOffset": 271297,
+          "endOffset": 271333,
+          "summary": "方源的对手，二转蛊师，拥有玉皮蛊",
+          "sourcePointerId": "sp_ed4752485335"
+        }
+      ]
+    },
+    {
+      "visibility": "public",
+      "publicSummary": "资源点只能作为低阶补给、询价、短缺和取舍的公开事实。",
+      "playerVisibleBoundary": "可见资源不足、价格波动、库存不稳和采购失败。",
+      "hiddenBoundary": "不写高阶材料稳定供应、配方、奖励或机缘结论。",
+      "riskTags": [
+        "resource_point",
+        "supply_gap",
+        "no_reward"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_outer_edge_1ff25d487c75",
+      "category": "resource_point_boundary",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.759290+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "events",
+          "itemId": "evt_3deed69defe7"
+        },
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "relations",
+          "itemId": "rel_606de54e8bda"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cadccdb9ca89",
+        "sp_be314acecb13"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0057",
+          "startOffset": 16687,
+          "endOffset": 16728,
+          "summary": "方源将落水的方正拉起来",
+          "sourcePointerId": "sp_cadccdb9ca89"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0058",
+          "startOffset": 16732,
+          "endOffset": 16769,
+          "summary": "兄弟关系，方源是方正的哥哥，在方正落水时将其拉起",
+          "sourcePointerId": "sp_be314acecb13"
+        }
+      ]
+    },
+    {
+      "visibility": "public",
+      "publicSummary": "危险区域可作为公开风险事实：绕行、戒备、战斗准备和撤退成本。",
+      "playerVisibleBoundary": "玩家可见警戒、地形、队伍压力和低阶战斗准备。",
+      "hiddenBoundary": "不输出确定伏击结论、NPC 生死或隐藏幕后安排。",
+      "riskTags": [
+        "danger_area",
+        "combat_preparation",
+        "no_outcome"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_outer_edge_a587c530a79a",
+      "category": "danger_area_public_fact",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.856209+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_0536b009e0d5"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_867064a6bcbe"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_48afaf9008f9",
+        "sp_ced6b4fb38ce"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0034",
+          "startOffset": 14076,
+          "endOffset": 14140,
+          "summary": "人祖把心交给希望蛊，希望蛊绽放光明，吓退困境兽群",
+          "sourcePointerId": "sp_48afaf9008f9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0045",
+          "startOffset": 19786,
+          "endOffset": 19821,
+          "summary": "方源记忆中的未来事件：族内蛊师醉酒吸引酒虫，追击中发现密洞，得到花酒行者遗产，修为大增并赢回情侣",
+          "sourcePointerId": "sp_ced6b4fb38ce"
+        }
+      ]
+    },
+    {
+      "visibility": "human_review",
+      "publicSummary": "低阶城外缘可以作为远处目标、传闻、路牌、担保和入口条件。",
+      "playerVisibleBoundary": "UI 只能显示外缘或未开放目标，不显示完整城市系统。",
+      "hiddenBoundary": "不开放商家城核心、城内 NPC 网络、阵营加入或正式地点进入。",
+      "riskTags": [
+        "city_outer_edge",
+        "no_full_city",
+        "human_review"
+      ],
+      "recommendedRebornGUse": [
+        "deferred",
+        "fact_card_draft"
+      ],
+      "itemId": "v110_outer_edge_6bfeef4c7987",
+      "category": "city_outer_edge_public_fact",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:52.966629+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0228",
+          "chapterId": "ch_0228",
+          "field": "relations",
+          "itemId": "rel_74ea1bde42ba"
+        },
+        {
+          "packageId": "ri_lw_ch_0228",
+          "chapterId": "ch_0228",
+          "field": "entities",
+          "itemId": "entity_e214131c74ee"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_f8e85e70333f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0228",
+          "paragraphId": "ch_0228_p0034",
+          "startOffset": 770388,
+          "endOffset": 770419,
+          "summary": "祖孙关系，古月赤城接受古月赤练的真元灌输",
+          "sourcePointerId": "sp_f8e85e70333f"
+        }
+      ]
+    },
+    {
+      "visibility": "public",
+      "publicSummary": "南疆外缘 UI 摘要应强调低阶路线、临时落脚、商队窗口和风险层。",
+      "playerVisibleBoundary": "只展示公开、低阶、可逐步得知的信息。",
+      "hiddenBoundary": "不展示完整五域、完整南疆政治结构或重大正史因果。",
+      "riskTags": [
+        "ui_boundary",
+        "public_region",
+        "progressive_discovery"
+      ],
+      "recommendedRebornGUse": [
+        "fact_card_draft",
+        "rule_draft"
+      ],
+      "itemId": "v110_outer_edge_e7237e68bd56",
+      "category": "ui_public_summary_boundary",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:53.093063+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_6daf362d8ab4"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "factionPressures",
+          "itemId": "pressure_1"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_929e88080440",
+        "sp_6a029ada7240",
+        "sp_e93b53f74666",
+        "sp_c0ff2c05f367"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "sourcePointerId": "sp_929e88080440"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长与花酒行者激战，最终同归于尽",
+          "sourcePointerId": "sp_6a029ada7240"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0012",
+          "startOffset": 37139,
+          "endOffset": 37161,
+          "summary": "醉酒蛊师发现遗藏后禀告家族",
+          "sourcePointerId": "sp_e93b53f74666"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0013",
+          "startOffset": 37165,
+          "endOffset": 37221,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_c0ff2c05f367"
+        }
+      ]
+    },
+    {
+      "visibility": "hidden_ref_only",
+      "publicSummary": "重大隐藏因果只可作为不可公开边界记录。",
+      "playerVisibleBoundary": "玩家侧最多看到传闻、旁证、失败调查或普通危险信号。",
+      "hiddenBoundary": "隐藏正文、私人因果和后续重大真相不进入 UI 或 DeepSeek visible context。",
+      "riskTags": [
+        "hidden_causality",
+        "no_public_truth",
+        "hidden_ref_only"
+      ],
+      "recommendedRebornGUse": [
+        "deferred",
+        "test_sample"
+      ],
+      "itemId": "v110_outer_edge_265512640e77",
+      "category": "hidden_causality_boundary",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "outer_edge_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:53.173766+00:00"
+      },
+      "reborngGate": {
+        "materialType": "outer_edge_public_fact_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_50b72b9bf0f8"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_2aed3f091b61"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_990e1aaf0150",
+        "sp_28382c5b7fb7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0031",
+          "startOffset": 1412,
+          "endOffset": 1436,
+          "summary": "方源在正道群雄围攻下自爆身亡。",
+          "sourcePointerId": "sp_990e1aaf0150"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_28382c5b7fb7"
+        }
+      ]
+    }
+  ],
+  "skipped": []
+}

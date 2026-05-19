@@ -148,7 +148,8 @@ export function GameScreen() {
   const { pipeState, validation, startGame, submitChoice, retry } = useGamePipeline();
   const screenState = useStore(s => s.screenState);
   const gameLoadVersion = useStore(s => s.gameLoadVersion);
-  const startedRef = useRef(false);
+  const pipelineStartedRef = useRef(false);
+  const bgmStartedRef = useRef(false);
   const [sidePanel, setSidePanel] = useState<SidePanel>('none');
 
   // M7 Phase 4: 设备能力检测（驱动 Motion Spring 分级降级）
@@ -159,12 +160,16 @@ export function GameScreen() {
   const isImmortal = useStore(s => (s.profile?.realm?.grand || 1) >= 6);
   const prevDomainRef = useRef<typeof currentDomain | null>(null);
   useEffect(() => {
-    if (!currentDomain) return;
+    if (!currentDomain) {
+      bgmStartedRef.current = false;
+      prevDomainRef.current = null;
+      return;
+    }
     const bgmUrl = DOMAIN_BGM[currentDomain];
     if (!bgmUrl) return;
-    if (!startedRef.current) {
+    if (!bgmStartedRef.current) {
       audioManager.playBgm(`/audio/${bgmUrl}`);
-      startedRef.current = true;
+      bgmStartedRef.current = true;
       prevDomainRef.current = currentDomain;
       console.log(`[BGM] 开局播放: ${currentDomain} (${bgmUrl})`);
       return;
@@ -238,12 +243,12 @@ export function GameScreen() {
 
   useEffect(() => {
     // ═══ BugFix: 读档触发 — gameLoadVersion>0 表示存档已被加载，需要重新拉取 AI 叙事 ═══
-    if (screenState === 'game_play' && gameLoadVersion > 0 && startedRef.current) {
-      startedRef.current = false;
+    if (screenState === 'game_play' && gameLoadVersion > 0 && pipelineStartedRef.current) {
+      pipelineStartedRef.current = false;
     }
 
-    if (screenState === 'game_play' && !startedRef.current) {
-      startedRef.current = true;
+    if (screenState === 'game_play' && !pipelineStartedRef.current) {
+      pipelineStartedRef.current = true;
       // ─── M4: 续档检测 — turn>1 表示有存档数据，走续档流程（标准提示词+不推进回合） ───
       const turn = useStore.getState().turn;
       const isResume = turn > 1;
@@ -263,7 +268,7 @@ export function GameScreen() {
     }
     // ═══ BugFix: 离开游戏界面时重置启动标记，确保重入轮回后能重新触发开局 ═══
     if (screenState !== 'game_play') {
-      startedRef.current = false;
+      pipelineStartedRef.current = false;
     }
   }, [screenState, startGame, gameLoadVersion]);
 

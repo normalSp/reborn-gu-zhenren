@@ -106,4 +106,25 @@ describe('v0.11.0 persisted state normalization', () => {
     expect((normalized.livingWorldState.hiddenFactRefs.hidden_qingmao as any).summary).toBeUndefined();
     expect(normalized.livingWorldState.npcMemories).toEqual([]);
   });
+
+  it('repairs edited immortal saves by moving duplicate mortal inventory into aperture storage', () => {
+    const normalized = normalizePersistedGameState({
+      turn: 12,
+      profile: { name: '手改升仙档', realm: { grand: 6, sub: '初阶', label: '六转初阶' } },
+      inventory: [
+        { id: 'moon', specId: '月光蛊', name: '月光蛊', tier: 1, path: '光道', currentState: 'optimal' },
+        { id: 'stone', specId: '石皮蛊', name: '石皮蛊', tier: 2, path: '土道', currentState: 'optimal' },
+      ],
+      apertureInventory: {
+        gu: [
+          { id: 'moon', specId: '月光蛊', name: '月光蛊', tier: 1, path: '光道', currentState: 'optimal' },
+        ],
+        materials: {},
+        immortalMaterials: {},
+      },
+    });
+
+    expect(normalized.inventory).toEqual([]);
+    expect(normalized.apertureInventory.gu.map((gu: any) => gu.name)).toEqual(['月光蛊', '石皮蛊']);
+  });
 });

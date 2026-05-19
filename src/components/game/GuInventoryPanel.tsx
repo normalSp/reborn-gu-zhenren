@@ -65,6 +65,26 @@ const QINGMAO_FEEDING_ACTIONS = getQingmaoResourceLoopSpec().actions
   .filter(action => action.mode === 'material_reward' && action.materialRewards?.some(reward => reward.usage === 'feeding'));
 const QINGMAO_FEEDING_ACTION_BY_GU = new Map(QINGMAO_FEEDING_ACTIONS.map(action => [action.targetGu, action]));
 
+function getGuIdentityKey(gu: any): string {
+  return String(gu?.specId || gu?.id || gu?.name || '').trim();
+}
+
+function dedupeGuList<T>(records: T[]): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+  for (const record of records) {
+    const key = getGuIdentityKey(record);
+    if (!key) {
+      result.push(record);
+      continue;
+    }
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push(record);
+  }
+  return result;
+}
+
 export function GuInventoryPanel() {
   const inventory = useStore(s => s.inventory);
   // ═══ BugFix v0.7.0: 蛊仙模式读取仙窍存储的蛊虫 ═══
@@ -81,7 +101,12 @@ export function GuInventoryPanel() {
   const lifeboundPenalty = useStore(s => (s as any).lifeboundDeathPenalty);
   const isImmortal = realmGrand >= 6;
   // 双源合并：凡人仅看 inventory，蛊仙合并 apertureInventory.gu
-  const allGu = isImmortal && apertureInventoryGu ? [...inventory, ...apertureInventoryGu] : inventory;
+  const allGu = useMemo(
+    () => isImmortal
+      ? dedupeGuList([...(apertureInventoryGu || []), ...inventory])
+      : inventory,
+    [apertureInventoryGu, inventory, isImmortal],
+  );
   const getApertureCapacity = useStore(s => s.getApertureCapacity);
   const removeGu = useStore(s => s.removeGu);
   const addCurrency = useStore(s => s.addCurrency) as (n: number) => void;

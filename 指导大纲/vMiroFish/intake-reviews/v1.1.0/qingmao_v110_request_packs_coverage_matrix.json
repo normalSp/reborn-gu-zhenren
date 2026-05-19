@@ -1,0 +1,280 @@
+{
+  "generatedAt": "2026-05-19T14:02:55.275872+00:00",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v110_route_location_outer_edge_public_fact_and_travel_pressure_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "outputs": {
+    "route_location": "uploads\\ri_corpus\\exports\\qingmao_v110_request_packs\\v110_route_location_boundary_pack_export_ready.json",
+    "outer_edge": "uploads\\ri_corpus\\exports\\qingmao_v110_request_packs\\v110_southern_border_outer_edge_public_fact_pack_export_ready.json",
+    "pressure": "uploads\\ri_corpus\\exports\\qingmao_v110_request_packs\\v110_travel_supply_pursuit_identity_pressure_pack_export_ready.json"
+  },
+  "reports": {
+    "route_location": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_route_location_boundary_pack_export_ready_report.json",
+    "outer_edge": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_southern_border_outer_edge_public_fact_pack_export_ready_report.json",
+    "pressure": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_travel_supply_pursuit_identity_pressure_pack_export_ready_report.json"
+  },
+  "summaries": {
+    "route_location": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_route_location_boundary_pack_summary.md",
+    "outer_edge": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_southern_border_outer_edge_public_fact_pack_summary.md",
+    "pressure": "uploads\\ri_corpus\\reports\\qingmao_v110_request_packs\\v110_travel_supply_pursuit_identity_pressure_pack_summary.md"
+  },
+  "summaryStats": {
+    "route_location": {
+      "totalItems": 8,
+      "byCategory": {
+        "route_state_candidate": 1,
+        "outer_edge_state_candidate": 1,
+        "pursuit_route_boundary": 1,
+        "route_gate_candidate": 1,
+        "southern_border_outer_edge": 1,
+        "blocked_location_boundary": 1,
+        "faction_entry_boundary": 1,
+        "hidden_ref_boundary": 1
+      },
+      "sourcePointers": 15,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "outer_edge": {
+      "totalItems": 8,
+      "byCategory": {
+        "route_edge_public_fact": 1,
+        "caravan_public_fact": 1,
+        "loose_cultivator_public_fact": 1,
+        "resource_point_boundary": 1,
+        "danger_area_public_fact": 1,
+        "city_outer_edge_public_fact": 1,
+        "ui_public_summary_boundary": 1,
+        "hidden_causality_boundary": 1
+      },
+      "sourcePointers": 18,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "pressure": {
+      "totalItems": 8,
+      "byCategory": {
+        "travel_supply_pressure": 1,
+        "pursuit_pressure": 1,
+        "identity_pressure": 1,
+        "faction_pressure": 1,
+        "route_pressure": 1,
+        "mixed_pressure": 1,
+        "extreme_intent_test": 1,
+        "hidden_ref_pressure": 1
+      },
+      "sourcePointers": 18,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    }
+  },
+  "coverageMatrix": {
+    "route_location": {
+      "scopeCoverage": {
+        "route_state_candidate": 1,
+        "outer_edge_state_candidate": 1,
+        "pursuit_route_boundary": 1,
+        "route_gate_candidate": 1,
+        "southern_border_outer_edge": 1,
+        "blocked_location_boundary": 1,
+        "faction_entry_boundary": 1,
+        "hidden_ref_boundary": 1
+      },
+      "requiredFieldsPresent": {
+        "boundaryNotes": 8,
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "itemId": 8,
+        "reborngGate": 8,
+        "recommendedRebornGUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskTags": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "summary": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      }
+    },
+    "outer_edge": {
+      "scopeCoverage": {
+        "route_edge_public_fact": 1,
+        "caravan_public_fact": 1,
+        "loose_cultivator_public_fact": 1,
+        "resource_point_boundary": 1,
+        "danger_area_public_fact": 1,
+        "city_outer_edge_public_fact": 1,
+        "ui_public_summary_boundary": 1,
+        "hidden_causality_boundary": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "hiddenBoundary": 8,
+        "itemId": 8,
+        "playerVisibleBoundary": 8,
+        "publicSummary": 8,
+        "reborngGate": 8,
+        "recommendedRebornGUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskTags": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      }
+    },
+    "pressure": {
+      "scopeCoverage": {
+        "travel_supply_pressure": 1,
+        "pursuit_pressure": 1,
+        "identity_pressure": 1,
+        "faction_pressure": 1,
+        "route_pressure": 1,
+        "mixed_pressure": 1,
+        "extreme_intent_test": 1,
+        "hidden_ref_pressure": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "failureOrCostHints": 8,
+        "itemId": 8,
+        "pressureType": 8,
+        "reborngGate": 8,
+        "recommendedRebornGUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskTags": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "summary": 8,
+        "triggerHints": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+        ]
+      }
+    }
+  },
+  "completionGate": {
+    "route_location": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    },
+    "outer_edge": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    },
+    "pressure": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    }
+  },
+  "notes": [
+    "v1.1.0 request packs are deterministic source-redacted candidates.",
+    "No live model call is used; source is the complete continuous strict/reviewable base through 2120."
+  ]
+}

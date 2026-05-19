@@ -1,0 +1,812 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v110-travel-supply-pursuit-identity-pressure-pack",
+  "packageId": "v110_travel_supply_pursuit_identity_pressure_pack",
+  "targetPhase": "v1.1.0 travel supply pursuit identity pressure",
+  "generatedAt": "2026-05-19T14:02:55.243508+00:00",
+  "suggestedOutputName": "v110_travel_supply_pursuit_identity_pressure_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v110_route_location_outer_edge_public_fact_and_travel_pressure_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "redactionPolicy": {
+    "sourceBodyIncluded": false,
+    "originalWordingIncluded": false,
+    "omittedTextFieldFamilies": [
+      "source_body_fields"
+    ],
+    "candidateOnly": true
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "travel_supply_pressure": 1,
+      "pursuit_pressure": 1,
+      "identity_pressure": 1,
+      "faction_pressure": 1,
+      "route_pressure": 1,
+      "mixed_pressure": 1,
+      "extreme_intent_test": 1,
+      "hidden_ref_pressure": 1
+    },
+    "sourcePointers": 18,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "travel_supply_pressure": 1,
+      "pursuit_pressure": 1,
+      "identity_pressure": 1,
+      "faction_pressure": 1,
+      "route_pressure": 1,
+      "mixed_pressure": 1,
+      "extreme_intent_test": 1,
+      "hidden_ref_pressure": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "failureOrCostHints": 8,
+      "itemId": 8,
+      "pressureType": 8,
+      "reborngGate": 8,
+      "recommendedRebornGUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "riskTags": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "summary": 8,
+      "triggerHints": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, UI, route, region, rule, or test use"
+      ]
+    }
+  },
+  "items": [
+    {
+      "pressureType": "supply",
+      "visibility": "public",
+      "summary": "离开原区域后的补给压力来自食水、元石、住宿、材料和交易窗口不稳定。",
+      "triggerHints": [
+        "补给不足",
+        "价格过高",
+        "距离过远",
+        "交易窗口不可信"
+      ],
+      "failureOrCostHints": [
+        "等待",
+        "绕路",
+        "消耗增加",
+        "行动降级"
+      ],
+      "riskTags": [
+        "supply_gap",
+        "travel_cost",
+        "no_reward"
+      ],
+      "recommendedRebornGUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_4233642d1835",
+      "category": "travel_supply_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.303463+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "events",
+          "itemId": "evt_3deed69defe7"
+        },
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "relations",
+          "itemId": "rel_606de54e8bda"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cadccdb9ca89",
+        "sp_be314acecb13"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0057",
+          "startOffset": 16687,
+          "endOffset": 16728,
+          "summary": "方源将落水的方正拉起来",
+          "sourcePointerId": "sp_cadccdb9ca89"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0058",
+          "startOffset": 16732,
+          "endOffset": 16769,
+          "summary": "兄弟关系，方源是方正的哥哥，在方正落水时将其拉起",
+          "sourcePointerId": "sp_be314acecb13"
+        }
+      ]
+    },
+    {
+      "pressureType": "pursuit",
+      "visibility": "if_boundary",
+      "summary": "追踪压力应表现为被询问、被搜寻、绕行成本和可信度下降。",
+      "triggerHints": [
+        "公开行踪暴露",
+        "询问过多",
+        "路线异常",
+        "关系残余"
+      ],
+      "failureOrCostHints": [
+        "被盘查",
+        "路线受阻",
+        "时间成本增加",
+        "人工审查"
+      ],
+      "riskTags": [
+        "pursuit_pressure",
+        "no_chase_outcome",
+        "route_risk"
+      ],
+      "recommendedRebornGUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_5db118a15952",
+      "category": "pursuit_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.389808+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_8109c0a78f89"
+        },
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_867064a6bcbe"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d6db6d6654a4",
+        "sp_ced6b4fb38ce"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0044",
+          "startOffset": 14368,
+          "endOffset": 14414,
+          "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现",
+          "sourcePointerId": "sp_d6db6d6654a4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0045",
+          "startOffset": 19786,
+          "endOffset": 19821,
+          "summary": "方源记忆中的未来事件：族内蛊师醉酒吸引酒虫，追击中发现密洞，得到花酒行者遗产，修为大增并赢回情侣",
+          "sourcePointerId": "sp_ced6b4fb38ce"
+        }
+      ]
+    },
+    {
+      "pressureType": "identity",
+      "visibility": "public",
+      "summary": "身份风险来自伪装不稳、担保不足、公开记录矛盾和接触对象怀疑。",
+      "triggerHints": [
+        "缺少担保",
+        "口径不一致",
+        "询问敏感对象",
+        "行踪无法解释"
+      ],
+      "failureOrCostHints": [
+        "需要担保",
+        "临时失败",
+        "关系降温",
+        "拒绝进入"
+      ],
+      "riskTags": [
+        "identity_pressure",
+        "guarantee_required",
+        "no_faction_switch"
+      ],
+      "recommendedRebornGUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_d9a6235ed7cd",
+      "category": "identity_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.548871+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0005",
+          "chapterId": "ch_0005",
+          "field": "events",
+          "itemId": "evt_d0e6ad8e9dae"
+        },
+        {
+          "packageId": "ri_lw_ch_0006",
+          "chapterId": "ch_0006",
+          "field": "events",
+          "itemId": "evt_8109c0a78f89"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_05456e604c44",
+        "sp_d6db6d6654a4"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0005",
+          "paragraphId": "ch_0005_p0077",
+          "startOffset": 12584,
+          "endOffset": 12612,
+          "summary": "开窍大典上，学堂家老呼叫古月方源的名字，方源被点名上前测试",
+          "sourcePointerId": "sp_05456e604c44"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0044",
+          "startOffset": 14368,
+          "endOffset": 14414,
+          "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现",
+          "sourcePointerId": "sp_d6db6d6654a4"
+        }
+      ]
+    },
+    {
+      "pressureType": "faction",
+      "visibility": "human_review",
+      "summary": "家族余波和势力接触只能作为公开残余压力候选。",
+      "triggerHints": [
+        "接触敌对势力",
+        "自称身份",
+        "打听敏感人物",
+        "三寨关系残余"
+      ],
+      "failureOrCostHints": [
+        "审查加重",
+        "拒绝接触",
+        "风险标记",
+        "人工审查"
+      ],
+      "riskTags": [
+        "faction_aftershock",
+        "no_faction_transfer",
+        "human_review"
+      ],
+      "recommendedRebornGUse": [
+        "test_sample",
+        "deferred"
+      ],
+      "itemId": "v110_pressure_3f1d53aa8151",
+      "category": "faction_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.595106+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_2aed3f091b61"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_a89af49b6f8d"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_28382c5b7fb7",
+        "sp_a921e407da24"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_28382c5b7fb7"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0039",
+          "startOffset": 1653,
+          "endOffset": 1751,
+          "summary": "古月族长为明天的开窍大典举行祭祀祈祷。",
+          "sourcePointerId": "sp_a921e407da24"
+        }
+      ]
+    },
+    {
+      "pressureType": "route",
+      "visibility": "public",
+      "summary": "路线窗口应由山路风险、商队时机、临时落脚和公开信息组成。",
+      "triggerHints": [
+        "错过商队",
+        "路线不熟",
+        "落脚点不足",
+        "危险区域靠近"
+      ],
+      "failureOrCostHints": [
+        "等待下一窗口",
+        "绕路",
+        "补给消耗",
+        "暴露风险增加"
+      ],
+      "riskTags": [
+        "route_window",
+        "outer_edge",
+        "cost_boundary"
+      ],
+      "recommendedRebornGUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_563cced229cc",
+      "category": "route_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.790465+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_6daf362d8ab4"
+        },
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_4ef595f8c16f"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_929e88080440",
+        "sp_f5fddfc895bf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "sourcePointerId": "sp_929e88080440"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0048",
+          "startOffset": 31911,
+          "endOffset": 31929,
+          "summary": "方源离开原住处，搬到山寨客栈暂居。",
+          "sourcePointerId": "sp_f5fddfc895bf"
+        }
+      ]
+    },
+    {
+      "pressureType": "mixed",
+      "visibility": "public",
+      "summary": "商队/散修接触同时牵涉补给、身份、担保、价格和路线风险。",
+      "triggerHints": [
+        "请求随行",
+        "询价过多",
+        "缺少担保",
+        "身份不明"
+      ],
+      "failureOrCostHints": [
+        "只给传闻",
+        "交易失败",
+        "需担保",
+        "路线延期"
+      ],
+      "riskTags": [
+        "caravan_contact",
+        "mixed_pressure",
+        "no_formal_contract"
+      ],
+      "recommendedRebornGUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_296d3c476c31",
+      "category": "mixed_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:54.980991+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be"
+        },
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_e39ae5522b5d"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_43cce366ab6b",
+        "sp_fede8bb413bd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0038",
+          "startOffset": 21926,
+          "endOffset": 21977,
+          "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+          "sourcePointerId": "sp_fede8bb413bd"
+        }
+      ]
+    },
+    {
+      "pressureType": "mixed",
+      "visibility": "human_review",
+      "summary": "极端意图应转化为拒绝、降级、长前置或人工审查样本。",
+      "triggerHints": [
+        "索要高阶机缘",
+        "决定 NPC 生死",
+        "直接投靠强势势力",
+        "跳过路线后果"
+      ],
+      "failureOrCostHints": [
+        "拒绝",
+        "延期",
+        "传闻化",
+        "人工审查"
+      ],
+      "riskTags": [
+        "extreme_intent",
+        "blocked_high_rank",
+        "no_npc_outcome"
+      ],
+      "recommendedRebornGUse": [
+        "test_sample",
+        "deferred"
+      ],
+      "itemId": "v110_pressure_4053f3231792",
+      "category": "extreme_intent_test",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:55.153053+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0012",
+          "chapterId": "ch_0012",
+          "field": "events",
+          "itemId": "evt_359666c9458f"
+        },
+        {
+          "packageId": "ri_lw_ch_0014",
+          "chapterId": "ch_0014",
+          "field": "factionPressures",
+          "itemId": "pressure_1"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_346b986970bb",
+        "sp_6a029ada7240",
+        "sp_e93b53f74666",
+        "sp_c0ff2c05f367"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0012",
+          "paragraphId": "ch_0012_p0045",
+          "startOffset": 31786,
+          "endOffset": 31827,
+          "summary": "沈翠色诱方源，反被方源威吓，惊恐逃离。",
+          "sourcePointerId": "sp_346b986970bb"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长与花酒行者激战，最终同归于尽",
+          "sourcePointerId": "sp_6a029ada7240"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0012",
+          "startOffset": 37139,
+          "endOffset": 37161,
+          "summary": "醉酒蛊师发现遗藏后禀告家族",
+          "sourcePointerId": "sp_e93b53f74666"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0013",
+          "startOffset": 37165,
+          "endOffset": 37221,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_c0ff2c05f367"
+        }
+      ]
+    },
+    {
+      "pressureType": "mixed",
+      "visibility": "hidden_ref_only",
+      "summary": "隐藏事实相关压力只可成为 hidden ref，不进入 UI 或 DeepSeek visible context。",
+      "triggerHints": [
+        "调查关键人物",
+        "触碰隐藏因果",
+        "追问未来知识",
+        "接近秘辛线索"
+      ],
+      "failureOrCostHints": [
+        "失败调查",
+        "只给公开旁证",
+        "延期",
+        "人工审查"
+      ],
+      "riskTags": [
+        "hidden_ref_only",
+        "no_private_causality",
+        "deepseek_hidden_boundary"
+      ],
+      "recommendedRebornGUse": [
+        "deferred",
+        "test_sample"
+      ],
+      "itemId": "v110_pressure_376579de5195",
+      "category": "hidden_ref_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "pressure_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T14:02:55.243508+00:00"
+      },
+      "reborngGate": {
+        "materialType": "travel_pressure_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_50b72b9bf0f8"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "events",
+          "itemId": "evt_2aed3f091b61"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_990e1aaf0150",
+        "sp_28382c5b7fb7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0031",
+          "startOffset": 1412,
+          "endOffset": 1436,
+          "summary": "方源在正道群雄围攻下自爆身亡。",
+          "sourcePointerId": "sp_990e1aaf0150"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_28382c5b7fb7"
+        }
+      ]
+    }
+  ],
+  "skipped": []
+}
