@@ -1,7 +1,7 @@
 # RebornG v1.0.0 Codex 当前入口
 
 日期：2026-05-19
-状态：启动审查与范围冻结草案已建立，等待用户审阅/批准
+状态：a0/a1/a2 已完成，b1 青茅到南疆早期连续体验第一刀已实现，等待本地完整质量门与远端 CI
 主题：`活世界早期正式版`
 
 ## 定位
@@ -26,6 +26,11 @@
 - `v1.0.0-MiroFish资料需求与交付协议.md`
 - `v1.0.0-Git提交与推送计划.md`
 - `v1.0.0-专家团启动会纪要.md`
+- `v1.0.0-a0-MiroFish-intake与决策同步.md`
+- `v1.0.0-a1-接受标准与权威冻结.md`
+- `v1.0.0-a2-发布威胁模型与hidden-private-canon门禁.md`
+- `v1.0.0-b1-青茅南疆连续体验第一刀.md`
+- `v1.0.0-b1-Player-Advocate-30轮走查记录.md`
 
 ## 主目标
 
@@ -35,10 +40,10 @@
 
 | 阶段 | 主题 | 是否 runtime | MiroFish need |
 |---|---|---:|---|
-| a0 | 启动审查、范围冻结、v0.19 readiness 对齐 | 否 | not_needed |
-| a1 | v1.0 接受标准、公开承诺边界、权威冻结 | 否 | preferred |
-| a2 | public/private canon、API key、hidden fact 发布威胁模型 | 否或工具 | preferred |
-| b1 | 青茅到南疆早期连续体验主线第一刀 | 是 | blocking before runtime absorption |
+| a0 | 启动审查、范围冻结、v0.19 readiness 对齐 | 否 | 已完成 |
+| a1 | v1.0 接受标准、公开承诺边界、权威冻结 | 否 | 已完成 |
+| a2 | public/private canon、API key、hidden fact 发布威胁模型 | 否或工具 | 已完成 |
+| b1 | 青茅到南疆早期连续体验主线第一刀 | 是 | 已实现，待完整质量门/CI |
 | b2 | 低阶蛊师 life loop 释出版闭环与 UI 口感 | 是 | preferred |
 | b3 | 玩家自由意图/极端意图/前置条件说明收束 | 是 | preferred |
 | b4 | v1.0 hero 三件套、公开素材、说明文案预检 | 否或 manifest | blocking before public copy |
@@ -61,4 +66,4 @@
 
 专家团建议批准 v1.0 作为“活世界早期正式版”启动，但不应把远期愿景压进本版本。v1.0 应先把青茅山到南疆早期路线、低阶蛊师闭环、自由意图裁决、NPC/势力回流、公开安全和长测体系打通。
 
-当前需要用户审阅 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 建议一次性请求 3 个 v1.0 包，详见 `v1.0.0-MiroFish资料需求与交付协议.md` 和 `指导大纲/vMiroFish/requests/v1.0.0/`。
+用户已批准 `v1.0.0-需求决策池.md` 中 D-001 至 D-010。MiroFish 三包已交付并通过 intake。当前 b1 第一刀已把 v0.18 路线准备、候选承接和压力回流收束为 v1.0 连续体验候选验收，不写正式 route/location/currentRegion 字段，不开放正式地点、阵营、奖励或 NPC 生死；下一步是完成质量门、提交/推送后进入 b2 低阶蛊师 life loop 释出版闭环。

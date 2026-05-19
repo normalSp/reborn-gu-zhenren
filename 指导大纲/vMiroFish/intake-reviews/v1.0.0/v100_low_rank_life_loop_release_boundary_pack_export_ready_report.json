@@ -1,0 +1,89 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v100-low-rank-life-loop-release-boundary-pack",
+  "packageId": "v100_low_rank_life_loop_release_boundary_pack",
+  "generatedAt": "2026-05-19T09:42:02.628080+00:00",
+  "suggestedOutputName": "v100_low_rank_life_loop_release_boundary_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "cultivation": 1,
+      "supply": 1,
+      "gu_usage": 1,
+      "combat": 1,
+      "trade": 1,
+      "commission": 1,
+      "social_pressure": 1,
+      "test_intent": 1
+    },
+    "sourcePointers": 15,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "cultivation": 1,
+      "supply": 1,
+      "gu_usage": 1,
+      "combat": 1,
+      "trade": 1,
+      "commission": 1,
+      "social_pressure": 1,
+      "test_intent": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "id": 8,
+      "reborngGate": 8,
+      "recommendedUse": 8,
+      "releaseBoundary": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "summary": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete_candidate",
+    "baseSufficiency": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "notes": [
+      "All records are source-backed candidates with original source wording omitted.",
+      "RebornG must approve final rules, tests, public copy, FAQ, captions, and art boundaries.",
+      "MiroFish output is not canon truth or runtime authority."
+    ]
+  }
+}

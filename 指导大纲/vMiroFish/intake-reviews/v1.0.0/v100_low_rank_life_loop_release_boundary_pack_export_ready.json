@@ -1,0 +1,645 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v100-low-rank-life-loop-release-boundary-pack",
+  "packageId": "v100_low_rank_life_loop_release_boundary_pack",
+  "targetPhase": "v1.0.0 low-rank life loop release boundary",
+  "generatedAt": "2026-05-19T09:42:02.628080+00:00",
+  "suggestedOutputName": "v100_low_rank_life_loop_release_boundary_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "redactionPolicy": {
+    "sourceBodyIncluded": false,
+    "originalWordingIncluded": false,
+    "omittedTextFieldFamilies": [
+      "source_body_fields"
+    ],
+    "candidateOnly": true
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "cultivation": 1,
+      "supply": 1,
+      "gu_usage": 1,
+      "combat": 1,
+      "trade": 1,
+      "commission": 1,
+      "social_pressure": 1,
+      "test_intent": 1
+    },
+    "sourcePointers": 15,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "cultivation": 1,
+      "supply": 1,
+      "gu_usage": 1,
+      "combat": 1,
+      "trade": 1,
+      "commission": 1,
+      "social_pressure": 1,
+      "test_intent": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "id": 8,
+      "reborngGate": 8,
+      "recommendedUse": 8,
+      "releaseBoundary": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "summary": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    }
+  },
+  "items": [
+    {
+      "summary": "低阶修行应围绕真元、资质、元石和时间压力形成可感知闭环。",
+      "visibility": "player_visible",
+      "releaseBoundary": "不能直接改资质、跳境界或用候选材料当正式修行结算。",
+      "recommendedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "id": "v100_life_loop_1f90f0e38ba4",
+      "category": "cultivation",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:01.931714+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0003",
+          "chapterId": "ch_0003",
+          "field": "relations",
+          "itemId": "rel_bbaab4d61282"
+        },
+        {
+          "packageId": "ri_lw_ch_0003",
+          "chapterId": "ch_0003",
+          "field": "entities",
+          "itemId": "entity_24eddd0bab81"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_e92a5646c052",
+        "sp_484bdda4c3c3"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0058",
+          "startOffset": 6094,
+          "endOffset": 6195,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_e92a5646c052"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0009",
+          "startOffset": 3992,
+          "endOffset": 4013,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_484bdda4c3c3"
+        }
+      ]
+    },
+    {
+      "summary": "低阶生活循环需要住宿、食水、元石和基础材料的短缺与取舍。",
+      "visibility": "player_visible",
+      "releaseBoundary": "短缺可作为压力和前置，不直接发放资源或固定商店库存。",
+      "recommendedUse": [
+        "candidate_pool",
+        "rule_draft"
+      ],
+      "id": "v100_life_loop_051adb843344",
+      "category": "supply",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.016419+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "events",
+          "itemId": "evt_3deed69defe7"
+        },
+        {
+          "packageId": "ri_lw_ch_0007",
+          "chapterId": "ch_0007",
+          "field": "relations",
+          "itemId": "rel_606de54e8bda"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cadccdb9ca89",
+        "sp_be314acecb13"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0057",
+          "startOffset": 16687,
+          "endOffset": 16728,
+          "summary": "方源将落水的方正拉起来",
+          "sourcePointerId": "sp_cadccdb9ca89"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0007",
+          "paragraphId": "ch_0007_p0058",
+          "startOffset": 16732,
+          "endOffset": 16769,
+          "summary": "兄弟关系，方源是方正的哥哥，在方正落水时将其拉起",
+          "sourcePointerId": "sp_be314acecb13"
+        }
+      ]
+    },
+    {
+      "summary": "蛊虫使用应表现为喂养、消耗、维护、适配和失败风险的低阶约束。",
+      "visibility": "player_visible",
+      "releaseBoundary": "不得把候选项写成具体奖励、配方、材料清单或蛊虫授予。",
+      "recommendedUse": [
+        "candidate_pool",
+        "rule_draft",
+        "test_sample"
+      ],
+      "id": "v100_life_loop_dac23b797b63",
+      "category": "gu_usage",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.114664+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_bd7cd9991af0"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_386e51a40f5e"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_729ce8b47868",
+        "sp_82bc141e3adf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0002",
+          "startOffset": 366,
+          "endOffset": 387,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_729ce8b47868"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0052",
+          "startOffset": 2183,
+          "endOffset": 2222,
+          "summary": "白家寨天才蛊师，天资恐怖",
+          "sourcePointerId": "sp_82bc141e3adf"
+        }
+      ]
+    },
+    {
+      "summary": "低阶战斗可强调准备、蛊虫配合、地形、队伍信任和撤退成本。",
+      "visibility": "player_visible",
+      "releaseBoundary": "不开放高阶杀招万能化、阵法掌控或确定胜负结论。",
+      "recommendedUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "id": "v100_life_loop_e4eb2760bbda",
+      "category": "combat",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.222002+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "entities",
+          "itemId": "entity_bc64874895cd"
+        },
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "entities",
+          "itemId": "entity_d4ab3d7e38eb"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_62c9f024fdc2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0022",
+          "startOffset": 7594,
+          "endOffset": 7665,
+          "summary": "方源的舅父，与舅母配合挑拨兄弟关系",
+          "sourcePointerId": "sp_62c9f024fdc2"
+        }
+      ]
+    },
+    {
+      "summary": "交易循环应以低阶询价、担保、价格波动和信誉风险为边界。",
+      "visibility": "public",
+      "releaseBoundary": "不直接开放高阶市场、远程交易或稳定材料供应。",
+      "recommendedUse": [
+        "candidate_pool",
+        "copy_boundary"
+      ],
+      "id": "v100_life_loop_74838e510343",
+      "category": "trade",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.322461+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0008",
+          "chapterId": "ch_0008",
+          "field": "events",
+          "itemId": "evt_0375893543be"
+        },
+        {
+          "packageId": "ri_lw_ch_0009",
+          "chapterId": "ch_0009",
+          "field": "events",
+          "itemId": "evt_e39ae5522b5d"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_43cce366ab6b",
+        "sp_fede8bb413bd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0008",
+          "paragraphId": "ch_0008_p0053",
+          "startOffset": 20186,
+          "endOffset": 20276,
+          "summary": "学堂家老通知学员去蛊室挑选本命蛊，炼化后进行考核，拔得头筹奖励二十块元石",
+          "sourcePointerId": "sp_43cce366ab6b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0009",
+          "paragraphId": "ch_0009_p0038",
+          "startOffset": 21926,
+          "endOffset": 21977,
+          "summary": "方源在酒肆购买了两坛酒，并支付了元石。",
+          "sourcePointerId": "sp_fede8bb413bd"
+        }
+      ]
+    },
+    {
+      "summary": "委托与任务应强调资格、担保、信息不足、报酬不确定和失败成本。",
+      "visibility": "player_visible",
+      "releaseBoundary": "不得直接给正式任务成功、奖励结算或地点解锁。",
+      "recommendedUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "id": "v100_life_loop_0ffda523e8a7",
+      "category": "commission",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.380509+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0032",
+          "chapterId": "ch_0032",
+          "field": "events",
+          "itemId": "evt_df9c5c7f9de0"
+        },
+        {
+          "packageId": "ri_lw_ch_0088",
+          "chapterId": "ch_0088",
+          "field": "events",
+          "itemId": "evt_73ad98243874"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d59d416d6f41",
+        "sp_0ff8d565da77"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0032",
+          "paragraphId": "ch_0032_p0024",
+          "startOffset": 91522,
+          "endOffset": 91576,
+          "summary": "古月漠颜执行家族侦察任务返回，向古月漠尘汇报狼巢情况，预测来年将有狼潮，共计三只雷冠头狼",
+          "sourcePointerId": "sp_d59d416d6f41"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0088",
+          "paragraphId": "ch_0088_p0040",
+          "startOffset": 274468,
+          "endOffset": 274479,
+          "summary": "古月角三带领方源等五人执行家族任务，在雪地中奔驰",
+          "sourcePointerId": "sp_0ff8d565da77"
+        }
+      ]
+    },
+    {
+      "summary": "低阶生活循环要保留同辈、家族、旁观者和势力记录带来的社会压力。",
+      "visibility": "player_visible",
+      "releaseBoundary": "压力只能作为候选，不直接改写 NPC 忠诚、阵营或生死。",
+      "recommendedUse": [
+        "candidate_pool",
+        "rule_draft"
+      ],
+      "id": "v100_life_loop_a679642bc73b",
+      "category": "social_pressure",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.426351+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "relations",
+          "itemId": "rel_da2cd63abf55"
+        },
+        {
+          "packageId": "ri_lw_ch_0004",
+          "chapterId": "ch_0004",
+          "field": "relations",
+          "itemId": "rel_07e8aa213523"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_e3a6eeb80841",
+        "sp_780e11c53cde"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0062",
+          "startOffset": 9206,
+          "endOffset": 9238,
+          "summary": "兄弟关系，但方源视方正为外人，没有亲情",
+          "sourcePointerId": "sp_e3a6eeb80841"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0055",
+          "startOffset": 8916,
+          "endOffset": 8972,
+          "summary": "舅父舅母表面偏爱方源，实则挑拨他与弟弟的关系",
+          "sourcePointerId": "sp_780e11c53cde"
+        }
+      ]
+    },
+    {
+      "summary": "Player Advocate 样本应覆盖购买资源、调查角色、逃离路线、投靠势力和越级目标。",
+      "visibility": "deferred",
+      "releaseBoundary": "越级目标统一降级为前置、失败、传闻或人工审查样本。",
+      "recommendedUse": [
+        "test_sample",
+        "deferred"
+      ],
+      "id": "v100_life_loop_53d232289edd",
+      "category": "test_intent",
+      "confidence": "medium_high",
+      "runtimeAuthority": "candidate_only",
+      "runtimeVisible": false,
+      "deepSeekVisible": false,
+      "requiresHumanCanonReview": true,
+      "reviewStatus": {
+        "status": "export_ready",
+        "classification": "life_loop_candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "source body omitted; original wording not included",
+          "candidate-only; requires RebornG human intake review"
+        ],
+        "updatedAt": "2026-05-19T09:42:02.628080+00:00"
+      },
+      "reborngGate": {
+        "materialType": "life_loop_boundary_candidate",
+        "hiddenRefOnly": true,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourceRefs": [
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_bd7cd9991af0"
+        },
+        {
+          "packageId": "ri_lw_ch_0002",
+          "chapterId": "ch_0002",
+          "field": "entities",
+          "itemId": "entity_386e51a40f5e"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_729ce8b47868",
+        "sp_82bc141e3adf"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0002",
+          "startOffset": 366,
+          "endOffset": 387,
+          "summary": "source pointer summary withheld by v1.0 public-boundary gate",
+          "sourcePointerId": "sp_729ce8b47868"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0052",
+          "startOffset": 2183,
+          "endOffset": 2222,
+          "summary": "白家寨天才蛊师，天资恐怖",
+          "sourcePointerId": "sp_82bc141e3adf"
+        }
+      ]
+    }
+  ],
+  "skipped": []
+}

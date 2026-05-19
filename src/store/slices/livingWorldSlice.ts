@@ -55,6 +55,9 @@ import {
   resolveV018QingmaoRouteEntryThresholdAction,
   type V018QingmaoRouteActionResolution,
 } from '../../engine/v018-qingmao-route-multi-region';
+import {
+  resolveV100QingmaoSouthernBorderContinuityAction,
+} from '../../engine/v100-qingmao-southern-border-continuity';
 import type { LivingPlayerGoalEntry, LivingWorldState } from '../../types';
 
 export interface WorldIntentPreviewResult {
@@ -188,6 +191,7 @@ export interface LivingWorldSlice {
   resolveV018QingmaoRouteEntryThresholdAction: () => V018QingmaoRouteActionCommitResult;
   resolveV018QingmaoCandidateContinuationAction: () => V018QingmaoRouteActionCommitResult;
   resolveV018QingmaoPressureBackflowAction: () => V018QingmaoRouteActionCommitResult;
+  resolveV100QingmaoSouthernBorderContinuityAction: () => V018QingmaoRouteActionCommitResult;
 }
 
 type SliceSet = (...args: any[]) => void;
@@ -1501,6 +1505,24 @@ export const createLivingWorldSlice = (
       resolution,
       'v018_qingmao_pressure_backflow',
       'v0.18路线压力回流',
+    );
+  },
+  resolveV100QingmaoSouthernBorderContinuityAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveV100QingmaoSouthernBorderContinuityAction({
+      livingWorldState: store.livingWorldState,
+      turn: store.turn,
+      sceneId: store.sceneSessionState?.sceneId,
+      locationId: store.sceneSessionState?.locationId,
+      selectedStartProfileId: store.selectedStartProfileId,
+      playerFactionId: store.timelineState?.factionId || store.currentFaction,
+    });
+    return commitLivingWorldActionResolution(
+      set,
+      get,
+      resolution,
+      'v100_qingmao_southern_border_continuity',
+      'v1.0青茅南疆连续体验',
     );
   },
 });

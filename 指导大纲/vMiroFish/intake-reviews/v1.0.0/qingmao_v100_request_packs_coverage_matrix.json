@@ -1,0 +1,271 @@
+{
+  "generatedAt": "2026-05-19T09:42:04.590839+00:00",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "outputs": {
+    "continuity": "uploads\\ri_corpus\\exports\\qingmao_v100_request_packs\\v100_qingmao_southern_border_continuity_pack_export_ready.json",
+    "life_loop": "uploads\\ri_corpus\\exports\\qingmao_v100_request_packs\\v100_low_rank_life_loop_release_boundary_pack_export_ready.json",
+    "public_release": "uploads\\ri_corpus\\exports\\qingmao_v100_request_packs\\v100_public_release_copy_art_boundary_pack_export_ready.json"
+  },
+  "reports": {
+    "continuity": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_qingmao_southern_border_continuity_pack_export_ready_report.json",
+    "life_loop": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_low_rank_life_loop_release_boundary_pack_export_ready_report.json",
+    "public_release": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_public_release_copy_art_boundary_pack_export_ready_report.json"
+  },
+  "summaries": {
+    "continuity": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_qingmao_southern_border_continuity_pack_summary.md",
+    "life_loop": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_low_rank_life_loop_release_boundary_pack_summary.md",
+    "public_release": "uploads\\ri_corpus\\reports\\qingmao_v100_request_packs\\v100_public_release_copy_art_boundary_pack_summary.md"
+  },
+  "summaryStats": {
+    "continuity": {
+      "totalItems": 8,
+      "byCategory": {
+        "qingmao_exit_pressure": 1,
+        "southern_border_route_anchor": 1,
+        "route_pressure": 1,
+        "faction_residual_risk": 1,
+        "hidden_boundary": 1,
+        "if_minor_deviation": 1,
+        "if_high_cost_deviation": 1,
+        "v1_blocked_extreme_intent": 1
+      },
+      "sourcePointers": 16,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "life_loop": {
+      "totalItems": 8,
+      "byCategory": {
+        "cultivation": 1,
+        "supply": 1,
+        "gu_usage": 1,
+        "combat": 1,
+        "trade": 1,
+        "commission": 1,
+        "social_pressure": 1,
+        "test_intent": 1
+      },
+      "sourcePointers": 15,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    },
+    "public_release": {
+      "totalItems": 8,
+      "byCategory": {
+        "release_copy_boundary": 2,
+        "faq_boundary": 1,
+        "art_caption_boundary": 1,
+        "hidden_fact_risk": 1,
+        "overpromise_risk": 2,
+        "safe_wording_candidate": 1
+      },
+      "sourcePointers": 16,
+      "skipped": 0,
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      },
+      "qa": {
+        "jsonParseable": true,
+        "forbiddenTextKeyCount": 0,
+        "forbiddenTextTokenCount": 0,
+        "itemsWithSourcePointers": 8,
+        "itemsRequiringHumanCanonReview": 8,
+        "gateBadCount": 0,
+        "allRuntimeAuthorityCandidateOnly": true,
+        "allRuntimeVisibleFalse": true,
+        "allDeepSeekVisibleFalse": true
+      }
+    }
+  },
+  "coverageMatrix": {
+    "continuity": {
+      "scopeCoverage": {
+        "qingmao_exit_pressure": 1,
+        "southern_border_route_anchor": 1,
+        "route_pressure": 1,
+        "faction_residual_risk": 1,
+        "hidden_boundary": 1,
+        "if_minor_deviation": 1,
+        "if_high_cost_deviation": 1,
+        "v1_blocked_extreme_intent": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "id": 8,
+        "ifBoundary": 8,
+        "reborngGate": 8,
+        "recommendedUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskTags": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "summary": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      }
+    },
+    "life_loop": {
+      "scopeCoverage": {
+        "cultivation": 1,
+        "supply": 1,
+        "gu_usage": 1,
+        "combat": 1,
+        "trade": 1,
+        "commission": 1,
+        "social_pressure": 1,
+        "test_intent": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "id": 8,
+        "reborngGate": 8,
+        "recommendedUse": 8,
+        "releaseBoundary": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "summary": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      }
+    },
+    "public_release": {
+      "scopeCoverage": {
+        "release_copy_boundary": 2,
+        "faq_boundary": 1,
+        "art_caption_boundary": 1,
+        "hidden_fact_risk": 1,
+        "overpromise_risk": 2,
+        "safe_wording_candidate": 1
+      },
+      "requiredFieldsPresent": {
+        "category": 8,
+        "confidence": 8,
+        "deepSeekVisible": 8,
+        "id": 8,
+        "reborngGate": 8,
+        "recommendedUse": 8,
+        "requiresHumanCanonReview": 8,
+        "reviewStatus": 8,
+        "riskTags": 8,
+        "runtimeAuthority": 8,
+        "runtimeVisible": 8,
+        "sourcePointerIds": 8,
+        "sourcePointers": 8,
+        "sourceRefs": 8,
+        "summary": 8,
+        "visibility": 8
+      },
+      "completionGate": {
+        "status": "complete_candidate",
+        "missingScopeCoverage": [],
+        "notes": [
+          "complete_candidate means every requested boundary category has at least one source-backed candidate",
+          "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+        ]
+      }
+    }
+  },
+  "completionGate": {
+    "continuity": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    },
+    "life_loop": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    },
+    "public_release": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    }
+  },
+  "notes": [
+    "v1.0 request packs are deterministic source-redacted candidates.",
+    "No live model call is used; source is the complete continuous strict/reviewable base through 2120."
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "version": "v1.0.0",
+  "sourceReview": {
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v1.0.0/2026-05-19-v100-three-pack-intake-review-summary.md"
+    ],
+    "sourcePackages": [
+      "v100_qingmao_southern_border_continuity_pack",
+      "v100_low_rank_life_loop_release_boundary_pack",
+      "v100_public_release_copy_art_boundary_pack"
+    ],
+    "sourcePolicy": "MiroFish output is candidate-only and rewritten into RebornG-owned v1.0 rules/tests/UI boundaries."
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "route_entered",
+      "current_route",
+      "current_region",
+      "location_unlock",
+      "region_unlock",
+      "faction_transfer",
+      "faction_identity_change",
+      "formal_warrant",
+      "formal_recruitment",
+      "formal_task",
+      "standing_delta",
+      "reward",
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "recipe_unlock",
+      "formal_trade",
+      "npc_life_result",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "hidden_fact_reveal",
+      "canon_anchor_change",
+      "deepseek_authority_expansion",
+      "save_format_bump",
+      "bff_backend"
+    ],
+    "visibleBoundaryLines": [
+      "v1.0 只承认青茅到南疆早期路线的连续体验候选，不写 route_entered。",
+      "南疆早期只显示山路、客栈、商队、散修接触等外缘语义，不开放完整南疆。",
+      "玩家能看到补给、身份、担保、追索和关系压力，但不能直接获得地点、阵营或奖励。",
+      "隐藏事实、关键角色私人因果和高阶世界机制只保留 hidden_ref/deferred 边界。"
+    ]
+  },
+  "requiredContinuityChecks": [
+    {
+      "id": "v100_check_escape_goal",
+      "label": "离山目标",
+      "summary": "玩家已登记或执行过离开青茅山相关目标/准备。",
+      "requiredRefs": [
+        "player_goal:region:outside_qingmao",
+        "qingmao_escape_route_preparation_baseline"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_3c8906dba8f9"
+      ]
+    },
+    {
+      "id": "v100_check_v018_threshold",
+      "label": "离山门槛",
+      "summary": "v0.18 离山承诺前门槛已确认。",
+      "requiredRefs": [
+        "v018_qingmao_route_entry_threshold_commitment"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_470e9f053031"
+      ]
+    },
+    {
+      "id": "v100_check_v018_continuation",
+      "label": "候选承接",
+      "summary": "南疆低阶路线候选视图已承接。",
+      "requiredRefs": [
+        "v018_qingmao_route_candidate_continuation_view"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_fe5fab4771b5"
+      ]
+    },
+    {
+      "id": "v100_check_v018_pressure",
+      "label": "压力回流",
+      "summary": "补给、追索、身份、商队担保或残余势力压力已回流。",
+      "requiredRefs": [
+        "v018_qingmao_route_pressure_backflow_baseline"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_3c8906dba8f9",
+        "v100_continuity_c1a05a1167e3"
+      ]
+    },
+    {
+      "id": "v100_check_hidden_boundary",
+      "label": "隐藏边界",
+      "summary": "hidden_ref/deferred 内容只作为红线和测试样本，不进入 UI 或 DeepSeek 可见上下文。",
+      "requiredRefs": [
+        "gate:hidden_ref_only"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_ab3fca2b7834",
+        "v100_public_release_ca0042b9dae2"
+      ]
+    }
+  ],
+  "candidateBoundaries": [
+    {
+      "id": "v100_boundary_public_route",
+      "label": "公开路线语义",
+      "summary": "山路、客栈、商队和散修接触可作为南疆早期公开承接语义。",
+      "allowedUse": [
+        "rule_draft",
+        "ui_boundary",
+        "test_sample"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_fe5fab4771b5"
+      ]
+    },
+    {
+      "id": "v100_boundary_pressure",
+      "label": "路线压力",
+      "summary": "补给、身份可信度、担保和追索风险共同构成路线进入前置条件。",
+      "allowedUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_470e9f053031",
+        "v100_life_loop_051adb843344"
+      ]
+    },
+    {
+      "id": "v100_boundary_minor_if",
+      "label": "轻微 IF",
+      "summary": "询价、打听、路线顺序、临时补给和旁支接触可作为轻微 IF 偏离。",
+      "allowedUse": [
+        "rule_draft",
+        "test_sample"
+      ],
+      "sourceItemIds": [
+        "v100_continuity_ae0283b97559"
+      ]
+    }
+  ],
+  "deferredRedlines": [
+    {
+      "id": "v100_redline_hidden_fact",
+      "label": "隐藏事实",
+      "summary": "hidden_ref_only 内容不进入玩家可见 UI、DeepSeek visible context 或公开文案。",
+      "sourceItemIds": [
+        "v100_continuity_ab3fca2b7834",
+        "v100_public_release_ca0042b9dae2"
+      ]
+    },
+    {
+      "id": "v100_redline_high_cost_if",
+      "label": "高代价 IF",
+      "summary": "追踪关键人物、强行投靠强势势力或绕开公开后果只进入 deferred/test_sample。",
+      "sourceItemIds": [
+        "v100_continuity_a679a18b4e0b"
+      ]
+    },
+    {
+      "id": "v100_redline_extreme_intent",
+      "label": "极端意图",
+      "summary": "直接进入商家城核心、获取高阶资源、绕开青茅后果或决定关键 NPC 生死在 v1.0 拒绝或延期。",
+      "sourceItemIds": [
+        "v100_continuity_bdf7bb377481",
+        "v100_public_release_cb88d8c43461"
+      ]
+    }
+  ]
+}

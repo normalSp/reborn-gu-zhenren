@@ -1,0 +1,90 @@
+{
+  "requestId": "mirofish-request-2026-05-19-v100-qingmao-southern-border-continuity-pack",
+  "packageId": "v100_qingmao_southern_border_continuity_pack",
+  "generatedAt": "2026-05-19T09:42:01.186545+00:00",
+  "suggestedOutputName": "v100_qingmao_southern_border_continuity_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_progress_2120_reviewable",
+    "chapterRange": "0001-2120",
+    "baseAssessment": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "continuityNote": "uses the latest complete continuous strict/reviewable base; interrupted later fullbook segments are not mixed into this delivery"
+  },
+  "summary": {
+    "totalItems": 8,
+    "byCategory": {
+      "qingmao_exit_pressure": 1,
+      "southern_border_route_anchor": 1,
+      "route_pressure": 1,
+      "faction_residual_risk": 1,
+      "hidden_boundary": 1,
+      "if_minor_deviation": 1,
+      "if_high_cost_deviation": 1,
+      "v1_blocked_extreme_intent": 1
+    },
+    "sourcePointers": 16,
+    "skipped": 0
+  },
+  "coverageMatrix": {
+    "scopeCoverage": {
+      "qingmao_exit_pressure": 1,
+      "southern_border_route_anchor": 1,
+      "route_pressure": 1,
+      "faction_residual_risk": 1,
+      "hidden_boundary": 1,
+      "if_minor_deviation": 1,
+      "if_high_cost_deviation": 1,
+      "v1_blocked_extreme_intent": 1
+    },
+    "requiredFieldsPresent": {
+      "category": 8,
+      "confidence": 8,
+      "deepSeekVisible": 8,
+      "id": 8,
+      "ifBoundary": 8,
+      "reborngGate": 8,
+      "recommendedUse": 8,
+      "requiresHumanCanonReview": 8,
+      "reviewStatus": 8,
+      "riskTags": 8,
+      "runtimeAuthority": 8,
+      "runtimeVisible": 8,
+      "sourcePointerIds": 8,
+      "sourcePointers": 8,
+      "sourceRefs": 8,
+      "summary": 8,
+      "visibility": 8
+    },
+    "completionGate": {
+      "status": "complete_candidate",
+      "missingScopeCoverage": [],
+      "notes": [
+        "complete_candidate means every requested boundary category has at least one source-backed candidate",
+        "RebornG intake review is required before any runtime, copy, art, FAQ, or test use"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenTextKeyCount": 0,
+    "forbiddenTextTokenCount": 0,
+    "itemsWithSourcePointers": 8,
+    "itemsRequiringHumanCanonReview": 8,
+    "gateBadCount": 0,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "deliveryAssessment": {
+    "status": "complete_candidate",
+    "baseSufficiency": "sufficient_for_v100_qingmao_southern_border_low_rank_life_loop_and_public_release_boundary_candidates",
+    "candidateOnly": true,
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "notes": [
+      "All records are source-backed candidates with original source wording omitted.",
+      "RebornG must approve final rules, tests, public copy, FAQ, captions, and art boundaries.",
+      "MiroFish output is not canon truth or runtime authority."
+    ]
+  }
+}
