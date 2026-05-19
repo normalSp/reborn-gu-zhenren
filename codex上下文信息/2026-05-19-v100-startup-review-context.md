@@ -63,8 +63,10 @@
 
 ## Git 状态
 
-本次启动包应单独提交：
+启动包提交：
 
-`docs: 建立v1.0启动审查与范围冻结`
+- Commit：`515d0c2 docs: 建立v1.0启动审查与范围冻结`
+- Push：已推送到 `codex/v013-npc-faction-reaction`
+- GitHub Actions：`26088300312` 通过 deterministic quality gate
 
-只 stage v1.0 文档、v1.0 MiroFish request、仪表盘、PROJECT-STATE、AGENTS 和本 handoff。不要 stage 历史 dirty art/bgm/zip/大方向文件。
+本次只 stage 了 v1.0 文档、v1.0 MiroFish request、仪表盘、PROJECT-STATE、AGENTS 和本 handoff。历史 dirty art/bgm/zip/大方向文件未纳入提交。
