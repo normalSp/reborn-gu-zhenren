@@ -20,6 +20,8 @@ function statusLabel(status: V120SurvivalPressureItemStatus): string {
 export function LowRankSurvivalEconomyPanel() {
   const livingWorldState = useStore((s: any) => s.livingWorldState);
   const routeLocationState = useStore((s: any) => s.routeLocationState);
+  const survivalEconomyState = useStore((s: any) => s.survivalEconomyState);
+  const syncSurvivalEconomyLedgerAction = useStore((s: any) => s.syncSurvivalEconomyLedgerAction);
   const materialBag = useStore((s: any) => s.materialBag);
   const turn = useStore((s: any) => s.turn);
 
@@ -29,6 +31,8 @@ export function LowRankSurvivalEconomyPanel() {
     materialBag,
     turn,
   }), [livingWorldState, routeLocationState, materialBag, turn]);
+  const ledgerEntries = Array.isArray(survivalEconomyState?.ledger) ? survivalEconomyState.ledger : [];
+  const canSyncLedger = projection.status === 'pressure_visible';
 
   return (
     <div className="rg-scrollable h-full overflow-y-auto p-4" data-testid="low-rank-survival-economy-panel">
@@ -40,6 +44,40 @@ export function LowRankSurvivalEconomyPanel() {
           </div>
           <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">{projection.publicSummary}</p>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">{projection.nextStep}</p>
+        </div>
+
+        <div className="rounded-sm border border-rg-jade-400/25 bg-rg-jade-500/10 p-3" data-testid="v120-survival-ledger-state">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold text-rg-jade-100">压力账本</p>
+              <p className="mt-1 text-[10px] text-rg-paper-200/55">
+                {survivalEconomyState?.status === 'pressure_tracked'
+                  ? `已登记 ${ledgerEntries.length} 条，压力 ${survivalEconomyState.pressureScore}`
+                  : '尚未登记'}
+              </p>
+            </div>
+            <button
+              type="button"
+              className="rounded-sm border border-rg-jade-300/35 px-3 py-1.5 text-[11px] font-semibold text-rg-jade-100 transition hover:bg-rg-jade-400/10 disabled:cursor-not-allowed disabled:opacity-45"
+              data-testid="v120-survival-ledger-sync"
+              disabled={!canSyncLedger}
+              onClick={() => syncSurvivalEconomyLedgerAction?.()}
+            >
+              登记
+            </button>
+          </div>
+          {ledgerEntries.length > 0 && (
+            <div className="mt-2 grid gap-1.5">
+              {ledgerEntries.slice(-4).map((entry: any) => (
+                <p key={entry.id} className="text-[10px] leading-relaxed text-rg-paper-200/62">
+                  {entry.category} / {entry.pressure}：{entry.publicSummary}
+                </p>
+              ))}
+            </div>
+          )}
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">
+            账本只记录压力、来源、证据和禁止项，不结算库存、价格、交易、消耗或奖励。
+          </p>
         </div>
 
         <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v120-survival-route-context">
@@ -93,4 +131,3 @@ export function LowRankSurvivalEconomyPanel() {
     </div>
   );
 }
-

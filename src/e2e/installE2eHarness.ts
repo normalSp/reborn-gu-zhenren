@@ -235,6 +235,17 @@ function summarizeStore(): Record<string, unknown> {
       sourceRefs: Array.isArray(state.routeLocationState.sourceRefs) ? state.routeLocationState.sourceRefs : [],
       migrationNote: state.routeLocationState.migrationNote || null,
     } : null,
+    survivalEconomy: state.survivalEconomyState ? {
+      status: state.survivalEconomyState.status || null,
+      authority: state.survivalEconomyState.authority || null,
+      pressureScore: Number(state.survivalEconomyState.pressureScore || 0),
+      ledgerCount: Array.isArray(state.survivalEconomyState.ledger) ? state.survivalEconomyState.ledger.length : 0,
+      ledgerCategories: Array.isArray(state.survivalEconomyState.ledger)
+        ? state.survivalEconomyState.ledger.map((entry: any) => entry.category)
+        : [],
+      sourceRefs: Array.isArray(state.survivalEconomyState.sourceRefs) ? state.survivalEconomyState.sourceRefs : [],
+      migrationNote: state.survivalEconomyState.migrationNote || null,
+    } : null,
     materialBag: state.materialBag || {},
     feedingCredits: state.feedingCredits || {},
     lastWorldActionPromptSummary: state.flags?.lastWorldActionReturnContext?.promptSummary || null,

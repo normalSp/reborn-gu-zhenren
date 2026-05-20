@@ -763,6 +763,50 @@ export interface RouteLocationState {
   migrationNote?: string;
 }
 
+// ─── v1.2.0 低阶生存经济压力账本 ───
+export type SurvivalEconomyStatus =
+  | 'not_started'
+  | 'pressure_tracked'
+  | 'blocked';
+
+export type SurvivalEconomyAuthority =
+  | 'migration_default'
+  | 'survival_economy_engine';
+
+export type SurvivalEconomyLedgerCategory =
+  | 'route_supply'
+  | 'gu_upkeep'
+  | 'refinement_preparation'
+  | 'trade_window'
+  | 'gray_trade_boundary'
+  | 'anti_farm';
+
+export type SurvivalEconomyPressureLevel = 'low' | 'medium' | 'high';
+
+export interface SurvivalEconomyLedgerEntry {
+  id: string;
+  turn: number;
+  category: SurvivalEconomyLedgerCategory;
+  pressure: SurvivalEconomyPressureLevel;
+  publicSummary: string;
+  nextStep: string;
+  evidenceRefs: string[];
+  sourceRefs: string[];
+  blockedWrites: string[];
+}
+
+export interface SurvivalEconomyState {
+  schemaVersion: 1;
+  status: SurvivalEconomyStatus;
+  authority: SurvivalEconomyAuthority;
+  pressureScore: number;
+  ledger: SurvivalEconomyLedgerEntry[];
+  evidenceRefs: string[];
+  sourceRefs: string[];
+  lastUpdatedAtTurn: number | null;
+  migrationNote?: string;
+}
+
 export interface IntentCandidate {
   id: string;
   rawText: string;

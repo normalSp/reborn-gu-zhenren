@@ -38,6 +38,8 @@ const audioCount = files.filter(file => /\.(mp3|wav|ogg)$/i.test(file)).length;
 const imageCount = files.filter(file => /\.(svg|png|jpe?g|webp)$/i.test(file)).length;
 const jsonCount = files.filter(file => /\.json$/i.test(file)).length;
 const imageMapPath = path.resolve(process.cwd(), 'src', 'data', 'image-maps.ts');
+const audioSourceManifestPath = path.resolve(process.cwd(), 'src', 'canon', 'audio-source-manifest.json');
+const characterBgmManifestPath = path.resolve(process.cwd(), 'src', 'canon', 'character-bgm-manifest.json');
 
 function collectImageMapRefs() {
   const sourceText = fs.readFileSync(imageMapPath, 'utf8');
@@ -78,6 +80,45 @@ const imageMapRefs = collectImageMapRefs();
 const missingImageMapRefs = imageMapRefs.filter(ref => !fs.existsSync(ref.fullPath));
 const zeroByteImageMapRefs = imageMapRefs.filter(ref => fs.existsSync(ref.fullPath) && fs.statSync(ref.fullPath).size === 0);
 
+function readJson(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+}
+
+function publicAssetRef(filePath, owner) {
+  const normalized = typeof filePath === 'string' ? filePath.trim() : '';
+  return {
+    owner,
+    value: normalized,
+    fullPath: normalized.startsWith('/')
+      ? path.join(root, normalized.slice(1))
+      : path.join(root, normalized),
+  };
+}
+
+function collectAudioManifestRefs() {
+  const refs = [];
+  if (fs.existsSync(audioSourceManifestPath)) {
+    const manifest = readJson(audioSourceManifestPath);
+    for (const track of manifest.tracks || []) {
+      if (track?.runtimeEnabled) refs.push(publicAssetRef(track.filePath, `audio-source:${track.id}`));
+    }
+    for (const sfx of manifest.sfx || []) {
+      if (sfx?.runtimeEnabled) refs.push(publicAssetRef(sfx.filePath, `audio-sfx:${sfx.id}`));
+    }
+  }
+  if (fs.existsSync(characterBgmManifestPath)) {
+    const manifest = readJson(characterBgmManifestPath);
+    for (const entry of manifest.entries || []) {
+      if (entry?.runtimeEnabled) refs.push(publicAssetRef(entry.filePath, `character-bgm:${entry.id}`));
+    }
+  }
+  return refs;
+}
+
+const audioManifestRefs = collectAudioManifestRefs();
+const missingAudioManifestRefs = audioManifestRefs.filter(ref => !fs.existsSync(ref.fullPath));
+const zeroByteAudioManifestRefs = audioManifestRefs.filter(ref => fs.existsSync(ref.fullPath) && fs.statSync(ref.fullPath).size === 0);
+
 if (zeroByteFiles.length > 0) {
   console.error('[runtime-assets] zero-byte runtime assets found:');
   for (const file of zeroByteFiles) {
@@ -102,4 +143,20 @@ if (zeroByteImageMapRefs.length > 0) {
   process.exit(1);
 }
 
-console.log(`[runtime-assets] checked ${files.length} files; audio=${audioCount}, images=${imageCount}, json=${jsonCount}, imageMapRefs=${imageMapRefs.length}; zero-byte=0`);
+if (missingAudioManifestRefs.length > 0) {
+  console.error('[runtime-assets] audio manifest references missing files:');
+  for (const ref of missingAudioManifestRefs) {
+    console.error(`- ${ref.owner}: ${ref.value}`);
+  }
+  process.exit(1);
+}
+
+if (zeroByteAudioManifestRefs.length > 0) {
+  console.error('[runtime-assets] audio manifest references zero-byte files:');
+  for (const ref of zeroByteAudioManifestRefs) {
+    console.error(`- ${ref.owner}: ${ref.value}`);
+  }
+  process.exit(1);
+}
+
+console.log(`[runtime-assets] checked ${files.length} files; audio=${audioCount}, images=${imageCount}, json=${jsonCount}, imageMapRefs=${imageMapRefs.length}, audioManifestRefs=${audioManifestRefs.length}; zero-byte=0`);

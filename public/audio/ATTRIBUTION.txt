@@ -1,5 +1,5 @@
-RebornG v0.7.1 Audio Attribution
-=================================
+RebornG Audio Attribution
+=========================
 
 Runtime source of truth:
 - src/canon/audio-source-manifest.json
@@ -12,6 +12,7 @@ Policy
 - Root bgm/ is a staging folder only; runtime must reference public/audio paths.
 - AI/FFmpeg/synthetic BGM placeholders are not allowed in runtime.
 - Combat and achievement SFX use real free assets, not AI-generated placeholders.
+- v1.2-b2 adds enabled audio manifest file checks to npm run check:runtime-assets.
 
 Runtime enabled free assets
 ---------------------------
@@ -50,8 +51,9 @@ The following files were supplied by the user under bgm/v0.7 and copied into pub
 - 三王山炼制定仙游: 精卫琵琶版.
 - 墨瑶: 唯一.
 - 马鸿运: ZOOD 丁真版; I Got Smoke.
+- 柳贯一: Lightning Moment dj.
+- 无极魔尊: Lightning Moment dj.
 - 定场诗通用: boss area.
 
 Still missing or disabled:
-- 柳贯一: Lightning Moment dj.
-- 无极魔尊: Lightning Moment dj.
+- No runtime-enabled BGM manifest file is currently missing. Future additions remain disabled until copied to public/audio and validated.

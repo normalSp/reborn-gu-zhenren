@@ -15,6 +15,7 @@ import type { ScreenState, GameMode, PipelinePhase } from './slices/uiSlice';
 import { createInitialCultivationState } from './defaultCultivationState';
 import { createInitialLivingWorldState } from './defaultLivingWorldState';
 import { createInitialRouteLocationState } from '../engine/v110-route-location-state';
+import { createInitialSurvivalEconomyState } from '../engine/v120-survival-economy-state';
 import {
   createInitialCombatEncounterState,
   createInitialEndingFrameworkState,
@@ -77,6 +78,7 @@ export const INITIAL_STATE = {
   trainingGroundState: createInitialTrainingGroundState(),
   livingWorldState: createInitialLivingWorldState(),
   routeLocationState: createInitialRouteLocationState(),
+  survivalEconomyState: createInitialSurvivalEconomyState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -351,5 +353,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  * v21→v22: v0.11.0-a2 活世界状态协议 livingWorldState
  * v22→v23: v1.1.0-b1 路线/地点范围状态 routeLocationState
+ * v23→v24: v1.2.0-b2 低阶生存经济最小压力账本 survivalEconomyState
  */
-export const SAVE_FORMAT_VERSION = 23;
+export const SAVE_FORMAT_VERSION = 24;

@@ -34,8 +34,8 @@ async function openQingmaoRegionActionDemo(page: Page): Promise<string[]> {
   return consoleErrors;
 }
 
-test.describe('v1.2 low-rank survival economy projection', () => {
-  test('shows projection-only pressure without save fields, prices, inventory, or trade settlement', async ({ page }) => {
+test.describe('v1.2 low-rank survival economy ledger', () => {
+  test('writes only the v24 survivalEconomyState pressure ledger without prices, inventory, or trade settlement', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 950 });
     const consoleErrors = await openQingmaoRegionActionDemo(page);
 
@@ -57,21 +57,35 @@ test.describe('v1.2 low-rank survival economy projection', () => {
 
     await expect(panel.locator('[data-testid="v120-survival-status"]')).toContainText('低阶生存经济');
     await expect(panel.locator('[data-testid="v120-survival-status"]')).toContainText('压力投影可读');
+    await expect(panel.locator('[data-testid="v120-survival-ledger-state"]')).toContainText('尚未登记');
     await expect(panel.locator('[data-testid="v120-survival-pressure-route_supply"]')).toContainText('路线补给压力');
     await expect(panel.locator('[data-testid="v120-survival-pressure-gu_upkeep"]')).toContainText('蛊虫喂养与维护');
     await expect(panel.locator('[data-testid="v120-survival-pressure-refinement_preparation"]')).toContainText('炼养用准备');
     await expect(panel.locator('[data-testid="v120-survival-pressure-trade_window"]')).toContainText('不写价格');
     await expect(panel.locator('[data-testid="v120-survival-pressure-gray_trade_boundary"]')).toContainText('黑市');
-    await expect(panel.locator('[data-testid="v120-survival-boundaries"]')).toContainText('不写 survivalEconomyState');
+    await expect(panel.locator('[data-testid="v120-survival-boundaries"]')).toContainText('允许写 survivalEconomyState');
     await expect(panel.locator('[data-testid="v120-survival-boundaries"]')).toContainText('不写正式价格');
     await expect(panel.locator('[data-testid="v120-survival-boundaries"]')).toContainText('DeepSeek 只能写压力');
     await expect(panel).not.toContainText('正式成交');
     await expect(panel).not.toContainText('价格表已开放');
 
+    await panel.locator('[data-testid="v120-survival-ledger-sync"]').click();
+    await expect(panel.locator('[data-testid="v120-survival-ledger-state"]')).toContainText('已登记');
+
     const summary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
     expect((summary.materialBag as any).survivalEconomyState).toBeUndefined();
     expect((summary.materialBag as any).formal_price_table).toBeUndefined();
     expect((summary.materialBag as any).formal_market_trade).toBeUndefined();
+    expect((summary.survivalEconomy as any).status).toBe('pressure_tracked');
+    expect((summary.survivalEconomy as any).ledgerCount).toBeGreaterThanOrEqual(6);
+    expect((summary.survivalEconomy as any).ledgerCategories).toEqual(expect.arrayContaining([
+      'route_supply',
+      'gu_upkeep',
+      'refinement_preparation',
+      'trade_window',
+      'gray_trade_boundary',
+      'anti_farm',
+    ]));
     expect(consoleErrors).toEqual([]);
   });
 });

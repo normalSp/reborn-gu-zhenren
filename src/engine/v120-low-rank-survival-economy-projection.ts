@@ -47,9 +47,9 @@ export interface V120LowRankSurvivalEconomyProjection {
     antiFarm: QingmaoLowRankEconomyPlan;
     grayTrade: QingmaoLowRankEconomyPlan;
   };
-  saveFormatImpact: 'none';
+  saveFormatImpact: 'v24_survival_economy_ledger';
   statePatchApplied: false;
-  canWriteSave: false;
+  canWriteSave: true;
   canGrantReward: false;
   canSettleConsumption: false;
   canOpenMarket: false;
@@ -112,8 +112,8 @@ function evidenceFor(
 function baseForbiddenWrites(plans: QingmaoLowRankEconomyPlan[]): string[] {
   return unique([
     ...plans.flatMap(plan => plan.forbiddenWrites),
-    'save_format_bump',
-    'survivalEconomyState_write',
+    'survivalEconomyState_outside_pressure_ledger',
+    'formal_economy_state',
     'material_reward',
     'currency_delta',
     'material_consumption',
@@ -264,6 +264,7 @@ export function buildV120LowRankSurvivalEconomyProjection(
     'v1.2.0-a1:D-121-003',
     'v1.2.0-a1:D-121-004',
     'v1.2.0-a1:D-121-005',
+    'v1.2.0-b2:D-122-001',
     'v1.1:D-025-C27',
     ...pressureItems.flatMap(item => item.sourceRefs),
   ]);
@@ -272,16 +273,17 @@ export function buildV120LowRankSurvivalEconomyProjection(
     status,
     statusLabel: status === 'pressure_visible' ? '压力投影可读' : '等待前置',
     publicSummary: status === 'pressure_visible'
-      ? '低阶生存经济压力已可投影：路线补给、蛊虫喂养、炼养用准备和交易窗口都保持为缺口/风险，不写正式结算。'
+      ? '低阶生存经济压力已可投影：路线补给、蛊虫喂养、炼养用准备和交易窗口都保持为缺口/风险；b2 只允许写入最小压力账本，不写正式结算。'
       : '低阶生存经济仍缺路线或历史经济证据；当前只显示规则边界，不写任何状态。',
     nextStep: status === 'pressure_visible'
-      ? 'b1 可将这些压力作为只读/投影 UI 展示；若要持久账本，必须等 b2 再由用户批准 v24。'
+      ? '可登记 v24 survivalEconomyState 最小压力账本；仍禁止库存、价格、交易、消耗、奖励和 DeepSeek 权限扩大。'
       : '先完成路线范围同步、补给/喂养缺口或 v0.15/v1.0 life-loop 前置，再进入正式投影体验。',
     routeSummary: routeOverview.publicSummary,
     routeStatusLabel: routeOverview.statusLabel,
     pressureItems,
     boundaryLines: [
-      'projection-only：不写 survivalEconomyState，不 bump SAVE_FORMAT_VERSION = 24。',
+      'b2 最小 ledger：允许写 survivalEconomyState 压力账本，SAVE_FORMAT_VERSION = 24。',
+      'survivalEconomyState 只能记录压力、来源、证据与禁止项，不是正式库存或交易账本。',
       '不发材料、不扣元石、不消耗食料、不结算炼蛊成功或失败。',
       '不写正式价格、商店库存、买卖、黑市、委托或稳定套利。',
       'DeepSeek 只能写压力、线索、传闻和请求；本地 engine/store 才能拥有事实结算。',
@@ -289,9 +291,9 @@ export function buildV120LowRankSurvivalEconomyProjection(
     visibleSourceRefs,
     forbiddenWrites,
     plans,
-    saveFormatImpact: 'none',
+    saveFormatImpact: 'v24_survival_economy_ledger',
     statePatchApplied: false,
-    canWriteSave: false,
+    canWriteSave: true,
     canGrantReward: false,
     canSettleConsumption: false,
     canOpenMarket: false,

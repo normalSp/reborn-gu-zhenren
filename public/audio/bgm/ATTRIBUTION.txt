@@ -32,10 +32,13 @@ Enabled user-supplied fan-pack BGM files:
 - character/mo_yao/wei_yi.mp3 — user file 唯一.mP3.
 - character/ma_hong_yun/zood_dingzhen.mp3 — user file ZOOD.mP3.
 - character/ma_hong_yun/i_got_smoke.mp3 — user file I Got Smoke.MP3.
+- character/liu_guan_yi/lightning_moment_dj.mp3 — user file Lightning Moment.MP3.
+- character/limitless/lightning_moment_dj.mp3 — user file Lightning Moment.MP3.
 - scene/tai_bai_yun_sheng_cry_for_me.mp3 — user file Cry For Me.mP3.
 - scene/three_kings_ding_xian_you_jingwei_pipa.mp3 — user file 精卫（琵琶版）.mP3.
 - scene/fixed_poem_boss_area.mp3 — user file 定场诗の小曲.mP3.
 
-Disabled until file is supplied:
-- character/liu_guan_yi/lightning_moment_dj.mp3.
-- character/limitless/lightning_moment_dj.mp3.
+Runtime promotion gate:
+- Runtime file truth source is `src/canon/audio-source-manifest.json`.
+- Public mirror is `public/audio/audio-source-manifest.json`.
+- `npm run check:runtime-assets` verifies enabled audio manifest references exist and are non-empty.

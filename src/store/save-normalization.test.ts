@@ -50,13 +50,20 @@ describe('v0.11.0 persisted state normalization', () => {
       regionScopeId: 'qingmao',
       authority: 'start_profile',
     });
+    expect(normalized.survivalEconomyState).toMatchObject({
+      schemaVersion: 1,
+      status: 'not_started',
+      authority: 'migration_default',
+      pressureScore: 0,
+      ledger: [],
+    });
     expect(normalized.flags.trainingGroundClues).toEqual([]);
     expect(normalized.flags.activeTrainingGroundId).toBeNull();
     expect(normalized.deathRecord.majorChoices).toEqual([]);
     expect(normalized.deathRecord.deathCauseTags).toEqual([]);
   });
 
-  it('routes v22 file-save migration through the same normalization path and bumps to v23', () => {
+  it('routes v22 file-save migration through the same normalization path and bumps to v24', () => {
     const migrated = migrateSave({
       formatVersion: 22,
       timestamp: 'test',
@@ -75,6 +82,8 @@ describe('v0.11.0 persisted state normalization', () => {
     expect(migrated.state.livingWorldState.schemaVersion).toBe(1);
     expect(migrated.state.livingWorldState.playerGoals).toEqual([]);
     expect(migrated.state.routeLocationState.status).toBe('not_started');
+    expect(migrated.state.survivalEconomyState.status).toBe('not_started');
+    expect(migrated.state.survivalEconomyState.ledger).toEqual([]);
     expect(migrated.state.flags.trainingGroundClues).toEqual([]);
     expect(migrated.state.materialShelf.items).toEqual([]);
   });
@@ -174,6 +183,38 @@ describe('v0.11.0 persisted state normalization', () => {
     expect(normalized.routeLocationState.locationScopeId).toBe('unknown_conservative');
     expect(normalized.routeLocationState.regionScopeId).toBe('unknown_conservative');
     expect(normalized.routeLocationState.migrationNote).toContain('invalid');
+  });
+
+  it('adds v24 survivalEconomyState to v23 saves without opening formal economy fields', () => {
+    const migrated = migrateSave({
+      formatVersion: 23,
+      timestamp: 'test',
+      meta: { playerName: 'v23旧档', realm: '一转中阶', turn: 21, gameMode: 'canon' },
+      state: {
+        turn: 21,
+        routeLocationState: {
+          status: 'outer_edge_projection',
+          routeId: 'southern_border_low_rank_route',
+          locationScopeId: 'southern_border_outer_edge',
+          regionScopeId: 'southern_border_outer_edge',
+          authority: 'route_location_engine',
+          evidenceLedgerEntryIds: ['v100_qingmao_southern_border_continuity_acceptance'],
+          sourceRefs: ['v1.1:test'],
+          lastUpdatedAtTurn: 21,
+        },
+      },
+    });
+
+    expect(migrated.formatVersion).toBe(SAVE_FORMAT_VERSION);
+    expect(migrated.state.survivalEconomyState).toMatchObject({
+      schemaVersion: 1,
+      status: 'not_started',
+      authority: 'migration_default',
+      pressureScore: 0,
+      ledger: [],
+    });
+    expect((migrated.state as any).formal_price_table).toBeUndefined();
+    expect((migrated.state as any).formal_market_trade).toBeUndefined();
   });
 
   it('repairs edited immortal saves by moving duplicate mortal inventory into aperture storage', () => {

@@ -1,6 +1,8 @@
-# RebornG v0.7.1 音频清单说明
+# RebornG 音频清单说明
 
 本文件只描述音频策略；运行时真相源为 `src/canon/audio-source-manifest.json`，`public/audio/audio-source-manifest.json` 是发布查看用镜像。
+
+v1.2-b2 正式 runtime 晋升复核已把根目录 `bgm/v0.7` 的用户提供音频对应到 `public/audio/bgm/...`，并将 audio manifest 引用加入 `npm run check:runtime-assets` 门禁。根目录音频仍是本地来源暂存，不是运行时路径。
 
 ## 发布策略
 
@@ -27,6 +29,8 @@
 - 三王山炼制定仙游：精卫琵琶版。
 - 墨瑶：唯一。
 - 马鸿运：ZOOD 丁真版、I Got Smoke。
+- 柳贯一：Lightning Moment dj。
+- 无极魔尊：Lightning Moment dj。
 - 定场诗通用：boss area。
 
 ## 当前免费运行时资源
@@ -38,8 +42,6 @@
 
 ## 仍缺资源
 
-- 柳贯一：Lightning Moment dj。
-- 无极魔尊：Lightning Moment dj。
-- 古月药乐：小熊饼干独立文件。
+- 古月药乐：小熊饼干独立文件名仍未单独提供；当前按用户确认使用 `古月药乐.mP3`，旧 trackId 中的 `qing_yi` 只保留兼容。
 
-这些缺失项不启用 runtime，后续补文件后只需复制到目标路径并更新 manifest。
+缺失项不启用 runtime。后续补文件后只需复制到目标路径、更新 manifest，并通过 `npm run check:runtime-assets`。

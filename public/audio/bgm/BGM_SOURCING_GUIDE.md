@@ -2,9 +2,16 @@
 
 ## 当前口径
 
-v0.7.1 私用二创包启用用户本地提供的角色曲和名场面曲；免费公布包仍保留 `free_public_pack` fallback。根目录 `bgm/` 只是本地素材暂存区，文本清单/歌词/风格说明可以进入 Git，音频文件默认 ignore；运行时必须引用 `public/audio/...`。
+v1.2-b2 已批准根目录 BGM 音频的正式 runtime 晋升复核：用户本地提供的角色曲和名场面曲以 `nonprofit_fan_pack` 启用，免费公布包仍保留 `free_public_pack` fallback。根目录 `bgm/` 只是本地素材暂存区，文本清单/歌词/风格说明可以进入 Git，音频文件默认 ignore；运行时必须引用 `public/audio/...`。
 
 不要使用自动抓取 B 站、网易云或其他平台音频的脚本。用户提供的文件只有在用户明确批准 runtime 晋升后，才可以复制到 runtime 目录并在 manifest 中标注为 `user_supplied_local_fan_pack`。
+
+本次晋升门禁：
+
+1. 运行时真相源为 `src/canon/audio-source-manifest.json` 与 `src/canon/character-bgm-manifest.json`。
+2. 发布镜像为 `public/audio/audio-source-manifest.json`。
+3. `runtimeEnabled=true` 的 BGM/SFX/角色曲必须存在于 `public/audio/...` 且非空。
+4. `npm run check:runtime-assets` 会检查 image-map 引用和 audio manifest 引用；缺文件或 0 字节直接失败。
 
 ## 已启用免费素材
 

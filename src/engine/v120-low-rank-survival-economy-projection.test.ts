@@ -63,7 +63,7 @@ function outerEdgeRoute(): Partial<RouteLocationState> {
 }
 
 describe('v1.2 low-rank survival economy projection', () => {
-  it('projects low-rank survival pressure without save writes, rewards, prices, or trade settlement', () => {
+  it('projects low-rank survival pressure for the v24 minimal ledger without rewards, prices, or trade settlement', () => {
     const projection = buildV120LowRankSurvivalEconomyProjection({
       livingWorldState: livingWorldWithEconomyFacts(),
       routeLocationState: outerEdgeRoute(),
@@ -72,17 +72,18 @@ describe('v1.2 low-rank survival economy projection', () => {
     });
 
     expect(projection.status).toBe('pressure_visible');
-    expect(projection.saveFormatImpact).toBe('none');
+    expect(projection.saveFormatImpact).toBe('v24_survival_economy_ledger');
     expect(projection.statePatchApplied).toBe(false);
-    expect(projection.canWriteSave).toBe(false);
+    expect(projection.canWriteSave).toBe(true);
     expect(projection.canGrantReward).toBe(false);
     expect(projection.canSettleConsumption).toBe(false);
     expect(projection.canOpenMarket).toBe(false);
     expect(projection.deepSeekAuthority).toBe('no_new_authority');
-    expect(projection.boundaryLines.join('\n')).toContain('不写 survivalEconomyState');
+    expect(projection.boundaryLines.join('\n')).toContain('允许写 survivalEconomyState');
+    expect(projection.boundaryLines.join('\n')).toContain('不是正式库存或交易账本');
     expect(projection.forbiddenWrites).toEqual(expect.arrayContaining([
-      'save_format_bump',
-      'survivalEconomyState_write',
+      'survivalEconomyState_outside_pressure_ledger',
+      'formal_economy_state',
       'material_reward',
       'currency_delta',
       'material_consumption',
@@ -113,6 +114,6 @@ describe('v1.2 low-rank survival economy projection', () => {
     expect(projection.publicSummary).toContain('不写任何状态');
     expect(projection.pressureItems.find(item => item.id === 'route_supply')?.status).toBe('needs_context');
     expect(projection.pressureItems.find(item => item.id === 'gray_trade_boundary')?.status).toBe('deferred');
-    expect(projection.canWriteSave).toBe(false);
+    expect(projection.canWriteSave).toBe(true);
   });
 });

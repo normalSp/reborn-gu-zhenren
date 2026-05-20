@@ -36,6 +36,7 @@ import { createInheritanceLandSlice } from './slices/inheritanceLandSlice';
 import { createTrainingGroundSlice } from './slices/trainingGroundSlice';
 import { createQingmaoRegionSlice } from './slices/qingmaoRegionSlice';
 import { createLivingWorldSlice } from './slices/livingWorldSlice';
+import { createSurvivalEconomySlice } from './slices/survivalEconomySlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
@@ -44,6 +45,7 @@ import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-
 import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-engine';
 import { normalizeTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
 import { normalizeRouteLocationState } from '../engine/v110-route-location-state';
+import { normalizeSurvivalEconomyState } from '../engine/v120-survival-economy-state';
 import { normalizeLivingWorldState } from './defaultLivingWorldState';
 import {
   INITIAL_STATE,
@@ -221,6 +223,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createTrainingGroundSlice> &
   ReturnType<typeof createQingmaoRegionSlice> &
   ReturnType<typeof createLivingWorldSlice> &
+  ReturnType<typeof createSurvivalEconomySlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -483,6 +486,7 @@ export function normalizePersistedGameState(
   });
   state.livingWorldState = normalizeLivingWorldState(state.livingWorldState, turn);
   state.routeLocationState = normalizeRouteLocationState(state.routeLocationState, turn, state.livingWorldState);
+  state.survivalEconomyState = normalizeSurvivalEconomyState(state.survivalEconomyState, turn);
   state.flags = mirrorTrainingGroundFlagsForLoad(
     mirrorStoryAnchorFlagsForLoad(sourceFlags, state.storyAnchorState),
     state.trainingGroundState,
@@ -624,6 +628,7 @@ export const useStore = create<RootStore>()(
         ...createTrainingGroundSlice(...sliceArgs),
         ...createQingmaoRegionSlice(...sliceArgs),
         ...createLivingWorldSlice(...sliceArgs),
+        ...createSurvivalEconomySlice(...sliceArgs),
 
         // ═══════════════════════════════════════
         // 存档系统方法
