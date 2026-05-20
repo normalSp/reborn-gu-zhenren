@@ -27,6 +27,12 @@
 
 任何吸收都必须经过 RebornG 本地测试或文档门禁，不得把 MiroFish 输出直接作为 canon 真相。
 
+## 全书基础包特殊规则
+
+`指导大纲/vMiroFish/基础包/` 是全书档案层和 source pointer 后勤仓库。对它的第一步只能是 `archive_registered`，不能整包标为 `accepted_for_candidate_pool`。
+
+后续必须按主题切片另写 intake review，例如 route/location、经济、NPC、势力、隐藏事实、测试样本。每个切片都要单独说明章节范围、visibility、promotionStatus、allowedUses、forbiddenUses 和是否进入知识索引或测试矩阵。
+
 ## 审查后吸收要求
 
 通过审查后，Codex 只能把材料转写为 RebornG 本地候选或规则：

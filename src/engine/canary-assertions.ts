@@ -589,6 +589,47 @@ function c26_TalentEffectValidation(text: string, store: RootStore): CanaryResul
 }
 
 // ═══════════════════════════════════════════
+// C27: 隐藏因果名词保护 ⚡ Critical
+// ═══════════════════════════════════════════
+// v1.1 D-025 live probe showed that the model may echo protected hidden names even
+// while refusing them. Keep the player-visible narrative and choices clean unless a
+// later explicit gate enables protected hidden-fact display.
+const PROTECTED_HIDDEN_FACT_PATTERNS = [
+  /春秋蝉/g,
+  /方源.{0,12}重生/g,
+  /重生.{0,12}方源/g,
+  /逆转光阴/g,
+  /回到过去/g,
+];
+
+function c27_ProtectedHiddenFactBoundary(narrative: NarrativeJSON, store: RootStore): CanaryResult {
+  const flags = (store as any).flags || {};
+  if (flags.allowProtectedHiddenFactNames === true || flags._allow_protected_hidden_fact_names === true) {
+    return { ruleId: 'C27', ruleName: '隐藏因果名词保护', passed: true, level: 'critical', details: '' };
+  }
+
+  const choiceText = (narrative.narrative.choices || [])
+    .map(choice => `${choice.text || ''} ${choice.risk_note || ''}`)
+    .join('\n');
+  const text = `${narrative.narrative.text || ''}\n${choiceText}`;
+  const hits = PROTECTED_HIDDEN_FACT_PATTERNS
+    .filter(pattern => pattern.test(text))
+    .map(pattern => pattern.source);
+
+  if (hits.length > 0) {
+    return {
+      ruleId: 'C27',
+      ruleName: '隐藏因果名词保护',
+      passed: false,
+      level: 'critical',
+      details: `玩家可见叙事/选项包含受保护隐藏因果或高阶底牌名词：${hits.join('、')}`,
+    };
+  }
+
+  return { ruleId: 'C27', ruleName: '隐藏因果名词保护', passed: true, level: 'critical', details: '' };
+}
+
+// ═══════════════════════════════════════════
 // 主入口
 // ═══════════════════════════════════════════
 export function validateCanaryAssertions(
@@ -633,6 +674,7 @@ export function validateCanaryAssertions(
     c24_GreatOpportunityCost(text),
     c25_AuctionIntegrity(text),
     c26_TalentEffectValidation(text, store),
+    c27_ProtectedHiddenFactBoundary(narrative, store),
   ];
 
   const failedCritical = results.filter(r => !r.passed && r.level === 'critical');

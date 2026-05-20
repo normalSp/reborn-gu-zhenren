@@ -43,15 +43,22 @@ describe('v0.11.0 persisted state normalization', () => {
       lastActionId: null,
     });
     expect(normalized.livingWorldState.regions).toEqual({});
+    expect(normalized.routeLocationState).toMatchObject({
+      status: 'not_started',
+      routeId: null,
+      locationScopeId: 'qingmao_mountain',
+      regionScopeId: 'qingmao',
+      authority: 'start_profile',
+    });
     expect(normalized.flags.trainingGroundClues).toEqual([]);
     expect(normalized.flags.activeTrainingGroundId).toBeNull();
     expect(normalized.deathRecord.majorChoices).toEqual([]);
     expect(normalized.deathRecord.deathCauseTags).toEqual([]);
   });
 
-  it('routes v21 file-save migration through the same normalization path and bumps to v22', () => {
+  it('routes v22 file-save migration through the same normalization path and bumps to v23', () => {
     const migrated = migrateSave({
-      formatVersion: 21,
+      formatVersion: 22,
       timestamp: 'test',
       meta: { playerName: '旧档', realm: '一转初阶', turn: 3, gameMode: 'canon' },
       state: {
@@ -67,8 +74,51 @@ describe('v0.11.0 persisted state normalization', () => {
     expect(migrated.state.trainingGroundState.version).toBe('v0.9.0-a3');
     expect(migrated.state.livingWorldState.schemaVersion).toBe(1);
     expect(migrated.state.livingWorldState.playerGoals).toEqual([]);
+    expect(migrated.state.routeLocationState.status).toBe('not_started');
     expect(migrated.state.flags.trainingGroundClues).toEqual([]);
     expect(migrated.state.materialShelf.items).toEqual([]);
+  });
+
+  it('derives v23 route/location state from v22 route facts without unlocking full regions', () => {
+    const migrated = migrateSave({
+      formatVersion: 22,
+      timestamp: 'test',
+      meta: { playerName: '离山旧档', realm: '一转中阶', turn: 20, gameMode: 'canon' },
+      state: {
+        turn: 20,
+        livingWorldState: {
+          worldClock: { turn: 20, day: 5, phase: 'afternoon', lastActionId: 'v100_qingmao_southern_border_continuity_acceptance_probe' },
+          regions: {},
+          hiddenFactRefs: {},
+          npcMemories: [],
+          factionPressure: [],
+          playerGoals: [],
+          actionConsequences: [],
+          ifDeviations: [],
+          knownFacts: {
+            v100_qingmao_southern_border_continuity_acceptance: {
+              id: 'v100_qingmao_southern_border_continuity_acceptance',
+              scope: 'region',
+              source: 'engine_result',
+              summary: 'v1.0 连续体验验收完成。',
+              learnedTurn: 20,
+              confidence: 'confirmed',
+              tags: ['v1.0.0-b1'],
+            },
+          },
+        },
+      },
+    });
+
+    expect(migrated.state.routeLocationState).toMatchObject({
+      status: 'outer_edge_projection',
+      routeId: 'southern_border_low_rank_route',
+      locationScopeId: 'southern_border_outer_edge',
+      regionScopeId: 'southern_border_outer_edge',
+      authority: 'living_world_engine',
+    });
+    expect((migrated.state.materialBag || {}).route_entered).toBeUndefined();
+    expect((migrated.state as any).currentRegion).toBeUndefined();
   });
 
   it('normalizes malformed living-world fields during save hydration', () => {
@@ -105,6 +155,25 @@ describe('v0.11.0 persisted state normalization', () => {
     });
     expect((normalized.livingWorldState.hiddenFactRefs.hidden_qingmao as any).summary).toBeUndefined();
     expect(normalized.livingWorldState.npcMemories).toEqual([]);
+  });
+
+  it('blocks malformed v23 route/location fields during save hydration', () => {
+    const normalized = normalizePersistedGameState({
+      turn: 21,
+      routeLocationState: {
+        status: 'outer_edge_projection',
+        routeId: 'direct_shang_city_route',
+        locationScopeId: 'southern_border_outer_edge',
+        regionScopeId: 'southern_border_outer_edge',
+        authority: 'deepseek',
+        evidenceLedgerEntryIds: ['manual_edit'],
+      },
+    });
+
+    expect(normalized.routeLocationState.status).toBe('blocked');
+    expect(normalized.routeLocationState.locationScopeId).toBe('unknown_conservative');
+    expect(normalized.routeLocationState.regionScopeId).toBe('unknown_conservative');
+    expect(normalized.routeLocationState.migrationNote).toContain('invalid');
   });
 
   it('repairs edited immortal saves by moving duplicate mortal inventory into aperture storage', () => {

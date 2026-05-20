@@ -64,7 +64,12 @@ import {
 import {
   resolveV100FreeIntentReleaseClosureAction,
 } from '../../engine/v100-free-intent-release-closure';
-import type { LivingPlayerGoalEntry, LivingWorldState } from '../../types';
+import {
+  createInitialRouteLocationState,
+  resolveV110RouteLocationStateAction,
+  type V110RouteLocationActionResolution,
+} from '../../engine/v110-route-location-state';
+import type { LivingPlayerGoalEntry, LivingWorldState, RouteLocationState } from '../../types';
 
 export interface WorldIntentPreviewResult {
   success: boolean;
@@ -179,8 +184,17 @@ export interface V018QingmaoRouteActionCommitResult {
   rejected: string[];
 }
 
+export interface V110RouteLocationStateCommitResult {
+  success: boolean;
+  message: string;
+  resolution: V110RouteLocationActionResolution;
+  applied: string[];
+  rejected: string[];
+}
+
 export interface LivingWorldSlice {
   livingWorldState: LivingWorldState;
+  routeLocationState: RouteLocationState;
   previewWorldIntentAction: (rawText: string) => WorldIntentPreviewResult;
   confirmWorldIntentGoalAction: (adjudication: WorldIntentAdjudication) => WorldIntentGoalCommitResult;
   resolveVisibleInvestigationAction: (adjudication: WorldIntentAdjudication) => WorldIntentInvestigationCommitResult;
@@ -200,6 +214,7 @@ export interface LivingWorldSlice {
   resolveV100QingmaoSouthernBorderContinuityAction: () => V018QingmaoRouteActionCommitResult;
   resolveV100LowRankLifeLoopReleaseAction: () => V018QingmaoRouteActionCommitResult;
   resolveV100FreeIntentReleaseClosureAction: () => V018QingmaoRouteActionCommitResult;
+  resolveV110RouteLocationStateAction: () => V110RouteLocationStateCommitResult;
 }
 
 type SliceSet = (...args: any[]) => void;
@@ -306,6 +321,7 @@ export const createLivingWorldSlice = (
   get?: SliceGet,
 ): LivingWorldSlice => ({
   livingWorldState: createInitialLivingWorldState(),
+  routeLocationState: createInitialRouteLocationState(),
   previewWorldIntentAction: (rawText) => {
     const text = rawText.trim();
     if (!text) {
@@ -1568,5 +1584,46 @@ export const createLivingWorldSlice = (
       'v100_free_intent_release_closure',
       'v1.0自由意图收束',
     );
+  },
+  resolveV110RouteLocationStateAction: () => {
+    const store = get?.() || {};
+    const resolution = resolveV110RouteLocationStateAction({
+      livingWorldState: store.livingWorldState,
+      routeLocationState: store.routeLocationState,
+      turn: store.turn,
+    });
+
+    if (set) {
+      set((state: any) => ({
+        routeLocationState: resolution.routeLocationState,
+        flags: {
+          ...(state.flags || {}),
+          lastLivingWorldPatch: {
+            source: 'v110_route_location_state',
+            actionId: resolution.actionId,
+            success: resolution.success,
+            applied: resolution.success ? ['routeLocationState'] : [],
+            rejected: resolution.rejectedReasons,
+          },
+        },
+      }));
+    }
+
+    store.addGameLog?.('system', `v1.1路线/地点范围：${resolution.publicSummary}`, {
+      actionId: resolution.actionId,
+      success: resolution.success,
+      routeLocationState: resolution.routeLocationState,
+      visibleSourceRefs: resolution.visibleSourceRefs,
+      forbiddenUpgrades: resolution.forbiddenUpgrades,
+      rejected: resolution.rejectedReasons,
+    });
+
+    return {
+      success: resolution.success,
+      message: resolution.message,
+      resolution,
+      applied: resolution.success ? ['routeLocationState'] : [],
+      rejected: resolution.rejectedReasons,
+    };
   },
 });

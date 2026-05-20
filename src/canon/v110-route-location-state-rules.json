@@ -1,0 +1,188 @@
+{
+  "version": "v1.1.0",
+  "sourceReview": {
+    "intakeReviews": [
+      "指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-19-v110-three-pack-intake-review-summary.md",
+      "指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-20-全书基础包入库使用计划.md",
+      "指导大纲/v1.1.0/codex/00-总览/v1.1.0-a2-字段表迁移矩阵与主题切片门禁.md"
+    ],
+    "sourcePackages": [
+      "v110_route_location_boundary_pack",
+      "v110_southern_border_outer_edge_public_fact_pack",
+      "v110_travel_supply_pursuit_identity_pressure_pack"
+    ],
+    "sourcePolicy": "MiroFish and full-book base-pack material is candidate-only; runtime uses rewritten RebornG-owned allowlists and tests."
+  },
+  "allowlist": {
+    "statuses": [
+      "not_started",
+      "preparing_departure",
+      "route_in_progress",
+      "outer_edge_projection",
+      "blocked"
+    ],
+    "routeIds": [
+      "southern_border_low_rank_route",
+      "qingmao_exit_route"
+    ],
+    "locationScopeIds": [
+      "qingmao_mountain",
+      "qingmao_exit_path",
+      "southern_border_outer_edge",
+      "unknown_conservative"
+    ],
+    "regionScopeIds": [
+      "qingmao",
+      "southern_border_outer_edge",
+      "unknown_conservative"
+    ],
+    "authorities": [
+      "start_profile",
+      "living_world_engine",
+      "route_location_engine"
+    ]
+  },
+  "statusCards": [
+    {
+      "id": "not_started",
+      "label": "尚未离山",
+      "publicSummary": "当前位置仍按青茅山开局范围处理；没有记录离山目标或路线承接。",
+      "nextStep": "先在自由目标中明确离开青茅山或整理外路线索。",
+      "blockedUpgrades": [
+        "route_entered",
+        "location_unlock"
+      ]
+    },
+    {
+      "id": "preparing_departure",
+      "label": "离山准备",
+      "publicSummary": "玩家已表达或整理离山意图，但仍处在青茅范围内。",
+      "nextStep": "补足路线准备、遮掩痕迹、补给和身份压力。",
+      "blockedUpgrades": [
+        "southern_border_arrival",
+        "reward"
+      ]
+    },
+    {
+      "id": "route_in_progress",
+      "label": "路线推进",
+      "publicSummary": "路线已进入青茅出口路径的推进范围，但未承诺抵达完整南疆。",
+      "nextStep": "继续处理补给、追索、身份和公开理由的压力回流。",
+      "blockedUpgrades": [
+        "full_map_unlock",
+        "formal_faction_result"
+      ]
+    },
+    {
+      "id": "outer_edge_projection",
+      "label": "南疆外缘投影",
+      "publicSummary": "当前只投影到南疆早期外缘语义，仍不是完整地点或商家城开放。",
+      "nextStep": "只可展示外缘压力、落脚窗口和后续门槛。",
+      "blockedUpgrades": [
+        "full_southern_border",
+        "shang_clan_city_core",
+        "npc_life_result"
+      ]
+    },
+    {
+      "id": "blocked",
+      "label": "保守阻断",
+      "publicSummary": "旧档或输入存在冲突，路线/地点状态按保守范围处理。",
+      "nextStep": "先清理冲突证据或由后续门禁重新审查。",
+      "blockedUpgrades": [
+        "route_success",
+        "location_unlock",
+        "deepseek_authority_expansion"
+      ]
+    }
+  ],
+  "scopeCards": [
+    {
+      "id": "qingmao_mountain",
+      "kind": "location",
+      "label": "青茅山范围",
+      "publicSummary": "族学、山寨、外山和离山前准备仍按青茅范围显示。"
+    },
+    {
+      "id": "qingmao_exit_path",
+      "kind": "location",
+      "label": "青茅出口路径",
+      "publicSummary": "外山道路、山路候选和离山压力进入可审计路线范围。"
+    },
+    {
+      "id": "southern_border_outer_edge",
+      "kind": "location",
+      "label": "南疆早期外缘",
+      "publicSummary": "只显示山路、商队窗口、落脚压力和公开风险；不开放完整南疆。"
+    },
+    {
+      "id": "unknown_conservative",
+      "kind": "location",
+      "label": "未知保守范围",
+      "publicSummary": "证据不够或旧档冲突时，不做地点推进。"
+    },
+    {
+      "id": "qingmao",
+      "kind": "region",
+      "label": "青茅区域",
+      "publicSummary": "当前区域仍以青茅开局和离山压力为主。"
+    }
+  ],
+  "evidenceRules": {
+    "escapeGoalRefs": [
+      "region:outside_qingmao"
+    ],
+    "routePreparationFacts": [
+      "qingmao_escape_route_preparation_baseline",
+      "qingmao_mountain_pass_route_continuation_candidate",
+      "qingmao_supply_feeding_preparation_baseline"
+    ],
+    "routeInProgressFacts": [
+      "v018_qingmao_route_entry_threshold_commitment",
+      "v018_qingmao_route_pressure_backflow_baseline"
+    ],
+    "outerEdgeProjectionFacts": [
+      "v018_qingmao_route_candidate_continuation_view",
+      "v100_qingmao_southern_border_continuity_acceptance"
+    ],
+    "preparationActionIds": [
+      "qingmao_escape_route_preparation_probe",
+      "qingmao_mountain_pass_route_continuation_probe",
+      "qingmao_supply_feeding_preparation_probe"
+    ]
+  },
+  "boundaries": {
+    "forbiddenWrites": [
+      "route_entered",
+      "currentRoute",
+      "currentRegion",
+      "location_unlock",
+      "region_unlock",
+      "full_southern_border",
+      "full_shang_clan_city",
+      "formal_faction_standing",
+      "formal_recruitment",
+      "formal_task",
+      "reward",
+      "material_reward",
+      "currency_delta",
+      "gu_reward",
+      "npc_life_result",
+      "npc_capture_result",
+      "pursuit_success",
+      "pursuit_failure",
+      "hidden_fact_reveal",
+      "deepseek_authority_expansion",
+      "bff_backend"
+    ],
+    "visibleBoundaryLines": [
+      "当前位置只显示路线/地点范围，不代表完整地点开放。",
+      "南疆外缘只作为早期路线压力和落脚语义，不开放完整南疆或商家城核心。",
+      "DeepSeek 不能写 routeLocationState，也不能决定奖励、阵营或 NPC 生死。"
+    ],
+    "hiddenRefPolicies": [
+      "hidden_ref_only",
+      "human_review"
+    ]
+  }
+}

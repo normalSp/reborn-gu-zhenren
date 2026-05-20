@@ -43,6 +43,7 @@ import { normalizeSceneSessionState } from '../engine/v080-scene-session-engine'
 import { createIdleCombatEncounterState } from '../engine/v080-narrative-combat-orchestration';
 import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-engine';
 import { normalizeTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
+import { normalizeRouteLocationState } from '../engine/v110-route-location-state';
 import { normalizeLivingWorldState } from './defaultLivingWorldState';
 import {
   INITIAL_STATE,
@@ -481,6 +482,7 @@ export function normalizePersistedGameState(
     lastResolutionSteps: sourceFlags.lastTrainingGroundResolution,
   });
   state.livingWorldState = normalizeLivingWorldState(state.livingWorldState, turn);
+  state.routeLocationState = normalizeRouteLocationState(state.routeLocationState, turn, state.livingWorldState);
   state.flags = mirrorTrainingGroundFlagsForLoad(
     mirrorStoryAnchorFlagsForLoad(sourceFlags, state.storyAnchorState),
     state.trainingGroundState,

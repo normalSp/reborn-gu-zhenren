@@ -145,14 +145,18 @@ v1.x 不追求“完整蛊界”，而是把“青茅之后的低阶人生”做
 可能交付：
 
 - MiroFish 包分类、intake、promote、quarantine 的工具化。
+- 全书基础包库存审计与主题切片工具化，例如检查 `指导大纲/vMiroFish/基础包/` 文件数、manifest、coverage、quote-redacted 状态和 intake 引用链。
 - 原著事实卡 schema 扩展。
 - 长线 Player Advocate 自动样本。
 - DeepSeek 固定 eval / live eval / replay 归档增强。
 - 内容候选从 `candidate_pool` 到 `rule_draft` 到 `test_sample` 的标准流。
+- 过期入口自动检查脚本，例如 `scripts/check-doc-entrypoints.mjs` / `check:doc-entrypoints`，检查当前入口是否错误引用历史流程文件。
 
 硬停：
 
 - MiroFish 仍不是 runtime 权威，不直接进入 DeepSeek visible context。
+- 全书基础包不得整包导入知识索引、prompt 或 runtime；只能按主题切片进入 intake。
+- 过期入口检查脚本在规则稳定前不加入 CI 硬门；是否进入 GitHub Actions 需用户另行批准。
 
 ### v1.7：公开测试与薄后端/BFF 门禁
 

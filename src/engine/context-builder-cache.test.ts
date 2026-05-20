@@ -73,4 +73,14 @@ describe('ContextBuilder DeepSeek cache stability', () => {
     expect(dynamic).toContain('【当前蛊虫状态】');
     expect(dynamic).toContain('白玉蛊');
   });
+
+  it('does not expose protected hidden protagonist causality in the cacheable canon prompt', () => {
+    const builder = new ContextBuilder();
+    const prompt = builder.buildSystemPrompt('canon', makeStore());
+
+    expect(prompt).not.toContain('春秋蝉');
+    expect(prompt).not.toContain('方源使用');
+    expect(prompt).not.toContain('太白云生');
+    expect(prompt).toContain('隐藏因果不得展开为玩家可见文本');
+  });
 });

@@ -14,6 +14,7 @@
 import type { ScreenState, GameMode, PipelinePhase } from './slices/uiSlice';
 import { createInitialCultivationState } from './defaultCultivationState';
 import { createInitialLivingWorldState } from './defaultLivingWorldState';
+import { createInitialRouteLocationState } from '../engine/v110-route-location-state';
 import {
   createInitialCombatEncounterState,
   createInitialEndingFrameworkState,
@@ -75,6 +76,7 @@ export const INITIAL_STATE = {
   inheritanceLandState: createInitialInheritanceLandState(),
   trainingGroundState: createInitialTrainingGroundState(),
   livingWorldState: createInitialLivingWorldState(),
+  routeLocationState: createInitialRouteLocationState(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -348,5 +350,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v6→v7: P2-13 动态系统补完 + P2-流派 本命蛊/道痕互斥 + P2-审计D 数据扩充
  * v8→v9: v0.7.0 势力/小队/成就/资源点/十绝体系统
  * v21→v22: v0.11.0-a2 活世界状态协议 livingWorldState
+ * v22→v23: v1.1.0-b1 路线/地点范围状态 routeLocationState
  */
-export const SAVE_FORMAT_VERSION = 22;
+export const SAVE_FORMAT_VERSION = 23;

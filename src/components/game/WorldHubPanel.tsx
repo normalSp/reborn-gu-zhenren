@@ -3,14 +3,16 @@ import { useStore } from '../../store';
 import { EndingResolverPanel } from './EndingResolverPanel';
 import { InheritanceLandPanel } from './InheritanceLandPanel';
 import { MerchantPanel } from './MerchantPanel';
+import { RouteLocationPanel } from './RouteLocationPanel';
 import { SquadFormationPanel } from './SquadFormationPanel';
 import { StoryAnchorPanel } from './StoryAnchorPanel';
 import { TrainingGroundPanel } from './TrainingGroundPanel';
 
-type WorldTab = 'overview' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
+type WorldTab = 'overview' | 'route_location' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
 
 const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'overview', label: '总览' },
+  { id: 'route_location', label: '路线' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'inheritance', label: '传承' },
   { id: 'ending', label: '终局' },
@@ -29,6 +31,7 @@ const tabClass = (active: boolean) =>
 
 function WorldOverview() {
   const cards = [
+    ['路线', '路线/地点范围只显示青茅到南疆早期外缘，不代表完整地点开放。'],
     ['宿命', '剧情锚点和高阶压力，只读或场景化显示，不授予宿命层权威。'],
     ['传承', '候选线索和试炼入口，不暗示玩家已获得传承。'],
     ['终局', '后期结局框架，不在低阶阶段开放裁决。'],
@@ -124,6 +127,7 @@ export function WorldHubPanel() {
 
       <div className="min-h-0 flex-1" data-testid={`world-hub-content-${tab}`}>
         {tab === 'overview' && <WorldOverview />}
+        {tab === 'route_location' && <RouteLocationPanel />}
         {tab === 'story_anchor' && <StoryAnchorPanel />}
         {tab === 'inheritance' && <InheritanceLandPanel />}
         {tab === 'ending' && <EndingResolverPanel />}

@@ -933,4 +933,59 @@ describe('v0.11.0-a3-2 living world free-goal store bridge', () => {
       ]),
     }));
   });
+
+  it('syncs v1.1 routeLocationState through the local engine without rewards or old route fields', () => {
+    const harness = createHarness({ currentFaction: 'guyue_shanzhai' });
+    const preview = harness.get().previewWorldIntentAction('我要逃离青茅山，找商队或散修路线去南疆外面落脚').adjudication!;
+    const goalResult = harness.get().confirmWorldIntentGoalAction(preview);
+    harness.get().resolveQingmaoEscapeRoutePreparationAction(goalResult.goal!.id);
+    harness.get().resolveQingmaoFactionReactionBridgeAction();
+    harness.get().resolveQingmaoCoverEscapeTracksAction();
+    harness.get().resolveQingmaoMountainPassRouteContinuationAction();
+    harness.get().resolveQingmaoSupplyFeedingPreparationAction();
+    harness.get().resolveQingmaoRefinementBoundaryAction();
+    harness.get().resolveQingmaoMarketWindowAction();
+    harness.get().resolveV018QingmaoRouteEntryThresholdAction();
+    harness.get().resolveV018QingmaoCandidateContinuationAction();
+    harness.get().resolveV018QingmaoPressureBackflowAction();
+    harness.get().resolveV100QingmaoSouthernBorderContinuityAction();
+
+    const beforeInventory = harness.get().inventory;
+    const beforeCurrency = harness.get().currency;
+    const beforeMaterialBag = harness.get().materialBag;
+    const beforeDomain = harness.get().currentDomain;
+    const result = harness.get().resolveV110RouteLocationStateAction();
+
+    expect(result.success).toBe(true);
+    expect(result.applied).toEqual(['routeLocationState']);
+    expect(harness.get().routeLocationState).toMatchObject({
+      status: 'outer_edge_projection',
+      routeId: 'southern_border_low_rank_route',
+      locationScopeId: 'southern_border_outer_edge',
+      regionScopeId: 'southern_border_outer_edge',
+      authority: 'route_location_engine',
+    });
+    expect(harness.get().routeLocationState.evidenceLedgerEntryIds).toContain('v100_qingmao_southern_border_continuity_acceptance');
+    expect(harness.get().inventory).toBe(beforeInventory);
+    expect(harness.get().currency).toBe(beforeCurrency);
+    expect(harness.get().materialBag).toBe(beforeMaterialBag);
+    expect(harness.get().currentDomain).toBe(beforeDomain);
+    expect((harness.get().materialBag as any).route_entered).toBeUndefined();
+    expect((harness.get().materialBag as any).currentRoute).toBeUndefined();
+    expect((harness.get().materialBag as any).currentRegion).toBeUndefined();
+    expect(harness.get().flags.lastLivingWorldPatch).toEqual(expect.objectContaining({
+      source: 'v110_route_location_state',
+      actionId: 'v110_route_location_state_sync',
+      applied: ['routeLocationState'],
+      rejected: [],
+    }));
+    expect(harness.get().gameLog.at(-1).meta).toEqual(expect.objectContaining({
+      forbiddenUpgrades: expect.arrayContaining([
+        'reward',
+        'formal_faction_standing',
+        'npc_life_result',
+        'deepseek_authority_expansion',
+      ]),
+    }));
+  });
 });

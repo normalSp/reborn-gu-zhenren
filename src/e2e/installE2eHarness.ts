@@ -223,6 +223,18 @@ function summarizeStore(): Record<string, unknown> {
         : [],
       actionConsequenceCount: Array.isArray(state.livingWorldState.actionConsequences) ? state.livingWorldState.actionConsequences.length : 0,
     } : null,
+    routeLocation: state.routeLocationState ? {
+      status: state.routeLocationState.status || null,
+      routeId: state.routeLocationState.routeId || null,
+      locationScopeId: state.routeLocationState.locationScopeId || null,
+      regionScopeId: state.routeLocationState.regionScopeId || null,
+      authority: state.routeLocationState.authority || null,
+      evidenceLedgerEntryIds: Array.isArray(state.routeLocationState.evidenceLedgerEntryIds)
+        ? state.routeLocationState.evidenceLedgerEntryIds
+        : [],
+      sourceRefs: Array.isArray(state.routeLocationState.sourceRefs) ? state.routeLocationState.sourceRefs : [],
+      migrationNote: state.routeLocationState.migrationNote || null,
+    } : null,
     materialBag: state.materialBag || {},
     feedingCredits: state.feedingCredits || {},
     lastWorldActionPromptSummary: state.flags?.lastWorldActionReturnContext?.promptSummary || null,

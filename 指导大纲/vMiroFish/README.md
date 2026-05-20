@@ -14,7 +14,23 @@
 - `requests/`：RebornG 主线（runtime / canon / save / DeepSeek）需要 MiroFish 产包时写入的请求文件，按版本分子目录。
 - `美术/`：RebornG 美术专项（跨版本，不绑某个 RebornG 小版本主线）的 MiroFish 请求；交付包仍按主协议放到 `intake-reviews/<version>/`。
 - `intake-reviews/`：RebornG 对 MiroFish 交付包的审查结论（主线 + 美术专项交付包都进这里）。
+- `基础包/`：全书 quote-redacted 基础包档案层，当前范围 `ri_lw_ch_0001` 至 `ri_lw_ch_2340`。它只作为 candidate material 和 source pointer 后勤仓库，不是 canon、runtime authority 或 DeepSeek visible context。
 - 根目录：MiroFish 产出的主 JSON、报告、ledger、说明文件。
+
+## 全书基础包入口
+
+当前全书基础包已放入：
+
+- `指导大纲/vMiroFish/基础包/`
+
+使用前先读：
+
+- `指导大纲/vMiroFish/基础包/README.md`
+- `指导大纲/vMiroFish/基础包/manifest.json`
+- `指导大纲/vMiroFish/基础包/coverage_report.json`
+- `指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-20-全书基础包入库使用计划.md`
+
+基础包只能按主题切片进入 intake review。不得全量导入知识库、runtime、DeepSeek 或玩家可见 UI。
 
 ## 当前主协议
 

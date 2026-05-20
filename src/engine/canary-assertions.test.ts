@@ -10,6 +10,7 @@ function makeStore(overrides: any = {}) {
     attributes: overrides.attributes ?? { 资质: 5, 体魄: 5, 心智: 5, 气运: 5 },
     vitals: { health: { max: 100 }, essence: { max: 100 } },
     inventory: overrides.inventory ?? [],
+    flags: overrides.flags ?? {},
   } as any;
 }
 
@@ -137,5 +138,28 @@ describe('Layer 4 金丝雀断言', () => {
     const result = validateCanaryAssertions(narrative, store);
     expect(result.passed).toBe(true);
     expect(result.failedCritical.length).toBe(0);
+  });
+
+  it('C27: 玩家可见叙事不得复述受保护隐藏因果名词', () => {
+    const store = makeStore();
+    const narrative = makeNarrative({
+      text: '巡山弟子摇头说，关于方源与春秋蝉的说法只是危险流言。这个世界仍然阴冷。',
+    });
+
+    const result = validateCanaryAssertions(narrative, store);
+    const c27 = result.results.find(r => r.ruleId === 'C27')!;
+    expect(c27.passed).toBe(false);
+    expect(result.recommendation).toBe('reject');
+  });
+
+  it('C27: 明确授权后才允许隐藏因果名词进入可见文本', () => {
+    const store = makeStore({ flags: { allowProtectedHiddenFactNames: true } });
+    const narrative = makeNarrative({
+      text: '受授权的回顾文本提到方源与春秋蝉，但不进入普通玩家路线。',
+    });
+
+    const result = validateCanaryAssertions(narrative, store);
+    const c27 = result.results.find(r => r.ruleId === 'C27')!;
+    expect(c27.passed).toBe(true);
   });
 });

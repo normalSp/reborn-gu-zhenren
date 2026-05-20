@@ -727,6 +727,42 @@ export interface LivingWorldState {
   ifDeviations: LivingIfDeviationEntry[];
 }
 
+// ─── v1.1.0 路线/地点范围状态 ───
+export type RouteLocationStatus =
+  | 'not_started'
+  | 'preparing_departure'
+  | 'route_in_progress'
+  | 'outer_edge_projection'
+  | 'blocked';
+
+export type RouteLocationScopeId =
+  | 'qingmao_mountain'
+  | 'qingmao_exit_path'
+  | 'southern_border_outer_edge'
+  | 'unknown_conservative';
+
+export type RouteRegionScopeId =
+  | 'qingmao'
+  | 'southern_border_outer_edge'
+  | 'unknown_conservative';
+
+export type RouteLocationAuthority =
+  | 'start_profile'
+  | 'living_world_engine'
+  | 'route_location_engine';
+
+export interface RouteLocationState {
+  status: RouteLocationStatus;
+  routeId: string | null;
+  locationScopeId: RouteLocationScopeId;
+  regionScopeId: RouteRegionScopeId;
+  authority: RouteLocationAuthority;
+  evidenceLedgerEntryIds: string[];
+  sourceRefs: string[];
+  lastUpdatedAtTurn: number | null;
+  migrationNote?: string;
+}
+
 export interface IntentCandidate {
   id: string;
   rawText: string;
