@@ -64,6 +64,21 @@ export function SocialPressurePanel() {
           ))}
         </div>
 
+        <div
+          className="rounded-sm border border-rg-jade-400/22 bg-rg-jade-500/10 p-3"
+          data-testid="v130-social-projection-audit"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold text-rg-jade-100">投影审计</p>
+            <span className="text-[10px] text-rg-paper-200/55">
+              {projection.projectionAudit.saveFormatPolicy} · {projection.projectionAudit.persistentWritePolicy}
+            </span>
+          </div>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
+            旧字段不作为权威；当前只返回可重算投影和审计，不返回可写 ledger patch。
+          </p>
+        </div>
+
         {projection.promptSafePublicSummary && (
           <div
             className="rounded-sm border border-rg-jade-400/20 bg-rg-jade-500/10 p-3"

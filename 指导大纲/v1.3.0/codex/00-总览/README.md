@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：b1 社会压力 projection-only 第一刀已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
+状态：b2 社会压力 projection-only 硬化已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -21,6 +21,7 @@
 - `v1.3.0-b1-关系证据与社会压力projection-only第一刀.md`
 - `v1.3.0-b1-Player-Advocate-30轮走查记录.md`
 - `v1.3.0-b1-长线叙事漂移检查记录.md`
+- `v1.3.0-b2-社会压力projection-only硬化.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -85,6 +86,16 @@ v1.3-b1 已完成本地 runtime 第一刀：
 - 不写正式关系、声望、通缉、招揽、封锁、阵营、奖励或 NPC 生死。
 - 聚焦 unit、typecheck、focused e2e、30 轮 Player Advocate 与 T0-lite drift 均通过。
 
+## 本轮 b2 projection-only 硬化
+
+v1.3-b2 已完成本地小刀：
+
+- 不进入 `SAVE_FORMAT_VERSION = 25`。
+- 不新增 `socialRelationState`。
+- 新增 `projectionAudit`，把无持久写入、旧字段不权威、MiroFish 非 runtime、DeepSeek 无新权限变成 helper 返回值。
+- 世界 `社会` 页签新增 `投影审计` 区块。
+- 聚焦 unit、typecheck、focused e2e 通过。
+
 ## 硬边界
 
 - b1 不新增 save 字段。
@@ -96,9 +107,8 @@ v1.3-b1 已完成本地 runtime 第一刀：
 
 ## 下一步
 
-进入 b2/b3/b4 的 projection-only 深化：
+进入 b3/b4 的 projection-only 深化：
 
-- b2 默认继续不新增社会持久字段，只整理最小社会证据 ledger 需求是否仍可延后。
 - b3 深化 NPC 接触窗口和个人反应可读性，但不写好感度、命名 NPC 正式规则或 NPC 生死。
 - b4 深化势力封锁/招揽/通缉前置条件可读性，但不定案、不转阵营、不发奖励。
 - rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。

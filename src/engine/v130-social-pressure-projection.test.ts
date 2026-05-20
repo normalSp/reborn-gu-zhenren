@@ -108,6 +108,19 @@ describe('v1.3 social pressure projection', () => {
     expect(projection.canSetNpcFate).toBe(false);
     expect(projection.deepSeekAuthority).toBe('no_new_authority');
     expect(projection.legacyFieldsIgnored).toBe(true);
+    expect(projection.projectionAudit).toEqual(expect.objectContaining({
+      phase: 'v1.3.0-b2-projection-hardening',
+      saveFormatPolicy: 'stay_v24_no_bump',
+      persistentWritePolicy: 'none_projection_only',
+      legacyFieldPolicy: 'ignored_as_authority',
+      canPromoteToLedgerWithoutUserDecision: false,
+      pass: true,
+    }));
+    expect(projection.projectionAudit.requiredUserDecisionForLedger).toEqual(expect.arrayContaining([
+      'approve_SAVE_FORMAT_VERSION_25',
+      'approve_socialRelationState_or_equivalent_single_aggregate',
+      'approve_migration_defaults_tests',
+    ]));
     expect(projection.moduleCounts.factionPressure).toBeGreaterThan(0);
     expect(projection.moduleCounts.npcMemory).toBeGreaterThan(0);
     expect(projection.moduleCounts.publicEvent).toBeGreaterThan(0);
@@ -161,6 +174,7 @@ describe('v1.3 social pressure projection', () => {
     expect(projection.status).toBe('needs_public_evidence');
     expect(projection.signals).toEqual([]);
     expect(projection.publicSummary).toContain('旧声望字段');
+    expect(projection.projectionAudit.legacyFieldPolicy).toBe('ignored_as_authority');
     expect(projection.canWriteSave).toBe(false);
   });
 });

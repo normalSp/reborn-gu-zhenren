@@ -62,6 +62,7 @@ export interface V130SocialPressureProjection {
   boundaryLines: string[];
   visibleSourceRefs: string[];
   forbiddenWrites: string[];
+  projectionAudit: V130SocialProjectionAudit;
   modules: {
     factionStance: QingmaoFactionStanceProjectionResult;
     npcMemory: QingmaoNpcMemoryProjectionResult;
@@ -77,6 +78,20 @@ export interface V130SocialPressureProjection {
   canSetNpcFate: false;
   deepSeekAuthority: 'no_new_authority';
   legacyFieldsIgnored: true;
+}
+
+export interface V130SocialProjectionAudit {
+  phase: 'v1.3.0-b2-projection-hardening';
+  saveFormatPolicy: 'stay_v24_no_bump';
+  persistentWritePolicy: 'none_projection_only';
+  legacyFieldPolicy: 'ignored_as_authority';
+  runtimeSourcePolicy: 'living_world_public_evidence_only';
+  miroFishPolicy: 'reviewed_rule_source_only_no_raw_runtime_read';
+  deepSeekPolicy: 'no_new_authority';
+  canPromoteToLedgerWithoutUserDecision: false;
+  requiredUserDecisionForLedger: string[];
+  pass: boolean;
+  notes: string[];
 }
 
 export interface V130SocialPressureProjectionInput {
@@ -127,6 +142,14 @@ const SOURCE_REFS = [
   'v0.13:qingmao_npc_memory_motive_pack:intake-reviewed-rule-draft',
   'v0.13:qingmao_faction_reputation_pressure_pack:intake-reviewed-rule-draft',
   'v0.13:qingmao_public_event_chronicle_pack:intake-reviewed-rule-draft',
+];
+
+const LEDGER_DECISION_REQUIREMENTS = [
+  'approve_SAVE_FORMAT_VERSION_25',
+  'approve_socialRelationState_or_equivalent_single_aggregate',
+  'approve_migration_defaults_tests',
+  'approve_formal_social_ledger_scope',
+  'approve_Player_Advocate_upgrade',
 ];
 
 const HIDDEN_TEXT_REPLACEMENTS: Array<[RegExp, string]> = [
@@ -359,6 +382,7 @@ export function buildV130SocialPressureProjection(
     moduleCounts,
     boundaryLines: [
       'v1.3 b1 是 projection-only：不 bump SAVE_FORMAT_VERSION，不新增 socialRelationState，不写持久社会关系字段。',
+      'v1.3 b2 继续 projection-only 硬化：当前 helper 只返回 audit，不返回可写 ledger patch。',
       '输入只读取 livingWorldState.npcMemories、factionPressure、actionConsequences、knownFacts 与本地行动账本；旧 npcRelations、standings、faction standing 字段一律不是权威。',
       'MiroFish v0.13 包与全书基础包只作为已审查的候选/规则/测试来源，不是运行时 canon、DeepSeek 权限或隐藏事实可见上下文。',
       '正式地点、阵营、通缉、招揽、封锁、奖励、NPC 生死和隐藏事实揭露仍需单独门禁与用户决策。',
@@ -366,6 +390,23 @@ export function buildV130SocialPressureProjection(
     ],
     visibleSourceRefs,
     forbiddenWrites,
+    projectionAudit: {
+      phase: 'v1.3.0-b2-projection-hardening',
+      saveFormatPolicy: 'stay_v24_no_bump',
+      persistentWritePolicy: 'none_projection_only',
+      legacyFieldPolicy: 'ignored_as_authority',
+      runtimeSourcePolicy: 'living_world_public_evidence_only',
+      miroFishPolicy: 'reviewed_rule_source_only_no_raw_runtime_read',
+      deepSeekPolicy: 'no_new_authority',
+      canPromoteToLedgerWithoutUserDecision: false,
+      requiredUserDecisionForLedger: [...LEDGER_DECISION_REQUIREMENTS],
+      pass: true,
+      notes: [
+        'b2 did not create a minimum social ledger because v25/socialRelationState are not approved.',
+        'projection output is recomputable from current public living-world evidence.',
+        'formal relation, warrant, recruitment, blockade, faction, reward, NPC fate, and hidden-fact writes remain forbidden.',
+      ],
+    },
     modules: {
       factionStance,
       npcMemory,
