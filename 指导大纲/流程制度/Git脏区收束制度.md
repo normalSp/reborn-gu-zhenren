@@ -45,6 +45,18 @@
 | `指导大纲/大方向/` | 删除 | `指导大纲/长期路线/`、当前版本 docs、项目流程制度 |
 | `指导大纲/vMiroFish/美术/` | 删除 | 已 intake 的 `指导大纲/vMiroFish/intake-reviews/美术/` 与 `doc/art/` |
 
+## 资产分流
+
+资产不是废弃物，但必须按用途分层收束：
+
+| 路径 | 处置 | 说明 |
+|---|---|---|
+| `public/rebrng/**` | 可作为 runtime 资产提交 | 如果 `src/data/image-maps.ts` 或 manifest 引用，图片和映射必须同组提交，并通过运行时资产扫描 |
+| `doc/art/**` | 可作为美术台账、候选图和 source evidence 提交 | 与 runtime 功能提交分离；候选图不等于 canon 或 gameplay authority |
+| `artifacts/**` | 可作为小规模验证证据提交 | 记录 DeepSeek eval、截图、短录屏或门禁证据；不要混入 runtime 功能提交 |
+| `bgm/*.md`、`bgm/**/*.md`、`bgm/**/*.txt` | 可作为本地 fan-pack 清单/歌词/风格说明提交 | 只记录资料与生成口径，不代表运行时启用 |
+| `bgm/**/*.mp3` 等音频文件 | 默认 ignore，除非用户另批 runtime 晋升 | 根目录 `bgm/` 是本地暂存；运行时音频必须进入 `public/audio/` 并登记 source manifest |
+
 ## 提交流程
 
 每个提交只 stage 明确路径：

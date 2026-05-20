@@ -44,6 +44,19 @@ test-results/
 public/test-saves/
 测试存档/
 
+# Local fan-pack audio staging. Track text manifests/prompts under bgm/,
+# but promote audio into public/audio only after source manifest review.
+bgm/**/*.mp3
+bgm/**/*.MP3
+bgm/**/*.mP3
+bgm/**/*.Mp3
+bgm/**/*.wav
+bgm/**/*.WAV
+bgm/**/*.ogg
+bgm/**/*.OGG
+bgm/**/*.flac
+bgm/**/*.FLAC
+
 # CodeBuddy IDE internal data
 .codebuddy/
 

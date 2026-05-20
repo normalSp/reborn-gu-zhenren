@@ -2,9 +2,9 @@
 
 ## 当前口径
 
-v0.7.1 私用二创包启用用户本地提供的角色曲和名场面曲；免费公布包仍保留 `free_public_pack` fallback。根目录 `bgm/` 只是素材暂存区，运行时必须引用 `public/audio/...`。
+v0.7.1 私用二创包启用用户本地提供的角色曲和名场面曲；免费公布包仍保留 `free_public_pack` fallback。根目录 `bgm/` 只是本地素材暂存区，文本清单/歌词/风格说明可以进入 Git，音频文件默认 ignore；运行时必须引用 `public/audio/...`。
 
-不要使用自动抓取 B 站、网易云或其他平台音频的脚本。用户提供的文件可以复制到 runtime 目录并在 manifest 中标注为 `user_supplied_local_fan_pack`。
+不要使用自动抓取 B 站、网易云或其他平台音频的脚本。用户提供的文件只有在用户明确批准 runtime 晋升后，才可以复制到 runtime 目录并在 manifest 中标注为 `user_supplied_local_fan_pack`。
 
 ## 已启用免费素材
 
