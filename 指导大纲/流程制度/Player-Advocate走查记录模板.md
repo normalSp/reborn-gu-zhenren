@@ -42,7 +42,7 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 | 自由意图或长期目标 | 小版本按需 / rc >= 10 | TBD | TBD |
 | 失败、阻断、风险或代价反馈 | 小版本按需 / rc >= 10 | TBD | TBD |
 | 移动端或 reduced-motion 可读性 | 小版本按需 / rc >= 5 | TBD | TBD |
-| 旧档 / 测试存档 / 公开存档路径 | 小版本按需 / rc >= 5 | TBD | TBD |
+| 旧档兼容 / E2E harness / replay-eval 样本 / 当前版本可复现路径 | 小版本按需 / rc >= 5 | TBD | TBD |
 
 ## 轮次记录
 

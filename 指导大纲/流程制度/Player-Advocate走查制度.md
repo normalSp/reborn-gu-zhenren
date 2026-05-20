@@ -47,7 +47,7 @@ RebornG 的工程测试能证明“系统没坏”，但玩家视角走查要证
 - 至少 10 轮自由意图或长期目标。
 - 至少 10 轮失败、阻断、风险或代价反馈。
 - 至少 5 轮移动端或 reduced-motion 可读性。
-- 至少 5 轮旧档 / 测试存档 / 公开存档路径。
+- 至少 5 轮旧档兼容、E2E harness demo、replay/eval 样本或当前版本可复现路径。`测试存档/` 与 `public/test-saves/` 已废弃，不再作为新门禁入口。
 
 ## 什么算一轮
 
@@ -135,7 +135,7 @@ Player Advocate 走查不替代：
 
 Player Advocate 走查分两层：
 
-1. `deterministic_walkthrough`：默认层。使用本地引擎、测试存档、Playwright 或手工可复现步骤走查，验证目标、选择、反馈、边界、UI 和存档是否可理解。小版本和 rc 的轮次默认按这一层计数。
+1. `deterministic_walkthrough`：默认层。使用本地引擎、E2E harness demo、Playwright、replay/eval 样本或手工可复现步骤走查，验证目标、选择、反馈、边界、UI 和存档是否可理解。小版本和 rc 的轮次默认按这一层计数。
 2. `live_narrative_probe`：叙事探针层。仅当本阶段修改 DeepSeek prompt/schema/model、正式叙事回流、公开候选体验，或用户明确要求“像真实游玩一样调用模型”时启用。它必须记录模型名、轮次、token/缓存命中、失败原因、是否保存 transcript、是否进入 eval 样本。
 
 live DeepSeek 不替代确定性走查。原因是 live 输出有随机性，适合验证叙事口感、越权和成本，不适合单独证明本地引擎门禁稳定。
@@ -149,9 +149,9 @@ rc 或公开候选前建议追加：
 
 每份走查记录都必须写明：
 
-- 本次走查是否产生值得保留的测试存档。
+- 本次走查是否产生值得保留的回放、E2E fixture、eval 样本或手工复现步骤。
 - 存档价值是 `none`、`debug_only`、`regression_candidate` 还是 `golden_playthrough_candidate`。
-- 若是候选存档，后续是否要落到 `public/test-saves`、e2e fixture 或长期回放样本。
+- 若是候选样本，后续是否要落到 e2e fixture、eval archive、长期回放样本或当前版本文档；不要重新启用已废弃的 `测试存档/` 或 `public/test-saves/`。
 
 不能把一次主观体验走查直接当成 golden playthrough；必须先通过自动测试、隐藏事实扫描和旧档兼容检查。
 

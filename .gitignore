@@ -12,6 +12,7 @@ dist/
 # IDE files
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 
@@ -38,6 +39,10 @@ test-output.css
 screenshot.png
 playwright-report/
 test-results/
+
+# Deprecated local/manual save fixture dumps
+public/test-saves/
+测试存档/
 
 # CodeBuddy IDE internal data
 .codebuddy/
