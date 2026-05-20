@@ -118,6 +118,35 @@ export function SocialPressurePanel() {
           </div>
         )}
 
+        {projection.factionPreconditions.length > 0 && (
+          <div className="rounded-sm border border-rg-blood-400/20 bg-rg-blood-500/10 p-3" data-testid="v130-faction-preconditions">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-semibold text-rg-blood-100">势力前置条件</p>
+              <span className="text-[10px] text-rg-paper-200/55">risk only · no formal result</span>
+            </div>
+            <div className="mt-2 grid gap-2 lg:grid-cols-2">
+              {projection.factionPreconditions.slice(0, 4).map(item => (
+                <article key={item.id} className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/28 p-3" data-testid="v130-faction-precondition">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <p className="truncate text-xs font-semibold text-rg-paper-100">{item.factionLabel}</p>
+                      <p className="mt-1 text-[10px] text-rg-paper-200/42">{item.kind} · {item.blockedConclusion}</p>
+                    </div>
+                    <span className={`shrink-0 rounded-sm border px-2 py-1 text-[10px] ${severityClass[item.severity]}`}>
+                      {severityLabel(item.severity)}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/62">{item.publicReason}</p>
+                  <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/50">{item.precondition}</p>
+                  <p className="mt-2 text-[9px] leading-relaxed text-rg-paper-200/38">
+                    不写通缉 · 不写招揽/转阵营 · 不写封锁结果 · 不发奖励
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="grid gap-2 lg:grid-cols-2" data-testid="v130-social-signal-list">
           {projection.signals.length > 0 ? (
             projection.signals.map(signal => (

@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：b3 NPC 接触窗口 projection-only 已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
+状态：b4 势力前置条件 projection-only 已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -23,6 +23,7 @@
 - `v1.3.0-b1-长线叙事漂移检查记录.md`
 - `v1.3.0-b2-社会压力projection-only硬化.md`
 - `v1.3.0-b3-NPC接触窗口projection-only.md`
+- `v1.3.0-b4-势力前置条件projection-only.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -107,6 +108,16 @@ v1.3-b3 已完成本地第一刀：
 - 不写好感度、不创建正式命名 NPC runtime rule、不写 NPC 生死。
 - 聚焦 unit、typecheck、focused e2e 通过。
 
+## 本轮 b4 势力前置条件
+
+v1.3-b4 已完成本地第一刀：
+
+- 新增 `factionPreconditions` projection 输出。
+- 世界 `社会` 页签新增 `势力前置条件` 区块。
+- 只显示招揽前置、通缉风险、封锁压力、任务流程压力和交易窗口。
+- 不写通缉、不写招揽或阵营变化、不写正式封锁/追捕结果、不创建任务、不发奖励。
+- 聚焦 unit、typecheck、focused e2e 通过。
+
 ## 硬边界
 
 - b1 不新增 save 字段。
@@ -118,7 +129,8 @@ v1.3-b3 已完成本地第一刀：
 
 ## 下一步
 
-进入 b4 的 projection-only 深化：
+进入 process-1/process-2/rc 收束：
 
-- b4 深化势力封锁/招揽/通缉前置条件可读性，但不定案、不转阵营、不发奖励。
+- 复核反刷、旧档、回滚、长线漂移、知识库、Skill sync 和 Player Advocate。
+- rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。
 - rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。

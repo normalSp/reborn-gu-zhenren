@@ -63,6 +63,31 @@ export interface V130NpcContactWindow {
   canPatch: false;
 }
 
+export type V130FactionPreconditionKind =
+  | 'recruitment_prerequisite'
+  | 'warrant_risk'
+  | 'blockade_pressure'
+  | 'task_pressure'
+  | 'trade_window'
+  | 'general_pressure';
+
+export interface V130FactionPrecondition {
+  id: string;
+  factionLabel: string;
+  kind: V130FactionPreconditionKind;
+  publicReason: string;
+  precondition: string;
+  blockedConclusion: string;
+  severity: V130SocialSignalSeverity;
+  visibleSourceRefs: string[];
+  forbiddenWrites: string[];
+  canCreateWarrant: false;
+  canRecruitOrTransferFaction: false;
+  canCreateBlockade: false;
+  grantsReward: false;
+  canPatch: false;
+}
+
 export interface V130SocialPressureProjection {
   status: V130SocialProjectionStatus;
   statusLabel: string;
@@ -71,6 +96,7 @@ export interface V130SocialPressureProjection {
   promptSafePublicSummary: string | null;
   signals: V130SocialPressureSignal[];
   npcContactWindows: V130NpcContactWindow[];
+  factionPreconditions: V130FactionPrecondition[];
   moduleCounts: {
     factionPressure: number;
     npcMemory: number;
@@ -362,6 +388,67 @@ function buildNpcContactWindows(result: QingmaoNpcMemoryProjectionResult): V130N
   });
 }
 
+function factionPreconditionKindFor(stanceAxis: string, blockedUpgrades: string[]): V130FactionPreconditionKind {
+  if (stanceAxis === 'recruitment_hint' || blockedUpgrades.includes('recruitment_success') || blockedUpgrades.includes('faction_transfer')) {
+    return 'recruitment_prerequisite';
+  }
+  if (blockedUpgrades.includes('warrant_active')) return 'warrant_risk';
+  if (stanceAxis === 'blockade_hint' || blockedUpgrades.includes('pursuit_success') || blockedUpgrades.includes('npc_capture_result')) {
+    return 'blockade_pressure';
+  }
+  if (stanceAxis === 'task_source_hint' || blockedUpgrades.includes('task_created')) return 'task_pressure';
+  if (stanceAxis === 'trade_window') return 'trade_window';
+  return 'general_pressure';
+}
+
+function factionPreconditionText(kind: V130FactionPreconditionKind): string {
+  if (kind === 'recruitment_prerequisite') return '只能显示公开递话、身份遮掩和信任缺口；正式招揽结果、投靠和阵营变化都未开放。';
+  if (kind === 'warrant_risk') return '只能显示盘问、上报或通缉风险；正式通缉生成/解除必须另行门禁。';
+  if (kind === 'blockade_pressure') return '只能显示封锁、追查或巡查压力；正式封锁、追捕成败和捕获结果都被阻断。';
+  if (kind === 'task_pressure') return '只能显示任务来源或流程压力；不创建正式任务、不发任务奖励。';
+  if (kind === 'trade_window') return '只能显示商队递话和补给遮掩窗口；不成交、不写价格、不发物品。';
+  return '只能显示公开压力、风险和下一步前置，不写势力关系结论。';
+}
+
+function blockedConclusionFor(kind: V130FactionPreconditionKind): string {
+  if (kind === 'recruitment_prerequisite') return '招揽/投靠/阵营变化未开放';
+  if (kind === 'warrant_risk') return '正式通缉未开放';
+  if (kind === 'blockade_pressure') return '正式封锁/追捕结果未开放';
+  if (kind === 'task_pressure') return '正式任务/奖励未开放';
+  if (kind === 'trade_window') return '正式交易/价格/库存未开放';
+  return '正式势力结论未开放';
+}
+
+function buildFactionPreconditions(result: QingmaoFactionStanceProjectionResult): V130FactionPrecondition[] {
+  return result.projections.slice(0, 6).map(projection => {
+    const kind = factionPreconditionKindFor(projection.stanceAxis, projection.blockedUpgrades);
+    return {
+      id: `faction_precondition_${projection.id}`,
+      factionLabel: sanitizeVisibleText(projection.factionLabel, '未知势力'),
+      kind,
+      publicReason: sanitizeVisibleText(projection.publicReason, '公开势力前置需要更多证据。'),
+      precondition: factionPreconditionText(kind),
+      blockedConclusion: blockedConclusionFor(kind),
+      severity: normalizeSeverity(projection.severity),
+      visibleSourceRefs: [...projection.visibleSourceRefs],
+      forbiddenWrites: unique([
+        ...projection.blockedUpgrades,
+        ...result.forbiddenWrites,
+        'formal_warrant',
+        'formal_blockade',
+        'recruitment_success',
+        'faction_transfer',
+        'task_reward',
+      ]),
+      canCreateWarrant: false,
+      canRecruitOrTransferFaction: false,
+      canCreateBlockade: false,
+      grantsReward: false,
+      canPatch: false,
+    };
+  });
+}
+
 export function buildV130SocialPressureProjection(
   input: V130SocialPressureProjectionInput = {},
 ): V130SocialPressureProjection {
@@ -395,6 +482,7 @@ export function buildV130SocialPressureProjection(
   ];
   const signals = selectSignals(allSignals, maxSignals);
   const npcContactWindows = buildNpcContactWindows(npcMemory);
+  const factionPreconditions = buildFactionPreconditions(factionStance);
 
   const moduleCounts = {
     factionPressure: factionStance.projections.length,
@@ -439,6 +527,7 @@ export function buildV130SocialPressureProjection(
       : null,
     signals,
     npcContactWindows,
+    factionPreconditions,
     moduleCounts,
     boundaryLines: [
       'v1.3 b1 是 projection-only：不 bump SAVE_FORMAT_VERSION，不新增 socialRelationState，不写持久社会关系字段。',

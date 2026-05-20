@@ -137,6 +137,21 @@ describe('v1.3 social pressure projection', () => {
       'formal_named_npc_runtime_rule',
       'npc_fate_result',
     ]));
+    expect(projection.factionPreconditions.length).toBeGreaterThan(0);
+    expect(projection.factionPreconditions[0]).toEqual(expect.objectContaining({
+      canCreateWarrant: false,
+      canRecruitOrTransferFaction: false,
+      canCreateBlockade: false,
+      grantsReward: false,
+      canPatch: false,
+    }));
+    expect(projection.factionPreconditions[0].forbiddenWrites).toEqual(expect.arrayContaining([
+      'formal_warrant',
+      'formal_blockade',
+      'recruitment_success',
+      'faction_transfer',
+      'task_reward',
+    ]));
     expect(projection.signals.map(signal => signal.kind)).toEqual(expect.arrayContaining([
       'faction_pressure',
       'npc_memory',
@@ -186,6 +201,7 @@ describe('v1.3 social pressure projection', () => {
     expect(projection.status).toBe('needs_public_evidence');
     expect(projection.signals).toEqual([]);
     expect(projection.npcContactWindows).toEqual([]);
+    expect(projection.factionPreconditions).toEqual([]);
     expect(projection.publicSummary).toContain('旧声望字段');
     expect(projection.projectionAudit.legacyFieldPolicy).toBe('ignored_as_authority');
     expect(projection.canWriteSave).toBe(false);
