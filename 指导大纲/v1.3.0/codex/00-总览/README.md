@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：b4 势力前置条件 projection-only 已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
+状态：rc 本地收束进行中；D-130-009 live probe 规模待用户确认
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -24,6 +24,12 @@
 - `v1.3.0-b2-社会压力projection-only硬化.md`
 - `v1.3.0-b3-NPC接触窗口projection-only.md`
 - `v1.3.0-b4-势力前置条件projection-only.md`
+- `v1.3.0-process-1-社会反刷save兼容与回滚复核.md`
+- `v1.3.0-process-2-长线漂移与知识库复核.md`
+- `v1.3.0-rc-Player-Advocate-100轮走查记录.md`
+- `v1.3.0-rc-live-probe执行方案待确认.md`
+- `v1.3.0-rc-Skill同步审计记录.md`
+- `v1.3.0-rc-质量收束记录.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -118,6 +124,17 @@ v1.3-b4 已完成本地第一刀：
 - 不写通缉、不写招揽或阵营变化、不写正式封锁/追捕结果、不创建任务、不发奖励。
 - 聚焦 unit、typecheck、focused e2e 通过。
 
+## 本轮 process/rc 本地收束
+
+已建立：
+
+- process-1：社会反刷、save 兼容与回滚复核。
+- process-2：deterministic 长线漂移与知识库复核。
+- rc Player Advocate：100 轮记录。
+- rc live probe：执行方案待用户确认。
+- Skill sync audit：因 live probe 未执行，最终 complete 口径延后。
+- rc 质量记录：明确 live probe 未执行前不能声称最终完成。
+
 ## 硬边界
 
 - b1 不新增 save 字段。
@@ -129,8 +146,10 @@ v1.3-b4 已完成本地第一刀：
 
 ## 下一步
 
-进入 process-1/process-2/rc 收束：
+下一步必须停在 live probe 决策：
 
-- 复核反刷、旧档、回滚、长线漂移、知识库、Skill sync 和 Player Advocate。
-- rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。
+- 推荐方案：4 样本 x 3 轮，`deepseek-v4-flash`，允许一次 clean re-probe。
+- 备选低成本：3 样本 x 2 轮。
+- 备选高强度：5 样本 x 4 轮。
+- 用户确认前，不执行 live probe，不写 v1.3 complete。
 - rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。
