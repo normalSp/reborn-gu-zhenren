@@ -46,6 +46,23 @@ export interface V130SocialPressureSignal {
   hiddenBoundaryProtected: boolean;
 }
 
+export type V130NpcContactMode = 'explain' | 'message' | 'avoid' | 'investigate_publicly';
+
+export interface V130NpcContactWindow {
+  id: string;
+  subjectLabel: string;
+  contactMode: V130NpcContactMode;
+  publicReason: string;
+  prerequisite: string;
+  riskLevel: V130SocialSignalSeverity;
+  visibleSourceRefs: string[];
+  forbiddenWrites: string[];
+  createsRelationshipScore: false;
+  canNameFormalNpc: false;
+  canSetNpcFate: false;
+  canPatch: false;
+}
+
 export interface V130SocialPressureProjection {
   status: V130SocialProjectionStatus;
   statusLabel: string;
@@ -53,6 +70,7 @@ export interface V130SocialPressureProjection {
   nextStep: string;
   promptSafePublicSummary: string | null;
   signals: V130SocialPressureSignal[];
+  npcContactWindows: V130NpcContactWindow[];
   moduleCounts: {
     factionPressure: number;
     npcMemory: number;
@@ -304,6 +322,46 @@ function toFollowupSignals(result: QingmaoSocialFollowupResult): V130SocialPress
   }));
 }
 
+function contactModeFor(axis: string): V130NpcContactMode {
+  if (axis === 'interest' || axis === 'trust' || axis === 'debt') return 'message';
+  if (axis === 'avoidance' || axis === 'record_trace' || axis === 'suspicion') return 'avoid';
+  if (axis === 'attention') return 'explain';
+  return 'investigate_publicly';
+}
+
+function contactPrerequisiteFor(mode: V130NpcContactMode): string {
+  if (mode === 'message') return '先准备公开话头、旁证和遮掩理由；不写招揽、投靠或正式关系。';
+  if (mode === 'avoid') return '先降低重复路线、缺席记录或流程痕迹；不写追捕结果或 NPC 定局。';
+  if (mode === 'explain') return '先补交公开解释，稳定表面节奏；不写好感、惩罚或奖励。';
+  return '只能沿公开旁证继续，不触碰隐藏事实、私密因果或 NPC 生死。';
+}
+
+function buildNpcContactWindows(result: QingmaoNpcMemoryProjectionResult): V130NpcContactWindow[] {
+  return result.projections.slice(0, 5).map(projection => {
+    const contactMode = contactModeFor(projection.memoryAxis);
+    return {
+      id: `npc_contact_window_${projection.id}`,
+      subjectLabel: sanitizeVisibleText(projection.subjectLabel, '未知视线'),
+      contactMode,
+      publicReason: sanitizeVisibleText(projection.publicReason, '公开接触窗口需要更多证据。'),
+      prerequisite: contactPrerequisiteFor(contactMode),
+      riskLevel: normalizeSeverity(projection.riskLevel),
+      visibleSourceRefs: [...projection.visibleSourceRefs],
+      forbiddenWrites: unique([
+        ...projection.blockedUpgrades,
+        ...result.forbiddenWrites,
+        'formal_named_npc_runtime_rule',
+        'relationship_score',
+        'npc_fate_result',
+      ]),
+      createsRelationshipScore: false,
+      canNameFormalNpc: false,
+      canSetNpcFate: false,
+      canPatch: false,
+    };
+  });
+}
+
 export function buildV130SocialPressureProjection(
   input: V130SocialPressureProjectionInput = {},
 ): V130SocialPressureProjection {
@@ -336,6 +394,7 @@ export function buildV130SocialPressureProjection(
     ...toFollowupSignals(socialFollowups),
   ];
   const signals = selectSignals(allSignals, maxSignals);
+  const npcContactWindows = buildNpcContactWindows(npcMemory);
 
   const moduleCounts = {
     factionPressure: factionStance.projections.length,
@@ -379,6 +438,7 @@ export function buildV130SocialPressureProjection(
       ? sanitizeVisibleText(publicChronicle.promptSafePublicSummary, '公开事件摘要需要更多证据。')
       : null,
     signals,
+    npcContactWindows,
     moduleCounts,
     boundaryLines: [
       'v1.3 b1 是 projection-only：不 bump SAVE_FORMAT_VERSION，不新增 socialRelationState，不写持久社会关系字段。',

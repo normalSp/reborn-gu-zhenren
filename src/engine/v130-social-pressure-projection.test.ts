@@ -125,6 +125,18 @@ describe('v1.3 social pressure projection', () => {
     expect(projection.moduleCounts.npcMemory).toBeGreaterThan(0);
     expect(projection.moduleCounts.publicEvent).toBeGreaterThan(0);
     expect(projection.moduleCounts.socialFollowup).toBeGreaterThan(0);
+    expect(projection.npcContactWindows.length).toBeGreaterThan(0);
+    expect(projection.npcContactWindows[0]).toEqual(expect.objectContaining({
+      createsRelationshipScore: false,
+      canNameFormalNpc: false,
+      canSetNpcFate: false,
+      canPatch: false,
+    }));
+    expect(projection.npcContactWindows[0].forbiddenWrites).toEqual(expect.arrayContaining([
+      'relationship_score',
+      'formal_named_npc_runtime_rule',
+      'npc_fate_result',
+    ]));
     expect(projection.signals.map(signal => signal.kind)).toEqual(expect.arrayContaining([
       'faction_pressure',
       'npc_memory',
@@ -173,6 +185,7 @@ describe('v1.3 social pressure projection', () => {
 
     expect(projection.status).toBe('needs_public_evidence');
     expect(projection.signals).toEqual([]);
+    expect(projection.npcContactWindows).toEqual([]);
     expect(projection.publicSummary).toContain('旧声望字段');
     expect(projection.projectionAudit.legacyFieldPolicy).toBe('ignored_as_authority');
     expect(projection.canWriteSave).toBe(false);

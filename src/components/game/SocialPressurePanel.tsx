@@ -89,6 +89,35 @@ export function SocialPressurePanel() {
           </div>
         )}
 
+        {projection.npcContactWindows.length > 0 && (
+          <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v130-npc-contact-windows">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-semibold text-rg-paper-100">NPC 接触窗口</p>
+              <span className="text-[10px] text-rg-paper-200/55">candidate only · no relationship score</span>
+            </div>
+            <div className="mt-2 grid gap-2 lg:grid-cols-2">
+              {projection.npcContactWindows.slice(0, 4).map(window => (
+                <article key={window.id} className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/28 p-3" data-testid="v130-npc-contact-window">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <p className="truncate text-xs font-semibold text-rg-paper-100">{window.subjectLabel}</p>
+                      <p className="mt-1 text-[10px] text-rg-paper-200/42">{window.contactMode} · 接触前置</p>
+                    </div>
+                    <span className={`shrink-0 rounded-sm border px-2 py-1 text-[10px] ${severityClass[window.riskLevel]}`}>
+                      {severityLabel(window.riskLevel)}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/62">{window.publicReason}</p>
+                  <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/50">{window.prerequisite}</p>
+                  <p className="mt-2 text-[9px] leading-relaxed text-rg-paper-200/38">
+                    不写好感度 · 不创建正式命名 NPC 规则 · 不写 NPC 生死
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="grid gap-2 lg:grid-cols-2" data-testid="v130-social-signal-list">
           {projection.signals.length > 0 ? (
             projection.signals.map(signal => (
