@@ -1,17 +1,20 @@
 # S0 青茅山第一卷美术总台账
 
-状态：`single-image-cadence-p0`
-最近更新：2026-04-29
-范围：《蛊真人》第一卷 / 青茅山阶段，当前按第 1-199 章维护。
+状态：`superseded-as-main-entry`，仍保留为 S0 青茅第一卷的历史细节档案
+最近更新：2026-05-17（添加 superseded 提示；原内容未删，下文仍为 2026-04-29 版细节）
+范围：《蛊真人》第一卷 / 青茅山阶段，第 1-199 章
 
-本文档是第一卷美术资产的总入口。旧 prompt 文档继续保留作为生成历史和细节档案，但之后新增图、重做图、记录缺图、调整构图规则时，优先更新本文档。
+> 2026-05-17 起，**RebornG 美术总入口已迁移到** `doc/art/v014-to-v100-art-roadmap.md`。新增图、重做图、记录缺图、调整构图规则与节奏，优先更新新 roadmap；本文档保留为旧 S0 第一卷细节档案，旧目录路径（`apps/desktop/src/assets/rebrng/`、`output/imagegen/...`、`output/archive/...`）当前**不存在**，实际运行时路径以新 roadmap 为准（`public/rebrng/...`、`doc/art/candidates/...`、`doc/art/style-lock/...`）。
+
+本文档原作为第一卷美术资产的总入口，旧 prompt 文档保留作为生成历史和细节档案；现已被新 roadmap 取代为主入口。
 
 ## 来源与关联文档
 
-- `docs/art/s0-qingmao-image-prompts.md`：旧的场景/角色 prompt 台账，记录当前暗黑国风厚涂方向，也记录了旧的“左侧 UI 留白”场景模板。
+- `doc/art/v014-to-v100-art-roadmap.md`：**当前美术总入口**（v0.14 → v1.0）。
+- `docs/art/s0-qingmao-image-prompts.md`：旧的场景/角色 prompt 台账，记录当前暗黑国风厚涂方向，也记录了旧的"左侧 UI 留白"场景模板。
 - `docs/art/s0-qingmao-gu-atlas.md`：第一卷蛊虫图鉴台账，包含来源链接、已生成状态、缺图清单和 prompt seed。
-- `apps/desktop/src/assets/rebrng/`：项目正式美术资产根目录。
-- `output/imagegen/s0-qingmao/`：候选图留档目录，正式选中后才复制到项目资产目录。
+- `apps/desktop/src/assets/rebrng/`：**已废弃路径**（当前仓库不存在）。实际正式美术资产根目录是 `public/rebrng/`。
+- `output/imagegen/s0-qingmao/`：**已废弃候选目录**（当前仓库不存在）。新候选目录见新 roadmap 的"路径与运行时白名单约定"。
 
 外部资料只做转述和视觉归纳，不长段搬运原文：
 
