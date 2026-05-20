@@ -20,7 +20,7 @@
     "eval:deepseek:v110-live-drift": "node scripts/run-v110-live-drift-probe.mjs --live --confirm-cost",
     "capture:qingmao:v001": "node scripts/capture-qingmao-v001-materials.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:long": "playwright test tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts"
+    "test:e2e:long": "playwright test tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",

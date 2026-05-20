@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：a2 MiroFish topic-slice intake 已建立；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准；尚未进入 runtime
+状态：b1 社会压力 projection-only 第一刀已完成；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -18,6 +18,9 @@
 - `v1.3.0-a0-治理补丁与范围冻结.md`
 - `v1.3.0-a1-NPC势力关系save-format设计门禁.md`
 - `v1.3.0-a2-MiroFish-NPC势力关系topic-slice-intake.md`
+- `v1.3.0-b1-关系证据与社会压力projection-only第一刀.md`
+- `v1.3.0-b1-Player-Advocate-30轮走查记录.md`
+- `v1.3.0-b1-长线叙事漂移检查记录.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -69,6 +72,19 @@ v1.3-a2 已完成资料门禁，不写 runtime：
 - 将新增样本同步到 `V13-*` 测试矩阵。
 - 结论：b1 可进入 projection-only 第一刀，不需要新 MiroFish 包或 live extraction。
 
+## 本轮 b1 runtime 第一刀
+
+v1.3-b1 已完成本地 runtime 第一刀：
+
+- 新增世界面板 `社会` 页签。
+- 新增 `buildV130SocialPressureProjection()`，只读现有 `livingWorldState` 和本地行动账本。
+- 复用 v0.13 已审查的本地规则投影器，把公开证据显示为势力压力、记忆痕迹、公开事件和社会后续候选。
+- 不 bump `SAVE_FORMAT_VERSION = 25`，当前仍为 `24`。
+- 不新增 `socialRelationState`。
+- 不从旧字段 `npcRelations`、`standings`、`npcContacts`、`dynamicNPCs` 推导权威。
+- 不写正式关系、声望、通缉、招揽、封锁、阵营、奖励或 NPC 生死。
+- 聚焦 unit、typecheck、focused e2e、30 轮 Player Advocate 与 T0-lite drift 均通过。
+
 ## 硬边界
 
 - b1 不新增 save 字段。
@@ -80,9 +96,9 @@ v1.3-a2 已完成资料门禁，不写 runtime：
 
 ## 下一步
 
-进入 `v1.3.0-b1-关系证据与社会压力projection-only第一刀.md`：
+进入 b2/b3/b4 的 projection-only 深化：
 
-- 读取现有 `livingWorldState.npcMemories`、`factionPressure`、`actionConsequences`。
-- 做只读、可重算的社会压力 projection view model。
-- UI 显示谁受影响、为什么、公开证据、下一步风险/机会。
-- 不新增存档字段，不写正式关系、通缉、招揽、奖励或 NPC 生死。
+- b2 默认继续不新增社会持久字段，只整理最小社会证据 ledger 需求是否仍可延后。
+- b3 深化 NPC 接触窗口和个人反应可读性，但不写好感度、命名 NPC 正式规则或 NPC 生死。
+- b4 深化势力封锁/招揽/通缉前置条件可读性，但不定案、不转阵营、不发奖励。
+- rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。
