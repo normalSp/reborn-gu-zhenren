@@ -4,7 +4,8 @@
 
 - 分支：`codex/v120-dirty-worktree-consolidation`
 - 业务收束提交链截至：`2c7f7fa docs: 收束素材候选与验证证据`
-- 本交接稿提交后，最新 HEAD 以 `git log -1` 和最终回复为准。
+- 本交接与推送状态提交后，最新 HEAD 以 `git log -1` 和最终回复为准。
+- 推送：已推送到 `origin/codex/v120-dirty-worktree-consolidation`
 - `git status --short`：clean
 - `git status --short --ignored bgm`：仅剩 `bgm/v0.7/*.MP3` 音频被 ignore，作为本地 fan-pack 暂存，不是 runtime 资产。
 - EdgeOne：未部署。
@@ -74,6 +75,5 @@
 
 ## 后续建议
 
-1. 提交本交接稿后，推送 `codex/v120-dirty-worktree-consolidation`。
-2. 若继续 v1.2-b2，先回到用户决策门：是否批准 `SAVE_FORMAT_VERSION = 24`、`survivalEconomyState`、最小 ledger 或只读资源视图。
-3. 若要启用根目录 BGM 音频，必须单独做音频晋升小专项：版权/来源口径、`public/audio/` 目标路径、`audio-source-manifest`、运行时引用和扫描验证。
+1. 若继续 v1.2-b2，先回到用户决策门：是否批准 `SAVE_FORMAT_VERSION = 24`、`survivalEconomyState`、最小 ledger 或只读资源视图。
+2. 若要启用根目录 BGM 音频，必须单独做音频晋升小专项：版权/来源口径、`public/audio/` 目标路径、`audio-source-manifest`、运行时引用和扫描验证。
