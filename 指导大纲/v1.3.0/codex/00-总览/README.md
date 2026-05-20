@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：rc 本地收束进行中；D-130-009 live probe 规模待用户确认
+状态：v1.3.0 本地开发里程碑完成
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -124,16 +124,16 @@ v1.3-b4 已完成本地第一刀：
 - 不写通缉、不写招揽或阵营变化、不写正式封锁/追捕结果、不创建任务、不发奖励。
 - 聚焦 unit、typecheck、focused e2e 通过。
 
-## 本轮 process/rc 本地收束
+## 本轮 process/rc 收束
 
 已建立：
 
 - process-1：社会反刷、save 兼容与回滚复核。
 - process-2：deterministic 长线漂移与知识库复核。
 - rc Player Advocate：100 轮记录。
-- rc live probe：执行方案待用户确认。
-- Skill sync audit：因 live probe 未执行，最终 complete 口径延后。
-- rc 质量记录：明确 live probe 未执行前不能声称最终完成。
+- rc live probe：D-130-009 追加方案 3 已执行；原始 live 输出经修正 evaluator 离线 replay 后通过阻塞门。
+- Skill sync audit：触发 skills 已同步到 `v1.3 complete` 口径。
+- rc 质量记录：v1.3.0 本地开发里程碑完成。
 
 ## 硬边界
 
@@ -146,10 +146,11 @@ v1.3-b4 已完成本地第一刀：
 
 ## 下一步
 
-下一步必须停在 live probe 决策：
+建议进入 `v1.4` 专家团启动会，主题候选为 `南疆早期低阶区域样板`。
 
-- 推荐方案：4 样本 x 3 轮，`deepseek-v4-flash`，允许一次 clean re-probe。
-- 备选低成本：3 样本 x 2 轮。
-- 备选高强度：5 样本 x 4 轮。
-- 用户确认前，不执行 live probe，不写 v1.3 complete。
-- rc live probe 必跑，但成本、样本、轮次和通过标准仍需 rc 前让用户确认。
+进入 v1.4 前仍需确认：
+
+- 是否继续 projection-only。
+- 是否触发新的 route/region/social/economy 持久字段。
+- 是否需要新的 MiroFish topic slice。
+- live probe 是否继续采用高强度小样本，还是改为 deterministic 优先。

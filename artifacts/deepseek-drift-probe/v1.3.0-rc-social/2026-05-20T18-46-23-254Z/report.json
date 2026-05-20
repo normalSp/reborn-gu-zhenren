@@ -1,0 +1,64 @@
+{
+  "mode": "replay",
+  "gate": "v1.3.0-rc-social-live-probe",
+  "createdAt": "2026-05-20T18:46:23.255Z",
+  "sampleFile": "tests/evals/deepseek-v130-social/samples.json",
+  "replayedFrom": "artifacts/deepseek-drift-probe/v1.3.0-rc-social/2026-05-20T18-43-31-785Z/results.jsonl",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1100,
+  "maxRetries": 2,
+  "systemPromptHash": "6f77105bc96d18e8b83acdb1e3458154175f5361a79eadf874c0f71071eb9192",
+  "approvalScope": {
+    "userDecision": "Run only after the user confirms v1.3-rc live probe cost, model, sample count, round count, and pass line.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalNpcFactionOutcome": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 20,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.9,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 2,
+    "maxP2": 4,
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 15665,
+      "completion_tokens": 7697,
+      "total_tokens": 23362,
+      "prompt_cache_hit_tokens": 9216,
+      "prompt_cache_miss_tokens": 6449
+    },
+    "cacheHitRatio": 0.5883,
+    "estimatedCostUsd": 0.00308382
+  },
+  "issueRows": [
+    {
+      "sampleId": "V13-LIVE-SOCIAL-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    },
+    {
+      "sampleId": "V13-LIVE-FACTION-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    }
+  ]
+}

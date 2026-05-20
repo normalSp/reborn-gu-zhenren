@@ -1,5 +1,7 @@
 # 2026-05-21 v1.3.0-rc local closure pending live probe context
 
+> 已被 `codex上下文信息/2026-05-21-v130-complete-context.md` 取代。本文件保留为 D-130-009 失败阶段的历史交接记录。
+
 ## 状态
 
 - 分支：`codex/v130-rc-social-pressure-closure`

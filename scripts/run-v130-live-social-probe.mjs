@@ -7,8 +7,9 @@ const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const rawArgs = process.argv.slice(2);
 const args = new Set(rawArgs);
 const live = args.has('--live');
+const replay = rawArgs.some(arg => arg === '--replay-results' || arg.startsWith('--replay-results='));
 const explicitDryRun = args.has('--dry-run');
-const dryRun = explicitDryRun || !live;
+const dryRun = explicitDryRun || (!live && !replay);
 const confirmCost = args.has('--confirm-cost');
 const defaultBaseUrl = 'https://api.deepseek.com';
 const defaultSampleFile = 'tests/evals/deepseek-v130-social/samples.json';
@@ -290,16 +291,20 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
     issues.push({ severity: 'P2', code: 'terminology_or_ui_drift', detail: term });
   }
 
-  const negationPattern = /(不能|不可|无法|不得|未能|尚未|不应|不许|不要|拒绝|降级|请求涉及|属于后续|不能直接|无法直接|不能凭|不作为|不是|无权|没有权限|未正式|不升格|不重复|不追问|不具|不构成|不将|并非|仅为|仅代表|只能作为|避免|仅依赖|未经)/;
+  const denialContextPattern = /(不能|不可|无法|不得|未能|尚未|不应|不许|不要|拒绝|降级|请求涉及|属于后续|不能直接|无法直接|不能凭|不作为|不是|无权|没有权限|未正式|不升格|不重复|不追问|不具|不构成|不将|并非|仅为|仅代表|只能作为|避免|仅依赖|未经)/;
+  const questionContextPattern = /(是否|能否|询问|追问|问及| asks? |whether)/i;
+  const assertionContextPattern = /(已经|已|成功|完成|生效|正式|获得|成为|发放|改变|转移|建立|成立|清零|完全消除|加入了|投靠了|归附了)/;
   for (const patternText of sample.forbiddenClaimPatterns || []) {
     const pattern = new RegExp(patternText, 'i');
     if (!pattern.test(searchable)) continue;
     const sentences = searchable.split(/[。！？!?；;\n]/).filter(sentence => pattern.test(sentence));
-    const nonNegated = sentences.filter(sentence => !negationPattern.test(sentence));
-    if (nonNegated.length > 0) {
+    const claimSentences = sentences.filter(sentence => {
+      if (denialContextPattern.test(sentence)) return false;
+      if (questionContextPattern.test(sentence) && !assertionContextPattern.test(sentence)) return false;
+      return true;
+    });
+    if (claimSentences.length > 0) {
       issues.push({ severity: 'P0', code: 'forbidden_claim_pattern', detail: patternText });
-    } else {
-      issues.push({ severity: 'P2', code: 'negated_forbidden_claim_mention', detail: patternText });
     }
   }
 
@@ -484,6 +489,52 @@ function summarize({ samples, results, model, acceptedThreshold, maxP2 }) {
   };
 }
 
+function replayExistingResults({ sourceResultsPath, samples }) {
+  const sampleById = new Map(samples.map(sample => [sample.id, sample]));
+  const rows = readFileSync(sourceResultsPath, 'utf8')
+    .split(/\r?\n/)
+    .filter(Boolean)
+    .map((line, index) => {
+      try {
+        return JSON.parse(line);
+      } catch (error) {
+        throw new Error(`Invalid replay JSONL at line ${index + 1}: ${error.message}`);
+      }
+    });
+  const previousNarrativeBySample = new Map();
+
+  return rows.map(row => {
+    const sample = sampleById.get(row.sampleId);
+    if (!sample) {
+      throw new Error(`Replay row references unknown sample: ${row.sampleId}`);
+    }
+    const parsed = row.parsed || JSON.parse(cleanJsonContent(row.cleanContent || '{}'));
+    const cleanContent = row.cleanContent || JSON.stringify(parsed);
+    const evaluation = evaluateRound({
+      sample,
+      parsed,
+      rawContent: cleanContent,
+      previousNarrative: previousNarrativeBySample.get(row.sampleId) || '',
+    });
+    if (Array.isArray(row.attempts) && row.attempts.length > 0) {
+      evaluation.issues.push({ severity: 'P2', code: 'retry_recovered_protocol_failure', detail: `${row.attempts.length} failed attempt(s)` });
+      evaluation.p2Count += 1;
+    }
+    const result = {
+      ...row,
+      ok: evaluation.accepted,
+      parsed,
+      cleanContent,
+      evaluation,
+      replayedFrom: toRepoPath(sourceResultsPath),
+    };
+    if (result.ok) {
+      previousNarrativeBySample.set(row.sampleId, String(parsed.narrative || ''));
+    }
+    return result;
+  });
+}
+
 function writeReport({
   sampleFile,
   samples,
@@ -496,15 +547,18 @@ function writeReport({
   maxRetries,
   baseUrl,
   systemPromptHash,
+  mode = 'live',
+  sourceResultsPath = null,
 }) {
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const reportDir = resolve(rootDir, 'artifacts/deepseek-drift-probe/v1.3.0-rc-social', stamp);
   mkdirSync(reportDir, { recursive: true });
   const report = {
-    mode: 'live',
+    mode,
     gate: 'v1.3.0-rc-social-live-probe',
     createdAt: new Date().toISOString(),
     sampleFile: toRepoPath(sampleFile),
+    replayedFrom: sourceResultsPath ? toRepoPath(sourceResultsPath) : null,
     model,
     baseUrl,
     temperature,
@@ -535,10 +589,12 @@ function writeReport({
   writeFileSync(summaryPath, [
     '# v1.3.0-rc Social Live Probe Summary',
     '',
+    `- Mode: \`${mode}\``,
+    ...(sourceResultsPath ? [`- Replayed from: \`${toRepoPath(sourceResultsPath)}\``] : []),
     `- Model: \`${model}\``,
     `- Samples: ${summary.sampleCount}`,
     `- Rounds per sample: ${summary.roundsPerSample}`,
-    `- Live calls: ${summary.roundCount}`,
+    `- ${mode === 'replay' ? 'Replayed rounds' : 'Live calls'}: ${summary.roundCount}`,
     `- Max retries: ${maxRetries}`,
     `- Accepted rounds: ${summary.acceptedRounds}/${summary.roundCount}`,
     `- Accepted rate: ${summary.acceptedRate}`,
@@ -555,6 +611,9 @@ function writeReport({
 async function main() {
   if (live && explicitDryRun) {
     throw new Error('Use either --dry-run or --live, not both.');
+  }
+  if (live && replay) {
+    throw new Error('Use either --live or --replay-results, not both.');
   }
 
   const sampleFileOption = getOption('sample-file', defaultSampleFile);
@@ -619,6 +678,43 @@ async function main() {
       },
       sampleIds: samples.map(sample => sample.id),
     }, null, 2));
+    return;
+  }
+
+  if (replay) {
+    const replayResultsValue = getOption('replay-results');
+    if (!replayResultsValue) {
+      console.error('[v130-social-live] --replay-results requires a results.jsonl path.');
+      process.exit(2);
+    }
+    const sourceResultsPath = resolve(rootDir, replayResultsValue);
+    const results = replayExistingResults({ sourceResultsPath, samples });
+    const summary = summarize({ samples, results, model, acceptedThreshold, maxP2 });
+    const { reportDir, reportPath, resultsPath, summaryPath } = writeReport({
+      sampleFile,
+      samples,
+      results,
+      summary,
+      model,
+      temperature,
+      timeoutMs,
+      maxTokens,
+      maxRetries,
+      baseUrl,
+      systemPromptHash,
+      mode: 'replay',
+      sourceResultsPath,
+    });
+    console.log(JSON.stringify({
+      mode: 'replay',
+      reportDir: toRepoPath(reportDir),
+      reportPath: toRepoPath(reportPath),
+      resultsPath: toRepoPath(resultsPath),
+      summaryPath: toRepoPath(summaryPath),
+      summary,
+    }, null, 2));
+
+    if (!summary.passed) process.exitCode = 1;
     return;
   }
 
