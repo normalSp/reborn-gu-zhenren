@@ -1,0 +1,1363 @@
+{
+  "packageId": "ri_lw_ch_0874",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0874"
+    ],
+    "paragraphIds": [
+      "ch_0874_p0002",
+      "ch_0874_p0005",
+      "ch_0874_p0006",
+      "ch_0874_p0013",
+      "ch_0874_p0014",
+      "ch_0874_p0025",
+      "ch_0874_p0028",
+      "ch_0874_p0031",
+      "ch_0874_p0033",
+      "ch_0874_p0034",
+      "ch_0874_p0044",
+      "ch_0874_p0045",
+      "ch_0874_p0048",
+      "ch_0874_p0049",
+      "ch_0874_p0050",
+      "ch_0874_p0052",
+      "ch_0874_p0056",
+      "ch_0874_p0057",
+      "ch_0874_p0058",
+      "ch_0874_p0060",
+      "ch_0874_p0063",
+      "ch_0874_p0064",
+      "ch_0874_p0065",
+      "ch_0874_p0068",
+      "ch_0874_p0071",
+      "ch_0874_p0074",
+      "ch_0874_p0078",
+      "ch_0874_p0081",
+      "ch_0874_p0082",
+      "ch_0874_p0083",
+      "ch_0874_p0084",
+      "ch_0874_p0085"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0002",
+          "startOffset": 3078725,
+          "endOffset": 3078770,
+          "summary": "人类始祖"
+        }
+      ],
+      "entityId": "entity_cb0aec308a61",
+      "name": "人祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "人类始祖",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0002",
+          "startOffset": 3078725,
+          "endOffset": 3078770,
+          "summary": "种族"
+        }
+      ],
+      "entityId": "entity_752317a89131",
+      "name": "羽民",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "种族",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0033",
+          "startOffset": 3080079,
+          "endOffset": 3080131,
+          "summary": "故事人物"
+        }
+      ],
+      "entityId": "entity_cb0aec308a61",
+      "name": "人祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "故事人物",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0033",
+          "startOffset": 3080079,
+          "endOffset": 3080131,
+          "summary": "种族群体，但此处作为个体提及"
+        }
+      ],
+      "entityId": "entity_752317a89131",
+      "name": "羽民",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "种族群体，但此处作为个体提及",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0048",
+          "startOffset": 3080662,
+          "endOffset": 3080701,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_31a09a6d0426",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0048",
+          "startOffset": 3080662,
+          "endOffset": 3080701,
+          "summary": "羽民蛊仙"
+        }
+      ],
+      "entityId": "entity_a45b322ead59",
+      "name": "郑灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "羽民蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0049",
+          "startOffset": 3080705,
+          "endOffset": 3080726,
+          "summary": "蛊仙"
+        }
+      ],
+      "entityId": "entity_141e7b874beb",
+      "name": "周中",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0057",
+          "startOffset": 3081011,
+          "endOffset": 3081039,
+          "summary": "蛊仙，方源同伴"
+        }
+      ],
+      "entityId": "entity_a470d6a8ca8e",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，方源同伴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0052",
+          "startOffset": 3080801,
+          "endOffset": 3080862,
+          "summary": "智道传承者"
+        }
+      ],
+      "entityId": "entity_dd0059a2577e",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "智道传承者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0063",
+          "startOffset": 3081221,
+          "endOffset": 3081237,
+          "summary": "未知人物，围攻羽圣城"
+        }
+      ],
+      "entityId": "entity_cf06b7ddbb76",
+      "name": "白海沙陀",
+      "kind": "person",
+      "aliases": [],
+      "description": "未知人物，围攻羽圣城",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0065",
+          "startOffset": 3081300,
+          "endOffset": 3081302,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_31a09a6d0426",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0065",
+          "startOffset": 3081305,
+          "endOffset": 3081310,
+          "summary": "未知人物，方源记忆中无信息"
+        }
+      ],
+      "entityId": "entity_cf06b7ddbb76",
+      "name": "白海沙陀",
+      "kind": "person",
+      "aliases": [],
+      "description": "未知人物，方源记忆中无信息",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0068",
+          "startOffset": 3081380,
+          "endOffset": 3081384,
+          "summary": "太白福地主人，蛊仙"
+        }
+      ],
+      "entityId": "entity_a470d6a8ca8e",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "太白福地主人，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0071",
+          "startOffset": 3081489,
+          "endOffset": 3081491,
+          "summary": "羽圣城领袖，七转蛊仙"
+        }
+      ],
+      "entityId": "entity_a45b322ead59",
+      "name": "郑灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "羽圣城领袖，七转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0083",
+          "startOffset": 3082053,
+          "endOffset": 3082056,
+          "summary": "调查沙黄身份的人物"
+        }
+      ],
+      "entityId": "entity_e154d144ef2a",
+      "name": "凤九歌",
+      "kind": "person",
+      "aliases": [],
+      "description": "调查沙黄身份的人物",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0084",
+          "startOffset": 3082110,
+          "endOffset": 3082114,
+          "summary": "与凤九歌同行的人物"
+        }
+      ],
+      "entityId": "entity_d7dffc480cf8",
+      "name": "残阳老君",
+      "kind": "person",
+      "aliases": [],
+      "description": "与凤九歌同行的人物",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0082",
+          "startOffset": 3082011,
+          "endOffset": 3082015,
+          "summary": "方源联系的对象"
+        }
+      ],
+      "entityId": "entity_ae25748b3737",
+      "name": "黎山仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源联系的对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0005",
+          "startOffset": 3078826,
+          "endOffset": 3078893,
+          "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖"
+        }
+      ],
+      "relationId": "rel_97b024e7f604",
+      "subject": "人祖",
+      "object": "羽民",
+      "relationType": "CONFLICT",
+      "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0014",
+          "startOffset": 3079202,
+          "endOffset": 3079241,
+          "summary": "自己蛊发威活捉所有羽民"
+        }
+      ],
+      "relationId": "rel_eb4c7a1e83ed",
+      "subject": "自己蛊",
+      "object": "羽民",
+      "relationType": "CONFLICT",
+      "summary": "自己蛊发威活捉所有羽民",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0013",
+          "startOffset": 3079161,
+          "endOffset": 3079198,
+          "summary": "人祖与自己蛊同行，自己蛊帮助人祖"
+        }
+      ],
+      "relationId": "rel_9fa98c804c3c",
+      "subject": "人祖",
+      "object": "自己蛊",
+      "relationType": "ALLY",
+      "summary": "人祖与自己蛊同行，自己蛊帮助人祖",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0031",
+          "startOffset": 3080004,
+          "endOffset": 3080048,
+          "summary": "人祖戴起态度蛊以热情态度邀请羽民"
+        }
+      ],
+      "relationId": "rel_1561a9672c5c",
+      "subject": "人祖",
+      "object": "态度蛊",
+      "relationType": "USES",
+      "summary": "人祖戴起态度蛊以热情态度邀请羽民",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0034",
+          "startOffset": 3080135,
+          "endOffset": 3080180,
+          "summary": "人祖利用羽民，最终导致羽民死亡"
+        }
+      ],
+      "relationId": "rel_b7e151031dee",
+      "subject": "人祖",
+      "object": "羽民",
+      "relationType": "CONFLICT",
+      "summary": "人祖利用羽民，最终导致羽民死亡",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0048",
+          "startOffset": 3080662,
+          "endOffset": 3080701,
+          "summary": "方源击杀郑灵肉身，扣留其魂魄"
+        }
+      ],
+      "relationId": "rel_d080fa96fff6",
+      "subject": "方源",
+      "object": "郑灵",
+      "relationType": "CONFLICT",
+      "summary": "方源击杀郑灵肉身，扣留其魂魄",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0049",
+          "startOffset": 3080705,
+          "endOffset": 3080726,
+          "summary": "方源击杀周中，身灭魂散"
+        }
+      ],
+      "relationId": "rel_3ab317e898c1",
+      "subject": "方源",
+      "object": "周中",
+      "relationType": "CONFLICT",
+      "summary": "方源击杀周中，身灭魂散",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0058",
+          "startOffset": 3081043,
+          "endOffset": 3081052,
+          "summary": "方源隐瞒扣留魂魄之事"
+        }
+      ],
+      "relationId": "rel_c6ad4133b8a3",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "方源隐瞒扣留魂魄之事",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0078",
+          "startOffset": 3081788,
+          "endOffset": 3081818,
+          "summary": "方源初期靠萧家进入西漠市场"
+        }
+      ],
+      "relationId": "rel_95f205dcc19d",
+      "subject": "方源",
+      "object": "萧家",
+      "relationType": "TRADE",
+      "summary": "方源初期靠萧家进入西漠市场",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0082",
+          "startOffset": 3082006,
+          "endOffset": 3082026,
+          "summary": "方源从黎山仙子处获取情报"
+        }
+      ],
+      "relationId": "rel_87b0af2c8785",
+      "subject": "方源",
+      "object": "黎山仙子",
+      "relationType": "ALLY",
+      "summary": "方源从黎山仙子处获取情报",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0005",
+          "startOffset": 3078826,
+          "endOffset": 3078893,
+          "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖"
+        }
+      ],
+      "eventId": "evt_759c2c875321",
+      "eventType": "conflict",
+      "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖",
+      "actors": [
+        "人祖",
+        "羽民"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "人祖无奈，自己蛊出手活捉羽民"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0014",
+          "startOffset": 3079202,
+          "endOffset": 3079241,
+          "summary": "自己蛊发威活捉所有羽民"
+        }
+      ],
+      "eventId": "evt_e8af74358327",
+      "eventType": "conflict",
+      "summary": "自己蛊发威活捉所有羽民",
+      "actors": [
+        "自己蛊",
+        "羽民"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽民被压在地面动弹不得，但拒绝妥协"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0025",
+          "startOffset": 3079627,
+          "endOffset": 3079662,
+          "summary": "人祖苦劝三天三夜无果后放生羽民"
+        }
+      ],
+      "eventId": "evt_90c2c060d5d4",
+      "eventType": "other",
+      "summary": "人祖苦劝三天三夜无果后放生羽民",
+      "actors": [
+        "人祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "人祖改变策略，通过提供房屋和食物吸引羽民自愿帮忙"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0028",
+          "startOffset": 3079818,
+          "endOffset": 3079863,
+          "summary": "人祖在羽民附近搭建房屋，采集野果猎杀兽肉，吸引羽民"
+        }
+      ],
+      "eventId": "evt_e2ba8ded5ce9",
+      "eventType": "other",
+      "summary": "人祖在羽民附近搭建房屋，采集野果猎杀兽肉，吸引羽民",
+      "actors": [
+        "人祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽民开始靠近人祖的房屋，人祖用态度蛊邀请他们进屋"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0044",
+          "startOffset": 3080506,
+          "endOffset": 3080514,
+          "summary": "羽民因拒绝妥协而全部死亡，死后化为自由蛊"
+        }
+      ],
+      "eventId": "evt_694a830305e9",
+      "eventType": "death",
+      "summary": "羽民因拒绝妥协而全部死亡，死后化为自由蛊",
+      "actors": [
+        "羽民"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "自由蛊出现，但无法捕捉"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0049",
+          "startOffset": 3080705,
+          "endOffset": 3080726,
+          "summary": "周中因违反协约被方源击杀，身灭魂散"
+        }
+      ],
+      "eventId": "evt_1f7b2e07a3c7",
+      "eventType": "death",
+      "summary": "周中因违反协约被方源击杀，身灭魂散",
+      "actors": [
+        "周中"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "无魂魄残留"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0050",
+          "startOffset": 3080730,
+          "endOffset": 3080772,
+          "summary": "郑灵肉身被方源毁灭，魂魄被扣留"
+        }
+      ],
+      "eventId": "evt_cf384b4b53f2",
+      "eventType": "death",
+      "summary": "郑灵肉身被方源毁灭，魂魄被扣留",
+      "actors": [
+        "郑灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魂魄被方源搜魂"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0060",
+          "startOffset": 3081085,
+          "endOffset": 3081097,
+          "summary": "方源对郑灵魂魄进行搜魂，得知羽民部落来自西漠绿天碎块世界"
+        }
+      ],
+      "eventId": "evt_af3e59dc687f",
+      "eventType": "other",
+      "summary": "方源对郑灵魂魄进行搜魂，得知羽民部落来自西漠绿天碎块世界",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "获得情报"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0081",
+          "startOffset": 3081937,
+          "endOffset": 3081967,
+          "summary": "方源获得变形仙蛊并融合成仙道杀招见面似相识"
+        }
+      ],
+      "eventId": "evt_e0679acd04db",
+      "eventType": "other",
+      "summary": "方源获得变形仙蛊并融合成仙道杀招见面似相识",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源可以变作其他模样"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0085",
+          "startOffset": 3082144,
+          "endOffset": 3082164,
+          "summary": "方源考虑是否按原计划混入北原僵盟"
+        }
+      ],
+      "eventId": "evt_77261ab7c4b5",
+      "eventType": "other",
+      "summary": "方源考虑是否按原计划混入北原僵盟",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源犹豫"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0068",
+          "startOffset": 3081380,
+          "endOffset": 3081410,
+          "summary": "太白云生得到两个羽民蛊仙的毕生道痕，一位六转，一位七转"
+        }
+      ],
+      "eventId": "evt_dfa143c794ad",
+      "eventType": "other",
+      "summary": "太白云生得到两个羽民蛊仙的毕生道痕，一位六转，一位七转",
+      "actors": [
+        "太白云生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太白云生成为最大获利者"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0005",
+          "startOffset": 3078826,
+          "endOffset": 3078893,
+          "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖"
+        }
+      ],
+      "timelineId": "tl_759c2c875321",
+      "eventId": "evt_759c2c875321",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0014",
+          "startOffset": 3079202,
+          "endOffset": 3079241,
+          "summary": "自己蛊发威活捉所有羽民"
+        }
+      ],
+      "timelineId": "tl_e8af74358327",
+      "eventId": "evt_e8af74358327",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "自己蛊发威活捉所有羽民",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0025",
+          "startOffset": 3079627,
+          "endOffset": 3079662,
+          "summary": "人祖苦劝三天三夜无果后放生羽民"
+        }
+      ],
+      "timelineId": "tl_90c2c060d5d4",
+      "eventId": "evt_90c2c060d5d4",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "人祖苦劝三天三夜无果后放生羽民",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0028",
+          "startOffset": 3079818,
+          "endOffset": 3079863,
+          "summary": "人祖在羽民附近搭建房屋，采集野果猎杀兽肉，吸引羽民"
+        }
+      ],
+      "timelineId": "tl_e2ba8ded5ce9",
+      "eventId": "evt_e2ba8ded5ce9",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "人祖在羽民附近搭建房屋，采集野果猎杀兽肉，吸引羽民",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0044",
+          "startOffset": 3080506,
+          "endOffset": 3080514,
+          "summary": "羽民因拒绝妥协而全部死亡，死后化为自由蛊"
+        }
+      ],
+      "timelineId": "tl_694a830305e9",
+      "eventId": "evt_694a830305e9",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "羽民因拒绝妥协而全部死亡，死后化为自由蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0049",
+          "startOffset": 3080705,
+          "endOffset": 3080726,
+          "summary": "周中因违反协约被方源击杀，身灭魂散"
+        }
+      ],
+      "timelineId": "tl_1f7b2e07a3c7",
+      "eventId": "evt_1f7b2e07a3c7",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "周中因违反协约被方源击杀，身灭魂散",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0050",
+          "startOffset": 3080730,
+          "endOffset": 3080772,
+          "summary": "郑灵肉身被方源毁灭，魂魄被扣留"
+        }
+      ],
+      "timelineId": "tl_cf384b4b53f2",
+      "eventId": "evt_cf384b4b53f2",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "郑灵肉身被方源毁灭，魂魄被扣留",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0060",
+          "startOffset": 3081085,
+          "endOffset": 3081097,
+          "summary": "方源对郑灵魂魄进行搜魂，得知羽民部落来自西漠绿天碎块世界"
+        }
+      ],
+      "timelineId": "tl_af3e59dc687f",
+      "eventId": "evt_af3e59dc687f",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "方源对郑灵魂魄进行搜魂，得知羽民部落来自西漠绿天碎块世界",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0081",
+          "startOffset": 3081937,
+          "endOffset": 3081967,
+          "summary": "方源获得变形仙蛊并融合成仙道杀招见面似相识"
+        }
+      ],
+      "timelineId": "tl_e0679acd04db",
+      "eventId": "evt_e0679acd04db",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "方源获得变形仙蛊并融合成仙道杀招见面似相识",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0085",
+          "startOffset": 3082144,
+          "endOffset": 3082164,
+          "summary": "方源考虑是否按原计划混入北原僵盟"
+        }
+      ],
+      "timelineId": "tl_77261ab7c4b5",
+      "eventId": "evt_77261ab7c4b5",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "方源考虑是否按原计划混入北原僵盟",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0874",
+          "paragraphId": "ch_0874_p0068",
+          "startOffset": 3081380,
+          "endOffset": 3081410,
+          "summary": "太白云生得到两个羽民蛊仙的毕生道痕，一位六转，一位七转"
+        }
+      ],
+      "timelineId": "tl_dfa143c794ad",
+      "eventId": "evt_dfa143c794ad",
+      "chapterId": "ch_0874",
+      "orderHint": "chapter-order",
+      "summary": "太白云生得到两个羽民蛊仙的毕生道痕，一位六转，一位七转",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0002",
+      "startOffset": 3078725,
+      "endOffset": 3078770,
+      "summary": "人类始祖"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0033",
+      "startOffset": 3080079,
+      "endOffset": 3080131,
+      "summary": "故事人物"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0048",
+      "startOffset": 3080662,
+      "endOffset": 3080701,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0049",
+      "startOffset": 3080705,
+      "endOffset": 3080726,
+      "summary": "蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0057",
+      "startOffset": 3081011,
+      "endOffset": 3081039,
+      "summary": "蛊仙，方源同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0052",
+      "startOffset": 3080801,
+      "endOffset": 3080862,
+      "summary": "智道传承者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0063",
+      "startOffset": 3081221,
+      "endOffset": 3081237,
+      "summary": "未知人物，围攻羽圣城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0065",
+      "startOffset": 3081300,
+      "endOffset": 3081302,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0065",
+      "startOffset": 3081305,
+      "endOffset": 3081310,
+      "summary": "未知人物，方源记忆中无信息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0068",
+      "startOffset": 3081380,
+      "endOffset": 3081384,
+      "summary": "太白福地主人，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0071",
+      "startOffset": 3081489,
+      "endOffset": 3081491,
+      "summary": "羽圣城领袖，七转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0083",
+      "startOffset": 3082053,
+      "endOffset": 3082056,
+      "summary": "调查沙黄身份的人物"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0084",
+      "startOffset": 3082110,
+      "endOffset": 3082114,
+      "summary": "与凤九歌同行的人物"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0082",
+      "startOffset": 3082011,
+      "endOffset": 3082015,
+      "summary": "方源联系的对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0005",
+      "startOffset": 3078826,
+      "endOffset": 3078893,
+      "summary": "人祖请求羽民帮助救女儿，羽民拒绝并嘲笑人祖"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0014",
+      "startOffset": 3079202,
+      "endOffset": 3079241,
+      "summary": "自己蛊发威活捉所有羽民"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0013",
+      "startOffset": 3079161,
+      "endOffset": 3079198,
+      "summary": "人祖与自己蛊同行，自己蛊帮助人祖"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0031",
+      "startOffset": 3080004,
+      "endOffset": 3080048,
+      "summary": "人祖戴起态度蛊以热情态度邀请羽民"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0034",
+      "startOffset": 3080135,
+      "endOffset": 3080180,
+      "summary": "人祖利用羽民，最终导致羽民死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0058",
+      "startOffset": 3081043,
+      "endOffset": 3081052,
+      "summary": "方源隐瞒扣留魂魄之事"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0078",
+      "startOffset": 3081788,
+      "endOffset": 3081818,
+      "summary": "方源初期靠萧家进入西漠市场"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0082",
+      "startOffset": 3082006,
+      "endOffset": 3082026,
+      "summary": "方源从黎山仙子处获取情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0025",
+      "startOffset": 3079627,
+      "endOffset": 3079662,
+      "summary": "人祖苦劝三天三夜无果后放生羽民"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0028",
+      "startOffset": 3079818,
+      "endOffset": 3079863,
+      "summary": "人祖在羽民附近搭建房屋，采集野果猎杀兽肉，吸引羽民"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0044",
+      "startOffset": 3080506,
+      "endOffset": 3080514,
+      "summary": "羽民因拒绝妥协而全部死亡，死后化为自由蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0050",
+      "startOffset": 3080730,
+      "endOffset": 3080772,
+      "summary": "郑灵肉身被方源毁灭，魂魄被扣留"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0060",
+      "startOffset": 3081085,
+      "endOffset": 3081097,
+      "summary": "方源对郑灵魂魄进行搜魂，得知羽民部落来自西漠绿天碎块世界"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0081",
+      "startOffset": 3081937,
+      "endOffset": 3081967,
+      "summary": "方源获得变形仙蛊并融合成仙道杀招见面似相识"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0085",
+      "startOffset": 3082144,
+      "endOffset": 3082164,
+      "summary": "方源考虑是否按原计划混入北原僵盟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0874",
+      "paragraphId": "ch_0874_p0068",
+      "startOffset": 3081380,
+      "endOffset": 3081410,
+      "summary": "太白云生得到两个羽民蛊仙的毕生道痕，一位六转，一位七转"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly visible/ambiguous events from the Ren Zu story (人祖与羽民) which are allegorical/mythological and not hidden facts about the living world. The only potentially hidden element is that Fang Yuan secretly detained Zheng Ling's soul after destroying his body (方源扣留郑灵魂魄), and that Tai Bai Yun Sheng does not know about this. However, the source pointer for this (ch_0874_p0057) only says '就连太白云生都没有发觉' which is vague and does not directly confirm the detention as a hidden fact with clear whoKnows/whoDoesNotKnow support. The search soul (搜魂) event revealing the Yu Min tribe's origin from Xi Mo's Green Heaven fragment world is also mentioned but the source pointer pool does not contain a direct quote for this fact. Overall, evidence is too weak or ambiguous to extract a clean hidden fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed contains mostly narrative/mythological content about 人祖 and 羽民, plus combat outcomes (方源 kills 郑灵 and 周中). Observed actions are clear (方源 kills, 人祖 requests help, 羽民 refuse), but inferred motives would require psychological leaps. For 方源 killing 郑灵 and 周中, the seed only states the fact of killing without showing his internal motive or strategic reasoning. For 人祖's actions toward 羽民, the seed shows sequential events but no direct statement of his intent. No character motive can be confidently inferred from observed action + direct context alone without speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed contains two separate narrative threads. Thread 1 (人祖/羽民) is a mythological/allegorical story about 人祖 and 羽民 as a race/group, but this is ancient legend material, not current living-world faction dynamics. Thread 2 (方源/郑灵/周中/太白云生) involves individual conflicts (方源 kills 郑灵 and 周中), but no collective faction/group is named as having a stake. 郑灵 is described as '羽圣城领袖' (leader of Feather Saint City) in source pointers, but the seed entities/relations do not establish 羽圣城 as a named faction with collective stakes. 羽民 as a race appears only in the mythological thread. No named family, clan, faction, or organization in the seed has a concrete collective stake in current events. Rejecting individual-only pressure subjects.",
+      "IF export filter quarantined 7 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,719 @@
+{
+  "packageId": "ri_lw_ch_1305",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1305"
+    ],
+    "paragraphIds": [
+      "ch_1305_p0009",
+      "ch_1305_p0011",
+      "ch_1305_p0014",
+      "ch_1305_p0022",
+      "ch_1305_p0027",
+      "ch_1305_p0031",
+      "ch_1305_p0033",
+      "ch_1305_p0034",
+      "ch_1305_p0039",
+      "ch_1305_p0046",
+      "ch_1305_p0059",
+      "ch_1305_p0061",
+      "ch_1305_p0066",
+      "ch_1305_p0084",
+      "ch_1305_p0089",
+      "ch_1305_p0092"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0009",
+          "startOffset": 4593585,
+          "endOffset": 4593605,
+          "summary": "交易会参与者，伪装身份楚瀛"
+        }
+      ],
+      "entityId": "entity_8e7625d76752",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "楚瀛"
+      ],
+      "description": "交易会参与者，伪装身份楚瀛",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0011",
+          "startOffset": 4593646,
+          "endOffset": 4593668,
+          "summary": "交易会主持人，七转蛊仙"
+        }
+      ],
+      "entityId": "entity_ce68449fd5aa",
+      "name": "庙明神",
+      "kind": "person",
+      "aliases": [],
+      "description": "交易会主持人，七转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0014",
+          "startOffset": 4593730,
+          "endOffset": 4593750,
+          "summary": "女仙，交易会参与者"
+        }
+      ],
+      "entityId": "entity_4b8ee5cd6a36",
+      "name": "童画",
+      "kind": "person",
+      "aliases": [
+        "童画仙子"
+      ],
+      "description": "女仙，交易会参与者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0033",
+          "startOffset": 4594519,
+          "endOffset": 4594521,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_8e7625d76752",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "楚瀛",
+        "柳贯一"
+      ],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0033",
+          "startOffset": 4594524,
+          "endOffset": 4594527,
+          "summary": "蛊仙，交易会参与者"
+        }
+      ],
+      "entityId": "entity_ce68449fd5aa",
+      "name": "庙明神",
+      "kind": "person",
+      "aliases": [
+        "庙兄"
+      ],
+      "description": "蛊仙，交易会参与者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0066",
+          "startOffset": 4595437,
+          "endOffset": 4595439,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_8e7625d76752",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0027",
+          "startOffset": 4594274,
+          "endOffset": 4594328,
+          "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊，交情暴涨"
+        }
+      ],
+      "relationId": "rel_e80084363426",
+      "subject": "方源",
+      "object": "庙明神",
+      "relationType": "TRADE",
+      "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊，交情暴涨",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0022",
+          "startOffset": 4594112,
+          "endOffset": 4594155,
+          "summary": "方源对童画的光照菌感兴趣，庙明神愿意从中引荐"
+        }
+      ],
+      "relationId": "rel_b505f35b93e8",
+      "subject": "方源",
+      "object": "童画",
+      "relationType": "OTHER",
+      "summary": "方源对童画的光照菌感兴趣，庙明神愿意从中引荐",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0034",
+          "startOffset": 4594560,
+          "endOffset": 4594575,
+          "summary": "方源以楚瀛身份与庙明神交易寿蛊，并试图建立良好关系以图谋苍蓝龙鲸"
+        }
+      ],
+      "relationId": "rel_2d2afcb8c63f",
+      "subject": "方源",
+      "object": "庙明神",
+      "relationType": "TRADE",
+      "summary": "方源以楚瀛身份与庙明神交易寿蛊，并试图建立良好关系以图谋苍蓝龙鲸",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0089",
+          "startOffset": 4596127,
+          "endOffset": 4596154,
+          "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，从琅琊福地租借仙蛊"
+        }
+      ],
+      "relationId": "rel_abe1233776cc",
+      "subject": "方源",
+      "object": "琅琊福地",
+      "relationType": "ALLY",
+      "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，从琅琊福地租借仙蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0027",
+          "startOffset": 4594274,
+          "endOffset": 4594328,
+          "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊"
+        }
+      ],
+      "eventId": "evt_ca2bc8445d69",
+      "eventType": "trade",
+      "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊",
+      "actors": [
+        "方源",
+        "庙明神"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "庙明神对方源态度转变，交情暴涨"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0014",
+          "startOffset": 4593730,
+          "endOffset": 4593750,
+          "summary": "童画在第二轮交易会上交换荒兽"
+        }
+      ],
+      "eventId": "evt_baf990aa855b",
+      "eventType": "trade",
+      "summary": "童画在第二轮交易会上交换荒兽",
+      "actors": [
+        "童画"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源推测她刚渡劫，需要资源建设福地"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0046",
+          "startOffset": 4594834,
+          "endOffset": 4594859,
+          "summary": "方源以楚瀛身份参加交易会，第一轮与庙明神交易寿蛊，第二轮准备交易妇人心仙蛊时因智道推算提前退出"
+        }
+      ],
+      "eventId": "evt_1ba5aaba19cd",
+      "eventType": "trade",
+      "summary": "方源以楚瀛身份参加交易会，第一轮与庙明神交易寿蛊，第二轮准备交易妇人心仙蛊时因智道推算提前退出",
+      "actors": [
+        "方源",
+        "庙明神"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源未能卖出妇人心仙蛊，提前离开交易会"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0059",
+          "startOffset": 4595211,
+          "endOffset": 4595231,
+          "summary": "方源因智道大能推算其踪迹，暗渡蛊效用消耗剧烈，被迫提前离开交易会"
+        }
+      ],
+      "eventId": "evt_6f3aeecaaea0",
+      "eventType": "other",
+      "summary": "方源因智道大能推算其踪迹，暗渡蛊效用消耗剧烈，被迫提前离开交易会",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源中断交易，飞离现场"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0066",
+          "startOffset": 4595437,
+          "endOffset": 4595477,
+          "summary": "方源在交易会后，使用卜卦龟仙蛊和变形仙蛊施展仙道杀招卜卦龟变化，以争取时间"
+        }
+      ],
+      "eventId": "evt_8ff8196dd346",
+      "eventType": "cultivation",
+      "summary": "方源在交易会后，使用卜卦龟仙蛊和变形仙蛊施展仙道杀招卜卦龟变化，以争取时间",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成功隐藏行踪，找到安全地点落下仙窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0092",
+          "startOffset": 4596246,
+          "endOffset": 4596277,
+          "summary": "方源在仙窍中琢磨如何炼化态度蛊，并设想出仙道杀招，最终成功炼化态度蛊"
+        }
+      ],
+      "eventId": "evt_962c2ea1ffb8",
+      "eventType": "cultivation",
+      "summary": "方源在仙窍中琢磨如何炼化态度蛊，并设想出仙道杀招，最终成功炼化态度蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成功炼化八转态度蛊，真正掌握手中"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0089",
+          "startOffset": 4596127,
+          "endOffset": 4596154,
+          "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，租借了数只炼道仙蛊"
+        }
+      ],
+      "eventId": "evt_93947af7e02b",
+      "eventType": "trade",
+      "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，租借了数只炼道仙蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得炼道仙蛊，用于设想仙道杀招"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0027",
+          "startOffset": 4594274,
+          "endOffset": 4594328,
+          "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊"
+        }
+      ],
+      "timelineId": "tl_ca2bc8445d69",
+      "eventId": "evt_ca2bc8445d69",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0014",
+          "startOffset": 4593730,
+          "endOffset": 4593750,
+          "summary": "童画在第二轮交易会上交换荒兽"
+        }
+      ],
+      "timelineId": "tl_baf990aa855b",
+      "eventId": "evt_baf990aa855b",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "童画在第二轮交易会上交换荒兽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0046",
+          "startOffset": 4594834,
+          "endOffset": 4594859,
+          "summary": "方源以楚瀛身份参加交易会，第一轮与庙明神交易寿蛊，第二轮准备交易妇人心仙蛊时因智道推算提前退出"
+        }
+      ],
+      "timelineId": "tl_1ba5aaba19cd",
+      "eventId": "evt_1ba5aaba19cd",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源以楚瀛身份参加交易会，第一轮与庙明神交易寿蛊，第二轮准备交易妇人心仙蛊时因智道推算提前退出",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0059",
+          "startOffset": 4595211,
+          "endOffset": 4595231,
+          "summary": "方源因智道大能推算其踪迹，暗渡蛊效用消耗剧烈，被迫提前离开交易会"
+        }
+      ],
+      "timelineId": "tl_6f3aeecaaea0",
+      "eventId": "evt_6f3aeecaaea0",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源因智道大能推算其踪迹，暗渡蛊效用消耗剧烈，被迫提前离开交易会",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0066",
+          "startOffset": 4595437,
+          "endOffset": 4595477,
+          "summary": "方源在交易会后，使用卜卦龟仙蛊和变形仙蛊施展仙道杀招卜卦龟变化，以争取时间"
+        }
+      ],
+      "timelineId": "tl_8ff8196dd346",
+      "eventId": "evt_8ff8196dd346",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源在交易会后，使用卜卦龟仙蛊和变形仙蛊施展仙道杀招卜卦龟变化，以争取时间",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0092",
+          "startOffset": 4596246,
+          "endOffset": 4596277,
+          "summary": "方源在仙窍中琢磨如何炼化态度蛊，并设想出仙道杀招，最终成功炼化态度蛊"
+        }
+      ],
+      "timelineId": "tl_962c2ea1ffb8",
+      "eventId": "evt_962c2ea1ffb8",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源在仙窍中琢磨如何炼化态度蛊，并设想出仙道杀招，最终成功炼化态度蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1305",
+          "paragraphId": "ch_1305_p0089",
+          "startOffset": 4596127,
+          "endOffset": 4596154,
+          "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，租借了数只炼道仙蛊"
+        }
+      ],
+      "timelineId": "tl_93947af7e02b",
+      "eventId": "evt_93947af7e02b",
+      "chapterId": "ch_1305",
+      "orderHint": "chapter-order",
+      "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，租借了数只炼道仙蛊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0009",
+      "startOffset": 4593585,
+      "endOffset": 4593605,
+      "summary": "交易会参与者，伪装身份楚瀛"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0011",
+      "startOffset": 4593646,
+      "endOffset": 4593668,
+      "summary": "交易会主持人，七转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0014",
+      "startOffset": 4593730,
+      "endOffset": 4593750,
+      "summary": "女仙，交易会参与者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0033",
+      "startOffset": 4594519,
+      "endOffset": 4594521,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0033",
+      "startOffset": 4594524,
+      "endOffset": 4594527,
+      "summary": "蛊仙，交易会参与者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0066",
+      "startOffset": 4595437,
+      "endOffset": 4595439,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0027",
+      "startOffset": 4594274,
+      "endOffset": 4594328,
+      "summary": "方源用六转仙蛊和百年寿蛊换取了庙明神的七转仙蛊，交情暴涨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0022",
+      "startOffset": 4594112,
+      "endOffset": 4594155,
+      "summary": "方源对童画的光照菌感兴趣，庙明神愿意从中引荐"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0034",
+      "startOffset": 4594560,
+      "endOffset": 4594575,
+      "summary": "方源以楚瀛身份与庙明神交易寿蛊，并试图建立良好关系以图谋苍蓝龙鲸"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0089",
+      "startOffset": 4596127,
+      "endOffset": 4596154,
+      "summary": "方源通过宝黄天运输，消耗琅琊门派贡献，从琅琊福地租借仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0046",
+      "startOffset": 4594834,
+      "endOffset": 4594859,
+      "summary": "方源以楚瀛身份参加交易会，第一轮与庙明神交易寿蛊，第二轮准备交易妇人心仙蛊时因智道推算提前退出"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0059",
+      "startOffset": 4595211,
+      "endOffset": 4595231,
+      "summary": "方源因智道大能推算其踪迹，暗渡蛊效用消耗剧烈，被迫提前离开交易会"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0066",
+      "startOffset": 4595437,
+      "endOffset": 4595477,
+      "summary": "方源在交易会后，使用卜卦龟仙蛊和变形仙蛊施展仙道杀招卜卦龟变化，以争取时间"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1305",
+      "paragraphId": "ch_1305_p0092",
+      "startOffset": 4596246,
+      "endOffset": 4596277,
+      "summary": "方源在仙窍中琢磨如何炼化态度蛊，并设想出仙道杀招，最终成功炼化态度蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible trade events (方源 trading with 庙明神, 童画 trading荒兽) and 方源's internal cultivation actions (refining attitude蛊, using卜卦龟变化). No hidden/private knowledge, future-known information, or secret motives/plans are directly supported by the source pointers. The relation about 方源 trying to build relationship to scheme for 苍蓝龙鲸 is a summary inference not directly quoted in any source pointer. The智道推算 event is described as happening (方源感知到推算), not as a hidden fact. No fact candidate meets the strict criteria for hidden/future-known/player-visibility facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan's actions (trading, leaving early, refining attitude Gu) but motives are ambiguous. The only clear observed action with direct context is that he left the trading event because a wisdom path expert was calculating his whereabouts (ptr_12). However, the inferred motive would be 'avoid being tracked/found' which is a cautious one-step inference from observed action. But the seed does not directly support any deeper strategic motive like '示好', '投靠', etc. The observed behavior is mostly transactional without clear motive backing.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily describes individual transactions and actions of 方源 (Fang Yuan), 庙明神 (Miao Ming Shen), and 童画 (Tong Hua) as individual Gu Immortals at a trade meeting. No collective faction, clan, family, or group is named as having a concrete stake in the seed facts. The only collective entity mentioned is 琅琊福地 (Lang Ya blessed land) / 琅琊门派 (Lang Ya sect), but the relation is purely transactional (方源消耗琅琊门派贡献租借仙蛊) with no pressure, threat, or stake affecting the group itself. No faction-level pressure can be derived from individual trade interactions.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "packageId": "ri_lw_ch_1591",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1591"
+    ],
+    "paragraphIds": [
+      "ch_1591_p0002",
+      "ch_1591_p0015",
+      "ch_1591_p0018",
+      "ch_1591_p0034",
+      "ch_1591_p0040",
+      "ch_1591_p0051",
+      "ch_1591_p0054",
+      "ch_1591_p0056",
+      "ch_1591_p0059",
+      "ch_1591_p0062",
+      "ch_1591_p0063",
+      "ch_1591_p0065",
+      "ch_1591_p0066",
+      "ch_1591_p0067",
+      "ch_1591_p0070"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0002",
+          "startOffset": 5524407,
+          "endOffset": 5524436,
+          "summary": "至尊仙窍主人，宙道分身本体"
+        }
+      ],
+      "entityId": "entity_62a9d1780e7d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "至尊仙窍主人，宙道分身本体",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0034",
+          "startOffset": 5525888,
+          "endOffset": 5525928,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_62a9d1780e7d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0040",
+          "startOffset": 5526180,
+          "endOffset": 5526201,
+          "summary": "雪民蛊仙，被方源宙道分身冒充"
+        }
+      ],
+      "entityId": "entity_886f89660e94",
+      "name": "冰卓",
+      "kind": "person",
+      "aliases": [],
+      "description": "雪民蛊仙，被方源宙道分身冒充",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0051",
+          "startOffset": 5526500,
+          "endOffset": 5526601,
+          "summary": "雪民部落首领"
+        }
+      ],
+      "entityId": "entity_554e4226556b",
+      "name": "雪民族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "雪民部落首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0065",
+          "startOffset": 5527228,
+          "endOffset": 5527230,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_62a9d1780e7d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0067",
+          "startOffset": 5527318,
+          "endOffset": 5527322,
+          "summary": "南疆正道成员，隐于仙阵中"
+        }
+      ],
+      "entityId": "entity_72b862e50cb6",
+      "name": "南疆蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "南疆正道成员，隐于仙阵中",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0034",
+          "startOffset": 5525888,
+          "endOffset": 5525928,
+          "summary": "方源掳掠雪民作为奴隶，安置在至尊仙窍中"
+        }
+      ],
+      "relationId": "rel_23ddc5f7e36c",
+      "subject": "方源",
+      "object": "雪民",
+      "relationType": "OTHER",
+      "summary": "方源掳掠雪民作为奴隶，安置在至尊仙窍中",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0040",
+          "startOffset": 5526180,
+          "endOffset": 5526201,
+          "summary": "方源宙道分身冒充冰卓"
+        }
+      ],
+      "relationId": "rel_f63fbdc27463",
+      "subject": "方源",
+      "object": "冰卓",
+      "relationType": "OTHER",
+      "summary": "方源宙道分身冒充冰卓",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0059",
+          "startOffset": 5526999,
+          "endOffset": 5527023,
+          "summary": "方源安置石人在小南疆"
+        }
+      ],
+      "relationId": "rel_998a899bf844",
+      "subject": "方源",
+      "object": "石人",
+      "relationType": "OTHER",
+      "summary": "方源安置石人在小南疆",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0070",
+          "startOffset": 5527435,
+          "endOffset": 5527437,
+          "summary": "方源与南疆正道敌对，强攻其仙阵"
+        }
+      ],
+      "relationId": "rel_a1af6eb938f9",
+      "subject": "方源",
+      "object": "南疆正道",
+      "relationType": "CONFLICT",
+      "summary": "方源与南疆正道敌对，强攻其仙阵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0018",
+          "startOffset": 5525123,
+          "endOffset": 5525140,
+          "summary": "方源宙道分身布置雪晶阵，以三座冰道晶精为核心，用于生产雪怪和改变环境。"
+        }
+      ],
+      "eventId": "evt_67744ee9f719",
+      "eventType": "cultivation",
+      "summary": "方源宙道分身布置雪晶阵，以三座冰道晶精为核心，用于生产雪怪和改变环境。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "雪晶阵建成，可均匀传输冰霜寒气，改变环境，并具备监察调控之能。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0040",
+          "startOffset": 5526180,
+          "endOffset": 5526201,
+          "summary": "方源宙道分身变作冰卓，现身引导雪民前往三山之地"
+        }
+      ],
+      "eventId": "evt_8dc43df3593f",
+      "eventType": "other",
+      "summary": "方源宙道分身变作冰卓，现身引导雪民前往三山之地",
+      "actors": [
+        "方源宙道分身",
+        "雪民"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "雪民继续前行，前往三山之地"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0054",
+          "startOffset": 5526706,
+          "endOffset": 5526740,
+          "summary": "方源宙道分身布置雪晶阵，用于安置雪民和雪怪"
+        }
+      ],
+      "eventId": "evt_cdf8f55803bd",
+      "eventType": "other",
+      "summary": "方源宙道分身布置雪晶阵，用于安置雪民和雪怪",
+      "actors": [
+        "方源宙道分身"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "雪晶阵将雪怪和雪民隔离，同时允许接触磨砺"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0062",
+          "startOffset": 5527118,
+          "endOffset": 5527149,
+          "summary": "方源本体来到南疆掠影地沟"
+        }
+      ],
+      "eventId": "evt_f512afe01fcb",
+      "eventType": "other",
+      "summary": "方源本体来到南疆掠影地沟",
+      "actors": [
+        "方源本体"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0070",
+          "startOffset": 5527435,
+          "endOffset": 5527437,
+          "summary": "方源发现南疆正道建设的仙阵，与隐于阵中的南疆蛊仙发生冲突，方源强攻仙阵"
+        }
+      ],
+      "eventId": "evt_77bfeaa544cc",
+      "eventType": "conflict",
+      "summary": "方源发现南疆正道建设的仙阵，与隐于阵中的南疆蛊仙发生冲突，方源强攻仙阵",
+      "actors": [
+        "方源",
+        "南疆蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "战斗开始"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0018",
+          "startOffset": 5525123,
+          "endOffset": 5525140,
+          "summary": "方源宙道分身布置雪晶阵，以三座冰道晶精为核心，用于生产雪怪和改变环境。"
+        }
+      ],
+      "timelineId": "tl_67744ee9f719",
+      "eventId": "evt_67744ee9f719",
+      "chapterId": "ch_1591",
+      "orderHint": "chapter-order",
+      "summary": "方源宙道分身布置雪晶阵，以三座冰道晶精为核心，用于生产雪怪和改变环境。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0040",
+          "startOffset": 5526180,
+          "endOffset": 5526201,
+          "summary": "方源宙道分身变作冰卓，现身引导雪民前往三山之地"
+        }
+      ],
+      "timelineId": "tl_8dc43df3593f",
+      "eventId": "evt_8dc43df3593f",
+      "chapterId": "ch_1591",
+      "orderHint": "chapter-order",
+      "summary": "方源宙道分身变作冰卓，现身引导雪民前往三山之地",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0054",
+          "startOffset": 5526706,
+          "endOffset": 5526740,
+          "summary": "方源宙道分身布置雪晶阵，用于安置雪民和雪怪"
+        }
+      ],
+      "timelineId": "tl_cdf8f55803bd",
+      "eventId": "evt_cdf8f55803bd",
+      "chapterId": "ch_1591",
+      "orderHint": "chapter-order",
+      "summary": "方源宙道分身布置雪晶阵，用于安置雪民和雪怪",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0062",
+          "startOffset": 5527118,
+          "endOffset": 5527149,
+          "summary": "方源本体来到南疆掠影地沟"
+        }
+      ],
+      "timelineId": "tl_f512afe01fcb",
+      "eventId": "evt_f512afe01fcb",
+      "chapterId": "ch_1591",
+      "orderHint": "chapter-order",
+      "summary": "方源本体来到南疆掠影地沟",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1591",
+          "paragraphId": "ch_1591_p0070",
+          "startOffset": 5527435,
+          "endOffset": 5527437,
+          "summary": "方源发现南疆正道建设的仙阵，与隐于阵中的南疆蛊仙发生冲突，方源强攻仙阵"
+        }
+      ],
+      "timelineId": "tl_77bfeaa544cc",
+      "eventId": "evt_77bfeaa544cc",
+      "chapterId": "ch_1591",
+      "orderHint": "chapter-order",
+      "summary": "方源发现南疆正道建设的仙阵，与隐于阵中的南疆蛊仙发生冲突，方源强攻仙阵",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0002",
+      "startOffset": 5524407,
+      "endOffset": 5524436,
+      "summary": "至尊仙窍主人，宙道分身本体"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0034",
+      "startOffset": 5525888,
+      "endOffset": 5525928,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0040",
+      "startOffset": 5526180,
+      "endOffset": 5526201,
+      "summary": "雪民蛊仙，被方源宙道分身冒充"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0051",
+      "startOffset": 5526500,
+      "endOffset": 5526601,
+      "summary": "雪民部落首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0065",
+      "startOffset": 5527228,
+      "endOffset": 5527230,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0067",
+      "startOffset": 5527318,
+      "endOffset": 5527322,
+      "summary": "南疆正道成员，隐于仙阵中"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0059",
+      "startOffset": 5526999,
+      "endOffset": 5527023,
+      "summary": "方源安置石人在小南疆"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0070",
+      "startOffset": 5527435,
+      "endOffset": 5527437,
+      "summary": "方源与南疆正道敌对，强攻其仙阵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0018",
+      "startOffset": 5525123,
+      "endOffset": 5525140,
+      "summary": "方源宙道分身布置雪晶阵，以三座冰道晶精为核心，用于生产雪怪和改变环境。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0054",
+      "startOffset": 5526706,
+      "endOffset": 5526740,
+      "summary": "方源宙道分身布置雪晶阵，用于安置雪民和雪怪"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1591",
+      "paragraphId": "ch_1591_p0062",
+      "startOffset": 5527118,
+      "endOffset": 5527149,
+      "summary": "方源本体来到南疆掠影地沟"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly visible/ordinary events: Fang Yuan's clone arranging snow crystal arrays, guiding snow people, placing stone people, and attacking a Southern Border immortal formation. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the source pointers. The events are either public actions or ordinary cultivation activities without hidden/secret dimensions supported by the text.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan attacking a Southern Border immortal formation (ptr_8), but the observed action is simply '强攻仙阵' (forcefully attacking the immortal formation). The motive for this attack is not directly stated in the seed facts. It could be to seize resources, eliminate enemies, or other reasons, but the seed does not provide enough context to make a cautious one-step inference. Other events show Fang Yuan settling snow people and stone people, but no direct causal link to the attack is given. Therefore, no character motive candidate can be confidently extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed contains several collective actors (雪民/雪民部落, 南疆正道, 石人) but none have a concrete stake or pressure axis clearly backed by source facts.",
+      "雪民 (Snow People) are being guided/settled by Fang Yuan's clone impersonating Bing Zhuo - they are being relocated, not facing a pressure from their own perspective. No evidence of internal faction pressure.",
+      "南疆正道 (Southern Border Righteous Path) is in conflict with Fang Yuan who is attacking their immortal formation, but the seed only shows one unnamed Southern Border Gu Immortal speaking. No collective decision-making or faction-level pressure axis is evident.",
+      "石人 (Stone People) are mentioned only as being settled in Little Southern Border - no pressure or stake.",
+      "The seed focuses on Fang Yuan's actions (cultivation, impersonation, attack) rather than any collective faction's internal pressures.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

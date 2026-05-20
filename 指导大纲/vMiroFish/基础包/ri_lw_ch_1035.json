@@ -1,0 +1,1156 @@
+{
+  "packageId": "ri_lw_ch_1035",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1035"
+    ],
+    "paragraphIds": [
+      "ch_1035_p0002",
+      "ch_1035_p0005",
+      "ch_1035_p0019",
+      "ch_1035_p0023",
+      "ch_1035_p0024",
+      "ch_1035_p0026",
+      "ch_1035_p0028",
+      "ch_1035_p0029",
+      "ch_1035_p0033",
+      "ch_1035_p0036",
+      "ch_1035_p0037",
+      "ch_1035_p0038",
+      "ch_1035_p0043",
+      "ch_1035_p0045",
+      "ch_1035_p0047",
+      "ch_1035_p0051",
+      "ch_1035_p0068",
+      "ch_1035_p0069",
+      "ch_1035_p0072",
+      "ch_1035_p0074",
+      "ch_1035_p0077",
+      "ch_1035_p0083",
+      "ch_1035_p0091"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0002",
+          "startOffset": 3650648,
+          "endOffset": 3650650,
+          "summary": "主角，魔道蛊仙"
+        }
+      ],
+      "entityId": "entity_3349bf6013ac",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，魔道蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0005",
+          "startOffset": 3650743,
+          "endOffset": 3650747,
+          "summary": "琅琊福地地灵"
+        }
+      ],
+      "entityId": "entity_925c5ac4de86",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊福地地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0005",
+          "startOffset": 3650771,
+          "endOffset": 3650774,
+          "summary": "影宗成员"
+        }
+      ],
+      "entityId": "entity_a4771c9ef789",
+      "name": "影无邪",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0019",
+          "startOffset": 3651385,
+          "endOffset": 3651391,
+          "summary": "魔道蛊仙，隐藏于明堂谷"
+        }
+      ],
+      "entityId": "entity_ffefe95225a0",
+      "name": "公孙良",
+      "kind": "person",
+      "aliases": [
+        "不动如山"
+      ],
+      "description": "魔道蛊仙，隐藏于明堂谷",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0023",
+          "startOffset": 3651491,
+          "endOffset": 3651494,
+          "summary": "逆组织中的成员，代号大先生"
+        }
+      ],
+      "entityId": "entity_b842b4af8587",
+      "name": "大先生",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "逆组织中的成员，代号大先生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0033",
+          "startOffset": 3651835,
+          "endOffset": 3651898,
+          "summary": "逆组织成员"
+        }
+      ],
+      "entityId": "entity_ffefe95225a0",
+      "name": "公孙良",
+      "kind": "person",
+      "aliases": [],
+      "description": "逆组织成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0033",
+          "startOffset": 3651835,
+          "endOffset": 3651898,
+          "summary": "逆组织创建者，一号"
+        }
+      ],
+      "entityId": "entity_b842b4af8587",
+      "name": "大先生",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "逆组织创建者，一号",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0036",
+          "startOffset": 3651937,
+          "endOffset": 3651957,
+          "summary": "钧天剑派蛊仙"
+        }
+      ],
+      "entityId": "entity_e346c780cac2",
+      "name": "苗君",
+      "kind": "person",
+      "aliases": [],
+      "description": "钧天剑派蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0036",
+          "startOffset": 3651937,
+          "endOffset": 3651957,
+          "summary": "钧天剑派蛊仙"
+        }
+      ],
+      "entityId": "entity_3ebfbe452e53",
+      "name": "苗越",
+      "kind": "person",
+      "aliases": [],
+      "description": "钧天剑派蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0037",
+          "startOffset": 3651961,
+          "endOffset": 3651986,
+          "summary": "影宗成员，假扮大先生"
+        }
+      ],
+      "entityId": "entity_a4771c9ef789",
+      "name": "影无邪",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，假扮大先生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0083",
+          "startOffset": 3653643,
+          "endOffset": 3653708,
+          "summary": "幽魂魔尊分魂，影宗成员"
+        }
+      ],
+      "entityId": "entity_a4771c9ef789",
+      "name": "影无邪",
+      "kind": "person",
+      "aliases": [],
+      "description": "幽魂魔尊分魂，影宗成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0005",
+          "startOffset": 3650743,
+          "endOffset": 3650747,
+          "summary": "方源与琅琊地灵联络，讨论春秋蝉及对策"
+        }
+      ],
+      "relationId": "rel_3536334733f8",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "ALLY",
+      "summary": "方源与琅琊地灵联络，讨论春秋蝉及对策",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0024",
+          "startOffset": 3651510,
+          "endOffset": 3651513,
+          "summary": "影无邪通过信道手段向公孙良借仙蛊"
+        }
+      ],
+      "relationId": "rel_40f50ca4e906",
+      "subject": "影无邪",
+      "object": "公孙良",
+      "relationType": "OTHER",
+      "summary": "影无邪通过信道手段向公孙良借仙蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0028",
+          "startOffset": 3651660,
+          "endOffset": 3651664,
+          "summary": "公孙良是逆组织成员，代号数字，受到组织帮助"
+        }
+      ],
+      "relationId": "rel_5ba7827d4239",
+      "subject": "公孙良",
+      "object": "逆组织",
+      "relationType": "FACTION",
+      "summary": "公孙良是逆组织成员，代号数字，受到组织帮助",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0023",
+          "startOffset": 3651491,
+          "endOffset": 3651494,
+          "summary": "大先生是逆组织成员，代号大先生"
+        }
+      ],
+      "relationId": "rel_d17ddcc8b025",
+      "subject": "逆组织",
+      "object": "大先生",
+      "relationType": "FACTION",
+      "summary": "大先生是逆组织成员，代号大先生",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0051",
+          "startOffset": 3652463,
+          "endOffset": 3652477,
+          "summary": "逆组织是影宗所建"
+        }
+      ],
+      "relationId": "rel_e4d5be25a0c4",
+      "subject": "逆组织",
+      "object": "影宗",
+      "relationType": "FACTION",
+      "summary": "逆组织是影宗所建",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0033",
+          "startOffset": 3651835,
+          "endOffset": 3651898,
+          "summary": "大先生向公孙良借蛊"
+        }
+      ],
+      "relationId": "rel_ec7ed81c6b13",
+      "subject": "大先生",
+      "object": "公孙良",
+      "relationType": "OTHER",
+      "summary": "大先生向公孙良借蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0038",
+          "startOffset": 3651990,
+          "endOffset": 3652031,
+          "summary": "大先生向苗君借仙蛊"
+        }
+      ],
+      "relationId": "rel_35ec716304e4",
+      "subject": "大先生",
+      "object": "苗君",
+      "relationType": "OTHER",
+      "summary": "大先生向苗君借仙蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0043",
+          "startOffset": 3652221,
+          "endOffset": 3652260,
+          "summary": "钧天剑派原本依附于仙鹤门，后试图摆脱附庸身份失败"
+        }
+      ],
+      "relationId": "rel_986b084efb88",
+      "subject": "钧天剑派",
+      "object": "仙鹤门",
+      "relationType": "FACTION",
+      "summary": "钧天剑派原本依附于仙鹤门，后试图摆脱附庸身份失败",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0036",
+          "startOffset": 3651937,
+          "endOffset": 3651957,
+          "summary": "同为钧天剑派蛊仙，商议要务"
+        }
+      ],
+      "relationId": "rel_326ca033da9f",
+      "subject": "苗君",
+      "object": "苗越",
+      "relationType": "ALLY",
+      "summary": "同为钧天剑派蛊仙，商议要务",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0091",
+          "startOffset": 3653908,
+          "endOffset": 3653985,
+          "summary": "影无邪策反黑楼兰，给出两个选择：死或转投"
+        }
+      ],
+      "relationId": "rel_aa45c924df18",
+      "subject": "影无邪",
+      "object": "黑楼兰",
+      "relationType": "CONFLICT",
+      "summary": "影无邪策反黑楼兰，给出两个选择：死或转投",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0068",
+          "startOffset": 3653076,
+          "endOffset": 3653116,
+          "summary": "影无邪借助逆组织的力量，借蛊"
+        }
+      ],
+      "relationId": "rel_13c02d7344c7",
+      "subject": "影无邪",
+      "object": "逆组织",
+      "relationType": "FACTION",
+      "summary": "影无邪借助逆组织的力量，借蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0072",
+          "startOffset": 3653194,
+          "endOffset": 3653246,
+          "summary": "公孙良借仙蛊给影无邪"
+        }
+      ],
+      "relationId": "rel_ad88666e7af6",
+      "subject": "影无邪",
+      "object": "公孙良",
+      "relationType": "TRADE",
+      "summary": "公孙良借仙蛊给影无邪",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0005",
+          "startOffset": 3650743,
+          "endOffset": 3650747,
+          "summary": "方源与琅琊地灵讨论春秋蝉被影无邪持有，琅琊地灵表示可以克制六转春秋蝉"
+        }
+      ],
+      "eventId": "evt_5f86bafbcdbc",
+      "eventType": "other",
+      "summary": "方源与琅琊地灵讨论春秋蝉被影无邪持有，琅琊地灵表示可以克制六转春秋蝉",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源得知春秋蝉可被克制，减轻忧虑"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0023",
+          "startOffset": 3651491,
+          "endOffset": 3651494,
+          "summary": "公孙良被影无邪通过信道手段联络，影无邪向其借仙蛊"
+        }
+      ],
+      "eventId": "evt_315cc41c7198",
+      "eventType": "other",
+      "summary": "公孙良被影无邪通过信道手段联络，影无邪向其借仙蛊",
+      "actors": [
+        "公孙良",
+        "影无邪"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "公孙良犹豫，考虑是否出借仙蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0026",
+          "startOffset": 3651574,
+          "endOffset": 3651578,
+          "summary": "公孙良回忆自己加入逆组织的经历，曾遭十大古派追杀，被神秘人救援后加入"
+        }
+      ],
+      "eventId": "evt_bcafae307515",
+      "eventType": "other",
+      "summary": "公孙良回忆自己加入逆组织的经历，曾遭十大古派追杀，被神秘人救援后加入",
+      "actors": [
+        "公孙良"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "公孙良对逆组织产生信任和猜测"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0033",
+          "startOffset": 3651835,
+          "endOffset": 3651898,
+          "summary": "大先生向公孙良借蛊，公孙良犹豫后同意"
+        }
+      ],
+      "eventId": "evt_f4bce029e9dd",
+      "eventType": "other",
+      "summary": "大先生向公孙良借蛊，公孙良犹豫后同意",
+      "actors": [
+        "大先生",
+        "公孙良"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "公孙良同意借蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0047",
+          "startOffset": 3652373,
+          "endOffset": 3652398,
+          "summary": "影无邪以大先生身份向苗君、苗越借仙蛊，遭到失败"
+        }
+      ],
+      "eventId": "evt_36396c1adfbf",
+      "eventType": "other",
+      "summary": "影无邪以大先生身份向苗君、苗越借仙蛊，遭到失败",
+      "actors": [
+        "影无邪",
+        "苗君",
+        "苗越"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "借蛊失败"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0045",
+          "startOffset": 3652298,
+          "endOffset": 3652336,
+          "summary": "钧天剑派试图摆脱仙鹤门附庸身份，失败后被仙鹤门重点关照"
+        }
+      ],
+      "eventId": "evt_83f9ac5c18c1",
+      "eventType": "conflict",
+      "summary": "钧天剑派试图摆脱仙鹤门附庸身份，失败后被仙鹤门重点关照",
+      "actors": [
+        "钧天剑派",
+        "仙鹤门"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "钧天剑派日子艰难"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0074",
+          "startOffset": 3653288,
+          "endOffset": 3653310,
+          "summary": "影无邪镇压方源的蛊虫，方源蛊虫自毁，损失惨重"
+        }
+      ],
+      "eventId": "evt_2d173a945c3e",
+      "eventType": "conflict",
+      "summary": "影无邪镇压方源的蛊虫，方源蛊虫自毁，损失惨重",
+      "actors": [
+        "影无邪",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "影无邪成功镇压但损失惨重"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0077",
+          "startOffset": 3653414,
+          "endOffset": 3653454,
+          "summary": "影无邪利用借来的仙蛊驱除脑海中的方源假意"
+        }
+      ],
+      "eventId": "evt_f52a80a18f54",
+      "eventType": "other",
+      "summary": "影无邪利用借来的仙蛊驱除脑海中的方源假意",
+      "actors": [
+        "影无邪"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "成功驱除"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0091",
+          "startOffset": 3653908,
+          "endOffset": 3653985,
+          "summary": "影无邪向黑楼兰坦白身份，并给出两个选择"
+        }
+      ],
+      "eventId": "evt_049a7fb84914",
+      "eventType": "conflict",
+      "summary": "影无邪向黑楼兰坦白身份，并给出两个选择",
+      "actors": [
+        "影无邪",
+        "黑楼兰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黑楼兰面临抉择"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0005",
+          "startOffset": 3650743,
+          "endOffset": 3650747,
+          "summary": "方源与琅琊地灵讨论春秋蝉被影无邪持有，琅琊地灵表示可以克制六转春秋蝉"
+        }
+      ],
+      "timelineId": "tl_5f86bafbcdbc",
+      "eventId": "evt_5f86bafbcdbc",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "方源与琅琊地灵讨论春秋蝉被影无邪持有，琅琊地灵表示可以克制六转春秋蝉",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0023",
+          "startOffset": 3651491,
+          "endOffset": 3651494,
+          "summary": "公孙良被影无邪通过信道手段联络，影无邪向其借仙蛊"
+        }
+      ],
+      "timelineId": "tl_315cc41c7198",
+      "eventId": "evt_315cc41c7198",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "公孙良被影无邪通过信道手段联络，影无邪向其借仙蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0026",
+          "startOffset": 3651574,
+          "endOffset": 3651578,
+          "summary": "公孙良回忆自己加入逆组织的经历，曾遭十大古派追杀，被神秘人救援后加入"
+        }
+      ],
+      "timelineId": "tl_bcafae307515",
+      "eventId": "evt_bcafae307515",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "公孙良回忆自己加入逆组织的经历，曾遭十大古派追杀，被神秘人救援后加入",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0033",
+          "startOffset": 3651835,
+          "endOffset": 3651898,
+          "summary": "大先生向公孙良借蛊，公孙良犹豫后同意"
+        }
+      ],
+      "timelineId": "tl_f4bce029e9dd",
+      "eventId": "evt_f4bce029e9dd",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "大先生向公孙良借蛊，公孙良犹豫后同意",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0047",
+          "startOffset": 3652373,
+          "endOffset": 3652398,
+          "summary": "影无邪以大先生身份向苗君、苗越借仙蛊，遭到失败"
+        }
+      ],
+      "timelineId": "tl_36396c1adfbf",
+      "eventId": "evt_36396c1adfbf",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "影无邪以大先生身份向苗君、苗越借仙蛊，遭到失败",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0045",
+          "startOffset": 3652298,
+          "endOffset": 3652336,
+          "summary": "钧天剑派试图摆脱仙鹤门附庸身份，失败后被仙鹤门重点关照"
+        }
+      ],
+      "timelineId": "tl_83f9ac5c18c1",
+      "eventId": "evt_83f9ac5c18c1",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "钧天剑派试图摆脱仙鹤门附庸身份，失败后被仙鹤门重点关照",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0074",
+          "startOffset": 3653288,
+          "endOffset": 3653310,
+          "summary": "影无邪镇压方源的蛊虫，方源蛊虫自毁，损失惨重"
+        }
+      ],
+      "timelineId": "tl_2d173a945c3e",
+      "eventId": "evt_2d173a945c3e",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "影无邪镇压方源的蛊虫，方源蛊虫自毁，损失惨重",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0077",
+          "startOffset": 3653414,
+          "endOffset": 3653454,
+          "summary": "影无邪利用借来的仙蛊驱除脑海中的方源假意"
+        }
+      ],
+      "timelineId": "tl_f52a80a18f54",
+      "eventId": "evt_f52a80a18f54",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "影无邪利用借来的仙蛊驱除脑海中的方源假意",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0091",
+          "startOffset": 3653908,
+          "endOffset": 3653985,
+          "summary": "影无邪向黑楼兰坦白身份，并给出两个选择"
+        }
+      ],
+      "timelineId": "tl_049a7fb84914",
+      "eventId": "evt_049a7fb84914",
+      "chapterId": "ch_1035",
+      "orderHint": "chapter-order",
+      "summary": "影无邪向黑楼兰坦白身份，并给出两个选择",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1035",
+          "paragraphId": "ch_1035_p0043",
+          "startOffset": 3652221,
+          "endOffset": 3652260,
+          "summary": "钧天剑派原本依附于仙鹤门，后试图摆脱附庸身份失败"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "钧天剑派",
+      "pressureAxis": "附庸地位危机",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "加强对仙鹤门的服从",
+        "寻求其他势力庇护"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0002",
+      "startOffset": 3650648,
+      "endOffset": 3650650,
+      "summary": "主角，魔道蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0005",
+      "startOffset": 3650743,
+      "endOffset": 3650747,
+      "summary": "琅琊福地地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0005",
+      "startOffset": 3650771,
+      "endOffset": 3650774,
+      "summary": "影宗成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0019",
+      "startOffset": 3651385,
+      "endOffset": 3651391,
+      "summary": "魔道蛊仙，隐藏于明堂谷"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0023",
+      "startOffset": 3651491,
+      "endOffset": 3651494,
+      "summary": "逆组织中的成员，代号大先生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0033",
+      "startOffset": 3651835,
+      "endOffset": 3651898,
+      "summary": "逆组织成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0036",
+      "startOffset": 3651937,
+      "endOffset": 3651957,
+      "summary": "钧天剑派蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0037",
+      "startOffset": 3651961,
+      "endOffset": 3651986,
+      "summary": "影宗成员，假扮大先生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0083",
+      "startOffset": 3653643,
+      "endOffset": 3653708,
+      "summary": "幽魂魔尊分魂，影宗成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0024",
+      "startOffset": 3651510,
+      "endOffset": 3651513,
+      "summary": "影无邪通过信道手段向公孙良借仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0028",
+      "startOffset": 3651660,
+      "endOffset": 3651664,
+      "summary": "公孙良是逆组织成员，代号数字，受到组织帮助"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0051",
+      "startOffset": 3652463,
+      "endOffset": 3652477,
+      "summary": "逆组织是影宗所建"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0038",
+      "startOffset": 3651990,
+      "endOffset": 3652031,
+      "summary": "大先生向苗君借仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0043",
+      "startOffset": 3652221,
+      "endOffset": 3652260,
+      "summary": "钧天剑派原本依附于仙鹤门，后试图摆脱附庸身份失败"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0091",
+      "startOffset": 3653908,
+      "endOffset": 3653985,
+      "summary": "影无邪策反黑楼兰，给出两个选择：死或转投"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0068",
+      "startOffset": 3653076,
+      "endOffset": 3653116,
+      "summary": "影无邪借助逆组织的力量，借蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0072",
+      "startOffset": 3653194,
+      "endOffset": 3653246,
+      "summary": "公孙良借仙蛊给影无邪"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0026",
+      "startOffset": 3651574,
+      "endOffset": 3651578,
+      "summary": "公孙良回忆自己加入逆组织的经历，曾遭十大古派追杀，被神秘人救援后加入"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0047",
+      "startOffset": 3652373,
+      "endOffset": 3652398,
+      "summary": "影无邪以大先生身份向苗君、苗越借仙蛊，遭到失败"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0045",
+      "startOffset": 3652298,
+      "endOffset": 3652336,
+      "summary": "钧天剑派试图摆脱仙鹤门附庸身份，失败后被仙鹤门重点关照"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0074",
+      "startOffset": 3653288,
+      "endOffset": 3653310,
+      "summary": "影无邪镇压方源的蛊虫，方源蛊虫自毁，损失惨重"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1035",
+      "paragraphId": "ch_1035_p0077",
+      "startOffset": 3653414,
+      "endOffset": 3653454,
+      "summary": "影无邪利用借来的仙蛊驱除脑海中的方源假意"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly ordinary visible events (Fang Yuan discussing with Lang Ya land spirit, Ying Wu Xie contacting Gongsun Liang, etc.) that are already known to the reader/player. The fact that '逆组织 is built by 影宗' (ch_1035_p0051) is stated directly in the narration, making it player-visible rather than hidden. The fact that '影无邪假扮大先生' (ch_1035_p0037) is also directly shown. No private knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps with sufficient source backing were found that meet the criteria for a hidden/future-known/player-visibility fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows characters performing actions (borrowing gu, discussing, recalling) but observed behaviors are mostly internal thoughts or communication via unknown channels. Motives are ambiguous - e.g., 公孙良借蛊 could be due to trust, fear, or obligation, but the seed doesn't directly support a specific inferred motive. 影无邪借蛊 to驱除方源假意 is stated as purpose, but that's a direct action-purpose link already explicit in the text, not a motive inference. No clear observedMotive+inferredMotive pair with sufficient source support.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "钧天剑派试图摆脱仙鹤门附庸身份失败，面临仙鹤门重点关照，构成附庸地位/生存压力。钧天剑派是集体 faction，有三位蛊仙，符合集体 actor 要求。压力轴为附庸地位危机，likelyReactions 为保守的一步反应。",
+      "IF export filter quarantined 7 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

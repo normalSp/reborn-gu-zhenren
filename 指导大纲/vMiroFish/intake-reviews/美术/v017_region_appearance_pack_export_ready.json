@@ -1,0 +1,1187 @@
+{
+  "schema": "reborng.mirofish.art-intake-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v017-region-appearance-pack",
+  "packageKey": "v017_region_appearance",
+  "title": "v0.17 Region Appearance Pack",
+  "generatedAt": "2026-05-18T04:21:10.857065+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierFactsWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not player truth, not engine authority"
+    ]
+  },
+  "deliveryStatus": "conditional_complete_candidate",
+  "caveats": [
+    "0001-0600 is enough for a reviewable candidate pack.",
+    "0601-0800 was requested as supplement in the brief and is not included here.",
+    "Yi Tian Mountain and Southern Border river-valley remain low-evidence/concept-only entries."
+  ],
+  "items": [
+    {
+      "id": "southern-border-main-region",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "南疆主区域以山林、山路、寨落和商旅路线为低阶可视基底，适合做宽景环境母板。",
+      "windowTier": "0001-0600-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "broad_region_inference"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0119",
+          "chapterId": "ch_0119",
+          "field": "events",
+          "itemId": "evt_99b67d5e3fc8",
+          "summary": "山寨蛊师发现吞江蟾后要驱赶，江凡哀求无效，吞江蟾出手淹没山寨",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0241",
+          "chapterId": "ch_0241",
+          "field": "events",
+          "itemId": "evt_5b19c32aaac0",
+          "summary": "冠天侯深入匪猴山，与猴皇达成协议，开通商路",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0010",
+          "chapterId": "ch_0010",
+          "field": "events",
+          "itemId": "evt_6daf362d8ab4",
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0024",
+          "chapterId": "ch_0024",
+          "field": "events",
+          "itemId": "evt_4e1b28b0723a",
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0040",
+          "chapterId": "ch_0040",
+          "field": "events",
+          "itemId": "evt_940ebd157d4d",
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_186e2480ef7e",
+        "sp_dc0538b14ab5",
+        "sp_929e88080440",
+        "sp_31d025e4a54d",
+        "sp_98eb45a538fa"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0119",
+          "paragraphId": "ch_0119_p0047",
+          "startOffset": 383284,
+          "endOffset": 383305,
+          "summary": "山寨蛊师发现吞江蟾后要驱赶，江凡哀求无效，吞江蟾出手淹没山寨",
+          "sourcePointerId": "sp_186e2480ef7e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0241",
+          "paragraphId": "ch_0241_p0083",
+          "startOffset": 821541,
+          "endOffset": 821582,
+          "summary": "冠天侯深入匪猴山，与猴皇达成协议，开通商路",
+          "sourcePointerId": "sp_dc0538b14ab5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路",
+          "sourcePointerId": "sp_929e88080440"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+          "sourcePointerId": "sp_31d025e4a54d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+          "sourcePointerId": "sp_98eb45a538fa"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "山林层叠",
+        "湿润山路",
+        "寨落散布"
+      ],
+      "architectureHints": [
+        "山寨木石结构",
+        "商旅临时设施"
+      ],
+      "populationHints": [
+        "家族蛊师",
+        "凡人商队",
+        "低阶行人"
+      ],
+      "distinctiveAnchors": [
+        "山势压迫",
+        "林雾",
+        "狭窄道路"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "shang-clan-city-panorama",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "商家城可作为山体城市和分层贸易城市处理，入口、内外城和商业密度是关键画面信号。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0231",
+          "chapterId": "ch_0231",
+          "field": "events",
+          "itemId": "evt_abdfd8c03893",
+          "summary": "方源告知白凝冰接下来的目的地是商量山商家城",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0260",
+          "chapterId": "ch_0260",
+          "field": "events",
+          "itemId": "evt_fa6d17e2d235",
+          "summary": "方源在商家城门前与商心慈分别，商心慈表示会报答恩情",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0261",
+          "chapterId": "ch_0261",
+          "field": "events",
+          "itemId": "evt_00e8117bac00",
+          "summary": "方源和白凝冰接近商家城城门，发现白家寨通缉令",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0261",
+          "chapterId": "ch_0261",
+          "field": "events",
+          "itemId": "evt_05739dfb1f1a",
+          "summary": "方源和白凝冰进入商家城，通过城门守卫，支付二十块元石",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3bfb3324e135",
+        "sp_327853eca176",
+        "sp_5308c4a3262e",
+        "sp_cdad9a9f10c1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0231",
+          "paragraphId": "ch_0231_p0081",
+          "startOffset": 786210,
+          "endOffset": 786234,
+          "summary": "方源告知白凝冰接下来的目的地是商量山商家城",
+          "sourcePointerId": "sp_3bfb3324e135"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0260",
+          "paragraphId": "ch_0260_p0047",
+          "startOffset": 889764,
+          "endOffset": 889771,
+          "summary": "方源在商家城门前与商心慈分别，商心慈表示会报答恩情",
+          "sourcePointerId": "sp_327853eca176"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0261",
+          "paragraphId": "ch_0261_p0063",
+          "startOffset": 893637,
+          "endOffset": 893679,
+          "summary": "方源和白凝冰接近商家城城门，发现白家寨通缉令",
+          "sourcePointerId": "sp_5308c4a3262e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0261",
+          "paragraphId": "ch_0261_p0067",
+          "startOffset": 893766,
+          "endOffset": 893768,
+          "summary": "方源和白凝冰进入商家城，通过城门守卫，支付二十块元石",
+          "sourcePointerId": "sp_cdad9a9f10c1"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "山体城市",
+        "层级道路"
+      ],
+      "architectureHints": [
+        "内外城层次",
+        "城门",
+        "密集商铺"
+      ],
+      "populationHints": [
+        "商队",
+        "护卫",
+        "城内行人"
+      ],
+      "distinctiveAnchors": [
+        "山城轮廓",
+        "贸易流线",
+        "守卫入口"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": false
+      }
+    },
+    {
+      "id": "three-kings-mountain",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "三王山请求可用三叉山和三王传承开启线索做候选地貌锚点，但名称需人工确认。",
+      "windowTier": "0401-0600-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "name_disambiguation_required"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0325",
+          "chapterId": "ch_0325",
+          "field": "events",
+          "itemId": "evt_75b30311c08e",
+          "summary": "三叉山震荡，三道光柱从三叉山最高峰射出，三王传承开启",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0347",
+          "chapterId": "ch_0347",
+          "field": "events",
+          "itemId": "evt_4cf627f9f9b7",
+          "summary": "四位四转巅峰蛊师在三叉山最高峰上空对峙，三王传承开启",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0326",
+          "chapterId": "ch_0326",
+          "field": "events",
+          "itemId": "evt_29019c9d1f39",
+          "summary": "张总管向商一帆汇报三叉山最新消息：已有人探测出进入三王传承的正确法门，需要分别拥有驭犬蛊、纸鹤蛊、爆蛋蛊",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0341",
+          "chapterId": "ch_0341",
+          "field": "events",
+          "itemId": "evt_67d6981b3c24",
+          "summary": "方源和白凝冰观察三叉山，决定在半山腰山洞落脚",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_36aa2f255cd6",
+        "sp_ab187d476ce5",
+        "sp_451534149d33",
+        "sp_826e47ef7675"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0325",
+          "paragraphId": "ch_0325_p0071",
+          "startOffset": 1127223,
+          "endOffset": 1127273,
+          "summary": "三叉山震荡，三道光柱从三叉山最高峰射出，三王传承开启",
+          "sourcePointerId": "sp_36aa2f255cd6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0347",
+          "paragraphId": "ch_0347_p0048",
+          "startOffset": 1203980,
+          "endOffset": 1203989,
+          "summary": "四位四转巅峰蛊师在三叉山最高峰上空对峙，三王传承开启",
+          "sourcePointerId": "sp_ab187d476ce5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0326",
+          "paragraphId": "ch_0326_p0016",
+          "startOffset": 1128825,
+          "endOffset": 1128845,
+          "summary": "张总管向商一帆汇报三叉山最新消息：已有人探测出进入三王传承的正确法门，需要分别拥有驭犬蛊、纸鹤蛊、爆蛋蛊",
+          "sourcePointerId": "sp_451534149d33"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0341",
+          "paragraphId": "ch_0341_p0075",
+          "startOffset": 1184679,
+          "endOffset": 1184733,
+          "summary": "方源和白凝冰观察三叉山，决定在半山腰山洞落脚",
+          "sourcePointerId": "sp_826e47ef7675"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "三峰或叉形山势",
+        "高峰中心"
+      ],
+      "architectureHints": [
+        "非城市建筑优先",
+        "遗迹感仅作候选"
+      ],
+      "populationHints": [
+        "围观或赶赴的低阶人群可选"
+      ],
+      "distinctiveAnchors": [
+        "高峰光柱候选",
+        "山体震动感",
+        "远景群山"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "medium",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "yi-tian-mountain",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "义天山在 0001-0600 中主要是提及和后续目标语境，缺少稳定公开地貌描写。",
+      "windowTier": "0001-0600-mention-only",
+      "evidenceStatus": "concept_only",
+      "riskTags": [
+        "insufficient_appearance_evidence"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0288",
+          "chapterId": "ch_0288",
+          "field": "events",
+          "itemId": "evt_49c6f6c88df1",
+          "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0367",
+          "chapterId": "ch_0367",
+          "field": "events",
+          "itemId": "evt_b390ffb903f7",
+          "summary": "方源思考三王传承，计划获取百战不殆蛊等精华，以提升实力应对义天山大战",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0470",
+          "chapterId": "ch_0470",
+          "field": "events",
+          "itemId": "evt_f450f500e300",
+          "summary": "砚石老人告知仇九已对奴隶蛊动手脚，计划让仇九在义天山正魔大战时卧底在方源身边",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d9d902f23ad1",
+        "sp_3ab57ca6554d",
+        "sp_283a7fff8644"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0048",
+          "startOffset": 994419,
+          "endOffset": 994479,
+          "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转",
+          "sourcePointerId": "sp_d9d902f23ad1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0367",
+          "paragraphId": "ch_0367_p0037",
+          "startOffset": 1273290,
+          "endOffset": 1273383,
+          "summary": "方源思考三王传承，计划获取百战不殆蛊等精华，以提升实力应对义天山大战",
+          "sourcePointerId": "sp_3ab57ca6554d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0470",
+          "paragraphId": "ch_0470_p0084",
+          "startOffset": 1636914,
+          "endOffset": 1636984,
+          "summary": "砚石老人告知仇九已对奴隶蛊动手脚，计划让仇九在义天山正魔大战时卧底在方源身边",
+          "sourcePointerId": "sp_283a7fff8644"
+        }
+      ],
+      "reviewStatus": "review_required",
+      "review": {
+        "status": "review_required",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "暂不固化地貌"
+      ],
+      "architectureHints": [
+        "暂不固化建筑"
+      ],
+      "populationHints": [
+        "暂不固化人群"
+      ],
+      "distinctiveAnchors": [
+        "仅保留为待补证据项"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "southern-border-mountain-pass",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "南疆山口可从山路、山道、商队行进压力中抽出狭窄通行和关口式构图候选。",
+      "windowTier": "0001-0600-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "generic_pass_inference"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0250",
+          "chapterId": "ch_0250",
+          "field": "events",
+          "itemId": "evt_7824b6dfad06",
+          "summary": "商心慈在艰难山路上调整心态，从慌乱到坚定",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_246a1a363166"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0250",
+          "paragraphId": "ch_0250_p0083",
+          "startOffset": 852819,
+          "endOffset": 852860,
+          "summary": "商心慈在艰难山路上调整心态，从慌乱到坚定",
+          "sourcePointerId": "sp_246a1a363166"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "狭窄山路",
+        "陡坡",
+        "林间转折"
+      ],
+      "architectureHints": [
+        "简易路标或临时驻点可选"
+      ],
+      "populationHints": [
+        "商队护卫",
+        "行脚人",
+        "低阶路人"
+      ],
+      "distinctiveAnchors": [
+        "道路收束",
+        "背负货物",
+        "山雾"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "southern-border-river-valley",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "南疆河谷证据较弱，只能从溪流、河流和山林通行样本抽取环境候选。",
+      "windowTier": "0001-0600-low-evidence",
+      "evidenceStatus": "concept_only",
+      "riskTags": [
+        "insufficient_region_specificity"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0454",
+          "chapterId": "ch_0454",
+          "field": "events",
+          "itemId": "evt_7e09d5c6829e",
+          "summary": "方源提议利用河流防守，但葛家老族长表示时间来不及",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0158",
+          "chapterId": "ch_0158",
+          "field": "relations",
+          "itemId": "rel_defe39f95a60",
+          "summary": "白家的特有蛊虫是溪流蛊",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3e8f3270ffdd",
+        "sp_887e92974159"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0454",
+          "paragraphId": "ch_0454_p0029",
+          "startOffset": 1578187,
+          "endOffset": 1578215,
+          "summary": "方源提议利用河流防守，但葛家老族长表示时间来不及",
+          "sourcePointerId": "sp_3e8f3270ffdd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0158",
+          "paragraphId": "ch_0158_p0045",
+          "startOffset": 523939,
+          "endOffset": 523970,
+          "summary": "白家的特有蛊虫是溪流蛊",
+          "sourcePointerId": "sp_887e92974159"
+        }
+      ],
+      "reviewStatus": "review_required",
+      "review": {
+        "status": "review_required",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "溪流或浅河",
+        "山谷林地"
+      ],
+      "architectureHints": [
+        "暂不固化建筑"
+      ],
+      "populationHints": [
+        "行旅或追踪场景可选"
+      ],
+      "distinctiveAnchors": [
+        "水线",
+        "谷地收束",
+        "湿润石岸"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "shang-clan-city-market",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "商家城坊市可由商铺密集、交易人流和城市商业层级构成候选外观包。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "market_name_requires_review"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0264",
+          "chapterId": "ch_0264",
+          "field": "events",
+          "itemId": "evt_ff0bd5fc5d8b",
+          "summary": "方源和白凝冰在商家城多个商铺（八宝商铺、元芳楼、不倒阁）试图卖出蛊虫，均被拒绝",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0334",
+          "chapterId": "ch_0334",
+          "field": "relations",
+          "itemId": "rel_4dc33f17c96e",
+          "summary": "方源冲击商家店铺，违反城规",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_94e2dad816cc",
+        "sp_2910db0f28d8"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0264",
+          "paragraphId": "ch_0264_p0075",
+          "startOffset": 904755,
+          "endOffset": 904776,
+          "summary": "方源和白凝冰在商家城多个商铺（八宝商铺、元芳楼、不倒阁）试图卖出蛊虫，均被拒绝",
+          "sourcePointerId": "sp_94e2dad816cc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0334",
+          "paragraphId": "ch_0334_p0036",
+          "startOffset": 1158392,
+          "endOffset": 1158491,
+          "summary": "方源冲击商家店铺，违反城规",
+          "sourcePointerId": "sp_2910db0f28d8"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "城内街道"
+      ],
+      "architectureHints": [
+        "连续商铺",
+        "摊位",
+        "招牌"
+      ],
+      "populationHints": [
+        "店主",
+        "商队成员",
+        "买家"
+      ],
+      "distinctiveAnchors": [
+        "密集店面",
+        "议价姿态",
+        "人流"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "shang-clan-city-auction-house",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "商家城拍卖行缺少完整建筑外观证据，可用低阶拍卖秩序与商家城商业环境合成候选。",
+      "windowTier": "0001-0600-composite",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "treasure_yellow_heaven_overlap",
+        "architecture_inference_required"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0114",
+          "chapterId": "ch_0114",
+          "field": "events",
+          "itemId": "evt_e66749e67cef",
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0274",
+          "chapterId": "ch_0274",
+          "field": "events",
+          "itemId": "evt_328f7e47edb7",
+          "summary": "方源和白凝冰在拍卖区花费六千七百元石购买元老蛊。",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0298",
+          "chapterId": "ch_0298",
+          "field": "events",
+          "itemId": "evt_d099abe81407",
+          "summary": "霜息蛊以三万八千枚元石卖出",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0262",
+          "chapterId": "ch_0262",
+          "field": "events",
+          "itemId": "evt_f5c5cde7d208",
+          "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0264",
+          "chapterId": "ch_0264",
+          "field": "events",
+          "itemId": "evt_ff0bd5fc5d8b",
+          "summary": "方源和白凝冰在商家城多个商铺（八宝商铺、元芳楼、不倒阁）试图卖出蛊虫，均被拒绝",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cc2aca7fe832",
+        "sp_90518089f36b",
+        "sp_b56e21391dd9",
+        "sp_14d5246f551b",
+        "sp_94e2dad816cc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0114",
+          "paragraphId": "ch_0114_p0021",
+          "startOffset": 364908,
+          "endOffset": 364910,
+          "summary": "赤铁舍利蛊被替换为幡然蛊，拍卖结束",
+          "sourcePointerId": "sp_cc2aca7fe832"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0274",
+          "paragraphId": "ch_0274_p0085",
+          "startOffset": 943411,
+          "endOffset": 943467,
+          "summary": "方源和白凝冰在拍卖区花费六千七百元石购买元老蛊。",
+          "sourcePointerId": "sp_90518089f36b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0298",
+          "paragraphId": "ch_0298_p0056",
+          "startOffset": 1029838,
+          "endOffset": 1029864,
+          "summary": "霜息蛊以三万八千枚元石卖出",
+          "sourcePointerId": "sp_b56e21391dd9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0088",
+          "startOffset": 898412,
+          "endOffset": 898446,
+          "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石",
+          "sourcePointerId": "sp_14d5246f551b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0264",
+          "paragraphId": "ch_0264_p0075",
+          "startOffset": 904755,
+          "endOffset": 904776,
+          "summary": "方源和白凝冰在商家城多个商铺（八宝商铺、元芳楼、不倒阁）试图卖出蛊虫，均被拒绝",
+          "sourcePointerId": "sp_94e2dad816cc"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "城内商业空间"
+      ],
+      "architectureHints": [
+        "分层看台候选",
+        "柜台或台面",
+        "人群围合"
+      ],
+      "populationHints": [
+        "竞买者",
+        "主持者",
+        "护卫"
+      ],
+      "distinctiveAnchors": [
+        "货品展示台",
+        "价格压力",
+        "秩序感"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": true
+      }
+    },
+    {
+      "id": "shang-clan-city-gate",
+      "category": "region_or_city_appearance_evidence",
+      "summary": "商家城城门有入口、守卫、进城动线等直接信号，可作为城市首屏和行旅抵达锚点。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0261",
+          "chapterId": "ch_0261",
+          "field": "events",
+          "itemId": "evt_05739dfb1f1a",
+          "summary": "方源和白凝冰进入商家城，通过城门守卫，支付二十块元石",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0261",
+          "chapterId": "ch_0261",
+          "field": "entities",
+          "itemId": "entity_f4a2d49f6648",
+          "summary": "商家城守卫",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_cdad9a9f10c1",
+        "sp_233d536ad520"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0261",
+          "paragraphId": "ch_0261_p0067",
+          "startOffset": 893766,
+          "endOffset": 893768,
+          "summary": "方源和白凝冰进入商家城，通过城门守卫，支付二十块元石",
+          "sourcePointerId": "sp_cdad9a9f10c1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0261",
+          "paragraphId": "ch_0261_p0065",
+          "startOffset": 893710,
+          "endOffset": 893715,
+          "summary": "商家城守卫",
+          "sourcePointerId": "sp_233d536ad520"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "region_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "art_brief",
+          "region_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "terrainHints": [
+        "山城入口"
+      ],
+      "architectureHints": [
+        "城门",
+        "门洞",
+        "守卫点"
+      ],
+      "populationHints": [
+        "守卫",
+        "入城商旅",
+        "低阶行人"
+      ],
+      "distinctiveAnchors": [
+        "门前队列",
+        "检查动作",
+        "城墙尺度"
+      ],
+      "dangerLevelHint": "low_to_medium_public_surface",
+      "namingHints": {
+        "zhNameConfidence": "high",
+        "needsHumanCheck": false
+      }
+    }
+  ],
+  "skipped": [],
+  "coverage": {
+    "itemCount": 9,
+    "skippedCount": 0,
+    "sourcePointerCount": 26,
+    "evidenceStatusCounts": {
+      "concept_only": 2,
+      "direct": 2,
+      "direct_partial": 5
+    }
+  }
+}

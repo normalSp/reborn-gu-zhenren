@@ -1,0 +1,525 @@
+{
+  "packageId": "ri_lw_ch_0350",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0350"
+    ],
+    "paragraphIds": [
+      "ch_0350_p0003",
+      "ch_0350_p0018",
+      "ch_0350_p0028",
+      "ch_0350_p0031",
+      "ch_0350_p0033",
+      "ch_0350_p0035",
+      "ch_0350_p0046",
+      "ch_0350_p0054",
+      "ch_0350_p0065",
+      "ch_0350_p0068"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0003",
+          "startOffset": 1212573,
+          "endOffset": 1212576,
+          "summary": "四转中阶奴道蛊师，被方源所杀"
+        }
+      ],
+      "entityId": "entity_adde6eccc0d1",
+      "name": "韩不留",
+      "kind": "person",
+      "aliases": [],
+      "description": "四转中阶奴道蛊师，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0003",
+          "startOffset": 1212583,
+          "endOffset": 1212585,
+          "summary": "奴道蛊师，春秋蝉持有者，伪装成方正"
+        }
+      ],
+      "entityId": "entity_50c38d825377",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "小兽王",
+        "方正"
+      ],
+      "description": "奴道蛊师，春秋蝉持有者，伪装成方正",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0033",
+          "startOffset": 1213652,
+          "endOffset": 1213678,
+          "summary": "蛊师，已死亡"
+        }
+      ],
+      "entityId": "entity_adde6eccc0d1",
+      "name": "韩不留",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，已死亡",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0035",
+          "startOffset": 1213706,
+          "endOffset": 1213730,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_50c38d825377",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0068",
+          "startOffset": 1214970,
+          "endOffset": 1215013,
+          "summary": "蛊师，操控犬兽"
+        }
+      ],
+      "entityId": "entity_50c38d825377",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，操控犬兽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0003",
+          "startOffset": 1212573,
+          "endOffset": 1212585,
+          "summary": "方源与韩不留厮杀，最终方源杀死韩不留"
+        }
+      ],
+      "relationId": "rel_9071d393cffa",
+      "subject": "方源",
+      "object": "韩不留",
+      "relationType": "CONFLICT",
+      "summary": "方源与韩不留厮杀，最终方源杀死韩不留",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0068",
+          "startOffset": 1214970,
+          "endOffset": 1215013,
+          "summary": "方源与菊花秋田犬群战斗"
+        }
+      ],
+      "relationId": "rel_925ad8cbd629",
+      "subject": "方源",
+      "object": "菊花秋田犬群",
+      "relationType": "CONFLICT",
+      "summary": "方源与菊花秋田犬群战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0018",
+          "startOffset": 1213206,
+          "endOffset": 1213218,
+          "summary": "方源指挥八只野犬杀死韩不留"
+        }
+      ],
+      "eventId": "evt_3e31778da1ae",
+      "eventType": "death",
+      "summary": "方源指挥八只野犬杀死韩不留",
+      "actors": [
+        "方源",
+        "韩不留"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得韩不留的五只奴道蛊虫，并炼化收入空窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0028",
+          "startOffset": 1213508,
+          "endOffset": 1213528,
+          "summary": "方源提取并炼化韩不留空窍中的五只蛊虫，全部收入自己空窍"
+        }
+      ],
+      "eventId": "evt_e451d955ad3c",
+      "eventType": "cultivation",
+      "summary": "方源提取并炼化韩不留空窍中的五只蛊虫，全部收入自己空窍",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得五只奴道蛊虫，其中两只四转"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0033",
+          "startOffset": 1213652,
+          "endOffset": 1213678,
+          "summary": "韩不留垂死挣扎时杀死一只伤势最重的野犬，随后死亡。"
+        }
+      ],
+      "eventId": "evt_2861f71575a7",
+      "eventType": "death",
+      "summary": "韩不留垂死挣扎时杀死一只伤势最重的野犬，随后死亡。",
+      "actors": [
+        "韩不留"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "韩不留死亡，方源损失一只野犬。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0046",
+          "startOffset": 1214149,
+          "endOffset": 1214165,
+          "summary": "方源面对三王传承中的选择，决定选择菊花秋田犬作为对手。"
+        }
+      ],
+      "eventId": "evt_8284454e61a9",
+      "eventType": "conflict",
+      "summary": "方源面对三王传承中的选择，决定选择菊花秋田犬作为对手。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得二十只一转驭犬蛊，但面临五六十只菊花秋田犬的围攻。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0065",
+          "startOffset": 1214904,
+          "endOffset": 1214923,
+          "summary": "方源被菊花秋田犬群发现并围攻，他利用地形和驭犬蛊反击，最终击退犬群"
+        }
+      ],
+      "eventId": "evt_d5b7452d1415",
+      "eventType": "conflict",
+      "summary": "方源被菊花秋田犬群发现并围攻，他利用地形和驭犬蛊反击，最终击退犬群",
+      "actors": [
+        "方源",
+        "菊花秋田犬群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源损失四只野犬，新增十六只菊花秋田犬，战力恢复"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0018",
+          "startOffset": 1213206,
+          "endOffset": 1213218,
+          "summary": "方源指挥八只野犬杀死韩不留"
+        }
+      ],
+      "timelineId": "tl_3e31778da1ae",
+      "eventId": "evt_3e31778da1ae",
+      "chapterId": "ch_0350",
+      "orderHint": "chapter-order",
+      "summary": "方源指挥八只野犬杀死韩不留",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0028",
+          "startOffset": 1213508,
+          "endOffset": 1213528,
+          "summary": "方源提取并炼化韩不留空窍中的五只蛊虫，全部收入自己空窍"
+        }
+      ],
+      "timelineId": "tl_e451d955ad3c",
+      "eventId": "evt_e451d955ad3c",
+      "chapterId": "ch_0350",
+      "orderHint": "chapter-order",
+      "summary": "方源提取并炼化韩不留空窍中的五只蛊虫，全部收入自己空窍",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0033",
+          "startOffset": 1213652,
+          "endOffset": 1213678,
+          "summary": "韩不留垂死挣扎时杀死一只伤势最重的野犬，随后死亡。"
+        }
+      ],
+      "timelineId": "tl_2861f71575a7",
+      "eventId": "evt_2861f71575a7",
+      "chapterId": "ch_0350",
+      "orderHint": "chapter-order",
+      "summary": "韩不留垂死挣扎时杀死一只伤势最重的野犬，随后死亡。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0046",
+          "startOffset": 1214149,
+          "endOffset": 1214165,
+          "summary": "方源面对三王传承中的选择，决定选择菊花秋田犬作为对手。"
+        }
+      ],
+      "timelineId": "tl_8284454e61a9",
+      "eventId": "evt_8284454e61a9",
+      "chapterId": "ch_0350",
+      "orderHint": "chapter-order",
+      "summary": "方源面对三王传承中的选择，决定选择菊花秋田犬作为对手。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0350",
+          "paragraphId": "ch_0350_p0065",
+          "startOffset": 1214904,
+          "endOffset": 1214923,
+          "summary": "方源被菊花秋田犬群发现并围攻，他利用地形和驭犬蛊反击，最终击退犬群"
+        }
+      ],
+      "timelineId": "tl_d5b7452d1415",
+      "eventId": "evt_d5b7452d1415",
+      "chapterId": "ch_0350",
+      "orderHint": "chapter-order",
+      "summary": "方源被菊花秋田犬群发现并围攻，他利用地形和驭犬蛊反击，最终击退犬群",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0003",
+      "startOffset": 1212573,
+      "endOffset": 1212576,
+      "summary": "四转中阶奴道蛊师，被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0003",
+      "startOffset": 1212583,
+      "endOffset": 1212585,
+      "summary": "奴道蛊师，春秋蝉持有者，伪装成方正"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0033",
+      "startOffset": 1213652,
+      "endOffset": 1213678,
+      "summary": "蛊师，已死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0035",
+      "startOffset": 1213706,
+      "endOffset": 1213730,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0068",
+      "startOffset": 1214970,
+      "endOffset": 1215013,
+      "summary": "蛊师，操控犬兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0003",
+      "startOffset": 1212573,
+      "endOffset": 1212585,
+      "summary": "方源与韩不留厮杀，最终方源杀死韩不留"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0018",
+      "startOffset": 1213206,
+      "endOffset": 1213218,
+      "summary": "方源指挥八只野犬杀死韩不留"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0028",
+      "startOffset": 1213508,
+      "endOffset": 1213528,
+      "summary": "方源提取并炼化韩不留空窍中的五只蛊虫，全部收入自己空窍"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0046",
+      "startOffset": 1214149,
+      "endOffset": 1214165,
+      "summary": "方源面对三王传承中的选择，决定选择菊花秋田犬作为对手。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0350",
+      "paragraphId": "ch_0350_p0065",
+      "startOffset": 1214904,
+      "endOffset": 1214923,
+      "summary": "方源被菊花秋田犬群发现并围攻，他利用地形和驭犬蛊反击，最终击退犬群"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes visible combat events (Fang Yuan killing Han Buli, extracting his gu, fighting chrysanthemum Akita dogs) that are ordinary visible events, not hidden knowledge. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the provided source pointers. The entities and events are all narratively visible actions. No source-backed hidden fact candidate can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan killing Han Boliu and taking his Gu worms, but the observed behavior is purely tactical (killing an enemy in a life-or-death conflict). No direct source evidence supports inferring a deeper motive beyond survival/combat necessity. The seed also shows Fang Yuan choosing to fight the chrysanthemum Akita dogs, but again the motive is ambiguous - could be strategic resource acquisition or simply the path he chose. Without direct textual support for a specific motive, returning empty characterMotives.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed only contains individual actors (方源, 韩不留) and a wild dog pack (菊花秋田犬群). The dog pack is not a faction, clan, family, or organized group with collective stakes—it is a wild beast group. No named collective actor (family, clan, faction, shop, hall, organization) appears in the seed facts or relations that has a concrete stake. 韩不留 is an individual, not linked to any named family/clan. No faction pressure can be derived from this seed.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

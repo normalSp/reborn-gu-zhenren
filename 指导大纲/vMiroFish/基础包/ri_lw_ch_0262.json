@@ -1,0 +1,954 @@
+{
+  "packageId": "ri_lw_ch_0262",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0262"
+    ],
+    "paragraphIds": [
+      "ch_0262_p0003",
+      "ch_0262_p0005",
+      "ch_0262_p0008",
+      "ch_0262_p0009",
+      "ch_0262_p0013",
+      "ch_0262_p0014",
+      "ch_0262_p0015",
+      "ch_0262_p0024",
+      "ch_0262_p0025",
+      "ch_0262_p0027",
+      "ch_0262_p0028",
+      "ch_0262_p0033",
+      "ch_0262_p0038",
+      "ch_0262_p0047",
+      "ch_0262_p0053",
+      "ch_0262_p0054",
+      "ch_0262_p0057",
+      "ch_0262_p0059",
+      "ch_0262_p0069",
+      "ch_0262_p0070",
+      "ch_0262_p0072",
+      "ch_0262_p0076",
+      "ch_0262_p0079",
+      "ch_0262_p0088"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0009",
+          "startOffset": 895561,
+          "endOffset": 895563,
+          "summary": "主角，二转巅峰修为"
+        }
+      ],
+      "entityId": "entity_f7a20f7e0fe3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，二转巅峰修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0005",
+          "startOffset": 895404,
+          "endOffset": 895407,
+          "summary": "方源同伴，女性，因阳蛊变女身"
+        }
+      ],
+      "entityId": "entity_3b11d145e904",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源同伴，女性，因阳蛊变女身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0008",
+          "startOffset": 895511,
+          "endOffset": 895514,
+          "summary": "方源保护的对象，商家城相关"
+        }
+      ],
+      "entityId": "entity_4f4c573879c3",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源保护的对象，商家城相关",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0024",
+          "startOffset": 896061,
+          "endOffset": 896063,
+          "summary": "潜在威胁"
+        }
+      ],
+      "entityId": "entity_e80dc3303a61",
+      "name": "丁浩",
+      "kind": "person",
+      "aliases": [],
+      "description": "潜在威胁",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0033",
+          "startOffset": 896713,
+          "endOffset": 896717,
+          "summary": "主角，行事无所顾忌"
+        }
+      ],
+      "entityId": "entity_f7a20f7e0fe3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，行事无所顾忌",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0033",
+          "startOffset": 896723,
+          "endOffset": 896727,
+          "summary": "与方源相似，同样蔑视世俗"
+        }
+      ],
+      "entityId": "entity_3b11d145e904",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "与方源相似，同样蔑视世俗",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0053",
+          "startOffset": 897316,
+          "endOffset": 897320,
+          "summary": "商家族长"
+        }
+      ],
+      "entityId": "entity_1f6939402396",
+      "name": "商燕飞",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "商家族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0054",
+          "startOffset": 897343,
+          "endOffset": 897347,
+          "summary": "方源关注的对象，从南门进城"
+        }
+      ],
+      "entityId": "entity_4f4c573879c3",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源关注的对象，从南门进城",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0070",
+          "startOffset": 897865,
+          "endOffset": 897882,
+          "summary": "蛊师，与方源同行"
+        }
+      ],
+      "entityId": "entity_3b11d145e904",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，与方源同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0079",
+          "startOffset": 898145,
+          "endOffset": 898157,
+          "summary": "蛊师，与白凝冰同行"
+        }
+      ],
+      "entityId": "entity_f7a20f7e0fe3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，与白凝冰同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0014",
+          "startOffset": 895758,
+          "endOffset": 895760,
+          "summary": "双方互相算计，关系紧张，即将因方源晋升三转而爆发冲突"
+        }
+      ],
+      "relationId": "rel_cd56d5f9f327",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "CONFLICT",
+      "summary": "双方互相算计，关系紧张，即将因方源晋升三转而爆发冲突",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0013",
+          "startOffset": 895706,
+          "endOffset": 895708,
+          "summary": "方源掌控阳蛊，白凝冰投鼠忌器"
+        }
+      ],
+      "relationId": "rel_67e658b99164",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "USES",
+      "summary": "方源掌控阳蛊，白凝冰投鼠忌器",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0027",
+          "startOffset": 896288,
+          "endOffset": 896291,
+          "summary": "白凝冰想取得阳蛊变回男儿身，对方源有杀意但忌惮"
+        }
+      ],
+      "relationId": "rel_2feb21e7d4fc",
+      "subject": "白凝冰",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰想取得阳蛊变回男儿身，对方源有杀意但忌惮",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0008",
+          "startOffset": 895511,
+          "endOffset": 895513,
+          "summary": "方源接近并保护商心慈，但故意分别"
+        }
+      ],
+      "relationId": "rel_58415a910b2d",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "OTHER",
+      "summary": "方源接近并保护商心慈，但故意分别",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0038",
+          "startOffset": 896911,
+          "endOffset": 896961,
+          "summary": "互相视为难以对付的敌人，互有把柄"
+        }
+      ],
+      "relationId": "rel_bd40115124c5",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "CONFLICT",
+      "summary": "互相视为难以对付的敌人，互有把柄",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0057",
+          "startOffset": 897449,
+          "endOffset": 897475,
+          "summary": "方源关注商心慈，认为其事件未超出记忆轨迹"
+        }
+      ],
+      "relationId": "rel_e4b26d07d131",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "OTHER",
+      "summary": "方源关注商心慈，认为其事件未超出记忆轨迹",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0069",
+          "startOffset": 897824,
+          "endOffset": 897861,
+          "summary": "翼家和东海势力有千丝万缕的联系"
+        }
+      ],
+      "relationId": "rel_15f5a5ff3683",
+      "subject": "翼家",
+      "object": "东海势力",
+      "relationType": "ALLY",
+      "summary": "翼家和东海势力有千丝万缕的联系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0079",
+          "startOffset": 898145,
+          "endOffset": 898157,
+          "summary": "方源和白凝冰同行"
+        }
+      ],
+      "relationId": "rel_9e1cdf9910f5",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源和白凝冰同行",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0003",
+          "startOffset": 895266,
+          "endOffset": 895268,
+          "summary": "方源和白凝冰在商家城三层雅座同桌吃饭，表面和谐但内心互相算计"
+        }
+      ],
+      "eventId": "evt_e0febf8485e2",
+      "eventType": "other",
+      "summary": "方源和白凝冰在商家城三层雅座同桌吃饭，表面和谐但内心互相算计",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "双方矛盾凸显，关系紧张"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0025",
+          "startOffset": 896094,
+          "endOffset": 896096,
+          "summary": "方源思考如何处理白凝冰，考虑过干掉她但认为时机不成熟"
+        }
+      ],
+      "eventId": "evt_1736218826a7",
+      "eventType": "other",
+      "summary": "方源思考如何处理白凝冰，考虑过干掉她但认为时机不成熟",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定暂时不动手"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0028",
+          "startOffset": 896438,
+          "endOffset": 896441,
+          "summary": "白凝冰思考如何取得阳蛊，考虑暴力抢夺、毒誓蛊、强取蛊等手段"
+        }
+      ],
+      "eventId": "evt_a5cbc940191d",
+      "eventType": "other",
+      "summary": "白凝冰思考如何取得阳蛊，考虑暴力抢夺、毒誓蛊、强取蛊等手段",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰继续谋划"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0047",
+          "startOffset": 897171,
+          "endOffset": 897183,
+          "summary": "两人在酒楼吃饭后走出，听到路人议论商家族长现身南门"
+        }
+      ],
+      "eventId": "evt_83a5c3b131dc",
+      "eventType": "other",
+      "summary": "两人在酒楼吃饭后走出，听到路人议论商家族长现身南门",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源确认商心慈事件未超出记忆轨迹"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0059",
+          "startOffset": 897507,
+          "endOffset": 897527,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城"
+        }
+      ],
+      "eventId": "evt_a8d424e76c38",
+      "eventType": "other",
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+      "actors": [
+        "翼家商队"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引起街道行人围观"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0072",
+          "startOffset": 897931,
+          "endOffset": 897960,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商量山，进入商家城"
+        }
+      ],
+      "eventId": "evt_4f1bd47cf360",
+      "eventType": "appearance",
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商量山，进入商家城",
+      "actors": [
+        "翼家商队"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "市场将动荡，翼家带来五转蛊和东海特产"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0088",
+          "startOffset": 898412,
+          "endOffset": 898446,
+          "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石"
+        }
+      ],
+      "eventId": "evt_f5c5cde7d208",
+      "eventType": "other",
+      "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "内城需要付费进入"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0003",
+          "startOffset": 895266,
+          "endOffset": 895268,
+          "summary": "方源和白凝冰在商家城三层雅座同桌吃饭，表面和谐但内心互相算计"
+        }
+      ],
+      "timelineId": "tl_e0febf8485e2",
+      "eventId": "evt_e0febf8485e2",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰在商家城三层雅座同桌吃饭，表面和谐但内心互相算计",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0025",
+          "startOffset": 896094,
+          "endOffset": 896096,
+          "summary": "方源思考如何处理白凝冰，考虑过干掉她但认为时机不成熟"
+        }
+      ],
+      "timelineId": "tl_1736218826a7",
+      "eventId": "evt_1736218826a7",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "方源思考如何处理白凝冰，考虑过干掉她但认为时机不成熟",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0028",
+          "startOffset": 896438,
+          "endOffset": 896441,
+          "summary": "白凝冰思考如何取得阳蛊，考虑暴力抢夺、毒誓蛊、强取蛊等手段"
+        }
+      ],
+      "timelineId": "tl_a5cbc940191d",
+      "eventId": "evt_a5cbc940191d",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰思考如何取得阳蛊，考虑暴力抢夺、毒誓蛊、强取蛊等手段",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0047",
+          "startOffset": 897171,
+          "endOffset": 897183,
+          "summary": "两人在酒楼吃饭后走出，听到路人议论商家族长现身南门"
+        }
+      ],
+      "timelineId": "tl_83a5c3b131dc",
+      "eventId": "evt_83a5c3b131dc",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "两人在酒楼吃饭后走出，听到路人议论商家族长现身南门",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0059",
+          "startOffset": 897507,
+          "endOffset": 897527,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商家城"
+        }
+      ],
+      "timelineId": "tl_a8d424e76c38",
+      "eventId": "evt_a8d424e76c38",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商家城",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0072",
+          "startOffset": 897931,
+          "endOffset": 897960,
+          "summary": "翼家商队乘坐飞天蓝鲸抵达商量山，进入商家城"
+        }
+      ],
+      "timelineId": "tl_4f1bd47cf360",
+      "eventId": "evt_4f1bd47cf360",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商量山，进入商家城",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0262",
+          "paragraphId": "ch_0262_p0088",
+          "startOffset": 898412,
+          "endOffset": 898446,
+          "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石"
+        }
+      ],
+      "timelineId": "tl_f5c5cde7d208",
+      "eventId": "evt_f5c5cde7d208",
+      "chapterId": "ch_0262",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0009",
+      "startOffset": 895561,
+      "endOffset": 895563,
+      "summary": "主角，二转巅峰修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0005",
+      "startOffset": 895404,
+      "endOffset": 895407,
+      "summary": "方源同伴，女性，因阳蛊变女身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0008",
+      "startOffset": 895511,
+      "endOffset": 895514,
+      "summary": "方源保护的对象，商家城相关"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0024",
+      "startOffset": 896061,
+      "endOffset": 896063,
+      "summary": "潜在威胁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0033",
+      "startOffset": 896713,
+      "endOffset": 896717,
+      "summary": "主角，行事无所顾忌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0033",
+      "startOffset": 896723,
+      "endOffset": 896727,
+      "summary": "与方源相似，同样蔑视世俗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0053",
+      "startOffset": 897316,
+      "endOffset": 897320,
+      "summary": "商家族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0054",
+      "startOffset": 897343,
+      "endOffset": 897347,
+      "summary": "方源关注的对象，从南门进城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0070",
+      "startOffset": 897865,
+      "endOffset": 897882,
+      "summary": "蛊师，与方源同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0079",
+      "startOffset": 898145,
+      "endOffset": 898157,
+      "summary": "蛊师，与白凝冰同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0014",
+      "startOffset": 895758,
+      "endOffset": 895760,
+      "summary": "双方互相算计，关系紧张，即将因方源晋升三转而爆发冲突"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0013",
+      "startOffset": 895706,
+      "endOffset": 895708,
+      "summary": "方源掌控阳蛊，白凝冰投鼠忌器"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0027",
+      "startOffset": 896288,
+      "endOffset": 896291,
+      "summary": "白凝冰想取得阳蛊变回男儿身，对方源有杀意但忌惮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0008",
+      "startOffset": 895511,
+      "endOffset": 895513,
+      "summary": "方源接近并保护商心慈，但故意分别"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0038",
+      "startOffset": 896911,
+      "endOffset": 896961,
+      "summary": "互相视为难以对付的敌人，互有把柄"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0057",
+      "startOffset": 897449,
+      "endOffset": 897475,
+      "summary": "方源关注商心慈，认为其事件未超出记忆轨迹"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0069",
+      "startOffset": 897824,
+      "endOffset": 897861,
+      "summary": "翼家和东海势力有千丝万缕的联系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0003",
+      "startOffset": 895266,
+      "endOffset": 895268,
+      "summary": "方源和白凝冰在商家城三层雅座同桌吃饭，表面和谐但内心互相算计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0025",
+      "startOffset": 896094,
+      "endOffset": 896096,
+      "summary": "方源思考如何处理白凝冰，考虑过干掉她但认为时机不成熟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0028",
+      "startOffset": 896438,
+      "endOffset": 896441,
+      "summary": "白凝冰思考如何取得阳蛊，考虑暴力抢夺、毒誓蛊、强取蛊等手段"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0047",
+      "startOffset": 897171,
+      "endOffset": 897183,
+      "summary": "两人在酒楼吃饭后走出，听到路人议论商家族长现身南门"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0059",
+      "startOffset": 897507,
+      "endOffset": 897527,
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商家城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0072",
+      "startOffset": 897931,
+      "endOffset": 897960,
+      "summary": "翼家商队乘坐飞天蓝鲸抵达商量山，进入商家城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0262",
+      "paragraphId": "ch_0262_p0088",
+      "startOffset": 898412,
+      "endOffset": 898446,
+      "summary": "方源和白凝冰来到商家城内城入口，被要求每人缴纳一百块元石"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package primarily describes public events (Fang Yuan and Bai Ning Bing eating together, entering the inner city, hearing rumors about Shang Yanfei at the south gate, Yi family's flying blue whale arrival) and internal thoughts/calculations between Fang Yuan and Bai Ning Bing which are already known to the reader as narrator-level internal monologue. No clearly supported hidden fact (private knowledge unknown to other characters, future-known information, or secret plans beyond what is already narrated) can be extracted from the source pointers. The internal thoughts of Fang Yuan and Bai Ning Bing about each other are already presented directly in the text, not 'hidden' from the reader. The only potential candidate would be Fang Yuan's secret knowledge from his past life about Shang Xin Ci's events staying on track, but this is already stated as his internal observation (p0057 quote) and is not a discrete hidden fact with clear whoKnows/whoDoesNotKnow supported by the seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows characters' internal thoughts (白凝冰 wants 阳蛊 to change back, 方源 considers killing 白凝冰 but deems timing not right), but these are direct internal monologue/thoughts, not observed actions from which to infer motive. The task requires observedMotive from seed facts and inferredMotive as one-step inference. Internal thoughts are already stated motives, not observations needing inference. No clear observed action with ambiguous motive to infer from.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual-level dynamics between Fang Yuan and Bai Ning Bing (personal conflict, mutual scheming over the Yang Gu). No collective faction/group pressure is clearly established. The Shang family (商家) is mentioned via Shang Yanfei (族长) and Shang Xin Ci, but no concrete faction-level stake or pressure is shown. The Yi family (翼家) appears as a caravan arrival but no pressure axis is established. The seed lacks source-backed collective actor stakes that would support a faction pressure candidate.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

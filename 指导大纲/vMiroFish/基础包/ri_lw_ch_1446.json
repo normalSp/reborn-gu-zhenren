@@ -1,0 +1,715 @@
+{
+  "packageId": "ri_lw_ch_1446",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1446"
+    ],
+    "paragraphIds": [
+      "ch_1446_p0003",
+      "ch_1446_p0006",
+      "ch_1446_p0015",
+      "ch_1446_p0021",
+      "ch_1446_p0038",
+      "ch_1446_p0045",
+      "ch_1446_p0048",
+      "ch_1446_p0054",
+      "ch_1446_p0056",
+      "ch_1446_p0057",
+      "ch_1446_p0059",
+      "ch_1446_p0061",
+      "ch_1446_p0064",
+      "ch_1446_p0065",
+      "ch_1446_p0070",
+      "ch_1446_p0071",
+      "ch_1446_p0076",
+      "ch_1446_p0078",
+      "ch_1446_p0080"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0003",
+          "startOffset": 5071099,
+          "endOffset": 5071102,
+          "summary": "蛊仙，炼蛊者"
+        }
+      ],
+      "entityId": "entity_6ea1b676bbf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，炼蛊者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0038",
+          "startOffset": 5072329,
+          "endOffset": 5072333,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_6ea1b676bbf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0061",
+          "startOffset": 5073172,
+          "endOffset": 5073174,
+          "summary": "方源身旁之人"
+        }
+      ],
+      "entityId": "entity_442ca0d4dd29",
+      "name": "毛六",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源身旁之人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0048",
+          "startOffset": 5072678,
+          "endOffset": 5072682,
+          "summary": "魔尊，影宗创始人"
+        }
+      ],
+      "entityId": "entity_d0eb04ef2f5e",
+      "name": "幽魂魔尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔尊，影宗创始人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0070",
+          "startOffset": 5073475,
+          "endOffset": 5073519,
+          "summary": "影宗成员，协助方源改良仙蛊方"
+        }
+      ],
+      "entityId": "entity_442ca0d4dd29",
+      "name": "毛六",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，协助方源改良仙蛊方",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0071",
+          "startOffset": 5073523,
+          "endOffset": 5073544,
+          "summary": "主角，影宗传承者，炼制净魂仙蛊"
+        }
+      ],
+      "entityId": "entity_6ea1b676bbf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，影宗传承者，炼制净魂仙蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0061",
+          "startOffset": 5073168,
+          "endOffset": 5073174,
+          "summary": "毛六在方源身旁，似乎协助方源炼制仙蛊"
+        }
+      ],
+      "relationId": "rel_03273ddd2e08",
+      "subject": "方源",
+      "object": "毛六",
+      "relationType": "ALLY",
+      "summary": "毛六在方源身旁，似乎协助方源炼制仙蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0048",
+          "startOffset": 5072678,
+          "endOffset": 5072682,
+          "summary": "方源继承了影宗传承"
+        }
+      ],
+      "relationId": "rel_4da23047a731",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "FACTION",
+      "summary": "方源继承了影宗传承",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0054",
+          "startOffset": 5072923,
+          "endOffset": 5072927,
+          "summary": "方源曾得到智慧蛊认可，利用智慧光晕修行"
+        }
+      ],
+      "relationId": "rel_9417ef2d6fe0",
+      "subject": "方源",
+      "object": "智慧蛊",
+      "relationType": "USES",
+      "summary": "方源曾得到智慧蛊认可，利用智慧光晕修行",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0070",
+          "startOffset": 5073475,
+          "endOffset": 5073519,
+          "summary": "方源与毛六合作改良净魂仙蛊方"
+        }
+      ],
+      "relationId": "rel_023648aa6eb4",
+      "subject": "方源",
+      "object": "毛六",
+      "relationType": "ALLY",
+      "summary": "方源与毛六合作改良净魂仙蛊方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0076",
+          "startOffset": 5073733,
+          "endOffset": 5073803,
+          "summary": "方源已加入北原异族大联盟"
+        }
+      ],
+      "relationId": "rel_fcc1c78cd475",
+      "subject": "方源",
+      "object": "北原异族大联盟",
+      "relationType": "FACTION",
+      "summary": "方源已加入北原异族大联盟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0078",
+          "startOffset": 5073835,
+          "endOffset": 5073877,
+          "summary": "方源计划用影宗传承向雪人一族采购雪莲花精"
+        }
+      ],
+      "relationId": "rel_9550aad785c2",
+      "subject": "方源",
+      "object": "雪人一族",
+      "relationType": "TRADE",
+      "summary": "方源计划用影宗传承向雪人一族采购雪莲花精",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0006",
+          "startOffset": 5071184,
+          "endOffset": 5071214,
+          "summary": "方源炼蛊失败，冰山爆炸碎裂，承受反噬，随后使用人如故仙蛊恢复状态，但寒气累积无法消除。"
+        }
+      ],
+      "eventId": "evt_35c3a93c2258",
+      "eventType": "other",
+      "summary": "方源炼蛊失败，冰山爆炸碎裂，承受反噬，随后使用人如故仙蛊恢复状态，但寒气累积无法消除。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源伤势恢复，但体内寒气累积，思考蛊如故仙蛊的可能性。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0021",
+          "startOffset": 5071699,
+          "endOffset": 5071743,
+          "summary": "方源从影宗真传中查阅到蛊如故仙蛊的设想，发现已有先贤研究，但均为残缺仙蛊方，无人成功。"
+        }
+      ],
+      "eventId": "evt_903025095dbd",
+      "eventType": "other",
+      "summary": "方源从影宗真传中查阅到蛊如故仙蛊的设想，发现已有先贤研究，但均为残缺仙蛊方，无人成功。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源认识到蛊如故仙蛊的难度，但未放弃设想。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0059",
+          "startOffset": 5073085,
+          "endOffset": 5073089,
+          "summary": "方源尝试炼制净魂仙蛊，已失败十多次"
+        }
+      ],
+      "eventId": "evt_1b3bf2f879ef",
+      "eventType": "cultivation",
+      "summary": "方源尝试炼制净魂仙蛊，已失败十多次",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "炼制净魂仙蛊尚未成功"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0045",
+          "startOffset": 5072538,
+          "endOffset": 5072542,
+          "summary": "方源考虑使用仙道蛊阵或悔池来辅助炼蛊，但缺乏合适仙蛊"
+        }
+      ],
+      "eventId": "evt_82c4930ea873",
+      "eventType": "other",
+      "summary": "方源考虑使用仙道蛊阵或悔池来辅助炼蛊，但缺乏合适仙蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂时无法使用这些方法"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0070",
+          "startOffset": 5073475,
+          "endOffset": 5073519,
+          "summary": "方源和毛六决定改良净魂仙蛊方，用雪莲花精替代最后几步的冰道仙材"
+        }
+      ],
+      "eventId": "evt_ec3b66ab2380",
+      "eventType": "other",
+      "summary": "方源和毛六决定改良净魂仙蛊方，用雪莲花精替代最后几步的冰道仙材",
+      "actors": [
+        "方源",
+        "毛六"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "将延长炼蛊时间和过程，但降低难度"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0080",
+          "startOffset": 5073903,
+          "endOffset": 5073926,
+          "summary": "方源决定大力采购雪莲花精，志在必得"
+        }
+      ],
+      "eventId": "evt_17342ab1afc7",
+      "eventType": "other",
+      "summary": "方源决定大力采购雪莲花精，志在必得",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将用影宗传承换取雪莲花精"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0006",
+          "startOffset": 5071184,
+          "endOffset": 5071214,
+          "summary": "方源炼蛊失败，冰山爆炸碎裂，承受反噬，随后使用人如故仙蛊恢复状态，但寒气累积无法消除。"
+        }
+      ],
+      "timelineId": "tl_35c3a93c2258",
+      "eventId": "evt_35c3a93c2258",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源炼蛊失败，冰山爆炸碎裂，承受反噬，随后使用人如故仙蛊恢复状态，但寒气累积无法消除。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0021",
+          "startOffset": 5071699,
+          "endOffset": 5071743,
+          "summary": "方源从影宗真传中查阅到蛊如故仙蛊的设想，发现已有先贤研究，但均为残缺仙蛊方，无人成功。"
+        }
+      ],
+      "timelineId": "tl_903025095dbd",
+      "eventId": "evt_903025095dbd",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源从影宗真传中查阅到蛊如故仙蛊的设想，发现已有先贤研究，但均为残缺仙蛊方，无人成功。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0059",
+          "startOffset": 5073085,
+          "endOffset": 5073089,
+          "summary": "方源尝试炼制净魂仙蛊，已失败十多次"
+        }
+      ],
+      "timelineId": "tl_1b3bf2f879ef",
+      "eventId": "evt_1b3bf2f879ef",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源尝试炼制净魂仙蛊，已失败十多次",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0045",
+          "startOffset": 5072538,
+          "endOffset": 5072542,
+          "summary": "方源考虑使用仙道蛊阵或悔池来辅助炼蛊，但缺乏合适仙蛊"
+        }
+      ],
+      "timelineId": "tl_82c4930ea873",
+      "eventId": "evt_82c4930ea873",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源考虑使用仙道蛊阵或悔池来辅助炼蛊，但缺乏合适仙蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0070",
+          "startOffset": 5073475,
+          "endOffset": 5073519,
+          "summary": "方源和毛六决定改良净魂仙蛊方，用雪莲花精替代最后几步的冰道仙材"
+        }
+      ],
+      "timelineId": "tl_ec3b66ab2380",
+      "eventId": "evt_ec3b66ab2380",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源和毛六决定改良净魂仙蛊方，用雪莲花精替代最后几步的冰道仙材",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1446",
+          "paragraphId": "ch_1446_p0080",
+          "startOffset": 5073903,
+          "endOffset": 5073926,
+          "summary": "方源决定大力采购雪莲花精，志在必得"
+        }
+      ],
+      "timelineId": "tl_17342ab1afc7",
+      "eventId": "evt_17342ab1afc7",
+      "chapterId": "ch_1446",
+      "orderHint": "chapter-order",
+      "summary": "方源决定大力采购雪莲花精，志在必得",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0003",
+      "startOffset": 5071099,
+      "endOffset": 5071102,
+      "summary": "蛊仙，炼蛊者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0038",
+      "startOffset": 5072329,
+      "endOffset": 5072333,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0061",
+      "startOffset": 5073172,
+      "endOffset": 5073174,
+      "summary": "方源身旁之人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0048",
+      "startOffset": 5072678,
+      "endOffset": 5072682,
+      "summary": "魔尊，影宗创始人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0070",
+      "startOffset": 5073475,
+      "endOffset": 5073519,
+      "summary": "影宗成员，协助方源改良仙蛊方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0071",
+      "startOffset": 5073523,
+      "endOffset": 5073544,
+      "summary": "主角，影宗传承者，炼制净魂仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0061",
+      "startOffset": 5073168,
+      "endOffset": 5073174,
+      "summary": "毛六在方源身旁，似乎协助方源炼制仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0054",
+      "startOffset": 5072923,
+      "endOffset": 5072927,
+      "summary": "方源曾得到智慧蛊认可，利用智慧光晕修行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0076",
+      "startOffset": 5073733,
+      "endOffset": 5073803,
+      "summary": "方源已加入北原异族大联盟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0078",
+      "startOffset": 5073835,
+      "endOffset": 5073877,
+      "summary": "方源计划用影宗传承向雪人一族采购雪莲花精"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0006",
+      "startOffset": 5071184,
+      "endOffset": 5071214,
+      "summary": "方源炼蛊失败，冰山爆炸碎裂，承受反噬，随后使用人如故仙蛊恢复状态，但寒气累积无法消除。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0021",
+      "startOffset": 5071699,
+      "endOffset": 5071743,
+      "summary": "方源从影宗真传中查阅到蛊如故仙蛊的设想，发现已有先贤研究，但均为残缺仙蛊方，无人成功。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0059",
+      "startOffset": 5073085,
+      "endOffset": 5073089,
+      "summary": "方源尝试炼制净魂仙蛊，已失败十多次"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0045",
+      "startOffset": 5072538,
+      "endOffset": 5072542,
+      "summary": "方源考虑使用仙道蛊阵或悔池来辅助炼蛊，但缺乏合适仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1446",
+      "paragraphId": "ch_1446_p0080",
+      "startOffset": 5073903,
+      "endOffset": 5073926,
+      "summary": "方源决定大力采购雪莲花精，志在必得"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible events: Fang Yuan's failed Gu refinement attempts, his discussions with Mao Liu about modifying the recipe, and his plan to purchase snow lotus essence. These are either ordinary visible events (failed refinement, conversations) or stated intentions (plan to buy snow lotus essence). No private knowledge, secret motives/plans beyond what is openly stated, future-known information, or directly supported knowledge gaps are present. The events and relations are all presented as what is happening or openly discussed, not as hidden facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源决定大力采购雪莲花精（ptr_15），计划用影宗传承换取（ptr_10），但seed只显示'志在必得'和交易计划，没有直接描述其动机（如为何急需、深层目的）。observedMotive只能描述'决定采购雪莲花精'这一行为，但inferredMotive若推断'为降低炼蛊难度'则属于合理一步推断（因为事件明确说用雪莲花精替代冰道仙材以降低难度），但seed中该事件是总结性描述而非直接原文引用，且方源动机在seed中缺乏直接心理描写。谨慎起见，不提交动机候选。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on Fang Yuan's personal cultivation (refining Nether Soul Gu) and his individual plans. The only collective actors mentioned are '影宗' (Shadow Sect) and '北原异族大联盟' (Northern Plains Non-Human Alliance) and '雪人一族' (Snowman Tribe). However, none of these groups have a concrete stake or pressure shown in the seed facts. Fang Yuan's plan to trade Shadow Sect inheritance with Snowman Tribe for snow lotus essence is a personal trade plan, not a faction pressure. Fang Yuan's membership in the Northern Plains Non-Human Alliance is mentioned but no pressure or stake for that group is shown. Shadow Sect is mentioned only as a source of inheritance knowledge. No faction/group pressure can be reliably extracted from this seed.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

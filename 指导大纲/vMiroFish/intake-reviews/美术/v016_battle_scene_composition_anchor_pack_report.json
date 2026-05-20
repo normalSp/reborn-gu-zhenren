@@ -1,0 +1,42 @@
+{
+  "schema": "reborng.mirofish.art-intake-report.v1",
+  "requestId": "mirofish-request-2026-05-18-v016-battle-scene-composition-anchor-pack",
+  "packageKey": "v016_battle_scene_composition_anchor",
+  "generatedAt": "2026-05-18T04:21:11.780329+00:00",
+  "requestedPaths": [
+    "指导大纲/vMiroFish/requests/v0.16.0/2026-05-18-v016-battle-scene-composition-anchor-pack.md",
+    "指导大纲/vMiroFish/requests/v0.17.0/2026-05-18-v017-region-appearance-pack.md",
+    "指导大纲/vMiroFish/requests/v0.17.0/2026-05-18-v017-character-appearance-pack.md",
+    "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-18-art-roadmap-mirofish-intake-and-request-summary.md"
+  ],
+  "deliveryStatus": "complete_candidate",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "coverage": {
+    "itemCount": 8,
+    "skippedCount": 0,
+    "sourcePointerCount": 20,
+    "evidenceStatusCounts": {
+      "direct": 6,
+      "direct_partial": 2
+    }
+  },
+  "qualityGates": {
+    "jsonParseable": true,
+    "sourcePointersPresentForAllItems": true,
+    "missingPointerItems": [],
+    "forbiddenTextKeyCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "gateErrorCount": 0,
+    "gateErrors": []
+  },
+  "caveats": [
+    "Eight requested battle anchors have source-backed candidate entries in 0001-0600.",
+    "Some viewpoint details remain art-review choices rather than runtime facts."
+  ],
+  "skipped": []
+}

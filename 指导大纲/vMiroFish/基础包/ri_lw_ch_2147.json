@@ -1,0 +1,822 @@
+{
+  "packageId": "ri_lw_ch_2147",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_2147"
+    ],
+    "paragraphIds": [
+      "ch_2147_p0005",
+      "ch_2147_p0006",
+      "ch_2147_p0008",
+      "ch_2147_p0015",
+      "ch_2147_p0030",
+      "ch_2147_p0034",
+      "ch_2147_p0039",
+      "ch_2147_p0049",
+      "ch_2147_p0060",
+      "ch_2147_p0061",
+      "ch_2147_p0063",
+      "ch_2147_p0066",
+      "ch_2147_p0070",
+      "ch_2147_p0073",
+      "ch_2147_p0077",
+      "ch_2147_p0080",
+      "ch_2147_p0085",
+      "ch_2147_p0090",
+      "ch_2147_p0092",
+      "ch_2147_p0100"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0005",
+          "startOffset": 7480198,
+          "endOffset": 7480207,
+          "summary": "龙人，七转蛊仙"
+        }
+      ],
+      "entityId": "entity_23f8be47de9c",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "龙人，七转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0034",
+          "startOffset": 7481394,
+          "endOffset": 7481405,
+          "summary": "蛊仙"
+        }
+      ],
+      "entityId": "entity_23f8be47de9c",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [
+        "白相"
+      ],
+      "description": "蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0063",
+          "startOffset": 7482420,
+          "endOffset": 7482452,
+          "summary": "男仙，从土丘中重生"
+        }
+      ],
+      "entityId": "entity_9b64b34ad9b4",
+      "name": "方焕",
+      "kind": "person",
+      "aliases": [],
+      "description": "男仙，从土丘中重生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0066",
+          "startOffset": 7482489,
+          "endOffset": 7482531,
+          "summary": "重生男仙，专修土道兼修炎道，曾经营火怪生意"
+        }
+      ],
+      "entityId": "entity_9b64b34ad9b4",
+      "name": "方焕",
+      "kind": "person",
+      "aliases": [
+        "熔岩魔君"
+      ],
+      "description": "重生男仙，专修土道兼修炎道，曾经营火怪生意",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0080",
+          "startOffset": 7482959,
+          "endOffset": 7483016,
+          "summary": "女仙，淡蓝竖眸龙瞳，额头红珊瑚龙角，银发"
+        }
+      ],
+      "entityId": "entity_23f8be47de9c",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "女仙，淡蓝竖眸龙瞳，额头红珊瑚龙角，银发",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0100",
+          "startOffset": 7483672,
+          "endOffset": 7483719,
+          "summary": "蛊仙，发布任务修复铜印山"
+        }
+      ],
+      "entityId": "entity_076f331f94e2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，发布任务修复铜印山",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0061",
+          "startOffset": 7482358,
+          "endOffset": 7482391,
+          "summary": "白凝冰目睹方焕从土丘中重生，目前无直接互动"
+        }
+      ],
+      "relationId": "rel_fe8337258ea5",
+      "subject": "白凝冰",
+      "object": "方焕",
+      "relationType": "OTHER",
+      "summary": "白凝冰目睹方焕从土丘中重生，目前无直接互动",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0077",
+          "startOffset": 7482855,
+          "endOffset": 7482887,
+          "summary": "白凝冰杀死方焕并搜魂"
+        }
+      ],
+      "relationId": "rel_3d50778b1594",
+      "subject": "白凝冰",
+      "object": "方焕",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰杀死方焕并搜魂",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0006",
+          "startOffset": 7480211,
+          "endOffset": 7480246,
+          "summary": "白凝冰结束闭关，修成一记冰雪杀招，并对冰雪道有所领悟，距离宗师境界不远。"
+        }
+      ],
+      "eventId": "evt_f690e2a12dc4",
+      "eventType": "cultivation",
+      "summary": "白凝冰结束闭关，修成一记冰雪杀招，并对冰雪道有所领悟，距离宗师境界不远。",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰实力提升，但龙人身后冰雪道领悟效率降低。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0030",
+          "startOffset": 7481210,
+          "endOffset": 7481256,
+          "summary": "白凝冰发现地沟深处爆发大规模兽潮，大多数野兽向同一方向奔腾。"
+        }
+      ],
+      "eventId": "evt_53706a86fe06",
+      "eventType": "other",
+      "summary": "白凝冰发现地沟深处爆发大规模兽潮，大多数野兽向同一方向奔腾。",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0060",
+          "startOffset": 7482326,
+          "endOffset": 7482354,
+          "summary": "方焕从土丘中重生，土丘裂开，蛊仙气息四溢"
+        }
+      ],
+      "eventId": "evt_68a8d19e5b94",
+      "eventType": "rebirth",
+      "summary": "方焕从土丘中重生，土丘裂开，蛊仙气息四溢",
+      "actors": [
+        "方焕"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方焕恢复记忆，意识到自己是方焕"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0049",
+          "startOffset": 7481904,
+          "endOffset": 7481932,
+          "summary": "兽群被土丘吸引，相互厮杀，争夺进入光柱的机会"
+        }
+      ],
+      "eventId": "evt_3d410bdc58e3",
+      "eventType": "conflict",
+      "summary": "兽群被土丘吸引，相互厮杀，争夺进入光柱的机会",
+      "actors": [
+        "兽群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "兽群伤亡惨重，百不存一"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0066",
+          "startOffset": 7482489,
+          "endOffset": 7482531,
+          "summary": "方焕从土丘中重生，自称熔岩魔君"
+        }
+      ],
+      "eventId": "evt_156d062915c6",
+      "eventType": "rebirth",
+      "summary": "方焕从土丘中重生，自称熔岩魔君",
+      "actors": [
+        "方焕"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方焕复活，但不知内情"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0077",
+          "startOffset": 7482855,
+          "endOffset": 7482887,
+          "summary": "白凝冰杀死方焕，拦腰切断并搜魂"
+        }
+      ],
+      "eventId": "evt_f970bb7f4a5c",
+      "eventType": "death",
+      "summary": "白凝冰杀死方焕，拦腰切断并搜魂",
+      "actors": [
+        "方焕",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方焕死亡，魂魄被白凝冰俘虏"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0070",
+          "startOffset": 7482592,
+          "endOffset": 7482673,
+          "summary": "方焕与兽群战斗，释放赤红光波杀死大量猛兽"
+        }
+      ],
+      "eventId": "evt_a6e8022b6b3b",
+      "eventType": "conflict",
+      "summary": "方焕与兽群战斗，释放赤红光波杀死大量猛兽",
+      "actors": [
+        "方焕",
+        "兽群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "兽群死伤惨重，但仍有数头太古荒兽冲到方焕面前"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0073",
+          "startOffset": 7482741,
+          "endOffset": 7482784,
+          "summary": "方焕请求白凝冰相助，承诺重谢"
+        }
+      ],
+      "eventId": "evt_4ffd613fd65b",
+      "eventType": "trade",
+      "summary": "方焕请求白凝冰相助，承诺重谢",
+      "actors": [
+        "方焕",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰答应并杀死太古荒兽，但随后反悔杀死方焕"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0085",
+          "startOffset": 7483139,
+          "endOffset": 7483179,
+          "summary": "白凝冰勘探土丘，发现土道、炎道道痕消失，凝聚到方焕仙躯中"
+        }
+      ],
+      "eventId": "evt_5ba8922f4540",
+      "eventType": "other",
+      "summary": "白凝冰勘探土丘，发现土道、炎道道痕消失，凝聚到方焕仙躯中",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰认为土丘与天庭仙墓功效一致，能让蛊仙重生"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0100",
+          "startOffset": 7483672,
+          "endOffset": 7483719,
+          "summary": "方源发布任务，多位蛊仙参与修复铜印山，使其恢复旧观并扩大"
+        }
+      ],
+      "eventId": "evt_88eb8a023081",
+      "eventType": "other",
+      "summary": "方源发布任务，多位蛊仙参与修复铜印山，使其恢复旧观并扩大",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "铜印山被修复并扩大"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0006",
+          "startOffset": 7480211,
+          "endOffset": 7480246,
+          "summary": "白凝冰结束闭关，修成一记冰雪杀招，并对冰雪道有所领悟，距离宗师境界不远。"
+        }
+      ],
+      "timelineId": "tl_f690e2a12dc4",
+      "eventId": "evt_f690e2a12dc4",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰结束闭关，修成一记冰雪杀招，并对冰雪道有所领悟，距离宗师境界不远。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0030",
+          "startOffset": 7481210,
+          "endOffset": 7481256,
+          "summary": "白凝冰发现地沟深处爆发大规模兽潮，大多数野兽向同一方向奔腾。"
+        }
+      ],
+      "timelineId": "tl_53706a86fe06",
+      "eventId": "evt_53706a86fe06",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰发现地沟深处爆发大规模兽潮，大多数野兽向同一方向奔腾。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0060",
+          "startOffset": 7482326,
+          "endOffset": 7482354,
+          "summary": "方焕从土丘中重生，土丘裂开，蛊仙气息四溢"
+        }
+      ],
+      "timelineId": "tl_68a8d19e5b94",
+      "eventId": "evt_68a8d19e5b94",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "方焕从土丘中重生，土丘裂开，蛊仙气息四溢",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0049",
+          "startOffset": 7481904,
+          "endOffset": 7481932,
+          "summary": "兽群被土丘吸引，相互厮杀，争夺进入光柱的机会"
+        }
+      ],
+      "timelineId": "tl_3d410bdc58e3",
+      "eventId": "evt_3d410bdc58e3",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "兽群被土丘吸引，相互厮杀，争夺进入光柱的机会",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0066",
+          "startOffset": 7482489,
+          "endOffset": 7482531,
+          "summary": "方焕从土丘中重生，自称熔岩魔君"
+        }
+      ],
+      "timelineId": "tl_156d062915c6",
+      "eventId": "evt_156d062915c6",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "方焕从土丘中重生，自称熔岩魔君",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0077",
+          "startOffset": 7482855,
+          "endOffset": 7482887,
+          "summary": "白凝冰杀死方焕，拦腰切断并搜魂"
+        }
+      ],
+      "timelineId": "tl_f970bb7f4a5c",
+      "eventId": "evt_f970bb7f4a5c",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰杀死方焕，拦腰切断并搜魂",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0070",
+          "startOffset": 7482592,
+          "endOffset": 7482673,
+          "summary": "方焕与兽群战斗，释放赤红光波杀死大量猛兽"
+        }
+      ],
+      "timelineId": "tl_a6e8022b6b3b",
+      "eventId": "evt_a6e8022b6b3b",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "方焕与兽群战斗，释放赤红光波杀死大量猛兽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0073",
+          "startOffset": 7482741,
+          "endOffset": 7482784,
+          "summary": "方焕请求白凝冰相助，承诺重谢"
+        }
+      ],
+      "timelineId": "tl_4ffd613fd65b",
+      "eventId": "evt_4ffd613fd65b",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "方焕请求白凝冰相助，承诺重谢",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0085",
+          "startOffset": 7483139,
+          "endOffset": 7483179,
+          "summary": "白凝冰勘探土丘，发现土道、炎道道痕消失，凝聚到方焕仙躯中"
+        }
+      ],
+      "timelineId": "tl_5ba8922f4540",
+      "eventId": "evt_5ba8922f4540",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰勘探土丘，发现土道、炎道道痕消失，凝聚到方焕仙躯中",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2147",
+          "paragraphId": "ch_2147_p0100",
+          "startOffset": 7483672,
+          "endOffset": 7483719,
+          "summary": "方源发布任务，多位蛊仙参与修复铜印山，使其恢复旧观并扩大"
+        }
+      ],
+      "timelineId": "tl_88eb8a023081",
+      "eventId": "evt_88eb8a023081",
+      "chapterId": "ch_2147",
+      "orderHint": "chapter-order",
+      "summary": "方源发布任务，多位蛊仙参与修复铜印山，使其恢复旧观并扩大",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0005",
+      "startOffset": 7480198,
+      "endOffset": 7480207,
+      "summary": "龙人，七转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0034",
+      "startOffset": 7481394,
+      "endOffset": 7481405,
+      "summary": "蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0063",
+      "startOffset": 7482420,
+      "endOffset": 7482452,
+      "summary": "男仙，从土丘中重生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0066",
+      "startOffset": 7482489,
+      "endOffset": 7482531,
+      "summary": "重生男仙，专修土道兼修炎道，曾经营火怪生意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0080",
+      "startOffset": 7482959,
+      "endOffset": 7483016,
+      "summary": "女仙，淡蓝竖眸龙瞳，额头红珊瑚龙角，银发"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0100",
+      "startOffset": 7483672,
+      "endOffset": 7483719,
+      "summary": "蛊仙，发布任务修复铜印山"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0061",
+      "startOffset": 7482358,
+      "endOffset": 7482391,
+      "summary": "白凝冰目睹方焕从土丘中重生，目前无直接互动"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0077",
+      "startOffset": 7482855,
+      "endOffset": 7482887,
+      "summary": "白凝冰杀死方焕并搜魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0006",
+      "startOffset": 7480211,
+      "endOffset": 7480246,
+      "summary": "白凝冰结束闭关，修成一记冰雪杀招，并对冰雪道有所领悟，距离宗师境界不远。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0030",
+      "startOffset": 7481210,
+      "endOffset": 7481256,
+      "summary": "白凝冰发现地沟深处爆发大规模兽潮，大多数野兽向同一方向奔腾。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0060",
+      "startOffset": 7482326,
+      "endOffset": 7482354,
+      "summary": "方焕从土丘中重生，土丘裂开，蛊仙气息四溢"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0049",
+      "startOffset": 7481904,
+      "endOffset": 7481932,
+      "summary": "兽群被土丘吸引，相互厮杀，争夺进入光柱的机会"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0070",
+      "startOffset": 7482592,
+      "endOffset": 7482673,
+      "summary": "方焕与兽群战斗，释放赤红光波杀死大量猛兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0073",
+      "startOffset": 7482741,
+      "endOffset": 7482784,
+      "summary": "方焕请求白凝冰相助，承诺重谢"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2147",
+      "paragraphId": "ch_2147_p0085",
+      "startOffset": 7483139,
+      "endOffset": 7483179,
+      "summary": "白凝冰勘探土丘，发现土道、炎道道痕消失，凝聚到方焕仙躯中"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes events that are mostly publicly observable (Bai Ning Bing's cultivation breakthrough, beast tide, Fang Huan's rebirth and death, soul search). No clearly hidden/private knowledge, future-known information, or secret motives/plans are directly supported by the source pointers. The soul search (ch_2147_p0077) could imply Bai Ning Bing learned something private from Fang Huan, but the source quote only shows the action of soul search, not what knowledge was obtained. No source pointer directly supports any specific fact that Bai Ning Bing learned from the soul search. Without a source quote stating the content of what was learned, this cannot be asserted as a hidden fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "白凝冰的行为（好奇观察兽潮、目睹方焕重生、答应相助后反悔搜魂）可见其行动模式，但动机模糊。她可能出于好奇观察，也可能出于利益考量杀死方焕搜魂，但种子中未直接支持任何单一动机推断。仅凭'好奇心大起'和'搜魂更加直接方便'不足以推断深层动机如'夺取情报'或'杀人灭口'，属于行为可见但动机ambiguous的情况。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily involves individual actors (白凝冰, 方焕, 方源) and a beast horde (兽群). No named or directly implied collective faction, clan, family, or organization appears in the seed facts or relations. 白凝冰 and 方焕 are individual persons, not linked to any named collective stake. 兽群 is a temporary aggregation of beasts, not a stable faction/group. 方源 appears only as a reference for a task. No faction/group pressure candidate can be extracted.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

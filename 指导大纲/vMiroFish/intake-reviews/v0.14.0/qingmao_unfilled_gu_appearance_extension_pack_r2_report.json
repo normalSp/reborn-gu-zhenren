@@ -1,0 +1,51 @@
+{
+  "requestId": "qingmao_unfilled_gu_appearance_extension_pack_r2",
+  "generatedAt": "2026-05-17T18:34:59.951890+00:00",
+  "outputName": "qingmao_unfilled_gu_appearance_extension_pack_r2_export_ready.json",
+  "coverage": {
+    "requestedRows": 4,
+    "deliveredRows": 4,
+    "rowsWithSourcePointers": 4,
+    "rowsWithRequestedExactNameHits": 1,
+    "rowsWithAliasOrEffectHits": 4,
+    "directAppearanceOrPartialRows": 4,
+    "evidenceStatusCounts": {
+      "direct_appearance_partial": 4
+    },
+    "pointerWindowTierCounts": {
+      "vol1_late": 18
+    },
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "passesRequestThreshold": true,
+      "strictExactNamePass": false,
+      "notes": [
+        "passesRequestThreshold is alias/effect-aware and does not mean body-form confirmation",
+        "strictExactNamePass remains false because only 扬眉吐气蛊 has an exact requested-name hit",
+        "second-volume 401-600 scan added no accepted source-name/body anchors for these four rows"
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenFieldKeyCount": 0,
+    "highRankLeakCount": 0,
+    "hiddenFactItemCount": 0,
+    "itemsWithSourcePointers": 4,
+    "itemsRequiringHumanCanonReview": 4,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "acceptanceInterpretation": {
+    "aliasAware": "passes as conditional candidate evidence for art prompt seed review",
+    "strictExactName": "does not pass; only 扬眉吐气蛊 has exact requested-name evidence",
+    "bodyConfirmation": "does not pass; all four remain effect/context visual anchors, not confirmed specimen body descriptions"
+  },
+  "manualReviewFocus": [
+    "Decide whether 漩涡蛊 can be aligned to 旋踵蛊/狂风蛊 evidence or must remain atlas-pending.",
+    "Decide whether 烈风蛊 should be renamed/aligned to 狂风蛊 or kept pending.",
+    "Decide whether 雷眼蛊 should be renamed/aligned to 电眼蛊 before any atlas/image-map use.",
+    "Treat 扬眉吐气蛊 as concept/effect-only; avoid body specimen art unless design intentionally invents a non-canon visual."
+  ]
+}

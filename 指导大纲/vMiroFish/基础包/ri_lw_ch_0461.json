@@ -1,0 +1,1369 @@
+{
+  "packageId": "ri_lw_ch_0461",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0461"
+    ],
+    "paragraphIds": [
+      "ch_0461_p0002",
+      "ch_0461_p0003",
+      "ch_0461_p0004",
+      "ch_0461_p0005",
+      "ch_0461_p0015",
+      "ch_0461_p0022",
+      "ch_0461_p0026",
+      "ch_0461_p0027",
+      "ch_0461_p0028",
+      "ch_0461_p0033",
+      "ch_0461_p0036",
+      "ch_0461_p0038",
+      "ch_0461_p0045",
+      "ch_0461_p0046",
+      "ch_0461_p0048",
+      "ch_0461_p0049",
+      "ch_0461_p0055",
+      "ch_0461_p0056",
+      "ch_0461_p0064",
+      "ch_0461_p0066",
+      "ch_0461_p0071",
+      "ch_0461_p0072",
+      "ch_0461_p0074",
+      "ch_0461_p0076",
+      "ch_0461_p0077",
+      "ch_0461_p0079",
+      "ch_0461_p0086"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0002",
+          "startOffset": 1601629,
+          "endOffset": 1601633,
+          "summary": "葛家成员，老族长之子"
+        }
+      ],
+      "entityId": "entity_b09625e3ef2e",
+      "name": "葛光",
+      "kind": "person",
+      "aliases": [],
+      "description": "葛家成员，老族长之子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0003",
+          "startOffset": 1601661,
+          "endOffset": 1601664,
+          "summary": "狼群首领，被方源控制"
+        }
+      ],
+      "entityId": "entity_8bf89239ccdd",
+      "name": "夜狼王",
+      "kind": "person",
+      "aliases": [],
+      "description": "狼群首领，被方源控制",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0003",
+          "startOffset": 1601666,
+          "endOffset": 1601672,
+          "summary": "葛家族长，葛光之父"
+        }
+      ],
+      "entityId": "entity_13c8913f2fc1",
+      "name": "葛家老族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "葛家族长，葛光之父",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0004",
+          "startOffset": 1601701,
+          "endOffset": 1601703,
+          "summary": "蛊师，控制夜狼王"
+        }
+      ],
+      "entityId": "entity_33d45172c80c",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，控制夜狼王",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0026",
+          "startOffset": 1602336,
+          "endOffset": 1602339,
+          "summary": "被老族长提及但未说出名字"
+        }
+      ],
+      "entityId": "entity_19b66f421c2e",
+      "name": "常山阴",
+      "kind": "person",
+      "aliases": [],
+      "description": "被老族长提及但未说出名字",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0033",
+          "startOffset": 1602590,
+          "endOffset": 1602637,
+          "summary": "葛家前任族长"
+        }
+      ],
+      "entityId": "entity_068d73dcfc9a",
+      "name": "葛家族长（老族长）",
+      "kind": "single_person_title",
+      "aliases": [
+        "老族长",
+        "葛家族长"
+      ],
+      "description": "葛家前任族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0033",
+          "startOffset": 1602608,
+          "endOffset": 1602610,
+          "summary": "葛家新任族长"
+        }
+      ],
+      "entityId": "entity_b09625e3ef2e",
+      "name": "葛光",
+      "kind": "person",
+      "aliases": [],
+      "description": "葛家新任族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0045",
+          "startOffset": 1602973,
+          "endOffset": 1602975,
+          "summary": "蛮家首领"
+        }
+      ],
+      "entityId": "entity_9d0ff7634d62",
+      "name": "蛮图",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛮家首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0048",
+          "startOffset": 1603066,
+          "endOffset": 1603068,
+          "summary": "蛮图之子"
+        }
+      ],
+      "entityId": "entity_297b84844452",
+      "name": "蛮多",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛮图之子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0049",
+          "startOffset": 1603156,
+          "endOffset": 1603159,
+          "summary": "狼王，四转蛊师"
+        }
+      ],
+      "entityId": "entity_19b66f421c2e",
+      "name": "常山阴",
+      "kind": "person",
+      "aliases": [
+        "狼王"
+      ],
+      "description": "狼王，四转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0049",
+          "startOffset": 1603169,
+          "endOffset": 1603172,
+          "summary": "夜狼群首领"
+        }
+      ],
+      "entityId": "entity_8bf89239ccdd",
+      "name": "夜狼王",
+      "kind": "person",
+      "aliases": [],
+      "description": "夜狼群首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0066",
+          "startOffset": 1604086,
+          "endOffset": 1604090,
+          "summary": "伪装成常山的蛊师，实际是重生者"
+        }
+      ],
+      "entityId": "entity_33d45172c80c",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "常叔叔"
+      ],
+      "description": "伪装成常山的蛊师，实际是重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0071",
+          "startOffset": 1604273,
+          "endOffset": 1604278,
+          "summary": "葛家前任族长，已牺牲"
+        }
+      ],
+      "entityId": "entity_13c8913f2fc1",
+      "name": "葛家老族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "葛家前任族长，已牺牲",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0072",
+          "startOffset": 1604343,
+          "endOffset": 1604345,
+          "summary": "葛家新任族长"
+        }
+      ],
+      "entityId": "entity_b09625e3ef2e",
+      "name": "葛光",
+      "kind": "person",
+      "aliases": [],
+      "description": "葛家新任族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0002",
+          "startOffset": 1601629,
+          "endOffset": 1601633,
+          "summary": "父子关系"
+        }
+      ],
+      "relationId": "rel_a53631800827",
+      "subject": "葛光",
+      "object": "葛家老族长",
+      "relationType": "FAMILY",
+      "summary": "父子关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0005",
+          "startOffset": 1601726,
+          "endOffset": 1601730,
+          "summary": "方源使用驭狼蛊控制夜狼王"
+        }
+      ],
+      "relationId": "rel_69eb2464eecf",
+      "subject": "方源",
+      "object": "夜狼王",
+      "relationType": "USES",
+      "summary": "方源使用驭狼蛊控制夜狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0027",
+          "startOffset": 1602363,
+          "endOffset": 1602367,
+          "summary": "方源称葛家老族长为葛老哥，表面悲痛"
+        }
+      ],
+      "relationId": "rel_0118d4d146b9",
+      "subject": "方源",
+      "object": "葛家老族长",
+      "relationType": "OTHER",
+      "summary": "方源称葛家老族长为葛老哥，表面悲痛",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0038",
+          "startOffset": 1602817,
+          "endOffset": 1602822,
+          "summary": "父子关系，老族长是葛光的父亲"
+        }
+      ],
+      "relationId": "rel_4103419cf7cd",
+      "subject": "葛家族长（老族长）",
+      "object": "葛光",
+      "relationType": "FAMILY",
+      "summary": "父子关系，老族长是葛光的父亲",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0048",
+          "startOffset": 1603066,
+          "endOffset": 1603068,
+          "summary": "父子关系"
+        }
+      ],
+      "relationId": "rel_43568e590fb5",
+      "subject": "蛮图",
+      "object": "蛮多",
+      "relationType": "FAMILY",
+      "summary": "父子关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0049",
+          "startOffset": 1603156,
+          "endOffset": 1603172,
+          "summary": "常山阴收服了夜狼王"
+        }
+      ],
+      "relationId": "rel_b665380991da",
+      "subject": "常山阴",
+      "object": "夜狼王",
+      "relationType": "ALLY",
+      "summary": "常山阴收服了夜狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0046",
+          "startOffset": 1602989,
+          "endOffset": 1603007,
+          "summary": "蛮家企图吞并葛家，发动战争"
+        }
+      ],
+      "relationId": "rel_18144356ccd9",
+      "subject": "蛮家",
+      "object": "葛家",
+      "relationType": "CONFLICT",
+      "summary": "蛮家企图吞并葛家，发动战争",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0072",
+          "startOffset": 1604343,
+          "endOffset": 1604345,
+          "summary": "方源伪装成常叔叔，与葛光合作，葛光视方源为恩人"
+        }
+      ],
+      "relationId": "rel_af6b99a370fc",
+      "subject": "方源",
+      "object": "葛光",
+      "relationType": "ALLY",
+      "summary": "方源伪装成常叔叔，与葛光合作，葛光视方源为恩人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0077",
+          "startOffset": 1604740,
+          "endOffset": 1604744,
+          "summary": "方源率领狼群协助葛家对抗风狼群，但葛家负担沉重"
+        }
+      ],
+      "relationId": "rel_77f27393e912",
+      "subject": "方源",
+      "object": "葛家",
+      "relationType": "ALLY",
+      "summary": "方源率领狼群协助葛家对抗风狼群，但葛家负担沉重",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0074",
+          "startOffset": 1604485,
+          "endOffset": 1604487,
+          "summary": "葛光是老族长的儿子，老族长死后葛光接任族长"
+        }
+      ],
+      "relationId": "rel_a90108f9acaf",
+      "subject": "葛光",
+      "object": "葛家老族长",
+      "relationType": "FAMILY",
+      "summary": "葛光是老族长的儿子，老族长死后葛光接任族长",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0022",
+          "startOffset": 1602180,
+          "endOffset": 1602184,
+          "summary": "葛家老族长因重伤不治身亡"
+        }
+      ],
+      "eventId": "evt_eff880b3402f",
+      "eventType": "death",
+      "summary": "葛家老族长因重伤不治身亡",
+      "actors": [
+        "葛家老族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛光成为新任族长"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0015",
+          "startOffset": 1601998,
+          "endOffset": 1602002,
+          "summary": "夜狼王袭击葛家，被方源控制后撤退"
+        }
+      ],
+      "eventId": "evt_8f1fac6a456d",
+      "eventType": "conflict",
+      "summary": "夜狼王袭击葛家，被方源控制后撤退",
+      "actors": [
+        "葛家众人",
+        "夜狼王"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛家危机解除"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0028",
+          "startOffset": 1602394,
+          "endOffset": 1602398,
+          "summary": "老族长临终前指定葛光为下任族长"
+        }
+      ],
+      "eventId": "evt_57a5ddd40be7",
+      "eventType": "inheritance",
+      "summary": "老族长临终前指定葛光为下任族长",
+      "actors": [
+        "葛家老族长",
+        "葛光"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛光成为葛家族长"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0036",
+          "startOffset": 1602731,
+          "endOffset": 1602784,
+          "summary": "葛家老族长在抗击狼群战斗中牺牲"
+        }
+      ],
+      "eventId": "evt_8ce5b76c8041",
+      "eventType": "death",
+      "summary": "葛家老族长在抗击狼群战斗中牺牲",
+      "actors": [
+        "葛家族长（老族长）"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛光继任族长，葛家实力大减，常山阴成为唯一四转蛊师"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0056",
+          "startOffset": 1603582,
+          "endOffset": 1603594,
+          "summary": "葛光继任葛家族长之位"
+        }
+      ],
+      "eventId": "evt_a9e1f8ed51b4",
+      "eventType": "inheritance",
+      "summary": "葛光继任葛家族长之位",
+      "actors": [
+        "葛光"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛家权力交接"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0049",
+          "startOffset": 1603114,
+          "endOffset": 1603188,
+          "summary": "蛮家两次进攻葛家失败，因常山阴收服夜狼王而翻盘"
+        }
+      ],
+      "eventId": "evt_e9d70b58ba4d",
+      "eventType": "conflict",
+      "summary": "蛮家两次进攻葛家失败，因常山阴收服夜狼王而翻盘",
+      "actors": [
+        "蛮家",
+        "葛家",
+        "常山阴"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "蛮家计划受挫，葛家暂时安全"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0055",
+          "startOffset": 1603384,
+          "endOffset": 1603548,
+          "summary": "蛮多献计离间葛家和常山阴，但蛮图告知老族长已死，计策无用"
+        }
+      ],
+      "eventId": "evt_4c95459a2f88",
+      "eventType": "other",
+      "summary": "蛮多献计离间葛家和常山阴，但蛮图告知老族长已死，计策无用",
+      "actors": [
+        "蛮图",
+        "蛮多"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "蛮家决定继续引第三波风狼群给葛家造成损失"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0066",
+          "startOffset": 1604086,
+          "endOffset": 1604090,
+          "summary": "方源率领葛家大军迎战风狼群，斩杀风狼万兽王，收编大量千狼王、百狼王，狼群规模增至三万五"
+        }
+      ],
+      "eventId": "evt_ac9d08b477ea",
+      "eventType": "conflict",
+      "summary": "方源率领葛家大军迎战风狼群，斩杀风狼万兽王，收编大量千狼王、百狼王，狼群规模增至三万五",
+      "actors": [
+        "方源",
+        "葛家",
+        "风狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛家付出沉重代价，凡人死伤上万，高层蛊师阵亡，家老只剩一半，老族长牺牲"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0071",
+          "startOffset": 1604273,
+          "endOffset": 1604278,
+          "summary": "葛家老族长在与风狼群的战斗中壮烈牺牲"
+        }
+      ],
+      "eventId": "evt_7654534822cb",
+      "eventType": "death",
+      "summary": "葛家老族长在与风狼群的战斗中壮烈牺牲",
+      "actors": [
+        "葛家老族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛光接任族长"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0072",
+          "startOffset": 1604343,
+          "endOffset": 1604345,
+          "summary": "葛光赠送方源一只四转蛊无常骨，作为报恩"
+        }
+      ],
+      "eventId": "evt_935afdcddf49",
+      "eventType": "trade",
+      "summary": "葛光赠送方源一只四转蛊无常骨，作为报恩",
+      "actors": [
+        "葛光",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源接受蛊虫"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0079",
+          "startOffset": 1604822,
+          "endOffset": 1604826,
+          "summary": "方源决定亲自率领狼群出去觅食，并故意削减狼群数量，产生的狼肉作为葛家族人口粮"
+        }
+      ],
+      "eventId": "evt_c9f38abb1e2d",
+      "eventType": "other",
+      "summary": "方源决定亲自率领狼群出去觅食，并故意削减狼群数量，产生的狼肉作为葛家族人口粮",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狼群将削弱至三王两千头"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0022",
+          "startOffset": 1602180,
+          "endOffset": 1602184,
+          "summary": "葛家老族长因重伤不治身亡"
+        }
+      ],
+      "timelineId": "tl_eff880b3402f",
+      "eventId": "evt_eff880b3402f",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "葛家老族长因重伤不治身亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0015",
+          "startOffset": 1601998,
+          "endOffset": 1602002,
+          "summary": "夜狼王袭击葛家，被方源控制后撤退"
+        }
+      ],
+      "timelineId": "tl_8f1fac6a456d",
+      "eventId": "evt_8f1fac6a456d",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "夜狼王袭击葛家，被方源控制后撤退",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0028",
+          "startOffset": 1602394,
+          "endOffset": 1602398,
+          "summary": "老族长临终前指定葛光为下任族长"
+        }
+      ],
+      "timelineId": "tl_57a5ddd40be7",
+      "eventId": "evt_57a5ddd40be7",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "老族长临终前指定葛光为下任族长",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0036",
+          "startOffset": 1602731,
+          "endOffset": 1602784,
+          "summary": "葛家老族长在抗击狼群战斗中牺牲"
+        }
+      ],
+      "timelineId": "tl_8ce5b76c8041",
+      "eventId": "evt_8ce5b76c8041",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "葛家老族长在抗击狼群战斗中牺牲",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0056",
+          "startOffset": 1603582,
+          "endOffset": 1603594,
+          "summary": "葛光继任葛家族长之位"
+        }
+      ],
+      "timelineId": "tl_a9e1f8ed51b4",
+      "eventId": "evt_a9e1f8ed51b4",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "葛光继任葛家族长之位",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0049",
+          "startOffset": 1603114,
+          "endOffset": 1603188,
+          "summary": "蛮家两次进攻葛家失败，因常山阴收服夜狼王而翻盘"
+        }
+      ],
+      "timelineId": "tl_e9d70b58ba4d",
+      "eventId": "evt_e9d70b58ba4d",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "蛮家两次进攻葛家失败，因常山阴收服夜狼王而翻盘",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0055",
+          "startOffset": 1603384,
+          "endOffset": 1603548,
+          "summary": "蛮多献计离间葛家和常山阴，但蛮图告知老族长已死，计策无用"
+        }
+      ],
+      "timelineId": "tl_4c95459a2f88",
+      "eventId": "evt_4c95459a2f88",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "蛮多献计离间葛家和常山阴，但蛮图告知老族长已死，计策无用",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0066",
+          "startOffset": 1604086,
+          "endOffset": 1604090,
+          "summary": "方源率领葛家大军迎战风狼群，斩杀风狼万兽王，收编大量千狼王、百狼王，狼群规模增至三万五"
+        }
+      ],
+      "timelineId": "tl_ac9d08b477ea",
+      "eventId": "evt_ac9d08b477ea",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "方源率领葛家大军迎战风狼群，斩杀风狼万兽王，收编大量千狼王、百狼王，狼群规模增至三万五",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0071",
+          "startOffset": 1604273,
+          "endOffset": 1604278,
+          "summary": "葛家老族长在与风狼群的战斗中壮烈牺牲"
+        }
+      ],
+      "timelineId": "tl_7654534822cb",
+      "eventId": "evt_7654534822cb",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "葛家老族长在与风狼群的战斗中壮烈牺牲",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0072",
+          "startOffset": 1604343,
+          "endOffset": 1604345,
+          "summary": "葛光赠送方源一只四转蛊无常骨，作为报恩"
+        }
+      ],
+      "timelineId": "tl_935afdcddf49",
+      "eventId": "evt_935afdcddf49",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "葛光赠送方源一只四转蛊无常骨，作为报恩",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0079",
+          "startOffset": 1604822,
+          "endOffset": 1604826,
+          "summary": "方源决定亲自率领狼群出去觅食，并故意削减狼群数量，产生的狼肉作为葛家族人口粮"
+        }
+      ],
+      "timelineId": "tl_c9f38abb1e2d",
+      "eventId": "evt_c9f38abb1e2d",
+      "chapterId": "ch_0461",
+      "orderHint": "chapter-order",
+      "summary": "方源决定亲自率领狼群出去觅食，并故意削减狼群数量，产生的狼肉作为葛家族人口粮",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0002",
+          "startOffset": 1601629,
+          "endOffset": 1601633,
+          "summary": "葛家成员，老族长之子"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0033",
+          "startOffset": 1602590,
+          "endOffset": 1602637,
+          "summary": "葛家前任族长"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0033",
+          "startOffset": 1602608,
+          "endOffset": 1602610,
+          "summary": "葛家新任族长"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0045",
+          "startOffset": 1602973,
+          "endOffset": 1602975,
+          "summary": "蛮家首领"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0071",
+          "startOffset": 1604273,
+          "endOffset": 1604278,
+          "summary": "葛家前任族长，已牺牲"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0461",
+          "paragraphId": "ch_0461_p0072",
+          "startOffset": 1604343,
+          "endOffset": 1604345,
+          "summary": "葛家新任族长"
+        }
+      ],
+      "pressureId": "pressure_ge_jia_inheritance",
+      "faction": "葛家",
+      "pressureAxis": "族长继承与外部威胁",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "巩固内部",
+        "防范蛮家"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0002",
+      "startOffset": 1601629,
+      "endOffset": 1601633,
+      "summary": "葛家成员，老族长之子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0003",
+      "startOffset": 1601661,
+      "endOffset": 1601664,
+      "summary": "狼群首领，被方源控制"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0003",
+      "startOffset": 1601666,
+      "endOffset": 1601672,
+      "summary": "葛家族长，葛光之父"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0004",
+      "startOffset": 1601701,
+      "endOffset": 1601703,
+      "summary": "蛊师，控制夜狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0026",
+      "startOffset": 1602336,
+      "endOffset": 1602339,
+      "summary": "被老族长提及但未说出名字"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0033",
+      "startOffset": 1602590,
+      "endOffset": 1602637,
+      "summary": "葛家前任族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0033",
+      "startOffset": 1602608,
+      "endOffset": 1602610,
+      "summary": "葛家新任族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0045",
+      "startOffset": 1602973,
+      "endOffset": 1602975,
+      "summary": "蛮家首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0048",
+      "startOffset": 1603066,
+      "endOffset": 1603068,
+      "summary": "蛮图之子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0049",
+      "startOffset": 1603156,
+      "endOffset": 1603159,
+      "summary": "狼王，四转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0049",
+      "startOffset": 1603169,
+      "endOffset": 1603172,
+      "summary": "夜狼群首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0066",
+      "startOffset": 1604086,
+      "endOffset": 1604090,
+      "summary": "伪装成常山的蛊师，实际是重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0071",
+      "startOffset": 1604273,
+      "endOffset": 1604278,
+      "summary": "葛家前任族长，已牺牲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0072",
+      "startOffset": 1604343,
+      "endOffset": 1604345,
+      "summary": "葛家新任族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0005",
+      "startOffset": 1601726,
+      "endOffset": 1601730,
+      "summary": "方源使用驭狼蛊控制夜狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0027",
+      "startOffset": 1602363,
+      "endOffset": 1602367,
+      "summary": "方源称葛家老族长为葛老哥，表面悲痛"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0038",
+      "startOffset": 1602817,
+      "endOffset": 1602822,
+      "summary": "父子关系，老族长是葛光的父亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0049",
+      "startOffset": 1603156,
+      "endOffset": 1603172,
+      "summary": "常山阴收服了夜狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0046",
+      "startOffset": 1602989,
+      "endOffset": 1603007,
+      "summary": "蛮家企图吞并葛家，发动战争"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0077",
+      "startOffset": 1604740,
+      "endOffset": 1604744,
+      "summary": "方源率领狼群协助葛家对抗风狼群，但葛家负担沉重"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0074",
+      "startOffset": 1604485,
+      "endOffset": 1604487,
+      "summary": "葛光是老族长的儿子，老族长死后葛光接任族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0022",
+      "startOffset": 1602180,
+      "endOffset": 1602184,
+      "summary": "葛家老族长因重伤不治身亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0015",
+      "startOffset": 1601998,
+      "endOffset": 1602002,
+      "summary": "夜狼王袭击葛家，被方源控制后撤退"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0028",
+      "startOffset": 1602394,
+      "endOffset": 1602398,
+      "summary": "老族长临终前指定葛光为下任族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0036",
+      "startOffset": 1602731,
+      "endOffset": 1602784,
+      "summary": "葛家老族长在抗击狼群战斗中牺牲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0056",
+      "startOffset": 1603582,
+      "endOffset": 1603594,
+      "summary": "葛光继任葛家族长之位"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0049",
+      "startOffset": 1603114,
+      "endOffset": 1603188,
+      "summary": "蛮家两次进攻葛家失败，因常山阴收服夜狼王而翻盘"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0055",
+      "startOffset": 1603384,
+      "endOffset": 1603548,
+      "summary": "蛮多献计离间葛家和常山阴，但蛮图告知老族长已死，计策无用"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0461",
+      "paragraphId": "ch_0461_p0079",
+      "startOffset": 1604822,
+      "endOffset": 1604826,
+      "summary": "方源决定亲自率领狼群出去觅食，并故意削减狼群数量，产生的狼肉作为葛家族人口粮"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes public events (battle, inheritance, death of old clan leader) that are visible to all participants. No private knowledge, secret motives/plans, or future-known information is directly supported by the source text. The fact that Fang Yuan controls Night Wolf King is already known to Ge Guang (he witnessed it). The old clan leader's dying words about 'Chang Shanyin' are spoken publicly. No hidden fact candidate can be extracted without speculation or extrapolation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "葛光主动拜访方源（ptr_14）表明行为，但动机不明——可能是感谢、求助、拉拢或试探。种子仅记录拜访行为，未提供葛光内心想法或对话内容，无法做谨慎的一步推断而不超出证据。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "葛家老族长牺牲，葛光继任族长，蛮家企图吞并葛家，葛家面临继承过渡期和外部军事压力双重压力。种子明确提到蛮家与葛家的冲突关系，以及葛光新任族长身份，符合集体actor条件。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

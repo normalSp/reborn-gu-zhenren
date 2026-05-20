@@ -1,0 +1,794 @@
+{
+  "packageId": "ri_lw_ch_0821",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0821"
+    ],
+    "paragraphIds": [
+      "ch_0821_p0003",
+      "ch_0821_p0008",
+      "ch_0821_p0015",
+      "ch_0821_p0018",
+      "ch_0821_p0027",
+      "ch_0821_p0028",
+      "ch_0821_p0031",
+      "ch_0821_p0033",
+      "ch_0821_p0034",
+      "ch_0821_p0043",
+      "ch_0821_p0054",
+      "ch_0821_p0055",
+      "ch_0821_p0056",
+      "ch_0821_p0057",
+      "ch_0821_p0058",
+      "ch_0821_p0063",
+      "ch_0821_p0067",
+      "ch_0821_p0068",
+      "ch_0821_p0070",
+      "ch_0821_p0073",
+      "ch_0821_p0076",
+      "ch_0821_p0077",
+      "ch_0821_p0078",
+      "ch_0821_p0085"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0003",
+          "startOffset": 2894112,
+          "endOffset": 2894114,
+          "summary": "魔道蛊师，拥有仙窍"
+        }
+      ],
+      "entityId": "entity_ca51f26cb658",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，拥有仙窍",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0033",
+          "startOffset": 2895261,
+          "endOffset": 2895308,
+          "summary": "主角，智道修行者"
+        }
+      ],
+      "entityId": "entity_ca51f26cb658",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，智道修行者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0043",
+          "startOffset": 2895601,
+          "endOffset": 2895664,
+          "summary": "智道传承者"
+        }
+      ],
+      "entityId": "entity_985640353ec7",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "智道传承者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0056",
+          "startOffset": 2896107,
+          "endOffset": 2896215,
+          "summary": "提供仙道杀招时济运"
+        }
+      ],
+      "entityId": "entity_641b57637b61",
+      "name": "黎山仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "提供仙道杀招时济运",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0067",
+          "startOffset": 2896636,
+          "endOffset": 2896671,
+          "summary": "仙僵，智道传承钻研者"
+        }
+      ],
+      "entityId": "entity_ca51f26cb658",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙僵，智道传承钻研者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0085",
+          "startOffset": 2897485,
+          "endOffset": 2897545,
+          "summary": "智道传承最后一任继承者"
+        }
+      ],
+      "entityId": "entity_985640353ec7",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "智道传承最后一任继承者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0008",
+          "startOffset": 2894255,
+          "endOffset": 2894293,
+          "summary": "方源喂养净魂仙蛊"
+        }
+      ],
+      "relationId": "rel_6c3a983227da",
+      "subject": "方源",
+      "object": "净魂仙蛊",
+      "relationType": "USES",
+      "summary": "方源喂养净魂仙蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0031",
+          "startOffset": 2895160,
+          "endOffset": 2895225,
+          "summary": "方源蹭用智慧蛊的智慧之光"
+        }
+      ],
+      "relationId": "rel_5a1376d0a954",
+      "subject": "方源",
+      "object": "智慧蛊",
+      "relationType": "USES",
+      "summary": "方源蹭用智慧蛊的智慧之光",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0033",
+          "startOffset": 2895261,
+          "endOffset": 2895308,
+          "summary": "方源使用智慧蛊散发智慧光晕辅助推算"
+        }
+      ],
+      "relationId": "rel_05cf16ee1268",
+      "subject": "方源",
+      "object": "智慧蛊",
+      "relationType": "USES",
+      "summary": "方源使用智慧蛊散发智慧光晕辅助推算",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0034",
+          "startOffset": 2895312,
+          "endOffset": 2895320,
+          "summary": "方源催动星念蛊产生念头用于推算"
+        }
+      ],
+      "relationId": "rel_4a1c409607dc",
+      "subject": "方源",
+      "object": "星念蛊",
+      "relationType": "USES",
+      "summary": "方源催动星念蛊产生念头用于推算",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0043",
+          "startOffset": 2895601,
+          "endOffset": 2895664,
+          "summary": "方源获得东方长凡的智道传承"
+        }
+      ],
+      "relationId": "rel_544d9132079f",
+      "subject": "方源",
+      "object": "东方长凡",
+      "relationType": "OTHER",
+      "summary": "方源获得东方长凡的智道传承",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0056",
+          "startOffset": 2896107,
+          "endOffset": 2896215,
+          "summary": "方源从黎山仙子处得到仙道杀招时济运"
+        }
+      ],
+      "relationId": "rel_47504882855b",
+      "subject": "方源",
+      "object": "黎山仙子",
+      "relationType": "TRADE",
+      "summary": "方源从黎山仙子处得到仙道杀招时济运",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0015",
+          "startOffset": 2894496,
+          "endOffset": 2894547,
+          "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险"
+        }
+      ],
+      "eventId": "evt_97946fe67619",
+      "eventType": "other",
+      "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "净魂仙蛊暂时存活，方源争取到时间"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0027",
+          "startOffset": 2894971,
+          "endOffset": 2895047,
+          "summary": "方源赶到地底洞窟观察智慧蛊"
+        }
+      ],
+      "eventId": "evt_4909eb65194a",
+      "eventType": "other",
+      "summary": "方源赶到地底洞窟观察智慧蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "发现智慧蛊围绕灵芝王飞舞"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0033",
+          "startOffset": 2895261,
+          "endOffset": 2895308,
+          "summary": "方源使用智慧蛊和星念蛊进行推算，测试智道传承"
+        }
+      ],
+      "eventId": "evt_a12b134e9b67",
+      "eventType": "cultivation",
+      "summary": "方源使用智慧蛊和星念蛊进行推算，测试智道传承",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源确认星念蛊擅长推算，一个星念抵三四个恶念、忆念"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0054",
+          "startOffset": 2896045,
+          "endOffset": 2896076,
+          "summary": "方源列出推算计划：见面似相识、血神子、时运仙蛊与寸光阴配合（已放弃）、拔山挽澜融入万我、改良气囊蛊等蛊方"
+        }
+      ],
+      "eventId": "evt_ba3210ae5e2b",
+      "eventType": "other",
+      "summary": "方源列出推算计划：见面似相识、血神子、时运仙蛊与寸光阴配合（已放弃）、拔山挽澜融入万我、改良气囊蛊等蛊方",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定优先推算见面似相识和将拔山仙蛊融入万我杀招"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0068",
+          "startOffset": 2896675,
+          "endOffset": 2896744,
+          "summary": "方源将拔山仙蛊成功融合到杀招万我中，万我之威暴涨一成，对付土道蛊仙或山川陨石效果多出两成。"
+        }
+      ],
+      "eventId": "evt_ed1ea901bf20",
+      "eventType": "cultivation",
+      "summary": "方源将拔山仙蛊成功融合到杀招万我中，万我之威暴涨一成，对付土道蛊仙或山川陨石效果多出两成。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "杀招万我威力提升"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0070",
+          "startOffset": 2896761,
+          "endOffset": 2896777,
+          "summary": "方源检查星念蛊，仙窍中剩余近四万只，推算消耗一万多只。"
+        }
+      ],
+      "eventId": "evt_bfee40bef9b4",
+      "eventType": "other",
+      "summary": "方源检查星念蛊，仙窍中剩余近四万只，推算消耗一万多只。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "星念蛊消耗情况明确"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0077",
+          "startOffset": 2896999,
+          "endOffset": 2897019,
+          "summary": "方源回到荡魂行宫继续钻研智道传承。"
+        }
+      ],
+      "eventId": "evt_fd4ad11bad00",
+      "eventType": "other",
+      "summary": "方源回到荡魂行宫继续钻研智道传承。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源继续修行智道"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0015",
+          "startOffset": 2894496,
+          "endOffset": 2894547,
+          "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险"
+        }
+      ],
+      "timelineId": "tl_97946fe67619",
+      "eventId": "evt_97946fe67619",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0027",
+          "startOffset": 2894971,
+          "endOffset": 2895047,
+          "summary": "方源赶到地底洞窟观察智慧蛊"
+        }
+      ],
+      "timelineId": "tl_4909eb65194a",
+      "eventId": "evt_4909eb65194a",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源赶到地底洞窟观察智慧蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0033",
+          "startOffset": 2895261,
+          "endOffset": 2895308,
+          "summary": "方源使用智慧蛊和星念蛊进行推算，测试智道传承"
+        }
+      ],
+      "timelineId": "tl_a12b134e9b67",
+      "eventId": "evt_a12b134e9b67",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源使用智慧蛊和星念蛊进行推算，测试智道传承",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0054",
+          "startOffset": 2896045,
+          "endOffset": 2896076,
+          "summary": "方源列出推算计划：见面似相识、血神子、时运仙蛊与寸光阴配合（已放弃）、拔山挽澜融入万我、改良气囊蛊等蛊方"
+        }
+      ],
+      "timelineId": "tl_ba3210ae5e2b",
+      "eventId": "evt_ba3210ae5e2b",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源列出推算计划：见面似相识、血神子、时运仙蛊与寸光阴配合（已放弃）、拔山挽澜融入万我、改良气囊蛊等蛊方",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0068",
+          "startOffset": 2896675,
+          "endOffset": 2896744,
+          "summary": "方源将拔山仙蛊成功融合到杀招万我中，万我之威暴涨一成，对付土道蛊仙或山川陨石效果多出两成。"
+        }
+      ],
+      "timelineId": "tl_ed1ea901bf20",
+      "eventId": "evt_ed1ea901bf20",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源将拔山仙蛊成功融合到杀招万我中，万我之威暴涨一成，对付土道蛊仙或山川陨石效果多出两成。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0070",
+          "startOffset": 2896761,
+          "endOffset": 2896777,
+          "summary": "方源检查星念蛊，仙窍中剩余近四万只，推算消耗一万多只。"
+        }
+      ],
+      "timelineId": "tl_bfee40bef9b4",
+      "eventId": "evt_bfee40bef9b4",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源检查星念蛊，仙窍中剩余近四万只，推算消耗一万多只。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0077",
+          "startOffset": 2896999,
+          "endOffset": 2897019,
+          "summary": "方源回到荡魂行宫继续钻研智道传承。"
+        }
+      ],
+      "timelineId": "tl_fd4ad11bad00",
+      "eventId": "evt_fd4ad11bad00",
+      "chapterId": "ch_0821",
+      "orderHint": "chapter-order",
+      "summary": "方源回到荡魂行宫继续钻研智道传承。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0008",
+          "startOffset": 2894255,
+          "endOffset": 2894293,
+          "summary": "方源喂养净魂仙蛊"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0821",
+          "paragraphId": "ch_0821_p0015",
+          "startOffset": 2894496,
+          "endOffset": 2894547,
+          "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "喂养净魂仙蛊使其存活",
+      "inferredMotive": "保住净魂仙蛊以维持战力",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0003",
+      "startOffset": 2894112,
+      "endOffset": 2894114,
+      "summary": "魔道蛊师，拥有仙窍"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0033",
+      "startOffset": 2895261,
+      "endOffset": 2895308,
+      "summary": "主角，智道修行者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0043",
+      "startOffset": 2895601,
+      "endOffset": 2895664,
+      "summary": "智道传承者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0056",
+      "startOffset": 2896107,
+      "endOffset": 2896215,
+      "summary": "提供仙道杀招时济运"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0067",
+      "startOffset": 2896636,
+      "endOffset": 2896671,
+      "summary": "仙僵，智道传承钻研者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0085",
+      "startOffset": 2897485,
+      "endOffset": 2897545,
+      "summary": "智道传承最后一任继承者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0008",
+      "startOffset": 2894255,
+      "endOffset": 2894293,
+      "summary": "方源喂养净魂仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0031",
+      "startOffset": 2895160,
+      "endOffset": 2895225,
+      "summary": "方源蹭用智慧蛊的智慧之光"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0034",
+      "startOffset": 2895312,
+      "endOffset": 2895320,
+      "summary": "方源催动星念蛊产生念头用于推算"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0015",
+      "startOffset": 2894496,
+      "endOffset": 2894547,
+      "summary": "方源用白莲巨蚕蛊喂养净魂仙蛊，使其脱离饿死危险"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0027",
+      "startOffset": 2894971,
+      "endOffset": 2895047,
+      "summary": "方源赶到地底洞窟观察智慧蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0054",
+      "startOffset": 2896045,
+      "endOffset": 2896076,
+      "summary": "方源列出推算计划：见面似相识、血神子、时运仙蛊与寸光阴配合（已放弃）、拔山挽澜融入万我、改良气囊蛊等蛊方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0068",
+      "startOffset": 2896675,
+      "endOffset": 2896744,
+      "summary": "方源将拔山仙蛊成功融合到杀招万我中，万我之威暴涨一成，对付土道蛊仙或山川陨石效果多出两成。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0070",
+      "startOffset": 2896761,
+      "endOffset": 2896777,
+      "summary": "方源检查星念蛊，仙窍中剩余近四万只，推算消耗一万多只。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0821",
+      "paragraphId": "ch_0821_p0077",
+      "startOffset": 2896999,
+      "endOffset": 2897019,
+      "summary": "方源回到荡魂行宫继续钻研智道传承。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events and relations in this chapter are ordinary cultivation activities performed by Fang Yuan in his own immortal aperture (feeding gu, calculating, fusing a killer move, checking star thought gu count, returning to study). These are all visible to Fang Yuan himself and are not hidden knowledge, future-known information, secret motives/plans, or knowledge gaps. No private knowledge held by other actors is revealed. No information is presented that would be hidden from the player or known only to specific actors while unknown to others. The seed describes routine cultivation progress with no secret conspiracies, undisclosed plans, or information asymmetry.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源用白莲巨蚕蛊喂养净魂仙蛊（ptr_7, ptr_10），直接观察到喂养行为使净魂仙蛊脱离饿死危险。",
+      "inferredMotive: 从喂养行为可合理推断方源想保住净魂仙蛊，净魂仙蛊是战斗相关蛊虫，维持战力是合理的一步推断，未做心理跳跃。",
+      "confidence medium: 行为明确但动机为推断，非直接陈述。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses entirely on individual protagonist Fang Yuan's cultivation activities (feeding gu, using wisdom gu, deducing wisdom path inheritance, fusing a gu into a killer move). No collective actors (factions, clans, families, groups, shops, halls, or organizations) appear in the entities, relations, or events. The only named persons are Fang Yuan (individual), Dongfang Changfan (individual, deceased inheritor of wisdom path inheritance), and Lishan Xianzi (individual, trader). No faction, clan, family, or group has a concrete stake in the seed facts. No collective pressure axis can be derived from purely individual cultivation actions.",
+      "IF export filter quarantined 10 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

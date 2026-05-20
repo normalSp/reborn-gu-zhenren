@@ -1,0 +1,930 @@
+{
+  "packageId": "ri_lw_ch_2014",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_2014"
+    ],
+    "paragraphIds": [
+      "ch_2014_p0003",
+      "ch_2014_p0004",
+      "ch_2014_p0005",
+      "ch_2014_p0006",
+      "ch_2014_p0012",
+      "ch_2014_p0026",
+      "ch_2014_p0031",
+      "ch_2014_p0035",
+      "ch_2014_p0037",
+      "ch_2014_p0046",
+      "ch_2014_p0047",
+      "ch_2014_p0048",
+      "ch_2014_p0049",
+      "ch_2014_p0053",
+      "ch_2014_p0054",
+      "ch_2014_p0058",
+      "ch_2014_p0063",
+      "ch_2014_p0065",
+      "ch_2014_p0070",
+      "ch_2014_p0074",
+      "ch_2014_p0077",
+      "ch_2014_p0078"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0003",
+          "startOffset": 7013394,
+          "endOffset": 7013430,
+          "summary": "学生，十大才子"
+        }
+      ],
+      "entityId": "entity_c353901179e5",
+      "name": "李小白",
+      "kind": "person",
+      "aliases": [
+        "小白"
+      ],
+      "description": "学生，十大才子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0003",
+          "startOffset": 7013394,
+          "endOffset": 7013430,
+          "summary": "老师，李小白的恩师"
+        }
+      ],
+      "entityId": "entity_4e371f59cede",
+      "name": "姜先生",
+      "kind": "person",
+      "aliases": [
+        "恩师"
+      ],
+      "description": "老师，李小白的恩师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0005",
+          "startOffset": 7013526,
+          "endOffset": 7013642,
+          "summary": "已回京都的人物"
+        }
+      ],
+      "entityId": "entity_db88d8a0cce3",
+      "name": "苏琪涵",
+      "kind": "person",
+      "aliases": [],
+      "description": "已回京都的人物",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0035",
+          "startOffset": 7014834,
+          "endOffset": 7014837,
+          "summary": "蛊师，姜先生的学生"
+        }
+      ],
+      "entityId": "entity_c353901179e5",
+      "name": "李小白",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，姜先生的学生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0046",
+          "startOffset": 7015212,
+          "endOffset": 7015214,
+          "summary": "蛊仙，华文洞天成员，姜先生的老师"
+        }
+      ],
+      "entityId": "entity_be1ae45639ad",
+      "name": "华松",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，华文洞天成员，姜先生的老师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0046",
+          "startOffset": 7015212,
+          "endOffset": 7015215,
+          "summary": "五转蛊师，华松的学生，李小白的老师"
+        }
+      ],
+      "entityId": "entity_4e371f59cede",
+      "name": "姜先生",
+      "kind": "person",
+      "aliases": [],
+      "description": "五转蛊师，华松的学生，李小白的老师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0053",
+          "startOffset": 7015605,
+          "endOffset": 7015610,
+          "summary": "华文洞天的高层，华松的上司"
+        }
+      ],
+      "entityId": "entity_b737f4754f74",
+      "name": "华语老大人",
+      "kind": "person",
+      "aliases": [],
+      "description": "华文洞天的高层，华松的上司",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0065",
+          "startOffset": 7016193,
+          "endOffset": 7016197,
+          "summary": "华文洞天教导学子的蛊仙"
+        }
+      ],
+      "entityId": "entity_d48ee8001b11",
+      "name": "姜先生",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "华文洞天教导学子的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0070",
+          "startOffset": 7016346,
+          "endOffset": 7016348,
+          "summary": "龙宫操纵者，自称盟主"
+        }
+      ],
+      "entityId": "entity_01008fac0b27",
+      "name": "吴帅",
+      "kind": "person",
+      "aliases": [],
+      "description": "龙宫操纵者，自称盟主",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0077",
+          "startOffset": 7016552,
+          "endOffset": 7016556,
+          "summary": "华文洞天的主事者"
+        }
+      ],
+      "entityId": "entity_accd219c28e9",
+      "name": "华语老仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "华文洞天的主事者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0004",
+          "startOffset": 7013434,
+          "endOffset": 7013522,
+          "summary": "李小白是姜先生的学生，姜先生是李小白的恩师"
+        }
+      ],
+      "relationId": "rel_24b20429d3de",
+      "subject": "李小白",
+      "object": "姜先生",
+      "relationType": "MENTOR",
+      "summary": "李小白是姜先生的学生，姜先生是李小白的恩师",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0048",
+          "startOffset": 7015281,
+          "endOffset": 7015295,
+          "summary": "华松是姜先生的老师"
+        }
+      ],
+      "relationId": "rel_fe7d6b5172ed",
+      "subject": "华松",
+      "object": "姜先生",
+      "relationType": "MENTOR",
+      "summary": "华松是姜先生的老师",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0047",
+          "startOffset": 7015235,
+          "endOffset": 7015277,
+          "summary": "姜先生是李小白的老师"
+        }
+      ],
+      "relationId": "rel_451ebec12579",
+      "subject": "姜先生",
+      "object": "李小白",
+      "relationType": "MENTOR",
+      "summary": "姜先生是李小白的老师",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0049",
+          "startOffset": 7015299,
+          "endOffset": 7015437,
+          "summary": "华松是李小白的师祖（徒孙关系）"
+        }
+      ],
+      "relationId": "rel_27315d67a6db",
+      "subject": "华松",
+      "object": "李小白",
+      "relationType": "FAMILY",
+      "summary": "华松是李小白的师祖（徒孙关系）",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0070",
+          "startOffset": 7016346,
+          "endOffset": 7016348,
+          "summary": "吴帅率领敌方蛊仙突袭华文洞天，镇压学宫，屠杀学子"
+        }
+      ],
+      "relationId": "rel_14858ca220ec",
+      "subject": "吴帅",
+      "object": "华文洞天",
+      "relationType": "CONFLICT",
+      "summary": "吴帅率领敌方蛊仙突袭华文洞天，镇压学宫，屠杀学子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0077",
+          "startOffset": 7016552,
+          "endOffset": 7016556,
+          "summary": "华语老仙斥责吴帅突袭华文洞天，吴帅则因招揽不成而报复"
+        }
+      ],
+      "relationId": "rel_3a5ef236af0b",
+      "subject": "华语老仙",
+      "object": "吴帅",
+      "relationType": "CONFLICT",
+      "summary": "华语老仙斥责吴帅突袭华文洞天，吴帅则因招揽不成而报复",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0006",
+          "startOffset": 7013646,
+          "endOffset": 7013662,
+          "summary": "李小白与姜先生惜别，李小白返回京都"
+        }
+      ],
+      "eventId": "evt_a5a72da45eb8",
+      "eventType": "other",
+      "summary": "李小白与姜先生惜别，李小白返回京都",
+      "actors": [
+        "李小白",
+        "姜先生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "李小白独自离开，思考前程"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0012",
+          "startOffset": 7013914,
+          "endOffset": 7013942,
+          "summary": "李小白在天下诗会落选，因多次遭遇姜先生而束手束脚"
+        }
+      ],
+      "eventId": "evt_d5e9666e143b",
+      "eventType": "other",
+      "summary": "李小白在天下诗会落选，因多次遭遇姜先生而束手束脚",
+      "actors": [
+        "李小白"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "李小白落选，但认为落选可能避免暗算"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0026",
+          "startOffset": 7014464,
+          "endOffset": 7014512,
+          "summary": "李小白循着幽香发现一棵松树，树上有松果和树屋"
+        }
+      ],
+      "eventId": "evt_af6bc9b1ba9d",
+      "eventType": "other",
+      "summary": "李小白循着幽香发现一棵松树，树上有松果和树屋",
+      "actors": [
+        "李小白"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "李小白试图进入树屋，但发现无门"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0037",
+          "startOffset": 7014909,
+          "endOffset": 7014953,
+          "summary": "李小白在松树中发现信道传承，获得书屋和大量蛊虫"
+        }
+      ],
+      "eventId": "evt_03d7fe26d3fb",
+      "eventType": "inheritance",
+      "summary": "李小白在松树中发现信道传承，获得书屋和大量蛊虫",
+      "actors": [
+        "李小白"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "李小白获得信道传承，提升实力"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0053",
+          "startOffset": 7015605,
+          "endOffset": 7015663,
+          "summary": "华松向姜先生解释为何不直接提拔李小白，并给予传承作为补偿"
+        }
+      ],
+      "eventId": "evt_9f72e803a249",
+      "eventType": "other",
+      "summary": "华松向姜先生解释为何不直接提拔李小白，并给予传承作为补偿",
+      "actors": [
+        "华松",
+        "姜先生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "姜先生感激，李小白获得传承"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0063",
+          "startOffset": 7016112,
+          "endOffset": 7016143,
+          "summary": "姜先生被选入华文洞天重点栽培，准备升仙"
+        }
+      ],
+      "eventId": "evt_22ed7dd28e6f",
+      "eventType": "cultivation",
+      "summary": "姜先生被选入华文洞天重点栽培，准备升仙",
+      "actors": [
+        "姜先生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "姜先生即将升仙"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0074",
+          "startOffset": 7016438,
+          "endOffset": 7016442,
+          "summary": "吴帅操纵仙蛊屋龙宫镇压华文洞天学宫，导致姜先生等学子及蛊仙死亡，学宫被毁"
+        }
+      ],
+      "eventId": "evt_4222420cd39c",
+      "eventType": "conflict",
+      "summary": "吴帅操纵仙蛊屋龙宫镇压华文洞天学宫，导致姜先生等学子及蛊仙死亡，学宫被毁",
+      "actors": [
+        "吴帅",
+        "华文洞天"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "华文洞天最大的一股未来潜力被毁，华语老仙被激怒"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0074",
+          "startOffset": 7016438,
+          "endOffset": 7016442,
+          "summary": "姜先生被龙宫镇压而死"
+        }
+      ],
+      "eventId": "evt_dd0178120bf8",
+      "eventType": "death",
+      "summary": "姜先生被龙宫镇压而死",
+      "actors": [
+        "姜先生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学宫教导力量损失"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0006",
+          "startOffset": 7013646,
+          "endOffset": 7013662,
+          "summary": "李小白与姜先生惜别，李小白返回京都"
+        }
+      ],
+      "timelineId": "tl_a5a72da45eb8",
+      "eventId": "evt_a5a72da45eb8",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "李小白与姜先生惜别，李小白返回京都",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0012",
+          "startOffset": 7013914,
+          "endOffset": 7013942,
+          "summary": "李小白在天下诗会落选，因多次遭遇姜先生而束手束脚"
+        }
+      ],
+      "timelineId": "tl_d5e9666e143b",
+      "eventId": "evt_d5e9666e143b",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "李小白在天下诗会落选，因多次遭遇姜先生而束手束脚",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0026",
+          "startOffset": 7014464,
+          "endOffset": 7014512,
+          "summary": "李小白循着幽香发现一棵松树，树上有松果和树屋"
+        }
+      ],
+      "timelineId": "tl_af6bc9b1ba9d",
+      "eventId": "evt_af6bc9b1ba9d",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "李小白循着幽香发现一棵松树，树上有松果和树屋",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0037",
+          "startOffset": 7014909,
+          "endOffset": 7014953,
+          "summary": "李小白在松树中发现信道传承，获得书屋和大量蛊虫"
+        }
+      ],
+      "timelineId": "tl_03d7fe26d3fb",
+      "eventId": "evt_03d7fe26d3fb",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "李小白在松树中发现信道传承，获得书屋和大量蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0053",
+          "startOffset": 7015605,
+          "endOffset": 7015663,
+          "summary": "华松向姜先生解释为何不直接提拔李小白，并给予传承作为补偿"
+        }
+      ],
+      "timelineId": "tl_9f72e803a249",
+      "eventId": "evt_9f72e803a249",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "华松向姜先生解释为何不直接提拔李小白，并给予传承作为补偿",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0063",
+          "startOffset": 7016112,
+          "endOffset": 7016143,
+          "summary": "姜先生被选入华文洞天重点栽培，准备升仙"
+        }
+      ],
+      "timelineId": "tl_22ed7dd28e6f",
+      "eventId": "evt_22ed7dd28e6f",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "姜先生被选入华文洞天重点栽培，准备升仙",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0074",
+          "startOffset": 7016438,
+          "endOffset": 7016442,
+          "summary": "吴帅操纵仙蛊屋龙宫镇压华文洞天学宫，导致姜先生等学子及蛊仙死亡，学宫被毁"
+        }
+      ],
+      "timelineId": "tl_4222420cd39c",
+      "eventId": "evt_4222420cd39c",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "吴帅操纵仙蛊屋龙宫镇压华文洞天学宫，导致姜先生等学子及蛊仙死亡，学宫被毁",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2014",
+          "paragraphId": "ch_2014_p0074",
+          "startOffset": 7016438,
+          "endOffset": 7016442,
+          "summary": "姜先生被龙宫镇压而死"
+        }
+      ],
+      "timelineId": "tl_dd0178120bf8",
+      "eventId": "evt_dd0178120bf8",
+      "chapterId": "ch_2014",
+      "orderHint": "chapter-order",
+      "summary": "姜先生被龙宫镇压而死",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0003",
+      "startOffset": 7013394,
+      "endOffset": 7013430,
+      "summary": "学生，十大才子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0005",
+      "startOffset": 7013526,
+      "endOffset": 7013642,
+      "summary": "已回京都的人物"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0035",
+      "startOffset": 7014834,
+      "endOffset": 7014837,
+      "summary": "蛊师，姜先生的学生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0046",
+      "startOffset": 7015212,
+      "endOffset": 7015214,
+      "summary": "蛊仙，华文洞天成员，姜先生的老师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0046",
+      "startOffset": 7015212,
+      "endOffset": 7015215,
+      "summary": "五转蛊师，华松的学生，李小白的老师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0053",
+      "startOffset": 7015605,
+      "endOffset": 7015610,
+      "summary": "华文洞天的高层，华松的上司"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0065",
+      "startOffset": 7016193,
+      "endOffset": 7016197,
+      "summary": "华文洞天教导学子的蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0070",
+      "startOffset": 7016346,
+      "endOffset": 7016348,
+      "summary": "龙宫操纵者，自称盟主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0077",
+      "startOffset": 7016552,
+      "endOffset": 7016556,
+      "summary": "华文洞天的主事者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0004",
+      "startOffset": 7013434,
+      "endOffset": 7013522,
+      "summary": "李小白是姜先生的学生，姜先生是李小白的恩师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0048",
+      "startOffset": 7015281,
+      "endOffset": 7015295,
+      "summary": "华松是姜先生的老师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0047",
+      "startOffset": 7015235,
+      "endOffset": 7015277,
+      "summary": "姜先生是李小白的老师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0049",
+      "startOffset": 7015299,
+      "endOffset": 7015437,
+      "summary": "华松是李小白的师祖（徒孙关系）"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0006",
+      "startOffset": 7013646,
+      "endOffset": 7013662,
+      "summary": "李小白与姜先生惜别，李小白返回京都"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0012",
+      "startOffset": 7013914,
+      "endOffset": 7013942,
+      "summary": "李小白在天下诗会落选，因多次遭遇姜先生而束手束脚"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0026",
+      "startOffset": 7014464,
+      "endOffset": 7014512,
+      "summary": "李小白循着幽香发现一棵松树，树上有松果和树屋"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0037",
+      "startOffset": 7014909,
+      "endOffset": 7014953,
+      "summary": "李小白在松树中发现信道传承，获得书屋和大量蛊虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0053",
+      "startOffset": 7015605,
+      "endOffset": 7015663,
+      "summary": "华松向姜先生解释为何不直接提拔李小白，并给予传承作为补偿"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0063",
+      "startOffset": 7016112,
+      "endOffset": 7016143,
+      "summary": "姜先生被选入华文洞天重点栽培，准备升仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2014",
+      "paragraphId": "ch_2014_p0074",
+      "startOffset": 7016438,
+      "endOffset": 7016442,
+      "summary": "吴帅操纵仙蛊屋龙宫镇压华文洞天学宫，导致姜先生等学子及蛊仙死亡，学宫被毁"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible/ordinary events (farewell, poetry contest, discovery of a tree, inheritance, explanation between Hua Song and Mr. Jiang, cultivation selection, and the dragon palace attack). Most events are either publicly observable or directly narrated as occurring. No private knowledge, secret motives/plans, or future-known information is directly supported by the source pointers. The conflict between Wu Shuai and Hua Wen Dong Tian is narrated as an overt attack, not a hidden fact. No character is shown to have knowledge that others lack in a way that constitutes a hidden fact. The inheritance discovery by Li Xiaobai is an ordinary visible event. The explanation by Hua Song to Mr. Jiang about not promoting Li Xiaobai is directly spoken dialogue, not hidden knowledge. No suitable source-backed hidden/future-known/player-visibility fact candidate can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows behaviors (李小白落选后离开、与姜先生惜别) but motive is ambiguous. 李小白落选 partly due to encountering 姜先生, but his internal motive for returning to 京都 is not directly stated. No clear observed action that directly supports a specific inferred motive without psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual characters (李小白, 姜先生, 华松) and their personal mentor-student relationships and individual inheritances. While 华文洞天 appears as a named faction in conflict events (吴帅 attacking 华文洞天), the seed does not provide enough concrete faction-level pressure dynamics with clear stakes, likely reactions, and source backing. The conflict event involving 吴帅 and 华文洞天 is a past attack (龙宫镇压学宫) resulting in deaths, not an ongoing pressure dynamic. No other named collective actor (family, clan, faction, shop, hall, organization) has a concrete ongoing stake in the seed facts that would support a faction pressure candidate.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

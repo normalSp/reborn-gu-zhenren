@@ -1,0 +1,792 @@
+{
+  "packageId": "ri_lw_ch_1476",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1476"
+    ],
+    "paragraphIds": [
+      "ch_1476_p0003",
+      "ch_1476_p0004",
+      "ch_1476_p0020",
+      "ch_1476_p0023",
+      "ch_1476_p0033",
+      "ch_1476_p0044",
+      "ch_1476_p0047",
+      "ch_1476_p0048",
+      "ch_1476_p0049",
+      "ch_1476_p0051",
+      "ch_1476_p0059",
+      "ch_1476_p0062",
+      "ch_1476_p0065",
+      "ch_1476_p0069",
+      "ch_1476_p0070",
+      "ch_1476_p0077"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0003",
+          "startOffset": 5165038,
+          "endOffset": 5165042,
+          "summary": "蛊仙，主角"
+        }
+      ],
+      "entityId": "entity_fa97e0b549cc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0004",
+          "startOffset": 5165079,
+          "endOffset": 5165082,
+          "summary": "被方源压榨的对象"
+        }
+      ],
+      "entityId": "entity_294b8887912f",
+      "name": "影无邪",
+      "kind": "person",
+      "aliases": [],
+      "description": "被方源压榨的对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0033",
+          "startOffset": 5166213,
+          "endOffset": 5166235,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_fa97e0b549cc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0059",
+          "startOffset": 5167063,
+          "endOffset": 5167081,
+          "summary": "东海蛊仙，龙鱼生意第一"
+        }
+      ],
+      "entityId": "entity_559fcbfb5b6e",
+      "name": "尤婵",
+      "kind": "person",
+      "aliases": [],
+      "description": "东海蛊仙，龙鱼生意第一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0065",
+          "startOffset": 5167282,
+          "endOffset": 5167343,
+          "summary": "水道蛊仙，龙鱼生意巨头"
+        }
+      ],
+      "entityId": "entity_559fcbfb5b6e",
+      "name": "尤婵",
+      "kind": "person",
+      "aliases": [],
+      "description": "水道蛊仙，龙鱼生意巨头",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0069",
+          "startOffset": 5167465,
+          "endOffset": 5167499,
+          "summary": "龙鱼卖家，尤婵的竞争对手"
+        }
+      ],
+      "entityId": "entity_fa97e0b549cc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "龙鱼卖家，尤婵的竞争对手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0004",
+          "startOffset": 5165079,
+          "endOffset": 5165082,
+          "summary": "方源压榨影无邪等人"
+        }
+      ],
+      "relationId": "rel_c95080e4acf0",
+      "subject": "方源",
+      "object": "影无邪",
+      "relationType": "OTHER",
+      "summary": "方源压榨影无邪等人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0047",
+          "startOffset": 5166704,
+          "endOffset": 5166733,
+          "summary": "方源与琅琊派达成龙鱼贸易"
+        }
+      ],
+      "relationId": "rel_cbbe9c7ce6f7",
+      "subject": "方源",
+      "object": "琅琊派",
+      "relationType": "TRADE",
+      "summary": "方源与琅琊派达成龙鱼贸易",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0047",
+          "startOffset": 5166704,
+          "endOffset": 5166733,
+          "summary": "雪民一族决定定期向方源采购龙鱼"
+        }
+      ],
+      "relationId": "rel_0ea31adc9ec2",
+      "subject": "方源",
+      "object": "雪民一族",
+      "relationType": "TRADE",
+      "summary": "雪民一族决定定期向方源采购龙鱼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0048",
+          "startOffset": 5166737,
+          "endOffset": 5166780,
+          "summary": "方源靠着长恨蛛生意建立的关系，让萧家成为龙鱼生意的大顾客"
+        }
+      ],
+      "relationId": "rel_05bb0aa44a4c",
+      "subject": "方源",
+      "object": "西漠萧家",
+      "relationType": "TRADE",
+      "summary": "方源靠着长恨蛛生意建立的关系，让萧家成为龙鱼生意的大顾客",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0049",
+          "startOffset": 5166784,
+          "endOffset": 5166816,
+          "summary": "楚度暗中与方源达成条款，约定了十多年的生意往来"
+        }
+      ],
+      "relationId": "rel_6cc13e4d3ad3",
+      "subject": "方源",
+      "object": "北原楚家",
+      "relationType": "TRADE",
+      "summary": "楚度暗中与方源达成条款，约定了十多年的生意往来",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0070",
+          "startOffset": 5167503,
+          "endOffset": 5167539,
+          "summary": "尤婵发现方源是龙鱼生意的大敌，正在打探其底细"
+        }
+      ],
+      "relationId": "rel_8c7550085c42",
+      "subject": "尤婵",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "尤婵发现方源是龙鱼生意的大敌，正在打探其底细",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0020",
+          "startOffset": 5165725,
+          "endOffset": 5165742,
+          "summary": "方源在琅琊福地云城密室尝试催动分魂杀招，但失败，魂魄受创，后用胆识蛊疗伤"
+        }
+      ],
+      "eventId": "evt_cbb730748344",
+      "eventType": "cultivation",
+      "summary": "方源在琅琊福地云城密室尝试催动分魂杀招，但失败，魂魄受创，后用胆识蛊疗伤",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源魂魄受创，消耗胆识蛊疗伤"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0033",
+          "startOffset": 5166213,
+          "endOffset": 5166235,
+          "summary": "方源决定将龙鱼作为仙窍经营重点，并扩建龙鳞海域为巨型资源点"
+        }
+      ],
+      "eventId": "evt_97a9693f92be",
+      "eventType": "other",
+      "summary": "方源决定将龙鱼作为仙窍经营重点，并扩建龙鳞海域为巨型资源点",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "龙鱼产量大增，方源开始洽谈龙鱼贸易"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0044",
+          "startOffset": 5166608,
+          "endOffset": 5166646,
+          "summary": "方源花费半个月时间将龙鳞海域从大型资源点提拔为巨型资源点"
+        }
+      ],
+      "eventId": "evt_b1f12d355211",
+      "eventType": "other",
+      "summary": "方源花费半个月时间将龙鳞海域从大型资源点提拔为巨型资源点",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "龙鱼繁衍速度加快，产量大增"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0051",
+          "startOffset": 5166841,
+          "endOffset": 5166857,
+          "summary": "方源将龙鱼贩卖到宝黄天，采取温和策略，逐步增加规模"
+        }
+      ],
+      "eventId": "evt_1e2b67d6447a",
+      "eventType": "other",
+      "summary": "方源将龙鱼贩卖到宝黄天，采取温和策略，逐步增加规模",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "宝黄天市场如常，方源默默观察市场动向"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0059",
+          "startOffset": 5167063,
+          "endOffset": 5167081,
+          "summary": "尤婵仔细查看龙鱼，发现龙鱼豢养出色，货量充足"
+        }
+      ],
+      "eventId": "evt_c8898fdb4103",
+      "eventType": "other",
+      "summary": "尤婵仔细查看龙鱼，发现龙鱼豢养出色，货量充足",
+      "actors": [
+        "尤婵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "尤婵感到压力，龙鱼生意第一地位受威胁"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0069",
+          "startOffset": 5167465,
+          "endOffset": 5167499,
+          "summary": "尤婵发现方源增加龙鱼货量，匿名收购后确认方源是竞争对手，开始打探其底细"
+        }
+      ],
+      "eventId": "evt_c3c360091050",
+      "eventType": "conflict",
+      "summary": "尤婵发现方源增加龙鱼货量，匿名收购后确认方源是竞争对手，开始打探其底细",
+      "actors": [
+        "尤婵",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "尤婵感到压力，离开龙鱼海域寻找海底潜流"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0077",
+          "startOffset": 5167750,
+          "endOffset": 5167774,
+          "summary": "尤婵离开龙鱼海域，潜游数百里后寻到一处海底潜流并钻入其中"
+        }
+      ],
+      "eventId": "evt_daa17b534d98",
+      "eventType": "other",
+      "summary": "尤婵离开龙鱼海域，潜游数百里后寻到一处海底潜流并钻入其中",
+      "actors": [
+        "尤婵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "利用潜流加速行程"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0020",
+          "startOffset": 5165725,
+          "endOffset": 5165742,
+          "summary": "方源在琅琊福地云城密室尝试催动分魂杀招，但失败，魂魄受创，后用胆识蛊疗伤"
+        }
+      ],
+      "timelineId": "tl_cbb730748344",
+      "eventId": "evt_cbb730748344",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "方源在琅琊福地云城密室尝试催动分魂杀招，但失败，魂魄受创，后用胆识蛊疗伤",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0033",
+          "startOffset": 5166213,
+          "endOffset": 5166235,
+          "summary": "方源决定将龙鱼作为仙窍经营重点，并扩建龙鳞海域为巨型资源点"
+        }
+      ],
+      "timelineId": "tl_97a9693f92be",
+      "eventId": "evt_97a9693f92be",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "方源决定将龙鱼作为仙窍经营重点，并扩建龙鳞海域为巨型资源点",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0044",
+          "startOffset": 5166608,
+          "endOffset": 5166646,
+          "summary": "方源花费半个月时间将龙鳞海域从大型资源点提拔为巨型资源点"
+        }
+      ],
+      "timelineId": "tl_b1f12d355211",
+      "eventId": "evt_b1f12d355211",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "方源花费半个月时间将龙鳞海域从大型资源点提拔为巨型资源点",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0051",
+          "startOffset": 5166841,
+          "endOffset": 5166857,
+          "summary": "方源将龙鱼贩卖到宝黄天，采取温和策略，逐步增加规模"
+        }
+      ],
+      "timelineId": "tl_1e2b67d6447a",
+      "eventId": "evt_1e2b67d6447a",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "方源将龙鱼贩卖到宝黄天，采取温和策略，逐步增加规模",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0059",
+          "startOffset": 5167063,
+          "endOffset": 5167081,
+          "summary": "尤婵仔细查看龙鱼，发现龙鱼豢养出色，货量充足"
+        }
+      ],
+      "timelineId": "tl_c8898fdb4103",
+      "eventId": "evt_c8898fdb4103",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "尤婵仔细查看龙鱼，发现龙鱼豢养出色，货量充足",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0069",
+          "startOffset": 5167465,
+          "endOffset": 5167499,
+          "summary": "尤婵发现方源增加龙鱼货量，匿名收购后确认方源是竞争对手，开始打探其底细"
+        }
+      ],
+      "timelineId": "tl_c3c360091050",
+      "eventId": "evt_c3c360091050",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "尤婵发现方源增加龙鱼货量，匿名收购后确认方源是竞争对手，开始打探其底细",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0077",
+          "startOffset": 5167750,
+          "endOffset": 5167774,
+          "summary": "尤婵离开龙鱼海域，潜游数百里后寻到一处海底潜流并钻入其中"
+        }
+      ],
+      "timelineId": "tl_daa17b534d98",
+      "eventId": "evt_daa17b534d98",
+      "chapterId": "ch_1476",
+      "orderHint": "chapter-order",
+      "summary": "尤婵离开龙鱼海域，潜游数百里后寻到一处海底潜流并钻入其中",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0070",
+          "startOffset": 5167503,
+          "endOffset": 5167539,
+          "summary": "尤婵发现方源是龙鱼生意的大敌，正在打探其底细"
+        }
+      ],
+      "factId": "hf_ch_1476_youchan_investigating_fangyuan",
+      "summary": "尤婵正在暗中打探方源的底细",
+      "whoKnows": [
+        "尤婵"
+      ],
+      "whoDoesNotKnow": [
+        "方源"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1476",
+          "paragraphId": "ch_1476_p0070",
+          "startOffset": 5167503,
+          "endOffset": 5167539,
+          "summary": "尤婵发现方源是龙鱼生意的大敌，正在打探其底细"
+        }
+      ],
+      "motiveId": "motive_1",
+      "character": "尤婵",
+      "observedMotive": "匿名收购方源龙鱼并仔细查探",
+      "inferredMotive": "确认竞争对手实力",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0003",
+      "startOffset": 5165038,
+      "endOffset": 5165042,
+      "summary": "蛊仙，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0004",
+      "startOffset": 5165079,
+      "endOffset": 5165082,
+      "summary": "被方源压榨的对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0033",
+      "startOffset": 5166213,
+      "endOffset": 5166235,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0059",
+      "startOffset": 5167063,
+      "endOffset": 5167081,
+      "summary": "东海蛊仙，龙鱼生意第一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0065",
+      "startOffset": 5167282,
+      "endOffset": 5167343,
+      "summary": "水道蛊仙，龙鱼生意巨头"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0069",
+      "startOffset": 5167465,
+      "endOffset": 5167499,
+      "summary": "龙鱼卖家，尤婵的竞争对手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0047",
+      "startOffset": 5166704,
+      "endOffset": 5166733,
+      "summary": "方源与琅琊派达成龙鱼贸易"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0048",
+      "startOffset": 5166737,
+      "endOffset": 5166780,
+      "summary": "方源靠着长恨蛛生意建立的关系，让萧家成为龙鱼生意的大顾客"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0049",
+      "startOffset": 5166784,
+      "endOffset": 5166816,
+      "summary": "楚度暗中与方源达成条款，约定了十多年的生意往来"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0070",
+      "startOffset": 5167503,
+      "endOffset": 5167539,
+      "summary": "尤婵发现方源是龙鱼生意的大敌，正在打探其底细"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0020",
+      "startOffset": 5165725,
+      "endOffset": 5165742,
+      "summary": "方源在琅琊福地云城密室尝试催动分魂杀招，但失败，魂魄受创，后用胆识蛊疗伤"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0044",
+      "startOffset": 5166608,
+      "endOffset": 5166646,
+      "summary": "方源花费半个月时间将龙鳞海域从大型资源点提拔为巨型资源点"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0051",
+      "startOffset": 5166841,
+      "endOffset": 5166857,
+      "summary": "方源将龙鱼贩卖到宝黄天，采取温和策略，逐步增加规模"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1476",
+      "paragraphId": "ch_1476_p0077",
+      "startOffset": 5167750,
+      "endOffset": 5167774,
+      "summary": "尤婵离开龙鱼海域，潜游数百里后寻到一处海底潜流并钻入其中"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly supports that You Chan (尤婵) anonymously purchased Fang Yuan's dragon fish, investigated them, and realized Fang Yuan is her major competitor. The relation entry also states she is investigating his background. This is private knowledge held by You Chan that Fang Yuan does not know about. The fact is atomic: You Chan is investigating Fang Yuan's background. No speculative endings or extrapolated consequences added.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "尤婵匿名收购方源龙鱼后仔细查探，得知方源是她的大敌（ptr_10），直接支持她正在确认竞争对手实力的动机。这是从观察到的行为（匿名收购+查探）到动机（确认对手实力）的一步合理推断，没有过度心理推测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "尤婵是东海龙鱼生意巨头（水道蛊仙），发现方源增加龙鱼货量后匿名收购并确认其为大敌，正在打探底细。尤婵作为龙鱼生意第一人，其商业利益受到方源扩张的威胁，构成商业竞争压力。但尤婵是个人而非集体组织，种子中未明确提及她所属的家族、门派或组织。根据规则，如果只有个人有 stake 且未直接链接到集体，应返回空。然而尤婵作为'龙鱼生意第一'的巨头，其商业地位本身隐含了其经营实体/组织的利益，但种子未命名该组织。为谨慎起见，降低处理。",
+      "IF export filter quarantined 4 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

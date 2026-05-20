@@ -1,0 +1,649 @@
+{
+  "packageId": "ri_lw_ch_0061",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0061"
+    ],
+    "paragraphIds": [
+      "ch_0061_p0007",
+      "ch_0061_p0009",
+      "ch_0061_p0012",
+      "ch_0061_p0013",
+      "ch_0061_p0015",
+      "ch_0061_p0036",
+      "ch_0061_p0037",
+      "ch_0061_p0052",
+      "ch_0061_p0062",
+      "ch_0061_p0065"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0007",
+          "startOffset": 184999,
+          "endOffset": 185001,
+          "summary": "古月山寨成员，重生者"
+        }
+      ],
+      "entityId": "entity_e6e482760869",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月山寨成员，重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0009",
+          "startOffset": 185058,
+          "endOffset": 185062,
+          "summary": "传承留下者"
+        }
+      ],
+      "entityId": "entity_58c181beba09",
+      "name": "花酒行者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "传承留下者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0012",
+          "startOffset": 185284,
+          "endOffset": 185287,
+          "summary": "被方源所杀"
+        }
+      ],
+      "entityId": "entity_7b584f305ccc",
+      "name": "贾金生",
+      "kind": "person",
+      "aliases": [],
+      "description": "被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0013",
+          "startOffset": 185349,
+          "endOffset": 185351,
+          "summary": "离开山寨"
+        }
+      ],
+      "entityId": "entity_73740efc1354",
+      "name": "贾富",
+      "kind": "person",
+      "aliases": [],
+      "description": "离开山寨",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0036",
+          "startOffset": 186151,
+          "endOffset": 186153,
+          "summary": "主角，古月一族蛊师"
+        }
+      ],
+      "entityId": "entity_e6e482760869",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，古月一族蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0052",
+          "startOffset": 186773,
+          "endOffset": 186777,
+          "summary": "力量传承设立者，魔道蛊师"
+        }
+      ],
+      "entityId": "entity_58c181beba09",
+      "name": "花酒行者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "力量传承设立者，魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0065",
+          "startOffset": 187325,
+          "endOffset": 187327,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_e6e482760869",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0012",
+          "startOffset": 185284,
+          "endOffset": 185287,
+          "summary": "方源杀了贾金生"
+        }
+      ],
+      "relationId": "rel_3d651ef1f1d4",
+      "subject": "方源",
+      "object": "贾金生",
+      "relationType": "CONFLICT",
+      "summary": "方源杀了贾金生",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0009",
+          "startOffset": 185058,
+          "endOffset": 185062,
+          "summary": "方源试图获取花酒行者的传承"
+        }
+      ],
+      "relationId": "rel_2d18860a938b",
+      "subject": "方源",
+      "object": "花酒行者",
+      "relationType": "OTHER",
+      "summary": "方源试图获取花酒行者的传承",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0052",
+          "startOffset": 186773,
+          "endOffset": 186777,
+          "summary": "花酒行者设立传承是为了培养复仇者向古月一族复仇"
+        }
+      ],
+      "relationId": "rel_dd511b18e57c",
+      "subject": "花酒行者",
+      "object": "古月一族",
+      "relationType": "CONFLICT",
+      "summary": "花酒行者设立传承是为了培养复仇者向古月一族复仇",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0015",
+          "startOffset": 185445,
+          "endOffset": 185447,
+          "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道"
+        }
+      ],
+      "eventId": "evt_8df50ccdc951",
+      "eventType": "other",
+      "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "影壁被磨去三寸厚度，但尚未破开"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0012",
+          "startOffset": 185284,
+          "endOffset": 185287,
+          "summary": "方源在影壁异变当晚杀了贾金生"
+        }
+      ],
+      "eventId": "evt_fcd92b904257",
+      "eventType": "other",
+      "summary": "方源在影壁异变当晚杀了贾金生",
+      "actors": [
+        "方源",
+        "贾金生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源处理现场，之后设局应对审讯"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0013",
+          "startOffset": 185349,
+          "endOffset": 185351,
+          "summary": "贾富离开山寨"
+        }
+      ],
+      "eventId": "evt_d0e0ebdeda00",
+      "eventType": "other",
+      "summary": "贾富离开山寨",
+      "actors": [
+        "贾富"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "风声渐消，方源得以秘密潜回石缝秘洞"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0037",
+          "startOffset": 186180,
+          "endOffset": 186182,
+          "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道"
+        }
+      ],
+      "eventId": "evt_69a25be390c6",
+      "eventType": "other",
+      "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源进入甬道前谨慎观察，未立即进入"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0065",
+          "startOffset": 187325,
+          "endOffset": 187327,
+          "summary": "方源投石问路，确认甬道安全，但未进入，而是洒下石粉标记洞口和石缝入口后离开。"
+        }
+      ],
+      "eventId": "evt_8c1177bf1bb8",
+      "eventType": "other",
+      "summary": "方源投石问路，确认甬道安全，但未进入，而是洒下石粉标记洞口和石缝入口后离开。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂时离开秘洞，返回山寨，避免惹人怀疑。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0015",
+          "startOffset": 185445,
+          "endOffset": 185447,
+          "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道"
+        }
+      ],
+      "timelineId": "tl_8df50ccdc951",
+      "eventId": "evt_8df50ccdc951",
+      "chapterId": "ch_0061",
+      "orderHint": "chapter-order",
+      "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0012",
+          "startOffset": 185284,
+          "endOffset": 185287,
+          "summary": "方源在影壁异变当晚杀了贾金生"
+        }
+      ],
+      "timelineId": "tl_fcd92b904257",
+      "eventId": "evt_fcd92b904257",
+      "chapterId": "ch_0061",
+      "orderHint": "chapter-order",
+      "summary": "方源在影壁异变当晚杀了贾金生",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0013",
+          "startOffset": 185349,
+          "endOffset": 185351,
+          "summary": "贾富离开山寨"
+        }
+      ],
+      "timelineId": "tl_d0e0ebdeda00",
+      "eventId": "evt_d0e0ebdeda00",
+      "chapterId": "ch_0061",
+      "orderHint": "chapter-order",
+      "summary": "贾富离开山寨",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0037",
+          "startOffset": 186180,
+          "endOffset": 186182,
+          "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道"
+        }
+      ],
+      "timelineId": "tl_69a25be390c6",
+      "eventId": "evt_69a25be390c6",
+      "chapterId": "ch_0061",
+      "orderHint": "chapter-order",
+      "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0065",
+          "startOffset": 187325,
+          "endOffset": 187327,
+          "summary": "方源投石问路，确认甬道安全，但未进入，而是洒下石粉标记洞口和石缝入口后离开。"
+        }
+      ],
+      "timelineId": "tl_8c1177bf1bb8",
+      "eventId": "evt_8c1177bf1bb8",
+      "chapterId": "ch_0061",
+      "orderHint": "chapter-order",
+      "summary": "方源投石问路，确认甬道安全，但未进入，而是洒下石粉标记洞口和石缝入口后离开。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0015",
+          "startOffset": 185445,
+          "endOffset": 185447,
+          "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0009",
+          "startOffset": 185058,
+          "endOffset": 185062,
+          "summary": "传承留下者"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "磨削影壁试图打开传承通道",
+      "inferredMotive": "获取花酒行者力量传承",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0009",
+          "startOffset": 185058,
+          "endOffset": 185062,
+          "summary": "传承留下者"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0052",
+          "startOffset": 186773,
+          "endOffset": 186777,
+          "summary": "力量传承设立者，魔道蛊师"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0015",
+          "startOffset": 185445,
+          "endOffset": 185447,
+          "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0061",
+          "paragraphId": "ch_0061_p0037",
+          "startOffset": 186180,
+          "endOffset": 186182,
+          "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "古月一族",
+      "pressureAxis": "花酒行者传承威胁",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查传承通道",
+        "监视可疑成员"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0007",
+      "startOffset": 184999,
+      "endOffset": 185001,
+      "summary": "古月山寨成员，重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0009",
+      "startOffset": 185058,
+      "endOffset": 185062,
+      "summary": "传承留下者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0012",
+      "startOffset": 185284,
+      "endOffset": 185287,
+      "summary": "被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0013",
+      "startOffset": 185349,
+      "endOffset": 185351,
+      "summary": "离开山寨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0036",
+      "startOffset": 186151,
+      "endOffset": 186153,
+      "summary": "主角，古月一族蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0052",
+      "startOffset": 186773,
+      "endOffset": 186777,
+      "summary": "力量传承设立者，魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0065",
+      "startOffset": 187325,
+      "endOffset": 187327,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0015",
+      "startOffset": 185445,
+      "endOffset": 185447,
+      "summary": "方源用月光蛊磨削影壁，试图打开花酒行者的传承通道"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0061",
+      "paragraphId": "ch_0061_p0037",
+      "startOffset": 186180,
+      "endOffset": 186182,
+      "summary": "方源用月光蛊破开石壁，发现一个斜向下的笔直甬道"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly visible actions (Fang Yuan killing Jia Jinsheng, grinding the shadow wall, discovering a tunnel, leaving markers). The relation '花酒行者设立传承是为了培养复仇者向古月一族复仇' (Hua Jiu Xingzhe set up the inheritance to cultivate an avenger against Gu Yue clan) is a potentially hidden motive, but the source pointers provided do not directly support this claim - the pointers only reference basic entity names and actions, not the revenge motive. No source pointer in the pool quotes or summarizes the revenge intention. Without a direct source pointer backing the hidden motive fact, it cannot be submitted as a source-backed hidden fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源用月光蛊磨削影壁试图打开传承通道（ptr_8直接支持）",
+      "inferredMotive: 从磨削影壁的行为和该处是花酒行者力量传承（ptr_2）可合理推断方源目的是获取该传承",
+      "未过度推断，未添加心理描述或战略意图",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "花酒行者设立传承的目的是向古月一族复仇（ptr_6），方源正在尝试打开该传承通道（ptr_8, ptr_9），这对古月一族构成潜在威胁。但传承尚未被完全开启，威胁程度尚不明确，故为medium confidence。",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

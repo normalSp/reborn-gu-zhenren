@@ -1,0 +1,662 @@
+{
+  "packageId": "ri_lw_ch_0432",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0432"
+    ],
+    "paragraphIds": [
+      "ch_0432_p0002",
+      "ch_0432_p0003",
+      "ch_0432_p0008",
+      "ch_0432_p0010",
+      "ch_0432_p0012",
+      "ch_0432_p0022",
+      "ch_0432_p0025",
+      "ch_0432_p0033",
+      "ch_0432_p0037",
+      "ch_0432_p0039",
+      "ch_0432_p0047",
+      "ch_0432_p0048",
+      "ch_0432_p0061",
+      "ch_0432_p0065",
+      "ch_0432_p0066",
+      "ch_0432_p0072",
+      "ch_0432_p0075",
+      "ch_0432_p0084"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0003",
+          "startOffset": 1499395,
+          "endOffset": 1499424,
+          "summary": "少女，与方源同行"
+        }
+      ],
+      "entityId": "entity_8473b57b7322",
+      "name": "葛谣",
+      "kind": "person",
+      "aliases": [],
+      "description": "少女，与方源同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0008",
+          "startOffset": 1499540,
+          "endOffset": 1499542,
+          "summary": "伪装身份为常山阴，拥有仙蛊定仙游"
+        }
+      ],
+      "entityId": "entity_7627670f8148",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "常山阴"
+      ],
+      "description": "伪装身份为常山阴，拥有仙蛊定仙游",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0033",
+          "startOffset": 1500434,
+          "endOffset": 1500466,
+          "summary": "少女，生活在草原上，父亲有腾云蛊"
+        }
+      ],
+      "entityId": "entity_8473b57b7322",
+      "name": "葛谣",
+      "kind": "person",
+      "aliases": [],
+      "description": "少女，生活在草原上，父亲有腾云蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0037",
+          "startOffset": 1500589,
+          "endOffset": 1500615,
+          "summary": "主角，拥有骨翼飞行蛊"
+        }
+      ],
+      "entityId": "entity_7627670f8148",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "常山阴"
+      ],
+      "description": "主角，拥有骨翼飞行蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0065",
+          "startOffset": 1501824,
+          "endOffset": 1501855,
+          "summary": "飞行者，指挥者"
+        }
+      ],
+      "entityId": "entity_7627670f8148",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "飞行者，指挥者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0066",
+          "startOffset": 1501859,
+          "endOffset": 1501900,
+          "summary": "少女，射手"
+        }
+      ],
+      "entityId": "entity_8473b57b7322",
+      "name": "葛谣",
+      "kind": "person",
+      "aliases": [],
+      "description": "少女，射手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0012",
+          "startOffset": 1499702,
+          "endOffset": 1499769,
+          "summary": "方源与葛谣同行穿越葵海，方源曾牵葛谣手，葛谣抱方源胳膊"
+        }
+      ],
+      "relationId": "rel_9825c5d0b77e",
+      "subject": "方源",
+      "object": "葛谣",
+      "relationType": "ALLY",
+      "summary": "方源与葛谣同行穿越葵海，方源曾牵葛谣手，葛谣抱方源胳膊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0048",
+          "startOffset": 1501101,
+          "endOffset": 1501133,
+          "summary": "方源带着葛谣飞行，共同面对影鸦"
+        }
+      ],
+      "relationId": "rel_c1478802414a",
+      "subject": "方源",
+      "object": "葛谣",
+      "relationType": "ALLY",
+      "summary": "方源带着葛谣飞行，共同面对影鸦",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0072",
+          "startOffset": 1502120,
+          "endOffset": 1502132,
+          "summary": "方源指挥葛谣战斗，葛谣听从方源指令"
+        }
+      ],
+      "relationId": "rel_166177103c60",
+      "subject": "方源",
+      "object": "葛谣",
+      "relationType": "ALLY",
+      "summary": "方源指挥葛谣战斗，葛谣听从方源指令",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0022",
+          "startOffset": 1500077,
+          "endOffset": 1500118,
+          "summary": "方源使用皓珠蛊封印仙蛊定仙游"
+        }
+      ],
+      "eventId": "evt_1fdb07a4e522",
+      "eventType": "other",
+      "summary": "方源使用皓珠蛊封印仙蛊定仙游",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "定仙游被封印在透明圆珠中，气息减弱但仍逸散"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0002",
+          "startOffset": 1499379,
+          "endOffset": 1499391,
+          "summary": "方源和葛谣穿越鬼脸葵海，有惊无险"
+        }
+      ],
+      "eventId": "evt_2d50c21db786",
+      "eventType": "other",
+      "summary": "方源和葛谣穿越鬼脸葵海，有惊无险",
+      "actors": [
+        "方源",
+        "葛谣"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "两人成功穿过葵海，继续深入腐毒草原"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0047",
+          "startOffset": 1501078,
+          "endOffset": 1501097,
+          "summary": "方源展示骨翼飞行蛊，抱起葛谣飞离地面"
+        }
+      ],
+      "eventId": "evt_fbcb3dd096ca",
+      "eventType": "other",
+      "summary": "方源展示骨翼飞行蛊，抱起葛谣飞离地面",
+      "actors": [
+        "方源",
+        "葛谣"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛谣感到惊讶，方源准备迎战影鸦"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0061",
+          "startOffset": 1501684,
+          "endOffset": 1501712,
+          "summary": "三只影鸦逼近，方源主动冲向影鸦，葛谣发射水箭但未命中"
+        }
+      ],
+      "eventId": "evt_cb28b1c20edf",
+      "eventType": "conflict",
+      "summary": "三只影鸦逼近，方源主动冲向影鸦，葛谣发射水箭但未命中",
+      "actors": [
+        "方源",
+        "葛谣",
+        "影鸦"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "战斗开始，葛谣紧张"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0075",
+          "startOffset": 1502208,
+          "endOffset": 1502232,
+          "summary": "方源和葛谣在空中与三只影鸦战斗，方源利用高超飞行技术闪到影鸦背后，葛谣射杀影鸦"
+        }
+      ],
+      "eventId": "evt_db0ae3201537",
+      "eventType": "conflict",
+      "summary": "方源和葛谣在空中与三只影鸦战斗，方源利用高超飞行技术闪到影鸦背后，葛谣射杀影鸦",
+      "actors": [
+        "方源",
+        "葛谣",
+        "影鸦"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "三只影鸦被消灭，尸体被地刺鼠瓜分"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0084",
+          "startOffset": 1502568,
+          "endOffset": 1502612,
+          "summary": "葛谣因紧张失误，元石脱手掉落地面"
+        }
+      ],
+      "eventId": "evt_b1e892009855",
+      "eventType": "other",
+      "summary": "葛谣因紧张失误，元石脱手掉落地面",
+      "actors": [
+        "葛谣"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "元石丢失，葛谣被方源斥责"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0022",
+          "startOffset": 1500077,
+          "endOffset": 1500118,
+          "summary": "方源使用皓珠蛊封印仙蛊定仙游"
+        }
+      ],
+      "timelineId": "tl_1fdb07a4e522",
+      "eventId": "evt_1fdb07a4e522",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "方源使用皓珠蛊封印仙蛊定仙游",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0002",
+          "startOffset": 1499379,
+          "endOffset": 1499391,
+          "summary": "方源和葛谣穿越鬼脸葵海，有惊无险"
+        }
+      ],
+      "timelineId": "tl_2d50c21db786",
+      "eventId": "evt_2d50c21db786",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "方源和葛谣穿越鬼脸葵海，有惊无险",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0047",
+          "startOffset": 1501078,
+          "endOffset": 1501097,
+          "summary": "方源展示骨翼飞行蛊，抱起葛谣飞离地面"
+        }
+      ],
+      "timelineId": "tl_fbcb3dd096ca",
+      "eventId": "evt_fbcb3dd096ca",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "方源展示骨翼飞行蛊，抱起葛谣飞离地面",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0061",
+          "startOffset": 1501684,
+          "endOffset": 1501712,
+          "summary": "三只影鸦逼近，方源主动冲向影鸦，葛谣发射水箭但未命中"
+        }
+      ],
+      "timelineId": "tl_cb28b1c20edf",
+      "eventId": "evt_cb28b1c20edf",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "三只影鸦逼近，方源主动冲向影鸦，葛谣发射水箭但未命中",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0075",
+          "startOffset": 1502208,
+          "endOffset": 1502232,
+          "summary": "方源和葛谣在空中与三只影鸦战斗，方源利用高超飞行技术闪到影鸦背后，葛谣射杀影鸦"
+        }
+      ],
+      "timelineId": "tl_db0ae3201537",
+      "eventId": "evt_db0ae3201537",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "方源和葛谣在空中与三只影鸦战斗，方源利用高超飞行技术闪到影鸦背后，葛谣射杀影鸦",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0432",
+          "paragraphId": "ch_0432_p0084",
+          "startOffset": 1502568,
+          "endOffset": 1502612,
+          "summary": "葛谣因紧张失误，元石脱手掉落地面"
+        }
+      ],
+      "timelineId": "tl_b1e892009855",
+      "eventId": "evt_b1e892009855",
+      "chapterId": "ch_0432",
+      "orderHint": "chapter-order",
+      "summary": "葛谣因紧张失误，元石脱手掉落地面",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0003",
+      "startOffset": 1499395,
+      "endOffset": 1499424,
+      "summary": "少女，与方源同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0008",
+      "startOffset": 1499540,
+      "endOffset": 1499542,
+      "summary": "伪装身份为常山阴，拥有仙蛊定仙游"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0033",
+      "startOffset": 1500434,
+      "endOffset": 1500466,
+      "summary": "少女，生活在草原上，父亲有腾云蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0037",
+      "startOffset": 1500589,
+      "endOffset": 1500615,
+      "summary": "主角，拥有骨翼飞行蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0065",
+      "startOffset": 1501824,
+      "endOffset": 1501855,
+      "summary": "飞行者，指挥者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0066",
+      "startOffset": 1501859,
+      "endOffset": 1501900,
+      "summary": "少女，射手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0012",
+      "startOffset": 1499702,
+      "endOffset": 1499769,
+      "summary": "方源与葛谣同行穿越葵海，方源曾牵葛谣手，葛谣抱方源胳膊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0048",
+      "startOffset": 1501101,
+      "endOffset": 1501133,
+      "summary": "方源带着葛谣飞行，共同面对影鸦"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0072",
+      "startOffset": 1502120,
+      "endOffset": 1502132,
+      "summary": "方源指挥葛谣战斗，葛谣听从方源指令"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0022",
+      "startOffset": 1500077,
+      "endOffset": 1500118,
+      "summary": "方源使用皓珠蛊封印仙蛊定仙游"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0002",
+      "startOffset": 1499379,
+      "endOffset": 1499391,
+      "summary": "方源和葛谣穿越鬼脸葵海，有惊无险"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0047",
+      "startOffset": 1501078,
+      "endOffset": 1501097,
+      "summary": "方源展示骨翼飞行蛊，抱起葛谣飞离地面"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0061",
+      "startOffset": 1501684,
+      "endOffset": 1501712,
+      "summary": "三只影鸦逼近，方源主动冲向影鸦，葛谣发射水箭但未命中"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0075",
+      "startOffset": 1502208,
+      "endOffset": 1502232,
+      "summary": "方源和葛谣在空中与三只影鸦战斗，方源利用高超飞行技术闪到影鸦背后，葛谣射杀影鸦"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0432",
+      "paragraphId": "ch_0432_p0084",
+      "startOffset": 1502568,
+      "endOffset": 1502612,
+      "summary": "葛谣因紧张失误，元石脱手掉落地面"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains only ordinary visible events (crossing sunflower sea, flying, fighting shadow crows) and surface-level character descriptions. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the source material. All events are publicly observable actions between Fang Yuan and Ge Yao. No hidden facts can be extracted without speculative extrapolation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Only visible behavior: 葛谣因紧张失误导致元石脱手掉落。行为可见但动机模糊——可能是紧张、害怕、或缺乏经验。种子没有直接支持任何特定动机推断，不宜做心理跳跃。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed only contains two named individuals (方源 and 葛谣) with no named faction, clan, family, or group. 葛谣 is described as a girl living on the grasslands whose father has a腾云蛊, but no collective group (family name, clan, tribe, village) is named or directly implied. 方源 is an individual with no faction affiliation in this seed. All events and relations are between these two individuals and影鸦 (shadow crows, which are beasts not a faction). No collective actor with a concrete stake can be identified from the seed facts.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

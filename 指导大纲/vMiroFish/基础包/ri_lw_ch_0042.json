@@ -1,0 +1,508 @@
+{
+  "packageId": "ri_lw_ch_0042",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0042"
+    ],
+    "paragraphIds": [
+      "ch_0042_p0002",
+      "ch_0042_p0021",
+      "ch_0042_p0028",
+      "ch_0042_p0036",
+      "ch_0042_p0040",
+      "ch_0042_p0044",
+      "ch_0042_p0057",
+      "ch_0042_p0059",
+      "ch_0042_p0065",
+      "ch_0042_p0069",
+      "ch_0042_p0072"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0002",
+          "startOffset": 121097,
+          "endOffset": 121099,
+          "summary": "古月山寨学员，赌石新手"
+        }
+      ],
+      "entityId": "entity_c48641a37351",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月山寨学员，赌石新手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0002",
+          "startOffset": 121097,
+          "endOffset": 121126,
+          "summary": "赌石店伙计"
+        }
+      ],
+      "entityId": "entity_ce28a790db32",
+      "name": "女蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赌石店伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0036",
+          "startOffset": 122373,
+          "endOffset": 122418,
+          "summary": "古月一族学员，解石者"
+        }
+      ],
+      "entityId": "entity_c48641a37351",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "公子"
+      ],
+      "description": "古月一族学员，解石者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0040",
+          "startOffset": 122561,
+          "endOffset": 122584,
+          "summary": "帐篷中的女蛊师，负责引导解石"
+        }
+      ],
+      "entityId": "entity_ce28a790db32",
+      "name": "女蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "帐篷中的女蛊师，负责引导解石",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0065",
+          "startOffset": 123461,
+          "endOffset": 123463,
+          "summary": "赌石公子"
+        }
+      ],
+      "entityId": "entity_c48641a37351",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "赌石公子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0069",
+          "startOffset": 123583,
+          "endOffset": 123586,
+          "summary": "商铺女蛊师"
+        }
+      ],
+      "entityId": "entity_ce28a790db32",
+      "name": "女蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "商铺女蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0021",
+          "startOffset": 121779,
+          "endOffset": 121803,
+          "summary": "方源从女蛊师处购买六块石头，支付六十块元石"
+        }
+      ],
+      "relationId": "rel_569a48bb0cec",
+      "subject": "方源",
+      "object": "女蛊师",
+      "relationType": "TRADE",
+      "summary": "方源从女蛊师处购买六块石头，支付六十块元石",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0044",
+          "startOffset": 122729,
+          "endOffset": 122776,
+          "summary": "方源是古月一族的学员，使用月光蛊，被其他蛊师视为同族"
+        }
+      ],
+      "relationId": "rel_78add0c3f92f",
+      "subject": "方源",
+      "object": "古月一族",
+      "relationType": "FACTION",
+      "summary": "方源是古月一族的学员，使用月光蛊，被其他蛊师视为同族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0021",
+          "startOffset": 121779,
+          "endOffset": 121803,
+          "summary": "方源在赌石店购买六块石头，支付六十块元石，并拒绝当场解石，要求亲手解石"
+        }
+      ],
+      "eventId": "evt_c76be6ecf66f",
+      "eventType": "trade",
+      "summary": "方源在赌石店购买六块石头，支付六十块元石，并拒绝当场解石，要求亲手解石",
+      "actors": [
+        "方源",
+        "女蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引起其他蛊师注意"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0057",
+          "startOffset": 123181,
+          "endOffset": 123207,
+          "summary": "方源使用月光蛊解石，连续解了四块紫金石头，前三块无蛊，第四块出现黑墨色石料，疑似有蛊"
+        }
+      ],
+      "eventId": "evt_f03ee4d74e5c",
+      "eventType": "other",
+      "summary": "方源使用月光蛊解石，连续解了四块紫金石头，前三块无蛊，第四块出现黑墨色石料，疑似有蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "周围蛊师从轻视转为惊讶，女蛊师提醒小心解石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0065",
+          "startOffset": 123461,
+          "endOffset": 123490,
+          "summary": "方源解石，得到石中石，但无蛊虫"
+        }
+      ],
+      "eventId": "evt_63149ef77b52",
+      "eventType": "other",
+      "summary": "方源解石，得到石中石，但无蛊虫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源继续取出第五块黑墨石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0072",
+          "startOffset": 123740,
+          "endOffset": 123784,
+          "summary": "方源继续解第五块黑墨石，露出黄色泥球"
+        }
+      ],
+      "eventId": "evt_d328094252be",
+      "eventType": "other",
+      "summary": "方源继续解第五块黑墨石，露出黄色泥球",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0021",
+          "startOffset": 121779,
+          "endOffset": 121803,
+          "summary": "方源在赌石店购买六块石头，支付六十块元石，并拒绝当场解石，要求亲手解石"
+        }
+      ],
+      "timelineId": "tl_c76be6ecf66f",
+      "eventId": "evt_c76be6ecf66f",
+      "chapterId": "ch_0042",
+      "orderHint": "chapter-order",
+      "summary": "方源在赌石店购买六块石头，支付六十块元石，并拒绝当场解石，要求亲手解石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0057",
+          "startOffset": 123181,
+          "endOffset": 123207,
+          "summary": "方源使用月光蛊解石，连续解了四块紫金石头，前三块无蛊，第四块出现黑墨色石料，疑似有蛊"
+        }
+      ],
+      "timelineId": "tl_f03ee4d74e5c",
+      "eventId": "evt_f03ee4d74e5c",
+      "chapterId": "ch_0042",
+      "orderHint": "chapter-order",
+      "summary": "方源使用月光蛊解石，连续解了四块紫金石头，前三块无蛊，第四块出现黑墨色石料，疑似有蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0065",
+          "startOffset": 123461,
+          "endOffset": 123490,
+          "summary": "方源解石，得到石中石，但无蛊虫"
+        }
+      ],
+      "timelineId": "tl_63149ef77b52",
+      "eventId": "evt_63149ef77b52",
+      "chapterId": "ch_0042",
+      "orderHint": "chapter-order",
+      "summary": "方源解石，得到石中石，但无蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0042",
+          "paragraphId": "ch_0042_p0072",
+          "startOffset": 123740,
+          "endOffset": 123784,
+          "summary": "方源继续解第五块黑墨石，露出黄色泥球"
+        }
+      ],
+      "timelineId": "tl_d328094252be",
+      "eventId": "evt_d328094252be",
+      "chapterId": "ch_0042",
+      "orderHint": "chapter-order",
+      "summary": "方源继续解第五块黑墨石，露出黄色泥球",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0002",
+      "startOffset": 121097,
+      "endOffset": 121099,
+      "summary": "古月山寨学员，赌石新手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0002",
+      "startOffset": 121097,
+      "endOffset": 121126,
+      "summary": "赌石店伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0036",
+      "startOffset": 122373,
+      "endOffset": 122418,
+      "summary": "古月一族学员，解石者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0040",
+      "startOffset": 122561,
+      "endOffset": 122584,
+      "summary": "帐篷中的女蛊师，负责引导解石"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0065",
+      "startOffset": 123461,
+      "endOffset": 123463,
+      "summary": "赌石公子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0069",
+      "startOffset": 123583,
+      "endOffset": 123586,
+      "summary": "商铺女蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0021",
+      "startOffset": 121779,
+      "endOffset": 121803,
+      "summary": "方源从女蛊师处购买六块石头，支付六十块元石"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0044",
+      "startOffset": 122729,
+      "endOffset": 122776,
+      "summary": "方源是古月一族的学员，使用月光蛊，被其他蛊师视为同族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0057",
+      "startOffset": 123181,
+      "endOffset": 123207,
+      "summary": "方源使用月光蛊解石，连续解了四块紫金石头，前三块无蛊，第四块出现黑墨色石料，疑似有蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0065",
+      "startOffset": 123461,
+      "endOffset": 123490,
+      "summary": "方源解石，得到石中石，但无蛊虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0042",
+      "paragraphId": "ch_0042_p0072",
+      "startOffset": 123740,
+      "endOffset": 123784,
+      "summary": "方源继续解第五块黑墨石，露出黄色泥球"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes ordinary visible events: Fang Yuan buys six stones, uses Moonlight Gu to cut them, finds no Gu worms in the first three, gets a black-ink stone in the fourth, and eventually grinds it down to nothing. All events are publicly observable in the gambling stone shop. No private knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the provided source pointers. The entities and events are all player-visible or ambiguous with no hidden dimension supported by the source text.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Only observable behavior: 方源购买六块石头并亲手解石，过程中面无表情、不受外界影响。但种子只记录了外部行为（购买、解石、连续解石），没有提供任何关于他内心动机（如为何要赌石、为何拒绝当场解石、为何面无表情）的直接文本证据。observedMotive只能描述行为本身，inferredMotive需要从行为做一步推理，但种子缺乏足够上下文来推断其真实目的（如获取资源、测试运气、隐藏实力等），强行推断会变成心理跳跃或编造意图。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The only faction mentioned is 古月一族 (Gu Yue clan), but the seed facts only show Fang Yuan as a clan member using Moonlight Gu while gambling on stones. There is no concrete faction pressure, stake, threat, or interest expressed by the Gu Yue clan as a group in this chapter. The clan's presence is passive (other蛊师 feeling proud). No faction-level pressure axis can be reliably extracted from this seed.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

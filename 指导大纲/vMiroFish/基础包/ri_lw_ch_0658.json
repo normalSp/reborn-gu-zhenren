@@ -1,0 +1,890 @@
+{
+  "packageId": "ri_lw_ch_0658",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0658"
+    ],
+    "paragraphIds": [
+      "ch_0658_p0002",
+      "ch_0658_p0003",
+      "ch_0658_p0005",
+      "ch_0658_p0010",
+      "ch_0658_p0011",
+      "ch_0658_p0015",
+      "ch_0658_p0022",
+      "ch_0658_p0025",
+      "ch_0658_p0036",
+      "ch_0658_p0037",
+      "ch_0658_p0039",
+      "ch_0658_p0043",
+      "ch_0658_p0048",
+      "ch_0658_p0052",
+      "ch_0658_p0062",
+      "ch_0658_p0065",
+      "ch_0658_p0067",
+      "ch_0658_p0078",
+      "ch_0658_p0079"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0002",
+          "startOffset": 2320500,
+          "endOffset": 2320504,
+          "summary": "炼道宗师，曾经的传奇蛊仙，灵缘斋出身"
+        }
+      ],
+      "entityId": "entity_3cab38da1b6e",
+      "name": "墨瑶意志",
+      "kind": "person",
+      "aliases": [
+        "墨瑶"
+      ],
+      "description": "炼道宗师，曾经的传奇蛊仙，灵缘斋出身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0003",
+          "startOffset": 2320559,
+          "endOffset": 2320561,
+          "summary": "蛊仙，仙窍已死"
+        }
+      ],
+      "entityId": "entity_f410859082ba",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，仙窍已死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0015",
+          "startOffset": 2321043,
+          "endOffset": 2321045,
+          "summary": "墨瑶意志的恋人"
+        }
+      ],
+      "entityId": "entity_e97b572d6762",
+      "name": "薄青",
+      "kind": "person",
+      "aliases": [
+        "薄青哥哥"
+      ],
+      "description": "墨瑶意志的恋人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0037",
+          "startOffset": 2322009,
+          "endOffset": 2322049,
+          "summary": "被方源镇压的意志，主动配合方源以拖延时间"
+        }
+      ],
+      "entityId": "entity_6fca09ffb656",
+      "name": "墨瑶意志",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "被方源镇压的意志，主动配合方源以拖延时间",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0036",
+          "startOffset": 2321979,
+          "endOffset": 2322005,
+          "summary": "主角，狐仙福地主人，被仙鹤门视为叛徒"
+        }
+      ],
+      "entityId": "entity_f410859082ba",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，狐仙福地主人，被仙鹤门视为叛徒",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0048",
+          "startOffset": 2322447,
+          "endOffset": 2322481,
+          "summary": "方源的属下，传递消息"
+        }
+      ],
+      "entityId": "entity_df64a77b7045",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的属下，传递消息",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0062",
+          "startOffset": 2322981,
+          "endOffset": 2323004,
+          "summary": "方源的盟友，被请来商议仙鹤门威胁"
+        }
+      ],
+      "entityId": "entity_bca30aed846d",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的盟友，被请来商议仙鹤门威胁",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0065",
+          "startOffset": 2323139,
+          "endOffset": 2323142,
+          "summary": "方源的师兄"
+        }
+      ],
+      "entityId": "entity_bca30aed846d",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [
+        "老白"
+      ],
+      "description": "方源的师兄",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0067",
+          "startOffset": 2323240,
+          "endOffset": 2323242,
+          "summary": "太白云生的师弟"
+        }
+      ],
+      "entityId": "entity_f410859082ba",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "师弟"
+      ],
+      "description": "太白云生的师弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0065",
+          "startOffset": 2323153,
+          "endOffset": 2323156,
+          "summary": "大力真武体，与方源等人结盟"
+        }
+      ],
+      "entityId": "entity_55ec3eea0fb7",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "大力真武体，与方源等人结盟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0079",
+          "startOffset": 2323804,
+          "endOffset": 2323806,
+          "summary": "方源向其打听灵缘斋情报"
+        }
+      ],
+      "entityId": "entity_59a90d0abb3b",
+      "name": "墨瑶",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源向其打听灵缘斋情报",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0005",
+          "startOffset": 2320617,
+          "endOffset": 2320637,
+          "summary": "方源将墨瑶意志哄骗入仙窍镇压，墨瑶意志曾陷害方源"
+        }
+      ],
+      "relationId": "rel_59928715385a",
+      "subject": "方源",
+      "object": "墨瑶意志",
+      "relationType": "CONFLICT",
+      "summary": "方源将墨瑶意志哄骗入仙窍镇压，墨瑶意志曾陷害方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0010",
+          "startOffset": 2320777,
+          "endOffset": 2320807,
+          "summary": "方源向墨瑶意志请教炼道知识，墨瑶意志配合回答"
+        }
+      ],
+      "relationId": "rel_d23ea3659280",
+      "subject": "方源",
+      "object": "墨瑶意志",
+      "relationType": "OTHER",
+      "summary": "方源向墨瑶意志请教炼道知识，墨瑶意志配合回答",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0015",
+          "startOffset": 2321033,
+          "endOffset": 2321063,
+          "summary": "墨瑶意志与薄青在镜柳下第一次相识，关系亲密"
+        }
+      ],
+      "relationId": "rel_1f078179dc9d",
+      "subject": "墨瑶意志",
+      "object": "薄青",
+      "relationType": "FAMILY",
+      "summary": "墨瑶意志与薄青在镜柳下第一次相识，关系亲密",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0037",
+          "startOffset": 2322009,
+          "endOffset": 2322049,
+          "summary": "方源镇压墨瑶意志，墨瑶意志主动配合以拖延时间"
+        }
+      ],
+      "relationId": "rel_e739a7c24078",
+      "subject": "方源",
+      "object": "墨瑶意志",
+      "relationType": "CONFLICT",
+      "summary": "方源镇压墨瑶意志，墨瑶意志主动配合以拖延时间",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0052",
+          "startOffset": 2322551,
+          "endOffset": 2322601,
+          "summary": "仙鹤门威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打"
+        }
+      ],
+      "relationId": "rel_3b1cc82a1969",
+      "subject": "方源",
+      "object": "仙鹤门",
+      "relationType": "CONFLICT",
+      "summary": "仙鹤门威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0062",
+          "startOffset": 2322981,
+          "endOffset": 2323004,
+          "summary": "方源请太白云生商议应对仙鹤门威胁"
+        }
+      ],
+      "relationId": "rel_454826981cf4",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "方源请太白云生商议应对仙鹤门威胁",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0065",
+          "startOffset": 2323139,
+          "endOffset": 2323142,
+          "summary": "师兄弟关系，共同商议对策"
+        }
+      ],
+      "relationId": "rel_2e26c69490ff",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "师兄弟关系，共同商议对策",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0065",
+          "startOffset": 2323153,
+          "endOffset": 2323156,
+          "summary": "结盟关系"
+        }
+      ],
+      "relationId": "rel_7ca541a1914c",
+      "subject": "方源",
+      "object": "黑楼兰",
+      "relationType": "ALLY",
+      "summary": "结盟关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0078",
+          "startOffset": 2323763,
+          "endOffset": 2323765,
+          "summary": "方源打算向灵缘斋递交一封信建立联系"
+        }
+      ],
+      "relationId": "rel_67821023c8b9",
+      "subject": "方源",
+      "object": "灵缘斋",
+      "relationType": "OTHER",
+      "summary": "方源打算向灵缘斋递交一封信建立联系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0079",
+          "startOffset": 2323804,
+          "endOffset": 2323806,
+          "summary": "方源之前向墨瑶打听灵缘斋情报"
+        }
+      ],
+      "relationId": "rel_f4b843c917bb",
+      "subject": "方源",
+      "object": "墨瑶",
+      "relationType": "OTHER",
+      "summary": "方源之前向墨瑶打听灵缘斋情报",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0011",
+          "startOffset": 2320839,
+          "endOffset": 2320879,
+          "summary": "墨瑶意志要求方源带来镜柳，方源满足要求后，墨瑶意志告知灵缘斋情报"
+        }
+      ],
+      "eventId": "evt_1501bbcf5841",
+      "eventType": "other",
+      "summary": "墨瑶意志要求方源带来镜柳，方源满足要求后，墨瑶意志告知灵缘斋情报",
+      "actors": [
+        "墨瑶意志",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源加深了对灵缘斋的了解"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0022",
+          "startOffset": 2321338,
+          "endOffset": 2321368,
+          "summary": "墨瑶意志要求方源下次带来青浦茶"
+        }
+      ],
+      "eventId": "evt_08cff4dbafad",
+      "eventType": "other",
+      "summary": "墨瑶意志要求方源下次带来青浦茶",
+      "actors": [
+        "墨瑶意志",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源答应带来青浦茶"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0052",
+          "startOffset": 2322551,
+          "endOffset": 2322601,
+          "summary": "仙鹤门来信威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打狐仙福地"
+        }
+      ],
+      "eventId": "evt_a2545188b450",
+      "eventType": "conflict",
+      "summary": "仙鹤门来信威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打狐仙福地",
+      "actors": [
+        "方源",
+        "仙鹤门"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源请太白云生商议对策"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0039",
+          "startOffset": 2322073,
+          "endOffset": 2322105,
+          "summary": "墨瑶意志主动配合方源解惑，展现价值以拖延时间"
+        }
+      ],
+      "eventId": "evt_df0265f348d6",
+      "eventType": "other",
+      "summary": "墨瑶意志主动配合方源解惑，展现价值以拖延时间",
+      "actors": [
+        "方源",
+        "墨瑶意志"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂时未搜意，利用其配合"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0078",
+          "startOffset": 2323763,
+          "endOffset": 2323765,
+          "summary": "方源和太白云生讨论如何应对仙鹤门的威胁，方源提出向灵缘斋写信建立联系"
+        }
+      ],
+      "eventId": "evt_7adbe94f6cc4",
+      "eventType": "other",
+      "summary": "方源和太白云生讨论如何应对仙鹤门的威胁，方源提出向灵缘斋写信建立联系",
+      "actors": [
+        "方源",
+        "太白云生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源计划利用灵缘斋牵制仙鹤门"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0011",
+          "startOffset": 2320839,
+          "endOffset": 2320879,
+          "summary": "墨瑶意志要求方源带来镜柳，方源满足要求后，墨瑶意志告知灵缘斋情报"
+        }
+      ],
+      "timelineId": "tl_1501bbcf5841",
+      "eventId": "evt_1501bbcf5841",
+      "chapterId": "ch_0658",
+      "orderHint": "chapter-order",
+      "summary": "墨瑶意志要求方源带来镜柳，方源满足要求后，墨瑶意志告知灵缘斋情报",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0022",
+          "startOffset": 2321338,
+          "endOffset": 2321368,
+          "summary": "墨瑶意志要求方源下次带来青浦茶"
+        }
+      ],
+      "timelineId": "tl_08cff4dbafad",
+      "eventId": "evt_08cff4dbafad",
+      "chapterId": "ch_0658",
+      "orderHint": "chapter-order",
+      "summary": "墨瑶意志要求方源下次带来青浦茶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0052",
+          "startOffset": 2322551,
+          "endOffset": 2322601,
+          "summary": "仙鹤门来信威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打狐仙福地"
+        }
+      ],
+      "timelineId": "tl_a2545188b450",
+      "eventId": "evt_a2545188b450",
+      "chapterId": "ch_0658",
+      "orderHint": "chapter-order",
+      "summary": "仙鹤门来信威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打狐仙福地",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0039",
+          "startOffset": 2322073,
+          "endOffset": 2322105,
+          "summary": "墨瑶意志主动配合方源解惑，展现价值以拖延时间"
+        }
+      ],
+      "timelineId": "tl_df0265f348d6",
+      "eventId": "evt_df0265f348d6",
+      "chapterId": "ch_0658",
+      "orderHint": "chapter-order",
+      "summary": "墨瑶意志主动配合方源解惑，展现价值以拖延时间",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0658",
+          "paragraphId": "ch_0658_p0078",
+          "startOffset": 2323763,
+          "endOffset": 2323765,
+          "summary": "方源和太白云生讨论如何应对仙鹤门的威胁，方源提出向灵缘斋写信建立联系"
+        }
+      ],
+      "timelineId": "tl_7adbe94f6cc4",
+      "eventId": "evt_7adbe94f6cc4",
+      "chapterId": "ch_0658",
+      "orderHint": "chapter-order",
+      "summary": "方源和太白云生讨论如何应对仙鹤门的威胁，方源提出向灵缘斋写信建立联系",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0002",
+      "startOffset": 2320500,
+      "endOffset": 2320504,
+      "summary": "炼道宗师，曾经的传奇蛊仙，灵缘斋出身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0003",
+      "startOffset": 2320559,
+      "endOffset": 2320561,
+      "summary": "蛊仙，仙窍已死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0015",
+      "startOffset": 2321043,
+      "endOffset": 2321045,
+      "summary": "墨瑶意志的恋人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0037",
+      "startOffset": 2322009,
+      "endOffset": 2322049,
+      "summary": "被方源镇压的意志，主动配合方源以拖延时间"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0036",
+      "startOffset": 2321979,
+      "endOffset": 2322005,
+      "summary": "主角，狐仙福地主人，被仙鹤门视为叛徒"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0048",
+      "startOffset": 2322447,
+      "endOffset": 2322481,
+      "summary": "方源的属下，传递消息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0062",
+      "startOffset": 2322981,
+      "endOffset": 2323004,
+      "summary": "方源的盟友，被请来商议仙鹤门威胁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0065",
+      "startOffset": 2323139,
+      "endOffset": 2323142,
+      "summary": "方源的师兄"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0067",
+      "startOffset": 2323240,
+      "endOffset": 2323242,
+      "summary": "太白云生的师弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0065",
+      "startOffset": 2323153,
+      "endOffset": 2323156,
+      "summary": "大力真武体，与方源等人结盟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0079",
+      "startOffset": 2323804,
+      "endOffset": 2323806,
+      "summary": "方源向其打听灵缘斋情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0005",
+      "startOffset": 2320617,
+      "endOffset": 2320637,
+      "summary": "方源将墨瑶意志哄骗入仙窍镇压，墨瑶意志曾陷害方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0010",
+      "startOffset": 2320777,
+      "endOffset": 2320807,
+      "summary": "方源向墨瑶意志请教炼道知识，墨瑶意志配合回答"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0015",
+      "startOffset": 2321033,
+      "endOffset": 2321063,
+      "summary": "墨瑶意志与薄青在镜柳下第一次相识，关系亲密"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0052",
+      "startOffset": 2322551,
+      "endOffset": 2322601,
+      "summary": "仙鹤门威胁方源开放胆识蛊贸易，否则宣布其为叛徒并攻打"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0078",
+      "startOffset": 2323763,
+      "endOffset": 2323765,
+      "summary": "方源打算向灵缘斋递交一封信建立联系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0011",
+      "startOffset": 2320839,
+      "endOffset": 2320879,
+      "summary": "墨瑶意志要求方源带来镜柳，方源满足要求后，墨瑶意志告知灵缘斋情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0022",
+      "startOffset": 2321338,
+      "endOffset": 2321368,
+      "summary": "墨瑶意志要求方源下次带来青浦茶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0658",
+      "paragraphId": "ch_0658_p0039",
+      "startOffset": 2322073,
+      "endOffset": 2322105,
+      "summary": "墨瑶意志主动配合方源解惑，展现价值以拖延时间"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible interactions: Fang Yuan suppressing Mo Yao's will, Mo Yao cooperating and asking for items (mirror willow, Qingpu tea), and the Crane Sect threatening Fang Yuan. No hidden/private knowledge, future-known information, or secret motives/plans are directly supported by the source text beyond what is already visible. Mo Yao's will 'actively cooperating to buy time' is stated openly in the text. Fang Yuan's plan to contact Lingyuanzhai is also a visible discussion. No atomic hidden fact with clear whoKnows/whoDoesNotKnow can be extracted from the provided pointers.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "墨瑶意志主动配合方源回答问题并索要物品（镜柳、青浦茶），行为可见但动机模糊。种子明确说其'主动配合以拖延时间'，但这是 narrator-level 的定性描述，不是从行为直接观察到的动机。从行为只能看到配合和索要物品，无法安全推断其深层意图是拖延时间还是其他目的。根据规则'如果只有行为可见而动机模糊，返回空数组'，故不提交 motive 候选。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "仙鹤门作为门派（集体actor）在种子中明确出现，通过信件威胁方源开放胆识蛊贸易，否则宣布叛徒并攻打狐仙福地。这是明确的集体对个体的压力，符合faction pressure条件。pressureAxis描述为'胆识蛊贸易威胁'，likelyReactions为保守的一步反应：监视和准备攻打。",
+      "IF export filter quarantined 6 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

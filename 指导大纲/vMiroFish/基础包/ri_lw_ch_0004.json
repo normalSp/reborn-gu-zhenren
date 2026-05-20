@@ -1,0 +1,604 @@
+{
+  "packageId": "ri_lw_ch_0004",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0004"
+    ],
+    "paragraphIds": [
+      "ch_0004_p0004",
+      "ch_0004_p0016",
+      "ch_0004_p0020",
+      "ch_0004_p0022",
+      "ch_0004_p0023",
+      "ch_0004_p0028",
+      "ch_0004_p0040",
+      "ch_0004_p0042",
+      "ch_0004_p0051",
+      "ch_0004_p0055",
+      "ch_0004_p0062",
+      "ch_0004_p0066"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0004",
+          "startOffset": 6923,
+          "endOffset": 6955,
+          "summary": "重生者，即将参加开窍大典"
+        }
+      ],
+      "entityId": "entity_8864b6ae105e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "重生者，即将参加开窍大典",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0023",
+          "startOffset": 7669,
+          "endOffset": 7711,
+          "summary": "弟弟，羡慕哥哥"
+        }
+      ],
+      "entityId": "entity_1e909e561124",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "弟弟，羡慕哥哥",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0016",
+          "startOffset": 7364,
+          "endOffset": 7382,
+          "summary": "贴身丫鬟，舅父舅母的眼线，爱慕虚荣"
+        }
+      ],
+      "entityId": "entity_399d79400527",
+      "name": "沈翠",
+      "kind": "person",
+      "aliases": [],
+      "description": "贴身丫鬟，舅父舅母的眼线，爱慕虚荣",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0022",
+          "startOffset": 7594,
+          "endOffset": 7665,
+          "summary": "方源的舅父，与舅母配合挑拨兄弟关系"
+        }
+      ],
+      "entityId": "entity_bc64874895cd",
+      "name": "舅父",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源的舅父，与舅母配合挑拨兄弟关系",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0022",
+          "startOffset": 7594,
+          "endOffset": 7665,
+          "summary": "方源的舅母，与舅父配合挑拨兄弟关系"
+        }
+      ],
+      "entityId": "entity_d4ab3d7e38eb",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源的舅母，与舅父配合挑拨兄弟关系",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0028",
+          "startOffset": 7871,
+          "endOffset": 7945,
+          "summary": "沈翠的母亲，舅母身边的管家"
+        }
+      ],
+      "entityId": "entity_b8a2b4d6bcad",
+      "name": "沈嬷嬷",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "沈翠的母亲，舅母身边的管家",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0062",
+          "startOffset": 9206,
+          "endOffset": 9238,
+          "summary": "兄弟关系，但方源视方正为外人，没有亲情"
+        }
+      ],
+      "relationId": "rel_da2cd63abf55",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟关系，但方源视方正为外人，没有亲情",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0022",
+          "startOffset": 7594,
+          "endOffset": 7665,
+          "summary": "沈翠是舅父舅母的眼线，方源对其冷淡，心知肚明"
+        }
+      ],
+      "relationId": "rel_d16a4337db1a",
+      "subject": "方源",
+      "object": "沈翠",
+      "relationType": "CONFLICT",
+      "summary": "沈翠是舅父舅母的眼线，方源对其冷淡，心知肚明",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0055",
+          "startOffset": 8916,
+          "endOffset": 8972,
+          "summary": "舅父舅母表面偏爱方源，实则挑拨他与弟弟的关系"
+        }
+      ],
+      "relationId": "rel_07e8aa213523",
+      "subject": "方源",
+      "object": "舅父",
+      "relationType": "CONFLICT",
+      "summary": "舅父舅母表面偏爱方源，实则挑拨他与弟弟的关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0055",
+          "startOffset": 8916,
+          "endOffset": 8972,
+          "summary": "同上，舅母与舅父合谋"
+        }
+      ],
+      "relationId": "rel_bd30424aa15d",
+      "subject": "方源",
+      "object": "舅母",
+      "relationType": "CONFLICT",
+      "summary": "同上，舅母与舅父合谋",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0028",
+          "startOffset": 7871,
+          "endOffset": 7945,
+          "summary": "母女关系"
+        }
+      ],
+      "relationId": "rel_c3d2499a479b",
+      "subject": "沈翠",
+      "object": "沈嬷嬷",
+      "relationType": "FAMILY",
+      "summary": "母女关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0028",
+          "startOffset": 7871,
+          "endOffset": 7945,
+          "summary": "沈嬷嬷是舅母的信任管家，关系紧密"
+        }
+      ],
+      "relationId": "rel_7160020f6cc0",
+      "subject": "沈嬷嬷",
+      "object": "舅母",
+      "relationType": "ALLY",
+      "summary": "沈嬷嬷是舅母的信任管家，关系紧密",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0020",
+          "startOffset": 7515,
+          "endOffset": 7574,
+          "summary": "清晨方源起床，沈翠伺候洗漱，方源对沈翠的引诱无动于衷"
+        }
+      ],
+      "eventId": "evt_fced86fec925",
+      "eventType": "appearance",
+      "summary": "清晨方源起床，沈翠伺候洗漱，方源对沈翠的引诱无动于衷",
+      "actors": [
+        "方源",
+        "沈翠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0040",
+          "startOffset": 8404,
+          "endOffset": 8432,
+          "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论"
+        }
+      ],
+      "eventId": "evt_5e4811b27ffb",
+      "eventType": "appearance",
+      "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论",
+      "actors": [
+        "方源",
+        "方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0066",
+          "startOffset": 9341,
+          "endOffset": 9367,
+          "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人"
+        }
+      ],
+      "eventId": "evt_de319beee172",
+      "eventType": "other",
+      "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "预示方源将独自前行，不介入家庭纠葛"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0042",
+          "startOffset": 8470,
+          "endOffset": 8516,
+          "summary": "同龄人议论方源作诗和骄傲的态度，流露嫉妒与不满"
+        }
+      ],
+      "eventId": "evt_d5d3975e47e0",
+      "eventType": "conflict",
+      "summary": "同龄人议论方源作诗和骄傲的态度，流露嫉妒与不满",
+      "actors": [
+        "方源",
+        "方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0020",
+          "startOffset": 7515,
+          "endOffset": 7574,
+          "summary": "清晨方源起床，沈翠伺候洗漱，方源对沈翠的引诱无动于衷"
+        }
+      ],
+      "timelineId": "tl_fced86fec925",
+      "eventId": "evt_fced86fec925",
+      "chapterId": "ch_0004",
+      "orderHint": "chapter-order",
+      "summary": "清晨方源起床，沈翠伺候洗漱，方源对沈翠的引诱无动于衷",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0040",
+          "startOffset": 8404,
+          "endOffset": 8432,
+          "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论"
+        }
+      ],
+      "timelineId": "tl_5e4811b27ffb",
+      "eventId": "evt_5e4811b27ffb",
+      "chapterId": "ch_0004",
+      "orderHint": "chapter-order",
+      "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0066",
+          "startOffset": 9341,
+          "endOffset": 9367,
+          "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人"
+        }
+      ],
+      "timelineId": "tl_de319beee172",
+      "eventId": "evt_de319beee172",
+      "chapterId": "ch_0004",
+      "orderHint": "chapter-order",
+      "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0042",
+          "startOffset": 8470,
+          "endOffset": 8516,
+          "summary": "同龄人议论方源作诗和骄傲的态度，流露嫉妒与不满"
+        }
+      ],
+      "timelineId": "tl_d5d3975e47e0",
+      "eventId": "evt_d5d3975e47e0",
+      "chapterId": "ch_0004",
+      "orderHint": "chapter-order",
+      "summary": "同龄人议论方源作诗和骄傲的态度，流露嫉妒与不满",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0004",
+          "paragraphId": "ch_0004_p0022",
+          "startOffset": 7594,
+          "endOffset": 7665,
+          "summary": "方源的舅父，与舅母配合挑拨兄弟关系"
+        }
+      ],
+      "factId": "hf_ch_0004_001",
+      "summary": "方源知道沈翠是舅父舅母安插来监视自己的眼线",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [
+        "沈翠",
+        "方正"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0004",
+      "startOffset": 6923,
+      "endOffset": 6955,
+      "summary": "重生者，即将参加开窍大典"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0023",
+      "startOffset": 7669,
+      "endOffset": 7711,
+      "summary": "弟弟，羡慕哥哥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0016",
+      "startOffset": 7364,
+      "endOffset": 7382,
+      "summary": "贴身丫鬟，舅父舅母的眼线，爱慕虚荣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0022",
+      "startOffset": 7594,
+      "endOffset": 7665,
+      "summary": "方源的舅父，与舅母配合挑拨兄弟关系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0028",
+      "startOffset": 7871,
+      "endOffset": 7945,
+      "summary": "沈翠的母亲，舅母身边的管家"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0062",
+      "startOffset": 9206,
+      "endOffset": 9238,
+      "summary": "兄弟关系，但方源视方正为外人，没有亲情"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0055",
+      "startOffset": 8916,
+      "endOffset": 8972,
+      "summary": "舅父舅母表面偏爱方源，实则挑拨他与弟弟的关系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0020",
+      "startOffset": 7515,
+      "endOffset": 7574,
+      "summary": "清晨方源起床，沈翠伺候洗漱，方源对沈翠的引诱无动于衷"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0040",
+      "startOffset": 8404,
+      "endOffset": 8432,
+      "summary": "方源和方正出发前往开窍大典，路上引起同龄人议论"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0066",
+      "startOffset": 9341,
+      "endOffset": 9367,
+      "summary": "方源内心决定：不改变弟弟和丫鬟的命运，视他们为路人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0004",
+      "paragraphId": "ch_0004_p0042",
+      "startOffset": 8470,
+      "endOffset": 8516,
+      "summary": "同龄人议论方源作诗和骄傲的态度，流露嫉妒与不满"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly states that 沈翠 is 舅父舅母的眼线 (spy/plant). The narrative context (方源's internal perspective in ch_0004) supports that 方源 knows this fact. This is private knowledge held by 方源, not known to 沈翠 or 方正. Suitable as a hidden fact candidate.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源内心决定不改变弟弟和丫鬟的命运，视他们为路人，但这是内心决定而非可观察的行为动作；observedMotive需要直接由seed facts支持的行为，而这里只有内心独白，缺乏可观察的外部行为来推断动机。行为层面只有方源对沈翠冷淡、对弟弟疏远，但这些行为本身只能说明态度冷淡，无法进一步推断具体动机（如避免暴露重生等），属于ambiguous。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "舅父舅母作为一个利益同盟（夫妻+管家+眼线体系）在种子中明确出现，他们通过安排沈翠（眼线）和沈嬷嬷（管家）来监控方源兄弟，并挑拨兄弟关系。这构成一种家族内部的控制/继承压力。压力轴为'家族控制权'，likelyReactions为保守的一步反应。未添加外部势力或具体数值结局。",
+      "IF export filter quarantined 4 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {},
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

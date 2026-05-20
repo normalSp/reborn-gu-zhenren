@@ -1,0 +1,340 @@
+{
+  "packageId": "ri_lw_ch_0002",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0002"
+    ],
+    "paragraphIds": [
+      "ch_0002_p0002",
+      "ch_0002_p0003",
+      "ch_0002_p0027",
+      "ch_0002_p0031",
+      "ch_0002_p0039",
+      "ch_0002_p0050",
+      "ch_0002_p0052",
+      "ch_0002_p0082"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0002",
+          "startOffset": 366,
+          "endOffset": 387,
+          "summary": "魔道蛊师，重生前世为魔头，重生后为古月山寨天才少年"
+        }
+      ],
+      "entityId": "entity_bd7cd9991af0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方老魔",
+        "方魔头",
+        "魔头",
+        "古月方源"
+      ],
+      "description": "魔道蛊师，重生前世为魔头，重生后为古月山寨天才少年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0039",
+          "startOffset": 1653,
+          "endOffset": 1751,
+          "summary": "古月山寨族长，主持祭祀"
+        }
+      ],
+      "entityId": "entity_f44d59d8881b",
+      "name": "古月族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "古月山寨族长，主持祭祀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0052",
+          "startOffset": 2183,
+          "endOffset": 2222,
+          "summary": "白家寨天才蛊师，天资恐怖"
+        }
+      ],
+      "entityId": "entity_386e51a40f5e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "白家寨天才蛊师，天资恐怖",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0003",
+          "startOffset": 391,
+          "endOffset": 452,
+          "summary": "正道各大派围攻方源，逼其交出春秋蝉，方源走投无路自爆。"
+        }
+      ],
+      "relationId": "rel_c5c837dce362",
+      "subject": "方源",
+      "object": "正道群雄",
+      "relationType": "CONFLICT",
+      "summary": "正道各大派围攻方源，逼其交出春秋蝉，方源走投无路自爆。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0031",
+          "startOffset": 1412,
+          "endOffset": 1436,
+          "summary": "方源在正道群雄围攻下自爆身亡。"
+        }
+      ],
+      "eventId": "evt_50b72b9bf0f8",
+      "eventType": "death",
+      "summary": "方源在正道群雄围攻下自爆身亡。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "触发春秋蝉，逆转时光。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "方源借助春秋蝉重生回到五百年前的青茅山古月山寨。"
+        }
+      ],
+      "eventId": "evt_2aed3f091b61",
+      "eventType": "rebirth",
+      "summary": "方源借助春秋蝉重生回到五百年前的青茅山古月山寨。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "成为少年古月方源，准备参加开窍大典。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0039",
+          "startOffset": 1653,
+          "endOffset": 1751,
+          "summary": "古月族长为明天的开窍大典举行祭祀祈祷。"
+        }
+      ],
+      "eventId": "evt_a89af49b6f8d",
+      "eventType": "other",
+      "summary": "古月族长为明天的开窍大典举行祭祀祈祷。",
+      "actors": [
+        "古月族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0031",
+          "startOffset": 1412,
+          "endOffset": 1436,
+          "summary": "方源在正道群雄围攻下自爆身亡。"
+        }
+      ],
+      "timelineId": "tl_50b72b9bf0f8",
+      "eventId": "evt_50b72b9bf0f8",
+      "chapterId": "ch_0002",
+      "orderHint": "chapter-order",
+      "summary": "方源在正道群雄围攻下自爆身亡。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0082",
+          "startOffset": 3483,
+          "endOffset": 3531,
+          "summary": "方源借助春秋蝉重生回到五百年前的青茅山古月山寨。"
+        }
+      ],
+      "timelineId": "tl_2aed3f091b61",
+      "eventId": "evt_2aed3f091b61",
+      "chapterId": "ch_0002",
+      "orderHint": "chapter-order",
+      "summary": "方源借助春秋蝉重生回到五百年前的青茅山古月山寨。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0002",
+          "paragraphId": "ch_0002_p0039",
+          "startOffset": 1653,
+          "endOffset": 1751,
+          "summary": "古月族长为明天的开窍大典举行祭祀祈祷。"
+        }
+      ],
+      "timelineId": "tl_a89af49b6f8d",
+      "eventId": "evt_a89af49b6f8d",
+      "chapterId": "ch_0002",
+      "orderHint": "chapter-order",
+      "summary": "古月族长为明天的开窍大典举行祭祀祈祷。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0002",
+      "startOffset": 366,
+      "endOffset": 387,
+      "summary": "魔道蛊师，重生前世为魔头，重生后为古月山寨天才少年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0039",
+      "startOffset": 1653,
+      "endOffset": 1751,
+      "summary": "古月山寨族长，主持祭祀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0052",
+      "startOffset": 2183,
+      "endOffset": 2222,
+      "summary": "白家寨天才蛊师，天资恐怖"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0003",
+      "startOffset": 391,
+      "endOffset": 452,
+      "summary": "正道各大派围攻方源，逼其交出春秋蝉，方源走投无路自爆。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0031",
+      "startOffset": 1412,
+      "endOffset": 1436,
+      "summary": "方源在正道群雄围攻下自爆身亡。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0002",
+      "paragraphId": "ch_0002_p0082",
+      "startOffset": 3483,
+      "endOffset": 3531,
+      "summary": "方源借助春秋蝉重生回到五百年前的青茅山古月山寨。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains only publicly observable events (death, rebirth,祭祀) and entity descriptions. No hidden knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the source pointers. The rebirth event (方源借助春秋蝉重生) is presented as an observable event from the narrator, not as a hidden fact known only to certain actors. No source pointer supports who knows or who does not know any specific fact. Cannot extract a valid hidden/future-known/player-visibility fact from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed describes Fang Yuan's death under siege and rebirth via Spring Autumn Cicada, but only shows his external actions (self-destruct under pressure). No direct source evidence supports a specific inferred motive beyond survival instinct. Observed behavior: surrounded by enemies, chose self-destruction. Inferred motive would be speculative without more context.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on Fang Yuan's rebirth and the Gu Yue clan chief's ritual, but does not provide concrete faction-level pressures. The only faction mentioned is '正道群雄' (righteous path groups) in a past-life conflict relation, not a current living-world pressure. The Gu Yue clan is mentioned as a location/setting but no faction-level stake, threat, or pressure axis is concretely established in the seed facts. No clan politics, succession issues, resource conflicts, or territorial pressures are described. The seed is too thin for a faction pressure candidate.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {},
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

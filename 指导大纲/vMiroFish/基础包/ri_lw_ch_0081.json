@@ -1,0 +1,559 @@
+{
+  "packageId": "ri_lw_ch_0081",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0081"
+    ],
+    "paragraphIds": [
+      "ch_0081_p0007",
+      "ch_0081_p0012",
+      "ch_0081_p0034",
+      "ch_0081_p0038",
+      "ch_0081_p0051",
+      "ch_0081_p0053",
+      "ch_0081_p0054",
+      "ch_0081_p0059",
+      "ch_0081_p0061",
+      "ch_0081_p0065",
+      "ch_0081_p0076",
+      "ch_0081_p0087",
+      "ch_0081_p0091"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0007",
+          "startOffset": 250358,
+          "endOffset": 250360,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_7ba4d6c77878",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0034",
+          "startOffset": 251127,
+          "endOffset": 251164,
+          "summary": "魔道蛊师，主角"
+        }
+      ],
+      "entityId": "entity_7ba4d6c77878",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0051",
+          "startOffset": 251717,
+          "endOffset": 251818,
+          "summary": "方源弟弟，甲等资质"
+        }
+      ],
+      "entityId": "entity_bcf993092b07",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源弟弟，甲等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0053",
+          "startOffset": 251838,
+          "endOffset": 251856,
+          "summary": "刺杀者"
+        }
+      ],
+      "entityId": "entity_f4eb202cef77",
+      "name": "王大",
+      "kind": "person",
+      "aliases": [],
+      "description": "刺杀者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0065",
+          "startOffset": 252492,
+          "endOffset": 252579,
+          "summary": "主角，重生者"
+        }
+      ],
+      "entityId": "entity_7ba4d6c77878",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0051",
+          "startOffset": 251717,
+          "endOffset": 251818,
+          "summary": "兄弟关系"
+        }
+      ],
+      "relationId": "rel_039d8cbeb70f",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0012",
+          "startOffset": 250478,
+          "endOffset": 250503,
+          "summary": "方源使用玉皮蛊强化身体，徒手击杀野猪，展示战力大涨。"
+        }
+      ],
+      "eventId": "evt_849f679ad9a4",
+      "eventType": "cultivation",
+      "summary": "方源使用玉皮蛊强化身体，徒手击杀野猪，展示战力大涨。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成功击杀野猪，验证了玉皮蛊的实战效果。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0038",
+          "startOffset": 251291,
+          "endOffset": 251332,
+          "summary": "方源盘坐猪尸旁，放出白豕蛊吞食猪肉，并查看空窍真元情况"
+        }
+      ],
+      "eventId": "evt_70d2a3fcab78",
+      "eventType": "cultivation",
+      "summary": "方源盘坐猪尸旁，放出白豕蛊吞食猪肉，并查看空窍真元情况",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "真元剩余三成六分，消耗八分墨绿真元"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0054",
+          "startOffset": 251860,
+          "endOffset": 251904,
+          "summary": "方正中毒昏睡七天后醒来，变得努力修行，晋升一转巅峰"
+        }
+      ],
+      "eventId": "evt_23d5180d0678",
+      "eventType": "cultivation",
+      "summary": "方正中毒昏睡七天后醒来，变得努力修行，晋升一转巅峰",
+      "actors": [
+        "方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正成为第一位晋升一转巅峰的学员"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0061",
+          "startOffset": 252272,
+          "endOffset": 252341,
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀"
+        }
+      ],
+      "eventId": "evt_224f0a47244a",
+      "eventType": "conflict",
+      "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+      "actors": [
+        "方源",
+        "玉眼石猴"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源依靠玉皮蛊防御，多次脱险"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0076",
+          "startOffset": 252924,
+          "endOffset": 252941,
+          "summary": "方源与一头流浪老狼对峙，老狼最终退走。"
+        }
+      ],
+      "eventId": "evt_7a18d7bb1191",
+      "eventType": "conflict",
+      "summary": "方源与一头流浪老狼对峙，老狼最终退走。",
+      "actors": [
+        "方源",
+        "老狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "老狼退走，但随后被未知存在杀死。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0087",
+          "startOffset": 253287,
+          "endOffset": 253306,
+          "summary": "老狼被未知存在杀死，惨嚎声戛然而止。"
+        }
+      ],
+      "eventId": "evt_c008adb13654",
+      "eventType": "death",
+      "summary": "老狼被未知存在杀死，惨嚎声戛然而止。",
+      "actors": [
+        "老狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知存在接近方源。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0012",
+          "startOffset": 250478,
+          "endOffset": 250503,
+          "summary": "方源使用玉皮蛊强化身体，徒手击杀野猪，展示战力大涨。"
+        }
+      ],
+      "timelineId": "tl_849f679ad9a4",
+      "eventId": "evt_849f679ad9a4",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "方源使用玉皮蛊强化身体，徒手击杀野猪，展示战力大涨。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0038",
+          "startOffset": 251291,
+          "endOffset": 251332,
+          "summary": "方源盘坐猪尸旁，放出白豕蛊吞食猪肉，并查看空窍真元情况"
+        }
+      ],
+      "timelineId": "tl_70d2a3fcab78",
+      "eventId": "evt_70d2a3fcab78",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "方源盘坐猪尸旁，放出白豕蛊吞食猪肉，并查看空窍真元情况",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0054",
+          "startOffset": 251860,
+          "endOffset": 251904,
+          "summary": "方正中毒昏睡七天后醒来，变得努力修行，晋升一转巅峰"
+        }
+      ],
+      "timelineId": "tl_23d5180d0678",
+      "eventId": "evt_23d5180d0678",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "方正中毒昏睡七天后醒来，变得努力修行，晋升一转巅峰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0061",
+          "startOffset": 252272,
+          "endOffset": 252341,
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀"
+        }
+      ],
+      "timelineId": "tl_224f0a47244a",
+      "eventId": "evt_224f0a47244a",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0076",
+          "startOffset": 252924,
+          "endOffset": 252941,
+          "summary": "方源与一头流浪老狼对峙，老狼最终退走。"
+        }
+      ],
+      "timelineId": "tl_7a18d7bb1191",
+      "eventId": "evt_7a18d7bb1191",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "方源与一头流浪老狼对峙，老狼最终退走。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0087",
+          "startOffset": 253287,
+          "endOffset": 253306,
+          "summary": "老狼被未知存在杀死，惨嚎声戛然而止。"
+        }
+      ],
+      "timelineId": "tl_c008adb13654",
+      "eventId": "evt_c008adb13654",
+      "chapterId": "ch_0081",
+      "orderHint": "chapter-order",
+      "summary": "老狼被未知存在杀死，惨嚎声戛然而止。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0007",
+      "startOffset": 250358,
+      "endOffset": 250360,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0034",
+      "startOffset": 251127,
+      "endOffset": 251164,
+      "summary": "魔道蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0051",
+      "startOffset": 251717,
+      "endOffset": 251818,
+      "summary": "方源弟弟，甲等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0053",
+      "startOffset": 251838,
+      "endOffset": 251856,
+      "summary": "刺杀者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0065",
+      "startOffset": 252492,
+      "endOffset": 252579,
+      "summary": "主角，重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0012",
+      "startOffset": 250478,
+      "endOffset": 250503,
+      "summary": "方源使用玉皮蛊强化身体，徒手击杀野猪，展示战力大涨。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0038",
+      "startOffset": 251291,
+      "endOffset": 251332,
+      "summary": "方源盘坐猪尸旁，放出白豕蛊吞食猪肉，并查看空窍真元情况"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0054",
+      "startOffset": 251860,
+      "endOffset": 251904,
+      "summary": "方正中毒昏睡七天后醒来，变得努力修行，晋升一转巅峰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0061",
+      "startOffset": 252272,
+      "endOffset": 252341,
+      "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0076",
+      "startOffset": 252924,
+      "endOffset": 252941,
+      "summary": "方源与一头流浪老狼对峙，老狼最终退走。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0081",
+      "paragraphId": "ch_0081_p0087",
+      "startOffset": 253287,
+      "endOffset": 253306,
+      "summary": "老狼被未知存在杀死，惨嚎声戛然而止。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (cultivation, hunting, exploration) with no clear hidden knowledge, secret motives, or future-known information directly supported by the source text. The event '老狼被未知存在杀死' suggests something happened off-screen but no source pointer is provided for it, and who killed it is unknown. The fact that 方正 changed after poisoning could be a hidden fact (e.g., 方源 poisoned him intentionally), but the seed does not directly support that 方源 was the poisoner - it only states 方正中了毒，昏睡了七天七夜. No source pointer confirms 方源's involvement. Other events are ordinary visible occurrences. No strong candidate for a hidden/future-known/player-visibility fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Seed shows observable actions (hunting wild boar with jade skin gu, being chased by stone monkeys, confronting an old wolf) but no clear motive is directly stated or safely inferable from context. Behavior is visible but motive is ambiguous - could be gathering resources, training, exploring, or surviving. No direct source supports a specific inferred motive beyond general survival/activity.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on individual actions of 方源 (Fang Yuan) and 方正 (Fang Zheng), with no established faction, clan, family, or group entity beyond the brother relationship. The only group mentioned is 玉眼石猴 (Jade-Eyed Stone Monkeys) as wild beasts, not a faction with political/social stakes. 王大 (Wang Da) appears only as a past assassination reference with no faction context. No family/clan/village organization with collective interests or pressures is described in the seed facts.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

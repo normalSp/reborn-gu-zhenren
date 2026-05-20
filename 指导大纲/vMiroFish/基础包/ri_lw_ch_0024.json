@@ -1,0 +1,813 @@
+{
+  "packageId": "ri_lw_ch_0024",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0024"
+    ],
+    "paragraphIds": [
+      "ch_0024_p0012",
+      "ch_0024_p0017",
+      "ch_0024_p0018",
+      "ch_0024_p0029",
+      "ch_0024_p0036",
+      "ch_0024_p0042",
+      "ch_0024_p0043",
+      "ch_0024_p0050",
+      "ch_0024_p0054",
+      "ch_0024_p0056",
+      "ch_0024_p0059",
+      "ch_0024_p0061",
+      "ch_0024_p0065",
+      "ch_0024_p0066",
+      "ch_0024_p0073",
+      "ch_0024_p0089"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0012",
+          "startOffset": 67771,
+          "endOffset": 67782,
+          "summary": "学员，重生者"
+        }
+      ],
+      "entityId": "entity_1c330da9358d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0018",
+          "startOffset": 67997,
+          "endOffset": 68031,
+          "summary": "一转蛊师，店铺管理者"
+        }
+      ],
+      "entityId": "entity_ebb2b57ade15",
+      "name": "江牙",
+      "kind": "person",
+      "aliases": [],
+      "description": "一转蛊师，店铺管理者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0036",
+          "startOffset": 68712,
+          "endOffset": 68806,
+          "summary": "主角，蛊师学员"
+        }
+      ],
+      "entityId": "entity_1c330da9358d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0042",
+          "startOffset": 69035,
+          "endOffset": 69057,
+          "summary": "客栈伙计"
+        }
+      ],
+      "entityId": "entity_f19db4fbd066",
+      "name": "伙计",
+      "kind": "person",
+      "aliases": [
+        "店家伙计"
+      ],
+      "description": "客栈伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "客栈掌柜"
+        }
+      ],
+      "entityId": "entity_beda4f352ef5",
+      "name": "掌柜的",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "客栈掌柜",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0054",
+          "startOffset": 69608,
+          "endOffset": 69687,
+          "summary": "学员"
+        }
+      ],
+      "entityId": "entity_bf444b1d2f00",
+      "name": "古月漠北",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0054",
+          "startOffset": 69608,
+          "endOffset": 69687,
+          "summary": "学员"
+        }
+      ],
+      "entityId": "entity_315b71bfe0b7",
+      "name": "古月赤城",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0050",
+          "startOffset": 69435,
+          "endOffset": 69520,
+          "summary": "被方源收走元石的同学"
+        }
+      ],
+      "entityId": "entity_f64928b97f9f",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "被方源收走元石的同学",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0061",
+          "startOffset": 70017,
+          "endOffset": 70077,
+          "summary": "青年蛊师"
+        }
+      ],
+      "entityId": "entity_ebb2b57ade15",
+      "name": "江牙",
+      "kind": "person",
+      "aliases": [],
+      "description": "青年蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "方源的舅父，断绝了生活费"
+        }
+      ],
+      "entityId": "entity_93a6f7ea9d5a",
+      "name": "舅父",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的舅父，断绝了生活费",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "方源的舅母，断绝了生活费"
+        }
+      ],
+      "entityId": "entity_839db64c21c5",
+      "name": "舅母",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的舅母，断绝了生活费",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_1c330da9358d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0066",
+          "startOffset": 70226,
+          "endOffset": 70241,
+          "summary": "商店伙计"
+        }
+      ],
+      "entityId": "entity_94ca1ceeef8b",
+      "name": "伙计",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "商店伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0017",
+          "startOffset": 67944,
+          "endOffset": 67993,
+          "summary": "同族学长学弟关系，江牙对方源友善，方源面无表情"
+        }
+      ],
+      "relationId": "rel_67a7e61f0a22",
+      "subject": "方源",
+      "object": "江牙",
+      "relationType": "FACTION",
+      "summary": "同族学长学弟关系，江牙对方源友善，方源面无表情",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "舅父断绝了方源的生活费"
+        }
+      ],
+      "relationId": "rel_d5cfd8b26f93",
+      "subject": "方源",
+      "object": "舅父",
+      "relationType": "FAMILY",
+      "summary": "舅父断绝了方源的生活费",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "舅母断绝了方源的生活费"
+        }
+      ],
+      "relationId": "rel_d63dd99e3a6c",
+      "subject": "方源",
+      "object": "舅母",
+      "relationType": "FAMILY",
+      "summary": "舅母断绝了方源的生活费",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0043",
+          "startOffset": 69061,
+          "endOffset": 69124,
+          "summary": "方源在客栈向伙计购买青竹酒和饭菜"
+        }
+      ],
+      "relationId": "rel_aa3ae37d2ba7",
+      "subject": "方源",
+      "object": "伙计",
+      "relationType": "TRADE",
+      "summary": "方源在客栈向伙计购买青竹酒和饭菜",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "掌柜的通过伙计告知方源商队即将到来的消息"
+        }
+      ],
+      "relationId": "rel_f7fa2a1654f4",
+      "subject": "方源",
+      "object": "掌柜的",
+      "relationType": "OTHER",
+      "summary": "掌柜的通过伙计告知方源商队即将到来的消息",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0050",
+          "startOffset": 69435,
+          "endOffset": 69520,
+          "summary": "方源曾经收走方正的元石"
+        }
+      ],
+      "relationId": "rel_c917704ed7db",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "CONFLICT",
+      "summary": "方源曾经收走方正的元石",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "方源从伙计处购买青竹酒"
+        }
+      ],
+      "relationId": "rel_3c47726798cd",
+      "subject": "方源",
+      "object": "伙计",
+      "relationType": "TRADE",
+      "summary": "方源从伙计处购买青竹酒",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0029",
+          "startOffset": 68453,
+          "endOffset": 68494,
+          "summary": "方源用一块元石从江牙处购买十片月兰花瓣"
+        }
+      ],
+      "eventId": "evt_e2fee02a2302",
+      "eventType": "trade",
+      "summary": "方源用一块元石从江牙处购买十片月兰花瓣",
+      "actors": [
+        "方源",
+        "江牙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "获得月兰花瓣，用于喂养月光蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0043",
+          "startOffset": 69061,
+          "endOffset": 69124,
+          "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石"
+        }
+      ],
+      "eventId": "evt_00f4e18b170a",
+      "eventType": "trade",
+      "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+      "actors": [
+        "方源",
+        "伙计"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货"
+        }
+      ],
+      "eventId": "evt_4e1b28b0723a",
+      "eventType": "other",
+      "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+      "actors": [
+        "伙计",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源担忧未来青竹酒供应不足，可能需要用次等酒喂养酒虫，可能引人怀疑"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "方源计算养蛊开销，发现自己只剩二十块元石，计划在三天后的月刃考核中表现以获取十块元石奖励"
+        }
+      ],
+      "eventId": "evt_2ea248c30285",
+      "eventType": "cultivation",
+      "summary": "方源计算养蛊开销，发现自己只剩二十块元石，计划在三天后的月刃考核中表现以获取十块元石奖励",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍"
+        }
+      ],
+      "eventId": "evt_b8838e3ed8ea",
+      "eventType": "trade",
+      "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍",
+      "actors": [
+        "方源",
+        "伙计"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源的钱袋变瘪，感叹养蛊不易"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0029",
+          "startOffset": 68453,
+          "endOffset": 68494,
+          "summary": "方源用一块元石从江牙处购买十片月兰花瓣"
+        }
+      ],
+      "timelineId": "tl_e2fee02a2302",
+      "eventId": "evt_e2fee02a2302",
+      "chapterId": "ch_0024",
+      "orderHint": "chapter-order",
+      "summary": "方源用一块元石从江牙处购买十片月兰花瓣",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0043",
+          "startOffset": 69061,
+          "endOffset": 69124,
+          "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石"
+        }
+      ],
+      "timelineId": "tl_00f4e18b170a",
+      "eventId": "evt_00f4e18b170a",
+      "chapterId": "ch_0024",
+      "orderHint": "chapter-order",
+      "summary": "方源在客栈购买青竹酒和饭菜，支付三块元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0059",
+          "startOffset": 69860,
+          "endOffset": 69990,
+          "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货"
+        }
+      ],
+      "timelineId": "tl_4e1b28b0723a",
+      "eventId": "evt_4e1b28b0723a",
+      "chapterId": "ch_0024",
+      "orderHint": "chapter-order",
+      "summary": "伙计告知方源商队即将到来，可能大量收购青竹酒导致客栈缺货",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0056",
+          "startOffset": 69706,
+          "endOffset": 69792,
+          "summary": "方源计算养蛊开销，发现自己只剩二十块元石，计划在三天后的月刃考核中表现以获取十块元石奖励"
+        }
+      ],
+      "timelineId": "tl_2ea248c30285",
+      "eventId": "evt_2ea248c30285",
+      "chapterId": "ch_0024",
+      "orderHint": "chapter-order",
+      "summary": "方源计算养蛊开销，发现自己只剩二十块元石，计划在三天后的月刃考核中表现以获取十块元石奖励",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0024",
+          "paragraphId": "ch_0024_p0065",
+          "startOffset": 70182,
+          "endOffset": 70222,
+          "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍"
+        }
+      ],
+      "timelineId": "tl_b8838e3ed8ea",
+      "eventId": "evt_b8838e3ed8ea",
+      "chapterId": "ch_0024",
+      "orderHint": "chapter-order",
+      "summary": "方源花费10块元石购买五坛青竹酒，并让伙计送到学堂宿舍",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0012",
+      "startOffset": 67771,
+      "endOffset": 67782,
+      "summary": "学员，重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0018",
+      "startOffset": 67997,
+      "endOffset": 68031,
+      "summary": "一转蛊师，店铺管理者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0036",
+      "startOffset": 68712,
+      "endOffset": 68806,
+      "summary": "主角，蛊师学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0042",
+      "startOffset": 69035,
+      "endOffset": 69057,
+      "summary": "客栈伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0059",
+      "startOffset": 69860,
+      "endOffset": 69990,
+      "summary": "客栈掌柜"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0054",
+      "startOffset": 69608,
+      "endOffset": 69687,
+      "summary": "学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0050",
+      "startOffset": 69435,
+      "endOffset": 69520,
+      "summary": "被方源收走元石的同学"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0061",
+      "startOffset": 70017,
+      "endOffset": 70077,
+      "summary": "青年蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0056",
+      "startOffset": 69706,
+      "endOffset": 69792,
+      "summary": "方源的舅父，断绝了生活费"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0065",
+      "startOffset": 70182,
+      "endOffset": 70222,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0066",
+      "startOffset": 70226,
+      "endOffset": 70241,
+      "summary": "商店伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0017",
+      "startOffset": 67944,
+      "endOffset": 67993,
+      "summary": "同族学长学弟关系，江牙对方源友善，方源面无表情"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0043",
+      "startOffset": 69061,
+      "endOffset": 69124,
+      "summary": "方源在客栈向伙计购买青竹酒和饭菜"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0024",
+      "paragraphId": "ch_0024_p0029",
+      "startOffset": 68453,
+      "endOffset": 68494,
+      "summary": "方源用一块元石从江牙处购买十片月兰花瓣"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (trades, purchases, conversations) and internal calculations by Fang Yuan. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present that would qualify as a hidden fact. The only potentially non-visible element is Fang Yuan's internal calculation of his finances and plan to perform well in the blade assessment in three days, but this is his own conscious planning (not a secret from others), and the seed does not support who else knows or doesn't know it. No source-backed hidden/secret fact can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan's actions (buying supplies, calculating expenses) but the motives behind these actions are ambiguous. He is a reborn person with limited funds, but the seed does not directly support a clear inferred motive beyond basic survival/resource management. Observed behavior is visible but motive is ambiguous - returning empty array per rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on 方源's personal financial situation and individual transactions. The only named faction-like entity is 古月漠北 (mentioned as a fellow student with family support), but there is no concrete faction pressure, threat, or stake involving a group/organization. Relations show family conflict with 舅父/舅母 (individuals, not a faction) and a trade relationship with 江牙 (individual shopkeeper). No clan, faction, or group is shown exerting or facing pressure in the seed facts.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,454 @@
+{
+  "packageId": "ri_lw_ch_1604",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1604"
+    ],
+    "paragraphIds": [
+      "ch_1604_p0003",
+      "ch_1604_p0006",
+      "ch_1604_p0008",
+      "ch_1604_p0020",
+      "ch_1604_p0022",
+      "ch_1604_p0028",
+      "ch_1604_p0033",
+      "ch_1604_p0042",
+      "ch_1604_p0045",
+      "ch_1604_p0051",
+      "ch_1604_p0052",
+      "ch_1604_p0053"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0006",
+          "startOffset": 5563131,
+          "endOffset": 5563133,
+          "summary": "七转蛊仙，至尊仙窍主人"
+        }
+      ],
+      "entityId": "entity_071099e4a105",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "七转蛊仙，至尊仙窍主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0033",
+          "startOffset": 5564372,
+          "endOffset": 5564374,
+          "summary": "主角，渡劫者"
+        }
+      ],
+      "entityId": "entity_071099e4a105",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，渡劫者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0003",
+          "startOffset": 5563029,
+          "endOffset": 5563049,
+          "summary": "方源落下至尊仙窍，打开门户吞吸海量天地二气，同时迎来一场地灾。"
+        }
+      ],
+      "eventId": "evt_b048b7bef0be",
+      "eventType": "cultivation",
+      "summary": "方源落下至尊仙窍，打开门户吞吸海量天地二气，同时迎来一场地灾。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "仙窍吞吸天地二气，地灾开始衍化。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0022",
+          "startOffset": 5563876,
+          "endOffset": 5563906,
+          "summary": "方源使用仙道杀招石洞天机推算出地灾内容，地灾衍化与推算一致。"
+        }
+      ],
+      "eventId": "evt_247a975c75f9",
+      "eventType": "cultivation",
+      "summary": "方源使用仙道杀招石洞天机推算出地灾内容，地灾衍化与推算一致。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源对地灾知根知底。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0028",
+          "startOffset": 5564132,
+          "endOffset": 5564152,
+          "summary": "地灾衍化出黄泉鬼武像和青色雷霆巨像。"
+        }
+      ],
+      "eventId": "evt_503f7b756c30",
+      "eventType": "other",
+      "summary": "地灾衍化出黄泉鬼武像和青色雷霆巨像。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "地灾巨像出现，攻击方源。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0042",
+          "startOffset": 5564777,
+          "endOffset": 5564827,
+          "summary": "方源利用后患无穷杀招将两灾叠加，同时渡过黄泉鬼武像地灾和青陀神武像天劫，增加道痕。"
+        }
+      ],
+      "eventId": "evt_52698c25a906",
+      "eventType": "cultivation",
+      "summary": "方源利用后患无穷杀招将两灾叠加，同时渡过黄泉鬼武像地灾和青陀神武像天劫，增加道痕。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魂道和变化道道痕增长，天意无法压制修为进步。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0051",
+          "startOffset": 5565208,
+          "endOffset": 5565238,
+          "summary": "方源催动天消意散杀招，清除残存天意。"
+        }
+      ],
+      "eventId": "evt_30fa833f19d8",
+      "eventType": "other",
+      "summary": "方源催动天消意散杀招，清除残存天意。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "确保至尊仙窍内无天意残留。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0052",
+          "startOffset": 5565263,
+          "endOffset": 5565293,
+          "summary": "方源的宙道分身一直在智慧蛊面前推算仙道杀招。"
+        }
+      ],
+      "eventId": "evt_652b0c39955d",
+      "eventType": "other",
+      "summary": "方源的宙道分身一直在智慧蛊面前推算仙道杀招。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "宙道杀招推算顺利。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0003",
+          "startOffset": 5563029,
+          "endOffset": 5563049,
+          "summary": "方源落下至尊仙窍，打开门户吞吸海量天地二气，同时迎来一场地灾。"
+        }
+      ],
+      "timelineId": "tl_b048b7bef0be",
+      "eventId": "evt_b048b7bef0be",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "方源落下至尊仙窍，打开门户吞吸海量天地二气，同时迎来一场地灾。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0022",
+          "startOffset": 5563876,
+          "endOffset": 5563906,
+          "summary": "方源使用仙道杀招石洞天机推算出地灾内容，地灾衍化与推算一致。"
+        }
+      ],
+      "timelineId": "tl_247a975c75f9",
+      "eventId": "evt_247a975c75f9",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "方源使用仙道杀招石洞天机推算出地灾内容，地灾衍化与推算一致。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0028",
+          "startOffset": 5564132,
+          "endOffset": 5564152,
+          "summary": "地灾衍化出黄泉鬼武像和青色雷霆巨像。"
+        }
+      ],
+      "timelineId": "tl_503f7b756c30",
+      "eventId": "evt_503f7b756c30",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "地灾衍化出黄泉鬼武像和青色雷霆巨像。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0042",
+          "startOffset": 5564777,
+          "endOffset": 5564827,
+          "summary": "方源利用后患无穷杀招将两灾叠加，同时渡过黄泉鬼武像地灾和青陀神武像天劫，增加道痕。"
+        }
+      ],
+      "timelineId": "tl_52698c25a906",
+      "eventId": "evt_52698c25a906",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "方源利用后患无穷杀招将两灾叠加，同时渡过黄泉鬼武像地灾和青陀神武像天劫，增加道痕。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0051",
+          "startOffset": 5565208,
+          "endOffset": 5565238,
+          "summary": "方源催动天消意散杀招，清除残存天意。"
+        }
+      ],
+      "timelineId": "tl_30fa833f19d8",
+      "eventId": "evt_30fa833f19d8",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "方源催动天消意散杀招，清除残存天意。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1604",
+          "paragraphId": "ch_1604_p0052",
+          "startOffset": 5565263,
+          "endOffset": 5565293,
+          "summary": "方源的宙道分身一直在智慧蛊面前推算仙道杀招。"
+        }
+      ],
+      "timelineId": "tl_652b0c39955d",
+      "eventId": "evt_652b0c39955d",
+      "chapterId": "ch_1604",
+      "orderHint": "chapter-order",
+      "summary": "方源的宙道分身一直在智慧蛊面前推算仙道杀招。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0006",
+      "startOffset": 5563131,
+      "endOffset": 5563133,
+      "summary": "七转蛊仙，至尊仙窍主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0033",
+      "startOffset": 5564372,
+      "endOffset": 5564374,
+      "summary": "主角，渡劫者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0003",
+      "startOffset": 5563029,
+      "endOffset": 5563049,
+      "summary": "方源落下至尊仙窍，打开门户吞吸海量天地二气，同时迎来一场地灾。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0022",
+      "startOffset": 5563876,
+      "endOffset": 5563906,
+      "summary": "方源使用仙道杀招石洞天机推算出地灾内容，地灾衍化与推算一致。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0028",
+      "startOffset": 5564132,
+      "endOffset": 5564152,
+      "summary": "地灾衍化出黄泉鬼武像和青色雷霆巨像。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0042",
+      "startOffset": 5564777,
+      "endOffset": 5564827,
+      "summary": "方源利用后患无穷杀招将两灾叠加，同时渡过黄泉鬼武像地灾和青陀神武像天劫，增加道痕。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0051",
+      "startOffset": 5565208,
+      "endOffset": 5565238,
+      "summary": "方源催动天消意散杀招，清除残存天意。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1604",
+      "paragraphId": "ch_1604_p0052",
+      "startOffset": 5565263,
+      "endOffset": 5565293,
+      "summary": "方源的宙道分身一直在智慧蛊面前推算仙道杀招。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events in this chapter are ordinary cultivation actions performed by Fang Yuan (opening至尊仙窍, using石洞天机 to deduce earthly calamity, using后患无穷 to stack calamities, using天消意散 to clear heavenly will, his time-path clone deducing killer moves). These are all visible/observable actions during tribulation crossing. No hidden knowledge, secret motives, private plans, future-known information, or knowledge gaps are directly supported by the source pointers. The seed describes what Fang Yuan does, not what he privately knows or plans that others don't know.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Seed describes Fang Yuan's cultivation actions (absorbing qi, deducing tribulation, stacking tribulations, clearing heavenly will, deducing killer moves) but no observable interpersonal or social behavior from which a motive can be inferred. All actions are solitary cultivation procedures with no dialogue, interaction with other characters, or revealed intent beyond 'survive tribulation and grow'. No character motive candidate can be responsibly extracted without psychological speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package only contains events about 方源 (Fang Yuan) as an individual cultivating, undergoing tribulations, and using killer moves. No named factions, clans, families, teams, shops, halls, or organizations appear in the entities, relations, or events. The only actor is 方源 as a single person. There is no collective actor with a concrete stake in the seed facts. No faction/group pressure can be derived from this seed.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

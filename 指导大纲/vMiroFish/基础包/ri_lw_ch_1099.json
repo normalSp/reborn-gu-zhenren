@@ -1,0 +1,906 @@
+{
+  "packageId": "ri_lw_ch_1099",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1099"
+    ],
+    "paragraphIds": [
+      "ch_1099_p0002",
+      "ch_1099_p0005",
+      "ch_1099_p0006",
+      "ch_1099_p0023",
+      "ch_1099_p0027",
+      "ch_1099_p0031",
+      "ch_1099_p0033",
+      "ch_1099_p0039",
+      "ch_1099_p0040",
+      "ch_1099_p0041",
+      "ch_1099_p0045",
+      "ch_1099_p0051",
+      "ch_1099_p0054",
+      "ch_1099_p0056",
+      "ch_1099_p0058",
+      "ch_1099_p0061",
+      "ch_1099_p0062",
+      "ch_1099_p0065",
+      "ch_1099_p0066",
+      "ch_1099_p0070",
+      "ch_1099_p0072",
+      "ch_1099_p0083",
+      "ch_1099_p0087",
+      "ch_1099_p0091"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0002",
+          "startOffset": 3882107,
+          "endOffset": 3882116,
+          "summary": "琅琊派成员，蛊仙"
+        }
+      ],
+      "entityId": "entity_8e7a14510b75",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊派成员，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0006",
+          "startOffset": 3882252,
+          "endOffset": 3882273,
+          "summary": "琅琊派创建者，地灵"
+        }
+      ],
+      "entityId": "entity_5e3309b9ce01",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊派创建者，地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0033",
+          "startOffset": 3883380,
+          "endOffset": 3883382,
+          "summary": "主角，蛊仙，琅琊派成员"
+        }
+      ],
+      "entityId": "entity_8e7a14510b75",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙，琅琊派成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0039",
+          "startOffset": 3883560,
+          "endOffset": 3883564,
+          "summary": "琅琊派地灵，与方源有分歧"
+        }
+      ],
+      "entityId": "entity_271afdd00b94",
+      "name": "琅琊地灵",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "琅琊派地灵，与方源有分歧",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0054",
+          "startOffset": 3884146,
+          "endOffset": 3884148,
+          "summary": "曾追杀方源的蛊仙"
+        }
+      ],
+      "entityId": "entity_160d7bbb937a",
+      "name": "戚灾",
+      "kind": "person",
+      "aliases": [],
+      "description": "曾追杀方源的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0058",
+          "startOffset": 3884366,
+          "endOffset": 3884370,
+          "summary": "五转巅峰蛊师，毛民，某城主的使者"
+        }
+      ],
+      "entityId": "entity_58a73ad22a2a",
+      "name": "毛民使者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "五转巅峰蛊师，毛民，某城主的使者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0065",
+          "startOffset": 3884569,
+          "endOffset": 3884573,
+          "summary": "蛊师，奴道修行者"
+        }
+      ],
+      "entityId": "entity_8e7a14510b75",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，奴道修行者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0066",
+          "startOffset": 3884607,
+          "endOffset": 3884611,
+          "summary": "毛民五转巅峰蛊师，毛十二的后裔"
+        }
+      ],
+      "entityId": "entity_3eeba106e27a",
+      "name": "毛民蛊师",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民五转巅峰蛊师，毛十二的后裔",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0070",
+          "startOffset": 3884730,
+          "endOffset": 3884733,
+          "summary": "奴兽仙蛊主人，门派成员"
+        }
+      ],
+      "entityId": "entity_d77d48f6ebc9",
+      "name": "毛十二",
+      "kind": "person",
+      "aliases": [],
+      "description": "奴兽仙蛊主人，门派成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0005",
+          "startOffset": 3882181,
+          "endOffset": 3882248,
+          "summary": "方源是琅琊派成员，琅琊地灵是掌门，但方源拒绝门派任务，关系紧张"
+        }
+      ],
+      "relationId": "rel_a6ca8ac59631",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "FACTION",
+      "summary": "方源是琅琊派成员，琅琊地灵是掌门，但方源拒绝门派任务，关系紧张",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0039",
+          "startOffset": 3883560,
+          "endOffset": 3883564,
+          "summary": "方源与琅琊地灵因是否效力琅琊派产生分歧，关系紧张"
+        }
+      ],
+      "relationId": "rel_8b9febd7110a",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "CONFLICT",
+      "summary": "方源与琅琊地灵因是否效力琅琊派产生分歧，关系紧张",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0045",
+          "startOffset": 3883811,
+          "endOffset": 3883813,
+          "summary": "方源对琅琊派只是纯粹利用，方便自身修行"
+        }
+      ],
+      "relationId": "rel_04bdbb24a306",
+      "subject": "方源",
+      "object": "琅琊派",
+      "relationType": "OTHER",
+      "summary": "方源对琅琊派只是纯粹利用，方便自身修行",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0051",
+          "startOffset": 3883998,
+          "endOffset": 3884000,
+          "summary": "天意以方源为棋子，方源对抗天意"
+        }
+      ],
+      "relationId": "rel_8540de35635e",
+      "subject": "方源",
+      "object": "天意",
+      "relationType": "CONFLICT",
+      "summary": "天意以方源为棋子，方源对抗天意",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0051",
+          "startOffset": 3883998,
+          "endOffset": 3884000,
+          "summary": "天意以方源为棋子对付影宗"
+        }
+      ],
+      "relationId": "rel_8a56e0b52fc8",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "CONFLICT",
+      "summary": "天意以方源为棋子对付影宗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0051",
+          "startOffset": 3883998,
+          "endOffset": 3884000,
+          "summary": "天意以方源为棋子对付魔尊幽魂"
+        }
+      ],
+      "relationId": "rel_07eec1ac191a",
+      "subject": "方源",
+      "object": "魔尊幽魂",
+      "relationType": "CONFLICT",
+      "summary": "天意以方源为棋子对付魔尊幽魂",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0065",
+          "startOffset": 3884569,
+          "endOffset": 3884573,
+          "summary": "方源指点毛民蛊师奴道修行"
+        }
+      ],
+      "relationId": "rel_49fbfe884515",
+      "subject": "方源",
+      "object": "毛民蛊师",
+      "relationType": "MENTOR",
+      "summary": "方源指点毛民蛊师奴道修行",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0070",
+          "startOffset": 3884730,
+          "endOffset": 3884733,
+          "summary": "方源借毛十二的奴兽仙蛊，用指点后裔作为交换"
+        }
+      ],
+      "relationId": "rel_7a518dcbf2f0",
+      "subject": "方源",
+      "object": "毛十二",
+      "relationType": "TRADE",
+      "summary": "方源借毛十二的奴兽仙蛊，用指点后裔作为交换",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0072",
+          "startOffset": 3884823,
+          "endOffset": 3884826,
+          "summary": "毛十二是毛民蛊师的血脉长辈"
+        }
+      ],
+      "relationId": "rel_27c42352450b",
+      "subject": "毛十二",
+      "object": "毛民蛊师",
+      "relationType": "FAMILY",
+      "summary": "毛十二是毛民蛊师的血脉长辈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0005",
+          "startOffset": 3882181,
+          "endOffset": 3882248,
+          "summary": "方源拒绝接受讨伐落星犬的任务，与琅琊地灵不欢而散"
+        }
+      ],
+      "eventId": "evt_19a36471d5eb",
+      "eventType": "conflict",
+      "summary": "方源拒绝接受讨伐落星犬的任务，与琅琊地灵不欢而散",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源离开云城，琅琊地灵愤怒但无奈"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0027",
+          "startOffset": 3883060,
+          "endOffset": 3883076,
+          "summary": "方源表演苦笑和长叹，以掩饰真实想法"
+        }
+      ],
+      "eventId": "evt_f6119455afb0",
+      "eventType": "other",
+      "summary": "方源表演苦笑和长叹，以掩饰真实想法",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "琅琊地灵稍微舒缓愤怒"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0058",
+          "startOffset": 3884366,
+          "endOffset": 3884368,
+          "summary": "方源回到自家云城，得知一位毛民使者已经来到"
+        }
+      ],
+      "eventId": "evt_ccfa6b8b6be0",
+      "eventType": "other",
+      "summary": "方源回到自家云城，得知一位毛民使者已经来到",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源宣见了毛民使者"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0061",
+          "startOffset": 3884422,
+          "endOffset": 3884424,
+          "summary": "毛民使者奉上一块木盒给方源"
+        }
+      ],
+      "eventId": "evt_09203838ac93",
+      "eventType": "other",
+      "summary": "毛民使者奉上一块木盒给方源",
+      "actors": [
+        "毛民使者"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源接过木盒，打量毛民使者"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0070",
+          "startOffset": 3884730,
+          "endOffset": 3884733,
+          "summary": "方源借奴兽仙蛊，以指点毛十二后裔为代价"
+        }
+      ],
+      "eventId": "evt_75492068f799",
+      "eventType": "trade",
+      "summary": "方源借奴兽仙蛊，以指点毛十二后裔为代价",
+      "actors": [
+        "方源",
+        "毛十二"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得奴兽仙蛊使用权"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0083",
+          "startOffset": 3885195,
+          "endOffset": 3885199,
+          "summary": "方源尝试用奴兽仙蛊奴役荒兽雪怪，但失败"
+        }
+      ],
+      "eventId": "evt_eddb257d77bc",
+      "eventType": "cultivation",
+      "summary": "方源尝试用奴兽仙蛊奴役荒兽雪怪，但失败",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源确认天意充斥的生命不受奴役"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0091",
+          "startOffset": 3885453,
+          "endOffset": 3885457,
+          "summary": "方源产生新想法：先用我意冲刷天意，再尝试奴役"
+        }
+      ],
+      "eventId": "evt_54b6b4023989",
+      "eventType": "other",
+      "summary": "方源产生新想法：先用我意冲刷天意，再尝试奴役",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "可能后续尝试"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0005",
+          "startOffset": 3882181,
+          "endOffset": 3882248,
+          "summary": "方源拒绝接受讨伐落星犬的任务，与琅琊地灵不欢而散"
+        }
+      ],
+      "timelineId": "tl_19a36471d5eb",
+      "eventId": "evt_19a36471d5eb",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源拒绝接受讨伐落星犬的任务，与琅琊地灵不欢而散",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0027",
+          "startOffset": 3883060,
+          "endOffset": 3883076,
+          "summary": "方源表演苦笑和长叹，以掩饰真实想法"
+        }
+      ],
+      "timelineId": "tl_f6119455afb0",
+      "eventId": "evt_f6119455afb0",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源表演苦笑和长叹，以掩饰真实想法",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0058",
+          "startOffset": 3884366,
+          "endOffset": 3884368,
+          "summary": "方源回到自家云城，得知一位毛民使者已经来到"
+        }
+      ],
+      "timelineId": "tl_ccfa6b8b6be0",
+      "eventId": "evt_ccfa6b8b6be0",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源回到自家云城，得知一位毛民使者已经来到",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0061",
+          "startOffset": 3884422,
+          "endOffset": 3884424,
+          "summary": "毛民使者奉上一块木盒给方源"
+        }
+      ],
+      "timelineId": "tl_09203838ac93",
+      "eventId": "evt_09203838ac93",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "毛民使者奉上一块木盒给方源",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0070",
+          "startOffset": 3884730,
+          "endOffset": 3884733,
+          "summary": "方源借奴兽仙蛊，以指点毛十二后裔为代价"
+        }
+      ],
+      "timelineId": "tl_75492068f799",
+      "eventId": "evt_75492068f799",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源借奴兽仙蛊，以指点毛十二后裔为代价",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0083",
+          "startOffset": 3885195,
+          "endOffset": 3885199,
+          "summary": "方源尝试用奴兽仙蛊奴役荒兽雪怪，但失败"
+        }
+      ],
+      "timelineId": "tl_eddb257d77bc",
+      "eventId": "evt_eddb257d77bc",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源尝试用奴兽仙蛊奴役荒兽雪怪，但失败",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1099",
+          "paragraphId": "ch_1099_p0091",
+          "startOffset": 3885453,
+          "endOffset": 3885457,
+          "summary": "方源产生新想法：先用我意冲刷天意，再尝试奴役"
+        }
+      ],
+      "timelineId": "tl_54b6b4023989",
+      "eventId": "evt_54b6b4023989",
+      "chapterId": "ch_1099",
+      "orderHint": "chapter-order",
+      "summary": "方源产生新想法：先用我意冲刷天意，再尝试奴役",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0002",
+      "startOffset": 3882107,
+      "endOffset": 3882116,
+      "summary": "琅琊派成员，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0006",
+      "startOffset": 3882252,
+      "endOffset": 3882273,
+      "summary": "琅琊派创建者，地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0033",
+      "startOffset": 3883380,
+      "endOffset": 3883382,
+      "summary": "主角，蛊仙，琅琊派成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0039",
+      "startOffset": 3883560,
+      "endOffset": 3883564,
+      "summary": "琅琊派地灵，与方源有分歧"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0054",
+      "startOffset": 3884146,
+      "endOffset": 3884148,
+      "summary": "曾追杀方源的蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0058",
+      "startOffset": 3884366,
+      "endOffset": 3884370,
+      "summary": "五转巅峰蛊师，毛民，某城主的使者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0065",
+      "startOffset": 3884569,
+      "endOffset": 3884573,
+      "summary": "蛊师，奴道修行者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0066",
+      "startOffset": 3884607,
+      "endOffset": 3884611,
+      "summary": "毛民五转巅峰蛊师，毛十二的后裔"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0070",
+      "startOffset": 3884730,
+      "endOffset": 3884733,
+      "summary": "奴兽仙蛊主人，门派成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0005",
+      "startOffset": 3882181,
+      "endOffset": 3882248,
+      "summary": "方源是琅琊派成员，琅琊地灵是掌门，但方源拒绝门派任务，关系紧张"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0045",
+      "startOffset": 3883811,
+      "endOffset": 3883813,
+      "summary": "方源对琅琊派只是纯粹利用，方便自身修行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0051",
+      "startOffset": 3883998,
+      "endOffset": 3884000,
+      "summary": "天意以方源为棋子，方源对抗天意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0072",
+      "startOffset": 3884823,
+      "endOffset": 3884826,
+      "summary": "毛十二是毛民蛊师的血脉长辈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0027",
+      "startOffset": 3883060,
+      "endOffset": 3883076,
+      "summary": "方源表演苦笑和长叹，以掩饰真实想法"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0058",
+      "startOffset": 3884366,
+      "endOffset": 3884368,
+      "summary": "方源回到自家云城，得知一位毛民使者已经来到"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0061",
+      "startOffset": 3884422,
+      "endOffset": 3884424,
+      "summary": "毛民使者奉上一块木盒给方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0083",
+      "startOffset": 3885195,
+      "endOffset": 3885199,
+      "summary": "方源尝试用奴兽仙蛊奴役荒兽雪怪，但失败"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1099",
+      "paragraphId": "ch_1099_p0091",
+      "startOffset": 3885453,
+      "endOffset": 3885457,
+      "summary": "方源产生新想法：先用我意冲刷天意，再尝试奴役"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (Fang Yuan refusing tasks, returning to his cloud city, receiving a messenger, attempting to enslave a snow monster). The only potential hidden fact is Fang Yuan's internal thought about using 'my will' to wash away 'heaven's will' before attempting enslavement (ch_1099_p0091), but this is a direct thought/plan that is already narrated to the reader, making it player-visible rather than hidden. No other actors are shown to know or not know this plan. The seed does not support any fact that is genuinely hidden from the player or future-known.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual actors (方源, 琅琊地灵, 毛民使者, 毛民蛊师) and their personal interactions. While 琅琊派 is mentioned as a faction, the conflict between 方源 and 琅琊地灵 is presented as a personal disagreement over task acceptance, not a faction-level pressure. 方源's refusal of the mission is individual defiance, not a collective faction stance. The 毛民使者 and 毛民蛊师 are individuals (毛十二's descendant) with no named collective毛民 faction or clan organization explicitly shown as having a stake. No collective actor (family, clan, faction, team, shop, hall, or organization) has a concrete, source-backed stake that rises to the level of faction pressure.",
+      "IF export filter quarantined 8 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

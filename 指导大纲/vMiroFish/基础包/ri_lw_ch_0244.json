@@ -1,0 +1,932 @@
+{
+  "packageId": "ri_lw_ch_0244",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0244"
+    ],
+    "paragraphIds": [
+      "ch_0244_p0002",
+      "ch_0244_p0003",
+      "ch_0244_p0005",
+      "ch_0244_p0010",
+      "ch_0244_p0012",
+      "ch_0244_p0020",
+      "ch_0244_p0021",
+      "ch_0244_p0038",
+      "ch_0244_p0039",
+      "ch_0244_p0046",
+      "ch_0244_p0055",
+      "ch_0244_p0056",
+      "ch_0244_p0057",
+      "ch_0244_p0062",
+      "ch_0244_p0065",
+      "ch_0244_p0066",
+      "ch_0244_p0070",
+      "ch_0244_p0071",
+      "ch_0244_p0074",
+      "ch_0244_p0079"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0002",
+          "startOffset": 828806,
+          "endOffset": 828809,
+          "summary": "商队首领，母亲遗愿去商家城"
+        }
+      ],
+      "entityId": "entity_2a3e0b8dd3cf",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [
+        "小姐"
+      ],
+      "description": "商队首领，母亲遗愿去商家城",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0003",
+          "startOffset": 828831,
+          "endOffset": 828833,
+          "summary": "商心慈的护卫或管家"
+        }
+      ],
+      "entityId": "entity_b21b0d9de88d",
+      "name": "张柱",
+      "kind": "person",
+      "aliases": [
+        "张柱叔"
+      ],
+      "description": "商心慈的护卫或管家",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0005",
+          "startOffset": 829000,
+          "endOffset": 829002,
+          "summary": "投靠商心慈的神秘人物，力气大"
+        }
+      ],
+      "entityId": "entity_fd40dafff5f2",
+      "name": "黑土",
+      "kind": "person",
+      "aliases": [],
+      "description": "投靠商心慈的神秘人物，力气大",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0005",
+          "startOffset": 829070,
+          "endOffset": 829075,
+          "summary": "黑土的同伴，男装女子"
+        }
+      ],
+      "entityId": "entity_f8c5184050fa",
+      "name": "黑土的同伴",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "黑土的同伴，男装女子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0021",
+          "startOffset": 829973,
+          "endOffset": 829977,
+          "summary": "商心慈的亲人"
+        }
+      ],
+      "entityId": "entity_ceeec51e8577",
+      "name": "小蝶",
+      "kind": "person",
+      "aliases": [],
+      "description": "商心慈的亲人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0020",
+          "startOffset": 829851,
+          "endOffset": 829853,
+          "summary": "已故，遗愿让商心慈去商家城"
+        }
+      ],
+      "entityId": "entity_908916825c1e",
+      "name": "商心慈的母亲",
+      "kind": "single_person_title",
+      "aliases": [
+        "我娘"
+      ],
+      "description": "已故，遗愿让商心慈去商家城",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0038",
+          "startOffset": 830580,
+          "endOffset": 830584,
+          "summary": "魔道蛊师，伪装身份"
+        }
+      ],
+      "entityId": "entity_5a52ec8ba768",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，伪装身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0038",
+          "startOffset": 830585,
+          "endOffset": 830589,
+          "summary": "魔道蛊师，女性伪装男性"
+        }
+      ],
+      "entityId": "entity_4d01ed67ea0d",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，女性伪装男性",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0055",
+          "startOffset": 831207,
+          "endOffset": 831209,
+          "summary": "商队成员，怀疑方源"
+        }
+      ],
+      "entityId": "entity_b21b0d9de88d",
+      "name": "张柱",
+      "kind": "person",
+      "aliases": [],
+      "description": "商队成员，怀疑方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0056",
+          "startOffset": 831305,
+          "endOffset": 831308,
+          "summary": "商队首领，聪明善良"
+        }
+      ],
+      "entityId": "entity_2a3e0b8dd3cf",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [],
+      "description": "商队首领，聪明善良",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0065",
+          "startOffset": 831600,
+          "endOffset": 831629,
+          "summary": "张家老仆"
+        }
+      ],
+      "entityId": "entity_b21b0d9de88d",
+      "name": "张柱",
+      "kind": "person",
+      "aliases": [],
+      "description": "张家老仆",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0066",
+          "startOffset": 831633,
+          "endOffset": 831702,
+          "summary": "伪装成黑土的穿越者"
+        }
+      ],
+      "entityId": "entity_5a52ec8ba768",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑土"
+      ],
+      "description": "伪装成黑土的穿越者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0070",
+          "startOffset": 831920,
+          "endOffset": 831974,
+          "summary": "张家小姐，商队首领"
+        }
+      ],
+      "entityId": "entity_2a3e0b8dd3cf",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [
+        "张小姐"
+      ],
+      "description": "张家小姐，商队首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0010",
+          "startOffset": 829206,
+          "endOffset": 829212,
+          "summary": "主仆或长辈与晚辈关系，张柱称商心慈为小姐，商心慈称张柱为张柱叔"
+        }
+      ],
+      "relationId": "rel_09f3ab4097a2",
+      "subject": "商心慈",
+      "object": "张柱",
+      "relationType": "FAMILY",
+      "summary": "主仆或长辈与晚辈关系，张柱称商心慈为小姐，商心慈称张柱为张柱叔",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0012",
+          "startOffset": 829311,
+          "endOffset": 829316,
+          "summary": "商心慈信任黑土，认为他没有恶意，愿意收留他"
+        }
+      ],
+      "relationId": "rel_1532ab0bb92b",
+      "subject": "商心慈",
+      "object": "黑土",
+      "relationType": "ALLY",
+      "summary": "商心慈信任黑土，认为他没有恶意，愿意收留他",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0021",
+          "startOffset": 829973,
+          "endOffset": 829977,
+          "summary": "商心慈视小蝶为亲人"
+        }
+      ],
+      "relationId": "rel_432e1eb54030",
+      "subject": "商心慈",
+      "object": "小蝶",
+      "relationType": "FAMILY",
+      "summary": "商心慈视小蝶为亲人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0020",
+          "startOffset": 829851,
+          "endOffset": 829853,
+          "summary": "母女关系，母亲已故"
+        }
+      ],
+      "relationId": "rel_283b3d1e2214",
+      "subject": "商心慈",
+      "object": "商心慈的母亲",
+      "relationType": "FAMILY",
+      "summary": "母女关系，母亲已故",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0038",
+          "startOffset": 830580,
+          "endOffset": 830589,
+          "summary": "方源和白凝冰同行，伪装身份，共同行动"
+        }
+      ],
+      "relationId": "rel_f51d5ca44700",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源和白凝冰同行，伪装身份，共同行动",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0062",
+          "startOffset": 831512,
+          "endOffset": 831522,
+          "summary": "方源主动找商心慈提出合伙，商心慈感到意外"
+        }
+      ],
+      "relationId": "rel_1db352f87cbb",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "OTHER",
+      "summary": "方源主动找商心慈提出合伙，商心慈感到意外",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0057",
+          "startOffset": 831325,
+          "endOffset": 831335,
+          "summary": "商心慈和张柱共同管理商队，张柱怀疑方源但被商心慈阻止"
+        }
+      ],
+      "relationId": "rel_babce68c274f",
+      "subject": "商心慈",
+      "object": "张柱",
+      "relationType": "ALLY",
+      "summary": "商心慈和张柱共同管理商队，张柱怀疑方源但被商心慈阻止",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0066",
+          "startOffset": 831633,
+          "endOffset": 831702,
+          "summary": "方源向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管"
+        }
+      ],
+      "relationId": "rel_931661fc9b5b",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "TRADE",
+      "summary": "方源向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0079",
+          "startOffset": 832297,
+          "endOffset": 832390,
+          "summary": "张柱是商心慈的叔辈老仆，忠诚且关心商心慈"
+        }
+      ],
+      "relationId": "rel_3f808834d2be",
+      "subject": "张柱",
+      "object": "商心慈",
+      "relationType": "FAMILY",
+      "summary": "张柱是商心慈的叔辈老仆，忠诚且关心商心慈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0003",
+          "startOffset": 828831,
+          "endOffset": 828905,
+          "summary": "张柱向商心慈报告对黑土及其同伴的怀疑，商心慈表示信任黑土"
+        }
+      ],
+      "eventId": "evt_eb2420cce819",
+      "eventType": "other",
+      "summary": "张柱向商心慈报告对黑土及其同伴的怀疑，商心慈表示信任黑土",
+      "actors": [
+        "张柱",
+        "商心慈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "商心慈决定继续收留黑土二人"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0020",
+          "startOffset": 829851,
+          "endOffset": 829969,
+          "summary": "商心慈透露母亲遗愿：带着信物去商家城找某人，若不被接纳则靠财物生活"
+        }
+      ],
+      "eventId": "evt_c063b8977734",
+      "eventType": "other",
+      "summary": "商心慈透露母亲遗愿：带着信物去商家城找某人，若不被接纳则靠财物生活",
+      "actors": [
+        "商心慈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "商心慈表明货物不重要，亲人安全第一"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0038",
+          "startOffset": 830580,
+          "endOffset": 830589,
+          "summary": "方源和白凝冰在金家寨购买牛奶羊奶喂养骨枪蛊，但骨枪蛊已饿死三分之二"
+        }
+      ],
+      "eventId": "evt_bf600307b6c5",
+      "eventType": "other",
+      "summary": "方源和白凝冰在金家寨购买牛奶羊奶喂养骨枪蛊，但骨枪蛊已饿死三分之二",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源继续购买奶制品，但骨枪蛊损失严重"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0062",
+          "startOffset": 831512,
+          "endOffset": 831522,
+          "summary": "方源主动找商心慈提出合伙"
+        }
+      ],
+      "eventId": "evt_db6eac17d8eb",
+      "eventType": "other",
+      "summary": "方源主动找商心慈提出合伙",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "商心慈和张柱感到诧异"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0074",
+          "startOffset": 832077,
+          "endOffset": 832143,
+          "summary": "方源以黑土身份向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管"
+        }
+      ],
+      "eventId": "evt_88515ecdc34f",
+      "eventType": "trade",
+      "summary": "方源以黑土身份向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管",
+      "actors": [
+        "方源",
+        "商心慈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得货物管理权，商心慈信任方源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0003",
+          "startOffset": 828831,
+          "endOffset": 828905,
+          "summary": "张柱向商心慈报告对黑土及其同伴的怀疑，商心慈表示信任黑土"
+        }
+      ],
+      "timelineId": "tl_eb2420cce819",
+      "eventId": "evt_eb2420cce819",
+      "chapterId": "ch_0244",
+      "orderHint": "chapter-order",
+      "summary": "张柱向商心慈报告对黑土及其同伴的怀疑，商心慈表示信任黑土",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0020",
+          "startOffset": 829851,
+          "endOffset": 829969,
+          "summary": "商心慈透露母亲遗愿：带着信物去商家城找某人，若不被接纳则靠财物生活"
+        }
+      ],
+      "timelineId": "tl_c063b8977734",
+      "eventId": "evt_c063b8977734",
+      "chapterId": "ch_0244",
+      "orderHint": "chapter-order",
+      "summary": "商心慈透露母亲遗愿：带着信物去商家城找某人，若不被接纳则靠财物生活",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0038",
+          "startOffset": 830580,
+          "endOffset": 830589,
+          "summary": "方源和白凝冰在金家寨购买牛奶羊奶喂养骨枪蛊，但骨枪蛊已饿死三分之二"
+        }
+      ],
+      "timelineId": "tl_bf600307b6c5",
+      "eventId": "evt_bf600307b6c5",
+      "chapterId": "ch_0244",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰在金家寨购买牛奶羊奶喂养骨枪蛊，但骨枪蛊已饿死三分之二",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0062",
+          "startOffset": 831512,
+          "endOffset": 831522,
+          "summary": "方源主动找商心慈提出合伙"
+        }
+      ],
+      "timelineId": "tl_db6eac17d8eb",
+      "eventId": "evt_db6eac17d8eb",
+      "chapterId": "ch_0244",
+      "orderHint": "chapter-order",
+      "summary": "方源主动找商心慈提出合伙",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0074",
+          "startOffset": 832077,
+          "endOffset": 832143,
+          "summary": "方源以黑土身份向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管"
+        }
+      ],
+      "timelineId": "tl_88515ecdc34f",
+      "eventId": "evt_88515ecdc34f",
+      "chapterId": "ch_0244",
+      "orderHint": "chapter-order",
+      "summary": "方源以黑土身份向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0002",
+      "startOffset": 828806,
+      "endOffset": 828809,
+      "summary": "商队首领，母亲遗愿去商家城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0003",
+      "startOffset": 828831,
+      "endOffset": 828833,
+      "summary": "商心慈的护卫或管家"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0005",
+      "startOffset": 829000,
+      "endOffset": 829002,
+      "summary": "投靠商心慈的神秘人物，力气大"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0005",
+      "startOffset": 829070,
+      "endOffset": 829075,
+      "summary": "黑土的同伴，男装女子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0021",
+      "startOffset": 829973,
+      "endOffset": 829977,
+      "summary": "商心慈的亲人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0020",
+      "startOffset": 829851,
+      "endOffset": 829853,
+      "summary": "已故，遗愿让商心慈去商家城"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0038",
+      "startOffset": 830580,
+      "endOffset": 830584,
+      "summary": "魔道蛊师，伪装身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0038",
+      "startOffset": 830585,
+      "endOffset": 830589,
+      "summary": "魔道蛊师，女性伪装男性"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0055",
+      "startOffset": 831207,
+      "endOffset": 831209,
+      "summary": "商队成员，怀疑方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0056",
+      "startOffset": 831305,
+      "endOffset": 831308,
+      "summary": "商队首领，聪明善良"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0065",
+      "startOffset": 831600,
+      "endOffset": 831629,
+      "summary": "张家老仆"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0066",
+      "startOffset": 831633,
+      "endOffset": 831702,
+      "summary": "伪装成黑土的穿越者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0070",
+      "startOffset": 831920,
+      "endOffset": 831974,
+      "summary": "张家小姐，商队首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0010",
+      "startOffset": 829206,
+      "endOffset": 829212,
+      "summary": "主仆或长辈与晚辈关系，张柱称商心慈为小姐，商心慈称张柱为张柱叔"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0012",
+      "startOffset": 829311,
+      "endOffset": 829316,
+      "summary": "商心慈信任黑土，认为他没有恶意，愿意收留他"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0038",
+      "startOffset": 830580,
+      "endOffset": 830589,
+      "summary": "方源和白凝冰同行，伪装身份，共同行动"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0062",
+      "startOffset": 831512,
+      "endOffset": 831522,
+      "summary": "方源主动找商心慈提出合伙，商心慈感到意外"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0057",
+      "startOffset": 831325,
+      "endOffset": 831335,
+      "summary": "商心慈和张柱共同管理商队，张柱怀疑方源但被商心慈阻止"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0079",
+      "startOffset": 832297,
+      "endOffset": 832390,
+      "summary": "张柱是商心慈的叔辈老仆，忠诚且关心商心慈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0003",
+      "startOffset": 828831,
+      "endOffset": 828905,
+      "summary": "张柱向商心慈报告对黑土及其同伴的怀疑，商心慈表示信任黑土"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0020",
+      "startOffset": 829851,
+      "endOffset": 829969,
+      "summary": "商心慈透露母亲遗愿：带着信物去商家城找某人，若不被接纳则靠财物生活"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0244",
+      "paragraphId": "ch_0244_p0074",
+      "startOffset": 832077,
+      "endOffset": 832143,
+      "summary": "方源以黑土身份向商心慈提议借贷货物并五五分账，商心慈同意将货物交给方源掌管"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (商心慈's mother's dying wish, 方源 proposing a partnership, 张柱's suspicions) that are either publicly stated or directly observable by characters present. No private knowledge, secret plans, or future-known information is directly supported by the source text. The fact that 黑土 is actually 方源 in disguise is known to the reader but the seed does not provide source text showing any character privately knowing this - it's narrative visibility, not a hidden fact. 商心慈's mother's dying wish is openly stated by 商心慈 herself, so it's not hidden. No directly supported knowledge gap or secret motive is found in the provided paragraphs.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源主动找商心慈提出合伙（ptr_17），商心慈同意将货物交给方源掌管。但seed中只记录了方源提出合伙和商心慈同意的行为，没有直接描述方源为何提出合伙（动机不明）。商心慈信任方源（ptr_13认为他没有恶意），但她的动机是信任还是其他也不明确。行为可见但动机模糊，不宜强加推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual characters (商心慈, 方源/黑土, 张柱, 白凝冰) and their personal interactions. 商心慈 leads a merchant caravan but the caravan is not named as a formal faction/clan/group with collective stakes. 张柱 is referred to as a servant of the '张家' (Zhang family) household, but the seed does not establish the Zhang family as an active collective actor with concrete stakes in the seed facts. The mother's遗愿 mentions going to 商家城 (Shang family city), but the 商家 (Shang family) is not present or active in this chapter. No named collective actor (family, clan, faction, shop, hall, organization) has a clear, source-backed pressure from this seed.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

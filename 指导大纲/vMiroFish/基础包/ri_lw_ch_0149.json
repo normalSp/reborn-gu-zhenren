@@ -1,0 +1,783 @@
+{
+  "packageId": "ri_lw_ch_0149",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0149"
+    ],
+    "paragraphIds": [
+      "ch_0149_p0005",
+      "ch_0149_p0007",
+      "ch_0149_p0009",
+      "ch_0149_p0032",
+      "ch_0149_p0034",
+      "ch_0149_p0039",
+      "ch_0149_p0045",
+      "ch_0149_p0053",
+      "ch_0149_p0060",
+      "ch_0149_p0067",
+      "ch_0149_p0068",
+      "ch_0149_p0071",
+      "ch_0149_p0075",
+      "ch_0149_p0080",
+      "ch_0149_p0082"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0007",
+          "startOffset": 490311,
+          "endOffset": 490313,
+          "summary": "古月家族蛊师，拥有九叶生机草"
+        }
+      ],
+      "entityId": "entity_a398b1b1141d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族蛊师，拥有九叶生机草",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0009",
+          "startOffset": 490361,
+          "endOffset": 490365,
+          "summary": "药堂家老，控制售卖生机叶"
+        }
+      ],
+      "entityId": "entity_9b6289a4529d",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [
+        "药姬家老",
+        "药姬大人"
+      ],
+      "description": "药堂家老，控制售卖生机叶",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "古月家族家老，负责九叶生机草通告"
+        }
+      ],
+      "entityId": "entity_9b6289a4529d",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [
+        "药姬"
+      ],
+      "description": "古月家族家老，负责九叶生机草通告",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0071",
+          "startOffset": 493067,
+          "endOffset": 493087,
+          "summary": "被针对的蛊师"
+        }
+      ],
+      "entityId": "entity_a398b1b1141d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "被针对的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0075",
+          "startOffset": 493162,
+          "endOffset": 493216,
+          "summary": "药堂成员，劝说药姬发布通告"
+        }
+      ],
+      "entityId": "entity_7650c624e1da",
+      "name": "药乐",
+      "kind": "person",
+      "aliases": [
+        "古月药乐"
+      ],
+      "description": "药堂成员，劝说药姬发布通告",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0075",
+          "startOffset": 493162,
+          "endOffset": 493216,
+          "summary": "药堂负责人"
+        }
+      ],
+      "entityId": "entity_41c1be8c92c1",
+      "name": "药姬",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "药堂负责人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0080",
+          "startOffset": 493325,
+          "endOffset": 493399,
+          "summary": "蛊师，向药乐道别并请到援兵"
+        }
+      ],
+      "entityId": "entity_08bdd56e50f6",
+      "name": "熊骄嫚",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，向药乐道别并请到援兵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0009",
+          "startOffset": 490361,
+          "endOffset": 490391,
+          "summary": "古月药姬通过法令逼迫方源上缴九叶生机草，以打击方源的经济利益"
+        }
+      ],
+      "relationId": "rel_78d888233b46",
+      "subject": "古月药姬",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "古月药姬通过法令逼迫方源上缴九叶生机草，以打击方源的经济利益",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "暗中利益交换的盟友"
+        }
+      ],
+      "relationId": "rel_b76f5df5826f",
+      "subject": "古月药姬",
+      "object": "古月赤练",
+      "relationType": "ALLY",
+      "summary": "暗中利益交换的盟友",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "暗中利益交换的盟友"
+        }
+      ],
+      "relationId": "rel_5433da0c6e05",
+      "subject": "古月药姬",
+      "object": "古月漠尘",
+      "relationType": "ALLY",
+      "summary": "暗中利益交换的盟友",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0039",
+          "startOffset": 491686,
+          "endOffset": 491732,
+          "summary": "古月药姬因利益和蛊虫而对付方源"
+        }
+      ],
+      "relationId": "rel_66002e63bda4",
+      "subject": "古月药姬",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "古月药姬因利益和蛊虫而对付方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0075",
+          "startOffset": 493162,
+          "endOffset": 493216,
+          "summary": "药乐劝说药姬发布通告"
+        }
+      ],
+      "relationId": "rel_1d196b26caa1",
+      "subject": "药乐",
+      "object": "药姬",
+      "relationType": "OTHER",
+      "summary": "药乐劝说药姬发布通告",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0080",
+          "startOffset": 493325,
+          "endOffset": 493399,
+          "summary": "熊骄嫚感谢药乐出气，并道别"
+        }
+      ],
+      "relationId": "rel_11c80c97fab2",
+      "subject": "熊骄嫚",
+      "object": "药乐",
+      "relationType": "ALLY",
+      "summary": "熊骄嫚感谢药乐出气，并道别",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0005",
+          "startOffset": 490183,
+          "endOffset": 490272,
+          "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产"
+        }
+      ],
+      "eventId": "evt_4786630446fa",
+      "eventType": "other",
+      "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产",
+      "actors": [
+        "古月药姬"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源等蛊师面临上缴压力，方源的经济来源受到威胁"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0032",
+          "startOffset": 491410,
+          "endOffset": 491428,
+          "summary": "方源意识到古月药姬的针对，思考应对之策，决定晋升三转"
+        }
+      ],
+      "eventId": "evt_684dd6e027b9",
+      "eventType": "other",
+      "summary": "方源意识到古月药姬的针对，思考应对之策，决定晋升三转",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源计划通过晋升三转来解决困境"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "古月药姬与古月赤练、古月漠尘等家老完成暗中利益交换，发布九叶生机草通告"
+        }
+      ],
+      "eventId": "evt_0549444ac2ae",
+      "eventType": "other",
+      "summary": "古月药姬与古月赤练、古月漠尘等家老完成暗中利益交换，发布九叶生机草通告",
+      "actors": [
+        "古月药姬",
+        "古月赤练",
+        "古月漠尘"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "大多数族人被蒙骗，认为药姬公正"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0053",
+          "startOffset": 492328,
+          "endOffset": 492428,
+          "summary": "方源分析自身处境，决定晋升三转以应对危机"
+        }
+      ],
+      "eventId": "evt_dff0cac2719c",
+      "eventType": "other",
+      "summary": "方源分析自身处境，决定晋升三转以应对危机",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源选择使用人兽葬生蛊秘方突破"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0067",
+          "startOffset": 492973,
+          "endOffset": 492992,
+          "summary": "药堂发出通告，征集九叶生机草统一生产生机叶"
+        }
+      ],
+      "eventId": "evt_e3e5cd71bcdf",
+      "eventType": "other",
+      "summary": "药堂发出通告，征集九叶生机草统一生产生机叶",
+      "actors": [
+        "药堂"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "针对方源，使其无法高价出售生机叶"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0082",
+          "startOffset": 493434,
+          "endOffset": 493491,
+          "summary": "熊骄嫚向药乐道别，并提到已请到援兵，需尽快赶回"
+        }
+      ],
+      "eventId": "evt_24920704118a",
+      "eventType": "other",
+      "summary": "熊骄嫚向药乐道别，并提到已请到援兵，需尽快赶回",
+      "actors": [
+        "熊骄嫚"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "熊骄嫚离开，返回战场"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0005",
+          "startOffset": 490183,
+          "endOffset": 490272,
+          "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产"
+        }
+      ],
+      "timelineId": "tl_4786630446fa",
+      "eventId": "evt_4786630446fa",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0032",
+          "startOffset": 491410,
+          "endOffset": 491428,
+          "summary": "方源意识到古月药姬的针对，思考应对之策，决定晋升三转"
+        }
+      ],
+      "timelineId": "tl_684dd6e027b9",
+      "eventId": "evt_684dd6e027b9",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "方源意识到古月药姬的针对，思考应对之策，决定晋升三转",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "古月药姬与古月赤练、古月漠尘等家老完成暗中利益交换，发布九叶生机草通告"
+        }
+      ],
+      "timelineId": "tl_0549444ac2ae",
+      "eventId": "evt_0549444ac2ae",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "古月药姬与古月赤练、古月漠尘等家老完成暗中利益交换，发布九叶生机草通告",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0053",
+          "startOffset": 492328,
+          "endOffset": 492428,
+          "summary": "方源分析自身处境，决定晋升三转以应对危机"
+        }
+      ],
+      "timelineId": "tl_dff0cac2719c",
+      "eventId": "evt_dff0cac2719c",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "方源分析自身处境，决定晋升三转以应对危机",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0067",
+          "startOffset": 492973,
+          "endOffset": 492992,
+          "summary": "药堂发出通告，征集九叶生机草统一生产生机叶"
+        }
+      ],
+      "timelineId": "tl_e3e5cd71bcdf",
+      "eventId": "evt_e3e5cd71bcdf",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "药堂发出通告，征集九叶生机草统一生产生机叶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0082",
+          "startOffset": 493434,
+          "endOffset": 493491,
+          "summary": "熊骄嫚向药乐道别，并提到已请到援兵，需尽快赶回"
+        }
+      ],
+      "timelineId": "tl_24920704118a",
+      "eventId": "evt_24920704118a",
+      "chapterId": "ch_0149",
+      "orderHint": "chapter-order",
+      "summary": "熊骄嫚向药乐道别，并提到已请到援兵，需尽快赶回",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0034",
+          "startOffset": 491499,
+          "endOffset": 491580,
+          "summary": "古月家族家老，负责九叶生机草通告"
+        }
+      ],
+      "factId": "hf_0149_001",
+      "summary": "古月药姬与古月赤练、古月漠尘等家老完成了暗中的利益交换，从而推动九叶生机草通告的发布",
+      "whoKnows": [
+        "古月药姬",
+        "古月赤练",
+        "古月漠尘"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0005",
+          "startOffset": 490183,
+          "endOffset": 490272,
+          "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0009",
+          "startOffset": 490361,
+          "endOffset": 490391,
+          "summary": "古月药姬通过法令逼迫方源上缴九叶生机草，以打击方源的经济利益"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0149",
+          "paragraphId": "ch_0149_p0039",
+          "startOffset": 491686,
+          "endOffset": 491732,
+          "summary": "古月药姬因利益和蛊虫而对付方源"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "古月药姬",
+      "observedMotive": "颁布法令收缴九叶生机草",
+      "inferredMotive": "打击方源经济利益",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0007",
+      "startOffset": 490311,
+      "endOffset": 490313,
+      "summary": "古月家族蛊师，拥有九叶生机草"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0009",
+      "startOffset": 490361,
+      "endOffset": 490365,
+      "summary": "药堂家老，控制售卖生机叶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0034",
+      "startOffset": 491499,
+      "endOffset": 491580,
+      "summary": "古月家族家老，负责九叶生机草通告"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0071",
+      "startOffset": 493067,
+      "endOffset": 493087,
+      "summary": "被针对的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0075",
+      "startOffset": 493162,
+      "endOffset": 493216,
+      "summary": "药堂成员，劝说药姬发布通告"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0080",
+      "startOffset": 493325,
+      "endOffset": 493399,
+      "summary": "蛊师，向药乐道别并请到援兵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0009",
+      "startOffset": 490361,
+      "endOffset": 490391,
+      "summary": "古月药姬通过法令逼迫方源上缴九叶生机草，以打击方源的经济利益"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0039",
+      "startOffset": 491686,
+      "endOffset": 491732,
+      "summary": "古月药姬因利益和蛊虫而对付方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0005",
+      "startOffset": 490183,
+      "endOffset": 490272,
+      "summary": "药堂颁布法令，要求所有拥有九叶生机草的蛊师上缴九叶生机草，统一生产"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0032",
+      "startOffset": 491410,
+      "endOffset": 491428,
+      "summary": "方源意识到古月药姬的针对，思考应对之策，决定晋升三转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0053",
+      "startOffset": 492328,
+      "endOffset": 492428,
+      "summary": "方源分析自身处境，决定晋升三转以应对危机"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0067",
+      "startOffset": 492973,
+      "endOffset": 492992,
+      "summary": "药堂发出通告，征集九叶生机草统一生产生机叶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0149",
+      "paragraphId": "ch_0149_p0082",
+      "startOffset": 493434,
+      "endOffset": 493491,
+      "summary": "熊骄嫚向药乐道别，并提到已请到援兵，需尽快赶回"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly states that Gu Yue Yao Ji completed secret interest exchanges with Gu Yue Chi Lian, Gu Yue Mo Chen and other elders. This is a hidden political transaction not known to the general public, making it a valid hidden fact candidate.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 药堂颁布法令要求上缴九叶生机草（ptr_9），直接支持。",
+      "inferredMotive: 原文明确说'这是古月药姬在针对他'（ptr_7）和'因利益和蛊虫而对付方源'（ptr_8），所以打击方源经济利益是直接上下文支持的推断，非心理跳跃。",
+      "符合规则：observedMotive <= 28字，inferredMotive <= 28字。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月药姬是药堂家老，代表药堂（古月家族下属机构）发布法令，对方源形成经济打压。方源是古月家族蛊师，但压力主体是药堂（集体组织）而非个人。方源的反应是个人晋升计划，但作为被针对方，其反应可视为模拟候选。压力轴描述稍长，可精简。",
+      "IF export filter quarantined 6 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

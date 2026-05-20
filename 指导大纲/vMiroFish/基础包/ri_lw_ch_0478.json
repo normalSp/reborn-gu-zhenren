@@ -1,0 +1,628 @@
+{
+  "packageId": "ri_lw_ch_0478",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0478"
+    ],
+    "paragraphIds": [
+      "ch_0478_p0009",
+      "ch_0478_p0015",
+      "ch_0478_p0028",
+      "ch_0478_p0032",
+      "ch_0478_p0033",
+      "ch_0478_p0034",
+      "ch_0478_p0036",
+      "ch_0478_p0042",
+      "ch_0478_p0047",
+      "ch_0478_p0050",
+      "ch_0478_p0052",
+      "ch_0478_p0066",
+      "ch_0478_p0067",
+      "ch_0478_p0068",
+      "ch_0478_p0071",
+      "ch_0478_p0073",
+      "ch_0478_p0077",
+      "ch_0478_p0080",
+      "ch_0478_p0082",
+      "ch_0478_p0083"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0009",
+          "startOffset": 1660962,
+          "endOffset": 1660990,
+          "summary": "主角，五转蛊师"
+        }
+      ],
+      "entityId": "entity_98fb8eb844db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，五转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0033",
+          "startOffset": 1661834,
+          "endOffset": 1661867,
+          "summary": "五转巅峰蛊师"
+        }
+      ],
+      "entityId": "entity_98fb8eb844db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "五转巅峰蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0042",
+          "startOffset": 1662141,
+          "endOffset": 1662182,
+          "summary": "方源的帮手，负责收购紫晶舍利蛊"
+        }
+      ],
+      "entityId": "entity_ab9219ca2ed0",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的帮手，负责收购紫晶舍利蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0067",
+          "startOffset": 1663318,
+          "endOffset": 1663320,
+          "summary": "主角，五转巅峰蛊师"
+        }
+      ],
+      "entityId": "entity_98fb8eb844db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，五转巅峰蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0077",
+          "startOffset": 1663758,
+          "endOffset": 1663761,
+          "summary": "荡魂行宫中的存在，协助方源催动通天蛊"
+        }
+      ],
+      "entityId": "entity_ab9219ca2ed0",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "荡魂行宫中的存在，协助方源催动通天蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0034",
+          "startOffset": 1661871,
+          "endOffset": 1661920,
+          "summary": "方源体内有春秋蝉，春秋蝉威胁方源生命，逼迫他提升修为"
+        }
+      ],
+      "relationId": "rel_80f24b871e19",
+      "subject": "方源",
+      "object": "春秋蝉",
+      "relationType": "USES",
+      "summary": "方源体内有春秋蝉，春秋蝉威胁方源生命，逼迫他提升修为",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0071",
+          "startOffset": 1663513,
+          "endOffset": 1663531,
+          "summary": "方源拥有荡魂山，并依赖其产出胆识蛊进行修炼"
+        }
+      ],
+      "relationId": "rel_916d850f81da",
+      "subject": "方源",
+      "object": "荡魂山",
+      "relationType": "USES",
+      "summary": "方源拥有荡魂山，并依赖其产出胆识蛊进行修炼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0080",
+          "startOffset": 1663844,
+          "endOffset": 1663866,
+          "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方"
+        }
+      ],
+      "relationId": "rel_365bf70f549f",
+      "subject": "方源",
+      "object": "宝黄天中的蛊仙",
+      "relationType": "TRADE",
+      "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0015",
+          "startOffset": 1661159,
+          "endOffset": 1661186,
+          "summary": "方源从四转巅峰突破至五转初阶，空窍晶膜破碎，真元由黄金真元转化为淡紫真元（紫晶真元）。"
+        }
+      ],
+      "eventId": "evt_36551b9317a0",
+      "eventType": "cultivation",
+      "summary": "方源从四转巅峰突破至五转初阶，空窍晶膜破碎，真元由黄金真元转化为淡紫真元（紫晶真元）。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成为五转蛊师，真元变为淡紫真元，空窍达到五转初阶。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0050",
+          "startOffset": 1662464,
+          "endOffset": 1662490,
+          "summary": "方源使用两颗紫晶舍利蛊，修为从五转初阶提升到五转高阶"
+        }
+      ],
+      "eventId": "evt_3a09b62785d1",
+      "eventType": "cultivation",
+      "summary": "方源使用两颗紫晶舍利蛊，修为从五转初阶提升到五转高阶",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "修为提升到五转高阶"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0052",
+          "startOffset": 1662531,
+          "endOffset": 1662553,
+          "summary": "方源再使用两颗长满绒毛的紫晶舍利蛊，修为提升到五转巅峰"
+        }
+      ],
+      "eventId": "evt_cd62b3f9361c",
+      "eventType": "cultivation",
+      "summary": "方源再使用两颗长满绒毛的紫晶舍利蛊，修为提升到五转巅峰",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "修为提升到五转巅峰"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0047",
+          "startOffset": 1662347,
+          "endOffset": 1662380,
+          "summary": "方源检测出六颗紫晶舍利蛊中只有两颗可用，其余被动手脚"
+        }
+      ],
+      "eventId": "evt_eadd2e7907ff",
+      "eventType": "other",
+      "summary": "方源检测出六颗紫晶舍利蛊中只有两颗可用，其余被动手脚",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "只使用了四颗紫晶舍利蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0068",
+          "startOffset": 1663347,
+          "endOffset": 1663377,
+          "summary": "方源采摘并捏碎胆识蛊，利用完好的胆识蛊增强狼人魂，修为达到五转巅峰"
+        }
+      ],
+      "eventId": "evt_7533281cd3e9",
+      "eventType": "cultivation",
+      "summary": "方源采摘并捏碎胆识蛊，利用完好的胆识蛊增强狼人魂，修为达到五转巅峰",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源空窍达到五转巅峰，春秋蝉压力缓解"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0083",
+          "startOffset": 1663984,
+          "endOffset": 1664014,
+          "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方"
+        }
+      ],
+      "eventId": "evt_20dbb5a27343",
+      "eventType": "trade",
+      "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方",
+      "actors": [
+        "方源",
+        "宝黄天中的蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "蛊仙们拿出宝光三四丈的秘方，但方源仍不满意"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0015",
+          "startOffset": 1661159,
+          "endOffset": 1661186,
+          "summary": "方源从四转巅峰突破至五转初阶，空窍晶膜破碎，真元由黄金真元转化为淡紫真元（紫晶真元）。"
+        }
+      ],
+      "timelineId": "tl_36551b9317a0",
+      "eventId": "evt_36551b9317a0",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源从四转巅峰突破至五转初阶，空窍晶膜破碎，真元由黄金真元转化为淡紫真元（紫晶真元）。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0050",
+          "startOffset": 1662464,
+          "endOffset": 1662490,
+          "summary": "方源使用两颗紫晶舍利蛊，修为从五转初阶提升到五转高阶"
+        }
+      ],
+      "timelineId": "tl_3a09b62785d1",
+      "eventId": "evt_3a09b62785d1",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源使用两颗紫晶舍利蛊，修为从五转初阶提升到五转高阶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0052",
+          "startOffset": 1662531,
+          "endOffset": 1662553,
+          "summary": "方源再使用两颗长满绒毛的紫晶舍利蛊，修为提升到五转巅峰"
+        }
+      ],
+      "timelineId": "tl_cd62b3f9361c",
+      "eventId": "evt_cd62b3f9361c",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源再使用两颗长满绒毛的紫晶舍利蛊，修为提升到五转巅峰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0047",
+          "startOffset": 1662347,
+          "endOffset": 1662380,
+          "summary": "方源检测出六颗紫晶舍利蛊中只有两颗可用，其余被动手脚"
+        }
+      ],
+      "timelineId": "tl_eadd2e7907ff",
+      "eventId": "evt_eadd2e7907ff",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源检测出六颗紫晶舍利蛊中只有两颗可用，其余被动手脚",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0068",
+          "startOffset": 1663347,
+          "endOffset": 1663377,
+          "summary": "方源采摘并捏碎胆识蛊，利用完好的胆识蛊增强狼人魂，修为达到五转巅峰"
+        }
+      ],
+      "timelineId": "tl_7533281cd3e9",
+      "eventId": "evt_7533281cd3e9",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源采摘并捏碎胆识蛊，利用完好的胆识蛊增强狼人魂，修为达到五转巅峰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0478",
+          "paragraphId": "ch_0478_p0083",
+          "startOffset": 1663984,
+          "endOffset": 1664014,
+          "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方"
+        }
+      ],
+      "timelineId": "tl_20dbb5a27343",
+      "eventId": "evt_20dbb5a27343",
+      "chapterId": "ch_0478",
+      "orderHint": "chapter-order",
+      "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0009",
+      "startOffset": 1660962,
+      "endOffset": 1660990,
+      "summary": "主角，五转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0033",
+      "startOffset": 1661834,
+      "endOffset": 1661867,
+      "summary": "五转巅峰蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0042",
+      "startOffset": 1662141,
+      "endOffset": 1662182,
+      "summary": "方源的帮手，负责收购紫晶舍利蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0067",
+      "startOffset": 1663318,
+      "endOffset": 1663320,
+      "summary": "主角，五转巅峰蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0077",
+      "startOffset": 1663758,
+      "endOffset": 1663761,
+      "summary": "荡魂行宫中的存在，协助方源催动通天蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0034",
+      "startOffset": 1661871,
+      "endOffset": 1661920,
+      "summary": "方源体内有春秋蝉，春秋蝉威胁方源生命，逼迫他提升修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0071",
+      "startOffset": 1663513,
+      "endOffset": 1663531,
+      "summary": "方源拥有荡魂山，并依赖其产出胆识蛊进行修炼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0080",
+      "startOffset": 1663844,
+      "endOffset": 1663866,
+      "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0015",
+      "startOffset": 1661159,
+      "endOffset": 1661186,
+      "summary": "方源从四转巅峰突破至五转初阶，空窍晶膜破碎，真元由黄金真元转化为淡紫真元（紫晶真元）。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0050",
+      "startOffset": 1662464,
+      "endOffset": 1662490,
+      "summary": "方源使用两颗紫晶舍利蛊，修为从五转初阶提升到五转高阶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0052",
+      "startOffset": 1662531,
+      "endOffset": 1662553,
+      "summary": "方源再使用两颗长满绒毛的紫晶舍利蛊，修为提升到五转巅峰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0047",
+      "startOffset": 1662347,
+      "endOffset": 1662380,
+      "summary": "方源检测出六颗紫晶舍利蛊中只有两颗可用，其余被动手脚"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0068",
+      "startOffset": 1663347,
+      "endOffset": 1663377,
+      "summary": "方源采摘并捏碎胆识蛊，利用完好的胆识蛊增强狼人魂，修为达到五转巅峰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0478",
+      "paragraphId": "ch_0478_p0083",
+      "startOffset": 1663984,
+      "endOffset": 1664014,
+      "summary": "方源通过通天蛊在宝黄天中抛售和稀泥，换取和稀泥仙蛊炼制秘方"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package primarily describes ordinary cultivation events (突破, 使用舍利蛊, 采摘胆识蛊) and trade activities that are directly visible to the protagonist. The only potentially hidden element is that some of the 紫晶舍利蛊 were tampered with (ch_0478_p0047: '大部分都被人或多或少地动过手脚'), but this is already known to 方源 (he detected it), making it player-visible knowledge from his perspective. There is no source support for who tampered with them, their motives, or any other secret knowledge that would qualify as a hidden/future-known fact. The春秋蝉 threat is also already known to 方源. No suitable hidden fact candidate can be extracted without speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily documents Fang Yuan's cultivation breakthroughs (4th to 5th rank), use of Purple Crystal Relic Gu, and trading activities. While there is a mention of Spring Autumn Cicada threatening his life (ptr_6), the observed actions are cultivation and trading - the motive is survival pressure from the cicada, but the seed facts show him acting methodically (checking Gu for tampering, trading for recipes) rather than urgently. The behavior is visible but the specific motive is ambiguous beyond general cultivation advancement. No clear single observedMotive→inferredMotive pair with strong source backing.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses entirely on individual protagonist Fang Yuan's cultivation breakthrough (from rank 4 peak to rank 5 peak) using Purple Crystal Relic Gu. No named collective actors (factions, clans, families, teams, shops, halls, or organizations) appear in the entities, relations, or events. The only other named entity is '小狐仙' (Little Fox Immortal), who is an individual helper/assistant, not a collective group. '宝黄天中的蛊仙' (Gu Immortals in Treasure Yellow Heaven) is mentioned in a trade relation but is too vague and diffuse to constitute a specific named faction with a concrete stake. No family, clan, faction, or organization has a stake in the seed facts. All events and relations revolve around Fang Yuan's personal cultivation and his individual dealings.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

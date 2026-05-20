@@ -1,0 +1,631 @@
+{
+  "packageId": "ri_lw_ch_1828",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1828"
+    ],
+    "paragraphIds": [
+      "ch_1828_p0003",
+      "ch_1828_p0012",
+      "ch_1828_p0020",
+      "ch_1828_p0033",
+      "ch_1828_p0048",
+      "ch_1828_p0059",
+      "ch_1828_p0064",
+      "ch_1828_p0068",
+      "ch_1828_p0070",
+      "ch_1828_p0073",
+      "ch_1828_p0083",
+      "ch_1828_p0084",
+      "ch_1828_p0086",
+      "ch_1828_p0089",
+      "ch_1828_p0091"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0003",
+          "startOffset": 6340502,
+          "endOffset": 6340504,
+          "summary": "主角，八转蛊仙"
+        }
+      ],
+      "entityId": "entity_c1a4c86542f3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，八转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0033",
+          "startOffset": 6341631,
+          "endOffset": 6341648,
+          "summary": "蛊仙，正在搭建仙蛊屋"
+        }
+      ],
+      "entityId": "entity_c1a4c86542f3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，正在搭建仙蛊屋",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0073",
+          "startOffset": 6343053,
+          "endOffset": 6343055,
+          "summary": "八转蛊仙，拥有多个分身"
+        }
+      ],
+      "entityId": "entity_c1a4c86542f3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转蛊仙，拥有多个分身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0070",
+          "startOffset": 6342957,
+          "endOffset": 6342960,
+          "summary": "运道真传的留下者"
+        }
+      ],
+      "entityId": "entity_79e420b789fb",
+      "name": "巨阳",
+      "kind": "person",
+      "aliases": [],
+      "description": "运道真传的留下者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0048",
+          "startOffset": 6342187,
+          "endOffset": 6342205,
+          "summary": "方源与南疆各大家族互换仙蛊，此前敲诈了南疆正道获得仙蛊煮"
+        }
+      ],
+      "relationId": "rel_e63a82174824",
+      "subject": "方源",
+      "object": "南疆群仙",
+      "relationType": "TRADE",
+      "summary": "方源与南疆各大家族互换仙蛊，此前敲诈了南疆正道获得仙蛊煮",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0073",
+          "startOffset": 6343053,
+          "endOffset": 6343055,
+          "summary": "方源炼制并催动煮运锅，灌输仙元，使用察运杀招，并操控煮运锅转移气运"
+        }
+      ],
+      "relationId": "rel_71604ef698df",
+      "subject": "方源",
+      "object": "煮运锅",
+      "relationType": "USES",
+      "summary": "方源炼制并催动煮运锅，灌输仙元，使用察运杀招，并操控煮运锅转移气运",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0083",
+          "startOffset": 6343428,
+          "endOffset": 6343431,
+          "summary": "方源拥有宙道分身，其气运与本体相连，且因春秋蝉弊端有黑气"
+        }
+      ],
+      "relationId": "rel_57d7067ab702",
+      "subject": "方源",
+      "object": "宙道分身",
+      "relationType": "OTHER",
+      "summary": "方源拥有宙道分身，其气运与本体相连，且因春秋蝉弊端有黑气",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0086",
+          "startOffset": 6343544,
+          "endOffset": 6343547,
+          "summary": "方源拥有梦道分身，其气运为粉色雾气，缥缈虚弱"
+        }
+      ],
+      "relationId": "rel_abf8277970f9",
+      "subject": "方源",
+      "object": "梦道分身",
+      "relationType": "OTHER",
+      "summary": "方源拥有梦道分身，其气运为粉色雾气，缥缈虚弱",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0089",
+          "startOffset": 6343623,
+          "endOffset": 6343627,
+          "summary": "方源拥有龙人分身，其气运如紫色小龙"
+        }
+      ],
+      "relationId": "rel_b2f35e088f20",
+      "subject": "方源",
+      "object": "龙人分身",
+      "relationType": "OTHER",
+      "summary": "方源拥有龙人分身，其气运如紫色小龙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0089",
+          "startOffset": 6343623,
+          "endOffset": 6343635,
+          "summary": "方源在兽灾洞天中的分身，气运如灰雀"
+        }
+      ],
+      "relationId": "rel_412971ee1787",
+      "subject": "方源",
+      "object": "兽灾洞天中的分身",
+      "relationType": "OTHER",
+      "summary": "方源在兽灾洞天中的分身，气运如灰雀",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0089",
+          "startOffset": 6343623,
+          "endOffset": 6343635,
+          "summary": "方源在华文洞天中的分身，气运如花苞"
+        }
+      ],
+      "relationId": "rel_401e51272bbc",
+      "subject": "方源",
+      "object": "华文洞天中的分身",
+      "relationType": "OTHER",
+      "summary": "方源在华文洞天中的分身，气运如花苞",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0012",
+          "startOffset": 6340824,
+          "endOffset": 6340868,
+          "summary": "方源在太古白天中借助随意祥云和天相杀招探索，寻找洞天，并收获八转仙材。"
+        }
+      ],
+      "eventId": "evt_92593d98afaa",
+      "eventType": "cultivation",
+      "summary": "方源在太古白天中借助随意祥云和天相杀招探索，寻找洞天，并收获八转仙材。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源收获颇丰，但尚未发现新的洞天。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0020",
+          "startOffset": 6341074,
+          "endOffset": 6341092,
+          "summary": "方源的宙道分身推算完成第二座仙蛊屋的组装方案，方源本体开始组装。"
+        }
+      ],
+      "eventId": "evt_ada1798d9150",
+      "eventType": "cultivation",
+      "summary": "方源的宙道分身推算完成第二座仙蛊屋的组装方案，方源本体开始组装。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源开始组装第二座仙蛊屋。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0059",
+          "startOffset": 6342582,
+          "endOffset": 6342603,
+          "summary": "方源在至尊仙窍内搭建仙蛊屋煮运锅，耗时大半个月，成功完成"
+        }
+      ],
+      "eventId": "evt_51e66b8c7c62",
+      "eventType": "cultivation",
+      "summary": "方源在至尊仙窍内搭建仙蛊屋煮运锅，耗时大半个月，成功完成",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "仙蛊屋煮运锅建成，外观为一口金锅，锅外有八条雕龙，其中六条栩栩如生，两条模糊粗糙"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0073",
+          "startOffset": 6343053,
+          "endOffset": 6343055,
+          "summary": "方源灌输仙元催动煮运锅，使其化为金光隐没头顶，并施展察运杀招查看气运"
+        }
+      ],
+      "eventId": "evt_24500e6cb22d",
+      "eventType": "other",
+      "summary": "方源灌输仙元催动煮运锅，使其化为金光隐没头顶，并施展察运杀招查看气运",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源看到自身及分身的气运，并发现宙道分身有黑气（春秋蝉弊端）"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0091",
+          "startOffset": 6343770,
+          "endOffset": 6343772,
+          "summary": "方源操控煮运锅，使两条雕龙吸气，将锅内气运喷向灰雀气运和花苞气运，进行气运转移"
+        }
+      ],
+      "eventId": "evt_6bf22209d21c",
+      "eventType": "other",
+      "summary": "方源操控煮运锅，使两条雕龙吸气，将锅内气运喷向灰雀气运和花苞气运，进行气运转移",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "灰雀气运和花苞气运得到增强"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0012",
+          "startOffset": 6340824,
+          "endOffset": 6340868,
+          "summary": "方源在太古白天中借助随意祥云和天相杀招探索，寻找洞天，并收获八转仙材。"
+        }
+      ],
+      "timelineId": "tl_92593d98afaa",
+      "eventId": "evt_92593d98afaa",
+      "chapterId": "ch_1828",
+      "orderHint": "chapter-order",
+      "summary": "方源在太古白天中借助随意祥云和天相杀招探索，寻找洞天，并收获八转仙材。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0020",
+          "startOffset": 6341074,
+          "endOffset": 6341092,
+          "summary": "方源的宙道分身推算完成第二座仙蛊屋的组装方案，方源本体开始组装。"
+        }
+      ],
+      "timelineId": "tl_ada1798d9150",
+      "eventId": "evt_ada1798d9150",
+      "chapterId": "ch_1828",
+      "orderHint": "chapter-order",
+      "summary": "方源的宙道分身推算完成第二座仙蛊屋的组装方案，方源本体开始组装。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0059",
+          "startOffset": 6342582,
+          "endOffset": 6342603,
+          "summary": "方源在至尊仙窍内搭建仙蛊屋煮运锅，耗时大半个月，成功完成"
+        }
+      ],
+      "timelineId": "tl_51e66b8c7c62",
+      "eventId": "evt_51e66b8c7c62",
+      "chapterId": "ch_1828",
+      "orderHint": "chapter-order",
+      "summary": "方源在至尊仙窍内搭建仙蛊屋煮运锅，耗时大半个月，成功完成",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0073",
+          "startOffset": 6343053,
+          "endOffset": 6343055,
+          "summary": "方源灌输仙元催动煮运锅，使其化为金光隐没头顶，并施展察运杀招查看气运"
+        }
+      ],
+      "timelineId": "tl_24500e6cb22d",
+      "eventId": "evt_24500e6cb22d",
+      "chapterId": "ch_1828",
+      "orderHint": "chapter-order",
+      "summary": "方源灌输仙元催动煮运锅，使其化为金光隐没头顶，并施展察运杀招查看气运",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1828",
+          "paragraphId": "ch_1828_p0091",
+          "startOffset": 6343770,
+          "endOffset": 6343772,
+          "summary": "方源操控煮运锅，使两条雕龙吸气，将锅内气运喷向灰雀气运和花苞气运，进行气运转移"
+        }
+      ],
+      "timelineId": "tl_6bf22209d21c",
+      "eventId": "evt_6bf22209d21c",
+      "chapterId": "ch_1828",
+      "orderHint": "chapter-order",
+      "summary": "方源操控煮运锅，使两条雕龙吸气，将锅内气运喷向灰雀气运和花苞气运，进行气运转移",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0003",
+      "startOffset": 6340502,
+      "endOffset": 6340504,
+      "summary": "主角，八转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0033",
+      "startOffset": 6341631,
+      "endOffset": 6341648,
+      "summary": "蛊仙，正在搭建仙蛊屋"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0073",
+      "startOffset": 6343053,
+      "endOffset": 6343055,
+      "summary": "八转蛊仙，拥有多个分身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0070",
+      "startOffset": 6342957,
+      "endOffset": 6342960,
+      "summary": "运道真传的留下者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0048",
+      "startOffset": 6342187,
+      "endOffset": 6342205,
+      "summary": "方源与南疆各大家族互换仙蛊，此前敲诈了南疆正道获得仙蛊煮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0083",
+      "startOffset": 6343428,
+      "endOffset": 6343431,
+      "summary": "方源拥有宙道分身，其气运与本体相连，且因春秋蝉弊端有黑气"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0086",
+      "startOffset": 6343544,
+      "endOffset": 6343547,
+      "summary": "方源拥有梦道分身，其气运为粉色雾气，缥缈虚弱"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0089",
+      "startOffset": 6343623,
+      "endOffset": 6343627,
+      "summary": "方源拥有龙人分身，其气运如紫色小龙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0089",
+      "startOffset": 6343623,
+      "endOffset": 6343635,
+      "summary": "方源在兽灾洞天中的分身，气运如灰雀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0012",
+      "startOffset": 6340824,
+      "endOffset": 6340868,
+      "summary": "方源在太古白天中借助随意祥云和天相杀招探索，寻找洞天，并收获八转仙材。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0020",
+      "startOffset": 6341074,
+      "endOffset": 6341092,
+      "summary": "方源的宙道分身推算完成第二座仙蛊屋的组装方案，方源本体开始组装。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0059",
+      "startOffset": 6342582,
+      "endOffset": 6342603,
+      "summary": "方源在至尊仙窍内搭建仙蛊屋煮运锅，耗时大半个月，成功完成"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1828",
+      "paragraphId": "ch_1828_p0091",
+      "startOffset": 6343770,
+      "endOffset": 6343772,
+      "summary": "方源操控煮运锅，使两条雕龙吸气，将锅内气运喷向灰雀气运和花苞气运，进行气运转移"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes visible events: Fang Yuan building the Luck-Cooking Cauldron, exploring the ancient sky, and transferring luck among his clones. These are ordinary cultivation/action events visible to the narrator. No hidden knowledge, secret plans, future-known information, or directly supported knowledge gaps are present. The entities and relations are all ambiguous visibility and describe what Fang Yuan is doing openly. No fact about who knows what privately or who is ignorant can be extracted from this seed without speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan building and operating the Luck-Cooking Cauldron to transfer luck to his clones, but the observed actions (building a gu house, transferring luck) do not clearly reveal a specific motive beyond general self-enhancement. The behavior is visible but the motive is ambiguous - could be strengthening clones for exploration, combat preparation, or other purposes. No direct source evidence supports a specific inferred motive.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on Fang Yuan's individual cultivation activities (building immortal gu houses, exploring, transferring luck). The only collective actor mentioned is '南疆各大家族' (Southern Border families) in a relation summary about past gu exchanges, but no current pressure or stake involving them is present in the seed facts. No other named collective actors (factions, clans, families, groups) appear with a concrete stake. All events and relations center on Fang Yuan as an individual. No faction/group pressure can be extracted from this seed.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

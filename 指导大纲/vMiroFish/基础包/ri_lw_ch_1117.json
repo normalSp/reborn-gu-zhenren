@@ -1,0 +1,750 @@
+{
+  "packageId": "ri_lw_ch_1117",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1117"
+    ],
+    "paragraphIds": [
+      "ch_1117_p0006",
+      "ch_1117_p0009",
+      "ch_1117_p0014",
+      "ch_1117_p0027",
+      "ch_1117_p0033",
+      "ch_1117_p0035",
+      "ch_1117_p0036",
+      "ch_1117_p0047",
+      "ch_1117_p0054",
+      "ch_1117_p0060",
+      "ch_1117_p0064",
+      "ch_1117_p0065",
+      "ch_1117_p0067",
+      "ch_1117_p0073",
+      "ch_1117_p0084",
+      "ch_1117_p0097"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0006",
+          "startOffset": 3947980,
+          "endOffset": 3948001,
+          "summary": "至尊仙窍主人，渡第三次地灾"
+        }
+      ],
+      "entityId": "entity_b08ad1aa6e1f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "至尊仙窍主人，渡第三次地灾",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0033",
+          "startOffset": 3948903,
+          "endOffset": 3948905,
+          "summary": "渡劫者，变化道蛊仙"
+        }
+      ],
+      "entityId": "entity_b08ad1aa6e1f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "渡劫者，变化道蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0033",
+          "startOffset": 3948913,
+          "endOffset": 3948915,
+          "summary": "天道意志，算计方源"
+        }
+      ],
+      "entityId": "entity_c90fb09e66d1",
+      "name": "天意",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "天道意志，算计方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0035",
+          "startOffset": 3948977,
+          "endOffset": 3948981,
+          "summary": "狂蛮意志，影响地灾"
+        }
+      ],
+      "entityId": "entity_a09cf0fb4a64",
+      "name": "狂蛮真意",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "狂蛮意志，影响地灾",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0065",
+          "startOffset": 3949979,
+          "endOffset": 3949981,
+          "summary": "仙僵肉身，智道宗师，荡魂山主人"
+        }
+      ],
+      "entityId": "entity_b08ad1aa6e1f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙僵肉身，智道宗师，荡魂山主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0097",
+          "startOffset": 3951192,
+          "endOffset": 3951194,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_b08ad1aa6e1f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0033",
+          "startOffset": 3948903,
+          "endOffset": 3948915,
+          "summary": "天意算计方源，方源对抗天意"
+        }
+      ],
+      "relationId": "rel_0327a07813a2",
+      "subject": "方源",
+      "object": "天意",
+      "relationType": "CONFLICT",
+      "summary": "天意算计方源，方源对抗天意",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0035",
+          "startOffset": 3948972,
+          "endOffset": 3948981,
+          "summary": "狂蛮真意影响方源的地灾，方源需主动攻打以获取收益"
+        }
+      ],
+      "relationId": "rel_7196ead03b8b",
+      "subject": "方源",
+      "object": "狂蛮真意",
+      "relationType": "OTHER",
+      "summary": "狂蛮真意影响方源的地灾，方源需主动攻打以获取收益",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0009",
+          "startOffset": 3948047,
+          "endOffset": 3948071,
+          "summary": "方源在至尊仙窍中渡第三次地灾，地灾力量化为春晓翠鹂，反而帮助建设仙窍，形成草原和森林。"
+        }
+      ],
+      "eventId": "evt_03c4f82cf575",
+      "eventType": "cultivation",
+      "summary": "方源在至尊仙窍中渡第三次地灾，地灾力量化为春晓翠鹂，反而帮助建设仙窍，形成草原和森林。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "小北原被建设，方源获得狂蛮真意，变化道宗师境界提升。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0027",
+          "startOffset": 3948644,
+          "endOffset": 3948698,
+          "summary": "方源使用七转仙蛊飞剑击毁一只春晓翠鹂，获得狂蛮真意。"
+        }
+      ],
+      "eventId": "evt_c33d8ac90026",
+      "eventType": "other",
+      "summary": "方源使用七转仙蛊飞剑击毁一只春晓翠鹂，获得狂蛮真意。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源吸收真意，变化道宗师境界提升。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0036",
+          "startOffset": 3948997,
+          "endOffset": 3949059,
+          "summary": "方源第三次地灾中，天意控制的部分晚于狂蛮真意部分出现，导致方源损失狂蛮真意"
+        }
+      ],
+      "eventId": "evt_67a5221642a1",
+      "eventType": "conflict",
+      "summary": "方源第三次地灾中，天意控制的部分晚于狂蛮真意部分出现，导致方源损失狂蛮真意",
+      "actors": [
+        "方源",
+        "天意"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源损失部分狂蛮真意和青提仙元"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0047",
+          "startOffset": 3949323,
+          "endOffset": 3949349,
+          "summary": "方源使用杀招万我和剑浪三叠对抗春晓翠鹂，但效果不佳"
+        }
+      ],
+      "eventId": "evt_ce50bafa0834",
+      "eventType": "cultivation",
+      "summary": "方源使用杀招万我和剑浪三叠对抗春晓翠鹂，但效果不佳",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源改用飞剑仙蛊击杀春晓翠鹂"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0060",
+          "startOffset": 3949765,
+          "endOffset": 3949792,
+          "summary": "方源使用飞剑仙蛊击杀春晓翠鹂，但非亲手击杀的没有狂蛮真意灌注"
+        }
+      ],
+      "eventId": "evt_b0e47f0eb52e",
+      "eventType": "other",
+      "summary": "方源使用飞剑仙蛊击杀春晓翠鹂，但非亲手击杀的没有狂蛮真意灌注",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源损失狂蛮真意和青提仙元"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0067",
+          "startOffset": 3950063,
+          "endOffset": 3950088,
+          "summary": "方源在荡魂山遭遇地灾，包括春晓翠鹂和树人，天意与狂蛮真意搭配形成树人和春晓翠鹂的组合攻击。"
+        }
+      ],
+      "eventId": "evt_9c3649f49c66",
+      "eventType": "conflict",
+      "summary": "方源在荡魂山遭遇地灾，包括春晓翠鹂和树人，天意与狂蛮真意搭配形成树人和春晓翠鹂的组合攻击。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源尝试多种手段应对，毒气喷吐有效但后遗症大，荡魂山本身能消灭树人。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0073",
+          "startOffset": 3950261,
+          "endOffset": 3950291,
+          "summary": "方源提前铲除一半森林，防备树人攻击。"
+        }
+      ],
+      "eventId": "evt_6e6c27f5455e",
+      "eventType": "other",
+      "summary": "方源提前铲除一半森林，防备树人攻击。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "树人数量减少，但仍有大量树人从剩余森林中产生。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0097",
+          "startOffset": 3951192,
+          "endOffset": 3951250,
+          "summary": "方源认为这次地灾过于轻易，怀疑天意旨在消耗他的底蕴而非直接除掉他。"
+        }
+      ],
+      "eventId": "evt_e3672b9a5369",
+      "eventType": "other",
+      "summary": "方源认为这次地灾过于轻易，怀疑天意旨在消耗他的底蕴而非直接除掉他。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源对天意的意图产生怀疑，可能影响后续应对策略。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0009",
+          "startOffset": 3948047,
+          "endOffset": 3948071,
+          "summary": "方源在至尊仙窍中渡第三次地灾，地灾力量化为春晓翠鹂，反而帮助建设仙窍，形成草原和森林。"
+        }
+      ],
+      "timelineId": "tl_03c4f82cf575",
+      "eventId": "evt_03c4f82cf575",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源在至尊仙窍中渡第三次地灾，地灾力量化为春晓翠鹂，反而帮助建设仙窍，形成草原和森林。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0027",
+          "startOffset": 3948644,
+          "endOffset": 3948698,
+          "summary": "方源使用七转仙蛊飞剑击毁一只春晓翠鹂，获得狂蛮真意。"
+        }
+      ],
+      "timelineId": "tl_c33d8ac90026",
+      "eventId": "evt_c33d8ac90026",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源使用七转仙蛊飞剑击毁一只春晓翠鹂，获得狂蛮真意。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0036",
+          "startOffset": 3948997,
+          "endOffset": 3949059,
+          "summary": "方源第三次地灾中，天意控制的部分晚于狂蛮真意部分出现，导致方源损失狂蛮真意"
+        }
+      ],
+      "timelineId": "tl_67a5221642a1",
+      "eventId": "evt_67a5221642a1",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源第三次地灾中，天意控制的部分晚于狂蛮真意部分出现，导致方源损失狂蛮真意",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0047",
+          "startOffset": 3949323,
+          "endOffset": 3949349,
+          "summary": "方源使用杀招万我和剑浪三叠对抗春晓翠鹂，但效果不佳"
+        }
+      ],
+      "timelineId": "tl_ce50bafa0834",
+      "eventId": "evt_ce50bafa0834",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源使用杀招万我和剑浪三叠对抗春晓翠鹂，但效果不佳",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0060",
+          "startOffset": 3949765,
+          "endOffset": 3949792,
+          "summary": "方源使用飞剑仙蛊击杀春晓翠鹂，但非亲手击杀的没有狂蛮真意灌注"
+        }
+      ],
+      "timelineId": "tl_b0e47f0eb52e",
+      "eventId": "evt_b0e47f0eb52e",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源使用飞剑仙蛊击杀春晓翠鹂，但非亲手击杀的没有狂蛮真意灌注",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0067",
+          "startOffset": 3950063,
+          "endOffset": 3950088,
+          "summary": "方源在荡魂山遭遇地灾，包括春晓翠鹂和树人，天意与狂蛮真意搭配形成树人和春晓翠鹂的组合攻击。"
+        }
+      ],
+      "timelineId": "tl_9c3649f49c66",
+      "eventId": "evt_9c3649f49c66",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源在荡魂山遭遇地灾，包括春晓翠鹂和树人，天意与狂蛮真意搭配形成树人和春晓翠鹂的组合攻击。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0073",
+          "startOffset": 3950261,
+          "endOffset": 3950291,
+          "summary": "方源提前铲除一半森林，防备树人攻击。"
+        }
+      ],
+      "timelineId": "tl_6e6c27f5455e",
+      "eventId": "evt_6e6c27f5455e",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源提前铲除一半森林，防备树人攻击。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0097",
+          "startOffset": 3951192,
+          "endOffset": 3951250,
+          "summary": "方源认为这次地灾过于轻易，怀疑天意旨在消耗他的底蕴而非直接除掉他。"
+        }
+      ],
+      "timelineId": "tl_e3672b9a5369",
+      "eventId": "evt_e3672b9a5369",
+      "chapterId": "ch_1117",
+      "orderHint": "chapter-order",
+      "summary": "方源认为这次地灾过于轻易，怀疑天意旨在消耗他的底蕴而非直接除掉他。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1117",
+          "paragraphId": "ch_1117_p0073",
+          "startOffset": 3950261,
+          "endOffset": 3950291,
+          "summary": "方源提前铲除一半森林，防备树人攻击。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "提前铲除一半森林",
+      "inferredMotive": "防备树人从森林产生",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0006",
+      "startOffset": 3947980,
+      "endOffset": 3948001,
+      "summary": "至尊仙窍主人，渡第三次地灾"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0033",
+      "startOffset": 3948903,
+      "endOffset": 3948905,
+      "summary": "渡劫者，变化道蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0033",
+      "startOffset": 3948913,
+      "endOffset": 3948915,
+      "summary": "天道意志，算计方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0035",
+      "startOffset": 3948977,
+      "endOffset": 3948981,
+      "summary": "狂蛮意志，影响地灾"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0065",
+      "startOffset": 3949979,
+      "endOffset": 3949981,
+      "summary": "仙僵肉身，智道宗师，荡魂山主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0097",
+      "startOffset": 3951192,
+      "endOffset": 3951194,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0033",
+      "startOffset": 3948903,
+      "endOffset": 3948915,
+      "summary": "天意算计方源，方源对抗天意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0035",
+      "startOffset": 3948972,
+      "endOffset": 3948981,
+      "summary": "狂蛮真意影响方源的地灾，方源需主动攻打以获取收益"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0009",
+      "startOffset": 3948047,
+      "endOffset": 3948071,
+      "summary": "方源在至尊仙窍中渡第三次地灾，地灾力量化为春晓翠鹂，反而帮助建设仙窍，形成草原和森林。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0027",
+      "startOffset": 3948644,
+      "endOffset": 3948698,
+      "summary": "方源使用七转仙蛊飞剑击毁一只春晓翠鹂，获得狂蛮真意。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0036",
+      "startOffset": 3948997,
+      "endOffset": 3949059,
+      "summary": "方源第三次地灾中，天意控制的部分晚于狂蛮真意部分出现，导致方源损失狂蛮真意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0047",
+      "startOffset": 3949323,
+      "endOffset": 3949349,
+      "summary": "方源使用杀招万我和剑浪三叠对抗春晓翠鹂，但效果不佳"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0060",
+      "startOffset": 3949765,
+      "endOffset": 3949792,
+      "summary": "方源使用飞剑仙蛊击杀春晓翠鹂，但非亲手击杀的没有狂蛮真意灌注"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0067",
+      "startOffset": 3950063,
+      "endOffset": 3950088,
+      "summary": "方源在荡魂山遭遇地灾，包括春晓翠鹂和树人，天意与狂蛮真意搭配形成树人和春晓翠鹂的组合攻击。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0073",
+      "startOffset": 3950261,
+      "endOffset": 3950291,
+      "summary": "方源提前铲除一半森林，防备树人攻击。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1117",
+      "paragraphId": "ch_1117_p0097",
+      "startOffset": 3951192,
+      "endOffset": 3951250,
+      "summary": "方源认为这次地灾过于轻易，怀疑天意旨在消耗他的底蕴而非直接除掉他。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes Fang Yuan's third earthly disaster in his sovereign immortal aperture. Most events are ordinary visible events (disaster unfolding, Fang Yuan fighting, using moves). The only potentially hidden element is Fang Yuan's suspicion that Heaven's Will aims to consume his foundation rather than kill him (p0097), but this is presented as Fang Yuan's own speculation/thought, not a narrator-level confirmed fact. The seed does not directly support any private knowledge, future-known information, secret motives/plans, or knowledge gap as narrator truth. No strong hidden fact candidate can be extracted without extrapolation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源提前铲除一半森林（ptr_15直接支持）",
+      "inferredMotive: 从上下文可知森林会产生树人，铲除森林是为了减少树人数量，这是直接的一步因果推理，非心理猜测",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses entirely on Fang Yuan's personal tribulation (third earthly disaster) within his own immortal aperture. The only entities are Fang Yuan (individual), Heavenly Will (天意 - a cosmic force, not a collective actor), and Kuang Man True Intent (狂蛮真意 - a will/force, not a collective actor). No named factions, clans, families, shops, halls, or organizations appear in the seed facts or relations. There is no collective actor with a concrete stake in the seed. Heavenly Will is a cosmic force/consciousness, not a faction or group. Kuang Man True Intent is a remnant will, not a collective. All events revolve around Fang Yuan's personal cultivation struggle. No faction/group pressure can be extracted from this seed.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

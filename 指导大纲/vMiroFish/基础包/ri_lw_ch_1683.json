@@ -1,0 +1,624 @@
+{
+  "packageId": "ri_lw_ch_1683",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1683"
+    ],
+    "paragraphIds": [
+      "ch_1683_p0002",
+      "ch_1683_p0003",
+      "ch_1683_p0004",
+      "ch_1683_p0017",
+      "ch_1683_p0018",
+      "ch_1683_p0028",
+      "ch_1683_p0036",
+      "ch_1683_p0037",
+      "ch_1683_p0042",
+      "ch_1683_p0043",
+      "ch_1683_p0044",
+      "ch_1683_p0045",
+      "ch_1683_p0051",
+      "ch_1683_p0055",
+      "ch_1683_p0058"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0002",
+          "startOffset": 5819767,
+          "endOffset": 5819771,
+          "summary": "天庭蛊仙，洪亭的师父"
+        }
+      ],
+      "entityId": "entity_9b25ac9fd972",
+      "name": "龙公",
+      "kind": "person",
+      "aliases": [],
+      "description": "天庭蛊仙，洪亭的师父",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0003",
+          "startOffset": 5819785,
+          "endOffset": 5819787,
+          "summary": "天庭仙尊，后成魔尊"
+        }
+      ],
+      "entityId": "entity_f5d0a4057440",
+      "name": "洪亭",
+      "kind": "person",
+      "aliases": [
+        "红莲仙尊",
+        "红莲魔尊"
+      ],
+      "description": "天庭仙尊，后成魔尊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0004",
+          "startOffset": 5819806,
+          "endOffset": 5819809,
+          "summary": "已逝去的仙子"
+        }
+      ],
+      "entityId": "entity_61f3fe826be1",
+      "name": "柳淑仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "已逝去的仙子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0036",
+          "startOffset": 5821493,
+          "endOffset": 5821534,
+          "summary": "九转魔尊，已陨落，留下真意和布置"
+        }
+      ],
+      "entityId": "entity_0546554ee812",
+      "name": "红莲魔尊",
+      "kind": "person",
+      "aliases": [
+        "红莲真意"
+      ],
+      "description": "九转魔尊，已陨落，留下真意和布置",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0037",
+          "startOffset": 5821538,
+          "endOffset": 5821559,
+          "summary": "九转仙尊，已陨落，曾来红莲岛借悔蛊"
+        }
+      ],
+      "entityId": "entity_a125ac383e30",
+      "name": "乐土仙尊",
+      "kind": "person",
+      "aliases": [
+        "乐土"
+      ],
+      "description": "九转仙尊，已陨落，曾来红莲岛借悔蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0051",
+          "startOffset": 5822119,
+          "endOffset": 5822141,
+          "summary": "天外之魔，红莲魔尊的继承人，八转修为"
+        }
+      ],
+      "entityId": "entity_f183b01b00c6",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "天外之魔，红莲魔尊的继承人，八转修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0004",
+          "startOffset": 5819806,
+          "endOffset": 5819810,
+          "summary": "龙公是洪亭的师父，对洪亭严厉教导"
+        }
+      ],
+      "relationId": "rel_5562eca83216",
+      "subject": "龙公",
+      "object": "洪亭",
+      "relationType": "MENTOR",
+      "summary": "龙公是洪亭的师父，对洪亭严厉教导",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0004",
+          "startOffset": 5819806,
+          "endOffset": 5819809,
+          "summary": "柳淑仙是洪亭的伴侣或重要之人，已逝"
+        }
+      ],
+      "relationId": "rel_a7560b850f75",
+      "subject": "洪亭",
+      "object": "柳淑仙",
+      "relationType": "FAMILY",
+      "summary": "柳淑仙是洪亭的伴侣或重要之人，已逝",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0018",
+          "startOffset": 5820853,
+          "endOffset": 5820857,
+          "summary": "洪亭曾是仙尊，与天庭蛊仙同属天庭，但后来产生分歧"
+        }
+      ],
+      "relationId": "rel_8f823230845e",
+      "subject": "洪亭",
+      "object": "天庭蛊仙",
+      "relationType": "FACTION",
+      "summary": "洪亭曾是仙尊，与天庭蛊仙同属天庭，但后来产生分歧",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0042",
+          "startOffset": 5821683,
+          "endOffset": 5821730,
+          "summary": "红莲魔尊将悔蛊借给乐土仙尊，乐土仙尊承诺将方源带来红莲岛"
+        }
+      ],
+      "relationId": "rel_5d3b61bd4eb1",
+      "subject": "红莲魔尊",
+      "object": "乐土仙尊",
+      "relationType": "ALLY",
+      "summary": "红莲魔尊将悔蛊借给乐土仙尊，乐土仙尊承诺将方源带来红莲岛",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0055",
+          "startOffset": 5822259,
+          "endOffset": 5822336,
+          "summary": "红莲魔尊是方源的传承者，红莲真意等待方源接受真传"
+        }
+      ],
+      "relationId": "rel_f8c3883161d2",
+      "subject": "红莲魔尊",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "红莲魔尊是方源的传承者，红莲真意等待方源接受真传",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0043",
+          "startOffset": 5821734,
+          "endOffset": 5821792,
+          "summary": "乐土仙尊曾试图将方源带来红莲岛，以度化他"
+        }
+      ],
+      "relationId": "rel_99463ce8d21b",
+      "subject": "乐土仙尊",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "乐土仙尊曾试图将方源带来红莲岛，以度化他",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0004",
+          "startOffset": 5819806,
+          "endOffset": 5819810,
+          "summary": "龙公与洪亭因宿命和牺牲问题发生激烈争吵"
+        }
+      ],
+      "eventId": "evt_24c602664c3a",
+      "eventType": "conflict",
+      "summary": "龙公与洪亭因宿命和牺牲问题发生激烈争吵",
+      "actors": [
+        "龙公",
+        "洪亭"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "洪亭坚定了复活死者和反抗宿命的决心"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0028",
+          "startOffset": 5821166,
+          "endOffset": 5821170,
+          "summary": "洪亭在光阴长河中留下传承，以悔蛊为核心，留给天外之魔"
+        }
+      ],
+      "eventId": "evt_e354b7af4405",
+      "eventType": "other",
+      "summary": "洪亭在光阴长河中留下传承，以悔蛊为核心，留给天外之魔",
+      "actors": [
+        "洪亭"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "第一座石莲岛诞生，包含八转悔蛊、宙道仙材、仙道杀招、真意和记忆"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0044",
+          "startOffset": 5821796,
+          "endOffset": 5821867,
+          "summary": "乐土仙尊来到红莲岛，向红莲真意借悔蛊，并承诺将方源带来"
+        }
+      ],
+      "eventId": "evt_a355b94a0de2",
+      "eventType": "other",
+      "summary": "乐土仙尊来到红莲岛，向红莲真意借悔蛊，并承诺将方源带来",
+      "actors": [
+        "乐土仙尊",
+        "红莲真意"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "乐土仙尊获得悔蛊，离开红莲岛"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0058",
+          "startOffset": 5822429,
+          "endOffset": 5822457,
+          "summary": "方源阅尽红莲魔尊记忆，接受红莲真传，直接抓住并炼化悔蛊"
+        }
+      ],
+      "eventId": "evt_aaa848c93a86",
+      "eventType": "inheritance",
+      "summary": "方源阅尽红莲魔尊记忆，接受红莲真传，直接抓住并炼化悔蛊",
+      "actors": [
+        "方源",
+        "红莲真意"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源炼化悔蛊，红莲真意惊愕"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0004",
+          "startOffset": 5819806,
+          "endOffset": 5819810,
+          "summary": "龙公与洪亭因宿命和牺牲问题发生激烈争吵"
+        }
+      ],
+      "timelineId": "tl_24c602664c3a",
+      "eventId": "evt_24c602664c3a",
+      "chapterId": "ch_1683",
+      "orderHint": "chapter-order",
+      "summary": "龙公与洪亭因宿命和牺牲问题发生激烈争吵",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0028",
+          "startOffset": 5821166,
+          "endOffset": 5821170,
+          "summary": "洪亭在光阴长河中留下传承，以悔蛊为核心，留给天外之魔"
+        }
+      ],
+      "timelineId": "tl_e354b7af4405",
+      "eventId": "evt_e354b7af4405",
+      "chapterId": "ch_1683",
+      "orderHint": "chapter-order",
+      "summary": "洪亭在光阴长河中留下传承，以悔蛊为核心，留给天外之魔",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0044",
+          "startOffset": 5821796,
+          "endOffset": 5821867,
+          "summary": "乐土仙尊来到红莲岛，向红莲真意借悔蛊，并承诺将方源带来"
+        }
+      ],
+      "timelineId": "tl_a355b94a0de2",
+      "eventId": "evt_a355b94a0de2",
+      "chapterId": "ch_1683",
+      "orderHint": "chapter-order",
+      "summary": "乐土仙尊来到红莲岛，向红莲真意借悔蛊，并承诺将方源带来",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1683",
+          "paragraphId": "ch_1683_p0058",
+          "startOffset": 5822429,
+          "endOffset": 5822457,
+          "summary": "方源阅尽红莲魔尊记忆，接受红莲真传，直接抓住并炼化悔蛊"
+        }
+      ],
+      "timelineId": "tl_aaa848c93a86",
+      "eventId": "evt_aaa848c93a86",
+      "chapterId": "ch_1683",
+      "orderHint": "chapter-order",
+      "summary": "方源阅尽红莲魔尊记忆，接受红莲真传，直接抓住并炼化悔蛊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0002",
+      "startOffset": 5819767,
+      "endOffset": 5819771,
+      "summary": "天庭蛊仙，洪亭的师父"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0003",
+      "startOffset": 5819785,
+      "endOffset": 5819787,
+      "summary": "天庭仙尊，后成魔尊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0004",
+      "startOffset": 5819806,
+      "endOffset": 5819809,
+      "summary": "已逝去的仙子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0036",
+      "startOffset": 5821493,
+      "endOffset": 5821534,
+      "summary": "九转魔尊，已陨落，留下真意和布置"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0037",
+      "startOffset": 5821538,
+      "endOffset": 5821559,
+      "summary": "九转仙尊，已陨落，曾来红莲岛借悔蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0051",
+      "startOffset": 5822119,
+      "endOffset": 5822141,
+      "summary": "天外之魔，红莲魔尊的继承人，八转修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0004",
+      "startOffset": 5819806,
+      "endOffset": 5819810,
+      "summary": "龙公是洪亭的师父，对洪亭严厉教导"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0018",
+      "startOffset": 5820853,
+      "endOffset": 5820857,
+      "summary": "洪亭曾是仙尊，与天庭蛊仙同属天庭，但后来产生分歧"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0042",
+      "startOffset": 5821683,
+      "endOffset": 5821730,
+      "summary": "红莲魔尊将悔蛊借给乐土仙尊，乐土仙尊承诺将方源带来红莲岛"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0055",
+      "startOffset": 5822259,
+      "endOffset": 5822336,
+      "summary": "红莲魔尊是方源的传承者，红莲真意等待方源接受真传"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0043",
+      "startOffset": 5821734,
+      "endOffset": 5821792,
+      "summary": "乐土仙尊曾试图将方源带来红莲岛，以度化他"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0028",
+      "startOffset": 5821166,
+      "endOffset": 5821170,
+      "summary": "洪亭在光阴长河中留下传承，以悔蛊为核心，留给天外之魔"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0044",
+      "startOffset": 5821796,
+      "endOffset": 5821867,
+      "summary": "乐土仙尊来到红莲岛，向红莲真意借悔蛊，并承诺将方源带来"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1683",
+      "paragraphId": "ch_1683_p0058",
+      "startOffset": 5822429,
+      "endOffset": 5822457,
+      "summary": "方源阅尽红莲魔尊记忆，接受红莲真传，直接抓住并炼化悔蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly visible events (conflict between 龙公 and 洪亭, 方源 accepting inheritance and refining 悔蛊) that are directly narrated or shown in the text, not hidden knowledge.",
+      "The only potentially hidden element is 洪亭's secret plan to leave inheritance for a '天外之魔' to destroy 宿命蛊, but this is directly stated in the source (ch_1683_p0028: '这第一座石莲岛...留给天外之魔，在未来最有希望摧毁宿命的人') — it is openly declared by 洪亭 in the scene, not privately known.",
+      "乐土仙尊's intention to '度化' 方源 is also directly stated in dialogue (ch_1683_p0043), not hidden.",
+      "No fact in the pool qualifies as a hidden/future-known/player-visibility fact under the strict rules. All candidate facts are either ordinary visible events or directly stated intentions.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows actions (洪亭 leaving inheritance, 方源 accepting inheritance and refining 悔蛊) but observed motives are ambiguous. 洪亭's inferred desire to destroy 宿命蛊 is stated by 红莲真意 (ptr_10: '我相信你会拼尽全力去摧毁宿命蛊'), but this is a character's subjective statement about another, not a direct narrator-level observed motive. 方源's action of refining 悔蛊 (ptr_14) shows what he does, not why he does it. No direct source for a clear, cautious one-step inferred motive that meets the strict criteria.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual actors (龙公, 洪亭, 方源, 红莲魔尊, 乐土仙尊) and their personal relationships (mentor, inheritance, ally). While 天庭蛊仙 (Heavenly Court Gu Immortals) appears as a collective in ptr_8 ('诸多天庭蛊仙'), the seed does not provide enough concrete stake or pressure for this group as a faction. The conflict between 龙公 and 洪亭 is personal/mentor-based, not clearly faction-driven. No named family, clan, or organization has a clear collective stake in the seed facts that would support a faction pressure candidate.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

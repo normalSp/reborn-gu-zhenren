@@ -1,0 +1,607 @@
+{
+  "packageId": "ri_lw_ch_0659",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0659"
+    ],
+    "paragraphIds": [
+      "ch_0659_p0005",
+      "ch_0659_p0006",
+      "ch_0659_p0019",
+      "ch_0659_p0038",
+      "ch_0659_p0042",
+      "ch_0659_p0046",
+      "ch_0659_p0047",
+      "ch_0659_p0066",
+      "ch_0659_p0067",
+      "ch_0659_p0075",
+      "ch_0659_p0077",
+      "ch_0659_p0078"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0005",
+          "startOffset": 2324039,
+          "endOffset": 2324099,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_2f5d3740d236",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0038",
+          "startOffset": 2325203,
+          "endOffset": 2325223,
+          "summary": "僵尸蛊仙，荡魂山行宫主人"
+        }
+      ],
+      "entityId": "entity_2f5d3740d236",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "师弟"
+      ],
+      "description": "僵尸蛊仙，荡魂山行宫主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0046",
+          "startOffset": 2325397,
+          "endOffset": 2325434,
+          "summary": "方源师兄，考察狐仙福地西部"
+        }
+      ],
+      "entityId": "entity_1cad8117397d",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源师兄，考察狐仙福地西部",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0066",
+          "startOffset": 2326361,
+          "endOffset": 2326363,
+          "summary": "僵尸蛊仙，智道蛊师"
+        }
+      ],
+      "entityId": "entity_2f5d3740d236",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "师弟"
+      ],
+      "description": "僵尸蛊仙，智道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0067",
+          "startOffset": 2326442,
+          "endOffset": 2326446,
+          "summary": "蛊仙，方源师兄"
+        }
+      ],
+      "entityId": "entity_1cad8117397d",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [
+        "老白"
+      ],
+      "description": "蛊仙，方源师兄",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0077",
+          "startOffset": 2327002,
+          "endOffset": 2327006,
+          "summary": "福地地灵，与方源有合作"
+        }
+      ],
+      "entityId": "entity_0632357b3d0c",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "福地地灵，与方源有合作",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0046",
+          "startOffset": 2325397,
+          "endOffset": 2325434,
+          "summary": "师兄弟关系，共同经营狐仙福地"
+        }
+      ],
+      "relationId": "rel_100c3876ebc3",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "师兄弟关系，共同经营狐仙福地",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0066",
+          "startOffset": 2326361,
+          "endOffset": 2326363,
+          "summary": "师兄弟关系，合作推算蛊方"
+        }
+      ],
+      "relationId": "rel_88198be1bc86",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "师兄弟关系，合作推算蛊方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0077",
+          "startOffset": 2327002,
+          "endOffset": 2327006,
+          "summary": "方源曾假称自己推算八十八角真阳楼秘密，琅琊地灵想合作完善蛊方"
+        }
+      ],
+      "relationId": "rel_2d1b9c84c836",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源曾假称自己推算八十八角真阳楼秘密，琅琊地灵想合作完善蛊方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0005",
+          "startOffset": 2324039,
+          "endOffset": 2324099,
+          "summary": "方源利用智慧蛊的智慧光晕推算和稀泥仙蛊的炼制秘方，但意志消耗极快，成果有限。"
+        }
+      ],
+      "eventId": "evt_b91c622ebdf2",
+      "eventType": "cultivation",
+      "summary": "方源利用智慧蛊的智慧光晕推算和稀泥仙蛊的炼制秘方，但意志消耗极快，成果有限。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定尝试使用乐山乐水仙蛊产生乐意来辅助推算。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0019",
+          "startOffset": 2324615,
+          "endOffset": 2324635,
+          "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。"
+        }
+      ],
+      "eventId": "evt_e3772f08c835",
+      "eventType": "cultivation",
+      "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源脑海被乐意填充三分之一，意识到连续催动三次可填满脑海。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0042",
+          "startOffset": 2325316,
+          "endOffset": 2325333,
+          "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一"
+        }
+      ],
+      "eventId": "evt_a790192fff83",
+      "eventType": "cultivation",
+      "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源意识到推算仙蛊方消耗巨大，暂时不能贩卖仙蛊方"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0047",
+          "startOffset": 2325438,
+          "endOffset": 2325456,
+          "summary": "太白云生考察狐仙福地西部归来，与方源讨论修行资源"
+        }
+      ],
+      "eventId": "evt_ff63ed5c17f8",
+      "eventType": "other",
+      "summary": "太白云生考察狐仙福地西部归来，与方源讨论修行资源",
+      "actors": [
+        "太白云生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太白云生意识到蛊仙修行需要大量资源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0075",
+          "startOffset": 2326751,
+          "endOffset": 2326753,
+          "summary": "方源和太白云生讨论仙元不足，无法继续推算和稀泥仙蛊残方，太白云生提议与琅琊地灵合作"
+        }
+      ],
+      "eventId": "evt_f9b99f8a3503",
+      "eventType": "other",
+      "summary": "方源和太白云生讨论仙元不足，无法继续推算和稀泥仙蛊残方，太白云生提议与琅琊地灵合作",
+      "actors": [
+        "方源",
+        "太白云生"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源同意合作提议，计划与琅琊地灵合作完善蛊方"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0005",
+          "startOffset": 2324039,
+          "endOffset": 2324099,
+          "summary": "方源利用智慧蛊的智慧光晕推算和稀泥仙蛊的炼制秘方，但意志消耗极快，成果有限。"
+        }
+      ],
+      "timelineId": "tl_b91c622ebdf2",
+      "eventId": "evt_b91c622ebdf2",
+      "chapterId": "ch_0659",
+      "orderHint": "chapter-order",
+      "summary": "方源利用智慧蛊的智慧光晕推算和稀泥仙蛊的炼制秘方，但意志消耗极快，成果有限。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0019",
+          "startOffset": 2324615,
+          "endOffset": 2324635,
+          "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。"
+        }
+      ],
+      "timelineId": "tl_e3772f08c835",
+      "eventId": "evt_e3772f08c835",
+      "chapterId": "ch_0659",
+      "orderHint": "chapter-order",
+      "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0042",
+          "startOffset": 2325316,
+          "endOffset": 2325333,
+          "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一"
+        }
+      ],
+      "timelineId": "tl_a790192fff83",
+      "eventId": "evt_a790192fff83",
+      "chapterId": "ch_0659",
+      "orderHint": "chapter-order",
+      "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0047",
+          "startOffset": 2325438,
+          "endOffset": 2325456,
+          "summary": "太白云生考察狐仙福地西部归来，与方源讨论修行资源"
+        }
+      ],
+      "timelineId": "tl_ff63ed5c17f8",
+      "eventId": "evt_ff63ed5c17f8",
+      "chapterId": "ch_0659",
+      "orderHint": "chapter-order",
+      "summary": "太白云生考察狐仙福地西部归来，与方源讨论修行资源",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0075",
+          "startOffset": 2326751,
+          "endOffset": 2326753,
+          "summary": "方源和太白云生讨论仙元不足，无法继续推算和稀泥仙蛊残方，太白云生提议与琅琊地灵合作"
+        }
+      ],
+      "timelineId": "tl_f9b99f8a3503",
+      "eventId": "evt_f9b99f8a3503",
+      "chapterId": "ch_0659",
+      "orderHint": "chapter-order",
+      "summary": "方源和太白云生讨论仙元不足，无法继续推算和稀泥仙蛊残方，太白云生提议与琅琊地灵合作",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0019",
+          "startOffset": 2324615,
+          "endOffset": 2324635,
+          "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0005",
+          "startOffset": 2324039,
+          "endOffset": 2324099,
+          "summary": "主角，蛊师"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0659",
+          "paragraphId": "ch_0659_p0042",
+          "startOffset": 2325316,
+          "endOffset": 2325333,
+          "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一"
+        }
+      ],
+      "motiveId": "motive_1",
+      "character": "方源",
+      "observedMotive": "消耗仙元催动乐山乐水仙蛊产生乐意",
+      "inferredMotive": "想借助乐意辅助智慧蛊推算蛊方",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0005",
+      "startOffset": 2324039,
+      "endOffset": 2324099,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0038",
+      "startOffset": 2325203,
+      "endOffset": 2325223,
+      "summary": "僵尸蛊仙，荡魂山行宫主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0046",
+      "startOffset": 2325397,
+      "endOffset": 2325434,
+      "summary": "方源师兄，考察狐仙福地西部"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0066",
+      "startOffset": 2326361,
+      "endOffset": 2326363,
+      "summary": "僵尸蛊仙，智道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0067",
+      "startOffset": 2326442,
+      "endOffset": 2326446,
+      "summary": "蛊仙，方源师兄"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0077",
+      "startOffset": 2327002,
+      "endOffset": 2327006,
+      "summary": "福地地灵，与方源有合作"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0019",
+      "startOffset": 2324615,
+      "endOffset": 2324635,
+      "summary": "方源消耗一颗青提仙元，催动乐山乐水仙蛊，产生大量乐意填充脑海。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0042",
+      "startOffset": 2325316,
+      "endOffset": 2325333,
+      "summary": "方源利用智慧蛊和智道仙蛊乐山乐水推算和稀泥仙蛊秘方，推进了百分之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0047",
+      "startOffset": 2325438,
+      "endOffset": 2325456,
+      "summary": "太白云生考察狐仙福地西部归来，与方源讨论修行资源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0659",
+      "paragraphId": "ch_0659_p0075",
+      "startOffset": 2326751,
+      "endOffset": 2326753,
+      "summary": "方源和太白云生讨论仙元不足，无法继续推算和稀泥仙蛊残方，太白云生提议与琅琊地灵合作"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events: Fang Yuan using wisdom Gu to deduce a recipe, consuming immortal essence, Tai Bai Yun Sheng returning from inspection, and a discussion about insufficient immortal essence. No hidden knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the source material. The events are all publicly observable between the characters. The only potentially hidden element would be Fang Yuan's internal thoughts about his true situation (e.g., his actual immortal essence count of 18 green grape immortal essence), but this is already presented as narrator-level information rather than a hidden fact with specific whoKnows/whoDoesNotKnow supported by the seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源消耗青提仙元催动乐山乐水仙蛊产生乐意（ptr_7支持），退出智慧光晕（ptr_1支持），推算推进百分之一（ptr_8支持）。",
+      "inferredMotive: 从使用乐山乐水产生乐意+使用智慧光晕推算蛊方这两个直接行为，可合理推断方源想用乐意辅助推算。这是直接上下文中的一步推理，非心理猜测。",
+      "未推断示好、投靠等战略意图，未添加结局、奖励、死亡等。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual cultivation activities of Fang Yuan (方源) and discussion with Tai Bai Yun Sheng (太白云生) about immortal essence shortage and potential cooperation with Lang Ya land spirit (琅琊地灵). No collective faction, clan, family, or group appears as an actor with a concrete stake. The entities are individuals (方源, 太白云生, 琅琊地灵) and the relations are individual-level (ALLY, TRADE). No named faction, clan, family, or organization is present in the seed facts or relations that could serve as a pressure subject.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,976 @@
+{
+  "packageId": "ri_lw_ch_0031",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0031"
+    ],
+    "paragraphIds": [
+      "ch_0031_p0001",
+      "ch_0031_p0003",
+      "ch_0031_p0004",
+      "ch_0031_p0005",
+      "ch_0031_p0006",
+      "ch_0031_p0008",
+      "ch_0031_p0020",
+      "ch_0031_p0023",
+      "ch_0031_p0025",
+      "ch_0031_p0026",
+      "ch_0031_p0027",
+      "ch_0031_p0028",
+      "ch_0031_p0030",
+      "ch_0031_p0033",
+      "ch_0031_p0036",
+      "ch_0031_p0038",
+      "ch_0031_p0041",
+      "ch_0031_p0043",
+      "ch_0031_p0044",
+      "ch_0031_p0045",
+      "ch_0031_p0048"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0001",
+          "startOffset": 88277,
+          "endOffset": 88290,
+          "summary": "勒索者，学员"
+        }
+      ],
+      "entityId": "entity_b9d97bea04a4",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "勒索者，学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0003",
+          "startOffset": 88311,
+          "endOffset": 88345,
+          "summary": "甲等资质学员，方源弟弟"
+        }
+      ],
+      "entityId": "entity_68ab58b9dfc6",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "甲等资质学员，方源弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0004",
+          "startOffset": 88349,
+          "endOffset": 88380,
+          "summary": "方源舅舅，方正父亲"
+        }
+      ],
+      "entityId": "entity_0c46fb05fa02",
+      "name": "古月冻土",
+      "kind": "person",
+      "aliases": [
+        "舅父",
+        "老爷"
+      ],
+      "description": "方源舅舅，方正父亲",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0004",
+          "startOffset": 88349,
+          "endOffset": 88380,
+          "summary": "古月冻土之妻，方源舅母"
+        }
+      ],
+      "entityId": "entity_eb174cd195a8",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "古月冻土之妻，方源舅母",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0027",
+          "startOffset": 89728,
+          "endOffset": 89804,
+          "summary": "学堂拳脚教头"
+        }
+      ],
+      "entityId": "entity_b97d65ff1bdf",
+      "name": "拳脚教头",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂拳脚教头",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0028",
+          "startOffset": 89808,
+          "endOffset": 89824,
+          "summary": "学堂管理者"
+        }
+      ],
+      "entityId": "entity_8ac914143243",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂管理者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0033",
+          "startOffset": 89967,
+          "endOffset": 89999,
+          "summary": "主角，抢劫者，全体学员公敌"
+        }
+      ],
+      "entityId": "entity_b9d97bea04a4",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，抢劫者，全体学员公敌",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0041",
+          "startOffset": 90235,
+          "endOffset": 90269,
+          "summary": "学员，挑战方源"
+        }
+      ],
+      "entityId": "entity_f5e17af1b20a",
+      "name": "古月漠北",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，挑战方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0044",
+          "startOffset": 90317,
+          "endOffset": 90345,
+          "summary": "学员，挑战方源"
+        }
+      ],
+      "entityId": "entity_e4c5ba1416a9",
+      "name": "古月赤城",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，挑战方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0038",
+          "startOffset": 90115,
+          "endOffset": 90141,
+          "summary": "负责分发元石补贴的学堂家老"
+        }
+      ],
+      "entityId": "entity_8ac914143243",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "负责分发元石补贴的学堂家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0005",
+          "startOffset": 88384,
+          "endOffset": 88481,
+          "summary": "方源勒索方正一块元石，兄弟关系紧张"
+        }
+      ],
+      "relationId": "rel_c2e8784c62cd",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "CONFLICT",
+      "summary": "方源勒索方正一块元石，兄弟关系紧张",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0020",
+          "startOffset": 89396,
+          "endOffset": 89521,
+          "summary": "舅父断了方源生活费，并计划利用抢劫事件分化方正对哥哥的感情"
+        }
+      ],
+      "relationId": "rel_92626592bf04",
+      "subject": "古月冻土",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "舅父断了方源生活费，并计划利用抢劫事件分化方正对哥哥的感情",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0005",
+          "startOffset": 88384,
+          "endOffset": 88481,
+          "summary": "舅母对方源恨之入骨，希望他被开除"
+        }
+      ],
+      "relationId": "rel_3bb48cdffc02",
+      "subject": "舅母",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "舅母对方源恨之入骨，希望他被开除",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0006",
+          "startOffset": 88485,
+          "endOffset": 88607,
+          "summary": "父对子寄予厚望，期待他成为第一个中阶蛊师，并试图引导其疏远方源"
+        }
+      ],
+      "relationId": "rel_2a410b7c9816",
+      "subject": "古月冻土",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "父对子寄予厚望，期待他成为第一个中阶蛊师，并试图引导其疏远方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0005",
+          "startOffset": 88384,
+          "endOffset": 88481,
+          "summary": "母对子关爱，为其被抢抱不平"
+        }
+      ],
+      "relationId": "rel_5f4c2ed9c932",
+      "subject": "舅母",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "母对子关爱，为其被抢抱不平",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0023",
+          "startOffset": 89575,
+          "endOffset": 89612,
+          "summary": "学堂家老未惩罚方源的勒索行为，默许学员争斗"
+        }
+      ],
+      "relationId": "rel_8fdc4c4860bd",
+      "subject": "学堂家老",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "学堂家老未惩罚方源的勒索行为，默许学员争斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0030",
+          "startOffset": 89895,
+          "endOffset": 89936,
+          "summary": "学堂家老向拳脚教头解释学员变化根由"
+        }
+      ],
+      "relationId": "rel_a2e1fdca8d89",
+      "subject": "学堂家老",
+      "object": "拳脚教头",
+      "relationType": "ALLY",
+      "summary": "学堂家老向拳脚教头解释学员变化根由",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0043",
+          "startOffset": 90290,
+          "endOffset": 90313,
+          "summary": "漠北挑战方源，被方源击倒昏地"
+        }
+      ],
+      "relationId": "rel_5cb3e7a53278",
+      "subject": "方源",
+      "object": "古月漠北",
+      "relationType": "CONFLICT",
+      "summary": "漠北挑战方源，被方源击倒昏地",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0045",
+          "startOffset": 90349,
+          "endOffset": 90368,
+          "summary": "赤城挑战方源，同样被迅速击败"
+        }
+      ],
+      "relationId": "rel_2b69f8711129",
+      "subject": "方源",
+      "object": "古月赤城",
+      "relationType": "CONFLICT",
+      "summary": "赤城挑战方源，同样被迅速击败",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0003",
+          "startOffset": 88311,
+          "endOffset": 88345,
+          "summary": "方正回家向父母汇告方源抢走他一块元石"
+        }
+      ],
+      "eventId": "evt_d7a8cb125971",
+      "eventType": "conflict",
+      "summary": "方正回家向父母汇告方源抢走他一块元石",
+      "actors": [
+        "方正",
+        "古月冻土",
+        "舅母"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引发了舅父母对方源的算计"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0020",
+          "startOffset": 89396,
+          "endOffset": 89521,
+          "summary": "舅父母密谋利用方源抢元石事件，挑拨方正疏远方源，为己所用"
+        }
+      ],
+      "eventId": "evt_7c412f6fb326",
+      "eventType": "other",
+      "summary": "舅父母密谋利用方源抢元石事件，挑拨方正疏远方源，为己所用",
+      "actors": [
+        "古月冻土",
+        "舅母"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "开启了一条分化兄弟关系的伏笔"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0025",
+          "startOffset": 89653,
+          "endOffset": 89697,
+          "summary": "三天内，两三个少年挑战方源失败，所有学员认识到需要苦练拳脚才能赢他"
+        }
+      ],
+      "eventId": "evt_cbfa9e348392",
+      "eventType": "conflict",
+      "summary": "三天内，两三个少年挑战方源失败，所有学员认识到需要苦练拳脚才能赢他",
+      "actors": [
+        "方源",
+        "挑战的少年们"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引发了拳脚基本功练习热潮"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0026",
+          "startOffset": 89701,
+          "endOffset": 89724,
+          "summary": "少年学员中掀起苦练拳脚基本功的热潮"
+        }
+      ],
+      "eventId": "evt_7b4d49f17735",
+      "eventType": "cultivation",
+      "summary": "少年学员中掀起苦练拳脚基本功的热潮",
+      "actors": [
+        "众学员"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "拳脚教头极为高兴，学堂家老认可转变"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0028",
+          "startOffset": 89808,
+          "endOffset": 89824,
+          "summary": "学堂家老询问教学情况，并向拳脚教头点明方源是学员转变的源头"
+        }
+      ],
+      "eventId": "evt_159e96cc335d",
+      "eventType": "other",
+      "summary": "学堂家老询问教学情况，并向拳脚教头点明方源是学员转变的源头",
+      "actors": [
+        "学堂家老",
+        "拳脚教头"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0048",
+          "startOffset": 90472,
+          "endOffset": 90533,
+          "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。"
+        }
+      ],
+      "eventId": "evt_a4b83fa7d5da",
+      "eventType": "conflict",
+      "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。",
+      "actors": [
+        "方源",
+        "古月漠北",
+        "古月赤城"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "多名学员被打伤，方源进一步成为公敌"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0038",
+          "startOffset": 90115,
+          "endOffset": 90141,
+          "summary": "学堂家老再次向学员们分发元石补贴"
+        }
+      ],
+      "eventId": "evt_f0938b1930ad",
+      "eventType": "other",
+      "summary": "学堂家老再次向学员们分发元石补贴",
+      "actors": [
+        "学堂家老",
+        "学员们"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "成为方源再度抢劫的契机"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0003",
+          "startOffset": 88311,
+          "endOffset": 88345,
+          "summary": "方正回家向父母汇告方源抢走他一块元石"
+        }
+      ],
+      "timelineId": "tl_d7a8cb125971",
+      "eventId": "evt_d7a8cb125971",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "方正回家向父母汇告方源抢走他一块元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0020",
+          "startOffset": 89396,
+          "endOffset": 89521,
+          "summary": "舅父母密谋利用方源抢元石事件，挑拨方正疏远方源，为己所用"
+        }
+      ],
+      "timelineId": "tl_7c412f6fb326",
+      "eventId": "evt_7c412f6fb326",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "舅父母密谋利用方源抢元石事件，挑拨方正疏远方源，为己所用",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0025",
+          "startOffset": 89653,
+          "endOffset": 89697,
+          "summary": "三天内，两三个少年挑战方源失败，所有学员认识到需要苦练拳脚才能赢他"
+        }
+      ],
+      "timelineId": "tl_cbfa9e348392",
+      "eventId": "evt_cbfa9e348392",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "三天内，两三个少年挑战方源失败，所有学员认识到需要苦练拳脚才能赢他",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0026",
+          "startOffset": 89701,
+          "endOffset": 89724,
+          "summary": "少年学员中掀起苦练拳脚基本功的热潮"
+        }
+      ],
+      "timelineId": "tl_7b4d49f17735",
+      "eventId": "evt_7b4d49f17735",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "少年学员中掀起苦练拳脚基本功的热潮",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0028",
+          "startOffset": 89808,
+          "endOffset": 89824,
+          "summary": "学堂家老询问教学情况，并向拳脚教头点明方源是学员转变的源头"
+        }
+      ],
+      "timelineId": "tl_159e96cc335d",
+      "eventId": "evt_159e96cc335d",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老询问教学情况，并向拳脚教头点明方源是学员转变的源头",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0048",
+          "startOffset": 90472,
+          "endOffset": 90533,
+          "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。"
+        }
+      ],
+      "timelineId": "tl_a4b83fa7d5da",
+      "eventId": "evt_a4b83fa7d5da",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0038",
+          "startOffset": 90115,
+          "endOffset": 90141,
+          "summary": "学堂家老再次向学员们分发元石补贴"
+        }
+      ],
+      "timelineId": "tl_f0938b1930ad",
+      "eventId": "evt_f0938b1930ad",
+      "chapterId": "ch_0031",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老再次向学员们分发元石补贴",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0033",
+          "startOffset": 89967,
+          "endOffset": 89999,
+          "summary": "主角，抢劫者，全体学员公敌"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0041",
+          "startOffset": 90235,
+          "endOffset": 90269,
+          "summary": "学员，挑战方源"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0031",
+          "paragraphId": "ch_0031_p0044",
+          "startOffset": 90317,
+          "endOffset": 90345,
+          "summary": "学员，挑战方源"
+        }
+      ],
+      "pressureId": "pressure_001",
+      "faction": "众学员",
+      "pressureAxis": "公敌压力",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "苦练拳脚以对抗"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0001",
+      "startOffset": 88277,
+      "endOffset": 88290,
+      "summary": "勒索者，学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0003",
+      "startOffset": 88311,
+      "endOffset": 88345,
+      "summary": "甲等资质学员，方源弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0004",
+      "startOffset": 88349,
+      "endOffset": 88380,
+      "summary": "方源舅舅，方正父亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0027",
+      "startOffset": 89728,
+      "endOffset": 89804,
+      "summary": "学堂拳脚教头"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0028",
+      "startOffset": 89808,
+      "endOffset": 89824,
+      "summary": "学堂管理者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0033",
+      "startOffset": 89967,
+      "endOffset": 89999,
+      "summary": "主角，抢劫者，全体学员公敌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0041",
+      "startOffset": 90235,
+      "endOffset": 90269,
+      "summary": "学员，挑战方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0044",
+      "startOffset": 90317,
+      "endOffset": 90345,
+      "summary": "学员，挑战方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0038",
+      "startOffset": 90115,
+      "endOffset": 90141,
+      "summary": "负责分发元石补贴的学堂家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0005",
+      "startOffset": 88384,
+      "endOffset": 88481,
+      "summary": "方源勒索方正一块元石，兄弟关系紧张"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0020",
+      "startOffset": 89396,
+      "endOffset": 89521,
+      "summary": "舅父断了方源生活费，并计划利用抢劫事件分化方正对哥哥的感情"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0006",
+      "startOffset": 88485,
+      "endOffset": 88607,
+      "summary": "父对子寄予厚望，期待他成为第一个中阶蛊师，并试图引导其疏远方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0023",
+      "startOffset": 89575,
+      "endOffset": 89612,
+      "summary": "学堂家老未惩罚方源的勒索行为，默许学员争斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0030",
+      "startOffset": 89895,
+      "endOffset": 89936,
+      "summary": "学堂家老向拳脚教头解释学员变化根由"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0043",
+      "startOffset": 90290,
+      "endOffset": 90313,
+      "summary": "漠北挑战方源，被方源击倒昏地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0045",
+      "startOffset": 90349,
+      "endOffset": 90368,
+      "summary": "赤城挑战方源，同样被迅速击败"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0025",
+      "startOffset": 89653,
+      "endOffset": 89697,
+      "summary": "三天内，两三个少年挑战方源失败，所有学员认识到需要苦练拳脚才能赢他"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0026",
+      "startOffset": 89701,
+      "endOffset": 89724,
+      "summary": "少年学员中掀起苦练拳脚基本功的热潮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0031",
+      "paragraphId": "ch_0031_p0048",
+      "startOffset": 90472,
+      "endOffset": 90533,
+      "summary": "方源再次堵住学堂门口，向学员每人索要一块元石，古月漠北和古月赤城先后挑战，均被方源轻易击败，方源最终带着装满元石的钱袋离去。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly public/visible events: Fang Yuan robbing students, the school's reaction, and the uncle/aunt's private discussion about using the robbery to alienate Fang Zheng from Fang Yuan. The uncle and aunt's plan (event: '舅父母密谋利用方源抢元石事件，挑拨方正疏远方源，为己所用') is a private conversation, but the seed does not provide direct source quotes showing the exact content of their plan—only a summary in the events list. No source pointer directly quotes the secret plan. The other events (challenges, training craze, school elder's inquiry) are all publicly observable. No directly source-backed hidden/future-known/player-visibility fact can be confidently extracted from the provided pointers.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源的行为（堵门勒索、击败挑战者）可见，但其动机不明——种子中未直接说明他为何勒索元石（如修炼需要、积累资源等），也未提供足够上下文推断其意图。仅凭行为无法区分是单纯欺压、资源积累还是其他目的。根据规则，行为可见但动机模糊时返回空数组。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "众学员（全体学员）作为群体在种子中明确出现（ptr_6: '全体学员的公敌'），对方源形成集体敌对压力。ptr_7/ptr_8显示古月漠北、古月赤城代表学员挑战方源，是群体压力的具体表现。pressureAxis'公敌压力'描述群体敌对/排斥的集体压力，likelyReactions'苦练拳脚以对抗'是保守的一步反应（种子中已有学员苦练拳脚的热潮作为先例）。",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,864 @@
+{
+  "packageId": "ri_lw_ch_0868",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0868"
+    ],
+    "paragraphIds": [
+      "ch_0868_p0007",
+      "ch_0868_p0012",
+      "ch_0868_p0014",
+      "ch_0868_p0015",
+      "ch_0868_p0016",
+      "ch_0868_p0019",
+      "ch_0868_p0029",
+      "ch_0868_p0034",
+      "ch_0868_p0035",
+      "ch_0868_p0061",
+      "ch_0868_p0065",
+      "ch_0868_p0072",
+      "ch_0868_p0073",
+      "ch_0868_p0074",
+      "ch_0868_p0086",
+      "ch_0868_p0098",
+      "ch_0868_p0099",
+      "ch_0868_p0103",
+      "ch_0868_p0104",
+      "ch_0868_p0106"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0015",
+          "startOffset": 3057695,
+          "endOffset": 3057762,
+          "summary": "羽圣城王子，五转修为，参与羽王之争"
+        }
+      ],
+      "entityId": "entity_003a4bea4250",
+      "name": "丹羽",
+      "kind": "person",
+      "aliases": [
+        "羽民王子"
+      ],
+      "description": "羽圣城王子，五转修为，参与羽王之争",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0019",
+          "startOffset": 3057855,
+          "endOffset": 3057905,
+          "summary": "黑色短发羽民少年，参与羽王之争"
+        }
+      ],
+      "entityId": "entity_663ef36bc0c7",
+      "name": "羽飞",
+      "kind": "person",
+      "aliases": [
+        "穷小子"
+      ],
+      "description": "黑色短发羽民少年，参与羽王之争",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0007",
+          "startOffset": 3057424,
+          "endOffset": 3057457,
+          "summary": "已逝去的羽民王"
+        }
+      ],
+      "entityId": "entity_39428508ae2b",
+      "name": "羽民之王",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "已逝去的羽民王",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0012",
+          "startOffset": 3057608,
+          "endOffset": 3057641,
+          "summary": "羽圣城的蛊仙，镇压大局"
+        }
+      ],
+      "entityId": "entity_2482a8087055",
+      "name": "三位太上羽民",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "羽圣城的蛊仙，镇压大局",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0034",
+          "startOffset": 3058426,
+          "endOffset": 3058443,
+          "summary": "羽民，参与王位争夺战"
+        }
+      ],
+      "entityId": "entity_663ef36bc0c7",
+      "name": "羽飞",
+      "kind": "person",
+      "aliases": [],
+      "description": "羽民，参与王位争夺战",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0035",
+          "startOffset": 3058447,
+          "endOffset": 3058509,
+          "summary": "羽民，王位争夺战对手"
+        }
+      ],
+      "entityId": "entity_003a4bea4250",
+      "name": "丹羽",
+      "kind": "person",
+      "aliases": [],
+      "description": "羽民，王位争夺战对手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0065",
+          "startOffset": 3059384,
+          "endOffset": 3059424,
+          "summary": "新晋羽民王"
+        }
+      ],
+      "entityId": "entity_663ef36bc0c7",
+      "name": "羽飞",
+      "kind": "person",
+      "aliases": [],
+      "description": "新晋羽民王",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0072",
+          "startOffset": 3059636,
+          "endOffset": 3059669,
+          "summary": "被击败的羽民"
+        }
+      ],
+      "entityId": "entity_003a4bea4250",
+      "name": "丹羽",
+      "kind": "person",
+      "aliases": [],
+      "description": "被击败的羽民",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0073",
+          "startOffset": 3059673,
+          "endOffset": 3059702,
+          "summary": "羽圣城守护蛊仙"
+        }
+      ],
+      "entityId": "entity_ff56feab10d5",
+      "name": "羽民蛊仙（三位）",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "羽圣城守护蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0103",
+          "startOffset": 3060568,
+          "endOffset": 3060590,
+          "summary": "入侵者首领，蛊仙老者"
+        }
+      ],
+      "entityId": "entity_916745de82d8",
+      "name": "白海沙陀",
+      "kind": "person",
+      "aliases": [],
+      "description": "入侵者首领，蛊仙老者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0098",
+          "startOffset": 3060396,
+          "endOffset": 3060419,
+          "summary": "羽圣城守卫者"
+        }
+      ],
+      "entityId": "entity_ff56feab10d5",
+      "name": "羽民蛊仙（三位）",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "羽圣城守卫者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0014",
+          "startOffset": 3057666,
+          "endOffset": 3057691,
+          "summary": "丹羽与羽飞在羽王之争中作为对手交战"
+        }
+      ],
+      "relationId": "rel_e6bae3b845c3",
+      "subject": "丹羽",
+      "object": "羽飞",
+      "relationType": "CONFLICT",
+      "summary": "丹羽与羽飞在羽王之争中作为对手交战",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0035",
+          "startOffset": 3058447,
+          "endOffset": 3058509,
+          "summary": "羽飞与丹羽在羽圣城进行王位争夺战"
+        }
+      ],
+      "relationId": "rel_33bfa6dd0cb1",
+      "subject": "羽飞",
+      "object": "丹羽",
+      "relationType": "CONFLICT",
+      "summary": "羽飞与丹羽在羽圣城进行王位争夺战",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0065",
+          "startOffset": 3059384,
+          "endOffset": 3059424,
+          "summary": "羽飞在比武中击败丹羽，成为羽民王"
+        }
+      ],
+      "relationId": "rel_b5b84b9cf248",
+      "subject": "羽飞",
+      "object": "丹羽",
+      "relationType": "CONFLICT",
+      "summary": "羽飞在比武中击败丹羽，成为羽民王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0074",
+          "startOffset": 3059706,
+          "endOffset": 3059734,
+          "summary": "羽飞是羽民新王，受三位蛊仙关注"
+        }
+      ],
+      "relationId": "rel_049ae3b82a2e",
+      "subject": "羽飞",
+      "object": "羽民蛊仙（三位）",
+      "relationType": "FACTION",
+      "summary": "羽飞是羽民新王，受三位蛊仙关注",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0099",
+          "startOffset": 3060423,
+          "endOffset": 3060448,
+          "summary": "白海沙陀是入侵者们的首领"
+        }
+      ],
+      "relationId": "rel_92e6d59ec3fb",
+      "subject": "白海沙陀",
+      "object": "入侵者们",
+      "relationType": "FACTION",
+      "summary": "白海沙陀是入侵者们的首领",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0104",
+          "startOffset": 3060594,
+          "endOffset": 3060601,
+          "summary": "白海沙陀率领入侵者进攻羽民蛊仙"
+        }
+      ],
+      "relationId": "rel_8332d0f2bd26",
+      "subject": "白海沙陀一行人",
+      "object": "羽民蛊仙",
+      "relationType": "CONFLICT",
+      "summary": "白海沙陀率领入侵者进攻羽民蛊仙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0016",
+          "startOffset": 3057766,
+          "endOffset": 3057775,
+          "summary": "羽圣城羽王之争最后一场比试，丹羽占据上风，羽飞处于劣势"
+        }
+      ],
+      "eventId": "evt_2c3acbbe542d",
+      "eventType": "conflict",
+      "summary": "羽圣城羽王之争最后一场比试，丹羽占据上风，羽飞处于劣势",
+      "actors": [
+        "丹羽",
+        "羽飞"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "胜利者将成为羽民新王"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0029",
+          "startOffset": 3058282,
+          "endOffset": 3058318,
+          "summary": "羽飞施展杀招鼓气球，吸入空气膨胀成气球升空"
+        }
+      ],
+      "eventId": "evt_1a8bfbeef5a6",
+      "eventType": "other",
+      "summary": "羽飞施展杀招鼓气球，吸入空气膨胀成气球升空",
+      "actors": [
+        "羽飞"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽飞开始升空，可能改变战局"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0061",
+          "startOffset": 3059288,
+          "endOffset": 3059328,
+          "summary": "羽飞与丹羽在羽圣城演武场进行王位争夺战，羽飞使用杀招老树盘根、鹤交颈、六九大风车击败丹羽，丹羽以头触地昏死过去"
+        }
+      ],
+      "eventId": "evt_d49e57b0ee37",
+      "eventType": "conflict",
+      "summary": "羽飞与丹羽在羽圣城演武场进行王位争夺战，羽飞使用杀招老树盘根、鹤交颈、六九大风车击败丹羽，丹羽以头触地昏死过去",
+      "actors": [
+        "羽飞",
+        "丹羽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "丹羽昏死，羽飞获胜"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0065",
+          "startOffset": 3059384,
+          "endOffset": 3059424,
+          "summary": "羽飞在羽民王选拔中击败丹羽，成为新王"
+        }
+      ],
+      "eventId": "evt_7258f74e0d40",
+      "eventType": "conflict",
+      "summary": "羽飞在羽民王选拔中击败丹羽，成为新王",
+      "actors": [
+        "羽飞",
+        "丹羽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽飞成为羽民王，丹羽受伤被救治"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0086",
+          "startOffset": 3060064,
+          "endOffset": 3060109,
+          "summary": "羽圣城天空裂开裂缝，数位入侵者降临，三位羽民蛊仙迎敌"
+        }
+      ],
+      "eventId": "evt_325d2154c710",
+      "eventType": "conflict",
+      "summary": "羽圣城天空裂开裂缝，数位入侵者降临，三位羽民蛊仙迎敌",
+      "actors": [
+        "羽民蛊仙（三位）",
+        "入侵者（数位身影）"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽圣城陷入混乱，警钟拉响，防护开启"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0106",
+          "startOffset": 3060642,
+          "endOffset": 3060671,
+          "summary": "白海沙陀率领入侵者进攻羽圣城，与三位羽民蛊仙激战"
+        }
+      ],
+      "eventId": "evt_27a85866e1b2",
+      "eventType": "conflict",
+      "summary": "白海沙陀率领入侵者进攻羽圣城，与三位羽民蛊仙激战",
+      "actors": [
+        "白海沙陀",
+        "入侵者们",
+        "羽民蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "羽民蛊仙一死两伤，凭借羽圣城仙蛊屋困守"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0016",
+          "startOffset": 3057766,
+          "endOffset": 3057775,
+          "summary": "羽圣城羽王之争最后一场比试，丹羽占据上风，羽飞处于劣势"
+        }
+      ],
+      "timelineId": "tl_2c3acbbe542d",
+      "eventId": "evt_2c3acbbe542d",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "羽圣城羽王之争最后一场比试，丹羽占据上风，羽飞处于劣势",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0029",
+          "startOffset": 3058282,
+          "endOffset": 3058318,
+          "summary": "羽飞施展杀招鼓气球，吸入空气膨胀成气球升空"
+        }
+      ],
+      "timelineId": "tl_1a8bfbeef5a6",
+      "eventId": "evt_1a8bfbeef5a6",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "羽飞施展杀招鼓气球，吸入空气膨胀成气球升空",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0061",
+          "startOffset": 3059288,
+          "endOffset": 3059328,
+          "summary": "羽飞与丹羽在羽圣城演武场进行王位争夺战，羽飞使用杀招老树盘根、鹤交颈、六九大风车击败丹羽，丹羽以头触地昏死过去"
+        }
+      ],
+      "timelineId": "tl_d49e57b0ee37",
+      "eventId": "evt_d49e57b0ee37",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "羽飞与丹羽在羽圣城演武场进行王位争夺战，羽飞使用杀招老树盘根、鹤交颈、六九大风车击败丹羽，丹羽以头触地昏死过去",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0065",
+          "startOffset": 3059384,
+          "endOffset": 3059424,
+          "summary": "羽飞在羽民王选拔中击败丹羽，成为新王"
+        }
+      ],
+      "timelineId": "tl_7258f74e0d40",
+      "eventId": "evt_7258f74e0d40",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "羽飞在羽民王选拔中击败丹羽，成为新王",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0086",
+          "startOffset": 3060064,
+          "endOffset": 3060109,
+          "summary": "羽圣城天空裂开裂缝，数位入侵者降临，三位羽民蛊仙迎敌"
+        }
+      ],
+      "timelineId": "tl_325d2154c710",
+      "eventId": "evt_325d2154c710",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "羽圣城天空裂开裂缝，数位入侵者降临，三位羽民蛊仙迎敌",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0868",
+          "paragraphId": "ch_0868_p0106",
+          "startOffset": 3060642,
+          "endOffset": 3060671,
+          "summary": "白海沙陀率领入侵者进攻羽圣城，与三位羽民蛊仙激战"
+        }
+      ],
+      "timelineId": "tl_27a85866e1b2",
+      "eventId": "evt_27a85866e1b2",
+      "chapterId": "ch_0868",
+      "orderHint": "chapter-order",
+      "summary": "白海沙陀率领入侵者进攻羽圣城，与三位羽民蛊仙激战",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0015",
+      "startOffset": 3057695,
+      "endOffset": 3057762,
+      "summary": "羽圣城王子，五转修为，参与羽王之争"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0019",
+      "startOffset": 3057855,
+      "endOffset": 3057905,
+      "summary": "黑色短发羽民少年，参与羽王之争"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0007",
+      "startOffset": 3057424,
+      "endOffset": 3057457,
+      "summary": "已逝去的羽民王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0012",
+      "startOffset": 3057608,
+      "endOffset": 3057641,
+      "summary": "羽圣城的蛊仙，镇压大局"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0034",
+      "startOffset": 3058426,
+      "endOffset": 3058443,
+      "summary": "羽民，参与王位争夺战"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0035",
+      "startOffset": 3058447,
+      "endOffset": 3058509,
+      "summary": "羽民，王位争夺战对手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0065",
+      "startOffset": 3059384,
+      "endOffset": 3059424,
+      "summary": "新晋羽民王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0072",
+      "startOffset": 3059636,
+      "endOffset": 3059669,
+      "summary": "被击败的羽民"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0073",
+      "startOffset": 3059673,
+      "endOffset": 3059702,
+      "summary": "羽圣城守护蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0103",
+      "startOffset": 3060568,
+      "endOffset": 3060590,
+      "summary": "入侵者首领，蛊仙老者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0098",
+      "startOffset": 3060396,
+      "endOffset": 3060419,
+      "summary": "羽圣城守卫者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0014",
+      "startOffset": 3057666,
+      "endOffset": 3057691,
+      "summary": "丹羽与羽飞在羽王之争中作为对手交战"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0074",
+      "startOffset": 3059706,
+      "endOffset": 3059734,
+      "summary": "羽飞是羽民新王，受三位蛊仙关注"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0099",
+      "startOffset": 3060423,
+      "endOffset": 3060448,
+      "summary": "白海沙陀是入侵者们的首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0104",
+      "startOffset": 3060594,
+      "endOffset": 3060601,
+      "summary": "白海沙陀率领入侵者进攻羽民蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0016",
+      "startOffset": 3057766,
+      "endOffset": 3057775,
+      "summary": "羽圣城羽王之争最后一场比试，丹羽占据上风，羽飞处于劣势"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0029",
+      "startOffset": 3058282,
+      "endOffset": 3058318,
+      "summary": "羽飞施展杀招鼓气球，吸入空气膨胀成气球升空"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0061",
+      "startOffset": 3059288,
+      "endOffset": 3059328,
+      "summary": "羽飞与丹羽在羽圣城演武场进行王位争夺战，羽飞使用杀招老树盘根、鹤交颈、六九大风车击败丹羽，丹羽以头触地昏死过去"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0086",
+      "startOffset": 3060064,
+      "endOffset": 3060109,
+      "summary": "羽圣城天空裂开裂缝，数位入侵者降临，三位羽民蛊仙迎敌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0868",
+      "paragraphId": "ch_0868_p0106",
+      "startOffset": 3060642,
+      "endOffset": 3060671,
+      "summary": "白海沙陀率领入侵者进攻羽圣城，与三位羽民蛊仙激战"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events in this chapter are publicly visible (the king selection battle, the invasion) - no hidden knowledge, secret motives, or future-known information is directly supported by the source pointers.",
+      "The three featherman Gu Immortals' private thoughts ('this generation's king is somewhat unique') could be a candidate for hidden knowledge, but the quote is too vague to assert a specific fact about what they know or plan.",
+      "The invasion by Bai Hai Sha Tuo is a public event, not hidden knowledge.",
+      "No source pointer supports any character knowing something that others do not know, or any future-known information.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows羽飞 and丹羽 fighting for the throne, with羽飞 winning. But observed behavior is just combat -羽飞 uses kill moves to defeat丹羽. There is no direct source evidence for any specific motive beyond 'wanting to win the competition'. Inferring a motive like 'seeking kingship' would be a leap since the observed action is simply fighting in a competition where the winner becomes king. The behavior is visible but the underlying motive is ambiguous - it could be duty, ambition, survival, or other reasons. No direct statement of羽飞's personal motive is provided in the seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed clearly shows three 羽民蛊仙 (feathered folk Gu Immortals) as a collective faction defending 羽圣城 against invaders led by 白海沙陀. The invasion is a direct external threat pressure on this faction. The likely reaction (迎战/engage in battle) is directly observed in the source.",
+      "IF export filter quarantined 3 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

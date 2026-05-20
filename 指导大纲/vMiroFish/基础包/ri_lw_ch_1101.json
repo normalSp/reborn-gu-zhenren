@@ -1,0 +1,771 @@
+{
+  "packageId": "ri_lw_ch_1101",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1101"
+    ],
+    "paragraphIds": [
+      "ch_1101_p0002",
+      "ch_1101_p0017",
+      "ch_1101_p0027",
+      "ch_1101_p0029",
+      "ch_1101_p0030",
+      "ch_1101_p0033",
+      "ch_1101_p0038",
+      "ch_1101_p0051",
+      "ch_1101_p0058",
+      "ch_1101_p0066",
+      "ch_1101_p0071",
+      "ch_1101_p0076",
+      "ch_1101_p0087",
+      "ch_1101_p0089",
+      "ch_1101_p0095",
+      "ch_1101_p0097",
+      "ch_1101_p0106",
+      "ch_1101_p0110"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0002",
+          "startOffset": 3888946,
+          "endOffset": 3888950,
+          "summary": "蛊修，至尊仙窍主人"
+        }
+      ],
+      "entityId": "entity_5283d6f5f2fa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊修，至尊仙窍主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0030",
+          "startOffset": 3889951,
+          "endOffset": 3889955,
+          "summary": "琅琊派地灵"
+        }
+      ],
+      "entityId": "entity_315baed1f5c6",
+      "name": "琅琊地灵",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "琅琊派地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0038",
+          "startOffset": 3890208,
+          "endOffset": 3890230,
+          "summary": "至尊仙窍主人，渡劫者"
+        }
+      ],
+      "entityId": "entity_5283d6f5f2fa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "至尊仙窍主人，渡劫者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0071",
+          "startOffset": 3891247,
+          "endOffset": 3891261,
+          "summary": "荡魂山主人，蛊修"
+        }
+      ],
+      "entityId": "entity_5283d6f5f2fa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "荡魂山主人，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0097",
+          "startOffset": 3892008,
+          "endOffset": 3892010,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_5283d6f5f2fa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0030",
+          "startOffset": 3889921,
+          "endOffset": 3889955,
+          "summary": "方源每次渡劫需向琅琊地灵借蛊虫，代价不菲"
+        }
+      ],
+      "relationId": "rel_ecd3aa5cf7bc",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源每次渡劫需向琅琊地灵借蛊虫，代价不菲",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0017",
+          "startOffset": 3889463,
+          "endOffset": 3889497,
+          "summary": "方源在至尊仙窍小北原准备渡劫，布置仙劫锻窍杀招，并引入天地之气"
+        }
+      ],
+      "eventId": "evt_e81522aec1c8",
+      "eventType": "cultivation",
+      "summary": "方源在至尊仙窍小北原准备渡劫，布置仙劫锻窍杀招，并引入天地之气",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "天地之气涌入仙窍，为渡劫做准备"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0027",
+          "startOffset": 3889747,
+          "endOffset": 3889781,
+          "summary": "方源改良仙劫锻窍杀招，以摆脱对琅琊地灵的依赖"
+        }
+      ],
+      "eventId": "evt_d0a3adf71e75",
+      "eventType": "other",
+      "summary": "方源改良仙劫锻窍杀招，以摆脱对琅琊地灵的依赖",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "杀招有微小改动，但炼道境界不高，改良有限"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0033",
+          "startOffset": 3890083,
+          "endOffset": 3890112,
+          "summary": "方源消耗大量青提仙元催动仙劫锻窍杀招，第二次地灾来临"
+        }
+      ],
+      "eventId": "evt_4f62c0c6fdfc",
+      "eventType": "cultivation",
+      "summary": "方源消耗大量青提仙元催动仙劫锻窍杀招，第二次地灾来临",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "第二次地灾开始，风花劫出现"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0058",
+          "startOffset": 3890887,
+          "endOffset": 3890901,
+          "summary": "风花劫袭击荡魂山，方源撤退到山脚"
+        }
+      ],
+      "eventId": "evt_d8e1b36e5c98",
+      "eventType": "conflict",
+      "summary": "风花劫袭击荡魂山，方源撤退到山脚",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "荡魂山被风花撞出伤痕，方源暂时退避"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0066",
+          "startOffset": 3891086,
+          "endOffset": 3891116,
+          "summary": "方源使用江山如故仙蛊修复荡魂山，但风花灾劫持续攻击，消耗大量青提仙元。"
+        }
+      ],
+      "eventId": "evt_6507da936a15",
+      "eventType": "conflict",
+      "summary": "方源使用江山如故仙蛊修复荡魂山，但风花灾劫持续攻击，消耗大量青提仙元。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源陷入被动，仙元消耗剧烈。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0076",
+          "startOffset": 3891329,
+          "endOffset": 3891356,
+          "summary": "方源使用力道杀招万我、变化道杀招见面曾相识和仙蛊暗渡，制造虚影吸引风花，本体变化为石头并遮掩气息。"
+        }
+      ],
+      "eventId": "evt_1da4c20503ad",
+      "eventType": "conflict",
+      "summary": "方源使用力道杀招万我、变化道杀招见面曾相识和仙蛊暗渡，制造虚影吸引风花，本体变化为石头并遮掩气息。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "风花攻击虚影，荡魂山压力降低，但天意识破战术。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0087",
+          "startOffset": 3891713,
+          "endOffset": 3891759,
+          "summary": "天意洞察方源战术，风花集中攻击荡魂山，意图彻底毁掉荡魂山。"
+        }
+      ],
+      "eventId": "evt_d16933083db0",
+      "eventType": "conflict",
+      "summary": "天意洞察方源战术，风花集中攻击荡魂山，意图彻底毁掉荡魂山。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源处境更被动，荡魂山面临毁灭威胁。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0095",
+          "startOffset": 3891914,
+          "endOffset": 3891995,
+          "summary": "方源尝试使用剑浪三叠、力道大手印、毒气吐纳等杀招反击风花，但效果不佳。"
+        }
+      ],
+      "eventId": "evt_973222e373ca",
+      "eventType": "conflict",
+      "summary": "方源尝试使用剑浪三叠、力道大手印、毒气吐纳等杀招反击风花，但效果不佳。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "反击无效，风花速度太快。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0097",
+          "startOffset": 3892008,
+          "endOffset": 3892010,
+          "summary": "方源使用毒气吐纳杀招对抗风花，风花迅速萎靡，攻势下降"
+        }
+      ],
+      "eventId": "evt_61f672c43bc7",
+      "eventType": "conflict",
+      "summary": "方源使用毒气吐纳杀招对抗风花，风花迅速萎靡，攻势下降",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "风花攻势下降，狂风减缓"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0106",
+          "startOffset": 3892216,
+          "endOffset": 3892218,
+          "summary": "天空中突然出现一轮弯月，名为雪月，照射苍白光辉，使荡魂山温度骤降"
+        }
+      ],
+      "eventId": "evt_576be8ad65b4",
+      "eventType": "appearance",
+      "summary": "天空中突然出现一轮弯月，名为雪月，照射苍白光辉，使荡魂山温度骤降",
+      "actors": [],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "荡魂山表面覆盖冷霜，方源意识到这是风花雪月劫，属于天劫"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0017",
+          "startOffset": 3889463,
+          "endOffset": 3889497,
+          "summary": "方源在至尊仙窍小北原准备渡劫，布置仙劫锻窍杀招，并引入天地之气"
+        }
+      ],
+      "timelineId": "tl_e81522aec1c8",
+      "eventId": "evt_e81522aec1c8",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源在至尊仙窍小北原准备渡劫，布置仙劫锻窍杀招，并引入天地之气",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0027",
+          "startOffset": 3889747,
+          "endOffset": 3889781,
+          "summary": "方源改良仙劫锻窍杀招，以摆脱对琅琊地灵的依赖"
+        }
+      ],
+      "timelineId": "tl_d0a3adf71e75",
+      "eventId": "evt_d0a3adf71e75",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源改良仙劫锻窍杀招，以摆脱对琅琊地灵的依赖",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0033",
+          "startOffset": 3890083,
+          "endOffset": 3890112,
+          "summary": "方源消耗大量青提仙元催动仙劫锻窍杀招，第二次地灾来临"
+        }
+      ],
+      "timelineId": "tl_4f62c0c6fdfc",
+      "eventId": "evt_4f62c0c6fdfc",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源消耗大量青提仙元催动仙劫锻窍杀招，第二次地灾来临",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0058",
+          "startOffset": 3890887,
+          "endOffset": 3890901,
+          "summary": "风花劫袭击荡魂山，方源撤退到山脚"
+        }
+      ],
+      "timelineId": "tl_d8e1b36e5c98",
+      "eventId": "evt_d8e1b36e5c98",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "风花劫袭击荡魂山，方源撤退到山脚",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0066",
+          "startOffset": 3891086,
+          "endOffset": 3891116,
+          "summary": "方源使用江山如故仙蛊修复荡魂山，但风花灾劫持续攻击，消耗大量青提仙元。"
+        }
+      ],
+      "timelineId": "tl_6507da936a15",
+      "eventId": "evt_6507da936a15",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源使用江山如故仙蛊修复荡魂山，但风花灾劫持续攻击，消耗大量青提仙元。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0076",
+          "startOffset": 3891329,
+          "endOffset": 3891356,
+          "summary": "方源使用力道杀招万我、变化道杀招见面曾相识和仙蛊暗渡，制造虚影吸引风花，本体变化为石头并遮掩气息。"
+        }
+      ],
+      "timelineId": "tl_1da4c20503ad",
+      "eventId": "evt_1da4c20503ad",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源使用力道杀招万我、变化道杀招见面曾相识和仙蛊暗渡，制造虚影吸引风花，本体变化为石头并遮掩气息。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0087",
+          "startOffset": 3891713,
+          "endOffset": 3891759,
+          "summary": "天意洞察方源战术，风花集中攻击荡魂山，意图彻底毁掉荡魂山。"
+        }
+      ],
+      "timelineId": "tl_d16933083db0",
+      "eventId": "evt_d16933083db0",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "天意洞察方源战术，风花集中攻击荡魂山，意图彻底毁掉荡魂山。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0095",
+          "startOffset": 3891914,
+          "endOffset": 3891995,
+          "summary": "方源尝试使用剑浪三叠、力道大手印、毒气吐纳等杀招反击风花，但效果不佳。"
+        }
+      ],
+      "timelineId": "tl_973222e373ca",
+      "eventId": "evt_973222e373ca",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源尝试使用剑浪三叠、力道大手印、毒气吐纳等杀招反击风花，但效果不佳。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0097",
+          "startOffset": 3892008,
+          "endOffset": 3892010,
+          "summary": "方源使用毒气吐纳杀招对抗风花，风花迅速萎靡，攻势下降"
+        }
+      ],
+      "timelineId": "tl_61f672c43bc7",
+      "eventId": "evt_61f672c43bc7",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "方源使用毒气吐纳杀招对抗风花，风花迅速萎靡，攻势下降",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1101",
+          "paragraphId": "ch_1101_p0106",
+          "startOffset": 3892216,
+          "endOffset": 3892218,
+          "summary": "天空中突然出现一轮弯月，名为雪月，照射苍白光辉，使荡魂山温度骤降"
+        }
+      ],
+      "timelineId": "tl_576be8ad65b4",
+      "eventId": "evt_576be8ad65b4",
+      "chapterId": "ch_1101",
+      "orderHint": "chapter-order",
+      "summary": "天空中突然出现一轮弯月，名为雪月，照射苍白光辉，使荡魂山温度骤降",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0002",
+      "startOffset": 3888946,
+      "endOffset": 3888950,
+      "summary": "蛊修，至尊仙窍主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0030",
+      "startOffset": 3889951,
+      "endOffset": 3889955,
+      "summary": "琅琊派地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0038",
+      "startOffset": 3890208,
+      "endOffset": 3890230,
+      "summary": "至尊仙窍主人，渡劫者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0071",
+      "startOffset": 3891247,
+      "endOffset": 3891261,
+      "summary": "荡魂山主人，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0097",
+      "startOffset": 3892008,
+      "endOffset": 3892010,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0030",
+      "startOffset": 3889921,
+      "endOffset": 3889955,
+      "summary": "方源每次渡劫需向琅琊地灵借蛊虫，代价不菲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0017",
+      "startOffset": 3889463,
+      "endOffset": 3889497,
+      "summary": "方源在至尊仙窍小北原准备渡劫，布置仙劫锻窍杀招，并引入天地之气"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0027",
+      "startOffset": 3889747,
+      "endOffset": 3889781,
+      "summary": "方源改良仙劫锻窍杀招，以摆脱对琅琊地灵的依赖"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0033",
+      "startOffset": 3890083,
+      "endOffset": 3890112,
+      "summary": "方源消耗大量青提仙元催动仙劫锻窍杀招，第二次地灾来临"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0058",
+      "startOffset": 3890887,
+      "endOffset": 3890901,
+      "summary": "风花劫袭击荡魂山，方源撤退到山脚"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0066",
+      "startOffset": 3891086,
+      "endOffset": 3891116,
+      "summary": "方源使用江山如故仙蛊修复荡魂山，但风花灾劫持续攻击，消耗大量青提仙元。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0076",
+      "startOffset": 3891329,
+      "endOffset": 3891356,
+      "summary": "方源使用力道杀招万我、变化道杀招见面曾相识和仙蛊暗渡，制造虚影吸引风花，本体变化为石头并遮掩气息。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0087",
+      "startOffset": 3891713,
+      "endOffset": 3891759,
+      "summary": "天意洞察方源战术，风花集中攻击荡魂山，意图彻底毁掉荡魂山。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0095",
+      "startOffset": 3891914,
+      "endOffset": 3891995,
+      "summary": "方源尝试使用剑浪三叠、力道大手印、毒气吐纳等杀招反击风花，但效果不佳。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1101",
+      "paragraphId": "ch_1101_p0106",
+      "startOffset": 3892216,
+      "endOffset": 3892218,
+      "summary": "天空中突然出现一轮弯月，名为雪月，照射苍白光辉，使荡魂山温度骤降"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes Fang Yuan's tribulation process (second earth calamity 'wind-flower tribulation') at Dang Hun Mountain. All events are publicly observable cultivation/combat actions during a tribulation. There is no private knowledge, secret motive/plan, future-known information, or directly supported knowledge gap. The only potentially non-obvious element is Fang Yuan's desire to reduce dependence on Lang Ya land spirit, but this is stated openly in his internal narration (p0027) and is not a hidden fact from other actors' perspective. No actor is shown to know or not know any specific fact that would qualify as a hidden/future-known/player-visibility fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan modifying his tribulation killer move to reduce reliance on Lang Ya land spirit (ptr_8), which could suggest a motive of self-reliance. However, the observed behavior is a technical adjustment during tribulation preparation; the inferred motive of '摆脱依赖' (escaping dependence) is a reasonable one-step inference from the direct context of '不可能一直依靠琅琊派' and '代价不菲'. But the evidence is thin - only one paragraph supports this, and the modification is described as minor due to low refinement path attainment. The rest of the seed focuses on tribulation combat, not on the borrowing relationship. A single motive candidate could be proposed but the source support is weak.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses entirely on Fang Yuan's personal tribulation (渡劫) at Dang Hun Mountain. The only collective actor mentioned is 琅琊派 (Lang Ya Sect), referenced via 琅琊地灵 (Lang Ya Earth Spirit) in the context of Fang Yuan borrowing gu worms. However, the seed does not describe any active pressure, stake, or reaction from 琅琊派 as a collective faction—only Fang Yuan's individual desire to reduce dependence on them. No other family, clan, faction, or organization appears with a concrete collective stake. No faction-level pressure can be extracted from the seed facts.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

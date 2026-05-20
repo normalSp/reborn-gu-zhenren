@@ -1,0 +1,931 @@
+{
+  "packageId": "ri_lw_ch_2021",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_2021"
+    ],
+    "paragraphIds": [
+      "ch_2021_p0004",
+      "ch_2021_p0005",
+      "ch_2021_p0012",
+      "ch_2021_p0027",
+      "ch_2021_p0032",
+      "ch_2021_p0033",
+      "ch_2021_p0042",
+      "ch_2021_p0044",
+      "ch_2021_p0048",
+      "ch_2021_p0060",
+      "ch_2021_p0061",
+      "ch_2021_p0062",
+      "ch_2021_p0065",
+      "ch_2021_p0066",
+      "ch_2021_p0068",
+      "ch_2021_p0072",
+      "ch_2021_p0074",
+      "ch_2021_p0082",
+      "ch_2021_p0097",
+      "ch_2021_p0098",
+      "ch_2021_p0106"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0004",
+          "startOffset": 7034446,
+          "endOffset": 7034485,
+          "summary": "骆驼商队成员"
+        }
+      ],
+      "entityId": "entity_5a9d97030b2f",
+      "name": "彭达",
+      "kind": "person",
+      "aliases": [],
+      "description": "骆驼商队成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0005",
+          "startOffset": 7034489,
+          "endOffset": 7034540,
+          "summary": "商队首领"
+        }
+      ],
+      "entityId": "entity_99de21845743",
+      "name": "莫利",
+      "kind": "person",
+      "aliases": [],
+      "description": "商队首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0033",
+          "startOffset": 7035554,
+          "endOffset": 7035558,
+          "summary": "商队成员"
+        }
+      ],
+      "entityId": "entity_5a9d97030b2f",
+      "name": "彭达",
+      "kind": "person",
+      "aliases": [],
+      "description": "商队成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0033",
+          "startOffset": 7035562,
+          "endOffset": 7035566,
+          "summary": "商队成员，有儿子"
+        }
+      ],
+      "entityId": "entity_99de21845743",
+      "name": "莫利",
+      "kind": "person",
+      "aliases": [
+        "莫利大叔"
+      ],
+      "description": "商队成员，有儿子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0042",
+          "startOffset": 7035879,
+          "endOffset": 7035881,
+          "summary": "莫利的儿子，蛊仙种子"
+        }
+      ],
+      "entityId": "entity_d22d511bd4b9",
+      "name": "莫利之子",
+      "kind": "person",
+      "aliases": [],
+      "description": "莫利的儿子，蛊仙种子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0061",
+          "startOffset": 7036443,
+          "endOffset": 7036447,
+          "summary": "莫家蛊仙，追击巨兽"
+        }
+      ],
+      "entityId": "entity_d426c1ca91b5",
+      "name": "莫家蛊仙1",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "莫家蛊仙，追击巨兽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0060",
+          "startOffset": 7036404,
+          "endOffset": 7036408,
+          "summary": "莫家蛊仙，追击巨兽"
+        }
+      ],
+      "entityId": "entity_49dd02c75769",
+      "name": "莫家蛊仙2",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "莫家蛊仙，追击巨兽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0065",
+          "startOffset": 7036606,
+          "endOffset": 7036608,
+          "summary": "跟随莫利的年轻蛊师"
+        }
+      ],
+      "entityId": "entity_5a9d97030b2f",
+      "name": "彭达",
+      "kind": "person",
+      "aliases": [
+        "臭小子"
+      ],
+      "description": "跟随莫利的年轻蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0066",
+          "startOffset": 7036686,
+          "endOffset": 7036688,
+          "summary": "沙狼城蛊师头领，妻儿被杀"
+        }
+      ],
+      "entityId": "entity_99de21845743",
+      "name": "莫利",
+      "kind": "person",
+      "aliases": [
+        "大叔",
+        "头领"
+      ],
+      "description": "沙狼城蛊师头领，妻儿被杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0097",
+          "startOffset": 7037730,
+          "endOffset": 7037734,
+          "summary": "被莫利所救的年轻人"
+        }
+      ],
+      "entityId": "entity_5a9d97030b2f",
+      "name": "彭达",
+      "kind": "person",
+      "aliases": [],
+      "description": "被莫利所救的年轻人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0098",
+          "startOffset": 7037828,
+          "endOffset": 7037832,
+          "summary": "彭达的救命恩人，一心复仇"
+        }
+      ],
+      "entityId": "entity_99de21845743",
+      "name": "莫利",
+      "kind": "person",
+      "aliases": [],
+      "description": "彭达的救命恩人，一心复仇",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0005",
+          "startOffset": 7034489,
+          "endOffset": 7034540,
+          "summary": "莫利是商队首领，彭达是商队成员，两人关系融洽"
+        }
+      ],
+      "relationId": "rel_664faeac4126",
+      "subject": "莫利",
+      "object": "彭达",
+      "relationType": "ALLY",
+      "summary": "莫利是商队首领，彭达是商队成员，两人关系融洽",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0032",
+          "startOffset": 7035494,
+          "endOffset": 7035550,
+          "summary": "莫利的妻子，已死亡"
+        }
+      ],
+      "relationId": "rel_16ecc7f10d99",
+      "subject": "莫利",
+      "object": "莫利的妻子",
+      "relationType": "FAMILY",
+      "summary": "莫利的妻子，已死亡",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0012",
+          "startOffset": 7034788,
+          "endOffset": 7034841,
+          "summary": "莫利的儿子，被选中大加栽培，浪子回头"
+        }
+      ],
+      "relationId": "rel_f380b0cb7a07",
+      "subject": "莫利",
+      "object": "莫利的儿子",
+      "relationType": "FAMILY",
+      "summary": "莫利的儿子，被选中大加栽培，浪子回头",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0042",
+          "startOffset": 7035879,
+          "endOffset": 7035881,
+          "summary": "父子关系"
+        }
+      ],
+      "relationId": "rel_b72001a1a7ce",
+      "subject": "莫利",
+      "object": "莫利之子",
+      "relationType": "FAMILY",
+      "summary": "父子关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0062",
+          "startOffset": 7036500,
+          "endOffset": 7036510,
+          "summary": "同为莫家蛊仙，共同追击巨兽"
+        }
+      ],
+      "relationId": "rel_740d179bab80",
+      "subject": "莫家蛊仙1",
+      "object": "莫家蛊仙2",
+      "relationType": "ALLY",
+      "summary": "同为莫家蛊仙，共同追击巨兽",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0072",
+          "startOffset": 7036916,
+          "endOffset": 7036986,
+          "summary": "彭达视莫利为最亲近的人，多次被救，坚持跟随"
+        }
+      ],
+      "relationId": "rel_fa07f56b77a6",
+      "subject": "彭达",
+      "object": "莫利",
+      "relationType": "ALLY",
+      "summary": "彭达视莫利为最亲近的人，多次被救，坚持跟随",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0097",
+          "startOffset": 7037730,
+          "endOffset": 7037734,
+          "summary": "莫利是彭达的救命恩人，彭达想救莫利"
+        }
+      ],
+      "relationId": "rel_61fdfa262cd8",
+      "subject": "莫利",
+      "object": "彭达",
+      "relationType": "OTHER",
+      "summary": "莫利是彭达的救命恩人，彭达想救莫利",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0027",
+          "startOffset": 7035304,
+          "endOffset": 7035349,
+          "summary": "商队返回沙狼城，发现城市已成废墟，到处是尸体和浓烟"
+        }
+      ],
+      "eventId": "evt_93641b8a76d6",
+      "eventType": "other",
+      "summary": "商队返回沙狼城，发现城市已成废墟，到处是尸体和浓烟",
+      "actors": [
+        "莫利",
+        "彭达",
+        "商队成员"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "莫利发现妻子尸体，商队成员崩溃"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0032",
+          "startOffset": 7035494,
+          "endOffset": 7035550,
+          "summary": "莫利的妻子在沙狼城巨变中死亡"
+        }
+      ],
+      "eventId": "evt_c725a9187f8c",
+      "eventType": "death",
+      "summary": "莫利的妻子在沙狼城巨变中死亡",
+      "actors": [
+        "莫利的妻子"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "莫利悲痛"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0044",
+          "startOffset": 7035960,
+          "endOffset": 7035975,
+          "summary": "沙狼城被巨兽摧毁，内城区化为深坑，居民死亡，莫利的妻子和儿子死亡"
+        }
+      ],
+      "eventId": "evt_cfd8d2031d25",
+      "eventType": "death",
+      "summary": "沙狼城被巨兽摧毁，内城区化为深坑，居民死亡，莫利的妻子和儿子死亡",
+      "actors": [
+        "沙狼城居民",
+        "莫利之妻",
+        "莫利之子"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "莫利失去家人，商队成员悲痛"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0062",
+          "startOffset": 7036500,
+          "endOffset": 7036510,
+          "summary": "两位莫家蛊仙追击摧毁沙狼城的巨兽"
+        }
+      ],
+      "eventId": "evt_e2a6b4b466d3",
+      "eventType": "conflict",
+      "summary": "两位莫家蛊仙追击摧毁沙狼城的巨兽",
+      "actors": [
+        "莫家蛊仙1",
+        "莫家蛊仙2",
+        "巨兽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "蛊仙离开继续追击"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0074",
+          "startOffset": 7037033,
+          "endOffset": 7037059,
+          "summary": "莫利决定跟随蛊仙方向离开沙狼城废墟，彭达和其他蛊师响应，最终多数蛊师因危险返回，莫利独自前行，彭达偷偷跟随并阻止莫利继续前进"
+        }
+      ],
+      "eventId": "evt_c001f3297a68",
+      "eventType": "other",
+      "summary": "莫利决定跟随蛊仙方向离开沙狼城废墟，彭达和其他蛊师响应，最终多数蛊师因危险返回，莫利独自前行，彭达偷偷跟随并阻止莫利继续前进",
+      "actors": [
+        "莫利",
+        "彭达",
+        "其他蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "莫利和彭达在沙丘上对峙，莫利气急"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0082",
+          "startOffset": 7037271,
+          "endOffset": 7037306,
+          "summary": "蛊仙与巨兽交手的余波黑气擦中一位蛊师，使其瞬间化为白骨"
+        }
+      ],
+      "eventId": "evt_4d414214e106",
+      "eventType": "death",
+      "summary": "蛊仙与巨兽交手的余波黑气擦中一位蛊师，使其瞬间化为白骨",
+      "actors": [
+        "某位蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "其他蛊师惊恐逃散，多数返回"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0106",
+          "startOffset": 7038033,
+          "endOffset": 7038037,
+          "summary": "彭达劝阻莫利去送死，莫利不听，两人纠缠时被飓风吞没"
+        }
+      ],
+      "eventId": "evt_72ca72b2787b",
+      "eventType": "conflict",
+      "summary": "彭达劝阻莫利去送死，莫利不听，两人纠缠时被飓风吞没",
+      "actors": [
+        "彭达",
+        "莫利"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "二人被飓风吞没，生死不明"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0027",
+          "startOffset": 7035304,
+          "endOffset": 7035349,
+          "summary": "商队返回沙狼城，发现城市已成废墟，到处是尸体和浓烟"
+        }
+      ],
+      "timelineId": "tl_93641b8a76d6",
+      "eventId": "evt_93641b8a76d6",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "商队返回沙狼城，发现城市已成废墟，到处是尸体和浓烟",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0032",
+          "startOffset": 7035494,
+          "endOffset": 7035550,
+          "summary": "莫利的妻子在沙狼城巨变中死亡"
+        }
+      ],
+      "timelineId": "tl_c725a9187f8c",
+      "eventId": "evt_c725a9187f8c",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "莫利的妻子在沙狼城巨变中死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0044",
+          "startOffset": 7035960,
+          "endOffset": 7035975,
+          "summary": "沙狼城被巨兽摧毁，内城区化为深坑，居民死亡，莫利的妻子和儿子死亡"
+        }
+      ],
+      "timelineId": "tl_cfd8d2031d25",
+      "eventId": "evt_cfd8d2031d25",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "沙狼城被巨兽摧毁，内城区化为深坑，居民死亡，莫利的妻子和儿子死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0062",
+          "startOffset": 7036500,
+          "endOffset": 7036510,
+          "summary": "两位莫家蛊仙追击摧毁沙狼城的巨兽"
+        }
+      ],
+      "timelineId": "tl_e2a6b4b466d3",
+      "eventId": "evt_e2a6b4b466d3",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "两位莫家蛊仙追击摧毁沙狼城的巨兽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0074",
+          "startOffset": 7037033,
+          "endOffset": 7037059,
+          "summary": "莫利决定跟随蛊仙方向离开沙狼城废墟，彭达和其他蛊师响应，最终多数蛊师因危险返回，莫利独自前行，彭达偷偷跟随并阻止莫利继续前进"
+        }
+      ],
+      "timelineId": "tl_c001f3297a68",
+      "eventId": "evt_c001f3297a68",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "莫利决定跟随蛊仙方向离开沙狼城废墟，彭达和其他蛊师响应，最终多数蛊师因危险返回，莫利独自前行，彭达偷偷跟随并阻止莫利继续前进",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0082",
+          "startOffset": 7037271,
+          "endOffset": 7037306,
+          "summary": "蛊仙与巨兽交手的余波黑气擦中一位蛊师，使其瞬间化为白骨"
+        }
+      ],
+      "timelineId": "tl_4d414214e106",
+      "eventId": "evt_4d414214e106",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "蛊仙与巨兽交手的余波黑气擦中一位蛊师，使其瞬间化为白骨",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2021",
+          "paragraphId": "ch_2021_p0106",
+          "startOffset": 7038033,
+          "endOffset": 7038037,
+          "summary": "彭达劝阻莫利去送死，莫利不听，两人纠缠时被飓风吞没"
+        }
+      ],
+      "timelineId": "tl_72ca72b2787b",
+      "eventId": "evt_72ca72b2787b",
+      "chapterId": "ch_2021",
+      "orderHint": "chapter-order",
+      "summary": "彭达劝阻莫利去送死，莫利不听，两人纠缠时被飓风吞没",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0004",
+      "startOffset": 7034446,
+      "endOffset": 7034485,
+      "summary": "骆驼商队成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0005",
+      "startOffset": 7034489,
+      "endOffset": 7034540,
+      "summary": "商队首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0033",
+      "startOffset": 7035554,
+      "endOffset": 7035558,
+      "summary": "商队成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0033",
+      "startOffset": 7035562,
+      "endOffset": 7035566,
+      "summary": "商队成员，有儿子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0042",
+      "startOffset": 7035879,
+      "endOffset": 7035881,
+      "summary": "莫利的儿子，蛊仙种子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0061",
+      "startOffset": 7036443,
+      "endOffset": 7036447,
+      "summary": "莫家蛊仙，追击巨兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0060",
+      "startOffset": 7036404,
+      "endOffset": 7036408,
+      "summary": "莫家蛊仙，追击巨兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0065",
+      "startOffset": 7036606,
+      "endOffset": 7036608,
+      "summary": "跟随莫利的年轻蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0066",
+      "startOffset": 7036686,
+      "endOffset": 7036688,
+      "summary": "沙狼城蛊师头领，妻儿被杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0097",
+      "startOffset": 7037730,
+      "endOffset": 7037734,
+      "summary": "被莫利所救的年轻人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0098",
+      "startOffset": 7037828,
+      "endOffset": 7037832,
+      "summary": "彭达的救命恩人，一心复仇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0032",
+      "startOffset": 7035494,
+      "endOffset": 7035550,
+      "summary": "莫利的妻子，已死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0012",
+      "startOffset": 7034788,
+      "endOffset": 7034841,
+      "summary": "莫利的儿子，被选中大加栽培，浪子回头"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0062",
+      "startOffset": 7036500,
+      "endOffset": 7036510,
+      "summary": "同为莫家蛊仙，共同追击巨兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0072",
+      "startOffset": 7036916,
+      "endOffset": 7036986,
+      "summary": "彭达视莫利为最亲近的人，多次被救，坚持跟随"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0027",
+      "startOffset": 7035304,
+      "endOffset": 7035349,
+      "summary": "商队返回沙狼城，发现城市已成废墟，到处是尸体和浓烟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0044",
+      "startOffset": 7035960,
+      "endOffset": 7035975,
+      "summary": "沙狼城被巨兽摧毁，内城区化为深坑，居民死亡，莫利的妻子和儿子死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0074",
+      "startOffset": 7037033,
+      "endOffset": 7037059,
+      "summary": "莫利决定跟随蛊仙方向离开沙狼城废墟，彭达和其他蛊师响应，最终多数蛊师因危险返回，莫利独自前行，彭达偷偷跟随并阻止莫利继续前进"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0082",
+      "startOffset": 7037271,
+      "endOffset": 7037306,
+      "summary": "蛊仙与巨兽交手的余波黑气擦中一位蛊师，使其瞬间化为白骨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2021",
+      "paragraphId": "ch_2021_p0106",
+      "startOffset": 7038033,
+      "endOffset": 7038037,
+      "summary": "彭达劝阻莫利去送死，莫利不听，两人纠缠时被飓风吞没"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains only publicly observable events (沙狼城 destruction,莫利's wife/son death,蛊仙 chasing巨兽,彭达 following莫利). No hidden knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the source material. The events are all visible to the characters present. 莫利's motive (revenge for family) is inferable from visible context but not stated as private/internal knowledge in the source pointers. No fact qualifies as hidden/future-known/player-visibility under the strict criteria.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Observed: 彭达劝阻莫利去送死（ptr_10, ptr_11），自称莫利是最亲近的人（ptr_15）。但彭达的行为动机是报恩还是其他，种子中只有行为描述，没有明确的心理动机或意图陈述。inferredMotive只能猜测'想救恩人'，但这几乎是直接重述行为，不算真正的动机推断。且种子中莫利不听劝，二人被飓风吞没，结局不明。证据不足以支撑一个可靠的 motive 推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed mentions '莫家蛊仙' (Mo family Gu Immortals) as two individuals pursuing a giant beast, but there is no named Mo family clan/faction with organizational stakes, territory, or collective pressure axis in the seed. The events focus on individual tragedy (Moli's family killed, his personal revenge quest) and individual relationships (Peng Da and Moli). No collective faction pressure can be reliably extracted from the seed facts alone.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

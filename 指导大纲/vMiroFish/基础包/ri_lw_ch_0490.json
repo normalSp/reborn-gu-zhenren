@@ -1,0 +1,788 @@
+{
+  "packageId": "ri_lw_ch_0490",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0490"
+    ],
+    "paragraphIds": [
+      "ch_0490_p0002",
+      "ch_0490_p0011",
+      "ch_0490_p0018",
+      "ch_0490_p0023",
+      "ch_0490_p0033",
+      "ch_0490_p0034",
+      "ch_0490_p0036",
+      "ch_0490_p0037",
+      "ch_0490_p0057",
+      "ch_0490_p0058",
+      "ch_0490_p0059",
+      "ch_0490_p0065",
+      "ch_0490_p0066",
+      "ch_0490_p0070",
+      "ch_0490_p0073",
+      "ch_0490_p0076",
+      "ch_0490_p0082",
+      "ch_0490_p0089",
+      "ch_0490_p0090"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0002",
+          "startOffset": 1703400,
+          "endOffset": 1703477,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_4ed06186f5a2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0002",
+          "startOffset": 1703400,
+          "endOffset": 1703477,
+          "summary": "地灵，执念所化，炼蛊大师"
+        }
+      ],
+      "entityId": "entity_0d13e3e6c6f2",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "地灵，执念所化，炼蛊大师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0033",
+          "startOffset": 1704827,
+          "endOffset": 1704874,
+          "summary": "蛊仙，可能参与交易"
+        }
+      ],
+      "entityId": "entity_3b771e9c6158",
+      "name": "砚石老人",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，可能参与交易",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0034",
+          "startOffset": 1704878,
+          "endOffset": 1704892,
+          "summary": "琅琊福地地灵，炼蛊大师"
+        }
+      ],
+      "entityId": "entity_0d13e3e6c6f2",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [
+        "地灵"
+      ],
+      "description": "琅琊福地地灵，炼蛊大师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0036",
+          "startOffset": 1704931,
+          "endOffset": 1704949,
+          "summary": "蛊仙，交易发起者"
+        }
+      ],
+      "entityId": "entity_4ed06186f5a2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，交易发起者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0066",
+          "startOffset": 1706300,
+          "endOffset": 1706354,
+          "summary": "蛊仙，交易者"
+        }
+      ],
+      "entityId": "entity_4ed06186f5a2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，交易者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0065",
+          "startOffset": 1706262,
+          "endOffset": 1706296,
+          "summary": "福地地灵，交易者"
+        }
+      ],
+      "entityId": "entity_0d13e3e6c6f2",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "福地地灵，交易者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0073",
+          "startOffset": 1706570,
+          "endOffset": 1706611,
+          "summary": "智道蛊师，可能推算情报"
+        }
+      ],
+      "entityId": "entity_3b771e9c6158",
+      "name": "砚石老人",
+      "kind": "person",
+      "aliases": [],
+      "description": "智道蛊师，可能推算情报",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0018",
+          "startOffset": 1704130,
+          "endOffset": 1704171,
+          "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊"
+        }
+      ],
+      "relationId": "rel_f415e7bee276",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0002",
+          "startOffset": 1703400,
+          "endOffset": 1703477,
+          "summary": "方源想拜师琅琊地灵被拒"
+        }
+      ],
+      "relationId": "rel_f7cb4ed0f6a8",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "OTHER",
+      "summary": "方源想拜师琅琊地灵被拒",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0058",
+          "startOffset": 1705944,
+          "endOffset": 1705980,
+          "summary": "方源与琅琊地灵进行交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊及毛民（未成功）"
+        }
+      ],
+      "relationId": "rel_370c6a02dfe3",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源与琅琊地灵进行交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊及毛民（未成功）",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0070",
+          "startOffset": 1706469,
+          "endOffset": 1706514,
+          "summary": "方源与琅琊地灵进行交易，先购买驭狼蛊秘方，后提议用消息交换消息"
+        }
+      ],
+      "relationId": "rel_88c324a57201",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源与琅琊地灵进行交易，先购买驭狼蛊秘方，后提议用消息交换消息",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0073",
+          "startOffset": 1706570,
+          "endOffset": 1706611,
+          "summary": "方源因忌惮砚石老人的推算能力，在宝黄天中收敛收购秘方的动作"
+        }
+      ],
+      "relationId": "rel_c76c78264243",
+      "subject": "方源",
+      "object": "砚石老人",
+      "relationType": "CONFLICT",
+      "summary": "方源因忌惮砚石老人的推算能力，在宝黄天中收敛收购秘方的动作",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0090",
+          "startOffset": 1707293,
+          "endOffset": 1707329,
+          "summary": "琅琊地灵与八十八角真阳楼有关系"
+        }
+      ],
+      "relationId": "rel_c8cb19ec9afe",
+      "subject": "琅琊地灵",
+      "object": "八十八角真阳楼",
+      "relationType": "OTHER",
+      "summary": "琅琊地灵与八十八角真阳楼有关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0011",
+          "startOffset": 1703815,
+          "endOffset": 1703846,
+          "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊"
+        }
+      ],
+      "eventId": "evt_5171959428e4",
+      "eventType": "trade",
+      "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得第二空窍蛊，琅琊地灵获得神游蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0023",
+          "startOffset": 1704339,
+          "endOffset": 1704382,
+          "summary": "方源询问能否用第二空窍蛊生成第三空窍，琅琊地灵否定"
+        }
+      ],
+      "eventId": "evt_7a43425e647a",
+      "eventType": "other",
+      "summary": "方源询问能否用第二空窍蛊生成第三空窍，琅琊地灵否定",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源确认第二空窍蛊只能生成第二空窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0058",
+          "startOffset": 1705944,
+          "endOffset": 1705980,
+          "summary": "方源与琅琊地灵交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊，并试图用半成品交换毛民但被拒绝"
+        }
+      ],
+      "eventId": "evt_22df277f7a8e",
+      "eventType": "trade",
+      "summary": "方源与琅琊地灵交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊，并试图用半成品交换毛民但被拒绝",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得和稀泥仙蛊，但未能获得毛民"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0037",
+          "startOffset": 1704953,
+          "endOffset": 1705001,
+          "summary": "方源展示半成品第二空窍蛊给琅琊地灵"
+        }
+      ],
+      "eventId": "evt_7ffd78555d7e",
+      "eventType": "other",
+      "summary": "方源展示半成品第二空窍蛊给琅琊地灵",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "琅琊地灵表现出兴趣，但最终拒绝用毛民交换"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0089",
+          "startOffset": 1707233,
+          "endOffset": 1707289,
+          "summary": "方源用第二空窍蛊的使用时间消息，交换八十八角真阳楼的信息"
+        }
+      ],
+      "eventId": "evt_701051c2b456",
+      "eventType": "trade",
+      "summary": "方源用第二空窍蛊的使用时间消息，交换八十八角真阳楼的信息",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "琅琊地灵对八十八角真阳楼被提及感到吃惊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0076",
+          "startOffset": 1706709,
+          "endOffset": 1706743,
+          "summary": "方源购买驭狼蛊秘方（一转到五转）"
+        }
+      ],
+      "eventId": "evt_f475a77a2c8a",
+      "eventType": "trade",
+      "summary": "方源购买驭狼蛊秘方（一转到五转）",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得大量驭狼蛊秘方"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0011",
+          "startOffset": 1703815,
+          "endOffset": 1703846,
+          "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊"
+        }
+      ],
+      "timelineId": "tl_5171959428e4",
+      "eventId": "evt_5171959428e4",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0023",
+          "startOffset": 1704339,
+          "endOffset": 1704382,
+          "summary": "方源询问能否用第二空窍蛊生成第三空窍，琅琊地灵否定"
+        }
+      ],
+      "timelineId": "tl_7a43425e647a",
+      "eventId": "evt_7a43425e647a",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源询问能否用第二空窍蛊生成第三空窍，琅琊地灵否定",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0058",
+          "startOffset": 1705944,
+          "endOffset": 1705980,
+          "summary": "方源与琅琊地灵交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊，并试图用半成品交换毛民但被拒绝"
+        }
+      ],
+      "timelineId": "tl_22df277f7a8e",
+      "eventId": "evt_22df277f7a8e",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源与琅琊地灵交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊，并试图用半成品交换毛民但被拒绝",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0037",
+          "startOffset": 1704953,
+          "endOffset": 1705001,
+          "summary": "方源展示半成品第二空窍蛊给琅琊地灵"
+        }
+      ],
+      "timelineId": "tl_7ffd78555d7e",
+      "eventId": "evt_7ffd78555d7e",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源展示半成品第二空窍蛊给琅琊地灵",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0089",
+          "startOffset": 1707233,
+          "endOffset": 1707289,
+          "summary": "方源用第二空窍蛊的使用时间消息，交换八十八角真阳楼的信息"
+        }
+      ],
+      "timelineId": "tl_701051c2b456",
+      "eventId": "evt_701051c2b456",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源用第二空窍蛊的使用时间消息，交换八十八角真阳楼的信息",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0076",
+          "startOffset": 1706709,
+          "endOffset": 1706743,
+          "summary": "方源购买驭狼蛊秘方（一转到五转）"
+        }
+      ],
+      "timelineId": "tl_f475a77a2c8a",
+      "eventId": "evt_f475a77a2c8a",
+      "chapterId": "ch_0490",
+      "orderHint": "chapter-order",
+      "summary": "方源购买驭狼蛊秘方（一转到五转）",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0490",
+          "paragraphId": "ch_0490_p0090",
+          "startOffset": 1707293,
+          "endOffset": 1707329,
+          "summary": "琅琊地灵与八十八角真阳楼有关系"
+        }
+      ],
+      "factId": "hf_0490_001",
+      "summary": "琅琊地灵与八十八角真阳楼有关系",
+      "whoKnows": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0002",
+      "startOffset": 1703400,
+      "endOffset": 1703477,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0033",
+      "startOffset": 1704827,
+      "endOffset": 1704874,
+      "summary": "蛊仙，可能参与交易"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0034",
+      "startOffset": 1704878,
+      "endOffset": 1704892,
+      "summary": "琅琊福地地灵，炼蛊大师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0036",
+      "startOffset": 1704931,
+      "endOffset": 1704949,
+      "summary": "蛊仙，交易发起者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0066",
+      "startOffset": 1706300,
+      "endOffset": 1706354,
+      "summary": "蛊仙，交易者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0065",
+      "startOffset": 1706262,
+      "endOffset": 1706296,
+      "summary": "福地地灵，交易者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0073",
+      "startOffset": 1706570,
+      "endOffset": 1706611,
+      "summary": "智道蛊师，可能推算情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0018",
+      "startOffset": 1704130,
+      "endOffset": 1704171,
+      "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0058",
+      "startOffset": 1705944,
+      "endOffset": 1705980,
+      "summary": "方源与琅琊地灵进行交易，用神游蛊和半成品第二空窍蛊交换和稀泥仙蛊及毛民（未成功）"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0070",
+      "startOffset": 1706469,
+      "endOffset": 1706514,
+      "summary": "方源与琅琊地灵进行交易，先购买驭狼蛊秘方，后提议用消息交换消息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0090",
+      "startOffset": 1707293,
+      "endOffset": 1707329,
+      "summary": "琅琊地灵与八十八角真阳楼有关系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0011",
+      "startOffset": 1703815,
+      "endOffset": 1703846,
+      "summary": "方源用神游蛊与琅琊地灵交易第二空窍蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0023",
+      "startOffset": 1704339,
+      "endOffset": 1704382,
+      "summary": "方源询问能否用第二空窍蛊生成第三空窍，琅琊地灵否定"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0037",
+      "startOffset": 1704953,
+      "endOffset": 1705001,
+      "summary": "方源展示半成品第二空窍蛊给琅琊地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0089",
+      "startOffset": 1707233,
+      "endOffset": 1707289,
+      "summary": "方源用第二空窍蛊的使用时间消息，交换八十八角真阳楼的信息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0490",
+      "paragraphId": "ch_0490_p0076",
+      "startOffset": 1706709,
+      "endOffset": 1706743,
+      "summary": "方源购买驭狼蛊秘方（一转到五转）"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly supports that Lang Ya land spirit has a relationship with Eighty-Eight True Yang Building. The land spirit's surprised reaction ('你竟然知道这座仙蛊屋和老夫有关系') confirms this is a hidden fact that was not previously known to the player. Fang Yuan learns this through the information trade. This is an atomic fact directly supported by the source quote.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Observed behavior: 方源因忌惮砚石老人的推算能力，在宝黄天中收敛收购秘方的动作（ptr_2, ptr_7）。但这是方源的内心思虑（narrator-level internal thought），不是外部可观察的明确行为。且收敛动作本身是消极行为，难以从外部直接观察到。inferredMotive若推断为'避免暴露底牌'虽合理，但observedMotive缺乏直接可观察的外部行为支撑，属于内部心理活动。因此不提交motive。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily documents individual transactions between 方源 (Fang Yuan) and 琅琊地灵 (Lang Ya land spirit). 琅琊地灵 is a single land spirit entity, not a collective faction/clan/family/group. 砚石老人 (Ink Stone Old Man) is mentioned as an individual whose divination abilities cause Fang Yuan to act cautiously, but there is no named collective faction or group with a concrete stake in the seed facts. No family, clan, faction, team, shop, hall, or organization appears as a collective actor with stakes. All relations are between individuals (方源, 琅琊地灵, 砚石老人).",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

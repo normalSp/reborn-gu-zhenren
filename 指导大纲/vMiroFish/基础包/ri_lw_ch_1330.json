@@ -1,0 +1,708 @@
+{
+  "packageId": "ri_lw_ch_1330",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1330"
+    ],
+    "paragraphIds": [
+      "ch_1330_p0004",
+      "ch_1330_p0006",
+      "ch_1330_p0023",
+      "ch_1330_p0029",
+      "ch_1330_p0032",
+      "ch_1330_p0033",
+      "ch_1330_p0038",
+      "ch_1330_p0041",
+      "ch_1330_p0048",
+      "ch_1330_p0065",
+      "ch_1330_p0074",
+      "ch_1330_p0077",
+      "ch_1330_p0078",
+      "ch_1330_p0081",
+      "ch_1330_p0083",
+      "ch_1330_p0092",
+      "ch_1330_p0097",
+      "ch_1330_p0098"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0004",
+          "startOffset": 4672959,
+          "endOffset": 4672961,
+          "summary": "主角，尝试破解梦境"
+        }
+      ],
+      "entityId": "entity_10ee6ae78835",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，尝试破解梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0033",
+          "startOffset": 4674127,
+          "endOffset": 4674129,
+          "summary": "梦境中的少年，图事成的儿子"
+        }
+      ],
+      "entityId": "entity_10ee6ae78835",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境中的少年，图事成的儿子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0038",
+          "startOffset": 4674360,
+          "endOffset": 4674363,
+          "summary": "正道蛊仙，方源在梦中的父亲"
+        }
+      ],
+      "entityId": "entity_b052e5ac6ece",
+      "name": "图事成",
+      "kind": "person",
+      "aliases": [],
+      "description": "正道蛊仙，方源在梦中的父亲",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0065",
+          "startOffset": 4675253,
+          "endOffset": 4675255,
+          "summary": "梦境探索者"
+        }
+      ],
+      "entityId": "entity_10ee6ae78835",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境探索者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0077",
+          "startOffset": 4675617,
+          "endOffset": 4675620,
+          "summary": "梦境中的父亲角色"
+        }
+      ],
+      "entityId": "entity_c007e220d607",
+      "name": "图事成",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "梦境中的父亲角色",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0078",
+          "startOffset": 4675689,
+          "endOffset": 4675691,
+          "summary": "梦境中的猛兽"
+        }
+      ],
+      "entityId": "entity_71257c8ae658",
+      "name": "山豹",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境中的猛兽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0038",
+          "startOffset": 4674360,
+          "endOffset": 4674363,
+          "summary": "图事成是方源在梦中的父亲，对方源进行严苛的阵道训练"
+        }
+      ],
+      "relationId": "rel_389b292b1e0f",
+      "subject": "图事成",
+      "object": "方源",
+      "relationType": "FAMILY",
+      "summary": "图事成是方源在梦中的父亲，对方源进行严苛的阵道训练",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0081",
+          "startOffset": 4675821,
+          "endOffset": 4675824,
+          "summary": "梦境中图事成是方源的父亲，但对方源失望并称其不配做儿子"
+        }
+      ],
+      "relationId": "rel_555284bbbecc",
+      "subject": "图事成",
+      "object": "方源",
+      "relationType": "FAMILY",
+      "summary": "梦境中图事成是方源的父亲，但对方源失望并称其不配做儿子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0006",
+          "startOffset": 4673018,
+          "endOffset": 4673028,
+          "summary": "方源阅览阵道凡人传承，充实阵道基础，并了解到近古时代阵道思潮“地水风火”。"
+        }
+      ],
+      "eventId": "evt_55ab8d5d159a",
+      "eventType": "other",
+      "summary": "方源阅览阵道凡人传承，充实阵道基础，并了解到近古时代阵道思潮“地水风火”。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得通过第一幕梦境的正确答案：必须将全部四只蛊虫都运用。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0029",
+          "startOffset": 4674013,
+          "endOffset": 4674033,
+          "summary": "方源在梦境中第二次尝试，同时催动四只凡蛊与阵心蛊匹配，失败被踢出梦境。"
+        }
+      ],
+      "eventId": "evt_b2e617a38744",
+      "eventType": "other",
+      "summary": "方源在梦境中第二次尝试，同时催动四只凡蛊与阵心蛊匹配，失败被踢出梦境。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源受伤，被踢出梦境。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0032",
+          "startOffset": 4674094,
+          "endOffset": 4674109,
+          "summary": "方源第三次尝试，选择土道蛊虫为先，水道蛊虫第二，再次失败。"
+        }
+      ],
+      "eventId": "evt_5e235cc70498",
+      "eventType": "other",
+      "summary": "方源第三次尝试，选择土道蛊虫为先，水道蛊虫第二，再次失败。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "失败，具体后果未描述。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0033",
+          "startOffset": 4674127,
+          "endOffset": 4674129,
+          "summary": "方源在梦境第一幕中成功布置出四元蛊阵，恢复真元速度加倍"
+        }
+      ],
+      "eventId": "evt_4ccf3fd07437",
+      "eventType": "cultivation",
+      "summary": "方源在梦境第一幕中成功布置出四元蛊阵，恢复真元速度加倍",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "梦境第一幕通过，进入第二幕"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0048",
+          "startOffset": 4674686,
+          "endOffset": 4674689,
+          "summary": "梦境第二幕开始，方源身处牢笼，图事成要求他在一盏茶内布置蛊阵，否则山豹会攻击他"
+        }
+      ],
+      "eventId": "evt_466b1c9b3ccd",
+      "eventType": "other",
+      "summary": "梦境第二幕开始，方源身处牢笼，图事成要求他在一盏茶内布置蛊阵，否则山豹会攻击他",
+      "actors": [
+        "方源",
+        "图事成"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源开始尝试布置新的蛊阵"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0074",
+          "startOffset": 4675503,
+          "endOffset": 4675505,
+          "summary": "方源在梦境中尝试搭建蛊阵，多次失败，阵心蛊被毁，最终被山豹咬死逐出梦境"
+        }
+      ],
+      "eventId": "evt_24ae4fb725ae",
+      "eventType": "cultivation",
+      "summary": "方源在梦境中尝试搭建蛊阵，多次失败，阵心蛊被毁，最终被山豹咬死逐出梦境",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源魂魄受伤，需要胆识蛊治疗"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0078",
+          "startOffset": 4675689,
+          "endOffset": 4675691,
+          "summary": "梦境中方源被山豹咬断喉咙死亡"
+        }
+      ],
+      "eventId": "evt_1298e3d62dae",
+      "eventType": "death",
+      "summary": "梦境中方源被山豹咬断喉咙死亡",
+      "actors": [
+        "方源",
+        "山豹"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源被逐出梦境"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0097",
+          "startOffset": 4676267,
+          "endOffset": 4676278,
+          "summary": "他进入梦境，继续尝试，发现有可能成功。"
+        }
+      ],
+      "eventId": "evt_bd5d9c4cfb87",
+      "eventType": "cultivation",
+      "summary": "他进入梦境，继续尝试，发现有可能成功。",
+      "actors": [
+        "他"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暗示梦境探索有进展"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0006",
+          "startOffset": 4673018,
+          "endOffset": 4673028,
+          "summary": "方源阅览阵道凡人传承，充实阵道基础，并了解到近古时代阵道思潮“地水风火”。"
+        }
+      ],
+      "timelineId": "tl_55ab8d5d159a",
+      "eventId": "evt_55ab8d5d159a",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "方源阅览阵道凡人传承，充实阵道基础，并了解到近古时代阵道思潮“地水风火”。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0029",
+          "startOffset": 4674013,
+          "endOffset": 4674033,
+          "summary": "方源在梦境中第二次尝试，同时催动四只凡蛊与阵心蛊匹配，失败被踢出梦境。"
+        }
+      ],
+      "timelineId": "tl_b2e617a38744",
+      "eventId": "evt_b2e617a38744",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "方源在梦境中第二次尝试，同时催动四只凡蛊与阵心蛊匹配，失败被踢出梦境。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0032",
+          "startOffset": 4674094,
+          "endOffset": 4674109,
+          "summary": "方源第三次尝试，选择土道蛊虫为先，水道蛊虫第二，再次失败。"
+        }
+      ],
+      "timelineId": "tl_5e235cc70498",
+      "eventId": "evt_5e235cc70498",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "方源第三次尝试，选择土道蛊虫为先，水道蛊虫第二，再次失败。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0033",
+          "startOffset": 4674127,
+          "endOffset": 4674129,
+          "summary": "方源在梦境第一幕中成功布置出四元蛊阵，恢复真元速度加倍"
+        }
+      ],
+      "timelineId": "tl_4ccf3fd07437",
+      "eventId": "evt_4ccf3fd07437",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "方源在梦境第一幕中成功布置出四元蛊阵，恢复真元速度加倍",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0048",
+          "startOffset": 4674686,
+          "endOffset": 4674689,
+          "summary": "梦境第二幕开始，方源身处牢笼，图事成要求他在一盏茶内布置蛊阵，否则山豹会攻击他"
+        }
+      ],
+      "timelineId": "tl_466b1c9b3ccd",
+      "eventId": "evt_466b1c9b3ccd",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "梦境第二幕开始，方源身处牢笼，图事成要求他在一盏茶内布置蛊阵，否则山豹会攻击他",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0074",
+          "startOffset": 4675503,
+          "endOffset": 4675505,
+          "summary": "方源在梦境中尝试搭建蛊阵，多次失败，阵心蛊被毁，最终被山豹咬死逐出梦境"
+        }
+      ],
+      "timelineId": "tl_24ae4fb725ae",
+      "eventId": "evt_24ae4fb725ae",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "方源在梦境中尝试搭建蛊阵，多次失败，阵心蛊被毁，最终被山豹咬死逐出梦境",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0078",
+          "startOffset": 4675689,
+          "endOffset": 4675691,
+          "summary": "梦境中方源被山豹咬断喉咙死亡"
+        }
+      ],
+      "timelineId": "tl_1298e3d62dae",
+      "eventId": "evt_1298e3d62dae",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "梦境中方源被山豹咬断喉咙死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1330",
+          "paragraphId": "ch_1330_p0097",
+          "startOffset": 4676267,
+          "endOffset": 4676278,
+          "summary": "他进入梦境，继续尝试，发现有可能成功。"
+        }
+      ],
+      "timelineId": "tl_bd5d9c4cfb87",
+      "eventId": "evt_bd5d9c4cfb87",
+      "chapterId": "ch_1330",
+      "orderHint": "chapter-order",
+      "summary": "他进入梦境，继续尝试，发现有可能成功。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0004",
+      "startOffset": 4672959,
+      "endOffset": 4672961,
+      "summary": "主角，尝试破解梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0033",
+      "startOffset": 4674127,
+      "endOffset": 4674129,
+      "summary": "梦境中的少年，图事成的儿子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0038",
+      "startOffset": 4674360,
+      "endOffset": 4674363,
+      "summary": "正道蛊仙，方源在梦中的父亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0065",
+      "startOffset": 4675253,
+      "endOffset": 4675255,
+      "summary": "梦境探索者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0077",
+      "startOffset": 4675617,
+      "endOffset": 4675620,
+      "summary": "梦境中的父亲角色"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0078",
+      "startOffset": 4675689,
+      "endOffset": 4675691,
+      "summary": "梦境中的猛兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0081",
+      "startOffset": 4675821,
+      "endOffset": 4675824,
+      "summary": "梦境中图事成是方源的父亲，但对方源失望并称其不配做儿子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0006",
+      "startOffset": 4673018,
+      "endOffset": 4673028,
+      "summary": "方源阅览阵道凡人传承，充实阵道基础，并了解到近古时代阵道思潮“地水风火”。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0029",
+      "startOffset": 4674013,
+      "endOffset": 4674033,
+      "summary": "方源在梦境中第二次尝试，同时催动四只凡蛊与阵心蛊匹配，失败被踢出梦境。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0032",
+      "startOffset": 4674094,
+      "endOffset": 4674109,
+      "summary": "方源第三次尝试，选择土道蛊虫为先，水道蛊虫第二，再次失败。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0048",
+      "startOffset": 4674686,
+      "endOffset": 4674689,
+      "summary": "梦境第二幕开始，方源身处牢笼，图事成要求他在一盏茶内布置蛊阵，否则山豹会攻击他"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0074",
+      "startOffset": 4675503,
+      "endOffset": 4675505,
+      "summary": "方源在梦境中尝试搭建蛊阵，多次失败，阵心蛊被毁，最终被山豹咬死逐出梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1330",
+      "paragraphId": "ch_1330_p0097",
+      "startOffset": 4676267,
+      "endOffset": 4676278,
+      "summary": "他进入梦境，继续尝试，发现有可能成功。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The entire chapter ch_1330 consists of Fang Yuan exploring a dream realm. All events, characters, and relationships are dream sequences, not real-world hidden knowledge. The seed contains no private knowledge, secret motives/plans, future-known information, or knowledge gaps that are source-backed as real-world facts. Dream content is inherently ambiguous and cannot be asserted as narrator-level truth about the living world.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed describes dream sequences where 图事成 (father figure) sets a test for 方源 (dream character) - requiring him to arrange a gu formation within a time limit or be attacked by 山豹. When 方源 fails, 图事成 says '你不配做我的儿子' (You are not worthy to be my son). This shows 图事成 is disappointed and punishing, but the observed behavior (setting a dangerous test, expressing disappointment) does not clearly support a specific inferred motive beyond 'testing his son's ability' or 'expressing disappointment'. Any inferred motive like '想要淘汰不合格的儿子' (wanting to eliminate unqualified son) would be a psychological leap not directly supported. The dream context also makes real-world motive attribution unreliable.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package is entirely a dream sequence (方源's dream) involving only individual characters (方源, 图事成 as dream personas, and 山豹 as a beast). No collective actor (faction, clan, family, group, shop, hall, or organization) appears in the seed facts or relations. 图事成 is a single person (正道蛊仙) with a FAMILY relation to 方源, but this is a dream father-son relationship, not a named family/clan collective with ongoing living-world stakes. The seed contains no named faction, clan, family group, or organization that could be subject to faction pressure. All events are individual cultivation attempts within a dream.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

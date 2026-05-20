@@ -1,0 +1,763 @@
+{
+  "packageId": "ri_lw_ch_0016",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0016"
+    ],
+    "paragraphIds": [
+      "ch_0016_p0003",
+      "ch_0016_p0006",
+      "ch_0016_p0007",
+      "ch_0016_p0013",
+      "ch_0016_p0015",
+      "ch_0016_p0016",
+      "ch_0016_p0017",
+      "ch_0016_p0025",
+      "ch_0016_p0026",
+      "ch_0016_p0031",
+      "ch_0016_p0033",
+      "ch_0016_p0034",
+      "ch_0016_p0037",
+      "ch_0016_p0043",
+      "ch_0016_p0050",
+      "ch_0016_p0051",
+      "ch_0016_p0052"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0003",
+          "startOffset": 43090,
+          "endOffset": 43108,
+          "summary": "主角，一转初阶蛊师"
+        }
+      ],
+      "entityId": "entity_eafe63a51594",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，一转初阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0015",
+          "startOffset": 43441,
+          "endOffset": 43503,
+          "summary": "蛊师，击败四代族长"
+        }
+      ],
+      "entityId": "entity_12a080c19c93",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [
+        "花酒大人"
+      ],
+      "description": "蛊师，击败四代族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0026",
+          "startOffset": 43951,
+          "endOffset": 43995,
+          "summary": "古月族四代族长，五转修为"
+        }
+      ],
+      "entityId": "entity_96fe5f78ab94",
+      "name": "四代族长",
+      "kind": "person",
+      "aliases": [
+        "古月英雄"
+      ],
+      "description": "古月族四代族长，五转修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0007",
+          "startOffset": 43169,
+          "endOffset": 43199,
+          "summary": "客栈中的一转蛊师"
+        }
+      ],
+      "entityId": "entity_547bc9756128",
+      "name": "江牙",
+      "kind": "person",
+      "aliases": [],
+      "description": "客栈中的一转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0006",
+          "startOffset": 43154,
+          "endOffset": 43165,
+          "summary": "方源的舅父"
+        }
+      ],
+      "entityId": "entity_e106382c8914",
+      "name": "舅父",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源的舅父",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0033",
+          "startOffset": 44357,
+          "endOffset": 44500,
+          "summary": "魔道蛊师，毒蛊使用者"
+        }
+      ],
+      "entityId": "entity_12a080c19c93",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，毒蛊使用者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0034",
+          "startOffset": 44504,
+          "endOffset": 44551,
+          "summary": "古月家族第四代族长，月影蛊使用者"
+        }
+      ],
+      "entityId": "entity_c9c4980ca47c",
+      "name": "四代族长",
+      "kind": "single_person_title",
+      "aliases": [
+        "古月天才",
+        "五转强者"
+      ],
+      "description": "古月家族第四代族长，月影蛊使用者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0025",
+          "startOffset": 43852,
+          "endOffset": 43947,
+          "summary": "花酒行者击败四代族长，四代族长求饶并愿为奴隶"
+        }
+      ],
+      "relationId": "rel_d619c0e7e08e",
+      "subject": "花酒行者",
+      "object": "四代族长",
+      "relationType": "CONFLICT",
+      "summary": "花酒行者击败四代族长，四代族长求饶并愿为奴隶",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0026",
+          "startOffset": 43951,
+          "endOffset": 43995,
+          "summary": "方源与四代族长同属古月一族"
+        }
+      ],
+      "relationId": "rel_68fa0f1a8522",
+      "subject": "方源",
+      "object": "四代族长",
+      "relationType": "FAMILY",
+      "summary": "方源与四代族长同属古月一族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0006",
+          "startOffset": 43154,
+          "endOffset": 43165,
+          "summary": "方源怀疑舅父派人跟踪自己"
+        }
+      ],
+      "relationId": "rel_017e90d2ef7c",
+      "subject": "方源",
+      "object": "舅父",
+      "relationType": "CONFLICT",
+      "summary": "方源怀疑舅父派人跟踪自己",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0007",
+          "startOffset": 43169,
+          "endOffset": 43199,
+          "summary": "方源怀疑江牙跟踪自己"
+        }
+      ],
+      "relationId": "rel_c1864bafb2d7",
+      "subject": "方源",
+      "object": "江牙",
+      "relationType": "CONFLICT",
+      "summary": "方源怀疑江牙跟踪自己",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长"
+        }
+      ],
+      "relationId": "rel_193fd6bda333",
+      "subject": "花酒行者",
+      "object": "四代族长",
+      "relationType": "CONFLICT",
+      "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0050",
+          "startOffset": 45212,
+          "endOffset": 45251,
+          "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走"
+        }
+      ],
+      "relationId": "rel_384171d4eda2",
+      "subject": "花酒行者",
+      "object": "家老们",
+      "relationType": "CONFLICT",
+      "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0016",
+          "startOffset": 43507,
+          "endOffset": 43533,
+          "summary": "方源在秘洞中发现石壁播放历史影像，初误以为被跟踪"
+        }
+      ],
+      "eventId": "evt_f5b94414240b",
+      "eventType": "appearance",
+      "summary": "方源在秘洞中发现石壁播放历史影像，初误以为被跟踪",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0031",
+          "startOffset": 44253,
+          "endOffset": 44323,
+          "summary": "历史影像中花酒行者击败四代族长，四代族长战败求饶"
+        }
+      ],
+      "eventId": "evt_d91bf07dd45a",
+      "eventType": "conflict",
+      "summary": "历史影像中花酒行者击败四代族长，四代族长战败求饶",
+      "actors": [
+        "花酒行者",
+        "四代族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "四代族长愿成为花酒行者的奴隶以求活命"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0033",
+          "startOffset": 44357,
+          "endOffset": 44500,
+          "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命"
+        }
+      ],
+      "eventId": "evt_fbe46c507ab4",
+      "eventType": "trade",
+      "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+      "actors": [
+        "花酒行者",
+        "四代族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "四代族长表面接受，暗怀杀心"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0037",
+          "startOffset": 44684,
+          "endOffset": 44832,
+          "summary": "四代族长使用隐藏的月影蛊限制花酒行者元海真元，要求其投降"
+        }
+      ],
+      "eventId": "evt_a30a45a48155",
+      "eventType": "conflict",
+      "summary": "四代族长使用隐藏的月影蛊限制花酒行者元海真元，要求其投降",
+      "actors": [
+        "四代族长",
+        "花酒行者"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "花酒行者大怒，不受威胁"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者一拳轰杀四代族长"
+        }
+      ],
+      "eventId": "evt_800abcf5ffe7",
+      "eventType": "death",
+      "summary": "花酒行者一拳轰杀四代族长",
+      "actors": [
+        "花酒行者",
+        "四代族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "四代族长死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0051",
+          "startOffset": 45255,
+          "endOffset": 45289,
+          "summary": "家老们为族长报仇围攻花酒行者，被花酒行者击败，死伤惨重"
+        }
+      ],
+      "eventId": "evt_29ca3f598f30",
+      "eventType": "conflict",
+      "summary": "家老们为族长报仇围攻花酒行者，被花酒行者击败，死伤惨重",
+      "actors": [
+        "花酒行者",
+        "家老们"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "花酒行者因毒伤发作遁走"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0016",
+          "startOffset": 43507,
+          "endOffset": 43533,
+          "summary": "方源在秘洞中发现石壁播放历史影像，初误以为被跟踪"
+        }
+      ],
+      "timelineId": "tl_f5b94414240b",
+      "eventId": "evt_f5b94414240b",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "方源在秘洞中发现石壁播放历史影像，初误以为被跟踪",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0031",
+          "startOffset": 44253,
+          "endOffset": 44323,
+          "summary": "历史影像中花酒行者击败四代族长，四代族长战败求饶"
+        }
+      ],
+      "timelineId": "tl_d91bf07dd45a",
+      "eventId": "evt_d91bf07dd45a",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "历史影像中花酒行者击败四代族长，四代族长战败求饶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0033",
+          "startOffset": 44357,
+          "endOffset": 44500,
+          "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命"
+        }
+      ],
+      "timelineId": "tl_fbe46c507ab4",
+      "eventId": "evt_fbe46c507ab4",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "花酒行者要求四代族长每周提供三十斤月兰花瓣和三千枚元石，并定期解毒以保命",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0037",
+          "startOffset": 44684,
+          "endOffset": 44832,
+          "summary": "四代族长使用隐藏的月影蛊限制花酒行者元海真元，要求其投降"
+        }
+      ],
+      "timelineId": "tl_a30a45a48155",
+      "eventId": "evt_a30a45a48155",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "四代族长使用隐藏的月影蛊限制花酒行者元海真元，要求其投降",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者一拳轰杀四代族长"
+        }
+      ],
+      "timelineId": "tl_800abcf5ffe7",
+      "eventId": "evt_800abcf5ffe7",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "花酒行者一拳轰杀四代族长",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0051",
+          "startOffset": 45255,
+          "endOffset": 45289,
+          "summary": "家老们为族长报仇围攻花酒行者，被花酒行者击败，死伤惨重"
+        }
+      ],
+      "timelineId": "tl_29ca3f598f30",
+      "eventId": "evt_29ca3f598f30",
+      "chapterId": "ch_0016",
+      "orderHint": "chapter-order",
+      "summary": "家老们为族长报仇围攻花酒行者，被花酒行者击败，死伤惨重",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0050",
+          "startOffset": 45212,
+          "endOffset": 45251,
+          "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0016",
+          "paragraphId": "ch_0016_p0043",
+          "startOffset": 44991,
+          "endOffset": 45053,
+          "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长"
+        }
+      ],
+      "pressureId": "pressure_001",
+      "faction": "古月族家老们",
+      "pressureAxis": "族长被杀后的复仇与安全威胁",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查花酒行者下落",
+        "加强族内警戒"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0003",
+      "startOffset": 43090,
+      "endOffset": 43108,
+      "summary": "主角，一转初阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0015",
+      "startOffset": 43441,
+      "endOffset": 43503,
+      "summary": "蛊师，击败四代族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0026",
+      "startOffset": 43951,
+      "endOffset": 43995,
+      "summary": "古月族四代族长，五转修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0007",
+      "startOffset": 43169,
+      "endOffset": 43199,
+      "summary": "客栈中的一转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0006",
+      "startOffset": 43154,
+      "endOffset": 43165,
+      "summary": "方源的舅父"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0033",
+      "startOffset": 44357,
+      "endOffset": 44500,
+      "summary": "魔道蛊师，毒蛊使用者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0034",
+      "startOffset": 44504,
+      "endOffset": 44551,
+      "summary": "古月家族第四代族长，月影蛊使用者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0025",
+      "startOffset": 43852,
+      "endOffset": 43947,
+      "summary": "花酒行者击败四代族长，四代族长求饶并愿为奴隶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0043",
+      "startOffset": 44991,
+      "endOffset": 45053,
+      "summary": "花酒行者与四代族长生死战斗，花酒行者最终杀死四代族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0050",
+      "startOffset": 45212,
+      "endOffset": 45251,
+      "summary": "花酒行者与古月家家老们战斗，杀伤多人后遁走"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0016",
+      "startOffset": 43507,
+      "endOffset": 43533,
+      "summary": "方源在秘洞中发现石壁播放历史影像，初误以为被跟踪"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0031",
+      "startOffset": 44253,
+      "endOffset": 44323,
+      "summary": "历史影像中花酒行者击败四代族长，四代族长战败求饶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0037",
+      "startOffset": 44684,
+      "endOffset": 44832,
+      "summary": "四代族长使用隐藏的月影蛊限制花酒行者元海真元，要求其投降"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0016",
+      "paragraphId": "ch_0016_p0051",
+      "startOffset": 45255,
+      "endOffset": 45289,
+      "summary": "家老们为族长报仇围攻花酒行者，被花酒行者击败，死伤惨重"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes historical battle images viewed by Fang Yuan on a stone wall. All events (Hua Jiu Xing Zhe defeating Fourth Generation Clan Chief, the clan chief's hidden Moon Shadow Gu, the death, and the elders' counterattack) are presented as historical visual records being observed by Fang Yuan. These are ordinary visible past events shown to the reader through the stone wall projection, not hidden/private knowledge. There is no source support for any fact being secret, future-known, or known only to specific actors while hidden from others. The suspicions Fang Yuan has about being followed (by Jiang Ya or his uncle) are his internal thoughts but are not supported as factual hidden knowledge - they are speculative. No suitable hidden/future-known/player-visibility fact candidate can be extracted from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows花酒行者 defeated and killed四代族长, but the observed behavior (defeating, demanding tribute, killing) does not clearly reveal a specific motive beyond the immediate conflict.花酒行者's actions could stem from multiple possible motives (eliminating a threat, establishing dominance, punishing defiance), but the seed does not directly support any single inferred motive. The only clear observed action is that花酒行者 killed四代族长 after being ambushed, which is self-defense/revenge in context, but inferring a broader motive would be a psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月族家老们（作为古月族领导层群体）在四代族长被花酒行者杀害后，遭受了死伤惨重的战斗损失。这构成了一个合理的 faction pressure：家老们作为古月族的统治群体，面临族长被杀、自身伤亡后的安全威胁和复仇动机。pressureAxis描述为族长被杀后的复仇与安全威胁，likelyReactions为保守的一步反应：调查花酒行者下落、加强族内警戒。未添加外部势力或具体未来操作。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "packageId": "ri_lw_ch_0040",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0040"
+    ],
+    "paragraphIds": [
+      "ch_0040_p0022",
+      "ch_0040_p0028",
+      "ch_0040_p0038",
+      "ch_0040_p0045",
+      "ch_0040_p0048",
+      "ch_0040_p0059",
+      "ch_0040_p0064"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0028",
+          "startOffset": 116177,
+          "endOffset": 116200,
+          "summary": "蛤蟆商队领头人，四转蛊师"
+        }
+      ],
+      "entityId": "entity_340c5c0198a6",
+      "name": "贾富",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛤蟆商队领头人，四转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0038",
+          "startOffset": 116666,
+          "endOffset": 116710,
+          "summary": "古月家族族长"
+        }
+      ],
+      "entityId": "entity_35fddb9a4533",
+      "name": "古月博",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0048",
+          "startOffset": 117124,
+          "endOffset": 117140,
+          "summary": "主角，古月家族学员"
+        }
+      ],
+      "entityId": "entity_f3de1f2d2b5f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，古月家族学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "古月家族学员，曾被方源杀死"
+        }
+      ],
+      "entityId": "entity_9ceaab7ab6d0",
+      "name": "高碗",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族学员，曾被方源杀死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0022",
+          "startOffset": 115842,
+          "endOffset": 115931,
+          "summary": "青茅山客栈掌柜，等待商队"
+        }
+      ],
+      "entityId": "entity_ec2d51777652",
+      "name": "客栈掌柜",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "青茅山客栈掌柜，等待商队",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源杀死高碗"
+        }
+      ],
+      "relationId": "rel_97139999b22c",
+      "subject": "方源",
+      "object": "高碗",
+      "relationType": "CONFLICT",
+      "summary": "方源杀死高碗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "漠家向方源赔偿三十块元石"
+        }
+      ],
+      "relationId": "rel_73495e44e7d4",
+      "subject": "方源",
+      "object": "漠家",
+      "relationType": "OTHER",
+      "summary": "漠家向方源赔偿三十块元石",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0038",
+          "startOffset": 116666,
+          "endOffset": 116710,
+          "summary": "古月博以族长身份欢迎商队领袖，山寨与商队之间的贸易伙伴关系"
+        }
+      ],
+      "relationId": "rel_b0955cf0aa1f",
+      "subject": "古月博",
+      "object": "贾富",
+      "relationType": "TRADE",
+      "summary": "古月博以族长身份欢迎商队领袖，山寨与商队之间的贸易伙伴关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转"
+        }
+      ],
+      "eventId": "evt_940ebd157d4d",
+      "eventType": "trade",
+      "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+      "actors": [
+        "贾富",
+        "古月博"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "山寨周边形成临时集市，众人涌入贸易"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0048",
+          "startOffset": 117124,
+          "endOffset": 117140,
+          "summary": "方源独自走进临时商铺区"
+        }
+      ],
+      "eventId": "evt_fe8520bf77a7",
+      "eventType": "appearance",
+      "summary": "方源独自走进临时商铺区",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源在半个月前杀死学员高碗"
+        }
+      ],
+      "eventId": "evt_f0edf03280ef",
+      "eventType": "death",
+      "summary": "方源在半个月前杀死学员高碗",
+      "actors": [
+        "方源",
+        "高碗"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "罚款三十块元石，后方获得漠家赔偿；其凶名震慑其他学员，抢劫变得容易"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源抢劫了两次，共获得一百一十八块元石"
+        }
+      ],
+      "eventId": "evt_26a80944b8ce",
+      "eventType": "other",
+      "summary": "方源抢劫了两次，共获得一百一十八块元石",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "手中现有九十八块元石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源不断消耗元石温养空窍四壁，并喂养蛊虫"
+        }
+      ],
+      "eventId": "evt_f6647bda7782",
+      "eventType": "cultivation",
+      "summary": "方源不断消耗元石温养空窍四壁，并喂养蛊虫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "每天消耗三块元石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0064",
+          "startOffset": 117925,
+          "endOffset": 117989,
+          "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔"
+        }
+      ],
+      "eventId": "evt_9900fdeb7091",
+      "eventType": "other",
+      "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转"
+        }
+      ],
+      "timelineId": "tl_940ebd157d4d",
+      "eventId": "evt_940ebd157d4d",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0048",
+          "startOffset": 117124,
+          "endOffset": 117140,
+          "summary": "方源独自走进临时商铺区"
+        }
+      ],
+      "timelineId": "tl_fe8520bf77a7",
+      "eventId": "evt_fe8520bf77a7",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "方源独自走进临时商铺区",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源在半个月前杀死学员高碗"
+        }
+      ],
+      "timelineId": "tl_f0edf03280ef",
+      "eventId": "evt_f0edf03280ef",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "方源在半个月前杀死学员高碗",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源抢劫了两次，共获得一百一十八块元石"
+        }
+      ],
+      "timelineId": "tl_26a80944b8ce",
+      "eventId": "evt_26a80944b8ce",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "方源抢劫了两次，共获得一百一十八块元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0059",
+          "startOffset": 117595,
+          "endOffset": 117754,
+          "summary": "方源不断消耗元石温养空窍四壁，并喂养蛊虫"
+        }
+      ],
+      "timelineId": "tl_f6647bda7782",
+      "eventId": "evt_f6647bda7782",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "方源不断消耗元石温养空窍四壁，并喂养蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0064",
+          "startOffset": 117925,
+          "endOffset": 117989,
+          "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔"
+        }
+      ],
+      "timelineId": "tl_9900fdeb7091",
+      "eventId": "evt_9900fdeb7091",
+      "chapterId": "ch_0040",
+      "orderHint": "chapter-order",
+      "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0064",
+          "startOffset": 117925,
+          "endOffset": 117989,
+          "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔"
+        }
+      ],
+      "factId": "hf_ri_lw_ch_0040_001",
+      "summary": "方源拥有前世记忆，知道某店铺中有一只癞土蛤蟆，并计划抢先购买",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0048",
+          "startOffset": 117124,
+          "endOffset": 117140,
+          "summary": "主角，古月家族学员"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0064",
+          "startOffset": 117925,
+          "endOffset": 117989,
+          "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "独自走进临时商铺区",
+      "inferredMotive": "欲抢先购买癞土蛤蟆",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0038",
+          "startOffset": 116666,
+          "endOffset": 116710,
+          "summary": "古月家族族长"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0040",
+          "paragraphId": "ch_0040_p0045",
+          "startOffset": 116953,
+          "endOffset": 117038,
+          "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转"
+        }
+      ],
+      "pressureId": "pressure_001",
+      "faction": "古月家族",
+      "pressureAxis": "商队贸易资源分配",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "监控交易秩序"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0028",
+      "startOffset": 116177,
+      "endOffset": 116200,
+      "summary": "蛤蟆商队领头人，四转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0038",
+      "startOffset": 116666,
+      "endOffset": 116710,
+      "summary": "古月家族族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0048",
+      "startOffset": 117124,
+      "endOffset": 117140,
+      "summary": "主角，古月家族学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0059",
+      "startOffset": 117595,
+      "endOffset": 117754,
+      "summary": "古月家族学员，曾被方源杀死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0022",
+      "startOffset": 115842,
+      "endOffset": 115931,
+      "summary": "青茅山客栈掌柜，等待商队"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0045",
+      "startOffset": 116953,
+      "endOffset": 117038,
+      "summary": "蛤蟆商队在五月抵达古月山寨，形成临时商铺区，客栈、酒肆生意好转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0040",
+      "paragraphId": "ch_0040_p0064",
+      "startOffset": 117925,
+      "endOffset": 117989,
+      "summary": "方源计划抢先购买某店铺中的癞土蛤蟆，依据前世记忆预测能大赚一笔"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源拥有前世记忆是隐藏信息，其他角色不知道他基于前世记忆的计划",
+      "原文直接支持方源记得前世某店铺有癞土蛤蟆并计划抢先购买",
+      "这是方源私人的知识/计划，属于hidden事实",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源独自走进临时商铺区（ptr_3）。",
+      "inferredMotive: 结合ptr_7（方源计划抢先购买某店铺中的癞土蛤蟆），可合理推断其走进商铺区的目的是抢先购买该物品。",
+      "该推断为一步因果推理，未做心理跳跃。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月家族族长古月博亲自欢迎商队，商队抵达形成临时商铺区，客栈酒肆生意好转。古月家族作为山寨管理者，在商队贸易期间有维持秩序、分配资源的压力。但种子未直接描述家族内部对资源分配的具体争议，压力较间接，故评为medium confidence。",
+      "IF export filter quarantined 1 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 1
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

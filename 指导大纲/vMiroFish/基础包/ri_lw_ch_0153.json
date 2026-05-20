@@ -1,0 +1,886 @@
+{
+  "packageId": "ri_lw_ch_0153",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0153"
+    ],
+    "paragraphIds": [
+      "ch_0153_p0002",
+      "ch_0153_p0003",
+      "ch_0153_p0010",
+      "ch_0153_p0032",
+      "ch_0153_p0033",
+      "ch_0153_p0039",
+      "ch_0153_p0043",
+      "ch_0153_p0051",
+      "ch_0153_p0064",
+      "ch_0153_p0068",
+      "ch_0153_p0070",
+      "ch_0153_p0071",
+      "ch_0153_p0076",
+      "ch_0153_p0083",
+      "ch_0153_p0087",
+      "ch_0153_p0090",
+      "ch_0153_p0091",
+      "ch_0153_p0097",
+      "ch_0153_p0099",
+      "ch_0153_p0100",
+      "ch_0153_p0101"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0003",
+          "startOffset": 504678,
+          "endOffset": 504680,
+          "summary": "蛊师，正在炼制人兽葬生蛊"
+        }
+      ],
+      "entityId": "entity_41b6925f8a91",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，正在炼制人兽葬生蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0002",
+          "startOffset": 504651,
+          "endOffset": 504653,
+          "summary": "被驭熊蛊控制的野兽，用于炼制人兽葬生蛊"
+        }
+      ],
+      "entityId": "entity_c65cc6a027c8",
+      "name": "黑熊",
+      "kind": "person",
+      "aliases": [],
+      "description": "被驭熊蛊控制的野兽，用于炼制人兽葬生蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0003",
+          "startOffset": 504678,
+          "endOffset": 504680,
+          "summary": "被黑熊吞食的处女，有蛊师资质"
+        }
+      ],
+      "entityId": "entity_071e9a698428",
+      "name": "少女",
+      "kind": "person",
+      "aliases": [],
+      "description": "被黑熊吞食的处女，有蛊师资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0033",
+          "startOffset": 505769,
+          "endOffset": 505771,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_41b6925f8a91",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0039",
+          "startOffset": 505924,
+          "endOffset": 505928,
+          "summary": "已故人物，人兽葬生蛊上的少女脸庞"
+        }
+      ],
+      "entityId": "entity_61f8f7fbb7af",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "已故人物，人兽葬生蛊上的少女脸庞",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0068",
+          "startOffset": 506887,
+          "endOffset": 506891,
+          "summary": "药堂家老"
+        }
+      ],
+      "entityId": "entity_4489af26539b",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [],
+      "description": "药堂家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0070",
+          "startOffset": 506975,
+          "endOffset": 506979,
+          "summary": "古月药姬的亲孙女，药脉继承人"
+        }
+      ],
+      "entityId": "entity_61f8f7fbb7af",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月药姬的亲孙女，药脉继承人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0090",
+          "startOffset": 507759,
+          "endOffset": 507763,
+          "summary": "晋升三转的蛊师"
+        }
+      ],
+      "entityId": "entity_895880cca5cf",
+      "name": "古月方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "晋升三转的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0097",
+          "startOffset": 507958,
+          "endOffset": 508005,
+          "summary": "失踪三天三夜后归来的蛊师"
+        }
+      ],
+      "entityId": "entity_41b6925f8a91",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "失踪三天三夜后归来的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0099",
+          "startOffset": 508031,
+          "endOffset": 508062,
+          "summary": "同样失踪三天三夜的人"
+        }
+      ],
+      "entityId": "entity_16f90012d610",
+      "name": "药乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "同样失踪三天三夜的人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0100",
+          "startOffset": 508066,
+          "endOffset": 508103,
+          "summary": "对方向产生怀疑的女性蛊师"
+        }
+      ],
+      "entityId": "entity_4489af26539b",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [],
+      "description": "对方向产生怀疑的女性蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0010",
+          "startOffset": 505003,
+          "endOffset": 505005,
+          "summary": "方源通过驭熊蛊控制黑熊"
+        }
+      ],
+      "relationId": "rel_4fc7491f4f67",
+      "subject": "方源",
+      "object": "黑熊",
+      "relationType": "USES",
+      "summary": "方源通过驭熊蛊控制黑熊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0043",
+          "startOffset": 506020,
+          "endOffset": 506022,
+          "summary": "方源使用人兽葬生蛊晋升三转"
+        }
+      ],
+      "relationId": "rel_bdeca00e5ba3",
+      "subject": "方源",
+      "object": "人兽葬生蛊",
+      "relationType": "USES",
+      "summary": "方源使用人兽葬生蛊晋升三转",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0076",
+          "startOffset": 507215,
+          "endOffset": 507219,
+          "summary": "古月药姬是古月药乐的亲祖母，药乐是药脉继承人"
+        }
+      ],
+      "relationId": "rel_4a82c4bcbbc1",
+      "subject": "古月药姬",
+      "object": "古月药乐",
+      "relationType": "FAMILY",
+      "summary": "古月药姬是古月药乐的亲祖母，药乐是药脉继承人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0091",
+          "startOffset": 507785,
+          "endOffset": 507789,
+          "summary": "古月方源晋升三转对古月药姬是坏消息，影响药脉政治格局"
+        }
+      ],
+      "relationId": "rel_115146ece159",
+      "subject": "古月方源",
+      "object": "古月药姬",
+      "relationType": "OTHER",
+      "summary": "古月方源晋升三转对古月药姬是坏消息，影响药脉政治格局",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0100",
+          "startOffset": 508066,
+          "endOffset": 508103,
+          "summary": "古月药姬对方源产生怀疑"
+        }
+      ],
+      "relationId": "rel_ecdb482df29b",
+      "subject": "古月药姬",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "古月药姬对方源产生怀疑",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0032",
+          "startOffset": 505752,
+          "endOffset": 505754,
+          "summary": "方源炼制人兽葬生蛊，黑熊吞食少女后，方源投入火炭蛊、火油蛊等蛊虫，最终形成白色光团，方源投入元石"
+        }
+      ],
+      "eventId": "evt_e6f0e01e3c41",
+      "eventType": "other",
+      "summary": "方源炼制人兽葬生蛊，黑熊吞食少女后，方源投入火炭蛊、火油蛊等蛊虫，最终形成白色光团，方源投入元石",
+      "actors": [
+        "方源",
+        "黑熊",
+        "少女"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白色光团急剧扩大，人兽葬生蛊炼制进行中"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0051",
+          "startOffset": 506283,
+          "endOffset": 506285,
+          "summary": "方源使用人兽葬生蛊，消耗元石，晋升三转蛊师"
+        }
+      ],
+      "eventId": "evt_3c429ae2f744",
+      "eventType": "cultivation",
+      "summary": "方源使用人兽葬生蛊，消耗元石，晋升三转蛊师",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源晋升三转，空窍变为白银真元海，但留下黑红异色后遗症"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0083",
+          "startOffset": 507490,
+          "endOffset": 507494,
+          "summary": "古月方源晋升三转蛊师，成为新家老"
+        }
+      ],
+      "eventId": "evt_3997997e9501",
+      "eventType": "cultivation",
+      "summary": "古月方源晋升三转蛊师，成为新家老",
+      "actors": [
+        "古月方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "将影响古月一族的政治格局，对药脉是隐形打击"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0070",
+          "startOffset": 506975,
+          "endOffset": 506979,
+          "summary": "古月药乐在狂电狼袭击中失踪，三天三夜搜寻无果"
+        }
+      ],
+      "eventId": "evt_11014b62286a",
+      "eventType": "disappearance",
+      "summary": "古月药乐在狂电狼袭击中失踪，三天三夜搜寻无果",
+      "actors": [
+        "古月药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药姬悲痛，药脉继承人可能死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0097",
+          "startOffset": 507958,
+          "endOffset": 508005,
+          "summary": "方源失踪三天三夜后归来，众人以为他已死"
+        }
+      ],
+      "eventId": "evt_603a8e6e3b79",
+      "eventType": "appearance",
+      "summary": "方源失踪三天三夜后归来，众人以为他已死",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引起众人震惊、嫉妒、疑惑，古月药姬产生怀疑"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0101",
+          "startOffset": 508107,
+          "endOffset": 508123,
+          "summary": "古月药姬改变想法，决定去家主阁"
+        }
+      ],
+      "eventId": "evt_fb6fbabfc313",
+      "eventType": "other",
+      "summary": "古月药姬改变想法，决定去家主阁",
+      "actors": [
+        "古月药姬"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0032",
+          "startOffset": 505752,
+          "endOffset": 505754,
+          "summary": "方源炼制人兽葬生蛊，黑熊吞食少女后，方源投入火炭蛊、火油蛊等蛊虫，最终形成白色光团，方源投入元石"
+        }
+      ],
+      "timelineId": "tl_e6f0e01e3c41",
+      "eventId": "evt_e6f0e01e3c41",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "方源炼制人兽葬生蛊，黑熊吞食少女后，方源投入火炭蛊、火油蛊等蛊虫，最终形成白色光团，方源投入元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0051",
+          "startOffset": 506283,
+          "endOffset": 506285,
+          "summary": "方源使用人兽葬生蛊，消耗元石，晋升三转蛊师"
+        }
+      ],
+      "timelineId": "tl_3c429ae2f744",
+      "eventId": "evt_3c429ae2f744",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "方源使用人兽葬生蛊，消耗元石，晋升三转蛊师",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0083",
+          "startOffset": 507490,
+          "endOffset": 507494,
+          "summary": "古月方源晋升三转蛊师，成为新家老"
+        }
+      ],
+      "timelineId": "tl_3997997e9501",
+      "eventId": "evt_3997997e9501",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "古月方源晋升三转蛊师，成为新家老",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0070",
+          "startOffset": 506975,
+          "endOffset": 506979,
+          "summary": "古月药乐在狂电狼袭击中失踪，三天三夜搜寻无果"
+        }
+      ],
+      "timelineId": "tl_11014b62286a",
+      "eventId": "evt_11014b62286a",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "古月药乐在狂电狼袭击中失踪，三天三夜搜寻无果",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0097",
+          "startOffset": 507958,
+          "endOffset": 508005,
+          "summary": "方源失踪三天三夜后归来，众人以为他已死"
+        }
+      ],
+      "timelineId": "tl_603a8e6e3b79",
+      "eventId": "evt_603a8e6e3b79",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "方源失踪三天三夜后归来，众人以为他已死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0101",
+          "startOffset": 508107,
+          "endOffset": 508123,
+          "summary": "古月药姬改变想法，决定去家主阁"
+        }
+      ],
+      "timelineId": "tl_fb6fbabfc313",
+      "eventId": "evt_fb6fbabfc313",
+      "chapterId": "ch_0153",
+      "orderHint": "chapter-order",
+      "summary": "古月药姬改变想法，决定去家主阁",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0099",
+          "startOffset": 508031,
+          "endOffset": 508062,
+          "summary": "同样失踪三天三夜的人"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0100",
+          "startOffset": 508066,
+          "endOffset": 508103,
+          "summary": "对方向产生怀疑的女性蛊师"
+        }
+      ],
+      "factId": "ri_lw_ch_0153_hf_001",
+      "summary": "古月药乐（古月药姬的亲孙女）的失踪与方源有关——方源也失踪三天三夜后归来，且古月药姬因此对方源产生怀疑",
+      "whoKnows": [
+        "古月药姬"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "medium"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0100",
+          "startOffset": 508066,
+          "endOffset": 508103,
+          "summary": "对方向产生怀疑的女性蛊师"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0099",
+          "startOffset": 508031,
+          "endOffset": 508062,
+          "summary": "同样失踪三天三夜的人"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0153",
+          "paragraphId": "ch_0153_p0097",
+          "startOffset": 507958,
+          "endOffset": 508005,
+          "summary": "失踪三天三夜后归来的蛊师"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "古月药姬",
+      "observedMotive": "对方源产生怀疑",
+      "inferredMotive": "怀疑方源与孙女失踪有关",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0003",
+      "startOffset": 504678,
+      "endOffset": 504680,
+      "summary": "蛊师，正在炼制人兽葬生蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0002",
+      "startOffset": 504651,
+      "endOffset": 504653,
+      "summary": "被驭熊蛊控制的野兽，用于炼制人兽葬生蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0033",
+      "startOffset": 505769,
+      "endOffset": 505771,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0039",
+      "startOffset": 505924,
+      "endOffset": 505928,
+      "summary": "已故人物，人兽葬生蛊上的少女脸庞"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0068",
+      "startOffset": 506887,
+      "endOffset": 506891,
+      "summary": "药堂家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0070",
+      "startOffset": 506975,
+      "endOffset": 506979,
+      "summary": "古月药姬的亲孙女，药脉继承人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0090",
+      "startOffset": 507759,
+      "endOffset": 507763,
+      "summary": "晋升三转的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0097",
+      "startOffset": 507958,
+      "endOffset": 508005,
+      "summary": "失踪三天三夜后归来的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0099",
+      "startOffset": 508031,
+      "endOffset": 508062,
+      "summary": "同样失踪三天三夜的人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0100",
+      "startOffset": 508066,
+      "endOffset": 508103,
+      "summary": "对方向产生怀疑的女性蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0010",
+      "startOffset": 505003,
+      "endOffset": 505005,
+      "summary": "方源通过驭熊蛊控制黑熊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0043",
+      "startOffset": 506020,
+      "endOffset": 506022,
+      "summary": "方源使用人兽葬生蛊晋升三转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0076",
+      "startOffset": 507215,
+      "endOffset": 507219,
+      "summary": "古月药姬是古月药乐的亲祖母，药乐是药脉继承人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0091",
+      "startOffset": 507785,
+      "endOffset": 507789,
+      "summary": "古月方源晋升三转对古月药姬是坏消息，影响药脉政治格局"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0032",
+      "startOffset": 505752,
+      "endOffset": 505754,
+      "summary": "方源炼制人兽葬生蛊，黑熊吞食少女后，方源投入火炭蛊、火油蛊等蛊虫，最终形成白色光团，方源投入元石"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0051",
+      "startOffset": 506283,
+      "endOffset": 506285,
+      "summary": "方源使用人兽葬生蛊，消耗元石，晋升三转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0083",
+      "startOffset": 507490,
+      "endOffset": 507494,
+      "summary": "古月方源晋升三转蛊师，成为新家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0153",
+      "paragraphId": "ch_0153_p0101",
+      "startOffset": 508107,
+      "endOffset": 508123,
+      "summary": "古月药姬改变想法，决定去家主阁"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed supports that Gu Yue Yao Ji notices the parallel between her granddaughter's disappearance and Fang Yuan's disappearance (both missing 3 days and 3 nights, no body found on battlefield), and that she develops strong suspicion toward Fang Yuan. This is a private/mental state fact known only to Yao Ji, not publicly known. The fact is that Yao Ji suspects a connection between Yao Le's disappearance and Fang Yuan. This is hidden knowledge (her private suspicion). Confidence is medium because the source shows her suspicion is based on intuition/parallel circumstances rather than direct evidence.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月药姬因方源同样失踪三天三夜后归来，产生直觉怀疑（ptr_10），结合孙女药乐同样失踪三天三夜（ptr_9），可合理推断她怀疑方源与药乐失踪有关。这是从直接文本证据出发的一步推断，未过度推测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月药姬是药堂家老，属于集体组织中的代表人物",
+      "古月药乐是药脉继承人，失踪三天三夜，方源同样失踪三天三夜后归来",
+      "古月药姬对方源产生怀疑（ptr_10），且方源晋升三转对她而言是坏消息（ptr_14）",
+      "药脉继承人的失踪与方源的异常归来形成关联，药堂有调查动机",
+      "压力轴为药脉继承人的失踪疑云，属于继承/利益压力",
+      "IF export filter quarantined 6 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

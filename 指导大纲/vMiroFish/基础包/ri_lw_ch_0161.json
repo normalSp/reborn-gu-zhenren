@@ -1,0 +1,645 @@
+{
+  "packageId": "ri_lw_ch_0161",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0161"
+    ],
+    "paragraphIds": [
+      "ch_0161_p0002",
+      "ch_0161_p0009",
+      "ch_0161_p0017",
+      "ch_0161_p0025",
+      "ch_0161_p0026",
+      "ch_0161_p0031",
+      "ch_0161_p0034",
+      "ch_0161_p0035",
+      "ch_0161_p0041",
+      "ch_0161_p0050",
+      "ch_0161_p0053",
+      "ch_0161_p0065",
+      "ch_0161_p0070",
+      "ch_0161_p0071",
+      "ch_0161_p0074",
+      "ch_0161_p0081",
+      "ch_0161_p0089"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0009",
+          "startOffset": 533456,
+          "endOffset": 533492,
+          "summary": "家老"
+        }
+      ],
+      "entityId": "entity_e6c544c4db4b",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0031",
+          "startOffset": 534215,
+          "endOffset": 534254,
+          "summary": "药脉蛊师"
+        }
+      ],
+      "entityId": "entity_1160060fcefd",
+      "name": "李晨",
+      "kind": "person",
+      "aliases": [],
+      "description": "药脉蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0034",
+          "startOffset": 534315,
+          "endOffset": 534333,
+          "summary": "药堂治疗蛊师头领"
+        }
+      ],
+      "entityId": "entity_4dfd2050749d",
+      "name": "古月李晨",
+      "kind": "person",
+      "aliases": [],
+      "description": "药堂治疗蛊师头领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0035",
+          "startOffset": 534337,
+          "endOffset": 534376,
+          "summary": "古月族家老"
+        }
+      ],
+      "entityId": "entity_e6c544c4db4b",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0041",
+          "startOffset": 534514,
+          "endOffset": 534573,
+          "summary": "药脉中人，被方源气昏厥"
+        }
+      ],
+      "entityId": "entity_8cf4bb4e018e",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [],
+      "description": "药脉中人，被方源气昏厥",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0065",
+          "startOffset": 535571,
+          "endOffset": 535573,
+          "summary": "古月家族家老"
+        }
+      ],
+      "entityId": "entity_e6c544c4db4b",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0017",
+          "startOffset": 533694,
+          "endOffset": 533745,
+          "summary": "方源与几位家老共同战斗，关系融洽"
+        }
+      ],
+      "relationId": "rel_1d6ba3f682e6",
+      "subject": "方源",
+      "object": "几位家老",
+      "relationType": "ALLY",
+      "summary": "方源与几位家老共同战斗，关系融洽",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0041",
+          "startOffset": 534514,
+          "endOffset": 534573,
+          "summary": "古月李晨因方源气昏古月药姬而厌恶方源，但表面仍履行职责"
+        }
+      ],
+      "relationId": "rel_a48d031727c2",
+      "subject": "方源",
+      "object": "古月李晨",
+      "relationType": "CONFLICT",
+      "summary": "古月李晨因方源气昏古月药姬而厌恶方源，但表面仍履行职责",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0050",
+          "startOffset": 534925,
+          "endOffset": 534992,
+          "summary": "古月定宗讨好方源，邀请其参加聚会"
+        }
+      ],
+      "relationId": "rel_ac5b90c5b19c",
+      "subject": "方源",
+      "object": "古月定宗",
+      "relationType": "OTHER",
+      "summary": "古月定宗讨好方源，邀请其参加聚会",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0074",
+          "startOffset": 535987,
+          "endOffset": 536036,
+          "summary": "古月定宗谄媚迎接方源，设宴款待"
+        }
+      ],
+      "relationId": "rel_d65fcae24304",
+      "subject": "方源",
+      "object": "古月定宗",
+      "relationType": "OTHER",
+      "summary": "古月定宗谄媚迎接方源，设宴款待",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0081",
+          "startOffset": 536211,
+          "endOffset": 536241,
+          "summary": "方源曾抢过这些学员的元石"
+        }
+      ],
+      "relationId": "rel_e56935c12c3d",
+      "subject": "方源",
+      "object": "同届学员",
+      "relationType": "CONFLICT",
+      "summary": "方源曾抢过这些学员的元石",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0002",
+          "startOffset": 533230,
+          "endOffset": 533254,
+          "summary": "方源与几位家老合力击杀狂电狼"
+        }
+      ],
+      "eventId": "evt_1ef919f377ae",
+      "eventType": "conflict",
+      "summary": "方源与几位家老合力击杀狂电狼",
+      "actors": [
+        "方源",
+        "几位家老",
+        "狂电狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狂电狼死亡，方源获得家老们的好感"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0035",
+          "startOffset": 534337,
+          "endOffset": 534376,
+          "summary": "方源战后拒绝治疗，与家老们交谈后离开，古月李晨坚持要检查但被拒绝"
+        }
+      ],
+      "eventId": "evt_916440eebcc8",
+      "eventType": "other",
+      "summary": "方源战后拒绝治疗，与家老们交谈后离开，古月李晨坚持要检查但被拒绝",
+      "actors": [
+        "方源",
+        "古月李晨",
+        "其他家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "家老们对方源的城府和实力感到忌惮"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0053",
+          "startOffset": 535148,
+          "endOffset": 535175,
+          "summary": "古月定宗在路上遇见方源，邀请其参加同窗聚会，方源答应但表示要先换衣服和去地下溶洞"
+        }
+      ],
+      "eventId": "evt_f9a8a0ad4b8f",
+      "eventType": "other",
+      "summary": "古月定宗在路上遇见方源，邀请其参加同窗聚会，方源答应但表示要先换衣服和去地下溶洞",
+      "actors": [
+        "方源",
+        "古月定宗"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将前往地下溶洞"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0070",
+          "startOffset": 535752,
+          "endOffset": 535806,
+          "summary": "方源在家族宝库中选择了三转草蛊兜率花"
+        }
+      ],
+      "eventId": "evt_2341a9fbeabc",
+      "eventType": "trade",
+      "summary": "方源在家族宝库中选择了三转草蛊兜率花",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得兜率花，解决后勤问题"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0089",
+          "startOffset": 536456,
+          "endOffset": 536516,
+          "summary": "古月定宗设宴款待方源，方源向同届学员敬酒道歉，众人奉承"
+        }
+      ],
+      "eventId": "evt_ad0331b86c93",
+      "eventType": "other",
+      "summary": "古月定宗设宴款待方源，方源向同届学员敬酒道歉，众人奉承",
+      "actors": [
+        "方源",
+        "古月定宗",
+        "同届学员"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源缓和与同届学员的关系"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0002",
+          "startOffset": 533230,
+          "endOffset": 533254,
+          "summary": "方源与几位家老合力击杀狂电狼"
+        }
+      ],
+      "timelineId": "tl_1ef919f377ae",
+      "eventId": "evt_1ef919f377ae",
+      "chapterId": "ch_0161",
+      "orderHint": "chapter-order",
+      "summary": "方源与几位家老合力击杀狂电狼",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0035",
+          "startOffset": 534337,
+          "endOffset": 534376,
+          "summary": "方源战后拒绝治疗，与家老们交谈后离开，古月李晨坚持要检查但被拒绝"
+        }
+      ],
+      "timelineId": "tl_916440eebcc8",
+      "eventId": "evt_916440eebcc8",
+      "chapterId": "ch_0161",
+      "orderHint": "chapter-order",
+      "summary": "方源战后拒绝治疗，与家老们交谈后离开，古月李晨坚持要检查但被拒绝",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0053",
+          "startOffset": 535148,
+          "endOffset": 535175,
+          "summary": "古月定宗在路上遇见方源，邀请其参加同窗聚会，方源答应但表示要先换衣服和去地下溶洞"
+        }
+      ],
+      "timelineId": "tl_f9a8a0ad4b8f",
+      "eventId": "evt_f9a8a0ad4b8f",
+      "chapterId": "ch_0161",
+      "orderHint": "chapter-order",
+      "summary": "古月定宗在路上遇见方源，邀请其参加同窗聚会，方源答应但表示要先换衣服和去地下溶洞",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0070",
+          "startOffset": 535752,
+          "endOffset": 535806,
+          "summary": "方源在家族宝库中选择了三转草蛊兜率花"
+        }
+      ],
+      "timelineId": "tl_2341a9fbeabc",
+      "eventId": "evt_2341a9fbeabc",
+      "chapterId": "ch_0161",
+      "orderHint": "chapter-order",
+      "summary": "方源在家族宝库中选择了三转草蛊兜率花",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0161",
+          "paragraphId": "ch_0161_p0089",
+          "startOffset": 536456,
+          "endOffset": 536516,
+          "summary": "古月定宗设宴款待方源，方源向同届学员敬酒道歉，众人奉承"
+        }
+      ],
+      "timelineId": "tl_ad0331b86c93",
+      "eventId": "evt_ad0331b86c93",
+      "chapterId": "ch_0161",
+      "orderHint": "chapter-order",
+      "summary": "古月定宗设宴款待方源，方源向同届学员敬酒道歉，众人奉承",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0009",
+      "startOffset": 533456,
+      "endOffset": 533492,
+      "summary": "家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0031",
+      "startOffset": 534215,
+      "endOffset": 534254,
+      "summary": "药脉蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0034",
+      "startOffset": 534315,
+      "endOffset": 534333,
+      "summary": "药堂治疗蛊师头领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0035",
+      "startOffset": 534337,
+      "endOffset": 534376,
+      "summary": "古月族家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0041",
+      "startOffset": 534514,
+      "endOffset": 534573,
+      "summary": "药脉中人，被方源气昏厥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0065",
+      "startOffset": 535571,
+      "endOffset": 535573,
+      "summary": "古月家族家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0017",
+      "startOffset": 533694,
+      "endOffset": 533745,
+      "summary": "方源与几位家老共同战斗，关系融洽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0050",
+      "startOffset": 534925,
+      "endOffset": 534992,
+      "summary": "古月定宗讨好方源，邀请其参加聚会"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0074",
+      "startOffset": 535987,
+      "endOffset": 536036,
+      "summary": "古月定宗谄媚迎接方源，设宴款待"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0081",
+      "startOffset": 536211,
+      "endOffset": 536241,
+      "summary": "方源曾抢过这些学员的元石"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0002",
+      "startOffset": 533230,
+      "endOffset": 533254,
+      "summary": "方源与几位家老合力击杀狂电狼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0053",
+      "startOffset": 535148,
+      "endOffset": 535175,
+      "summary": "古月定宗在路上遇见方源，邀请其参加同窗聚会，方源答应但表示要先换衣服和去地下溶洞"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0070",
+      "startOffset": 535752,
+      "endOffset": 535806,
+      "summary": "方源在家族宝库中选择了三转草蛊兜率花"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0161",
+      "paragraphId": "ch_0161_p0089",
+      "startOffset": 536456,
+      "endOffset": 536516,
+      "summary": "古月定宗设宴款待方源，方源向同届学员敬酒道歉，众人奉承"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly public/visible events (battle with狂电狼, refusal of treatment, meeting with古月定宗, banquet, selecting兜率花). No hidden knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the source material. The entities and relations describe visible interactions. No source pointer supports a hidden fact that is not already player-visible.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan toasting and apologizing to former classmates for past actions (stealing primeval stones), but the observed behavior (敬酒道歉) could indicate multiple possible motives: genuine reconciliation, strategic social smoothing, or simply going along with the occasion. The seed does not directly support any single inferred motive with enough certainty. Per rules, when motive is ambiguous, return empty characterMotives.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual interactions (Fang Yuan's personal conflicts with Gu Yue Li Chen, Gu Yue Ding Zong, and former classmates). No named collective faction/group pressure is clearly established. '几位家老' (several elders) is a vague group without a named faction identity. '药脉' (Medicine Vein) is mentioned but only through individual Gu Yue Yao Ji's personal grievance (being angered into fainting), which is an individual emotion not tied to a collective stake. '同届学员' (same-year students) is a loose group without organizational structure. No clear faction-level pressure axis (interest, threat, resource, reputation, geography, succession, inheritance) is directly supported by the seed facts.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

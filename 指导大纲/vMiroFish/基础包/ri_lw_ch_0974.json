@@ -1,0 +1,551 @@
+{
+  "packageId": "ri_lw_ch_0974",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0974"
+    ],
+    "paragraphIds": [
+      "ch_0974_p0010",
+      "ch_0974_p0017",
+      "ch_0974_p0034",
+      "ch_0974_p0035",
+      "ch_0974_p0068",
+      "ch_0974_p0088",
+      "ch_0974_p0096",
+      "ch_0974_p0097",
+      "ch_0974_p0100",
+      "ch_0974_p0107",
+      "ch_0974_p0108",
+      "ch_0974_p0110",
+      "ch_0974_p0111"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0010",
+          "startOffset": 3437890,
+          "endOffset": 3437932,
+          "summary": "蛊仙，春秋蝉使用者"
+        }
+      ],
+      "entityId": "entity_83bcc1f20b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，春秋蝉使用者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0034",
+          "startOffset": 3438562,
+          "endOffset": 3438583,
+          "summary": "主角，正在炼蛊"
+        }
+      ],
+      "entityId": "entity_83bcc1f20b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，正在炼蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0068",
+          "startOffset": 3439570,
+          "endOffset": 3439572,
+          "summary": "蛊仙，正在炼制变形仙蛊"
+        }
+      ],
+      "entityId": "entity_83bcc1f20b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，正在炼制变形仙蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0096",
+          "startOffset": 3440623,
+          "endOffset": 3440627,
+          "summary": "地灵，称呼方源为主人"
+        }
+      ],
+      "entityId": "entity_6fc5702bcaa1",
+      "name": "星象地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "地灵，称呼方源为主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0097",
+          "startOffset": 3440655,
+          "endOffset": 3440669,
+          "summary": "主角，炼蛊者"
+        }
+      ],
+      "entityId": "entity_83bcc1f20b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，炼蛊者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0100",
+          "startOffset": 3440733,
+          "endOffset": 3440779,
+          "summary": "地灵，方源的仆从"
+        }
+      ],
+      "entityId": "entity_6fc5702bcaa1",
+      "name": "星象地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "地灵，方源的仆从",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0096",
+          "startOffset": 3440623,
+          "endOffset": 3440627,
+          "summary": "星象地灵称呼方源为主人，是主仆关系"
+        }
+      ],
+      "relationId": "rel_8963c7bd4122",
+      "subject": "星象地灵",
+      "object": "方源",
+      "relationType": "FAMILY",
+      "summary": "星象地灵称呼方源为主人，是主仆关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0100",
+          "startOffset": 3440733,
+          "endOffset": 3440779,
+          "summary": "主仆关系，方源是主人，星象地灵是仆从"
+        }
+      ],
+      "relationId": "rel_6a54e6f293a9",
+      "subject": "方源",
+      "object": "星象地灵",
+      "relationType": "OTHER",
+      "summary": "主仆关系，方源是主人，星象地灵是仆从",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0017",
+          "startOffset": 3438107,
+          "endOffset": 3438119,
+          "summary": "方源催动春秋蝉失败，春秋蝉自爆，意志进入光阴长河后即将消融"
+        }
+      ],
+      "eventId": "evt_ad371159045a",
+      "eventType": "other",
+      "summary": "方源催动春秋蝉失败，春秋蝉自爆，意志进入光阴长河后即将消融",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源面临死亡，意志消沉"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0035",
+          "startOffset": 3438587,
+          "endOffset": 3438608,
+          "summary": "光阴长河中鬼脸吐出红莲花骨朵，绽放后红光回溯时间，将春秋蝉和方源意志复原，春秋蝉重新逆流而上"
+        }
+      ],
+      "eventId": "evt_1738ec88bc06",
+      "eventType": "rebirth",
+      "summary": "光阴长河中鬼脸吐出红莲花骨朵，绽放后红光回溯时间，将春秋蝉和方源意志复原，春秋蝉重新逆流而上",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "春秋蝉被强行复原，方源意志恢复，继续穿越"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0088",
+          "startOffset": 3440344,
+          "endOffset": 3440374,
+          "summary": "方源使用肉身血炼法处理地极天罡，以炼制变形仙蛊，过程中突然吐血倒下"
+        }
+      ],
+      "eventId": "evt_2c07a6852946",
+      "eventType": "cultivation",
+      "summary": "方源使用肉身血炼法处理地极天罡，以炼制变形仙蛊，过程中突然吐血倒下",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源炼制失败，昏迷在毒血中"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0107",
+          "startOffset": 3440993,
+          "endOffset": 3441000,
+          "summary": "方源在炼制变形仙蛊失败后，因异变重生回到一年多前"
+        }
+      ],
+      "eventId": "evt_3e09ac4a1533",
+      "eventType": "rebirth",
+      "summary": "方源在炼制变形仙蛊失败后，因异变重生回到一年多前",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源意志回到过去，时间点是一年多前炼制变形仙蛊时"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0108",
+          "startOffset": 3441004,
+          "endOffset": 3441049,
+          "summary": "方源炼制变形仙蛊失败，但引发异变导致重生"
+        }
+      ],
+      "eventId": "evt_f11c6d661cbe",
+      "eventType": "other",
+      "summary": "方源炼制变形仙蛊失败，但引发异变导致重生",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源重生，但时间回溯较短"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0017",
+          "startOffset": 3438107,
+          "endOffset": 3438119,
+          "summary": "方源催动春秋蝉失败，春秋蝉自爆，意志进入光阴长河后即将消融"
+        }
+      ],
+      "timelineId": "tl_ad371159045a",
+      "eventId": "evt_ad371159045a",
+      "chapterId": "ch_0974",
+      "orderHint": "chapter-order",
+      "summary": "方源催动春秋蝉失败，春秋蝉自爆，意志进入光阴长河后即将消融",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0035",
+          "startOffset": 3438587,
+          "endOffset": 3438608,
+          "summary": "光阴长河中鬼脸吐出红莲花骨朵，绽放后红光回溯时间，将春秋蝉和方源意志复原，春秋蝉重新逆流而上"
+        }
+      ],
+      "timelineId": "tl_1738ec88bc06",
+      "eventId": "evt_1738ec88bc06",
+      "chapterId": "ch_0974",
+      "orderHint": "chapter-order",
+      "summary": "光阴长河中鬼脸吐出红莲花骨朵，绽放后红光回溯时间，将春秋蝉和方源意志复原，春秋蝉重新逆流而上",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0088",
+          "startOffset": 3440344,
+          "endOffset": 3440374,
+          "summary": "方源使用肉身血炼法处理地极天罡，以炼制变形仙蛊，过程中突然吐血倒下"
+        }
+      ],
+      "timelineId": "tl_2c07a6852946",
+      "eventId": "evt_2c07a6852946",
+      "chapterId": "ch_0974",
+      "orderHint": "chapter-order",
+      "summary": "方源使用肉身血炼法处理地极天罡，以炼制变形仙蛊，过程中突然吐血倒下",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0107",
+          "startOffset": 3440993,
+          "endOffset": 3441000,
+          "summary": "方源在炼制变形仙蛊失败后，因异变重生回到一年多前"
+        }
+      ],
+      "timelineId": "tl_3e09ac4a1533",
+      "eventId": "evt_3e09ac4a1533",
+      "chapterId": "ch_0974",
+      "orderHint": "chapter-order",
+      "summary": "方源在炼制变形仙蛊失败后，因异变重生回到一年多前",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0974",
+          "paragraphId": "ch_0974_p0108",
+          "startOffset": 3441004,
+          "endOffset": 3441049,
+          "summary": "方源炼制变形仙蛊失败，但引发异变导致重生"
+        }
+      ],
+      "timelineId": "tl_f11c6d661cbe",
+      "eventId": "evt_f11c6d661cbe",
+      "chapterId": "ch_0974",
+      "orderHint": "chapter-order",
+      "summary": "方源炼制变形仙蛊失败，但引发异变导致重生",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0010",
+      "startOffset": 3437890,
+      "endOffset": 3437932,
+      "summary": "蛊仙，春秋蝉使用者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0034",
+      "startOffset": 3438562,
+      "endOffset": 3438583,
+      "summary": "主角，正在炼蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0068",
+      "startOffset": 3439570,
+      "endOffset": 3439572,
+      "summary": "蛊仙，正在炼制变形仙蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0096",
+      "startOffset": 3440623,
+      "endOffset": 3440627,
+      "summary": "地灵，称呼方源为主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0097",
+      "startOffset": 3440655,
+      "endOffset": 3440669,
+      "summary": "主角，炼蛊者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0100",
+      "startOffset": 3440733,
+      "endOffset": 3440779,
+      "summary": "地灵，方源的仆从"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0017",
+      "startOffset": 3438107,
+      "endOffset": 3438119,
+      "summary": "方源催动春秋蝉失败，春秋蝉自爆，意志进入光阴长河后即将消融"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0035",
+      "startOffset": 3438587,
+      "endOffset": 3438608,
+      "summary": "光阴长河中鬼脸吐出红莲花骨朵，绽放后红光回溯时间，将春秋蝉和方源意志复原，春秋蝉重新逆流而上"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0088",
+      "startOffset": 3440344,
+      "endOffset": 3440374,
+      "summary": "方源使用肉身血炼法处理地极天罡，以炼制变形仙蛊，过程中突然吐血倒下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0107",
+      "startOffset": 3440993,
+      "endOffset": 3441000,
+      "summary": "方源在炼制变形仙蛊失败后，因异变重生回到一年多前"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0974",
+      "paragraphId": "ch_0974_p0108",
+      "startOffset": 3441004,
+      "endOffset": 3441049,
+      "summary": "方源炼制变形仙蛊失败，但引发异变导致重生"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes visible events (Fang Yuan refining a gu, failing, and rebirthing) and a ghost face in the river of time. The ghost face appearing in the river of time (ch_0974_p0035) could be a hidden entity, but the source only shows it appearing and spitting out a red lotus bud — there is no direct support for who it is, what it knows, or any secret motive. The rebirth mechanism is already visible to the reader. No atomic hidden fact with clear whoKnows/whoDoesNotKnow can be confidently extracted from these pointers alone.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed describes Fang Yuan's failed Spring Autumn Cicada activation, a mysterious rebirth via a ghost face in the river of time, and a failed shape-shifting immortal gu refinement that also triggered rebirth. However, the observed behaviors (failed cultivation, rebirth) are mostly involuntary events happening to him, not deliberate actions from which a clear motive can be inferred. His only observable action is attempting to refine the shape-shifting immortal gu using the flesh-blood refinement method, but the seed does not reveal why he chose this method or what his underlying goal was beyond the obvious 'wanting to refine the gu'. Any inferred motive would be speculative.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed only contains individual actors (方源 and 星象地灵). 星象地灵 is a single earth spirit (地灵) serving 方源 as a master-servant relationship, not a collective faction, clan, family, or group. No collective actor with a concrete stake is named or directly implied in the seed facts. No faction, clan, family, or organization pressure can be derived from the available source material.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

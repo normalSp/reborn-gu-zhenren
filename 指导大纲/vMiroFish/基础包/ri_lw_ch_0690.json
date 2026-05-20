@@ -1,0 +1,976 @@
+{
+  "packageId": "ri_lw_ch_0690",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0690"
+    ],
+    "paragraphIds": [
+      "ch_0690_p0001",
+      "ch_0690_p0002",
+      "ch_0690_p0008",
+      "ch_0690_p0014",
+      "ch_0690_p0016",
+      "ch_0690_p0022",
+      "ch_0690_p0028",
+      "ch_0690_p0036",
+      "ch_0690_p0038",
+      "ch_0690_p0039",
+      "ch_0690_p0043",
+      "ch_0690_p0051",
+      "ch_0690_p0057",
+      "ch_0690_p0060",
+      "ch_0690_p0061",
+      "ch_0690_p0062",
+      "ch_0690_p0065",
+      "ch_0690_p0066",
+      "ch_0690_p0070",
+      "ch_0690_p0072"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0002",
+          "startOffset": 2430921,
+          "endOffset": 2430970,
+          "summary": "主角，仙僵"
+        }
+      ],
+      "entityId": "entity_18c569bd7705",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，仙僵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0016",
+          "startOffset": 2431511,
+          "endOffset": 2431552,
+          "summary": "方源的同伴，治疗者"
+        }
+      ],
+      "entityId": "entity_b1dc117d0000",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的同伴，治疗者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0001",
+          "startOffset": 2430901,
+          "endOffset": 2430916,
+          "summary": "魔尊，方源师从对象"
+        }
+      ],
+      "entityId": "entity_75e0d4c0f23f",
+      "name": "狂蛮魔尊",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "魔尊，方源师从对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0051",
+          "startOffset": 2432978,
+          "endOffset": 2433037,
+          "summary": "八臂仙僵，力道蛊仙"
+        }
+      ],
+      "entityId": "entity_18c569bd7705",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "八臂仙僵，力道蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0038",
+          "startOffset": 2432373,
+          "endOffset": 2432439,
+          "summary": "渡劫者，被三色气团包裹"
+        }
+      ],
+      "entityId": "entity_0037d1b9b145",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "渡劫者，被三色气团包裹",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0039",
+          "startOffset": 2432443,
+          "endOffset": 2432506,
+          "summary": "盟友，被方源传音阻止"
+        }
+      ],
+      "entityId": "entity_b1dc117d0000",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [
+        "老白"
+      ],
+      "description": "盟友，被方源传音阻止",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0060",
+          "startOffset": 2433396,
+          "endOffset": 2433433,
+          "summary": "盟友，知道灾劫内情"
+        }
+      ],
+      "entityId": "entity_cc9a7fc86aba",
+      "name": "黎山仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "盟友，知道灾劫内情",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0065",
+          "startOffset": 2433640,
+          "endOffset": 2433644,
+          "summary": "蛊仙"
+        }
+      ],
+      "entityId": "entity_b1dc117d0000",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0066",
+          "startOffset": 2433690,
+          "endOffset": 2433694,
+          "summary": "蛊仙"
+        }
+      ],
+      "entityId": "entity_cc9a7fc86aba",
+      "name": "黎山仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0066",
+          "startOffset": 2433717,
+          "endOffset": 2433722,
+          "summary": "九转尊者，力道蛊尊，变化道开创者"
+        }
+      ],
+      "entityId": "entity_54467c47c44a",
+      "name": "狂蛮魔尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "九转尊者，力道蛊尊，变化道开创者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0072",
+          "startOffset": 2434194,
+          "endOffset": 2434196,
+          "summary": "蛊师，正在渡劫"
+        }
+      ],
+      "entityId": "entity_18c569bd7705",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，正在渡劫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0016",
+          "startOffset": 2431511,
+          "endOffset": 2431552,
+          "summary": "太白云生治疗方源"
+        }
+      ],
+      "relationId": "rel_ddbeb1a3c76a",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "太白云生治疗方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0001",
+          "startOffset": 2430901,
+          "endOffset": 2430916,
+          "summary": "方源师从狂蛮魔尊"
+        }
+      ],
+      "relationId": "rel_2986f2d89ae0",
+      "subject": "方源",
+      "object": "狂蛮魔尊",
+      "relationType": "MENTOR",
+      "summary": "方源师从狂蛮魔尊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0061",
+          "startOffset": 2433437,
+          "endOffset": 2433509,
+          "summary": "方源护卫黑楼兰渡劫"
+        }
+      ],
+      "relationId": "rel_b68b6a6af232",
+      "subject": "方源",
+      "object": "黑楼兰",
+      "relationType": "ALLY",
+      "summary": "方源护卫黑楼兰渡劫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0039",
+          "startOffset": 2432443,
+          "endOffset": 2432506,
+          "summary": "方源传音阻止太白云生，并让其摄阵"
+        }
+      ],
+      "relationId": "rel_e57acfb9489f",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "ALLY",
+      "summary": "方源传音阻止太白云生，并让其摄阵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0062",
+          "startOffset": 2433513,
+          "endOffset": 2433573,
+          "summary": "方源与黎山仙子是盟友，但黎山仙子隐瞒了灾劫情报"
+        }
+      ],
+      "relationId": "rel_15ac3e3d13fd",
+      "subject": "方源",
+      "object": "黎山仙子",
+      "relationType": "ALLY",
+      "summary": "方源与黎山仙子是盟友，但黎山仙子隐瞒了灾劫情报",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0061",
+          "startOffset": 2433437,
+          "endOffset": 2433509,
+          "summary": "太白云生愤怒质问黎山仙子隐瞒灾劫情报"
+        }
+      ],
+      "relationId": "rel_c02fb7287363",
+      "subject": "太白云生",
+      "object": "黎山仙子",
+      "relationType": "CONFLICT",
+      "summary": "太白云生愤怒质问黎山仙子隐瞒灾劫情报",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0072",
+          "startOffset": 2434194,
+          "endOffset": 2434196,
+          "summary": "方源通过真意灌体得到狂蛮魔尊的教导"
+        }
+      ],
+      "relationId": "rel_86cde2fede45",
+      "subject": "方源",
+      "object": "狂蛮魔尊",
+      "relationType": "MENTOR",
+      "summary": "方源通过真意灌体得到狂蛮魔尊的教导",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0002",
+          "startOffset": 2430921,
+          "endOffset": 2430970,
+          "summary": "方源与冰瀑神猿战斗，被击飞重伤"
+        }
+      ],
+      "eventId": "evt_96c3565c0da0",
+      "eventType": "conflict",
+      "summary": "方源与冰瀑神猿战斗，被击飞重伤",
+      "actors": [
+        "方源",
+        "冰瀑神猿"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源重伤，冰瀑神猿自爆化为上古天马群"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0022",
+          "startOffset": 2431734,
+          "endOffset": 2431762,
+          "summary": "冰瀑神猿自爆，化为上古天马群"
+        }
+      ],
+      "eventId": "evt_3b374f7b790c",
+      "eventType": "other",
+      "summary": "冰瀑神猿自爆，化为上古天马群",
+      "actors": [
+        "冰瀑神猿"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "出现上古天马群，与方源的力道虚影大军交战"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0028",
+          "startOffset": 2431965,
+          "endOffset": 2431988,
+          "summary": "上古天马群与方源的力道虚影大军交战，力道虚影大军节节败退"
+        }
+      ],
+      "eventId": "evt_2fe2b318bed0",
+      "eventType": "conflict",
+      "summary": "上古天马群与方源的力道虚影大军交战，力道虚影大军节节败退",
+      "actors": [
+        "上古天马群",
+        "力道虚影大军"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源吃亏"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0014",
+          "startOffset": 2431437,
+          "endOffset": 2431460,
+          "summary": "方源作为仙僵，死气充盈，身体迅速复原"
+        }
+      ],
+      "eventId": "evt_e2974137eadc",
+      "eventType": "cultivation",
+      "summary": "方源作为仙僵，死气充盈，身体迅速复原",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源恢复行动力"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0038",
+          "startOffset": 2432373,
+          "endOffset": 2432439,
+          "summary": "黑楼兰被三色气团包裹，消化后成仙潜力深厚"
+        }
+      ],
+      "eventId": "evt_6c5dc0aec707",
+      "eventType": "cultivation",
+      "summary": "黑楼兰被三色气团包裹，消化后成仙潜力深厚",
+      "actors": [
+        "黑楼兰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黑楼兰成仙后潜力将极为深厚"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0043",
+          "startOffset": 2432613,
+          "endOffset": 2432657,
+          "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀"
+        }
+      ],
+      "eventId": "evt_4804b11982bb",
+      "eventType": "conflict",
+      "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀",
+      "actors": [
+        "方源",
+        "四翼天马"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "四翼天马被击碎后消散，方源获得一股无形意念，感到震动和惊喜"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0057",
+          "startOffset": 2433248,
+          "endOffset": 2433308,
+          "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇"
+        }
+      ],
+      "eventId": "evt_b632b49fc334",
+      "eventType": "other",
+      "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得机遇，太白云生担忧，黎山仙子阻止打扰"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0072",
+          "startOffset": 2434194,
+          "endOffset": 2434196,
+          "summary": "方源击碎上古天马，得到狂蛮魔尊的真意灌体，相当于得到狂蛮魔尊的教导"
+        }
+      ],
+      "eventId": "evt_f2d7e71d9719",
+      "eventType": "cultivation",
+      "summary": "方源击碎上古天马，得到狂蛮魔尊的真意灌体，相当于得到狂蛮魔尊的教导",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得狂蛮魔尊对力道、变化道的真意灌体"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0002",
+          "startOffset": 2430921,
+          "endOffset": 2430970,
+          "summary": "方源与冰瀑神猿战斗，被击飞重伤"
+        }
+      ],
+      "timelineId": "tl_96c3565c0da0",
+      "eventId": "evt_96c3565c0da0",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "方源与冰瀑神猿战斗，被击飞重伤",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0022",
+          "startOffset": 2431734,
+          "endOffset": 2431762,
+          "summary": "冰瀑神猿自爆，化为上古天马群"
+        }
+      ],
+      "timelineId": "tl_3b374f7b790c",
+      "eventId": "evt_3b374f7b790c",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "冰瀑神猿自爆，化为上古天马群",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0028",
+          "startOffset": 2431965,
+          "endOffset": 2431988,
+          "summary": "上古天马群与方源的力道虚影大军交战，力道虚影大军节节败退"
+        }
+      ],
+      "timelineId": "tl_2fe2b318bed0",
+      "eventId": "evt_2fe2b318bed0",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "上古天马群与方源的力道虚影大军交战，力道虚影大军节节败退",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0014",
+          "startOffset": 2431437,
+          "endOffset": 2431460,
+          "summary": "方源作为仙僵，死气充盈，身体迅速复原"
+        }
+      ],
+      "timelineId": "tl_e2974137eadc",
+      "eventId": "evt_e2974137eadc",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "方源作为仙僵，死气充盈，身体迅速复原",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0038",
+          "startOffset": 2432373,
+          "endOffset": 2432439,
+          "summary": "黑楼兰被三色气团包裹，消化后成仙潜力深厚"
+        }
+      ],
+      "timelineId": "tl_6c5dc0aec707",
+      "eventId": "evt_6c5dc0aec707",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "黑楼兰被三色气团包裹，消化后成仙潜力深厚",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0043",
+          "startOffset": 2432613,
+          "endOffset": 2432657,
+          "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀"
+        }
+      ],
+      "timelineId": "tl_4804b11982bb",
+      "eventId": "evt_4804b11982bb",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0057",
+          "startOffset": 2433248,
+          "endOffset": 2433308,
+          "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇"
+        }
+      ],
+      "timelineId": "tl_b632b49fc334",
+      "eventId": "evt_b632b49fc334",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0072",
+          "startOffset": 2434194,
+          "endOffset": 2434196,
+          "summary": "方源击碎上古天马，得到狂蛮魔尊的真意灌体，相当于得到狂蛮魔尊的教导"
+        }
+      ],
+      "timelineId": "tl_f2d7e71d9719",
+      "eventId": "evt_f2d7e71d9719",
+      "chapterId": "ch_0690",
+      "orderHint": "chapter-order",
+      "summary": "方源击碎上古天马，得到狂蛮魔尊的真意灌体，相当于得到狂蛮魔尊的教导",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0043",
+          "startOffset": 2432613,
+          "endOffset": 2432657,
+          "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0690",
+          "paragraphId": "ch_0690_p0057",
+          "startOffset": 2433248,
+          "endOffset": 2433308,
+          "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "冲入战团击杀四翼天马",
+      "inferredMotive": "获取天马蕴含的机缘",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0002",
+      "startOffset": 2430921,
+      "endOffset": 2430970,
+      "summary": "主角，仙僵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0016",
+      "startOffset": 2431511,
+      "endOffset": 2431552,
+      "summary": "方源的同伴，治疗者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0001",
+      "startOffset": 2430901,
+      "endOffset": 2430916,
+      "summary": "魔尊，方源师从对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0051",
+      "startOffset": 2432978,
+      "endOffset": 2433037,
+      "summary": "八臂仙僵，力道蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0038",
+      "startOffset": 2432373,
+      "endOffset": 2432439,
+      "summary": "渡劫者，被三色气团包裹"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0039",
+      "startOffset": 2432443,
+      "endOffset": 2432506,
+      "summary": "盟友，被方源传音阻止"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0060",
+      "startOffset": 2433396,
+      "endOffset": 2433433,
+      "summary": "盟友，知道灾劫内情"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0065",
+      "startOffset": 2433640,
+      "endOffset": 2433644,
+      "summary": "蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0066",
+      "startOffset": 2433690,
+      "endOffset": 2433694,
+      "summary": "蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0066",
+      "startOffset": 2433717,
+      "endOffset": 2433722,
+      "summary": "九转尊者，力道蛊尊，变化道开创者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0072",
+      "startOffset": 2434194,
+      "endOffset": 2434196,
+      "summary": "蛊师，正在渡劫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0061",
+      "startOffset": 2433437,
+      "endOffset": 2433509,
+      "summary": "方源护卫黑楼兰渡劫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0062",
+      "startOffset": 2433513,
+      "endOffset": 2433573,
+      "summary": "方源与黎山仙子是盟友，但黎山仙子隐瞒了灾劫情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0022",
+      "startOffset": 2431734,
+      "endOffset": 2431762,
+      "summary": "冰瀑神猿自爆，化为上古天马群"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0028",
+      "startOffset": 2431965,
+      "endOffset": 2431988,
+      "summary": "上古天马群与方源的力道虚影大军交战，力道虚影大军节节败退"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0014",
+      "startOffset": 2431437,
+      "endOffset": 2431460,
+      "summary": "方源作为仙僵，死气充盈，身体迅速复原"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0043",
+      "startOffset": 2432613,
+      "endOffset": 2432657,
+      "summary": "方源冲入战团，将一头受伤的四翼天马摁到地面并击杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0690",
+      "paragraphId": "ch_0690_p0057",
+      "startOffset": 2433248,
+      "endOffset": 2433308,
+      "summary": "方源击杀四翼天马后，一股无形意念冲进脑海，他半跪不动，仿佛中了梦魇"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes public battle events (Fang Yuan fighting ice waterfall ape, heavenly horse group, killing four-winged heavenly horse) and the fact that Fang Yuan received Kuang Man's true intent infusion. However, the true intent infusion is an event that happens to Fang Yuan himself - it's not a hidden fact that other characters don't know about, nor is it future-known information. The seed does not contain any directly supported private knowledge, secret plans, or knowledge gaps that would qualify as a hidden/future-known fact. The events are all publicly observable battle scenes. The only potentially hidden element is Li Shan Xianzi's concealed disaster information, but the seed only shows her saying it was a 'guess' not a known fact, and the source doesn't directly support what she actually knew.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源主动冲入战团击杀受伤的四翼天马，随后获得无形意念并感到震动和惊喜，表明他有意获取天马带来的机缘。observedMotive直接来自ptr_17（冲入战团击杀四翼天马），inferredMotive基于ptr_18（击杀后获得意念并惊喜）做一步推断，未过度推测战略意图。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual characters (方源, 太白云生, 黑楼兰, 黎山仙子) and their personal interactions during a tribulation event. No named collective actors (factions, clans, families, shops, halls, or organizations) appear in the entities or relations. The only group mentioned is '上古天马群' (ancient celestial horse herd) which is a beast group, not a faction/clan/family. '力道虚影大军' is a summoned force of shadow soldiers, not an organized faction. '雪山盟约' (Snowy Mountain Pact) is referenced but no named faction appears. No collective actor with a concrete stake can be identified from the seed facts.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

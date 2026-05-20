@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "requestId": "mirofish-request-2026-05-18-v015-low-rank-black-market-commission-boundary-pack",
   "targetPhase": "v0.15.0-late or v0.16+ black-market, commission, and gray-trade boundary",
@@ -18,7 +18,7 @@
     "reborngIntake": "redacted JSON candidates only"
   },
   "canonBoundary": {
-    "runtimeAuthority": "none",
+    "runtimeAuthority": "candidate_only",
     "canonAuthority": "human_review_required",
     "deepSeekAuthority": "none",
     "rewardAuthority": "none"

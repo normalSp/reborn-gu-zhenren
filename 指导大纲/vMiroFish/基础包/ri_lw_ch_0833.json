@@ -1,0 +1,798 @@
+{
+  "packageId": "ri_lw_ch_0833",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0833"
+    ],
+    "paragraphIds": [
+      "ch_0833_p0006",
+      "ch_0833_p0008",
+      "ch_0833_p0012",
+      "ch_0833_p0017",
+      "ch_0833_p0027",
+      "ch_0833_p0028",
+      "ch_0833_p0032",
+      "ch_0833_p0033",
+      "ch_0833_p0042",
+      "ch_0833_p0047",
+      "ch_0833_p0058",
+      "ch_0833_p0059",
+      "ch_0833_p0062",
+      "ch_0833_p0064",
+      "ch_0833_p0066",
+      "ch_0833_p0067",
+      "ch_0833_p0084"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0006",
+          "startOffset": 2936057,
+          "endOffset": 2936061,
+          "summary": "五转蛊师，参加炼蛊大会"
+        }
+      ],
+      "entityId": "entity_7e9f270f8e52",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "五转蛊师，参加炼蛊大会",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0008",
+          "startOffset": 2936111,
+          "endOffset": 2936117,
+          "summary": "主持炼蛊大会，五德门长老"
+        }
+      ],
+      "entityId": "entity_a5f19d16b7c2",
+      "name": "五德门长老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "主持炼蛊大会，五德门长老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0017",
+          "startOffset": 2936485,
+          "endOffset": 2936489,
+          "summary": "场外观摩的炼蛊师，有徒弟"
+        }
+      ],
+      "entityId": "entity_a06375cf270a",
+      "name": "老师傅",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "场外观摩的炼蛊师，有徒弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0017",
+          "startOffset": 2936485,
+          "endOffset": 2936489,
+          "summary": "老师傅的徒弟，参加炼蛊"
+        }
+      ],
+      "entityId": "entity_09685dd1801f",
+      "name": "小徒弟",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "老师傅的徒弟，参加炼蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0032",
+          "startOffset": 2937071,
+          "endOffset": 2937077,
+          "summary": "五德门门主"
+        }
+      ],
+      "entityId": "entity_d7a1cfd296e1",
+      "name": "五德门门主",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "五德门门主",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0033",
+          "startOffset": 2937151,
+          "endOffset": 2937173,
+          "summary": "报名参加炼蛊大会的蛊师"
+        }
+      ],
+      "entityId": "entity_7e9f270f8e52",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "报名参加炼蛊大会的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0033",
+          "startOffset": 2937151,
+          "endOffset": 2937173,
+          "summary": "五德门的长老，前来邀请方源"
+        }
+      ],
+      "entityId": "entity_a5f19d16b7c2",
+      "name": "五德门长老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "五德门的长老，前来邀请方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0042",
+          "startOffset": 2937418,
+          "endOffset": 2937492,
+          "summary": "五德门负责接待报名的弟子"
+        }
+      ],
+      "entityId": "entity_bf05e07e3f3d",
+      "name": "五德门弟子",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "五德门负责接待报名的弟子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0058",
+          "startOffset": 2938130,
+          "endOffset": 2938142,
+          "summary": "众生书院的蛊师，可直接参加炼蛊大会"
+        }
+      ],
+      "entityId": "entity_982d3024a054",
+      "name": "洪易",
+      "kind": "person",
+      "aliases": [],
+      "description": "众生书院的蛊师，可直接参加炼蛊大会",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0062",
+          "startOffset": 2938271,
+          "endOffset": 2938331,
+          "summary": "仙鹤门长老"
+        }
+      ],
+      "entityId": "entity_26a1ce3532a5",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙鹤门长老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0066",
+          "startOffset": 2938472,
+          "endOffset": 2938474,
+          "summary": "参加炼蛊大会的蛊师"
+        }
+      ],
+      "entityId": "entity_7e9f270f8e52",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "参加炼蛊大会的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0066",
+          "startOffset": 2938476,
+          "endOffset": 2938478,
+          "summary": "参加炼蛊大会的蛊师"
+        }
+      ],
+      "entityId": "entity_26a1ce3532a5",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "参加炼蛊大会的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0017",
+          "startOffset": 2936485,
+          "endOffset": 2936489,
+          "summary": "师徒关系"
+        }
+      ],
+      "relationId": "rel_ccb1a2e895c8",
+      "subject": "老师傅",
+      "object": "小徒弟",
+      "relationType": "FAMILY",
+      "summary": "师徒关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0027",
+          "startOffset": 2936884,
+          "endOffset": 2936890,
+          "summary": "五德门长老试图招揽方源为客卿"
+        }
+      ],
+      "relationId": "rel_fcbdfd7ec0da",
+      "subject": "五德门长老",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "五德门长老试图招揽方源为客卿",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0033",
+          "startOffset": 2937151,
+          "endOffset": 2937173,
+          "summary": "方源拒绝五德门长老的邀请，长老不满离去"
+        }
+      ],
+      "relationId": "rel_9126b0f687af",
+      "subject": "方源",
+      "object": "五德门长老",
+      "relationType": "CONFLICT",
+      "summary": "方源拒绝五德门长老的邀请，长老不满离去",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0042",
+          "startOffset": 2937418,
+          "endOffset": 2937492,
+          "summary": "方源在五德门报名参加炼蛊大会"
+        }
+      ],
+      "relationId": "rel_7f72ece72e53",
+      "subject": "方源",
+      "object": "五德门",
+      "relationType": "OTHER",
+      "summary": "方源在五德门报名参加炼蛊大会",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0059",
+          "startOffset": 2938146,
+          "endOffset": 2938200,
+          "summary": "洪易属于众生书院，该书院有免试名额"
+        }
+      ],
+      "relationId": "rel_ff9e5b78faea",
+      "subject": "洪易",
+      "object": "众生书院",
+      "relationType": "FACTION",
+      "summary": "洪易属于众生书院，该书院有免试名额",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0064",
+          "startOffset": 2938373,
+          "endOffset": 2938421,
+          "summary": "方正是仙鹤门长老"
+        }
+      ],
+      "relationId": "rel_2bc363536a4a",
+      "subject": "方正",
+      "object": "仙鹤门",
+      "relationType": "FACTION",
+      "summary": "方正是仙鹤门长老",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0012",
+          "startOffset": 2936288,
+          "endOffset": 2936292,
+          "summary": "方源参加炼蛊大会入门四题，快速完成炼蛊，用时不到三分之一"
+        }
+      ],
+      "eventId": "evt_52e666cd8c28",
+      "eventType": "cultivation",
+      "summary": "方源参加炼蛊大会入门四题，快速完成炼蛊，用时不到三分之一",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源通过第一场考核，被五德门长老关注并试图招揽"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0028",
+          "startOffset": 2936927,
+          "endOffset": 2936931,
+          "summary": "五德门长老试图招揽方源为客卿，被方源拒绝"
+        }
+      ],
+      "eventId": "evt_d3e94c84c916",
+      "eventType": "other",
+      "summary": "五德门长老试图招揽方源为客卿，被方源拒绝",
+      "actors": [
+        "五德门长老",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源拒绝加入五德门"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0033",
+          "startOffset": 2937151,
+          "endOffset": 2937173,
+          "summary": "方源拒绝五德门长老的邀请"
+        }
+      ],
+      "eventId": "evt_14279c64422a",
+      "eventType": "other",
+      "summary": "方源拒绝五德门长老的邀请",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "长老不满离去"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0047",
+          "startOffset": 2937615,
+          "endOffset": 2937632,
+          "summary": "方源在五德门报名参加炼蛊大会，获得令牌"
+        }
+      ],
+      "eventId": "evt_256c087f54bd",
+      "eventType": "other",
+      "summary": "方源在五德门报名参加炼蛊大会，获得令牌",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得参加第一场炼蛊大比的资格"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0067",
+          "startOffset": 2938497,
+          "endOffset": 2938514,
+          "summary": "方源进入火德殿，参加炼蛊大会第一场，得知炼蛊内容为炼制水光蛊，数量至少一百只合格，奖励包括绿曜蛊等。"
+        }
+      ],
+      "eventId": "evt_6d0baf49260b",
+      "eventType": "other",
+      "summary": "方源进入火德殿，参加炼蛊大会第一场，得知炼蛊内容为炼制水光蛊，数量至少一百只合格，奖励包括绿曜蛊等。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源思考如何取得好成绩，考虑使用水火炼法。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0012",
+          "startOffset": 2936288,
+          "endOffset": 2936292,
+          "summary": "方源参加炼蛊大会入门四题，快速完成炼蛊，用时不到三分之一"
+        }
+      ],
+      "timelineId": "tl_52e666cd8c28",
+      "eventId": "evt_52e666cd8c28",
+      "chapterId": "ch_0833",
+      "orderHint": "chapter-order",
+      "summary": "方源参加炼蛊大会入门四题，快速完成炼蛊，用时不到三分之一",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0028",
+          "startOffset": 2936927,
+          "endOffset": 2936931,
+          "summary": "五德门长老试图招揽方源为客卿，被方源拒绝"
+        }
+      ],
+      "timelineId": "tl_d3e94c84c916",
+      "eventId": "evt_d3e94c84c916",
+      "chapterId": "ch_0833",
+      "orderHint": "chapter-order",
+      "summary": "五德门长老试图招揽方源为客卿，被方源拒绝",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0033",
+          "startOffset": 2937151,
+          "endOffset": 2937173,
+          "summary": "方源拒绝五德门长老的邀请"
+        }
+      ],
+      "timelineId": "tl_14279c64422a",
+      "eventId": "evt_14279c64422a",
+      "chapterId": "ch_0833",
+      "orderHint": "chapter-order",
+      "summary": "方源拒绝五德门长老的邀请",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0047",
+          "startOffset": 2937615,
+          "endOffset": 2937632,
+          "summary": "方源在五德门报名参加炼蛊大会，获得令牌"
+        }
+      ],
+      "timelineId": "tl_256c087f54bd",
+      "eventId": "evt_256c087f54bd",
+      "chapterId": "ch_0833",
+      "orderHint": "chapter-order",
+      "summary": "方源在五德门报名参加炼蛊大会，获得令牌",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0833",
+          "paragraphId": "ch_0833_p0067",
+          "startOffset": 2938497,
+          "endOffset": 2938514,
+          "summary": "方源进入火德殿，参加炼蛊大会第一场，得知炼蛊内容为炼制水光蛊，数量至少一百只合格，奖励包括绿曜蛊等。"
+        }
+      ],
+      "timelineId": "tl_6d0baf49260b",
+      "eventId": "evt_6d0baf49260b",
+      "chapterId": "ch_0833",
+      "orderHint": "chapter-order",
+      "summary": "方源进入火德殿，参加炼蛊大会第一场，得知炼蛊内容为炼制水光蛊，数量至少一百只合格，奖励包括绿曜蛊等。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0006",
+      "startOffset": 2936057,
+      "endOffset": 2936061,
+      "summary": "五转蛊师，参加炼蛊大会"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0008",
+      "startOffset": 2936111,
+      "endOffset": 2936117,
+      "summary": "主持炼蛊大会，五德门长老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0017",
+      "startOffset": 2936485,
+      "endOffset": 2936489,
+      "summary": "场外观摩的炼蛊师，有徒弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0032",
+      "startOffset": 2937071,
+      "endOffset": 2937077,
+      "summary": "五德门门主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0033",
+      "startOffset": 2937151,
+      "endOffset": 2937173,
+      "summary": "报名参加炼蛊大会的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0042",
+      "startOffset": 2937418,
+      "endOffset": 2937492,
+      "summary": "五德门负责接待报名的弟子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0058",
+      "startOffset": 2938130,
+      "endOffset": 2938142,
+      "summary": "众生书院的蛊师，可直接参加炼蛊大会"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0062",
+      "startOffset": 2938271,
+      "endOffset": 2938331,
+      "summary": "仙鹤门长老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0066",
+      "startOffset": 2938472,
+      "endOffset": 2938474,
+      "summary": "参加炼蛊大会的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0066",
+      "startOffset": 2938476,
+      "endOffset": 2938478,
+      "summary": "参加炼蛊大会的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0027",
+      "startOffset": 2936884,
+      "endOffset": 2936890,
+      "summary": "五德门长老试图招揽方源为客卿"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0059",
+      "startOffset": 2938146,
+      "endOffset": 2938200,
+      "summary": "洪易属于众生书院，该书院有免试名额"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0064",
+      "startOffset": 2938373,
+      "endOffset": 2938421,
+      "summary": "方正是仙鹤门长老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0012",
+      "startOffset": 2936288,
+      "endOffset": 2936292,
+      "summary": "方源参加炼蛊大会入门四题，快速完成炼蛊，用时不到三分之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0028",
+      "startOffset": 2936927,
+      "endOffset": 2936931,
+      "summary": "五德门长老试图招揽方源为客卿，被方源拒绝"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0047",
+      "startOffset": 2937615,
+      "endOffset": 2937632,
+      "summary": "方源在五德门报名参加炼蛊大会，获得令牌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0833",
+      "paragraphId": "ch_0833_p0067",
+      "startOffset": 2938497,
+      "endOffset": 2938514,
+      "summary": "方源进入火德殿，参加炼蛊大会第一场，得知炼蛊内容为炼制水光蛊，数量至少一百只合格，奖励包括绿曜蛊等。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains only public/visible events: Fang Yuan registering for the Gu Refining Contest, completing the entry tests quickly, being invited by a Wude Sect elder and refusing, and entering Huode Hall. No hidden knowledge, secret motives, future-known information, or knowledge gaps are directly supported by the source text. The relations and events are all publicly observable. No actor is shown to privately know something others do not. No suitable hidden/future-known/player-visibility fact candidate can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan refusing an invitation from a Wu De Sect elder, but the observed behavior (refusing) does not provide enough direct context to infer a specific motive beyond 'he does not want to join'. The quote '区区五德门还容不下我' suggests disdain, but inferring a specific motive like 'seeking a stronger faction' or 'valuing independence' would be a psychological leap beyond one-step inference from direct context. Only behavior is visible; motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily follows individual actions of Fang Yuan (方源) - his participation in the Gu Refining Contest, his rejection of a Five Virtues Sect elder's recruitment offer. While Five Virtues Sect (五德门) appears as an organization, the seed facts show only individual-level interactions: one elder tried to recruit Fang Yuan and was rejected, Fang Yuan registered for the contest. There is no collective stake or pressure on Five Virtues Sect as a faction - the elder's dissatisfaction is personal, not a faction-wide stance. Other entities (老师傅/小徒弟 as master-apprentice pair, 洪易/众生书院, 方正/仙鹤门) are mentioned in passing with no actionable pressure dynamics. No source-backed faction pressure candidate can be extracted.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

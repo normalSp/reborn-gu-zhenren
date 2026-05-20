@@ -1,0 +1,702 @@
+{
+  "packageId": "ri_lw_ch_0014",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0014"
+    ],
+    "paragraphIds": [
+      "ch_0014_p0004",
+      "ch_0014_p0005",
+      "ch_0014_p0007",
+      "ch_0014_p0009",
+      "ch_0014_p0010",
+      "ch_0014_p0012",
+      "ch_0014_p0013",
+      "ch_0014_p0016",
+      "ch_0014_p0019",
+      "ch_0014_p0029",
+      "ch_0014_p0033",
+      "ch_0014_p0052",
+      "ch_0014_p0059",
+      "ch_0014_p0060",
+      "ch_0014_p0077",
+      "ch_0014_p0079",
+      "ch_0014_p0080"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0009",
+          "startOffset": 37002,
+          "endOffset": 37033,
+          "summary": "古月族蛊师，正在寻找花酒行者遗藏"
+        }
+      ],
+      "entityId": "entity_5559818f956d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族蛊师，正在寻找花酒行者遗藏",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0004",
+          "startOffset": 36826,
+          "endOffset": 36846,
+          "summary": "古月族史上最天才的族长，五转蛊师"
+        }
+      ],
+      "entityId": "entity_0044aa67f4df",
+      "name": "四代族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "古月族史上最天才的族长，五转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0005",
+          "startOffset": 36850,
+          "endOffset": 36912,
+          "summary": "五转蛊师魔头"
+        }
+      ],
+      "entityId": "entity_a56a3b023081",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [],
+      "description": "五转蛊师魔头",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0010",
+          "startOffset": 37037,
+          "endOffset": 37090,
+          "summary": "因失恋醉酒而意外发现遗藏的蛊师"
+        }
+      ],
+      "entityId": "entity_91189763f52b",
+      "name": "醉酒蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "因失恋醉酒而意外发现遗藏的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0033",
+          "startOffset": 37992,
+          "endOffset": 37994,
+          "summary": "转世重生者，正在尝试捕捉酒虫"
+        }
+      ],
+      "entityId": "entity_5559818f956d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "转世重生者，正在尝试捕捉酒虫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0079",
+          "startOffset": 39606,
+          "endOffset": 39638,
+          "summary": "主角，重生者"
+        }
+      ],
+      "entityId": "entity_5559818f956d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长与花酒行者激战，最终同归于尽"
+        }
+      ],
+      "relationId": "rel_7db758aabf83",
+      "subject": "四代族长",
+      "object": "花酒行者",
+      "relationType": "CONFLICT",
+      "summary": "四代族长与花酒行者激战，最终同归于尽",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产"
+        }
+      ],
+      "relationId": "rel_fe09282c726b",
+      "subject": "方源",
+      "object": "花酒行者",
+      "relationType": "USES",
+      "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0012",
+          "startOffset": 37139,
+          "endOffset": 37161,
+          "summary": "醉酒蛊师发现遗藏后禀告家族"
+        }
+      ],
+      "relationId": "rel_3f841b0286b7",
+      "subject": "醉酒蛊师",
+      "object": "古月家族",
+      "relationType": "ALLY",
+      "summary": "醉酒蛊师发现遗藏后禀告家族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长为保护族人对战花酒行者，遭偷袭后怒毙对方，自己也伤重而亡"
+        }
+      ],
+      "eventId": "evt_7a533f0f4f53",
+      "eventType": "conflict",
+      "summary": "四代族长为保护族人对战花酒行者，遭偷袭后怒毙对方，自己也伤重而亡",
+      "actors": [
+        "四代族长",
+        "花酒行者"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "四代族长和花酒行者双双死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏"
+        }
+      ],
+      "eventId": "evt_e5491ec827ed",
+      "eventType": "other",
+      "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0013",
+          "startOffset": 37165,
+          "endOffset": 37221,
+          "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追"
+        }
+      ],
+      "eventId": "evt_17e993f081ac",
+      "eventType": "discovery",
+      "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追",
+      "actors": [
+        "醉酒蛊师",
+        "古月家族"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "醉酒蛊师成为风云人物，修为提高"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0052",
+          "startOffset": 38638,
+          "endOffset": 38725,
+          "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。"
+        }
+      ],
+      "eventId": "evt_e3f615bcb71f",
+      "eventType": "cultivation",
+      "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未能捕获酒虫，消耗珍贵酒液，方源决定不再冒险。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0059",
+          "startOffset": 38961,
+          "endOffset": 38966,
+          "summary": "方源放弃转身之际，风吹云散，月光倾洒竹林，环境突变。"
+        }
+      ],
+      "eventId": "evt_e1500bd89e92",
+      "eventType": "other",
+      "summary": "方源放弃转身之际，风吹云散，月光倾洒竹林，环境突变。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "转机可能出现，但未明确。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0080",
+          "startOffset": 39642,
+          "endOffset": 39646,
+          "summary": "方源在月下竹林的青矛竹竿上发现酒虫，内心激动。"
+        }
+      ],
+      "eventId": "evt_e652db2cccd6",
+      "eventType": "appearance",
+      "summary": "方源在月下竹林的青矛竹竿上发现酒虫，内心激动。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长为保护族人对战花酒行者，遭偷袭后怒毙对方，自己也伤重而亡"
+        }
+      ],
+      "timelineId": "tl_7a533f0f4f53",
+      "eventId": "evt_7a533f0f4f53",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "四代族长为保护族人对战花酒行者，遭偷袭后怒毙对方，自己也伤重而亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏"
+        }
+      ],
+      "timelineId": "tl_e5491ec827ed",
+      "eventId": "evt_e5491ec827ed",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "方源在月下竹林探索，使用青竹酒尝试吸引酒虫以寻找花酒行者遗藏",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0013",
+          "startOffset": 37165,
+          "endOffset": 37221,
+          "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追"
+        }
+      ],
+      "timelineId": "tl_17e993f081ac",
+      "eventId": "evt_17e993f081ac",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0052",
+          "startOffset": 38638,
+          "endOffset": 38725,
+          "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。"
+        }
+      ],
+      "timelineId": "tl_e3f615bcb71f",
+      "eventId": "evt_e3f615bcb71f",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0059",
+          "startOffset": 38961,
+          "endOffset": 38966,
+          "summary": "方源放弃转身之际，风吹云散，月光倾洒竹林，环境突变。"
+        }
+      ],
+      "timelineId": "tl_e1500bd89e92",
+      "eventId": "evt_e1500bd89e92",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "方源放弃转身之际，风吹云散，月光倾洒竹林，环境突变。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0080",
+          "startOffset": 39642,
+          "endOffset": 39646,
+          "summary": "方源在月下竹林的青矛竹竿上发现酒虫，内心激动。"
+        }
+      ],
+      "timelineId": "tl_e652db2cccd6",
+      "eventId": "evt_e652db2cccd6",
+      "chapterId": "ch_0014",
+      "orderHint": "chapter-order",
+      "summary": "方源在月下竹林的青矛竹竿上发现酒虫，内心激动。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0033",
+          "startOffset": 37992,
+          "endOffset": 37994,
+          "summary": "转世重生者，正在尝试捕捉酒虫"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0029",
+          "startOffset": 37873,
+          "endOffset": 37901,
+          "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "在竹林倾倒青竹酒引诱酒虫",
+      "inferredMotive": "想通过酒虫找到花酒行者遗藏",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0007",
+          "startOffset": 36943,
+          "endOffset": 36967,
+          "summary": "四代族长与花酒行者激战，最终同归于尽"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0012",
+          "startOffset": 37139,
+          "endOffset": 37161,
+          "summary": "醉酒蛊师发现遗藏后禀告家族"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0013",
+          "startOffset": 37165,
+          "endOffset": 37221,
+          "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "古月家族",
+      "pressureAxis": "遗藏归属与传承利益",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查竹林区域",
+        "监控可疑活动"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0009",
+      "startOffset": 37002,
+      "endOffset": 37033,
+      "summary": "古月族蛊师，正在寻找花酒行者遗藏"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0004",
+      "startOffset": 36826,
+      "endOffset": 36846,
+      "summary": "古月族史上最天才的族长，五转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0005",
+      "startOffset": 36850,
+      "endOffset": 36912,
+      "summary": "五转蛊师魔头"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0010",
+      "startOffset": 37037,
+      "endOffset": 37090,
+      "summary": "因失恋醉酒而意外发现遗藏的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0033",
+      "startOffset": 37992,
+      "endOffset": 37994,
+      "summary": "转世重生者，正在尝试捕捉酒虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0079",
+      "startOffset": 39606,
+      "endOffset": 39638,
+      "summary": "主角，重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0007",
+      "startOffset": 36943,
+      "endOffset": 36967,
+      "summary": "四代族长与花酒行者激战，最终同归于尽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0029",
+      "startOffset": 37873,
+      "endOffset": 37901,
+      "summary": "方源正在搜寻花酒行者的遗藏，以获取其遗产"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0012",
+      "startOffset": 37139,
+      "endOffset": 37161,
+      "summary": "醉酒蛊师发现遗藏后禀告家族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0013",
+      "startOffset": 37165,
+      "endOffset": 37221,
+      "summary": "前世醉酒蛊师意外引来酒虫，发现花酒行者遗藏并禀告家族，获得酒虫奖励，修为提升，女友倒追"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0052",
+      "startOffset": 38638,
+      "endOffset": 38725,
+      "summary": "方源在竹林多处倾倒青竹酒，试图引诱酒虫，但多次尝试后无果，最终决定放弃。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0059",
+      "startOffset": 38961,
+      "endOffset": 38966,
+      "summary": "方源放弃转身之际，风吹云散，月光倾洒竹林，环境突变。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0080",
+      "startOffset": 39642,
+      "endOffset": 39646,
+      "summary": "方源在月下竹林的青矛竹竿上发现酒虫，内心激动。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly public/visible events (the story of the fourth clan leader vs. Flower Wine Traveler, the drunkard gu master's discovery, Fang Yuan's search). No source pointer directly supports a hidden fact that is private knowledge, a secret plan/motive, or future-known information. The closest candidate would be Fang Yuan's internal knowledge as a reincarnator (he knows the drunkard's story is unreliable), but the source pointer (ch_0014_p0009 quote '但是方源却明白，这故事不可尽信。') only shows he doubts the story — this is a subjective judgment/narrator-level thought, not a concrete hidden fact about the world. No other source supports a specific secret or knowledge gap with clear whoKnows/whoDoesNotKnow boundaries.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源拍开酒坛倾倒青竹酒（ptr_5），正在探索最后一片区域寻找遗藏（ptr_8）",
+      "inferredMotive: 从使用酒引诱酒虫+正在寻找遗藏，可合理推断他想通过酒虫定位遗藏位置",
+      "未过度推断战略意图，仅基于直接行为+直接上下文",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月家族在种子中有明确记载：四代族长曾为保护家族与花酒行者同归于尽（ptr_7），醉酒蛊师发现遗藏后禀告家族引起轰动（ptr_9），家族曾因遗藏奖励蛊师（ptr_10）。这些事实表明古月家族对花酒行者遗藏有历史利益和传承关切。方源当前正在搜寻同一遗藏，若家族得知可能产生反应。压力轴为'遗藏归属与传承利益'，属于资源/利益压力。likelyReactions为保守的一步反应：调查和监控。未添加外部势力或具体操作细节。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

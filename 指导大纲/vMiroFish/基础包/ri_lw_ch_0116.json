@@ -1,0 +1,655 @@
+{
+  "packageId": "ri_lw_ch_0116",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0116"
+    ],
+    "paragraphIds": [
+      "ch_0116_p0006",
+      "ch_0116_p0017",
+      "ch_0116_p0031",
+      "ch_0116_p0035",
+      "ch_0116_p0036",
+      "ch_0116_p0041",
+      "ch_0116_p0046",
+      "ch_0116_p0052",
+      "ch_0116_p0053",
+      "ch_0116_p0068",
+      "ch_0116_p0071",
+      "ch_0116_p0074",
+      "ch_0116_p0075",
+      "ch_0116_p0091"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0006",
+          "startOffset": 371383,
+          "endOffset": 371385,
+          "summary": "蛊师，主角"
+        }
+      ],
+      "entityId": "entity_7f949f8d44c5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0035",
+          "startOffset": 372340,
+          "endOffset": 372342,
+          "summary": "蛊师，二转中阶"
+        }
+      ],
+      "entityId": "entity_7f949f8d44c5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，二转中阶",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0036",
+          "startOffset": 372371,
+          "endOffset": 372376,
+          "summary": "猴群首领"
+        }
+      ],
+      "entityId": "entity_41f57a74e0ce",
+      "name": "玉眼石猴王",
+      "kind": "single_person_title",
+      "aliases": [
+        "石猴王"
+      ],
+      "description": "猴群首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0052",
+          "startOffset": 372968,
+          "endOffset": 372972,
+          "summary": "之前被石猴王攻击致残的蛊师"
+        }
+      ],
+      "entityId": "entity_67ea9c2abbf6",
+      "name": "古月蛮石",
+      "kind": "person",
+      "aliases": [],
+      "description": "之前被石猴王攻击致残的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0075",
+          "startOffset": 373846,
+          "endOffset": 373848,
+          "summary": "二转蛊师"
+        }
+      ],
+      "entityId": "entity_7f949f8d44c5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "二转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0071",
+          "startOffset": 373689,
+          "endOffset": 373692,
+          "summary": "百兽王"
+        }
+      ],
+      "entityId": "entity_2bb6cd6fda1c",
+      "name": "石猴王",
+      "kind": "person",
+      "aliases": [],
+      "description": "百兽王",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源与玉眼石猴王战斗，石猴王偷袭方源"
+        }
+      ],
+      "relationId": "rel_9301874cbef6",
+      "subject": "方源",
+      "object": "玉眼石猴王",
+      "relationType": "CONFLICT",
+      "summary": "方源与玉眼石猴王战斗，石猴王偷袭方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0074",
+          "startOffset": 373802,
+          "endOffset": 373804,
+          "summary": "方源被石猴王追杀，双方处于战斗状态"
+        }
+      ],
+      "relationId": "rel_57a5f94b0614",
+      "subject": "方源",
+      "object": "石猴王",
+      "relationType": "CONFLICT",
+      "summary": "方源被石猴王追杀，双方处于战斗状态",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0017",
+          "startOffset": 371771,
+          "endOffset": 371782,
+          "summary": "方源使用赤铁舍利蛊晋升二转中阶"
+        }
+      ],
+      "eventId": "evt_022b896f5488",
+      "eventType": "cultivation",
+      "summary": "方源使用赤铁舍利蛊晋升二转中阶",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源修为从二转初阶提升至二转中阶，空窍水膜增厚，真元变为绯红色"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0031",
+          "startOffset": 372203,
+          "endOffset": 372260,
+          "summary": "方源补充真元至四成四中阶绯红真元"
+        }
+      ],
+      "eventId": "evt_b5e5b31789ce",
+      "eventType": "other",
+      "summary": "方源补充真元至四成四中阶绯红真元",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "空窍真元海积蓄完成"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡"
+        }
+      ],
+      "eventId": "evt_a8520416dd99",
+      "eventType": "conflict",
+      "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+      "actors": [
+        "方源",
+        "玉眼石猴王"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源意识到石猴王有隐身蛊虫，处于下风"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0041",
+          "startOffset": 372546,
+          "endOffset": 372548,
+          "summary": "方源空窍中的春秋蝉示警，本命蛊感知到生命威胁"
+        }
+      ],
+      "eventId": "evt_8864308c86b3",
+      "eventType": "other",
+      "summary": "方源空窍中的春秋蝉示警，本命蛊感知到生命威胁",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源及时催动白玉蛊防御"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0075",
+          "startOffset": 373846,
+          "endOffset": 373848,
+          "summary": "方源晋升到中阶"
+        }
+      ],
+      "eventId": "evt_0d95cc1ce26e",
+      "eventType": "cultivation",
+      "summary": "方源晋升到中阶",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "真元量增加，能够支撑更长时间的战斗"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0075",
+          "startOffset": 373846,
+          "endOffset": 373848,
+          "summary": "石猴王利用隐身蛊虫多次偷袭方源，方源处于下风"
+        }
+      ],
+      "eventId": "evt_fdd7cb817d1d",
+      "eventType": "conflict",
+      "summary": "石猴王利用隐身蛊虫多次偷袭方源，方源处于下风",
+      "actors": [
+        "方源",
+        "石猴王"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源真元大量损耗，陷入绝境"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0068",
+          "startOffset": 373569,
+          "endOffset": 373571,
+          "summary": "石林中的石猴群因方源开辟的通道而相互入侵领地，陷入大乱斗"
+        }
+      ],
+      "eventId": "evt_5b3fcf335788",
+      "eventType": "conflict",
+      "summary": "石林中的石猴群因方源开辟的通道而相互入侵领地，陷入大乱斗",
+      "actors": [
+        "石猴群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "石林陷入大混乱，石猴群自相残杀"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0017",
+          "startOffset": 371771,
+          "endOffset": 371782,
+          "summary": "方源使用赤铁舍利蛊晋升二转中阶"
+        }
+      ],
+      "timelineId": "tl_022b896f5488",
+      "eventId": "evt_022b896f5488",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "方源使用赤铁舍利蛊晋升二转中阶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0031",
+          "startOffset": 372203,
+          "endOffset": 372260,
+          "summary": "方源补充真元至四成四中阶绯红真元"
+        }
+      ],
+      "timelineId": "tl_b5e5b31789ce",
+      "eventId": "evt_b5e5b31789ce",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "方源补充真元至四成四中阶绯红真元",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡"
+        }
+      ],
+      "timelineId": "tl_a8520416dd99",
+      "eventId": "evt_a8520416dd99",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0041",
+          "startOffset": 372546,
+          "endOffset": 372548,
+          "summary": "方源空窍中的春秋蝉示警，本命蛊感知到生命威胁"
+        }
+      ],
+      "timelineId": "tl_8864308c86b3",
+      "eventId": "evt_8864308c86b3",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "方源空窍中的春秋蝉示警，本命蛊感知到生命威胁",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0075",
+          "startOffset": 373846,
+          "endOffset": 373848,
+          "summary": "方源晋升到中阶"
+        }
+      ],
+      "timelineId": "tl_0d95cc1ce26e",
+      "eventId": "evt_0d95cc1ce26e",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "方源晋升到中阶",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0075",
+          "startOffset": 373846,
+          "endOffset": 373848,
+          "summary": "石猴王利用隐身蛊虫多次偷袭方源，方源处于下风"
+        }
+      ],
+      "timelineId": "tl_fdd7cb817d1d",
+      "eventId": "evt_fdd7cb817d1d",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "石猴王利用隐身蛊虫多次偷袭方源，方源处于下风",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0068",
+          "startOffset": 373569,
+          "endOffset": 373571,
+          "summary": "石林中的石猴群因方源开辟的通道而相互入侵领地，陷入大乱斗"
+        }
+      ],
+      "timelineId": "tl_5b3fcf335788",
+      "eventId": "evt_5b3fcf335788",
+      "chapterId": "ch_0116",
+      "orderHint": "chapter-order",
+      "summary": "石林中的石猴群因方源开辟的通道而相互入侵领地，陷入大乱斗",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0006",
+      "startOffset": 371383,
+      "endOffset": 371385,
+      "summary": "蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0035",
+      "startOffset": 372340,
+      "endOffset": 372342,
+      "summary": "蛊师，二转中阶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0036",
+      "startOffset": 372371,
+      "endOffset": 372376,
+      "summary": "猴群首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0052",
+      "startOffset": 372968,
+      "endOffset": 372972,
+      "summary": "之前被石猴王攻击致残的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0075",
+      "startOffset": 373846,
+      "endOffset": 373848,
+      "summary": "二转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0071",
+      "startOffset": 373689,
+      "endOffset": 373692,
+      "summary": "百兽王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0046",
+      "startOffset": 372712,
+      "endOffset": 372714,
+      "summary": "方源与玉眼石猴王战斗，石猴王偷袭方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0074",
+      "startOffset": 373802,
+      "endOffset": 373804,
+      "summary": "方源被石猴王追杀，双方处于战斗状态"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0017",
+      "startOffset": 371771,
+      "endOffset": 371782,
+      "summary": "方源使用赤铁舍利蛊晋升二转中阶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0031",
+      "startOffset": 372203,
+      "endOffset": 372260,
+      "summary": "方源补充真元至四成四中阶绯红真元"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0041",
+      "startOffset": 372546,
+      "endOffset": 372548,
+      "summary": "方源空窍中的春秋蝉示警，本命蛊感知到生命威胁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0116",
+      "paragraphId": "ch_0116_p0068",
+      "startOffset": 373569,
+      "endOffset": 373571,
+      "summary": "石林中的石猴群因方源开辟的通道而相互入侵领地，陷入大乱斗"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes an ongoing battle scene (Fang Yuan vs Stone Monkey King) with mostly visible/observable events. No private knowledge, secret plans, or future-known information is directly supported by the source pointers. The events (cultivation breakthrough, battle, monkey group chaos) are all publicly observable actions. No hidden fact candidate can be extracted without speculation or extrapolation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "石猴王追杀方源的行为可见（ptr_8），但动机不明。种子中只有石猴王'紧追不舍'的行为描述，以及石猴群因入侵领地而混战（ptr_12），但无法确定石猴王追杀方源的具体动机是复仇、领地防御还是其他原因。行为可见但动机模糊，不宜强行推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed event states that stone monkey groups are invading each other's territories due to the passage opened by Fang Yuan, leading to chaos. This is a collective (石猴群/stone monkey groups) pressure on territory/geography. The faction '石猴群' appears in the seed as a collective actor. The pressureAxis describes territorial invasion pressure. likelyReactions are conservative one-step simulation candidates. No individual-only pressure.",
+      "IF export filter quarantined 2 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

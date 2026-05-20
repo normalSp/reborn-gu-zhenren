@@ -1,0 +1,1389 @@
+{
+  "packageId": "ri_lw_ch_0331",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0331"
+    ],
+    "paragraphIds": [
+      "ch_0331_p0004",
+      "ch_0331_p0007",
+      "ch_0331_p0011",
+      "ch_0331_p0013",
+      "ch_0331_p0015",
+      "ch_0331_p0022",
+      "ch_0331_p0023",
+      "ch_0331_p0024",
+      "ch_0331_p0027",
+      "ch_0331_p0031",
+      "ch_0331_p0032",
+      "ch_0331_p0033",
+      "ch_0331_p0036",
+      "ch_0331_p0037",
+      "ch_0331_p0040",
+      "ch_0331_p0044",
+      "ch_0331_p0046",
+      "ch_0331_p0050",
+      "ch_0331_p0054",
+      "ch_0331_p0059",
+      "ch_0331_p0062",
+      "ch_0331_p0065",
+      "ch_0331_p0066",
+      "ch_0331_p0068",
+      "ch_0331_p0070",
+      "ch_0331_p0073",
+      "ch_0331_p0075",
+      "ch_0331_p0078",
+      "ch_0331_p0082",
+      "ch_0331_p0084",
+      "ch_0331_p0087",
+      "ch_0331_p0090"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0022",
+          "startOffset": 1147466,
+          "endOffset": 1147470,
+          "summary": "魔道蛊师三兄弟中的老大，土道三转高阶蛊师"
+        }
+      ],
+      "entityId": "entity_e797a609a5f6",
+      "name": "雄土",
+      "kind": "person",
+      "aliases": [
+        "老大"
+      ],
+      "description": "魔道蛊师三兄弟中的老大，土道三转高阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0023",
+          "startOffset": 1147503,
+          "endOffset": 1147507,
+          "summary": "魔道蛊师三兄弟中的老二，火道三转中阶蛊师"
+        }
+      ],
+      "entityId": "entity_908b3f77dbff",
+      "name": "雄火",
+      "kind": "person",
+      "aliases": [
+        "老二"
+      ],
+      "description": "魔道蛊师三兄弟中的老二，火道三转中阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0024",
+          "startOffset": 1147542,
+          "endOffset": 1147546,
+          "summary": "魔道蛊师三兄弟中的老三，风道三转初阶蛊师"
+        }
+      ],
+      "entityId": "entity_4f060bc745cf",
+      "name": "雄风",
+      "kind": "person",
+      "aliases": [
+        "老三"
+      ],
+      "description": "魔道蛊师三兄弟中的老三，风道三转初阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0015",
+          "startOffset": 1147237,
+          "endOffset": 1147241,
+          "summary": "主角，前世记忆，现帮助商心慈"
+        }
+      ],
+      "entityId": "entity_070d32a5ecf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "主角，前世记忆，现帮助商心慈",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0015",
+          "startOffset": 1147237,
+          "endOffset": 1147243,
+          "summary": "四转蛊师，与方源同行"
+        }
+      ],
+      "entityId": "entity_427e1bfdd77e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "四转蛊师，与方源同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0015",
+          "startOffset": 1147237,
+          "endOffset": 1147243,
+          "summary": "商家少主候选人，一转修为"
+        }
+      ],
+      "entityId": "entity_5e0868f1b4fa",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [],
+      "description": "商家少主候选人，一转修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0004",
+          "startOffset": 1146791,
+          "endOffset": 1146799,
+          "summary": "前世中拥有半块令牌并收服三兄弟的少年"
+        }
+      ],
+      "entityId": "entity_e3c45807c591",
+      "name": "少年摊主",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "前世中拥有半块令牌并收服三兄弟的少年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0033",
+          "startOffset": 1147978,
+          "endOffset": 1147982,
+          "summary": "商心慈的招揽者"
+        }
+      ],
+      "entityId": "entity_070d32a5ecf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "商心慈的招揽者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0033",
+          "startOffset": 1147984,
+          "endOffset": 1147988,
+          "summary": "被方源战胜的人"
+        }
+      ],
+      "entityId": "entity_3deb7a39999a",
+      "name": "巨开碑",
+      "kind": "person",
+      "aliases": [],
+      "description": "被方源战胜的人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0037",
+          "startOffset": 1148108,
+          "endOffset": 1148114,
+          "summary": "被招揽的散修"
+        }
+      ],
+      "entityId": "entity_8d6da9eddbb3",
+      "name": "雄家三兄弟",
+      "kind": "single_person_title",
+      "aliases": [
+        "雄土",
+        "雄火",
+        "雄风"
+      ],
+      "description": "被招揽的散修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0036",
+          "startOffset": 1148084,
+          "endOffset": 1148088,
+          "summary": "方源的帮手"
+        }
+      ],
+      "entityId": "entity_427e1bfdd77e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的帮手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0044",
+          "startOffset": 1148476,
+          "endOffset": 1148480,
+          "summary": "商家少主候选人"
+        }
+      ],
+      "entityId": "entity_5e0868f1b4fa",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [
+        "心慈"
+      ],
+      "description": "商家少主候选人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0044",
+          "startOffset": 1148408,
+          "endOffset": 1148410,
+          "summary": "雄家三兄弟老大"
+        }
+      ],
+      "entityId": "entity_e797a609a5f6",
+      "name": "雄土",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟老大",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0040",
+          "startOffset": 1148238,
+          "endOffset": 1148240,
+          "summary": "雄家三兄弟老三"
+        }
+      ],
+      "entityId": "entity_4f060bc745cf",
+      "name": "雄风",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟老三",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0059",
+          "startOffset": 1148962,
+          "endOffset": 1148964,
+          "summary": "雄家三兄弟老二"
+        }
+      ],
+      "entityId": "entity_908b3f77dbff",
+      "name": "雄火",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟老二",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0065",
+          "startOffset": 1149135,
+          "endOffset": 1149138,
+          "summary": "同行者"
+        }
+      ],
+      "entityId": "entity_427e1bfdd77e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "同行者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0065",
+          "startOffset": 1149140,
+          "endOffset": 1149143,
+          "summary": "商家小姐，方源招揽对象"
+        }
+      ],
+      "entityId": "entity_5e0868f1b4fa",
+      "name": "商心慈",
+      "kind": "person",
+      "aliases": [
+        "心慈小姐"
+      ],
+      "description": "商家小姐，方源招揽对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0066",
+          "startOffset": 1149164,
+          "endOffset": 1149166,
+          "summary": "主角，招揽者"
+        }
+      ],
+      "entityId": "entity_070d32a5ecf0",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑土哥哥"
+      ],
+      "description": "主角，招揽者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0073",
+          "startOffset": 1149394,
+          "endOffset": 1149396,
+          "summary": "雄家三兄弟之一"
+        }
+      ],
+      "entityId": "entity_e797a609a5f6",
+      "name": "雄土",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0073",
+          "startOffset": 1149397,
+          "endOffset": 1149399,
+          "summary": "雄家三兄弟之一"
+        }
+      ],
+      "entityId": "entity_908b3f77dbff",
+      "name": "雄火",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0073",
+          "startOffset": 1149400,
+          "endOffset": 1149402,
+          "summary": "雄家三兄弟之一"
+        }
+      ],
+      "entityId": "entity_4f060bc745cf",
+      "name": "雄风",
+      "kind": "person",
+      "aliases": [],
+      "description": "雄家三兄弟之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0078",
+          "startOffset": 1149596,
+          "endOffset": 1149599,
+          "summary": "商家五大家老之首"
+        }
+      ],
+      "entityId": "entity_b4957a136235",
+      "name": "商不离",
+      "kind": "person",
+      "aliases": [],
+      "description": "商家五大家老之首",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0087",
+          "startOffset": 1149977,
+          "endOffset": 1149980,
+          "summary": "商家高层，支持卫家政变"
+        }
+      ],
+      "entityId": "entity_c1d07b50df27",
+      "name": "商燕飞",
+      "kind": "person",
+      "aliases": [],
+      "description": "商家高层，支持卫家政变",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0084",
+          "startOffset": 1149820,
+          "endOffset": 1149824,
+          "summary": "卫家现任族长，政变上位"
+        }
+      ],
+      "entityId": "entity_b048ccffd4d7",
+      "name": "卫家族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "卫家现任族长，政变上位",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0084",
+          "startOffset": 1149820,
+          "endOffset": 1149827,
+          "summary": "政变者，现任卫家族长"
+        }
+      ],
+      "entityId": "entity_a28c075947a9",
+      "name": "卫家族长的弟弟",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "政变者，现任卫家族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0082",
+          "startOffset": 1149731,
+          "endOffset": 1149733,
+          "summary": "被提及的人物"
+        }
+      ],
+      "entityId": "entity_e870481f22db",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "被提及的人物",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0007",
+          "startOffset": 1146890,
+          "endOffset": 1146902,
+          "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年"
+        }
+      ],
+      "relationId": "rel_983584572590",
+      "subject": "雄家三兄弟",
+      "object": "少年摊主",
+      "relationType": "FAMILY",
+      "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0027",
+          "startOffset": 1147670,
+          "endOffset": 1147682,
+          "summary": "方源主动找上门，要求三兄弟辅佐商心慈"
+        }
+      ],
+      "relationId": "rel_2399f168221f",
+      "subject": "方源",
+      "object": "雄家三兄弟",
+      "relationType": "OTHER",
+      "summary": "方源主动找上门，要求三兄弟辅佐商心慈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0031",
+          "startOffset": 1147892,
+          "endOffset": 1147904,
+          "summary": "三兄弟不愿成为商心慈的属下"
+        }
+      ],
+      "relationId": "rel_2aab40e822fa",
+      "subject": "雄家三兄弟",
+      "object": "商心慈",
+      "relationType": "OTHER",
+      "summary": "三兄弟不愿成为商心慈的属下",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0037",
+          "startOffset": 1148108,
+          "endOffset": 1148138,
+          "summary": "方源以威逼方式招揽雄家三兄弟，三兄弟内心抗拒但被迫服从"
+        }
+      ],
+      "relationId": "rel_e989f2b41eb2",
+      "subject": "方源",
+      "object": "雄家三兄弟",
+      "relationType": "CONFLICT",
+      "summary": "方源以威逼方式招揽雄家三兄弟，三兄弟内心抗拒但被迫服从",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0050",
+          "startOffset": 1148707,
+          "endOffset": 1148722,
+          "summary": "雄家三兄弟被迫认商心慈为主"
+        }
+      ],
+      "relationId": "rel_77acccc94e91",
+      "subject": "雄家三兄弟",
+      "object": "商心慈",
+      "relationType": "FACTION",
+      "summary": "雄家三兄弟被迫认商心慈为主",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0046",
+          "startOffset": 1148540,
+          "endOffset": 1148580,
+          "summary": "方源帮助商心慈招揽下属"
+        }
+      ],
+      "relationId": "rel_ccce47c75caf",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "ALLY",
+      "summary": "方源帮助商心慈招揽下属",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0070",
+          "startOffset": 1149293,
+          "endOffset": 1149323,
+          "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年"
+        }
+      ],
+      "relationId": "rel_6efc2ba78641",
+      "subject": "雄家三兄弟",
+      "object": "商心慈",
+      "relationType": "ALLY",
+      "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0075",
+          "startOffset": 1149492,
+          "endOffset": 1149512,
+          "summary": "方源帮助商心慈招揽雄家三兄弟和卫家奴隶"
+        }
+      ],
+      "relationId": "rel_561002a561b0",
+      "subject": "方源",
+      "object": "商心慈",
+      "relationType": "ALLY",
+      "summary": "方源帮助商心慈招揽雄家三兄弟和卫家奴隶",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0087",
+          "startOffset": 1149977,
+          "endOffset": 1150007,
+          "summary": "商燕飞在背后支持卫家政变，卫家成为商家傀儡"
+        }
+      ],
+      "relationId": "rel_996548a114c3",
+      "subject": "商燕飞",
+      "object": "卫家",
+      "relationType": "FACTION",
+      "summary": "商燕飞在背后支持卫家政变，卫家成为商家傀儡",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0015",
+          "startOffset": 1147237,
+          "endOffset": 1147249,
+          "summary": "方源带着白凝冰和商心慈主动找上雄家三兄弟，要求他们辅佐商心慈"
+        }
+      ],
+      "eventId": "evt_401a8fcb1ab3",
+      "eventType": "other",
+      "summary": "方源带着白凝冰和商心慈主动找上雄家三兄弟，要求他们辅佐商心慈",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "商心慈",
+        "雄家三兄弟"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "三兄弟感到为难，尚未答应"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0011",
+          "startOffset": 1147047,
+          "endOffset": 1147059,
+          "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年，二十年后离去，少年不久死亡"
+        }
+      ],
+      "eventId": "evt_47b5255f7aa0",
+      "eventType": "other",
+      "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年，二十年后离去，少年不久死亡",
+      "actors": [
+        "雄家三兄弟",
+        "少年摊主"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "少年死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0054",
+          "startOffset": 1148810,
+          "endOffset": 1148840,
+          "summary": "方源以半块令牌为诱饵，迫使雄家三兄弟认商心慈为主"
+        }
+      ],
+      "eventId": "evt_ac9a61b6f233",
+      "eventType": "other",
+      "summary": "方源以半块令牌为诱饵，迫使雄家三兄弟认商心慈为主",
+      "actors": [
+        "方源",
+        "雄家三兄弟",
+        "商心慈",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "雄家三兄弟加入商心慈麾下"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0062",
+          "startOffset": 1149051,
+          "endOffset": 1149081,
+          "summary": "雄家三兄弟发现方源给的半块令牌与他们持有的半块令牌完美契合，令牌绽放火焰虚影"
+        }
+      ],
+      "eventId": "evt_4cf6030b0aa4",
+      "eventType": "other",
+      "summary": "雄家三兄弟发现方源给的半块令牌与他们持有的半块令牌完美契合，令牌绽放火焰虚影",
+      "actors": [
+        "雄家三兄弟"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "三兄弟震惊，确认令牌真实性"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0070",
+          "startOffset": 1149293,
+          "endOffset": 1149323,
+          "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年"
+        }
+      ],
+      "eventId": "evt_12aa221c0111",
+      "eventType": "other",
+      "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年",
+      "actors": [
+        "雄家三兄弟",
+        "商心慈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "商心慈获得雄家三兄弟的效忠"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0090",
+          "startOffset": 1150103,
+          "endOffset": 1150113,
+          "summary": "方源带领众人前往奴隶市场，决定购买卫家奴隶"
+        }
+      ],
+      "eventId": "evt_32ee51ff757a",
+      "eventType": "other",
+      "summary": "方源带领众人前往奴隶市场，决定购买卫家奴隶",
+      "actors": [
+        "方源",
+        "商心慈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "商心慈将购买卫家政变失败派系的族人"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0015",
+          "startOffset": 1147237,
+          "endOffset": 1147249,
+          "summary": "方源带着白凝冰和商心慈主动找上雄家三兄弟，要求他们辅佐商心慈"
+        }
+      ],
+      "timelineId": "tl_401a8fcb1ab3",
+      "eventId": "evt_401a8fcb1ab3",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "方源带着白凝冰和商心慈主动找上雄家三兄弟，要求他们辅佐商心慈",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0011",
+          "startOffset": 1147047,
+          "endOffset": 1147059,
+          "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年，二十年后离去，少年不久死亡"
+        }
+      ],
+      "timelineId": "tl_47b5255f7aa0",
+      "eventId": "evt_47b5255f7aa0",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年，二十年后离去，少年不久死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0054",
+          "startOffset": 1148810,
+          "endOffset": 1148840,
+          "summary": "方源以半块令牌为诱饵，迫使雄家三兄弟认商心慈为主"
+        }
+      ],
+      "timelineId": "tl_ac9a61b6f233",
+      "eventId": "evt_ac9a61b6f233",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "方源以半块令牌为诱饵，迫使雄家三兄弟认商心慈为主",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0062",
+          "startOffset": 1149051,
+          "endOffset": 1149081,
+          "summary": "雄家三兄弟发现方源给的半块令牌与他们持有的半块令牌完美契合，令牌绽放火焰虚影"
+        }
+      ],
+      "timelineId": "tl_4cf6030b0aa4",
+      "eventId": "evt_4cf6030b0aa4",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "雄家三兄弟发现方源给的半块令牌与他们持有的半块令牌完美契合，令牌绽放火焰虚影",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0070",
+          "startOffset": 1149293,
+          "endOffset": 1149323,
+          "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年"
+        }
+      ],
+      "timelineId": "tl_12aa221c0111",
+      "eventId": "evt_12aa221c0111",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0331",
+          "paragraphId": "ch_0331_p0090",
+          "startOffset": 1150103,
+          "endOffset": 1150113,
+          "summary": "方源带领众人前往奴隶市场，决定购买卫家奴隶"
+        }
+      ],
+      "timelineId": "tl_32ee51ff757a",
+      "eventId": "evt_32ee51ff757a",
+      "chapterId": "ch_0331",
+      "orderHint": "chapter-order",
+      "summary": "方源带领众人前往奴隶市场，决定购买卫家奴隶",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0022",
+      "startOffset": 1147466,
+      "endOffset": 1147470,
+      "summary": "魔道蛊师三兄弟中的老大，土道三转高阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0023",
+      "startOffset": 1147503,
+      "endOffset": 1147507,
+      "summary": "魔道蛊师三兄弟中的老二，火道三转中阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0024",
+      "startOffset": 1147542,
+      "endOffset": 1147546,
+      "summary": "魔道蛊师三兄弟中的老三，风道三转初阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0015",
+      "startOffset": 1147237,
+      "endOffset": 1147241,
+      "summary": "主角，前世记忆，现帮助商心慈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0015",
+      "startOffset": 1147237,
+      "endOffset": 1147243,
+      "summary": "四转蛊师，与方源同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0004",
+      "startOffset": 1146791,
+      "endOffset": 1146799,
+      "summary": "前世中拥有半块令牌并收服三兄弟的少年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0033",
+      "startOffset": 1147978,
+      "endOffset": 1147982,
+      "summary": "商心慈的招揽者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0033",
+      "startOffset": 1147984,
+      "endOffset": 1147988,
+      "summary": "被方源战胜的人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0037",
+      "startOffset": 1148108,
+      "endOffset": 1148114,
+      "summary": "被招揽的散修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0036",
+      "startOffset": 1148084,
+      "endOffset": 1148088,
+      "summary": "方源的帮手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0044",
+      "startOffset": 1148476,
+      "endOffset": 1148480,
+      "summary": "商家少主候选人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0044",
+      "startOffset": 1148408,
+      "endOffset": 1148410,
+      "summary": "雄家三兄弟老大"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0040",
+      "startOffset": 1148238,
+      "endOffset": 1148240,
+      "summary": "雄家三兄弟老三"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0059",
+      "startOffset": 1148962,
+      "endOffset": 1148964,
+      "summary": "雄家三兄弟老二"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0065",
+      "startOffset": 1149135,
+      "endOffset": 1149138,
+      "summary": "同行者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0065",
+      "startOffset": 1149140,
+      "endOffset": 1149143,
+      "summary": "商家小姐，方源招揽对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0066",
+      "startOffset": 1149164,
+      "endOffset": 1149166,
+      "summary": "主角，招揽者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0073",
+      "startOffset": 1149394,
+      "endOffset": 1149396,
+      "summary": "雄家三兄弟之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0073",
+      "startOffset": 1149397,
+      "endOffset": 1149399,
+      "summary": "雄家三兄弟之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0073",
+      "startOffset": 1149400,
+      "endOffset": 1149402,
+      "summary": "雄家三兄弟之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0078",
+      "startOffset": 1149596,
+      "endOffset": 1149599,
+      "summary": "商家五大家老之首"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0087",
+      "startOffset": 1149977,
+      "endOffset": 1149980,
+      "summary": "商家高层，支持卫家政变"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0084",
+      "startOffset": 1149820,
+      "endOffset": 1149824,
+      "summary": "卫家现任族长，政变上位"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0084",
+      "startOffset": 1149820,
+      "endOffset": 1149827,
+      "summary": "政变者，现任卫家族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0082",
+      "startOffset": 1149731,
+      "endOffset": 1149733,
+      "summary": "被提及的人物"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0007",
+      "startOffset": 1146890,
+      "endOffset": 1146902,
+      "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0027",
+      "startOffset": 1147670,
+      "endOffset": 1147682,
+      "summary": "方源主动找上门，要求三兄弟辅佐商心慈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0031",
+      "startOffset": 1147892,
+      "endOffset": 1147904,
+      "summary": "三兄弟不愿成为商心慈的属下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0037",
+      "startOffset": 1148108,
+      "endOffset": 1148138,
+      "summary": "方源以威逼方式招揽雄家三兄弟，三兄弟内心抗拒但被迫服从"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0050",
+      "startOffset": 1148707,
+      "endOffset": 1148722,
+      "summary": "雄家三兄弟被迫认商心慈为主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0046",
+      "startOffset": 1148540,
+      "endOffset": 1148580,
+      "summary": "方源帮助商心慈招揽下属"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0070",
+      "startOffset": 1149293,
+      "endOffset": 1149323,
+      "summary": "雄家三兄弟因令牌恩情认商心慈为主人，期限二十年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0075",
+      "startOffset": 1149492,
+      "endOffset": 1149512,
+      "summary": "方源帮助商心慈招揽雄家三兄弟和卫家奴隶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0087",
+      "startOffset": 1149977,
+      "endOffset": 1150007,
+      "summary": "商燕飞在背后支持卫家政变，卫家成为商家傀儡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0015",
+      "startOffset": 1147237,
+      "endOffset": 1147249,
+      "summary": "方源带着白凝冰和商心慈主动找上雄家三兄弟，要求他们辅佐商心慈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0011",
+      "startOffset": 1147047,
+      "endOffset": 1147059,
+      "summary": "前世中，三兄弟因令牌恩情认少年为主人二十年，二十年后离去，少年不久死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0054",
+      "startOffset": 1148810,
+      "endOffset": 1148840,
+      "summary": "方源以半块令牌为诱饵，迫使雄家三兄弟认商心慈为主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0062",
+      "startOffset": 1149051,
+      "endOffset": 1149081,
+      "summary": "雄家三兄弟发现方源给的半块令牌与他们持有的半块令牌完美契合，令牌绽放火焰虚影"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0331",
+      "paragraphId": "ch_0331_p0090",
+      "startOffset": 1150103,
+      "endOffset": 1150113,
+      "summary": "方源带领众人前往奴隶市场，决定购买卫家奴隶"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes visible events (Fang Yuan recruiting the Xiong brothers using half a token, the brothers recognizing the token and pledging service to Shang Xin Ci). These are public/visible interactions, not hidden knowledge. The only potentially hidden element is the past-life knowledge that the brothers served a young stall owner for 20 years due to a token debt of gratitude, but this is presented as Fang Yuan's past-life memory (narrator-level knowledge) rather than a fact that specific characters currently know or don't know. No directly supported knowledge gap, secret motive/plan, or future-known information is clearly source-backed in the provided paragraphs.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows that the Xiong brothers were forced/coerced by Fang Yuan into serving Shang Xin Ci due to the token debt. Their observed behavior is accepting the token and agreeing to serve, but their internal motive is ambiguous - they could be acting out of gratitude (token debt), fear (Fang Yuan's coercion), or pragmatic calculation. The seed does not directly support any single inferred motive with enough certainty. No clear observedMotive that is directly supported by seed facts without psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "雄家三兄弟（雄土、雄火、雄风）是魔道蛊师三兄弟，作为集体家族/团体出现在种子中。方源以半块令牌威逼他们认商心慈为主二十年，三兄弟内心抗拒但被迫服从。这构成一种继承/归属压力（被迫认主），可能引发他们暗中抗拒或伺机摆脱控制。压力轴心为'被迫认主'，属于继承/归属类压力。",
+      "IF export filter quarantined 5 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

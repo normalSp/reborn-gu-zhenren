@@ -1,0 +1,623 @@
+{
+  "packageId": "ri_lw_ch_2318",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_2318"
+    ],
+    "paragraphIds": [
+      "ch_2318_p0005",
+      "ch_2318_p0006",
+      "ch_2318_p0011",
+      "ch_2318_p0018",
+      "ch_2318_p0035",
+      "ch_2318_p0038",
+      "ch_2318_p0063",
+      "ch_2318_p0069",
+      "ch_2318_p0077",
+      "ch_2318_p0084",
+      "ch_2318_p0086",
+      "ch_2318_p0096",
+      "ch_2318_p0097",
+      "ch_2318_p0099"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0006",
+          "startOffset": 8085594,
+          "endOffset": 8085621,
+          "summary": "梦境福地的主人，拥有地灵威能和造梦手段"
+        }
+      ],
+      "entityId": "entity_cd480e5cd4f7",
+      "name": "梦求真",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境福地的主人，拥有地灵威能和造梦手段",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0035",
+          "startOffset": 8086579,
+          "endOffset": 8086631,
+          "summary": "梦境福地地灵"
+        }
+      ],
+      "entityId": "entity_cd480e5cd4f7",
+      "name": "梦求真",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境福地地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0069",
+          "startOffset": 8087887,
+          "endOffset": 8087944,
+          "summary": "方源的分身，地灵，正在探索天道梦境"
+        }
+      ],
+      "entityId": "entity_cd480e5cd4f7",
+      "name": "梦求真",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的分身，地灵，正在探索天道梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0086",
+          "startOffset": 8088458,
+          "endOffset": 8088491,
+          "summary": "梦求真的本体"
+        }
+      ],
+      "entityId": "entity_d82f01e4f508",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦求真的本体",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0097",
+          "startOffset": 8088808,
+          "endOffset": 8088811,
+          "summary": "分身，探索天道梦境"
+        }
+      ],
+      "entityId": "entity_cd480e5cd4f7",
+      "name": "梦求真",
+      "kind": "person",
+      "aliases": [],
+      "description": "分身，探索天道梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0069",
+          "startOffset": 8087887,
+          "endOffset": 8087944,
+          "summary": "梦求真是方源的分身，两者共享天道境界提升"
+        }
+      ],
+      "relationId": "rel_3e656974fcb9",
+      "subject": "梦求真",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "梦求真是方源的分身，两者共享天道境界提升",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0099",
+          "startOffset": 8088865,
+          "endOffset": 8088868,
+          "summary": "梦求真是本体的分身，依赖本体维护"
+        }
+      ],
+      "relationId": "rel_e8eec1c81c16",
+      "subject": "梦求真",
+      "object": "本体",
+      "relationType": "OTHER",
+      "summary": "梦求真是本体的分身，依赖本体维护",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0005",
+          "startOffset": 8085566,
+          "endOffset": 8085590,
+          "summary": "梦求真改造梦境福地地貌，将完整石地分散成五块大石岛和数十座小石岛，并碾碎大岛周边石地形成碎石。"
+        }
+      ],
+      "eventId": "evt_3b59a83e78a3",
+      "eventType": "cultivation",
+      "summary": "梦求真改造梦境福地地貌，将完整石地分散成五块大石岛和数十座小石岛，并碾碎大岛周边石地形成碎石。",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "福地地貌改变，为后续发展做准备。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0018",
+          "startOffset": 8085996,
+          "endOffset": 8086028,
+          "summary": "梦求真借助造梦手段凝造地刺，除杀了力道灾劫四臂凶猿。"
+        }
+      ],
+      "eventId": "evt_094910750720",
+      "eventType": "conflict",
+      "summary": "梦求真借助造梦手段凝造地刺，除杀了力道灾劫四臂凶猿。",
+      "actors": [
+        "梦求真",
+        "四臂凶猿"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "仙窍福地吸收了大部分力道道痕，梦求真得以分化完整石地。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0038",
+          "startOffset": 8086697,
+          "endOffset": 8086733,
+          "summary": "梦求真改造梦境福地中的石岛，并经历炎道灾劫（倾盆火雨劫），之后利用造梦杀招将炎道道痕集中到大岛内部形成岩浆，并产生流派模拟的明悟。"
+        }
+      ],
+      "eventId": "evt_39428953d2f0",
+      "eventType": "cultivation",
+      "summary": "梦求真改造梦境福地中的石岛，并经历炎道灾劫（倾盆火雨劫），之后利用造梦杀招将炎道道痕集中到大岛内部形成岩浆，并产生流派模拟的明悟。",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "福地地貌改变，形成岩浆地热，梦求真领悟到流派模拟的根源。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0069",
+          "startOffset": 8087887,
+          "endOffset": 8087944,
+          "summary": "梦求真在天道梦境中感悟到杀招模拟其他流派威能的道理，天道境界提升"
+        }
+      ],
+      "eventId": "evt_2bce785bada4",
+      "eventType": "other",
+      "summary": "梦求真在天道梦境中感悟到杀招模拟其他流派威能的道理，天道境界提升",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "梦求真的天道境界提升，带动本体和其他分身一同进步"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0077",
+          "startOffset": 8088206,
+          "endOffset": 8088218,
+          "summary": "梦求真思考如何加深对天地伟力的掌控，想到化沙蛊和各种杀招"
+        }
+      ],
+      "eventId": "evt_7f11f1915ffc",
+      "eventType": "other",
+      "summary": "梦求真思考如何加深对天地伟力的掌控，想到化沙蛊和各种杀招",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "梦求真对杀招和蛊虫有了新的感悟，但尚未彻底明悟"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0096",
+          "startOffset": 8088772,
+          "endOffset": 8088804,
+          "summary": "天道梦境突然剧烈震荡，梦求真催动梦甲蛊保护自己，梦境静止后他推测是尊者出手"
+        }
+      ],
+      "eventId": "evt_baa550e9be85",
+      "eventType": "other",
+      "summary": "天道梦境突然剧烈震荡，梦求真催动梦甲蛊保护自己，梦境静止后他推测是尊者出手",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "梦求真庆幸自己选择中等规模梦境且拥有梦甲蛊，否则会死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0097",
+          "startOffset": 8088808,
+          "endOffset": 8088811,
+          "summary": "梦求真在福地中遭遇灾劫壳攻击，导致之前苦功白费，福地狼藉"
+        }
+      ],
+      "eventId": "evt_af3cec0eea04",
+      "eventType": "other",
+      "summary": "梦求真在福地中遭遇灾劫壳攻击，导致之前苦功白费，福地狼藉",
+      "actors": [
+        "梦求真"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "探索受阻，灾劫壳越来越强"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0005",
+          "startOffset": 8085566,
+          "endOffset": 8085590,
+          "summary": "梦求真改造梦境福地地貌，将完整石地分散成五块大石岛和数十座小石岛，并碾碎大岛周边石地形成碎石。"
+        }
+      ],
+      "timelineId": "tl_3b59a83e78a3",
+      "eventId": "evt_3b59a83e78a3",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真改造梦境福地地貌，将完整石地分散成五块大石岛和数十座小石岛，并碾碎大岛周边石地形成碎石。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0018",
+          "startOffset": 8085996,
+          "endOffset": 8086028,
+          "summary": "梦求真借助造梦手段凝造地刺，除杀了力道灾劫四臂凶猿。"
+        }
+      ],
+      "timelineId": "tl_094910750720",
+      "eventId": "evt_094910750720",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真借助造梦手段凝造地刺，除杀了力道灾劫四臂凶猿。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0038",
+          "startOffset": 8086697,
+          "endOffset": 8086733,
+          "summary": "梦求真改造梦境福地中的石岛，并经历炎道灾劫（倾盆火雨劫），之后利用造梦杀招将炎道道痕集中到大岛内部形成岩浆，并产生流派模拟的明悟。"
+        }
+      ],
+      "timelineId": "tl_39428953d2f0",
+      "eventId": "evt_39428953d2f0",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真改造梦境福地中的石岛，并经历炎道灾劫（倾盆火雨劫），之后利用造梦杀招将炎道道痕集中到大岛内部形成岩浆，并产生流派模拟的明悟。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0069",
+          "startOffset": 8087887,
+          "endOffset": 8087944,
+          "summary": "梦求真在天道梦境中感悟到杀招模拟其他流派威能的道理，天道境界提升"
+        }
+      ],
+      "timelineId": "tl_2bce785bada4",
+      "eventId": "evt_2bce785bada4",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真在天道梦境中感悟到杀招模拟其他流派威能的道理，天道境界提升",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0077",
+          "startOffset": 8088206,
+          "endOffset": 8088218,
+          "summary": "梦求真思考如何加深对天地伟力的掌控，想到化沙蛊和各种杀招"
+        }
+      ],
+      "timelineId": "tl_7f11f1915ffc",
+      "eventId": "evt_7f11f1915ffc",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真思考如何加深对天地伟力的掌控，想到化沙蛊和各种杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0096",
+          "startOffset": 8088772,
+          "endOffset": 8088804,
+          "summary": "天道梦境突然剧烈震荡，梦求真催动梦甲蛊保护自己，梦境静止后他推测是尊者出手"
+        }
+      ],
+      "timelineId": "tl_baa550e9be85",
+      "eventId": "evt_baa550e9be85",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "天道梦境突然剧烈震荡，梦求真催动梦甲蛊保护自己，梦境静止后他推测是尊者出手",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2318",
+          "paragraphId": "ch_2318_p0097",
+          "startOffset": 8088808,
+          "endOffset": 8088811,
+          "summary": "梦求真在福地中遭遇灾劫壳攻击，导致之前苦功白费，福地狼藉"
+        }
+      ],
+      "timelineId": "tl_af3cec0eea04",
+      "eventId": "evt_af3cec0eea04",
+      "chapterId": "ch_2318",
+      "orderHint": "chapter-order",
+      "summary": "梦求真在福地中遭遇灾劫壳攻击，导致之前苦功白费，福地狼藉",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0006",
+      "startOffset": 8085594,
+      "endOffset": 8085621,
+      "summary": "梦境福地的主人，拥有地灵威能和造梦手段"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0035",
+      "startOffset": 8086579,
+      "endOffset": 8086631,
+      "summary": "梦境福地地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0069",
+      "startOffset": 8087887,
+      "endOffset": 8087944,
+      "summary": "方源的分身，地灵，正在探索天道梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0086",
+      "startOffset": 8088458,
+      "endOffset": 8088491,
+      "summary": "梦求真的本体"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0097",
+      "startOffset": 8088808,
+      "endOffset": 8088811,
+      "summary": "分身，探索天道梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0099",
+      "startOffset": 8088865,
+      "endOffset": 8088868,
+      "summary": "梦求真是本体的分身，依赖本体维护"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0005",
+      "startOffset": 8085566,
+      "endOffset": 8085590,
+      "summary": "梦求真改造梦境福地地貌，将完整石地分散成五块大石岛和数十座小石岛，并碾碎大岛周边石地形成碎石。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0018",
+      "startOffset": 8085996,
+      "endOffset": 8086028,
+      "summary": "梦求真借助造梦手段凝造地刺，除杀了力道灾劫四臂凶猿。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0038",
+      "startOffset": 8086697,
+      "endOffset": 8086733,
+      "summary": "梦求真改造梦境福地中的石岛，并经历炎道灾劫（倾盆火雨劫），之后利用造梦杀招将炎道道痕集中到大岛内部形成岩浆，并产生流派模拟的明悟。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0077",
+      "startOffset": 8088206,
+      "endOffset": 8088218,
+      "summary": "梦求真思考如何加深对天地伟力的掌控，想到化沙蛊和各种杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2318",
+      "paragraphId": "ch_2318_p0096",
+      "startOffset": 8088772,
+      "endOffset": 8088804,
+      "summary": "天道梦境突然剧烈震荡，梦求真催动梦甲蛊保护自己，梦境静止后他推测是尊者出手"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes mostly visible/ordinary events of 梦求真's cultivation activities (modifying terrain, killing a calamity beast, experiencing fire tribulation, gaining insights). The only potentially hidden element is 梦求真's speculation that the sudden tremor in the Heavenly Dao dream was caused by a venerable (尊者出手) — but this is explicitly presented as his internal guess/speculation (推测), not a narrator-level fact. The seed does not directly support who knows this or who does not know it. No other private knowledge, secret plans, or future-known information is directly supported by the source material.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed describes 梦求真's actions (modifying terrain, killing calamities, experiencing tribulations, exploring dream realms) but the observed behaviors are primarily cultivation/exploration activities without clear interpersonal or strategic motives. The character is a clone/earth spirit of 方源, acting in a maintenance and exploration capacity. No clear observed motive with direct source support for a specific inferred motive beyond general cultivation goals. The seed shows 梦求真 feeling '成就感' (sense of achievement) after terrain modification (ptr_1), and worrying about being maintained by the本体 (ptr_6), but these are internal states rather than observable motives toward other characters. Cannot confidently extract a character motive candidate from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses entirely on 梦求真 (Meng Qiuzhen), an individual person/avatar/earth spirit of Fang Yuan. No named collective actor (faction, clan, family, group, organization) appears in the seed entities, relations, or events. 梦求真 is a single person (a doppelganger/earth spirit), not a faction or group. The '梦境福地' (Dreamland Blessed Land) is a location, not a named collective actor with agency. No family, clan, faction, team, shop, hall, or organization is mentioned. Cannot extract a faction/group pressure candidate from purely individual cultivation events.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

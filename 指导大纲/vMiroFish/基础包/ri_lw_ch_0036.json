@@ -1,0 +1,505 @@
+{
+  "packageId": "ri_lw_ch_0036",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0036"
+    ],
+    "paragraphIds": [
+      "ch_0036_p0002",
+      "ch_0036_p0005",
+      "ch_0036_p0023",
+      "ch_0036_p0031",
+      "ch_0036_p0036",
+      "ch_0036_p0050",
+      "ch_0036_p0051",
+      "ch_0036_p0058",
+      "ch_0036_p0060",
+      "ch_0036_p0065"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0002",
+          "startOffset": 102162,
+          "endOffset": 102176,
+          "summary": "主角，十五岁少年，一转初阶蛊师，但拥有中阶真元，冷酷果决"
+        }
+      ],
+      "entityId": "entity_1b6487a45b6b",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，十五岁少年，一转初阶蛊师，但拥有中阶真元，冷酷果决",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0005",
+          "startOffset": 102290,
+          "endOffset": 102321,
+          "summary": "漠家漠颜大小姐的家奴，强壮成年人，被方源斩杀"
+        }
+      ],
+      "entityId": "entity_301ab5ec0bf2",
+      "name": "高碗",
+      "kind": "person",
+      "aliases": [],
+      "description": "漠家漠颜大小姐的家奴，强壮成年人，被方源斩杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0023",
+          "startOffset": 103132,
+          "endOffset": 103147,
+          "summary": "漠家大小姐"
+        }
+      ],
+      "entityId": "entity_86f47fb5142d",
+      "name": "漠颜",
+      "kind": "person",
+      "aliases": [],
+      "description": "漠家大小姐",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0051",
+          "startOffset": 103976,
+          "endOffset": 104019,
+          "summary": "疑似方源曾用身份或关联人物，与酒虫有关"
+        }
+      ],
+      "entityId": "entity_1bbd29f51f38",
+      "name": "花酒行者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "疑似方源曾用身份或关联人物，与酒虫有关",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0065",
+          "startOffset": 104421,
+          "endOffset": 104435,
+          "summary": "拖尸者，持刀，震慑侍卫"
+        }
+      ],
+      "entityId": "entity_0dc25dfd15c1",
+      "name": "unknown_man_with_knife",
+      "kind": "person",
+      "aliases": [],
+      "description": "拖尸者，持刀，震慑侍卫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0031",
+          "startOffset": 103380,
+          "endOffset": 103419,
+          "summary": "敌对，方源最终杀死高碗"
+        }
+      ],
+      "relationId": "rel_163a78db4d6f",
+      "subject": "方源",
+      "object": "高碗",
+      "relationType": "CONFLICT",
+      "summary": "敌对，方源最终杀死高碗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0023",
+          "startOffset": 103132,
+          "endOffset": 103147,
+          "summary": "高碗是漠颜的家奴"
+        }
+      ],
+      "relationId": "rel_6540ca64f005",
+      "subject": "高碗",
+      "object": "漠颜",
+      "relationType": "FAMILY",
+      "summary": "高碗是漠颜的家奴",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0058",
+          "startOffset": 104245,
+          "endOffset": 104260,
+          "summary": "侍卫忌惮方源，听从其命令"
+        }
+      ],
+      "relationId": "rel_0806d57129cd",
+      "subject": "方源",
+      "object": "学堂侍卫",
+      "relationType": "OTHER",
+      "summary": "侍卫忌惮方源，听从其命令",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0036",
+          "startOffset": 103542,
+          "endOffset": 103555,
+          "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗"
+        }
+      ],
+      "eventId": "evt_9937318c0e48",
+      "eventType": "conflict",
+      "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗",
+      "actors": [
+        "方源",
+        "高碗"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "高碗死亡，方源隐藏中阶真元秘密的意图暴露风险增加"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0060",
+          "startOffset": 104287,
+          "endOffset": 104313,
+          "summary": "方源向侍卫索要刀，侍卫服从"
+        }
+      ],
+      "eventId": "evt_fde0ccb58829",
+      "eventType": "other",
+      "summary": "方源向侍卫索要刀，侍卫服从",
+      "actors": [
+        "方源",
+        "学堂侍卫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得刀，可能用于处理证据"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0065",
+          "startOffset": 104421,
+          "endOffset": 104435,
+          "summary": "未知持刀者拖着无头尸体走过，震慑了后面的侍卫们。"
+        }
+      ],
+      "eventId": "evt_b366973f62b8",
+      "eventType": "conflict",
+      "summary": "未知持刀者拖着无头尸体走过，震慑了后面的侍卫们。",
+      "actors": [
+        "unknown_man_with_knife",
+        "侍卫们"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "侍卫们感到恐惧和寒意。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0036",
+          "startOffset": 103542,
+          "endOffset": 103555,
+          "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗"
+        }
+      ],
+      "timelineId": "tl_9937318c0e48",
+      "eventId": "evt_9937318c0e48",
+      "chapterId": "ch_0036",
+      "orderHint": "chapter-order",
+      "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0060",
+          "startOffset": 104287,
+          "endOffset": 104313,
+          "summary": "方源向侍卫索要刀，侍卫服从"
+        }
+      ],
+      "timelineId": "tl_fde0ccb58829",
+      "eventId": "evt_fde0ccb58829",
+      "chapterId": "ch_0036",
+      "orderHint": "chapter-order",
+      "summary": "方源向侍卫索要刀，侍卫服从",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0065",
+          "startOffset": 104421,
+          "endOffset": 104435,
+          "summary": "未知持刀者拖着无头尸体走过，震慑了后面的侍卫们。"
+        }
+      ],
+      "timelineId": "tl_b366973f62b8",
+      "eventId": "evt_b366973f62b8",
+      "chapterId": "ch_0036",
+      "orderHint": "chapter-order",
+      "summary": "未知持刀者拖着无头尸体走过，震慑了后面的侍卫们。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0051",
+          "startOffset": 103976,
+          "endOffset": 104019,
+          "summary": "疑似方源曾用身份或关联人物，与酒虫有关"
+        }
+      ],
+      "factId": "hf_0036_001",
+      "summary": "方源拥有酒虫，且酒虫会让人联想到花酒行者这一身份",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "medium"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0005",
+          "startOffset": 102290,
+          "endOffset": 102321,
+          "summary": "漠家漠颜大小姐的家奴，强壮成年人，被方源斩杀"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0023",
+          "startOffset": 103132,
+          "endOffset": 103147,
+          "summary": "漠家大小姐"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0036",
+          "paragraphId": "ch_0036_p0036",
+          "startOffset": 103542,
+          "endOffset": 103555,
+          "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗"
+        }
+      ],
+      "pressureId": "pressure_001",
+      "faction": "漠家",
+      "pressureAxis": "家奴被杀",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查方源"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0002",
+      "startOffset": 102162,
+      "endOffset": 102176,
+      "summary": "主角，十五岁少年，一转初阶蛊师，但拥有中阶真元，冷酷果决"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0005",
+      "startOffset": 102290,
+      "endOffset": 102321,
+      "summary": "漠家漠颜大小姐的家奴，强壮成年人，被方源斩杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0023",
+      "startOffset": 103132,
+      "endOffset": 103147,
+      "summary": "漠家大小姐"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0051",
+      "startOffset": 103976,
+      "endOffset": 104019,
+      "summary": "疑似方源曾用身份或关联人物，与酒虫有关"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0065",
+      "startOffset": 104421,
+      "endOffset": 104435,
+      "summary": "拖尸者，持刀，震慑侍卫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0031",
+      "startOffset": 103380,
+      "endOffset": 103419,
+      "summary": "敌对，方源最终杀死高碗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0058",
+      "startOffset": 104245,
+      "endOffset": 104260,
+      "summary": "侍卫忌惮方源，听从其命令"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0036",
+      "startOffset": 103542,
+      "endOffset": 103555,
+      "summary": "方源与高碗打斗，先肉搏后动用月光蛊，最终用月刃斩首高碗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0036",
+      "paragraphId": "ch_0036_p0060",
+      "startOffset": 104287,
+      "endOffset": 104313,
+      "summary": "方源向侍卫索要刀，侍卫服从"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly states that if the wine worm (酒虫) appears, family高层 would associate it with 花酒行者. This implies Fang Yuan possesses or has access to the wine worm, and that 花酒行者 is a known identity/alias linked to it. This is private knowledge (Fang Yuan's secret) not visible to ordinary observers. The fact is atomic: Fang Yuan has the wine worm, and the wine worm triggers association with 花酒行者. Confidence is medium because the quote is suggestive but does not explicitly confirm Fang Yuan currently possesses the wine worm.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan killing Gao Wan (observed action), but the motive is ambiguous. Possible motives could include silencing a witness to protect his mid-rank true essence secret, or eliminating a threat in a fight. However, the seed does not directly state his internal motive or strategic intent. Only behavior is visible; motive is ambiguous. Cannot safely infer a specific motive without psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "漠家（漠颜）的家奴高碗被方源斩杀，漠家作为家族势力有理由关注此事。但种子中漠家本身未直接出场，仅通过家奴高碗提及，压力推断合理但证据较间接。",
+      "likelyReactions仅设为'调查方源'，保守一步反应。",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

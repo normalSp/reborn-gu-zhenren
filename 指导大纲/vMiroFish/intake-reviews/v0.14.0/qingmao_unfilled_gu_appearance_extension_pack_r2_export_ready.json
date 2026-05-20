@@ -1,0 +1,952 @@
+﻿{
+  "packId": "qingmao_unfilled_gu_appearance_extension_pack_r2",
+  "packVersion": "r2",
+  "previousPackId": "qingmao_unfilled_gu_appearance_pack",
+  "version": 1,
+  "requestId": "qingmao_unfilled_gu_appearance_extension_pack_r2",
+  "targetPhase": "v0.15 D4/D6 art closure for four atlas-pending Qingmao Gu",
+  "generatedAt": "2026-05-17T18:34:59.951890+00:00",
+  "suggestedOutputName": "qingmao_unfilled_gu_appearance_extension_pack_r2_export_ready.json",
+  "windowExpansion": [
+    "vol1_late_chapters_130_200",
+    "vol1_late_chapters_380_400",
+    "vol2_early_chapters_401_600"
+  ],
+  "extractionFocus": "appearance_only",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "paragraphIndex": "uploads\\ri_corpus\\paragraphs.jsonl"
+  },
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "artAuthority": "candidate_seed_only"
+  },
+  "items": [
+    {
+      "id": "gu_appearance_extension_swirl-gu",
+      "guId": "swirl-gu",
+      "zhName": "漩涡蛊",
+      "category": "gu_appearance_evidence_extension",
+      "summary": "扩展窗口没有精确命中漩涡蛊；可疑原文锚是白凝冰同时催动旋踵蛊、狂风蛊并形成旋转白色风暴。可作为旋转/转向类效果显化候选，但不是虫体本体外观。",
+      "shape_hints": [
+        "rotating white storm manifestation",
+        "whirling movement effect",
+        "body form still unconfirmed"
+      ],
+      "color_hints": [
+        "white storm effect",
+        "ice/wind context"
+      ],
+      "ability_hints": [
+        "rotation support candidate",
+        "movement/turning support candidate",
+        "part of Bai Ning Bing combination technique"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "漩涡蛊",
+        "source_name_candidates": [
+          "旋踵蛊",
+          "狂风蛊"
+        ],
+        "en_name_candidates": [
+          "Swirl Gu",
+          "Whirling Heel Gu",
+          "Cyclone/Wild Wind Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "windowTier": "vol1_late",
+      "windowTiers": [
+        "vol1_late"
+      ],
+      "windowIds": [
+        "vol1_late_chapters_130_200"
+      ],
+      "evidenceStatus": "direct_appearance_partial",
+      "confidence": "medium",
+      "scanResult": {
+        "requestedExactHitCount": 0,
+        "aliasOrEffectHitCount": 21,
+        "termCountsByWindow": {
+          "漩涡蛊": {
+            "vol1_late_chapters_130_200": 0,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "旋踵蛊": {
+            "vol1_late_chapters_130_200": 2,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "狂风蛊": {
+            "vol1_late_chapters_130_200": 2,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "白色风暴": {
+            "vol1_late_chapters_130_200": 3,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "旋转": {
+            "vol1_late_chapters_130_200": 3,
+            "vol1_late_chapters_380_400": 1,
+            "vol2_early_chapters_401_600": 10
+          }
+        }
+      },
+      "sourcePointerIds": [
+        "sp_b6a90ff8ed8e",
+        "sp_1b7bb615b614",
+        "sp_544d7ba21550",
+        "sp_1175a53487b1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0003",
+          "startOffset": 557991,
+          "endOffset": 557994,
+          "summary": "Alias candidate: Bai Ning Bing activates a heel/turning Gu in the target late-volume window.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_b6a90ff8ed8e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0003",
+          "startOffset": 557995,
+          "endOffset": 557998,
+          "summary": "Companion wind Gu appears in the same activation and may explain the requested swirl/wind helper row.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_1b7bb615b614"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0008",
+          "startOffset": 558180,
+          "endOffset": 558184,
+          "summary": "Effect-appearance evidence: the combined technique manifests as a rotating white storm, not a confirmed Gu body.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_544d7ba21550"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0025",
+          "startOffset": 558673,
+          "endOffset": 558677,
+          "summary": "Effect-appearance evidence: the combined technique manifests as a rotating white storm, not a confirmed Gu body.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_1175a53487b1"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release",
+        "v0.15_runtime_rules"
+      ],
+      "riskTags": [
+        "requested_name_not_exact_hit",
+        "alias_requires_review",
+        "effect_manifestation_only",
+        "body_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence_extension-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish appearance-extension mapper",
+          "effect manifestations and alias matches are not confirmed body descriptions",
+          "candidate-only; requires RebornG intake review before art or atlas use"
+        ],
+        "updatedAt": "2026-05-17T18:34:59.895853+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence_extension",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_extension_fierce-wind-gu",
+      "guId": "fierce-wind-gu",
+      "zhName": "烈风蛊",
+      "category": "gu_appearance_evidence_extension",
+      "summary": "扩展窗口没有精确命中烈风蛊；可疑原文锚是狂风蛊参与冰刃风暴，显化为狂风、剑刃冰封、白色旋转风暴。可给风切锐利感和白色风暴效果，但虫体形态仍缺。",
+      "shape_hints": [
+        "sharp wind-and-blade storm manifestation",
+        "large rotating storm mass",
+        "body form still unconfirmed"
+      ],
+      "color_hints": [
+        "white storm effect",
+        "ice-blue nearby battle effect"
+      ],
+      "ability_hints": [
+        "wind attack/support candidate",
+        "combined with ice blade effect",
+        "offense-defense combined technique"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "烈风蛊",
+        "source_name_candidates": [
+          "狂风蛊"
+        ],
+        "en_name_candidates": [
+          "Fierce Wind Gu",
+          "Wild Wind Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "windowTier": "vol1_late",
+      "windowTiers": [
+        "vol1_late"
+      ],
+      "windowIds": [
+        "vol1_late_chapters_130_200"
+      ],
+      "evidenceStatus": "direct_appearance_partial",
+      "confidence": "medium",
+      "scanResult": {
+        "requestedExactHitCount": 0,
+        "aliasOrEffectHitCount": 57,
+        "termCountsByWindow": {
+          "烈风蛊": {
+            "vol1_late_chapters_130_200": 0,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "狂风蛊": {
+            "vol1_late_chapters_130_200": 2,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "狂风": {
+            "vol1_late_chapters_130_200": 4,
+            "vol1_late_chapters_380_400": 1,
+            "vol2_early_chapters_401_600": 17
+          },
+          "白色风暴": {
+            "vol1_late_chapters_130_200": 3,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "风刃": {
+            "vol1_late_chapters_130_200": 0,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 30
+          }
+        }
+      },
+      "sourcePointerIds": [
+        "sp_1b7bb615b614",
+        "sp_178655eb39b0",
+        "sp_16aff26c7728",
+        "sp_544d7ba21550"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0003",
+          "startOffset": 557995,
+          "endOffset": 557998,
+          "summary": "Alias/source candidate: a wild-wind Gu is part of Bai Ning Bing's target-window combination.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_1b7bb615b614"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0007",
+          "startOffset": 558127,
+          "endOffset": 558130,
+          "summary": "Alias/source candidate: a wild-wind Gu is part of Bai Ning Bing's target-window combination.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_178655eb39b0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0008",
+          "startOffset": 558170,
+          "endOffset": 558174,
+          "summary": "Effect-appearance evidence: roaring wind and frozen blades form a rotating white storm.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_16aff26c7728"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0008",
+          "startOffset": 558180,
+          "endOffset": 558184,
+          "summary": "Effect-appearance evidence supports a restrained white windstorm prompt seed, not a body description.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_544d7ba21550"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release",
+        "v0.15_runtime_rules"
+      ],
+      "riskTags": [
+        "requested_name_not_exact_hit",
+        "alias_requires_review",
+        "effect_manifestation_only",
+        "body_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence_extension-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish appearance-extension mapper",
+          "effect manifestations and alias matches are not confirmed body descriptions",
+          "candidate-only; requires RebornG intake review before art or atlas use"
+        ],
+        "updatedAt": "2026-05-17T18:34:59.914302+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence_extension",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_extension_lightning-eye-gu",
+      "guId": "lightning-eye-gu",
+      "zhName": "雷眼蛊",
+      "category": "gu_appearance_evidence_extension",
+      "summary": "扩展窗口没有精确命中雷眼蛊；可疑原文锚是电眼蛊。它是三转侦察/破隐蛊，白凝冰使用时眼中出现电芒；这回答了'眼'与雷光呈现方式，但本体虫形仍未给出。",
+      "shape_hints": [
+        "eye-linked manifestation",
+        "body form still unconfirmed"
+      ],
+      "color_hints": [
+        "electric glint in eyes",
+        "thunder/electric visual cue"
+      ],
+      "ability_hints": [
+        "scouting",
+        "detects hidden form",
+        "sight range under obstruction"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "雷眼蛊",
+        "source_name_candidates": [
+          "电眼蛊"
+        ],
+        "en_name_candidates": [
+          "Electric Eye Gu",
+          "Lightning Eye Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "windowTier": "vol1_late",
+      "windowTiers": [
+        "vol1_late"
+      ],
+      "windowIds": [
+        "vol1_late_chapters_130_200"
+      ],
+      "evidenceStatus": "direct_appearance_partial",
+      "confidence": "high",
+      "scanResult": {
+        "requestedExactHitCount": 0,
+        "aliasOrEffectHitCount": 18,
+        "termCountsByWindow": {
+          "雷眼蛊": {
+            "vol1_late_chapters_130_200": 0,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "电眼蛊": {
+            "vol1_late_chapters_130_200": 9,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "电芒": {
+            "vol1_late_chapters_130_200": 6,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 2
+          },
+          "雷霆之威": {
+            "vol1_late_chapters_130_200": 1,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          }
+        }
+      },
+      "sourcePointerIds": [
+        "sp_01f39ee51c6c",
+        "sp_d7d4edddcdb4",
+        "sp_f49001e6ad0e",
+        "sp_84897c7e58d8"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0132",
+          "paragraphId": "ch_0132_p0076",
+          "startOffset": 431961,
+          "endOffset": 431964,
+          "summary": "Alias/source candidate: the target-window text names an eye-based electric scouting Gu.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_01f39ee51c6c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0075",
+          "startOffset": 560263,
+          "endOffset": 560269,
+          "summary": "Effect-appearance evidence: electric light appears in the user's eyes, not as a confirmed Gu body.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_d7d4edddcdb4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0076",
+          "startOffset": 560278,
+          "endOffset": 560281,
+          "summary": "Alias/source candidate: the target-window text names an eye-based electric scouting Gu.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_f49001e6ad0e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0168",
+          "paragraphId": "ch_0168_p0076",
+          "startOffset": 560285,
+          "endOffset": 560289,
+          "summary": "Function evidence: the Gu borrows thunder power to reveal hidden forms.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_84897c7e58d8"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release",
+        "v0.15_runtime_rules"
+      ],
+      "riskTags": [
+        "requested_name_not_exact_hit",
+        "alias_requires_review",
+        "effect_manifestation_only",
+        "body_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence_extension-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish appearance-extension mapper",
+          "effect manifestations and alias matches are not confirmed body descriptions",
+          "candidate-only; requires RebornG intake review before art or atlas use"
+        ],
+        "updatedAt": "2026-05-17T18:34:59.931971+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence_extension",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_extension_raise-eyebrows-exhale-gu",
+      "guId": "raise-eyebrows-exhale-gu",
+      "zhName": "扬眉吐气蛊",
+      "category": "gu_appearance_evidence_extension",
+      "summary": "扩展窗口仍只在第一卷晚期命中名称、元气逸散、空窍桥接和白色光圈/双眼催动等气场线索；没有虫体、眉形或口器描写。可作为概念/气场 prompt seed，不宜做实体标本。",
+      "shape_hints": [
+        "white aura/circle nearby the user",
+        "bridge-like aperture-link effect",
+        "body form not described"
+      ],
+      "color_hints": [
+        "white light circle effect"
+      ],
+      "ability_hints": [
+        "exhales/expels vital energy",
+        "links apertures",
+        "accelerates essence drain"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "扬眉吐气蛊",
+        "source_name_candidates": [
+          "扬眉吐气蛊"
+        ],
+        "en_name_candidates": [
+          "Raise Eyebrows and Exhale Gu",
+          "Breathe Out Vitality Gu"
+        ],
+        "needs_human_check": false
+      },
+      "visibility": "public",
+      "windowTier": "vol1_late",
+      "windowTiers": [
+        "vol1_late"
+      ],
+      "windowIds": [
+        "vol1_late_chapters_130_200"
+      ],
+      "evidenceStatus": "direct_appearance_partial",
+      "confidence": "medium",
+      "scanResult": {
+        "requestedExactHitCount": 7,
+        "aliasOrEffectHitCount": 48,
+        "termCountsByWindow": {
+          "扬眉吐气蛊": {
+            "vol1_late_chapters_130_200": 7,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "白色光圈": {
+            "vol1_late_chapters_130_200": 5,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 0
+          },
+          "桥梁": {
+            "vol1_late_chapters_130_200": 1,
+            "vol1_late_chapters_380_400": 0,
+            "vol2_early_chapters_401_600": 1
+          },
+          "元气": {
+            "vol1_late_chapters_130_200": 20,
+            "vol1_late_chapters_380_400": 1,
+            "vol2_early_chapters_401_600": 20
+          }
+        }
+      },
+      "sourcePointerIds": [
+        "sp_c59affe10a18",
+        "sp_716b1cca44fb",
+        "sp_02cae89037f4",
+        "sp_5f8ff03ab14b",
+        "sp_2257260f8e9e",
+        "sp_5b24f0d77753"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0034",
+          "startOffset": 466223,
+          "endOffset": 466225,
+          "summary": "Function evidence: the effect expels vital energy rather than ordinary breath.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_c59affe10a18"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0192",
+          "paragraphId": "ch_0192_p0075",
+          "startOffset": 646105,
+          "endOffset": 646109,
+          "summary": "Nearby aura evidence for Lord Sky Crane's visible defensive/casting context; not confirmed as this Gu body.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_716b1cca44fb"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0056",
+          "startOffset": 649663,
+          "endOffset": 649668,
+          "summary": "Direct source-name evidence in the first-volume late window.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_02cae89037f4"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0057",
+          "startOffset": 649694,
+          "endOffset": 649699,
+          "summary": "Direct source-name evidence in the first-volume late window.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_5f8ff03ab14b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0059",
+          "startOffset": 649797,
+          "endOffset": 649803,
+          "summary": "Concept/effect evidence: the Gu links apertures like a bridge; body remains undescribed.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_2257260f8e9e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0048",
+          "startOffset": 652270,
+          "endOffset": 652274,
+          "summary": "Casting gesture evidence; supports caution about eyebrow/eye imagery being user action rather than body form.",
+          "sourcePointerKind": "original_text",
+          "windowId": "vol1_late_chapters_130_200",
+          "windowTier": "vol1_late",
+          "sourcePointerId": "sp_5b24f0d77753"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release",
+        "v0.15_runtime_rules"
+      ],
+      "riskTags": [
+        "conceptual_gu",
+        "effect_manifestation_only",
+        "body_missing",
+        "not_specimen_body_ready"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence_extension-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish appearance-extension mapper",
+          "effect manifestations and alias matches are not confirmed body descriptions",
+          "candidate-only; requires RebornG intake review before art or atlas use"
+        ],
+        "updatedAt": "2026-05-17T18:34:59.951890+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence_extension",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0132",
+      "paragraphId": "ch_0132_p0076",
+      "startOffset": 431961,
+      "endOffset": 431964,
+      "summary": "Alias/source candidate: the target-window text names an eye-based electric scouting Gu.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_01f39ee51c6c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0056",
+      "startOffset": 649663,
+      "endOffset": 649668,
+      "summary": "Direct source-name evidence in the first-volume late window.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_02cae89037f4"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0025",
+      "startOffset": 558673,
+      "endOffset": 558677,
+      "summary": "Effect-appearance evidence: the combined technique manifests as a rotating white storm, not a confirmed Gu body.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_1175a53487b1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0008",
+      "startOffset": 558170,
+      "endOffset": 558174,
+      "summary": "Effect-appearance evidence: roaring wind and frozen blades form a rotating white storm.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_16aff26c7728"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0007",
+      "startOffset": 558127,
+      "endOffset": 558130,
+      "summary": "Alias/source candidate: a wild-wind Gu is part of Bai Ning Bing's target-window combination.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_178655eb39b0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0003",
+      "startOffset": 557995,
+      "endOffset": 557998,
+      "summary": "Alias/source candidate: a wild-wind Gu is part of Bai Ning Bing's target-window combination.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_1b7bb615b614"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0059",
+      "startOffset": 649797,
+      "endOffset": 649803,
+      "summary": "Concept/effect evidence: the Gu links apertures like a bridge; body remains undescribed.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_2257260f8e9e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0008",
+      "startOffset": 558180,
+      "endOffset": 558184,
+      "summary": "Effect-appearance evidence supports a restrained white windstorm prompt seed, not a body description.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_544d7ba21550"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0194",
+      "paragraphId": "ch_0194_p0048",
+      "startOffset": 652270,
+      "endOffset": 652274,
+      "summary": "Casting gesture evidence; supports caution about eyebrow/eye imagery being user action rather than body form.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_5b24f0d77753"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0057",
+      "startOffset": 649694,
+      "endOffset": 649699,
+      "summary": "Direct source-name evidence in the first-volume late window.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_5f8ff03ab14b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0192",
+      "paragraphId": "ch_0192_p0075",
+      "startOffset": 646105,
+      "endOffset": 646109,
+      "summary": "Nearby aura evidence for Lord Sky Crane's visible defensive/casting context; not confirmed as this Gu body.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_716b1cca44fb"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0076",
+      "startOffset": 560285,
+      "endOffset": 560289,
+      "summary": "Function evidence: the Gu borrows thunder power to reveal hidden forms.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_84897c7e58d8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0003",
+      "startOffset": 557991,
+      "endOffset": 557994,
+      "summary": "Alias candidate: Bai Ning Bing activates a heel/turning Gu in the target late-volume window.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_b6a90ff8ed8e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0142",
+      "paragraphId": "ch_0142_p0034",
+      "startOffset": 466223,
+      "endOffset": 466225,
+      "summary": "Function evidence: the effect expels vital energy rather than ordinary breath.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_c59affe10a18"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0075",
+      "startOffset": 560263,
+      "endOffset": 560269,
+      "summary": "Effect-appearance evidence: electric light appears in the user's eyes, not as a confirmed Gu body.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_d7d4edddcdb4"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0168",
+      "paragraphId": "ch_0168_p0076",
+      "startOffset": 560278,
+      "endOffset": 560281,
+      "summary": "Alias/source candidate: the target-window text names an eye-based electric scouting Gu.",
+      "sourcePointerKind": "original_text",
+      "windowId": "vol1_late_chapters_130_200",
+      "windowTier": "vol1_late",
+      "sourcePointerId": "sp_f49001e6ad0e"
+    }
+  ],
+  "coverageMatrix": {
+    "requestedRows": 4,
+    "deliveredRows": 4,
+    "rowsWithSourcePointers": 4,
+    "rowsWithRequestedExactNameHits": 1,
+    "rowsWithAliasOrEffectHits": 4,
+    "directAppearanceOrPartialRows": 4,
+    "evidenceStatusCounts": {
+      "direct_appearance_partial": 4
+    },
+    "pointerWindowTierCounts": {
+      "vol1_late": 18
+    },
+    "completionGate": {
+      "status": "conditional_complete_candidate",
+      "passesRequestThreshold": true,
+      "strictExactNamePass": false,
+      "notes": [
+        "passesRequestThreshold is alias/effect-aware and does not mean body-form confirmation",
+        "strictExactNamePass remains false because only 扬眉吐气蛊 has an exact requested-name hit",
+        "second-volume 401-600 scan added no accepted source-name/body anchors for these four rows"
+      ]
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "totalItems": 4,
+    "requestedRows": 4,
+    "coveredRows": 4,
+    "directAppearanceOrPartialRows": 4,
+    "rowsWithRequestedExactNameHits": 1,
+    "rowsWithAliasOrEffectHits": 4,
+    "sourcePointers": 16,
+    "forbiddenFieldKeyCount": 0,
+    "highRankLeakTerms": [],
+    "hiddenFactItems": 0,
+    "skipped": 0
+  }
+}

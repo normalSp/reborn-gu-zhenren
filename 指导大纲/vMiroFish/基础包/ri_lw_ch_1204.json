@@ -1,0 +1,979 @@
+{
+  "packageId": "ri_lw_ch_1204",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1204"
+    ],
+    "paragraphIds": [
+      "ch_1204_p0002",
+      "ch_1204_p0004",
+      "ch_1204_p0006",
+      "ch_1204_p0011",
+      "ch_1204_p0017",
+      "ch_1204_p0019",
+      "ch_1204_p0024",
+      "ch_1204_p0025",
+      "ch_1204_p0030",
+      "ch_1204_p0032",
+      "ch_1204_p0033",
+      "ch_1204_p0039",
+      "ch_1204_p0041",
+      "ch_1204_p0042",
+      "ch_1204_p0047",
+      "ch_1204_p0051",
+      "ch_1204_p0056",
+      "ch_1204_p0057",
+      "ch_1204_p0064",
+      "ch_1204_p0065",
+      "ch_1204_p0067",
+      "ch_1204_p0071",
+      "ch_1204_p0075",
+      "ch_1204_p0076"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0002",
+          "startOffset": 4258565,
+          "endOffset": 4258567,
+          "summary": "主角，琅琊派成员"
+        }
+      ],
+      "entityId": "entity_06ad0e62d9f5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，琅琊派成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0017",
+          "startOffset": 4259188,
+          "endOffset": 4259192,
+          "summary": "琅琊派地灵，太上大长老"
+        }
+      ],
+      "entityId": "entity_e00cd87a5761",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [
+        "太上大长老"
+      ],
+      "description": "琅琊派地灵，太上大长老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0025",
+          "startOffset": 4259589,
+          "endOffset": 4259591,
+          "summary": "羽民蛊仙，被方源所杀"
+        }
+      ],
+      "entityId": "entity_67a3be0aae3b",
+      "name": "郑灵",
+      "kind": "person",
+      "aliases": [
+        "羽民蛊仙"
+      ],
+      "description": "羽民蛊仙，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0025",
+          "startOffset": 4259601,
+          "endOffset": 4259605,
+          "summary": "蛊仙，被方源所杀"
+        }
+      ],
+      "entityId": "entity_11ee139f1019",
+      "name": "雪松子",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0032",
+          "startOffset": 4259802,
+          "endOffset": 4259807,
+          "summary": "蛊仙，被方源所杀"
+        }
+      ],
+      "entityId": "entity_6b1d2adcf79d",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0033",
+          "startOffset": 4259847,
+          "endOffset": 4259872,
+          "summary": "六转蛊仙，投靠异人"
+        }
+      ],
+      "entityId": "entity_06ad0e62d9f5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "六转蛊仙，投靠异人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0033",
+          "startOffset": 4259847,
+          "endOffset": 4259872,
+          "summary": "琅琊福地地灵，创建琅琊派"
+        }
+      ],
+      "entityId": "entity_e00cd87a5761",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊福地地灵，创建琅琊派",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0041",
+          "startOffset": 4260127,
+          "endOffset": 4260175,
+          "summary": "魔尊，被提及与方源比较"
+        }
+      ],
+      "entityId": "entity_1c273b3eecb2",
+      "name": "幽魂魔尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔尊，被提及与方源比较",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0047",
+          "startOffset": 4260430,
+          "endOffset": 4260466,
+          "summary": "中古时代人物，三十万年前"
+        }
+      ],
+      "entityId": "entity_d7963bcb6bdb",
+      "name": "长毛老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "中古时代人物，三十万年前",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0056",
+          "startOffset": 4260801,
+          "endOffset": 4260809,
+          "summary": "毛民蛊仙，正在炼蛊"
+        }
+      ],
+      "entityId": "entity_74a9cf6cedbe",
+      "name": "毛十二",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民蛊仙，正在炼蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0065",
+          "startOffset": 4261071,
+          "endOffset": 4261073,
+          "summary": "毛民蛊仙，炼道兼修奴道"
+        }
+      ],
+      "entityId": "entity_74a9cf6cedbe",
+      "name": "毛十二",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民蛊仙，炼道兼修奴道",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0067",
+          "startOffset": 4261224,
+          "endOffset": 4261226,
+          "summary": "八转战力，提供仙材炼制我意蛊"
+        }
+      ],
+      "entityId": "entity_06ad0e62d9f5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转战力，提供仙材炼制我意蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0017",
+          "startOffset": 4259188,
+          "endOffset": 4259192,
+          "summary": "方源向琅琊地灵出售蛊仙魂魄，换取贡献"
+        }
+      ],
+      "relationId": "rel_2a864bf545fe",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源向琅琊地灵出售蛊仙魂魄，换取贡献",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0004",
+          "startOffset": 4258611,
+          "endOffset": 4258615,
+          "summary": "石人一族对胆识蛊需求迫切，但琅琊派主要将胆识蛊销售到宝黄天"
+        }
+      ],
+      "relationId": "rel_952b92df808f",
+      "subject": "琅琊派",
+      "object": "石人一族",
+      "relationType": "TRADE",
+      "summary": "石人一族对胆识蛊需求迫切，但琅琊派主要将胆识蛊销售到宝黄天",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0006",
+          "startOffset": 4258705,
+          "endOffset": 4258709,
+          "summary": "琅琊派将胆识蛊销售到宝黄天，换取仙元石、仙材等资源"
+        }
+      ],
+      "relationId": "rel_633ff017d2fe",
+      "subject": "琅琊派",
+      "object": "宝黄天",
+      "relationType": "TRADE",
+      "summary": "琅琊派将胆识蛊销售到宝黄天，换取仙元石、仙材等资源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0024",
+          "startOffset": 4259574,
+          "endOffset": 4259576,
+          "summary": "方源杀死了羽民蛊仙郑灵"
+        }
+      ],
+      "relationId": "rel_ca0a4469602c",
+      "subject": "方源",
+      "object": "郑灵",
+      "relationType": "CONFLICT",
+      "summary": "方源杀死了羽民蛊仙郑灵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0042",
+          "startOffset": 4260179,
+          "endOffset": 4260282,
+          "summary": "方源向琅琊地灵贡献蛊仙魂魄、修行经验、蛊方等，换取门派贡献"
+        }
+      ],
+      "relationId": "rel_182acb9e345c",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源向琅琊地灵贡献蛊仙魂魄、修行经验、蛊方等，换取门派贡献",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0039",
+          "startOffset": 4260040,
+          "endOffset": 4260080,
+          "summary": "方源投靠琅琊派，成为其成员"
+        }
+      ],
+      "relationId": "rel_1e0d9321ab13",
+      "subject": "方源",
+      "object": "琅琊派",
+      "relationType": "FACTION",
+      "summary": "方源投靠琅琊派，成为其成员",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0051",
+          "startOffset": 4260603,
+          "endOffset": 4260669,
+          "summary": "现任琅琊地灵与上一任不同，上一任只对炼蛊感兴趣，现任野心勃勃创建琅琊派"
+        }
+      ],
+      "relationId": "rel_30f8defe5195",
+      "subject": "琅琊地灵",
+      "object": "上一任琅琊地灵",
+      "relationType": "OTHER",
+      "summary": "现任琅琊地灵与上一任不同，上一任只对炼蛊感兴趣，现任野心勃勃创建琅琊派",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0067",
+          "startOffset": 4261224,
+          "endOffset": 4261226,
+          "summary": "方源用门派贡献和仙材吸引毛民蛊仙炼制我意蛊"
+        }
+      ],
+      "relationId": "rel_95bdb96aae61",
+      "subject": "方源",
+      "object": "毛民蛊仙",
+      "relationType": "TRADE",
+      "summary": "方源用门派贡献和仙材吸引毛民蛊仙炼制我意蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0075",
+          "startOffset": 4261578,
+          "endOffset": 4261580,
+          "summary": "毛十二是琅琊派蛊仙，借用奴兽仙蛊需支付门派贡献"
+        }
+      ],
+      "relationId": "rel_89a29877bfa4",
+      "subject": "毛十二",
+      "object": "琅琊派",
+      "relationType": "FACTION",
+      "summary": "毛十二是琅琊派蛊仙，借用奴兽仙蛊需支付门派贡献",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0030",
+          "startOffset": 4259755,
+          "endOffset": 4259757,
+          "summary": "方源向琅琊地灵出售多个蛊仙魂魄，包括雪松子、郑灵、东方长凡等，换取贡献"
+        }
+      ],
+      "eventId": "evt_ca8f2d07eff1",
+      "eventType": "trade",
+      "summary": "方源向琅琊地灵出售多个蛊仙魂魄，包括雪松子、郑灵、东方长凡等，换取贡献",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得大量贡献，琅琊派获得魂魄用于提高胆识蛊产量"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0019",
+          "startOffset": 4259362,
+          "endOffset": 4259364,
+          "summary": "方源表示将前往参加血战武斗大会，无暇分身去太丘"
+        }
+      ],
+      "eventId": "evt_a9a0d7a72540",
+      "eventType": "other",
+      "summary": "方源表示将前往参加血战武斗大会，无暇分身去太丘",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太丘开发可能暂时放缓"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0042",
+          "startOffset": 4260179,
+          "endOffset": 4260282,
+          "summary": "方源向琅琊地灵大量贡献蛊仙魂魄、修行经验、蛊方、杀招、地图等，换取门派贡献"
+        }
+      ],
+      "eventId": "evt_85aef29d1512",
+      "eventType": "trade",
+      "summary": "方源向琅琊地灵大量贡献蛊仙魂魄、修行经验、蛊方、杀招、地图等，换取门派贡献",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源的门派贡献暴涨"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0057",
+          "startOffset": 4260813,
+          "endOffset": 4260847,
+          "summary": "毛十二炼蛊出现失误，受到反噬，但最终成功炼出上百只我意蛊"
+        }
+      ],
+      "eventId": "evt_c0fa03488d90",
+      "eventType": "other",
+      "summary": "毛十二炼蛊出现失误，受到反噬，但最终成功炼出上百只我意蛊",
+      "actors": [
+        "毛十二"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "毛十二受伤，但炼蛊成功"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0067",
+          "startOffset": 4261224,
+          "endOffset": 4261226,
+          "summary": "方源提供门派贡献和仙材，吸引毛民蛊仙炼制我意蛊"
+        }
+      ],
+      "eventId": "evt_904cb9533dbc",
+      "eventType": "trade",
+      "summary": "方源提供门派贡献和仙材，吸引毛民蛊仙炼制我意蛊",
+      "actors": [
+        "方源",
+        "毛民蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "毛民蛊仙对方源态度改善，从鄙夷反感变为崇敬敬服"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0071",
+          "startOffset": 4261422,
+          "endOffset": 4261424,
+          "summary": "毛十二连续炼制我意蛊十一次，精神消耗大，出现失误后自残弥补"
+        }
+      ],
+      "eventId": "evt_efcffcfca549",
+      "eventType": "cultivation",
+      "summary": "毛十二连续炼制我意蛊十一次，精神消耗大，出现失误后自残弥补",
+      "actors": [
+        "毛十二"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "毛十二决定休息养伤，继续接取炼制任务赚取仙元石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0030",
+          "startOffset": 4259755,
+          "endOffset": 4259757,
+          "summary": "方源向琅琊地灵出售多个蛊仙魂魄，包括雪松子、郑灵、东方长凡等，换取贡献"
+        }
+      ],
+      "timelineId": "tl_ca8f2d07eff1",
+      "eventId": "evt_ca8f2d07eff1",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "方源向琅琊地灵出售多个蛊仙魂魄，包括雪松子、郑灵、东方长凡等，换取贡献",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0019",
+          "startOffset": 4259362,
+          "endOffset": 4259364,
+          "summary": "方源表示将前往参加血战武斗大会，无暇分身去太丘"
+        }
+      ],
+      "timelineId": "tl_a9a0d7a72540",
+      "eventId": "evt_a9a0d7a72540",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "方源表示将前往参加血战武斗大会，无暇分身去太丘",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0042",
+          "startOffset": 4260179,
+          "endOffset": 4260282,
+          "summary": "方源向琅琊地灵大量贡献蛊仙魂魄、修行经验、蛊方、杀招、地图等，换取门派贡献"
+        }
+      ],
+      "timelineId": "tl_85aef29d1512",
+      "eventId": "evt_85aef29d1512",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "方源向琅琊地灵大量贡献蛊仙魂魄、修行经验、蛊方、杀招、地图等，换取门派贡献",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0057",
+          "startOffset": 4260813,
+          "endOffset": 4260847,
+          "summary": "毛十二炼蛊出现失误，受到反噬，但最终成功炼出上百只我意蛊"
+        }
+      ],
+      "timelineId": "tl_c0fa03488d90",
+      "eventId": "evt_c0fa03488d90",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "毛十二炼蛊出现失误，受到反噬，但最终成功炼出上百只我意蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0067",
+          "startOffset": 4261224,
+          "endOffset": 4261226,
+          "summary": "方源提供门派贡献和仙材，吸引毛民蛊仙炼制我意蛊"
+        }
+      ],
+      "timelineId": "tl_904cb9533dbc",
+      "eventId": "evt_904cb9533dbc",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "方源提供门派贡献和仙材，吸引毛民蛊仙炼制我意蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0071",
+          "startOffset": 4261422,
+          "endOffset": 4261424,
+          "summary": "毛十二连续炼制我意蛊十一次，精神消耗大，出现失误后自残弥补"
+        }
+      ],
+      "timelineId": "tl_efcffcfca549",
+      "eventId": "evt_efcffcfca549",
+      "chapterId": "ch_1204",
+      "orderHint": "chapter-order",
+      "summary": "毛十二连续炼制我意蛊十一次，精神消耗大，出现失误后自残弥补",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1204",
+          "paragraphId": "ch_1204_p0004",
+          "startOffset": 4258611,
+          "endOffset": 4258615,
+          "summary": "石人一族对胆识蛊需求迫切，但琅琊派主要将胆识蛊销售到宝黄天"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "石人一族",
+      "pressureAxis": "胆识蛊供应不足",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "向琅琊派施压要求增加供应",
+        "寻找替代资源"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0002",
+      "startOffset": 4258565,
+      "endOffset": 4258567,
+      "summary": "主角，琅琊派成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0017",
+      "startOffset": 4259188,
+      "endOffset": 4259192,
+      "summary": "琅琊派地灵，太上大长老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0025",
+      "startOffset": 4259589,
+      "endOffset": 4259591,
+      "summary": "羽民蛊仙，被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0025",
+      "startOffset": 4259601,
+      "endOffset": 4259605,
+      "summary": "蛊仙，被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0032",
+      "startOffset": 4259802,
+      "endOffset": 4259807,
+      "summary": "蛊仙，被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0033",
+      "startOffset": 4259847,
+      "endOffset": 4259872,
+      "summary": "六转蛊仙，投靠异人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0041",
+      "startOffset": 4260127,
+      "endOffset": 4260175,
+      "summary": "魔尊，被提及与方源比较"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0047",
+      "startOffset": 4260430,
+      "endOffset": 4260466,
+      "summary": "中古时代人物，三十万年前"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0056",
+      "startOffset": 4260801,
+      "endOffset": 4260809,
+      "summary": "毛民蛊仙，正在炼蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0065",
+      "startOffset": 4261071,
+      "endOffset": 4261073,
+      "summary": "毛民蛊仙，炼道兼修奴道"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0067",
+      "startOffset": 4261224,
+      "endOffset": 4261226,
+      "summary": "八转战力，提供仙材炼制我意蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0004",
+      "startOffset": 4258611,
+      "endOffset": 4258615,
+      "summary": "石人一族对胆识蛊需求迫切，但琅琊派主要将胆识蛊销售到宝黄天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0006",
+      "startOffset": 4258705,
+      "endOffset": 4258709,
+      "summary": "琅琊派将胆识蛊销售到宝黄天，换取仙元石、仙材等资源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0024",
+      "startOffset": 4259574,
+      "endOffset": 4259576,
+      "summary": "方源杀死了羽民蛊仙郑灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0042",
+      "startOffset": 4260179,
+      "endOffset": 4260282,
+      "summary": "方源向琅琊地灵贡献蛊仙魂魄、修行经验、蛊方等，换取门派贡献"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0039",
+      "startOffset": 4260040,
+      "endOffset": 4260080,
+      "summary": "方源投靠琅琊派，成为其成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0051",
+      "startOffset": 4260603,
+      "endOffset": 4260669,
+      "summary": "现任琅琊地灵与上一任不同，上一任只对炼蛊感兴趣，现任野心勃勃创建琅琊派"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0075",
+      "startOffset": 4261578,
+      "endOffset": 4261580,
+      "summary": "毛十二是琅琊派蛊仙，借用奴兽仙蛊需支付门派贡献"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0030",
+      "startOffset": 4259755,
+      "endOffset": 4259757,
+      "summary": "方源向琅琊地灵出售多个蛊仙魂魄，包括雪松子、郑灵、东方长凡等，换取贡献"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0019",
+      "startOffset": 4259362,
+      "endOffset": 4259364,
+      "summary": "方源表示将前往参加血战武斗大会，无暇分身去太丘"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0057",
+      "startOffset": 4260813,
+      "endOffset": 4260847,
+      "summary": "毛十二炼蛊出现失误，受到反噬，但最终成功炼出上百只我意蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1204",
+      "paragraphId": "ch_1204_p0071",
+      "startOffset": 4261422,
+      "endOffset": 4261424,
+      "summary": "毛十二连续炼制我意蛊十一次，精神消耗大，出现失误后自残弥补"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily contains ordinary visible events: Fang Yuan trading Gu Immortal souls to Lang Ya land spirit, selling courage Gu, Mao Twelve refining My Will Gu. These are public/open transactions and cultivation activities visible to participants. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the seed. The events and relations are all described as observable interactions between characters, not hidden facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan trading immortal souls, experience, and recipes for contribution points, but the observed behavior (trading) is transactional and the underlying motive is ambiguous. While one could infer he wants to accumulate contribution points, the deeper strategic purpose (why he needs contribution) is not directly supported by the seed facts. No clear one-step inference from observed action to motive without psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "石人一族作为集体 faction 出现在种子中（ptr_12），明确提到对胆识蛊需求迫切，而琅琊派主要将胆识蛊销售到宝黄天，形成供应压力。石人一族是北部冰原地下的异人种族，属于集体 actor。压力轴合理，likelyReactions 为保守的一步反应。",
+      "IF export filter quarantined 8 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

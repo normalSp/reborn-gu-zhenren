@@ -1,0 +1,50 @@
+{
+  "name": "MiroFish fullbook strict/reviewable base packages for RebornG intake",
+  "scope": "ri_lw_ch_0001 through ri_lw_ch_2340",
+  "chapterPackages": 2340,
+  "runtimeAuthority": "candidate_only",
+  "canonAuthority": "human_review_required",
+  "runtimeVisible": false,
+  "deepSeekVisible": false,
+  "quoteRedacted": true,
+  "redaction": {
+    "sourceDir": "D:\\workspace\\CodeBuddyWorkSpace\\2026-05-12-task-1\\MiroFish\\backend\\uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_2340_reviewable",
+    "destDir": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\指导大纲\\vMiroFish\\基础包",
+    "chaptersWritten": 2340,
+    "reviewNoteStringsRedacted": 25,
+    "nonChapterFilesWritten": [
+      "coverage_report.json"
+    ],
+    "removedForbiddenFieldCounts": [
+      {
+        "fieldName": "excerpt",
+        "removedCount": 0
+      },
+      {
+        "fieldName": "originalText",
+        "removedCount": 0
+      },
+      {
+        "fieldName": "quote",
+        "removedCount": 162625
+      },
+      {
+        "fieldName": "rawText",
+        "removedCount": 0
+      },
+      {
+        "fieldName": "sourceText",
+        "removedCount": 0
+      },
+      {
+        "fieldName": "verbatim",
+        "removedCount": 0
+      }
+    ]
+  },
+  "notes": [
+    "These files are RebornG candidate material only, not canon and not runtime authority.",
+    "Do not expose hiddenFacts or hidden-adjacent content to player-visible text or DeepSeek runtime context without a separate RebornG intake rewrite.",
+    "Use sourcePointer ids, chapterId, paragraphId, startOffset, and endOffset for audit; source quote strings have been removed."
+  ]
+}

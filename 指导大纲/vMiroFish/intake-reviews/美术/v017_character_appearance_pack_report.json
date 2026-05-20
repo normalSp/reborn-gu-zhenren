@@ -1,0 +1,51 @@
+{
+  "schema": "reborng.mirofish.art-intake-report.v1",
+  "requestId": "mirofish-request-2026-05-18-v017-character-appearance-pack",
+  "packageKey": "v017_character_appearance",
+  "generatedAt": "2026-05-18T04:21:11.796603+00:00",
+  "requestedPaths": [
+    "指导大纲/vMiroFish/requests/v0.16.0/2026-05-18-v016-battle-scene-composition-anchor-pack.md",
+    "指导大纲/vMiroFish/requests/v0.17.0/2026-05-18-v017-region-appearance-pack.md",
+    "指导大纲/vMiroFish/requests/v0.17.0/2026-05-18-v017-character-appearance-pack.md",
+    "指导大纲/vMiroFish/intake-reviews/v0.14.0/2026-05-18-art-roadmap-mirofish-intake-and-request-summary.md"
+  ],
+  "deliveryStatus": "conditional_complete_candidate",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "coverage": {
+    "itemCount": 10,
+    "skippedCount": 1,
+    "sourcePointerCount": 29,
+    "evidenceStatusCounts": {
+      "direct": 3,
+      "direct_partial": 7
+    }
+  },
+  "qualityGates": {
+    "jsonParseable": true,
+    "sourcePointersPresentForAllItems": true,
+    "missingPointerItems": [],
+    "forbiddenTextKeyCount": 0,
+    "sensitiveLeakTermCount": 0,
+    "gateErrorCount": 0,
+    "gateErrors": []
+  },
+  "caveats": [
+    "0001-0600 is enough for a reviewable candidate pack for Qingmao/Shang-city-facing roles.",
+    "Long Gong has no usable public appearance signal in this window and is deferred.",
+    "Some generic NPC representatives are templates and need art-director scope freeze."
+  ],
+  "skipped": [
+    {
+      "id": "long-gong",
+      "requestedRole": "character_appearance_evidence",
+      "recommendedStatus": "deferred",
+      "reason": "No public appearance signal found in the 0001-0600 strict/reviewable base.",
+      "handling": "Do not create an art asset from later or hidden material in this delivery."
+    }
+  ]
+}

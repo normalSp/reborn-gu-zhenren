@@ -1,0 +1,643 @@
+{
+  "packageId": "ri_lw_ch_0439",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0439"
+    ],
+    "paragraphIds": [
+      "ch_0439_p0031",
+      "ch_0439_p0035",
+      "ch_0439_p0038",
+      "ch_0439_p0040",
+      "ch_0439_p0042",
+      "ch_0439_p0046",
+      "ch_0439_p0047",
+      "ch_0439_p0051",
+      "ch_0439_p0063",
+      "ch_0439_p0064",
+      "ch_0439_p0065",
+      "ch_0439_p0066",
+      "ch_0439_p0070",
+      "ch_0439_p0071",
+      "ch_0439_p0076",
+      "ch_0439_p0081",
+      "ch_0439_p0091",
+      "ch_0439_p0097"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0035",
+          "startOffset": 1525963,
+          "endOffset": 1525965,
+          "summary": "奴道蛊师，主角"
+        }
+      ],
+      "entityId": "entity_b10546faf9ad",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "奴道蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0063",
+          "startOffset": 1527153,
+          "endOffset": 1527155,
+          "summary": "已死之人"
+        }
+      ],
+      "entityId": "entity_ed6aaff1c811",
+      "name": "葛谣",
+      "kind": "person",
+      "aliases": [],
+      "description": "已死之人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0065",
+          "startOffset": 1527204,
+          "endOffset": 1527247,
+          "summary": "穿越者、重生者，四转巅峰修为"
+        }
+      ],
+      "entityId": "entity_b10546faf9ad",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "常山阴"
+      ],
+      "description": "穿越者、重生者，四转巅峰修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0065",
+          "startOffset": 1527204,
+          "endOffset": 1527247,
+          "summary": "葛家大小姐，热恋方源（伪装常山阴）"
+        }
+      ],
+      "entityId": "entity_ed6aaff1c811",
+      "name": "葛谣",
+      "kind": "person",
+      "aliases": [],
+      "description": "葛家大小姐，热恋方源（伪装常山阴）",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0076",
+          "startOffset": 1527672,
+          "endOffset": 1527694,
+          "summary": "蛮家二公子，迷恋葛谣美色"
+        }
+      ],
+      "entityId": "entity_4b5f334cdc1f",
+      "name": "蛮多",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛮家二公子，迷恋葛谣美色",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0097",
+          "startOffset": 1528508,
+          "endOffset": 1528509,
+          "summary": "朝圣者，追求永生"
+        }
+      ],
+      "entityId": "entity_362d8e203a1c",
+      "name": "他",
+      "kind": "person",
+      "aliases": [],
+      "description": "朝圣者，追求永生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0047",
+          "startOffset": 1526517,
+          "endOffset": 1526544,
+          "summary": "方源使用驭狼蛊奴役驼狼作为坐骑"
+        }
+      ],
+      "relationId": "rel_e5afb3a3402f",
+      "subject": "方源",
+      "object": "驼狼",
+      "relationType": "USES",
+      "summary": "方源使用驭狼蛊奴役驼狼作为坐骑",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0042",
+          "startOffset": 1526249,
+          "endOffset": 1526304,
+          "summary": "方源指挥毒须狼群战斗"
+        }
+      ],
+      "relationId": "rel_60c5d57b3ebc",
+      "subject": "方源",
+      "object": "毒须狼群",
+      "relationType": "USES",
+      "summary": "方源指挥毒须狼群战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0066",
+          "startOffset": 1527251,
+          "endOffset": 1527277,
+          "summary": "方源认为葛谣知道太多，是必杀目标，且其爱恋带来麻烦，最终杀害葛谣"
+        }
+      ],
+      "relationId": "rel_15fbba450960",
+      "subject": "方源",
+      "object": "葛谣",
+      "relationType": "CONFLICT",
+      "summary": "方源认为葛谣知道太多，是必杀目标，且其爱恋带来麻烦，最终杀害葛谣",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0071",
+          "startOffset": 1527517,
+          "endOffset": 1527549,
+          "summary": "葛谣热恋伪装成常山阴的方源"
+        }
+      ],
+      "relationId": "rel_2520e7ef1808",
+      "subject": "葛谣",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "葛谣热恋伪装成常山阴的方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0076",
+          "startOffset": 1527672,
+          "endOffset": 1527694,
+          "summary": "蛮多迷恋葛谣美色"
+        }
+      ],
+      "relationId": "rel_7e060e16aba1",
+      "subject": "蛮多",
+      "object": "葛谣",
+      "relationType": "OTHER",
+      "summary": "蛮多迷恋葛谣美色",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0031",
+          "startOffset": 1525854,
+          "endOffset": 1525882,
+          "summary": "驼狼捕猎灰兔，最终成功，但返回巢穴发现母驼狼和幼崽已死。"
+        }
+      ],
+      "eventId": "evt_3960acb4ff4f",
+      "eventType": "other",
+      "summary": "驼狼捕猎灰兔，最终成功，但返回巢穴发现母驼狼和幼崽已死。",
+      "actors": [],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "驼狼的配偶和后代死亡。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0040",
+          "startOffset": 1526174,
+          "endOffset": 1526197,
+          "summary": "方源指挥毒须狼群围攻驼狼，意图活捉"
+        }
+      ],
+      "eventId": "evt_ce60bf57d2c8",
+      "eventType": "conflict",
+      "summary": "方源指挥毒须狼群围攻驼狼，意图活捉",
+      "actors": [
+        "方源",
+        "驼狼",
+        "毒须狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "驼狼被奴役"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0038",
+          "startOffset": 1526094,
+          "endOffset": 1526140,
+          "summary": "方源杀死母狼和幼崽"
+        }
+      ],
+      "eventId": "evt_5e30f2fcea2d",
+      "eventType": "death",
+      "summary": "方源杀死母狼和幼崽",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "获得二转驭狼蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0064",
+          "startOffset": 1527172,
+          "endOffset": 1527200,
+          "summary": "方源杀死葛谣"
+        }
+      ],
+      "eventId": "evt_424ff3ee6f9f",
+      "eventType": "death",
+      "summary": "方源杀死葛谣",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛谣死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0081",
+          "startOffset": 1527896,
+          "endOffset": 1527935,
+          "summary": "方源在腐毒草原外围杀害葛谣，并令毒须狼分食，用葬魂蟾处理魂魄，消除痕迹"
+        }
+      ],
+      "eventId": "evt_a3b80a2d048d",
+      "eventType": "death",
+      "summary": "方源在腐毒草原外围杀害葛谣，并令毒须狼分食，用葬魂蟾处理魂魄，消除痕迹",
+      "actors": [
+        "方源",
+        "葛谣"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "葛谣彻底消失，方源消除隐患"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0031",
+          "startOffset": 1525854,
+          "endOffset": 1525882,
+          "summary": "驼狼捕猎灰兔，最终成功，但返回巢穴发现母驼狼和幼崽已死。"
+        }
+      ],
+      "timelineId": "tl_3960acb4ff4f",
+      "eventId": "evt_3960acb4ff4f",
+      "chapterId": "ch_0439",
+      "orderHint": "chapter-order",
+      "summary": "驼狼捕猎灰兔，最终成功，但返回巢穴发现母驼狼和幼崽已死。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0040",
+          "startOffset": 1526174,
+          "endOffset": 1526197,
+          "summary": "方源指挥毒须狼群围攻驼狼，意图活捉"
+        }
+      ],
+      "timelineId": "tl_ce60bf57d2c8",
+      "eventId": "evt_ce60bf57d2c8",
+      "chapterId": "ch_0439",
+      "orderHint": "chapter-order",
+      "summary": "方源指挥毒须狼群围攻驼狼，意图活捉",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0038",
+          "startOffset": 1526094,
+          "endOffset": 1526140,
+          "summary": "方源杀死母狼和幼崽"
+        }
+      ],
+      "timelineId": "tl_5e30f2fcea2d",
+      "eventId": "evt_5e30f2fcea2d",
+      "chapterId": "ch_0439",
+      "orderHint": "chapter-order",
+      "summary": "方源杀死母狼和幼崽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0064",
+          "startOffset": 1527172,
+          "endOffset": 1527200,
+          "summary": "方源杀死葛谣"
+        }
+      ],
+      "timelineId": "tl_424ff3ee6f9f",
+      "eventId": "evt_424ff3ee6f9f",
+      "chapterId": "ch_0439",
+      "orderHint": "chapter-order",
+      "summary": "方源杀死葛谣",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0439",
+          "paragraphId": "ch_0439_p0081",
+          "startOffset": 1527896,
+          "endOffset": 1527935,
+          "summary": "方源在腐毒草原外围杀害葛谣，并令毒须狼分食，用葬魂蟾处理魂魄，消除痕迹"
+        }
+      ],
+      "timelineId": "tl_a3b80a2d048d",
+      "eventId": "evt_a3b80a2d048d",
+      "chapterId": "ch_0439",
+      "orderHint": "chapter-order",
+      "summary": "方源在腐毒草原外围杀害葛谣，并令毒须狼分食，用葬魂蟾处理魂魄，消除痕迹",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0035",
+      "startOffset": 1525963,
+      "endOffset": 1525965,
+      "summary": "奴道蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0063",
+      "startOffset": 1527153,
+      "endOffset": 1527155,
+      "summary": "已死之人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0065",
+      "startOffset": 1527204,
+      "endOffset": 1527247,
+      "summary": "穿越者、重生者，四转巅峰修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0076",
+      "startOffset": 1527672,
+      "endOffset": 1527694,
+      "summary": "蛮家二公子，迷恋葛谣美色"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0097",
+      "startOffset": 1528508,
+      "endOffset": 1528509,
+      "summary": "朝圣者，追求永生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0047",
+      "startOffset": 1526517,
+      "endOffset": 1526544,
+      "summary": "方源使用驭狼蛊奴役驼狼作为坐骑"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0042",
+      "startOffset": 1526249,
+      "endOffset": 1526304,
+      "summary": "方源指挥毒须狼群战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0066",
+      "startOffset": 1527251,
+      "endOffset": 1527277,
+      "summary": "方源认为葛谣知道太多，是必杀目标，且其爱恋带来麻烦，最终杀害葛谣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0071",
+      "startOffset": 1527517,
+      "endOffset": 1527549,
+      "summary": "葛谣热恋伪装成常山阴的方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0031",
+      "startOffset": 1525854,
+      "endOffset": 1525882,
+      "summary": "驼狼捕猎灰兔，最终成功，但返回巢穴发现母驼狼和幼崽已死。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0040",
+      "startOffset": 1526174,
+      "endOffset": 1526197,
+      "summary": "方源指挥毒须狼群围攻驼狼，意图活捉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0038",
+      "startOffset": 1526094,
+      "endOffset": 1526140,
+      "summary": "方源杀死母狼和幼崽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0064",
+      "startOffset": 1527172,
+      "endOffset": 1527200,
+      "summary": "方源杀死葛谣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0439",
+      "paragraphId": "ch_0439_p0081",
+      "startOffset": 1527896,
+      "endOffset": 1527935,
+      "summary": "方源在腐毒草原外围杀害葛谣，并令毒须狼分食，用葬魂蟾处理魂魄，消除痕迹"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible events (killing wolves, killing Ge Yao, commanding wolves) and known relationships. The only potentially hidden element is Fang Yuan's motive for killing Ge Yao (she knows too much about his secrets), but this is presented as direct narrator-level knowledge of Fang Yuan's internal reasoning, not a hidden fact with clear whoKnows/whoDoesNotKnow boundaries. The seed does not provide source-backed evidence of any specific actor being ignorant of this motive. No suitable hidden/future-known/player-visibility fact candidate can be extracted without speculation or violating the rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan killed Ge Yao because she knew too much (ptr_8) and her love was troublesome (ptr_9), and he killed her at a remote location (ptr_14). However, the observed behavior is 'killing to eliminate a threat/knowledge risk' which is directly supported. A cautious one-step inference could be: observedMotive='消除知情人灭口' (eliminate witness to silence), inferredMotive='保护自身秘密' (protect own secrets). But the observedMotive of 'eliminating someone who knows too much' is directly stated in ptr_8, making it more of a stated reason than an observed action. The rules say observedMotive must be directly supported by seed facts - the seed states his reasoning, not just his action. Since the seed explicitly states his internal reasoning (she knows too much = must kill), this is closer to narrator-level stated motive rather than observed behavior. Returning empty as per rules about weak evidence.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual actions of Fang Yuan (方源) — killing Ge Yao (葛谣), hunting wolves, etc. No named collective actor (faction, clan, family, group) appears with a concrete stake in the seed facts. Ge Yao is described as '葛家大小姐' (eldest daughter of the Ge family), and there is a mention of '蛮家的二公子蛮多' (second young master Man Duo of the Man family) who is infatuated with Ge Yao's beauty. However, neither the Ge family nor the Man family has any direct stake, action, or pressure shown in this chapter's seed facts. The Ge family is not shown reacting to Ge Yao's death, and the Man family's mention is only a passing reference to Man Duo's infatuation. No collective actor pressure can be reliably extracted from the seed.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

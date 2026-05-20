@@ -1,0 +1,672 @@
+{
+  "packageId": "ri_lw_ch_1563",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1563"
+    ],
+    "paragraphIds": [
+      "ch_1563_p0002",
+      "ch_1563_p0004",
+      "ch_1563_p0015",
+      "ch_1563_p0026",
+      "ch_1563_p0029",
+      "ch_1563_p0033",
+      "ch_1563_p0040",
+      "ch_1563_p0047",
+      "ch_1563_p0051",
+      "ch_1563_p0061",
+      "ch_1563_p0064",
+      "ch_1563_p0066",
+      "ch_1563_p0068",
+      "ch_1563_p0069",
+      "ch_1563_p0072",
+      "ch_1563_p0075",
+      "ch_1563_p0079",
+      "ch_1563_p0080"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0002",
+          "startOffset": 5439579,
+          "endOffset": 5439583,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_454aa9793fd7",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0004",
+          "startOffset": 5439634,
+          "endOffset": 5439636,
+          "summary": "八转蛊仙，雷鬼真君"
+        }
+      ],
+      "entityId": "entity_9e980024c685",
+      "name": "井斓",
+      "kind": "person",
+      "aliases": [
+        "雷鬼真君"
+      ],
+      "description": "八转蛊仙，雷鬼真君",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0033",
+          "startOffset": 5440709,
+          "endOffset": 5440742,
+          "summary": "蛊修，智道手段使用者"
+        }
+      ],
+      "entityId": "entity_454aa9793fd7",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊修，智道手段使用者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0033",
+          "startOffset": 5440709,
+          "endOffset": 5440742,
+          "summary": "天庭蛊仙，雷鬼真君"
+        }
+      ],
+      "entityId": "entity_9e980024c685",
+      "name": "井斓",
+      "kind": "person",
+      "aliases": [
+        "雷鬼真君"
+      ],
+      "description": "天庭蛊仙，雷鬼真君",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0066",
+          "startOffset": 5441890,
+          "endOffset": 5441892,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_454aa9793fd7",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0075",
+          "startOffset": 5442177,
+          "endOffset": 5442182,
+          "summary": "天庭成员，与方源战斗"
+        }
+      ],
+      "entityId": "entity_2f9282417701",
+      "name": "雷鬼真君",
+      "kind": "person",
+      "aliases": [],
+      "description": "天庭成员，与方源战斗",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0002",
+          "startOffset": 5439579,
+          "endOffset": 5439583,
+          "summary": "方源与井斓正在激烈战斗"
+        }
+      ],
+      "relationId": "rel_27a2ab744a53",
+      "subject": "方源",
+      "object": "井斓",
+      "relationType": "CONFLICT",
+      "summary": "方源与井斓正在激烈战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0047",
+          "startOffset": 5441184,
+          "endOffset": 5441207,
+          "summary": "方源与井斓交战，方源试图围杀井斓"
+        }
+      ],
+      "relationId": "rel_06d999b53689",
+      "subject": "方源",
+      "object": "井斓",
+      "relationType": "CONFLICT",
+      "summary": "方源与井斓交战，方源试图围杀井斓",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0072",
+          "startOffset": 5442086,
+          "endOffset": 5442115,
+          "summary": "方源被天庭推算定位，使用阎罗屏蔽"
+        }
+      ],
+      "relationId": "rel_ca3ddf3cec6f",
+      "subject": "方源",
+      "object": "天庭",
+      "relationType": "CONFLICT",
+      "summary": "方源被天庭推算定位，使用阎罗屏蔽",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0079",
+          "startOffset": 5442306,
+          "endOffset": 5442336,
+          "summary": "方源与雷鬼真君大战，斩断其三根胸骨"
+        }
+      ],
+      "relationId": "rel_f4bc97d8b940",
+      "subject": "方源",
+      "object": "雷鬼真君",
+      "relationType": "CONFLICT",
+      "summary": "方源与雷鬼真君大战，斩断其三根胸骨",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0026",
+          "startOffset": 5440379,
+          "endOffset": 5440391,
+          "summary": "方源使用万蛟杀招攻击井斓，井斓突围，方源追击并施展乱方混向雾"
+        }
+      ],
+      "eventId": "evt_0350ad99d870",
+      "eventType": "conflict",
+      "summary": "方源使用万蛟杀招攻击井斓，井斓突围，方源追击并施展乱方混向雾",
+      "actors": [
+        "方源",
+        "井斓"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "井斓被乱方混向雾困住，无法破解"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0040",
+          "startOffset": 5440959,
+          "endOffset": 5440982,
+          "summary": "方源使用乱方混向雾困住井斓，井斓无法突围，陷入苦战"
+        }
+      ],
+      "eventId": "evt_2e2d0622a4ba",
+      "eventType": "conflict",
+      "summary": "方源使用乱方混向雾困住井斓，井斓无法突围，陷入苦战",
+      "actors": [
+        "方源",
+        "井斓"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源主动放弃围杀，撤走并深入界壁"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0061",
+          "startOffset": 5441691,
+          "endOffset": 5441706,
+          "summary": "方源撤退，深入界壁，并开始推算改良鬼官衣"
+        }
+      ],
+      "eventId": "evt_737aedb29b0a",
+      "eventType": "other",
+      "summary": "方源撤退，深入界壁，并开始推算改良鬼官衣",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源发现鬼官衣层次局限七转，转而挖掘与鬼不觉杀招的联系"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0068",
+          "startOffset": 5441953,
+          "endOffset": 5441981,
+          "summary": "方源推算并改进阎罗杀招，使鬼不觉和鬼官衣融合"
+        }
+      ],
+      "eventId": "evt_7cce17543d7d",
+      "eventType": "cultivation",
+      "summary": "方源推算并改进阎罗杀招，使鬼不觉和鬼官衣融合",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "成功屏蔽天庭推算定位"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0075",
+          "startOffset": 5442163,
+          "endOffset": 5442193,
+          "summary": "方源与雷鬼真君大战，消耗大量仙元，斩获三根胸骨"
+        }
+      ],
+      "eventId": "evt_59ef1b970c9f",
+      "eventType": "conflict",
+      "summary": "方源与雷鬼真君大战，消耗大量仙元，斩获三根胸骨",
+      "actors": [
+        "方源",
+        "雷鬼真君"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源仙元几乎见底，获得三根胸骨仙材"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0080",
+          "startOffset": 5442367,
+          "endOffset": 5442397,
+          "summary": "方源将雷鬼真君的三根胸骨放入宝黄天中"
+        }
+      ],
+      "eventId": "evt_e7aa344a064a",
+      "eventType": "other",
+      "summary": "方源将雷鬼真君的三根胸骨放入宝黄天中",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "避免使用来源可疑的仙材"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0026",
+          "startOffset": 5440379,
+          "endOffset": 5440391,
+          "summary": "方源使用万蛟杀招攻击井斓，井斓突围，方源追击并施展乱方混向雾"
+        }
+      ],
+      "timelineId": "tl_0350ad99d870",
+      "eventId": "evt_0350ad99d870",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源使用万蛟杀招攻击井斓，井斓突围，方源追击并施展乱方混向雾",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0040",
+          "startOffset": 5440959,
+          "endOffset": 5440982,
+          "summary": "方源使用乱方混向雾困住井斓，井斓无法突围，陷入苦战"
+        }
+      ],
+      "timelineId": "tl_2e2d0622a4ba",
+      "eventId": "evt_2e2d0622a4ba",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源使用乱方混向雾困住井斓，井斓无法突围，陷入苦战",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0061",
+          "startOffset": 5441691,
+          "endOffset": 5441706,
+          "summary": "方源撤退，深入界壁，并开始推算改良鬼官衣"
+        }
+      ],
+      "timelineId": "tl_737aedb29b0a",
+      "eventId": "evt_737aedb29b0a",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源撤退，深入界壁，并开始推算改良鬼官衣",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0068",
+          "startOffset": 5441953,
+          "endOffset": 5441981,
+          "summary": "方源推算并改进阎罗杀招，使鬼不觉和鬼官衣融合"
+        }
+      ],
+      "timelineId": "tl_7cce17543d7d",
+      "eventId": "evt_7cce17543d7d",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源推算并改进阎罗杀招，使鬼不觉和鬼官衣融合",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0075",
+          "startOffset": 5442163,
+          "endOffset": 5442193,
+          "summary": "方源与雷鬼真君大战，消耗大量仙元，斩获三根胸骨"
+        }
+      ],
+      "timelineId": "tl_59ef1b970c9f",
+      "eventId": "evt_59ef1b970c9f",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源与雷鬼真君大战，消耗大量仙元，斩获三根胸骨",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1563",
+          "paragraphId": "ch_1563_p0080",
+          "startOffset": 5442367,
+          "endOffset": 5442397,
+          "summary": "方源将雷鬼真君的三根胸骨放入宝黄天中"
+        }
+      ],
+      "timelineId": "tl_e7aa344a064a",
+      "eventId": "evt_e7aa344a064a",
+      "chapterId": "ch_1563",
+      "orderHint": "chapter-order",
+      "summary": "方源将雷鬼真君的三根胸骨放入宝黄天中",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0002",
+      "startOffset": 5439579,
+      "endOffset": 5439583,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0004",
+      "startOffset": 5439634,
+      "endOffset": 5439636,
+      "summary": "八转蛊仙，雷鬼真君"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0033",
+      "startOffset": 5440709,
+      "endOffset": 5440742,
+      "summary": "蛊修，智道手段使用者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0066",
+      "startOffset": 5441890,
+      "endOffset": 5441892,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0075",
+      "startOffset": 5442177,
+      "endOffset": 5442182,
+      "summary": "天庭成员，与方源战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0047",
+      "startOffset": 5441184,
+      "endOffset": 5441207,
+      "summary": "方源与井斓交战，方源试图围杀井斓"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0072",
+      "startOffset": 5442086,
+      "endOffset": 5442115,
+      "summary": "方源被天庭推算定位，使用阎罗屏蔽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0079",
+      "startOffset": 5442306,
+      "endOffset": 5442336,
+      "summary": "方源与雷鬼真君大战，斩断其三根胸骨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0026",
+      "startOffset": 5440379,
+      "endOffset": 5440391,
+      "summary": "方源使用万蛟杀招攻击井斓，井斓突围，方源追击并施展乱方混向雾"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0040",
+      "startOffset": 5440959,
+      "endOffset": 5440982,
+      "summary": "方源使用乱方混向雾困住井斓，井斓无法突围，陷入苦战"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0061",
+      "startOffset": 5441691,
+      "endOffset": 5441706,
+      "summary": "方源撤退，深入界壁，并开始推算改良鬼官衣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0068",
+      "startOffset": 5441953,
+      "endOffset": 5441981,
+      "summary": "方源推算并改进阎罗杀招，使鬼不觉和鬼官衣融合"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0075",
+      "startOffset": 5442163,
+      "endOffset": 5442193,
+      "summary": "方源与雷鬼真君大战，消耗大量仙元，斩获三根胸骨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1563",
+      "paragraphId": "ch_1563_p0080",
+      "startOffset": 5442367,
+      "endOffset": 5442397,
+      "summary": "方源将雷鬼真君的三根胸骨放入宝黄天中"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes an open battle between Fang Yuan and Jing Lan/Lei Gui Zhen Jun. All events (attacks, retreat, cultivation deduction, obtaining chest bones) are publicly observable combat actions. No private knowledge, secret plans, future-known information, or knowledge gaps are directly supported by the source pointers. The fact that Fang Yuan dares not use Lei Gui Zhen Jun's chest bones (宝黄天 paragraph) is a personal decision but is stated openly in narration, not hidden. No actor is shown knowing something others do not. No suitable hidden/future-known/player-visibility fact candidate can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan fighting, consuming immortal essence, obtaining chest bones, and storing them in Treasure Yellow Heaven. His observed actions are tactical retreat and resource management, but the seed does not directly support a clear inferred motive beyond self-preservation and avoiding risky materials. Any inferred motive would be a psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily describes a personal combat between Fang Yuan (方源) and Jing Lan (井斓/雷鬼真君). The only collective actor mentioned is Heavenly Court (天庭), which appears in relations as an entity that calculates and tracks Fang Yuan's location. However, the seed does not provide enough concrete stake or pressure for Heavenly Court as a faction—it only shows Fang Yuan shielding himself from their tracking. No other named collective actors (clans, families, shops, halls, organizations) appear in the seed facts with a concrete stake. The conflict is between individuals, not collective actors. Rejecting per rules: do not turn individual conflict into faction pressure unless the seed ties individuals to collective stakes.",
+      "IF export filter quarantined 7 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

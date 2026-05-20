@@ -1,0 +1,581 @@
+{
+  "packageId": "ri_lw_ch_0020",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0020"
+    ],
+    "paragraphIds": [
+      "ch_0020_p0003",
+      "ch_0020_p0016",
+      "ch_0020_p0019",
+      "ch_0020_p0031",
+      "ch_0020_p0033",
+      "ch_0020_p0034",
+      "ch_0020_p0035",
+      "ch_0020_p0051",
+      "ch_0020_p0062",
+      "ch_0020_p0066"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0019",
+          "startOffset": 56507,
+          "endOffset": 56514,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_9e0bb848a24f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0003",
+          "startOffset": 55855,
+          "endOffset": 55884,
+          "summary": "酒虫的制作者/前辈"
+        }
+      ],
+      "entityId": "entity_1bf148d5a45f",
+      "name": "花酒行者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "酒虫的制作者/前辈",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0033",
+          "startOffset": 57028,
+          "endOffset": 57070,
+          "summary": "古月山寨蛊师，重生者，一转初阶"
+        }
+      ],
+      "entityId": "entity_9e0bb848a24f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月山寨蛊师，重生者，一转初阶",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0066",
+          "startOffset": 58433,
+          "endOffset": 58486,
+          "summary": "主角，自述者"
+        }
+      ],
+      "entityId": "entity_9e0bb848a24f",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "我"
+      ],
+      "description": "主角，自述者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0033",
+          "startOffset": 57028,
+          "endOffset": 57070,
+          "summary": "方源前世因拥有春秋蝉被正道群雄围攻杀害"
+        }
+      ],
+      "relationId": "rel_d2608f4fa6e3",
+      "subject": "方源",
+      "object": "正道群雄",
+      "relationType": "CONFLICT",
+      "summary": "方源前世因拥有春秋蝉被正道群雄围攻杀害",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0003",
+          "startOffset": 55855,
+          "endOffset": 55884,
+          "summary": "方源炼化酒虫时，酒虫继承花酒行者意志入侵方源空窍，悍然反噬。"
+        }
+      ],
+      "eventId": "evt_e391826f4fbd",
+      "eventType": "conflict",
+      "summary": "方源炼化酒虫时，酒虫继承花酒行者意志入侵方源空窍，悍然反噬。",
+      "actors": [
+        "酒虫",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "酒虫意志与方源真元即将碰撞。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0016",
+          "startOffset": 56354,
+          "endOffset": 56405,
+          "summary": "春秋蝉被惊动，散发强大气息，将酒虫的意志吞没，并镇压方源的真元海。"
+        }
+      ],
+      "eventId": "evt_a5517288f810",
+      "eventType": "conflict",
+      "summary": "春秋蝉被惊动，散发强大气息，将酒虫的意志吞没，并镇压方源的真元海。",
+      "actors": [
+        "春秋蝉",
+        "酒虫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "酒虫意志被消灭，方源真元被镇压无法调动。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0031",
+          "startOffset": 56899,
+          "endOffset": 56944,
+          "summary": "方源发现春秋蝉跟随自己重生，且不是一次性消耗蛊，可以重复利用。"
+        }
+      ],
+      "eventId": "evt_867c652a422b",
+      "eventType": "cultivation",
+      "summary": "方源发现春秋蝉跟随自己重生，且不是一次性消耗蛊，可以重复利用。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源喜出望外。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0033",
+          "startOffset": 57028,
+          "endOffset": 57070,
+          "summary": "方源前世成功炼制春秋蝉后，被正道群雄围攻致死"
+        }
+      ],
+      "eventId": "evt_a45d29d3a090",
+      "eventType": "death",
+      "summary": "方源前世成功炼制春秋蝉后，被正道群雄围攻致死",
+      "actors": [
+        "方源",
+        "正道群雄"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "春秋蝉休眠，方源重生到五百年前"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0034",
+          "startOffset": 57074,
+          "endOffset": 57120,
+          "summary": "方源重生后，春秋蝉寄托在体内陷入沉睡，极其虚弱，导致方源最初未察觉"
+        }
+      ],
+      "eventId": "evt_08d70d424685",
+      "eventType": "rebirth",
+      "summary": "方源重生后，春秋蝉寄托在体内陷入沉睡，极其虚弱，导致方源最初未察觉",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "春秋蝉隐伏体内，直到被酒虫惊醒才显现"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0051",
+          "startOffset": 57826,
+          "endOffset": 57908,
+          "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连"
+        }
+      ],
+      "eventId": "evt_d7ab2443fd04",
+      "eventType": "cultivation",
+      "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源以一转蛊师之身拥有六转本命蛊，由于春秋蝉虚弱才未撑破空窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0066",
+          "startOffset": 58433,
+          "endOffset": 58486,
+          "summary": "方源意识到自己今生的本命蛊是春秋蝉，暗示重生或拥有前世记忆。"
+        }
+      ],
+      "eventId": "evt_875a253ca73a",
+      "eventType": "rebirth",
+      "summary": "方源意识到自己今生的本命蛊是春秋蝉，暗示重生或拥有前世记忆。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "得知本命蛊为春秋蝉，可能影响后续修炼。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0003",
+          "startOffset": 55855,
+          "endOffset": 55884,
+          "summary": "方源炼化酒虫时，酒虫继承花酒行者意志入侵方源空窍，悍然反噬。"
+        }
+      ],
+      "timelineId": "tl_e391826f4fbd",
+      "eventId": "evt_e391826f4fbd",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "方源炼化酒虫时，酒虫继承花酒行者意志入侵方源空窍，悍然反噬。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0016",
+          "startOffset": 56354,
+          "endOffset": 56405,
+          "summary": "春秋蝉被惊动，散发强大气息，将酒虫的意志吞没，并镇压方源的真元海。"
+        }
+      ],
+      "timelineId": "tl_a5517288f810",
+      "eventId": "evt_a5517288f810",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "春秋蝉被惊动，散发强大气息，将酒虫的意志吞没，并镇压方源的真元海。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0031",
+          "startOffset": 56899,
+          "endOffset": 56944,
+          "summary": "方源发现春秋蝉跟随自己重生，且不是一次性消耗蛊，可以重复利用。"
+        }
+      ],
+      "timelineId": "tl_867c652a422b",
+      "eventId": "evt_867c652a422b",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "方源发现春秋蝉跟随自己重生，且不是一次性消耗蛊，可以重复利用。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0033",
+          "startOffset": 57028,
+          "endOffset": 57070,
+          "summary": "方源前世成功炼制春秋蝉后，被正道群雄围攻致死"
+        }
+      ],
+      "timelineId": "tl_a45d29d3a090",
+      "eventId": "evt_a45d29d3a090",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "方源前世成功炼制春秋蝉后，被正道群雄围攻致死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0034",
+          "startOffset": 57074,
+          "endOffset": 57120,
+          "summary": "方源重生后，春秋蝉寄托在体内陷入沉睡，极其虚弱，导致方源最初未察觉"
+        }
+      ],
+      "timelineId": "tl_08d70d424685",
+      "eventId": "evt_08d70d424685",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "方源重生后，春秋蝉寄托在体内陷入沉睡，极其虚弱，导致方源最初未察觉",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0051",
+          "startOffset": 57826,
+          "endOffset": 57908,
+          "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连"
+        }
+      ],
+      "timelineId": "tl_d7ab2443fd04",
+      "eventId": "evt_d7ab2443fd04",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0066",
+          "startOffset": 58433,
+          "endOffset": 58486,
+          "summary": "方源意识到自己今生的本命蛊是春秋蝉，暗示重生或拥有前世记忆。"
+        }
+      ],
+      "timelineId": "tl_875a253ca73a",
+      "eventId": "evt_875a253ca73a",
+      "chapterId": "ch_0020",
+      "orderHint": "chapter-order",
+      "summary": "方源意识到自己今生的本命蛊是春秋蝉，暗示重生或拥有前世记忆。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0020",
+          "paragraphId": "ch_0020_p0051",
+          "startOffset": 57826,
+          "endOffset": 57908,
+          "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连"
+        }
+      ],
+      "factId": "hf_0020_001",
+      "summary": "春秋蝉是方源的本命蛊，已与方源炼化相连",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0019",
+      "startOffset": 56507,
+      "endOffset": 56514,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0003",
+      "startOffset": 55855,
+      "endOffset": 55884,
+      "summary": "酒虫的制作者/前辈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0033",
+      "startOffset": 57028,
+      "endOffset": 57070,
+      "summary": "古月山寨蛊师，重生者，一转初阶"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0066",
+      "startOffset": 58433,
+      "endOffset": 58486,
+      "summary": "主角，自述者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0016",
+      "startOffset": 56354,
+      "endOffset": 56405,
+      "summary": "春秋蝉被惊动，散发强大气息，将酒虫的意志吞没，并镇压方源的真元海。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0031",
+      "startOffset": 56899,
+      "endOffset": 56944,
+      "summary": "方源发现春秋蝉跟随自己重生，且不是一次性消耗蛊，可以重复利用。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0034",
+      "startOffset": 57074,
+      "endOffset": 57120,
+      "summary": "方源重生后，春秋蝉寄托在体内陷入沉睡，极其虚弱，导致方源最初未察觉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0020",
+      "paragraphId": "ch_0020_p0051",
+      "startOffset": 57826,
+      "endOffset": 57908,
+      "summary": "酒虫的意志惊醒春秋蝉，方源发现春秋蝉实为本命蛊，且已与自己炼化相连"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "Source directly supports that Fang Yuan discovers Spring Autumn Cicada is his life-bound Gu and has already been refined and connected to him. This is private knowledge known only to Fang Yuan (internal realization), not visible to other characters. The quote is cut off but the context from the event summary confirms the full meaning.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: the seed describes events (酒虫意志反噬, 春秋蝉吞没意志, 方源发现本命蛊) but does not provide direct observed actions from which a clear motive can be inferred. The events are mostly internal cultivation conflicts and revelations, not character-driven actions with observable motives. No character motive can be confidently extracted from this seed without making psychological leaps.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The only faction mentioned is '正道群雄' (righteous path heroes), but the seed only describes a past event (Fang Yuan was killed by them in his previous life). There is no current faction pressure, stake, or ongoing dynamic in the present timeline of chapter 20. The seed focuses on Fang Yuan's personal cultivation (refining wine worm, discovering Spring Autumn Cicada) with no faction-level interactions or pressures in the present. No source-backed faction pressure candidate can be extracted.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

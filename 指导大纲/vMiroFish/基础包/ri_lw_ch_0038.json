@@ -1,0 +1,417 @@
+{
+  "packageId": "ri_lw_ch_0038",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0038"
+    ],
+    "paragraphIds": [
+      "ch_0038_p0003",
+      "ch_0038_p0004",
+      "ch_0038_p0010",
+      "ch_0038_p0028",
+      "ch_0038_p0044",
+      "ch_0038_p0048",
+      "ch_0038_p0055"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0004",
+          "startOffset": 107335,
+          "endOffset": 107391,
+          "summary": "主角，一转初阶蛊师，丙等资质"
+        }
+      ],
+      "entityId": "entity_cc5ade3ae370",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，一转初阶蛊师，丙等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0004",
+          "startOffset": 107335,
+          "endOffset": 107391,
+          "summary": "古月漠尘的孙女，二转蛊师"
+        }
+      ],
+      "entityId": "entity_b4f8f23df90f",
+      "name": "漠颜",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月漠尘的孙女，二转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0003",
+          "startOffset": 107294,
+          "endOffset": 107331,
+          "summary": "漠家家老"
+        }
+      ],
+      "entityId": "entity_eb3007352921",
+      "name": "古月漠尘",
+      "kind": "person",
+      "aliases": [],
+      "description": "漠家家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0004",
+          "startOffset": 107335,
+          "endOffset": 107391,
+          "summary": "漠家家奴，被方源所杀"
+        }
+      ],
+      "entityId": "entity_b3c5262d0036",
+      "name": "高碗",
+      "kind": "person",
+      "aliases": [],
+      "description": "漠家家奴，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0003",
+          "startOffset": 107294,
+          "endOffset": 107331,
+          "summary": "爷爷与孙女"
+        }
+      ],
+      "relationId": "rel_3de4f3f210b3",
+      "subject": "漠颜",
+      "object": "古月漠尘",
+      "relationType": "FAMILY",
+      "summary": "爷爷与孙女",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0004",
+          "startOffset": 107335,
+          "endOffset": 107391,
+          "summary": "方源杀死高碗"
+        }
+      ],
+      "relationId": "rel_1f28c400de78",
+      "subject": "方源",
+      "object": "高碗",
+      "relationType": "CONFLICT",
+      "summary": "方源杀死高碗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0010",
+          "startOffset": 107786,
+          "endOffset": 107917,
+          "summary": "漠颜因高碗被杀而愤怒，欲问罪方源"
+        }
+      ],
+      "relationId": "rel_cb75d59430cf",
+      "subject": "漠颜",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "漠颜因高碗被杀而愤怒，欲问罪方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0044",
+          "startOffset": 109541,
+          "endOffset": 109668,
+          "summary": "漠家名誉受损将引发赤家发难"
+        }
+      ],
+      "relationId": "rel_e440f2915240",
+      "subject": "漠家",
+      "object": "赤家",
+      "relationType": "CONFLICT",
+      "summary": "漠家名誉受损将引发赤家发难",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0044",
+          "startOffset": 109541,
+          "endOffset": 109668,
+          "summary": "族长一脉也可能趁漠家名誉受损而打击"
+        }
+      ],
+      "relationId": "rel_c4acd9bc2391",
+      "subject": "漠家",
+      "object": "族长一脉",
+      "relationType": "CONFLICT",
+      "summary": "族长一脉也可能趁漠家名誉受损而打击",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0028",
+          "startOffset": 108633,
+          "endOffset": 108698,
+          "summary": "方源杀死高碗，事后将尸体碎尸放入木盒置于漠家后门"
+        }
+      ],
+      "eventId": "evt_ac57a2dbefcb",
+      "eventType": "conflict",
+      "summary": "方源杀死高碗，事后将尸体碎尸放入木盒置于漠家后门",
+      "actors": [
+        "方源",
+        "高碗"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "引发漠颜的愤怒，古月漠尘分析方源的意图，漠家决定不再追究。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0055",
+          "startOffset": 110317,
+          "endOffset": 110448,
+          "summary": "古月漠尘处罚漠颜禁足七天，并下令不许再找方源麻烦，同时命人赔偿方源三十块元石，将高碗全家逐出漠府"
+        }
+      ],
+      "eventId": "evt_b5ee37c1d949",
+      "eventType": "other",
+      "summary": "古月漠尘处罚漠颜禁足七天，并下令不许再找方源麻烦，同时命人赔偿方源三十块元石，将高碗全家逐出漠府",
+      "actors": [
+        "古月漠尘",
+        "漠颜"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暂时平息方源与漠家的冲突"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0028",
+          "startOffset": 108633,
+          "endOffset": 108698,
+          "summary": "方源杀死高碗，事后将尸体碎尸放入木盒置于漠家后门"
+        }
+      ],
+      "timelineId": "tl_ac57a2dbefcb",
+      "eventId": "evt_ac57a2dbefcb",
+      "chapterId": "ch_0038",
+      "orderHint": "chapter-order",
+      "summary": "方源杀死高碗，事后将尸体碎尸放入木盒置于漠家后门",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0055",
+          "startOffset": 110317,
+          "endOffset": 110448,
+          "summary": "古月漠尘处罚漠颜禁足七天，并下令不许再找方源麻烦，同时命人赔偿方源三十块元石，将高碗全家逐出漠府"
+        }
+      ],
+      "timelineId": "tl_b5ee37c1d949",
+      "eventId": "evt_b5ee37c1d949",
+      "chapterId": "ch_0038",
+      "orderHint": "chapter-order",
+      "summary": "古月漠尘处罚漠颜禁足七天，并下令不许再找方源麻烦，同时命人赔偿方源三十块元石，将高碗全家逐出漠府",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0038",
+          "paragraphId": "ch_0038_p0044",
+          "startOffset": 109541,
+          "endOffset": 109668,
+          "summary": "漠家名誉受损将引发赤家发难"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "漠家",
+      "pressureAxis": "名誉受损引发外部压力",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "监视赤家动向",
+        "安抚族长一脉"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0004",
+      "startOffset": 107335,
+      "endOffset": 107391,
+      "summary": "主角，一转初阶蛊师，丙等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0003",
+      "startOffset": 107294,
+      "endOffset": 107331,
+      "summary": "漠家家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0010",
+      "startOffset": 107786,
+      "endOffset": 107917,
+      "summary": "漠颜因高碗被杀而愤怒，欲问罪方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0044",
+      "startOffset": 109541,
+      "endOffset": 109668,
+      "summary": "漠家名誉受损将引发赤家发难"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0028",
+      "startOffset": 108633,
+      "endOffset": 108698,
+      "summary": "方源杀死高碗，事后将尸体碎尸放入木盒置于漠家后门"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0038",
+      "paragraphId": "ch_0038_p0055",
+      "startOffset": 110317,
+      "endOffset": 110448,
+      "summary": "古月漠尘处罚漠颜禁足七天，并下令不许再找方源麻烦，同时命人赔偿方源三十块元石，将高碗全家逐出漠府"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains only publicly visible events (Fang Yuan killing Gao Wan, Mo Yan being punished, Mo Chen's orders) and speculative consequences (Mo family reputation damage leading to Chi family attack). No private knowledge, secret motives/plans, or future-known information is directly supported by the source quotes. The relations and events are all ambiguous/visible occurrences. There is no hidden fact that can be extracted without extrapolation or subjective judgment.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows behaviors (方源 kills 高碗, places body at 漠家 back door) but the motive is ambiguous. 古月漠尘's analysis in the source suggests possible strategic intent (damaging 漠家 reputation), but that is his subjective interpretation/accusation, not narrator-level truth. The seed does not directly show 方源's internal motive. Only behavior is visible; motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed explicitly states that if 漠家's reputation is damaged, 赤家 will attack and 族长一脉 will strike. This is a concrete faction-level pressure on 漠家 from external groups (赤家) and internal rivals (族长一脉). The pressure axis is reputation-based, leading to likely reactions of monitoring and negotiation. Source pointer ptr_4 directly supports this.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 1
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

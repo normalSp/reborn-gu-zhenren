@@ -1,0 +1,536 @@
+{
+  "packageId": "ri_lw_ch_0011",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0011"
+    ],
+    "paragraphIds": [
+      "ch_0011_p0006",
+      "ch_0011_p0012",
+      "ch_0011_p0014",
+      "ch_0011_p0025",
+      "ch_0011_p0026",
+      "ch_0011_p0031",
+      "ch_0011_p0033",
+      "ch_0011_p0039",
+      "ch_0011_p0056",
+      "ch_0011_p0061",
+      "ch_0011_p0063"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0006",
+          "startOffset": 27303,
+          "endOffset": 27347,
+          "summary": "主角，一转蛊师"
+        }
+      ],
+      "entityId": "entity_c9dd599a2788",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，一转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0033",
+          "startOffset": 28447,
+          "endOffset": 28511,
+          "summary": "主角，丙等资质蛊师，炼化月光蛊"
+        }
+      ],
+      "entityId": "entity_c9dd599a2788",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，丙等资质蛊师，炼化月光蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0063",
+          "startOffset": 29956,
+          "endOffset": 30017,
+          "summary": "方源的贴身丫鬟"
+        }
+      ],
+      "entityId": "entity_c94f7bfc3027",
+      "name": "沈翠",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的贴身丫鬟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，甲等资质，炼蛊考核竞争者"
+        }
+      ],
+      "entityId": "entity_1035ed3bb7cb",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "同族兄弟，甲等资质，炼蛊考核竞争者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0061",
+          "startOffset": 29772,
+          "endOffset": 29919,
+          "summary": "同族，背后有长辈支持，元石充沛"
+        }
+      ],
+      "entityId": "entity_e9066ad4d7c0",
+      "name": "古月漠北",
+      "kind": "person",
+      "aliases": [],
+      "description": "同族，背后有长辈支持，元石充沛",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0061",
+          "startOffset": 29772,
+          "endOffset": 29919,
+          "summary": "同族，背后有长辈支持，元石充沛"
+        }
+      ],
+      "entityId": "entity_2a0ee1cf193d",
+      "name": "古月赤城",
+      "kind": "person",
+      "aliases": [],
+      "description": "同族，背后有长辈支持，元石充沛",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0025",
+          "startOffset": 28100,
+          "endOffset": 28148,
+          "summary": "方源尝试炼化月光蛊以将其收为己用"
+        }
+      ],
+      "relationId": "rel_ee73debbff6a",
+      "subject": "方源",
+      "object": "月光蛊",
+      "relationType": "USES",
+      "summary": "方源尝试炼化月光蛊以将其收为己用",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0063",
+          "startOffset": 29956,
+          "endOffset": 30017,
+          "summary": "主仆关系，沈翠是方源的贴身丫鬟"
+        }
+      ],
+      "relationId": "rel_abe7c56fb616",
+      "subject": "方源",
+      "object": "沈翠",
+      "relationType": "OTHER",
+      "summary": "主仆关系，沈翠是方源的贴身丫鬟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优"
+        }
+      ],
+      "relationId": "rel_5fba4bface4f",
+      "subject": "方源",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "同族兄弟，在炼化月光蛊的考核中为竞争关系，方正甲等资质占优",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0012",
+          "startOffset": 27527,
+          "endOffset": 27545,
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划"
+        }
+      ],
+      "eventId": "evt_c117ff2f1260",
+      "eventType": "other",
+      "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "只能先着手炼化月光蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0026",
+          "startOffset": 28152,
+          "endOffset": 28190,
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难"
+        }
+      ],
+      "eventId": "evt_92a97d9a1c84",
+      "eventType": "cultivation",
+      "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "炼化进展缓慢，尚未成功"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜"
+        }
+      ],
+      "eventId": "evt_1cc269cf2a94",
+      "eventType": "cultivation",
+      "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "月光蛊反抗，炼化中断，真元大量消耗，月光蛊持续驱逐残留真元"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0063",
+          "startOffset": 29956,
+          "endOffset": 30017,
+          "summary": "沈翠敲门，为方源送来酒菜"
+        }
+      ],
+      "eventId": "evt_3a1df81ff1bf",
+      "eventType": "appearance",
+      "summary": "沈翠敲门，为方源送来酒菜",
+      "actors": [
+        "沈翠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0012",
+          "startOffset": 27527,
+          "endOffset": 27545,
+          "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划"
+        }
+      ],
+      "timelineId": "tl_c117ff2f1260",
+      "eventId": "evt_c117ff2f1260",
+      "chapterId": "ch_0011",
+      "orderHint": "chapter-order",
+      "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0026",
+          "startOffset": 28152,
+          "endOffset": 28190,
+          "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难"
+        }
+      ],
+      "timelineId": "tl_92a97d9a1c84",
+      "eventId": "evt_92a97d9a1c84",
+      "chapterId": "ch_0011",
+      "orderHint": "chapter-order",
+      "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0039",
+          "startOffset": 28670,
+          "endOffset": 28708,
+          "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜"
+        }
+      ],
+      "timelineId": "tl_1cc269cf2a94",
+      "eventId": "evt_1cc269cf2a94",
+      "chapterId": "ch_0011",
+      "orderHint": "chapter-order",
+      "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0063",
+          "startOffset": 29956,
+          "endOffset": 30017,
+          "summary": "沈翠敲门，为方源送来酒菜"
+        }
+      ],
+      "timelineId": "tl_3a1df81ff1bf",
+      "eventId": "evt_3a1df81ff1bf",
+      "chapterId": "ch_0011",
+      "orderHint": "chapter-order",
+      "summary": "沈翠敲门，为方源送来酒菜",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0056",
+          "startOffset": 29537,
+          "endOffset": 29605,
+          "summary": "同族兄弟，甲等资质，炼蛊考核竞争者"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0011",
+          "paragraphId": "ch_0011_p0061",
+          "startOffset": 29772,
+          "endOffset": 29919,
+          "summary": "同族，背后有长辈支持，元石充沛"
+        }
+      ],
+      "pressureId": "pressure_001",
+      "faction": "古月家族",
+      "pressureAxis": "炼蛊考核竞争",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "观察各候选者进度"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0006",
+      "startOffset": 27303,
+      "endOffset": 27347,
+      "summary": "主角，一转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0033",
+      "startOffset": 28447,
+      "endOffset": 28511,
+      "summary": "主角，丙等资质蛊师，炼化月光蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0063",
+      "startOffset": 29956,
+      "endOffset": 30017,
+      "summary": "方源的贴身丫鬟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0056",
+      "startOffset": 29537,
+      "endOffset": 29605,
+      "summary": "同族兄弟，甲等资质，炼蛊考核竞争者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0061",
+      "startOffset": 29772,
+      "endOffset": 29919,
+      "summary": "同族，背后有长辈支持，元石充沛"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0025",
+      "startOffset": 28100,
+      "endOffset": 28148,
+      "summary": "方源尝试炼化月光蛊以将其收为己用"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0012",
+      "startOffset": 27527,
+      "endOffset": 27545,
+      "summary": "方源因持续大雨而终止了外出探索寻找酒虫的计划"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0026",
+      "startOffset": 28152,
+      "endOffset": 28190,
+      "summary": "方源开始炼化月光蛊，将真元注入蛊中，月光蛊抗拒，炼化过程十分艰难"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0011",
+      "paragraphId": "ch_0011_p0039",
+      "startOffset": 28670,
+      "endOffset": 28708,
+      "summary": "方源尝试炼化月光蛊，消耗三成真元仅炼化十二分之一，因资质低劣和元石不足放弃，意识到难以在考核中获胜"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains only ordinary visible events: Fang Yuan tries to refine Moonlight Gu, fails due to poor aptitude and lack of prime stones, and stops. Shen Cui brings food. Rain stops his exploration. No hidden knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the source pointers. The events are all player-visible or ordinary cultivation attempts. No fact qualifies as hidden, future-known, or ambiguous player-visibility under the rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Only visible behavior: 方源因大雨终止外出探索，转而炼化月光蛊，但因资质低劣和元石不足放弃炼化。行为可见但动机模糊——放弃炼化可能是理性止损，也可能是其他原因，无法做出一阶推断而不超出直接上下文。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月家族内部存在炼蛊考核竞争，古月方正（甲等资质）和古月漠北、古月赤城（有长辈支持、元石充沛）与方源形成竞争关系。这构成家族内部资源/声誉压力，但种子中未明确描述家族整体采取何种行动，仅暗示竞争格局。pressureAxis简化为'炼蛊考核竞争'，likelyReactions为保守的'观察各候选者进度'。",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,905 @@
+{
+  "packageId": "ri_lw_ch_0151",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0151"
+    ],
+    "paragraphIds": [
+      "ch_0151_p0008",
+      "ch_0151_p0011",
+      "ch_0151_p0018",
+      "ch_0151_p0036",
+      "ch_0151_p0047",
+      "ch_0151_p0055",
+      "ch_0151_p0060",
+      "ch_0151_p0066",
+      "ch_0151_p0071",
+      "ch_0151_p0072",
+      "ch_0151_p0073",
+      "ch_0151_p0075",
+      "ch_0151_p0076",
+      "ch_0151_p0081",
+      "ch_0151_p0099",
+      "ch_0151_p0100",
+      "ch_0151_p0101",
+      "ch_0151_p0103",
+      "ch_0151_p0104",
+      "ch_0151_p0112",
+      "ch_0151_p0113"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0008",
+          "startOffset": 497597,
+          "endOffset": 497599,
+          "summary": "蛊师，站在塔楼顶部参与战斗"
+        }
+      ],
+      "entityId": "entity_701e6baea704",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，站在塔楼顶部参与战斗",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0011",
+          "startOffset": 497704,
+          "endOffset": 497708,
+          "summary": "被提及的死者，可能是某蛊师的亲人"
+        }
+      ],
+      "entityId": "entity_e1f49057db1c",
+      "name": "娜娜",
+      "kind": "person",
+      "aliases": [],
+      "description": "被提及的死者，可能是某蛊师的亲人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0036",
+          "startOffset": 498429,
+          "endOffset": 498467,
+          "summary": "蛊师"
+        }
+      ],
+      "entityId": "entity_701e6baea704",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0047",
+          "startOffset": 498759,
+          "endOffset": 498766,
+          "summary": "山寨高层战力"
+        }
+      ],
+      "entityId": "entity_e5e6e776b9d4",
+      "name": "家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "山寨高层战力",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0066",
+          "startOffset": 499454,
+          "endOffset": 499490,
+          "summary": "古月族家老，三转蛊师"
+        }
+      ],
+      "entityId": "entity_b8482eea8a4c",
+      "name": "药姬",
+      "kind": "person",
+      "aliases": [
+        "古月药姬"
+      ],
+      "description": "古月族家老，三转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0075",
+          "startOffset": 499817,
+          "endOffset": 499840,
+          "summary": "古月族少女，一转蛊师，药姬的孙女"
+        }
+      ],
+      "entityId": "entity_9a1064409fad",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [
+        "药乐"
+      ],
+      "description": "古月族少女，一转蛊师，药姬的孙女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0076",
+          "startOffset": 499844,
+          "endOffset": 499909,
+          "summary": "古月族蛊师，老手"
+        }
+      ],
+      "entityId": "entity_c33d559e6e80",
+      "name": "熊骄嫚",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族蛊师，老手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0072",
+          "startOffset": 499730,
+          "endOffset": 499746,
+          "summary": "旁观者，观察东门战况"
+        }
+      ],
+      "entityId": "entity_701e6baea704",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，观察东门战况",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0101",
+          "startOffset": 500778,
+          "endOffset": 500782,
+          "summary": "古月族女蛊师"
+        }
+      ],
+      "entityId": "entity_9a1064409fad",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [
+        "药乐"
+      ],
+      "description": "古月族女蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0103",
+          "startOffset": 500815,
+          "endOffset": 500819,
+          "summary": "古月族女蛊师，被狂电狼缠住"
+        }
+      ],
+      "entityId": "entity_6af0f44e9e2d",
+      "name": "古月药姬",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族女蛊师，被狂电狼缠住",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0112",
+          "startOffset": 501135,
+          "endOffset": 501139,
+          "summary": "古月族男蛊师"
+        }
+      ],
+      "entityId": "entity_c7b3822497c8",
+      "name": "古月方源",
+      "kind": "person",
+      "aliases": [
+        "方源"
+      ],
+      "description": "古月族男蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0099",
+          "startOffset": 500698,
+          "endOffset": 500704,
+          "summary": "救古月药乐的蛊师，后被电狼咬死"
+        }
+      ],
+      "entityId": "entity_568c7166c922",
+      "name": "年轻男蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "救古月药乐的蛊师，后被电狼咬死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0081",
+          "startOffset": 500053,
+          "endOffset": 500095,
+          "summary": "祖孙关系，药姬是药乐的祖母"
+        }
+      ],
+      "relationId": "rel_29a5a4cb910f",
+      "subject": "古月药姬",
+      "object": "古月药乐",
+      "relationType": "FAMILY",
+      "summary": "祖孙关系，药姬是药乐的祖母",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0113",
+          "startOffset": 501161,
+          "endOffset": 501179,
+          "summary": "方源暗中引导并保护药乐，声称帮自己"
+        }
+      ],
+      "relationId": "rel_ac539dbca019",
+      "subject": "古月方源",
+      "object": "古月药乐",
+      "relationType": "OTHER",
+      "summary": "方源暗中引导并保护药乐，声称帮自己",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0008",
+          "startOffset": 497597,
+          "endOffset": 497599,
+          "summary": "方源在塔楼顶部参与抵御电狼群的战斗，使用月刃攻击狼群"
+        }
+      ],
+      "eventId": "evt_0b99fe93bb18",
+      "eventType": "conflict",
+      "summary": "方源在塔楼顶部参与抵御电狼群的战斗，使用月刃攻击狼群",
+      "actors": [
+        "方源",
+        "电狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源所在的塔楼被狂电狼的炸雷蛊击中，方源被击飞摔落，但未受重伤"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0018",
+          "startOffset": 497910,
+          "endOffset": 497912,
+          "summary": "一只狂电狼使用三转炸雷蛊攻击方源所在的塔楼，方源使用水罩蛊和白玉蛊防御，但水罩被击破，方源被击飞摔落"
+        }
+      ],
+      "eventId": "evt_e238b605bf2b",
+      "eventType": "conflict",
+      "summary": "一只狂电狼使用三转炸雷蛊攻击方源所在的塔楼，方源使用水罩蛊和白玉蛊防御，但水罩被击破，方源被击飞摔落",
+      "actors": [
+        "狂电狼",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "塔楼被毁，方源摔落但存活"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0055",
+          "startOffset": 498986,
+          "endOffset": 499001,
+          "summary": "三位家老与一只狂电狼展开激战，随后九位家老与三只狂电狼形成三大战团。"
+        }
+      ],
+      "eventId": "evt_d6d78f1a830b",
+      "eventType": "conflict",
+      "summary": "三位家老与一只狂电狼展开激战，随后九位家老与三只狂电狼形成三大战团。",
+      "actors": [
+        "家老",
+        "狂电狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "家老们逐渐占据上风，控制战局。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0060",
+          "startOffset": 499170,
+          "endOffset": 499261,
+          "summary": "方源观察三只狂电狼的底细，发现分别寄居炸雷蛊、雷翼蛊、雷啸蛊。"
+        }
+      ],
+      "eventId": "evt_9fc4f27d511e",
+      "eventType": "other",
+      "summary": "方源观察三只狂电狼的底细，发现分别寄居炸雷蛊、雷翼蛊、雷啸蛊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0073",
+          "startOffset": 499750,
+          "endOffset": 499777,
+          "summary": "狂电狼突袭东门，撞破大门，冲入山寨，攻击古月药乐和熊骄嫚。药姬赶来用月毒蛊攻击狂电狼，但狂电狼用音浪蛊将熊骄嫚和古月药乐震飞，古月药乐被震出寨外，面临电狼攻击。"
+        }
+      ],
+      "eventId": "evt_5590e0356323",
+      "eventType": "conflict",
+      "summary": "狂电狼突袭东门，撞破大门，冲入山寨，攻击古月药乐和熊骄嫚。药姬赶来用月毒蛊攻击狂电狼，但狂电狼用音浪蛊将熊骄嫚和古月药乐震飞，古月药乐被震出寨外，面临电狼攻击。",
+      "actors": [
+        "狂电狼",
+        "古月药姬",
+        "熊骄嫚",
+        "古月药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐被震出寨外，面临电狼威胁；熊骄嫚撞入竹楼不知情况；东门失守，电狼群涌入山寨。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0100",
+          "startOffset": 500741,
+          "endOffset": 500765,
+          "summary": "年轻男蛊师救下古月药乐后，被蜂拥而来的电狼咬破咽喉而死"
+        }
+      ],
+      "eventId": "evt_38a8bcb56e6f",
+      "eventType": "death",
+      "summary": "年轻男蛊师救下古月药乐后，被蜂拥而来的电狼咬破咽喉而死",
+      "actors": [
+        "年轻男蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐流泪继续逃跑"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0103",
+          "startOffset": 500815,
+          "endOffset": 500861,
+          "summary": "古月药姬被狂电狼缠住，难以顾及古月药乐"
+        }
+      ],
+      "eventId": "evt_9e5f60885daa",
+      "eventType": "conflict",
+      "summary": "古月药姬被狂电狼缠住，难以顾及古月药乐",
+      "actors": [
+        "古月药乐",
+        "古月药姬"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐独自逃生"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0104",
+          "startOffset": 500879,
+          "endOffset": 500925,
+          "summary": "方源暗中用声音引导药乐躲避电狼，并发出月刃解围，最终药乐安全到达偏僻山林，方源现身"
+        }
+      ],
+      "eventId": "evt_6a4935d7d110",
+      "eventType": "other",
+      "summary": "方源暗中用声音引导药乐躲避电狼，并发出月刃解围，最终药乐安全到达偏僻山林，方源现身",
+      "actors": [
+        "古月方源",
+        "古月药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "药乐发现是方源帮助了她"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0008",
+          "startOffset": 497597,
+          "endOffset": 497599,
+          "summary": "方源在塔楼顶部参与抵御电狼群的战斗，使用月刃攻击狼群"
+        }
+      ],
+      "timelineId": "tl_0b99fe93bb18",
+      "eventId": "evt_0b99fe93bb18",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "方源在塔楼顶部参与抵御电狼群的战斗，使用月刃攻击狼群",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0018",
+          "startOffset": 497910,
+          "endOffset": 497912,
+          "summary": "一只狂电狼使用三转炸雷蛊攻击方源所在的塔楼，方源使用水罩蛊和白玉蛊防御，但水罩被击破，方源被击飞摔落"
+        }
+      ],
+      "timelineId": "tl_e238b605bf2b",
+      "eventId": "evt_e238b605bf2b",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "一只狂电狼使用三转炸雷蛊攻击方源所在的塔楼，方源使用水罩蛊和白玉蛊防御，但水罩被击破，方源被击飞摔落",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0055",
+          "startOffset": 498986,
+          "endOffset": 499001,
+          "summary": "三位家老与一只狂电狼展开激战，随后九位家老与三只狂电狼形成三大战团。"
+        }
+      ],
+      "timelineId": "tl_d6d78f1a830b",
+      "eventId": "evt_d6d78f1a830b",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "三位家老与一只狂电狼展开激战，随后九位家老与三只狂电狼形成三大战团。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0060",
+          "startOffset": 499170,
+          "endOffset": 499261,
+          "summary": "方源观察三只狂电狼的底细，发现分别寄居炸雷蛊、雷翼蛊、雷啸蛊。"
+        }
+      ],
+      "timelineId": "tl_9fc4f27d511e",
+      "eventId": "evt_9fc4f27d511e",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "方源观察三只狂电狼的底细，发现分别寄居炸雷蛊、雷翼蛊、雷啸蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0073",
+          "startOffset": 499750,
+          "endOffset": 499777,
+          "summary": "狂电狼突袭东门，撞破大门，冲入山寨，攻击古月药乐和熊骄嫚。药姬赶来用月毒蛊攻击狂电狼，但狂电狼用音浪蛊将熊骄嫚和古月药乐震飞，古月药乐被震出寨外，面临电狼攻击。"
+        }
+      ],
+      "timelineId": "tl_5590e0356323",
+      "eventId": "evt_5590e0356323",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "狂电狼突袭东门，撞破大门，冲入山寨，攻击古月药乐和熊骄嫚。药姬赶来用月毒蛊攻击狂电狼，但狂电狼用音浪蛊将熊骄嫚和古月药乐震飞，古月药乐被震出寨外，面临电狼攻击。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0100",
+          "startOffset": 500741,
+          "endOffset": 500765,
+          "summary": "年轻男蛊师救下古月药乐后，被蜂拥而来的电狼咬破咽喉而死"
+        }
+      ],
+      "timelineId": "tl_38a8bcb56e6f",
+      "eventId": "evt_38a8bcb56e6f",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "年轻男蛊师救下古月药乐后，被蜂拥而来的电狼咬破咽喉而死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0103",
+          "startOffset": 500815,
+          "endOffset": 500861,
+          "summary": "古月药姬被狂电狼缠住，难以顾及古月药乐"
+        }
+      ],
+      "timelineId": "tl_9e5f60885daa",
+      "eventId": "evt_9e5f60885daa",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "古月药姬被狂电狼缠住，难以顾及古月药乐",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0151",
+          "paragraphId": "ch_0151_p0104",
+          "startOffset": 500879,
+          "endOffset": 500925,
+          "summary": "方源暗中用声音引导药乐躲避电狼，并发出月刃解围，最终药乐安全到达偏僻山林，方源现身"
+        }
+      ],
+      "timelineId": "tl_6a4935d7d110",
+      "eventId": "evt_6a4935d7d110",
+      "chapterId": "ch_0151",
+      "orderHint": "chapter-order",
+      "summary": "方源暗中用声音引导药乐躲避电狼，并发出月刃解围，最终药乐安全到达偏僻山林，方源现身",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0008",
+      "startOffset": 497597,
+      "endOffset": 497599,
+      "summary": "蛊师，站在塔楼顶部参与战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0011",
+      "startOffset": 497704,
+      "endOffset": 497708,
+      "summary": "被提及的死者，可能是某蛊师的亲人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0036",
+      "startOffset": 498429,
+      "endOffset": 498467,
+      "summary": "蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0047",
+      "startOffset": 498759,
+      "endOffset": 498766,
+      "summary": "山寨高层战力"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0066",
+      "startOffset": 499454,
+      "endOffset": 499490,
+      "summary": "古月族家老，三转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0075",
+      "startOffset": 499817,
+      "endOffset": 499840,
+      "summary": "古月族少女，一转蛊师，药姬的孙女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0076",
+      "startOffset": 499844,
+      "endOffset": 499909,
+      "summary": "古月族蛊师，老手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0072",
+      "startOffset": 499730,
+      "endOffset": 499746,
+      "summary": "旁观者，观察东门战况"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0101",
+      "startOffset": 500778,
+      "endOffset": 500782,
+      "summary": "古月族女蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0103",
+      "startOffset": 500815,
+      "endOffset": 500819,
+      "summary": "古月族女蛊师，被狂电狼缠住"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0112",
+      "startOffset": 501135,
+      "endOffset": 501139,
+      "summary": "古月族男蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0099",
+      "startOffset": 500698,
+      "endOffset": 500704,
+      "summary": "救古月药乐的蛊师，后被电狼咬死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0081",
+      "startOffset": 500053,
+      "endOffset": 500095,
+      "summary": "祖孙关系，药姬是药乐的祖母"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0113",
+      "startOffset": 501161,
+      "endOffset": 501179,
+      "summary": "方源暗中引导并保护药乐，声称帮自己"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0018",
+      "startOffset": 497910,
+      "endOffset": 497912,
+      "summary": "一只狂电狼使用三转炸雷蛊攻击方源所在的塔楼，方源使用水罩蛊和白玉蛊防御，但水罩被击破，方源被击飞摔落"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0055",
+      "startOffset": 498986,
+      "endOffset": 499001,
+      "summary": "三位家老与一只狂电狼展开激战，随后九位家老与三只狂电狼形成三大战团。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0060",
+      "startOffset": 499170,
+      "endOffset": 499261,
+      "summary": "方源观察三只狂电狼的底细，发现分别寄居炸雷蛊、雷翼蛊、雷啸蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0073",
+      "startOffset": 499750,
+      "endOffset": 499777,
+      "summary": "狂电狼突袭东门，撞破大门，冲入山寨，攻击古月药乐和熊骄嫚。药姬赶来用月毒蛊攻击狂电狼，但狂电狼用音浪蛊将熊骄嫚和古月药乐震飞，古月药乐被震出寨外，面临电狼攻击。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0100",
+      "startOffset": 500741,
+      "endOffset": 500765,
+      "summary": "年轻男蛊师救下古月药乐后，被蜂拥而来的电狼咬破咽喉而死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0103",
+      "startOffset": 500815,
+      "endOffset": 500861,
+      "summary": "古月药姬被狂电狼缠住，难以顾及古月药乐"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0151",
+      "paragraphId": "ch_0151_p0104",
+      "startOffset": 500879,
+      "endOffset": 500925,
+      "summary": "方源暗中用声音引导药乐躲避电狼，并发出月刃解围，最终药乐安全到达偏僻山林，方源现身"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly public battle events (fang yuan fighting electric wolves, elders fighting, east gate breach) which are ordinary visible events, not hidden knowledge.",
+      "The only potentially non-public element is Fang Yuan secretly guiding Gu Yue Yao Le, but this is already described in the events as '暗中引导' (secretly guiding) and is directly observable by the two participants (Fang Yuan and Yao Le), making it known to them, not a hidden fact about secret motives or plans.",
+      "Fang Yuan's statement '我只是帮我自己' (I'm just helping myself) hints at hidden motive but is too vague to assert as a concrete hidden fact without extrapolation.",
+      "No directly supported knowledge gap, private knowledge, or future-known information is clearly present in the seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源暗中引导保护药乐并说'帮我自己'，但动机模糊——可能是保护有用之人，也可能是其他目的。仅凭一句话无法推断明确动机，行为可见但意图不清晰，不宜强加推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual combat actions (Fang Yuan, Yao Ji, Yao Le) and a beast attack (electric wolves). The only collective actors mentioned are '家老' (clan elders) as a group of high-level combatants, and '古月族' (Gu Yue clan) as a background affiliation. However, the seed does not establish a concrete collective stake or pressure for any named faction/clan/group. The elders are acting in combat response to an immediate beast attack, which is a tactical situation rather than a sustained faction pressure. The Gu Yue clan is not shown facing a specific pressure axis (interest, threat, resource, reputation, geography, succession, inheritance) in this chapter. The electric wolves are beasts, not a faction. No named family, clan, or organization has a clear ongoing pressure stake beyond the immediate battle.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

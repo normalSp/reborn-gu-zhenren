@@ -1,0 +1,543 @@
+{
+  "packageId": "ri_lw_ch_0830",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0830"
+    ],
+    "paragraphIds": [
+      "ch_0830_p0002",
+      "ch_0830_p0004",
+      "ch_0830_p0012",
+      "ch_0830_p0020",
+      "ch_0830_p0031",
+      "ch_0830_p0051",
+      "ch_0830_p0052",
+      "ch_0830_p0054",
+      "ch_0830_p0055",
+      "ch_0830_p0058"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0002",
+          "startOffset": 2924995,
+          "endOffset": 2924997,
+          "summary": "狐仙福地主人"
+        }
+      ],
+      "entityId": "entity_f2673f397b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "狐仙福地主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0002",
+          "startOffset": 2925009,
+          "endOffset": 2925013,
+          "summary": "仙窍被方源使用"
+        }
+      ],
+      "entityId": "entity_57f003fdfa98",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙窍被方源使用",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0012",
+          "startOffset": 2925543,
+          "endOffset": 2925547,
+          "summary": "魂魄被方源搜魂"
+        }
+      ],
+      "entityId": "entity_1c0cb56714fd",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "魂魄被方源搜魂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0052",
+          "startOffset": 2927475,
+          "endOffset": 2927477,
+          "summary": "狐仙福地主人，六转蛊仙"
+        }
+      ],
+      "entityId": "entity_f2673f397b21",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "狐仙福地主人，六转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0051",
+          "startOffset": 2927435,
+          "endOffset": 2927437,
+          "summary": "狐仙福地原主人，已故"
+        }
+      ],
+      "entityId": "entity_b7dbc9c4ffb6",
+      "name": "狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "狐仙福地原主人，已故",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0054",
+          "startOffset": 2927566,
+          "endOffset": 2927570,
+          "summary": "方源麾下，可能拥有江山如故蛊"
+        }
+      ],
+      "entityId": "entity_57f003fdfa98",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源麾下，可能拥有江山如故蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0002",
+          "startOffset": 2924995,
+          "endOffset": 2925013,
+          "summary": "方源将星萤虫群和星屑草群放入太白云生的仙窍中"
+        }
+      ],
+      "relationId": "rel_fac206ac85c9",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "USES",
+      "summary": "方源将星萤虫群和星屑草群放入太白云生的仙窍中",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0012",
+          "startOffset": 2925535,
+          "endOffset": 2925547,
+          "summary": "方源从东方长凡的魂魄中得知碧潭福地的布置方法"
+        }
+      ],
+      "relationId": "rel_e24b5cba28e5",
+      "subject": "方源",
+      "object": "东方长凡",
+      "relationType": "OTHER",
+      "summary": "方源从东方长凡的魂魄中得知碧潭福地的布置方法",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0052",
+          "startOffset": 2927475,
+          "endOffset": 2927477,
+          "summary": "方源是狐仙福地的主人，继承自狐仙"
+        }
+      ],
+      "relationId": "rel_8a687b07d8c8",
+      "subject": "方源",
+      "object": "狐仙福地",
+      "relationType": "OWNER",
+      "summary": "方源是狐仙福地的主人，继承自狐仙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0054",
+          "startOffset": 2927566,
+          "endOffset": 2927570,
+          "summary": "方源命令太白云生不动用江山如故"
+        }
+      ],
+      "relationId": "rel_b0182084c1da",
+      "subject": "方源",
+      "object": "太白云生",
+      "relationType": "SUBORDINATE",
+      "summary": "方源命令太白云生不动用江山如故",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0004",
+          "startOffset": 2925091,
+          "endOffset": 2925101,
+          "summary": "方源在狐仙福地中挖掘龙鳞湖、玉须湖、火炭湖，并布置小湖河塘，豢养水狼、鱼翅狼、青玉鲫鱼、幽火龙蟒等，倾倒毒血形成小血湖，以增加福地底蕴应对天灾地劫"
+        }
+      ],
+      "eventId": "evt_a7aaf4d57984",
+      "eventType": "cultivation",
+      "summary": "方源在狐仙福地中挖掘龙鳞湖、玉须湖、火炭湖，并布置小湖河塘，豢养水狼、鱼翅狼、青玉鲫鱼、幽火龙蟒等，倾倒毒血形成小血湖，以增加福地底蕴应对天灾地劫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狐仙福地底蕴增强，但引发更厉害的天劫地灾"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0031",
+          "startOffset": 2926412,
+          "endOffset": 2926432,
+          "summary": "方源猜测血毒棠花海地灾是针对他血道宗师境界所发"
+        }
+      ],
+      "eventId": "evt_42b997a4dfbd",
+      "eventType": "other",
+      "summary": "方源猜测血毒棠花海地灾是针对他血道宗师境界所发",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狐仙福地渡过地灾后新添血道道痕"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0058",
+          "startOffset": 2927824,
+          "endOffset": 2927826,
+          "summary": "方源改造狐仙福地，挖掘毒血湖泊，催生血镰草和赤斧花，为豢养血纹狐做准备"
+        }
+      ],
+      "eventId": "evt_a1d5c7deee01",
+      "eventType": "cultivation",
+      "summary": "方源改造狐仙福地，挖掘毒血湖泊，催生血镰草和赤斧花，为豢养血纹狐做准备",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狐仙福地环境改良，新增血道道痕，出现血镰草、赤斧花等资源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0051",
+          "startOffset": 2927435,
+          "endOffset": 2927437,
+          "summary": "狐仙在第五次地灾中死于魅蓝电影"
+        }
+      ],
+      "eventId": "evt_1b6519d0af24",
+      "eventType": "other",
+      "summary": "狐仙在第五次地灾中死于魅蓝电影",
+      "actors": [
+        "狐仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狐仙福地由方源继承"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0004",
+          "startOffset": 2925091,
+          "endOffset": 2925101,
+          "summary": "方源在狐仙福地中挖掘龙鳞湖、玉须湖、火炭湖，并布置小湖河塘，豢养水狼、鱼翅狼、青玉鲫鱼、幽火龙蟒等，倾倒毒血形成小血湖，以增加福地底蕴应对天灾地劫"
+        }
+      ],
+      "timelineId": "tl_a7aaf4d57984",
+      "eventId": "evt_a7aaf4d57984",
+      "chapterId": "ch_0830",
+      "orderHint": "chapter-order",
+      "summary": "方源在狐仙福地中挖掘龙鳞湖、玉须湖、火炭湖，并布置小湖河塘，豢养水狼、鱼翅狼、青玉鲫鱼、幽火龙蟒等，倾倒毒血形成小血湖，以增加福地底蕴应对天灾地劫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0031",
+          "startOffset": 2926412,
+          "endOffset": 2926432,
+          "summary": "方源猜测血毒棠花海地灾是针对他血道宗师境界所发"
+        }
+      ],
+      "timelineId": "tl_42b997a4dfbd",
+      "eventId": "evt_42b997a4dfbd",
+      "chapterId": "ch_0830",
+      "orderHint": "chapter-order",
+      "summary": "方源猜测血毒棠花海地灾是针对他血道宗师境界所发",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0058",
+          "startOffset": 2927824,
+          "endOffset": 2927826,
+          "summary": "方源改造狐仙福地，挖掘毒血湖泊，催生血镰草和赤斧花，为豢养血纹狐做准备"
+        }
+      ],
+      "timelineId": "tl_a1d5c7deee01",
+      "eventId": "evt_a1d5c7deee01",
+      "chapterId": "ch_0830",
+      "orderHint": "chapter-order",
+      "summary": "方源改造狐仙福地，挖掘毒血湖泊，催生血镰草和赤斧花，为豢养血纹狐做准备",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0830",
+          "paragraphId": "ch_0830_p0051",
+          "startOffset": 2927435,
+          "endOffset": 2927437,
+          "summary": "狐仙在第五次地灾中死于魅蓝电影"
+        }
+      ],
+      "timelineId": "tl_1b6519d0af24",
+      "eventId": "evt_1b6519d0af24",
+      "chapterId": "ch_0830",
+      "orderHint": "chapter-order",
+      "summary": "狐仙在第五次地灾中死于魅蓝电影",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0002",
+      "startOffset": 2924995,
+      "endOffset": 2924997,
+      "summary": "狐仙福地主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0002",
+      "startOffset": 2925009,
+      "endOffset": 2925013,
+      "summary": "仙窍被方源使用"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0012",
+      "startOffset": 2925543,
+      "endOffset": 2925547,
+      "summary": "魂魄被方源搜魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0052",
+      "startOffset": 2927475,
+      "endOffset": 2927477,
+      "summary": "狐仙福地主人，六转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0051",
+      "startOffset": 2927435,
+      "endOffset": 2927437,
+      "summary": "狐仙福地原主人，已故"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0054",
+      "startOffset": 2927566,
+      "endOffset": 2927570,
+      "summary": "方源麾下，可能拥有江山如故蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0002",
+      "startOffset": 2924995,
+      "endOffset": 2925013,
+      "summary": "方源将星萤虫群和星屑草群放入太白云生的仙窍中"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0012",
+      "startOffset": 2925535,
+      "endOffset": 2925547,
+      "summary": "方源从东方长凡的魂魄中得知碧潭福地的布置方法"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0004",
+      "startOffset": 2925091,
+      "endOffset": 2925101,
+      "summary": "方源在狐仙福地中挖掘龙鳞湖、玉须湖、火炭湖，并布置小湖河塘，豢养水狼、鱼翅狼、青玉鲫鱼、幽火龙蟒等，倾倒毒血形成小血湖，以增加福地底蕴应对天灾地劫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0031",
+      "startOffset": 2926412,
+      "endOffset": 2926432,
+      "summary": "方源猜测血毒棠花海地灾是针对他血道宗师境界所发"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0830",
+      "paragraphId": "ch_0830_p0058",
+      "startOffset": 2927824,
+      "endOffset": 2927826,
+      "summary": "方源改造狐仙福地，挖掘毒血湖泊，催生血镰草和赤斧花，为豢养血纹狐做准备"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (Fang Yuan digging lakes, raising beasts, modifying Hu Xian blessed land) and one speculative guess (Fang Yuan privately guesses the blood poison disaster targets his blood path attainment). The guess is explicitly marked as 猜测 (guess) and is Fang Yuan's private speculation, not a narrator-level fact. No other hidden knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed. The source pointers reference visible cultivation activities and entity names only.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Seed shows Fang Yuan's actions (digging lakes, cultivating resources, preparing for blood-patterned foxes) but no direct observed motive beyond 'increasing blessed land foundation to handle tribulations'. The inferred motive would be too speculative - while he is preparing for blood-patterned foxes, the seed does not directly state his intent (e.g., for combat, trade, or other purposes). Only behavior is visible; motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses entirely on individual actions of 方源 (Fang Yuan) — his cultivation, modification of 狐仙福地 (Fox Immortal Blessed Land), and use of 太白云生 (Tai Bai Yun Sheng) and 东方长凡 (Dong Fang Chang Fan). No collective faction, clan, family, or group actor appears in the seed facts or relations. 狐仙福地 is a location/blessed land, not a collective actor. 太白云生 is an individual subordinate, not a named faction. 东方长凡 is an individual whose soul was searched. No named family, clan, faction, shop, hall, or organization has a concrete stake in the seed facts. The only hint of a collective is 方源's private speculation about '中洲大天地' (Central Continent Great Heaven) possibly targeting his blood path attainment, but this is a subjective guess, not a source-backed fact about a named faction's pressure.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,690 @@
+{
+  "packageId": "ri_lw_ch_0699",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0699"
+    ],
+    "paragraphIds": [
+      "ch_0699_p0005",
+      "ch_0699_p0006",
+      "ch_0699_p0010",
+      "ch_0699_p0018",
+      "ch_0699_p0019",
+      "ch_0699_p0033",
+      "ch_0699_p0055",
+      "ch_0699_p0064",
+      "ch_0699_p0066",
+      "ch_0699_p0068",
+      "ch_0699_p0069",
+      "ch_0699_p0076",
+      "ch_0699_p0077",
+      "ch_0699_p0080",
+      "ch_0699_p0081",
+      "ch_0699_p0083"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0005",
+          "startOffset": 2463997,
+          "endOffset": 2463999,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_55253237f400",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0018",
+          "startOffset": 2464442,
+          "endOffset": 2464444,
+          "summary": "被屠灭的家族"
+        }
+      ],
+      "entityId": "entity_153995b99194",
+      "name": "兰家",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "被屠灭的家族",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0033",
+          "startOffset": 2465115,
+          "endOffset": 2465193,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_55253237f400",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0068",
+          "startOffset": 2466553,
+          "endOffset": 2466555,
+          "summary": "主角，力道宗师，前世血道宗师"
+        }
+      ],
+      "entityId": "entity_55253237f400",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，力道宗师，前世血道宗师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0083",
+          "startOffset": 2467250,
+          "endOffset": 2467254,
+          "summary": "方源在宝黄天中的化名"
+        }
+      ],
+      "entityId": "entity_4d81f04c532f",
+      "name": "八臂仙人",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源在宝黄天中的化名",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0005",
+          "startOffset": 2463997,
+          "endOffset": 2463999,
+          "summary": "方源屠灭兰家，掠夺其资源"
+        }
+      ],
+      "relationId": "rel_7dfcf9125ef7",
+      "subject": "方源",
+      "object": "兰家",
+      "relationType": "CONFLICT",
+      "summary": "方源屠灭兰家，掠夺其资源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0069",
+          "startOffset": 2466605,
+          "endOffset": 2466607,
+          "summary": "方源使用连运仙蛊，需要沙鸥土喂养"
+        }
+      ],
+      "relationId": "rel_ba5eaa960756",
+      "subject": "方源",
+      "object": "连运仙蛊",
+      "relationType": "USES",
+      "summary": "方源使用连运仙蛊，需要沙鸥土喂养",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0080",
+          "startOffset": 2467126,
+          "endOffset": 2467128,
+          "summary": "方源需要喂养净魂仙蛊，需要白莲巨蚕蛊的血肉"
+        }
+      ],
+      "relationId": "rel_ca1051ca32c6",
+      "subject": "方源",
+      "object": "净魂仙蛊",
+      "relationType": "USES",
+      "summary": "方源需要喂养净魂仙蛊，需要白莲巨蚕蛊的血肉",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0077",
+          "startOffset": 2467030,
+          "endOffset": 2467032,
+          "summary": "方源在智慧蛊的帮助下改良方法"
+        }
+      ],
+      "relationId": "rel_d525c1e8e003",
+      "subject": "方源",
+      "object": "智慧蛊",
+      "relationType": "USES",
+      "summary": "方源在智慧蛊的帮助下改良方法",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0005",
+          "startOffset": 2463997,
+          "endOffset": 2463999,
+          "summary": "方源屠灭粥稀绿洲的兰家，屠杀凡人，掠夺资源"
+        }
+      ],
+      "eventId": "evt_841cfee6a0fc",
+      "eventType": "conflict",
+      "summary": "方源屠灭粥稀绿洲的兰家，屠杀凡人，掠夺资源",
+      "actors": [
+        "方源",
+        "兰家"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "兰家覆灭，方源获得大量元石、炼蛊材料和凡蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0006",
+          "startOffset": 2464039,
+          "endOffset": 2464049,
+          "summary": "方源使用毒道仙蛊妇人心屠杀凡人，喂饱妇人心"
+        }
+      ],
+      "eventId": "evt_f15c446c9b85",
+      "eventType": "cultivation",
+      "summary": "方源使用毒道仙蛊妇人心屠杀凡人，喂饱妇人心",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "妇人心养炼合一，威力增强"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0019",
+          "startOffset": 2464528,
+          "endOffset": 2464530,
+          "summary": "方源搜索兰家族库，发现并收取元石、炼蛊材料和凡蛊"
+        }
+      ],
+      "eventId": "evt_d25d4a33cd38",
+      "eventType": "other",
+      "summary": "方源搜索兰家族库，发现并收取元石、炼蛊材料和凡蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得十万多块元石、大量炼蛊材料和凡蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0055",
+          "startOffset": 2466036,
+          "endOffset": 2466071,
+          "summary": "方源进入兰家地下秘库，发现沙鸥孵育之地，遭遇沙鸥攻击并击杀大量沙鸥，最终找到天地沙鸥死蛋。"
+        }
+      ],
+      "eventId": "evt_9a71e4339b44",
+      "eventType": "other",
+      "summary": "方源进入兰家地下秘库，发现沙鸥孵育之地，遭遇沙鸥攻击并击杀大量沙鸥，最终找到天地沙鸥死蛋。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得天地沙鸥死蛋，但蛋已夭折。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0066",
+          "startOffset": 2466506,
+          "endOffset": 2466508,
+          "summary": "方源屠杀一个中小型部族后，获得一只上古荒禽死蛋"
+        }
+      ],
+      "eventId": "evt_0b6c7b4f7cbb",
+      "eventType": "acquisition",
+      "summary": "方源屠杀一个中小型部族后，获得一只上古荒禽死蛋",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源利用死蛋中的生命精华转化沙鸥土，喂饱连运仙蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0076",
+          "startOffset": 2466981,
+          "endOffset": 2466983,
+          "summary": "方源利用六百多只凡蛊组成蛊阵，抽取死蛋生命精华，在智慧蛊帮助下改良为嫩黄色汁液，浸泡沙石转化为沙鸥土"
+        }
+      ],
+      "eventId": "evt_d4e2ee84588b",
+      "eventType": "cultivation",
+      "summary": "方源利用六百多只凡蛊组成蛊阵，抽取死蛋生命精华，在智慧蛊帮助下改良为嫩黄色汁液，浸泡沙石转化为沙鸥土",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "三天后得到充足沙鸥土，喂饱连运仙蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0083",
+          "startOffset": 2467250,
+          "endOffset": 2467252,
+          "summary": "方源以八臂仙人的名义在宝黄天中求购白莲巨蚕蛊及蛊方，未获回应"
+        }
+      ],
+      "eventId": "evt_7315f0515a3f",
+      "eventType": "trade",
+      "summary": "方源以八臂仙人的名义在宝黄天中求购白莲巨蚕蛊及蛊方，未获回应",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "净魂仙蛊喂养问题仍未解决"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0005",
+          "startOffset": 2463997,
+          "endOffset": 2463999,
+          "summary": "方源屠灭粥稀绿洲的兰家，屠杀凡人，掠夺资源"
+        }
+      ],
+      "timelineId": "tl_841cfee6a0fc",
+      "eventId": "evt_841cfee6a0fc",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源屠灭粥稀绿洲的兰家，屠杀凡人，掠夺资源",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0006",
+          "startOffset": 2464039,
+          "endOffset": 2464049,
+          "summary": "方源使用毒道仙蛊妇人心屠杀凡人，喂饱妇人心"
+        }
+      ],
+      "timelineId": "tl_f15c446c9b85",
+      "eventId": "evt_f15c446c9b85",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源使用毒道仙蛊妇人心屠杀凡人，喂饱妇人心",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0019",
+          "startOffset": 2464528,
+          "endOffset": 2464530,
+          "summary": "方源搜索兰家族库，发现并收取元石、炼蛊材料和凡蛊"
+        }
+      ],
+      "timelineId": "tl_d25d4a33cd38",
+      "eventId": "evt_d25d4a33cd38",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源搜索兰家族库，发现并收取元石、炼蛊材料和凡蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0055",
+          "startOffset": 2466036,
+          "endOffset": 2466071,
+          "summary": "方源进入兰家地下秘库，发现沙鸥孵育之地，遭遇沙鸥攻击并击杀大量沙鸥，最终找到天地沙鸥死蛋。"
+        }
+      ],
+      "timelineId": "tl_9a71e4339b44",
+      "eventId": "evt_9a71e4339b44",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源进入兰家地下秘库，发现沙鸥孵育之地，遭遇沙鸥攻击并击杀大量沙鸥，最终找到天地沙鸥死蛋。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0066",
+          "startOffset": 2466506,
+          "endOffset": 2466508,
+          "summary": "方源屠杀一个中小型部族后，获得一只上古荒禽死蛋"
+        }
+      ],
+      "timelineId": "tl_0b6c7b4f7cbb",
+      "eventId": "evt_0b6c7b4f7cbb",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源屠杀一个中小型部族后，获得一只上古荒禽死蛋",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0076",
+          "startOffset": 2466981,
+          "endOffset": 2466983,
+          "summary": "方源利用六百多只凡蛊组成蛊阵，抽取死蛋生命精华，在智慧蛊帮助下改良为嫩黄色汁液，浸泡沙石转化为沙鸥土"
+        }
+      ],
+      "timelineId": "tl_d4e2ee84588b",
+      "eventId": "evt_d4e2ee84588b",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源利用六百多只凡蛊组成蛊阵，抽取死蛋生命精华，在智慧蛊帮助下改良为嫩黄色汁液，浸泡沙石转化为沙鸥土",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0699",
+          "paragraphId": "ch_0699_p0083",
+          "startOffset": 2467250,
+          "endOffset": 2467252,
+          "summary": "方源以八臂仙人的名义在宝黄天中求购白莲巨蚕蛊及蛊方，未获回应"
+        }
+      ],
+      "timelineId": "tl_7315f0515a3f",
+      "eventId": "evt_7315f0515a3f",
+      "chapterId": "ch_0699",
+      "orderHint": "chapter-order",
+      "summary": "方源以八臂仙人的名义在宝黄天中求购白莲巨蚕蛊及蛊方，未获回应",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0005",
+      "startOffset": 2463997,
+      "endOffset": 2463999,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0018",
+      "startOffset": 2464442,
+      "endOffset": 2464444,
+      "summary": "被屠灭的家族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0033",
+      "startOffset": 2465115,
+      "endOffset": 2465193,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0068",
+      "startOffset": 2466553,
+      "endOffset": 2466555,
+      "summary": "主角，力道宗师，前世血道宗师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0083",
+      "startOffset": 2467250,
+      "endOffset": 2467254,
+      "summary": "方源在宝黄天中的化名"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0069",
+      "startOffset": 2466605,
+      "endOffset": 2466607,
+      "summary": "方源使用连运仙蛊，需要沙鸥土喂养"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0080",
+      "startOffset": 2467126,
+      "endOffset": 2467128,
+      "summary": "方源需要喂养净魂仙蛊，需要白莲巨蚕蛊的血肉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0077",
+      "startOffset": 2467030,
+      "endOffset": 2467032,
+      "summary": "方源在智慧蛊的帮助下改良方法"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0006",
+      "startOffset": 2464039,
+      "endOffset": 2464049,
+      "summary": "方源使用毒道仙蛊妇人心屠杀凡人，喂饱妇人心"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0019",
+      "startOffset": 2464528,
+      "endOffset": 2464530,
+      "summary": "方源搜索兰家族库，发现并收取元石、炼蛊材料和凡蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0055",
+      "startOffset": 2466036,
+      "endOffset": 2466071,
+      "summary": "方源进入兰家地下秘库，发现沙鸥孵育之地，遭遇沙鸥攻击并击杀大量沙鸥，最终找到天地沙鸥死蛋。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0066",
+      "startOffset": 2466506,
+      "endOffset": 2466508,
+      "summary": "方源屠杀一个中小型部族后，获得一只上古荒禽死蛋"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0076",
+      "startOffset": 2466981,
+      "endOffset": 2466983,
+      "summary": "方源利用六百多只凡蛊组成蛊阵，抽取死蛋生命精华，在智慧蛊帮助下改良为嫩黄色汁液，浸泡沙石转化为沙鸥土"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0699",
+      "paragraphId": "ch_0699_p0083",
+      "startOffset": 2467250,
+      "endOffset": 2467252,
+      "summary": "方源以八臂仙人的名义在宝黄天中求购白莲巨蚕蛊及蛊方，未获回应"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events in this chapter are ordinary visible actions by Fang Yuan (massacring the Lan family, looting resources, finding sand gull eggs, refining sand gull soil, trading on Treasure Yellow Heaven). No hidden knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed. The events are all directly narrated as they happen, with no private knowledge or information asymmetry supported by the source pointers.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Seed shows Fang Yuan's actions (slaughtering Lan family, looting resources, feeding gu worms, trading) but observed behavior is purely instrumental/resource-driven. No direct source text reveals his internal motives, desires, or fears. Only behavior is visible; motive is ambiguous. Cannot infer strategic intent like '示好', '投靠', or '找替罪羊' without direct support.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The only named collective actor is '兰家' (Lan family), but it has already been completely annihilated (屠灭) by Fang Yuan in this chapter. The family is destroyed, its members killed, its resources looted, and its secret vaults plundered. A destroyed family with no surviving members or ongoing operations cannot sustain a living-world faction pressure. No other collective actor (clan, faction, organization) appears in the seed facts or relations. All other entities are individuals (方源, 八臂仙人) or individual-level titles. No surviving group has a concrete stake in ongoing pressures.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

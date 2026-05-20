@@ -1,0 +1,598 @@
+{
+  "packageId": "ri_lw_ch_0280",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0280"
+    ],
+    "paragraphIds": [
+      "ch_0280_p0003",
+      "ch_0280_p0004",
+      "ch_0280_p0022",
+      "ch_0280_p0036",
+      "ch_0280_p0038",
+      "ch_0280_p0065",
+      "ch_0280_p0068",
+      "ch_0280_p0076",
+      "ch_0280_p0081",
+      "ch_0280_p0083",
+      "ch_0280_p0084",
+      "ch_0280_p0095",
+      "ch_0280_p0099"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0003",
+          "startOffset": 961257,
+          "endOffset": 961259,
+          "summary": "蛊师，正在炼蛊"
+        }
+      ],
+      "entityId": "entity_6080e1468101",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，正在炼蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0004",
+          "startOffset": 961277,
+          "endOffset": 961280,
+          "summary": "方源的朋友或同伴"
+        }
+      ],
+      "entityId": "entity_f479828d4f5f",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的朋友或同伴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0036",
+          "startOffset": 962345,
+          "endOffset": 962347,
+          "summary": "蛊师，炼蛊者"
+        }
+      ],
+      "entityId": "entity_6080e1468101",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，炼蛊者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0065",
+          "startOffset": 963313,
+          "endOffset": 963315,
+          "summary": "主角，拥有五百年重生记忆"
+        }
+      ],
+      "entityId": "entity_6080e1468101",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，拥有五百年重生记忆",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0081",
+          "startOffset": 963913,
+          "endOffset": 963917,
+          "summary": "商家城人物，与方源有冲突"
+        }
+      ],
+      "entityId": "entity_7c07dd1fb984",
+      "name": "商睚眦",
+      "kind": "person",
+      "aliases": [],
+      "description": "商家城人物，与方源有冲突",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0081",
+          "startOffset": 963913,
+          "endOffset": 963917,
+          "summary": "与方源有交易关系"
+        }
+      ],
+      "entityId": "entity_f479828d4f5f",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "与方源有交易关系",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0099",
+          "startOffset": 964696,
+          "endOffset": 964698,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_6080e1468101",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0004",
+          "startOffset": 961277,
+          "endOffset": 961280,
+          "summary": "方源和白凝冰分别后，方源独自去商铺买炼蛊材料"
+        }
+      ],
+      "relationId": "rel_b1923341cca4",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源和白凝冰分别后，方源独自去商铺买炼蛊材料",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0083",
+          "startOffset": 964003,
+          "endOffset": 964086,
+          "summary": "方源占了商睚眦的便宜，商睚眦气性狭小，会报复方源"
+        }
+      ],
+      "relationId": "rel_e6ce563d4afb",
+      "subject": "方源",
+      "object": "商睚眦",
+      "relationType": "CONFLICT",
+      "summary": "方源占了商睚眦的便宜，商睚眦气性狭小，会报复方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0083",
+          "startOffset": 964003,
+          "endOffset": 964086,
+          "summary": "方源利用白凝冰，暂时不翻脸"
+        }
+      ],
+      "relationId": "rel_308bb9b0fa3b",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "OTHER",
+      "summary": "方源利用白凝冰，暂时不翻脸",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0022",
+          "startOffset": 961872,
+          "endOffset": 961874,
+          "summary": "方源在密室中炼蛊，先用臭屁蛊和饭袋草合炼出屙屎蛊，再用大力蛊和屙屎蛊合炼出大力屙屎蛊"
+        }
+      ],
+      "eventId": "evt_e25f33279d63",
+      "eventType": "other",
+      "summary": "方源在密室中炼蛊，先用臭屁蛊和饭袋草合炼出屙屎蛊，再用大力蛊和屙屎蛊合炼出大力屙屎蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成功炼出二转屙屎蛊和三转大力屙屎蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0038",
+          "startOffset": 962442,
+          "endOffset": 962460,
+          "summary": "方源在密室中炼蛊，同时催动狮吼蛊、大力屙屎蛊和纸鹤蛊，最终炼成言而无信蛊。"
+        }
+      ],
+      "eventId": "evt_69fda8d6fd59",
+      "eventType": "cultivation",
+      "summary": "方源在密室中炼蛊，同时催动狮吼蛊、大力屙屎蛊和纸鹤蛊，最终炼成言而无信蛊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "言而无信蛊炼成，但只能存在十个呼吸。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0068",
+          "startOffset": 963422,
+          "endOffset": 963476,
+          "summary": "方源使用狮头虚影消除自身毒誓蛊的约束"
+        }
+      ],
+      "eventId": "evt_eb72bd72accf",
+      "eventType": "other",
+      "summary": "方源使用狮头虚影消除自身毒誓蛊的约束",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源摆脱毒誓蛊束缚，而商睚眦和白凝冰仍受毒誓蛊约束"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0095",
+          "startOffset": 964519,
+          "endOffset": 964613,
+          "summary": "方源思考赚钱方法，因为元石不足"
+        }
+      ],
+      "eventId": "evt_88a744d9bd19",
+      "eventType": "other",
+      "summary": "方源思考赚钱方法，因为元石不足",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定寻找赚钱行当"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0099",
+          "startOffset": 964696,
+          "endOffset": 964726,
+          "summary": "方源结合前世经历和今生见解，决定通过演武场赚钱。"
+        }
+      ],
+      "eventId": "evt_00081d2a97e6",
+      "eventType": "other",
+      "summary": "方源结合前世经历和今生见解，决定通过演武场赚钱。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源拿定主意通过演武场赚钱。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0022",
+          "startOffset": 961872,
+          "endOffset": 961874,
+          "summary": "方源在密室中炼蛊，先用臭屁蛊和饭袋草合炼出屙屎蛊，再用大力蛊和屙屎蛊合炼出大力屙屎蛊"
+        }
+      ],
+      "timelineId": "tl_e25f33279d63",
+      "eventId": "evt_e25f33279d63",
+      "chapterId": "ch_0280",
+      "orderHint": "chapter-order",
+      "summary": "方源在密室中炼蛊，先用臭屁蛊和饭袋草合炼出屙屎蛊，再用大力蛊和屙屎蛊合炼出大力屙屎蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0038",
+          "startOffset": 962442,
+          "endOffset": 962460,
+          "summary": "方源在密室中炼蛊，同时催动狮吼蛊、大力屙屎蛊和纸鹤蛊，最终炼成言而无信蛊。"
+        }
+      ],
+      "timelineId": "tl_69fda8d6fd59",
+      "eventId": "evt_69fda8d6fd59",
+      "chapterId": "ch_0280",
+      "orderHint": "chapter-order",
+      "summary": "方源在密室中炼蛊，同时催动狮吼蛊、大力屙屎蛊和纸鹤蛊，最终炼成言而无信蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0068",
+          "startOffset": 963422,
+          "endOffset": 963476,
+          "summary": "方源使用狮头虚影消除自身毒誓蛊的约束"
+        }
+      ],
+      "timelineId": "tl_eb72bd72accf",
+      "eventId": "evt_eb72bd72accf",
+      "chapterId": "ch_0280",
+      "orderHint": "chapter-order",
+      "summary": "方源使用狮头虚影消除自身毒誓蛊的约束",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0095",
+          "startOffset": 964519,
+          "endOffset": 964613,
+          "summary": "方源思考赚钱方法，因为元石不足"
+        }
+      ],
+      "timelineId": "tl_88a744d9bd19",
+      "eventId": "evt_88a744d9bd19",
+      "chapterId": "ch_0280",
+      "orderHint": "chapter-order",
+      "summary": "方源思考赚钱方法，因为元石不足",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0280",
+          "paragraphId": "ch_0280_p0099",
+          "startOffset": 964696,
+          "endOffset": 964726,
+          "summary": "方源结合前世经历和今生见解，决定通过演武场赚钱。"
+        }
+      ],
+      "timelineId": "tl_00081d2a97e6",
+      "eventId": "evt_00081d2a97e6",
+      "chapterId": "ch_0280",
+      "orderHint": "chapter-order",
+      "summary": "方源结合前世经历和今生见解，决定通过演武场赚钱。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0003",
+      "startOffset": 961257,
+      "endOffset": 961259,
+      "summary": "蛊师，正在炼蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0004",
+      "startOffset": 961277,
+      "endOffset": 961280,
+      "summary": "方源的朋友或同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0036",
+      "startOffset": 962345,
+      "endOffset": 962347,
+      "summary": "蛊师，炼蛊者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0065",
+      "startOffset": 963313,
+      "endOffset": 963315,
+      "summary": "主角，拥有五百年重生记忆"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0081",
+      "startOffset": 963913,
+      "endOffset": 963917,
+      "summary": "商家城人物，与方源有冲突"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0099",
+      "startOffset": 964696,
+      "endOffset": 964698,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0083",
+      "startOffset": 964003,
+      "endOffset": 964086,
+      "summary": "方源占了商睚眦的便宜，商睚眦气性狭小，会报复方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0022",
+      "startOffset": 961872,
+      "endOffset": 961874,
+      "summary": "方源在密室中炼蛊，先用臭屁蛊和饭袋草合炼出屙屎蛊，再用大力蛊和屙屎蛊合炼出大力屙屎蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0038",
+      "startOffset": 962442,
+      "endOffset": 962460,
+      "summary": "方源在密室中炼蛊，同时催动狮吼蛊、大力屙屎蛊和纸鹤蛊，最终炼成言而无信蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0068",
+      "startOffset": 963422,
+      "endOffset": 963476,
+      "summary": "方源使用狮头虚影消除自身毒誓蛊的约束"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0095",
+      "startOffset": 964519,
+      "endOffset": 964613,
+      "summary": "方源思考赚钱方法，因为元石不足"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0280",
+      "paragraphId": "ch_0280_p0099",
+      "startOffset": 964696,
+      "endOffset": 964726,
+      "summary": "方源结合前世经历和今生见解，决定通过演武场赚钱。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible/ordinary events: Fang Yuan refining gu in a secret room (屙屎蛊, 大力屙屎蛊, 言而无信蛊), using lion head projection to remove a poison oath gu constraint, and deciding to earn money through the arena. These are either ordinary cultivation actions or internal decisions that are not clearly hidden/private knowledge with supported whoKnows/whoDoesNotKnow distinctions. The conflict with Shang Yazhi is mentioned as Fang Yuan's internal thought (商睚眦此人气性狭小，我占了他的大便宜，必定会报复我) - this is Fang Yuan's subjective judgment/speculation about future retaliation, not a confirmed fact. No source directly supports any actor knowing a hidden fact while another actor is ignorant of it. No future-known information with clear source backing is present.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源因元石不足而思考赚钱方法，并决定通过演武场赚钱，这是明确的行动决策，但动机层面仅能观察到'需要元石'这一表层需求。其深层动机（如为何需要更多元石、用于何种目的）未在种子中直接体现，不宜做心理跳跃推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on Fang Yuan's solo gu refining activities and his personal conflict with Shang Yazhi (商睚眦). Shang Yazhi is mentioned as an individual with a personal grievance, but there is no named faction, clan, family, or organization tied to him in the seed facts or relations. The seed does not name 'Shang family' or 'Shang clan city' as a collective actor with a stake. No other collective group (family, clan, faction, team, shop, hall, or organization) appears in the seed with a concrete stake. All events are individual actions by Fang Yuan. Therefore no valid faction/group pressure candidate can be extracted.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

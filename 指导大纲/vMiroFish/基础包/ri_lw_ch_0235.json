@@ -1,0 +1,931 @@
+{
+  "packageId": "ri_lw_ch_0235",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0235"
+    ],
+    "paragraphIds": [
+      "ch_0235_p0002",
+      "ch_0235_p0003",
+      "ch_0235_p0004",
+      "ch_0235_p0012",
+      "ch_0235_p0017",
+      "ch_0235_p0026",
+      "ch_0235_p0031",
+      "ch_0235_p0032",
+      "ch_0235_p0033",
+      "ch_0235_p0034",
+      "ch_0235_p0038",
+      "ch_0235_p0040",
+      "ch_0235_p0043",
+      "ch_0235_p0045",
+      "ch_0235_p0058",
+      "ch_0235_p0063",
+      "ch_0235_p0065",
+      "ch_0235_p0078",
+      "ch_0235_p0081",
+      "ch_0235_p0082",
+      "ch_0235_p0090",
+      "ch_0235_p0092",
+      "ch_0235_p0097",
+      "ch_0235_p0098"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0002",
+          "startOffset": 797070,
+          "endOffset": 797094,
+          "summary": "女扮男装的逃亡者"
+        }
+      ],
+      "entityId": "entity_3390ab559be4",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "女扮男装的逃亡者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0003",
+          "startOffset": 797098,
+          "endOffset": 797115,
+          "summary": "逃亡者，伪装成憨厚小伙"
+        }
+      ],
+      "entityId": "entity_366647ba77fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "逃亡者，伪装成憨厚小伙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0004",
+          "startOffset": 797119,
+          "endOffset": 797132,
+          "summary": "收留方源和白凝冰的村中老人"
+        }
+      ],
+      "entityId": "entity_b1af12bd6d92",
+      "name": "老婆婆",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "收留方源和白凝冰的村中老人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0033",
+          "startOffset": 798284,
+          "endOffset": 798307,
+          "summary": "方源的同伴，女扮男装"
+        }
+      ],
+      "entityId": "entity_3390ab559be4",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的同伴，女扮男装",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0034",
+          "startOffset": 798311,
+          "endOffset": 798327,
+          "summary": "主角，伪装成女子"
+        }
+      ],
+      "entityId": "entity_366647ba77fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，伪装成女子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0063",
+          "startOffset": 799336,
+          "endOffset": 799365,
+          "summary": "商队负责人"
+        }
+      ],
+      "entityId": "entity_3244bf6d0b23",
+      "name": "老村长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "商队负责人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0065",
+          "startOffset": 799423,
+          "endOffset": 799444,
+          "summary": "村长"
+        }
+      ],
+      "entityId": "entity_3244bf6d0b23",
+      "name": "老村长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "村长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0078",
+          "startOffset": 799803,
+          "endOffset": 799838,
+          "summary": "方源和白凝冰的合称"
+        }
+      ],
+      "entityId": "entity_50cfa7f2bbb1",
+      "name": "方白",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和白凝冰的合称",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0082",
+          "startOffset": 799933,
+          "endOffset": 799948,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_366647ba77fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0090",
+          "startOffset": 800160,
+          "endOffset": 800174,
+          "summary": "方源同伴"
+        }
+      ],
+      "entityId": "entity_3390ab559be4",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源同伴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0097",
+          "startOffset": 800370,
+          "endOffset": 800406,
+          "summary": "主角，装作垂头丧气"
+        }
+      ],
+      "entityId": "entity_366647ba77fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，装作垂头丧气",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0098",
+          "startOffset": 800410,
+          "endOffset": 800478,
+          "summary": "村长，询问情况"
+        }
+      ],
+      "entityId": "entity_3244bf6d0b23",
+      "name": "老村长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "村长，询问情况",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0012",
+          "startOffset": 797403,
+          "endOffset": 797507,
+          "summary": "老婆婆误以为白凝冰是女子，并与方源是夫妻"
+        }
+      ],
+      "relationId": "rel_2e3b6ba2cddc",
+      "subject": "老婆婆",
+      "object": "白凝冰",
+      "relationType": "OTHER",
+      "summary": "老婆婆误以为白凝冰是女子，并与方源是夫妻",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0026",
+          "startOffset": 797990,
+          "endOffset": 798067,
+          "summary": "老婆婆误以为方源和白凝冰是夫妻，并劝方源爱惜身体"
+        }
+      ],
+      "relationId": "rel_df26906fb87a",
+      "subject": "老婆婆",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "老婆婆误以为方源和白凝冰是夫妻，并劝方源爱惜身体",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0032",
+          "startOffset": 798268,
+          "endOffset": 798280,
+          "summary": "两人伪装成夫妻逃亡，实际是同伴"
+        }
+      ],
+      "relationId": "rel_3b54cb685d3f",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "两人伪装成夫妻逃亡，实际是同伴",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0040",
+          "startOffset": 798505,
+          "endOffset": 798529,
+          "summary": "合作修行，但互不信任，方源持有阳蛊，白凝冰想强取但无法"
+        }
+      ],
+      "relationId": "rel_830f1c207c3e",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "合作修行，但互不信任，方源持有阳蛊，白凝冰想强取但无法",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0081",
+          "startOffset": 799891,
+          "endOffset": 799929,
+          "summary": "村民因紫枫叶而嫉妒方白二人"
+        }
+      ],
+      "relationId": "rel_c286bf053813",
+      "subject": "方白",
+      "object": "村民",
+      "relationType": "CONFLICT",
+      "summary": "村民因紫枫叶而嫉妒方白二人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0097",
+          "startOffset": 800370,
+          "endOffset": 800406,
+          "summary": "方源向老村长汇报卖紫枫叶的情况"
+        }
+      ],
+      "relationId": "rel_034ef7be8a58",
+      "subject": "方源",
+      "object": "老村长",
+      "relationType": "OTHER",
+      "summary": "方源向老村长汇报卖紫枫叶的情况",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0017",
+          "startOffset": 797658,
+          "endOffset": 797727,
+          "summary": "老婆婆误以为白凝冰是女子，并认为她和方源是夫妻，白凝冰感到尴尬和无奈"
+        }
+      ],
+      "eventId": "evt_6e7fd18f6df7",
+      "eventType": "other",
+      "summary": "老婆婆误以为白凝冰是女子，并认为她和方源是夫妻，白凝冰感到尴尬和无奈",
+      "actors": [
+        "老婆婆",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰身份未被识破，但产生误会"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0026",
+          "startOffset": 797990,
+          "endOffset": 798067,
+          "summary": "老婆婆在门口拦住方源，提醒他爱惜身体和媳妇"
+        }
+      ],
+      "eventId": "evt_c79b75de449a",
+      "eventType": "other",
+      "summary": "老婆婆在门口拦住方源，提醒他爱惜身体和媳妇",
+      "actors": [
+        "老婆婆",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源顺势承认误会，继续伪装"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0038",
+          "startOffset": 798441,
+          "endOffset": 798479,
+          "summary": "方源和白凝冰因伪装身份产生误会，白凝冰被误认为男子，方源被误认为女子，这个误会反而有助于掩护身份"
+        }
+      ],
+      "eventId": "evt_6d02652e8590",
+      "eventType": "other",
+      "summary": "方源和白凝冰因伪装身份产生误会，白凝冰被误认为男子，方源被误认为女子，这个误会反而有助于掩护身份",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰心情糟糕，更急于得到阳蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0045",
+          "startOffset": 798696,
+          "endOffset": 798712,
+          "summary": "方源开始利用鳄力蛊进行力量修行，并使用了铁骨蛊，身体增强，能承担一鳄之力"
+        }
+      ],
+      "eventId": "evt_656e579e1b6d",
+      "eventType": "cultivation",
+      "summary": "方源开始利用鳄力蛊进行力量修行，并使用了铁骨蛊，身体增强，能承担一鳄之力",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源力气增加，为后续计划做准备"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0063",
+          "startOffset": 799336,
+          "endOffset": 799365,
+          "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖"
+        }
+      ],
+      "eventId": "evt_e36310196145",
+      "eventType": "trade",
+      "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "老村长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "二人继续前往商家城"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0092",
+          "startOffset": 800193,
+          "endOffset": 800239,
+          "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口"
+        }
+      ],
+      "eventId": "evt_1c52a18b7487",
+      "eventType": "other",
+      "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口",
+      "actors": [
+        "方白"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "紫枫叶未卖出，为加入商队创造条件"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0098",
+          "startOffset": 800410,
+          "endOffset": 800478,
+          "summary": "方源拉着紫枫叶到老村长家，老村长询问情况并叹气"
+        }
+      ],
+      "eventId": "evt_b23f05e39a61",
+      "eventType": "other",
+      "summary": "方源拉着紫枫叶到老村长家，老村长询问情况并叹气",
+      "actors": [
+        "方源",
+        "老村长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "老村长对方源卖紫枫叶的价格表示不满"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0017",
+          "startOffset": 797658,
+          "endOffset": 797727,
+          "summary": "老婆婆误以为白凝冰是女子，并认为她和方源是夫妻，白凝冰感到尴尬和无奈"
+        }
+      ],
+      "timelineId": "tl_6e7fd18f6df7",
+      "eventId": "evt_6e7fd18f6df7",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "老婆婆误以为白凝冰是女子，并认为她和方源是夫妻，白凝冰感到尴尬和无奈",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0026",
+          "startOffset": 797990,
+          "endOffset": 798067,
+          "summary": "老婆婆在门口拦住方源，提醒他爱惜身体和媳妇"
+        }
+      ],
+      "timelineId": "tl_c79b75de449a",
+      "eventId": "evt_c79b75de449a",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "老婆婆在门口拦住方源，提醒他爱惜身体和媳妇",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0038",
+          "startOffset": 798441,
+          "endOffset": 798479,
+          "summary": "方源和白凝冰因伪装身份产生误会，白凝冰被误认为男子，方源被误认为女子，这个误会反而有助于掩护身份"
+        }
+      ],
+      "timelineId": "tl_6d02652e8590",
+      "eventId": "evt_6d02652e8590",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰因伪装身份产生误会，白凝冰被误认为男子，方源被误认为女子，这个误会反而有助于掩护身份",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0045",
+          "startOffset": 798696,
+          "endOffset": 798712,
+          "summary": "方源开始利用鳄力蛊进行力量修行，并使用了铁骨蛊，身体增强，能承担一鳄之力"
+        }
+      ],
+      "timelineId": "tl_656e579e1b6d",
+      "eventId": "evt_656e579e1b6d",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "方源开始利用鳄力蛊进行力量修行，并使用了铁骨蛊，身体增强，能承担一鳄之力",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0063",
+          "startOffset": 799336,
+          "endOffset": 799365,
+          "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖"
+        }
+      ],
+      "timelineId": "tl_e36310196145",
+      "eventId": "evt_e36310196145",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0092",
+          "startOffset": 800193,
+          "endOffset": 800239,
+          "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口"
+        }
+      ],
+      "timelineId": "tl_1c52a18b7487",
+      "eventId": "evt_1c52a18b7487",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0098",
+          "startOffset": 800410,
+          "endOffset": 800478,
+          "summary": "方源拉着紫枫叶到老村长家，老村长询问情况并叹气"
+        }
+      ],
+      "timelineId": "tl_b23f05e39a61",
+      "eventId": "evt_b23f05e39a61",
+      "chapterId": "ch_0235",
+      "orderHint": "chapter-order",
+      "summary": "方源拉着紫枫叶到老村长家，老村长询问情况并叹气",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0002",
+      "startOffset": 797070,
+      "endOffset": 797094,
+      "summary": "女扮男装的逃亡者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0003",
+      "startOffset": 797098,
+      "endOffset": 797115,
+      "summary": "逃亡者，伪装成憨厚小伙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0004",
+      "startOffset": 797119,
+      "endOffset": 797132,
+      "summary": "收留方源和白凝冰的村中老人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0033",
+      "startOffset": 798284,
+      "endOffset": 798307,
+      "summary": "方源的同伴，女扮男装"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0034",
+      "startOffset": 798311,
+      "endOffset": 798327,
+      "summary": "主角，伪装成女子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0063",
+      "startOffset": 799336,
+      "endOffset": 799365,
+      "summary": "商队负责人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0065",
+      "startOffset": 799423,
+      "endOffset": 799444,
+      "summary": "村长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0078",
+      "startOffset": 799803,
+      "endOffset": 799838,
+      "summary": "方源和白凝冰的合称"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0082",
+      "startOffset": 799933,
+      "endOffset": 799948,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0090",
+      "startOffset": 800160,
+      "endOffset": 800174,
+      "summary": "方源同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0097",
+      "startOffset": 800370,
+      "endOffset": 800406,
+      "summary": "主角，装作垂头丧气"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0098",
+      "startOffset": 800410,
+      "endOffset": 800478,
+      "summary": "村长，询问情况"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0012",
+      "startOffset": 797403,
+      "endOffset": 797507,
+      "summary": "老婆婆误以为白凝冰是女子，并与方源是夫妻"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0026",
+      "startOffset": 797990,
+      "endOffset": 798067,
+      "summary": "老婆婆误以为方源和白凝冰是夫妻，并劝方源爱惜身体"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0032",
+      "startOffset": 798268,
+      "endOffset": 798280,
+      "summary": "两人伪装成夫妻逃亡，实际是同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0040",
+      "startOffset": 798505,
+      "endOffset": 798529,
+      "summary": "合作修行，但互不信任，方源持有阳蛊，白凝冰想强取但无法"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0081",
+      "startOffset": 799891,
+      "endOffset": 799929,
+      "summary": "村民因紫枫叶而嫉妒方白二人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0017",
+      "startOffset": 797658,
+      "endOffset": 797727,
+      "summary": "老婆婆误以为白凝冰是女子，并认为她和方源是夫妻，白凝冰感到尴尬和无奈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0038",
+      "startOffset": 798441,
+      "endOffset": 798479,
+      "summary": "方源和白凝冰因伪装身份产生误会，白凝冰被误认为男子，方源被误认为女子，这个误会反而有助于掩护身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0045",
+      "startOffset": 798696,
+      "endOffset": 798712,
+      "summary": "方源开始利用鳄力蛊进行力量修行，并使用了铁骨蛊，身体增强，能承担一鳄之力"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0092",
+      "startOffset": 800193,
+      "endOffset": 800239,
+      "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package primarily contains ordinary visible events (daily life, farming, trading) and misunderstandings about disguised identities. The老婆婆's mistaken belief that 方源 and 白凝冰 are a married couple is a visible misunderstanding (player-visible), not a hidden fact. The fact that 方源 holds the 阳蛊 and 白凝冰 wants it is already visible between them (not hidden from the reader). No private knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed that would qualify as a hidden/future-known/player-visibility fact candidate.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "白凝冰质问方源何时给阳蛊（ptr_16），显示她想要阳蛊，但这是已知关系中的重复信息，且动机（急于得到阳蛊）已在events中表述。其他事件多为伪装、误会、交易等行为，缺乏足够直接的行为-动机链条来构建新的、紧凑的character motive。行为可见但动机模糊，不宜强行推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains only individual persons (方源, 白凝冰, 老婆婆) and references to 老村长 (old village chief) and 商队 (merchant caravan) as passing mentions. No named collective actor (faction, clan, family, group, organization) appears with a concrete stake in the seed facts. The 老婆婆 is a single person title, not a collective. The 老村长 and 商队 are mentioned only in passing context (商队 arrival, 老村长's prediction) without any faction-level pressure dynamics. No family, clan, faction, or organization is established as a collective actor with interests, threats, or stakes. Cannot derive faction pressure from individual-only subjects.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

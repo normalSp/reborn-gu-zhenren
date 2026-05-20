@@ -1,0 +1,616 @@
+{
+  "packageId": "ri_lw_ch_1601",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1601"
+    ],
+    "paragraphIds": [
+      "ch_1601_p0002",
+      "ch_1601_p0004",
+      "ch_1601_p0017",
+      "ch_1601_p0023",
+      "ch_1601_p0024",
+      "ch_1601_p0027",
+      "ch_1601_p0030",
+      "ch_1601_p0034",
+      "ch_1601_p0036",
+      "ch_1601_p0040",
+      "ch_1601_p0047",
+      "ch_1601_p0049",
+      "ch_1601_p0052"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0002",
+          "startOffset": 5555342,
+          "endOffset": 5555344,
+          "summary": "主角，探索梦境"
+        }
+      ],
+      "entityId": "entity_a7bcdffc7ebc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，探索梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0004",
+          "startOffset": 5555415,
+          "endOffset": 5555417,
+          "summary": "梦境中的人物，受伤"
+        }
+      ],
+      "entityId": "entity_88e1941f1b55",
+      "name": "蒙逼",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境中的人物，受伤",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0023",
+          "startOffset": 5556090,
+          "endOffset": 5556095,
+          "summary": "天庭成员，擅长推算"
+        }
+      ],
+      "entityId": "entity_1ce46b8ae44b",
+      "name": "紫薇仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "天庭成员，擅长推算",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0034",
+          "startOffset": 5556547,
+          "endOffset": 5556549,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_a7bcdffc7ebc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0040",
+          "startOffset": 5556853,
+          "endOffset": 5556856,
+          "summary": "合作对象"
+        }
+      ],
+      "entityId": "entity_56ca3457911b",
+      "name": "池曲由",
+      "kind": "person",
+      "aliases": [],
+      "description": "合作对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0049",
+          "startOffset": 5557207,
+          "endOffset": 5557209,
+          "summary": "梦境中传授杀招的前辈"
+        }
+      ],
+      "entityId": "entity_547c0f0485ab",
+      "name": "老者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "梦境中传授杀招的前辈",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0017",
+          "startOffset": 5555857,
+          "endOffset": 5555877,
+          "summary": "方源在梦境中治疗蒙逼"
+        }
+      ],
+      "relationId": "rel_ab16db3a8b8e",
+      "subject": "方源",
+      "object": "蒙逼",
+      "relationType": "OTHER",
+      "summary": "方源在梦境中治疗蒙逼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0023",
+          "startOffset": 5556053,
+          "endOffset": 5556095,
+          "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡"
+        }
+      ],
+      "relationId": "rel_9a81850e44ee",
+      "subject": "方源",
+      "object": "紫薇仙子",
+      "relationType": "CONFLICT",
+      "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0040",
+          "startOffset": 5556837,
+          "endOffset": 5556867,
+          "summary": "方源因仙元储备不足而选择与池曲由合作"
+        }
+      ],
+      "relationId": "rel_4654aa50f922",
+      "subject": "方源",
+      "object": "池曲由",
+      "relationType": "ALLY",
+      "summary": "方源因仙元储备不足而选择与池曲由合作",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0052",
+          "startOffset": 5557272,
+          "endOffset": 5557332,
+          "summary": "老者在梦境中传授方源光阴飞刃杀招"
+        }
+      ],
+      "relationId": "rel_aae232e3606f",
+      "subject": "方源",
+      "object": "老者",
+      "relationType": "MENTOR",
+      "summary": "老者在梦境中传授方源光阴飞刃杀招",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0017",
+          "startOffset": 5555857,
+          "endOffset": 5555877,
+          "summary": "方源在梦境中成功组合宙道杀招，治疗蒙逼，梦境破碎"
+        }
+      ],
+      "eventId": "evt_8e8afeba120e",
+      "eventType": "cultivation",
+      "summary": "方源在梦境中成功组合宙道杀招，治疗蒙逼，梦境破碎",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源宙道境界提升至大师级"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0024",
+          "startOffset": 5556112,
+          "endOffset": 5556142,
+          "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡，消耗方源上百万魂魄底蕴"
+        }
+      ],
+      "eventId": "evt_6af803d4593d",
+      "eventType": "conflict",
+      "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡，消耗方源上百万魂魄底蕴",
+      "actors": [
+        "方源",
+        "紫薇仙子"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "推算失败，方源转移位置"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0027",
+          "startOffset": 5556252,
+          "endOffset": 5556262,
+          "summary": "方源使用定仙游从南疆一端转移到另一端，再寻灰色山谷潜伏"
+        }
+      ],
+      "eventId": "evt_7935e83db44c",
+      "eventType": "other",
+      "summary": "方源使用定仙游从南疆一端转移到另一端，再寻灰色山谷潜伏",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源改变位置，躲避追踪"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0047",
+          "startOffset": 5557147,
+          "endOffset": 5557159,
+          "summary": "方源进入宙道梦境，学习光阴飞刃杀招及其辅助杀招缩时"
+        }
+      ],
+      "eventId": "evt_c9119d63ea73",
+      "eventType": "cultivation",
+      "summary": "方源进入宙道梦境，学习光阴飞刃杀招及其辅助杀招缩时",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得光阴飞刃和缩时杀招的知识"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0036",
+          "startOffset": 5556653,
+          "endOffset": 5556703,
+          "summary": "方源修复荡魂山，消耗大量仙元，仙元储备几乎见底"
+        }
+      ],
+      "eventId": "evt_b03e494a011f",
+      "eventType": "other",
+      "summary": "方源修复荡魂山，消耗大量仙元，仙元储备几乎见底",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源仙元不足，依赖龙鱼生意和胆识蛊存货维持"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0017",
+          "startOffset": 5555857,
+          "endOffset": 5555877,
+          "summary": "方源在梦境中成功组合宙道杀招，治疗蒙逼，梦境破碎"
+        }
+      ],
+      "timelineId": "tl_8e8afeba120e",
+      "eventId": "evt_8e8afeba120e",
+      "chapterId": "ch_1601",
+      "orderHint": "chapter-order",
+      "summary": "方源在梦境中成功组合宙道杀招，治疗蒙逼，梦境破碎",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0024",
+          "startOffset": 5556112,
+          "endOffset": 5556142,
+          "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡，消耗方源上百万魂魄底蕴"
+        }
+      ],
+      "timelineId": "tl_6af803d4593d",
+      "eventId": "evt_6af803d4593d",
+      "chapterId": "ch_1601",
+      "orderHint": "chapter-order",
+      "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡，消耗方源上百万魂魄底蕴",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0027",
+          "startOffset": 5556252,
+          "endOffset": 5556262,
+          "summary": "方源使用定仙游从南疆一端转移到另一端，再寻灰色山谷潜伏"
+        }
+      ],
+      "timelineId": "tl_7935e83db44c",
+      "eventId": "evt_7935e83db44c",
+      "chapterId": "ch_1601",
+      "orderHint": "chapter-order",
+      "summary": "方源使用定仙游从南疆一端转移到另一端，再寻灰色山谷潜伏",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0047",
+          "startOffset": 5557147,
+          "endOffset": 5557159,
+          "summary": "方源进入宙道梦境，学习光阴飞刃杀招及其辅助杀招缩时"
+        }
+      ],
+      "timelineId": "tl_c9119d63ea73",
+      "eventId": "evt_c9119d63ea73",
+      "chapterId": "ch_1601",
+      "orderHint": "chapter-order",
+      "summary": "方源进入宙道梦境，学习光阴飞刃杀招及其辅助杀招缩时",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1601",
+          "paragraphId": "ch_1601_p0036",
+          "startOffset": 5556653,
+          "endOffset": 5556703,
+          "summary": "方源修复荡魂山，消耗大量仙元，仙元储备几乎见底"
+        }
+      ],
+      "timelineId": "tl_b03e494a011f",
+      "eventId": "evt_b03e494a011f",
+      "chapterId": "ch_1601",
+      "orderHint": "chapter-order",
+      "summary": "方源修复荡魂山，消耗大量仙元，仙元储备几乎见底",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0002",
+      "startOffset": 5555342,
+      "endOffset": 5555344,
+      "summary": "主角，探索梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0004",
+      "startOffset": 5555415,
+      "endOffset": 5555417,
+      "summary": "梦境中的人物，受伤"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0023",
+      "startOffset": 5556090,
+      "endOffset": 5556095,
+      "summary": "天庭成员，擅长推算"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0034",
+      "startOffset": 5556547,
+      "endOffset": 5556549,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0040",
+      "startOffset": 5556853,
+      "endOffset": 5556856,
+      "summary": "合作对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0049",
+      "startOffset": 5557207,
+      "endOffset": 5557209,
+      "summary": "梦境中传授杀招的前辈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0017",
+      "startOffset": 5555857,
+      "endOffset": 5555877,
+      "summary": "方源在梦境中治疗蒙逼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0023",
+      "startOffset": 5556053,
+      "endOffset": 5556095,
+      "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0040",
+      "startOffset": 5556837,
+      "endOffset": 5556867,
+      "summary": "方源因仙元储备不足而选择与池曲由合作"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0052",
+      "startOffset": 5557272,
+      "endOffset": 5557332,
+      "summary": "老者在梦境中传授方源光阴飞刃杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0024",
+      "startOffset": 5556112,
+      "endOffset": 5556142,
+      "summary": "紫薇仙子推算方源方位，被阎帝杀招阻挡，消耗方源上百万魂魄底蕴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0027",
+      "startOffset": 5556252,
+      "endOffset": 5556262,
+      "summary": "方源使用定仙游从南疆一端转移到另一端，再寻灰色山谷潜伏"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0047",
+      "startOffset": 5557147,
+      "endOffset": 5557159,
+      "summary": "方源进入宙道梦境，学习光阴飞刃杀招及其辅助杀招缩时"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1601",
+      "paragraphId": "ch_1601_p0036",
+      "startOffset": 5556653,
+      "endOffset": 5556703,
+      "summary": "方源修复荡魂山，消耗大量仙元，仙元储备几乎见底"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes ordinary visible events: Fang Yuan exploring a dream, healing Meng Bi, learning a killer move, using Ding Xian You to relocate, repairing Dang Hun Mountain, and Zi Wei仙子 failing to deduce his location due to Yan Emperor killer move. These are either public actions or events already visible to relevant actors. No private knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed. The dream sequence (old man teaching 'Guang Yin Fei Ren') is a dream experience already known to Fang Yuan; no hidden fact about it is supported. The seed does not contain source-backed evidence of any actor knowing something that others do not, nor any future-known fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan treating Meng Bi in a dream (ptr_7), but the observed action is simply healing a dream figure. The inferred motive could be 'to pass the dream trial' or 'to learn the killer move', but the seed does not directly support any specific motive beyond the observable action. The dream context is ambiguous - it's unclear if Fang Yuan heals out of necessity for dream progression, compassion, or other reasons. No clear motive can be confidently inferred from available seed facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on Fang Yuan's individual cultivation activities (dream exploration, healing Meng Bi, learning killer moves, repairing Dang Hun Mountain) and his personal conflict with Zi Wei仙子 (Heavenly Court member). No named collective actors (factions, clans, families, groups) appear in the seed entities or relations. Zi Wei仙子 is a member of Heavenly Court but the seed only describes her individual divination attempt against Fang Yuan, not a faction-level stake or pressure. The 'old man' in the dream is a single person title, not a collective. No family, clan, faction, team, shop, hall, or organization is named or directly implied as having a collective stake in the seed facts.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

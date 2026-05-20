@@ -1,0 +1,396 @@
+{
+  "packageId": "ri_lw_ch_1614",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1614"
+    ],
+    "paragraphIds": [
+      "ch_1614_p0004",
+      "ch_1614_p0029",
+      "ch_1614_p0030",
+      "ch_1614_p0033",
+      "ch_1614_p0042",
+      "ch_1614_p0068",
+      "ch_1614_p0073"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0004",
+          "startOffset": 5593397,
+          "endOffset": 5593401,
+          "summary": "宙道分身"
+        }
+      ],
+      "entityId": "entity_9cc2ccb54c35",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "宙道分身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0033",
+          "startOffset": 5594795,
+          "endOffset": 5594797,
+          "summary": "蛊仙，至尊仙窍主人"
+        }
+      ],
+      "entityId": "entity_9cc2ccb54c35",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，至尊仙窍主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0068",
+          "startOffset": 5596403,
+          "endOffset": 5596405,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_9cc2ccb54c35",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0073",
+          "startOffset": 5596621,
+          "endOffset": 5596623,
+          "summary": "势力，与方源谈判"
+        }
+      ],
+      "entityId": "entity_d43b9767cd2f",
+      "name": "夏家",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "势力，与方源谈判",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0073",
+          "startOffset": 5596621,
+          "endOffset": 5596623,
+          "summary": "方源向夏家索要漩涡晨曦作为谈判条件，态度强硬"
+        }
+      ],
+      "relationId": "rel_e6da93b8474d",
+      "subject": "方源",
+      "object": "夏家",
+      "relationType": "CONFLICT",
+      "summary": "方源向夏家索要漩涡晨曦作为谈判条件，态度强硬",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0004",
+          "startOffset": 5593397,
+          "endOffset": 5593401,
+          "summary": "方源宙道分身在小赤天喂养年兽，包括太古年鸡等七头太古年兽。"
+        }
+      ],
+      "eventId": "evt_f0d4d0b83209",
+      "eventType": "other",
+      "summary": "方源宙道分身在小赤天喂养年兽，包括太古年鸡等七头太古年兽。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "年兽饱餐后恢复懒洋洋状态，不再躁动。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0042",
+          "startOffset": 5595117,
+          "endOffset": 5595131,
+          "summary": "方源面临年兽喂养问题，有三种方案可选：年华池、流金岁月台、十二生肖战阵。"
+        }
+      ],
+      "eventId": "evt_18f3e262f766",
+      "eventType": "other",
+      "summary": "方源面临年兽喂养问题，有三种方案可选：年华池、流金岁月台、十二生肖战阵。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源需选择方案解决年兽喂养问题，以应对光阴长河之战。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0068",
+          "startOffset": 5596403,
+          "endOffset": 5596405,
+          "summary": "方源经过思考，决定采取第一种方案（建造八转档次的年华池）"
+        }
+      ],
+      "eventId": "evt_5c13d36da55c",
+      "eventType": "other",
+      "summary": "方源经过思考，决定采取第一种方案（建造八转档次的年华池）",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将投入最多资源建设年华池，但获益最大"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0073",
+          "startOffset": 5596621,
+          "endOffset": 5596623,
+          "summary": "方源向夏家索要十份漩涡晨曦作为谈判前提，夏家表示难以提供"
+        }
+      ],
+      "eventId": "evt_8e116f1eb1fd",
+      "eventType": "other",
+      "summary": "方源向夏家索要十份漩涡晨曦作为谈判前提，夏家表示难以提供",
+      "actors": [
+        "方源",
+        "夏家"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "谈判陷入僵局，方源态度强硬"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0004",
+          "startOffset": 5593397,
+          "endOffset": 5593401,
+          "summary": "方源宙道分身在小赤天喂养年兽，包括太古年鸡等七头太古年兽。"
+        }
+      ],
+      "timelineId": "tl_f0d4d0b83209",
+      "eventId": "evt_f0d4d0b83209",
+      "chapterId": "ch_1614",
+      "orderHint": "chapter-order",
+      "summary": "方源宙道分身在小赤天喂养年兽，包括太古年鸡等七头太古年兽。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0042",
+          "startOffset": 5595117,
+          "endOffset": 5595131,
+          "summary": "方源面临年兽喂养问题，有三种方案可选：年华池、流金岁月台、十二生肖战阵。"
+        }
+      ],
+      "timelineId": "tl_18f3e262f766",
+      "eventId": "evt_18f3e262f766",
+      "chapterId": "ch_1614",
+      "orderHint": "chapter-order",
+      "summary": "方源面临年兽喂养问题，有三种方案可选：年华池、流金岁月台、十二生肖战阵。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0068",
+          "startOffset": 5596403,
+          "endOffset": 5596405,
+          "summary": "方源经过思考，决定采取第一种方案（建造八转档次的年华池）"
+        }
+      ],
+      "timelineId": "tl_5c13d36da55c",
+      "eventId": "evt_5c13d36da55c",
+      "chapterId": "ch_1614",
+      "orderHint": "chapter-order",
+      "summary": "方源经过思考，决定采取第一种方案（建造八转档次的年华池）",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1614",
+          "paragraphId": "ch_1614_p0073",
+          "startOffset": 5596621,
+          "endOffset": 5596623,
+          "summary": "方源向夏家索要十份漩涡晨曦作为谈判前提，夏家表示难以提供"
+        }
+      ],
+      "timelineId": "tl_8e116f1eb1fd",
+      "eventId": "evt_8e116f1eb1fd",
+      "chapterId": "ch_1614",
+      "orderHint": "chapter-order",
+      "summary": "方源向夏家索要十份漩涡晨曦作为谈判前提，夏家表示难以提供",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1614",
+      "paragraphId": "ch_1614_p0004",
+      "startOffset": 5593397,
+      "endOffset": 5593401,
+      "summary": "宙道分身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1614",
+      "paragraphId": "ch_1614_p0033",
+      "startOffset": 5594795,
+      "endOffset": 5594797,
+      "summary": "蛊仙，至尊仙窍主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1614",
+      "paragraphId": "ch_1614_p0068",
+      "startOffset": 5596403,
+      "endOffset": 5596405,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1614",
+      "paragraphId": "ch_1614_p0073",
+      "startOffset": 5596621,
+      "endOffset": 5596623,
+      "summary": "势力，与方源谈判"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1614",
+      "paragraphId": "ch_1614_p0042",
+      "startOffset": 5595117,
+      "endOffset": 5595131,
+      "summary": "方源面临年兽喂养问题，有三种方案可选：年华池、流金岁月台、十二生肖战阵。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly visible/ordinary events: Fang Yuan's time path clone raising year beasts in Xiao Chi Tian, considering three feeding plans, deciding on the first plan (building an eight-turn grade Nian Hua Chi), and demanding ten portions of Xuan Wo Chen Xi from Xia clan as negotiation condition. These are all ordinary visible actions/decisions by Fang Yuan, not hidden knowledge, future-known information, or secret motives. No source-backed private knowledge, secret plans, or knowledge gaps are directly supported by the provided source pointers. The entities and relations are marked ambiguous but the seed content does not provide evidence of hidden facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan feeding year beasts, choosing a plan (年华池), and negotiating with Xia clan for 漩涡晨曦. However, the observed actions (feeding beasts, choosing a resource plan, making a demand) do not clearly reveal a specific motive beyond the immediate context. The negotiation demand could imply various motives (securing resources, testing the opponent, etc.) but the seed does not directly support any single inferred motive. Behavior is visible but motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "夏家作为势力被方源索要漩涡晨曦（十份），夏家表示难以提供，形成资源压力。方源是个人，但夏家是集体势力，符合条件。压力轴为资源压力（漩涡晨曦被索要）。likelyReactions为保守的一步反应：谈判、拖延、寻求替代。",
+      "IF export filter quarantined 5 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

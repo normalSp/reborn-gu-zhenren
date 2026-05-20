@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "requestId": "mirofish-request-2026-05-19-v018-southern-border-low-rank-region-fact-cards-pack",
   "packageId": "v018_southern_border_low_rank_region_fact_cards_pack",
@@ -16,7 +16,7 @@
     "hiddenFacts": "locator_only_when_present"
   },
   "canonBoundary": {
-    "runtimeAuthority": "none",
+    "runtimeAuthority": "candidate_only",
     "canonAuthority": "human_review_required",
     "deepSeekAuthority": "none",
     "rewardAuthority": "none",

@@ -1,0 +1,865 @@
+{
+  "packageId": "ri_lw_ch_0373",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0373"
+    ],
+    "paragraphIds": [
+      "ch_0373_p0005",
+      "ch_0373_p0006",
+      "ch_0373_p0011",
+      "ch_0373_p0015",
+      "ch_0373_p0018",
+      "ch_0373_p0020",
+      "ch_0373_p0021",
+      "ch_0373_p0024",
+      "ch_0373_p0031",
+      "ch_0373_p0034",
+      "ch_0373_p0046",
+      "ch_0373_p0054",
+      "ch_0373_p0062",
+      "ch_0373_p0065",
+      "ch_0373_p0069",
+      "ch_0373_p0070",
+      "ch_0373_p0072",
+      "ch_0373_p0076"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0005",
+          "startOffset": 1292665,
+          "endOffset": 1292700,
+          "summary": "人族太子"
+        }
+      ],
+      "entityId": "entity_432445cb806b",
+      "name": "太日阳莽",
+      "kind": "person",
+      "aliases": [
+        "人族太子"
+      ],
+      "description": "人族太子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0034",
+          "startOffset": 1294039,
+          "endOffset": 1294043,
+          "summary": "主角，正在炼制定仙游蛊"
+        }
+      ],
+      "entityId": "entity_432445cb806b",
+      "name": "太日阳莽",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，正在炼制定仙游蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0065",
+          "startOffset": 1295359,
+          "endOffset": 1295375,
+          "summary": "人祖之子"
+        }
+      ],
+      "entityId": "entity_be5c8fd69cde",
+      "name": "人祖的大儿子",
+      "kind": "person",
+      "aliases": [],
+      "description": "人祖之子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0069",
+          "startOffset": 1295435,
+          "endOffset": 1295437,
+          "summary": "魔道蛊师"
+        }
+      ],
+      "entityId": "entity_0633595a3e41",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0070",
+          "startOffset": 1295480,
+          "endOffset": 1295483,
+          "summary": "魔道蛊师"
+        }
+      ],
+      "entityId": "entity_2aa11fb32aa8",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0072",
+          "startOffset": 1295537,
+          "endOffset": 1295540,
+          "summary": "铁家上一任族长，五转巅峰"
+        }
+      ],
+      "entityId": "entity_d0eedf0c3d55",
+      "name": "铁慕白",
+      "kind": "person",
+      "aliases": [],
+      "description": "铁家上一任族长，五转巅峰",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0006",
+          "startOffset": 1292704,
+          "endOffset": 1292764,
+          "summary": "太日阳莽拥有神游蛊，但神游蛊会在他醉酒时带他乱窜"
+        }
+      ],
+      "relationId": "rel_a85f95f34b16",
+      "subject": "太日阳莽",
+      "object": "神游蛊",
+      "relationType": "USES",
+      "summary": "太日阳莽拥有神游蛊，但神游蛊会在他醉酒时带他乱窜",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0015",
+          "startOffset": 1293302,
+          "endOffset": 1293334,
+          "summary": "太日阳莽和智慧蛊早有交情，智慧蛊曾教他喝酒"
+        }
+      ],
+      "relationId": "rel_5fd784f55995",
+      "subject": "太日阳莽",
+      "object": "智慧蛊",
+      "relationType": "ALLY",
+      "summary": "太日阳莽和智慧蛊早有交情，智慧蛊曾教他喝酒",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0018",
+          "startOffset": 1293403,
+          "endOffset": 1293438,
+          "summary": "思想蛊是智慧蛊的母亲"
+        }
+      ],
+      "relationId": "rel_23e7ab4a6832",
+      "subject": "思想蛊",
+      "object": "智慧蛊",
+      "relationType": "FAMILY",
+      "summary": "思想蛊是智慧蛊的母亲",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0020",
+          "startOffset": 1293465,
+          "endOffset": 1293529,
+          "summary": "太日阳莽向思想蛊寻求飞翔的办法，思想蛊点化了他，给了他名为自我的思想羽翼"
+        }
+      ],
+      "relationId": "rel_764b0cd91322",
+      "subject": "太日阳莽",
+      "object": "思想蛊",
+      "relationType": "MENTOR",
+      "summary": "太日阳莽向思想蛊寻求飞翔的办法，思想蛊点化了他，给了他名为自我的思想羽翼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0046",
+          "startOffset": 1294479,
+          "endOffset": 1294482,
+          "summary": "太日阳莽使用神游蛊，并助其进化为定仙游蛊"
+        }
+      ],
+      "relationId": "rel_3417a2305749",
+      "subject": "太日阳莽",
+      "object": "神游蛊",
+      "relationType": "USES",
+      "summary": "太日阳莽使用神游蛊，并助其进化为定仙游蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0054",
+          "startOffset": 1294920,
+          "endOffset": 1294924,
+          "summary": "定仙游蛊提醒太日阳莽注意翅膀，但太日阳莽未听从"
+        }
+      ],
+      "relationId": "rel_d8a7e2f4b474",
+      "subject": "太日阳莽",
+      "object": "定仙游蛊",
+      "relationType": "USES",
+      "summary": "定仙游蛊提醒太日阳莽注意翅膀，但太日阳莽未听从",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0070",
+          "startOffset": 1295480,
+          "endOffset": 1295483,
+          "summary": "两人一同潜伏在火炭山，观察三叉山局势"
+        }
+      ],
+      "relationId": "rel_03586dee651e",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "两人一同潜伏在火炭山，观察三叉山局势",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0076",
+          "startOffset": 1295795,
+          "endOffset": 1295798,
+          "summary": "方源视铁慕白为对手，计划等待时机"
+        }
+      ],
+      "relationId": "rel_107ff0c6a77d",
+      "subject": "方源",
+      "object": "铁慕白",
+      "relationType": "CONFLICT",
+      "summary": "方源视铁慕白为对手，计划等待时机",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0011",
+          "startOffset": 1292976,
+          "endOffset": 1293131,
+          "summary": "神游蛊教太日阳莽如何将其变成定仙游蛊：需要去青天竹林采摘碧空玉竹，去蓝天收集八角钻石，借助朝阳荣耀之光"
+        }
+      ],
+      "eventId": "evt_952e003fafe9",
+      "eventType": "other",
+      "summary": "神游蛊教太日阳莽如何将其变成定仙游蛊：需要去青天竹林采摘碧空玉竹，去蓝天收集八角钻石，借助朝阳荣耀之光",
+      "actors": [
+        "太日阳莽",
+        "神游蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太日阳莽得知了将神游蛊升级为定仙游蛊的方法"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0021",
+          "startOffset": 1293533,
+          "endOffset": 1293556,
+          "summary": "太日阳莽找到思想蛊，思想蛊点化他，使他背后生长出一对名为自我的洁白羽翼"
+        }
+      ],
+      "eventId": "evt_ac6e75f520d1",
+      "eventType": "other",
+      "summary": "太日阳莽找到思想蛊，思想蛊点化他，使他背后生长出一对名为自我的洁白羽翼",
+      "actors": [
+        "太日阳莽",
+        "思想蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太日阳莽获得了飞翔能力"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0031",
+          "startOffset": 1293927,
+          "endOffset": 1293956,
+          "summary": "太日阳莽飞向天空，飞到青天尽头，看到玉竹"
+        }
+      ],
+      "eventId": "evt_4fe694f21d83",
+      "eventType": "other",
+      "summary": "太日阳莽飞向天空，飞到青天尽头，看到玉竹",
+      "actors": [
+        "太日阳莽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太日阳莽到达青天尽头，准备采摘玉竹"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0046",
+          "startOffset": 1294479,
+          "endOffset": 1294482,
+          "summary": "太日阳莽在蓝天中寻找八角星屑，并采摘碧空玉竹，然后飞向朝阳，在荣耀之光照射下，神游蛊吞下星屑钻入玉竹，结茧化蝶成为定仙游蛊。"
+        }
+      ],
+      "eventId": "evt_0251f08dd146",
+      "eventType": "cultivation",
+      "summary": "太日阳莽在蓝天中寻找八角星屑，并采摘碧空玉竹，然后飞向朝阳，在荣耀之光照射下，神游蛊吞下星屑钻入玉竹，结茧化蝶成为定仙游蛊。",
+      "actors": [
+        "太日阳莽",
+        "神游蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "神游蛊进化为定仙游蛊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0062",
+          "startOffset": 1295244,
+          "endOffset": 1295248,
+          "summary": "太日阳莽背后的自我翅膀膨胀到极限后爆炸，他失去翅膀从高空坠落，摔得粉身碎骨。"
+        }
+      ],
+      "eventId": "evt_edf77f3d3516",
+      "eventType": "death",
+      "summary": "太日阳莽背后的自我翅膀膨胀到极限后爆炸，他失去翅膀从高空坠落，摔得粉身碎骨。",
+      "actors": [
+        "太日阳莽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "太日阳莽死亡。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0065",
+          "startOffset": 1295359,
+          "endOffset": 1295375,
+          "summary": "人祖的大儿子死亡"
+        }
+      ],
+      "eventId": "evt_dbb5c6af2e4b",
+      "eventType": "death",
+      "summary": "人祖的大儿子死亡",
+      "actors": [
+        "人祖的大儿子"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0072",
+          "startOffset": 1295537,
+          "endOffset": 1295540,
+          "summary": "铁慕白控制三叉山，赶走所有魔道蛊师"
+        }
+      ],
+      "eventId": "evt_b06ba4c2b809",
+      "eventType": "other",
+      "summary": "铁慕白控制三叉山，赶走所有魔道蛊师",
+      "actors": [
+        "铁慕白"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "三叉山被铁家控制，魔道蛊师被驱逐"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0072",
+          "startOffset": 1295537,
+          "endOffset": 1295540,
+          "summary": "方源和白凝冰潜伏在火炭山，观察三叉山的三王传承"
+        }
+      ],
+      "eventId": "evt_e995ec6309c4",
+      "eventType": "other",
+      "summary": "方源和白凝冰潜伏在火炭山，观察三叉山的三王传承",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "等待时机进入三王传承"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0011",
+          "startOffset": 1292976,
+          "endOffset": 1293131,
+          "summary": "神游蛊教太日阳莽如何将其变成定仙游蛊：需要去青天竹林采摘碧空玉竹，去蓝天收集八角钻石，借助朝阳荣耀之光"
+        }
+      ],
+      "timelineId": "tl_952e003fafe9",
+      "eventId": "evt_952e003fafe9",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "神游蛊教太日阳莽如何将其变成定仙游蛊：需要去青天竹林采摘碧空玉竹，去蓝天收集八角钻石，借助朝阳荣耀之光",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0021",
+          "startOffset": 1293533,
+          "endOffset": 1293556,
+          "summary": "太日阳莽找到思想蛊，思想蛊点化他，使他背后生长出一对名为自我的洁白羽翼"
+        }
+      ],
+      "timelineId": "tl_ac6e75f520d1",
+      "eventId": "evt_ac6e75f520d1",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "太日阳莽找到思想蛊，思想蛊点化他，使他背后生长出一对名为自我的洁白羽翼",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0031",
+          "startOffset": 1293927,
+          "endOffset": 1293956,
+          "summary": "太日阳莽飞向天空，飞到青天尽头，看到玉竹"
+        }
+      ],
+      "timelineId": "tl_4fe694f21d83",
+      "eventId": "evt_4fe694f21d83",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "太日阳莽飞向天空，飞到青天尽头，看到玉竹",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0046",
+          "startOffset": 1294479,
+          "endOffset": 1294482,
+          "summary": "太日阳莽在蓝天中寻找八角星屑，并采摘碧空玉竹，然后飞向朝阳，在荣耀之光照射下，神游蛊吞下星屑钻入玉竹，结茧化蝶成为定仙游蛊。"
+        }
+      ],
+      "timelineId": "tl_0251f08dd146",
+      "eventId": "evt_0251f08dd146",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "太日阳莽在蓝天中寻找八角星屑，并采摘碧空玉竹，然后飞向朝阳，在荣耀之光照射下，神游蛊吞下星屑钻入玉竹，结茧化蝶成为定仙游蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0062",
+          "startOffset": 1295244,
+          "endOffset": 1295248,
+          "summary": "太日阳莽背后的自我翅膀膨胀到极限后爆炸，他失去翅膀从高空坠落，摔得粉身碎骨。"
+        }
+      ],
+      "timelineId": "tl_edf77f3d3516",
+      "eventId": "evt_edf77f3d3516",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "太日阳莽背后的自我翅膀膨胀到极限后爆炸，他失去翅膀从高空坠落，摔得粉身碎骨。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0065",
+          "startOffset": 1295359,
+          "endOffset": 1295375,
+          "summary": "人祖的大儿子死亡"
+        }
+      ],
+      "timelineId": "tl_dbb5c6af2e4b",
+      "eventId": "evt_dbb5c6af2e4b",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "人祖的大儿子死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0072",
+          "startOffset": 1295537,
+          "endOffset": 1295540,
+          "summary": "铁慕白控制三叉山，赶走所有魔道蛊师"
+        }
+      ],
+      "timelineId": "tl_b06ba4c2b809",
+      "eventId": "evt_b06ba4c2b809",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "铁慕白控制三叉山，赶走所有魔道蛊师",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0373",
+          "paragraphId": "ch_0373_p0072",
+          "startOffset": 1295537,
+          "endOffset": 1295540,
+          "summary": "方源和白凝冰潜伏在火炭山，观察三叉山的三王传承"
+        }
+      ],
+      "timelineId": "tl_e995ec6309c4",
+      "eventId": "evt_e995ec6309c4",
+      "chapterId": "ch_0373",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰潜伏在火炭山，观察三叉山的三王传承",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0005",
+      "startOffset": 1292665,
+      "endOffset": 1292700,
+      "summary": "人族太子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0034",
+      "startOffset": 1294039,
+      "endOffset": 1294043,
+      "summary": "主角，正在炼制定仙游蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0065",
+      "startOffset": 1295359,
+      "endOffset": 1295375,
+      "summary": "人祖之子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0069",
+      "startOffset": 1295435,
+      "endOffset": 1295437,
+      "summary": "魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0070",
+      "startOffset": 1295480,
+      "endOffset": 1295483,
+      "summary": "魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0072",
+      "startOffset": 1295537,
+      "endOffset": 1295540,
+      "summary": "铁家上一任族长，五转巅峰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0006",
+      "startOffset": 1292704,
+      "endOffset": 1292764,
+      "summary": "太日阳莽拥有神游蛊，但神游蛊会在他醉酒时带他乱窜"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0015",
+      "startOffset": 1293302,
+      "endOffset": 1293334,
+      "summary": "太日阳莽和智慧蛊早有交情，智慧蛊曾教他喝酒"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0018",
+      "startOffset": 1293403,
+      "endOffset": 1293438,
+      "summary": "思想蛊是智慧蛊的母亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0020",
+      "startOffset": 1293465,
+      "endOffset": 1293529,
+      "summary": "太日阳莽向思想蛊寻求飞翔的办法，思想蛊点化了他，给了他名为自我的思想羽翼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0046",
+      "startOffset": 1294479,
+      "endOffset": 1294482,
+      "summary": "太日阳莽使用神游蛊，并助其进化为定仙游蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0054",
+      "startOffset": 1294920,
+      "endOffset": 1294924,
+      "summary": "定仙游蛊提醒太日阳莽注意翅膀，但太日阳莽未听从"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0076",
+      "startOffset": 1295795,
+      "endOffset": 1295798,
+      "summary": "方源视铁慕白为对手，计划等待时机"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0011",
+      "startOffset": 1292976,
+      "endOffset": 1293131,
+      "summary": "神游蛊教太日阳莽如何将其变成定仙游蛊：需要去青天竹林采摘碧空玉竹，去蓝天收集八角钻石，借助朝阳荣耀之光"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0021",
+      "startOffset": 1293533,
+      "endOffset": 1293556,
+      "summary": "太日阳莽找到思想蛊，思想蛊点化他，使他背后生长出一对名为自我的洁白羽翼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0031",
+      "startOffset": 1293927,
+      "endOffset": 1293956,
+      "summary": "太日阳莽飞向天空，飞到青天尽头，看到玉竹"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0373",
+      "paragraphId": "ch_0373_p0062",
+      "startOffset": 1295244,
+      "endOffset": 1295248,
+      "summary": "太日阳莽背后的自我翅膀膨胀到极限后爆炸，他失去翅膀从高空坠落，摔得粉身碎骨。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily contains a mythological/allegorical narrative about Tai Ri Yang Mang (a legendary figure, not a current living-world actor) refining the Ding Xian You Gu, his interaction with Thought Gu and Wisdom Gu, and his eventual death. The other thread about Fang Yuan and Bai Ning Bing observing San Cha Mountain is ordinary visible events with no hidden knowledge supported by the source. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps can be extracted from the provided source pointers that meet the criteria for hidden facts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "太日阳莽向思想蛊寻求飞翔办法并获得翅膀，但翅膀膨胀爆炸导致死亡。可见行为是寻求飞翔并获翅膀，但动机是单纯想飞还是另有目的？种子未直接支持任何深层意图推断。定仙游蛊曾提醒他注意翅膀但他未听从，这可能是疏忽而非特定动机。无法做出谨慎的一步推断而不变成心理跳跃。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual characters (太日阳莽, 方源, 白凝冰, 铁慕白) and their personal actions/relationships. 铁慕白 is described as '铁家上一任族长' (former clan leader of the Tie clan) and controls 三叉山, but the seed does not provide enough information about the Tie clan as a collective actor with a concrete stake or pressure. The only collective mentioned is 铁家 (Tie clan), but the seed facts only show 铁慕白 acting individually (controlling 三叉山, driving away demonic cultivators). There is no source-backed evidence of the Tie clan's collective interests, threats, or pressures. Other entities are individuals (太日阳莽, 方源, 白凝冰) or non-collective beings (智慧蛊, 思想蛊, 神游蛊). No named faction/clan/family/group with a concrete collective stake can be extracted from this seed.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,698 @@
+{
+  "packageId": "ri_lw_ch_0129",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0129"
+    ],
+    "paragraphIds": [
+      "ch_0129_p0003",
+      "ch_0129_p0009",
+      "ch_0129_p0018",
+      "ch_0129_p0022",
+      "ch_0129_p0038",
+      "ch_0129_p0039",
+      "ch_0129_p0046",
+      "ch_0129_p0047",
+      "ch_0129_p0050",
+      "ch_0129_p0062",
+      "ch_0129_p0068",
+      "ch_0129_p0076",
+      "ch_0129_p0089",
+      "ch_0129_p0097",
+      "ch_0129_p0099"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0003",
+          "startOffset": 418727,
+          "endOffset": 418729,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_aa13f34912e8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0038",
+          "startOffset": 419863,
+          "endOffset": 419865,
+          "summary": "蛊师，主角"
+        }
+      ],
+      "entityId": "entity_aa13f34912e8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0068",
+          "startOffset": 421020,
+          "endOffset": 421053,
+          "summary": "蛊师"
+        }
+      ],
+      "entityId": "entity_aa13f34912e8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0099",
+          "startOffset": 421978,
+          "endOffset": 421980,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_aa13f34912e8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0003",
+          "startOffset": 418727,
+          "endOffset": 418729,
+          "summary": "方源在石缝秘洞附近因三寨联盟扫荡狼群而谨慎行动，一个多月后再次进入石林中央的洞口"
+        }
+      ],
+      "eventId": "evt_7685f0f397ab",
+      "eventType": "other",
+      "summary": "方源在石缝秘洞附近因三寨联盟扫荡狼群而谨慎行动，一个多月后再次进入石林中央的洞口",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源进入地下石阶，发现石门和地听肉耳草"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0009",
+          "startOffset": 418993,
+          "endOffset": 418995,
+          "summary": "方源斩杀石猴群，抵达石林中央的人工洞口，拾阶而下"
+        }
+      ],
+      "eventId": "evt_14156df17f86",
+      "eventType": "other",
+      "summary": "方源斩杀石猴群，抵达石林中央的人工洞口，拾阶而下",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源到达石门，发现刻字和地听肉耳草"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0022",
+          "startOffset": 419359,
+          "endOffset": 419361,
+          "summary": "方源在石门前发现地藏花，从中取出地听肉耳草"
+        }
+      ],
+      "eventId": "evt_b57eb1689ed0",
+      "eventType": "other",
+      "summary": "方源在石门前发现地藏花，从中取出地听肉耳草",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得二转草蛊地听肉耳草"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0038",
+          "startOffset": 419863,
+          "endOffset": 419943,
+          "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。"
+        }
+      ],
+      "eventId": "evt_b9422d3c0218",
+      "eventType": "cultivation",
+      "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得地听肉耳草的使用能力，但需付出代价。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0047",
+          "startOffset": 420340,
+          "endOffset": 420387,
+          "summary": "方源猎杀孤狼，获得狼眼珠子，返回山寨。"
+        }
+      ],
+      "eventId": "evt_01ce9a8e82b2",
+      "eventType": "other",
+      "summary": "方源猎杀孤狼，获得狼眼珠子，返回山寨。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得战功物品。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0050",
+          "startOffset": 420457,
+          "endOffset": 420500,
+          "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。"
+        }
+      ],
+      "eventId": "evt_2d3f73f661b7",
+      "eventType": "other",
+      "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "地听肉耳草恢复生机饱满状态。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0062",
+          "startOffset": 420866,
+          "endOffset": 420894,
+          "summary": "方源准备使用地听肉耳草，并准备进行某种需要付出代价的仪式，联想到《葵花宝典》的“欲练此功，挥刀自宫”。"
+        }
+      ],
+      "eventId": "evt_73867ab95c0d",
+      "eventType": "other",
+      "summary": "方源准备使用地听肉耳草，并准备进行某种需要付出代价的仪式，联想到《葵花宝典》的“欲练此功，挥刀自宫”。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暗示方源将做出重大牺牲。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0076",
+          "startOffset": 421181,
+          "endOffset": 421200,
+          "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。"
+        }
+      ],
+      "eventId": "evt_c36d4c7084e5",
+      "eventType": "other",
+      "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得地听肉耳草作为新右耳，但承受剧痛，身体需要适应。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0097",
+          "startOffset": 421899,
+          "endOffset": 421926,
+          "summary": "方源清理血迹，用月芒蛊绞碎自己的右耳毁尸灭迹，将血水端到床底下投入煤石，然后躺下睡觉。"
+        }
+      ],
+      "eventId": "evt_1e781f13687e",
+      "eventType": "other",
+      "summary": "方源清理血迹，用月芒蛊绞碎自己的右耳毁尸灭迹，将血水端到床底下投入煤石，然后躺下睡觉。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源处理了战斗痕迹，但头部仍疼痛，最终入睡。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0003",
+          "startOffset": 418727,
+          "endOffset": 418729,
+          "summary": "方源在石缝秘洞附近因三寨联盟扫荡狼群而谨慎行动，一个多月后再次进入石林中央的洞口"
+        }
+      ],
+      "timelineId": "tl_7685f0f397ab",
+      "eventId": "evt_7685f0f397ab",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源在石缝秘洞附近因三寨联盟扫荡狼群而谨慎行动，一个多月后再次进入石林中央的洞口",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0009",
+          "startOffset": 418993,
+          "endOffset": 418995,
+          "summary": "方源斩杀石猴群，抵达石林中央的人工洞口，拾阶而下"
+        }
+      ],
+      "timelineId": "tl_14156df17f86",
+      "eventId": "evt_14156df17f86",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源斩杀石猴群，抵达石林中央的人工洞口，拾阶而下",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0022",
+          "startOffset": 419359,
+          "endOffset": 419361,
+          "summary": "方源在石门前发现地藏花，从中取出地听肉耳草"
+        }
+      ],
+      "timelineId": "tl_b57eb1689ed0",
+      "eventId": "evt_b57eb1689ed0",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源在石门前发现地藏花，从中取出地听肉耳草",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0038",
+          "startOffset": 419863,
+          "endOffset": 419943,
+          "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。"
+        }
+      ],
+      "timelineId": "tl_b9422d3c0218",
+      "eventId": "evt_b9422d3c0218",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0047",
+          "startOffset": 420340,
+          "endOffset": 420387,
+          "summary": "方源猎杀孤狼，获得狼眼珠子，返回山寨。"
+        }
+      ],
+      "timelineId": "tl_01ce9a8e82b2",
+      "eventId": "evt_01ce9a8e82b2",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源猎杀孤狼，获得狼眼珠子，返回山寨。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0050",
+          "startOffset": 420457,
+          "endOffset": 420500,
+          "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。"
+        }
+      ],
+      "timelineId": "tl_2d3f73f661b7",
+      "eventId": "evt_2d3f73f661b7",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0062",
+          "startOffset": 420866,
+          "endOffset": 420894,
+          "summary": "方源准备使用地听肉耳草，并准备进行某种需要付出代价的仪式，联想到《葵花宝典》的“欲练此功，挥刀自宫”。"
+        }
+      ],
+      "timelineId": "tl_73867ab95c0d",
+      "eventId": "evt_73867ab95c0d",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源准备使用地听肉耳草，并准备进行某种需要付出代价的仪式，联想到《葵花宝典》的“欲练此功，挥刀自宫”。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0076",
+          "startOffset": 421181,
+          "endOffset": 421200,
+          "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。"
+        }
+      ],
+      "timelineId": "tl_c36d4c7084e5",
+      "eventId": "evt_c36d4c7084e5",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0097",
+          "startOffset": 421899,
+          "endOffset": 421926,
+          "summary": "方源清理血迹，用月芒蛊绞碎自己的右耳毁尸灭迹，将血水端到床底下投入煤石，然后躺下睡觉。"
+        }
+      ],
+      "timelineId": "tl_1e781f13687e",
+      "eventId": "evt_1e781f13687e",
+      "chapterId": "ch_0129",
+      "orderHint": "chapter-order",
+      "summary": "方源清理血迹，用月芒蛊绞碎自己的右耳毁尸灭迹，将血水端到床底下投入煤石，然后躺下睡觉。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0076",
+          "startOffset": 421181,
+          "endOffset": 421200,
+          "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0038",
+          "startOffset": 419863,
+          "endOffset": 419943,
+          "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0129",
+          "paragraphId": "ch_0129_p0050",
+          "startOffset": 420457,
+          "endOffset": 420500,
+          "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "切掉右耳移植地听肉耳草",
+      "inferredMotive": "为获得地听肉耳草能力而承受代价",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0003",
+      "startOffset": 418727,
+      "endOffset": 418729,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0038",
+      "startOffset": 419863,
+      "endOffset": 419865,
+      "summary": "蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0068",
+      "startOffset": 421020,
+      "endOffset": 421053,
+      "summary": "蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0099",
+      "startOffset": 421978,
+      "endOffset": 421980,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0009",
+      "startOffset": 418993,
+      "endOffset": 418995,
+      "summary": "方源斩杀石猴群，抵达石林中央的人工洞口，拾阶而下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0022",
+      "startOffset": 419359,
+      "endOffset": 419361,
+      "summary": "方源在石门前发现地藏花，从中取出地听肉耳草"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0038",
+      "startOffset": 419863,
+      "endOffset": 419943,
+      "summary": "方源炼化地听肉耳草，并决定使用它，尽管需要付出代价。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0047",
+      "startOffset": 420340,
+      "endOffset": 420387,
+      "summary": "方源猎杀孤狼，获得狼眼珠子，返回山寨。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0050",
+      "startOffset": 420457,
+      "endOffset": 420500,
+      "summary": "方源用战功兑换参须喂养地听肉耳草，使其恢复生机。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0062",
+      "startOffset": 420866,
+      "endOffset": 420894,
+      "summary": "方源准备使用地听肉耳草，并准备进行某种需要付出代价的仪式，联想到《葵花宝典》的“欲练此功，挥刀自宫”。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0076",
+      "startOffset": 421181,
+      "endOffset": 421200,
+      "summary": "方源切掉自己的右耳，并将地听肉耳草移植到伤口处，使其成为新的右耳。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0129",
+      "paragraphId": "ch_0129_p0097",
+      "startOffset": 421899,
+      "endOffset": 421926,
+      "summary": "方源清理血迹，用月芒蛊绞碎自己的右耳毁尸灭迹，将血水端到床底下投入煤石，然后躺下睡觉。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed describes Fang Yuan's visible actions: entering a cave, finding and refining Di Ting Rou Er Cao, cutting off his own ear and transplanting the grass. These are all ordinary visible events from Fang Yuan's perspective. No hidden knowledge, future-known information, secret motives/plans, or knowledge gaps are directly supported by the source pointers. The events are narrated as they happen to the protagonist, so there is no private knowledge held by other actors that the player doesn't know. The only possible hidden fact would be Fang Yuan's prior knowledge (from his rebirth) about Di Ting Rou Er Cao's properties and the transplant method, but the seed does not directly state this as a fact - it only shows him performing the actions. No other actors are shown knowing or not knowing anything.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源切掉右耳并移植地听肉耳草（ptr_11），之前已炼化该草蛊（ptr_7）并用战功兑换参须喂养使其恢复生机（ptr_9），表明他主动选择承受代价以获取草蛊能力。observedMotive直接来自行为，inferredMotive为谨慎的一步推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: the seed only contains events and entities centered on the individual 方源 (Fang Yuan). No collective actors (factions, clans, families, teams, shops, halls, or organizations) are named or directly implied in the seed facts or relations. The seed mentions '山寨' (mountain stockade) in passing (方源返回山寨, 用战功兑换参须) but does not name any specific faction, clan, or group with a concrete stake. No faction/group pressure can be derived from individual-only actions.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

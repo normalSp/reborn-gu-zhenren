@@ -1,0 +1,81 @@
+{
+  "requestId": "mirofish-request-2026-05-17-qingmao-unfilled-gu-appearance-pack",
+  "generatedAt": "2026-05-17T13:08:07.600388+00:00",
+  "outputName": "qingmao_unfilled_gu_appearance_pack_export_ready.json",
+  "coverage": {
+    "requestedRows": 17,
+    "deliveredRows": 17,
+    "rowsWithAnySourcePointer": 17,
+    "rowsWithOriginalTextPointer": 14,
+    "rowsWithAtlasPriorOnly": 3,
+    "atlasPriorOnlyGuIds": [
+      "swirl_gu",
+      "fierce_wind_gu",
+      "lightning_eye_gu"
+    ],
+    "evidenceStatusCounts": {
+      "atlas_prior_only": 3,
+      "direct_alias_effect_appearance": 1,
+      "direct_alias_function_only": 1,
+      "direct_body_appearance_with_name_mismatch": 3,
+      "direct_name_and_function": 1,
+      "direct_name_function_only": 3,
+      "direct_name_manifestation": 2,
+      "direct_name_manifestation_with_name_mismatch": 1,
+      "direct_name_strong_manifestation": 1,
+      "direct_pair_visual": 1
+    },
+    "riskTagCounts": {
+      "ability_only": 2,
+      "appearance_direct": 2,
+      "appearance_inference": 5,
+      "appearance_missing": 7,
+      "appearance_partial": 1,
+      "atlas_update_needs_manual_rename": 1,
+      "body_detail_partial": 1,
+      "body_vs_effect_uncertain": 1,
+      "body_vs_manifestation_uncertain": 5,
+      "concept_only": 5,
+      "name_uncertain": 6,
+      "no_first_volume_exact_hit": 3,
+      "pair_split_inference": 1,
+      "wolf_pattern_inference": 1
+    },
+    "requestGroupCounts": {
+      "G1 方源/金道/坐骑": 3,
+      "G2 白凝冰冰道辅助/风道": 4,
+      "G3 铁血冷路线": 6,
+      "G4 天鹤上人路线": 4
+    },
+    "requiresHumanCanonReviewRows": 17,
+    "completionGate": {
+      "status": "complete_candidate_with_known_gaps",
+      "passesRequestThreshold": true,
+      "notes": [
+        "17 request rows delivered; Yang/Yin are represented as one paired row because the request table defines G1 as three rows.",
+        "14 rows have first-volume original text pointers; 3 rows remain atlas-prior-only concept placeholders.",
+        "atlas-prior-only rows should stay atlas-pending/no-png until RebornG or MiroFish finds stronger evidence."
+      ]
+    }
+  },
+  "qa": {
+    "jsonParseable": true,
+    "forbiddenFieldKeyCount": 0,
+    "highRankLeakCount": 0,
+    "hiddenFactItemCount": 0,
+    "itemsWithSourcePointers": 17,
+    "itemsRequiringHumanCanonReview": 17,
+    "allRuntimeAuthorityCandidateOnly": true,
+    "allRuntimeVisibleFalse": true,
+    "allDeepSeekVisibleFalse": true
+  },
+  "manualReviewFocus": [
+    "Rename 猪铁蛊 against original-source 生铁蛊 before atlas update.",
+    "Rename 巨山傀儡蛊 against original-source 山丘巨傀蛊 before atlas update.",
+    "Rename 镇魔铁链蛊 against original-source 镇魔铁索蛊 before atlas update.",
+    "Rename 驭鹤蛊 against original-source 御鹤蛊 before atlas update.",
+    "Rename 血亲蛊 against original-source 至亲血虫 before atlas update.",
+    "Rename 玉葬续命蛊 against original-source 存息玉葬蛊 before atlas update.",
+    "Keep 漩涡蛊、烈风蛊、雷眼蛊 as atlas-pending/no-png until stronger evidence appears."
+  ]
+}

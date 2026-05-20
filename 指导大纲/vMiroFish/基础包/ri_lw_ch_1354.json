@@ -1,0 +1,1331 @@
+{
+  "packageId": "ri_lw_ch_1354",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1354"
+    ],
+    "paragraphIds": [
+      "ch_1354_p0003",
+      "ch_1354_p0005",
+      "ch_1354_p0007",
+      "ch_1354_p0008",
+      "ch_1354_p0017",
+      "ch_1354_p0024",
+      "ch_1354_p0025",
+      "ch_1354_p0027",
+      "ch_1354_p0028",
+      "ch_1354_p0031",
+      "ch_1354_p0032",
+      "ch_1354_p0033",
+      "ch_1354_p0037",
+      "ch_1354_p0041",
+      "ch_1354_p0042",
+      "ch_1354_p0044",
+      "ch_1354_p0047",
+      "ch_1354_p0052",
+      "ch_1354_p0067",
+      "ch_1354_p0069",
+      "ch_1354_p0070",
+      "ch_1354_p0071",
+      "ch_1354_p0073",
+      "ch_1354_p0075",
+      "ch_1354_p0077",
+      "ch_1354_p0081",
+      "ch_1354_p0082",
+      "ch_1354_p0086",
+      "ch_1354_p0087",
+      "ch_1354_p0092",
+      "ch_1354_p0094",
+      "ch_1354_p0097"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0003",
+          "startOffset": 4757804,
+          "endOffset": 4757837,
+          "summary": "主角，魔道蛊仙，伪装成武遗海"
+        }
+      ],
+      "entityId": "entity_8f2eac0d6926",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "武遗海"
+      ],
+      "description": "主角，魔道蛊仙，伪装成武遗海",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0003",
+          "startOffset": 4757804,
+          "endOffset": 4757837,
+          "summary": "方源安插的棋子，与武遗海有身份关系"
+        }
+      ],
+      "entityId": "entity_21cb66866b36",
+      "name": "白兔姑娘",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源安插的棋子，与武遗海有身份关系",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0003",
+          "startOffset": 4757804,
+          "endOffset": 4757837,
+          "summary": "方源的下属，负责信道联络"
+        }
+      ],
+      "entityId": "entity_4924d87e72fc",
+      "name": "武安",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的下属，负责信道联络",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0017",
+          "startOffset": 4758308,
+          "endOffset": 4758388,
+          "summary": "乔家蛊仙，负责接引魔道蛊仙探索梦境"
+        }
+      ],
+      "entityId": "entity_b160ab23e340",
+      "name": "乔波",
+      "kind": "person",
+      "aliases": [],
+      "description": "乔家蛊仙，负责接引魔道蛊仙探索梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0017",
+          "startOffset": 4758308,
+          "endOffset": 4758388,
+          "summary": "魔道蛊仙，受乔波接引探索梦境"
+        }
+      ],
+      "entityId": "entity_df96cacb7de5",
+      "name": "妙音仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊仙，受乔波接引探索梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0028",
+          "startOffset": 4758693,
+          "endOffset": 4758713,
+          "summary": "魔道蛊仙，伪装身份，与妙音仙子、黑楼兰同伙"
+        }
+      ],
+      "entityId": "entity_a9a49acd8823",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊仙，伪装身份，与妙音仙子、黑楼兰同伙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0032",
+          "startOffset": 4758805,
+          "endOffset": 4758816,
+          "summary": "魔道蛊仙，伪装身份，与妙音仙子、白凝冰同伙"
+        }
+      ],
+      "entityId": "entity_d12369e93449",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊仙，伪装身份，与妙音仙子、白凝冰同伙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0033",
+          "startOffset": 4758820,
+          "endOffset": 4758853,
+          "summary": "仙缘生意管理者，后显露魔道身份"
+        }
+      ],
+      "entityId": "entity_21cb66866b36",
+      "name": "白兔姑娘",
+      "kind": "person",
+      "aliases": [
+        "黑莬"
+      ],
+      "description": "仙缘生意管理者，后显露魔道身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0033",
+          "startOffset": 4758820,
+          "endOffset": 4758853,
+          "summary": "武家蛊仙，负责与白兔姑娘沟通"
+        }
+      ],
+      "entityId": "entity_4924d87e72fc",
+      "name": "武安",
+      "kind": "person",
+      "aliases": [],
+      "description": "武家蛊仙，负责与白兔姑娘沟通",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0047",
+          "startOffset": 4759396,
+          "endOffset": 4759448,
+          "summary": "池家首领，正道蛊仙"
+        }
+      ],
+      "entityId": "entity_e146f099e014",
+      "name": "池规",
+      "kind": "person",
+      "aliases": [],
+      "description": "池家首领，正道蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0052",
+          "startOffset": 4759566,
+          "endOffset": 4759624,
+          "summary": "巴家蛊仙，未参与仙缘生意"
+        }
+      ],
+      "entityId": "entity_47436e262b1c",
+      "name": "巴圈风",
+      "kind": "person",
+      "aliases": [],
+      "description": "巴家蛊仙，未参与仙缘生意",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0067",
+          "startOffset": 4760054,
+          "endOffset": 4760095,
+          "summary": "假扮武遗海，操控超级蛊阵"
+        }
+      ],
+      "entityId": "entity_8f2eac0d6926",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "武遗海"
+      ],
+      "description": "假扮武遗海，操控超级蛊阵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0070",
+          "startOffset": 4760178,
+          "endOffset": 4760223,
+          "summary": "内奸，刺杀武安"
+        }
+      ],
+      "entityId": "entity_21cb66866b36",
+      "name": "白兔姑娘",
+      "kind": "person",
+      "aliases": [],
+      "description": "内奸，刺杀武安",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0069",
+          "startOffset": 4760127,
+          "endOffset": 4760174,
+          "summary": "武家蛊仙，被白兔姑娘斩杀"
+        }
+      ],
+      "entityId": "entity_4924d87e72fc",
+      "name": "武安",
+      "kind": "person",
+      "aliases": [],
+      "description": "武家蛊仙，被白兔姑娘斩杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0073",
+          "startOffset": 4760296,
+          "endOffset": 4760367,
+          "summary": "乔家蛊仙，七转，向方源求援"
+        }
+      ],
+      "entityId": "entity_592a6c32592f",
+      "name": "乔丝柳",
+      "kind": "person",
+      "aliases": [],
+      "description": "乔家蛊仙，七转，向方源求援",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0073",
+          "startOffset": 4760296,
+          "endOffset": 4760367,
+          "summary": "影宗成员，六转，斩杀乔波"
+        }
+      ],
+      "entityId": "entity_a9a49acd8823",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，六转，斩杀乔波",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0075",
+          "startOffset": 4760399,
+          "endOffset": 4760438,
+          "summary": "影宗成员，六转"
+        }
+      ],
+      "entityId": "entity_d12369e93449",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，六转",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0094",
+          "startOffset": 4761007,
+          "endOffset": 4761031,
+          "summary": "影宗成员，七转"
+        }
+      ],
+      "entityId": "entity_df96cacb7de5",
+      "name": "妙音仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，七转",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0073",
+          "startOffset": 4760296,
+          "endOffset": 4760367,
+          "summary": "乔家蛊仙，被白凝冰斩杀"
+        }
+      ],
+      "entityId": "entity_b160ab23e340",
+      "name": "乔波",
+      "kind": "person",
+      "aliases": [],
+      "description": "乔家蛊仙，被白凝冰斩杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0081",
+          "startOffset": 4760542,
+          "endOffset": 4760582,
+          "summary": "影宗八转存在，可能隐藏在附近"
+        }
+      ],
+      "entityId": "entity_936a993b7d43",
+      "name": "紫山真君",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗八转存在，可能隐藏在附近",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0097",
+          "startOffset": 4761170,
+          "endOffset": 4761190,
+          "summary": "不明身份的女性"
+        }
+      ],
+      "entityId": "entity_35fc95250ab6",
+      "name": "妙音仙子",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "不明身份的女性",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0007",
+          "startOffset": 4757905,
+          "endOffset": 4757953,
+          "summary": "方源将白兔姑娘视为棋子，安插在外围，拒绝接走她"
+        }
+      ],
+      "relationId": "rel_163cbff37695",
+      "subject": "方源",
+      "object": "白兔姑娘",
+      "relationType": "OTHER",
+      "summary": "方源将白兔姑娘视为棋子，安插在外围，拒绝接走她",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0008",
+          "startOffset": 4757957,
+          "endOffset": 4757995,
+          "summary": "白兔姑娘与武遗海有紧密的身份关系，无人不知"
+        }
+      ],
+      "relationId": "rel_0baf329fb9f0",
+      "subject": "白兔姑娘",
+      "object": "武遗海",
+      "relationType": "FAMILY",
+      "summary": "白兔姑娘与武遗海有紧密的身份关系，无人不知",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0024",
+          "startOffset": 4758539,
+          "endOffset": 4758568,
+          "summary": "妙音仙子与白凝冰、黑楼兰合谋，偷袭杀死乔波"
+        }
+      ],
+      "relationId": "rel_1b2e03797fc4",
+      "subject": "妙音仙子",
+      "object": "乔波",
+      "relationType": "CONFLICT",
+      "summary": "妙音仙子与白凝冰、黑楼兰合谋，偷袭杀死乔波",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0025",
+          "startOffset": 4758572,
+          "endOffset": 4758639,
+          "summary": "白凝冰从背后偷袭，击穿乔波胸膛，杀死乔波"
+        }
+      ],
+      "relationId": "rel_9075f6d82eff",
+      "subject": "白凝冰",
+      "object": "乔波",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰从背后偷袭，击穿乔波胸膛，杀死乔波",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0031",
+          "startOffset": 4758765,
+          "endOffset": 4758801,
+          "summary": "黑楼兰伪装身份，与妙音仙子、白凝冰合谋杀死乔波"
+        }
+      ],
+      "relationId": "rel_72f9d83b467e",
+      "subject": "黑楼兰",
+      "object": "乔波",
+      "relationType": "CONFLICT",
+      "summary": "黑楼兰伪装身份，与妙音仙子、白凝冰合谋杀死乔波",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0033",
+          "startOffset": 4758820,
+          "endOffset": 4758853,
+          "summary": "白兔姑娘爱慕武遗海，但武遗海不愿见她"
+        }
+      ],
+      "relationId": "rel_5090ec923f0f",
+      "subject": "白兔姑娘",
+      "object": "武遗海",
+      "relationType": "OTHER",
+      "summary": "白兔姑娘爱慕武遗海，但武遗海不愿见她",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0042",
+          "startOffset": 4759280,
+          "endOffset": 4759304,
+          "summary": "黑莬杀死武安"
+        }
+      ],
+      "relationId": "rel_9992c7e4de5c",
+      "subject": "黑莬",
+      "object": "武安",
+      "relationType": "CONFLICT",
+      "summary": "黑莬杀死武安",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0041",
+          "startOffset": 4759227,
+          "endOffset": 4759276,
+          "summary": "黑莬原本准备杀招对付武遗海，但未见到"
+        }
+      ],
+      "relationId": "rel_9f334d8ac196",
+      "subject": "黑莬",
+      "object": "武遗海",
+      "relationType": "CONFLICT",
+      "summary": "黑莬原本准备杀招对付武遗海，但未见到",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0071",
+          "startOffset": 4760227,
+          "endOffset": 4760249,
+          "summary": "方源决定斩杀白兔姑娘为武安报仇"
+        }
+      ],
+      "relationId": "rel_f905e8742ac8",
+      "subject": "方源",
+      "object": "白兔姑娘",
+      "relationType": "CONFLICT",
+      "summary": "方源决定斩杀白兔姑娘为武安报仇",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0077",
+          "startOffset": 4760460,
+          "endOffset": 4760491,
+          "summary": "方源发现影宗出手，决定静观其变"
+        }
+      ],
+      "relationId": "rel_8ed242af52ec",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "CONFLICT",
+      "summary": "方源发现影宗出手，决定静观其变",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0092",
+          "startOffset": 4760898,
+          "endOffset": 4760956,
+          "summary": "方源拒绝援助乔丝柳，放弃她"
+        }
+      ],
+      "relationId": "rel_9cea541d01b9",
+      "subject": "方源",
+      "object": "乔丝柳",
+      "relationType": "OTHER",
+      "summary": "方源拒绝援助乔丝柳，放弃她",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0094",
+          "startOffset": 4761007,
+          "endOffset": 4761031,
+          "summary": "乔丝柳与妙音仙子对峙"
+        }
+      ],
+      "relationId": "rel_20418d8cd3e1",
+      "subject": "乔丝柳",
+      "object": "妙音仙子",
+      "relationType": "CONFLICT",
+      "summary": "乔丝柳与妙音仙子对峙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0027",
+          "startOffset": 4758684,
+          "endOffset": 4758689,
+          "summary": "妙音仙子、白凝冰、黑楼兰合谋，在乔家驻地偷袭杀死乔波"
+        }
+      ],
+      "eventId": "evt_142686d5a72e",
+      "eventType": "conflict",
+      "summary": "妙音仙子、白凝冰、黑楼兰合谋，在乔家驻地偷袭杀死乔波",
+      "actors": [
+        "妙音仙子",
+        "白凝冰",
+        "黑楼兰",
+        "乔波"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "乔波死亡，妙音仙子等人开始行动"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0005",
+          "startOffset": 4757862,
+          "endOffset": 4757881,
+          "summary": "方源拒绝接见白兔姑娘，决定继续将其作为棋子安插在外围"
+        }
+      ],
+      "eventId": "evt_ea753564bb89",
+      "eventType": "other",
+      "summary": "方源拒绝接见白兔姑娘，决定继续将其作为棋子安插在外围",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白兔姑娘留在原地，方源继续处理事务"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0042",
+          "startOffset": 4759280,
+          "endOffset": 4759304,
+          "summary": "黑莬使用杀招将武安融化杀死"
+        }
+      ],
+      "eventId": "evt_46f14c13e2b2",
+      "eventType": "death",
+      "summary": "黑莬使用杀招将武安融化杀死",
+      "actors": [
+        "黑莬",
+        "武安"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "武安死亡，超级蛊阵内部遭受攻击"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0044",
+          "startOffset": 4759318,
+          "endOffset": 4759350,
+          "summary": "黑莬从内部攻击超级蛊阵，同时外部也遭受攻击"
+        }
+      ],
+      "eventId": "evt_d785eb7159f2",
+      "eventType": "conflict",
+      "summary": "黑莬从内部攻击超级蛊阵，同时外部也遭受攻击",
+      "actors": [
+        "黑莬",
+        "正道蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "超级蛊阵震动，阵眼被找到，蛊虫死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0069",
+          "startOffset": 4760127,
+          "endOffset": 4760174,
+          "summary": "白兔姑娘异变，斩杀武安"
+        }
+      ],
+      "eventId": "evt_c5b1f3eee030",
+      "eventType": "death",
+      "summary": "白兔姑娘异变，斩杀武安",
+      "actors": [
+        "白兔姑娘",
+        "武安"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定斩杀白兔姑娘"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0073",
+          "startOffset": 4760296,
+          "endOffset": 4760367,
+          "summary": "白凝冰斩杀乔波"
+        }
+      ],
+      "eventId": "evt_03e891b0ed3b",
+      "eventType": "death",
+      "summary": "白凝冰斩杀乔波",
+      "actors": [
+        "白凝冰",
+        "乔波"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "乔丝柳蛊阵失控，向方源求援"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0087",
+          "startOffset": 4760782,
+          "endOffset": 4760835,
+          "summary": "方源发现影宗出手，决定静观其变，不外出"
+        }
+      ],
+      "eventId": "evt_cdd9c4bf983d",
+      "eventType": "conflict",
+      "summary": "方源发现影宗出手，决定静观其变，不外出",
+      "actors": [
+        "方源",
+        "影宗"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源拒绝援助乔丝柳"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0027",
+          "startOffset": 4758684,
+          "endOffset": 4758689,
+          "summary": "妙音仙子、白凝冰、黑楼兰合谋，在乔家驻地偷袭杀死乔波"
+        }
+      ],
+      "timelineId": "tl_142686d5a72e",
+      "eventId": "evt_142686d5a72e",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "妙音仙子、白凝冰、黑楼兰合谋，在乔家驻地偷袭杀死乔波",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0005",
+          "startOffset": 4757862,
+          "endOffset": 4757881,
+          "summary": "方源拒绝接见白兔姑娘，决定继续将其作为棋子安插在外围"
+        }
+      ],
+      "timelineId": "tl_ea753564bb89",
+      "eventId": "evt_ea753564bb89",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "方源拒绝接见白兔姑娘，决定继续将其作为棋子安插在外围",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0042",
+          "startOffset": 4759280,
+          "endOffset": 4759304,
+          "summary": "黑莬使用杀招将武安融化杀死"
+        }
+      ],
+      "timelineId": "tl_46f14c13e2b2",
+      "eventId": "evt_46f14c13e2b2",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "黑莬使用杀招将武安融化杀死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0044",
+          "startOffset": 4759318,
+          "endOffset": 4759350,
+          "summary": "黑莬从内部攻击超级蛊阵，同时外部也遭受攻击"
+        }
+      ],
+      "timelineId": "tl_d785eb7159f2",
+      "eventId": "evt_d785eb7159f2",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "黑莬从内部攻击超级蛊阵，同时外部也遭受攻击",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0069",
+          "startOffset": 4760127,
+          "endOffset": 4760174,
+          "summary": "白兔姑娘异变，斩杀武安"
+        }
+      ],
+      "timelineId": "tl_c5b1f3eee030",
+      "eventId": "evt_c5b1f3eee030",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "白兔姑娘异变，斩杀武安",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0073",
+          "startOffset": 4760296,
+          "endOffset": 4760367,
+          "summary": "白凝冰斩杀乔波"
+        }
+      ],
+      "timelineId": "tl_03e891b0ed3b",
+      "eventId": "evt_03e891b0ed3b",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰斩杀乔波",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0087",
+          "startOffset": 4760782,
+          "endOffset": 4760835,
+          "summary": "方源发现影宗出手，决定静观其变，不外出"
+        }
+      ],
+      "timelineId": "tl_cdd9c4bf983d",
+      "eventId": "evt_cdd9c4bf983d",
+      "chapterId": "ch_1354",
+      "orderHint": "chapter-order",
+      "summary": "方源发现影宗出手，决定静观其变，不外出",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0070",
+          "startOffset": 4760178,
+          "endOffset": 4760223,
+          "summary": "内奸，刺杀武安"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1354",
+          "paragraphId": "ch_1354_p0069",
+          "startOffset": 4760127,
+          "endOffset": 4760174,
+          "summary": "武家蛊仙，被白兔姑娘斩杀"
+        }
+      ],
+      "factId": "hf_ch1354_white_rabbit_traitor",
+      "summary": "白兔姑娘是内奸，她异变后斩杀了武安，且其真实意图是来对付武遗海（方源）",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0003",
+      "startOffset": 4757804,
+      "endOffset": 4757837,
+      "summary": "主角，魔道蛊仙，伪装成武遗海"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0017",
+      "startOffset": 4758308,
+      "endOffset": 4758388,
+      "summary": "乔家蛊仙，负责接引魔道蛊仙探索梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0028",
+      "startOffset": 4758693,
+      "endOffset": 4758713,
+      "summary": "魔道蛊仙，伪装身份，与妙音仙子、黑楼兰同伙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0032",
+      "startOffset": 4758805,
+      "endOffset": 4758816,
+      "summary": "魔道蛊仙，伪装身份，与妙音仙子、白凝冰同伙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0033",
+      "startOffset": 4758820,
+      "endOffset": 4758853,
+      "summary": "仙缘生意管理者，后显露魔道身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0047",
+      "startOffset": 4759396,
+      "endOffset": 4759448,
+      "summary": "池家首领，正道蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0052",
+      "startOffset": 4759566,
+      "endOffset": 4759624,
+      "summary": "巴家蛊仙，未参与仙缘生意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0067",
+      "startOffset": 4760054,
+      "endOffset": 4760095,
+      "summary": "假扮武遗海，操控超级蛊阵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0070",
+      "startOffset": 4760178,
+      "endOffset": 4760223,
+      "summary": "内奸，刺杀武安"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0069",
+      "startOffset": 4760127,
+      "endOffset": 4760174,
+      "summary": "武家蛊仙，被白兔姑娘斩杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0073",
+      "startOffset": 4760296,
+      "endOffset": 4760367,
+      "summary": "乔家蛊仙，七转，向方源求援"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0075",
+      "startOffset": 4760399,
+      "endOffset": 4760438,
+      "summary": "影宗成员，六转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0094",
+      "startOffset": 4761007,
+      "endOffset": 4761031,
+      "summary": "影宗成员，七转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0081",
+      "startOffset": 4760542,
+      "endOffset": 4760582,
+      "summary": "影宗八转存在，可能隐藏在附近"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0097",
+      "startOffset": 4761170,
+      "endOffset": 4761190,
+      "summary": "不明身份的女性"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0007",
+      "startOffset": 4757905,
+      "endOffset": 4757953,
+      "summary": "方源将白兔姑娘视为棋子，安插在外围，拒绝接走她"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0008",
+      "startOffset": 4757957,
+      "endOffset": 4757995,
+      "summary": "白兔姑娘与武遗海有紧密的身份关系，无人不知"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0024",
+      "startOffset": 4758539,
+      "endOffset": 4758568,
+      "summary": "妙音仙子与白凝冰、黑楼兰合谋，偷袭杀死乔波"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0025",
+      "startOffset": 4758572,
+      "endOffset": 4758639,
+      "summary": "白凝冰从背后偷袭，击穿乔波胸膛，杀死乔波"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0031",
+      "startOffset": 4758765,
+      "endOffset": 4758801,
+      "summary": "黑楼兰伪装身份，与妙音仙子、白凝冰合谋杀死乔波"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0042",
+      "startOffset": 4759280,
+      "endOffset": 4759304,
+      "summary": "黑莬杀死武安"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0041",
+      "startOffset": 4759227,
+      "endOffset": 4759276,
+      "summary": "黑莬原本准备杀招对付武遗海，但未见到"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0071",
+      "startOffset": 4760227,
+      "endOffset": 4760249,
+      "summary": "方源决定斩杀白兔姑娘为武安报仇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0077",
+      "startOffset": 4760460,
+      "endOffset": 4760491,
+      "summary": "方源发现影宗出手，决定静观其变"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0092",
+      "startOffset": 4760898,
+      "endOffset": 4760956,
+      "summary": "方源拒绝援助乔丝柳，放弃她"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0027",
+      "startOffset": 4758684,
+      "endOffset": 4758689,
+      "summary": "妙音仙子、白凝冰、黑楼兰合谋，在乔家驻地偷袭杀死乔波"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0005",
+      "startOffset": 4757862,
+      "endOffset": 4757881,
+      "summary": "方源拒绝接见白兔姑娘，决定继续将其作为棋子安插在外围"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0044",
+      "startOffset": 4759318,
+      "endOffset": 4759350,
+      "summary": "黑莬从内部攻击超级蛊阵，同时外部也遭受攻击"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1354",
+      "paragraphId": "ch_1354_p0087",
+      "startOffset": 4760782,
+      "endOffset": 4760835,
+      "summary": "方源发现影宗出手，决定静观其变，不外出"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "Source ch_1354_p0070 directly states from Fang Yuan's perspective that White Rabbit Girl is a traitor who transformed and killed Wu An, and that her real intention was to deal with Wu Yi Hai (Fang Yuan). This is private knowledge known only to Fang Yuan (who observed it through the gu array), not publicly known to other characters. The fact is atomic: White Rabbit Girl is a traitor who killed Wu An and intended to target Wu Yi Hai.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "白兔姑娘异变斩杀武安，行为可见但动机不明。种子中仅显示她'像是换了一个人'，是内奸，但未提供她为何这样做、受谁指使、有何目的等直接证据。无法做出一阶推断而不陷入心理猜测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed contains mostly individual actors (方源, 白兔姑娘, 武安, 乔波, 妙音仙子, 白凝冰, 黑楼兰, 黑莬) with individual stakes and conflicts. While there are mentions of families/clans (乔家, 武家, 池家, 巴家), the seed does not provide concrete collective stakes for any named faction. 乔波 is a 乔家蛊仙 but his death is an individual event, not clearly tied to 乔家's collective pressure. 黑莬 attacks the super gu formation and kills 武安 (武家 member), but the seed doesn't establish 武家 as a collective actor with a stake. 池家 and 巴家 are mentioned only in passing. No named faction has a concrete, source-backed collective pressure axis with conservative likely reactions.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

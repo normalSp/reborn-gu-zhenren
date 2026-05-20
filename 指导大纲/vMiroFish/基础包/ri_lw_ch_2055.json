@@ -1,0 +1,982 @@
+{
+  "packageId": "ri_lw_ch_2055",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_2055"
+    ],
+    "paragraphIds": [
+      "ch_2055_p0002",
+      "ch_2055_p0010",
+      "ch_2055_p0012",
+      "ch_2055_p0016",
+      "ch_2055_p0018",
+      "ch_2055_p0024",
+      "ch_2055_p0026",
+      "ch_2055_p0029",
+      "ch_2055_p0030",
+      "ch_2055_p0031",
+      "ch_2055_p0033",
+      "ch_2055_p0034",
+      "ch_2055_p0036",
+      "ch_2055_p0041",
+      "ch_2055_p0046",
+      "ch_2055_p0047",
+      "ch_2055_p0050",
+      "ch_2055_p0053"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0010",
+          "startOffset": 7152450,
+          "endOffset": 7152524,
+          "summary": "蛊仙，安土重山堡主人"
+        }
+      ],
+      "entityId": "entity_250a4a993c9e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，安土重山堡主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0012",
+          "startOffset": 7152554,
+          "endOffset": 7152592,
+          "summary": "魔尊，攻击方源"
+        }
+      ],
+      "entityId": "entity_026c5f8afcc8",
+      "name": "魔尊幽魂",
+      "kind": "person",
+      "aliases": [
+        "幽魂"
+      ],
+      "description": "魔尊，攻击方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0012",
+          "startOffset": 7152554,
+          "endOffset": 7152592,
+          "summary": "蛊仙，与方源合作"
+        }
+      ],
+      "entityId": "entity_c3675af3e456",
+      "name": "陆畏因",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与方源合作",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0012",
+          "startOffset": 7152554,
+          "endOffset": 7152592,
+          "summary": "蛊仙，针对幽魂"
+        }
+      ],
+      "entityId": "entity_46a7c08b1789",
+      "name": "青仇",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，针对幽魂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0024",
+          "startOffset": 7153208,
+          "endOffset": 7153242,
+          "summary": "蛊仙，围攻幽魂"
+        }
+      ],
+      "entityId": "entity_ec9c31d54123",
+      "name": "气海老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，围攻幽魂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0031",
+          "startOffset": 7153525,
+          "endOffset": 7153574,
+          "summary": "魔仙，被幽魂传音要求主攻"
+        }
+      ],
+      "entityId": "entity_e3f32db34d75",
+      "name": "气绝魔仙",
+      "kind": "person",
+      "aliases": [
+        "气绝"
+      ],
+      "description": "魔仙，被幽魂传音要求主攻",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0033",
+          "startOffset": 7153625,
+          "endOffset": 7153627,
+          "summary": "尊者，千古杀性第一"
+        }
+      ],
+      "entityId": "entity_aa8946254884",
+      "name": "幽魂",
+      "kind": "person",
+      "aliases": [
+        "幽魂魔尊"
+      ],
+      "description": "尊者，千古杀性第一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0036",
+          "startOffset": 7153893,
+          "endOffset": 7153897,
+          "summary": "积年老魔头，气道魔仙"
+        }
+      ],
+      "entityId": "entity_e3f32db34d75",
+      "name": "气绝魔仙",
+      "kind": "person",
+      "aliases": [
+        "气绝"
+      ],
+      "description": "积年老魔头，气道魔仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0033",
+          "startOffset": 7153625,
+          "endOffset": 7153627,
+          "summary": "目标人物，拥有至尊仙窍"
+        }
+      ],
+      "entityId": "entity_250a4a993c9e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "目标人物，拥有至尊仙窍",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0046",
+          "startOffset": 7154428,
+          "endOffset": 7154431,
+          "summary": "战场掌控者"
+        }
+      ],
+      "entityId": "entity_c3675af3e456",
+      "name": "陆畏因",
+      "kind": "person",
+      "aliases": [],
+      "description": "战场掌控者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0046",
+          "startOffset": 7154428,
+          "endOffset": 7154430,
+          "summary": "战场参与者，疯狂"
+        }
+      ],
+      "entityId": "entity_46a7c08b1789",
+      "name": "青仇",
+      "kind": "person",
+      "aliases": [],
+      "description": "战场参与者，疯狂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0046",
+          "startOffset": 7154428,
+          "endOffset": 7154432,
+          "summary": "方源的气海分身"
+        }
+      ],
+      "entityId": "entity_ec9c31d54123",
+      "name": "气海老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的气海分身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0012",
+          "startOffset": 7152554,
+          "endOffset": 7152592,
+          "summary": "方源与魔尊幽魂敌对，幽魂袭杀方源"
+        }
+      ],
+      "relationId": "rel_fd33dedb0b13",
+      "subject": "方源",
+      "object": "魔尊幽魂",
+      "relationType": "CONFLICT",
+      "summary": "方源与魔尊幽魂敌对，幽魂袭杀方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0016",
+          "startOffset": 7152764,
+          "endOffset": 7152823,
+          "summary": "陆畏因与方源合作，共同对抗幽魂"
+        }
+      ],
+      "relationId": "rel_1974b12b6d42",
+      "subject": "方源",
+      "object": "陆畏因",
+      "relationType": "ALLY",
+      "summary": "陆畏因与方源合作，共同对抗幽魂",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0031",
+          "startOffset": 7153525,
+          "endOffset": 7153574,
+          "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳"
+        }
+      ],
+      "relationId": "rel_8e99f477214c",
+      "subject": "魔尊幽魂",
+      "object": "气绝魔仙",
+      "relationType": "ALLY",
+      "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0030",
+          "startOffset": 7153470,
+          "endOffset": 7153521,
+          "summary": "青仇只针对其宿命中最大的仇人幽魂"
+        }
+      ],
+      "relationId": "rel_8ff48139ae7e",
+      "subject": "青仇",
+      "object": "魔尊幽魂",
+      "relationType": "CONFLICT",
+      "summary": "青仇只针对其宿命中最大的仇人幽魂",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0034",
+          "startOffset": 7153721,
+          "endOffset": 7153723,
+          "summary": "暂时合作，关系浅薄，互相防备"
+        }
+      ],
+      "relationId": "rel_b7fc6f8ba4e1",
+      "subject": "幽魂",
+      "object": "气绝魔仙",
+      "relationType": "ALLY",
+      "summary": "暂时合作，关系浅薄，互相防备",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0034",
+          "startOffset": 7153721,
+          "endOffset": 7153723,
+          "summary": "幽魂以斩杀方源为首要目标"
+        }
+      ],
+      "relationId": "rel_493c6fdb5e64",
+      "subject": "幽魂",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "幽魂以斩杀方源为首要目标",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0047",
+          "startOffset": 7154478,
+          "endOffset": 7154482,
+          "summary": "气绝魔仙克制方源的气海分身"
+        }
+      ],
+      "relationId": "rel_ac33dbe6780c",
+      "subject": "气绝魔仙",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "气绝魔仙克制方源的气海分身",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0047",
+          "startOffset": 7154478,
+          "endOffset": 7154481,
+          "summary": "陆畏因掌控气海老祖，使其尽量不与气绝交手"
+        }
+      ],
+      "relationId": "rel_36886200b341",
+      "subject": "陆畏因",
+      "object": "气海老祖",
+      "relationType": "ALLY",
+      "summary": "陆畏因掌控气海老祖，使其尽量不与气绝交手",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0047",
+          "startOffset": 7154478,
+          "endOffset": 7154480,
+          "summary": "青仇疯狂攻击，令气绝魔仙为难"
+        }
+      ],
+      "relationId": "rel_bc8af933d028",
+      "subject": "青仇",
+      "object": "气绝魔仙",
+      "relationType": "CONFLICT",
+      "summary": "青仇疯狂攻击，令气绝魔仙为难",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0002",
+          "startOffset": 7152031,
+          "endOffset": 7152046,
+          "summary": "安土重山堡仙蛊屋陡然现身战场"
+        }
+      ],
+      "eventId": "evt_c9aa133d1df2",
+      "eventType": "appearance",
+      "summary": "安土重山堡仙蛊屋陡然现身战场",
+      "actors": [
+        "安土重山堡"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "改变了战局，幽魂袭杀方源无效"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0024",
+          "startOffset": 7153208,
+          "endOffset": 7153242,
+          "summary": "魔尊幽魂抵挡陆畏因、气海老祖等人的围攻，同时攻击安土重山堡"
+        }
+      ],
+      "eventId": "evt_a18143b30345",
+      "eventType": "conflict",
+      "summary": "魔尊幽魂抵挡陆畏因、气海老祖等人的围攻，同时攻击安土重山堡",
+      "actors": [
+        "魔尊幽魂",
+        "陆畏因",
+        "青仇",
+        "气海老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "安土重山堡屹立不倒，幽魂感到难受"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0029",
+          "startOffset": 7153421,
+          "endOffset": 7153466,
+          "summary": "陆畏因催动战场杀招将青仇挪移，避免被幽魂针对"
+        }
+      ],
+      "eventId": "evt_c4193a143bfc",
+      "eventType": "other",
+      "summary": "陆畏因催动战场杀招将青仇挪移，避免被幽魂针对",
+      "actors": [
+        "陆畏因",
+        "青仇"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "幽魂的算计被提前破解"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0031",
+          "startOffset": 7153525,
+          "endOffset": 7153574,
+          "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳"
+        }
+      ],
+      "eventId": "evt_99fd908e4e15",
+      "eventType": "other",
+      "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳",
+      "actors": [
+        "魔尊幽魂",
+        "气绝魔仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "气绝魔仙犹豫"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0046",
+          "startOffset": 7154428,
+          "endOffset": 7154430,
+          "summary": "幽魂和气绝魔仙被困于幻沙转影战场，陆畏因、青仇、气海老祖围攻他们"
+        }
+      ],
+      "eventId": "evt_73db28452c44",
+      "eventType": "conflict",
+      "summary": "幽魂和气绝魔仙被困于幻沙转影战场，陆畏因、青仇、气海老祖围攻他们",
+      "actors": [
+        "幽魂",
+        "气绝魔仙",
+        "陆畏因",
+        "青仇",
+        "气海老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "幽魂和气绝感到困窘，幽魂提议气绝攻破仙蛊屋，自己突破战场"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0041",
+          "startOffset": 7154152,
+          "endOffset": 7154156,
+          "summary": "气绝魔仙索要幽魂真传作为攻破仙蛊屋的代价，幽魂拒绝"
+        }
+      ],
+      "eventId": "evt_c990aa51fce3",
+      "eventType": "trade",
+      "summary": "气绝魔仙索要幽魂真传作为攻破仙蛊屋的代价，幽魂拒绝",
+      "actors": [
+        "气绝魔仙",
+        "幽魂"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "气绝魔仙暂时放弃要价，继续合作"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0053",
+          "startOffset": 7154790,
+          "endOffset": 7154792,
+          "summary": "方源在至尊仙窍中炼化天道道痕，突破半百"
+        }
+      ],
+      "eventId": "evt_548c485d47e7",
+      "eventType": "cultivation",
+      "summary": "方源在至尊仙窍中炼化天道道痕，突破半百",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源实力提升，万劫持续变化"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0002",
+          "startOffset": 7152031,
+          "endOffset": 7152046,
+          "summary": "安土重山堡仙蛊屋陡然现身战场"
+        }
+      ],
+      "timelineId": "tl_c9aa133d1df2",
+      "eventId": "evt_c9aa133d1df2",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "安土重山堡仙蛊屋陡然现身战场",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0024",
+          "startOffset": 7153208,
+          "endOffset": 7153242,
+          "summary": "魔尊幽魂抵挡陆畏因、气海老祖等人的围攻，同时攻击安土重山堡"
+        }
+      ],
+      "timelineId": "tl_a18143b30345",
+      "eventId": "evt_a18143b30345",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "魔尊幽魂抵挡陆畏因、气海老祖等人的围攻，同时攻击安土重山堡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0029",
+          "startOffset": 7153421,
+          "endOffset": 7153466,
+          "summary": "陆畏因催动战场杀招将青仇挪移，避免被幽魂针对"
+        }
+      ],
+      "timelineId": "tl_c4193a143bfc",
+      "eventId": "evt_c4193a143bfc",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "陆畏因催动战场杀招将青仇挪移，避免被幽魂针对",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0031",
+          "startOffset": 7153525,
+          "endOffset": 7153574,
+          "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳"
+        }
+      ],
+      "timelineId": "tl_99fd908e4e15",
+      "eventId": "evt_99fd908e4e15",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "幽魂向气绝魔仙传音，要求其主攻安土重山堡，并承诺酬劳",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0046",
+          "startOffset": 7154428,
+          "endOffset": 7154430,
+          "summary": "幽魂和气绝魔仙被困于幻沙转影战场，陆畏因、青仇、气海老祖围攻他们"
+        }
+      ],
+      "timelineId": "tl_73db28452c44",
+      "eventId": "evt_73db28452c44",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "幽魂和气绝魔仙被困于幻沙转影战场，陆畏因、青仇、气海老祖围攻他们",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0041",
+          "startOffset": 7154152,
+          "endOffset": 7154156,
+          "summary": "气绝魔仙索要幽魂真传作为攻破仙蛊屋的代价，幽魂拒绝"
+        }
+      ],
+      "timelineId": "tl_c990aa51fce3",
+      "eventId": "evt_c990aa51fce3",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "气绝魔仙索要幽魂真传作为攻破仙蛊屋的代价，幽魂拒绝",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_2055",
+          "paragraphId": "ch_2055_p0053",
+          "startOffset": 7154790,
+          "endOffset": 7154792,
+          "summary": "方源在至尊仙窍中炼化天道道痕，突破半百"
+        }
+      ],
+      "timelineId": "tl_548c485d47e7",
+      "eventId": "evt_548c485d47e7",
+      "chapterId": "ch_2055",
+      "orderHint": "chapter-order",
+      "summary": "方源在至尊仙窍中炼化天道道痕，突破半百",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0010",
+      "startOffset": 7152450,
+      "endOffset": 7152524,
+      "summary": "蛊仙，安土重山堡主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0012",
+      "startOffset": 7152554,
+      "endOffset": 7152592,
+      "summary": "魔尊，攻击方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0024",
+      "startOffset": 7153208,
+      "endOffset": 7153242,
+      "summary": "蛊仙，围攻幽魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0031",
+      "startOffset": 7153525,
+      "endOffset": 7153574,
+      "summary": "魔仙，被幽魂传音要求主攻"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0033",
+      "startOffset": 7153625,
+      "endOffset": 7153627,
+      "summary": "尊者，千古杀性第一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0036",
+      "startOffset": 7153893,
+      "endOffset": 7153897,
+      "summary": "积年老魔头，气道魔仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0046",
+      "startOffset": 7154428,
+      "endOffset": 7154431,
+      "summary": "战场掌控者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0046",
+      "startOffset": 7154428,
+      "endOffset": 7154430,
+      "summary": "战场参与者，疯狂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0046",
+      "startOffset": 7154428,
+      "endOffset": 7154432,
+      "summary": "方源的气海分身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0016",
+      "startOffset": 7152764,
+      "endOffset": 7152823,
+      "summary": "陆畏因与方源合作，共同对抗幽魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0030",
+      "startOffset": 7153470,
+      "endOffset": 7153521,
+      "summary": "青仇只针对其宿命中最大的仇人幽魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0034",
+      "startOffset": 7153721,
+      "endOffset": 7153723,
+      "summary": "暂时合作，关系浅薄，互相防备"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0047",
+      "startOffset": 7154478,
+      "endOffset": 7154482,
+      "summary": "气绝魔仙克制方源的气海分身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0047",
+      "startOffset": 7154478,
+      "endOffset": 7154481,
+      "summary": "陆畏因掌控气海老祖，使其尽量不与气绝交手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0047",
+      "startOffset": 7154478,
+      "endOffset": 7154480,
+      "summary": "青仇疯狂攻击，令气绝魔仙为难"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0002",
+      "startOffset": 7152031,
+      "endOffset": 7152046,
+      "summary": "安土重山堡仙蛊屋陡然现身战场"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0029",
+      "startOffset": 7153421,
+      "endOffset": 7153466,
+      "summary": "陆畏因催动战场杀招将青仇挪移，避免被幽魂针对"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0041",
+      "startOffset": 7154152,
+      "endOffset": 7154156,
+      "summary": "气绝魔仙索要幽魂真传作为攻破仙蛊屋的代价，幽魂拒绝"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_2055",
+      "paragraphId": "ch_2055_p0053",
+      "startOffset": 7154790,
+      "endOffset": 7154792,
+      "summary": "方源在至尊仙窍中炼化天道道痕，突破半百"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly public battle events (appearance of immortal house, attacks, battlefield maneuvers) that are visible to all participants. The only potentially hidden element is 幽魂's private communication (传音) to 气绝魔仙 demanding main attack on 安土重山堡 and promising reward, but this is already captured as an event in the seed. 方源's cultivation of heavenly dao dao marks inside 至尊仙窍 is private but the seed only states he '突破半百' (broke through half a hundred) - this is a numeric outcome/achievement which should not be asserted. 陆畏因's inner thought ('方源为了引诱幽魂，甘愿付出这么沉重的代价') is a subjective speculation/interpretation, not a confirmed fact. No other directly supported private knowledge, future-known information, or secret motive/plan with sufficient source backing.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows characters acting (幽魂 attacks, 气绝魔仙 hesitates, 陆畏因 maneuvers), but observed actions are mostly combat maneuvers and negotiations. Motives are ambiguous: 幽魂 wants to kill 方源 (direct from seed), but that's already stated as relation/event, not a new inference. 气绝魔仙 asks for 幽魂真传 as payment - this is a negotiation demand, not a hidden motive. No clear one-step inference from observed action to unstated motive that is cautious and not a psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily describes individual-level conflicts among Gu Immortals (方源, 魔尊幽魂, 陆畏因, 青仇, 气绝魔仙, 气海老祖) in a battlefield scenario. No named collective faction, clan, family, or organization appears as a stakeholder. '安土重山堡' is a仙蛊屋 (immortal gu house), not a faction/group. All actors are individuals or temporary alliances (幽魂+气绝魔仙, 陆畏因+方源). No family, clan, sect, shop, hall, or organization is named or directly implied as having a collective stake. Cannot fabricate a collective from individual names.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

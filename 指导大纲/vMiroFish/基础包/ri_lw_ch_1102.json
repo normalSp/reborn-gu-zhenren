@@ -1,0 +1,695 @@
+{
+  "packageId": "ri_lw_ch_1102",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1102"
+    ],
+    "paragraphIds": [
+      "ch_1102_p0004",
+      "ch_1102_p0005",
+      "ch_1102_p0008",
+      "ch_1102_p0019",
+      "ch_1102_p0027",
+      "ch_1102_p0037",
+      "ch_1102_p0046",
+      "ch_1102_p0060",
+      "ch_1102_p0066",
+      "ch_1102_p0068",
+      "ch_1102_p0069",
+      "ch_1102_p0078",
+      "ch_1102_p0088",
+      "ch_1102_p0092",
+      "ch_1102_p0097",
+      "ch_1102_p0100",
+      "ch_1102_p0107"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0004",
+          "startOffset": 3892529,
+          "endOffset": 3892531,
+          "summary": "蛊仙，智道宗师，六转"
+        }
+      ],
+      "entityId": "entity_0961843055fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，智道宗师，六转",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0019",
+          "startOffset": 3893074,
+          "endOffset": 3893076,
+          "summary": "影宗成员，与方源交易"
+        }
+      ],
+      "entityId": "entity_390f297acef9",
+      "name": "毛六",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，与方源交易",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0037",
+          "startOffset": 3893585,
+          "endOffset": 3893647,
+          "summary": "渡劫者"
+        }
+      ],
+      "entityId": "entity_0961843055fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "渡劫者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0066",
+          "startOffset": 3894351,
+          "endOffset": 3894366,
+          "summary": "渡劫的蛊仙"
+        }
+      ],
+      "entityId": "entity_0961843055fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "渡劫的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0097",
+          "startOffset": 3895358,
+          "endOffset": 3895360,
+          "summary": "渡劫者"
+        }
+      ],
+      "entityId": "entity_0961843055fc",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "渡劫者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0005",
+          "startOffset": 3892550,
+          "endOffset": 3892556,
+          "summary": "方源与影宗进行交易，获得力道、剑道手段"
+        }
+      ],
+      "relationId": "rel_cfcd552f868c",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "TRADE",
+      "summary": "方源与影宗进行交易，获得力道、剑道手段",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0069",
+          "startOffset": 3894426,
+          "endOffset": 3894482,
+          "summary": "天意试图铲除方源，方源对抗天劫"
+        }
+      ],
+      "relationId": "rel_c7c3fe6ac14c",
+      "subject": "方源",
+      "object": "天意",
+      "relationType": "CONFLICT",
+      "summary": "天意试图铲除方源，方源对抗天劫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0027",
+          "startOffset": 3893376,
+          "endOffset": 3893381,
+          "summary": "方源面临风花雪月天劫，使用剑浪三叠和力道大手印攻击雪月"
+        }
+      ],
+      "eventId": "evt_4a394623eb9b",
+      "eventType": "cultivation",
+      "summary": "方源面临风花雪月天劫，使用剑浪三叠和力道大手印攻击雪月",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0046",
+          "startOffset": 3893797,
+          "endOffset": 3893829,
+          "summary": "方源使用万我杀招制造大量虚影，掩护本体冲出荡魂山，并使用剑遁仙蛊接近并击爆半空中的雪月，获得狂蛮真意灌溉，变化道境界暴涨。"
+        }
+      ],
+      "eventId": "evt_36fb7aa13d3d",
+      "eventType": "conflict",
+      "summary": "方源使用万我杀招制造大量虚影，掩护本体冲出荡魂山，并使用剑遁仙蛊接近并击爆半空中的雪月，获得狂蛮真意灌溉，变化道境界暴涨。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源成功击破雪月，获得狂蛮真意，变化道境界迅猛提升。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0068",
+          "startOffset": 3894393,
+          "endOffset": 3894422,
+          "summary": "方源渡第二次地灾，遭遇风花雪月劫，识破其并非完整天劫，利用万我虚影和荡魂山固守，受伤后疗伤"
+        }
+      ],
+      "eventId": "evt_8be03fae0177",
+      "eventType": "cultivation",
+      "summary": "方源渡第二次地灾，遭遇风花雪月劫，识破其并非完整天劫，利用万我虚影和荡魂山固守，受伤后疗伤",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源受伤但成功抵御，发现自身道痕互不干扰的优势"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0078",
+          "startOffset": 3894704,
+          "endOffset": 3894734,
+          "summary": "方源使用变形仙蛊伪装伤口，欺瞒天意"
+        }
+      ],
+      "eventId": "evt_085d624e92be",
+      "eventType": "other",
+      "summary": "方源使用变形仙蛊伪装伤口，欺瞒天意",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "成功隐藏真实伤势"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0092",
+          "startOffset": 3895180,
+          "endOffset": 3895201,
+          "summary": "方源发现天空中生出三个雪月，冷光叠加，智道手段不顶用，撑起数种凡道防御杀招"
+        }
+      ],
+      "eventId": "evt_dae1b4033c96",
+      "eventType": "other",
+      "summary": "方源发现天空中生出三个雪月，冷光叠加，智道手段不顶用，撑起数种凡道防御杀招",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源维持住体温，但喘息计划落空"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0097",
+          "startOffset": 3895358,
+          "endOffset": 3895360,
+          "summary": "方源渡劫，面对雪月、风花和冷光，处境艰难"
+        }
+      ],
+      "eventId": "evt_65639984bb4b",
+      "eventType": "conflict",
+      "summary": "方源渡劫，面对雪月、风花和冷光，处境艰难",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源仙元迅速减少，必须精打细算"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0100",
+          "startOffset": 3895491,
+          "endOffset": 3895493,
+          "summary": "方源施展万我杀招，制造虚影吸引风花"
+        }
+      ],
+      "eventId": "evt_885d96fb389b",
+      "eventType": "cultivation",
+      "summary": "方源施展万我杀招，制造虚影吸引风花",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源真身趁机冲上天去"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0107",
+          "startOffset": 3895745,
+          "endOffset": 3895747,
+          "summary": "方源击爆三轮雪月，但更多雪月同时形成"
+        }
+      ],
+      "eventId": "evt_0304b2b13daf",
+      "eventType": "conflict",
+      "summary": "方源击爆三轮雪月，但更多雪月同时形成",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "生机渺茫，方源迎难而上"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0027",
+          "startOffset": 3893376,
+          "endOffset": 3893381,
+          "summary": "方源面临风花雪月天劫，使用剑浪三叠和力道大手印攻击雪月"
+        }
+      ],
+      "timelineId": "tl_4a394623eb9b",
+      "eventId": "evt_4a394623eb9b",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源面临风花雪月天劫，使用剑浪三叠和力道大手印攻击雪月",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0046",
+          "startOffset": 3893797,
+          "endOffset": 3893829,
+          "summary": "方源使用万我杀招制造大量虚影，掩护本体冲出荡魂山，并使用剑遁仙蛊接近并击爆半空中的雪月，获得狂蛮真意灌溉，变化道境界暴涨。"
+        }
+      ],
+      "timelineId": "tl_36fb7aa13d3d",
+      "eventId": "evt_36fb7aa13d3d",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源使用万我杀招制造大量虚影，掩护本体冲出荡魂山，并使用剑遁仙蛊接近并击爆半空中的雪月，获得狂蛮真意灌溉，变化道境界暴涨。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0068",
+          "startOffset": 3894393,
+          "endOffset": 3894422,
+          "summary": "方源渡第二次地灾，遭遇风花雪月劫，识破其并非完整天劫，利用万我虚影和荡魂山固守，受伤后疗伤"
+        }
+      ],
+      "timelineId": "tl_8be03fae0177",
+      "eventId": "evt_8be03fae0177",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源渡第二次地灾，遭遇风花雪月劫，识破其并非完整天劫，利用万我虚影和荡魂山固守，受伤后疗伤",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0078",
+          "startOffset": 3894704,
+          "endOffset": 3894734,
+          "summary": "方源使用变形仙蛊伪装伤口，欺瞒天意"
+        }
+      ],
+      "timelineId": "tl_085d624e92be",
+      "eventId": "evt_085d624e92be",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源使用变形仙蛊伪装伤口，欺瞒天意",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0092",
+          "startOffset": 3895180,
+          "endOffset": 3895201,
+          "summary": "方源发现天空中生出三个雪月，冷光叠加，智道手段不顶用，撑起数种凡道防御杀招"
+        }
+      ],
+      "timelineId": "tl_dae1b4033c96",
+      "eventId": "evt_dae1b4033c96",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源发现天空中生出三个雪月，冷光叠加，智道手段不顶用，撑起数种凡道防御杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0097",
+          "startOffset": 3895358,
+          "endOffset": 3895360,
+          "summary": "方源渡劫，面对雪月、风花和冷光，处境艰难"
+        }
+      ],
+      "timelineId": "tl_65639984bb4b",
+      "eventId": "evt_65639984bb4b",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源渡劫，面对雪月、风花和冷光，处境艰难",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0100",
+          "startOffset": 3895491,
+          "endOffset": 3895493,
+          "summary": "方源施展万我杀招，制造虚影吸引风花"
+        }
+      ],
+      "timelineId": "tl_885d96fb389b",
+      "eventId": "evt_885d96fb389b",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源施展万我杀招，制造虚影吸引风花",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1102",
+          "paragraphId": "ch_1102_p0107",
+          "startOffset": 3895745,
+          "endOffset": 3895747,
+          "summary": "方源击爆三轮雪月，但更多雪月同时形成"
+        }
+      ],
+      "timelineId": "tl_0304b2b13daf",
+      "eventId": "evt_0304b2b13daf",
+      "chapterId": "ch_1102",
+      "orderHint": "chapter-order",
+      "summary": "方源击爆三轮雪月，但更多雪月同时形成",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0004",
+      "startOffset": 3892529,
+      "endOffset": 3892531,
+      "summary": "蛊仙，智道宗师，六转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0019",
+      "startOffset": 3893074,
+      "endOffset": 3893076,
+      "summary": "影宗成员，与方源交易"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0037",
+      "startOffset": 3893585,
+      "endOffset": 3893647,
+      "summary": "渡劫者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0066",
+      "startOffset": 3894351,
+      "endOffset": 3894366,
+      "summary": "渡劫的蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0097",
+      "startOffset": 3895358,
+      "endOffset": 3895360,
+      "summary": "渡劫者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0005",
+      "startOffset": 3892550,
+      "endOffset": 3892556,
+      "summary": "方源与影宗进行交易，获得力道、剑道手段"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0069",
+      "startOffset": 3894426,
+      "endOffset": 3894482,
+      "summary": "天意试图铲除方源，方源对抗天劫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0027",
+      "startOffset": 3893376,
+      "endOffset": 3893381,
+      "summary": "方源面临风花雪月天劫，使用剑浪三叠和力道大手印攻击雪月"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0046",
+      "startOffset": 3893797,
+      "endOffset": 3893829,
+      "summary": "方源使用万我杀招制造大量虚影，掩护本体冲出荡魂山，并使用剑遁仙蛊接近并击爆半空中的雪月，获得狂蛮真意灌溉，变化道境界暴涨。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0068",
+      "startOffset": 3894393,
+      "endOffset": 3894422,
+      "summary": "方源渡第二次地灾，遭遇风花雪月劫，识破其并非完整天劫，利用万我虚影和荡魂山固守，受伤后疗伤"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0078",
+      "startOffset": 3894704,
+      "endOffset": 3894734,
+      "summary": "方源使用变形仙蛊伪装伤口，欺瞒天意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0092",
+      "startOffset": 3895180,
+      "endOffset": 3895201,
+      "summary": "方源发现天空中生出三个雪月，冷光叠加，智道手段不顶用，撑起数种凡道防御杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0100",
+      "startOffset": 3895491,
+      "endOffset": 3895493,
+      "summary": "方源施展万我杀招，制造虚影吸引风花"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1102",
+      "paragraphId": "ch_1102_p0107",
+      "startOffset": 3895745,
+      "endOffset": 3895747,
+      "summary": "方源击爆三轮雪月，但更多雪月同时形成"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes Fang Yuan's tribulation process (wind-flower-snow-moon tribulation), his use of techniques like sword waves and strength palm prints, and his use of Wan Wo and变形 to deceive heavenly will. These are mostly visible/public events during tribulation, not hidden knowledge. The only potentially hidden element is Fang Yuan using变形仙蛊 to disguise wounds to deceive heavenly will (ch_1102_p0068 area), but the seed does not provide direct source quote/pointer for that specific act of deception as a hidden fact. The source pointers provided are mostly about the tribulation itself, trading with Shadow Sect, and general observations. No clear source-backed hidden fact with supported whoKnows/whoDoesNotKnow can be extracted from the given pointers.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes Fang Yuan's tribulation (风花雪月劫) and his actions during it - using various killer moves, disguising wounds, etc. His observed behavior is survival and tribulation-breaking, but the inferred motive is ambiguous: he could be acting to survive, to gain狂蛮真意 (wild truth), to improve his cultivation realm, or to resist Heavenly Will. The seed does not directly support a single clear motive beyond 'survive the tribulation and gain benefits from it.' No strategic intent like '示好', '投靠', or '找替罪羊' is supported. Returning empty characterMotives as per rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses entirely on Fang Yuan's personal tribulation (wind-flower-snow-moon heavenly tribulation) and his individual cultivation breakthrough. The only collective actor mentioned is '影宗' (Shadow Sect), which appears in a trade relation with Fang Yuan (ptr_6: '和影宗交易之后'), but there is no concrete stake, pressure, or ongoing dynamic involving Shadow Sect as a faction in this chapter. The events are all about Fang Yuan's personal struggle against heavenly tribulation and heavenly will. No family, clan, faction, or group pressure can be extracted from the seed facts.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

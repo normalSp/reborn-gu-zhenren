@@ -1,0 +1,904 @@
+{
+  "packageId": "ri_lw_ch_1127",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1127"
+    ],
+    "paragraphIds": [
+      "ch_1127_p0004",
+      "ch_1127_p0005",
+      "ch_1127_p0006",
+      "ch_1127_p0016",
+      "ch_1127_p0034",
+      "ch_1127_p0037",
+      "ch_1127_p0040",
+      "ch_1127_p0060",
+      "ch_1127_p0061",
+      "ch_1127_p0065",
+      "ch_1127_p0066",
+      "ch_1127_p0073",
+      "ch_1127_p0080",
+      "ch_1127_p0082",
+      "ch_1127_p0084",
+      "ch_1127_p0087",
+      "ch_1127_p0088",
+      "ch_1127_p0093"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0005",
+          "startOffset": 3983889,
+          "endOffset": 3983893,
+          "summary": "外来者，试图继承黑凡真传"
+        }
+      ],
+      "entityId": "entity_69ae0f39b85a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "外来者，试图继承黑凡真传",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0004",
+          "startOffset": 3983865,
+          "endOffset": 3983867,
+          "summary": "黑凡洞天的主人，真传的设立者"
+        }
+      ],
+      "entityId": "entity_f414121df0a9",
+      "name": "黑凡",
+      "kind": "person",
+      "aliases": [
+        "黑凡老祖"
+      ],
+      "description": "黑凡洞天的主人，真传的设立者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0006",
+          "startOffset": 3983903,
+          "endOffset": 3983907,
+          "summary": "黑凡洞天的天灵，传达旨意"
+        }
+      ],
+      "entityId": "entity_ce5eee3ecfe6",
+      "name": "黄钟天灵",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "黑凡洞天的天灵，传达旨意",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0034",
+          "startOffset": 3984980,
+          "endOffset": 3984998,
+          "summary": "外来蛊仙，被群仙疏远"
+        }
+      ],
+      "entityId": "entity_69ae0f39b85a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑城公子"
+      ],
+      "description": "外来蛊仙，被群仙疏远",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0037",
+          "startOffset": 3985073,
+          "endOffset": 3985206,
+          "summary": "资格最老的蛊仙，居所主人"
+        }
+      ],
+      "entityId": "entity_ac18e4d5023f",
+      "name": "陈尺",
+      "kind": "person",
+      "aliases": [
+        "陈尺老仙"
+      ],
+      "description": "资格最老的蛊仙，居所主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0061",
+          "startOffset": 3985914,
+          "endOffset": 3985953,
+          "summary": "女仙，陈尺的曾孙女"
+        }
+      ],
+      "entityId": "entity_df51e21d3b20",
+      "name": "陈乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "女仙，陈尺的曾孙女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0065",
+          "startOffset": 3986052,
+          "endOffset": 3986056,
+          "summary": "陈家老祖，蛊仙"
+        }
+      ],
+      "entityId": "entity_531ae3dd46d8",
+      "name": "陈尺老仙",
+      "kind": "person",
+      "aliases": [
+        "陈尺"
+      ],
+      "description": "陈家老祖，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0065",
+          "startOffset": 3986052,
+          "endOffset": 3986056,
+          "summary": "继承黑凡真传的蛊仙"
+        }
+      ],
+      "entityId": "entity_69ae0f39b85a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑城公子",
+        "黑城"
+      ],
+      "description": "继承黑凡真传的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0065",
+          "startOffset": 3986052,
+          "endOffset": 3986056,
+          "summary": "陈家蛊仙，陪伴方源"
+        }
+      ],
+      "entityId": "entity_df51e21d3b20",
+      "name": "陈乐",
+      "kind": "person",
+      "aliases": [
+        "乐儿"
+      ],
+      "description": "陈家蛊仙，陪伴方源",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0093",
+          "startOffset": 3987115,
+          "endOffset": 3987118,
+          "summary": "陈家男蛊仙"
+        }
+      ],
+      "entityId": "entity_714f84f62eb2",
+      "name": "陈立志",
+      "kind": "person",
+      "aliases": [],
+      "description": "陈家男蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0016",
+          "startOffset": 3984262,
+          "endOffset": 3984346,
+          "summary": "方源需要获得超过一半蛊仙的认可才能继承真传"
+        }
+      ],
+      "relationId": "rel_8f11788d910a",
+      "subject": "方源",
+      "object": "黑凡洞天群仙",
+      "relationType": "OTHER",
+      "summary": "方源需要获得超过一半蛊仙的认可才能继承真传",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0037",
+          "startOffset": 3985073,
+          "endOffset": 3985206,
+          "summary": "方源与陈尺表面客套，实则互相试探，陈尺拖延不答复"
+        }
+      ],
+      "relationId": "rel_c61eabd85943",
+      "subject": "方源",
+      "object": "陈尺",
+      "relationType": "OTHER",
+      "summary": "方源与陈尺表面客套，实则互相试探，陈尺拖延不答复",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0040",
+          "startOffset": 3985266,
+          "endOffset": 3985303,
+          "summary": "群仙对方源态度疏远，形成团体对抗方源"
+        }
+      ],
+      "relationId": "rel_75fa0b27787d",
+      "subject": "方源",
+      "object": "群仙",
+      "relationType": "CONFLICT",
+      "summary": "群仙对方源态度疏远，形成团体对抗方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0061",
+          "startOffset": 3985914,
+          "endOffset": 3985953,
+          "summary": "陈乐是陈尺的曾孙女"
+        }
+      ],
+      "relationId": "rel_649a322231e5",
+      "subject": "陈尺",
+      "object": "陈乐",
+      "relationType": "FAMILY",
+      "summary": "陈乐是陈尺的曾孙女",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0066",
+          "startOffset": 3986095,
+          "endOffset": 3986125,
+          "summary": "方源调戏陈乐，陈乐对方源有好感但羞恼"
+        }
+      ],
+      "relationId": "rel_95ae9ded45c9",
+      "subject": "方源",
+      "object": "陈乐",
+      "relationType": "OTHER",
+      "summary": "方源调戏陈乐，陈乐对方源有好感但羞恼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0082",
+          "startOffset": 3986695,
+          "endOffset": 3986785,
+          "summary": "方源怀疑陈尺老仙炼蛊受伤是借口，双方心照不宣"
+        }
+      ],
+      "relationId": "rel_bc614b256b3d",
+      "subject": "方源",
+      "object": "陈尺老仙",
+      "relationType": "OTHER",
+      "summary": "方源怀疑陈尺老仙炼蛊受伤是借口，双方心照不宣",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0088",
+          "startOffset": 3986937,
+          "endOffset": 3986965,
+          "summary": "陈尺老仙是陈乐的老祖宗"
+        }
+      ],
+      "relationId": "rel_aa34cab4e563",
+      "subject": "陈尺老仙",
+      "object": "陈乐",
+      "relationType": "FAMILY",
+      "summary": "陈尺老仙是陈乐的老祖宗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0093",
+          "startOffset": 3987115,
+          "endOffset": 3987150,
+          "summary": "陈立志提议与方源好好谈一谈"
+        }
+      ],
+      "relationId": "rel_34d2cde9de98",
+      "subject": "陈立志",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "陈立志提议与方源好好谈一谈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0005",
+          "startOffset": 3983889,
+          "endOffset": 3983899,
+          "summary": "方源主动询问最后一重考验，天灵以钟声回应，石碑浮现新文字，揭示考验内容"
+        }
+      ],
+      "eventId": "evt_137192f2063b",
+      "eventType": "other",
+      "summary": "方源主动询问最后一重考验，天灵以钟声回应，石碑浮现新文字，揭示考验内容",
+      "actors": [
+        "方源",
+        "黄钟天灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源得知最后一重考验：需在洞天时间三年内获得超过一半蛊仙的认可"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0037",
+          "startOffset": 3985073,
+          "endOffset": 3985206,
+          "summary": "方源提出要求后，群仙沉默，陈尺以休息为由拖延，方源暂时安居"
+        }
+      ],
+      "eventId": "evt_ab71fe2aa14f",
+      "eventType": "other",
+      "summary": "方源提出要求后，群仙沉默，陈尺以休息为由拖延，方源暂时安居",
+      "actors": [
+        "方源",
+        "陈尺",
+        "群仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂居陈尺宫殿，等待答复"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0060",
+          "startOffset": 3985898,
+          "endOffset": 3985910,
+          "summary": "四天后，方源与陈乐在长廊散步赏荷"
+        }
+      ],
+      "eventId": "evt_cf07409bfd3a",
+      "eventType": "other",
+      "summary": "四天后，方源与陈乐在长廊散步赏荷",
+      "actors": [
+        "方源",
+        "陈乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "无明确后果"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0073",
+          "startOffset": 3986353,
+          "endOffset": 3986367,
+          "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳"
+        }
+      ],
+      "eventId": "evt_21adbae95941",
+      "eventType": "other",
+      "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳",
+      "actors": [
+        "方源",
+        "陈乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源借机提及自己受伤，并询问陈尺老仙病情"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0087",
+          "startOffset": 3986917,
+          "endOffset": 3986933,
+          "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事"
+        }
+      ],
+      "eventId": "evt_a942faccfbb0",
+      "eventType": "other",
+      "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事",
+      "actors": [
+        "陈尺老仙",
+        "陈乐",
+        "陈立志",
+        "其他陈家蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "陈立志提议与方源好好谈一谈"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0005",
+          "startOffset": 3983889,
+          "endOffset": 3983899,
+          "summary": "方源主动询问最后一重考验，天灵以钟声回应，石碑浮现新文字，揭示考验内容"
+        }
+      ],
+      "timelineId": "tl_137192f2063b",
+      "eventId": "evt_137192f2063b",
+      "chapterId": "ch_1127",
+      "orderHint": "chapter-order",
+      "summary": "方源主动询问最后一重考验，天灵以钟声回应，石碑浮现新文字，揭示考验内容",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0037",
+          "startOffset": 3985073,
+          "endOffset": 3985206,
+          "summary": "方源提出要求后，群仙沉默，陈尺以休息为由拖延，方源暂时安居"
+        }
+      ],
+      "timelineId": "tl_ab71fe2aa14f",
+      "eventId": "evt_ab71fe2aa14f",
+      "chapterId": "ch_1127",
+      "orderHint": "chapter-order",
+      "summary": "方源提出要求后，群仙沉默，陈尺以休息为由拖延，方源暂时安居",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0060",
+          "startOffset": 3985898,
+          "endOffset": 3985910,
+          "summary": "四天后，方源与陈乐在长廊散步赏荷"
+        }
+      ],
+      "timelineId": "tl_cf07409bfd3a",
+      "eventId": "evt_cf07409bfd3a",
+      "chapterId": "ch_1127",
+      "orderHint": "chapter-order",
+      "summary": "四天后，方源与陈乐在长廊散步赏荷",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0073",
+          "startOffset": 3986353,
+          "endOffset": 3986367,
+          "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳"
+        }
+      ],
+      "timelineId": "tl_21adbae95941",
+      "eventId": "evt_21adbae95941",
+      "chapterId": "ch_1127",
+      "orderHint": "chapter-order",
+      "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0087",
+          "startOffset": 3986917,
+          "endOffset": 3986933,
+          "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事"
+        }
+      ],
+      "timelineId": "tl_a942faccfbb0",
+      "eventId": "evt_a942faccfbb0",
+      "chapterId": "ch_1127",
+      "orderHint": "chapter-order",
+      "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0073",
+          "startOffset": 3986353,
+          "endOffset": 3986367,
+          "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0082",
+          "startOffset": 3986695,
+          "endOffset": 3986785,
+          "summary": "方源怀疑陈尺老仙炼蛊受伤是借口，双方心照不宣"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "调戏陈乐后询问陈尺老仙病情",
+      "inferredMotive": "借机打探陈尺老仙真实状况",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0016",
+          "startOffset": 3984262,
+          "endOffset": 3984346,
+          "summary": "方源需要获得超过一半蛊仙的认可才能继承真传"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0040",
+          "startOffset": 3985266,
+          "endOffset": 3985303,
+          "summary": "群仙对方源态度疏远，形成团体对抗方源"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0093",
+          "startOffset": 3987115,
+          "endOffset": 3987150,
+          "summary": "陈立志提议与方源好好谈一谈"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1127",
+          "paragraphId": "ch_1127_p0087",
+          "startOffset": 3986917,
+          "endOffset": 3986933,
+          "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "陈家",
+      "pressureAxis": "真传继承威胁",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "密谈对策",
+        "拖延观察"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0005",
+      "startOffset": 3983889,
+      "endOffset": 3983893,
+      "summary": "外来者，试图继承黑凡真传"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0004",
+      "startOffset": 3983865,
+      "endOffset": 3983867,
+      "summary": "黑凡洞天的主人，真传的设立者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0006",
+      "startOffset": 3983903,
+      "endOffset": 3983907,
+      "summary": "黑凡洞天的天灵，传达旨意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0034",
+      "startOffset": 3984980,
+      "endOffset": 3984998,
+      "summary": "外来蛊仙，被群仙疏远"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0037",
+      "startOffset": 3985073,
+      "endOffset": 3985206,
+      "summary": "资格最老的蛊仙，居所主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0061",
+      "startOffset": 3985914,
+      "endOffset": 3985953,
+      "summary": "女仙，陈尺的曾孙女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0065",
+      "startOffset": 3986052,
+      "endOffset": 3986056,
+      "summary": "陈家老祖，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0093",
+      "startOffset": 3987115,
+      "endOffset": 3987118,
+      "summary": "陈家男蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0016",
+      "startOffset": 3984262,
+      "endOffset": 3984346,
+      "summary": "方源需要获得超过一半蛊仙的认可才能继承真传"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0040",
+      "startOffset": 3985266,
+      "endOffset": 3985303,
+      "summary": "群仙对方源态度疏远，形成团体对抗方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0066",
+      "startOffset": 3986095,
+      "endOffset": 3986125,
+      "summary": "方源调戏陈乐，陈乐对方源有好感但羞恼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0082",
+      "startOffset": 3986695,
+      "endOffset": 3986785,
+      "summary": "方源怀疑陈尺老仙炼蛊受伤是借口，双方心照不宣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0088",
+      "startOffset": 3986937,
+      "endOffset": 3986965,
+      "summary": "陈尺老仙是陈乐的老祖宗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0093",
+      "startOffset": 3987115,
+      "endOffset": 3987150,
+      "summary": "陈立志提议与方源好好谈一谈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0005",
+      "startOffset": 3983889,
+      "endOffset": 3983899,
+      "summary": "方源主动询问最后一重考验，天灵以钟声回应，石碑浮现新文字，揭示考验内容"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0060",
+      "startOffset": 3985898,
+      "endOffset": 3985910,
+      "summary": "四天后，方源与陈乐在长廊散步赏荷"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0073",
+      "startOffset": 3986353,
+      "endOffset": 3986367,
+      "summary": "方源调戏陈乐，将其揽入怀中，陈乐羞恼打方源一拳"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1127",
+      "paragraphId": "ch_1127_p0087",
+      "startOffset": 3986917,
+      "endOffset": 3986933,
+      "summary": "陈家四位蛊仙展开密谈，讨论方源问及陈尺老仙病情一事"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly public/visible events: the final test requirement (get majority approval) is publicly announced by the spirit, Fang Yuan's interactions with Chen Le are visible, the Chen family's secret discussion is mentioned but no specific content is revealed. The only potential hidden element is the Chen family's private discussion about Fang Yuan's inquiry regarding Old Immortal Chen Chi's condition, but the source pointer (ch_1127_p0087) only states they held a secret discussion without revealing what was said or what they know. No directly supported hidden knowledge, future-known information, or secret motives/plans can be extracted with sufficient source backing.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源调戏陈乐后顺势提及陈尺老仙病情（ptr_17），此前方源已怀疑陈尺老仙炼蛊受伤是借口（ptr_12），可合理推断方源借机打探。属于谨慎的一步推断，未过度引申。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "陈家（陈尺老仙、陈乐、陈立志等四位蛊仙）是黑凡洞天中的家族团体，对方源这个外来者继承黑凡真传构成威胁。群仙形成团体对抗方源（ptr_10），陈家密谈讨论对策（ptr_18），陈立志提议与方源谈一谈（ptr_14）。压力轴为真传继承威胁，符合'interest/threat'类型。likelyReactions保守：密谈对策、拖延观察。未添加外部势力，未将个人情绪转为群体压力。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

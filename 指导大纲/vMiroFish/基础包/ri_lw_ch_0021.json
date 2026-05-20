@@ -1,0 +1,665 @@
+{
+  "packageId": "ri_lw_ch_0021",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0021"
+    ],
+    "paragraphIds": [
+      "ch_0021_p0001",
+      "ch_0021_p0002",
+      "ch_0021_p0003",
+      "ch_0021_p0013",
+      "ch_0021_p0019",
+      "ch_0021_p0022",
+      "ch_0021_p0036",
+      "ch_0021_p0037",
+      "ch_0021_p0040",
+      "ch_0021_p0042",
+      "ch_0021_p0049",
+      "ch_0021_p0052",
+      "ch_0021_p0053",
+      "ch_0021_p0054",
+      "ch_0021_p0061"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0002",
+          "startOffset": 58518,
+          "endOffset": 58520,
+          "summary": "主角，重生者，拥有春秋蝉"
+        }
+      ],
+      "entityId": "entity_d6df11082944",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，重生者，拥有春秋蝉",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0001",
+          "startOffset": 58497,
+          "endOffset": 58501,
+          "summary": "学堂负责人，对方源不满"
+        }
+      ],
+      "entityId": "entity_dc5bd8e5f5c6",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂负责人，对方源不满",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0036",
+          "startOffset": 59903,
+          "endOffset": 59911,
+          "summary": "古月家族学员，丙等资质，炼化月光蛊成为本届第一"
+        }
+      ],
+      "entityId": "entity_5b5bd6806dc9",
+      "name": "古月方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族学员，丙等资质，炼化月光蛊成为本届第一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0040",
+          "startOffset": 60036,
+          "endOffset": 60040,
+          "summary": "掌管家族学堂的家老，经验丰富"
+        }
+      ],
+      "entityId": "entity_dc5bd8e5f5c6",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [
+        "家老大人"
+      ],
+      "description": "掌管家族学堂的家老，经验丰富",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0052",
+          "startOffset": 60578,
+          "endOffset": 60582,
+          "summary": "古月方源的孪生弟弟，甲等资质"
+        }
+      ],
+      "entityId": "entity_d1fae159323f",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月方源的孪生弟弟，甲等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0042",
+          "startOffset": 60117,
+          "endOffset": 60123,
+          "summary": "学堂家老的下属，负责通报头名消息"
+        }
+      ],
+      "entityId": "entity_dcf8f221d41a",
+      "name": "下属",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂家老的下属，负责通报头名消息",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0049",
+          "startOffset": 60465,
+          "endOffset": 60472,
+          "summary": "学堂接待人员，确认方源身份时惊愕"
+        }
+      ],
+      "entityId": "entity_a31cc3f3238f",
+      "name": "接待者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂接待人员，确认方源身份时惊愕",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0053",
+          "startOffset": 60686,
+          "endOffset": 60698,
+          "summary": "孪生兄弟，外表极为相似"
+        }
+      ],
+      "relationId": "rel_02150c4d575c",
+      "subject": "古月方源",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "孪生兄弟，外表极为相似",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0052",
+          "startOffset": 60578,
+          "endOffset": 60682,
+          "summary": "学堂家老误认方源为方正，后因方源丙等夺魁而震惊"
+        }
+      ],
+      "relationId": "rel_e7fe8a356f32",
+      "subject": "学堂家老",
+      "object": "古月方源",
+      "relationType": "OTHER",
+      "summary": "学堂家老误认方源为方正，后因方源丙等夺魁而震惊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0042",
+          "startOffset": 60105,
+          "endOffset": 60184,
+          "summary": "上下级关系，下属向学堂家老通报头名消息"
+        }
+      ],
+      "relationId": "rel_ec8be551e50d",
+      "subject": "学堂家老",
+      "object": "下属",
+      "relationType": "OTHER",
+      "summary": "上下级关系，下属向学堂家老通报头名消息",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0013",
+          "startOffset": 59023,
+          "endOffset": 59033,
+          "summary": "方源利用春秋蝉气息镇压酒虫意志，轻松炼化酒虫"
+        }
+      ],
+      "eventId": "evt_7fe69e5b3901",
+      "eventType": "cultivation",
+      "summary": "方源利用春秋蝉气息镇压酒虫意志，轻松炼化酒虫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "酒虫被彻底炼化，成为方源的本命蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0022",
+          "startOffset": 59413,
+          "endOffset": 59423,
+          "summary": "方源如法炮制，用春秋蝉气息压服月光蛊，瞬间炼化"
+        }
+      ],
+      "eventId": "evt_839213a4e9cd",
+      "eventType": "cultivation",
+      "summary": "方源如法炮制，用春秋蝉气息压服月光蛊，瞬间炼化",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "月光蛊被炼化，额头形成淡蓝色弯月印记"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0003",
+          "startOffset": 58552,
+          "endOffset": 58619,
+          "summary": "方源冷静思考春秋蝉带来的影响，决定调整计划"
+        }
+      ],
+      "eventId": "evt_101781c84fee",
+      "eventType": "other",
+      "summary": "方源冷静思考春秋蝉带来的影响，决定调整计划",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "计划改变"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0036",
+          "startOffset": 59903,
+          "endOffset": 59951,
+          "summary": "方源成功炼化月光蛊，成为本届头名，深夜前往学堂领取奖励。"
+        }
+      ],
+      "eventId": "evt_01f67921a66a",
+      "eventType": "cultivation",
+      "summary": "方源成功炼化月光蛊，成为本届头名，深夜前往学堂领取奖励。",
+      "actors": [
+        "古月方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0054",
+          "startOffset": 60720,
+          "endOffset": 60797,
+          "summary": "学堂家老将方源误认为方正，大力夸奖后，方源澄清身份。"
+        }
+      ],
+      "eventId": "evt_a30b50a648fa",
+      "eventType": "other",
+      "summary": "学堂家老将方源误认为方正，大力夸奖后，方源澄清身份。",
+      "actors": [
+        "学堂家老",
+        "古月方源",
+        "古月方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老错愕，对方源丙等资质夺魁感到难以置信。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0013",
+          "startOffset": 59023,
+          "endOffset": 59033,
+          "summary": "方源利用春秋蝉气息镇压酒虫意志，轻松炼化酒虫"
+        }
+      ],
+      "timelineId": "tl_7fe69e5b3901",
+      "eventId": "evt_7fe69e5b3901",
+      "chapterId": "ch_0021",
+      "orderHint": "chapter-order",
+      "summary": "方源利用春秋蝉气息镇压酒虫意志，轻松炼化酒虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0022",
+          "startOffset": 59413,
+          "endOffset": 59423,
+          "summary": "方源如法炮制，用春秋蝉气息压服月光蛊，瞬间炼化"
+        }
+      ],
+      "timelineId": "tl_839213a4e9cd",
+      "eventId": "evt_839213a4e9cd",
+      "chapterId": "ch_0021",
+      "orderHint": "chapter-order",
+      "summary": "方源如法炮制，用春秋蝉气息压服月光蛊，瞬间炼化",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0003",
+          "startOffset": 58552,
+          "endOffset": 58619,
+          "summary": "方源冷静思考春秋蝉带来的影响，决定调整计划"
+        }
+      ],
+      "timelineId": "tl_101781c84fee",
+      "eventId": "evt_101781c84fee",
+      "chapterId": "ch_0021",
+      "orderHint": "chapter-order",
+      "summary": "方源冷静思考春秋蝉带来的影响，决定调整计划",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0036",
+          "startOffset": 59903,
+          "endOffset": 59951,
+          "summary": "方源成功炼化月光蛊，成为本届头名，深夜前往学堂领取奖励。"
+        }
+      ],
+      "timelineId": "tl_01f67921a66a",
+      "eventId": "evt_01f67921a66a",
+      "chapterId": "ch_0021",
+      "orderHint": "chapter-order",
+      "summary": "方源成功炼化月光蛊，成为本届头名，深夜前往学堂领取奖励。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0054",
+          "startOffset": 60720,
+          "endOffset": 60797,
+          "summary": "学堂家老将方源误认为方正，大力夸奖后，方源澄清身份。"
+        }
+      ],
+      "timelineId": "tl_a30b50a648fa",
+      "eventId": "evt_a30b50a648fa",
+      "chapterId": "ch_0021",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老将方源误认为方正，大力夸奖后，方源澄清身份。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0036",
+          "startOffset": 59903,
+          "endOffset": 59911,
+          "summary": "古月家族学员，丙等资质，炼化月光蛊成为本届第一"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0052",
+          "startOffset": 60578,
+          "endOffset": 60682,
+          "summary": "学堂家老误认方源为方正，后因方源丙等夺魁而震惊"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0021",
+          "paragraphId": "ch_0021_p0042",
+          "startOffset": 60105,
+          "endOffset": 60184,
+          "summary": "上下级关系，下属向学堂家老通报头名消息"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "古月家族",
+      "pressureAxis": "学堂声誉与家族期望",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查方源真实资质",
+        "关注方源后续表现"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0002",
+      "startOffset": 58518,
+      "endOffset": 58520,
+      "summary": "主角，重生者，拥有春秋蝉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0001",
+      "startOffset": 58497,
+      "endOffset": 58501,
+      "summary": "学堂负责人，对方源不满"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0036",
+      "startOffset": 59903,
+      "endOffset": 59911,
+      "summary": "古月家族学员，丙等资质，炼化月光蛊成为本届第一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0040",
+      "startOffset": 60036,
+      "endOffset": 60040,
+      "summary": "掌管家族学堂的家老，经验丰富"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0052",
+      "startOffset": 60578,
+      "endOffset": 60582,
+      "summary": "古月方源的孪生弟弟，甲等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0042",
+      "startOffset": 60117,
+      "endOffset": 60123,
+      "summary": "学堂家老的下属，负责通报头名消息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0049",
+      "startOffset": 60465,
+      "endOffset": 60472,
+      "summary": "学堂接待人员，确认方源身份时惊愕"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0053",
+      "startOffset": 60686,
+      "endOffset": 60698,
+      "summary": "孪生兄弟，外表极为相似"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0052",
+      "startOffset": 60578,
+      "endOffset": 60682,
+      "summary": "学堂家老误认方源为方正，后因方源丙等夺魁而震惊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0042",
+      "startOffset": 60105,
+      "endOffset": 60184,
+      "summary": "上下级关系，下属向学堂家老通报头名消息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0013",
+      "startOffset": 59023,
+      "endOffset": 59033,
+      "summary": "方源利用春秋蝉气息镇压酒虫意志，轻松炼化酒虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0022",
+      "startOffset": 59413,
+      "endOffset": 59423,
+      "summary": "方源如法炮制，用春秋蝉气息压服月光蛊，瞬间炼化"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0003",
+      "startOffset": 58552,
+      "endOffset": 58619,
+      "summary": "方源冷静思考春秋蝉带来的影响，决定调整计划"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0036",
+      "startOffset": 59903,
+      "endOffset": 59951,
+      "summary": "方源成功炼化月光蛊，成为本届头名，深夜前往学堂领取奖励。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0021",
+      "paragraphId": "ch_0021_p0054",
+      "startOffset": 60720,
+      "endOffset": 60797,
+      "summary": "学堂家老将方源误认为方正，大力夸奖后，方源澄清身份。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly visible events (Fang Yuan refining wine worm and moonlight gu using Spring Autumn Cicada aura, becoming top scorer). The only potentially hidden element is Fang Yuan's use of Spring Autumn Cicada aura to suppress and refine gu worms, but this is presented as an ordinary cultivation event from the narrator perspective, not as a hidden fact that specific characters are unaware of. No directly supported knowledge gap or secret motive/plan is clearly backed by the source pointers provided. The entities and events are marked 'ambiguous' but lack specific source quotes establishing who knows vs. who does not know.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows observable actions (方源炼化月光蛊成为头名, 学堂家老误认方源为方正) but no clear motive is directly stated or safely inferable from the observed actions alone. The observed behavior of going to学堂 at night to claim a reward could imply various motives (e.g., obtaining resources, following procedure, curiosity about the reward). Without direct textual support for a specific motive, returning empty characterMotives.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月家族（通过学堂家老）对方源（丙等资质却夺魁）产生关注和惊讶，可能引发家族内部对学堂教学或资质评定体系的审视。但压力尚不强烈，属于轻度声誉/期望压力。",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

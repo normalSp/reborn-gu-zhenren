@@ -1,0 +1,750 @@
+{
+  "packageId": "ri_lw_ch_0288",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0288"
+    ],
+    "paragraphIds": [
+      "ch_0288_p0003",
+      "ch_0288_p0008",
+      "ch_0288_p0009",
+      "ch_0288_p0015",
+      "ch_0288_p0020",
+      "ch_0288_p0025",
+      "ch_0288_p0026",
+      "ch_0288_p0031",
+      "ch_0288_p0033",
+      "ch_0288_p0035",
+      "ch_0288_p0037",
+      "ch_0288_p0042",
+      "ch_0288_p0048",
+      "ch_0288_p0053",
+      "ch_0288_p0060",
+      "ch_0288_p0069",
+      "ch_0288_p0070",
+      "ch_0288_p0086"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0003",
+          "startOffset": 992371,
+          "endOffset": 992402,
+          "summary": "密室中与方源对话，提供建议"
+        }
+      ],
+      "entityId": "entity_9d2f78517f54",
+      "name": "魏央",
+      "kind": "person",
+      "aliases": [],
+      "description": "密室中与方源对话，提供建议",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0008",
+          "startOffset": 992557,
+          "endOffset": 992617,
+          "summary": "盘坐在蒲团上，与魏央对话"
+        }
+      ],
+      "entityId": "entity_d6391efc6904",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "盘坐在蒲团上，与魏央对话",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0025",
+          "startOffset": 993515,
+          "endOffset": 993546,
+          "summary": "方源从李然手中搞到全力以赴蛊的合炼秘方"
+        }
+      ],
+      "entityId": "entity_fb58130f5b06",
+      "name": "李然",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源从李然手中搞到全力以赴蛊的合炼秘方",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0033",
+          "startOffset": 993809,
+          "endOffset": 993811,
+          "summary": "主角，重生者，力道蛊师"
+        }
+      ],
+      "entityId": "entity_d6391efc6904",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，重生者，力道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0042",
+          "startOffset": 994139,
+          "endOffset": 994141,
+          "summary": "层次低的蛊师，被方源提及"
+        }
+      ],
+      "entityId": "entity_9d2f78517f54",
+      "name": "魏央",
+      "kind": "person",
+      "aliases": [],
+      "description": "层次低的蛊师，被方源提及",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0053",
+          "startOffset": 994626,
+          "endOffset": 994629,
+          "summary": "商家家主，举办家宴"
+        }
+      ],
+      "entityId": "entity_56dae94fb9d6",
+      "name": "商燕飞",
+      "kind": "person",
+      "aliases": [],
+      "description": "商家家主，举办家宴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0070",
+          "startOffset": 995191,
+          "endOffset": 995245,
+          "summary": "古月家族成员，与李然冲突"
+        }
+      ],
+      "entityId": "entity_be33ee43b5d6",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [
+        "方正",
+        "方源"
+      ],
+      "description": "古月家族成员，与李然冲突",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0069",
+          "startOffset": 995172,
+          "endOffset": 995187,
+          "summary": "与古月方正冲突的对手"
+        }
+      ],
+      "entityId": "entity_fb58130f5b06",
+      "name": "李然",
+      "kind": "person",
+      "aliases": [],
+      "description": "与古月方正冲突的对手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0015",
+          "startOffset": 992891,
+          "endOffset": 992912,
+          "summary": "魏央对方源进行劝说和提醒，方源称其为魏大哥"
+        }
+      ],
+      "relationId": "rel_8ae96503f746",
+      "subject": "方源",
+      "object": "魏央",
+      "relationType": "ALLY",
+      "summary": "魏央对方源进行劝说和提醒，方源称其为魏大哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0025",
+          "startOffset": 993515,
+          "endOffset": 993546,
+          "summary": "方源从李然手中得到全力以赴蛊的合炼秘方"
+        }
+      ],
+      "relationId": "rel_1e9bc2ddca0f",
+      "subject": "方源",
+      "object": "李然",
+      "relationType": "TRADE",
+      "summary": "方源从李然手中得到全力以赴蛊的合炼秘方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0026",
+          "startOffset": 993550,
+          "endOffset": 993572,
+          "summary": "武家提供给李然全力以赴蛊，并配给秘方"
+        }
+      ],
+      "relationId": "rel_816634defb81",
+      "subject": "武家",
+      "object": "李然",
+      "relationType": "TRADE",
+      "summary": "武家提供给李然全力以赴蛊，并配给秘方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0033",
+          "startOffset": 993809,
+          "endOffset": 993840,
+          "summary": "方源拥有并计划使用全力以赴蛊合炼"
+        }
+      ],
+      "relationId": "rel_1f910aa93d7c",
+      "subject": "方源",
+      "object": "全力以赴蛊",
+      "relationType": "USES",
+      "summary": "方源拥有并计划使用全力以赴蛊合炼",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0037",
+          "startOffset": 993948,
+          "endOffset": 993970,
+          "summary": "方源的本命蛊是春秋蝉"
+        }
+      ],
+      "relationId": "rel_ee5d210d49c1",
+      "subject": "方源",
+      "object": "春秋蝉",
+      "relationType": "USES",
+      "summary": "方源的本命蛊是春秋蝉",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0053",
+          "startOffset": 994626,
+          "endOffset": 994629,
+          "summary": "方源有紫荆令牌护身"
+        }
+      ],
+      "relationId": "rel_12b38f2bd7ef",
+      "subject": "方源",
+      "object": "紫荆令牌",
+      "relationType": "USES",
+      "summary": "方源有紫荆令牌护身",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0070",
+          "startOffset": 995191,
+          "endOffset": 995245,
+          "summary": "李然指责古月方正抢其机缘，双方在演武场对战"
+        }
+      ],
+      "relationId": "rel_dccdde5243f2",
+      "subject": "古月方正",
+      "object": "李然",
+      "relationType": "CONFLICT",
+      "summary": "李然指责古月方正抢其机缘，双方在演武场对战",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0009",
+          "startOffset": 992621,
+          "endOffset": 992645,
+          "summary": "魏央观看并归还全力以赴蛊，对方源进行力道方面的建议"
+        }
+      ],
+      "eventId": "evt_49fdc0658957",
+      "eventType": "other",
+      "summary": "魏央观看并归还全力以赴蛊，对方源进行力道方面的建议",
+      "actors": [
+        "方源",
+        "魏央"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源坚定了走力道的决心，魏央不再劝说"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0031",
+          "startOffset": 993716,
+          "endOffset": 993781,
+          "summary": "方源思考力道搭配，以全力以赴蛊为核心，自力更生蛊、苦力蛊为支点，并计划依靠三王传承大成"
+        }
+      ],
+      "eventId": "evt_8f588458c3da",
+      "eventType": "other",
+      "summary": "方源思考力道搭配，以全力以赴蛊为核心，自力更生蛊、苦力蛊为支点，并计划依靠三王传承大成",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源计划在商家城两三年内筹集出一套蛊虫使其小成"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0048",
+          "startOffset": 994419,
+          "endOffset": 994479,
+          "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转"
+        }
+      ],
+      "eventId": "evt_49c6f6c88df1",
+      "eventType": "other",
+      "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将提升实力，为义天山正魔大战做准备"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0060",
+          "startOffset": 994910,
+          "endOffset": 994949,
+          "summary": "方源在楠秋苑接见各方蛊师，进行交易，换取蛊虫"
+        }
+      ],
+      "eventId": "evt_1db227847b12",
+      "eventType": "trade",
+      "summary": "方源在楠秋苑接见各方蛊师，进行交易，换取蛊虫",
+      "actors": [
+        "方源",
+        "各方人士"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "两天后蛊虫就位，方源战力暴涨，但付出巨大代价"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0086",
+          "startOffset": 995661,
+          "endOffset": 995707,
+          "summary": "古月方正与李然在演武场对战，方源使用直撞蛊和全力以赴蛊一击击败李然，致其臂骨骨折"
+        }
+      ],
+      "eventId": "evt_ab8b4601a62f",
+      "eventType": "conflict",
+      "summary": "古月方正与李然在演武场对战，方源使用直撞蛊和全力以赴蛊一击击败李然，致其臂骨骨折",
+      "actors": [
+        "古月方正",
+        "李然"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "李然受伤倒地，场外观众哗然"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0009",
+          "startOffset": 992621,
+          "endOffset": 992645,
+          "summary": "魏央观看并归还全力以赴蛊，对方源进行力道方面的建议"
+        }
+      ],
+      "timelineId": "tl_49fdc0658957",
+      "eventId": "evt_49fdc0658957",
+      "chapterId": "ch_0288",
+      "orderHint": "chapter-order",
+      "summary": "魏央观看并归还全力以赴蛊，对方源进行力道方面的建议",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0031",
+          "startOffset": 993716,
+          "endOffset": 993781,
+          "summary": "方源思考力道搭配，以全力以赴蛊为核心，自力更生蛊、苦力蛊为支点，并计划依靠三王传承大成"
+        }
+      ],
+      "timelineId": "tl_8f588458c3da",
+      "eventId": "evt_8f588458c3da",
+      "chapterId": "ch_0288",
+      "orderHint": "chapter-order",
+      "summary": "方源思考力道搭配，以全力以赴蛊为核心，自力更生蛊、苦力蛊为支点，并计划依靠三王传承大成",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0048",
+          "startOffset": 994419,
+          "endOffset": 994479,
+          "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转"
+        }
+      ],
+      "timelineId": "tl_49c6f6c88df1",
+      "eventId": "evt_49c6f6c88df1",
+      "chapterId": "ch_0288",
+      "orderHint": "chapter-order",
+      "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0060",
+          "startOffset": 994910,
+          "endOffset": 994949,
+          "summary": "方源在楠秋苑接见各方蛊师，进行交易，换取蛊虫"
+        }
+      ],
+      "timelineId": "tl_1db227847b12",
+      "eventId": "evt_1db227847b12",
+      "chapterId": "ch_0288",
+      "orderHint": "chapter-order",
+      "summary": "方源在楠秋苑接见各方蛊师，进行交易，换取蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0288",
+          "paragraphId": "ch_0288_p0086",
+          "startOffset": 995661,
+          "endOffset": 995707,
+          "summary": "古月方正与李然在演武场对战，方源使用直撞蛊和全力以赴蛊一击击败李然，致其臂骨骨折"
+        }
+      ],
+      "timelineId": "tl_ab8b4601a62f",
+      "eventId": "evt_ab8b4601a62f",
+      "chapterId": "ch_0288",
+      "orderHint": "chapter-order",
+      "summary": "古月方正与李然在演武场对战，方源使用直撞蛊和全力以赴蛊一击击败李然，致其臂骨骨折",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0003",
+      "startOffset": 992371,
+      "endOffset": 992402,
+      "summary": "密室中与方源对话，提供建议"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0008",
+      "startOffset": 992557,
+      "endOffset": 992617,
+      "summary": "盘坐在蒲团上，与魏央对话"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0025",
+      "startOffset": 993515,
+      "endOffset": 993546,
+      "summary": "方源从李然手中搞到全力以赴蛊的合炼秘方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0033",
+      "startOffset": 993809,
+      "endOffset": 993811,
+      "summary": "主角，重生者，力道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0042",
+      "startOffset": 994139,
+      "endOffset": 994141,
+      "summary": "层次低的蛊师，被方源提及"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0053",
+      "startOffset": 994626,
+      "endOffset": 994629,
+      "summary": "商家家主，举办家宴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0070",
+      "startOffset": 995191,
+      "endOffset": 995245,
+      "summary": "古月家族成员，与李然冲突"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0069",
+      "startOffset": 995172,
+      "endOffset": 995187,
+      "summary": "与古月方正冲突的对手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0015",
+      "startOffset": 992891,
+      "endOffset": 992912,
+      "summary": "魏央对方源进行劝说和提醒，方源称其为魏大哥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0026",
+      "startOffset": 993550,
+      "endOffset": 993572,
+      "summary": "武家提供给李然全力以赴蛊，并配给秘方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0033",
+      "startOffset": 993809,
+      "endOffset": 993840,
+      "summary": "方源拥有并计划使用全力以赴蛊合炼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0037",
+      "startOffset": 993948,
+      "endOffset": 993970,
+      "summary": "方源的本命蛊是春秋蝉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0009",
+      "startOffset": 992621,
+      "endOffset": 992645,
+      "summary": "魏央观看并归还全力以赴蛊，对方源进行力道方面的建议"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0031",
+      "startOffset": 993716,
+      "endOffset": 993781,
+      "summary": "方源思考力道搭配，以全力以赴蛊为核心，自力更生蛊、苦力蛊为支点，并计划依靠三王传承大成"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0048",
+      "startOffset": 994419,
+      "endOffset": 994479,
+      "summary": "方源计划在三王传承中获取百战不殆蛊，以保护全力以赴蛊晋升四转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0060",
+      "startOffset": 994910,
+      "endOffset": 994949,
+      "summary": "方源在楠秋苑接见各方蛊师，进行交易，换取蛊虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0288",
+      "paragraphId": "ch_0288_p0086",
+      "startOffset": 995661,
+      "endOffset": 995707,
+      "summary": "古月方正与李然在演武场对战，方源使用直撞蛊和全力以赴蛊一击击败李然，致其臂骨骨折"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events: Fang Yuan discussing strength path with Wei Yang, planning to use Quan Li Yi Fu Gu, planning to obtain Bai Zhan Bu Dai Gu from San Wang inheritance, and trading at Nan Qiu Yuan. These are either public/visible plans or ordinary events. No private knowledge, secret motives/plans not already known, or future-known information is directly supported by the source pointers. The only potentially hidden element is Fang Yuan's internal planning (e.g., relying on San Wang inheritance), but this is his own known plan, not a hidden fact about another actor or a knowledge gap. No source pointer supports a fact that someone else does not know about.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan (as Gu Yue Fang Zheng) defeating Li Ran in a sparring match using Straight Charge Gu and All-Out Effort Gu, causing arm fracture. However, the observed action is a combat outcome; the motive behind this action (why Fang Yuan chose to fight Li Ran this way) is not directly stated in the seed facts. The seed mentions Li Ran accused Gu Yue Fang Zheng of 'stealing his opportunity', but this is an accusation/rumor, not narrator-level truth. Without direct source support for Fang Yuan's intent, inferring a specific motive would be a psychological leap. Only behavior is visible; motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed contains individual actors (方源, 魏央, 李然, 古月方正) and mentions 武家 (Wu family) as providing a gu worm to 李然, and 商家 (Shang family) with 商燕飞 as family head, but no concrete faction/group pressure is established. The 武家 is mentioned only in passing as having supplied 全力以赴蛊 to 李然 - no stake, threat, or pressure axis is developed. 古月方正 is a member of 古月家族 but the conflict with 李然 is personal (individual grievance over 'seizing opportunity'), not a collective clan pressure. No named collective actor has a concrete stake in the seed facts that would constitute a faction pressure candidate.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

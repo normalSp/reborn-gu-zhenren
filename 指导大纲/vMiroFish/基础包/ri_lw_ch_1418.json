@@ -1,0 +1,626 @@
+{
+  "packageId": "ri_lw_ch_1418",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1418"
+    ],
+    "paragraphIds": [
+      "ch_1418_p0009",
+      "ch_1418_p0010",
+      "ch_1418_p0012",
+      "ch_1418_p0013",
+      "ch_1418_p0018",
+      "ch_1418_p0020",
+      "ch_1418_p0021",
+      "ch_1418_p0036",
+      "ch_1418_p0037",
+      "ch_1418_p0049",
+      "ch_1418_p0050",
+      "ch_1418_p0058",
+      "ch_1418_p0061",
+      "ch_1418_p0064",
+      "ch_1418_p0065"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0009",
+          "startOffset": 4981097,
+          "endOffset": 4981133,
+          "summary": "八转女仙，千变老祖的妻子"
+        }
+      ],
+      "entityId": "entity_29c4b1f6b429",
+      "name": "红云舞娘",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转女仙，千变老祖的妻子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0037",
+          "startOffset": 4982183,
+          "endOffset": 4982190,
+          "summary": "八转变异仙蛊的持有者意志"
+        }
+      ],
+      "entityId": "entity_94e574f9274f",
+      "name": "千变意志",
+      "kind": "single_person_title",
+      "aliases": [
+        "千变老祖"
+      ],
+      "description": "八转变异仙蛊的持有者意志",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0036",
+          "startOffset": 4982130,
+          "endOffset": 4982135,
+          "summary": "七转强者，跟随千变意志"
+        }
+      ],
+      "entityId": "entity_29c4b1f6b429",
+      "name": "红云舞娘",
+      "kind": "person",
+      "aliases": [],
+      "description": "七转强者，跟随千变意志",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0058",
+          "startOffset": 4982876,
+          "endOffset": 4982880,
+          "summary": "凡人蛊师"
+        }
+      ],
+      "entityId": "entity_f1fbfbfabea1",
+      "name": "韩立",
+      "kind": "person",
+      "aliases": [],
+      "description": "凡人蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0065",
+          "startOffset": 4983178,
+          "endOffset": 4983210,
+          "summary": "不明身份，可能为蛊仙"
+        }
+      ],
+      "entityId": "entity_29c4b1f6b429",
+      "name": "红云舞娘",
+      "kind": "person",
+      "aliases": [],
+      "description": "不明身份，可能为蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0013",
+          "startOffset": 4981281,
+          "endOffset": 4981371,
+          "summary": "夫妻关系，千变老祖是红云舞娘的夫君"
+        }
+      ],
+      "relationId": "rel_f13332ea353f",
+      "subject": "千变老祖",
+      "object": "红云舞娘",
+      "relationType": "FAMILY",
+      "summary": "夫妻关系，千变老祖是红云舞娘的夫君",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0010",
+          "startOffset": 4981137,
+          "endOffset": 4981206,
+          "summary": "千变意志提点红云舞娘，并共同战斗"
+        }
+      ],
+      "relationId": "rel_e51674be0881",
+      "subject": "千变意志",
+      "object": "红云舞娘",
+      "relationType": "ALLY",
+      "summary": "千变意志提点红云舞娘，并共同战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0020",
+          "startOffset": 4981562,
+          "endOffset": 4981588,
+          "summary": "千变意志催动八转仙蛊攻击青爪鬼翼狮"
+        }
+      ],
+      "relationId": "rel_4d1775880b3e",
+      "subject": "千变意志",
+      "object": "青爪鬼翼狮",
+      "relationType": "CONFLICT",
+      "summary": "千变意志催动八转仙蛊攻击青爪鬼翼狮",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0050",
+          "startOffset": 4982652,
+          "endOffset": 4982685,
+          "summary": "千变意志跟随红云舞娘，并嘱咐她打扫战场"
+        }
+      ],
+      "relationId": "rel_4f6cc98d4d85",
+      "subject": "千变意志",
+      "object": "红云舞娘",
+      "relationType": "ALLY",
+      "summary": "千变意志跟随红云舞娘，并嘱咐她打扫战场",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0061",
+          "startOffset": 4983049,
+          "endOffset": 4983069,
+          "summary": "红云舞娘对韩立施展搜魂手段"
+        }
+      ],
+      "relationId": "rel_8aa3e3b462bd",
+      "subject": "红云舞娘",
+      "object": "韩立",
+      "relationType": "OTHER",
+      "summary": "红云舞娘对韩立施展搜魂手段",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0021",
+          "startOffset": 4981592,
+          "endOffset": 4981626,
+          "summary": "千变意志和红云舞娘遭遇青爪鬼翼狮，千变意志催动八转仙蛊攻击，使青爪鬼翼狮尾巴变毒蟒、鬃毛变鬼哭树苗"
+        }
+      ],
+      "eventId": "evt_1b4a1ecfce43",
+      "eventType": "conflict",
+      "summary": "千变意志和红云舞娘遭遇青爪鬼翼狮，千变意志催动八转仙蛊攻击，使青爪鬼翼狮尾巴变毒蟒、鬃毛变鬼哭树苗",
+      "actors": [
+        "千变意志",
+        "红云舞娘",
+        "青爪鬼翼狮"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "青爪鬼翼狮受伤，毒蟒和树苗被拍碎，但战斗仍在继续"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0049",
+          "startOffset": 4982614,
+          "endOffset": 4982648,
+          "summary": "千变意志使用八转变异仙蛊与青爪鬼翼狮战斗，最终青爪鬼翼狮死亡"
+        }
+      ],
+      "eventId": "evt_6ff6f496bba1",
+      "eventType": "conflict",
+      "summary": "千变意志使用八转变异仙蛊与青爪鬼翼狮战斗，最终青爪鬼翼狮死亡",
+      "actors": [
+        "千变意志",
+        "红云舞娘",
+        "青爪鬼翼狮"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "青爪鬼翼狮死亡，红云舞娘获得太古荒兽尸体"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0064",
+          "startOffset": 4983159,
+          "endOffset": 4983174,
+          "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂"
+        }
+      ],
+      "eventId": "evt_ffc2bf823828",
+      "eventType": "other",
+      "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂",
+      "actors": [
+        "红云舞娘",
+        "韩立"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "红云舞娘得知韩立拥有震源子的阵道真传"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0065",
+          "startOffset": 4983178,
+          "endOffset": 4983210,
+          "summary": "红云舞娘突然瞳孔扩张、双眼放光、鼻息粗重，表现出强烈的情绪或发现。"
+        }
+      ],
+      "eventId": "evt_14feb1154593",
+      "eventType": "other",
+      "summary": "红云舞娘突然瞳孔扩张、双眼放光、鼻息粗重，表现出强烈的情绪或发现。",
+      "actors": [
+        "红云舞娘"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0021",
+          "startOffset": 4981592,
+          "endOffset": 4981626,
+          "summary": "千变意志和红云舞娘遭遇青爪鬼翼狮，千变意志催动八转仙蛊攻击，使青爪鬼翼狮尾巴变毒蟒、鬃毛变鬼哭树苗"
+        }
+      ],
+      "timelineId": "tl_1b4a1ecfce43",
+      "eventId": "evt_1b4a1ecfce43",
+      "chapterId": "ch_1418",
+      "orderHint": "chapter-order",
+      "summary": "千变意志和红云舞娘遭遇青爪鬼翼狮，千变意志催动八转仙蛊攻击，使青爪鬼翼狮尾巴变毒蟒、鬃毛变鬼哭树苗",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0049",
+          "startOffset": 4982614,
+          "endOffset": 4982648,
+          "summary": "千变意志使用八转变异仙蛊与青爪鬼翼狮战斗，最终青爪鬼翼狮死亡"
+        }
+      ],
+      "timelineId": "tl_6ff6f496bba1",
+      "eventId": "evt_6ff6f496bba1",
+      "chapterId": "ch_1418",
+      "orderHint": "chapter-order",
+      "summary": "千变意志使用八转变异仙蛊与青爪鬼翼狮战斗，最终青爪鬼翼狮死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0064",
+          "startOffset": 4983159,
+          "endOffset": 4983174,
+          "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂"
+        }
+      ],
+      "timelineId": "tl_ffc2bf823828",
+      "eventId": "evt_ffc2bf823828",
+      "chapterId": "ch_1418",
+      "orderHint": "chapter-order",
+      "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0065",
+          "startOffset": 4983178,
+          "endOffset": 4983210,
+          "summary": "红云舞娘突然瞳孔扩张、双眼放光、鼻息粗重，表现出强烈的情绪或发现。"
+        }
+      ],
+      "timelineId": "tl_14feb1154593",
+      "eventId": "evt_14feb1154593",
+      "chapterId": "ch_1418",
+      "orderHint": "chapter-order",
+      "summary": "红云舞娘突然瞳孔扩张、双眼放光、鼻息粗重，表现出强烈的情绪或发现。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0064",
+          "startOffset": 4983159,
+          "endOffset": 4983174,
+          "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂"
+        }
+      ],
+      "factId": "hongyun_soul_search_discovery",
+      "summary": "红云舞娘在对韩立施展搜魂后，发现了震源子的阵道真传信息",
+      "whoKnows": [
+        "红云舞娘"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0065",
+          "startOffset": 4983178,
+          "endOffset": 4983210,
+          "summary": "不明身份，可能为蛊仙"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0061",
+          "startOffset": 4983049,
+          "endOffset": 4983069,
+          "summary": "红云舞娘对韩立施展搜魂手段"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1418",
+          "paragraphId": "ch_1418_p0064",
+          "startOffset": 4983159,
+          "endOffset": 4983174,
+          "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂"
+        }
+      ],
+      "motiveId": "motive_1",
+      "character": "红云舞娘",
+      "observedMotive": "搜魂韩立后瞳孔扩张、双眼放光",
+      "inferredMotive": "对震源子阵道真传产生兴趣",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0009",
+      "startOffset": 4981097,
+      "endOffset": 4981133,
+      "summary": "八转女仙，千变老祖的妻子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0037",
+      "startOffset": 4982183,
+      "endOffset": 4982190,
+      "summary": "八转变异仙蛊的持有者意志"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0036",
+      "startOffset": 4982130,
+      "endOffset": 4982135,
+      "summary": "七转强者，跟随千变意志"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0058",
+      "startOffset": 4982876,
+      "endOffset": 4982880,
+      "summary": "凡人蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0065",
+      "startOffset": 4983178,
+      "endOffset": 4983210,
+      "summary": "不明身份，可能为蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0013",
+      "startOffset": 4981281,
+      "endOffset": 4981371,
+      "summary": "夫妻关系，千变老祖是红云舞娘的夫君"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0010",
+      "startOffset": 4981137,
+      "endOffset": 4981206,
+      "summary": "千变意志提点红云舞娘，并共同战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0020",
+      "startOffset": 4981562,
+      "endOffset": 4981588,
+      "summary": "千变意志催动八转仙蛊攻击青爪鬼翼狮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0050",
+      "startOffset": 4982652,
+      "endOffset": 4982685,
+      "summary": "千变意志跟随红云舞娘，并嘱咐她打扫战场"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0061",
+      "startOffset": 4983049,
+      "endOffset": 4983069,
+      "summary": "红云舞娘对韩立施展搜魂手段"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0021",
+      "startOffset": 4981592,
+      "endOffset": 4981626,
+      "summary": "千变意志和红云舞娘遭遇青爪鬼翼狮，千变意志催动八转仙蛊攻击，使青爪鬼翼狮尾巴变毒蟒、鬃毛变鬼哭树苗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0049",
+      "startOffset": 4982614,
+      "endOffset": 4982648,
+      "summary": "千变意志使用八转变异仙蛊与青爪鬼翼狮战斗，最终青爪鬼翼狮死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1418",
+      "paragraphId": "ch_1418_p0064",
+      "startOffset": 4983159,
+      "endOffset": 4983174,
+      "summary": "红云舞娘在青爪鬼翼狮腹中发现韩立，并对其施展搜魂"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly shows that after performing soul search on Han Li, Hongyun Wuniang exclaims about '震源子的阵道真传' (Zhenyuanzi's formation dao true inheritance). This is private knowledge she gained through soul search, not publicly known. The strong physical reaction (瞳孔扩张、双眼放光、鼻息粗重) in p0065 corroborates the significance of this discovery. This is a hidden fact - only Hongyun Wuniang knows what she found in Han Li's memories.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "红云舞娘对韩立施展搜魂后，得知韩立拥有震源子的阵道真传（ptr_13），随后表现出瞳孔扩张、双眼放光、鼻息粗重等强烈反应（ptr_5）。observedMotive直接描述可见行为，inferredMotive仅推断她对这一发现产生兴趣，未做过度心理推测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual actors (红云舞娘, 千变意志, 韩立) and a single beast (青爪鬼翼狮). No named collective faction, clan, family, or group appears as an actor with a concrete stake. 红云舞娘 is described as 千变老祖's wife (FAMILY relation), but 千变老祖 himself does not appear as an active entity in the seed events—only his will (千变意志) appears. The seed does not establish a collective stake for a '千变老祖 household/faction' as an organized group. The only collective that could be inferred (千变老祖's faction/household) is not directly named or shown acting as a group. All events involve individuals (红云舞娘, 千变意志) acting alone. No faction pressure can be confidently extracted.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

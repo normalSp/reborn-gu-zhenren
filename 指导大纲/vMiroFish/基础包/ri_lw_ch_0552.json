@@ -1,0 +1,919 @@
+{
+  "packageId": "ri_lw_ch_0552",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0552"
+    ],
+    "paragraphIds": [
+      "ch_0552_p0002",
+      "ch_0552_p0003",
+      "ch_0552_p0011",
+      "ch_0552_p0025",
+      "ch_0552_p0030",
+      "ch_0552_p0034",
+      "ch_0552_p0042",
+      "ch_0552_p0047",
+      "ch_0552_p0056",
+      "ch_0552_p0058",
+      "ch_0552_p0060",
+      "ch_0552_p0062",
+      "ch_0552_p0065",
+      "ch_0552_p0067",
+      "ch_0552_p0071",
+      "ch_0552_p0073",
+      "ch_0552_p0076",
+      "ch_0552_p0081",
+      "ch_0552_p0083",
+      "ch_0552_p0085"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0002",
+          "startOffset": 1927093,
+          "endOffset": 1927095,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_74774443cd8e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0034",
+          "startOffset": 1928237,
+          "endOffset": 1928239,
+          "summary": "主角，蛊师"
+        }
+      ],
+      "entityId": "entity_74774443cd8e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0065",
+          "startOffset": 1929661,
+          "endOffset": 1929663,
+          "summary": "主角，五转蛊师"
+        }
+      ],
+      "entityId": "entity_74774443cd8e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，五转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0065",
+          "startOffset": 1929675,
+          "endOffset": 1929678,
+          "summary": "天青狼群首领"
+        }
+      ],
+      "entityId": "entity_c319cb868d17",
+      "name": "万狼王",
+      "kind": "person",
+      "aliases": [],
+      "description": "天青狼群首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0071",
+          "startOffset": 1929855,
+          "endOffset": 1929860,
+          "summary": "天青狼群中的万狼王"
+        }
+      ],
+      "entityId": "entity_c06c6720e8f6",
+      "name": "天青万狼王",
+      "kind": "person",
+      "aliases": [],
+      "description": "天青狼群中的万狼王",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0042",
+          "startOffset": 1928567,
+          "endOffset": 1928569,
+          "summary": "方源遭遇极乐雪蝠群，退避三舍"
+        }
+      ],
+      "relationId": "rel_03e9401c456c",
+      "subject": "方源",
+      "object": "极乐雪蝠群",
+      "relationType": "CONFLICT",
+      "summary": "方源遭遇极乐雪蝠群，退避三舍",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0060",
+          "startOffset": 1929423,
+          "endOffset": 1929425,
+          "summary": "方源意图收服天青狼群的万狼王"
+        }
+      ],
+      "relationId": "rel_285ddb16a299",
+      "subject": "方源",
+      "object": "天青狼群",
+      "relationType": "CONFLICT",
+      "summary": "方源意图收服天青狼群的万狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0047",
+          "startOffset": 1928796,
+          "endOffset": 1928798,
+          "summary": "两群兽群相互绞杀，天青狼群击败极乐雪蝠群"
+        }
+      ],
+      "relationId": "rel_7dcad489b7d2",
+      "subject": "极乐雪蝠群",
+      "object": "天青狼群",
+      "relationType": "CONFLICT",
+      "summary": "两群兽群相互绞杀，天青狼群击败极乐雪蝠群",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0067",
+          "startOffset": 1929714,
+          "endOffset": 1929731,
+          "summary": "方源收服万狼王，使其成为麾下"
+        }
+      ],
+      "relationId": "rel_1110eca08fe6",
+      "subject": "方源",
+      "object": "万狼王",
+      "relationType": "USES",
+      "summary": "方源收服万狼王，使其成为麾下",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0073",
+          "startOffset": 1929924,
+          "endOffset": 1929950,
+          "summary": "方源收服第二头天青万狼王"
+        }
+      ],
+      "relationId": "rel_fed13370b348",
+      "subject": "方源",
+      "object": "天青万狼王",
+      "relationType": "USES",
+      "summary": "方源收服第二头天青万狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0002",
+          "startOffset": 1927093,
+          "endOffset": 1927095,
+          "summary": "方源连续飞行三天，仍未到达圣宫，判断自己被传送到很远的地方。"
+        }
+      ],
+      "eventId": "evt_1d4c0d7934fe",
+      "eventType": "other",
+      "summary": "方源连续飞行三天，仍未到达圣宫，判断自己被传送到很远的地方。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源继续向圣宫前进。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0025",
+          "startOffset": 1927929,
+          "endOffset": 1927931,
+          "summary": "方源在夜晚降临时，寻找缓坡宿营，确认安全后降落，收起鹰翼。"
+        }
+      ],
+      "eventId": "evt_d7a2fddee987",
+      "eventType": "other",
+      "summary": "方源在夜晚降临时，寻找缓坡宿营，确认安全后降落，收起鹰翼。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源准备宿营。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0030",
+          "startOffset": 1928143,
+          "endOffset": 1928145,
+          "summary": "方源催动蜥屋蛊，从空窍中飞出一道奇光，化为大蜥屋蛊。"
+        }
+      ],
+      "eventId": "evt_4d7c5792433a",
+      "eventType": "other",
+      "summary": "方源催动蜥屋蛊，从空窍中飞出一道奇光，化为大蜥屋蛊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源准备使用蜥屋蛊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0056",
+          "startOffset": 1929177,
+          "endOffset": 1929179,
+          "summary": "极乐雪蝠群与天青狼群在空中交战，天青狼群获胜，极乐雪蝠群留下数万具尸体败退"
+        }
+      ],
+      "eventId": "evt_6f7db291cdb8",
+      "eventType": "conflict",
+      "summary": "极乐雪蝠群与天青狼群在空中交战，天青狼群获胜，极乐雪蝠群留下数万具尸体败退",
+      "actors": [
+        "极乐雪蝠群",
+        "天青狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "天青狼群进食蝠尸，方源趁机行动"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0058",
+          "startOffset": 1929278,
+          "endOffset": 1929280,
+          "summary": "方源发现天青狼群，决定收服万狼王以增强实力"
+        }
+      ],
+      "eventId": "evt_81ec7bfd9d19",
+      "eventType": "other",
+      "summary": "方源发现天青狼群，决定收服万狼王以增强实力",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源出屋冲向万狼王"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0065",
+          "startOffset": 1929661,
+          "endOffset": 1929678,
+          "summary": "方源开启四臂风王杀招暴揍万狼王，并收服之"
+        }
+      ],
+      "eventId": "evt_287a1a5dd0e9",
+      "eventType": "conflict",
+      "summary": "方源开启四臂风王杀招暴揍万狼王，并收服之",
+      "actors": [
+        "方源",
+        "万狼王"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源收服第一头万狼王，三分之一天青狼群叛变归顺"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0071",
+          "startOffset": 1929833,
+          "endOffset": 1929855,
+          "summary": "方源圈住第二头天青万狼王并收服"
+        }
+      ],
+      "eventId": "evt_ee42690a3c1e",
+      "eventType": "conflict",
+      "summary": "方源圈住第二头天青万狼王并收服",
+      "actors": [
+        "方源",
+        "天青万狼王"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源收服第二头天青万狼王，大局定"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0076",
+          "startOffset": 1930000,
+          "endOffset": 1930017,
+          "summary": "方源转移宿营地点，休息两个时辰后继续赶路"
+        }
+      ],
+      "eventId": "evt_d778a80bad82",
+      "eventType": "other",
+      "summary": "方源转移宿营地点，休息两个时辰后继续赶路",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "避开血腥气息吸引的兽群"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0081",
+          "startOffset": 1930204,
+          "endOffset": 1930226,
+          "summary": "方源陆续发现三处小传承"
+        }
+      ],
+      "eventId": "evt_2a132f28e42f",
+      "eventType": "other",
+      "summary": "方源陆续发现三处小传承",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "收获可忽略不计"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0083",
+          "startOffset": 1930266,
+          "endOffset": 1930288,
+          "summary": "方源麾下狼群壮大，增添第三头天青万狼王"
+        }
+      ],
+      "eventId": "evt_b916b94ae688",
+      "eventType": "other",
+      "summary": "方源麾下狼群壮大，增添第三头天青万狼王",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源麾下天青万狼王数量达三头"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0002",
+          "startOffset": 1927093,
+          "endOffset": 1927095,
+          "summary": "方源连续飞行三天，仍未到达圣宫，判断自己被传送到很远的地方。"
+        }
+      ],
+      "timelineId": "tl_1d4c0d7934fe",
+      "eventId": "evt_1d4c0d7934fe",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源连续飞行三天，仍未到达圣宫，判断自己被传送到很远的地方。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0025",
+          "startOffset": 1927929,
+          "endOffset": 1927931,
+          "summary": "方源在夜晚降临时，寻找缓坡宿营，确认安全后降落，收起鹰翼。"
+        }
+      ],
+      "timelineId": "tl_d7a2fddee987",
+      "eventId": "evt_d7a2fddee987",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源在夜晚降临时，寻找缓坡宿营，确认安全后降落，收起鹰翼。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0030",
+          "startOffset": 1928143,
+          "endOffset": 1928145,
+          "summary": "方源催动蜥屋蛊，从空窍中飞出一道奇光，化为大蜥屋蛊。"
+        }
+      ],
+      "timelineId": "tl_4d7c5792433a",
+      "eventId": "evt_4d7c5792433a",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源催动蜥屋蛊，从空窍中飞出一道奇光，化为大蜥屋蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0056",
+          "startOffset": 1929177,
+          "endOffset": 1929179,
+          "summary": "极乐雪蝠群与天青狼群在空中交战，天青狼群获胜，极乐雪蝠群留下数万具尸体败退"
+        }
+      ],
+      "timelineId": "tl_6f7db291cdb8",
+      "eventId": "evt_6f7db291cdb8",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "极乐雪蝠群与天青狼群在空中交战，天青狼群获胜，极乐雪蝠群留下数万具尸体败退",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0058",
+          "startOffset": 1929278,
+          "endOffset": 1929280,
+          "summary": "方源发现天青狼群，决定收服万狼王以增强实力"
+        }
+      ],
+      "timelineId": "tl_81ec7bfd9d19",
+      "eventId": "evt_81ec7bfd9d19",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源发现天青狼群，决定收服万狼王以增强实力",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0065",
+          "startOffset": 1929661,
+          "endOffset": 1929678,
+          "summary": "方源开启四臂风王杀招暴揍万狼王，并收服之"
+        }
+      ],
+      "timelineId": "tl_287a1a5dd0e9",
+      "eventId": "evt_287a1a5dd0e9",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源开启四臂风王杀招暴揍万狼王，并收服之",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0071",
+          "startOffset": 1929833,
+          "endOffset": 1929855,
+          "summary": "方源圈住第二头天青万狼王并收服"
+        }
+      ],
+      "timelineId": "tl_ee42690a3c1e",
+      "eventId": "evt_ee42690a3c1e",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源圈住第二头天青万狼王并收服",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0076",
+          "startOffset": 1930000,
+          "endOffset": 1930017,
+          "summary": "方源转移宿营地点，休息两个时辰后继续赶路"
+        }
+      ],
+      "timelineId": "tl_d778a80bad82",
+      "eventId": "evt_d778a80bad82",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源转移宿营地点，休息两个时辰后继续赶路",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0081",
+          "startOffset": 1930204,
+          "endOffset": 1930226,
+          "summary": "方源陆续发现三处小传承"
+        }
+      ],
+      "timelineId": "tl_2a132f28e42f",
+      "eventId": "evt_2a132f28e42f",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源陆续发现三处小传承",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0083",
+          "startOffset": 1930266,
+          "endOffset": 1930288,
+          "summary": "方源麾下狼群壮大，增添第三头天青万狼王"
+        }
+      ],
+      "timelineId": "tl_b916b94ae688",
+      "eventId": "evt_b916b94ae688",
+      "chapterId": "ch_0552",
+      "orderHint": "chapter-order",
+      "summary": "方源麾下狼群壮大，增添第三头天青万狼王",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0058",
+          "startOffset": 1929278,
+          "endOffset": 1929280,
+          "summary": "方源发现天青狼群，决定收服万狼王以增强实力"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0552",
+          "paragraphId": "ch_0552_p0060",
+          "startOffset": 1929423,
+          "endOffset": 1929425,
+          "summary": "方源意图收服天青狼群的万狼王"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "收服万狼王增强实力",
+      "inferredMotive": "需要飞行坐骑和护卫",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0002",
+      "startOffset": 1927093,
+      "endOffset": 1927095,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0034",
+      "startOffset": 1928237,
+      "endOffset": 1928239,
+      "summary": "主角，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0065",
+      "startOffset": 1929661,
+      "endOffset": 1929663,
+      "summary": "主角，五转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0065",
+      "startOffset": 1929675,
+      "endOffset": 1929678,
+      "summary": "天青狼群首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0071",
+      "startOffset": 1929855,
+      "endOffset": 1929860,
+      "summary": "天青狼群中的万狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0042",
+      "startOffset": 1928567,
+      "endOffset": 1928569,
+      "summary": "方源遭遇极乐雪蝠群，退避三舍"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0060",
+      "startOffset": 1929423,
+      "endOffset": 1929425,
+      "summary": "方源意图收服天青狼群的万狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0047",
+      "startOffset": 1928796,
+      "endOffset": 1928798,
+      "summary": "两群兽群相互绞杀，天青狼群击败极乐雪蝠群"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0067",
+      "startOffset": 1929714,
+      "endOffset": 1929731,
+      "summary": "方源收服万狼王，使其成为麾下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0073",
+      "startOffset": 1929924,
+      "endOffset": 1929950,
+      "summary": "方源收服第二头天青万狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0025",
+      "startOffset": 1927929,
+      "endOffset": 1927931,
+      "summary": "方源在夜晚降临时，寻找缓坡宿营，确认安全后降落，收起鹰翼。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0030",
+      "startOffset": 1928143,
+      "endOffset": 1928145,
+      "summary": "方源催动蜥屋蛊，从空窍中飞出一道奇光，化为大蜥屋蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0056",
+      "startOffset": 1929177,
+      "endOffset": 1929179,
+      "summary": "极乐雪蝠群与天青狼群在空中交战，天青狼群获胜，极乐雪蝠群留下数万具尸体败退"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0058",
+      "startOffset": 1929278,
+      "endOffset": 1929280,
+      "summary": "方源发现天青狼群，决定收服万狼王以增强实力"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0065",
+      "startOffset": 1929661,
+      "endOffset": 1929678,
+      "summary": "方源开启四臂风王杀招暴揍万狼王，并收服之"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0071",
+      "startOffset": 1929833,
+      "endOffset": 1929855,
+      "summary": "方源圈住第二头天青万狼王并收服"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0076",
+      "startOffset": 1930000,
+      "endOffset": 1930017,
+      "summary": "方源转移宿营地点，休息两个时辰后继续赶路"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0081",
+      "startOffset": 1930204,
+      "endOffset": 1930226,
+      "summary": "方源陆续发现三处小传承"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0552",
+      "paragraphId": "ch_0552_p0083",
+      "startOffset": 1930266,
+      "endOffset": 1930288,
+      "summary": "方源麾下狼群壮大，增添第三头天青万狼王"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes ordinary visible events: Fang Yuan traveling, camping, encountering and taming wolf kings. These are public actions visible to any observer. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present in the source pointers. The events (taming two Tianqing Wanlang Kings, fighting the Jile Xuefu bat swarm, camping) are all externally observable actions. No hidden fact candidate can be extracted without speculating beyond the source.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源看到天青狼群后认为'不仅可以飞行，跟得上我的速度。还能护我周全'，直接表明他收服万狼王是为了获得飞行能力和保护。observedMotive直接来自种子事实，inferredMotive是谨慎的一步推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on Fang Yuan's individual actions (traveling, camping, fighting and taming wolf kings). The only collective actors mentioned are beast groups: 极乐雪蝠群 (Extreme Joy Snow Bat Swarm) and 天青狼群 (Sky Blue Wolf Pack). While 天青狼群 appears as a collective, the seed facts show that Fang Yuan has already tamed their leaders (万狼王 and 天青万狼王), effectively taking control of the pack. There is no remaining faction pressure or stake for the wolf pack as an independent collective actor - they have been subjugated. The bat swarm was defeated and retreated. No named human faction, clan, family, or organization appears in the seed with a concrete stake that would generate meaningful pressure.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

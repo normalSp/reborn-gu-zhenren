@@ -1,0 +1,838 @@
+{
+  "packageId": "ri_lw_ch_0675",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0675"
+    ],
+    "paragraphIds": [
+      "ch_0675_p0002",
+      "ch_0675_p0004",
+      "ch_0675_p0005",
+      "ch_0675_p0006",
+      "ch_0675_p0007",
+      "ch_0675_p0014",
+      "ch_0675_p0019",
+      "ch_0675_p0020",
+      "ch_0675_p0025",
+      "ch_0675_p0028",
+      "ch_0675_p0035",
+      "ch_0675_p0036",
+      "ch_0675_p0037",
+      "ch_0675_p0038",
+      "ch_0675_p0041",
+      "ch_0675_p0043",
+      "ch_0675_p0047",
+      "ch_0675_p0051",
+      "ch_0675_p0061",
+      "ch_0675_p0063",
+      "ch_0675_p0065",
+      "ch_0675_p0066"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0002",
+          "startOffset": 2378832,
+          "endOffset": 2378834,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_9333e8bb300d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0005",
+          "startOffset": 2378930,
+          "endOffset": 2378934,
+          "summary": "琅琊福地的地灵"
+        }
+      ],
+      "entityId": "entity_91b56fe542d7",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊福地的地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0007",
+          "startOffset": 2379013,
+          "endOffset": 2379016,
+          "summary": "墨人城城主"
+        }
+      ],
+      "entityId": "entity_f8c6361867f2",
+      "name": "墨人王",
+      "kind": "person",
+      "aliases": [],
+      "description": "墨人城城主",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0004",
+          "startOffset": 2378903,
+          "endOffset": 2378907,
+          "summary": "方源的师兄"
+        }
+      ],
+      "entityId": "entity_1f3fddf2640e",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的师兄",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0035",
+          "startOffset": 2380457,
+          "endOffset": 2380461,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_9333e8bb300d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0036",
+          "startOffset": 2380525,
+          "endOffset": 2380529,
+          "summary": "琅琊福地地灵，炼道宗师"
+        }
+      ],
+      "entityId": "entity_91b56fe542d7",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [
+        "墨人王"
+      ],
+      "description": "琅琊福地地灵，炼道宗师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0036",
+          "startOffset": 2380531,
+          "endOffset": 2380537,
+          "summary": "仙尊，八十八角真阳楼建造者之一"
+        }
+      ],
+      "entityId": "entity_56e3de822c73",
+      "name": "巨阳仙尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙尊，八十八角真阳楼建造者之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0051",
+          "startOffset": 2381295,
+          "endOffset": 2381299,
+          "summary": "历史上的炼道三大宗师之一"
+        }
+      ],
+      "entityId": "entity_fd96e1983382",
+      "name": "长毛老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "历史上的炼道三大宗师之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0066",
+          "startOffset": 2382007,
+          "endOffset": 2382067,
+          "summary": "蛊师，封印春秋蝉者"
+        }
+      ],
+      "entityId": "entity_9333e8bb300d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，封印春秋蝉者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0014",
+          "startOffset": 2379288,
+          "endOffset": 2379298,
+          "summary": "方源与琅琊地灵进行交易，用完善的三道仙蛊方换取三十块仙元石，并购买小泽蛊和松岛蛊"
+        }
+      ],
+      "relationId": "rel_013d8787ae39",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "TRADE",
+      "summary": "方源与琅琊地灵进行交易，用完善的三道仙蛊方换取三十块仙元石，并购买小泽蛊和松岛蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0020",
+          "startOffset": 2379674,
+          "endOffset": 2379684,
+          "summary": "墨人王想与方源做生意，但方源提出的上古蛊虫墨人王没有"
+        }
+      ],
+      "relationId": "rel_47afff01708e",
+      "subject": "方源",
+      "object": "墨人王",
+      "relationType": "OTHER",
+      "summary": "墨人王想与方源做生意，但方源提出的上古蛊虫墨人王没有",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0019",
+          "startOffset": 2379529,
+          "endOffset": 2379549,
+          "summary": "太白云生曾从墨人王手中买下一道杀招"
+        }
+      ],
+      "relationId": "rel_f70a4cf505b2",
+      "subject": "太白云生",
+      "object": "墨人王",
+      "relationType": "TRADE",
+      "summary": "太白云生曾从墨人王手中买下一道杀招",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0041",
+          "startOffset": 2380834,
+          "endOffset": 2380838,
+          "summary": "方源与琅琊地灵合作，方源请求琅琊地灵逆推星芽蛊蛊方，但地灵被封印暂时无法帮忙"
+        }
+      ],
+      "relationId": "rel_978ff7f20294",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "ALLY",
+      "summary": "方源与琅琊地灵合作，方源请求琅琊地灵逆推星芽蛊蛊方，但地灵被封印暂时无法帮忙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0038",
+          "startOffset": 2380680,
+          "endOffset": 2380684,
+          "summary": "琅琊地灵的本体曾与巨阳仙尊合炼八十八角真阳楼，并立下誓言不透露食道手段信息"
+        }
+      ],
+      "relationId": "rel_d99efb838fd3",
+      "subject": "琅琊地灵",
+      "object": "巨阳仙尊",
+      "relationType": "OTHER",
+      "summary": "琅琊地灵的本体曾与巨阳仙尊合炼八十八角真阳楼，并立下誓言不透露食道手段信息",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0014",
+          "startOffset": 2379288,
+          "endOffset": 2379298,
+          "summary": "方源将完善的三道仙蛊方交给琅琊地灵，获得三十块仙元石作为报酬"
+        }
+      ],
+      "eventId": "evt_3de7609c8fd2",
+      "eventType": "trade",
+      "summary": "方源将完善的三道仙蛊方交给琅琊地灵，获得三十块仙元石作为报酬",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得三十块仙元石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0028",
+          "startOffset": 2380137,
+          "endOffset": 2380147,
+          "summary": "方源用一块仙元石向琅琊地灵购买三只小泽蛊和六只松岛蛊"
+        }
+      ],
+      "eventId": "evt_f78ac294f1da",
+      "eventType": "trade",
+      "summary": "方源用一块仙元石向琅琊地灵购买三只小泽蛊和六只松岛蛊",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得三只小泽蛊和六只松岛蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0037",
+          "startOffset": 2380631,
+          "endOffset": 2380635,
+          "summary": "方源向琅琊地灵询问食道手段信息，但地灵因誓言无法透露"
+        }
+      ],
+      "eventId": "evt_bf2bd2f4ea1a",
+      "eventType": "other",
+      "summary": "方源向琅琊地灵询问食道手段信息，但地灵因誓言无法透露",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源未能获得食道信息"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0041",
+          "startOffset": 2380834,
+          "endOffset": 2380838,
+          "summary": "方源拿出星芽蛊请求琅琊地灵逆推蛊方，地灵表示需要至少四千只才能逆推，方源表示有超过五千只"
+        }
+      ],
+      "eventId": "evt_e9e98bc21ee9",
+      "eventType": "other",
+      "summary": "方源拿出星芽蛊请求琅琊地灵逆推蛊方，地灵表示需要至少四千只才能逆推，方源表示有超过五千只",
+      "actors": [
+        "方源",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "地灵因被封印无法出手，逆推暂时搁置"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0061",
+          "startOffset": 2381795,
+          "endOffset": 2381799,
+          "summary": "方源回到狐仙福地，进入荡魂行宫，着手封印春秋蝉"
+        }
+      ],
+      "eventId": "evt_81d48f423da6",
+      "eventType": "other",
+      "summary": "方源回到狐仙福地，进入荡魂行宫，着手封印春秋蝉",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源开始封印春秋蝉"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0063",
+          "startOffset": 2381855,
+          "endOffset": 2381859,
+          "summary": "方源使用小泽蛊、松岛蛊等蛊虫，在空窍和腹部种下封印，以抵御春秋蝉压力并篡改气息"
+        }
+      ],
+      "eventId": "evt_4e3150160bc1",
+      "eventType": "other",
+      "summary": "方源使用小泽蛊、松岛蛊等蛊虫，在空窍和腹部种下封印，以抵御春秋蝉压力并篡改气息",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "春秋蝉被封印"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0065",
+          "startOffset": 2381973,
+          "endOffset": 2382003,
+          "summary": "方源以凡蛊封印仙蛊春秋蝉，成功封印，可支撑四年，不影响使用。"
+        }
+      ],
+      "eventId": "evt_95f0e4bc6936",
+      "eventType": "other",
+      "summary": "方源以凡蛊封印仙蛊春秋蝉，成功封印，可支撑四年，不影响使用。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暂时解决了春秋蝉撑破第一空窍的难题，方源累得魂魄黯淡，睡了三天。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0014",
+          "startOffset": 2379288,
+          "endOffset": 2379298,
+          "summary": "方源将完善的三道仙蛊方交给琅琊地灵，获得三十块仙元石作为报酬"
+        }
+      ],
+      "timelineId": "tl_3de7609c8fd2",
+      "eventId": "evt_3de7609c8fd2",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源将完善的三道仙蛊方交给琅琊地灵，获得三十块仙元石作为报酬",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0028",
+          "startOffset": 2380137,
+          "endOffset": 2380147,
+          "summary": "方源用一块仙元石向琅琊地灵购买三只小泽蛊和六只松岛蛊"
+        }
+      ],
+      "timelineId": "tl_f78ac294f1da",
+      "eventId": "evt_f78ac294f1da",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源用一块仙元石向琅琊地灵购买三只小泽蛊和六只松岛蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0037",
+          "startOffset": 2380631,
+          "endOffset": 2380635,
+          "summary": "方源向琅琊地灵询问食道手段信息，但地灵因誓言无法透露"
+        }
+      ],
+      "timelineId": "tl_bf2bd2f4ea1a",
+      "eventId": "evt_bf2bd2f4ea1a",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源向琅琊地灵询问食道手段信息，但地灵因誓言无法透露",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0041",
+          "startOffset": 2380834,
+          "endOffset": 2380838,
+          "summary": "方源拿出星芽蛊请求琅琊地灵逆推蛊方，地灵表示需要至少四千只才能逆推，方源表示有超过五千只"
+        }
+      ],
+      "timelineId": "tl_e9e98bc21ee9",
+      "eventId": "evt_e9e98bc21ee9",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源拿出星芽蛊请求琅琊地灵逆推蛊方，地灵表示需要至少四千只才能逆推，方源表示有超过五千只",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0061",
+          "startOffset": 2381795,
+          "endOffset": 2381799,
+          "summary": "方源回到狐仙福地，进入荡魂行宫，着手封印春秋蝉"
+        }
+      ],
+      "timelineId": "tl_81d48f423da6",
+      "eventId": "evt_81d48f423da6",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源回到狐仙福地，进入荡魂行宫，着手封印春秋蝉",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0063",
+          "startOffset": 2381855,
+          "endOffset": 2381859,
+          "summary": "方源使用小泽蛊、松岛蛊等蛊虫，在空窍和腹部种下封印，以抵御春秋蝉压力并篡改气息"
+        }
+      ],
+      "timelineId": "tl_4e3150160bc1",
+      "eventId": "evt_4e3150160bc1",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源使用小泽蛊、松岛蛊等蛊虫，在空窍和腹部种下封印，以抵御春秋蝉压力并篡改气息",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0675",
+          "paragraphId": "ch_0675_p0065",
+          "startOffset": 2381973,
+          "endOffset": 2382003,
+          "summary": "方源以凡蛊封印仙蛊春秋蝉，成功封印，可支撑四年，不影响使用。"
+        }
+      ],
+      "timelineId": "tl_95f0e4bc6936",
+      "eventId": "evt_95f0e4bc6936",
+      "chapterId": "ch_0675",
+      "orderHint": "chapter-order",
+      "summary": "方源以凡蛊封印仙蛊春秋蝉，成功封印，可支撑四年，不影响使用。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0002",
+      "startOffset": 2378832,
+      "endOffset": 2378834,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0005",
+      "startOffset": 2378930,
+      "endOffset": 2378934,
+      "summary": "琅琊福地的地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0007",
+      "startOffset": 2379013,
+      "endOffset": 2379016,
+      "summary": "墨人城城主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0004",
+      "startOffset": 2378903,
+      "endOffset": 2378907,
+      "summary": "方源的师兄"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0035",
+      "startOffset": 2380457,
+      "endOffset": 2380461,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0036",
+      "startOffset": 2380525,
+      "endOffset": 2380529,
+      "summary": "琅琊福地地灵，炼道宗师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0036",
+      "startOffset": 2380531,
+      "endOffset": 2380537,
+      "summary": "仙尊，八十八角真阳楼建造者之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0051",
+      "startOffset": 2381295,
+      "endOffset": 2381299,
+      "summary": "历史上的炼道三大宗师之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0066",
+      "startOffset": 2382007,
+      "endOffset": 2382067,
+      "summary": "蛊师，封印春秋蝉者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0014",
+      "startOffset": 2379288,
+      "endOffset": 2379298,
+      "summary": "方源与琅琊地灵进行交易，用完善的三道仙蛊方换取三十块仙元石，并购买小泽蛊和松岛蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0020",
+      "startOffset": 2379674,
+      "endOffset": 2379684,
+      "summary": "墨人王想与方源做生意，但方源提出的上古蛊虫墨人王没有"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0019",
+      "startOffset": 2379529,
+      "endOffset": 2379549,
+      "summary": "太白云生曾从墨人王手中买下一道杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0041",
+      "startOffset": 2380834,
+      "endOffset": 2380838,
+      "summary": "方源与琅琊地灵合作，方源请求琅琊地灵逆推星芽蛊蛊方，但地灵被封印暂时无法帮忙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0038",
+      "startOffset": 2380680,
+      "endOffset": 2380684,
+      "summary": "琅琊地灵的本体曾与巨阳仙尊合炼八十八角真阳楼，并立下誓言不透露食道手段信息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0028",
+      "startOffset": 2380137,
+      "endOffset": 2380147,
+      "summary": "方源用一块仙元石向琅琊地灵购买三只小泽蛊和六只松岛蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0037",
+      "startOffset": 2380631,
+      "endOffset": 2380635,
+      "summary": "方源向琅琊地灵询问食道手段信息，但地灵因誓言无法透露"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0061",
+      "startOffset": 2381795,
+      "endOffset": 2381799,
+      "summary": "方源回到狐仙福地，进入荡魂行宫，着手封印春秋蝉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0063",
+      "startOffset": 2381855,
+      "endOffset": 2381859,
+      "summary": "方源使用小泽蛊、松岛蛊等蛊虫，在空窍和腹部种下封印，以抵御春秋蝉压力并篡改气息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0675",
+      "paragraphId": "ch_0675_p0065",
+      "startOffset": 2381973,
+      "endOffset": 2382003,
+      "summary": "方源以凡蛊封印仙蛊春秋蝉，成功封印，可支撑四年，不影响使用。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (trades, purchases, sealing of Spring Autumn Cicada) that are directly observed. The only potentially hidden element is the oath between Lang Ya land spirit's本体 and Giant Sun Immortal Venerable regarding food path methods (ch_0675_p0038), but this is already stated openly in dialogue - the land spirit tells Fang Yuan directly that he cannot reveal food path information due to an oath. There is no additional hidden knowledge beyond what is openly stated. No future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan trading with Lang Ya land spirit (selling immortal gu recipes, buying Xiao Ze and Song Dao gu), asking about food path info, requesting star bud gu reverse-engineering, and sealing Spring Autumn Cicada. These are mostly transactional/technical actions. Observed behaviors are clear but inferred motives would require psychological leaps beyond one-step inference. For example, sealing Spring Autumn Cicada is directly observed (ptr_17, ptr_18, ptr_9) - the observed action is 'sealing the cicada to prevent it from bursting the first aperture' which is stated in the seed, but inferring a deeper motive like 'protecting his cultivation foundation' or 'buying time' would be speculative. The trading actions are straightforward exchanges without clear strategic motive beyond the transaction itself. No strong candidate for a cautious one-step inferred motive.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed primarily focuses on individual transactions between Fang Yuan (方源), Lang Ya Earth Spirit (琅琊地灵), and Ink Man King (墨人王). No named collective faction/group/clan/family with a concrete stake in the seed facts is present. Lang Ya Earth Spirit is a single spirit entity (地灵), not a collective group. Ink Man King is an individual city lord. No family, clan, faction, or organization is named as having a collective stake in the events described.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

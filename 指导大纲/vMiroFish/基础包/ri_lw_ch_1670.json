@@ -1,0 +1,997 @@
+{
+  "packageId": "ri_lw_ch_1670",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1670"
+    ],
+    "paragraphIds": [
+      "ch_1670_p0002",
+      "ch_1670_p0006",
+      "ch_1670_p0008",
+      "ch_1670_p0012",
+      "ch_1670_p0014",
+      "ch_1670_p0024",
+      "ch_1670_p0027",
+      "ch_1670_p0028",
+      "ch_1670_p0029",
+      "ch_1670_p0031",
+      "ch_1670_p0033",
+      "ch_1670_p0035",
+      "ch_1670_p0037",
+      "ch_1670_p0044",
+      "ch_1670_p0045",
+      "ch_1670_p0050",
+      "ch_1670_p0051"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0002",
+          "startOffset": 5776474,
+          "endOffset": 5776478,
+          "summary": "鲛人圣女候选人，背后有大族老支持"
+        }
+      ],
+      "entityId": "entity_21a096219351",
+      "name": "谢晗沫",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛人圣女候选人，背后有大族老支持",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0006",
+          "startOffset": 5776605,
+          "endOffset": 5776607,
+          "summary": "外来者，被谢晗沫信任"
+        }
+      ],
+      "entityId": "entity_8294c6f4f648",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "外来者，被谢晗沫信任",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0006",
+          "startOffset": 5776605,
+          "endOffset": 5776610,
+          "summary": "谢晗沫的侍卫"
+        }
+      ],
+      "entityId": "entity_236a2927aa9a",
+      "name": "赤鳞侍卫",
+      "kind": "person",
+      "aliases": [],
+      "description": "谢晗沫的侍卫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0006",
+          "startOffset": 5776605,
+          "endOffset": 5776610,
+          "summary": "谢晗沫的侍卫"
+        }
+      ],
+      "entityId": "entity_d960b831b2aa",
+      "name": "蓝鳞侍卫",
+      "kind": "person",
+      "aliases": [],
+      "description": "谢晗沫的侍卫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0008",
+          "startOffset": 5776646,
+          "endOffset": 5776648,
+          "summary": "寒潮族长支持的圣女候选人，已死"
+        }
+      ],
+      "entityId": "entity_83871a1c7142",
+      "name": "秋霜",
+      "kind": "person",
+      "aliases": [],
+      "description": "寒潮族长支持的圣女候选人，已死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0008",
+          "startOffset": 5776646,
+          "endOffset": 5776652,
+          "summary": "寒潮部族族长，支持秋霜"
+        }
+      ],
+      "entityId": "entity_41905fcd0194",
+      "name": "寒潮族长",
+      "kind": "person",
+      "aliases": [],
+      "description": "寒潮部族族长，支持秋霜",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0014",
+          "startOffset": 5776985,
+          "endOffset": 5776988,
+          "summary": "鲛人圣庭高层，支持谢晗沫"
+        }
+      ],
+      "entityId": "entity_13f8cf05bd98",
+      "name": "大族老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "鲛人圣庭高层，支持谢晗沫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0028",
+          "startOffset": 5777535,
+          "endOffset": 5777539,
+          "summary": "鲛女贵妇，与寒潮族长是盟友"
+        }
+      ],
+      "entityId": "entity_0d4e7ba04490",
+      "name": "步素莲",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛女贵妇，与寒潮族长是盟友",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0033",
+          "startOffset": 5777867,
+          "endOffset": 5777889,
+          "summary": "鲛人一族族长"
+        }
+      ],
+      "entityId": "entity_76aec70987da",
+      "name": "寒潮族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "鲛人一族族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0035",
+          "startOffset": 5777910,
+          "endOffset": 5777912,
+          "summary": "鲛女，秋霜的跟随者"
+        }
+      ],
+      "entityId": "entity_7b1d6facc78b",
+      "name": "冬蕾",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛女，秋霜的跟随者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0035",
+          "startOffset": 5777916,
+          "endOffset": 5777918,
+          "summary": "鲛女，原海神祭参与者"
+        }
+      ],
+      "entityId": "entity_83871a1c7142",
+      "name": "秋霜",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛女，原海神祭参与者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0044",
+          "startOffset": 5778156,
+          "endOffset": 5778158,
+          "summary": "神话中的鲛女，第一代海神祭参与者"
+        }
+      ],
+      "entityId": "entity_0f42a6799c59",
+      "name": "阿青",
+      "kind": "person",
+      "aliases": [],
+      "description": "神话中的鲛女，第一代海神祭参与者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0050",
+          "startOffset": 5778409,
+          "endOffset": 5778411,
+          "summary": "神话中的鲛女，阿青的妹妹"
+        }
+      ],
+      "entityId": "entity_d4e1342fbd29",
+      "name": "阿雅",
+      "kind": "person",
+      "aliases": [],
+      "description": "神话中的鲛女，阿青的妹妹",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0045",
+          "startOffset": 5778175,
+          "endOffset": 5778177,
+          "summary": "神话中的神祇"
+        }
+      ],
+      "entityId": "entity_d3b226c55acf",
+      "name": "海神",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "神话中的神祇",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0006",
+          "startOffset": 5776605,
+          "endOffset": 5776626,
+          "summary": "谢晗沫信任方源，让他观看情报"
+        }
+      ],
+      "relationId": "rel_88aac4caa4ad",
+      "subject": "谢晗沫",
+      "object": "方源",
+      "relationType": "ALLY",
+      "summary": "谢晗沫信任方源，让他观看情报",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0014",
+          "startOffset": 5776985,
+          "endOffset": 5777091,
+          "summary": "大族老在背后支持谢晗沫成为圣女"
+        }
+      ],
+      "relationId": "rel_c35c09f76727",
+      "subject": "谢晗沫",
+      "object": "大族老",
+      "relationType": "ALLY",
+      "summary": "大族老在背后支持谢晗沫成为圣女",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0008",
+          "startOffset": 5776646,
+          "endOffset": 5776697,
+          "summary": "寒潮族长在背后支持秋霜竞选圣女"
+        }
+      ],
+      "relationId": "rel_d62d3a65f22a",
+      "subject": "寒潮族长",
+      "object": "秋霜",
+      "relationType": "ALLY",
+      "summary": "寒潮族长在背后支持秋霜竞选圣女",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0029",
+          "startOffset": 5777622,
+          "endOffset": 5777746,
+          "summary": "寒潮族长与步素莲是盟友"
+        }
+      ],
+      "relationId": "rel_bbc38a73a91a",
+      "subject": "寒潮族长",
+      "object": "步素莲",
+      "relationType": "ALLY",
+      "summary": "寒潮族长与步素莲是盟友",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0027",
+          "startOffset": 5777503,
+          "endOffset": 5777531,
+          "summary": "谢晗沫与寒潮族长敌对，寒潮族长试图阻击谢晗沫"
+        }
+      ],
+      "relationId": "rel_1a7e7476f2fc",
+      "subject": "谢晗沫",
+      "object": "寒潮族长",
+      "relationType": "CONFLICT",
+      "summary": "谢晗沫与寒潮族长敌对，寒潮族长试图阻击谢晗沫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0037",
+          "startOffset": 5777956,
+          "endOffset": 5777969,
+          "summary": "冬蕾是秋霜的跟随者"
+        }
+      ],
+      "relationId": "rel_799570d0dc69",
+      "subject": "冬蕾",
+      "object": "秋霜",
+      "relationType": "OTHER",
+      "summary": "冬蕾是秋霜的跟随者",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0050",
+          "startOffset": 5778409,
+          "endOffset": 5778411,
+          "summary": "阿雅是阿青的妹妹"
+        }
+      ],
+      "relationId": "rel_8ebb04246279",
+      "subject": "阿雅",
+      "object": "阿青",
+      "relationType": "FAMILY",
+      "summary": "阿雅是阿青的妹妹",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0024",
+          "startOffset": 5777444,
+          "endOffset": 5777460,
+          "summary": "秋霜因不是处子之身被处决，身死道消"
+        }
+      ],
+      "eventId": "evt_2a4f69db23c3",
+      "eventType": "death",
+      "summary": "秋霜因不是处子之身被处决，身死道消",
+      "actors": [
+        "秋霜"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "寒潮族长失去重要棋子，谢晗沫圣女地位稳固"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0002",
+          "startOffset": 5776474,
+          "endOffset": 5776516,
+          "summary": "谢晗沫拒绝方源顶罪提议，陷入被动，后因秋霜事件转危为安"
+        }
+      ],
+      "eventId": "evt_2bc4c2e611c1",
+      "eventType": "conflict",
+      "summary": "谢晗沫拒绝方源顶罪提议，陷入被动，后因秋霜事件转危为安",
+      "actors": [
+        "谢晗沫",
+        "寒潮族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "谢晗沫保住圣女位置，寒潮族长愤怒"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0014",
+          "startOffset": 5776985,
+          "endOffset": 5777091,
+          "summary": "大族老收集情报揭露秋霜不洁，谢晗沫借此反击"
+        }
+      ],
+      "eventId": "evt_4e9a49e44a93",
+      "eventType": "other",
+      "summary": "大族老收集情报揭露秋霜不洁，谢晗沫借此反击",
+      "actors": [
+        "谢晗沫",
+        "大族老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "秋霜被查实处死"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0035",
+          "startOffset": 5777902,
+          "endOffset": 5777941,
+          "summary": "冬蕾在圣城广场上公开宣布顶替秋霜进行海神祭"
+        }
+      ],
+      "eventId": "evt_fa50fa678e37",
+      "eventType": "other",
+      "summary": "冬蕾在圣城广场上公开宣布顶替秋霜进行海神祭",
+      "actors": [
+        "冬蕾"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "冬蕾成为海神祭的参与者"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0050",
+          "startOffset": 5778399,
+          "endOffset": 5778429,
+          "summary": "阿青因连续唱歌两天两夜太过劳累而去世"
+        }
+      ],
+      "eventId": "evt_416aefd50347",
+      "eventType": "death",
+      "summary": "阿青因连续唱歌两天两夜太过劳累而去世",
+      "actors": [
+        "阿青"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "阿雅继承阿青的遗志"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0051",
+          "startOffset": 5778433,
+          "endOffset": 5778489,
+          "summary": "阿雅接替姐姐阿青，为海神唱第三首歌"
+        }
+      ],
+      "eventId": "evt_c10f641b3755",
+      "eventType": "other",
+      "summary": "阿雅接替姐姐阿青，为海神唱第三首歌",
+      "actors": [
+        "阿雅"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "海神满足，海兽离开，小渔村得救"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0024",
+          "startOffset": 5777444,
+          "endOffset": 5777460,
+          "summary": "秋霜因不是处子之身被处决，身死道消"
+        }
+      ],
+      "timelineId": "tl_2a4f69db23c3",
+      "eventId": "evt_2a4f69db23c3",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "秋霜因不是处子之身被处决，身死道消",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0002",
+          "startOffset": 5776474,
+          "endOffset": 5776516,
+          "summary": "谢晗沫拒绝方源顶罪提议，陷入被动，后因秋霜事件转危为安"
+        }
+      ],
+      "timelineId": "tl_2bc4c2e611c1",
+      "eventId": "evt_2bc4c2e611c1",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "谢晗沫拒绝方源顶罪提议，陷入被动，后因秋霜事件转危为安",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0014",
+          "startOffset": 5776985,
+          "endOffset": 5777091,
+          "summary": "大族老收集情报揭露秋霜不洁，谢晗沫借此反击"
+        }
+      ],
+      "timelineId": "tl_4e9a49e44a93",
+      "eventId": "evt_4e9a49e44a93",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "大族老收集情报揭露秋霜不洁，谢晗沫借此反击",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0035",
+          "startOffset": 5777902,
+          "endOffset": 5777941,
+          "summary": "冬蕾在圣城广场上公开宣布顶替秋霜进行海神祭"
+        }
+      ],
+      "timelineId": "tl_fa50fa678e37",
+      "eventId": "evt_fa50fa678e37",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "冬蕾在圣城广场上公开宣布顶替秋霜进行海神祭",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0050",
+          "startOffset": 5778399,
+          "endOffset": 5778429,
+          "summary": "阿青因连续唱歌两天两夜太过劳累而去世"
+        }
+      ],
+      "timelineId": "tl_416aefd50347",
+      "eventId": "evt_416aefd50347",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "阿青因连续唱歌两天两夜太过劳累而去世",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0051",
+          "startOffset": 5778433,
+          "endOffset": 5778489,
+          "summary": "阿雅接替姐姐阿青，为海神唱第三首歌"
+        }
+      ],
+      "timelineId": "tl_c10f641b3755",
+      "eventId": "evt_c10f641b3755",
+      "chapterId": "ch_1670",
+      "orderHint": "chapter-order",
+      "summary": "阿雅接替姐姐阿青，为海神唱第三首歌",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0008",
+          "startOffset": 5776646,
+          "endOffset": 5776652,
+          "summary": "寒潮部族族长，支持秋霜"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0008",
+          "startOffset": 5776646,
+          "endOffset": 5776697,
+          "summary": "寒潮族长在背后支持秋霜竞选圣女"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1670",
+          "paragraphId": "ch_1670_p0027",
+          "startOffset": 5777503,
+          "endOffset": 5777531,
+          "summary": "谢晗沫与寒潮族长敌对，寒潮族长试图阻击谢晗沫"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "寒潮部族",
+      "pressureAxis": "圣女竞选失利",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查谢晗沫",
+        "寻找新候选人"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0002",
+      "startOffset": 5776474,
+      "endOffset": 5776478,
+      "summary": "鲛人圣女候选人，背后有大族老支持"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0006",
+      "startOffset": 5776605,
+      "endOffset": 5776607,
+      "summary": "外来者，被谢晗沫信任"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0006",
+      "startOffset": 5776605,
+      "endOffset": 5776610,
+      "summary": "谢晗沫的侍卫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0008",
+      "startOffset": 5776646,
+      "endOffset": 5776648,
+      "summary": "寒潮族长支持的圣女候选人，已死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0008",
+      "startOffset": 5776646,
+      "endOffset": 5776652,
+      "summary": "寒潮部族族长，支持秋霜"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0014",
+      "startOffset": 5776985,
+      "endOffset": 5776988,
+      "summary": "鲛人圣庭高层，支持谢晗沫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0028",
+      "startOffset": 5777535,
+      "endOffset": 5777539,
+      "summary": "鲛女贵妇，与寒潮族长是盟友"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0033",
+      "startOffset": 5777867,
+      "endOffset": 5777889,
+      "summary": "鲛人一族族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0035",
+      "startOffset": 5777910,
+      "endOffset": 5777912,
+      "summary": "鲛女，秋霜的跟随者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0035",
+      "startOffset": 5777916,
+      "endOffset": 5777918,
+      "summary": "鲛女，原海神祭参与者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0044",
+      "startOffset": 5778156,
+      "endOffset": 5778158,
+      "summary": "神话中的鲛女，第一代海神祭参与者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0050",
+      "startOffset": 5778409,
+      "endOffset": 5778411,
+      "summary": "神话中的鲛女，阿青的妹妹"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0045",
+      "startOffset": 5778175,
+      "endOffset": 5778177,
+      "summary": "神话中的神祇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0006",
+      "startOffset": 5776605,
+      "endOffset": 5776626,
+      "summary": "谢晗沫信任方源，让他观看情报"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0014",
+      "startOffset": 5776985,
+      "endOffset": 5777091,
+      "summary": "大族老在背后支持谢晗沫成为圣女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0008",
+      "startOffset": 5776646,
+      "endOffset": 5776697,
+      "summary": "寒潮族长在背后支持秋霜竞选圣女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0029",
+      "startOffset": 5777622,
+      "endOffset": 5777746,
+      "summary": "寒潮族长与步素莲是盟友"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0027",
+      "startOffset": 5777503,
+      "endOffset": 5777531,
+      "summary": "谢晗沫与寒潮族长敌对，寒潮族长试图阻击谢晗沫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0037",
+      "startOffset": 5777956,
+      "endOffset": 5777969,
+      "summary": "冬蕾是秋霜的跟随者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0024",
+      "startOffset": 5777444,
+      "endOffset": 5777460,
+      "summary": "秋霜因不是处子之身被处决，身死道消"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0002",
+      "startOffset": 5776474,
+      "endOffset": 5776516,
+      "summary": "谢晗沫拒绝方源顶罪提议，陷入被动，后因秋霜事件转危为安"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0035",
+      "startOffset": 5777902,
+      "endOffset": 5777941,
+      "summary": "冬蕾在圣城广场上公开宣布顶替秋霜进行海神祭"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0050",
+      "startOffset": 5778399,
+      "endOffset": 5778429,
+      "summary": "阿青因连续唱歌两天两夜太过劳累而去世"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1670",
+      "paragraphId": "ch_1670_p0051",
+      "startOffset": 5778433,
+      "endOffset": 5778489,
+      "summary": "阿雅接替姐姐阿青，为海神唱第三首歌"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes publicly known events (秋霜's death, 冬蕾 replacing her, 阿青 and 阿雅's singing) and visible relationships (谢晗沫 vs 寒潮族长 conflict, 大族老 supporting 谢晗沫). No private knowledge, secret plans, or future-known information is directly supported by the source text. The events of 大族老 collecting intelligence to expose 秋霜 is described as an overt action, not a hidden fact. No character's internal motives or hidden knowledge beyond what is publicly stated can be confidently extracted from the provided pointers.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows events (秋霜 death, 谢晗沫 conflict with 寒潮族长, 大族老 collecting intel) but does not provide direct observed actions from which a cautious one-step motive inference can be made. Most content is summary-level events and relations, not scene-level behavior showing a character acting with clear observable motive. For example, 大族老收集情报 is stated as fact but no direct scene shows him doing so with observable intent. 谢晗沫拒绝方源顶罪提议 is mentioned but no direct dialogue/action text is provided. Cannot infer motive without psychological leaps.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "寒潮部族（寒潮族长代表）是明确的集体 faction，在种子中支持秋霜竞选圣女，与谢晗沫敌对。秋霜已死，寒潮部族失去候选人，面临圣女竞选失利压力。压力轴为继承/利益相关。likelyReactions 保守推测为调查对手和寻找新候选人。",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

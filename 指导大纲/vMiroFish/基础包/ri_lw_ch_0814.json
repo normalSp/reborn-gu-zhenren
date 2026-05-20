@@ -1,0 +1,617 @@
+{
+  "packageId": "ri_lw_ch_0814",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0814"
+    ],
+    "paragraphIds": [
+      "ch_0814_p0002",
+      "ch_0814_p0003",
+      "ch_0814_p0007",
+      "ch_0814_p0009",
+      "ch_0814_p0024",
+      "ch_0814_p0025",
+      "ch_0814_p0030",
+      "ch_0814_p0031",
+      "ch_0814_p0033",
+      "ch_0814_p0034",
+      "ch_0814_p0036",
+      "ch_0814_p0037",
+      "ch_0814_p0042"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0002",
+          "startOffset": 2869790,
+          "endOffset": 2869792,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_0cd0fa0ec750",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0002",
+          "startOffset": 2869795,
+          "endOffset": 2869797,
+          "summary": "狐仙福地地灵"
+        }
+      ],
+      "entityId": "entity_0d083d1ad8d4",
+      "name": "地灵",
+      "kind": "person",
+      "aliases": [
+        "小狐仙"
+      ],
+      "description": "狐仙福地地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0003",
+          "startOffset": 2869827,
+          "endOffset": 2869831,
+          "summary": "东方一族成员，已被方源杀死"
+        }
+      ],
+      "entityId": "entity_7918a38a1842",
+      "name": "东方晴雨",
+      "kind": "person",
+      "aliases": [],
+      "description": "东方一族成员，已被方源杀死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0025",
+          "startOffset": 2870957,
+          "endOffset": 2870961,
+          "summary": "东方一族太上大长老，魂魄被方源搜魂"
+        }
+      ],
+      "entityId": "entity_a6e7a7b4386c",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "东方一族太上大长老，魂魄被方源搜魂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0033",
+          "startOffset": 2871487,
+          "endOffset": 2871508,
+          "summary": "仙僵，主角"
+        }
+      ],
+      "entityId": "entity_0cd0fa0ec750",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "仙僵，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0034",
+          "startOffset": 2871512,
+          "endOffset": 2871668,
+          "summary": "魂魄，智道宗师"
+        }
+      ],
+      "entityId": "entity_a6e7a7b4386c",
+      "name": "东方长凡",
+      "kind": "person",
+      "aliases": [],
+      "description": "魂魄，智道宗师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0007",
+          "startOffset": 2870055,
+          "endOffset": 2870060,
+          "summary": "主仆关系，地灵是方源的福地地灵"
+        }
+      ],
+      "relationId": "rel_1500f426efa7",
+      "subject": "方源",
+      "object": "地灵",
+      "relationType": "OTHER",
+      "summary": "主仆关系，地灵是方源的福地地灵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0030",
+          "startOffset": 2871208,
+          "endOffset": 2871220,
+          "summary": "方源搜魂东方长凡，获取其记忆"
+        }
+      ],
+      "relationId": "rel_11b671bc70f1",
+      "subject": "方源",
+      "object": "东方长凡",
+      "relationType": "CONFLICT",
+      "summary": "方源搜魂东方长凡，获取其记忆",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0042",
+          "startOffset": 2872002,
+          "endOffset": 2872084,
+          "summary": "方源对东方长凡有深重杀意，欲榨干价值后将其神魂俱灭"
+        }
+      ],
+      "relationId": "rel_7505177e268f",
+      "subject": "方源",
+      "object": "东方长凡",
+      "relationType": "CONFLICT",
+      "summary": "方源对东方长凡有深重杀意，欲榨干价值后将其神魂俱灭",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0036",
+          "startOffset": 2871763,
+          "endOffset": 2871775,
+          "summary": "东方长凡主动向方源提出合作，共同改良夺舍法门"
+        }
+      ],
+      "relationId": "rel_5320d3a7f4f6",
+      "subject": "东方长凡",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "东方长凡主动向方源提出合作，共同改良夺舍法门",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0002",
+          "startOffset": 2869790,
+          "endOffset": 2869808,
+          "summary": "方源询问地灵关于东方一族俘虏的安置情况，地灵已开辟地牢关押，并搜刮了凡蛊。"
+        }
+      ],
+      "eventId": "evt_3b3c3896f74b",
+      "eventType": "other",
+      "summary": "方源询问地灵关于东方一族俘虏的安置情况，地灵已开辟地牢关押，并搜刮了凡蛊。",
+      "actors": [
+        "方源",
+        "地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "俘虏被关押，等待后续处理。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0009",
+          "startOffset": 2870090,
+          "endOffset": 2870104,
+          "summary": "方源询问仙元石数量，地灵回答有一百三十七块。"
+        }
+      ],
+      "eventId": "evt_3b0451305af7",
+      "eventType": "other",
+      "summary": "方源询问仙元石数量，地灵回答有一百三十七块。",
+      "actors": [
+        "方源",
+        "地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定保留二十块，用七十块转化青提仙元，其余交给地灵采购炼蛊原料。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0031",
+          "startOffset": 2871233,
+          "endOffset": 2871273,
+          "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。"
+        }
+      ],
+      "eventId": "evt_3d07e02627e5",
+      "eventType": "other",
+      "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源得知可用夺舍法门重生，但会引发天地愤怒，且新身体没有第二个空窍。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0034",
+          "startOffset": 2871512,
+          "endOffset": 2871668,
+          "summary": "东方长凡以改良夺舍法门为条件，向方源提出合作，方源心动但忌惮，未立即答应"
+        }
+      ],
+      "eventId": "evt_6dced422bb68",
+      "eventType": "other",
+      "summary": "东方长凡以改良夺舍法门为条件，向方源提出合作，方源心动但忌惮，未立即答应",
+      "actors": [
+        "东方长凡",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源表示会榨干东方长凡价值后将其消灭，合作未达成"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0002",
+          "startOffset": 2869790,
+          "endOffset": 2869808,
+          "summary": "方源询问地灵关于东方一族俘虏的安置情况，地灵已开辟地牢关押，并搜刮了凡蛊。"
+        }
+      ],
+      "timelineId": "tl_3b3c3896f74b",
+      "eventId": "evt_3b3c3896f74b",
+      "chapterId": "ch_0814",
+      "orderHint": "chapter-order",
+      "summary": "方源询问地灵关于东方一族俘虏的安置情况，地灵已开辟地牢关押，并搜刮了凡蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0009",
+          "startOffset": 2870090,
+          "endOffset": 2870104,
+          "summary": "方源询问仙元石数量，地灵回答有一百三十七块。"
+        }
+      ],
+      "timelineId": "tl_3b0451305af7",
+      "eventId": "evt_3b0451305af7",
+      "chapterId": "ch_0814",
+      "orderHint": "chapter-order",
+      "summary": "方源询问仙元石数量，地灵回答有一百三十七块。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0031",
+          "startOffset": 2871233,
+          "endOffset": 2871273,
+          "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。"
+        }
+      ],
+      "timelineId": "tl_3d07e02627e5",
+      "eventId": "evt_3d07e02627e5",
+      "chapterId": "ch_0814",
+      "orderHint": "chapter-order",
+      "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0034",
+          "startOffset": 2871512,
+          "endOffset": 2871668,
+          "summary": "东方长凡以改良夺舍法门为条件，向方源提出合作，方源心动但忌惮，未立即答应"
+        }
+      ],
+      "timelineId": "tl_6dced422bb68",
+      "eventId": "evt_6dced422bb68",
+      "chapterId": "ch_0814",
+      "orderHint": "chapter-order",
+      "summary": "东方长凡以改良夺舍法门为条件，向方源提出合作，方源心动但忌惮，未立即答应",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0042",
+          "startOffset": 2872002,
+          "endOffset": 2872084,
+          "summary": "方源对东方长凡有深重杀意，欲榨干价值后将其神魂俱灭"
+        }
+      ],
+      "factId": "hf_0814_001",
+      "summary": "方源打算榨干东方长凡的剩余价值后将其神魂俱灭",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [
+        "东方长凡"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0030",
+          "startOffset": 2871208,
+          "endOffset": 2871220,
+          "summary": "方源搜魂东方长凡，获取其记忆"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0814",
+          "paragraphId": "ch_0814_p0031",
+          "startOffset": 2871233,
+          "endOffset": 2871273,
+          "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "第四次搜魂东方长凡获取夺舍法门",
+      "inferredMotive": "欲利用夺舍法门应对仙僵困境",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0002",
+      "startOffset": 2869790,
+      "endOffset": 2869792,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0002",
+      "startOffset": 2869795,
+      "endOffset": 2869797,
+      "summary": "狐仙福地地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0003",
+      "startOffset": 2869827,
+      "endOffset": 2869831,
+      "summary": "东方一族成员，已被方源杀死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0025",
+      "startOffset": 2870957,
+      "endOffset": 2870961,
+      "summary": "东方一族太上大长老，魂魄被方源搜魂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0033",
+      "startOffset": 2871487,
+      "endOffset": 2871508,
+      "summary": "仙僵，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0034",
+      "startOffset": 2871512,
+      "endOffset": 2871668,
+      "summary": "魂魄，智道宗师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0007",
+      "startOffset": 2870055,
+      "endOffset": 2870060,
+      "summary": "主仆关系，地灵是方源的福地地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0030",
+      "startOffset": 2871208,
+      "endOffset": 2871220,
+      "summary": "方源搜魂东方长凡，获取其记忆"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0042",
+      "startOffset": 2872002,
+      "endOffset": 2872084,
+      "summary": "方源对东方长凡有深重杀意，欲榨干价值后将其神魂俱灭"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0036",
+      "startOffset": 2871763,
+      "endOffset": 2871775,
+      "summary": "东方长凡主动向方源提出合作，共同改良夺舍法门"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0002",
+      "startOffset": 2869790,
+      "endOffset": 2869808,
+      "summary": "方源询问地灵关于东方一族俘虏的安置情况，地灵已开辟地牢关押，并搜刮了凡蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0009",
+      "startOffset": 2870090,
+      "endOffset": 2870104,
+      "summary": "方源询问仙元石数量，地灵回答有一百三十七块。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0814",
+      "paragraphId": "ch_0814_p0031",
+      "startOffset": 2871233,
+      "endOffset": 2871273,
+      "summary": "方源第四次搜魂东方长凡，得到夺舍法门，包括原始版本和东方长凡改良后的方法。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源内心独白直接支持其杀意和计划，属于方源私密知识，东方长凡不知情。这是一个原子事实：方源计划在榨干东方长凡价值后将其神魂俱灭。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源第四次搜魂东方长凡，得到夺舍法门（ptr_8, ptr_13）。方源是仙僵（ptr_5），夺舍法门可重生，但会引发天地愤怒且新身体无第二空窍（事件描述）。方源犹豫因第二空窍价值大（ptr_5）。推断其动机为应对仙僵困境，属合理一步推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual interactions between Fang Yuan and Dongfang Changfan (a single person's soul), and between Fang Yuan and the land spirit. The only collective mentioned is '东方一族' (Dongfang clan), but the seed facts only show individual members (Dongfang Qingyu killed, Dongfang Changfan captured/soul-searched). There is no concrete collective stake or pressure from the Dongfang clan as a group acting in the living world - Dongfang Changfan is a captive soul cooperating/negotiating individually. No other named faction/clan/group appears with a collective stake in the seed.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,859 @@
+{
+  "packageId": "ri_lw_ch_0105",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0105"
+    ],
+    "paragraphIds": [
+      "ch_0105_p0002",
+      "ch_0105_p0003",
+      "ch_0105_p0005",
+      "ch_0105_p0007",
+      "ch_0105_p0010",
+      "ch_0105_p0013",
+      "ch_0105_p0014",
+      "ch_0105_p0015",
+      "ch_0105_p0026",
+      "ch_0105_p0033",
+      "ch_0105_p0034",
+      "ch_0105_p0035",
+      "ch_0105_p0036",
+      "ch_0105_p0039",
+      "ch_0105_p0044",
+      "ch_0105_p0053",
+      "ch_0105_p0056",
+      "ch_0105_p0059",
+      "ch_0105_p0067",
+      "ch_0105_p0068",
+      "ch_0105_p0077"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0002",
+          "startOffset": 329778,
+          "endOffset": 329780,
+          "summary": "主角，酒肆主人"
+        }
+      ],
+      "entityId": "entity_63b9f07328db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "哥哥"
+      ],
+      "description": "主角，酒肆主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0005",
+          "startOffset": 329852,
+          "endOffset": 329854,
+          "summary": "方源弟弟"
+        }
+      ],
+      "entityId": "entity_377885391550",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [
+        "弟弟"
+      ],
+      "description": "方源弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0007",
+          "startOffset": 329924,
+          "endOffset": 329926,
+          "summary": "方源和方正的舅父，收养者"
+        }
+      ],
+      "entityId": "entity_1e9e65a7a796",
+      "name": "舅父",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和方正的舅父，收养者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0007",
+          "startOffset": 329926,
+          "endOffset": 329928,
+          "summary": "方源和方正的舅母，收养者"
+        }
+      ],
+      "entityId": "entity_0a5ad1de03ba",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和方正的舅母，收养者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0033",
+          "startOffset": 331362,
+          "endOffset": 331432,
+          "summary": "古月族蛊师，方正之兄"
+        }
+      ],
+      "entityId": "entity_63b9f07328db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "哥哥"
+      ],
+      "description": "古月族蛊师，方正之兄",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0034",
+          "startOffset": 331436,
+          "endOffset": 331517,
+          "summary": "古月族蛊师，方源之弟，甲等资质"
+        }
+      ],
+      "entityId": "entity_377885391550",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [
+        "弟弟"
+      ],
+      "description": "古月族蛊师，方源之弟，甲等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0053",
+          "startOffset": 332203,
+          "endOffset": 332278,
+          "summary": "古月族二转蛊师，方正所在小组组长，被誉为二转蛊师中第一人"
+        }
+      ],
+      "entityId": "entity_1cd7757ed01a",
+      "name": "古月青书",
+      "kind": "person",
+      "aliases": [
+        "青书",
+        "青书前辈"
+      ],
+      "description": "古月族二转蛊师，方正所在小组组长，被誉为二转蛊师中第一人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0067",
+          "startOffset": 332748,
+          "endOffset": 332750,
+          "summary": "古月族蛊师"
+        }
+      ],
+      "entityId": "entity_63b9f07328db",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0068",
+          "startOffset": 332781,
+          "endOffset": 332785,
+          "summary": "古月族二转蛊师第一人"
+        }
+      ],
+      "entityId": "entity_1cd7757ed01a",
+      "name": "古月青书",
+      "kind": "person",
+      "aliases": [
+        "青书"
+      ],
+      "description": "古月族二转蛊师第一人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0068",
+          "startOffset": 332781,
+          "endOffset": 332783,
+          "summary": "方源的弟弟"
+        }
+      ],
+      "entityId": "entity_377885391550",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0003",
+          "startOffset": 329804,
+          "endOffset": 329837,
+          "summary": "兄弟关系，但隔阂增大"
+        }
+      ],
+      "relationId": "rel_687cd805e473",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟关系，但隔阂增大",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0013",
+          "startOffset": 330247,
+          "endOffset": 330339,
+          "summary": "方源与舅父舅母因家产产生矛盾"
+        }
+      ],
+      "relationId": "rel_a7319a95ed99",
+      "subject": "方源",
+      "object": "舅父舅母",
+      "relationType": "CONFLICT",
+      "summary": "方源与舅父舅母因家产产生矛盾",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0014",
+          "startOffset": 330343,
+          "endOffset": 330425,
+          "summary": "方正认舅父舅母为父母，替他们讨要家产"
+        }
+      ],
+      "relationId": "rel_3b01b8fced45",
+      "subject": "方正",
+      "object": "舅父舅母",
+      "relationType": "FAMILY",
+      "summary": "方正认舅父舅母为父母，替他们讨要家产",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0035",
+          "startOffset": 331521,
+          "endOffset": 331554,
+          "summary": "兄弟关系，方源是哥哥，方正弟弟"
+        }
+      ],
+      "relationId": "rel_5dc7d99a8fbb",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟关系，方源是哥哥，方正弟弟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0056",
+          "startOffset": 332367,
+          "endOffset": 332415,
+          "summary": "方正视青书为哥哥，青书是方正的小组组长，关系亲近"
+        }
+      ],
+      "relationId": "rel_3d2eac5f9588",
+      "subject": "方正",
+      "object": "古月青书",
+      "relationType": "ALLY",
+      "summary": "方正视青书为哥哥，青书是方正的小组组长，关系亲近",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0059",
+          "startOffset": 332501,
+          "endOffset": 332541,
+          "summary": "青书对方源很感兴趣，想会一会他"
+        }
+      ],
+      "relationId": "rel_52ae1f4e2c14",
+      "subject": "古月青书",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "青书对方源很感兴趣，想会一会他",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0077",
+          "startOffset": 333036,
+          "endOffset": 333088,
+          "summary": "古月青书想买方源的酒虫"
+        }
+      ],
+      "relationId": "rel_d2269f3051d5",
+      "subject": "方源",
+      "object": "古月青书",
+      "relationType": "TRADE",
+      "summary": "古月青书想买方源的酒虫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0068",
+          "startOffset": 332781,
+          "endOffset": 332823,
+          "summary": "方源是方正的哥哥"
+        }
+      ],
+      "relationId": "rel_9944717ba713",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "方源是方正的哥哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0015",
+          "startOffset": 330429,
+          "endOffset": 330497,
+          "summary": "方正因家产问题与方源发生争执，并下战书要求斗蛊"
+        }
+      ],
+      "eventId": "evt_cffc38676078",
+      "eventType": "conflict",
+      "summary": "方正因家产问题与方源发生争执，并下战书要求斗蛊",
+      "actors": [
+        "方源",
+        "方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正提出斗蛊，若赢则要求方源归还部分家产给舅父舅母"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0026",
+          "startOffset": 330976,
+          "endOffset": 331059,
+          "summary": "方正展示二转蛊虫月霓裳，暴露底牌"
+        }
+      ],
+      "eventId": "evt_7da2b5f4e57e",
+      "eventType": "other",
+      "summary": "方正展示二转蛊虫月霓裳，暴露底牌",
+      "actors": [
+        "方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源得知方正拥有月霓裳蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0036",
+          "startOffset": 331558,
+          "endOffset": 331628,
+          "summary": "方正约方源斗蛊，方源以小组任务为由拖延，建议方正先征求组长古月青书同意"
+        }
+      ],
+      "eventId": "evt_fa7f177e3320",
+      "eventType": "conflict",
+      "summary": "方正约方源斗蛊，方源以小组任务为由拖延，建议方正先征求组长古月青书同意",
+      "actors": [
+        "方正",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正去找古月青书，青书决定一同前往东门酒肆会方源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0044",
+          "startOffset": 331869,
+          "endOffset": 331931,
+          "summary": "古月青书在庭院演武场练习用蛊，展示了青藤蛊、松针蛊、月旋蛊"
+        }
+      ],
+      "eventId": "evt_e73ba21c297e",
+      "eventType": "other",
+      "summary": "古月青书在庭院演武场练习用蛊，展示了青藤蛊、松针蛊、月旋蛊",
+      "actors": [
+        "古月青书"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正目睹后对青书实力感到敬佩"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0077",
+          "startOffset": 333036,
+          "endOffset": 333088,
+          "summary": "古月青书约方源在酒肆见面，提出购买酒虫的意向"
+        }
+      ],
+      "eventId": "evt_d5e00f707ee2",
+      "eventType": "trade",
+      "summary": "古月青书约方源在酒肆见面，提出购买酒虫的意向",
+      "actors": [
+        "方源",
+        "古月青书"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "交易尚未完成，方源未回应"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0015",
+          "startOffset": 330429,
+          "endOffset": 330497,
+          "summary": "方正因家产问题与方源发生争执，并下战书要求斗蛊"
+        }
+      ],
+      "timelineId": "tl_cffc38676078",
+      "eventId": "evt_cffc38676078",
+      "chapterId": "ch_0105",
+      "orderHint": "chapter-order",
+      "summary": "方正因家产问题与方源发生争执，并下战书要求斗蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0026",
+          "startOffset": 330976,
+          "endOffset": 331059,
+          "summary": "方正展示二转蛊虫月霓裳，暴露底牌"
+        }
+      ],
+      "timelineId": "tl_7da2b5f4e57e",
+      "eventId": "evt_7da2b5f4e57e",
+      "chapterId": "ch_0105",
+      "orderHint": "chapter-order",
+      "summary": "方正展示二转蛊虫月霓裳，暴露底牌",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0036",
+          "startOffset": 331558,
+          "endOffset": 331628,
+          "summary": "方正约方源斗蛊，方源以小组任务为由拖延，建议方正先征求组长古月青书同意"
+        }
+      ],
+      "timelineId": "tl_fa7f177e3320",
+      "eventId": "evt_fa7f177e3320",
+      "chapterId": "ch_0105",
+      "orderHint": "chapter-order",
+      "summary": "方正约方源斗蛊，方源以小组任务为由拖延，建议方正先征求组长古月青书同意",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0044",
+          "startOffset": 331869,
+          "endOffset": 331931,
+          "summary": "古月青书在庭院演武场练习用蛊，展示了青藤蛊、松针蛊、月旋蛊"
+        }
+      ],
+      "timelineId": "tl_e73ba21c297e",
+      "eventId": "evt_e73ba21c297e",
+      "chapterId": "ch_0105",
+      "orderHint": "chapter-order",
+      "summary": "古月青书在庭院演武场练习用蛊，展示了青藤蛊、松针蛊、月旋蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0105",
+          "paragraphId": "ch_0105_p0077",
+          "startOffset": 333036,
+          "endOffset": 333088,
+          "summary": "古月青书约方源在酒肆见面，提出购买酒虫的意向"
+        }
+      ],
+      "timelineId": "tl_d5e00f707ee2",
+      "eventId": "evt_d5e00f707ee2",
+      "chapterId": "ch_0105",
+      "orderHint": "chapter-order",
+      "summary": "古月青书约方源在酒肆见面，提出购买酒虫的意向",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0002",
+      "startOffset": 329778,
+      "endOffset": 329780,
+      "summary": "主角，酒肆主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0005",
+      "startOffset": 329852,
+      "endOffset": 329854,
+      "summary": "方源弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0007",
+      "startOffset": 329924,
+      "endOffset": 329926,
+      "summary": "方源和方正的舅父，收养者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0007",
+      "startOffset": 329926,
+      "endOffset": 329928,
+      "summary": "方源和方正的舅母，收养者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0033",
+      "startOffset": 331362,
+      "endOffset": 331432,
+      "summary": "古月族蛊师，方正之兄"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0034",
+      "startOffset": 331436,
+      "endOffset": 331517,
+      "summary": "古月族蛊师，方源之弟，甲等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0053",
+      "startOffset": 332203,
+      "endOffset": 332278,
+      "summary": "古月族二转蛊师，方正所在小组组长，被誉为二转蛊师中第一人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0067",
+      "startOffset": 332748,
+      "endOffset": 332750,
+      "summary": "古月族蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0068",
+      "startOffset": 332781,
+      "endOffset": 332785,
+      "summary": "古月族二转蛊师第一人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0068",
+      "startOffset": 332781,
+      "endOffset": 332783,
+      "summary": "方源的弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0003",
+      "startOffset": 329804,
+      "endOffset": 329837,
+      "summary": "兄弟关系，但隔阂增大"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0013",
+      "startOffset": 330247,
+      "endOffset": 330339,
+      "summary": "方源与舅父舅母因家产产生矛盾"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0014",
+      "startOffset": 330343,
+      "endOffset": 330425,
+      "summary": "方正认舅父舅母为父母，替他们讨要家产"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0035",
+      "startOffset": 331521,
+      "endOffset": 331554,
+      "summary": "兄弟关系，方源是哥哥，方正弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0056",
+      "startOffset": 332367,
+      "endOffset": 332415,
+      "summary": "方正视青书为哥哥，青书是方正的小组组长，关系亲近"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0059",
+      "startOffset": 332501,
+      "endOffset": 332541,
+      "summary": "青书对方源很感兴趣，想会一会他"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0077",
+      "startOffset": 333036,
+      "endOffset": 333088,
+      "summary": "古月青书想买方源的酒虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0068",
+      "startOffset": 332781,
+      "endOffset": 332823,
+      "summary": "方源是方正的哥哥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0015",
+      "startOffset": 330429,
+      "endOffset": 330497,
+      "summary": "方正因家产问题与方源发生争执，并下战书要求斗蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0026",
+      "startOffset": 330976,
+      "endOffset": 331059,
+      "summary": "方正展示二转蛊虫月霓裳，暴露底牌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0036",
+      "startOffset": 331558,
+      "endOffset": 331628,
+      "summary": "方正约方源斗蛊，方源以小组任务为由拖延，建议方正先征求组长古月青书同意"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0105",
+      "paragraphId": "ch_0105_p0044",
+      "startOffset": 331869,
+      "endOffset": 331931,
+      "summary": "古月青书在庭院演武场练习用蛊，展示了青藤蛊、松针蛊、月旋蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (family conflict, challenge, trade intent) that are publicly known among the characters. No private knowledge, secret motives/plans, or future-known information is directly supported by the source text. The only potentially hidden element is Fang Yuan's private thoughts (e.g., '你以为我没有料到么？' in ch_0105_p0035), but this is a general attitude rather than a specific atomic fact. Gu Yue Qing Shu's interest in Fang Yuan (ch_0105_p0059) is stated openly in narration, not hidden. No fact qualifies as a hidden/future-known/player-visibility fact under the strict criteria.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "古月青书对方源感兴趣并想买方源的酒虫，但observed行为仅为表达购买意向和兴趣，不足以推断深层动机（如试探、拉拢等）。行为本身是明确的交易提议，但动机模糊——可能是单纯想买酒虫，也可能是借机接触方源。无法做出一步谨慎推断而不越界。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily involves individual-level conflicts (方源 vs 方正 family dispute, 方源 vs 舅父舅母 property conflict, 古月青书 wanting to buy 酒虫). No collective faction/group/clan pressure is clearly identifiable. 方源 and 方正 are individuals; 舅父舅母 are two individuals (not a named collective). 古月族 is mentioned as an affiliation label but no collective stake or pressure involving the clan as a whole is present in the seed facts. The conflicts are interpersonal/family inheritance disputes, not faction-level pressures. No named faction, clan, family group, or organization has a concrete collective stake in the seed.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,1450 @@
+{
+  "packageId": "ri_lw_ch_0886",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0886"
+    ],
+    "paragraphIds": [
+      "ch_0886_p0002",
+      "ch_0886_p0003",
+      "ch_0886_p0004",
+      "ch_0886_p0005",
+      "ch_0886_p0007",
+      "ch_0886_p0011",
+      "ch_0886_p0012",
+      "ch_0886_p0013",
+      "ch_0886_p0015",
+      "ch_0886_p0020",
+      "ch_0886_p0026",
+      "ch_0886_p0032",
+      "ch_0886_p0033",
+      "ch_0886_p0035",
+      "ch_0886_p0036",
+      "ch_0886_p0038",
+      "ch_0886_p0039",
+      "ch_0886_p0044",
+      "ch_0886_p0046",
+      "ch_0886_p0050",
+      "ch_0886_p0051",
+      "ch_0886_p0053",
+      "ch_0886_p0055",
+      "ch_0886_p0060",
+      "ch_0886_p0061",
+      "ch_0886_p0065",
+      "ch_0886_p0067",
+      "ch_0886_p0068",
+      "ch_0886_p0077",
+      "ch_0886_p0088",
+      "ch_0886_p0089",
+      "ch_0886_p0091",
+      "ch_0886_p0093"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0002",
+          "startOffset": 3121543,
+          "endOffset": 3121547,
+          "summary": "旁观者，推测琅琊福地真相"
+        }
+      ],
+      "entityId": "entity_6a422576cc74",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，推测琅琊福地真相",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0004",
+          "startOffset": 3121613,
+          "endOffset": 3121621,
+          "summary": "琅琊福地地灵，人类老者模样"
+        }
+      ],
+      "entityId": "entity_3bb99bfd6d8d",
+      "name": "琅琊地灵（人类老者）",
+      "kind": "single_person_title",
+      "aliases": [
+        "人类老者琅琊地灵",
+        "琅琊地灵"
+      ],
+      "description": "琅琊福地地灵，人类老者模样",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0005",
+          "startOffset": 3121648,
+          "endOffset": 3121652,
+          "summary": "毛民，琅琊福地主人"
+        }
+      ],
+      "entityId": "entity_cfd5a54f5850",
+      "name": "长毛老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民，琅琊福地主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0007",
+          "startOffset": 3121768,
+          "endOffset": 3121772,
+          "summary": "东海蛊仙，曾攻略玉露福地"
+        }
+      ],
+      "entityId": "entity_7c3adec9cb2f",
+      "name": "太白云生",
+      "kind": "person",
+      "aliases": [],
+      "description": "东海蛊仙，曾攻略玉露福地",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0013",
+          "startOffset": 3122073,
+          "endOffset": 3122076,
+          "summary": "来犯蛊仙，与黑城一起"
+        }
+      ],
+      "entityId": "entity_0fe9aee36ae8",
+      "name": "秦百胜",
+      "kind": "person",
+      "aliases": [],
+      "description": "来犯蛊仙，与黑城一起",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0013",
+          "startOffset": 3122077,
+          "endOffset": 3122079,
+          "summary": "来犯蛊仙，与秦百胜一起"
+        }
+      ],
+      "entityId": "entity_aba85508e090",
+      "name": "黑城",
+      "kind": "person",
+      "aliases": [],
+      "description": "来犯蛊仙，与秦百胜一起",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0015",
+          "startOffset": 3122105,
+          "endOffset": 3122107,
+          "summary": "七转毛民蛊仙，被秦百胜杀死"
+        }
+      ],
+      "entityId": "entity_ed0b2a1d97c0",
+      "name": "大毛",
+      "kind": "person",
+      "aliases": [],
+      "description": "七转毛民蛊仙，被秦百胜杀死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0020",
+          "startOffset": 3122269,
+          "endOffset": 3122271,
+          "summary": "女性毛民蛊仙，大毛的亲人"
+        }
+      ],
+      "entityId": "entity_25d9f9dcaaa2",
+      "name": "二毛",
+      "kind": "person",
+      "aliases": [],
+      "description": "女性毛民蛊仙，大毛的亲人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0026",
+          "startOffset": 3122448,
+          "endOffset": 3122451,
+          "summary": "旁观者，与方源一起"
+        }
+      ],
+      "entityId": "entity_fa4d41fa1698",
+      "name": "墨坦桑",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，与方源一起",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0012",
+          "startOffset": 3122006,
+          "endOffset": 3122010,
+          "summary": "另一个执念，毛民模样"
+        }
+      ],
+      "entityId": "entity_c01cc140a512",
+      "name": "毛民地灵",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "另一个执念，毛民模样",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0033",
+          "startOffset": 3122726,
+          "endOffset": 3122787,
+          "summary": "毛民蛊仙"
+        }
+      ],
+      "entityId": "entity_25d9f9dcaaa2",
+      "name": "二毛",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0033",
+          "startOffset": 3122726,
+          "endOffset": 3122787,
+          "summary": "毛民蛊仙"
+        }
+      ],
+      "entityId": "entity_ed0b2a1d97c0",
+      "name": "大毛",
+      "kind": "person",
+      "aliases": [],
+      "description": "毛民蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0035",
+          "startOffset": 3122811,
+          "endOffset": 3122907,
+          "summary": "蛊仙，攻打琅琊福地"
+        }
+      ],
+      "entityId": "entity_0fe9aee36ae8",
+      "name": "秦百胜",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，攻打琅琊福地",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0036",
+          "startOffset": 3122911,
+          "endOffset": 3122941,
+          "summary": "蛊仙，与方源一起"
+        }
+      ],
+      "entityId": "entity_fa4d41fa1698",
+      "name": "墨坦桑",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与方源一起",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0036",
+          "startOffset": 3122911,
+          "endOffset": 3122941,
+          "summary": "蛊仙，伪装成毛民"
+        }
+      ],
+      "entityId": "entity_6a422576cc74",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，伪装成毛民",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0039",
+          "startOffset": 3123069,
+          "endOffset": 3123121,
+          "summary": "琅琊福地的地灵"
+        }
+      ],
+      "entityId": "entity_e95593ced88b",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊福地的地灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0053",
+          "startOffset": 3123486,
+          "endOffset": 3123521,
+          "summary": "蛊仙，秦百胜一方"
+        }
+      ],
+      "entityId": "entity_6cf2c1360e96",
+      "name": "回风子",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，秦百胜一方",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0061",
+          "startOffset": 3123688,
+          "endOffset": 3123734,
+          "summary": "秦百胜一方，未知身份"
+        }
+      ],
+      "entityId": "entity_e290ce9b0874",
+      "name": "神秘黑袍蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "秦百胜一方，未知身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0061",
+          "startOffset": 3123688,
+          "endOffset": 3123734,
+          "summary": "秦百胜一方"
+        }
+      ],
+      "entityId": "entity_6a4f657ce36b",
+      "name": "姜钰仙子",
+      "kind": "person",
+      "aliases": [],
+      "description": "秦百胜一方",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0067",
+          "startOffset": 3123880,
+          "endOffset": 3123894,
+          "summary": "蛊仙，与方源一同进入琅琊福地"
+        }
+      ],
+      "entityId": "entity_fa4d41fa1698",
+      "name": "墨坦桑",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与方源一同进入琅琊福地",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0068",
+          "startOffset": 3123898,
+          "endOffset": 3123944,
+          "summary": "蛊仙，与墨坦桑一同进入琅琊福地"
+        }
+      ],
+      "entityId": "entity_6a422576cc74",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与墨坦桑一同进入琅琊福地",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0077",
+          "startOffset": 3124290,
+          "endOffset": 3124368,
+          "summary": "蛊仙，与方源等人一同在琅琊福地"
+        }
+      ],
+      "entityId": "entity_aba85508e090",
+      "name": "黑城",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与方源等人一同在琅琊福地",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0088",
+          "startOffset": 3124737,
+          "endOffset": 3124773,
+          "summary": "蛊仙，傲立高空，引发空间破裂"
+        }
+      ],
+      "entityId": "entity_0fe9aee36ae8",
+      "name": "秦百胜",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，傲立高空，引发空间破裂",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0091",
+          "startOffset": 3124821,
+          "endOffset": 3124863,
+          "summary": "琅琊福地的地灵，指挥毛民蛊仙"
+        }
+      ],
+      "entityId": "entity_e95593ced88b",
+      "name": "琅琊地灵",
+      "kind": "person",
+      "aliases": [],
+      "description": "琅琊福地的地灵，指挥毛民蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0005",
+          "startOffset": 3121648,
+          "endOffset": 3121656,
+          "summary": "琅琊地灵爱护毛民，将他们安排在炼炉中保护"
+        }
+      ],
+      "relationId": "rel_b66e6a5adb1f",
+      "subject": "琅琊地灵（人类老者）",
+      "object": "毛民蛊仙",
+      "relationType": "FACTION",
+      "summary": "琅琊地灵爱护毛民，将他们安排在炼炉中保护",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0005",
+          "startOffset": 3121648,
+          "endOffset": 3121652,
+          "summary": "长毛老祖是毛民，与毛民同族"
+        }
+      ],
+      "relationId": "rel_25310d7e810d",
+      "subject": "长毛老祖",
+      "object": "毛民",
+      "relationType": "FAMILY",
+      "summary": "长毛老祖是毛民，与毛民同族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0015",
+          "startOffset": 3122105,
+          "endOffset": 3122108,
+          "summary": "秦百胜用五指拳心剑杀招杀死大毛"
+        }
+      ],
+      "relationId": "rel_1ba351dfa8ba",
+      "subject": "秦百胜",
+      "object": "大毛",
+      "relationType": "CONFLICT",
+      "summary": "秦百胜用五指拳心剑杀招杀死大毛",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0020",
+          "startOffset": 3122269,
+          "endOffset": 3122271,
+          "summary": "二毛称呼大毛，可能是亲人"
+        }
+      ],
+      "relationId": "rel_1c6f92a2ace7",
+      "subject": "大毛",
+      "object": "二毛",
+      "relationType": "FAMILY",
+      "summary": "二毛称呼大毛，可能是亲人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0038",
+          "startOffset": 3123027,
+          "endOffset": 3123065,
+          "summary": "秦百胜攻打琅琊福地，要求献上仙蛊屋炼炉，琅琊地灵拒绝"
+        }
+      ],
+      "relationId": "rel_40a1d4733749",
+      "subject": "秦百胜",
+      "object": "琅琊地灵",
+      "relationType": "CONFLICT",
+      "summary": "秦百胜攻打琅琊福地，要求献上仙蛊屋炼炉，琅琊地灵拒绝",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0051",
+          "startOffset": 3123432,
+          "endOffset": 3123463,
+          "summary": "秦百胜识破方源伪装，但暂时未直接攻击"
+        }
+      ],
+      "relationId": "rel_aa6fe1a408d0",
+      "subject": "秦百胜",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "秦百胜识破方源伪装，但暂时未直接攻击",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0046",
+          "startOffset": 3123328,
+          "endOffset": 3123356,
+          "summary": "方源支援琅琊福地，但暂未全力出手"
+        }
+      ],
+      "relationId": "rel_a536be744c0d",
+      "subject": "方源",
+      "object": "琅琊地灵",
+      "relationType": "ALLY",
+      "summary": "方源支援琅琊福地，但暂未全力出手",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0091",
+          "startOffset": 3124821,
+          "endOffset": 3124863,
+          "summary": "琅琊地灵指挥毛民蛊仙结战阵"
+        }
+      ],
+      "relationId": "rel_b6d70e8e72db",
+      "subject": "琅琊地灵",
+      "object": "毛民蛊仙",
+      "relationType": "FACTION",
+      "summary": "琅琊地灵指挥毛民蛊仙结战阵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0093",
+          "startOffset": 3124890,
+          "endOffset": 3124965,
+          "summary": "琅琊地灵秘密传音让墨坦桑入阵"
+        }
+      ],
+      "relationId": "rel_e8fe2f886c77",
+      "subject": "琅琊地灵",
+      "object": "墨坦桑",
+      "relationType": "ALLY",
+      "summary": "琅琊地灵秘密传音让墨坦桑入阵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0093",
+          "startOffset": 3124890,
+          "endOffset": 3124965,
+          "summary": "琅琊地灵秘密传音让方源入阵"
+        }
+      ],
+      "relationId": "rel_1d6b85439767",
+      "subject": "琅琊地灵",
+      "object": "方源",
+      "relationType": "ALLY",
+      "summary": "琅琊地灵秘密传音让方源入阵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0015",
+          "startOffset": 3122105,
+          "endOffset": 3122108,
+          "summary": "秦百胜用五指拳心剑杀招杀死七转毛民蛊仙大毛"
+        }
+      ],
+      "eventId": "evt_8b7db33b557c",
+      "eventType": "death",
+      "summary": "秦百胜用五指拳心剑杀招杀死七转毛民蛊仙大毛",
+      "actors": [
+        "秦百胜",
+        "大毛"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "毛民蛊仙们情绪崩溃，哭泣"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0011",
+          "startOffset": 3121945,
+          "endOffset": 3121953,
+          "summary": "人类模样的琅琊地灵无法解决第四波攻势，让另一个执念（毛民地灵）登场"
+        }
+      ],
+      "eventId": "evt_16568a7b782d",
+      "eventType": "other",
+      "summary": "人类模样的琅琊地灵无法解决第四波攻势，让另一个执念（毛民地灵）登场",
+      "actors": [
+        "琅琊地灵（人类老者）",
+        "毛民地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "毛民蛊仙被召唤到战场"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0032",
+          "startOffset": 3122649,
+          "endOffset": 3122657,
+          "summary": "琅琊地灵检查大毛尸体，阖上其眼皮"
+        }
+      ],
+      "eventId": "evt_56e82f9f4152",
+      "eventType": "other",
+      "summary": "琅琊地灵检查大毛尸体，阖上其眼皮",
+      "actors": [
+        "琅琊地灵（人类老者）",
+        "大毛"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "确认大毛死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0033",
+          "startOffset": 3122726,
+          "endOffset": 3122787,
+          "summary": "毛民蛊仙大毛被秦百胜杀死"
+        }
+      ],
+      "eventId": "evt_5cf7912fb0ef",
+      "eventType": "death",
+      "summary": "毛民蛊仙大毛被秦百胜杀死",
+      "actors": [
+        "大毛"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "二毛崩溃昏厥"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0044",
+          "startOffset": 3123274,
+          "endOffset": 3123284,
+          "summary": "秦百胜使用仙道杀招碎城锤击碎云阁，摧毁十二波云迷澜阵"
+        }
+      ],
+      "eventId": "evt_4203e011ff99",
+      "eventType": "conflict",
+      "summary": "秦百胜使用仙道杀招碎城锤击碎云阁，摧毁十二波云迷澜阵",
+      "actors": [
+        "秦百胜",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "云阁全毁，阵法破灭，露出白天白地"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0060",
+          "startOffset": 3123651,
+          "endOffset": 3123684,
+          "summary": "秦百胜、神秘黑袍蛊仙、姜钰仙子同时出手，秦百胜朝天抓取炼炉，另两人向地面云土出手"
+        }
+      ],
+      "eventId": "evt_465ce72c744e",
+      "eventType": "other",
+      "summary": "秦百胜、神秘黑袍蛊仙、姜钰仙子同时出手，秦百胜朝天抓取炼炉，另两人向地面云土出手",
+      "actors": [
+        "秦百胜",
+        "神秘黑袍蛊仙",
+        "姜钰仙子"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "天空雷鸣闪电，虚空破碎，云土被撕裂"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0050",
+          "startOffset": 3123419,
+          "endOffset": 3123428,
+          "summary": "方源被碎城锤击飞后，伪装成毛民模样"
+        }
+      ],
+      "eventId": "evt_966bfe3a8633",
+      "eventType": "other",
+      "summary": "方源被碎城锤击飞后，伪装成毛民模样",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "秦百胜识破但未点破"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0065",
+          "startOffset": 3123826,
+          "endOffset": 3123854,
+          "summary": "云土层被撕裂，露出真正的琅琊福地，下方是广袤海洋和三块大陆，毛民是主宰"
+        }
+      ],
+      "eventId": "evt_15399ffc41cb",
+      "eventType": "other",
+      "summary": "云土层被撕裂，露出真正的琅琊福地，下方是广袤海洋和三块大陆，毛民是主宰",
+      "actors": [
+        "方源",
+        "墨坦桑",
+        "黑城"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "众仙震惊于琅琊福地的真实规模"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0089",
+          "startOffset": 3124777,
+          "endOffset": 3124803,
+          "summary": "秦百胜引发空间破裂，显现出炼炉的组成部分，琅琊地灵下令结战阵抵御"
+        }
+      ],
+      "eventId": "evt_3463d1bd0c8e",
+      "eventType": "conflict",
+      "summary": "秦百胜引发空间破裂，显现出炼炉的组成部分，琅琊地灵下令结战阵抵御",
+      "actors": [
+        "秦百胜",
+        "琅琊地灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "琅琊地灵秘密传音方源和墨坦桑入阵，声称再坚持片刻敌人将死"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0015",
+          "startOffset": 3122105,
+          "endOffset": 3122108,
+          "summary": "秦百胜用五指拳心剑杀招杀死七转毛民蛊仙大毛"
+        }
+      ],
+      "timelineId": "tl_8b7db33b557c",
+      "eventId": "evt_8b7db33b557c",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "秦百胜用五指拳心剑杀招杀死七转毛民蛊仙大毛",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0011",
+          "startOffset": 3121945,
+          "endOffset": 3121953,
+          "summary": "人类模样的琅琊地灵无法解决第四波攻势，让另一个执念（毛民地灵）登场"
+        }
+      ],
+      "timelineId": "tl_16568a7b782d",
+      "eventId": "evt_16568a7b782d",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "人类模样的琅琊地灵无法解决第四波攻势，让另一个执念（毛民地灵）登场",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0032",
+          "startOffset": 3122649,
+          "endOffset": 3122657,
+          "summary": "琅琊地灵检查大毛尸体，阖上其眼皮"
+        }
+      ],
+      "timelineId": "tl_56e82f9f4152",
+      "eventId": "evt_56e82f9f4152",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "琅琊地灵检查大毛尸体，阖上其眼皮",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0033",
+          "startOffset": 3122726,
+          "endOffset": 3122787,
+          "summary": "毛民蛊仙大毛被秦百胜杀死"
+        }
+      ],
+      "timelineId": "tl_5cf7912fb0ef",
+      "eventId": "evt_5cf7912fb0ef",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "毛民蛊仙大毛被秦百胜杀死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0044",
+          "startOffset": 3123274,
+          "endOffset": 3123284,
+          "summary": "秦百胜使用仙道杀招碎城锤击碎云阁，摧毁十二波云迷澜阵"
+        }
+      ],
+      "timelineId": "tl_4203e011ff99",
+      "eventId": "evt_4203e011ff99",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "秦百胜使用仙道杀招碎城锤击碎云阁，摧毁十二波云迷澜阵",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0060",
+          "startOffset": 3123651,
+          "endOffset": 3123684,
+          "summary": "秦百胜、神秘黑袍蛊仙、姜钰仙子同时出手，秦百胜朝天抓取炼炉，另两人向地面云土出手"
+        }
+      ],
+      "timelineId": "tl_465ce72c744e",
+      "eventId": "evt_465ce72c744e",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "秦百胜、神秘黑袍蛊仙、姜钰仙子同时出手，秦百胜朝天抓取炼炉，另两人向地面云土出手",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0050",
+          "startOffset": 3123419,
+          "endOffset": 3123428,
+          "summary": "方源被碎城锤击飞后，伪装成毛民模样"
+        }
+      ],
+      "timelineId": "tl_966bfe3a8633",
+      "eventId": "evt_966bfe3a8633",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "方源被碎城锤击飞后，伪装成毛民模样",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0065",
+          "startOffset": 3123826,
+          "endOffset": 3123854,
+          "summary": "云土层被撕裂，露出真正的琅琊福地，下方是广袤海洋和三块大陆，毛民是主宰"
+        }
+      ],
+      "timelineId": "tl_15399ffc41cb",
+      "eventId": "evt_15399ffc41cb",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "云土层被撕裂，露出真正的琅琊福地，下方是广袤海洋和三块大陆，毛民是主宰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0886",
+          "paragraphId": "ch_0886_p0089",
+          "startOffset": 3124777,
+          "endOffset": 3124803,
+          "summary": "秦百胜引发空间破裂，显现出炼炉的组成部分，琅琊地灵下令结战阵抵御"
+        }
+      ],
+      "timelineId": "tl_3463d1bd0c8e",
+      "eventId": "evt_3463d1bd0c8e",
+      "chapterId": "ch_0886",
+      "orderHint": "chapter-order",
+      "summary": "秦百胜引发空间破裂，显现出炼炉的组成部分，琅琊地灵下令结战阵抵御",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0002",
+      "startOffset": 3121543,
+      "endOffset": 3121547,
+      "summary": "旁观者，推测琅琊福地真相"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0004",
+      "startOffset": 3121613,
+      "endOffset": 3121621,
+      "summary": "琅琊福地地灵，人类老者模样"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0005",
+      "startOffset": 3121648,
+      "endOffset": 3121652,
+      "summary": "毛民，琅琊福地主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0007",
+      "startOffset": 3121768,
+      "endOffset": 3121772,
+      "summary": "东海蛊仙，曾攻略玉露福地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0013",
+      "startOffset": 3122073,
+      "endOffset": 3122076,
+      "summary": "来犯蛊仙，与黑城一起"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0013",
+      "startOffset": 3122077,
+      "endOffset": 3122079,
+      "summary": "来犯蛊仙，与秦百胜一起"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0015",
+      "startOffset": 3122105,
+      "endOffset": 3122107,
+      "summary": "七转毛民蛊仙，被秦百胜杀死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0020",
+      "startOffset": 3122269,
+      "endOffset": 3122271,
+      "summary": "女性毛民蛊仙，大毛的亲人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0026",
+      "startOffset": 3122448,
+      "endOffset": 3122451,
+      "summary": "旁观者，与方源一起"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0012",
+      "startOffset": 3122006,
+      "endOffset": 3122010,
+      "summary": "另一个执念，毛民模样"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0033",
+      "startOffset": 3122726,
+      "endOffset": 3122787,
+      "summary": "毛民蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0035",
+      "startOffset": 3122811,
+      "endOffset": 3122907,
+      "summary": "蛊仙，攻打琅琊福地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0036",
+      "startOffset": 3122911,
+      "endOffset": 3122941,
+      "summary": "蛊仙，与方源一起"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0039",
+      "startOffset": 3123069,
+      "endOffset": 3123121,
+      "summary": "琅琊福地的地灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0053",
+      "startOffset": 3123486,
+      "endOffset": 3123521,
+      "summary": "蛊仙，秦百胜一方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0061",
+      "startOffset": 3123688,
+      "endOffset": 3123734,
+      "summary": "秦百胜一方，未知身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0067",
+      "startOffset": 3123880,
+      "endOffset": 3123894,
+      "summary": "蛊仙，与方源一同进入琅琊福地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0068",
+      "startOffset": 3123898,
+      "endOffset": 3123944,
+      "summary": "蛊仙，与墨坦桑一同进入琅琊福地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0077",
+      "startOffset": 3124290,
+      "endOffset": 3124368,
+      "summary": "蛊仙，与方源等人一同在琅琊福地"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0088",
+      "startOffset": 3124737,
+      "endOffset": 3124773,
+      "summary": "蛊仙，傲立高空，引发空间破裂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0091",
+      "startOffset": 3124821,
+      "endOffset": 3124863,
+      "summary": "琅琊福地的地灵，指挥毛民蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0005",
+      "startOffset": 3121648,
+      "endOffset": 3121656,
+      "summary": "琅琊地灵爱护毛民，将他们安排在炼炉中保护"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0015",
+      "startOffset": 3122105,
+      "endOffset": 3122108,
+      "summary": "秦百胜用五指拳心剑杀招杀死大毛"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0038",
+      "startOffset": 3123027,
+      "endOffset": 3123065,
+      "summary": "秦百胜攻打琅琊福地，要求献上仙蛊屋炼炉，琅琊地灵拒绝"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0051",
+      "startOffset": 3123432,
+      "endOffset": 3123463,
+      "summary": "秦百胜识破方源伪装，但暂时未直接攻击"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0046",
+      "startOffset": 3123328,
+      "endOffset": 3123356,
+      "summary": "方源支援琅琊福地，但暂未全力出手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0093",
+      "startOffset": 3124890,
+      "endOffset": 3124965,
+      "summary": "琅琊地灵秘密传音让墨坦桑入阵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0011",
+      "startOffset": 3121945,
+      "endOffset": 3121953,
+      "summary": "人类模样的琅琊地灵无法解决第四波攻势，让另一个执念（毛民地灵）登场"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0032",
+      "startOffset": 3122649,
+      "endOffset": 3122657,
+      "summary": "琅琊地灵检查大毛尸体，阖上其眼皮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0044",
+      "startOffset": 3123274,
+      "endOffset": 3123284,
+      "summary": "秦百胜使用仙道杀招碎城锤击碎云阁，摧毁十二波云迷澜阵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0060",
+      "startOffset": 3123651,
+      "endOffset": 3123684,
+      "summary": "秦百胜、神秘黑袍蛊仙、姜钰仙子同时出手，秦百胜朝天抓取炼炉，另两人向地面云土出手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0050",
+      "startOffset": 3123419,
+      "endOffset": 3123428,
+      "summary": "方源被碎城锤击飞后，伪装成毛民模样"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0065",
+      "startOffset": 3123826,
+      "endOffset": 3123854,
+      "summary": "云土层被撕裂，露出真正的琅琊福地，下方是广袤海洋和三块大陆，毛民是主宰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0886",
+      "paragraphId": "ch_0886_p0089",
+      "startOffset": 3124777,
+      "endOffset": 3124803,
+      "summary": "秦百胜引发空间破裂，显现出炼炉的组成部分，琅琊地灵下令结战阵抵御"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes an ongoing battle scene from the narrator's perspective. Most events (秦百胜 killing 大毛, 琅琊地灵 appearing, the cloud layer being torn to reveal the real 琅琊福地) are publicly observable events during combat, not hidden/private knowledge. The entities' descriptions are mostly visible to observers (方源, 墨坦桑). No directly supported private knowledge, secret plans, or future-known information is present in the source pointers. The '琅琊地灵（人类老者）' and '毛民地灵' duality is observable during the battle, not a hidden fact. No source pointer supports any character knowing something others do not.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows observable actions (秦百胜 attacks, kills 大毛, demands 炼炉) but the motives behind these actions are not directly stated. While 秦百胜 demands the 仙蛊屋炼炉 and attacks, the seed does not directly state his underlying motive (e.g., why he wants the 炼炉, who sent him, etc.). Only behavior is visible; motive is ambiguous. Cannot infer strategic intent like '夺取炼炉' as a motive without direct source support.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "毛民蛊仙群体在种子中明确出现（ptr_5、ptr_11），大毛（七转毛民蛊仙）被秦百胜杀死（ptr_7），二毛作为女性毛民蛊仙哀悼（ptr_8），琅琊地灵指挥毛民蛊仙结战阵（relation）。毛民蛊仙作为集体面临外部入侵和族人死亡的生存威胁，压力合理。likelyReactions为保守的一步反应。",
+      "IF export filter quarantined 7 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

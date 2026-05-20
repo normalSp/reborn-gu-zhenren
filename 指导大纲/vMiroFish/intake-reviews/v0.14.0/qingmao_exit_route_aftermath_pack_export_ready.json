@@ -1,4 +1,4 @@
-{
+﻿{
   "version": 1,
   "requestId": "mirofish-request-2026-05-17-qingmao-exit-route-aftermath-pack",
   "targetPhase": "v0.14.0 青茅后续路线承接 / exit-route aftermath",
@@ -10,7 +10,7 @@
     "reborngIntake": "quote-redacted JSON candidates only"
   },
   "canonBoundary": {
-    "runtimeAuthority": "none",
+    "runtimeAuthority": "candidate_only",
     "canonAuthority": "human_review_required",
     "hiddenFacts": "hidden_ref_only_until_RebornG_gate",
     "deepSeekAuthority": "none"

@@ -1,0 +1,690 @@
+{
+  "packageId": "ri_lw_ch_0130",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0130"
+    ],
+    "paragraphIds": [
+      "ch_0130_p0002",
+      "ch_0130_p0010",
+      "ch_0130_p0018",
+      "ch_0130_p0019",
+      "ch_0130_p0022",
+      "ch_0130_p0023",
+      "ch_0130_p0028",
+      "ch_0130_p0033",
+      "ch_0130_p0040",
+      "ch_0130_p0043",
+      "ch_0130_p0054",
+      "ch_0130_p0060",
+      "ch_0130_p0065",
+      "ch_0130_p0072",
+      "ch_0130_p0087"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0002",
+          "startOffset": 422190,
+          "endOffset": 422192,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_4dc1bb8ed3f2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0033",
+          "startOffset": 423329,
+          "endOffset": 423331,
+          "summary": "主角，使用地听肉耳草探索金蜈洞"
+        }
+      ],
+      "entityId": "entity_4dc1bb8ed3f2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，使用地听肉耳草探索金蜈洞",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0072",
+          "startOffset": 424771,
+          "endOffset": 424773,
+          "summary": "主角，二转中阶蛊师"
+        }
+      ],
+      "entityId": "entity_4dc1bb8ed3f2",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，二转中阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0072",
+          "startOffset": 424771,
+          "endOffset": 424775,
+          "summary": "前人，留下地听肉耳草和线索"
+        }
+      ],
+      "entityId": "entity_cad769d54481",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [],
+      "description": "前人，留下地听肉耳草和线索",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0072",
+          "startOffset": 424771,
+          "endOffset": 424773,
+          "summary": "方源考虑收服锯齿金蜈"
+        }
+      ],
+      "relationId": "rel_9a6e748db3bb",
+      "subject": "方源",
+      "object": "锯齿金蜈",
+      "relationType": "OTHER",
+      "summary": "方源考虑收服锯齿金蜈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0010",
+          "startOffset": 422474,
+          "endOffset": 422476,
+          "summary": "方源催动地听肉耳草，听力暴涨，右耳长出参须，停止催动后恢复原状。"
+        }
+      ],
+      "eventId": "evt_954f12351106",
+      "eventType": "cultivation",
+      "summary": "方源催动地听肉耳草，听力暴涨，右耳长出参须，停止催动后恢复原状。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得了侦察之蛊地听肉耳草。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0019",
+          "startOffset": 422797,
+          "endOffset": 422799,
+          "summary": "方源处理昨晚割耳种蛊的血水，用煤石掩盖，伪装成清洗火炉的污水。"
+        }
+      ],
+      "eventId": "evt_862761e08cdf",
+      "eventType": "other",
+      "summary": "方源处理昨晚割耳种蛊的血水，用煤石掩盖，伪装成清洗火炉的污水。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "消除了痕迹。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0023",
+          "startOffset": 422987,
+          "endOffset": 422989,
+          "summary": "方源捉到一头幼鹿，用隐鳞蛊隐没身形，带到石门前，准备进入石缝秘洞。"
+        }
+      ],
+      "eventId": "evt_6a47d5ccc38c",
+      "eventType": "other",
+      "summary": "方源捉到一头幼鹿，用隐鳞蛊隐没身形，带到石门前，准备进入石缝秘洞。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源准备再次进入石缝秘洞。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0028",
+          "startOffset": 423134,
+          "endOffset": 423136,
+          "summary": "方源催动地听肉耳草，听到玉眼石猴的心跳声，并试图感知石门后的声音。"
+        }
+      ],
+      "eventId": "evt_6d787c879c26",
+      "eventType": "other",
+      "summary": "方源催动地听肉耳草，听到玉眼石猴的心跳声，并试图感知石门后的声音。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源感知到玉眼石猴的存在，但未提及石门后情况。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0040",
+          "startOffset": 423635,
+          "endOffset": 423645,
+          "summary": "方源使用地听肉耳草，参须扎根石门，侦测到石门后的声音，包括稀疏声潮和石猴心跳声。"
+        }
+      ],
+      "eventId": "evt_1d00a0be9151",
+      "eventType": "other",
+      "summary": "方源使用地听肉耳草，参须扎根石门，侦测到石门后的声音，包括稀疏声潮和石猴心跳声。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源判断出稀疏声潮是蜈蚣爬行声，并听到幼鹿被蜈蚣群杀死的过程。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0043",
+          "startOffset": 423778,
+          "endOffset": 423782,
+          "summary": "方源推开石门，发现幽深黑暗的甬道。"
+        }
+      ],
+      "eventId": "evt_1fa155db5afd",
+      "eventType": "other",
+      "summary": "方源推开石门，发现幽深黑暗的甬道。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将幼鹿抛入甬道作为探路工具。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0060",
+          "startOffset": 424335,
+          "endOffset": 424345,
+          "summary": "幼鹿被方源抛入甬道后，遭遇蜈蚣群，被杀死并啃噬。"
+        }
+      ],
+      "eventId": "evt_46c59647f3e9",
+      "eventType": "death",
+      "summary": "幼鹿被方源抛入甬道后，遭遇蜈蚣群，被杀死并啃噬。",
+      "actors": [
+        "幼鹿"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源通过地听肉耳草听到幼鹿死亡过程，并注意到一个特别的嗡嗡声。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0065",
+          "startOffset": 424501,
+          "endOffset": 424517,
+          "summary": "锯齿金蜈作为三转野生蛊虫出现，是蜈蚣群的虫王"
+        }
+      ],
+      "eventId": "evt_9d36935853f6",
+      "eventType": "appearance",
+      "summary": "锯齿金蜈作为三转野生蛊虫出现，是蜈蚣群的虫王",
+      "actors": [
+        "锯齿金蜈"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "蜈蚣群安静，让出幼鹿尸体"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0087",
+          "startOffset": 425565,
+          "endOffset": 425567,
+          "summary": "方源决定暂时不探索，关闭石门退出"
+        }
+      ],
+      "eventId": "evt_67840c69d5ed",
+      "eventType": "other",
+      "summary": "方源决定暂时不探索，关闭石门退出",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "探索暂停"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0010",
+          "startOffset": 422474,
+          "endOffset": 422476,
+          "summary": "方源催动地听肉耳草，听力暴涨，右耳长出参须，停止催动后恢复原状。"
+        }
+      ],
+      "timelineId": "tl_954f12351106",
+      "eventId": "evt_954f12351106",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源催动地听肉耳草，听力暴涨，右耳长出参须，停止催动后恢复原状。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0019",
+          "startOffset": 422797,
+          "endOffset": 422799,
+          "summary": "方源处理昨晚割耳种蛊的血水，用煤石掩盖，伪装成清洗火炉的污水。"
+        }
+      ],
+      "timelineId": "tl_862761e08cdf",
+      "eventId": "evt_862761e08cdf",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源处理昨晚割耳种蛊的血水，用煤石掩盖，伪装成清洗火炉的污水。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0023",
+          "startOffset": 422987,
+          "endOffset": 422989,
+          "summary": "方源捉到一头幼鹿，用隐鳞蛊隐没身形，带到石门前，准备进入石缝秘洞。"
+        }
+      ],
+      "timelineId": "tl_6a47d5ccc38c",
+      "eventId": "evt_6a47d5ccc38c",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源捉到一头幼鹿，用隐鳞蛊隐没身形，带到石门前，准备进入石缝秘洞。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0028",
+          "startOffset": 423134,
+          "endOffset": 423136,
+          "summary": "方源催动地听肉耳草，听到玉眼石猴的心跳声，并试图感知石门后的声音。"
+        }
+      ],
+      "timelineId": "tl_6d787c879c26",
+      "eventId": "evt_6d787c879c26",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源催动地听肉耳草，听到玉眼石猴的心跳声，并试图感知石门后的声音。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0040",
+          "startOffset": 423635,
+          "endOffset": 423645,
+          "summary": "方源使用地听肉耳草，参须扎根石门，侦测到石门后的声音，包括稀疏声潮和石猴心跳声。"
+        }
+      ],
+      "timelineId": "tl_1d00a0be9151",
+      "eventId": "evt_1d00a0be9151",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源使用地听肉耳草，参须扎根石门，侦测到石门后的声音，包括稀疏声潮和石猴心跳声。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0043",
+          "startOffset": 423778,
+          "endOffset": 423782,
+          "summary": "方源推开石门，发现幽深黑暗的甬道。"
+        }
+      ],
+      "timelineId": "tl_1fa155db5afd",
+      "eventId": "evt_1fa155db5afd",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源推开石门，发现幽深黑暗的甬道。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0060",
+          "startOffset": 424335,
+          "endOffset": 424345,
+          "summary": "幼鹿被方源抛入甬道后，遭遇蜈蚣群，被杀死并啃噬。"
+        }
+      ],
+      "timelineId": "tl_46c59647f3e9",
+      "eventId": "evt_46c59647f3e9",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "幼鹿被方源抛入甬道后，遭遇蜈蚣群，被杀死并啃噬。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0065",
+          "startOffset": 424501,
+          "endOffset": 424517,
+          "summary": "锯齿金蜈作为三转野生蛊虫出现，是蜈蚣群的虫王"
+        }
+      ],
+      "timelineId": "tl_9d36935853f6",
+      "eventId": "evt_9d36935853f6",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "锯齿金蜈作为三转野生蛊虫出现，是蜈蚣群的虫王",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0130",
+          "paragraphId": "ch_0130_p0087",
+          "startOffset": 425565,
+          "endOffset": 425567,
+          "summary": "方源决定暂时不探索，关闭石门退出"
+        }
+      ],
+      "timelineId": "tl_67840c69d5ed",
+      "eventId": "evt_67840c69d5ed",
+      "chapterId": "ch_0130",
+      "orderHint": "chapter-order",
+      "summary": "方源决定暂时不探索，关闭石门退出",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0002",
+      "startOffset": 422190,
+      "endOffset": 422192,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0033",
+      "startOffset": 423329,
+      "endOffset": 423331,
+      "summary": "主角，使用地听肉耳草探索金蜈洞"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0072",
+      "startOffset": 424771,
+      "endOffset": 424773,
+      "summary": "主角，二转中阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0072",
+      "startOffset": 424771,
+      "endOffset": 424775,
+      "summary": "前人，留下地听肉耳草和线索"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0010",
+      "startOffset": 422474,
+      "endOffset": 422476,
+      "summary": "方源催动地听肉耳草，听力暴涨，右耳长出参须，停止催动后恢复原状。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0019",
+      "startOffset": 422797,
+      "endOffset": 422799,
+      "summary": "方源处理昨晚割耳种蛊的血水，用煤石掩盖，伪装成清洗火炉的污水。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0023",
+      "startOffset": 422987,
+      "endOffset": 422989,
+      "summary": "方源捉到一头幼鹿，用隐鳞蛊隐没身形，带到石门前，准备进入石缝秘洞。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0028",
+      "startOffset": 423134,
+      "endOffset": 423136,
+      "summary": "方源催动地听肉耳草，听到玉眼石猴的心跳声，并试图感知石门后的声音。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0040",
+      "startOffset": 423635,
+      "endOffset": 423645,
+      "summary": "方源使用地听肉耳草，参须扎根石门，侦测到石门后的声音，包括稀疏声潮和石猴心跳声。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0043",
+      "startOffset": 423778,
+      "endOffset": 423782,
+      "summary": "方源推开石门，发现幽深黑暗的甬道。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0060",
+      "startOffset": 424335,
+      "endOffset": 424345,
+      "summary": "幼鹿被方源抛入甬道后，遭遇蜈蚣群，被杀死并啃噬。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0065",
+      "startOffset": 424501,
+      "endOffset": 424517,
+      "summary": "锯齿金蜈作为三转野生蛊虫出现，是蜈蚣群的虫王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0130",
+      "paragraphId": "ch_0130_p0087",
+      "startOffset": 425565,
+      "endOffset": 425567,
+      "summary": "方源决定暂时不探索，关闭石门退出"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes Fang Yuan's exploration of a cave with a deer as bait, discovering a centipede swarm and a rank-3 sawtooth golden centipede. All events are ordinary visible actions (using a listening gu, catching a deer, opening a stone door, throwing the deer in, observing the centipede swarm). No hidden knowledge, secret plans/motives, future-known information, or knowledge gaps are directly supported by the source text. The only potential hidden fact would be Fang Yuan's internal reasoning/plan, but the seed does not provide direct source quotes of his private thoughts beyond what is observable. No actor is shown knowing something others don't, and no future-known information is present.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源的行为（用幼鹿探路、侦测石门后情况）显示谨慎探索，但动机是收服锯齿金蜈还是单纯侦察/获取资源，种子中只有'方源考虑收服锯齿金蜈'这一关系提及，缺乏直接行动支持收服意图。观察到的主要是探索和侦察行为，动机较为模糊，不宜强行推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed only contains individual actor 方源 (Fang Yuan) exploring a cave. No named factions, clans, families, teams, shops, halls, or organizations appear in the seed facts or relations. The only other named entity is 花酒行者 (an individual predecessor) and 锯齿金蜈 (a wild insect). No collective group has a concrete stake in the seed facts. No faction/group pressure can be derived from this seed.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

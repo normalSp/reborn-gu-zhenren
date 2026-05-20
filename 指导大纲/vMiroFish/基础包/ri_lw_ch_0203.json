@@ -1,0 +1,582 @@
+{
+  "packageId": "ri_lw_ch_0203",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0203"
+    ],
+    "paragraphIds": [
+      "ch_0203_p0002",
+      "ch_0203_p0003",
+      "ch_0203_p0009",
+      "ch_0203_p0025",
+      "ch_0203_p0032",
+      "ch_0203_p0033",
+      "ch_0203_p0034",
+      "ch_0203_p0040",
+      "ch_0203_p0041",
+      "ch_0203_p0064",
+      "ch_0203_p0065",
+      "ch_0203_p0069",
+      "ch_0203_p0084"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0002",
+          "startOffset": 678240,
+          "endOffset": 678253,
+          "summary": "重生者，主角"
+        }
+      ],
+      "entityId": "entity_d010f1329997",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "重生者，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0003",
+          "startOffset": 678257,
+          "endOffset": 678270,
+          "summary": "与方源同行，受伤"
+        }
+      ],
+      "entityId": "entity_11c5f44fd11e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "与方源同行，受伤",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0033",
+          "startOffset": 679390,
+          "endOffset": 679440,
+          "summary": "主角，二转修为"
+        }
+      ],
+      "entityId": "entity_d010f1329997",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，二转修为",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0034",
+          "startOffset": 679444,
+          "endOffset": 679472,
+          "summary": "白家天才，三转修为，已变为女子"
+        }
+      ],
+      "entityId": "entity_11c5f44fd11e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "白家天才，三转修为，已变为女子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0065",
+          "startOffset": 680735,
+          "endOffset": 680737,
+          "summary": "一转初阶蛊师"
+        }
+      ],
+      "entityId": "entity_d010f1329997",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "一转初阶蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0065",
+          "startOffset": 680757,
+          "endOffset": 680760,
+          "summary": "白家天才，三转蛊师"
+        }
+      ],
+      "entityId": "entity_11c5f44fd11e",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "白家天才，三转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0003",
+          "startOffset": 678257,
+          "endOffset": 678270,
+          "summary": "两人携手逃亡，方源提供药物和衣物给白凝冰"
+        }
+      ],
+      "relationId": "rel_2d8ef11b70d3",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "两人携手逃亡，方源提供药物和衣物给白凝冰",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0040",
+          "startOffset": 679692,
+          "endOffset": 679752,
+          "summary": "方源炼化了阳蛊，以此控制白凝冰，白凝冰受制于方源"
+        }
+      ],
+      "relationId": "rel_5662c73a20e1",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "OTHER",
+      "summary": "方源炼化了阳蛊，以此控制白凝冰，白凝冰受制于方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0084",
+          "startOffset": 681500,
+          "endOffset": 681528,
+          "summary": "方源与白凝冰暂时结伴，共同逃亡，方源借蛊虫给白凝冰"
+        }
+      ],
+      "relationId": "rel_aab6b423d942",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源与白凝冰暂时结伴，共同逃亡，方源借蛊虫给白凝冰",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0009",
+          "startOffset": 678458,
+          "endOffset": 678488,
+          "summary": "方源使用兜率花取出绷带、大药罐、小药瓶等凡人物品，用于治疗伤口"
+        }
+      ],
+      "eventId": "evt_9c038ae0df92",
+      "eventType": "other",
+      "summary": "方源使用兜率花取出绷带、大药罐、小药瓶等凡人物品，用于治疗伤口",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源和白凝冰处理了伤口"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0025",
+          "startOffset": 679058,
+          "endOffset": 679082,
+          "summary": "方源从兜率花中取出两套服饰，一套给白凝冰"
+        }
+      ],
+      "eventId": "evt_a592ab85ac9c",
+      "eventType": "other",
+      "summary": "方源从兜率花中取出两套服饰，一套给白凝冰",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "两人换上新衣"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0064",
+          "startOffset": 680682,
+          "endOffset": 680731,
+          "summary": "方源和白凝冰在浅滩休整，方源洗涤黑袍，取出铁锅、煤石等物品准备煮肉干"
+        }
+      ],
+      "eventId": "evt_0369a31e5de6",
+      "eventType": "other",
+      "summary": "方源和白凝冰在浅滩休整，方源洗涤黑袍，取出铁锅、煤石等物品准备煮肉干",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰意识到方源准备充分，怀疑他早有离开青茅山的打算"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0069",
+          "startOffset": 680867,
+          "endOffset": 680910,
+          "summary": "方源和白凝冰在黄龙江边沙滩上煮肉干汤，补充体力，准备过夜"
+        }
+      ],
+      "eventId": "evt_791476688ac9",
+      "eventType": "other",
+      "summary": "方源和白凝冰在黄龙江边沙滩上煮肉干汤，补充体力，准备过夜",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "两人恢复体力，决定在此过夜，轮流守夜"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0084",
+          "startOffset": 681500,
+          "endOffset": 681528,
+          "summary": "方源将锯齿金蜈和天蓬蛊暂时借给白凝冰使用"
+        }
+      ],
+      "eventId": "evt_6e7a90553ddf",
+      "eventType": "trade",
+      "summary": "方源将锯齿金蜈和天蓬蛊暂时借给白凝冰使用",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰获得两只蛊虫的临时使用权，对方源产生侧目"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0009",
+          "startOffset": 678458,
+          "endOffset": 678488,
+          "summary": "方源使用兜率花取出绷带、大药罐、小药瓶等凡人物品，用于治疗伤口"
+        }
+      ],
+      "timelineId": "tl_9c038ae0df92",
+      "eventId": "evt_9c038ae0df92",
+      "chapterId": "ch_0203",
+      "orderHint": "chapter-order",
+      "summary": "方源使用兜率花取出绷带、大药罐、小药瓶等凡人物品，用于治疗伤口",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0025",
+          "startOffset": 679058,
+          "endOffset": 679082,
+          "summary": "方源从兜率花中取出两套服饰，一套给白凝冰"
+        }
+      ],
+      "timelineId": "tl_a592ab85ac9c",
+      "eventId": "evt_a592ab85ac9c",
+      "chapterId": "ch_0203",
+      "orderHint": "chapter-order",
+      "summary": "方源从兜率花中取出两套服饰，一套给白凝冰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0064",
+          "startOffset": 680682,
+          "endOffset": 680731,
+          "summary": "方源和白凝冰在浅滩休整，方源洗涤黑袍，取出铁锅、煤石等物品准备煮肉干"
+        }
+      ],
+      "timelineId": "tl_0369a31e5de6",
+      "eventId": "evt_0369a31e5de6",
+      "chapterId": "ch_0203",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰在浅滩休整，方源洗涤黑袍，取出铁锅、煤石等物品准备煮肉干",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0069",
+          "startOffset": 680867,
+          "endOffset": 680910,
+          "summary": "方源和白凝冰在黄龙江边沙滩上煮肉干汤，补充体力，准备过夜"
+        }
+      ],
+      "timelineId": "tl_791476688ac9",
+      "eventId": "evt_791476688ac9",
+      "chapterId": "ch_0203",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰在黄龙江边沙滩上煮肉干汤，补充体力，准备过夜",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0203",
+          "paragraphId": "ch_0203_p0084",
+          "startOffset": 681500,
+          "endOffset": 681528,
+          "summary": "方源将锯齿金蜈和天蓬蛊暂时借给白凝冰使用"
+        }
+      ],
+      "timelineId": "tl_6e7a90553ddf",
+      "eventId": "evt_6e7a90553ddf",
+      "chapterId": "ch_0203",
+      "orderHint": "chapter-order",
+      "summary": "方源将锯齿金蜈和天蓬蛊暂时借给白凝冰使用",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0002",
+      "startOffset": 678240,
+      "endOffset": 678253,
+      "summary": "重生者，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0003",
+      "startOffset": 678257,
+      "endOffset": 678270,
+      "summary": "与方源同行，受伤"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0033",
+      "startOffset": 679390,
+      "endOffset": 679440,
+      "summary": "主角，二转修为"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0034",
+      "startOffset": 679444,
+      "endOffset": 679472,
+      "summary": "白家天才，三转修为，已变为女子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0065",
+      "startOffset": 680735,
+      "endOffset": 680737,
+      "summary": "一转初阶蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0065",
+      "startOffset": 680757,
+      "endOffset": 680760,
+      "summary": "白家天才，三转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0040",
+      "startOffset": 679692,
+      "endOffset": 679752,
+      "summary": "方源炼化了阳蛊，以此控制白凝冰，白凝冰受制于方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0084",
+      "startOffset": 681500,
+      "endOffset": 681528,
+      "summary": "方源与白凝冰暂时结伴，共同逃亡，方源借蛊虫给白凝冰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0009",
+      "startOffset": 678458,
+      "endOffset": 678488,
+      "summary": "方源使用兜率花取出绷带、大药罐、小药瓶等凡人物品，用于治疗伤口"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0025",
+      "startOffset": 679058,
+      "endOffset": 679082,
+      "summary": "方源从兜率花中取出两套服饰，一套给白凝冰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0064",
+      "startOffset": 680682,
+      "endOffset": 680731,
+      "summary": "方源和白凝冰在浅滩休整，方源洗涤黑袍，取出铁锅、煤石等物品准备煮肉干"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0203",
+      "paragraphId": "ch_0203_p0069",
+      "startOffset": 680867,
+      "endOffset": 680910,
+      "summary": "方源和白凝冰在黄龙江边沙滩上煮肉干汤，补充体力，准备过夜"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (resting, cooking, lending gu worms, treating wounds) and entity descriptions. No private knowledge, secret motives/plans, future-known information, or directly supported knowledge gaps are present. The only potentially hidden element is Fang Yuan's rebirth (ch_0203_p0002: '五天前，方源在青茅山重生'), but this is already known to the reader and the seed does not indicate who else knows or does not know this fact. The relation about Fang Yuan refining the yang gu to control Bai Ning Bing (ch_0203_p0040) is visible in the narrative context. No atomic hidden fact with clear whoKnows/whoDoesNotKnow can be confidently extracted from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan lending two gu worms to Bai Ning Bing (ptr_8) and that Bai is under Fang Yuan's control via the Yang Gu (ptr_7). However, the observed action (lending gu) could support an observedMotive like '借蛊给白凝冰使用', but the inferred motive is ambiguous - it could be to strengthen an ally, to test loyalty, or simply practical necessity. No direct source supports a clear one-step inference about Fang Yuan's motive. Per rules, if motive is ambiguous, return empty array.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed only contains two individuals (方源 and 白凝冰) with no named faction, clan, family, or group that has a collective stake. 白凝冰 is described as '白家天才' (Bai family genius), which implies a Bai family/clan, but the seed facts do not establish any concrete stake or pressure for the Bai family as a collective actor. The events and relations only involve the two individuals' personal alliance, escape, and transactional relationship. No faction-level pressure, threat, interest, or reaction can be reliably derived from the seed content.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

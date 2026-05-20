@@ -1,0 +1,823 @@
+{
+  "packageId": "ri_lw_ch_1487",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1487"
+    ],
+    "paragraphIds": [
+      "ch_1487_p0002",
+      "ch_1487_p0003",
+      "ch_1487_p0005",
+      "ch_1487_p0012",
+      "ch_1487_p0021",
+      "ch_1487_p0023",
+      "ch_1487_p0027",
+      "ch_1487_p0028",
+      "ch_1487_p0033",
+      "ch_1487_p0036",
+      "ch_1487_p0041",
+      "ch_1487_p0045",
+      "ch_1487_p0046",
+      "ch_1487_p0049",
+      "ch_1487_p0051",
+      "ch_1487_p0057",
+      "ch_1487_p0065",
+      "ch_1487_p0066",
+      "ch_1487_p0068"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0002",
+          "startOffset": 5198803,
+          "endOffset": 5198805,
+          "summary": "炼道蛊仙，方源下属"
+        }
+      ],
+      "entityId": "entity_eb996f0f5eb2",
+      "name": "毛六",
+      "kind": "person",
+      "aliases": [],
+      "description": "炼道蛊仙，方源下属",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0002",
+          "startOffset": 5198806,
+          "endOffset": 5198808,
+          "summary": "主角，七转蛊仙"
+        }
+      ],
+      "entityId": "entity_18c958142fc3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，七转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0023",
+          "startOffset": 5199582,
+          "endOffset": 5199587,
+          "summary": "运道仙尊，留下我运真传、众生运真传"
+        }
+      ],
+      "entityId": "entity_f002149357ac",
+      "name": "巨阳仙尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "运道仙尊，留下我运真传、众生运真传",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0033",
+          "startOffset": 5200027,
+          "endOffset": 5200112,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_18c958142fc3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0049",
+          "startOffset": 5200834,
+          "endOffset": 5200865,
+          "summary": "影宗成员，贩卖铜龙鱼"
+        }
+      ],
+      "entityId": "entity_c2ff6bd6c9ca",
+      "name": "尤婵",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗成员，贩卖铜龙鱼",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0066",
+          "startOffset": 5201335,
+          "endOffset": 5201351,
+          "summary": "蛊师，龙鱼养殖者"
+        }
+      ],
+      "entityId": "entity_18c958142fc3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，龙鱼养殖者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0068",
+          "startOffset": 5201387,
+          "endOffset": 5201414,
+          "summary": "未知，可能是敌对或关注对象"
+        }
+      ],
+      "entityId": "entity_c2ff6bd6c9ca",
+      "name": "尤婵",
+      "kind": "person",
+      "aliases": [],
+      "description": "未知，可能是敌对或关注对象",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0005",
+          "startOffset": 5198908,
+          "endOffset": 5198913,
+          "summary": "方源为毛六推算破解炼蛇寿元花的方法"
+        }
+      ],
+      "relationId": "rel_fad001c44768",
+      "subject": "方源",
+      "object": "毛六",
+      "relationType": "OTHER",
+      "summary": "方源为毛六推算破解炼蛇寿元花的方法",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0028",
+          "startOffset": 5199818,
+          "endOffset": 5199823,
+          "summary": "毛六负责整理春秋蝉仙蛊方并采集蛊材"
+        }
+      ],
+      "relationId": "rel_a65da4142134",
+      "subject": "方源",
+      "object": "毛六",
+      "relationType": "OTHER",
+      "summary": "毛六负责整理春秋蝉仙蛊方并采集蛊材",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0041",
+          "startOffset": 5200412,
+          "endOffset": 5200486,
+          "summary": "方源是影宗领袖，维护影宗秩序，取走魂魄，留下尸躯给成员"
+        }
+      ],
+      "relationId": "rel_8d0e67e4243d",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "FACTION",
+      "summary": "方源是影宗领袖，维护影宗秩序，取走魂魄，留下尸躯给成员",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0045",
+          "startOffset": 5200629,
+          "endOffset": 5200703,
+          "summary": "方源通过订婚与异族大联盟关系紧密"
+        }
+      ],
+      "relationId": "rel_b6392c22068d",
+      "subject": "方源",
+      "object": "异族大联盟",
+      "relationType": "ALLY",
+      "summary": "方源通过订婚与异族大联盟关系紧密",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0045",
+          "startOffset": 5200629,
+          "endOffset": 5200703,
+          "summary": "方源遭受长生天等正道通缉"
+        }
+      ],
+      "relationId": "rel_249257ea90dd",
+      "subject": "方源",
+      "object": "长生天",
+      "relationType": "CONFLICT",
+      "summary": "方源遭受长生天等正道通缉",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0068",
+          "startOffset": 5201387,
+          "endOffset": 5201414,
+          "summary": "方源投放铁龙鱼，观察尤婵反应，暗示两者可能存在竞争或敌对关系"
+        }
+      ],
+      "relationId": "rel_ff49b944ac4f",
+      "subject": "方源",
+      "object": "尤婵",
+      "relationType": "OTHER",
+      "summary": "方源投放铁龙鱼，观察尤婵反应，暗示两者可能存在竞争或敌对关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0005",
+          "startOffset": 5198908,
+          "endOffset": 5198913,
+          "summary": "方源推算破解毛六的炼蛇寿元花杀招"
+        }
+      ],
+      "eventId": "evt_ce3b97ae09e9",
+      "eventType": "cultivation",
+      "summary": "方源推算破解毛六的炼蛇寿元花杀招",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "需要长时间才能见效"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0012",
+          "startOffset": 5199155,
+          "endOffset": 5199160,
+          "summary": "方源本体利用荡魂山、落魄谷进行魂道修行，魂魄底蕴飙升"
+        }
+      ],
+      "eventId": "evt_4459ab3a5875",
+      "eventType": "cultivation",
+      "summary": "方源本体利用荡魂山、落魄谷进行魂道修行，魂魄底蕴飙升",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魂魄底蕴飙升"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0021",
+          "startOffset": 5199492,
+          "endOffset": 5199497,
+          "summary": "方源改良运道杀招"
+        }
+      ],
+      "eventId": "evt_10cc0edfefe3",
+      "eventType": "cultivation",
+      "summary": "方源改良运道杀招",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0028",
+          "startOffset": 5199818,
+          "endOffset": 5199823,
+          "summary": "方源升炼春秋蝉，毛六负责整理仙蛊方和采集蛊材"
+        }
+      ],
+      "eventId": "evt_f59bd135d330",
+      "eventType": "cultivation",
+      "summary": "方源升炼春秋蝉，毛六负责整理仙蛊方和采集蛊材",
+      "actors": [
+        "方源",
+        "毛六"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "升炼处于起步阶段"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0033",
+          "startOffset": 5200027,
+          "endOffset": 5200112,
+          "summary": "方源练习杀招石洞天机和天消意散"
+        }
+      ],
+      "eventId": "evt_694cdfb68e4d",
+      "eventType": "cultivation",
+      "summary": "方源练习杀招石洞天机和天消意散",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "石洞天机可洞察灾劫，天消意散需改良"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0049",
+          "startOffset": 5200834,
+          "endOffset": 5200865,
+          "summary": "尤婵贩卖出铜龙鱼，方源感到意外"
+        }
+      ],
+      "eventId": "evt_bc1e7ca1c7a9",
+      "eventType": "trade",
+      "summary": "尤婵贩卖出铜龙鱼，方源感到意外",
+      "actors": [
+        "尤婵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源接受事实，认为龙鱼生意可被破解"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0057",
+          "startOffset": 5201073,
+          "endOffset": 5201084,
+          "summary": "方源施展仙道杀招度年如日，加速至尊仙窍光阴流速"
+        }
+      ],
+      "eventId": "evt_36b1fffa34e6",
+      "eventType": "cultivation",
+      "summary": "方源施展仙道杀招度年如日，加速至尊仙窍光阴流速",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "光阴流速差距拉大，灾劫更频繁，但方源不惧"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0065",
+          "startOffset": 5201277,
+          "endOffset": 5201331,
+          "summary": "方源在龙鳞海域投放铁龙鱼，利用大阵自行改良龙鱼品种"
+        }
+      ],
+      "eventId": "evt_991ef088d8d2",
+      "eventType": "other",
+      "summary": "方源在龙鳞海域投放铁龙鱼，利用大阵自行改良龙鱼品种",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "铁龙鱼被投放，可能影响龙鱼生态或引起尤婵反应"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0005",
+          "startOffset": 5198908,
+          "endOffset": 5198913,
+          "summary": "方源推算破解毛六的炼蛇寿元花杀招"
+        }
+      ],
+      "timelineId": "tl_ce3b97ae09e9",
+      "eventId": "evt_ce3b97ae09e9",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源推算破解毛六的炼蛇寿元花杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0012",
+          "startOffset": 5199155,
+          "endOffset": 5199160,
+          "summary": "方源本体利用荡魂山、落魄谷进行魂道修行，魂魄底蕴飙升"
+        }
+      ],
+      "timelineId": "tl_4459ab3a5875",
+      "eventId": "evt_4459ab3a5875",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源本体利用荡魂山、落魄谷进行魂道修行，魂魄底蕴飙升",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0021",
+          "startOffset": 5199492,
+          "endOffset": 5199497,
+          "summary": "方源改良运道杀招"
+        }
+      ],
+      "timelineId": "tl_10cc0edfefe3",
+      "eventId": "evt_10cc0edfefe3",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源改良运道杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0028",
+          "startOffset": 5199818,
+          "endOffset": 5199823,
+          "summary": "方源升炼春秋蝉，毛六负责整理仙蛊方和采集蛊材"
+        }
+      ],
+      "timelineId": "tl_f59bd135d330",
+      "eventId": "evt_f59bd135d330",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源升炼春秋蝉，毛六负责整理仙蛊方和采集蛊材",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0033",
+          "startOffset": 5200027,
+          "endOffset": 5200112,
+          "summary": "方源练习杀招石洞天机和天消意散"
+        }
+      ],
+      "timelineId": "tl_694cdfb68e4d",
+      "eventId": "evt_694cdfb68e4d",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源练习杀招石洞天机和天消意散",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0049",
+          "startOffset": 5200834,
+          "endOffset": 5200865,
+          "summary": "尤婵贩卖出铜龙鱼，方源感到意外"
+        }
+      ],
+      "timelineId": "tl_bc1e7ca1c7a9",
+      "eventId": "evt_bc1e7ca1c7a9",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "尤婵贩卖出铜龙鱼，方源感到意外",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0057",
+          "startOffset": 5201073,
+          "endOffset": 5201084,
+          "summary": "方源施展仙道杀招度年如日，加速至尊仙窍光阴流速"
+        }
+      ],
+      "timelineId": "tl_36b1fffa34e6",
+      "eventId": "evt_36b1fffa34e6",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源施展仙道杀招度年如日，加速至尊仙窍光阴流速",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1487",
+          "paragraphId": "ch_1487_p0065",
+          "startOffset": 5201277,
+          "endOffset": 5201331,
+          "summary": "方源在龙鳞海域投放铁龙鱼，利用大阵自行改良龙鱼品种"
+        }
+      ],
+      "timelineId": "tl_991ef088d8d2",
+      "eventId": "evt_991ef088d8d2",
+      "chapterId": "ch_1487",
+      "orderHint": "chapter-order",
+      "summary": "方源在龙鳞海域投放铁龙鱼，利用大阵自行改良龙鱼品种",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0002",
+      "startOffset": 5198803,
+      "endOffset": 5198805,
+      "summary": "炼道蛊仙，方源下属"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0002",
+      "startOffset": 5198806,
+      "endOffset": 5198808,
+      "summary": "主角，七转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0023",
+      "startOffset": 5199582,
+      "endOffset": 5199587,
+      "summary": "运道仙尊，留下我运真传、众生运真传"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0033",
+      "startOffset": 5200027,
+      "endOffset": 5200112,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0049",
+      "startOffset": 5200834,
+      "endOffset": 5200865,
+      "summary": "影宗成员，贩卖铜龙鱼"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0066",
+      "startOffset": 5201335,
+      "endOffset": 5201351,
+      "summary": "蛊师，龙鱼养殖者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0068",
+      "startOffset": 5201387,
+      "endOffset": 5201414,
+      "summary": "未知，可能是敌对或关注对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0005",
+      "startOffset": 5198908,
+      "endOffset": 5198913,
+      "summary": "方源为毛六推算破解炼蛇寿元花的方法"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0028",
+      "startOffset": 5199818,
+      "endOffset": 5199823,
+      "summary": "毛六负责整理春秋蝉仙蛊方并采集蛊材"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0041",
+      "startOffset": 5200412,
+      "endOffset": 5200486,
+      "summary": "方源是影宗领袖，维护影宗秩序，取走魂魄，留下尸躯给成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0045",
+      "startOffset": 5200629,
+      "endOffset": 5200703,
+      "summary": "方源通过订婚与异族大联盟关系紧密"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0012",
+      "startOffset": 5199155,
+      "endOffset": 5199160,
+      "summary": "方源本体利用荡魂山、落魄谷进行魂道修行，魂魄底蕴飙升"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0021",
+      "startOffset": 5199492,
+      "endOffset": 5199497,
+      "summary": "方源改良运道杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0057",
+      "startOffset": 5201073,
+      "endOffset": 5201084,
+      "summary": "方源施展仙道杀招度年如日，加速至尊仙窍光阴流速"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1487",
+      "paragraphId": "ch_1487_p0065",
+      "startOffset": 5201277,
+      "endOffset": 5201331,
+      "summary": "方源在龙鳞海域投放铁龙鱼，利用大阵自行改良龙鱼品种"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly ordinary cultivation activities and visible events (方源 practicing soul path, refining moves, trading fish). The only potentially hidden element is 方源's internal question about 尤婵's reaction to the iron dragon fish (p0068), but this is an internal thought/question, not a known fact. There is no directly supported private knowledge, secret plan, or future-known information that can be stated as an atomic fact without speculation. The '尤婵 is a 影宗 member' is stated in entity description but not directly sourced from the chapter text pointers. No strong hidden fact candidate meets the rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源投放铁龙鱼并观察尤婵反应（ptr_7），尤婵贩卖铜龙鱼（ptr_5），可见竞争行为，但动机不明。可能方源想测试尤婵或破坏其生意，但种子未直接支持任何具体意图，属于ambiguous behavior，不宜强推动机。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on Fang Yuan's individual cultivation activities (soul cultivation, luck path killer moves, time path killer moves) and his subordinate Mao Liu's tasks. The only named collective actors in the seed are '影宗' (Shadow Sect) and '异族大联盟' (Foreign Race Grand Alliance), but neither faces a concrete pressure in this chapter. Fang Yuan is the leader of Shadow Sect and maintains order, but no faction-level pressure is described. The Foreign Race Grand Alliance is described as having a close relationship with Fang Yuan through engagement, not under pressure. The seed mentions Fang Yuan releasing iron dragon fish to observe You Chan's reaction, but You Chan is an individual (Shadow Sect member), not a collective actor. No faction/clan/group has a concrete stake that generates a pressure axis in this seed.",
+      "IF export filter quarantined 7 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

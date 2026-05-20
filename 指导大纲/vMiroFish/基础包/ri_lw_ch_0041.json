@@ -1,0 +1,650 @@
+{
+  "packageId": "ri_lw_ch_0041",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0041"
+    ],
+    "paragraphIds": [
+      "ch_0041_p0001",
+      "ch_0041_p0005",
+      "ch_0041_p0027",
+      "ch_0041_p0030",
+      "ch_0041_p0035",
+      "ch_0041_p0036",
+      "ch_0041_p0038",
+      "ch_0041_p0039",
+      "ch_0041_p0040",
+      "ch_0041_p0042",
+      "ch_0041_p0049",
+      "ch_0041_p0051",
+      "ch_0041_p0063",
+      "ch_0041_p0065",
+      "ch_0041_p0066"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0005",
+          "startOffset": 118126,
+          "endOffset": 118149,
+          "summary": "重生者，蛊师学员"
+        }
+      ],
+      "entityId": "entity_f6c839259930",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "重生者，蛊师学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0030",
+          "startOffset": 119387,
+          "endOffset": 119528,
+          "summary": "赌石场伙计"
+        }
+      ],
+      "entityId": "entity_83619c0b7f3d",
+      "name": "女蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赌石场伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0036",
+          "startOffset": 119770,
+          "endOffset": 119797,
+          "summary": "学员，预备蛊师"
+        }
+      ],
+      "entityId": "entity_f6c839259930",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，预备蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0035",
+          "startOffset": 119743,
+          "endOffset": 119766,
+          "summary": "赌石场蛊师"
+        }
+      ],
+      "entityId": "entity_83619c0b7f3d",
+      "name": "女蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赌石场蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0051",
+          "startOffset": 120382,
+          "endOffset": 120396,
+          "summary": "主角，穿越者，蛊师"
+        }
+      ],
+      "entityId": "entity_f6c839259930",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，穿越者，蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0065",
+          "startOffset": 120995,
+          "endOffset": 121007,
+          "summary": "拥有五百年经验的蛊师"
+        }
+      ],
+      "entityId": "entity_f6c839259930",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "拥有五百年经验的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0030",
+          "startOffset": 119387,
+          "endOffset": 119528,
+          "summary": "方源是顾客，女蛊师是伙计，正在向他推销赌石"
+        }
+      ],
+      "relationId": "rel_f6ea21c9e324",
+      "subject": "方源",
+      "object": "女蛊师",
+      "relationType": "TRADE",
+      "summary": "方源是顾客，女蛊师是伙计，正在向他推销赌石",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0005",
+          "startOffset": 118126,
+          "endOffset": 118149,
+          "summary": "方源进入赌石场并观察环境"
+        }
+      ],
+      "eventId": "evt_c1edabdaa8f1",
+      "eventType": "other",
+      "summary": "方源进入赌石场并观察环境",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0027",
+          "startOffset": 119197,
+          "endOffset": 119282,
+          "summary": "方源回忆起前世在赌石场的工作经历"
+        }
+      ],
+      "eventId": "evt_f80f9c4e9cdf",
+      "eventType": "cultivation",
+      "summary": "方源回忆起前世在赌石场的工作经历",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0030",
+          "startOffset": 119387,
+          "endOffset": 119528,
+          "summary": "女蛊师向方源介绍不同柜台的赌石价格"
+        }
+      ],
+      "eventId": "evt_c2c7b736cab3",
+      "eventType": "other",
+      "summary": "女蛊师向方源介绍不同柜台的赌石价格",
+      "actors": [
+        "女蛊师",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0042",
+          "startOffset": 120000,
+          "endOffset": 120040,
+          "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。"
+        }
+      ],
+      "eventId": "evt_304aa39aa5e3",
+      "eventType": "other",
+      "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "尚未做出选择，需要进一步寻找。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0040",
+          "startOffset": 119937,
+          "endOffset": 119977,
+          "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。"
+        }
+      ],
+      "eventId": "evt_e96c826dab8e",
+      "eventType": "trade",
+      "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。",
+      "actors": [
+        "幸运儿",
+        "不知名收购者"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源以此为目标，试图复制成功。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0049",
+          "startOffset": 120290,
+          "endOffset": 120330,
+          "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。"
+        }
+      ],
+      "eventId": "evt_620a0b75fe95",
+      "eventType": "other",
+      "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0066",
+          "startOffset": 121045,
+          "endOffset": 121078,
+          "summary": "方源凭借五百年的经验，从众多紫金化石中筛选出六块，有八成把握癞土蛤蟆在其中一块中沉眠。"
+        }
+      ],
+      "eventId": "evt_1a3ad358789e",
+      "eventType": "cultivation",
+      "summary": "方源凭借五百年的经验，从众多紫金化石中筛选出六块，有八成把握癞土蛤蟆在其中一块中沉眠。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0005",
+          "startOffset": 118126,
+          "endOffset": 118149,
+          "summary": "方源进入赌石场并观察环境"
+        }
+      ],
+      "timelineId": "tl_c1edabdaa8f1",
+      "eventId": "evt_c1edabdaa8f1",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "方源进入赌石场并观察环境",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0027",
+          "startOffset": 119197,
+          "endOffset": 119282,
+          "summary": "方源回忆起前世在赌石场的工作经历"
+        }
+      ],
+      "timelineId": "tl_f80f9c4e9cdf",
+      "eventId": "evt_f80f9c4e9cdf",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "方源回忆起前世在赌石场的工作经历",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0030",
+          "startOffset": 119387,
+          "endOffset": 119528,
+          "summary": "女蛊师向方源介绍不同柜台的赌石价格"
+        }
+      ],
+      "timelineId": "tl_c2c7b736cab3",
+      "eventId": "evt_c2c7b736cab3",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "女蛊师向方源介绍不同柜台的赌石价格",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0042",
+          "startOffset": 120000,
+          "endOffset": 120040,
+          "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。"
+        }
+      ],
+      "timelineId": "tl_304aa39aa5e3",
+      "eventId": "evt_304aa39aa5e3",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0040",
+          "startOffset": 119937,
+          "endOffset": 119977,
+          "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。"
+        }
+      ],
+      "timelineId": "tl_e96c826dab8e",
+      "eventId": "evt_e96c826dab8e",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0049",
+          "startOffset": 120290,
+          "endOffset": 120330,
+          "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。"
+        }
+      ],
+      "timelineId": "tl_620a0b75fe95",
+      "eventId": "evt_620a0b75fe95",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0066",
+          "startOffset": 121045,
+          "endOffset": 121078,
+          "summary": "方源凭借五百年的经验，从众多紫金化石中筛选出六块，有八成把握癞土蛤蟆在其中一块中沉眠。"
+        }
+      ],
+      "timelineId": "tl_1a3ad358789e",
+      "eventId": "evt_1a3ad358789e",
+      "chapterId": "ch_0041",
+      "orderHint": "chapter-order",
+      "summary": "方源凭借五百年的经验，从众多紫金化石中筛选出六块，有八成把握癞土蛤蟆在其中一块中沉眠。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0051",
+          "startOffset": 120382,
+          "endOffset": 120396,
+          "summary": "主角，穿越者，蛊师"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0042",
+          "startOffset": 120000,
+          "endOffset": 120040,
+          "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0041",
+          "paragraphId": "ch_0041_p0049",
+          "startOffset": 120290,
+          "endOffset": 120330,
+          "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "在赌石场观察挑选紫金化石",
+      "inferredMotive": "想找到藏有癞土蛤蟆的化石",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0005",
+      "startOffset": 118126,
+      "endOffset": 118149,
+      "summary": "重生者，蛊师学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0030",
+      "startOffset": 119387,
+      "endOffset": 119528,
+      "summary": "赌石场伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0036",
+      "startOffset": 119770,
+      "endOffset": 119797,
+      "summary": "学员，预备蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0035",
+      "startOffset": 119743,
+      "endOffset": 119766,
+      "summary": "赌石场蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0051",
+      "startOffset": 120382,
+      "endOffset": 120396,
+      "summary": "主角，穿越者，蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0065",
+      "startOffset": 120995,
+      "endOffset": 121007,
+      "summary": "拥有五百年经验的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0027",
+      "startOffset": 119197,
+      "endOffset": 119282,
+      "summary": "方源回忆起前世在赌石场的工作经历"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0042",
+      "startOffset": 120000,
+      "endOffset": 120040,
+      "summary": "方源在赌石场观察紫金化石，试图根据前世记忆找到藏有癞土蛤蟆的那一块。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0040",
+      "startOffset": 119937,
+      "endOffset": 119977,
+      "summary": "过去某年商队第一晚，一个幸运儿购买了紫金化石并解出癞土蛤蟆，随后将其卖给收购者，赚取不少元石。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0049",
+      "startOffset": 120290,
+      "endOffset": 120330,
+      "summary": "方源在赌石场挑选紫金化石，试图找到藏有癞土蛤蟆的那块。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0041",
+      "paragraphId": "ch_0041_p0066",
+      "startOffset": 121045,
+      "endOffset": 121078,
+      "summary": "方源凭借五百年的经验，从众多紫金化石中筛选出六块，有八成把握癞土蛤蟆在其中一块中沉眠。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes Fang Yuan's public actions at the gambling stone market and his past-life memories. The only potentially hidden element is Fang Yuan's private knowledge (from his 500-year experience/rebirth) that one specific purple-gold fossil contains a toad gu. However, the source only shows him recalling that 'a lucky person' bought and opened such a fossil in a past caravan — it does not directly state that Fang Yuan knows exactly which specific stone among the current batch contains the toad. The text shows him observing and eliminating candidates, but does not confirm he has pinpointed the correct one. This is a knowledge gap (he knows something will happen but not precisely which stone), which is too weak to assert as a hidden fact. Additionally, the seed does not support whoDoesNotKnow for any actor. No strong hidden/future-known fact can be extracted with confidence.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源不断观察排除筛选紫金化石（ptr_5），内心思考哪块藏有癞土蛤蟆（ptr_8），并依据大小判断排除（ptr_10）。observedMotive直接来自行为，inferredMotive为一步推断：观察挑选的目的是找到目标化石。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on Fang Yuan's individual actions in a gambling stone market (赌石场). No faction, clan, family, or organized group appears in the entities or relations. The only other entity is a female Gu Master (女蛊师) who is a shop assistant, not representing any faction or group. The events describe Fang Yuan's personal recollection and stone-picking activity. There is no faction-level stake, pressure, or group dynamic present in the seed facts to derive a faction pressure candidate.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

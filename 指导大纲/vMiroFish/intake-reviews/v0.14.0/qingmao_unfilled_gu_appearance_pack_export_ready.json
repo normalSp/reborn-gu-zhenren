@@ -1,0 +1,2668 @@
+﻿{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-17-qingmao-unfilled-gu-appearance-pack",
+  "targetPhase": "v0.14.0 art evidence handoff / v0.15 preparation",
+  "generatedAt": "2026-05-17T13:08:07.600388+00:00",
+  "suggestedOutputName": "qingmao_unfilled_gu_appearance_pack_export_ready.json",
+  "sourceDataset": {
+    "strictReviewBase": "uploads/ri_corpus/exports/living_world_review_strict_flash_0400_reviewable",
+    "paragraphIndex": "uploads\\ri_corpus\\paragraphs.jsonl",
+    "atlasPrior": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md"
+  },
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "canonAuthority": "human_review_required",
+    "deepSeekAuthority": "none",
+    "artAuthority": "candidate_seed_only"
+  },
+  "items": [
+    {
+      "id": "gu_appearance_pig_iron_gu",
+      "guId": "pig_iron_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "猪铁蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G1 方源/金道/坐骑",
+      "chapterAnchor": "180",
+      "summary": "请求名在前 400 章未精确命中；同一交易线索可复核到生铁蛊。其本体有煤球状、拳头到弹珠级缩小、黑色多孔、喷出铁气等强外观锚。",
+      "shape_hints": [
+        "coal-lump body",
+        "fist-sized shrinking to bead-sized",
+        "many tiny pores",
+        "not a pig-shaped creature"
+      ],
+      "color_hints": [
+        "black raw-iron surface",
+        "dark iron mist"
+      ],
+      "ability_hints": [
+        "metal-path support",
+        "used as repair/healing support for Sawtooth Golden Centipede"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "猪铁蛊",
+        "source_name_candidate": "生铁蛊",
+        "en_name_candidates": [
+          "Raw Iron Gu",
+          "Pig Iron Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_body_appearance_with_name_mismatch",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_631c4f57fe13",
+        "sp_3ca855acf742",
+        "sp_e7bb11710ff8",
+        "sp_4904c2af4e46"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0177",
+          "paragraphId": "ch_0177_p0059",
+          "startOffset": 592651,
+          "endOffset": 592654,
+          "summary": "生铁蛊 appears on the same transaction line used by the art request; requested 猪铁蛊 has no exact first-volume hit.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_631c4f57fe13"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0178",
+          "paragraphId": "ch_0178_p0002",
+          "startOffset": 593222,
+          "endOffset": 593226,
+          "summary": "Body evidence: the Gu is described as a coal-lump-like object with size, surface, and texture cues.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_3ca855acf742"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0178",
+          "paragraphId": "ch_0178_p0003",
+          "startOffset": 593287,
+          "endOffset": 593293,
+          "summary": "Use evidence: activated body emits dark iron-like mist, supporting raw-iron material treatment.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_e7bb11710ff8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0062",
+          "startOffset": 9579,
+          "endOffset": 9582,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_4904c2af4e46"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "appearance_direct",
+        "atlas_update_needs_manual_rename"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.390339+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_thousand_li_earthwolf_spider",
+      "guId": "thousand_li_earthwolf_spider",
+      "relatedGuIds": [],
+      "requestedZhName": "千里地狼蛛",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G1 方源/金道/坐骑",
+      "chapterAnchor": "188",
+      "summary": "原文精确命中，多处将其作为大型坐骑蛊和地遁/掘地来源；外观可稳取蜘蛛坐骑和巨大体格，狼形纹样仍是命名推断，不能当作硬事实。",
+      "shape_hints": [
+        "large mount-scale spider",
+        "burrowing body plan",
+        "wide enough to make tunnels"
+      ],
+      "color_hints": [],
+      "ability_hints": [
+        "mount",
+        "earth-burrowing travel",
+        "tunnel excavation"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "千里地狼蛛",
+        "source_name_candidate": "千里地狼蛛",
+        "en_name_candidates": [
+          "Thousand Li Earthwolf Spider"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_and_function",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_8dce54f22e11",
+        "sp_6d9fc63c5aba",
+        "sp_b81286324ace",
+        "sp_6eda65fbf577"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0047",
+          "paragraphId": "ch_0047_p0021",
+          "startOffset": 137704,
+          "endOffset": 137709,
+          "summary": "Direct source-name evidence identifies a mount Gu with burrowing travel function.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_8dce54f22e11"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0047",
+          "paragraphId": "ch_0047_p0021",
+          "startOffset": 137720,
+          "endOffset": 137724,
+          "summary": "Body-scale evidence supports a large mount silhouette.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_6d9fc63c5aba"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0047",
+          "paragraphId": "ch_0047_p0023",
+          "startOffset": 137870,
+          "endOffset": 137875,
+          "summary": "Direct source-name evidence identifies a mount Gu with burrowing travel function.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_b81286324ace"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0064",
+          "startOffset": 10175,
+          "endOffset": 10180,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_6eda65fbf577"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "wolf_pattern_inference",
+        "appearance_partial"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.476012+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_yin_yang_gu_pair",
+      "guId": "yin_yang_gu_pair",
+      "relatedGuIds": [
+        "yang_gu",
+        "yin_gu"
+      ],
+      "requestedZhName": "阳蛊 / 阴蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G1 方源/金道/坐骑",
+      "chapterAnchor": "197/199",
+      "summary": "按 request 作为一行成对处理。原文给出两虫互逐、太极光球、黑白光色的关系锚；后续单独阳蛊/阴蛊只可从成对体系拆分为冷暖/明暗候选。",
+      "shape_hints": [
+        "paired insects",
+        "mutual orbit",
+        "taiji-light-ball relationship",
+        "separable yin and yang members"
+      ],
+      "color_hints": [
+        "black light for one member",
+        "white light for one member",
+        "black-white paired contrast"
+      ],
+      "ability_hints": [
+        "transformation/healing effect",
+        "pair-dependent use"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "阳蛊 / 阴蛊",
+        "source_name_candidate": "阴阳转身蛊中的阳蛊/阴蛊",
+        "en_name_candidates": [
+          "Yang Gu",
+          "Yin Gu",
+          "Yin-Yang Turnover Gu pair"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_pair_visual",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_dddfe6c96dc8",
+        "sp_0554ca6a24bb",
+        "sp_e198fa99432a",
+        "sp_7cf35da3324d",
+        "sp_4da897152022",
+        "sp_77b17f5cf920"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0039",
+          "paragraphId": "ch_0039_p0020",
+          "startOffset": 111406,
+          "endOffset": 111410,
+          "summary": "Body-count evidence: the system is presented as two insects rather than one body.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_dddfe6c96dc8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0195",
+          "paragraphId": "ch_0195_p0003",
+          "startOffset": 653846,
+          "endOffset": 653850,
+          "summary": "Visual relation evidence: the paired insects are associated with a black-white taiji light sphere.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_0554ca6a24bb"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0195",
+          "paragraphId": "ch_0195_p0004",
+          "startOffset": 653878,
+          "endOffset": 653882,
+          "summary": "Visual relation evidence: the paired insects are associated with a black-white taiji light sphere.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_e198fa99432a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0200",
+          "paragraphId": "ch_0200_p0027",
+          "startOffset": 672173,
+          "endOffset": 672175,
+          "summary": "Single-member naming evidence for the consumed yin member.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_7cf35da3324d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0200",
+          "paragraphId": "ch_0200_p0031",
+          "startOffset": 672458,
+          "endOffset": 672460,
+          "summary": "Single-member naming evidence for the remaining yang member.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_4da897152022"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0067",
+          "startOffset": 11044,
+          "endOffset": 11046,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_77b17f5cf920"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "pair_split_inference",
+        "body_detail_partial"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.563644+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_whirlwind_gu",
+      "guId": "whirlwind_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "旋风蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G2 白凝冰冰道辅助/风道",
+      "chapterAnchor": "131+",
+      "summary": "原文有精确名称和合炼/路线用途，但没有虫体外观。可作为风道辅助和月旋路线候选；翅膀、触角、体色均不能硬定。",
+      "shape_hints": [],
+      "color_hints": [
+        "green is tied to the produced Moon Swirl attack effect, not confirmed body color"
+      ],
+      "ability_hints": [
+        "wind-path support",
+        "used with Moonlight Gu to curve Moonblade trajectory",
+        "speed/rotation support"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "旋风蛊",
+        "source_name_candidate": "旋风蛊",
+        "en_name_candidates": [
+          "Whirlwind Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_function_only",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_d7150d5c1a7e",
+        "sp_cd3780150588",
+        "sp_2d509111ac64",
+        "sp_6a36e7264e61"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0107",
+          "paragraphId": "ch_0107_p0067",
+          "startOffset": 339668,
+          "endOffset": 339671,
+          "summary": "Direct source-name evidence for a common synthesis route; body appearance is not supplied.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_d7150d5c1a7e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0107",
+          "paragraphId": "ch_0107_p0067",
+          "startOffset": 339687,
+          "endOffset": 339691,
+          "summary": "Effect-color evidence belongs to the produced attack, not the Gu body.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_cd3780150588"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0110",
+          "paragraphId": "ch_0110_p0089",
+          "startOffset": 352576,
+          "endOffset": 352579,
+          "summary": "Direct source-name evidence for a common synthesis route; body appearance is not supplied.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_2d509111ac64"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0097",
+          "startOffset": 15952,
+          "endOffset": 15955,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_6a36e7264e61"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "ability_only",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.643142+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_swirl_gu",
+      "guId": "swirl_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "漩涡蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G2 白凝冰冰道辅助/风道",
+      "chapterAnchor": "131+",
+      "summary": "前 400 章原文段落没有精确蛊名命中；只能保留为 RebornG atlas 既有待复核项。不要据此生成标本图，除非后续补到原文或人工确认来源。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "atlas-prior movement/turning support only"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "漩涡蛊",
+        "source_name_candidate": null,
+        "en_name_candidates": [
+          "Swirl Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "atlas_prior_only",
+      "confidence": "low",
+      "sourcePointerIds": [
+        "sp_1d286d3ee54f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0101",
+          "startOffset": 16969,
+          "endOffset": 16972,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_1d286d3ee54f"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "concept_only",
+        "no_first_volume_exact_hit",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.714617+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_fierce_wind_gu",
+      "guId": "fierce_wind_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "烈风蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G2 白凝冰冰道辅助/风道",
+      "chapterAnchor": "131+",
+      "summary": "前 400 章原文段落没有精确蛊名命中；仅能作为 atlas 待复核概念项。锐利风切等视觉词只能是美术方向假设，不是 MiroFish 证据。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "atlas-prior wind attack only"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "烈风蛊",
+        "source_name_candidate": null,
+        "en_name_candidates": [
+          "Fierce Wind Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "atlas_prior_only",
+      "confidence": "low",
+      "sourcePointerIds": [
+        "sp_52cfaffd8117"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0102",
+          "startOffset": 17155,
+          "endOffset": 17158,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_52cfaffd8117"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "concept_only",
+        "no_first_volume_exact_hit",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.775871+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_lightning_eye_gu",
+      "guId": "lightning_eye_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "雷眼蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G2 白凝冰冰道辅助/风道",
+      "chapterAnchor": "131+",
+      "summary": "前 400 章原文段落没有精确蛊名命中；眼形、雷纹、雷光都不能当作原著外观锚。保留为 concept-only/name review。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "atlas-prior lightning/eye concept only"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "雷眼蛊",
+        "source_name_candidate": null,
+        "en_name_candidates": [
+          "Lightning Eye Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "atlas_prior_only",
+      "confidence": "low",
+      "sourcePointerIds": [
+        "sp_0a1b67c4044c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0103",
+          "startOffset": 17342,
+          "endOffset": 17345,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_0a1b67c4044c"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "concept_only",
+        "no_first_volume_exact_hit",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.833430+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_righteous_gu",
+      "guId": "righteous_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "正气蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "原文精确命中并给出心理压迫/正气领域类效果；没有虫体外观。美术上只能做概念型候选，暂不建议按实体标本生图。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "mental pressure",
+        "will-breaking aura",
+        "righteous-path concept"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "正气蛊",
+        "source_name_candidate": "正气蛊",
+        "en_name_candidates": [
+          "Righteous Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_function_only",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_2e8bf4ee79dc",
+        "sp_6d566986ae66",
+        "sp_d79aee20247e",
+        "sp_0c353dccf856"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0171",
+          "paragraphId": "ch_0171_p0078",
+          "startOffset": 571267,
+          "endOffset": 571270,
+          "summary": "Direct source-name evidence; surrounding text supports mental pressure rather than body appearance.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_2e8bf4ee79dc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0021",
+          "startOffset": 619366,
+          "endOffset": 619369,
+          "summary": "Direct source-name evidence; surrounding text supports mental pressure rather than body appearance.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_6d566986ae66"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0032",
+          "startOffset": 619762,
+          "endOffset": 619768,
+          "summary": "Function evidence: effect is directed at will and morale, not a visible body description.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_d79aee20247e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0104",
+          "startOffset": 17553,
+          "endOffset": 17556,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_0c353dccf856"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "concept_only",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.895528+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_ironfist_grappling_gu",
+      "guId": "ironfist_grappling_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "铁手擒拿蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "原文精确命中，并有能力显化为铁手/巨手的证据；本体不一定是手形，标本图只能取金属手爪意象作弱锚。",
+      "shape_hints": [
+        "manifested iron hand",
+        "giant hand effect",
+        "grappling/clamping silhouette"
+      ],
+      "color_hints": [
+        "iron/metal implied"
+      ],
+      "ability_hints": [
+        "capture",
+        "grapple",
+        "carry target away"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "铁手擒拿蛊",
+        "source_name_candidate": "铁手擒拿蛊",
+        "en_name_candidates": [
+          "Iron Hand Grappling Gu",
+          "Ironfist Grappling Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_manifestation",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_9a3dcbff5a8a",
+        "sp_30ab92efd706",
+        "sp_8c93b8d096d5",
+        "sp_ff2c2ad361b0"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0171",
+          "paragraphId": "ch_0171_p0089",
+          "startOffset": 571521,
+          "endOffset": 571526,
+          "summary": "Direct source-name evidence for Tie Xue Leng's capture Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_9a3dcbff5a8a"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0009",
+          "startOffset": 622395,
+          "endOffset": 622400,
+          "summary": "Direct source-name evidence for Tie Xue Leng's capture Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_30ab92efd706"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0204",
+          "paragraphId": "ch_0204_p0082",
+          "startOffset": 684949,
+          "endOffset": 684953,
+          "summary": "Manifestation evidence: the Gu effect becomes a giant hand, but body form remains uncertain.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_8c93b8d096d5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0105",
+          "startOffset": 17750,
+          "endOffset": 17755,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_ff2c2ad361b0"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "body_vs_manifestation_uncertain",
+        "appearance_inference"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:06.962465+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_oil_dragon_gu",
+      "guId": "oil_dragon_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "油龙蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "原文精确命中并给出黑油化龙的能力显化。标本图应避免画成实体真龙，可取漆黑油液、蛇龙轮廓、黏稠流动感。",
+      "shape_hints": [
+        "dragon-shaped oil manifestation",
+        "serpentine liquid form",
+        "not confirmed as physical dragon body"
+      ],
+      "color_hints": [
+        "black oil",
+        "glossy dark fluid"
+      ],
+      "ability_hints": [
+        "oil manifestation",
+        "paired with fire effect",
+        "entangling attack"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "油龙蛊",
+        "source_name_candidate": "油龙蛊",
+        "en_name_candidates": [
+          "Oil Dragon Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_manifestation",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_f1b80bce68db",
+        "sp_bd2b31505e02",
+        "sp_4514442c1df8",
+        "sp_3251d19453a7"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0016",
+          "startOffset": 622584,
+          "endOffset": 622589,
+          "summary": "Manifestation evidence: black oil pours out and forms a dragon-shaped attack.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_f1b80bce68db"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0017",
+          "startOffset": 622624,
+          "endOffset": 622627,
+          "summary": "Direct source-name evidence for the oil-dragon Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_bd2b31505e02"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0062",
+          "startOffset": 624270,
+          "endOffset": 624274,
+          "summary": "Manifestation evidence confirms dark oil-dragon visual, not necessarily Gu body.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_4514442c1df8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0109",
+          "startOffset": 18876,
+          "endOffset": 18879,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_3251d19453a7"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "body_vs_manifestation_uncertain",
+        "appearance_inference"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.036523+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_fire_dragon_gu",
+      "guId": "fire_dragon_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "火龙蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "原文精确命中，显化从火蛇变大为火龙，并有鳞甲、鹰爪、鹿角、马脸、利齿等强视觉线索；仍应标为能力显化而非虫体本体。",
+      "shape_hints": [
+        "fire-snake-to-dragon manifestation",
+        "scales",
+        "eagle-like claws",
+        "deer-like horns",
+        "horse-like face",
+        "sharp teeth"
+      ],
+      "color_hints": [
+        "fire/ember tones",
+        "burning body"
+      ],
+      "ability_hints": [
+        "fire attack",
+        "recovers strength by rolling through fire",
+        "works with oil effect"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "火龙蛊",
+        "source_name_candidate": "火龙蛊",
+        "en_name_candidates": [
+          "Fire Dragon Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_strong_manifestation",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_83878c99b385",
+        "sp_64723d86828c",
+        "sp_f8f1b8f9e2c9",
+        "sp_884e2d630c5f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0124",
+          "paragraphId": "ch_0124_p0070",
+          "startOffset": 402737,
+          "endOffset": 402739,
+          "summary": "Detailed manifestation evidence supports scales and animal-part cues.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_83878c99b385"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0023",
+          "startOffset": 622817,
+          "endOffset": 622820,
+          "summary": "Direct source-name evidence for the fire-dragon Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_64723d86828c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0025",
+          "startOffset": 622873,
+          "endOffset": 622878,
+          "summary": "Manifestation evidence: a fire snake expands into a dragon-like form.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_f8f1b8f9e2c9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0110",
+          "startOffset": 19080,
+          "endOffset": 19083,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_884e2d630c5f"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "body_vs_manifestation_uncertain",
+        "appearance_inference"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.125770+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_giant_mountain_puppet_gu",
+      "guId": "giant_mountain_puppet_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "巨山傀儡蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "请求名未精确命中；原文可复核到山丘巨傀蛊。本体证据比预期更清楚：形如青铜面罩；山泥巨傀是能力显化，不宜当成本体。",
+      "shape_hints": [
+        "bronze-mask-like Gu body",
+        "protective mask cover",
+        "puppet/giant form is manifestation, not body"
+      ],
+      "color_hints": [
+        "bronze/greenish metal implied"
+      ],
+      "ability_hints": [
+        "protective puppet/giant manifestation",
+        "rescue protection"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "巨山傀儡蛊",
+        "source_name_candidate": "山丘巨傀蛊",
+        "en_name_candidates": [
+          "Hill Giant Puppet Gu",
+          "Giant Mountain Puppet Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_body_appearance_with_name_mismatch",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_28ef9ae795e1",
+        "sp_ce0038574f64",
+        "sp_f213f376fbe8",
+        "sp_8ddfacdf9b15"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0056",
+          "startOffset": 624097,
+          "endOffset": 624102,
+          "summary": "Alias/source-name evidence for the requested giant-mountain puppet item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_28ef9ae795e1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0098",
+          "startOffset": 642858,
+          "endOffset": 642863,
+          "summary": "Alias/source-name evidence for the requested giant-mountain puppet item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_ce0038574f64"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0204",
+          "paragraphId": "ch_0204_p0082",
+          "startOffset": 684923,
+          "endOffset": 684927,
+          "summary": "Body evidence: the Gu itself is described as a bronze-mask-like object.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_f213f376fbe8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0111",
+          "startOffset": 19292,
+          "endOffset": 19297,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_8ddfacdf9b15"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "body_vs_manifestation_uncertain"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.198048+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_demon_suppression_iron_chain_gu",
+      "guId": "demon_suppression_iron_chain_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "镇魔铁链蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G3 铁血冷路线",
+      "chapterAnchor": "170+",
+      "summary": "请求名未精确命中；原文可复核到镇魔铁索蛊。线索集中在束缚、镇压、黑色铁索虚影与越缩越紧的勒束效果，本体结构仍未明示。",
+      "shape_hints": [
+        "chain/rope-like restraint manifestation",
+        "tightening iron segments",
+        "suppression-lock motif"
+      ],
+      "color_hints": [
+        "black iron shadow"
+      ],
+      "ability_hints": [
+        "binds movement",
+        "suppresses aperture",
+        "tightening restraint"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "镇魔铁链蛊",
+        "source_name_candidate": "镇魔铁索蛊",
+        "en_name_candidates": [
+          "Demon Suppression Iron Rope Gu",
+          "Demon Suppression Iron Chain Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_manifestation_with_name_mismatch",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_b6f7ce0f587b",
+        "sp_c91754ec1bea",
+        "sp_fc0658a7e689",
+        "sp_56646c4b409c",
+        "sp_2883a6508b4a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0022",
+          "startOffset": 651198,
+          "endOffset": 651203,
+          "summary": "Alias/source-name evidence for the requested chain item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_b6f7ce0f587b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0024",
+          "startOffset": 651272,
+          "endOffset": 651277,
+          "summary": "Alias/source-name evidence for the requested chain item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_c91754ec1bea"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0034",
+          "startOffset": 651691,
+          "endOffset": 651698,
+          "summary": "Manifestation evidence supports black iron-rope/chain visual treatment.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_fc0658a7e689"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0061",
+          "startOffset": 652751,
+          "endOffset": 652755,
+          "summary": "Action evidence supports tightening restraint imagery.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_56646c4b409c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0112",
+          "startOffset": 19502,
+          "endOffset": 19507,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_2883a6508b4a"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "body_vs_manifestation_uncertain",
+        "appearance_inference"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.273965+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_crane_enslavement_gu",
+      "guId": "crane_enslavement_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "驭鹤蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G4 天鹤上人路线",
+      "chapterAnchor": "190+",
+      "summary": "请求名未精确命中；原文可复核到御鹤蛊，并只给出驾驭鹤王/大规模鹤群的能力旁证。羽、触须、控制器形态均不能硬定。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "crane control",
+        "beast-group command",
+        "enslavement-path support"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "驭鹤蛊",
+        "source_name_candidate": "御鹤蛊",
+        "en_name_candidates": [
+          "Crane Control Gu",
+          "Crane Enslavement Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_alias_function_only",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_8a9a002fb458",
+        "sp_27d2bca202f5",
+        "sp_0555f1ffc1f6"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0192",
+          "paragraphId": "ch_0192_p0008",
+          "startOffset": 643514,
+          "endOffset": 643516,
+          "summary": "Context evidence supports large-scale crane control, not Gu body appearance.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_8a9a002fb458"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0010",
+          "startOffset": 647585,
+          "endOffset": 647588,
+          "summary": "Alias/source-name evidence: Lord Sky Crane is known for a crane-control Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_27d2bca202f5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0120",
+          "startOffset": 21781,
+          "endOffset": 21784,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_0555f1ffc1f6"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "ability_only",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.349917+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_kinship_bloodworm",
+      "guId": "kinship_bloodworm",
+      "relatedGuIds": [],
+      "requestedZhName": "血亲蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G4 天鹤上人路线",
+      "chapterAnchor": "190+",
+      "summary": "请求名未精确命中；原文可复核到至亲血虫。其本体外观证据强：晶莹剔透、红玛瑙质感、近似蝉形、会发光并指向目标。",
+      "shape_hints": [
+        "cicada-like body",
+        "transparent insect",
+        "pointing head/orientation behavior"
+      ],
+      "color_hints": [
+        "red agate",
+        "glowing red transparency"
+      ],
+      "ability_hints": [
+        "kinship tracking",
+        "bloodline search"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "血亲蛊",
+        "source_name_candidate": "至亲血虫",
+        "en_name_candidates": [
+          "Kinship Bloodworm",
+          "Closest-Kin Bloodworm"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_body_appearance_with_name_mismatch",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_bc113cec6bc0",
+        "sp_053035c78224",
+        "sp_944a53e7f679",
+        "sp_41bd4639454e",
+        "sp_04b20eadcba5"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0014",
+          "paragraphId": "ch_0014_p0068",
+          "startOffset": 39306,
+          "endOffset": 39309,
+          "summary": "Body evidence: red-agate transparency and cicada-like form.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_bc113cec6bc0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0104",
+          "startOffset": 643123,
+          "endOffset": 643127,
+          "summary": "Alias/source-name evidence for the kinship bloodworm item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_053035c78224"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0003",
+          "startOffset": 647036,
+          "endOffset": 647040,
+          "summary": "Alias/source-name evidence for the kinship bloodworm item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_944a53e7f679"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0004",
+          "startOffset": 647075,
+          "endOffset": 647077,
+          "summary": "Body orientation evidence supports a cicada-like head pointing behavior.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_41bd4639454e"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0121",
+          "startOffset": 22008,
+          "endOffset": 22011,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_04b20eadcba5"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "appearance_direct"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.433364+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_life_retaining_jade_burial_gu",
+      "guId": "life_retaining_jade_burial_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "玉葬续命蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G4 天鹤上人路线",
+      "chapterAnchor": "190+",
+      "summary": "请求名未精确命中；原文可复核到存息玉葬蛊。外观锚主要来自能力效果：自我沉眠、吊住性命、结成坚固玉棺；虫体本身未明示。",
+      "shape_hints": [
+        "jade coffin/cocoon effect",
+        "sealed burial container motif",
+        "body form not described"
+      ],
+      "color_hints": [
+        "jade implied by effect name and coffin result"
+      ],
+      "ability_hints": [
+        "life-retaining stasis",
+        "sleep/seal preservation",
+        "defensive jade coffin"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "low",
+        "requested_zh_name": "玉葬续命蛊",
+        "source_name_candidate": "存息玉葬蛊",
+        "en_name_candidates": [
+          "Breath-Preserving Jade Burial Gu",
+          "Life-Retaining Jade Burial Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_alias_effect_appearance",
+      "confidence": "high",
+      "sourcePointerIds": [
+        "sp_d83477e9fff9",
+        "sp_622bc5b40f02",
+        "sp_03d104b0d57d",
+        "sp_a8e5e088a90c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0006",
+          "startOffset": 647349,
+          "endOffset": 647354,
+          "summary": "Alias/source-name evidence for the jade-burial life-retaining item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_d83477e9fff9"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0020",
+          "startOffset": 648113,
+          "endOffset": 648118,
+          "summary": "Alias/source-name evidence for the jade-burial life-retaining item.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_622bc5b40f02"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0200",
+          "paragraphId": "ch_0200_p0010",
+          "startOffset": 671505,
+          "endOffset": 671507,
+          "summary": "Effect-appearance evidence: the ability forms a strong jade coffin.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_03d104b0d57d"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0122",
+          "startOffset": 22238,
+          "endOffset": 22243,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_a8e5e088a90c"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "name_uncertain",
+        "body_vs_effect_uncertain",
+        "appearance_inference"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.515623+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    },
+    {
+      "id": "gu_appearance_raise_eyebrows_exhale_gu",
+      "guId": "raise_eyebrows_exhale_gu",
+      "relatedGuIds": [],
+      "requestedZhName": "扬眉吐气蛊",
+      "category": "gu_appearance_evidence",
+      "requestGroup": "G4 天鹤上人路线",
+      "chapterAnchor": "190+",
+      "summary": "原文精确命中，提供元气逸散和空窍桥梁类功能线索；虫体外观没有给出。标本图应暂缓，最多作为概念型气流/桥接意象候选。",
+      "shape_hints": [],
+      "color_hints": [],
+      "ability_hints": [
+        "exhales vitality-like energy",
+        "links apertures like a bridge",
+        "accelerates essence drain"
+      ],
+      "naming_hints": {
+        "zh_name_confidence": "high",
+        "requested_zh_name": "扬眉吐气蛊",
+        "source_name_candidate": "扬眉吐气蛊",
+        "en_name_candidates": [
+          "Raise Eyebrows and Exhale Gu",
+          "Breathe Out Vitality Gu"
+        ],
+        "needs_human_check": true
+      },
+      "visibility": "public",
+      "sourceEvidenceStatus": "direct_name_function_only",
+      "confidence": "medium",
+      "sourcePointerIds": [
+        "sp_68d12bcb49b5",
+        "sp_644a805dcfd0",
+        "sp_c3eddf2bcaa0",
+        "sp_d93f0a0a3bdc"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0056",
+          "startOffset": 649663,
+          "endOffset": 649668,
+          "summary": "Direct source-name evidence for the concept Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_68d12bcb49b5"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0057",
+          "startOffset": 649694,
+          "endOffset": 649699,
+          "summary": "Direct source-name evidence for the concept Gu.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_644a805dcfd0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0193",
+          "paragraphId": "ch_0193_p0059",
+          "startOffset": 649797,
+          "endOffset": 649803,
+          "summary": "Function metaphor evidence: links apertures like a bridge; no body appearance.",
+          "sourcePointerKind": "original_text",
+          "sourcePointerId": "sp_c3eddf2bcaa0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+          "chapterId": "s0-qingmao-gu-atlas",
+          "paragraphId": "line_0123",
+          "startOffset": 22477,
+          "endOffset": 22482,
+          "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+          "sourcePointerKind": "atlas_prior",
+          "nonOriginalPointer": true,
+          "sourcePointerId": "sp_d93f0a0a3bdc"
+        }
+      ],
+      "suggestedUse": [
+        "candidate_pool",
+        "art_prompt_seed",
+        "atlas_update"
+      ],
+      "blockedUse": [
+        "runtime_truth",
+        "deepseek_authority",
+        "player_hidden_fact_body",
+        "runtime_gu_stats",
+        "formal_recipe_release"
+      ],
+      "riskTags": [
+        "concept_only",
+        "appearance_missing"
+      ],
+      "review": {
+        "status": "export_ready",
+        "classification": "gu_appearance_evidence-candidate",
+        "notes": [
+          "compiled by deterministic MiroFish Gu appearance request mapper",
+          "candidate-only; requires RebornG intake review before art or atlas use",
+          "source summaries are RebornG-owned abstracts and do not contain source body text"
+        ],
+        "updatedAt": "2026-05-17T13:08:07.599385+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "gu_appearance_evidence",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      }
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0200",
+      "paragraphId": "ch_0200_p0010",
+      "startOffset": 671505,
+      "endOffset": 671507,
+      "summary": "Effect-appearance evidence: the ability forms a strong jade coffin.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_03d104b0d57d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0121",
+      "startOffset": 22008,
+      "endOffset": 22011,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_04b20eadcba5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0191",
+      "paragraphId": "ch_0191_p0104",
+      "startOffset": 643123,
+      "endOffset": 643127,
+      "summary": "Alias/source-name evidence for the kinship bloodworm item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_053035c78224"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0195",
+      "paragraphId": "ch_0195_p0003",
+      "startOffset": 653846,
+      "endOffset": 653850,
+      "summary": "Visual relation evidence: the paired insects are associated with a black-white taiji light sphere.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_0554ca6a24bb"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0120",
+      "startOffset": 21781,
+      "endOffset": 21784,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_0555f1ffc1f6"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0103",
+      "startOffset": 17342,
+      "endOffset": 17345,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_0a1b67c4044c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0104",
+      "startOffset": 17553,
+      "endOffset": 17556,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_0c353dccf856"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0101",
+      "startOffset": 16969,
+      "endOffset": 16972,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_1d286d3ee54f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0010",
+      "startOffset": 647585,
+      "endOffset": 647588,
+      "summary": "Alias/source-name evidence: Lord Sky Crane is known for a crane-control Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_27d2bca202f5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0112",
+      "startOffset": 19502,
+      "endOffset": 19507,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_2883a6508b4a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0056",
+      "startOffset": 624097,
+      "endOffset": 624102,
+      "summary": "Alias/source-name evidence for the requested giant-mountain puppet item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_28ef9ae795e1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0110",
+      "paragraphId": "ch_0110_p0089",
+      "startOffset": 352576,
+      "endOffset": 352579,
+      "summary": "Direct source-name evidence for a common synthesis route; body appearance is not supplied.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_2d509111ac64"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0171",
+      "paragraphId": "ch_0171_p0078",
+      "startOffset": 571267,
+      "endOffset": 571270,
+      "summary": "Direct source-name evidence; surrounding text supports mental pressure rather than body appearance.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_2e8bf4ee79dc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0009",
+      "startOffset": 622395,
+      "endOffset": 622400,
+      "summary": "Direct source-name evidence for Tie Xue Leng's capture Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_30ab92efd706"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0109",
+      "startOffset": 18876,
+      "endOffset": 18879,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_3251d19453a7"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0178",
+      "paragraphId": "ch_0178_p0002",
+      "startOffset": 593222,
+      "endOffset": 593226,
+      "summary": "Body evidence: the Gu is described as a coal-lump-like object with size, surface, and texture cues.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_3ca855acf742"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0004",
+      "startOffset": 647075,
+      "endOffset": 647077,
+      "summary": "Body orientation evidence supports a cicada-like head pointing behavior.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_41bd4639454e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0062",
+      "startOffset": 624270,
+      "endOffset": 624274,
+      "summary": "Manifestation evidence confirms dark oil-dragon visual, not necessarily Gu body.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_4514442c1df8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0062",
+      "startOffset": 9579,
+      "endOffset": 9582,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_4904c2af4e46"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0200",
+      "paragraphId": "ch_0200_p0031",
+      "startOffset": 672458,
+      "endOffset": 672460,
+      "summary": "Single-member naming evidence for the remaining yang member.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_4da897152022"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0102",
+      "startOffset": 17155,
+      "endOffset": 17158,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_52cfaffd8117"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0194",
+      "paragraphId": "ch_0194_p0061",
+      "startOffset": 652751,
+      "endOffset": 652755,
+      "summary": "Action evidence supports tightening restraint imagery.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_56646c4b409c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0020",
+      "startOffset": 648113,
+      "endOffset": 648118,
+      "summary": "Alias/source-name evidence for the jade-burial life-retaining item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_622bc5b40f02"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0177",
+      "paragraphId": "ch_0177_p0059",
+      "startOffset": 592651,
+      "endOffset": 592654,
+      "summary": "生铁蛊 appears on the same transaction line used by the art request; requested 猪铁蛊 has no exact first-volume hit.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_631c4f57fe13"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0057",
+      "startOffset": 649694,
+      "endOffset": 649699,
+      "summary": "Direct source-name evidence for the concept Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_644a805dcfd0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0023",
+      "startOffset": 622817,
+      "endOffset": 622820,
+      "summary": "Direct source-name evidence for the fire-dragon Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_64723d86828c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0056",
+      "startOffset": 649663,
+      "endOffset": 649668,
+      "summary": "Direct source-name evidence for the concept Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_68d12bcb49b5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0097",
+      "startOffset": 15952,
+      "endOffset": 15955,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_6a36e7264e61"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0185",
+      "paragraphId": "ch_0185_p0021",
+      "startOffset": 619366,
+      "endOffset": 619369,
+      "summary": "Direct source-name evidence; surrounding text supports mental pressure rather than body appearance.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_6d566986ae66"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0047",
+      "paragraphId": "ch_0047_p0021",
+      "startOffset": 137720,
+      "endOffset": 137724,
+      "summary": "Body-scale evidence supports a large mount silhouette.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_6d9fc63c5aba"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0064",
+      "startOffset": 10175,
+      "endOffset": 10180,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_6eda65fbf577"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0067",
+      "startOffset": 11044,
+      "endOffset": 11046,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_77b17f5cf920"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0200",
+      "paragraphId": "ch_0200_p0027",
+      "startOffset": 672173,
+      "endOffset": 672175,
+      "summary": "Single-member naming evidence for the consumed yin member.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_7cf35da3324d"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0124",
+      "paragraphId": "ch_0124_p0070",
+      "startOffset": 402737,
+      "endOffset": 402739,
+      "summary": "Detailed manifestation evidence supports scales and animal-part cues.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_83878c99b385"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0110",
+      "startOffset": 19080,
+      "endOffset": 19083,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_884e2d630c5f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0192",
+      "paragraphId": "ch_0192_p0008",
+      "startOffset": 643514,
+      "endOffset": 643516,
+      "summary": "Context evidence supports large-scale crane control, not Gu body appearance.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_8a9a002fb458"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0204",
+      "paragraphId": "ch_0204_p0082",
+      "startOffset": 684949,
+      "endOffset": 684953,
+      "summary": "Manifestation evidence: the Gu effect becomes a giant hand, but body form remains uncertain.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_8c93b8d096d5"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0047",
+      "paragraphId": "ch_0047_p0021",
+      "startOffset": 137704,
+      "endOffset": 137709,
+      "summary": "Direct source-name evidence identifies a mount Gu with burrowing travel function.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_8dce54f22e11"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0111",
+      "startOffset": 19292,
+      "endOffset": 19297,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_8ddfacdf9b15"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0003",
+      "startOffset": 647036,
+      "endOffset": 647040,
+      "summary": "Alias/source-name evidence for the kinship bloodworm item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_944a53e7f679"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0171",
+      "paragraphId": "ch_0171_p0089",
+      "startOffset": 571521,
+      "endOffset": 571526,
+      "summary": "Direct source-name evidence for Tie Xue Leng's capture Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_9a3dcbff5a8a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0122",
+      "startOffset": 22238,
+      "endOffset": 22243,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_a8e5e088a90c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0194",
+      "paragraphId": "ch_0194_p0022",
+      "startOffset": 651198,
+      "endOffset": 651203,
+      "summary": "Alias/source-name evidence for the requested chain item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_b6f7ce0f587b"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0047",
+      "paragraphId": "ch_0047_p0023",
+      "startOffset": 137870,
+      "endOffset": 137875,
+      "summary": "Direct source-name evidence identifies a mount Gu with burrowing travel function.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_b81286324ace"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0014",
+      "paragraphId": "ch_0014_p0068",
+      "startOffset": 39306,
+      "endOffset": 39309,
+      "summary": "Body evidence: red-agate transparency and cicada-like form.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_bc113cec6bc0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0017",
+      "startOffset": 622624,
+      "endOffset": 622627,
+      "summary": "Direct source-name evidence for the oil-dragon Gu.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_bd2b31505e02"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0059",
+      "startOffset": 649797,
+      "endOffset": 649803,
+      "summary": "Function metaphor evidence: links apertures like a bridge; no body appearance.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_c3eddf2bcaa0"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0194",
+      "paragraphId": "ch_0194_p0024",
+      "startOffset": 651272,
+      "endOffset": 651277,
+      "summary": "Alias/source-name evidence for the requested chain item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_c91754ec1bea"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0107",
+      "paragraphId": "ch_0107_p0067",
+      "startOffset": 339687,
+      "endOffset": 339691,
+      "summary": "Effect-color evidence belongs to the produced attack, not the Gu body.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_cd3780150588"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0191",
+      "paragraphId": "ch_0191_p0098",
+      "startOffset": 642858,
+      "endOffset": 642863,
+      "summary": "Alias/source-name evidence for the requested giant-mountain puppet item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_ce0038574f64"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0107",
+      "paragraphId": "ch_0107_p0067",
+      "startOffset": 339668,
+      "endOffset": 339671,
+      "summary": "Direct source-name evidence for a common synthesis route; body appearance is not supplied.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_d7150d5c1a7e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0185",
+      "paragraphId": "ch_0185_p0032",
+      "startOffset": 619762,
+      "endOffset": 619768,
+      "summary": "Function evidence: effect is directed at will and morale, not a visible body description.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_d79aee20247e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0193",
+      "paragraphId": "ch_0193_p0006",
+      "startOffset": 647349,
+      "endOffset": 647354,
+      "summary": "Alias/source-name evidence for the jade-burial life-retaining item.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_d83477e9fff9"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0123",
+      "startOffset": 22477,
+      "endOffset": 22482,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_d93f0a0a3bdc"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0039",
+      "paragraphId": "ch_0039_p0020",
+      "startOffset": 111406,
+      "endOffset": 111410,
+      "summary": "Body-count evidence: the system is presented as two insects rather than one body.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_dddfe6c96dc8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0195",
+      "paragraphId": "ch_0195_p0004",
+      "startOffset": 653878,
+      "endOffset": 653882,
+      "summary": "Visual relation evidence: the paired insects are associated with a black-white taiji light sphere.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_e198fa99432a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0178",
+      "paragraphId": "ch_0178_p0003",
+      "startOffset": 593287,
+      "endOffset": 593293,
+      "summary": "Use evidence: activated body emits dark iron-like mist, supporting raw-iron material treatment.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_e7bb11710ff8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0016",
+      "startOffset": 622584,
+      "endOffset": 622589,
+      "summary": "Manifestation evidence: black oil pours out and forms a dragon-shaped attack.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_f1b80bce68db"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0204",
+      "paragraphId": "ch_0204_p0082",
+      "startOffset": 684923,
+      "endOffset": 684927,
+      "summary": "Body evidence: the Gu itself is described as a bronze-mask-like object.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_f213f376fbe8"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0186",
+      "paragraphId": "ch_0186_p0025",
+      "startOffset": 622873,
+      "endOffset": 622878,
+      "summary": "Manifestation evidence: a fire snake expands into a dragon-like form.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_f8f1b8f9e2c9"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0194",
+      "paragraphId": "ch_0194_p0034",
+      "startOffset": 651691,
+      "endOffset": 651698,
+      "summary": "Manifestation evidence supports black iron-rope/chain visual treatment.",
+      "sourcePointerKind": "original_text",
+      "sourcePointerId": "sp_fc0658a7e689"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\art\\s0-qingmao-gu-atlas.md",
+      "chapterId": "s0-qingmao-gu-atlas",
+      "paragraphId": "line_0105",
+      "startOffset": 17750,
+      "endOffset": 17755,
+      "summary": "RebornG atlas row marks a visual-gap/name-review prior; original first-volume body evidence is not confirmed here.",
+      "sourcePointerKind": "atlas_prior",
+      "nonOriginalPointer": true,
+      "sourcePointerId": "sp_ff2c2ad361b0"
+    }
+  ],
+  "skipped": [],
+  "coverageMatrix": {
+    "requestedRows": 17,
+    "deliveredRows": 17,
+    "rowsWithAnySourcePointer": 17,
+    "rowsWithOriginalTextPointer": 14,
+    "rowsWithAtlasPriorOnly": 3,
+    "atlasPriorOnlyGuIds": [
+      "swirl_gu",
+      "fierce_wind_gu",
+      "lightning_eye_gu"
+    ],
+    "evidenceStatusCounts": {
+      "atlas_prior_only": 3,
+      "direct_alias_effect_appearance": 1,
+      "direct_alias_function_only": 1,
+      "direct_body_appearance_with_name_mismatch": 3,
+      "direct_name_and_function": 1,
+      "direct_name_function_only": 3,
+      "direct_name_manifestation": 2,
+      "direct_name_manifestation_with_name_mismatch": 1,
+      "direct_name_strong_manifestation": 1,
+      "direct_pair_visual": 1
+    },
+    "riskTagCounts": {
+      "ability_only": 2,
+      "appearance_direct": 2,
+      "appearance_inference": 5,
+      "appearance_missing": 7,
+      "appearance_partial": 1,
+      "atlas_update_needs_manual_rename": 1,
+      "body_detail_partial": 1,
+      "body_vs_effect_uncertain": 1,
+      "body_vs_manifestation_uncertain": 5,
+      "concept_only": 5,
+      "name_uncertain": 6,
+      "no_first_volume_exact_hit": 3,
+      "pair_split_inference": 1,
+      "wolf_pattern_inference": 1
+    },
+    "requestGroupCounts": {
+      "G1 方源/金道/坐骑": 3,
+      "G2 白凝冰冰道辅助/风道": 4,
+      "G3 铁血冷路线": 6,
+      "G4 天鹤上人路线": 4
+    },
+    "requiresHumanCanonReviewRows": 17,
+    "completionGate": {
+      "status": "complete_candidate_with_known_gaps",
+      "passesRequestThreshold": true,
+      "notes": [
+        "17 request rows delivered; Yang/Yin are represented as one paired row because the request table defines G1 as three rows.",
+        "14 rows have first-volume original text pointers; 3 rows remain atlas-prior-only concept placeholders.",
+        "atlas-prior-only rows should stay atlas-pending/no-png until RebornG or MiroFish finds stronger evidence."
+      ]
+    }
+  },
+  "summary": {
+    "totalItems": 17,
+    "requestedRows": 17,
+    "coveredRows": 17,
+    "rowsWithOriginalTextPointer": 14,
+    "rowsWithAtlasPriorOnly": 3,
+    "sourcePointers": 62,
+    "quoteLikeKeys": 0,
+    "highRankLeakTerms": [],
+    "hiddenFactItems": 0,
+    "skipped": 0
+  }
+}

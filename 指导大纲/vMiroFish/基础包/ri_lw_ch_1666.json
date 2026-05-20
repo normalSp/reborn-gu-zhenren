@@ -1,0 +1,973 @@
+{
+  "packageId": "ri_lw_ch_1666",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1666"
+    ],
+    "paragraphIds": [
+      "ch_1666_p0002",
+      "ch_1666_p0005",
+      "ch_1666_p0009",
+      "ch_1666_p0016",
+      "ch_1666_p0018",
+      "ch_1666_p0025",
+      "ch_1666_p0030",
+      "ch_1666_p0032",
+      "ch_1666_p0033",
+      "ch_1666_p0036",
+      "ch_1666_p0042",
+      "ch_1666_p0053",
+      "ch_1666_p0057",
+      "ch_1666_p0062",
+      "ch_1666_p0063",
+      "ch_1666_p0064",
+      "ch_1666_p0065",
+      "ch_1666_p0066",
+      "ch_1666_p0067"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0002",
+          "startOffset": 5764062,
+          "endOffset": 5764066,
+          "summary": "金玉屋原主人，奸商"
+        }
+      ],
+      "entityId": "entity_a35159f0b119",
+      "name": "黄鳞鲛人",
+      "kind": "person",
+      "aliases": [],
+      "description": "金玉屋原主人，奸商",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0009",
+          "startOffset": 5764255,
+          "endOffset": 5764257,
+          "summary": "鲛人少女，赌斗参与者"
+        }
+      ],
+      "entityId": "entity_ba931da7d517",
+      "name": "夏琳",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛人少女，赌斗参与者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0030",
+          "startOffset": 5765101,
+          "endOffset": 5765104,
+          "summary": "夏琳背后的指挥者"
+        }
+      ],
+      "entityId": "entity_929ec6f43e3d",
+      "name": "楚大师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "夏琳背后的指挥者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0032",
+          "startOffset": 5765183,
+          "endOffset": 5765185,
+          "summary": "幕后操纵者，楚大师的真实身份"
+        }
+      ],
+      "entityId": "entity_c2ce588d5ae8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "幕后操纵者，楚大师的真实身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0018",
+          "startOffset": 5764609,
+          "endOffset": 5764613,
+          "summary": "黄鳞鲛人的手下"
+        }
+      ],
+      "entityId": "entity_16cc87a9a9db",
+      "name": "伤疤鲛人",
+      "kind": "person",
+      "aliases": [],
+      "description": "黄鳞鲛人的手下",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0033",
+          "startOffset": 5765208,
+          "endOffset": 5765210,
+          "summary": "鲛人，疑似与方源有关联"
+        }
+      ],
+      "entityId": "entity_ba931da7d517",
+      "name": "夏琳",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛人，疑似与方源有关联",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0033",
+          "startOffset": 5765213,
+          "endOffset": 5765218,
+          "summary": "赌石坊主人，被夏琳教训"
+        }
+      ],
+      "entityId": "entity_e79e6e42b277",
+      "name": "黄鳞鲛人",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赌石坊主人，被夏琳教训",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0053",
+          "startOffset": 5765996,
+          "endOffset": 5765998,
+          "summary": "暗中帮助夏琳，传音"
+        }
+      ],
+      "entityId": "entity_c2ce588d5ae8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "楚大师"
+      ],
+      "description": "暗中帮助夏琳，传音",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0057",
+          "startOffset": 5766144,
+          "endOffset": 5766148,
+          "summary": "鲛人王庭当代圣女"
+        }
+      ],
+      "entityId": "entity_10f8dcb9adbf",
+      "name": "谢晗沫",
+      "kind": "person",
+      "aliases": [],
+      "description": "鲛人王庭当代圣女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0062",
+          "startOffset": 5766301,
+          "endOffset": 5766306,
+          "summary": "谢晗沫的侍卫"
+        }
+      ],
+      "entityId": "entity_2a0e816bef61",
+      "name": "蓝鳞侍卫",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "谢晗沫的侍卫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0065",
+          "startOffset": 5766499,
+          "endOffset": 5766524,
+          "summary": "蓝鳞侍卫、红鳞侍卫的首领"
+        }
+      ],
+      "entityId": "entity_10f8dcb9adbf",
+      "name": "谢晗沫",
+      "kind": "person",
+      "aliases": [],
+      "description": "蓝鳞侍卫、红鳞侍卫的首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0067",
+          "startOffset": 5766600,
+          "endOffset": 5766628,
+          "summary": "人族蛊师"
+        }
+      ],
+      "entityId": "entity_c2ce588d5ae8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "古月方源"
+      ],
+      "description": "人族蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0030",
+          "startOffset": 5765101,
+          "endOffset": 5765104,
+          "summary": "方源暗中指点夏琳进行赌斗"
+        }
+      ],
+      "relationId": "rel_c7d643b1ad9e",
+      "subject": "方源",
+      "object": "夏琳",
+      "relationType": "ALLY",
+      "summary": "方源暗中指点夏琳进行赌斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0016",
+          "startOffset": 5764495,
+          "endOffset": 5764499,
+          "summary": "黄鳞鲛人与夏琳进行五局赌斗，争夺金玉屋"
+        }
+      ],
+      "relationId": "rel_96f8487d690b",
+      "subject": "黄鳞鲛人",
+      "object": "夏琳",
+      "relationType": "CONFLICT",
+      "summary": "黄鳞鲛人与夏琳进行五局赌斗，争夺金玉屋",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0018",
+          "startOffset": 5764609,
+          "endOffset": 5764613,
+          "summary": "伤疤鲛人是黄鳞鲛人的手下"
+        }
+      ],
+      "relationId": "rel_8b62f709f02d",
+      "subject": "伤疤鲛人",
+      "object": "黄鳞鲛人",
+      "relationType": "FACTION",
+      "summary": "伤疤鲛人是黄鳞鲛人的手下",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0042",
+          "startOffset": 5765491,
+          "endOffset": 5765493,
+          "summary": "夏琳教训黄鳞鲛人，要求其改过自新"
+        }
+      ],
+      "relationId": "rel_c4fecaf25d76",
+      "subject": "夏琳",
+      "object": "黄鳞鲛人",
+      "relationType": "CONFLICT",
+      "summary": "夏琳教训黄鳞鲛人，要求其改过自新",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0053",
+          "startOffset": 5765996,
+          "endOffset": 5765998,
+          "summary": "方源暗中帮助夏琳，将其挪移并传音"
+        }
+      ],
+      "relationId": "rel_bd70dbbcf657",
+      "subject": "方源",
+      "object": "夏琳",
+      "relationType": "ALLY",
+      "summary": "方源暗中帮助夏琳，将其挪移并传音",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0057",
+          "startOffset": 5766134,
+          "endOffset": 5766136,
+          "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐"
+        }
+      ],
+      "relationId": "rel_9e34c5e12bb4",
+      "subject": "方源",
+      "object": "谢晗沫",
+      "relationType": "OTHER",
+      "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0066",
+          "startOffset": 5766528,
+          "endOffset": 5766596,
+          "summary": "方源向谢晗沫报恩，谢晗沫接受并询问姓名"
+        }
+      ],
+      "relationId": "rel_4cb1a16c57a4",
+      "subject": "方源",
+      "object": "谢晗沫",
+      "relationType": "OTHER",
+      "summary": "方源向谢晗沫报恩，谢晗沫接受并询问姓名",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0016",
+          "startOffset": 5764495,
+          "endOffset": 5764499,
+          "summary": "黄鳞鲛人与夏琳进行五局赌斗，黄鳞鲛人全败，金玉屋归属夏琳"
+        }
+      ],
+      "eventId": "evt_7c9d6e23da7e",
+      "eventType": "conflict",
+      "summary": "黄鳞鲛人与夏琳进行五局赌斗，黄鳞鲛人全败，金玉屋归属夏琳",
+      "actors": [
+        "黄鳞鲛人",
+        "夏琳"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黄鳞鲛人认输，金玉屋易主"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0005",
+          "startOffset": 5764127,
+          "endOffset": 5764131,
+          "summary": "黄鳞鲛人发现自己的蛊虫残骸出现在对手手中，感到震惊和困惑"
+        }
+      ],
+      "eventId": "evt_3473af22761c",
+      "eventType": "other",
+      "summary": "黄鳞鲛人发现自己的蛊虫残骸出现在对手手中，感到震惊和困惑",
+      "actors": [
+        "黄鳞鲛人"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黄鳞鲛人怀疑作弊，但最终认输"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0025",
+          "startOffset": 5764881,
+          "endOffset": 5764885,
+          "summary": "黄鳞鲛人五体投地认怂，请求死个明白"
+        }
+      ],
+      "eventId": "evt_18f0996bfb9c",
+      "eventType": "other",
+      "summary": "黄鳞鲛人五体投地认怂，请求死个明白",
+      "actors": [
+        "黄鳞鲛人"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黄鳞鲛人放弃抵抗，认输"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0036",
+          "startOffset": 5765285,
+          "endOffset": 5765287,
+          "summary": "夏琳教训黄鳞鲛人，指出其输是因为有人想让他输，并威胁其改过自新，否则将来会取走更多"
+        }
+      ],
+      "eventId": "evt_d71945892e07",
+      "eventType": "conflict",
+      "summary": "夏琳教训黄鳞鲛人，指出其输是因为有人想让他输，并威胁其改过自新，否则将来会取走更多",
+      "actors": [
+        "夏琳",
+        "黄鳞鲛人"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "黄鳞鲛人认错，承诺改过"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0053",
+          "startOffset": 5765996,
+          "endOffset": 5765998,
+          "summary": "夏琳离开金玉屋后，被方源挪移到小岛边缘，方源传音告知安全"
+        }
+      ],
+      "eventId": "evt_382e77187123",
+      "eventType": "other",
+      "summary": "夏琳离开金玉屋后，被方源挪移到小岛边缘，方源传音告知安全",
+      "actors": [
+        "夏琳",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "夏琳安全离开"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0063",
+          "startOffset": 5766325,
+          "endOffset": 5766327,
+          "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐，以报救命之恩"
+        }
+      ],
+      "eventId": "evt_b4a42e23cbd2",
+      "eventType": "other",
+      "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐，以报救命之恩",
+      "actors": [
+        "方源",
+        "谢晗沫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源提出协助"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0066",
+          "startOffset": 5766528,
+          "endOffset": 5766596,
+          "summary": "方源向谢晗沫报恩，谢晗沫接受并询问方源姓名，方源告知自己姓古月名方源"
+        }
+      ],
+      "eventId": "evt_f0d7bd6fb899",
+      "eventType": "other",
+      "summary": "方源向谢晗沫报恩，谢晗沫接受并询问方源姓名，方源告知自己姓古月名方源",
+      "actors": [
+        "方源",
+        "谢晗沫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "谢晗沫得知方源姓名"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0016",
+          "startOffset": 5764495,
+          "endOffset": 5764499,
+          "summary": "黄鳞鲛人与夏琳进行五局赌斗，黄鳞鲛人全败，金玉屋归属夏琳"
+        }
+      ],
+      "timelineId": "tl_7c9d6e23da7e",
+      "eventId": "evt_7c9d6e23da7e",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "黄鳞鲛人与夏琳进行五局赌斗，黄鳞鲛人全败，金玉屋归属夏琳",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0005",
+          "startOffset": 5764127,
+          "endOffset": 5764131,
+          "summary": "黄鳞鲛人发现自己的蛊虫残骸出现在对手手中，感到震惊和困惑"
+        }
+      ],
+      "timelineId": "tl_3473af22761c",
+      "eventId": "evt_3473af22761c",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "黄鳞鲛人发现自己的蛊虫残骸出现在对手手中，感到震惊和困惑",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0025",
+          "startOffset": 5764881,
+          "endOffset": 5764885,
+          "summary": "黄鳞鲛人五体投地认怂，请求死个明白"
+        }
+      ],
+      "timelineId": "tl_18f0996bfb9c",
+      "eventId": "evt_18f0996bfb9c",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "黄鳞鲛人五体投地认怂，请求死个明白",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0036",
+          "startOffset": 5765285,
+          "endOffset": 5765287,
+          "summary": "夏琳教训黄鳞鲛人，指出其输是因为有人想让他输，并威胁其改过自新，否则将来会取走更多"
+        }
+      ],
+      "timelineId": "tl_d71945892e07",
+      "eventId": "evt_d71945892e07",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "夏琳教训黄鳞鲛人，指出其输是因为有人想让他输，并威胁其改过自新，否则将来会取走更多",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0053",
+          "startOffset": 5765996,
+          "endOffset": 5765998,
+          "summary": "夏琳离开金玉屋后，被方源挪移到小岛边缘，方源传音告知安全"
+        }
+      ],
+      "timelineId": "tl_382e77187123",
+      "eventId": "evt_382e77187123",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "夏琳离开金玉屋后，被方源挪移到小岛边缘，方源传音告知安全",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0063",
+          "startOffset": 5766325,
+          "endOffset": 5766327,
+          "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐，以报救命之恩"
+        }
+      ],
+      "timelineId": "tl_b4a42e23cbd2",
+      "eventId": "evt_b4a42e23cbd2",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐，以报救命之恩",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0066",
+          "startOffset": 5766528,
+          "endOffset": 5766596,
+          "summary": "方源向谢晗沫报恩，谢晗沫接受并询问方源姓名，方源告知自己姓古月名方源"
+        }
+      ],
+      "timelineId": "tl_f0d7bd6fb899",
+      "eventId": "evt_f0d7bd6fb899",
+      "chapterId": "ch_1666",
+      "orderHint": "chapter-order",
+      "summary": "方源向谢晗沫报恩，谢晗沫接受并询问方源姓名，方源告知自己姓古月名方源",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0030",
+          "startOffset": 5765101,
+          "endOffset": 5765104,
+          "summary": "夏琳背后的指挥者"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1666",
+          "paragraphId": "ch_1666_p0032",
+          "startOffset": 5765183,
+          "endOffset": 5765185,
+          "summary": "幕后操纵者，楚大师的真实身份"
+        }
+      ],
+      "factId": "hf_ch_1666_001",
+      "summary": "方源是暗中指挥夏琳进行赌斗的'楚大师'",
+      "whoKnows": [
+        "方源",
+        "夏琳"
+      ],
+      "whoDoesNotKnow": [
+        "黄鳞鲛人"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0002",
+      "startOffset": 5764062,
+      "endOffset": 5764066,
+      "summary": "金玉屋原主人，奸商"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0009",
+      "startOffset": 5764255,
+      "endOffset": 5764257,
+      "summary": "鲛人少女，赌斗参与者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0030",
+      "startOffset": 5765101,
+      "endOffset": 5765104,
+      "summary": "夏琳背后的指挥者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0032",
+      "startOffset": 5765183,
+      "endOffset": 5765185,
+      "summary": "幕后操纵者，楚大师的真实身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0018",
+      "startOffset": 5764609,
+      "endOffset": 5764613,
+      "summary": "黄鳞鲛人的手下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0033",
+      "startOffset": 5765208,
+      "endOffset": 5765210,
+      "summary": "鲛人，疑似与方源有关联"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0033",
+      "startOffset": 5765213,
+      "endOffset": 5765218,
+      "summary": "赌石坊主人，被夏琳教训"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0053",
+      "startOffset": 5765996,
+      "endOffset": 5765998,
+      "summary": "暗中帮助夏琳，传音"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0057",
+      "startOffset": 5766144,
+      "endOffset": 5766148,
+      "summary": "鲛人王庭当代圣女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0062",
+      "startOffset": 5766301,
+      "endOffset": 5766306,
+      "summary": "谢晗沫的侍卫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0065",
+      "startOffset": 5766499,
+      "endOffset": 5766524,
+      "summary": "蓝鳞侍卫、红鳞侍卫的首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0067",
+      "startOffset": 5766600,
+      "endOffset": 5766628,
+      "summary": "人族蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0016",
+      "startOffset": 5764495,
+      "endOffset": 5764499,
+      "summary": "黄鳞鲛人与夏琳进行五局赌斗，争夺金玉屋"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0042",
+      "startOffset": 5765491,
+      "endOffset": 5765493,
+      "summary": "夏琳教训黄鳞鲛人，要求其改过自新"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0057",
+      "startOffset": 5766134,
+      "endOffset": 5766136,
+      "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0066",
+      "startOffset": 5766528,
+      "endOffset": 5766596,
+      "summary": "方源向谢晗沫报恩，谢晗沫接受并询问姓名"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0005",
+      "startOffset": 5764127,
+      "endOffset": 5764131,
+      "summary": "黄鳞鲛人发现自己的蛊虫残骸出现在对手手中，感到震惊和困惑"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0025",
+      "startOffset": 5764881,
+      "endOffset": 5764885,
+      "summary": "黄鳞鲛人五体投地认怂，请求死个明白"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0036",
+      "startOffset": 5765285,
+      "endOffset": 5765287,
+      "summary": "夏琳教训黄鳞鲛人，指出其输是因为有人想让他输，并威胁其改过自新，否则将来会取走更多"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1666",
+      "paragraphId": "ch_1666_p0063",
+      "startOffset": 5766325,
+      "endOffset": 5766327,
+      "summary": "方源追上谢晗沫，自称能帮忙查清寒潮部族贪腐，以报救命之恩"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed directly supports that '楚大师' is the behind-the-scenes commander of 夏琳 (p0030), and that 方源 is the true identity of 楚大师 (p0032). This is private knowledge not visible to 黄鳞鲛人 or the general public. The fact is atomic and source-backed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "黄鳞鲛人输掉赌斗后认怂认输，但seed只显示其行为（五体投地认怂、请求死个明白），未提供足够直接证据推断其内在动机。其动机可能是恐惧、也可能是真心服气，但seed未明确支持任何单一推断，因此返回空列表。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily involves individual actors (黄鳞鲛人, 夏琳, 方源) in a personal gambling duel over 金玉屋 (Jade House). 黄鳞鲛人 is an individual shop owner, not a collective faction/clan. 伤疤鲛人 is named as 黄鳞鲛人's subordinate but no named collective group/faction is established. 谢晗沫 is 鲛人王庭当代圣女 (current saintess of the Merman Royal Court) and has 蓝鳞侍卫/红鳞侍卫 as guards, but the seed only shows her personal interaction with 方源 about investigating 寒潮部族贪腐 — no concrete collective stake or pressure is established from the seed facts alone. No named family, clan, faction, or organization has a concrete stake in the seed facts that would support a faction pressure candidate.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

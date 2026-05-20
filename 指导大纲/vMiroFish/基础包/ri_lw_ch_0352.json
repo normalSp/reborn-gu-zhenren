@@ -1,0 +1,372 @@
+{
+  "packageId": "ri_lw_ch_0352",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0352"
+    ],
+    "paragraphIds": [
+      "ch_0352_p0003",
+      "ch_0352_p0004",
+      "ch_0352_p0009",
+      "ch_0352_p0010",
+      "ch_0352_p0035",
+      "ch_0352_p0037",
+      "ch_0352_p0064",
+      "ch_0352_p0066",
+      "ch_0352_p0072",
+      "ch_0352_p0078"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0003",
+          "startOffset": 1219735,
+          "endOffset": 1219737,
+          "summary": "蛊师，力道流派，正在闯犬王传承"
+        }
+      ],
+      "entityId": "entity_ec11603157a3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，力道流派，正在闯犬王传承",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0035",
+          "startOffset": 1221119,
+          "endOffset": 1221121,
+          "summary": "蛊师，进入犬王传承"
+        }
+      ],
+      "entityId": "entity_ec11603157a3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，进入犬王传承",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0066",
+          "startOffset": 1222219,
+          "endOffset": 1222221,
+          "summary": "主角，正在闯犬王传承"
+        }
+      ],
+      "entityId": "entity_ec11603157a3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，正在闯犬王传承",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0010",
+          "startOffset": 1220006,
+          "endOffset": 1220008,
+          "summary": "方源正在闯犬王传承，目标是第三十关"
+        }
+      ],
+      "relationId": "rel_deae2c34abf5",
+      "subject": "方源",
+      "object": "犬王传承",
+      "relationType": "OTHER",
+      "summary": "方源正在闯犬王传承，目标是第三十关",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0004",
+          "startOffset": 1219765,
+          "endOffset": 1219767,
+          "summary": "方源在犬王传承中通过了第二十轮，拥有十一头刺猬犬、一百三十二头电文狗、十七头菊花秋田犬以及一只大电文狗百兽王"
+        }
+      ],
+      "eventId": "evt_6ce1ef010855",
+      "eventType": "cultivation",
+      "summary": "方源在犬王传承中通过了第二十轮，拥有十一头刺猬犬、一百三十二头电文狗、十七头菊花秋田犬以及一只大电文狗百兽王",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂时站稳脚跟，但后续难度更大"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0037",
+          "startOffset": 1221197,
+          "endOffset": 1221227,
+          "summary": "方源在犬王传承中面临三个选择：对战菊花秋田犬群（奖励狗胆蛊）、对战铁甲狗群（奖励驭犬蛊）、退出传承。他放弃了退出机会。"
+        }
+      ],
+      "eventId": "evt_9c59e4f64716",
+      "eventType": "other",
+      "summary": "方源在犬王传承中面临三个选择：对战菊花秋田犬群（奖励狗胆蛊）、对战铁甲狗群（奖励驭犬蛊）、退出传承。他放弃了退出机会。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源只剩下两个选项，继续挑战。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0078",
+          "startOffset": 1222782,
+          "endOffset": 1222791,
+          "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。"
+        }
+      ],
+      "eventId": "evt_20db760ec561",
+      "eventType": "other",
+      "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源将挑战铁甲犬群，目标获得驭犬蛊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0004",
+          "startOffset": 1219765,
+          "endOffset": 1219767,
+          "summary": "方源在犬王传承中通过了第二十轮，拥有十一头刺猬犬、一百三十二头电文狗、十七头菊花秋田犬以及一只大电文狗百兽王"
+        }
+      ],
+      "timelineId": "tl_6ce1ef010855",
+      "eventId": "evt_6ce1ef010855",
+      "chapterId": "ch_0352",
+      "orderHint": "chapter-order",
+      "summary": "方源在犬王传承中通过了第二十轮，拥有十一头刺猬犬、一百三十二头电文狗、十七头菊花秋田犬以及一只大电文狗百兽王",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0037",
+          "startOffset": 1221197,
+          "endOffset": 1221227,
+          "summary": "方源在犬王传承中面临三个选择：对战菊花秋田犬群（奖励狗胆蛊）、对战铁甲狗群（奖励驭犬蛊）、退出传承。他放弃了退出机会。"
+        }
+      ],
+      "timelineId": "tl_9c59e4f64716",
+      "eventId": "evt_9c59e4f64716",
+      "chapterId": "ch_0352",
+      "orderHint": "chapter-order",
+      "summary": "方源在犬王传承中面临三个选择：对战菊花秋田犬群（奖励狗胆蛊）、对战铁甲狗群（奖励驭犬蛊）、退出传承。他放弃了退出机会。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0078",
+          "startOffset": 1222782,
+          "endOffset": 1222791,
+          "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。"
+        }
+      ],
+      "timelineId": "tl_20db760ec561",
+      "eventId": "evt_20db760ec561",
+      "chapterId": "ch_0352",
+      "orderHint": "chapter-order",
+      "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0352",
+          "paragraphId": "ch_0352_p0078",
+          "startOffset": 1222782,
+          "endOffset": 1222791,
+          "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "选择铁甲犬群获取驭犬蛊",
+      "inferredMotive": "需要驭犬蛊增强控犬能力",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0003",
+      "startOffset": 1219735,
+      "endOffset": 1219737,
+      "summary": "蛊师，力道流派，正在闯犬王传承"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0035",
+      "startOffset": 1221119,
+      "endOffset": 1221121,
+      "summary": "蛊师，进入犬王传承"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0066",
+      "startOffset": 1222219,
+      "endOffset": 1222221,
+      "summary": "主角，正在闯犬王传承"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0010",
+      "startOffset": 1220006,
+      "endOffset": 1220008,
+      "summary": "方源正在闯犬王传承，目标是第三十关"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0004",
+      "startOffset": 1219765,
+      "endOffset": 1219767,
+      "summary": "方源在犬王传承中通过了第二十轮，拥有十一头刺猬犬、一百三十二头电文狗、十七头菊花秋田犬以及一只大电文狗百兽王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0037",
+      "startOffset": 1221197,
+      "endOffset": 1221227,
+      "summary": "方源在犬王传承中面临三个选择：对战菊花秋田犬群（奖励狗胆蛊）、对战铁甲狗群（奖励驭犬蛊）、退出传承。他放弃了退出机会。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0352",
+      "paragraphId": "ch_0352_p0078",
+      "startOffset": 1222782,
+      "endOffset": 1222791,
+      "summary": "方源在犬王传承中面临选择：左边是菊花秋田犬群，奖励狗胆蛊；前方是铁甲犬群，奖励驭犬蛊。方源选择了铁甲犬群。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events described in the seed are ordinary visible events during Fang Yuan's dog king inheritance trial - his progress through round 20, his choices between dog groups, and his decision to continue. No hidden knowledge, secret motives, future-known information, or knowledge gaps are directly supported by the source pointers. The seed only contains publicly observable actions and choices made by Fang Yuan during the inheritance trial.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "seed shows 方源选择了铁甲犬群（奖励驭犬蛊）而非菊花秋田犬群（奖励狗胆蛊），observedMotive直接来自seed事实",
+      "inferredMotive为谨慎一步推断：选择驭犬蛊作为奖励，合理推断他需要/想要增强控犬能力",
+      "没有过度推断战略意图或心理动机",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed only describes 方源 (Fang Yuan) as an individual gu master challenging the Dog King inheritance. No named faction, clan, family, or group appears in the seed facts or relations. The entities are all the same person (方源). There is no collective actor with a stake in the seed facts. No faction/group pressure can be extracted.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

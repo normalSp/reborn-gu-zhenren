@@ -1,0 +1,683 @@
+{
+  "packageId": "ri_lw_ch_0301",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0301"
+    ],
+    "paragraphIds": [
+      "ch_0301_p0002",
+      "ch_0301_p0004",
+      "ch_0301_p0013",
+      "ch_0301_p0020",
+      "ch_0301_p0033",
+      "ch_0301_p0034",
+      "ch_0301_p0037",
+      "ch_0301_p0041",
+      "ch_0301_p0051",
+      "ch_0301_p0059",
+      "ch_0301_p0060",
+      "ch_0301_p0066",
+      "ch_0301_p0069",
+      "ch_0301_p0094"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0002",
+          "startOffset": 1038995,
+          "endOffset": 1039044,
+          "summary": "冰道蛊师，甲等资质，原为家族培养，现自主管理财务"
+        }
+      ],
+      "entityId": "entity_adf622115dec",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "冰道蛊师，甲等资质，原为家族培养，现自主管理财务",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0004",
+          "startOffset": 1039065,
+          "endOffset": 1039113,
+          "summary": "与白凝冰战斗的对手"
+        }
+      ],
+      "entityId": "entity_abebfeb2eecc",
+      "name": "铁刀苦",
+      "kind": "person",
+      "aliases": [],
+      "description": "与白凝冰战斗的对手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0013",
+          "startOffset": 1039435,
+          "endOffset": 1039496,
+          "summary": "力道蛊师，拥有天元宝莲，甲等资质"
+        }
+      ],
+      "entityId": "entity_7febde3c1e8d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "力道蛊师，拥有天元宝莲，甲等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0033",
+          "startOffset": 1040155,
+          "endOffset": 1040191,
+          "summary": "蛊师，方源的同伴"
+        }
+      ],
+      "entityId": "entity_adf622115dec",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，方源的同伴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0037",
+          "startOffset": 1040313,
+          "endOffset": 1040331,
+          "summary": "力道蛊师，白凝冰的假想敌"
+        }
+      ],
+      "entityId": "entity_7febde3c1e8d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "力道蛊师，白凝冰的假想敌",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0051",
+          "startOffset": 1040824,
+          "endOffset": 1040870,
+          "summary": "防御型蛊师，方源的对手"
+        }
+      ],
+      "entityId": "entity_377348c472a3",
+      "name": "朱八",
+      "kind": "person",
+      "aliases": [],
+      "description": "防御型蛊师，方源的对手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0066",
+          "startOffset": 1041541,
+          "endOffset": 1041545,
+          "summary": "力修蛊师，与朱八战斗"
+        }
+      ],
+      "entityId": "entity_7febde3c1e8d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "力修蛊师，与朱八战斗",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0066",
+          "startOffset": 1041557,
+          "endOffset": 1041559,
+          "summary": "第四内城八号人物，防御型蛊师"
+        }
+      ],
+      "entityId": "entity_377348c472a3",
+      "name": "朱八",
+      "kind": "person",
+      "aliases": [
+        "肥猪"
+      ],
+      "description": "第四内城八号人物，防御型蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0004",
+          "startOffset": 1039065,
+          "endOffset": 1039113,
+          "summary": "白凝冰与铁刀苦战斗，未杀死对方"
+        }
+      ],
+      "relationId": "rel_ba8803f8fcd9",
+      "subject": "白凝冰",
+      "object": "铁刀苦",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰与铁刀苦战斗，未杀死对方",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0013",
+          "startOffset": 1039435,
+          "endOffset": 1039496,
+          "summary": "白凝冰羡慕方源拥有天元宝莲，并认为方源精明不会吃亏"
+        }
+      ],
+      "relationId": "rel_c024ec04b7d6",
+      "subject": "白凝冰",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "白凝冰羡慕方源拥有天元宝莲，并认为方源精明不会吃亏",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0034",
+          "startOffset": 1040195,
+          "endOffset": 1040253,
+          "summary": "白凝冰和方源朝夕相处，但白凝冰将方源视为第一假想敌"
+        }
+      ],
+      "relationId": "rel_5dc41147645a",
+      "subject": "白凝冰",
+      "object": "方源",
+      "relationType": "ALLY",
+      "summary": "白凝冰和方源朝夕相处，但白凝冰将方源视为第一假想敌",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0051",
+          "startOffset": 1040824,
+          "endOffset": 1040870,
+          "summary": "方源与朱八在演武场战斗"
+        }
+      ],
+      "relationId": "rel_f7797c20d547",
+      "subject": "方源",
+      "object": "朱八",
+      "relationType": "CONFLICT",
+      "summary": "方源与朱八在演武场战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0066",
+          "startOffset": 1041541,
+          "endOffset": 1041559,
+          "summary": "方源与朱八在演武区战斗，方源主攻，朱八防守反击"
+        }
+      ],
+      "relationId": "rel_15562ed4d1ea",
+      "subject": "方源",
+      "object": "朱八",
+      "relationType": "CONFLICT",
+      "summary": "方源与朱八在演武区战斗，方源主攻，朱八防守反击",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0002",
+          "startOffset": 1038995,
+          "endOffset": 1039044,
+          "summary": "白凝冰与铁刀苦战斗，白凝冰获胜但未杀死铁刀苦"
+        }
+      ],
+      "eventId": "evt_a7c938ca8900",
+      "eventType": "conflict",
+      "summary": "白凝冰与铁刀苦战斗，白凝冰获胜但未杀死铁刀苦",
+      "actors": [
+        "白凝冰",
+        "铁刀苦"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰消耗七成真元，收获战斗经验"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0020",
+          "startOffset": 1039724,
+          "endOffset": 1039745,
+          "summary": "白凝冰决定舍弃雪球蛊，保留冰锥蛊和冰爆蛊"
+        }
+      ],
+      "eventId": "evt_65733c1d684d",
+      "eventType": "other",
+      "summary": "白凝冰决定舍弃雪球蛊，保留冰锥蛊和冰爆蛊",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰调整蛊虫配置以节省真元"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0059",
+          "startOffset": 1041164,
+          "endOffset": 1041253,
+          "summary": "方源在第四内城的第一战，对阵防御型蛊师朱八"
+        }
+      ],
+      "eventId": "evt_c9f05ff4d911",
+      "eventType": "conflict",
+      "summary": "方源在第四内城的第一战，对阵防御型蛊师朱八",
+      "actors": [
+        "方源",
+        "朱八"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源攻击朱八，但朱八能反震力量，方源暂时无法取胜"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0041",
+          "startOffset": 1040502,
+          "endOffset": 1040532,
+          "summary": "白凝冰思考如何改良自己的杀招冰刃风暴"
+        }
+      ],
+      "eventId": "evt_65284169e8e4",
+      "eventType": "other",
+      "summary": "白凝冰思考如何改良自己的杀招冰刃风暴",
+      "actors": [
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暂无结果"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0069",
+          "startOffset": 1041625,
+          "endOffset": 1041655,
+          "summary": "方源与朱八持续战斗，方源使用铁骨、钢筋、天蓬蛊、金罡蛊等防御，但内脏受伤，依靠自力更生蛊恢复；朱八以肥膘防御并反震，双方均有治疗蛊"
+        }
+      ],
+      "eventId": "evt_22f25028a621",
+      "eventType": "conflict",
+      "summary": "方源与朱八持续战斗，方源使用铁骨、钢筋、天蓬蛊、金罡蛊等防御，但内脏受伤，依靠自力更生蛊恢复；朱八以肥膘防御并反震，双方均有治疗蛊",
+      "actors": [
+        "方源",
+        "朱八"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "战斗僵持，方源爆喝打断朱八劝说"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0002",
+          "startOffset": 1038995,
+          "endOffset": 1039044,
+          "summary": "白凝冰与铁刀苦战斗，白凝冰获胜但未杀死铁刀苦"
+        }
+      ],
+      "timelineId": "tl_a7c938ca8900",
+      "eventId": "evt_a7c938ca8900",
+      "chapterId": "ch_0301",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰与铁刀苦战斗，白凝冰获胜但未杀死铁刀苦",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0020",
+          "startOffset": 1039724,
+          "endOffset": 1039745,
+          "summary": "白凝冰决定舍弃雪球蛊，保留冰锥蛊和冰爆蛊"
+        }
+      ],
+      "timelineId": "tl_65733c1d684d",
+      "eventId": "evt_65733c1d684d",
+      "chapterId": "ch_0301",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰决定舍弃雪球蛊，保留冰锥蛊和冰爆蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0059",
+          "startOffset": 1041164,
+          "endOffset": 1041253,
+          "summary": "方源在第四内城的第一战，对阵防御型蛊师朱八"
+        }
+      ],
+      "timelineId": "tl_c9f05ff4d911",
+      "eventId": "evt_c9f05ff4d911",
+      "chapterId": "ch_0301",
+      "orderHint": "chapter-order",
+      "summary": "方源在第四内城的第一战，对阵防御型蛊师朱八",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0041",
+          "startOffset": 1040502,
+          "endOffset": 1040532,
+          "summary": "白凝冰思考如何改良自己的杀招冰刃风暴"
+        }
+      ],
+      "timelineId": "tl_65284169e8e4",
+      "eventId": "evt_65284169e8e4",
+      "chapterId": "ch_0301",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰思考如何改良自己的杀招冰刃风暴",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0301",
+          "paragraphId": "ch_0301_p0069",
+          "startOffset": 1041625,
+          "endOffset": 1041655,
+          "summary": "方源与朱八持续战斗，方源使用铁骨、钢筋、天蓬蛊、金罡蛊等防御，但内脏受伤，依靠自力更生蛊恢复；朱八以肥膘防御并反震，双方均有治疗蛊"
+        }
+      ],
+      "timelineId": "tl_22f25028a621",
+      "eventId": "evt_22f25028a621",
+      "chapterId": "ch_0301",
+      "orderHint": "chapter-order",
+      "summary": "方源与朱八持续战斗，方源使用铁骨、钢筋、天蓬蛊、金罡蛊等防御，但内脏受伤，依靠自力更生蛊恢复；朱八以肥膘防御并反震，双方均有治疗蛊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0002",
+      "startOffset": 1038995,
+      "endOffset": 1039044,
+      "summary": "冰道蛊师，甲等资质，原为家族培养，现自主管理财务"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0004",
+      "startOffset": 1039065,
+      "endOffset": 1039113,
+      "summary": "与白凝冰战斗的对手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0013",
+      "startOffset": 1039435,
+      "endOffset": 1039496,
+      "summary": "力道蛊师，拥有天元宝莲，甲等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0033",
+      "startOffset": 1040155,
+      "endOffset": 1040191,
+      "summary": "蛊师，方源的同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0037",
+      "startOffset": 1040313,
+      "endOffset": 1040331,
+      "summary": "力道蛊师，白凝冰的假想敌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0051",
+      "startOffset": 1040824,
+      "endOffset": 1040870,
+      "summary": "防御型蛊师，方源的对手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0066",
+      "startOffset": 1041541,
+      "endOffset": 1041545,
+      "summary": "力修蛊师，与朱八战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0066",
+      "startOffset": 1041557,
+      "endOffset": 1041559,
+      "summary": "第四内城八号人物，防御型蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0034",
+      "startOffset": 1040195,
+      "endOffset": 1040253,
+      "summary": "白凝冰和方源朝夕相处，但白凝冰将方源视为第一假想敌"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0066",
+      "startOffset": 1041541,
+      "endOffset": 1041559,
+      "summary": "方源与朱八在演武区战斗，方源主攻，朱八防守反击"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0020",
+      "startOffset": 1039724,
+      "endOffset": 1039745,
+      "summary": "白凝冰决定舍弃雪球蛊，保留冰锥蛊和冰爆蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0059",
+      "startOffset": 1041164,
+      "endOffset": 1041253,
+      "summary": "方源在第四内城的第一战，对阵防御型蛊师朱八"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0041",
+      "startOffset": 1040502,
+      "endOffset": 1040532,
+      "summary": "白凝冰思考如何改良自己的杀招冰刃风暴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0301",
+      "paragraphId": "ch_0301_p0069",
+      "startOffset": 1041625,
+      "endOffset": 1041655,
+      "summary": "方源与朱八持续战斗，方源使用铁骨、钢筋、天蓬蛊、金罡蛊等防御，但内脏受伤，依靠自力更生蛊恢复；朱八以肥膘防御并反震，双方均有治疗蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (battles, decisions about which Gu to keep) and internal thoughts (白凝冰 envying 方源's 天元宝莲, considering him a rival). Internal thoughts are private knowledge but the seed does not provide direct narrator-level confirmation of hidden facts beyond what is already stated as character thoughts. The relation '白凝冰将方源视为第一假想敌' is already stated in the seed as an ambiguous relation, not a hidden fact needing extraction. No directly supported future-known information, secret plans, or knowledge gaps are present that would qualify as a hidden/player-visibility fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Observed behaviors: 白凝冰与铁刀苦战斗获胜但未杀对方，消耗七成真元；白凝冰将方源视为第一假想敌；白凝冰羡慕方源的天元宝莲。但这些是行为描述和关系陈述，缺乏直接支持 motive 推断的叙事细节。白凝冰未杀铁刀苦可能是能力不足（消耗七成真元）而非有意留手；将方源视为假想敌是关系标签而非具体行动场景。无法做出一步推断而不陷入过度推测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package only contains individual persons (白凝冰, 方源, 铁刀苦, 朱八) with no named or directly implied collective actors such as factions, clans, families, or organizations. 白凝冰 is described as '原为家族培养，现自主管理财务' (formerly trained by a family, now self-managing finances), but no specific family/clan name is given. 朱八 is described as '第四内城八号人物' (Fourth Inner City No. 8 figure), which is an individual ranking, not a collective. No faction, clan, family, or group entity appears in the seed entities or relations. All events and relations involve only individual persons. Cannot construct a source-backed faction/group pressure candidate.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

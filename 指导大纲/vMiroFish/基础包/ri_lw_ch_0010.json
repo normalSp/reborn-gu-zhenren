@@ -1,0 +1,1152 @@
+{
+  "packageId": "ri_lw_ch_0010",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0010"
+    ],
+    "paragraphIds": [
+      "ch_0010_p0005",
+      "ch_0010_p0010",
+      "ch_0010_p0012",
+      "ch_0010_p0013",
+      "ch_0010_p0015",
+      "ch_0010_p0025",
+      "ch_0010_p0030",
+      "ch_0010_p0031",
+      "ch_0010_p0034",
+      "ch_0010_p0035",
+      "ch_0010_p0036",
+      "ch_0010_p0039",
+      "ch_0010_p0040",
+      "ch_0010_p0043",
+      "ch_0010_p0046",
+      "ch_0010_p0047",
+      "ch_0010_p0049",
+      "ch_0010_p0052",
+      "ch_0010_p0059",
+      "ch_0010_p0062",
+      "ch_0010_p0069",
+      "ch_0010_p0072",
+      "ch_0010_p0073",
+      "ch_0010_p0076"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "主角，十五岁，蛊师，独立门户"
+        }
+      ],
+      "entityId": "entity_1cda27737874",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，十五岁，蛊师，独立门户",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "方源弟弟，十五岁，蛊师，过继给舅父"
+        }
+      ],
+      "entityId": "entity_9e6c381faabd",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "方源弟弟，十五岁，蛊师，过继给舅父",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "方源舅父，觊觎遗产"
+        }
+      ],
+      "entityId": "entity_55dc350f6d8b",
+      "name": "古月冻土",
+      "kind": "person",
+      "aliases": [
+        "舅父"
+      ],
+      "description": "方源舅父，觊觎遗产",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0010",
+          "startOffset": 24245,
+          "endOffset": 24348,
+          "summary": "古月冻土之妻"
+        }
+      ],
+      "entityId": "entity_eee914b95900",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "古月冻土之妻",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0034",
+          "startOffset": 25225,
+          "endOffset": 25285,
+          "summary": "主角，丙等资质，十五岁"
+        }
+      ],
+      "entityId": "entity_1cda27737874",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，丙等资质，十五岁",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0043",
+          "startOffset": 25679,
+          "endOffset": 25740,
+          "summary": "方源的弟弟，过继给舅父"
+        }
+      ],
+      "entityId": "entity_b7495c7fa591",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的弟弟，过继给舅父",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0035",
+          "startOffset": 25289,
+          "endOffset": 25328,
+          "summary": "方源和方正的舅父，图谋遗产"
+        }
+      ],
+      "entityId": "entity_503b2313115b",
+      "name": "舅父",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和方正的舅父，图谋遗产",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0036",
+          "startOffset": 25332,
+          "endOffset": 25378,
+          "summary": "舅父的妻子，图谋遗产"
+        }
+      ],
+      "entityId": "entity_eee914b95900",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "舅父的妻子，图谋遗产",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0046",
+          "startOffset": 25891,
+          "endOffset": 25924,
+          "summary": "管家，沈翠的母亲"
+        }
+      ],
+      "entityId": "entity_aba0564f8c3f",
+      "name": "沈嬷嬷",
+      "kind": "person",
+      "aliases": [],
+      "description": "管家，沈翠的母亲",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0047",
+          "startOffset": 25928,
+          "endOffset": 25945,
+          "summary": "方源的贴身丫鬟，沈嬷嬷的女儿"
+        }
+      ],
+      "entityId": "entity_f596123f4f03",
+      "name": "沈翠",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的贴身丫鬟，沈嬷嬷的女儿",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "丙等资质，离开山寨"
+        }
+      ],
+      "entityId": "entity_1cda27737874",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "丙等资质，离开山寨",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0072",
+          "startOffset": 26962,
+          "endOffset": 27028,
+          "summary": "甲等资质，弟弟"
+        }
+      ],
+      "entityId": "entity_9e6c381faabd",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [
+        "方正"
+      ],
+      "description": "甲等资质，弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0073",
+          "startOffset": 27032,
+          "endOffset": 27066,
+          "summary": "侍女，试图攀附方正"
+        }
+      ],
+      "entityId": "entity_f596123f4f03",
+      "name": "沈翠",
+      "kind": "person",
+      "aliases": [],
+      "description": "侍女，试图攀附方正",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0030",
+          "startOffset": 25083,
+          "endOffset": 25123,
+          "summary": "舅父试图过继方源并吞并遗产，方源拒绝，关系破裂"
+        }
+      ],
+      "relationId": "rel_4c9aa34eaad3",
+      "subject": "古月冻土",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "舅父试图过继方源并吞并遗产，方源拒绝，关系破裂",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0015",
+          "startOffset": 24557,
+          "endOffset": 24575,
+          "summary": "方正过继给舅父成为父子"
+        }
+      ],
+      "relationId": "rel_b704c414c546",
+      "subject": "古月冻土",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "方正过继给舅父成为父子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0012",
+          "startOffset": 24382,
+          "endOffset": 24436,
+          "summary": "夫妻"
+        }
+      ],
+      "relationId": "rel_bf6f5a52245a",
+      "subject": "古月冻土",
+      "object": "舅母",
+      "relationType": "FAMILY",
+      "summary": "夫妻",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "兄弟"
+        }
+      ],
+      "relationId": "rel_356bda19b916",
+      "subject": "方源",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0015",
+          "startOffset": 24557,
+          "endOffset": 24575,
+          "summary": "母子"
+        }
+      ],
+      "relationId": "rel_75dbe9203cad",
+      "subject": "舅母",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "母子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0035",
+          "startOffset": 25289,
+          "endOffset": 25328,
+          "summary": "舅父舅母笼络方正，希望通过过继获得遗产"
+        }
+      ],
+      "relationId": "rel_157583746f6f",
+      "subject": "舅父",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "舅父舅母笼络方正，希望通过过继获得遗产",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0039",
+          "startOffset": 25487,
+          "endOffset": 25585,
+          "summary": "舅父计划陷害方源逐出家门，剥夺遗产继承权"
+        }
+      ],
+      "relationId": "rel_803c9fed5ded",
+      "subject": "舅父",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "舅父计划陷害方源逐出家门，剥夺遗产继承权",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0040",
+          "startOffset": 25589,
+          "endOffset": 25613,
+          "summary": "舅母与舅父合谋陷害方源"
+        }
+      ],
+      "relationId": "rel_d1f2b4791132",
+      "subject": "舅母",
+      "object": "舅父",
+      "relationType": "ALLY",
+      "summary": "舅母与舅父合谋陷害方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0046",
+          "startOffset": 25891,
+          "endOffset": 25924,
+          "summary": "沈嬷嬷是舅母的管家，关系密切"
+        }
+      ],
+      "relationId": "rel_6df37f7c0152",
+      "subject": "沈嬷嬷",
+      "object": "舅母",
+      "relationType": "OTHER",
+      "summary": "沈嬷嬷是舅母的管家，关系密切",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0047",
+          "startOffset": 25928,
+          "endOffset": 25945,
+          "summary": "沈翠是沈嬷嬷的女儿"
+        }
+      ],
+      "relationId": "rel_54ae2ef4e0a7",
+      "subject": "沈翠",
+      "object": "沈嬷嬷",
+      "relationType": "FAMILY",
+      "summary": "沈翠是沈嬷嬷的女儿",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0072",
+          "startOffset": 26962,
+          "endOffset": 27028,
+          "summary": "兄弟，方源为兄，方正为弟"
+        }
+      ],
+      "relationId": "rel_1e04453e715d",
+      "subject": "方源",
+      "object": "古月方正",
+      "relationType": "FAMILY",
+      "summary": "兄弟，方源为兄，方正为弟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0076",
+          "startOffset": 27113,
+          "endOffset": 27168,
+          "summary": "沈翠献媚以攀附方正，图谋富贵"
+        }
+      ],
+      "relationId": "rel_2006204d3121",
+      "subject": "沈翠",
+      "object": "古月方正",
+      "relationType": "USES",
+      "summary": "沈翠献媚以攀附方正，图谋富贵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "舅父给方源和方正每人六块元石作为修炼资助"
+        }
+      ],
+      "eventId": "evt_2f163da69b5b",
+      "eventType": "trade",
+      "summary": "舅父给方源和方正每人六块元石作为修炼资助",
+      "actors": [
+        "古月冻土",
+        "方源",
+        "古月方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源收下但沉默，方正感激"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0013",
+          "startOffset": 24440,
+          "endOffset": 24516,
+          "summary": "舅父舅母过继古月方正为子，方正改口称父母"
+        }
+      ],
+      "eventId": "evt_545c0c4554ce",
+      "eventType": "inheritance",
+      "summary": "舅父舅母过继古月方正为子，方正改口称父母",
+      "actors": [
+        "古月冻土",
+        "舅母",
+        "古月方正"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正成为古月冻土家的一员"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0025",
+          "startOffset": 24883,
+          "endOffset": 24938,
+          "summary": "方源拒绝过继和独立门户的提议，提起酒坛告辞"
+        }
+      ],
+      "eventId": "evt_0221641477d7",
+      "eventType": "conflict",
+      "summary": "方源拒绝过继和独立门户的提议，提起酒坛告辞",
+      "actors": [
+        "方源",
+        "古月冻土"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源离开，与舅父决裂"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0030",
+          "startOffset": 25083,
+          "endOffset": 25123,
+          "summary": "古月冻土在方源离开后冷冷说出方源已看破谋算"
+        }
+      ],
+      "eventId": "evt_8feb19566610",
+      "eventType": "other",
+      "summary": "古月冻土在方源离开后冷冷说出方源已看破谋算",
+      "actors": [
+        "古月冻土"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "确认遗产谋算的存在"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0039",
+          "startOffset": 25487,
+          "endOffset": 25585,
+          "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权"
+        }
+      ],
+      "eventId": "evt_954cf05dff8a",
+      "eventType": "conflict",
+      "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权",
+      "actors": [
+        "舅父",
+        "舅母"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "计划未实施，可能在未来导致方源被逐出"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0049",
+          "startOffset": 26062,
+          "endOffset": 26116,
+          "summary": "方正被安排入住豪华房间，受到舅父舅母优待"
+        }
+      ],
+      "eventId": "evt_3060daca5632",
+      "eventType": "other",
+      "summary": "方正被安排入住豪华房间，受到舅父舅母优待",
+      "actors": [
+        "方正",
+        "沈嬷嬷"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方正感激涕零，决心努力修炼回报舅父舅母"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0059",
+          "startOffset": 26540,
+          "endOffset": 26564,
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏"
+        }
+      ],
+      "eventId": "evt_600b9af6d1d4",
+      "eventType": "appearance",
+      "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路"
+        }
+      ],
+      "eventId": "evt_6daf362d8ab4",
+      "eventType": "other",
+      "summary": "方源离开山寨，独自走入黑暗的山路",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0005",
+          "startOffset": 23955,
+          "endOffset": 24071,
+          "summary": "舅父给方源和方正每人六块元石作为修炼资助"
+        }
+      ],
+      "timelineId": "tl_2f163da69b5b",
+      "eventId": "evt_2f163da69b5b",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "舅父给方源和方正每人六块元石作为修炼资助",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0013",
+          "startOffset": 24440,
+          "endOffset": 24516,
+          "summary": "舅父舅母过继古月方正为子，方正改口称父母"
+        }
+      ],
+      "timelineId": "tl_545c0c4554ce",
+      "eventId": "evt_545c0c4554ce",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "舅父舅母过继古月方正为子，方正改口称父母",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0025",
+          "startOffset": 24883,
+          "endOffset": 24938,
+          "summary": "方源拒绝过继和独立门户的提议，提起酒坛告辞"
+        }
+      ],
+      "timelineId": "tl_0221641477d7",
+      "eventId": "evt_0221641477d7",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "方源拒绝过继和独立门户的提议，提起酒坛告辞",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0030",
+          "startOffset": 25083,
+          "endOffset": 25123,
+          "summary": "古月冻土在方源离开后冷冷说出方源已看破谋算"
+        }
+      ],
+      "timelineId": "tl_8feb19566610",
+      "eventId": "evt_8feb19566610",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "古月冻土在方源离开后冷冷说出方源已看破谋算",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0039",
+          "startOffset": 25487,
+          "endOffset": 25585,
+          "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权"
+        }
+      ],
+      "timelineId": "tl_954cf05dff8a",
+      "eventId": "evt_954cf05dff8a",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0049",
+          "startOffset": 26062,
+          "endOffset": 26116,
+          "summary": "方正被安排入住豪华房间，受到舅父舅母优待"
+        }
+      ],
+      "timelineId": "tl_3060daca5632",
+      "eventId": "evt_3060daca5632",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "方正被安排入住豪华房间，受到舅父舅母优待",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0059",
+          "startOffset": 26540,
+          "endOffset": 26564,
+          "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏"
+        }
+      ],
+      "timelineId": "tl_600b9af6d1d4",
+      "eventId": "evt_600b9af6d1d4",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0069",
+          "startOffset": 26888,
+          "endOffset": 26918,
+          "summary": "方源离开山寨，独自走入黑暗的山路"
+        }
+      ],
+      "timelineId": "tl_6daf362d8ab4",
+      "eventId": "evt_6daf362d8ab4",
+      "chapterId": "ch_0010",
+      "orderHint": "chapter-order",
+      "summary": "方源离开山寨，独自走入黑暗的山路",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0035",
+          "startOffset": 25289,
+          "endOffset": 25328,
+          "summary": "方源和方正的舅父，图谋遗产"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0010",
+          "paragraphId": "ch_0010_p0036",
+          "startOffset": 25332,
+          "endOffset": 25378,
+          "summary": "舅父的妻子，图谋遗产"
+        }
+      ],
+      "factId": "hf_0010_001",
+      "summary": "舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权",
+      "whoKnows": [
+        "古月冻土",
+        "舅母"
+      ],
+      "whoDoesNotKnow": [
+        "方源",
+        "古月方正"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0005",
+      "startOffset": 23955,
+      "endOffset": 24071,
+      "summary": "主角，十五岁，蛊师，独立门户"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0010",
+      "startOffset": 24245,
+      "endOffset": 24348,
+      "summary": "古月冻土之妻"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0034",
+      "startOffset": 25225,
+      "endOffset": 25285,
+      "summary": "主角，丙等资质，十五岁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0043",
+      "startOffset": 25679,
+      "endOffset": 25740,
+      "summary": "方源的弟弟，过继给舅父"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0035",
+      "startOffset": 25289,
+      "endOffset": 25328,
+      "summary": "方源和方正的舅父，图谋遗产"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0036",
+      "startOffset": 25332,
+      "endOffset": 25378,
+      "summary": "舅父的妻子，图谋遗产"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0046",
+      "startOffset": 25891,
+      "endOffset": 25924,
+      "summary": "管家，沈翠的母亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0047",
+      "startOffset": 25928,
+      "endOffset": 25945,
+      "summary": "方源的贴身丫鬟，沈嬷嬷的女儿"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0069",
+      "startOffset": 26888,
+      "endOffset": 26918,
+      "summary": "丙等资质，离开山寨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0072",
+      "startOffset": 26962,
+      "endOffset": 27028,
+      "summary": "甲等资质，弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0073",
+      "startOffset": 27032,
+      "endOffset": 27066,
+      "summary": "侍女，试图攀附方正"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0030",
+      "startOffset": 25083,
+      "endOffset": 25123,
+      "summary": "舅父试图过继方源并吞并遗产，方源拒绝，关系破裂"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0015",
+      "startOffset": 24557,
+      "endOffset": 24575,
+      "summary": "方正过继给舅父成为父子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0012",
+      "startOffset": 24382,
+      "endOffset": 24436,
+      "summary": "夫妻"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0039",
+      "startOffset": 25487,
+      "endOffset": 25585,
+      "summary": "舅父计划陷害方源逐出家门，剥夺遗产继承权"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0040",
+      "startOffset": 25589,
+      "endOffset": 25613,
+      "summary": "舅母与舅父合谋陷害方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0076",
+      "startOffset": 27113,
+      "endOffset": 27168,
+      "summary": "沈翠献媚以攀附方正，图谋富贵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0013",
+      "startOffset": 24440,
+      "endOffset": 24516,
+      "summary": "舅父舅母过继古月方正为子，方正改口称父母"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0025",
+      "startOffset": 24883,
+      "endOffset": 24938,
+      "summary": "方源拒绝过继和独立门户的提议，提起酒坛告辞"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0049",
+      "startOffset": 26062,
+      "endOffset": 26116,
+      "summary": "方正被安排入住豪华房间，受到舅父舅母优待"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0010",
+      "paragraphId": "ch_0010_p0059",
+      "startOffset": 26540,
+      "endOffset": 26564,
+      "summary": "方源提着两坛酒走向寨外，思考遗产和花酒行者遗藏"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The seed package events list explicitly states '舅父舅母密谋让沈翠勾引方源，再陷害他非礼，以便逐出家门，剥夺遗产继承权' as an event with visibility ambiguous. This is a secret plan known only to the conspirators (舅父 and 舅母), not known to 方源 or 方正. The source pointers from p0035 and p0036 show their private conversation about the inheritance scheme, supporting that this is hidden knowledge. However, the exact detail about 沈翠勾引 is not directly quoted in the provided source pointers - it comes from the event summary. The source pointers show the general context of their scheming about inheritance but not the specific沈翠 plan. This may be insufficiently source-backed for the specific沈翠勾引 detail.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows舅父舅母's actions (giving元石, providing nice room to方正) and their stated concern about遗产, but observedMotive would need to be directly supported by seed facts. The events show舅父舅母笼络方正 and密谋陷害方源, but the observed behavior (giving gifts,优待方正) could support an observedMotive like '优待方正' with inferredMotive '笼络方正以获遗产'. However, the rules require cautious one-step inference and no strategic intent leaps unless directly supported. The seed directly states '笼络住了方正' (ptr_5) which supports the intent. Let me reconsider.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "古月冻土家庭（舅父舅母）作为家庭单位，对遗产继承有明确利益诉求。种子中舅父舅母密谋让沈翠勾引方源再陷害非礼以剥夺继承权（事件第5条），ptr_3/ptr_5/ptr_6均直接支持遗产争夺动机。pressureAxis为'遗产继承争夺'（inheritance pressure），likelyReactions为'设计陷害方源'（直接来自种子事件）。未添加外部势力或数值结果。",
+      "IF export filter quarantined 6 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

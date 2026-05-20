@@ -1,0 +1,410 @@
+{
+  "packageId": "ri_lw_ch_0003",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0003"
+    ],
+    "paragraphIds": [
+      "ch_0003_p0009",
+      "ch_0003_p0011",
+      "ch_0003_p0020",
+      "ch_0003_p0030",
+      "ch_0003_p0040",
+      "ch_0003_p0041",
+      "ch_0003_p0051",
+      "ch_0003_p0058",
+      "ch_0003_p0062"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0009",
+          "startOffset": 3992,
+          "endOffset": 4013,
+          "summary": "主角，重生者，前世魔道巨擘，资质丙等"
+        }
+      ],
+      "entityId": "entity_24eddd0bab81",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，重生者，前世魔道巨擘，资质丙等",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0040",
+          "startOffset": 5306,
+          "endOffset": 5338,
+          "summary": "方源孪生弟弟，甲等资质，受舅父母蒙蔽"
+        }
+      ],
+      "entityId": "entity_ddc875045d09",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源孪生弟弟，甲等资质，受舅父母蒙蔽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "方源和方正的舅父，侵占双亲遗产，进行投资"
+        }
+      ],
+      "entityId": "entity_97550a72e039",
+      "name": "舅父",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和方正的舅父，侵占双亲遗产，进行投资",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "方源和方正的舅母，侵占双亲遗产，进行投资"
+        }
+      ],
+      "entityId": "entity_781da71d14b9",
+      "name": "舅母",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源和方正的舅母，侵占双亲遗产，进行投资",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0058",
+          "startOffset": 6094,
+          "endOffset": 6195,
+          "summary": "孪生兄弟，前世弟弟因资质嫉妒打压哥哥，今生哥哥冷漠以待，弟弟内心怨恨。"
+        }
+      ],
+      "relationId": "rel_bbaab4d61282",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "孪生兄弟，前世弟弟因资质嫉妒打压哥哥，今生哥哥冷漠以待，弟弟内心怨恨。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "舅父以抚养名义侵占方源双亲遗产，苛刻对待，实为投资。"
+        }
+      ],
+      "relationId": "rel_a1b1399d4eec",
+      "subject": "方源",
+      "object": "舅父",
+      "relationType": "FAMILY",
+      "summary": "舅父以抚养名义侵占方源双亲遗产，苛刻对待，实为投资。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "舅母以抚养名义侵占方源双亲遗产，苛刻对待，实为投资。"
+        }
+      ],
+      "relationId": "rel_f99706feceaf",
+      "subject": "方源",
+      "object": "舅母",
+      "relationType": "FAMILY",
+      "summary": "舅母以抚养名义侵占方源双亲遗产，苛刻对待，实为投资。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0041",
+          "startOffset": 5342,
+          "endOffset": 5423,
+          "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。"
+        }
+      ],
+      "relationId": "rel_c048717bb365",
+      "subject": "方正",
+      "object": "舅父",
+      "relationType": "FAMILY",
+      "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0041",
+          "startOffset": 5342,
+          "endOffset": 5423,
+          "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。"
+        }
+      ],
+      "relationId": "rel_a84aa273a965",
+      "subject": "方正",
+      "object": "舅母",
+      "relationType": "FAMILY",
+      "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0011",
+          "startOffset": 4037,
+          "endOffset": 4061,
+          "summary": "方源走投无路使用春秋蝉献祭生命和修为，逆光阴五百年重生回到少年时代。"
+        }
+      ],
+      "eventId": "evt_a0673d7f3906",
+      "eventType": "rebirth",
+      "summary": "方源走投无路使用春秋蝉献祭生命和修为，逆光阴五百年重生回到少年时代。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "失去春秋蝉，保留五百年记忆和经验，即将在青茅山古月山寨开始新人生。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0011",
+          "startOffset": 4037,
+          "endOffset": 4061,
+          "summary": "方源走投无路使用春秋蝉献祭生命和修为，逆光阴五百年重生回到少年时代。"
+        }
+      ],
+      "timelineId": "tl_a0673d7f3906",
+      "eventId": "evt_a0673d7f3906",
+      "chapterId": "ch_0003",
+      "orderHint": "chapter-order",
+      "summary": "方源走投无路使用春秋蝉献祭生命和修为，逆光阴五百年重生回到少年时代。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "方源和方正的舅父，侵占双亲遗产，进行投资"
+        }
+      ],
+      "factId": "hf_0003_001",
+      "summary": "舅父舅母以抚养名义侵占方源双亲遗产，实则是在进行投资（将遗产用于投资而非真正抚养方源兄弟）",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [
+        "方正"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0051",
+          "startOffset": 5800,
+          "endOffset": 5840,
+          "summary": "方源和方正的舅父，侵占双亲遗产，进行投资"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0058",
+          "startOffset": 6094,
+          "endOffset": 6195,
+          "summary": "孪生兄弟，前世弟弟因资质嫉妒打压哥哥，今生哥哥冷漠以待，弟弟内心怨恨。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0003",
+          "paragraphId": "ch_0003_p0041",
+          "startOffset": 5342,
+          "endOffset": 5423,
+          "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "舅父母家庭",
+      "pressureAxis": "遗产侵占与抚养矛盾",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "维持现状",
+        "继续蒙蔽方正"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0009",
+      "startOffset": 3992,
+      "endOffset": 4013,
+      "summary": "主角，重生者，前世魔道巨擘，资质丙等"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0040",
+      "startOffset": 5306,
+      "endOffset": 5338,
+      "summary": "方源孪生弟弟，甲等资质，受舅父母蒙蔽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0051",
+      "startOffset": 5800,
+      "endOffset": 5840,
+      "summary": "方源和方正的舅父，侵占双亲遗产，进行投资"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0058",
+      "startOffset": 6094,
+      "endOffset": 6195,
+      "summary": "孪生兄弟，前世弟弟因资质嫉妒打压哥哥，今生哥哥冷漠以待，弟弟内心怨恨。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0041",
+      "startOffset": 5342,
+      "endOffset": 5423,
+      "summary": "方正受舅父母蒙蔽，以为他们关心自己，实则不然。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0003",
+      "paragraphId": "ch_0003_p0011",
+      "startOffset": 4037,
+      "endOffset": 4061,
+      "summary": "方源走投无路使用春秋蝉献祭生命和修为，逆光阴五百年重生回到少年时代。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly states that the uncle and aunt occupied the parents' inheritance under the guise of raising the children, and treated them harshly. The entity description also says '进行投资' (making investments), implying the inheritance was used for investment purposes rather than the children's welfare. This is private knowledge known to Fang Yuan (the narrator's perspective) but hidden from Fang Zheng who is deceived. The fact is atomic: the uncle and aunt's true nature of their actions.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Only visible behavior: 方正半夜悄悄进方源房间关窗（ptr_5），方源冷漠对待（ptr_2），方正内心怨恨（ptr_4）。行为可见但动机模糊——方正关窗可解释为关心、讨好、试探或奉命行事，种子未直接支持任何单一意图。根据规则，仅行为可见而动机模糊时返回空数组。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "舅父母作为家庭单位，以抚养名义侵占方源双亲遗产，并蒙蔽方正，形成对兄弟二人的资源控制压力。这是家庭/家族层面的利益冲突，属于遗产/资源压力。",
+      "likelyReactions保守：维持现状（继续占有遗产）、继续蒙蔽方正（防止真相暴露）。",
+      "未添加外部势力，仅使用seed中出现的舅父母家庭关系。",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {},
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "packageId": "ri_lw_ch_0479",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0479"
+    ],
+    "paragraphIds": [
+      "ch_0479_p0008",
+      "ch_0479_p0012",
+      "ch_0479_p0018",
+      "ch_0479_p0022",
+      "ch_0479_p0023",
+      "ch_0479_p0030",
+      "ch_0479_p0031",
+      "ch_0479_p0033",
+      "ch_0479_p0044",
+      "ch_0479_p0049",
+      "ch_0479_p0051",
+      "ch_0479_p0065",
+      "ch_0479_p0072",
+      "ch_0479_p0073",
+      "ch_0479_p0074"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0008",
+          "startOffset": 1664359,
+          "endOffset": 1664450,
+          "summary": "奴道蛊师，拥有通天蛊，狐仙福地主"
+        }
+      ],
+      "entityId": "entity_03fee24d399d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "奴道蛊师，拥有通天蛊，狐仙福地主",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0022",
+          "startOffset": 1665138,
+          "endOffset": 1665161,
+          "summary": "方源的助手，负责传达神念"
+        }
+      ],
+      "entityId": "entity_ef67a6f2fe0f",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的助手，负责传达神念",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0023",
+          "startOffset": 1665165,
+          "endOffset": 1665190,
+          "summary": "售卖龟背狼的蛊仙"
+        }
+      ],
+      "entityId": "entity_3cf36cb2aba4",
+      "name": "南海龟仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "售卖龟背狼的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0033",
+          "startOffset": 1665639,
+          "endOffset": 1665711,
+          "summary": "狐仙福地主人"
+        }
+      ],
+      "entityId": "entity_03fee24d399d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "狐仙福地主人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0065",
+          "startOffset": 1667086,
+          "endOffset": 1667102,
+          "summary": "福地主宰，炼蛊者"
+        }
+      ],
+      "entityId": "entity_03fee24d399d",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "福地主宰，炼蛊者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0073",
+          "startOffset": 1667491,
+          "endOffset": 1667500,
+          "summary": "方源的助手，处理事务"
+        }
+      ],
+      "entityId": "entity_ef67a6f2fe0f",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的助手，处理事务",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0030",
+          "startOffset": 1665509,
+          "endOffset": 1665556,
+          "summary": "方源用一块仙元石从南海龟仙处购买了三万头龟背狼和一只龟背万狼王"
+        }
+      ],
+      "relationId": "rel_acb0a237e2b2",
+      "subject": "方源",
+      "object": "南海龟仙",
+      "relationType": "TRADE",
+      "summary": "方源用一块仙元石从南海龟仙处购买了三万头龟背狼和一只龟背万狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0073",
+          "startOffset": 1667491,
+          "endOffset": 1667500,
+          "summary": "方源将通天蛊交给小狐仙，让她处理事务"
+        }
+      ],
+      "relationId": "rel_047b8f8ccc9c",
+      "subject": "方源",
+      "object": "小狐仙",
+      "relationType": "OTHER",
+      "summary": "方源将通天蛊交给小狐仙，让她处理事务",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0030",
+          "startOffset": 1665509,
+          "endOffset": 1665556,
+          "summary": "方源通过宝黄天从南海龟仙处购买龟背狼群，包括三万头龟背狼和一只龟背万狼王，支付一块仙元石"
+        }
+      ],
+      "eventId": "evt_3eae872b4e86",
+      "eventType": "trade",
+      "summary": "方源通过宝黄天从南海龟仙处购买龟背狼群，包括三万头龟背狼和一只龟背万狼王，支付一块仙元石",
+      "actors": [
+        "方源",
+        "南海龟仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源补充了龟背狼群，获得龟背万狼王"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0031",
+          "startOffset": 1665560,
+          "endOffset": 1665625,
+          "summary": "方源又分别买下了一万八千头风狼兼风狼万兽王一头，补充夜狼两万，毒须狼五千，水狼六千头，共耗去两块半仙元石"
+        }
+      ],
+      "eventId": "evt_27b63f3da144",
+      "eventType": "trade",
+      "summary": "方源又分别买下了一万八千头风狼兼风狼万兽王一头，补充夜狼两万，毒须狼五千，水狼六千头，共耗去两块半仙元石",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源进一步补充了狼群规模"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0044",
+          "startOffset": 1666053,
+          "endOffset": 1666075,
+          "summary": "方源在宝黄天中以一块仙元石的价格购买气泡鱼的鱼籽"
+        }
+      ],
+      "eventId": "evt_1a5b2156c4c1",
+      "eventType": "trade",
+      "summary": "方源在宝黄天中以一块仙元石的价格购买气泡鱼的鱼籽",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得气泡鱼鱼籽，预计未来价格暴涨"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0065",
+          "startOffset": 1667086,
+          "endOffset": 1667102,
+          "summary": "方源决定鱼种，收购青玉鲫鱼、花粉兔、铁壳花、地皮猪、蛊虫和炼蛊材料，花费八块仙元石和数十万块元石"
+        }
+      ],
+      "eventId": "evt_9425263f32ac",
+      "eventType": "other",
+      "summary": "方源决定鱼种，收购青玉鲫鱼、花粉兔、铁壳花、地皮猪、蛊虫和炼蛊材料，花费八块仙元石和数十万块元石",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源仙元石从二十八块减少到二十块"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0073",
+          "startOffset": 1667491,
+          "endOffset": 1667500,
+          "summary": "方源将通天蛊交给小狐仙，让她处理狼群、鱼群接收等工作"
+        }
+      ],
+      "eventId": "evt_e6f2caa14cf8",
+      "eventType": "other",
+      "summary": "方源将通天蛊交给小狐仙，让她处理狼群、鱼群接收等工作",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0074",
+          "startOffset": 1667543,
+          "endOffset": 1667571,
+          "summary": "方源进入荡魂行宫，利用收买的材料开始炼蛊"
+        }
+      ],
+      "eventId": "evt_d2afc417f47d",
+      "eventType": "other",
+      "summary": "方源进入荡魂行宫，利用收买的材料开始炼蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0030",
+          "startOffset": 1665509,
+          "endOffset": 1665556,
+          "summary": "方源通过宝黄天从南海龟仙处购买龟背狼群，包括三万头龟背狼和一只龟背万狼王，支付一块仙元石"
+        }
+      ],
+      "timelineId": "tl_3eae872b4e86",
+      "eventId": "evt_3eae872b4e86",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源通过宝黄天从南海龟仙处购买龟背狼群，包括三万头龟背狼和一只龟背万狼王，支付一块仙元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0031",
+          "startOffset": 1665560,
+          "endOffset": 1665625,
+          "summary": "方源又分别买下了一万八千头风狼兼风狼万兽王一头，补充夜狼两万，毒须狼五千，水狼六千头，共耗去两块半仙元石"
+        }
+      ],
+      "timelineId": "tl_27b63f3da144",
+      "eventId": "evt_27b63f3da144",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源又分别买下了一万八千头风狼兼风狼万兽王一头，补充夜狼两万，毒须狼五千，水狼六千头，共耗去两块半仙元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0044",
+          "startOffset": 1666053,
+          "endOffset": 1666075,
+          "summary": "方源在宝黄天中以一块仙元石的价格购买气泡鱼的鱼籽"
+        }
+      ],
+      "timelineId": "tl_1a5b2156c4c1",
+      "eventId": "evt_1a5b2156c4c1",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源在宝黄天中以一块仙元石的价格购买气泡鱼的鱼籽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0065",
+          "startOffset": 1667086,
+          "endOffset": 1667102,
+          "summary": "方源决定鱼种，收购青玉鲫鱼、花粉兔、铁壳花、地皮猪、蛊虫和炼蛊材料，花费八块仙元石和数十万块元石"
+        }
+      ],
+      "timelineId": "tl_9425263f32ac",
+      "eventId": "evt_9425263f32ac",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源决定鱼种，收购青玉鲫鱼、花粉兔、铁壳花、地皮猪、蛊虫和炼蛊材料，花费八块仙元石和数十万块元石",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0073",
+          "startOffset": 1667491,
+          "endOffset": 1667500,
+          "summary": "方源将通天蛊交给小狐仙，让她处理狼群、鱼群接收等工作"
+        }
+      ],
+      "timelineId": "tl_e6f2caa14cf8",
+      "eventId": "evt_e6f2caa14cf8",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源将通天蛊交给小狐仙，让她处理狼群、鱼群接收等工作",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0479",
+          "paragraphId": "ch_0479_p0074",
+          "startOffset": 1667543,
+          "endOffset": 1667571,
+          "summary": "方源进入荡魂行宫，利用收买的材料开始炼蛊"
+        }
+      ],
+      "timelineId": "tl_d2afc417f47d",
+      "eventId": "evt_d2afc417f47d",
+      "chapterId": "ch_0479",
+      "orderHint": "chapter-order",
+      "summary": "方源进入荡魂行宫，利用收买的材料开始炼蛊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0008",
+      "startOffset": 1664359,
+      "endOffset": 1664450,
+      "summary": "奴道蛊师，拥有通天蛊，狐仙福地主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0022",
+      "startOffset": 1665138,
+      "endOffset": 1665161,
+      "summary": "方源的助手，负责传达神念"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0023",
+      "startOffset": 1665165,
+      "endOffset": 1665190,
+      "summary": "售卖龟背狼的蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0033",
+      "startOffset": 1665639,
+      "endOffset": 1665711,
+      "summary": "狐仙福地主人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0065",
+      "startOffset": 1667086,
+      "endOffset": 1667102,
+      "summary": "福地主宰，炼蛊者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0073",
+      "startOffset": 1667491,
+      "endOffset": 1667500,
+      "summary": "方源的助手，处理事务"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0030",
+      "startOffset": 1665509,
+      "endOffset": 1665556,
+      "summary": "方源用一块仙元石从南海龟仙处购买了三万头龟背狼和一只龟背万狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0031",
+      "startOffset": 1665560,
+      "endOffset": 1665625,
+      "summary": "方源又分别买下了一万八千头风狼兼风狼万兽王一头，补充夜狼两万，毒须狼五千，水狼六千头，共耗去两块半仙元石"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0044",
+      "startOffset": 1666053,
+      "endOffset": 1666075,
+      "summary": "方源在宝黄天中以一块仙元石的价格购买气泡鱼的鱼籽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0479",
+      "paragraphId": "ch_0479_p0074",
+      "startOffset": 1667543,
+      "endOffset": 1667571,
+      "summary": "方源进入荡魂行宫，利用收买的材料开始炼蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events in this chapter are ordinary trade/purchase transactions and visible actions (buying wolf packs, fish roe, materials, entering a palace to refine gu). No hidden knowledge, secret motives, future-known information, or private knowledge gaps are directly supported by the source text. The seed describes public market transactions via Treasure Yellow Heaven and Fang Yuan's subsequent actions, all of which are ordinary visible events. No actor is shown to have private knowledge that others lack.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Seed shows only observable trade/purchase actions by 方源 (buying wolf packs, fish roe, materials) and entering 荡魂行宫 to refine gu. No direct source text reveals his internal motives, desires, fears, or bottom line. Observed behavior (spending immortal essence stones to acquire resources and refine gu) is visible, but any inferred motive (e.g., 'strengthening his forces' or 'preparing for future') would be a psychological leap beyond cautious one-step inference. Per rules, return empty characterMotives.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses entirely on individual actions of 方源 (Fang Yuan) purchasing wolf packs, fish roe, and refining gu in solitude. No collective faction, clan, family, or group appears in the seed facts or relations. The only other named entities are 小狐仙 (an individual assistant) and 南海龟仙 (an individual seller). No family, clan, faction, team, shop, hall, or organization is named or directly implied as having a collective stake. All events are individual trade and cultivation activities. No faction pressure can be extracted from this seed.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

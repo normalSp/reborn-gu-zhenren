@@ -1,0 +1,782 @@
+{
+  "packageId": "ri_lw_ch_1403",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1403"
+    ],
+    "paragraphIds": [
+      "ch_1403_p0024",
+      "ch_1403_p0025",
+      "ch_1403_p0031",
+      "ch_1403_p0034",
+      "ch_1403_p0041",
+      "ch_1403_p0043",
+      "ch_1403_p0066",
+      "ch_1403_p0071",
+      "ch_1403_p0077",
+      "ch_1403_p0084",
+      "ch_1403_p0092",
+      "ch_1403_p0097",
+      "ch_1403_p0102",
+      "ch_1403_p0112",
+      "ch_1403_p0115"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0024",
+          "startOffset": 4930330,
+          "endOffset": 4930335,
+          "summary": "八转变化道蛊仙，占据万像沙漠千年"
+        }
+      ],
+      "entityId": "entity_f03cda00896e",
+      "name": "千变老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转变化道蛊仙，占据万像沙漠千年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0034",
+          "startOffset": 4930590,
+          "endOffset": 4930620,
+          "summary": "八转蛊仙，被囚禁，正在渡万劫"
+        }
+      ],
+      "entityId": "entity_f03cda00896e",
+      "name": "千变老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转蛊仙，被囚禁，正在渡万劫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0066",
+          "startOffset": 4931470,
+          "endOffset": 4931474,
+          "summary": "八转蛊仙，狂蛮魔尊传承者"
+        }
+      ],
+      "entityId": "entity_f03cda00896e",
+      "name": "千变老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转蛊仙，狂蛮魔尊传承者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0097",
+          "startOffset": 4932533,
+          "endOffset": 4932537,
+          "summary": "八转蛊仙，狂蛮真传传承者"
+        }
+      ],
+      "entityId": "entity_f03cda00896e",
+      "name": "千变老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "八转蛊仙，狂蛮真传传承者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933078,
+          "endOffset": 4933084,
+          "summary": "千变老祖的妻妾之一"
+        }
+      ],
+      "entityId": "entity_6521567ce312",
+      "name": "翠波妹妹",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "千变老祖的妻妾之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933074,
+          "summary": "千变老祖的妻妾之一，向千变老祖禀告"
+        }
+      ],
+      "entityId": "entity_46f450ed6d7d",
+      "name": "女仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "千变老祖的妻妾之一，向千变老祖禀告",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0025",
+          "startOffset": 4930339,
+          "endOffset": 4930365,
+          "summary": "千变老祖占据万像沙漠长达千年，视为自己的地盘"
+        }
+      ],
+      "relationId": "rel_4542ca86afce",
+      "subject": "千变老祖",
+      "object": "万像沙漠",
+      "relationType": "FACTION",
+      "summary": "千变老祖占据万像沙漠长达千年，视为自己的地盘",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0071",
+          "startOffset": 4931595,
+          "endOffset": 4931618,
+          "summary": "千变老祖通过割肉变分离出的年兽不受控制，成为他的死敌，攻击他。"
+        }
+      ],
+      "relationId": "rel_210aa04eddf4",
+      "subject": "千变老祖",
+      "object": "年兽",
+      "relationType": "CONFLICT",
+      "summary": "千变老祖通过割肉变分离出的年兽不受控制，成为他的死敌，攻击他。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933084,
+          "summary": "千变老祖与翠波妹妹是夫妻关系"
+        }
+      ],
+      "relationId": "rel_4e7f4ce3091c",
+      "subject": "千变老祖",
+      "object": "翠波妹妹",
+      "relationType": "FAMILY",
+      "summary": "千变老祖与翠波妹妹是夫妻关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933076,
+          "summary": "千变老祖与女仙是夫妻关系"
+        }
+      ],
+      "relationId": "rel_256622d72c32",
+      "subject": "千变老祖",
+      "object": "女仙",
+      "relationType": "FAMILY",
+      "summary": "千变老祖与女仙是夫妻关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0031",
+          "startOffset": 4930491,
+          "endOffset": 4930505,
+          "summary": "千变老祖在万像宫殿深处发出惨烈痛嚎，似乎十分痛楚"
+        }
+      ],
+      "eventId": "evt_b2c0737b82ac",
+      "eventType": "other",
+      "summary": "千变老祖在万像宫殿深处发出惨烈痛嚎，似乎十分痛楚",
+      "actors": [
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "未知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0043",
+          "startOffset": 4930842,
+          "endOffset": 4930912,
+          "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。"
+        }
+      ],
+      "eventId": "evt_8df957319565",
+      "eventType": "cultivation",
+      "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。",
+      "actors": [
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "千变老祖通过割肉变释放出一头荒级年兽，暂时减轻了万劫带来的痛苦。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0092",
+          "startOffset": 4932347,
+          "endOffset": 4932396,
+          "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。"
+        }
+      ],
+      "eventId": "evt_c65995881aa5",
+      "eventType": "cultivation",
+      "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。",
+      "actors": [
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "年兽不受控制，攻击千变老祖，但被铁链镇压。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0077",
+          "startOffset": 4931757,
+          "endOffset": 4931810,
+          "summary": "年兽们联手攻击千变老祖，但被宫殿中的铁链束缚镇压。"
+        }
+      ],
+      "eventId": "evt_f81ae2396eee",
+      "eventType": "conflict",
+      "summary": "年兽们联手攻击千变老祖，但被宫殿中的铁链束缚镇压。",
+      "actors": [
+        "千变老祖",
+        "年兽"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "年兽被镇压，千变老祖暂时安全。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0102",
+          "startOffset": 4932645,
+          "endOffset": 4932691,
+          "summary": "千变老祖成功渡过万劫，但道痕亏损，底蕴未增"
+        }
+      ],
+      "eventId": "evt_e40cfcf007cd",
+      "eventType": "other",
+      "summary": "千变老祖成功渡过万劫，但道痕亏损，底蕴未增",
+      "actors": [
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "千变老祖道痕亏损，实力不如渡劫前"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0112",
+          "startOffset": 4932955,
+          "endOffset": 4933001,
+          "summary": "千变老祖深刻反省，认识到自己低估万劫，心性自大"
+        }
+      ],
+      "eventId": "evt_d772e138e8a2",
+      "eventType": "other",
+      "summary": "千变老祖深刻反省，认识到自己低估万劫，心性自大",
+      "actors": [
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "千变老祖痛定思痛，进行自我剖析"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933156,
+          "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事"
+        }
+      ],
+      "eventId": "evt_a7357c7617e6",
+      "eventType": "other",
+      "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事",
+      "actors": [
+        "女仙",
+        "千变老祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "千变老祖得知翠波妹妹在易位沙漠可能遭遇不测"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0031",
+          "startOffset": 4930491,
+          "endOffset": 4930505,
+          "summary": "千变老祖在万像宫殿深处发出惨烈痛嚎，似乎十分痛楚"
+        }
+      ],
+      "timelineId": "tl_b2c0737b82ac",
+      "eventId": "evt_b2c0737b82ac",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "千变老祖在万像宫殿深处发出惨烈痛嚎，似乎十分痛楚",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0043",
+          "startOffset": 4930842,
+          "endOffset": 4930912,
+          "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。"
+        }
+      ],
+      "timelineId": "tl_8df957319565",
+      "eventId": "evt_8df957319565",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0092",
+          "startOffset": 4932347,
+          "endOffset": 4932396,
+          "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。"
+        }
+      ],
+      "timelineId": "tl_c65995881aa5",
+      "eventId": "evt_c65995881aa5",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0077",
+          "startOffset": 4931757,
+          "endOffset": 4931810,
+          "summary": "年兽们联手攻击千变老祖，但被宫殿中的铁链束缚镇压。"
+        }
+      ],
+      "timelineId": "tl_f81ae2396eee",
+      "eventId": "evt_f81ae2396eee",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "年兽们联手攻击千变老祖，但被宫殿中的铁链束缚镇压。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0102",
+          "startOffset": 4932645,
+          "endOffset": 4932691,
+          "summary": "千变老祖成功渡过万劫，但道痕亏损，底蕴未增"
+        }
+      ],
+      "timelineId": "tl_e40cfcf007cd",
+      "eventId": "evt_e40cfcf007cd",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "千变老祖成功渡过万劫，但道痕亏损，底蕴未增",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0112",
+          "startOffset": 4932955,
+          "endOffset": 4933001,
+          "summary": "千变老祖深刻反省，认识到自己低估万劫，心性自大"
+        }
+      ],
+      "timelineId": "tl_d772e138e8a2",
+      "eventId": "evt_d772e138e8a2",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "千变老祖深刻反省，认识到自己低估万劫，心性自大",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933156,
+          "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事"
+        }
+      ],
+      "timelineId": "tl_a7357c7617e6",
+      "eventId": "evt_a7357c7617e6",
+      "chapterId": "ch_1403",
+      "orderHint": "chapter-order",
+      "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0115",
+          "startOffset": 4933072,
+          "endOffset": 4933156,
+          "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事"
+        }
+      ],
+      "factId": "hf_ch_1403_001",
+      "summary": "翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似遭遇不测",
+      "whoKnows": [
+        "女仙",
+        "千变老祖"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0043",
+          "startOffset": 4930842,
+          "endOffset": 4930912,
+          "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1403",
+          "paragraphId": "ch_1403_p0092",
+          "startOffset": 4932347,
+          "endOffset": 4932396,
+          "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "千变老祖",
+      "observedMotive": "渡万劫时使用割肉变分离年兽",
+      "inferredMotive": "减轻万劫带来的痛苦",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0024",
+      "startOffset": 4930330,
+      "endOffset": 4930335,
+      "summary": "八转变化道蛊仙，占据万像沙漠千年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0034",
+      "startOffset": 4930590,
+      "endOffset": 4930620,
+      "summary": "八转蛊仙，被囚禁，正在渡万劫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0066",
+      "startOffset": 4931470,
+      "endOffset": 4931474,
+      "summary": "八转蛊仙，狂蛮魔尊传承者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0097",
+      "startOffset": 4932533,
+      "endOffset": 4932537,
+      "summary": "八转蛊仙，狂蛮真传传承者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0115",
+      "startOffset": 4933078,
+      "endOffset": 4933084,
+      "summary": "千变老祖的妻妾之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0115",
+      "startOffset": 4933072,
+      "endOffset": 4933074,
+      "summary": "千变老祖的妻妾之一，向千变老祖禀告"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0025",
+      "startOffset": 4930339,
+      "endOffset": 4930365,
+      "summary": "千变老祖占据万像沙漠长达千年，视为自己的地盘"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0071",
+      "startOffset": 4931595,
+      "endOffset": 4931618,
+      "summary": "千变老祖通过割肉变分离出的年兽不受控制，成为他的死敌，攻击他。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0115",
+      "startOffset": 4933072,
+      "endOffset": 4933084,
+      "summary": "千变老祖与翠波妹妹是夫妻关系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0115",
+      "startOffset": 4933072,
+      "endOffset": 4933076,
+      "summary": "千变老祖与女仙是夫妻关系"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0031",
+      "startOffset": 4930491,
+      "endOffset": 4930505,
+      "summary": "千变老祖在万像宫殿深处发出惨烈痛嚎，似乎十分痛楚"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0043",
+      "startOffset": 4930842,
+      "endOffset": 4930912,
+      "summary": "千变老祖正在渡八转万劫，遭受剧烈痛楚，最终催动仙道杀招割肉变，从脖子上的肉球中诞生出一头荒级狗形年兽，痛楚稍减。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0092",
+      "startOffset": 4932347,
+      "endOffset": 4932396,
+      "summary": "千变老祖渡过第一次万劫后，使用割肉变将宙道道痕转嫁到分离出的肉身上，形成年兽。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0077",
+      "startOffset": 4931757,
+      "endOffset": 4931810,
+      "summary": "年兽们联手攻击千变老祖，但被宫殿中的铁链束缚镇压。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0102",
+      "startOffset": 4932645,
+      "endOffset": 4932691,
+      "summary": "千变老祖成功渡过万劫，但道痕亏损，底蕴未增"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0112",
+      "startOffset": 4932955,
+      "endOffset": 4933001,
+      "summary": "千变老祖深刻反省，认识到自己低估万劫，心性自大"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1403",
+      "paragraphId": "ch_1403_p0115",
+      "startOffset": 4933072,
+      "endOffset": 4933156,
+      "summary": "女仙向千变老祖禀告翠波妹妹的命牌蛊半碎，魂灯蛊暗淡，疑似出事"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly supports that the female immortal reported to Thousand Changes Ancestor that Cui Bo's life tablet Gu is half-shattered and soul lamp Gu is dim, indicating she may have encountered trouble. This is private knowledge between the two immortals, not known to the outside world. The fact is atomic: the state of Cui Bo's life tablet and soul lamp. The 'suspected' wording is from the source itself (疑似), so it's honest to keep it as a hidden fact rather than asserting certainty.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "千变老祖在渡八转万劫时遭受剧烈痛楚，催动割肉变分离出年兽后痛楚稍减。直接观察到的行为是使用割肉变，合理推断其动机是减轻万劫痛苦。来源直接支持。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses almost entirely on 千变老祖 as an individual (his cultivation tribulation, his pain, his self-reflection). The only collective-adjacent elements are his two wives (翠波妹妹 and 女仙), but they are named as individuals, not as a named family/clan/faction. The seed mentions 翠波妹妹's命牌蛊半碎 and 魂灯蛊暗淡, suggesting she may be in danger, but this is reported by 女仙 to 千变老祖 as a personal/family concern — there is no named collective actor (family name, clan name, faction) that has a stake. 千变老祖 himself is a single person, not a collective. 万像沙漠 is a location he occupies, not a faction. No named faction, clan, family, or organization appears in the seed that could serve as a collective pressure subject.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

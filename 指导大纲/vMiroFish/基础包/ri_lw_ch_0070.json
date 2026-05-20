@@ -1,0 +1,853 @@
+{
+  "packageId": "ri_lw_ch_0070",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0070"
+    ],
+    "paragraphIds": [
+      "ch_0070_p0002",
+      "ch_0070_p0005",
+      "ch_0070_p0007",
+      "ch_0070_p0018",
+      "ch_0070_p0025",
+      "ch_0070_p0026",
+      "ch_0070_p0028",
+      "ch_0070_p0031",
+      "ch_0070_p0033",
+      "ch_0070_p0034",
+      "ch_0070_p0038",
+      "ch_0070_p0043",
+      "ch_0070_p0044",
+      "ch_0070_p0045",
+      "ch_0070_p0050"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0002",
+          "startOffset": 213687,
+          "endOffset": 213689,
+          "summary": "蛊师，杀人夺图"
+        }
+      ],
+      "entityId": "entity_9fb5e6b91cfa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，杀人夺图",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0005",
+          "startOffset": 213846,
+          "endOffset": 213849,
+          "summary": "猎头，传家宝主人，已死"
+        }
+      ],
+      "entityId": "entity_ac314d96d76f",
+      "name": "王老汉",
+      "kind": "person",
+      "aliases": [
+        "王猎头",
+        "王老头"
+      ],
+      "description": "猎头，传家宝主人，已死",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0028",
+          "startOffset": 215046,
+          "endOffset": 215048,
+          "summary": "古月一族驻村蛊师，二转"
+        }
+      ],
+      "entityId": "entity_c1e5aefada05",
+      "name": "江鹤",
+      "kind": "person",
+      "aliases": [
+        "江鹤大人"
+      ],
+      "description": "古月一族驻村蛊师，二转",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0007",
+          "startOffset": 213946,
+          "endOffset": 213950,
+          "summary": "跪在地上的两个年轻猎手之一"
+        }
+      ],
+      "entityId": "entity_5a1cdcdd5b0f",
+      "name": "年轻猎手甲",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "跪在地上的两个年轻猎手之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0007",
+          "startOffset": 213946,
+          "endOffset": 213950,
+          "summary": "跪在地上的两个年轻猎手之一"
+        }
+      ],
+      "entityId": "entity_4d40c6bedd01",
+      "name": "年轻猎手乙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "跪在地上的两个年轻猎手之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0033",
+          "startOffset": 215269,
+          "endOffset": 215314,
+          "summary": "古月族蛊师学徒"
+        }
+      ],
+      "entityId": "entity_9fb5e6b91cfa",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "古月方源"
+      ],
+      "description": "古月族蛊师学徒",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0033",
+          "startOffset": 215269,
+          "endOffset": 215314,
+          "summary": "古月族蛊师，驻扎在村子的学长"
+        }
+      ],
+      "entityId": "entity_c1e5aefada05",
+      "name": "江鹤",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族蛊师，驻扎在村子的学长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0034",
+          "startOffset": 215318,
+          "endOffset": 215392,
+          "summary": "农奴，离群索居"
+        }
+      ],
+      "entityId": "entity_195bf8e124e2",
+      "name": "王老头",
+      "kind": "person",
+      "aliases": [],
+      "description": "农奴，离群索居",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0050",
+          "startOffset": 216301,
+          "endOffset": 216388,
+          "summary": "王老头的二儿子"
+        }
+      ],
+      "entityId": "entity_d3e38d77ada2",
+      "name": "王二",
+      "kind": "person",
+      "aliases": [],
+      "description": "王老头的二儿子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0043",
+          "startOffset": 215871,
+          "endOffset": 216011,
+          "summary": "江鹤的弟弟，经营店铺"
+        }
+      ],
+      "entityId": "entity_85306e1e36ae",
+      "name": "江牙",
+      "kind": "person",
+      "aliases": [],
+      "description": "江鹤的弟弟，经营店铺",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0034",
+          "startOffset": 215318,
+          "endOffset": 215392,
+          "summary": "目击证人"
+        }
+      ],
+      "entityId": "entity_75bb62f552cb",
+      "name": "两个青年猎户",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "目击证人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源杀了王老汉，夺取兽皮地图"
+        }
+      ],
+      "relationId": "rel_3805820602e7",
+      "subject": "方源",
+      "object": "王老汉",
+      "relationType": "CONFLICT",
+      "summary": "方源杀了王老汉，夺取兽皮地图",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源威胁两个年轻猎手，后放走"
+        }
+      ],
+      "relationId": "rel_a8dd27372c53",
+      "subject": "方源",
+      "object": "年轻猎手甲",
+      "relationType": "CONFLICT",
+      "summary": "方源威胁两个年轻猎手，后放走",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源威胁两个年轻猎手，后放走"
+        }
+      ],
+      "relationId": "rel_eb0f5948b6cc",
+      "subject": "方源",
+      "object": "年轻猎手乙",
+      "relationType": "CONFLICT",
+      "summary": "方源威胁两个年轻猎手，后放走",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0031",
+          "startOffset": 215171,
+          "endOffset": 215191,
+          "summary": "江鹤突然出现，质问方源身份"
+        }
+      ],
+      "relationId": "rel_19697b904e3b",
+      "subject": "江鹤",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "江鹤突然出现，质问方源身份",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0026",
+          "startOffset": 214907,
+          "endOffset": 214927,
+          "summary": "江鹤阻止猎手离开，要求说明情况"
+        }
+      ],
+      "relationId": "rel_4c6960294f5c",
+      "subject": "江鹤",
+      "object": "年轻猎手甲",
+      "relationType": "OTHER",
+      "summary": "江鹤阻止猎手离开，要求说明情况",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0026",
+          "startOffset": 214907,
+          "endOffset": 214927,
+          "summary": "江鹤阻止猎手离开，要求说明情况"
+        }
+      ],
+      "relationId": "rel_e08afba0e6a5",
+      "subject": "江鹤",
+      "object": "年轻猎手乙",
+      "relationType": "OTHER",
+      "summary": "江鹤阻止猎手离开，要求说明情况",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0045",
+          "startOffset": 216062,
+          "endOffset": 216120,
+          "summary": "方源与江鹤是学堂学长学弟关系，江鹤因弟弟江牙与方源相识而卖人情"
+        }
+      ],
+      "relationId": "rel_f19b6923744f",
+      "subject": "方源",
+      "object": "江鹤",
+      "relationType": "OTHER",
+      "summary": "方源与江鹤是学堂学长学弟关系，江鹤因弟弟江牙与方源相识而卖人情",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0043",
+          "startOffset": 215871,
+          "endOffset": 216011,
+          "summary": "江鹤是江牙的哥哥"
+        }
+      ],
+      "relationId": "rel_94a3e3c46e76",
+      "subject": "江鹤",
+      "object": "江牙",
+      "relationType": "FAMILY",
+      "summary": "江鹤是江牙的哥哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0044",
+          "startOffset": 216015,
+          "endOffset": 216058,
+          "summary": "方源在江牙的店铺购买月兰花瓣"
+        }
+      ],
+      "relationId": "rel_cd53d58c2a22",
+      "subject": "方源",
+      "object": "江牙",
+      "relationType": "TRADE",
+      "summary": "方源在江牙的店铺购买月兰花瓣",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源杀了王老汉，夺取兽皮地图"
+        }
+      ],
+      "eventId": "evt_529b99a5697d",
+      "eventType": "death",
+      "summary": "方源杀了王老汉，夺取兽皮地图",
+      "actors": [
+        "方源",
+        "王老汉"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得兽皮地图，王老汉死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源审问两个年轻猎手，后放走"
+        }
+      ],
+      "eventId": "evt_dc277793fe60",
+      "eventType": "conflict",
+      "summary": "方源审问两个年轻猎手，后放走",
+      "actors": [
+        "方源",
+        "年轻猎手甲",
+        "年轻猎手乙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "猎手被放走，但被江鹤拦住"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0025",
+          "startOffset": 214882,
+          "endOffset": 214902,
+          "summary": "江鹤从树梢跳下，阻止猎手离开，质问方源"
+        }
+      ],
+      "eventId": "evt_ad11387e36ff",
+      "eventType": "appearance",
+      "summary": "江鹤从树梢跳下，阻止猎手离开，质问方源",
+      "actors": [
+        "江鹤"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源展示月光蛊，对峙开始"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0034",
+          "startOffset": 215318,
+          "endOffset": 215392,
+          "summary": "方源因王二冒犯而杀了王老头一家"
+        }
+      ],
+      "eventId": "evt_36b571e3d25b",
+      "eventType": "death",
+      "summary": "方源因王二冒犯而杀了王老头一家",
+      "actors": [
+        "方源",
+        "王老头",
+        "王二"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "江鹤为方源隐瞒，上报为野兽侵袭"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0038",
+          "startOffset": 215615,
+          "endOffset": 215643,
+          "summary": "江鹤试图讹诈方源，方源不配合，后因江牙关系和解"
+        }
+      ],
+      "eventId": "evt_a15b25c737cf",
+      "eventType": "conflict",
+      "summary": "江鹤试图讹诈方源，方源不配合，后因江牙关系和解",
+      "actors": [
+        "方源",
+        "江鹤"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "江鹤放弃追究，卖人情给方源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源杀了王老汉，夺取兽皮地图"
+        }
+      ],
+      "timelineId": "tl_529b99a5697d",
+      "eventId": "evt_529b99a5697d",
+      "chapterId": "ch_0070",
+      "orderHint": "chapter-order",
+      "summary": "方源杀了王老汉，夺取兽皮地图",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源审问两个年轻猎手，后放走"
+        }
+      ],
+      "timelineId": "tl_dc277793fe60",
+      "eventId": "evt_dc277793fe60",
+      "chapterId": "ch_0070",
+      "orderHint": "chapter-order",
+      "summary": "方源审问两个年轻猎手，后放走",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0025",
+          "startOffset": 214882,
+          "endOffset": 214902,
+          "summary": "江鹤从树梢跳下，阻止猎手离开，质问方源"
+        }
+      ],
+      "timelineId": "tl_ad11387e36ff",
+      "eventId": "evt_ad11387e36ff",
+      "chapterId": "ch_0070",
+      "orderHint": "chapter-order",
+      "summary": "江鹤从树梢跳下，阻止猎手离开，质问方源",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0034",
+          "startOffset": 215318,
+          "endOffset": 215392,
+          "summary": "方源因王二冒犯而杀了王老头一家"
+        }
+      ],
+      "timelineId": "tl_36b571e3d25b",
+      "eventId": "evt_36b571e3d25b",
+      "chapterId": "ch_0070",
+      "orderHint": "chapter-order",
+      "summary": "方源因王二冒犯而杀了王老头一家",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0038",
+          "startOffset": 215615,
+          "endOffset": 215643,
+          "summary": "江鹤试图讹诈方源，方源不配合，后因江牙关系和解"
+        }
+      ],
+      "timelineId": "tl_a15b25c737cf",
+      "eventId": "evt_a15b25c737cf",
+      "chapterId": "ch_0070",
+      "orderHint": "chapter-order",
+      "summary": "江鹤试图讹诈方源，方源不配合，后因江牙关系和解",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0070",
+          "paragraphId": "ch_0070_p0018",
+          "startOffset": 214595,
+          "endOffset": 214615,
+          "summary": "方源杀了王老汉，夺取兽皮地图"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "杀人夺取兽皮地图",
+      "inferredMotive": "获取兽皮地图",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0002",
+      "startOffset": 213687,
+      "endOffset": 213689,
+      "summary": "蛊师，杀人夺图"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0005",
+      "startOffset": 213846,
+      "endOffset": 213849,
+      "summary": "猎头，传家宝主人，已死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0028",
+      "startOffset": 215046,
+      "endOffset": 215048,
+      "summary": "古月一族驻村蛊师，二转"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0007",
+      "startOffset": 213946,
+      "endOffset": 213950,
+      "summary": "跪在地上的两个年轻猎手之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0033",
+      "startOffset": 215269,
+      "endOffset": 215314,
+      "summary": "古月族蛊师学徒"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0034",
+      "startOffset": 215318,
+      "endOffset": 215392,
+      "summary": "农奴，离群索居"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0050",
+      "startOffset": 216301,
+      "endOffset": 216388,
+      "summary": "王老头的二儿子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0043",
+      "startOffset": 215871,
+      "endOffset": 216011,
+      "summary": "江鹤的弟弟，经营店铺"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0018",
+      "startOffset": 214595,
+      "endOffset": 214615,
+      "summary": "方源杀了王老汉，夺取兽皮地图"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0031",
+      "startOffset": 215171,
+      "endOffset": 215191,
+      "summary": "江鹤突然出现，质问方源身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0026",
+      "startOffset": 214907,
+      "endOffset": 214927,
+      "summary": "江鹤阻止猎手离开，要求说明情况"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0045",
+      "startOffset": 216062,
+      "endOffset": 216120,
+      "summary": "方源与江鹤是学堂学长学弟关系，江鹤因弟弟江牙与方源相识而卖人情"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0044",
+      "startOffset": 216015,
+      "endOffset": 216058,
+      "summary": "方源在江牙的店铺购买月兰花瓣"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0025",
+      "startOffset": 214882,
+      "endOffset": 214902,
+      "summary": "江鹤从树梢跳下，阻止猎手离开，质问方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0070",
+      "paragraphId": "ch_0070_p0038",
+      "startOffset": 215615,
+      "endOffset": 215643,
+      "summary": "江鹤试图讹诈方源，方源不配合，后因江牙关系和解"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "redacted_review_note: source quote reference removed; use sourcePointer ids, chapterId, paragraphId, and offsets for audit.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "方源明确自述杀人是为了贪图兽皮地图，observedMotive和inferredMotive均直接来自原文，无过度推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed involves individual conflicts (方源 killing 王老汉, 江鹤 confronting 方源) but does not establish faction-level stakes. 江鹤 is a village-stationed Gu Master of 古月一族, but the seed facts only show him acting as an individual investigating a death, not representing clan pressure or policy. No clan-level interest, threat, resource, reputation, geography, succession, or inheritance pressure is concretely demonstrated. The seed lacks evidence of 古月一族 as a collective actor with a stake in these events.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

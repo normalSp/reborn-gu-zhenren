@@ -1,0 +1,640 @@
+{
+  "packageId": "ri_lw_ch_1479",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1479"
+    ],
+    "paragraphIds": [
+      "ch_1479_p0007",
+      "ch_1479_p0015",
+      "ch_1479_p0026",
+      "ch_1479_p0031",
+      "ch_1479_p0036",
+      "ch_1479_p0037",
+      "ch_1479_p0042",
+      "ch_1479_p0050",
+      "ch_1479_p0052",
+      "ch_1479_p0053",
+      "ch_1479_p0056",
+      "ch_1479_p0062",
+      "ch_1479_p0065",
+      "ch_1479_p0066",
+      "ch_1479_p0072"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0015",
+          "startOffset": 5174405,
+          "endOffset": 5174407,
+          "summary": "蛊仙，小黄天拥有者"
+        }
+      ],
+      "entityId": "entity_e2a08b15dbb6",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，小黄天拥有者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0026",
+          "startOffset": 5174733,
+          "endOffset": 5174737,
+          "summary": "炼制财富蛊的蛊仙"
+        }
+      ],
+      "entityId": "entity_52756fd2d6bf",
+      "name": "中年蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "炼制财富蛊的蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0050",
+          "startOffset": 5175709,
+          "endOffset": 5175721,
+          "summary": "石家七转蛊仙，镇守万矿戈壁，尝试炼制财富蛊"
+        }
+      ],
+      "entityId": "entity_440a697ca900",
+      "name": "石忠",
+      "kind": "person",
+      "aliases": [
+        "中年蛊仙"
+      ],
+      "description": "石家七转蛊仙，镇守万矿戈壁，尝试炼制财富蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0036",
+          "startOffset": 5175133,
+          "endOffset": 5175151,
+          "summary": "拥有九转智慧蛊但未炼化"
+        }
+      ],
+      "entityId": "entity_e2a08b15dbb6",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "拥有九转智慧蛊但未炼化",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0056",
+          "startOffset": 5175905,
+          "endOffset": 5175928,
+          "summary": "石家太上大长老，打发石忠镇守万矿戈壁"
+        }
+      ],
+      "entityId": "entity_3d7038c560b8",
+      "name": "石家太上大长老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "石家太上大长老，打发石忠镇守万矿戈壁",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0065",
+          "startOffset": 5176361,
+          "endOffset": 5176363,
+          "summary": "炼蛊者，拥有财富蛊古方"
+        }
+      ],
+      "entityId": "entity_440a697ca900",
+      "name": "石忠",
+      "kind": "person",
+      "aliases": [],
+      "description": "炼蛊者，拥有财富蛊古方",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0007",
+          "startOffset": 5174041,
+          "endOffset": 5174057,
+          "summary": "石家掌控万矿戈壁"
+        }
+      ],
+      "relationId": "rel_c73f0d9ff951",
+      "subject": "石家",
+      "object": "万矿戈壁",
+      "relationType": "FACTION",
+      "summary": "石家掌控万矿戈壁",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0052",
+          "startOffset": 5175747,
+          "endOffset": 5175783,
+          "summary": "石忠是石家蛊仙，但遭受排挤，因其父叛变家族"
+        }
+      ],
+      "relationId": "rel_f2659ca64e51",
+      "subject": "石忠",
+      "object": "石家",
+      "relationType": "FACTION",
+      "summary": "石忠是石家蛊仙，但遭受排挤，因其父叛变家族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0053",
+          "startOffset": 5175787,
+          "endOffset": 5175827,
+          "summary": "石忠的父亲叛变家族，导致石忠受牵连"
+        }
+      ],
+      "relationId": "rel_697467ee61da",
+      "subject": "石忠",
+      "object": "石忠的父亲",
+      "relationType": "FAMILY",
+      "summary": "石忠的父亲叛变家族，导致石忠受牵连",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0062",
+          "startOffset": 5176220,
+          "endOffset": 5176281,
+          "summary": "石忠一直努力尝试炼制财富蛊，已失败八十九次"
+        }
+      ],
+      "relationId": "rel_81464223e886",
+      "subject": "石忠",
+      "object": "财富蛊",
+      "relationType": "OTHER",
+      "summary": "石忠一直努力尝试炼制财富蛊，已失败八十九次",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0026",
+          "startOffset": 5174733,
+          "endOffset": 5174753,
+          "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤"
+        }
+      ],
+      "eventId": "evt_30a05440ebe9",
+      "eventType": "other",
+      "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤",
+      "actors": [
+        "中年蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "炼蛊失败，中年蛊仙吐血，血块凝结成珠宝"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0062",
+          "startOffset": 5176220,
+          "endOffset": 5176281,
+          "summary": "石忠尝试炼制财富蛊第八十九次失败，检查库存发现作为蛊材的人不足"
+        }
+      ],
+      "eventId": "evt_5497e5c82c7b",
+      "eventType": "other",
+      "summary": "石忠尝试炼制财富蛊第八十九次失败，检查库存发现作为蛊材的人不足",
+      "actors": [
+        "石忠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "石忠需要再次收集人作为蛊材"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0066",
+          "startOffset": 5176429,
+          "endOffset": 5176479,
+          "summary": "石忠在思考财富蛊古方的改进，考虑用寿蛊替代部分材料。"
+        }
+      ],
+      "eventId": "evt_5f568f663b29",
+      "eventType": "other",
+      "summary": "石忠在思考财富蛊古方的改进，考虑用寿蛊替代部分材料。",
+      "actors": [
+        "石忠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "尚未决定是否使用寿蛊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0072",
+          "startOffset": 5176644,
+          "endOffset": 5176674,
+          "summary": "石忠检查自己吐出的血，发现已转变为珠宝矿石。"
+        }
+      ],
+      "eventId": "evt_3d5972f6ab4c",
+      "eventType": "other",
+      "summary": "石忠检查自己吐出的血，发现已转变为珠宝矿石。",
+      "actors": [
+        "石忠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "表明炼蛊过程有进展，但石忠受伤。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0026",
+          "startOffset": 5174733,
+          "endOffset": 5174753,
+          "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤"
+        }
+      ],
+      "timelineId": "tl_30a05440ebe9",
+      "eventId": "evt_30a05440ebe9",
+      "chapterId": "ch_1479",
+      "orderHint": "chapter-order",
+      "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0062",
+          "startOffset": 5176220,
+          "endOffset": 5176281,
+          "summary": "石忠尝试炼制财富蛊第八十九次失败，检查库存发现作为蛊材的人不足"
+        }
+      ],
+      "timelineId": "tl_5497e5c82c7b",
+      "eventId": "evt_5497e5c82c7b",
+      "chapterId": "ch_1479",
+      "orderHint": "chapter-order",
+      "summary": "石忠尝试炼制财富蛊第八十九次失败，检查库存发现作为蛊材的人不足",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0066",
+          "startOffset": 5176429,
+          "endOffset": 5176479,
+          "summary": "石忠在思考财富蛊古方的改进，考虑用寿蛊替代部分材料。"
+        }
+      ],
+      "timelineId": "tl_5f568f663b29",
+      "eventId": "evt_5f568f663b29",
+      "chapterId": "ch_1479",
+      "orderHint": "chapter-order",
+      "summary": "石忠在思考财富蛊古方的改进，考虑用寿蛊替代部分材料。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0072",
+          "startOffset": 5176644,
+          "endOffset": 5176674,
+          "summary": "石忠检查自己吐出的血，发现已转变为珠宝矿石。"
+        }
+      ],
+      "timelineId": "tl_3d5972f6ab4c",
+      "eventId": "evt_3d5972f6ab4c",
+      "chapterId": "ch_1479",
+      "orderHint": "chapter-order",
+      "summary": "石忠检查自己吐出的血，发现已转变为珠宝矿石。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0062",
+          "startOffset": 5176220,
+          "endOffset": 5176281,
+          "summary": "石忠一直努力尝试炼制财富蛊，已失败八十九次"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0026",
+          "startOffset": 5174733,
+          "endOffset": 5174753,
+          "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "石忠",
+      "observedMotive": "第八十九次炼制财富蛊失败",
+      "inferredMotive": "想成功炼制财富蛊",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0007",
+          "startOffset": 5174041,
+          "endOffset": 5174057,
+          "summary": "石家掌控万矿戈壁"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0052",
+          "startOffset": 5175747,
+          "endOffset": 5175783,
+          "summary": "石忠是石家蛊仙，但遭受排挤，因其父叛变家族"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0053",
+          "startOffset": 5175787,
+          "endOffset": 5175827,
+          "summary": "石忠的父亲叛变家族，导致石忠受牵连"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1479",
+          "paragraphId": "ch_1479_p0062",
+          "startOffset": 5176220,
+          "endOffset": 5176281,
+          "summary": "石忠一直努力尝试炼制财富蛊，已失败八十九次"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "石家",
+      "pressureAxis": "石忠炼财富蛊消耗人材",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "监控石忠炼蛊消耗"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0015",
+      "startOffset": 5174405,
+      "endOffset": 5174407,
+      "summary": "蛊仙，小黄天拥有者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0026",
+      "startOffset": 5174733,
+      "endOffset": 5174737,
+      "summary": "炼制财富蛊的蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0050",
+      "startOffset": 5175709,
+      "endOffset": 5175721,
+      "summary": "石家七转蛊仙，镇守万矿戈壁，尝试炼制财富蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0036",
+      "startOffset": 5175133,
+      "endOffset": 5175151,
+      "summary": "拥有九转智慧蛊但未炼化"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0056",
+      "startOffset": 5175905,
+      "endOffset": 5175928,
+      "summary": "石家太上大长老，打发石忠镇守万矿戈壁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0065",
+      "startOffset": 5176361,
+      "endOffset": 5176363,
+      "summary": "炼蛊者，拥有财富蛊古方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0007",
+      "startOffset": 5174041,
+      "endOffset": 5174057,
+      "summary": "石家掌控万矿戈壁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0052",
+      "startOffset": 5175747,
+      "endOffset": 5175783,
+      "summary": "石忠是石家蛊仙，但遭受排挤，因其父叛变家族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0053",
+      "startOffset": 5175787,
+      "endOffset": 5175827,
+      "summary": "石忠的父亲叛变家族，导致石忠受牵连"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0062",
+      "startOffset": 5176220,
+      "endOffset": 5176281,
+      "summary": "石忠一直努力尝试炼制财富蛊，已失败八十九次"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0026",
+      "startOffset": 5174733,
+      "endOffset": 5174753,
+      "summary": "中年蛊仙在碎金河流中的仙道蛊阵内第八十九次炼制财富蛊，失败并受伤"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0066",
+      "startOffset": 5176429,
+      "endOffset": 5176479,
+      "summary": "石忠在思考财富蛊古方的改进，考虑用寿蛊替代部分材料。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1479",
+      "paragraphId": "ch_1479_p0072",
+      "startOffset": 5176644,
+      "endOffset": 5176674,
+      "summary": "石忠检查自己吐出的血，发现已转变为珠宝矿石。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes visible events: a middle-aged Gu Immortal (Shi Zhong) attempts to refine Wealth Gu for the 89th time and fails, checks his material stock, considers improvements using lifespan Gu, and notices his blood turning into gemstone ore. These are all ordinary visible events happening in the present moment, not hidden knowledge, future-known information, or secret motives/plans. The background about Shi Zhong's father betraying the Shi clan is public knowledge within the clan, not a hidden fact. No source directly supports any actor knowing something that others do not know, or any future-known information. No directly supported knowledge gap exists that would qualify as a hidden fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "石忠反复尝试炼制财富蛊（已失败八十九次），observedMotive直接来自种子事实，inferredMotive为谨慎的一步推断：反复尝试表明其目的是成功炼制财富蛊。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "石家作为超级势力掌控万矿戈壁（ptr_7），石忠是石家蛊仙但遭排挤因其父叛变（ptr_8, ptr_9），石忠在万矿戈壁反复尝试炼制财富蛊已失败89次且人材不足（ptr_10）。石家可能关注石忠消耗万矿戈壁的人材资源进行炼蛊实验，这构成对石家资源的压力。但压力较弱，因为石忠被排挤且被派来镇守，石家可能不在意其消耗。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

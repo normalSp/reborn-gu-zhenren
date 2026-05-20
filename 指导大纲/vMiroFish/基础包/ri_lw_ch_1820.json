@@ -1,0 +1,860 @@
+{
+  "packageId": "ri_lw_ch_1820",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1820"
+    ],
+    "paragraphIds": [
+      "ch_1820_p0002",
+      "ch_1820_p0005",
+      "ch_1820_p0011",
+      "ch_1820_p0012",
+      "ch_1820_p0015",
+      "ch_1820_p0024",
+      "ch_1820_p0026",
+      "ch_1820_p0031",
+      "ch_1820_p0032",
+      "ch_1820_p0035",
+      "ch_1820_p0049",
+      "ch_1820_p0052",
+      "ch_1820_p0066",
+      "ch_1820_p0067",
+      "ch_1820_p0068",
+      "ch_1820_p0070",
+      "ch_1820_p0072",
+      "ch_1820_p0079",
+      "ch_1820_p0081",
+      "ch_1820_p0083"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0002",
+          "startOffset": 6310871,
+          "endOffset": 6310874,
+          "summary": "蛊仙，与方源同行"
+        }
+      ],
+      "entityId": "entity_5091de5f0f35",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，与方源同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0005",
+          "startOffset": 6311107,
+          "endOffset": 6311109,
+          "summary": "蛊仙，主角"
+        }
+      ],
+      "entityId": "entity_2504b915f0ba",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0031",
+          "startOffset": 6312185,
+          "endOffset": 6312187,
+          "summary": "蛊仙，方源麾下"
+        }
+      ],
+      "entityId": "entity_5ac715a9686c",
+      "name": "冰媛",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，方源麾下",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0024",
+          "startOffset": 6311927,
+          "endOffset": 6311931,
+          "summary": "敌对势力蛊仙，被方源俘虏"
+        }
+      ],
+      "entityId": "entity_ec30c72f735c",
+      "name": "戚家蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "敌对势力蛊仙，被方源俘虏",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0035",
+          "startOffset": 6312340,
+          "endOffset": 6312404,
+          "summary": "尊者，留下天相杀招传承"
+        }
+      ],
+      "entityId": "entity_2880ba3c5bea",
+      "name": "盗天魔尊",
+      "kind": "person",
+      "aliases": [],
+      "description": "尊者，留下天相杀招传承",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0066",
+          "startOffset": 6313562,
+          "endOffset": 6313564,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_2504b915f0ba",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0067",
+          "startOffset": 6313600,
+          "endOffset": 6313605,
+          "summary": "气象洞天镇守蛊仙"
+        }
+      ],
+      "entityId": "entity_ec30c72f735c",
+      "name": "戚家蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "气象洞天镇守蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0070",
+          "startOffset": 6313711,
+          "endOffset": 6313714,
+          "summary": "方源麾下蛊仙"
+        }
+      ],
+      "entityId": "entity_5091de5f0f35",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源麾下蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0072",
+          "startOffset": 6313777,
+          "endOffset": 6313781,
+          "summary": "方源麾下异人蛊仙"
+        }
+      ],
+      "entityId": "entity_a2a19a4a44d4",
+      "name": "异人蛊仙",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源麾下异人蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0081",
+          "startOffset": 6314074,
+          "endOffset": 6314079,
+          "summary": "气海洞天天灵"
+        }
+      ],
+      "entityId": "entity_b542621faa72",
+      "name": "气海洞天天灵",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "气海洞天天灵",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0012",
+          "startOffset": 6311403,
+          "endOffset": 6311425,
+          "summary": "同行合作"
+        }
+      ],
+      "relationId": "rel_e3db97348295",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "同行合作",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0024",
+          "startOffset": 6311927,
+          "endOffset": 6311964,
+          "summary": "方源提前出手击败并俘虏戚家蛊仙"
+        }
+      ],
+      "relationId": "rel_66e5f28dbb12",
+      "subject": "方源",
+      "object": "戚家蛊仙",
+      "relationType": "CONFLICT",
+      "summary": "方源提前出手击败并俘虏戚家蛊仙",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0026",
+          "startOffset": 6311998,
+          "endOffset": 6312032,
+          "summary": "冰媛是方源麾下"
+        }
+      ],
+      "relationId": "rel_21b97ef44076",
+      "subject": "方源",
+      "object": "冰媛",
+      "relationType": "FACTION",
+      "summary": "冰媛是方源麾下",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0068",
+          "startOffset": 6313624,
+          "endOffset": 6313654,
+          "summary": "方源吞并气象洞天，戚家蛊仙投降归顺"
+        }
+      ],
+      "relationId": "rel_a1222875f9e7",
+      "subject": "方源",
+      "object": "戚家蛊仙们",
+      "relationType": "CONFLICT",
+      "summary": "方源吞并气象洞天，戚家蛊仙投降归顺",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0081",
+          "startOffset": 6314074,
+          "endOffset": 6314094,
+          "summary": "方源镇压气海洞天天灵"
+        }
+      ],
+      "relationId": "rel_79317b1147da",
+      "subject": "方源",
+      "object": "气海洞天天灵",
+      "relationType": "CONFLICT",
+      "summary": "方源镇压气海洞天天灵",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0011",
+          "startOffset": 6311366,
+          "endOffset": 6311399,
+          "summary": "方源和白凝冰进入五相洞天，获得五相布置信息"
+        }
+      ],
+      "eventId": "evt_617263532f55",
+      "eventType": "cultivation",
+      "summary": "方源和白凝冰进入五相洞天，获得五相布置信息",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源改良杀招成功，直接获得信息，无需白凝冰通知"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0012",
+          "startOffset": 6311403,
+          "endOffset": 6311425,
+          "summary": "方源和白凝冰向中央山脉进发"
+        }
+      ],
+      "eventId": "evt_23503c8b1ec0",
+      "eventType": "other",
+      "summary": "方源和白凝冰向中央山脉进发",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "一路顺利，无阻碍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0032",
+          "startOffset": 6312215,
+          "endOffset": 6312247,
+          "summary": "方源率领众仙进入大殿，准备灌注意志到天相杀招"
+        }
+      ],
+      "eventId": "evt_3d9e7318471a",
+      "eventType": "other",
+      "summary": "方源率领众仙进入大殿，准备灌注意志到天相杀招",
+      "actors": [
+        "方源",
+        "众蛊仙"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "开始炼化天相杀招"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0052",
+          "startOffset": 6312998,
+          "endOffset": 6313023,
+          "summary": "方源攻克天相杀招最后的天意，炼化天相杀招"
+        }
+      ],
+      "eventId": "evt_8cffe75f55ed",
+      "eventType": "cultivation",
+      "summary": "方源攻克天相杀招最后的天意，炼化天相杀招",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源炼化天相杀招，但内部仍有大量五相及后人的意志需要清除"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0066",
+          "startOffset": 6313562,
+          "endOffset": 6313592,
+          "summary": "方源率领部分人前往气象洞天，戚家蛊仙投降，方源吞并气象洞天"
+        }
+      ],
+      "eventId": "evt_4cefeadf466b",
+      "eventType": "conflict",
+      "summary": "方源率领部分人前往气象洞天，戚家蛊仙投降，方源吞并气象洞天",
+      "actors": [
+        "方源",
+        "戚家蛊仙们"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "气象洞天被方源吞并，融入至尊仙窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0079",
+          "startOffset": 6314014,
+          "endOffset": 6314044,
+          "summary": "方源在光阴长河探索梦境，气道境界提升至大宗师"
+        }
+      ],
+      "eventId": "evt_628df03f8482",
+      "eventType": "cultivation",
+      "summary": "方源在光阴长河探索梦境，气道境界提升至大宗师",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源气道境界达到大宗师，有资格吞并气海洞天"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0081",
+          "startOffset": 6314074,
+          "endOffset": 6314094,
+          "summary": "方源吞并气海洞天，惊醒天灵并镇压"
+        }
+      ],
+      "eventId": "evt_0be748dc4c06",
+      "eventType": "conflict",
+      "summary": "方源吞并气海洞天，惊醒天灵并镇压",
+      "actors": [
+        "方源",
+        "气海洞天天灵"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "气海洞天被方源吞并，融入至尊仙窍"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0011",
+          "startOffset": 6311366,
+          "endOffset": 6311399,
+          "summary": "方源和白凝冰进入五相洞天，获得五相布置信息"
+        }
+      ],
+      "timelineId": "tl_617263532f55",
+      "eventId": "evt_617263532f55",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰进入五相洞天，获得五相布置信息",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0012",
+          "startOffset": 6311403,
+          "endOffset": 6311425,
+          "summary": "方源和白凝冰向中央山脉进发"
+        }
+      ],
+      "timelineId": "tl_23503c8b1ec0",
+      "eventId": "evt_23503c8b1ec0",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰向中央山脉进发",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0032",
+          "startOffset": 6312215,
+          "endOffset": 6312247,
+          "summary": "方源率领众仙进入大殿，准备灌注意志到天相杀招"
+        }
+      ],
+      "timelineId": "tl_3d9e7318471a",
+      "eventId": "evt_3d9e7318471a",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源率领众仙进入大殿，准备灌注意志到天相杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0052",
+          "startOffset": 6312998,
+          "endOffset": 6313023,
+          "summary": "方源攻克天相杀招最后的天意，炼化天相杀招"
+        }
+      ],
+      "timelineId": "tl_8cffe75f55ed",
+      "eventId": "evt_8cffe75f55ed",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源攻克天相杀招最后的天意，炼化天相杀招",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0066",
+          "startOffset": 6313562,
+          "endOffset": 6313592,
+          "summary": "方源率领部分人前往气象洞天，戚家蛊仙投降，方源吞并气象洞天"
+        }
+      ],
+      "timelineId": "tl_4cefeadf466b",
+      "eventId": "evt_4cefeadf466b",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源率领部分人前往气象洞天，戚家蛊仙投降，方源吞并气象洞天",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0079",
+          "startOffset": 6314014,
+          "endOffset": 6314044,
+          "summary": "方源在光阴长河探索梦境，气道境界提升至大宗师"
+        }
+      ],
+      "timelineId": "tl_628df03f8482",
+      "eventId": "evt_628df03f8482",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源在光阴长河探索梦境，气道境界提升至大宗师",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1820",
+          "paragraphId": "ch_1820_p0081",
+          "startOffset": 6314074,
+          "endOffset": 6314094,
+          "summary": "方源吞并气海洞天，惊醒天灵并镇压"
+        }
+      ],
+      "timelineId": "tl_0be748dc4c06",
+      "eventId": "evt_0be748dc4c06",
+      "chapterId": "ch_1820",
+      "orderHint": "chapter-order",
+      "summary": "方源吞并气海洞天，惊醒天灵并镇压",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0002",
+      "startOffset": 6310871,
+      "endOffset": 6310874,
+      "summary": "蛊仙，与方源同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0005",
+      "startOffset": 6311107,
+      "endOffset": 6311109,
+      "summary": "蛊仙，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0031",
+      "startOffset": 6312185,
+      "endOffset": 6312187,
+      "summary": "蛊仙，方源麾下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0024",
+      "startOffset": 6311927,
+      "endOffset": 6311931,
+      "summary": "敌对势力蛊仙，被方源俘虏"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0035",
+      "startOffset": 6312340,
+      "endOffset": 6312404,
+      "summary": "尊者，留下天相杀招传承"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0066",
+      "startOffset": 6313562,
+      "endOffset": 6313564,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0067",
+      "startOffset": 6313600,
+      "endOffset": 6313605,
+      "summary": "气象洞天镇守蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0070",
+      "startOffset": 6313711,
+      "endOffset": 6313714,
+      "summary": "方源麾下蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0072",
+      "startOffset": 6313777,
+      "endOffset": 6313781,
+      "summary": "方源麾下异人蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0081",
+      "startOffset": 6314074,
+      "endOffset": 6314079,
+      "summary": "气海洞天天灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0012",
+      "startOffset": 6311403,
+      "endOffset": 6311425,
+      "summary": "同行合作"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0024",
+      "startOffset": 6311927,
+      "endOffset": 6311964,
+      "summary": "方源提前出手击败并俘虏戚家蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0026",
+      "startOffset": 6311998,
+      "endOffset": 6312032,
+      "summary": "冰媛是方源麾下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0068",
+      "startOffset": 6313624,
+      "endOffset": 6313654,
+      "summary": "方源吞并气象洞天，戚家蛊仙投降归顺"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0081",
+      "startOffset": 6314074,
+      "endOffset": 6314094,
+      "summary": "方源镇压气海洞天天灵"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0011",
+      "startOffset": 6311366,
+      "endOffset": 6311399,
+      "summary": "方源和白凝冰进入五相洞天，获得五相布置信息"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0032",
+      "startOffset": 6312215,
+      "endOffset": 6312247,
+      "summary": "方源率领众仙进入大殿，准备灌注意志到天相杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0052",
+      "startOffset": 6312998,
+      "endOffset": 6313023,
+      "summary": "方源攻克天相杀招最后的天意，炼化天相杀招"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0066",
+      "startOffset": 6313562,
+      "endOffset": 6313592,
+      "summary": "方源率领部分人前往气象洞天，戚家蛊仙投降，方源吞并气象洞天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1820",
+      "paragraphId": "ch_1820_p0079",
+      "startOffset": 6314014,
+      "endOffset": 6314044,
+      "summary": "方源在光阴长河探索梦境，气道境界提升至大宗师"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package describes mostly public/visible events (entering five-phase grotto, capturing Qi family immortals, conquering weather grotto, refining heaven-phase killer move, exploring dreams in time river). No hidden knowledge, secret plans, future-known information, or directly supported knowledge gaps are present in the source pointers. The events are all narrated as observable actions by Fang Yuan. No private motives, concealed facts, or information asymmetry between characters is supported by the provided source excerpts.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes actions (方源吞并洞天、炼化杀招、探索梦境) without revealing characters' internal motives or intentions. Observed behaviors are strategic/operational actions, but the seed lacks direct evidence of underlying motives such as fear, desire, or specific strategic intent. No clear observedMotive → inferredMotive chain can be confidently extracted from the provided facts without making psychological leaps.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on Fang Yuan's individual actions (capturing Qi family Gu Immortals, annexing grotto-heavens, refining the Heavenly Phase killer move). The Qi family (戚家) appears as a named clan/faction whose Gu Immortals are defeated and surrender, but the seed does not provide any ongoing faction pressure from the Qi family's perspective—they have already surrendered and been annexed. No remaining collective stake, threat, or pressure axis is concretely established. The seed lacks evidence of any active faction pressure that would generate simulation candidates.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

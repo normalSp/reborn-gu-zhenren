@@ -1,0 +1,463 @@
+{
+  "packageId": "ri_lw_ch_0015",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0015"
+    ],
+    "paragraphIds": [
+      "ch_0015_p0007",
+      "ch_0015_p0026",
+      "ch_0015_p0037",
+      "ch_0015_p0043",
+      "ch_0015_p0056",
+      "ch_0015_p0063",
+      "ch_0015_p0086",
+      "ch_0015_p0088"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0007",
+          "startOffset": 39840,
+          "endOffset": 39862,
+          "summary": "刚开窍的蛊师"
+        }
+      ],
+      "entityId": "entity_173357e622e5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "刚开窍的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0026",
+          "startOffset": 40562,
+          "endOffset": 40629,
+          "summary": "行者，可能已故"
+        }
+      ],
+      "entityId": "entity_26a332a900dc",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [],
+      "description": "行者，可能已故",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0037",
+          "startOffset": 41029,
+          "endOffset": 41070,
+          "summary": "古月山寨少年，追踪酒虫"
+        }
+      ],
+      "entityId": "entity_173357e622e5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月山寨少年，追踪酒虫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0063",
+          "startOffset": 42074,
+          "endOffset": 42116,
+          "summary": "魔头，酒虫和遗藏的留下者"
+        }
+      ],
+      "entityId": "entity_26a332a900dc",
+      "name": "花酒行者",
+      "kind": "person",
+      "aliases": [
+        "魔头花酒行者"
+      ],
+      "description": "魔头，酒虫和遗藏的留下者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0086",
+          "startOffset": 42956,
+          "endOffset": 42970,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_173357e622e5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0086",
+          "startOffset": 42956,
+          "endOffset": 42967,
+          "summary": "遗骸称号"
+        }
+      ],
+      "entityId": "entity_53b1297e46a5",
+      "name": "花酒行者",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "遗骸称号",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0026",
+          "startOffset": 40562,
+          "endOffset": 40629,
+          "summary": "方源利用酒虫领路寻找花酒行者尸骸"
+        }
+      ],
+      "relationId": "rel_f2deae8c5dc6",
+      "subject": "方源",
+      "object": "酒虫",
+      "relationType": "USES",
+      "summary": "方源利用酒虫领路寻找花酒行者尸骸",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0043",
+          "startOffset": 41294,
+          "endOffset": 41311,
+          "summary": "方源追踪酒虫，企图捕获或使用酒虫。"
+        }
+      ],
+      "relationId": "rel_f856ca624a25",
+      "subject": "方源",
+      "object": "酒虫",
+      "relationType": "USES",
+      "summary": "方源追踪酒虫，企图捕获或使用酒虫。",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0086",
+          "startOffset": 42956,
+          "endOffset": 42970,
+          "summary": "方源寻找花酒行者的遗骸，意图获取其遗留的酒虫"
+        }
+      ],
+      "relationId": "rel_be70eb1b942c",
+      "subject": "方源",
+      "object": "花酒行者",
+      "relationType": "OTHER",
+      "summary": "方源寻找花酒行者的遗骸，意图获取其遗留的酒虫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0026",
+          "startOffset": 40562,
+          "endOffset": 40629,
+          "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸"
+        }
+      ],
+      "eventId": "evt_b6f2d26c0405",
+      "eventType": "other",
+      "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸",
+      "actors": [
+        "方源",
+        "酒虫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0056",
+          "startOffset": 41816,
+          "endOffset": 41871,
+          "summary": "方源追踪酒虫，从竹林追至后山河滩，发现酒虫遁入巨石缝隙。"
+        }
+      ],
+      "eventId": "evt_86762e762042",
+      "eventType": "other",
+      "summary": "方源追踪酒虫，从竹林追至后山河滩，发现酒虫遁入巨石缝隙。",
+      "actors": [
+        "方源",
+        "酒虫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源发现可能的隐秘地点，进入探索。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0088",
+          "startOffset": 43011,
+          "endOffset": 43021,
+          "summary": "方源正要剥去枯藤，背后突然响起充满杀机的声音威胁他不要动"
+        }
+      ],
+      "eventId": "evt_faf01152d778",
+      "eventType": "conflict",
+      "summary": "方源正要剥去枯藤，背后突然响起充满杀机的声音威胁他不要动",
+      "actors": [
+        "方源",
+        "未知声音"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源陷入危险，身份不明的人物出现"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0026",
+          "startOffset": 40562,
+          "endOffset": 40629,
+          "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸"
+        }
+      ],
+      "timelineId": "tl_b6f2d26c0405",
+      "eventId": "evt_b6f2d26c0405",
+      "chapterId": "ch_0015",
+      "orderHint": "chapter-order",
+      "summary": "方源用青竹酒引诱酒虫，跟踪酒虫去寻找花酒行者的尸骸",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0056",
+          "startOffset": 41816,
+          "endOffset": 41871,
+          "summary": "方源追踪酒虫，从竹林追至后山河滩，发现酒虫遁入巨石缝隙。"
+        }
+      ],
+      "timelineId": "tl_86762e762042",
+      "eventId": "evt_86762e762042",
+      "chapterId": "ch_0015",
+      "orderHint": "chapter-order",
+      "summary": "方源追踪酒虫，从竹林追至后山河滩，发现酒虫遁入巨石缝隙。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0015",
+          "paragraphId": "ch_0015_p0088",
+          "startOffset": 43011,
+          "endOffset": 43021,
+          "summary": "方源正要剥去枯藤，背后突然响起充满杀机的声音威胁他不要动"
+        }
+      ],
+      "timelineId": "tl_faf01152d778",
+      "eventId": "evt_faf01152d778",
+      "chapterId": "ch_0015",
+      "orderHint": "chapter-order",
+      "summary": "方源正要剥去枯藤，背后突然响起充满杀机的声音威胁他不要动",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0007",
+      "startOffset": 39840,
+      "endOffset": 39862,
+      "summary": "刚开窍的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0026",
+      "startOffset": 40562,
+      "endOffset": 40629,
+      "summary": "行者，可能已故"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0037",
+      "startOffset": 41029,
+      "endOffset": 41070,
+      "summary": "古月山寨少年，追踪酒虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0063",
+      "startOffset": 42074,
+      "endOffset": 42116,
+      "summary": "魔头，酒虫和遗藏的留下者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0086",
+      "startOffset": 42956,
+      "endOffset": 42970,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0086",
+      "startOffset": 42956,
+      "endOffset": 42967,
+      "summary": "遗骸称号"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0043",
+      "startOffset": 41294,
+      "endOffset": 41311,
+      "summary": "方源追踪酒虫，企图捕获或使用酒虫。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0056",
+      "startOffset": 41816,
+      "endOffset": 41871,
+      "summary": "方源追踪酒虫，从竹林追至后山河滩，发现酒虫遁入巨石缝隙。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0015",
+      "paragraphId": "ch_0015_p0088",
+      "startOffset": 43011,
+      "endOffset": 43021,
+      "summary": "方源正要剥去枯藤，背后突然响起充满杀机的声音威胁他不要动"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes visible events: Fang Yuan tracking a wine worm, finding a rock crevice, and being threatened by an unknown voice. No hidden knowledge, private motives beyond what is obvious, future-known information, or secret plans are directly supported by the source pointers. The mention of '花酒行者' (Hua Jiu Xing Zhe) as a possible demonic cultivator is speculative (paragraph ch_0015_p0063 says '也许' - 'maybe'). The threat from behind (ch_0015_p0088) is an event that happens to Fang Yuan, not a hidden fact known to any actor. No source pointer supports any actor knowing a fact that others do not know.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源追踪酒虫的行为可见（ptr_3, ptr_7），但动机不明确：可能是为了捕获酒虫，也可能是利用酒虫寻找花酒行者遗骸获取遗藏。种子中只有行为描述，没有直接说明方源的内在动机（如想要酒虫的力量、想要遗藏等）。根据规则，行为可见但动机模糊时不应编造动机。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package focuses on 方源 (Fang Yuan) as an individual tracking a wine worm (酒虫) to find the remains of 花酒行者 (Hua Jiu Xing Zhe). No faction, clan, family, or organized group appears in the entities or relations. The only named persons are 方源 (an individual) and 花酒行者 (a deceased demonic cultivator). There is no mention of 古月山寨 (Gu Yue Village) as a clan/faction with collective interests, no family/clan stakes, and no group pressure dynamics. The threat at the end (unknown voice) is an individual threat, not a faction pressure. Cannot derive a faction/group pressure candidate from the available seed facts.",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

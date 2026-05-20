@@ -1,0 +1,1465 @@
+{
+  "schema": "reborng.mirofish.art-intake-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v017-character-appearance-pack",
+  "packageKey": "v017_character_appearance",
+  "title": "v0.17 Character Appearance Pack",
+  "generatedAt": "2026-05-18T04:21:11.779326+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierFactsWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not player truth, not engine authority"
+    ]
+  },
+  "deliveryStatus": "conditional_complete_candidate",
+  "caveats": [
+    "0001-0600 is enough for a reviewable candidate pack for Qingmao/Shang-city-facing roles.",
+    "Long Gong has no usable public appearance signal in this window and is deferred.",
+    "Some generic NPC representatives are templates and need art-director scope freeze."
+  ],
+  "items": [
+    {
+      "id": "shang-xin-ci",
+      "category": "character_appearance_evidence",
+      "summary": "商心慈作为商队和商家城线索中的核心人物，可做温和、克制、低阶公开身份的角色外观候选。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct",
+      "riskTags": [
+        "name_disambiguation_required",
+        "future_status_redacted"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0237",
+          "chapterId": "ch_0237",
+          "field": "events",
+          "itemId": "evt_2dc454d3e4e7",
+          "summary": "方源认出张心慈可能是商心慈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0237",
+          "chapterId": "ch_0237",
+          "field": "relations",
+          "itemId": "rel_0e8bb7aa6a29",
+          "summary": "方源推测张心慈就是商心慈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0272",
+          "chapterId": "ch_0272",
+          "field": "relations",
+          "itemId": "rel_164fe25bd06f",
+          "summary": "白凝冰曾保护商心慈（化名张心慈）",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0272",
+          "chapterId": "ch_0272",
+          "field": "relations",
+          "itemId": "rel_229fc9a6a889",
+          "summary": "方源曾保护商心慈（化名张心慈）",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7d9d6c7ee6aa",
+        "sp_85abee6ccc76"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0237",
+          "paragraphId": "ch_0237_p0092",
+          "startOffset": 807358,
+          "endOffset": 807387,
+          "summary": "方源认出张心慈可能是商心慈",
+          "sourcePointerId": "sp_7d9d6c7ee6aa"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0272",
+          "paragraphId": "ch_0272_p0011",
+          "startOffset": 930328,
+          "endOffset": 930331,
+          "summary": "白凝冰曾保护商心慈（化名张心慈）",
+          "sourcePointerId": "sp_85abee6ccc76"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "年轻女性",
+        "姿态温和",
+        "不做权位夸张"
+      ],
+      "faceHints": [
+        "柔和",
+        "克制",
+        "可带忧虑"
+      ],
+      "hairHints": [
+        "整洁长发候选"
+      ],
+      "clothingHints": [
+        "商队旅装或朴素衣饰",
+        "不做奢华主母形象"
+      ],
+      "postureHints": [
+        "照看他人",
+        "谨慎交谈"
+      ],
+      "distinctiveAnchors": [
+        "小蝶陪同候选",
+        "商队语境",
+        "善意但非权力展示"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": true,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "zhang-xin-ci-name-alias",
+      "category": "character_appearance_evidence",
+      "summary": "张心慈/商心慈需作为同一人物的称谓消歧项处理，禁止把称谓变化画成两个人。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "name_disambiguation_required"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0237",
+          "chapterId": "ch_0237",
+          "field": "events",
+          "itemId": "evt_2dc454d3e4e7",
+          "summary": "方源认出张心慈可能是商心慈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0237",
+          "chapterId": "ch_0237",
+          "field": "relations",
+          "itemId": "rel_0e8bb7aa6a29",
+          "summary": "方源推测张心慈就是商心慈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0272",
+          "chapterId": "ch_0272",
+          "field": "relations",
+          "itemId": "rel_164fe25bd06f",
+          "summary": "白凝冰曾保护商心慈（化名张心慈）",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0272",
+          "chapterId": "ch_0272",
+          "field": "relations",
+          "itemId": "rel_229fc9a6a889",
+          "summary": "方源曾保护商心慈（化名张心慈）",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_7d9d6c7ee6aa",
+        "sp_85abee6ccc76"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0237",
+          "paragraphId": "ch_0237_p0092",
+          "startOffset": 807358,
+          "endOffset": 807387,
+          "summary": "方源认出张心慈可能是商心慈",
+          "sourcePointerId": "sp_7d9d6c7ee6aa"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0272",
+          "paragraphId": "ch_0272_p0011",
+          "startOffset": 930328,
+          "endOffset": 930331,
+          "summary": "白凝冰曾保护商心慈（化名张心慈）",
+          "sourcePointerId": "sp_85abee6ccc76"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "同商心慈",
+        "称谓变化不改变体型"
+      ],
+      "faceHints": [
+        "同商心慈"
+      ],
+      "hairHints": [
+        "同商心慈"
+      ],
+      "clothingHints": [
+        "随场景切换旅装或城内服饰"
+      ],
+      "postureHints": [
+        "与小蝶或护卫同框可选"
+      ],
+      "distinctiveAnchors": [
+        "别名标记",
+        "同一角色资产复用"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": true,
+        "sameCharacterAs": "shang-xin-ci"
+      }
+    },
+    {
+      "id": "xiao-die",
+      "category": "character_appearance_evidence",
+      "summary": "小蝶可作为商心慈身边侍女和陪同角色，外观应低调、灵活、服务型。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0265",
+          "chapterId": "ch_0265",
+          "field": "events",
+          "itemId": "evt_bcaa678925e1",
+          "summary": "商燕飞接见商心慈，商心慈态度疏远",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0242",
+          "chapterId": "ch_0242",
+          "field": "relations",
+          "itemId": "rel_a6b744845825",
+          "summary": "小蝶是商心慈的丫鬟",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0265",
+          "chapterId": "ch_0265",
+          "field": "relations",
+          "itemId": "rel_e182ff5e0bbf",
+          "summary": "主仆关系，小蝶是商心慈的丫鬟",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0240",
+          "chapterId": "ch_0240",
+          "field": "entities",
+          "itemId": "entity_1226a3f5408b",
+          "summary": "商心慈的丫鬟",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_0942951d9043",
+        "sp_7873314326d2",
+        "sp_3c58dd7b78bd",
+        "sp_80079f940702"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0265",
+          "paragraphId": "ch_0265_p0002",
+          "startOffset": 905666,
+          "endOffset": 905679,
+          "summary": "商燕飞接见商心慈，商心慈态度疏远",
+          "sourcePointerId": "sp_0942951d9043"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0242",
+          "paragraphId": "ch_0242_p0092",
+          "startOffset": 824886,
+          "endOffset": 824888,
+          "summary": "小蝶是商心慈的丫鬟",
+          "sourcePointerId": "sp_7873314326d2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0265",
+          "paragraphId": "ch_0265_p0003",
+          "startOffset": 905683,
+          "endOffset": 905714,
+          "summary": "主仆关系，小蝶是商心慈的丫鬟",
+          "sourcePointerId": "sp_3c58dd7b78bd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0240",
+          "paragraphId": "ch_0240_p0101",
+          "startOffset": 817633,
+          "endOffset": 817654,
+          "summary": "商心慈的丫鬟",
+          "sourcePointerId": "sp_80079f940702"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "少女或年轻侍女",
+        "身形轻便"
+      ],
+      "faceHints": [
+        "机灵",
+        "关切"
+      ],
+      "hairHints": [
+        "整齐束发候选"
+      ],
+      "clothingHints": [
+        "侍女或随从衣饰",
+        "颜色不抢主角"
+      ],
+      "postureHints": [
+        "跟随",
+        "递话",
+        "照看"
+      ],
+      "distinctiveAnchors": [
+        "商心慈近旁",
+        "包袱或小物件"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "zhang-zhu-guard",
+      "category": "character_appearance_evidence",
+      "summary": "张柱可作为商队护卫和保护者形象，强调沉稳、护卫职责和旅途压力。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0238",
+          "chapterId": "ch_0238",
+          "field": "relations",
+          "itemId": "rel_9f6d9a1f2bd1",
+          "summary": "主仆关系，张柱叔是商心慈的护卫",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0240",
+          "chapterId": "ch_0240",
+          "field": "relations",
+          "itemId": "rel_04fe66ba64a5",
+          "summary": "张柱是商心慈的护卫蛊师",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0244",
+          "chapterId": "ch_0244",
+          "field": "relations",
+          "itemId": "rel_babce68c274f",
+          "summary": "商心慈和张柱共同管理商队，张柱怀疑方源但被商心慈阻止",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0246",
+          "chapterId": "ch_0246",
+          "field": "relations",
+          "itemId": "rel_d856f175bb0c",
+          "summary": "护卫关系，张柱是商心慈的护卫",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_49b645f4bed3",
+        "sp_f39654035e2c",
+        "sp_dc36a638bf04",
+        "sp_e8ab2415cbeb"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0238",
+          "paragraphId": "ch_0238_p0080",
+          "startOffset": 810687,
+          "endOffset": 810739,
+          "summary": "主仆关系，张柱叔是商心慈的护卫",
+          "sourcePointerId": "sp_49b645f4bed3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0240",
+          "paragraphId": "ch_0240_p0098",
+          "startOffset": 817529,
+          "endOffset": 817573,
+          "summary": "张柱是商心慈的护卫蛊师",
+          "sourcePointerId": "sp_f39654035e2c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0244",
+          "paragraphId": "ch_0244_p0057",
+          "startOffset": 831325,
+          "endOffset": 831335,
+          "summary": "商心慈和张柱共同管理商队，张柱怀疑方源但被商心慈阻止",
+          "sourcePointerId": "sp_dc36a638bf04"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0012",
+          "startOffset": 836643,
+          "endOffset": 836645,
+          "summary": "护卫关系，张柱是商心慈的护卫",
+          "sourcePointerId": "sp_e8ab2415cbeb"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "成年男性",
+        "护卫体态",
+        "稳重"
+      ],
+      "faceHints": [
+        "警觉",
+        "压抑疲惫可选"
+      ],
+      "hairHints": [
+        "实用束发"
+      ],
+      "clothingHints": [
+        "护卫旅装",
+        "简洁防护件"
+      ],
+      "postureHints": [
+        "挡在雇主前",
+        "观察路况"
+      ],
+      "distinctiveAnchors": [
+        "商队",
+        "护卫职责",
+        "低阶武备"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "shang-yan-fei",
+      "category": "character_appearance_evidence",
+      "summary": "商燕飞可作为商家城权力中心的公开人物候选，但仅保留凡级公开外观和压迫气质。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "rank_boundary_review"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0261",
+          "chapterId": "ch_0261",
+          "field": "events",
+          "itemId": "evt_6a338f78beb8",
+          "summary": "商燕飞使用血焰带商心慈和小蝶瞬间消失",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0276",
+          "chapterId": "ch_0276",
+          "field": "events",
+          "itemId": "evt_acd2bd59aaa6",
+          "summary": "商燕飞感应到商心慈进入商家城",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0317",
+          "chapterId": "ch_0317",
+          "field": "relations",
+          "itemId": "rel_752a25e628b2",
+          "summary": "商燕飞是商家家主，炎突是商家隐家老，服从商燕飞命令",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0317",
+          "chapterId": "ch_0317",
+          "field": "relations",
+          "itemId": "rel_febc7fa28639",
+          "summary": "商燕飞是商家家主，巨开碑是商家隐家老，服从商燕飞命令",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_9f04843be40c",
+        "sp_eef4ff760709",
+        "sp_e2004f24903e"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0261",
+          "paragraphId": "ch_0261_p0059",
+          "startOffset": 893463,
+          "endOffset": 893493,
+          "summary": "商燕飞使用血焰带商心慈和小蝶瞬间消失",
+          "sourcePointerId": "sp_9f04843be40c"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0276",
+          "paragraphId": "ch_0276_p0063",
+          "startOffset": 949863,
+          "endOffset": 949887,
+          "summary": "商燕飞感应到商心慈进入商家城",
+          "sourcePointerId": "sp_eef4ff760709"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0317",
+          "paragraphId": "ch_0317_p0057",
+          "startOffset": 1098597,
+          "endOffset": 1098617,
+          "summary": "商燕飞是商家家主，炎突是商家隐家老，服从商燕飞命令",
+          "sourcePointerId": "sp_e2004f24903e"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "成年男性",
+        "权力感",
+        "不做超阶神化"
+      ],
+      "faceHints": [
+        "冷静",
+        "威压"
+      ],
+      "hairHints": [
+        "整齐或威严发式候选"
+      ],
+      "clothingHints": [
+        "商家高层服饰",
+        "深色或红色候选"
+      ],
+      "postureHints": [
+        "端坐",
+        "俯视",
+        "控制局面"
+      ],
+      "distinctiveAnchors": [
+        "商家城",
+        "家主气场",
+        "红色压力候选"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "wei-yang",
+      "category": "character_appearance_evidence",
+      "summary": "魏央可作为商家城引导和低阶公开接触人物，外观以稳妥、干练、城内熟手为主。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0276",
+          "chapterId": "ch_0276",
+          "field": "events",
+          "itemId": "evt_4d20af261fb2",
+          "summary": "方源在大酒楼宴请魏央和萧炎，四人饮酒交谈",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0265",
+          "chapterId": "ch_0265",
+          "field": "events",
+          "itemId": "evt_c1f02662ee4a",
+          "summary": "魏央奉商家族长之命，邀请方源和白凝冰前往第二内城",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0266",
+          "chapterId": "ch_0266",
+          "field": "events",
+          "itemId": "evt_239c06b9a2dc",
+          "summary": "商燕飞分析方源和白凝冰的性格，认为他们是魔道蛊师，名字是假的，并安排魏央接待他们，试探身手和跟脚",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0266",
+          "chapterId": "ch_0266",
+          "field": "events",
+          "itemId": "evt_40514fc863ac",
+          "summary": "魏央传达商燕飞的召见，邀请方源和白凝冰前往",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_1372f8f87362",
+        "sp_edef83240abc",
+        "sp_813b7b61d34f",
+        "sp_0eaee1b3ca56"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0276",
+          "paragraphId": "ch_0276_p0079",
+          "startOffset": 950414,
+          "endOffset": 950416,
+          "summary": "方源在大酒楼宴请魏央和萧炎，四人饮酒交谈",
+          "sourcePointerId": "sp_1372f8f87362"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0265",
+          "paragraphId": "ch_0265_p0080",
+          "startOffset": 908988,
+          "endOffset": 909047,
+          "summary": "魏央奉商家族长之命，邀请方源和白凝冰前往第二内城",
+          "sourcePointerId": "sp_edef83240abc"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0266",
+          "paragraphId": "ch_0266_p0065",
+          "startOffset": 911411,
+          "endOffset": 911452,
+          "summary": "商燕飞分析方源和白凝冰的性格，认为他们是魔道蛊师，名字是假的，并安排魏央接待他们，试探身手和跟脚",
+          "sourcePointerId": "sp_813b7b61d34f"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0266",
+          "paragraphId": "ch_0266_p0030",
+          "startOffset": 910155,
+          "endOffset": 910185,
+          "summary": "魏央传达商燕飞的召见，邀请方源和白凝冰前往",
+          "sourcePointerId": "sp_0eaee1b3ca56"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "成年男性",
+        "干练"
+      ],
+      "faceHints": [
+        "和气中带审视"
+      ],
+      "hairHints": [
+        "整洁"
+      ],
+      "clothingHints": [
+        "城内蛊师服饰",
+        "不夸张"
+      ],
+      "postureHints": [
+        "带路",
+        "交谈",
+        "观察"
+      ],
+      "distinctiveAnchors": [
+        "商家城路线",
+        "接待或引导动作"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "shang-ya-zi",
+      "category": "character_appearance_evidence",
+      "summary": "商睚眦可作为商家城内部竞争人物候选，外观重点是傲慢、商业压力和年轻权势感。",
+      "windowTier": "0401-0600-main-with-0300s-support",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "role_scope_review"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0306",
+          "chapterId": "ch_0306",
+          "field": "entities",
+          "itemId": "entity_66615c68365a",
+          "summary": "商家城少主，与方源有矛盾",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0312",
+          "chapterId": "ch_0312",
+          "field": "events",
+          "itemId": "evt_792f3579f7c8",
+          "summary": "市井流传商睚眦与方正争夺安渔失败，以及做假账的消息，引起内务堂注意",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0313",
+          "chapterId": "ch_0313",
+          "field": "events",
+          "itemId": "evt_703ed1114a5a",
+          "summary": "商燕飞撤销商睚眦的少主身份，罚去捕奴大队三年不得回城",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0335",
+          "chapterId": "ch_0335",
+          "field": "events",
+          "itemId": "evt_076a064b1552",
+          "summary": "商心慈继承商睚眦之位，成为十大少主之一。",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_d60e5dea31ce",
+        "sp_7b38297f9a59",
+        "sp_eb502cc8f9c3",
+        "sp_d3d41b1c4b09"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0306",
+          "paragraphId": "ch_0306_p0090",
+          "startOffset": 1059395,
+          "endOffset": 1059398,
+          "summary": "商家城少主，与方源有矛盾",
+          "sourcePointerId": "sp_d60e5dea31ce"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0312",
+          "paragraphId": "ch_0312_p0020",
+          "startOffset": 1078586,
+          "endOffset": 1078687,
+          "summary": "市井流传商睚眦与方正争夺安渔失败，以及做假账的消息，引起内务堂注意",
+          "sourcePointerId": "sp_7b38297f9a59"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0313",
+          "paragraphId": "ch_0313_p0067",
+          "startOffset": 1084041,
+          "endOffset": 1084084,
+          "summary": "商燕飞撤销商睚眦的少主身份，罚去捕奴大队三年不得回城",
+          "sourcePointerId": "sp_eb502cc8f9c3"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0335",
+          "paragraphId": "ch_0335_p0080",
+          "startOffset": 1163536,
+          "endOffset": 1163542,
+          "summary": "商心慈继承商睚眦之位，成为十大少主之一。",
+          "sourcePointerId": "sp_d3d41b1c4b09"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "年轻男性",
+        "自负姿态"
+      ],
+      "faceHints": [
+        "不悦",
+        "挑剔"
+      ],
+      "hairHints": [
+        "讲究发式"
+      ],
+      "clothingHints": [
+        "商家子弟服饰",
+        "精致但不过度华丽"
+      ],
+      "postureHints": [
+        "盘问",
+        "压价或审视"
+      ],
+      "distinctiveAnchors": [
+        "店铺",
+        "账目或柜台候选",
+        "少主气质"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "southern-border-rogue-cultivator-representative",
+      "category": "character_appearance_evidence",
+      "summary": "南疆散修代表只能做群像模板，强调流动、粗粝、风险交易和低阶生存感。",
+      "windowTier": "0001-0600-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "generic_template"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0382",
+          "chapterId": "ch_0382",
+          "field": "entities",
+          "itemId": "entity_8b387c160cc7",
+          "summary": "五转大蛊师，散修，骨道蛊师",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0513",
+          "chapterId": "ch_0513",
+          "field": "entities",
+          "itemId": "entity_2d1df0b4a10e",
+          "summary": "四转蛊师，北原东部散修",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_39d40e4fb868",
+        "sp_f0e1f5db80f2"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0382",
+          "paragraphId": "ch_0382_p0034",
+          "startOffset": 1326521,
+          "endOffset": 1326597,
+          "summary": "五转大蛊师，散修，骨道蛊师",
+          "sourcePointerId": "sp_39d40e4fb868"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0513",
+          "paragraphId": "ch_0513_p0033",
+          "startOffset": 1787873,
+          "endOffset": 1787908,
+          "summary": "四转蛊师，北原东部散修",
+          "sourcePointerId": "sp_f0e1f5db80f2"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "体型可变",
+        "行旅疲惫",
+        "装备不统一"
+      ],
+      "faceHints": [
+        "警觉",
+        "戒备"
+      ],
+      "hairHints": [
+        "凌乱或实用束发"
+      ],
+      "clothingHints": [
+        "旧衣",
+        "皮革包具",
+        "低阶武备"
+      ],
+      "postureHints": [
+        "观察",
+        "议价",
+        "避让"
+      ],
+      "distinctiveAnchors": [
+        "散修身份",
+        "临时交易",
+        "路途尘土"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "three-clan-outer-surname-representative",
+      "category": "character_appearance_evidence",
+      "summary": "三族外姓代表可作为家族边缘人员模板，强调非核心、听命、被动卷入和低阶可见身份。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "generic_template"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0119",
+          "chapterId": "ch_0119",
+          "field": "entities",
+          "itemId": "entity_6b2fcefbe60c",
+          "summary": "家奴，特殊蛊师",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_6d6df769f595"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0119",
+          "paragraphId": "ch_0119_p0005",
+          "startOffset": 381681,
+          "endOffset": 381706,
+          "summary": "家奴，特殊蛊师",
+          "sourcePointerId": "sp_6d6df769f595"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "普通成年男女皆可",
+        "低阶体态"
+      ],
+      "faceHints": [
+        "谨慎",
+        "听命"
+      ],
+      "hairHints": [
+        "朴素"
+      ],
+      "clothingHints": [
+        "家族或随从标识",
+        "简化装束"
+      ],
+      "postureHints": [
+        "站队",
+        "递话",
+        "护卫"
+      ],
+      "distinctiveAnchors": [
+        "三族边缘身份",
+        "山寨秩序",
+        "非核心角色"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    },
+    {
+      "id": "caravan-guard-and-market-broker-representative",
+      "category": "character_appearance_evidence",
+      "summary": "商队护卫、递话人和坊市掮客可合成低阶 NPC 群像模板，供美术做场景填充。",
+      "windowTier": "0001-0600-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "generic_template"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0241",
+          "chapterId": "ch_0241",
+          "field": "entities",
+          "itemId": "entity_2bb6bd8560ae",
+          "summary": "张家商队护卫",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0246",
+          "chapterId": "ch_0246",
+          "field": "entities",
+          "itemId": "entity_9773e2ef81f9",
+          "summary": "商队护卫",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0255",
+          "chapterId": "ch_0255",
+          "field": "entities",
+          "itemId": "entity_728262f6ec46",
+          "summary": "蛊师，商队护卫",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0255",
+          "chapterId": "ch_0255",
+          "field": "entities",
+          "itemId": "entity_d5fb18bc7dd4",
+          "summary": "蛊师，商队护卫",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0259",
+          "chapterId": "ch_0259",
+          "field": "entities",
+          "itemId": "entity_8c4e9bdbcb75",
+          "summary": "商队护卫，伪装身份",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_6c751f9d2026",
+        "sp_db83ec63566b",
+        "sp_16e45dbeebd8",
+        "sp_c1055a66af78",
+        "sp_9093f78f8353"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0241",
+          "paragraphId": "ch_0241_p0002",
+          "startOffset": 818374,
+          "endOffset": 818380,
+          "summary": "张家商队护卫",
+          "sourcePointerId": "sp_6c751f9d2026"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0246",
+          "paragraphId": "ch_0246_p0035",
+          "startOffset": 837609,
+          "endOffset": 837659,
+          "summary": "商队护卫",
+          "sourcePointerId": "sp_db83ec63566b"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0255",
+          "paragraphId": "ch_0255_p0053",
+          "startOffset": 870307,
+          "endOffset": 870310,
+          "summary": "蛊师，商队护卫",
+          "sourcePointerId": "sp_16e45dbeebd8"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0255",
+          "paragraphId": "ch_0255_p0035",
+          "startOffset": 869725,
+          "endOffset": 869729,
+          "summary": "蛊师，商队护卫",
+          "sourcePointerId": "sp_c1055a66af78"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0259",
+          "paragraphId": "ch_0259_p0065",
+          "startOffset": 884776,
+          "endOffset": 884804,
+          "summary": "商队护卫，伪装身份",
+          "sourcePointerId": "sp_9093f78f8353"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "character_appearance_candidate",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "character_art_brief",
+          "npc_moodboard",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "bodyHints": [
+        "护卫偏结实",
+        "递话人偏轻便",
+        "掮客偏灵活"
+      ],
+      "faceHints": [
+        "警觉",
+        "精明",
+        "忙碌"
+      ],
+      "hairHints": [
+        "实用发式"
+      ],
+      "clothingHints": [
+        "商队标识",
+        "腰包或货物袋",
+        "低阶护具"
+      ],
+      "postureHints": [
+        "看守",
+        "引路",
+        "压低声音交谈"
+      ],
+      "distinctiveAnchors": [
+        "货物",
+        "道路",
+        "柜台或摊位"
+      ],
+      "rankHints": {
+        "earlyWindowRank": "public_low_to_mortal_high_as_seen",
+        "doNotRenderAboveRank": true
+      },
+      "namingHints": {
+        "nameDisambiguationRequired": false,
+        "sameCharacterAs": null
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "id": "long-gong",
+      "requestedRole": "character_appearance_evidence",
+      "recommendedStatus": "deferred",
+      "reason": "No public appearance signal found in the 0001-0600 strict/reviewable base.",
+      "handling": "Do not create an art asset from later or hidden material in this delivery."
+    }
+  ],
+  "coverage": {
+    "itemCount": 10,
+    "skippedCount": 1,
+    "sourcePointerCount": 29,
+    "evidenceStatusCounts": {
+      "direct": 3,
+      "direct_partial": 7
+    }
+  }
+}

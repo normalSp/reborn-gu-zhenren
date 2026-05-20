@@ -1,0 +1,760 @@
+{
+  "packageId": "ri_lw_ch_1093",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1093"
+    ],
+    "paragraphIds": [
+      "ch_1093_p0003",
+      "ch_1093_p0007",
+      "ch_1093_p0018",
+      "ch_1093_p0027",
+      "ch_1093_p0028",
+      "ch_1093_p0029",
+      "ch_1093_p0033",
+      "ch_1093_p0038",
+      "ch_1093_p0044",
+      "ch_1093_p0059",
+      "ch_1093_p0060",
+      "ch_1093_p0065",
+      "ch_1093_p0066",
+      "ch_1093_p0085",
+      "ch_1093_p0095",
+      "ch_1093_p0097",
+      "ch_1093_p0098"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0003",
+          "startOffset": 3861081,
+          "endOffset": 3861083,
+          "summary": "主角，伪装成吞火猴"
+        }
+      ],
+      "entityId": "entity_afc3b1a311d8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，伪装成吞火猴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0028",
+          "startOffset": 3861932,
+          "endOffset": 3861936,
+          "summary": "已故，留下太丘地形图"
+        }
+      ],
+      "entityId": "entity_3561c856462e",
+      "name": "长毛老祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "已故，留下太丘地形图",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0033",
+          "startOffset": 3862175,
+          "endOffset": 3862177,
+          "summary": "蛊仙，探索太丘"
+        }
+      ],
+      "entityId": "entity_afc3b1a311d8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，探索太丘",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0066",
+          "startOffset": 3863514,
+          "endOffset": 3863566,
+          "summary": "六转蛊仙，渡过一次地灾"
+        }
+      ],
+      "entityId": "entity_afc3b1a311d8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "六转蛊仙，渡过一次地灾",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0065",
+          "startOffset": 3863438,
+          "endOffset": 3863510,
+          "summary": "天地意志，与方源敌对"
+        }
+      ],
+      "entityId": "entity_4a825c0f9776",
+      "name": "天意",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "天地意志，与方源敌对",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0098",
+          "startOffset": 3864566,
+          "endOffset": 3864570,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_afc3b1a311d8",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0038",
+          "startOffset": 3862457,
+          "endOffset": 3862459,
+          "summary": "方源为琅琊派寻找布置传送蛊阵的地点"
+        }
+      ],
+      "relationId": "rel_d6a01e95fbb3",
+      "subject": "方源",
+      "object": "琅琊派",
+      "relationType": "FACTION",
+      "summary": "方源为琅琊派寻找布置传送蛊阵的地点",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0065",
+          "startOffset": 3863438,
+          "endOffset": 3863510,
+          "summary": "天意通过兽潮试图找出并铲除方源"
+        }
+      ],
+      "relationId": "rel_3920c90a9dce",
+      "subject": "方源",
+      "object": "天意",
+      "relationType": "CONFLICT",
+      "summary": "天意通过兽潮试图找出并铲除方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0007",
+          "startOffset": 3861197,
+          "endOffset": 3861203,
+          "summary": "方源变成吞火猴形态，深入太丘"
+        }
+      ],
+      "eventId": "evt_acb620d5851f",
+      "eventType": "cultivation",
+      "summary": "方源变成吞火猴形态，深入太丘",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源以吞火猴形态探索太丘深处"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0027",
+          "startOffset": 3861896,
+          "endOffset": 3861916,
+          "summary": "方源抵达太丘地形图上第三个目标地点，发现千蛇阴嬛树未死"
+        }
+      ],
+      "eventId": "evt_35f8fc0cddc0",
+      "eventType": "other",
+      "summary": "方源抵达太丘地形图上第三个目标地点，发现千蛇阴嬛树未死",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源需要应对千蛇阴嬛树"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0033",
+          "startOffset": 3862175,
+          "endOffset": 3862177,
+          "summary": "方源在太丘观察千蛇阴嬛树残木，发现其仍具威胁，且因猎物有限未引雷劫"
+        }
+      ],
+      "eventId": "evt_3f1baa4d9033",
+      "eventType": "other",
+      "summary": "方源在太丘观察千蛇阴嬛树残木，发现其仍具威胁，且因猎物有限未引雷劫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源认为第三个目标地点不合适，因为千蛇阴嬛树还活着"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0044",
+          "startOffset": 3862659,
+          "endOffset": 3862661,
+          "summary": "方源发现太丘地形图标注的三个目标地点前两个已消失，第三个因千蛇阴嬛树而不合适"
+        }
+      ],
+      "eventId": "evt_1f3ef19e787c",
+      "eventType": "other",
+      "summary": "方源发现太丘地形图标注的三个目标地点前两个已消失，第三个因千蛇阴嬛树而不合适",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源此行任务成功一小半，失败一大半，未找到合适地点"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0059",
+          "startOffset": 3863126,
+          "endOffset": 3863128,
+          "summary": "方源感知到兽潮征兆，认为天意因暗渡仙蛊削弱而感知其大体范围，正在酝酿兽潮"
+        }
+      ],
+      "eventId": "evt_48a310330b4e",
+      "eventType": "other",
+      "summary": "方源感知到兽潮征兆，认为天意因暗渡仙蛊削弱而感知其大体范围，正在酝酿兽潮",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定撤离"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0060",
+          "startOffset": 3863220,
+          "endOffset": 3863222,
+          "summary": "方源意识到身上春秋蝉和大量雪怪中的天意与外界天意相互呼应，导致天意感知增强"
+        }
+      ],
+      "eventId": "evt_a09066ad249e",
+      "eventType": "other",
+      "summary": "方源意识到身上春秋蝉和大量雪怪中的天意与外界天意相互呼应，导致天意感知增强",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源低估了天意威能"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0065",
+          "startOffset": 3863438,
+          "endOffset": 3863510,
+          "summary": "天意利用暗渡仙蛊力量衰落，酝酿兽潮，将方源卷入其中"
+        }
+      ],
+      "eventId": "evt_0b3e28da5306",
+      "eventType": "conflict",
+      "summary": "天意利用暗渡仙蛊力量衰落，酝酿兽潮，将方源卷入其中",
+      "actors": [
+        "方源",
+        "天意"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源深陷兽潮，面临暴露危险"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0095",
+          "startOffset": 3864456,
+          "endOffset": 3864511,
+          "summary": "方源发现一座太古荒兽尸骸，赤红尸骨上燃烧蓝焰"
+        }
+      ],
+      "eventId": "evt_6bb1976bc081",
+      "eventType": "other",
+      "summary": "方源发现一座太古荒兽尸骸，赤红尸骨上燃烧蓝焰",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源惊喜交加，可能找到一线生机"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0097",
+          "startOffset": 3864531,
+          "endOffset": 3864562,
+          "summary": "方源发现一具死去不久的太古生物尸体，其气息澎湃，兽潮也下意识避让。"
+        }
+      ],
+      "eventId": "evt_98e99c4af459",
+      "eventType": "other",
+      "summary": "方源发现一具死去不久的太古生物尸体，其气息澎湃，兽潮也下意识避让。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源感到惊喜，认为这是意外收获。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0007",
+          "startOffset": 3861197,
+          "endOffset": 3861203,
+          "summary": "方源变成吞火猴形态，深入太丘"
+        }
+      ],
+      "timelineId": "tl_acb620d5851f",
+      "eventId": "evt_acb620d5851f",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源变成吞火猴形态，深入太丘",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0027",
+          "startOffset": 3861896,
+          "endOffset": 3861916,
+          "summary": "方源抵达太丘地形图上第三个目标地点，发现千蛇阴嬛树未死"
+        }
+      ],
+      "timelineId": "tl_35f8fc0cddc0",
+      "eventId": "evt_35f8fc0cddc0",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源抵达太丘地形图上第三个目标地点，发现千蛇阴嬛树未死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0033",
+          "startOffset": 3862175,
+          "endOffset": 3862177,
+          "summary": "方源在太丘观察千蛇阴嬛树残木，发现其仍具威胁，且因猎物有限未引雷劫"
+        }
+      ],
+      "timelineId": "tl_3f1baa4d9033",
+      "eventId": "evt_3f1baa4d9033",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源在太丘观察千蛇阴嬛树残木，发现其仍具威胁，且因猎物有限未引雷劫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0044",
+          "startOffset": 3862659,
+          "endOffset": 3862661,
+          "summary": "方源发现太丘地形图标注的三个目标地点前两个已消失，第三个因千蛇阴嬛树而不合适"
+        }
+      ],
+      "timelineId": "tl_1f3ef19e787c",
+      "eventId": "evt_1f3ef19e787c",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源发现太丘地形图标注的三个目标地点前两个已消失，第三个因千蛇阴嬛树而不合适",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0059",
+          "startOffset": 3863126,
+          "endOffset": 3863128,
+          "summary": "方源感知到兽潮征兆，认为天意因暗渡仙蛊削弱而感知其大体范围，正在酝酿兽潮"
+        }
+      ],
+      "timelineId": "tl_48a310330b4e",
+      "eventId": "evt_48a310330b4e",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源感知到兽潮征兆，认为天意因暗渡仙蛊削弱而感知其大体范围，正在酝酿兽潮",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0060",
+          "startOffset": 3863220,
+          "endOffset": 3863222,
+          "summary": "方源意识到身上春秋蝉和大量雪怪中的天意与外界天意相互呼应，导致天意感知增强"
+        }
+      ],
+      "timelineId": "tl_a09066ad249e",
+      "eventId": "evt_a09066ad249e",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源意识到身上春秋蝉和大量雪怪中的天意与外界天意相互呼应，导致天意感知增强",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0065",
+          "startOffset": 3863438,
+          "endOffset": 3863510,
+          "summary": "天意利用暗渡仙蛊力量衰落，酝酿兽潮，将方源卷入其中"
+        }
+      ],
+      "timelineId": "tl_0b3e28da5306",
+      "eventId": "evt_0b3e28da5306",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "天意利用暗渡仙蛊力量衰落，酝酿兽潮，将方源卷入其中",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0095",
+          "startOffset": 3864456,
+          "endOffset": 3864511,
+          "summary": "方源发现一座太古荒兽尸骸，赤红尸骨上燃烧蓝焰"
+        }
+      ],
+      "timelineId": "tl_6bb1976bc081",
+      "eventId": "evt_6bb1976bc081",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源发现一座太古荒兽尸骸，赤红尸骨上燃烧蓝焰",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1093",
+          "paragraphId": "ch_1093_p0097",
+          "startOffset": 3864531,
+          "endOffset": 3864562,
+          "summary": "方源发现一具死去不久的太古生物尸体，其气息澎湃，兽潮也下意识避让。"
+        }
+      ],
+      "timelineId": "tl_98e99c4af459",
+      "eventId": "evt_98e99c4af459",
+      "chapterId": "ch_1093",
+      "orderHint": "chapter-order",
+      "summary": "方源发现一具死去不久的太古生物尸体，其气息澎湃，兽潮也下意识避让。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0003",
+      "startOffset": 3861081,
+      "endOffset": 3861083,
+      "summary": "主角，伪装成吞火猴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0028",
+      "startOffset": 3861932,
+      "endOffset": 3861936,
+      "summary": "已故，留下太丘地形图"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0033",
+      "startOffset": 3862175,
+      "endOffset": 3862177,
+      "summary": "蛊仙，探索太丘"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0066",
+      "startOffset": 3863514,
+      "endOffset": 3863566,
+      "summary": "六转蛊仙，渡过一次地灾"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0065",
+      "startOffset": 3863438,
+      "endOffset": 3863510,
+      "summary": "天地意志，与方源敌对"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0098",
+      "startOffset": 3864566,
+      "endOffset": 3864570,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0038",
+      "startOffset": 3862457,
+      "endOffset": 3862459,
+      "summary": "方源为琅琊派寻找布置传送蛊阵的地点"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0007",
+      "startOffset": 3861197,
+      "endOffset": 3861203,
+      "summary": "方源变成吞火猴形态，深入太丘"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0027",
+      "startOffset": 3861896,
+      "endOffset": 3861916,
+      "summary": "方源抵达太丘地形图上第三个目标地点，发现千蛇阴嬛树未死"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0044",
+      "startOffset": 3862659,
+      "endOffset": 3862661,
+      "summary": "方源发现太丘地形图标注的三个目标地点前两个已消失，第三个因千蛇阴嬛树而不合适"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0059",
+      "startOffset": 3863126,
+      "endOffset": 3863128,
+      "summary": "方源感知到兽潮征兆，认为天意因暗渡仙蛊削弱而感知其大体范围，正在酝酿兽潮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0060",
+      "startOffset": 3863220,
+      "endOffset": 3863222,
+      "summary": "方源意识到身上春秋蝉和大量雪怪中的天意与外界天意相互呼应，导致天意感知增强"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0095",
+      "startOffset": 3864456,
+      "endOffset": 3864511,
+      "summary": "方源发现一座太古荒兽尸骸，赤红尸骨上燃烧蓝焰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1093",
+      "paragraphId": "ch_1093_p0097",
+      "startOffset": 3864531,
+      "endOffset": 3864562,
+      "summary": "方源发现一具死去不久的太古生物尸体，其气息澎湃，兽潮也下意识避让。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes Fang Yuan's observable exploration of Tai Qiu, his perceptions of beast tide signs, and his internal reasoning about Heavenly Will. Most content is either ordinary visible events (Fang Yuan transforming into a monkey, arriving at locations, observing a corpse) or Fang Yuan's own subjective inferences/speculations (about Heavenly Will's perception, about the暗渡仙蛊 weakening). No source directly supports a hidden fact that is privately known by specific actors, future-known information, or secret motives/plans with clear source backing. The closest candidate would be 'Heavenly Will is brewing a beast tide targeting Fang Yuan's general area' but this is presented as Fang Yuan's subjective inference (他感知到兽潮征兆, 认为天意...), not as narrator-level truth. No source directly states Heavenly Will's internal knowledge or plan as fact.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan observing a beast tide approaching and discovering a giant beast corpse, but his observed actions (perceiving danger, deciding to retreat, finding a corpse) do not clearly support a single unambiguous inferred motive. His behavior is reactive to circumstances rather than driven by a clear, directly observable motive. Multiple possible interpretations exist but none are strongly source-backed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily follows Fang Yuan as an individual. The only named collective actor is 琅琊派 (Lang Ya Sect), but the seed only mentions that Fang Yuan is scouting locations for them to set up a teleportation array. There is no concrete stake, pressure, or threat directed at 琅琊派 as a collective in this chapter. The main conflict is between Fang Yuan (individual) and 天意 (Heaven's Will, which is a single_person_title, not a collective faction). No family, clan, faction, or group pressure can be reliably extracted from the seed facts.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

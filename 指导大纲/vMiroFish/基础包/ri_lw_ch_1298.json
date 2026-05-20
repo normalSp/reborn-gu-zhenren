@@ -1,0 +1,740 @@
+{
+  "packageId": "ri_lw_ch_1298",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1298"
+    ],
+    "paragraphIds": [
+      "ch_1298_p0003",
+      "ch_1298_p0007",
+      "ch_1298_p0015",
+      "ch_1298_p0017",
+      "ch_1298_p0029",
+      "ch_1298_p0033",
+      "ch_1298_p0039",
+      "ch_1298_p0040",
+      "ch_1298_p0041",
+      "ch_1298_p0050",
+      "ch_1298_p0056",
+      "ch_1298_p0065",
+      "ch_1298_p0068",
+      "ch_1298_p0069",
+      "ch_1298_p0073",
+      "ch_1298_p0074"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0003",
+          "startOffset": 4572923,
+          "endOffset": 4572925,
+          "summary": "蛊仙，拥有仙窍和逆流河"
+        }
+      ],
+      "entityId": "entity_b55f5aca12c3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊仙，拥有仙窍和逆流河",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0033",
+          "startOffset": 4573756,
+          "endOffset": 4573758,
+          "summary": "蛊修，炼蛊者"
+        }
+      ],
+      "entityId": "entity_b55f5aca12c3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊修，炼蛊者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0039",
+          "startOffset": 4574083,
+          "endOffset": 4574085,
+          "summary": "信使，中间人"
+        }
+      ],
+      "entityId": "entity_ebaa97c4359b",
+      "name": "毛六",
+      "kind": "person",
+      "aliases": [],
+      "description": "信使，中间人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0040",
+          "startOffset": 4574104,
+          "endOffset": 4574108,
+          "summary": "影宗八转蛊仙"
+        }
+      ],
+      "entityId": "entity_ec0535bd3d38",
+      "name": "紫山真君",
+      "kind": "person",
+      "aliases": [],
+      "description": "影宗八转蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0065",
+          "startOffset": 4574878,
+          "endOffset": 4574880,
+          "summary": "主角，蛊仙"
+        }
+      ],
+      "entityId": "entity_b55f5aca12c3",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0040",
+          "startOffset": 4574104,
+          "endOffset": 4574106,
+          "summary": "通过毛六和琅琊福地沟通，商讨态度蛊交易与合作"
+        }
+      ],
+      "relationId": "rel_478203cf1a8c",
+      "subject": "方源",
+      "object": "紫山真君",
+      "relationType": "TRADE",
+      "summary": "通过毛六和琅琊福地沟通，商讨态度蛊交易与合作",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0041",
+          "startOffset": 4574139,
+          "endOffset": 4574141,
+          "summary": "方源与影宗虚以委蛇，影宗提及至尊仙窍弊端作为威胁"
+        }
+      ],
+      "relationId": "rel_6acd3fbec6fe",
+      "subject": "方源",
+      "object": "影宗",
+      "relationType": "CONFLICT",
+      "summary": "方源与影宗虚以委蛇，影宗提及至尊仙窍弊端作为威胁",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0007",
+          "startOffset": 4573010,
+          "endOffset": 4573026,
+          "summary": "方源将仙僵肉身抛入逆流河，试验能否解决魂道陷阱，但失败。"
+        }
+      ],
+      "eventId": "evt_dd34b9134d83",
+      "eventType": "cultivation",
+      "summary": "方源将仙僵肉身抛入逆流河，试验能否解决魂道陷阱，但失败。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "试验失败，方源确认逆流河无法破坏或抑制魂道道痕。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0017",
+          "startOffset": 4573320,
+          "endOffset": 4573348,
+          "summary": "方源将仙僵肉身重新封印在天封山蛊阵中。"
+        }
+      ],
+      "eventId": "evt_493dbca48028",
+      "eventType": "cultivation",
+      "summary": "方源将仙僵肉身重新封印在天封山蛊阵中。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "仙僵肉身被重新封印。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0029",
+          "startOffset": 4573657,
+          "endOffset": 4573687,
+          "summary": "方源用梦魇魔驹的右前腿炼蛊，得到上百只梦道凡蛊。"
+        }
+      ],
+      "eventId": "evt_d6b791f7f280",
+      "eventType": "cultivation",
+      "summary": "方源用梦魇魔驹的右前腿炼蛊，得到上百只梦道凡蛊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "获得上百只梦道凡蛊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0033",
+          "startOffset": 4573756,
+          "endOffset": 4573758,
+          "summary": "方源花费三天时间处理仙材，效率极高，与梦境炼蛊形成对比"
+        }
+      ],
+      "eventId": "evt_607328c5431f",
+      "eventType": "cultivation",
+      "summary": "方源花费三天时间处理仙材，效率极高，与梦境炼蛊形成对比",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源拥有梦魇魔驹后，炼制梦道凡蛊效率提升"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0041",
+          "startOffset": 4574139,
+          "endOffset": 4574141,
+          "summary": "紫山真君来信，要求先合作再给态度蛊，方源回信讨价还价"
+        }
+      ],
+      "eventId": "evt_1e8970b27b6b",
+      "eventType": "trade",
+      "summary": "紫山真君来信，要求先合作再给态度蛊，方源回信讨价还价",
+      "actors": [
+        "方源",
+        "紫山真君"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源意识到影宗不会提前给态度蛊，开始设计新仙道杀招炼化态度蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0050",
+          "startOffset": 4574427,
+          "endOffset": 4574429,
+          "summary": "方源开始设计新的仙道杀招以炼化态度蛊，但遇到难关，手中仙蛊不适用"
+        }
+      ],
+      "eventId": "evt_d24cf1229826",
+      "eventType": "other",
+      "summary": "方源开始设计新的仙道杀招以炼化态度蛊，但遇到难关，手中仙蛊不适用",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源产生交换仙蛊的念头"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0068",
+          "startOffset": 4574995,
+          "endOffset": 4575047,
+          "summary": "方源评估手中的仙蛊，认为妇人心、飞熊之力、骨刺三只仙蛊用处太小，想要换成其他适合的仙蛊。"
+        }
+      ],
+      "eventId": "evt_a32ad7b714ae",
+      "eventType": "other",
+      "summary": "方源评估手中的仙蛊，认为妇人心、飞熊之力、骨刺三只仙蛊用处太小，想要换成其他适合的仙蛊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源产生换蛊的念头，但认为机会难得。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0073",
+          "startOffset": 4575149,
+          "endOffset": 4575192,
+          "summary": "方源在赶路过程中，不断炼制梦道凡蛊和推算仙道杀招，企图将态度蛊真正化为己用。"
+        }
+      ],
+      "eventId": "evt_4c43c0e0bef4",
+      "eventType": "other",
+      "summary": "方源在赶路过程中，不断炼制梦道凡蛊和推算仙道杀招，企图将态度蛊真正化为己用。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源实力可能提升。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0074",
+          "startOffset": 4575196,
+          "endOffset": 4575237,
+          "summary": "方源察觉到周遭有蛊仙战斗的痕迹。"
+        }
+      ],
+      "eventId": "evt_4a49b9d77272",
+      "eventType": "other",
+      "summary": "方源察觉到周遭有蛊仙战斗的痕迹。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "可能引发新的冲突或机遇。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0007",
+          "startOffset": 4573010,
+          "endOffset": 4573026,
+          "summary": "方源将仙僵肉身抛入逆流河，试验能否解决魂道陷阱，但失败。"
+        }
+      ],
+      "timelineId": "tl_dd34b9134d83",
+      "eventId": "evt_dd34b9134d83",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源将仙僵肉身抛入逆流河，试验能否解决魂道陷阱，但失败。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0017",
+          "startOffset": 4573320,
+          "endOffset": 4573348,
+          "summary": "方源将仙僵肉身重新封印在天封山蛊阵中。"
+        }
+      ],
+      "timelineId": "tl_493dbca48028",
+      "eventId": "evt_493dbca48028",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源将仙僵肉身重新封印在天封山蛊阵中。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0029",
+          "startOffset": 4573657,
+          "endOffset": 4573687,
+          "summary": "方源用梦魇魔驹的右前腿炼蛊，得到上百只梦道凡蛊。"
+        }
+      ],
+      "timelineId": "tl_d6b791f7f280",
+      "eventId": "evt_d6b791f7f280",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源用梦魇魔驹的右前腿炼蛊，得到上百只梦道凡蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0033",
+          "startOffset": 4573756,
+          "endOffset": 4573758,
+          "summary": "方源花费三天时间处理仙材，效率极高，与梦境炼蛊形成对比"
+        }
+      ],
+      "timelineId": "tl_607328c5431f",
+      "eventId": "evt_607328c5431f",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源花费三天时间处理仙材，效率极高，与梦境炼蛊形成对比",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0041",
+          "startOffset": 4574139,
+          "endOffset": 4574141,
+          "summary": "紫山真君来信，要求先合作再给态度蛊，方源回信讨价还价"
+        }
+      ],
+      "timelineId": "tl_1e8970b27b6b",
+      "eventId": "evt_1e8970b27b6b",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "紫山真君来信，要求先合作再给态度蛊，方源回信讨价还价",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0050",
+          "startOffset": 4574427,
+          "endOffset": 4574429,
+          "summary": "方源开始设计新的仙道杀招以炼化态度蛊，但遇到难关，手中仙蛊不适用"
+        }
+      ],
+      "timelineId": "tl_d24cf1229826",
+      "eventId": "evt_d24cf1229826",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源开始设计新的仙道杀招以炼化态度蛊，但遇到难关，手中仙蛊不适用",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0068",
+          "startOffset": 4574995,
+          "endOffset": 4575047,
+          "summary": "方源评估手中的仙蛊，认为妇人心、飞熊之力、骨刺三只仙蛊用处太小，想要换成其他适合的仙蛊。"
+        }
+      ],
+      "timelineId": "tl_a32ad7b714ae",
+      "eventId": "evt_a32ad7b714ae",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源评估手中的仙蛊，认为妇人心、飞熊之力、骨刺三只仙蛊用处太小，想要换成其他适合的仙蛊。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0073",
+          "startOffset": 4575149,
+          "endOffset": 4575192,
+          "summary": "方源在赶路过程中，不断炼制梦道凡蛊和推算仙道杀招，企图将态度蛊真正化为己用。"
+        }
+      ],
+      "timelineId": "tl_4c43c0e0bef4",
+      "eventId": "evt_4c43c0e0bef4",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源在赶路过程中，不断炼制梦道凡蛊和推算仙道杀招，企图将态度蛊真正化为己用。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1298",
+          "paragraphId": "ch_1298_p0074",
+          "startOffset": 4575196,
+          "endOffset": 4575237,
+          "summary": "方源察觉到周遭有蛊仙战斗的痕迹。"
+        }
+      ],
+      "timelineId": "tl_4a49b9d77272",
+      "eventId": "evt_4a49b9d77272",
+      "chapterId": "ch_1298",
+      "orderHint": "chapter-order",
+      "summary": "方源察觉到周遭有蛊仙战斗的痕迹。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0003",
+      "startOffset": 4572923,
+      "endOffset": 4572925,
+      "summary": "蛊仙，拥有仙窍和逆流河"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0033",
+      "startOffset": 4573756,
+      "endOffset": 4573758,
+      "summary": "蛊修，炼蛊者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0039",
+      "startOffset": 4574083,
+      "endOffset": 4574085,
+      "summary": "信使，中间人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0040",
+      "startOffset": 4574104,
+      "endOffset": 4574108,
+      "summary": "影宗八转蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0065",
+      "startOffset": 4574878,
+      "endOffset": 4574880,
+      "summary": "主角，蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0040",
+      "startOffset": 4574104,
+      "endOffset": 4574106,
+      "summary": "通过毛六和琅琊福地沟通，商讨态度蛊交易与合作"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0041",
+      "startOffset": 4574139,
+      "endOffset": 4574141,
+      "summary": "方源与影宗虚以委蛇，影宗提及至尊仙窍弊端作为威胁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0007",
+      "startOffset": 4573010,
+      "endOffset": 4573026,
+      "summary": "方源将仙僵肉身抛入逆流河，试验能否解决魂道陷阱，但失败。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0017",
+      "startOffset": 4573320,
+      "endOffset": 4573348,
+      "summary": "方源将仙僵肉身重新封印在天封山蛊阵中。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0029",
+      "startOffset": 4573657,
+      "endOffset": 4573687,
+      "summary": "方源用梦魇魔驹的右前腿炼蛊，得到上百只梦道凡蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0050",
+      "startOffset": 4574427,
+      "endOffset": 4574429,
+      "summary": "方源开始设计新的仙道杀招以炼化态度蛊，但遇到难关，手中仙蛊不适用"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0068",
+      "startOffset": 4574995,
+      "endOffset": 4575047,
+      "summary": "方源评估手中的仙蛊，认为妇人心、飞熊之力、骨刺三只仙蛊用处太小，想要换成其他适合的仙蛊。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0073",
+      "startOffset": 4575149,
+      "endOffset": 4575192,
+      "summary": "方源在赶路过程中，不断炼制梦道凡蛊和推算仙道杀招，企图将态度蛊真正化为己用。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1298",
+      "paragraphId": "ch_1298_p0074",
+      "startOffset": 4575196,
+      "endOffset": 4575237,
+      "summary": "方源察觉到周遭有蛊仙战斗的痕迹。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly ordinary visible events (Fang Yuan refining gu, traveling, communicating with Zi Shan Zhen Jun) that are directly observable actions. The one potentially hidden element is that '影宗方面还提及了至尊仙窍的弊端，但至于具体是什么，并没有明说' (Shadow Sect mentioned the flaw of the supreme immortal aperture but did not specify what it is) - this is a known gap in knowledge but the seed does not directly support what the flaw actually is, only that it was mentioned. No atomic hidden fact can be confidently extracted from the provided source pointers without speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan evaluating his immortal gu and wanting to exchange three that are too small in use for more suitable ones. However, the observed behavior (evaluating and desiring exchange) is internal reasoning, not a directly observable action with clear motive inference. The inferred motive would be ambiguous - he wants better tools for his goal of refining the attitude gu, but this is already stated explicitly rather than requiring inference. No strong candidate for a cautious one-step motive inference from directly observed action.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily focuses on individual actions of 方源 (Fang Yuan) — cultivation, trading, and personal scheming. The only collective actors mentioned are 影宗 (Shadow Sect) and 琅琊福地 (Lang Ya blessed land), but the seed does not provide enough concrete stake or pressure for either group. 影宗 appears in a trade/conflict relation with 方源 via 紫山真君 as an intermediary, but the interaction is a single negotiation about 态度蛊 (attitude Gu) with no clear faction-level pressure (interest, threat, resource, etc.) backed by source facts. 琅琊福地 is only mentioned as a communication channel. No family, clan, or organization has a demonstrated collective stake in the seed events.",
+      "IF export filter quarantined 7 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

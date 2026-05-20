@@ -1,0 +1,733 @@
+{
+  "packageId": "ri_lw_ch_1450",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1450"
+    ],
+    "paragraphIds": [
+      "ch_1450_p0002",
+      "ch_1450_p0008",
+      "ch_1450_p0021",
+      "ch_1450_p0025",
+      "ch_1450_p0033",
+      "ch_1450_p0037",
+      "ch_1450_p0043",
+      "ch_1450_p0044",
+      "ch_1450_p0048",
+      "ch_1450_p0050",
+      "ch_1450_p0053",
+      "ch_1450_p0057",
+      "ch_1450_p0063",
+      "ch_1450_p0066",
+      "ch_1450_p0067",
+      "ch_1450_p0068"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0002",
+          "startOffset": 5082639,
+          "endOffset": 5082643,
+          "summary": "慕容家族蛊仙"
+        }
+      ],
+      "entityId": "entity_a98d0eb6229e",
+      "name": "慕容青丝",
+      "kind": "person",
+      "aliases": [
+        "青丝"
+      ],
+      "description": "慕容家族蛊仙",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0008",
+          "startOffset": 5082797,
+          "endOffset": 5082800,
+          "summary": "慕容青丝的恋人，前来提亲"
+        }
+      ],
+      "entityId": "entity_18f8948ee482",
+      "name": "酝良",
+      "kind": "person",
+      "aliases": [
+        "云郎"
+      ],
+      "description": "慕容青丝的恋人，前来提亲",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0025",
+          "startOffset": 5083312,
+          "endOffset": 5083314,
+          "summary": "被慕容青丝指认为凶手"
+        }
+      ],
+      "entityId": "entity_e5d30dca6b75",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "被慕容青丝指认为凶手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0033",
+          "startOffset": 5083548,
+          "endOffset": 5083593,
+          "summary": "慕容家蛊仙，被方源所杀"
+        }
+      ],
+      "entityId": "entity_18f8948ee482",
+      "name": "酝良",
+      "kind": "person",
+      "aliases": [],
+      "description": "慕容家蛊仙，被方源所杀",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0066",
+          "startOffset": 5084806,
+          "endOffset": 5084830,
+          "summary": "主角，蛊修"
+        }
+      ],
+      "entityId": "entity_e5d30dca6b75",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，蛊修",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0068",
+          "startOffset": 5084852,
+          "endOffset": 5084867,
+          "summary": "七转蛊仙，耶律家强者"
+        }
+      ],
+      "entityId": "entity_6c1247fe388d",
+      "name": "耶律群星",
+      "kind": "person",
+      "aliases": [],
+      "description": "七转蛊仙，耶律家强者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0008",
+          "startOffset": 5082797,
+          "endOffset": 5082800,
+          "summary": "恋人关系，酝良前来提亲"
+        }
+      ],
+      "relationId": "rel_68ea8fc7ebd8",
+      "subject": "慕容青丝",
+      "object": "酝良",
+      "relationType": "OTHER",
+      "summary": "恋人关系，酝良前来提亲",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0025",
+          "startOffset": 5083312,
+          "endOffset": 5083320,
+          "summary": "慕容青丝认定方源是杀害酝良的凶手，发誓报仇"
+        }
+      ],
+      "relationId": "rel_ac9f4a62c942",
+      "subject": "慕容青丝",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "慕容青丝认定方源是杀害酝良的凶手，发誓报仇",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0044",
+          "startOffset": 5083992,
+          "endOffset": 5084035,
+          "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良，与慕容家结仇"
+        }
+      ],
+      "relationId": "rel_c4109d86c1f5",
+      "subject": "方源",
+      "object": "慕容家",
+      "relationType": "CONFLICT",
+      "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良，与慕容家结仇",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0050",
+          "startOffset": 5084249,
+          "endOffset": 5084327,
+          "summary": "慕容形胜主张复仇方源"
+        }
+      ],
+      "relationId": "rel_7fce74570d81",
+      "subject": "慕容形胜",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "慕容形胜主张复仇方源",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0053",
+          "startOffset": 5084379,
+          "endOffset": 5084491,
+          "summary": "慕容青丝与酝良有婚事"
+        }
+      ],
+      "relationId": "rel_a4a67b3a4d1b",
+      "subject": "慕容青丝",
+      "object": "酝良",
+      "relationType": "FAMILY",
+      "summary": "慕容青丝与酝良有婚事",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0043",
+          "startOffset": 5083958,
+          "endOffset": 5083988,
+          "summary": "柳贯一是方源的假名，二者为同一人"
+        }
+      ],
+      "relationId": "rel_38de8440073b",
+      "subject": "方源",
+      "object": "柳贯一",
+      "relationType": "OTHER",
+      "summary": "柳贯一是方源的假名，二者为同一人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0067",
+          "startOffset": 5084834,
+          "endOffset": 5084848,
+          "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制"
+        }
+      ],
+      "relationId": "rel_9e367fb99855",
+      "subject": "方源",
+      "object": "耶律群星",
+      "relationType": "CONFLICT",
+      "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0021",
+          "startOffset": 5083169,
+          "endOffset": 5083197,
+          "summary": "酝良在提亲途中遭遇大战，疑似死亡，留下信道凡蛊"
+        }
+      ],
+      "eventId": "evt_d8b40d02fb17",
+      "eventType": "death",
+      "summary": "酝良在提亲途中遭遇大战，疑似死亡，留下信道凡蛊",
+      "actors": [
+        "酝良"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "慕容青丝悲痛昏死，慕容家蛊仙发现战场"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0025",
+          "startOffset": 5083312,
+          "endOffset": 5083320,
+          "summary": "慕容青丝通过信道凡蛊得知信息后，认定方源是真凶，发誓报仇"
+        }
+      ],
+      "eventId": "evt_d9f4b565032d",
+      "eventType": "conflict",
+      "summary": "慕容青丝通过信道凡蛊得知信息后，认定方源是真凶，发誓报仇",
+      "actors": [
+        "慕容青丝",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "慕容青丝吐血昏死"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0037",
+          "startOffset": 5083689,
+          "endOffset": 5083747,
+          "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良"
+        }
+      ],
+      "eventId": "evt_ac0e5bef1d8b",
+      "eventType": "death",
+      "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良",
+      "actors": [
+        "方源",
+        "酝良"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "慕容家发现真相，引发内部争议"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0057",
+          "startOffset": 5084560,
+          "endOffset": 5084581,
+          "summary": "方源在琅琊福地云城密室闭关，尝试净化仙僵肉身"
+        }
+      ],
+      "eventId": "evt_262d934ea6de",
+      "eventType": "other",
+      "summary": "方源在琅琊福地云城密室闭关，尝试净化仙僵肉身",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "尚未成功"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0067",
+          "startOffset": 5084834,
+          "endOffset": 5084848,
+          "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制"
+        }
+      ],
+      "eventId": "evt_7215df536fd1",
+      "eventType": "other",
+      "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制",
+      "actors": [
+        "方源",
+        "耶律群星"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "耶律群星魂魄被方源掌控"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0021",
+          "startOffset": 5083169,
+          "endOffset": 5083197,
+          "summary": "酝良在提亲途中遭遇大战，疑似死亡，留下信道凡蛊"
+        }
+      ],
+      "timelineId": "tl_d8b40d02fb17",
+      "eventId": "evt_d8b40d02fb17",
+      "chapterId": "ch_1450",
+      "orderHint": "chapter-order",
+      "summary": "酝良在提亲途中遭遇大战，疑似死亡，留下信道凡蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0025",
+          "startOffset": 5083312,
+          "endOffset": 5083320,
+          "summary": "慕容青丝通过信道凡蛊得知信息后，认定方源是真凶，发誓报仇"
+        }
+      ],
+      "timelineId": "tl_d9f4b565032d",
+      "eventId": "evt_d9f4b565032d",
+      "chapterId": "ch_1450",
+      "orderHint": "chapter-order",
+      "summary": "慕容青丝通过信道凡蛊得知信息后，认定方源是真凶，发誓报仇",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0037",
+          "startOffset": 5083689,
+          "endOffset": 5083747,
+          "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良"
+        }
+      ],
+      "timelineId": "tl_ac0e5bef1d8b",
+      "eventId": "evt_ac0e5bef1d8b",
+      "chapterId": "ch_1450",
+      "orderHint": "chapter-order",
+      "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0057",
+          "startOffset": 5084560,
+          "endOffset": 5084581,
+          "summary": "方源在琅琊福地云城密室闭关，尝试净化仙僵肉身"
+        }
+      ],
+      "timelineId": "tl_262d934ea6de",
+      "eventId": "evt_262d934ea6de",
+      "chapterId": "ch_1450",
+      "orderHint": "chapter-order",
+      "summary": "方源在琅琊福地云城密室闭关，尝试净化仙僵肉身",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0067",
+          "startOffset": 5084834,
+          "endOffset": 5084848,
+          "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制"
+        }
+      ],
+      "timelineId": "tl_7215df536fd1",
+      "eventId": "evt_7215df536fd1",
+      "chapterId": "ch_1450",
+      "orderHint": "chapter-order",
+      "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0044",
+          "startOffset": 5083992,
+          "endOffset": 5084035,
+          "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良，与慕容家结仇"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0050",
+          "startOffset": 5084249,
+          "endOffset": 5084327,
+          "summary": "慕容形胜主张复仇方源"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1450",
+          "paragraphId": "ch_1450_p0053",
+          "startOffset": 5084379,
+          "endOffset": 5084491,
+          "summary": "慕容青丝与酝良有婚事"
+        }
+      ],
+      "pressureId": "fp_murong_family_revenge",
+      "faction": "慕容家",
+      "pressureAxis": "复仇方源",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "调查方源下落",
+        "加强戒备",
+        "寻求长生天支持"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0002",
+      "startOffset": 5082639,
+      "endOffset": 5082643,
+      "summary": "慕容家族蛊仙"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0008",
+      "startOffset": 5082797,
+      "endOffset": 5082800,
+      "summary": "慕容青丝的恋人，前来提亲"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0025",
+      "startOffset": 5083312,
+      "endOffset": 5083314,
+      "summary": "被慕容青丝指认为凶手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0033",
+      "startOffset": 5083548,
+      "endOffset": 5083593,
+      "summary": "慕容家蛊仙，被方源所杀"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0066",
+      "startOffset": 5084806,
+      "endOffset": 5084830,
+      "summary": "主角，蛊修"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0068",
+      "startOffset": 5084852,
+      "endOffset": 5084867,
+      "summary": "七转蛊仙，耶律家强者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0025",
+      "startOffset": 5083312,
+      "endOffset": 5083320,
+      "summary": "慕容青丝认定方源是杀害酝良的凶手，发誓报仇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0044",
+      "startOffset": 5083992,
+      "endOffset": 5084035,
+      "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良，与慕容家结仇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0050",
+      "startOffset": 5084249,
+      "endOffset": 5084327,
+      "summary": "慕容形胜主张复仇方源"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0053",
+      "startOffset": 5084379,
+      "endOffset": 5084491,
+      "summary": "慕容青丝与酝良有婚事"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0043",
+      "startOffset": 5083958,
+      "endOffset": 5083988,
+      "summary": "柳贯一是方源的假名，二者为同一人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0067",
+      "startOffset": 5084834,
+      "endOffset": 5084848,
+      "summary": "方源抽取耶律群星的魂魄，耶律群星魂魄挣扎但被方源压制"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0021",
+      "startOffset": 5083169,
+      "endOffset": 5083197,
+      "summary": "酝良在提亲途中遭遇大战，疑似死亡，留下信道凡蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0037",
+      "startOffset": 5083689,
+      "endOffset": 5083747,
+      "summary": "方源以柳贯一身份杀死慕容家蛊仙酝良"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1450",
+      "paragraphId": "ch_1450_p0057",
+      "startOffset": 5084560,
+      "endOffset": 5084581,
+      "summary": "方源在琅琊福地云城密室闭关，尝试净化仙僵肉身"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes publicly known events: Fang Yuan killed Yun Liang (revealed via a mortal information Gu), Mu Rong Qing Si identifies Fang Yuan as the murderer, and Fang Yuan is extracting Ye Lv Qun Xing's soul. These are either ordinary visible events (the killing is recorded in the Gu and discovered) or actions Fang Yuan is taking. No hidden/private knowledge, future-known information, secret motives/plans, or directly supported knowledge gaps are present in the seed. The fact that 'Liu Guan Yi = Fang Yuan' is revealed in the source (ch_1450_p0043) as a discovery by the Mu Rong family, not as a hidden fact from a narrator perspective. No suitable hidden/future-known/player-visibility fact candidate can be extracted from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "慕容青丝认定方源是凶手并发誓报仇，这是她的主观判断和情绪反应，但seed中只有她看到信道凡蛊记录后认定方源为凶手的描述，没有直接证据表明她除了报仇之外有更深层的动机（如政治考量、嫁祸等）。observed行为是'发誓报仇'，但inferred motive若仅推断为'为恋人报仇'则过于直白等同于observed，若推断其他动机则缺乏seed支撑。因此不提交动机候选。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "慕容家蛊仙酝良被方源（柳贯一身份）所杀，慕容青丝和慕容形胜均主张复仇，慕容家作为集体有明确的复仇压力。ptr_8显示慕容家认为方源不把慕容家族放在眼里，ptr_9显示慕容形胜主张复仇，ptr_10显示婚事受长生天关注，慕容家面临声誉和关系压力。",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

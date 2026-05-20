@@ -1,0 +1,956 @@
+{
+  "packageId": "ri_lw_ch_0268",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0268"
+    ],
+    "paragraphIds": [
+      "ch_0268_p0002",
+      "ch_0268_p0006",
+      "ch_0268_p0013",
+      "ch_0268_p0026",
+      "ch_0268_p0030",
+      "ch_0268_p0032",
+      "ch_0268_p0033",
+      "ch_0268_p0034",
+      "ch_0268_p0036",
+      "ch_0268_p0043",
+      "ch_0268_p0044",
+      "ch_0268_p0061",
+      "ch_0268_p0063",
+      "ch_0268_p0065",
+      "ch_0268_p0067",
+      "ch_0268_p0083",
+      "ch_0268_p0084",
+      "ch_0268_p0087",
+      "ch_0268_p0088"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0002",
+          "startOffset": 916087,
+          "endOffset": 916089,
+          "summary": "对手，光虹蛊使用者"
+        }
+      ],
+      "entityId": "entity_dbb3ca01c79f",
+      "name": "魏央",
+      "kind": "person",
+      "aliases": [
+        "魏大哥"
+      ],
+      "description": "对手，光虹蛊使用者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0002",
+          "startOffset": 916091,
+          "endOffset": 916093,
+          "summary": "主角，攻击者"
+        }
+      ],
+      "entityId": "entity_fdb2ea26558e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，攻击者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0006",
+          "startOffset": 916228,
+          "endOffset": 916231,
+          "summary": "方源同伴，攻击者"
+        }
+      ],
+      "entityId": "entity_72b9cada6747",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源同伴，攻击者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0013",
+          "startOffset": 916424,
+          "endOffset": 916426,
+          "summary": "旁观者，魏央的同伴"
+        }
+      ],
+      "entityId": "entity_847daafcff64",
+      "name": "小萧",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，魏央的同伴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0033",
+          "startOffset": 917290,
+          "endOffset": 917313,
+          "summary": "蛊师，与方源同行"
+        }
+      ],
+      "entityId": "entity_72b9cada6747",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [
+        "白云小姐",
+        "白云姑娘",
+        "白云阁下"
+      ],
+      "description": "蛊师，与方源同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0034",
+          "startOffset": 917317,
+          "endOffset": 917326,
+          "summary": "蛊师，与方源、白凝冰切磋"
+        }
+      ],
+      "entityId": "entity_dbb3ca01c79f",
+      "name": "魏央",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，与方源、白凝冰切磋",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0043",
+          "startOffset": 917672,
+          "endOffset": 917707,
+          "summary": "蛊师，与白凝冰同行"
+        }
+      ],
+      "entityId": "entity_fdb2ea26558e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑土阁下"
+      ],
+      "description": "蛊师，与白凝冰同行",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0061",
+          "startOffset": 918252,
+          "endOffset": 918284,
+          "summary": "旁观者，称呼魏央为魏大哥"
+        }
+      ],
+      "entityId": "entity_847daafcff64",
+      "name": "小萧",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，称呼魏央为魏大哥",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0084",
+          "startOffset": 919381,
+          "endOffset": 919428,
+          "summary": "魔道蛊师，伪装身份"
+        }
+      ],
+      "entityId": "entity_fdb2ea26558e",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "黑土",
+        "古月方正"
+      ],
+      "description": "魔道蛊师，伪装身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0084",
+          "startOffset": 919381,
+          "endOffset": 919428,
+          "summary": "魔道蛊师，伪装身份"
+        }
+      ],
+      "entityId": "entity_72b9cada6747",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [
+        "白云"
+      ],
+      "description": "魔道蛊师，伪装身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0067",
+          "startOffset": 918492,
+          "endOffset": 918616,
+          "summary": "商燕飞座下第三战将，三转巅峰"
+        }
+      ],
+      "entityId": "entity_dbb3ca01c79f",
+      "name": "魏央",
+      "kind": "person",
+      "aliases": [
+        "白光刀客"
+      ],
+      "description": "商燕飞座下第三战将，三转巅峰",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0083",
+          "startOffset": 919316,
+          "endOffset": 919377,
+          "summary": "魔道蛊师，三转中阶，擅长火类蛊虫"
+        }
+      ],
+      "entityId": "entity_14adba9cafbd",
+      "name": "萧炎",
+      "kind": "person",
+      "aliases": [
+        "小萧"
+      ],
+      "description": "魔道蛊师，三转中阶，擅长火类蛊虫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0067",
+          "startOffset": 918492,
+          "endOffset": 918616,
+          "summary": "魏央的上司"
+        }
+      ],
+      "entityId": "entity_52791fa55e88",
+      "name": "商燕飞",
+      "kind": "person",
+      "aliases": [],
+      "description": "魏央的上司",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0002",
+          "startOffset": 916087,
+          "endOffset": 916089,
+          "summary": "方源与白凝冰联手对抗魏央"
+        }
+      ],
+      "relationId": "rel_526d13f134a3",
+      "subject": "方源",
+      "object": "魏央",
+      "relationType": "CONFLICT",
+      "summary": "方源与白凝冰联手对抗魏央",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0006",
+          "startOffset": 916228,
+          "endOffset": 916231,
+          "summary": "白凝冰与方源联手对抗魏央"
+        }
+      ],
+      "relationId": "rel_0eed68ebb568",
+      "subject": "白凝冰",
+      "object": "魏央",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰与方源联手对抗魏央",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0013",
+          "startOffset": 916424,
+          "endOffset": 916426,
+          "summary": "小萧称魏央为魏大哥，关心其战斗"
+        }
+      ],
+      "relationId": "rel_9c99380efbb3",
+      "subject": "小萧",
+      "object": "魏央",
+      "relationType": "ALLY",
+      "summary": "小萧称魏央为魏大哥，关心其战斗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0036",
+          "startOffset": 917417,
+          "endOffset": 917465,
+          "summary": "魏央称呼白凝冰为白云小姐、白云姑娘、白云阁下，白凝冰反感小姐和姑娘称呼，最终接受阁下"
+        }
+      ],
+      "relationId": "rel_07fac06a8d14",
+      "subject": "魏央",
+      "object": "白凝冰",
+      "relationType": "OTHER",
+      "summary": "魏央称呼白凝冰为白云小姐、白云姑娘、白云阁下，白凝冰反感小姐和姑娘称呼，最终接受阁下",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0044",
+          "startOffset": 917711,
+          "endOffset": 917761,
+          "summary": "魏央与方源、白凝冰进行切磋，称赞方源豪气无双"
+        }
+      ],
+      "relationId": "rel_1731f47abbe4",
+      "subject": "魏央",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "魏央与方源、白凝冰进行切磋，称赞方源豪气无双",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0061",
+          "startOffset": 918252,
+          "endOffset": 918284,
+          "summary": "小萧称呼魏央为魏大哥，对其实力表示赞叹"
+        }
+      ],
+      "relationId": "rel_cad5bb827991",
+      "subject": "小萧",
+      "object": "魏央",
+      "relationType": "OTHER",
+      "summary": "小萧称呼魏央为魏大哥，对其实力表示赞叹",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0087",
+          "startOffset": 919495,
+          "endOffset": 919532,
+          "summary": "不打不相识，成为朋友，方源主动暴露真名以示交心"
+        }
+      ],
+      "relationId": "rel_4d96e875a997",
+      "subject": "方源",
+      "object": "魏央",
+      "relationType": "ALLY",
+      "summary": "不打不相识，成为朋友，方源主动暴露真名以示交心",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0087",
+          "startOffset": 919495,
+          "endOffset": 919532,
+          "summary": "不打不相识，成为朋友，方源主动暴露真名以示交心"
+        }
+      ],
+      "relationId": "rel_510c4af5335a",
+      "subject": "方源",
+      "object": "萧炎",
+      "relationType": "ALLY",
+      "summary": "不打不相识，成为朋友，方源主动暴露真名以示交心",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0067",
+          "startOffset": 918492,
+          "endOffset": 918616,
+          "summary": "魏央是商燕飞座下第三战将"
+        }
+      ],
+      "relationId": "rel_83f1b3b09473",
+      "subject": "魏央",
+      "object": "商燕飞",
+      "relationType": "FACTION",
+      "summary": "魏央是商燕飞座下第三战将",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0026",
+          "startOffset": 916891,
+          "endOffset": 916893,
+          "summary": "方源和白凝冰联手与魏央战斗，魏央使用光虹蛊遁走，占据速度优势"
+        }
+      ],
+      "eventId": "evt_02f5d9aed843",
+      "eventType": "conflict",
+      "summary": "方源和白凝冰联手与魏央战斗，魏央使用光虹蛊遁走，占据速度优势",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "魏央"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魏央凭借光虹蛊立于不败之地，方白二人陷入被动"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0030",
+          "startOffset": 917075,
+          "endOffset": 917077,
+          "summary": "魏央主动透露光虹蛊的两个缺点：需要搭配思绪如电蛊或灵光一现蛊，以及消耗真元较多"
+        }
+      ],
+      "eventId": "evt_abaca361bb64",
+      "eventType": "other",
+      "summary": "魏央主动透露光虹蛊的两个缺点：需要搭配思绪如电蛊或灵光一现蛊，以及消耗真元较多",
+      "actors": [
+        "魏央"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魏央故意暴露弱点，可能另有图谋"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0044",
+          "startOffset": 917711,
+          "endOffset": 917761,
+          "summary": "魏央与方源、白凝冰在演武场进行切磋，魏央使用光虹蛊和光源蛊，速度极快，方源和白凝冰被动防御"
+        }
+      ],
+      "eventId": "evt_ea0a622bc248",
+      "eventType": "conflict",
+      "summary": "魏央与方源、白凝冰在演武场进行切磋，魏央使用光虹蛊和光源蛊，速度极快，方源和白凝冰被动防御",
+      "actors": [
+        "魏央",
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源和白凝冰处于劣势，未能击中魏央"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0063",
+          "startOffset": 918306,
+          "endOffset": 918412,
+          "summary": "魏央透露自己拥有光源蛊，可减少光类蛊虫真元消耗一半"
+        }
+      ],
+      "eventId": "evt_8c357297fe23",
+      "eventType": "other",
+      "summary": "魏央透露自己拥有光源蛊，可减少光类蛊虫真元消耗一半",
+      "actors": [
+        "魏央"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源和白凝冰消耗战术失效"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0065",
+          "startOffset": 918434,
+          "endOffset": 918466,
+          "summary": "方源和白凝冰与魏央切磋比试，方源认输，白凝冰不服"
+        }
+      ],
+      "eventId": "evt_1295a12384d5",
+      "eventType": "conflict",
+      "summary": "方源和白凝冰与魏央切磋比试，方源认输，白凝冰不服",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "魏央"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源、白凝冰与魏央、萧炎结识，关系拉近"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0084",
+          "startOffset": 919381,
+          "endOffset": 919428,
+          "summary": "四人一起喝酒，方源假借醉酒主动暴露真名古月方正和白凝冰"
+        }
+      ],
+      "eventId": "evt_c74199469d02",
+      "eventType": "other",
+      "summary": "四人一起喝酒，方源假借醉酒主动暴露真名古月方正和白凝冰",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "魏央",
+        "萧炎"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "魏央和萧炎感动，关系进一步拉近；魏央意识到任务完成"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0026",
+          "startOffset": 916891,
+          "endOffset": 916893,
+          "summary": "方源和白凝冰联手与魏央战斗，魏央使用光虹蛊遁走，占据速度优势"
+        }
+      ],
+      "timelineId": "tl_02f5d9aed843",
+      "eventId": "evt_02f5d9aed843",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰联手与魏央战斗，魏央使用光虹蛊遁走，占据速度优势",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0030",
+          "startOffset": 917075,
+          "endOffset": 917077,
+          "summary": "魏央主动透露光虹蛊的两个缺点：需要搭配思绪如电蛊或灵光一现蛊，以及消耗真元较多"
+        }
+      ],
+      "timelineId": "tl_abaca361bb64",
+      "eventId": "evt_abaca361bb64",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "魏央主动透露光虹蛊的两个缺点：需要搭配思绪如电蛊或灵光一现蛊，以及消耗真元较多",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0044",
+          "startOffset": 917711,
+          "endOffset": 917761,
+          "summary": "魏央与方源、白凝冰在演武场进行切磋，魏央使用光虹蛊和光源蛊，速度极快，方源和白凝冰被动防御"
+        }
+      ],
+      "timelineId": "tl_ea0a622bc248",
+      "eventId": "evt_ea0a622bc248",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "魏央与方源、白凝冰在演武场进行切磋，魏央使用光虹蛊和光源蛊，速度极快，方源和白凝冰被动防御",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0063",
+          "startOffset": 918306,
+          "endOffset": 918412,
+          "summary": "魏央透露自己拥有光源蛊，可减少光类蛊虫真元消耗一半"
+        }
+      ],
+      "timelineId": "tl_8c357297fe23",
+      "eventId": "evt_8c357297fe23",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "魏央透露自己拥有光源蛊，可减少光类蛊虫真元消耗一半",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0065",
+          "startOffset": 918434,
+          "endOffset": 918466,
+          "summary": "方源和白凝冰与魏央切磋比试，方源认输，白凝冰不服"
+        }
+      ],
+      "timelineId": "tl_1295a12384d5",
+      "eventId": "evt_1295a12384d5",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰与魏央切磋比试，方源认输，白凝冰不服",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0268",
+          "paragraphId": "ch_0268_p0084",
+          "startOffset": 919381,
+          "endOffset": 919428,
+          "summary": "四人一起喝酒，方源假借醉酒主动暴露真名古月方正和白凝冰"
+        }
+      ],
+      "timelineId": "tl_c74199469d02",
+      "eventId": "evt_c74199469d02",
+      "chapterId": "ch_0268",
+      "orderHint": "chapter-order",
+      "summary": "四人一起喝酒，方源假借醉酒主动暴露真名古月方正和白凝冰",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0002",
+      "startOffset": 916087,
+      "endOffset": 916089,
+      "summary": "对手，光虹蛊使用者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0002",
+      "startOffset": 916091,
+      "endOffset": 916093,
+      "summary": "主角，攻击者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0006",
+      "startOffset": 916228,
+      "endOffset": 916231,
+      "summary": "方源同伴，攻击者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0013",
+      "startOffset": 916424,
+      "endOffset": 916426,
+      "summary": "旁观者，魏央的同伴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0033",
+      "startOffset": 917290,
+      "endOffset": 917313,
+      "summary": "蛊师，与方源同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0034",
+      "startOffset": 917317,
+      "endOffset": 917326,
+      "summary": "蛊师，与方源、白凝冰切磋"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0043",
+      "startOffset": 917672,
+      "endOffset": 917707,
+      "summary": "蛊师，与白凝冰同行"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0061",
+      "startOffset": 918252,
+      "endOffset": 918284,
+      "summary": "旁观者，称呼魏央为魏大哥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0084",
+      "startOffset": 919381,
+      "endOffset": 919428,
+      "summary": "魔道蛊师，伪装身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0067",
+      "startOffset": 918492,
+      "endOffset": 918616,
+      "summary": "商燕飞座下第三战将，三转巅峰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0083",
+      "startOffset": 919316,
+      "endOffset": 919377,
+      "summary": "魔道蛊师，三转中阶，擅长火类蛊虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0036",
+      "startOffset": 917417,
+      "endOffset": 917465,
+      "summary": "魏央称呼白凝冰为白云小姐、白云姑娘、白云阁下，白凝冰反感小姐和姑娘称呼，最终接受阁下"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0044",
+      "startOffset": 917711,
+      "endOffset": 917761,
+      "summary": "魏央与方源、白凝冰进行切磋，称赞方源豪气无双"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0087",
+      "startOffset": 919495,
+      "endOffset": 919532,
+      "summary": "不打不相识，成为朋友，方源主动暴露真名以示交心"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0026",
+      "startOffset": 916891,
+      "endOffset": 916893,
+      "summary": "方源和白凝冰联手与魏央战斗，魏央使用光虹蛊遁走，占据速度优势"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0030",
+      "startOffset": 917075,
+      "endOffset": 917077,
+      "summary": "魏央主动透露光虹蛊的两个缺点：需要搭配思绪如电蛊或灵光一现蛊，以及消耗真元较多"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0063",
+      "startOffset": 918306,
+      "endOffset": 918412,
+      "summary": "魏央透露自己拥有光源蛊，可减少光类蛊虫真元消耗一半"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0268",
+      "paragraphId": "ch_0268_p0065",
+      "startOffset": 918434,
+      "endOffset": 918466,
+      "summary": "方源和白凝冰与魏央切磋比试，方源认输，白凝冰不服"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package primarily describes an open sparring/friendly match between Fang Yuan, Bai Ning Bing, and Wei Yang, followed by drinking and revealing names. All key information (Wei Yang's gu weaknesses, his light source gu, his identity as Shang Yanfei's third battle general, Xiao Xiao's identity, Fang Yuan revealing his true name) is openly stated or observed by all present characters. There are no hidden facts, private knowledge, future-known information, or secret motives/plans directly supported by the source text. The events are all publicly visible to the participants and observers. No source-backed hidden/player-visibility fact candidate can be extracted.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "魏央主动透露光虹蛊缺点和光源蛊信息，行为可见但动机不明。种子中推测'可能另有图谋'，但原文仅描述其主动透露事实，未提供直接证据表明其意图（如示好、试探、炫耀等）。只能观察到'主动透露弱点'这一行为，无法做出一阶推断而不引入心理猜测。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed primarily describes individual interactions (Fang Yuan, Bai Ning Bing, Wei Yang, Xiao Xiao/Xiao Yan) with no named collective faction, clan, family, or organization that has a concrete stake. Wei Yang is mentioned as '商燕飞座下第三战将' (third battle general under Shang Yanfei), but Shang Yanfei's faction is not elaborated in this seed, and no collective stake or pressure is evident. The seed is about a sparring match and drinking session between individuals. No collective actor with group-level pressure can be identified from the seed facts alone.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

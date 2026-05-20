@@ -1,0 +1,641 @@
+{
+  "packageId": "ri_lw_ch_0278",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0278"
+    ],
+    "paragraphIds": [
+      "ch_0278_p0008",
+      "ch_0278_p0015",
+      "ch_0278_p0017",
+      "ch_0278_p0027",
+      "ch_0278_p0035",
+      "ch_0278_p0041",
+      "ch_0278_p0043",
+      "ch_0278_p0047",
+      "ch_0278_p0048",
+      "ch_0278_p0065",
+      "ch_0278_p0066",
+      "ch_0278_p0076",
+      "ch_0278_p0080"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0008",
+          "startOffset": 954428,
+          "endOffset": 954430,
+          "summary": "主角，魔道蛊师"
+        }
+      ],
+      "entityId": "entity_330f36664b55",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0015",
+          "startOffset": 954676,
+          "endOffset": 954680,
+          "summary": "魔道蛊师，擅长造假"
+        }
+      ],
+      "entityId": "entity_873395220f77",
+      "name": "卫神经",
+      "kind": "person",
+      "aliases": [
+        "假大师"
+      ],
+      "description": "魔道蛊师，擅长造假",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0047",
+          "startOffset": 955824,
+          "endOffset": 955840,
+          "summary": "重生蛊师，主角"
+        }
+      ],
+      "entityId": "entity_330f36664b55",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "重生蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0048",
+          "startOffset": 955844,
+          "endOffset": 955901,
+          "summary": "赌石坊伙计"
+        }
+      ],
+      "entityId": "entity_9b158a3868d4",
+      "name": "伙计",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赌石坊伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0035",
+          "startOffset": 955347,
+          "endOffset": 955379,
+          "summary": "前世中绊到石头并切石的蛊师"
+        }
+      ],
+      "entityId": "entity_168ea66349f6",
+      "name": "绊倒的蛊师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "前世中绊到石头并切石的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0065",
+          "startOffset": 956944,
+          "endOffset": 956961,
+          "summary": "顾客"
+        }
+      ],
+      "entityId": "entity_330f36664b55",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "顾客",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0066",
+          "startOffset": 956965,
+          "endOffset": 957032,
+          "summary": "店铺伙计"
+        }
+      ],
+      "entityId": "entity_9b158a3868d4",
+      "name": "伙计",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "店铺伙计",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0066",
+          "startOffset": 957002,
+          "endOffset": 957006,
+          "summary": "解石师傅"
+        }
+      ],
+      "entityId": "entity_1ed08941ed66",
+      "name": "段大师",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "解石师傅",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0017",
+          "startOffset": 954733,
+          "endOffset": 954777,
+          "summary": "卫神经因造假被各大家族通缉"
+        }
+      ],
+      "relationId": "rel_ec06200e4aa6",
+      "subject": "卫神经",
+      "object": "南疆各大家族",
+      "relationType": "CONFLICT",
+      "summary": "卫神经因造假被各大家族通缉",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0027",
+          "startOffset": 955061,
+          "endOffset": 955104,
+          "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫"
+        }
+      ],
+      "eventId": "evt_278c4d3d4c33",
+      "eventType": "other",
+      "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源可能购买此石"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0047",
+          "startOffset": 955824,
+          "endOffset": 955840,
+          "summary": "方源来到赌石坊，注意到脚下垫脚石（星辰石），并跟随伙计进入内部。"
+        }
+      ],
+      "eventId": "evt_d36bb1c93335",
+      "eventType": "other",
+      "summary": "方源来到赌石坊，注意到脚下垫脚石（星辰石），并跟随伙计进入内部。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源可能意图获取星辰石。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0041",
+          "startOffset": 955643,
+          "endOffset": 955694,
+          "summary": "前世中，一个不如意的蛊师被柜台角绊倒，迁怒于垫脚石，买下并切解，导致传奇之蛊现世。"
+        }
+      ],
+      "eventId": "evt_67357f79175e",
+      "eventType": "other",
+      "summary": "前世中，一个不如意的蛊师被柜台角绊倒，迁怒于垫脚石，买下并切解，导致传奇之蛊现世。",
+      "actors": [
+        "绊倒的蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "传奇之蛊现世，成为人人相传的戏剧性事件。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0076",
+          "startOffset": 957425,
+          "endOffset": 957462,
+          "summary": "方源在下等区选购了几颗顽石，包括老汉石、推车石、星辰石。"
+        }
+      ],
+      "eventId": "evt_a3474334bd91",
+      "eventType": "trade",
+      "summary": "方源在下等区选购了几颗顽石，包括老汉石、推车石、星辰石。",
+      "actors": [
+        "方源",
+        "伙计"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "伙计因方源只买低价石头而失望，但方源出示紫荆令牌后伙计震惊。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0080",
+          "startOffset": 957618,
+          "endOffset": 957630,
+          "summary": "方源出示紫荆令牌，伙计震惊。"
+        }
+      ],
+      "eventId": "evt_8503fb37cd4f",
+      "eventType": "other",
+      "summary": "方源出示紫荆令牌，伙计震惊。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "伙计态度转变，暗示方源身份不凡。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0027",
+          "startOffset": 955061,
+          "endOffset": 955104,
+          "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫"
+        }
+      ],
+      "timelineId": "tl_278c4d3d4c33",
+      "eventId": "evt_278c4d3d4c33",
+      "chapterId": "ch_0278",
+      "orderHint": "chapter-order",
+      "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0047",
+          "startOffset": 955824,
+          "endOffset": 955840,
+          "summary": "方源来到赌石坊，注意到脚下垫脚石（星辰石），并跟随伙计进入内部。"
+        }
+      ],
+      "timelineId": "tl_d36bb1c93335",
+      "eventId": "evt_d36bb1c93335",
+      "chapterId": "ch_0278",
+      "orderHint": "chapter-order",
+      "summary": "方源来到赌石坊，注意到脚下垫脚石（星辰石），并跟随伙计进入内部。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0041",
+          "startOffset": 955643,
+          "endOffset": 955694,
+          "summary": "前世中，一个不如意的蛊师被柜台角绊倒，迁怒于垫脚石，买下并切解，导致传奇之蛊现世。"
+        }
+      ],
+      "timelineId": "tl_67357f79175e",
+      "eventId": "evt_67357f79175e",
+      "chapterId": "ch_0278",
+      "orderHint": "chapter-order",
+      "summary": "前世中，一个不如意的蛊师被柜台角绊倒，迁怒于垫脚石，买下并切解，导致传奇之蛊现世。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0076",
+          "startOffset": 957425,
+          "endOffset": 957462,
+          "summary": "方源在下等区选购了几颗顽石，包括老汉石、推车石、星辰石。"
+        }
+      ],
+      "timelineId": "tl_a3474334bd91",
+      "eventId": "evt_a3474334bd91",
+      "chapterId": "ch_0278",
+      "orderHint": "chapter-order",
+      "summary": "方源在下等区选购了几颗顽石，包括老汉石、推车石、星辰石。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0080",
+          "startOffset": 957618,
+          "endOffset": 957630,
+          "summary": "方源出示紫荆令牌，伙计震惊。"
+        }
+      ],
+      "timelineId": "tl_8503fb37cd4f",
+      "eventId": "evt_8503fb37cd4f",
+      "chapterId": "ch_0278",
+      "orderHint": "chapter-order",
+      "summary": "方源出示紫荆令牌，伙计震惊。",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0027",
+          "startOffset": 955061,
+          "endOffset": 955104,
+          "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫"
+        }
+      ],
+      "factId": "hf_0278_001",
+      "summary": "方源脚下的星辰石中藏有传奇蛊虫",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [
+        "伙计",
+        "卫神经",
+        "段大师"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0047",
+          "startOffset": 955824,
+          "endOffset": 955840,
+          "summary": "重生蛊师，主角"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0278",
+          "paragraphId": "ch_0278_p0048",
+          "startOffset": 955844,
+          "endOffset": 955901,
+          "summary": "赌石坊伙计"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "方源",
+      "observedMotive": "用眼角余光观察脚下星辰石",
+      "inferredMotive": "想确认星辰石是否值得获取",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0008",
+      "startOffset": 954428,
+      "endOffset": 954430,
+      "summary": "主角，魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0015",
+      "startOffset": 954676,
+      "endOffset": 954680,
+      "summary": "魔道蛊师，擅长造假"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0047",
+      "startOffset": 955824,
+      "endOffset": 955840,
+      "summary": "重生蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0048",
+      "startOffset": 955844,
+      "endOffset": 955901,
+      "summary": "赌石坊伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0035",
+      "startOffset": 955347,
+      "endOffset": 955379,
+      "summary": "前世中绊到石头并切石的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0065",
+      "startOffset": 956944,
+      "endOffset": 956961,
+      "summary": "顾客"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0066",
+      "startOffset": 956965,
+      "endOffset": 957032,
+      "summary": "店铺伙计"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0066",
+      "startOffset": 957002,
+      "endOffset": 957006,
+      "summary": "解石师傅"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0017",
+      "startOffset": 954733,
+      "endOffset": 954777,
+      "summary": "卫神经因造假被各大家族通缉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0027",
+      "startOffset": 955061,
+      "endOffset": 955104,
+      "summary": "方源在赌石坊杂等区域发现一块垫柜台的星辰石，其中藏有传奇蛊虫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0041",
+      "startOffset": 955643,
+      "endOffset": 955694,
+      "summary": "前世中，一个不如意的蛊师被柜台角绊倒，迁怒于垫脚石，买下并切解，导致传奇之蛊现世。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0076",
+      "startOffset": 957425,
+      "endOffset": 957462,
+      "summary": "方源在下等区选购了几颗顽石，包括老汉石、推车石、星辰石。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0278",
+      "paragraphId": "ch_0278_p0080",
+      "startOffset": 957618,
+      "endOffset": 957630,
+      "summary": "方源出示紫荆令牌，伙计震惊。"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "The source directly states that the stone contains a legendary Gu worm, and that 'they' (the shop people) would never think of it. This is private knowledge known to Fang Yuan (from his past life memory) but unknown to others. The fact is atomic and source-backed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "observedMotive: 方源用眼角余光观察脚下的石头（ptr_4），脚距离石头仅两尺（ptr_3）。",
+      "inferredMotive: 观察行为暗示他想确认这块石头（他知道是星辰石，藏有传奇蛊虫）是否值得获取。这是从观察行为+前世知识的一步推断，未过度推测战略意图。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The only collective actor mentioned is '南疆各大家族' (Southern Border families/clans) in relation to 卫神经 (Wei Shenjing) being wanted for forgery. However, this is a static background relation (wanted poster), not a dynamic pressure with a concrete stake in the seed events. The seed's main action involves 方源 (Fang Yuan) buying stones at a gambling stone shop - no faction/group has a concrete stake in these events. The shop itself is not named as a faction/group entity. No collective actor pressure can be meaningfully extracted from this seed.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

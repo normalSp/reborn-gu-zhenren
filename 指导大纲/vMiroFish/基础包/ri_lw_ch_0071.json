@@ -1,0 +1,420 @@
+{
+  "packageId": "ri_lw_ch_0071",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0071"
+    ],
+    "paragraphIds": [
+      "ch_0071_p0004",
+      "ch_0071_p0024",
+      "ch_0071_p0034",
+      "ch_0071_p0049",
+      "ch_0071_p0057",
+      "ch_0071_p0068",
+      "ch_0071_p0077"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0004",
+          "startOffset": 216596,
+          "endOffset": 216598,
+          "summary": "蛊师"
+        }
+      ],
+      "entityId": "entity_c58d4d605d60",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0034",
+          "startOffset": 217900,
+          "endOffset": 217902,
+          "summary": "蛊师"
+        }
+      ],
+      "entityId": "entity_c58d4d605d60",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0068",
+          "startOffset": 219188,
+          "endOffset": 219190,
+          "summary": "中阶蛊师，拥有酒虫、月刃、白豕蛊"
+        }
+      ],
+      "entityId": "entity_c58d4d605d60",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "中阶蛊师，拥有酒虫、月刃、白豕蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0024",
+          "startOffset": 217544,
+          "endOffset": 217574,
+          "summary": "方源使用月光蛊攻击山猪，并尝试使用白豕蛊"
+        }
+      ],
+      "eventId": "evt_4e5f1c8a5232",
+      "eventType": "cultivation",
+      "summary": "方源使用月光蛊攻击山猪，并尝试使用白豕蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "山猪被月刃击中，方源准备使用白豕蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0049",
+          "startOffset": 218452,
+          "endOffset": 218453,
+          "summary": "方源使用月光蛊和小光蛊配合，催发出扩大版的月刃，斩杀山猪。"
+        }
+      ],
+      "eventId": "evt_e968118836c2",
+      "eventType": "cultivation",
+      "summary": "方源使用月光蛊和小光蛊配合，催发出扩大版的月刃，斩杀山猪。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "山猪被杀死，方源获得野猪肉和獠牙。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0057",
+          "startOffset": 218705,
+          "endOffset": 218706,
+          "summary": "方源使用白豕蛊吞噬野猪肉，白豕蛊体型未变。"
+        }
+      ],
+      "eventId": "evt_e6d132845f6e",
+      "eventType": "other",
+      "summary": "方源使用白豕蛊吞噬野猪肉，白豕蛊体型未变。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "野猪大部分肉被白豕蛊吃掉，方源割下獠牙。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0077",
+          "startOffset": 219475,
+          "endOffset": 219500,
+          "summary": "方源使用白豕蛊进行力量修行，但因过度使用引发剧痛而停止"
+        }
+      ],
+      "eventId": "evt_35e0108c673d",
+      "eventType": "cultivation",
+      "summary": "方源使用白豕蛊进行力量修行，但因过度使用引发剧痛而停止",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源了解到白豕蛊每天只能使用一刻钟，否则会引发剧痛"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0068",
+          "startOffset": 219188,
+          "endOffset": 219215,
+          "summary": "方源将山猪獠牙藏到石缝秘洞中"
+        }
+      ],
+      "eventId": "evt_16a8891eca59",
+      "eventType": "other",
+      "summary": "方源将山猪獠牙藏到石缝秘洞中",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0024",
+          "startOffset": 217544,
+          "endOffset": 217574,
+          "summary": "方源使用月光蛊攻击山猪，并尝试使用白豕蛊"
+        }
+      ],
+      "timelineId": "tl_4e5f1c8a5232",
+      "eventId": "evt_4e5f1c8a5232",
+      "chapterId": "ch_0071",
+      "orderHint": "chapter-order",
+      "summary": "方源使用月光蛊攻击山猪，并尝试使用白豕蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0049",
+          "startOffset": 218452,
+          "endOffset": 218453,
+          "summary": "方源使用月光蛊和小光蛊配合，催发出扩大版的月刃，斩杀山猪。"
+        }
+      ],
+      "timelineId": "tl_e968118836c2",
+      "eventId": "evt_e968118836c2",
+      "chapterId": "ch_0071",
+      "orderHint": "chapter-order",
+      "summary": "方源使用月光蛊和小光蛊配合，催发出扩大版的月刃，斩杀山猪。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0057",
+          "startOffset": 218705,
+          "endOffset": 218706,
+          "summary": "方源使用白豕蛊吞噬野猪肉，白豕蛊体型未变。"
+        }
+      ],
+      "timelineId": "tl_e6d132845f6e",
+      "eventId": "evt_e6d132845f6e",
+      "chapterId": "ch_0071",
+      "orderHint": "chapter-order",
+      "summary": "方源使用白豕蛊吞噬野猪肉，白豕蛊体型未变。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0077",
+          "startOffset": 219475,
+          "endOffset": 219500,
+          "summary": "方源使用白豕蛊进行力量修行，但因过度使用引发剧痛而停止"
+        }
+      ],
+      "timelineId": "tl_35e0108c673d",
+      "eventId": "evt_35e0108c673d",
+      "chapterId": "ch_0071",
+      "orderHint": "chapter-order",
+      "summary": "方源使用白豕蛊进行力量修行，但因过度使用引发剧痛而停止",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0071",
+          "paragraphId": "ch_0071_p0068",
+          "startOffset": 219188,
+          "endOffset": 219215,
+          "summary": "方源将山猪獠牙藏到石缝秘洞中"
+        }
+      ],
+      "timelineId": "tl_16a8891eca59",
+      "eventId": "evt_16a8891eca59",
+      "chapterId": "ch_0071",
+      "orderHint": "chapter-order",
+      "summary": "方源将山猪獠牙藏到石缝秘洞中",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0004",
+      "startOffset": 216596,
+      "endOffset": 216598,
+      "summary": "蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0034",
+      "startOffset": 217900,
+      "endOffset": 217902,
+      "summary": "蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0068",
+      "startOffset": 219188,
+      "endOffset": 219190,
+      "summary": "中阶蛊师，拥有酒虫、月刃、白豕蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0024",
+      "startOffset": 217544,
+      "endOffset": 217574,
+      "summary": "方源使用月光蛊攻击山猪，并尝试使用白豕蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0049",
+      "startOffset": 218452,
+      "endOffset": 218453,
+      "summary": "方源使用月光蛊和小光蛊配合，催发出扩大版的月刃，斩杀山猪。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0057",
+      "startOffset": 218705,
+      "endOffset": 218706,
+      "summary": "方源使用白豕蛊吞噬野猪肉，白豕蛊体型未变。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0077",
+      "startOffset": 219475,
+      "endOffset": 219500,
+      "summary": "方源使用白豕蛊进行力量修行，但因过度使用引发剧痛而停止"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0071",
+      "paragraphId": "ch_0071_p0068",
+      "startOffset": 219188,
+      "endOffset": 219215,
+      "summary": "方源将山猪獠牙藏到石缝秘洞中"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "All events in this chapter are ordinary cultivation actions (hunting boar, using gu, hiding tusks) performed by Fang Yuan alone in the wild. There is no private knowledge, secret motive/plan, future-known information, or knowledge gap supported by the source. The events are either directly observable actions or internal cultivation attempts with no hidden/secret dimension. No actor is shown knowing something others don't, and no future-known information is present.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed only shows Fang Yuan hunting a boar, using White Boar Gu to eat meat, training with it, and hiding the tusks. These are routine cultivation/foraging actions. No clear observed motive beyond basic survival/resource gathering is directly supported. The behavior is visible but the underlying motive (e.g., why he is gathering resources, what his goal is) is ambiguous from the seed facts alone. Cannot infer a specific motive without making a psychological leap.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package only contains a single person (方源) engaging in solo cultivation and hunting activities. There are no factions, clans, families, or groups mentioned in the entities, relations, or events. No group-level stakes, pressures, or organizational dynamics can be derived from this seed."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

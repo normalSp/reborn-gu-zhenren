@@ -1,0 +1,1145 @@
+{
+  "schema": "reborng.mirofish.art-intake-pack.v1",
+  "requestId": "mirofish-request-2026-05-18-v016-battle-scene-composition-anchor-pack",
+  "packageKey": "v016_battle_scene_composition_anchor",
+  "title": "v0.16 Battle Scene Composition Anchor Pack",
+  "generatedAt": "2026-05-18T04:21:09.656772+00:00",
+  "sourceDataset": {
+    "path": "uploads/ri_corpus/exports/living_world_review_strict_flash_0600_reviewable",
+    "chapterRange": "0001-0600",
+    "strictReviewBase": true,
+    "coverageKnownComplete": true
+  },
+  "redactionBoundary": {
+    "sourceBodyTextIncluded": false,
+    "textSnippetFieldsIncluded": false,
+    "hiddenOrHighTierFactsWithheld": true
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "candidate_only",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "requiresHumanCanonReview": true,
+    "notes": [
+      "for RebornG candidate material only",
+      "not canon, not player truth, not engine authority"
+    ]
+  },
+  "deliveryStatus": "complete_candidate",
+  "caveats": [
+    "Eight requested battle anchors have source-backed candidate entries in 0001-0600.",
+    "Some viewpoint details remain art-review choices rather than runtime facts."
+  ],
+  "items": [
+    {
+      "id": "xiong-li-squad-vs-bai-ning-bing",
+      "category": "battle_scene_composition_anchor",
+      "summary": "熊力小组与白凝冰在狼群压力下交战，适合作为多主体战斗构图锚点。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [
+        "pov_requires_human_check"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0136",
+          "chapterId": "ch_0136",
+          "field": "events",
+          "itemId": "evt_310e33d5551e",
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0136",
+          "chapterId": "ch_0136",
+          "field": "events",
+          "itemId": "evt_46d30608ba78",
+          "summary": "白凝冰与熊力小组交战，白凝冰斩杀豪电狼和治疗蛊师，右臂骨折，但仍占据上风",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0137",
+          "chapterId": "ch_0137",
+          "field": "events",
+          "itemId": "evt_197426ec5cef",
+          "summary": "熊力小组与白凝冰激战，白凝冰压制熊力等人，但未全力以赴",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_e8cc17c82ce0",
+        "sp_42a8eb953a29",
+        "sp_0e302d52270a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0136",
+          "paragraphId": "ch_0136_p0014",
+          "startOffset": 444208,
+          "endOffset": 444224,
+          "summary": "熊力小组因强取蛊归属问题与白凝冰发生战斗，同时身处狼群包围中",
+          "sourcePointerId": "sp_e8cc17c82ce0"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0136",
+          "paragraphId": "ch_0136_p0066",
+          "startOffset": 446873,
+          "endOffset": 446876,
+          "summary": "白凝冰与熊力小组交战，白凝冰斩杀豪电狼和治疗蛊师，右臂骨折，但仍占据上风",
+          "sourcePointerId": "sp_42a8eb953a29"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0137",
+          "paragraphId": "ch_0137_p0003",
+          "startOffset": 447582,
+          "endOffset": 447590,
+          "summary": "熊力小组与白凝冰激战，白凝冰压制熊力等人，但未全力以赴",
+          "sourcePointerId": "sp_0e302d52270a"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "xiong-li",
+          "role": "frontline_strength_anchor",
+          "visualCue": "宽肩近战姿态"
+        },
+        {
+          "characterId": "xiong-jiang",
+          "role": "squad_support",
+          "visualCue": "侧翼协同"
+        },
+        {
+          "characterId": "bai-ning-bing",
+          "role": "opposing_focus",
+          "visualCue": "冷色压迫感"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "xiong-li",
+        "clashBeatOptions": [
+          {
+            "beatId": "wolf-pressure-triangle",
+            "description": "狼群外压与双方正面冲突构成三角张力。"
+          },
+          {
+            "beatId": "squad-vs-single-focus",
+            "description": "小队群像与白凝冰单点威胁形成反差。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "山林",
+          "狼群包围"
+        ],
+        "atmosphere": [
+          "紧张",
+          "近中景"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要画成单挑空场",
+        "不要省略狼群压力",
+        "不要加入超出本窗口的意象"
+      ]
+    },
+    {
+      "id": "fang-yuan-monkey-king-cavern-fight",
+      "category": "battle_scene_composition_anchor",
+      "summary": "方源进入石猴洞窟警戒范围，猴群围攻与猴王偷袭构成洞窟遭遇战。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "mechanism_redacted",
+        "weapon_detail_requires_review"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0116",
+          "chapterId": "ch_0116",
+          "field": "events",
+          "itemId": "evt_a8520416dd99",
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0080",
+          "chapterId": "ch_0080",
+          "field": "events",
+          "itemId": "evt_9c9c726aa067",
+          "summary": "方源尝试前进，发现接近石柱会惊动大量玉眼石猴",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0081",
+          "chapterId": "ch_0081",
+          "field": "events",
+          "itemId": "evt_224f0a47244a",
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_281012fe7df2",
+        "sp_9c6182d7d251",
+        "sp_f3a02222890f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0116",
+          "paragraphId": "ch_0116_p0046",
+          "startOffset": 372712,
+          "endOffset": 372714,
+          "summary": "方源踏入猴群警戒线，玉眼石猴群围攻，石猴王隐身偷袭方源，被白玉蛊防御抵挡",
+          "sourcePointerId": "sp_281012fe7df2"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0080",
+          "paragraphId": "ch_0080_p0076",
+          "startOffset": 249856,
+          "endOffset": 249858,
+          "summary": "方源尝试前进，发现接近石柱会惊动大量玉眼石猴",
+          "sourcePointerId": "sp_9c6182d7d251"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0081",
+          "paragraphId": "ch_0081_p0061",
+          "startOffset": 252272,
+          "endOffset": 252341,
+          "summary": "方源在石林中探索时多次被玉眼石猴群追杀，最危险一次被上百只追杀",
+          "sourcePointerId": "sp_f3a02222890f"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "fang-yuan",
+          "role": "human_focus",
+          "visualCue": "低阶防御姿态"
+        },
+        {
+          "characterId": "stone-monkey-king",
+          "role": "ambush_focus",
+          "visualCue": "石色伏击轮廓"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "fang-yuan",
+        "clashBeatOptions": [
+          {
+            "beatId": "monkey-swarm-line",
+            "description": "石猴群从石柱间压近，主角被迫守势。"
+          },
+          {
+            "beatId": "hidden-king-ambush",
+            "description": "猴王从侧后方偷袭，画面应突出突然性而非机制解释。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "地下石林",
+          "洞窟阴影"
+        ],
+        "atmosphere": [
+          "压迫",
+          "近距离围攻"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要呈现金属长刀主武器",
+        "不要加入机制说明",
+        "不要画成开阔森林战"
+      ]
+    },
+    {
+      "id": "first-gen-vs-tie-xue-leng-blood-lake",
+      "category": "battle_scene_composition_anchor",
+      "summary": "血湖空间中，古月一代与铁血冷、血河蟒等战斗要素形成高压红色战场。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [
+        "identity_boundary"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0186",
+          "chapterId": "ch_0186",
+          "field": "events",
+          "itemId": "evt_1e8e93f39b7c",
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_48def73b2240",
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0185",
+          "chapterId": "ch_0185",
+          "field": "events",
+          "itemId": "evt_937f149775c2",
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_ce65256e2dbd",
+        "sp_335dc65714e7",
+        "sp_4d11f42fbb58"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0186",
+          "paragraphId": "ch_0186_p0079",
+          "startOffset": 624871,
+          "endOffset": 624874,
+          "summary": "铁血冷操控巨傀与血河蟒战斗，古月一代现身，铁血冷旧疾复发",
+          "sourcePointerId": "sp_ce65256e2dbd"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0054",
+          "startOffset": 620759,
+          "endOffset": 620798,
+          "summary": "铁血冷与血河蟒激战，血河蟒狂暴攻击，铁血冷闪避",
+          "sourcePointerId": "sp_335dc65714e7"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0185",
+          "paragraphId": "ch_0185_p0088",
+          "startOffset": 621970,
+          "endOffset": 621996,
+          "summary": "铁血冷与血河蟒进行五转级数的战斗，导致洞顶碎石掉落，方源陷入危险",
+          "sourcePointerId": "sp_4d11f42fbb58"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "first-gen-gu-yue",
+          "role": "blood-lake_pressure",
+          "visualCue": "红色战场核心"
+        },
+        {
+          "characterId": "tie-xue-leng",
+          "role": "counter_force",
+          "visualCue": "硬朗追捕者剪影"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "first-gen-gu-yue",
+        "clashBeatOptions": [
+          {
+            "beatId": "giant-puppet-vs-serpent",
+            "description": "巨傀与血河蟒对抗，适合作为背景大形体。"
+          },
+          {
+            "beatId": "hunter-vs-ancestor",
+            "description": "铁血冷与古月一代形成对峙焦点。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "血湖",
+          "地下空间"
+        ],
+        "atmosphere": [
+          "暗红",
+          "压迫"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要解释身份因果",
+        "不要画成普通湖面",
+        "不要加入超出本窗口的视觉符号"
+      ]
+    },
+    {
+      "id": "thunder-crown-wolf-village-battle",
+      "category": "battle_scene_composition_anchor",
+      "summary": "雷冠头狼率狼群冲击古月山寨，适合作为山寨防线与兽潮压境构图。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "events",
+          "itemId": "evt_1a51f1fc1a49",
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0164",
+          "chapterId": "ch_0164",
+          "field": "relations",
+          "itemId": "rel_6b25830b7edb",
+          "summary": "雷冠头狼率领狼群攻击古月山寨",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0150",
+          "chapterId": "ch_0150",
+          "field": "events",
+          "itemId": "evt_2870d25ef499",
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_50124a1c0532",
+        "sp_5b6d4a4c98ac",
+        "sp_37f512c17ff5"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0083",
+          "startOffset": 547097,
+          "endOffset": 547156,
+          "summary": "雷冠头狼率领狼群攻击古月山寨，古月一族奋力抵抗",
+          "sourcePointerId": "sp_50124a1c0532"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0164",
+          "paragraphId": "ch_0164_p0075",
+          "startOffset": 546856,
+          "endOffset": 546879,
+          "summary": "雷冠头狼率领狼群攻击古月山寨",
+          "sourcePointerId": "sp_5b6d4a4c98ac"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0150",
+          "paragraphId": "ch_0150_p0041",
+          "startOffset": 494799,
+          "endOffset": 494801,
+          "summary": "方源观察狼群，确认没有雷冠头狼，认为山寨安全",
+          "sourcePointerId": "sp_37f512c17ff5"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "thunder-crown-wolf",
+          "role": "beast_boss",
+          "visualCue": "雷纹头冠与狼群中心"
+        },
+        {
+          "characterId": "gu-yue-village-defenders",
+          "role": "defense_line",
+          "visualCue": "寨墙或入口处防御阵列"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "thunder-crown-wolf",
+        "clashBeatOptions": [
+          {
+            "beatId": "beast-wave-arrival",
+            "description": "狼群压到寨前，防线显得拥挤。"
+          },
+          {
+            "beatId": "boss-lead-charge",
+            "description": "雷冠头狼居中或高位，带动视线冲向山寨。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "山寨外缘",
+          "兽潮路线"
+        ],
+        "atmosphere": [
+          "夜战可选",
+          "群体冲击"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要把狼群画成少量背景点",
+        "不要弱化山寨防线",
+        "不要加入飞天式战斗"
+      ]
+    },
+    {
+      "id": "first-gen-vs-tie-xue-leng-crane-chaos",
+      "category": "battle_scene_composition_anchor",
+      "summary": "古月一代、铁血冷与鹤群相关战场交错，适合作为混乱多层战斗构图。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct_partial",
+      "riskTags": [
+        "sect_context_redacted"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0194",
+          "chapterId": "ch_0194",
+          "field": "events",
+          "itemId": "evt_36c6e108c177",
+          "summary": "天鹤上人攻击古月山寨，屠杀蛊师",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_046629231f14"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0194",
+          "paragraphId": "ch_0194_p0004",
+          "startOffset": 650398,
+          "endOffset": 650402,
+          "summary": "天鹤上人攻击古月山寨，屠杀蛊师",
+          "sourcePointerId": "sp_046629231f14"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "first-gen-gu-yue",
+          "role": "central_pressure",
+          "visualCue": "被束缚或被围压的红色焦点"
+        },
+        {
+          "characterId": "tie-xue-leng",
+          "role": "ground_pressure",
+          "visualCue": "近地硬线条对抗"
+        },
+        {
+          "characterId": "crane-side-force",
+          "role": "airborne_disruption",
+          "visualCue": "鹤群和白色线性压迫"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "first-gen-gu-yue",
+        "clashBeatOptions": [
+          {
+            "beatId": "white-line-bind",
+            "description": "白色线性压迫与红色主体形成视觉对冲。"
+          },
+          {
+            "beatId": "ground-air-chaos",
+            "description": "地面交战与空中鹤群同时制造画面层次。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "山寨乱战",
+          "空地和空中层次"
+        ],
+        "atmosphere": [
+          "混乱",
+          "多方向拉扯"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要解释门派层级",
+        "不要表现境界设定",
+        "不要把鹤群画成祥瑞背景"
+      ]
+    },
+    {
+      "id": "fang-yuan-vs-bai-ning-bing-second-battle",
+      "category": "battle_scene_composition_anchor",
+      "summary": "方源与白凝冰第二次交战以近战压制、冰系远攻和防御反制构成强对照。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0167",
+          "chapterId": "ch_0167",
+          "field": "events",
+          "itemId": "evt_4c4473295bda",
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_3a38a6c98c2f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0167",
+          "paragraphId": "ch_0167_p0097",
+          "startOffset": 557433,
+          "endOffset": 557435,
+          "summary": "方源与白凝冰第二次战斗，方源使用锯齿金蜈近战压制，白凝冰改用蓝鸟冰棺蛊和冰锥蛊远攻，方源用血色月刃和天蓬蛊应对，最后方源将锯齿金蜈钻入地下制造威胁",
+          "sourcePointerId": "sp_3a38a6c98c2f"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "fang-yuan",
+          "role": "close_range_pressure",
+          "visualCue": "金色蜈蚣形近战线条"
+        },
+        {
+          "characterId": "bai-ning-bing",
+          "role": "ice_range_pressure",
+          "visualCue": "冰蓝远攻和冷白轮廓"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "fang-yuan",
+        "clashBeatOptions": [
+          {
+            "beatId": "centipede-close-pressure",
+            "description": "金蜈近战线条逼近白凝冰。"
+          },
+          {
+            "beatId": "ice-range-counter",
+            "description": "冰锥和冷色远攻切开画面空间。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "山林战场",
+          "开阔近中景"
+        ],
+        "atmosphere": [
+          "冷暖对冲",
+          "高速"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要把方源画成超出本窗口的形态",
+        "不要省略冰系对抗",
+        "不要加入超出本窗口的专属视觉符号"
+      ]
+    },
+    {
+      "id": "qing-shu-vs-bai-ning-bing-forest-duel",
+      "category": "battle_scene_composition_anchor",
+      "summary": "青书与白凝冰在森林中以木系缠绕和冰刃切割形成清晰属性对冲。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [
+        "outcome_boundary"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0143",
+          "chapterId": "ch_0143",
+          "field": "events",
+          "itemId": "evt_c20b7524206f",
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0142",
+          "chapterId": "ch_0142",
+          "field": "events",
+          "itemId": "evt_5b4fbcc00cec",
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0141",
+          "chapterId": "ch_0141",
+          "field": "events",
+          "itemId": "evt_65e69caea238",
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_98d16e9ac9c6",
+        "sp_1830a49f25f1",
+        "sp_76542326d1fe"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0143",
+          "paragraphId": "ch_0143_p0010",
+          "startOffset": 469010,
+          "endOffset": 469030,
+          "summary": "古月青书与白凝冰激战，古月青书使用木魅蛊和青藤蛊，白凝冰使用冰刃蛊，最终古月青书因木魅蛊侵蚀而濒死，白凝冰真元耗尽后恢复少量真元斩断青藤，双方僵持",
+          "sourcePointerId": "sp_98d16e9ac9c6"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0142",
+          "paragraphId": "ch_0142_p0095",
+          "startOffset": 468388,
+          "endOffset": 468392,
+          "summary": "古月青书使用木魅蛊化为树精，与白凝冰激战，白凝冰使用冰刃风暴反击",
+          "sourcePointerId": "sp_1830a49f25f1"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0141",
+          "paragraphId": "ch_0141_p0081",
+          "startOffset": 464739,
+          "endOffset": 464774,
+          "summary": "白凝冰走向古月青书，询问方源下落，古月青书拒绝并准备战斗",
+          "sourcePointerId": "sp_76542326d1fe"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "gu-yue-qing-shu",
+          "role": "wood_binding_focus",
+          "visualCue": "青藤和树木轮廓"
+        },
+        {
+          "characterId": "bai-ning-bing",
+          "role": "ice_cutting_focus",
+          "visualCue": "冰刃与冷白剪影"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "gu-yue-qing-shu",
+        "clashBeatOptions": [
+          {
+            "beatId": "vine-bind-vs-ice-cut",
+            "description": "藤蔓束缚与冰刃切割形成画面交错。"
+          },
+          {
+            "beatId": "forest-duel-pressure",
+            "description": "森林遮挡使二人对冲更集中。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "密林",
+          "树冠和藤蔓"
+        ],
+        "atmosphere": [
+          "冷色切割",
+          "绿色包围"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要给出结局定论",
+        "不要把青书画成非人怪物",
+        "不要加入超出本窗口的光效"
+      ]
+    },
+    {
+      "id": "earthwolf-spider-third-battle",
+      "category": "battle_scene_composition_anchor",
+      "summary": "方源骑千里地狼蛛出场，与白凝冰在地面突袭和冰系反击中交战。",
+      "windowTier": "0001-0400-main",
+      "evidenceStatus": "direct",
+      "riskTags": [
+        "body_trait_redacted"
+      ],
+      "sourceEvidence": [
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_7b672cda0be1",
+          "summary": "方源骑千里地狼蛛从地下出现，与白凝冰交战，使用锯齿金蜈对抗冰刃，千里地狼蛛攻击白凝冰，白凝冰骑白相仙蛇应战",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_be04a26c1ae0",
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "confidence": "medium"
+        },
+        {
+          "packageId": "ri_lw_ch_0191",
+          "chapterId": "ch_0191",
+          "field": "events",
+          "itemId": "evt_cbd4bbe5be9f",
+          "summary": "方源与白凝冰在迷雾中战斗，方源使用地听肉耳草听声辩位，白凝冰使用电眼蛊和冰锥蛊攻击",
+          "confidence": "medium"
+        }
+      ],
+      "sourcePointerIds": [
+        "sp_2e8cda80e137",
+        "sp_2127da087169",
+        "sp_7503f6f7529f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0012",
+          "startOffset": 640008,
+          "endOffset": 640010,
+          "summary": "方源骑千里地狼蛛从地下出现，与白凝冰交战，使用锯齿金蜈对抗冰刃，千里地狼蛛攻击白凝冰，白凝冰骑白相仙蛇应战",
+          "sourcePointerId": "sp_2e8cda80e137"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0042",
+          "startOffset": 640967,
+          "endOffset": 640986,
+          "summary": "方源被千里地狼蛛带到三族大比武战场",
+          "sourcePointerId": "sp_2127da087169"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0191",
+          "paragraphId": "ch_0191_p0078",
+          "startOffset": 642131,
+          "endOffset": 642173,
+          "summary": "方源与白凝冰在迷雾中战斗，方源使用地听肉耳草听声辩位，白凝冰使用电眼蛊和冰锥蛊攻击",
+          "sourcePointerId": "sp_7503f6f7529f"
+        }
+      ],
+      "reviewStatus": "export_ready",
+      "review": {
+        "status": "export_ready",
+        "classification": "art-intake-candidate",
+        "notes": [
+          "compiled from MiroFish strict/reviewable base",
+          "candidate-only; requires RebornG art and lore intake review before runtime use",
+          "source body text is not included"
+        ]
+      },
+      "reborngGate": {
+        "materialType": "battle_scene_art_anchor",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true,
+        "allowedUse": [
+          "composition_anchor",
+          "art_brief",
+          "candidate_pool"
+        ],
+        "blockedUse": [
+          "runtime_truth",
+          "canon_authority",
+          "deepseek_authority",
+          "formal_reward",
+          "formal_task_unlock",
+          "formal_location_unlock",
+          "npc_life_conclusion",
+          "hidden_fact_body"
+        ]
+      },
+      "namedCharacters": [
+        {
+          "characterId": "fang-yuan",
+          "role": "mounted_assault",
+          "visualCue": "低位突入和蛛形坐骑"
+        },
+        {
+          "characterId": "bai-ning-bing",
+          "role": "ice_counter",
+          "visualCue": "冰刃防守或反击"
+        },
+        {
+          "characterId": "earthwolf-spider",
+          "role": "mount_anchor",
+          "visualCue": "巨型蛛体贴地突进"
+        }
+      ],
+      "compositionHints": {
+        "cameraDistance": "medium_or_wide",
+        "cameraHeight": "low_or_eye_level",
+        "foregroundFocus": "fang-yuan",
+        "clashBeatOptions": [
+          {
+            "beatId": "underground-emergence",
+            "description": "千里地狼蛛从低处突入，压迫画面下半部。"
+          },
+          {
+            "beatId": "ice-vs-spider-mass",
+            "description": "冰刃与蛛体重量感形成强对照。"
+          }
+        ]
+      },
+      "environmentHints": {
+        "terrain": [
+          "地面裂开或地下突入",
+          "比斗混乱场"
+        ],
+        "atmosphere": [
+          "低角度",
+          "突袭"
+        ]
+      },
+      "hardAvoidAnchors": [
+        "不要表现体质说明",
+        "不要把坐骑画成普通狼",
+        "不要加入超出本窗口的设定"
+      ]
+    }
+  ],
+  "skipped": [],
+  "coverage": {
+    "itemCount": 8,
+    "skippedCount": 0,
+    "sourcePointerCount": 20,
+    "evidenceStatusCounts": {
+      "direct": 6,
+      "direct_partial": 2
+    }
+  }
+}

@@ -1,0 +1,914 @@
+{
+  "packageId": "ri_lw_ch_0131",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0131"
+    ],
+    "paragraphIds": [
+      "ch_0131_p0003",
+      "ch_0131_p0007",
+      "ch_0131_p0036",
+      "ch_0131_p0042",
+      "ch_0131_p0046",
+      "ch_0131_p0047",
+      "ch_0131_p0052",
+      "ch_0131_p0058",
+      "ch_0131_p0059",
+      "ch_0131_p0060",
+      "ch_0131_p0063",
+      "ch_0131_p0065",
+      "ch_0131_p0067",
+      "ch_0131_p0073",
+      "ch_0131_p0080",
+      "ch_0131_p0095",
+      "ch_0131_p0096",
+      "ch_0131_p0097",
+      "ch_0131_p0101"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0003",
+          "startOffset": 425648,
+          "endOffset": 425687,
+          "summary": "二转蛊师"
+        }
+      ],
+      "entityId": "entity_f50acd4ffea5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "二转蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0058",
+          "startOffset": 427574,
+          "endOffset": 427621,
+          "summary": "古月山寨蛊师"
+        }
+      ],
+      "entityId": "entity_416bb8c7e2a9",
+      "name": "古月方源",
+      "kind": "person",
+      "aliases": [
+        "方源"
+      ],
+      "description": "古月山寨蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0059",
+          "startOffset": 427625,
+          "endOffset": 427659,
+          "summary": "古月山寨蛊师，方源同窗"
+        }
+      ],
+      "entityId": "entity_55191eee72fe",
+      "name": "古月鹏",
+      "kind": "person",
+      "aliases": [
+        "小鹏"
+      ],
+      "description": "古月山寨蛊师，方源同窗",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0063",
+          "startOffset": 427762,
+          "endOffset": 427806,
+          "summary": "古月鹏所在小组的组长"
+        }
+      ],
+      "entityId": "entity_7c452cd1a328",
+      "name": "组长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "古月鹏所在小组的组长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0065",
+          "startOffset": 427839,
+          "endOffset": 427956,
+          "summary": "古月家族新人蛊师，方源的同族"
+        }
+      ],
+      "entityId": "entity_55191eee72fe",
+      "name": "古月鹏",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族新人蛊师，方源的同族",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0065",
+          "startOffset": 427839,
+          "endOffset": 427956,
+          "summary": "古月家族蛊师，组长，但未招组员"
+        }
+      ],
+      "entityId": "entity_f50acd4ffea5",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月家族蛊师，组长，但未招组员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0073",
+          "startOffset": 428363,
+          "endOffset": 428391,
+          "summary": "二转蛊师，负责侦查，古月鹏所在小组的组长"
+        }
+      ],
+      "entityId": "entity_586102b1e5b1",
+      "name": "古月鹏小组组长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "二转蛊师，负责侦查，古月鹏所在小组的组长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0097",
+          "startOffset": 429086,
+          "endOffset": 429124,
+          "summary": "被豪电狼杀死的人"
+        }
+      ],
+      "entityId": "entity_55191eee72fe",
+      "name": "古月鹏",
+      "kind": "person",
+      "aliases": [],
+      "description": "被豪电狼杀死的人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0059",
+          "startOffset": 427625,
+          "endOffset": 427659,
+          "summary": "方源曾欺压勒索古月鹏，古月鹏对方源有怨气"
+        }
+      ],
+      "relationId": "rel_6721f611ba97",
+      "subject": "古月方源",
+      "object": "古月鹏",
+      "relationType": "CONFLICT",
+      "summary": "方源曾欺压勒索古月鹏，古月鹏对方源有怨气",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0065",
+          "startOffset": 427839,
+          "endOffset": 427956,
+          "summary": "古月鹏是组长小组的成员，组长曾照顾新人"
+        }
+      ],
+      "relationId": "rel_5272bab5ad66",
+      "subject": "古月鹏",
+      "object": "古月鹏小组组长",
+      "relationType": "FACTION",
+      "summary": "古月鹏是组长小组的成员，组长曾照顾新人",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0067",
+          "startOffset": 427994,
+          "endOffset": 428159,
+          "summary": "古月鹏内心轻视方源，认为方源是傻瓜、垫底"
+        }
+      ],
+      "relationId": "rel_133e55d08a8f",
+      "subject": "古月鹏",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "古月鹏内心轻视方源，认为方源是傻瓜、垫底",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0007",
+          "startOffset": 425805,
+          "endOffset": 425855,
+          "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗"
+        }
+      ],
+      "eventId": "evt_d1bfaab74b5f",
+      "eventType": "conflict",
+      "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "电狼群被方源击杀或击退"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0036",
+          "startOffset": 426804,
+          "endOffset": 426832,
+          "summary": "方源击杀多只电狼，电狼群溃逃"
+        }
+      ],
+      "eventId": "evt_0f5033032552",
+      "eventType": "conflict",
+      "summary": "方源击杀多只电狼，电狼群溃逃",
+      "actors": [
+        "古月方源",
+        "电狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得电狼眼珠战利品"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0042",
+          "startOffset": 426971,
+          "endOffset": 427011,
+          "summary": "方源使用地听肉耳草侦察周围"
+        }
+      ],
+      "eventId": "evt_d8d82f66ea7d",
+      "eventType": "other",
+      "summary": "方源使用地听肉耳草侦察周围",
+      "actors": [
+        "古月方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "确认暂时安全"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0046",
+          "startOffset": 427126,
+          "endOffset": 427150,
+          "summary": "方源挖取电狼眼珠，只上交一小部分"
+        }
+      ],
+      "eventId": "evt_fd4a492a1321",
+      "eventType": "other",
+      "summary": "方源挖取电狼眼珠，只上交一小部分",
+      "actors": [
+        "古月方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "避免引起怀疑"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0052",
+          "startOffset": 427322,
+          "endOffset": 427353,
+          "summary": "方源预知狼潮即将爆发，返回山寨"
+        }
+      ],
+      "eventId": "evt_5e28eedf5d31",
+      "eventType": "other",
+      "summary": "方源预知狼潮即将爆发，返回山寨",
+      "actors": [
+        "古月方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "途中遇到古月鹏小组"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0060",
+          "startOffset": 427663,
+          "endOffset": 427700,
+          "summary": "方源与古月鹏相遇，未理会其挑衅"
+        }
+      ],
+      "eventId": "evt_47aaaa3f6403",
+      "eventType": "other",
+      "summary": "方源与古月鹏相遇，未理会其挑衅",
+      "actors": [
+        "古月方源",
+        "古月鹏"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月鹏憋闷"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0096",
+          "startOffset": 429051,
+          "endOffset": 429082,
+          "summary": "古月鹏被豪电狼扑倒并咬断脑袋死亡"
+        }
+      ],
+      "eventId": "evt_bdfe6082064a",
+      "eventType": "death",
+      "summary": "古月鹏被豪电狼扑倒并咬断脑袋死亡",
+      "actors": [
+        "古月鹏",
+        "豪电狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月鹏死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0080",
+          "startOffset": 428598,
+          "endOffset": 428627,
+          "summary": "古月鹏小组遭遇上千电狼群，组长带头逃跑，古月鹏被抛弃"
+        }
+      ],
+      "eventId": "evt_7be254be80f7",
+      "eventType": "conflict",
+      "summary": "古月鹏小组遭遇上千电狼群，组长带头逃跑，古月鹏被抛弃",
+      "actors": [
+        "古月鹏小组",
+        "狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月鹏被狼群追上并死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0097",
+          "startOffset": 429086,
+          "endOffset": 429124,
+          "summary": "古月鹏被豪电狼杀死并啃食"
+        }
+      ],
+      "eventId": "evt_0d96819ec410",
+      "eventType": "death",
+      "summary": "古月鹏被豪电狼杀死并啃食",
+      "actors": [
+        "古月鹏"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月鹏死亡"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0101",
+          "startOffset": 429179,
+          "endOffset": 429188,
+          "summary": "狼潮来临"
+        }
+      ],
+      "eventId": "evt_bb03e98757fb",
+      "eventType": "other",
+      "summary": "狼潮来临",
+      "actors": [],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "狼潮开始"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0007",
+          "startOffset": 425805,
+          "endOffset": 425855,
+          "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗"
+        }
+      ],
+      "timelineId": "tl_d1bfaab74b5f",
+      "eventId": "evt_d1bfaab74b5f",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0036",
+          "startOffset": 426804,
+          "endOffset": 426832,
+          "summary": "方源击杀多只电狼，电狼群溃逃"
+        }
+      ],
+      "timelineId": "tl_0f5033032552",
+      "eventId": "evt_0f5033032552",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源击杀多只电狼，电狼群溃逃",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0042",
+          "startOffset": 426971,
+          "endOffset": 427011,
+          "summary": "方源使用地听肉耳草侦察周围"
+        }
+      ],
+      "timelineId": "tl_d8d82f66ea7d",
+      "eventId": "evt_d8d82f66ea7d",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源使用地听肉耳草侦察周围",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0046",
+          "startOffset": 427126,
+          "endOffset": 427150,
+          "summary": "方源挖取电狼眼珠，只上交一小部分"
+        }
+      ],
+      "timelineId": "tl_fd4a492a1321",
+      "eventId": "evt_fd4a492a1321",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源挖取电狼眼珠，只上交一小部分",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0052",
+          "startOffset": 427322,
+          "endOffset": 427353,
+          "summary": "方源预知狼潮即将爆发，返回山寨"
+        }
+      ],
+      "timelineId": "tl_5e28eedf5d31",
+      "eventId": "evt_5e28eedf5d31",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源预知狼潮即将爆发，返回山寨",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0060",
+          "startOffset": 427663,
+          "endOffset": 427700,
+          "summary": "方源与古月鹏相遇，未理会其挑衅"
+        }
+      ],
+      "timelineId": "tl_47aaaa3f6403",
+      "eventId": "evt_47aaaa3f6403",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "方源与古月鹏相遇，未理会其挑衅",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0096",
+          "startOffset": 429051,
+          "endOffset": 429082,
+          "summary": "古月鹏被豪电狼扑倒并咬断脑袋死亡"
+        }
+      ],
+      "timelineId": "tl_bdfe6082064a",
+      "eventId": "evt_bdfe6082064a",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "古月鹏被豪电狼扑倒并咬断脑袋死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0080",
+          "startOffset": 428598,
+          "endOffset": 428627,
+          "summary": "古月鹏小组遭遇上千电狼群，组长带头逃跑，古月鹏被抛弃"
+        }
+      ],
+      "timelineId": "tl_7be254be80f7",
+      "eventId": "evt_7be254be80f7",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "古月鹏小组遭遇上千电狼群，组长带头逃跑，古月鹏被抛弃",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0097",
+          "startOffset": 429086,
+          "endOffset": 429124,
+          "summary": "古月鹏被豪电狼杀死并啃食"
+        }
+      ],
+      "timelineId": "tl_0d96819ec410",
+      "eventId": "evt_0d96819ec410",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "古月鹏被豪电狼杀死并啃食",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0101",
+          "startOffset": 429179,
+          "endOffset": 429188,
+          "summary": "狼潮来临"
+        }
+      ],
+      "timelineId": "tl_bb03e98757fb",
+      "eventId": "evt_bb03e98757fb",
+      "chapterId": "ch_0131",
+      "orderHint": "chapter-order",
+      "summary": "狼潮来临",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0131",
+          "paragraphId": "ch_0131_p0052",
+          "startOffset": 427322,
+          "endOffset": 427353,
+          "summary": "方源预知狼潮即将爆发，返回山寨"
+        }
+      ],
+      "factId": "hf_ri_lw_ch_0131_001",
+      "summary": "方源根据前世记忆知道今天就是狼潮真正爆发的日子",
+      "whoKnows": [
+        "方源"
+      ],
+      "whoDoesNotKnow": [],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0003",
+      "startOffset": 425648,
+      "endOffset": 425687,
+      "summary": "二转蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0058",
+      "startOffset": 427574,
+      "endOffset": 427621,
+      "summary": "古月山寨蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0059",
+      "startOffset": 427625,
+      "endOffset": 427659,
+      "summary": "古月山寨蛊师，方源同窗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0063",
+      "startOffset": 427762,
+      "endOffset": 427806,
+      "summary": "古月鹏所在小组的组长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0065",
+      "startOffset": 427839,
+      "endOffset": 427956,
+      "summary": "古月家族新人蛊师，方源的同族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0073",
+      "startOffset": 428363,
+      "endOffset": 428391,
+      "summary": "二转蛊师，负责侦查，古月鹏所在小组的组长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0097",
+      "startOffset": 429086,
+      "endOffset": 429124,
+      "summary": "被豪电狼杀死的人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0067",
+      "startOffset": 427994,
+      "endOffset": 428159,
+      "summary": "古月鹏内心轻视方源，认为方源是傻瓜、垫底"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0007",
+      "startOffset": 425805,
+      "endOffset": 425855,
+      "summary": "方源与电狼群战斗，击杀数头电狼，后使用隐鳞蛊隐身恢复真元，电狼退去后又现身继续战斗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0036",
+      "startOffset": 426804,
+      "endOffset": 426832,
+      "summary": "方源击杀多只电狼，电狼群溃逃"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0042",
+      "startOffset": 426971,
+      "endOffset": 427011,
+      "summary": "方源使用地听肉耳草侦察周围"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0046",
+      "startOffset": 427126,
+      "endOffset": 427150,
+      "summary": "方源挖取电狼眼珠，只上交一小部分"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0052",
+      "startOffset": 427322,
+      "endOffset": 427353,
+      "summary": "方源预知狼潮即将爆发，返回山寨"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0060",
+      "startOffset": 427663,
+      "endOffset": 427700,
+      "summary": "方源与古月鹏相遇，未理会其挑衅"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0096",
+      "startOffset": 429051,
+      "endOffset": 429082,
+      "summary": "古月鹏被豪电狼扑倒并咬断脑袋死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0080",
+      "startOffset": 428598,
+      "endOffset": 428627,
+      "summary": "古月鹏小组遭遇上千电狼群，组长带头逃跑，古月鹏被抛弃"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0131",
+      "paragraphId": "ch_0131_p0101",
+      "startOffset": 429179,
+      "endOffset": 429188,
+      "summary": "狼潮来临"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "Source directly states Fang Yuan knows from his past life's memory that today is the day the wolf tide truly erupts. This is private knowledge (hidden) known only to Fang Yuan, not visible to other characters. The fact is atomic and source-backed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows behavior (方源 ignores 古月鹏's provocation and continues on his way) but the motive is ambiguous. 方源 knows wolf tide is coming (ptr_13) and is returning to the village. He ignores 古月鹏 (ptr_14). Later 古月鹏's group encounters the wolf tide and 古月鹏 dies (ptr_15, ptr_16). While one could infer 方源 knew danger was coming and didn't warn, the seed does not directly show 方源's intent to let 古月鹏 die or any deliberate omission of warning. The observed behavior is simply ignoring a provocation and continuing on his way. Inferring a motive of 'letting an enemy die' would be a psychological leap without direct source support.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual actions (Fang Yuan's solo hunting, Gu Yue Peng's death) and individual conflicts. Gu Yue Peng's group (小组) is mentioned but only as a team that fled and abandoned him; no ongoing faction-level pressure or stake is established. The 'Gu Yue family' is referenced as affiliation but no collective stake, interest, threat, or pressure axis is concretely source-backed. The wolf tide is a natural disaster threat, not a faction/group pressure. No named collective actor with a concrete stake in the seed facts qualifies for a faction pressure candidate.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

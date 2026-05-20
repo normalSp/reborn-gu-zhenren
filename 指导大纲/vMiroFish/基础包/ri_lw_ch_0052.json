@@ -1,0 +1,687 @@
+{
+  "packageId": "ri_lw_ch_0052",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0052"
+    ],
+    "paragraphIds": [
+      "ch_0052_p0002",
+      "ch_0052_p0003",
+      "ch_0052_p0008",
+      "ch_0052_p0014",
+      "ch_0052_p0020",
+      "ch_0052_p0032",
+      "ch_0052_p0034",
+      "ch_0052_p0053",
+      "ch_0052_p0063",
+      "ch_0052_p0065",
+      "ch_0052_p0066",
+      "ch_0052_p0068",
+      "ch_0052_p0076",
+      "ch_0052_p0080",
+      "ch_0052_p0082",
+      "ch_0052_p0089"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0002",
+          "startOffset": 154125,
+          "endOffset": 154135,
+          "summary": "学员，旷课"
+        }
+      ],
+      "entityId": "entity_34106185e0a1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，旷课",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0003",
+          "startOffset": 154170,
+          "endOffset": 154175,
+          "summary": "学堂家老，授课"
+        }
+      ],
+      "entityId": "entity_c5d9c73bb320",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂家老，授课",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0020",
+          "startOffset": 154770,
+          "endOffset": 154775,
+          "summary": "学员，方源弟弟"
+        }
+      ],
+      "entityId": "entity_07800ecfa9d1",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，方源弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0034",
+          "startOffset": 155170,
+          "endOffset": 155198,
+          "summary": "学员，被罚站"
+        }
+      ],
+      "entityId": "entity_34106185e0a1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，被罚站",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0053",
+          "startOffset": 155736,
+          "endOffset": 155751,
+          "summary": "学堂家老，授课者"
+        }
+      ],
+      "entityId": "entity_c5d9c73bb320",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂家老，授课者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0065",
+          "startOffset": 156020,
+          "endOffset": 156022,
+          "summary": "学员"
+        }
+      ],
+      "entityId": "entity_34106185e0a1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0076",
+          "startOffset": 156448,
+          "endOffset": 156452,
+          "summary": "学堂管理者"
+        }
+      ],
+      "entityId": "entity_c5d9c73bb320",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂管理者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0068",
+          "startOffset": 156130,
+          "endOffset": 156132,
+          "summary": "学堂侍卫"
+        }
+      ],
+      "entityId": "entity_ff725956ab8f",
+      "name": "侍卫",
+      "kind": "person",
+      "aliases": [],
+      "description": "学堂侍卫",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0080",
+          "startOffset": 156567,
+          "endOffset": 156569,
+          "summary": "已死之人"
+        }
+      ],
+      "entityId": "entity_c11f07ddfdd4",
+      "name": "高碗",
+      "kind": "person",
+      "aliases": [],
+      "description": "已死之人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0008",
+          "startOffset": 154354,
+          "endOffset": 154400,
+          "summary": "学堂家老想抓方源把柄，趁机发难"
+        }
+      ],
+      "relationId": "rel_f4aaef8e7b0f",
+      "subject": "学堂家老",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "学堂家老想抓方源把柄，趁机发难",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0020",
+          "startOffset": 154776,
+          "endOffset": 154831,
+          "summary": "古月方正称方源为哥哥"
+        }
+      ],
+      "relationId": "rel_19f500000f4d",
+      "subject": "古月方正",
+      "object": "方源",
+      "relationType": "FAMILY",
+      "summary": "古月方正称方源为哥哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0082",
+          "startOffset": 156641,
+          "endOffset": 156643,
+          "summary": "方源杀死侍卫，挑衅学堂权威，学堂家老愤怒质问"
+        }
+      ],
+      "relationId": "rel_507161b1a0f8",
+      "subject": "方源",
+      "object": "学堂家老",
+      "relationType": "CONFLICT",
+      "summary": "方源杀死侍卫，挑衅学堂权威，学堂家老愤怒质问",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0066",
+          "startOffset": 156051,
+          "endOffset": 156053,
+          "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫"
+        }
+      ],
+      "relationId": "rel_78d33b311023",
+      "subject": "方源",
+      "object": "侍卫",
+      "relationType": "CONFLICT",
+      "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0002",
+          "startOffset": 154125,
+          "endOffset": 154135,
+          "summary": "方源旷课，未到学堂"
+        }
+      ],
+      "eventId": "evt_5fd5281180a5",
+      "eventType": "other",
+      "summary": "方源旷课，未到学堂",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老派侍卫去宿舍提他"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0014",
+          "startOffset": 154599,
+          "endOffset": 154657,
+          "summary": "学堂家老因方源旷课，派侍卫去宿舍提他，准备惩处"
+        }
+      ],
+      "eventId": "evt_fafb217c15b6",
+      "eventType": "conflict",
+      "summary": "学堂家老因方源旷课，派侍卫去宿舍提他，准备惩处",
+      "actors": [
+        "学堂家老",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老计划罚方源站门外三个时辰"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0063",
+          "startOffset": 155970,
+          "endOffset": 155993,
+          "summary": "方源带着血手出现在学堂门口，引起众人惊恐"
+        }
+      ],
+      "eventId": "evt_6311a4c92b3f",
+      "eventType": "appearance",
+      "summary": "方源带着血手出现在学堂门口，引起众人惊恐",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老停止讲课，学员震惊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0065",
+          "startOffset": 156020,
+          "endOffset": 156022,
+          "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫进入学堂"
+        }
+      ],
+      "eventId": "evt_7c9344f2fcf9",
+      "eventType": "conflict",
+      "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫进入学堂",
+      "actors": [
+        "方源",
+        "侍卫"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂哗然，学堂家老愤怒质问方源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0082",
+          "startOffset": 156641,
+          "endOffset": 156643,
+          "summary": "学堂家老质问方源，要求解释杀侍卫之事"
+        }
+      ],
+      "eventId": "evt_21c7c4377f0a",
+      "eventType": "conflict",
+      "summary": "学堂家老质问方源，要求解释杀侍卫之事",
+      "actors": [
+        "方源",
+        "学堂家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源准备解释"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0002",
+          "startOffset": 154125,
+          "endOffset": 154135,
+          "summary": "方源旷课，未到学堂"
+        }
+      ],
+      "timelineId": "tl_5fd5281180a5",
+      "eventId": "evt_5fd5281180a5",
+      "chapterId": "ch_0052",
+      "orderHint": "chapter-order",
+      "summary": "方源旷课，未到学堂",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0014",
+          "startOffset": 154599,
+          "endOffset": 154657,
+          "summary": "学堂家老因方源旷课，派侍卫去宿舍提他，准备惩处"
+        }
+      ],
+      "timelineId": "tl_fafb217c15b6",
+      "eventId": "evt_fafb217c15b6",
+      "chapterId": "ch_0052",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老因方源旷课，派侍卫去宿舍提他，准备惩处",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0063",
+          "startOffset": 155970,
+          "endOffset": 155993,
+          "summary": "方源带着血手出现在学堂门口，引起众人惊恐"
+        }
+      ],
+      "timelineId": "tl_6311a4c92b3f",
+      "eventId": "evt_6311a4c92b3f",
+      "chapterId": "ch_0052",
+      "orderHint": "chapter-order",
+      "summary": "方源带着血手出现在学堂门口，引起众人惊恐",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0065",
+          "startOffset": 156020,
+          "endOffset": 156022,
+          "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫进入学堂"
+        }
+      ],
+      "timelineId": "tl_7c9344f2fcf9",
+      "eventId": "evt_7c9344f2fcf9",
+      "chapterId": "ch_0052",
+      "orderHint": "chapter-order",
+      "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫进入学堂",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0052",
+          "paragraphId": "ch_0052_p0082",
+          "startOffset": 156641,
+          "endOffset": 156643,
+          "summary": "学堂家老质问方源，要求解释杀侍卫之事"
+        }
+      ],
+      "timelineId": "tl_21c7c4377f0a",
+      "eventId": "evt_21c7c4377f0a",
+      "chapterId": "ch_0052",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老质问方源，要求解释杀侍卫之事",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0002",
+      "startOffset": 154125,
+      "endOffset": 154135,
+      "summary": "学员，旷课"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0003",
+      "startOffset": 154170,
+      "endOffset": 154175,
+      "summary": "学堂家老，授课"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0020",
+      "startOffset": 154770,
+      "endOffset": 154775,
+      "summary": "学员，方源弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0034",
+      "startOffset": 155170,
+      "endOffset": 155198,
+      "summary": "学员，被罚站"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0053",
+      "startOffset": 155736,
+      "endOffset": 155751,
+      "summary": "学堂家老，授课者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0065",
+      "startOffset": 156020,
+      "endOffset": 156022,
+      "summary": "学员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0076",
+      "startOffset": 156448,
+      "endOffset": 156452,
+      "summary": "学堂管理者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0068",
+      "startOffset": 156130,
+      "endOffset": 156132,
+      "summary": "学堂侍卫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0080",
+      "startOffset": 156567,
+      "endOffset": 156569,
+      "summary": "已死之人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0008",
+      "startOffset": 154354,
+      "endOffset": 154400,
+      "summary": "学堂家老想抓方源把柄，趁机发难"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0020",
+      "startOffset": 154776,
+      "endOffset": 154831,
+      "summary": "古月方正称方源为哥哥"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0082",
+      "startOffset": 156641,
+      "endOffset": 156643,
+      "summary": "方源杀死侍卫，挑衅学堂权威，学堂家老愤怒质问"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0066",
+      "startOffset": 156051,
+      "endOffset": 156053,
+      "summary": "方源杀死一名侍卫，拖拽另一名昏死侍卫"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0014",
+      "startOffset": 154599,
+      "endOffset": 154657,
+      "summary": "学堂家老因方源旷课，派侍卫去宿舍提他，准备惩处"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0052",
+      "paragraphId": "ch_0052_p0063",
+      "startOffset": 155970,
+      "endOffset": 155993,
+      "summary": "方源带着血手出现在学堂门口，引起众人惊恐"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes mostly public/visible events: Fang Yuan skipping class, the hall elder sending guards, Fang Yuan appearing bloody with a dead guard, and the hall elder questioning him. The only potentially hidden element is the hall elder's internal thought about wanting to catch Fang Yuan's weakness (from pointer ch_0052_p0008), but this is a subjective/internal thought that would be better classified as a character's private knowledge. However, the seed does not provide enough source-backed evidence for a clear hidden fact about plans, motives beyond what is directly stated, or future-known information. The events are largely visible to all present characters. No strong candidate for a hidden/future-known/player-visibility fact emerges from this seed.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan killed a guard and dragged another into the classroom after being sent for due to truancy. The elder wanted to catch Fang Yuan's fault. However, Fang Yuan's motive for killing the guard is not directly stated - it could be self-defense, resistance, or deliberate provocation. The observed behavior (killing a guard) is clear, but the inferred motive would require a psychological leap beyond what the seed directly supports. Per rules, if only behavior is visible and motive is ambiguous, return empty characterMotives.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "学堂家老作为学堂管理者/授课者，因方源旷课、杀侍卫而权威受挑衅，有明确冲突关系支撑。方源旷课（ptr_1）→家老想抓把柄（ptr_10）→方源杀侍卫挑衅（ptr_7）构成完整压力链。likelyReactions为保守的一步反应：惩处。",
+      "IF export filter quarantined 2 legacy old-schema branches.",
+      "Faction pressure subject filter quarantined 1 pressure candidates under policy reviewable."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

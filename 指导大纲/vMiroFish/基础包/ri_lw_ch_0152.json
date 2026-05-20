@@ -1,0 +1,792 @@
+{
+  "packageId": "ri_lw_ch_0152",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0152"
+    ],
+    "paragraphIds": [
+      "ch_0152_p0002",
+      "ch_0152_p0003",
+      "ch_0152_p0004",
+      "ch_0152_p0008",
+      "ch_0152_p0012",
+      "ch_0152_p0014",
+      "ch_0152_p0027",
+      "ch_0152_p0028",
+      "ch_0152_p0033",
+      "ch_0152_p0036",
+      "ch_0152_p0042",
+      "ch_0152_p0046",
+      "ch_0152_p0049",
+      "ch_0152_p0065",
+      "ch_0152_p0069",
+      "ch_0152_p0085"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0002",
+          "startOffset": 501212,
+          "endOffset": 501229,
+          "summary": "古月族少女，古月药乐的奶奶的孙女"
+        }
+      ],
+      "entityId": "entity_69c3fd5708fa",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [
+        "乐乐"
+      ],
+      "description": "古月族少女，古月药乐的奶奶的孙女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0003",
+          "startOffset": 501233,
+          "endOffset": 501262,
+          "summary": "古月族少年，绑架古月药乐"
+        }
+      ],
+      "entityId": "entity_5762fc15fc96",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族少年，绑架古月药乐",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0012",
+          "startOffset": 501547,
+          "endOffset": 501616,
+          "summary": "古月药乐的祖母，古月族长辈"
+        }
+      ],
+      "entityId": "entity_9ab30eaf61d1",
+      "name": "古月药乐的奶奶",
+      "kind": "single_person_title",
+      "aliases": [
+        "奶奶"
+      ],
+      "description": "古月药乐的祖母，古月族长辈",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0028",
+          "startOffset": 502125,
+          "endOffset": 502167,
+          "summary": "古月族成员，曾拥有驭熊蛊"
+        }
+      ],
+      "entityId": "entity_92261ac8ba4d",
+      "name": "熊骄嫚",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族成员，曾拥有驭熊蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0033",
+          "startOffset": 502297,
+          "endOffset": 502318,
+          "summary": "被方源绑架的少女"
+        }
+      ],
+      "entityId": "entity_ba4834fcaa51",
+      "name": "药乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "被方源绑架的少女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0036",
+          "startOffset": 502402,
+          "endOffset": 502414,
+          "summary": "主角，魔道蛊师"
+        }
+      ],
+      "entityId": "entity_5762fc15fc96",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0042",
+          "startOffset": 502570,
+          "endOffset": 502590,
+          "summary": "方源用驭熊蛊控制的野兽"
+        }
+      ],
+      "entityId": "entity_fc5f1dadd0ec",
+      "name": "黑熊",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源用驭熊蛊控制的野兽",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0069",
+          "startOffset": 503452,
+          "endOffset": 503456,
+          "summary": "少女，被杀害"
+        }
+      ],
+      "entityId": "entity_69c3fd5708fa",
+      "name": "古月药乐",
+      "kind": "person",
+      "aliases": [],
+      "description": "少女，被杀害",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0069",
+          "startOffset": 503452,
+          "endOffset": 503454,
+          "summary": "旁观者，主角"
+        }
+      ],
+      "entityId": "entity_5762fc15fc96",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "旁观者，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0003",
+          "startOffset": 501233,
+          "endOffset": 501262,
+          "summary": "方源绑架并囚禁古月药乐，意图不轨"
+        }
+      ],
+      "relationId": "rel_a9f0e517a987",
+      "subject": "方源",
+      "object": "古月药乐",
+      "relationType": "CONFLICT",
+      "summary": "方源绑架并囚禁古月药乐，意图不轨",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0014",
+          "startOffset": 501638,
+          "endOffset": 501677,
+          "summary": "古月药乐是奶奶的孙女"
+        }
+      ],
+      "relationId": "rel_fa2de261968a",
+      "subject": "古月药乐",
+      "object": "古月药乐的奶奶",
+      "relationType": "FAMILY",
+      "summary": "古月药乐是奶奶的孙女",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0028",
+          "startOffset": 502125,
+          "endOffset": 502167,
+          "summary": "方源曾从熊骄嫚手中索要驭熊蛊"
+        }
+      ],
+      "relationId": "rel_6b6ccebbc8c0",
+      "subject": "方源",
+      "object": "熊骄嫚",
+      "relationType": "TRADE",
+      "summary": "方源曾从熊骄嫚手中索要驭熊蛊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0036",
+          "startOffset": 502402,
+          "endOffset": 502414,
+          "summary": "方源撕扯药乐衣服，并让黑熊杀死并吃掉药乐"
+        }
+      ],
+      "relationId": "rel_789ca585da99",
+      "subject": "方源",
+      "object": "药乐",
+      "relationType": "CONFLICT",
+      "summary": "方源撕扯药乐衣服，并让黑熊杀死并吃掉药乐",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0049",
+          "startOffset": 502768,
+          "endOffset": 502809,
+          "summary": "方源用驭熊蛊指挥黑熊"
+        }
+      ],
+      "relationId": "rel_c8b649018dc4",
+      "subject": "方源",
+      "object": "黑熊",
+      "relationType": "USES",
+      "summary": "方源用驭熊蛊指挥黑熊",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0085",
+          "startOffset": 504152,
+          "endOffset": 504169,
+          "summary": "方源旁观古月药乐之死，内心无波澜"
+        }
+      ],
+      "relationId": "rel_ca8667166a93",
+      "subject": "方源",
+      "object": "古月药乐",
+      "relationType": "OTHER",
+      "summary": "方源旁观古月药乐之死，内心无波澜",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0003",
+          "startOffset": 501233,
+          "endOffset": 501262,
+          "summary": "方源击昏并绑架古月药乐，将其捆绑在山洞中，并取走其蛊虫"
+        }
+      ],
+      "eventId": "evt_21b80d9b15d5",
+      "eventType": "conflict",
+      "summary": "方源击昏并绑架古月药乐，将其捆绑在山洞中，并取走其蛊虫",
+      "actors": [
+        "方源",
+        "古月药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐被囚禁，失去蛊虫，陷入恐惧"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0004",
+          "startOffset": 501266,
+          "endOffset": 501308,
+          "summary": "方源使用隐鳞蛊隐藏自己和古月药乐的身影"
+        }
+      ],
+      "eventId": "evt_24148d8df0fb",
+      "eventType": "other",
+      "summary": "方源使用隐鳞蛊隐藏自己和古月药乐的身影",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "两人消失于原处"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0008",
+          "startOffset": 501401,
+          "endOffset": 501431,
+          "summary": "方源使用强取蛊取走古月药乐身上的所有蛊虫并炼化"
+        }
+      ],
+      "eventId": "evt_1d9d0ab47408",
+      "eventType": "other",
+      "summary": "方源使用强取蛊取走古月药乐身上的所有蛊虫并炼化",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐失去蛊虫，方源获得这些蛊虫"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0027",
+          "startOffset": 502051,
+          "endOffset": 502121,
+          "summary": "方源找到一头野熊，并带回山洞"
+        }
+      ],
+      "eventId": "evt_86825256fe95",
+      "eventType": "other",
+      "summary": "方源找到一头野熊，并带回山洞",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "野熊被方源控制，用于威胁古月药乐"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0046",
+          "startOffset": 502649,
+          "endOffset": 502685,
+          "summary": "药乐被黑熊拍断脖颈而死，随后被黑熊吃掉"
+        }
+      ],
+      "eventId": "evt_e0465e34e5d4",
+      "eventType": "death",
+      "summary": "药乐被黑熊拍断脖颈而死，随后被黑熊吃掉",
+      "actors": [
+        "药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "药乐死亡，尸体被黑熊食用"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0065",
+          "startOffset": 503305,
+          "endOffset": 503323,
+          "summary": "古月药乐的头颅掉在地上，死亡"
+        }
+      ],
+      "eventId": "evt_984cba56bcda",
+      "eventType": "death",
+      "summary": "古月药乐的头颅掉在地上，死亡",
+      "actors": [
+        "古月药乐"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "古月药乐死亡，方源旁观"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0003",
+          "startOffset": 501233,
+          "endOffset": 501262,
+          "summary": "方源击昏并绑架古月药乐，将其捆绑在山洞中，并取走其蛊虫"
+        }
+      ],
+      "timelineId": "tl_21b80d9b15d5",
+      "eventId": "evt_21b80d9b15d5",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "方源击昏并绑架古月药乐，将其捆绑在山洞中，并取走其蛊虫",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0004",
+          "startOffset": 501266,
+          "endOffset": 501308,
+          "summary": "方源使用隐鳞蛊隐藏自己和古月药乐的身影"
+        }
+      ],
+      "timelineId": "tl_24148d8df0fb",
+      "eventId": "evt_24148d8df0fb",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "方源使用隐鳞蛊隐藏自己和古月药乐的身影",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0008",
+          "startOffset": 501401,
+          "endOffset": 501431,
+          "summary": "方源使用强取蛊取走古月药乐身上的所有蛊虫并炼化"
+        }
+      ],
+      "timelineId": "tl_1d9d0ab47408",
+      "eventId": "evt_1d9d0ab47408",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "方源使用强取蛊取走古月药乐身上的所有蛊虫并炼化",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0027",
+          "startOffset": 502051,
+          "endOffset": 502121,
+          "summary": "方源找到一头野熊，并带回山洞"
+        }
+      ],
+      "timelineId": "tl_86825256fe95",
+      "eventId": "evt_86825256fe95",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "方源找到一头野熊，并带回山洞",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0046",
+          "startOffset": 502649,
+          "endOffset": 502685,
+          "summary": "药乐被黑熊拍断脖颈而死，随后被黑熊吃掉"
+        }
+      ],
+      "timelineId": "tl_e0465e34e5d4",
+      "eventId": "evt_e0465e34e5d4",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "药乐被黑熊拍断脖颈而死，随后被黑熊吃掉",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0152",
+          "paragraphId": "ch_0152_p0065",
+          "startOffset": 503305,
+          "endOffset": 503323,
+          "summary": "古月药乐的头颅掉在地上，死亡"
+        }
+      ],
+      "timelineId": "tl_984cba56bcda",
+      "eventId": "evt_984cba56bcda",
+      "chapterId": "ch_0152",
+      "orderHint": "chapter-order",
+      "summary": "古月药乐的头颅掉在地上，死亡",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0002",
+      "startOffset": 501212,
+      "endOffset": 501229,
+      "summary": "古月族少女，古月药乐的奶奶的孙女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0003",
+      "startOffset": 501233,
+      "endOffset": 501262,
+      "summary": "古月族少年，绑架古月药乐"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0012",
+      "startOffset": 501547,
+      "endOffset": 501616,
+      "summary": "古月药乐的祖母，古月族长辈"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0028",
+      "startOffset": 502125,
+      "endOffset": 502167,
+      "summary": "古月族成员，曾拥有驭熊蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0033",
+      "startOffset": 502297,
+      "endOffset": 502318,
+      "summary": "被方源绑架的少女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0036",
+      "startOffset": 502402,
+      "endOffset": 502414,
+      "summary": "主角，魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0042",
+      "startOffset": 502570,
+      "endOffset": 502590,
+      "summary": "方源用驭熊蛊控制的野兽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0069",
+      "startOffset": 503452,
+      "endOffset": 503456,
+      "summary": "少女，被杀害"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0069",
+      "startOffset": 503452,
+      "endOffset": 503454,
+      "summary": "旁观者，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0014",
+      "startOffset": 501638,
+      "endOffset": 501677,
+      "summary": "古月药乐是奶奶的孙女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0049",
+      "startOffset": 502768,
+      "endOffset": 502809,
+      "summary": "方源用驭熊蛊指挥黑熊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0085",
+      "startOffset": 504152,
+      "endOffset": 504169,
+      "summary": "方源旁观古月药乐之死，内心无波澜"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0004",
+      "startOffset": 501266,
+      "endOffset": 501308,
+      "summary": "方源使用隐鳞蛊隐藏自己和古月药乐的身影"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0008",
+      "startOffset": 501401,
+      "endOffset": 501431,
+      "summary": "方源使用强取蛊取走古月药乐身上的所有蛊虫并炼化"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0027",
+      "startOffset": 502051,
+      "endOffset": 502121,
+      "summary": "方源找到一头野熊，并带回山洞"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0046",
+      "startOffset": 502649,
+      "endOffset": 502685,
+      "summary": "药乐被黑熊拍断脖颈而死，随后被黑熊吃掉"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0152",
+      "paragraphId": "ch_0152_p0065",
+      "startOffset": 503305,
+      "endOffset": 503323,
+      "summary": "古月药乐的头颅掉在地上，死亡"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes events that are directly narrated/visible in the chapter: Fang Yuan kidnaps Gu Yue Yao Le, takes her Gu worms, brings a bear, and the bear kills and eats her. These are ordinary visible events, not hidden knowledge.",
+      "No private knowledge, secret motives/plans, future-known information, or knowledge gaps are directly supported by the source pointers.",
+      "The only potential hidden element would be Fang Yuan's inner motives/thoughts, but the source only shows his external actions and that he felt no ripples watching her die — this is still narrator-visible, not hidden.",
+      "No actor is shown to know something that others do not know, nor is there any future-known fact supported.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "方源旁观古月药乐之死内心无波澜，但仅此无法推断其动机。行为可见（绑架、取蛊、撕衣、杀之），但动机不明——可能为夺蛊、灭口、或单纯冷酷实验。种子未提供方源为何选择古月药乐、为何杀她、有何目的等直接信息。根据规则，行为可见但动机模糊时返回空数组。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed focuses on individual actions (Fang Yuan kidnapping and killing Gu Yue Yao Le). While Yao Le is identified as a Gu Yue clan girl and her grandmother is a Gu Yue elder, there is no source-backed evidence of collective clan/faction pressure, reaction, or stake. The events are individual criminal acts (kidnapping, murder) by Fang Yuan against Yao Le, not a faction-level conflict or pressure. No named collective actor (clan, faction, family) is shown reacting or having a concrete stake beyond the individual victim. The grandmother is mentioned only in Yao Le's thoughts, not as acting on behalf of the clan. No faction pressure axis can be reliably derived from the seed.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

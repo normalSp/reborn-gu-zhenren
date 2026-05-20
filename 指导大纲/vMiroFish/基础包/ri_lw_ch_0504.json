@@ -1,0 +1,1218 @@
+{
+  "packageId": "ri_lw_ch_0504",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0504"
+    ],
+    "paragraphIds": [
+      "ch_0504_p0002",
+      "ch_0504_p0013",
+      "ch_0504_p0021",
+      "ch_0504_p0029",
+      "ch_0504_p0031",
+      "ch_0504_p0032",
+      "ch_0504_p0033",
+      "ch_0504_p0035",
+      "ch_0504_p0037",
+      "ch_0504_p0039",
+      "ch_0504_p0045",
+      "ch_0504_p0048",
+      "ch_0504_p0051",
+      "ch_0504_p0062",
+      "ch_0504_p0064",
+      "ch_0504_p0065",
+      "ch_0504_p0066",
+      "ch_0504_p0068",
+      "ch_0504_p0069",
+      "ch_0504_p0070",
+      "ch_0504_p0076",
+      "ch_0504_p0083",
+      "ch_0504_p0088",
+      "ch_0504_p0089",
+      "ch_0504_p0091",
+      "ch_0504_p0092"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0002",
+          "startOffset": 1753618,
+          "endOffset": 1753620,
+          "summary": "诱敌的蛊师"
+        }
+      ],
+      "entityId": "entity_03ba4e805c5d",
+      "name": "桑易",
+      "kind": "person",
+      "aliases": [],
+      "description": "诱敌的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0021",
+          "startOffset": 1754241,
+          "endOffset": 1754243,
+          "summary": "狼群统帅"
+        }
+      ],
+      "entityId": "entity_0d780264879a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "狼群统帅",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0021",
+          "startOffset": 1754248,
+          "endOffset": 1754251,
+          "summary": "狼皇"
+        }
+      ],
+      "entityId": "entity_8cfa3f6b233d",
+      "name": "夜狼皇",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "狼皇",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0013",
+          "startOffset": 1753960,
+          "endOffset": 1753968,
+          "summary": "埋伏头领"
+        }
+      ],
+      "entityId": "entity_913566dc29d7",
+      "name": "三转蛊师头领",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "埋伏头领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0033",
+          "startOffset": 1754613,
+          "endOffset": 1754654,
+          "summary": "魔道蛊师，奴道大师，狼群首领"
+        }
+      ],
+      "entityId": "entity_0d780264879a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [
+        "狼王"
+      ],
+      "description": "魔道蛊师，奴道大师，狼群首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0035",
+          "startOffset": 1754685,
+          "endOffset": 1754731,
+          "summary": "三转魔道蛊师"
+        }
+      ],
+      "entityId": "entity_03ba4e805c5d",
+      "name": "桑易",
+      "kind": "person",
+      "aliases": [],
+      "description": "三转魔道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0035",
+          "startOffset": 1754685,
+          "endOffset": 1754731,
+          "summary": "三转蛊师首领"
+        }
+      ],
+      "entityId": "entity_2d28984f2990",
+      "name": "三转首领",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "三转蛊师首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0062",
+          "startOffset": 1755758,
+          "endOffset": 1755835,
+          "summary": "黑家首领，黄金部族成员"
+        }
+      ],
+      "entityId": "entity_ebfc2d364f78",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "黑家首领，黄金部族成员",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0065",
+          "startOffset": 1755877,
+          "endOffset": 1755881,
+          "summary": "方源伪装身份"
+        }
+      ],
+      "entityId": "entity_c974df04f59f",
+      "name": "山阴",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源伪装身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0066",
+          "startOffset": 1755974,
+          "endOffset": 1755977,
+          "summary": "黑家少主"
+        }
+      ],
+      "entityId": "entity_ebfc2d364f78",
+      "name": "黑楼兰",
+      "kind": "person",
+      "aliases": [],
+      "description": "黑家少主",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0069",
+          "startOffset": 1756122,
+          "endOffset": 1756124,
+          "summary": "主角，伪装成山阴"
+        }
+      ],
+      "entityId": "entity_0d780264879a",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，伪装成山阴",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0070",
+          "startOffset": 1756142,
+          "endOffset": 1756145,
+          "summary": "方源的蛊虫或助手"
+        }
+      ],
+      "entityId": "entity_9ebc0ead341a",
+      "name": "小狐仙",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的蛊虫或助手",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0076",
+          "startOffset": 1756430,
+          "endOffset": 1756434,
+          "summary": "东方部族美人"
+        }
+      ],
+      "entityId": "entity_2f61b2e1227d",
+      "name": "东方晴雨",
+      "kind": "person",
+      "aliases": [],
+      "description": "东方部族美人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0088",
+          "startOffset": 1756905,
+          "endOffset": 1756909,
+          "summary": "东方家族族长，五转智道蛊师"
+        }
+      ],
+      "entityId": "entity_af6a85a74b36",
+      "name": "东方余亮",
+      "kind": "person",
+      "aliases": [],
+      "description": "东方家族族长，五转智道蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0091",
+          "startOffset": 1757001,
+          "endOffset": 1757005,
+          "summary": "赵家部族首领"
+        }
+      ],
+      "entityId": "entity_57e4e7e4c5df",
+      "name": "赵家族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "赵家部族首领",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0021",
+          "startOffset": 1754241,
+          "endOffset": 1754251,
+          "summary": "方源骑着夜狼皇"
+        }
+      ],
+      "relationId": "rel_145c93291e35",
+      "subject": "方源",
+      "object": "夜狼皇",
+      "relationType": "USES",
+      "summary": "方源骑着夜狼皇",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0029",
+          "startOffset": 1754463,
+          "endOffset": 1754484,
+          "summary": "方源率领狼群冲杀野生夜狼群"
+        }
+      ],
+      "relationId": "rel_0d24c0afacf6",
+      "subject": "方源",
+      "object": "野生夜狼群",
+      "relationType": "CONFLICT",
+      "summary": "方源率领狼群冲杀野生夜狼群",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0031",
+          "startOffset": 1754511,
+          "endOffset": 1754565,
+          "summary": "方源用驭狼蛊收编野生万狼王"
+        }
+      ],
+      "relationId": "rel_193e7cc332ee",
+      "subject": "方源",
+      "object": "野生万狼王",
+      "relationType": "USES",
+      "summary": "方源用驭狼蛊收编野生万狼王",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0037",
+          "startOffset": 1754764,
+          "endOffset": 1754788,
+          "summary": "方源是桑易羡慕的对象"
+        }
+      ],
+      "relationId": "rel_a2fc341c59e7",
+      "subject": "方源",
+      "object": "桑易",
+      "relationType": "OTHER",
+      "summary": "方源是桑易羡慕的对象",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0062",
+          "startOffset": 1755758,
+          "endOffset": 1755835,
+          "summary": "方源与黑楼兰合作，黑楼兰是黑家首领"
+        }
+      ],
+      "relationId": "rel_e262d53801f0",
+      "subject": "方源",
+      "object": "黑楼兰",
+      "relationType": "ALLY",
+      "summary": "方源与黑楼兰合作，黑楼兰是黑家首领",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0068",
+          "startOffset": 1756056,
+          "endOffset": 1756059,
+          "summary": "黑楼兰与方源结盟，但黑楼兰因方源狼群壮大而暗生忌惮"
+        }
+      ],
+      "relationId": "rel_56ce48141092",
+      "subject": "黑楼兰",
+      "object": "方源",
+      "relationType": "ALLY",
+      "summary": "黑楼兰与方源结盟，但黑楼兰因方源狼群壮大而暗生忌惮",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0076",
+          "startOffset": 1756397,
+          "endOffset": 1756400,
+          "summary": "黑家决定进攻草府，铲除东方部族"
+        }
+      ],
+      "relationId": "rel_b94210b5574d",
+      "subject": "黑家",
+      "object": "东方部族",
+      "relationType": "CONFLICT",
+      "summary": "黑家决定进攻草府，铲除东方部族",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0092",
+          "startOffset": 1757014,
+          "endOffset": 1757017,
+          "summary": "东方部族与赵家原有仇怨，但东方余亮为应对黑家而改变态度，力邀赵家入盟"
+        }
+      ],
+      "relationId": "rel_a69e519f1f47",
+      "subject": "东方部族",
+      "object": "赵家",
+      "relationType": "CONFLICT",
+      "summary": "东方部族与赵家原有仇怨，但东方余亮为应对黑家而改变态度，力邀赵家入盟",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0002",
+          "startOffset": 1753618,
+          "endOffset": 1753636,
+          "summary": "桑易被夜狼群追杀，诱敌进入山谷"
+        }
+      ],
+      "eventId": "evt_0c3c20c08c53",
+      "eventType": "conflict",
+      "summary": "桑易被夜狼群追杀，诱敌进入山谷",
+      "actors": [
+        "桑易",
+        "夜狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "夜狼群被引入埋伏圈"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0032",
+          "startOffset": 1754569,
+          "endOffset": 1754609,
+          "summary": "方源利用夜狼皇和神清蛊，收编野生夜狼群"
+        }
+      ],
+      "eventId": "evt_bd0fcf715974",
+      "eventType": "conflict",
+      "summary": "方源利用夜狼皇和神清蛊，收编野生夜狼群",
+      "actors": [
+        "方源",
+        "野生夜狼群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源收编了野生万狼王及近两万狼群"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0039",
+          "startOffset": 1754860,
+          "endOffset": 1754884,
+          "summary": "方源收编七万头野生夜狼群"
+        }
+      ],
+      "eventId": "evt_08a2009ccb74",
+      "eventType": "other",
+      "summary": "方源收编七万头野生夜狼群",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源手中夜狼群增至三十二万，总狼群达五十三万"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0035",
+          "startOffset": 1754685,
+          "endOffset": 1754731,
+          "summary": "三转首领奖励桑易五百块元石和一只三转蛊"
+        }
+      ],
+      "eventId": "evt_dc255c057a3d",
+      "eventType": "other",
+      "summary": "三转首领奖励桑易五百块元石和一只三转蛊",
+      "actors": [
+        "三转首领",
+        "桑易"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "桑易获得奖励"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0051",
+          "startOffset": 1755275,
+          "endOffset": 1755305,
+          "summary": "方源使用四转狼魂蛊修炼狼人魂，但速度缓慢"
+        }
+      ],
+      "eventId": "evt_1dfdd636e209",
+      "eventType": "cultivation",
+      "summary": "方源使用四转狼魂蛊修炼狼人魂，但速度缓慢",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源灵魂沉重感减轻，但狼人魂转化缓慢"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0064",
+          "startOffset": 1755856,
+          "endOffset": 1755873,
+          "summary": "方源向黑楼兰请求五转狼魂蛊，黑楼兰表示爱莫能助"
+        }
+      ],
+      "eventId": "evt_78abf43b78ca",
+      "eventType": "other",
+      "summary": "方源向黑楼兰请求五转狼魂蛊，黑楼兰表示爱莫能助",
+      "actors": [
+        "方源",
+        "黑楼兰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源未能获得五转狼魂蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0083",
+          "startOffset": 1756691,
+          "endOffset": 1756694,
+          "summary": "黑家拔寨启程，前往草府方向，准备进攻东方部族"
+        }
+      ],
+      "eventId": "evt_99bc9d68f051",
+      "eventType": "conflict",
+      "summary": "黑家拔寨启程，前往草府方向，准备进攻东方部族",
+      "actors": [
+        "黑家",
+        "东方部族"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "草府一方如临大敌，东方余亮改变策略，力邀赵家入盟"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0065",
+          "startOffset": 1755877,
+          "endOffset": 1755880,
+          "summary": "黑楼兰告知方源，太上家老们要求用战功换取狼皇，而非直接给予五转狼魂蛊"
+        }
+      ],
+      "eventId": "evt_91e8cc2ac1e5",
+      "eventType": "other",
+      "summary": "黑楼兰告知方源，太上家老们要求用战功换取狼皇，而非直接给予五转狼魂蛊",
+      "actors": [
+        "黑楼兰",
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源表示理解，并继续通过宝黄天寻找狼皇"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0089",
+          "startOffset": 1756932,
+          "endOffset": 1756936,
+          "summary": "东方余亮一夜不休推演后，改变强硬态度，入盟条件变得宽容丰厚，并亲自游说赵家入盟"
+        }
+      ],
+      "eventId": "evt_c723132ac2ec",
+      "eventType": "other",
+      "summary": "东方余亮一夜不休推演后，改变强硬态度，入盟条件变得宽容丰厚，并亲自游说赵家入盟",
+      "actors": [
+        "东方余亮"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "赵家族长犹豫不决"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0002",
+          "startOffset": 1753618,
+          "endOffset": 1753636,
+          "summary": "桑易被夜狼群追杀，诱敌进入山谷"
+        }
+      ],
+      "timelineId": "tl_0c3c20c08c53",
+      "eventId": "evt_0c3c20c08c53",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "桑易被夜狼群追杀，诱敌进入山谷",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0032",
+          "startOffset": 1754569,
+          "endOffset": 1754609,
+          "summary": "方源利用夜狼皇和神清蛊，收编野生夜狼群"
+        }
+      ],
+      "timelineId": "tl_bd0fcf715974",
+      "eventId": "evt_bd0fcf715974",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "方源利用夜狼皇和神清蛊，收编野生夜狼群",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0039",
+          "startOffset": 1754860,
+          "endOffset": 1754884,
+          "summary": "方源收编七万头野生夜狼群"
+        }
+      ],
+      "timelineId": "tl_08a2009ccb74",
+      "eventId": "evt_08a2009ccb74",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "方源收编七万头野生夜狼群",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0035",
+          "startOffset": 1754685,
+          "endOffset": 1754731,
+          "summary": "三转首领奖励桑易五百块元石和一只三转蛊"
+        }
+      ],
+      "timelineId": "tl_dc255c057a3d",
+      "eventId": "evt_dc255c057a3d",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "三转首领奖励桑易五百块元石和一只三转蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0051",
+          "startOffset": 1755275,
+          "endOffset": 1755305,
+          "summary": "方源使用四转狼魂蛊修炼狼人魂，但速度缓慢"
+        }
+      ],
+      "timelineId": "tl_1dfdd636e209",
+      "eventId": "evt_1dfdd636e209",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "方源使用四转狼魂蛊修炼狼人魂，但速度缓慢",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0064",
+          "startOffset": 1755856,
+          "endOffset": 1755873,
+          "summary": "方源向黑楼兰请求五转狼魂蛊，黑楼兰表示爱莫能助"
+        }
+      ],
+      "timelineId": "tl_78abf43b78ca",
+      "eventId": "evt_78abf43b78ca",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "方源向黑楼兰请求五转狼魂蛊，黑楼兰表示爱莫能助",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0083",
+          "startOffset": 1756691,
+          "endOffset": 1756694,
+          "summary": "黑家拔寨启程，前往草府方向，准备进攻东方部族"
+        }
+      ],
+      "timelineId": "tl_99bc9d68f051",
+      "eventId": "evt_99bc9d68f051",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "黑家拔寨启程，前往草府方向，准备进攻东方部族",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0065",
+          "startOffset": 1755877,
+          "endOffset": 1755880,
+          "summary": "黑楼兰告知方源，太上家老们要求用战功换取狼皇，而非直接给予五转狼魂蛊"
+        }
+      ],
+      "timelineId": "tl_91e8cc2ac1e5",
+      "eventId": "evt_91e8cc2ac1e5",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "黑楼兰告知方源，太上家老们要求用战功换取狼皇，而非直接给予五转狼魂蛊",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0089",
+          "startOffset": 1756932,
+          "endOffset": 1756936,
+          "summary": "东方余亮一夜不休推演后，改变强硬态度，入盟条件变得宽容丰厚，并亲自游说赵家入盟"
+        }
+      ],
+      "timelineId": "tl_c723132ac2ec",
+      "eventId": "evt_c723132ac2ec",
+      "chapterId": "ch_0504",
+      "orderHint": "chapter-order",
+      "summary": "东方余亮一夜不休推演后，改变强硬态度，入盟条件变得宽容丰厚，并亲自游说赵家入盟",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0062",
+          "startOffset": 1755758,
+          "endOffset": 1755835,
+          "summary": "黑家首领，黄金部族成员"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0504",
+          "paragraphId": "ch_0504_p0066",
+          "startOffset": 1755974,
+          "endOffset": 1755977,
+          "summary": "黑家少主"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "黑家",
+      "pressureAxis": "进攻东方部族",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "备战防御",
+        "寻求盟友"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0002",
+      "startOffset": 1753618,
+      "endOffset": 1753620,
+      "summary": "诱敌的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0021",
+      "startOffset": 1754241,
+      "endOffset": 1754243,
+      "summary": "狼群统帅"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0021",
+      "startOffset": 1754248,
+      "endOffset": 1754251,
+      "summary": "狼皇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0013",
+      "startOffset": 1753960,
+      "endOffset": 1753968,
+      "summary": "埋伏头领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0033",
+      "startOffset": 1754613,
+      "endOffset": 1754654,
+      "summary": "魔道蛊师，奴道大师，狼群首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0035",
+      "startOffset": 1754685,
+      "endOffset": 1754731,
+      "summary": "三转魔道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0062",
+      "startOffset": 1755758,
+      "endOffset": 1755835,
+      "summary": "黑家首领，黄金部族成员"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0065",
+      "startOffset": 1755877,
+      "endOffset": 1755881,
+      "summary": "方源伪装身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0066",
+      "startOffset": 1755974,
+      "endOffset": 1755977,
+      "summary": "黑家少主"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0069",
+      "startOffset": 1756122,
+      "endOffset": 1756124,
+      "summary": "主角，伪装成山阴"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0070",
+      "startOffset": 1756142,
+      "endOffset": 1756145,
+      "summary": "方源的蛊虫或助手"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0076",
+      "startOffset": 1756430,
+      "endOffset": 1756434,
+      "summary": "东方部族美人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0088",
+      "startOffset": 1756905,
+      "endOffset": 1756909,
+      "summary": "东方家族族长，五转智道蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0091",
+      "startOffset": 1757001,
+      "endOffset": 1757005,
+      "summary": "赵家部族首领"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0021",
+      "startOffset": 1754241,
+      "endOffset": 1754251,
+      "summary": "方源骑着夜狼皇"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0029",
+      "startOffset": 1754463,
+      "endOffset": 1754484,
+      "summary": "方源率领狼群冲杀野生夜狼群"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0031",
+      "startOffset": 1754511,
+      "endOffset": 1754565,
+      "summary": "方源用驭狼蛊收编野生万狼王"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0037",
+      "startOffset": 1754764,
+      "endOffset": 1754788,
+      "summary": "方源是桑易羡慕的对象"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0068",
+      "startOffset": 1756056,
+      "endOffset": 1756059,
+      "summary": "黑楼兰与方源结盟，但黑楼兰因方源狼群壮大而暗生忌惮"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0076",
+      "startOffset": 1756397,
+      "endOffset": 1756400,
+      "summary": "黑家决定进攻草府，铲除东方部族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0092",
+      "startOffset": 1757014,
+      "endOffset": 1757017,
+      "summary": "东方部族与赵家原有仇怨，但东方余亮为应对黑家而改变态度，力邀赵家入盟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0002",
+      "startOffset": 1753618,
+      "endOffset": 1753636,
+      "summary": "桑易被夜狼群追杀，诱敌进入山谷"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0032",
+      "startOffset": 1754569,
+      "endOffset": 1754609,
+      "summary": "方源利用夜狼皇和神清蛊，收编野生夜狼群"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0039",
+      "startOffset": 1754860,
+      "endOffset": 1754884,
+      "summary": "方源收编七万头野生夜狼群"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0051",
+      "startOffset": 1755275,
+      "endOffset": 1755305,
+      "summary": "方源使用四转狼魂蛊修炼狼人魂，但速度缓慢"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0064",
+      "startOffset": 1755856,
+      "endOffset": 1755873,
+      "summary": "方源向黑楼兰请求五转狼魂蛊，黑楼兰表示爱莫能助"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0083",
+      "startOffset": 1756691,
+      "endOffset": 1756694,
+      "summary": "黑家拔寨启程，前往草府方向，准备进攻东方部族"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0065",
+      "startOffset": 1755877,
+      "endOffset": 1755880,
+      "summary": "黑楼兰告知方源，太上家老们要求用战功换取狼皇，而非直接给予五转狼魂蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0504",
+      "paragraphId": "ch_0504_p0089",
+      "startOffset": 1756932,
+      "endOffset": 1756936,
+      "summary": "东方余亮一夜不休推演后，改变强硬态度，入盟条件变得宽容丰厚，并亲自游说赵家入盟"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly visible/ambiguous events (battles, wolf taming, troop movements) that are ordinary visible events, not hidden knowledge. The relations about 黑楼兰暗生忌惮 and 黑家决定进攻草府 are ambiguous and lack direct source quotes showing private/internal knowledge. No clear hidden/future-known/player-visibility fact candidate can be extracted with strong source backing from this chapter alone.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly action descriptions (方源收编狼群, 桑易诱敌, 黑家拔寨) without clear observed motives.桑易's observed action is诱敌, but the seed does not clarify whether he did so voluntarily or under orders, making inferred motive ambiguous.方源's actions (收编狼群, 修炼狼魂) are strategic but the seed does not directly support a specific inferred motive beyond general growth.黑楼兰's relation mentions '暗生忌惮' but this is a relation-level note, not a directly observed action with clear motive. No strong candidate meets the cautious one-step inference standard.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "黑家作为黄金部族集体，决定拔寨进攻东方部族（草府方向），这是明确的集体军事行动压力。黑楼兰作为黑家首领与方源对话提及此事。东方部族方面也有应对（邀赵家入盟），但东方部族压力需另案处理。",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

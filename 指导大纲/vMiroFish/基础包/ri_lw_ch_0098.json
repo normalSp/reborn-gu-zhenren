@@ -1,0 +1,963 @@
+{
+  "packageId": "ri_lw_ch_0098",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0098"
+    ],
+    "paragraphIds": [
+      "ch_0098_p0006",
+      "ch_0098_p0007",
+      "ch_0098_p0009",
+      "ch_0098_p0013",
+      "ch_0098_p0024",
+      "ch_0098_p0037",
+      "ch_0098_p0038",
+      "ch_0098_p0039",
+      "ch_0098_p0040",
+      "ch_0098_p0041",
+      "ch_0098_p0047",
+      "ch_0098_p0049",
+      "ch_0098_p0053",
+      "ch_0098_p0054",
+      "ch_0098_p0055",
+      "ch_0098_p0056",
+      "ch_0098_p0062",
+      "ch_0098_p0066",
+      "ch_0098_p0067",
+      "ch_0098_p0068",
+      "ch_0098_p0077",
+      "ch_0098_p0078"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0006",
+          "startOffset": 306417,
+          "endOffset": 306419,
+          "summary": "被侦询的蛊师"
+        }
+      ],
+      "entityId": "entity_175316f41205",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "被侦询的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0007",
+          "startOffset": 306438,
+          "endOffset": 306442,
+          "summary": "侦讯方源的家老"
+        }
+      ],
+      "entityId": "entity_9ae26b44c5d4",
+      "name": "三位家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "侦讯方源的家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307108,
+          "summary": "侦讯方源的家老之一，女儿死于狼口"
+        }
+      ],
+      "entityId": "entity_2b504110ca9a",
+      "name": "中年女家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "侦讯方源的家老之一，女儿死于狼口",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307113,
+          "summary": "中年女家老的女儿，已死亡"
+        }
+      ],
+      "entityId": "entity_d64f58b71ad5",
+      "name": "病蛇小组中的治疗蛊师",
+      "kind": "person",
+      "aliases": [],
+      "description": "中年女家老的女儿，已死亡",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0040",
+          "startOffset": 307806,
+          "endOffset": 307851,
+          "summary": "二转蛊师，病蛇小组唯一幸存者"
+        }
+      ],
+      "entityId": "entity_175316f41205",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "二转蛊师，病蛇小组唯一幸存者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0038",
+          "startOffset": 307730,
+          "endOffset": 307767,
+          "summary": "内务堂家老"
+        }
+      ],
+      "entityId": "entity_2f4ecc7056c2",
+      "name": "女家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "内务堂家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0039",
+          "startOffset": 307771,
+          "endOffset": 307802,
+          "summary": "内务堂家老"
+        }
+      ],
+      "entityId": "entity_a06bec192a53",
+      "name": "另一位家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "内务堂家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0053",
+          "startOffset": 308416,
+          "endOffset": 308458,
+          "summary": "古月族少年"
+        }
+      ],
+      "entityId": "entity_3de834cb345a",
+      "name": "漠北",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族少年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0056",
+          "startOffset": 308523,
+          "endOffset": 308555,
+          "summary": "方源的弟弟"
+        }
+      ],
+      "entityId": "entity_c943d37ab9aa",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0054",
+          "startOffset": 308462,
+          "endOffset": 308479,
+          "summary": "古月族少年"
+        }
+      ],
+      "entityId": "entity_f9b2d48d93ca",
+      "name": "赤城",
+      "kind": "person",
+      "aliases": [],
+      "description": "古月族少年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0053",
+          "startOffset": 308416,
+          "endOffset": 308458,
+          "summary": "已故古月族少女，方源的同学"
+        }
+      ],
+      "entityId": "entity_312c7ee96e42",
+      "name": "古月金珠",
+      "kind": "person",
+      "aliases": [],
+      "description": "已故古月族少女，方源的同学",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0066",
+          "startOffset": 308823,
+          "endOffset": 308884,
+          "summary": "主角，被议论的蛊师"
+        }
+      ],
+      "entityId": "entity_175316f41205",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，被议论的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0068",
+          "startOffset": 308925,
+          "endOffset": 308964,
+          "summary": "方源的弟弟"
+        }
+      ],
+      "entityId": "entity_c943d37ab9aa",
+      "name": "方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "方源的弟弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0067",
+          "startOffset": 308888,
+          "endOffset": 308921,
+          "summary": "议论方源的人之一"
+        }
+      ],
+      "entityId": "entity_f9b2d48d93ca",
+      "name": "赤城",
+      "kind": "person",
+      "aliases": [],
+      "description": "议论方源的人之一",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307113,
+          "summary": "母女关系"
+        }
+      ],
+      "relationId": "rel_3d95a7d0f24b",
+      "subject": "中年女家老",
+      "object": "病蛇小组中的治疗蛊师",
+      "relationType": "FAMILY",
+      "summary": "母女关系",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307108,
+          "summary": "中年女家老因女儿之死而怨恨方源，在侦讯中刁难他"
+        }
+      ],
+      "relationId": "rel_adf67473aa13",
+      "subject": "中年女家老",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "中年女家老因女儿之死而怨恨方源，在侦讯中刁难他",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0041",
+          "startOffset": 307855,
+          "endOffset": 307907,
+          "summary": "方源是病蛇小组唯一幸存者，小组几乎全灭"
+        }
+      ],
+      "relationId": "rel_d7ed4e9d4a22",
+      "subject": "方源",
+      "object": "病蛇小组",
+      "relationType": "FACTION",
+      "summary": "方源是病蛇小组唯一幸存者，小组几乎全灭",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0056",
+          "startOffset": 308523,
+          "endOffset": 308555,
+          "summary": "方正称方源为哥哥"
+        }
+      ],
+      "relationId": "rel_2f5866753feb",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "方正称方源为哥哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0055",
+          "startOffset": 308483,
+          "endOffset": 308519,
+          "summary": "平时最不对路，但今天走在一起"
+        }
+      ],
+      "relationId": "rel_acb4e2116f62",
+      "subject": "漠北",
+      "object": "赤城",
+      "relationType": "CONFLICT",
+      "summary": "平时最不对路，但今天走在一起",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0068",
+          "startOffset": 308925,
+          "endOffset": 308964,
+          "summary": "方源是方正的哥哥"
+        }
+      ],
+      "relationId": "rel_34d26c680030",
+      "subject": "方源",
+      "object": "方正",
+      "relationType": "FAMILY",
+      "summary": "方源是方正的哥哥",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0066",
+          "startOffset": 308823,
+          "endOffset": 308884,
+          "summary": "方源将同组女蛊师当做挡箭牌，牺牲她保全自己"
+        }
+      ],
+      "relationId": "rel_1417f62737b7",
+      "subject": "方源",
+      "object": "同组女蛊师",
+      "relationType": "OTHER",
+      "summary": "方源将同组女蛊师当做挡箭牌，牺牲她保全自己",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0009",
+          "startOffset": 306493,
+          "endOffset": 306513,
+          "summary": "方源接受侦讯，三位家老反复询问小兽潮中的经历，试图找出破绽"
+        }
+      ],
+      "eventId": "evt_bfd103d0a07c",
+      "eventType": "conflict",
+      "summary": "方源接受侦讯，三位家老反复询问小兽潮中的经历，试图找出破绽",
+      "actors": [
+        "方源",
+        "三位家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源回答无破绽，家老无法定罪"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307113,
+          "summary": "治疗蛊师在战斗中死亡"
+        }
+      ],
+      "eventId": "evt_4b672065e747",
+      "eventType": "death",
+      "summary": "治疗蛊师在战斗中死亡",
+      "actors": [
+        "病蛇小组中的治疗蛊师"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "中年女家老怨恨方源"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0049",
+          "startOffset": 308293,
+          "endOffset": 308343,
+          "summary": "方源申请分家任务，被告知三天后再来接取"
+        }
+      ],
+      "eventId": "evt_1cc05375326f",
+      "eventType": "other",
+      "summary": "方源申请分家任务，被告知三天后再来接取",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源暂时无法继承遗产"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0053",
+          "startOffset": 308416,
+          "endOffset": 308458,
+          "summary": "古月金珠死亡，举行集体悼念会"
+        }
+      ],
+      "eventId": "evt_f4a2afa1036a",
+      "eventType": "death",
+      "summary": "古月金珠死亡，举行集体悼念会",
+      "actors": [
+        "古月金珠"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源拒绝参加悼念会"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0062",
+          "startOffset": 308705,
+          "endOffset": 308755,
+          "summary": "漠北等人邀请方源参加古月金珠的悼念会，方源拒绝"
+        }
+      ],
+      "eventId": "evt_b6ec29d4a883",
+      "eventType": "other",
+      "summary": "漠北等人邀请方源参加古月金珠的悼念会，方源拒绝",
+      "actors": [
+        "方源",
+        "漠北",
+        "方正",
+        "赤城"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源被众人认为冷血无情"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0077",
+          "startOffset": 309187,
+          "endOffset": 309203,
+          "summary": "方源故意营造坏名声，使自己被排斥，以便独行"
+        }
+      ],
+      "eventId": "evt_fc2b3ab4d4eb",
+      "eventType": "other",
+      "summary": "方源故意营造坏名声，使自己被排斥，以便独行",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源名声很臭，被众人议论排斥"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0009",
+          "startOffset": 306493,
+          "endOffset": 306513,
+          "summary": "方源接受侦讯，三位家老反复询问小兽潮中的经历，试图找出破绽"
+        }
+      ],
+      "timelineId": "tl_bfd103d0a07c",
+      "eventId": "evt_bfd103d0a07c",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "方源接受侦讯，三位家老反复询问小兽潮中的经历，试图找出破绽",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307113,
+          "summary": "治疗蛊师在战斗中死亡"
+        }
+      ],
+      "timelineId": "tl_4b672065e747",
+      "eventId": "evt_4b672065e747",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "治疗蛊师在战斗中死亡",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0049",
+          "startOffset": 308293,
+          "endOffset": 308343,
+          "summary": "方源申请分家任务，被告知三天后再来接取"
+        }
+      ],
+      "timelineId": "tl_1cc05375326f",
+      "eventId": "evt_1cc05375326f",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "方源申请分家任务，被告知三天后再来接取",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0053",
+          "startOffset": 308416,
+          "endOffset": 308458,
+          "summary": "古月金珠死亡，举行集体悼念会"
+        }
+      ],
+      "timelineId": "tl_f4a2afa1036a",
+      "eventId": "evt_f4a2afa1036a",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "古月金珠死亡，举行集体悼念会",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0062",
+          "startOffset": 308705,
+          "endOffset": 308755,
+          "summary": "漠北等人邀请方源参加古月金珠的悼念会，方源拒绝"
+        }
+      ],
+      "timelineId": "tl_b6ec29d4a883",
+      "eventId": "evt_b6ec29d4a883",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "漠北等人邀请方源参加古月金珠的悼念会，方源拒绝",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0077",
+          "startOffset": 309187,
+          "endOffset": 309203,
+          "summary": "方源故意营造坏名声，使自己被排斥，以便独行"
+        }
+      ],
+      "timelineId": "tl_fc2b3ab4d4eb",
+      "eventId": "evt_fc2b3ab4d4eb",
+      "chapterId": "ch_0098",
+      "orderHint": "chapter-order",
+      "summary": "方源故意营造坏名声，使自己被排斥，以便独行",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0007",
+          "startOffset": 306438,
+          "endOffset": 306442,
+          "summary": "侦讯方源的家老"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0024",
+          "startOffset": 307103,
+          "endOffset": 307108,
+          "summary": "侦讯方源的家老之一，女儿死于狼口"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0098",
+          "paragraphId": "ch_0098_p0038",
+          "startOffset": 307730,
+          "endOffset": 307767,
+          "summary": "内务堂家老"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "古月族内务堂家老",
+      "pressureAxis": "侦讯方源追查真相",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "监视方源"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0006",
+      "startOffset": 306417,
+      "endOffset": 306419,
+      "summary": "被侦询的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0007",
+      "startOffset": 306438,
+      "endOffset": 306442,
+      "summary": "侦讯方源的家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0024",
+      "startOffset": 307103,
+      "endOffset": 307108,
+      "summary": "侦讯方源的家老之一，女儿死于狼口"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0024",
+      "startOffset": 307103,
+      "endOffset": 307113,
+      "summary": "中年女家老的女儿，已死亡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0040",
+      "startOffset": 307806,
+      "endOffset": 307851,
+      "summary": "二转蛊师，病蛇小组唯一幸存者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0038",
+      "startOffset": 307730,
+      "endOffset": 307767,
+      "summary": "内务堂家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0039",
+      "startOffset": 307771,
+      "endOffset": 307802,
+      "summary": "内务堂家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0053",
+      "startOffset": 308416,
+      "endOffset": 308458,
+      "summary": "古月族少年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0056",
+      "startOffset": 308523,
+      "endOffset": 308555,
+      "summary": "方源的弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0054",
+      "startOffset": 308462,
+      "endOffset": 308479,
+      "summary": "古月族少年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0066",
+      "startOffset": 308823,
+      "endOffset": 308884,
+      "summary": "主角，被议论的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0068",
+      "startOffset": 308925,
+      "endOffset": 308964,
+      "summary": "方源的弟弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0067",
+      "startOffset": 308888,
+      "endOffset": 308921,
+      "summary": "议论方源的人之一"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0041",
+      "startOffset": 307855,
+      "endOffset": 307907,
+      "summary": "方源是病蛇小组唯一幸存者，小组几乎全灭"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0055",
+      "startOffset": 308483,
+      "endOffset": 308519,
+      "summary": "平时最不对路，但今天走在一起"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0009",
+      "startOffset": 306493,
+      "endOffset": 306513,
+      "summary": "方源接受侦讯，三位家老反复询问小兽潮中的经历，试图找出破绽"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0049",
+      "startOffset": 308293,
+      "endOffset": 308343,
+      "summary": "方源申请分家任务，被告知三天后再来接取"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0062",
+      "startOffset": 308705,
+      "endOffset": 308755,
+      "summary": "漠北等人邀请方源参加古月金珠的悼念会，方源拒绝"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0098",
+      "paragraphId": "ch_0098_p0077",
+      "startOffset": 309187,
+      "endOffset": 309203,
+      "summary": "方源故意营造坏名声，使自己被排斥，以便独行"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package contains mostly public/visible events: interrogation of Fang Yuan, application for clan separation task, invitation to memorial service. The only potentially hidden element is '方源故意营造坏名声，使自己被排斥，以便独行' (Fang Yuan deliberately creates a bad reputation to be ostracized so he can act alone), but this is stated as an event summary without direct source quote evidence showing his internal motive. The source pointers only show dialogue and visible actions, not private knowledge or secret plans. No fact candidate meets the criteria for hidden, future-known, or player-visibility fact with direct source backing.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed contains an event summary stating '方源故意营造坏名声，使自己被排斥，以便独行' which describes strategic intent, but this is an event summary/interpretation rather than a direct observed action from the source text. The source pointers show only surface behaviors: Fang Yuan answers interrogation without flaws, applies for a family separation task, and refuses to attend a memorial service. The inference that he is 'deliberately creating a bad reputation' is a psychological leap not directly supported by the quoted source text. Only behavior is visible; motive is ambiguous from the source pointers themselves.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "中年女家老（内务堂家老）因女儿死于病蛇小组事件而怨恨方源，在侦讯中刁难他。这构成内务堂家老群体对方源的压力——追查真相/刁难。但压力主要来自一位家老的个人情感，而非整个古月族内务堂的正式立场，因此证据强度中等。likelyReactions保守设定为监视方源，符合家老职权范围。",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

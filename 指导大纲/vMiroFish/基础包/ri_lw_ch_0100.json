@@ -1,0 +1,264 @@
+{
+  "packageId": "ri_lw_ch_0100",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0100"
+    ],
+    "paragraphIds": [
+      "ch_0100_p0004",
+      "ch_0100_p0010",
+      "ch_0100_p0011",
+      "ch_0100_p0023",
+      "ch_0100_p0034",
+      "ch_0100_p0035",
+      "ch_0100_p0046",
+      "ch_0100_p0069"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0011",
+          "startOffset": 313169,
+          "endOffset": 313171,
+          "summary": "蛊师，主角"
+        }
+      ],
+      "entityId": "entity_77e06c11d6ef",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0034",
+          "startOffset": 314248,
+          "endOffset": 314250,
+          "summary": "蛊师，重生者"
+        }
+      ],
+      "entityId": "entity_77e06c11d6ef",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师，重生者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0069",
+          "startOffset": 315482,
+          "endOffset": 315569,
+          "summary": "主角，有前世五百年记忆"
+        }
+      ],
+      "entityId": "entity_77e06c11d6ef",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，有前世五百年记忆",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0004",
+          "startOffset": 312867,
+          "endOffset": 312887,
+          "summary": "方源观察空窍，真元海为赤铁海，二转初阶，春秋蝉恢复中，酒虫、白豕蛊、玉皮蛊、小光蛊、月光蛊等蛊虫状态描述。"
+        }
+      ],
+      "eventId": "evt_8dfc3964a14e",
+      "eventType": "cultivation",
+      "summary": "方源观察空窍，真元海为赤铁海，二转初阶，春秋蝉恢复中，酒虫、白豕蛊、玉皮蛊、小光蛊、月光蛊等蛊虫状态描述。",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源决定进行合炼，但元石不足，经济紧张。"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0035",
+          "startOffset": 314282,
+          "endOffset": 314327,
+          "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊"
+        }
+      ],
+      "eventId": "evt_b31d421f82cf",
+      "eventType": "cultivation",
+      "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源获得二转白玉蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0004",
+          "startOffset": 312867,
+          "endOffset": 312887,
+          "summary": "方源观察空窍，真元海为赤铁海，二转初阶，春秋蝉恢复中，酒虫、白豕蛊、玉皮蛊、小光蛊、月光蛊等蛊虫状态描述。"
+        }
+      ],
+      "timelineId": "tl_8dfc3964a14e",
+      "eventId": "evt_8dfc3964a14e",
+      "chapterId": "ch_0100",
+      "orderHint": "chapter-order",
+      "summary": "方源观察空窍，真元海为赤铁海，二转初阶，春秋蝉恢复中，酒虫、白豕蛊、玉皮蛊、小光蛊、月光蛊等蛊虫状态描述。",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0100",
+          "paragraphId": "ch_0100_p0035",
+          "startOffset": 314282,
+          "endOffset": 314327,
+          "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊"
+        }
+      ],
+      "timelineId": "tl_b31d421f82cf",
+      "eventId": "evt_b31d421f82cf",
+      "chapterId": "ch_0100",
+      "orderHint": "chapter-order",
+      "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0011",
+      "startOffset": 313169,
+      "endOffset": 313171,
+      "summary": "蛊师，主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0034",
+      "startOffset": 314248,
+      "endOffset": 314250,
+      "summary": "蛊师，重生者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0069",
+      "startOffset": 315482,
+      "endOffset": 315569,
+      "summary": "主角，有前世五百年记忆"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0004",
+      "startOffset": 312867,
+      "endOffset": 312887,
+      "summary": "方源观察空窍，真元海为赤铁海，二转初阶，春秋蝉恢复中，酒虫、白豕蛊、玉皮蛊、小光蛊、月光蛊等蛊虫状态描述。"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0100",
+      "paragraphId": "ch_0100_p0035",
+      "startOffset": 314282,
+      "endOffset": 314327,
+      "summary": "方源合炼白豕蛊和玉皮蛊，加入野猪王的雪獠牙，成功炼成二转白玉蛊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains only cultivation events (observing aperture, refining White Jade Gu) that are ordinary visible actions by Fang Yuan. The entity descriptions mention 'reborn' and '500 years of past life memories', which could be a hidden fact (Fang Yuan is a reincarnator), but the source pointers in the pool only quote the entity descriptions themselves (paragraphs p0034 and p0069) which are narrator-level statements about Fang Yuan's identity. However, the actual source text paragraphs provided do not contain direct evidence that this is a secret/hidden fact that other characters don't know. The seed does not establish who knows or doesn't know this information. Without source-backed support for the knowledge gap (who knows vs who doesn't), this cannot be submitted as a hidden fact with confidence.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "Only observable actions: Fang Yuan observes his aperture and refines a gu worm. No direct context about his motive for refining白玉蛊 (e.g., whether for defense, trade, or combat). Behavior is visible but motive is ambiguous.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package only contains the single character 方源 (Fang Yuan) as an entity with no relations to any faction, clan, family, or group. The events describe his personal cultivation and gu refinement (合炼白豕蛊和玉皮蛊 into 白玉蛊). There are no other persons, clans, families, factions, or organizations mentioned in the seed facts. No faction/group pressure can be derived from the available source material.",
+      "IF export filter quarantined 3 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

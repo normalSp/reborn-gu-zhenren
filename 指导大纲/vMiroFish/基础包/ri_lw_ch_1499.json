@@ -1,0 +1,897 @@
+{
+  "packageId": "ri_lw_ch_1499",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_1499"
+    ],
+    "paragraphIds": [
+      "ch_1499_p0002",
+      "ch_1499_p0011",
+      "ch_1499_p0015",
+      "ch_1499_p0022",
+      "ch_1499_p0034",
+      "ch_1499_p0041",
+      "ch_1499_p0042",
+      "ch_1499_p0059",
+      "ch_1499_p0061",
+      "ch_1499_p0062",
+      "ch_1499_p0066",
+      "ch_1499_p0067",
+      "ch_1499_p0068",
+      "ch_1499_p0069",
+      "ch_1499_p0073",
+      "ch_1499_p0074",
+      "ch_1499_p0079",
+      "ch_1499_p0087",
+      "ch_1499_p0097",
+      "ch_1499_p0111",
+      "ch_1499_p0114",
+      "ch_1499_p0115"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0002",
+          "startOffset": 5236394,
+          "endOffset": 5236398,
+          "summary": "穿越者，原名未知，有家庭和未婚妻"
+        }
+      ],
+      "entityId": "entity_3f31e19c9040",
+      "name": "少年盗天",
+      "kind": "person",
+      "aliases": [],
+      "description": "穿越者，原名未知，有家庭和未婚妻",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0011",
+          "startOffset": 5236731,
+          "endOffset": 5236733,
+          "summary": "蛊师老者，折磨少年盗天"
+        }
+      ],
+      "entityId": "entity_64a1cdc8be84",
+      "name": "沙枭",
+      "kind": "person",
+      "aliases": [],
+      "description": "蛊师老者，折磨少年盗天",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0034",
+          "startOffset": 5237621,
+          "endOffset": 5237662,
+          "summary": "梦境主角，前世为三军战将，贵族身份"
+        }
+      ],
+      "entityId": "entity_b4123dbe467c",
+      "name": "盗天",
+      "kind": "person",
+      "aliases": [
+        "少年盗天",
+        "本杰孙"
+      ],
+      "description": "梦境主角，前世为三军战将，贵族身份",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0041",
+          "startOffset": 5237840,
+          "endOffset": 5237917,
+          "summary": "老爷爷，控制少年盗天"
+        }
+      ],
+      "entityId": "entity_64a1cdc8be84",
+      "name": "沙枭",
+      "kind": "person",
+      "aliases": [
+        "老夫"
+      ],
+      "description": "老爷爷，控制少年盗天",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0059",
+          "startOffset": 5238508,
+          "endOffset": 5238522,
+          "summary": "梦境探索者"
+        }
+      ],
+      "entityId": "entity_4b6ddd22cba1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "梦境探索者",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0066",
+          "startOffset": 5238724,
+          "endOffset": 5238752,
+          "summary": "神秘强者，控制少年盗天"
+        }
+      ],
+      "entityId": "entity_64a1cdc8be84",
+      "name": "沙枭",
+      "kind": "person",
+      "aliases": [
+        "爷爷"
+      ],
+      "description": "神秘强者，控制少年盗天",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0069",
+          "startOffset": 5238916,
+          "endOffset": 5238941,
+          "summary": "被沙枭控制的少年，方源附身"
+        }
+      ],
+      "entityId": "entity_3f31e19c9040",
+      "name": "少年盗天",
+      "kind": "person",
+      "aliases": [
+        "盗天"
+      ],
+      "description": "被沙枭控制的少年，方源附身",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0073",
+          "startOffset": 5239055,
+          "endOffset": 5239090,
+          "summary": "附身于少年盗天的存在"
+        }
+      ],
+      "entityId": "entity_4b6ddd22cba1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "附身于少年盗天的存在",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0097",
+          "startOffset": 5239813,
+          "endOffset": 5239815,
+          "summary": "主角，探索盗天梦境"
+        }
+      ],
+      "entityId": "entity_4b6ddd22cba1",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，探索盗天梦境",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0111",
+          "startOffset": 5240171,
+          "endOffset": 5240175,
+          "summary": "梦境中的少年盗天"
+        }
+      ],
+      "entityId": "entity_df2a55e3ad10",
+      "name": "少年盗天",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "梦境中的少年盗天",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0011",
+          "startOffset": 5236731,
+          "endOffset": 5236733,
+          "summary": "沙枭折磨少年盗天，逼迫其求饶，但少年盗天宁死不屈"
+        }
+      ],
+      "relationId": "rel_5ade234815a2",
+      "subject": "沙枭",
+      "object": "少年盗天",
+      "relationType": "CONFLICT",
+      "summary": "沙枭折磨少年盗天，逼迫其求饶，但少年盗天宁死不屈",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0042",
+          "startOffset": 5237921,
+          "endOffset": 5237974,
+          "summary": "沙枭控制盗天，逼迫其认作孙子"
+        }
+      ],
+      "relationId": "rel_bc90ad0907e8",
+      "subject": "沙枭",
+      "object": "盗天",
+      "relationType": "OTHER",
+      "summary": "沙枭控制盗天，逼迫其认作孙子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0068",
+          "startOffset": 5238816,
+          "endOffset": 5238872,
+          "summary": "沙枭控制少年盗天，称其为孙子，用杀招威胁"
+        }
+      ],
+      "relationId": "rel_97795cf2e9b5",
+      "subject": "沙枭",
+      "object": "少年盗天",
+      "relationType": "OTHER",
+      "summary": "沙枭控制少年盗天，称其为孙子，用杀招威胁",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0074",
+          "startOffset": 5239094,
+          "endOffset": 5239111,
+          "summary": "方源能操控少年盗天的肉身"
+        }
+      ],
+      "relationId": "rel_c6351e48208f",
+      "subject": "方源",
+      "object": "少年盗天",
+      "relationType": "OTHER",
+      "summary": "方源能操控少年盗天的肉身",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0015",
+          "startOffset": 5236936,
+          "endOffset": 5236940,
+          "summary": "沙枭折磨少年盗天，少年盗天试图自杀被沙枭阻止并治疗"
+        }
+      ],
+      "eventId": "evt_0b8b13775a41",
+      "eventType": "conflict",
+      "summary": "沙枭折磨少年盗天，少年盗天试图自杀被沙枭阻止并治疗",
+      "actors": [
+        "沙枭",
+        "少年盗天"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "少年盗天决定活下去，寻找回家方法"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0041",
+          "startOffset": 5237840,
+          "endOffset": 5237917,
+          "summary": "沙枭对盗天施展杀招，使其全身腐烂，逼迫盗天屈服"
+        }
+      ],
+      "eventId": "evt_9bfd932c78f1",
+      "eventType": "conflict",
+      "summary": "沙枭对盗天施展杀招，使其全身腐烂，逼迫盗天屈服",
+      "actors": [
+        "沙枭",
+        "盗天"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "盗天认输，称呼沙枭为爷爷，随后昏死"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0061",
+          "startOffset": 5238543,
+          "endOffset": 5238563,
+          "summary": "方源在盗天梦境中经历消融，魂魄从千万人魂降到百万级数"
+        }
+      ],
+      "eventId": "evt_5ba4edeb670b",
+      "eventType": "other",
+      "summary": "方源在盗天梦境中经历消融，魂魄从千万人魂降到百万级数",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源魂魄底蕴消耗，但继续探索梦境"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0067",
+          "startOffset": 5238756,
+          "endOffset": 5238812,
+          "summary": "沙枭引来沙狼攻击少年盗天，作为演戏的一部分，沙枭不出手相助"
+        }
+      ],
+      "eventId": "evt_b9b9e5010696",
+      "eventType": "conflict",
+      "summary": "沙枭引来沙狼攻击少年盗天，作为演戏的一部分，沙枭不出手相助",
+      "actors": [
+        "少年盗天",
+        "沙狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "少年盗天（方源操控）被迫与沙狼搏斗"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0079",
+          "startOffset": 5239214,
+          "endOffset": 5239255,
+          "summary": "方源发现少年盗天身上的蛊虫只剩沙坑蛊、炊烟蛊、清水蛊，青铜真元一成多，凉风蛊等消失"
+        }
+      ],
+      "eventId": "evt_bb52db349d8d",
+      "eventType": "other",
+      "summary": "方源发现少年盗天身上的蛊虫只剩沙坑蛊、炊烟蛊、清水蛊，青铜真元一成多，凉风蛊等消失",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源判断沙枭清除了相关线索"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0087",
+          "startOffset": 5239507,
+          "endOffset": 5239547,
+          "summary": "方源操控少年盗天与沙狼战斗，使用沙坑蛊制造沙坑，躲避攻击"
+        }
+      ],
+      "eventId": "evt_c6dc475cb440",
+      "eventType": "conflict",
+      "summary": "方源操控少年盗天与沙狼战斗，使用沙坑蛊制造沙坑，躲避攻击",
+      "actors": [
+        "少年盗天",
+        "沙狼"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "暂时躲过沙狼扑击"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0114",
+          "startOffset": 5240271,
+          "endOffset": 5240291,
+          "summary": "方源在盗天梦境中成功探索第一幕，获得偷道宗师境界"
+        }
+      ],
+      "eventId": "evt_128306e27bbd",
+      "eventType": "cultivation",
+      "summary": "方源在盗天梦境中成功探索第一幕，获得偷道宗师境界",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源偷道境界提升至宗师级，魂魄底蕴降低"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0111",
+          "startOffset": 5240171,
+          "endOffset": 5240191,
+          "summary": "少年盗天在梦境中撑到极限后眩晕，方源脱离梦境"
+        }
+      ],
+      "eventId": "evt_d8941ca29aa5",
+      "eventType": "other",
+      "summary": "少年盗天在梦境中撑到极限后眩晕，方源脱离梦境",
+      "actors": [
+        "方源",
+        "少年盗天"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "梦境消散，方源魂魄悬浮半空"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0015",
+          "startOffset": 5236936,
+          "endOffset": 5236940,
+          "summary": "沙枭折磨少年盗天，少年盗天试图自杀被沙枭阻止并治疗"
+        }
+      ],
+      "timelineId": "tl_0b8b13775a41",
+      "eventId": "evt_0b8b13775a41",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "沙枭折磨少年盗天，少年盗天试图自杀被沙枭阻止并治疗",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0041",
+          "startOffset": 5237840,
+          "endOffset": 5237917,
+          "summary": "沙枭对盗天施展杀招，使其全身腐烂，逼迫盗天屈服"
+        }
+      ],
+      "timelineId": "tl_9bfd932c78f1",
+      "eventId": "evt_9bfd932c78f1",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "沙枭对盗天施展杀招，使其全身腐烂，逼迫盗天屈服",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0061",
+          "startOffset": 5238543,
+          "endOffset": 5238563,
+          "summary": "方源在盗天梦境中经历消融，魂魄从千万人魂降到百万级数"
+        }
+      ],
+      "timelineId": "tl_5ba4edeb670b",
+      "eventId": "evt_5ba4edeb670b",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "方源在盗天梦境中经历消融，魂魄从千万人魂降到百万级数",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0067",
+          "startOffset": 5238756,
+          "endOffset": 5238812,
+          "summary": "沙枭引来沙狼攻击少年盗天，作为演戏的一部分，沙枭不出手相助"
+        }
+      ],
+      "timelineId": "tl_b9b9e5010696",
+      "eventId": "evt_b9b9e5010696",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "沙枭引来沙狼攻击少年盗天，作为演戏的一部分，沙枭不出手相助",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0079",
+          "startOffset": 5239214,
+          "endOffset": 5239255,
+          "summary": "方源发现少年盗天身上的蛊虫只剩沙坑蛊、炊烟蛊、清水蛊，青铜真元一成多，凉风蛊等消失"
+        }
+      ],
+      "timelineId": "tl_bb52db349d8d",
+      "eventId": "evt_bb52db349d8d",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "方源发现少年盗天身上的蛊虫只剩沙坑蛊、炊烟蛊、清水蛊，青铜真元一成多，凉风蛊等消失",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0087",
+          "startOffset": 5239507,
+          "endOffset": 5239547,
+          "summary": "方源操控少年盗天与沙狼战斗，使用沙坑蛊制造沙坑，躲避攻击"
+        }
+      ],
+      "timelineId": "tl_c6dc475cb440",
+      "eventId": "evt_c6dc475cb440",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "方源操控少年盗天与沙狼战斗，使用沙坑蛊制造沙坑，躲避攻击",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0114",
+          "startOffset": 5240271,
+          "endOffset": 5240291,
+          "summary": "方源在盗天梦境中成功探索第一幕，获得偷道宗师境界"
+        }
+      ],
+      "timelineId": "tl_128306e27bbd",
+      "eventId": "evt_128306e27bbd",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "方源在盗天梦境中成功探索第一幕，获得偷道宗师境界",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_1499",
+          "paragraphId": "ch_1499_p0111",
+          "startOffset": 5240171,
+          "endOffset": 5240191,
+          "summary": "少年盗天在梦境中撑到极限后眩晕，方源脱离梦境"
+        }
+      ],
+      "timelineId": "tl_d8941ca29aa5",
+      "eventId": "evt_d8941ca29aa5",
+      "chapterId": "ch_1499",
+      "orderHint": "chapter-order",
+      "summary": "少年盗天在梦境中撑到极限后眩晕，方源脱离梦境",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0002",
+      "startOffset": 5236394,
+      "endOffset": 5236398,
+      "summary": "穿越者，原名未知，有家庭和未婚妻"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0011",
+      "startOffset": 5236731,
+      "endOffset": 5236733,
+      "summary": "蛊师老者，折磨少年盗天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0034",
+      "startOffset": 5237621,
+      "endOffset": 5237662,
+      "summary": "梦境主角，前世为三军战将，贵族身份"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0041",
+      "startOffset": 5237840,
+      "endOffset": 5237917,
+      "summary": "老爷爷，控制少年盗天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0059",
+      "startOffset": 5238508,
+      "endOffset": 5238522,
+      "summary": "梦境探索者"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0066",
+      "startOffset": 5238724,
+      "endOffset": 5238752,
+      "summary": "神秘强者，控制少年盗天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0069",
+      "startOffset": 5238916,
+      "endOffset": 5238941,
+      "summary": "被沙枭控制的少年，方源附身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0073",
+      "startOffset": 5239055,
+      "endOffset": 5239090,
+      "summary": "附身于少年盗天的存在"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0097",
+      "startOffset": 5239813,
+      "endOffset": 5239815,
+      "summary": "主角，探索盗天梦境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0111",
+      "startOffset": 5240171,
+      "endOffset": 5240175,
+      "summary": "梦境中的少年盗天"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0042",
+      "startOffset": 5237921,
+      "endOffset": 5237974,
+      "summary": "沙枭控制盗天，逼迫其认作孙子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0068",
+      "startOffset": 5238816,
+      "endOffset": 5238872,
+      "summary": "沙枭控制少年盗天，称其为孙子，用杀招威胁"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0074",
+      "startOffset": 5239094,
+      "endOffset": 5239111,
+      "summary": "方源能操控少年盗天的肉身"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0015",
+      "startOffset": 5236936,
+      "endOffset": 5236940,
+      "summary": "沙枭折磨少年盗天，少年盗天试图自杀被沙枭阻止并治疗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0061",
+      "startOffset": 5238543,
+      "endOffset": 5238563,
+      "summary": "方源在盗天梦境中经历消融，魂魄从千万人魂降到百万级数"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0067",
+      "startOffset": 5238756,
+      "endOffset": 5238812,
+      "summary": "沙枭引来沙狼攻击少年盗天，作为演戏的一部分，沙枭不出手相助"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0079",
+      "startOffset": 5239214,
+      "endOffset": 5239255,
+      "summary": "方源发现少年盗天身上的蛊虫只剩沙坑蛊、炊烟蛊、清水蛊，青铜真元一成多，凉风蛊等消失"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0087",
+      "startOffset": 5239507,
+      "endOffset": 5239547,
+      "summary": "方源操控少年盗天与沙狼战斗，使用沙坑蛊制造沙坑，躲避攻击"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0114",
+      "startOffset": 5240271,
+      "endOffset": 5240291,
+      "summary": "方源在盗天梦境中成功探索第一幕，获得偷道宗师境界"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_1499",
+      "paragraphId": "ch_1499_p0111",
+      "startOffset": 5240171,
+      "endOffset": 5240191,
+      "summary": "少年盗天在梦境中撑到极限后眩晕，方源脱离梦境"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "rejected",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package describes a dream sequence (盗天梦境) where Fang Yuan is experiencing a memory/dream of the young Dao Tian. Most events are dream-internal and ambiguous in nature - they are either visible within the dream (沙枭 torturing 少年盗天, sand wolf attacks, etc.) or are Fang Yuan's internal experiences (soul reduction, gaining偷道宗师境界). No clear hidden/private knowledge, future-known information, or secret motives/plans are directly supported by the source text. The dream context makes it difficult to assert any fact as narrator-level truth about the living world outside the dream. The relationships and events are all presented as part of the dream narrative, not as objective hidden facts about the real world.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows沙枭 controlling and torturing少年盗天, and少年盗天 attempting suicide then deciding to live. However, the observed actions (enduring torture, deciding to find a way home) could support a motive of 'survival' or 'seeking escape', but the inferred motive would be too speculative. The seed does not directly support any clear inferred motive beyond basic survival instinct. The沙枭's actions (controlling, threatening, using沙狼 as a test) are visible but his deeper motive (why he needs a 'grandson' to spy on a tribe) is not directly stated. Returning empty as per rules.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package is a dream sequence (盗天's dream) focused on individual-level conflict between 沙枭 (a person) and 少年盗天/盗天 (individuals). No named collective actors (faction, clan, family, group, organization) appear in the seed facts or relations. 沙枭 is an individual old man, not a faction. 少年盗天 is described as having a family and fiancée (ptr_1) but no family/clan name is given, and the seed does not directly link him to a collective stake. 盗天's description mentions '贵族身份' (noble status) but no named noble house or faction. All events are personal-level conflict/torture/control. No collective actor with a concrete stake can be extracted from this seed.",
+      "IF export filter quarantined 5 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 4
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

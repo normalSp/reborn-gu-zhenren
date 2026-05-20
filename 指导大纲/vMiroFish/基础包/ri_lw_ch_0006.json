@@ -1,0 +1,767 @@
+{
+  "packageId": "ri_lw_ch_0006",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0006"
+    ],
+    "paragraphIds": [
+      "ch_0006_p0003",
+      "ch_0006_p0006",
+      "ch_0006_p0008",
+      "ch_0006_p0012",
+      "ch_0006_p0017",
+      "ch_0006_p0020",
+      "ch_0006_p0026",
+      "ch_0006_p0031",
+      "ch_0006_p0034",
+      "ch_0006_p0037",
+      "ch_0006_p0043",
+      "ch_0006_p0044",
+      "ch_0006_p0045",
+      "ch_0006_p0055"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0003",
+          "startOffset": 12662,
+          "endOffset": 12700,
+          "summary": "主角，正在进行开窍仪式"
+        }
+      ],
+      "entityId": "entity_e9f1d83a8901",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，正在进行开窍仪式",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0012",
+          "startOffset": 12911,
+          "endOffset": 12964,
+          "summary": "传说中第一个人类"
+        }
+      ],
+      "entityId": "entity_f249fe0bd7cd",
+      "name": "人祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "传说中第一个人类",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0037",
+          "startOffset": 14195,
+          "endOffset": 14219,
+          "summary": "主角，正在进行开窍仪式"
+        }
+      ],
+      "entityId": "entity_e9f1d83a8901",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角，正在进行开窍仪式",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0034",
+          "startOffset": 14076,
+          "endOffset": 14140,
+          "summary": "传说中的人物，曾拥有力量蛊、智慧蛊、希望蛊"
+        }
+      ],
+      "entityId": "entity_f249fe0bd7cd",
+      "name": "人祖",
+      "kind": "person",
+      "aliases": [],
+      "description": "传说中的人物，曾拥有力量蛊、智慧蛊、希望蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0043",
+          "startOffset": 14349,
+          "endOffset": 14364,
+          "summary": "开窍仪式中在河对岸负责观察的单一负责人"
+        }
+      ],
+      "entityId": "entity_7dfa07d3bc68",
+      "name": "隔岸的负责人",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "开窍仪式中在河对岸负责观察的单一负责人",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0045",
+          "startOffset": 14418,
+          "endOffset": 14440,
+          "summary": "方源家族的族长"
+        }
+      ],
+      "entityId": "entity_5fba332230de",
+      "name": "族长",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "方源家族的族长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0006",
+          "startOffset": 12764,
+          "endOffset": 12788,
+          "summary": "方源在开窍仪式中接收希望蛊光点入体"
+        }
+      ],
+      "relationId": "rel_485d88d6cf5b",
+      "subject": "方源",
+      "object": "希望蛊",
+      "relationType": "USES",
+      "summary": "方源在开窍仪式中接收希望蛊光点入体",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0017",
+          "startOffset": 13162,
+          "endOffset": 13196,
+          "summary": "人祖用青春少年供奉力量蛊，换取力量"
+        }
+      ],
+      "relationId": "rel_0b73710db945",
+      "subject": "人祖",
+      "object": "力量蛊",
+      "relationType": "TRADE",
+      "summary": "人祖用青春少年供奉力量蛊，换取力量",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0020",
+          "startOffset": 13325,
+          "endOffset": 13360,
+          "summary": "人祖用年富力强的中年供奉智慧蛊，换取智慧"
+        }
+      ],
+      "relationId": "rel_d9515fede63f",
+      "subject": "人祖",
+      "object": "智慧蛊",
+      "relationType": "TRADE",
+      "summary": "人祖用年富力强的中年供奉智慧蛊，换取智慧",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0026",
+          "startOffset": 13561,
+          "endOffset": 13615,
+          "summary": "力量蛊和智慧蛊发现人祖老迈无供奉后离开"
+        }
+      ],
+      "relationId": "rel_c653abded724",
+      "subject": "力量蛊",
+      "object": "人祖",
+      "relationType": "CONFLICT",
+      "summary": "力量蛊和智慧蛊发现人祖老迈无供奉后离开",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0031",
+          "startOffset": 13901,
+          "endOffset": 13939,
+          "summary": "人祖将心交给希望蛊以脱离困境"
+        }
+      ],
+      "relationId": "rel_411a98d24a7e",
+      "subject": "人祖",
+      "object": "希望蛊",
+      "relationType": "TRADE",
+      "summary": "人祖将心交给希望蛊以脱离困境",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0003",
+          "startOffset": 12662,
+          "endOffset": 12700,
+          "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内"
+        }
+      ],
+      "eventId": "evt_d2c0d3dc79cb",
+      "eventType": "cultivation",
+      "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "获得希望蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0017",
+          "startOffset": 13162,
+          "endOffset": 13196,
+          "summary": "人祖用青春少年供奉力量蛊，获得力量"
+        }
+      ],
+      "eventId": "evt_41cf22daa539",
+      "eventType": "trade",
+      "summary": "人祖用青春少年供奉力量蛊，获得力量",
+      "actors": [
+        "人祖",
+        "力量蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "改善生活，击败困境"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0020",
+          "startOffset": 13325,
+          "endOffset": 13360,
+          "summary": "人祖用中年供奉智慧蛊，获得智慧"
+        }
+      ],
+      "eventId": "evt_74e8525f4bae",
+      "eventType": "trade",
+      "summary": "人祖用中年供奉智慧蛊，获得智慧",
+      "actors": [
+        "人祖",
+        "智慧蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学会思考反省，更有效生存"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0026",
+          "startOffset": 13561,
+          "endOffset": 13615,
+          "summary": "力量蛊和智慧蛊发现人祖年老无供奉后绝情离开"
+        }
+      ],
+      "eventId": "evt_29e7bbb9f105",
+      "eventType": "conflict",
+      "summary": "力量蛊和智慧蛊发现人祖年老无供奉后绝情离开",
+      "actors": [
+        "力量蛊",
+        "智慧蛊",
+        "人祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "人祖丢失力量和智慧，被困境包围，陷入绝望"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0031",
+          "startOffset": 13901,
+          "endOffset": 13939,
+          "summary": "希望蛊要求人祖用心交换，人祖答应"
+        }
+      ],
+      "eventId": "evt_1fc28584bd75",
+      "eventType": "trade",
+      "summary": "希望蛊要求人祖用心交换，人祖答应",
+      "actors": [
+        "人祖",
+        "希望蛊"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "本章中断，结果未交代"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0034",
+          "startOffset": 14076,
+          "endOffset": 14140,
+          "summary": "人祖把心交给希望蛊，希望蛊绽放光明，吓退困境兽群"
+        }
+      ],
+      "eventId": "evt_0536b009e0d5",
+      "eventType": "other",
+      "summary": "人祖把心交给希望蛊，希望蛊绽放光明，吓退困境兽群",
+      "actors": [
+        "人祖"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "困境退去"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0055",
+          "startOffset": 14836,
+          "endOffset": 14869,
+          "summary": "方源在希望花海中前行，不断吸收希望蛊，最终在第二十七步时开窍成功，体内出现空窍"
+        }
+      ],
+      "eventId": "evt_d9cca5569442",
+      "eventType": "cultivation",
+      "summary": "方源在希望花海中前行，不断吸收希望蛊，最终在第二十七步时开窍成功，体内出现空窍",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源开窍成功，获得修行资质"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0044",
+          "startOffset": 14368,
+          "endOffset": 14414,
+          "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现"
+        }
+      ],
+      "eventId": "evt_8109c0a78f89",
+      "eventType": "other",
+      "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现",
+      "actors": [
+        "隔岸的负责人",
+        "族长"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0003",
+          "startOffset": 12662,
+          "endOffset": 12700,
+          "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内"
+        }
+      ],
+      "timelineId": "tl_d2c0d3dc79cb",
+      "eventId": "evt_d2c0d3dc79cb",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "方源淌过河踏上花海对岸，灵泉压力下花丛升腾希望蛊光点，光点悉数投入体内",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0017",
+          "startOffset": 13162,
+          "endOffset": 13196,
+          "summary": "人祖用青春少年供奉力量蛊，获得力量"
+        }
+      ],
+      "timelineId": "tl_41cf22daa539",
+      "eventId": "evt_41cf22daa539",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "人祖用青春少年供奉力量蛊，获得力量",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0020",
+          "startOffset": 13325,
+          "endOffset": 13360,
+          "summary": "人祖用中年供奉智慧蛊，获得智慧"
+        }
+      ],
+      "timelineId": "tl_74e8525f4bae",
+      "eventId": "evt_74e8525f4bae",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "人祖用中年供奉智慧蛊，获得智慧",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0026",
+          "startOffset": 13561,
+          "endOffset": 13615,
+          "summary": "力量蛊和智慧蛊发现人祖年老无供奉后绝情离开"
+        }
+      ],
+      "timelineId": "tl_29e7bbb9f105",
+      "eventId": "evt_29e7bbb9f105",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "力量蛊和智慧蛊发现人祖年老无供奉后绝情离开",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0031",
+          "startOffset": 13901,
+          "endOffset": 13939,
+          "summary": "希望蛊要求人祖用心交换，人祖答应"
+        }
+      ],
+      "timelineId": "tl_1fc28584bd75",
+      "eventId": "evt_1fc28584bd75",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "希望蛊要求人祖用心交换，人祖答应",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0034",
+          "startOffset": 14076,
+          "endOffset": 14140,
+          "summary": "人祖把心交给希望蛊，希望蛊绽放光明，吓退困境兽群"
+        }
+      ],
+      "timelineId": "tl_0536b009e0d5",
+      "eventId": "evt_0536b009e0d5",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "人祖把心交给希望蛊，希望蛊绽放光明，吓退困境兽群",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0055",
+          "startOffset": 14836,
+          "endOffset": 14869,
+          "summary": "方源在希望花海中前行，不断吸收希望蛊，最终在第二十七步时开窍成功，体内出现空窍"
+        }
+      ],
+      "timelineId": "tl_d9cca5569442",
+      "eventId": "evt_d9cca5569442",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "方源在希望花海中前行，不断吸收希望蛊，最终在第二十七步时开窍成功，体内出现空窍",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0006",
+          "paragraphId": "ch_0006_p0044",
+          "startOffset": 14368,
+          "endOffset": 14414,
+          "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现"
+        }
+      ],
+      "timelineId": "tl_8109c0a78f89",
+      "eventId": "evt_8109c0a78f89",
+      "chapterId": "ch_0006",
+      "orderHint": "chapter-order",
+      "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0003",
+      "startOffset": 12662,
+      "endOffset": 12700,
+      "summary": "主角，正在进行开窍仪式"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0012",
+      "startOffset": 12911,
+      "endOffset": 12964,
+      "summary": "传说中第一个人类"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0037",
+      "startOffset": 14195,
+      "endOffset": 14219,
+      "summary": "主角，正在进行开窍仪式"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0034",
+      "startOffset": 14076,
+      "endOffset": 14140,
+      "summary": "传说中的人物，曾拥有力量蛊、智慧蛊、希望蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0043",
+      "startOffset": 14349,
+      "endOffset": 14364,
+      "summary": "开窍仪式中在河对岸负责观察的单一负责人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0045",
+      "startOffset": 14418,
+      "endOffset": 14440,
+      "summary": "方源家族的族长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0006",
+      "startOffset": 12764,
+      "endOffset": 12788,
+      "summary": "方源在开窍仪式中接收希望蛊光点入体"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0017",
+      "startOffset": 13162,
+      "endOffset": 13196,
+      "summary": "人祖用青春少年供奉力量蛊，换取力量"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0020",
+      "startOffset": 13325,
+      "endOffset": 13360,
+      "summary": "人祖用年富力强的中年供奉智慧蛊，换取智慧"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0026",
+      "startOffset": 13561,
+      "endOffset": 13615,
+      "summary": "力量蛊和智慧蛊发现人祖老迈无供奉后离开"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0031",
+      "startOffset": 13901,
+      "endOffset": 13939,
+      "summary": "人祖将心交给希望蛊以脱离困境"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0055",
+      "startOffset": 14836,
+      "endOffset": 14869,
+      "summary": "方源在希望花海中前行，不断吸收希望蛊，最终在第二十七步时开窍成功，体内出现空窍"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0006",
+      "paragraphId": "ch_0006_p0044",
+      "startOffset": 14368,
+      "endOffset": 14414,
+      "summary": "隔岸的负责人和族长发现方源吸收的希望蛊数量偏少，皱眉，心中怀疑这不是甲等资质应有的表现"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed package primarily describes visible events: Fang Yuan's aperture-opening ceremony (receiving hope Gu light points) and the legend of Ren Zu trading with strength Gu, wisdom Gu, and hope Gu. No hidden knowledge, secret motives, future-known information, or directly supported knowledge gaps are present in the source pointers. The '隔岸的负责人' frowning and '族长' frowning are visible reactions, not hidden facts. No actor is directly supported as knowing something others don't.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed shows Fang Yuan receiving hope Gu light points during the aperture opening ritual, but only observable behavior is visible (光点投入体内). No direct source evidence supports any inferred motive for Fang Yuan's actions - he is simply undergoing the ritual. The human ancestor story is a separate legend within the chapter and does not provide motive for Fang Yuan. No clear observed action with inferable motive is present.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains only two named groups/factions: '族长' (clan chief) and '隔岸的负责人' (person in charge across the river). However, these are single-person titles, not faction/group entities with collective stakes. The '族长' is mentioned as frowning at Fang Yuan's aperture-opening result, but there is no seed fact establishing the clan as a faction with interests, threats, resources, reputation, geography, succession, or inheritance pressures. The seed primarily focuses on Fang Yuan's personal cultivation event (开窍仪式) and the mythological tale of Ren Zu. No faction-level pressure can be reliably extracted from the available seed facts.",
+      "IF export filter quarantined 2 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-pro",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 2
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

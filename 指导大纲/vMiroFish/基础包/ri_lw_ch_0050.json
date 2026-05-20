@@ -1,0 +1,910 @@
+{
+  "packageId": "ri_lw_ch_0050",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0050"
+    ],
+    "paragraphIds": [
+      "ch_0050_p0003",
+      "ch_0050_p0005",
+      "ch_0050_p0007",
+      "ch_0050_p0016",
+      "ch_0050_p0031",
+      "ch_0050_p0033",
+      "ch_0050_p0035",
+      "ch_0050_p0042",
+      "ch_0050_p0044",
+      "ch_0050_p0045",
+      "ch_0050_p0049",
+      "ch_0050_p0052",
+      "ch_0050_p0059",
+      "ch_0050_p0067",
+      "ch_0050_p0068"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0003",
+          "startOffset": 147580,
+          "endOffset": 147584,
+          "summary": "学堂管理者，执掌学堂多年"
+        }
+      ],
+      "entityId": "entity_2ae3aa8a1af5",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂管理者，执掌学堂多年",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0005",
+          "startOffset": 147627,
+          "endOffset": 147629,
+          "summary": "学员，被学堂家老关注"
+        }
+      ],
+      "entityId": "entity_90db23e70655",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学员，被学堂家老关注",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0016",
+          "startOffset": 148097,
+          "endOffset": 148101,
+          "summary": "教头，被方源反驳"
+        }
+      ],
+      "entityId": "entity_f29a6b9215f8",
+      "name": "拳脚教头",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "教头，被方源反驳",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老"
+        }
+      ],
+      "entityId": "entity_2ae3aa8a1af5",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂家老",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0035",
+          "startOffset": 148678,
+          "endOffset": 148686,
+          "summary": "学生"
+        }
+      ],
+      "entityId": "entity_90db23e70655",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "学生",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0042",
+          "startOffset": 148904,
+          "endOffset": 148953,
+          "summary": "学生，甲等资质"
+        }
+      ],
+      "entityId": "entity_71680b4ed4a6",
+      "name": "古月方正",
+      "kind": "person",
+      "aliases": [],
+      "description": "学生，甲等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0042",
+          "startOffset": 148904,
+          "endOffset": 148953,
+          "summary": "学生，乙等资质"
+        }
+      ],
+      "entityId": "entity_ae3b7f5c5b9a",
+      "name": "赤城",
+      "kind": "person",
+      "aliases": [
+        "古月赤城"
+      ],
+      "description": "学生，乙等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0042",
+          "startOffset": 148904,
+          "endOffset": 148953,
+          "summary": "学生，乙等资质"
+        }
+      ],
+      "entityId": "entity_df590ac7ba60",
+      "name": "漠北",
+      "kind": "person",
+      "aliases": [
+        "古月漠北"
+      ],
+      "description": "学生，乙等资质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0067",
+          "startOffset": 149911,
+          "endOffset": 149954,
+          "summary": "学堂家老，负责教导和管控家族子弟"
+        }
+      ],
+      "entityId": "entity_2ae3aa8a1af5",
+      "name": "学堂家老",
+      "kind": "single_person_title",
+      "aliases": [],
+      "description": "学堂家老，负责教导和管控家族子弟",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0067",
+          "startOffset": 149911,
+          "endOffset": 149954,
+          "summary": "家族子弟，被学堂家老关注"
+        }
+      ],
+      "entityId": "entity_90db23e70655",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "家族子弟，被学堂家老关注",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0007",
+          "startOffset": 147763,
+          "endOffset": 147789,
+          "summary": "学堂家老对方源产生厌恶，认为方源骨子里傲慢，不敬畏师长，需要镇压"
+        }
+      ],
+      "relationId": "rel_1c549990e354",
+      "subject": "学堂家老",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "学堂家老对方源产生厌恶，认为方源骨子里傲慢，不敬畏师长，需要镇压",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0035",
+          "startOffset": 148678,
+          "endOffset": 148686,
+          "summary": "学堂家老想要镇压方源，但找不到把柄"
+        }
+      ],
+      "relationId": "rel_4d0f5009f8ac",
+      "subject": "学堂家老",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "学堂家老想要镇压方源，但找不到把柄",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0044",
+          "startOffset": 149012,
+          "endOffset": 149055,
+          "summary": "学堂家老认为古月方正、赤城、漠北是希望种子"
+        }
+      ],
+      "relationId": "rel_1ed96bb80aac",
+      "subject": "学堂家老",
+      "object": "古月方正",
+      "relationType": "OTHER",
+      "summary": "学堂家老认为古月方正、赤城、漠北是希望种子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0044",
+          "startOffset": 149012,
+          "endOffset": 149055,
+          "summary": "学堂家老认为古月方正、赤城、漠北是希望种子"
+        }
+      ],
+      "relationId": "rel_a536c0797993",
+      "subject": "学堂家老",
+      "object": "赤城",
+      "relationType": "OTHER",
+      "summary": "学堂家老认为古月方正、赤城、漠北是希望种子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0044",
+          "startOffset": 149012,
+          "endOffset": 149055,
+          "summary": "学堂家老认为古月方正、赤城、漠北是希望种子"
+        }
+      ],
+      "relationId": "rel_14e6bb46f85b",
+      "subject": "学堂家老",
+      "object": "漠北",
+      "relationType": "OTHER",
+      "summary": "学堂家老认为古月方正、赤城、漠北是希望种子",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0052",
+          "startOffset": 149367,
+          "endOffset": 149396,
+          "summary": "方源与方正、漠北、赤城正面对抗"
+        }
+      ],
+      "relationId": "rel_e77ccf458f46",
+      "subject": "方源",
+      "object": "古月方正",
+      "relationType": "CONFLICT",
+      "summary": "方源与方正、漠北、赤城正面对抗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0052",
+          "startOffset": 149367,
+          "endOffset": 149396,
+          "summary": "方源与方正、漠北、赤城正面对抗"
+        }
+      ],
+      "relationId": "rel_293d44b34255",
+      "subject": "方源",
+      "object": "漠北",
+      "relationType": "CONFLICT",
+      "summary": "方源与方正、漠北、赤城正面对抗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0052",
+          "startOffset": 149367,
+          "endOffset": 149396,
+          "summary": "方源与方正、漠北、赤城正面对抗"
+        }
+      ],
+      "relationId": "rel_248590b84da6",
+      "subject": "方源",
+      "object": "赤城",
+      "relationType": "CONFLICT",
+      "summary": "方源与方正、漠北、赤城正面对抗",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0067",
+          "startOffset": 149911,
+          "endOffset": 149954,
+          "summary": "学堂家老意图通过家族体制调教方源，使其产生羁绊，不脱离掌控"
+        }
+      ],
+      "relationId": "rel_9520b3824778",
+      "subject": "学堂家老",
+      "object": "方源",
+      "relationType": "OTHER",
+      "summary": "学堂家老意图通过家族体制调教方源，使其产生羁绊，不脱离掌控",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0016",
+          "startOffset": 148097,
+          "endOffset": 148127,
+          "summary": "方源公然反驳拳脚教头的话，并主动下场"
+        }
+      ],
+      "eventId": "evt_fb93073d58e5",
+      "eventType": "conflict",
+      "summary": "方源公然反驳拳脚教头的话，并主动下场",
+      "actors": [
+        "方源",
+        "拳脚教头"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老对方源产生厌恶，认为方源不敬畏师长"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老决定要镇压方源，但找不到把柄"
+        }
+      ],
+      "eventId": "evt_a5168439462b",
+      "eventType": "other",
+      "summary": "学堂家老决定要镇压方源，但找不到把柄",
+      "actors": [
+        "学堂家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老寄希望于其他学员率先晋升到一转中阶"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0049",
+          "startOffset": 149235,
+          "endOffset": 149271,
+          "summary": "学堂家老观察到学员中形成了以古月方正、赤城、漠北为中心的三个圈子"
+        }
+      ],
+      "eventId": "evt_b065ca3d35fd",
+      "eventType": "other",
+      "summary": "学堂家老观察到学员中形成了以古月方正、赤城、漠北为中心的三个圈子",
+      "actors": [
+        "学堂家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "学堂家老认为这是放纵争斗的意义，提前筛选出领袖人物"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0059",
+          "startOffset": 149641,
+          "endOffset": 149682,
+          "summary": "方源拒绝其他少年依附，孤身一人"
+        }
+      ],
+      "eventId": "evt_c9f4aa279f33",
+      "eventType": "other",
+      "summary": "方源拒绝其他少年依附，孤身一人",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源不融入集体，家族对他的掌控力弱"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0068",
+          "startOffset": 149958,
+          "endOffset": 150090,
+          "summary": "学堂家老思考通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊"
+        }
+      ],
+      "eventId": "evt_a8072ecacd97",
+      "eventType": "other",
+      "summary": "学堂家老思考通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊",
+      "actors": [
+        "学堂家老"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "方源可能被家族体制同化，产生亲情、友情、爱情的羁绊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0016",
+          "startOffset": 148097,
+          "endOffset": 148127,
+          "summary": "方源公然反驳拳脚教头的话，并主动下场"
+        }
+      ],
+      "timelineId": "tl_fb93073d58e5",
+      "eventId": "evt_fb93073d58e5",
+      "chapterId": "ch_0050",
+      "orderHint": "chapter-order",
+      "summary": "方源公然反驳拳脚教头的话，并主动下场",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老决定要镇压方源，但找不到把柄"
+        }
+      ],
+      "timelineId": "tl_a5168439462b",
+      "eventId": "evt_a5168439462b",
+      "chapterId": "ch_0050",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老决定要镇压方源，但找不到把柄",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0049",
+          "startOffset": 149235,
+          "endOffset": 149271,
+          "summary": "学堂家老观察到学员中形成了以古月方正、赤城、漠北为中心的三个圈子"
+        }
+      ],
+      "timelineId": "tl_b065ca3d35fd",
+      "eventId": "evt_b065ca3d35fd",
+      "chapterId": "ch_0050",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老观察到学员中形成了以古月方正、赤城、漠北为中心的三个圈子",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0059",
+          "startOffset": 149641,
+          "endOffset": 149682,
+          "summary": "方源拒绝其他少年依附，孤身一人"
+        }
+      ],
+      "timelineId": "tl_c9f4aa279f33",
+      "eventId": "evt_c9f4aa279f33",
+      "chapterId": "ch_0050",
+      "orderHint": "chapter-order",
+      "summary": "方源拒绝其他少年依附，孤身一人",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0068",
+          "startOffset": 149958,
+          "endOffset": 150090,
+          "summary": "学堂家老思考通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊"
+        }
+      ],
+      "timelineId": "tl_a8072ecacd97",
+      "eventId": "evt_a8072ecacd97",
+      "chapterId": "ch_0050",
+      "orderHint": "chapter-order",
+      "summary": "学堂家老思考通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0035",
+          "startOffset": 148678,
+          "endOffset": 148686,
+          "summary": "学生"
+        }
+      ],
+      "factId": "hf_0050_001",
+      "summary": "学堂家老决定通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊，以此镇压方源",
+      "whoKnows": [
+        "学堂家老"
+      ],
+      "whoDoesNotKnow": [
+        "方源"
+      ],
+      "playerVisibility": "hidden",
+      "confidence": "high"
+    }
+  ],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0035",
+          "startOffset": 148678,
+          "endOffset": 148686,
+          "summary": "学生"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0007",
+          "startOffset": 147763,
+          "endOffset": 147789,
+          "summary": "学堂家老对方源产生厌恶，认为方源骨子里傲慢，不敬畏师长，需要镇压"
+        }
+      ],
+      "motiveId": "motive_001",
+      "character": "学堂家老",
+      "observedMotive": "对方源产生厌恶，想镇压他",
+      "inferredMotive": "维护师道尊严和学堂秩序",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "high"
+    }
+  ],
+  "factionPressures": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0033",
+          "startOffset": 148635,
+          "endOffset": 148654,
+          "summary": "学堂家老"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0035",
+          "startOffset": 148678,
+          "endOffset": 148686,
+          "summary": "学生"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0067",
+          "startOffset": 149911,
+          "endOffset": 149954,
+          "summary": "学堂家老，负责教导和管控家族子弟"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0050",
+          "paragraphId": "ch_0050_p0007",
+          "startOffset": 147763,
+          "endOffset": 147789,
+          "summary": "学堂家老对方源产生厌恶，认为方源骨子里傲慢，不敬畏师长，需要镇压"
+        }
+      ],
+      "pressureId": "pressure_1",
+      "faction": "古月学堂管理层",
+      "pressureAxis": "镇压方源",
+      "beneficiaries": [],
+      "victims": [],
+      "likelyReactions": [
+        "设立班头职位以体制同化"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0003",
+      "startOffset": 147580,
+      "endOffset": 147584,
+      "summary": "学堂管理者，执掌学堂多年"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0005",
+      "startOffset": 147627,
+      "endOffset": 147629,
+      "summary": "学员，被学堂家老关注"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0016",
+      "startOffset": 148097,
+      "endOffset": 148101,
+      "summary": "教头，被方源反驳"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0033",
+      "startOffset": 148635,
+      "endOffset": 148654,
+      "summary": "学堂家老"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0035",
+      "startOffset": 148678,
+      "endOffset": 148686,
+      "summary": "学生"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0042",
+      "startOffset": 148904,
+      "endOffset": 148953,
+      "summary": "学生，甲等资质"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0067",
+      "startOffset": 149911,
+      "endOffset": 149954,
+      "summary": "学堂家老，负责教导和管控家族子弟"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0007",
+      "startOffset": 147763,
+      "endOffset": 147789,
+      "summary": "学堂家老对方源产生厌恶，认为方源骨子里傲慢，不敬畏师长，需要镇压"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0044",
+      "startOffset": 149012,
+      "endOffset": 149055,
+      "summary": "学堂家老认为古月方正、赤城、漠北是希望种子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0052",
+      "startOffset": 149367,
+      "endOffset": 149396,
+      "summary": "方源与方正、漠北、赤城正面对抗"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0016",
+      "startOffset": 148097,
+      "endOffset": 148127,
+      "summary": "方源公然反驳拳脚教头的话，并主动下场"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0049",
+      "startOffset": 149235,
+      "endOffset": 149271,
+      "summary": "学堂家老观察到学员中形成了以古月方正、赤城、漠北为中心的三个圈子"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0059",
+      "startOffset": 149641,
+      "endOffset": 149682,
+      "summary": "方源拒绝其他少年依附，孤身一人"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0050",
+      "paragraphId": "ch_0050_p0068",
+      "startOffset": 149958,
+      "endOffset": 150090,
+      "summary": "学堂家老思考通过设立班头、副班头等职位和奖励，利用体制同化方源，使其产生羁绊"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "学堂家老内心决定镇压方源但找不到把柄，随后思考通过设立班头等体制手段同化方源——这是未公开的内心计划，方源不知情，属于hidden事实。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "学堂家老看到方源反驳教头后产生厌恶（ptr_8），随后下定决心要镇压方源（ptr_4），并思考如何镇压（ptr_5）。observedMotive直接来自种子事实。inferredMotive为保守一步推断：镇压是为了维护师道尊严和学堂秩序，这是学堂管理者的职责所在。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "学堂家老作为学堂管理者（古月家族学堂管理层代表），对方源产生厌恶并决心镇压，但找不到把柄，转而思考通过设立班头等职位利用体制同化方源。这是来自管理层的 faction pressure，pressureAxis 为镇压方源（通过体制同化手段），likelyReactions 为设立班头职位。证据中等，因为学堂家老个人意志可代表学堂管理层立场。",
+      "IF export filter quarantined 4 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}

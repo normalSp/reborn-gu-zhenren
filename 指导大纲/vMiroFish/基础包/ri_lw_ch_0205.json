@@ -1,0 +1,893 @@
+{
+  "packageId": "ri_lw_ch_0205",
+  "sourceRange": {
+    "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+    "chapterIds": [
+      "ch_0205"
+    ],
+    "paragraphIds": [
+      "ch_0205_p0002",
+      "ch_0205_p0004",
+      "ch_0205_p0006",
+      "ch_0205_p0008",
+      "ch_0205_p0013",
+      "ch_0205_p0014",
+      "ch_0205_p0016",
+      "ch_0205_p0020",
+      "ch_0205_p0026",
+      "ch_0205_p0033",
+      "ch_0205_p0035",
+      "ch_0205_p0036",
+      "ch_0205_p0063",
+      "ch_0205_p0064",
+      "ch_0205_p0065",
+      "ch_0205_p0066",
+      "ch_0205_p0077",
+      "ch_0205_p0080",
+      "ch_0205_p0092"
+    ]
+  },
+  "entities": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0002",
+          "startOffset": 685237,
+          "endOffset": 685284,
+          "summary": "铁家寨小姐，神捕之女"
+        }
+      ],
+      "entityId": "entity_fe9768dc1ee8",
+      "name": "铁若男",
+      "kind": "person",
+      "aliases": [
+        "若男小姐"
+      ],
+      "description": "铁家寨小姐，神捕之女",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0002",
+          "startOffset": 685237,
+          "endOffset": 685284,
+          "summary": "铁家寨青年蛊师，身份神秘，被鬼一称为公子"
+        }
+      ],
+      "entityId": "entity_06b5439c9329",
+      "name": "青年蛊师",
+      "kind": "single_person_title",
+      "aliases": [
+        "公子"
+      ],
+      "description": "铁家寨青年蛊师，身份神秘，被鬼一称为公子",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0014",
+          "startOffset": 685795,
+          "endOffset": 685808,
+          "summary": "青年蛊师的下属，小组组长"
+        }
+      ],
+      "entityId": "entity_1adfc5fb73b1",
+      "name": "鬼一",
+      "kind": "person",
+      "aliases": [],
+      "description": "青年蛊师的下属，小组组长",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0020",
+          "startOffset": 685906,
+          "endOffset": 685948,
+          "summary": "魔道蛊师，持有阳蛊"
+        }
+      ],
+      "entityId": "entity_709283976e99",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "魔道蛊师，持有阳蛊",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0020",
+          "startOffset": 685906,
+          "endOffset": 685948,
+          "summary": "与方源同行的蛊师，曾拥有北冥冰魄体质"
+        }
+      ],
+      "entityId": "entity_1230a0800679",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "与方源同行的蛊师，曾拥有北冥冰魄体质",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0033",
+          "startOffset": 686445,
+          "endOffset": 686451,
+          "summary": "战斗中的蛊师"
+        }
+      ],
+      "entityId": "entity_1230a0800679",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "战斗中的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0036",
+          "startOffset": 686526,
+          "endOffset": 686528,
+          "summary": "指挥战斗的蛊师"
+        }
+      ],
+      "entityId": "entity_709283976e99",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "指挥战斗的蛊师",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0065",
+          "startOffset": 687577,
+          "endOffset": 687599,
+          "summary": "白家天才"
+        }
+      ],
+      "entityId": "entity_1230a0800679",
+      "name": "白凝冰",
+      "kind": "person",
+      "aliases": [],
+      "description": "白家天才",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0066",
+          "startOffset": 687603,
+          "endOffset": 687640,
+          "summary": "主角"
+        }
+      ],
+      "entityId": "entity_709283976e99",
+      "name": "方源",
+      "kind": "person",
+      "aliases": [],
+      "description": "主角",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "relations": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0006",
+          "startOffset": 685457,
+          "endOffset": 685562,
+          "summary": "铁若男是神捕的女儿"
+        }
+      ],
+      "relationId": "rel_35c993d7c146",
+      "subject": "铁若男",
+      "object": "神捕",
+      "relationType": "FAMILY",
+      "summary": "铁若男是神捕的女儿",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0008",
+          "startOffset": 685594,
+          "endOffset": 685673,
+          "summary": "青年蛊师奉命保护并送铁若男回山寨，但用计使其昏睡"
+        }
+      ],
+      "relationId": "rel_3a602b9664cf",
+      "subject": "青年蛊师",
+      "object": "铁若男",
+      "relationType": "OTHER",
+      "summary": "青年蛊师奉命保护并送铁若男回山寨，但用计使其昏睡",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0016",
+          "startOffset": 685820,
+          "endOffset": 685837,
+          "summary": "青年蛊师是鬼一的上级，命令鬼一护送铁若男"
+        }
+      ],
+      "relationId": "rel_01b099fb6d6b",
+      "subject": "青年蛊师",
+      "object": "鬼一",
+      "relationType": "OTHER",
+      "summary": "青年蛊师是鬼一的上级，命令鬼一护送铁若男",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0026",
+          "startOffset": 686200,
+          "endOffset": 686255,
+          "summary": "方源和白凝冰同行，但方源持有阳蛊控制白凝冰"
+        }
+      ],
+      "relationId": "rel_756b933b5eea",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源和白凝冰同行，但方源持有阳蛊控制白凝冰",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0063",
+          "startOffset": 687481,
+          "endOffset": 687487,
+          "summary": "白凝冰认为方源是真正的威胁，心生戒备"
+        }
+      ],
+      "relationId": "rel_fe3e029424e3",
+      "subject": "白凝冰",
+      "object": "方源",
+      "relationType": "CONFLICT",
+      "summary": "白凝冰认为方源是真正的威胁，心生戒备",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0066",
+          "startOffset": 687603,
+          "endOffset": 687640,
+          "summary": "方源掌控白凝冰的把柄，白凝冰想杀方源夺阳蛊但忌惮"
+        }
+      ],
+      "relationId": "rel_2a539b935713",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "CONFLICT",
+      "summary": "方源掌控白凝冰的把柄，白凝冰想杀方源夺阳蛊但忌惮",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0092",
+          "startOffset": 688532,
+          "endOffset": 688582,
+          "summary": "方源暂时与白凝冰合作，提供血月蛊助战"
+        }
+      ],
+      "relationId": "rel_d4b7f177a123",
+      "subject": "方源",
+      "object": "白凝冰",
+      "relationType": "ALLY",
+      "summary": "方源暂时与白凝冰合作，提供血月蛊助战",
+      "timeRange": "",
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "events": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0002",
+          "startOffset": 685237,
+          "endOffset": 685284,
+          "summary": "神捕战死"
+        }
+      ],
+      "eventId": "evt_e4d6ae7a4121",
+      "eventType": "death",
+      "summary": "神捕战死",
+      "actors": [
+        "神捕"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "铁若男立志报仇，青年蛊师决定追踪"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0020",
+          "startOffset": 685906,
+          "endOffset": 685948,
+          "summary": "方源和白凝冰在黄龙江边遭遇数百只六足鳄群攻击"
+        }
+      ],
+      "eventId": "evt_2334cdd845a5",
+      "eventType": "conflict",
+      "summary": "方源和白凝冰在黄龙江边遭遇数百只六足鳄群攻击",
+      "actors": [
+        "方源",
+        "白凝冰",
+        "六足鳄群"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰被迫使用锯齿金蜈战斗"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0013",
+          "startOffset": 685766,
+          "endOffset": 685791,
+          "summary": "青年蛊师用手段使铁若男昏睡，以便独自追踪"
+        }
+      ],
+      "eventId": "evt_a20a25ea4849",
+      "eventType": "other",
+      "summary": "青年蛊师用手段使铁若男昏睡，以便独自追踪",
+      "actors": [
+        "青年蛊师",
+        "铁若男"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "铁若男被送返山寨，青年蛊师独自沿黄龙江追踪"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0035",
+          "startOffset": 686494,
+          "endOffset": 686500,
+          "summary": "白凝冰使用锯齿金蜈与六足鳄群战斗，起初效果显著，后因锯齿磨损效果减弱，发现腹部弱点后大杀四方"
+        }
+      ],
+      "eventId": "evt_939a3093c793",
+      "eventType": "conflict",
+      "summary": "白凝冰使用锯齿金蜈与六足鳄群战斗，起初效果显著，后因锯齿磨损效果减弱，发现腹部弱点后大杀四方",
+      "actors": [
+        "白凝冰",
+        "六足鳄"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰击杀大量六足鳄，但锯齿金蜈受损，后改变战术攻击腹部，效果良好"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0036",
+          "startOffset": 686526,
+          "endOffset": 686528,
+          "summary": "方源提醒白凝冰避免攻击六足鳄背甲，攻击腹部"
+        }
+      ],
+      "eventId": "evt_4385f2438286",
+      "eventType": "other",
+      "summary": "方源提醒白凝冰避免攻击六足鳄背甲，攻击腹部",
+      "actors": [
+        "方源"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰起初未听从，后自行发现腹部弱点"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0080",
+          "startOffset": 688114,
+          "endOffset": 688134,
+          "summary": "白凝冰与六足鳄战斗，体力不支"
+        }
+      ],
+      "eventId": "evt_37782abbab0c",
+      "eventType": "conflict",
+      "summary": "白凝冰与六足鳄战斗，体力不支",
+      "actors": [
+        "白凝冰",
+        "六足鳄"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰真元不足，方源提供血月蛊"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0092",
+          "startOffset": 688532,
+          "endOffset": 688582,
+          "summary": "方源将血月蛊借给白凝冰使用"
+        }
+      ],
+      "eventId": "evt_018b65fa96d6",
+      "eventType": "other",
+      "summary": "方源将血月蛊借给白凝冰使用",
+      "actors": [
+        "方源",
+        "白凝冰"
+      ],
+      "affectedEntities": [],
+      "causes": [],
+      "consequences": [
+        "白凝冰暂时稳住局面"
+      ],
+      "knownObservers": [],
+      "hiddenObservers": [],
+      "visibility": "ambiguous",
+      "confidence": "medium"
+    }
+  ],
+  "timeline": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0002",
+          "startOffset": 685237,
+          "endOffset": 685284,
+          "summary": "神捕战死"
+        }
+      ],
+      "timelineId": "tl_e4d6ae7a4121",
+      "eventId": "evt_e4d6ae7a4121",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "神捕战死",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0020",
+          "startOffset": 685906,
+          "endOffset": 685948,
+          "summary": "方源和白凝冰在黄龙江边遭遇数百只六足鳄群攻击"
+        }
+      ],
+      "timelineId": "tl_2334cdd845a5",
+      "eventId": "evt_2334cdd845a5",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "方源和白凝冰在黄龙江边遭遇数百只六足鳄群攻击",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0013",
+          "startOffset": 685766,
+          "endOffset": 685791,
+          "summary": "青年蛊师用手段使铁若男昏睡，以便独自追踪"
+        }
+      ],
+      "timelineId": "tl_a20a25ea4849",
+      "eventId": "evt_a20a25ea4849",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "青年蛊师用手段使铁若男昏睡，以便独自追踪",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0035",
+          "startOffset": 686494,
+          "endOffset": 686500,
+          "summary": "白凝冰使用锯齿金蜈与六足鳄群战斗，起初效果显著，后因锯齿磨损效果减弱，发现腹部弱点后大杀四方"
+        }
+      ],
+      "timelineId": "tl_939a3093c793",
+      "eventId": "evt_939a3093c793",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰使用锯齿金蜈与六足鳄群战斗，起初效果显著，后因锯齿磨损效果减弱，发现腹部弱点后大杀四方",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0036",
+          "startOffset": 686526,
+          "endOffset": 686528,
+          "summary": "方源提醒白凝冰避免攻击六足鳄背甲，攻击腹部"
+        }
+      ],
+      "timelineId": "tl_4385f2438286",
+      "eventId": "evt_4385f2438286",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "方源提醒白凝冰避免攻击六足鳄背甲，攻击腹部",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0080",
+          "startOffset": 688114,
+          "endOffset": 688134,
+          "summary": "白凝冰与六足鳄战斗，体力不支"
+        }
+      ],
+      "timelineId": "tl_37782abbab0c",
+      "eventId": "evt_37782abbab0c",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "白凝冰与六足鳄战斗，体力不支",
+      "confidence": "medium"
+    },
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0092",
+          "startOffset": 688532,
+          "endOffset": 688582,
+          "summary": "方源将血月蛊借给白凝冰使用"
+        }
+      ],
+      "timelineId": "tl_018b65fa96d6",
+      "eventId": "evt_018b65fa96d6",
+      "chapterId": "ch_0205",
+      "orderHint": "chapter-order",
+      "summary": "方源将血月蛊借给白凝冰使用",
+      "confidence": "medium"
+    }
+  ],
+  "hiddenFacts": [],
+  "characterMotives": [
+    {
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0063",
+          "startOffset": 687481,
+          "endOffset": 687487,
+          "summary": "白凝冰认为方源是真正的威胁，心生戒备"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0066",
+          "startOffset": 687603,
+          "endOffset": 687640,
+          "summary": "主角"
+        },
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0205",
+          "paragraphId": "ch_0205_p0065",
+          "startOffset": 687577,
+          "endOffset": 687599,
+          "summary": "白家天才"
+        }
+      ],
+      "motiveId": "motive_01",
+      "character": "白凝冰",
+      "observedMotive": "认为方源是真正威胁",
+      "inferredMotive": "戒备方源，欲夺阳蛊",
+      "fear": "",
+      "desire": "",
+      "bottomLine": "",
+      "confidence": "medium"
+    }
+  ],
+  "factionPressures": [],
+  "ifBranches": [],
+  "confidence": "medium",
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0002",
+      "startOffset": 685237,
+      "endOffset": 685284,
+      "summary": "铁家寨小姐，神捕之女"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0014",
+      "startOffset": 685795,
+      "endOffset": 685808,
+      "summary": "青年蛊师的下属，小组组长"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0020",
+      "startOffset": 685906,
+      "endOffset": 685948,
+      "summary": "魔道蛊师，持有阳蛊"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0033",
+      "startOffset": 686445,
+      "endOffset": 686451,
+      "summary": "战斗中的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0036",
+      "startOffset": 686526,
+      "endOffset": 686528,
+      "summary": "指挥战斗的蛊师"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0065",
+      "startOffset": 687577,
+      "endOffset": 687599,
+      "summary": "白家天才"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0066",
+      "startOffset": 687603,
+      "endOffset": 687640,
+      "summary": "主角"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0006",
+      "startOffset": 685457,
+      "endOffset": 685562,
+      "summary": "铁若男是神捕的女儿"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0008",
+      "startOffset": 685594,
+      "endOffset": 685673,
+      "summary": "青年蛊师奉命保护并送铁若男回山寨，但用计使其昏睡"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0016",
+      "startOffset": 685820,
+      "endOffset": 685837,
+      "summary": "青年蛊师是鬼一的上级，命令鬼一护送铁若男"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0026",
+      "startOffset": 686200,
+      "endOffset": 686255,
+      "summary": "方源和白凝冰同行，但方源持有阳蛊控制白凝冰"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0063",
+      "startOffset": 687481,
+      "endOffset": 687487,
+      "summary": "白凝冰认为方源是真正的威胁，心生戒备"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0092",
+      "startOffset": 688532,
+      "endOffset": 688582,
+      "summary": "方源暂时与白凝冰合作，提供血月蛊助战"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0013",
+      "startOffset": 685766,
+      "endOffset": 685791,
+      "summary": "青年蛊师用手段使铁若男昏睡，以便独自追踪"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0035",
+      "startOffset": 686494,
+      "endOffset": 686500,
+      "summary": "白凝冰使用锯齿金蜈与六足鳄群战斗，起初效果显著，后因锯齿磨损效果减弱，发现腹部弱点后大杀四方"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0205",
+      "paragraphId": "ch_0205_p0080",
+      "startOffset": 688114,
+      "endOffset": 688134,
+      "summary": "白凝冰与六足鳄战斗，体力不支"
+    }
+  ],
+  "review": {
+    "status": "needs_review",
+    "classification": "hidden",
+    "notes": [
+      "Converted from the old chapter extraction schema.",
+      "Hidden facts, motives, and faction pressures require living-world re-extraction.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed: The seed package contains mostly public/visible events (battle with six-legged crocodiles, Fang Yuan lending Blood Moon Gu, Bai Ning Bing fighting). The only potentially hidden elements are internal thoughts (Bai Ning Bing considering Fang Yuan a threat, thinking about killing him for the Yang Gu) and the young Gu Master's secret actions (making Tie Ruonan sleep). However, these are either internal monologue (not a hidden fact about the world) or actions that are directly narrated (not truly hidden from the reader). No source-backed hidden fact about the living world that is private knowledge, future-known, or a directly supported knowledge gap can be cleanly extracted from this seed without speculation.",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "白凝冰在战斗中意识到方源才是真正威胁（ptr_12），随后内心独白想斩杀方源夺阳蛊（ptr_7），结合其心高气傲不甘认命（ptr_6），可推断其戒备方源并有夺蛊意图。observedMotive直接来自源文，inferredMotive为谨慎一步推断。",
+      "Merged second-stage living-world enrichment; still requires expert/manual review.",
+      "insufficient source-backed seed",
+      "The seed primarily focuses on individual-level dynamics: Fang Yuan and Bai Ning Bing's conflict/cooperation, the young Gu Master's mission to escort Tie Ruonan, and a beast attack. No collective faction/group pressure is clearly established.",
+      "Tie family (铁家寨) is mentioned but only through Tie Ruonan (individual) and her father's death. No collective stake or pressure for the Tie family as a group is concretely shown in the seed facts.",
+      "Bai Ning Bing is referred to as '白家天才' (Bai family genius) in one pointer, but the seed does not establish any collective stake or pressure for the Bai family as a faction.",
+      "The young Gu Master's group (鬼一's team) is too vaguely defined to constitute a faction pressure candidate.",
+      "IF export filter quarantined 6 legacy old-schema branches."
+    ]
+  },
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "base": {
+      "base": {
+        "base": {
+          "window_count": 3
+        },
+        "enrichment": {
+          "tool_name": "submit_living_world_hidden_facts",
+          "tool_mode": "strict",
+          "tool_choice_mode": "forced"
+        },
+        "enrichment_model": "deepseek-v4-flash"
+      },
+      "enrichment": {
+        "tool_name": "submit_living_world_character_motives",
+        "tool_mode": "strict",
+        "tool_choice_mode": "forced"
+      },
+      "enrichment_model": "deepseek-v4-flash"
+    },
+    "enrichment": {
+      "tool_name": "submit_living_world_faction_pressures",
+      "tool_mode": "strict",
+      "tool_choice_mode": "forced"
+    },
+    "enrichment_model": "deepseek-v4-flash"
+  }
+}
