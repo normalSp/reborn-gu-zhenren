@@ -48,8 +48,6 @@ test.describe('v1.2 low-rank survival economy ledger', () => {
 
     await freeGoalPanel.locator('[data-testid="free-goal-escape-route-prep"]').click();
     await freeGoalPanel.locator('[data-testid="free-goal-supply-feeding-prep"]').click();
-    await freeGoalPanel.locator('[data-testid="free-goal-refinement-boundary"]').click();
-    await freeGoalPanel.locator('[data-testid="free-goal-market-window"]').click();
 
     await page.getByTestId('side-panel-world').click();
     await page.locator('[data-testid=world-hub-tab-survival_economy]:visible').click();
@@ -58,6 +56,14 @@ test.describe('v1.2 low-rank survival economy ledger', () => {
     await expect(panel.locator('[data-testid="v120-survival-status"]')).toContainText('低阶生存经济');
     await expect(panel.locator('[data-testid="v120-survival-status"]')).toContainText('压力投影可读');
     await expect(panel.locator('[data-testid="v120-survival-ledger-state"]')).toContainText('尚未登记');
+    await expect(panel.locator('[data-testid="v120-survival-b3-panel"]')).toContainText('不判成败');
+    await expect(panel.locator('[data-testid="v120-survival-b4-panel"]')).toContainText('不成交');
+
+    await panel.locator('[data-testid="v120-survival-b3-refinement-action"]').click();
+    await expect(panel.locator('[data-testid="v120-survival-action-result"]')).toContainText('不消耗材料');
+    await panel.locator('[data-testid="v120-survival-b4-market-action"]').click();
+    await expect(panel.locator('[data-testid="v120-survival-action-result"]')).toContainText('不买卖');
+
     await expect(panel.locator('[data-testid="v120-survival-pressure-route_supply"]')).toContainText('路线补给压力');
     await expect(panel.locator('[data-testid="v120-survival-pressure-gu_upkeep"]')).toContainText('蛊虫喂养与维护');
     await expect(panel.locator('[data-testid="v120-survival-pressure-refinement_preparation"]')).toContainText('炼养用准备');
@@ -85,6 +91,10 @@ test.describe('v1.2 low-rank survival economy ledger', () => {
       'trade_window',
       'gray_trade_boundary',
       'anti_farm',
+    ]));
+    expect((summary.livingWorld as any).knownFactIds).toEqual(expect.arrayContaining([
+      'qingmao_refinement_fragment_boundary_baseline',
+      'qingmao_market_window_candidate_baseline',
     ]));
     expect(consoleErrors).toEqual([]);
   });

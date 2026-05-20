@@ -266,6 +266,14 @@ export function buildV120LowRankSurvivalEconomyProjection(
     'v1.2.0-a1:D-121-005',
     'v1.2.0-b2:D-122-001',
     'v1.1:D-025-C27',
+    'v1.2.0-b3:D-123',
+    'v1.2.0-b3:D-124',
+    'v1.2.0-b3:D-125',
+    'v1.2.0-b4:D-126',
+    'v1.2.0-b4:D-127',
+    'v1.2.0-process:D-128',
+    'v1.2.0-process:D-129',
+    'v1.2.0-rc:D-130',
     ...pressureItems.flatMap(item => item.sourceRefs),
   ]);
 
@@ -282,10 +290,10 @@ export function buildV120LowRankSurvivalEconomyProjection(
     routeStatusLabel: routeOverview.statusLabel,
     pressureItems,
     boundaryLines: [
-      'b2 最小 ledger：允许写 survivalEconomyState 压力账本，SAVE_FORMAT_VERSION = 24。',
+      'v1.2 最小 ledger：允许写 survivalEconomyState 压力账本，SAVE_FORMAT_VERSION = 24。',
       'survivalEconomyState 只能记录压力、来源、证据与禁止项，不是正式库存或交易账本。',
-      '不发材料、不扣元石、不消耗食料、不结算炼蛊成功或失败。',
-      '不写正式价格、商店库存、买卖、黑市、委托或稳定套利。',
+      'b3 只做炼养用准备、残方缺口、材料验证和失败风险可读性；不发材料、不扣元石、不消耗食料、不结算炼蛊成功或失败。',
+      'b4 只做询价、担保、公开理由和风险窗口；不写正式价格、商店库存、买卖、黑市、委托或稳定套利。',
       'DeepSeek 只能写压力、线索、传闻和请求；本地 engine/store 才能拥有事实结算。',
     ],
     visibleSourceRefs,

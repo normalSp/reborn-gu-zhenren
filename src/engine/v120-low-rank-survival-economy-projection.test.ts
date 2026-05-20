@@ -81,6 +81,14 @@ describe('v1.2 low-rank survival economy projection', () => {
     expect(projection.deepSeekAuthority).toBe('no_new_authority');
     expect(projection.boundaryLines.join('\n')).toContain('允许写 survivalEconomyState');
     expect(projection.boundaryLines.join('\n')).toContain('不是正式库存或交易账本');
+    expect(projection.boundaryLines.join('\n')).toContain('b3 只做炼养用准备');
+    expect(projection.boundaryLines.join('\n')).toContain('b4 只做询价');
+    expect(projection.visibleSourceRefs).toEqual(expect.arrayContaining([
+      'v1.2.0-b3:D-123',
+      'v1.2.0-b4:D-126',
+      'v1.2.0-process:D-128',
+      'v1.2.0-rc:D-130',
+    ]));
     expect(projection.forbiddenWrites).toEqual(expect.arrayContaining([
       'survivalEconomyState_outside_pressure_ledger',
       'formal_economy_state',

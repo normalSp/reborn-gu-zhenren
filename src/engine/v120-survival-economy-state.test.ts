@@ -79,6 +79,12 @@ describe('v1.2-b2 survival economy state', () => {
     expect(resolution.applied).toEqual(['survivalEconomyState']);
     expect(resolution.survivalEconomyState.status).toBe('pressure_tracked');
     expect(resolution.survivalEconomyState.authority).toBe('survival_economy_engine');
+    expect(resolution.survivalEconomyState.sourceRefs).toEqual(expect.arrayContaining([
+      'v1.2.0-b3:D-123',
+      'v1.2.0-b4:D-126',
+      'v1.2.0-process:D-128',
+      'v1.2.0-rc:D-130',
+    ]));
     expect(resolution.survivalEconomyState.ledger.map(entry => entry.category)).toEqual([
       'route_supply',
       'gu_upkeep',
