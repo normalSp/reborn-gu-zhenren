@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：a0 启动包已建立；D-130-001 至 D-130-009 已记录为用户批准；尚未进入 runtime
+状态：a1 save-format 设计门禁已建立；D-130-001 至 D-130-009 已批准；D-131-001 至 D-131-007 等待用户拍板；尚未进入 runtime
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -16,6 +16,7 @@
 - `v1.3.0-小版本执行路线图.md`
 - `v1.3.0-需求决策池.md`
 - `v1.3.0-a0-治理补丁与范围冻结.md`
+- `v1.3.0-a1-NPC势力关系save-format设计门禁.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -47,6 +48,16 @@ v1.3-a0 先补制度，不写 runtime：
 - 记录 `reverend-insanity-lore` 当前口径曾落后于 v1.2 b1，后续必须通过 skill sync audit 防止再漏。
 - 明确 `mirofish-reborng-export` 不并入专家团 skill，只做生产/导出桥接；RebornG 仍通过 intake review 吸收候选。
 
+## 本轮 a1 save-format 门禁
+
+v1.3-a1 已完成设计门禁，不写 runtime：
+
+- 核对当前 `SAVE_FORMAT_VERSION = 24` 与既有 `livingWorldState.npcMemories`、`factionPressure`、`actionConsequences`。
+- 明确旧字段 `npcRelations`、`standings`、`npcContacts`、`dynamicNPCs` 暂不作为 v1.3 社会关系权威。
+- 专家团建议 b1 采用 projection-only，不 bump v25，不新增 `socialRelationState`。
+- 若后续 b2/b3 证明必须持久化，再单独进入 `SAVE_FORMAT_VERSION = 25` 小门禁。
+- 列出 D-131-001 至 D-131-007，等待用户一次性拍板。
+
 ## 硬边界
 
 - 不新增 save 字段，除非 a1 后用户批准。
@@ -58,10 +69,9 @@ v1.3-a0 先补制度，不写 runtime：
 
 ## 下一步
 
-进入 `v1.3.0-a1-NPC势力关系save-format设计门禁.md`，详细评估：
+等待用户拍板 D-131-001 至 D-131-007。若用户批准专家团口径，下一步进入 `v1.3.0-a2-MiroFish-NPC势力关系topic-slice-intake.md`：
 
-- 是否需要 `SAVE_FORMAT_VERSION = 25`。
-- 是否需要单一 `socialRelationState` 或同类聚合对象。
-- b1 是否保持 projection-only。
-- 命名 NPC allowlist、关系证据、势力压力、公开编年史各自的权限边界。
-- Player Advocate、deterministic drift、live probe 和 MiroFish blocking 条件。
+- 复用 v0.13 三包与全书基础包 source pointer。
+- 不整包导入知识库、runtime、canon 或 DeepSeek。
+- 将新样本 triage 到测试矩阵。
+- 为 b1 projection-only runtime 做最后资料门禁。
