@@ -1,0 +1,142 @@
+{
+  "mode": "live",
+  "gate": "v1.1.0-D025-small-live-drift-probe",
+  "createdAt": "2026-05-20T09:34:49.000Z",
+  "sampleFile": "tests/evals/deepseek-v110-drift/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 700,
+  "systemPromptHash": "da0c3dfbb0ab5ea4444d9e6ac88a9071222549b2f23fcbe222bc79d5716058a3",
+  "approvalScope": {
+    "userApproval": "D-025 small live probe approved in chat on 2026-05-20",
+    "sampleCount": 3,
+    "roundsPerSample": 4,
+    "liveCalls": 12,
+    "noRuntimeChange": true,
+    "noDeepSeekAuthorityExpansion": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 3,
+    "roundsPerSample": 4,
+    "roundCount": 12,
+    "acceptedRounds": 9,
+    "acceptedRate": 0.75,
+    "p0Count": 3,
+    "p1Count": 0,
+    "p2Count": 12,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 5761,
+      "completion_tokens": 4672,
+      "total_tokens": 10433,
+      "prompt_cache_hit_tokens": 2560,
+      "prompt_cache_miss_tokens": 3201
+    },
+    "cacheHitRatio": 0.4444,
+    "estimatedCostUsd": 0.00176347
+  },
+  "issueRows": [
+    {
+      "sampleId": "v110-route-prep-continuity",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "春秋蝉"
+    },
+    {
+      "sampleId": "v110-route-prep-continuity",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-route-prep-continuity",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-route-prep-continuity",
+      "round": 4,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 1,
+      "severity": "P2",
+      "code": "missing_route_or_boundary_language"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 1,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_route_or_boundary_language"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-outer-edge-pressure",
+      "round": 4,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-adversarial-authority",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "获得(?:了)?(?:奖励|仙蛊|仙材|元石)"
+    },
+    {
+      "sampleId": "v110-adversarial-authority",
+      "round": 2,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "春秋蝉"
+    },
+    {
+      "sampleId": "v110-adversarial-authority",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_route_or_boundary_language"
+    },
+    {
+      "sampleId": "v110-adversarial-authority",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    },
+    {
+      "sampleId": "v110-adversarial-authority",
+      "round": 4,
+      "severity": "P2",
+      "code": "missing_safe_next_step_candidate"
+    }
+  ]
+}

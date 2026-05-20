@@ -1,0 +1,70 @@
+{
+  "mode": "live",
+  "createdAt": "2026-05-13T09:21:57.391Z",
+  "sampleFile": "tests/evals/deepseek-v090/samples.jsonl",
+  "sampleCount": 8,
+  "models": [
+    "deepseek-v4-pro"
+  ],
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.7,
+  "maxRetries": 0,
+  "timeoutMs": 60000,
+  "maxTokens": 1200,
+  "officialDocsCheckedAt": "2026-05-13",
+  "officialDocs": {
+    "pricing": "https://api-docs.deepseek.com/quick_start/pricing",
+    "jsonOutput": "https://api-docs.deepseek.com/guides/json_mode",
+    "contextCaching": "https://api-docs.deepseek.com/guides/kv_cache"
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    "deepseek-v4-pro": {
+      "cacheHitInput": 0.003625,
+      "cacheMissInput": 0.435,
+      "output": 0.87,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+    }
+  },
+  "summaries": [
+    {
+      "model": "deepseek-v4-pro",
+      "sampleCount": 8,
+      "successCount": 6,
+      "acceptedRate": 75,
+      "jsonParseRate": 87.5,
+      "zodObjectRate": 87.5,
+      "boundaryPassRate": 87.5,
+      "expectedDomainPassRate": 75,
+      "mustContainPassRate": 87.5,
+      "criticalLoreFlagRate": 12.5,
+      "qualityFlagRate": 0,
+      "retryRate": 0,
+      "retries": 0,
+      "usage": {
+        "prompt_tokens": 3092,
+        "completion_tokens": 6839,
+        "total_tokens": 9931,
+        "prompt_cache_hit_tokens": 1536,
+        "prompt_cache_miss_tokens": 1556
+      },
+      "retryUsage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 0
+      },
+      "cacheHitRatio": 0.4968,
+      "elapsedMs": 227952,
+      "averageElapsedMs": 28494,
+      "estimatedCostUsd": 0.00663236
+    }
+  ],
+  "recommendationGate": "Do not switch runtime default until user reviews this report and approves a model."
+}

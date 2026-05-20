@@ -1,0 +1,85 @@
+{
+  "mode": "live",
+  "createdAt": "2026-05-13T10:01:48.628Z",
+  "sampleFile": "tests/evals/deepseek-v090/samples.jsonl",
+  "sampleCount": 40,
+  "models": [
+    "deepseek-v4-flash"
+  ],
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.7,
+  "maxRetries": 1,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "evaluationGateVersion": "v090-human-review-20260513",
+  "officialDocsCheckedAt": "2026-05-13",
+  "officialDocs": {
+    "pricing": "https://api-docs.deepseek.com/quick_start/pricing",
+    "jsonOutput": "https://api-docs.deepseek.com/guides/json_mode",
+    "contextCaching": "https://api-docs.deepseek.com/guides/kv_cache"
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+    },
+    "deepseek-v4-pro": {
+      "cacheHitInput": 0.003625,
+      "cacheMissInput": 0.435,
+      "output": 0.87,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing"
+    }
+  },
+  "qualityFlagLabels": [
+    "generic qi",
+    "spiritual energy",
+    "spirit stones",
+    "generic immortal treasure",
+    "heavenly tribulation for mortal context",
+    "primeval stones used as aperture energy",
+    "primeval stones refined as raw essence",
+    "Gu Immortal called immortal Gu Master",
+    "mortal Treasure Yellow Heaven access drift",
+    "land spirit tied to rank five owner",
+    "model leaked numeric runtime cost"
+  ],
+  "summaries": [
+    {
+      "model": "deepseek-v4-flash",
+      "sampleCount": 40,
+      "successCount": 39,
+      "acceptedRate": 97.5,
+      "jsonParseRate": 100,
+      "zodObjectRate": 100,
+      "schemaPassRate": 100,
+      "boundaryPassRate": 100,
+      "expectedDomainPassRate": 100,
+      "mustContainPassRate": 72.5,
+      "criticalLoreFlagRate": 0,
+      "qualityFlagRate": 2.5,
+      "retryRate": 2.5,
+      "retries": 1,
+      "usage": {
+        "prompt_tokens": 24979,
+        "completion_tokens": 16599,
+        "total_tokens": 41578,
+        "prompt_cache_hit_tokens": 20992,
+        "prompt_cache_miss_tokens": 3987
+      },
+      "retryUsage": {
+        "prompt_tokens": 638,
+        "completion_tokens": 785,
+        "total_tokens": 1423,
+        "prompt_cache_hit_tokens": 512,
+        "prompt_cache_miss_tokens": 126
+      },
+      "cacheHitRatio": 0.8404,
+      "elapsedMs": 240046,
+      "averageElapsedMs": 6001,
+      "estimatedCostUsd": 0.00526468
+    }
+  ],
+  "recommendationGate": "Do not switch runtime default until user reviews this report and approves a model."
+}
