@@ -596,6 +596,9 @@ function c26_TalentEffectValidation(text: string, store: RootStore): CanaryResul
 // later explicit gate enables protected hidden-fact display.
 const PROTECTED_HIDDEN_FACT_PATTERNS = [
   /春秋蝉/g,
+  /春蟬/g,
+  /重生/g,
+  /回溯/g,
   /方源.{0,12}重生/g,
   /重生.{0,12}方源/g,
   /逆转光阴/g,

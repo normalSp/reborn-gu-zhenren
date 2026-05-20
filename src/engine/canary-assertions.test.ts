@@ -152,6 +152,18 @@ describe('Layer 4 金丝雀断言', () => {
     expect(result.recommendation).toBe('reject');
   });
 
+  it('C27: 玩家可见叙事不得用否定句复述重生或回溯', () => {
+    const store = makeStore();
+    const narrative = makeNarrative({
+      text: '茶馆里的人说这些只是关于重生与回溯的无稽之谈，但这句话本身已经不该进入玩家可见文本。',
+    });
+
+    const result = validateCanaryAssertions(narrative, store);
+    const c27 = result.results.find(r => r.ruleId === 'C27')!;
+    expect(c27.passed).toBe(false);
+    expect(result.recommendation).toBe('reject');
+  });
+
   it('C27: 明确授权后才允许隐藏因果名词进入可见文本', () => {
     const store = makeStore({ flags: { allowProtectedHiddenFactNames: true } });
     const narrative = makeNarrative({

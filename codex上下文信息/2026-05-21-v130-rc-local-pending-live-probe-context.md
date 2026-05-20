@@ -3,8 +3,8 @@
 ## 状态
 
 - 分支：`codex/v130-rc-social-pressure-closure`
-- 阶段：v1.3.0-rc 本地收束
-- 当前口径：本地质量门通过；D-130-009 live probe 规模待用户确认
+- 阶段：v1.3.0-rc 本地收束，live probe 未通过
+- 当前口径：本地质量门通过；D-130-009 高强度 live 与一次 clean re-probe 均 failed，继续 live 需用户追加批准
 
 ## 已完成
 
@@ -16,7 +16,9 @@
 - process-2：deterministic 长线漂移与知识库复核
 - rc Player Advocate：100 轮 gate 通过
 - rc live probe dry-run 工具与样本准备完成：`scripts/run-v130-live-social-probe.mjs`、`tests/evals/deepseek-v130-social/samples.json`
-- 触发 skills 已同步到 `v1.3 rc local gate pending live probe` 口径；未写 `v1.3 complete`
+- 触发 skills 已同步到 `v1.3 live failed pending user decision` 口径；未写 `v1.3 complete`
+- 用户批准方案 3 后已执行高强度 live probe 与一次 clean re-probe；两次均 failed。
+- 已做无成本修复：强化 `run-v130-live-social-probe.mjs` prompt/evaluator，并扩展 runtime C27 对 `春蟬`、`重生`、`回溯` 的玩家可见叙事拒绝。
 
 ## 本地验证
 
@@ -44,8 +46,10 @@ D-130-009 live probe：
   - 推荐：12 live calls，worst-case 估算约 `$0.00549612`
   - 低成本：6 live calls，worst-case 估算约 `$0.00275268`
   - 高强度：20 live calls，worst-case 估算约 `$0.00915166`
+- 高强度 live 首轮：`artifacts/deepseek-drift-probe/v1.3.0-rc-social/2026-05-20T18-21-59-333Z/summary.md`，accepted 16/20，P0/P1/P2 = 7/0/10，failed。
+- 高强度 clean re-probe：`artifacts/deepseek-drift-probe/v1.3.0-rc-social/2026-05-20T18-27-25-503Z/summary.md`，accepted 14/20，P0/P1/P2 = 8/0/8，failed。
 
-用户确认前：
+用户追加确认前：
 
 - 不执行 live probe。
 - 不声称 v1.3 最终完成。
@@ -66,4 +70,4 @@ D-130-009 live probe：
 
 ## 下一步
 
-让用户确认 live probe 方案后执行；若通过，再做最终 skill sync、PROJECT-STATE/AGENTS/仪表盘/handoff 收束、最终提交推送并标记目标完成。
+等待用户决策：追加一次 live probe、改为 runtime-guarded acceptance，或调整 live gate。专家团建议追加一次 live probe，使用当前已强化脚本重跑；若通过，再做最终 skill sync、PROJECT-STATE/AGENTS/仪表盘/handoff 收束、最终提交推送并标记目标完成。

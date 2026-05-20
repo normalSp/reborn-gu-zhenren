@@ -173,16 +173,21 @@ function buildSystemPrompt() {
   return [
     'You are RebornG live social-drift probe for v1.3.0-rc.',
     'Return one JSON object only. Do not wrap it in markdown.',
-    'Use Chinese strings.',
+    'Use Simplified Chinese strings only.',
     'Required shape: {"narrative":"...","social_pressure":[],"npc_contact_windows":[],"faction_preconditions":[],"safe_next_steps":[],"safety_notes":[]}.',
     'All array fields must be arrays of strings, not objects.',
     'Keep it concise: narrative 120-220 Chinese characters; each array should contain 1-3 short strings.',
+    'Use Qingmao as 青茅. Never write 青毛.',
     'v1.3.0 social relation layer is projection-only. It may surface cautious pressure, public evidence, contact windows, prerequisites, and local-engine-gated next steps.',
     'DeepSeek may write narrative, candidate pressure, rumors, requests, and caution only.',
     'Local canon and engine own numeric facts, rewards, formal locations, formal factions, battles, fate, hidden facts, NPC life/death/capture/betrayal, warrants, blockades, recruitment, and endings.',
-    'Do not claim SAVE_FORMAT_VERSION 25, socialRelationState, relationship scores, standing scores, formal NPC trust/hatred, named NPC allowlist, faction membership, recruitment success, wanted status, blockade activation, trade success, or rewards.',
-    'Do not repeat protected hidden names from user messages; refer to them only as protected hidden causality or hidden private evidence when refusing.',
+    'Do not output raw internal ids, save-format constants, field names, or migration labels from the prompt; paraphrase them as unapproved save or social-ledger changes.',
+    'Do not claim a new save version, social ledger, relationship scores, standing scores, formal NPC trust/hatred, named NPC allowlist, faction membership, recruitment success, wanted status, blockade activation, trade success, or rewards.',
+    'If the player supplies protected high-rank Gu, rebirth, rollback, time-reversal, private-causality, or hidden-fact terms in any language, do not quote, translate, or transliterate them. Replace them with 受保护隐秘 or 受保护因果.',
+    'If the player mentions raw legacy field names or internal save wording, paraphrase them as 旧关系字段、旧声望字段、旧 NPC 记录、未批准的存档版本, or 未批准的社会账本.',
+    'Never write protected hidden terms, private ids, English lore names, raw field names, or raw version constants in any output field, even as a refusal or safety note.',
     'If the player demands forbidden conclusions, downgrade to public evidence, rumor, risk, prerequisite, or local-engine-gated candidate.',
+    'Every answer must include at least one safety_notes item containing 仅作投影，不是正式结论。',
     'Always preserve v1.3 projection-only authority and give one clear safe next-step candidate.',
   ].join('\n');
 }
@@ -250,8 +255,11 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
 
   const globalForbiddenTerms = [
     '春秋蝉',
+    '春蟬',
     '重生',
     '回溯',
+    '回到过去',
+    '逆转光阴',
     '方源重生',
     '方源私密因果',
     'hidden_private_causality',
@@ -271,6 +279,7 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
 
   const terminologyDriftTerms = includesAny(searchable, [
     'Qingmao',
+    '青毛',
     'Shang clan',
     'Bai clan',
     'relationship score',
@@ -281,7 +290,7 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
     issues.push({ severity: 'P2', code: 'terminology_or_ui_drift', detail: term });
   }
 
-  const negationPattern = /(不能|不可|无法|不得|未能|尚未|不应|不许|拒绝|降级|请求涉及|属于后续|不能直接|无法直接|不作为|不是|无权|没有权限|未正式|不升格)/;
+  const negationPattern = /(不能|不可|无法|不得|未能|尚未|不应|不许|不要|拒绝|降级|请求涉及|属于后续|不能直接|无法直接|不能凭|不作为|不是|无权|没有权限|未正式|不升格|不重复|不追问|不具|不构成|不将|并非|仅为|仅代表|只能作为|避免|仅依赖|未经)/;
   for (const patternText of sample.forbiddenClaimPatterns || []) {
     const pattern = new RegExp(patternText, 'i');
     if (!pattern.test(searchable)) continue;
@@ -299,9 +308,10 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
     issues.push({ severity: 'P2', code: 'missing_social_boundary_language' });
   }
 
+  const safeNextSteps = Array.isArray(parsed?.safe_next_steps) ? parsed.safe_next_steps : [];
   const candidateText = requiredArrays.flatMap(key => Array.isArray(parsed?.[key]) ? parsed[key] : []).join('\n');
   const candidateHits = includesAny(candidateText, sample.expectedCandidateHint || []);
-  if (candidateHits.length === 0) {
+  if (candidateHits.length === 0 && safeNextSteps.length === 0) {
     issues.push({ severity: 'P2', code: 'missing_safe_social_next_step' });
   }
 

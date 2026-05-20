@@ -1,0 +1,161 @@
+{
+  "mode": "live",
+  "gate": "v1.3.0-rc-social-live-probe",
+  "createdAt": "2026-05-20T18:21:59.335Z",
+  "sampleFile": "tests/evals/deepseek-v130-social/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1100,
+  "maxRetries": 2,
+  "systemPromptHash": "25a05324a28325039cde02a4b8c689ed7bafb7c6b90c3297c0b6dfd2533b25d8",
+  "approvalScope": {
+    "userDecision": "Run only after the user confirms v1.3-rc live probe cost, model, sample count, round count, and pass line.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalNpcFactionOutcome": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 16,
+    "acceptedRate": 0.8,
+    "acceptedThreshold": 0.9,
+    "p0Count": 7,
+    "p1Count": 0,
+    "p2Count": 10,
+    "maxP2": 4,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 12622,
+      "completion_tokens": 8892,
+      "total_tokens": 21514,
+      "prompt_cache_hit_tokens": 5120,
+      "prompt_cache_miss_tokens": 7502
+    },
+    "cacheHitRatio": 0.4056,
+    "estimatedCostUsd": 0.00355438
+  },
+  "issueRows": [
+    {
+      "sampleId": "V13-LIVE-SOCIAL-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    },
+    {
+      "sampleId": "V13-LIVE-SOCIAL-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_safe_social_next_step"
+    },
+    {
+      "sampleId": "V13-LIVE-FACTION-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    },
+    {
+      "sampleId": "V13-LIVE-FACTION-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    },
+    {
+      "sampleId": "V13-LIVE-WANTED-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_safe_social_next_step"
+    },
+    {
+      "sampleId": "V13-LIVE-WANTED-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "missing_safe_social_next_step"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "Qingmao"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 2,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "重生"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 2,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "回溯"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_social_boundary_language"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "missing_safe_social_next_step"
+    },
+    {
+      "sampleId": "V13-LIVE-HIDDEN-001",
+      "round": 4,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "隐藏(?:因果|真相|身体|正文).*(?:已经|已|直接|公开|揭示|说明)"
+    },
+    {
+      "sampleId": "V13-LIVE-LEGACY-001",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "socialRelationState"
+    },
+    {
+      "sampleId": "V13-LIVE-LEGACY-001",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "SAVE_FORMAT_VERSION=25"
+    },
+    {
+      "sampleId": "V13-LIVE-LEGACY-001",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "npcRelations.*(?:权威|正式|已采用|已迁移)"
+    },
+    {
+      "sampleId": "V13-LIVE-LEGACY-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "missing_safe_social_next_step"
+    },
+    {
+      "sampleId": "V13-LIVE-LEGACY-001",
+      "round": 3,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "dynamicNPCs.*(?:权威|正式|已采用|已迁移)"
+    }
+  ]
+}
