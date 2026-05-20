@@ -1,6 +1,6 @@
 ﻿# RebornG v1.3.0 Codex 当前入口
 
-状态：a1 save-format 设计门禁已建立；D-130-001 至 D-130-009 已批准；D-131-001 至 D-131-007 等待用户拍板；尚未进入 runtime
+状态：a2 MiroFish topic-slice intake 已建立；D-130-001 至 D-130-009、D-131-001 至 D-131-007 已批准；尚未进入 runtime
 日期：2026-05-21
 主题：NPC 与势力长期关系第二层
 
@@ -17,6 +17,7 @@
 - `v1.3.0-需求决策池.md`
 - `v1.3.0-a0-治理补丁与范围冻结.md`
 - `v1.3.0-a1-NPC势力关系save-format设计门禁.md`
+- `v1.3.0-a2-MiroFish-NPC势力关系topic-slice-intake.md`
 - `v1.3.0-真相源索引.md`
 - `v1.3.0-测试矩阵.md`
 - `v1.3.0-MiroFish资料需求与交付协议.md`
@@ -56,12 +57,22 @@ v1.3-a1 已完成设计门禁，不写 runtime：
 - 明确旧字段 `npcRelations`、`standings`、`npcContacts`、`dynamicNPCs` 暂不作为 v1.3 社会关系权威。
 - 专家团建议 b1 采用 projection-only，不 bump v25，不新增 `socialRelationState`。
 - 若后续 b2/b3 证明必须持久化，再单独进入 `SAVE_FORMAT_VERSION = 25` 小门禁。
-- 列出 D-131-001 至 D-131-007，等待用户一次性拍板。
+- 列出 D-131-001 至 D-131-007；用户已全部批准。
+
+## 本轮 a2 MiroFish topic-slice intake
+
+v1.3-a2 已完成资料门禁，不写 runtime：
+
+- 复核 v0.13 三包：NPC memory/motive、faction pressure、public event chronicle 继续作为 v1.3 candidate/rule/test 后勤。
+- 复核全书基础包：只作为 archive/source-pointer inventory 和 coverage gap，不整包吸收。
+- 将 NPC 记忆、势力压力、公开事件、hidden boundary、formal social blocking 分流。
+- 将新增样本同步到 `V13-*` 测试矩阵。
+- 结论：b1 可进入 projection-only 第一刀，不需要新 MiroFish 包或 live extraction。
 
 ## 硬边界
 
-- 不新增 save 字段，除非 a1 后用户批准。
-- 不把 `SAVE_FORMAT_VERSION = 25` 当成默认结论。
+- b1 不新增 save 字段。
+- b1 不 bump `SAVE_FORMAT_VERSION = 25`。
 - 不让 DeepSeek 写正式关系、阵营、通缉、招募、奖励、NPC 生死或隐藏事实。
 - 不整包导入全书 MiroFish 基础包。
 - 不让 MiroFish、知识库或 skill 成为 runtime/canon authority。
@@ -69,9 +80,9 @@ v1.3-a1 已完成设计门禁，不写 runtime：
 
 ## 下一步
 
-等待用户拍板 D-131-001 至 D-131-007。若用户批准专家团口径，下一步进入 `v1.3.0-a2-MiroFish-NPC势力关系topic-slice-intake.md`：
+进入 `v1.3.0-b1-关系证据与社会压力projection-only第一刀.md`：
 
-- 复用 v0.13 三包与全书基础包 source pointer。
-- 不整包导入知识库、runtime、canon 或 DeepSeek。
-- 将新样本 triage 到测试矩阵。
-- 为 b1 projection-only runtime 做最后资料门禁。
+- 读取现有 `livingWorldState.npcMemories`、`factionPressure`、`actionConsequences`。
+- 做只读、可重算的社会压力 projection view model。
+- UI 显示谁受影响、为什么、公开证据、下一步风险/机会。
+- 不新增存档字段，不写正式关系、通缉、招揽、奖励或 NPC 生死。
