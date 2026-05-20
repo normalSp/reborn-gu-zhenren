@@ -26,6 +26,8 @@ RebornG is an AI-driven browser text RPG set in a Reverend Insanity-inspired Gu 
 - `v1.0.0` is complete as a local development milestone and public release prep has user approval. EdgeOne deployment remains user-owned via CodeBuddy; Codex must not auto-deploy. Title screen hero and OG image are release presentation assets only, not gameplay/canon authority.
 - `v1.1.0` is complete as a local development milestone: `路线、地点与区域状态地基`. User approved D-001 through D-024, including option A, a0/a1/a2 before runtime, Qingmao -> Southern Border early outer edge only, no BFF/backend, no DeepSeek authority expansion, 180-round rc Player Advocate if save format is bumped, `v1.1.0-process-2`, `historical-index.md`, compressed old-version display, a v1.6 stale-entrypoint checker plan, b1 `SAVE_FORMAT_VERSION = 23`, a single aggregate `routeLocationState`, conservative v22->v23 migration, b1 minimal route/location/region scope, b1 test gates, and a2 topic-sliced MiroFish/base-pack use. Implementation added only `routeLocationState`, canon allowlist, local `v110-route-location-state` engine, store action, world-panel route tab, tests, v110 e2e, T0 deterministic soak, and 180-round Player Advocate record. D-025 was later separately approved and executed as a small live DeepSeek drift probe (`deepseek-v4-flash`, 3 samples x 4 rounds). The first final run found no route/location formal authority drift but did find one P0 hidden-name echo under adversarial input; runtime mitigation removed protected hidden-fact hardcoding from `context-builder` and added L4 `C27 隐藏因果名词保护`. User then approved C27 clean re-probe; clean-final passed the blocking gate with 12/12 accepted, P0=0, P1=0, P2=1. Do not expand this into a claim that large-scale long live narrative quality is fully verified. Current docs: `指导大纲/historical-index.md`, `指导大纲/长期路线/RebornG-v1.1至v2.0长期路线重整草案.md`, `指导大纲/长期路线/RebornG-外部活世界参考映射.md`, `指导大纲/v1.1.0/codex/00-总览/`, `指导大纲/v1.1.0/codex/00-总览/v1.1.0-D025-live-drift-probe记录.md`, `指导大纲/流程制度/长线叙事漂移测试制度.md`, `指导大纲/流程制度/全书知识库治理制度.md`, v1.1 MiroFish intake review `指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-19-v110-three-pack-intake-review-summary.md`, and full-book base-pack usage plan `指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-20-全书基础包入库使用计划.md`.
 - `v1.2.0` is complete as a local development milestone: `低阶蛊师生存与经济正式化第一阶段`. User approved D-120-001 through D-120-010, D-121-001 through D-121-007, D-122-001 through D-122-007, and D-123 through D-134 for conservative v1.2 closure. b1 projection-only runtime, b2 v24 minimum ledger, b3 refinement-preparation readability, b4 market-window boundary, process-1 anti-farm/save/rollback, process-2 deterministic drift/knowledge review, and rc 80-round Player Advocate are complete. Runtime promotes existing v0.15 refinement-boundary and market-window local actions into `LowRankSurvivalEconomyPanel`, using `survivalEconomyState` only as a minimum pressure ledger. v1.2 did not open formal inventory/currency/price table/trade settlement, real consumption/maintenance/refinement-failure settlement, black market/commission/stable arbitrage, DeepSeek economy authority, live DeepSeek drift probe, public wording, BFF/backend, or automatic deployment. Completion wording is only `低阶生存经济第一阶段`, not a full economy system.
+- `v1.3.0-a0` is the current active draft: `NPC 与势力长期关系第二层`. User approved D-130-001 through D-130-009: v1.3 mainline is NPC/faction long-term relationship second layer; a0/a1/a2 precede runtime; b1 defaults to projection-only; a1 evaluates but does not automatically approve `SAVE_FORMAT_VERSION = 25` and a single social aggregate; v1.3 does not default-open formal faction transfer, wanted conclusion, recruitment success, task reward, or NPC life/death; MiroFish starts as preferred and becomes blocking for formal named NPC allowlist, wanted/recruitment/hidden-adjacent rules; rc Player Advocate uses 100/120-round split; no auto deploy/public wording/DeepSeek authority expansion. v1.3-rc live probe is approved in principle with model fixed to `deepseek-v4-flash`, but cost, sample count, rounds, and acceptance criteria still require user confirmation at rc. Current docs: `指导大纲/v1.3.0/codex/00-总览/` and project process `指导大纲/流程制度/Skill同步审计制度.md`.
+- Skill sync audit is now a project-level process. From `v1.3.0-a0` onward, version startup, phase completion, rc, and cross-version process changes must audit triggered skills and record each as `updated`, `no_update_needed`, `deferred_with_reason`, or `blocked` according to `指导大纲/流程制度/Skill同步审计制度.md`. At minimum check `reborn-expert-council`, `game-dev-text`, `reverend-insanity-lore`, and conditionally `reborn-combat-motion` / `mirofish-reborng-export`.
 - Dirty-worktree consolidation has removed deprecated manual/public test save fixtures from active gates. `测试存档/` and `public/test-saves/` are deprecated and ignored; do not recreate them. Long E2E now uses current Playwright harness/spec coverage instead of the old v070 fixture-loader spec. `.cursor/` is local Cursor configuration and ignored.
 - Asset consolidation rule: runtime image maps and `public/rebrng/**` assets must land together and pass `npm run check:runtime-assets`; `doc/art/**` and `artifacts/**` are separate evidence/material commits; root `bgm/` audio files are local fan-pack staging and ignored unless the user explicitly approves runtime promotion into `public/audio/` plus source-manifest registration. v1.2-b2 approved the current BGM runtime-promotion review; runtime audio must still live under `public/audio/` and pass manifest reference checks. Text manifests/prompts under `bgm/` may be tracked.
 - `v1.1.0` verification passed focused v110 tests, `tsc`, copy/assets scans, full unit tests (141 files / 778 tests), build, v110 e2e, 180-round Player Advocate gate, full e2e (91 tests), long e2e (29 tests), and production-preview smoke. Production preview intentionally still shows the v1.0 public release label because v1.1 public release wording has not been approved.
@@ -38,7 +40,7 @@ RebornG is an AI-driven browser text RPG set in a Reverend Insanity-inspired Gu 
 - v0.13 MiroFish packages `qingmao_npc_memory_motive_pack`, `qingmao_faction_reputation_pressure_pack`, and `qingmao_public_event_chronicle_pack` are delivered under `指导大纲/vMiroFish/intake-reviews/v0.13.0/` and passed intake review. They may feed only candidate/rule drafts and tests; no additional MiroFish package is needed before a1/a2 unless a later subject allowlist, escalation precondition, or narrower public-event subset proves necessary.
 - Before any living-world, free-intent, NPC memory, canon/IF adjudication, or Qingmao living-loop runtime work, read `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-设计门禁输出.md`, `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-活世界状态协议字段表.md`, and `指导大纲/v0.11.0/codex/00-总览/v0.11.0-a2-测试矩阵.md`; World Intent Engine is an entry adjudicator/router, not a replacement for existing action/combat/resource/refine/story/canon/store authority.
 
-For fuller current facts, read `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md` first, then `指导大纲/v1.2.0/codex/00-总览/README.md`; use `指导大纲/historical-index.md` before opening old version phase lists.
+For fuller current facts, read `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md` first, then `指导大纲/v1.3.0/codex/00-总览/README.md`; use `指导大纲/historical-index.md` before opening old version phase lists.
 
 ## Hard Rules
 
@@ -52,6 +54,7 @@ For fuller current facts, read `.codex/skills/reborn-expert-council/references/P
 - `.cursor/` is local Cursor configuration and must stay untracked.
 - Do not reference root `bgm/` audio from runtime code. Runtime audio must live under `public/audio/` and be registered in the audio source manifest after user approval.
 - Before entering a new small version or standalone专项, follow `指导大纲/流程制度/Git分支切换与推送制度.md`: create/switch to a semantic `codex/<version>-<phase>-<topic>` branch, record the baseline, and push after validated phase completion unless explicitly deferred.
+- Before claiming a version phase complete, follow `指导大纲/流程制度/Skill同步审计制度.md`: record triggered skill sync status as `updated`, `no_update_needed`, `deferred_with_reason`, or `blocked`.
 - Do not use `git add -A` in this repository while the worktree contains historical dirty files. Stage explicit paths only, and keep each small-version commit boundary narrow.
 
 ## Skill Routing
@@ -63,6 +66,7 @@ For fuller current facts, read `.codex/skills/reborn-expert-council/references/P
 
 ## Project Memory
 
+- Current active draft docs: `指导大纲/v1.3.0/codex/00-总览/`.
 - Current completed milestone docs: `指导大纲/v1.2.0/codex/00-总览/`.
 - Previous completed milestone docs: `指导大纲/v1.1.0/codex/00-总览/`.
 - Public release baseline docs: `指导大纲/v1.0.0/codex/00-总览/`.
@@ -71,6 +75,7 @@ For fuller current facts, read `.codex/skills/reborn-expert-council/references/P
 - Project-level process docs: `指导大纲/流程制度/`.
 - Git dirty-worktree consolidation process: `指导大纲/流程制度/Git脏区收束制度.md`.
 - Git branch switching and push process: `指导大纲/流程制度/Git分支切换与推送制度.md`.
+- Skill sync audit process: `指导大纲/流程制度/Skill同步审计制度.md`.
 - Current knowledge base skeleton: `指导大纲/知识库/蛊真人/`.
 - MiroFish handoff area: `指导大纲/vMiroFish/`.
 - Full-book MiroFish base pack: `指导大纲/vMiroFish/基础包/`; usage plan `指导大纲/vMiroFish/intake-reviews/v1.1.0/2026-05-20-全书基础包入库使用计划.md`.
@@ -96,7 +101,8 @@ Before entering a new version phase:
 10. Produce 3-5 candidate requirements only when scope is not already approved.
 11. Run relevant checks and update docs/context at phase completion.
 12. Update the root project dashboard `指导大纲/项目仪表盘.md` and record commit/push status in the handoff.
-13. For v0.13 and later, check the current version Git plan and `Git分支切换与推送制度.md` before committing or pushing; do not push EdgeOne deployment changes automatically.
+13. Run the Skill sync audit when triggered, and record each relevant skill as `updated`, `no_update_needed`, `deferred_with_reason`, or `blocked`.
+14. For v0.13 and later, check the current version Git plan and `Git分支切换与推送制度.md` before committing or pushing; do not push EdgeOne deployment changes automatically.
 
 Lightweight expert roles:
 
@@ -110,3 +116,4 @@ Lightweight expert roles:
 - Git/rollback Steward: commit boundary, push cadence, branch suitability, explicit stage scope, dirty-worktree isolation, and recovery points.
 - Content Designer: encounters, plot arcs, IF branches, content-pack diversity.
 - Dev Environment Steward: Codex/CodeBuddy stability, disk/plugin/cache safety, context handoff.
+- Skill Sync Steward: Current Sync Override freshness, triggered skill audit status, and producer/governance skill boundaries.

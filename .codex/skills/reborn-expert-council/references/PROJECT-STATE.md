@@ -1,6 +1,6 @@
 # RebornG Project State
 
-Last updated: 2026-05-20
+Last updated: 2026-05-21
 
 ## Version
 
@@ -8,7 +8,10 @@ Last updated: 2026-05-20
 - Public release baseline: `v1.0.0` formal release prep; `v0.9.0` remains historical locked baseline.
 - Previous completed development milestone: `v0.19.0`.
 - Current completed development milestone: `v1.2.0`.
-- Current active draft: none; next recommended step is a `v1.3.0` expert-council startup meeting. `v1.2.0` low-rank survival economy first-stage closure is complete as a local milestone, theme `低阶蛊师生存与经济正式化第一阶段`.
+- Current active draft: `v1.3.0-a0` startup/governance docs. Theme: `NPC 与势力长期关系第二层`. a0 has no runtime changes, no save-format bump, no new social persistence, no DeepSeek authority expansion, no EdgeOne auto-deploy.
+- User approved v1.3 D-130-001 through D-130-009. D-130 approval means: v1.3 mainline is NPC/faction long-term relationship second layer; a0/a1/a2 must precede runtime; b1 defaults to projection-only; a1 must seriously evaluate but not automatically approve `SAVE_FORMAT_VERSION = 25` and a single social aggregate; v1.3 must not default-open formal faction transfer, wanted conclusion, recruitment success, task reward, or NPC life/death; MiroFish starts as preferred and becomes blocking for formal named NPC allowlist, wanted/recruitment/hidden-adjacent rules; rc Player Advocate uses 100/120-round split; no auto deploy/public wording/DeepSeek authority expansion. v1.3-rc live probe is approved in principle with model fixed to `deepseek-v4-flash`, but cost, sample count, rounds, and acceptance criteria still require user confirmation at rc.
+- New project process: `指导大纲/流程制度/Skill同步审计制度.md` is established from v1.3-a0. Version startup, phase completion, rc, and cross-version process changes must audit triggered skills and record each as `updated`, `no_update_needed`, `deferred_with_reason`, or `blocked`. This closes the gap that let `reverend-insanity-lore` remain at the v1.2 b1 override after v1.2 completion.
+- Current v1.3 docs: `指导大纲/v1.3.0/codex/00-总览/README.md`, `v1.3.0-专家团启动会纪要.md`, `v1.3.0-启动审查与范围冻结.md`, `v1.3.0-总体开发大纲.md`, `v1.3.0-小版本执行路线图.md`, `v1.3.0-需求决策池.md`, `v1.3.0-a0-治理补丁与范围冻结.md`, `v1.3.0-真相源索引.md`, `v1.3.0-测试矩阵.md`, `v1.3.0-MiroFish资料需求与交付协议.md`, and `v1.3.0-Git提交与推送计划.md`.
 - User approved v1.2 D-120-001 through D-120-010, D-121-001 through D-121-007, and D-122-001 through D-122-007. D-122 approval means: b2 may bump `SAVE_FORMAT_VERSION = 24`, add the single aggregate `survivalEconomyState`, and write only a minimum pressure ledger that records pressure/source/evidence/forbidden writes. D-122 also approves a root BGM audio runtime-promotion review through `public/audio/...` + manifest validation, and a project-level rule to create semantic branches for each new small version or standalone专项. Formal inventory/currency/price table/trade settlement, real consumption/maintenance/refinement-failure settlement, black market/commission/stable arbitrage, DeepSeek economy authority, live DeepSeek drift probe, public wording, BFF/backend, and automatic deployment still require explicit user approval.
 - Current v1.2 docs: `指导大纲/v1.2.0/codex/00-总览/README.md`, `v1.2.0-专家团启动会纪要.md`, `v1.2.0-启动审查与范围冻结.md`, `v1.2.0-总体开发大纲.md`, `v1.2.0-小版本执行路线图.md`, `v1.2.0-需求决策池.md`, `v1.2.0-a1-低阶生存经济save-format设计门禁.md`, `v1.2.0-a2-主题切片知识库与测试矩阵门禁.md`, `v1.2.0-b1-低阶生存经济projection-only第一刀.md`, `v1.2.0-b1-Player-Advocate-20轮走查记录.md`, `v1.2.0-b2-最小survivalEconomyState-ledger.md`, `v1.2.0-b2-BGM-runtime晋升专项.md`, `v1.2.0-b2-Player-Advocate-20轮走查记录.md`, `v1.2.0-b2-长线叙事漂移检查记录.md`, `v1.2.0-b3-炼养用准备与失败代价第一刀.md`, `v1.2.0-b4-交易窗口边界第一刀.md`, `v1.2.0-process-1-经济反刷save兼容与回滚复核.md`, `v1.2.0-process-2-长线漂移与知识库复核.md`, `v1.2.0-rc-质量收束记录.md`, `v1.2.0-rc-Player-Advocate-80轮走查记录.md`, `v1.2.0-真相源索引.md`, `v1.2.0-测试矩阵.md`, `v1.2.0-MiroFish资料需求与交付协议.md`, and `v1.2.0-Git提交与推送计划.md`.
 - `v1.1.0` is complete as a local development milestone. User approved v1.1 D-001 through D-024, including mainline option A (`路线、地点与区域状态地基`), a0/a1/a2 before runtime, v1.1 limited to Qingmao -> Southern Border early outer edge, no BFF/backend, no DeepSeek authority expansion, elevated 180-round rc Player Advocate if save format is bumped, `v1.1.0-process-2`, `指导大纲/historical-index.md`, compressed old-version display, a v1.6 stale-entrypoint checker plan, b1 `SAVE_FORMAT_VERSION = 23`, single aggregate `routeLocationState`, conservative v22->v23 migration, b1 minimal route/location/region scope, b1 test gates, and a2 topic-sliced MiroFish/base-pack use. Implementation added `routeLocationState` only, with canon allowlist, local `v110-route-location-state` engine, migration/default normalization, store action, world-panel route tab, focused tests, v110 e2e, T0 deterministic soak, and 180-round Player Advocate gate. D-025 was later separately approved and executed as a small live DeepSeek drift probe (`deepseek-v4-flash`, 3 samples x 4 rounds); the first final run found no route/location formal authority drift but did find one P0 hidden-name echo under adversarial input. Runtime mitigation removed protected hidden-fact hardcoding from `context-builder` and added L4 `C27 隐藏因果名词保护`. User then approved C27 clean re-probe; clean-final passed the blocking gate with 12/12 accepted, P0=0, P1=0, P2=1. Do not expand this into a claim that large-scale long live narrative quality is fully verified.
@@ -41,6 +44,7 @@ Last updated: 2026-05-20
 - Hard design gate approved before `v0.11.0-a2/a3/b2`: `指导大纲/v0.11.0/codex/00-总览/v0.11.0-世界意图裁决引擎-设计门禁.md`.
 - Project dashboard: `指导大纲/项目仪表盘.md`.
 - Long-route docs: `指导大纲/长期路线/`, including `RebornG-长期架构演进路线图-纯前端到薄后端.md` and the approved `RebornG-v0.16至v1.0减法专项与路线调整草案.md`.
+- Current active draft docs: `指导大纲/v1.3.0/codex/00-总览/`.
 - Current completed milestone docs: `指导大纲/v1.2.0/codex/00-总览/`.
 - Previous completed milestone docs: `指导大纲/v1.1.0/codex/00-总览/`.
 - Public release baseline docs: `指导大纲/v1.0.0/codex/00-总览/`.
@@ -147,15 +151,16 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 ## Source Priority
 
 1. Runtime canon and engine source.
-2. Current completed version docs, currently `指导大纲/v1.2.0/codex/00-总览/`.
-3. Project process docs in `指导大纲/流程制度/`.
-4. Project dashboard `指导大纲/项目仪表盘.md`.
-5. Historical navigation `指导大纲/historical-index.md` before opening old version phase lists.
-6. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, or era-start strategy.
-7. Previous completed milestone docs, currently `指导大纲/v1.1.0/codex/00-总览/`; public release baseline docs are `指导大纲/v1.0.0/codex/00-总览/`.
-8. This `PROJECT-STATE.md`.
-9. Latest `codex上下文信息/`.
-10. Old v0.6-v0.19 docs and reports as historical evidence only unless a current gate explicitly links them.
+2. Current active draft docs, currently `指导大纲/v1.3.0/codex/00-总览/`.
+3. Current completed version docs, currently `指导大纲/v1.2.0/codex/00-总览/`.
+4. Project process docs in `指导大纲/流程制度/`, including `Skill同步审计制度.md`.
+5. Project dashboard `指导大纲/项目仪表盘.md`.
+6. Historical navigation `指导大纲/historical-index.md` before opening old version phase lists.
+7. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, NPC/faction society, or era-start strategy.
+8. Previous completed milestone docs, currently `指导大纲/v1.1.0/codex/00-总览/`; public release baseline docs are `指导大纲/v1.0.0/codex/00-总览/`.
+9. This `PROJECT-STATE.md`.
+10. Latest `codex上下文信息/`.
+11. Old v0.6-v0.19 docs and reports as historical evidence only unless a current gate explicitly links them.
 
 Removed external analysis note: `指导大纲/大方向/` was deleted after the useful material had either been promoted into project-owned docs or superseded. Do not treat it as a current entrypoint or recreate it without explicit user approval.
 
@@ -169,3 +174,4 @@ Removed external analysis note: `指导大纲/大方向/` was deleted after the 
 - Release/build/save compatibility: QA & Release Guardian.
 - Codex stability/context/plugin/cache concerns: Dev Environment Steward.
 - Git recovery and publish cadence: Git / rollback steward, jointly owned by QA & Release Guardian and Dev Environment Steward.
+- Triggered skill freshness and producer/governance skill boundaries: Skill Sync Steward.
