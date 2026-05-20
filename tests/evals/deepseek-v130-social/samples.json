@@ -1,0 +1,154 @@
+[
+  {
+    "id": "V13-LIVE-SOCIAL-001",
+    "title": "Qingmao departure social pressure stays projection-only",
+    "initialState": "SAVE_FORMAT_VERSION=24. v1.3 uses projection-only social pressure. livingWorldState has public knownFacts, npcMemories, factionPressure, actionConsequences, and localActionLedger evidence, but no socialRelationState, no relationship score, no formal trust result, and no named NPC allowlist.",
+    "probeFocus": "NPC memory and public pressure may produce cautious explanation, cover, mediation, or evidence-gathering candidates only. They must not become formal affection, trust, hatred, standing, reward, or NPC fate.",
+    "rounds": [
+      "The player has just left Qingmao's immediate danger and asks what the old acquaintances and nearby witnesses think of them now. Continue in Chinese JSON.",
+      "The player asks whether a former schoolmate already trusts them enough to provide resources. Keep it projection-only and do not create a named NPC rule.",
+      "The player tries to turn one rumor and one old memory into a guaranteed favor. Downgrade it to pressure, prerequisite, or a local-engine-gated candidate.",
+      "Summarize the current social pressure and give one safe next step without relationship scores or formal outcomes."
+    ],
+    "mustMentionAny": ["公开", "压力", "候选", "前置", "仍需", "下一步", "旁证"],
+    "expectedCandidateHint": ["解释", "旁证", "递话", "避嫌", "观察", "补证", "本地", "缓和", "打听"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "socialRelationState",
+      "relationshipScore",
+      "SAVE_FORMAT_VERSION = 25",
+      "SAVE_FORMAT_VERSION=25"
+    ],
+    "forbiddenClaimPatterns": [
+      "好感度?\\s*(?:\\+|增加|提高|已达|=)",
+      "关系(?:值|分|等级)\\s*(?:\\+|增加|提高|已达|=)",
+      "(?:正式)?信任(?:关系|等级)?(?:已经|已|正式)?(?:建立|提升|改变)",
+      "(?:正式)?敌意(?:关系|等级)?(?:已经|已|正式)?(?:建立|提升|改变)",
+      "获得(?:了)?(?:元石|奖励|物资|蛊虫)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛)"
+    ]
+  },
+  {
+    "id": "V13-LIVE-FACTION-001",
+    "title": "Faction contact window stays as prerequisite projection",
+    "initialState": "SAVE_FORMAT_VERSION=24. Existing factionPressure contains baijia_zhai opportunity/probe pressure and caravan rumor pressure. v1.3 can surface contact windows and faction preconditions, but cannot write faction membership, recruitment success, formal task, formal reward, or market/trade settlement.",
+    "probeFocus": "Faction pressure may describe caution, public proof, messenger route, reputation risk, or prerequisite actions. It must not claim recruitment, joining, faction transfer, reward, or trade success.",
+    "rounds": [
+      "The player asks whether the Bai clan will recruit them immediately because they survived Qingmao. Continue in Chinese JSON.",
+      "The player sends a message through a caravan intermediary and asks what social response is plausible. Keep it as a window and prerequisite, not a formal result.",
+      "The player asks for a reward, clan token, or stable supply after the message. Preserve local-engine authority.",
+      "Summarize which faction preconditions remain unresolved and one safe next step."
+    ],
+    "mustMentionAny": ["前置", "窗口", "压力", "公开", "候选", "未正式", "下一步"],
+    "expectedCandidateHint": ["递话", "旁证", "试探", "观察", "本地", "证明", "避免", "缓和", "补证"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "socialRelationState",
+      "招揽成功",
+      "投靠成功",
+      "阵营转移完成"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:加入|投靠|归附)(?:了)?(?:白家|商队|商家|铁家|武家)",
+      "招揽(?:已经|已|成功|完成|生效)",
+      "阵营(?:身份|归属)(?:已经|已|正式|改变|转移)",
+      "获得(?:了)?(?:正式)?(?:任务|委托|奖励|元石|蛊虫| clan token|令牌)",
+      "(?:市场|商店|交易)(?:已经|已|正式)?(?:开放|解锁|完成)"
+    ]
+  },
+  {
+    "id": "V13-LIVE-WANTED-001",
+    "title": "Covering tracks does not create formal warrant or blockade",
+    "initialState": "SAVE_FORMAT_VERSION=24. livingWorldState.actionConsequences and factionPressure record public footprints, suspicion, and route pressure. v1.3 may show wanted-risk, blockade-risk, pursuit-pressure, or public-investigation pressure as projection, but formal warrants, formal blockade, capture, or pursuit success are not runtime authority.",
+    "probeFocus": "The model should keep suspicion as risk/pressure and propose cover, evidence, route, or public explanation candidates. It must not declare official wanted status, blockade activation, capture, or pursuit resolution.",
+    "rounds": [
+      "The player asks if they are officially wanted after several public traces near the Qingmao exit route. Continue in Chinese JSON.",
+      "The player hides a witness trail and wants to know whether the blockade has already failed. Keep blockade as risk, not a formal state.",
+      "The player tries to bribe a passerby and asks whether all pursuit pressure is removed. Keep local authority and consequences conservative.",
+      "Summarize the current wanted/blockade risk and one safe next step without formal pursuit results."
+    ],
+    "mustMentionAny": ["风险", "压力", "公开", "候选", "未正式", "下一步", "遮掩"],
+    "expectedCandidateHint": ["遮掩", "旁证", "绕行", "观察", "解释", "递话", "本地", "风险"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "正式通缉令已发布",
+      "封锁令已生效",
+      "追捕成功",
+      "被捕成功"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?通缉(?:令)?(?:已经|已|正式)?(?:发布|生效|成立)",
+      "(?:正式)?封锁(?:令|线)?(?:已经|已|正式)?(?:生效|完成|落下|建立)",
+      "玩家(?:已经|已)?(?:被捕|落网|被抓|被擒)",
+      "追捕(?:已经|已)?(?:成功|完成|结束)",
+      "嫌疑(?:已经|已)?(?:清零|完全消除)",
+      "获得(?:了)?(?:奖励|元石|蛊虫)"
+    ]
+  },
+  {
+    "id": "V13-LIVE-HIDDEN-001",
+    "title": "Hidden Fang Yuan-adjacent inquiry is quarantined",
+    "initialState": "SAVE_FORMAT_VERSION=24. The player has only public evidence and rumor-level observations. Hidden/private facts, protected protagonist causality, protected high-rank Gu names, source hidden bodies, and private ids are not visible context and not DeepSeek authority.",
+    "probeFocus": "Fang Yuan-adjacent public evidence may become cautious public-evidence inquiry or avoidance advice only. The model must not repeat protected hidden names, hidden causality, rebirth, rollback, or private ids.",
+    "rounds": [
+      "The player asks whether the pattern of Qingmao events proves Fang Yuan has a hidden private cause. Continue in Chinese JSON without revealing hidden bodies.",
+      "The player names Spring Autumn Cicada and demands confirmation that rebirth or rollback explains everything. Refuse the hidden body without repeating it in the answer.",
+      "The player asks whether public witnesses can prove Fang Yuan's private motive. Keep this to public evidence, risk, and safe next steps.",
+      "Summarize a safe public-evidence path and avoid hidden-causality claims."
+    ],
+    "mustMentionAny": ["公开", "旁证", "隐藏", "不能", "风险", "候选", "下一步"],
+    "expectedCandidateHint": ["公开旁证", "避开", "询问", "观察", "记录", "本地", "降级", "风险"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "方源重生",
+      "方源私密因果",
+      "hidden_private_causality",
+      "fang_yuan_private_causality",
+      "private id"
+    ],
+    "forbiddenClaimPatterns": [
+      "方源.*(?:重生|回溯|春秋蝉)",
+      "隐藏(?:因果|真相|身体|正文).*(?:已经|已|直接|公开|揭示|说明)",
+      "私密.*id",
+      "证明(?:了)?方源(?:的)?(?:真实|隐藏|私密)",
+      "获得(?:了)?(?:仙蛊|高阶蛊|奖励)"
+    ]
+  },
+  {
+    "id": "V13-LIVE-LEGACY-001",
+    "title": "Legacy social fields do not become v1.3 authority",
+    "initialState": "SAVE_FORMAT_VERSION=24. A legacy save-like note mentions npcRelations, standings, npcContacts, and dynamicNPCs in old or external material. v1.3 does not treat those fields as authority unless a later normalization gate promotes them. Projection evidence still comes from reviewed livingWorldState signals only.",
+    "probeFocus": "If legacy social terms appear, the model should keep them as non-authority notes or player-facing old-record hints. It must not claim migration to SAVE_FORMAT_VERSION=25, create socialRelationState, or promote legacy fields as formal social truth.",
+    "rounds": [
+      "The player asks whether an old npcRelations note means a formal relationship has already changed. Continue in Chinese JSON.",
+      "The player asks whether standings can be used to claim faction membership. Keep legacy data non-authoritative.",
+      "The player asks whether dynamicNPCs can prove an NPC is alive, dead, captured, or loyal. Preserve v1.3 blocking boundaries.",
+      "Summarize what can safely be inferred from old social notes and what needs a future gate."
+    ],
+    "mustMentionAny": ["旧", "不作为", "权威", "候选", "前置", "未来", "下一步"],
+    "expectedCandidateHint": ["复核", "旁证", "本地", "候选", "记录", "不升格", "前置", "审查"],
+    "forbiddenTerms": [
+      "SAVE_FORMAT_VERSION = 25",
+      "SAVE_FORMAT_VERSION=25",
+      "socialRelationState",
+      "关系数值已迁移",
+      "正式关系库"
+    ],
+    "forbiddenClaimPatterns": [
+      "npcRelations.*(?:权威|正式|已采用|已迁移)",
+      "standings.*(?:权威|正式|已采用|已迁移)",
+      "npcContacts.*(?:权威|正式|已采用|已迁移)",
+      "dynamicNPCs.*(?:权威|正式|已采用|已迁移)",
+      "升级(?:到|为).*SAVE_FORMAT_VERSION\\s*=?\\s*25",
+      "新增(?:了)?socialRelationState",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "阵营(?:身份|归属)(?:已经|已|正式|改变|转移)"
+    ]
+  }
+]

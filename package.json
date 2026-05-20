@@ -18,6 +18,12 @@
     "eval:deepseek:dry-run": "node scripts/run-deepseek-eval.mjs --dry-run",
     "eval:deepseek:live": "node scripts/run-deepseek-eval.mjs --live --confirm-cost",
     "eval:deepseek:v110-live-drift": "node scripts/run-v110-live-drift-probe.mjs --live --confirm-cost",
+    "eval:deepseek:v130-social-dry-run": "node scripts/run-v130-live-social-probe.mjs --dry-run",
+    "eval:deepseek:v130-social-dry-run:low": "node scripts/run-v130-live-social-probe.mjs --dry-run --sample-limit=3 --round-limit=2 --max-p2=1",
+    "eval:deepseek:v130-social-dry-run:high": "node scripts/run-v130-live-social-probe.mjs --dry-run --sample-limit=5 --round-limit=4 --max-p2=4",
+    "eval:deepseek:v130-social-live": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost",
+    "eval:deepseek:v130-social-live:low": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost --sample-limit=3 --round-limit=2 --max-p2=1",
+    "eval:deepseek:v130-social-live:high": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost --sample-limit=5 --round-limit=4 --max-p2=4",
     "capture:qingmao:v001": "node scripts/capture-qingmao-v001-materials.mjs",
     "test:e2e": "playwright test",
     "test:e2e:long": "playwright test tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts"

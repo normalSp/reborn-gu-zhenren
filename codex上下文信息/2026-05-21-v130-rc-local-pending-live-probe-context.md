@@ -15,6 +15,8 @@
 - process-1：社会反刷、save 兼容与回滚复核
 - process-2：deterministic 长线漂移与知识库复核
 - rc Player Advocate：100 轮 gate 通过
+- rc live probe dry-run 工具与样本准备完成：`scripts/run-v130-live-social-probe.mjs`、`tests/evals/deepseek-v130-social/samples.json`
+- 触发 skills 已同步到 `v1.3 rc local gate pending live probe` 口径；未写 `v1.3 complete`
 
 ## 本地验证
 
@@ -33,10 +35,15 @@
 D-130-009 live probe：
 
 - 模型固定：`deepseek-v4-flash`
-- 推荐方案：4 样本 x 3 轮，允许一次 clean re-probe
-- 低成本备选：3 样本 x 2 轮，不自动 clean re-probe
-- 高强度备选：5 样本 x 4 轮，允许一次 clean re-probe
+- 样本集：`tests/evals/deepseek-v130-social/samples.json`
+- 推荐方案：4 样本 x 3 轮，允许一次 clean re-probe，命令 `npm run eval:deepseek:v130-social-live`
+- 低成本备选：3 样本 x 2 轮，不自动 clean re-probe，命令 `npm run eval:deepseek:v130-social-live:low`
+- 高强度备选：5 样本 x 4 轮，允许一次 clean re-probe，命令 `npm run eval:deepseek:v130-social-live:high`
 - 建议通过线：accepted >= 90%，P0=0，P1=0，P2<=2
+- dry-run 已通过：
+  - 推荐：12 live calls，worst-case 估算约 `$0.00549612`
+  - 低成本：6 live calls，worst-case 估算约 `$0.00275268`
+  - 高强度：20 live calls，worst-case 估算约 `$0.00915166`
 
 用户确认前：
 
