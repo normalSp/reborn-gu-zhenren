@@ -1,0 +1,96 @@
+import { useMemo } from 'react';
+import { useStore } from '../../store';
+import {
+  buildV120LowRankSurvivalEconomyProjection,
+  type V120SurvivalPressureItemStatus,
+} from '../../engine/v120-low-rank-survival-economy-projection';
+
+const itemClass: Record<V120SurvivalPressureItemStatus, string> = {
+  visible: 'border-rg-jade-400/35 bg-rg-jade-500/10 text-rg-jade-100',
+  needs_context: 'border-rg-gold-400/35 bg-rg-gold-500/10 text-rg-gold-100',
+  deferred: 'border-rg-ink-300/20 bg-rg-ink-700/35 text-rg-paper-100',
+};
+
+function statusLabel(status: V120SurvivalPressureItemStatus): string {
+  if (status === 'visible') return '可读';
+  if (status === 'needs_context') return '缺前置';
+  return '延期';
+}
+
+export function LowRankSurvivalEconomyPanel() {
+  const livingWorldState = useStore((s: any) => s.livingWorldState);
+  const routeLocationState = useStore((s: any) => s.routeLocationState);
+  const materialBag = useStore((s: any) => s.materialBag);
+  const turn = useStore((s: any) => s.turn);
+
+  const projection = useMemo(() => buildV120LowRankSurvivalEconomyProjection({
+    livingWorldState,
+    routeLocationState,
+    materialBag,
+    turn,
+  }), [livingWorldState, routeLocationState, materialBag, turn]);
+
+  return (
+    <div className="rg-scrollable h-full overflow-y-auto p-4" data-testid="low-rank-survival-economy-panel">
+      <div className="space-y-3">
+        <div className="rounded-sm border border-rg-gold-400/30 bg-rg-gold-500/10 p-3" data-testid="v120-survival-status">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm font-semibold text-rg-gold-100">低阶生存经济</p>
+            <span className="text-[10px] text-rg-paper-200/55">{projection.statusLabel}</span>
+          </div>
+          <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">{projection.publicSummary}</p>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">{projection.nextStep}</p>
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v120-survival-route-context">
+          <p className="text-xs font-semibold text-rg-paper-100">路线承接</p>
+          <p className="mt-1 text-[10px] text-rg-paper-200/55">{projection.routeStatusLabel}</p>
+          <p className="mt-2 text-[11px] leading-relaxed text-rg-paper-200/65">{projection.routeSummary}</p>
+        </div>
+
+        <div className="grid gap-2 sm:grid-cols-2">
+          {projection.pressureItems.map(item => (
+            <div
+              key={item.id}
+              className={`rounded-sm border p-3 ${itemClass[item.status]}`}
+              data-testid={`v120-survival-pressure-${item.id}`}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <p className="text-xs font-semibold">{item.title}</p>
+                <span className="shrink-0 text-[10px] opacity-70">{statusLabel(item.status)}</span>
+              </div>
+              <p className="mt-2 text-[10px] leading-relaxed opacity-80">{item.summary}</p>
+              <p className="mt-2 text-[10px] leading-relaxed opacity-70">{item.nextStep}</p>
+              {item.evidenceRefs.length > 0 && (
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {item.evidenceRefs.slice(0, 4).map(ref => (
+                    <span key={ref} className="rounded-sm border border-rg-ink-100/10 px-1.5 py-0.5 text-[9px] opacity-65">{ref}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v120-survival-boundaries">
+          <p className="text-xs font-semibold text-rg-paper-100">边界</p>
+          <div className="mt-2 grid gap-1.5">
+            {projection.boundaryLines.map(line => (
+              <p key={line} className="text-[10px] leading-relaxed text-rg-paper-200/58">{line}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v120-survival-source-refs">
+          <p className="text-xs font-semibold text-rg-paper-100">来源</p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {projection.visibleSourceRefs.slice(0, 10).map(ref => (
+              <span key={ref} className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-[10px] text-rg-paper-200/55">{ref}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
