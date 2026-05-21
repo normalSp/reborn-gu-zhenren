@@ -1,6 +1,6 @@
 # RebornG 历史索引
 
-日期：2026-05-21
+日期：2026-05-22
 状态：当前历史入口；不是 runtime authority
 
 ## 定位
@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前草案或最新完成版本入口，例如 `指导大纲/v1.8.0/codex/00-总览/README.md` 或 `指导大纲/v1.7.0/codex/00-总览/README.md`
+4. 当前草案或最新完成版本入口，例如 `指导大纲/v1.9.0/codex/00-总览/README.md` 或 `指导大纲/v1.8.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
