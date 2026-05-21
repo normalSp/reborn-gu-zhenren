@@ -1,6 +1,6 @@
 # RebornG v1.6.0 Codex 当前入口
 
-状态：v1.6-a1 active draft
+状态：v1.6-a2 active draft
 日期：2026-05-21
 主题：内容生产、canon schema 与长测工厂
 
@@ -19,6 +19,7 @@
 - `v1.6.0-需求决策池.md`
 - `v1.6.0-a0-治理补丁与范围冻结.md`
 - `v1.6.0-a1-内容知识库canon-schema设计门禁.md`
+- `v1.6.0-a2-MiroFish基础包inventory设计门禁.md`
 - `v1.6.0-MiroFish基础包使用方案.md`
 - `v1.6.0-真相源索引.md`
 - `v1.6.0-测试矩阵.md`
@@ -48,10 +49,10 @@ v1.6 主线建议为：
 
 ## 下一步
 
-用户已批准 `v1.6.0-需求决策池.md` 的 D-160-001 至 D-160-012，v1.6 正式进入 a1。
+用户已批准 `v1.6.0-需求决策池.md` 的 D-160-001 至 D-160-012、D-161-001 至 D-161-010，v1.6 正式进入 a2。
 
-当前 a1 已建立 `v1.6.0-a1-内容知识库canon-schema设计门禁.md`，只冻结知识索引 schema、promotionStatus、visibility、allowedUses/forbiddenUses、canon 草案 schema、测试样本 schema 和晋升链；不实现脚本，不读取或吸收 MiroFish 基础包内容，不改 runtime。
+当前 a2 已建立 `v1.6.0-a2-MiroFish基础包inventory设计门禁.md`，只冻结未来 `check:mirofish-base-pack-inventory` 的输入、检查项、严重级别、报告 schema 和 report-only 边界；不实现脚本，不批量扫描吸收基础包内容，不改 runtime。
 
-请用户审阅并决定 D-161-001 至 D-161-010。若批准，下一步进入：
+请用户审阅并决定 D-162-001 至 D-162-010。若批准，下一步进入：
 
-`v1.6.0-a2-MiroFish基础包inventory设计门禁.md`
+`v1.6.0-b1-MiroFish基础包inventory-checker-report-only第一刀.md`
