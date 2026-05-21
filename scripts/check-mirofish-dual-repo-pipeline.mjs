@@ -27,9 +27,9 @@ const stageOrder = new Map([
 
 function parseArgs(argv) {
   const result = {
-    version: defaultVersion,
-    topic: defaultTopic,
-    stage: 'a1',
+    version: process.env.MIROFISH_TARGET_VERSION || process.env.npm_config_target_version || process.env.npm_config_version || defaultVersion,
+    topic: process.env.MIROFISH_TOPIC || process.env.npm_config_topic || defaultTopic,
+    stage: process.env.MIROFISH_STAGE || process.env.npm_config_stage || 'a1',
     mirofishRepo: process.env.MIROFISH_REPO || defaultMiroFishRepo,
   };
   for (let i = 0; i < argv.length; i += 1) {
@@ -128,7 +128,11 @@ function scanJsonForForbiddenKeys(findings, files) {
     walkObject(data, (key, value, pathParts) => {
       if (forbiddenTextKeys.has(key)) hits.push(pathParts.join('.'));
       if (key === 'runtimeAuthority' && value !== 'candidate_only') {
-        authorityHits.push(`${pathParts.join('.')}: runtimeAuthority=${value}`);
+        const pathText = pathParts.join('.');
+        const topLevelNoAuthority = pathText === 'canonBoundary.runtimeAuthority' && value === 'none';
+        if (!topLevelNoAuthority) {
+          authorityHits.push(`${pathText}: runtimeAuthority=${value}`);
+        }
       }
       if (key === 'runtimeVisible' && value === true) {
         authorityHits.push(`${pathParts.join('.')}: runtimeVisible=true`);

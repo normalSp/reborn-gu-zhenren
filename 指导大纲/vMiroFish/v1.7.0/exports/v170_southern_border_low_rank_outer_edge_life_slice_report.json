@@ -1,0 +1,29 @@
+{
+  "totalItems": 13,
+  "byCategory": {
+    "caravanContactWindow": 1,
+    "caravanEntryPrecondition": 1,
+    "caravanPermissionWindow": 1,
+    "lowRankTradeRefusalPattern": 2,
+    "lowStatusCaravanLife": 1,
+    "outerEdgeInterrogationPattern": 1,
+    "routeDestinationPressure": 1,
+    "routePressureEvent": 1,
+    "routeSupplyPressure": 1,
+    "shelterAndDebtWindow": 1,
+    "smallMarketWindow": 1,
+    "temporaryLodgingWindow": 1
+  },
+  "byReviewStatus": {
+    "export_ready": 13
+  },
+  "sourcePointers": 13,
+  "quoteLikeKeys": 0,
+  "coverage": {
+    "outerEdgeInterrogation": true,
+    "caravanContactWindows": 3,
+    "temporaryLodgingOrShelter": 2,
+    "tradeRefusalAndMarket": 3,
+    "routeSupplyPressure": 2
+  }
+}

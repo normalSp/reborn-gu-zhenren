@@ -1,12 +1,12 @@
 # RebornG v1.7.0 Codex 当前入口
 
-状态：a1 active draft；D-170 已批准，等待用户批准 D-171
+状态：a2 complete；D-170/D-171 已批准
 日期：2026-05-21
 主题：低阶区域活世界纵切选型与第一阶段门禁
 
 ## 当前一句话
 
-`v1.7.0` 已获用户批准进入 a1：把 v1.6 的内容工厂真正用起来，先选一个足够小、可验证、能承接路线/生存/社会/区域/冲突五层投影的“低阶区域活世界纵切”，再决定是否进入 runtime。
+`v1.7.0` 已完成 a2：首个 `southern_border_low_rank_outer_edge_life_slice` 双仓 topic-slice 样板已跑通 `RebornG request -> MiroFish export -> RebornG intake review -> 测试矩阵/规则草案`。下一步可进入 b1 projection-first 第一刀，但仍不新增存档字段、不扩 DeepSeek 权限、不开放完整南疆/商家城/正式商队身份。
 
 用户追加批准：把“同开局可重玩差异度”作为 v1.7-a1 的正式评估项。它是长期活世界能力的一部分，但 v1.7 不默认通过新增持久随机字段或扩大 DeepSeek 权限来实现。
 
@@ -23,6 +23,8 @@
 - `v1.7.0-需求决策池.md`
 - `v1.7.0-a0-治理补丁与范围冻结.md`
 - `v1.7.0-a1-区域活世界topic-slice与save-format设计门禁.md`
+- `v1.7.0-a2-MiroFish-区域活世界topic-slice-intake.md`
+- `v1.7.0-a2-区域活世界规则草案.md`
 - `v1.7.0-真相源索引.md`
 - `v1.7.0-测试矩阵.md`
 - `v1.7.0-MiroFish资料需求与交付协议.md`
@@ -56,12 +58,12 @@
 
 ## 当前下一步
 
-请用户决定 `v1.7.0-a1-区域活世界topic-slice与save-format设计门禁.md` 中的 D-171-001 至 D-171-010。若批准，下一步进入：
+进入 b1 projection-first 第一刀。建议分支：
 
-`v1.7.0-a2-MiroFish-区域活世界topic-slice-intake.md`
+`codex/v170-b1-regional-life-projection-first`
 
-进入 a2 前先运行：
+进入 b1 前至少确认 a2 双仓流水线 complete 门禁通过：
 
 ```powershell
-npm run check:mirofish-dual-repo-pipeline -- --target-version=v1.7.0 --topic=southern_border_low_rank_outer_edge_life_slice --stage=a1
+npm run check:mirofish-dual-repo-pipeline -- --target-version=v1.7.0 --topic=southern_border_low_rank_outer_edge_life_slice --stage=complete
 ```

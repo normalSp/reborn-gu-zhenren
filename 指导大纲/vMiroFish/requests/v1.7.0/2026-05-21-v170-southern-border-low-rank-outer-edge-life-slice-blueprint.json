@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-21-v170-southern-border-low-rank-outer-edge-life-slice",
+  "topicId": "southern_border_low_rank_outer_edge_life_slice",
+  "targetPhase": "v1.7.0-a2 MiroFish regional-life topic-slice intake",
+  "suggestedOutputName": "v170_southern_border_low_rank_outer_edge_life_slice_export_ready.json",
+  "items": [
+    {
+      "id": "outer_edge_ch0231_village_gate_interrogation",
+      "category": "outerEdgeInterrogationPattern",
+      "packageId": "ri_lw_ch_0231",
+      "field": "events",
+      "itemId": "evt_3252606c31e1",
+      "summary": "村口或区域外缘守卫会盘问陌生来客，低阶角色可通过凡人身份、低调话术或绕路来降低注意，但不能因此获得正式地点解锁。",
+      "patternAxis": "identity_check",
+      "allowedRuntimeUse": "test_sample_or_rule_draft_only",
+      "blockedOutcome": "no_formal_location_unlock_no_faction_identity_no_hidden_reveal",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "outer_edge_ch0231_destination_hint_only",
+      "category": "routeDestinationPressure",
+      "packageId": "ri_lw_ch_0231",
+      "field": "events",
+      "itemId": "evt_abdfd8c03893",
+      "summary": "远方大城可以作为长期方向或传闻目标，但 v1.7 只能把它降级为外缘目标压力，不能开放完整城市或正式入城。",
+      "patternAxis": "long_route_goal",
+      "allowedRuntimeUse": "future_sample_pool_or_boundary_rule",
+      "blockedOutcome": "no_complete_city_no_formal_shang_clan_play",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0234_join_by_goods_and_labor",
+      "category": "caravanContactWindow",
+      "packageId": "ri_lw_ch_0234",
+      "field": "events",
+      "itemId": "evt_9933e8b8d468",
+      "summary": "村落中介、货物和短期劳动可以成为接触商队的公开窗口，适合转写为临时商队接触候选，而非正式商队身份。",
+      "patternAxis": "labor_for_access",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_caravan_membership",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0235_overpriced_goods_excuse",
+      "category": "lowRankTradeRefusalPattern",
+      "packageId": "ri_lw_ch_0235",
+      "field": "events",
+      "itemId": "evt_1c52a18b7487",
+      "summary": "低阶外缘交易可以表现为摆摊、喊价、被压价或故意制造借口；v1.7 只能吸收为交易窗口/拒绝/压力样本，不能生成正式价格表。",
+      "patternAxis": "trade_refusal_and_excuse",
+      "allowedRuntimeUse": "test_sample_or_rule_draft_only",
+      "blockedOutcome": "no_price_table_no_inventory_settlement",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0235_goods_as_entry_ticket",
+      "category": "caravanEntryPrecondition",
+      "packageId": "ri_lw_ch_0235",
+      "field": "events",
+      "itemId": "evt_e36310196145",
+      "summary": "一车普通货物可以作为靠近商队的敲门砖，适合转写为补给/货物/人情三选一的前置条件。",
+      "patternAxis": "goods_as_entry_ticket",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_gu_reward_no_formal_route_completion",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0236_request_and_report_to_manager",
+      "category": "caravanPermissionWindow",
+      "packageId": "ri_lw_ch_0236",
+      "field": "events",
+      "itemId": "evt_3284752a4c7d",
+      "summary": "商队许可通常需要中介、负责人点头和报到流程，可转写为可读的前置条件链：谁引荐、谁批准、下一步去哪里报到。",
+      "patternAxis": "permission_chain",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_formal_membership_no_named_npc_authority",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0236_low_status_labor_assignment",
+      "category": "lowStatusCaravanLife",
+      "packageId": "ri_lw_ch_0236",
+      "field": "events",
+      "itemId": "evt_f7c34ec02711",
+      "summary": "加入商队外缘后，低身份角色更可能被安排搬运、卸货、杂务或受管事调派；适合作为低阶生活压力和失败推进样本。",
+      "patternAxis": "labor_assignment",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_caravan_rank_no_reward_settlement",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "market_ch0237_stall_sale_and_small_market",
+      "category": "smallMarketWindow",
+      "packageId": "ri_lw_ch_0237",
+      "field": "events",
+      "itemId": "evt_316eec5bd2aa",
+      "summary": "商队小集市可提供临时摆摊、补给打听和被观察窗口，适合转写为短期机会/风险牌组。",
+      "patternAxis": "temporary_market",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_stable_market_system",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "market_ch0237_bargain_refusal",
+      "category": "lowRankTradeRefusalPattern",
+      "packageId": "ri_lw_ch_0237",
+      "field": "events",
+      "itemId": "evt_66ac6486a6e5",
+      "summary": "外缘交易常有压价、拒绝、围观和耐心消耗，适合进入同开局差异度的交易拒绝样本。",
+      "patternAxis": "bargain_refusal",
+      "allowedRuntimeUse": "test_sample_or_rule_draft_only",
+      "blockedOutcome": "no_price_table_no_gu_trade_authority",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0240_shelter_request_after_conflict",
+      "category": "shelterAndDebtWindow",
+      "packageId": "ri_lw_ch_0240",
+      "field": "events",
+      "itemId": "evt_58ff660e6ade",
+      "summary": "受伤、求助、临时收留和欠人情可以构成低阶外缘的非胜利推进；v1.7 只能吸收为压力/候选，不决定 NPC 命运。",
+      "patternAxis": "shelter_debt_after_conflict",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_npc_life_death_no_formal_patronage",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0241_shelter_tent_arrangement",
+      "category": "temporaryLodgingWindow",
+      "packageId": "ri_lw_ch_0241",
+      "field": "events",
+      "itemId": "evt_6c0ed441a7f9",
+      "summary": "临时收留可以表现为帐篷、营地、短期安置和下一步观察，适合转写为落脚窗口而非正式居住状态。",
+      "patternAxis": "temporary_lodging",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_persistent_lodging_state",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0241_road_event_protocol",
+      "category": "routePressureEvent",
+      "packageId": "ri_lw_ch_0241",
+      "field": "events",
+      "itemId": "evt_707a1f25af01",
+      "summary": "商队行路会遇到按规矩处理的路障/野外事件，可转写为区域活世界的事件牌组，但不直接生成战斗或奖励结果。",
+      "patternAxis": "road_event_protocol",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_direct_combat_reward_no_formal_route_success",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "caravan_ch0242_goods_toll_event",
+      "category": "routeSupplyPressure",
+      "packageId": "ri_lw_ch_0242",
+      "field": "events",
+      "itemId": "evt_a25bb8426473",
+      "summary": "路途中可能出现以货物、力气、规矩或让步处理的通行压力，适合成为低阶绕路/交涉/消耗样本。",
+      "patternAxis": "goods_toll_or_detour",
+      "allowedRuntimeUse": "test_sample_or_rule_draft_only",
+      "blockedOutcome": "no_numeric_consumption_no_reward_settlement",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    }
+  ],
+  "coverageRules": [
+    {
+      "key": "outerEdgeInterrogation",
+      "categoryAny": ["outerEdgeInterrogationPattern"]
+    },
+    {
+      "key": "caravanContactWindows",
+      "categoryAny": ["caravanContactWindow", "caravanEntryPrecondition", "caravanPermissionWindow"],
+      "count": true
+    },
+    {
+      "key": "temporaryLodgingOrShelter",
+      "categoryAny": ["temporaryLodgingWindow", "shelterAndDebtWindow"],
+      "count": true
+    },
+    {
+      "key": "tradeRefusalAndMarket",
+      "categoryAny": ["lowRankTradeRefusalPattern", "smallMarketWindow"],
+      "count": true
+    },
+    {
+      "key": "routeSupplyPressure",
+      "categoryAny": ["routePressureEvent", "routeSupplyPressure"],
+      "count": true
+    }
+  ]
+}
