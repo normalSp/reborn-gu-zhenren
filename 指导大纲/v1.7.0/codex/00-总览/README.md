@@ -10,6 +10,8 @@
 
 用户追加批准：把“同开局可重玩差异度”作为 v1.7-a1 的正式评估项。它是长期活世界能力的一部分，但 v1.7 不默认通过新增持久随机字段或扩大 DeepSeek 权限来实现。
 
+用户追加批准：把 MiroFish 双仓 topic-slice 流水线制度化。v1.7-a2 第一条样板由当前 Codex 主线程主控跑通 `RebornG request -> MiroFish export -> RebornG intake review -> 测试矩阵/规则草案`；样板稳定后，再提交“只读/分析型子代理”风险收益给用户决策。
+
 这不是默认后端重构版本，也不是默认公开测试版本。公开测试、薄 BFF、DeepSeek 可见知识摘要、runtime canon 晋升、存档字段、正式地点/阵营/奖励/NPC 生死，都必须另走门禁并由用户批准。
 
 ## 当前入口文件
@@ -25,6 +27,10 @@
 - `v1.7.0-测试矩阵.md`
 - `v1.7.0-MiroFish资料需求与交付协议.md`
 - `v1.7.0-Git提交与推送计划.md`
+
+关联项目级制度：
+
+- `指导大纲/流程制度/MiroFish双仓topic-slice流水线制度.md`
 
 ## 专家团推荐主线
 
@@ -53,3 +59,9 @@
 请用户决定 `v1.7.0-a1-区域活世界topic-slice与save-format设计门禁.md` 中的 D-171-001 至 D-171-010。若批准，下一步进入：
 
 `v1.7.0-a2-MiroFish-区域活世界topic-slice-intake.md`
+
+进入 a2 前先运行：
+
+```powershell
+npm run check:mirofish-dual-repo-pipeline -- --target-version=v1.7.0 --topic=southern_border_low_rank_outer_edge_life_slice --stage=a1
+```

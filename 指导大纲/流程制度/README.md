@@ -14,6 +14,7 @@
 - `测试矩阵演进规则.md`：新极端玩家意图、bug、走查、MiroFish、DeepSeek eval 样本必须三分流为当前矩阵、后续样本池或明确丢弃。
 - `长线叙事漂移测试制度.md`：长回合、长叙事、DeepSeek 叙事和世界观稳定性门禁，分 T0/T1/T2/T3。
 - `全书知识库治理制度.md`：MiroFish 原始交付、RebornG 知识索引、runtime canon 三层治理和晋升链。
+- `MiroFish双仓topic-slice流水线制度.md`：RebornG request -> MiroFish export -> RebornG intake review -> 测试矩阵/规则草案的双仓流水线、自动检查和子代理准入规则。
 - `Git分支切换与推送制度.md`：每个小版本/专项开工前主动切语义分支、记录基线、显式提交并阶段末推送。
 - `Git脏区收束制度.md`：脏工作区分流、废弃入口清理、显式 stage、分组提交和分支语义规则。
 - `Skill同步审计制度.md`：每次版本启动、阶段完成、rc 或制度变化时，强制审计相关 skill 的 Current Sync Override，记录已更新/无需更新/延后/阻塞，避免专家团和技能口径落后。
@@ -44,5 +45,5 @@
 3. 旧版本流程文档只作为历史来源，除非当前版本明确引用为门禁。
 4. 当前入口展示旧版本时优先指向 `指导大纲/historical-index.md`，不展开全量阶段清单。
 5. 任何会降低测试覆盖、DeepSeek 边界、原著/IF 边界、用户决策可见性或回滚能力的减法，必须停下来让用户决策。
-6. 新制度必须进入当前版本路线图、测试矩阵、仪表盘、PROJECT-STATE 和 skill sync audit；否则视为未工程化完成。
+6. 新制度必须进入当前版本路线图、测试矩阵、仪表盘、PROJECT-STATE、AGENTS 和 skill sync audit；否则视为未工程化完成。
 7. v1.6 才实现过期入口自动检查脚本；脚本加入 CI 硬门前必须再次获得用户批准。

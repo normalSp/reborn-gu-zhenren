@@ -17,6 +17,15 @@
 - `基础包/`：全书 quote-redacted 基础包档案层，当前范围 `ri_lw_ch_0001` 至 `ri_lw_ch_2340`。它只作为 candidate material 和 source pointer 后勤仓库，不是 canon、runtime authority 或 DeepSeek visible context。
 - 根目录：MiroFish 产出的主 JSON、报告、ledger、说明文件。
 
+从 v1.7-a1 起，主线 topic-slice 使用双仓流水线：
+
+- RebornG 写 `requests/<version>/...`。
+- MiroFish 仓库 `D:\workspace\CodeBuddyWorkSpace\2026-05-12-task-1\MiroFish` 只产 quote-redacted export、coverage report、handoff。
+- RebornG 接收产物到 `vMiroFish/<version>/exports/`，再写 `intake-reviews/<version>/...`。
+- RebornG 只能晋升为测试样本、规则草案、source pointer 或候选池，不能直接 runtime/canon/DeepSeek。
+
+制度源：`指导大纲/流程制度/MiroFish双仓topic-slice流水线制度.md`。
+
 ## 全书基础包入口
 
 当前全书基础包已放入：
@@ -38,14 +47,15 @@
 
 - `指导大纲/v0.12.0/codex/00-总览/v0.12.0-MiroFish资料需求与交付协议.md`
 - `指导大纲/vMiroFish/2026-05-16-第一次对接复盘与流程固化.md`
+- `指导大纲/流程制度/MiroFish双仓topic-slice流水线制度.md`
 
 ## 当前会话口径
 
-负责 MiroFish 的会话链接：
+早期负责 MiroFish 的会话链接：
 
 - `019e207b-c55d-7e23-b450-efa7a054a165`
 
-当前 Codex 线程不能直接联系该会话。需要用户把 `requests/` 中的请求文件转交给 MiroFish 会话；产物放回本目录后，RebornG 再做 intake review。
+v1.7 起优先按双仓本地流水线操作 MiroFish 仓库；如果当前 Codex 线程无法操作 MiroFish 仓库或需要另一个窗口继续生产，才由用户转交请求。无论由谁生产，产物放回本目录后，RebornG 都必须再做 intake review。
 
 ## 当前闭环状态
 
