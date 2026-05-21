@@ -4,19 +4,21 @@ import { EndingResolverPanel } from './EndingResolverPanel';
 import { InheritanceLandPanel } from './InheritanceLandPanel';
 import { LowRankSurvivalEconomyPanel } from './LowRankSurvivalEconomyPanel';
 import { MerchantPanel } from './MerchantPanel';
+import { RegionSamplePanel } from './RegionSamplePanel';
 import { RouteLocationPanel } from './RouteLocationPanel';
 import { SocialPressurePanel } from './SocialPressurePanel';
 import { SquadFormationPanel } from './SquadFormationPanel';
 import { StoryAnchorPanel } from './StoryAnchorPanel';
 import { TrainingGroundPanel } from './TrainingGroundPanel';
 
-type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
+type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'region_sample' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
 
 const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'overview', label: '总览' },
   { id: 'route_location', label: '路线' },
   { id: 'survival_economy', label: '生存' },
   { id: 'social_pressure', label: '社会' },
+  { id: 'region_sample', label: '区域' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'inheritance', label: '传承' },
   { id: 'ending', label: '终局' },
@@ -38,6 +40,7 @@ function WorldOverview() {
     ['路线', '路线/地点范围只显示青茅到南疆早期外缘，不代表完整地点开放。'],
     ['生存', '低阶补给、食料、炼养用和交易窗口只做压力投影，不写库存、价格或消耗。'],
     ['社会', 'NPC 记忆、势力压力、公开事件和后续候选只读投影，不写正式关系或阵营。'],
+    ['区域', '南疆低阶区域样板只读山路外缘、商队接触、散修落脚提示和城外缘门槛。'],
     ['宿命', '剧情锚点和高阶压力，只读或场景化显示，不授予宿命层权威。'],
     ['传承', '候选线索和试炼入口，不暗示玩家已获得传承。'],
     ['终局', '后期结局框架，不在低阶阶段开放裁决。'],
@@ -136,6 +139,7 @@ export function WorldHubPanel() {
         {tab === 'route_location' && <RouteLocationPanel />}
         {tab === 'survival_economy' && <LowRankSurvivalEconomyPanel />}
         {tab === 'social_pressure' && <SocialPressurePanel />}
+        {tab === 'region_sample' && <RegionSamplePanel />}
         {tab === 'story_anchor' && <StoryAnchorPanel />}
         {tab === 'inheritance' && <InheritanceLandPanel />}
         {tab === 'ending' && <EndingResolverPanel />}

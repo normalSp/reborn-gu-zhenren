@@ -1,6 +1,6 @@
 # RebornG 历史索引
 
-日期：2026-05-20
+日期：2026-05-21
 状态：当前历史入口；不是 runtime authority
 
 ## 定位
@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前版本入口，例如 `指导大纲/v1.2.0/codex/00-总览/README.md`
+4. 当前/最新完成版本入口，例如 `指导大纲/v1.4.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
@@ -45,7 +45,9 @@
 | v0.19.0 | 完成 | 内容生产、长测与 v1.0 发布工具 | `指导大纲/v0.19.0/codex/00-总览/` | 内容治理、发布素材边界、长测和 v1.0 readiness 是发布前地基 |
 | v1.0.0 | 完成 | 活世界早期正式版 | `指导大纲/v1.0.0/codex/00-总览/` | v1.0 已可正式发布；EdgeOne 仍由用户/CodeBuddy 手动部署；release assets 不是 gameplay/canon authority |
 | v1.1.0 | 完成 | 路线、地点与区域状态地基 | `指导大纲/v1.1.0/codex/00-总览/` | `SAVE_FORMAT_VERSION = 23`、`routeLocationState`、T0 deterministic soak、180 轮 Player Advocate、D-025 C27 后小规模 live drift 阻塞门通过；不得扩大为大规模 live quality 结论 |
-| v1.2.0 | 当前草案 | 低阶蛊师生存与经济正式化第一阶段 | `指导大纲/v1.2.0/codex/00-总览/` | 启动会已开启；runtime、save-format bump、正式库存/价格/交易/黑市/委托、DeepSeek 权限、live probe、自动部署仍需用户决策 |
+| v1.2.0 | 完成 | 低阶蛊师生存与经济正式化第一阶段 | `指导大纲/v1.2.0/codex/00-总览/` | `SAVE_FORMAT_VERSION = 24`、`survivalEconomyState` 最小 pressure ledger；不等于完整经济系统 |
+| v1.3.0 | 完成 | NPC 与势力长期关系第二层 | `指导大纲/v1.3.0/codex/00-总览/` | projection-only 社会层、100 轮 Player Advocate、D-130-009 小规模 live gate 通过；不等于大规模 live quality |
+| v1.4.0 | 完成 | 南疆早期低阶区域样板 | `指导大纲/v1.4.0/codex/00-总览/` | projection-first 区域 tab，`SAVE_FORMAT_VERSION = 24`，无区域持久字段；不开放完整南疆/商家城/正式结论 |
 
 ## 历史制度源
 
