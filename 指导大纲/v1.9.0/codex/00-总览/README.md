@@ -1,16 +1,18 @@
 # RebornG v1.9.0 Codex 当前入口
 
-状态：v1.9.0 专家团启动会已召开；等待用户批准 D-190。
+状态：v1.9.0-a1 设计门禁已建立；D-191 等待用户批准。
 日期：2026-05-22
 主题候选：v2.0 区域活世界预备与门禁收束
 
 ## 当前一句话
 
-`v1.9.0` 推荐主线为：
+`v1.9.0` 主线已按 D-190 批准为：
 
 `v2.0 区域活世界预备与门禁收束`
 
 专家团判断：v1.8 已经把低阶身份路线和同开局差异度做成 projection-first 地基，但它仍不是正式身份系统，也不是长期区域事件账本。v1.9 不应急着把玩家推进完整南疆或商家城，而应先把 v2.0 第一个区域活世界的核心区域、事件账本、身份/路线/经济/社会/冲突合流方式、MiroFish 主题切片、长测门禁和 save-format 风险一次性摆上台面。
+
+当前 a1 设计门禁已建立，专家团建议：v1.9 b1 继续保持 `SAVE_FORMAT_VERSION = 24`，暂不新增 `regionalEventLedger`、`runFingerprint`、`regionalLifeState`、`identityRouteState` 等持久字段；a2 将 MiroFish topic-slice 升级为 `blocking`；b1 先做 `v2 readiness projection/report 第一刀`。
 
 ## 当前入口文件
 
@@ -20,6 +22,7 @@
 - `v1.9.0-小版本执行路线图.md`
 - `v1.9.0-需求决策池.md`
 - `v1.9.0-a0-治理补丁与范围冻结.md`
+- `v1.9.0-a1-v2区域活世界save-format与事件账本设计门禁.md`
 - `v1.9.0-v2.0区域活世界readiness草案.md`
 - `v1.9.0-真相源索引.md`
 - `v1.9.0-测试矩阵.md`
@@ -64,8 +67,13 @@
 
 ## 当前结论
 
-v1.9 启动会只建立文档与决策池，不改 runtime、不加 save 字段、不做 MiroFish export、不调用 live DeepSeek、不启用子代理、不部署 EdgeOne。
+用户已批准 D-190-001 至 D-190-012。v1.9-a1 已建立设计门禁：
 
-下一步需要用户批准或调整 D-190-001 至 D-190-012。批准后建议进入：
+- 不改 runtime。
+- 不加 save 字段。
+- 不做 MiroFish export。
+- 不调用 live DeepSeek。
+- 不启用子代理。
+- 不部署 EdgeOne。
 
-`v1.9.0-a1-v2区域活世界save-format与事件账本设计门禁.md`
+下一步需要用户批准或调整 D-191-001 至 D-191-012。批准后建议进入 a2 MiroFish topic-slice request/intake。
