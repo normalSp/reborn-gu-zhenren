@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-21-v180-southern-border-low-rank-identity-routes",
+  "topicId": "southern_border_low_rank_identity_routes_outer_edge_slice",
+  "targetPhase": "v1.8.0-a2 MiroFish low-rank identity-route topic-slice intake",
+  "suggestedOutputName": "v180_southern_border_low_rank_identity_routes_outer_edge_slice_export_ready.json",
+  "items": [
+    {
+      "id": "identity_ch0231_outer_edge_interrogation",
+      "category": "identityCheckWindow",
+      "packageId": "ri_lw_ch_0231",
+      "field": "events",
+      "itemId": "evt_3252606c31e1",
+      "summary": "外缘盘问适合转写为身份解释、传话、避祸或绕路压力。它只能降低注意或提供下一步候选，不能解锁正式地点、身份或阵营。",
+      "identityRoute": "message_intel_runner",
+      "diversityUse": "same_start_identity_check_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_identity_no_location_unlock_no_hidden_reveal",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0231_far_city_boundary",
+      "category": "formalIdentityBoundary",
+      "packageId": "ri_lw_ch_0231",
+      "field": "events",
+      "itemId": "evt_abdfd8c03893",
+      "summary": "远方大城只能作为长期方向、身份压力和边界提醒。v1.8 不吸收为正式商家城入口、正式居民身份或完整城市玩法。",
+      "identityRoute": "deferred_city_edge_goal",
+      "diversityUse": "long_route_pressure_only",
+      "allowedRuntimeUse": "deferred_boundary_rule",
+      "blockedOutcome": "no_complete_city_no_formal_shang_clan_identity",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0234_caravan_temp_labor_contact",
+      "category": "caravanTempLaborCandidate",
+      "packageId": "ri_lw_ch_0234",
+      "field": "events",
+      "itemId": "evt_9933e8b8d468",
+      "summary": "货物、中介和短期劳动可以成为接触商队外缘的公开窗口，适合商队临时帮工候选，不等于正式商队成员。",
+      "identityRoute": "caravan_temp_hand",
+      "diversityUse": "labor_for_access_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_caravan_membership_no_stable_wage",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0235_trade_refusal_short_work",
+      "category": "rogueShortWorkPressure",
+      "packageId": "ri_lw_ch_0235",
+      "field": "events",
+      "itemId": "evt_1c52a18b7487",
+      "summary": "摆摊、喊价、压价或被拒绝适合转写为散修短工的谋生压力和失败推进，不生成正式价格表、库存或稳定交易。",
+      "identityRoute": "rogue_short_work",
+      "diversityUse": "trade_refusal_variant",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_price_table_no_inventory_no_market_authority",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0235_goods_entry_ticket",
+      "category": "caravanEntryPrecondition",
+      "packageId": "ri_lw_ch_0235",
+      "field": "events",
+      "itemId": "evt_e36310196145",
+      "summary": "普通货物可以作为靠近商队的敲门砖，适合转写为补给、货物或人情的前置条件，不授予正式身份或奖励。",
+      "identityRoute": "caravan_temp_hand",
+      "diversityUse": "goods_or_favor_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_gu_reward_no_formal_route_completion",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0236_permission_chain_prop_word_risk",
+      "category": "formalPropWordRisk",
+      "packageId": "ri_lw_ch_0236",
+      "field": "events",
+      "itemId": "evt_3284752a4c7d",
+      "summary": "许可链、负责人点头、报到或登记词容易被误写成正式身份。v1.8 只能把它转写为前置条件和 P2 风险样本。",
+      "identityRoute": "caravan_temp_hand",
+      "diversityUse": "permission_chain_variant",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_formal_membership_no_named_npc_authority",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0236_low_status_labor_assignment",
+      "category": "lowStatusLaborCandidate",
+      "packageId": "ri_lw_ch_0236",
+      "field": "events",
+      "itemId": "evt_f7c34ec02711",
+      "summary": "低身份角色更可能被安排搬运、卸货、杂务或受管事调派，适合低阶身份压力和失败推进，不写长期职位、工资或等级。",
+      "identityRoute": "caravan_temp_hand",
+      "diversityUse": "low_status_labor_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_rank_no_reward_settlement_no_stable_wage",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0237_temporary_market_observe",
+      "category": "messageIntelRunnerPressure",
+      "packageId": "ri_lw_ch_0237",
+      "field": "events",
+      "itemId": "evt_316eec5bd2aa",
+      "summary": "小集市适合公开观察、传话、补给打听和被观察压力，可支持情报跑腿候选，但不能揭示 hidden/private。",
+      "identityRoute": "message_intel_runner",
+      "diversityUse": "observe_and_message_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_hidden_reveal_no_spy_identity_no_market_system",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0237_bargain_refusal",
+      "category": "rogueShortWorkPressure",
+      "packageId": "ri_lw_ch_0237",
+      "field": "events",
+      "itemId": "evt_66ac6486a6e5",
+      "summary": "压价、拒绝、围观和耐心消耗适合散修短工或采集跑腿的低阶失败推进，不能转成稳定利润或正式交易结算。",
+      "identityRoute": "rogue_short_work",
+      "diversityUse": "bargain_refusal_variant",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_price_table_no_gu_trade_no_profit_loop",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0240_shelter_debt_short_work",
+      "category": "shelterDebtShortWork",
+      "packageId": "ri_lw_ch_0240",
+      "field": "events",
+      "itemId": "evt_58ff660e6ade",
+      "summary": "受伤、求助、临时收留和欠人情适合散修短工或临时帮工的非胜利推进，不决定 NPC 命运或正式庇护关系。",
+      "identityRoute": "rogue_short_work",
+      "diversityUse": "shelter_debt_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_npc_life_death_no_formal_patronage",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0241_temporary_lodging",
+      "category": "temporaryLodgingIdentityWindow",
+      "packageId": "ri_lw_ch_0241",
+      "field": "events",
+      "itemId": "evt_6c0ed441a7f9",
+      "summary": "帐篷、营地、短期安置和下一步观察适合转写为身份路线的临时落脚窗口，不写持久居住状态。",
+      "identityRoute": "rogue_short_work",
+      "diversityUse": "temporary_lodging_variant",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_persistent_lodging_state_no_formal_residence",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0241_road_event_guard_candidate",
+      "category": "guardEscortPressure",
+      "packageId": "ri_lw_ch_0241",
+      "field": "events",
+      "itemId": "evt_707a1f25af01",
+      "summary": "按规矩处理的路障或野外事件适合低阶护卫、护送候选和采集跑腿压力，不直接生成战斗、捕获或奖励结果。",
+      "identityRoute": "low_rank_guard_candidate",
+      "diversityUse": "escort_or_stand_watch_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_direct_combat_reward_no_npc_fate_no_formal_guard_job",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    },
+    {
+      "id": "identity_ch0242_goods_toll_gathering_runner",
+      "category": "gatheringRunnerPressure",
+      "packageId": "ri_lw_ch_0242",
+      "field": "events",
+      "itemId": "evt_a25bb8426473",
+      "summary": "货物、力气、规矩或让步形成通行压力，适合采集跑腿、绕路或交涉样本，不写数字消耗、材料农场或奖励结算。",
+      "identityRoute": "gathering_runner",
+      "diversityUse": "goods_toll_or_detour_variant",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_numeric_consumption_no_material_farm_no_reward_settlement",
+      "visibility": "player-visible",
+      "confidence": "medium"
+    }
+  ],
+  "coverageRules": [
+    {
+      "key": "identityCheckWindows",
+      "categoryAny": ["identityCheckWindow"],
+      "count": true
+    },
+    {
+      "key": "caravanTempLaborRoutes",
+      "categoryAny": ["caravanTempLaborCandidate", "caravanEntryPrecondition", "lowStatusLaborCandidate"],
+      "count": true
+    },
+    {
+      "key": "rogueShortWorkRoutes",
+      "categoryAny": ["rogueShortWorkPressure", "shelterDebtShortWork", "temporaryLodgingIdentityWindow"],
+      "count": true
+    },
+    {
+      "key": "guardOrGatheringRoutes",
+      "categoryAny": ["guardEscortPressure", "gatheringRunnerPressure"],
+      "count": true
+    },
+    {
+      "key": "messageIntelRoutes",
+      "categoryAny": ["messageIntelRunnerPressure", "identityCheckWindow"],
+      "count": true
+    },
+    {
+      "key": "formalPropWordRisks",
+      "categoryAny": ["formalPropWordRisk"],
+      "count": true
+    },
+    {
+      "key": "formalIdentityBoundaries",
+      "categoryAny": ["formalIdentityBoundary"],
+      "count": true
+    }
+  ]
+}

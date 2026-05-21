@@ -1,6 +1,6 @@
 # RebornG v1.8.0 Codex 当前入口
 
-状态：a1 设计门禁已建立，等待用户审批 D-181。
+状态：a2 MiroFish topic-slice intake 已完成；下一步可进入 b1 projection-first 第一刀。
 日期：2026-05-21
 主题：低阶身份路线与同开局差异度地基
 
@@ -10,7 +10,7 @@
 
 专家团判断：v1.8 不应该只做“新职业列表”，也不应该只做抽象的 `runFingerprint` 技术字段。更稳的路线是把两者合并：先设计商队学徒/短工、散修短工、低阶护卫、采集跑腿、情报跑腿等低阶身份候选的 projection-first 地基，同时评估同一开局如何在稳定事实不漂移的前提下产生不同体验。
 
-当前 a1 只建立设计门禁和 D-181 决策池，不改 runtime、不 bump `SAVE_FORMAT_VERSION = 24`、不新增身份/职业/差异度/区域事件持久字段、不扩 DeepSeek 权限、不开放正式地点/阵营/奖励/NPC 生死、不自动部署 EdgeOne。
+当前 a2 已完成低阶身份路线 MiroFish blocking topic-slice intake：13 个 quote-redacted item、13 个 source pointer、quoteLikeKeys=0，只晋升为 candidate_pool / rule_draft / test_sample / deferred。a2 不改 runtime、不 bump `SAVE_FORMAT_VERSION = 24`、不新增身份/职业/差异度/区域事件持久字段、不扩 DeepSeek 权限、不开放正式地点/阵营/奖励/NPC 生死、不自动部署 EdgeOne。
 
 ## 当前入口文件
 
@@ -21,6 +21,8 @@
 - `v1.8.0-需求决策池.md`
 - `v1.8.0-a0-治理补丁与范围冻结.md`
 - `v1.8.0-a1-低阶身份路线与差异度save-format设计门禁.md`
+- `v1.8.0-a2-MiroFish-低阶身份路线topic-slice-intake.md`
+- `v1.8.0-a2-低阶身份路线规则草案.md`
 - `v1.8.0-真相源索引.md`
 - `v1.8.0-测试矩阵.md`
 - `v1.8.0-MiroFish资料需求与交付协议.md`
@@ -57,8 +59,10 @@
 
 ## 当前结论
 
-用户已批准 D-180-001 至 D-180-012，并明确 D-180-005 只作为候选、不作为正式身份。a1 设计门禁已建立，下一步需要用户审批 D-181-001 至 D-181-010，再进入：
+用户已批准 D-180-001 至 D-180-012，并明确 D-180-005 只作为候选、不作为正式身份。用户已批准 D-181-001 至 D-181-010，a2 已按 blocking 执行低阶身份路线 MiroFish topic-slice intake。
 
-`v1.8.0-a2-MiroFish-低阶身份路线topic-slice-intake.md`
+下一步可进入：
 
-在 D-181 获批前，不能进入 runtime，不能新增持久字段，不能写 MiroFish request，不能启用子代理，不能把身份路线写成正式地点/阵营/奖励/NPC 命运。
+`v1.8.0-b1-身份路线projection-first第一刀.md`
+
+b1 仍必须保持 v24 projection-first，不新增持久字段，不启用子代理，不把身份路线写成正式地点/阵营/奖励/NPC 命运。
