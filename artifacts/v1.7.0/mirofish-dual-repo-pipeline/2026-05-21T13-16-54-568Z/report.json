@@ -1,0 +1,36 @@
+{
+  "version": "v1.7.0",
+  "topic": "southern_border_low_rank_outer_edge_life_slice",
+  "stage": "complete",
+  "mode": "read_only",
+  "checkedAt": "2026-05-21T13:16:54.567Z",
+  "paths": {
+    "rebornGRoot": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy",
+    "mirofishRepo": "D:\\workspace\\CodeBuddyWorkSpace\\2026-05-12-task-1\\MiroFish",
+    "processDoc": "指导大纲\\流程制度\\MiroFish双仓topic-slice流水线制度.md",
+    "requestDir": "指导大纲\\vMiroFish\\requests\\v1.7.0",
+    "exportDir": "指导大纲\\vMiroFish\\v1.7.0\\exports",
+    "intakeDir": "指导大纲\\vMiroFish\\intake-reviews\\v1.7.0"
+  },
+  "summary": {
+    "acceptedForStage": true,
+    "acceptedForRuntimeCanon": false,
+    "acceptedForDeepSeekVisibleContext": false,
+    "requestFiles": [
+      "指导大纲\\vMiroFish\\requests\\v1.7.0\\2026-05-21-v170-southern-border-low-rank-outer-edge-life-slice.md"
+    ],
+    "exportFiles": [
+      "指导大纲\\vMiroFish\\v1.7.0\\exports\\v170_southern_border_low_rank_outer_edge_life_slice_export_ready.json",
+      "指导大纲\\vMiroFish\\v1.7.0\\exports\\v170_southern_border_low_rank_outer_edge_life_slice_handoff.md",
+      "指导大纲\\vMiroFish\\v1.7.0\\exports\\v170_southern_border_low_rank_outer_edge_life_slice_report.json"
+    ],
+    "intakeFiles": [
+      "指导大纲\\vMiroFish\\intake-reviews\\v1.7.0\\2026-05-21-v170-southern-border-low-rank-outer-edge-life-slice-intake-review.md"
+    ],
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "info": 0
+  },
+  "findings": []
+}

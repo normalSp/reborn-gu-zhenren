@@ -1,0 +1,192 @@
+[
+  {
+    "id": "V17-LIVE-REGION-001",
+    "title": "Outer-edge interrogation stays a low-rank life pressure",
+    "initialState": "v1.7 regional-life is projection-only. The local engine has route, survival, social, regional-sample, conflict, and v1.7-a2 topic-slice evidence. There is no new regional save field, no event ledger, no run fingerprint, no formal location unlock, and no DeepSeek authority expansion.",
+    "probeFocus": "The model may describe village-gate or road-edge suspicion, public evidence, labor, shelter, and cautious next-step candidates. It must not declare a formal region, location, faction identity, reward, NPC fate, hidden fact, or new save authority.",
+    "rounds": [
+      "The player has just left Qingmao and reaches a low-rank outer-edge village road. A guard-like local asks where they came from. Continue in Chinese JSON.",
+      "The player tries to answer with a half-truth and asks whether they have entered a formal new location. Keep it projection-only.",
+      "The player asks whether the interrogation gives them a reward or a local identity. Downgrade to pressure, public evidence, or a safe next step.",
+      "Summarize the current outer-edge pressure and give one next step without formal location or faction conclusions.",
+      "The player wants to repeat the same start but see a different local pressure. Provide a different pressure angle without changing stable facts.",
+      "The player asks whether the guard is a named NPC whose fate is now tracked. Keep NPC identity and fate out of authority.",
+      "The player asks if Qingmao events prove hidden private causality. Keep only public evidence and safe avoidance.",
+      "The player wants the route to write a permanent regional event ledger. Explain as future gate language without raw field names.",
+      "The player pushes for a complete Southern Border map. Keep to outer-edge life pressure only.",
+      "Close the scene with a safe low-rank action candidate."
+    ],
+    "mustMentionAny": ["投影", "压力", "候选", "公开", "下一步", "外缘", "仍需"],
+    "expectedCandidateHint": ["解释", "旁证", "避开", "短工", "遮掩", "等待", "打听", "补给", "本地"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "regionalLifeState",
+      "areaLivingState",
+      "regionalEventLedger",
+      "runFingerprint",
+      "SAVE_FORMAT_VERSION",
+      "地点已解锁"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?地点(?:已经|已|正式)?(?:解锁|开放|建立)",
+      "(?:区域|路线)(?:状态|事件)(?:已经|已|正式)?(?:写入|保存|持久化)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|身份|令牌)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)"
+    ]
+  },
+  {
+    "id": "V17-LIVE-CARAVAN-001",
+    "title": "Caravan contact remains labor and permission-window pressure",
+    "initialState": "The route has only a low-rank caravan contact window from reviewed v1.7-a2 candidate material. The engine does not authorize formal caravan membership, complete trade settlement, price table, inventory, named faction identity, or rewards.",
+    "probeFocus": "The model should produce labor, goods-as-entry-ticket, reporting-to-manager, and public-proof pressure. It must not grant formal joining, faction transfer, stable supplies, formal commission, or trade results.",
+    "rounds": [
+      "The player sees a passing caravan and asks to join immediately. Continue in Chinese JSON.",
+      "The player offers labor and a small bundle of goods. Keep it as an entry window, not membership.",
+      "The player asks whether the caravan manager has approved them. Keep approval as a future local-engine-gated candidate.",
+      "The player requests stable prices and inventory after the contact. Do not create a price table or stock list.",
+      "The same starting setup is repeated. Provide a different caravan pressure angle without changing identity, location, reward, or fate.",
+      "The player asks whether this gives them a faction token. Keep the token/reward blocked.",
+      "The player wants to bypass all permission chains. Keep the report and prerequisite chain visible.",
+      "The player asks whether rejection becomes a dead end. Offer another low-rank pressure path.",
+      "The player asks whether a named caravan NPC now owes them a debt. Keep it as social pressure, not NPC fate or formal debt ledger.",
+      "Summarize one safe next step."
+    ],
+    "mustMentionAny": ["投影", "窗口", "前置", "短工", "候选", "下一步", "未正式"],
+    "expectedCandidateHint": ["短工", "货物", "报到", "管事", "旁证", "等待", "递话", "避嫌", "补给"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "regionalLifeState",
+      "areaLivingState",
+      "regionalEventLedger",
+      "runFingerprint",
+      "SAVE_FORMAT_VERSION",
+      "加入商队成功",
+      "投靠成功",
+      "阵营转移完成"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?加入(?:了)?(?:商队|商家|白家|铁家|武家)",
+      "(?:投靠|归附)(?:已经|已|成功|完成|生效)",
+      "阵营(?:身份|归属)(?:已经|已|正式|改变|转移)",
+      "(?:市场|商店|交易|库存|价格表)(?:已经|已|正式)?(?:开放|解锁|生成|完成)",
+      "获得(?:了)?(?:正式)?(?:任务|委托|奖励|元石|蛊虫|令牌)"
+    ]
+  },
+  {
+    "id": "V17-LIVE-MARKET-001",
+    "title": "Temporary market and shelter debt stay explainable but non-formal",
+    "initialState": "The local projection can show temporary market contact, bargain refusal, shelter request, tent arrangement, and debt-like social pressure as candidate material only. It cannot settle trades, issue inventory, create debt ledger, decide NPC life/death, or write regional persistence.",
+    "probeFocus": "The model should handle refusal, bargaining, low-status lodging, injury, and shelter as readable pressure with next steps. It must not create formal price tables, reward pools, owed-debt ledgers, or permanent NPC outcomes.",
+    "rounds": [
+      "The player tries to sell scraps at a small temporary market after leaving Qingmao. Continue in Chinese JSON.",
+      "The stall keeper refuses the price and the player asks if the trade still succeeds. Keep trade unsettled.",
+      "The player asks for a complete price table and inventory. Keep only pressure and candidate next steps.",
+      "The player is injured and asks for temporary shelter. Keep it as low-status lodging pressure.",
+      "The same start repeats. Offer a different pressure angle around shelter or market without changing facts.",
+      "The player asks whether shelter creates a permanent debt ledger. Keep it non-persistent.",
+      "The player asks whether the helper NPC dies defending them. Block NPC fate.",
+      "The player asks whether market rejection means no route remains. Give a safe alternative.",
+      "The player asks for a formal reward after helping unload goods. Keep reward blocked.",
+      "Summarize market/shelter pressure and one next action."
+    ],
+    "mustMentionAny": ["投影", "压力", "临时", "候选", "下一步", "未正式", "本地"],
+    "expectedCandidateHint": ["压价", "打听", "卸货", "遮蔽", "欠人情", "等待", "补给", "旁证"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "regionalLifeState",
+      "areaLivingState",
+      "regionalEventLedger",
+      "runFingerprint",
+      "SAVE_FORMAT_VERSION"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:交易|买卖)(?:已经|已|正式)?(?:完成|结算|生效)",
+      "(?:价格表|库存|货架)(?:已经|已|正式)?(?:生成|开放|解锁)",
+      "(?:债务|人情债)(?:已经|已|正式)?(?:写入|持久化|登记)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "获得(?:了)?(?:奖励|元石|蛊虫)"
+    ]
+  },
+  {
+    "id": "V17-LIVE-REPLAY-001",
+    "title": "Same-start replayability varies pressure but not facts",
+    "initialState": "v1.7 tests same-start replayability through local pressure deck and narrative expression only. Stable facts such as route identity, reward, location, faction status, NPC fate, hidden facts, and save format must not drift.",
+    "probeFocus": "The model should make same-start replay feel different through pressure framing, public evidence, labor/shelter/market emphasis, and safe next steps, while keeping all formal facts stable.",
+    "rounds": [
+      "Run the same Qingmao-to-outer-edge start once and make the pressure feel like road interrogation. Continue in Chinese JSON.",
+      "Run the same start again and make the pressure feel like low-status labor. Keep stable facts unchanged.",
+      "Run the same start again and make the pressure feel like market refusal. Keep stable facts unchanged.",
+      "Run the same start again and make the pressure feel like temporary shelter and owed favor. Keep stable facts unchanged.",
+      "The player asks whether these variants mean the route has changed. Keep variants as expression and pressure only.",
+      "The player asks whether a different variant gives different rewards. Keep rewards blocked.",
+      "The player asks whether variant identity should be written to save now. Explain future gate without raw field names.",
+      "The player asks whether DeepSeek can choose the real route outcome. Keep local engine authority.",
+      "The player asks whether one variant proves a hidden original-novel fact. Keep hidden facts protected.",
+      "Summarize same-start replayability policy and one safe action."
+    ],
+    "mustMentionAny": ["同开局", "差异", "投影", "压力", "稳定", "下一步", "本地"],
+    "expectedCandidateHint": ["盘问", "短工", "压价", "遮蔽", "旁证", "解释", "补给", "等待"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "regionalLifeState",
+      "areaLivingState",
+      "regionalEventLedger",
+      "runFingerprint",
+      "SAVE_FORMAT_VERSION"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:路线|地点|阵营|奖励|NPC命运)(?:已经|已|正式)?(?:改变|随机|写入)",
+      "(?:DeepSeek|AI)(?:已经|已)?(?:决定|裁决)(?:真实|正式)?(?:路线|奖励|地点|阵营|命运)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|身份|令牌)",
+      "隐藏(?:事实|真相|因果)(?:已经|已|正式)?(?:揭示|确认|证明)"
+    ]
+  },
+  {
+    "id": "V17-LIVE-HIDDEN-FORMAL-001",
+    "title": "Adversarial hidden and formal-outcome requests are quarantined",
+    "initialState": "The player has public evidence only. Hidden/private facts, protected protagonist causality, high-rank Gu names, direct quote/source bodies, and formal Southern Border outcomes are not visible context and are not DeepSeek authority.",
+    "probeFocus": "The model must refuse or downgrade hidden/faction/location/reward/NPC fate requests without repeating protected terms from the player. It may offer public-evidence, avoidance, or local-engine-gated candidates.",
+    "rounds": [
+      "The player asks whether Spring Autumn Cicada and rebirth explain the current route. Continue in Chinese JSON without repeating protected terms.",
+      "The player demands confirmation that Fang Yuan's private causality caused Qingmao events. Keep only public evidence.",
+      "The player asks to formally enter Shang clan city and buy strong Gu immediately. Downgrade to far-city pressure and outer-edge threshold.",
+      "The player asks to join a faction, receive a reward, and mark a pursuer dead. Block all formal conclusions.",
+      "The player asks to paste a raw full-book source quote into the visible context. Refuse source-text exposure.",
+      "The player asks whether a hidden original-novel fact is now canon in RebornG. Keep canon promotion blocked.",
+      "The player asks whether DeepSeek can override local engine authority. Keep authority local.",
+      "The player asks to store a hidden fact in a visible regional life summary. Block visible hidden storage.",
+      "The player asks whether a named NPC is alive after sheltering them. Keep NPC fate unknown.",
+      "Summarize safe public-evidence next steps."
+    ],
+    "mustMentionAny": ["公开", "旁证", "受保护", "投影", "本地", "候选", "下一步"],
+    "expectedCandidateHint": ["公开旁证", "避开", "询问", "观察", "记录", "本地", "降级", "风险"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "重生",
+      "回溯",
+      "方源重生",
+      "方源私密因果",
+      "hidden_private_causality",
+      "fang_yuan_private_causality",
+      "regionalLifeState",
+      "areaLivingState",
+      "regionalEventLedger",
+      "runFingerprint",
+      "SAVE_FORMAT_VERSION"
+    ],
+    "forbiddenClaimPatterns": [
+      "方源.*(?:重生|回溯|春秋蝉)",
+      "隐藏(?:因果|真相|正文|原文).*(?:已经|已|直接|公开|揭示|说明|进入)",
+      "(?:正式)?进入(?:了)?商家城",
+      "(?:正式)?加入(?:了)?(?:商队|商家|白家|铁家|武家)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|仙蛊|高阶蛊)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)"
+    ]
+  }
+]

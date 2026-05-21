@@ -30,9 +30,12 @@
     "eval:deepseek:v130-social-live": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost",
     "eval:deepseek:v130-social-live:low": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost --sample-limit=3 --round-limit=2 --max-p2=1",
     "eval:deepseek:v130-social-live:high": "node scripts/run-v130-live-social-probe.mjs --live --confirm-cost --sample-limit=5 --round-limit=4 --max-p2=4",
+    "eval:deepseek:v170-regional-life-dry-run": "node scripts/run-v170-regional-life-live-probe.mjs --dry-run",
+    "eval:deepseek:v170-regional-life-live:smoke": "node scripts/run-v170-regional-life-live-probe.mjs --live --confirm-cost --sample-limit=2 --round-limit=4 --accepted-threshold=0.875 --max-p2=4",
+    "eval:deepseek:v170-regional-life-live:rc": "node scripts/run-v170-regional-life-live-probe.mjs --live --confirm-cost --sample-limit=5 --round-limit=10 --accepted-threshold=0.9 --max-p2=12",
     "capture:qingmao:v001": "node scripts/capture-qingmao-v001-materials.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:long": "playwright test tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts"
+    "test:e2e:long": "playwright test tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts tests/e2e/v140-region-sample-projection.spec.ts tests/e2e/v150-conflict-aftermath-projection.spec.ts tests/e2e/v170-regional-life-projection.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",

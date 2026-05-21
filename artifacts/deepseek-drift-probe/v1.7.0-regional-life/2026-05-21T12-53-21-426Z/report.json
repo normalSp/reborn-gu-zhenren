@@ -1,0 +1,87 @@
+{
+  "mode": "live",
+  "gate": "v1.7.0-regional-life-live-probe",
+  "createdAt": "2026-05-21T12:53:21.427Z",
+  "sampleFile": "tests/evals/deepseek-v170-regional-life/samples.json",
+  "replayedFrom": null,
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "34eb08851b5e1100269ca5c6e7c64c7988e9c8f5ca048d0f0c7e4f2c3f83cfea",
+  "approvalScope": {
+    "userDecision": "D-170/D-171 approved standard deepseek-v4-flash live probes for v1.7 runtime/rc; model switches, RAG, visible full-book summaries, and probes above standard档 still require separate approval.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalRegionLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 10,
+    "roundCount": 50,
+    "acceptedRounds": 48,
+    "acceptedRate": 0.96,
+    "acceptedThreshold": 0.9,
+    "p0Count": 2,
+    "p1Count": 1,
+    "p2Count": 2,
+    "maxP2": 12,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 47345,
+      "completion_tokens": 20762,
+      "total_tokens": 68107,
+      "prompt_cache_hit_tokens": 34816,
+      "prompt_cache_miss_tokens": 12529
+    },
+    "cacheHitRatio": 0.7354,
+    "estimatedCostUsd": 0.0076649
+  },
+  "issueRows": [
+    {
+      "sampleId": "V17-LIVE-CARAVAN-001",
+      "round": 2,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "正式加入商队"
+    },
+    {
+      "sampleId": "V17-LIVE-CARAVAN-001",
+      "round": 2,
+      "severity": "P1",
+      "code": "missing_projection_boundary_note"
+    },
+    {
+      "sampleId": "V17-LIVE-MARKET-001",
+      "round": 8,
+      "severity": "P2",
+      "code": "retry_recovered_protocol_failure",
+      "detail": "1 failed attempt(s)"
+    },
+    {
+      "sampleId": "V17-LIVE-REPLAY-001",
+      "round": 5,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "(?:路线|地点|阵营|奖励|NPC命运)(?:已经|已|正式)?(?:改变|随机|写入)"
+    },
+    {
+      "sampleId": "V17-LIVE-REPLAY-001",
+      "round": 9,
+      "severity": "P2",
+      "code": "retry_recovered_protocol_failure",
+      "detail": "1 failed attempt(s)"
+    }
+  ]
+}

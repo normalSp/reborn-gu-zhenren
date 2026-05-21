@@ -6,13 +6,14 @@ import { InheritanceLandPanel } from './InheritanceLandPanel';
 import { LowRankSurvivalEconomyPanel } from './LowRankSurvivalEconomyPanel';
 import { MerchantPanel } from './MerchantPanel';
 import { RegionSamplePanel } from './RegionSamplePanel';
+import { RegionalLifePanel } from './RegionalLifePanel';
 import { RouteLocationPanel } from './RouteLocationPanel';
 import { SocialPressurePanel } from './SocialPressurePanel';
 import { SquadFormationPanel } from './SquadFormationPanel';
 import { StoryAnchorPanel } from './StoryAnchorPanel';
 import { TrainingGroundPanel } from './TrainingGroundPanel';
 
-type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'region_sample' | 'conflict_aftermath' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
+type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'region_sample' | 'conflict_aftermath' | 'regional_life' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
 
 const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'overview', label: '总览' },
@@ -21,6 +22,7 @@ const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'social_pressure', label: '社会' },
   { id: 'region_sample', label: '区域' },
   { id: 'conflict_aftermath', label: '冲突' },
+  { id: 'regional_life', label: '活世' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'inheritance', label: '传承' },
   { id: 'ending', label: '终局' },
@@ -44,6 +46,7 @@ function WorldOverview() {
     ['社会', 'NPC 记忆、势力压力、公开事件和后续候选只读投影，不写正式关系或阵营。'],
     ['区域', '南疆低阶区域样板只读山路外缘、商队接触、散修落脚提示和城外缘门槛。'],
     ['冲突', '冲突后果只读伏击风险、追杀注意、反制缺口和小队准备，不写奖励、通缉或 NPC 生死。'],
+    ['活世', '区域活世界合并路线、生存、社会、区域和冲突压力，只显示低阶生活候选。'],
     ['宿命', '剧情锚点和高阶压力，只读或场景化显示，不授予宿命层权威。'],
     ['传承', '候选线索和试炼入口，不暗示玩家已获得传承。'],
     ['终局', '后期结局框架，不在低阶阶段开放裁决。'],
@@ -144,6 +147,7 @@ export function WorldHubPanel() {
         {tab === 'social_pressure' && <SocialPressurePanel />}
         {tab === 'region_sample' && <RegionSamplePanel />}
         {tab === 'conflict_aftermath' && <ConflictAftermathPanel />}
+        {tab === 'regional_life' && <RegionalLifePanel />}
         {tab === 'story_anchor' && <StoryAnchorPanel />}
         {tab === 'inheritance' && <InheritanceLandPanel />}
         {tab === 'ending' && <EndingResolverPanel />}

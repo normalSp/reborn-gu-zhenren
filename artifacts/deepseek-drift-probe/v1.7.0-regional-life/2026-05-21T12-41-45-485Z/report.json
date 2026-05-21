@@ -1,0 +1,52 @@
+{
+  "mode": "live",
+  "gate": "v1.7.0-regional-life-live-probe",
+  "createdAt": "2026-05-21T12:41:45.487Z",
+  "sampleFile": "tests/evals/deepseek-v170-regional-life/samples.json",
+  "replayedFrom": null,
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "34eb08851b5e1100269ca5c6e7c64c7988e9c8f5ca048d0f0c7e4f2c3f83cfea",
+  "approvalScope": {
+    "userDecision": "D-170/D-171 approved standard deepseek-v4-flash live probes for v1.7 runtime/rc; model switches, RAG, visible full-book summaries, and probes above standard档 still require separate approval.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalRegionLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 2,
+    "roundsPerSample": 4,
+    "roundCount": 8,
+    "acceptedRounds": 8,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.875,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 0,
+    "maxP2": 4,
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 7343,
+      "completion_tokens": 3393,
+      "total_tokens": 10736,
+      "prompt_cache_hit_tokens": 5760,
+      "prompt_cache_miss_tokens": 1583
+    },
+    "cacheHitRatio": 0.7844,
+    "estimatedCostUsd": 0.00118779
+  },
+  "issueRows": []
+}
