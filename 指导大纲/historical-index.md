@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前/最新完成版本入口，例如 `指导大纲/v1.6.0/codex/00-总览/README.md`
+4. 当前草案或最新完成版本入口，例如 `指导大纲/v1.8.0/codex/00-总览/README.md` 或 `指导大纲/v1.7.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
@@ -50,6 +50,7 @@
 | v1.4.0 | 完成 | 南疆早期低阶区域样板 | `指导大纲/v1.4.0/codex/00-总览/` | projection-first 区域 tab，`SAVE_FORMAT_VERSION = 24`，无区域持久字段；不开放完整南疆/商家城/正式结论 |
 | v1.5.0 | 完成 | 冲突、追杀、杀招与小队后果解释层第一阶段 | `指导大纲/v1.5.0/codex/00-总览/` | projection-first 冲突 tab，`SAVE_FORMAT_VERSION = 24`，无战斗后果持久字段；不开放正式奖励/追杀/NPC 生死 |
 | v1.6.0 | 完成 | 内容生产、canon schema 与长测工厂 | `指导大纲/v1.6.0/codex/00-总览/` | report-only 工具链与知识治理地基；不导入全书基础包、不晋升 runtime canon、不扩 DeepSeek、不进 CI hard gate |
+| v1.7.0 | 完成 | 低阶区域活世界 projection-first 第一阶段 | `指导大纲/v1.7.0/codex/00-总览/` | projection-first 活世 tab、50 轮 live probe rescore 通过；不新增区域持久字段、不开放完整南疆/商家城/正式身份/奖励/NPC 生死 |
 
 ## 历史制度源
 
