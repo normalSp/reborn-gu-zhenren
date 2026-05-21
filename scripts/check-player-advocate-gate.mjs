@@ -60,6 +60,60 @@ for (const pattern of placeholderPatterns) {
   }
 }
 
+function readField(label) {
+  const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = text.match(new RegExp(`(?:^|\\n)\\s*(?:-\\s*)?${escapedLabel}\\s*[:：]\\s*([^\\n]+)`, 'i'));
+  return match?.[1]?.trim();
+}
+
+const liveDeepSeek = readField('是否调用 live DeepSeek');
+if (!liveDeepSeek) {
+  console.error('[player-advocate-gate] missing live DeepSeek metadata: 是否调用 live DeepSeek');
+  process.exit(1);
+}
+
+const normalizedLiveDeepSeek = liveDeepSeek
+  .replace(/[。.;；\s]+$/g, '')
+  .toLowerCase();
+const liveYesValues = new Set(['yes', 'y', '是', '调用', 'true']);
+const liveNoValues = new Set(['no', 'n', '否', '不调用', 'false']);
+const hasLiveDeepSeek = liveYesValues.has(normalizedLiveDeepSeek);
+
+if (!hasLiveDeepSeek && !liveNoValues.has(normalizedLiveDeepSeek)) {
+  console.error(`[player-advocate-gate] live DeepSeek metadata must be yes/no: value=${liveDeepSeek}`);
+  process.exit(1);
+}
+
+if (hasLiveDeepSeek) {
+  const requiredLiveFields = [
+    'live DeepSeek 模型',
+    'live DeepSeek 样本',
+    'live DeepSeek 轮次',
+    'live DeepSeek 成本',
+    'live DeepSeek 报告路径',
+  ];
+
+  for (const field of requiredLiveFields) {
+    const value = readField(field);
+    if (!value || /^(none|n\/a|na|不适用|无)$/i.test(value)) {
+      console.error(`[player-advocate-gate] missing required live DeepSeek field: ${field}`);
+      process.exit(1);
+    }
+  }
+
+  const model = readField('live DeepSeek 模型');
+  if (!/deepseek-v4-flash/i.test(model)) {
+    console.error(`[player-advocate-gate] live DeepSeek model must be deepseek-v4-flash under current policy: value=${model}`);
+    process.exit(1);
+  }
+
+  const roundCount = Number(readField('live DeepSeek 轮次')?.match(/\d+/)?.[0]);
+  if (!Number.isFinite(roundCount) || roundCount <= 0) {
+    console.error(`[player-advocate-gate] live DeepSeek rounds must include a positive number: value=${readField('live DeepSeek 轮次')}`);
+    process.exit(1);
+  }
+}
+
 function splitMarkdownRow(line) {
   return line
     .trim()

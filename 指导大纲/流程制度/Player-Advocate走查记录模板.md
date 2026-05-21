@@ -16,7 +16,12 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 - 起始存档 / 路径：
 - 本阶段新增或重点验证内容：
 - 本次不验证：
-- 是否调用 live DeepSeek：
+- 是否调用 live DeepSeek：否 / 是
+- live DeepSeek 模型：`deepseek-v4-flash` / 不适用
+- live DeepSeek 样本：样本数与样本来源 / 不适用
+- live DeepSeek 轮次：轮次数 / 不适用
+- live DeepSeek 成本：实际或估算 token / 费用 / 不适用
+- live DeepSeek 报告路径：`artifacts/.../report.json` / 不适用
 - 存档价值：none / debug_only / regression_candidate / golden_playthrough_candidate
 - transcript / 存档落点：
 
@@ -81,6 +86,7 @@ DeepSeek 运行模型：`deepseek-v4-flash`
 - 进入需求池：
 - 本次存档是否保留：
 - 是否需要追加 live narrative probe：
+- live DeepSeek 元数据是否完整：
 
 ## 后续
 

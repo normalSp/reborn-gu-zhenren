@@ -136,14 +136,53 @@ Player Advocate 走查不替代：
 Player Advocate 走查分两层：
 
 1. `deterministic_walkthrough`：默认层。使用本地引擎、E2E harness demo、Playwright、replay/eval 样本或手工可复现步骤走查，验证目标、选择、反馈、边界、UI 和存档是否可理解。小版本和 rc 的轮次默认按这一层计数。
-2. `live_narrative_probe`：叙事探针层。仅当本阶段修改 DeepSeek prompt/schema/model、正式叙事回流、公开候选体验，或用户明确要求“像真实游玩一样调用模型”时启用。它必须记录模型名、轮次、token/缓存命中、失败原因、是否保存 transcript、是否进入 eval 样本。
+2. `live_narrative_probe`：叙事探针层。用于真实调用 `deepseek-v4-flash` 检查叙事口感、越权、hidden 泄漏、术语和玩家继续游玩欲望。玩家可见 runtime 小版本和大版本 rc 默认启用；纯文档/CI/Git/内部脚本可豁免。它必须记录模型名、轮次、token/缓存命中、失败原因、是否保存 transcript、是否进入 eval 样本。
 
 live DeepSeek 不替代确定性走查。原因是 live 输出有随机性，适合验证叙事口感、越权和成本，不适合单独证明本地引擎门禁稳定。
 
-rc 或公开候选前建议追加：
+从 2026-05-21 起，所有 Player Advocate 记录必须写清 live DeepSeek 元数据：
 
-- 5-10 轮 live narrative probe，用于检查叙事口感、越权、隐藏事实和 token/缓存表现。
-- 若用户要求完整 live 长测，可升级为 50/60 轮 live 走查，但必须单独记录成本与可复现性风险。
+- 是否调用 live DeepSeek：否 / 是。
+- 若是：模型、样本、轮次、成本、报告路径必须齐全。
+- 当前标准模型固定为 `deepseek-v4-flash`，与运行时 `.env` 口径一致；不得在走查中临时切换 Pro / Reasoner / 其他模型。
+- 若否：必须写明不调用 live 的原因，通常是纯文档/CI/Git/内部脚本，或本阶段只做确定性回归。
+
+## live_narrative_probe 默认档位
+
+成本不再作为标准档 live probe 的阻断理由；质量优先。标准档之外的模型切换、明显扩大样本或长时间 live soak，仍必须另行停下来让用户确认。
+
+| 场景 | 是否默认 live | 标准档 | 说明 |
+|---|---|---:|---|
+| 纯文档、CI、Git、report-only 工具 | 否 | 0 | 写明豁免原因 |
+| 玩家可见 runtime 小版本，但不改 DeepSeek prompt/context | 是 | 8-12 轮 | 做叙事口感、越权、hidden 泄漏 smoke |
+| 改 DeepSeek prompt/context/schema、自由意图、剧情回流、NPC/势力/区域/冲突叙事 | 是 | 20-40 轮 | 作为小版本阻断门 |
+| 大版本 rc | 是 | 40-60 轮 | 覆盖主线、自由意图、失败阻断、hidden/authority 对抗样本 |
+| 高风险 rc：新区域活世界、知识摘要、hidden-adjacent、公开候选 | 是 | 80-120 轮 | 每 20/25 轮做 checkpoint |
+| v2.0 前区域活世界长测 | 是 / mixed | 300+ 总轮次，其中 live 不少于 80-120 | live 与 replay/deterministic 组合 |
+
+若标准档 live probe 出现任一 P0，必须修复后 clean re-probe。若出现 P1/P2，必须进入当前测试矩阵、需求池或延期样本池，不能只写“观察”。
+
+## live_narrative_probe 执行方式
+
+live probe 不应把 DeepSeek 当成世界状态写入者。推荐执行流水线：
+
+1. 选择 probe route：从当前版本批准的起点、旧档兼容路径、E2E harness demo、replay/eval 样本或人工构造的 debug state 开始。
+2. 固定本地事实：由 local canon / engine / store 给出当前路线、地点候选、资源压力、社会压力、冲突后果和 forbidden writes。
+3. 调用 `deepseek-v4-flash`：只让模型生成叙事、候选、传闻、请求、压力和玩家可见说明。
+4. 本地审查：逐轮检查 DeepSeek 是否越权写奖励、地点、阵营、NPC 生死、hidden/private、完整 canon 或正式结论。
+5. checkpoint：小档至少末尾审查一次；20 轮以上每 10/20 轮审查一次；80 轮以上每 20/25 轮审查一次。
+6. 归档：保存 transcript、report.json、样本 ids、模型名、轮次、token/缓存命中、成本、失败项和是否进入测试矩阵。
+7. 晋升：只有通过 intake/test/user gate 的样本，才能晋升为 replay/eval/golden_playthrough_candidate；不得重新启用 `测试存档/` 或 `public/test-saves/`。
+
+执行形态分三种：
+
+- `api_sample_probe`：像 v1.1 D-025、v1.3-rc 那样，用固定样本直接调用 DeepSeek API。适合 prompt/schema/authority/hidden 对抗。
+- `seeded_runtime_probe`：从当前 app 的可复现状态或 Playwright harness 出发，走若干玩家回合，再把回合上下文交给 DeepSeek。适合真实玩法口感。
+- `mixed_probe`：先 deterministic / replay 跑长线，再抽关键 checkpoint live 调 DeepSeek。适合长线成本、时间和稳定性的平衡。
+
+当前项目已有 `api_sample_probe` 和 `replay/deterministic` 骨架；还缺一个通用 `seeded_runtime_probe` runner。进入 v1.7 runtime 前，应在 a1/a2 或 process 小刀里决定是否把它工具化。
+
+公开候选前不得低于 rc 标准档。若要做完整 live 长测，可升级到高风险 rc 或 v2.0 前区域活世界长测档；升级必须记录额外耗时、样本、成本和可复现性风险。
 
 ## 存档价值评估
 
