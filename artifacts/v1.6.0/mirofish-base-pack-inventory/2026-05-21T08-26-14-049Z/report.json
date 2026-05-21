@@ -1,0 +1,49 @@
+{
+  "version": "v1.6.0",
+  "mode": "report_only",
+  "baseDir": "指导大纲/vMiroFish/基础包",
+  "checkedAt": "2026-05-21T08:26:14.048Z",
+  "summary": {
+    "acceptedForArchiveInventory": true,
+    "acceptedForKnowledgeIndex": false,
+    "acceptedForRuntimeCanon": false,
+    "acceptedForDeepSeekVisibleContext": false,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "info": 1
+  },
+  "manifest": {
+    "exists": true,
+    "chapterPackages": 2340,
+    "runtimeAuthority": "candidate_only",
+    "canonAuthority": "human_review_required",
+    "runtimeVisible": false,
+    "deepSeekVisible": false,
+    "quoteRedacted": true
+  },
+  "coverage": {
+    "exists": true,
+    "packages": 2340,
+    "sourcePointers": 162625,
+    "sourcePointersBad": 0,
+    "forbiddenKeyHitsInRebornGExport": 0
+  },
+  "chapters": {
+    "expected": 2340,
+    "actual": 2340,
+    "missing": [],
+    "extras": [],
+    "duplicates": [],
+    "parseFailures": [],
+    "forbiddenKeyHits": []
+  },
+  "findings": [
+    {
+      "severity": "Info",
+      "code": "coverage_hidden_facts_present",
+      "message": "hiddenFacts=387; inventory only, not visible context",
+      "ref": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\指导大纲\\vMiroFish\\基础包\\coverage_report.json"
+    }
+  ]
+}

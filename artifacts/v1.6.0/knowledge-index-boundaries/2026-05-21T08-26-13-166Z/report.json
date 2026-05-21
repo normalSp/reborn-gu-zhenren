@@ -1,0 +1,69 @@
+{
+  "version": "v1.6.0",
+  "mode": "report_only",
+  "knowledgeDir": "指导大纲/知识库/蛊真人",
+  "checkedAt": "2026-05-21T08:26:13.165Z",
+  "summary": {
+    "entries": 0,
+    "files": 0,
+    "acceptedForKnowledgeIndexSkeleton": true,
+    "acceptedForRuntimeCanon": false,
+    "acceptedForDeepSeekVisibleContext": false,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "info": 1
+  },
+  "requiredFields": [
+    "id",
+    "kind",
+    "summary",
+    "sourcePointers",
+    "visibility",
+    "promotionStatus",
+    "allowedUses",
+    "forbiddenUses",
+    "mirofishRefs",
+    "intakeReviewRefs",
+    "testSampleRefs",
+    "lastReviewedVersion",
+    "reviewNotes"
+  ],
+  "allowedVisibility": [
+    "public",
+    "player_visible",
+    "hidden_ref_only",
+    "private",
+    "deferred"
+  ],
+  "allowedPromotionStatus": [
+    "raw_candidate",
+    "intake_accepted",
+    "fact_card_draft",
+    "rule_draft",
+    "test_sample",
+    "runtime_promoted",
+    "deferred",
+    "quarantined",
+    "rejected"
+  ],
+  "highRiskUses": [
+    "deepseek_visible_context",
+    "player_visible_hidden_body",
+    "runtime_authority",
+    "canon_promotion",
+    "formal_location",
+    "formal_faction",
+    "formal_reward",
+    "npc_life_death",
+    "public_release_wording"
+  ],
+  "findings": [
+    {
+      "severity": "Info",
+      "code": "knowledge_index_empty",
+      "message": "No promoted knowledge entries yet; README-only skeleton is valid for v1.6 report-only tooling.",
+      "ref": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\指导大纲\\知识库\\蛊真人"
+    }
+  ]
+}

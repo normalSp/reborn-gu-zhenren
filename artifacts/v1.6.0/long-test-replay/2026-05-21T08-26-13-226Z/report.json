@@ -1,0 +1,33 @@
+{
+  "version": "v1.6.0",
+  "mode": "dry_run_replay_factory_skeleton",
+  "matrixFile": "指导大纲/v1.6.0/codex/00-总览/v1.6.0-测试矩阵.md",
+  "checkedAt": "2026-05-21T08:26:13.225Z",
+  "summary": {
+    "acceptedForDeterministicFactorySkeleton": true,
+    "liveProbeExecuted": false,
+    "requiresUserApprovalForLive": true,
+    "acceptedForLongLiveNarrativeQuality": false,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "info": 0
+  },
+  "replayPlan": [
+    {
+      "id": "V16-B4-DRIFT-001",
+      "mode": "deterministic_replay",
+      "roundCount": 0,
+      "liveModel": null,
+      "status": "registered"
+    },
+    {
+      "id": "V16-B4-LIVE-001",
+      "mode": "live_probe_requires_user_approval",
+      "roundCount": 0,
+      "liveModel": null,
+      "status": "registered_not_executed"
+    }
+  ],
+  "findings": []
+}

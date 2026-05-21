@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前/最新完成版本入口，例如 `指导大纲/v1.4.0/codex/00-总览/README.md`
+4. 当前/最新完成版本入口，例如 `指导大纲/v1.6.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
@@ -48,6 +48,8 @@
 | v1.2.0 | 完成 | 低阶蛊师生存与经济正式化第一阶段 | `指导大纲/v1.2.0/codex/00-总览/` | `SAVE_FORMAT_VERSION = 24`、`survivalEconomyState` 最小 pressure ledger；不等于完整经济系统 |
 | v1.3.0 | 完成 | NPC 与势力长期关系第二层 | `指导大纲/v1.3.0/codex/00-总览/` | projection-only 社会层、100 轮 Player Advocate、D-130-009 小规模 live gate 通过；不等于大规模 live quality |
 | v1.4.0 | 完成 | 南疆早期低阶区域样板 | `指导大纲/v1.4.0/codex/00-总览/` | projection-first 区域 tab，`SAVE_FORMAT_VERSION = 24`，无区域持久字段；不开放完整南疆/商家城/正式结论 |
+| v1.5.0 | 完成 | 冲突、追杀、杀招与小队后果解释层第一阶段 | `指导大纲/v1.5.0/codex/00-总览/` | projection-first 冲突 tab，`SAVE_FORMAT_VERSION = 24`，无战斗后果持久字段；不开放正式奖励/追杀/NPC 生死 |
+| v1.6.0 | 完成 | 内容生产、canon schema 与长测工厂 | `指导大纲/v1.6.0/codex/00-总览/` | report-only 工具链与知识治理地基；不导入全书基础包、不晋升 runtime canon、不扩 DeepSeek、不进 CI hard gate |
 
 ## 历史制度源
 
@@ -73,12 +75,12 @@
 
 旧版本的阶段清单、commit/run 明细、逐项验证记录不再铺在当前仪表盘或 AGENTS 中。需要复核证据时，从本索引跳转到原版本目录。
 
-## v1.6 自动检查脚本占位
+## v1.6 自动检查脚本
 
-用户已批准在 v1.6 建立过期入口自动检查脚本。建议到 v1.6 再实现：
+用户已批准并在 v1.6 落地过期入口自动检查脚本：
 
-- `scripts/check-doc-entrypoints.mjs`
-- 可选 npm script：`check:doc-entrypoints`
+- `scripts/check-stale-entrypoints.mjs`
+- npm script：`npm run check:stale-entrypoints`
 
 建议检查项：
 
@@ -88,7 +90,7 @@
 4. 当前版本决策池、测试矩阵、Git 计划、仪表盘是否同步最新 D 项。
 5. 新项目级制度是否已进入 skill 和 `流程制度/README.md`。
 
-v1.6 前不要把该脚本加入 CI 硬门。脚本规则稳定后，再由用户决定是否进入本地门禁或 GitHub Actions。
+当前仍为 report-only，不进入 CI 硬门。脚本规则稳定后，再由用户决定是否进入本地门禁或 GitHub Actions。
 
 ## 维护规则
 
