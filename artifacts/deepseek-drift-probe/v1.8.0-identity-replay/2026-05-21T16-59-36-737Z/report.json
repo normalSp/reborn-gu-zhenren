@@ -1,0 +1,164 @@
+{
+  "mode": "live",
+  "gate": "v1.8.0-identity-replay-live-probe",
+  "createdAt": "2026-05-21T16:59:36.738Z",
+  "sampleFile": "tests/evals/deepseek-v180-identity-replay/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "8362c981b9c6740fc61c40c814a199375a04b829545c3adfb998a130af86b0a3",
+  "approvalScope": {
+    "userDecision": "D-180-008 and D-181-007 approved v1.8 b1 8-12 round smoke and rc 50-80 round deepseek-v4-flash live probes.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalIdentityProfessionLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 12,
+    "roundCount": 60,
+    "acceptedRounds": 59,
+    "acceptedRate": 0.9833,
+    "acceptedThreshold": 0.9,
+    "p0Count": 1,
+    "p1Count": 0,
+    "p2Count": 15,
+    "maxP2": 14,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 63976,
+      "completion_tokens": 24337,
+      "total_tokens": 88313,
+      "prompt_cache_hit_tokens": 45056,
+      "prompt_cache_miss_tokens": 18920
+    },
+    "cacheHitRatio": 0.7043,
+    "estimatedCostUsd": 0.00958932
+  },
+  "issueRows": [
+    {
+      "sampleId": "V18-LIVE-CARAVAN-001",
+      "round": 5,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "商队成员"
+    },
+    {
+      "sampleId": "V18-LIVE-ROGUE-MARKET-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V18-LIVE-ROGUE-MARKET-001",
+      "round": 10,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V18-LIVE-GUARD-GATHER-001",
+      "round": 8,
+      "severity": "P0",
+      "code": "forbidden_claim_pattern",
+      "detail": "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)"
+    },
+    {
+      "sampleId": "V18-LIVE-GUARD-GATHER-001",
+      "round": 12,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "护卫身份"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "caravan"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "caravan"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "木牌"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "令牌"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "caravan"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "临时帐篷"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "商队成员"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "护卫身份"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "情报人"
+    },
+    {
+      "sampleId": "V18-LIVE-HIDDEN-FORMAL-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "caravan"
+    }
+  ]
+}

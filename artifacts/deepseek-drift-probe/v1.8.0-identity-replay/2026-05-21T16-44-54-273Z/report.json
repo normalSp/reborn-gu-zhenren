@@ -1,0 +1,80 @@
+{
+  "mode": "live",
+  "gate": "v1.8.0-identity-replay-live-probe",
+  "createdAt": "2026-05-21T16:44:54.275Z",
+  "sampleFile": "tests/evals/deepseek-v180-identity-replay/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "1c502f6fa9180a470927eb22848bf13f14d61b2056525291593d360ff196cb38",
+  "approvalScope": {
+    "userDecision": "D-180-008 and D-181-007 approved v1.8 b1 8-12 round smoke and rc 50-80 round deepseek-v4-flash live probes.",
+    "noRuntimeChange": true,
+    "noSaveFormatBump": true,
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalIdentityProfessionLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 3,
+    "roundsPerSample": 4,
+    "roundCount": 12,
+    "acceptedRounds": 11,
+    "acceptedRate": 0.9167,
+    "acceptedThreshold": 0.875,
+    "p0Count": 1,
+    "p1Count": 0,
+    "p2Count": 3,
+    "maxP2": 6,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 12107,
+      "completion_tokens": 5760,
+      "total_tokens": 17867,
+      "prompt_cache_hit_tokens": 6400,
+      "prompt_cache_miss_tokens": 5707
+    },
+    "cacheHitRatio": 0.5286,
+    "estimatedCostUsd": 0.0024297
+  },
+  "issueRows": [
+    {
+      "sampleId": "V18-LIVE-IDENTITY-001",
+      "round": 2,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "重生"
+    },
+    {
+      "sampleId": "V18-LIVE-CARAVAN-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "商队成员"
+    },
+    {
+      "sampleId": "V18-LIVE-CARAVAN-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V18-LIVE-ROGUE-MARKET-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "护卫身份"
+    }
+  ]
+}

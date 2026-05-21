@@ -1,6 +1,6 @@
 # RebornG v1.8.0 Codex 当前入口
 
-状态：a2 MiroFish topic-slice intake 已完成；下一步可进入 b1 projection-first 第一刀。
+状态：v1.8.0 本地开发里程碑已完成。
 日期：2026-05-21
 主题：低阶身份路线与同开局差异度地基
 
@@ -10,7 +10,7 @@
 
 专家团判断：v1.8 不应该只做“新职业列表”，也不应该只做抽象的 `runFingerprint` 技术字段。更稳的路线是把两者合并：先设计商队学徒/短工、散修短工、低阶护卫、采集跑腿、情报跑腿等低阶身份候选的 projection-first 地基，同时评估同一开局如何在稳定事实不漂移的前提下产生不同体验。
 
-当前 a2 已完成低阶身份路线 MiroFish blocking topic-slice intake：13 个 quote-redacted item、13 个 source pointer、quoteLikeKeys=0，只晋升为 candidate_pool / rule_draft / test_sample / deferred。a2 不改 runtime、不 bump `SAVE_FORMAT_VERSION = 24`、不新增身份/职业/差异度/区域事件持久字段、不扩 DeepSeek 权限、不开放正式地点/阵营/奖励/NPC 生死、不自动部署 EdgeOne。
+当前 v1.8.0 已完成低阶身份路线与同开局差异度 projection-first 地基：a2 完成低阶身份路线 MiroFish blocking topic-slice intake；b1 新增 `buildV180IdentityReplayProjection()` 与世界面板 `身份` tab；b2-b4 收束同开局差异度、身份特异失败推进、反刷/旧档/回滚；process-2 完成 `deepseek-v4-flash` 60 轮 live/replay gate。v1.8 保持 `SAVE_FORMAT_VERSION = 24`，不新增身份/职业/差异度/区域事件持久字段，不扩 DeepSeek 权限，不开放正式地点/阵营/奖励/NPC 生死，不自动部署 EdgeOne。
 
 ## 当前入口文件
 
@@ -23,6 +23,18 @@
 - `v1.8.0-a1-低阶身份路线与差异度save-format设计门禁.md`
 - `v1.8.0-a2-MiroFish-低阶身份路线topic-slice-intake.md`
 - `v1.8.0-a2-低阶身份路线规则草案.md`
+- `v1.8.0-b1-身份路线projection-first第一刀.md`
+- `v1.8.0-b1-Player-Advocate-30轮走查记录.md`
+- `v1.8.0-b1-长线叙事漂移检查记录.md`
+- `v1.8.0-b2-同开局差异度可测化.md`
+- `v1.8.0-b3-身份特异失败推进.md`
+- `v1.8.0-b4-反刷旧档回滚与入口一致性.md`
+- `v1.8.0-process-1-只读分析型子代理提速评估.md`
+- `v1.8.0-process-2-live-probe与prompt-eval硬化.md`
+- `v1.8.0-rc-Player-Advocate-100轮走查记录.md`
+- `v1.8.0-rc-live-probe执行记录.md`
+- `v1.8.0-rc-Skill同步审计记录.md`
+- `v1.8.0-rc-质量收束记录.md`
 - `v1.8.0-真相源索引.md`
 - `v1.8.0-测试矩阵.md`
 - `v1.8.0-MiroFish资料需求与交付协议.md`
@@ -59,10 +71,13 @@
 
 ## 当前结论
 
-用户已批准 D-180-001 至 D-180-012，并明确 D-180-005 只作为候选、不作为正式身份。用户已批准 D-181-001 至 D-181-010，a2 已按 blocking 执行低阶身份路线 MiroFish topic-slice intake。
+用户已批准 D-180-001 至 D-180-012，并明确 D-180-005 只作为候选、不作为正式身份。用户已批准 D-181-001 至 D-181-010。v1.8 已完成本地开发里程碑：
 
-下一步可进入：
+- runtime 只新增 projection helper 与 UI tab。
+- b1 Player Advocate 30 轮通过。
+- rc Player Advocate 100 轮通过。
+- b1 clean live smoke 12/12 accepted，P0/P1/P2=0/0/1。
+- rc clean replay 60/60 accepted，P0/P1/P2=0/0/16。
+- P2 正式道具词/英文术语风险进入后续 prompt/eval hardening，不阻断 v1.8。
 
-`v1.8.0-b1-身份路线projection-first第一刀.md`
-
-b1 仍必须保持 v24 projection-first，不新增持久字段，不启用子代理，不把身份路线写成正式地点/阵营/奖励/NPC 命运。
+下一步应先开 v1.9 专家团启动会，不要直接新增持久身份字段、`runFingerprint`、区域事件 ledger、正式地点/阵营/奖励/NPC 命运、DeepSeek visible knowledge/RAG、BFF/backend、子代理或 EdgeOne 部署。

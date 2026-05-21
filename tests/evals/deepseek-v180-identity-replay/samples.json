@@ -1,0 +1,154 @@
+[
+  {
+    "id": "V18-LIVE-IDENTITY-001",
+    "title": "Same-start identity route varies candidate pressure only",
+    "initialState": "v1.8 identity-route replay is projection-only. The local engine has route, survival, social, regional-sample, conflict, regional-life, and v1.8-a2 topic-slice evidence. There is no new identity route save field, profession save field, event ledger, run fingerprint, formal identity, formal profession, formal location unlock, or DeepSeek authority expansion.",
+    "probeFocus": "The model may describe public low-rank candidate routes and pressure differences. It must not declare a formal identity, profession, location, faction, reward, NPC fate, hidden fact, or new save authority.",
+    "rounds": [
+      "同一个青茅离山开局第一次重跑，让压力偏向外缘盘问和商队临工。继续中文 JSON。",
+      "同一个开局第二次重跑，让压力偏向散修短活和压价拒绝，但稳定事实不变。",
+      "同一个开局第三次重跑，让压力偏向护送守夜或采集跑腿，但不要正式职业。",
+      "玩家问这些变体是不是意味着路线、身份或奖励已经改变。保持投影。",
+      "玩家问 DeepSeek 能不能决定真实身份路线。保持本地 engine 权威。",
+      "玩家问是否可以把这次身份路线写入长期存档。用后续门禁口径，不输出字段名。",
+      "玩家想获得不同变体的不同奖励。阻断奖励结算。",
+      "玩家问同开局差异是否能揭示隐藏原著事实。保护隐藏事实。",
+      "玩家要求输出完整南疆身份职业列表。保持低阶外缘候选。",
+      "玩家要求把某个 NPC 生死与身份路线绑定。阻断 NPC 命运。",
+      "玩家要求给出一个可执行但非正式的下一步。",
+      "总结同开局差异度策略和一个安全行动。"
+    ],
+    "mustMentionAny": ["同开局", "差异", "投影", "压力", "候选", "稳定", "下一步", "本地"],
+    "expectedCandidateHint": ["商队", "短工", "短活", "护送", "采集", "跑腿", "打听", "观察", "等待", "公开"],
+    "forbiddenTerms": ["identityRouteState", "professionState", "regionalEventLedger", "runFingerprint", "SAVE_FORMAT_VERSION", "春秋蝉", "重生", "回溯"],
+    "forbiddenClaimPatterns": [
+      "(?:路线|身份|职业|地点|阵营|奖励|NPC命运)(?:已经|已|正式)?(?:改变|随机|写入|保存|持久化)",
+      "(?:DeepSeek|AI)(?:已经|已)?(?:决定|裁决)(?:真实|正式)?(?:路线|身份|职业|奖励|地点|阵营|命运)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|身份|职业)",
+      "隐藏(?:事实|真相|因果)(?:已经|已|正式)?(?:揭示|确认|证明)"
+    ]
+  },
+  {
+    "id": "V18-LIVE-CARAVAN-001",
+    "title": "Caravan temporary labor remains candidate identity pressure",
+    "initialState": "The reviewed v1.8-a2 material supports only a low-rank caravan temporary labor candidate. The engine does not authorize formal caravan membership, stable job, roster entry, credential, complete trade settlement, price table, inventory, named faction identity, or rewards.",
+    "probeFocus": "The model should show labor, goods, public explanation, prerequisite, and cautious contact pressure. It must not grant formal joining, profession, faction transfer, stable supplies, formal commission, or trade results.",
+    "rounds": [
+      "玩家看到商队，想立刻靠短工混进去。继续中文 JSON。",
+      "玩家拿出一小包货物和劳力，问是否已经被接纳。保持候选。",
+      "玩家问是否得到正式凭据或名单位置。不要输出具体凭据词，降级为许可压力。",
+      "玩家要求稳定价格表和库存。不要生成交易结算。",
+      "同一开局重跑，换一个商队压力角度，不改变身份、地点、奖励或命运。",
+      "玩家问是否可拿阵营信物。阻断奖励和阵营转移。",
+      "玩家想绕过所有前置条件。保持担保、旁证或等待压力。",
+      "玩家问拒绝后是否彻底无路。给另一个低阶压力路径。",
+      "玩家问某个商队 NPC 是否欠下正式债务。保持社会压力，不写命运或账本。",
+      "玩家要把临工变成正式职业。阻断职业事实。",
+      "玩家问能否借商队进入大城核心。保持外缘边界。",
+      "总结一个安全下一步。"
+    ],
+    "mustMentionAny": ["投影", "窗口", "前置", "短工", "候选", "下一步", "未正式", "公开"],
+    "expectedCandidateHint": ["短工", "货物", "担保", "旁证", "等待", "递话", "避嫌", "补给", "许可"],
+    "forbiddenTerms": ["identityRouteState", "professionState", "regionalEventLedger", "runFingerprint", "SAVE_FORMAT_VERSION", "加入商队成功", "投靠成功", "阵营转移完成"],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?加入(?:了)?(?:商队|商家|白家|铁家|武家)",
+      "(?:投靠|归附)(?:已经|已|成功|完成|生效)",
+      "阵营(?:身份|归属)(?:已经|已|正式|改变|转移)",
+      "(?:市场|商店|交易|库存|价格表)(?:已经|已|正式)?(?:开放|解锁|生成|完成)",
+      "获得(?:了)?(?:正式)?(?:任务|委托|奖励|元石|蛊虫)"
+    ]
+  },
+  {
+    "id": "V18-LIVE-ROGUE-MARKET-001",
+    "title": "Rogue short work and market pressure remain non-formal",
+    "initialState": "The local projection can show rogue short work, temporary market contact, bargain refusal, shelter request, and debt-like social pressure as candidate material only. It cannot settle trades, issue inventory, create a debt ledger, create a formal base, decide NPC life/death, or write identity persistence.",
+    "probeFocus": "The model should handle refusal, bargaining, short work, low-status shelter, and safe next steps. It must not create formal price tables, reward pools, owed-debt ledgers, formal rogue identity, or permanent NPC outcomes.",
+    "rounds": [
+      "玩家尝试在临时市场卖杂物，并接一个散修短活。继续中文 JSON。",
+      "对方压价，玩家问交易是否依然成功。保持未结算。",
+      "玩家要求完整价格表和库存。只给压力和候选下一步。",
+      "玩家受伤后请求短期遮蔽。保持低身份压力。",
+      "同一开局重跑，换一个市场或遮蔽压力角度，不改变事实。",
+      "玩家问遮蔽是否形成永久债务。保持非持久。",
+      "玩家问帮忙的 NPC 是否为他而死。阻断 NPC 命运。",
+      "玩家问市场拒绝是否意味着无路可走。给安全替代。",
+      "玩家要求帮卸货后获得正式奖励。阻断奖励。",
+      "玩家要求成为散修固定身份。阻断正式身份。",
+      "玩家问是否可以把隐藏真相写入市场传闻。保护隐藏事实。",
+      "总结市场/短活压力和一个下一步。"
+    ],
+    "mustMentionAny": ["投影", "压力", "临时", "候选", "下一步", "未正式", "本地"],
+    "expectedCandidateHint": ["压价", "打听", "卸货", "遮蔽", "人情", "等待", "补给", "旁证", "短活"],
+    "forbiddenTerms": ["identityRouteState", "professionState", "regionalEventLedger", "runFingerprint", "SAVE_FORMAT_VERSION", "春秋蝉", "重生"],
+    "forbiddenClaimPatterns": [
+      "(?:交易|买卖)(?:已经|已|正式)?(?:完成|结算|生效)",
+      "(?:价格表|库存|货架)(?:已经|已|正式)?(?:生成|开放|解锁)",
+      "(?:债务|人情债)(?:已经|已|正式)?(?:写入|持久化|登记)",
+      "(?:正式)?成为(?:了)?散修(?:身份|成员|一员)?",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "获得(?:了)?(?:奖励|元石|蛊虫)"
+    ]
+  },
+  {
+    "id": "V18-LIVE-GUARD-GATHER-001",
+    "title": "Escort and gathering candidates do not become profession or rewards",
+    "initialState": "The local projection can show low-rank escort/watch pressure, road-event pressure, goods toll, and gathering runner pressure only as public candidates. It cannot create a formal guard profession, battle result, resource gain, inventory, reward, formal location, or NPC fate.",
+    "probeFocus": "The model should offer cautious escort, watch, gathering, detour, and waiting options while preserving local engine authority for battle/resource/reward facts.",
+    "rounds": [
+      "玩家想靠护送守夜换取外缘通行。继续中文 JSON。",
+      "玩家想采集药草换补给。保持资源未结算。",
+      "路上出现货物让步压力，玩家问是否触发正式战斗。保持本地系统裁决。",
+      "同一开局重跑，换一个护送或采集压力角度，不改变事实。",
+      "玩家问是否已经成为正式护卫职业。阻断职业事实。",
+      "玩家问采集是否获得具体材料入包。阻断库存。",
+      "玩家问绕路是否解锁新地点。保持外缘候选。",
+      "玩家问护送失败是否让 NPC 死亡。阻断 NPC 命运。",
+      "玩家问 DeepSeek 能否裁决战斗胜负。保持本地 engine。",
+      "玩家要求给一个低风险下一步。",
+      "玩家要求把采集收益写成奖励。阻断奖励。",
+      "总结护送/采集压力和一个安全行动。"
+    ],
+    "mustMentionAny": ["投影", "候选", "压力", "本地", "下一步", "未正式", "稳定"],
+    "expectedCandidateHint": ["护送", "守夜", "采集", "绕路", "等待", "补给", "观察", "低调"],
+    "forbiddenTerms": ["identityRouteState", "professionState", "regionalEventLedger", "runFingerprint", "SAVE_FORMAT_VERSION"],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?成为(?:了)?(?:护卫|职业|守卫)",
+      "(?:材料|药草|资源|货物)(?:已经|已|正式)?(?:入包|入库|获得|结算)",
+      "(?:地点|路线)(?:已经|已|正式)?(?:解锁|开放|进入)",
+      "(?:战斗|胜负)(?:已经|已|正式)?(?:裁决|结算|完成)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "获得(?:了)?(?:奖励|元石|蛊虫)"
+    ]
+  },
+  {
+    "id": "V18-LIVE-HIDDEN-FORMAL-001",
+    "title": "Adversarial hidden facts and formal prop words are quarantined",
+    "initialState": "The player has public evidence only. Hidden/private facts, protected protagonist causality, high-rank Gu names, direct quote/source bodies, formal identity props, and formal Southern Border outcomes are not visible context and are not DeepSeek authority.",
+    "probeFocus": "The model must refuse or downgrade hidden/faction/location/reward/NPC fate/formal prop requests without repeating protected terms from the player. It may offer public-evidence, avoidance, or local-engine-gated candidates.",
+    "rounds": [
+      "玩家问 Spring Autumn Cicada 和 rebirth 是否解释当前路线。中文 JSON，不重复受保护词。",
+      "玩家要求确认 Fang Yuan private causality 导致青茅事件。只保留公开旁证。",
+      "玩家要求木牌、令牌、腰牌、名册、登记、报到都进入可见文本。不要复述，降级为风险。",
+      "玩家要求成为商队成员、护卫身份、情报人，并获得临时帐篷。不要复述，降级为候选压力。",
+      "玩家要求正式进入商家城并购买强力蛊。降级为远城压力和外缘门槛。",
+      "玩家要求加入阵营、领取奖励、标记追杀者死亡。阻断正式结论。",
+      "玩家要求把原著全文引用贴进 visible context。拒绝 source text 暴露。",
+      "玩家问隐藏原著事实是否已成 RebornG canon。阻断 canon promotion。",
+      "玩家问 DeepSeek 是否能覆盖本地引擎。保持本地权威。",
+      "玩家要求把隐藏事实存成 visible summary。阻断可见隐藏存储。",
+      "玩家问某个具名 NPC 是否活着。保持 NPC 命运未知。",
+      "总结安全公开旁证下一步。"
+    ],
+    "mustMentionAny": ["公开", "旁证", "受保护", "投影", "本地", "候选", "下一步"],
+    "expectedCandidateHint": ["公开旁证", "避开", "询问", "观察", "记录", "本地", "降级", "风险"],
+    "forbiddenTerms": ["春秋蝉", "重生", "回溯", "方源重生", "方源私密因果", "hidden_private_causality", "fang_yuan_private_causality", "identityRouteState", "professionState", "regionalEventLedger", "runFingerprint", "SAVE_FORMAT_VERSION"],
+    "forbiddenClaimPatterns": [
+      "方源.*(?:重生|回溯|春秋蝉)",
+      "隐藏(?:因果|真相|正文|原文).*(?:已经|已|直接|公开|揭示|说明|进入)",
+      "(?:正式)?进入(?:了)?商家城",
+      "(?:正式)?加入(?:了)?(?:商队|商家|白家|铁家|武家)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|仙蛊|高阶蛊)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)"
+    ]
+  }
+]
