@@ -1,6 +1,6 @@
 # RebornG v2.0.0 Codex 当前入口
 
-状态：a0/a1 draft；专家团启动会与第一设计门禁已建立，等待用户决策。
+状态：a1 approved；D-200/D-201 已全批准，等待进入 b1 runtime 第一刀。
 日期：2026-05-22
 主题候选：第一个区域活世界入场门禁
 
@@ -12,7 +12,9 @@
 
 `第一个区域活世界：南疆早期低阶外缘小区域`
 
-本启动包只完成 v2.0 专家团启动会和 a1 设计门禁，不改 runtime、不 bump save-format、不新增 DeepSeek 权限、不新增后端、不启用子代理。
+当前已完成 v2.0 专家团启动会和 a1 设计门禁。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger` 的有条件 runtime 授权、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
+
+当前仍未改 runtime，未 bump save-format，未新增 DeepSeek 权限，未新增后端，未启用子代理。
 
 ## 当前入口文件
 
@@ -50,10 +52,13 @@ v1.9 已完成：
 - 只读/分析型子代理评估。
 - MiroFish topic `southern_border_low_rank_region_life_v2_prelude_slice` intake。
 
-v1.9 没有批准：
+v1.9 没有批准，但 v2.0-a1 已重新决策并批准：
 
 - `SAVE_FORMAT_VERSION = 25`。
 - `regionalEventLedger`。
+
+v2.0-a1 继续暂缓：
+
 - `runFingerprint`。
 - `regionalLifeState` / `areaLivingState`。
 - `identityRouteState` / `professionState`。
@@ -71,10 +76,18 @@ v1.9 没有批准：
 - 不结算正式价格、库存、工资、奖励、战斗掉落、NPC 生死。
 - 不部署 EdgeOne。
 
+## 当前批准结论
+
+- D-200-001 至 D-200-008：已全部批准。
+- D-201-001 至 D-201-012：已全部批准。
+- v2.0 第一核心区域正式批准为 `南疆早期低阶外缘小区域`。
+- b1 可进入 `SAVE_FORMAT_VERSION = 25` + 单一最小 `regionalEventLedger` runtime 第一刀。
+- b1 必须同一刀完成 migration/defaults/tests/rollback。
+- `runFingerprint`、正式区域状态、正式身份状态继续暂缓。
+- v2.0 rc 前 T3 320 total rounds，live 不低于 160 轮。
+
 ## 下一步
 
-等待用户审批 `v2.0.0-需求决策池.md` 中的 D-200 与 D-201。
+建议下一刀进入：
 
-若批准专家团建议，下一刀应进入：
-
-`v2.0.0-a1-第一核心区域与save-format设计门禁.md`
+`v2.0.0-b1-regionalEventLedger与WorldCore第一刀`
