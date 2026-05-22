@@ -52,6 +52,7 @@
 | v1.6.0 | 完成 | 内容生产、canon schema 与长测工厂 | `指导大纲/v1.6.0/codex/00-总览/` | report-only 工具链与知识治理地基；不导入全书基础包、不晋升 runtime canon、不扩 DeepSeek、不进 CI hard gate |
 | v1.7.0 | 完成 | 低阶区域活世界 projection-first 第一阶段 | `指导大纲/v1.7.0/codex/00-总览/` | projection-first 活世 tab、50 轮 live probe rescore 通过；不新增区域持久字段、不开放完整南疆/商家城/正式身份/奖励/NPC 生死 |
 | v1.8.0 | 完成 | 低阶身份路线与同开局差异度 projection-first 地基 | `指导大纲/v1.8.0/codex/00-总览/` | projection-first 身份 tab、60 轮 live/replay gate 通过；不新增身份/职业/runFingerprint/区域事件 ledger，不开放正式身份/地点/阵营/奖励/NPC 生死 |
+| v1.9.0 | 完成 | v2.0 区域活世界预备与门禁收束 | `指导大纲/v1.9.0/codex/00-总览/` | report-only readiness；完成 v2 readiness、event envelope、T3 计划和 go/no-go，不改 runtime/save/DeepSeek/UI，不自动进入 v2.0 |
 
 ## 历史制度源
 

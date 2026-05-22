@@ -1,6 +1,6 @@
 # RebornG v1.9.0 Codex 当前入口
 
-状态：v1.9.0 b1 前复核已完成本地文档门禁；下一步可进入 report-only b1。
+状态：v1.9.0 已完成本地 report-only 预备里程碑；下一步停下给用户决策 v2.0 启动。
 日期：2026-05-22
 主题候选：v2.0 区域活世界预备与门禁收束
 
@@ -12,7 +12,7 @@
 
 专家团判断：v1.8 已经把低阶身份路线和同开局差异度做成 projection-first 地基，但它仍不是正式身份系统，也不是长期区域事件账本。v1.9 不应急着把玩家推进完整南疆或商家城，而应先把 v2.0 第一个区域活世界的核心区域、事件账本、身份/路线/经济/社会/冲突合流方式、MiroFish 主题切片、长测门禁和 save-format 风险一次性摆上台面。
 
-当前 a1 设计门禁已建立且 D-191 已全批准；a2 已按 blocking MiroFish 双仓流水线完成 `southern_border_low_rank_region_life_v2_prelude_slice` request/export/intake/rule/test 草案；b1 前复核结论为：不需要先补 a3，b1 可以进入，但必须保持 report-only / pure helper / 无 UI tab。v1.9 仍保持 `SAVE_FORMAT_VERSION = 24`，暂不新增 `regionalEventLedger`、`runFingerprint`、`regionalLifeState`、`identityRouteState` 等持久字段。
+当前 a1 设计门禁已建立且 D-191 已全批准；a2 已按 blocking MiroFish 双仓流水线完成 `southern_border_low_rank_region_life_v2_prelude_slice` request/export/intake/rule/test 草案；b1 前复核确认不需要先补 a3；b1-b4 / process-1 / process-2 / rc 均已按 report-only 完成。v1.9 保持 `SAVE_FORMAT_VERSION = 24`，未新增 `regionalEventLedger`、`runFingerprint`、`regionalLifeState`、`identityRouteState` 等持久字段。
 
 ## 当前入口文件
 
@@ -26,6 +26,14 @@
 - `v1.9.0-a2-MiroFish-v2区域活世界预备topic-slice-intake.md`
 - `v1.9.0-a2-v2区域活世界预备规则草案.md`
 - `v1.9.0-b1前复核-v2-readiness-projection-report.md`
+- `v1.9.0-b1-v2-readiness-projection-report第一刀.md`
+- `v1.9.0-b2-区域事件envelope与测试矩阵硬化.md`
+- `v1.9.0-b3-同开局长期差异与runFingerprint评估.md`
+- `v1.9.0-b4-v2长测工厂与T3计划.md`
+- `v1.9.0-process-1-P2术语与正式凭证hardening.md`
+- `v1.9.0-process-2-只读分析型子代理试点评估.md`
+- `v1.9.0-rc-Skill同步审计记录.md`
+- `v1.9.0-rc-质量收束记录.md`
 - `v1.9.0-v2.0区域活世界readiness草案.md`
 - `v1.9.0-真相源索引.md`
 - `v1.9.0-测试矩阵.md`
@@ -79,4 +87,4 @@
 - 不启用子代理。
 - 不部署 EdgeOne。
 
-下一步可进入 `v1.9.0-b1-v2-readiness-projection-report第一刀.md`。若 b1 任何方案想新增 UI tab、store action、save field、DeepSeek context、runtime canon 或正式地点/身份/奖励/NPC 结论，则本结论失效，先追加 `v1.9.0-a3-v2-readiness-report设计门禁.md`。
+v1.9 已完成为本地 report-only 预备里程碑。下一步不是自动进入 v2.0 runtime，而是停下给用户决策 v2.0 启动会和第一核心区域、v25、事件账本、`runFingerprint`、T3 长测、DeepSeek/BFF/子代理等入场门禁。
