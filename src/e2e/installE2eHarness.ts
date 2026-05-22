@@ -246,6 +246,19 @@ function summarizeStore(): Record<string, unknown> {
       sourceRefs: Array.isArray(state.survivalEconomyState.sourceRefs) ? state.survivalEconomyState.sourceRefs : [],
       migrationNote: state.survivalEconomyState.migrationNote || null,
     } : null,
+    regionalEventLedger: state.regionalEventLedger ? {
+      status: state.regionalEventLedger.status || null,
+      authority: state.regionalEventLedger.authority || null,
+      activeRegionKey: state.regionalEventLedger.activeRegionKey || null,
+      eventCount: Array.isArray(state.regionalEventLedger.publicEvents) ? state.regionalEventLedger.publicEvents.length : 0,
+      eventKinds: Array.isArray(state.regionalEventLedger.publicEvents)
+        ? state.regionalEventLedger.publicEvents.map((event: any) => event.eventKind)
+        : [],
+      followUpCount: Array.isArray(state.regionalEventLedger.pendingFollowUps) ? state.regionalEventLedger.pendingFollowUps.length : 0,
+      pressureScore: Number(state.regionalEventLedger.pressureSummary?.score || 0),
+      sourceRefs: Array.isArray(state.regionalEventLedger.sourceRefs) ? state.regionalEventLedger.sourceRefs : [],
+      migrationNote: state.regionalEventLedger.migrationNote || null,
+    } : null,
     materialBag: state.materialBag || {},
     feedingCredits: state.feedingCredits || {},
     lastWorldActionPromptSummary: state.flags?.lastWorldActionReturnContext?.promptSummary || null,

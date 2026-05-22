@@ -290,7 +290,7 @@ export function buildV120LowRankSurvivalEconomyProjection(
     routeStatusLabel: routeOverview.statusLabel,
     pressureItems,
     boundaryLines: [
-      'v1.2 最小 ledger：允许写 survivalEconomyState 压力账本，SAVE_FORMAT_VERSION = 24。',
+      'v1.2 最小 ledger：允许写 survivalEconomyState 压力账本；当前 SAVE_FORMAT_VERSION = 25。',
       'survivalEconomyState 只能记录压力、来源、证据与禁止项，不是正式库存或交易账本。',
       'b3 只做炼养用准备、残方缺口、材料验证和失败风险可读性；不发材料、不扣元石、不消耗食料、不结算炼蛊成功或失败。',
       'b4 只做询价、担保、公开理由和风险窗口；不写正式价格、商店库存、买卖、黑市、委托或稳定套利。',

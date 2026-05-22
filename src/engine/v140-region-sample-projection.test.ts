@@ -165,7 +165,7 @@ describe('v1.4 region sample projection', () => {
     expect(projection.postureCards.every(card => card.canPatch === false && card.statePatchApplied === false)).toBe(true);
     expect(projection.postureCards.some(card => card.id === 'caravan_contact_window' && card.status === 'visible')).toBe(true);
     expect(projection.postureCards.some(card => card.id === 'city_outer_threshold' && card.status === 'visible')).toBe(true);
-    expect(projection.boundaryLines.join('\n')).toContain('SAVE_FORMAT_VERSION 保持 24');
+    expect(projection.boundaryLines.join('\n')).toContain('不新增 regionSampleState');
     expect(projection.boundaryLines.join('\n')).toContain('不新增 regionSampleState');
     expect(projection.boundaryLines.join('\n')).toContain('DeepSeek 只能写叙事');
     expect(projection.forbiddenWrites).toEqual(expect.arrayContaining([

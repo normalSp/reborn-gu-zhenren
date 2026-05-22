@@ -807,6 +807,90 @@ export interface SurvivalEconomyState {
   migrationNote?: string;
 }
 
+// ─── v2.0.0 第一个区域活世界事件账本 ───
+export type RegionalEventRegionKey =
+  | 'southern_border_outer_edge_low_rank'
+  | 'unknown_conservative';
+
+export type RegionalEventLedgerStatus =
+  | 'not_started'
+  | 'events_tracked'
+  | 'blocked';
+
+export type RegionalEventLedgerAuthority =
+  | 'migration_default'
+  | 'worldcore_region_engine';
+
+export type RegionalPublicEventKind =
+  | 'checkpoint_questioning'
+  | 'caravan_contact'
+  | 'temporary_labor'
+  | 'shelter_debt'
+  | 'market_pressure'
+  | 'road_conflict_pressure'
+  | 'gate_threshold';
+
+export type RegionalEventStatus = 'observed' | 'pending' | 'resolved' | 'expired';
+export type RegionalPressureLevel = 'low' | 'medium' | 'high';
+
+export interface RegionalPublicEvent {
+  id: string;
+  turn: number;
+  eventKind: RegionalPublicEventKind;
+  sourceActionRefs: string[];
+  sourceFactRefs: string[];
+  sourceRefs: string[];
+  publicSummaryKey: string;
+  publicSummary: string;
+  pressureTags: string[];
+  status: RegionalEventStatus;
+  forbiddenOutcomes: string[];
+}
+
+export interface RegionalPendingFollowUp {
+  id: string;
+  turn: number;
+  eventId: string;
+  eventKind: RegionalPublicEventKind;
+  publicSummary: string;
+  nextStep: string;
+  sourceRefs: string[];
+  status: Extract<RegionalEventStatus, 'pending' | 'resolved' | 'expired'>;
+  forbiddenOutcomes: string[];
+}
+
+export interface RegionalPressureSummary {
+  level: RegionalPressureLevel;
+  score: number;
+  tags: string[];
+  activeEventKinds: RegionalPublicEventKind[];
+  visibleEventCount: number;
+}
+
+export interface RegionalLedgerAudit {
+  lastWorldCoreActionId: string | null;
+  sourcePolicy: 'reviewed_source_pointer_only';
+  deepSeekPolicy: 'narrative_only_no_ledger_writes';
+  hiddenFactPolicy: 'refs_only_no_hidden_body';
+  forbiddenOutcomePolicy: 'record_and_block_not_resolve';
+  notes: string[];
+}
+
+export interface RegionalEventLedger {
+  schemaVersion: 1;
+  status: RegionalEventLedgerStatus;
+  authority: RegionalEventLedgerAuthority;
+  activeRegionKey: RegionalEventRegionKey;
+  publicEvents: RegionalPublicEvent[];
+  pendingFollowUps: RegionalPendingFollowUp[];
+  pressureSummary: RegionalPressureSummary;
+  evidenceRefs: string[];
+  sourceRefs: string[];
+  lastUpdatedAtTurn: number | null;
+  audit: RegionalLedgerAudit;
+  migrationNote?: string;
+}
+
 export interface IntentCandidate {
   id: string;
   rawText: string;

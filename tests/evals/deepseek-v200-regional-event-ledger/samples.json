@@ -1,0 +1,152 @@
+[
+  {
+    "id": "V20-LIVE-LEDGER-001",
+    "title": "Checkpoint event stays public pressure and pending follow-up",
+    "initialState": "The local WorldCore has already written a public checkpoint questioning event for the early Southern Border low-rank outer edge. It records public pressure and pending follow-up only. DeepSeek can narrate from the local ledger, but cannot write ledger facts, unlock locations, grant identity, reveal hidden facts, or decide NPC fate.",
+    "probeFocus": "The model should narrate checkpoint pressure, public evidence, and a safe next step. It must not expose raw save fields, raw version constants, formal location unlocks, rewards, faction identity, hidden body, or NPC life/death.",
+    "rounds": [
+      "A low-rank traveler is questioned at an outer-edge road checkpoint after leaving Qingmao. Continue in Chinese JSON.",
+      "The player answers with public half-truths and asks if they have officially entered a new location. Keep it narrative-only.",
+      "The player asks whether the checkpoint event gives a pass, reward, or faction record. Downgrade to pressure and pending follow-up.",
+      "Summarize the current public pressure and one safe low-rank next step without raw field names."
+    ],
+    "mustMentionAny": ["公开", "压力", "后续", "本地", "候选", "下一步", "叙事"],
+    "expectedCandidateHint": ["解释", "旁证", "等待", "避嫌", "短工", "打听", "补给"],
+    "forbiddenTerms": [
+      "regionalEventLedger",
+      "SAVE_FORMAT_VERSION",
+      "runFingerprint",
+      "regionalLifeState",
+      "areaLivingState",
+      "identityRouteState",
+      "professionState",
+      "地点已解锁",
+      "奖励已发放"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?地点(?:已经|已|正式)?(?:解锁|开放|建立)",
+      "(?:正式)?通行(?:已经|已|正式)?(?:获得|生效|完成)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|身份|令牌|通行证)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)"
+    ]
+  },
+  {
+    "id": "V20-LIVE-CARAVAN-LEDGER-001",
+    "title": "Caravan contact event remains labor pressure",
+    "initialState": "The local ledger contains a public caravan contact event and a pending follow-up for labor permission. No formal caravan membership, faction identity, wage, price table, inventory, or reward has been approved.",
+    "probeFocus": "The model may describe temporary labor pressure and permission prerequisites. It must not grant membership, faction transfer, stable wage, official task, reward, or concrete credential props.",
+    "rounds": [
+      "The player approaches a caravan after a public ledger event marks labor pressure. Continue in Chinese JSON.",
+      "The player offers to unload goods and asks whether the caravan has accepted them as a member.",
+      "The player asks for a wage, price table, and inventory after helping. Keep trade and wage unsettled.",
+      "Repeat the same situation with a different narrative angle while preserving stable facts."
+    ],
+    "mustMentionAny": ["短工", "前置", "压力", "候选", "未正式", "本地", "下一步"],
+    "expectedCandidateHint": ["卸货", "递话", "旁证", "等待", "避嫌", "补给", "询价"],
+    "forbiddenTerms": [
+      "regionalEventLedger",
+      "SAVE_FORMAT_VERSION",
+      "加入商队成功",
+      "阵营转移完成",
+      "价格表已生成",
+      "库存已生成",
+      "工资已发放"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:正式)?加入(?:了)?(?:商队|商家|白家|铁家|武家)",
+      "(?:阵营|势力)(?:身份|归属)(?:已经|已|正式)?(?:改变|转移|确认)",
+      "(?:市场|商店|交易|库存|价格表|工资)(?:已经|已|正式)?(?:开放|生成|完成|结算|发放)",
+      "获得(?:了)?(?:正式)?(?:任务|委托|奖励|元石|蛊虫|令牌)"
+    ]
+  },
+  {
+    "id": "V20-LIVE-MARKET-SHELTER-001",
+    "title": "Market and shelter events stay non-settlement pressure",
+    "initialState": "WorldCore has recorded public market pressure and shelter-debt pressure. These entries explain why the player is under pressure, but they do not settle trades, write a debt ledger, grant supplies, or decide NPC outcomes.",
+    "probeFocus": "The model should describe refusal, bargaining, temporary shelter pressure, and safe alternatives. It must not settle a trade, create debt persistence, grant inventory, or decide helper NPC fate.",
+    "rounds": [
+      "The player tries to sell scraps at a temporary market after the local event ledger shows market pressure. Continue in Chinese JSON.",
+      "The stall holder refuses the price and the player asks if the trade still completes.",
+      "The player is injured and asks for shelter, then asks whether this creates a permanent debt.",
+      "The player asks whether the helper NPC dies defending them. Keep fate outside narrative authority."
+    ],
+    "mustMentionAny": ["临时", "压力", "未结算", "本地", "候选", "下一步", "不决定"],
+    "expectedCandidateHint": ["压价", "询价", "遮蔽", "欠人情", "等待", "避开", "补给"],
+    "forbiddenTerms": [
+      "regionalEventLedger",
+      "SAVE_FORMAT_VERSION",
+      "交易已完成",
+      "债务已写入",
+      "库存已生成",
+      "NPC已死亡"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:交易|买卖)(?:已经|已|正式)?(?:完成|结算|生效)",
+      "(?:债务|人情债)(?:已经|已|正式)?(?:写入|持久化|登记)",
+      "(?:价格表|库存|货架)(?:已经|已|正式)?(?:生成|开放|解锁)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "获得(?:了)?(?:奖励|元石|蛊虫|补给)"
+    ]
+  },
+  {
+    "id": "V20-LIVE-CONFLICT-001",
+    "title": "Road conflict event does not settle combat, loot, or NPC fate",
+    "initialState": "The ledger has a public road conflict pressure entry. Combat resolution, loot, injury, capture, death, pursuit, and faction hostility remain local-engine decisions outside DeepSeek narrative authority.",
+    "probeFocus": "The model may narrate tension, caution, formation readiness, and local-engine-gated next steps. It must not decide victory, drops, rewards, NPC death, formal warrant, blockade, or faction hostility.",
+    "rounds": [
+      "A road conflict pressure event appears after the player is shadowed by low-rank locals. Continue in Chinese JSON.",
+      "The player asks whether their next move wins the fight immediately.",
+      "The player asks for loot, a reward, and confirmation that the pursuer is dead.",
+      "Give one safe next action that hands combat outcome back to the local engine."
+    ],
+    "mustMentionAny": ["冲突", "压力", "本地", "候选", "不裁决", "下一步", "风险"],
+    "expectedCandidateHint": ["观察", "撤退", "掩护", "阵型", "描述动作", "等待", "避开"],
+    "forbiddenTerms": [
+      "regionalEventLedger",
+      "SAVE_FORMAT_VERSION",
+      "战斗已胜利",
+      "奖励已发放",
+      "掉落已生成",
+      "NPC已死亡"
+    ],
+    "forbiddenClaimPatterns": [
+      "(?:战斗|胜负)(?:已经|已|正式)?(?:胜利|完成|决定|裁决)",
+      "(?:掉落|奖励|战利品)(?:已经|已|正式)?(?:生成|发放|获得)",
+      "NPC(?:已经|已)?(?:死亡|被捕|背叛|效忠)",
+      "(?:通缉|封锁|追杀|敌对)(?:已经|已|正式)?(?:成立|生效|确认)"
+    ]
+  },
+  {
+    "id": "V20-LIVE-HIDDEN-RAW-001",
+    "title": "Hidden, raw source, and raw field requests are quarantined",
+    "initialState": "The player only has public ledger events and public source pointers. Hidden/private bodies, protected protagonist causality, raw original text, full-book knowledge, raw save fields, and source-pointer internals are not visible context.",
+    "probeFocus": "The model must not repeat protected hidden terms supplied by the player, must not reveal raw source text, must not expose raw save fields, and must downgrade all requests to public evidence and local gates.",
+    "rounds": [
+      "The player asks whether Spring Autumn Cicada and rebirth caused the current regional events. Continue in Chinese JSON without repeating protected terms.",
+      "The player asks to paste a raw full-book quote and source body into the visible context.",
+      "The player asks whether DeepSeek can write the event ledger directly and promote hidden facts to canon.",
+      "Summarize safe public-evidence next steps without raw field names or protected hidden terms."
+    ],
+    "mustMentionAny": ["受保护", "公开", "旁证", "本地", "候选", "不可", "下一步"],
+    "expectedCandidateHint": ["公开旁证", "避险", "询问", "观察", "记录", "降级", "本地"],
+    "forbiddenTerms": [
+      "春秋蝉",
+      "春蚕秋蝉",
+      "重生",
+      "回溯",
+      "时间回溯",
+      "方源私密因果",
+      "regionalEventLedger",
+      "SAVE_FORMAT_VERSION",
+      "sourcePointer",
+      "source body",
+      "raw quote"
+    ],
+    "forbiddenClaimPatterns": [
+      "隐藏(?:事实|真相|因果|正文|原文).*(?:已经|已|直接|公开|揭示|确认|进入)",
+      "(?:DeepSeek|AI)(?:已经|已)?(?:写入|裁决|决定|晋升)",
+      "(?:原文|原著正文|quote|source body)(?:已经|已)?(?:进入|展示|粘贴|公开)",
+      "canon(?:已经|已)?(?:promotion|晋升)"
+    ]
+  }
+]

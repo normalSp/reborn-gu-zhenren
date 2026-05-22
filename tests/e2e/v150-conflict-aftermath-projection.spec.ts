@@ -69,7 +69,7 @@ test.describe('v1.5 conflict aftermath projection', () => {
     await expect(panel.locator('[data-testid="v150-conflict-status"]')).toContainText('冲突后果解释层');
     await expect(panel.locator('[data-testid="v150-conflict-status"]')).toContainText('冲突后果投影可读');
     await expect(panel.locator('[data-testid="v150-conflict-audit"]')).toContainText('projection-first');
-    await expect(panel.locator('[data-testid="v150-conflict-audit"]')).toContainText('SAVE_FORMAT_VERSION = 24');
+    await expect(panel.locator('[data-testid="v150-conflict-audit"]')).toContainText('SAVE_FORMAT_VERSION = 25');
     await expect(panel.locator('[data-testid="v150-conflict-audit"]')).toContainText('不返回 conflictConsequenceState');
     await expect(panel.locator('[data-testid="v150-conflict-posture-route_ambush_risk"]')).toContainText('路线伏击风险');
     await expect(panel.locator('[data-testid="v150-conflict-posture-pursuit_attention_window"]')).toContainText('追杀注意窗口');

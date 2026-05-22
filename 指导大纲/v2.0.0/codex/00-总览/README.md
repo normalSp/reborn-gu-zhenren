@@ -1,6 +1,6 @@
 # RebornG v2.0.0 Codex 当前入口
 
-状态：a1 approved；D-200/D-201 已全批准，等待进入 b1 runtime 第一刀。
+状态：b1 completed locally；v25 `regionalEventLedger` 与 WorldCore 第一刀已通过本地质量门。
 日期：2026-05-22
 主题候选：第一个区域活世界入场门禁
 
@@ -12,9 +12,9 @@
 
 `第一个区域活世界：南疆早期低阶外缘小区域`
 
-当前已完成 v2.0 专家团启动会和 a1 设计门禁。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger` 的有条件 runtime 授权、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
+当前已完成 v2.0 专家团启动会、a1 设计门禁和 b1 runtime 第一刀。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
 
-当前仍未改 runtime，未 bump save-format，未新增 DeepSeek 权限，未新增后端，未启用子代理。
+当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。未新增 DeepSeek 权限，未新增后端，未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
 
 ## 当前入口文件
 
@@ -25,6 +25,9 @@
 - `v2.0.0-需求决策池.md`
 - `v2.0.0-a0-治理补丁与范围冻结.md`
 - `v2.0.0-a1-第一核心区域与save-format设计门禁.md`
+- `v2.0.0-b1-regionalEventLedger与WorldCore第一刀.md`
+- `v2.0.0-b1-Player-Advocate-30轮走查记录.md`
+- `v2.0.0-b1-长线叙事漂移检查记录.md`
 - `v2.0.0-真相源索引.md`
 - `v2.0.0-测试矩阵.md`
 - `v2.0.0-MiroFish资料需求与交付协议.md`
@@ -81,8 +84,8 @@ v2.0-a1 继续暂缓：
 - D-200-001 至 D-200-008：已全部批准。
 - D-201-001 至 D-201-012：已全部批准。
 - v2.0 第一核心区域正式批准为 `南疆早期低阶外缘小区域`。
-- b1 可进入 `SAVE_FORMAT_VERSION = 25` + 单一最小 `regionalEventLedger` runtime 第一刀。
-- b1 必须同一刀完成 migration/defaults/tests/rollback。
+- b1 已完成 `SAVE_FORMAT_VERSION = 25` + 单一最小 `regionalEventLedger` runtime 第一刀。
+- b1 已同一刀完成 migration/defaults/tests/rollback、30 轮 Player Advocate 和 20 轮 live smoke。
 - `runFingerprint`、正式区域状态、正式身份状态继续暂缓。
 - v2.0 rc 前 T3 320 total rounds，live 不低于 160 轮。
 
@@ -90,4 +93,4 @@ v2.0-a1 继续暂缓：
 
 建议下一刀进入：
 
-`v2.0.0-b1-regionalEventLedger与WorldCore第一刀`
+`v2.0.0-b2-区域事件持续承接与去重`

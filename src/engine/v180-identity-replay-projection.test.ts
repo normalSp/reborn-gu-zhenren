@@ -208,7 +208,7 @@ describe('v1.8 identity replay projection', () => {
   it('projects five low-rank identity route candidates without save, formal identity, or DeepSeek authority writes', () => {
     const projection = buildV180IdentityReplayProjection(richProjectionInput());
 
-    expect(SAVE_FORMAT_VERSION).toBe(24);
+    expect(SAVE_FORMAT_VERSION).toBe(25);
     expect(projection.status).toBe('identity_route_visible');
     expect(projection.scopeId).toBe('southern_border_low_rank_identity_routes_outer_edge_slice');
     expect(projection.savePolicy).toBe('no_new_persistence_v24');
@@ -270,7 +270,7 @@ describe('v1.8 identity replay projection', () => {
       'approve_professionState_if_formal_professions_are_needed',
       'approve_per_save_runFingerprint_or_regionalEventLedger',
     ]));
-    expect(projection.boundaryLines.join('\n')).toContain('SAVE_FORMAT_VERSION 保持 24');
+    expect(projection.boundaryLines.join('\n')).toContain('不新增 identityRouteState');
     expect(projection.boundaryLines.join('\n')).toContain('不新增 identityRouteState');
     expect(projection.boundaryLines.join('\n')).toContain('五类身份路线');
     expect(projection.forbiddenWrites).toEqual(expect.arrayContaining([

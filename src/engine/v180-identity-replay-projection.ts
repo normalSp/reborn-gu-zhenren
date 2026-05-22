@@ -828,7 +828,7 @@ export function buildV180IdentityReplayProjection(
         '不要让叙事文本直接生成身份、职业、地点、阵营、奖励或 NPC 命运。',
       ],
     boundaryLines: [
-      'v1.8 b1 是 projection-first：SAVE_FORMAT_VERSION 保持 24，不新增 identityRouteState / professionState。',
+      'v1.8 b1 是 projection-first：当前版本不新增 identityRouteState / professionState。',
       '不写 per-save runFingerprint / regionalEventLedger；同开局差异只来自本地候选 deck、公开证据组合和叙事表达。',
       '五类身份路线只是候选：商队临工、散修短活、护送候选、采集跑腿、消息跑腿。',
       '不开放正式身份、正式职业、正式商队身份、完整地点、正式交易、价格表、库存、奖励、NPC 生死或隐藏事实。',

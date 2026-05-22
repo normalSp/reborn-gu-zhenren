@@ -210,7 +210,7 @@ describe('v1.7 regional life projection', () => {
       turn: 70,
     });
 
-    expect(SAVE_FORMAT_VERSION).toBe(24);
+    expect(SAVE_FORMAT_VERSION).toBe(25);
     expect(projection.status).toBe('regional_life_visible');
     expect(projection.scopeId).toBe('southern_border_low_rank_outer_edge_life_slice');
     expect(projection.savePolicy).toBe('no_new_persistence_v24');
@@ -266,7 +266,7 @@ describe('v1.7 regional life projection', () => {
       'approve_regionalLifeState_or_equivalent_single_aggregate',
       'approve_per_save_runFingerprint_or_regionalEventLedger',
     ]));
-    expect(projection.boundaryLines.join('\n')).toContain('SAVE_FORMAT_VERSION 保持 24');
+    expect(projection.boundaryLines.join('\n')).toContain('不新增 regionalLifeState');
     expect(projection.boundaryLines.join('\n')).toContain('不新增 regionalLifeState');
     expect(projection.boundaryLines.join('\n')).toContain('同开局可重玩差异度');
     expect(projection.boundaryLines.join('\n')).toContain('DeepSeek 只能写叙事');

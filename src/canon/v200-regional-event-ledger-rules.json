@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "sourceReview": {
+    "version": "v2.0.0-b1",
+    "intakeBaseline": "southern_border_low_rank_region_life_v2_prelude_slice",
+    "sourcePolicy": "reviewed_source_pointer_only",
+    "runtimePolicy": "WorldCore owns ledger facts; DeepSeek may only narrate."
+  },
+  "allowlist": {
+    "activeRegionKeys": ["southern_border_outer_edge_low_rank", "unknown_conservative"],
+    "statuses": ["not_started", "events_tracked", "blocked"],
+    "authorities": ["migration_default", "worldcore_region_engine"],
+    "eventKinds": [
+      "checkpoint_questioning",
+      "caravan_contact",
+      "temporary_labor",
+      "shelter_debt",
+      "market_pressure",
+      "road_conflict_pressure",
+      "gate_threshold"
+    ],
+    "eventStatuses": ["observed", "pending", "resolved", "expired"],
+    "pressureLevels": ["low", "medium", "high"]
+  },
+  "pressureDeck": [
+    {
+      "pressureId": "outer_edge_interrogation",
+      "eventKind": "checkpoint_questioning",
+      "summaryKey": "v200_summary_outer_edge_interrogation",
+      "pressureTags": ["questioning", "public_observation", "route_boundary"],
+      "forbiddenOutcomes": ["formal_passage", "formal_location_unlock", "hidden_fact_reveal"]
+    },
+    {
+      "pressureId": "caravan_contact_by_labor",
+      "eventKind": "caravan_contact",
+      "summaryKey": "v200_summary_caravan_contact",
+      "pressureTags": ["caravan_window", "labor_precondition", "public_contact"],
+      "forbiddenOutcomes": ["formal_caravan_membership", "stable_wage", "route_completion"]
+    },
+    {
+      "pressureId": "caravan_permission_chain",
+      "eventKind": "caravan_contact",
+      "summaryKey": "v200_summary_caravan_permission_chain",
+      "pressureTags": ["permission_chain", "manager_review", "temporary_credential"],
+      "forbiddenOutcomes": ["formal_identity", "formal_token", "location_unlock"]
+    },
+    {
+      "pressureId": "low_status_labor",
+      "eventKind": "temporary_labor",
+      "summaryKey": "v200_summary_low_status_labor",
+      "pressureTags": ["low_status_labor", "menial_work", "observation_window"],
+      "forbiddenOutcomes": ["profession_state", "stable_income", "formal_rank"]
+    },
+    {
+      "pressureId": "temporary_market_window",
+      "eventKind": "market_pressure",
+      "summaryKey": "v200_summary_temporary_market",
+      "pressureTags": ["market_pressure", "bargain_refusal", "supply_shortage"],
+      "forbiddenOutcomes": ["formal_price_table", "formal_shop_inventory", "trade_settlement"]
+    },
+    {
+      "pressureId": "shelter_debt_window",
+      "eventKind": "shelter_debt",
+      "summaryKey": "v200_summary_shelter_debt",
+      "pressureTags": ["temporary_shelter", "favor_debt", "not_victory"],
+      "forbiddenOutcomes": ["formal_shelter_right", "long_term_debt_field", "npc_fate_result"]
+    },
+    {
+      "pressureId": "road_event_protocol",
+      "eventKind": "road_conflict_pressure",
+      "summaryKey": "v200_summary_road_event",
+      "pressureTags": ["road_protocol", "escort_pressure", "conflict_aftermath"],
+      "forbiddenOutcomes": ["combat_reward", "npc_death", "formal_warrant"]
+    },
+    {
+      "pressureId": "far_city_as_pressure",
+      "eventKind": "gate_threshold",
+      "summaryKey": "v200_summary_far_city_boundary",
+      "pressureTags": ["far_city_boundary", "gate_threshold", "long_term_direction"],
+      "forbiddenOutcomes": ["full_shang_clan_city", "formal_entry", "resident_identity"]
+    }
+  ],
+  "boundaries": {
+    "forbiddenWrites": [
+      "runFingerprint",
+      "regionalLifeState",
+      "areaLivingState",
+      "identityRouteState",
+      "professionState",
+      "formal_region_state",
+      "formal_location_unlock",
+      "formal_faction_relation",
+      "formal_caravan_membership",
+      "formal_price_table",
+      "formal_shop_inventory",
+      "inventory_delta",
+      "currency_delta",
+      "material_reward",
+      "gu_reward",
+      "npc_death",
+      "npc_capture",
+      "hidden_fact_reveal",
+      "deepseek_visible_knowledge",
+      "deepseek_rag",
+      "deepseek_ledger_write",
+      "canon_promotion"
+    ],
+    "visibleBoundaryLines": [
+      "v2.0-b1 只允许 WorldCore 写 regionalEventLedger。",
+      "regionalEventLedger 只记录公开区域事件、压力、来源与待处理后续。",
+      "DeepSeek 只能根据本地账本写叙事，不得写 ledger、地点、奖励、阵营或 NPC 生死。",
+      "不新增 runFingerprint、regionalLifeState、areaLivingState、identityRouteState 或 professionState。",
+      "不开放完整南疆、完整商家城、正式通行、正式价格库存、正式奖励或 hidden/private 可见化。"
+    ],
+    "hiddenRefPolicies": [
+      "hidden/private/source text/raw quote must be filtered from ledger source refs.",
+      "protected Fang Yuan causality and hidden bodies must remain refs-only outside player-visible text."
+    ]
+  }
+}

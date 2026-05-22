@@ -64,7 +64,7 @@ test.describe('v1.4 region sample projection', () => {
     await expect(panel.locator('[data-testid="v140-region-status"]')).toContainText('南疆低阶区域样板');
     await expect(panel.locator('[data-testid="v140-region-status"]')).toContainText('南疆低阶区域样板可读');
     await expect(panel.locator('[data-testid="v140-region-audit"]')).toContainText('projection-first');
-    await expect(panel.locator('[data-testid="v140-region-audit"]')).toContainText('SAVE_FORMAT_VERSION = 24');
+    await expect(panel.locator('[data-testid="v140-region-audit"]')).toContainText('SAVE_FORMAT_VERSION = 25');
     await expect(panel.locator('[data-testid="v140-region-audit"]')).toContainText('不返回 regionSampleState patch');
     await expect(panel.locator('[data-testid="v140-region-posture-mountain_road_outer_edge"]')).toContainText('山路外缘');
     await expect(panel.locator('[data-testid="v140-region-posture-caravan_contact_window"]')).toContainText('商队接触窗口');

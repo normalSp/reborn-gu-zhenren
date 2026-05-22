@@ -69,7 +69,7 @@ test.describe('v1.8 identity replay projection', () => {
     await expect(panel.locator('[data-testid="v180-identity-replay-status"]')).toContainText('身份路线');
     await expect(panel.locator('[data-testid="v180-identity-replay-status"]')).toContainText('身份路线投影可读');
     await expect(panel.locator('[data-testid="v180-identity-replay-audit"]')).toContainText('projection-first');
-    await expect(panel.locator('[data-testid="v180-identity-replay-audit"]')).toContainText('SAVE_FORMAT_VERSION = 24');
+    await expect(panel.locator('[data-testid="v180-identity-replay-audit"]')).toContainText('SAVE_FORMAT_VERSION = 25');
     await expect(panel.locator('[data-testid="v180-identity-replay-audit"]')).toContainText('不返回 identityRouteState');
     await expect(panel.locator('[data-testid="v180-identity-replay-replayability"]')).toContainText('同开局差异度');
     await expect(panel.locator('[data-testid="v180-identity-route-caravan_temp_hand"]')).toContainText('商队临工');
@@ -93,7 +93,7 @@ test.describe('v1.8 identity replay projection', () => {
     expect((summary.routeLocation as any).status).toBeTruthy();
     expect((summary as any).identityRouteState).toBeUndefined();
     expect((summary as any).professionState).toBeUndefined();
-    expect((summary as any).regionalEventLedger).toBeUndefined();
+    expect((summary as any).regionalEventLedger.status).toBe('not_started');
     expect((summary as any).runFingerprint).toBeUndefined();
     expect((summary.materialBag as any).identityRouteState).toBeUndefined();
     expect((summary.materialBag as any).professionState).toBeUndefined();

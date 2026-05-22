@@ -57,13 +57,21 @@ describe('v0.11.0 persisted state normalization', () => {
       pressureScore: 0,
       ledger: [],
     });
+    expect(normalized.regionalEventLedger).toMatchObject({
+      schemaVersion: 1,
+      status: 'not_started',
+      authority: 'migration_default',
+      activeRegionKey: 'southern_border_outer_edge_low_rank',
+      publicEvents: [],
+      pendingFollowUps: [],
+    });
     expect(normalized.flags.trainingGroundClues).toEqual([]);
     expect(normalized.flags.activeTrainingGroundId).toBeNull();
     expect(normalized.deathRecord.majorChoices).toEqual([]);
     expect(normalized.deathRecord.deathCauseTags).toEqual([]);
   });
 
-  it('routes v22 file-save migration through the same normalization path and bumps to v24', () => {
+  it('routes v22 file-save migration through the same normalization path and bumps to v25', () => {
     const migrated = migrateSave({
       formatVersion: 22,
       timestamp: 'test',
@@ -84,6 +92,8 @@ describe('v0.11.0 persisted state normalization', () => {
     expect(migrated.state.routeLocationState.status).toBe('not_started');
     expect(migrated.state.survivalEconomyState.status).toBe('not_started');
     expect(migrated.state.survivalEconomyState.ledger).toEqual([]);
+    expect(migrated.state.regionalEventLedger.status).toBe('not_started');
+    expect(migrated.state.regionalEventLedger.publicEvents).toEqual([]);
     expect(migrated.state.flags.trainingGroundClues).toEqual([]);
     expect(migrated.state.materialShelf.items).toEqual([]);
   });
@@ -185,7 +195,7 @@ describe('v0.11.0 persisted state normalization', () => {
     expect(normalized.routeLocationState.migrationNote).toContain('invalid');
   });
 
-  it('adds v24 survivalEconomyState to v23 saves without opening formal economy fields', () => {
+  it('adds v24 survivalEconomyState and v25 regionalEventLedger to v23 saves without opening formal economy or regional fields', () => {
     const migrated = migrateSave({
       formatVersion: 23,
       timestamp: 'test',
@@ -213,8 +223,18 @@ describe('v0.11.0 persisted state normalization', () => {
       pressureScore: 0,
       ledger: [],
     });
+    expect(migrated.state.regionalEventLedger).toMatchObject({
+      schemaVersion: 1,
+      status: 'not_started',
+      authority: 'migration_default',
+      activeRegionKey: 'southern_border_outer_edge_low_rank',
+      publicEvents: [],
+      pendingFollowUps: [],
+    });
     expect((migrated.state as any).formal_price_table).toBeUndefined();
     expect((migrated.state as any).formal_market_trade).toBeUndefined();
+    expect((migrated.state as any).runFingerprint).toBeUndefined();
+    expect((migrated.state as any).regionalLifeState).toBeUndefined();
   });
 
   it('repairs edited immortal saves by moving duplicate mortal inventory into aperture storage', () => {

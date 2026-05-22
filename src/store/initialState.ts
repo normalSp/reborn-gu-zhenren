@@ -16,6 +16,7 @@ import { createInitialCultivationState } from './defaultCultivationState';
 import { createInitialLivingWorldState } from './defaultLivingWorldState';
 import { createInitialRouteLocationState } from '../engine/v110-route-location-state';
 import { createInitialSurvivalEconomyState } from '../engine/v120-survival-economy-state';
+import { createInitialRegionalEventLedger } from '../engine/v200-regional-event-ledger';
 import {
   createInitialCombatEncounterState,
   createInitialEndingFrameworkState,
@@ -79,6 +80,7 @@ export const INITIAL_STATE = {
   livingWorldState: createInitialLivingWorldState(),
   routeLocationState: createInitialRouteLocationState(),
   survivalEconomyState: createInitialSurvivalEconomyState(),
+  regionalEventLedger: createInitialRegionalEventLedger(),
 
   // ─── killMoveSlice ───
   killMoves: [],
@@ -354,5 +356,6 @@ export const EXCLUDE_FROM_SAVE = new Set([
  * v21→v22: v0.11.0-a2 活世界状态协议 livingWorldState
  * v22→v23: v1.1.0-b1 路线/地点范围状态 routeLocationState
  * v23→v24: v1.2.0-b2 低阶生存经济最小压力账本 survivalEconomyState
+ * v24→v25: v2.0.0-b1 第一个区域活世界最小事件账本 regionalEventLedger
  */
-export const SAVE_FORMAT_VERSION = 24;
+export const SAVE_FORMAT_VERSION = 25;

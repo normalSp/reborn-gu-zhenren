@@ -37,6 +37,7 @@ import { createTrainingGroundSlice } from './slices/trainingGroundSlice';
 import { createQingmaoRegionSlice } from './slices/qingmaoRegionSlice';
 import { createLivingWorldSlice } from './slices/livingWorldSlice';
 import { createSurvivalEconomySlice } from './slices/survivalEconomySlice';
+import { createRegionalEventLedgerSlice } from './slices/regionalEventLedgerSlice';
 import { normalizeCultivationState } from '../engine/v080-cultivation-calamity-engine';
 import { normalizeStoryAnchorState } from '../engine/v080-midgame-anchor-engine';
 import { normalizeEndingFrameworkState } from '../engine/v080-ending-framework-engine';
@@ -46,6 +47,7 @@ import { normalizeInheritanceLandState } from '../engine/v080-inheritance-land-e
 import { normalizeTrainingGroundState } from '../engine/v090-training-ground-clue-engine';
 import { normalizeRouteLocationState } from '../engine/v110-route-location-state';
 import { normalizeSurvivalEconomyState } from '../engine/v120-survival-economy-state';
+import { normalizeRegionalEventLedger } from '../engine/v200-regional-event-ledger';
 import { normalizeLivingWorldState } from './defaultLivingWorldState';
 import {
   INITIAL_STATE,
@@ -224,6 +226,7 @@ type RootStore = ReturnType<typeof createPlayerSlice> &
   ReturnType<typeof createQingmaoRegionSlice> &
   ReturnType<typeof createLivingWorldSlice> &
   ReturnType<typeof createSurvivalEconomySlice> &
+  ReturnType<typeof createRegionalEventLedgerSlice> &
   SaveSystemActions;
 
 // ─── 工具：格式化日期为 YYYY-MM-DD ───
@@ -487,6 +490,7 @@ export function normalizePersistedGameState(
   state.livingWorldState = normalizeLivingWorldState(state.livingWorldState, turn);
   state.routeLocationState = normalizeRouteLocationState(state.routeLocationState, turn, state.livingWorldState);
   state.survivalEconomyState = normalizeSurvivalEconomyState(state.survivalEconomyState, turn);
+  state.regionalEventLedger = normalizeRegionalEventLedger(state.regionalEventLedger, turn);
   state.flags = mirrorTrainingGroundFlagsForLoad(
     mirrorStoryAnchorFlagsForLoad(sourceFlags, state.storyAnchorState),
     state.trainingGroundState,
@@ -629,6 +633,7 @@ export const useStore = create<RootStore>()(
         ...createQingmaoRegionSlice(...sliceArgs),
         ...createLivingWorldSlice(...sliceArgs),
         ...createSurvivalEconomySlice(...sliceArgs),
+        ...createRegionalEventLedgerSlice(...sliceArgs),
 
         // ═══════════════════════════════════════
         // 存档系统方法
@@ -909,6 +914,7 @@ export const useStore = create<RootStore>()(
             resetStore, saveToFile, loadFromFile, getSerializedState,
             listQingmaoRegionActionEntriesAction, resolveQingmaoRegionActionAction, registerQingmaoCombatCandidateAction, registerV017CombatCandidateAction,
             previewWorldIntentAction, confirmWorldIntentGoalAction, resolveVisibleInvestigationAction,
+            syncSurvivalEconomyLedgerAction, syncRegionalEventLedgerAction,
             // 排除 Set 类型
             triggeredEvents,
             // 排除临时状态

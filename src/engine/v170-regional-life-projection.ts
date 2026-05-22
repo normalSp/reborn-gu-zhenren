@@ -652,7 +652,7 @@ export function buildV170RegionalLifeProjection(
         '不要让叙事文本直接生成地点、阵营、奖励或 NPC 命运。',
       ],
     boundaryLines: [
-      'v1.7 b1 是 projection-first：SAVE_FORMAT_VERSION 保持 24，不新增 regionalLifeState / areaLivingState。',
+      'v1.7 b1 是 projection-first：当前版本不新增 regionalLifeState / areaLivingState。',
       '本 helper 只读 v1.1 routeLocationState、v1.2 survivalEconomyState、v1.3 social pressure、v1.4 region sample、v1.5 conflict aftermath 和 v1.7-a2 source pointers。',
       '同开局可重玩差异度来自本地 pressure deck 和叙事表达，不来自正式事实漂移。',
       '不写 per-save runFingerprint / regionalEventLedger；它们是 v1.8-v2.0 future_sample_pool。',

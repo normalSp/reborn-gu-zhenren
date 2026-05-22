@@ -62,7 +62,7 @@ export function RegionSamplePanel() {
             </span>
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
-            projection-first · SAVE_FORMAT_VERSION = 24 · 不返回 regionSampleState patch · DeepSeek 无新增权限
+            projection-first · 当前 SAVE_FORMAT_VERSION = 25 · 不返回 regionSampleState patch · DeepSeek 无新增权限
           </p>
         </div>
 

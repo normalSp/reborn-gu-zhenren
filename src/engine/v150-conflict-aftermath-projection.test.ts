@@ -189,7 +189,7 @@ describe('v1.5 conflict aftermath projection', () => {
       turn: 55,
     });
 
-    expect(SAVE_FORMAT_VERSION).toBe(24);
+    expect(SAVE_FORMAT_VERSION).toBe(25);
     expect(projection.status).toBe('conflict_projection_visible');
     expect(projection.scopeId).toBe('low_rank_conflict_outer_sample');
     expect(projection.savePolicy).toBe('no_new_persistence_v24');
@@ -231,7 +231,7 @@ describe('v1.5 conflict aftermath projection', () => {
     expect(projection.postureCards.some(card => card.id === 'pursuit_attention_window' && card.status === 'visible')).toBe(true);
     expect(projection.postureCards.some(card => card.id === 'countermeasure_gap' && card.status === 'visible')).toBe(true);
     expect(projection.postureCards.some(card => card.id === 'squad_formation_readiness' && card.status === 'visible')).toBe(true);
-    expect(projection.boundaryLines.join('\n')).toContain('SAVE_FORMAT_VERSION 保持 24');
+    expect(projection.boundaryLines.join('\n')).toContain('不新增 conflictConsequenceState');
     expect(projection.boundaryLines.join('\n')).toContain('不新增 conflictConsequenceState');
     expect(projection.boundaryLines.join('\n')).toContain('DeepSeek 只能写叙事');
     expect(projection.forbiddenWrites).toEqual(expect.arrayContaining([

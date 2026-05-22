@@ -1,0 +1,86 @@
+{
+  "mode": "live",
+  "gate": "v2.0.0-regional-event-ledger-live-probe",
+  "createdAt": "2026-05-22T08:18:17.952Z",
+  "sampleFile": "tests/evals/deepseek-v200-regional-event-ledger/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "da216e04ce1dbc197b25b4501842515d129b27280faa53186bd006f32e8cc721",
+  "approvalScope": {
+    "userDecision": "D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.",
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true,
+    "noRagOrFullBookVisibleKnowledge": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 18,
+    "acceptedRate": 0.9,
+    "acceptedThreshold": 0.9,
+    "p0Count": 3,
+    "p1Count": 0,
+    "p2Count": 2,
+    "maxP2": 12,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 16353,
+      "completion_tokens": 8081,
+      "total_tokens": 24434,
+      "prompt_cache_hit_tokens": 9216,
+      "prompt_cache_miss_tokens": 7137
+    },
+    "cacheHitRatio": 0.5636,
+    "estimatedCostUsd": 0.00328766
+  },
+  "issueRows": [
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 4,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "正式通行"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "重生"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 1,
+      "severity": "P0",
+      "code": "forbidden_term",
+      "detail": "回溯"
+    }
+  ]
+}

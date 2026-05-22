@@ -575,7 +575,7 @@ export function buildV150ConflictAftermathProjection(
     squadHints: squadHints.slice(0, 4),
     nextStepCandidates: nextStepCandidates.map(item => sanitizeVisibleText(item, item)),
     boundaryLines: [
-      'v1.5 b1 是 projection-first：SAVE_FORMAT_VERSION 保持 24，不新增 conflictConsequenceState / pursuitState / combatAftermathState。',
+      'v1.5 b1 是 projection-first：当前版本不新增 conflictConsequenceState / pursuitState / combatAftermathState。',
       '本 helper 只读 v1.1 routeLocationState、v1.2 survivalEconomyState、v1.3 livingWorld 社会证据、v1.4 区域样板和 v0.17 reviewed 战斗资料。',
       '路线伏击、追杀注意、反制缺口和小队/阵法准备度都是风险解释，不是正式追杀、正式通缉、战局胜负或地点进入。',
       '不写掉落、奖励、稀有蛊、仙蛊、完整杀招传承、NPC 生死、捕获、背叛、永久伤势或阵营敌对。',

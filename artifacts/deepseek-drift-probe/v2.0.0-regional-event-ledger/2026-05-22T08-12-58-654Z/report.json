@@ -1,0 +1,212 @@
+{
+  "mode": "live",
+  "gate": "v2.0.0-regional-event-ledger-live-probe",
+  "createdAt": "2026-05-22T08:12:58.656Z",
+  "sampleFile": "tests/evals/deepseek-v200-regional-event-ledger/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "9069967d8f015c46d1b7c4442d46b7bb5022f9bf3811c8ec0fefeb1ff6b06343",
+  "approvalScope": {
+    "userDecision": "D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.",
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true,
+    "noRagOrFullBookVisibleKnowledge": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 20,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.9,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 23,
+    "maxP2": 12,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 17180,
+      "completion_tokens": 8054,
+      "total_tokens": 25234,
+      "prompt_cache_hit_tokens": 9856,
+      "prompt_cache_miss_tokens": 7324
+    },
+    "cacheHitRatio": 0.5737,
+    "estimatedCostUsd": 0.00330808
+  },
+  "issueRows": [
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "正式凭证"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CONFLICT-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CONFLICT-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CONFLICT-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-CONFLICT-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "retry_recovered_protocol_failure",
+      "detail": "1 failed attempt(s)"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    },
+    {
+      "sampleId": "V20-LIVE-HIDDEN-RAW-001",
+      "round": 4,
+      "severity": "P2",
+      "code": "terminology_or_ui_drift",
+      "detail": "WorldCore"
+    }
+  ]
+}

@@ -69,7 +69,7 @@ test.describe('v1.7 regional life projection', () => {
     await expect(panel.locator('[data-testid="v170-regional-life-status"]')).toContainText('区域活世界');
     await expect(panel.locator('[data-testid="v170-regional-life-status"]')).toContainText('区域活世界投影可读');
     await expect(panel.locator('[data-testid="v170-regional-life-audit"]')).toContainText('projection-first');
-    await expect(panel.locator('[data-testid="v170-regional-life-audit"]')).toContainText('SAVE_FORMAT_VERSION = 24');
+    await expect(panel.locator('[data-testid="v170-regional-life-audit"]')).toContainText('SAVE_FORMAT_VERSION = 25');
     await expect(panel.locator('[data-testid="v170-regional-life-audit"]')).toContainText('不返回 regionalLifeState');
     await expect(panel.locator('[data-testid="v170-regional-life-replayability"]')).toContainText('同开局差异度');
     await expect(panel.locator('[data-testid="v170-regional-life-pressure-outer_edge_interrogation"]')).toContainText('外缘盘问');
@@ -99,7 +99,7 @@ test.describe('v1.7 regional life projection', () => {
     ]));
     expect((summary as any).regionalLifeState).toBeUndefined();
     expect((summary as any).areaLivingState).toBeUndefined();
-    expect((summary as any).regionalEventLedger).toBeUndefined();
+    expect((summary as any).regionalEventLedger.status).toBe('not_started');
     expect((summary as any).runFingerprint).toBeUndefined();
     expect((summary.materialBag as any).regionalLifeState).toBeUndefined();
     expect((summary.materialBag as any).areaLivingState).toBeUndefined();

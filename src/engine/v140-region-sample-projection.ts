@@ -470,7 +470,7 @@ export function buildV140RegionSampleProjection(
     postureCards,
     signalGroups,
     boundaryLines: [
-      'v1.4 b1 是 projection-first：SAVE_FORMAT_VERSION 保持 24，不新增 regionSampleState / regionalSampleState。',
+      'v1.4 b1 是 projection-first：当前版本不新增 regionSampleState / regionalSampleState。',
       '本 helper 只读 v1.1 routeLocationState、v1.2 survivalEconomyState、v1.3 livingWorld 社会证据与 v0.18 已审查区域边界。',
       '山路外缘、商队接触、散修落脚、商家城外缘只作为早期样板；不开放完整南疆地图、正式地点、城市核心或势力身份。',
       '不写交易、价格、库存、奖励、正式任务、通缉、封锁、NPC 生死或隐藏事实揭露。',
