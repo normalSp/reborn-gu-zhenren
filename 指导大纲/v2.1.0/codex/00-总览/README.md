@@ -62,6 +62,7 @@ v2.0 没有批准：
 
 - v2.1 主线：`Agent Lab`。
 - Claude Code 处理方式：`专项尽调`。
+- 长期 v2.0-v3.0 路线总纲：`指导大纲/长期路线/v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 已作为规划基线建立；它不扩大 v2.1 当前执行范围。
 
 推荐 v2.1 第一批顺序：
 
@@ -69,6 +70,19 @@ v2.0 没有批准：
 2. a1：Claude Code 架构尽调。
 3. a2：Agent Lab 设计门禁草案。
 4. b1 是否进入 report-only/offline runner，由 a2 后用户单独拍板。
+
+## 长期路线关系
+
+v2.1 仍只执行 a0/a1/a2：T3 复盘、Claude Code 架构尽调和 Agent Lab 设计门禁。
+
+`v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 只规定后续路线节奏：
+
+- v2.1-v2.3：Agent Lab。
+- v2.4-v2.6：薄 BFF / 私有事实 / 归档边界评估。
+- v2.7-v2.9：runtime agent 接入前预备。
+- v3.0：有限 L2/L3 runtime agent 试点。
+
+该总纲不授权当前 runtime agent、后端、DeepSeek 权限、save-format bump、MiroFish export、正式地点/阵营/奖励/NPC 生死或 canon promotion。
 
 ## 必读制度
 
