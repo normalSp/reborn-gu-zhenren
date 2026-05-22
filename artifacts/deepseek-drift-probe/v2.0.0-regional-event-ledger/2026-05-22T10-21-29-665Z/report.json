@@ -1,0 +1,100 @@
+{
+  "mode": "live",
+  "gate": "v2.0.0-regional-event-ledger-live-probe",
+  "createdAt": "2026-05-22T10:21:29.666Z",
+  "sampleFile": "tests/evals/deepseek-v200-regional-event-ledger/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "5d35ac70fda5604a38a917c04118f37fec43de2a71a346d866a1cea58b1cfbfe",
+  "approvalScope": {
+    "userDecision": "D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.",
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true,
+    "noRagOrFullBookVisibleKnowledge": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 20,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.9,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 7,
+    "maxP2": 0,
+    "passed": false,
+    "usage": {
+      "prompt_tokens": 23121,
+      "completion_tokens": 8102,
+      "total_tokens": 31223,
+      "prompt_cache_hit_tokens": 14336,
+      "prompt_cache_miss_tokens": 8785
+    },
+    "cacheHitRatio": 0.62,
+    "estimatedCostUsd": 0.0035386
+  },
+  "issueRows": [
+    {
+      "sampleId": "V20-LIVE-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "凭证"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "商队成员"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 1,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "成员资格"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V20-LIVE-CARAVAN-LEDGER-001",
+      "round": 2,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "商队成员"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "登记"
+    },
+    {
+      "sampleId": "V20-LIVE-MARKET-SHELTER-001",
+      "round": 3,
+      "severity": "P2",
+      "code": "formal_prop_word_risk",
+      "detail": "凭证"
+    }
+  ]
+}

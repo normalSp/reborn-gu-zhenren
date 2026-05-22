@@ -206,6 +206,18 @@ function injectGuKnowledge(inventory: Array<{ name: string; tier: number; path: 
   ].join('\n');
 }
 
+function injectV200FormalCredentialTerminologyGuard(): string {
+  return [
+    '',
+    '【v2.0 正式凭信词与区域账本叙事护栏】',
+    '- 区域账本只提供公开压力、证据留痕和后续前置条件，不是正式地点、阵营、奖励、身份、NPC命运或存档结论。',
+    '- 玩家要求通行、准入、跟队、名单、身份、凭信、批准或长期庇护时，只能写成压力、候选、前置条件或后续门禁。',
+    '- 若必须提及这类概念，只使用安全泛称：正式凭信词、正式名单词、正式身份词、后续门禁；不要生成具体凭信、名单、身份或准入名词。',
+    '- 地名统一写作青茅；不要写英文地名或误写地名。',
+    '- DeepSeek只负责叙事表达和候选压力，本地引擎负责事实、路线、账本、奖励、身份与后果裁决。',
+  ].join('\n');
+}
+
 // ─── 章节约束注入（P1新增：基于chapters.json注入域约束/位置锁/场景约束） ───
 function injectChapterConstraints(store: RootStore): string {
   const s = store as any;
@@ -1133,6 +1145,7 @@ export class ContextBuilder {
     if (worldActionReturnContext) parts.push(formatNarrativeReturnContext(worldActionReturnContext));
     parts.push(buildOriginLifeboundContextForPrompt(promptStore));
     parts.push(injectV080NarrativeGuard(promptStore));
+    parts.push(injectV200FormalCredentialTerminologyGuard());
 
     // ═══ P3修复: 章节位置提醒（防止AI在超长上下文中丢失当前位置导致叙事跳回） ═══
     const currentChapterId = (promptStore as any).currentChapterId || '';

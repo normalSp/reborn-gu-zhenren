@@ -48,6 +48,12 @@ function getIntegerOption(name, fallback) {
   return value;
 }
 
+function getNonNegativeIntegerOption(name, fallback) {
+  const value = Math.trunc(getNumberOption(name, fallback));
+  if (value < 0) throw new Error(`--${name} must be at least 0.`);
+  return value;
+}
+
 function toRepoPath(filePath) {
   return relative(rootDir, filePath).replaceAll('\\', '/');
 }
@@ -174,7 +180,9 @@ function includesForbiddenTerms(text, terms) {
 function sanitizeCarryText(text) {
   return String(text || '')
     .replace(/春秋蝉|重生|回溯|方源私密因果|regionalEventLedger|SAVE_FORMAT_VERSION|runFingerprint/gi, '受保护词')
-    .replace(/木牌|令牌|腰牌|名册|登记|报到|通行证|正式凭证/g, '正式凭信词')
+    .replace(/Qingmao|青毛/gi, '青茅')
+    .replace(/木牌|令牌|腰牌|名册|登记|报到|通行证|正式凭证|凭证/g, '正式凭信词')
+    .replace(/商队成员|护卫身份|正式成员|成员资格/g, '正式身份词')
     .slice(0, 420);
 }
 
@@ -202,6 +210,7 @@ function buildSystemPrompt() {
     'You are RebornG v2.0.0 regional event ledger live probe.',
     'Return one JSON object only. Do not wrap it in markdown.',
     'Use Simplified Chinese strings only.',
+    'Use 青茅 for Qingmao. Never write 青毛 or Qingmao.',
     'Required shape: {"narrative":"...","ledger_pressure":[],"local_engine_boundary":[],"safe_next_steps":[],"boundary_notes":[]}.',
     'All array fields must be arrays of strings, not objects.',
     'Keep it concise: narrative 120-240 Chinese characters; each array should contain 1-3 short strings.',
@@ -211,6 +220,10 @@ function buildSystemPrompt() {
     'Do not output raw internal ids, save-format constants, field names, migration labels, source-pointer ids, full-book summaries, raw source text, or English lore names from the prompt.',
     'Do not claim a new save version, raw event ledger field, route fingerprint, formal region, formal location unlock, formal caravan membership, formal identity, formal faction transfer, trade success, price table, inventory, wage, reward, NPC fate, official warrant, official blockade, or hidden-fact reveal.',
     'Avoid concrete formal prop words that sound like granted credentials, roster entry, registration, manager approval, follow-team status, permanent debt record, official pass, or stable shelter proof. Paraphrase them as public pressure, prerequisite, or future gate.',
+    'Never copy exact formal prop words from the player or prompt. Use generic labels such as 正式凭信词, 正式名单词, 正式身份词, or 后续门禁.',
+    'When the player asks for pass, member status, registration, roster entry, credential, permit, approval, or official proof, do not translate those words into concrete Chinese credential terms. Downgrade them to 若干正式凭信词 or 若干正式身份词.',
+    'When speaking about the local ledger, prefer 记录 or 留痕. Do not use 登记 unless it appears only inside an already sanitized generic label.',
+    'Do not write the exact strings 木牌, 令牌, 腰牌, 名册, 登记, 报到, 通行证, 正式凭证, 凭证, 商队成员, 护卫身份, 成员资格, 青毛, or Qingmao in any output field.',
     'If the player supplies protected high-rank Gu, rebirth, rollback, time-reversal, private-causality, raw source text, or hidden-fact terms in any language, do not quote, translate, or transliterate them. Replace them with 受保护隐秘 or 受保护因果.',
     'Never output the exact Chinese strings 春秋蝉, 春蚕秋蝉, 重生, 回溯, 时间回溯, or any synonym for those protected ideas. Use only 受保护隐秘 or 受保护因果.',
     'If the player mentions raw field names or internal save wording, paraphrase them as 未批准的持久记录 or 后续版本门禁.',
@@ -230,6 +243,7 @@ function buildUserMessage({ sample, roundPrompt, roundNumber, previousCarry }) {
     `Probe focus: ${sample.probeFocus}`,
     previousCarry ? `Previous accepted narrative summary: ${previousCarry}` : 'Previous accepted narrative summary: none',
     `Player input: ${roundPrompt}`,
+    'Literal output ban: do not write 木牌、令牌、腰牌、名册、登记、报到、通行证、正式凭证、凭证、商队成员、护卫身份、成员资格、青毛 or Qingmao. If those ideas appear, write 正式凭信词, 正式名单词, 正式身份词, or 后续门禁 instead.',
     'Return JSON only.',
   ].join('\n');
 }
@@ -305,7 +319,7 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
   ]);
   for (const term of new Set(forbiddenTerms)) issues.push({ severity: 'P0', code: 'forbidden_term', detail: term });
 
-  const propWordTerms = includesAny(searchable, ['木牌', '令牌', '腰牌', '名册', '登记', '报到', '通行证', '正式凭证', '商队成员', '护卫身份']);
+  const propWordTerms = includesAny(searchable, ['木牌', '令牌', '腰牌', '名册', '登记', '报到', '通行证', '正式凭证', '凭证', '商队成员', '护卫身份', '成员资格']);
   for (const term of new Set(propWordTerms)) issues.push({ severity: 'P2', code: 'formal_prop_word_risk', detail: term });
 
   const terminologyDriftTerms = includesAny(searchable, ['Qingmao', '青毛', 'caravan', 'WorldCore', 'relationship score', 'faction standing', 'reputation +']);
@@ -361,15 +375,44 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
   };
 }
 
+function getRetryableTerminologyIssues(evaluation) {
+  return (evaluation?.issues || []).filter(issue => {
+    return issue.severity === 'P2' && (
+      issue.code === 'formal_prop_word_risk'
+      || issue.code === 'terminology_or_ui_drift'
+    );
+  });
+}
+
+function buildTerminologyRepairMessage(evaluation) {
+  const retryableIssues = getRetryableTerminologyIssues(evaluation);
+  const hasFormalWordRisk = retryableIssues.some(issue => issue.code === 'formal_prop_word_risk');
+  const hasTerminologyDrift = retryableIssues.some(issue => issue.code === 'terminology_or_ui_drift');
+  return [
+    'Repair instruction for the same player input:',
+    'The previous draft failed v2.0 process-1 terminology hardening.',
+    hasFormalWordRisk
+      ? '涉及通行、队伍归属、名单、身份、凭信、准入、批准等概念时，只能使用这些安全泛称：正式凭信词、正式名单词、正式身份词、后续门禁。'
+      : '',
+    hasTerminologyDrift
+      ? '地名必须写作青茅；不要写英文地名、误写地名、英文 UI 词或数值化关系词。'
+      : '',
+    '从头重写，不要复述上一版中的任何具体凭信、名单、身份或准入名词。',
+    '保持本地引擎裁决权，并保留“仅作叙事，不是正式结论。”',
+    'Return JSON only.',
+  ].filter(Boolean).join('\n');
+}
+
 async function runRound({ apiKey, baseUrl, model, temperature, timeoutMs, maxTokens, sample, roundPrompt, roundNumber, previousCarry, previousNarrative, systemPrompt, maxRetries }) {
   const userMessage = buildUserMessage({ sample, roundPrompt, roundNumber, previousCarry });
+  const messages = [
+    { role: 'system', content: systemPrompt },
+    { role: 'user', content: userMessage },
+  ];
   const startedAt = Date.now();
   const body = {
     model,
-    messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: userMessage },
-    ],
+    messages,
     temperature,
     max_tokens: maxTokens,
     response_format: { type: 'json_object' },
@@ -388,7 +431,7 @@ async function runRound({ apiKey, baseUrl, model, temperature, timeoutMs, maxTok
 
     if (!response.ok) {
       const failureReason = `HTTP ${response.status}: ${String(response.text || '').slice(0, 280)}`;
-      attempts.push({ attempt: attempt + 1, ok: false, finishReason, failureReason, usage });
+      attempts.push({ attempt: attempt + 1, ok: false, finishReason, failureFamily: 'api', failureReason, usage });
       if (attempt < maxRetries) {
         await delay((attempt + 1) * 500);
         continue;
@@ -417,9 +460,23 @@ async function runRound({ apiKey, baseUrl, model, temperature, timeoutMs, maxTok
       const cleanContent = cleanJsonContent(rawContent);
       const parsed = JSON.parse(cleanContent);
       const evaluation = evaluateRound({ sample, parsed, rawContent: cleanContent, previousNarrative });
-      if (attempts.length > 0) {
-        evaluation.issues.push({ severity: 'P2', code: 'retry_recovered_protocol_failure', detail: `${attempts.length} failed attempt(s)` });
-        evaluation.p2Count += 1;
+      const retryableTerminologyIssues = getRetryableTerminologyIssues(evaluation);
+      if (retryableTerminologyIssues.length > 0 && attempt < maxRetries) {
+        attempts.push({
+          attempt: attempt + 1,
+          ok: false,
+          finishReason,
+          failureFamily: 'retryable_p2_terminology',
+          failureReason: `retryable P2 terminology issue(s): ${retryableTerminologyIssues.length}`,
+          issueCodes: [...new Set(retryableTerminologyIssues.map(issue => issue.code))],
+          issueCount: retryableTerminologyIssues.length,
+          rawContentHash: hashText(rawContent),
+          messageKeys: Object.keys(message),
+          usage,
+        });
+        messages.push({ role: 'user', content: buildTerminologyRepairMessage(evaluation) });
+        await delay((attempt + 1) * 500);
+        continue;
       }
       return {
         sampleId: sample.id,
@@ -442,6 +499,7 @@ async function runRound({ apiKey, baseUrl, model, temperature, timeoutMs, maxTok
         attempt: attempt + 1,
         ok: false,
         finishReason,
+        failureFamily: 'json',
         failureReason,
         contentLength: cleanContent.length,
         rawContentHash: hashText(rawContent),
@@ -480,6 +538,8 @@ function summarize({ samples, results, model, acceptedThreshold, maxP2 }) {
   const usage = results.reduce((sum, result) => addUsage(sum, result.usage || emptyUsage()), emptyUsage());
   const roundCount = results.length;
   const acceptedRounds = results.filter(result => result.ok).length;
+  const retryAttemptCount = results.reduce((sum, result) => sum + (result.attempts?.length || 0), 0);
+  const recoveredRoundCount = results.filter(result => result.ok && (result.attempts?.length || 0) > 0).length;
   const p0Count = results.reduce((sum, result) => sum + Number(result.evaluation?.p0Count || 0), 0);
   const p1Count = results.reduce((sum, result) => sum + Number(result.evaluation?.p1Count || 0), 0);
   const p2Count = results.reduce((sum, result) => sum + Number(result.evaluation?.p2Count || 0), 0);
@@ -492,6 +552,8 @@ function summarize({ samples, results, model, acceptedThreshold, maxP2 }) {
     acceptedRounds,
     acceptedRate,
     acceptedThreshold,
+    retryAttemptCount,
+    recoveredRoundCount,
     p0Count,
     p1Count,
     p2Count,
@@ -550,6 +612,8 @@ function writeReport({ sampleFile, results, summary, model, temperature, timeout
     `- Accepted rounds: ${summary.acceptedRounds}/${summary.roundCount}`,
     `- Accepted rate: ${summary.acceptedRate}`,
     `- Pass line: accepted >= ${summary.acceptedThreshold}, P0=0, P1=0, P2<=${summary.maxP2}`,
+    `- Retry attempts: ${summary.retryAttemptCount}`,
+    `- Recovered rounds: ${summary.recoveredRoundCount}`,
     `- P0/P1/P2: ${summary.p0Count}/${summary.p1Count}/${summary.p2Count}`,
     `- Cache hit ratio: ${summary.cacheHitRatio}`,
     `- Estimated cost USD: ${summary.estimatedCostUsd}`,
@@ -574,7 +638,7 @@ async function main() {
   const maxTokens = getNumberOption('max-tokens', Number(process.env.DEEPSEEK_EVAL_MAX_TOKENS || 1200));
   const maxRetries = getNumberOption('max-retries', Number(process.env.DEEPSEEK_EVAL_MAX_RETRIES || 2));
   const acceptedThreshold = getNumberOption('accepted-threshold', Number(process.env.V200_REGIONAL_LEDGER_ACCEPTED_THRESHOLD || 0.9));
-  const maxP2 = getIntegerOption('max-p2', Number(process.env.V200_REGIONAL_LEDGER_MAX_P2 || 12));
+  const maxP2 = getNonNegativeIntegerOption('max-p2', Number(process.env.V200_REGIONAL_LEDGER_MAX_P2 || 12));
   const systemPrompt = buildSystemPrompt();
   const systemPromptHash = hashText(systemPrompt);
   const estimatedPromptTokens = samples.reduce((sum, sample) => {

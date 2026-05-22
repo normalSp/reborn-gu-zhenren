@@ -48,6 +48,9 @@ describe('ContextBuilder DeepSeek cache stability', () => {
     expect(dynamic).toContain('玩家当前余额：900元石');
     expect(dynamic).toContain('【当前蛊虫状态】');
     expect(dynamic).toContain('白玉蛊');
+    expect(dynamic).toContain('【v2.0 正式凭信词与区域账本叙事护栏】');
+    expect(dynamic).toContain('正式凭信词');
+    expect(dynamic).toContain('区域账本只提供公开压力');
   });
 
   it('includes immortal aperture Gu in prompt-visible inventory without duplicating edited-save remnants', () => {

@@ -1,0 +1,52 @@
+{
+  "mode": "live",
+  "gate": "v2.0.0-regional-event-ledger-live-probe",
+  "createdAt": "2026-05-22T10:32:49.309Z",
+  "sampleFile": "tests/evals/deepseek-v200-regional-event-ledger/samples.json",
+  "model": "deepseek-v4-flash",
+  "baseUrl": "https://api.deepseek.com",
+  "temperature": 0.2,
+  "timeoutMs": 45000,
+  "maxTokens": 1200,
+  "maxRetries": 2,
+  "systemPromptHash": "5d35ac70fda5604a38a917c04118f37fec43de2a71a346d866a1cea58b1cfbfe",
+  "approvalScope": {
+    "userDecision": "D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.",
+    "noDeepSeekAuthorityExpansion": true,
+    "noFormalLocationFactionRewardNpcFate": true,
+    "noHiddenFactReveal": true,
+    "noRagOrFullBookVisibleKnowledge": true
+  },
+  "pricingUsdPerMillionTokens": {
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.0028,
+      "cacheMissInput": 0.14,
+      "output": 0.28
+    }
+  },
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 20,
+    "acceptedRounds": 20,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.9,
+    "retryAttemptCount": 3,
+    "recoveredRoundCount": 2,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 0,
+    "maxP2": 0,
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 26862,
+      "completion_tokens": 9176,
+      "total_tokens": 36038,
+      "prompt_cache_hit_tokens": 21760,
+      "prompt_cache_miss_tokens": 5102
+    },
+    "cacheHitRatio": 0.8101,
+    "estimatedCostUsd": 0.00334449
+  },
+  "issueRows": []
+}
