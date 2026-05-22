@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.0.0/codex/00-总览/README.md` 或 `指导大纲/v1.9.0/codex/00-总览/README.md`
+4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.2.0/codex/00-总览/README.md` 或 `指导大纲/v2.1.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
@@ -55,6 +55,7 @@
 | v1.9.0 | 完成 | v2.0 区域活世界预备与门禁收束 | `指导大纲/v1.9.0/codex/00-总览/` | report-only readiness；完成 v2 readiness、event envelope、T3 计划和 go/no-go，不改 runtime/save/DeepSeek/UI，不自动进入 v2.0 |
 | v2.0.0 | 完成 | 第一个区域活世界：南疆早期低阶外缘小区域 | `指导大纲/v2.0.0/codex/00-总览/` | `SAVE_FORMAT_VERSION = 25`、`regionalEventLedger`、T3 320/320 accepted；不开放完整南疆/商家城/正式地点阵营奖励/NPC 生死 |
 | v2.1.0 | 完成 | Agent Simulation Lab 启动版 | `指导大纲/v2.1.0/codex/00-总览/` | report-only/offline runner、AgentProposal eval matrix、P0/P1/P2=0/0/0；不开放 runtime agent、live DeepSeek、外部框架 PoC、BFF/backend 或子代理 |
+| v2.2.0 | 草案 | Agent Lab 扩展离线模拟第一阶段 | `指导大纲/v2.2.0/codex/00-总览/` | startup/a0 只开专家团会、D-220 和范围冻结；不改 runtime，不写 runner 扩展，不调用 live DeepSeek |
 
 ## 历史制度源
 
