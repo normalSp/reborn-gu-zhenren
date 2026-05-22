@@ -6,7 +6,7 @@
 
 ## 当前一句话
 
-`v2.1.0` 不继续往 v2.0 堆 runtime，而是先把 Agent Simulation Lab、Claude Code 架构尽调、WorldCore/Agent 权限边界和 eval farm 设计成可审计的工程入口。
+`v2.1.0` 不继续往 v2.0 堆 runtime，而是先把 Agent Simulation Lab、Claude Code 与开源 Agent 框架架构尽调、WorldCore/Agent 权限边界和 eval farm 设计成可审计的工程入口。
 
 本批只做文档、启动会、复盘和设计门禁：
 
@@ -28,6 +28,7 @@
 - `v2.1.0-需求决策池.md`
 - `v2.1.0-a0-v2.0-T3复盘与Agent-Lab范围冻结.md`
 - `v2.1.0-a1-Claude-Code架构尽调.md`
+- `v2.1.0-a1-Agent框架吸收矩阵.md`
 - `v2.1.0-a2-Agent-Lab设计门禁草案.md`
 - `v2.1.0-a0-Skill同步审计记录.md`
 - `v2.1.0-真相源索引.md`
@@ -62,18 +63,19 @@ v2.0 没有批准：
 
 - v2.1 主线：`Agent Lab`。
 - Claude Code 处理方式：`专项尽调`。
+- a1 尽调范围：Claude Code + 开源 Agent 框架吸收矩阵；当前只做文档矩阵，不引入依赖。
 - 长期 v2.0-v3.0 路线总纲：`指导大纲/长期路线/v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 已作为规划基线建立；它不扩大 v2.1 当前执行范围。
 
 推荐 v2.1 第一批顺序：
 
 1. a0：v2.0 T3 复盘与 Agent Lab 范围冻结。
-2. a1：Claude Code 架构尽调。
+2. a1：Claude Code 与开源 Agent 框架架构尽调。
 3. a2：Agent Lab 设计门禁草案。
 4. b1 是否进入 report-only/offline runner，由 a2 后用户单独拍板。
 
 ## 长期路线关系
 
-v2.1 仍只执行 a0/a1/a2：T3 复盘、Claude Code 架构尽调和 Agent Lab 设计门禁。
+v2.1 仍只执行 a0/a1/a2：T3 复盘、Claude Code 与开源 Agent 框架架构尽调和 Agent Lab 设计门禁。
 
 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 只规定后续路线节奏：
 
