@@ -2,9 +2,9 @@
 
 ## 当前状态
 
-- 当前分支：`codex/v210-a1-agent-framework-diligence`。
+- 当前分支：`codex/v210-a2-agent-lab-design-gate`。
 - 当前目标：启动 `v2.1.0 Agent Simulation Lab 启动版`，完成专家团启动会、v2.0 T3 复盘、Claude Code 与开源 Agent 框架架构尽调和 Agent Lab 设计门禁草案。
-- 当前阶段：`v2.1.0-a1-Claude-Code架构尽调.md` / `v2.1.0-a1-Agent框架吸收矩阵.md` active。`v2.1.0-a0-v2.0-T3复盘与Agent-Lab范围冻结` 已完成；尚未进入 a2，也未进入 b1/offline runner。
+- 当前阶段：`v2.1.0-a2-Agent-Lab设计门禁草案.md` active。`v2.1.0-a0-v2.0-T3复盘与Agent-Lab范围冻结` 与 `v2.1.0-a1-Claude-Code架构尽调.md` / `v2.1.0-a1-Agent框架吸收矩阵.md` 已完成；尚未进入 b1/offline runner。
 - 当前入口：`指导大纲/v2.1.0/codex/00-总览/README.md`。
 
 ## 已落地文档
@@ -54,12 +54,10 @@ Claude Code 仅作为官方架构/Agent SDK/tool permission/hooks/session/MCP/su
 
 ## 下一步
 
-用户已批准 D-210-001 至 D-210-010。用户消息写作“进入 v2.0-a0”，按 D-210 决策编号和当前 v2.1 入口归一为 `v2.1.0-a0`；不回退历史 `v2.0-a0`。用户随后明确要求进入 `v2.1.0-a1`。
+用户已批准 D-210-001 至 D-210-010。用户消息写作“进入 v2.0-a0”，按 D-210 决策编号和当前 v2.1 入口归一为 `v2.1.0-a0`；不回退历史 `v2.0-a0`。用户随后明确要求进入 `v2.1.0-a1`，并在本轮明确要求进入 `v2.1.0-a2`。
 
 当前进入：
 
-`v2.1.0-a1-Claude-Code架构尽调.md`
+`v2.1.0-a2-Agent-Lab设计门禁草案.md`
 
-`v2.1.0-a1-Agent框架吸收矩阵.md`
-
-a1 完成后进入 a2；a0/a1/a2 完成后，再由用户决定 b1 是否进入 report-only/offline runner。
+a2 完成后，再由用户决定 b1 是否进入 report-only/offline runner、framework PoC、live eval、子代理、BFF/backend 或 runtime agent。
