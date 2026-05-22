@@ -1,14 +1,16 @@
 ﻿# RebornG v2.1.0 Codex 当前入口
 
-状态：D-211 已记录；b1 可按受限准入进入。
-日期：2026-05-22
-当前分支：`codex/v210-d211-agent-lab-decisions`
+状态：D-211 / D-212 已记录；b1 可按受限准入进入。
+日期：2026-05-23
+当前分支：`codex/v210-d212-sdk-intake-ci-triage`
 
 ## 当前一句话
 
 `v2.1.0` 不继续往 v2.0 堆 runtime，而是先把 Agent Simulation Lab、Claude Code 与开源 Agent 框架架构尽调、WorldCore/Agent 权限边界和 eval farm 设计成可审计的工程入口；a2 已把 a1 尽调结果压成 AgentProposal、权限矩阵、visibility gate、WorldCore post-check 和 D-211 go/no-go 决策。
 
 2026-05-22，用户已批准 D-211-001、002、003、005、010、012；D-211-009 只允许 report-only；D-211-004、006、008、011 暂不批准或后移；D-211-007 转为未来开源 SDK/agent 引入评估门，不在 b1 放开外部 SDK/agent 文件、命令、补丁或 git 权限。
+
+2026-05-23，用户进一步批准/限制 D-212：D-212-001 license/SBOM/架构适配评估已批准；D-212-002 隔离 PoC 需先解释、后续逐项申请；D-212-003 只有需要时做架构评审；D-212-004 需要时先给风险收益报告；D-212-005 需先解释；D-212-006 禁止。GitHub 旧分支 CI 失败已初诊为 `registry.npmmirror.com` 拉包 504，当前最新 D-211 分支 CI 通过，不阻塞 b1。
 
 本批只做文档、启动会、复盘和设计门禁：
 
@@ -33,6 +35,7 @@
 - `v2.1.0-a1-Agent框架吸收矩阵.md`
 - `v2.1.0-a2-Agent-Lab设计门禁草案.md`
 - `v2.1.0-D211决策记录与开源SDK权限评估.md`
+- `v2.1.0-D212决策记录与CI初诊.md`
 - `v2.1.0-a0-Skill同步审计记录.md`
 - `v2.1.0-真相源索引.md`
 - `v2.1.0-测试矩阵.md`
@@ -89,6 +92,8 @@ v2.1 第一批顺序：
 - D-211-008 暂不批准，后续可单独给只读/分析型子代理风险收益报告。
 - D-211-009 只允许 report-only，不写正式存档。
 - D-211-011 后移到 v2.4+ 再议。
+- D-212-001 已批准为 license/SBOM/架构适配评估；D-212-002/003/004/005 均需后续条件门禁；D-212-006 禁止。
+- 本轮 GitHub CI 初诊：旧 a1/a2 分支失败是 npm registry mirror 504，当前最新分支 CI 通过；暂不开子代理，不改 CI/lockfile。
 - 用户消息中的“v2.0-a0”按 D-210 语义归一为 `v2.1.0-a0`，不回退历史 v2.0 阶段。
 - 用户于 2026-05-22 明确要求进入 `v2.1.0-a1`，a1 已收束为 a2 设计输入；当前 a2 仍只做设计门禁，不引入依赖、runner、PoC、BFF/backend、live DeepSeek、子代理或 runtime agent。
 
