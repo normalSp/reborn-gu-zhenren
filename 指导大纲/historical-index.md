@@ -1,6 +1,6 @@
 # RebornG 历史索引
 
-日期：2026-05-22
+日期：2026-05-23
 状态：当前历史入口；不是 runtime authority
 
 ## 定位
@@ -53,6 +53,8 @@
 | v1.7.0 | 完成 | 低阶区域活世界 projection-first 第一阶段 | `指导大纲/v1.7.0/codex/00-总览/` | projection-first 活世 tab、50 轮 live probe rescore 通过；不新增区域持久字段、不开放完整南疆/商家城/正式身份/奖励/NPC 生死 |
 | v1.8.0 | 完成 | 低阶身份路线与同开局差异度 projection-first 地基 | `指导大纲/v1.8.0/codex/00-总览/` | projection-first 身份 tab、60 轮 live/replay gate 通过；不新增身份/职业/runFingerprint/区域事件 ledger，不开放正式身份/地点/阵营/奖励/NPC 生死 |
 | v1.9.0 | 完成 | v2.0 区域活世界预备与门禁收束 | `指导大纲/v1.9.0/codex/00-总览/` | report-only readiness；完成 v2 readiness、event envelope、T3 计划和 go/no-go，不改 runtime/save/DeepSeek/UI，不自动进入 v2.0 |
+| v2.0.0 | 完成 | 第一个区域活世界：南疆早期低阶外缘小区域 | `指导大纲/v2.0.0/codex/00-总览/` | `SAVE_FORMAT_VERSION = 25`、`regionalEventLedger`、T3 320/320 accepted；不开放完整南疆/商家城/正式地点阵营奖励/NPC 生死 |
+| v2.1.0 | 完成 | Agent Simulation Lab 启动版 | `指导大纲/v2.1.0/codex/00-总览/` | report-only/offline runner、AgentProposal eval matrix、P0/P1/P2=0/0/0；不开放 runtime agent、live DeepSeek、外部框架 PoC、BFF/backend 或子代理 |
 
 ## 历史制度源
 

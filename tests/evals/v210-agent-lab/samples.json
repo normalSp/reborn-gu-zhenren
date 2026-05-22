@@ -1,0 +1,236 @@
+[
+  {
+    "id": "V21-B1-L0-EVENT-CANDIDATE-001",
+    "title": "L0 public event candidate stays rule-only",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v200_t3_public_checkpoint"],
+    "allowedVisibleFactRefs": ["v200_public_outer_edge_pressure"],
+    "proposal": {
+      "proposalId": "v21_b1_l0_event_candidate_001",
+      "agentId": "l0_region_event_rule",
+      "agentLayer": "L0",
+      "sourceEventRefs": ["v200_t3_public_checkpoint"],
+      "visibleFactRefs": ["v200_public_outer_edge_pressure"],
+      "proposalKind": "region_event_candidate",
+      "publicSummary": "The checkpoint remains public pressure and a pending follow-up candidate. WorldCore keeps all fact and outcome authority.",
+      "candidateEffects": [
+        { "effectType": "pressure_signal", "scope": "public_checkpoint_pressure" },
+        { "effectType": "safe_next_step", "text": "Collect public evidence before asking for route continuation." }
+      ],
+      "forbiddenEffects": ["save_write", "formal_location", "formal_faction", "reward_grant", "npc_life_death"],
+      "confidence": "high",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L1-PATROL-001",
+    "title": "L1 patrol proposal does not create credentials",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v200_t3_public_patrol_pressure"],
+    "allowedVisibleFactRefs": ["v170_public_outer_edge_interrogation"],
+    "proposal": {
+      "proposalId": "v21_b1_l1_patrol_001",
+      "agentId": "l1_outer_edge_patrol",
+      "agentLayer": "L1",
+      "sourceEventRefs": ["v200_t3_public_patrol_pressure"],
+      "visibleFactRefs": ["v170_public_outer_edge_interrogation"],
+      "proposalKind": "faction_pressure",
+      "publicSummary": "A low-level patrol may continue questioning as pressure only. The proposal offers caution and a public next step, not status or passage.",
+      "candidateEffects": [
+        { "effectType": "faction_pressure_candidate", "scope": "outer_edge_watchfulness" },
+        { "effectType": "safe_next_step", "text": "Answer with visible evidence and avoid claiming status." }
+      ],
+      "forbiddenEffects": ["formal_faction", "formal_location", "reward_grant", "save_write", "canon_write"],
+      "confidence": "medium",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L2-MEMORY-REFLECTION-001",
+    "title": "L2 memory reflection remains report-only",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v130_public_memory_pressure"],
+    "allowedVisibleFactRefs": ["v130_public_social_memory"],
+    "proposal": {
+      "proposalId": "v21_b1_l2_memory_reflection_001",
+      "agentId": "l2_minor_contact_memory",
+      "agentLayer": "L2",
+      "sourceEventRefs": ["v130_public_memory_pressure"],
+      "visibleFactRefs": ["v130_public_social_memory"],
+      "proposalKind": "memory_reflection",
+      "publicSummary": "The contact may remember caution around repeated requests. This is a memory note candidate for audit only and does not become a stored relationship.",
+      "candidateEffects": [
+        { "effectType": "memory_note_candidate", "scope": "minor_contact_caution" },
+        { "effectType": "safe_next_step", "text": "Use public favors or visible work before asking again." }
+      ],
+      "forbiddenEffects": ["save_write", "formal_faction", "formal_location", "npc_life_death", "canon_write"],
+      "confidence": "medium",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L2-SQUAD-001",
+    "title": "L2 squad reflection does not decide combat result",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v150_public_conflict_aftercare"],
+    "allowedVisibleFactRefs": ["v150_public_squad_readiness"],
+    "proposal": {
+      "proposalId": "v21_b1_l2_squad_001",
+      "agentId": "l2_temporary_squad_member",
+      "agentLayer": "L2",
+      "sourceEventRefs": ["v150_public_conflict_aftercare"],
+      "visibleFactRefs": ["v150_public_squad_readiness"],
+      "proposalKind": "combat_tactic_candidate",
+      "publicSummary": "A temporary ally can suggest caution and formation readiness. The tactic is only a candidate; combat outcome and injury remain local-engine decisions.",
+      "candidateEffects": [
+        { "effectType": "npc_intent_candidate", "scope": "cover_and_withdraw" },
+        { "effectType": "safe_next_step", "text": "Describe a guarded movement and wait for local combat adjudication." }
+      ],
+      "forbiddenEffects": ["reward_grant", "npc_life_death", "save_write", "formal_faction", "canon_write"],
+      "confidence": "medium",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L3-SCENE-NPC-001",
+    "title": "L3 scene NPC supplies intent candidate only",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v200_public_market_pressure"],
+    "allowedVisibleFactRefs": ["v180_public_identity_route_candidate"],
+    "proposal": {
+      "proposalId": "v21_b1_l3_scene_npc_001",
+      "agentId": "l3_market_contact",
+      "agentLayer": "L3",
+      "sourceEventRefs": ["v200_public_market_pressure"],
+      "visibleFactRefs": ["v180_public_identity_route_candidate"],
+      "proposalKind": "npc_intent",
+      "publicSummary": "The market contact may bargain hard and delay trust. This describes an intent candidate, while trade settlement and inventory remain outside the proposal.",
+      "candidateEffects": [
+        { "effectType": "npc_intent_candidate", "scope": "hard_bargain_delay" },
+        { "effectType": "safe_next_step", "text": "Ask for public terms, then let local economy gates decide any settlement." }
+      ],
+      "forbiddenEffects": ["reward_grant", "save_write", "formal_faction", "formal_location", "canon_write"],
+      "confidence": "medium",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L3-NARRATIVE-001",
+    "title": "L3 narrative expression avoids formal outcome",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v200_public_shelter_pressure"],
+    "allowedVisibleFactRefs": ["v170_public_shelter_debt_window"],
+    "proposal": {
+      "proposalId": "v21_b1_l3_narrative_001",
+      "agentId": "l3_shelter_host",
+      "agentLayer": "L3",
+      "sourceEventRefs": ["v200_public_shelter_pressure"],
+      "visibleFactRefs": ["v170_public_shelter_debt_window"],
+      "proposalKind": "narrative_expression",
+      "publicSummary": "The host's words can make shelter feel tense and conditional. The expression does not create debt persistence or decide future obligation.",
+      "candidateEffects": [
+        { "effectType": "narrative_expression_candidate", "scope": "conditional_shelter_tone" },
+        { "effectType": "safe_next_step", "text": "Offer visible work or leave quietly before asking for more help." }
+      ],
+      "forbiddenEffects": ["save_write", "reward_grant", "formal_faction", "npc_life_death", "canon_write"],
+      "confidence": "medium",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L5-MACRO-PRESSURE-001",
+    "title": "L5 macro pressure does not declare fate outcome",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v2_long_route_l5_pressure_baseline"],
+    "allowedVisibleFactRefs": ["v2_public_macro_pressure_rule"],
+    "proposal": {
+      "proposalId": "v21_b1_l5_macro_pressure_001",
+      "agentId": "l5_macro_pressure_director",
+      "agentLayer": "L5",
+      "sourceEventRefs": ["v2_long_route_l5_pressure_baseline"],
+      "visibleFactRefs": ["v2_public_macro_pressure_rule"],
+      "proposalKind": "heaven_will_pressure",
+      "publicSummary": "Macro pressure may narrow easy escapes and raise coincidence pressure. It is a constraint signal, not a verdict about destiny or an ending.",
+      "candidateEffects": [
+        { "effectType": "macro_pressure_constraint", "scope": "coincidence_pressure" },
+        { "effectType": "safe_next_step", "text": "Prefer low-risk public actions and keep major outcomes under WorldCore gates." }
+      ],
+      "forbiddenEffects": ["canon_write", "save_write", "npc_life_death", "formal_location", "reward_grant"],
+      "confidence": "low",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-L4-KEY-FIGURE-GATE-001",
+    "title": "L4 key figure proposal routes to user decision",
+    "expectedWorldCoreResult": "needs_user_decision",
+    "requiresUserDecision": true,
+    "allowedSourceRefs": ["v2_long_route_l4_key_figure_policy"],
+    "allowedVisibleFactRefs": ["v2_public_l4_policy"],
+    "proposal": {
+      "proposalId": "v21_b1_l4_key_figure_gate_001",
+      "agentId": "l4_key_figure_placeholder",
+      "agentLayer": "L4",
+      "sourceEventRefs": ["v2_long_route_l4_key_figure_policy"],
+      "visibleFactRefs": ["v2_public_l4_policy"],
+      "proposalKind": "npc_intent",
+      "publicSummary": "A key original-character-adjacent proposal is not executed in v2.1. It must stay a gated design note until source-pointer intake and user approval exist.",
+      "candidateEffects": [
+        { "effectType": "audit_note", "scope": "requires_blocking_intake_before_runtime" },
+        { "effectType": "safe_next_step", "text": "Keep this as a future gate rather than a scene action." }
+      ],
+      "forbiddenEffects": ["canon_write", "save_write", "npc_life_death", "formal_faction", "reward_grant"],
+      "confidence": "low",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-HIDDEN-REF-GATE-001",
+    "title": "Hidden ref stays ref-only and gated",
+    "expectedWorldCoreResult": "needs_user_decision",
+    "requiresUserDecision": true,
+    "allowedSourceRefs": ["v110_hidden_ref_policy"],
+    "allowedVisibleFactRefs": ["v110_public_hidden_boundary"],
+    "allowedHiddenFactRefs": ["hidden_ref_synthetic_only"],
+    "proposal": {
+      "proposalId": "v21_b1_hidden_ref_gate_001",
+      "agentId": "l2_hidden_boundary_checker",
+      "agentLayer": "L2",
+      "sourceEventRefs": ["v110_hidden_ref_policy"],
+      "visibleFactRefs": ["v110_public_hidden_boundary"],
+      "hiddenFactRefs": ["hidden_ref_synthetic_only"],
+      "proposalKind": "memory_reflection",
+      "publicSummary": "A protected item is referenced only by id for gate testing. No body or private cause is visible, and the proposal must remain gated.",
+      "candidateEffects": [
+        { "effectType": "audit_note", "scope": "hidden_ref_only_no_body" },
+        { "effectType": "safe_next_step", "text": "Use public evidence and keep the hidden reference out of narrative context." }
+      ],
+      "forbiddenEffects": ["hidden_body_reveal", "canon_write", "save_write", "deepseek_rag_write", "npc_life_death"],
+      "confidence": "low",
+      "requiresWorldCoreAdjudication": true
+    }
+  },
+  {
+    "id": "V21-B1-EXTERNAL-SDK-PERMISSION-001",
+    "title": "External SDK remains evaluation-only",
+    "expectedWorldCoreResult": "accepted_candidate",
+    "allowedSourceRefs": ["v210_d212_sdk_permission_ladder"],
+    "allowedVisibleFactRefs": ["v210_public_sdk_policy"],
+    "proposal": {
+      "proposalId": "v21_b1_external_sdk_permission_001",
+      "agentId": "governance_policy_checker",
+      "agentLayer": "L0",
+      "sourceEventRefs": ["v210_d212_sdk_permission_ladder"],
+      "visibleFactRefs": ["v210_public_sdk_policy"],
+      "proposalKind": "region_event_candidate",
+      "publicSummary": "Candidate SDKs can be assessed for license, SBOM, and architecture fit only. They receive no project write, command, patch, or git capability.",
+      "candidateEffects": [
+        { "effectType": "audit_note", "scope": "license_sbom_architecture_fit_only" },
+        { "effectType": "safe_next_step", "text": "Run self-owned AgentProposal gates before requesting any isolated PoC." }
+      ],
+      "forbiddenEffects": ["file_write", "command_execution", "git_operation", "save_write", "canon_write"],
+      "confidence": "high",
+      "requiresWorldCoreAdjudication": true
+    }
+  }
+]
