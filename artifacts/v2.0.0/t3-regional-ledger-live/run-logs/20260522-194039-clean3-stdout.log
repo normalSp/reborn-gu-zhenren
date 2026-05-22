@@ -1,0 +1,196 @@
+
+> temp-guzhenren@1.0.0 eval:deepseek:v200-regional-ledger-live:rc-t3
+> node scripts/run-v200-regional-event-ledger-live-probe.mjs --live --confirm-cost --sample-limit=5 --round-limit=4 --cycle-count=8 --accepted-threshold=0.95 --max-p2=0 --max-retries=4
+
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=1 tokens=1585
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1651
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=2 tokens=3496
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=2 tokens=4074
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=1 tokens=1497
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1560
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1817
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1964
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1393
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1404
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=2 tokens=2945
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1425
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1494
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1547
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1626
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1601
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=1 tokens=1565
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1562
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1491
+[v200-regional-ledger-live] pass cycle=1/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1985
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=2 tokens=3098
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1628
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=1 tokens=1441
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1798
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=1 tokens=1626
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1536
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1682
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1578
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1434
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1575
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1459
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1423
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=2 tokens=3756
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1555
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=2016
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=2 tokens=3860
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=1 tokens=1388
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1468
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=2 tokens=3392
+[v200-regional-ledger-live] pass cycle=2/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=2 tokens=3879
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=1 tokens=1371
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1617
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=1 tokens=1466
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1769
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=1 tokens=1604
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1665
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1637
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1676
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=2 tokens=3679
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1524
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1640
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1551
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1304
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1606
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1429
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1536
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=1 tokens=1518
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1671
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1490
+[v200-regional-ledger-live] pass cycle=3/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=2 tokens=3797
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=3 tokens=5403
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1579
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=2 tokens=3786
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1673
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=1 tokens=1299
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=4 tokens=6912
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1529
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1889
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1487
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1501
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1517
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1462
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1479
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1563
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1619
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1852
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=1 tokens=1301
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1573
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1704
+[v200-regional-ledger-live] pass cycle=4/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1695
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=1 tokens=1409
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1789
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=2 tokens=3800
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1494
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=4 tokens=6396
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1537
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1520
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1906
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1331
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1436
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1461
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1463
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=2141
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1435
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1586
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1475
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=2 tokens=3126
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1543
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1553
+[v200-regional-ledger-live] pass cycle=5/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1710
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=2 tokens=3232
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1628
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=1 tokens=1620
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1841
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=2 tokens=2967
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1497
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1465
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1596
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1327
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1523
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1854
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1568
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1435
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1504
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1653
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1814
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=2 tokens=3099
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1596
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1555
+[v200-regional-ledger-live] pass cycle=6/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1754
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=1 tokens=1728
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1594
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=1 tokens=1591
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1639
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=3 tokens=4919
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1585
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1682
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1659
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1598
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1738
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1662
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1636
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1502
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1652
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1704
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=2231
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=3 tokens=5597
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1467
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=2 tokens=3126
+[v200-regional-ledger-live] pass cycle=7/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1605
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-LEDGER-001 round=1 issues=0 attempts=3 tokens=5593
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-LEDGER-001 round=2 issues=0 attempts=1 tokens=1499
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-LEDGER-001 round=3 issues=0 attempts=1 tokens=1603
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-LEDGER-001 round=4 issues=0 attempts=1 tokens=1573
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=1 issues=0 attempts=2 tokens=3147
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=2 issues=0 attempts=1 tokens=1481
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=3 issues=0 attempts=1 tokens=1503
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CARAVAN-LEDGER-001 round=4 issues=0 attempts=1 tokens=1671
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-MARKET-SHELTER-001 round=1 issues=0 attempts=1 tokens=1814
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-MARKET-SHELTER-001 round=2 issues=0 attempts=1 tokens=1564
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-MARKET-SHELTER-001 round=3 issues=0 attempts=1 tokens=1533
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-MARKET-SHELTER-001 round=4 issues=0 attempts=1 tokens=1697
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CONFLICT-001 round=1 issues=0 attempts=1 tokens=1553
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CONFLICT-001 round=2 issues=0 attempts=1 tokens=1528
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CONFLICT-001 round=3 issues=0 attempts=1 tokens=1534
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-CONFLICT-001 round=4 issues=0 attempts=1 tokens=1605
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-HIDDEN-RAW-001 round=1 issues=0 attempts=1 tokens=1559
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-HIDDEN-RAW-001 round=2 issues=0 attempts=1 tokens=1428
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-HIDDEN-RAW-001 round=3 issues=0 attempts=1 tokens=1715
+[v200-regional-ledger-live] pass cycle=8/8 sample=V20-LIVE-HIDDEN-RAW-001 round=4 issues=0 attempts=1 tokens=1767
+{
+  "mode": "live",
+  "reportDir": "artifacts/deepseek-drift-probe/v2.0.0-regional-event-ledger/2026-05-22T11-59-18-860Z",
+  "reportPath": "artifacts/deepseek-drift-probe/v2.0.0-regional-event-ledger/2026-05-22T11-59-18-860Z/report.json",
+  "resultsPath": "artifacts/deepseek-drift-probe/v2.0.0-regional-event-ledger/2026-05-22T11-59-18-860Z/results.jsonl",
+  "summaryPath": "artifacts/deepseek-drift-probe/v2.0.0-regional-event-ledger/2026-05-22T11-59-18-860Z/summary.md",
+  "summary": {
+    "sampleCount": 5,
+    "roundsPerSample": 4,
+    "roundCount": 160,
+    "acceptedRounds": 160,
+    "acceptedRate": 1,
+    "acceptedThreshold": 0.95,
+    "retryAttemptCount": 32,
+    "recoveredRoundCount": 24,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 0,
+    "maxP2": 0,
+    "passed": true,
+    "usage": {
+      "prompt_tokens": 226277,
+      "completion_tokens": 87291,
+      "total_tokens": 313568,
+      "prompt_cache_hit_tokens": 184320,
+      "prompt_cache_miss_tokens": 41957
+    },
+    "cacheHitRatio": 0.8146,
+    "estimatedCostUsd": 0.03083156,
+    "cycleCount": 8
+  }
+}

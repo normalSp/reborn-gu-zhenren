@@ -1,0 +1,89 @@
+{
+  "gate": "v2.0.0-rc-t3-deterministic-replay",
+  "createdAt": "2026-05-22T11:09:24.169Z",
+  "sampleFile": "tests/evals/deepseek-v200-regional-event-ledger/samples.json",
+  "sampleCount": 5,
+  "cycleCount": 8,
+  "checkpointInterval": 20,
+  "noLiveDeepSeek": true,
+  "noTokenSpend": true,
+  "approvalScope": "D-200-006 and D-201-008 approved v2.0 rc T3 320 total rounds; this report supplies the replay/deterministic half.",
+  "summary": {
+    "roundCount": 160,
+    "acceptedRounds": 160,
+    "acceptedRate": 1,
+    "acceptedThreshold": 1,
+    "p0Count": 0,
+    "p1Count": 0,
+    "p2Count": 0,
+    "maxP2": 0,
+    "passed": true
+  },
+  "checkpoints": [
+    {
+      "atRound": 20,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 40,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 60,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 80,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 100,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 120,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 140,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    },
+    {
+      "atRound": 160,
+      "roundCount": 20,
+      "accepted": 20,
+      "p0": 0,
+      "p1": 0,
+      "p2": 0
+    }
+  ],
+  "sampleHash": "4d09be2be9fd8ca68d8cc2d9a55ae51a519c28b06aed2b18b384194746e7fa9e"
+}

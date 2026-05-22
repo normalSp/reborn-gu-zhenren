@@ -377,10 +377,19 @@ function evaluateRound({ sample, parsed, rawContent, previousNarrative }) {
 
 function getRetryableTerminologyIssues(evaluation) {
   return (evaluation?.issues || []).filter(issue => {
-    return issue.severity === 'P2' && (
-      issue.code === 'formal_prop_word_risk'
-      || issue.code === 'terminology_or_ui_drift'
-    );
+    if (issue.severity === 'P2') return true;
+    if (issue.severity === 'P0') {
+      return [
+        'forbidden_term',
+        'forbidden_claim_pattern',
+      ].includes(issue.code);
+    }
+    if (issue.severity !== 'P1') return false;
+    return [
+      'missing_narrative',
+      'missing_narrative_boundary_note',
+      'missing_local_engine_boundary',
+    ].includes(issue.code) || String(issue.code || '').startsWith('schema_');
   });
 }
 
@@ -388,14 +397,52 @@ function buildTerminologyRepairMessage(evaluation) {
   const retryableIssues = getRetryableTerminologyIssues(evaluation);
   const hasFormalWordRisk = retryableIssues.some(issue => issue.code === 'formal_prop_word_risk');
   const hasTerminologyDrift = retryableIssues.some(issue => issue.code === 'terminology_or_ui_drift');
+  const hasBoundaryGap = retryableIssues.some(issue => issue.code === 'missing_ledger_boundary_language');
+  const hasNextStepGap = retryableIssues.some(issue => issue.code === 'missing_safe_ledger_next_step');
+  const hasRepeatOrThin = retryableIssues.some(issue => issue.code === 'exact_repeated_narrative' || issue.code === 'thin_narrative');
+  const hasLocalEngineGap = retryableIssues.some(issue => issue.code === 'missing_local_engine_boundary');
+  const hasNarrativeBoundaryGap = retryableIssues.some(issue => issue.code === 'missing_narrative_boundary_note');
+  const hasSchemaGap = retryableIssues.some(issue => String(issue.code || '').startsWith('schema_') || issue.code === 'missing_narrative');
+  const hasForbiddenTerm = retryableIssues.some(issue => issue.code === 'forbidden_term');
+  const hasForbiddenClaim = retryableIssues.some(issue => issue.code === 'forbidden_claim_pattern');
+  const forbiddenDetails = [...new Set(retryableIssues
+    .filter(issue => issue.code === 'forbidden_term' || issue.code === 'forbidden_claim_pattern')
+    .map(issue => String(issue.detail || '').trim())
+    .filter(Boolean))]
+    .slice(0, 6)
+    .join('、');
   return [
     'Repair instruction for the same player input:',
-    'The previous draft failed v2.0 process-1 terminology hardening.',
+    'The previous draft failed v2.0 rc T3 hardening.',
+    hasForbiddenTerm
+      ? `上一版出现受保护或禁止表达${forbiddenDetails ? `（${forbiddenDetails}）` : ''}；不要复述、翻译、转写这些词。若要指代，只能写受保护隐秘、公开旁证、原文请求、未批准可见材料、后续门禁。`
+      : '',
+    hasForbiddenClaim
+      ? '上一版靠近了正式结论句式；不要写已完成、已确认、已进入、已公开、已解锁、已加入、已获得、已死亡、已发放等正式结论，只能降级为候选、压力、风险、待本地引擎裁决或后续门禁。'
+      : '',
     hasFormalWordRisk
       ? '涉及通行、队伍归属、名单、身份、凭信、准入、批准等概念时，只能使用这些安全泛称：正式凭信词、正式名单词、正式身份词、后续门禁。'
       : '',
     hasTerminologyDrift
       ? '地名必须写作青茅；不要写英文地名、误写地名、英文 UI 词或数值化关系词。'
+      : '',
+    hasBoundaryGap
+      ? '必须明确写出公开压力、候选、后续、本地引擎和下一步中的至少一类边界语言。'
+      : '',
+    hasNextStepGap
+      ? 'safe_next_steps 必须给出至少一个低阶、安全、可执行的下一步候选。'
+      : '',
+    hasRepeatOrThin
+      ? 'narrative 需要换一个角度重写，避免复读上一轮，且不要写得过短。'
+      : '',
+    hasLocalEngineGap
+      ? 'local_engine_boundary 必须是字符串数组，并且至少一项明确包含“本地引擎”。'
+      : '',
+    hasNarrativeBoundaryGap
+      ? 'boundary_notes 必须是字符串数组，并且包含完整句子“仅作叙事，不是正式结论。”'
+      : '',
+    hasSchemaGap
+      ? '必须返回完整 JSON object，narrative 为字符串，ledger_pressure/local_engine_boundary/safe_next_steps/boundary_notes 都必须是字符串数组。'
       : '',
     '从头重写，不要复述上一版中的任何具体凭信、名单、身份或准入名词。',
     '保持本地引擎裁决权，并保留“仅作叙事，不是正式结论。”',
@@ -466,8 +513,8 @@ async function runRound({ apiKey, baseUrl, model, temperature, timeoutMs, maxTok
           attempt: attempt + 1,
           ok: false,
           finishReason,
-          failureFamily: 'retryable_p2_terminology',
-          failureReason: `retryable P2 terminology issue(s): ${retryableTerminologyIssues.length}`,
+          failureFamily: 'retryable_quality',
+          failureReason: `retryable issue(s): ${retryableTerminologyIssues.length}`,
           issueCodes: [...new Set(retryableTerminologyIssues.map(issue => issue.code))],
           issueCount: retryableTerminologyIssues.length,
           rawContentHash: hashText(rawContent),
@@ -582,7 +629,9 @@ function writeReport({ sampleFile, results, summary, model, temperature, timeout
     maxRetries,
     systemPromptHash,
     approvalScope: {
-      userDecision: 'D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.',
+      userDecision: summary.roundCount >= 160
+        ? 'D-200-006 and D-201-008 approved v2.0 rc T3 320 total rounds with live >= 160 using deepseek-v4-flash.'
+        : 'D-201-009 approved b1 20-round deepseek-v4-flash live smoke for regionalEventLedger/WorldCore first cut.',
       noDeepSeekAuthorityExpansion: true,
       noFormalLocationFactionRewardNpcFate: true,
       noHiddenFactReveal: true,
@@ -607,6 +656,7 @@ function writeReport({ sampleFile, results, summary, model, temperature, timeout
     `- Model: \`${model}\``,
     `- Samples: ${summary.sampleCount}`,
     `- Rounds per sample: ${summary.roundsPerSample}`,
+    `- Cycle count: ${summary.cycleCount || 1}`,
     `- Live calls: ${summary.roundCount}`,
     `- Max retries: ${maxRetries}`,
     `- Accepted rounds: ${summary.acceptedRounds}/${summary.roundCount}`,
@@ -630,6 +680,7 @@ async function main() {
   const { resolved: sampleFile, samples: allSamples } = loadSamples(sampleFileOption);
   const sampleLimit = getIntegerOption('sample-limit', Number(process.env.V200_REGIONAL_LEDGER_SAMPLE_LIMIT || 5));
   const roundLimit = getIntegerOption('round-limit', Number(process.env.V200_REGIONAL_LEDGER_ROUND_LIMIT || 4));
+  const cycleCount = getIntegerOption('cycle-count', Number(process.env.V200_REGIONAL_LEDGER_CYCLE_COUNT || 1));
   const samples = selectSamples(allSamples, sampleLimit, roundLimit);
   const model = getOption('model', process.env.DEEPSEEK_EVAL_MODELS || 'deepseek-v4-flash').split(',')[0].trim();
   const baseUrl = getOption('base-url', process.env.DEEPSEEK_BASE_URL || readDotenvValue('DEEPSEEK_BASE_URL') || defaultBaseUrl);
@@ -641,7 +692,7 @@ async function main() {
   const maxP2 = getNonNegativeIntegerOption('max-p2', Number(process.env.V200_REGIONAL_LEDGER_MAX_P2 || 12));
   const systemPrompt = buildSystemPrompt();
   const systemPromptHash = hashText(systemPrompt);
-  const estimatedPromptTokens = samples.reduce((sum, sample) => {
+  const estimatedPromptTokens = cycleCount * samples.reduce((sum, sample) => {
     return sum + sample.rounds.reduce((roundSum, roundPrompt, index) => roundSum + estimateTokens(`${systemPrompt}\n${buildUserMessage({
       sample,
       roundPrompt,
@@ -649,7 +700,7 @@ async function main() {
       previousCarry: 'previous round summary placeholder',
     })}`), 0);
   }, 0);
-  const estimatedMaxOutputTokens = samples.reduce((sum, sample) => sum + sample.rounds.length * maxTokens, 0);
+  const estimatedMaxOutputTokens = cycleCount * samples.reduce((sum, sample) => sum + sample.rounds.length * maxTokens, 0);
   const estimatedWorstCaseCost = estimateCostUsd(model, {
     prompt_tokens: estimatedPromptTokens,
     prompt_cache_hit_tokens: 0,
@@ -666,7 +717,8 @@ async function main() {
       model,
       sampleCount: samples.length,
       roundsPerSample: samples[0]?.rounds?.length || 0,
-      estimatedLiveCalls: samples.reduce((sum, sample) => sum + sample.rounds.length, 0),
+      cycleCount,
+      estimatedLiveCalls: cycleCount * samples.reduce((sum, sample) => sum + sample.rounds.length, 0),
       temperature,
       timeoutMs,
       maxTokens,
@@ -680,6 +732,7 @@ async function main() {
       costSafety: 'no API calls; no token spend',
       optionCommands: {
         smokeLive: 'npm run eval:deepseek:v200-regional-ledger-live:smoke',
+        rcT3Live: 'npm run eval:deepseek:v200-regional-ledger-live:rc-t3',
       },
       sampleIds: samples.map(sample => sample.id),
     }, null, 2));
@@ -698,38 +751,43 @@ async function main() {
   }
 
   const results = [];
-  for (const sample of samples) {
-    let previousCarry = '';
-    let previousNarrative = '';
-    for (let roundIndex = 0; roundIndex < sample.rounds.length; roundIndex += 1) {
-      const roundNumber = roundIndex + 1;
-      const result = await runRound({
-        apiKey,
-        baseUrl,
-        model,
-        temperature,
-        timeoutMs,
-        maxTokens,
-        maxRetries,
-        sample,
-        roundPrompt: sample.rounds[roundIndex],
-        roundNumber,
-        previousCarry,
-        previousNarrative,
-        systemPrompt,
-      });
-      results.push(result);
-      if (result.parsed && result.ok) {
-        previousCarry = compactForCarry(result.parsed);
-        previousNarrative = String(result.parsed.narrative || '');
+  for (let cycleIndex = 1; cycleIndex <= cycleCount; cycleIndex += 1) {
+    for (const sample of samples) {
+      let previousCarry = '';
+      let previousNarrative = '';
+      for (let roundIndex = 0; roundIndex < sample.rounds.length; roundIndex += 1) {
+        const roundNumber = roundIndex + 1;
+        const result = await runRound({
+          apiKey,
+          baseUrl,
+          model,
+          temperature,
+          timeoutMs,
+          maxTokens,
+          maxRetries,
+          sample,
+          roundPrompt: sample.rounds[roundIndex],
+          roundNumber,
+          previousCarry,
+          previousNarrative,
+          systemPrompt,
+        });
+        result.cycle = cycleIndex;
+        results.push(result);
+        if (result.parsed && result.ok) {
+          previousCarry = compactForCarry(result.parsed);
+          previousNarrative = String(result.parsed.narrative || '');
+        }
+        const status = result.ok ? 'pass' : 'fail';
+        const issueCount = result.evaluation?.issues?.length || 0;
+        const issueCodes = (result.evaluation?.issues || []).map(issue => issue.code).join(',');
+        console.log(`[v200-regional-ledger-live] ${status} cycle=${cycleIndex}/${cycleCount} sample=${sample.id} round=${roundNumber} issues=${issueCount}${issueCodes ? ` issueCodes=${issueCodes}` : ''} attempts=${(result.attempts?.length || 0) + 1} tokens=${result.usage?.total_tokens || 0}`);
       }
-      const status = result.ok ? 'pass' : 'fail';
-      const issueCount = result.evaluation?.issues?.length || 0;
-      console.log(`[v200-regional-ledger-live] ${status} sample=${sample.id} round=${roundNumber} issues=${issueCount} attempts=${(result.attempts?.length || 0) + 1} tokens=${result.usage?.total_tokens || 0}`);
     }
   }
 
   const summary = summarize({ samples, results, model, acceptedThreshold, maxP2 });
+  summary.cycleCount = cycleCount;
   const { reportDir, reportPath, resultsPath, summaryPath } = writeReport({
     sampleFile,
     results,
