@@ -11,7 +11,7 @@
 
 用户明确要求进入 `v2.1.0-a2`。本轮只做入场同步：
 
-- 将 v2.1 入口、路线图、决策池、Git 计划和项目仪表盘从 a1 阶段切到 a2 active。
+- 将 v2.1 入口、路线图、决策池、Git 计划和项目仪表盘从 a1 阶段切到 a2 入场状态。
 - 将 a1 Claude Code / 开源 Agent 框架尽调标记为 completed，作为 a2 设计输入。
 - 将 a2 设计门禁标记为 active，并加入入场记录、执行重点、禁止范围和 D-211 go/no-go 决策草案。
 - 更新 PROJECT-STATE、AGENTS、Skill 同步审计记录。
