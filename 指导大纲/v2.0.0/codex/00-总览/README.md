@@ -1,6 +1,6 @@
 # RebornG v2.0.0 Codex 当前入口
 
-状态：b3 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接、去重和同开局 replay lane 对照。
+状态：b4 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接、去重、同开局 replay lane 对照和旧档/回滚可读性 review。
 日期：2026-05-22
 主题候选：第一个区域活世界入场门禁
 
@@ -12,9 +12,9 @@
 
 `第一个区域活世界：南疆早期低阶外缘小区域`
 
-当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀、b2 区域事件持续承接和 b3 同开局差异对照。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
+当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀、b2 区域事件持续承接、b3 同开局差异对照和 b4 旧档/回滚入口一致性。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
 
-当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。b3 在既有账本上派生同开局 replay lanes，不新增 `runFingerprint`、不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
+当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。b4 在既有账本上补旧档/回滚 review，不新增 `runFingerprint`、不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
 
 ## 当前入口文件
 
@@ -36,6 +36,10 @@
 - `v2.0.0-b3-Player-Advocate-30轮走查记录.md`
 - `v2.0.0-b3-长线叙事漂移检查记录.md`
 - `v2.0.0-b3-Skill同步审计记录.md`
+- `v2.0.0-b4-UI可读性旧档回滚与入口一致性.md`
+- `v2.0.0-b4-Player-Advocate-30轮走查记录.md`
+- `v2.0.0-b4-长线叙事漂移检查记录.md`
+- `v2.0.0-b4-Skill同步审计记录.md`
 - `v2.0.0-真相源索引.md`
 - `v2.0.0-测试矩阵.md`
 - `v2.0.0-MiroFish资料需求与交付协议.md`
@@ -80,8 +84,8 @@ v2.0-a1 继续暂缓：
 
 ## 当前硬边界
 
-- 不自动进入 v2.0 runtime。
-- 不自动新增持久字段。
+- 不自动扩展 v2.0 runtime 到 b4 以外的新系统。
+- 不自动新增超过 v25 `regionalEventLedger` 的持久字段。
 - 不自动把 MiroFish 或知识库内容喂给 DeepSeek。
 - 不开放完整南疆、完整商家城、正式商队/散修/城市身份。
 - 不结算正式价格、库存、工资、奖励、战斗掉落、NPC 生死。
@@ -97,10 +101,11 @@ v2.0-a1 继续暂缓：
 - b1 已同一刀完成 migration/defaults/tests/rollback、30 轮 Player Advocate 和 20 轮 live smoke。
 - `runFingerprint`、正式区域状态、正式身份状态继续暂缓。
 - b3 已完成同开局 replay lane 对照，不新增 `runFingerprint`；20 轮 live smoke 通过，P0/P1/P2 = 0/0/7。
+- b4 已完成旧档/回滚/入口一致性 review；20 轮 live smoke 通过，P0/P1/P2 = 0/0/3。
 - v2.0 rc 前 T3 320 total rounds，live 不低于 160 轮。
 
 ## 下一步
 
 建议下一刀进入：
 
-`v2.0.0-b4-UI可读性旧档回滚与入口一致性`
+`v2.0.0-process-1-P2术语与正式凭信词hardening`

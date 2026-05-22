@@ -5,6 +5,7 @@ import {
   resolveV200WorldCoreRegionalEventLedgerSync,
 } from '../../engine/v200-regional-event-ledger';
 import { buildV200SameStartReplayDiff } from '../../engine/v200-same-start-replay-diff';
+import { buildV200LedgerReadinessReview } from '../../engine/v200-ledger-readiness-review';
 import type { RegionalPublicEventKind } from '../../types';
 
 const eventKindLabel: Record<RegionalPublicEventKind, string> = {
@@ -76,6 +77,10 @@ export function RegionalEventLedgerPanel() {
     ...input,
     regionalEventLedger,
   }), [input, regionalEventLedger]);
+  const readinessReview = useMemo(() => buildV200LedgerReadinessReview({
+    regionalEventLedger,
+    turn,
+  }), [regionalEventLedger, turn]);
   const publicEvents = Array.isArray(regionalEventLedger?.publicEvents) ? regionalEventLedger.publicEvents : [];
   const pendingFollowUps = Array.isArray(regionalEventLedger?.pendingFollowUps) ? regionalEventLedger.pendingFollowUps : [];
   const canSync = envelopes.length > 0;
@@ -96,7 +101,7 @@ export function RegionalEventLedgerPanel() {
             </span>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">
-            v2.0-b3 以稳定账本承接公开压力，并从同一开局中派生可对照的 replay lane。
+            v2.0-b4 以稳定账本承接公开压力，并补齐同开局差异、旧档与回滚审计。
           </p>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">
             账本只记录公开事件、来源、压力和 pending follow-up；不记录 DeepSeek 原文、hidden body、正式地点、正式身份、奖励或 NPC 生死。
@@ -153,6 +158,30 @@ export function RegionalEventLedgerPanel() {
             {replayDiff.lanes.filter((lane: any) => lane.status === 'visible').slice(0, 4).map((lane: any) => (
               <p key={lane.id} className="text-[10px] leading-relaxed text-rg-paper-200/58">
                 {lane.title}：{lane.nextStep}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-sm border border-rg-stone-400/25 bg-rg-stone-500/10 p-3" data-testid="v200-ledger-readiness-audit">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold text-rg-stone-100">旧档与回滚</p>
+              <p className="mt-1 text-[10px] text-rg-paper-200/55">
+                {readinessReview.statusLabel} · event {readinessReview.eventCount} · follow-up {readinessReview.followUpCount}
+              </p>
+            </div>
+            <span className="rounded-sm border border-rg-stone-100/15 px-2 py-1 text-[10px] text-rg-paper-200/55">
+              不写新字段
+            </span>
+          </div>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/62">
+            {readinessReview.publicSummary}
+          </p>
+          <div className="mt-2 grid gap-1.5 md:grid-cols-2">
+            {readinessReview.cards.slice(0, readinessReview.compactUiMaxCards).map(card => (
+              <p key={card.id} className="text-[10px] leading-relaxed text-rg-paper-200/58">
+                {card.title}：{card.detail}
               </p>
             ))}
           </div>
