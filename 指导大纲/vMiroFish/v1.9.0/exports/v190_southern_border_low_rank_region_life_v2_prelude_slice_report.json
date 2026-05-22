@@ -1,0 +1,34 @@
+{
+  "totalItems": 13,
+  "byCategory": {
+    "caravanContactWindow": 1,
+    "caravanEntryPrecondition": 1,
+    "farCityBoundary": 1,
+    "formalPropWordRisk": 1,
+    "lowStatusLaborPressure": 1,
+    "marketFailurePressure": 1,
+    "marketPressureWindow": 1,
+    "outerEdgeInterrogationPattern": 1,
+    "publicObservationWindow": 1,
+    "roadEventProtocol": 1,
+    "shelterDebtWindow": 1,
+    "supplyTollPressure": 1,
+    "temporaryLodgingWindow": 1
+  },
+  "byReviewStatus": {
+    "export_ready": 13
+  },
+  "sourcePointers": 13,
+  "quoteLikeKeys": 0,
+  "coverage": {
+    "outerEdgeAndFarBoundary": 2,
+    "caravanContactAndPreconditions": 4,
+    "marketAndSupplyPressure": 3,
+    "shelterAndRestWindows": 2,
+    "roadAndConflictProtocols": 2,
+    "publicObservationNoHidden": 2,
+    "v2EventLedgerRiskSamples": 13,
+    "runFingerprintRiskSamples": 13,
+    "formalPropWordRisks": 1
+  }
+}

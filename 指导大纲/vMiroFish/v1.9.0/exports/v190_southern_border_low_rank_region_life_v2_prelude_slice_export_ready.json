@@ -1,0 +1,851 @@
+{
+  "version": 1,
+  "requestId": "mirofish-request-2026-05-22-v190-southern-border-low-rank-region-life-v2-prelude",
+  "targetPhase": "v1.9.0-a2 MiroFish v2 region living-world prelude topic-slice intake",
+  "generatedAt": "2026-05-22T05:08:25.548705+00:00",
+  "suggestedOutputName": "v190_southern_border_low_rank_region_life_v2_prelude_slice_export_ready.json",
+  "sourceDataset": "uploads\\ri_corpus\\exports\\living_world_review_strict_flash_fullbook_2340_reviewable",
+  "reviewLedger": "uploads\\ri_corpus\\reviews\\living_world_item_reviews_tight_v2_pressure_reviewable_promoted.json",
+  "licenseBoundary": {
+    "mirofishCode": "AGPL-3.0 remains outside RebornG runtime",
+    "reborngIntake": "quote-redacted JSON candidates only"
+  },
+  "canonBoundary": {
+    "runtimeAuthority": "none",
+    "canonAuthority": "human_review_required",
+    "hiddenFacts": "hidden_ref_only_until_RebornG_gate",
+    "deepSeekAuthority": "none"
+  },
+  "items": [
+    {
+      "id": "v2prelude_ch0231_outer_edge_interrogation",
+      "category": "outerEdgeInterrogationPattern",
+      "packageId": "ri_lw_ch_0231",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_3252606c31e1"
+      },
+      "summary": "外缘盘问适合转写为区域活世界的公开压力入口：问路、查来历、避祸、绕行或传话。它只能提供候选事件和解释槽位，不能解锁正式地点、身份、阵营或 hidden/private。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0231",
+        "field": "events",
+        "itemId": "evt_3252606c31e1",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "outerEdgeInterrogationPattern",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_1d574dde60f1"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0231",
+          "paragraphId": "ch_0231_p0028",
+          "startOffset": 784266,
+          "endOffset": 784287,
+          "summary": "方源在村口被守卫盘问，自称凡人",
+          "sourcePointerId": "sp_1d574dde60f1"
+        }
+      ],
+      "v2ReadinessUse": "regional_event_candidate_and_player_intent_router_sample",
+      "regionalEventLedgerRisk": "future_event_ledger_candidate_only",
+      "runFingerprintRisk": "same_start_variant_source_not_persistent_seed",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_location_no_identity_no_faction_no_hidden_reveal"
+    },
+    {
+      "id": "v2prelude_ch0231_far_city_boundary",
+      "category": "farCityBoundary",
+      "packageId": "ri_lw_ch_0231",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_abdfd8c03893"
+      },
+      "summary": "远方大城只能作为长期方向、区域边界和玩家预期管理。v1.9 不吸收为正式商家城入口、完整城市区域或稳定居民/商队身份。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0231",
+        "field": "events",
+        "itemId": "evt_abdfd8c03893",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "farCityBoundary",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3bfb3324e135"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0231",
+          "paragraphId": "ch_0231_p0081",
+          "startOffset": 786210,
+          "endOffset": 786234,
+          "summary": "方源告知白凝冰接下来的目的地是商量山商家城",
+          "sourcePointerId": "sp_3bfb3324e135"
+        }
+      ],
+      "v2ReadinessUse": "scope_boundary_and_future_route_pressure",
+      "regionalEventLedgerRisk": "deferred_boundary_event_only",
+      "runFingerprintRisk": "long_route_pressure_not_start_variant_seed",
+      "allowedRuntimeUse": "deferred_boundary_rule",
+      "blockedOutcome": "no_complete_city_no_formal_shang_clan_area_no_residence_identity"
+    },
+    {
+      "id": "v2prelude_ch0234_caravan_temp_labor_contact",
+      "category": "caravanContactWindow",
+      "packageId": "ri_lw_ch_0234",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_9933e8b8d468"
+      },
+      "summary": "货物、中介和短期劳动可以成为接触商队外缘的公开窗口，适合区域活世界的临时商队接触候选，不等于正式商队成员、路线通行权或稳定工资。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0234",
+        "field": "events",
+        "itemId": "evt_9933e8b8d468",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "caravanContactWindow",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_17540a42e8e3"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0234",
+          "paragraphId": "ch_0234_p0029",
+          "startOffset": 794568,
+          "endOffset": 794665,
+          "summary": "老村长到老婆婆家看望，并给方白二人提供紫枫叶和锄田工作",
+          "sourcePointerId": "sp_17540a42e8e3"
+        }
+      ],
+      "v2ReadinessUse": "region_life_contact_window_and_identity_route_merge_sample",
+      "regionalEventLedgerRisk": "contact_attempt_should_record_as_candidate_outcome_only",
+      "runFingerprintRisk": "labor_for_access_variant_not_persistent_randomness",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_caravan_membership_no_route_unlock_no_stable_wage"
+    },
+    {
+      "id": "v2prelude_ch0235_trade_refusal_pressure",
+      "category": "marketPressureWindow",
+      "packageId": "ri_lw_ch_0235",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_1c52a18b7487"
+      },
+      "summary": "摆摊、喊价、压价或被拒绝适合区域小市场压力、失败推进和谋生解释，不生成正式价格表、库存、交易结算或稳定利润循环。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0235",
+        "field": "events",
+        "itemId": "evt_1c52a18b7487",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "marketPressureWindow",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_39d09921ea1f"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0092",
+          "startOffset": 800193,
+          "endOffset": 800239,
+          "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口",
+          "sourcePointerId": "sp_39d09921ea1f"
+        }
+      ],
+      "v2ReadinessUse": "economy_region_merge_pressure_sample",
+      "regionalEventLedgerRisk": "market_attempt_candidate_without_numeric_settlement",
+      "runFingerprintRisk": "trade_refusal_variant_only",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_price_table_no_inventory_no_market_authority_no_profit_loop"
+    },
+    {
+      "id": "v2prelude_ch0235_goods_entry_ticket",
+      "category": "caravanEntryPrecondition",
+      "packageId": "ri_lw_ch_0235",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_e36310196145"
+      },
+      "summary": "普通货物可以作为靠近商队或歇脚点的敲门砖，适合补给、货物、人情和临时凭据前置条件，不授予正式身份、奖励或路线完成。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0235",
+        "field": "events",
+        "itemId": "evt_e36310196145",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "caravanEntryPrecondition",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_a9f29d305055"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0235",
+          "paragraphId": "ch_0235_p0063",
+          "startOffset": 799336,
+          "endOffset": 799365,
+          "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖",
+          "sourcePointerId": "sp_a9f29d305055"
+        }
+      ],
+      "v2ReadinessUse": "precondition_sample_for_event_chain_design",
+      "regionalEventLedgerRisk": "precondition_seen_candidate_only",
+      "runFingerprintRisk": "goods_or_favor_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_gu_reward_no_formal_route_completion_no_formal_pass"
+    },
+    {
+      "id": "v2prelude_ch0236_permission_chain_prop_word_risk",
+      "category": "formalPropWordRisk",
+      "packageId": "ri_lw_ch_0236",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_3284752a4c7d"
+      },
+      "summary": "许可链、负责人点头、报到、登记、木牌或令牌词容易被误写成正式身份和通行权。v1.9 只能把它转写为前置条件、风险样本和 P2 eval 规则。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0236",
+        "field": "events",
+        "itemId": "evt_3284752a4c7d",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "formalPropWordRisk",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_fa472281bb9a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0236",
+          "paragraphId": "ch_0236_p0048",
+          "startOffset": 802342,
+          "endOffset": 802381,
+          "summary": "陈蛊师答应老张让方白二人加入商队，并让他们到陈鑫处报到",
+          "sourcePointerId": "sp_fa472281bb9a"
+        }
+      ],
+      "v2ReadinessUse": "formal_prop_word_evaluator_sample",
+      "regionalEventLedgerRisk": "ledger_must_not_promote_temp_proof_to_formal_pass",
+      "runFingerprintRisk": "permission_chain_variant_only",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_formal_membership_no_named_npc_authority_no_location_unlock"
+    },
+    {
+      "id": "v2prelude_ch0236_low_status_labor_assignment",
+      "category": "lowStatusLaborPressure",
+      "packageId": "ri_lw_ch_0236",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_f7c34ec02711"
+      },
+      "summary": "低身份角色更可能被安排搬运、卸货、杂务或受管事调派，适合区域生活压力、同开局身份差异和失败推进，不写长期职位、工资、等级或奖励。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0236",
+        "field": "events",
+        "itemId": "evt_f7c34ec02711",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "lowStatusLaborPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_083950a1f7bb"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0236",
+          "paragraphId": "ch_0236_p0065",
+          "startOffset": 802992,
+          "endOffset": 803013,
+          "summary": "方源和白凝冰伪装成凡人夫妻黑土和白云，加入商队，被安排卸货",
+          "sourcePointerId": "sp_083950a1f7bb"
+        }
+      ],
+      "v2ReadinessUse": "identity_economy_social_merge_sample",
+      "regionalEventLedgerRisk": "labor_assignment_candidate_not_formal_job_record",
+      "runFingerprintRisk": "low_status_labor_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_formal_rank_no_reward_settlement_no_stable_wage_no_job_state"
+    },
+    {
+      "id": "v2prelude_ch0237_temporary_market_observe",
+      "category": "publicObservationWindow",
+      "packageId": "ri_lw_ch_0237",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_316eec5bd2aa"
+      },
+      "summary": "小集市适合公开观察、传话、补给打听、被观察压力和事件前置，不揭示 hidden/private，也不生成正式市场系统。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0237",
+        "field": "events",
+        "itemId": "evt_316eec5bd2aa",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "publicObservationWindow",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_746f33d6d42a"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0237",
+          "paragraphId": "ch_0237_p0012",
+          "startOffset": 804438,
+          "endOffset": 804476,
+          "summary": "方源和白凝冰在商队小集市中摆摊售卖紫枫叶",
+          "sourcePointerId": "sp_746f33d6d42a"
+        }
+      ],
+      "v2ReadinessUse": "public_observation_and_message_route_sample",
+      "regionalEventLedgerRisk": "observation_event_candidate_without_hidden_fact",
+      "runFingerprintRisk": "observe_and_message_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_hidden_reveal_no_spy_identity_no_market_system"
+    },
+    {
+      "id": "v2prelude_ch0237_bargain_refusal",
+      "category": "marketFailurePressure",
+      "packageId": "ri_lw_ch_0237",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_66ac6486a6e5"
+      },
+      "summary": "压价、拒绝、围观和耐心消耗适合低阶市场失败推进、短工压力和补给缺口解释，不能转成稳定利润、蛊交易或正式结算。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0237",
+        "field": "events",
+        "itemId": "evt_66ac6486a6e5",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.547706+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "marketFailurePressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_5d005cb6a90e"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0237",
+          "paragraphId": "ch_0237_p0056",
+          "startOffset": 806028,
+          "endOffset": 806070,
+          "summary": "老者和女子先后向方源压价购买紫枫叶，方源均拒绝",
+          "sourcePointerId": "sp_5d005cb6a90e"
+        }
+      ],
+      "v2ReadinessUse": "failure_forward_region_event_sample",
+      "regionalEventLedgerRisk": "failure_should_not_create_numeric_loss_or_reward_without_runtime_gate",
+      "runFingerprintRisk": "bargain_refusal_variant_only",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_price_table_no_gu_trade_no_profit_loop_no_numeric_settlement"
+    },
+    {
+      "id": "v2prelude_ch0240_shelter_debt_short_work",
+      "category": "shelterDebtWindow",
+      "packageId": "ri_lw_ch_0240",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_58ff660e6ade"
+      },
+      "summary": "受伤、求助、临时收留和欠人情适合散修落脚、短工或非胜利推进，不决定 NPC 命运、正式庇护、阵营归属或长期债务字段。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0240",
+        "field": "events",
+        "itemId": "evt_58ff660e6ade",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.548705+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "shelterDebtWindow",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_627b6ea7b2fd"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0240",
+          "paragraphId": "ch_0240_p0116",
+          "startOffset": 818325,
+          "endOffset": 818355,
+          "summary": "方源深夜浑身浴血向商心慈求救，声称因元石被抢而遭人恐吓，请求收留",
+          "sourcePointerId": "sp_627b6ea7b2fd"
+        }
+      ],
+      "v2ReadinessUse": "rogue_shelter_and_social_debt_sample",
+      "regionalEventLedgerRisk": "debt_hint_candidate_not_persistent_debt_state",
+      "runFingerprintRisk": "shelter_debt_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_npc_life_death_no_formal_patronage_no_debt_state"
+    },
+    {
+      "id": "v2prelude_ch0241_temporary_lodging",
+      "category": "temporaryLodgingWindow",
+      "packageId": "ri_lw_ch_0241",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_6c0ed441a7f9"
+      },
+      "summary": "帐篷、营地、短期安置和下一步观察适合区域活世界的临时落脚窗口，不写持久居住状态、正式据点或地图解锁。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0241",
+        "field": "events",
+        "itemId": "evt_6c0ed441a7f9",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.548705+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "temporaryLodgingWindow",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_ce114db2e837"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0241",
+          "paragraphId": "ch_0241_p0005",
+          "startOffset": 818519,
+          "endOffset": 818521,
+          "summary": "方源请求商心慈收留，商心慈同意并安排帐篷",
+          "sourcePointerId": "sp_ce114db2e837"
+        }
+      ],
+      "v2ReadinessUse": "region_rest_point_and_next_observation_sample",
+      "regionalEventLedgerRisk": "temporary_lodging_candidate_without_persistent_location_state",
+      "runFingerprintRisk": "temporary_lodging_variant_only",
+      "allowedRuntimeUse": "rule_draft_test_sample",
+      "blockedOutcome": "no_persistent_lodging_state_no_formal_residence_no_location_unlock"
+    },
+    {
+      "id": "v2prelude_ch0241_road_event_guard_candidate",
+      "category": "roadEventProtocol",
+      "packageId": "ri_lw_ch_0241",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_707a1f25af01"
+      },
+      "summary": "按规矩处理的路障或野外事件适合区域路况、护送、巡查、采集跑腿和冲突余波候选，不直接生成战斗、捕获、死亡或奖励结果。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0241",
+        "field": "events",
+        "itemId": "evt_707a1f25af01",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.548705+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "roadEventProtocol",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_3aca4788893c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0241",
+          "paragraphId": "ch_0241_p0070",
+          "startOffset": 821114,
+          "endOffset": 821135,
+          "summary": "商队在匪猴山遭遇猴群拦路，按规矩处理",
+          "sourcePointerId": "sp_3aca4788893c"
+        }
+      ],
+      "v2ReadinessUse": "route_conflict_region_merge_sample",
+      "regionalEventLedgerRisk": "event_outcome_requires_world_core_later_not_export",
+      "runFingerprintRisk": "escort_or_watch_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_direct_combat_reward_no_npc_fate_no_formal_guard_job"
+    },
+    {
+      "id": "v2prelude_ch0242_goods_toll_gathering_runner",
+      "category": "supplyTollPressure",
+      "packageId": "ri_lw_ch_0242",
+      "sourceItem": {
+        "field": "events",
+        "itemId": "evt_a25bb8426473"
+      },
+      "summary": "货物、力气、规矩或让步形成通行和补给压力，适合采集跑腿、绕路、交涉或低阶损耗解释，不写数字消耗、材料农场或奖励结算。",
+      "visibility": "player-visible",
+      "playerVisibility": "player-visible",
+      "confidence": "medium",
+      "review": {
+        "packageId": "ri_lw_ch_0242",
+        "field": "events",
+        "itemId": "evt_a25bb8426473",
+        "status": "export_ready",
+        "classification": "canon-soft",
+        "notes": [
+          "curated by special export blueprint"
+        ],
+        "updatedAt": "2026-05-22T05:08:25.548705+00:00",
+        "persisted": false
+      },
+      "reborngGate": {
+        "materialType": "supplyTollPressure",
+        "hiddenRefOnly": false,
+        "runtimeVisible": false,
+        "deepSeekVisible": false,
+        "runtimeAuthority": "candidate_only",
+        "requiresHumanCanonReview": true
+      },
+      "sourcePointerIds": [
+        "sp_0f809eade99c"
+      ],
+      "sourcePointers": [
+        {
+          "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+          "chapterId": "ch_0242",
+          "paragraphId": "ch_0242_p0048",
+          "startOffset": 823393,
+          "endOffset": 823459,
+          "summary": "贾家商队与匪猴进行交易，猴子取走货物",
+          "sourcePointerId": "sp_0f809eade99c"
+        }
+      ],
+      "v2ReadinessUse": "supply_route_identity_merge_sample",
+      "regionalEventLedgerRisk": "pressure_record_candidate_without_numeric_consumption",
+      "runFingerprintRisk": "goods_toll_or_detour_variant_only",
+      "allowedRuntimeUse": "candidate_pool_rule_draft_test_sample",
+      "blockedOutcome": "no_numeric_consumption_no_material_farm_no_reward_settlement"
+    }
+  ],
+  "sourcePointers": [
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0236",
+      "paragraphId": "ch_0236_p0065",
+      "startOffset": 802992,
+      "endOffset": 803013,
+      "summary": "方源和白凝冰伪装成凡人夫妻黑土和白云，加入商队，被安排卸货",
+      "sourcePointerId": "sp_083950a1f7bb"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0242",
+      "paragraphId": "ch_0242_p0048",
+      "startOffset": 823393,
+      "endOffset": 823459,
+      "summary": "贾家商队与匪猴进行交易，猴子取走货物",
+      "sourcePointerId": "sp_0f809eade99c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0234",
+      "paragraphId": "ch_0234_p0029",
+      "startOffset": 794568,
+      "endOffset": 794665,
+      "summary": "老村长到老婆婆家看望，并给方白二人提供紫枫叶和锄田工作",
+      "sourcePointerId": "sp_17540a42e8e3"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0231",
+      "paragraphId": "ch_0231_p0028",
+      "startOffset": 784266,
+      "endOffset": 784287,
+      "summary": "方源在村口被守卫盘问，自称凡人",
+      "sourcePointerId": "sp_1d574dde60f1"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0092",
+      "startOffset": 800193,
+      "endOffset": 800239,
+      "summary": "方白二人故意高价售卖紫枫叶，以制造加入商队的借口",
+      "sourcePointerId": "sp_39d09921ea1f"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0241",
+      "paragraphId": "ch_0241_p0070",
+      "startOffset": 821114,
+      "endOffset": 821135,
+      "summary": "商队在匪猴山遭遇猴群拦路，按规矩处理",
+      "sourcePointerId": "sp_3aca4788893c"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0231",
+      "paragraphId": "ch_0231_p0081",
+      "startOffset": 786210,
+      "endOffset": 786234,
+      "summary": "方源告知白凝冰接下来的目的地是商量山商家城",
+      "sourcePointerId": "sp_3bfb3324e135"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0237",
+      "paragraphId": "ch_0237_p0056",
+      "startOffset": 806028,
+      "endOffset": 806070,
+      "summary": "老者和女子先后向方源压价购买紫枫叶，方源均拒绝",
+      "sourcePointerId": "sp_5d005cb6a90e"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0240",
+      "paragraphId": "ch_0240_p0116",
+      "startOffset": 818325,
+      "endOffset": 818355,
+      "summary": "方源深夜浑身浴血向商心慈求救，声称因元石被抢而遭人恐吓，请求收留",
+      "sourcePointerId": "sp_627b6ea7b2fd"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0237",
+      "paragraphId": "ch_0237_p0012",
+      "startOffset": 804438,
+      "endOffset": 804476,
+      "summary": "方源和白凝冰在商队小集市中摆摊售卖紫枫叶",
+      "sourcePointerId": "sp_746f33d6d42a"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0235",
+      "paragraphId": "ch_0235_p0063",
+      "startOffset": 799336,
+      "endOffset": 799365,
+      "summary": "方源和白凝冰从老村长处得到一板车紫枫叶，作为跟随商队的敲门砖",
+      "sourcePointerId": "sp_a9f29d305055"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0241",
+      "paragraphId": "ch_0241_p0005",
+      "startOffset": 818519,
+      "endOffset": 818521,
+      "summary": "方源请求商心慈收留，商心慈同意并安排帐篷",
+      "sourcePointerId": "sp_ce114db2e837"
+    },
+    {
+      "sourcePath": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\doc\\original work\\reverend-insanity.txt",
+      "chapterId": "ch_0236",
+      "paragraphId": "ch_0236_p0048",
+      "startOffset": 802342,
+      "endOffset": 802381,
+      "summary": "陈蛊师答应老张让方白二人加入商队，并让他们到陈鑫处报到",
+      "sourcePointerId": "sp_fa472281bb9a"
+    }
+  ],
+  "skipped": [],
+  "summary": {
+    "totalItems": 13,
+    "byCategory": {
+      "caravanContactWindow": 1,
+      "caravanEntryPrecondition": 1,
+      "farCityBoundary": 1,
+      "formalPropWordRisk": 1,
+      "lowStatusLaborPressure": 1,
+      "marketFailurePressure": 1,
+      "marketPressureWindow": 1,
+      "outerEdgeInterrogationPattern": 1,
+      "publicObservationWindow": 1,
+      "roadEventProtocol": 1,
+      "shelterDebtWindow": 1,
+      "supplyTollPressure": 1,
+      "temporaryLodgingWindow": 1
+    },
+    "byReviewStatus": {
+      "export_ready": 13
+    },
+    "sourcePointers": 13,
+    "quoteLikeKeys": 0,
+    "coverage": {
+      "outerEdgeAndFarBoundary": 2,
+      "caravanContactAndPreconditions": 4,
+      "marketAndSupplyPressure": 3,
+      "shelterAndRestWindows": 2,
+      "roadAndConflictProtocols": 2,
+      "publicObservationNoHidden": 2,
+      "v2EventLedgerRiskSamples": 13,
+      "runFingerprintRiskSamples": 13,
+      "formalPropWordRisks": 1
+    }
+  }
+}

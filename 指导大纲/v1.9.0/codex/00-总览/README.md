@@ -1,6 +1,6 @@
 # RebornG v1.9.0 Codex 当前入口
 
-状态：v1.9.0-a1 设计门禁已建立；D-191 已批准；按用户要求暂不进入 a2，先进行 v2.0 后大方向讨论。
+状态：v1.9.0-a2 MiroFish v2 区域活世界预备 topic-slice intake 已完成本地文档门禁。
 日期：2026-05-22
 主题候选：v2.0 区域活世界预备与门禁收束
 
@@ -12,7 +12,7 @@
 
 专家团判断：v1.8 已经把低阶身份路线和同开局差异度做成 projection-first 地基，但它仍不是正式身份系统，也不是长期区域事件账本。v1.9 不应急着把玩家推进完整南疆或商家城，而应先把 v2.0 第一个区域活世界的核心区域、事件账本、身份/路线/经济/社会/冲突合流方式、MiroFish 主题切片、长测门禁和 save-format 风险一次性摆上台面。
 
-当前 a1 设计门禁已建立，专家团建议：v1.9 b1 继续保持 `SAVE_FORMAT_VERSION = 24`，暂不新增 `regionalEventLedger`、`runFingerprint`、`regionalLifeState`、`identityRouteState` 等持久字段；a2 将 MiroFish topic-slice 升级为 `blocking`；b1 先做 `v2 readiness projection/report 第一刀`。
+当前 a1 设计门禁已建立且 D-191 已全批准；a2 已按 blocking MiroFish 双仓流水线完成 `southern_border_low_rank_region_life_v2_prelude_slice` request/export/intake/rule/test 草案。v1.9 仍保持 `SAVE_FORMAT_VERSION = 24`，暂不新增 `regionalEventLedger`、`runFingerprint`、`regionalLifeState`、`identityRouteState` 等持久字段；下一步应先复核 b1 `v2 readiness projection/report 第一刀` 是否足够，必要时在 runtime 前追加 a3 设计门禁。
 
 ## 当前入口文件
 
@@ -23,6 +23,8 @@
 - `v1.9.0-需求决策池.md`
 - `v1.9.0-a0-治理补丁与范围冻结.md`
 - `v1.9.0-a1-v2区域活世界save-format与事件账本设计门禁.md`
+- `v1.9.0-a2-MiroFish-v2区域活世界预备topic-slice-intake.md`
+- `v1.9.0-a2-v2区域活世界预备规则草案.md`
 - `v1.9.0-v2.0区域活世界readiness草案.md`
 - `v1.9.0-真相源索引.md`
 - `v1.9.0-测试矩阵.md`
@@ -67,13 +69,13 @@
 
 ## 当前结论
 
-用户已批准 D-190-001 至 D-190-012。v1.9-a1 已建立设计门禁：
+用户已批准 D-190-001 至 D-190-012、D-191-001 至 D-191-012。v1.9-a2 已完成 blocking MiroFish topic-slice intake：
 
 - 不改 runtime。
 - 不加 save 字段。
-- 不做 MiroFish export。
+- MiroFish export/intake 只作为 quote-redacted candidate/rule/test 材料。
 - 不调用 live DeepSeek。
 - 不启用子代理。
 - 不部署 EdgeOne。
 
-用户已批准 D-191-001 至 D-191-012。下一步按用户要求先进行 v2.0 之后大方向专家团讨论；讨论结束并确认后，再进入 `v1.9.0-a2-MiroFish-v2区域活世界预备topic-slice-intake.md`。
+下一步按 a2 结论先复核：b1 `v2 readiness projection/report 第一刀` 是否足够、是否保持 report-only / pure helper / 无 UI tab、是否需要在进入 runtime 前追加 `v1.9.0-a3-v2-readiness-report设计门禁.md`。
