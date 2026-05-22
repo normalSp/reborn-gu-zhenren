@@ -91,7 +91,7 @@ export function RegionalEventLedgerPanel() {
             </span>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">
-            v2.0-b1 将南疆早期低阶外缘的公开压力写入 `regionalEventLedger`，用于跨回合承接和长测校验。
+            v2.0-b2 将南疆早期低阶外缘的公开压力按稳定事件键承接，避免同类事件跨回合重复膨胀。
           </p>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">
             账本只记录公开事件、来源、压力和 pending follow-up；不记录 DeepSeek 原文、hidden body、正式地点、正式身份、奖励或 NPC 生死。
@@ -117,7 +117,7 @@ export function RegionalEventLedgerPanel() {
             </button>
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
-            当前可晋升 envelope：{envelopes.length}；预览事件：{preview.regionalEventLedger.publicEvents.length}；账本事件：{publicEvents.length}；待处理：{pendingFollowUps.length}；压力 {levelText(regionalEventLedger?.pressureSummary?.level)} / {regionalEventLedger?.pressureSummary?.score || 0}
+            当前可晋升 envelope：{envelopes.length}；去重后预览：{preview.regionalEventLedger.publicEvents.length}；账本事件：{publicEvents.length}；待处理：{pendingFollowUps.length}；压力 {levelText(regionalEventLedger?.pressureSummary?.level)} / {regionalEventLedger?.pressureSummary?.score || 0}
           </p>
           {actionMessage && (
             <p className="mt-2 text-[10px] leading-relaxed text-rg-jade-100/80" data-testid="v200-ledger-action-result">
@@ -143,6 +143,9 @@ export function RegionalEventLedgerPanel() {
                 </span>
               </div>
               <p className="mt-2 text-[11px] leading-relaxed text-rg-paper-200/68">{event.publicSummary}</p>
+              <p className="mt-2 text-[9px] leading-relaxed text-rg-paper-200/45">
+                承接键：{event.publicSummaryKey}
+              </p>
               <p className="mt-2 text-[9px] leading-relaxed text-rg-paper-200/48">
                 阻断：{(event.forbiddenOutcomes || []).slice(0, 4).join(' / ') || 'formal outcome'}
               </p>

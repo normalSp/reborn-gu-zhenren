@@ -97,6 +97,11 @@ test.describe('v2.0 regional event ledger', () => {
       'caravan_contact',
       'market_pressure',
     ]));
+
+    await panel.locator('[data-testid="v200-regional-event-ledger-sync"]').click();
+    const resyncedSummary = await page.evaluate(() => (window as RebornE2eWindow).__REBORN_E2E__!.getStateSummary());
+    expect((resyncedSummary as any).regionalEventLedger.eventCount).toBe((summary as any).regionalEventLedger.eventCount);
+    expect((resyncedSummary as any).regionalEventLedger.followUpCount).toBe((summary as any).regionalEventLedger.followUpCount);
     expect((summary as any).runFingerprint).toBeUndefined();
     expect((summary as any).regionalLifeState).toBeUndefined();
     expect((summary as any).areaLivingState).toBeUndefined();

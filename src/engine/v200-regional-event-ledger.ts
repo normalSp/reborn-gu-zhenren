@@ -252,6 +252,76 @@ function normalizePendingFollowUp(value: unknown, turn: number): RegionalPending
   };
 }
 
+function eventLogicalKey(event: Pick<RegionalPublicEvent, 'eventKind' | 'publicSummaryKey' | 'id'>): string {
+  const summaryKey = event.publicSummaryKey || event.id.replace(/_t\d+$/, '');
+  return `${event.eventKind}::${summaryKey}`;
+}
+
+function mergePublicEvent(existing: RegionalPublicEvent, incoming: RegionalPublicEvent): RegionalPublicEvent {
+  return {
+    ...incoming,
+    turn: Math.max(existing.turn, incoming.turn),
+    sourceActionRefs: sanitizeVisibleRefs([...existing.sourceActionRefs, ...incoming.sourceActionRefs], 16),
+    sourceFactRefs: sanitizeVisibleRefs([...existing.sourceFactRefs, ...incoming.sourceFactRefs], 16),
+    sourceRefs: sanitizeVisibleRefs([...existing.sourceRefs, ...incoming.sourceRefs], 16),
+    pressureTags: unique([...existing.pressureTags, ...incoming.pressureTags], 12),
+    forbiddenOutcomes: unique([...existing.forbiddenOutcomes, ...incoming.forbiddenOutcomes], 24),
+  };
+}
+
+function compactPublicEvents(events: RegionalPublicEvent[]): RegionalPublicEvent[] {
+  const order: string[] = [];
+  const byKey = new Map<string, RegionalPublicEvent>();
+  for (const event of events) {
+    const key = eventLogicalKey(event);
+    const existing = byKey.get(key);
+    if (existing) {
+      byKey.set(key, mergePublicEvent(existing, event));
+    } else {
+      order.push(key);
+      byKey.set(key, event);
+    }
+  }
+  return order.map(key => byKey.get(key)).filter((event): event is RegionalPublicEvent => Boolean(event));
+}
+
+function followUpLogicalKey(
+  item: RegionalPendingFollowUp,
+  eventKeyById: Map<string, string>,
+): string {
+  return eventKeyById.get(item.eventId) || `${item.eventKind}::${item.eventId.replace(/_t\d+$/, '')}`;
+}
+
+function mergeFollowUp(existing: RegionalPendingFollowUp, incoming: RegionalPendingFollowUp): RegionalPendingFollowUp {
+  const preserveClosed = existing.status === 'resolved' || existing.status === 'expired';
+  return {
+    ...incoming,
+    turn: Math.max(existing.turn, incoming.turn),
+    sourceRefs: sanitizeVisibleRefs([...existing.sourceRefs, ...incoming.sourceRefs], 16),
+    status: preserveClosed ? existing.status : incoming.status,
+    forbiddenOutcomes: unique([...existing.forbiddenOutcomes, ...incoming.forbiddenOutcomes], 24),
+  };
+}
+
+function compactPendingFollowUps(
+  followUps: RegionalPendingFollowUp[],
+  eventKeyById: Map<string, string>,
+): RegionalPendingFollowUp[] {
+  const order: string[] = [];
+  const byKey = new Map<string, RegionalPendingFollowUp>();
+  for (const item of followUps) {
+    const key = followUpLogicalKey(item, eventKeyById);
+    const existing = byKey.get(key);
+    if (existing) {
+      byKey.set(key, mergeFollowUp(existing, item));
+    } else {
+      order.push(key);
+      byKey.set(key, item);
+    }
+  }
+  return order.map(key => byKey.get(key)).filter((item): item is RegionalPendingFollowUp => Boolean(item));
+}
+
 function normalizePressureSummary(value: unknown, events: RegionalPublicEvent[]): RegionalEventLedger['pressureSummary'] {
   const raw = objectRecord(value);
   const level = PRESSURE_LEVELS.has(raw.level) ? raw.level as RegionalPressureLevel : scoreToLevel(scoreEvents(events));
@@ -309,12 +379,16 @@ export function normalizeRegionalEventLedger(
     : finiteTurn(raw.lastUpdatedAtTurn, turnFallback);
   const authority = AUTHORITIES.has(raw.authority) ? raw.authority as RegionalEventLedgerAuthority : null;
   const regionKey = REGION_KEYS.has(raw.activeRegionKey) ? raw.activeRegionKey as RegionalEventRegionKey : null;
-  const publicEvents = Array.isArray(raw.publicEvents)
+  const normalizedPublicEvents = Array.isArray(raw.publicEvents)
     ? raw.publicEvents.map(event => normalizePublicEvent(event, turn)).filter((event): event is RegionalPublicEvent => Boolean(event)).slice(-MAX_PUBLIC_EVENTS)
     : [];
-  const pendingFollowUps = Array.isArray(raw.pendingFollowUps)
+  const publicEvents = compactPublicEvents(normalizedPublicEvents).slice(-MAX_PUBLIC_EVENTS);
+  const eventKeyById = new Map(normalizedPublicEvents.map(event => [event.id, eventLogicalKey(event)]));
+  for (const event of publicEvents) eventKeyById.set(event.id, eventLogicalKey(event));
+  const normalizedPendingFollowUps = Array.isArray(raw.pendingFollowUps)
     ? raw.pendingFollowUps.map(item => normalizePendingFollowUp(item, turn)).filter((item): item is RegionalPendingFollowUp => Boolean(item)).slice(-MAX_PENDING_FOLLOWUPS)
     : [];
+  const pendingFollowUps = compactPendingFollowUps(normalizedPendingFollowUps, eventKeyById).slice(-MAX_PENDING_FOLLOWUPS);
   const status = STATUSES.has(raw.status)
     ? raw.status as RegionalEventLedgerStatus
     : (publicEvents.length > 0 ? 'events_tracked' : 'not_started');
@@ -409,7 +483,7 @@ function eventFromEnvelope(
   sourceActionRefs: string[],
 ): RegionalPublicEvent {
   return {
-    id: `v200b1_${envelope.eventKind}_${envelope.pressureId}_t${turn}`,
+    id: `v200_event_${envelope.pressureId}`,
     turn,
     eventKind: envelope.eventKind,
     sourceActionRefs,
@@ -425,7 +499,7 @@ function eventFromEnvelope(
 
 function followUpFromEvent(event: RegionalPublicEvent, envelope: V200RegionalEventEnvelope): RegionalPendingFollowUp {
   return {
-    id: `v200b1_followup_${envelope.pressureId}_t${event.turn}`,
+    id: `v200_followup_${envelope.pressureId}`,
     turn: event.turn,
     eventId: event.id,
     eventKind: event.eventKind,
@@ -435,6 +509,63 @@ function followUpFromEvent(event: RegionalPublicEvent, envelope: V200RegionalEve
     status: 'pending',
     forbiddenOutcomes: event.forbiddenOutcomes,
   };
+}
+
+function mergeEventsForSync(
+  previousEvents: RegionalPublicEvent[],
+  nextEvents: RegionalPublicEvent[],
+): RegionalPublicEvent[] {
+  const order: string[] = [];
+  const byKey = new Map<string, RegionalPublicEvent>();
+
+  for (const event of compactPublicEvents(previousEvents)) {
+    const key = eventLogicalKey(event);
+    order.push(key);
+    byKey.set(key, event);
+  }
+
+  for (const event of nextEvents) {
+    const key = eventLogicalKey(event);
+    const existing = byKey.get(key);
+    if (!existing) order.push(key);
+    byKey.set(key, existing ? mergePublicEvent(existing, event) : event);
+  }
+
+  return order.map(key => byKey.get(key)).filter((event): event is RegionalPublicEvent => Boolean(event)).slice(-MAX_PUBLIC_EVENTS);
+}
+
+function mergeFollowUpsForSync(
+  previousFollowUps: RegionalPendingFollowUp[],
+  nextFollowUps: RegionalPendingFollowUp[],
+  previousEventKeyById: Map<string, string>,
+  publicEvents: RegionalPublicEvent[],
+): RegionalPendingFollowUp[] {
+  const finalEventByKey = new Map(publicEvents.map(event => [eventLogicalKey(event), event]));
+  const order: string[] = [];
+  const byKey = new Map<string, RegionalPendingFollowUp>();
+
+  for (const item of previousFollowUps) {
+    const key = followUpLogicalKey(item, previousEventKeyById);
+    const finalEvent = finalEventByKey.get(key);
+    const relinked = finalEvent
+      ? {
+          ...item,
+          eventId: finalEvent.id,
+          turn: Math.max(item.turn, finalEvent.turn),
+        }
+      : item;
+    if (!byKey.has(key)) order.push(key);
+    byKey.set(key, relinked);
+  }
+
+  for (const item of nextFollowUps) {
+    const key = followUpLogicalKey(item, new Map(publicEvents.map(event => [event.id, eventLogicalKey(event)])));
+    const existing = byKey.get(key);
+    if (!existing) order.push(key);
+    byKey.set(key, existing ? mergeFollowUp(existing, item) : item);
+  }
+
+  return order.map(key => byKey.get(key)).filter((item): item is RegionalPendingFollowUp => Boolean(item)).slice(-MAX_PENDING_FOLLOWUPS);
 }
 
 function pressureSummary(events: RegionalPublicEvent[]): RegionalEventLedger['pressureSummary'] {
@@ -473,16 +604,15 @@ export function resolveV200WorldCoreRegionalEventLedgerSync(input: V170RegionalL
   }
 
   const sourceActionRefs = actionRefsFromLedger(input.localActionLedger);
+  const previousEventKeyById = new Map(previous.publicEvents.map(event => [event.id, eventLogicalKey(event)]));
   const nextEvents = envelopes.map(envelope => eventFromEnvelope(envelope, turn, sourceActionRefs));
-  const nextIds = new Set(nextEvents.map(event => event.id));
-  const publicEvents = [
-    ...previous.publicEvents.filter(event => !nextIds.has(event.id)),
-    ...nextEvents,
-  ].slice(-MAX_PUBLIC_EVENTS);
-  const pendingFollowUps = [
-    ...previous.pendingFollowUps.filter(item => !nextIds.has(item.eventId)),
-    ...nextEvents.map((event, index) => followUpFromEvent(event, envelopes[index])),
-  ].slice(-MAX_PENDING_FOLLOWUPS);
+  const publicEvents = mergeEventsForSync(previous.publicEvents, nextEvents);
+  const pendingFollowUps = mergeFollowUpsForSync(
+    previous.pendingFollowUps,
+    nextEvents.map((event, index) => followUpFromEvent(event, envelopes[index])),
+    previousEventKeyById,
+    publicEvents,
+  );
 
   const regionalEventLedger: RegionalEventLedger = {
     schemaVersion: SCHEMA_VERSION,
@@ -499,6 +629,7 @@ export function resolveV200WorldCoreRegionalEventLedgerSync(input: V170RegionalL
     sourceRefs: sanitizeVisibleRefs([
       'v2.0.0-a1:D-201-003',
       'v2.0.0-b1:regionalEventLedger',
+      'v2.0.0-b2:regional-event-continuity-dedupe',
       'v1.9.0-a2:southern_border_low_rank_region_life_v2_prelude_slice:intake-reviewed',
       'v1.9.0-b2:regional-event-envelope',
       ...publicEvents.flatMap(event => event.sourceRefs),
@@ -506,6 +637,7 @@ export function resolveV200WorldCoreRegionalEventLedgerSync(input: V170RegionalL
     lastUpdatedAtTurn: turn,
     audit: buildAudit(V200_REGIONAL_EVENT_LEDGER_ACTION_ID, [
       'WorldCore converted visible regional-life pressure into a v25 public event ledger.',
+      'b2 dedupes repeated regional event keys and carries source refs across turns without new save fields.',
       'No DeepSeek text, hidden body, reward, formal location, formal identity, or NPC fate is stored.',
     ]),
   };

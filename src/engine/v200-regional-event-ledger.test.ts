@@ -19,10 +19,10 @@ function knownFact(id: string, summary = '公开事实。') {
   };
 }
 
-function regionalLifeWorld(): Partial<LivingWorldState> {
+function regionalLifeWorld(turn = 70): Partial<LivingWorldState> {
   return {
     worldClock: {
-      turn: 70,
+      turn,
       day: 6,
       phase: 'afternoon',
       lastActionId: 'v200_worldcore_regional_event_probe',
@@ -129,10 +129,10 @@ function survivalState(): Partial<SurvivalEconomyState> {
   };
 }
 
-function localLedger(): LocalActionLedgerEntry[] {
+function localLedger(id = 'ledger_v200_low_rank_region_life', turn = 70): LocalActionLedgerEntry[] {
   return [{
-    id: 'ledger_v200_low_rank_region_life',
-    turn: 70,
+    id,
+    turn,
     sceneId: 'v200_test',
     actionType: 'other',
     source: 'v200:test',
@@ -184,6 +184,88 @@ describe('v2.0-b1 regional event ledger', () => {
     expect(JSON.stringify(resolution.regionalEventLedger)).not.toContain('春秋蝉');
     expect(JSON.stringify(resolution.regionalEventLedger)).not.toContain('重生');
     expect(JSON.stringify(resolution.regionalEventLedger)).not.toContain('回溯');
+  });
+
+  it('dedupes repeated regional event syncs across turns and carries source refs forward', () => {
+    const first = resolveV200WorldCoreRegionalEventLedgerSync({
+      livingWorldState: regionalLifeWorld(70),
+      routeLocationState: outerEdgeRoute(),
+      survivalEconomyState: survivalState(),
+      localActionLedger: localLedger('ledger_v200_turn_70', 70),
+      turn: 70,
+    });
+    const second = resolveV200WorldCoreRegionalEventLedgerSync({
+      livingWorldState: regionalLifeWorld(71),
+      routeLocationState: outerEdgeRoute(),
+      survivalEconomyState: survivalState(),
+      localActionLedger: localLedger('ledger_v200_turn_71', 71),
+      previousLedger: first.regionalEventLedger,
+      turn: 71,
+    });
+
+    const firstIds = first.regionalEventLedger.publicEvents.map(event => event.id);
+    const secondIds = second.regionalEventLedger.publicEvents.map(event => event.id);
+    const publicEventIds = new Set(secondIds);
+
+    expect(second.success).toBe(true);
+    expect(second.regionalEventLedger.publicEvents).toHaveLength(first.regionalEventLedger.publicEvents.length);
+    expect(second.regionalEventLedger.pendingFollowUps).toHaveLength(first.regionalEventLedger.pendingFollowUps.length);
+    expect(secondIds).toEqual(firstIds);
+    expect(second.regionalEventLedger.publicEvents.every(event => !/_t\d+$/.test(event.id))).toBe(true);
+    expect(second.regionalEventLedger.publicEvents.every(event => event.turn === 71)).toBe(true);
+    expect(second.regionalEventLedger.publicEvents[0].sourceActionRefs).toEqual(expect.arrayContaining([
+      'ledger_v200_turn_70',
+      'ledger_v200_turn_71',
+    ]));
+    expect(second.regionalEventLedger.pendingFollowUps.every(item => publicEventIds.has(item.eventId))).toBe(true);
+    expect(second.regionalEventLedger.sourceRefs).toEqual(expect.arrayContaining([
+      'v2.0.0-b2:regional-event-continuity-dedupe',
+    ]));
+    expect(second.regionalEventLedger.audit.notes.join('\n')).toContain('dedupes repeated regional event keys');
+  });
+
+  it('upgrades b1 turn-suffixed ledger ids into stable b2 event ids without duplicating events', () => {
+    const first = resolveV200WorldCoreRegionalEventLedgerSync({
+      livingWorldState: regionalLifeWorld(70),
+      routeLocationState: outerEdgeRoute(),
+      survivalEconomyState: survivalState(),
+      localActionLedger: localLedger('ledger_v200_legacy_seed', 70),
+      turn: 70,
+    });
+    const legacyIdByStableId = new Map<string, string>();
+    const legacyEvents = first.regionalEventLedger.publicEvents.map(event => {
+      const pressureId = event.id.replace('v200_event_', '');
+      const legacyId = `v200b1_${event.eventKind}_${pressureId}_t70`;
+      legacyIdByStableId.set(event.id, legacyId);
+      return { ...event, id: legacyId, turn: 70 };
+    });
+    const legacyFollowUps = first.regionalEventLedger.pendingFollowUps.map(item => ({
+      ...item,
+      id: `${item.id.replace('v200_followup_', 'v200b1_followup_')}_t70`,
+      eventId: legacyIdByStableId.get(item.eventId) || item.eventId,
+      turn: 70,
+    }));
+
+    const fromLegacy = resolveV200WorldCoreRegionalEventLedgerSync({
+      livingWorldState: regionalLifeWorld(72),
+      routeLocationState: outerEdgeRoute(),
+      survivalEconomyState: survivalState(),
+      localActionLedger: localLedger('ledger_v200_after_legacy', 72),
+      previousLedger: {
+        ...first.regionalEventLedger,
+        publicEvents: legacyEvents,
+        pendingFollowUps: legacyFollowUps,
+        lastUpdatedAtTurn: 70,
+      },
+      turn: 72,
+    });
+    const eventIds = new Set(fromLegacy.regionalEventLedger.publicEvents.map(event => event.id));
+
+    expect(fromLegacy.regionalEventLedger.publicEvents).toHaveLength(first.regionalEventLedger.publicEvents.length);
+    expect(fromLegacy.regionalEventLedger.publicEvents.every(event => event.id.startsWith('v200_event_'))).toBe(true);
+    expect(fromLegacy.regionalEventLedger.pendingFollowUps.every(item => item.id.startsWith('v200_followup_'))).toBe(true);
+    expect(fromLegacy.regionalEventLedger.pendingFollowUps.every(item => eventIds.has(item.eventId))).toBe(true);
+    expect(JSON.stringify(fromLegacy.regionalEventLedger)).not.toContain('v200b1_');
   });
 
   it('keeps empty defaults for new and old saves until WorldCore has visible regional evidence', () => {

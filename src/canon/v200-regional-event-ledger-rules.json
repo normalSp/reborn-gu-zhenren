@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceReview": {
-    "version": "v2.0.0-b1",
+    "version": "v2.0.0-b2",
     "intakeBaseline": "southern_border_low_rank_region_life_v2_prelude_slice",
     "sourcePolicy": "reviewed_source_pointer_only",
     "runtimePolicy": "WorldCore owns ledger facts; DeepSeek may only narrate."
@@ -106,7 +106,7 @@
       "canon_promotion"
     ],
     "visibleBoundaryLines": [
-      "v2.0-b1 只允许 WorldCore 写 regionalEventLedger。",
+      "v2.0-b2 仍只允许 WorldCore 写 regionalEventLedger。",
       "regionalEventLedger 只记录公开区域事件、压力、来源与待处理后续。",
       "DeepSeek 只能根据本地账本写叙事，不得写 ledger、地点、奖励、阵营或 NPC 生死。",
       "不新增 runFingerprint、regionalLifeState、areaLivingState、identityRouteState 或 professionState。",
