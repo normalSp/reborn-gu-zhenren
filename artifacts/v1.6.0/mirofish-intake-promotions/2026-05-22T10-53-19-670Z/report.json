@@ -1,0 +1,28 @@
+{
+  "version": "v1.6.0",
+  "mode": "report_only",
+  "knowledgeDir": "指导大纲/知识库/蛊真人",
+  "intakeRoot": "指导大纲/vMiroFish/intake-reviews",
+  "matrixFile": "指导大纲/v1.6.0/codex/00-总览/v1.6.0-测试矩阵.md",
+  "checkedAt": "2026-05-22T10:53:19.669Z",
+  "summary": {
+    "entries": 0,
+    "knowledgeFiles": 0,
+    "matrixIds": 22,
+    "acceptedForPromotionChainAudit": true,
+    "acceptedForRuntimeCanon": false,
+    "acceptedForDeepSeekVisibleContext": false,
+    "p0": 0,
+    "p1": 0,
+    "p2": 0,
+    "info": 1
+  },
+  "findings": [
+    {
+      "severity": "Info",
+      "code": "no_promoted_knowledge_entries",
+      "message": "No knowledge entries are present, so no promotion chain can be promoted or broken yet.",
+      "ref": "D:\\workspace\\CodeBuddyWorkSpace\\RebornG_codebuddy\\指导大纲\\知识库\\蛊真人"
+    }
+  ]
+}

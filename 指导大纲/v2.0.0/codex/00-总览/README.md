@@ -1,6 +1,6 @@
 # RebornG v2.0.0 Codex 当前入口
 
-状态：process-1 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接、去重、同开局 replay lane 对照、旧档/回滚可读性 review，并完成 P2 术语与正式凭信词 hardening。
+状态：process-2 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接、去重、同开局 replay lane 对照、旧档/回滚可读性 review、P2 术语与正式凭信词 hardening，并完成 rc 前长线漂移与知识库复核。
 日期：2026-05-22
 主题候选：第一个区域活世界入场门禁
 
@@ -12,9 +12,9 @@
 
 `第一个区域活世界：南疆早期低阶外缘小区域`
 
-当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀、b2 区域事件持续承接、b3 同开局差异对照、b4 旧档/回滚入口一致性和 process-1 P2 术语 hardening。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
+当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀、b2 区域事件持续承接、b3 同开局差异对照、b4 旧档/回滚入口一致性、process-1 P2 术语 hardening 和 process-2 长线漂移/知识库复核。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
 
-当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。process-1 只强化 DeepSeek 输出词面、evaluator 和 runtime dynamic context guard，不新增 `runFingerprint`、不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
+当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。process-1 只强化 DeepSeek 输出词面、evaluator 和 runtime dynamic context guard；process-2 只复核 drift / MiroFish / 知识库 / Player Advocate / 测试矩阵证据链。两者均不新增 `runFingerprint`、不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
 
 ## 当前入口文件
 
@@ -44,6 +44,8 @@
 - `v2.0.0-process-1-Player-Advocate-30轮走查记录.md`
 - `v2.0.0-process-1-长线叙事漂移检查记录.md`
 - `v2.0.0-process-1-Skill同步审计记录.md`
+- `v2.0.0-process-2-长线漂移与知识库复核.md`
+- `v2.0.0-process-2-Skill同步审计记录.md`
 - `v2.0.0-真相源索引.md`
 - `v2.0.0-测试矩阵.md`
 - `v2.0.0-MiroFish资料需求与交付协议.md`
@@ -107,10 +109,11 @@ v2.0-a1 继续暂缓：
 - b3 已完成同开局 replay lane 对照，不新增 `runFingerprint`；20 轮 live smoke 通过，P0/P1/P2 = 0/0/7。
 - b4 已完成旧档/回滚/入口一致性 review；20 轮 live smoke 通过，P0/P1/P2 = 0/0/3。
 - process-1 已完成 P2 术语与正式凭信词 hardening；20 轮 process1 live 严门通过，P0/P1/P2 = 0/0/0，retryAttemptCount = 3，recoveredRoundCount = 2。
+- process-2 已完成 rc 前长线漂移与知识库复核；b1-b4/process-1 Player Advocate 复核通过，knowledge/MiroFish scans 均为 P0/P1/P2=0/0/0，不需要新 MiroFish export 或知识库正文。
 - v2.0 rc 前 T3 320 total rounds，live 不低于 160 轮。
 
 ## 下一步
 
 建议下一刀进入：
 
-`v2.0.0-process-2-长线漂移与知识库复核`
+`v2.0.0-rc-T3长测与质量收束`
