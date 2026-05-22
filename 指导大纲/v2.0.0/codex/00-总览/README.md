@@ -1,6 +1,6 @@
 # RebornG v2.0.0 Codex 当前入口
 
-状态：b2 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接与去重。
+状态：b3 completed locally；v25 `regionalEventLedger` 已支持稳定事件键、跨回合承接、去重和同开局 replay lane 对照。
 日期：2026-05-22
 主题候选：第一个区域活世界入场门禁
 
@@ -12,9 +12,9 @@
 
 `第一个区域活世界：南疆早期低阶外缘小区域`
 
-当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀和 b2 区域事件持续承接。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
+当前已完成 v2.0 专家团启动会、a1 设计门禁、b1 runtime 第一刀、b2 区域事件持续承接和 b3 同开局差异对照。用户已批准 v2.0 主线、第一核心区域、v25 + 最小 `regionalEventLedger`、T3 320 轮硬门和继续禁止 RAG/BFF/子代理/formal outcome 等边界。
 
-当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。b2 在该字段内完成稳定去重，不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
+当前 runtime 已 bump `SAVE_FORMAT_VERSION = 25`，仅新增单一最小 `regionalEventLedger`。b3 在既有账本上派生同开局 replay lanes，不新增 `runFingerprint`、不新增字段、不新增 DeepSeek 权限、未新增后端、未启用子代理，未开放正式地点/阵营/奖励/NPC 生死。
 
 ## 当前入口文件
 
@@ -32,6 +32,10 @@
 - `v2.0.0-b2-Player-Advocate-30轮走查记录.md`
 - `v2.0.0-b2-长线叙事漂移检查记录.md`
 - `v2.0.0-b2-Skill同步审计记录.md`
+- `v2.0.0-b3-同开局差异与replay对照.md`
+- `v2.0.0-b3-Player-Advocate-30轮走查记录.md`
+- `v2.0.0-b3-长线叙事漂移检查记录.md`
+- `v2.0.0-b3-Skill同步审计记录.md`
 - `v2.0.0-真相源索引.md`
 - `v2.0.0-测试矩阵.md`
 - `v2.0.0-MiroFish资料需求与交付协议.md`
@@ -92,10 +96,11 @@ v2.0-a1 继续暂缓：
 - b2 已完成稳定事件键、跨回合去重、b1 旧 id 兼容升级和 20 轮 live smoke。
 - b1 已同一刀完成 migration/defaults/tests/rollback、30 轮 Player Advocate 和 20 轮 live smoke。
 - `runFingerprint`、正式区域状态、正式身份状态继续暂缓。
+- b3 已完成同开局 replay lane 对照，不新增 `runFingerprint`；20 轮 live smoke 通过，P0/P1/P2 = 0/0/7。
 - v2.0 rc 前 T3 320 total rounds，live 不低于 160 轮。
 
 ## 下一步
 
 建议下一刀进入：
 
-`v2.0.0-b3-同开局差异与replay对照`
+`v2.0.0-b4-UI可读性旧档回滚与入口一致性`

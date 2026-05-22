@@ -4,6 +4,7 @@ import {
   buildV200RegionalEventEnvelopes,
   resolveV200WorldCoreRegionalEventLedgerSync,
 } from '../../engine/v200-regional-event-ledger';
+import { buildV200SameStartReplayDiff } from '../../engine/v200-same-start-replay-diff';
 import type { RegionalPublicEventKind } from '../../types';
 
 const eventKindLabel: Record<RegionalPublicEventKind, string> = {
@@ -71,6 +72,10 @@ export function RegionalEventLedgerPanel() {
 
   const envelopes = useMemo(() => buildV200RegionalEventEnvelopes(input), [input]);
   const preview = useMemo(() => resolveV200WorldCoreRegionalEventLedgerSync(input), [input]);
+  const replayDiff = useMemo(() => buildV200SameStartReplayDiff({
+    ...input,
+    regionalEventLedger,
+  }), [input, regionalEventLedger]);
   const publicEvents = Array.isArray(regionalEventLedger?.publicEvents) ? regionalEventLedger.publicEvents : [];
   const pendingFollowUps = Array.isArray(regionalEventLedger?.pendingFollowUps) ? regionalEventLedger.pendingFollowUps : [];
   const canSync = envelopes.length > 0;
@@ -91,7 +96,7 @@ export function RegionalEventLedgerPanel() {
             </span>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">
-            v2.0-b2 将南疆早期低阶外缘的公开压力按稳定事件键承接，避免同类事件跨回合重复膨胀。
+            v2.0-b3 以稳定账本承接公开压力，并从同一开局中派生可对照的 replay lane。
           </p>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55">
             账本只记录公开事件、来源、压力和 pending follow-up；不记录 DeepSeek 原文、hidden body、正式地点、正式身份、奖励或 NPC 生死。
@@ -124,6 +129,33 @@ export function RegionalEventLedgerPanel() {
               {actionMessage}
             </p>
           )}
+        </div>
+
+        <div className="rounded-sm border border-rg-amber-400/25 bg-rg-amber-500/10 p-3" data-testid="v200-replay-diff-audit">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold text-rg-amber-100">同开局差异</p>
+              <p className="mt-1 text-[10px] text-rg-paper-200/55">
+                {replayDiff.statusLabel} · lane {replayDiff.audit.visibleLaneCount} · score {replayDiff.replayDiffScore}
+              </p>
+            </div>
+            <span className="rounded-sm border border-rg-amber-100/15 px-2 py-1 text-[10px] text-rg-paper-200/55">
+              no runFingerprint
+            </span>
+          </div>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/62">
+            {replayDiff.publicSummary}
+          </p>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/48">
+            当前 lane：{replayDiff.activeLaneId || '等待更多公开事件'}；差异只来自公开账本、pressure lane、玩家选择和叙事表达，不改稳定事实。
+          </p>
+          <div className="mt-2 grid gap-1.5 md:grid-cols-2">
+            {replayDiff.lanes.filter((lane: any) => lane.status === 'visible').slice(0, 4).map((lane: any) => (
+              <p key={lane.id} className="text-[10px] leading-relaxed text-rg-paper-200/58">
+                {lane.title}：{lane.nextStep}
+              </p>
+            ))}
+          </div>
         </div>
 
         <div className="grid gap-2 lg:grid-cols-2" data-testid="v200-ledger-event-list">
