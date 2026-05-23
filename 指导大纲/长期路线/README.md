@@ -1,7 +1,7 @@
 # RebornG 长期路线入口
 
 日期：2026-05-23
-状态：项目-owned 长期方向；不直接等同当前版本范围；v2.3 已完成，v2.4-b1 已完成，v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地并同步。
+状态：项目-owned 长期方向；不直接等同当前版本范围；v2.3 已完成，v2.4-b2 已完成，v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地并同步。
 
 ## 目录定位
 
@@ -47,11 +47,11 @@ RebornG 的最终体验目标：
 
 ## 当前阶段提醒
 
-`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。`v2.4.0` startup/a0 已开并完成，D-240/D-241/D-242 已获用户批准，a1 薄 BFF / private canon / eval archive 边界设计门禁、a2 external framework adapter / license-SBOM / self-learning 门禁和 b1 report-only 基础设施边界报告已完成；当前等待用户审批 D-249。继续 v2.4 前，先阅读 `Agent-Framework-Landscape-2026吸收矩阵.md` 和 `指导大纲/v2.4.0/codex/00-总览/README.md`，确认 Hermes/self-learning/外部框架只作为架构吸收与后续评估输入，不直接进入 runtime。
+`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。`v2.4.0` startup/a0 已开并完成，D-240/D-241/D-242/D-249 已获用户批准，a1 薄 BFF / private canon / eval archive 边界设计门禁、a2 external framework adapter / license-SBOM / self-learning 门禁、b1 report-only 基础设施边界报告和 b2 private canon / hidden leak 风险模型已完成；当前等待用户审批 D-259。继续 v2.4 前，先阅读 `Agent-Framework-Landscape-2026吸收矩阵.md` 和 `指导大纲/v2.4.0/codex/00-总览/README.md`，确认 Hermes/self-learning/外部框架只作为架构吸收与后续评估输入，不直接进入 runtime。
 
 当前建议顺序：
 
-1. 先审阅 `指导大纲/v2.4.0/codex/00-总览/`，确认 v2.4-a1/a2/b1 已完成和 D-249 待批范围。
+1. 先审阅 `指导大纲/v2.4.0/codex/00-总览/`，确认 v2.4-a1/a2/b1/b2 已完成和 D-259 待批范围。
 2. 再审阅 `Agent-Framework-Landscape-2026吸收矩阵.md`，确认 v2.4 前置外部框架吸收边界。
 3. 再审阅 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`，确认 v2.1-v2.9 到 v3.0 的路线节奏。
 4. 再审阅 `v2.0-v4.0-分层Agent与世界内核/`，作为更远期的分层 agent、WorldCore、BFF、高阶战斗和宿命/天道研究线。
