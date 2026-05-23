@@ -1,7 +1,7 @@
 # RebornG 长期路线入口
 
 日期：2026-05-23
-状态：项目-owned 长期方向；不直接等同当前版本范围；v2.3 已完成，v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地。
+状态：项目-owned 长期方向；不直接等同当前版本范围；v2.3 已完成，v2.4 startup 已开，v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地并同步。
 
 ## 目录定位
 
@@ -47,16 +47,17 @@ RebornG 的最终体验目标：
 
 ## 当前阶段提醒
 
-`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。进入 v2.4 专家团启动会前，先阅读 `Agent-Framework-Landscape-2026吸收矩阵.md`，确认 Hermes/self-learning/外部框架只作为架构吸收与后续评估输入，不直接进入 runtime。
+`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。`v2.4.0` startup 已开，当前等待用户审批 D-240。继续 v2.4 前，先阅读 `Agent-Framework-Landscape-2026吸收矩阵.md` 和 `指导大纲/v2.4.0/codex/00-总览/README.md`，确认 Hermes/self-learning/外部框架只作为架构吸收与后续评估输入，不直接进入 runtime。
 
 当前建议顺序：
 
-1. 先审阅 `指导大纲/v2.3.0/codex/00-总览/`，确认 v2.3 已完成 eval farm 与失败分类硬化。
+1. 先审阅 `指导大纲/v2.4.0/codex/00-总览/`，确认 v2.4 startup 和 D-240 待批范围。
 2. 再审阅 `Agent-Framework-Landscape-2026吸收矩阵.md`，确认 v2.4 前置外部框架吸收边界。
 3. 再审阅 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`，确认 v2.1-v2.9 到 v3.0 的路线节奏。
 4. 再审阅 `v2.0-v4.0-分层Agent与世界内核/`，作为更远期的分层 agent、WorldCore、BFF、高阶战斗和宿命/天道研究线。
-5. 研究线可以讨论任意身份、五域两天、NPC 思想、天道/宿命和蛊仙战斗，但不能自动变成 runtime 批准。
-6. 当前不把外部 AI 人生/跑团项目的“0 岁到多年人生模拟”作为近期可交付目标。RebornG 近期要解决的是 Agent Lab、权限边界、eval farm、BFF 边界和 v3.0 有限 runtime agent 准入。
+5. 必要时回查 `指导大纲/v2.3.0/codex/00-总览/`，确认 v2.3 eval farm 已完成。
+6. 研究线可以讨论任意身份、五域两天、NPC 思想、天道/宿命和蛊仙战斗，但不能自动变成 runtime 批准。
+7. 当前不把外部 AI 人生/跑团项目的“0 岁到多年人生模拟”作为近期可交付目标。RebornG 近期要解决的是 Agent Lab、权限边界、eval farm、BFF 边界和 v3.0 有限 runtime agent 准入。
 
 ## 当前架构提醒
 

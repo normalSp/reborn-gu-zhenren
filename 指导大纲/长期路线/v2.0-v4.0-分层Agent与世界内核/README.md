@@ -1,7 +1,7 @@
 # v2.0-v4.0 分层 Agent 与世界内核长期路线入口
 
-日期：2026-05-22
-状态：长期研究线第一批；不等同当前 v1.9 / v2.0 runtime scope。
+日期：2026-05-23
+状态：长期研究线；已与 `Agent Framework Landscape 2026` 同步；不等同当前 runtime scope。
 
 ## 定位
 
@@ -23,11 +23,24 @@
 - `v2.0-v4.0-分层Agent与世界内核可行性分析.md`
   - 回答能不能做、难度、收益、风险、成本、工作量、是否在造轮子。
 - `v2.0-v4.0-外部成果吸收矩阵.md`
-  - 说明 Generative Agents、Concordia、AI Town、Voyager、TextWorld、SOTOPIA、CICERO 等如何转化为 RebornG 自有制度。
+  - 说明 Generative Agents、Concordia、AI Town、Voyager、TextWorld、SOTOPIA、CICERO 等如何转化为 RebornG 自有制度；开源 agent framework 的当前覆盖层是 `../Agent-Framework-Landscape-2026吸收矩阵.md`。
 - `v2.0-v4.0-世界内核与Agent协作架构草案.md`
   - 设计世界内核、分层 agent、BFF、队列、知识库、eval farm 的高层协作。
 - `v2.0-v4.0-开放决策与版本路线草案.md`
   - 拆分 v2.0-v4.0 候选路线和未来需要用户拍板的关键问题。
+
+## 2026 Landscape 同步说明
+
+2026-05-23 已完成文档修正专项：
+
+- Hermes Agent 进入 P0 架构参考 / P1 隔离 PoC 候选。
+- Dify、Flowise、AutoGPT、Agno、Browser-use、LlamaIndex 进入 P1/P2 补充矩阵。
+- 评分口径改为“能否服务 RebornG 世界内核”，不按 star 排名。
+- self-learning 只允许 candidate-only：NPC 记忆候选、技能候选、eval 回流、trajectory 摘要。
+- 外部 framework adapter 只能输出 `AgentProposal` / report / candidate patch，不能直接写 runtime、canon、save、prompt、知识库正文或 DeepSeek visible context。
+- PoC、dependency、vendored subset、项目读取/写入、命令、patch artifact 和 git 权限仍需未来单独审批。
+
+当前开源 agent framework 判断以 `../Agent-Framework-Landscape-2026吸收矩阵.md` 为准；本目录内旧表保留为长期研究和论文映射，不作为 runtime 授权。
 
 ## 当前硬边界
 
@@ -39,6 +52,8 @@
 - 不新增 save 字段，不 bump `SAVE_FORMAT_VERSION`。
 - 不修改 DeepSeek prompt/context/model/authority。
 - 不启用子代理。
+- 不引入外部 agent framework 依赖、PoC、vendored subset、项目文件读写、命令执行、patch artifact 或 git 权限。
+- 不让 self-learning 直接修改 canon、runtime、save、prompt、知识库正文或 DeepSeek visible context。
 - 不导入全书知识库到 runtime 或 DeepSeek visible context。
 - 不开放正式地点、阵营、奖励、NPC 生死、canon promotion。
 - 不部署 EdgeOne。
