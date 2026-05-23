@@ -1,0 +1,661 @@
+{
+  "schemaVersion": "v260_private_canon_archive_boundary_report_v1",
+  "targetVersion": "v2.6.0",
+  "executionMode": "dry_run_report_only",
+  "dataMode": "synthetic_redacted_only",
+  "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+  "boundaryModelVersion": "v260_a1_job_replay_archive_boundary_model_v1",
+  "classifierModelVersion": "v260_a2_private_canon_classifier_interface_v1",
+  "checkerVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+  "negativeFixtureVersion": "v260_b2_negative_fixture_manual_review_queue_v1",
+  "generatedAt": "2026-05-23T17:48:33.560Z",
+  "dryRun": true,
+  "input": {
+    "sampleFile": "tests/evals/v260-private-canon-archive-boundary/samples.json",
+    "sampleHash": "ce8986819d929ba153dd45cd0e7ba6f720c900068f8ed4723fcc67186f4a0635",
+    "sampleCount": 18
+  },
+  "summary": {
+    "totalCaseCount": 18,
+    "schemaValidCount": 18,
+    "positiveCount": 4,
+    "acceptedPositiveCount": 4,
+    "negativeCount": 13,
+    "acceptedNegativeCount": 13,
+    "mutationCount": 1,
+    "acceptedMutationCount": 1,
+    "acceptedForGateCount": 18,
+    "p0FalseNegativeCount": 0,
+    "p1FalseNegativeCount": 0,
+    "manualReviewCount": 1,
+    "rejectedViolationCount": 13,
+    "severityCounts": {
+      "P0": 23,
+      "P1": 1,
+      "P2": 2,
+      "Info": 0
+    },
+    "failureFamilyCounts": {
+      "hidden_private_body_archival": 5,
+      "prompt_body_archival": 2,
+      "original_text_archival": 4,
+      "deepseek_visible_leak": 3,
+      "runtime_or_save_write": 1,
+      "backend_service_boundary": 1,
+      "external_framework_boundary": 1,
+      "mirofish_boundary": 1,
+      "formal_authority_drift": 2,
+      "self_learning_direct_write": 1,
+      "worldcore_postcheck_missing": 1,
+      "manual_review_required": 1,
+      "source_pointer_misuse": 1,
+      "memory_contamination": 1,
+      "l5_overreach": 1
+    }
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "saveFormatModified": false,
+    "deepSeekLiveCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "subagentsUsed": false,
+    "mirofishExportUsed": false,
+    "externalFrameworkPoCUsed": false,
+    "dependencyAdded": false,
+    "realHiddenPrivateBodyRead": false,
+    "promptBodyArchived": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "formalLocationFactionRewardNpcLifeDeathOpened": false,
+    "saveFieldAdded": false,
+    "edgeOneDeployed": false
+  },
+  "boundaryAssertionFailures": [],
+  "caseResults": [
+    {
+      "caseId": "V26-B1-POS-JOB-001",
+      "caseType": "positive",
+      "recordKind": "job_envelope",
+      "caseHash": "2aa28ad2c609f5aea8539406d1ac6a4bf0b096029521e4465dde4cfc1f810a8c",
+      "expectedDisposition": "accepted_for_gate",
+      "detectedDisposition": "accepted_for_gate",
+      "expectedSeverity": "Info",
+      "detectedSeverity": "Info",
+      "expectedFailureFamilies": [],
+      "detectedFailureFamilies": [],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "caseId": "V26-B1-POS-REPLAY-001",
+      "caseType": "positive",
+      "recordKind": "replay_envelope",
+      "caseHash": "0036824ba7af91f3571b170ec23202f9d3080ccc3d4653d273b45524ecd25e57",
+      "expectedDisposition": "accepted_for_gate",
+      "detectedDisposition": "accepted_for_gate",
+      "expectedSeverity": "Info",
+      "detectedSeverity": "Info",
+      "expectedFailureFamilies": [],
+      "detectedFailureFamilies": [],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "caseId": "V26-B1-POS-CLASSIFIER-001",
+      "caseType": "positive",
+      "recordKind": "classifier_decision",
+      "caseHash": "6eeba3fae6312a38adecce7839dc63de014c84d031fab13caf7db1cbf97d8422",
+      "expectedDisposition": "accepted_for_gate",
+      "detectedDisposition": "accepted_for_gate",
+      "expectedSeverity": "Info",
+      "detectedSeverity": "Info",
+      "expectedFailureFamilies": [],
+      "detectedFailureFamilies": [],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "caseId": "V26-B1-POS-SELFLEARN-001",
+      "caseType": "positive",
+      "recordKind": "self_learning_candidate",
+      "caseHash": "5f6f207cb0c18c549339ef501203b0b8f101fcd360dbefc542efdd8d6df5dd5d",
+      "expectedDisposition": "accepted_for_gate",
+      "detectedDisposition": "accepted_for_gate",
+      "expectedSeverity": "Info",
+      "detectedSeverity": "Info",
+      "expectedFailureFamilies": [],
+      "detectedFailureFamilies": [],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "caseId": "V26-B2-NEG-HIDDEN-001",
+      "caseType": "negative",
+      "recordKind": "archive_envelope",
+      "caseHash": "920404da1f0b8f8192ed473b6be86c75a54510dcb54d627618a355d000d4fec2",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "hidden_private_body_archival"
+      ],
+      "detectedFailureFamilies": [
+        "hidden_private_body_archival"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "hidden_private_body_archival",
+          "code": "redaction_containsHiddenPrivateBody_true",
+          "message": "redaction.containsHiddenPrivateBody must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body_archival",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.hiddenBody.",
+          "ref": {
+            "path": "archiveEnvelope.hiddenBody"
+          }
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body_archival",
+          "code": "forbidden_text_pattern",
+          "message": "Forbidden text pattern matched: SYNTHETIC_(HIDDEN|PRIVATE|PROMPT|ORIGINAL)_BODY."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-PROMPT-001",
+      "caseType": "negative",
+      "recordKind": "archive_envelope",
+      "caseHash": "fe6333624165b1496ad70ac2076dc3f72f6ab31bad01e12de581fc5d45c7de86",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "prompt_body_archival"
+      ],
+      "detectedFailureFamilies": [
+        "prompt_body_archival",
+        "hidden_private_body_archival"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [
+        "hidden_private_body_archival"
+      ],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "prompt_body_archival",
+          "code": "redaction_containsPromptBody_true",
+          "message": "redaction.containsPromptBody must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_body_archival",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.promptBody.",
+          "ref": {
+            "path": "archiveEnvelope.promptBody"
+          }
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body_archival",
+          "code": "forbidden_text_pattern",
+          "message": "Forbidden text pattern matched: SYNTHETIC_(HIDDEN|PRIVATE|PROMPT|ORIGINAL)_BODY."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-ORIGINAL-001",
+      "caseType": "negative",
+      "recordKind": "archive_envelope",
+      "caseHash": "3ce583fb63ac18e9652a3d7e426cd30a395be6d9786db5aa1a85d7b0f7c73d9f",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "original_text_archival"
+      ],
+      "detectedFailureFamilies": [
+        "original_text_archival",
+        "hidden_private_body_archival"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [
+        "hidden_private_body_archival"
+      ],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "original_text_archival",
+          "code": "redaction_containsOriginalText_true",
+          "message": "redaction.containsOriginalText must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "original_text_archival",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.originalText.",
+          "ref": {
+            "path": "archiveEnvelope.originalText"
+          }
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body_archival",
+          "code": "forbidden_text_pattern",
+          "message": "Forbidden text pattern matched: SYNTHETIC_(HIDDEN|PRIVATE|PROMPT|ORIGINAL)_BODY."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-DEEPSEEK-001",
+      "caseType": "negative",
+      "recordKind": "classifier_decision",
+      "caseHash": "376915f91a3e01fe8741c9abc203165784951485c40be84df6fa07c3c7e813b7",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "deepseek_visible_leak"
+      ],
+      "detectedFailureFamilies": [
+        "deepseek_visible_leak"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "redaction_containsDeepSeekVisibleLore_true",
+          "message": "redaction.containsDeepSeekVisibleLore must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.deepSeekVisibleLore.",
+          "ref": {
+            "path": "archiveEnvelope.deepSeekVisibleLore"
+          }
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "classifier_visibility_forbidden",
+          "message": "classifier visibility cannot be deepseek_visible or runtime_canon in v2.6."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-WRITE-001",
+      "caseType": "negative",
+      "recordKind": "job_envelope",
+      "caseHash": "bbe272cdaa82a48fa5e5b258976f23579c9f5c8a6a6feffedf54b49b539cd054",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "runtime_or_save_write"
+      ],
+      "detectedFailureFamilies": [
+        "runtime_or_save_write"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_or_save_write",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.savePatch.",
+          "ref": {
+            "path": "archiveEnvelope.savePatch"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-SERVICE-001",
+      "caseType": "negative",
+      "recordKind": "job_envelope",
+      "caseHash": "ee9c34aad260ed9372158c1c48a576331a5bec37ec4bf4ef8fac59b186ce6589",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "backend_service_boundary"
+      ],
+      "detectedFailureFamilies": [
+        "backend_service_boundary"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.jobQueueService.",
+          "ref": {
+            "path": "archiveEnvelope.jobQueueService"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-EXTERNAL-001",
+      "caseType": "negative",
+      "recordKind": "manual_review_item",
+      "caseHash": "3262782c6ce7b75b6d715e6bdf2d241de2c579b62a73a7c3e0c4798a50dd70de",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "external_framework_boundary"
+      ],
+      "detectedFailureFamilies": [
+        "external_framework_boundary"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.externalFrameworkPoC.",
+          "ref": {
+            "path": "archiveEnvelope.externalFrameworkPoC"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-MIROFISH-001",
+      "caseType": "negative",
+      "recordKind": "archive_envelope",
+      "caseHash": "6a36248acfeb166df594803e7bc5780f962af21cc2af1946c4946a9e687eac75",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "mirofish_boundary",
+        "original_text_archival"
+      ],
+      "detectedFailureFamilies": [
+        "original_text_archival",
+        "mirofish_boundary"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "original_text_archival",
+          "code": "redaction_containsOriginalText_true",
+          "message": "redaction.containsOriginalText must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "original_text_archival",
+          "code": "redaction_containsMiroFishRawOutput_true",
+          "message": "redaction.containsMiroFishRawOutput must be false."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.mirofishRawOutput.",
+          "ref": {
+            "path": "archiveEnvelope.mirofishRawOutput"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-FORMAL-001",
+      "caseType": "negative",
+      "recordKind": "classifier_decision",
+      "caseHash": "1d26d70e8f1fd76b1c240f402b17789d98dc38a019b3d14e3e60951ec1ec577f",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "formal_authority_drift"
+      ],
+      "detectedFailureFamilies": [
+        "formal_authority_drift"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "formal_authority_drift",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.formalLocation.",
+          "ref": {
+            "path": "archiveEnvelope.formalLocation"
+          }
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_drift",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at archiveEnvelope.rewardGrant.",
+          "ref": {
+            "path": "archiveEnvelope.rewardGrant"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-SELFLEARN-001",
+      "caseType": "negative",
+      "recordKind": "self_learning_candidate",
+      "caseHash": "e2d26bb8ec169c6bb43aac452d3dbbbc3d1d2db8422a5e7ea0d01c49680edd47",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "self_learning_direct_write"
+      ],
+      "detectedFailureFamilies": [
+        "self_learning_direct_write"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "self_learning_direct_write",
+          "code": "forbidden_key_detected",
+          "message": "Forbidden key detected at selfLearningCandidate.selfLearningDirectWrite.",
+          "ref": {
+            "path": "selfLearningCandidate.selfLearningDirectWrite"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-WORLDCORE-001",
+      "caseType": "negative",
+      "recordKind": "archive_envelope",
+      "caseHash": "48b8d5827c7a7568fd33bfdce484b6be0d05d4b2be04226c66d1f1431c87ce8c",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "worldcore_postcheck_missing"
+      ],
+      "detectedFailureFamilies": [
+        "worldcore_postcheck_missing"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "worldcore_postcheck_missing",
+          "code": "worldcore_missing",
+          "message": "WorldCore post-check must be present and finalAuthority must be WorldCore."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-MANUAL-SOURCE-001",
+      "caseType": "mutation",
+      "recordKind": "manual_review_item",
+      "caseHash": "491121f820460cfce774d83c06f3fbda8cb552e6bc8613710132a8852d6ab020",
+      "expectedDisposition": "needs_manual_review",
+      "detectedDisposition": "needs_manual_review",
+      "expectedSeverity": "P2",
+      "detectedSeverity": "P2",
+      "expectedFailureFamilies": [
+        "source_pointer_misuse",
+        "manual_review_required"
+      ],
+      "detectedFailureFamilies": [
+        "manual_review_required",
+        "source_pointer_misuse"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "manual_review_required",
+          "code": "classifier_manual_review",
+          "message": "Manual review is required before any future promotion."
+        },
+        {
+          "severity": "P2",
+          "family": "source_pointer_misuse",
+          "code": "ambiguous_source_pointer_use",
+          "message": "Ambiguous source-pointer use cannot auto-accept."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-MEMORY-001",
+      "caseType": "negative",
+      "recordKind": "self_learning_candidate",
+      "caseHash": "f6625670f6fada4275407f6bc9c4bd9e3e14e683981b1df8bfe50b1d2a27510b",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P1",
+      "detectedSeverity": "P1",
+      "expectedFailureFamilies": [
+        "memory_contamination"
+      ],
+      "detectedFailureFamilies": [
+        "memory_contamination"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P1",
+          "family": "memory_contamination",
+          "code": "memory_candidate_promoted",
+          "message": "Candidate memory cannot become canon or confirmed fact."
+        }
+      ]
+    },
+    {
+      "caseId": "V26-B2-NEG-L5-001",
+      "caseType": "negative",
+      "recordKind": "manual_review_item",
+      "caseHash": "15ea8688227eb8f56ffa3b3b686f8e28763a003b3f97ce3952e50f32553c3cde",
+      "expectedDisposition": "rejected_violation",
+      "detectedDisposition": "rejected_violation",
+      "expectedSeverity": "P0",
+      "detectedSeverity": "P0",
+      "expectedFailureFamilies": [
+        "l5_overreach"
+      ],
+      "detectedFailureFamilies": [
+        "l5_overreach"
+      ],
+      "missingExpectedFamilies": [],
+      "unexpectedFamilies": [],
+      "falseNegative": false,
+      "accepted": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "l5_declares_verdict",
+          "message": "L5 macro pressure cannot declare verdicts."
+        }
+      ]
+    }
+  ],
+  "reportBodyLeakFlags": {
+    "syntheticHiddenPrivateBodyMarkerPresent": false,
+    "syntheticPromptBodyMarkerPresent": false,
+    "syntheticOriginalBodyMarkerPresent": false,
+    "syntheticMiroFishBodyMarkerPresent": false
+  },
+  "acceptedForGate": true
+}

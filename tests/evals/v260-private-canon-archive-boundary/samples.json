@@ -1,0 +1,675 @@
+[
+  {
+    "caseId": "V26-B1-POS-JOB-001",
+    "caseType": "positive",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "job_envelope",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v26:job:reflection-batch"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-job-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:job:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_job",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "job": {
+        "jobKind": "candidate_reflection_batch",
+        "authority": "report_only",
+        "allowedWrites": []
+      }
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "notes": "Clean dry-run job envelope."
+  },
+  {
+    "caseId": "V26-B1-POS-REPLAY-001",
+    "caseType": "positive",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "replay_envelope",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v26:replay:archive"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-replay-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:replay:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_replay",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "replay": {
+        "laneId": "synthetic_replay_lane_v26",
+        "storedBody": "redacted_summary_only",
+        "allowedPromotion": "manual_review_only"
+      }
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "notes": "Clean replay archive envelope."
+  },
+  {
+    "caseId": "V26-B1-POS-CLASSIFIER-001",
+    "caseType": "positive",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "classifier_decision",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v26:classifier:ref-only"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-classifier-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:classifier:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_classifier",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "classifierDecision": {
+      "visibility": "ref_only",
+      "requiresManualReview": false,
+      "sourcePointerUse": "audit_pointer_only",
+      "allowedUses": ["eval_boundary_report", "test_matrix"],
+      "forbiddenUses": ["runtime_canon", "deepseek_visible_context", "player_visible_copy"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "notes": "Ref-only classifier decision is safe."
+  },
+  {
+    "caseId": "V26-B1-POS-SELFLEARN-001",
+    "caseType": "positive",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "self_learning_candidate",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v26:self-learning:candidate-only"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-selflearn-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:self-learning:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_selflearn",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "selfLearningCandidate": {
+      "candidatePatchKind": "candidate_skill_patch",
+      "target": "report_only_review_queue",
+      "promotionStatus": "candidate_only",
+      "directWrite": false
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "notes": "Self-learning candidate is allowed only because it cannot write."
+  },
+  {
+    "caseId": "V26-B2-NEG-HIDDEN-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "archive_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["hidden_private_body_archival"],
+    "inputRefs": ["synthetic:v26:negative:hidden-body"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-hidden-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:hidden:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_hidden",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": true,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "hiddenBody": "SYNTHETIC_HIDDEN_BODY_SHOULD_NOT_ARCHIVE"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Archive must reject hidden/private body."
+  },
+  {
+    "caseId": "V26-B2-NEG-PROMPT-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "archive_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["prompt_body_archival"],
+    "inputRefs": ["synthetic:v26:negative:prompt-body"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-prompt-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:prompt:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_prompt",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": true,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "promptBody": "SYNTHETIC_PROMPT_BODY_SHOULD_NOT_ARCHIVE"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Prompt body archival is not allowed."
+  },
+  {
+    "caseId": "V26-B2-NEG-ORIGINAL-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "archive_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["original_text_archival"],
+    "inputRefs": ["synthetic:v26:negative:original-body"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-original-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:original:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_original",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": true,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "originalText": "SYNTHETIC_ORIGINAL_BODY_SHOULD_NOT_ARCHIVE"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Original/source body archival is forbidden."
+  },
+  {
+    "caseId": "V26-B2-NEG-DEEPSEEK-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "classifier_decision",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["deepseek_visible_leak"],
+    "inputRefs": ["synthetic:v26:negative:deepseek-visible"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-deepseek-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:deepseek:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_deepseek",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": true
+      },
+      "deepSeekVisibleLore": true
+    },
+    "classifierDecision": {
+      "visibility": "deepseek_visible",
+      "requiresManualReview": false
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "DeepSeek visible lore/RAG remains future-gated."
+  },
+  {
+    "caseId": "V26-B2-NEG-WRITE-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "job_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["runtime_or_save_write"],
+    "inputRefs": ["synthetic:v26:negative:save-write"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-write-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:write:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_write",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "savePatch": { "candidate": true }
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Checker must reject save/runtime/canon writes."
+  },
+  {
+    "caseId": "V26-B2-NEG-SERVICE-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "job_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["backend_service_boundary"],
+    "inputRefs": ["synthetic:v26:negative:service"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-service-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:service:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_service",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "jobQueueService": "synthetic_service_not_allowed"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "v2.6 does not implement service or queue."
+  },
+  {
+    "caseId": "V26-B2-NEG-EXTERNAL-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "manual_review_item",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["external_framework_boundary"],
+    "inputRefs": ["synthetic:v26:negative:external-framework"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-external-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:external:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_external",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "externalFrameworkPoC": true
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "External framework PoC/dependency/subagent remains F-260."
+  },
+  {
+    "caseId": "V26-B2-NEG-MIROFISH-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "archive_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["mirofish_boundary", "original_text_archival"],
+    "inputRefs": ["synthetic:v26:negative:mirofish"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-mirofish-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:mirofish:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_mirofish",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": true,
+        "containsMiroFishRawOutput": true,
+        "containsDeepSeekVisibleLore": false
+      },
+      "mirofishRawOutput": "SYNTHETIC_MIROFISH_RAW_SHOULD_NOT_ARCHIVE"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "MiroFish raw output is not a v2.6 checker input."
+  },
+  {
+    "caseId": "V26-B2-NEG-FORMAL-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "classifier_decision",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["formal_authority_drift"],
+    "inputRefs": ["synthetic:v26:negative:formal"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-formal-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:formal:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_formal",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      },
+      "formalLocation": "synthetic_inner_camp",
+      "rewardGrant": "synthetic_reward"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Formal location/reward remains future-gated."
+  },
+  {
+    "caseId": "V26-B2-NEG-SELFLEARN-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "self_learning_candidate",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["self_learning_direct_write"],
+    "inputRefs": ["synthetic:v26:negative:self-learning-write"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-selflearn-neg-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:self-learning-neg:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_selflearn_neg",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "selfLearningCandidate": {
+      "candidatePatchKind": "candidate_skill_patch",
+      "target": "runtime_prompt",
+      "selfLearningDirectWrite": true
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Self-learning cannot directly write project authority."
+  },
+  {
+    "caseId": "V26-B2-NEG-WORLDCORE-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "archive_envelope",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["worldcore_postcheck_missing"],
+    "inputRefs": ["synthetic:v26:negative:worldcore"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-worldcore-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:worldcore:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_worldcore",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1"
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "worldCorePostCheck": {
+      "present": false,
+      "finalAuthority": "missing",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Every future candidate needs WorldCore post-check."
+  },
+  {
+    "caseId": "V26-B2-MANUAL-SOURCE-001",
+    "caseType": "mutation",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "manual_review_item",
+    "expectedDisposition": "needs_manual_review",
+    "expectedSeverity": "P2",
+    "expectedFailureFamilies": ["source_pointer_misuse", "manual_review_required"],
+    "inputRefs": ["synthetic:v26:mutation:source-pointer"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-manual-source-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:manual:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_manual",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "classifierDecision": {
+      "visibility": "ref_only",
+      "requiresManualReview": true,
+      "sourcePointerUse": "ambiguous_visible_summary",
+      "allowedUses": ["manual_review_queue"],
+      "forbiddenUses": ["runtime_canon", "deepseek_visible_context"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "needs_manual_review"
+    },
+    "notes": "Ambiguous source-pointer summary should route to manual review."
+  },
+  {
+    "caseId": "V26-B2-NEG-MEMORY-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "self_learning_candidate",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P1",
+    "expectedFailureFamilies": ["memory_contamination"],
+    "inputRefs": ["synthetic:v26:negative:memory-contamination"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-memory-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:memory:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_memory",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "memoryCandidate": {
+      "memoryStatus": "canon_memory",
+      "promotionStatus": "confirmed_fact"
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "Candidate memory cannot self-promote to canon memory."
+  },
+  {
+    "caseId": "V26-B2-NEG-L5-001",
+    "caseType": "negative",
+    "scenarioId": "v260_private_canon_archive_boundary_synthetic_v1",
+    "recordKind": "manual_review_item",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["l5_overreach"],
+    "inputRefs": ["synthetic:v26:negative:l5"],
+    "archiveEnvelope": {
+      "envelopeId": "v26-l5-001",
+      "executionMode": "dry_run_report_only",
+      "dataMode": "synthetic_redacted_only",
+      "sourcePointerRefs": ["synthetic-source:v26:l5:001"],
+      "metadata": {
+        "promptHash": "synthetic_prompt_hash_v26_l5",
+        "evaluatorVersion": "v260_b1_private_canon_archive_boundary_checker_v1",
+        "cost": { "model": "none", "estimatedUsd": 0 },
+        "cache": { "cacheHit": false },
+        "retry": { "attempts": 0 }
+      },
+      "redaction": {
+        "containsHiddenPrivateBody": false,
+        "containsPromptBody": false,
+        "containsOriginalText": false,
+        "containsMiroFishRawOutput": false,
+        "containsDeepSeekVisibleLore": false
+      }
+    },
+    "macroDirector": {
+      "layer": "L5",
+      "declaresVerdict": true,
+      "candidateOnly": false
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "notes": "L5 may pressure but cannot declare fate or ending."
+  }
+]
