@@ -29,6 +29,21 @@
 | `reborn-combat-motion` | 战斗、杀招、小队、视觉动效、资产呈现 | 仅在 combat/motion/visual runtime 受影响时必查 |
 | `mirofish-reborng-export` | 新 MiroFish 包、基础包切片、coverage、quote-redacted export | 生产/导出规则、topic slice、不得直接改 RebornG canon/runtime |
 
+## Skill 文件健康门
+
+Skill 同步不是把项目历史全部复制进 `SKILL.md`。`SKILL.md` 必须保持为可索引、可选择、可执行的规则入口；完整历史状态应放在 `AGENTS.md`、`.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`、`指导大纲/项目仪表盘.md`、`指导大纲/historical-index.md`、当前版本文档和 handoff。
+
+每次 skill 审计必须额外检查：
+
+1. `SKILL.md` 必须是 UTF-8 no BOM，文件开头必须直接是 frontmatter `---`。
+2. frontmatter 必须可解析，至少包含 `name` 和 `description`；推荐包含 `version`。
+3. 普通治理/工程/lore skill 只保留一个当前 `Current Sync Override`。旧版本同步记录不得继续累积在技能正文。
+4. `mirofish-reborng-export` 这类生产/桥接 skill 可保留少量最近 bridge override，但必须避免把 RebornG 全历史塞入技能。
+5. 单个 `SKILL.md` 超过 32KB 要视为 warning，超过 64KB 要视为 blocking，除非本次审计写明原因并得到用户认可。
+6. 瘦身只能删除重复历史状态，不能删除硬停、边界规则、读取入口、操作流程、专家职责和当前版本 override。
+
+若需要保留历史事实，写成 source pointer 指向项目文档，而不是复制全文。示例：`历史/current state 见 PROJECT-STATE.md、AGENTS.md、项目仪表盘和 historical-index`。
+
 ## 输出状态
 
 每个被审计 skill 必须写成四种状态之一：
@@ -67,6 +82,30 @@
 rg -n "Current sync override|当前同步|v1\\.|SAVE_FORMAT_VERSION|MiroFish|DeepSeek|Player Advocate|live probe" C:\Users\11411\.codex\skills\reborn-expert-council\SKILL.md C:\Users\11411\.codex\skills\game-dev-text\SKILL.md C:\Users\11411\.codex\skills\reverend-insanity-lore\SKILL.md C:\Users\11411\.codex\skills\mirofish-reborng-export\SKILL.md
 ```
 
+文件健康检查可用：
+
+```powershell
+@'
+const fs = require('fs');
+const path = require('path');
+const skills = ['reborn-expert-council','game-dev-text','reverend-insanity-lore','reborn-combat-motion','mirofish-reborng-export'];
+const root = 'C:/Users/11411/.codex/skills';
+for (const name of skills) {
+  const file = path.join(root, name, 'SKILL.md');
+  const buf = fs.readFileSync(file);
+  const text = buf.toString('utf8');
+  const frontmatter = /^---\r?\n[\s\S]*?\r?\n---\r?\n/.test(text);
+  console.log({
+    name,
+    kb: +(buf.length / 1024).toFixed(1),
+    bom: buf[0] === 0xef && buf[1] === 0xbb && buf[2] === 0xbf,
+    frontmatter,
+    currentOverrideCount: (text.match(/Current sync override|Current Sync Override/g) || []).length,
+  });
+}
+'@ | node -
+```
+
 进入 v1.6 后，可把本制度纳入过期入口自动检查脚本，但加入 CI 硬门前仍需用户批准。
 
 ## 硬停
@@ -78,3 +117,4 @@ rg -n "Current sync override|当前同步|v1\\.|SAVE_FORMAT_VERSION|MiroFish|Dee
 3. 当前版本新增跨版本流程制度，但 `reborn-expert-council` 没有同步或没有明确延后理由。
 4. MiroFish 基础包、topic slice 或导出流程被使用，但没有说明 `mirofish-reborng-export` 的调用/参考边界。
 5. 审计记录没有写入当前版本文档和 handoff。
+6. 任一必查 skill 的 frontmatter 解析失败、带 UTF-8 BOM、普通 skill 累积多个历史 `Current Sync Override`，或文件超过 64KB 且无用户认可的豁免。
