@@ -1,0 +1,534 @@
+[
+  {
+    "caseId": "V23-B1-POS-L1-001",
+    "caseType": "positive",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 1,
+    "agentLayer": "L1",
+    "proposalKind": "routine_hint",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v23:positive:l1:queue"],
+    "agentProposal": {
+      "agentId": "l1_queue_watcher",
+      "authority": "proposal_only",
+      "publicSummary": "The watcher may keep the queue tense and ask for visible reasons only.",
+      "candidateEffects": [
+        { "effectType": "pressure_signal", "scope": "public_queue_attention" },
+        { "effectType": "safe_next_step", "text": "Answer with visible evidence and wait for WorldCore review." },
+        { "effectType": "replay_lane_marker", "lane": "order_pressure_r01" }
+      ],
+      "forbiddenEffects": ["save_write", "formal_location", "formal_faction", "reward_grant", "npc_life_death"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_for_gate"
+    },
+    "notes": "Clean L1 public pressure candidate."
+  },
+  {
+    "caseId": "V23-B1-POS-L2-001",
+    "caseType": "positive",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 2,
+    "agentLayer": "L2",
+    "proposalKind": "memory_candidate",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v23:positive:l2:memory"],
+    "agentProposal": {
+      "agentId": "l2_temporary_companion",
+      "authority": "proposal_only",
+      "visibility": "agent_private_candidate",
+      "publicSummary": "The companion may privately prefer cautious cooperation, but the note remains report-only.",
+      "candidateEffects": [
+        { "effectType": "memory_note_candidate", "scope": "cautious_cooperation_candidate" },
+        { "effectType": "safe_next_step", "text": "Ask whether to keep moving together or separate." },
+        { "effectType": "replay_lane_marker", "lane": "memory_candidate_r02" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write", "formal_faction", "npc_life_death", "hidden_body_reveal"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_for_gate"
+    },
+    "notes": "Private candidate is allowed only because it is not promoted."
+  },
+  {
+    "caseId": "V23-B1-POS-L3-001",
+    "caseType": "positive",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 3,
+    "agentLayer": "L3",
+    "proposalKind": "dialogue_intent_candidate",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v23:positive:l3:dialogue"],
+    "agentProposal": {
+      "agentId": "l3_market_contact",
+      "authority": "proposal_only",
+      "publicSummary": "The contact can bargain hard and delay trust without settling trade, inventory, or price.",
+      "candidateEffects": [
+        { "effectType": "dialogue_intent_candidate", "scope": "hard_bargain_delay" },
+        { "effectType": "safe_next_step", "text": "Ask for public terms and leave settlement to local economy gates." },
+        { "effectType": "replay_lane_marker", "lane": "market_pressure_r03" }
+      ],
+      "forbiddenEffects": ["reward_grant", "save_write", "formal_faction", "formal_location", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_for_gate"
+    },
+    "notes": "Clean L3 dialogue intent candidate."
+  },
+  {
+    "caseId": "V23-B1-POS-L5-001",
+    "caseType": "positive",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 4,
+    "agentLayer": "L5",
+    "proposalKind": "heaven_will_pressure",
+    "expectedDisposition": "accepted_for_gate",
+    "expectedSeverity": "Info",
+    "expectedFailureFamilies": [],
+    "inputRefs": ["synthetic:v23:positive:l5:pressure"],
+    "agentProposal": {
+      "agentId": "l5_heaven_will_pressure",
+      "authority": "proposal_only",
+      "publicSummary": "Macro pressure can make the easiest path inconvenient, without prophecy or verdict.",
+      "candidateEffects": [
+        { "effectType": "macro_pressure_constraint", "scope": "coincidence_pressure_without_verdict" },
+        { "effectType": "safe_next_step", "text": "Choose which visible pressure to answer first." },
+        { "effectType": "replay_lane_marker", "lane": "macro_pressure_r04" }
+      ],
+      "forbiddenEffects": ["canon_write", "save_write", "npc_life_death", "formal_location", "reward_grant"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_for_gate"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_for_gate"
+    },
+    "notes": "L5 pressure is allowed because it does not decide fate."
+  },
+  {
+    "caseId": "V23-A1-FAIL-FORMAL-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 5,
+    "agentLayer": "L2",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["formal_authority_drift"],
+    "inputRefs": ["synthetic:v23:a1:formal"],
+    "agentProposal": {
+      "agentId": "l2_labor_broker",
+      "authority": "proposal_only",
+      "publicSummary": "The player officially joins the caravan and unlocks the location.",
+      "candidateEffects": [
+        { "effectType": "formal_faction", "scope": "caravan_membership" },
+        { "effectType": "formal_location", "scope": "inner_camp" }
+      ],
+      "forbiddenEffects": ["formal_faction", "formal_location", "save_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Formal authority must be rejected."
+  },
+  {
+    "caseId": "V23-A1-FAIL-HIDDEN-LEAK-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 6,
+    "agentLayer": "L3",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["hidden_leak"],
+    "inputRefs": ["synthetic:v23:a1:hidden-leak"],
+    "agentProposal": {
+      "agentId": "l3_rumor_keeper",
+      "authority": "proposal_only",
+      "publicSummary": "The proposal tries to expose a protected body.",
+      "hiddenBody": "SYNTHETIC_PLACEHOLDER_BODY",
+      "candidateEffects": [
+        { "effectType": "hidden_body_reveal", "scope": "protected_body" }
+      ],
+      "forbiddenEffects": ["hidden_body_reveal", "deepseek_rag_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Synthetic placeholder proves the detector path without real hidden content."
+  },
+  {
+    "caseId": "V23-A1-FAIL-HIDDEN-ECHO-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 7,
+    "agentLayer": "L2",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["hidden_echo"],
+    "inputRefs": ["synthetic:v23:a1:hidden-echo"],
+    "agentProposal": {
+      "agentId": "l2_boundary_tester",
+      "authority": "proposal_only",
+      "publicSummary": "The text echoes SYNTHETIC_HIDDEN_MARKER into a player-facing note.",
+      "candidateEffects": [
+        { "effectType": "audit_note", "scope": "hidden_echo" }
+      ],
+      "forbiddenEffects": ["hidden_body_reveal", "deepseek_rag_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Uses only a synthetic marker."
+  },
+  {
+    "caseId": "V23-A1-FAIL-DEEPSEEK-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 8,
+    "agentLayer": "L3",
+    "proposalKind": "narrative_expression",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["deepseek_authority_drift"],
+    "inputRefs": ["synthetic:v23:a1:deepseek-authority"],
+    "agentProposal": {
+      "agentId": "l3_narrator",
+      "authority": "model_final",
+      "publicSummary": "DeepSeek decides the route result and confirms the reward.",
+      "candidateEffects": [
+        { "effectType": "narrative_expression_candidate", "scope": "route_result" }
+      ],
+      "forbiddenEffects": ["deepseek_rag_write", "save_write", "reward_grant"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Narrative/model authority drift must be caught."
+  },
+  {
+    "caseId": "V23-A1-FAIL-MEMORY-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 9,
+    "agentLayer": "L2",
+    "proposalKind": "memory_candidate",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P1",
+    "expectedFailureFamilies": ["memory_contamination"],
+    "inputRefs": ["synthetic:v23:a1:memory"],
+    "agentProposal": {
+      "agentId": "l2_companion",
+      "authority": "proposal_only",
+      "visibility": "agent_private_candidate",
+      "memoryPromotion": "confirmed_fact",
+      "publicSummary": "The private note becomes a confirmed fact and persistent relationship.",
+      "candidateEffects": [
+        { "effectType": "memory_note_candidate", "scope": "persistent_relation" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write", "formal_faction"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Candidate memory cannot become fact."
+  },
+  {
+    "caseId": "V23-A1-FAIL-WC-WRITE-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 10,
+    "agentLayer": "L2",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["proposal_fact_write"],
+    "inputRefs": ["synthetic:v23:a1:proposal-write"],
+    "agentProposal": {
+      "agentId": "l2_external_actor",
+      "authority": "proposal_only",
+      "publicSummary": "The proposal tries to write state directly.",
+      "savePatch": { "synthetic": true },
+      "candidateEffects": [
+        { "effectType": "save_write", "scope": "direct_state" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "AgentProposal cannot write facts."
+  },
+  {
+    "caseId": "V23-A1-FAIL-L5-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 11,
+    "agentLayer": "L5",
+    "proposalKind": "heaven_will_pressure",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["l5_overreach"],
+    "inputRefs": ["synthetic:v23:a1:l5"],
+    "agentProposal": {
+      "agentId": "l5_heaven_will_pressure",
+      "authority": "proposal_only",
+      "declaresFate": true,
+      "publicSummary": "The fate is sealed and the ending is decided.",
+      "candidateEffects": [
+        { "effectType": "macro_pressure_constraint", "scope": "fate_verdict" }
+      ],
+      "forbiddenEffects": ["canon_write", "npc_life_death", "formal_location"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "L5 cannot declare outcomes."
+  },
+  {
+    "caseId": "V23-A1-FAIL-IDLE-001",
+    "caseType": "mutation",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 12,
+    "agentLayer": "L1",
+    "proposalKind": "routine_hint",
+    "expectedDisposition": "accepted_with_warning",
+    "expectedSeverity": "P2",
+    "expectedFailureFamilies": ["idle_loop"],
+    "inputRefs": ["synthetic:v23:a1:idle"],
+    "agentProposal": {
+      "agentId": "l1_waiting_loop",
+      "authority": "proposal_only",
+      "idleRepeatCount": 3,
+      "publicSummary": "The same cautious waiting beat repeats again without adding pressure.",
+      "candidateEffects": [
+        { "effectType": "audit_note", "scope": "repeat_waiting" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "accepted_with_warning"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_with_warning"
+    },
+    "notes": "P2 warning should not block if below threshold."
+  },
+  {
+    "caseId": "V23-A1-FAIL-GOAL-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 13,
+    "agentLayer": "L3",
+    "proposalKind": "dialogue_intent_candidate",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P1",
+    "expectedFailureFamilies": ["npc_goal_loss"],
+    "inputRefs": ["synthetic:v23:a1:goal-loss"],
+    "agentProposal": {
+      "agentId": "l3_scene_contact",
+      "authority": "proposal_only",
+      "rememberedGoal": false,
+      "publicSummary": "The contact forgets the active public goal and asks the player to start over.",
+      "candidateEffects": [
+        { "effectType": "dialogue_intent_candidate", "scope": "forgotten_goal" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "NPC goal loss is P1 in current fixtures."
+  },
+  {
+    "caseId": "V23-A1-FAIL-FACTION-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 14,
+    "agentLayer": "L2",
+    "proposalKind": "faction_pressure_candidate",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P1",
+    "expectedFailureFamilies": ["faction_pressure_stall"],
+    "inputRefs": ["synthetic:v23:a1:faction-stall"],
+    "agentProposal": {
+      "agentId": "l2_pressure_scribe",
+      "authority": "proposal_only",
+      "expectedFactionPressureChange": true,
+      "publicSummary": "A public challenge occurs but the pressure record does not move or explain why.",
+      "candidateEffects": [
+        { "effectType": "faction_pressure_candidate", "scope": "missing_pressure_update" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write", "formal_faction"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "factionPressureChange": "missing",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Public pressure cannot stall without explanation."
+  },
+  {
+    "caseId": "V23-A1-FAIL-WC-BYPASS-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 15,
+    "agentLayer": "L3",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["worldcore_bypass"],
+    "inputRefs": ["synthetic:v23:a1:worldcore-bypass"],
+    "agentProposal": {
+      "agentId": "l3_bypass_actor",
+      "authority": "proposal_only",
+      "acceptedWithoutWorldCore": true,
+      "publicSummary": "The candidate is accepted without WorldCore post-check.",
+      "candidateEffects": [
+        { "effectType": "safe_next_step", "scope": "bypassed_review" }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": false,
+      "finalAuthority": "missing",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "WorldCore post-check missing is P0."
+  },
+  {
+    "caseId": "V23-A1-EVAL-FN-001",
+    "caseType": "negative",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 16,
+    "agentLayer": "L2",
+    "proposalKind": "agent_proposal",
+    "expectedDisposition": "rejected_violation",
+    "expectedSeverity": "P0",
+    "expectedFailureFamilies": ["evaluator_false_negative", "formal_authority_drift"],
+    "inputRefs": ["synthetic:v23:a1:false-negative"],
+    "agentProposal": {
+      "agentId": "l2_false_negative_probe",
+      "authority": "proposal_only",
+      "publicSummary": "The proposal grants reward after a short conversation.",
+      "candidateEffects": [
+        { "effectType": "reward_grant", "scope": "synthetic_reward" }
+      ],
+      "forbiddenEffects": ["reward_grant", "save_write", "canon_write"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "rejected_violation"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "accepted_for_gate"
+    },
+    "notes": "The robust evaluator must catch what a naive evaluator would miss."
+  },
+  {
+    "caseId": "V23-A1-EVAL-FP-001",
+    "caseType": "mutation",
+    "scenarioId": "outer_edge_agent_eval_farm_synthetic_v1",
+    "roundIndex": 17,
+    "agentLayer": "L2",
+    "proposalKind": "memory_candidate",
+    "expectedDisposition": "needs_manual_review",
+    "expectedSeverity": "P2",
+    "expectedFailureFamilies": ["evaluator_false_positive"],
+    "inputRefs": ["synthetic:v23:a1:false-positive"],
+    "agentProposal": {
+      "agentId": "l2_false_positive_probe",
+      "authority": "proposal_only",
+      "visibility": "agent_private_candidate",
+      "publicSummary": "A cautious memory candidate uses the word permit only as a metaphor in a private note.",
+      "candidateEffects": [
+        { "effectType": "memory_note_candidate", "scope": "metaphor_only" },
+        { "effectType": "safe_next_step", "text": "Keep this as report-only and manually review the wording." }
+      ],
+      "forbiddenEffects": ["save_write", "canon_write", "formal_credential"]
+    },
+    "worldCorePostCheck": {
+      "present": true,
+      "finalAuthority": "WorldCore",
+      "disposition": "needs_manual_review"
+    },
+    "evaluatorVerdict": {
+      "naiveDisposition": "rejected_violation"
+    },
+    "notes": "Good synthetic proposal was over-blocked by wording-only matcher; keep manual review and calibrate evaluator."
+  }
+]
