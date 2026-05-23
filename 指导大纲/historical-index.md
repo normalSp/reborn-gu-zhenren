@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.4.0/codex/00-总览/README.md` 或最新完成版本 `指导大纲/v2.3.0/codex/00-总览/README.md`
+4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.5.0/codex/00-总览/README.md` 或最新完成版本 `指导大纲/v2.4.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
@@ -58,6 +58,7 @@
 | v2.2.0 | 完成 | Agent Lab 扩展离线模拟第一阶段 | `指导大纲/v2.2.0/codex/00-总览/` | expanded offline runner、21 个合成样本、20 NPC/3 pressure source/1 L5、P0/P1/P2=0/0/0；不开放 runtime agent、live DeepSeek、外部框架 PoC、BFF/backend 或子代理 |
 | v2.3.0 | 完成 | Agent eval farm 与失败分类硬化 | `指导大纲/v2.3.0/codex/00-总览/` | eval farm runner、17 个 synthetic fixtures、13/13 failure family 覆盖、P0/P1 falseNegative=0；不开放 runtime agent、live DeepSeek、外部框架 PoC、BFF/backend 或子代理 |
 | v2.4.0 | 完成 | 薄 BFF / private canon / eval archive 边界评估 | `指导大纲/v2.4.0/codex/00-总览/` | docs/report-only 边界收束；冻结 infrastructure/private-canon/eval-archive/framework/self-learning 边界、hidden leak 风险模型和 redacted envelope schema；不开放 backend、service、runner、RAG、runtime agent、PoC、dependency、live DeepSeek 或 MiroFish export |
+| v2.5.0 | 完成 | private canon / knowledge visibility 试验设计 | `指导大纲/v2.5.0/codex/00-总览/` | docs/report-only/schema-first；冻结 visibility schema、source-pointer promotion chain、DeepSeek denial、AgentProposal hidden leak/memory contamination 风险模型和 v2.6 准入清单；F-250 全部保持 future gate，不开放 backend、service、runner、RAG、runtime agent、PoC、dependency、live DeepSeek、MiroFish export、知识库正文或 runtime canon |
 
 ## 历史制度源
 

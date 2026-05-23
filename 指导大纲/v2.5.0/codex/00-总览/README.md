@@ -1,14 +1,14 @@
 # RebornG v2.5.0 Codex 当前入口
 
-状态：v2.5 startup 已开会；D-270-001 至 D-270-006 已获用户批准；D-250 前置授权包等待用户审批。
+状态：v2.5 已完成；D-250-001 至 D-250-012 已获用户批准并执行，F-250-001 至 F-250-010 保持 `future_gate_required`。
 
 ## 当前定位
 
-v2.5 建议主线仍按 v2.4 rc go/no-go：`private canon / knowledge visibility 试验设计`。v2.5-a0 已先落地项目级流程补丁：
+v2.5 主线按 v2.4 rc go/no-go 执行：`private canon / knowledge visibility 试验设计`。v2.5-a0 已先落地项目级流程补丁：
 
 `指导大纲/流程制度/前置批量审批与例外停机制度.md`
 
-startup 已按该制度输出完整前置授权包。用户批准后，后续 `/goal` 可以在授权范围内自动跑到 rc，只在例外停机条件触发时回到用户。
+startup 已按该制度输出完整前置授权包。用户批准 D-250 后，后续 a1/a2/b1/b2/b3/process-1/rc 已在授权范围内完成，例外停机触发次数为 0。
 
 ## 已批准输入
 
@@ -38,9 +38,25 @@ startup 已按该制度输出完整前置授权包。用户批准后，后续 `/
 - `v2.5.0-MiroFish资料需求与交付协议.md`
 - `v2.5.0-startup-Skill同步审计记录.md`
 
+## 当前完成输出
+
+- `v2.5.0-a1-private-canon-knowledge-visibility-schema门禁.md`
+- `v2.5.0-a1-Skill同步审计记录.md`
+- `v2.5.0-a2-source-pointer-redaction-promotion-chain门禁.md`
+- `v2.5.0-a2-Skill同步审计记录.md`
+- `v2.5.0-b1-report-only-visibility-boundary-report第一刀.md`
+- `v2.5.0-b1-Skill同步审计记录.md`
+- `v2.5.0-b2-hidden-leak-memory-contamination-AgentProposal风险模型.md`
+- `v2.5.0-b2-Skill同步审计记录.md`
+- `v2.5.0-b3-v2.6-private-canon-eval-archive准入清单.md`
+- `v2.5.0-b3-Skill同步审计记录.md`
+- `v2.5.0-process-1-前置审批制度试运行复核.md`
+- `v2.5.0-rc-质量收束记录.md`
+- `v2.5.0-rc-Skill同步审计记录.md`
+
 ## 当前硬边界
 
-本 startup 不授权：
+本版本不授权：
 
 - runtime/source/UI/store/prompt/save 变更。
 - 新 save fields、`SAVE_FORMAT_VERSION` bump、`runFingerprint`。
@@ -54,9 +70,11 @@ startup 已按该制度输出完整前置授权包。用户批准后，后续 `/
 
 ## 下一步
 
-下一步等待用户审批 `v2.5.0-前置授权包.md`：
+下一步建议开 `v2.6` 专家团启动会，先复盘 v2.5 visibility schema 和前置审批制度，再决定是否进入 private canon / eval archive / job queue / replay archive 工程预备。
 
-- D-250-001 至 D-250-012：建议批准，作为 `approved_in_frontloaded_pack`。
-- F-250-001 至 F-250-010：建议确认保持 `future_gate_required`。
+仍需保持的默认边界：
 
-只有该授权包被用户批准后，后续才适合用一个 `/goal` 连续完成 v2.5。
+- 不直接实现 backend/service/runner/runtime agent。
+- 不启用 DeepSeek visible lore/RAG。
+- 不请求 MiroFish export，除非触发真实事实、命名 NPC、hidden-adjacent 或正式 lore 结论。
+- 不启用外部 framework PoC/dependency/subagents，除非另批。
