@@ -1,7 +1,7 @@
 # RebornG 长期路线入口
 
-日期：2026-05-22
-状态：项目-owned 长期方向；不直接等同当前版本范围；v2.1 active planning 已建立，v2.0-v4.0 分层 Agent 与世界内核研究线和 v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲已落地为文档草案。
+日期：2026-05-23
+状态：项目-owned 长期方向；不直接等同当前版本范围；v2.3 startup draft 已建立，v2.0-v4.0 分层 Agent 与世界内核研究线和 v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲已落地为文档草案。
 
 ## 目录定位
 
@@ -46,11 +46,11 @@ RebornG 的最终体验目标：
 
 ## 当前阶段提醒
 
-`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 当前为 Agent Simulation Lab 启动版 active planning。长期路线现在以 `v2.0-v4.0-分层Agent与世界内核/` 为总体研究线，并以 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 作为 v2.0 到 v3.0 的可执行小版本规划基线。v2.1-a1 已扩展为 Claude Code 与开源 Agent 框架吸收矩阵，但当前只作尽调，不授权依赖、PoC、runner 或 runtime。
+`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 与 `v2.2.0` 已完成 Agent Lab report-only/offline 地基。当前已开 `v2.3.0` startup draft，建议主线为 `Agent eval farm 与失败分类硬化`。长期路线现在以 `v2.0-v4.0-分层Agent与世界内核/` 为总体研究线，并以 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md` 作为 v2.0 到 v3.0 的可执行小版本规划基线。
 
 当前建议顺序：
 
-1. 先审阅 `指导大纲/v2.1.0/codex/00-总览/`，确认当前 v2.1 仍只执行 a0/a1/a2 文档、复盘、Claude Code/Agent 框架尽调和设计门禁。
+1. 先审阅 `指导大纲/v2.3.0/codex/00-总览/`，确认当前 v2.3 仍只执行 startup/a0 文档、复盘、D-230 决策池和 eval farm 设计准备。
 2. 再审阅 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`，确认 v2.1-v2.9 到 v3.0 的路线节奏。
 3. 再审阅 `v2.0-v4.0-分层Agent与世界内核/`，作为更远期的分层 agent、WorldCore、BFF、高阶战斗和宿命/天道研究线。
 4. 研究线可以讨论任意身份、五域两天、NPC 思想、天道/宿命和蛊仙战斗，但不能自动变成 runtime 批准。

@@ -22,7 +22,7 @@
 1. `AGENTS.md`
 2. `指导大纲/项目仪表盘.md`
 3. `.codex/skills/reborn-expert-council/references/PROJECT-STATE.md`
-4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.2.0/codex/00-总览/README.md` 或后续 v2.3 入口
+4. 当前草案或最新完成版本入口，例如 `指导大纲/v2.3.0/codex/00-总览/README.md` 或最新完成版本 `指导大纲/v2.2.0/codex/00-总览/README.md`
 5. `指导大纲/流程制度/README.md`
 6. 本历史索引
 
