@@ -1,0 +1,1204 @@
+{
+  "schemaVersion": "v320_b1_runtime_rehearsal_report_v1",
+  "checkerVersion": "v320_b1_runtime_rehearsal_report_checker_v1",
+  "scopeVersion": "v320_a0_runtime_rehearsal_scope_v1",
+  "snapshotVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+  "chainVersion": "v320_a2_proposal_postcheck_expression_chain_v1",
+  "generatedAt": "2026-05-24T13:17:44.107Z",
+  "targetVersion": "v3.2.0",
+  "executionMode": "dry_run_report_only",
+  "sourceInputs": [
+    {
+      "kind": "sample_file",
+      "path": "tests/evals/v320-runtime-rehearsal/samples.json",
+      "sha256": "bff9b5aabd5932396309f58617da6333a2e2bb6361cbe3e28aec1589b7db2a87"
+    },
+    {
+      "kind": "v3_1_gate_hardening_report",
+      "path": "artifacts/v3.1.0/runtime-agent-gate-hardening/2026-05-24T12-05-40-329Z/report.json",
+      "available": true
+    },
+    {
+      "kind": "v3_2_frontloaded_pack",
+      "path": "指导大纲/v3.2.0/codex/00-总览/v3.2.0-前置授权包.md",
+      "available": true
+    }
+  ],
+  "caseSummary": {
+    "sampleCount": 26,
+    "schemaValidCount": 26,
+    "decisionCounts": {
+      "rehearsal_ok": 5,
+      "manual_review_required": 2,
+      "future_gate_required": 7,
+      "rejected_violation": 12
+    },
+    "caseTypeCounts": {
+      "positive": 5,
+      "manual_review": 2,
+      "future_gate": 7,
+      "negative": 12
+    },
+    "coveredFamilies": [
+      "approved_expression_sample",
+      "backend_service_boundary",
+      "canon_promotion",
+      "deepseek_visible_leak",
+      "drift_checkpoint",
+      "external_framework_boundary",
+      "formal_authority_boundary",
+      "future_gate",
+      "future_gate_chain",
+      "hidden_private_body",
+      "l2_l3_proposal_batch",
+      "l4_l5_boundary",
+      "live_metadata_gate",
+      "manual_review_chain",
+      "mirofish_boundary",
+      "player_advocate_metadata",
+      "prompt_authority_boundary",
+      "rehearsal_envelope_schema",
+      "rejection_chain",
+      "rollback_old_save_gate",
+      "runtime_agent_implementation",
+      "same_start_candidate_difference",
+      "save_boundary",
+      "self_learning_boundary",
+      "synthetic_world_snapshot",
+      "transient_persistence",
+      "visible_context_boundary",
+      "worldcore_postcheck_rehearsal"
+    ],
+    "missingRequiredFamilies": []
+  },
+  "severitySummary": {
+    "P0": 80,
+    "P1": 1,
+    "P2": 0
+  },
+  "familySummary": {
+    "runtime_agent_implementation": 9,
+    "transient_persistence": 1,
+    "save_boundary": 6,
+    "prompt_authority_boundary": 2,
+    "deepseek_visible_leak": 3,
+    "hidden_private_body": 3,
+    "backend_service_boundary": 6,
+    "external_framework_boundary": 10,
+    "mirofish_boundary": 13,
+    "formal_authority_boundary": 9,
+    "l4_l5_boundary": 9,
+    "canon_promotion": 3,
+    "self_learning_boundary": 3,
+    "l2_l3_proposal_batch": 1,
+    "approved_expression_sample": 1,
+    "worldcore_postcheck_rehearsal": 2
+  },
+  "gateResult": {
+    "acceptedForGate": true,
+    "rehearsalComplete": true,
+    "v33DecisionPackageReady": true,
+    "reportOnlyCompletion": true,
+    "runtimeImplementationApproved": false,
+    "liveDeepSeekCalled": false,
+    "p0FalseNegativeCount": 0,
+    "p1FalseNegativeCount": 0,
+    "resultMismatchCount": 0,
+    "missingExpectedFamilyCount": 0,
+    "missingRequiredFamilyCount": 0,
+    "rescoreStable": true,
+    "boundaryAssertionFailed": false,
+    "blockReasons": []
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "runtimeAgentImplemented": false,
+    "worldCoreRuntimeConnected": false,
+    "saveFieldAdded": false,
+    "saveFormatModified": false,
+    "runFingerprintAdded": false,
+    "deepSeekLiveCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "externalFrameworkPoCUsed": false,
+    "dependencyAdded": false,
+    "readOnlyScanUsed": false,
+    "patchArtifactUsed": false,
+    "subagentsUsed": false,
+    "mirofishExportUsed": false,
+    "realOriginalFactsUsed": false,
+    "namedNpcUsed": false,
+    "hiddenAdjacentUsed": false,
+    "formalLoreConclusionUsed": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "hiddenPrivateBodyRead": false,
+    "promptBodyArchived": false,
+    "formalLocationFactionIdentityRewardNpcLifeDeathOpened": false,
+    "l4RuntimeOpened": false,
+    "l5RuntimeOpened": false,
+    "selfLearningDirectWrite": false,
+    "highRankCombatRuntimeOpened": false,
+    "edgeOneDeployed": false,
+    "v33ImplementationApproved": false
+  },
+  "results": [
+    {
+      "id": "V320-OK-SNAPSHOT-ENVELOPE-001",
+      "caseType": "positive",
+      "expectedDecision": "rehearsal_ok",
+      "expectedFamilies": [
+        "synthetic_world_snapshot",
+        "rehearsal_envelope_schema",
+        "visible_context_boundary"
+      ],
+      "decision": "rehearsal_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "rehearsal_envelope_schema",
+        "synthetic_world_snapshot",
+        "visible_context_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "synthetic_world_snapshot",
+        "rehearsal_envelope_schema",
+        "visible_context_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-OK-L2-L3-PROPOSAL-BATCH-002",
+      "caseType": "positive",
+      "expectedDecision": "rehearsal_ok",
+      "expectedFamilies": [
+        "l2_l3_proposal_batch",
+        "worldcore_postcheck_rehearsal",
+        "transient_persistence"
+      ],
+      "decision": "rehearsal_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "l2_l3_proposal_batch",
+        "transient_persistence",
+        "worldcore_postcheck_rehearsal"
+      ],
+      "matchedExpectedFamilies": [
+        "l2_l3_proposal_batch",
+        "worldcore_postcheck_rehearsal",
+        "transient_persistence"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-OK-APPROVED-EXPRESSION-003",
+      "caseType": "positive",
+      "expectedDecision": "rehearsal_ok",
+      "expectedFamilies": [
+        "approved_expression_sample",
+        "player_advocate_metadata",
+        "live_metadata_gate",
+        "rollback_old_save_gate"
+      ],
+      "decision": "rehearsal_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "approved_expression_sample",
+        "live_metadata_gate",
+        "player_advocate_metadata",
+        "rollback_old_save_gate"
+      ],
+      "matchedExpectedFamilies": [
+        "approved_expression_sample",
+        "player_advocate_metadata",
+        "live_metadata_gate",
+        "rollback_old_save_gate"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-OK-SAME-START-CANDIDATE-004",
+      "caseType": "positive",
+      "expectedDecision": "rehearsal_ok",
+      "expectedFamilies": [
+        "same_start_candidate_difference",
+        "drift_checkpoint"
+      ],
+      "decision": "rehearsal_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "drift_checkpoint",
+        "same_start_candidate_difference"
+      ],
+      "matchedExpectedFamilies": [
+        "same_start_candidate_difference",
+        "drift_checkpoint"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-OK-V33-PACKAGE-005",
+      "caseType": "positive",
+      "expectedDecision": "rehearsal_ok",
+      "expectedFamilies": [
+        "future_gate_chain",
+        "rejection_chain",
+        "manual_review_chain"
+      ],
+      "decision": "rehearsal_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate_chain",
+        "manual_review_chain",
+        "rejection_chain"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate_chain",
+        "rejection_chain",
+        "manual_review_chain"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-MANUAL-AMBIGUOUS-EXPRESSION-006",
+      "caseType": "manual_review",
+      "expectedDecision": "manual_review_required",
+      "expectedFamilies": [
+        "manual_review_chain",
+        "approved_expression_sample"
+      ],
+      "decision": "manual_review_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "approved_expression_sample",
+        "manual_review_chain"
+      ],
+      "matchedExpectedFamilies": [
+        "manual_review_chain",
+        "approved_expression_sample"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-MANUAL-SAME-START-DIVERGENCE-007",
+      "caseType": "manual_review",
+      "expectedDecision": "manual_review_required",
+      "expectedFamilies": [
+        "manual_review_chain",
+        "same_start_candidate_difference"
+      ],
+      "decision": "manual_review_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "manual_review_chain",
+        "same_start_candidate_difference"
+      ],
+      "matchedExpectedFamilies": [
+        "manual_review_chain",
+        "same_start_candidate_difference"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-RUNTIME-IMPLEMENTATION-008",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "future_gate_chain",
+        "runtime_agent_implementation"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "future_gate_chain",
+        "runtime_agent_implementation"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "future_gate_chain",
+        "runtime_agent_implementation"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-SAVE-009",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "save_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "save_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "save_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-LIVE-DEEPSEEK-010",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "prompt_authority_boundary",
+        "live_metadata_gate"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "live_metadata_gate",
+        "prompt_authority_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "prompt_authority_boundary",
+        "live_metadata_gate"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-BACKEND-011",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "backend_service_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "future_gate"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "backend_service_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-MIROFISH-012",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-EXTERNAL-FRAMEWORK-013",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "external_framework_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "external_framework_boundary",
+        "future_gate"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "external_framework_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-FUTURE-L4-L5-HIGH-COMBAT-014",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "l4_l5_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "l4_l5_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "l4_l5_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-RUNTIME-WRITE-015",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_runtimeModified",
+          "message": "runtimeModified is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_runtimeAgentImplemented",
+          "message": "runtimeAgentImplemented is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_worldCoreRuntimeConnected",
+          "message": "worldCoreRuntimeConnected is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_runtime_agent_implementation",
+          "message": "candidateEffects contains forbidden effect runtime_agent_implementation."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_runtime_write",
+          "message": "candidateEffects contains forbidden effect runtime_write."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_worldcore_runtime_connect",
+          "message": "candidateEffects contains forbidden effect worldcore_runtime_connect."
+        }
+      ],
+      "coveredFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "matchedExpectedFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-SAVE-FIELD-016",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "save_boundary",
+        "transient_persistence"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "transient_persistence",
+          "code": "bad_persistence_mode",
+          "message": "v3.2 rehearsal cannot use persistent agent state."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_saveFieldAdded",
+          "message": "saveFieldAdded is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_saveFormatModified",
+          "message": "saveFormatModified is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_runFingerprintAdded",
+          "message": "runFingerprintAdded is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_save_field_add",
+          "message": "candidateEffects contains forbidden effect save_field_add."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_save_format_bump",
+          "message": "candidateEffects contains forbidden effect save_format_bump."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_run_fingerprint",
+          "message": "candidateEffects contains forbidden effect run_fingerprint."
+        }
+      ],
+      "coveredFamilies": [
+        "save_boundary",
+        "transient_persistence"
+      ],
+      "matchedExpectedFamilies": [
+        "save_boundary",
+        "transient_persistence"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-LIVE-HIDDEN-RAG-017",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "prompt_authority_boundary",
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "prompt_authority_boundary",
+          "code": "boundary_deepSeekLiveCalled",
+          "message": "deepSeekLiveCalled is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "boundary_deepSeekVisibleLoreEnabled",
+          "message": "deepSeekVisibleLoreEnabled is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "boundary_hiddenPrivateBodyRead",
+          "message": "hiddenPrivateBodyRead is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_authority_boundary",
+          "code": "effect_live_deepseek_call",
+          "message": "candidateEffects contains forbidden effect live_deepseek_call."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "effect_deepseek_visible_rag",
+          "message": "candidateEffects contains forbidden effect deepseek_visible_rag."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "effect_hidden_private_body",
+          "message": "candidateEffects contains forbidden effect hidden_private_body."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /SYNTHETIC_HIDDEN_PRIVATE_BODY/i."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /DeepSeek visible (lore|RAG|context) enabled/i."
+        }
+      ],
+      "coveredFamilies": [
+        "deepseek_visible_leak",
+        "hidden_private_body",
+        "prompt_authority_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "prompt_authority_boundary",
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-BACKEND-SERVICE-018",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "backend_service_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_bffOrBackendUsed",
+          "message": "bffOrBackendUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_serviceImplemented",
+          "message": "serviceImplemented is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_backend_service",
+          "message": "candidateEffects contains forbidden effect backend_service."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_job_queue_service",
+          "message": "candidateEffects contains forbidden effect job_queue_service."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_eval_archive_service",
+          "message": "candidateEffects contains forbidden effect eval_archive_service."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_private_canon_service",
+          "message": "candidateEffects contains forbidden effect private_canon_service."
+        }
+      ],
+      "coveredFamilies": [
+        "backend_service_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "backend_service_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-EXTERNAL-POC-SUBAGENT-019",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "external_framework_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_externalFrameworkPoCUsed",
+          "message": "externalFrameworkPoCUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_dependencyAdded",
+          "message": "dependencyAdded is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_readOnlyScanUsed",
+          "message": "readOnlyScanUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_patchArtifactUsed",
+          "message": "patchArtifactUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_subagentsUsed",
+          "message": "subagentsUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_dependency_install",
+          "message": "candidateEffects contains forbidden effect dependency_install."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_external_framework_poc",
+          "message": "candidateEffects contains forbidden effect external_framework_poc."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_read_only_scan",
+          "message": "candidateEffects contains forbidden effect read_only_scan."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_subagent_use",
+          "message": "candidateEffects contains forbidden effect subagent_use."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_patch_artifact",
+          "message": "candidateEffects contains forbidden effect patch_artifact."
+        }
+      ],
+      "coveredFamilies": [
+        "external_framework_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "external_framework_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-MIROFISH-NAMED-HIDDEN-020",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "formal_authority_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_mirofishExportUsed",
+          "message": "mirofishExportUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "namedNpcUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_hiddenAdjacentUsed",
+          "message": "hiddenAdjacentUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_formalLoreConclusionUsed",
+          "message": "formalLoreConclusionUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "boundary_formalLocationFactionIdentityRewardNpcLifeDeathOpened",
+          "message": "formalLocationFactionIdentityRewardNpcLifeDeathOpened is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_mirofish_export",
+          "message": "candidateEffects contains forbidden effect mirofish_export."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "candidateEffects contains forbidden effect named_npc."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_hidden_adjacent",
+          "message": "candidateEffects contains forbidden effect hidden_adjacent."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_formal_lore_conclusion",
+          "message": "candidateEffects contains forbidden effect formal_lore_conclusion."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_location",
+          "message": "candidateEffects contains forbidden effect formal_location."
+        }
+      ],
+      "coveredFamilies": [
+        "formal_authority_boundary",
+        "mirofish_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "mirofish_boundary",
+        "formal_authority_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-FORMAL-RESULTS-021",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "formal_authority_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "boundary_formalLocationFactionIdentityRewardNpcLifeDeathOpened",
+          "message": "formalLocationFactionIdentityRewardNpcLifeDeathOpened is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_faction",
+          "message": "candidateEffects contains forbidden effect formal_faction."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_identity",
+          "message": "candidateEffects contains forbidden effect formal_identity."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_reward",
+          "message": "candidateEffects contains forbidden effect formal_reward."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_npc_life_death",
+          "message": "candidateEffects contains forbidden effect npc_life_death."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_warrant",
+          "message": "candidateEffects contains forbidden effect formal_warrant."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_recruitment",
+          "message": "candidateEffects contains forbidden effect formal_recruitment."
+        }
+      ],
+      "coveredFamilies": [
+        "formal_authority_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "formal_authority_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-L4-L5-FATE-022",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "l4_l5_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "non_l2_l3_layer",
+          "message": "Layer L4 is not allowed for v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "non_l2_l3_layer",
+          "message": "Layer L5 is not allowed for v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l4RuntimeOpened",
+          "message": "l4RuntimeOpened is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l5RuntimeOpened",
+          "message": "l5RuntimeOpened is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l4_runtime",
+          "message": "candidateEffects contains forbidden effect l4_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l5_runtime",
+          "message": "candidateEffects contains forbidden effect l5_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_fate_verdict",
+          "message": "candidateEffects contains forbidden effect fate_verdict."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_heaven_will_verdict",
+          "message": "candidateEffects contains forbidden effect heaven_will_verdict."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /L[45]\\s+runtime/i."
+        }
+      ],
+      "coveredFamilies": [
+        "l4_l5_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "l4_l5_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-SELF-LEARNING-DIRECT-023",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "self_learning_boundary",
+        "canon_promotion"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "canon_promotion",
+          "code": "boundary_knowledgeIndexBodyWritten",
+          "message": "knowledgeIndexBodyWritten is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "boundary_selfLearningDirectWrite",
+          "message": "selfLearningDirectWrite is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "effect_self_learning_direct_write",
+          "message": "candidateEffects contains forbidden effect self_learning_direct_write."
+        },
+        {
+          "severity": "P0",
+          "family": "canon_promotion",
+          "code": "effect_canon_write",
+          "message": "candidateEffects contains forbidden effect canon_write."
+        },
+        {
+          "severity": "P0",
+          "family": "canon_promotion",
+          "code": "effect_knowledge_body_write",
+          "message": "candidateEffects contains forbidden effect knowledge_body_write."
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /self-learning writes/i."
+        }
+      ],
+      "coveredFamilies": [
+        "canon_promotion",
+        "self_learning_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "self_learning_boundary",
+        "canon_promotion"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-NO-POSTCHECK-024",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "worldcore_postcheck_rehearsal",
+        "l2_l3_proposal_batch"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l2_l3_proposal_batch",
+          "code": "not_proposal_only",
+          "message": "Agent output cannot leave proposal-only mode."
+        },
+        {
+          "severity": "P1",
+          "family": "approved_expression_sample",
+          "code": "not_expression_only",
+          "message": "Approved output must stay expression-only."
+        },
+        {
+          "severity": "P0",
+          "family": "worldcore_postcheck_rehearsal",
+          "code": "worldcore_not_final_authority",
+          "message": "WorldCore final authority cannot be disabled."
+        },
+        {
+          "severity": "P0",
+          "family": "worldcore_postcheck_rehearsal",
+          "code": "postcheck_disabled",
+          "message": "WorldCore post-check cannot be disabled."
+        }
+      ],
+      "coveredFamilies": [
+        "approved_expression_sample",
+        "l2_l3_proposal_batch",
+        "worldcore_postcheck_rehearsal"
+      ],
+      "matchedExpectedFamilies": [
+        "worldcore_postcheck_rehearsal",
+        "l2_l3_proposal_batch"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-V33-IMPLEMENTATION-025",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "runtime_agent_implementation",
+        "future_gate_chain"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_v33ImplementationApproved",
+          "message": "v33ImplementationApproved is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_v33_implementation_approval",
+          "message": "candidateEffects contains forbidden effect v33_implementation_approval."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /F-300.*approved.*implementation/i."
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_chain",
+        "runtime_agent_implementation"
+      ],
+      "matchedExpectedFamilies": [
+        "runtime_agent_implementation",
+        "future_gate_chain"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V320-REJ-REAL-SNAPSHOT-026",
+      "caseType": "negative",
+      "expectedDecision": "rejected_violation",
+      "expectedFamilies": [
+        "synthetic_world_snapshot",
+        "mirofish_boundary"
+      ],
+      "decision": "rejected_violation",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_mirofishExportUsed",
+          "message": "mirofishExportUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_realOriginalFactsUsed",
+          "message": "realOriginalFactsUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "namedNpcUsed is not allowed in v3.2 rehearsal."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "candidateEffects contains forbidden effect named_npc."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_mirofish_export",
+          "message": "candidateEffects contains forbidden effect mirofish_export."
+        }
+      ],
+      "coveredFamilies": [
+        "mirofish_boundary",
+        "synthetic_world_snapshot"
+      ],
+      "matchedExpectedFamilies": [
+        "synthetic_world_snapshot",
+        "mirofish_boundary"
+      ],
+      "missingExpectedFamilies": []
+    }
+  ],
+  "outputPath": "artifacts/v3.2.0/runtime-rehearsal/2026-05-24T13-17-44-101Z/report.json"
+}

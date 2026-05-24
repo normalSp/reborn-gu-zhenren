@@ -1,0 +1,455 @@
+[
+  {
+    "id": "V320-OK-SNAPSHOT-ENVELOPE-001",
+    "caseType": "positive",
+    "expectedDecision": "rehearsal_ok",
+    "expectedFamilies": ["synthetic_world_snapshot", "rehearsal_envelope_schema", "visible_context_boundary"],
+    "coverageFamilies": ["synthetic_world_snapshot", "rehearsal_envelope_schema", "visible_context_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "syntheticWorldSnapshot": true,
+      "rehearsalEnvelopeVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+      "proposalBatch": true,
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "noUiSurface": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "driftCheckpoints": ["snapshot", "envelope", "postcheck"],
+      "evidenceRefs": ["v320_a0_runtime_rehearsal_scope_v1", "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-OK-L2-L3-PROPOSAL-BATCH-002",
+    "caseType": "positive",
+    "expectedDecision": "rehearsal_ok",
+    "expectedFamilies": ["l2_l3_proposal_batch", "worldcore_postcheck_rehearsal", "transient_persistence"],
+    "coverageFamilies": ["l2_l3_proposal_batch", "worldcore_postcheck_rehearsal", "transient_persistence"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "syntheticWorldSnapshot": true,
+      "rehearsalEnvelopeVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+      "proposalBatch": true,
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "noUiSurface": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "driftCheckpoints": ["proposal_batch", "postcheck"],
+      "evidenceRefs": ["v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1", "v320_a2_proposal_postcheck_expression_chain_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-OK-APPROVED-EXPRESSION-003",
+    "caseType": "positive",
+    "expectedDecision": "rehearsal_ok",
+    "expectedFamilies": ["approved_expression_sample", "player_advocate_metadata", "live_metadata_gate", "rollback_old_save_gate"],
+    "coverageFamilies": ["approved_expression_sample", "player_advocate_metadata", "live_metadata_gate", "rollback_old_save_gate"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "syntheticWorldSnapshot": true,
+      "rehearsalEnvelopeVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+      "proposalBatch": true,
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "noUiSurface": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false, "roundCount": 0 },
+      "liveMetadata": { "liveDeepSeekCalled": false, "model": null, "reportPath": null },
+      "driftCheckpoints": ["expression_candidate", "postcheck", "report"],
+      "evidenceRefs": ["v320_a2_proposal_postcheck_expression_chain_v1", "v320_b1_runtime_rehearsal_report_checker_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-OK-SAME-START-CANDIDATE-004",
+    "caseType": "positive",
+    "expectedDecision": "rehearsal_ok",
+    "expectedFamilies": ["same_start_candidate_difference", "drift_checkpoint"],
+    "coverageFamilies": ["same_start_candidate_difference", "drift_checkpoint"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "syntheticWorldSnapshot": true,
+      "rehearsalEnvelopeVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+      "proposalBatch": true,
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "noUiSurface": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "sameStartDifferenceMode": "candidate_only",
+      "driftCheckpoints": ["same_start_a", "same_start_b", "postcheck"],
+      "evidenceRefs": ["v300_b3_same_start_npc_intent_faction_pressure_review_v1", "v320_a2_proposal_postcheck_expression_chain_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-OK-V33-PACKAGE-005",
+    "caseType": "positive",
+    "expectedDecision": "rehearsal_ok",
+    "expectedFamilies": ["future_gate_chain", "rejection_chain", "manual_review_chain"],
+    "coverageFamilies": ["future_gate_chain", "rejection_chain", "manual_review_chain"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "syntheticWorldSnapshot": true,
+      "rehearsalEnvelopeVersion": "v320_a1_synthetic_world_snapshot_rehearsal_envelope_v1",
+      "proposalBatch": true,
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "noUiSurface": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "v33DecisionPackageOnly": true,
+      "runtimeImplementationApproved": false,
+      "driftCheckpoints": ["rejected_trend", "manual_trend", "future_gate_trend"],
+      "evidenceRefs": ["v320_b2_rejection_manual_future_gate_trend_v1", "v320_b3_v33_f300_reopen_decision_package_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-MANUAL-AMBIGUOUS-EXPRESSION-006",
+    "caseType": "manual_review",
+    "expectedDecision": "manual_review_required",
+    "expectedFamilies": ["manual_review_chain", "approved_expression_sample"],
+    "coverageFamilies": ["manual_review_chain", "approved_expression_sample"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "manual_review",
+      "persistenceMode": "transient_candidate_only",
+      "manualReviewRoute": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-MANUAL-SAME-START-DIVERGENCE-007",
+    "caseType": "manual_review",
+    "expectedDecision": "manual_review_required",
+    "expectedFamilies": ["manual_review_chain", "same_start_candidate_difference"],
+    "coverageFamilies": ["manual_review_chain", "same_start_candidate_difference"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "proposalOnly": true,
+      "expressionOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "manual_review",
+      "persistenceMode": "transient_candidate_only",
+      "manualReviewRoute": true,
+      "sameStartDifferenceMode": "candidate_only_ambiguous",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-RUNTIME-IMPLEMENTATION-008",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "future_gate_chain", "runtime_agent_implementation"],
+    "futureGateFamilies": ["future_gate", "future_gate_chain", "runtime_agent_implementation"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-001 runtime agent implementation",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-SAVE-009",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "save_boundary"],
+    "futureGateFamilies": ["future_gate", "save_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-002 save field or SAVE_FORMAT_VERSION bump",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-LIVE-DEEPSEEK-010",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "prompt_authority_boundary", "live_metadata_gate"],
+    "futureGateFamilies": ["future_gate", "prompt_authority_boundary", "live_metadata_gate"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-003 live DeepSeek or prompt/context/model/authority change",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-BACKEND-011",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "backend_service_boundary"],
+    "futureGateFamilies": ["future_gate", "backend_service_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-004 backend/BFF/service/job queue/eval archive/cloud save",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-MIROFISH-012",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "mirofish_boundary"],
+    "futureGateFamilies": ["future_gate", "mirofish_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-005 MiroFish export/intake for named NPC or hidden-adjacent lore",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-EXTERNAL-FRAMEWORK-013",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "external_framework_boundary"],
+    "futureGateFamilies": ["future_gate", "external_framework_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-007 external framework PoC/dependency/read-only scan/subagent",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-FUTURE-L4-L5-HIGH-COMBAT-014",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "l4_l5_boundary"],
+    "futureGateFamilies": ["future_gate", "l4_l5_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-320-009/F-320-012 original-key-character layer or high-rank combat future gate",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-REJ-RUNTIME-WRITE-015",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["runtime_agent_implementation"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["runtime_agent_implementation", "runtime_write", "worldcore_runtime_connect"],
+      "boundaries": { "runtimeAgentImplemented": true, "runtimeModified": true, "worldCoreRuntimeConnected": true }
+    }
+  },
+  {
+    "id": "V320-REJ-SAVE-FIELD-016",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["save_boundary", "transient_persistence"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "persistent_agent_state",
+      "candidateEffects": ["save_field_add", "save_format_bump", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "saveFormatModified": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V320-REJ-LIVE-HIDDEN-RAG-017",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["prompt_authority_boundary", "deepseek_visible_leak", "hidden_private_body"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "candidateEffects": ["live_deepseek_call", "deepseek_visible_rag", "hidden_private_body"],
+      "publicSummary": "DeepSeek visible RAG enabled with SYNTHETIC_HIDDEN_PRIVATE_BODY.",
+      "boundaries": { "deepSeekLiveCalled": true, "deepSeekVisibleLoreEnabled": true, "hiddenPrivateBodyRead": true }
+    }
+  },
+  {
+    "id": "V320-REJ-BACKEND-SERVICE-018",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["backend_service_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["backend_service", "job_queue_service", "eval_archive_service", "private_canon_service"],
+      "boundaries": { "bffOrBackendUsed": true, "serviceImplemented": true }
+    }
+  },
+  {
+    "id": "V320-REJ-EXTERNAL-POC-SUBAGENT-019",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["external_framework_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["dependency_install", "external_framework_poc", "read_only_scan", "subagent_use", "patch_artifact"],
+      "boundaries": { "dependencyAdded": true, "externalFrameworkPoCUsed": true, "readOnlyScanUsed": true, "subagentsUsed": true, "patchArtifactUsed": true }
+    }
+  },
+  {
+    "id": "V320-REJ-MIROFISH-NAMED-HIDDEN-020",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["mirofish_boundary", "formal_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "candidateEffects": ["mirofish_export", "named_npc", "hidden_adjacent", "formal_lore_conclusion", "formal_location"],
+      "boundaries": { "mirofishExportUsed": true, "namedNpcUsed": true, "hiddenAdjacentUsed": true, "formalLoreConclusionUsed": true, "formalLocationFactionIdentityRewardNpcLifeDeathOpened": true }
+    }
+  },
+  {
+    "id": "V320-REJ-FORMAL-RESULTS-021",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["formal_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["formal_faction", "formal_identity", "formal_reward", "npc_life_death", "formal_warrant", "formal_recruitment"],
+      "boundaries": { "formalLocationFactionIdentityRewardNpcLifeDeathOpened": true }
+    }
+  },
+  {
+    "id": "V320-REJ-L4-L5-FATE-022",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["l4_l5_boundary"],
+    "claim": {
+      "agentLayers": ["L4", "L5"],
+      "candidateEffects": ["l4_runtime", "l5_runtime", "fate_verdict", "heaven_will_verdict"],
+      "publicSummary": "L4/L5 runtime decides fate.",
+      "boundaries": { "l4RuntimeOpened": true, "l5RuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V320-REJ-SELF-LEARNING-DIRECT-023",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["self_learning_boundary", "canon_promotion"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["self_learning_direct_write", "canon_write", "knowledge_body_write"],
+      "publicSummary": "self-learning writes canon/runtime/save directly.",
+      "boundaries": { "selfLearningDirectWrite": true, "knowledgeIndexBodyWritten": true }
+    }
+  },
+  {
+    "id": "V320-REJ-NO-POSTCHECK-024",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["worldcore_postcheck_rehearsal", "l2_l3_proposal_batch"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": false,
+      "expressionOnly": false,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": false,
+      "requiresWorldCorePostCheck": false,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V320-REJ-V33-IMPLEMENTATION-025",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["runtime_agent_implementation", "future_gate_chain"],
+    "coverageFamilies": ["future_gate_chain"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "candidateEffects": ["v33_implementation_approval"],
+      "publicSummary": "F-300 approved for implementation inside v3.2 report.",
+      "boundaries": { "v33ImplementationApproved": true }
+    }
+  },
+  {
+    "id": "V320-REJ-REAL-SNAPSHOT-026",
+    "caseType": "negative",
+    "expectedDecision": "rejected_violation",
+    "expectedFamilies": ["synthetic_world_snapshot", "mirofish_boundary"],
+    "coverageFamilies": ["synthetic_world_snapshot"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "syntheticWorldSnapshot": false,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["named_npc", "mirofish_export"],
+      "boundaries": { "realOriginalFactsUsed": true, "namedNpcUsed": true, "mirofishExportUsed": true }
+    }
+  }
+]
