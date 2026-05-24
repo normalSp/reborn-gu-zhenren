@@ -29,6 +29,7 @@
     "check:v310-runtime-agent-gate-hardening": "node scripts/run-v310-runtime-agent-gate-hardening-check.mjs --dry-run",
     "check:v320-runtime-rehearsal": "node scripts/run-v320-runtime-rehearsal-check.mjs --dry-run",
     "check:v340-transient-agent-proposal": "vitest run src/engine/v340-transient-agent-proposal.test.ts",
+    "check:v350-transient-agent-hardening": "vitest run src/engine/v350-transient-agent-proposal-hardening.test.ts",
     "check:stale-entrypoints": "node scripts/check-stale-entrypoints.mjs",
     "check:player-advocate-gate": "node scripts/check-player-advocate-gate.mjs",
     "check:production-preview": "npm run build && node scripts/check-production-preview.mjs",
@@ -54,7 +55,7 @@
     "eval:deepseek:v200-regional-ledger-live:rc-t3": "node scripts/run-v200-regional-event-ledger-live-probe.mjs --live --confirm-cost --sample-limit=5 --round-limit=4 --cycle-count=8 --accepted-threshold=0.95 --max-p2=0 --max-retries=4",
     "capture:qingmao:v001": "node scripts/capture-qingmao-v001-materials.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:long": "playwright test --workers=4 tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts tests/e2e/v140-region-sample-projection.spec.ts tests/e2e/v150-conflict-aftermath-projection.spec.ts tests/e2e/v170-regional-life-projection.spec.ts tests/e2e/v180-identity-replay-projection.spec.ts tests/e2e/v200-regional-event-ledger.spec.ts tests/e2e/v340-runtime-agent-proposal.spec.ts"
+    "test:e2e:long": "playwright test --workers=4 tests/e2e/pre-v110-bugfixes.spec.ts tests/e2e/v100-qingmao-southern-border-continuity.spec.ts tests/e2e/v100-low-rank-life-loop-release.spec.ts tests/e2e/v100-free-intent-release-closure.spec.ts tests/e2e/v110-route-location-state.spec.ts tests/e2e/v120-low-rank-survival-economy.spec.ts tests/e2e/v130-social-pressure-projection.spec.ts tests/e2e/v140-region-sample-projection.spec.ts tests/e2e/v150-conflict-aftermath-projection.spec.ts tests/e2e/v170-regional-life-projection.spec.ts tests/e2e/v180-identity-replay-projection.spec.ts tests/e2e/v200-regional-event-ledger.spec.ts tests/e2e/v340-runtime-agent-proposal.spec.ts tests/e2e/v350-runtime-agent-hardening.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.59.1",
