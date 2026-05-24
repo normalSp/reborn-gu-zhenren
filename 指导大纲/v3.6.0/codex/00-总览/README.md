@@ -1,7 +1,7 @@
 # v3.6.0 总览
 
 日期：2026-05-25
-状态：completed locally；pending commit/push/CI
+状态：completed；implementation commit/push/CI passed
 主线：`transient AgentProposal synthetic L2/L3 微扩 + 同开局差异/漂移硬化`
 
 ## 定位
@@ -66,4 +66,4 @@ v3.6 不扩大成 persistent runtime agent。本版本建议只做 synthetic / R
 
 ## 当前结论
 
-用户已批准 D-360-001 至 D-360-012，并确认 F-360-001 至 F-360-012 全部保持 `future_gate_required`。v3.6 已完成本地 runtime 微扩第一刀、30 轮 Player Advocate、90 轮 deterministic gate、full verification 与文档自检；收束前还需完成 commit/push/CI 与最终远端证据记录。
+用户已批准 D-360-001 至 D-360-012，并确认 F-360-001 至 F-360-012 全部保持 `future_gate_required`。v3.6 已完成 runtime 微扩第一刀、30 轮 Player Advocate、90 轮 deterministic gate、full verification、文档自检、implementation commit/push/CI；远端证据见 `v3.6.0-rc-质量收束记录.md`。
