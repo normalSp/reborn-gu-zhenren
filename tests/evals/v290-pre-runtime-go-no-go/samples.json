@@ -1,0 +1,323 @@
+[
+  {
+    "id": "V290-GO-L2-MEMORY-001",
+    "caseType": "positive",
+    "expectedDecision": "go_for_v3_design_gate",
+    "expectedFamilies": ["worldcore_contract", "live_pa_drift_plan", "rollback_old_save_boundary"],
+    "coverageFamilies": ["worldcore_contract", "live_pa_drift_plan", "rollback_old_save_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "liveProbePlanReady": true,
+      "playerAdvocatePlanReady": true,
+      "driftGatePlanReady": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "evidenceRefs": ["v280_b1_runtime_admission_report_checker_v1", "v290_audit_long_route"],
+      "allowedOutputs": ["memory_candidate", "manual_review_note"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-GO-L3-EXPRESSION-002",
+    "caseType": "positive",
+    "expectedDecision": "go_for_v3_design_gate",
+    "expectedFamilies": ["worldcore_contract", "live_pa_drift_plan"],
+    "coverageFamilies": ["worldcore_contract", "live_pa_drift_plan"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "liveProbePlanReady": true,
+      "playerAdvocatePlanReady": true,
+      "driftGatePlanReady": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "evidenceRefs": ["v280_a2_agent_capability_classification_matrix_v1"],
+      "allowedOutputs": ["dialogue_candidate", "intent_hint"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-GO-L2L3-MIXED-003",
+    "caseType": "positive",
+    "expectedDecision": "go_for_v3_design_gate",
+    "expectedFamilies": ["worldcore_contract", "rollback_old_save_boundary"],
+    "coverageFamilies": ["worldcore_contract", "rollback_old_save_boundary"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "liveProbePlanReady": true,
+      "playerAdvocatePlanReady": true,
+      "driftGatePlanReady": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "evidenceRefs": ["v270_b1_multi_npc_agent_lab_runner_v1", "v280_b1_runtime_admission_report_checker_v1"],
+      "allowedOutputs": ["intent_candidate", "memory_candidate", "safe_next_step"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-GO-DOC-CODE-AUDIT-004",
+    "caseType": "positive",
+    "expectedDecision": "go_for_v3_design_gate",
+    "expectedFamilies": ["doc_code_drift"],
+    "coverageFamilies": ["doc_code_drift"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "liveProbePlanReady": true,
+      "playerAdvocatePlanReady": true,
+      "driftGatePlanReady": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "evidenceRefs": ["v290_doc_code_todo_audit"],
+      "allowedOutputs": ["audit_pass_record"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-FUTURE-D300-005",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "runtime_agent_implementation"],
+    "futureGateFamilies": ["future_gate", "runtime_agent_implementation"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "D-300 runtime implementation approval",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-FUTURE-LIVE-PROBE-006",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "live_pa_drift_plan"],
+    "futureGateFamilies": ["future_gate", "live_pa_drift_plan"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "run v3.0 live probe using deepseek-v4-flash",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-FUTURE-MIROFISH-007",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "mirofish_boundary"],
+    "futureGateFamilies": ["future_gate", "mirofish_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "MiroFish blocking intake for named NPC or hidden-adjacent lore",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-FUTURE-PROMPT-008",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "prompt_authority_boundary"],
+    "futureGateFamilies": ["future_gate", "prompt_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "DeepSeek prompt/context authority expansion",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-FUTURE-EXTERNAL-FRAMEWORK-009",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "external_framework_boundary"],
+    "futureGateFamilies": ["future_gate", "external_framework_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "external framework isolated PoC or read-only scan",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-REJ-RUNTIME-010",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["runtime_agent_implementation"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": false,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["runtime_agent_implementation"],
+      "boundaries": { "runtimeAgentImplemented": true }
+    }
+  },
+  {
+    "id": "V290-REJ-SAVE-011",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["save_field_add", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V290-REJ-DEEPSEEK-VISIBLE-012",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["deepseek_visible_leak", "hidden_private_body"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["deepseek_visible_rag", "hidden_private_body"],
+      "publicSummary": "DeepSeek visible RAG enabled with SYNTHETIC_HIDDEN_PRIVATE_BODY.",
+      "boundaries": { "deepSeekVisibleLoreEnabled": true, "hiddenPrivateBodyRead": true }
+    }
+  },
+  {
+    "id": "V290-REJ-BACKEND-013",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["backend_service", "job_queue_service"],
+      "boundaries": { "bffOrBackendUsed": true, "serviceImplemented": true }
+    }
+  },
+  {
+    "id": "V290-REJ-EXTERNAL-014",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["external_framework_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["dependency_install", "subagent_use", "patch_artifact"],
+      "boundaries": { "dependencyAdded": true, "subagentsUsed": true }
+    }
+  },
+  {
+    "id": "V290-REJ-MIROFISH-015",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["mirofish_export", "named_npc", "formal_lore_conclusion"],
+      "boundaries": { "mirofishExportUsed": true, "namedNpcUsed": true }
+    }
+  },
+  {
+    "id": "V290-REJ-L4-L5-016",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary"],
+    "claim": {
+      "agentLayers": ["L4", "L5"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": false,
+      "requiresWorldCorePostCheck": false,
+      "candidateEffects": ["l4_runtime", "l5_runtime", "fate_verdict"],
+      "publicSummary": "L4/L5 runtime decides fate.",
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-REJ-SELF-LEARNING-017",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["self_learning_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": false,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["self_learning_direct_write"],
+      "publicSummary": "self-learning writes canon/runtime/save directly.",
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V290-REJ-DOC-CODE-018",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["doc_code_drift"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "candidateEffects": ["doc_claim_without_evidence", "missing_runner_evidence"],
+      "publicSummary": "A document claims implementation is complete while the runner and report are missing.",
+      "boundaries": {}
+    }
+  }
+]

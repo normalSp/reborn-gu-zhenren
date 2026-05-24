@@ -1,0 +1,701 @@
+{
+  "schemaVersion": "v290_b1_pre_runtime_go_no_go_report_v1",
+  "checkerVersion": "v290_b1_pre_runtime_go_no_go_checker_v1",
+  "contractVersion": "v290_a1_runtime_agent_contract_worldcore_postcheck_v1",
+  "gatePlanVersion": "v290_a2_live_pa_drift_rollback_oldsave_gate_v1",
+  "generatedAt": "2026-05-24T07:12:28.800Z",
+  "targetVersion": "v2.9.0",
+  "executionMode": "dry_run_report_only",
+  "sourceInputs": [
+    {
+      "kind": "sample_file",
+      "path": "tests/evals/v290-pre-runtime-go-no-go/samples.json",
+      "sha256": "e4d40ca2133f47515359ca92baa5896e1b4298eabf54a585ebc4cefb250581e6"
+    },
+    {
+      "kind": "baseline_report",
+      "path": "artifacts/v2.8.0/runtime-admission/2026-05-24T06-10-18-280Z/report.json",
+      "available": true
+    },
+    {
+      "kind": "long_route_audit",
+      "path": "指导大纲/v2.9.0/codex/00-总览/v2.9.0-长期路线按期实现审计.md",
+      "available": true
+    },
+    {
+      "kind": "doc_code_todo_audit",
+      "path": "指导大纲/v2.9.0/codex/00-总览/v2.9.0-文档代码一致性与TODO审计.md",
+      "available": true
+    }
+  ],
+  "caseSummary": {
+    "sampleCount": 18,
+    "schemaValidCount": 18,
+    "decisionCounts": {
+      "go_for_v3_design_gate": 4,
+      "future_gate_required": 5,
+      "no_go_blocked": 9
+    },
+    "caseTypeCounts": {
+      "positive": 4,
+      "future_gate": 5,
+      "negative": 9
+    },
+    "coveredFamilies": [
+      "backend_service_boundary",
+      "deepseek_visible_leak",
+      "doc_code_drift",
+      "external_framework_boundary",
+      "future_gate",
+      "hidden_private_body",
+      "l4_l5_boundary",
+      "live_pa_drift_plan",
+      "mirofish_boundary",
+      "prompt_authority_boundary",
+      "rollback_old_save_boundary",
+      "runtime_agent_implementation",
+      "save_boundary",
+      "self_learning_boundary",
+      "worldcore_contract"
+    ],
+    "missingRequiredFamilies": []
+  },
+  "severitySummary": {
+    "P0": 36,
+    "P1": 0,
+    "P2": 0,
+    "Info": 0
+  },
+  "familySummary": {
+    "runtime_agent_implementation": 2,
+    "save_boundary": 4,
+    "deepseek_visible_leak": 3,
+    "hidden_private_body": 3,
+    "backend_service_boundary": 4,
+    "external_framework_boundary": 5,
+    "mirofish_boundary": 5,
+    "l4_l5_boundary": 6,
+    "self_learning_boundary": 2,
+    "doc_code_drift": 2
+  },
+  "gateResult": {
+    "acceptedForGate": true,
+    "goForV3DesignGate": true,
+    "runtimeImplementationApproved": false,
+    "p0FalseNegativeCount": 0,
+    "p1FalseNegativeCount": 0,
+    "resultMismatchCount": 0,
+    "missingExpectedFamilyCount": 0,
+    "missingRequiredFamilyCount": 0,
+    "rescoreStable": true,
+    "boundaryAssertionFailed": false,
+    "blockReasons": []
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "saveFormatModified": false,
+    "saveFieldAdded": false,
+    "runFingerprintAdded": false,
+    "runtimeAgentImplemented": false,
+    "deepSeekLiveCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "externalFrameworkPoCUsed": false,
+    "dependencyAdded": false,
+    "subagentsUsed": false,
+    "mirofishExportUsed": false,
+    "realOriginalFactsUsed": false,
+    "namedNpcUsed": false,
+    "hiddenAdjacentUsed": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "hiddenPrivateBodyRead": false,
+    "promptBodyArchived": false,
+    "formalLocationFactionRewardNpcLifeDeathOpened": false,
+    "edgeOneDeployed": false
+  },
+  "results": [
+    {
+      "id": "V290-GO-L2-MEMORY-001",
+      "caseType": "positive",
+      "expectedDecision": "go_for_v3_design_gate",
+      "expectedFamilies": [
+        "worldcore_contract",
+        "live_pa_drift_plan",
+        "rollback_old_save_boundary"
+      ],
+      "decision": "go_for_v3_design_gate",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "live_pa_drift_plan",
+        "rollback_old_save_boundary",
+        "worldcore_contract"
+      ],
+      "matchedExpectedFamilies": [
+        "worldcore_contract",
+        "live_pa_drift_plan",
+        "rollback_old_save_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-GO-L3-EXPRESSION-002",
+      "caseType": "positive",
+      "expectedDecision": "go_for_v3_design_gate",
+      "expectedFamilies": [
+        "worldcore_contract",
+        "live_pa_drift_plan"
+      ],
+      "decision": "go_for_v3_design_gate",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "live_pa_drift_plan",
+        "worldcore_contract"
+      ],
+      "matchedExpectedFamilies": [
+        "worldcore_contract",
+        "live_pa_drift_plan"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-GO-L2L3-MIXED-003",
+      "caseType": "positive",
+      "expectedDecision": "go_for_v3_design_gate",
+      "expectedFamilies": [
+        "worldcore_contract",
+        "rollback_old_save_boundary"
+      ],
+      "decision": "go_for_v3_design_gate",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "rollback_old_save_boundary",
+        "worldcore_contract"
+      ],
+      "matchedExpectedFamilies": [
+        "worldcore_contract",
+        "rollback_old_save_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-GO-DOC-CODE-AUDIT-004",
+      "caseType": "positive",
+      "expectedDecision": "go_for_v3_design_gate",
+      "expectedFamilies": [
+        "doc_code_drift"
+      ],
+      "decision": "go_for_v3_design_gate",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "doc_code_drift"
+      ],
+      "matchedExpectedFamilies": [
+        "doc_code_drift"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-FUTURE-D300-005",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "runtime_agent_implementation"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "runtime_agent_implementation"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "runtime_agent_implementation"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-FUTURE-LIVE-PROBE-006",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "live_pa_drift_plan"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "live_pa_drift_plan"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "live_pa_drift_plan"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-FUTURE-MIROFISH-007",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-FUTURE-PROMPT-008",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "prompt_authority_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "prompt_authority_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "prompt_authority_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-FUTURE-EXTERNAL-FRAMEWORK-009",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "external_framework_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "external_framework_boundary",
+        "future_gate"
+      ],
+      "matchedExpectedFamilies": [
+        "future_gate",
+        "external_framework_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-RUNTIME-010",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_runtimeAgentImplemented",
+          "message": "runtimeAgentImplemented is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_runtime_agent_implementation",
+          "message": "candidateEffects contains forbidden effect runtime_agent_implementation."
+        }
+      ],
+      "coveredFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "matchedExpectedFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-SAVE-011",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "save_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_saveFieldAdded",
+          "message": "saveFieldAdded is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_runFingerprintAdded",
+          "message": "runFingerprintAdded is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_save_field_add",
+          "message": "candidateEffects contains forbidden effect save_field_add."
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_run_fingerprint",
+          "message": "candidateEffects contains forbidden effect run_fingerprint."
+        }
+      ],
+      "coveredFamilies": [
+        "save_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "save_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-DEEPSEEK-VISIBLE-012",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "boundary_deepSeekVisibleLoreEnabled",
+          "message": "deepSeekVisibleLoreEnabled is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "boundary_hiddenPrivateBodyRead",
+          "message": "hiddenPrivateBodyRead is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "effect_deepseek_visible_rag",
+          "message": "candidateEffects contains forbidden effect deepseek_visible_rag."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "effect_hidden_private_body",
+          "message": "candidateEffects contains forbidden effect hidden_private_body."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /SYNTHETIC_HIDDEN_PRIVATE_BODY/i."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /DeepSeek visible (lore|RAG|context) enabled/i."
+        }
+      ],
+      "coveredFamilies": [
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "matchedExpectedFamilies": [
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-BACKEND-013",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "backend_service_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_bffOrBackendUsed",
+          "message": "bffOrBackendUsed is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_serviceImplemented",
+          "message": "serviceImplemented is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_backend_service",
+          "message": "candidateEffects contains forbidden effect backend_service."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_job_queue_service",
+          "message": "candidateEffects contains forbidden effect job_queue_service."
+        }
+      ],
+      "coveredFamilies": [
+        "backend_service_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "backend_service_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-EXTERNAL-014",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "external_framework_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_dependencyAdded",
+          "message": "dependencyAdded is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_subagentsUsed",
+          "message": "subagentsUsed is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_dependency_install",
+          "message": "candidateEffects contains forbidden effect dependency_install."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_subagent_use",
+          "message": "candidateEffects contains forbidden effect subagent_use."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_patch_artifact",
+          "message": "candidateEffects contains forbidden effect patch_artifact."
+        }
+      ],
+      "coveredFamilies": [
+        "external_framework_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "external_framework_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-MIROFISH-015",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "mirofish_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_mirofishExportUsed",
+          "message": "mirofishExportUsed is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "namedNpcUsed is not allowed in v2.9/v3.0 pre-runtime go/no-go."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_mirofish_export",
+          "message": "candidateEffects contains forbidden effect mirofish_export."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "candidateEffects contains forbidden effect named_npc."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_formal_lore_conclusion",
+          "message": "candidateEffects contains forbidden effect formal_lore_conclusion."
+        }
+      ],
+      "coveredFamilies": [
+        "mirofish_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "mirofish_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-L4-L5-016",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "l4_l5_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "non_l2_l3_layer",
+          "message": "Layer L4 is not allowed for v3.0 runtime design."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "non_l2_l3_layer",
+          "message": "Layer L5 is not allowed for v3.0 runtime design."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l4_runtime",
+          "message": "candidateEffects contains forbidden effect l4_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l5_runtime",
+          "message": "candidateEffects contains forbidden effect l5_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_fate_verdict",
+          "message": "candidateEffects contains forbidden effect fate_verdict."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /L[45]\\s+runtime/i."
+        }
+      ],
+      "coveredFamilies": [
+        "l4_l5_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "l4_l5_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-SELF-LEARNING-017",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "self_learning_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "effect_self_learning_direct_write",
+          "message": "candidateEffects contains forbidden effect self_learning_direct_write."
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "hard_text_boundary",
+          "message": "Text matched forbidden pattern /self-learning writes/i."
+        }
+      ],
+      "coveredFamilies": [
+        "self_learning_boundary"
+      ],
+      "matchedExpectedFamilies": [
+        "self_learning_boundary"
+      ],
+      "missingExpectedFamilies": []
+    },
+    {
+      "id": "V290-REJ-DOC-CODE-018",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "doc_code_drift"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "doc_code_drift",
+          "code": "effect_doc_claim_without_evidence",
+          "message": "candidateEffects contains forbidden effect doc_claim_without_evidence."
+        },
+        {
+          "severity": "P0",
+          "family": "doc_code_drift",
+          "code": "effect_missing_runner_evidence",
+          "message": "candidateEffects contains forbidden effect missing_runner_evidence."
+        }
+      ],
+      "coveredFamilies": [
+        "doc_code_drift"
+      ],
+      "matchedExpectedFamilies": [
+        "doc_code_drift"
+      ],
+      "missingExpectedFamilies": []
+    }
+  ],
+  "outputPath": "artifacts/v2.9.0/pre-runtime-go-no-go/2026-05-24T07-12-28-795Z/report.json"
+}
