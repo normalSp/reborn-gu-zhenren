@@ -1,0 +1,63 @@
+# v2.8.0 codex 总览
+
+日期：2026-05-24
+状态：startup meeting completed；等待用户审批 D-280 前置授权包
+分支：`codex/v280-startup-runtime-admission-precheck`
+主线：`Runtime Agent 接入准入门禁`
+
+## 一句话结论
+
+v2.8 建议承接 v2.7 的多 NPC / 小势力 Agent Lab 证据，正式做 `runtime agent 接入准入门禁`。本版本不是 runtime agent 实现，不接 DeepSeek live，不改 save，不开后端，不做 MiroFish export，不引入外部框架 PoC；它只判断哪些 L2/L3 能力未来有资格进入 v3.0 小区域 runtime 试点，哪些必须继续留在实验室或直接拒绝。
+
+## 当前入口
+
+| 文档 | 用途 | 状态 |
+|---|---|---|
+| `v2.8.0-专家团启动会纪要.md` | 专家团意见与启动结论 | completed startup |
+| `v2.8.0-前置授权包.md` | D-280 / F-280 全版本授权边界 | pending user approval |
+| `v2.8.0-启动审查与范围冻结.md` | v2.7 输入、硬边界、范围冻结 | completed startup |
+| `v2.8.0-总体开发大纲.md` | 主线、产物目标、工程边界 | draft |
+| `v2.8.0-小版本执行路线图.md` | startup/a0/a1/a2/b1/b2/b3/process/rc | draft |
+| `v2.8.0-需求决策池.md` | D-280 / F-280 决策池 | pending |
+| `v2.8.0-a0-v2.7复盘与runtime-admission范围冻结.md` | v2.7 复盘与 v2.8 a0 范围冻结 | draft |
+| `v2.8.0-测试矩阵.md` | v2.8 docs/report-only/offline 测试矩阵 | draft |
+| `v2.8.0-真相源索引.md` | 本版本依据与禁止事实源 | draft |
+| `v2.8.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与升级条件 | draft |
+| `v2.8.0-Git提交与推送计划.md` | 分支、提交、推送、CI 计划 | draft |
+| `v2.8.0-startup-Skill同步审计记录.md` | startup skill sync audit | completed |
+
+## 编号说明
+
+v2.8 使用 `D-280` / `F-280`。它和 v2.7 的 `D-271` / `F-271` 分开，避免跨版本追踪混淆。
+
+## 当前建议
+
+专家团建议用户审批：
+
+- D-280-001 至 D-280-012：建议全部批准。
+- F-280-001 至 F-280-012：建议全部保持 `future_gate_required`。
+
+若用户批准 D-280，后续可以在 `/goal` 中按授权包连续完成 v2.8，不再每个小阶段重复等待常规审批。任何 F-280 事项触发时仍必须停机找用户决策。
+
+## 硬边界
+
+v2.8 startup 不授权：
+
+- runtime/source/UI/store/prompt/save 变更。
+- 新 save field、`SAVE_FORMAT_VERSION` bump、migration、`runFingerprint`。
+- runtime agent、WorldCore runtime 接入、agent 写正式事实。
+- live DeepSeek、DeepSeek prompt/context/model/authority 变更、DeepSeek visible lore/RAG。
+- backend/BFF/private canon service/eval archive service/job queue service/cloud save。
+- external framework PoC、dependency、vendored subset、read-only scan、patch artifact、subagents。
+- MiroFish export/intake、真实原著事实、命名 NPC、hidden-adjacent、方源公开证据、正式 lore 结论。
+- 知识库正文、runtime canon、canon promotion、真实 hidden/private body、prompt body archive。
+- 正式地点、阵营、身份、奖励、NPC 生死、正式游戏事实。
+- public wording、release、EdgeOne 部署、法律/版权边界变化。
+
+## 下一步
+
+等待用户审批 D-280 / F-280。
+
+若批准，进入：
+
+`v2.8.0-a1-runtime-agent-admission-criteria设计门禁.md`
