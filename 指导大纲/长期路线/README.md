@@ -1,7 +1,7 @@
 # RebornG 长期路线入口
 
 日期：2026-05-24
-状态：项目-owned 长期方向；不直接等同当前版本范围；v2.6 startup 已打开，v2.5 已完成，v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地并同步。
+状态：项目-owned 长期方向；不直接等同当前版本范围；v3.0 已完成为设计门禁/report-only 里程碑，v3.0-v4.0 Runtime Agent 到高阶世界总纲、v2.0-v4.0 分层 Agent 与世界内核研究线、v2.0-v3.0 Agent Lab 到 Runtime Agent 总纲、v2.4 前置 Agent Framework Landscape 2026 吸收矩阵已落地并同步。
 
 ## 目录定位
 
@@ -34,6 +34,7 @@ RebornG 的最终体验目标：
 - `RebornG-长期架构演进路线图-纯前端到薄后端.md`：纯前端、TypeScript core、薄后端/BFF、隐藏事实保护和公开测试架构的长期路线。
 - `v2.0-v4.0-分层Agent与世界内核/`：v2.0 之后分层 agent、世界内核、薄后端、Agent Lab、高阶战斗和宿命/天道宏观系统的可行性与架构草案。当前只作研究线，不授权 runtime。
 - `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`：细化 v2.0 到 v3.0 的小版本路线，从已完成第一个区域活世界，到 Agent Lab、薄 BFF 边界、runtime agent 准入，最后进入有限 L2/L3 runtime agent 试点。当前只作规划基线，不授权 runtime agent。
+- `v3.0-v4.0-RuntimeAgent到高阶世界总体大纲.md`：细化 v3.0 完成后的 v3.1-v3.9 与 v4.0 路线；v3.1 先继续加固，不急着真正接 runtime agent；v4.0 定位为高阶战斗与天道/宿命双预备。当前只作规划基线，不开放 F-300 或高阶 runtime。
 - `Agent-Framework-Landscape-2026吸收矩阵.md`：v2.4 前置正式专项；Hermes Agent 作为 P0 架构参考/P1 隔离 PoC 候选，Dify/Flowise/AutoGPT/Agno/Browser-use/LlamaIndex 等按“能否服务游戏世界内核”重新评分。当前只授权 license/SBOM/架构适配评估，不授权 PoC、依赖、runtime 或外部 agent 权限。
 - `大时代开局远期扩展池.md`：盗天魔尊时期、尊者时代、远古/上古/中古等开局的远期想法池。
 
@@ -47,18 +48,17 @@ RebornG 的最终体验目标：
 
 ## 当前阶段提醒
 
-`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。`v2.4.0` 已完成基础设施边界评估。`v2.5.0` 已完成 private canon / knowledge visibility 试验设计，冻结 visibility schema、source-pointer promotion chain、DeepSeek denial、AgentProposal hidden leak / memory contamination 风险模型和 v2.6 准入清单。`v2.6.0` startup 已打开，建议主题为 `private canon / eval archive / job queue / replay archive 工程预备`，当前等待 D-260 前置授权包审批。
+`v2.0.0` 已完成第一个区域活世界本地里程碑，`v2.1.0` 至 `v2.3.0` 已完成 Agent Lab report-only/offline 地基、扩展模拟和 eval farm。`v2.4.0` 至 `v2.6.0` 已完成基础设施、private canon、eval archive、job/replay/archive 边界预备。`v2.7.0` 至 `v2.9.0` 已完成多 NPC、小势力、runtime admission 和 v3.0 前安全收束。`v3.0.0` 已完成有限 L2/L3 runtime agent 试点设计门禁，但 `runtimeImplementationApproved=false`，F-300 仍全部为 `future_gate_required`。
 
 当前建议顺序：
 
-1. 先审阅 `指导大纲/v2.6.0/codex/00-总览/`，确认 D-260/F-260 前置授权包。
-2. 再审阅 `指导大纲/v2.5.0/codex/00-总览/`，确认 v2.5 visibility / private canon 边界已完成和 F-250 future gates。
-3. 再审阅 `Agent-Framework-Landscape-2026吸收矩阵.md`，确认外部框架吸收边界。
-4. 再审阅 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`，确认 v2.1-v2.9 到 v3.0 的路线节奏。
+1. 先审阅 `指导大纲/v3.0.0/codex/00-总览/`，确认 v3.0 是设计门禁完成，不是 runtime agent 实现批准。
+2. 再审阅 `v3.0-v4.0-RuntimeAgent到高阶世界总体大纲.md`，确认 v3.1 继续加固、v3.x 写到 v3.9、v4.0 双预备。
+3. 再审阅 `v2.0-v3.0-AgentLab到RuntimeAgent总体大纲.md`，确认 v2.1-v2.9 到 v3.0 的证据链来源。
+4. 再审阅 `Agent-Framework-Landscape-2026吸收矩阵.md`，确认外部框架吸收边界。
 5. 再审阅 `v2.0-v4.0-分层Agent与世界内核/`，作为更远期的分层 agent、WorldCore、BFF、高阶战斗和宿命/天道研究线。
-6. 必要时回查 `指导大纲/v2.4.0/codex/00-总览/`，确认 v2.4 infrastructure boundary 输入。
 6. 研究线可以讨论任意身份、五域两天、NPC 思想、天道/宿命和蛊仙战斗，但不能自动变成 runtime 批准。
-7. 当前不把外部 AI 人生/跑团项目的“0 岁到多年人生模拟”作为近期可交付目标。RebornG 近期要解决的是 Agent Lab、权限边界、eval farm、BFF 边界和 v3.0 有限 runtime agent 准入。
+7. 当前不把外部 AI 人生/跑团项目的“0 岁到多年人生模拟”作为近期可交付目标。RebornG 近期要解决的是 v3.1 runtime agent 门禁加固、F-300 reopen 决策包、最小 L2/L3 试点准入、高阶战斗与天道/宿命预备边界。
 
 ## 当前架构提醒
 
