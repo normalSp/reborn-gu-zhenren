@@ -54,7 +54,7 @@ function WorldOverview() {
     ['冲突', '冲突后果只读伏击风险、追杀注意、反制缺口和小队准备，不写奖励、通缉或 NPC 生死。'],
     ['活世', '区域活世界合并路线、生存、社会、区域和冲突压力，只显示低阶生活候选。'],
     ['账本', 'WorldCore 将公开区域事件写入最小 regionalEventLedger，不写正式地点、身份、奖励或 NPC 生死。'],
-    ['意图', 'L2/L3 agent 只生成 transient 候选表达，v3.5 lifecycle v2 只强化候选/阻断/过期/待决策边界。'],
+    ['意图', 'L2/L3 agent 只生成 transient 候选表达，v3.6 micro-expansion 只增加 synthetic/generic 多 lane 可读性。'],
     ['身份', '低阶身份路线只读商队临工、散修短活、护送候选、采集跑腿和消息跑腿，不写正式身份。'],
     ['宿命', '剧情锚点和高阶压力，只读或场景化显示，不授予宿命层权威。'],
     ['传承', '候选线索和试炼入口，不暗示玩家已获得传承。'],
@@ -145,7 +145,7 @@ export function WorldHubPanel() {
           ))}
         </div>
         <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/45" data-testid="world-hub-boundary-note">
-          世界入口默认只读或场景化；v3.5 意图候选只做 transient proposal hardening，不开放正式地点、阵营、奖励、NPC 生死、宝黄天交易或结局裁决。
+          世界入口默认只读或场景化；v3.6 意图候选只做 transient synthetic L2/L3 micro-expansion，不开放正式地点、阵营、奖励、NPC 生死、宝黄天交易或结局裁决。
         </p>
       </div>
 

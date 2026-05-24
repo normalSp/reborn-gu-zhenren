@@ -1,7 +1,7 @@
 # v3.6.0 总览
 
 日期：2026-05-25
-状态：startup；pending user approval
+状态：completed locally；pending commit/push/CI
 主线：`transient AgentProposal synthetic L2/L3 微扩 + 同开局差异/漂移硬化`
 
 ## 定位
@@ -46,6 +46,18 @@ v3.6 不扩大成 persistent runtime agent。本版本建议只做 synthetic / R
 | `v3.6.0-前置授权包.md` | D-360 / F-360 审批包 |
 | `v3.6.0-例外停机清单.md` | `/goal` 自动推进硬停条件 |
 | `v3.6.0-需求决策池.md` | D/F 决策状态入口 |
+| `v3.6.0-D360决策记录.md` | 用户批准记录 |
+| `v3.6.0-a0-v3.5复盘与micro-expansion范围冻结.md` | a0 范围冻结 |
+| `v3.6.0-a1-synthetic-L2L3-micro-expansion-scenario-model设计门禁.md` | a1 scenario model |
+| `v3.6.0-a2-candidate-lane-copy-gate设计门禁.md` | a2 copy gate |
+| `v3.6.0-b1-transient-AgentProposal-micro-expansion-first-cut.md` | b1 runtime 第一刀 |
+| `v3.6.0-b2-90轮deterministic-same-start-variation.md` | b2 deterministic gate |
+| `v3.6.0-b3-Player-Advocate-30轮走查记录.md` | b3 Player Advocate |
+| `v3.6.0-b3-90轮deterministic漂移检查记录.md` | b3 drift record |
+| `v3.6.0-process-1-前置审批制度第十二轮复核.md` | process-1 |
+| `v3.6.0-process-2-长线漂移与知识边界复核.md` | process-2 |
+| `v3.6.0-rc-Skill同步审计记录.md` | rc skill sync |
+| `v3.6.0-rc-质量收束记录.md` | rc quality closure |
 | `v3.6.0-测试矩阵.md` | startup / future implementation 测试计划 |
 | `v3.6.0-真相源索引.md` | v3.6 证据优先级 |
 | `v3.6.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与升级触发器 |
@@ -54,4 +66,4 @@ v3.6 不扩大成 persistent runtime agent。本版本建议只做 synthetic / R
 
 ## 当前结论
 
-v3.6 已具备启动条件，但尚未获得 D-360 批准。下一步应请用户审批 D-360-001 至 D-360-012，并确认 F-360-001 至 F-360-012 全部保持 `future_gate_required`。
+用户已批准 D-360-001 至 D-360-012，并确认 F-360-001 至 F-360-012 全部保持 `future_gate_required`。v3.6 已完成本地 runtime 微扩第一刀、30 轮 Player Advocate、90 轮 deterministic gate、full verification 与文档自检；收束前还需完成 commit/push/CI 与最终远端证据记录。
