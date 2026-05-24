@@ -1,0 +1,397 @@
+[
+  {
+    "id": "V310-OK-CONTRACT-V2-L2-001",
+    "caseType": "positive",
+    "expectedDecision": "gate_hardening_ok",
+    "expectedFamilies": ["agentproposal_contract_v2", "worldcore_postcheck_evidence_chain", "visible_context_boundary", "transient_persistence"],
+    "coverageFamilies": ["agentproposal_contract_v2", "worldcore_postcheck_evidence_chain", "visible_context_boundary", "transient_persistence"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false, "recordRequired": true },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "driftCheckpoints": ["proposal", "postcheck"],
+      "evidenceRefs": ["v310_a0_runtime_agent_gate_hardening_scope_v1", "v310_a1_agentproposal_contract_v2_worldcore_evidence_chain_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-OK-EXPRESSION-L3-002",
+    "caseType": "positive",
+    "expectedDecision": "gate_hardening_ok",
+    "expectedFamilies": ["agentproposal_contract_v2", "worldcore_postcheck_evidence_chain", "player_advocate_metadata", "live_metadata_gate"],
+    "coverageFamilies": ["agentproposal_contract_v2", "worldcore_postcheck_evidence_chain", "player_advocate_metadata", "live_metadata_gate"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false, "sampleCount": 0, "roundCount": 0 },
+      "liveMetadata": { "liveDeepSeekCalled": false, "model": null, "reportPath": null },
+      "driftCheckpoints": ["visible_context", "expression_candidate", "postcheck"],
+      "evidenceRefs": ["v310_a1_agentproposal_contract_v2_worldcore_evidence_chain_v1", "v310_a2_rollback_oldsave_pa_live_metadata_drift_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-OK-ROLLBACK-OLDSAVE-003",
+    "caseType": "positive",
+    "expectedDecision": "gate_hardening_ok",
+    "expectedFamilies": ["rollback_old_save_gate", "save_boundary"],
+    "coverageFamilies": ["rollback_old_save_gate", "save_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "driftCheckpoints": ["old_save", "rollback", "postcheck"],
+      "evidenceRefs": ["v310_a2_rollback_oldsave_pa_live_metadata_drift_gate_v1", "v300_a2_live_pa_drift_rollback_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-OK-DRIFT-SAME-START-004",
+    "caseType": "positive",
+    "expectedDecision": "gate_hardening_ok",
+    "expectedFamilies": ["drift_checkpoint", "same_start_difference", "transient_persistence"],
+    "coverageFamilies": ["drift_checkpoint", "same_start_difference", "transient_persistence"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "driftCheckpoints": ["same_start_a", "same_start_b", "postcheck"],
+      "evidenceRefs": ["v300_b3_same_start_npc_intent_faction_pressure_review_v1", "v310_a2_rollback_oldsave_pa_live_metadata_drift_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-OK-V32-REHEARSAL-ADMISSION-005",
+    "caseType": "positive",
+    "expectedDecision": "gate_hardening_ok",
+    "expectedFamilies": ["agentproposal_contract_v2", "manual_review_chain", "drift_checkpoint"],
+    "coverageFamilies": ["agentproposal_contract_v2", "manual_review_chain", "drift_checkpoint"],
+    "claim": {
+      "agentLayers": ["L2", "L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "noSaveFieldAdded": true,
+      "rollbackPlanReady": true,
+      "oldSavePlanReady": true,
+      "playerAdvocateMetadata": { "liveDeepSeekCalled": false },
+      "liveMetadata": { "liveDeepSeekCalled": false },
+      "manualReviewRoute": true,
+      "driftCheckpoints": ["proposal_batch", "postcheck_batch", "admission"],
+      "evidenceRefs": ["v310_b3_v32_runtime_rehearsal_admission_package_v1", "v310_b1_runtime_agent_gate_hardening_checker_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-MANUAL-AMBIGUOUS-CREDENTIAL-006",
+    "caseType": "manual_review",
+    "expectedDecision": "manual_review_required",
+    "expectedFamilies": ["manual_review_chain", "formal_authority_boundary"],
+    "coverageFamilies": ["manual_review_chain", "formal_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "manual_review",
+      "persistenceMode": "transient_candidate_only",
+      "manualReviewRoute": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-MANUAL-SAME-START-DIVERGENCE-007",
+    "caseType": "manual_review",
+    "expectedDecision": "manual_review_required",
+    "expectedFamilies": ["manual_review_chain", "same_start_difference"],
+    "coverageFamilies": ["manual_review_chain", "same_start_difference"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": true,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "needs_user_decision",
+      "persistenceMode": "transient_candidate_only",
+      "needsUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-RUNTIME-IMPLEMENTATION-008",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "runtime_agent_implementation"],
+    "futureGateFamilies": ["future_gate", "runtime_agent_implementation"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-001 runtime agent implementation",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-SAVE-009",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "save_boundary"],
+    "futureGateFamilies": ["future_gate", "save_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-002 save field or SAVE_FORMAT_VERSION bump",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-LIVE-DEEPSEEK-010",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "prompt_authority_boundary", "live_metadata_gate"],
+    "futureGateFamilies": ["future_gate", "prompt_authority_boundary", "live_metadata_gate"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-003 live DeepSeek or prompt/context/model/authority change",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-BACKEND-011",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "backend_service_boundary"],
+    "futureGateFamilies": ["future_gate", "backend_service_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-004 backend/BFF/service/job queue/eval archive/cloud save",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-MIROFISH-012",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "mirofish_boundary"],
+    "futureGateFamilies": ["future_gate", "mirofish_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-005 MiroFish export/intake for named NPC or hidden-adjacent lore",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-EXTERNAL-FRAMEWORK-013",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "external_framework_boundary"],
+    "futureGateFamilies": ["future_gate", "external_framework_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-007 external framework PoC/dependency/read-only scan/subagent",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-FUTURE-L4-L5-HIGH-COMBAT-014",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "l4_l5_boundary"],
+    "futureGateFamilies": ["future_gate", "l4_l5_boundary"],
+    "claim": {
+      "requiresFutureUserDecision": true,
+      "futureDecision": "F-310-009/F-310-012 original-key-character layer or high-rank combat future gate",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V310-REJ-RUNTIME-WRITE-015",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["runtime_agent_implementation"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["runtime_agent_implementation", "runtime_write", "worldcore_runtime_connect"],
+      "boundaries": { "runtimeAgentImplemented": true, "runtimeModified": true, "worldCoreRuntimeConnected": true }
+    }
+  },
+  {
+    "id": "V310-REJ-SAVE-FIELD-016",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_boundary", "transient_persistence"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresWorldCorePostCheck": true,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "persistent_agent_state",
+      "candidateEffects": ["save_field_add", "save_format_bump", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "saveFormatModified": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V310-REJ-LIVE-HIDDEN-RAG-017",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["prompt_authority_boundary", "deepseek_visible_leak", "hidden_private_body"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "candidateEffects": ["live_deepseek_call", "deepseek_visible_rag", "hidden_private_body"],
+      "publicSummary": "DeepSeek visible RAG enabled with SYNTHETIC_HIDDEN_PRIVATE_BODY.",
+      "boundaries": { "deepSeekLiveCalled": true, "deepSeekVisibleLoreEnabled": true, "hiddenPrivateBodyRead": true }
+    }
+  },
+  {
+    "id": "V310-REJ-BACKEND-SERVICE-018",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["backend_service", "job_queue_service", "eval_archive_service", "private_canon_service"],
+      "boundaries": { "bffOrBackendUsed": true, "serviceImplemented": true }
+    }
+  },
+  {
+    "id": "V310-REJ-EXTERNAL-POC-SUBAGENT-019",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["external_framework_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["dependency_install", "external_framework_poc", "read_only_scan", "subagent_use", "patch_artifact"],
+      "boundaries": { "dependencyAdded": true, "externalFrameworkPoCUsed": true, "readOnlyScanUsed": true, "subagentsUsed": true, "patchArtifactUsed": true }
+    }
+  },
+  {
+    "id": "V310-REJ-MIROFISH-NAMED-HIDDEN-020",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary", "formal_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L3"],
+      "candidateEffects": ["mirofish_export", "named_npc", "hidden_adjacent", "formal_lore_conclusion", "formal_location"],
+      "boundaries": { "mirofishExportUsed": true, "namedNpcUsed": true, "hiddenAdjacentUsed": true, "formalLoreConclusionUsed": true, "formalLocationFactionIdentityRewardNpcLifeDeathOpened": true }
+    }
+  },
+  {
+    "id": "V310-REJ-FORMAL-RESULTS-021",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["formal_authority_boundary"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["formal_faction", "formal_identity", "formal_reward", "npc_life_death", "formal_warrant", "formal_recruitment"],
+      "boundaries": { "formalLocationFactionIdentityRewardNpcLifeDeathOpened": true }
+    }
+  },
+  {
+    "id": "V310-REJ-L4-L5-FATE-022",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary"],
+    "claim": {
+      "agentLayers": ["L4", "L5"],
+      "candidateEffects": ["l4_runtime", "l5_runtime", "fate_verdict", "heaven_will_verdict"],
+      "publicSummary": "L4/L5 runtime decides fate.",
+      "boundaries": { "l4RuntimeOpened": true, "l5RuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V310-REJ-SELF-LEARNING-DIRECT-023",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["self_learning_boundary", "canon_promotion"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "candidateEffects": ["self_learning_direct_write", "canon_write", "knowledge_body_write"],
+      "publicSummary": "self-learning writes canon/runtime/save directly.",
+      "boundaries": { "selfLearningDirectWrite": true, "knowledgeIndexBodyWritten": true }
+    }
+  },
+  {
+    "id": "V310-REJ-NO-POSTCHECK-MANUAL-BYPASS-024",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["worldcore_postcheck_evidence_chain", "agentproposal_contract_v2"],
+    "claim": {
+      "agentLayers": ["L2"],
+      "smallAreaOnly": true,
+      "proposalOnly": false,
+      "visibleContextLimited": true,
+      "visibilityClass": "synthetic_redacted",
+      "worldCoreFinalAuthority": false,
+      "requiresWorldCorePostCheck": false,
+      "postCheckOutcome": "approved_expression",
+      "persistenceMode": "transient_candidate_only",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  }
+]
