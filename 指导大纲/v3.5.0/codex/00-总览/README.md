@@ -1,7 +1,7 @@
 # v3.5.0 总览
 
 日期：2026-05-25
-状态：completed locally
+状态：completed；commit/push/CI passed
 主线：`transient AgentProposal hardening-first`
 
 ## 定位
@@ -72,4 +72,4 @@ v3.5 没有扩大成完整 runtime agent。本版本只把 v3.4 首刀硬化为 
 
 ## 完成结论
 
-v3.5 已完成本地开发：runtime `意图` tab 继续保持 transient proposal-only，但新增 lifecycle v2、copy guard、60 轮 deterministic gate 与 20 轮 PA 证据。它仍不是 persistent runtime agent。
+v3.5 已完成并通过远端 CI：runtime `意图` tab 继续保持 transient proposal-only，但新增 lifecycle v2、copy guard、60 轮 deterministic gate 与 20 轮 PA 证据。完成 commit `e3b004dd` 已推送，GitHub Actions run `26368124209` passed。它仍不是 persistent runtime agent。
