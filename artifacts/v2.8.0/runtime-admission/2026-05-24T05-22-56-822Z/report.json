@@ -1,0 +1,653 @@
+{
+  "gate": "v2.8.0-b1-runtime-admission-report-only-checker",
+  "targetVersion": "v2.8.0",
+  "checkerVersion": "v280_b1_runtime_admission_report_checker_v1",
+  "a1CriteriaVersion": "v280_a1_runtime_agent_admission_criteria_v1",
+  "a2MatrixVersion": "v280_a2_agent_capability_classification_matrix_v1",
+  "createdAt": "2026-05-24T05:22:56.824Z",
+  "mode": "dry-run-only-report-only",
+  "noLiveDeepSeek": true,
+  "noTokenSpend": true,
+  "noRuntimeWrite": true,
+  "noSaveWrite": true,
+  "noBackendService": true,
+  "noExternalFramework": true,
+  "noSubagents": true,
+  "noMiroFishExport": true,
+  "sampleFile": "tests/evals/v280-runtime-admission/samples.json",
+  "sampleHash": "07d04e298dae54f9a8f4bb3af00da7139bb0e84fb6d26e0fbb677308b2b27c2f",
+  "coverage": {
+    "layerCounts": {
+      "L2": 7,
+      "L3": 3,
+      "L1": 1,
+      "SELF_LEARNING": 2,
+      "L5": 2,
+      "L4": 1
+    },
+    "expectedClassificationCounts": {
+      "admissible_candidate": 5,
+      "lab_only": 4,
+      "rejected": 7
+    },
+    "negativeFamilies": [
+      "backend_service_boundary",
+      "deepseek_visible_leak",
+      "external_framework_boundary",
+      "formal_authority_drift",
+      "l4_lore_boundary",
+      "l5_overreach",
+      "npc_life_death",
+      "prompt_body",
+      "runtime_or_save_write",
+      "self_learning_direct_write"
+    ]
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "saveFormatModified": false,
+    "saveFieldAdded": false,
+    "runFingerprintAdded": false,
+    "deepSeekLiveCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "subagentsUsed": false,
+    "mirofishExportUsed": false,
+    "externalFrameworkPoCUsed": false,
+    "dependencyAdded": false,
+    "realHiddenPrivateBodyRead": false,
+    "promptBodyArchived": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "formalLocationFactionRewardNpcLifeDeathOpened": false,
+    "edgeOneDeployed": false
+  },
+  "summary": {
+    "sampleCount": 16,
+    "schemaValidCount": 16,
+    "acceptedForGateCount": 16,
+    "admissibleCandidateCount": 5,
+    "labOnlyCount": 4,
+    "rejectedCount": 7,
+    "falseNegativeCount": 0,
+    "unexpectedBlockingCount": 0,
+    "resultMismatchCount": 0,
+    "missingExpectedFamilyCount": 0,
+    "globalBlockingCount": 0,
+    "rescoreStable": true,
+    "acceptedForGate": true,
+    "P0": 24,
+    "P1": 0,
+    "P2": 0,
+    "Info": 0
+  },
+  "results": [
+    {
+      "id": "V280-ADM-L2-REFLECTION-001",
+      "title": "L2 event reflection remains a reversible memory candidate",
+      "caseType": "positive",
+      "expectedClassification": "admissible_candidate",
+      "classification": "admissible_candidate",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-ADM-L2-GOAL-002",
+      "title": "L2 squad member long-goal candidate has TTL and audit trail",
+      "caseType": "positive",
+      "expectedClassification": "admissible_candidate",
+      "classification": "admissible_candidate",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-ADM-L3-EXPRESSION-003",
+      "title": "L3 current-scene NPC expression can vary language only",
+      "caseType": "positive",
+      "expectedClassification": "admissible_candidate",
+      "classification": "admissible_candidate",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-ADM-L3-INTENT-004",
+      "title": "L3 current-scene NPC intent candidate requires WorldCore post-check",
+      "caseType": "positive",
+      "expectedClassification": "admissible_candidate",
+      "classification": "admissible_candidate",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-ADM-L2-SOCIAL-005",
+      "title": "L2 social follow-up candidate stays private and auditable",
+      "caseType": "positive",
+      "expectedClassification": "admissible_candidate",
+      "classification": "admissible_candidate",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-LAB-L1-ROUTINE-006",
+      "title": "L1 routine behavior remains local behavior-tree territory",
+      "caseType": "lab_only",
+      "expectedClassification": "lab_only",
+      "classification": "lab_only",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-LAB-L2-FACTION-007",
+      "title": "L2 small-faction pressure remains lab-only before formal social state",
+      "caseType": "lab_only",
+      "expectedClassification": "lab_only",
+      "classification": "lab_only",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-LAB-SELF-LEARNING-008",
+      "title": "Self-learning candidate proposes a patch for later review only",
+      "caseType": "lab_only",
+      "expectedClassification": "lab_only",
+      "classification": "lab_only",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-LAB-L5-PRESSURE-009",
+      "title": "L5 macro pressure can be reported but not connected to runtime",
+      "caseType": "lab_only",
+      "expectedClassification": "lab_only",
+      "classification": "lab_only",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": []
+    },
+    {
+      "id": "V280-REJ-FORMAL-010",
+      "title": "Reject agent writing formal reward, location, and NPC death",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "formal_authority_drift",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect reward_grant appears."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_drift",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect formal_location appears."
+        },
+        {
+          "severity": "P0",
+          "family": "npc_life_death",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect npc_life_death appears."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-SAVE-011",
+      "title": "Reject direct save/runtime writes",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_or_save_write",
+          "code": "forbidden_key",
+          "message": "Forbidden key savePatch appears.",
+          "ref": "savePatch"
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_or_save_write",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect save_write appears."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-DEEPSEEK-RAG-012",
+      "title": "Reject DeepSeek visible lore/RAG expansion",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "forbidden_key",
+          "message": "Forbidden key deepSeekVisibleLore appears.",
+          "ref": "deepSeekVisibleLore"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect deepseek_visible_lore appears."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-INFRA-013",
+      "title": "Reject backend service and external framework/subagent shortcut",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "forbidden_key",
+          "message": "Forbidden key backendService appears.",
+          "ref": "backendService"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "forbidden_key",
+          "message": "Forbidden key externalFrameworkPoC appears.",
+          "ref": "externalFrameworkPoC"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "forbidden_key",
+          "message": "Forbidden key subagentUsed appears.",
+          "ref": "subagentUsed"
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect backend_service appears."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect external_framework_poc appears."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect subagent_use appears."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-L4-014",
+      "title": "Reject L4 original key character live agent",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_lore_boundary",
+          "code": "l4_runtime_candidate",
+          "message": "L4 original key character live/runtime agent remains a future gate."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-L5-015",
+      "title": "Reject L5 fate/heaven verdict on player outcome",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "forbidden_text",
+          "message": "Forbidden text pattern /fate\\s+is\\s+(sealed|decided)/i appears.",
+          "ref": "publicSummary"
+        },
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "forbidden_text",
+          "message": "Forbidden text pattern /ending\\s+is\\s+(sealed|decided)/i appears.",
+          "ref": "publicSummary"
+        },
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect l5_verdict appears."
+        },
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "l5_runtime_or_outcome_scope",
+          "message": "L5 Heaven/Fate can only be report-only in v2.8."
+        },
+        {
+          "severity": "P0",
+          "family": "l5_overreach",
+          "code": "l5_verdict_language",
+          "message": "L5 verdict or ending language remains future-gated."
+        }
+      ]
+    },
+    {
+      "id": "V280-REJ-SELF-DIRECT-016",
+      "title": "Reject self-learning direct skill/prompt modification",
+      "caseType": "negative",
+      "expectedClassification": "rejected",
+      "classification": "rejected",
+      "schemaValid": true,
+      "resultMatchesExpected": true,
+      "missingExpectedFamilies": [],
+      "falseNegative": false,
+      "unexpectedBlockingFinding": false,
+      "acceptedForGate": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "self_learning_direct_write",
+          "code": "forbidden_key",
+          "message": "Forbidden key selfLearningDirectWrite appears.",
+          "ref": "selfLearningDirectWrite"
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_body",
+          "code": "forbidden_key",
+          "message": "Forbidden key promptBody appears.",
+          "ref": "promptBody"
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_body",
+          "code": "forbidden_text",
+          "message": "Forbidden text pattern /SYNTHETIC_PROMPT_BODY/i appears.",
+          "ref": "promptBody"
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_direct_write",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect self_learning_direct_write appears."
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_body",
+          "code": "forbidden_effect",
+          "message": "Forbidden effect prompt_write appears."
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "sampleId": "V280-REJ-FORMAL-010",
+      "severity": "P0",
+      "family": "formal_authority_drift",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect reward_grant appears."
+    },
+    {
+      "sampleId": "V280-REJ-FORMAL-010",
+      "severity": "P0",
+      "family": "formal_authority_drift",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect formal_location appears."
+    },
+    {
+      "sampleId": "V280-REJ-FORMAL-010",
+      "severity": "P0",
+      "family": "npc_life_death",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect npc_life_death appears."
+    },
+    {
+      "sampleId": "V280-REJ-SAVE-011",
+      "severity": "P0",
+      "family": "runtime_or_save_write",
+      "code": "forbidden_key",
+      "message": "Forbidden key savePatch appears.",
+      "ref": "savePatch"
+    },
+    {
+      "sampleId": "V280-REJ-SAVE-011",
+      "severity": "P0",
+      "family": "runtime_or_save_write",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect save_write appears."
+    },
+    {
+      "sampleId": "V280-REJ-DEEPSEEK-RAG-012",
+      "severity": "P0",
+      "family": "deepseek_visible_leak",
+      "code": "forbidden_key",
+      "message": "Forbidden key deepSeekVisibleLore appears.",
+      "ref": "deepSeekVisibleLore"
+    },
+    {
+      "sampleId": "V280-REJ-DEEPSEEK-RAG-012",
+      "severity": "P0",
+      "family": "deepseek_visible_leak",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect deepseek_visible_lore appears."
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "forbidden_key",
+      "message": "Forbidden key backendService appears.",
+      "ref": "backendService"
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "forbidden_key",
+      "message": "Forbidden key externalFrameworkPoC appears.",
+      "ref": "externalFrameworkPoC"
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "forbidden_key",
+      "message": "Forbidden key subagentUsed appears.",
+      "ref": "subagentUsed"
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect backend_service appears."
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect external_framework_poc appears."
+    },
+    {
+      "sampleId": "V280-REJ-INFRA-013",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect subagent_use appears."
+    },
+    {
+      "sampleId": "V280-REJ-L4-014",
+      "severity": "P0",
+      "family": "l4_lore_boundary",
+      "code": "l4_runtime_candidate",
+      "message": "L4 original key character live/runtime agent remains a future gate."
+    },
+    {
+      "sampleId": "V280-REJ-L5-015",
+      "severity": "P0",
+      "family": "l5_overreach",
+      "code": "forbidden_text",
+      "message": "Forbidden text pattern /fate\\s+is\\s+(sealed|decided)/i appears.",
+      "ref": "publicSummary"
+    },
+    {
+      "sampleId": "V280-REJ-L5-015",
+      "severity": "P0",
+      "family": "l5_overreach",
+      "code": "forbidden_text",
+      "message": "Forbidden text pattern /ending\\s+is\\s+(sealed|decided)/i appears.",
+      "ref": "publicSummary"
+    },
+    {
+      "sampleId": "V280-REJ-L5-015",
+      "severity": "P0",
+      "family": "l5_overreach",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect l5_verdict appears."
+    },
+    {
+      "sampleId": "V280-REJ-L5-015",
+      "severity": "P0",
+      "family": "l5_overreach",
+      "code": "l5_runtime_or_outcome_scope",
+      "message": "L5 Heaven/Fate can only be report-only in v2.8."
+    },
+    {
+      "sampleId": "V280-REJ-L5-015",
+      "severity": "P0",
+      "family": "l5_overreach",
+      "code": "l5_verdict_language",
+      "message": "L5 verdict or ending language remains future-gated."
+    },
+    {
+      "sampleId": "V280-REJ-SELF-DIRECT-016",
+      "severity": "P0",
+      "family": "self_learning_direct_write",
+      "code": "forbidden_key",
+      "message": "Forbidden key selfLearningDirectWrite appears.",
+      "ref": "selfLearningDirectWrite"
+    },
+    {
+      "sampleId": "V280-REJ-SELF-DIRECT-016",
+      "severity": "P0",
+      "family": "prompt_body",
+      "code": "forbidden_key",
+      "message": "Forbidden key promptBody appears.",
+      "ref": "promptBody"
+    },
+    {
+      "sampleId": "V280-REJ-SELF-DIRECT-016",
+      "severity": "P0",
+      "family": "prompt_body",
+      "code": "forbidden_text",
+      "message": "Forbidden text pattern /SYNTHETIC_PROMPT_BODY/i appears.",
+      "ref": "promptBody"
+    },
+    {
+      "sampleId": "V280-REJ-SELF-DIRECT-016",
+      "severity": "P0",
+      "family": "self_learning_direct_write",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect self_learning_direct_write appears."
+    },
+    {
+      "sampleId": "V280-REJ-SELF-DIRECT-016",
+      "severity": "P0",
+      "family": "prompt_body",
+      "code": "forbidden_effect",
+      "message": "Forbidden effect prompt_write appears."
+    }
+  ]
+}
