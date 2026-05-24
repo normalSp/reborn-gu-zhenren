@@ -10,12 +10,13 @@ import { RegionSamplePanel } from './RegionSamplePanel';
 import { RegionalEventLedgerPanel } from './RegionalEventLedgerPanel';
 import { RegionalLifePanel } from './RegionalLifePanel';
 import { RouteLocationPanel } from './RouteLocationPanel';
+import { RuntimeAgentProposalPanel } from './RuntimeAgentProposalPanel';
 import { SocialPressurePanel } from './SocialPressurePanel';
 import { SquadFormationPanel } from './SquadFormationPanel';
 import { StoryAnchorPanel } from './StoryAnchorPanel';
 import { TrainingGroundPanel } from './TrainingGroundPanel';
 
-type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'region_sample' | 'conflict_aftermath' | 'regional_life' | 'regional_ledger' | 'identity_replay' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
+type WorldTab = 'overview' | 'route_location' | 'survival_economy' | 'social_pressure' | 'region_sample' | 'conflict_aftermath' | 'regional_life' | 'regional_ledger' | 'agent_proposal' | 'identity_replay' | 'story_anchor' | 'inheritance' | 'ending' | 'merchant' | 'training_ground' | 'squad' | 'dev_demo';
 
 const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'overview', label: '总览' },
@@ -26,6 +27,7 @@ const TABS: Array<{ id: WorldTab; label: string }> = [
   { id: 'conflict_aftermath', label: '冲突' },
   { id: 'regional_life', label: '活世' },
   { id: 'regional_ledger', label: '账本' },
+  { id: 'agent_proposal', label: '意图' },
   { id: 'identity_replay', label: '身份' },
   { id: 'story_anchor', label: '宿命' },
   { id: 'inheritance', label: '传承' },
@@ -52,6 +54,7 @@ function WorldOverview() {
     ['冲突', '冲突后果只读伏击风险、追杀注意、反制缺口和小队准备，不写奖励、通缉或 NPC 生死。'],
     ['活世', '区域活世界合并路线、生存、社会、区域和冲突压力，只显示低阶生活候选。'],
     ['账本', 'WorldCore 将公开区域事件写入最小 regionalEventLedger，不写正式地点、身份、奖励或 NPC 生死。'],
+    ['意图', 'L2/L3 agent 只生成 transient 候选表达，WorldCore post-check 后仍不写事实或存档。'],
     ['身份', '低阶身份路线只读商队临工、散修短活、护送候选、采集跑腿和消息跑腿，不写正式身份。'],
     ['宿命', '剧情锚点和高阶压力，只读或场景化显示，不授予宿命层权威。'],
     ['传承', '候选线索和试炼入口，不暗示玩家已获得传承。'],
@@ -142,7 +145,7 @@ export function WorldHubPanel() {
           ))}
         </div>
         <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/45" data-testid="world-hub-boundary-note">
-          世界入口默认只读或场景化；不开放正式地点、阵营、奖励、NPC 生死、宝黄天交易或结局裁决。
+          世界入口默认只读或场景化；v3.4 意图候选只做 transient proposal，不开放正式地点、阵营、奖励、NPC 生死、宝黄天交易或结局裁决。
         </p>
       </div>
 
@@ -155,6 +158,7 @@ export function WorldHubPanel() {
         {tab === 'conflict_aftermath' && <ConflictAftermathPanel />}
         {tab === 'regional_life' && <RegionalLifePanel />}
         {tab === 'regional_ledger' && <RegionalEventLedgerPanel />}
+        {tab === 'agent_proposal' && <RuntimeAgentProposalPanel />}
         {tab === 'identity_replay' && <IdentityReplayPanel />}
         {tab === 'story_anchor' && <StoryAnchorPanel />}
         {tab === 'inheritance' && <InheritanceLandPanel />}
