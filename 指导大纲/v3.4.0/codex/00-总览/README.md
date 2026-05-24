@@ -1,7 +1,7 @@
 # v3.4.0 总览
 
 日期：2026-05-24
-状态：completed locally
+状态：completed
 主线：最小 `transient proposal-only` runtime first cut
 
 ## 定位
@@ -42,6 +42,7 @@ v3.4 已完成：
 - 新增 v3.4 unit/post-check/rejection/old-save/deterministic 测试。
 - 新增 v3.4 Playwright e2e。
 - 完成 10 轮 Player Advocate 和 30 轮 deterministic 漂移检查。
+- commit `69a5952` 已推送，GitHub Actions run `26366267080` 通过。
 
 ## 硬边界
 
