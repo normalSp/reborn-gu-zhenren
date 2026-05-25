@@ -5,7 +5,7 @@
 - 分支：`codex/v380-startup-proposal-graph-stability`
 - 版本：`v3.8.0`
 - 主线：`transient proposal graph 长期稳定性与多小势力压力复核`
-- 状态：本地开发与验证完成，等待 commit/push/CI。
+- 状态：完成，completion commit `196b46b4` / GitHub Actions `26395818611` passed。
 
 ## 用户授权
 
@@ -67,7 +67,6 @@ v3.8 没有新增：
 
 ## 下一步
 
-1. commit/push。
-2. 等 GitHub Actions。
-3. 更新 v3.8 rc 文档与仪表盘中的 commit/CI 证据。
-4. 给用户最终交接。是否合并 `main` 需另行审批。
+1. 给用户最终交接。
+2. 后续可开 v3.9 专家团启动会，或按主线合并制度讨论是否合并 `main`。
+3. 是否合并 `main` 需另行审批。
