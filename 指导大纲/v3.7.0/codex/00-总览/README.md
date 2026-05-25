@@ -1,7 +1,7 @@
 # v3.7.0 总览
 
 日期：2026-05-25
-状态：full local verification passed；commit/push/CI evidence pending
+状态：completed；commit/push/CI passed
 主线：`transient multi-NPC / small-faction AgentProposal 复核`
 
 ## 定位
@@ -54,4 +54,4 @@ v3.7 的目标不是开放完整 NPC 社会，而是验证多个 synthetic/gener
 
 ## 当前进度
 
-用户已批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。本地已完成 v370 proposal graph engine、UI、unit/e2e、120 轮 deterministic、40 轮 Player Advocate、制度文档与 full local verification；仍需完成 Git commit/push、CI 与最终 evidence 回填后才能宣布 v3.7 远端闭环完成。
+用户已批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。v3.7 已完成 v370 proposal graph engine、UI、unit/e2e、120 轮 deterministic、40 轮 Player Advocate、制度文档、full local verification、commit/push 与 GitHub Actions；completion commit `8ef17c5c` 已推送，CI run `26386740563` passed。

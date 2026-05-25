@@ -4,7 +4,7 @@
 
 - 分支：`codex/v370-startup-multi-npc-small-faction`
 - 当前入口：`指导大纲/v3.7.0/codex/00-总览/README.md`
-- 当前阶段：v3.7 local implementation complete；commit / push / CI evidence pending
+- 当前阶段：v3.7 complete；implementation commit / push / CI passed
 - 主线：`transient multi-NPC / small-faction AgentProposal 复核`
 
 ## 本轮完成
@@ -40,7 +40,7 @@ v3.7 没有开放 F-370：不新增 persistent agent state、save field、`SAVE_
 
 ## 下一步
 
-- 提交并推送 v3.7 completion。
-- 等待 GitHub Actions。
-- 将 commit / CI evidence 写回 dashboard / AGENTS / PROJECT-STATE / v3.7 Git 计划 / rc 记录。
+- implementation commit：`8ef17c5c feat: 完成v3.7多NPC小势力意图图谱`。
+- implementation push：`codex/v370-startup-multi-npc-small-faction` 已推送到 origin。
+- GitHub Actions：run `26386740563` passed。
 - 按制度暂不自动合并 `main`，等待用户批准或 PR 审核。
