@@ -8,6 +8,8 @@
 
 用户要求开 v4.0 专家团启动会。本轮已建立 `指导大纲/v4.0.0/codex/00-总览/` 启动包。
 
+startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
+
 `D-400-001` 至 `D-400-012` 仍为 `pending_user_decision`。`F-400-001` 至 `F-400-012` 建议全部保持 `future_gate_required`。
 
 ## 启动包边界

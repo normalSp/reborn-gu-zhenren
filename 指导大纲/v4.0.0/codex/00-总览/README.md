@@ -1,6 +1,6 @@
 # v4.0.0 总览
 
-状态：startup pending user decision。
+状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；D-400 pending user decision。
 日期：2026-05-25。
 分支：`codex/v400-startup-high-world-prep`。
 主线建议：`高阶战斗 theater 与 HeavenWill/Fate 宏观压力双预备`。
