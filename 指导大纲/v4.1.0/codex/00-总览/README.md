@@ -1,6 +1,6 @@
 # v4.1.0 总览
 
-状态：startup drafted；等待用户审批 `D-410-001` 至 `D-410-012`。
+状态：completed locally；`D-410-001` 至 `D-410-012` 已获用户批准并执行，`F-410-001` 至 `F-410-012` 继续 `future_gate_required`。
 日期：2026-05-26。
 分支：`codex/v410-startup-auto-theater-contract-hardening`。
 主线建议：`Auto-Theater Contract / Schema / Checker 加固`。
@@ -44,7 +44,18 @@ v4.1 的核心任务是冻结 `AutoTheaterContractV1`：
 | `v4.1.0-启动审查与范围冻结.md` | 进入条件、范围、非目标 |
 | `v4.1.0-总体开发大纲.md` | v4.1 总体目标和阶段产物 |
 | `v4.1.0-小版本执行路线图.md` | a0/a1/a2/b1/b2/b3/rc 路线建议 |
-| `v4.1.0-前置授权包.md` | 待用户审批的 D-410/F-410 状态与授权边界 |
+| `v4.1.0-前置授权包.md` | 已获用户批准的 D-410/F-410 状态与授权边界 |
+| `v4.1.0-D410授权确认记录.md` | D-410/F-410 用户拍板记录 |
+| `v4.1.0-a0-v4.0证据复盘与范围冻结.md` | v4.0 证据复盘与 v4.1 范围冻结 |
+| `v4.1.0-a1-AutoTheaterContractV1设计门禁.md` | Auto-Theater contract v1 设计门禁 |
+| `v4.1.0-a2-表达权限与证据链门禁.md` | ExpressionAuthority / WorldCoreEvidenceChain 门禁 |
+| `v4.1.0-b1-v410-contract-checker实现记录.md` | v410 report-only contract checker 实现与首跑结果 |
+| `v4.1.0-b2-negative-fixtures与deterministic-contract-hardening记录.md` | negative fixture 与 240 轮 deterministic contract 证据 |
+| `v4.1.0-b3-Player-Advocate-50轮记录.md` | 50 轮 Player Advocate 记录 |
+| `v4.1.0-b3-old-save-no-save-rollback证据.md` | old-save / no-save / rollback 证据 |
+| `v4.1.0-process-2-长线漂移与知识边界复核.md` | 长线漂移与知识边界复核 |
+| `v4.1.0-rc-Skill同步审计记录.md` | rc skill sync audit |
+| `v4.1.0-rc-质量收束记录.md` | rc 质量收束记录 |
 | `v4.1.0-例外停机清单.md` | `/goal` 自动推进必须停止的条件 |
 | `v4.1.0-需求决策池.md` | 决策项状态表 |
 | `v4.1.0-测试矩阵.md` | 文档自检、后续 checker 与 PA 计划 |
@@ -55,4 +66,4 @@ v4.1 的核心任务是冻结 `AutoTheaterContractV1`：
 
 ## 当前建议
 
-专家团建议用户一次性审批 `D-410-001` 至 `D-410-012`，并确认 `F-410-001` 至 `F-410-012` 全部继续 `future_gate_required`。审批后，v4.1 可以在一个 `/goal` 内完成 a0/a1/a2/b1/b2/b3/rc；只有触发例外停机清单才停止自动推进。
+用户已一次性审批 `D-410-001` 至 `D-410-012`，并确认 `F-410-001` 至 `F-410-012` 全部继续 `future_gate_required`。v4.1 已在一个 `/goal` 内完成 a0/a1/a2/b1/b2/b3/rc，本地验证通过；没有触发例外停机清单。

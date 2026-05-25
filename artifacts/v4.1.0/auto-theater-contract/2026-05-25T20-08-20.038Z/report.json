@@ -1,0 +1,1830 @@
+{
+  "targetVersion": "v4.1.0",
+  "checkerVersion": "v410_b1_auto_theater_contract_checker_v1",
+  "reportSchemaVersion": "v410_b1_auto_theater_contract_report_v1",
+  "generatedAt": "2026-05-25T20:08:20.038Z",
+  "executionMode": "dry_run_report_only",
+  "sampleFile": "tests/evals/v410-auto-theater-contract/samples.json",
+  "sampleHash": "e3415b1b2e5f3a52a0a31e948c5de8fccf39e9701943cc8cd26d190485b16cd1",
+  "summary": {
+    "sampleCount": 35,
+    "schemaValid": 35,
+    "decisions": {
+      "auto_theater_contract_ready": 13,
+      "future_gate_required": 8,
+      "no_go_blocked": 14
+    },
+    "caseTypes": {
+      "positive": 13,
+      "future_gate": 8,
+      "negative": 14
+    },
+    "familiesCovered": [
+      "auto_theater_asset_runtime",
+      "backend_service_boundary",
+      "candidate_fact_lane",
+      "combat_ledger_entry",
+      "deepseek_boundary",
+      "deterministic_contract_stability",
+      "evidence_gap",
+      "expression_authority",
+      "external_framework_boundary",
+      "formal_authority_boundary",
+      "future_gate_lock",
+      "heavenwill_fate_runtime",
+      "hidden_lore_boundary",
+      "high_rank_combat_runtime",
+      "killer_move_stack_frame",
+      "l4_l5_boundary",
+      "mainline_boundary",
+      "mirofish_boundary",
+      "mortal_combat_runtime",
+      "needs_user_decision_lane",
+      "old_save_rollback",
+      "player_advocate_boundary",
+      "preparation_envelope",
+      "pressure_constraint_lane",
+      "rejected_lane",
+      "save_runtime_boundary",
+      "system_continuity",
+      "theater_layer_schema",
+      "theater_ui_runtime",
+      "ui_motion_boundary",
+      "visual_asset_boundary",
+      "worldcore_evidence_chain"
+    ],
+    "missingRequiredFamilies": [],
+    "severitySummary": {
+      "P0": 58,
+      "P1": 1,
+      "P2": 12,
+      "Info": 0
+    },
+    "positiveP0": 0,
+    "negativeFalseNegative": 0,
+    "futureGateMismatch": 0,
+    "resultMismatch": 0,
+    "rescoreStable": true,
+    "deterministicProbe": {
+      "mode": "synthetic_report_only",
+      "rounds": 240,
+      "acceptedRounds": 240,
+      "rejectedRounds": 0,
+      "contractDrift": 0,
+      "candidateFactConfusion": 0,
+      "expressionAuthorityLeak": 0,
+      "worldCoreEvidenceGap": 0,
+      "futureGateLeak": 0,
+      "runFingerprintUsed": false,
+      "liveDeepSeekCalled": false
+    }
+  },
+  "gate": {
+    "acceptedForGate": true,
+    "v41AutoTheaterContractPrepared": true,
+    "autoTheaterRuntimeApproved": false,
+    "highRankCombatRuntimeApproved": false,
+    "mortalCombatRuntimeMigrationApproved": false,
+    "theaterUiApproved": false,
+    "autoTheaterAssetGenerationApproved": false,
+    "saveFormatBumpApproved": false,
+    "liveDeepSeekCalled": false,
+    "mirofishBlockingUsed": false,
+    "externalFrameworkPoCUsed": false,
+    "backendServiceApproved": false,
+    "mainAutoMergeApproved": false
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "theaterUiImplemented": false,
+    "highRankCombatRuntimeOpened": false,
+    "mortalCombatRuntimeMigrated": false,
+    "pureAutoBattlerRuntimeOpened": false,
+    "autoTheaterAssetsGenerated": false,
+    "killerMoveStackRuntimeOpened": false,
+    "immortalGuHouseRuntimeOpened": false,
+    "environmentDestructionConclusionOpened": false,
+    "npcLifeDeathOpened": false,
+    "formalRewardOpened": false,
+    "formalLocationOpened": false,
+    "saveFieldAdded": false,
+    "saveFormatModified": false,
+    "migrationAdded": false,
+    "runFingerprintAdded": false,
+    "liveDeepSeekCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "mirofishExportUsed": false,
+    "realOriginalFactsUsed": false,
+    "namedNpcUsed": false,
+    "hiddenAdjacentUsed": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "externalFrameworkPoCUsed": false,
+    "externalFrameworkDependencyAdded": false,
+    "readOnlyScanUsed": false,
+    "patchArtifactUsed": false,
+    "subagentsUsed": false,
+    "l4RuntimeOpened": false,
+    "l5RuntimeOpened": false,
+    "heavenWillFateRuntimeOpened": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "hiddenPrivateBodyRead": false,
+    "publicReleaseChanged": false,
+    "edgeOneDeployed": false,
+    "mainAutoMerged": false
+  },
+  "findings": [
+    {
+      "sampleId": "V410-FUTURE-RUNTIME-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_high_rank_combat_runtime",
+      "message": "Future gate high_rank_combat_runtime remains locked in v4.1.",
+      "ref": "V410-FUTURE-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-RUNTIME-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_theater_ui_implementation",
+      "message": "Future gate theater_ui_implementation remains locked in v4.1.",
+      "ref": "V410-FUTURE-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-MORTAL-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_mortal_combat_runtime_migration",
+      "message": "Future gate mortal_combat_runtime_migration remains locked in v4.1.",
+      "ref": "V410-FUTURE-MORTAL-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-ASSET-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_auto_theater_asset_generation",
+      "message": "Future gate auto_theater_asset_generation remains locked in v4.1.",
+      "ref": "V410-FUTURE-ASSET-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-SAVE-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_save_field",
+      "message": "Future gate save_field remains locked in v4.1.",
+      "ref": "V410-FUTURE-SAVE-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-SAVE-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_save_format_bump",
+      "message": "Future gate save_format_bump remains locked in v4.1.",
+      "ref": "V410-FUTURE-SAVE-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-DEEPSEEK-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_live_deepseek_call",
+      "message": "Future gate live_deepseek_call remains locked in v4.1.",
+      "ref": "V410-FUTURE-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-MIROFISH-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_mirofish_export",
+      "message": "Future gate mirofish_export remains locked in v4.1.",
+      "ref": "V410-FUTURE-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-BACKEND-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_backend_service",
+      "message": "Future gate backend_service remains locked in v4.1.",
+      "ref": "V410-FUTURE-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-BACKEND-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_external_framework_poc",
+      "message": "Future gate external_framework_poc remains locked in v4.1.",
+      "ref": "V410-FUTURE-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-L5-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_l5_runtime",
+      "message": "Future gate l5_runtime remains locked in v4.1.",
+      "ref": "V410-FUTURE-L5-001"
+    },
+    {
+      "sampleId": "V410-FUTURE-L5-001",
+      "severity": "P2",
+      "family": "future_gate_lock",
+      "code": "future_gate_heavenwill_fate_runtime",
+      "message": "Future gate heavenwill_fate_runtime remains locked in v4.1.",
+      "ref": "V410-FUTURE-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-UI-DAMAGE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "boundary_runtimeModified",
+      "message": "Boundary assertion runtimeModified must remain false.",
+      "ref": "V410-NEG-UI-DAMAGE-001"
+    },
+    {
+      "sampleId": "V410-NEG-UI-DAMAGE-001",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_damage_write",
+      "message": "Effect damage_write is outside v4.1 authorization.",
+      "ref": "V410-NEG-UI-DAMAGE-001"
+    },
+    {
+      "sampleId": "V410-NEG-UI-DAMAGE-001",
+      "severity": "P0",
+      "family": "ui_motion_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /UI_CALCULATES_DAMAGE/i",
+      "ref": "V410-NEG-UI-DAMAGE-001"
+    },
+    {
+      "sampleId": "V410-NEG-UI-DAMAGE-001",
+      "severity": "P0",
+      "family": "ui_motion_boundary",
+      "code": "ui_calculates_outcome",
+      "message": "UI must not calculate combat outcomes.",
+      "ref": "V410-NEG-UI-DAMAGE-001"
+    },
+    {
+      "sampleId": "V410-NEG-DEEPSEEK-001",
+      "severity": "P0",
+      "family": "deepseek_boundary",
+      "code": "effect_deepseek_outcome_adjudication",
+      "message": "Effect deepseek_outcome_adjudication is outside v4.1 authorization.",
+      "ref": "V410-NEG-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-NEG-DEEPSEEK-001",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_npc_life_death",
+      "message": "Effect npc_life_death is outside v4.1 authorization.",
+      "ref": "V410-NEG-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-NEG-DEEPSEEK-001",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_formal_reward",
+      "message": "Effect formal_reward is outside v4.1 authorization.",
+      "ref": "V410-NEG-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-NEG-DEEPSEEK-001",
+      "severity": "P0",
+      "family": "deepseek_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /DEEPSEEK_ADJUDICATES_OUTCOME/i",
+      "ref": "V410-NEG-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-NEG-DEEPSEEK-001",
+      "severity": "P0",
+      "family": "deepseek_boundary",
+      "code": "deepseek_adjudicates_outcome",
+      "message": "DeepSeek must not adjudicate Auto-Theater outcomes.",
+      "ref": "V410-NEG-DEEPSEEK-001"
+    },
+    {
+      "sampleId": "V410-NEG-VISUAL-001",
+      "severity": "P1",
+      "family": "candidate_fact_lane",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /CANDIDATE_AS_FACT/i",
+      "ref": "V410-NEG-VISUAL-001"
+    },
+    {
+      "sampleId": "V410-NEG-VISUAL-001",
+      "severity": "P0",
+      "family": "visual_asset_boundary",
+      "code": "visual_candidate_as_fact",
+      "message": "Visual language must not render candidates as facts.",
+      "ref": "V410-NEG-VISUAL-001"
+    },
+    {
+      "sampleId": "V410-NEG-EVIDENCE-001",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_environment_destruction",
+      "message": "Effect environment_destruction is outside v4.1 authorization.",
+      "ref": "V410-NEG-EVIDENCE-001"
+    },
+    {
+      "sampleId": "V410-NEG-EVIDENCE-001",
+      "severity": "P0",
+      "family": "worldcore_evidence_chain",
+      "code": "fact_without_evidence",
+      "message": "Fact lanes require WorldCore/Combat Core/canon evidence.",
+      "ref": "V410-NEG-EVIDENCE-001"
+    },
+    {
+      "sampleId": "V410-NEG-HIDDEN-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "boundary_hiddenPrivateBodyRead",
+      "message": "Boundary assertion hiddenPrivateBodyRead must remain false.",
+      "ref": "V410-NEG-HIDDEN-001"
+    },
+    {
+      "sampleId": "V410-NEG-HIDDEN-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "effect_hidden_adjacent",
+      "message": "Effect hidden_adjacent is outside v4.1 authorization.",
+      "ref": "V410-NEG-HIDDEN-001"
+    },
+    {
+      "sampleId": "V410-NEG-HIDDEN-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /SYNTHETIC_HIDDEN_PRIVATE_BODY/i",
+      "ref": "V410-NEG-HIDDEN-001"
+    },
+    {
+      "sampleId": "V410-NEG-HIDDEN-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "hidden_body_in_ledger",
+      "message": "Ledger must not contain hidden/private body.",
+      "ref": "V410-NEG-HIDDEN-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "boundary_saveFieldAdded",
+      "message": "Boundary assertion saveFieldAdded must remain false.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "boundary_saveFormatModified",
+      "message": "Boundary assertion saveFormatModified must remain false.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "boundary_runFingerprintAdded",
+      "message": "Boundary assertion runFingerprintAdded must remain false.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "effect_save_field",
+      "message": "Effect save_field is outside v4.1 authorization.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "effect_save_format_bump",
+      "message": "Effect save_format_bump is outside v4.1 authorization.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-SAVE-001",
+      "severity": "P0",
+      "family": "save_runtime_boundary",
+      "code": "effect_run_fingerprint",
+      "message": "Effect run_fingerprint is outside v4.1 authorization.",
+      "ref": "V410-NEG-SAVE-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "theater_ui_runtime",
+      "code": "boundary_theaterUiImplemented",
+      "message": "Boundary assertion theaterUiImplemented must remain false.",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "boundary_highRankCombatRuntimeOpened",
+      "message": "Boundary assertion highRankCombatRuntimeOpened must remain false.",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "effect_high_rank_combat_runtime",
+      "message": "Effect high_rank_combat_runtime is outside v4.1 authorization.",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "theater_ui_runtime",
+      "code": "effect_theater_ui_implementation",
+      "message": "Effect theater_ui_implementation is outside v4.1 authorization.",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "theater_ui_runtime",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /THEATER_UI_IMPLEMENTED/i",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-RUNTIME-001",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /AUTO_THEATER_RUNTIME_IMPLEMENTED/i",
+      "ref": "V410-NEG-RUNTIME-001"
+    },
+    {
+      "sampleId": "V410-NEG-MORTAL-001",
+      "severity": "P0",
+      "family": "mortal_combat_runtime",
+      "code": "boundary_mortalCombatRuntimeMigrated",
+      "message": "Boundary assertion mortalCombatRuntimeMigrated must remain false.",
+      "ref": "V410-NEG-MORTAL-001"
+    },
+    {
+      "sampleId": "V410-NEG-MORTAL-001",
+      "severity": "P0",
+      "family": "mortal_combat_runtime",
+      "code": "effect_mortal_combat_runtime_migration",
+      "message": "Effect mortal_combat_runtime_migration is outside v4.1 authorization.",
+      "ref": "V410-NEG-MORTAL-001"
+    },
+    {
+      "sampleId": "V410-NEG-ASSET-001",
+      "severity": "P0",
+      "family": "auto_theater_asset_runtime",
+      "code": "boundary_autoTheaterAssetsGenerated",
+      "message": "Boundary assertion autoTheaterAssetsGenerated must remain false.",
+      "ref": "V410-NEG-ASSET-001"
+    },
+    {
+      "sampleId": "V410-NEG-ASSET-001",
+      "severity": "P0",
+      "family": "auto_theater_asset_runtime",
+      "code": "effect_auto_theater_asset_generation",
+      "message": "Effect auto_theater_asset_generation is outside v4.1 authorization.",
+      "ref": "V410-NEG-ASSET-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "boundary_mirofishExportUsed",
+      "message": "Boundary assertion mirofishExportUsed must remain false.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "boundary_realOriginalFactsUsed",
+      "message": "Boundary assertion realOriginalFactsUsed must remain false.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "boundary_namedNpcUsed",
+      "message": "Boundary assertion namedNpcUsed must remain false.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "boundary_hiddenAdjacentUsed",
+      "message": "Boundary assertion hiddenAdjacentUsed must remain false.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "effect_mirofish_export",
+      "message": "Effect mirofish_export is outside v4.1 authorization.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "effect_real_original_fact",
+      "message": "Effect real_original_fact is outside v4.1 authorization.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "effect_named_npc",
+      "message": "Effect named_npc is outside v4.1 authorization.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-MIROFISH-001",
+      "severity": "P0",
+      "family": "hidden_lore_boundary",
+      "code": "effect_hidden_adjacent",
+      "message": "Effect hidden_adjacent is outside v4.1 authorization.",
+      "ref": "V410-NEG-MIROFISH-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "boundary_bffOrBackendUsed",
+      "message": "Boundary assertion bffOrBackendUsed must remain false.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "boundary_serviceImplemented",
+      "message": "Boundary assertion serviceImplemented must remain false.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "boundary_externalFrameworkPoCUsed",
+      "message": "Boundary assertion externalFrameworkPoCUsed must remain false.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "boundary_externalFrameworkDependencyAdded",
+      "message": "Boundary assertion externalFrameworkDependencyAdded must remain false.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "effect_backend_service",
+      "message": "Effect backend_service is outside v4.1 authorization.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "effect_external_framework_poc",
+      "message": "Effect external_framework_poc is outside v4.1 authorization.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-BACKEND-001",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "effect_dependency_install",
+      "message": "Effect dependency_install is outside v4.1 authorization.",
+      "ref": "V410-NEG-BACKEND-001"
+    },
+    {
+      "sampleId": "V410-NEG-L5-001",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "boundary_l5RuntimeOpened",
+      "message": "Boundary assertion l5RuntimeOpened must remain false.",
+      "ref": "V410-NEG-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-L5-001",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "boundary_heavenWillFateRuntimeOpened",
+      "message": "Boundary assertion heavenWillFateRuntimeOpened must remain false.",
+      "ref": "V410-NEG-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-L5-001",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "effect_l5_runtime",
+      "message": "Effect l5_runtime is outside v4.1 authorization.",
+      "ref": "V410-NEG-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-L5-001",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "effect_heavenwill_fate_runtime",
+      "message": "Effect heavenwill_fate_runtime is outside v4.1 authorization.",
+      "ref": "V410-NEG-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-L5-001",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /HEAVENWILL_RUNTIME_VERDICT/i",
+      "ref": "V410-NEG-L5-001"
+    },
+    {
+      "sampleId": "V410-NEG-MAIN-001",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "boundary_edgeOneDeployed",
+      "message": "Boundary assertion edgeOneDeployed must remain false.",
+      "ref": "V410-NEG-MAIN-001"
+    },
+    {
+      "sampleId": "V410-NEG-MAIN-001",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "boundary_mainAutoMerged",
+      "message": "Boundary assertion mainAutoMerged must remain false.",
+      "ref": "V410-NEG-MAIN-001"
+    },
+    {
+      "sampleId": "V410-NEG-MAIN-001",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "effect_main_auto_merge",
+      "message": "Effect main_auto_merge is outside v4.1 authorization.",
+      "ref": "V410-NEG-MAIN-001"
+    },
+    {
+      "sampleId": "V410-NEG-MAIN-001",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "effect_edgeone_deploy",
+      "message": "Effect edgeone_deploy is outside v4.1 authorization.",
+      "ref": "V410-NEG-MAIN-001"
+    },
+    {
+      "sampleId": "V410-NEG-MAIN-001",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /MAIN_AUTO_MERGED/i",
+      "ref": "V410-NEG-MAIN-001"
+    },
+    {
+      "sampleId": "V410-NEG-NO-WORLDCORE-001",
+      "severity": "P0",
+      "family": "worldcore_evidence_chain",
+      "code": "missing_worldcore_authority",
+      "message": "WorldCore final authority must be explicit.",
+      "ref": "V410-NEG-NO-WORLDCORE-001"
+    }
+  ],
+  "results": [
+    {
+      "id": "V410-PREP-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "preparation_envelope",
+        "worldcore_evidence_chain"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "preparation_envelope",
+        "worldcore_evidence_chain"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-THEATER-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "theater_layer_schema",
+        "worldcore_evidence_chain"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "theater_layer_schema",
+        "worldcore_evidence_chain"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-STACK-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "killer_move_stack_frame",
+        "combat_ledger_entry"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "combat_ledger_entry",
+        "killer_move_stack_frame"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-LEDGER-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "combat_ledger_entry",
+        "candidate_fact_lane",
+        "rejected_lane"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "candidate_fact_lane",
+        "combat_ledger_entry",
+        "rejected_lane"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-EXPRESSION-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "expression_authority",
+        "deepseek_boundary",
+        "ui_motion_boundary"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "deepseek_boundary",
+        "expression_authority",
+        "ui_motion_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-EVIDENCE-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "worldcore_evidence_chain",
+        "candidate_fact_lane"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "candidate_fact_lane",
+        "worldcore_evidence_chain"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-PRESSURE-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "pressure_constraint_lane",
+        "needs_user_decision_lane"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "needs_user_decision_lane",
+        "pressure_constraint_lane"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-VISUAL-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "visual_asset_boundary",
+        "ui_motion_boundary"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "ui_motion_boundary",
+        "visual_asset_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-HIDDEN-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-SAVE-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "save_runtime_boundary",
+        "old_save_rollback"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "old_save_rollback",
+        "save_runtime_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-SYSTEM-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "system_continuity",
+        "future_gate_lock"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "system_continuity"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-PA-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "player_advocate_boundary",
+        "deterministic_contract_stability"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "deterministic_contract_stability",
+        "player_advocate_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-MAINLINE-001",
+      "caseType": "positive",
+      "expectedDecision": "auto_theater_contract_ready",
+      "expectedFamilies": [
+        "mainline_boundary",
+        "system_continuity"
+      ],
+      "decision": "auto_theater_contract_ready",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "mainline_boundary",
+        "system_continuity"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-RUNTIME-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "high_rank_combat_runtime",
+        "theater_ui_runtime",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_high_rank_combat_runtime",
+          "message": "Future gate high_rank_combat_runtime remains locked in v4.1.",
+          "ref": "V410-FUTURE-RUNTIME-001"
+        },
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_theater_ui_implementation",
+          "message": "Future gate theater_ui_implementation remains locked in v4.1.",
+          "ref": "V410-FUTURE-RUNTIME-001"
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "high_rank_combat_runtime",
+        "theater_ui_runtime"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-MORTAL-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "mortal_combat_runtime",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_mortal_combat_runtime_migration",
+          "message": "Future gate mortal_combat_runtime_migration remains locked in v4.1.",
+          "ref": "V410-FUTURE-MORTAL-001"
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "mortal_combat_runtime"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-ASSET-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "auto_theater_asset_runtime",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_auto_theater_asset_generation",
+          "message": "Future gate auto_theater_asset_generation remains locked in v4.1.",
+          "ref": "V410-FUTURE-ASSET-001"
+        }
+      ],
+      "coveredFamilies": [
+        "auto_theater_asset_runtime",
+        "future_gate_lock"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-SAVE-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "save_runtime_boundary",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_save_field",
+          "message": "Future gate save_field remains locked in v4.1.",
+          "ref": "V410-FUTURE-SAVE-001"
+        },
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_save_format_bump",
+          "message": "Future gate save_format_bump remains locked in v4.1.",
+          "ref": "V410-FUTURE-SAVE-001"
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "save_runtime_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-DEEPSEEK-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "deepseek_boundary",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_live_deepseek_call",
+          "message": "Future gate live_deepseek_call remains locked in v4.1.",
+          "ref": "V410-FUTURE-DEEPSEEK-001"
+        }
+      ],
+      "coveredFamilies": [
+        "deepseek_boundary",
+        "future_gate_lock"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-MIROFISH-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "hidden_lore_boundary",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_mirofish_export",
+          "message": "Future gate mirofish_export remains locked in v4.1.",
+          "ref": "V410-FUTURE-MIROFISH-001"
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-BACKEND-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_backend_service",
+          "message": "Future gate backend_service remains locked in v4.1.",
+          "ref": "V410-FUTURE-BACKEND-001"
+        },
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_external_framework_poc",
+          "message": "Future gate external_framework_poc remains locked in v4.1.",
+          "ref": "V410-FUTURE-BACKEND-001"
+        }
+      ],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary",
+        "future_gate_lock"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-FUTURE-L5-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "l4_l5_boundary",
+        "heavenwill_fate_runtime",
+        "future_gate_lock"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_l5_runtime",
+          "message": "Future gate l5_runtime remains locked in v4.1.",
+          "ref": "V410-FUTURE-L5-001"
+        },
+        {
+          "severity": "P2",
+          "family": "future_gate_lock",
+          "code": "future_gate_heavenwill_fate_runtime",
+          "message": "Future gate heavenwill_fate_runtime remains locked in v4.1.",
+          "ref": "V410-FUTURE-L5-001"
+        }
+      ],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "heavenwill_fate_runtime",
+        "l4_l5_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-UI-DAMAGE-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "ui_motion_boundary",
+        "formal_authority_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_runtimeModified",
+          "message": "Boundary assertion runtimeModified must remain false.",
+          "ref": "V410-NEG-UI-DAMAGE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_damage_write",
+          "message": "Effect damage_write is outside v4.1 authorization.",
+          "ref": "V410-NEG-UI-DAMAGE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "ui_motion_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /UI_CALCULATES_DAMAGE/i",
+          "ref": "V410-NEG-UI-DAMAGE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "ui_motion_boundary",
+          "code": "ui_calculates_outcome",
+          "message": "UI must not calculate combat outcomes.",
+          "ref": "V410-NEG-UI-DAMAGE-001"
+        }
+      ],
+      "coveredFamilies": [
+        "formal_authority_boundary",
+        "save_runtime_boundary",
+        "ui_motion_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-DEEPSEEK-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "deepseek_boundary",
+        "formal_authority_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "effect_deepseek_outcome_adjudication",
+          "message": "Effect deepseek_outcome_adjudication is outside v4.1 authorization.",
+          "ref": "V410-NEG-DEEPSEEK-001"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_npc_life_death",
+          "message": "Effect npc_life_death is outside v4.1 authorization.",
+          "ref": "V410-NEG-DEEPSEEK-001"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_reward",
+          "message": "Effect formal_reward is outside v4.1 authorization.",
+          "ref": "V410-NEG-DEEPSEEK-001"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /DEEPSEEK_ADJUDICATES_OUTCOME/i",
+          "ref": "V410-NEG-DEEPSEEK-001"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "deepseek_adjudicates_outcome",
+          "message": "DeepSeek must not adjudicate Auto-Theater outcomes.",
+          "ref": "V410-NEG-DEEPSEEK-001"
+        }
+      ],
+      "coveredFamilies": [
+        "deepseek_boundary",
+        "formal_authority_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-VISUAL-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "visual_asset_boundary",
+        "candidate_fact_lane"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P1",
+          "family": "candidate_fact_lane",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /CANDIDATE_AS_FACT/i",
+          "ref": "V410-NEG-VISUAL-001"
+        },
+        {
+          "severity": "P0",
+          "family": "visual_asset_boundary",
+          "code": "visual_candidate_as_fact",
+          "message": "Visual language must not render candidates as facts.",
+          "ref": "V410-NEG-VISUAL-001"
+        }
+      ],
+      "coveredFamilies": [
+        "candidate_fact_lane",
+        "visual_asset_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-EVIDENCE-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "worldcore_evidence_chain",
+        "evidence_gap"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_environment_destruction",
+          "message": "Effect environment_destruction is outside v4.1 authorization.",
+          "ref": "V410-NEG-EVIDENCE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "worldcore_evidence_chain",
+          "code": "fact_without_evidence",
+          "message": "Fact lanes require WorldCore/Combat Core/canon evidence.",
+          "ref": "V410-NEG-EVIDENCE-001"
+        }
+      ],
+      "coveredFamilies": [
+        "evidence_gap",
+        "formal_authority_boundary",
+        "worldcore_evidence_chain"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-HIDDEN-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "boundary_hiddenPrivateBodyRead",
+          "message": "Boundary assertion hiddenPrivateBodyRead must remain false.",
+          "ref": "V410-NEG-HIDDEN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "effect_hidden_adjacent",
+          "message": "Effect hidden_adjacent is outside v4.1 authorization.",
+          "ref": "V410-NEG-HIDDEN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /SYNTHETIC_HIDDEN_PRIVATE_BODY/i",
+          "ref": "V410-NEG-HIDDEN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "hidden_body_in_ledger",
+          "message": "Ledger must not contain hidden/private body.",
+          "ref": "V410-NEG-HIDDEN-001"
+        }
+      ],
+      "coveredFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-SAVE-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "save_runtime_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_saveFieldAdded",
+          "message": "Boundary assertion saveFieldAdded must remain false.",
+          "ref": "V410-NEG-SAVE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_saveFormatModified",
+          "message": "Boundary assertion saveFormatModified must remain false.",
+          "ref": "V410-NEG-SAVE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_runFingerprintAdded",
+          "message": "Boundary assertion runFingerprintAdded must remain false.",
+          "ref": "V410-NEG-SAVE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_save_field",
+          "message": "Effect save_field is outside v4.1 authorization.",
+          "ref": "V410-NEG-SAVE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_save_format_bump",
+          "message": "Effect save_format_bump is outside v4.1 authorization.",
+          "ref": "V410-NEG-SAVE-001"
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_run_fingerprint",
+          "message": "Effect run_fingerprint is outside v4.1 authorization.",
+          "ref": "V410-NEG-SAVE-001"
+        }
+      ],
+      "coveredFamilies": [
+        "save_runtime_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-RUNTIME-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "high_rank_combat_runtime",
+        "theater_ui_runtime"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "boundary_theaterUiImplemented",
+          "message": "Boundary assertion theaterUiImplemented must remain false.",
+          "ref": "V410-NEG-RUNTIME-001"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "boundary_highRankCombatRuntimeOpened",
+          "message": "Boundary assertion highRankCombatRuntimeOpened must remain false.",
+          "ref": "V410-NEG-RUNTIME-001"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "effect_high_rank_combat_runtime",
+          "message": "Effect high_rank_combat_runtime is outside v4.1 authorization.",
+          "ref": "V410-NEG-RUNTIME-001"
+        },
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "effect_theater_ui_implementation",
+          "message": "Effect theater_ui_implementation is outside v4.1 authorization.",
+          "ref": "V410-NEG-RUNTIME-001"
+        },
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /THEATER_UI_IMPLEMENTED/i",
+          "ref": "V410-NEG-RUNTIME-001"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /AUTO_THEATER_RUNTIME_IMPLEMENTED/i",
+          "ref": "V410-NEG-RUNTIME-001"
+        }
+      ],
+      "coveredFamilies": [
+        "high_rank_combat_runtime",
+        "theater_ui_runtime"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-MORTAL-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "mortal_combat_runtime"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mortal_combat_runtime",
+          "code": "boundary_mortalCombatRuntimeMigrated",
+          "message": "Boundary assertion mortalCombatRuntimeMigrated must remain false.",
+          "ref": "V410-NEG-MORTAL-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mortal_combat_runtime",
+          "code": "effect_mortal_combat_runtime_migration",
+          "message": "Effect mortal_combat_runtime_migration is outside v4.1 authorization.",
+          "ref": "V410-NEG-MORTAL-001"
+        }
+      ],
+      "coveredFamilies": [
+        "mortal_combat_runtime"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-ASSET-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "auto_theater_asset_runtime",
+        "visual_asset_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "boundary_autoTheaterAssetsGenerated",
+          "message": "Boundary assertion autoTheaterAssetsGenerated must remain false.",
+          "ref": "V410-NEG-ASSET-001"
+        },
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "effect_auto_theater_asset_generation",
+          "message": "Effect auto_theater_asset_generation is outside v4.1 authorization.",
+          "ref": "V410-NEG-ASSET-001"
+        }
+      ],
+      "coveredFamilies": [
+        "auto_theater_asset_runtime",
+        "visual_asset_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-MIROFISH-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "hidden_lore_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_mirofishExportUsed",
+          "message": "Boundary assertion mirofishExportUsed must remain false.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_realOriginalFactsUsed",
+          "message": "Boundary assertion realOriginalFactsUsed must remain false.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "Boundary assertion namedNpcUsed must remain false.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "boundary_hiddenAdjacentUsed",
+          "message": "Boundary assertion hiddenAdjacentUsed must remain false.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_mirofish_export",
+          "message": "Effect mirofish_export is outside v4.1 authorization.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_real_original_fact",
+          "message": "Effect real_original_fact is outside v4.1 authorization.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "Effect named_npc is outside v4.1 authorization.",
+          "ref": "V410-NEG-MIROFISH-001"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "effect_hidden_adjacent",
+          "message": "Effect hidden_adjacent is outside v4.1 authorization.",
+          "ref": "V410-NEG-MIROFISH-001"
+        }
+      ],
+      "coveredFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-BACKEND-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_bffOrBackendUsed",
+          "message": "Boundary assertion bffOrBackendUsed must remain false.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_serviceImplemented",
+          "message": "Boundary assertion serviceImplemented must remain false.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_externalFrameworkPoCUsed",
+          "message": "Boundary assertion externalFrameworkPoCUsed must remain false.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_externalFrameworkDependencyAdded",
+          "message": "Boundary assertion externalFrameworkDependencyAdded must remain false.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_backend_service",
+          "message": "Effect backend_service is outside v4.1 authorization.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_external_framework_poc",
+          "message": "Effect external_framework_poc is outside v4.1 authorization.",
+          "ref": "V410-NEG-BACKEND-001"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_dependency_install",
+          "message": "Effect dependency_install is outside v4.1 authorization.",
+          "ref": "V410-NEG-BACKEND-001"
+        }
+      ],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-L5-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "l4_l5_boundary",
+        "heavenwill_fate_runtime"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l5RuntimeOpened",
+          "message": "Boundary assertion l5RuntimeOpened must remain false.",
+          "ref": "V410-NEG-L5-001"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "boundary_heavenWillFateRuntimeOpened",
+          "message": "Boundary assertion heavenWillFateRuntimeOpened must remain false.",
+          "ref": "V410-NEG-L5-001"
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l5_runtime",
+          "message": "Effect l5_runtime is outside v4.1 authorization.",
+          "ref": "V410-NEG-L5-001"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "effect_heavenwill_fate_runtime",
+          "message": "Effect heavenwill_fate_runtime is outside v4.1 authorization.",
+          "ref": "V410-NEG-L5-001"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /HEAVENWILL_RUNTIME_VERDICT/i",
+          "ref": "V410-NEG-L5-001"
+        }
+      ],
+      "coveredFamilies": [
+        "heavenwill_fate_runtime",
+        "l4_l5_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-MAIN-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "mainline_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_edgeOneDeployed",
+          "message": "Boundary assertion edgeOneDeployed must remain false.",
+          "ref": "V410-NEG-MAIN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_mainAutoMerged",
+          "message": "Boundary assertion mainAutoMerged must remain false.",
+          "ref": "V410-NEG-MAIN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_main_auto_merge",
+          "message": "Effect main_auto_merge is outside v4.1 authorization.",
+          "ref": "V410-NEG-MAIN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_edgeone_deploy",
+          "message": "Effect edgeone_deploy is outside v4.1 authorization.",
+          "ref": "V410-NEG-MAIN-001"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /MAIN_AUTO_MERGED/i",
+          "ref": "V410-NEG-MAIN-001"
+        }
+      ],
+      "coveredFamilies": [
+        "mainline_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V410-NEG-NO-WORLDCORE-001",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "worldcore_evidence_chain"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "worldcore_evidence_chain",
+          "code": "missing_worldcore_authority",
+          "message": "WorldCore final authority must be explicit.",
+          "ref": "V410-NEG-NO-WORLDCORE-001"
+        }
+      ],
+      "coveredFamilies": [
+        "worldcore_evidence_chain"
+      ],
+      "acceptedForGate": true
+    }
+  ]
+}

@@ -1,0 +1,575 @@
+[
+  {
+    "id": "V410-PREP-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["preparation_envelope", "worldcore_evidence_chain"],
+    "claim": {
+      "summary": "Preparation envelope records candidate intent, resource budget, counter risk, and retreat threshold only.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a1_auto_theater_contract_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-THEATER-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["theater_layer_schema", "worldcore_evidence_chain"],
+    "claim": {
+      "summary": "Theater layers can describe air, ground, underground, water, aperture, formation, domain, house, and environment as lanes.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a1_auto_theater_contract_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-STACK-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["killer_move_stack_frame", "combat_ledger_entry"],
+    "claim": {
+      "summary": "Killer move stack frames are prepare, charge, lock, release_candidate, counter_window, interrupt_candidate, backlash_candidate, resolved_fact, and rejected.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a1_auto_theater_contract_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-LEDGER-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["combat_ledger_entry", "candidate_fact_lane", "rejected_lane"],
+    "claim": {
+      "summary": "Combat Ledger separates fact, candidate, rejected, needs_user_decision, and pressure lanes.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a1_auto_theater_contract_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-EXPRESSION-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["expression_authority", "deepseek_boundary", "ui_motion_boundary"],
+    "claim": {
+      "summary": "ExpressionAuthorityV1 lets UI, DeepSeek, animation, and reports express approved material without adjudicating facts.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a2_expression_authority_worldcore_evidence_gate_v1"],
+      "deepSeekAdjudicatesOutcome": false,
+      "uiCalculatesOutcome": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-EVIDENCE-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["worldcore_evidence_chain", "candidate_fact_lane"],
+    "claim": {
+      "summary": "WorldCoreEvidenceChainV1 requires WorldCore or Combat Core evidence before any fact lane can be expressed.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a2_expression_authority_worldcore_evidence_gate_v1"],
+      "theaterFactWithoutEvidence": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-PRESSURE-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["pressure_constraint_lane", "needs_user_decision_lane"],
+    "claim": {
+      "summary": "Pressure and needs_user_decision lanes remain separate from fact lanes and never decide player fate.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a2_expression_authority_worldcore_evidence_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-VISUAL-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["visual_asset_boundary", "ui_motion_boundary"],
+    "claim": {
+      "summary": "Visual and motion layers can show candidate or pressure state only when the lane label remains visible.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_a2_expression_authority_worldcore_evidence_gate_v1"],
+      "visualCandidateAsFact": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-HIDDEN-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["hidden_lore_boundary", "mirofish_boundary"],
+    "claim": {
+      "summary": "Ledger entries can carry source pointer class but cannot carry hidden or private body.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_mirofish_not_needed"],
+      "hiddenBodyInLedger": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-SAVE-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["save_runtime_boundary", "old_save_rollback"],
+    "claim": {
+      "summary": "Contract and checker remain report-only and do not write save, runtime, store, UI, or prompt.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_scope_lock"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-SYSTEM-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["system_continuity", "future_gate_lock"],
+    "claim": {
+      "summary": "v410 checker, samples, report, docs, dashboard, AGENTS, PROJECT-STATE, and skill audit stay linked.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_system_continuity"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-PA-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["player_advocate_boundary", "deterministic_contract_stability"],
+    "claim": {
+      "summary": "Player Advocate and deterministic checks verify that players distinguish preparation, candidate, pressure, fact, and rejection.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "deterministicRounds": 240,
+      "evidenceRefs": ["v410_b2_b3_gate"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-MAINLINE-001",
+    "caseType": "positive",
+    "expectedDecision": "auto_theater_contract_ready",
+    "expectedFamilies": ["mainline_boundary", "system_continuity"],
+    "claim": {
+      "summary": "v4.1 work stays on a semantic codex branch and does not auto-merge main.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["v410_git_plan"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-RUNTIME-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["high_rank_combat_runtime", "theater_ui_runtime", "future_gate_lock"],
+    "futureGateFamilies": ["high_rank_combat_runtime", "theater_ui_runtime"],
+    "claim": {
+      "summary": "A later proposal asks to implement the first Auto-Theater UI and high-rank runtime.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_001"],
+      "futureGateRequests": ["high_rank_combat_runtime", "theater_ui_implementation"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-MORTAL-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mortal_combat_runtime", "future_gate_lock"],
+    "futureGateFamilies": ["mortal_combat_runtime"],
+    "claim": {
+      "summary": "A later proposal asks to migrate mortal combat into Auto-Theater Lite runtime.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_001"],
+      "futureGateRequests": ["mortal_combat_runtime_migration"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-ASSET-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["auto_theater_asset_runtime", "future_gate_lock"],
+    "futureGateFamilies": ["auto_theater_asset_runtime"],
+    "claim": {
+      "summary": "A later proposal asks to generate and connect Auto-Theater runtime art assets.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_001"],
+      "futureGateRequests": ["auto_theater_asset_generation"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-SAVE-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["save_runtime_boundary", "future_gate_lock"],
+    "futureGateFamilies": ["save_runtime_boundary"],
+    "claim": {
+      "summary": "A later proposal asks to persist Auto-Theater contract state in save data.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_002"],
+      "futureGateRequests": ["save_field", "save_format_bump"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-DEEPSEEK-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["deepseek_boundary", "future_gate_lock"],
+    "futureGateFamilies": ["deepseek_boundary"],
+    "claim": {
+      "summary": "A later proposal asks to call live DeepSeek for contract expression probes.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_003"],
+      "futureGateRequests": ["live_deepseek_call"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-MIROFISH-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mirofish_boundary", "hidden_lore_boundary", "future_gate_lock"],
+    "futureGateFamilies": ["mirofish_boundary", "hidden_lore_boundary"],
+    "claim": {
+      "summary": "A later proposal asks for original high-rank battle evidence or hidden-adjacent source anchors.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_005"],
+      "futureGateRequests": ["mirofish_export", "hidden_adjacent"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-BACKEND-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary", "future_gate_lock"],
+    "futureGateFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "summary": "A later proposal asks for backend services or external framework PoC around contract evaluation.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_006_f410_007"],
+      "futureGateRequests": ["backend_service", "external_framework_poc"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-FUTURE-L5-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime", "future_gate_lock"],
+    "futureGateFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime"],
+    "claim": {
+      "summary": "A later proposal asks for L5 or HeavenWill/Fate runtime adjudication.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "evidenceRefs": ["future_gate_f410_009"],
+      "futureGateRequests": ["l5_runtime", "heavenwill_fate_runtime"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-NEG-UI-DAMAGE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["ui_motion_boundary", "formal_authority_boundary"],
+    "claim": {
+      "summary": "UI_CALCULATES_DAMAGE from a theater layer and writes a damage result.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "uiCalculatesOutcome": true,
+      "candidateEffects": ["damage_write"],
+      "boundaries": {"runtimeModified": true}
+    }
+  },
+  {
+    "id": "V410-NEG-DEEPSEEK-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["deepseek_boundary", "formal_authority_boundary"],
+    "claim": {
+      "summary": "DEEPSEEK_ADJUDICATES_OUTCOME and declares hit, damage, death, and reward.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "deepSeekAdjudicatesOutcome": true,
+      "candidateEffects": ["deepseek_outcome_adjudication", "npc_life_death", "formal_reward"],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-NEG-VISUAL-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["visual_asset_boundary", "candidate_fact_lane"],
+    "claim": {
+      "summary": "CANDIDATE_AS_FACT visual sequence presents a candidate stack frame as resolved fact.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "visualCandidateAsFact": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-NEG-EVIDENCE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["worldcore_evidence_chain", "evidence_gap"],
+    "claim": {
+      "summary": "A theater layer marks environment destruction as fact without WorldCore evidence.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "theaterFactWithoutEvidence": true,
+      "candidateEffects": ["environment_destruction"],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V410-NEG-HIDDEN-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["hidden_lore_boundary", "mirofish_boundary"],
+    "claim": {
+      "summary": "SYNTHETIC_HIDDEN_PRIVATE_BODY is copied into a Combat Ledger entry.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": false,
+      "hiddenBodyInLedger": true,
+      "candidateEffects": ["hidden_adjacent"],
+      "boundaries": {"hiddenPrivateBodyRead": true}
+    }
+  },
+  {
+    "id": "V410-NEG-SAVE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_runtime_boundary"],
+    "claim": {
+      "summary": "Contract state is stored by bumping save format and adding run fingerprint.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["save_field", "save_format_bump", "run_fingerprint"],
+      "boundaries": {"saveFieldAdded": true, "saveFormatModified": true, "runFingerprintAdded": true}
+    }
+  },
+  {
+    "id": "V410-NEG-RUNTIME-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["high_rank_combat_runtime", "theater_ui_runtime"],
+    "claim": {
+      "summary": "AUTO_THEATER_RUNTIME_IMPLEMENTED and THEATER_UI_IMPLEMENTED before the future gate opens.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["high_rank_combat_runtime", "theater_ui_implementation"],
+      "boundaries": {"highRankCombatRuntimeOpened": true, "theaterUiImplemented": true}
+    }
+  },
+  {
+    "id": "V410-NEG-MORTAL-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mortal_combat_runtime"],
+    "claim": {
+      "summary": "Existing mortal board combat is migrated to Auto-Theater Lite runtime in v4.1.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["mortal_combat_runtime_migration"],
+      "boundaries": {"mortalCombatRuntimeMigrated": true}
+    }
+  },
+  {
+    "id": "V410-NEG-ASSET-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["auto_theater_asset_runtime", "visual_asset_boundary"],
+    "claim": {
+      "summary": "Auto-Theater assets are generated and connected to runtime.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["auto_theater_asset_generation"],
+      "boundaries": {"autoTheaterAssetsGenerated": true}
+    }
+  },
+  {
+    "id": "V410-NEG-MIROFISH-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary", "hidden_lore_boundary"],
+    "claim": {
+      "summary": "Real original named NPC and hidden-adjacent source anchor are used without intake.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": false,
+      "candidateEffects": ["mirofish_export", "real_original_fact", "named_npc", "hidden_adjacent"],
+      "boundaries": {"mirofishExportUsed": true, "realOriginalFactsUsed": true, "namedNpcUsed": true, "hiddenAdjacentUsed": true}
+    }
+  },
+  {
+    "id": "V410-NEG-BACKEND-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "summary": "A backend service and external framework PoC are introduced for v410 checker execution.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["backend_service", "external_framework_poc", "dependency_install"],
+      "boundaries": {"bffOrBackendUsed": true, "serviceImplemented": true, "externalFrameworkPoCUsed": true, "externalFrameworkDependencyAdded": true}
+    }
+  },
+  {
+    "id": "V410-NEG-L5-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime"],
+    "claim": {
+      "summary": "HEAVENWILL_RUNTIME_VERDICT lets an L5 director decide player fate.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["l5_runtime", "heavenwill_fate_runtime"],
+      "boundaries": {"l5RuntimeOpened": true, "heavenWillFateRuntimeOpened": true}
+    }
+  },
+  {
+    "id": "V410-NEG-MAIN-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mainline_boundary"],
+    "claim": {
+      "summary": "MAIN_AUTO_MERGED and EdgeOne deployed as part of v4.1.",
+      "worldCoreFinalAuthority": true,
+      "contractOnly": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "candidateEffects": ["main_auto_merge", "edgeone_deploy"],
+      "boundaries": {"mainAutoMerged": true, "edgeOneDeployed": true}
+    }
+  },
+  {
+    "id": "V410-NEG-NO-WORLDCORE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["worldcore_evidence_chain"],
+    "claim": {
+      "summary": "A contract sample omits WorldCore final authority.",
+      "worldCoreFinalAuthority": false,
+      "contractOnly": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  }
+]
