@@ -1,7 +1,7 @@
 # v3.7.0 总览
 
 日期：2026-05-25
-状态：startup proposed；pending user approval
+状态：startup approved；pending `/goal` implementation
 主线：`transient multi-NPC / small-faction AgentProposal 复核`
 
 ## 定位
@@ -44,4 +44,4 @@ v3.7 的目标不是开放完整 NPC 社会，而是验证多个 synthetic/gener
 
 ## 当前建议
 
-建议用户批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。批准后，Codex 可在 `/goal` 内完成 v3.7；若触发例外停机清单，必须停止并询问用户。
+用户已批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。后续可在 `/goal` 内完成 v3.7；若触发例外停机清单，必须停止并询问用户。
