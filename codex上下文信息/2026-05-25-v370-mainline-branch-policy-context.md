@@ -17,6 +17,12 @@
 - 同步 `指导大纲/流程制度/README.md`、`指导大纲/项目仪表盘.md`、`AGENTS.md`、`PROJECT-STATE.md`、v3.7 路线图、测试矩阵、Git 计划和 skill sync audit。
 - 同步本机 skills：`reborn-expert-council`、`game-dev-text`；`reverend-insanity-lore`、`reborn-combat-motion`、`mirofish-reborng-export` 为 `no_update_needed`。
 
+## 远端证据
+
+- commit：`61496233 docs: 增加主线合并与版本分支制度`
+- push：`codex/v370-startup-multi-npc-small-faction` 已推送到 origin
+- GitHub Actions：run `26381099012` passed，deterministic quality gate 通过
+
 ## 当前边界
 
 - 不自动合并 `main`。
