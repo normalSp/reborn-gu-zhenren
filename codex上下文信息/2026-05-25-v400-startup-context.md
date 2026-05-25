@@ -8,6 +8,8 @@
 
 用户要求开 v4.0 专家团启动会，并随后完成一轮 v4.0 总体设计讨论。本轮已建立 `指导大纲/v4.0.0/codex/00-总览/` 启动包，并新增 `v4.0.0-总体设计讨论纪要.md` 与 `v4.0.0-Auto-Theater-Combat美术与交互总纲.md`。
 
+用户随后询问 v4.0 到 v5.0 的路线大纲是否已做好。当前已新增 `指导大纲/长期路线/v4.0-v5.0-AutoTheater到高阶世界Runtime总体大纲.md`，作为 v4.1-v4.9 与 v5.0 第一刀的长期路线基线。该总纲只授权规划，不授权 runtime。
+
 startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
 
 `D-400-001` 至 `D-400-012` 仍为 `pending_user_decision`，但已按 Auto-Theater Combat / Auto-Theater Lite / Combat Ledger 口径修订。`F-400-001` 至 `F-400-012` 建议全部保持 `future_gate_required`。
@@ -27,6 +29,20 @@ startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
 - 凡阶战斗纳入同一底层范式，但只按 `Auto-Theater Lite` 预备；v4.0 不迁移凡阶 runtime，不替换现有棋盘/行动卡。
 - DeepSeek 可做表达和战斗意图候选，不能裁决命中、伤害、资源、NPC 生死、奖励、环境破坏或宿命结局。
 - 天道/宿命只做 `pressure / constraint / risk`，不做玩家结局裁决。
+
+## v4.0-v5.0 长期路线结论
+
+- v4.0：Auto-Theater + HeavenWill/Fate 双预备，先设计、schema/envelope、report-only checker 和视觉语法。
+- v4.1：Auto-Theater contract v1。
+- v4.2：Auto-Theater Lite 凡阶映射，不迁移凡阶 runtime。
+- v4.3：高阶战场语义实验室，覆盖空域、地面、地下、水域、洞天、阵法、领域、仙蛊屋和环境破坏。
+- v4.4：杀招栈与 Combat Ledger 硬化。
+- v4.5：HeavenWill / Fate / L5 宏观压力实验室。
+- v4.6：高阶 lore / MiroFish intake 准入。
+- v4.7：Auto-Theater runtime 准入包。
+- v4.8：最小 Auto-Theater first cut 候选；只有另批 future gate 后才可能 runtime。
+- v4.9：v5.0 前安全收束。
+- v5.0：高阶世界第一刀；不是完整蛊仙、五域两天、原著关键人物 live agent 或全部蛊虫/杀招/仙蛊屋开放。
 
 ## 启动包边界
 

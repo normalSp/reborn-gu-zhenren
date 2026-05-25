@@ -1,6 +1,6 @@
 # v4.0.0 总览
 
-状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论与 Auto-Theater 美术/交互总纲已记录；D-400 pending user decision。
+状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论、Auto-Theater 美术/交互总纲与 v4.0-v5.0 长期路线指针已记录；D-400 pending user decision。
 日期：2026-05-25。
 分支：`codex/v400-startup-high-world-prep`。
 主线建议：`Auto-Theater Combat 与 HeavenWill/Fate Pressure 高阶世界表达模型`。
@@ -15,6 +15,8 @@
 总体设计讨论已确认：不采用纯自走棋，也不把棋盘作为高阶战斗主容器。棋盘保留为凡阶/中阶/局部战术镜头；凡阶底层按 `Auto-Theater Lite` 预备，高阶主表达按 theater / stack / ledger 设计。
 
 Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨战争沙盘、道痕规则可视化、杀招栈舞台、Combat Ledger 复盘和 DeepSeek 表达分层。v4.0 只冻结视觉语法与验收计划，不生成素材、不实现 theater UI。
+
+`指导大纲/长期路线/v4.0-v5.0-AutoTheater到高阶世界Runtime总体大纲.md` 已作为 v4.0 后续路线基线：v4.1-v4.9 逐步硬化 Auto-Theater contract、凡阶 Lite 映射、高阶 theater、杀招栈、宏观压力、MiroFish/lore 准入和 v5.0 go/no-go，v5.0 才候选第一个高阶世界可玩试点。
 
 本启动包只开专家团会和前置授权包，不改 runtime、save、prompt、UI、后端、外部依赖或 MiroFish。
 
