@@ -1,6 +1,6 @@
 # v3.8.0 总览
 
-状态：startup proposed，等待用户审批 `D-380-001` 至 `D-380-012`。
+状态：completed locally，等待 commit/push/CI。
 日期：2026-05-25。
 分支：`codex/v380-startup-proposal-graph-stability`。
 主线：`transient proposal graph 长期稳定性与多小势力压力复核`。
@@ -9,7 +9,7 @@
 
 `v3.8.0` 承接 `v3.7.0` 的 transient multi-NPC / small-faction AgentProposal proposal graph。专家团建议不要立刻扩大为完整 runtime agent 社会，而是先验证 proposal graph 在更长轮次、更多 generic 小势力压力源、同开局差异和长期漂移场景下是否仍然可控。
 
-本启动包只建立 v3.8 的专家团意见、前置授权包、例外停机清单、测试矩阵和入口同步。它不等于用户已经批准开发实现。
+v3.8 已在 D-380 授权范围内完成本地开发与验证。它不开放任何 F-380 future gate。
 
 ## 硬边界
 
@@ -34,6 +34,18 @@
 | `v3.8.0-总体开发大纲.md` | v3.8 总体目标和阶段产物 |
 | `v3.8.0-小版本执行路线图.md` | a0/a1/a2/b1/b2/b3/rc 路线 |
 | `v3.8.0-前置授权包.md` | 等待用户审批的 D-380/F-380 |
+| `v3.8.0-D380授权确认记录.md` | 用户授权落盘 |
+| `v3.8.0-a0-v3.7复盘与proposal-graph-stability范围冻结.md` | a0 范围冻结 |
+| `v3.8.0-a1-proposal-graph-stability-model设计门禁.md` | a1 模型门禁 |
+| `v3.8.0-a2-multi-pressure-same-start-copy-gate.md` | a2 文案门禁 |
+| `v3.8.0-b1-transient-proposal-graph-stability实现记录.md` | b1 实现记录 |
+| `v3.8.0-b2-150轮deterministic-stability记录.md` | b2 deterministic 记录 |
+| `v3.8.0-b3-old-save-no-save-rollback证据.md` | b3 存档安全证据 |
+| `v3.8.0-b3-Player-Advocate-50轮记录.md` | b3 PA 记录 |
+| `v3.8.0-process-1-前置审批制度第十四轮复核.md` | 前置审批制度复核 |
+| `v3.8.0-process-2-长线漂移与知识边界复核.md` | 长线漂移与知识边界复核 |
+| `v3.8.0-rc-Skill同步审计记录.md` | rc skill audit |
+| `v3.8.0-rc-质量收束记录.md` | rc 质量收束 |
 | `v3.8.0-例外停机清单.md` | `/goal` 自动推进必须停止的条件 |
 | `v3.8.0-需求决策池.md` | 决策项状态表 |
 | `v3.8.0-测试矩阵.md` | 启动文档自检与后续实现测试计划 |
@@ -45,4 +57,4 @@
 
 ## 当前建议
 
-建议用户审批 `D-380-001` 至 `D-380-012` 后进入 v3.8 开发；`F-380-001` 至 `F-380-012` 全部保持 `future_gate_required`。
+完成 commit/push/CI 后，v3.8 可作为 v3.9 启动输入。是否合并 `main` 仍需按主线合并制度另行确认。

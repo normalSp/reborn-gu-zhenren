@@ -5,9 +5,9 @@ import {
   type V340PostCheckDecision,
 } from '../../engine/v340-transient-agent-proposal';
 import {
-  buildV370TransientAgentProposalGraph,
   type V370GraphStatus,
 } from '../../engine/v370-transient-agent-proposal-graph';
+import { buildV380TransientAgentProposalGraphStability } from '../../engine/v380-transient-agent-proposal-graph-stability';
 
 const layerLabel: Record<V340AgentLayer, string> = {
   L2: 'L2 次要意图',
@@ -40,7 +40,7 @@ export function RuntimeAgentProposalPanel() {
   const localActionLedger = useStore((s: any) => s.sceneSessionState?.localActionLedger || []);
   const turn = useStore((s: any) => s.turn);
 
-  const report = useMemo(() => buildV370TransientAgentProposalGraph({
+  const report = useMemo(() => buildV380TransientAgentProposalGraphStability({
     previewLane,
     regionalEventLedger,
     routeLocationState,
@@ -48,17 +48,21 @@ export function RuntimeAgentProposalPanel() {
     localActionLedger,
     turn,
   }), [previewLane, regionalEventLedger, routeLocationState, livingWorldState, localActionLedger, turn]);
+  const graphReport = report.inheritedV370;
 
   return (
     <div className="rg-scrollable h-full overflow-y-auto p-4" data-testid="v340-runtime-agent-proposal-panel">
       <div className="space-y-3" data-testid="v350-runtime-agent-hardening-panel">
         <div className="space-y-3" data-testid="v360-runtime-agent-micro-expansion-panel">
         <div className="space-y-3" data-testid="v370-runtime-agent-proposal-graph-panel">
+        <div className="space-y-3" data-testid="v380-runtime-agent-proposal-graph-stability-panel">
         <div className="rounded-sm border border-rg-gold-400/30 bg-rg-gold-500/10 p-3" data-testid="v340-agent-proposal-status">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
               <p className="text-sm font-semibold text-rg-gold-100">Runtime AgentProposal</p>
-              <p className="mt-1 text-[10px] text-rg-paper-200/55">{report.statusLabel}</p>
+              <p className="mt-1 text-[10px] text-rg-paper-200/55">
+                v3.8 proposal graph stability 已接管；{graphReport.statusLabel}
+              </p>
             </div>
             <button
               type="button"
@@ -69,27 +73,29 @@ export function RuntimeAgentProposalPanel() {
               重排候选
             </button>
           </div>
-          <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">{report.publicSummary}</p>
+          <p className="mt-2 text-xs leading-relaxed text-rg-paper-100/78">
+            v3.8 在 v3.7 proposal graph 上增加长期稳定性、多小势力压力复核和同开局差异边界；所有内容仍是候选表达，不是事实，也不写入存档。
+          </p>
         </div>
 
         <div className="rounded-sm border border-rg-jade-400/22 bg-rg-jade-500/10 p-3" data-testid="v340-agent-proposal-audit">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs font-semibold text-rg-jade-100">WorldCore post-check</p>
-            <span className="text-[10px] text-rg-paper-200/55">{report.audit.persistenceMode}</span>
+            <span className="text-[10px] text-rg-paper-200/55">{graphReport.audit.persistenceMode}</span>
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
-            {report.audit.worldCoreAuthority} · {report.audit.saveWritePolicy} · live DeepSeek：否 · MiroFish：否 · backend：否
+            {graphReport.audit.worldCoreAuthority} · {graphReport.audit.saveWritePolicy} · live DeepSeek：否 · MiroFish：否 · backend：否
           </p>
           <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/50" data-testid="v350-agent-proposal-lifecycle-audit">
-            v3.5 lifecycle v2：candidate / rejected / expired / needs_user_decision · v3.6 synthetic L2/L3 micro-expansion · v3.7 proposal graph · self-learning writes：否 · runFingerprint：否
+            v3.5 lifecycle v2：candidate / rejected / expired / needs_user_decision · v3.6 synthetic L2/L3 micro-expansion · v3.7 proposal graph · v3.8 proposal graph stability · self-learning writes：否 · runFingerprint：否
           </p>
         </div>
 
         <div className="grid gap-2 sm:grid-cols-4" data-testid="v350-agent-proposal-lifecycle-summary">
-          {(Object.keys(report.lifecycleSummary) as V370GraphStatus[]).map(status => (
+          {(Object.keys(graphReport.lifecycleSummary) as V370GraphStatus[]).map(status => (
             <div key={status} className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-2">
               <p className="text-[10px] font-semibold text-rg-paper-100">{lifecycleLabel[status]}</p>
-              <p className="mt-1 text-lg font-semibold text-rg-gold-100">{report.lifecycleSummary[status]}</p>
+              <p className="mt-1 text-lg font-semibold text-rg-gold-100">{graphReport.lifecycleSummary[status]}</p>
             </div>
           ))}
         </div>
@@ -97,18 +103,44 @@ export function RuntimeAgentProposalPanel() {
         <div className="rounded-sm border border-rg-jade-400/22 bg-rg-jade-500/10 p-3" data-testid="v370-agent-proposal-graph-summary">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="text-xs font-semibold text-rg-jade-100">proposal graph</p>
-            <span className="text-[10px] text-rg-paper-200/55">{report.audit.graphMode}</span>
+            <span className="text-[10px] text-rg-paper-200/55">{graphReport.audit.graphMode}</span>
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
-            multi-NPC nodes {report.graphSummary.npcCandidateCount} · small-faction pressure {report.graphSummary.smallFactionPressureCount} · connected edges {report.graphSummary.connectedEdgeCount}
+            multi-NPC nodes {graphReport.graphSummary.npcCandidateCount} · small-faction pressure {graphReport.graphSummary.smallFactionPressureCount} · connected edges {graphReport.graphSummary.connectedEdgeCount}
           </p>
           <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/50">
             传闻不是事实 · pressure handoff 不是 formal standing · WorldCore post-check 最终裁决
           </p>
         </div>
 
+        <div className="rounded-sm border border-rg-gold-400/24 bg-rg-gold-500/10 p-3" data-testid="v380-agent-proposal-stability-summary">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold text-rg-gold-100">proposal graph stability</p>
+            <span className="text-[10px] text-rg-paper-200/55">v3.8 long-horizon</span>
+          </div>
+          <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/58">
+            multi-pressure sources {report.multiPressureSummary.pressureSourceCount} · interference pairs {report.multiPressureSummary.pressureInterferencePairCount} · same-start variation 150 轮
+          </p>
+          <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/50">
+            memory contamination：否 · formal standing：否 · candidate/rejected/expired/needs_user_decision 不污染事实链
+          </p>
+        </div>
+
+        <div className="grid gap-2 lg:grid-cols-4" data-testid="v380-agent-proposal-pressure-lanes">
+          {report.pressureStabilityLanes.map(lane => (
+            <article key={lane.id} className="rounded-sm border border-rg-gold-400/20 bg-rg-ink-700/25 p-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-[10px] font-semibold text-rg-paper-100">{lane.label}</p>
+                <span className="text-[9px] text-rg-paper-200/45">{lifecycleLabel[lane.status]}</span>
+              </div>
+              <p className="mt-1 text-[9px] leading-relaxed text-rg-paper-200/58">{lane.publicCopy}</p>
+              <p className="mt-1 text-[9px] leading-relaxed text-rg-paper-200/45">{lane.sameStartVariationBoundary}</p>
+            </article>
+          ))}
+        </div>
+
         <div className="grid gap-2 lg:grid-cols-3" data-testid="v340-agent-proposal-list">
-          {[...report.npcCandidateNodes, ...report.smallFactionPressureNodes].map(item => {
+          {[...graphReport.npcCandidateNodes, ...graphReport.smallFactionPressureNodes].map(item => {
             const proposal = item.layer !== 'none'
               ? {
                 id: item.id,
@@ -164,7 +196,7 @@ export function RuntimeAgentProposalPanel() {
         <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v340-agent-proposal-rejections">
           <p className="text-xs font-semibold text-rg-paper-100">阻断项</p>
           <div className="mt-2 grid gap-1.5 lg:grid-cols-3">
-            {report.inheritedRejectedProbes.map(item => (
+            {graphReport.inheritedRejectedProbes.map(item => (
               <div key={item.id} className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/25 p-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-[10px] font-semibold text-rg-paper-100">{item.label}</p>
@@ -179,7 +211,7 @@ export function RuntimeAgentProposalPanel() {
         <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v350-agent-proposal-lifecycle-details">
           <p className="text-xs font-semibold text-rg-paper-100">lifecycle v2</p>
           <div className="mt-2 grid gap-1.5 lg:grid-cols-3">
-            {[...report.rejectedNodes, ...report.expiredNodes, ...report.needsUserDecisionNodes].map(item => (
+            {[...graphReport.rejectedNodes, ...graphReport.expiredNodes, ...graphReport.needsUserDecisionNodes].map(item => (
               <div key={item.id} className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-900/25 p-2">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <p className="text-[10px] font-semibold text-rg-paper-100">{item.label}</p>
@@ -194,22 +226,25 @@ export function RuntimeAgentProposalPanel() {
 
         <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v340-agent-proposal-deterministic">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="text-xs font-semibold text-rg-paper-100">30 轮 deterministic 基线 / 60 轮 v3.5 硬化门 / 90 轮 v3.6 微扩门 / 120 轮 v3.7 graph 门</p>
+            <p className="text-xs font-semibold text-rg-paper-100">30 轮 deterministic 基线 / 60 轮 v3.5 硬化门 / 90 轮 v3.6 微扩门 / 120 轮 v3.7 graph 门 / 150 轮 v3.8 stability 门</p>
             <span className="text-[10px] text-rg-paper-200/55">
-              {report.deterministicProbe.roundsChecked} rounds · rescoreStable
+              {report.deterministicProbe.roundCount} rounds · rescoreStable
             </span>
           </div>
           <p className="mt-2 text-[10px] leading-relaxed text-rg-paper-200/55" data-testid="v350-agent-proposal-deterministic-result">
-            inherited accepted {report.inheritedV360.inheritedDeterministicProbe.acceptedRounds}/{report.inheritedV360.inheritedDeterministicProbe.roundsChecked} · inherited acceptedForGate {String(report.inheritedV360.inheritedDeterministicProbe.acceptedForGate)} · accepted {report.inheritedV360.inheritedDeterministicProbe.acceptedRounds}/{report.inheritedV360.inheritedDeterministicProbe.roundsChecked} · acceptedForGate {String(report.inheritedV360.inheritedDeterministicProbe.acceptedForGate)}
+            inherited accepted {graphReport.inheritedV360.inheritedDeterministicProbe.acceptedRounds}/{graphReport.inheritedV360.inheritedDeterministicProbe.roundsChecked} · inherited acceptedForGate {String(graphReport.inheritedV360.inheritedDeterministicProbe.acceptedForGate)} · accepted {graphReport.inheritedV360.inheritedDeterministicProbe.acceptedRounds}/{graphReport.inheritedV360.inheritedDeterministicProbe.roundsChecked} · acceptedForGate {String(graphReport.inheritedV360.inheritedDeterministicProbe.acceptedForGate)}
           </p>
           <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/55" data-testid="v360-agent-proposal-deterministic-result">
-            v3.6 accepted {report.inheritedV360.deterministicProbe.acceptedRounds}/{report.inheritedV360.deterministicProbe.roundsChecked} · synthetic L2/L3 lanes {report.inheritedV360.syntheticLayerSummary.L2}/{report.inheritedV360.syntheticLayerSummary.L3} · runFingerprint {String(report.audit.runFingerprintUsed)}
+            v3.6 accepted {graphReport.inheritedV360.deterministicProbe.acceptedRounds}/{graphReport.inheritedV360.deterministicProbe.roundsChecked} · synthetic L2/L3 lanes {graphReport.inheritedV360.syntheticLayerSummary.L2}/{graphReport.inheritedV360.syntheticLayerSummary.L3} · runFingerprint false
           </p>
           <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/55" data-testid="v370-agent-proposal-deterministic-result">
-            v3.7 accepted {report.deterministicProbe.acceptedRounds}/{report.deterministicProbe.roundsChecked} · graph signatures {report.deterministicProbe.uniqueGraphSignatures} · acceptedForGate {String(report.deterministicProbe.acceptedForGate)} · runFingerprint {String(report.audit.runFingerprintUsed)}
+            v3.7 accepted {report.inheritedV370DeterministicProbe.acceptedRounds}/{report.inheritedV370DeterministicProbe.roundsChecked} · graph signatures {report.inheritedV370DeterministicProbe.uniqueGraphSignatures} · acceptedForGate {String(report.inheritedV370DeterministicProbe.acceptedForGate)} · runFingerprint false
+          </p>
+          <p className="mt-1 text-[10px] leading-relaxed text-rg-paper-200/55" data-testid="v380-agent-proposal-deterministic-result">
+            v3.8 accepted {report.deterministicProbe.acceptedRounds}/{report.deterministicProbe.roundCount} · stability signatures {report.deterministicProbe.uniqueStabilitySignatureCount} · pressure lanes {report.deterministicProbe.pressureLaneCount} · acceptedForGate {String(report.deterministicProbe.acceptedForGate)} · runFingerprint false
           </p>
           <div className="mt-2 flex flex-wrap gap-1.5">
-            {report.deterministicProbe.driftFamilies.map(item => (
+            {report.inheritedV370DeterministicProbe.driftFamilies.map(item => (
               <span key={item} className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-[10px] text-rg-paper-200/55">
                 {item}
               </span>
@@ -229,11 +264,12 @@ export function RuntimeAgentProposalPanel() {
         <div className="rounded-sm border border-rg-ink-300/15 bg-rg-ink-700/25 p-3" data-testid="v340-agent-proposal-source-refs">
           <p className="text-xs font-semibold text-rg-paper-100">来源</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
-            {report.sourceRefs.slice(0, 12).map(ref => (
+            {[...graphReport.sourceRefs, 'v3.8.0:D-380-001', 'v3.8.0:b1:proposal_graph_stability'].slice(0, 12).map(ref => (
               <span key={ref} className="rounded-sm border border-rg-ink-300/15 px-2 py-1 text-[10px] text-rg-paper-200/55">{ref}</span>
             ))}
           </div>
         </div>
+      </div>
       </div>
       </div>
       </div>
