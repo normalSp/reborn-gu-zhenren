@@ -6,6 +6,7 @@ Last updated: 2026-05-25
 
 - Package baseline: `1.0.0`.
 - Public release baseline: `v1.0.0` formal release prep; `v0.9.0` remains historical locked baseline.
+- Current active entry: `v4.0.0` startup on branch `codex/v400-startup-high-world-prep` as `高阶战斗 theater 与 HeavenWill/Fate 宏观压力双预备`. Startup docs live under `指导大纲/v4.0.0/codex/00-总览/`. D-400-001 through D-400-012 are still `pending_user_decision`; F-400-001 through F-400-012 are proposed to remain `future_gate_required`. This startup is design-gate-first and does not authorize high-rank combat runtime, theater UI implementation, killer-move stack runtime, Immortal Gu House state writes, HeavenWill/Fate runtime adjudication, L4/L5 runtime, original key character agents, persistent agent state, self-learning writes, save fields, `SAVE_FORMAT_VERSION` bump, `runFingerprint`, live DeepSeek, DeepSeek prompt/context/model/authority changes, DeepSeek visible lore/RAG, MiroFish export/intake, backend/BFF/service, external framework PoC/dependency/subagents/read-only scan/patch artifact, formal location/faction/identity/reward/NPC life-death/warrant/recruitment/blockade, knowledge-index body, runtime canon, public wording, legal/release changes, EdgeOne deployment, or main auto-merge.
 - Current completed entry: `v3.9.0` on branch `codex/v390-startup-v4-safety-closure` as `v4.0 前安全收束`; completion commit `2c2366ec` was pushed and GitHub Actions run `26400121645` passed. User approved D-390-001 through D-390-012 and confirmed F-390-001 through F-390-012 remain `future_gate_required`. v3.9 adds only self-owned report-only readiness tooling and evidence: `scripts/run-v390-pre-v4-readiness-check.mjs`, `tests/evals/v390-pre-v4-readiness/samples.json`, npm script `check:v390-pre-v4-readiness`, report `artifacts/v3.9.0/pre-v4-readiness/2026-05-25T12-13-50.203Z/report.json`, 180-round deterministic pre-v4 stability, 60-round Player Advocate with live DeepSeek `否`, old-save/no-save/rollback evidence, and a0/a1/a2/b1/b2/b3/process/rc docs under `指导大纲/v3.9.0/codex/00-总览/`. Local verification passed v390 checker, PA gate, typecheck, full unit, build, runtime/Qingmao/player-visible-copy scans, stale-entrypoints, full e2e, long e2e, production-preview smoke, and `git diff --check`. v3.9 does not authorize persistent agent state, agent memory store, self-learning writes, save fields, `SAVE_FORMAT_VERSION` bump, `runFingerprint`, live DeepSeek, DeepSeek prompt/context/model/authority changes, DeepSeek visible lore/RAG, MiroFish export/intake, backend/BFF/service, external framework PoC/dependency/subagents/read-only scan/patch artifact, L4/L5 runtime, HeavenWill/Fate runtime, high-rank combat runtime, formal location/faction/identity/reward/NPC life-death/warrant/recruitment/blockade, knowledge-index body, runtime canon, public wording, legal/release changes, EdgeOne deployment, or main auto-merge.
 - Previous completed entry: `v3.8.0` on branch `codex/v380-startup-proposal-graph-stability` as `transient proposal graph 长期稳定性与多小势力压力复核`; completion commit `196b46b4` was pushed and GitHub Actions run `26395818611` passed. User approved D-380-001 through D-380-012 and confirmed F-380-001 through F-380-012 remain `future_gate_required`. v3.8 adds only a local deterministic `v380` proposal graph stability layer over the existing `意图` tab: `src/engine/v380-transient-agent-proposal-graph-stability.ts`, focused unit/e2e tests, 150-round deterministic gate, and a 50-round Player Advocate record. It preserves v3.4/v3.5/v3.6/v3.7 evidence strings and keeps synthetic/generic, no-save, no-runFingerprint, no-live-DeepSeek, no-MiroFish, no-backend, no-external-framework, and WorldCore final authority.
 - Current completed development milestone before v3.8: `v3.7.0`; completion commit `8ef17c5c` was pushed and GitHub Actions run `26386740563` passed.
@@ -175,7 +176,7 @@ Last updated: 2026-05-25
 
 ## Current Next Step
 
-Current next step after v3.9 commit/push/CI is either discussing `main` stable-branch merge under the Git mainline policy or opening v4.0 expert-council/startup. Do not auto-merge `main` or expand runtime authority after v3.9. Do not directly add save fields, runtime systems beyond the approved transient proposal-only narrow gates, live DeepSeek, `runFingerprint`, formal credentials, formal locations/factions/rewards/NPC life-death, DeepSeek visible knowledge/RAG, BFF/backend, subagents, public wording, Claude Code SDK runtime prototypes, Hermes/LangGraph/Mastra/OpenAI Agents SDK/ADK/AutoGen/CrewAI/PydanticAI/Letta/OpenHands/Dify/Flowise/AutoGPT/Agno/Browser-use/LlamaIndex dependencies or PoCs, MiroFish export, external SDK/agent project writes, command execution, patch artifacts, git operations outside user-approved branch completion or merge flow, self-learning canon/runtime/save writes, private canon service, eval archive service, runner/service beyond approved synthetic transient UI/engine boundary, high-rank combat runtime, HeavenWill/Fate runtime, L4/L5 runtime, or EdgeOne without a new user decision or an approved frontloaded package that explicitly covers it.
+Current next step is for the user to decide whether to approve `D-400-001` through `D-400-012` and confirm `F-400-001` through `F-400-012` remain `future_gate_required`. Do not auto-merge `main` or expand runtime authority during v4.0 startup. Do not directly add save fields, high-rank combat runtime, theater UI implementation, HeavenWill/Fate runtime adjudication, L4/L5 runtime, live DeepSeek, `runFingerprint`, formal credentials, formal locations/factions/rewards/NPC life-death, DeepSeek visible knowledge/RAG, BFF/backend, subagents, public wording, Claude Code SDK runtime prototypes, Hermes/LangGraph/Mastra/OpenAI Agents SDK/ADK/AutoGen/CrewAI/PydanticAI/Letta/OpenHands/Dify/Flowise/AutoGPT/Agno/Browser-use/LlamaIndex dependencies or PoCs, MiroFish export, external SDK/agent project writes, command execution, patch artifacts, git operations outside user-approved branch completion or merge flow, self-learning canon/runtime/save writes, private canon service, eval archive service, runner/service beyond approved synthetic transient UI/engine boundary, or EdgeOne without a new user decision or an approved frontloaded package that explicitly covers it.
 
 The long-term architecture decision is: do not do a large backend rewrite now. v1.0-before architecture remains frontend-first with local deterministic TypeScript core, static/public canon, Zustand saves, and DeepSeek runtime calls. From v0.12 onward, design public/hidden facts, canon helpers, World Intent Engine, route/supply/pursuit, and reaction bridge as backend-ready pure TS core. A thin backend/BFF is only a future gate for API-key protection, hidden/private canon delivery, cloud saves, prompt/token/cache observability, live eval archives, or public-test security. External AI life/TRPG projects, including the Bilibili `AI人生引擎` demo discussed by the user, are useful as breadth, free-input rhythm, and public-demo feedback references; no confirmed public source repo has been adopted. RebornG's core remains deterministic RPG world adjudication and original-fact depth, not a generic AI companion/chat shell or pure LLM life simulator.
 
@@ -201,33 +202,34 @@ Important correction for v0.11 planning: discussion examples such as wolf tide, 
 ## Source Priority
 
 1. Runtime canon and engine source.
-2. Current v3.9 docs in `指导大纲/v3.9.0/codex/00-总览/`, especially `README.md`, `v3.9.0-rc-质量收束记录.md`, `v3.9.0-b1-v390-go-no-go-checker实现记录.md`, `v3.9.0-b3-Player-Advocate-60轮记录.md`, `v3.9.0-测试矩阵.md`, and `v3.9.0-v4.0准入框架草案.md`.
-3. Current completed v3.8 docs in `指导大纲/v3.8.0/codex/00-总览/`, especially `README.md`, `v3.8.0-rc-质量收束记录.md`, `v3.8.0-rc-Skill同步审计记录.md`, `v3.8.0-b3-Player-Advocate-50轮记录.md`, and `v3.8.0-测试矩阵.md`.
-4. Current completed v3.7 docs in `指导大纲/v3.7.0/codex/00-总览/`, especially `README.md`, `v3.7.0-rc-质量收束记录.md`, `v3.7.0-分层Agent与WorldCore测试体系审计.md`, and `v3.7.0-测试矩阵.md`.
-5. Current completed v3.6 docs in `指导大纲/v3.6.0/codex/00-总览/`.
-6. Current completed v3.5 docs in `指导大纲/v3.5.0/codex/00-总览/`, especially `v3.5.0-rc-质量收束记录.md`, `v3.5.0-b1-transient-AgentProposal-hardening-first-cut.md`, and `v3.5.0-b3-Player-Advocate-20轮走查记录.md`.
-7. Current completed v3.4 docs in `指导大纲/v3.4.0/codex/00-总览/`, especially `v3.4.0-rc-质量收束记录.md` and `v3.4.0-b1-最小transient-runtime-first-cut第一刀.md`.
-8. Current completed v3.3 docs in `指导大纲/v3.3.0/codex/00-总览/`, especially `v3.3.0-rc-F300-reopen最终决策包.md` and `v3.3.0-rc-质量收束记录.md`.
-9. Current completed v3.2 docs in `指导大纲/v3.2.0/codex/00-总览/`.
-10. Current completed v3.1 docs in `指导大纲/v3.1.0/codex/00-总览/`.
-11. Current completed v3.0 docs in `指导大纲/v3.0.0/codex/00-总览/`.
-11. Current completed v2.9 docs in `指导大纲/v2.9.0/codex/00-总览/`.
-12. Current completed v2.8 docs in `指导大纲/v2.8.0/codex/00-总览/`.
-13. Current completed v2.7 docs in `指导大纲/v2.7.0/codex/00-总览/`.
-14. Previous completed v2.6 docs in `指导大纲/v2.6.0/codex/00-总览/`.
-15. Previous completed v2.5 docs in `指导大纲/v2.5.0/codex/00-总览/`.
-16. Current v2.4 completed docs in `指导大纲/v2.4.0/codex/00-总览/`.
-17. Current completed version docs, currently `指导大纲/v2.3.0/codex/00-总览/`.
-18. Previous completed version docs, currently `指导大纲/v2.2.0/codex/00-总览/` and `指导大纲/v2.1.0/codex/00-总览/`.
-19. Earlier completed version docs, currently `指导大纲/v2.0.0/codex/00-总览/` and `指导大纲/v1.9.0/codex/00-总览/`.
-20. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, NPC/faction society, external agent frameworks, self-learning, runtime agent, high-rank combat, HeavenWill/Fate, or era-start strategy. For v3.0-v4.0 direction, read `指导大纲/长期路线/v3.0-v4.0-RuntimeAgent到高阶世界总体大纲.md`; for v2.4+ agent framework discussion, read `指导大纲/长期路线/Agent-Framework-Landscape-2026吸收矩阵.md` first.
-21. Project process docs in `指导大纲/流程制度/`, including `Skill同步审计制度.md`.
-22. Project dashboard `指导大纲/项目仪表盘.md`.
-23. Historical navigation `指导大纲/historical-index.md` before opening old version phase lists.
-24. Previous completed milestone docs, currently `指导大纲/v1.8.0/codex/00-总览/` and earlier; public release baseline docs are `指导大纲/v1.0.0/codex/00-总览/`.
-25. This `PROJECT-STATE.md`.
-26. Latest `codex上下文信息/`.
-27. Old v0.6-v0.19 docs and reports as historical evidence only unless a current gate explicitly links them.
+2. Current v4.0 startup docs in `指导大纲/v4.0.0/codex/00-总览/`, especially `README.md`, `v4.0.0-专家团启动会纪要.md`, `v4.0.0-前置授权包.md`, `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md`, `v4.0.0-a2-HeavenWill-Fate-L5宏观压力设计门禁草案.md`, and `v4.0.0-测试矩阵.md`.
+3. Current completed v3.9 docs in `指导大纲/v3.9.0/codex/00-总览/`, especially `README.md`, `v3.9.0-rc-质量收束记录.md`, `v3.9.0-b1-v390-go-no-go-checker实现记录.md`, `v3.9.0-b3-Player-Advocate-60轮记录.md`, `v3.9.0-测试矩阵.md`, and `v3.9.0-v4.0准入框架草案.md`.
+4. Current completed v3.8 docs in `指导大纲/v3.8.0/codex/00-总览/`, especially `README.md`, `v3.8.0-rc-质量收束记录.md`, `v3.8.0-rc-Skill同步审计记录.md`, `v3.8.0-b3-Player-Advocate-50轮记录.md`, and `v3.8.0-测试矩阵.md`.
+5. Current completed v3.7 docs in `指导大纲/v3.7.0/codex/00-总览/`, especially `README.md`, `v3.7.0-rc-质量收束记录.md`, `v3.7.0-分层Agent与WorldCore测试体系审计.md`, and `v3.7.0-测试矩阵.md`.
+6. Current completed v3.6 docs in `指导大纲/v3.6.0/codex/00-总览/`.
+7. Current completed v3.5 docs in `指导大纲/v3.5.0/codex/00-总览/`, especially `v3.5.0-rc-质量收束记录.md`, `v3.5.0-b1-transient-AgentProposal-hardening-first-cut.md`, and `v3.5.0-b3-Player-Advocate-20轮走查记录.md`.
+8. Current completed v3.4 docs in `指导大纲/v3.4.0/codex/00-总览/`, especially `v3.4.0-rc-质量收束记录.md` and `v3.4.0-b1-最小transient-runtime-first-cut第一刀.md`.
+9. Current completed v3.3 docs in `指导大纲/v3.3.0/codex/00-总览/`, especially `v3.3.0-rc-F300-reopen最终决策包.md` and `v3.3.0-rc-质量收束记录.md`.
+10. Current completed v3.2 docs in `指导大纲/v3.2.0/codex/00-总览/`.
+11. Current completed v3.1 docs in `指导大纲/v3.1.0/codex/00-总览/`.
+12. Current completed v3.0 docs in `指导大纲/v3.0.0/codex/00-总览/`.
+13. Current completed v2.9 docs in `指导大纲/v2.9.0/codex/00-总览/`.
+14. Current completed v2.8 docs in `指导大纲/v2.8.0/codex/00-总览/`.
+15. Current completed v2.7 docs in `指导大纲/v2.7.0/codex/00-总览/`.
+16. Previous completed v2.6 docs in `指导大纲/v2.6.0/codex/00-总览/`.
+17. Previous completed v2.5 docs in `指导大纲/v2.5.0/codex/00-总览/`.
+18. Current v2.4 completed docs in `指导大纲/v2.4.0/codex/00-总览/`.
+19. Current completed version docs, currently `指导大纲/v2.3.0/codex/00-总览/`.
+20. Previous completed version docs, currently `指导大纲/v2.2.0/codex/00-总览/` and `指导大纲/v2.1.0/codex/00-总览/`.
+21. Earlier completed version docs, currently `指导大纲/v2.0.0/codex/00-总览/` and `指导大纲/v1.9.0/codex/00-总览/`.
+22. Long-route docs in `指导大纲/长期路线/` when discussing living-world, free-intent, NPC/faction society, external agent frameworks, self-learning, runtime agent, high-rank combat, HeavenWill/Fate, or era-start strategy. For v3.0-v4.0 direction, read `指导大纲/长期路线/v3.0-v4.0-RuntimeAgent到高阶世界总体大纲.md`; for v2.4+ agent framework discussion, read `指导大纲/长期路线/Agent-Framework-Landscape-2026吸收矩阵.md` first.
+23. Project process docs in `指导大纲/流程制度/`, including `Skill同步审计制度.md`.
+24. Project dashboard `指导大纲/项目仪表盘.md`.
+25. Historical navigation `指导大纲/historical-index.md` before opening old version phase lists.
+26. Previous completed milestone docs, currently `指导大纲/v1.8.0/codex/00-总览/` and earlier; public release baseline docs are `指导大纲/v1.0.0/codex/00-总览/`.
+27. This `PROJECT-STATE.md`.
+28. Latest `codex上下文信息/`.
+29. Old v0.6-v0.19 docs and reports as historical evidence only unless a current gate explicitly links them.
 
 Removed external analysis note: `指导大纲/大方向/` was deleted after the useful material had either been promoted into project-owned docs or superseded. Do not treat it as a current entrypoint or recreate it without explicit user approval.
 
