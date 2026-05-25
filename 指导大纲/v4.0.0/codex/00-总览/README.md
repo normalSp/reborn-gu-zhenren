@@ -57,6 +57,7 @@ Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨
 | `v4.0.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与 blocking 条件 |
 | `v4.0.0-真相源索引.md` | 当前真相源和禁止来源 |
 | `v4.0.0-Git提交与推送计划.md` | 分支、提交、推送、主线合并边界 |
+| `v4.0.0-process-1-开发流程与系统连续性审计.md` | 开发制度可靠性、跨版本接续和孤儿系统审计 |
 | `v4.0.0-startup-Skill同步审计记录.md` | startup skill sync audit |
 
 ## 当前建议
