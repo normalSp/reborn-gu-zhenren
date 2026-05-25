@@ -1,16 +1,20 @@
 # v4.0.0 总览
 
-状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；D-400 pending user decision。
+状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论与 Auto-Theater 美术/交互总纲已记录；D-400 pending user decision。
 日期：2026-05-25。
 分支：`codex/v400-startup-high-world-prep`。
-主线建议：`高阶战斗 theater 与 HeavenWill/Fate 宏观压力双预备`。
+主线建议：`Auto-Theater Combat 与 HeavenWill/Fate Pressure 高阶世界表达模型`。
 
 ## 定位
 
 `v4.0.0` 承接 `v3.9.0` 的 v4.0 前安全收束。专家团建议 v4.0 不直接开放完整蛊仙、高阶战斗 runtime、天道/宿命裁决或 L4/L5 原著关键人物 agent，而是先把两条高风险长期路线拆成可审计的架构预备：
 
-1. 高阶战斗表达与结算架构预备：theater map、杀招栈、领域/阵法/地形压力、仙蛊屋状态、环境破坏证据链。
+1. `Auto-Theater Combat` 高阶战斗表达与结算架构预备：自走棋式准备、WorldCore 自动结算、battle theater、杀招栈、Combat Ledger、领域/阵法/地形压力、仙蛊屋状态、环境破坏证据链。
 2. HeavenWill / Fate / L5 宏观压力预备：Fate state、HeavenWill pressure、era anchor graph、causality debt、L5 macro director。
+
+总体设计讨论已确认：不采用纯自走棋，也不把棋盘作为高阶战斗主容器。棋盘保留为凡阶/中阶/局部战术镜头；凡阶底层按 `Auto-Theater Lite` 预备，高阶主表达按 theater / stack / ledger 设计。
+
+Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨战争沙盘、道痕规则可视化、杀招栈舞台、Combat Ledger 复盘和 DeepSeek 表达分层。v4.0 只冻结视觉语法与验收计划，不生成素材、不实现 theater UI。
 
 本启动包只开专家团会和前置授权包，不改 runtime、save、prompt、UI、后端、外部依赖或 MiroFish。
 
@@ -25,7 +29,7 @@
 - 不引入外部 agent framework PoC、dependency、vendored subset、read-only scan、patch artifact、subagents。
 - 不开放 persistent agent state、agent memory store 或 self-learning 写入。
 - 不开放 L4/L5 runtime、方源等原著关键人物 agent、HeavenWill/Fate runtime 裁决。
-- 不实现高阶战斗 runtime、theater UI、杀招栈数值、仙蛊屋状态写入或环境破坏结算。
+- 不实现高阶战斗 runtime、凡阶战斗 runtime 迁移、纯自走棋 runtime、theater UI、杀招栈数值、仙蛊屋状态写入或环境破坏结算。
 - 不新增正式地点、阵营、身份、奖励、NPC 生死、通缉、招揽、封锁。
 - 不新增 knowledge-index body、runtime canon、hidden/private body、prompt body archival。
 - 不改公开发布、法律边界，不部署 EdgeOne，不自动合并 `main`。
@@ -35,13 +39,15 @@
 | 文件 | 用途 |
 |---|---|
 | `v4.0.0-专家团启动会纪要.md` | 专家团意见、路线选择、收益风险 |
+| `v4.0.0-总体设计讨论纪要.md` | Auto-Theater Combat、自走棋取舍、凡阶 Lite、DeepSeek 与天道/宿命边界 |
+| `v4.0.0-Auto-Theater-Combat美术与交互总纲.md` | theater 布局、色彩语言、杀招栈、Combat Ledger、动效分工、素材分层、外部参考和截图验收 |
 | `v4.0.0-启动审查与范围冻结.md` | 进入条件、范围、非目标 |
 | `v4.0.0-总体开发大纲.md` | v4.0 总体目标和阶段产物 |
 | `v4.0.0-小版本执行路线图.md` | a0/a1/a2/b1/b2/b3/rc 路线建议 |
 | `v4.0.0-前置授权包.md` | 待用户审批的 D-400/F-400 |
 | `v4.0.0-例外停机清单.md` | `/goal` 自动推进必须停止的条件 |
 | `v4.0.0-需求决策池.md` | 决策项状态表 |
-| `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md` | 高阶战斗预备设计门禁草案 |
+| `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md` | Auto-Theater Combat / theater / stack / ledger 设计门禁草案 |
 | `v4.0.0-a2-HeavenWill-Fate-L5宏观压力设计门禁草案.md` | 天道/宿命/L5 宏观压力设计门禁草案 |
 | `v4.0.0-测试矩阵.md` | 启动文档自检与后续实现测试计划 |
 | `v4.0.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与 blocking 条件 |
