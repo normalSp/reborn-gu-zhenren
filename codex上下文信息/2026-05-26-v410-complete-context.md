@@ -63,6 +63,12 @@ Player Advocate：
 - `npm run check:production-preview`
 - `git diff --check`
 
+## 远端验证
+
+- 分支：`codex/v410-startup-auto-theater-contract-hardening`
+- 状态：completion branch 已推送，GitHub Actions 已检查通过。
+- 具体 commit / run id 以 git history、GitHub Actions 和最终答复为准。
+
 ## 仍未授权
 
 v4.1 不授权 Auto-Theater runtime、theater UI、高阶战斗 runtime、凡阶战斗迁移、纯自走棋 runtime、Auto-Theater 素材生成、save field、`SAVE_FORMAT_VERSION` bump、`runFingerprint`、live DeepSeek、DeepSeek prompt/context/model/authority 扩大、DeepSeek visible lore/RAG、MiroFish export/intake、backend/BFF/service、external framework PoC/dependency/subagents/read-only scan/patch artifact、persistent agent state、L4/L5 runtime、HeavenWill/Fate runtime 裁决、原著关键人物 agent、正式地点/阵营/身份/奖励/NPC 生死/通缉/招揽/封锁、knowledge-index body、runtime canon、public/legal/EdgeOne、main auto-merge。
