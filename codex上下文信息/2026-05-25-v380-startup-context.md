@@ -10,6 +10,8 @@
 - 建立 v3.8 startup docs：`指导大纲/v3.8.0/codex/00-总览/`。
 - v3.8 建议主线：`transient proposal graph 长期稳定性与多小势力压力复核`。
 - 当前 D-380 仍为 `pending_user_decision`，F-380 全部建议保持 `future_gate_required`。
+- Startup commit `2ea156b0` 已推送。
+- GitHub Actions run `26392015808` passed。
 
 硬边界：
 
