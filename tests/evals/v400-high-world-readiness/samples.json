@@ -1,0 +1,462 @@
+[
+  {
+    "id": "V400-COMBAT-CANDIDATE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["auto_theater_envelope", "worldcore_authority", "combat_ledger_boundary"],
+    "claim": {
+      "summary": "Auto-Theater Combat is recorded as an envelope for preparation, settlement evidence, candidate lanes, and replay.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-MORTAL-LITE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["auto_theater_lite", "battle_theater_boundary", "old_save_rollback"],
+    "claim": {
+      "summary": "Mortal combat receives Auto-Theater Lite design preparation only; the existing board runtime is not migrated.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-THEATER-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["battle_theater_boundary", "art_interaction_boundary", "reduced_motion_boundary"],
+    "claim": {
+      "summary": "Battle theater can describe air, ground, underground, water, domain, formation, and pressure layers as readable candidates.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "visualCandidateAsFact": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-STACK-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["killer_move_stack_boundary", "combat_ledger_boundary"],
+    "claim": {
+      "summary": "Killer-move stack phases are prepare, charge, lock, release, counter, interrupt, and backlash, all requiring engine evidence before facts.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-LEDGER-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["combat_ledger_boundary", "worldcore_authority"],
+    "claim": {
+      "summary": "Combat Ledger lanes distinguish fact, candidate, rejected, needs_user_decision, and pressure.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-ART-LANGUAGE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["art_interaction_boundary", "motion_split_boundary"],
+    "claim": {
+      "summary": "Ink, gold trace, blood risk, and jade protection language stay expressive and never create battle facts.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "visualCandidateAsFact": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-MOTION-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["motion_split_boundary", "reduced_motion_boundary"],
+    "claim": {
+      "summary": "GSAP handles effect timelines, Motion handles UI state, and reduced-motion retains theater, stack, ledger, and pressure readability.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FATE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["macro_pressure_envelope", "fate_state_boundary"],
+    "claim": {
+      "summary": "Fate state remains a report-only era constraint with intact, fractured, and destroyed labels.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-HEAVEN-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["heavenwill_pressure_boundary", "macro_pressure_envelope"],
+    "claim": {
+      "summary": "HeavenWill pressure can describe pressure, constraint, bias, exclusion, and risk, never verdicts.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-L5-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["l5_macro_boundary", "worldcore_authority"],
+    "claim": {
+      "summary": "L5 macro director is pressure-only, not a chat NPC, not a runtime agent, and not a canon writer.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-SOURCE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["source_pointer_boundary", "mirofish_boundary"],
+    "claim": {
+      "summary": "Source pointers stay ref class only; hidden or original body content is not copied into RebornG or DeepSeek visible context.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-PROCESS-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["system_continuity", "player_advocate_boundary", "deterministic_stability"],
+    "claim": {
+      "summary": "System continuity audit, PA metadata, and deterministic report-only probe are required at closure.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "deterministicRounds": 240,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-ROLLBACK-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_high_world_ready",
+    "expectedFamilies": ["old_save_rollback", "save_boundary"],
+    "claim": {
+      "summary": "v4.0 docs and checker must remain old-save safe because they add no fields, migrations, or store writes.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-HIGH-RANK-RUNTIME-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["high_rank_combat_runtime", "future_gate_lock"],
+    "claim": {
+      "summary": "A future high-rank runtime first cut request exists as a route option, not as v4.0 implementation.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-MORTAL-MIGRATION-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mortal_combat_runtime", "auto_theater_lite", "future_gate_lock"],
+    "claim": {
+      "summary": "Mortal combat Auto-Theater Lite migration is a future decision, not a v4.0 runtime change.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-LIVE-DEEPSEEK-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["prompt_authority_boundary", "future_gate_lock"],
+    "claim": {
+      "summary": "A future live battle narration probe may be requested later, but no live call is made in v4.0.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "liveDeepSeekCalled": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-MIROFISH-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mirofish_boundary", "source_pointer_boundary", "future_gate_lock"],
+    "claim": {
+      "summary": "Real era anchors or named NPC battle references require future MiroFish blocking intake.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-BACKEND-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["backend_service_boundary", "future_gate_lock"],
+    "claim": {
+      "summary": "A future battle eval archive service or job queue remains a separate backend gate.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-EXTERNAL-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["external_framework_boundary", "future_gate_lock"],
+    "claim": {
+      "summary": "A future external framework PoC for combat planning needs a separate license/SBOM and isolation gate.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-FUTURE-THEATER-UI-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["theater_ui_runtime", "art_interaction_boundary", "future_gate_lock"],
+    "claim": {
+      "summary": "A future theater UI prototype requires a separate UI gate and screenshot verification.",
+      "worldCoreFinalAuthority": true,
+      "proposalOnly": true,
+      "envelopeOnly": true,
+      "requiresFutureUserDecision": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V400-BLOCK-HIGH-RANK-RUNTIME-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["high_rank_combat_runtime"],
+    "claim": {
+      "summary": "Blocks an attempt to open high-rank combat runtime during v4.0.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["high_rank_combat_runtime"],
+      "boundaries": { "highRankCombatRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-MORTAL-MIGRATION-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mortal_combat_runtime"],
+    "claim": {
+      "summary": "Blocks an attempt to migrate existing mortal combat runtime to Auto-Theater Lite.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["mortal_combat_runtime_migration"],
+      "boundaries": { "mortalCombatRuntimeMigrated": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-PURE-AUTO-BATTLER-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["pure_auto_battler_runtime", "high_rank_combat_runtime"],
+    "claim": {
+      "summary": "Blocks pure auto-battler runtime being treated as the high-rank route.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["pure_auto_battler_runtime"],
+      "boundaries": { "pureAutoBattlerRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-THEATER-UI-ASSET-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["theater_ui_runtime", "auto_theater_asset_generation"],
+    "claim": {
+      "summary": "Blocks theater UI implementation and Auto-Theater asset generation in v4.0.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["theater_ui_implementation", "auto_theater_asset_generation"],
+      "boundaries": { "theaterUiImplemented": true, "autoTheaterAssetsGenerated": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-STACK-DAMAGE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["killer_move_stack_runtime", "formal_authority_boundary"],
+    "claim": {
+      "summary": "Blocks killer-move stack runtime from writing hit and damage facts.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["killer_move_stack_runtime", "hit_resolution", "damage_write"],
+      "boundaries": { "killerMoveStackRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-LIFE-REWARD-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["formal_authority_boundary"],
+    "claim": {
+      "summary": "Blocks NPC life-death, formal reward, and formal location results from theater output.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["npc_life_death", "formal_reward", "formal_location", "environment_destruction"],
+      "boundaries": {
+        "npcLifeDeathOpened": true,
+        "formalRewardOpened": true,
+        "formalLocationOpened": true,
+        "environmentDestructionConclusionOpened": true
+      }
+    }
+  },
+  {
+    "id": "V400-BLOCK-FATE-HEAVEN-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["heavenwill_fate_runtime"],
+    "claim": {
+      "summary": "Blocks Fate or HeavenWill runtime verdicts.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["fate_runtime", "heaven_will_runtime"],
+      "boundaries": { "heavenWillFateRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-L5-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary", "l5_macro_boundary"],
+    "claim": {
+      "summary": "Blocks L5 macro director from becoming runtime or a chat NPC.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["l5_runtime"],
+      "boundaries": { "l5RuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-DEEPSEEK-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["prompt_authority_boundary", "deepseek_visible_leak"],
+    "claim": {
+      "summary": "Blocks DeepSeek from adjudicating combat outcome or receiving visible lore/RAG.",
+      "worldCoreFinalAuthority": true,
+      "deepSeekAdjudicatesOutcome": true,
+      "candidateEffects": ["deepseek_outcome_adjudication", "deepseek_visible_lore"],
+      "boundaries": { "deepSeekAuthorityExpanded": true, "deepSeekVisibleLoreEnabled": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-MIROFISH-HIDDEN-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary", "hidden_private_body"],
+    "claim": {
+      "summary": "Blocks MiroFish export/intake and hidden-adjacent body use in v4.0.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["mirofish_export", "mirofish_intake", "hidden_adjacent", "hidden_private_body"],
+      "boundaries": { "mirofishExportUsed": true, "hiddenAdjacentUsed": true, "hiddenPrivateBodyRead": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-BACKEND-EXTERNAL-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "summary": "Blocks backend service, external framework PoC, dependency, read-only scan, patch artifact, and subagent use.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["backend_service", "external_framework_poc", "dependency_install", "read_only_scan", "patch_artifact", "subagent_use"],
+      "boundaries": {
+        "bffOrBackendUsed": true,
+        "externalFrameworkPoCUsed": true,
+        "externalFrameworkDependencyAdded": true,
+        "readOnlyScanUsed": true,
+        "patchArtifactUsed": true,
+        "subagentsUsed": true
+      }
+    }
+  },
+  {
+    "id": "V400-BLOCK-SAVE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_boundary"],
+    "claim": {
+      "summary": "Blocks save field, migration, save-format bump, and runFingerprint.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["save_field_add", "save_format_bump", "migration_add", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "saveFormatModified": true, "migrationAdded": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V400-BLOCK-MAINLINE-001",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mainline_boundary"],
+    "claim": {
+      "summary": "Blocks public release change, EdgeOne deployment, and main auto-merge.",
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["public_release_change", "edgeone_deploy", "main_auto_merge"],
+      "boundaries": { "publicReleaseChanged": true, "edgeOneDeployed": true, "mainAutoMerged": true }
+    }
+  }
+]

@@ -34,6 +34,7 @@
     "check:v370-transient-agent-proposal-graph": "vitest run src/engine/v370-transient-agent-proposal-graph.test.ts",
     "check:v380-transient-agent-proposal-graph-stability": "vitest run src/engine/v380-transient-agent-proposal-graph-stability.test.ts",
     "check:v390-pre-v4-readiness": "node scripts/run-v390-pre-v4-readiness-check.mjs --dry-run",
+    "check:v400-high-world-readiness": "node scripts/run-v400-high-world-readiness-check.mjs --dry-run",
     "check:stale-entrypoints": "node scripts/check-stale-entrypoints.mjs",
     "check:player-advocate-gate": "node scripts/check-player-advocate-gate.mjs",
     "check:production-preview": "npm run build && node scripts/check-production-preview.mjs",

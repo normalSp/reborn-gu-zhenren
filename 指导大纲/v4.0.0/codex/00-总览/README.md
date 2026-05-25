@@ -1,6 +1,6 @@
 # v4.0.0 总览
 
-状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论、Auto-Theater 美术/交互总纲、v4.0-v5.0 长期路线与 v4.0-v12.0 终局路线指针已记录；D-400 已获用户批准，F-400 全部继续 `future_gate_required`。
+状态：v4.0.0 completed locally；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论、Auto-Theater 美术/交互总纲、v4.0-v5.0 长期路线与 v4.0-v12.0 终局路线指针已记录；D-400 已获用户批准，F-400 全部继续 `future_gate_required`；v400 high-world readiness checker、60 轮 Player Advocate、old-save/no-save/rollback、process-2 与 rc 收束已完成。
 日期：2026-05-25。
 分支：`codex/v400-startup-high-world-prep`。
 主线建议：`Auto-Theater Combat 与 HeavenWill/Fate Pressure 高阶世界表达模型`。
@@ -20,7 +20,7 @@ Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨
 
 `指导大纲/长期路线/v4.0-v12.0-RebornG终局形态总体大纲.md` 已作为更远期终局路线基线：专家团判断离真正终局至少还差 8 个左右大版本，v5 做高阶第一刀，v6-v9 扩多区域、agent society、经济和高阶战斗，v10-v12 才触碰关键原著时代、任意身份和终局质量收束。本路线只作规划，不新增 runtime/save/DeepSeek/MiroFish/backend/external-framework/F-400 授权。
 
-本启动包只开专家团会和前置授权包，不改 runtime、save、prompt、UI、后端、外部依赖或 MiroFish。
+本版本只完成专家团会、前置授权包、设计门禁、report-only checker、PA 与收束证据，不改 runtime、save、prompt、UI、后端、外部依赖或 MiroFish。
 
 ## 硬边界
 
@@ -51,15 +51,23 @@ Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨
 | `v4.0.0-前置授权包.md` | 已获用户批准的 D-400/F-400 状态与授权边界 |
 | `v4.0.0-例外停机清单.md` | `/goal` 自动推进必须停止的条件 |
 | `v4.0.0-需求决策池.md` | 决策项状态表 |
-| `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md` | Auto-Theater Combat / theater / stack / ledger 设计门禁草案 |
-| `v4.0.0-a2-HeavenWill-Fate-L5宏观压力设计门禁草案.md` | 天道/宿命/L5 宏观压力设计门禁草案 |
+| `v4.0.0-a0-v3.9证据复盘与范围冻结.md` | v3.9 证据复盘与 v4.0 范围冻结 |
+| `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md` | Auto-Theater Combat / theater / stack / ledger 设计门禁冻结 |
+| `v4.0.0-a2-HeavenWill-Fate-L5宏观压力设计门禁草案.md` | 天道/宿命/L5 宏观压力设计门禁冻结 |
+| `v4.0.0-b1-v400-readiness-checker实现记录.md` | v400 report-only checker 实现与运行证据 |
+| `v4.0.0-b2-negative-fixtures与deterministic-hardening记录.md` | negative fixtures 与 240 轮 deterministic hardening |
+| `v4.0.0-b3-Player-Advocate-60轮记录.md` | 60 轮 Player Advocate 记录，live DeepSeek：否 |
+| `v4.0.0-b3-old-save-no-save-rollback证据.md` | old-save/no-save/rollback 证据 |
 | `v4.0.0-测试矩阵.md` | 启动文档自检与后续实现测试计划 |
 | `v4.0.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与 blocking 条件 |
 | `v4.0.0-真相源索引.md` | 当前真相源和禁止来源 |
 | `v4.0.0-Git提交与推送计划.md` | 分支、提交、推送、主线合并边界 |
 | `v4.0.0-process-1-开发流程与系统连续性审计.md` | 开发制度可靠性、跨版本接续和孤儿系统审计 |
+| `v4.0.0-process-2-长线漂移与知识边界复核.md` | live DeepSeek 豁免、MiroFish not_needed、knowledge boundary |
 | `v4.0.0-startup-Skill同步审计记录.md` | startup skill sync audit |
+| `v4.0.0-rc-Skill同步审计记录.md` | rc skill sync audit |
+| `v4.0.0-rc-质量收束记录.md` | v4.0 质量收束与完成口径 |
 
 ## 当前建议
 
-用户已批准 `D-400-001` 至 `D-400-012`，并确认 `F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`。Codex 可在该授权包内完成 v4.0；触发例外停机清单时必须立即停止并报告用户。
+用户已批准 `D-400-001` 至 `D-400-012`，并确认 `F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`。v4.0 已在该授权包内完成本地开发；触发例外停机清单的项目仍必须未来单独审批。
