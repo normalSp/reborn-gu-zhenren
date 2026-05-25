@@ -1,6 +1,6 @@
 # v3.9.0 总览
 
-状态：completed locally，commit/CI 待补记；startup commit `bea185ff` / GitHub Actions `26397569012` passed。
+状态：completed；completion commit `2c2366ec` / GitHub Actions `26400121645` passed。
 日期：2026-05-25。
 分支：`codex/v390-startup-v4-safety-closure`。
 主线建议：`v4.0 前安全收束：agent / DeepSeek / MiroFish / save-format / Player Advocate / 高阶世界准入统一复核`。
@@ -61,4 +61,4 @@
 
 ## 当前建议
 
-当前已按批准授权包完成 v3.9 本地收束。提交、推送、CI 通过后，下一步建议先讨论 `main` 稳定分支合并策略或进入 v4.0 专家团启动会；二者都不自动执行。
+当前已按批准授权包完成 v3.9。下一步建议先讨论 `main` 稳定分支合并策略或进入 v4.0 专家团启动会；二者都不自动执行。

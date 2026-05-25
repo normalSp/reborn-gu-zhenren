@@ -6,7 +6,7 @@
 
 ## 当前结论
 
-用户已批准 `D-390-001` 至 `D-390-012`，并确认 `F-390-001` 至 `F-390-012` 全部继续 `future_gate_required`。v3.9 已本地完成，等待提交、推送和 GitHub Actions 结果补记。
+用户已批准 `D-390-001` 至 `D-390-012`，并确认 `F-390-001` 至 `F-390-012` 全部继续 `future_gate_required`。v3.9 已完成，completion commit `2c2366ec` 已推送，GitHub Actions run `26400121645` passed。
 
 ## 本轮新增
 
