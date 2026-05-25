@@ -1,0 +1,1205 @@
+{
+  "targetVersion": "v3.9.0",
+  "checkerVersion": "v390_b1_pre_v4_readiness_checker_v1",
+  "reportSchemaVersion": "v390_b1_pre_v4_readiness_report_v1",
+  "generatedAt": "2026-05-25T12:13:50.203Z",
+  "executionMode": "dry_run_report_only",
+  "sampleFile": "tests/evals/v390-pre-v4-readiness/samples.json",
+  "sampleHash": "925c2987b31520b0ccca01c1e96a2793324fdb8bd1622964556920d0e79c2fd5",
+  "summary": {
+    "sampleCount": 21,
+    "schemaValid": 21,
+    "decisions": {
+      "v4_readiness_ok": 8,
+      "future_gate_required": 6,
+      "no_go_blocked": 7
+    },
+    "caseTypes": {
+      "positive": 8,
+      "future_gate": 6,
+      "negative": 7
+    },
+    "familiesCovered": [
+      "agent_proposal_boundary",
+      "backend_service_boundary",
+      "deepseek_visible_leak",
+      "deterministic_stability",
+      "external_framework_boundary",
+      "formal_authority_boundary",
+      "future_gate",
+      "future_gate_lock",
+      "heavenwill_fate_runtime",
+      "hidden_private_body",
+      "high_rank_combat_runtime",
+      "l4_l5_boundary",
+      "mainline_boundary",
+      "mirofish_boundary",
+      "old_save_rollback",
+      "player_advocate_boundary",
+      "prompt_authority_boundary",
+      "runtime_agent_implementation",
+      "save_boundary",
+      "self_learning_boundary",
+      "v3x_evidence_chain",
+      "v4_heavenwill_fate_readiness",
+      "v4_high_rank_combat_readiness",
+      "worldcore_authority"
+    ],
+    "missingRequiredFamilies": [],
+    "severitySummary": {
+      "P0": 47,
+      "P1": 0,
+      "P2": 0,
+      "Info": 0
+    },
+    "p0Findings": 47,
+    "positiveP0": 0,
+    "negativeFalseNegative": 0,
+    "futureGateMismatch": 0,
+    "resultMismatch": 0,
+    "rescoreStable": true,
+    "deterministicProbe": {
+      "mode": "synthetic_report_only",
+      "rounds": 180,
+      "acceptedRounds": 180,
+      "rejectedRounds": 0,
+      "candidateFactConfusion": 0,
+      "futureGateLeak": 0,
+      "memoryContamination": 0,
+      "runFingerprintUsed": false,
+      "liveDeepSeekCalled": false
+    }
+  },
+  "gate": {
+    "acceptedForGate": true,
+    "v40ReadinessPrepared": true,
+    "runtimeImplementationApproved": false,
+    "runtimeAgentImplementationApproved": false,
+    "highRankCombatImplementationApproved": false,
+    "heavenWillFateRuntimeApproved": false,
+    "saveFormatBumpApproved": false,
+    "liveDeepSeekCalled": false,
+    "mirofishBlockingUsed": false,
+    "externalFrameworkPoCUsed": false,
+    "mainAutoMergeApproved": false
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "runtimeAgentImplemented": false,
+    "persistentAgentStateOpened": false,
+    "saveFieldAdded": false,
+    "saveFormatModified": false,
+    "migrationAdded": false,
+    "runFingerprintAdded": false,
+    "liveDeepSeekCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "mirofishExportUsed": false,
+    "realOriginalFactsUsed": false,
+    "namedNpcUsed": false,
+    "hiddenAdjacentUsed": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "externalFrameworkPoCUsed": false,
+    "externalFrameworkDependencyAdded": false,
+    "readOnlyScanUsed": false,
+    "patchArtifactUsed": false,
+    "subagentsUsed": false,
+    "l4RuntimeOpened": false,
+    "l5RuntimeOpened": false,
+    "heavenWillFateRuntimeOpened": false,
+    "highRankCombatRuntimeOpened": false,
+    "formalAuthorityOpened": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "hiddenPrivateBodyRead": false,
+    "promptBodyArchived": false,
+    "selfLearningDirectWrite": false,
+    "publicReleaseChanged": false,
+    "edgeOneDeployed": false,
+    "mainAutoMerged": false
+  },
+  "findings": [
+    {
+      "sampleId": "V390-REJ-RUNTIME-015",
+      "severity": "P0",
+      "family": "runtime_agent_implementation",
+      "code": "boundary_runtimeAgentImplemented",
+      "message": "Boundary assertion runtimeAgentImplemented must remain false.",
+      "ref": "V390-REJ-RUNTIME-015"
+    },
+    {
+      "sampleId": "V390-REJ-RUNTIME-015",
+      "severity": "P0",
+      "family": "runtime_agent_implementation",
+      "code": "effect_runtime_agent_implementation",
+      "message": "Forbidden effect runtime_agent_implementation requires a future gate.",
+      "ref": "V390-REJ-RUNTIME-015"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "boundary_saveFieldAdded",
+      "message": "Boundary assertion saveFieldAdded must remain false.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "boundary_saveFormatModified",
+      "message": "Boundary assertion saveFormatModified must remain false.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "boundary_runFingerprintAdded",
+      "message": "Boundary assertion runFingerprintAdded must remain false.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "effect_save_field_add",
+      "message": "Forbidden effect save_field_add requires a future gate.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "effect_save_format_bump",
+      "message": "Forbidden effect save_format_bump requires a future gate.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-SAVE-016",
+      "severity": "P0",
+      "family": "save_boundary",
+      "code": "effect_run_fingerprint",
+      "message": "Forbidden effect run_fingerprint requires a future gate.",
+      "ref": "V390-REJ-SAVE-016"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "prompt_authority_boundary",
+      "code": "boundary_liveDeepSeekCalled",
+      "message": "Boundary assertion liveDeepSeekCalled must remain false.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "deepseek_visible_leak",
+      "code": "boundary_deepSeekVisibleLoreEnabled",
+      "message": "Boundary assertion deepSeekVisibleLoreEnabled must remain false.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "hidden_private_body",
+      "code": "boundary_hiddenPrivateBodyRead",
+      "message": "Boundary assertion hiddenPrivateBodyRead must remain false.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "prompt_authority_boundary",
+      "code": "effect_live_deepseek_call",
+      "message": "Forbidden effect live_deepseek_call requires a future gate.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "deepseek_visible_leak",
+      "code": "effect_deepseek_visible_rag",
+      "message": "Forbidden effect deepseek_visible_rag requires a future gate.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "hidden_private_body",
+      "code": "effect_hidden_private_body",
+      "message": "Forbidden effect hidden_private_body requires a future gate.",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "hidden_private_body",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /SYNTHETIC_HIDDEN_PRIVATE_BODY/i",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-DEEPSEEK-017",
+      "severity": "P0",
+      "family": "deepseek_visible_leak",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /DeepSeek visible (lore|RAG|context) enabled/i",
+      "ref": "V390-REJ-DEEPSEEK-017"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "boundary_mirofishExportUsed",
+      "message": "Boundary assertion mirofishExportUsed must remain false.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "boundary_namedNpcUsed",
+      "message": "Boundary assertion namedNpcUsed must remain false.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "boundary_formalAuthorityOpened",
+      "message": "Boundary assertion formalAuthorityOpened must remain false.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "effect_mirofish_export",
+      "message": "Forbidden effect mirofish_export requires a future gate.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "mirofish_boundary",
+      "code": "effect_named_npc",
+      "message": "Forbidden effect named_npc requires a future gate.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_formal_location",
+      "message": "Forbidden effect formal_location requires a future gate.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-MIROFISH-FORMAL-018",
+      "severity": "P0",
+      "family": "formal_authority_boundary",
+      "code": "effect_formal_reward",
+      "message": "Forbidden effect formal_reward requires a future gate.",
+      "ref": "V390-REJ-MIROFISH-FORMAL-018"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "boundary_bffOrBackendUsed",
+      "message": "Boundary assertion bffOrBackendUsed must remain false.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "boundary_externalFrameworkDependencyAdded",
+      "message": "Boundary assertion externalFrameworkDependencyAdded must remain false.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "boundary_subagentsUsed",
+      "message": "Boundary assertion subagentsUsed must remain false.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "backend_service_boundary",
+      "code": "effect_backend_service",
+      "message": "Forbidden effect backend_service requires a future gate.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "effect_dependency_install",
+      "message": "Forbidden effect dependency_install requires a future gate.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-BACKEND-EXTERNAL-019",
+      "severity": "P0",
+      "family": "external_framework_boundary",
+      "code": "effect_subagent_use",
+      "message": "Forbidden effect subagent_use requires a future gate.",
+      "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "boundary_l4RuntimeOpened",
+      "message": "Boundary assertion l4RuntimeOpened must remain false.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "boundary_l5RuntimeOpened",
+      "message": "Boundary assertion l5RuntimeOpened must remain false.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "boundary_heavenWillFateRuntimeOpened",
+      "message": "Boundary assertion heavenWillFateRuntimeOpened must remain false.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "boundary_highRankCombatRuntimeOpened",
+      "message": "Boundary assertion highRankCombatRuntimeOpened must remain false.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "effect_l4_runtime",
+      "message": "Forbidden effect l4_runtime requires a future gate.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "effect_l5_runtime",
+      "message": "Forbidden effect l5_runtime requires a future gate.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "effect_heaven_will_runtime",
+      "message": "Forbidden effect heaven_will_runtime requires a future gate.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "effect_high_rank_combat_runtime",
+      "message": "Forbidden effect high_rank_combat_runtime requires a future gate.",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "l4_l5_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /L[45]\\s+runtime/i",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "heavenwill_fate_runtime",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /HeavenWill runtime verdict/i",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "severity": "P0",
+      "family": "high_rank_combat_runtime",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /high-rank combat runtime/i",
+      "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "self_learning_boundary",
+      "code": "boundary_selfLearningDirectWrite",
+      "message": "Boundary assertion selfLearningDirectWrite must remain false.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "boundary_edgeOneDeployed",
+      "message": "Boundary assertion edgeOneDeployed must remain false.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "boundary_mainAutoMerged",
+      "message": "Boundary assertion mainAutoMerged must remain false.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "self_learning_boundary",
+      "code": "effect_self_learning_direct_write",
+      "message": "Forbidden effect self_learning_direct_write requires a future gate.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "effect_main_auto_merge",
+      "message": "Forbidden effect main_auto_merge requires a future gate.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "effect_edgeone_deploy",
+      "message": "Forbidden effect edgeone_deploy requires a future gate.",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    },
+    {
+      "sampleId": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "severity": "P0",
+      "family": "mainline_boundary",
+      "code": "hard_text_pattern",
+      "message": "Hard forbidden text pattern matched: /main branch is auto-merged/i",
+      "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+    }
+  ],
+  "results": [
+    {
+      "id": "V390-GO-V3X-EVIDENCE-001",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "v3x_evidence_chain",
+        "deterministic_stability"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "deterministic_stability",
+        "v3x_evidence_chain"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-WORLDCORE-002",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "worldcore_authority",
+        "agent_proposal_boundary"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "agent_proposal_boundary",
+        "worldcore_authority"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-FUTURE-GATE-LOCK-003",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "future_gate_lock",
+        "mainline_boundary"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate_lock",
+        "mainline_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-HIGH-RANK-COMBAT-READINESS-004",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "v4_high_rank_combat_readiness",
+        "worldcore_authority"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "v4_high_rank_combat_readiness",
+        "worldcore_authority"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-FATE-HEAVENWILL-READINESS-005",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "v4_heavenwill_fate_readiness",
+        "worldcore_authority"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "v4_heavenwill_fate_readiness",
+        "worldcore_authority"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-PA-ROLLBACK-006",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "player_advocate_boundary",
+        "old_save_rollback"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "old_save_rollback",
+        "player_advocate_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-SAVE-PROMPT-MIROFISH-007",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "save_boundary",
+        "prompt_authority_boundary",
+        "mirofish_boundary"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "mirofish_boundary",
+        "prompt_authority_boundary",
+        "save_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-GO-INFRA-EXTERNAL-008",
+      "caseType": "positive",
+      "expectedDecision": "v4_readiness_ok",
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary",
+        "self_learning_boundary"
+      ],
+      "decision": "v4_readiness_ok",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary",
+        "self_learning_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-PERSISTENT-009",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "runtime_agent_implementation"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "runtime_agent_implementation"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-SAVE-010",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "save_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "save_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-LIVE-DEEPSEEK-011",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "prompt_authority_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "prompt_authority_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-MIROFISH-012",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-BACKEND-EXTERNAL-013",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary",
+        "future_gate"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-FUTURE-L4-L5-HIGH-RANK-014",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "expectedFamilies": [
+        "future_gate",
+        "l4_l5_boundary",
+        "v4_high_rank_combat_readiness",
+        "v4_heavenwill_fate_readiness"
+      ],
+      "decision": "future_gate_required",
+      "schemaValid": true,
+      "findings": [],
+      "coveredFamilies": [
+        "future_gate",
+        "l4_l5_boundary",
+        "v4_heavenwill_fate_readiness",
+        "v4_high_rank_combat_readiness"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-RUNTIME-015",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "boundary_runtimeAgentImplemented",
+          "message": "Boundary assertion runtimeAgentImplemented must remain false.",
+          "ref": "V390-REJ-RUNTIME-015"
+        },
+        {
+          "severity": "P0",
+          "family": "runtime_agent_implementation",
+          "code": "effect_runtime_agent_implementation",
+          "message": "Forbidden effect runtime_agent_implementation requires a future gate.",
+          "ref": "V390-REJ-RUNTIME-015"
+        }
+      ],
+      "coveredFamilies": [
+        "runtime_agent_implementation"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-SAVE-016",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "save_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_saveFieldAdded",
+          "message": "Boundary assertion saveFieldAdded must remain false.",
+          "ref": "V390-REJ-SAVE-016"
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_saveFormatModified",
+          "message": "Boundary assertion saveFormatModified must remain false.",
+          "ref": "V390-REJ-SAVE-016"
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "boundary_runFingerprintAdded",
+          "message": "Boundary assertion runFingerprintAdded must remain false.",
+          "ref": "V390-REJ-SAVE-016"
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_save_field_add",
+          "message": "Forbidden effect save_field_add requires a future gate.",
+          "ref": "V390-REJ-SAVE-016"
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_save_format_bump",
+          "message": "Forbidden effect save_format_bump requires a future gate.",
+          "ref": "V390-REJ-SAVE-016"
+        },
+        {
+          "severity": "P0",
+          "family": "save_boundary",
+          "code": "effect_run_fingerprint",
+          "message": "Forbidden effect run_fingerprint requires a future gate.",
+          "ref": "V390-REJ-SAVE-016"
+        }
+      ],
+      "coveredFamilies": [
+        "save_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-DEEPSEEK-017",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "prompt_authority_boundary",
+        "deepseek_visible_leak",
+        "hidden_private_body"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "prompt_authority_boundary",
+          "code": "boundary_liveDeepSeekCalled",
+          "message": "Boundary assertion liveDeepSeekCalled must remain false.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "boundary_deepSeekVisibleLoreEnabled",
+          "message": "Boundary assertion deepSeekVisibleLoreEnabled must remain false.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "boundary_hiddenPrivateBodyRead",
+          "message": "Boundary assertion hiddenPrivateBodyRead must remain false.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "prompt_authority_boundary",
+          "code": "effect_live_deepseek_call",
+          "message": "Forbidden effect live_deepseek_call requires a future gate.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "effect_deepseek_visible_rag",
+          "message": "Forbidden effect deepseek_visible_rag requires a future gate.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "effect_hidden_private_body",
+          "message": "Forbidden effect hidden_private_body requires a future gate.",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_private_body",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /SYNTHETIC_HIDDEN_PRIVATE_BODY/i",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_visible_leak",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /DeepSeek visible (lore|RAG|context) enabled/i",
+          "ref": "V390-REJ-DEEPSEEK-017"
+        }
+      ],
+      "coveredFamilies": [
+        "deepseek_visible_leak",
+        "hidden_private_body",
+        "prompt_authority_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-MIROFISH-FORMAL-018",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "formal_authority_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_mirofishExportUsed",
+          "message": "Boundary assertion mirofishExportUsed must remain false.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "Boundary assertion namedNpcUsed must remain false.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "boundary_formalAuthorityOpened",
+          "message": "Boundary assertion formalAuthorityOpened must remain false.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_mirofish_export",
+          "message": "Forbidden effect mirofish_export requires a future gate.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "Forbidden effect named_npc requires a future gate.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_location",
+          "message": "Forbidden effect formal_location requires a future gate.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_reward",
+          "message": "Forbidden effect formal_reward requires a future gate.",
+          "ref": "V390-REJ-MIROFISH-FORMAL-018"
+        }
+      ],
+      "coveredFamilies": [
+        "formal_authority_boundary",
+        "mirofish_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-BACKEND-EXTERNAL-019",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_bffOrBackendUsed",
+          "message": "Boundary assertion bffOrBackendUsed must remain false.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_externalFrameworkDependencyAdded",
+          "message": "Boundary assertion externalFrameworkDependencyAdded must remain false.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_subagentsUsed",
+          "message": "Boundary assertion subagentsUsed must remain false.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_backend_service",
+          "message": "Forbidden effect backend_service requires a future gate.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_dependency_install",
+          "message": "Forbidden effect dependency_install requires a future gate.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_subagent_use",
+          "message": "Forbidden effect subagent_use requires a future gate.",
+          "ref": "V390-REJ-BACKEND-EXTERNAL-019"
+        }
+      ],
+      "coveredFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-L4-L5-FATE-COMBAT-020",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "l4_l5_boundary",
+        "heavenwill_fate_runtime",
+        "high_rank_combat_runtime"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l4RuntimeOpened",
+          "message": "Boundary assertion l4RuntimeOpened must remain false.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l5RuntimeOpened",
+          "message": "Boundary assertion l5RuntimeOpened must remain false.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "boundary_heavenWillFateRuntimeOpened",
+          "message": "Boundary assertion heavenWillFateRuntimeOpened must remain false.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "boundary_highRankCombatRuntimeOpened",
+          "message": "Boundary assertion highRankCombatRuntimeOpened must remain false.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l4_runtime",
+          "message": "Forbidden effect l4_runtime requires a future gate.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l5_runtime",
+          "message": "Forbidden effect l5_runtime requires a future gate.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "effect_heaven_will_runtime",
+          "message": "Forbidden effect heaven_will_runtime requires a future gate.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "effect_high_rank_combat_runtime",
+          "message": "Forbidden effect high_rank_combat_runtime requires a future gate.",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /L[45]\\s+runtime/i",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /HeavenWill runtime verdict/i",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        },
+        {
+          "severity": "P0",
+          "family": "high_rank_combat_runtime",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /high-rank combat runtime/i",
+          "ref": "V390-REJ-L4-L5-FATE-COMBAT-020"
+        }
+      ],
+      "coveredFamilies": [
+        "heavenwill_fate_runtime",
+        "high_rank_combat_runtime",
+        "l4_l5_boundary"
+      ],
+      "acceptedForGate": true
+    },
+    {
+      "id": "V390-REJ-SELFLEARN-MAINLINE-021",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "expectedFamilies": [
+        "self_learning_boundary",
+        "mainline_boundary"
+      ],
+      "decision": "no_go_blocked",
+      "schemaValid": true,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "boundary_selfLearningDirectWrite",
+          "message": "Boundary assertion selfLearningDirectWrite must remain false.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_edgeOneDeployed",
+          "message": "Boundary assertion edgeOneDeployed must remain false.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_mainAutoMerged",
+          "message": "Boundary assertion mainAutoMerged must remain false.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "self_learning_boundary",
+          "code": "effect_self_learning_direct_write",
+          "message": "Forbidden effect self_learning_direct_write requires a future gate.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_main_auto_merge",
+          "message": "Forbidden effect main_auto_merge requires a future gate.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_edgeone_deploy",
+          "message": "Forbidden effect edgeone_deploy requires a future gate.",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "hard_text_pattern",
+          "message": "Hard forbidden text pattern matched: /main branch is auto-merged/i",
+          "ref": "V390-REJ-SELFLEARN-MAINLINE-021"
+        }
+      ],
+      "coveredFamilies": [
+        "mainline_boundary",
+        "self_learning_boundary"
+      ],
+      "acceptedForGate": true
+    }
+  ]
+}

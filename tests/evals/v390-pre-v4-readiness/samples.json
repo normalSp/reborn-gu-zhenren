@@ -1,0 +1,297 @@
+[
+  {
+    "id": "V390-GO-V3X-EVIDENCE-001",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["v3x_evidence_chain", "deterministic_stability"],
+    "coverageFamilies": ["v3x_evidence_chain", "deterministic_stability"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "deterministicRounds": 180,
+      "evidenceRefs": ["v340", "v350", "v360", "v370", "v380"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-WORLDCORE-002",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["worldcore_authority", "agent_proposal_boundary"],
+    "coverageFamilies": ["worldcore_authority", "agent_proposal_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "allowedOutputs": ["candidate_lane", "rejected_lane", "expired_lane", "needs_user_decision_lane"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-FUTURE-GATE-LOCK-003",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["future_gate_lock", "mainline_boundary"],
+    "coverageFamilies": ["future_gate_lock", "mainline_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "fGatesRemainClosed": ["F-390-001", "F-390-012"],
+      "mainAutoMergeApproved": false,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-HIGH-RANK-COMBAT-READINESS-004",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["v4_high_rank_combat_readiness", "worldcore_authority"],
+    "coverageFamilies": ["v4_high_rank_combat_readiness", "worldcore_authority"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "readinessOnly": ["theater_map_model", "killer_move_stack_model", "domain_pressure_model", "immortal_gu_house_boundary"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-FATE-HEAVENWILL-READINESS-005",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["v4_heavenwill_fate_readiness", "worldcore_authority"],
+    "coverageFamilies": ["v4_heavenwill_fate_readiness", "worldcore_authority"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "readinessOnly": ["fate_state_boundary", "heaven_will_pressure_model", "era_anchor_graph", "causality_debt"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-PA-ROLLBACK-006",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["player_advocate_boundary", "old_save_rollback"],
+    "coverageFamilies": ["player_advocate_boundary", "old_save_rollback"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "playerAdvocateRounds": 60,
+      "liveDeepSeekCalled": false,
+      "oldSaveNoSaveRollbackEvidence": true,
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-SAVE-PROMPT-MIROFISH-007",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["save_boundary", "prompt_authority_boundary", "mirofish_boundary"],
+    "coverageFamilies": ["save_boundary", "prompt_authority_boundary", "mirofish_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "liveDeepSeekCalled": false,
+      "mirofishNeedLevel": "not_needed",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-GO-INFRA-EXTERNAL-008",
+    "caseType": "positive",
+    "expectedDecision": "v4_readiness_ok",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary", "self_learning_boundary"],
+    "coverageFamilies": ["backend_service_boundary", "external_framework_boundary", "self_learning_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "externalFrameworks": ["architecture_reference_only"],
+      "selfLearning": "candidate_only_no_direct_write",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-PERSISTENT-009",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "runtime_agent_implementation"],
+    "futureGateFamilies": ["future_gate", "runtime_agent_implementation"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "persistent agent state and memory store",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-SAVE-010",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "save_boundary"],
+    "futureGateFamilies": ["future_gate", "save_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "save field, migration, SAVE_FORMAT_VERSION bump, or runFingerprint",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-LIVE-DEEPSEEK-011",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "prompt_authority_boundary"],
+    "futureGateFamilies": ["future_gate", "prompt_authority_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "live DeepSeek, prompt/context/model/authority expansion",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-MIROFISH-012",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "mirofish_boundary"],
+    "futureGateFamilies": ["future_gate", "mirofish_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "MiroFish blocking for named NPC, hidden-adjacent, Fang Yuan evidence, or formal lore conclusion",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-BACKEND-EXTERNAL-013",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "backend_service_boundary", "external_framework_boundary"],
+    "futureGateFamilies": ["future_gate", "backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "backend/BFF/service or external framework PoC/dependency/subagent",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-FUTURE-L4-L5-HIGH-RANK-014",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["future_gate", "l4_l5_boundary", "v4_high_rank_combat_readiness", "v4_heavenwill_fate_readiness"],
+    "futureGateFamilies": ["future_gate", "l4_l5_boundary", "v4_high_rank_combat_readiness", "v4_heavenwill_fate_readiness"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "requiresFutureUserDecision": true,
+      "futureDecision": "L4/L5 controlled opening, HeavenWill/Fate controlled opening, or high-rank combat implementation",
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V390-REJ-RUNTIME-015",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["runtime_agent_implementation"],
+    "claim": {
+      "proposalOnly": false,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["runtime_agent_implementation"],
+      "boundaries": { "runtimeAgentImplemented": true }
+    }
+  },
+  {
+    "id": "V390-REJ-SAVE-016",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["save_field_add", "save_format_bump", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "saveFormatModified": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V390-REJ-DEEPSEEK-017",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["prompt_authority_boundary", "deepseek_visible_leak", "hidden_private_body"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["live_deepseek_call", "deepseek_visible_rag", "hidden_private_body"],
+      "publicSummary": "DeepSeek visible RAG enabled with SYNTHETIC_HIDDEN_PRIVATE_BODY.",
+      "boundaries": { "liveDeepSeekCalled": true, "deepSeekVisibleLoreEnabled": true, "hiddenPrivateBodyRead": true }
+    }
+  },
+  {
+    "id": "V390-REJ-MIROFISH-FORMAL-018",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary", "formal_authority_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["mirofish_export", "named_npc", "formal_location", "formal_reward"],
+      "boundaries": { "mirofishExportUsed": true, "namedNpcUsed": true, "formalAuthorityOpened": true }
+    }
+  },
+  {
+    "id": "V390-REJ-BACKEND-EXTERNAL-019",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["backend_service", "dependency_install", "subagent_use"],
+      "boundaries": { "bffOrBackendUsed": true, "externalFrameworkDependencyAdded": true, "subagentsUsed": true }
+    }
+  },
+  {
+    "id": "V390-REJ-L4-L5-FATE-COMBAT-020",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime", "high_rank_combat_runtime"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["l4_runtime", "l5_runtime", "heaven_will_runtime", "high_rank_combat_runtime"],
+      "publicSummary": "L4 runtime, HeavenWill runtime verdict, and high-rank combat runtime are opened.",
+      "boundaries": { "l4RuntimeOpened": true, "l5RuntimeOpened": true, "heavenWillFateRuntimeOpened": true, "highRankCombatRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V390-REJ-SELFLEARN-MAINLINE-021",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["self_learning_boundary", "mainline_boundary"],
+    "claim": {
+      "proposalOnly": true,
+      "worldCoreFinalAuthority": true,
+      "candidateEffects": ["self_learning_direct_write", "main_auto_merge", "edgeone_deploy"],
+      "publicSummary": "self-learning writes directly and main branch is auto-merged.",
+      "boundaries": { "selfLearningDirectWrite": true, "mainAutoMerged": true, "edgeOneDeployed": true }
+    }
+  }
+]
