@@ -1,6 +1,6 @@
 # v3.9.0 总览
 
-状态：startup，pending user decision。
+状态：startup，pending user decision；startup commit `bea185ff` / GitHub Actions `26397569012` passed。
 日期：2026-05-25。
 分支：`codex/v390-startup-v4-safety-closure`。
 主线建议：`v4.0 前安全收束：agent / DeepSeek / MiroFish / save-format / Player Advocate / 高阶世界准入统一复核`。
@@ -11,7 +11,7 @@
 
 专家团建议 v3.9 不继续堆新 agent 能力，而是回答一个更硬的问题：当前 transient proposal-only runtime、WorldCore final authority、Player Advocate、deterministic drift、old-save/no-save/rollback、MiroFish boundary、external-framework boundary 和 Git/mainline 制度，是否足以支撑 v4.0 进入高阶世界预备设计。
 
-本启动包只开会、建路线和前置授权包；在用户批准 `D-390` 之前不进入实现。
+本启动包只开会、建路线和前置授权包；在用户批准 `D-390` 之前不进入实现。启动会文档提交 `bea185ff` 已推送，GitHub Actions `26397569012` 通过。
 
 ## 硬边界
 

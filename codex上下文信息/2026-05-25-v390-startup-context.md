@@ -11,6 +11,8 @@
 - v3.9 建议主线：`v4.0 前安全收束`。
 - 当前 D-390 仍为 `pending_user_decision`。
 - F-390 全部建议保持 `future_gate_required`。
+- Startup commit `bea185ff` 已推送。
+- GitHub Actions run `26397569012` passed。
 
 硬边界：
 
