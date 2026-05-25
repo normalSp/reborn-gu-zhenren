@@ -1,7 +1,7 @@
 # v3.7.0 总览
 
 日期：2026-05-25
-状态：startup approved；pending `/goal` implementation
+状态：full local verification passed；commit/push/CI evidence pending
 主线：`transient multi-NPC / small-faction AgentProposal 复核`
 
 ## 定位
@@ -39,9 +39,19 @@ v3.7 的目标不是开放完整 NPC 社会，而是验证多个 synthetic/gener
 | `v3.7.0-分层Agent与WorldCore测试体系审计.md` | 分层 Agent / WorldCore 测试制度化审计 |
 | `v3.7.0-MiroFish资料需求与交付协议.md` | MiroFish need level 与升级条件 |
 | `v3.7.0-真相源索引.md` | 当前 truth source 与禁止来源 |
-| `v3.7.0-startup-Skill同步审计记录.md` | startup skill sync audit |
+| `v3.7.0-a0-v3.6复盘与multi-NPC范围冻结.md` | v3.6 复盘与 v3.7 范围冻结 |
+| `v3.7.0-a1-proposal-graph-scenario-model设计门禁.md` | proposal graph scenario model |
+| `v3.7.0-a2-rumor-fact-pressure-copy-gate.md` | rumor/fact 与 pressure handoff 文案门禁 |
+| `v3.7.0-b1-transient-proposal-graph第一刀.md` | v370 engine/UI 第一刀记录 |
+| `v3.7.0-b2-120轮deterministic-drift记录.md` | 120 轮 deterministic 记录 |
+| `v3.7.0-b3-Player-Advocate-40轮走查记录.md` | 40 轮 Player Advocate |
+| `v3.7.0-b3-old-save-no-save-rollback证据.md` | old-save/no-save/rollback 证据 |
+| `v3.7.0-process-1-前置审批制度第十三轮复核.md` | 前置审批制度复核 |
+| `v3.7.0-process-2-长线漂移与知识边界复核.md` | 长线漂移与知识边界复核 |
+| `v3.7.0-startup-Skill同步审计记录.md` | startup / process skill sync audit |
 | `v3.7.0-Git提交与推送计划.md` | branch / commit / push / CI |
+| `v3.7.0-rc-质量收束记录.md` | rc 质量收束 |
 
-## 当前建议
+## 当前进度
 
-用户已批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。后续可在 `/goal` 内完成 v3.7；若触发例外停机清单，必须停止并询问用户。
+用户已批准 D-370-001 至 D-370-012，并确认 F-370-001 至 F-370-012 全部继续 `future_gate_required`。本地已完成 v370 proposal graph engine、UI、unit/e2e、120 轮 deterministic、40 轮 Player Advocate、制度文档与 full local verification；仍需完成 Git commit/push、CI 与最终 evidence 回填后才能宣布 v3.7 远端闭环完成。
