@@ -1,6 +1,6 @@
 # v4.0.0 总览
 
-状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论、Auto-Theater 美术/交互总纲与 v4.0-v5.0 长期路线指针已记录；D-400 pending user decision。
+状态：startup completed；startup commit `fc8e5132` / GitHub Actions `26402655412` passed；总体设计讨论、Auto-Theater 美术/交互总纲、v4.0-v5.0 长期路线与 v4.0-v12.0 终局路线指针已记录；D-400 已获用户批准，F-400 全部继续 `future_gate_required`。
 日期：2026-05-25。
 分支：`codex/v400-startup-high-world-prep`。
 主线建议：`Auto-Theater Combat 与 HeavenWill/Fate Pressure 高阶世界表达模型`。
@@ -17,6 +17,8 @@
 Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨战争沙盘、道痕规则可视化、杀招栈舞台、Combat Ledger 复盘和 DeepSeek 表达分层。v4.0 只冻结视觉语法与验收计划，不生成素材、不实现 theater UI。
 
 `指导大纲/长期路线/v4.0-v5.0-AutoTheater到高阶世界Runtime总体大纲.md` 已作为 v4.0 后续路线基线：v4.1-v4.9 逐步硬化 Auto-Theater contract、凡阶 Lite 映射、高阶 theater、杀招栈、宏观压力、MiroFish/lore 准入和 v5.0 go/no-go，v5.0 才候选第一个高阶世界可玩试点。
+
+`指导大纲/长期路线/v4.0-v12.0-RebornG终局形态总体大纲.md` 已作为更远期终局路线基线：专家团判断离真正终局至少还差 8 个左右大版本，v5 做高阶第一刀，v6-v9 扩多区域、agent society、经济和高阶战斗，v10-v12 才触碰关键原著时代、任意身份和终局质量收束。本路线只作规划，不新增 runtime/save/DeepSeek/MiroFish/backend/external-framework/F-400 授权。
 
 本启动包只开专家团会和前置授权包，不改 runtime、save、prompt、UI、后端、外部依赖或 MiroFish。
 
@@ -46,7 +48,7 @@ Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨
 | `v4.0.0-启动审查与范围冻结.md` | 进入条件、范围、非目标 |
 | `v4.0.0-总体开发大纲.md` | v4.0 总体目标和阶段产物 |
 | `v4.0.0-小版本执行路线图.md` | a0/a1/a2/b1/b2/b3/rc 路线建议 |
-| `v4.0.0-前置授权包.md` | 待用户审批的 D-400/F-400 |
+| `v4.0.0-前置授权包.md` | 已获用户批准的 D-400/F-400 状态与授权边界 |
 | `v4.0.0-例外停机清单.md` | `/goal` 自动推进必须停止的条件 |
 | `v4.0.0-需求决策池.md` | 决策项状态表 |
 | `v4.0.0-a1-高阶战斗theater与杀招栈设计门禁草案.md` | Auto-Theater Combat / theater / stack / ledger 设计门禁草案 |
@@ -59,4 +61,4 @@ Auto-Theater Combat 应作为 RebornG 后续战斗表现的核心招牌：水墨
 
 ## 当前建议
 
-请用户审批 `D-400-001` 至 `D-400-012`，并确认 `F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`。审批后，Codex 可在该授权包内完成 v4.0；触发例外停机清单时必须立即停止并报告用户。
+用户已批准 `D-400-001` 至 `D-400-012`，并确认 `F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`。Codex 可在该授权包内完成 v4.0；触发例外停机清单时必须立即停止并报告用户。

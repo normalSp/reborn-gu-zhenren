@@ -10,9 +10,11 @@
 
 用户随后询问 v4.0 到 v5.0 的路线大纲是否已做好。当前已新增 `指导大纲/长期路线/v4.0-v5.0-AutoTheater到高阶世界Runtime总体大纲.md`，作为 v4.1-v4.9 与 v5.0 第一刀的长期路线基线。该总纲只授权规划，不授权 runtime。
 
+用户进一步批准 `D-400-001` 至 `D-400-012`，确认 `F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`，并要求专家团评估 RebornG 离最终目标还差多少个大版本、是否需要 v4.0 到最终版本总纲。当前已新增 `指导大纲/长期路线/v4.0-v12.0-RebornG终局形态总体大纲.md`，作为 v4.0 到 v12 final-candidate 的终局路线基线。该总纲只授权规划，不新增 runtime/save/DeepSeek/MiroFish/backend/external-framework/F-400 权限。
+
 startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
 
-`D-400-001` 至 `D-400-012` 仍为 `pending_user_decision`，但已按 Auto-Theater Combat / Auto-Theater Lite / Combat Ledger 口径修订。`F-400-001` 至 `F-400-012` 建议全部保持 `future_gate_required`。
+`D-400-001` 至 `D-400-012` 已获用户批准，`F-400-001` 至 `F-400-012` 全部继续 `future_gate_required`。
 
 ## 美术与交互总纲结论
 
@@ -44,6 +46,19 @@ startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
 - v4.9：v5.0 前安全收束。
 - v5.0：高阶世界第一刀；不是完整蛊仙、五域两天、原著关键人物 live agent 或全部蛊虫/杀招/仙蛊屋开放。
 
+## v4.0-v12.0 终局路线结论
+
+- 专家团判断有必要建立 v4.0 到终局版本总纲。
+- 终局路线暂定为 `v4.0 -> v12.0 final-candidate`，不是锁死最终版本号；按当前野心，离真正终局至少还差 8 个左右大版本。
+- v5：高阶世界第一刀。
+- v6：多区域与多身份基础。
+- v7：Agent Society 扩展。
+- v8：经济、炼养用、宝黄天与资源生态。
+- v9：高阶战斗与战争系统成熟。
+- v10：原著时代锚点与关键人物安全接触。
+- v11：任意时代/身份与内容工厂。
+- v12：终局候选与世界级质量收束。
+
 ## 启动包边界
 
 本轮只做文档、专家团意见、前置授权包和入口同步。
@@ -63,9 +78,4 @@ startup commit `fc8e5132` 已推送，GitHub Actions run `26402655412` passed。
 
 ## 下一步
 
-请用户审批：
-
-1. 修订后的 `D-400-001` 至 `D-400-012` 是否批准。
-2. `F-400-001` 至 `F-400-012` 是否全部继续 `future_gate_required`。
-
-批准后可进入 v4.0 开发；若触发例外停机清单必须停止自动推进。
+可在已批准的 D-400 前置授权包内进入 v4.0 开发；若触发 F-400 或例外停机清单必须停止自动推进并回到用户决策。
