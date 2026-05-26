@@ -18,6 +18,7 @@
 - `Git分支切换与推送制度.md`：每个小版本/专项开工前主动切语义分支、记录基线、显式提交并阶段末推送；2026-05-25 已加入“主线合并与版本分支制度补丁”，明确 `main` 是稳定主线，版本分支完成后需有合并/不合并结论。
 - `Git脏区收束制度.md`：脏工作区分流、废弃入口清理、显式 stage、分组提交和分支语义规则。
 - `Skill同步审计制度.md`：每次版本启动、阶段完成、rc 或制度变化时，强制审计相关 skill 的 Current Sync Override，记录已更新/无需更新/延后/阻塞，避免专家团和技能口径落后。
+- `Context-to-Skill技能演化评测制度.md`：pre-v4.3 建立的 skill 演化评测制度；首轮只覆盖 `reborn-expert-council`，通过 Challenger 任务、rubric、人工/确定性 Judge、Cross Time Replay 和 skill candidate review 证明专家团是否真正吸收当前上下文。当前不自动改 skill、不跑 LLM Judge、不新增脚本。
 - `前置批量审批与例外停机制度.md`：v2.5 试运行已通过，从 v2.6 起默认沿用并继续硬化；要求专家团启动会或 a1 输出全版本前置授权包，授权包内可用 `/goal` 连续执行，触发例外停机清单时必须回到用户。
 - `系统连续性与孤儿系统审计制度.md`：v4.0.0-process-1 建立；每个大版本启动、runtime first cut 前和 rc 收束时检查路线、代码、脚本、测试、制度、Skill 是否接续，防止 report-only 工具、engine layer、测试样本或制度入口变成孤儿系统。
 

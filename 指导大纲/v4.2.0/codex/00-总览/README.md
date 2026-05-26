@@ -54,3 +54,13 @@
 - `F-420-001` 至 `F-420-012` 是否继续 `future_gate_required`。
 
 若获批，v4.2 可进入一个 `/goal` 自动完成；若触发例外停机清单，必须立即停止并回到用户决策。
+
+## 并行治理专项
+
+pre-v4.3 已新增 `Context-to-Skill 技能演化评测制度专项`：
+
+- 项目级制度入口：`指导大纲/流程制度/Context-to-Skill技能演化评测制度.md`
+- skill 演化入口：`指导大纲/技能演化/README.md`
+- Agent Lab 论文参考池：`指导大纲/长期路线/Agent-Lab论文参考池与吸收计划.md`
+
+该专项只覆盖 `reborn-expert-council`，不自动改 skill、不跑 LLM Judge、不新增脚本，也不改变 v4.2 的 D-420/F-420 授权包。
