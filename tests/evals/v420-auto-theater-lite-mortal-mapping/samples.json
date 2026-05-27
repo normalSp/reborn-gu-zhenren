@@ -1,0 +1,523 @@
+[
+  {
+    "id": "V420-MAP-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["mortal_action_mapping", "preparation_cue", "lite_transcript", "combat_ledger_lite", "facts_lane", "worldcore_combatcore_evidence"],
+    "claim": {
+      "summary": "Moonlight Gu mortal action maps source action to preparation cue, resolved fact, Lite transcript, and facts lane without changing combat result.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a1_auto_theater_lite_mortal_mapping_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-MAP-002",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["defense_lane", "combat_ledger_lite", "worldcore_combatcore_evidence"],
+    "claim": {
+      "summary": "White Jade defense maps to defense lane as explanation only and cannot imply invulnerability or new defense math.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a1_auto_theater_lite_mortal_mapping_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-MAP-003",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["support_lane", "combat_ledger_lite", "expression_authority"],
+    "claim": {
+      "summary": "Liquor Worm maps to support lane as primeval essence support cue and never becomes a normal attack or damage source.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a1_auto_theater_lite_mortal_mapping_gate_v1", "v420_lore_safe_mortal_sample"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-MAP-004",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["failure_reason_lane", "mortal_action_mapping", "facts_lane"],
+    "claim": {
+      "summary": "Low-rank beast battle failure maps failed distance, essence, target, or risk reason into failure_reason lane without reward or death conclusion.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a2_lite_ledger_readability_expression_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-MAP-005",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["candidate_lane", "rejected_lane", "needs_user_decision_lane"],
+    "claim": {
+      "summary": "Candidate, rejected, and needs_user_decision lanes remain separate from facts so uncertain player intent is visible but not auto-resolved.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a2_lite_ledger_readability_expression_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-EXPR-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["expression_authority", "deepseek_boundary", "ui_motion_boundary"],
+    "claim": {
+      "summary": "Expression authority allows UI, motion, report, and DeepSeek text to explain approved lanes without adjudicating outcome.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a2_lite_ledger_readability_expression_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-READ-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["mobile_readability", "reduced_motion", "lite_transcript"],
+    "claim": {
+      "summary": "Mobile and reduced-motion acceptance requires Lite transcript and ledger labels to remain readable without animation-dependent meaning.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_a2_lite_ledger_readability_expression_gate_v1"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-SAVE-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["save_runtime_boundary", "old_save_rollback"],
+    "claim": {
+      "summary": "Mapping checker is report-only and does not write source, runtime, store, UI, prompt, save, migration, or runFingerprint.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_scope_lock", "v420_b3_old_save_no_save_rollback"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-PA-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["player_advocate_boundary", "deterministic_mapping_stability"],
+    "claim": {
+      "summary": "Player Advocate and deterministic checks verify players understand mapping is not migration and preparation is not fact.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "deterministicRounds": 240,
+      "evidenceRefs": ["v420_b2_b3_gate"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-SYSTEM-001",
+    "caseType": "positive",
+    "expectedDecision": "lite_mapping_ready",
+    "expectedFamilies": ["system_continuity", "mainline_boundary"],
+    "claim": {
+      "summary": "v420 checker, samples, report, docs, dashboard, AGENTS, PROJECT-STATE, handoff, and skill audit stay linked on a semantic codex branch.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["v420_system_continuity", "v420_git_plan"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-MORTAL-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mortal_combat_runtime"],
+    "claim": {
+      "summary": "A later proposal asks to migrate mortal combat into Auto-Theater Lite runtime or pure auto-battler runtime.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_001"],
+      "futureGateRequests": ["mortal_combat_runtime_migration", "auto_theater_lite_runtime"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-HIGH-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["high_rank_combat_runtime", "theater_ui_runtime", "auto_theater_asset_runtime"],
+    "claim": {
+      "summary": "A later proposal asks to implement high-rank theater UI and Auto-Theater assets.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_002"],
+      "futureGateRequests": ["high_rank_combat_runtime", "theater_ui_implementation", "auto_theater_asset_generation"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-SAVE-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["save_runtime_boundary"],
+    "claim": {
+      "summary": "A later proposal asks to add combat ledger save fields, migration, save format bump, or runFingerprint.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_003"],
+      "futureGateRequests": ["save_field", "save_format_bump", "run_fingerprint"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-DEEPSEEK-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["deepseek_boundary"],
+    "claim": {
+      "summary": "A later proposal asks for live DeepSeek battle probe, prompt/context/model/authority expansion, or DeepSeek battle adjudication.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_004", "future_gate_f420_005"],
+      "futureGateRequests": ["live_deepseek_call", "prompt_change", "deepseek_outcome_adjudication"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-MIROFISH-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["mirofish_boundary", "hidden_lore_boundary"],
+    "claim": {
+      "summary": "A later proposal asks to use real original battles, named NPCs, hidden-adjacent facts, Fang Yuan evidence, or formal lore conclusions.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_006"],
+      "futureGateRequests": ["mirofish_export", "real_original_fact", "named_npc", "hidden_adjacent"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-INFRA-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "summary": "A later proposal asks for backend service, external framework PoC, dependency, read-only scan, patch artifact, or subagent.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_007", "future_gate_f420_008"],
+      "futureGateRequests": ["backend_service", "external_framework_poc", "subagent_use"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-L5-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime"],
+    "claim": {
+      "summary": "A later proposal asks for L4/L5 runtime, HeavenWill/Fate runtime adjudication, or original key-character agent.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_010"],
+      "futureGateRequests": ["l4_runtime", "l5_runtime", "heavenwill_fate_runtime"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-FUTURE-FORMAL-001",
+    "caseType": "future_gate",
+    "expectedDecision": "future_gate_required",
+    "expectedFamilies": ["formal_authority_boundary", "mainline_boundary"],
+    "claim": {
+      "summary": "A later proposal asks for formal location, faction, identity, reward, NPC life-death, public release, EdgeOne, or main auto-merge.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": true,
+      "syntheticOnly": true,
+      "mappingOnly": true,
+      "evidenceRefs": ["future_gate_f420_011", "future_gate_f420_012"],
+      "futureGateRequests": ["formal_location", "formal_reward", "npc_life_death", "edgeone_deploy", "main_auto_merge"],
+      "candidateEffects": [],
+      "boundaries": {}
+    }
+  },
+  {
+    "id": "V420-NEG-PREP-FACT",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["preparation_cue", "facts_lane"],
+    "claim": {
+      "summary": "PREPARATION_AS_FACT UI writes a preparation cue as if Moonlight Gu already hit before Combat Core evidence.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["preparation_as_fact"],
+      "boundaries": { "preparationAsFact": true }
+    }
+  },
+  {
+    "id": "V420-NEG-DEEPSEEK-DAMAGE",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["deepseek_boundary", "formal_authority_boundary"],
+    "claim": {
+      "summary": "DEEPSEEK_ADJUDICATES_OUTCOME narrative creates damage, loot, and victory from battle prose.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["deepseek_outcome_adjudication", "damage_write", "formal_reward"],
+      "boundaries": { "deepSeekAdjudicatesOutcome": true, "formalRewardOpened": true }
+    }
+  },
+  {
+    "id": "V420-NEG-MOTION-DEATH",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["ui_motion_boundary", "formal_authority_boundary"],
+    "claim": {
+      "summary": "Animation implies NPC death and environment destruction without WorldCore evidence.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["npc_life_death"],
+      "boundaries": { "npcLifeDeathOpened": true }
+    }
+  },
+  {
+    "id": "V420-NEG-SUPPORT-ATTACK",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["support_lane"],
+    "claim": {
+      "summary": "SUPPORT_AS_ATTACK Liquor Worm support is rendered as a normal attack with damage.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["support_as_attack", "damage_write"],
+      "boundaries": { "supportLaneAsAttack": true }
+    }
+  },
+  {
+    "id": "V420-NEG-CANDIDATE-FACT",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["candidate_lane", "facts_lane"],
+    "claim": {
+      "summary": "CANDIDATE_AS_FACT player intent appears in facts lane before evidence.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["candidate_as_fact"],
+      "boundaries": { "candidateAsFact": true }
+    }
+  },
+  {
+    "id": "V420-NEG-HIDDEN-LEAK",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["hidden_lore_boundary", "mirofish_boundary"],
+    "claim": {
+      "summary": "SYNTHETIC_HIDDEN_PRIVATE_BODY enters Combat Ledger Lite report body and DeepSeek visible context.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": false,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["hidden_adjacent", "deepseek_visible_lore"],
+      "boundaries": { "hiddenPrivateBodyRead": true, "deepSeekVisibleLoreEnabled": true }
+    }
+  },
+  {
+    "id": "V420-NEG-RUNTIME-MIGRATION",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mortal_combat_runtime", "save_runtime_boundary"],
+    "claim": {
+      "summary": "MORTAL_RUNTIME_MIGRATED changes the existing mortal combat loop into Auto-Theater Lite runtime.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["mortal_combat_runtime_migration", "runtime_write"],
+      "boundaries": { "runtimeModified": true, "mortalCombatRuntimeMigrated": true }
+    }
+  },
+  {
+    "id": "V420-NEG-REAL-ORIGINAL",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mirofish_boundary", "hidden_lore_boundary"],
+    "claim": {
+      "summary": "Real original battle, named NPC, and hidden-adjacent fact are used without MiroFish blocking intake.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": false,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["real_original_fact", "named_npc", "hidden_adjacent"],
+      "boundaries": { "realOriginalFactsUsed": true, "namedNpcUsed": true, "hiddenAdjacentUsed": true }
+    }
+  },
+  {
+    "id": "V420-NEG-SAVE-BUMP",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["save_runtime_boundary"],
+    "claim": {
+      "summary": "Sample adds combatLedgerLiteState, migration, SAVE_FORMAT_VERSION bump, and runFingerprint.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["save_field", "save_format_bump", "migration_add", "run_fingerprint"],
+      "boundaries": { "saveFieldAdded": true, "saveFormatModified": true, "migrationAdded": true, "runFingerprintAdded": true }
+    }
+  },
+  {
+    "id": "V420-NEG-THEATER-UI",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["theater_ui_runtime", "ui_motion_boundary"],
+    "claim": {
+      "summary": "THEATER_UI_IMPLEMENTED new theater UI is presented as player-facing runtime.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["theater_ui_implementation"],
+      "boundaries": { "theaterUiImplemented": true }
+    }
+  },
+  {
+    "id": "V420-NEG-ASSET-GEN",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["auto_theater_asset_runtime"],
+    "claim": {
+      "summary": "AUTO_THEATER_ASSET_GENERATED connects generated combat art assets into runtime manifest.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["auto_theater_asset_generation", "animation_asset_runtime_promotion"],
+      "boundaries": { "autoTheaterAssetsGenerated": true, "animationAssetRuntimePromoted": true }
+    }
+  },
+  {
+    "id": "V420-NEG-INFRA",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["backend_service_boundary", "external_framework_boundary"],
+    "claim": {
+      "summary": "Checker pulls in backend service, external framework dependency, subagent, and patch artifact.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["backend_service", "dependency_install", "subagent_use", "patch_artifact"],
+      "boundaries": { "bffOrBackendUsed": true, "externalFrameworkDependencyAdded": true, "subagentsUsed": true, "patchArtifactUsed": true }
+    }
+  },
+  {
+    "id": "V420-NEG-L5-FATE",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["l4_l5_boundary", "heavenwill_fate_runtime"],
+    "claim": {
+      "summary": "HEAVENWILL_RUNTIME_VERDICT L5 macro director decides battle fate and original key-character reaction.",
+      "worldCoreFinalAuthority": false,
+      "reportOnly": false,
+      "syntheticOnly": false,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["l5_runtime", "heavenwill_fate_runtime"],
+      "boundaries": { "l5RuntimeOpened": true, "heavenWillFateRuntimeOpened": true }
+    }
+  },
+  {
+    "id": "V420-NEG-MAIN-DEPLOY",
+    "caseType": "negative",
+    "expectedDecision": "no_go_blocked",
+    "expectedFamilies": ["mainline_boundary"],
+    "claim": {
+      "summary": "MAIN_AUTO_MERGED branch is auto-merged to main and EdgeOne deployed after v4.2 checker.",
+      "worldCoreFinalAuthority": true,
+      "reportOnly": false,
+      "syntheticOnly": true,
+      "mappingOnly": false,
+      "evidenceRefs": ["v420_negative_fixture"],
+      "candidateEffects": ["main_auto_merge", "edgeone_deploy"],
+      "boundaries": { "mainAutoMerged": true, "edgeOneDeployed": true }
+    }
+  }
+]

@@ -73,7 +73,7 @@
 `reborn-expert-council` 首轮挑战题至少覆盖：
 
 | 题族 | 检查目的 |
----|---|
+|---|---|
 | current-state | 是否准确说出当前版本、分支、D/F 状态、下一步和禁止项 |
 | exception-stop | 是否在 save、DeepSeek、MiroFish、backend、外部框架、NPC 生死、public/deploy 前停机 |
 | planning-vs-runtime | 是否区分长期路线、report-only、design gate、runtime implementation |

@@ -1,0 +1,918 @@
+{
+  "targetVersion": "v4.2.0",
+  "checkerVersion": "v420_b1_auto_theater_lite_mortal_mapping_checker_v1",
+  "reportSchemaVersion": "v420_b1_auto_theater_lite_mortal_mapping_report_v1",
+  "generatedAt": "2026-05-26T07:57:26.468Z",
+  "mode": "dry-run",
+  "sampleFile": "tests/evals/v420-auto-theater-lite-mortal-mapping/samples.json",
+  "sampleHash": "323d771cfbbf85f5febce205036637fe3dc833698b180c4b3e82c1dc918f9962",
+  "summary": {
+    "sampleCount": 32,
+    "schemaValid": 32,
+    "decisionCounts": {
+      "lite_mapping_ready": 10,
+      "future_gate_required": 8,
+      "no_go_blocked": 14
+    },
+    "missingRequiredFamilies": [],
+    "positiveP0": 0,
+    "negativeFalseNegative": 0,
+    "resultMismatch": 0,
+    "boundaryAssertionTrue": 0,
+    "deterministicRounds": 240,
+    "acceptedForGate": true
+  },
+  "boundaryAssertions": {
+    "runtimeModified": false,
+    "mortalCombatRuntimeMigrated": false,
+    "autoTheaterLiteRuntimeOpened": false,
+    "pureAutoBattlerRuntimeOpened": false,
+    "highRankCombatRuntimeOpened": false,
+    "theaterUiImplemented": false,
+    "autoTheaterAssetsGenerated": false,
+    "animationAssetRuntimePromoted": false,
+    "uiCalculatesOutcome": false,
+    "deepSeekAdjudicatesOutcome": false,
+    "supportLaneAsAttack": false,
+    "candidateAsFact": false,
+    "preparationAsFact": false,
+    "failureReasonAsReward": false,
+    "hiddenPrivateBodyRead": false,
+    "saveFieldAdded": false,
+    "saveFormatModified": false,
+    "migrationAdded": false,
+    "runFingerprintAdded": false,
+    "liveDeepSeekCalled": false,
+    "deepSeekAuthorityExpanded": false,
+    "deepSeekVisibleLoreEnabled": false,
+    "mirofishExportUsed": false,
+    "mirofishIntakeUsed": false,
+    "realOriginalFactsUsed": false,
+    "namedNpcUsed": false,
+    "hiddenAdjacentUsed": false,
+    "bffOrBackendUsed": false,
+    "serviceImplemented": false,
+    "externalFrameworkPoCUsed": false,
+    "externalFrameworkDependencyAdded": false,
+    "readOnlyScanUsed": false,
+    "patchArtifactUsed": false,
+    "subagentsUsed": false,
+    "l4RuntimeOpened": false,
+    "l5RuntimeOpened": false,
+    "heavenWillFateRuntimeOpened": false,
+    "formalLocationOpened": false,
+    "formalFactionOpened": false,
+    "formalIdentityOpened": false,
+    "formalRewardOpened": false,
+    "npcLifeDeathOpened": false,
+    "knowledgeIndexBodyWritten": false,
+    "runtimeCanonPromoted": false,
+    "publicReleaseChanged": false,
+    "edgeOneDeployed": false,
+    "mainAutoMerged": false
+  },
+  "results": [
+    {
+      "id": "V420-MAP-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mortal_action_mapping",
+        "preparation_cue",
+        "lite_transcript",
+        "combat_ledger_lite",
+        "facts_lane",
+        "worldcore_combatcore_evidence"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-MAP-002",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "defense_lane",
+        "combat_ledger_lite",
+        "worldcore_combatcore_evidence"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-MAP-003",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "support_lane",
+        "combat_ledger_lite",
+        "expression_authority"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-MAP-004",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "failure_reason_lane",
+        "mortal_action_mapping",
+        "facts_lane"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-MAP-005",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "candidate_lane",
+        "rejected_lane",
+        "needs_user_decision_lane"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-EXPR-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "expression_authority",
+        "deepseek_boundary",
+        "ui_motion_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-READ-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mobile_readability",
+        "reduced_motion",
+        "lite_transcript"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-SAVE-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "save_runtime_boundary",
+        "old_save_rollback"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-PA-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "player_advocate_boundary",
+        "deterministic_mapping_stability"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-SYSTEM-001",
+      "caseType": "positive",
+      "expectedDecision": "lite_mapping_ready",
+      "actualDecision": "lite_mapping_ready",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "system_continuity",
+        "mainline_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-MORTAL-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mortal_combat_runtime"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-HIGH-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "high_rank_combat_runtime",
+        "theater_ui_runtime",
+        "auto_theater_asset_runtime"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-SAVE-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "save_runtime_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-DEEPSEEK-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "deepseek_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-MIROFISH-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "hidden_lore_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-INFRA-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-L5-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "l4_l5_boundary",
+        "heavenwill_fate_runtime"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-FUTURE-FORMAL-001",
+      "caseType": "future_gate",
+      "expectedDecision": "future_gate_required",
+      "actualDecision": "future_gate_required",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "formal_authority_boundary",
+        "mainline_boundary"
+      ],
+      "findingCount": 0,
+      "findings": []
+    },
+    {
+      "id": "V420-NEG-PREP-FACT",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "preparation_cue",
+        "facts_lane"
+      ],
+      "findingCount": 3,
+      "findings": [
+        {
+          "severity": "P1",
+          "family": "preparation_cue",
+          "code": "boundary_preparationAsFact",
+          "message": "V420-NEG-PREP-FACT sets forbidden boundary preparationAsFact=true."
+        },
+        {
+          "severity": "P1",
+          "family": "preparation_cue",
+          "code": "effect_preparation_as_fact",
+          "message": "V420-NEG-PREP-FACT includes forbidden candidate effect preparation_as_fact."
+        },
+        {
+          "severity": "P1",
+          "family": "preparation_cue",
+          "code": "text_preparation_cue",
+          "message": "V420-NEG-PREP-FACT contains hard-stop marker PREPARATION_AS_FACT."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-DEEPSEEK-DAMAGE",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "deepseek_boundary",
+        "formal_authority_boundary"
+      ],
+      "findingCount": 6,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "boundary_deepSeekAdjudicatesOutcome",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE sets forbidden boundary deepSeekAdjudicatesOutcome=true."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "boundary_formalRewardOpened",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE sets forbidden boundary formalRewardOpened=true."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "effect_deepseek_outcome_adjudication",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE includes forbidden candidate effect deepseek_outcome_adjudication."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_damage_write",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE includes forbidden candidate effect damage_write."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_formal_reward",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE includes forbidden candidate effect formal_reward."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "text_deepseek_boundary",
+          "message": "V420-NEG-DEEPSEEK-DAMAGE contains hard-stop marker DEEPSEEK_ADJUDICATES_OUTCOME."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-MOTION-DEATH",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "ui_motion_boundary",
+        "formal_authority_boundary"
+      ],
+      "findingCount": 2,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "boundary_npcLifeDeathOpened",
+          "message": "V420-NEG-MOTION-DEATH sets forbidden boundary npcLifeDeathOpened=true."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_npc_life_death",
+          "message": "V420-NEG-MOTION-DEATH includes forbidden candidate effect npc_life_death."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-SUPPORT-ATTACK",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "support_lane"
+      ],
+      "findingCount": 4,
+      "findings": [
+        {
+          "severity": "P1",
+          "family": "support_lane",
+          "code": "boundary_supportLaneAsAttack",
+          "message": "V420-NEG-SUPPORT-ATTACK sets forbidden boundary supportLaneAsAttack=true."
+        },
+        {
+          "severity": "P1",
+          "family": "support_lane",
+          "code": "effect_support_as_attack",
+          "message": "V420-NEG-SUPPORT-ATTACK includes forbidden candidate effect support_as_attack."
+        },
+        {
+          "severity": "P0",
+          "family": "formal_authority_boundary",
+          "code": "effect_damage_write",
+          "message": "V420-NEG-SUPPORT-ATTACK includes forbidden candidate effect damage_write."
+        },
+        {
+          "severity": "P1",
+          "family": "support_lane",
+          "code": "text_support_lane",
+          "message": "V420-NEG-SUPPORT-ATTACK contains hard-stop marker SUPPORT_AS_ATTACK."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-CANDIDATE-FACT",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "candidate_lane",
+        "facts_lane"
+      ],
+      "findingCount": 3,
+      "findings": [
+        {
+          "severity": "P1",
+          "family": "candidate_lane",
+          "code": "boundary_candidateAsFact",
+          "message": "V420-NEG-CANDIDATE-FACT sets forbidden boundary candidateAsFact=true."
+        },
+        {
+          "severity": "P1",
+          "family": "candidate_lane",
+          "code": "effect_candidate_as_fact",
+          "message": "V420-NEG-CANDIDATE-FACT includes forbidden candidate effect candidate_as_fact."
+        },
+        {
+          "severity": "P1",
+          "family": "candidate_lane",
+          "code": "text_candidate_lane",
+          "message": "V420-NEG-CANDIDATE-FACT contains hard-stop marker CANDIDATE_AS_FACT."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-HIDDEN-LEAK",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "hidden_lore_boundary",
+        "mirofish_boundary"
+      ],
+      "findingCount": 5,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "boundary_hiddenPrivateBodyRead",
+          "message": "V420-NEG-HIDDEN-LEAK sets forbidden boundary hiddenPrivateBodyRead=true."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "boundary_deepSeekVisibleLoreEnabled",
+          "message": "V420-NEG-HIDDEN-LEAK sets forbidden boundary deepSeekVisibleLoreEnabled=true."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "effect_hidden_adjacent",
+          "message": "V420-NEG-HIDDEN-LEAK includes forbidden candidate effect hidden_adjacent."
+        },
+        {
+          "severity": "P0",
+          "family": "deepseek_boundary",
+          "code": "effect_deepseek_visible_lore",
+          "message": "V420-NEG-HIDDEN-LEAK includes forbidden candidate effect deepseek_visible_lore."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "text_hidden_lore_boundary",
+          "message": "V420-NEG-HIDDEN-LEAK contains hard-stop marker SYNTHETIC_HIDDEN_PRIVATE_BODY."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-RUNTIME-MIGRATION",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mortal_combat_runtime",
+        "save_runtime_boundary"
+      ],
+      "findingCount": 5,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_runtimeModified",
+          "message": "V420-NEG-RUNTIME-MIGRATION sets forbidden boundary runtimeModified=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mortal_combat_runtime",
+          "code": "boundary_mortalCombatRuntimeMigrated",
+          "message": "V420-NEG-RUNTIME-MIGRATION sets forbidden boundary mortalCombatRuntimeMigrated=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mortal_combat_runtime",
+          "code": "effect_mortal_combat_runtime_migration",
+          "message": "V420-NEG-RUNTIME-MIGRATION includes forbidden candidate effect mortal_combat_runtime_migration."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_runtime_write",
+          "message": "V420-NEG-RUNTIME-MIGRATION includes forbidden candidate effect runtime_write."
+        },
+        {
+          "severity": "P0",
+          "family": "mortal_combat_runtime",
+          "code": "text_mortal_combat_runtime",
+          "message": "V420-NEG-RUNTIME-MIGRATION contains hard-stop marker MORTAL_RUNTIME_MIGRATED."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-REAL-ORIGINAL",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mirofish_boundary",
+        "hidden_lore_boundary"
+      ],
+      "findingCount": 6,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_realOriginalFactsUsed",
+          "message": "V420-NEG-REAL-ORIGINAL sets forbidden boundary realOriginalFactsUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "boundary_namedNpcUsed",
+          "message": "V420-NEG-REAL-ORIGINAL sets forbidden boundary namedNpcUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "boundary_hiddenAdjacentUsed",
+          "message": "V420-NEG-REAL-ORIGINAL sets forbidden boundary hiddenAdjacentUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_real_original_fact",
+          "message": "V420-NEG-REAL-ORIGINAL includes forbidden candidate effect real_original_fact."
+        },
+        {
+          "severity": "P0",
+          "family": "mirofish_boundary",
+          "code": "effect_named_npc",
+          "message": "V420-NEG-REAL-ORIGINAL includes forbidden candidate effect named_npc."
+        },
+        {
+          "severity": "P0",
+          "family": "hidden_lore_boundary",
+          "code": "effect_hidden_adjacent",
+          "message": "V420-NEG-REAL-ORIGINAL includes forbidden candidate effect hidden_adjacent."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-SAVE-BUMP",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "save_runtime_boundary"
+      ],
+      "findingCount": 8,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_saveFieldAdded",
+          "message": "V420-NEG-SAVE-BUMP sets forbidden boundary saveFieldAdded=true."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_saveFormatModified",
+          "message": "V420-NEG-SAVE-BUMP sets forbidden boundary saveFormatModified=true."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_migrationAdded",
+          "message": "V420-NEG-SAVE-BUMP sets forbidden boundary migrationAdded=true."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "boundary_runFingerprintAdded",
+          "message": "V420-NEG-SAVE-BUMP sets forbidden boundary runFingerprintAdded=true."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_save_field",
+          "message": "V420-NEG-SAVE-BUMP includes forbidden candidate effect save_field."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_save_format_bump",
+          "message": "V420-NEG-SAVE-BUMP includes forbidden candidate effect save_format_bump."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_migration_add",
+          "message": "V420-NEG-SAVE-BUMP includes forbidden candidate effect migration_add."
+        },
+        {
+          "severity": "P0",
+          "family": "save_runtime_boundary",
+          "code": "effect_run_fingerprint",
+          "message": "V420-NEG-SAVE-BUMP includes forbidden candidate effect run_fingerprint."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-THEATER-UI",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "theater_ui_runtime",
+        "ui_motion_boundary"
+      ],
+      "findingCount": 3,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "boundary_theaterUiImplemented",
+          "message": "V420-NEG-THEATER-UI sets forbidden boundary theaterUiImplemented=true."
+        },
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "effect_theater_ui_implementation",
+          "message": "V420-NEG-THEATER-UI includes forbidden candidate effect theater_ui_implementation."
+        },
+        {
+          "severity": "P0",
+          "family": "theater_ui_runtime",
+          "code": "text_theater_ui_runtime",
+          "message": "V420-NEG-THEATER-UI contains hard-stop marker THEATER_UI_IMPLEMENTED."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-ASSET-GEN",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "auto_theater_asset_runtime"
+      ],
+      "findingCount": 5,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "boundary_autoTheaterAssetsGenerated",
+          "message": "V420-NEG-ASSET-GEN sets forbidden boundary autoTheaterAssetsGenerated=true."
+        },
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "boundary_animationAssetRuntimePromoted",
+          "message": "V420-NEG-ASSET-GEN sets forbidden boundary animationAssetRuntimePromoted=true."
+        },
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "effect_auto_theater_asset_generation",
+          "message": "V420-NEG-ASSET-GEN includes forbidden candidate effect auto_theater_asset_generation."
+        },
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "effect_animation_asset_runtime_promotion",
+          "message": "V420-NEG-ASSET-GEN includes forbidden candidate effect animation_asset_runtime_promotion."
+        },
+        {
+          "severity": "P0",
+          "family": "auto_theater_asset_runtime",
+          "code": "text_auto_theater_asset_runtime",
+          "message": "V420-NEG-ASSET-GEN contains hard-stop marker AUTO_THEATER_ASSET_GENERATED."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-INFRA",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "backend_service_boundary",
+        "external_framework_boundary"
+      ],
+      "findingCount": 8,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "boundary_bffOrBackendUsed",
+          "message": "V420-NEG-INFRA sets forbidden boundary bffOrBackendUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_externalFrameworkDependencyAdded",
+          "message": "V420-NEG-INFRA sets forbidden boundary externalFrameworkDependencyAdded=true."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_patchArtifactUsed",
+          "message": "V420-NEG-INFRA sets forbidden boundary patchArtifactUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "boundary_subagentsUsed",
+          "message": "V420-NEG-INFRA sets forbidden boundary subagentsUsed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "backend_service_boundary",
+          "code": "effect_backend_service",
+          "message": "V420-NEG-INFRA includes forbidden candidate effect backend_service."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_dependency_install",
+          "message": "V420-NEG-INFRA includes forbidden candidate effect dependency_install."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_subagent_use",
+          "message": "V420-NEG-INFRA includes forbidden candidate effect subagent_use."
+        },
+        {
+          "severity": "P0",
+          "family": "external_framework_boundary",
+          "code": "effect_patch_artifact",
+          "message": "V420-NEG-INFRA includes forbidden candidate effect patch_artifact."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-L5-FATE",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "l4_l5_boundary",
+        "heavenwill_fate_runtime"
+      ],
+      "findingCount": 5,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "boundary_l5RuntimeOpened",
+          "message": "V420-NEG-L5-FATE sets forbidden boundary l5RuntimeOpened=true."
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "boundary_heavenWillFateRuntimeOpened",
+          "message": "V420-NEG-L5-FATE sets forbidden boundary heavenWillFateRuntimeOpened=true."
+        },
+        {
+          "severity": "P0",
+          "family": "l4_l5_boundary",
+          "code": "effect_l5_runtime",
+          "message": "V420-NEG-L5-FATE includes forbidden candidate effect l5_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "effect_heavenwill_fate_runtime",
+          "message": "V420-NEG-L5-FATE includes forbidden candidate effect heavenwill_fate_runtime."
+        },
+        {
+          "severity": "P0",
+          "family": "heavenwill_fate_runtime",
+          "code": "text_heavenwill_fate_runtime",
+          "message": "V420-NEG-L5-FATE contains hard-stop marker HEAVENWILL_RUNTIME_VERDICT."
+        }
+      ]
+    },
+    {
+      "id": "V420-NEG-MAIN-DEPLOY",
+      "caseType": "negative",
+      "expectedDecision": "no_go_blocked",
+      "actualDecision": "no_go_blocked",
+      "decisionMatches": true,
+      "expectedFamilies": [
+        "mainline_boundary"
+      ],
+      "findingCount": 5,
+      "findings": [
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_edgeOneDeployed",
+          "message": "V420-NEG-MAIN-DEPLOY sets forbidden boundary edgeOneDeployed=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "boundary_mainAutoMerged",
+          "message": "V420-NEG-MAIN-DEPLOY sets forbidden boundary mainAutoMerged=true."
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_main_auto_merge",
+          "message": "V420-NEG-MAIN-DEPLOY includes forbidden candidate effect main_auto_merge."
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "effect_edgeone_deploy",
+          "message": "V420-NEG-MAIN-DEPLOY includes forbidden candidate effect edgeone_deploy."
+        },
+        {
+          "severity": "P0",
+          "family": "mainline_boundary",
+          "code": "text_mainline_boundary",
+          "message": "V420-NEG-MAIN-DEPLOY contains hard-stop marker MAIN_AUTO_MERGED."
+        }
+      ]
+    }
+  ]
+}

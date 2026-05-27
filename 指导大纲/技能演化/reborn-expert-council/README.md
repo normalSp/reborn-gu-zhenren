@@ -19,7 +19,7 @@
 ## 首轮挑战题族
 
 | 题族 | 样例检查点 |
----|---|
+|---|---|
 | current-state | 当前版本、分支、D/F 状态、下一步、禁止项 |
 | exception-stop | save/DeepSeek/MiroFish/backend/external framework/NPC 生死/public deploy 是否停机 |
 | planning-vs-runtime | 长期路线、design gate、report-only、runtime implementation 是否混淆 |
